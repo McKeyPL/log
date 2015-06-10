@@ -1,0 +1,474 @@
+[00:06:46] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[00:08:17] *** Joins: Asoka (Asoka@Pony-ua0glq.net-htp.de)
+[00:11:27] *** Quits: Asoka_White (Asoka@Pony-35jtvh.net-htp.de) (Ping timeout: 121 seconds)
+[00:11:58] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[00:15:32] *** Brolf_pog is now known as Shnuggles
+[00:26:14] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[00:32:14] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[00:34:08] *** Joins: tiwake (Octavia@Pony-njonl3.wa.charter.com)
+[00:46:58] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[00:52:00] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[00:54:24] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:01:51] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:06:47] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[01:12:00] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[01:19:42] *** Joins: Coco_Pommel (coco@Pony-l3n1m0.ma.comcast.net)
+[01:26:51] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[01:27:33] <Moonlightning> Do the `printf` program and the C printf() have index arguments?
+[01:28:09] <Moonlightning> So you can do stuff like you could do, in Python, `'{0} {0:04x}'.format(foo)`?
+[01:29:16] <AppleDash> um
+[01:29:22] <AppleDash> What do you expect that to do?
+[01:31:15] * AppleDash pokes Phase4
+[01:32:03] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[01:39:40] <Phase4> ?
+[01:39:58] <Phase4> Moonlightning, c printf does not
+[01:42:57] <Moonlightning> Kinsley: just make the container literal already casefolded: `foo_str.casefold() in {'foo', 'bar', 'baz', 'ss'}`
+[01:46:14] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[01:52:00] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[01:52:05] *** Gigabit is now known as Gigaway
+[01:52:56] <Phase4> Moonlightning, for completeness, c printf is pretty munch 'on % pop off the stack and print'
+[01:53:19] <Phase4> which is also why you never printf(user_controled_string)
+[01:53:21] <Moonlightning> aAhh
+[01:53:30] <Phase4> puts(string) or printf("%s", string)
+[01:53:47] <Phase4> instead'
+[01:54:03] <Moonlightning> What about the `printf` program?
+[01:54:14] <Phase4> not a clue
+[01:54:32] <Phase4> man implies no
+[01:54:44] <Moonlightning> yeah
+[02:01:36] *** Joins: Ginrummy (Danden@Pony-k7dd0q.mssnks.sbcglobal.net)
+[02:01:39] *** Parts: Ginrummy (Danden@Pony-k7dd0q.mssnks.sbcglobal.net) ()
+[02:05:12] *** Shnuggles is now known as Erikster
+[02:05:29] *** Joins: ModusPonens (ModusPonens@Pony-pv5otr.xnet.uga.edu)
+[02:06:15] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[02:06:46] *** Erikster is now known as Shnuggles
+[02:07:26] *** Quits: ModusPonens (ModusPonens@Pony-pv5otr.xnet.uga.edu) (Quit: Leaving)
+[02:10:18] <cyborg_ar> oh man so many holes came from people using printf as if it was puts
+[02:12:15] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[02:26:14] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[02:32:15] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[02:32:18] *** Gigaway is now known as Gigabit
+[02:46:51] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[02:52:03] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[02:58:37] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:02:19] *** Coco_Pommel is now known as Coco_Pommel|Netflix
+[03:03:29] *** Quits: cyborg_ar (cyborgar@Pony-pe7.902.49.190.IP) (Ping timeout: 121 seconds)
+[03:06:17] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[03:12:07] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[03:13:07] *** Joins: ModusPonens (ModusPonens@Pony-pv5otr.xnet.uga.edu)
+[03:16:20] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[03:20:55] *** Joins: cyborg_ar (cyborgar@Pony-440.7gu.25.181.IP)
+[03:21:04] *** Quits: ModusPonens (ModusPonens@Pony-pv5otr.xnet.uga.edu) (Connection closed)
+[03:22:01] *** Joins: ModusPonens (ModusPonens@Pony-pv5otr.xnet.uga.edu)
+[03:26:47] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[03:32:01] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[03:33:53] *** Quits: ModusPonens (ModusPonens@Pony-pv5otr.xnet.uga.edu) (Connection closed)
+[03:47:06] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[03:52:05] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[03:58:22] *** Coco_Pommel|Netflix is now known as Coco_Pommel
+[03:58:29] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[04:07:02] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[04:11:59] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[04:21:38] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[04:26:15] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[04:32:15] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[04:41:40] *** Joins: Datalink_ (Datalink@Datalink)
+[04:45:08] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[04:45:49] *** Joins: Phase5 (Phase4@Pony-0og16u.internode.on.net)
+[04:46:51] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[04:48:26] *** Quits: Phase4 (Phase4@Pony-hv8e8h.internode.on.net) (Ping timeout: 121 seconds)
+[04:52:03] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[05:06:59] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[05:12:01] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[05:25:25] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[05:26:51] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[05:32:02] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[05:39:35] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[05:46:16] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[05:52:01] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[06:06:47] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[06:12:01] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[06:26:51] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[06:28:41] *** Starburn is now known as eyeburn
+[06:32:03] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[06:37:50] *** eyeburn is now known as Starburn
+[06:42:45] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[06:44:39] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[06:47:06] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[06:52:07] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[06:55:15] *** Joins: ariscop__ (Phase4@Pony-fqaqdl.internode.on.net)
+[06:58:08] *** Quits: Phase5 (Phase4@Pony-0og16u.internode.on.net) (Ping timeout: 121 seconds)
+[06:59:22] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:03:08] *** Joins: Phase5 (Phase4@Pony-kfo7um.internode.on.net)
+[07:05:39] *** Quits: ariscop__ (Phase4@Pony-fqaqdl.internode.on.net) (Ping timeout: 121 seconds)
+[07:06:51] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[07:11:22] *** Datalink_ is now known as Datalink
+[07:11:24] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[07:11:55] *** Quits: cyborg_ar (cyborgar@Pony-440.7gu.25.181.IP) (Ping timeout: 121 seconds)
+[07:12:09] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[07:20:15] *** Quits: TuxRug[tablet] (TuxRug@TuxRug) (Quit: AndroIRC - Android IRC Client ( http://www.androirc.com ))
+[07:21:04] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[07:26:51] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[07:27:54] *** Joins: MistVeil (AndChat3408@Pony-prm9c8.static.axtel.net)
+[07:28:02] *** Parts: MistVeil (AndChat3408@Pony-prm9c8.static.axtel.net) ("Leaving")
+[07:31:20] *** Joins: ariscop__ (Phase4@Pony-qj5l4i.internode.on.net)
+[07:32:03] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[07:33:41] *** Quits: Phase5 (Phase4@Pony-kfo7um.internode.on.net) (Ping timeout: 121 seconds)
+[07:36:50] *** Joins: cyborg_ar (cyborgar@Pony-440.7gu.25.181.IP)
+[07:45:13] *** Quits: Datalink (Datalink@Datalink) (Quit: Datalink offline)
+[07:47:03] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[07:51:59] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[07:57:51] *** Quits: cyborg_ar (cyborgar@Pony-440.7gu.25.181.IP) (Ping timeout: 121 seconds)
+[08:05:44] *** Joins: Phase4 (Phase4@Pony-2nq0u8.internode.on.net)
+[08:06:14] *** Quits: ariscop__ (Phase4@Pony-qj5l4i.internode.on.net) (Ping timeout: 121 seconds)
+[08:07:04] *** Quits: Phase4 (Phase4@Pony-2nq0u8.internode.on.net) (Quit: Leaving)
+[08:07:11] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[08:07:31] *** Joins: Phase4 (Phase4@Pony-2nq0u8.internode.on.net)
+[08:08:59] <AppleDash> Phase4
+[08:09:05] <Phase4> AppleDash
+[08:09:13] <JustAberrant> Phase4
+[08:09:19] <AppleDash> Do you want to join an FTB Infinity server by any chance
+[08:09:23] <Phase4> JustAberrant
+[08:09:26] <Phase4> AppleDash, maybe
+[08:09:28] <Phase4> 1.7?
+[08:09:28] <JustAberrant> Colgate
+[08:09:30] <AppleDash> yes
+[08:09:31] <AppleDash> 1.7
+[08:09:45] <Phase4> i'll give it a shot
+[08:09:46] <JustAberrant> 1.7? :(
+[08:09:54] <AppleDash> 1.7 :)
+[08:09:58] <AppleDash> Phase4: OK I'll send you the info
+[08:10:01] <Colgate> wat
+[08:10:08] <JustAberrant> Colgate: 1.7
+[08:10:11] <Colgate> 1.6
+[08:10:16] <Phase4> JustAberrant, y u no like 1.7
+[08:10:18] <JustAberrant> 1.6 :)
+[08:10:22] <Colgate> 1.70
+[08:10:40] <JustAberrant> Phase4: I don't, I actually have no established opinion of 1.7
+[08:10:41] <Colgate> I have no idea what you're talking about
+[08:10:51] <Phase4> minecraft
+[08:11:00] <Colgate> oh, don't play it, don't care :P
+[08:11:12] <JustAberrant> Coco_Pommel: just haven't heard from you in awhile :(
+[08:11:15] <JustAberrant> * Colgate 
+[08:11:16] <JustAberrant> gah
+[08:11:43] * JustAberrant mummbles something about tab complete and pain of 1000 knives
+[08:11:48] <Phase4> http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/wip-mods/2150151-1-7-10-tc4-ae2-thaumic-energistics nice XD
+[08:12:14] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[08:12:14] * Coco_Pommel boops JustAberrant
+[08:12:29] <JustAberrant> actually if I'm honest, my opinion is that 1.7 is just continuing the trend of every mod maker trying to make their mods isolated and harder to use :>
+[08:12:57] <JustAberrant> which I would probably have loved like 2 years ago, but now when I play I just want to get enough stuff running to make pony pixel art ;p
+[08:13:00] <JustAberrant> Coco_Pommel: :>
+[08:13:56] <AppleDash> Phase4: that looks rather useful
+[08:18:25] <Phase4> AppleDash, you guys got a house up?
+[08:18:30] <AppleDash> Yeah
+[08:19:12] <AppleDash> Not much stuff though, and we have a logistics system that doesn't really work :D
+[08:19:52] <Phase4> directions?
+[08:20:59] <AppleDash> Ummmmm
+[08:21:04] <AppleDash> I'd need to sign on and get coords
+[08:21:21] <AppleDash> give me a minute
+[08:21:33] <Phase4> oh awesome, pams harvestcraft
+[08:22:35] <AppleDash> FTB is launching
+[08:22:41] <AppleDash> Wonder how it will perform on this laptop
+[08:26:51] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[08:28:04] <Rainb> rusnet is irc.lucky.net
+[08:28:09] <Rainb> you tricked me
+[08:30:04] *** Joins: Phase5 (Phase4@Pony-79stei.internode.on.net)
+[08:30:45] * JustAberrant throws a handful of gentlemens trousers at Rainb 
+[08:32:03] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[08:32:54] *** Quits: Phase4 (Phase4@Pony-2nq0u8.internode.on.net) (Ping timeout: 121 seconds)
+[08:37:25] *** Joins: Phase4 (Phase4@Pony-7v0pmg.internode.on.net)
+[08:37:33] <AppleDash> Phase5: I left the server for tonight, will be on tomorrow
+[08:37:52] <Phase4> seems my connection is still impossibly broken
+[08:38:08] <JustAberrant> I can only hope your users break your server as frequently as you broke mine ;p
+[08:38:16] <AppleDash> xD
+[08:39:00] * Phase4 puts 3 bits of compressed iron in a pneumaticraft assembly line
+[08:39:41] *** Quits: Phase5 (Phase4@Pony-79stei.internode.on.net) (Ping timeout: 121 seconds)
+[08:39:58] *** Quits: Coco_Pommel (coco@Pony-l3n1m0.ma.comcast.net) (Quit: :tiuQ)
+[08:41:30] * Phase4 accidentally killed JustAberrant's server for a bit with that bug
+[08:42:04] <JustAberrant> :>
+[08:46:19] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[08:46:23] <AppleDash> Phase4, http://i.imgur.com/Eg7LY6z.png
+[08:46:28] <AppleDash> this is why I don't use my laptop for MC also
+[08:46:30] <AppleDash> note the temps
+[08:46:53] <Phase4> razer blade, that's the one with the weird touchpad right?
+[08:47:04] <AppleDash> Nah, that's the pro version, I've not got that one :P
+[08:47:10] <Colgate> minecraft is a very well optimized game
+[08:47:41] <Phase4> indeed
+[08:47:45] <JustAberrant> yeah, I mean it's hard on the graphics card, cpu, and ram, but.. uh.. well.. 
+[08:47:59] <Gigabit> Holy some bitch.. That's hot
+[08:47:59] <JustAberrant> the networking is actually not.. hmm.. well ok yeah that's shit too
+[08:48:04] <AppleDash> lol
+[08:48:36] <JustAberrant> I think the audio files are compressed nicely ;p
+[08:48:45] <AppleDash> maybe
+[08:49:03] <JustAberrant> and also I totally just fixed my sisters laptop that was doing the same thing
+[08:49:14] <JustAberrant> remps were hitting like 90c then thermal shutdown
+[08:49:17] <JustAberrant> * temps
+[08:49:23] <JustAberrant> after like 10 minutes of being on
+[08:49:28] <AppleDash> This is just normal for this laptop
+[08:50:03] <AppleDash> http://i.imgur.com/iEAz79m.jpg
+[08:50:04] <AppleDash> :)
+[08:50:10] <JustAberrant> thermal compound went bad or wasn't good to begin with.. I basically just took the hsf off, cleaned off the crap (which took forever).. and reinstalled.. now it's fine
+[08:50:24] <JustAberrant> AppleDash: :D
+[08:50:46] <Gigabit> You have a flair gun? O.o
+[08:50:58] <AppleDash> ?
+[08:51:20] <Gigabit> Sorry, used to it called that. Thermal imagining gun
+[08:51:28] <AppleDash> I do not, that is someone else's
+[08:52:05] * JustAberrant looking at getting the seek thing (~$200 dealie you plug into your phone)
+[08:52:14] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[08:52:18] <JustAberrant> but I'm trying to behave with regard to random buying of stuff
+[08:52:27] <Phase4> seek thing?
+[08:52:30] <AppleDash> the what now?
+[08:54:16] <JustAberrant> http://www.thermal.com/
+[08:54:17] <PinkiePieBot> [ Thermal Imaging Camera | Seek Thermal ]
+[08:54:35] *** Joins: Lapsus_ (Lapsus@Pony-5m46mf.cable.rogers.com)
+[08:55:25] <AppleDash> Ohhh I want one
+[08:55:31] <AppleDash> i've always wanted a thermal camera
+[08:56:04] <JustAberrant> also, http://justaberrant.com/images/computer/laptop_repair/  ;p
+[08:56:05] <PinkiePieBot> [ Index of /images/computer/laptop_repair ]
+[08:56:09] <Gigabit> Expensive
+[08:56:18] <Gigabit> And the batteries die fast :p
+[08:56:29] <JustAberrant> Gigabit: $200 for an IR camera is actually pretty damn cheap ;p
+[08:56:38] <JustAberrant> before that, a cheap IR camera was like $3000
+[08:56:57] <Gigabit> I didn't see the link you posted. I remember the one from the fire department. Thing was like 1300 usd
+[08:56:58] <JustAberrant> there was a kickstarter project that was aiming to make one for like $350 or so right around when the seek came out.. :D
+[08:57:17] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[08:57:35] <Phase4> looked at that for debugging circuits a bit ago
+[08:57:39] <Phase4> resolution is a bit low
+[08:58:00] <Phase4> 240p or 360p iirc
+[08:58:10] <JustAberrant> yeah
+[08:58:23] *** Quits: Lapsus (Lapsus@i-forget.ca) (Ping timeout: 121 seconds)
+[08:58:43] <AppleDash> Still not bad
+[09:00:00] <JustAberrant> would be good for the kind of stuff they talk about.. 
+[09:00:23] <JustAberrant> i.e. finding poorly isolated wall sections
+[09:01:00] <JustAberrant> and also: laptops are an absolute pain in the ass to take apart/re-assemble/do anything with
+[09:01:10] <AppleDash> They are
+[09:01:22] <JustAberrant> like that seriously took me about 2 hours
+[09:01:30] <JustAberrant> most of that was getting the old gunk off
+[09:01:35] <JustAberrant> but still
+[09:01:47] * AppleDash sanitizes JustAberrant :)
+[09:01:54] * JustAberrant meeps a bit
+[09:01:58] * JustAberrant should also go to bed
+[09:02:06] <AppleDash> Me too
+[09:04:11] *** Joins: Phase5 (Phase4@Pony-oftcsl.internode.on.net)
+[09:06:10] *** Joins: ariscop__ (Phase4@Pony-cbvv21.internode.on.net)
+[09:06:47] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[09:06:47] *** Quits: Phase4 (Phase4@Pony-7v0pmg.internode.on.net) (Ping timeout: 121 seconds)
+[09:06:48] *** Quits: Lapsus_ (Lapsus@Pony-5m46mf.cable.rogers.com) (Ping timeout: 121 seconds)
+[09:07:17] *** Quits: ariscop__ (Phase4@Pony-cbvv21.internode.on.net) (Quit: Leaving)
+[09:08:47] *** Quits: Phase5 (Phase4@Pony-oftcsl.internode.on.net) (Ping timeout: 121 seconds)
+[09:10:08] <Moonlightning> So how does mlockall() work with shared libraries?
+[09:11:08] <Gigabit> It politely asks the shared library for help :p
+[09:11:42] *** Joins: Phase4 (Phase4@Pony-cbvv21.internode.on.net)
+[09:12:01] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[09:12:24] <Moonlightning> <Gigabit> Holy some bitch.. That's hot
+[09:12:26] <Moonlightning> I'm quoting this
+[09:12:38] <AppleDash> lol
+[09:12:44] <Phase4> Moonlightning, i'd assume it's a kernel side toggle
+[09:12:57] <Gigabit> Do I get royalties?
+[09:13:23] <Moonlightning> Gigabit: depends. Do you accept sexual favors as payment?
+[09:13:56] <Moonlightning> Phase4: I mean more for counting memory allocations. There's a limit to how much a process can have mlocked
+[09:14:34] <Phase4> Moonlightning, RLIMIT_MEMLOCK (ignored if the process has CAP_IPC_LOCK)
+[09:14:54] <Gigabit> Maybe
+[09:15:43] <AppleDash> he does
+[09:17:03] <Moonlightning> Phase4: right, but are shared libraries counted completely toward a process's limit? What if that process isn't the only one using the library? What if that process isn't the only one that has the library mlocked?
+[09:17:48] <Gigabit>  AppleDash I need monies more though!
+[09:18:12] <Phase4> Moonlightning, from the kernels perspective, shared libraries are no different to normal program code
+[09:18:22] <Phase4> and mlock is about preventing pages from being swapped
+[09:18:33] <Phase4> not a lock, despite the name
+[09:18:38] <Moonlightning> I know.
+[09:18:43] <AppleDash> :P
+[09:19:08] <Phase4> i'm not sure entirely how mapped files are treated, if they're loaded to ram i'd assume it's shared between processes
+[09:19:26] <Moonlightning> yes, that's my understanding of how shared libraries work
+[09:19:43] <Moonlightning> Let's say shared library L is being used by exactly two running processes, A and B
+[09:20:17] <Phase4> there's a depricated syscall for loading shared libraries, but these days it's done in /lib/ld.so.* via mmap()
+[09:20:40] <Moonlightning> If A and B are both idle or not using code from the library, the library might be swapped out to disk, yes?
+[09:21:27] <Phase4> Moonlightning, map page says ALL mapped pages are kept in ram
+[09:21:34] <Phase4> including memory mapped files
+[09:22:06] <Phase4> so shared libraries will remain loaded and it should share that memory among mappings in different processes
+[09:22:32] <Moonlightning> Hmmmm.
+[09:23:56] <Moonlightning> Okay. Even so.
+[09:24:23] <Moonlightning> The library is kept in RAM because of both A /and/ B.
+[09:24:34] <Moonlightning> How should it count toward each process's RAM usage limit?
+[09:24:48] <Phase4> if either mlocks() the library, it will remain in memory
+[09:25:14] <Phase4> iirc shared memory is accounted to each process
+[09:25:22] <Phase4> that's a terrible way to say it
+[09:25:33] <Moonlightning> Thought it'd remain in memory, anyway, by virtue of the fact that there were running processes that used it
+[09:25:39] <Phase4> it doesn't consider shared memory 'less expensive' because it's shared
+[09:26:40] <Phase4> though i think there's patches to do 'fair' shared memory accounting
+[09:26:52] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[09:27:19] <Moonlightning> Well, no, but you could either add the entire size of the library to each process that uses it, or you could split it up, in this case adding half the size to each A and B
+[09:27:32] <Phase4> the entire size is added to each process
+[09:27:54] <Phase4> the 'fair' patches split amongst processes hlding that memory
+[09:27:59] <Phase4> holding'
+[09:28:48] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[09:29:36] <Moonlightning> That raises another issue, though.
+[09:30:15] <Moonlightning> What happens on a system with the “fair” patch if a process exits, and that would make another process go over the limit because of a common shared library?
+[09:30:34] <Phase4> i'd assume so
+[09:31:06] <Phase4> only vaguely aware of the fair patchset, forgotten what it's actually called
+[09:31:58] <Moonlightning> I asked what happens though
+[09:32:02] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[09:32:57] <Phase4> Moonlightning, i'd assume it'd increase the memory usage of other processes holding that memory
+[09:32:59] *** Gigabit is now known as GigaZzz
+[09:33:09] <Phase4> potentially going over its limit, not sure how that would be handled
+[09:33:19] <Phase4> but that sort of nonsense is why upstream doesn't do that :P
+[09:34:29] <Moonlightning> well, the obvious thing to do is just let that be and deny further allocations
+[09:34:55] <Moonlightning> alternately, you could completely separate shared libraries from other memory accounting
+[09:37:55] <Phase4> Moonlightning, well i don't think file backed mappings are normally accounted because they can be swapped out whenever the kernel pleases
+[09:38:31] <Phase4> well they're accounted as virutal memory but not to the resident size
+[09:39:10] <Moonlightning> …that makes sense. Also, I've heard it before.
+[09:39:24] <Moonlightning> and library loadings would be by definition file-backed, yeah?
+[09:39:39] <Moonlightning> …wait a sec. What if the library file gets deleted?
+[09:43:49] <Phase4> Moonlightning, 'unlinked', the inode remains until there's no open descriptors
+[09:46:18] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[09:52:11] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[09:53:14] <Phase4> inodes are cool
+[09:53:55] <Phase4> in fat the filename is bound to the actual allocation
+[09:54:30] <Phase4> which is why you can't delete open files on windows, despite ntfs having inode-like indirection and hardlinks, dos compatibility
+[09:54:54] <Phase4> program has to explicitly allow concurrent deletion
+[09:55:14] <Phase4> which blocks the file from also being opened by anything that doesn't allow concurrent deletion
+[09:55:17] <Phase4> share modes!
+[09:55:24] * Phase4 stops complaining
+[10:00:10] *** Quits: Crimson_Tail (ChaoticRift@Pony-kc37g9.7h3b.037j.000a.2601.IP) (Quit: Oops, a kernel panic)
+[10:07:14] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[10:12:00] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[10:18:01] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Quit: )
+[10:24:07] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:26:14] <ShivalPonyWolf> https://www.youtube.com/watch?v=ykfGWcmUbbk
+[10:26:14] <PinkiePieBot> [ Last Week Tonight With John Oliver - Edward Snowden Interview - 348 views - 0:18:36 long - 498 likes - 98.42% ]
+[10:26:55] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[10:32:11] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[10:46:51] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[10:52:03] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[11:06:20] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[11:12:01] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[11:15:16] *** [A]McKey is now known as McKey
+[11:25:16] *** McKey is now known as [A]McKey
+[11:26:21] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[11:32:00] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[11:43:41] *** Quits: Asoka (Asoka@Pony-ua0glq.net-htp.de) (Ping timeout: 121 seconds)
+[11:44:30] *** Joins: Asoka (Asoka@Pony-ua0glq.net-htp.de)
+[11:46:23] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[11:52:01] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[11:56:20] *** Q0 is now known as Q0|Away
+[12:07:07] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[12:12:08] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[12:12:08] *** Quits: Kiyiko (Kiyiko@Pony-0k24k1.dsl.netins.net) (Connection closed)
+[12:14:29] *** Joins: cyborg_ar (cyborgar@Pony-440.7gu.25.181.IP)
+[12:15:36] *** Joins: Kiyiko (Kiyiko@Pony-0k24k1.dsl.netins.net)
+[12:18:35] *** Quits: cyborg_ar (cyborgar@Pony-440.7gu.25.181.IP) (Client exited)
+[12:27:23] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[12:32:11] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[12:33:00] *** Joins: Phase5 (Phase4@Pony-ic9t7m.internode.on.net)
+[12:35:51] *** Quits: Phase4 (Phase4@Pony-cbvv21.internode.on.net) (Ping timeout: 121 seconds)
+[12:41:26] *** Joins: Phase4 (Phase4@Pony-ooof3g.internode.on.net)
+[12:43:22] *** Quits: Phase5 (Phase4@Pony-ic9t7m.internode.on.net) (Ping timeout: 121 seconds)
+[12:46:51] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[12:52:04] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[13:06:00] *** ThunderBolt is now known as ThunderBolt|Sleeping
+[13:06:52] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[13:12:04] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[13:20:14] *** Joins: Phase5 (Phase4@Pony-987ikd.internode.on.net)
+[13:22:20] *** Quits: Phase4 (Phase4@Pony-ooof3g.internode.on.net) (Ping timeout: 121 seconds)
+[13:22:25] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[13:26:20] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[13:28:18] *** Quits: Phase5 (Phase4@Pony-987ikd.internode.on.net) (Quit: Leaving)
+[13:28:41] *** Joins: Phase4 (Phase4@Pony-987ikd.internode.on.net)
+[13:32:16] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[13:46:55] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[13:52:11] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[13:58:09] *** Joins: cyborg_ar (cyborgar@Pony-q7r.mo2.172.190.IP)
+[13:59:18] *** Quits: Fallfeathers (Fallfeather@Pony-kruai5.internode.on.net) (Connection closed)
+[14:01:05] *** Joins: Phase5 (Phase4@Pony-h6d1fh.internode.on.net)
+[14:04:09] *** Quits: Phase4 (Phase4@Pony-987ikd.internode.on.net) (Ping timeout: 121 seconds)
+[14:06:20] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[14:12:14] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[14:16:04] *** Quits: Compu (compu@snuggly.filly) (A TLS packet with unexpected length was received.)
+[14:26:51] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[14:32:03] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[14:36:37] *** Joins: Compu (compu@snuggly.filly)
+[14:36:57] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[14:46:20] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[14:52:15] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[15:07:27] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[15:12:00] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[15:26:21] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[15:32:00] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[15:40:29] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[15:41:08] *** Joins: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[15:41:17] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[15:44:25] *** Joins: Coco_Pommel (coco@Pony-l3n1m0.ma.comcast.net)
+[15:47:27] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:48:54] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[15:52:08] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[15:58:28] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Connection closed)
+[16:01:21] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Connection closed)
+[16:01:56] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[16:48:42] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[16:49:18] *** Joins: Lapsus (Lapsus@Pony-5m46mf.cable.rogers.com)
+[16:49:27] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[17:01:12] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[17:11:17] *** Quits: CompuDesktop (quassel@snuggly.filly) (Ping timeout: 121 seconds)
+[17:12:50] *** Quits: Compu (compu@snuggly.filly) (Connection closed)
+[17:18:55] *** Joins: Compu (compu@snuggly.filly)
+[17:34:53] <Lapsus> http://imgur.com/gallery/tyUS59z  ???
+[17:34:53] <PinkiePieBot> [ Found this image on a website for a local Computer Repair place. How many confusing things can you spot? - Imgur ]
+[17:53:22] *** Joins: CompuDesktop (quassel@snuggly.filly)
+[18:08:04] <Compu> :/
+[18:08:12] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[18:08:14] <Compu> i hate time warner cable >.<
+[18:11:00] <MistVeil> ...I hate cable when it's all messy on the server rack
+[18:19:34] <Compu> MistVeil: we're having epic lag issues, they've confirmed its their fault......and they cant do anything until sunday
+[18:19:57] <MistVeil> Sunday? That's awful...
+[18:21:18] <Compu> yeah
+[18:27:05] <Compu> MistVeil: the weird thing about the lag is that it ONLY happens around noon
+[18:31:06] <Compu> and lag seems to be gone
+[18:37:46] <coppercore> ISP is fucked?
+[18:39:57] <Colgate> sounds like a normal occurrence
+[18:42:26] <Compu> Colgate: they said its a problem with their lines but why would the lag stop after about 12:30 then?
+[18:42:40] <Compu> like i am getting no lag whatsoever now
+[18:42:49] <Colgate> I meant the "ISP is fucked" that's pretty normal :P
+[18:42:54] <Compu> oh
+[18:42:56] <Compu> yeah
+[18:43:02] <Compu> except for google fiber
+[18:43:25] <Compu> cuz if that was everywhere with its prices then every other isp would be pretty much out of business
+[18:46:19] <Compu> Lapsus: by the way, fuck that computer repair place
+[18:47:01] *** GigaZzz is now known as GigaWork
+[18:47:35] <Compu> Colgate: if google fiber was where i live then i would not be using time warner cable, im sure neither would anybody else in this town
+[18:50:04] <MistVeil> I do have fiber internet over here
+[18:50:17] <MistVeil> It's... fairly good, I rarely experience inconveniences with it
+[18:53:37] *** Joins: Crimson_Tail (ChaoticRift@Pony-37im66.7h3b.037j.000a.2601.IP)
+[19:00:18] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Connection closed)
+[19:07:30] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:41:12] *** Joins: locodashie11 (locodash11@Pony-3ol.92k.79.5.IP)
+[19:50:42] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[19:51:26] <coppercore> http://html9responsiveboilerstrapjs.com/
+[19:51:27] <PinkiePieBot> [ HTML9 Responsive Boilerstrap JS ]
+[20:00:20] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:09:24] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Connection closed)
+[20:18:38] *** Joins: Coco_Pommel2 (coco@Pony-v0kmu3.bu.edu)
+[20:18:53] *** Quits: Coco_Pommel (coco@Pony-l3n1m0.ma.comcast.net) (Ping timeout: 121 seconds)
+[20:46:09] <AppleDash> JustAberrant: hello JustAberrant
+[20:48:17] *** Coco_Pommel2 is now known as Coco_Pommel
+[21:08:39] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[21:10:20] *** [A]McKey is now known as McKey
+[21:23:18] *** Joins: ariscop__ (Phase4@Pony-crr365.internode.on.net)
+[21:25:47] *** Quits: Phase5 (Phase4@Pony-h6d1fh.internode.on.net) (Ping timeout: 121 seconds)
+[22:04:40] *** Quits: cyborg_ar (cyborgar@Pony-q7r.mo2.172.190.IP) (Ping timeout: 121 seconds)
+[22:04:56] <Shutter> Why Cisco, WHY!
+[22:05:07] <Shutter> Their "Small Business" series sucks
+[22:05:10] <Shutter> No cli
+[22:05:33] <Shutter> And one have to apply VLAN-settings to each port individually
+[22:05:37] <Shutter> For fuck's sake
+[22:05:50] <Colgate> isn't  it wonderful?
+[22:06:00] <Colgate> we have a few of those
+[22:06:27] <Shutter> I really wonder who thought that was a good way to do it
+[22:10:55] *** Quits: ariscop__ (Phase4@Pony-crr365.internode.on.net) (Quit: Leaving)
+[22:11:11] *** Joins: Phase4 (Phase4@Pony-crr365.internode.on.net)
+[22:29:28] *** ThunderBolt|Sleeping is now known as ThunderBolt
+[22:32:55] *** Joins: nscoots (FreyGrimrod@Pony-blf8dn.sub-70-192-22.myvzw.com)
+[23:12:06] *** McKey is now known as [A]McKey
+[23:14:44] <GigaWork> I did Shutter
+[23:18:20] *** Joins: Phase5 (Phase4@Pony-0nc5nh.internode.on.net)
+[23:21:05] *** Quits: Phase4 (Phase4@Pony-crr365.internode.on.net) (Ping timeout: 121 seconds)
+[23:41:48] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:41:58] *** Joins: cyborg_ar (cyborgar@Pony-440.7gu.25.181.IP)
+[23:52:27] *** Quits: nscoots (FreyGrimrod@Pony-blf8dn.sub-70-192-22.myvzw.com) (Ping timeout: 121 seconds)

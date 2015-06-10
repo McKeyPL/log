@@ -1,0 +1,277 @@
+[00:03:57] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:34:20] *** Quits: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[01:01:47] *** Quits: ChaoticRift (ChaoticRift@Pony-orslbp.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[01:02:12] *** Joins: ChaoticRift (ChaoticRift@Pony-orslbp.7h3b.037j.000a.2601.IP)
+[01:14:19] <Moonlightning> Hmm
+[01:14:29] <Moonlightning> TIL `badblocks` is related to fsck.ext2
+[01:15:16] <Moonlightning> Can I just run it by itself on an entire disk, without losing any data?
+[01:15:50] <Moonlightning> Also: where's Phase4? Somepony needs to tell him that Windows is NOT POSIX-compliant.
+[01:29:58] <cyborg_ar> lol
+[01:30:04] <cyborg_ar> some versions were
+[01:30:09] <cyborg_ar> because government contracts
+[01:30:17] <cyborg_ar> but that was a long time afo
+[01:30:20] <cyborg_ar> ago*
+[01:31:24] <Googie> http://en.wikipedia.org/wiki/Windows_Services_for_UNIX
+[01:31:25] <PinkiePieBot> [ Windows Services for UNIX - Wikipedia, the free encyclopedia ]
+[01:31:51] <Googie> Completely gone for Windows 8 and deprecated in Server 2012
+[01:32:20] <Googie> (Actually, apparently removed in r2)
+[01:41:20] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:54:55] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:06:05] <Moonlightning> > Windows services for UNIX.
+[02:06:16] <Moonlightning> That's evidence that it's /not/ POSIX-compliant.
+[02:06:55] <Googie> Well, it was a replacement for "Microsoft POSIX subsystem" :P
+[02:07:07] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:07:25] <ShivalPonyWolf> https://blog.hboeck.de/archives/865-Comodo-ships-Adware-Privdog-worse-than-Superfish.html
+[02:07:27] <PinkiePieBot> [ Comodo ships Adware Privdog worse than Superfish - Hanno's blog ]
+[02:07:28] <ShivalPonyWolf> time to remove teh comodo CA from my browsers
+[02:07:33] <Googie> Which actually was POSIX.1 compliant. I think Windows Services for UNIX was also POSIX.1 compliant probably
+[02:08:33] <Googie> "Protects against harmful ads from untrusted sources" Yeah...
+[02:09:15] <Googie> Well, if we make every connection trusted...
+[02:09:49] <ShivalPonyWolf> Googie: yeah braindead isnt it
+[02:42:51] *** Joins: Phase4 (Phase4@Pony-2hrj9k.internode.on.net)
+[03:16:30] *** eyeburn is now known as Starburn
+[03:25:40] *** Joins: Cydie (cyder@Pony-ui0.vsf.191.180.IP)
+[03:25:49] <Cydie> I need help
+[03:26:37] <Cydie> i have been managing a private server at LoE, but it does not say that to overwrite files to the game folder's location
+[03:29:59] *** Parts: worthless (Gigabit@AppleDash.is.my.pet) ("left for a reason")
+[03:31:24] <Colgate> what?
+[03:32:27] <Finwe> That sentence makes little sense.
+[03:35:52] <Finwe> Cydie: You have a private Legends of Equestria server and something about overwriting files, but what?
+[03:35:55] <Cydie> It does not say that to overwrite a file
+[03:36:14] <Cydie> Finwe, tux3 has said this at github
+[03:36:27] <Colgate> uh, I repeat my question, "what?"
+[03:36:49] <Colgate> might be better if you just link to the github
+[03:37:08] <JustAberrant> ready every 2'nd word and then interpolate the remaining words in reverse order to the end
+[03:37:36] <JustAberrant> still doesn't make sense .. but it becomes more mangled :)
+[03:37:42] <JustAberrant> * read
+[03:38:21] <Finwe> Here? https://github.com/tux3/LoE-PrivateServer
+[03:38:21] <PinkiePieBot> [ tux3/LoE-PrivateServer · GitHub ]
+[03:38:29] <Cydie> I can't chat in my server and the NPCs cant even talk
+[03:38:32] <Cydie> yes
+[03:38:42] <Cydie> i did it entirely wrong
+[03:38:52] <Cydie> because chat is not responding
+[03:40:48] <Colgate> /shrug, I got nothin
+[03:45:40] * JustAberrant also got nothin :(
+[03:45:59] * JustAberrant has Colgate provided with a mug of hot chocolate :(
+[03:46:19] *** Quits: cyborg_ar (cyborgar@Pony-o43.b05.49.190.IP) (Client exited)
+[03:47:22] <Finwe> Well, it says, "WARNING: As of 2015, the Private Server is not maintained anymore. It will probably not work with new versions of LoE."
+[03:48:14] <Finwe> According to my reckoning, we're already well into 2015.
+[03:48:38] <Phase4> can confirm, well in to 2015
+[03:52:52] <Cydie> I'm using August 2014 edition
+[03:53:46] *** ruthalasleep is now known as Ruthalas
+[03:55:46] <Cydie> o install the Private Server download PrivateServer.zip, extract it in the Legends of Equestria folder, and replace the DLLs when asked to (IMPORTANT: You must overwrite the game's DLLs, if you don't see the message asking you to overwrite, you likely did it wrong !).
+[03:55:46] <Cydie> Remember that you need to start both the private server (LoE_PrivateServer.exe) and the game (loe.exe) to play.
+[03:56:01] <Cydie> that's what im telling
+[03:56:09] <Cydie> the important part
+[03:57:23] <JustAberrant> Phase4: I actually accepted the new year into my life way faster than usual
+[03:57:43] <JustAberrant> Phase4: sually I'd still be writing 2014 on forms well into March .. but 2015 just feels right
+[03:57:46] <JustAberrant> * usually
+[03:58:17] * AppleDash provisions one (1) pot of cold coffee for JustAberrant
+[04:00:15] * Moonlightning blinkblinks.
+[04:00:24] <Moonlightning> So I'm monoizing the audio in this file
+[04:00:34] <Moonlightning> the input stream is "95 kb/s" according to `ffmpeg`
+[04:00:38] <Moonlightning> But the output stream is 128
+[04:00:40] <Moonlightning> What gives?
+[04:00:49] <Moonlightning> Sounds like unnecessary processing to me…
+[04:00:55] <Moonlightning> I'd like these to be as quick as possible.
+[04:06:09] <JustAberrant> AppleDash: that's the worst :(
+[04:06:15] * JustAberrant can't drink cold coffee
+[04:06:23] <AppleDash> Me neither :(
+[04:10:27] *** Joins: cyborg_ar (cyborgar@Pony-mt3.lui.25.181.IP)
+[04:12:21] <Finwe> Cold coffee makes you more beautiful, they say.
+[04:12:33] <JustAberrant> but it tastes vile :(
+[04:13:22] <Cydie> managing your own server is hard work
+[04:13:42] <JustAberrant> :(
+[04:14:08] * JustAberrant runs his mostly on apathy ... if I ignore the problems long enough people stop caring about them :>
+[04:14:45] *** Joins: ModusPonens (ModusPonens@Pony-m3ljv7.xnet.uga.edu)
+[04:18:09] <Webster> Heheh, that's one way to do it.
+[04:18:26] *** Quits: Cydie (cyder@Pony-ui0.vsf.191.180.IP) (Connection closed)
+[04:18:52] *** Joins: Cydie (cyder@Pony-ui0.vsf.191.180.IP)
+[04:19:10] *** Quits: ModusPonens (ModusPonens@Pony-m3ljv7.xnet.uga.edu) (Ping timeout: 121 seconds)
+[04:19:53] <Colgate> I like ice mochas
+[04:19:56] <Colgate> those are good
+[04:20:21] *** Cydie is now known as Clourunner
+[04:20:25] *** Clourunner is now known as Cloudrunner
+[04:20:29] <JustAberrant> well I guess if you put enough sugar in something it'll taste good ;p
+[04:20:40] <Finwe> Coffee is equally revolting, whether hot or cold.
+[04:20:50] <JustAberrant> :(
+[04:20:57] <Finwe> JustAberrant: Sugar, whiskey and cream.
+[04:21:23] <Finwe> That's about the only way to render coffee potable.
+[04:21:23] <JustAberrant> you just need to develop a chemical dependence on it, that's all :(
+[04:21:32] <Compu> http://torrentfreak.com/the-worlds-most-idiotic-copyright-complaint-150222/
+[04:21:33] <PinkiePieBot> [ The World's Most Idiotic Copyright Complaint | TorrentFreak ]
+[04:21:34] * Finwe has not developed one.
+[04:22:00] <JustAberrant> if I stop drinking coffee, I fear blood will build up in my coffee stream :(
+[04:23:19] <Finwe> There are coffeine pills available.
+[04:23:34] <Finwe> But they taste even more revolting than coffee.
+[04:23:50] <JustAberrant> mm
+[04:24:02] <JustAberrant> I used to have caffinated soap :>
+[04:24:15] <JustAberrant> dunno if it actually worked, but it was a funny gift
+[04:47:07] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[04:53:50] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[04:54:19] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[05:03:49] *** Quits: ChaoticRift (ChaoticRift@Pony-orslbp.7h3b.037j.000a.2601.IP) (Connection closed)
+[05:05:17] *** Joins: ChaoticRift (ChaoticRift@Pony-jf7icb.md.comcast.net)
+[05:30:01] *** Ashley is now known as Ashleep
+[05:53:04] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[06:08:41] * cyborg_ar unpatches JustAberrant
+[06:08:59] <JustAberrant> :(
+[06:09:18] * JustAberrant should to bed
+[06:15:13] *** Quits: Webster (Webster@Pony-mme.2eo.212.73.IP) (Quit: Leaving)
+[06:15:54] *** Joins: ModusPonens (ModusPonens@Pony-m3ljv7.xnet.uga.edu)
+[06:20:19] *** Quits: ModusPonens (ModusPonens@Pony-m3ljv7.xnet.uga.edu) (Ping timeout: 121 seconds)
+[06:42:41] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[06:48:01] *** Quits: ChaoticRift (ChaoticRift@Pony-jf7icb.md.comcast.net) (Quit: Signal 9 happened)
+[06:57:44] *** Joins: ModusPonens (ModusPonens@Pony-m3ljv7.xnet.uga.edu)
+[07:01:46] *** Quits: ModusPonens (ModusPonens@Pony-m3ljv7.xnet.uga.edu) (Ping timeout: 121 seconds)
+[07:11:44] *** Joins: GigabitPony (Gigabit@AppleDash.is.my.pet)
+[07:31:40] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[07:38:07] *** Joins: Misan (misan@Pony-vmqpec.cm.kabsi.at)
+[07:53:28] *** Quits: cyborg_ar (cyborgar@Pony-mt3.lui.25.181.IP) (Ping timeout: 121 seconds)
+[07:58:24] *** Joins: ModusPonens (ModusPonens@Pony-m3ljv7.xnet.uga.edu)
+[08:02:37] *** Quits: ModusPonens (ModusPonens@Pony-m3ljv7.xnet.uga.edu) (Ping timeout: 121 seconds)
+[08:04:37] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Connection closed)
+[08:05:04] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[08:11:32] *** Neptune|sleep is now known as Neptune
+[08:19:02] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:52:22] *** Quits: Cloudrunner (cyder@Pony-ui0.vsf.191.180.IP) (Connection closed)
+[08:53:22] *** Joins: Cloudrunner (cyder@Pony-ui0.vsf.191.180.IP)
+[08:56:57] *** Quits: Cloudrunner (cyder@Pony-ui0.vsf.191.180.IP) (Connection closed)
+[08:57:07] *** Joins: Cloudrunner (cyder@Pony-ui0.vsf.191.180.IP)
+[08:59:22] *** Joins: ModusPonens (ModusPonens@Pony-m3ljv7.xnet.uga.edu)
+[09:01:03] *** Quits: Cloudrunner (cyder@Pony-ui0.vsf.191.180.IP) (Connection closed)
+[09:01:14] *** Joins: Cloudrunner (cyder@Pony-ui0.vsf.191.180.IP)
+[09:02:11] *** Quits: Cloudrunner (cyder@Pony-ui0.vsf.191.180.IP) (Connection closed)
+[09:02:25] *** Joins: Cloudrunner (cyder@Pony-ui0.vsf.191.180.IP)
+[09:02:54] *** Joins: JockeTF (jocke@Pony-pbm.r3h.28.195.IP)
+[09:03:24] *** Quits: ModusPonens (ModusPonens@Pony-m3ljv7.xnet.uga.edu) (Ping timeout: 121 seconds)
+[09:17:49] *** Nelly is now known as Tranquil_Sunbeam
+[09:30:48] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:31:02] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Connection closed)
+[10:02:31] *** Tranquil_Sunbeam is now known as NULL
+[10:38:15] *** GigabitPony is now known as Gigabit
+[10:42:46] *** Gigabit is now known as worthless
+[10:43:25] *** Quits: Cloudrunner (cyder@Pony-ui0.vsf.191.180.IP) (Connection closed)
+[10:43:40] *** Joins: Cloudrunner (cyder@Pony-ui0.vsf.191.180.IP)
+[10:44:57] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[10:50:34] *** Quits: reiuiji (reiuiji@nuclear.raven) (Connection closed)
+[10:50:51] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[10:51:32] *** Quits: NULL (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (Ping timeout: 121 seconds)
+[10:53:18] *** Joins: ModusPonens (ModusPonens@Pony-m3ljv7.xnet.uga.edu)
+[10:55:44] *** Joins: reiuiji (reiuiji@Pony-6vp0lq.ma.comcast.net)
+[10:57:30] *** Quits: ModusPonens (ModusPonens@Pony-m3ljv7.xnet.uga.edu) (Ping timeout: 121 seconds)
+[11:12:18] *** Quits: WildSoft (WildSoft@Pony-hfh.2pc.101.213.IP) (Connection closed)
+[11:13:30] *** Nelly is now known as Pony_30776
+[11:13:36] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[11:15:11] *** Quits: Pony_30776 (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (Ping timeout: 121 seconds)
+[11:31:55] *** Joins: WildSoft (WildSoft@Pony-hfh.2pc.101.213.IP)
+[11:51:35] *** Quits: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (The TLS connection was non-properly terminated.)
+[11:52:35] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[12:10:08] *** Q0 is now known as Q0|Away
+[12:10:31] *** Quits: zombieloo (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[12:22:51] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[12:31:10] *** Joins: cyborg_ar (cyborgar@Pony-11s.ad9.172.190.IP)
+[13:25:07] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[14:10:43] *** Quits: Cloudrunner (cyder@Pony-ui0.vsf.191.180.IP) (Connection closed)
+[14:10:53] *** Joins: Cloudrunner (cyder@Pony-ui0.vsf.191.180.IP)
+[14:42:12] *** Joins: faalentijn (faalentijn@Pony-hp8.ip7.85.86.IP)
+[14:52:14] *** Cloudrunner is now known as Wanda
+[14:53:32] *** Quits: Wanda (cyder@Pony-ui0.vsf.191.180.IP) (Connection closed)
+[15:00:58] *** Joins: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[15:04:44] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[15:07:00] *** Joins: Fillyfeathers (Fallfeather@Pony-v0u6nc.internode.on.net)
+[15:09:17] *** Quits: Fallfeathers (Fallfeather@Pony-v0u6nc.internode.on.net) (Ping timeout: 121 seconds)
+[15:29:57] *** Quits: Fillyfeathers (Fallfeather@Pony-v0u6nc.internode.on.net) (Connection closed)
+[15:30:05] *** Quits: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (The TLS connection was non-properly terminated.)
+[15:30:52] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[15:41:53] *** Quits: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (The TLS connection was non-properly terminated.)
+[15:42:38] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[15:47:56] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[15:48:32] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[16:27:31] *** Joins: ModusPonens (ModusPonens@Pony-m3ljv7.xnet.uga.edu)
+[16:41:11] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:53:07] <Moonlightning> >> https://programmers.stackexchange.com/questions/273962
+[16:53:09] <PinkiePieBot> [ customer relations - How to respond to a rude bug report? - Programmers Stack Exchange ]
+[16:53:20] <Moonlightning> This post. x3
+[16:53:24] <Moonlightning> Also
+[16:53:31] <Moonlightning> >> https://programmers.stackexchange.com/a/274077
+[16:53:32] <PinkiePieBot> [ customer relations - How to respond to a rude bug report? - Programmers Stack Exchange ]
+[16:53:42] <Moonlightning> > Torvalds swears at incompetent people. Knuth offers money as rewards for correct bug reports. Both are respected and successful.
+[16:55:58] *** Quits: JockeTF (jocke@Pony-pbm.r3h.28.195.IP) (Quit: Leaving.)
+[17:25:52] *** Quits: cyborg_ar (cyborgar@Pony-11s.ad9.172.190.IP) (Connection closed)
+[17:30:28] *** Joins: cyborg_ar (cyborgar@Pony-11s.ad9.172.190.IP)
+[17:37:53] *** Quits: ModusPonens (ModusPonens@Pony-m3ljv7.xnet.uga.edu) (Quit: Leaving)
+[17:38:00] <johnsey> https://blog.hboeck.de/archives/865-Comodo-ships-Adware-Privdog-worse-than-Superfish.html
+[17:38:02] <PinkiePieBot> [ Comodo ships Adware Privdog worse than Superfish - Hanno's blog ]
+[17:55:07] <DataByte> user: (looking around the office) is there not a keyboard i can use?
+[17:55:35] <DataByte> me: use, you can use this one over here, if you want.. but i'm not sure why you would.. you're using a laptop
+[17:55:42] <DataByte> user: oh! you're right!
+[17:55:49] <DataByte> me: facehoof
+[18:02:19] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[18:22:29] *** Nelly is now known as Melly
+[18:30:01] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[18:30:10] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[19:03:31] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:08:53] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:28:30] *** Quits: cyborg_ar (cyborgar@Pony-11s.ad9.172.190.IP) (Ping timeout: 121 seconds)
+[19:34:09] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[19:42:23] *** Joins: cyborg_ar (cyborgar@Pony-enp.7id.172.190.IP)
+[19:47:01] *** Melly is now known as Nully
+[19:48:03] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[19:48:22] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[19:49:05] *** Quits: Nully (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (Quit: *Pewf*)
+[19:49:48] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[19:50:10] *** Nelly is now known as NULL
+[19:56:11] *** Quits: NULL (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (Quit: Jokerboxer we are going to have an intervention for you when I get back.)
+[20:03:33] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[20:03:42] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[20:04:25] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:07:00] <Colgate> but laptops keyboards suck
+[20:15:43] *** Quits: Lapsus (Lapsus@i-forget.ca) (Ping timeout: 121 seconds)
+[20:37:35] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[20:46:31] <cyborg_ar> Colgate: not mine :)
+[20:46:53] <Colgate> did you get that 3300$ laptop with a mechanical keyboard?
+[20:49:22] *** Joins: ChaoticRift (ChaoticRift@Pony-dm82qg.7h3b.037j.000a.2601.IP)
+[20:55:21] <cyborg_ar> i have a T400
+[20:55:34] <cyborg_ar> one of the last non-chiclet thinkpads
+[20:55:55] <pwnie> Can't beat an old school ThinkPad
+[21:01:51] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[21:07:52] *** Parts: AppleDash (appled@Gyro.Pony.Is.Best.Pony) ("Leaving")
+[21:07:53] *** Joins: AppleDash (appled@Gyro.Pony.Is.Best.Pony)
+[21:07:54] <AppleDash> I like powerbooks :(
+[21:09:12] <pwnie> P-P-P-PowerBooks?
+[21:09:52] <AppleDash> Mhm
+[21:26:42] *** Quits: cyborg_ar (cyborgar@Pony-enp.7id.172.190.IP) (Client exited)
+[21:33:38] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:42:18] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[21:48:47] *** Joins: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[21:50:54] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[21:55:53] *** Joins: cyborg_ar (cyborgar@Pony-mt3.lui.25.181.IP)
+[22:00:43] *** Q0|Away is now known as Q0
+[22:11:11] *** Neptune is now known as Neptune|sleep
+[22:19:33] *** Quits: Phase4 (Phase4@Pony-2hrj9k.internode.on.net) (Ping timeout: 121 seconds)
+[22:31:53] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[22:31:53] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[22:54:31] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[22:56:35] <ShivalPonyWolf> http://www.pcworld.com/article/2887392/lenovo-hit-with-lawsuit-over-superfish-snafu.html
+[22:56:35] <PinkiePieBot> [ Lenovo slapped with lawsuit over dangerous Superfish adware | PCWorld ]
+[22:56:57] <ShivalPonyWolf> who didnt see that comming
+[22:57:32] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:58:28] <JustAberrant> :(
+[22:59:16] <ShivalPonyWolf> https://securityblog.redhat.com/2015/02/23/samba-vulnerability-cve-2015-0240/
+[22:59:18] <PinkiePieBot> [ Samba vulnerability (CVE-2015-0240) | Red Hat Security ]
+[22:59:20] <ShivalPonyWolf> https://www.samba.org/samba/security/CVE-2015-0240
+[22:59:21] <PinkiePieBot> [ Samba - Security Announcement Archive ]
+[22:59:30] <ShivalPonyWolf> remote root arbitary code execution in samba
+[23:01:13] <Phase4> interesting
+[23:04:29] <Phase4> "This problem was found by Richard van Eeden of Microsoft Vulnerability Research, who also provided the fix."
+[23:08:22] <johnsey> maybe they found something in the windows implementation and decided to test it against samba
+[23:38:02] <johnsey> bootm 0x40c00000 0x71002000
+[23:38:08] <johnsey> oops
+[23:38:43] <Phase4> #techponies is not das u-boot
+[23:39:52] <pwnie> underseaboatboat?
+[23:40:03] <johnsey> it appears so
+[23:40:20] * johnsey saveenvs anyway, just to be sure!
+[23:40:22] * pwnie torpedoes Phase4, blames johnsey 
+[23:54:02] *** Quits: Misan (misan@Pony-vmqpec.cm.kabsi.at) (Client exited)
+[23:54:56] *** Joins: Fallfeathers (Fallfeather@Pony-v0u6nc.internode.on.net)

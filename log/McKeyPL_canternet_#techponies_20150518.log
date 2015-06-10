@@ -1,0 +1,394 @@
+[00:00:44] <Moonlightning> For example, there would be records for irc.canternet.org pointing to chrysalis.canternet.org, cadance.canternet.org, and daring.canternet.org
+[00:01:03] <Moonlightning> Rather than A records pointing to 54.244.255.81, 54.225.226.8, 142.4.202.203, and 2607:5300:101::736
+[00:03:35] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[00:07:09] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[00:07:47] <Seoson> MX records allow exactly that (for mail only cuz MX)
+[00:08:18] <Colgate> SRV records are what you're looking for I think
+[00:10:44] <Seoson> SRV resource records are not widely used. TS, Minecraft and a few other things. However as far as I know BIND allows multiple CNAME and A record for one domain as rotates them
+[00:11:04] <Colgate> well yeah, srv records require client side support
+[00:11:19] <Colgate> bind might allow multiple cname records, but that's against spec
+[00:11:23] <Seoson> Ups  records* and and*
+[00:11:36] <Seoson> But the client will never know
+[00:11:47] <Colgate> oh, you mean only serving one cname
+[00:11:56] <Colgate> I thought you meant responding with all of them
+[00:12:20] *** Joins: M1CHL0D[FireBolt] (Michl0d@Pony-8s6.3h9.53.72.IP)
+[00:13:03] <Seoson> Yep. Also there is anycast, which would work as well
+[00:15:01] <Seoson> However I have never touched the last approach, since that is for applications with a much greater scale than I've had running myself
+[00:18:05] *** Init3-away is now known as init3
+[00:18:14] <cyborg_ar> http://grey2scale.itch.io/garbage-cat
+[00:18:15] <PinkiePieBot> [ My Garbage Cat Wakes Me Up At 3AM Every Day by Will Herring ]
+[00:18:16] <cyborg_ar> <3
+[00:25:02] *** Quits: ariscop__ (Phase4@Pony-ti2r9g.internode.on.net) (Ping timeout: 121 seconds)
+[00:27:23] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[00:29:40] *** Joins: Sol_ (Sol@Pony-nc8b4c.res.rr.com)
+[00:31:57] *** Quits: Sol (Sol@Pony-nc8b4c.res.rr.com) (Killed (NickServ (GHOST command used by Sol_)))
+[00:32:01] *** Sol_ is now known as Sol
+[00:32:20] *** Joins: Sol_ (Sol@Pony-nc8b4c.res.rr.com)
+[00:34:15] *** Quits: Sol_ (Sol@Pony-nc8b4c.res.rr.com) (Connection closed)
+[00:34:19] *** Quits: Sol (Sol@Pony-nc8b4c.res.rr.com) (Connection closed)
+[00:34:20] <Seoson> Oh i'm looking forward to "Let's encrypt". SSL certs are a pain ...
+[00:39:22] *** Joins: Sol (Sol@Pony-nc8b4c.res.rr.com)
+[00:39:40] <Colgate> eh... I wish the eff didn't do let's encrypt and instead pushed for dane
+[00:40:44] <Seoson> not going to happen any time soon -.-
+[00:40:55] <Colgate> yes, because CAs are too profitable
+[00:41:01] <Moonlightning> …I feel like maybe there should be something that works just like MX but for aliasing
+[00:41:03] <Colgate> and they don't want to lose all that free money
+[00:41:09] <Moonlightning> :|
+[00:41:11] <Moonlightning> stupid capitalism
+[00:41:21] <Moonlightning> stopping our progress
+[00:41:29] <ShivalPonyWolf> Colgate: lets encrypt is more of a short term fix, getting all DNS to handle IPsec would be almost impossible right now
+[00:41:31] <Seoson> Says the pony with a cert from COMODO :P
+[00:41:41] <Colgate> ShivalPonyWolf: ipsec? uh, that's unrelated?
+[00:41:46] <ShivalPonyWolf> sorry dnssec
+[00:41:59] <Moonlightning> Seoson: I don't have any Comodo certs >.>
+[00:42:05] <Colgate> dnssec should be implemented everywhere
+[00:42:07] <Moonlightning> much less any that I paid for <.<
+[00:42:09] <ShivalPonyWolf> it should be
+[00:42:12] <Colgate> it was made like, forever ago
+[00:42:15] <Seoson> Colgate does ;-)
+[00:42:18] <Colgate> I do?
+[00:42:29] <ShivalPonyWolf> no its really not
+[00:42:34] <Seoson> canternet.org uses a COMODO cert
+[00:42:35] <ShivalPonyWolf> dnssec is still lacking in alot of places
+[00:42:36] <Colgate> where is this comodo cert? 
+[00:42:42] <Colgate> oh, I didn't pay for that
+[00:42:43] <Colgate> :P
+[00:42:53] <ShivalPonyWolf> and also alot of the domain registrars out there dont even know how to support it
+[00:42:55] <Moonlightning> Since he didn't pay for it, he actually is working against Comodo
+[00:43:08] <Colgate> that was Shutter's thing, /shrug
+[00:43:11] <Moonlightning> He used a marginal amount of resources, and didn't pay for them.
+[00:43:20] <Moonlightning> So Comodo loses /that/ much money.
+[00:43:36] <Colgate> uh, I'm pretty sure Shutter paid for it
+[00:43:43] <Moonlightning> Oh. Awww.
+[00:44:07] <Colgate> I don't have much to do with the website though :P
+[00:44:07] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[00:44:43] <Seoson> I'm on StartCom right now, because there is no other way and I don't think CAs deserve my money for sending me an e-mail and a quater of a second of processing power.
+[00:45:11] <Colgate> startcom charges for revocations :(
+[00:45:26] <Moonlightning> Well…can't there at least be a thing that resolves a hostname locally and inserts the IP
+[00:45:33] <Moonlightning> irc.canternet.org.      IN      A       $(RESOLVE chrysalis.canternet.org.)
+[00:45:35] <Colgate> there's also wosign, if you don't mind your CA being chinese, and don't care about android support
+[00:45:44] <Colgate> :P
+[00:46:39] <Colgate> not that the CA being chinese actually means anything
+[00:47:23] <Seoson> Which they do for free if you chose a trail cert. Yeah but if I loose my private key (not going to happen) I have no problem with that since man in the middle attacks are unlikely. I do need a cert to ensure encrypted communication and avoid (dumb)warnings
+[00:47:24] <ShivalPonyWolf> the chinese gov only signs big companies fake certs anyway
+[00:47:26] <ShivalPonyWolf> like MS and google
+[00:47:52] <Seoson> Since CA can sign anything it doesn't matter where you leave your money
+[00:48:09] <Seoson> any CA*
+[00:48:47] <Colgate> Seoson: you say it isn't going to happen, but then I point you to heartbleed
+[00:49:23] <Colgate> private key leaks happen, for any numerous amounts of reasons
+[00:49:42] <ShivalPonyWolf> or weaknesses is keys such as the export keys
+[00:50:04] <ShivalPonyWolf> ciphers
+[00:50:42] <Seoson> Yeah, but that would (in case of heartbleed) require a lot of requests to a site that hosts primarly my own private stuff
+[00:51:08] <Colgate> and?
+[00:51:39] <Colgate> that was just an example, there will be more vulns in the future, 100% guaranteed
+[00:51:54] <Colgate> some that require even less work than heartbleed
+[00:52:16] <Seoson> Which doesn't make any sense in my case since apart from company things I have on the server (which are encrypted) there is nothing of any value
+[00:54:24] <Colgate> so... you really don't care if I had your private keys?
+[00:54:36] <Colgate> that isn't important?
+[00:55:38] <Seoson> Not really. In case of a public site: Yes I would but since this isn't the case and a man in the middle attack against me is unlikely I don't fear that.
+[00:56:01] <Seoson> Revoking a key won't help either way on startcom or not
+[00:56:10] <Colgate> then I guess any discussion on this is pointless
+[00:56:29] <Colgate> because if you don't care about your private keys being stolen, there's no point to this at all
+[00:57:02] <Seoson> Don't get me wrong: If someone would get my keys I would exchange them right away
+[00:58:13] <Seoson> Since my server uses perfect forward security and in case of a leak new keys the only remaining attack vector would be a man in the middle attack which is again unlikely
+[00:58:58] <Seoson> And cannot be stopped by revoking the certificate unless your hosting a very very popular site that's included on local cert blacklists
+[01:00:41] <Seoson> If someone manages to get access to my server (or DNS manger account) even without my keys to be compromised they could achieve the same thing by ordering a new cert.
+[01:13:47] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: Starlight Glimmer did nothing wrong)
+[01:15:43] <Moonlightning> Blah.
+[01:15:52] <Moonlightning> So you can't have a CNAME and an SOA for the same name
+[01:17:08] <Moonlightning> but aliasing the top of the zone to a server's hostname makes more sense than the other way around
+[01:18:25] *** Quits: averagejoey20001 (averagejoey@Pony-m81a8n.lv.cox.net) (Ping timeout: 121 seconds)
+[01:19:38] *** Joins: init3 (Jason@init3.Is.Not.A.Clever.Poni)
+[01:28:04] <Moonlightning> …okay, I shouldn't CNAME the top of the zone.
+[01:28:14] <Moonlightning> …can…can I /PTR/ the top of the zone? <.<
+[01:30:22] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[01:34:57] *** Joins: ariscop__ (Phase4@Pony-lu48ce.lnk.telstra.net)
+[01:44:30] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[01:55:44] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[01:56:18] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[01:57:09] *** Joins: Fallfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au)
+[01:59:17] *** Joins: Sombra (Iceman@Darkhorse21)
+[02:03:26] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (A TLS packet with unexpected length was received.)
+[02:05:30] *** Joins: ColtonDRG (coltondrg@Pony-hajg3g.knrp.1jod.0061.2602.IP)
+[02:20:46] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[02:21:12] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[02:27:26] *** Quits: LordShadowWing (quassel@Pony-9i5.ak4.49.69.IP) (Quit: For the Lunar Republic!!)
+[02:30:12] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[03:11:52] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[03:20:17] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Rain called on account of pony.)
+[03:23:17] *** Joins: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[03:23:17] *** Quits: Fallfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au) (Quit: My people need me!)
+[03:25:17] *** Quits: cyborg_ar (cyborgar@Pony-jbj.f0b.49.190.IP) (Ping timeout: 121 seconds)
+[03:37:35] *** Joins: Lirodon (liroxiv@Pony-49752s.sasknet.sk.ca)
+[03:37:50] <Lirodon> So I have a smartwatch now.
+[03:40:11] <Compu> Lirodon: android wear or apple shit?
+[03:40:58] <Lirodon> Pebble
+[03:43:12] <Compu> mmm
+[03:43:20] <Lirodon> apparently they've tied it into some of the Android Wear APIs for notifications now as of the latest firmware
+[03:43:21] <Compu> better than apple shit ^_^
+[03:43:39] <Lirodon> i.e. the Like and Reply actions on Facebook Messenger were usable in it
+[03:43:55] <Compu> k
+[03:44:03] <Compu> never had a smartwatch
+[03:44:47] <Lirodon> you might like it. this one has MLP watchface options
+[03:45:18] <Lirodon> (someone made Pinkie's "party time" watch from Baby Cakes for it)
+[03:47:08] <Sol> "After the release of the Apple Watch, smart watches exist now!" - The media in general
+[03:47:17] *** Joins: cyborg_ar (cyborgar@Pony-2q9.q1h.25.181.IP)
+[03:49:25] <Compu> Lirodon: sure if only i could afford it
+[03:49:51] <Lirodon> it's only $100 CDN
+[03:50:34] <Compu> yeah that is nowhere near affordable
+[03:50:46] <Lirodon> its relatively affordable
+[03:50:55] <Compu> not for someone on ssi
+[03:51:29] <Lirodon> I got the money for it from a bowling league
+[03:51:49] <Compu> we're not allowed to get money outside of ssi
+[04:01:09] <Colgate> I'm getting a pebble time
+[04:05:03] <Lirodon> Colgate, if only it were at retail
+[04:13:09] <Lirodon> p.s. this is my home screen on my phone because best princess http://41.media.tumblr.com/e70a4f4bccefdde8af5f75a73210e13b/tumblr_noiv3wxy5D1qfsp3io1_1280.jpg
+[04:18:33] <Compu> Lirodon: yus best princess but i prefer animated backgrounds so i have the paperland pro wallpaper
+[04:18:39] <Lirodon> LG G2
+[04:19:13] <Lirodon> supposedly it's gotten an Android 5 update elsewhere but NOT CANADA why
+[04:20:18] <Compu> because canada thats why Lirodon, havent u heard Canadian Idiot by Weird Al? o3o
+[05:14:23] *** Joins: TuxRug (TuxRug@TuxRug)
+[05:14:23] *** Quits: Compu (compu@snuggly.filly) (Quit: No Ping reply in 120 seconds.)
+[05:15:26] *** Quits: CompuDesktop (quassel@snuggly.filly) (Quit: No Ping reply in 210 seconds.)
+[05:16:01] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[05:19:40] *** Joins: CompuDesktop (quassel@snuggly.filly)
+[05:19:42] *** Joins: Compu (compu@snuggly.filly)
+[05:29:44] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[05:31:22] *** MistVeil is now known as Mist|LoL
+[06:11:54] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[06:12:10] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[06:12:14] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[06:20:24] *** Joins: GigabitPony (Gigabit@wonderbolt.wannabe)
+[06:21:01] *** Quits: Gigabit (GigabitPony@wonderbolt.wannabe) (Quit: Need to be alone for a while.)
+[06:27:10] *** GigabitPony is now known as Gigabit
+[06:30:32] *** Joins: Fallfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au)
+[06:37:06] *** Quits: Fallfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au) (Quit: My people need me!)
+[06:41:51] *** Brolf_pog is now known as Shnuggles
+[06:57:51] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[06:58:10] *** Joins: Mike_Coltfield (Larscis@Pony-s8m10m.ph.cox.net)
+[07:15:19] <Twilightlicious> so one of my hard drives
+[07:15:26] <Twilightlicious> windows reports that it writes at like 90mbps
+[07:15:40] <Twilightlicious> but it's an old, slow magnetic disk drive thing
+[07:15:50] <Twilightlicious> so it really only writes at like 1Mbps
+[07:16:16] <Twilightlicious> and then i guess it all buffers up or something and the drive becomes unusable for like half an hour after transfering a large amount of data to it.
+[07:16:21] <Twilightlicious> Do i blame Windows, or the drive? or both? :P
+[07:16:54] *** ariscop__ is now known as Phase
+[07:21:04] <Colgate> /shrug, do a test with hdparm
+[07:27:39] <AppleDash> Twilightlicious: The drive has a cache, so the first little bit of writing will be super fast and then it'll slow down as the cache fills up.
+[07:27:55] <Twilightlicious> But "little bit" isn't little on this drive
+[07:28:02] <Twilightlicious> little bit = 2GB
+[07:28:05] <Twilightlicious> or more
+[07:28:17] <Twilightlicious> lol
+[07:28:41] <Phase> didn't think windows did much write caching
+[07:28:49] <AppleDash> The disk does write caching
+[07:29:04] <Twilightlicious> But that much? lol
+[07:29:10] <AppleDash> No
+[07:29:17] <Twilightlicious> it goes like 90mbps writing for a good 10 to 20 seconds
+[07:29:18] <AppleDash> Usually somewhere between 8 and 64 MB :P
+[07:29:21] <Phase> yeah but in the order of 32MB, one pass over the disk sort of numbers
+[07:29:26] <Twilightlicious> then slows down to near flatline :P
+[07:29:32] <AppleDash> `wa 90Mbps for 20 seconds
+[07:29:34] <derpy> 1800 Mb  (megabits)
+[07:29:45] <AppleDash> `wa (90Mbps for 20 seconds) in megabytes
+[07:29:46] <Phase> `help wa
+[07:29:47] <derpy> 225 MB  (megabytes)
+[07:29:51] <AppleDash> Phase: good luck with help
+[07:29:56] <AppleDash> It's WolframAlpha
+[07:29:56] <Phase> `wa AppleDash
+[07:29:59] <derpy> Dash  (spacecraft) | location  apple.com  (domain) | launch date | 04/02/2002  (13.3 years ago) | None
+[07:29:59] <Phase> ah
+[07:30:02] <AppleDash> lol
+[07:30:03] <Phase> XD
+[07:30:10] <Twilightlicious> It's 90MB/s
+[07:30:13] <Twilightlicious> Whichevr that is
+[07:30:14] <AppleDash> Oh
+[07:30:16] <Phase> AppleDash confirmed for spacecraft
+[07:30:26] <AppleDash> xD
+[07:30:59] <AppleDash> I should document derpy more
+[07:31:00] <Twilightlicious> The drive is one of those Eco Drives that was originally External
+[07:31:04] <Twilightlicious> but then i got bored and now it's internal
+[07:31:51] <AppleDash> `wa Phase4
+[07:31:52] <derpy> 4 phases
+[07:31:55] <AppleDash> ...
+[07:32:01] <Phase> but i'm only one now
+[07:32:01] <AppleDash> Well, she's not wrong
+[07:32:04] <AppleDash> `wa Phase
+[07:32:06] <Twilightlicious> such speeds, much wow http://i.imgur.com/QuFzyRf.png
+[07:32:12] <derpy> phase  (English word) | 1 | noun | any distinct time period in a sequence of events2 | noun | (physical chemistry) a distinct state of matter in a system; matter that is identical in chemical composition and physical state and separated from other material by the phase boundary3 | noun | a particular point in the time of a cycle; measured from some arbitrary zero and expressed as an angle4 | noun | (astronomy) the particular appearance of a body's state of illuminati
+[07:32:16] <AppleDash> I see
+[07:32:27] <Phase> > state of illuminati
+[07:32:30] <Phase> confirmed
+[07:32:37] <Twilightlicious> `wa Luke i am your father
+[07:32:37] <AppleDash> xD
+[07:32:39] <derpy> Luke: No.  No.  That's not true.  That's impossible! | Darth Vader: Search your feelings, you know it to be true! | Luke: No!  No! | (according to Darth Vader and Luke Skywalker in the 1980 film Star Wars: Episode V - The Empire Strikes Back)
+[07:32:49] <Twilightlicious> <3
+[07:33:07] <AppleDash> :D
+[07:42:26] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[07:43:31] *** Quits: Mist|LoL (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[07:51:44] <Moonlightning> > *flush-zones-on-shutdown*: When the nameserver exits due receiving SIGTERM, flush or do not flush any pending zone writes. The default is *flush-zones-on-shutdown `no`.*
+[07:51:46] <Moonlightning> …wut?
+[07:52:35] *** Quits: TuxRug (TuxRug@TuxRug) (Quit: WeeChat 1.1.1)
+[07:52:55] <AppleDash> Moonlightning: What's difficult to understand about that
+[07:53:41] <Moonlightning> AppleDash: Why the daemon would be writing zones at all.
+[07:54:09] *** Quits: cyborg_ar (cyborgar@Pony-2q9.q1h.25.181.IP) (Client exited)
+[07:54:28] <Colgate> zone transfers? /shrug
+[07:54:42] <Colgate> no idea if that's true, just a random thought
+[07:55:01] <Moonlightning> Well right now, there's only one zone, which my server's authoritative for
+[07:55:22] <Moonlightning> I guess if that wasn't the case, I'd want that to be on?
+[07:55:25] <Moonlightning> that option *
+[08:04:26] <Moonlightning> Okay, wtf.
+[08:06:02] <Moonlightning> https://gist.github.com/BlacklightShining/9d18026a3307752a7e2e
+[08:06:03] <PinkiePieBot> [ named.conf ]
+[08:06:33] <Moonlightning> what do you mean, //missing semicolon before//
+[08:06:46] <Moonlightning> The manual clearly states that there's supposed to be a semicolon /after/, not /before/
+[08:07:15] *** Quits: Asoka_White (Asoka@Pony-k3li2h.net-htp.de) (Ping timeout: 121 seconds)
+[08:09:36] *** Joins: Asoka_White (Asoka@Pony-k3li2h.net-htp.de)
+[08:13:05] <AppleDash> Moonlightning: I'd assume that in named.conf.local, you are missing a semicolon somewhere
+[08:13:38] *** Quits: Asoka_White (Asoka@Pony-k3li2h.net-htp.de) (Ping timeout: 121 seconds)
+[08:14:16] <Moonlightning> AppleDash: but it clearly states that the error is at /etc/bind/named.conf:10 >.>
+[08:14:24] <AppleDash> Ignore it
+[08:14:39] <AppleDash> Look at named.conf.local for missing semicolons, probably near or at the end of the file.
+[08:14:54] <Moonlightning> …ohhhh.
+[08:14:58] <Moonlightning> The syntax highlighting was right.
+[08:15:06] <Moonlightning> I was missing a semicolon after a closing curlybrace.
+[08:15:22] <AppleDash> I figured it was something like that
+[08:16:12] * ShivalPonyWolf reads up
+[08:16:30] <ShivalPonyWolf> bind can run domains in master and slave mode
+[08:16:40] <ShivalPonyWolf> when in slave it handles the zone transfer and sync for you from masters
+[08:16:49] <ShivalPonyWolf> so has to write local zone files
+[08:17:07] <ShivalPonyWolf> remember to end your domain enteries with .'s or it has some rather amusing results
+[08:19:56] <AppleDash> ShivalPonyWolf: Such as?
+[08:22:46] <Moonlightning> $ORIGIN example.net.
+[08:22:47] <Moonlightning> baz.example.com.  IN  CNAME  bar.example.com
+[08:22:57] <Moonlightning> canonical name is now bar.example.com.example.net, whoops
+[08:23:32] *** Joins: Phase (Phase4@Pony-ti2r9g.internode.on.net)
+[08:36:11] *** Quits: Lirodon (liroxiv@Pony-49752s.sasknet.sk.ca) (Quit: Leaving)
+[08:39:25] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[08:41:15] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[08:45:08] *** Joins: Asoka (Asoka@Pony-k3li2h.net-htp.de)
+[08:57:22] *** Quits: Sol (Sol@Pony-nc8b4c.res.rr.com) (Quit: Spaaa....I mean sleeeep)
+[09:10:29] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[09:24:49] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:33:17] *** Quits: zeta_ (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[09:37:12] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[09:39:15] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[09:40:57] *** sleumas2k is now known as sleumas2000
+[10:29:21] *** Joins: Fallfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au)
+[10:44:14] *** Neptune is now known as Neptune|sleep
+[10:45:24] *** Finnfinn is now known as FinnSHOWER
+[10:53:54] *** Joins: ThunderBolt (VettleBolt@Sliverpony)
+[10:55:24] *** Quits: ThunderBolt (VettleBolt@Sliverpony) (Quit: Bai Bai)
+[10:58:24] *** Joins: ThunderBolt (VettleBolt@Sliverpony)
+[11:01:52] *** FinnSHOWER is now known as Finnfinn
+[11:02:59] *** Quits: ThunderBolt (VettleBolt@Sliverpony) (Ping timeout: 121 seconds)
+[12:33:11] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[12:34:24] *** Joins: Mike_Coltfield (Larscis@Pony-s8m10m.ph.cox.net)
+[12:38:11] *** Quits: Pony_72235 (WestJ@Pony-2fpt2o.optusnet.com.au) (Ping timeout: 121 seconds)
+[12:58:24] *** Starburn is now known as CardboardBox
+[13:16:12] *** Quits: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se) (Ping timeout: 121 seconds)
+[13:21:29] *** Q0 is now known as Q0|Away
+[13:36:57] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Rain called on account of pony.)
+[13:45:17] *** Joins: WildSoft (WildSoft@Pony-7nb.h37.13.193.IP)
+[14:07:11] *** Quits: coppercore_ (coppercore@Pony-kr5t8h.coppercore.net) (Ping timeout: 121 seconds)
+[14:07:27] *** Joins: WildSoft_ (WildSoft@Pony-9tei06.bredband.comhem.se)
+[14:14:15] *** Quits: WildSoft (WildSoft@Pony-7nb.h37.13.193.IP) (Quit: has left)
+[14:14:16] *** WildSoft_ is now known as WildSoft
+[14:50:58] <Moonlightning> …are unqualified hostnames in DNS queries even allowed?
+[14:51:10] *** Joins: Fillyfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au)
+[14:52:00] *** Quits: Aww (aww@Pony-i71810.us) (Ping timeout: 121 seconds)
+[14:52:20] *** Quits: Apple_Bloom (sid52418@Pony-j5svmv.hqe2.tdoh.8300.2604.IP) (Ping timeout: 121 seconds)
+[14:52:21] *** Quits: Gigabit (Gigabit@wonderbolt.wannabe) (Ping timeout: 121 seconds)
+[14:52:26] *** Quits: frackster (sid20128@Pony-m26s7q.hqe2.tdoh.8300.2604.IP) (Connection closed)
+[14:52:34] *** Joins: Aww (aww@Pony-i71810.us)
+[14:53:20] *** Joins: Apple_Bloom (sid52418@Pony-obrprk.ealing.irccloud.com)
+[14:53:24] *** Joins: GigabitPony (Gigabit@wonderbolt.wannabe)
+[14:53:25] *** Quits: Fallfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au) (Ping timeout: 121 seconds)
+[14:53:36] *** Joins: frackster (sid20128@Pony-utvkq0.uxbridge.irccloud.com)
+[14:54:05] <Lapsus> What the hell, I'm picking up a voice transmission on 121.5 MHz
+[14:55:07] <Lapsus> http://en.wikipedia.org/wiki/Aircraft_emergency_frequency for why I'm confused
+[14:55:07] <PinkiePieBot> [ Aircraft emergency frequency - Wikipedia, the free encyclopedia ]
+[14:55:39] <JustAberrant> presuming it's not screaming.. I assume someone will be around shortly to deal with that? ;p
+[14:58:25] <Moonlightning> XD
+[14:59:23] <AppleDash> lol
+[15:00:29] *** Joins: DataByteBrony (DataByte@Pony-48e6na.lrpe.i2gu.000d.2601.IP)
+[15:09:01] *** Quits: Fillyfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au) (Connection closed)
+[15:09:25] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Connection closed)
+[15:10:33] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[15:18:56] *** Joins: cyborg_ar (cyborgar@Pony-r1v964.neunet.com.ar)
+[15:45:26] *** Quits: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se) (Quit: Everywhere I look I see Dust Mites! :o)
+[16:07:20] *** Joins: WestJ (WestJ@Pony-2fpt2o.optusnet.com.au)
+[16:07:28] *** WestJ is now known as Pony_89185
+[16:25:52] <DataByteBrony> https://www.dropbox.com/s/2rqvzc7t48uggvs/emoj3.png?dl=0
+[16:47:57] *** Joins: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se)
+[17:13:18] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Connection closed)
+[17:14:24] *** Quits: cyborg_ar (cyborgar@Pony-r1v964.neunet.com.ar) (Connection closed)
+[17:14:36] *** Joins: cyborg_ar (cyborgar@Pony-r1v964.neunet.com.ar)
+[17:19:37] *** Quits: cyborg_ar (cyborgar@Pony-r1v964.neunet.com.ar) (Ping timeout: 121 seconds)
+[17:55:49] *** Quits: M1CHL0D[FireBolt] (Michl0d@Pony-8s6.3h9.53.72.IP) (Ping timeout: 121 seconds)
+[17:56:20] *** Joins: M1CHL0D[FireBolt] (Michl0d@Pony-8s6.3h9.53.72.IP)
+[18:15:05] <Seoson> *Important* Critical security flaw in proftpd. Check your version number and make sure you are above or have 1.3.4e / 1.3.5. If not kill the deamon. There are currently no updates for a few distros and the exploit is out and in active use.
+[18:18:10] <Colgate> what is proftpd?
+[18:18:23] <Seoson> A very common FTP server
+[18:18:29] <Colgate> ah
+[18:18:45] <Seoson> I use it on my debian server.
+[18:21:05] <Seoson> Exploit code can be found here (It's in public, so it doesn't matter) https://github.com/nootropics/propane. "proftpd --version" to check your version.
+[18:30:33] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[18:36:07] *** Joins: Asoka_White (Asoka@Pony-cm14rh.net-htp.de)
+[18:39:19] *** Quits: Asoka (Asoka@Pony-k3li2h.net-htp.de) (Ping timeout: 121 seconds)
+[18:40:32] *** [A]McKey is now known as McKey
+[18:40:38] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[18:44:52] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[19:12:18] *** McKey is now known as [A]McKey
+[19:22:17] *** CardboardBox is now known as Starburn
+[19:31:39] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[19:35:28] *** Joins: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net)
+[19:53:52] *** [A]McKey is now known as McKey
+[20:08:37] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[20:10:18] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[20:13:30] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Ping timeout: 121 seconds)
+[20:17:41] *** Quits: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se) (Connection closed)
+[20:54:04] *** Joins: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se)
+[20:58:02] *** Joins: Crimson_Tail (Bluepon@Pony-boq47v.s0tm.sdub.0151.2601.IP)
+[21:04:03] <ola> https://dl.dropboxusercontent.com/u/14556313/aeshattr.jpg
+[21:05:26] *** GigabitPony is now known as GigaWork
+[21:05:54] <Moonlightning> dat surprised SD card
+[21:06:01] <Twilightlicious> well, that's new. http://i.imgur.com/cqpvfSA.png
+[21:06:35] * Twilightlicious see's Nagato
+[21:07:16] <ola> ;p
+[21:08:43] <Moonlightning> Add three more SD cards, and you'll have an unamused one, a tatzl one, and a cute one.
+[21:10:29] <Moonlightning> > aeshattr
+[21:11:24] <Moonlightning> the Alternatively Extreme SHell's ATTRibutes
+[21:13:50] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[21:14:10] <sleumas2000> aeshattr
+[21:15:04] <Moonlightning> Hush. :p
+[21:21:03] *** Joins: zeta_ (Bluepon@Pony-mfh7oq.md.comcast.net)
+[21:24:04] *** Quits: Crimson_Tail (Bluepon@Pony-boq47v.s0tm.sdub.0151.2601.IP) (Ping timeout: 121 seconds)
+[21:28:05] *** zeta_ is now known as Crimson_Tail
+[21:28:34] *** Crimson_Tail is now known as Pony_11395
+[21:30:39] *** Pony_11395 is now known as Crimson_Tail
+[21:50:12] *** Joins: Sol (Sol@Pony-nc8b4c.res.rr.com)
+[21:53:00] *** Quits: Pony_90391 (Sin@Pony-j8c.vrk.49.68.IP) (Ping timeout: 121 seconds)
+[22:08:38] *** Joins: Sombra (Iceman@Darkhorse21)
+[22:12:39] *** Quits: sniperfox (sniperfox@Pony-raa.vkb.114.167.IP) (Quit: ZOMG new weechat)
+[22:12:56] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Connection closed)
+[22:13:14] *** Joins: sniperfox (sniperfox@Pony-htd84a.distributed.denialofservice.org)
+[22:13:20] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[22:19:23] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[22:22:25] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[22:22:37] *** sleumas2k is now known as sleumas2000
+[22:27:55] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Quit: I have a bad case of real life to attend to.)
+[22:28:21] *** Joins: sleumas2000 (sleumie@Pony-8oilbp.as13285.net)
+[22:28:48] *** sleumas2000 is now known as Pony_77253
+[22:29:26] *** Pony_77253 is now known as sleumas2k
+[22:29:28] *** sleumas2k is now known as sleumas2000
+[22:43:15] *** Joins: Sin (Sin@is.hustlin.everyday)
+[22:43:26] <Twilightlicious> https://www.youtube.com/watch?v=XHrskkHf958
+[22:43:27] <PinkiePieBot> [ Official Launch Trailer - The Witcher 3: Wild Hunt - 301 views - 3m 46s long - 901 likes - 98.47% ]
+[22:53:58] *** Joins: coppercore (coppercore@Pony-kr5t8h.coppercore.net)
+[22:56:35] *** Joins: cyborg_ar (cyborgar@Pony-2q9.q1h.25.181.IP)
+[23:03:34] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:05:20] *** Neptune|sleep is now known as Neptune
+[23:35:15] *** Quits: cyborg_ar (cyborgar@Pony-2q9.q1h.25.181.IP) (Client exited)
+[23:37:16] *** Joins: cyborg_ar (cyborgar@Pony-2q9.q1h.25.181.IP)
+[23:38:46] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[23:39:03] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)

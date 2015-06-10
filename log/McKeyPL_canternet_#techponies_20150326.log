@@ -1,0 +1,805 @@
+[00:01:13] *** Quits: Asoka_White (Asoka@Pony-3m7plm.net-htp.de) (Ping timeout: 121 seconds)
+[00:01:14] *** Quits: Kiyiko (NULL@Pony-9u4h86.dyn.nltelcom.net) (Z-Lined: Ban evasion)
+[00:01:28] *** Joins: Kiyiko (NULL@Pony-q3q76f.dyn.nltelcom.net)
+[00:01:54] *** Quits: Kiyiko (NULL@Pony-q3q76f.dyn.nltelcom.net) (Z-Lined: Ban evasion)
+[00:04:26] *** Joins: Asoka_White (Asoka@Pony-3m7plm.net-htp.de)
+[00:06:37] *** Joins: Asoka (Asoka@Pony-8ugl5r.net-htp.de)
+[00:06:44] *** worthless is now known as Gigabit
+[00:09:48] *** Quits: Asoka_White (Asoka@Pony-3m7plm.net-htp.de) (Ping timeout: 121 seconds)
+[00:29:54] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[00:33:46] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[00:35:41] <MistVeil> There, finished cleaning the server room, at least the stuff around the rack
+[00:43:49] *** Joins: nscoots (FreyGrimrod@Pony-boq1fu.sub-70-192-12.myvzw.com)
+[00:47:07] *** init3 is now known as Init3-away
+[00:50:10] *** Quits: Crimson_Tail (ChaoticRift@Pony-5jkijg.7h3b.037j.000a.2601.IP) (Quit: Oops, a kernel panic)
+[00:50:48] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[00:52:31] *** Joins: Crimson_Tail (ChaoticRift@Pony-9g0vib.7h3b.037j.000a.2601.IP)
+[01:12:19] *** Init3-away is now known as init3
+[01:12:43] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Quit: Saliendo)
+[01:36:51] *** Neptune|sleep is now known as Neptune
+[02:03:29] <AppleDash> Quick question... In Python, it's safe to call something like subprocess.check_output() with user input as long as I don't set shell=True, right?
+[02:03:54] <AppleDash> Like, for exaple, result = subprocess.check_output(["dig", "+short", user_inputted_ip]_
+[02:03:56] <AppleDash> )
+[02:03:58] <AppleDash> Ignore the _
+[02:04:02] <AppleDash> example*
+[02:07:12] *** Joins: lablayers (uid55894@Pony-s37kec.charlton.irccloud.com)
+[02:09:03] <JustAberrant> :)
+[02:11:41] <AppleDash> JustAberrant: !!!
+[02:12:07] <AppleDash> JustAberrant: https://gist.githubusercontent.com/AppleDash/dacbbe32c2fd69e970a6/raw/6c6ae93cc483a19c6c7b4999233f490208b57bf4/justaberrant_documentation.txt
+[02:12:12] <AppleDash> I have begun documenting the bot
+[02:12:32] *** \m is now known as mniip
+[02:13:38] <JustAberrant> haha.. so much sigh
+[02:13:41] <JustAberrant> like.. all the sigh
+[02:13:49] <AppleDash> lol
+[02:13:57] <AppleDash> Intended response has been evoked :P
+[02:15:00] <AppleDash> I sadly can't think of anything else to add
+[02:15:47] <JustAberrant> I have no actual response ;p
+[02:15:56] <AppleDash> lol
+[02:17:24] <nscoots> meep meep
+[02:17:35] <Crimson_Tail> anchovies
+[02:17:44] <Crimson_Tail> meep
+[02:39:25] * JustAberrant does random things to AppleDash during this period of inactivity
+[02:39:29] <JustAberrant> .. weird things
+[02:39:53] <AppleDash> :(
+[02:40:54] <ShivalPonyWolf> anyone able to help working out what some decompiled C code does?
+[02:41:15] <JustAberrant> how big is it?
+[02:41:23] <ShivalPonyWolf> http://221.121.151.25/fizzle.c
+[02:41:39] <ShivalPonyWolf> it takes in a 16 character string and spits out a 16 character string all scrambled
+[02:44:48] <AppleDash> If you know that, then why are you needing to know?
+[02:45:30] <ShivalPonyWolf> becuase i need to reverse it
+[02:45:45] <AppleDash> What's it for?
+[02:45:55] <ShivalPonyWolf> hackyeaster challenge
+[02:46:01] *** Quits: lablayers (uid55894@Pony-s37kec.charlton.irccloud.com) (Quit: )
+[02:46:03] <ShivalPonyWolf> im trying to learn how its done
+[02:46:04] <AppleDash> Ah
+[02:46:10] <ShivalPonyWolf> but its a little beyond my current skill level
+[02:46:24] <JustAberrant> tiger 160 maybe?
+[02:46:25] <ShivalPonyWolf> i reversed one of the functions
+[02:49:35] * JustAberrant does not have an idea
+[02:53:33] <ShivalPonyWolf> hmm tiger160 doesnt matcht he sample
+[02:53:39] <ShivalPonyWolf> but thats an idea
+[02:53:47] <ShivalPonyWolf> going to try other hashing methods to see if they return the sample
+[02:54:06] <JustAberrant> the fact that it specifically limits to 16 chars is weird
+[02:55:09] <JustAberrant> maybe Crypt16 ? :D
+[02:55:18] <ShivalPonyWolf> well its expecting a 16 character string in and 16 out
+[02:55:26] <ShivalPonyWolf> its the way its scrambling things
+[02:59:08] *** Quits: Asoka (Asoka@Pony-8ugl5r.net-htp.de) (Ping timeout: 121 seconds)
+[03:02:16] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Killed (NickServ (GHOST command used by Legion_Red!LegionRed@Pony-drcckh.res.rr.com)))
+[03:02:20] *** Joins: Legion_Red (LegionRed@Pony-drcckh.res.rr.com)
+[03:02:22] *** Quits: Legion_Red (LegionRed@Pony-drcckh.res.rr.com) (Quit: The most Metal thing never.)
+[03:02:47] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[03:07:42] <ShivalPonyWolf> i dont think its a hash method 
+[03:08:03] <ShivalPonyWolf> i have 2 eggs left in this challenge and this one is just driving me nuts lol
+[03:08:35] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[03:08:46] *** Quits: ThunderBolt (ThunderBolt@Sliverpony) (Ping timeout: 121 seconds)
+[03:09:28] <mniip>         v1->e2 = (int8_t)*(int32_t *)3;
+[03:09:30] <mniip> what even
+[03:09:44] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[03:10:00] <mniip> ah I see
+[03:10:14] *** Joins: ThunderBolt (ThunderBolt@Sliverpony)
+[03:14:46] <mniip> ShivalPonyWolf, can you get the original bytecode?
+[03:14:54] <mniip> this C is unclear
+[03:15:48] <ShivalPonyWolf> mniip: yes i have that
+[03:15:59] <ShivalPonyWolf> give me a sec
+[03:18:16] *** Joins: Asoka (Asoka@Pony-8ugl5r.net-htp.de)
+[03:18:31] <Schism> Have some insanely cute Twi.  https://derpibooru.org/855316
+[03:18:32] <PinkiePieBot> [ Safe adorkable animated canterlot wondercolts cheerleader clothes cute dancing ears edit equestria girls eyes closed grin miniskirt open mouth questionable source sfw edit skirt tail twiabetes twilight sparkle upvotes galore ]
+[03:18:50] <Schism> Huh.  Sorry, that was meant to be in EQD.
+[03:20:06] *** init3 is now known as Princess_C2H5OH
+[03:20:55] <ShivalPonyWolf> mniip: http://221.121.151.25/fizzle.asm
+[03:21:05] <ShivalPonyWolf> mniip: http://221.121.151.25/fizzle.svg - the map
+[03:21:24] <mniip> nooooooo
+[03:21:31] <mniip> intel syntax
+[03:24:14] <ShivalPonyWolf> lol AppleDash having fun solving eggs now to
+[03:24:27] <AppleDash> ShivalPonyWolf: Intense boredom :P
+[03:24:41] <ShivalPonyWolf> its a fun little challenge
+[03:24:43] <AppleDash> It is
+[03:25:09] <ShivalPonyWolf> http://hackyeaster.hacking-lab.com/ - for anyone else interested
+[03:30:39] *** Princess_C2H5OH is now known as init3
+[03:33:13] <shnuggles> hmm
+[03:33:21] <shnuggles> its sad that i'm stuck on the first one
+[03:34:46] <mniip> ShivalPonyWolf, that's so much simpler than the assembly
+[03:35:02] <mniip> er
+[03:35:07] <mniip> ShivalPonyWolf, that's so much simpler than the disassemly
+[03:36:19] <shnuggles> sigh... can someone help me feel stupid and give me a hint to the first puzzle? >.<
+[03:36:30] <ShivalPonyWolf> um what is?
+[03:36:36] <shnuggles> puzzword
+[03:36:50] <ShivalPonyWolf> the raw compared to the decompiled?
+[03:37:04] <shnuggles> oh not talking to me lol
+[03:37:04] <mniip> yeah
+[03:37:08] <mniip> your decompiler sucks
+[03:37:22] <ShivalPonyWolf> it was just one i found
+[03:37:33] <ShivalPonyWolf> i was hoping it would make it a little easier lol
+[03:39:38] <ShivalPonyWolf> if it had been .net or like the other half java it would have been soo much better
+[03:39:48] <ShivalPonyWolf> theres far better decompilers
+[03:43:34] <JustAberrant> well, unless java has been intentionally obfuscated, "decompiling" is just mapping the byte code back to source
+[03:43:54] <ShivalPonyWolf> yeah
+[03:44:15] <JustAberrant> member names are even preserved in java for reflection, etc
+[03:44:54] <mniip> ok, got an AT&T disassembly
+[03:45:34] * JustAberrant does not have a mind for reverse engineering :(
+[03:46:18] <ShivalPonyWolf> i want to try and learn
+[03:47:08] <ShivalPonyWolf> mniip: i will need to look up how ot generate one
+[03:47:19] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[03:48:04] <mniip> objdump -D -b binary -m i8086 -M x86-64
+[03:48:45] <mniip> also this is a weird calling convention
+[03:48:48] <ShivalPonyWolf> thanks
+[03:49:31] <mniip> 0x30(%rsp) is like
+[03:49:43] <mniip> 0x14 bytes past the stack fram (0x1C)
+[03:49:54] <mniip> but then there's 0x10 bytes of saved registers
+[03:50:04] <mniip> no wait there's 0x20
+[03:50:42] <mniip> does that access the high part of %rdi?
+[03:53:32] <ShivalPonyWolf> the function starts at: 740 - http://221.121.151.25/libhe2015_Lizzle.dll.txt
+[03:54:00] <mniip> >dll
+[03:54:08] <mniip> that explains the fucked up calling convention
+[03:54:24] <ShivalPonyWolf> oh sorry i thought i mentioned that
+[03:54:58] <ShivalPonyWolf> on a note this format now looks more like what ive seen in examples
+[03:55:10] <ShivalPonyWolf> i didnt realise there were differnt ways of disassembling 
+[03:56:47] <mniip> ok screw that I can't seem to figure out what 0x30(%rsp) is
+[04:00:02] <mniip> sigh
+[04:00:08] <mniip> can never remember how imul works
+[04:08:47] *** init3 is now known as Init3-away
+[04:08:50] *** Init3-away is now known as init3
+[04:09:26] <ShivalPonyWolf> i was hoping this function just returned the orgional when you can it with scambled data
+[04:09:29] <ShivalPonyWolf> unfortuantly not the case
+[04:09:42] <ShivalPonyWolf> then id just have to reverse the order the functions were called in
+[04:09:59] <ShivalPonyWolf> there are 4 functions. 2 in java 2 in the dll
+[04:10:11] <ShivalPonyWolf> the java is a little applet that asks for a password
+[04:10:23] <ShivalPonyWolf> it then scambles it and compares it to a scambled value that you can extract from the java
+[04:10:47] <ShivalPonyWolf> so to get back to the orgional what i am trying is to reverse all the fucntions and then run them in reverse
+[04:10:57] <ShivalPonyWolf> so i can use the scmabled value to return the orgional key
+[04:11:02] <ShivalPonyWolf> that is then used to decrypt a file
+[04:11:57] <ShivalPonyWolf> ive gotten 3 of the 4
+[04:13:02] <ShivalPonyWolf> the 1st converts upper to lower and lower to upper. the second inciments each letter by 1 if its z it rotates it around to a
+[04:13:05] <mniip> ShivalPonyWolf, so I'm decompiling this by hand
+[04:13:08] <mniip> and it's rather simple
+[04:13:16] <ShivalPonyWolf> the 3rd reverses it
+[04:13:43] <ShivalPonyWolf> mniip: do you have any refrence material i could look up or something i could look up on how you are doing that?
+[04:13:48] <ShivalPonyWolf> so i can get an idea myself
+[04:16:14] <mniip> um
+[04:16:23] <mniip> just reading assembly line by line annotating the C equivalent
+[04:16:35] <ShivalPonyWolf> ahhh
+[04:16:57] <ShivalPonyWolf> i need to read up on what the equivlant C to assembly is then
+[04:17:11] <ShivalPonyWolf> this is something ive wanted to learn how to do for ages
+[04:17:24] <ShivalPonyWolf> but ive never had the time or the need 
+[04:18:26] <mniip>   73:	f6 c3 03             	test   $0x3,%bl
+[04:18:27] <mniip> weird
+[04:20:27] <ShivalPonyWolf> int he decompiled 3 there is a line
+[04:20:29] <ShivalPonyWolf>  if (g12 == 3) {
+[04:20:41] <mniip> that's not really what that means
+[04:20:44] <ShivalPonyWolf> oh
+[04:20:49] * ShivalPonyWolf goes to read what 'test' is
+[04:20:53] <mniip> we're testing %bl
+[04:20:56] <mniip> not the whole %ebx
+[04:21:07] <mniip> which is also weird given %ebx is a pointer
+[04:24:52] <mniip> or is it
+[04:25:24] <Starthunder> I pulled a five-byte string out of the running memory of a C program I'd written once :3
+[04:25:30] <Starthunder> I was way too proud of it.
+[04:29:03] <ShivalPonyWolf> just reading though the isntructions in x86 to see how they work in more detail
+[04:29:42] *** Quits: shnuggles (Brolf_pog@Pony-c0qhtu.client.bresnan.net) (Connection closed)
+[04:30:22] <Starthunder> No debug information, anyway.
+[04:30:30] <Starthunder> by the way *
+[04:32:58] <mniip> ShivalPonyWolf, http://qp.mniip.com/p/qv0
+[04:33:02] <mniip> simple translation
+[04:33:07] <mniip> now goes expression reduction
+[04:33:57] *** Quits: Crimson_Tail (ChaoticRift@Pony-9g0vib.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[04:36:15] *** init3 is now known as Init3-away
+[04:38:27] <ShivalPonyWolf> reading though now
+[04:39:14] <mniip> hmm no, I should try ungotoing first
+[04:39:54] <ShivalPonyWolf> lol ungotoing
+[04:39:55] <ShivalPonyWolf> i like that
+[04:40:47] <tiwake> what
+[04:40:52] <tiwake> this is dumb
+[04:40:54] <tiwake> https://bronycommune.wordpress.com/
+[04:42:59] <mniip> ShivalPonyWolf, I messed up
+[04:43:11] <mniip>   71:	75 e9                	jne    0x5c
+[04:43:11] <mniip> if(C != 0x10) goto L5c;
+[04:43:13] <mniip> not ==
+[04:43:47] <ShivalPonyWolf> oh you probably know this already but what oyu have as S is a pointer to the input and B is a pointer to the output
+[04:43:55] <ShivalPonyWolf> the java code that calls the dll function is this
+[04:44:07] <ShivalPonyWolf>         Memory mParam = new Memory(s.length() + 1);
+[04:44:07] <ShivalPonyWolf>         Memory mResult = new Memory(s.length() + 1);
+[04:44:07] <ShivalPonyWolf>         mParam.setString(0L, s);
+[04:44:07] <ShivalPonyWolf>         dll.Fizzle(mParam, mResult);
+[04:44:08] <ShivalPonyWolf>         return mResult.getString(0L);
+[04:44:19] <Colgate> tiwake: yes it is :P
+[04:47:22] <mniip> ShivalPonyWolf, http://qp.mniip.com/p/q51
+[04:50:32] <tiwake> Colgate: "...there should be somewhere in this world where magic will still exist." quote from the front page... heh
+[04:50:55] <mniip> I wonder why's A-0x20
+[04:50:57] <mniip> needed
+[04:51:25] <mniip> ohh
+[04:51:53] <mniip> http://qp.mniip.com/p/q5q
+[04:53:54] <ShivalPonyWolf> so you are really good at this. i soo need to learn how this is done
+[04:54:12] *** Init3-away is now known as init3
+[04:54:55] *** Joins: Brolf_pog (Brolf_pog@Pony-c0qhtu.client.bresnan.net)
+[04:56:59] *** Kinsley is now known as PrincessCelestia
+[04:57:10] <ShivalPonyWolf> what i sthe & 0xFF doing?
+[04:57:34] <tiwake> Colgate: can they get any further from reality?
+[04:57:45] <ShivalPonyWolf> i might be wrong here so correct my if im wrong
+[04:57:50] <AppleDash> Bitwise AND
+[04:58:22] <ShivalPonyWolf> its doing a per character loop until it gets to the 10th character
+[04:58:50] <AppleDash> 0x10 != 10
+[04:58:58] <ShivalPonyWolf> sorry 16th
+[04:59:04] * AppleDash nods
+[04:59:25] <ShivalPonyWolf> so its looping over the whole string 1 at a time
+[04:59:43] <ShivalPonyWolf> it then doing somethign to make sure everything is in the primatable character range
+[05:00:24] <mniip> woah dude
+[05:00:30] <mniip> this thing
+[05:00:32] <ShivalPonyWolf> printable
+[05:00:50] <mniip> I get a feeling that this is a big troll
+[05:00:57] <ShivalPonyWolf> oh?
+[05:01:06] <ShivalPonyWolf> it wouldnt surpise me
+[05:01:13] <ShivalPonyWolf> some of the other challenge elements have been very trolly
+[05:02:04] <AppleDash> What gives you that feeling mniip?
+[05:02:20] <mniip> I'm decoding the shuffling in both branches of that if
+[05:02:22] <ShivalPonyWolf> http://hackyeaster.hacking-lab.com/hackyeaster/challenge25.html - its this challenge btw if i didnt link it
+[05:02:23] <PinkiePieBot> [ Hacky Easter 2015 ]
+[05:02:57] *** Joins: nscoots1 (FreyGrimrod@Pony-boq1fu.sub-70-192-12.myvzw.com)
+[05:03:51] <mniip> http://qp.mniip.com/p/q5a
+[05:03:54] *** Quits: nscoots (FreyGrimrod@Pony-boq1fu.sub-70-192-12.myvzw.com) (Ping timeout: 121 seconds)
+[05:03:58] <mniip> now it's more apparent
+[05:04:04] <mniip> that the 'if' does nothing
+[05:04:04] <ShivalPonyWolf> mniip: just incase http://221.121.151.25/fizzle.c - the top is what a sample of 16 As returns when feeding it directly into the dll via ollydbg
+[05:04:34] <Colgate> tiwake: probably :P
+[05:07:45] <mniip> hmm
+[05:07:54] <mniip> apparently I've made a mistake somewhere
+[05:09:33] <ShivalPonyWolf> oh so weird thing
+[05:09:38] <ShivalPonyWolf> if i feed the scambled data back as the input
+[05:09:48] <ShivalPonyWolf> i get 2 lots of 8 characters the same
+[05:10:56] <ShivalPonyWolf> 004205A0 >50 62 78 37 55 77 42 6C  Pbx7UwBl
+[05:10:56] <ShivalPonyWolf> 004205A8  50 62 78 37 55 77 42 6C  Pbx7UwBl
+[05:11:27] <ShivalPonyWolf> unfortuntaly a 3rd time just scambles it more
+[05:11:36] <ShivalPonyWolf> it owuld have been nice if it returnd it to a*16
+[05:14:14] <mniip> my code seems close to yours
+[05:14:31] <mniip> to your decompiler's I mean
+[05:14:35] <mniip> but it returns gibberish
+[05:14:39] <ShivalPonyWolf> lol
+[05:14:44] <ShivalPonyWolf> yay for gibberish
+[05:14:47] <mniip> 86 95 4b 5e 18 2f ed ad  01 0b 0c 0f b9 c0 c9 d4
+[05:15:18] <ShivalPonyWolf> thats for 16 'a'
+[05:16:13] <mniip> yes
+[05:16:49] <mniip> oh hold on
+[05:16:53] <mniip> byte 0
+[05:16:56] <mniip> is never modified
+[05:29:40] <ShivalPonyWolf> lol mniip if you solve this (and dont play the rest of the game) you should create an account and just submit this 1 answer
+[05:30:15] *** init3 is now known as Init3-away
+[05:30:32] <ShivalPonyWolf> just looking at the scroes its interesting to see that some people have solved alot yet most are missing the same few
+[05:31:15] <Starthunder> Is it just me, or should there be a `cryptsetup` binary in the initramfs?
+[05:31:18] <Starthunder> Because there isn't one.
+[05:33:37] <ShivalPonyWolf> i think im getting abit of an idea how oyu mapped back certain things to the assembly now
+[05:33:53] <ShivalPonyWolf> reading up on the instruction set has helped abit to
+[05:35:44] * ShivalPonyWolf reads up on why you would xor %ecx,%ecx
+[05:36:30] <ShivalPonyWolf> interesting little space saver lol
+[05:39:08] <ShivalPonyWolf> it is really impressive how much can be done with such a simple range of commands
+[05:39:20] <ShivalPonyWolf> moving thigns around and manipulating them
+[05:44:00] *** Quits: nscoots1 (FreyGrimrod@Pony-boq1fu.sub-70-192-12.myvzw.com) (Ping timeout: 121 seconds)
+[05:44:04] *** Joins: nscoots (FreyGrimrod@Pony-boq1fu.sub-70-192-12.myvzw.com)
+[05:44:52] <AppleDash> Starthunder: It should not? Why would it?
+[05:45:34] <Starthunder> AppleDash: I thought `cryptsetup` needed to get invoked to mount the encrypted root filesystem.
+[05:45:44] <Starthunder> thought that was what prompted for a passphrase during boot
+[05:45:56] <AppleDash> It needs to get invoked to mount the encrypted root filesystem when you're doing it manually
+[05:46:10] <Starthunder> What happens normally?
+[05:46:13] <AppleDash> Fairly certain that the on-boot mounting is a kernel module or something
+[05:46:15] <Starthunder> 'cos whatever happens normally, isn't.
+[05:47:15] <Starthunder> Went back to the liveusb and `apt-get install --reinstall`ed lvm2, cryptsetup, and cryptsetup-bin for good measure. Don't think it helped any.
+[05:47:22] <AppleDash> ShivalPonyWolf: I have the codes for 2 of the phone-based challenges but their stupid QR reader won't read them
+[05:48:31] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[05:50:48] <ShivalPonyWolf> AppleDash: save the image and zoom in
+[05:50:58] <ShivalPonyWolf> well make it full size
+[05:51:03] <ShivalPonyWolf> i had that issue to
+[05:51:27] <ShivalPonyWolf> oh you mean scanner for phoen challenges so you can scan it
+[05:51:31] <ShivalPonyWolf> i screenshotted the phone
+[05:51:45] <AppleDash> Yeah
+[05:51:49] <AppleDash> I've tried that
+[05:52:04] <AppleDash> I screenshotted the phone, put the image on my PC, then tried to scan my screen
+[05:52:06] <AppleDash> no such luck
+[05:53:07] <AppleDash> I'm considering vectoring the QR codes or something and then rending a higher res
+[05:53:07] <AppleDash> lol
+[05:53:11] <AppleDash> rendering*
+[05:53:51] <AppleDash> I also tried messing with levels and such in GIMP to add more contrast between the 2 colors
+[05:53:55] <AppleDash> that didn't work either
+[05:55:55] <AppleDash> Or maybe I'll write a more tolerant QR code library
+[05:55:55] <AppleDash> lol
+[06:08:05] <ShivalPonyWolf> well time to finish work
+[06:17:51] *** PrincessCelestia is now known as Kinsley
+[06:38:48] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[06:45:49] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[07:14:33] *** Joins: shutterbox (Sweet@Pony-amu.5r4.174.73.IP)
+[07:29:17] *** Quits: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[07:47:48] *** Joins: Fallfeathers (Fallfeather@Pony-u71ip5.internode.on.net)
+[08:11:12] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:27:56] *** Quits: shutterbox (Sweet@Pony-amu.5r4.174.73.IP) (Connection closed)
+[08:39:16] *** Joins: Phase4 (Phase4@Pony-arvig7.internode.on.net)
+[08:53:11] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[09:08:37] *** Neptune is now known as Neptune|sleep
+[09:20:24] *** Init3-away is now known as init3
+[09:20:53] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Connection closed)
+[09:24:47] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:29:02] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[09:38:44] *** Quits: Xena (liska@yolo-swag.com) (Ping timeout: 121 seconds)
+[09:53:12] *** Joins: Xena (liska@yolo-swag.com)
+[10:19:22] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[10:28:44] *** Quits: Compu (compu@snuggly.filly) (A TLS packet with unexpected length was received.)
+[10:48:44] *** Quits: miggyb (miggyb@horsetornado.co.uk) (Ping timeout: 121 seconds)
+[10:51:03] *** Joins: Compu (compu@snuggly.filly)
+[10:54:55] *** Joins: miggyb (miggyb@Pony-ko7510.compute.amazonaws.com)
+[11:06:21] *** Joins: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com)
+[11:20:56] *** Q0 is now known as Q0|Away
+[11:24:20] *** init3 is now known as Init3-away
+[11:28:35] *** ThunderBolt is now known as ThunderBolt|Sleeping
+[11:48:53] <ShivalPonyWolf> egg26 get
+[11:49:39] <ShivalPonyWolf> just that last one mniip was helping with
+[11:50:51] *** Init3-away is now known as init3
+[12:04:04] *** init3 is now known as Init3-away
+[12:05:05] *** Init3-away is now known as init3
+[12:18:14] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[12:30:36] *** Quits: nscoots (FreyGrimrod@Pony-boq1fu.sub-70-192-12.myvzw.com) (Ping timeout: 121 seconds)
+[12:37:52] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[12:45:25] *** Joins: LoneShades (uid71401@Pony-un9cbp.charlton.irccloud.com)
+[12:45:56] *** LoneShades is now known as ShadyLightz
+[12:47:38] *** Parts: ShadyLightz (uid71401@Pony-un9cbp.charlton.irccloud.com) ("")
+[12:48:16] <Googie> http://abc.net.au/news/2015-03-26/data-retention-laws-pass-federal-parliament/6351278
+[12:48:18] <PinkiePieBot> [ Data retention laws pass Federal Parliament as Coalition and Labor vote together - ABC News (Australian Broadcasting Corporation) ]
+[13:32:22] *** init3 is now known as Init3-away
+[13:58:28] *** Joins: DataByteBrony (DataByte@Pony-4uuol7.lrpe.i2gu.000d.2601.IP)
+[14:28:00] *** Quits: johnsey (johnsey@netadmin.canternet.org) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Sellyme (quassel@Pony-9oec4l.nectar.org.au) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Neptune|sleep (neptune@Planet.Neptune) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Neptune|offline (Neptune@Pony-6p51f8.elitebnc.org) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Phase4 (Phase4@Pony-arvig7.internode.on.net) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: reiuiji (reiuiji@nuclear.raven) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Kinsley (JKinsley@The.Princess.Is.In) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Lorix_ (Lorix_@flutter.shy.yay) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Starthunder (blackl@property.of.lightningcrash) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Hck (Hexie@Twilight.Is.Best.Pony) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: ola (ola@Pony-k5v.64a.226.188.IP) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Sin (Sin@is.hustlin.everyday) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: GauntletWizard (ted@Pony-3mqsfi.com) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Fusl (Fusl@1.0.0.127.in-addr.arpa.li) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Rylee (rylai@within.a.hail.of.gemstones) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: miggyb (miggyb@horsetornado.co.uk) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Colgate (rabbit@brushie.horse) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: enginemaniac (flail@flail.flail.flail) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Red_M (potato@Pony-4pa04c.red-m.net) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: sniperfox (sniperfox@Pony-htd84a.distributed.denialofservice.org) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: JustAberrant (JustAberran@Pony-lq4qe0.com) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: derpy (derp@muffins) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Stik (drakon@Pony-ql55m5.cable.virginm.net) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: GumballCrash (GumballCras@0.to.pony.10secondsflat) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Cameron_D (cameron@cam.mylittle.horse) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Gigabit (Gigabit@AppleDash.is.my.pet) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Finnfinn (Finnfinn@finn.isher) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Ruthalawake (Ruthalas@Pony-bi2qh3.wa.comcast.net) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: SilverEagle (SilverEagle@Pony-1nc9bc.busterneece.com) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: AppleDash (appled@Gyro.Pony.Is.Best.Pony) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: Eivel (Eivel@Keep.Calm.and.Pony.On) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: mniip (mniip@Pony-o9q.v2g.219.178.IP) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: mkr (mkr@Pony-iinahj.radioyay.net) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: saneki (saneki@Pony-torblo.zylongaming.com) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: klaxa (klaxa@Pony-1kuq6f.eu) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:00] *** Quits: AutoLapsus (Lapsus@Totally.Is.A.Network.Service) (daring.canternet.org cloudchaser.canternet.org)
+[14:28:25] *** Joins: reiuiji (reiuiji@nuclear.raven)
+[14:28:25] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[14:28:25] *** Joins: GauntletWizard (ted@Pony-3mqsfi.com)
+[14:28:25] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[14:28:25] *** Joins: Jouva (jouva@Pony-535ork.fios.verizon.net)
+[14:28:25] *** Joins: Eivel (Eivel@Keep.Calm.and.Pony.On)
+[14:28:25] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[14:28:25] *** Joins: Kinsley (JKinsley@The.Princess.Is.In)
+[14:28:25] *** Joins: SilverEagle (SilverEagle@Pony-1nc9bc.busterneece.com)
+[14:28:25] *** Joins: Colgate (rabbit@brushie.horse)
+[14:28:25] *** Joins: enginemaniac (flail@flail.flail.flail)
+[14:28:25] *** Joins: sniperfox (sniperfox@Pony-htd84a.distributed.denialofservice.org)
+[14:28:25] *** Joins: Stik (drakon@Pony-ql55m5.cable.virginm.net)
+[14:28:25] *** Joins: Lorix_ (Lorix_@flutter.shy.yay)
+[14:28:25] *** Joins: mniip (mniip@Pony-o9q.v2g.219.178.IP)
+[14:28:25] *** Joins: Starthunder (blackl@property.of.lightningcrash)
+[14:28:25] *** Joins: klaxa (klaxa@Pony-1kuq6f.eu)
+[14:28:25] *** Joins: Rylee (rylai@within.a.hail.of.gemstones)
+[14:28:25] *** Joins: Red_M (potato@Pony-4pa04c.red-m.net)
+[14:28:25] *** Joins: Cameron_D (cameron@cam.mylittle.horse)
+[14:28:25] *** Joins: Neptune|sleep (neptune@Planet.Neptune)
+[14:28:25] *** Joins: mkr (mkr@Pony-iinahj.radioyay.net)
+[14:28:25] *** Joins: Finnfinn (Finnfinn@finn.isher)
+[14:28:25] *** Joins: derpy (derp@muffins)
+[14:28:25] *** Joins: Neptune|offline (Neptune@Pony-6p51f8.elitebnc.org)
+[14:28:25] *** Joins: johnsey (johnsey@netadmin.canternet.org)
+[14:28:25] *** Joins: miggyb (miggyb@horsetornado.co.uk)
+[14:28:25] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[14:28:25] *** Joins: Hck (Hexie@Twilight.Is.Best.Pony)
+[14:28:25] *** Joins: AppleDash (appled@Gyro.Pony.Is.Best.Pony)
+[14:28:25] *** Joins: Gigabit (Gigabit@AppleDash.is.my.pet)
+[14:28:25] *** Joins: saneki (saneki@Pony-torblo.zylongaming.com)
+[14:28:25] *** Joins: Sin (Sin@is.hustlin.everyday)
+[14:28:25] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[14:28:25] *** Joins: Ruthalawake (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[14:28:25] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[14:28:25] *** Joins: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner)
+[14:28:25] *** Joins: GumballCrash (GumballCras@0.to.pony.10secondsflat)
+[14:28:25] *** cloudchaser.canternet.org sets mode: +ov Kinsley PinkiePieBot
+[14:28:25] *** Joins: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net)
+[14:28:25] *** Joins: ola (ola@Pony-k5v.64a.226.188.IP)
+[14:28:25] *** Joins: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net)
+[14:28:25] *** Joins: Sellyme (quassel@Pony-9oec4l.nectar.org.au)
+[14:28:25] *** Joins: AutoLapsus (Lapsus@Totally.Is.A.Network.Service)
+[14:28:25] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:28:25] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[14:28:25] *** Joins: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com)
+[14:28:25] *** Joins: Phase4 (Phase4@Pony-arvig7.internode.on.net)
+[14:28:25] *** cloudchaser.canternet.org sets mode: +o AutoLapsus
+[14:28:35] *** Quits: johnsey (johnsey@netadmin.canternet.org) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Sellyme (quassel@Pony-9oec4l.nectar.org.au) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Neptune|sleep (neptune@Planet.Neptune) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Neptune|offline (Neptune@Pony-6p51f8.elitebnc.org) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Phase4 (Phase4@Pony-arvig7.internode.on.net) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: reiuiji (reiuiji@nuclear.raven) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Kinsley (JKinsley@The.Princess.Is.In) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Lorix_ (Lorix_@flutter.shy.yay) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Starthunder (blackl@property.of.lightningcrash) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Hck (Hexie@Twilight.Is.Best.Pony) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: ola (ola@Pony-k5v.64a.226.188.IP) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Sin (Sin@is.hustlin.everyday) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: GauntletWizard (ted@Pony-3mqsfi.com) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Fusl (Fusl@1.0.0.127.in-addr.arpa.li) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Rylee (rylai@within.a.hail.of.gemstones) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: miggyb (miggyb@horsetornado.co.uk) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Colgate (rabbit@brushie.horse) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: enginemaniac (flail@flail.flail.flail) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Red_M (potato@Pony-4pa04c.red-m.net) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: sniperfox (sniperfox@Pony-htd84a.distributed.denialofservice.org) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: JustAberrant (JustAberran@Pony-lq4qe0.com) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: derpy (derp@muffins) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Stik (drakon@Pony-ql55m5.cable.virginm.net) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: GumballCrash (GumballCras@0.to.pony.10secondsflat) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Cameron_D (cameron@cam.mylittle.horse) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Gigabit (Gigabit@AppleDash.is.my.pet) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Finnfinn (Finnfinn@finn.isher) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Ruthalawake (Ruthalas@Pony-bi2qh3.wa.comcast.net) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: SilverEagle (SilverEagle@Pony-1nc9bc.busterneece.com) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: AppleDash (appled@Gyro.Pony.Is.Best.Pony) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: Eivel (Eivel@Keep.Calm.and.Pony.On) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: mniip (mniip@Pony-o9q.v2g.219.178.IP) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: mkr (mkr@Pony-iinahj.radioyay.net) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: saneki (saneki@Pony-torblo.zylongaming.com) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:35] *** Quits: klaxa (klaxa@Pony-1kuq6f.eu) (cloudchaser.canternet.org cadance.canternet.org)
+[14:28:56] *** Joins: mniip (mniip@Pony-o9q.v2g.219.178.IP)
+[14:28:56] *** Joins: mkr (mkr@Pony-iinahj.radioyay.net)
+[14:28:56] *** Joins: Red_M (potato@Pony-4pa04c.red-m.net)
+[14:28:56] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[14:28:56] *** Joins: Jouva (jouva@Pony-535ork.fios.verizon.net)
+[14:28:56] *** Joins: Lorix_ (Lorix_@flutter.shy.yay)
+[14:28:56] *** Joins: Stik (drakon@Pony-ql55m5.cable.virginm.net)
+[14:28:56] *** Joins: Ruthalawake (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[14:28:56] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[14:28:56] *** Joins: Colgate (rabbit@brushie.horse)
+[14:28:56] *** Joins: enginemaniac (flail@flail.flail.flail)
+[14:28:56] *** Joins: AppleDash (appled@Gyro.Pony.Is.Best.Pony)
+[14:28:56] *** Joins: reiuiji (reiuiji@nuclear.raven)
+[14:28:56] *** Joins: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net)
+[14:28:56] *** Joins: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net)
+[14:28:56] *** Joins: Rylee (rylai@within.a.hail.of.gemstones)
+[14:28:56] *** Joins: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner)
+[14:28:56] *** Joins: Gigabit (Gigabit@AppleDash.is.my.pet)
+[14:28:56] *** Joins: GauntletWizard (ted@Pony-3mqsfi.com)
+[14:28:56] *** Joins: Neptune|sleep (neptune@Planet.Neptune)
+[14:28:56] *** Joins: Eivel (Eivel@Keep.Calm.and.Pony.On)
+[14:28:56] *** Joins: johnsey (johnsey@netadmin.canternet.org)
+[14:28:56] *** Joins: SilverEagle (SilverEagle@Pony-1nc9bc.busterneece.com)
+[14:28:56] *** Joins: Sin (Sin@is.hustlin.everyday)
+[14:28:56] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:28:56] *** Joins: Hck (Hexie@Twilight.Is.Best.Pony)
+[14:28:56] *** Joins: miggyb (miggyb@horsetornado.co.uk)
+[14:28:56] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[14:28:56] *** Joins: Neptune|offline (Neptune@Pony-6p51f8.elitebnc.org)
+[14:28:56] *** Joins: ola (ola@Pony-k5v.64a.226.188.IP)
+[14:28:56] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[14:28:56] *** Joins: GumballCrash (GumballCras@0.to.pony.10secondsflat)
+[14:28:56] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[14:28:56] *** Joins: Phase4 (Phase4@Pony-arvig7.internode.on.net)
+[14:28:56] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[14:28:56] *** Joins: sniperfox (sniperfox@Pony-htd84a.distributed.denialofservice.org)
+[14:28:56] *** Joins: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com)
+[14:28:56] *** Joins: Starthunder (blackl@property.of.lightningcrash)
+[14:28:56] *** cadance.canternet.org sets mode: +v PinkiePieBot
+[14:28:56] *** Joins: klaxa (klaxa@Pony-1kuq6f.eu)
+[14:28:56] *** Joins: saneki (saneki@Pony-torblo.zylongaming.com)
+[14:28:56] *** Joins: Kinsley (JKinsley@The.Princess.Is.In)
+[14:28:56] *** Joins: Cameron_D (cameron@cam.mylittle.horse)
+[14:28:56] *** Joins: derpy (derp@muffins)
+[14:28:56] *** Joins: Sellyme (quassel@Pony-9oec4l.nectar.org.au)
+[14:28:56] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[14:28:56] *** Joins: Finnfinn (Finnfinn@finn.isher)
+[14:28:56] *** cadance.canternet.org sets mode: +o Kinsley
+[14:42:22] *** Quits: wolfyshy (woof@fluttering.shyly.through.the.forest) (Ping timeout: 121 seconds)
+[14:42:34] *** Joins: wolfyshy (woof@Pony-ced.mmn.114.167.IP)
+[14:47:21] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[14:48:47] *** Quits: Fallfeathers (Fallfeather@Pony-u71ip5.internode.on.net) (Connection closed)
+[15:07:28] <Quindo> well... I can not figure out how to spend 20 bucks on the amazon app store...
+[15:33:34] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[15:55:01] <Brolf_pog> Hey that law actually is pretty sweet
+[15:55:09] <Brolf_pog> Now let's see it be messed up somehow though
+[16:11:06] *** Init3-away is now known as init3
+[16:15:51] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[16:25:52] *** init3 is now known as Init3-away
+[16:25:56] *** Init3-away is now known as init3
+[16:28:44] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (A TLS packet with unexpected length was received.)
+[16:31:01] *** Neptune|sleep is now known as Neptune
+[16:36:12] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[16:43:27] *** init3 is now known as Init3-away
+[16:53:00] *** mniip is now known as \m
+[16:59:35] <Colgate> Googie: :(
+[17:28:25] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:41:09] *** Gigabit is now known as GigaWork
+[17:57:43] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[18:01:23] *** Init3-away is now known as init3
+[18:10:11] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:13:07] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[19:07:42] *** init3 is now known as Init3-away
+[19:08:39] *** Init3-away is now known as init3
+[19:22:34] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[19:23:20] *** Quits: Colgate (rabbit@brushie.horse) (Ping timeout: 121 seconds)
+[19:25:00] *** Joins: Colgate (rabbit@brushie.horse)
+[19:40:00] *** Quits: johnsey (johnsey@netadmin.canternet.org) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Sellyme (quassel@Pony-9oec4l.nectar.org.au) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Neptune (neptune@Planet.Neptune) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Neptune|offline (Neptune@Pony-6p51f8.elitebnc.org) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: LightningCrash (lightning@property.of.moonlightning) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Phase4 (Phase4@Pony-arvig7.internode.on.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: reiuiji (reiuiji@nuclear.raven) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Kinsley (JKinsley@The.Princess.Is.In) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Lorix_ (Lorix_@flutter.shy.yay) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Starthunder (blackl@property.of.lightningcrash) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Hck (Hexie@Twilight.Is.Best.Pony) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: ola (ola@Pony-k5v.64a.226.188.IP) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Sin (Sin@is.hustlin.everyday) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: GauntletWizard (ted@Pony-3mqsfi.com) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Fusl (Fusl@1.0.0.127.in-addr.arpa.li) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Rylee (rylai@within.a.hail.of.gemstones) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: miggyb (miggyb@horsetornado.co.uk) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Colgate (rabbit@brushie.horse) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: enginemaniac (flail@flail.flail.flail) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Red_M (potato@Pony-4pa04c.red-m.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: sniperfox (sniperfox@Pony-htd84a.distributed.denialofservice.org) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: JustAberrant (JustAberran@Pony-lq4qe0.com) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: derpy (derp@muffins) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Stik (drakon@Pony-ql55m5.cable.virginm.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: GumballCrash (GumballCras@0.to.pony.10secondsflat) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Cameron_D (cameron@cam.mylittle.horse) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: GigaWork (Gigabit@AppleDash.is.my.pet) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Finnfinn (Finnfinn@finn.isher) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Ruthalawake (Ruthalas@Pony-bi2qh3.wa.comcast.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: SilverEagle (SilverEagle@Pony-1nc9bc.busterneece.com) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: AppleDash (appled@Gyro.Pony.Is.Best.Pony) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: Eivel (Eivel@Keep.Calm.and.Pony.On) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: mkr (mkr@Pony-iinahj.radioyay.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: saneki (saneki@Pony-torblo.zylongaming.com) (cloudchaser.canternet.org cadance.canternet.org)
+[19:40:00] *** Quits: klaxa (klaxa@Pony-1kuq6f.eu) (cloudchaser.canternet.org cadance.canternet.org)
+[19:41:14] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[19:41:14] *** Joins: mkr (mkr@Pony-iinahj.radioyay.net)
+[19:41:14] *** Joins: Colgate (rabbit@brushie.horse)
+[19:41:14] *** Joins: Red_M (potato@Pony-4pa04c.red-m.net)
+[19:41:14] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[19:41:14] *** Joins: Jouva (jouva@Pony-535ork.fios.verizon.net)
+[19:41:14] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[19:41:14] *** Joins: Lorix_ (Lorix_@flutter.shy.yay)
+[19:41:14] *** Joins: Stik (drakon@Pony-ql55m5.cable.virginm.net)
+[19:41:14] *** Joins: Ruthalawake (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[19:41:14] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[19:41:14] *** Joins: enginemaniac (flail@flail.flail.flail)
+[19:41:14] *** Joins: AppleDash (appled@Gyro.Pony.Is.Best.Pony)
+[19:41:14] *** Joins: reiuiji (reiuiji@nuclear.raven)
+[19:41:14] *** Joins: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net)
+[19:41:14] *** Joins: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net)
+[19:41:14] *** Joins: Rylee (rylai@within.a.hail.of.gemstones)
+[19:41:14] *** Joins: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner)
+[19:41:14] *** Joins: GigaWork (Gigabit@AppleDash.is.my.pet)
+[19:41:14] *** Joins: GauntletWizard (ted@Pony-3mqsfi.com)
+[19:41:14] *** Joins: Neptune (neptune@Planet.Neptune)
+[19:41:14] *** Joins: Eivel (Eivel@Keep.Calm.and.Pony.On)
+[19:41:14] *** Joins: johnsey (johnsey@netadmin.canternet.org)
+[19:41:14] *** Joins: SilverEagle (SilverEagle@Pony-1nc9bc.busterneece.com)
+[19:41:14] *** Joins: Sin (Sin@is.hustlin.everyday)
+[19:41:14] *** Joins: Hck (Hexie@Twilight.Is.Best.Pony)
+[19:41:14] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:41:14] *** Joins: miggyb (miggyb@horsetornado.co.uk)
+[19:41:14] *** Joins: Neptune|offline (Neptune@Pony-6p51f8.elitebnc.org)
+[19:41:14] *** Joins: ola (ola@Pony-k5v.64a.226.188.IP)
+[19:41:14] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[19:41:14] *** Joins: GumballCrash (GumballCras@0.to.pony.10secondsflat)
+[19:41:14] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[19:41:14] *** Joins: Phase4 (Phase4@Pony-arvig7.internode.on.net)
+[19:41:14] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[19:41:14] *** Joins: sniperfox (sniperfox@Pony-htd84a.distributed.denialofservice.org)
+[19:41:14] *** Joins: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com)
+[19:41:14] *** Joins: Starthunder (blackl@property.of.lightningcrash)
+[19:41:14] *** cadance.canternet.org sets mode: +v PinkiePieBot
+[19:41:14] *** Joins: klaxa (klaxa@Pony-1kuq6f.eu)
+[19:41:14] *** Joins: saneki (saneki@Pony-torblo.zylongaming.com)
+[19:41:14] *** Joins: Kinsley (JKinsley@The.Princess.Is.In)
+[19:41:14] *** Joins: Cameron_D (cameron@cam.mylittle.horse)
+[19:41:14] *** Joins: derpy (derp@muffins)
+[19:41:14] *** Joins: Sellyme (quassel@Pony-9oec4l.nectar.org.au)
+[19:41:14] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[19:41:14] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[19:41:14] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[19:41:14] *** Joins: Finnfinn (Finnfinn@finn.isher)
+[19:41:14] *** cadance.canternet.org sets mode: +o Kinsley
+[19:43:59] *** Quits: AppleDash (appled@Gyro.Pony.Is.Best.Pony) (Ping timeout: 121 seconds)
+[19:45:15] *** Quits: johnsey (johnsey@netadmin.canternet.org) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: Sellyme (quassel@Pony-9oec4l.nectar.org.au) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: Neptune (neptune@Planet.Neptune) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: Neptune|offline (Neptune@Pony-6p51f8.elitebnc.org) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: LightningCrash (lightning@property.of.moonlightning) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: Phase4 (Phase4@Pony-arvig7.internode.on.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: reiuiji (reiuiji@nuclear.raven) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: Kinsley (JKinsley@The.Princess.Is.In) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: Lorix_ (Lorix_@flutter.shy.yay) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: Starthunder (blackl@property.of.lightningcrash) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: Hck (Hexie@Twilight.Is.Best.Pony) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: ola (ola@Pony-k5v.64a.226.188.IP) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: Sin (Sin@is.hustlin.everyday) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:15] *** Quits: GauntletWizard (ted@Pony-3mqsfi.com) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: Fusl (Fusl@1.0.0.127.in-addr.arpa.li) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: Rylee (rylai@within.a.hail.of.gemstones) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: miggyb (miggyb@horsetornado.co.uk) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: Colgate (rabbit@brushie.horse) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: enginemaniac (flail@flail.flail.flail) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: Red_M (potato@Pony-4pa04c.red-m.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: sniperfox (sniperfox@Pony-htd84a.distributed.denialofservice.org) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: JustAberrant (JustAberran@Pony-lq4qe0.com) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: derpy (derp@muffins) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: Stik (drakon@Pony-ql55m5.cable.virginm.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: GumballCrash (GumballCras@0.to.pony.10secondsflat) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: Cameron_D (cameron@cam.mylittle.horse) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: GigaWork (Gigabit@AppleDash.is.my.pet) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: Finnfinn (Finnfinn@finn.isher) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: Ruthalawake (Ruthalas@Pony-bi2qh3.wa.comcast.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: SilverEagle (SilverEagle@Pony-1nc9bc.busterneece.com) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: Eivel (Eivel@Keep.Calm.and.Pony.On) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: mkr (mkr@Pony-iinahj.radioyay.net) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: saneki (saneki@Pony-torblo.zylongaming.com) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:16] *** Quits: klaxa (klaxa@Pony-1kuq6f.eu) (cloudchaser.canternet.org cadance.canternet.org)
+[19:45:37] *** Joins: Red_M (potato@Pony-4pa04c.red-m.net)
+[19:45:37] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:45:37] *** Joins: ola (ola@Pony-k5v.64a.226.188.IP)
+[19:45:37] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[19:45:37] *** Joins: Neptune (neptune@Planet.Neptune)
+[19:45:37] *** Joins: GauntletWizard (ted@Pony-3mqsfi.com)
+[19:45:37] *** Joins: miggyb (miggyb@horsetornado.co.uk)
+[19:45:37] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[19:45:37] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[19:45:37] *** Joins: enginemaniac (flail@flail.flail.flail)
+[19:45:37] *** Joins: johnsey (johnsey@netadmin.canternet.org)
+[19:45:37] *** Joins: Ruthalawake (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[19:45:37] *** Joins: Rylee (rylai@within.a.hail.of.gemstones)
+[19:45:37] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[19:45:37] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[19:45:37] *** Joins: Finnfinn (Finnfinn@finn.isher)
+[19:45:37] *** Joins: Starthunder (blackl@property.of.lightningcrash)
+[19:45:37] *** Joins: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net)
+[19:45:37] *** Joins: Hck (Hexie@Twilight.Is.Best.Pony)
+[19:45:37] *** Joins: reiuiji (reiuiji@nuclear.raven)
+[19:45:37] *** Joins: Colgate (rabbit@brushie.horse)
+[19:45:37] *** Joins: Jouva (jouva@Pony-535ork.fios.verizon.net)
+[19:45:37] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[19:45:37] *** Joins: GumballCrash (GumballCras@0.to.pony.10secondsflat)
+[19:45:37] *** Joins: GigaWork (Gigabit@AppleDash.is.my.pet)
+[19:45:37] *** Joins: derpy (derp@muffins)
+[19:45:37] *** Joins: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net)
+[19:45:37] *** Joins: saneki (saneki@Pony-torblo.zylongaming.com)
+[19:45:37] *** Joins: mkr (mkr@Pony-iinahj.radioyay.net)
+[19:45:37] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[19:45:37] *** Joins: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner)
+[19:45:37] *** Joins: Sellyme (quassel@Pony-9oec4l.nectar.org.au)
+[19:45:37] *** Joins: sniperfox (sniperfox@Pony-htd84a.distributed.denialofservice.org)
+[19:45:37] *** Joins: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com)
+[19:45:37] *** Joins: Lorix_ (Lorix_@flutter.shy.yay)
+[19:45:37] *** Joins: Kinsley (JKinsley@The.Princess.Is.In)
+[19:45:37] *** Joins: Eivel (Eivel@Keep.Calm.and.Pony.On)
+[19:45:37] *** Joins: Cameron_D (cameron@cam.mylittle.horse)
+[19:45:37] *** chrysalis.canternet.org sets mode: +vo PinkiePieBot Kinsley
+[19:45:37] *** Joins: Stik (drakon@Pony-ql55m5.cable.virginm.net)
+[19:45:37] *** Joins: Neptune|offline (Neptune@Pony-6p51f8.elitebnc.org)
+[19:45:37] *** Joins: Sin (Sin@is.hustlin.everyday)
+[19:45:37] *** Joins: Phase4 (Phase4@Pony-arvig7.internode.on.net)
+[19:45:37] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[19:45:37] *** Joins: SilverEagle (SilverEagle@Pony-1nc9bc.busterneece.com)
+[19:45:37] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[19:45:37] *** Joins: klaxa (klaxa@Pony-1kuq6f.eu)
+[19:45:37] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[19:46:56] *** Joins: AppleDash (appled@Gyro.Pony.Is.Best.Pony)
+[19:48:51] *** Quits: Phase4 (Phase4@Pony-arvig7.internode.on.net) (Ping timeout: 121 seconds)
+[19:51:06] *** Joins: Crimson_Tail (ChaoticRift@Pony-u655ci.7h3b.037j.000a.2601.IP)
+[19:57:32] *** Quits: mkr (mkr@Pony-iinahj.radioyay.net) (Ping timeout: 121 seconds)
+[19:59:18] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[20:00:50] *** Joins: mkr (mkr@Pony-iinahj.radioyay.net)
+[20:23:46] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[20:34:06] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[20:46:21] *** Quits: GigaWork (Gigabit@AppleDash.is.my.pet) (Ping timeout: 121 seconds)
+[20:50:05] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[20:50:33] *** locodashie11 is now known as Pony_38135
+[20:51:45] *** Pony_38135 is now known as locodashie11
+[20:52:03] *** Joins: GigabitPony (Gigabit@Pony-hka3g8.appledash.org)
+[20:53:16] *** \m is now known as mniip
+[20:55:29] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Connection closed)
+[20:55:32] *** Joins: AquaBrandish (aqua@Pony-hahd0r.static.axtel.net)
+[20:57:05] *** Quits: AquaBrandish (aqua@Pony-hahd0r.static.axtel.net) (Connection closed)
+[20:57:19] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: Fluttershy has fallen asleep.)
+[20:57:26] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[20:57:35] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Quit: )
+[21:12:29] *** GigabitPony is now known as GigaWork
+[21:15:36] *** init3 is now known as Init3-away
+[21:23:09] *** Joins: AquaBrandish (AndChat3408@Pony-hahd0r.static.axtel.net)
+[21:23:20] *** AquaBrandish is now known as Mist|phone
+[21:25:02] *** Init3-away is now known as init3
+[21:29:51] *** Quits: Asoka (Asoka@Pony-8ugl5r.net-htp.de) (Ping timeout: 121 seconds)
+[21:30:54] *** Joins: Asoka (Asoka@Pony-8ugl5r.net-htp.de)
+[21:37:18] <coppercore> http://html9responsiveboilerstrapjs.com/
+[21:37:19] <PinkiePieBot> [ HTML9 Responsive Boilerstrap JS ]
+[21:46:08] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[21:50:00] *** Quits: Mist|phone (AndChat3408@Pony-hahd0r.static.axtel.net) (Quit: Bye)
+[21:50:57] <AppleDash> Been linked here 3 times now
+[21:57:41] <Phase4> "Someone is trying to steal the HTML code from my website!! What can I do!??"
+[21:57:56] <DataByte> hahahaha
+[21:58:01] <Phase4> https://twitter.com/H9RBSjs
+[21:58:02] <PinkiePieBot> [ H9RBS.js (@H9RBSjs) | Twitter ]
+[21:58:10] <AppleDash> lol, Phase4
+[22:09:51] <MisterSkids> https://www.picarto.tv/live/channel.php?watch=MisterSkids gonna start streaming reference drawings
+[22:09:58] <PinkiePieBot> [ Picarto.tv - MisterSkids's Channel ]
+[22:10:00] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Ping timeout: 121 seconds)
+[22:16:16] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[22:16:49] *** Parts: GigaWork (Gigabit@AppleDash.is.my.pet) ("left for a reason")
+[22:27:56] *** McKey is now known as [A]McKey
+[22:50:59] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[23:02:09] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Ping timeout: 121 seconds)
+[23:03:17] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[23:08:26] *** Joins: nscoots (FreyGrimrod@Pony-35597f.sub-70-192-21.myvzw.com)
+[23:22:18] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[23:48:09] *** Quits: DataByteBrony (DataByte@Pony-4uuol7.lrpe.i2gu.000d.2601.IP) (Ping timeout: 121 seconds)

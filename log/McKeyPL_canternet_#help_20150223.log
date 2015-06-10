@@ -1,0 +1,183 @@
+[00:03:55] *** Parts: GentlemanGin (MyLiNAP@MyLiNAP.Is.Not.A.Clever.Poni) ("Leaving")
+[00:03:57] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:21:46] *** Joins: SabSparrow (SabSparrow@Pony-0p171n.dsl.scarlet.be)
+[00:49:09] *** Joins: Toothie (uid63062@Pony-tbaiid.charlton.irccloud.com)
+[01:33:31] *** Toothie is now known as Toothpaste
+[01:41:20] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:53:35] *** Silverlight|away is now known as Silverlight
+[01:54:48] *** SabSparrow is now known as SabSparrow[A]
+[01:54:48] * SabSparrow[A] is now away - Reason : Sleep
+[01:54:55] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:07:07] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:10:59] *** Quits: Dusk (Dusk@ctos.link) (Quit: I've lost myself. If I return before I get back please ask me to leave.)
+[02:12:14] *** Joins: Pony_59250 (Dusk@Pony-f3g.03l.131.104.IP)
+[02:13:13] *** Pony_59250 is now known as Dusk
+[02:27:08] *** Quits: Zuzu (zuzu@is.robo.licious) (Quit: Blue Sky Fish)
+[02:30:21] *** Quits: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile) (Ping timeout: 121 seconds)
+[02:33:27] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[02:41:08] *** Joins: Zuzu (zuzu@is.robo.licious)
+[02:42:05] *** Quits: Zuzu (zuzu@is.robo.licious) (Quit: Blue Sky Fish)
+[03:50:47] *** Joins: Zuzu (zuzu@is.robo.licious)
+[04:12:33] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[04:13:36] *** Joins: Zuzu (zuzu@Pony-6oumfq.eastlink.ca)
+[04:33:01] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[04:34:02] *** ama is now known as ama|sleep
+[04:34:17] *** Joins: Zuzu (zuzu@is.robo.licious)
+[04:42:04] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[04:54:02] *** Quits: Toothpaste (uid63062@Pony-tbaiid.charlton.irccloud.com) (Quit: "Friendship ain't magic; it's a miracle." -ClaviSound)
+[05:02:58] *** Joins: Zuzu (zuzu@is.robo.licious)
+[05:30:01] *** Ashley is now known as Ashleep
+[05:39:25] *** Joins: liamwhite1 (failbit@Pony-fuogsr.fios.verizon.net)
+[05:40:42] <liamwhite1> idk if it's just me
+[05:40:58] <liamwhite1> but canternet.org (*.canternet.org) won't resolve
+[05:41:44] <Colgate> resolves for me with dig +trace
+[05:43:22] <liamwhite1> $ ping irc.canternet.org
+[05:43:22] <liamwhite1> ping: unknown host irc.canternet.org
+[05:43:43] <Colgate> what dns are you using?
+[05:44:15] <liamwhite1> can't see it on v6 either
+[05:45:07] <Colgate> I think whatever DNS your computer is configured to use is messing up
+[05:45:12] <Colgate> or has a negative entry cached for some reason
+[05:45:19] <Colgate> since it definitely is working properly
+[05:46:29] *** Joins: liamwhite1_ (failbit@Pony-sou.t2f.56.172.IP)
+[05:47:25] <liamwhite1_> works on 4g
+[05:47:37] <liamwhite1_> seems as though someone's dns cache is messed up somewhere
+[05:47:57] <Colgate> yep, the ttl is only 300 seconds on that, so it should fix itself quickly
+[05:48:34] <liamwhite1_> (got immediate ping response from OVH)
+[05:49:32] *** Quits: liamwhite1_ (failbit@Pony-sou.t2f.56.172.IP) (Quit: Bye)
+[05:50:04] *** Quits: liamwhite1 (failbit@Pony-fuogsr.fios.verizon.net) (Connection closed)
+[05:54:18] *** Joins: Solis (BookOfKenzi@Somewhere.In.Portlandia)
+[05:54:32] <Solis> Hallo folks. Gots a question for ya.
+[05:55:28] <Colgate> ?
+[05:55:49] <Solis> My client on my phone cant seem to connect to canternet anymore.
+[05:56:12] <Solis> It logs onto other servers just fine, but irc.canternet.org, or any of the other server names, doesnt work.
+[05:56:38] <Colgate> yeah, it appears that some dns server out there cached a negative hit
+[05:56:48] <Colgate> isn't much we can do about that
+[05:57:20] <Solis> Well the weird part is, it wont connect if my phone's using the house wifi.
+[05:57:31] <Solis> but im connected here now on the same line.
+[05:57:35] <Colgate> different dns servers problem
+[05:57:38] <Colgate> probably*
+[05:57:46] <Solis> odd.
+[05:57:47] <Solis> ah well.
+[05:58:00] <Solis> thank celestia for unlimited mobile data.
+[05:58:03] <Colgate> or a cached negative hit on your computer
+[05:58:10] <Colgate> you can try ipconfig /flushdns
+[05:58:15] <Colgate> and then trying again
+[05:58:23] <Colgate> assuming windows
+[05:58:23] <Solis> dunno how to do that on android phones.
+[05:58:34] <Solis> my laptop works fine, its using the wifi right now
+[05:59:57] <Colgate> I don't know how to flush a dns cache on android, or if it even has one
+[06:00:44] <Solis> Yeah. s weird. not a big deal though, was just curious if someone knew a fix.
+[06:11:36] <Dusk> So much DNS error stuff :s
+[06:12:18] <Colgate> yep, HE is usually pretty good with it
+[06:12:51] *** Joins: tarzan (wixhtmledit@Pony-a2d.c3q.51.2.IP)
+[06:26:02] *** Quits: SabSparrow[A] (SabSparrow@Pony-0p171n.dsl.scarlet.be) (Quit: REALITY.SYS Corrupted: Re-boot universe? (Y/N/Q))
+[07:10:17] *** Quits: worthless (Gigabit@AppleDash.is.my.pet) (Quit: Need to be alone for a while.)
+[07:10:55] *** Joins: GigabitPony (Gigabit@AppleDash.is.my.pet)
+[07:10:55] *** Quits: GigabitPony (Gigabit@AppleDash.is.my.pet) (Quit: Need to be alone for a while.)
+[07:11:40] *** Joins: GigabitPony (Gigabit@AppleDash.is.my.pet)
+[07:31:40] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[07:33:14] *** tarzan is now known as SilveR^SurfeR
+[07:33:43] *** SilveR^SurfeR is now known as Pony_27296
+[07:33:57] *** Pony_27296 is now known as Teacher
+[07:48:02] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[07:49:01] *** Joins: Zuzu (zuzu@is.robo.licious)
+[07:55:48] *** Joins: Compu (compu@snuggly.filly)
+[07:56:39] <Compu> hey i have a friend get a flash policy problem error for this server
+[07:57:16] * Colgate checks
+[07:58:44] <Compu> ?
+[07:58:52] <Colgate> testing the servers
+[07:59:01] <Compu> k
+[08:01:50] <Colgate> hmm
+[08:03:40] <Compu> hmm?
+[08:04:23] <Colgate> I don't remember what the get request is for the flashpolicy thing
+[08:05:06] <Compu> k
+[08:05:07] <Twili> Somepony said it was be worth bookmarking, then, so you don't end up having to search for it later. It might have been Pinkie though.
+[08:05:25] <Compu> mmk
+[08:20:10] <Colgate> alright, daring's flashpolicy server died apparently
+[08:20:30] <Colgate> stupid request had a null in it and I didn't realize for a long time
+[08:20:33] <Colgate> -.-
+[08:31:20] <Colgate> Compu: I removed the server from the pool until it can be fixed
+[08:45:13] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[08:46:35] *** Fluttershi is now known as afkshi
+[08:48:04] *** Joins: Zuzu (zuzu@is.robo.licious)
+[09:30:48] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:51:42] *** Silverlight is now known as Silverlight|away
+[10:38:15] *** GigabitPony is now known as Gigabit
+[10:42:45] *** Gigabit is now known as worthless
+[11:17:00] *** Parts: Solis (BookOfKenzi@Somewhere.In.Portlandia) ("S'cuse me, Imma just slip on by.")
+[11:35:16] *** Quits: Teacher (wixhtmledit@Pony-a2d.c3q.51.2.IP) (Ping timeout: 121 seconds)
+[12:10:08] *** Q0 is now known as Q0|Away
+[12:24:03] *** Parts: Compu (compu@snuggly.filly) ("This channel just got a whole lot less adorable!")
+[12:56:25] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[12:57:31] *** Joins: Zuzu (zuzu@is.robo.licious)
+[13:49:00] *** Joins: Pony_65292 (wixhtmledit@Pony-a2d.c3q.51.2.IP)
+[13:50:14] *** Pony_65292 is now known as inn0cent
+[13:50:43] *** inn0cent is now known as Pony_46164
+[13:50:47] *** Parts: Pony_46164 (wixhtmledit@Pony-a2d.c3q.51.2.IP) ()
+[14:05:46] *** ama|sleep is now known as ama|work
+[14:44:20] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[14:45:34] *** Joins: Zuzu (zuzu@is.robo.licious)
+[15:09:49] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[15:11:18] *** Joins: Zuzu (zuzu@is.robo.licious)
+[15:13:23] *** Joins: Toothpaste (uid63062@Pony-ec6eib.irccloud.com)
+[15:34:23] *** Joins: SilveR^SurfeR (wixhtmledit@Pony-a2d.c3q.51.2.IP)
+[15:34:32] <SilveR^SurfeR>  Sadar_ke_Rande_Ma__bi (akims@Pony-lte.gj1.231.124.IP) has left #GupShupCoRneR ("")
+[15:34:40] <SilveR^SurfeR> flooding from this 
+[15:34:41] <SilveR^SurfeR> in room
+[15:34:44] <SilveR^SurfeR> how can i ben ip
+[15:35:09] <SilveR^SurfeR> Sadar_ke_Rande_Ma__qi is bgcw@Pony-kis.0e6.242.122.IP * dykiyfxlmlnhnk
+[15:35:09] <SilveR^SurfeR> Sadar_ke_Rande_Ma__qi using discord.canternet.org In case of emergency - chaos!
+[15:35:09] <SilveR^SurfeR> Sadar_ke_Rande_Ma__qi End of /WHOIS list.
+[15:36:11] <SilveR^SurfeR> Sadar_ke_Rande_Ma__eu (iveaitpx@Pony-e5v.0h2.121.125.IP) has lef* Sadar_ke_Rande_Ma__bi (akims@Pony-lte.gj1.231.124.IP) has left #GupShupCoRneR ("")
+[15:36:11] <SilveR^SurfeR> * Sadar_ke_Rande_Ma__gu (jebhshl@Pony-j33.pvu.72.125.IP) has left #GupShupCoRneR ("")
+[15:36:11] <SilveR^SurfeR> * Sadar_ke_Rande_Ma__xn (ltdmek@Pony-1ft.c29.15.123.IP) has left #GupShupCoRneR ("")
+[15:36:11] *** SilveR^SurfeR was kicked by chrysalis.canternet.org (Channel flood triggered (limit is 4 lines in 5 secs))
+[15:37:20] *** Joins: SilveR^SurfeR (wixhtmledit@Pony-a2d.c3q.51.2.IP)
+[15:37:34] <SilveR^SurfeR> any one there for help
+[15:48:57] *** Toothpaste is now known as Tooth|Skoolz
+[15:49:30] <SilveR^SurfeR> ?
+[16:03:45] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[16:04:47] *** Joins: Zuzu (zuzu@is.robo.licious)
+[17:27:07] *** SilveR^SurfeR is now known as INfiNitY
+[17:29:10] *** INfiNitY is now known as SIlveR^SurfeR
+[17:40:02] *** Parts: SIlveR^SurfeR (wixhtmledit@Pony-a2d.c3q.51.2.IP) ()
+[17:57:46] *** Tooth|Skoolz is now known as Toothie|Chem
+[18:49:17] *** Joins: Natron77 (ugqzatiblhu@Incidental.Unicorn.Natron77)
+[18:50:27] <Natron77> for like a week now, client.canternet.org can't connect (other webirc clients are fine). Any idea why?
+[18:51:26] * Colgate pokes Shutter
+[18:56:33] <Shutter> Ugh, I really need to set up a crontab to kill -9 qwebirc like once a week
+[18:56:39] <Shutter> Natron77: Should be up again now
+[18:56:51] <Shutter> That thing has a sad dendency to freeze 
+[18:59:28] <Natron77> cool. thanks
+[19:03:31] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:04:13] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[19:05:40] *** Joins: Zuzu (zuzu@is.robo.licious)
+[19:07:29] *** Toothie|Chem is now known as Toothie
+[19:08:53] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:04:25] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:13:35] *** Parts: Natron77 (ugqzatiblhu@Incidental.Unicorn.Natron77) ()
+[20:15:43] *** Quits: Lapsus (Lapsus@i-forget.ca) (Ping timeout: 121 seconds)
+[20:58:33] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[20:59:40] *** Joins: Zuzu (zuzu@is.robo.licious)
+[21:21:47] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[21:23:21] *** Joins: Zuzu (zuzu@is.robo.licious)
+[21:33:38] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:41:39] *** afkshi is now known as Fluttershi
+[21:51:21] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[22:00:43] *** Q0|Away is now known as Q0
+[22:16:36] *** ama|work is now known as ama|sick
+[22:17:12] *** Quits: Toothie (uid63062@Pony-ec6eib.irccloud.com) (Quit: Connection closed for inactivity)
+[22:20:01] *** Joins: Zuzu (zuzu@is.robo.licious)
+[22:31:53] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[22:32:02] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[22:33:19] *** Joins: Toothie (uid63062@Pony-tbaiid.charlton.irccloud.com)
+[22:33:28] *** Joins: Zuzu (zuzu@is.robo.licious)
+[22:35:17] *** Toothie is now known as Toothpaste
+[22:47:37] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[22:54:31] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[22:56:22] *** Joins: Zuzu (zuzu@is.robo.licious)
+[23:02:21] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[23:03:16] *** Joins: Zuzu (zuzu@is.robo.licious)
+[23:21:09] *** Quits: Toothpaste (uid63062@Pony-tbaiid.charlton.irccloud.com) (Quit: )
+[23:40:35] *** Fluttershi is now known as afkshi
+[23:51:25] *** Silverlight|away is now known as Silverlight

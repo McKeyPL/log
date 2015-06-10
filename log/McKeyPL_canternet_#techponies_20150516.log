@@ -1,0 +1,340 @@
+[00:00:05] *** Joins: Sombra (Iceman@Darkhorse21)
+[00:01:08] *** Quits: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net) (Quit: Leaving.)
+[00:08:23] *** Quits: Sombra (Iceman@Darkhorse21) (Connection closed)
+[00:08:51] *** Joins: Fallfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au)
+[00:11:22] *** McKey is now known as [A]McKey
+[00:12:34] *** Joins: Sombra (Iceman@Darkhorse21)
+[00:15:19] *** Yvette is now known as Null
+[00:20:46] *** Quits: DataByteBrony (DataByte@Pony-vgeu1g.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[00:25:05] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[00:46:04] *** Null is now known as Nell|Semi-afk
+[01:02:42] *** Nell|Semi-afk is now known as Starfox
+[01:04:28] *** Starfox is now known as Halcyon_Starfox
+[01:06:38] *** Quits: cyborg_ar (cyborgar@Pony-50r.450.25.181.IP) (Ping timeout: 121 seconds)
+[01:09:06] *** Halcyon_Starfox is now known as Sparticus-
+[01:10:15] *** Quits: LordShadowWing (quassel@Pony-9i5.ak4.49.69.IP) (Quit: For the Lunar Republic!!)
+[01:10:45] *** Sombra is now known as Twilight-Sprinkle
+[01:11:45] *** Twilight-Sprinkle is now known as Sombra
+[01:14:41] *** Sparticus- is now known as Halcyon_Starlight
+[01:18:22] *** \m is now known as mniip
+[01:19:19] *** Halcyon_Starlight is now known as Null
+[01:24:56] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[01:28:14] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[01:28:35] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[01:30:12] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[01:31:28] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[01:32:10] *** mniip is now known as \m
+[01:33:08] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[01:35:19] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[01:40:56] *** Joins: djazz (djazz@Pony-db5lbv.tbcn.telia.com)
+[01:43:36] *** djazz is now known as MangoBloom
+[01:54:43] *** Quits: Shnuggles (Brolf_pog@Pony-qhpq3l.client.bresnan.net) (Connection closed)
+[01:58:28] *** locodash11[lagout] is now known as locodashie11
+[02:10:48] <ShivalPonyWolf> https://krebsonsecurity.com/2015/05/mobile-spy-software-maker-mspy-hacked-customer-data-leaked/ - lol so software that allows you to spy on anyone you get to load the app has been owned
+[02:10:52] <PinkiePieBot> [ Mobile Spy Software Maker mSpy Hacked, Customer Data Leaked — Krebs on Security ]
+[02:12:12] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[02:41:46] *** Joins: Sombra (Iceman@Darkhorse21)
+[02:51:19] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[02:55:11] *** Joins: Brolf_pog (Brolf_pog@Pony-qhpq3l.client.bresnan.net)
+[02:55:29] *** Gigabit is now known as GigaNoms
+[03:11:47] <Moonlightning> So I'm writing init files for InspIRCd and Atheme
+[03:11:58] <Moonlightning> both of which use PID files internally
+[03:12:14] <Moonlightning> should I just not use `pid file` at the init level, or…?
+[03:22:13] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[03:25:37] *** GigaNoms is now known as Gigabit
+[03:48:13] <Gigabit> Ooh neat! http://cdnph.upi.com/sv/b/i/UPI-1751431696701/2015/1/14316991857629/Scientists-discover-first-quadruple-quasar.jpg
+[03:48:24] <Gigabit> Quasar quartet
+[03:59:10] <Moonlightning> ugh
+[03:59:19] <Moonlightning> Trying to get Atheme to fit my filesystem hierarchy
+[03:59:43] <Moonlightning> Insp did it fine, what's Atheme's problem :|
+[04:00:40] <Moonlightning> I can't just pass it --prefix=/usr/local and have it create /usr/local/{etc,include,lib}/atheme directories
+[04:04:13] <Moonlightning> The configurescript doesn't say anything about making `help` or `modules` dirs… :|
+[04:04:17] * Moonlightning groans.
+[04:09:11] <Moonlightning> Augh!
+[04:09:37] <Moonlightning> It doesn't uninstall properly, either!
+[04:10:46] <Moonlightning> What am I supposed to do with this? :|
+[04:11:54] <Moonlightning> Am I just doing the hierarchy wrong?
+[04:12:12] <Moonlightning> I mean, the way /usr/local was organized when I got here was similar to /usr and /
+[04:12:38] <Moonlightning> i.e. there were /usr/local/{bin,etc,lib,sbin,share}
+[04:21:18] <Moonlightning> …AHA!
+[04:21:26] <Moonlightning> The configurescript has an --enable-fhs-paths flag.
+[04:21:28] <Moonlightning> Bingo.
+[04:26:30] <Moonlightning> Perfect. ^^
+[04:28:40] <AppleDash> Moonlightning: The point of "PID file at the init level" is to specify the PID file that the program you're running writes.
+[04:28:56] <Moonlightning> Oh?
+[04:29:01] <AppleDash> Yes
+[04:29:06] <Moonlightning> Okay.
+[05:00:42] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[05:12:18] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[05:30:05] <Moonlightning> [*] Unable to initialize m_ssl_gnutls.so: Unable to load GnuTLS server private key (/usr/local/etc/inspircd/key.pem): Base64 unexpected header error.
+[05:30:07] <Moonlightning> bluh.
+[05:33:10] *** Q0|Away is now known as Q0
+[05:36:15] *** Joins: init3 (Jason@init3.Is.Not.A.Clever.Poni)
+[05:54:18] *** Sombra is now known as Hickory
+[06:06:36] *** Joins: Fillyfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au)
+[06:09:10] *** Quits: Fallfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au) (Ping timeout: 121 seconds)
+[06:10:26] <Lapsus> so cerberus ftp server is now apparently $80
+[06:10:44] <Lapsus> Can anyone suggest a free ftp server that can run in windows that doesn't suck?
+[06:11:34] <Lapsus> Filezilla is a bit crap, and sourceforge downloads even moreso
+[06:13:10] <AppleDash> Lapsus: Install linux
+[06:13:25] <Lapsus> AppleDash: I play games on this computer, no
+[06:13:28] <Googie> What're you using the FTP server for ? Why's Filezilla not meet the requirements ?
+[06:13:44] <Googie> I mean, there's IIS, but...
+[06:14:15] <Googie> Aside from that, cygwin
+[06:14:41] <Googie> (Just don't download the sourceforge wrapper around Filezilla)
+[06:15:43] <Lapsus> mainly filezilla is a bit weird and doesn't like to work for me because I don't use it much and can't troubleshoot it for shit because I've been using cerberus for like 4 years
+[06:15:44] <Lapsus> lol
+[06:31:37] *** Joins: cyborg_ar (cyborgar@Pony-50r.450.25.181.IP)
+[06:32:58] <ShivalPonyWolf> Lapsus: what you doing that needs ftp when alternatives are available that are well secure
+[06:36:23] <Lapsus> simple "move a file or a shitload of files with resume functionality" on the lan with trusted people
+[06:36:52] <Lapsus> or in this case "get something up that I can connect to to test something"
+[06:47:22] <ShivalPonyWolf> seems like something smb or scp could do better then an FTP server. or one of the light weight http file share servers
+[06:47:36] <ShivalPonyWolf> like HFS
+[06:50:26] <Gigabit> Good news everyone! Windows 10 will come preloaded with Candy Crush! 
+[06:50:45] <AppleDash> lol
+[06:50:53] <Gigabit> no serious it is XD
+[06:51:11] <ShivalPonyWolf> lol
+[06:51:31] <AppleDash> I thought it was dead
+[06:51:54] <Gigabit> what candy crush or W10?
+[06:53:00] <AppleDash> CC
+[06:56:06] <Gigabit> Dunno, but it is being bundled. Would have made more sense to bundle Minecraft with W10
+[06:56:25] <ShivalPonyWolf> penn jilette reminds me of my old science teacher since his extreem diet
+[07:01:31] *** Quits: Hickory (Iceman@Darkhorse21) (Quit: quit)
+[07:02:30] <Phase> Gigabit, that would require java though
+[07:02:33] <Phase> ms has had several java related lawsuits
+[07:02:45] <Gigabit> oh 
+[07:06:33] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:15:23] <Googie> I think Candy Crush has likely got ports outside of the JVM
+[07:15:30] <Googie> At least if they want an IOS version
+[07:24:21] <Twilightlicious> lol
+[07:24:34] <Twilightlicious> Plus Minecraft is profitable, they can't just give it away
+[07:25:31] <ShivalPonyWolf> minecraft itself is probably not as profitable as it used to be
+[07:25:40] <ShivalPonyWolf> but the merchandice licencing is probably the big proffit draw
+[07:26:21] *** Quits: Fillyfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au) (Connection closed)
+[07:28:19] <Twilightlicious> What if Microsoft releases the Xbox One version of Minecraft onto the Windows 10 store, with cross-platform play?
+[07:28:25] *** Joins: Fallfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au)
+[07:28:28] <Twilightlicious> Minecraft: Windows 10 edition
+[07:28:38] <ShivalPonyWolf> that would be the probably course of action if they did
+[07:28:44] <ShivalPonyWolf> a shitty xbox port
+[07:29:14] <ShivalPonyWolf> pc to console then back to pc again porting
+[07:29:14] <Twilightlicious> then if it sold well, they catch it up to the PC Version, and disband Mojang.
+[07:29:14] <Sol> That still rakes in $$$
+[07:30:07] <Twilightlicious> Then they could drop support for Minecraft PE
+[07:30:37] <Twilightlicious> And instead have Minecraft: Windows 10 Edition, Available on Desktops, Laptops, and Tablets.
+[07:31:11] <Twilightlicious> *Windows 10 Required. Xbox Live required for multiplayer. Active internet connection required. some restrictions apply
+[07:31:28] <Twilightlicious> =D
+[07:31:29] * Twilightlicious hides
+[07:31:52] <ShivalPonyWolf> Twilightlicious: microtransactions included. per block you mine
+[07:32:20] <Twilightlicious> Well of course microtransactions. The Xbox One version requires you to Purchase Skins, etc.
+[07:32:56] <Twilightlicious> Unlock Skeleton Horse, 1.99. Horse dies, requires repurchase.
+[07:33:06] <ShivalPonyWolf> lol
+[07:33:13] <Twilightlicious> Make diamonds even more rare. sell diamond packs
+[07:33:21] <Sol> I don't touch any but the PC. Mostly because even the fully featured vanilla game bores me without lots of mods now lol.
+[07:33:39] <Twilightlicious> it bores me without Company.
+[07:33:39] <ShivalPonyWolf> minecraft only survived due to the modding community
+[07:33:47] <Twilightlicious> If i don't have anyone to play with, i don't play.
+[07:33:51] <Twilightlicious> but with a friend, it's crazy fun.
+[07:34:19] <Twilightlicious> I'm waiting on Witcher 3, i'm doing the cardinal sin of buying it on a Console.
+[07:34:51] <Twilightlicious> even though it's cheaper on PC, and DRM free.
+[07:34:56] <Twilightlicious> and i meet requirements.
+[07:35:38] <Sol> ShivalPonyWolf, a shame that that side of the community can't make money from what they do without breaking eula and whatnot
+[07:36:04] <Twilightlicious> it would be the Skyrim fiasco all over again.
+[07:36:21] <Sol> I didn't think that was a bad idea...just a bad implementation
+[07:36:38] <ShivalPonyWolf> you cant introduce a pay for system into an estabilished comunity without causing issues
+[07:36:43] <ShivalPonyWolf> thats what steam learnt
+[07:37:06] <ShivalPonyWolf> it would be even worse for minecraft
+[07:37:13] <Twilightlicious> ^
+[07:37:14] <ShivalPonyWolf> as its basicly mods built on a hack to the native system
+[07:37:28] <Sol> For MC, it just annoys me a bit that people who make video content can rake in $$$, but the people who make a lot of the things they do possible can't
+[07:37:49] <Twilightlicious> Moral of the story, make Videos.
+[07:38:22] <Twilightlicious> Owner of a Company makes $$$, Does nothing. People who make him rich, earn little.
+[07:38:25] <ShivalPonyWolf> moral is get a real job and keep doing things for fun as fun
+[07:38:29] <Twilightlicious> Welcome to Capitolism.
+[07:38:30] <Sol> A person with a following who reviews a mod makes more off of that one video than the mod creators ever get total through donations or whatever
+[07:38:55] <Twilightlicious> ShivalPonyWolf, remember back in our day, when people made Mods because they Wanted to, and not for money?
+[07:39:00] <Twilightlicious> :P
+[07:39:14] <ShivalPonyWolf> Twilightlicious: not just mods
+[07:39:16] <ShivalPonyWolf> but vidieos to
+[07:39:17] <Twilightlicious> And people made YouTube videos to entertain, not to make bank
+[07:39:22] <ShivalPonyWolf> yep
+[07:39:25] <ShivalPonyWolf> those days are gone
+[07:39:29] <ShivalPonyWolf> and will never come back
+[07:39:37] <Sol> They still entertain...they just entertain 10 year olds
+[07:39:40] <Sol> :3
+[07:39:57] <ShivalPonyWolf> or people with the maturity of 10 year olds
+[07:40:16] <Twilightlicious> reminds me of that episode of South Park
+[07:40:49] <ShivalPonyWolf> i stoped watching southpark years ago
+[07:40:56] <ShivalPonyWolf> it lost all entertainmnet value
+[07:41:05] <Twilightlicious> Still, watch this clip https://www.youtube.com/watch?v=d1VxST3c5vU
+[07:41:05] <PinkiePieBot> [ South Park #Rehash Cartman Pewdiepie Compilation - 505679 views - 5m 11s long - 3287 likes - 96.2% ]
+[07:42:10] <ShivalPonyWolf> the last episode i watched was the world of warcraft one
+[08:00:39] *** Quits: cyborg_ar (cyborgar@Pony-50r.450.25.181.IP) (Ping timeout: 121 seconds)
+[08:04:20] *** Joins: Hickory (Iceman@Darkhorse21)
+[08:07:30] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[08:09:49] *** Neptune is now known as Neptune|sleep
+[08:11:03] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (A TLS packet with unexpected length was received.)
+[08:13:10] *** Joins: ColtonDRG (coltondrg@Pony-32sq0s.bu2n.7j6j.004b.2602.IP)
+[08:13:39] *** ColtonDRG is now known as Pony_61082
+[08:14:20] *** Pony_61082 is now known as coltondrg
+[08:14:28] *** coltondrg is now known as ColtonDRG
+[08:24:45] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[08:25:38] <Moonlightning> You know the SSH fingerprint ASCII art? More things should use that.
+[08:25:43] <Moonlightning> Like weechat.
+[08:27:32] *** Quits: Q0 (Q0@literallyshit.net) (Ping timeout: 121 seconds)
+[08:28:45] *** Joins: Q0 (Q0@literallyshit.net)
+[08:30:56] <Colgate> it is cute
+[08:36:18] *** Quits: Sol (Sol@Pony-nc8b4c.res.rr.com) (Quit: Sleeep)
+[08:41:12] <AppleDash> Colgate: it is
+[08:41:15] <AppleDash> It really is
+[09:07:27] *** Q0 is now known as Q0|Away
+[09:16:53] *** Q0|Away is now known as Q0
+[09:21:48] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[09:41:01] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[10:02:18] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[10:04:16] *** Quits: Hickory (Iceman@Darkhorse21) (Quit: quit)
+[10:14:49] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Rain called on account of pony.)
+[10:17:50] *** Quits: Crimson_Tail (Bluepon@Pony-qj6mf4.s0tm.sdub.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[10:25:56] <CompuDesktop> :o theres fiber optic service here http://www.empireaccess.com/residential/high-speed-internet
+[10:28:20] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[10:28:32] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[10:28:58] <locodashie11> 1000/50
+[10:28:59] <locodashie11> wat
+[10:29:39] <Googie> Doesn't surprise me :/
+[10:29:53] <locodashie11> 10x the download, but only 2.5x the upload
+[10:29:56] <locodashie11> hrnng
+[10:30:20] <Gigabit> I would love to have that service
+[10:32:28] *** Hoofy is now known as Hoofy_sleping
+[10:50:37] *** Quits: reiuiji (reiuiji@nuclear.raven) (Connection closed)
+[10:51:00] *** Joins: reiuiji (reiuiji@Pony-6vp0lq.ma.comcast.net)
+[11:04:38] *** Joins: Eigenstate (Larscis@colt.in.the.rain)
+[11:04:41] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Connection closed)
+[11:05:15] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Quit: )
+[11:21:26] *** Pony_2720 is now known as Hck
+[11:40:45] *** [A]McKey is now known as McKey
+[11:55:50] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[12:03:45] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[12:08:08] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[12:08:11] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[12:32:49] *** Quits: Fallfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au) (Connection closed)
+[12:41:00] *** Joins: cyborg_ar (cyborgar@Pony-2q9.q1h.25.181.IP)
+[12:43:29] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[12:45:55] *** Joins: Fallfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au)
+[12:55:57] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[12:56:06] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[13:20:24] *** Joins: S2K (sleumie@Pony-d18sn1.as13285.net)
+[13:23:16] *** Quits: sleumas2k (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[13:23:52] <Seoson> Want to see some JS magic? Paste the cotents of http://pastebin.com/PbbKcyaLin your adress bar (may not work in every browser). These sort of things are the reason I hate JS so much.
+[13:26:46] *** Quits: S2K (sleumie@Pony-d18sn1.as13285.net) (Ping timeout: 121 seconds)
+[13:27:13] *** Joins: S2K (sleumie@Pony-h2nvut.as13285.net)
+[13:27:21] <Seoson> woot my paste got removed. https://cloud.kab-s.de/index.php/s/RVdYW5sMP0pVpK0 
+[13:27:24] <PinkiePieBot> [ ownCloud ]
+[13:30:40] *** Quits: WestJ (westjgames@DJWestJ.Fillydelphia.Radio) (Ping timeout: 121 seconds)
+[13:31:50] *** Quits: Phase (Phase4@Pony-t2n2cl.internode.on.net) (Ping timeout: 121 seconds)
+[13:39:08] *** Hoofy_sleping is now known as hoofy
+[13:47:08] *** Q0 is now known as Q0|Away
+[13:48:47] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[13:52:31] *** Quits: S2K (sleumie@Pony-h2nvut.as13285.net) (Ping timeout: 121 seconds)
+[13:53:40] *** Joins: Phase (Phase4@Pony-t2n2cl.internode.on.net)
+[13:58:04] *** Joins: S2K (sleumie@Pony-d18sn1.as13285.net)
+[14:33:22] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[14:53:41] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[15:00:21] <JustAberrant> Signed, Sealed and Delivered in the presence of YOUR MOM in Witness where of I have hereunto set my hand and seal!
+[15:07:06] *** hoofy is now known as Hoofy
+[15:17:18] *** Quits: S2K (sleumie@Pony-d18sn1.as13285.net) (Ping timeout: 121 seconds)
+[15:24:07] *** Joins: S2K (sleumie@Pony-ehov05.as13285.net)
+[15:40:42] *** Quits: Fallfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au) (Connection closed)
+[16:16:52] *** Quits: init3 (Jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[16:20:20] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[16:23:55] *** Quits: Hoofy (HoofSounds_@Pony-dsovdr.res.rr.com) (Ping timeout: 121 seconds)
+[16:32:30] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[17:19:14] *** \m is now known as mniip
+[17:27:56] *** Joins: Tahlorz (rattle@Pony-f1emhe.ph.cox.net)
+[17:32:29] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[17:50:43] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[17:51:56] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[17:59:32] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[18:01:10] *** McKey is now known as [A]McKey
+[18:05:49] *** Starburn is now known as Flowheart
+[18:14:23] *** Quits: Tahlorz (rattle@Pony-f1emhe.ph.cox.net) (Quit: )
+[18:16:19] <tiwake> http://www.phoronix.com/scan.php?page=news_item&px=Oculus-Rift-Linux-Paused
+[18:16:20] <PinkiePieBot> [ Oculus Rift Suspends Linux Development To Focus On Windows - Phoronix ]
+[18:16:27] <tiwake> screw windows
+[18:23:52] *** Joins: Asoka (Asoka@Pony-s7urir.net-htp.de)
+[18:24:17] <tiwake> then again, vulkan
+[18:24:41] <tiwake> any idea when that might be ready for use?
+[18:27:18] *** Quits: Asoka_White (Asoka@Pony-46tpb7.net-htp.de) (Ping timeout: 121 seconds)
+[18:36:39] *** Joins: Sol (Sol@Pony-nc8b4c.res.rr.com)
+[18:36:47] *** Quits: Asoka (Asoka@Pony-s7urir.net-htp.de) (Quit: Ex-Chat)
+[18:36:59] *** Joins: Asoka (Asoka@Pony-s7urir.net-htp.de)
+[19:03:02] *** Quits: S2K (sleumie@Pony-ehov05.as13285.net) (Ping timeout: 121 seconds)
+[19:08:59] *** Joins: S2K (sleumie@Pony-tpd78b.as13285.net)
+[19:19:44] *** init3 is now known as Init3-away
+[19:39:26] *** Joins: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[19:40:23] *** [A]McKey is now known as McKey
+[19:49:03] *** Gigabit is now known as GigaWork
+[19:59:55] *** Joins: DataByteBrony (DataByte@Pony-41q905.sub-70-194-75.myvzw.com)
+[20:04:44] *** Quits: DataByteBrony (DataByte@Pony-41q905.sub-70-194-75.myvzw.com) (Ping timeout: 121 seconds)
+[20:10:24] *** Eigenstate is now known as Mike_Coltfield
+[20:18:53] *** Joins: DataByteBrony (DataByte@Pony-41q905.sub-70-194-75.myvzw.com)
+[20:24:44] *** Quits: DataByteBrony (DataByte@Pony-41q905.sub-70-194-75.myvzw.com) (Ping timeout: 121 seconds)
+[20:30:02] <Moonlightning> Why don't these system users just have empty homedir fields?
+[20:41:41] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[20:48:51] *** Joins: LordShadowWing (quassel@Pony-9i5.ak4.49.69.IP)
+[20:49:20] *** LordShadowWing is now known as Pony_47286
+[20:49:28] *** Pony_47286 is now known as ShadowWing
+[20:49:32] *** Quits: ShadowWing (quassel@Pony-9i5.ak4.49.69.IP) (Quit: For the Lunar Republic!!)
+[20:49:42] *** Joins: ShadowWing (quassel@Pony-9i5.ak4.49.69.IP)
+[20:49:53] *** ShadowWing is now known as LordShadowWing
+[20:49:55] *** LordShadowWing is now known as ShadowWing
+[20:50:04] *** ShadowWing is now known as LordShadowWing
+[20:58:18] *** Joins: Hickory (Iceman@Darkhorse21)
+[20:59:34] *** Hickory is now known as Sombra
+[21:04:55] <LordShadowWing> youtube-dl http://www.dailymotion.com/video/x2qey52_my-little-pony-friendship-is-magic-507-make-new-friends-but-keep-discord_animals
+[21:04:57] <PinkiePieBot> [ My Little Pony Friendship is Magic 507 - Make New Friends But Keep Discord - Video Dailymotion ]
+[21:05:05] <Sombra> 1080?
+[21:05:22] <LordShadowWing> yes, this will download the 1080p Version
+[21:05:58] <LordShadowWing> youtube-dl is a Linux Commandline utility
+[21:05:58] <Sombra> aw yis
+[21:06:16] <LordShadowWing> to download videos from many sites
+[21:07:04] <mniip> what
+[21:07:16] <mniip> where did reelix go D:
+[21:07:23] <Sombra> No linux, but I can just download it from that website, thanks
+[21:11:24] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[21:37:00] *** Joins: Crimson_Tail (Bluepon@Pony-hg3rh2.s0tm.sdub.0151.2601.IP)
+[21:55:35] *** S2K is now known as sleumas2000
+[21:59:47] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[22:01:27] *** Quits: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[22:03:07] <LordShadowWing> I am curious. Are there any Brony Mumble Servers?
+[22:05:08] <Colgate> dunno, I don't voice chat often though
+[22:05:49] * Colgate idly wonders if the one they set up forever ago is still running
+[22:08:13] <AppleDash> lol
+[22:08:45] <Colgate> I don't even remember what server it was on
+[22:08:49] <JustAberrant> http://justaberrant.com/images/hoose/no_murders.png   :>
+[22:08:51] <JustAberrant> (random)
+[22:09:01] <LordShadowWing> I have found a few references online to long dead servers
+[22:09:32] <Colgate> hey it is!
+[22:09:41] <AppleDash> Is it?
+[22:09:52] * Colgate also documents that this server is running mumble.
+[22:09:56] <AppleDash> JustAberrant: lol
+[22:10:22] *** GigaWork is now known as Gigabit
+[22:14:22] *** Null is now known as Halcyon_Starlight
+[22:28:07] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[22:33:17] *** Joins: DataByteBrony (DataByte@Pony-41q905.sub-70-194-75.myvzw.com)
+[22:37:44] *** Quits: DataByteBrony (DataByte@Pony-41q905.sub-70-194-75.myvzw.com) (Ping timeout: 121 seconds)
+[22:37:56] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[22:41:54] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[22:51:01] *** Joins: DataByteBrony (DataByte@Pony-41q905.sub-70-194-75.myvzw.com)
+[22:56:44] *** Quits: DataByteBrony (DataByte@Pony-41q905.sub-70-194-75.myvzw.com) (Ping timeout: 121 seconds)
+[23:05:05] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[23:10:30] *** Joins: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[23:14:05] *** Joins: WestJ_ (WestJ@Pony-2fpt2o.optusnet.com.au)
+[23:14:12] *** WestJ_ is now known as WestJ
+[23:14:41] *** WestJ is now known as Pony_13344
+[23:18:05] *** Pony_13344 is now known as WestJ
+[23:26:44] *** Quits: WestJ (WestJ@DJWestJ.Fillydelphia.Radio) (Ping timeout: 121 seconds)
+[23:31:10] *** Joins: WestJ (WestJ@DJWestJ.Fillydelphia.Radio)
+[23:31:58] *** Init3-away is now known as init3
+[23:38:01] *** Quits: cyborg_ar (cyborgar@Pony-2q9.q1h.25.181.IP) (Ping timeout: 121 seconds)
+[23:39:42] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[23:51:59] *** init3 is now known as Init3-away
+[23:55:09] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)

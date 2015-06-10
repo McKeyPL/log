@@ -1,0 +1,274 @@
+[00:00:32] *** Quits: Misan (misan@Pony-vmqpec.cm.kabsi.at) (Connection closed)
+[00:10:11] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:27:15] *** Quits: nscoots (FreyGrimrod@Pony-hjfa55.sub-70-192-18.myvzw.com) (Ping timeout: 121 seconds)
+[00:39:35] <Shival|Away> ahhh why i love server equipment
+[00:39:37] <Shival|Away> Server-5	Correctable memory error rate exceeded for DIMM_B4
+[00:39:38] <Shival|Away> knowing exactly what DIMM is at fault
+[00:49:02] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[00:50:48] *** Dusk is now known as Tihan
+[00:51:20] <JustAberrant> :(
+[00:59:42] *** Joins: Asoka (Asoka@Pony-e3fngb.net-htp.de)
+[01:00:08] *** Joins: CompuDesktop (quassel@snuggly.filly)
+[01:00:23] *** Quits: Compu (compu@snuggly.filly) (A TLS packet with unexpected length was received.)
+[01:03:02] *** Quits: Asoka_White (Asoka@Pony-vbqkqh.net-htp.de) (Ping timeout: 121 seconds)
+[01:03:02] *** Tihan is now known as Dusk
+[01:05:24] *** Joins: Compu (compu@snuggly.filly)
+[01:06:45] *** Quits: Compu (compu@snuggly.filly) (Quit: We'll be back soon for more snuggles!)
+[01:06:57] *** Joins: Compu (compu@snuggly.filly)
+[01:09:31] *** Quits: Compu (compu@snuggly.filly) (Connection closed)
+[01:12:30] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[01:14:25] *** Joins: Compu (compu@snuggly.filly)
+[01:16:14] *** Quits: CompuDesktop (quassel@snuggly.filly) (A TLS packet with unexpected length was received.)
+[01:21:01] <AppleDash> Stik: For the reord, I looked into modern OpenGL and I don
+[01:21:05] <AppleDash> 't like it :(
+[01:26:17] <JustAberrant> modern openGL :O
+[01:27:27] <Stik> heh
+[01:27:40] <Stik> it has a steep learning curve
+[01:27:55] <Stik> but old opengl is just plain broken, so there's not really an alternative :)
+[01:28:19] <Googie> Yeah, fixed function pipeline is dead :P
+[01:28:26] <Stik> it was very quick to get something up and running in old opengl i suppose
+[01:28:38] <Stik> easy to do so wtihout needing to understand what was going on, at any rate
+[01:28:44] <JustAberrant> I haven't done anything with opengl in about 4 years, so I'm assuming I was using.. uh.. classic opengl? :>
+[01:29:00] <Stik> you'd remember if you weren't :)
+[01:29:17] <Stik> if there were lots of calls to glVertex, glColor, glBegin etc then it was old-skool
+[01:29:24] <JustAberrant> yeah ;p
+[01:29:28] <Stik> and not even supported on modern devices like tablets and phones sadly
+[01:29:35] <Stik> or the web
+[01:29:36] * JustAberrant goes and pops some stuff ;p
+[01:29:50] <Stik> heh
+[01:30:04] <JustAberrant> but yeah, I don't remember it too fondly
+[01:30:10] <Stik> it was a bit of a mess
+[01:30:14] <JustAberrant> I remember thinking "well, this is a lovely incoherent mess"
+[01:30:19] <Stik> yup
+[01:30:24] <Stik> but it was a very easy mess
+[01:30:47] <Stik> the "new" way is significantly more tangled, and that's easy to mistake for mess if you aren't careful :)
+[01:30:47] <JustAberrant> I suppose
+[01:31:42] <Stik> shadertoy is a good way to get into modern opengl i think, it lets you play around with the pretty stuff (shaders) without having to do any of the dull underlying bits
+[01:31:43] <Googie> Khronos is working on a complete revamp of OpenGL, hopefully that'll succeed
+[01:32:08] <Stik> once you're hooked on that then there's a reason to learn how it actually works, and that makes it much easier
+[01:32:11] <Googie> They've got a lot of support this time around
+[01:32:12] <JustAberrant> I just avoid opengl and graphics in general
+[01:32:21] <Stik> fair enough :)
+[01:32:23] <Stik> i enjoy graphics stuff
+[01:32:23] <Phase4> hopefully they Acutally do it this tim
+[01:32:24] <Phase4> time;
+[01:32:35] <Googie> Hehehe, yeah
+[01:33:55] <JustAberrant> and yeah, mniip made a cool RD with (I think) shadertoy
+[01:34:05] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[01:34:29] <Googie> They've got the support, hopefully too many politics won't get in the way
+[01:35:17] <Phase4> Googie, now dx12 is doing it first :P
+[01:35:22] <AppleDash> I do what JustAberrant does
+[01:35:31] <JustAberrant> :>
+[01:35:47] <Phase4> it's a bit too little, too late imo
+[01:37:19] <Googie> Nah, dx12 doesn't have anywhere near the portability needed
+[01:37:51] <Googie> Different back in 2006 or so,  but these days, with tablets, phones, browsers...
+[01:38:11] <Phase4> maybe, but they're already doing gles, and doing it badly
+[01:38:29] <Googie> There isn't any realistic competitor to OpenGL in most spaces outside of XBone and Windows
+[01:38:59] <Phase4> well there's metal on ios
+[01:39:41] <Phase4> Googie, ultimately what i'd like to see is completely discarding the concept of a graphics api at the system level
+[01:39:52] <Googie> This is supposed to be a complete rewrite breaking backwards compatibility, so it'll be interesting to see what they come up with
+[01:39:57] <Phase4> they're prety much generic processors now
+[01:40:25] <Phase4> so you want something conceptually closer to opencl that gl, d3d, mantle, or whatever else you please can be implemented ontop of
+[01:40:37] <Phase4> and it's far less code for vendors to screw up
+[01:41:09] *** Joins: Datalink (Datalink@Datalink)
+[01:44:03] <Googie> I think in theory that's a good idea, in practice is a different matter though.
+[01:44:54] <Googie> I haven't dealt with graphics that much, so I don't really have much more to say than that :P
+[01:47:33] <Stik> got a link to mniip's rd? that sounds cool
+[01:47:39] <Stik> can't find anything through their search
+[01:48:30] <JustAberrant> it might have been another one of those live shader sites
+[01:48:36] <Stik> maybe
+[01:48:39] <Stik> ah well, bedtime for me
+[01:49:07] <JustAberrant> wait
+[01:49:21] <JustAberrant> Stik: found it.. http://glsl.herokuapp.com/e#14290.4 ;p
+[01:49:21] <PinkiePieBot> [ GLSL Sandbox ]
+[01:51:23] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[01:51:56] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[01:53:16] *** Neptune|sleep is now known as Neptune
+[01:54:28] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[02:48:21] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Ping timeout: 121 seconds)
+[02:53:01] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[03:14:16] *** nscoots is now known as pillowloo
+[03:26:14] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[03:27:19] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[03:49:11] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Quit: The Nightmares will Collide. And become a Dream. <3)
+[04:22:47] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[04:24:45] *** eyeburn is now known as Starburn
+[04:25:44] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[04:37:21] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[04:41:38] * JustAberrant applies a curse upon Phase4 such that he can never remember if he's brushed his teeth or not
+[04:41:43] * JustAberrant evil laughter of evilness
+[04:42:10] <Phase4> >implying i kept track
+[04:42:32] <JustAberrant> :(
+[04:47:52] *** Quits: ChaoticRift (ChaoticRift@Pony-jmi9mh.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[04:49:59] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[04:50:27] *** Dusk is now known as Sleep
+[05:12:47] *** Joins: Kiyiko (NULL@Pony-aqh72j.dsl.netins.net)
+[05:46:47] <wolfyshy> https://www.youtube.com/watch?v=9-jb3ZS4JOk
+[05:46:48] <PinkiePieBot> [ Disconnected (56k Modem Remix) - 22718 views - 0:02:44 long - 232 likes - 97.48% ]
+[05:49:34] <AppleDash> wolfyshy, I like it
+[06:03:58] *** Quits: PeakVolume (k9ldt@Pony-v50v0q.fios.verizon.net) (Ping timeout: 121 seconds)
+[06:23:37] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[06:38:15] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[06:38:42] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[06:49:12] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[06:51:21] *** Joins: CanAnon (firestream@Pony-861.n8f.50.70.IP)
+[07:02:02] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[07:03:03] *** Joins: locodash11[server] (locodash11@Pony-osmcfg.co.comcast.net)
+[07:38:04] *** [A]McKey is now known as McKey
+[07:40:23] *** McKey is now known as [A]McKey
+[07:43:59] *** [A]McKey is now known as McKey
+[07:46:10] *** McKey is now known as [A]McKey
+[07:54:02] *** Joins: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net)
+[08:13:29] *** Joins: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net)
+[08:44:06] *** Quits: Webster (Webster@Pony-mme.2eo.212.73.IP) (Quit: Leaving)
+[08:54:47] *** Starburn is now known as eyeburn
+[09:20:10] <Stik> JustAberrant: heh awesome
+[09:21:03] <Stik> i wonder if someone's made an svg->shader converter
+[09:26:05] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[09:31:08] *** Neptune is now known as Neptune|sleep
+[09:38:45] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Ping timeout: 121 seconds)
+[09:54:05] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[10:26:47] <CanAnon> could use some help if possable
+[10:26:58] <Stik> what's up?
+[10:27:26] <CanAnon> http://pastebin.com/0iCBRt24  basicly
+[10:27:27] <PinkiePieBot> [ Spam Detection For Paste ID: 0iCBRt24 ]
+[10:27:53] <CanAnon> what the top says  i want to have the site point to subdomain.website.com  insted of subdomain.website.com:port
+[10:28:00] <CanAnon> been trying for a few hours
+[10:29:37] <Stik> not even sure what that is i'm afraid, hope someone can help you soon :
+[10:30:01] <CanAnon> https://github.com/calzoneman/sync/wiki/CyTube-3.0-Installation-Guide#installation-of-prerequisites
+[10:30:02] <PinkiePieBot> [ CyTube 3.0 Installation Guide · calzoneman/sync Wiki · GitHub ]
+[10:30:04] <CanAnon> if that helps you any
+[10:40:28] <Googie> Just make it listen on port 80/port 443
+[10:41:11] <Googie> Oh wait a sec, forgot the "Port 80 only as root" limitation
+[10:41:17] <Googie> You'll need a reverse proxy in front
+[10:41:24] <Googie> Something like Nginx
+[10:42:28] <Googie> Something like
+[10:42:30] <Googie> iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 25 -j REDIRECT --to-port 2525
+[10:42:36] <Googie> Might work too, switching out the ports
+[10:42:46] <Googie> (Redirect port 80 to port 8080)
+[10:44:07] <CanAnon> i have nginx installed
+[10:44:28] <CanAnon> i just reinstalling my box as i fxed it up some how
+[10:44:41] <CanAnon> reading what they are saying in the install guild is confusing me
+[10:44:59] <CanAnon> once i get eveything working i may as well get a bash script made lol
+[10:45:29] <CanAnon> make my life a hella lot easyer
+[10:52:25] <CanAnon> i  used to alos have a 2ed site on port 80 tho :/ it was in the config file it was "hard" corded befor my host went shutdown with out notice :s
+[10:53:10] *** Quits: reiuiji (reiuiji@nuclear.raven) (Ping timeout: 121 seconds)
+[10:55:01] *** Joins: reiuiji (reiuiji@Pony-6vp0lq.ma.comcast.net)
+[11:14:36] <wolfyshy> http://wiki.nginx.org/ServerBlockExample
+[11:14:37] <PinkiePieBot> [ ServerBlockExample - Nginx Community ]
+[11:15:04] <wolfyshy> http://wiki.nginx.org/TurboGearsProxy
+[11:15:04] <PinkiePieBot> [ TurboGearsProxy - Nginx Community ]
+[11:15:32] <wolfyshy> CanAnon, first link is multiple sites on port 80, second link shows how to make port 80 for a site redirect to another port
+[12:04:14] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[12:23:28] *** Joins: Datalink (Datalink@Datalink)
+[12:32:20] *** pillowloo is now known as chillyloo
+[13:05:50] *** Q0 is now known as Q0|Away
+[13:21:14] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Ping timeout: 121 seconds)
+[13:32:13] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[13:48:37] *** Quits: chillyloo (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[13:54:29] *** Quits: Kiyiko (NULL@Pony-aqh72j.dsl.netins.net) (Ping timeout: 121 seconds)
+[14:09:47] <Googie> Making portable Linux binaries :(
+[14:45:42] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[14:52:25] <Compu> bleh DEP keeps closing adobe reader
+[15:00:56] <johnsey> that may be a hint
+[15:02:43] <Compu> johnsey: ?
+[15:03:40] <johnsey> if DEP closes something, maybe it's not a good idea to run it in the first place
+[15:04:26] <Compu> johnsey: but its a adobe reader
+[15:04:42] <johnsey> and?
+[15:04:45] <Compu> johnsey: and also a requirement for documents from the dmv
+[15:16:43] <wolfyshy> doesn't work in okular or foxit reader?
+[15:22:38] <Compu> theyre protected documents
+[15:23:09] <Compu> like only adobe reader can read them cuz encryption and nothing can write to them ever
+[15:23:53] <Compu> dont ask me why, they literally just expect u to click the checkboxes and stuff in the document and then print it out
+[15:24:18] <Compu> cuz, ya know, cant just have a normal document to print out and fill out
+[15:26:43] <wolfyshy> okular can read encrypted docs
+[15:27:07] <Compu> can it?
+[15:27:11] <wolfyshy> yes
+[15:27:12] <Compu> well meh
+[15:27:20] <wolfyshy> and it can also ignore save and copy restrictions lol
+[15:27:23] <Compu> i already printed out the thing i needed
+[15:42:10] <Googie> http://www.reynholm.co.uk/
+[15:42:11] <PinkiePieBot> [ Reynholm Industries : Welcome ]
+[15:43:57] *** Joins: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[16:09:13] <Compu> Googie: oh god the it page warning thing scared me
+[16:14:20] *** Quits: Fallfeathers (Fallfeather@Pony-17o5i5.internode.on.net) (Connection closed)
+[16:37:42] *** Quits: Datalink (Datalink@Datalink) (Connection closed)
+[17:30:39] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (Ping timeout: 121 seconds)
+[17:31:47] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[17:37:08] <CanAnon> anyone know JS ;D
+[17:37:48] <AppleDash> Maybe
+[17:39:10] <CanAnon> sent ya a pm ;)
+[18:18:00] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:18:13] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Connection closed)
+[18:29:04] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[18:52:04] *** [A]McKey is now known as McKey
+[19:05:15] *** Quits: SilverEagle (SilverEagle@Pony-1nc9bc.busterneece.com) (Quit: ZNC - http://znc.in)
+[19:24:17] *** Q0|Away is now known as Q0
+[19:32:37] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[19:33:42] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[19:50:46] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[20:03:12] *** Joins: Datalink (Datalink@Datalink)
+[20:06:35] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:21:34] *** Neptune|sleep is now known as Neptune
+[20:23:01] *** MistVeil is now known as Mist|AFK
+[20:45:21] *** Joins: Webster (Webster@Pony-mme.2eo.212.73.IP)
+[20:47:35] *** Joins: ChaoticRift (ChaoticRift@Pony-o1m5cc.7h3b.037j.000a.2601.IP)
+[21:02:51] *** McKey is now known as [A]McKey
+[21:07:56] *** Quits: frackster (sid20128@Pony-utvkq0.uxbridge.irccloud.com) (Ping timeout: 121 seconds)
+[21:09:02] *** [A]McKey is now known as McKey
+[21:11:47] *** Joins: Misan (misan@Pony-vmqpec.cm.kabsi.at)
+[21:15:27] *** Joins: frackster (sid20128@Pony-utvkq0.uxbridge.irccloud.com)
+[21:23:00] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Ping timeout: 121 seconds)
+[21:24:10] *** Quits: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net) (Quit: Leaving.)
+[21:27:01] *** Sleep is now known as Dusk
+[21:35:48] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:39:19] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:49:47] *** Quits: Misan (misan@Pony-vmqpec.cm.kabsi.at) (Ping timeout: 121 seconds)
+[21:57:14] *** Joins: Misan (misan@Pony-vmqpec.cm.kabsi.at)
+[22:05:06] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[22:10:04] <Moonlightning> Augh.
+[22:10:11] <Moonlightning> 256 colors really aren't enough…
+[22:11:21] <Moonlightning> why can't I have 4096 colors or something
+[22:11:24] <Moonlightning> I mean
+[22:11:29] <Moonlightning> This is kind of ridiculous
+[22:11:52] <Moonlightning> I can't find a color that fits Red June's coat
+[22:12:00] <Moonlightning> https://derpiboo.ru/330233
+[22:12:01] <PinkiePieBot> [ Safe apple family reunion earth pony filly red june screencap ]
+[22:12:59] <Moonlightning> #ba5046, or something like that
+[22:13:05] <Moonlightning> In terminal colors, the closest is apparently 131
+[22:13:07] <Moonlightning> Which is, no
+[22:14:03] <Moonlightning> You try to get any darker of a red, without it being less /red/, and you get stuff like 124 and 088
+[22:14:28] <Moonlightning> whereas, if you go /lighter/, you get 167 and 203 which look pretty much the SAME to me
+[22:16:58] <Moonlightning> …hay! Her hair has a little bit of a slightly darker green on the end o.o
+[22:17:00] <Moonlightning> I never noticed that
+[22:20:13] *** Quits: Phase4 (Phase4@Pony-l1iur1.internode.on.net) (Ping timeout: 121 seconds)
+[22:30:50] *** Quits: SpikeDragon (Spike@sorting.those.books) (Ping timeout: 121 seconds)
+[22:37:21] <AppleDash> Moonlightning: What happened t your server this time
+[22:37:23] <AppleDash> to*
+[22:38:18] *** Joins: SpikeDragon (Spike@sorting.those.books)
+[22:41:11] <Moonlightning> AppleDash: nothing? o.o
+[22:41:37] <AppleDash> Usually you need terminal colors for ponies when you name new servers.
+[22:41:37] *** Quits: Q0 (Q0@literallyshit.net) (Ping timeout: 121 seconds)
+[22:47:26] *** Joins: Q0 (Q0@literallyshit.net)
+[22:49:50] <Moonlightning> Oh.
+[22:49:56] <Moonlightning> Nah, I just have a backlog.
+[22:50:20] <Moonlightning> I had only five colored hostnames.
+[22:50:57] <Moonlightning> And fourteen machines. :P
+[22:58:05] <AppleDash> I see
+[23:07:09] *** McKey is now known as [A]McKey
+[23:08:45] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[23:19:32] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[23:25:41] <Moonlightning> In vim, can I write the contents of a register directly to a file?
+[23:29:06] <AppleDash> A register?
+[23:31:06] <Hck> AppleDash> register is like named clipboard
+[23:31:44] <AppleDash> OK
+[23:33:29] <Hck> Moonlightning> Yes you can
+[23:33:59] <Hck> Question is if you have to write own command...
+[23:35:23] <Moonlightning> AppleDash: the things that all your yanked and deleted text gets put into.
+[23:42:12] *** eyeburn is now known as Starburn
+[23:42:49] <Hck> Moonlightning> I'm not really into vim hacking but I think it'll be something like
+[23:42:50] <Hck> :map <F9> :new<CR>p:w
+[23:43:21] <Hck> after F9 you write name and close temp buffer
+[23:43:41] <Hck> now I dunno how to close it automagically
+[23:45:33] <Moonlightning> hmm.
+[23:59:35] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)

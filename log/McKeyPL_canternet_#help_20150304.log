@@ -1,0 +1,164 @@
+[00:07:26] *** Quits: Lapsus (Lapsus@i-forget.ca) (Ping timeout: 121 seconds)
+[00:17:30] *** ama|work is now known as ama
+[00:20:26] *** Joins: freeeeee (Mibbit@Pony-2v0cr2.alshamil.net.ae)
+[00:20:38] <freeeeee> helo Colgate 
+[00:20:44] <freeeeee> innocent here
+[00:21:04] <freeeeee> what does it men when chanserv shows access on a list as custom
+[00:22:05] <Colgate> it means you have a custom level that isn't defined by a template
+[00:22:47] *** Joins: Pony_68061 (Lapsus@Pony-n6olie.cable.rogers.com)
+[00:22:49] <freeeeee> custom means deifind seting by owner cant be seen by us
+[00:22:56] *** Pony_68061 is now known as Lapsus
+[00:22:57] <Colgate> or rather, role, not template
+[00:23:05] <Colgate> you can see the flags
+[00:23:25] <Colgate> they just aren't a defined role for the channel
+[00:23:27] <freeeeee> if there is some one owner it shows him also as custom
+[00:23:30] <Colgate> /chanserv role #channel list
+[00:25:26] <freeeeee> means if i m custom sop so my rules will be defined as per sop role
+[00:25:58] <Colgate> if you are custom, you are whatever your custom flags are
+[00:26:07] <freeeeee> <ChanServ>: SOP                 : acl-view, autoop, protect, exempt, acl-change, halfop, invite, op, remove, set, topic, voice
+[00:26:20] <freeeeee> even if i m sop i cant add ppl rite
+[00:26:37] <freeeeee> and if it shows sop to me not custom then i can add rite
+[00:27:02] <Colgate> "acl-change" is +f, which lets you add/remove chanserv flags from users
+[00:27:08] <Colgate> acl stands for access control list
+[00:29:42] <freeeeee> ok
+[00:29:53] <freeeeee> then y i am not able to add user
+[00:30:08] <freeeeee> when i do it there is a msg you cant
+[00:30:58] <Colgate> "add user"
+[00:31:05] <freeeeee> yes
+[00:31:06] <Colgate> what command are you trying to use?
+[00:31:06] <freeeeee> <ChanServ>: You are not authorized to perform this operation
+[00:31:17] <freeeeee> ./msg chanserv aop #gupshupcorner add flirty
+[00:31:29] <freeeeee> sorry for room name
+[00:31:46] <wolfyshy> try /msg chanserv flags #CHANNEL add NAME aop
+[00:31:58] <Colgate> wolfyshy: no
+[00:32:01] <Dusk> aop isn't a flag
+[00:32:03] <Dusk> :T
+[00:32:09] <wolfyshy> it's /something/ like that
+[00:32:11] <Dusk> you could manually set the flags
+[00:32:13] <Colgate> no, it isn't
+[00:32:38] <Colgate> freeeeee: you do not have the appropriate flag to set flags on other users in that channel
+[00:32:38] <freeeeee> same
+[00:32:49] <freeeeee> <ChanServ>: You are not authorized to execute this command.
+[00:33:02] <freeeeee> yes thats what i was saying
+[00:33:04] <Colgate> yes, that is working as intented, you do not have the +f chanserv flag, so you cannot set flags on other users
+[00:33:11] <freeeeee> i m ristricted from ownr
+[00:33:31] <freeeeee> i can only remove
+[00:33:32] <Colgate> the owner of the channel can do that if they wish
+[00:33:34] <freeeeee> cant add
+[00:33:35] <Dusk> something like /msg chanserv flags #CHANNEL user +AOehiotv
+[00:33:38] <Dusk> oh
+[00:33:38] <Colgate> you cannot remove flags either
+[00:33:41] <wolfyshy> sorry not 'add'
+[00:33:49] <wolfyshy> no it will accept template names in flags
+[00:33:49] <Colgate> you do not have +f, you cannot modify flags
+[00:33:51] <wolfyshy> I just tested it
+[00:34:04] <wolfyshy> /msg chanserv flags #CHANNEL NAME aop will work if you have appropriate permission
+[00:34:06] <Dusk> wolfyshy we know it doesnt' work :p
+[00:34:30] <wolfyshy> well, yeah, not if you have no permissions
+[00:34:41] <Dusk> nono the specific command you said
+[00:34:49] <Dusk> the one earlier
+[00:34:52] <freeeeee> so the sop i have is like fake op :P
+[00:35:07] <Dusk> I mean you can still kick people :p
+[00:35:10] <Dusk> :D
+[00:35:14] <freeeeee> hahhaha
+[00:35:25] <Dusk> the little things eh?
+[00:35:32] <freeeeee> well you know authorities make you feel batter
+[00:35:47] <Colgate> wolfyshy: yes, that will work
+[00:35:50] <wolfyshy> like I said it's not 'add'
+[00:35:55] <Colgate> without the add, yes
+[00:35:56] <wolfyshy> I'm sorry
+[00:36:04] <freeeeee> less authorities you feel like you are nothing and they just make you feel good . so that they can use you
+[00:36:46] <freeeeee> it feels like you are not trustwroty
+[00:36:53] <freeeeee> it feels like you are not trustwrothy
+[00:37:10] <freeeeee> well thenks all of you i will keep disturbing you
+[00:37:15] <Colgate> look, that's channel policy, they are free to set their flags however they want
+[00:37:17] <freeeeee> :) when ever i feel i should
+[00:37:56] <freeeeee> yes they are boss but there are some personal relation . that come sin front of you what they really are..
+[00:38:05] <freeeeee> if you have knowledge
+[00:38:14] <freeeeee> like today i learn some thing
+[00:38:16] <freeeeee> :)
+[00:38:31] <freeeeee> i dont need access
+[00:38:53] <freeeeee> why they give me puppet access
+[00:38:54] <freeeeee> :P
+[00:38:59] <freeeeee> you know
+[00:39:06] <freeeeee> how it feels
+[00:39:26] <Colgate> giving people the ability to kick others/moderate the channel, but not be able to add other ops is very common
+[00:39:38] <freeeeee> when you come to know some one you know feels for you trust less
+[00:39:57] <freeeeee> yes boss ur right :)
+[00:40:04] <freeeeee> there channel
+[00:40:09] <freeeeee> there wishes
+[00:40:16] <freeeeee> but i must know what my value is
+[00:40:19] <freeeeee> :)
+[00:41:40] <freeeeee> thanks guys
+[00:41:42] <freeeeee> bye
+[00:41:47] <freeeeee> c u tomarrow
+[00:41:49] *** Parts: freeeeee (Mibbit@Pony-2v0cr2.alshamil.net.ae) ()
+[01:05:44] *** Toothie is now known as Toothie|AFK
+[01:08:08] *** RedHelper is now known as Creeps
+[01:16:00] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[01:17:54] *** Joins: Zuzu (zuzu@is.robo.licious)
+[01:21:47] *** NexSleep is now known as Nexus
+[01:30:03] *** Nexus is now known as Nexus[LIVE]
+[01:42:22] *** Toothie|AFK is now known as Opaque
+[02:19:12] *** SabSparrow is now known as SabSparrow[A]
+[02:19:12] * SabSparrow[A] is now away - Reason : Sleeping
+[02:27:25] *** Colgate sets mode: +g ACTION?is?now?away*
+[02:27:33] *** GigaTown is now known as Gigabit
+[02:56:27] *** Quits: Opaque (uid63062@Pony-tbaiid.charlton.irccloud.com) (Quit: "Friendship ain't magic; it's a miracle." -ClaviSound)
+[03:18:08] *** Quits: SpikeDragon (Spike@sorting.those.books) (Ping timeout: 121 seconds)
+[03:20:01] *** Joins: SpikeDragon (Spike@sorting.those.books)
+[03:30:55] *** Nexus[LIVE] is now known as Nexus
+[04:08:18] *** Quits: Fluttershi (Fluttershi@Hipsterluna.is.my.waifu) (Quit: ZNC - http://znc.in)
+[04:10:11] *** Joins: Fluttershi (Fluttershi@Hipsterluna.is.my.waifu)
+[04:25:23] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[04:25:53] *** Joins: afkshi (Fluttershi@Hipsterluna.is.my.waifu)
+[04:26:17] *** Quits: Fluttershi (Fluttershi@Hipsterluna.is.my.waifu) (Quit: )
+[04:27:06] *** afkshi is now known as Fluttershi
+[04:37:33] *** ama is now known as ama|sleep
+[04:47:42] <Fluttershi> how to you invite yourself back into an invite only chan you aren't in at the moment?
+[04:48:06] <wolfyshy> /query chanserv invite #channel
+[04:48:57] <Fluttershi> gotta query cs, eh?
+[04:49:28] <Colgate> yep, chanserv will send you an invite to the channel, assuming you have the invite flag set
+[04:49:40] <Fluttershi> ah, there we go, thanks
+[04:50:29] <Fluttershi> what's the format for adding excepts to the invite list, /chanserv mode +I ?
+[04:51:05] <Colgate> /mode #channel +I
+[04:52:19] <Fluttershi> there we go, thanks
+[04:54:35] <Fluttershi> can you mlock +I?
+[04:56:01] <Googie> No, but every registered channel is +P now, so mlock shouldn't be needed.
+[04:59:02] <Ashfire> is that automatic now, or do you still have to set it when you make a brand new channel?
+[05:10:20] <Colgate> it is set on registration
+[05:10:27] <Colgate> and unset on deregistration
+[05:11:09] <Colgate> there may be a few registered channels that are not +P, since they didn't exist when the command was run
+[05:11:25] *** Creeps is now known as GreenHelper
+[06:10:55] *** Q0|Away is now known as Q0
+[06:25:43] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[07:27:15] *** Quits: SabSparrow[A] (SabSparrow@Pony-edj8eu.dsl.scarlet.be) (Quit: Don't push the red button!)
+[07:27:41] *** Nexus is now known as NexSleep
+[07:37:44] *** Gigabit is now known as worthless
+[08:34:23] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[08:43:29] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[10:24:29] *** Q0 is now known as Q0|Away
+[10:27:46] *** Fluttershi is now known as afkshi
+[11:55:59] *** Joins: SabSparrow (SabSparrow@Pony-aqr.lge.190.193.IP)
+[12:51:29] *** ama|sleep is now known as ama|work
+[15:14:24] *** [A]McKey is now known as McKey
+[15:35:48] *** Joins: Toothpaste (uid63062@Pony-tbaiid.charlton.irccloud.com)
+[16:12:12] *** Toothpaste is now known as Toothie|Writing
+[16:21:43] *** Joins: Pony_32112 (WeAreBorg@Pony-0qd.9gv.219.173.IP)
+[16:25:00] *** Pony_32112 is now known as WeAreBorg
+[16:45:55] *** Toothie|Writing is now known as Invert_Shade
+[17:06:19] *** Invert_Shade is now known as Toothie|Skoolz
+[17:14:26] *** McKey is now known as [A]McKey
+[17:47:41] *** Quits: SabSparrow (SabSparrow@Pony-aqr.lge.190.193.IP) (Quit: He who laughs last, thinks slowest)
+[18:02:56] *** [A]McKey is now known as McKey
+[19:14:24] *** Toothie|Skoolz is now known as Toothpaste
+[19:31:23] *** Joins: Leaf_Runner (Leaf_Runner@Pony-1h0tjo.ptld.qwest.net)
+[19:31:26] *** Parts: Leaf_Runner (Leaf_Runner@Pony-1h0tjo.ptld.qwest.net) ()
+[19:45:13] *** Toothpaste is now known as Toothie|Skoolz
+[21:02:57] *** McKey is now known as [A]McKey
+[22:05:44] *** afkshi is now known as Fluttershi
+[22:09:06] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:33:25] *** Toothie|Skoolz is now known as Toothpaste
+[22:56:46] *** Toothpaste is now known as Toothie|Wubbing
+[22:59:26] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[23:46:34] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)

@@ -1,0 +1,254 @@
+[00:01:32] *** Quits: Phase4 (Phase4@Pony-l1iur1.internode.on.net) (A TLS packet with unexpected length was received.)
+[00:01:55] *** Joins: Phase4 (Phase4@Pony-l1iur1.internode.on.net)
+[00:02:26] *** Joins: Asoka_White (Asoka@Pony-0pala8.net-htp.de)
+[00:05:38] *** Quits: Asoka (Asoka@Pony-7f53tl.net-htp.de) (Ping timeout: 121 seconds)
+[00:29:34] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[00:42:42] *** nscoots is now known as plowingloo
+[00:44:04] *** Gigawork is now known as Gigabit
+[00:57:10] *** McKey is now known as [A]McKey
+[01:07:30] *** Quits: Datalink (Datalink@Datalink) (Quit: Datalink offline)
+[01:13:07] <AppleDash> I now own enough wireless routers to write the first verse of the MLP theme song in SSIDs
+[01:13:19] <AppleDash> Totally gonna do it
+[01:14:41] <AppleDash> I'll make them all open networks, too, and have all ports but 80 and 443 blocked, and every request on either of the unblocked ports routed to derpibooru over tor or something
+[01:15:31] <Colgate> hey, so do I!
+[01:15:36] <AppleDash> lol
+[01:15:37] <Colgate> it is called a single mikrotik :3
+[01:15:46] <AppleDash> I have one of those too
+[01:16:05] <AppleDash> I didn't know you could make multiple APs, but even if I can, I don't care to learn enough to segment them from my own network
+[01:17:00] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Connection closed)
+[01:20:31] <johnsey> behold! the magic of vlans
+[01:21:06] <AppleDash> I'm pretty sure you can only have one AP per wireless radio
+[01:21:16] <johnsey> wait, where does that choir come from?
+[01:21:29] <AppleDash> ?
+[01:21:52] <Phase4> AppleDash, no, can have as many ssids per radio as you want
+[01:22:04] <AppleDash> weird
+[01:22:13] <Phase4> excluding software and hardware limits
+[01:22:22] <Phase4> the latter actually being firmware limits
+[01:22:33] <AppleDash> Either way, I want my APs outside where they will be seen, instead of in here where they will be blocked by concrete rebar walls :P
+[01:23:39] <ShivalPonyWolf> ive been just having fun with the esp-01(esp8266) and broadcasting random ssids. Runs nicely of 2AAs
+[01:24:05] <ShivalPonyWolf> https://lh3.googleusercontent.com/-IB9T5EjOYiE/VMW0sDZN2rI/AAAAAAAAJ0I/RHQftpIUrV4/s0/hb2_VjQWkfL_E-NWLxUMKRfFnGaDWbAeUamn1L7jgTY.png
+[01:24:17] <AppleDash> lol
+[01:24:57] <ShivalPonyWolf> tempted to see if i can do script or code injection via ssids into some of the wifi scanner tools
+[01:25:25] <ShivalPonyWolf> the esp doesnt seem to care what you suplly for the SSID
+[01:25:40] <Phase4> ShivalPonyWolf, what happens if the first character is a null?
+[01:26:00] <ShivalPonyWolf> Phase4: i havent tried
+[01:26:06] <ShivalPonyWolf> i shoudl expermiment
+[01:26:17] <Phase4> or one of the improperly encoded unicode nulls
+[01:26:19] <ShivalPonyWolf> i have 25 more of the esp chips on the way
+[01:26:26] <Phase4> lolnice
+[01:26:41] *** Quits: DonutSteele (averagejoey@Pony-m81a8n.lv.cox.net) (Quit: leaving)
+[01:26:55] <ShivalPonyWolf> ordered afew of the 01s the 07s are a good surface mount version and breaks out alot more of the io pins and has a built in ceramic antenna and a sma antenna connector
+[01:27:02] <ShivalPonyWolf> and they are only 3$ each
+[01:27:09] <ShivalPonyWolf> just have to wait 6 weeks for them
+[01:27:41] <ShivalPonyWolf> i can actually use the 07s in some embeded projects with their extra IO and deep sleep option
+[01:27:55] <ShivalPonyWolf> you can do deep sleep on the 01 but it requires manaulyl doing a wire to one of the ics
+[01:28:00] <ShivalPonyWolf> and its too small for me to work with
+[01:28:06] <ShivalPonyWolf> the 07 breaks out the deep sleep pin
+[01:28:19] *** Dusk is now known as Dazuk
+[01:29:36] *** Joins: Pony_13578 (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[01:31:05] *** Quits: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[01:32:01] <ShivalPonyWolf> lol - https://pbs.twimg.com/media/B1S_EGhIUAAFvm8.jpg:large
+[01:49:37] *** Quits: cyborg_ar (cyborgar@Pony-ku8.o16.49.190.IP) (Ping timeout: 121 seconds)
+[01:52:09] <JustAberrant> :>
+[02:02:16] <JustAberrant> hehe: proof that procrastination is a good thing
+[02:02:46] <JustAberrant> I got an email from my mobile provider that was like a welcome to some prepaid plan thing
+[02:03:08] <JustAberrant> and I was like.. "oh great.. this is gonna be fun.. I'll sort that shit out later"
+[02:03:31] <JustAberrant> and I was just about to start looking into it now, and they just sent out a "we fucked up, sorry guys" email :D
+[02:07:21] *** Joins: cyborg_ar (cyborgar@Pony-ku8.o16.49.190.IP)
+[02:09:38] *** Quits: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net) (Quit: Leaving.)
+[02:11:01] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[02:15:32] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[02:17:28] <cyborg_ar> http://31.media.tumblr.com/204a37f970f2fd31967aa29088c11a89/tumblr_mhn739RLSE1ql2603o1_250.gif
+[02:24:29] <JustAberrant> :>
+[02:27:04] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:35:11] <MisterSkids> https://www.picarto.tv/live/channel.php?watch=MisterSkids im streaming my drawing
+[02:35:17] <PinkiePieBot> [ Picarto.tv - MisterSkids's Channel ]
+[02:41:02] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[02:41:44] <cyborg_ar> JustAberrant: ball crush gangnam style
+[02:46:01] <cyborg_ar> https://www.youtube.com/watch?v=fmdtCTII8WM
+[02:46:02] <PinkiePieBot> [ Gangnam kick in the balls - 15394 views - 0:00:16 long - 111 likes - 94.87% ]
+[02:59:54] *** Joins: nscoots (FreyGrimrod@Pony-hjfa55.sub-70-192-18.myvzw.com)
+[03:00:06] *** Quits: plowingloo (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[03:03:41] *** Joins: Fallfeathers (Fallfeather@Pony-1kul4f.internode.on.net)
+[03:35:11] *** Quits: cyborg_ar (cyborgar@Pony-ku8.o16.49.190.IP) (Client exited)
+[03:54:41] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[03:55:04] *** Quits: ChaoticRift (ChaoticRift@Pony-jf7icb.md.comcast.net) (Quit: Signal 9 happened)
+[03:59:27] *** Joins: cyborg_ar (cyborgar@Pony-h3q.ias.25.181.IP)
+[04:07:03] *** Joins: ChaoticRift (ChaoticRift@Pony-dqdlcl.7h3b.037j.000a.2601.IP)
+[04:15:19] <AppleDash> I need an opinion on something
+[04:15:43] <AppleDash> I went to replace the lamp that held the melted bulb I linked pics of yesterday
+[04:16:05] <AppleDash> Fuse was removed, switch was off, and I tested the power with my multimeter before I touched the wires
+[04:17:05] <AppleDash> Now, when I was sanding the /neutral/ wires (There's a bundle of about 3, and they're aluminum) before applying anti-ox compound, I swear that the wire sparked. Not to the box or anything, but just to itself, and I didn't feel anything
+[04:17:19] <AppleDash> Is it possible that this happened? If so, how.
+[04:27:13] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[04:31:24] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[04:39:06] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[05:10:47] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[05:38:21] *** Quits: Hadjii (jircii@Pony-ost.mu8.73.38.IP) (Quit: jIRCii - http://www.oldschoolirc.com)
+[05:52:26] *** Quits: nscoots (FreyGrimrod@Pony-hjfa55.sub-70-192-18.myvzw.com) (Ping timeout: 121 seconds)
+[05:58:33] *** Joins: ModusPonens (ModusPonens@Pony-0s4hgg.xnet.uga.edu)
+[06:02:20] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[06:26:54] *** Quits: Phase4 (Phase4@Pony-l1iur1.internode.on.net) (Quit: Leaving)
+[06:27:19] *** Joins: Phase4 (Phase4@Pony-l1iur1.internode.on.net)
+[06:50:18] *** Dazuk is now known as Dusk
+[07:04:15] *** Joins: Beatzebub (beatzebub@Pony-t425fn.bchsia.telus.net)
+[07:37:01] *** Joins: Fillyfeathers (Fallfeather@Pony-v0u6nc.internode.on.net)
+[07:37:22] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[07:39:34] *** Quits: Fallfeathers (Fallfeather@Pony-1kul4f.internode.on.net) (Ping timeout: 121 seconds)
+[08:06:03] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:09:44] *** Quits: ChaoticRift (ChaoticRift@Pony-dqdlcl.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[08:18:07] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (Connection closed)
+[08:18:25] *** Dusk is now known as Night
+[08:18:27] *** Joins: locodash11[server] (locodash11@Pony-osmcfg.co.comcast.net)
+[08:18:28] *** Quits: cyborg_ar (cyborgar@Pony-h3q.ias.25.181.IP) (Ping timeout: 121 seconds)
+[08:20:39] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[08:44:25] *** Night is now known as Dusk
+[08:45:14] *** Joins: Laps_out (Lapsus@Pony-0pj.tki.222.209.IP)
+[08:46:37] *** Quits: Lapsus (Lapsus@i-forget.ca) (Ping timeout: 121 seconds)
+[09:01:21] *** Dusk is now known as Night
+[09:14:49] *** Joins: Misan (misan@Pony-vmqpec.cm.kabsi.at)
+[09:18:09] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[09:43:26] *** Quits: reiuiji (reiuiji@nuclear.raven) (Quit: leaving)
+[09:46:05] <JustAberrant> ... wuv? :>
+[10:21:30] *** Quits: ModusPonens (ModusPonens@Pony-0s4hgg.xnet.uga.edu) (Ping timeout: 121 seconds)
+[10:45:06] *** Q0 is now known as Q0|Away
+[10:54:45] <Compu> the new mr peabody and sherman movie is on netflix
+[11:00:31] *** Joins: reiuiji (reiuiji@Pony-6vp0lq.ma.comcast.net)
+[11:07:02] *** Q0|Away is now known as Q0
+[11:09:45] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[11:09:59] *** Q0 is now known as Q0|Away
+[11:37:42] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (Connection closed)
+[11:37:46] *** Joins: locodash11[server] (locodash11@Pony-osmcfg.co.comcast.net)
+[11:43:08] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[12:15:31] *** [A]McKey is now known as McKey
+[14:20:41] *** Joins: ModusPonens (ModusPonens@Pony-0s4hgg.xnet.uga.edu)
+[14:24:46] *** Quits: ModusPonens (ModusPonens@Pony-0s4hgg.xnet.uga.edu) (Ping timeout: 121 seconds)
+[14:50:45] *** Quits: Fillyfeathers (Fallfeather@Pony-v0u6nc.internode.on.net) (Connection closed)
+[15:06:52] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[15:47:59] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:01:53] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[16:09:37] *** Joins: cyborg_ar (cyborgar@Pony-h3q.ias.25.181.IP)
+[16:19:14] *** Joins: ModusPonens (ModusPonens@Pony-0s4hgg.xnet.uga.edu)
+[16:19:32] *** Quits: ModusPonens (ModusPonens@Pony-0s4hgg.xnet.uga.edu) (Quit: Leaving)
+[16:53:50] *** Joins: ChaoticRift (ChaoticRift@Pony-d4ol90.7h3b.037j.000a.2601.IP)
+[17:02:51] *** Joins: Beatzebub_ (beatzebub@Pony-t425fn.bchsia.telus.net)
+[17:03:58] *** Quits: Beatzebub (beatzebub@Pony-t425fn.bchsia.telus.net) (Ping timeout: 121 seconds)
+[17:12:14] *** Joins: Datalink (Datalink@Datalink)
+[17:12:16] <tiwake> fedora 22 is getting wayland support
+[17:12:35] <tiwake> never actually used fedora myself
+[17:21:16] <tiwake> fedora developers are guessing that nvidia drivers to support wayland wont happen till the end of 2015
+[17:24:23] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[17:37:50] *** Quits: cyborg_ar (cyborgar@Pony-h3q.ias.25.181.IP) (Client exited)
+[17:44:21] *** Quits: ChaoticRift (ChaoticRift@Pony-d4ol90.7h3b.037j.000a.2601.IP) (Ping timeout: 121 seconds)
+[17:49:16] <MisterSkids> https://www.picarto.tv/live/channel.php?watch=MisterSkids im streaming my drawing
+[17:49:23] <PinkiePieBot> [ Picarto.tv - MisterSkids's Channel ]
+[17:54:07] *** Joins: ChaoticRift (ChaoticRift@Pony-d4ol90.7h3b.037j.000a.2601.IP)
+[17:56:24] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[18:05:06] *** Quits: Jouva (jouva@Pony-bh0ke0.fios.verizon.net) (Ping timeout: 121 seconds)
+[18:13:35] <Moonlightning> ShivalPonyWolf o.o;
+[18:18:17] <tiwake> what is a good headset?
+[18:26:49] <Kinsley> tiwake: find a Sennheiser headset in your budget.
+[18:27:51] <tiwake> hmm
+[18:27:52] <tiwake> alright
+[18:28:31] <tiwake> somebody else mentioned the Sennheiser PC350
+[18:30:07] <AppleDash> So nobody is able to answer my question from about 14 hours ago?
+[18:31:56] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[18:34:35] *** Night is now known as Dusk
+[18:37:06] *** Starburn is now known as eyeburn
+[18:37:56] *** Joins: cyborg_ar (cyborgar@Pony-ku8.o16.49.190.IP)
+[18:44:44] * JustAberrant does not know the answer to the question that AppleDash asked approximately 14 hours ago :(
+[18:44:55] <AppleDash> :(
+[18:49:49] <ola> so
+[18:49:55] <ola> i wish this conversion will work
+[18:50:21] <ola> i'm converting videos from various formats to Cinepak so i can watch them on my Macintosh LCIII. I also make them smaller in size/
+[18:51:17] <ola> so first i copy the files to my server and then i do
+[18:51:18] <ola> avconv -i Jean-Michel\ Jarre\ -\ Citroen.ogm   -c:v h264 -q:v 1 -c:a aac -strict experimental -vf scale=320:-1 jarre.citroen.mp4
+[18:51:58] <ola> the i downlaod them and convert to Cinepak ./avi with 22khz mono sound and 15 frames per second, 450kbps  with QuickTime 7 Pro
+[18:53:21] <JustAberrant> Cinepak :O
+[18:53:35] <JustAberrant> isn't that long since obsolete
+[18:53:38] <JustAberrant> oh
+[18:53:39] <JustAberrant> sorry
+[18:53:46] <JustAberrant> missed the Macintosh LCIII bit :D
+[18:54:11] <JustAberrant> try ffmpeg?
+[18:54:27] <JustAberrant> I've had much better luck with it, but I admit video encoding has always seemed like a black art to me
+[18:54:47] <JustAberrant> I've got like a list of commands I've figured out at various times, and I just use them
+[19:00:14] <ola> ok, so it is sort of viewable
+[19:00:23] <ola> but i have to use MoviePlayer 2.1
+[19:00:28] <ola> with QuickTime 4.0.3
+[19:00:41] <ola> and i still think it's a matter of bandwidth, will check with smaller one
+[19:00:44] <ola> but it's better~
+[19:02:27] *** Dusk is now known as Dusk|Food
+[19:04:01] * ola hugs JustAberrant
+[19:07:02] <ola> JustAberrant: what I want to do is to watch Children of the Night on a 68030+FPU computer with 12MB of RAM
+[19:12:22] <Moonlightning> Good luck with that, ola.
+[19:20:46] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:25:45] <JustAberrant> :>
+[19:28:57] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:30:12] *** Joins: nscoots (FreyGrimrod@Pony-hjfa55.sub-70-192-18.myvzw.com)
+[19:31:13] *** Dusk|Food is now known as Dusk
+[19:31:52] <JustAberrant> http://justaberrant.com/images/old_junk/e2.jpg  <-- not as impressive, but I was proud of this ;p
+[19:32:51] * nscoots misses her palmIIIx
+[19:32:56] <nscoots> although it never had such poni
+[19:33:13] <JustAberrant> the hardest part was finding a working sd card
+[19:33:29] <JustAberrant> even at the time a big complaint was that it couldn't handle the (again, at the time) newer sd cards :D
+[19:33:37] <nscoots> hehe
+[19:33:43] <JustAberrant> do you know how hard it is to find a ~1G SD card ;p
+[19:34:14] <ola> JustAberrant: cute. What about watching PFUDOR in MPEG1 on HP 620LX?
+[19:34:21] <ola> JustAberrant: because I did it already
+[19:34:26] <JustAberrant> :(
+[19:34:46] <ola> JustAberrant: https://www.youtube.com/watch?v=tRUbQaf3kts
+[19:34:46] <PinkiePieBot> [ MPEG-1 video on HP 620lx :3 - 52 views - 0:02:42 long - 2 likes - 100.0% ]
+[19:34:51] * nscoots introduces JustAberrant to the MiT swap meet
+[19:34:59] <nscoots> where nothing is thrown out
+[19:35:03] <nscoots> and everything can be fixed
+[19:35:05] <JustAberrant> hehe
+[19:35:08] <JustAberrant> I am not worthy
+[19:35:15] <JustAberrant> I just got rid of a shit tonne of chunk a few months ago
+[19:35:20] <JustAberrant> like, 3 trunk loads worth
+[19:35:42] <nscoots> tossed a few things myself
+[19:36:36] <ola> i wish i'd be there so i could taje some stuff from you >.>
+[19:36:58] <cyborg_ar> boop :)
+[19:37:06] <ola> hi cyborg_ar 
+[19:37:30] <ola> i also added that stick from my Optiplex
+[19:37:37] <ola> so nbow my LCIII has RAM maxed ouut
+[19:37:40] <ola> 36MB~
+[19:39:28] *** Joins: Jouva (jouva@Pony-bh0ke0.fios.verizon.net)
+[19:39:53] * ola hugs Jouva
+[21:09:45] *** Joins: Webster (Webster@Pony-40bnoo.fios.verizon.net)
+[21:24:32] <cyborg_ar> “Resistance is futile.” “We’re forcefully expiring the warranty on all of your parts.” 
+[21:39:08] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[21:44:28] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[21:47:45] *** Gigabit is now known as worthless
+[21:48:23] *** Quits: cyborg_ar (cyborgar@Pony-ku8.o16.49.190.IP) (Client exited)
+[22:05:02] *** Joins: Datalink_ (Datalink@Datalink)
+[22:05:46] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[22:07:08] *** Datalink_ is now known as datalink
+[22:07:15] *** datalink is now known as Datalink
+[22:14:15] <ola> JustAberrant: done. not hi-quality but viewable.
+[22:14:41] <ola> JustAberrant: wait for the video to upload and be amazed what a early 90's Macintosh can do if you push it just enough
+[22:21:48] <Moonlightning> P-P-P-P-PIIIINK FLUFFY UNICORRRNS, DANCING ON RAIINBOOWS
+[22:22:10] *** Quits: Phase4 (Phase4@Pony-l1iur1.internode.on.net) (Ping timeout: 121 seconds)
+[22:23:24] <ola> Moonlightning: no.
+[22:23:29] <ola> Moonlightning: Children Of The Night.
+[22:23:37] <ola> Moonlightning: but i might just upload all three videos .
+[22:23:49] <ola> Moonlightning: so there will be also Blood Dragon trailer and belgian Citroen ad
+[22:34:10] *** McKey is now known as [A]McKey
+[22:38:06] *** Laps_out is now known as Lapsus
+[22:38:08] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[22:53:40] *** Dusk is now known as Zuthal
+[22:56:00] *** Zuthal is now known as Dusk
+[22:56:29] <johnsey> gooodbye 481 days uptime on that raspberry pi
+[22:57:34] <Colgate> :(
+[23:01:10] <Moonlightning> :(
+[23:03:19] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[23:05:16] <Kiyiko> why are people so resistant to change
+[23:05:19] <Kiyiko> I just don't get it
+[23:05:54] <Kiyiko> I'm trying to get some data measurement stuff fixed on a few sites, and people just resist it
+[23:15:30] *** Joins: Fallfeathers (Fallfeather@Pony-v0u6nc.internode.on.net)
+[23:26:28] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[23:27:53] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[23:41:36] *** Q0|Away is now known as Q0
+[23:46:50] <ola> Moonlightning: JustAberrant https://www.youtube.com/watch?v=6q1MRMnnc10
+[23:46:50] <PinkiePieBot> [ COtN Video Test - 2 views - 0:05:23 long - 0 likes - 0.00% ]
+[23:47:00] <Moonlightning> CotN *
+[23:48:25] <AppleDash> C0Tñ*

@@ -1,0 +1,808 @@
+[00:04:45] <McKey> .song
+[00:07:58] <Eivel> tutaj panuje równouprawnienie :P
+[00:08:03] <Eivel> .song radioyay
+[00:08:03] <Derpi> Na antenie: Sim Gretina - BBBFF (Remix)
+[00:08:10] <Eivel> samo song działa tylko na radioyay
+[00:09:26] <McKey> .history Luna_radio
+[00:09:28] <McKey> :v
+[00:09:53] <Ashley`> Eivel: zajeta jestem :v
+[00:09:57] <Ashley`> Eivel: gram w gry planszowe
+[00:10:18] <Ashley`> Eivel: juz 7 godzin, zaraz zaczynam kolejną, czyli kolejne 2h
+[00:10:28] <Eivel> McKey: historia będzie tylko dla radioyay
+[00:10:47] <Eivel> Ashley`: no to miłej gry :P dobrze, że planszówki wciągają
+[00:10:58] <McKey> yay
+[00:59:48] <Beton> .history radioyay
+[01:00:16] <Beton> nie działa
+[01:00:53] <Eivel> Beton: z dwóch powodów
+[01:01:09] <Eivel> pierwszy - argumentem jest liczba 
+[01:01:18] <Eivel> drugi, trochę ważniejszy - ciągle pracuję nad tym modem
+[01:01:23] <Beton> aa xD
+[01:02:53] <Beton> a jest jakaś lista niestandardowych komend i przyjmowanych przez nie wartości?
+[01:03:04] <Beton> .help song
+[01:03:10] <Beton> bo to nie działa
+[01:03:19] <Beton> i w ogóle na liście komend nie ma
+[01:08:10] <Eivel> wiem, bo nie ma xD
+[01:12:55] <Beton> .song Fillydelphia Radio
+[01:12:56] <Derpi> KeyError: 'server_streams' (file "/home/eivel/.willie/modules/custom_radio.py", line 29, in getdata)
+[01:13:13] <Beton> .song RadioYAY
+[01:13:14] <Derpi> Na antenie: Carbon Maestro - Loveheart
+[01:13:23] <Eivel> .song Fillydelphia_Radio
+[01:13:24] <Derpi> KeyError: 'server_streams' (file "/home/eivel/.willie/modules/custom_radio.py", line 29, in getdata)
+[01:13:27] <Eivel> hm
+[01:13:32] <Eivel> czyżby ich stream padł?
+[01:13:42] <Beton> nie, słucham właśnie
+[01:13:54] <Beton> .song Fillydelphia
+[01:13:54] <Derpi> KeyError: 'server_streams' (file "/home/eivel/.willie/modules/custom_radio.py", line 29, in getdata)
+[01:14:10] <Beton> .song blablabla
+[01:14:11] <Derpi> KeyError: 'server_streams' (file "/home/eivel/.willie/modules/custom_radio.py", line 29, in getdata)
+[01:14:24] <Beton> po prostu chyba nazwę źle wpisujemy
+[01:14:29] <Beton> ;P
+[01:16:43] <McKey> odpaliłem 2 TwiCrafty na raz... 512 mb na każdy ... kurna działa
+[01:17:54] <Eivel> Beton: a nie, bo zmieniałem coś tam i zepsułem
+[01:17:59] <Eivel> McKey: gz
+[01:18:19] <Eivel> mniej niż terraria
+[01:23:49] <Eivel> .song phillydelphia_radio
+[01:23:49] <Derpi> KeyError: 'server_streams' (file "/home/eivel/.willie/modules/custom_radio.py", line 29, in getdata)
+[01:24:53] <Eivel> .song phillydelphia_radio
+[01:25:05] <Eivel> .song luna_radio
+[01:25:06] <Derpi> Na antenie luna_radio: Carbon Maestro - Ordo Ad Chao
+[01:25:11] <Eivel> .song fillydelphia_radio
+[01:25:12] <Derpi> Na antenie fillydelphia_radio: Knife Pony and Archie - Never Stop
+[01:33:02] <Beton> .next fillydelphia_radio
+[01:33:30] <Beton> .next
+[01:35:52] <Eivel> Beton: ani pvl ani yay nie mają obsługi next
+[01:36:02] <Beton> ah
+[01:36:26] <Eivel> w ogóle tego w api nie ma
+[01:36:27] <Beton> swoją drogą, YAY to prawdopodobnie będzie PVL xD
+[01:36:34] <Eivel> wiem :P
+[01:38:02] <Eivel> a historii do pvl nie dorobię raczej nigdy, bo strasznie obciąża bota
+[01:38:16] <Beton> aż tak mają to zagmatwane?
+[01:38:23] <McKey> nie, tak wiele :P
+[01:38:42] <Eivel> nie, po prostu radioyay nie przechowuje historii, a pvl tylko 1 piosenkę
+[01:38:54] <Eivel> i muszę lokalnie kolejkę mieć i sprawdzać co np. 15s
+[01:39:00] <Beton> aha
+[01:44:13] <Eivel> .history
+[01:44:17] <Eivel> .song
+[01:44:24] <Eivel> .song
+[01:44:29] <Eivel> .last
+[01:44:29] <Derpi> Silva Hound - Big Macintosh (Annodam's Bronies Unite Remix)
+[01:44:34] <Eivel> eh...
+[01:44:52] <Eivel> take one down, patch it around...
+[01:44:58] <Eivel> 127 little bugs in the code
+[01:45:30] <Eivel> a nie
+[01:45:33] <Eivel> derp
+[01:45:33] <Derpi> 6_9
+[01:49:02] <Eivel> ok, już
+[01:50:12] <Eivel> Beton: kajam się
+[01:50:18] <Eivel> jednak pvl ma historię
+[01:50:31] <Eivel> dodam jutro, challenge accepted
+[01:50:52] <Beton> ojj, nie trzeba kombinować, ja tylko tak sprawdzałem xD
+[01:51:02] <Eivel> albo dodam po skarpetkach
+[01:51:06] <Eivel> priorytety
+[01:51:09] <Eivel> :P
+[01:52:45] <McKey> sead "chujugonalocz" zimowa wyspa .... kur************* nie nadaje sie na surowcową
+[02:14:51] <Eivel> Beton: naprawiłem
+[02:14:58] <Eivel> teraz nie wyświetla już żadnych komend ^^
+[02:15:00] <Eivel> .commands
+[02:17:29] <Beton> xD
+[02:18:08] *** McKey is now known as [A]McKey
+[04:21:30] <ola> :>
+[04:21:44] * ola przytula Beton
+[04:22:11] * Beton tuli Olę
+[04:22:16] <Beton> ;>
+[04:42:28] * Eivel tuli Derpi
+[04:42:28] * Derpi mocno przytula Eivel c:
+[05:12:42] *** Quits: Beton (Beton@Pony-st9gf8.adsl.tpnet.pl) (Quit: Wychodzi)
+[13:13:14] *** Joins: Husarz44 (Husarz44@Pony-e9a1g7.adsl.inetia.pl)
+[13:13:15] <Husarz44> siemka all
+[13:13:43] *** Husarz44 is now known as Pony_48560
+[13:13:54] <Pony_48560> kur
+[13:14:05] <Pony_48560> Eivel: jak się logowało?
+[13:14:22] *** Quits: Pony_48560 (Husarz44@Pony-e9a1g7.adsl.inetia.pl) (Quit: Page closed)
+[13:14:33] *** Joins: Husarz44 (~Husarz44@Pony-e9a1g7.adsl.inetia.pl)
+[13:14:42] <Eivel> piszesz prywatną wiadomość do NickServ /msg NickServ login hasło
+[13:15:01] *** Husarz44 is now known as Pony_46967
+[13:15:10] <Pony_46967> hmm
+[13:15:21] *** Quits: Pony_46967 (~Husarz44@Pony-e9a1g7.adsl.inetia.pl) (Quit: Page closed)
+[13:15:44] *** Joins: Husarz44 (Husarz44@Pony-e9a1g7.adsl.inetia.pl)
+[13:15:53] <Eivel> albo mi się komendy popieprzyły, czekaj xd
+[13:16:03] <Eivel> aha
+[13:16:04] <Eivel> nie login
+[13:16:05] <Eivel> indentify
+[13:16:14] *** Husarz44 is now known as Pony_46439
+[13:16:19] *** Quits: Pony_46439 (Husarz44@Pony-e9a1g7.adsl.inetia.pl) (Quit: Page closed)
+[13:16:54] *** Joins: Husarz44 (Husarz44@Pony-e9a1g7.adsl.inetia.pl)
+[13:16:56] <Eivel> a jak ci się zmieni nick, to nie musisz wychodzić. Wtedy piszesz /msg NickServ identify nick hasło
+[13:17:25] *** Husarz44 is now known as Pony_92568
+[13:17:40] <Eivel> np teraz :P
+[13:17:58] <Pony_92568> idiotyczne
+[13:18:13] <Eivel> normalne. Jak masz klienta irc to można to zautomatyzować
+[13:18:14] <Pony_92568> i nie moge nicku zmienić
+[13:18:23] <Eivel> jak to nie
+[13:18:28] <Eivel> zalogowałeś się?
+[13:18:31] <Pony_92568> tak
+[13:18:31] <Derpi> tak, tak było
+[13:18:34] <Eivel> to /nick Husarz44
+[13:18:35] *** Quits: Pony_92568 (Husarz44@Pony-e9a1g7.adsl.inetia.pl) (Quit: Page closed)
+[13:18:38] <Eivel> ...
+[13:18:42] *** Joins: Husarz44 (Husarz44@Pony-e9a1g7.adsl.inetia.pl)
+[13:18:47] <Eivel> [13:18:33] <Eivel> to /nick Husarz44
+[13:18:47] <Eivel> [13:18:34] <-- Pony_92568 (Husarz44@Pony-e9a1g7.adsl.inetia.pl) has quit (Quit: Page closed)
+[13:18:47] <Eivel> [13:18:37] <Eivel> ...
+[13:18:54] <Husarz44> no
+[13:18:58] <Husarz44> pisałem
+[13:19:10] <Husarz44> ale było napisane że zarejestrowany i nie moge
+[13:19:19] <Eivel> no to chyba niepoprawnie się zalogowałes
+[13:19:27] <Husarz44> właśnie poprawnie :P
+[13:19:33] <Eivel> to dziwne
+[13:20:15] <Husarz44> hmm, przejrzałem moje stare prace na medievalu for fun
+[13:20:22] <Husarz44> hehe
+[13:20:32] <Husarz44> jednostka: Bronies Guard
+[13:20:53] <Husarz44> te zbroje ze znakami luny i celestii :D
+[13:22:07] <Eivel> nie wiem o czym mówisz :P
+[13:23:38] <Husarz44> o fun modowaniu na medieval 2
+[13:27:06] *** [A]McKey is now known as McKey
+[13:36:53] *** Joins: Beton (Beton@Pony-f4oua2.adsl.tpnet.pl)
+[13:36:53] *** ChanServ sets mode: +qo Beton Beton
+[13:38:42] <McKey> hej Beton 
+[13:39:00] <Beton> hej :P
+[13:39:15] <McKey> .addalias 
+[13:39:16] <Derpi> Podana fraza jest za krótka.
+[13:39:22] <McKey> .addalias hej :p
+[13:39:23] <Derpi> Błąd
+[13:39:26] <McKey> .addalias hej :p hej
+[13:39:27] <Derpi> Błąd
+[13:39:32] <McKey> .addalias hej :p  <reply> hej
+[13:39:33] <Derpi> Błąd
+[13:42:31] <Beton> McKey, nie wiem czy to dobry pomysł ;P
+[13:42:37] <Beton> będzie spamować mocno
+[13:44:10] <McKey> Najpierw trzeba znać polecenie ...
+[13:44:38] <Eivel> .readme
+[13:44:38] <Derpi> Instrukcja dodawania faktów: http://www.derpcraft.pl/index.php/22-instrukcja-derpi
+[13:44:40] <Eivel> McKey: 
+[13:44:48] <McKey> ...
+[13:44:49] <McKey> .help
+[13:44:49] <Derpi> McKey: Say .help <command> (for example .help c) to get help for a command, or .commands for a list of commands.
+[13:45:01] <Eivel> help też wyłączę
+[13:45:27] <McKey> .addalias hej :p  <alias> hej
+[13:45:28] <Derpi> Dodano nowy alias: hej p do grupy: 2
+[13:45:36] <McKey> hej :p
+[13:45:36] <Derpi> Siemanko
+[13:45:39] <McKey> :3
+[13:45:39] <Derpi> Meow c:
+[13:47:43] <Beton> Eivel, Help będzie wyłączony?
+[13:48:41] <Eivel> Beton: raczej tak, bo będę robić własny
+[13:48:53] <Beton> aha
+[14:08:41] *** Joins: Ciappo (~Ciappo@Pony-947da6.adsl.tpnet.pl)
+[14:08:48] <Ciappo> Siemanko :D
+[14:09:02] <Beton> hej ;)
+[14:11:38] <Husarz44> HEJ
+[14:11:38] <Derpi> witaj :)
+[14:23:44] *** Quits: Husarz44 (Husarz44@Pony-e9a1g7.adsl.inetia.pl) (Ping timeout: 121 seconds)
+[14:29:06] <McKey> Ashley`>> Kocham cie za cmder-a :P
+[14:29:41] <McKey> http://puu.sh/dNQvF/d9a189b017.jpg
+[15:10:28] <Ciappo> McKey Ty na serio odpaliłeś irca w cmder? XD
+[15:27:32] <McKey> jak widać
+[15:53:31] *** Joins: Husarz44 (Husarz44@Pony-e9a1g7.adsl.inetia.pl)
+[15:53:36] <Husarz44> siemka all
+[15:54:01] *** Husarz44 is now known as Pony_68185
+[15:54:13] <Pony_68185> kur*a
+[15:56:37] <Pony_68185> Eivel
+[15:56:42] <Pony_68185> przypomnij mi
+[15:56:46] <Pony_68185> co to była za komenda
+[15:57:07] <Pony_68185> bo jestem bliski do wywalenia kompter za okno
+[15:57:15] <Pony_68185> komputera*
+[15:57:49] <Ciappo> ./msg nickserv identify haslo?
+[15:57:57] <Pony_68185> tak
+[15:57:57] <Derpi> tak, tak było
+[15:58:04] <Ciappo> to masz :D
+[15:58:52] *** Pony_68185 is now known as Husarz44
+[15:58:54] <Husarz44> no
+[15:59:00] <Husarz44> wkur*ające
+[16:00:02] <McKey> Husarz44>> /ns login nick pass
+[16:02:06] <Husarz44> ok
+[16:02:36] <Husarz44> i tak muszę zrobić relauch compa
+[16:04:48] *** Joins: Husarz44_ (Husarz44@Pony-e9a1g7.adsl.inetia.pl)
+[16:05:09] <Husarz44_> no
+[16:05:16] <Husarz44_> nohmm
+[16:05:23] <Husarz44_>  a to już dziwne
+[16:05:27] * Husarz44_ slaps Husarz44 around a bit with a large fishbot
+[16:06:37] *** Quits: Husarz44 (Husarz44@Pony-e9a1g7.adsl.inetia.pl) (Ping timeout: 121 seconds)
+[16:06:55] *** Husarz44_ is now known as Husarz44
+[16:07:34] <Beton> Husarz44, zainstaluj sobie normalnego klienta ;P
+[16:07:44] <Husarz44> nie stać mnie :P
+[16:07:46] <Beton> i ustaw autologowanie
+[16:08:13] <Beton> bo Ty teraz na webowym?
+[16:08:16] <Husarz44> ja nie davy jones
+[16:08:19] <Husarz44> tak
+[16:08:19] <Derpi> nie
+[16:08:51] * Husarz44 głaszcze derpi
+[16:08:51] * Derpi mruczy :3
+[16:08:57] <Husarz44> :P
+[16:10:15] *** Joins: DerpCraft (mobile@Pony-f4oua2.adsl.tpnet.pl)
+[16:10:31] <Husarz44> o.O
+[16:10:44] *** Quits: DerpCraft (mobile@Pony-f4oua2.adsl.tpnet.pl) (Quit: leaving)
+[16:10:46] <Ciappo> Derp craft żyje?
+[16:10:51] <Ciappo> żył...
+[16:11:19] <Beton> sprawdzam tylko, czy nick nadal jest zarejestrowany
+[16:15:03] <McKey> miesiąc
+[16:15:12] <Beton> wiem
+[16:15:24] <Beton> albo 3 jak urlop włączony
+[16:15:33] <McKey> ta
+[16:36:54] <Eivel> .help addfact
+[16:36:55] <Derpi> Eivel: Instrukcja dodawania faktów: http://www.derpcraft.pl/index.php/22-instrukcja-derpi
+[16:36:55] <Derpi> Eivel: e.g. .addfact fraza <reply> odpowiedź
+[16:36:58] <Eivel> .help checkreply
+[16:36:58] <Derpi> Eivel: e.g. .checktreply fraza
+[16:37:05] <Eivel> sweet
+[16:39:11] <Beton> Eivel << check04treply fraza
+[16:40:50] <Eivel> ?
+[16:40:58] <Eivel> Beton: ?
+[16:40:58] <Derpi> Concrete ♡
+[16:41:45] <Beton> Eivel, jest "T" między "K" i "R" w słowie "checktreply"
+[16:42:24] <Eivel> yyy
+[16:42:29] <Eivel> jest dobrze, trust me
+[16:42:37] <Eivel> i'm an eivgineer
+[16:42:50] <Eivel> .help checkreply
+[16:42:50] <Derpi> Eivel: e.g. .checkreply fraza
+[16:43:56] <Beton> w sumie to fakt, w słowie "checktreply", litera "T" powinna się znajdować pomiędzy literą "K" a "R"
+[16:48:24] <Eivel> xD
+[16:48:26] <Eivel> żelazna logika
+[16:49:11] <Beton> albo betonowa xD
+[16:50:15] <Eivel> concrete'na
+[16:50:30] <Eivel> (konkretna)
+[16:51:37] <Beton> XD
+[16:54:56] *** Joins: Beton|Mobi (Beton|Mobi@Pony-e8ag9a.dynamic.t-mobile.pl)
+[16:55:32] <McKey> Block of Concencrate
+[16:55:40] <McKey> "Konkretny ten blok"
+[17:00:08] <Eivel> .tell McKey test
+[17:00:08] <Derpi> Eivel: Przekażę wiadomość, gdy McKey będzie w pobliżu.
+[17:00:09] <Derpi> Eivel: I'll pass that on when McKey is around.
+[17:00:10] <Derpi> TypeError: must be str, not bytes (file "/home/eivel/.willie/modules/tell_translated.py", line 50, in dumpReminders)
+[17:00:15] *** Quits: Beton (Beton@Pony-f4oua2.adsl.tpnet.pl) (Ping timeout: 121 seconds)
+[17:00:15] <McKey> nie
+[17:00:15] <Eivel> aha
+[17:00:15] <Derpi> TypeError: must be str, not bytes (file "/home/eivel/.willie/modules/tell_translated.py", line 50, in dumpReminders)
+[17:00:16] <Derpi> McKey: 2014-12-29 - 16:00:08 <Eivel> tell McKey test
+[17:00:17] <Derpi> McKey: 2014-12-29 - 16:00:08 <Eivel> tell McKey test
+[17:00:22] *** Quits: Derpi (Derpi@Keep.Calm.and.Pony.On) (Quit: Closing)
+[17:00:22] <McKey> ....
+[17:02:00] <Ciappo> haha
+[17:02:28] <Eivel> nie będę ryzykować
+[17:02:33] <McKey> Wal sie Eivel :P
+[17:02:34] <Eivel> stary tell jest pod pythona 2
+[17:07:32] *** Joins: Derpi (Derpi@Pony-1kb.e19.62.178.IP)
+[17:07:32] *** ChanServ sets mode: +o Derpi
+[17:07:58] <Eivel> .tell McKey test2
+[17:07:58] <Derpi> Eivel: Przekażę wiadomość, gdy McKey będzie w pobliżu.
+[17:10:06] <McKey> nie
+[17:18:53] <Husarz44> no proszę
+[17:19:10] <Husarz44> właśnie się dowiedziałem że assassins creed i watch dogs to to samo uniwersum
+[17:19:25] <Husarz44> mindf*ck
+[17:20:07] <McKey> gz
+[17:23:51] <Eivel> what
+[17:24:59] <Eivel> McKey: wpisz jeszcze raz to .addalias Muffin? <alias> Lubisz Muffinki?
+[17:27:43] <Ashley`> mew :3
+[17:27:46] <Ashley`> atom-shell fajne
+[17:34:02] <Eivel> Beton|Mobi: jesteś?
+[17:34:28] <Eivel> McKey?
+[17:34:57] <Eivel> Ashley`: czym jest atom-shell?
+[17:35:17] <Eivel> .addalias mew :3 <alias> meow
+[17:35:18] <Derpi> Dodano nowy alias: mew 3 do grupy: 174
+[17:35:23] *** Joins: husarz44lmobi (husarz44@Pony-e9a1g7.adsl.inetia.pl)
+[17:35:30] <husarz44lmobi> Hmm
+[17:35:30] <Eivel> .undo
+[17:35:30] <Derpi> Poprawnie usunięto
+[17:36:00] <Eivel> .addalias mew :3 <alias> meow
+[17:36:01] <Derpi> Dodano nowy alias: mew 3 do grupy: 174
+[17:36:02] <Eivel> mew :3
+[17:36:02] <Derpi> $mrr
+[17:36:04] <Eivel> mew :3
+[17:36:04] <Derpi> Mrr :3
+[17:36:08] <Eivel> hm, dziwne
+[17:36:11] <Eivel> dziwne, ale działa xd
+[17:36:23] <Eivel> hej husarz44lmobi
+[17:36:28] <Eivel> akurat cię potrzebowałem
+[17:36:31] <Eivel> przetestować coś musze
+[17:36:35] <husarz44lmobi> Ja wiedzialem ze aktualizacja sterownikow to zly pomysl
+[17:36:44] <Eivel> bsod?
+[17:36:59] <husarz44lmobi> Monitor mi nie dziala
+[17:37:11] <Ciappo> może płyty nie ma?
+[17:37:21] <husarz44lmobi> Co?
+[17:37:30] <Ciappo> no płyty
+[17:37:34] <Eivel> jaki ster  instalowałęś? I jaki system/
+[17:37:37] *** Quits: Husarz44 (Husarz44@Pony-e9a1g7.adsl.inetia.pl) (Ping timeout: 121 seconds)
+[17:37:42] <Eivel> .tell Ciappo abc
+[17:37:42] <Derpi> Eivel: Przekażę wiadomość, gdy Ciappo będzie w pobliżu.
+[17:37:43] <husarz44lmobi> O
+[17:37:50] <Ciappo> https://www.youtube.com/watch?v=d8Nj1jr2K5M
+[17:37:50] <Derpi> 2014-12-29 16:37:42 <Eivel> tell Ciappo abc
+[17:37:53] <Derpi> [YouTube] Title: Ja to naprawię | Uploader: Sebac98 | Uploaded: 26/03/2010, 23:17 | Duration: 0.016666666666666666hours | Views: 234,562 | Comments: 465 | Likes: 1,292 | Dislikes: 122
+[17:37:56] <Eivel> damn, nie działa
+[17:37:57] <Ciappo> chyba działą
+[17:38:14] <husarz44lmobi> Windows7 nvidiq gtx 750ti
+[17:38:30] <Ciappo> a podłączone? xD
+[17:39:01] <Eivel> husarz44lmobi: a jaki ster instalowałes?
+[17:39:06] <Eivel> do karty?
+[17:39:30] <Eivel> .tell Ciappo abc
+[17:39:30] <Derpi> Eivel: Przekażę wiadomość, gdy Ciappo będzie w pobliżu.
+[17:39:31] <husarz44lmobi> Do karty
+[17:39:49] <Eivel> hm, to dziwne
+[17:39:55] <Ciappo> ale monitor nie działa od początku czy jak się uruchomi windows?
+[17:39:55] <Derpi> 2014-12-29 16:39:30 <Eivel> tell Ciappo abc
+[17:40:07] *** Quits: husarz44lmobi (husarz44@Pony-e9a1g7.adsl.inetia.pl) (Connection closed)
+[17:40:19] *** Joins: husarz44lmobi (husarz44@Pony-e9a1g7.adsl.inetia.pl)
+[17:40:24] <husarz44lmobi> Bo mi ac unity wywala
+[17:40:39] <husarz44lmobi> Ale gunwo
+[17:42:15] <Eivel> .tell Ciappo finalny test wykrojenia tell Ciappo
+[17:42:15] <Derpi> Eivel: Przekażę wiadomość, gdy Ciappo będzie w pobliżu.
+[17:42:28] <Ciappo> będzie błąd 
+[17:42:29] <Derpi> Ciappo: 2014-12-29 - 16:42:14 <Eivel> Ciappo test wykrojenia tell Ciappo
+[17:43:03] <husarz44lmobi> Ciappo: ten gosc jest prawie jak hardkorowy koxu
+[17:43:14] <Ciappo> ...
+[17:43:34] <husarz44lmobi> Ale czemu to gunwo nie dziala
+[17:43:47] <Ashley`> Eivel: google it :P
+[17:43:48] <Eivel> husarz44lmobi: ale monitor ci działa przy bootupie?
+[17:43:52] <Ciappo> a próbowałeś na innych sterownikach?
+[17:43:54] <Ashley`> Eivel: na tym jest Atom zrobiony
+[17:44:04] <husarz44lmobi> Nawet moj laptop chodzil bez karty
+[17:44:09] <husarz44lmobi> Monitor
+[17:44:24] <husarz44lmobi> Miga jakby byl uspiony
+[17:44:35] <Eivel> .tell Ciappo zapomniałem, że lista po usunięciu elementu się przesuwa. Teraz powinno banglać
+[17:44:36] <Derpi> Eivel: Przekażę wiadomość, gdy Ciappo będzie w pobliżu.
+[17:44:38] <Ciappo> ale tylko jak uruchomisz grę tak?
+[17:44:39] <Derpi> Ciappo: 2014-12-29 - 16:44:35 <Eivel> zapomniałem, że lista po usunięciu elementu się przesuwa. Teraz powinno banglać
+[17:44:51] <Ciappo> i chyba bangla
+[17:44:55] <Eivel> yup
+[17:45:30] <Eivel> husarz44lmobi: ale jak przy boocie ci działa, to spróbuj trybu awaryjnego z płyty
+[17:45:42] <Eivel> czy tam nie z płyty, bo to win7
+[17:45:51] <husarz44lmobi> Boje sie kompa wylaczac bo bylem w trakcie instalacji
+[17:45:53] <Ciappo> wat? xD
+[17:46:14] <Ciappo> Awaryjny się przy boocie komputera włącza 
+[17:46:55] <husarz44lmobi> Wtf
+[17:47:07] <husarz44lmobi> Nie moge kompa wylwczyc
+[17:47:23] <Ciappo> przytrzymaj przycisk 
+[17:47:26] <husarz44lmobi> Oto gamingowe gunwo za 3000
+[17:47:32] <Ashley`> emm
+[17:47:40] <Eivel> zaloguj się po ssh i spprawdź procesy.... oh wait
+[17:47:41] <husarz44lmobi> A co ja teraz robie?
+[17:47:42] <Ashley`> "gamingowe gunwo" brzmi jak PEBKAC
+[17:47:55] <Ciappo> A reset masz? xD
+[17:48:11] <husarz44lmobi> Tylko do roota :P
+[17:48:19] <Eivel> czo
+[17:48:25] <Ciappo> roota?
+[17:48:34] <Eivel> my rozmawiamy tym samym językiem co husarz44lmobi?
+[17:48:37] <Ashley`> dorota?
+[17:48:41] <Ashley`> xD
+[17:48:45] <Eivel> :D
+[17:48:59] <Ciappo> czekaj, chcesz powiedzieć że nie masz przycisku "reset" na obudowie? D:
+[17:48:59] <husarz44lmobi> Jak kompa resetuje to mi chce windowsa wywalic
+[17:49:00] <Eivel> husarz44lmobi: mówimy o resecie lub przytrzymaniu przycisku on/off.
+[17:49:14] <husarz44lmobi> I o tym i o tym
+[17:49:21] <husarz44lmobi> Dobra
+[17:49:24] <husarz44lmobi> Mam
+[17:49:31] <Ciappo> to go wciśnij :P
+[17:49:33] <Eivel> what is this I don't even
+[17:50:02] *** Joins: Beton (Beton@Pony-f4oua2.adsl.tpnet.pl)
+[17:50:02] *** ChanServ sets mode: +qo Beton Beton
+[17:50:05] <husarz44lmobi> Za pierwszym razem prawie kompa wyczyscilem 
+[17:50:19] <husarz44lmobi> A do czego to jest...
+[17:50:42] <husarz44lmobi> Dobra dziala
+[17:50:44] <Ciappo> może "turbo"? :D
+[17:50:53] <husarz44lmobi> Sprawdze sterowniki
+[17:51:29] <Beton> a co się spsuło?
+[17:51:34] <Eivel> husarz44lmobi
+[17:51:39] <Eivel> znaczy, jego komp
+[17:51:43] <Ciappo> Ale dalej nie ogarniam od kiedy nie działa mu monitor, czy od momentu gdy ładuje się windows czy włączenia komputera...
+[17:51:49] <Eivel> ja też
+[17:51:55] <Beton> próbowałeś wyłączyć i włączyć?
+[17:51:58] <Eivel> XD
+[17:52:05] <husarz44lmobi> Naprawilem
+[17:52:07] <Beton> xD
+[17:52:15] <Ciappo> i co? płyty nie miał?
+[17:53:03] <husarz44lmobi> Monitor mi prsestal dzialac po aktualizacji sterownikow
+[17:53:51] <husarz44lmobi> Hmm
+[17:54:05] <husarz44lmobi> Fajne urzadzenie
+[17:54:38] <husarz44lmobi> Terendo tunneling pseudo-interface
+[17:54:50] <husarz44lmobi> Hmm
+[17:55:44] <husarz44lmobi> Jak teraz mi ac unity bedzi
+[17:56:08] <husarz44lmobi> Wywali to chyba wyrzuce kompa za okno
+[17:56:18] <husarz44lmobi> O kur+a
+[17:56:27] <husarz44lmobi> Dziala :D
+[17:56:28] <Eivel> husarz44lmobi: zdajesz sobie sprawę, że AC:U jest najbardziej niezoptyalizowaną grą ostatnich lat?
+[17:56:36] <husarz44lmobi> Wiem
+[17:56:40] <Eivel> przywitaj 20fps, bo więcej nie wyciągniesz
+[17:56:46] <Beton> działa wolniej, niż DerpCraft
+[17:56:46] <McKey> Eivel>> 15*
+[17:56:50] <Ciappo> meh, idę dalej na terrarię xD
+[17:56:53] <Eivel> albo nawet i 15 :P
+[17:56:55] <husarz44lmobi> Wyciagnolem 50
+[17:57:03] <McKey> na minimalnych z 3 PC
+[17:57:10] <husarz44lmobi> Ta karta graficzna jol
+[17:57:21] <husarz44lmobi> Na normalnych w HD
+[17:57:23] <Beton> ale Husarz na DerpCrafcie miał chyba z 50FPS xD
+[17:57:34] <husarz44lmobi> 70*
+[17:57:41] <husarz44lmobi> ;D
+[17:57:43] <Ciappo> i7 robi swoje
+[17:57:48] <Beton> i to z dodatkowymi efektami, shaderami itp
+[17:58:32] <husarz44lmobi> Jak ac po 2 dniach gry zaczal wywalac to uznalem ze czas na aktualizacje
+[17:58:42] <Beton> Husarz, a jaka grafika?
+[17:58:53] <Beton> w og�le jakie masz parametry kompa?
+[17:59:09] <husarz44lmobi> Gtx 750ti i intel I7
+[17:59:20] <husarz44lmobi> 8gb ramu
+[17:59:38] <Eivel> husarz44lmobi: kiedy za tego kompa dałeś 3 kafle?
+[17:59:40] <Beton> no to chyba ten GTX 750 robi swoje
+[18:00:00] <Eivel> na wiosnę będę sobie też gamingowe cudo sprawiać 
+[18:00:00] <husarz44lmobi> Moge dolozyc wiecej ale nie chce mi sie grzebac w kompie starym
+[18:00:57] <Ciappo> to ja za core 2 duo 2,8 4gb ramu i radka hd4850 dałem 3k D:
+[18:01:08] <Ciappo> tylko to było z 5 lat temu xD
+[18:01:41] <Beton> ja tam zawsze ze złomu składałem komputery ;P
+[18:01:50] <Eivel> Ciappo: 4 lata temu core i5, 4GB ram i gf 330m lapek 3k
+[18:02:25] <Ciappo> a tylko jeszcze u mnie wszystko było kupowane z monitorem głośnikami, nie wiem jak u Husarza 
+[18:02:27] <Beton> teraz i tak to wszystko stoi w miejscu
+[18:03:03] <husarz44lmobi> Dobra czas zwiekszyc fpsy
+[18:03:17] <Ciappo> oj poleci dymek xD
+[18:03:26] <husarz44lmobi> Game booster + tryb offline
+[18:03:38] <husarz44lmobi> 20 fps wiecej bedzie
+[18:03:53] <Beton> czyli ile og�lnie? :P
+[18:05:03] <husarz44lmobi> Booster srednio mi wydajnosc zwieksza o 40%
+[18:06:40] *** Joins: Husarz44 (~Husarz44@Pony-e9a1g7.adsl.inetia.pl)
+[18:07:11] <Husarz44> no na wysokich na najwyższej rozdzielczości piknie śmiga
+[18:07:43] <Beton> Husarz po włączeniu Boostera ma w grze 20 FPS więcej. FPS Booster zwiększył mu wydajność o 40%. Oblicz ile Husarz miał FPSów przed włączeniem Boostera.
+[18:07:53] <Ciappo> haha
+[18:08:10] <Beton> xD
+[18:08:46] <Husarz44> hmm
+[18:08:56] <Husarz44> muszę to zadanie dać mojem nauczycielce od matmy
+[18:08:58] <Husarz44> :P
+[18:09:10] <Ciappo> 20? xD
+[18:09:18] <Ciappo> aaa nie sorry
+[18:09:23] <Beton> nie
+[18:09:36] <Husarz44> 60?
+[18:09:36] <McKey> Husarz44>> Kilogram Beton i Kilogram Eivel postawili na wadze. Który z nich waży więcej?
+[18:09:53] <Husarz44> Ten który waży wincyj kilobajtów
+[18:10:11] <McKey> A przypadkiem nie waży tyle samo? Każdy po 1 kg :v
+[18:10:47] <Husarz44> cegła waży kilogram i pół cegły
+[18:10:52] <Husarz44> ile waży cegła?
+[18:11:33] <Beton> 30kg
+[18:11:39] <Ciappo> tak się bawimy? Po stawie pływają kaczki jedna za drugą.
+[18:11:51] <Ciappo> Ile płynie kaczek po stawie?
+[18:12:22] <Beton> 3
+[18:12:22] <Derpi> Meow c:
+[18:12:47] <Ciappo> Beton nie
+[18:12:56] <Beton> tak
+[18:12:56] <Derpi> nie
+[18:13:04] <Ciappo> tak derp
+[18:13:10] <Beton> http://www.bank-zdjec.com/foto5/30632_b.jpg
+[18:13:25] <Beton> 3 kaczki pływają po stawie
+[18:13:27] <Ciappo> tak
+[18:13:28] <Derpi> nie
+[18:13:29] <Ciappo> haha 
+[18:13:57] <Ciappo> czytałem o cegle że 2 i przestawiło mi się że 2 a nie 3...
+[18:14:25] * Ciappo Gratuluje Betonowi 
+[18:16:25] <McKey> .credits
+[18:16:32] <McKey> :3
+[18:16:32] <Derpi> Meow c:
+[18:18:27] <Beton> 3
+[18:18:27] <Derpi> Meow c:
+[18:18:28] <Beton> 3
+[18:18:28] <Derpi> Meow c:
+[18:21:26] <Eivel> Beton: to już niestety tak będzie :P
+[18:21:47] <Beton> domyślam się ;P
+[18:26:51] <McKey> Ciappo>> ogarniaj to :P http://puu.sh/dOgwN/234fafa98c.jpg
+[18:27:10] <Husarz44> Ciappo: 2
+[18:27:42] <Ciappo> emm?
+[18:27:58] <Ciappo> ciemność widzę
+[18:28:30] <McKey> nowłaśnie
+[18:28:55] <McKey> A teraz rozwale ci muzg http://puu.sh/dOgP9/1707ff60e4.jpg ;)
+[18:29:16] <Eivel> .show_permissions Beton
+[18:29:26] <Eivel> .show_permissions McKey
+[18:29:30] <Eivel> hmm
+[18:29:42] <McKey> .givemeallpex
+[18:30:02] <Ciappo> waaaaaaat?
+[18:30:12] <Ciappo> lel
+[18:30:47] <Ciappo> 3ci swiat, bieganie od morza do morza w poszukiwaniu butów do chodzenia po wodzie i hełmu do nurkowania...
+[18:31:44] <Eivel> zepsułem uprawnienia 
+[18:34:27] <McKey> Ciappo>> na kotowo jest helm
+[18:35:14] <Eivel> buty do chodzenia po wodzie są na pre-hardmode? Ciappo
+[18:35:19] <Eivel> wydaje mi się, że tylko potiony
+[18:35:29] <Ciappo> emm
+[18:35:35] <Eivel> .add_permissions Beton bucket_add 2
+[18:35:35] <Derpi> Brak uprawnień
+[18:35:39] <Eivel> ;_;
+[18:35:54] <Beton> Derpi się zbuntowała xD
+[18:36:03] <Ciappo> <facepalm>
+[18:36:03] <Derpi> http://th03.deviantart.net/fs71/PRE/i/2012/154/0/1/spike___facepalm_by_mysteriouskaos-d51xq2x.png
+[18:36:10] <Eivel> .add_permissions Beton bucket_add 2
+[18:36:11] <Derpi> Zmodyfikowano uprawnienia
+[18:36:24] <Eivel> .add_permissions McKey bucket_add 1
+[18:36:25] <Derpi> Zmodyfikowano uprawnienia
+[18:37:17] <Eivel> a, teraz w drugą stronę zepsułem
+[18:41:10] <Eivel> Beton: już
+[18:41:31] <Beton> ok ;P
+[18:43:37] <Eivel> mam ciekawego sylwestra
+[18:43:43] <Eivel> jednak operatorzy nie mogą się zamienić
+[18:43:51] <Eivel> i muszę wracać z Wrocka o 4:55 x.x
+[18:43:55] <Eivel> prosto do roboty
+[18:44:01] <Eivel> już czuję tą moją wydajność
+[18:44:16] <Eivel> jak się coś zepsuje, to lepiej by zrobili zadzając tam chomika
+[18:44:27] <Eivel> wtedy podejrzewam by miał większą jasność umysłu niż ja
+[18:45:28] *** Quits: husarz44lmobi (husarz44@Pony-e9a1g7.adsl.inetia.pl) (Ping timeout: 121 seconds)
+[18:47:15] <Ciappo> A na kotkowo nie mogę wejść :c
+[18:47:45] <Beton> Eivel, jedziesz na sylwestra do Wrocławia?
+[18:47:50] <Eivel> tak
+[18:47:50] <Derpi> nie
+[18:47:53] <Eivel> tak
+[18:47:53] <Derpi> tak, tak było
+[18:48:24] <Eivel> .time
+[18:48:24] <Derpi> 2014-12-29 - 17:48:24
+[18:48:48] <Eivel> .settz Europe/Warsaw
+[18:48:48] <Derpi> Eivel: Sorry, I don't have timezone support installed.
+[18:48:50] <Husarz44> mój pies się dziwnie zachowuje
+[18:49:38] <Husarz44> siedzi cały czs przy mnie i nie merda ogonem
+[18:49:47] <Husarz44> taka smutna jakaś
+[18:49:56] <Beton> może dawno z nim na spacer nie wychodziłeś ;P
+[18:50:06] <Husarz44> mój pies sam się wyprowadza
+[18:50:23] <Husarz44> ogródek- piękna rzecz
+[18:50:26] <Beton> mhm
+[18:51:44] <Beton> a czy taka piękna to zależy ;P
+[18:54:47] *** Joins: husarz44lmobi (husarz44@Pony-e9a1g7.adsl.inetia.pl)
+[18:57:04] <Eivel> Beton: nie wiem jak ty, ale ja proponuję kawę :P
+[18:57:16] <Beton> właśnie miałem pisać
+[18:57:21] <Beton> xD
+[18:57:25] <Eivel> doskonale :P
+[18:59:06] <McKey> .gimmacoffe
+[18:59:18] <McKey> U mad Eivel? xD
+[19:00:15] <Eivel> zrobię zaraz bazę z obrazkami kawy w skarpetkach :P
+[19:00:24] <McKey> hłe hłe
+[19:00:27] <Ciappo> wut? znalazłem butki
+[19:00:36] <Eivel> gdzie?
+[19:00:43] <Ciappo> w wodzie
+[19:00:48] <Eivel> lol xD
+[19:00:52] *** Quits: Derpi (Derpi@Keep.Calm.and.Pony.On) (Quit: Closing)
+[19:00:54] <Ciappo> znaczy pod woda w skrzyni
+[19:01:01] *** Joins: Derpi (Derpi@Pony-1kb.e19.62.178.IP)
+[19:01:01] *** ChanServ sets mode: +o Derpi
+[19:01:07] <Eivel> .time
+[19:01:07] <Derpi> 2014-12-29 - 18:01:07
+[19:01:11] <Eivel> ...
+[19:01:15] <McKey> 1+ 
+[19:01:29] <Eivel> tak zrobiłem
+[19:01:34] <Eivel> jakoś nie chce configa czytać
+[19:01:52] <McKey> lel
+[19:01:54] <Beton> jest i kawa
+[19:01:57] <McKey> dlatego wole Francje :P
+[19:02:04] <Ciappo> nie no poważka mam lightning bootsy i lava wandersy
+[19:02:17] <Ciappo> z czego jedne są lime a drugie cyan 
+[19:07:05] <Ciappo> to że tak powiem mogę iść na WoF xD
+[19:07:17] <Eivel> Beton: zdrowie ;P
+[19:07:30] <Eivel> Ciappo: good luck :P
+[19:07:30] <Beton> zdrowie! ;P
+[19:07:38] <Eivel> Ciappo: jaką broń dystansową masz>
+[19:07:48] <Eivel> bo na WoF miecze są bezużyteczne
+[19:07:49] <Ciappo> oj, kilka 
+[19:08:01] <Ciappo> idę cośzjeść z/w
+[19:08:09] <Eivel> smocznego
+[19:08:58] *** Quits: Derpi (Derpi@Keep.Calm.and.Pony.On) (Quit: Closing)
+[19:09:13] *** Joins: Derpi (Derpi@Pony-1kb.e19.62.178.IP)
+[19:09:13] *** ChanServ sets mode: +o Derpi
+[19:09:17] <Eivel> .time
+[19:09:17] <Derpi> 2014-12-29 - 18:09:17
+[19:09:22] *** Quits: Derpi (Derpi@Keep.Calm.and.Pony.On) (Quit: KeyboardInterrupt)
+[19:09:32] *** Joins: Derpi (Derpi@Pony-1kb.e19.62.178.IP)
+[19:09:32] *** ChanServ sets mode: +o Derpi
+[19:09:32] <Derpi> 2014-12-29 - 18:09:32
+[19:10:10] *** Quits: Derpi (Derpi@Keep.Calm.and.Pony.On) (Quit: KeyboardInterrupt)
+[19:13:03] *** Joins: Derpi (Derpi@Pony-1kb.e19.62.178.IP)
+[19:13:03] *** ChanServ sets mode: +o Derpi
+[19:13:03] <Derpi> 2014-12-29 - 18:13:03
+[19:13:17] *** Quits: Derpi (Derpi@Keep.Calm.and.Pony.On) (Quit: KeyboardInterrupt)
+[19:19:33] *** Joins: Derpi (Derpi@Pony-1kb.e19.62.178.IP)
+[19:19:33] *** ChanServ sets mode: +o Derpi
+[19:19:37] <Eivel> .time
+[19:19:38] <Derpi> 2014-12-29 - 18:19:37
+[19:19:43] <Eivel> -.-
+[19:19:49] *** Quits: Derpi (Derpi@Keep.Calm.and.Pony.On) (Quit: KeyboardInterrupt)
+[19:20:34] <Ciappo> Eivel z zasięgowych mam bee gun, łuk z hellstone, water bolt, harpoon, kilka boomerangów, undertaker czyli jakiś pistolecik, space gun i celestial aqua scepter
+[19:21:23] *** Joins: Derpi (Derpi@Pony-1kb.e19.62.178.IP)
+[19:21:23] *** ChanServ sets mode: +o Derpi
+[19:21:23] <Derpi> 2014-12-29 - 18:21:23
+[19:22:18] <Eivel> nice
+[19:22:25] <Eivel> to raczej już po WoF :P
+[19:22:29] <Eivel> jeszcze tylko przeżyć
+[19:25:40] <Ciappo> yup
+[19:26:07] <Ciappo> trochę potionów muszę porobić 
+[19:26:51] <Ciappo> i oczywiście dostać się do piekła :D
+[19:30:26] <Eivel> Ciappo: jak się dostaniesz, to przez pół mapy poprzebijaj się przez lochy przez ścianę, żeby po przyzwaniu WoF przy skrajnym końcu mapy uciekać bez zatrzymania w drugą
+[19:30:38] <Ciappo> wiem
+[19:30:47] <Eivel> ja też wiedziałem
+[19:30:54] <Ciappo> myślałem żeby też most zrobić
+[19:30:55] <Eivel> po czym się okazało, że dłużej mnie goniło niż zaplanowałem :P
+[19:31:08] <Ciappo> ale z butkami chyba mi nie potrzebne będą
+[19:31:13] <Eivel> yup
+[19:36:46] <Eivel> Beton: http://www.wykop.pl/link/2310814/quake-na-oscyloskopie/
+[19:36:47] <Derpi> [ Quake na oscyloskopie? - Wykop.pl ] - www.wykop.pl
+[19:38:24] <Beton> hm, brzydko wygląda ;P
+[19:38:58] <Beton> ale jak sterowany z dźwiękówki to nic dziwnego :P
+[20:08:05] <Eivel> Beton: szkoda, że stacje PVL są tak z dupy opisane
+[20:08:18] <Eivel> nie trzymają się żadnego standardu przy atrybucie "genre"
+[20:08:39] <Eivel> jedne piszą faktycznie gatunki, inne "French brony radio" "All the pony, all the time" etc
+[20:08:58] <Eivel> a chciałem zrobić sugerowanie przez Derpi stacji po wypisanych rodzajach muzyki
+[20:09:41] <Beton> bo to pewnie tyczy się całego radia
+[20:10:13] <Beton> a np Celestia Radio nie ma zdefiniowanego gatunku, bo grają wszystko, więc sobie wpisali "All the pony, all the time"
+[20:10:21] <Beton> czyli ich hasło
+[20:10:53] <Eivel> tak, ale jestem miłośnikiem standardów
+[20:10:58] <Beton> w ogóle chyba niewiele jest stacji nastawionych na określony gatunek
+[20:10:59] <Eivel> powinien wtedy być tag "all"
+[20:11:07] <Beton> większość gra wszystko ;P
+[20:17:13] <Eivel> .suggest_station
+[20:17:13] <Eivel> Derpi: EVERYTHING
+[20:33:51] <Ciappo> nie no poważnie, npc zespawnowali się na floating island xD
+[20:36:03] <Ashley`> nie lubie emoji
+[20:36:10] <Ashley`> bo nie rozumiem co chce ktos przekazac xD
+[20:36:34] <Ashley`> ten taki płaczący uśmiechnięty + zwykły uśmiechnięty to "xD"? xD
+[20:38:23] <Eivel> Ashley`: to po prostu śmiech, a nie tylko radość
+[20:49:01] <Husarz44> hmm
+[20:49:10] <Husarz44> wezme się za animacje 2d
+[20:49:14] <Husarz44> tak z nudów
+[20:53:26] <Husarz44> z/w
+[20:57:28] *** Quits: Husarz44 (~Husarz44@Pony-e9a1g7.adsl.inetia.pl) (Ping timeout: 121 seconds)
+[21:31:48] *** Joins: Husarz44 (~Husarz44@Pony-e9a1g7.adsl.inetia.pl)
+[21:32:17] *** Husarz44 is now known as Pony_99847
+[21:32:24] <Pony_99847> ech..
+[21:32:41] <McKey> Pony_99847>> /ns login nick pass
+[21:32:49] <Pony_99847> wiem
+[21:32:56] *** Pony_99847 is now known as Husarz44
+[21:33:00] <Husarz44> ale zapominam
+[21:33:57] <Husarz44> super
+[21:34:08] <Husarz44> zgubiłem pendrive z flashem i aaf
+[21:34:12] <McKey> gz
+[21:34:19] <Husarz44> aae*
+[21:36:55] <Ciappo> gz x2
+[22:18:06] <Husarz44> https://derpicdn.net/img/view/2013/11/27/483017__safe_animated_changeling_gif_a+canterlot+wedding_star+wars_darth+vader_palpatine_boom_starkiller.gif
+[22:18:09] <Husarz44> lol
+[22:18:10] <Derpi> xD
+[22:18:20] <Husarz44> a więc tak to było
+[22:24:17] <Ciappo> http://youtu.be/GyGFN9qtvV0 Husarz44 więc mówisz że robiłeś hełm z pianki tak? xD
+[22:24:17] <Derpi> [YouTube] Title: ArmorAsylum - Iron Man mkVI foam build | Uploader: ArmorAsylum | Uploaded: 29/08/2013, 18:35 | Duration: 0.1272222222222222hours 8.881784197001252e-16mins 38secs | Views: 12,552 | Comments: 28 | Likes: 67 | Dislikes: 2
+[22:24:38] <Husarz44> takie też się robiło
+[22:24:46] <Husarz44> ale ja zacząłem przedni pancerz
+[22:24:50] <Husarz44> ale zła pianka
+[22:25:09] <Ciappo> właśnie ciekawe czy w Polsce taką dostanie 
+[22:25:33] <Husarz44> ae co?
+[22:25:41] <Husarz44> zbroje czy pianke?
+[22:25:45] <Ciappo> piankę taką jak on ma
+[22:25:50] <Husarz44> karimata...
+[22:26:07] <Ciappo> a mówiłeś że zła
+[22:26:34] <Husarz44> ale ja wtedy karimaty nie używałem
+[22:26:41] <Ciappo> aaa
+[22:26:44] <Husarz44> złapałem co miałem pod ręką for fun
+[22:26:45] <Husarz44> https://www.youtube.com/watch?v=TGeC6DTwSAE
+[22:26:45] <Derpi> [YouTube] Title: Poradnik #17 - Zbroja Iron Man MK VI part 1 | Uploader: AndrzejMichalCreate | Uploaded: 03/09/2012, 23:13 | Duration: 0.14305555555555555hours 1.7763568394002505e-15mins 35secs | Views: 33,533 | Comments: 126 | Likes: 272 | Dislikes: 7
+[22:26:54] <Husarz44> ale moja się łamała
+[22:27:07] <Ciappo> zrobiłby se taką zbroję :P
+[22:27:08] <Husarz44> pepakura viewer i wio
+[22:31:43] <Beton> ale w tym musi być cholernie ciepło xD
+[22:31:51] <Beton> latem bym nie chciał ;P
+[22:31:52] <Husarz44> Ciappo: a tak z ciekawości
+[22:32:04] <Husarz44> co ty byś z tym potem robił
+[22:32:08] <Ciappo> Beton co racja to racja, ale w zimę 
+[22:32:16] <Ciappo> hmm nosił xD
+[22:32:27] <Husarz44> Tak w centrum handlowym
+[22:32:32] <Husarz44> telefon ukryty 
+[22:32:40] <Husarz44> i puszcza shoot to thrill
+[22:32:40] <Ciappo> są sylwestry są odpały są halloweeny itp itd
+[22:33:03] <Ciappo> tylko po co on odrysowywuje?
+[22:33:21] <Ciappo> nie lepiej od razu ciąć?
+[22:33:26] <Husarz44> hmm
+[22:33:27] <Husarz44> https://pbs.twimg.com/media/BGGjR-bCEAAV-4_.jpg
+[22:33:37] <Husarz44> zaczynam się bać
+[22:33:51] <Ciappo> niice
+[22:34:12] <Beton> te skrzydła... ;_;
+[22:39:02] <Ciappo> hmm ciekawe jak bardzo karimata tłumi uderzenie kulki wystrzelonej z repliki
+[22:39:21] <Ciappo> ale na pewno bardzo
+[22:41:11] <Husarz44> to zależy ile fps
+[22:41:26] <Husarz44> na pewno sprawdzała by się na paintball
+[22:41:41] <Ciappo> no przykładowo standardowe chińskie 360
+[22:41:50] <Ciappo> ale tak PB jak najbardziej 
+[22:41:53] <Husarz44> nwm
+[22:42:19] <Husarz44> jak cienka to pewnie by przebiła
+[22:43:48] <Ciappo> za 10 zyla jest spory wybór karimat xD 
+[22:50:47] <Ciappo> Takie pytanko czy powietrze ma grudki? xD
+[22:56:13] <McKey> Ciappo>> Ma atomy
+[22:56:16] <McKey> okgógłe
+[22:56:20] <McKey> to chyba ma
+[22:56:40] <Ciappo> ale to raczej malutkie jest nei?
+[22:56:53] <Ciappo> nie*
+[22:57:11] <McKey> no chyba
+[22:57:15] <Ciappo> http://youtu.be/LOmavKow95A i drugi komentarz od góry 
+[22:57:16] <Derpi> [YouTube] Title: Iron Man MK VI - Full Armour | Uploader: AndrzejMichalCreate | Uploaded: 27/10/2012, 10:46 | Duration: 0.005555555555555556hours -5.551115123125783e-17mins 20secs | Views: 5,408 | Comments: 14 | Likes: 42 | Dislikes: 2
+[23:06:58] *** Quits: husarz44lmobi (husarz44@Pony-e9a1g7.adsl.inetia.pl) (Ping timeout: 121 seconds)
+[23:09:32] <Husarz44> jakie grudki?
+[23:09:41] <Husarz44> grudki to mogą być farby
+[23:16:15] <Ciappo> nie wiem, ale koleś się podobno zna
+[23:18:31] <Husarz44> xD
+[23:18:53] <Husarz44> https://www.youtube.com/watch?v=pnMfgRPtyg0
+[23:18:53] <Derpi> [YouTube] Title: Utwardzamy hełm!- czyli krok drugi | Uploader: AndrzejMichalCreate | Uploaded: 17/04/2014, 16:10 | Duration: 0.07833333333333334hours 42secs | Views: 2,808 | Comments: 18 | Likes: 76 | Dislikes: 1
+[23:19:04] <Husarz44> w końcu jakiś lepszy poradnik po polsku :D
+[23:19:09] <Husarz44> a robiłem taki
+[23:19:10] <Husarz44> :D
+[23:19:33] <Husarz44> zrobie nowy i utwardze :D
+[23:22:46] <Husarz44> Ciappo: zgaduje że jutro idziesz kuupić karimatę
+[23:23:04] <Ciappo> nie
+[23:23:10] <McKey> A co ciekawego robicie?
+[23:23:17] <McKey> Ciappo>> i Husarz44 
+[23:23:24] <Ciappo> no kuwa 
+[23:23:40] <Ciappo> 2 raz wpadla mi laleczka do lawy...
+[23:23:54] <McKey>  uuuu
+[23:24:28] <Husarz44> McKey: ja http://i00.i.aliimg.com/wsphoto/v0/493074312/-Alice-papermodel-Starwars-font-b-Clone-b-font-font-b-trooper-b-font-font-b.jpg :D
+[23:24:42] <Ciappo> pierdziele nazbieram gwiazdek wezme rzeczy i dopiero pójdę dropić
+[23:24:54] <Husarz44> zrobiłem taki ale gdzieś mi się zgubił
+[23:25:00] <Husarz44> i muszę zrobić nowy :/
+[23:25:20] <McKey> To na wuj Ciappo kupuje karimate?
+[23:25:29] <Ciappo> jeszcze nie kupuje
+[23:25:36] <Ciappo> ale chyba kupię xD
+[23:25:47] <McKey> to sie pytam why?
+[23:25:52] <Husarz44> https://www.youtube.com/watch?v=uwUI2u784o4
+[23:25:53] <Derpi> [YouTube] Title: Iron Man MK VI Almost finished | Uploader: AndrzejMichalCreate | Uploaded: 04/07/2012, 16:59 | Duration: 0.007222222222222222hours 5.551115123125783e-17mins 26secs | Views: 4,904 | Comments: 13 | Likes: 27 | Dislikes: 2
+[23:25:56] <Ciappo> skleje se coś
+[23:26:31] <Husarz44> co ja rysuję
+[23:26:34] <Husarz44> :/
+[23:26:49] <Ciappo> przykładowo kostium z halo
+[23:26:59] <Husarz44> Master Ciappo
+[23:27:03] <Husarz44> :D
+[23:27:15] <Ciappo> tylko nie wiem jak szybkę zrobię :P
+[23:27:53] <Husarz44> http://www.405th.com/f19/halo-4-master-chief-foam-build-wip-templates-38092/
+[23:27:54] <Derpi> [ Halo 4 Master Chief foam build *WIP* (with templates) ] - www.405th.com
+[23:27:57] <Husarz44> powodzenia
+[23:28:06] <Husarz44> :D
+[23:28:13] <Husarz44> jakoś się da
+[23:28:13] <Ciappo> yup
+[23:28:53] <Ciappo> i na dzielnie w takim haha
+[23:30:18] <Husarz44> chciałbym to zobaczyć
+[23:30:39] <Husarz44> hmm
+[23:30:52] <Husarz44> narysowałem canterlot atakowany przez imperium
+[23:31:23] <Ciappo> potrzebuje jeszcze co najmniej 130 fallen starsow...
+[23:31:58] <Eivel> Ciappo: po co?
+[23:32:03] <Eivel> Husarz44: poka
+[23:32:04] <Ciappo> do star cannona
+[23:32:14] <Husarz44> Eivel: ale na kartce
+[23:32:37] <Husarz44> jutro se odbije i ci pokaże
+[23:32:45] <Ciappo> Eivel 58 ranged damage+very fast speed
+[23:32:52] <Eivel> O.o
+[23:32:56] <Eivel> pre-hardmode?
+[23:33:03] <Ciappo> tak
+[23:33:03] <Derpi> nie
+[23:33:06] <Ciappo> tak
+[23:33:06] <Derpi> nie
+[23:33:08] <Ciappo> tak!
+[23:33:08] <Derpi> tak, tak było
+[23:33:08] <Eivel> xD
+[23:33:12] <Husarz44> moja krew
+[23:33:30] <Ciappo> kupujesz minisharka u npc
+[23:33:37] <Husarz44> dobra ja spadam branoc wszystkim
+[23:33:42] <Ciappo> dobranoc
+[23:33:42] <Derpi> Bywaj
+[23:33:48] *** Quits: Husarz44 (~Husarz44@Pony-e9a1g7.adsl.inetia.pl) (Quit: Page closed)
+[23:33:59] <Ciappo> meteor zbierasz 
+[23:34:02] <Ciappo> i masz
+[23:34:21] <Eivel> a, to ty na singlu też masz npc?
+[23:34:25] <Eivel> czy Kotkowo dziaua?
+[23:34:30] <Ciappo> nei no na singlu 
+[23:34:33] <Ciappo> nie8
+[23:35:10] <Ciappo> po prostu robisz pokoik wstawiasz krzesło i stół i tyle 
+[23:35:36] <Ciappo> za jakiś czas sami poprzychodzą 
+[23:35:49] <Ciappo> tylko musisz coś tam porobić 
+[23:46:21] <Eivel> Ciappo: ale mi to nie idzie
+[23:46:29] <Eivel> zrobiłem stoli i krzesło dla guide'a
+[23:46:32] <Eivel> to wpadł do dziury
+[23:46:41] <Eivel> jest gdzieś w połowie między powierzchnią a piekłem
+[23:46:51] <Ciappo> to jak zginie to się tam zespawni 
+[23:46:57] <Eivel> o
+[23:47:08] <Eivel> a ile jest w sumie wszystkich npc?
+[23:47:08] <Ciappo> tak samo jak reszta npc
+[23:47:26] <Ciappo> https://www.youtube.com/watch?v=pe6y84LkfHc
+[23:47:26] <Derpi> [YouTube] Title: Poradnik Terraria [8] - NPC | Uploader: McjMzn | Uploaded: 16/06/2011, 16:48 | Duration: 0.07916666666666666hours 45secs | Views: 87,677 | Comments: 227 | Likes: 459 | Dislikes: 16
+[23:47:35] <Ciappo> nie wiem czy jeszcze więcej nie ma
+[23:50:25] <Ciappo> na kotkowo miałeś większość npc chyba
+[23:57:19] *** Joins: Ciappo|m (Ciappo@Pony-947da6.adsl.tpnet.pl)
+[23:57:24] *** Quits: Ciappo (~Ciappo@Pony-947da6.adsl.tpnet.pl) (Quit: Page closed)

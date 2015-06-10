@@ -1,0 +1,253 @@
+[00:00:00] <Eivel> żeby ci nic nie zepsuć? :P
+[00:00:01] <BlackBird> #join 
+[00:00:11] <BlackBird> join #nazwa kanalu
+[00:00:21] <Eivel> #join #eiveltest
+[00:00:22] <Patch> Brak uprawnien Eivel
+[00:00:24] <BlackBird> chociaz lottery tez ma
+[00:00:46] *** Joins: Truss (Truss@Pony-stag6f.adsl.tpnet.pl)
+[00:00:46] <Litho> Witaj Truss!
+[00:00:49] <BlackBird> Witaj!
+[00:00:49] <Truss> #join #eiveltest
+[00:00:55] *** Quits: Truss (Truss@Pony-stag6f.adsl.tpnet.pl) (Quit: Page closed)
+[00:01:00] <BlackBird> aha? :V
+[00:01:18] <Eivel> chciałem ci pokazać, że permisje da się obejść
+[00:01:25] <BlackBird> a no tak bo na nick sa
+[00:01:27] <Eivel> można przez 30s podszyć się pod dowolnego niezalogowanego opa
+[00:01:50] <BlackBird> nieumiem na nickserv :V
+[00:02:14] <Eivel> mogę ci potem jak będziesz chciał pokazać jak można to zrobic. Ale tylko teoretycznie, bo w js nie wiem jak to zrobić :P
+[00:02:21] <Eivel> ale wracając do tego pastebina
+[00:05:19] <Eivel> BlackBird: daj "console.log(list2)" zaraz po "list2 = cut[2].split(",")" i " list2 = cut[2]"
+[00:05:25] <Eivel> zobaczymy, czy w ogóle się przypisuje
+[00:05:52] <BlackBird> przecie jest
+[00:06:32] <Eivel> i tam wypisuje poprawnie?
+[00:06:41] <BlackBird> no nawet na bot.say jest
+[00:06:50] <BlackBird> #lottery:add1:Eivel,BlackBird
+[00:06:50] <Patch> Utworzono liste => Eivel,BlackBird
+[00:06:54] <BlackBird> dizala
+[00:06:58] <BlackBird> dziala*
+[00:07:45] <Eivel> wywal na samym początku u góry "var" i spróbuj
+[00:08:10] <BlackBird> tam gdzie daje ["null"]?
+[00:08:17] <Eivel> tak
+[00:09:22] *** Quits: Patch (Patche@theblackkingdom.ovh) (Connection closed)
+[00:09:45] <BlackBird> hm czemu tu automatycznie niewychodzi.. mniejsza
+[00:09:50] *** Joins: Patch (Patche@theblackkingdom.ovh)
+[00:09:50] <Litho> It's wonderful to see you Patch!
+[00:10:01] <BlackBird> tak serio musze resetowac xd
+[00:10:15] <BlackBird> #lottery:add1:Eivel,Blackbird
+[00:10:16] <Patch> Utworzono liste => Eivel,Blackbird
+[00:10:29] <BlackBird> #lottery:add2:Jakis,Random
+[00:10:30] <Patch> Utworzono liste => Jakis,Random
+[00:10:35] <BlackBird> #lottery:start
+[00:10:36] <Patch> Wylosowano: Null oraz Null!
+[00:10:39] <BlackBird> nope :/
+[00:10:53] <Eivel> okej, to myślę, że wiem, gdzie jest problem
+[00:11:07] <BlackBird> ?
+[00:11:34] <Eivel> ta cała funkcja jest za każdym razem wywoływana na nowo, więc inicjuje wszytkie zmienne od początku
+[00:12:10] <BlackBird> hmm to jagby wywalic zmienne z ["Null"] przed/za funkcje?
+[00:12:36] <BlackBird> chociaz nwm czy to wtedy wogule zadziala..
+[00:13:07] <Eivel> nie, bo framework bota eksportuje tą funkcję jako moduł, z tego co widać.
+[00:14:18] <Eivel> ale myślę, że jest rozwiązanie
+[00:14:28] <BlackBird> calkiem wywalic to z poczatku ;p
+[00:15:28] <Eivel> spróbuj na początku, tam gdzie nadajesz wartość NULL, dodać nową zmienną "this.test_variable = 0" i w którymś ifie wywoływanym komendą ją wyświetlić, a następnie zmienić. Wtedy spróbować jeszcze raz wywołać komendę i sprawdzić, czy wyświetli się już zmieniona
+[00:15:39] <Eivel> tylko koniecznie poprzedzaj this.
+[00:19:38] *** Quits: Patch (Patche@theblackkingdom.ovh) (Connection closed)
+[00:19:44] *** Joins: Patch (Patche@Pony-q6qs6s.ovh)
+[00:19:44] <Litho> Dzieńdobry Patch!
+[00:19:47] <Patch> Cześć Litho! ^^
+[00:19:54] <BlackBird> #lottery:test1
+[00:19:54] <Patch> Przed zmiana => 0
+[00:19:57] <BlackBird> #lottery:test2
+[00:19:57] <Patch> Po zmianie => 0
+[00:20:03] <BlackBird> nie :/
+[00:20:44] <BlackBird> http://pastebin.com/zZJvNLwz tak to jest zrobione
+[00:21:25] <BlackBird> i na poczatku jest "this.test_variable = 0"
+[00:27:11] *** Quits: Patch (Patche@theblackkingdom.ovh) (Connection closed)
+[00:27:18] *** Joins: Patch (Patche@Pony-q6qs6s.ovh)
+[00:27:18] <Litho> Dzieńdobry Patch!
+[00:27:20] <BlackBird> a jeszcze inaczej
+[00:27:21] <Patch> Witaj, jestem botem i w przeciwienstwie do ciebie potrafie myslec ;P
+[00:27:28] <BlackBird> ale lagi ma...
+[00:27:37] <BlackBird> #lottery:test1
+[00:27:38] <Patch> Przed zmiana => 0
+[00:27:39] <Patch> Po zmianie w tej samej komendzie => 1
+[00:27:42] <BlackBird> #lottery:test2
+[00:27:43] <Patch> Po zmianie w innej komendzie => 0
+[00:27:46] <BlackBird> heh
+[00:28:11] <BlackBird> Eivel: xd
+[00:30:12] <Eivel> oj, byłem afk
+[00:30:17] <BlackBird> spk
+[00:30:38] <Eivel> hm
+[00:30:45] <Eivel> czyli this jednak nie odnosi się do obiektu bota
+[00:31:11] <BlackBird> jak this. wgl dziala? 
+[00:31:20] <BlackBird> widzialem to w wielu zeczach w js ale nwm coto jest
+[00:32:28] <Eivel> Nie wiem jak dokładnie w czystym Js działa, ale w językach obiektowych this/self działa jako wskaźnik do aktualnego obiektu. Czyli gdy w klasie używa się this, to odnosi się zawsze do danej instancji klasy, a nie do jej szkieletu
+[00:32:49] <BlackBird> aha :v
+[00:34:39] <Eivel> to pozostaje ci jedynie poczytanie przykładów w dokumentacji tego bota i zobaczenie, dlaczego te zmienne się zerują
+[00:35:46] <BlackBird> eem ale... ten bot niema dokumentacji :V
+[00:36:23] <BlackBird> jest zrobiony od 0 przezemnie :D
+[00:36:48] <Eivel> ale biblioteka, której używasz
+[00:36:59] <Eivel> ta, która wgrywa funkcje jako moduły
+[00:37:15] <BlackBird> a ze irc z npm
+[00:37:30] <BlackBird> czy co?
+[00:43:25] *** Quits: Patch (Patche@theblackkingdom.ovh) (Connection closed)
+[00:43:33] *** Joins: Patch (Patche@Pony-q6qs6s.ovh)
+[00:43:33] <Litho> Hai Patch!
+[00:43:36] <Patch> Witaj, jestem botem i w przeciwienstwie do ciebie potrafie myslec ;P
+[00:44:07] <BlackBird> #lottery:test1
+[00:44:07] <Patch> Przed zmiana => 1
+[00:44:08] <Patch> Po zmianie w tej samej komendzie => 1
+[00:44:09] <BlackBird> #lottery:test2
+[00:44:09] <Patch> Po zmianie w innej komendzie => 1
+[00:44:22] <BlackBird> #quit
+[00:44:22] *** Quits: Patch (Patche@theblackkingdom.ovh) (Quit: Dobranoc)
+[00:44:34] *** Joins: Patch (Patche@Pony-q6qs6s.ovh)
+[00:44:34] <Litho> It's wonderful to see you Patch!
+[00:44:37] <BlackBird> Eivel:
+[00:44:40] <BlackBird> #lottery:test1
+[00:44:44] <Patch> Przed zmiana => undefined
+[00:44:44] <Litho> rawr
+[00:44:44] <Litho> Dobranoc Patch!
+[00:44:44] <Patch> Po zmianie w tej samej komendzie => 1
+[00:44:44] <Patch> Żegnaj
+[00:44:51] <BlackBird>  luju xd
+[00:44:59] <BlackBird> #lottery:test2
+[00:45:00] <Patch> Po zmianie w innej komendzie => 1
+[00:45:29] <BlackBird> usunolem "this.test_variable = 0" z poczatku
+[00:46:21] <BlackBird> i zmienne sie nieresetuja tylko dlatego ze na poczatku jest "this.test_variable = 0" to za kazdym razem gdy ktos cos napisze to zmienna jest uswaiana na 0
+[00:46:35] <BlackBird> dlatego w 2-giej komedzie niedziala bo sie na poczatku resetuje..
+[00:46:57] <Eivel> omg, racja
+[00:46:58] <Eivel> xD
+[00:47:25] <BlackBird> bo to jest na zwyklym listeneze wiec reaguje na kazda wiadomosc...
+[00:47:40] <BlackBird> ale problem
+[00:47:58] <BlackBird> bo jak wywale to z poczatku i ktos zalosuje a bedzie puste to wywali bota :/
+[00:48:02] *** Quits: Patch (Patche@theblackkingdom.ovh) (Connection closed)
+[00:48:08] *** Joins: Patch (Patche@Pony-q6qs6s.ovh)
+[00:48:08] <Litho> It's wonderful to see you Patch!
+[00:48:23] <BlackBird> bo teraz losowanie pewnie dziala... 
+[00:48:35] <BlackBird> #lottery:add1:Random,Jakis
+[00:48:35] <Patch> Utworzono liste => Random,Jakis
+[00:48:45] <BlackBird> #lottery:add2:asdf,dwa
+[00:48:45] <Patch> Utworzono liste => asdf,dwa
+[00:48:50] <BlackBird> #lottery:start
+[00:48:50] *** Quits: Patch (Patche@theblackkingdom.ovh) (Connection closed)
+[00:48:56] <BlackBird> eee... meh
+[00:49:26] <BlackBird> dobra cofam niedziala..
+[00:50:03] <BlackBird> Eivel: ale dalej komedy w 1 if niezapisaly sie do drugiego :/
+[00:50:30] <BlackBird> a ze bylo puste bo na poczatku niedodalo "null" to wywalilo bota
+[00:50:58] <Eivel> pokaż teraaz kod
+[00:51:03] <Eivel> a ja skoczę się myć, zw
+[00:52:19] <BlackBird> http://pastebin.com/YQQCgUU2
+[00:52:26] <BlackBird> musze znowu opisywac? :/
+[00:59:23] *** Joins: Patch (Patche@Pony-q6qs6s.ovh)
+[00:59:23] <Litho> Hai Patch!
+[00:59:26] <Patch> Witaj, jestem botem i w przeciwienstwie do ciebie potrafie myslec ;P
+[00:59:30] <BlackBird> #lottery:clear
+[00:59:37] <BlackBird> #lottery:start
+[00:59:37] *** Quits: Patch (Patche@theblackkingdom.ovh) (Connection closed)
+[00:59:48] <BlackBird> no nie, to tez niedziala :/
+[01:02:05] *** Joins: Patch (Patche@Pony-q6qs6s.ovh)
+[01:02:05] <Litho> Dzieńdobry Patch!
+[01:02:08] <Patch> W czym moge pomóc?
+[01:02:12] <BlackBird> #lottery:test1
+[01:02:12] *** Quits: Patch (Patche@theblackkingdom.ovh) (Connection closed)
+[01:02:14] <BlackBird> xd
+[01:03:00] *** Joins: Patch (Patche@Pony-q6qs6s.ovh)
+[01:03:00] <Litho> It's wonderful to see you Patch!
+[01:03:04] <BlackBird> #lottery:test1
+[01:03:05] <Patch> Przed zmiana => 0
+[01:03:06] <Patch> Po zmianie w tej samej komendzie => 1
+[01:03:09] <BlackBird> #lottery:test2
+[01:03:10] <Patch> Po zmianie w innej komendzie => 1
+[01:03:18] <BlackBird> hmm a to dziala..
+[01:07:29] <BlackBird> #quit
+[01:07:29] *** Quits: Patch (Patche@theblackkingdom.ovh) (Quit: Zabieraja mnie ;_;)
+[01:07:44] *** Joins: Patch (Patche@Pony-q6qs6s.ovh)
+[01:07:44] <Litho> Hai Patch!
+[01:07:47] <Patch> Witaj Litho!
+[01:07:51] <BlackBird> #lottery:clear
+[01:08:04] <BlackBird> #lottery:add1:Jakis,Random
+[01:08:05] <Patch> Utworzono liste => Jakis,Random
+[01:08:12] <BlackBird> #lottery:add2:Ktos,Inny
+[01:08:12] <Patch> Utworzono liste => Ktos,Inny
+[01:08:18] <BlackBird> #lottery:start
+[01:08:18] *** Quits: Patch (Patche@theblackkingdom.ovh) (Connection closed)
+[01:08:22] <BlackBird> hujnia
+[01:08:35] *** Joins: Patch (Patche@Pony-q6qs6s.ovh)
+[01:08:35] <Litho> Hai Patch!
+[01:08:38] <Patch> Cześć Litho
+[01:08:41] <BlackBird> #quit 
+[01:08:50] <BlackBird> lul samo sie wlaczylo..
+[01:08:56] <BlackBird> #quit
+[01:08:57] *** Quits: Patch (Patche@theblackkingdom.ovh) (Quit: Czesc)
+[01:09:56] *** Joins: Patch (Patche@Pony-q6qs6s.ovh)
+[01:09:56] <Litho> Dzieńdobry Patch!
+[01:09:59] <Patch> W czym moge pomóc?
+[01:10:05] <BlackBird> #lottery:test-0
+[01:10:08] <BlackBird> #lottery:test1
+[01:10:09] <Patch> Przed zmiana => 0
+[01:10:10] <Patch> Po zmianie w tej samej komendzie => 1
+[01:10:14] <BlackBird> #lottery:test2
+[01:10:14] <Patch> Po zmianie w innej komendzie => 1
+[01:10:19] <BlackBird> no a to dziala!
+[01:10:23] <BlackBird> WTF
+[01:11:29] <BlackBird> #quit
+[01:11:30] *** Quits: Patch (Patche@theblackkingdom.ovh) (Quit: To wszystko hakierzy!)
+[01:11:43] *** Joins: Patch (Patche@Pony-q6qs6s.ovh)
+[01:11:43] <Litho> It's wonderful to see you Patch!
+[01:11:57] <BlackBird> #lottery:add1:Jakis,Random
+[01:11:57] <Patch> Utworzono liste => Jakis,Random
+[01:12:01] <BlackBird> #lottery:add2:Ktos,Inny
+[01:12:02] <Patch> Utworzono liste => Ktos,Inny
+[01:12:07] <BlackBird> #lottery:start
+[01:12:08] <Patch> Wylosowano: Jakis oraz Ktos!
+[01:12:13] <BlackBird> :D!!!!
+[01:12:19] <BlackBird> Eivel! HADZIA!
+[01:12:34] <BlackBird> wyjebalem caly syf i wszystkie var!
+[01:12:45] <BlackBird> syf w sensie to bez czego sobie poradzi
+[01:12:54] <BlackBird> #lottery:clear
+[01:12:58] <BlackBird> #lottery:start
+[01:12:58] <Patch> Wylosowano: Null oraz Null!
+[01:13:01] <BlackBird> :D
+[01:13:11] <BlackBird> #quit
+[01:13:11] *** Quits: Patch (Patche@theblackkingdom.ovh) (Quit: Dobranoc)
+[01:13:20] *** Joins: Patch (Patche@Pony-q6qs6s.ovh)
+[01:13:20] <Litho> Dzieńdobry Patch!
+[01:13:21] <BlackBird> #lottery:start
+[01:13:23] <Patch> Witaj, jestem botem i w przeciwienstwie do ciebie potrafie myslec ;P
+[01:13:24] <Patch> Wylosowano: Null oraz Null!
+[01:13:29] <BlackBird> EE
+[01:13:38] <BlackBird> :DDDDDDDD
+[01:13:42] <BlackBird> nawet niewywala
+[01:13:49] <BlackBird> czuje magie ale jest dobrze xd
+[01:14:46] <Eivel> jj
+[01:14:46] <Litho> Eivel witaj z porwrotem!
+[01:14:46] <Patch> Hura!
+[01:14:53] <Eivel> jak wigląda sytuacja?
+[01:14:54] <BlackBird> #color:light_red:Dziala!
+[01:14:54] <Patch> 04Dziala!
+[01:14:58] <Eivel> :O
+[01:15:01] <Eivel> gratulacje :D
+[01:15:08] <BlackBird> wywaliliem var i ruszylo
+[01:15:10] <Eivel> pokaż kod, jestem ciekaw jak wygląda działający
+[01:15:18] <BlackBird> duzo mniejszy xd
+[01:15:57] <BlackBird> http://pastebin.com/QW8B3mTF
+[01:16:35] <Eivel> czy tak nie było na początku>
+[01:16:35] <Eivel> ?
+[01:16:46] <Eivel> a nie
+[01:16:54] <Eivel> zmienne przed eksportowaniem
+[01:16:58] <Eivel> więc jednak
+[01:17:17] <BlackBird> ale wlasnie te zmienna niepowinny dzialac
+[01:17:30] <BlackBird> ja je tam dalem zeby je wylaczyc ale niezapomniec jak bylo 
+[01:17:37] <BlackBird> a ze dziala to nawet lepiej xd
+[01:18:12] <BlackBird> I dzieki za pomoc!
+[01:18:56] <BlackBird> ale jest 1 czas isc spac..
+[14:33:04] *** [A]McKey is now known as McKey
+[16:22:52] *** Joins: Andragor (Andrabot@Pony-f2t6p9.adsl.inetia.pl)
+[16:22:52] <Litho> Hai Andragor!
+[20:44:14] *** Quits: Pinkamena (DianePie@Sugarcube.Corner) (shutting down)
+[20:45:15] *** Joins: Pinkamena (DianePie@Sugarcube.Corner)
+[20:45:15] *** services.canternet.org sets mode: +o Pinkamena
+[20:45:15] <Litho> Dzieńdobry Pinkamena!
+[20:48:52] *** Joins: McKey (Kordus@bronies.info)
+[20:48:52] <Litho> Wrrrr
+[20:52:03] *** Parts: McKey (Kordus@bronies.info) ("wyszedł z powodu głupoty uczestników rozmowy na kanale")

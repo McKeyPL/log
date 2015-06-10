@@ -1,0 +1,140 @@
+[00:21:09] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:29:38] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:01:28] *** Gigawork is now known as Gigabit
+[01:22:28] *** Pony_5960 is now known as Lapsus
+[01:41:31] *** Joins: Gsc (Mibbit@Pony-psp.7r3.50.2.IP)
+[01:41:37] <Gsc> anyone here to help
+[01:41:57] <Dusk> Yep
+[01:42:05] <Gsc> is there anyway
+[01:42:11] <Gsc> that i can block longer msgs 
+[01:42:37] <Dusk> As in...placing a character limit?
+[01:42:38] <Colgate> uh, not really
+[01:42:42] <Dusk> Yea no
+[01:42:57] <Colgate> you kind of can if you do /mode #channel +g ?????????????????????????????????????????//*
+[01:42:59] <Gsc> yeah
+[01:43:03] <Gsc> character limit
+[01:43:05] <Gsc> no
+[01:43:06] <Colgate> but... that's not very nice, lol
+[01:43:08] <Gsc> colgate i tried that
+[01:43:10] <Gsc> but its for small
+[01:43:10] <AppleDash> Colgate, isn't that a reverse character limit? :P
+[01:43:15] <Gsc> i want 200 characters
+[01:43:19] <Colgate> then no, there isn't
+[01:43:29] <Colgate> AppleDash: the ? matches exactly 1 character
+[01:43:32] <Colgate> not 0
+[01:43:40] <Colgate> so multiple ?s is 1 character each
+[01:43:42] <AppleDash> I know
+[01:43:53] <AppleDash> But ??? would be min 3 chars not max 3 chars
+[01:44:07] <Colgate> no, because ??? doesn't match "no"
+[01:44:16] <Gsc> :wacko
+[01:44:24] <Gsc> like if some one sends a very long message
+[01:44:24] <Colgate> only 2 characters, ??? matches exactly 3
+[01:44:27] <Gsc> then that person get mute
+[01:44:36] <Colgate> you would have to write a bot to do that
+[01:44:57] <AppleDash> Colgate: I am saying only messages with min 3 chars would be allowed
+[01:45:05] <AppleDash> like if you have a * after it
+[01:45:12] <AppleDash> Or...
+[01:45:13] <AppleDash> Wat
+[01:45:14] <Gsc> can u guys make a bot for me
+[01:45:17] <Gsc> if some one has it
+[01:45:20] <Colgate> if you have a * after it, then it would block any message 3 characters or longer
+[01:45:30] <Gsc> that mute people that send more than 200 msgs in a channel
+[01:45:32] <AppleDash> Isn't that what they want?
+[01:45:43] <Colgate> AppleDash: yes, but +g only takes 64 characters iirc
+[01:45:58] <AppleDash> Oh
+[01:46:00] <AppleDash> I see.
+[01:46:12] <RubyPinch> very short twitter messages only
+[01:46:19] <AppleDash> I'm guessing +g is for glob or something, make a +r for regex blocking
+[01:46:29] <Colgate> +g is glob, yes
+[01:46:37] <Gsc> +r ?
+[01:46:37] <Twili> I read in a book once that said +r is better.
+[01:46:40] <Colgate> +r for regex won't happen because regexes can be very cpu intensive
+[01:47:09] <Gsc> u should have +G too
+[01:47:13] <Gsc> and kicks on repeat
+[01:47:36] <Colgate> +G in inspircd is a global opt-in channel filter
+[01:47:41] <Colgate> we do not have that enabled
+[01:47:51] <Gsc> why don't you people enable it
+[01:47:53] <Gsc> its very cool
+[01:48:40] <Gsc> lol thanks for the discussion
+[01:48:41] <Colgate> because maintaining a list of things that people want to filter is not something we have time for :P
+[01:49:01] <Gsc> what do u have time for
+[01:49:14] <Gsc> :wacko
+[01:51:05] <Googie> Also different people have different ideas of exactly what should be blocked, and the +G filter uses the same list globally
+[01:51:35] <Colgate> that too, just a problem all around, then there are the accidental things, "grape" when "rape" is blocked, etc.
+[01:53:09] <Gsc> globally :O
+[01:53:13] <Gsc> or in the channel
+[01:53:32] <Colgate> in the channels that have +G set
+[01:53:39] <Colgate> as said, it is an opt-in filter
+[01:56:06] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:56:25] <Gsc> actually the
+[01:56:28] <Gsc> thing is 
+[01:56:33] <Gsc> if you have +G enable
+[01:56:36] <Gsc> the best thing to do 
+[01:56:38] <Gsc> if some one type
+[01:56:40] <Gsc>  F u Ck 
+[01:56:46] <Gsc> it will not show in the room
+[01:56:47] <Gsc> also
+[01:56:50] <Colgate> it doesn't work that way
+[01:56:55] <Gsc> if you add ****** in the badwords
+[01:56:58] <Gsc> it will kick the users
+[02:11:23] *** Joins: Hoofy (~HoofSounds_@Pony-dsovdr.res.rr.com)
+[02:15:09] *** Quits: Gsc (Mibbit@Pony-psp.7r3.50.2.IP) (Quit: bye all join GupShup Corner !!)
+[02:26:11] *** Quits: Starthunder (blackl@property.of.lightningcrash) (Quit: The Nightmares will Collide. And become a Dream. <3)
+[02:28:23] *** Joins: Moonlightning (blackl@Pony-oq3.f9b.254.142.IP)
+[02:34:59] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Quit: The Nightmares will Collide. And become a Dream. <3)
+[02:35:58] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[03:06:03] *** [A]McKey is now known as McKey
+[03:14:53] *** Moonlightning is now known as Starthunder
+[03:29:27] *** Hoofy is now known as Vampa
+[03:49:05] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[03:49:05] *** Celestia sets mode: +o Mike_Coltfield
+[04:04:42] *** McKey is now known as [A]McKey
+[04:05:02] *** ama|work is now known as ama
+[05:03:34] *** Ashley is now known as CocoPommell
+[05:19:06] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[05:25:34] *** Vampa is now known as Hoofy
+[06:23:39] *** Silverlight|away is now known as Silverlight
+[06:26:36] *** Creeps|AFK is now known as RedHelper
+[06:49:33] *** Joins: Toothie (uid63062@Pony-f8galh.hqe2.tdoh.8300.2604.IP)
+[06:55:18] *** Nexus is now known as NexSleep
+[07:00:02] *** RedHelper is now known as Creeps|AFK
+[08:06:05] *** Quits: Toothie (uid63062@Pony-f8galh.hqe2.tdoh.8300.2604.IP) (Quit: I love y'all~ ^.^)
+[08:49:36] *** ama is now known as ama|sleep
+[09:36:20] *** [A]McKey is now known as McKey
+[10:41:10] *** Fluttershi is now known as afkshi
+[11:59:53] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[12:14:56] *** Awaykitty is now known as Unixkitty
+[12:29:10] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[12:40:57] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[14:02:43] *** Unixkitty is now known as Awaykitty
+[14:20:34] *** Awaykitty is now known as Unixkitty
+[14:43:11] *** McKey is now known as [A]McKey
+[15:15:46] *** [A]McKey is now known as McKey
+[15:20:04] *** CocoPommell is now known as Ashley
+[15:50:19] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[16:01:39] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Connection closed)
+[16:01:51] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[16:11:15] *** ama|sleep is now known as ama|work
+[17:49:21] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[17:55:56] *** RubyPinch is now known as RubyPinch|DCed
+[17:56:24] *** Quits: RubyPinch|DCed (x@Gem.Stealer) (A TLS packet with unexpected length was received.)
+[18:00:33] *** Joins: RubyPinch|DCed (x@Gem.Stealer)
+[18:13:59] *** RubyPinch|DCed is now known as RubyPinch
+[18:23:28] *** Unixkitty is now known as Awaykitty
+[18:26:35] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[19:14:57] *** Hoofy is now known as Hearts_the_Yoshi
+[19:33:00] *** Hearts_the_Yoshi is now known as Hoofy
+[19:52:13] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[20:50:25] *** Awaykitty is now known as Unixkitty
+[20:55:55] *** Joins: MidniteDew (user@Pony-t1r.39f.166.46.IP)
+[20:57:11] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[21:06:13] *** Gigabit is now known as Gigaway
+[21:20:06] *** Joins: Pony_9 (~Pony_9@Pony-02v88e.redstation.co.uk)
+[21:20:20] *** Quits: Pony_9 (~Pony_9@Pony-02v88e.redstation.co.uk) (Quit: Page closed)
+[21:34:07] *** afkshi is now known as Fluttershi
+[21:56:22] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[22:27:17] *** RubyPinch is now known as RubyPinch|DCed
+[22:46:14] *** RubyPinch|DCed is now known as RubyPinch
+[23:04:20] *** Fluttershi is now known as afkshi
+[23:10:41] *** Gigaway is now known as Gigabit
+[23:43:46] *** Unixkitty is now known as Sleepykitty

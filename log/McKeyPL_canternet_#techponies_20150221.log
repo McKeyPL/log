@@ -1,0 +1,391 @@
+[00:00:10] <ShivalPonyWolf> http://arstechnica.com/security/2015/02/superfish-doubles-down-says-https-busting-adware-poses-no-security-risk/ - well the superfish CEO is an idiot
+[00:00:11] <PinkiePieBot> [ Superfish doubles down, says HTTPS-busting adware poses no security risk | Ars Technica ]
+[00:01:56] <JustAberrant> :>
+[00:02:52] <ShivalPonyWolf> anyone know how to report a possible issue to facebook without a facebook account?
+[00:02:55] *** Quits: JockeTF (jocke@Pony-fh3f2s.bredband.comhem.se) (Quit: Leaving.)
+[00:03:11] <Colgate> lol
+[00:03:46] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[00:04:13] <JustAberrant> ShivalPonyWolf: I'd send them a letter in the mail :)
+[00:04:18] <ShivalPonyWolf> lol
+[00:05:00] <ShivalPonyWolf> unverified accounts can send and receive freinds requests. someone used my email address to registere to facebook and overnight i received about 150 friends requests/confirmations
+[00:05:16] <ShivalPonyWolf> seems pritty dodgy taht an unverified account can generate freinds requests
+[00:05:42] <Nelly> or your email was hacked.
+[00:05:48] <ShivalPonyWolf> Nelly: nope it wasent
+[00:05:52] <ShivalPonyWolf> verfied that one
+[00:06:00] <Nelly> Did you change your password?
+[00:06:08] <endoriazel> oh my god shival please at least try to type properly
+[00:06:50] <ShivalPonyWolf> Nelly: yep, also checked where the account has been logged in from. and any other possible access. 
+[00:07:03] <ShivalPonyWolf> its an account i only use for throwaway registrations
+[00:08:00] <ShivalPonyWolf> the thing is the facebook acount never got verified, i have the verification code and the account reported it was not validated yet
+[00:09:12] <endoriazel> ...does that mean you validated it now
+[00:14:40] <Phase4> there's some arabic person who keeps signing up for a path account using my email
+[00:17:39] *** Nelly is now known as Nully
+[00:18:05] <ShivalPonyWolf> Phase4: afew months ago someone registered to an arts collage with my email address
+[00:18:28] <ShivalPonyWolf> i got thir name address phone number student ID and parts of their credit card number in my inbox
+[00:18:35] <Phase4> lolnice
+[00:18:51] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:18:51] <ShivalPonyWolf> i dont get how people can use the wrong email address
+[00:41:35] <ShivalPonyWolf> hmmmm the superfish ssl cert
+[00:41:36] <ShivalPonyWolf> can it be used for code signing?
+[00:43:03] <Colgate> dunno
+[00:44:31] *** Joins: pwnie (pwnie@Pony-2bnu0u.range81-157.btcentralplus.com)
+[00:44:44] <johnsey> certificates usually aren't limited in the content they can sign
+[00:46:05] <Colgate> I think he means the one that is installed by default as the CA
+[00:46:52] <Colgate> if it has code signing disabled in the cert, then you wouldn't automatically have all infected people trusting it, since the cert isn't valid for that
+[00:47:10] <ShivalPonyWolf> thats the thing
+[00:47:14] <ShivalPonyWolf> im not sure what its setting is
+[00:47:21] <ShivalPonyWolf> im trying to find a picture to see
+[00:47:29] <Colgate> I don't know either
+[00:47:49] * ShivalPonyWolf posts to twitter. lets see if someone knows
+[00:48:33] <Colgate> https://gist.github.com/mathiasbynens/7a13a467b22c42505490
+[00:48:34] <PinkiePieBot> [ Superfish certificate ]
+[00:49:03] <ShivalPonyWolf> Colgate: i already have the cert
+[00:49:09] <ShivalPonyWolf> but it all depends how its added to the root store
+[00:49:14] <Colgate> oh
+[00:49:24] *** Quits: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[00:49:30] <Colgate> just install superfish in a vm and find out!
+[00:49:35] <ShivalPonyWolf> Colgate: lol
+[00:49:38] <ShivalPonyWolf> ive been tempted
+[00:49:47] <Colgate> or do it on your desktop
+[00:49:48] <Colgate> yolo
+[00:49:51] <johnsey> if it's a CA certificate, you could sign a certificate with extendedKeyUsage codesigning
+[00:49:52] <Colgate> :P
+[00:50:03] <Colgate> that is also true
+[00:50:04] <ShivalPonyWolf> johnsey: thats a good point
+[00:50:23] <Colgate> yeah... so it really doesn't matter XD
+[00:50:28] *** Quits: Misan (misan@Pony-vmqpec.cm.kabsi.at) (Client exited)
+[00:50:30] <ShivalPonyWolf> your right
+[00:50:32] <ShivalPonyWolf> it doesnt
+[00:50:41] * ShivalPonyWolf waits for malware thats signed and trusted 
+[00:51:51] <johnsey> i don't know if that's been linked yet, but https://firstlook.org/theintercept/2015/02/19/great-sim-heist/
+[00:51:52] <PinkiePieBot> [ The Great SIM Heist: How Spies Stole the Keys to the Encryption Castle ]
+[00:52:03] <ShivalPonyWolf> johnsey: yeah that one is fun
+[00:52:09] <ShivalPonyWolf> linked it to work yesterday
+[00:52:12] <ShivalPonyWolf> there is abit of panic
+[00:52:53] <Colgate> yeah, but like, no way to ell if infected
+[00:52:59] <Colgate> er
+[00:53:02] <Colgate> affected
+[00:53:09] <Colgate> infected isn't quite the right word there
+[00:53:15] <ShivalPonyWolf> yeah
+[00:53:24] <ShivalPonyWolf> Colgate: thing is i work for a telco
+[00:53:45] <johnsey> i'm sure you're getting or will be getting a lot of requests from worried customers
+[00:53:56] <Colgate> ohhh
+[00:54:00] <ShivalPonyWolf> lol probbaly. not my area luckily
+[00:54:19] <ShivalPonyWolf> its all over with the mobiles area they get to panic over a link i sent over
+[00:56:49] <ShivalPonyWolf> LOL so a friend of mine bought a lenovo laptop 2 days ago
+[00:56:55] <ShivalPonyWolf> hes going to return it today
+[00:57:05] *** Joins: Datalink (Datalink@Datalink)
+[00:58:57] <johnsey> lenovo keeps getting worse ever since they decided that business customers want 16:9 displays, island style keyboards and soldered-in RAM
+[00:59:44] <ShivalPonyWolf> isn't that basicly copying apple?
+[01:00:05] <ShivalPonyWolf> still better then microsoft going servers need a touch screen based UI
+[01:00:32] <johnsey> everybody's trying to steal away customers from apple by imitating apple
+[01:00:47] <ShivalPonyWolf> johnsey: yeah
+[01:00:57] <johnsey> they just don't get it, the people who already buy apple are lost anyway
+[01:01:09] <Colgate> they're just going to keep buying apple
+[01:01:12] <Colgate> since that's what they have
+[01:01:15] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[01:01:33] <johnsey> who's gonna buy a device that's like apple but not really compatible with all the other apple devices they already got?
+[01:01:53] <Colgate> vendor lock-in, isn't it wonderful?
+[01:04:21] *** Nully is now known as Nelly
+[01:08:10] <johnsey> another funny note about superfish is how lenovo at first used to have this sentence in their official statement, which they later removed: "We have thoroughly investigated this technology and do not find any evidence to substantiate security concerns."
+[01:08:38] <ShivalPonyWolf> johnsey: they removed it from their statement
+[01:08:39] <ShivalPonyWolf> lol
+[01:12:32] *** Ash[Away] is now known as Ashfire
+[01:14:42] <Colgate> I'm sure their marketing department did the investigation
+[01:15:59] <ShivalPonyWolf> lol
+[01:16:25] <ShivalPonyWolf> i wonder if the person who decided to include the adware still has their job
+[01:22:08] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[01:28:37] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[01:29:14] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[01:45:08] <Phase4> ShivalPonyWolf, given how much the deal would have made them before this mess, he was probably promoted
+[01:46:44] <JustAberrant> hello everyone :)
+[01:49:17] <Phase4> ShivalPonyWolf, and after this mess they're still going to have norton preinstalled which is a much more tangible problem
+[01:49:50] <JustAberrant> on principle I'm against this shit to a point where I think it's time for the law to come in
+[01:49:58] <JustAberrant> in practice, I have no problem with it
+[01:50:16] <JustAberrant> it subsidizes the cost of the hardware
+[01:50:25] <JustAberrant> and I'm just gonna wipe out whatever came on a machine anyway
+[01:50:30] <JustAberrant> so it works for me ;p
+[01:50:30] <Phase4> JustAberrant, that's why it's gotten so bad and is only going to get worse
+[01:50:58] <Phase4> because financially it makes sense for everyone who has any sort of control over the situation
+[01:51:53] <Phase4> i'd be willing to bet that upward of 50% of norton pre-installs result in subscriptions, and it is just scareware
+[01:51:54] <JustAberrant> yeah :(
+[01:52:17] <Phase4> though i have a very small view of the problem
+[01:52:23] *** Joins: Datalink (Datalink@Datalink)
+[01:53:00] <Phase4> JustAberrant, also wipe and reinstall may not be legal, *complex windows licencing nonsense here]
+[01:54:06] <JustAberrant> I don't sign a purchase agreement when I buy the laptop ;p
+[01:54:17] <Phase4> you didn't, your oem did
+[01:54:41] <Phase4> and then you agree to the eula when you first boot the laptop
+[01:55:02] <JustAberrant> hehe, but see that's the thing, I don't
+[01:55:28] <Phase4> JustAberrant, what i mean is you can't use the existing windows license in some cases
+[01:55:40] <Phase4> i'm not entirely clear on the details, it is stupidly complex
+[01:55:58] <JustAberrant> oh, well yeah, I could see that (Though probably dubious enforceability)
+[01:56:32] <Phase4> it's going to be real fun when secureboot is mandatory on x86
+[01:56:43] <JustAberrant> yeah
+[01:56:50] <JustAberrant> hardware is like the last remaining wall
+[01:57:00] <JustAberrant> pretty much anything can be worked around in software
+[01:57:08] <Phase4> because since it forms part of protected audio/video path in windows, breaking secureboot is circumventing drm
+[01:57:12] <JustAberrant> but now they're putting this shit in the hardware
+[01:57:51] <JustAberrant> but I think like everything else, if they push to much, that will change
+[01:59:36] <ShivalPonyWolf> http://thenextweb.com/insider/2015/02/21/superfish-admits-installing-root-certificate-authority-show-ads-secure-sites/ - Superfish CEO admitted to me that it installed the root certificate, didn't realize that was bad until yesterday 
+[01:59:37] <PinkiePieBot> [ Superfish Admits It Installed a Root Certficicate Authority ]
+[02:05:16] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[02:07:08] *** Nelly is now known as Tranquil_Archive
+[02:09:31] *** Quits: Tranquil_Archive (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (Quit: CRAP! I Have to goooo >__<)
+[02:17:44] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:17:51] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[02:19:40] *** Nelly is now known as Nully
+[02:21:41] *** Quits: ChaoticRift (ChaoticRift@Pony-a0opf0.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[02:32:42] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[03:11:04] *** Neptune|sleep is now known as Neptune
+[03:13:50] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[03:57:50] <Moonlightning> !
+[03:57:56] * Moonlightning forks that Gist of the Superfish cert.
+[04:01:16] <Moonlightning> …oh! Oh! Oh!!
+[04:01:22] <Moonlightning> Isn't it not possible to force users into that EULA
+[04:01:25] <Moonlightning> Because they just g
+[04:01:27] <Moonlightning> go *
+[04:01:29] <Moonlightning> < What EULA?
+[04:01:34] <Moonlightning> < I didn't see any EULA.
+[04:02:00] <Moonlightning> < What? No, I never booted into Windows. I just nuked the hard drive first thing, and installed <insert-preferred-distro-here>.
+[04:02:10] <Moonlightning> < It's /my/ hard drive, after all.
+[04:02:27] <Moonlightning> < What? The EULA I agreed to says it's not?
+[04:02:31] <Moonlightning> < /What/ EULA?
+[04:07:27] *** Quits: frackster (sid20128@Pony-utvkq0.uxbridge.irccloud.com) (Connection closed)
+[04:07:55] * ShivalPonyWolf remembers the posts about cats accepting EULAs
+[04:07:58] *** Quits: saneki (saneki@Pony-lrkag5.static.hvvc.us) (Ping timeout: 121 seconds)
+[04:08:13] <AppleDash> Moonlightning. have you started using some new unicode character recently?
+[04:08:27] <AppleDash> Because I see a whole lot of '?' from you where there shouldn't be.
+[04:08:31] *** Joins: frackster (sid20128@Pony-utvkq0.uxbridge.irccloud.com)
+[04:08:42] <Kinsley> Pretty sure those terms of a EULA are unenforceable.
+[04:08:57] <ShivalPonyWolf> most EULAs arnt enforceable
+[04:09:15] <Moonlightning> ^2 Yesssss.
+[04:09:24] <Moonlightning> ^2 wait, what? o.o
+[04:09:27] <ShivalPonyWolf> most bearly are accepted with the weak laws in the US
+[04:09:35] <ShivalPonyWolf> most dont stadnard up in other countries
+[04:09:44] <Moonlightning> Oh.
+[04:09:54] <Moonlightning> Well, I'm in the US. :(
+[04:09:58] <Moonlightning> and so are a lot of people.
+[04:10:36] <JustAberrant> :)
+[04:11:26] *** Joins: saneki (saneki@Pony-torblo.zylongaming.com)
+[04:12:07] <ShivalPonyWolf> there was a story years ago a guy wanting a refund for the windows install on his laptop becuase he didnt accept the EULA
+[04:12:13] <ShivalPonyWolf> it was an interesting case
+[04:17:04] <Moonlightning> Well, you can't just trap people like that xP
+[04:18:02] <Colgate> it says in the EULA for windows that if you don't accept it, to return it for a refund
+[04:18:19] <ShivalPonyWolf> Colgate: the problem was it was an OEM machien and it came bundled with
+[04:18:26] <ShivalPonyWolf> and i think it was dell was refusing the refund
+[04:18:30] <Colgate> I know all about the case
+[04:18:43] <Colgate> well, not all about, I heard about it XD
+[04:18:52] <ShivalPonyWolf> yeah i cant remember exact details
+[04:18:57] <ShivalPonyWolf> i think it was against dell
+[04:19:04] <Colgate> I remember reading about it years ago though
+[04:19:08] <ShivalPonyWolf> yeah
+[04:19:18] <Colgate> http://www.visualbots.com/Images/rpsmovie.gif
+[04:19:26] <Colgate> this gif is entertaining for some reason
+[04:19:40] <ShivalPonyWolf> Colgate: LOL
+[04:19:46] <ShivalPonyWolf> i like that
+[04:20:02] <JustAberrant> hehehe
+[04:20:04] <Colgate> should make it a tiled background on my website
+[04:20:25] <Colgate> where's geocities when you need it
+[04:20:37] <Colgate> or angelfire
+[04:20:42] <ShivalPonyWolf> it needs to be gameoflife like and runs in javascript and see who wins every cycle
+[04:21:52] <ShivalPonyWolf> Colgate: curse you i need to find that old page with all the gocities under construction banners that i think the internet archive made
+[04:21:57] *** Joins: locodashie11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[04:22:39] <ShivalPonyWolf> http://www.textfiles.com/underconstruction/
+[04:22:40] <PinkiePieBot> [ Please be patient - This Page is Under Construction! ]
+[04:24:57] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[04:25:42] <cyborg_ar> boop
+[04:27:15] <JustAberrant> cyborg_ar: :)
+[04:27:32] <cyborg_ar> today i got to have fun at work
+[04:28:20] <cyborg_ar> fixed a $5k piece of equipment with $0.10 of parts and a couple hours of labor
+[04:29:01] <ShivalPonyWolf> cyborg_ar: did you get to keep it?
+[04:29:04] <Moonlightning> yay?
+[04:29:22] <cyborg_ar> no, it's a customer's
+[04:29:27] <ShivalPonyWolf> shame
+[04:29:41] <cyborg_ar> but since i billed more time than it actually took me i got to goof off a bit
+[04:29:45] <ShivalPonyWolf> its nice with work when something is broken and you get to keep it and fix it
+[04:29:48] <cyborg_ar> :)
+[04:30:42] <cyborg_ar> https://www.dropbox.com/s/xhxdoudjrjz7tmz/0000000a.Foto0077.jpg?dl=0 my desk today when fixing the thing
+[04:31:00] <JustAberrant> ooo :)
+[04:31:46] <cyborg_ar> http://www.appliedcontrolequipment.com/wp-content/uploads/FB103.png this was the thing
+[04:31:50] <Moonlightning> ohboy. XD
+[04:32:14] <cyborg_ar> it's a gas flow meter
+[04:32:30] <ShivalPonyWolf> so what was the part?
+[04:32:45] <cyborg_ar> the field interface board in the back
+[04:32:59] <cyborg_ar> the idiots connected the thing to a 48v circuit
+[04:33:08] <cyborg_ar> (it only takes up to 28 volts)
+[04:33:37] <cyborg_ar> luckily the thing was well designed and only blew a TVS and a diode
+[04:33:43] <cyborg_ar>  but i couldnt get replacements
+[04:34:27] <cyborg_ar> so i removed a similar TVS from elsewhere in the board and jury rigged a 1N4007 diode to fit in the footprint of a tiny smd schottky diode
+[04:34:51] <cyborg_ar> it was from a digital output that is rarely used
+[04:35:20] <cyborg_ar> the one that burned was from the main power supply so it was more important to keep the proper protection
+[04:35:59] <cyborg_ar> i used the oscilloscope to track down an A/D converter issue in another of those things
+[04:36:13] <cyborg_ar> it wouldnt read the PT100 temperature sensor
+[04:36:44] <ShivalPonyWolf> lol - https://imgur.com/gallery/W7f8K
+[04:36:44] <PinkiePieBot> [ Hacker Stock Images - Album on Imgur ]
+[04:37:18] <cyborg_ar> couldnt fix it yet though, i identified the clocks werent being asserted right, i suspect the AD is latched up from ESD damage
+[04:37:32] <cyborg_ar> i need a hot air station to suck it up
+[04:37:41] <cyborg_ar> no enough space to use a soldering iron there :(
+[04:39:16] <cyborg_ar> those things get damaged from lightning strikes and other such events
+[04:39:38] <cyborg_ar> they are built like the proverbial tank though
+[04:39:52] <cyborg_ar> complete with heavy metal explosion proof casing
+[04:40:06] <cyborg_ar> and annoying conformal coating on all boards
+[04:40:59] *** Nully is now known as Nelly
+[04:42:48] <cyborg_ar> JustAberrant: :)
+[05:09:22] *** Quits: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Quit: Leaving.)
+[05:21:45] <Kiyiko_> my guitar amp is the best guitar amp!
+[05:47:02] *** Q0|Away is now known as Q0
+[05:52:05] *** Kinsley is now known as PrincessCelestia
+[06:17:29] *** Joins: Fallfeathers (Fallfeather@Pony-v0u6nc.internode.on.net)
+[06:22:55] *** locodashie11[lagout] is now known as locodashie11
+[06:23:45] <JustAberrant> tube? :)
+[06:23:50] *** locodashie11 is now known as locodashie11[ded]
+[06:28:00] *** Ashfire is now known as Ashleep
+[06:31:43] *** locodashie11[ded] is now known as locodashie11
+[06:32:09] *** Quits: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (Quit: Goodbye)
+[06:33:34] <JustAberrant> http://justaberrant.com/images/drawing/bowl.png  :(
+[06:50:48] *** Quits: cyborg_ar (cyborgar@Pony-39f.bq3.25.181.IP) (Ping timeout: 121 seconds)
+[06:51:54] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[06:55:31] <ShivalPonyWolf> practical example of ssl split using the superfish key - http://blog.erratasec.com/2015/02/exploiting-superfish-certificate.html\
+[07:41:32] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[07:46:24] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[07:58:00] *** Quits: \\\ (Spike@sorting.those.books) (Connection closed)
+[08:01:06] *** Joins: SpikeDragon (Spike@sorting.those.books)
+[08:04:15] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:04:51] *** Quits: Webster (Webster@Pony-mme.2eo.212.73.IP) (Quit: Leaving)
+[08:17:41] *** Joins: ShadySound (Zerky@Pony-bl1eo3.client.mchsi.com)
+[08:17:45] <ShadySound> https://www.youtube.com/watch?v=G0AeNEn3rPY
+[08:17:45] <PinkiePieBot> [ Engineer School: A typical day - 8037 views - 0:00:30 long - 105 likes - 98.13% ]
+[08:19:50] <ShivalPonyWolf> https://web.archive.org/web/20150220024518/http://www.komodia.com/ad-injection-sdk/
+[08:19:53] <ShivalPonyWolf> Some companies use global proxy which is relatively easy to develop (the part of installing a custom root CA can be a challenge)
+[08:27:56] *** Quits: Ashleep (Ashfire@Ashfire.bronytv.net) (Ping timeout: 121 seconds)
+[08:57:29] *** Joins: Misan (misan@Pony-vmqpec.cm.kabsi.at)
+[09:07:41] *** Joins: Leaf_Runner (Leaf_Runner@Pony-uei7f3.ptld.qwest.net)
+[09:08:00] <Leaf_Runner> I need help with Jedi Academy
+[09:08:30] <Leaf_Runner> I found out that the problem is a missing file called "Setup.exe" in GameData
+[09:10:28] <Phase4> "Site is offline due to DDOS with the recent media attention."
+[09:11:00] <Phase4> apparently building software which intercepts ssl really pisses people off
+[09:14:27] <Leaf_Runner> How do you fix a missing .exe file?
+[09:15:33] <Colgate> you get the file
+[09:16:04] <Leaf_Runner> How?
+[09:17:57] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[09:18:00] <Colgate> sounds like a game, so from the installer
+[09:18:28] <Leaf_Runner> Fucking hell...
+[09:24:41] *** Joins: Ashfire (Ashfire@Ashfire.bronytv.net)
+[09:26:52] <ShivalPonyWolf> https://pbs.twimg.com/media/B-V-N9xCMAA-wA-.jpg:large - Good going american news. - Seriously 5 seconds of research is too much for you to bother with to get the cities and states even remotely right.
+[09:33:03] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[09:33:10] *** Parts: Leaf_Runner (Leaf_Runner@Pony-uei7f3.ptld.qwest.net) ()
+[09:33:31] <Phase4> ShivalPonyWolf, cyclone must have relocated queensland
+[09:34:32] <ShivalPonyWolf> Phase4: LOL
+[09:42:00] *** Joins: Fillyfeathers (Fallfeather@Pony-n1g9le.bigpond.net.au)
+[10:19:23] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Connection closed)
+[10:21:14] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[10:33:03] *** Quits: Ashfire (Ashfire@Ashfire.bronytv.net) (Ping timeout: 121 seconds)
+[10:44:38] *** Joins: Ashfire (Ashfire@Ashfire.bronytv.net)
+[10:48:21] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:53:11] *** Quits: reiuiji (reiuiji@nuclear.raven) (Ping timeout: 121 seconds)
+[10:55:17] *** Joins: reiuiji (reiuiji@Pony-6vp0lq.ma.comcast.net)
+[10:58:56] *** Q0 is now known as Q0|Away
+[11:20:13] *** Joins: Misan2 (misan@Pony-vmqpec.cm.kabsi.at)
+[11:20:46] *** Quits: Misan (misan@Pony-vmqpec.cm.kabsi.at) (Ping timeout: 121 seconds)
+[11:23:37] *** Quits: Fillyfeathers (Fallfeather@Pony-n1g9le.bigpond.net.au) (Connection closed)
+[11:35:29] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[11:38:59] <ThunderBolt> Play the best song in the world https://www.youtube.com/watch?v=_lK4cX5xGiQ
+[11:39:00] <PinkiePieBot> [ Tenacious D - Tribute - 20044566 views - 0:04:53 long - 116956 likes - 97.65% ]
+[11:46:59] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[12:33:27] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[12:52:14] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[13:08:47] *** Joins: Datalink_ (Datalink@Datalink)
+[13:12:03] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[13:31:46] *** Quits: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[14:08:26] *** Joins: Phase5 (Phase4@Pony-2hrj9k.internode.on.net)
+[14:11:25] *** Quits: Phase4 (Phase4@Pony-l1iur1.internode.on.net) (Ping timeout: 121 seconds)
+[14:57:54] *** Joins: cyborg_ar (cyborgar@Pony-mt3.lui.25.181.IP)
+[15:19:43] *** Quits: Fallfeathers (Fallfeather@Pony-v0u6nc.internode.on.net) (Connection closed)
+[16:36:34] <cyborg_ar> she's faster than excel https://www.youtube.com/watch?v=g83WWa_qpOY
+[16:36:34] <PinkiePieBot> [ Fastest japanese accountant - 32331 views - 0:03:33 long - 70 likes - 100.0% ]
+[17:22:36] *** Joins: ChaoticRift (ChaoticRift@Pony-fq95gm.7h3b.037j.000a.2601.IP)
+[17:38:48] *** PrincessCelestia is now known as Kinsley
+[18:09:01] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[18:10:20] *** Quits: Misan2 (misan@Pony-vmqpec.cm.kabsi.at) (Client exited)
+[18:58:53] *** Neptune is now known as Neptune|sleep
+[19:16:28] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[19:23:28] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[19:23:31] *** Nelly is now known as Pony_77540
+[19:23:39] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[19:24:25] *** Quits: Pony_77540 (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (Ping timeout: 121 seconds)
+[19:34:01] *** Q0|Away is now known as Q0
+[19:34:30] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[19:37:12] *** Joins: Webster (Webster@Pony-mme.2eo.212.73.IP)
+[19:47:40] *** Datalink_ is now known as Datalink
+[20:13:52] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[21:35:26] <Compu> anyone know anything about minivmac?
+[21:40:23] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[21:46:24] * JustAberrant does not
+[21:55:34] *** Joins: CompuDesktop (quassel@snuggly.filly)
+[21:55:41] <CompuDesktop> http://pastebin.com/AEjZZJ7t
+[21:55:42] <PinkiePieBot> [ [Python] Traceback (most recent call last): File "./phenny", line 209, in <module> - Pastebin.com ]
+[21:56:26] *** Nelly is now known as Tranquil_Archive
+[21:57:20] *** Quits: Datalink (Datalink@Datalink) (Quit: Datalink offline)
+[22:01:16] <JustAberrant> Colgate: looks like your using the wrong version of python?
+[22:01:20] <JustAberrant> * CompuDesktop 
+[22:01:45] * Colgate uses python1
+[22:01:54] <JustAberrant> :>
+[22:02:51] <JustAberrant> good to know that like 6 years later we are still dealing with the python version mess :>
+[22:03:11] <Compu> JustAberrant: no it ran fine after i put in the '
+[22:03:26] <Compu> JustAberrant: in fact it doesnt like to run with the newer version
+[22:04:28] <JustAberrant> that was my point, it looks like the kind of error you get when trying to run python 2 code in python 3
+[22:04:39] *** Quits: CompuDesktop (quassel@snuggly.filly) (A TLS packet with unexpected length was received.)
+[22:05:16] <Compu> JustAberrant: its Kinsley's code mostly, its PinkiePieBot modified slightly in name and a few responses added
+[22:05:26] <JustAberrant> Compu: I don't believe you :(
+[22:05:40] *** Joins: Asoka (Asoka@Pony-11ks3d.net-htp.de)
+[22:05:40] <Compu> .source
+[22:05:41] <PinkiePieBot> Hey there! I'm a Python 3 bot owned and maintained by Kinsley. My source is available at https://github.com/JordanKinsley/PinkiePyBot/
+[22:05:43] <JustAberrant> Compu: why do you lie :(
+[22:05:58] <Compu> <CompuBot> Hey there! I'm a Python 3 bot owned and maintained by Compu. My source is available at https://github.com/JordanKinsley/PinkiePyBot
+[22:05:59] <PinkiePieBot> [ JordanKinsley/PinkiePyBot · GitHub ]
+[22:06:04] <JustAberrant> Compu: no one likes it when people lie :(
+[22:06:13] <Compu> not lying
+[22:06:16] <JustAberrant> :(
+[22:07:21] *** Quits: Asoka_White (Asoka@Pony-tt6sov.net-htp.de) (Ping timeout: 121 seconds)
+[22:07:30] * JustAberrant will think about what has happened here for awhile :(
+[22:07:44] <Compu> anyways
+[22:08:21] <Compu> i was adding #Rifts-RP to CompuBot's autojoin list so they can use her image link storage feature to store character sheets
+[22:11:22] * LegionRed headtilts some at JustAberrant.
+[22:12:08] <JustAberrant> LegionRed: hello :)
+[22:12:14] <Compu> Lapsus: if u wanna join in im sure Jokerboxer would let u
+[22:12:36] <Lapsus> I just do that when people mention channels
+[22:12:37] <Lapsus> lol
+[22:12:48] <LegionRed> Hi? 
+[22:12:58] <JustAberrant> :)
+[22:12:59] <LegionRed> Do what, join them?
+[22:14:25] <Compu> LegionRed: yes
+[22:15:34] <LegionRed> I've asked AppleDash to make a bot for me that will do something similar for EAD. It will be an introduction bot, of sorts. 
+[22:15:59] <AppleDash> ?
+[22:16:14] <AppleDash> Ho
+[22:16:16] <AppleDash> Hi*
+[22:17:54] <LegionRed> Eya AppleDash.
+[22:18:20] <AppleDash> Is that a reminder?
+[22:19:41] <LegionRed> No, I was talking to Compu.
+[22:20:14] <AppleDash> But like how is what you said relevant to the conversation :P
+[22:20:31] <Compu> nya
+[22:20:32] <LegionRed> Compu is using a bot to save character sheets. 
+[22:20:42] <AppleDash> Oh
+[22:20:44] <LegionRed> "so they can use her image link storage feature to store character sheets"
+[22:20:56] <LegionRed> <..<
+[22:27:38] *** Joins: Fallfeathers (Fallfeather@Pony-v0u6nc.internode.on.net)
+[22:37:54] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[22:38:12] *** [A]McKey is now known as McKey
+[22:52:16] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[23:09:47] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[23:10:41] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[23:16:11] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[23:16:23] *** McKey is now known as [A]McKey
+[23:16:36] *** [A]McKey is now known as McKey
+[23:16:50] *** Joins: Ashley (Ashfire@Ashfire.bronytv.net)
+[23:17:54] *** Quits: Ashfire (Ashfire@Ashfire.bronytv.net) (Ping timeout: 121 seconds)
+[23:18:33] *** McKey is now known as [A]McKey
+[23:29:55] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[23:30:40] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[23:51:00] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[23:51:02] *** Quits: Tranquil_Archive (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (Ping timeout: 121 seconds)
+[23:55:43] *** Nelly is now known as Tranquil_Archive

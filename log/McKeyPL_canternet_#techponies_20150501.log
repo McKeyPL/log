@@ -1,0 +1,344 @@
+[00:05:45] *** Quits: MisterSkids (ejd@Pony-aaa.lna.79.74.IP) (Ping timeout: 121 seconds)
+[00:25:23] *** Joins: nscoots (FreyGrimrod@Pony-e0v.apm.192.70.IP)
+[00:44:22] *** Joins: Webster (Webster@Pony-mme.2eo.212.73.IP)
+[01:24:46] *** Joins: Asoka (Asoka@Pony-ld6.bnv.182.89.IP)
+[01:26:28] *** Quits: Asoka_White (Asoka@Pony-6af.rqn.182.89.IP) (Ping timeout: 121 seconds)
+[01:36:49] <Starthunder> Gigabit: best way to do that is get your webserver to listen on port 7787 and not 80
+[01:37:22] <Gigabit> My webserver listens on a port other then 80
+[01:37:24] <Starthunder> Keep in mind that this won't provide any actual security, only a bit of obscurity. Anyone who cares will be able to trivially find out that your webserver is running on 7787 by running a simple portscan.
+[01:38:19] <Gigabit> Yep I know, but it still wont work, brings up the AirGateway GUI login
+[01:47:16] *** Quits: MistVeil (aqua@Pony-qbk.jpi.211.189.IP) (Quit: Saliendo)
+[01:54:53] <mniip> guys
+[01:54:59] <mniip> anyone know stuff about the GIF format
+[01:56:12] *** Init3-away is now known as init3
+[01:57:39] <Webster> It's pretty bad but not bad enough to not be used.
+[01:59:36] <JustAberrant> it's a compressed bitmap based format/container supporting multiple images with timing information, optimized mainly for transmission of cats and cat related images
+[01:59:59] <JustAberrant> tis about all I know
+[02:05:56] *** Joins: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP)
+[02:07:01] <mniip> I can't figure out delays
+[02:07:33] <mniip> I'm setting the Graphics Control Extension to 04 00 04 00 00
+[02:07:40] <mniip> that's supposed to produce a 0.04s delay
+[02:07:55] <mniip> instead a 0.06s delay is produced
+[02:20:25] *** Quits: nscoots (FreyGrimrod@Pony-e0v.apm.192.70.IP) (Ping timeout: 121 seconds)
+[02:20:25] *** Joins: nscoots1 (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[02:41:41] *** Joins: MisterSkids (ejd@Pony-aaa.lna.79.74.IP)
+[02:50:57] *** Quits: Nick (nobody@Pony-o1k.cjc.74.71.IP) (Ping timeout: 121 seconds)
+[02:51:10] <mniip> I managed to do it
+[02:51:14] <mniip> https://github.com/mniip/vtshot/blob/master/gif.c
+[02:51:17] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[02:51:18] <mniip> GIF is a fucking disaster
+[02:53:44] *** Quits: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP) (Connection closed)
+[02:54:26] *** Quits: Maple (Maple@Maple) (Quit: WeeChat 1.1.1)
+[02:57:58] *** Quits: cyborg_ar (cyborgar@Pony-8pk.q1h.25.181.IP) (Ping timeout: 121 seconds)
+[03:12:00] <JustAberrant> NETSCAPE2.0 :D
+[03:15:06] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[03:16:21] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[03:21:18] <mniip> just added the transparency optimization http://i.imgur.com/mJHmOHh.gif
+[03:21:58] <mniip> should I also add canvas optimization
+[03:27:55] <Webster> Nice. And probably? Optimizations are good.
+[03:31:17] <JustAberrant> add pts support ;p
+[03:31:35] * JustAberrant has entirely no idea how one would do that
+[03:37:22] *** Joins: cyborg_ar (cyborgar@Pony-8pk.q1h.25.181.IP)
+[03:45:03] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[03:48:00] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[03:58:50] *** Quits: DataByteBrony (DataByte@Pony-nf6.hp8.15.173.IP) (Ping timeout: 121 seconds)
+[04:02:59] <cyborg_ar> https://www.youtube.com/watch?v=XUvhAPs38RA
+[04:03:00] <PinkiePieBot> [ DJ Play My Song (NO, LEAVE ME ALONE) - 3141188 views - 0:05:06 long - 63247 likes - 97.94% ]
+[04:05:53] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[04:06:17] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[04:08:07] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[04:09:04] * nscoots1 giggles @ cyborg_ar
+[04:09:11] <cyborg_ar> :3
+[04:12:53] <cyborg_ar> nscoots1: this is my fav though https://www.youtube.com/watch?v=W5ffHd7O3yQ
+[04:12:53] <PinkiePieBot> [ Why, Why, Manti? - 3396272 views - 0:03:03 long - 29229 likes - 97.94% ]
+[04:12:59] <cyborg_ar> specally the rap part
+[04:13:01] <cyborg_ar> haha
+[04:13:25] <mniip> ok, let's try this
+[04:16:21] <nscoots1> I dunno...
+[04:16:30] <nscoots1> "what are you doing I'm not a DJ here at the office!"
+[04:17:35] <cyborg_ar> my favourite verse is "can't use my dick to control my playlist"
+[04:19:03] <cyborg_ar> also "you just rhymed up with up, you're really phoning this in. does mouse rhyme with mouse? NO IT'S THE SAME WORD"
+[04:22:38] <mniip> hmm
+[04:22:50] <mniip> I think I got canvas optimization to work
+[04:23:03] <cyborg_ar> mniip: :D
+[04:23:23] <cyborg_ar> what's that gif library for?
+[04:23:24] <mniip> need to check with imagemagick
+[04:23:37] <mniip> damn
+[04:23:48] <mniip> imagemagick still comresses it down some ~1.7x
+[04:24:00] <cyborg_ar> when did gif's patent expire, 2005?
+[04:24:56] <cyborg_ar> 2004
+[04:25:23] <mniip> cyborg_ar, not a gif library
+[04:25:28] <mniip> I am already using a gif library
+[04:26:19] <mniip> anyway: http://i.imgur.com/uMrPdTG.gif
+[04:27:30] <cyborg_ar> chooo choooo
+[04:28:23] <cyborg_ar> so it's like a console screen capture
+[04:28:28] <mniip> yesh
+[04:29:17] *** Quits: Crimson_Tail (Bluepon@Pony-cdc.v68.128.73.IP) (Quit: Oops, a kernel panic)
+[04:32:11] *** nscoots1 is now known as sleepyloo
+[04:41:54] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[04:43:53] <mniip> aand it's gone to github
+[04:55:51] *** Quits: Webster (Webster@Pony-mme.2eo.212.73.IP) (Quit: Leaving)
+[04:59:27] <cyborg_ar> hmm
+[04:59:38] <cyborg_ar> i'm thinking wether i should buy a roll of kester 44
+[04:59:51] <cyborg_ar> a pound should last me a lifetime
+[05:05:16] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Rain called on account of pony.)
+[05:09:50] <JustAberrant> dunno about there, but here that stuff goes pretty cheap in normal guages
+[05:10:21] *** Joins: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP)
+[05:11:03] <JustAberrant> like $30 or so for a spool of 60/40 .. which dnno how much that actually is in pounds.. is probably at least half a pound
+[05:11:06] *** Joins: Asoka_White (Asoka@Pony-o7a.sq7.182.89.IP)
+[05:11:14] <JustAberrant> Fallfeathers: feathers :)
+[05:12:14] <JustAberrant> and also yeah, it does kinda last forever ;p
+[05:12:48] *** Quits: Asoka (Asoka@Pony-ld6.bnv.182.89.IP) (Ping timeout: 121 seconds)
+[05:18:36] <Fallfeathers> JustAberrant.
+[05:22:03] <JustAberrant> :)
+[05:23:17] * Fallfeathers fluffs JustAberrant
+[05:23:41] <JustAberrant> how did the whole cisco thing go? :)
+[05:33:01] <Colgate> ok, shell scripting problem
+[05:33:27] <JustAberrant> last word redundant ;p
+[05:33:42] <Colgate> I have a single command, I want to read from a file until the file is empty, then I want to read from the keyboard
+[05:33:51] <Colgate> how do? :/
+[05:34:16] <Phase4> cat file -
+[05:34:17] <mniip> cat file -
+[05:34:21] <Phase4> mniip, /)
+[05:34:41] <Colgate> wow, that is like... so incredibly simple I...
+[05:34:42] <mniip>          (\
+[05:34:44] * Colgate headdesks
+[05:34:58] <JustAberrant> (cat file; cat)  ;p
+[05:35:14] <JustAberrant> mine's more complicated.. so hah!
+[05:35:45] <Colgate> hmm, actually, that doesn't seem to work
+[05:36:02] <Colgate> I'm redirecting using "command < cat file -"
+[05:36:08] <JustAberrant> use |
+[05:36:16] <JustAberrant> for maximum pipe
+[05:36:26] <Phase4> Colgate, that will try read a file named cat into command
+[05:36:41] <Phase4> i'm not sure what it does with the trailing arguments
+[05:36:58] <Colgate> er, I had `` around that
+[05:37:11] <Colgate> which of course... hangs
+[05:37:14] <Colgate> now that I think about it
+[05:37:15] <Phase4> :P
+[05:37:29] <Colgate> since that command wouldn't end until after I do an eof
+[05:37:31] <Phase4> cat file - | command is the correct solution
+[05:37:47] <Phase4> unless you want to ctrl+d before it runs
+[05:38:19] <mniip> Phase4, the other arguments are passed to command
+[05:38:32] <mniip> Colgate, are you even shell scripting
+[05:38:48] <mniip> a < b
+[05:38:50] <mniip> is not a | b
+[05:38:53] <mniip> and is not a <<< b
+[05:38:58] <Colgate> no, that's what I had before
+[05:39:01] <Colgate> and I wasn't thinking
+[05:39:22] <Colgate> all I did before was read a set of commands from a file
+[05:39:44] <Colgate> but now I wanted to add in commands from the keyboard afterwards
+[05:42:45] <cyborg_ar> for maximum pipe
+[05:42:48] <cyborg_ar> love it
+[05:43:12] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[05:43:54] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (Quit: *poof*)
+[05:44:06] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[05:49:14] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[05:50:37] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[05:50:52] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[05:53:11] *** Joins: init3 (Jason@Pony-jul.9ft.124.174.IP)
+[05:53:16] *** eyeburn is now known as Starburn
+[05:56:31] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[05:56:38] <Phase4> AppleDash, ever used a travelers glove?
+[05:56:43] <AppleDash> Nope
+[05:56:47] <Phase4> try it
+[05:57:03] <Phase4> can add redstone to it
+[05:57:07] <Phase4> tinkers item
+[05:57:36] <Phase4> AppleDash, and it stacks with whatever haste your tools have
+[05:57:54] <AppleDash> o.o
+[05:59:30] <mniip> hmm I wonder
+[05:59:36] <mniip> does everyone around have libgif.so
+[06:00:14] * Phase4 does
+[06:00:48] <mniip> in lib32 too?
+[06:01:15] <Phase4> just the 64bit one
+[06:03:22] <mniip> hmm
+[06:03:30] * mniip considers linking libgif statically
+[06:13:42] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[06:22:12] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[06:24:27] *** Quits: sleepyloo (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[06:30:56] *** Quits: CompuDesktop (quassel@snuggly.filly) (Ping timeout: 121 seconds)
+[06:31:42] *** Quits: \033 (alex@ajitek.net) (Connection closed)
+[06:32:13] *** Joins: aji (alex@ajitek.net)
+[06:32:13] *** AutoLapsus sets mode: +o aji
+[07:10:55] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Quit: )
+[07:15:18] *** Joins: Hickory (Iceman@Pony-fr4.tal.42.96.IP)
+[07:19:40] *** Quits: cyborg_ar (cyborgar@Pony-8pk.q1h.25.181.IP) (Client exited)
+[07:25:30] <JustAberrant> PinkiePieBot: goodnight :)
+[07:35:07] *** Joins: CompuDesktop (quassel@snuggly.filly)
+[07:37:01] <mniip> guys
+[07:37:06] <mniip> I made a recordception
+[07:37:09] <mniip> also added subshelling
+[07:37:10] <mniip> http://i.imgur.com/9dERI1x.gif
+[07:40:24] <mniip> also 100FPS gifs ftw
+[07:41:50] *** Quits: MisterSkids (ejd@Pony-aaa.lna.79.74.IP) (Ping timeout: 121 seconds)
+[07:42:14] *** Quits: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[07:51:05] *** Joins: Compu_ (quassel@snuggly.filly)
+[07:53:55] *** Quits: CompuDesktop (quassel@snuggly.filly) (Ping timeout: 121 seconds)
+[07:54:55] *** Compu_ is now known as CompuDesktop
+[07:56:40] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[07:56:46] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[07:57:41] *** Brolf_pog is now known as Shnuggles
+[08:02:21] <Twilightlicious> hey guys
+[08:02:29] <Twilightlicious> my tablet has a "Born on date" attribute in the bios
+[08:02:35] <Twilightlicious> what is it?
+[08:02:59] <Twilightlicious> it says 04/30, but i've had this tablet since 04/28. Is it lies? :P
+[08:03:00] <mniip> probably date of manufature
+[08:05:34] <mniip> soo
+[08:05:38] <mniip> check out my new thingmabob
+[08:05:40] <mniip> http://github.com/mniip/vtshot
+[08:05:41] <PinkiePieBot> [ mniip/vtshot · GitHub ]
+[08:05:45] <Phase4> Twilightlicious confirmed for time traveler
+[08:05:59] <mniip> it is somewhat done, I implemented all features I initially thought of
+[08:06:12] <Phase4> mniip, oh nice
+[08:07:05] <mniip> I suppose I could release 0.1.0 sometime soon
+[08:07:19] <mniip> but before that check compatibility with different versions of libpng and libgif
+[08:17:08] *** Joins: Quindo (Quindo@Pony-4tv.ja8.194.162.IP)
+[08:18:12] <Twilightlicious> ITS A TRAP http://i.imgur.com/n5XnD3c.png
+[08:18:23] *** Quits: Pony_13578 (Quindo@Pony-4tv.ja8.194.162.IP) (Ping timeout: 121 seconds)
+[08:18:23] <Twilightlicious> "Type the two wordS"
+[08:23:01] <Twilightlicious> trying Dolphin on this low end tablet lol
+[08:23:11] *** Joins: locodash11[lagout] (locodash11@Pony-q7h.1no.217.73.IP)
+[08:23:13] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:23:19] *** Quits: locodash11[lagout] (locodash11@Pony-q7h.1no.217.73.IP) (Connection closed)
+[08:25:31] <Twilightlicious> DX11 renderer went slow :P
+[08:25:34] <Twilightlicious> trying DX9
+[08:25:49] <Twilightlicious> even slower, huh
+[08:26:12] <Twilightlicious> OpenGL time
+[08:26:31] <Twilightlicious> same speed as DX11
+[08:28:08] *** Quits: init3 (Jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[08:30:24] <Twilightlicious> You know, i bet The Sims 4 could be played on a Touch Screen
+[08:30:31] <Twilightlicious> dunno about moving the camera around n such though
+[08:34:01] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[08:57:28] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[09:09:25] *** Quits: Nick (nobody@Pony-o1k.cjc.74.71.IP) (Ping timeout: 121 seconds)
+[09:10:40] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[09:14:15] *** Quits: Hickory (Iceman@Pony-fr4.tal.42.96.IP) (Quit: quit)
+[09:26:34] <ShivalPonyWolf> anyone know anything about generating DES keys with valid parity
+[09:30:27] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[09:32:42] <Twilightlicious> Microsoft is pushing out updates that help with upgrading to Windows 10
+[09:37:23] <Twilightlicious> with my device being eMMC, i don't need to worry about fragmentation, correct?
+[09:40:05] *** Hoofy is now known as Hoofy_sleep
+[09:44:01] *** ThunderBolt|Work is now known as ThunderBolt
+[09:49:32] *** Quits: Sol (Sol@Pony-vvn.i1u.133.74.IP) (Quit: Leaving)
+[09:57:09] *** Joins: Phase5 (Phase4@Pony-m3m.eg1.209.118.IP)
+[09:57:44] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[09:58:18] *** Quits: Phase4 (Phase4@Pony-u2t.fhc.209.118.IP) (Ping timeout: 121 seconds)
+[10:03:11] *** Joins: nscoots1 (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[10:05:49] *** Quits: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[10:23:07] *** ThunderBolt is now known as ThunderBolt|GTA
+[10:54:45] *** Quits: reiuiji (reiuiji@nuclear.raven) (Ping timeout: 121 seconds)
+[10:55:18] *** Joins: reiuiji (reiuiji@Pony-dui.epf.217.98.IP)
+[11:01:55] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[11:04:46] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[11:08:14] *** Quits: firestream (firestream@Pony-861.n8f.50.70.IP) (Ping timeout: 121 seconds)
+[11:14:32] *** init3 is now known as Init3-away
+[11:34:00] *** Quits: mniip (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 121 seconds)
+[11:37:48] *** Joins: mniip (mniip@Pony-o9q.v2g.219.178.IP)
+[11:42:38] <mniip> for celestia's sake
+[11:42:43] <mniip> what the fuck is going on
+[11:48:36] <mniip> I have an idea
+[11:48:56] <mniip> I'll just put a backtrace in the place of 'link up'
+[11:53:00] *** ThunderBolt|GTA is now known as ThunderBolt
+[11:53:41] *** [A]McKey is now known as McKey
+[11:55:05] *** McKey is now known as [A]McKey
+[12:38:14] *** Joins: Jouva_ (jouva@Pony-odi.08q.11.100.IP)
+[12:40:28] *** Quits: Jouva (jouva@Pony-odi.08q.11.100.IP) (Ping timeout: 121 seconds)
+[12:42:43] *** Quits: DaringPon3 (Daring@Pony-ds0.oop.255.83.IP) (Quit: )
+[12:43:16] *** Quits: Jouva_ (jouva@Pony-odi.08q.11.100.IP) (Ping timeout: 121 seconds)
+[13:00:04] *** Quits: nscoots1 (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Quit: Leaving.)
+[13:06:30] *** ThunderBolt is now known as Dobby|Free
+[13:25:46] *** Hoofy_sleep is now known as Hoofy
+[13:28:34] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[13:49:00] *** Neptune|sleep is now known as Neptune
+[13:56:28] *** Joins: Datalink (Datalink@Datalink)
+[14:14:29] *** Joins: cyborg_ar (cyborgar@Pony-8pk.q1h.25.181.IP)
+[14:26:12] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[14:42:46] *** Dobby|Free is now known as ThunderBolt
+[15:00:57] *** Joins: DataByteBrony (DataByte@Pony-nf6.hp8.15.173.IP)
+[15:24:17] <ShivalPonyWolf> http://www.theguardian.com/business/2015/may/01/us-aviation-authority-boeing-787-dreamliner-bug-could-cause-loss-of-control
+[15:24:17] <PinkiePieBot> [ US aviation authority: Boeing 787 software bug could cause 'loss of control' | Technology | The Guardian ]
+[15:24:51] <fiyahsparkle|work> Sounds like a feature amirite? :P
+[15:31:13] <DataByteBrony> 'undocumented feature'
+[15:47:49] <Kinsley> "if left on for 248 days"
+[15:50:29] <Kinsley> What that article fails to talk about is that 1. Boeing found the bug in LAB TESTS 2. That bug would probably never affect regular commercial aircraft because of the existing maintenance requirements
+[15:52:20] *** Joins: MisterSkids (ejd@Pony-aaa.lna.79.74.IP)
+[15:54:07] <Phase5> Kinsley, "... addresses a condition that only occurred in the lab ..." it's not upfront about it but it is there
+[15:55:23] <Kinsley> Still, it's pretty rare that a local news station gets the story reported better than a major publisher like The Guardian.
+[16:04:49] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Rain called on account of pony.)
+[16:08:36] *** Quits: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP) (Connection closed)
+[16:14:20] <tiwake> why don't they talk about CNC machine controller bugs?
+[16:14:31] <tiwake> like fanuc
+[16:15:20] <Kinsley> Because a CNC machine isn't hurtling at several hundred miles an hour, miles above the Earth, carrying hundreds of people.
+[16:15:28] <tiwake> boeing is just a company like fanuc... hitting the news for stuff like that is kinda lame
+[16:15:51] *** Joins: Datalink_ (Datalink@Datalink)
+[16:19:06] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[16:29:10] *** Quits: cyborg_ar (cyborgar@Pony-8pk.q1h.25.181.IP) (Client exited)
+[16:46:44] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[16:56:40] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[17:11:13] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[17:26:52] *** [A]McKey is now known as McKey
+[17:33:30] *** Joins: cyborg_ar (cyborgar@Pony-ti5.e33.49.190.IP)
+[17:42:24] *** Quits: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com) (Connection closed)
+[17:52:54] <johnsey> simple solution, turn it off and on again :D
+[17:54:27] <johnsey> "dear passengers, this is the captain speaking. we are about to reboot the plane as a safety measure, you may notice sudden, temporary loss in altitutde as a result. this is no reason for concern but please keep your sick bag in reach"
+[17:55:56] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[18:08:09] *** Quits: cyborg_ar (cyborgar@Pony-ti5.e33.49.190.IP) (Client exited)
+[18:37:31] <DataByteBrony> hahaha
+[18:41:35] <DataByteBrony> please note that any buzzers or blinking lights you may notice are a normal part of the boot diagnostics procedure
+[18:45:40] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[19:38:49] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[19:49:29] <AppleDash> lol
+[19:53:22] *** mniip is now known as \m
+[19:58:39] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[19:59:03] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[20:26:20] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[20:31:38] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[20:33:37] *** Joins: Sol (Sol@Pony-vvn.i1u.133.74.IP)
+[20:47:23] *** Joins: cyborg_ar (cyborgar@Pony-ti5.e33.49.190.IP)
+[20:52:48] *** Quits: loadhigh (ia1@Pony-m50.4sg.88.167.IP) (Ping timeout: 121 seconds)
+[20:54:12] *** Joins: loadhigh (ia1@Pony-m50.4sg.88.167.IP)
+[20:56:36] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[20:58:09] *** Joins: Crimson_Tail (Bluepon@Pony-cdc.v68.128.73.IP)
+[21:32:16] <Kinsley> What the fuck, Samsung. Cloning a drive means deleting shit off the original if it doesn't fit?
+[21:35:34] <Kinsley> Like, I'm glad I've got a 750GB external drive I can use to back up my videos, but fuckin' come on.
+[21:36:43] *** Init3-away is now known as init3
+[21:41:11] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[21:52:56] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[22:31:24] *** Quits: Crimson_Tail (Bluepon@Pony-cdc.v68.128.73.IP) (Quit: Oops, a kernel panic)
+[22:32:20] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[22:36:50] *** Joins: Crimson_Tail (Bluepon@Pony-cdc.v68.128.73.IP)
+[22:36:53] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[22:38:19] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[22:43:04] <Gigabit> Word of advice, DO NOT disable the airgateway webserver OR change the port.
+[22:45:34] *** Quits: MangoBloom (djazz@djazz.se) (Quit: znc closed :/)
+[22:49:12] *** Joins: djazz (djazz@Pony-tbg.hog.72.78.IP)
+[22:51:38] *** McKey is now known as [A]McKey
+[23:03:59] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (Quit: )
+[23:04:02] *** Joins: locodash11[server] (locodash11@Pony-q7h.1no.217.73.IP)
+[23:11:08] *** Joins: nscoots1 (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[23:11:46] *** Datalink_ is now known as Datalink
+[23:12:02] <Datalink> Gigabit, got locked out?
+[23:12:26] <Gigabit> I did yes, had to power the unti off and reset it
+[23:12:30] <Gigabit> SSH would not work
+[23:14:07] *** Quits: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[23:15:33] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[23:18:48] <tiwake> dodododo
+[23:25:37] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[23:29:10] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[23:32:16] * Datalink pokes at a Dell server...
+[23:32:28] <Datalink> I wonder who Calvin is...
+[23:35:07] <tiwake> does he have a stuffed tiger called hobbs?
+[23:37:51] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[23:38:05] <AppleDash> No, Kinsley, clonign a drive obviously means magically making stuff from the original smaller to fit on the new drive.
+[23:38:08] <AppleDash> cloning*
+[23:38:30] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[23:38:37] *** \m is now known as mniip
+[23:48:08] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[23:48:11] *** Quits: init3_1 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[23:51:31] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[23:53:32] <Kinsley> CLONING. As in, it shouldn't alter the original to make the copy. I totally get that you can't fit 700 GB into 250 without trimming some shit.
+[23:53:49] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[23:54:47] <Kinsley> That's my fucking point: Samsung's utility will delete your shit from the original drive during the process. I only discovered in a later screen that the utility can make the backups, but that's hardly a saving grace. Why the fuck does it need to wipe the source drive?
+[23:55:05] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[23:55:10] *** Quits: nscoots1 (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[23:55:33] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[23:59:28] *** Joins: rickyis911 (firestream@Pony-861.n8f.50.70.IP)

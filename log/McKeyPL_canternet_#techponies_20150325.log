@@ -1,0 +1,464 @@
+[00:00:15] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[00:01:45] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[00:01:56] *** locodash11[lagout] is now known as locodashie11
+[00:03:44] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[00:06:12] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[00:06:15] *** locodash11[lagout] is now known as locodashie11
+[00:14:33] *** Joins: Asoka_White (Asoka@Pony-3m7plm.net-htp.de)
+[00:17:59] *** Quits: Asoka (Asoka@Pony-clcnfj.net-htp.de) (Ping timeout: 121 seconds)
+[00:19:23] <Kiyiko> 1000 kB = 1 MB
+[00:21:33] <Littlepip> OK
+[00:23:52] <mniip> depends
+[00:24:59] <mniip> if you're a harddrive manufacturer this can go anywhere between 1.048 and 0.953
+[00:25:10] <mniip> depending on the meanings of k and M
+[00:28:22] *** Phase5 is now known as Phase4
+[00:28:35] <Phase4> Kiyiko, most opperating systems measure it as 1024kB = 1MB
+[00:29:24] <Kiyiko> Phase4, how do you define most?
+[00:29:33] <Phase4> i've not seen one that doesn't
+[00:29:42] * mniip creates an operating system
+[00:29:46] <mniip> quickly
+[00:29:49] <Kiyiko> linux does
+[00:29:53] <Kiyiko> OS X does
+[00:30:00] <Kiyiko> I mean uh...
+[00:30:03] <Kiyiko> does it correctly
+[00:30:03] <Kiyiko> ~_~
+[00:30:13] <Kiyiko> Well there's two right there
+[00:30:27] <Phase4> https://xkcd.com/394/
+[00:30:28] <PinkiePieBot> [ xkcd: Kilobyte ]
+[00:30:48] <Kiyiko> in fact, windows is the only major OS that doesn't follow the IEC/ISO 80000-13 standard
+[00:30:52] <mniip> [02:29:48] <Kiyiko> linux does
+[00:30:55] <mniip> name the command
+[00:31:13] <mniip> (I'm presuming you are talking about the GNU coreutils)
+[00:31:17] <mniip> or util-linux
+[00:31:24] <Kiyiko> uhmmmmmmm
+[00:31:26] <Kiyiko> <_<
+[00:31:26] <Kiyiko> >_>
+[00:31:35] <Kiyiko> df -H
+[00:31:37] <Phase4> Kiyiko, to be clear, i've never actually Checked this
+[00:31:37] * Kiyiko hides
+[00:31:44] <mniip> I see K
+[00:31:46] <mniip> not KB
+[00:31:49] <Kiyiko> <_<
+[00:31:50] <Kiyiko> >_>
+[00:31:53] <Kiyiko> df -h
+[00:31:55] * Kiyiko hides
+[00:32:06] <mniip> still K
+[00:32:11] <Kiyiko> >:/
+[00:32:13] <mniip> albeit in different units
+[00:32:23] * Kiyiko stabs it
+[00:32:32] <Phase4> linux itself exports file size in bytes
+[00:32:35] <Kiyiko> one should be k, and the other should be Ki
+[00:32:38] * Kiyiko stabs it
+[00:32:47] <Phase4> ls, df, and your favorite file manager can format it however they please
+[00:32:53] <mniip>        -h, --human-readable
+[00:32:53] <mniip>               print sizes in human readable format (e.g., 1K 234M 2G)
+[00:32:53] <mniip>        -H, --si
+[00:32:53] <mniip>               likewise, but use powers of 1000 not 1024
+[00:32:58] <Kiyiko> Ubuntu does it all right :D
+[00:33:10] <mniip> ubuntu is a distribution
+[00:33:13] <Kiyiko> ya
+[00:33:16] <Kiyiko> http://i.stack.imgur.com/RyfDP.png
+[00:33:22] <mniip> a set, a collection, a category of packages if you wish
+[00:33:22] <Kiyiko> IEC memory and SI disk
+[00:33:25] <Kiyiko> :)
+[00:33:29] <Kiyiko> it's bootiful
+[00:33:33] <mniip> that's not ubuntu
+[00:33:44] <Kiyiko> o
+[00:33:46] <Phase4> ?
+[00:34:04] <mniip> that's one of the programs from the package of whatever desktop environment is that
+[00:34:09] <Kiyiko> I hope the JEDEC revises their standards soon :C
+[00:34:23] <Kiyiko> in their current ones, they even recognize it as technically incorrect >_<)
+[00:34:27] <mniip> as already pointed out by Phase4, linux the kernel uses bytes
+[00:34:42] <mniip> in rare occasions blocks of known size
+[00:34:48] <Kiyiko> Mannn
+[00:34:50] <Kiyiko> idkkk
+[00:34:56] <Kiyiko> I'll tell you what I do know
+[00:34:58] <Phase4> iirc stat() gives you file size in bytes, and disk space in a multiple of the block size
+[00:34:59] <mniip> like 4096 byte pages, or 512 byte logical disk blocks
+[00:35:10] <Kiyiko> SI, IEC, IEEE, ISO, NIST... they all say the same thing
+[00:35:20] <Kiyiko> and windows does it wrong
+[00:35:23] <mniip> what are you  trying to do even
+[00:35:24] <Phase4> the latter being an annoying descision cause it buggers disk space usage reporting on btrfs
+[00:35:37] <mniip> Phase4, oh?
+[00:38:46] <Phase4> mniip, things like symlinks are sometimes stored in the metadata block instead of their own sector, so du will tell you it's consuming a block when in reality it's a handful of bytes
+[00:40:41] <Kiyiko> My guitar amp is better than all your guitar amps :D
+[00:48:29] <Starthunder> So I have my laptop booted from a livecd, and I'm trying to fix my /boot partition
+[00:48:59] <Starthunder> I figured I'd chroot into the installed system, log in, and see if apt-get would notice that the linux packages are broken and offer to fix them
+[00:49:42] <Starthunder> The live system is connected to the Internet over Wi-Fi, but when I chroot, it complains it can't—
+[00:49:50] <Starthunder> …oh, that's odd, I can ping 8.8.8.8. Hmmm.
+[00:51:07] <mniip> Starthunder, did you mount /proc /sys
+[00:51:09] <mniip> /dev
+[00:51:27] <Starthunder> …no, I did not. Should I have `mount --bind`ed them from the live system?
+[00:51:34] <mniip> no
+[00:51:35] <Starthunder> All three?
+[00:51:52] <mniip> mount -t proc proc /chroot/proc
+[00:52:11] <mniip> for sys you have sysfs
+[00:52:37] <mniip> I mean
+[00:52:44] <mniip> mount -f sysfs sys /chroot/sys
+[00:52:47] <mniip> and finally
+[00:52:53] <mniip> mount -f devtmpfs dev /chroot/dev
+[00:53:41] <Starthunder> -f or -t in those last two? -f is --fake in this copy of `mount`.
+[00:53:56] <mniip> oops
+[00:53:57] <mniip> -t
+[00:53:59] <Littlepip> Quick question... does there already exist a script that allows you to run an application in a chroot jail? Like, it'd make the chroot folder, then copy the application and all libraries it needs to function, plus anything like /etc/hosts and stuff that (most) everything needs. Also perhaps generate a script to enter the chroot.
+[00:54:38] <Starthunder> Thanks, mniip
+[00:54:48] <mniip> Starthunder, if you ever need to do a chroot within an X11 session, https://gist.github.com/mniip/192bcb5edf32c5569ab6
+[00:54:49] <PinkiePieBot> [ x11-chroot.sh ]
+[00:55:49] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[00:57:24] *** Joins: nscoots1 (FreyGrimrod@Pony-boq1fu.sub-70-192-12.myvzw.com)
+[00:57:30] <Starthunder> Still can't resolve stuff, though. What am I missing?
+[00:58:09] <mniip> resolve as in dns?
+[00:58:13] *** Quits: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[00:58:24] <Starthunder> Yeah.
+[00:58:48] <Starthunder> I redid the `chroot` after those three mounts.
+[00:59:08] <mniip> what was that file...
+[00:59:27] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[00:59:36] <Starthunder> /etc/resolv.conf?
+[00:59:36] <mniip> /etc/resolv.conf
+[00:59:41] *** locodash11[lagout] is now known as locodashie11
+[00:59:50] <Starthunder> …yeah, it's empty. 6_9
+[00:59:56] <mniip> add a line
+[00:59:58] <Starthunder> Of course. The system didn't go through the normal boot sequence.
+[00:59:59] <mniip> nameserver 8.8.8.8
+[01:00:37] <Starthunder> Thanks, mniip. ^^
+[01:01:26] <Kiyiko> I saw my sister naked yesterday
+[01:01:28] *** Quits: nscoots1 (FreyGrimrod@Pony-boq1fu.sub-70-192-12.myvzw.com) (Ping timeout: 121 seconds)
+[01:02:17] <Littlepip> OK
+[01:02:29] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[01:12:18] <Starthunder> Uhhhh…
+[01:12:56] <Starthunder> So, within the chroot, `mount` says that /dev/sda1 and /dev/sda2 are mounted on /boot and /boot/efi
+[01:12:58] <Starthunder> Which seems normal
+[01:13:09] <Littlepip> OK?
+[01:13:18] <Starthunder> But `blkid` says that /dev/sda1 and /dev/sda2 are from the livedisk.
+[01:13:48] <Starthunder> And `mount` and `blkid` from within the live system confirms this
+[01:14:17] <Starthunder> I need to reinstall grub, but I have no idea if I should tell it sda or sdb.
+[01:14:32] <Littlepip> Tell it whichever one your OS is on?
+[01:15:04] <mniip> Starthunder, cat /proc/mounts
+[01:15:24] <Starthunder> mniip: livesystem or chroot?
+[01:15:31] <mniip> that shows unchrooted paths so it doesn't matter
+[01:15:55] *** Joins: ShadyLightz (uid71401@Pony-un9cbp.charlton.irccloud.com)
+[01:16:11] *** Parts: ShadyLightz (uid71401@Pony-un9cbp.charlton.irccloud.com) ("")
+[01:16:27] <Starthunder> Oh, okay.
+[01:18:49] *** Joins: nscoots1 (FreyGrimrod@Pony-boq1fu.sub-70-192-12.myvzw.com)
+[01:19:33] *** Quits: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[01:23:24] <Starthunder> Uh…
+[01:23:29] <Starthunder> sdb…I guess?…
+[01:24:01] <Starthunder> There're only two mounts involving them…sda on /cdrom and sdb2 on /media/ubuntu/$uuid
+[01:25:31] <Starthunder> Meh, whatever. I have an image of the livedisk on my other laptop.
+[01:25:41] <Starthunder> If it overwrites the disk, I can just reimage it.
+[01:25:48] <johnsey> if in doubt, fdisk -l and smartctl -i are good to figure out what device you're looking at
+[01:26:11] <johnsey> or just take a look at dmesg
+[01:26:14] <Starthunder> …duh.
+[01:26:15] <Starthunder> Thanks, johnsey.
+[01:26:46] <mniip> johnsey, stuff is confusing because chroots
+[01:27:33] <Starthunder> Yeah, I am /really/ confused.
+[01:27:51] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[01:27:55] <johnsey> that may be, but /dev/sda tends to be /dev/sda inside and outside the chroot
+[01:28:08] <mniip> oh right
+[01:28:17] <mniip> but
+[01:28:26] <mniip> the installed system has a different devtmpfs than the chroot
+[01:29:00] <mniip> so what is /dev/sda1 in the system is /dev/sdb1 in the liveusb devtmpfs
+[01:29:02] <johnsey> mount -o bind /dev /chroot/dev; [..etc..] chroot /chroot [etc]
+[01:29:06] <mniip> and so is /dev/sdb1 in the chroot
+[01:29:10] <johnsey> or rbind if you want
+[01:29:24] <johnsey> not that it should make a difference i suppose
+[01:29:36] <mniip> johnsey, devtmpfs is already mounted in the chroot
+[01:29:51] <mniip> but the chroot's devtmpfs is different from *that of the installed system*
+[01:31:21] <johnsey> that shouldn't matter much for installing grub..?
+[01:31:31] <mniip> grub?
+[01:31:33] <johnsey> or maybe i missed something while skimming over the discussion
+[01:31:36] * mniip scrolls up[
+[01:31:45] <Starthunder> I'm trying to install grub from within the chroot.
+[01:31:50] <mniip> ah right
+[01:31:53] <Starthunder> Because the installed system should know how to do that best, yeah?
+[01:31:59] <Starthunder> It's got all the config files and stuff in its /etc.
+[01:32:12] *** Quits: Kiyiko (Kiyiko@Pony-4v96fh.dsl.netins.net) (Z-Lined: Parasprite)
+[01:32:26] <mniip> fancy quit message
+[01:32:48] <mniip> Starthunder, grub doesn't use "/dev/sda" stuff
+[01:32:48] <Starthunder> Ohhhhhhh.
+[01:32:56] <Starthunder> So that's what the earlier comment was about.
+[01:33:08] <mniip> it uses mostly UUIDs and sometimes (hd0,gpt0) or something like that
+[01:33:20] <Colgate> someone who does /amsg about their sister being naked, yeah, somehow I doubt they're legit
+[01:33:28] <Starthunder> I didn't notice that was an /amsg 6_9
+[01:33:32] <Starthunder> I only saw it on this channel.
+[01:33:36] <mniip> it wan't an amsg
+[01:33:39] <mniip> there was a delay
+[01:33:42] <Starthunder> mniip: But you `grub-install` to a /dev device, yeah?
+[01:33:45] <Colgate> might as well have been
+[01:33:48] <mniip> oh wait, if you're in a lot of channels then maybe
+[01:33:54] <mniip> right
+[01:34:00] <Colgate> either way, don't care
+[01:34:09] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[01:34:22] <mniip> Starthunder, try /dev/disk/by-uuid
+[01:34:25] *** Quits: nscoots1 (FreyGrimrod@Pony-boq1fu.sub-70-192-12.myvzw.com) (Ping timeout: 121 seconds)
+[01:34:32] * Starthunder …facehoofs.
+[01:34:34] <Starthunder> Thanks.
+[01:34:58] <Starthunder> …really shoulda just done that in the first place instead of worrying over whether it was sda or sdb
+[01:35:09] <johnsey> (which happens to be a symlink to /dev/sdX)
+[01:35:14] <mniip> yeah
+[01:35:26] <mniip> a kernel-updated symlink though
+[01:36:28] <johnsey> well, the whole devtmpfs is populated by the kernel, so I don't really see the problem in combination with the grub-install command, but whatever :)
+[01:37:09] <Starthunder> …there doesn't seem to be a symlink for the entire disk in here 6_9
+[01:37:34] <mniip> by-id does have one
+[01:38:12] <Starthunder> Oh, thanks. XD
+[01:40:18] <Starthunder> …right, that's the thing I forgot to mention.
+[01:41:40] <Starthunder> …derp.
+[01:41:42] <Starthunder> Never mind.
+[01:43:41] <Starthunder> Augh.
+[01:44:11] <Starthunder> ubuntu:~ blackl% sudo mount /dev/disk/by-uuid/$uuid /boot
+[01:44:24] <Starthunder> mount: /dev/sdb2 is already mounted, or /boot busy
+[01:44:30] <Starthunder> ubuntu:~ blackl% sudo umount /dev/sdb2
+[01:44:37] <Starthunder> umount: /dev/sdb2: not mounted
+[01:44:56] <Starthunder> And /boot is a new directory. I just made it. It can't /possibly/ be busy.
+[01:47:00] <mniip> Starthunder, is something cd'd into that direfctory
+[01:47:03] <mniip> directory
+[01:48:47] <Starthunder> mniip: apparently not, as I was just able to rmdir it
+[01:51:17] <mniip> doesn't mean anything
+[01:51:38] <Starthunder> …right, it doesn't.
+[01:51:43] <Starthunder> Okay, lemme back up.
+[01:52:03] <Starthunder> I tried to `grub-install /dev/disk/by-id/$name`, and it comaplained that it couldn't find the EFI directory
+[01:52:20] <Starthunder> I assume that's because /boot was actually on the mane filesystem (derp!) and there was no /boot/efi
+[01:53:27] *** Quits: Phase4 (Phase4@Pony-0j8ib1.internode.on.net) (Ping timeout: 121 seconds)
+[02:10:11] *** Quits: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[02:10:37] *** Joins: nscoots (FreyGrimrod@Pony-boq1fu.sub-70-192-12.myvzw.com)
+[02:20:59] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[02:21:30] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[02:22:26] *** Quits: coppercore (coppercore@Pony-kr5t8h.coppercore.net) (Ping timeout: 121 seconds)
+[02:29:26] *** Joins: nscoots1 (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[02:31:09] *** Quits: nscoots (FreyGrimrod@Pony-boq1fu.sub-70-192-12.myvzw.com) (Ping timeout: 121 seconds)
+[02:34:53] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[02:44:38] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:56:20] *** Joins: coppercore (coppercore@Pony-kr5t8h.coppercore.net)
+[02:56:49] *** coppercore is now known as Pony_74768
+[02:57:40] *** Pony_74768 is now known as coppercore
+[03:20:56] *** Quits: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[03:21:31] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[03:33:21] <mniip> I'll just leave this here
+[03:33:22] <mniip> https://gist.github.com/mniip/12b76a2fe78b0b2ca349
+[03:33:23] <PinkiePieBot> [ A 2048 clone for those who can't afford a desktop environment. Runs in sh! ]
+[03:39:34] <Littlepip> nooo
+[03:52:26] * JustAberrant stumbles in reeking of potting soil and paint thinner
+[04:00:36] * JustAberrant casually falls ontop of Littlepip all while laughing manically
+[04:00:49] <Littlepip> Oh dear
+[04:07:00] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[04:15:43] *** Quits: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com) (Connection closed)
+[04:18:25] *** MistVeil is now known as Mist|Gaming
+[04:22:07] *** Quits: coppercore (coppercore@Pony-kr5t8h.coppercore.net) (A TLS packet with unexpected length was received.)
+[04:25:08] *** Joins: coppercore (coppercore@Pony-kr5t8h.coppercore.net)
+[04:25:37] *** coppercore is now known as Pony_49405
+[04:31:50] *** Init3-away is now known as init3
+[04:33:14] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[04:36:21] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[04:39:00] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[04:55:57] *** Quits: Pony_49405 (coppercore@Pony-kr5t8h.coppercore.net) (A TLS packet with unexpected length was received.)
+[05:02:40] *** Joins: Compu_ (quassel@snuggly.filly)
+[05:05:10] *** Quits: Compu (compu@snuggly.filly) (Ping timeout: 121 seconds)
+[05:05:27] *** Quits: CompuDesktop (quassel@snuggly.filly) (Ping timeout: 121 seconds)
+[05:05:37] *** Joins: TuxRug[tablet] (TuxRug@TuxRug)
+[05:05:55] *** Q0|Away is now known as Q0
+[05:07:05] *** Joins: Compu (compu@snuggly.filly)
+[05:07:11] *** Compu_ is now known as CompuDesktop
+[05:15:33] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[05:15:43] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[05:18:52] *** init3 is now known as Init3-away
+[05:19:15] *** Init3-away is now known as init3
+[05:39:14] *** Quits: TuxRug[tablet] (TuxRug@TuxRug) (Quit: AndroIRC - Android IRC Client ( http://www.androirc.com ))
+[06:33:33] *** init3 is now known as Init3-away
+[06:33:36] *** Init3-away is now known as init3
+[06:43:37] *** init3 is now known as Init3-away
+[06:49:05] *** Minigash is now known as shnuggles
+[07:14:08] *** Init3-away is now known as init3
+[07:16:03] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[07:17:04] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[07:17:26] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[07:19:54] <mniip> sigh
+[07:20:01] <mniip> >discovered bug in GHCi
+[07:20:07] <mniip> >signed up for their bugtracker
+[07:20:13] *** Quits: Mist|Gaming (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[07:20:17] <mniip> >their mail system is broken so didn't get confirmation
+[07:20:27] <mniip> >can't create a ticket until email is confirmed
+[07:23:46] <Kinsley> Does the dev have an IRC channel or something?
+[07:24:01] <mniip> "the dev"?
+[07:24:10] <mniip> ah yes the do
+[07:24:13] <mniip> they
+[07:24:40] <mniip> already posted there
+[07:24:54] <mniip> and a ticket in the bugtracker is much more noticeable than a message in irc
+[07:39:04] *** Quits: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[08:01:22] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:03:33] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[08:05:09] *** Quits: ThunderBolt (ThunderBolt@Sliverpony) (Ping timeout: 121 seconds)
+[08:13:38] *** Joins: ThunderBolt (ThunderBolt@Sliverpony)
+[08:13:38] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[08:18:10] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:29:34] *** Joins: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net)
+[08:44:48] <Littlepip> JustAberrant: I had something important to show you
+[08:49:20] *** Littlepip is now known as AppleDash
+[09:01:53] *** Joins: Phase4 (Phase4@Pony-12ab5a.internode.on.net)
+[09:10:59] *** Joins: Phase5 (Phase4@Pony-arvig7.internode.on.net)
+[09:13:43] *** Quits: Phase4 (Phase4@Pony-12ab5a.internode.on.net) (Ping timeout: 121 seconds)
+[09:21:38] *** Joins: lablayers (uid55894@Pony-s37kec.charlton.irccloud.com)
+[09:31:21] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[10:31:20] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[11:06:44] *** Quits: Phase5 (Phase4@Pony-arvig7.internode.on.net) (Quit: Leaving)
+[11:07:04] *** Joins: Phase4 (Phase4@Pony-arvig7.internode.on.net)
+[11:19:16] *** init3 is now known as Init3-away
+[11:23:40] *** Init3-away is now known as init3
+[11:51:24] *** Q0 is now known as Q0|Away
+[12:04:14] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[12:17:52] *** Neptune is now known as Neptune|sleep
+[12:27:08] *** Quits: Rylee (rylai@within.a.hail.of.gemstones) (Ping timeout: 121 seconds)
+[12:54:21] *** Joins: Rylee (rylai@within.a.hail.of.gemstones)
+[13:22:58] *** Quits: nscoots1 (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[14:10:24] <mniip> woo
+[14:10:28] <mniip> https://ghc.haskell.org/trac/ghc/ticket/10191
+[14:10:34] <PinkiePieBot> [ #10191 (Interactive linker crash when partially applying seq#) – GHC ]
+[14:14:55] *** Quits: Ashley (Ashfire@Ashfire.bronytv.net) (Ping timeout: 121 seconds)
+[14:17:54] <Starthunder> /run is supposed to be completely volatile on Ubuntu, right?
+[14:18:13] <Starthunder> It looks like some stuff got dumped into it when it wasn't mounted as its own temporary filesystem.
+[14:19:08] <mniip> well over here I have a tmpfs mounted over /run
+[14:21:30] <Starthunder> mount -t tmpfs tmpfs $chroot_dir/run  # like this?
+[14:21:37] <mniip> I guess
+[14:24:18] *** init3 is now known as Init3-away
+[14:24:28] <Starthunder> Woo
+[14:24:45] <Starthunder> Everything works better when you mount all the meta-fses /before/ you try to chroot.
+[14:31:42] *** Quits: lablayers (uid55894@Pony-s37kec.charlton.irccloud.com) (Quit: Connection closed for inactivity)
+[14:42:35] *** Joins: Compu_ (quassel@snuggly.filly)
+[14:44:39] *** Quits: CompuDesktop (quassel@snuggly.filly) (Ping timeout: 121 seconds)
+[14:46:38] *** Joins: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[15:02:07] <Starthunder> Okay, uh…
+[15:02:23] <Starthunder> How do I get apt-get to reinstall everything that's /supposed/ to have files under /boot? 6_9
+[15:02:28] <Starthunder> 'cos those files don't exist anymore. x.x
+[15:06:04] *** Quits: Fallfeathers (Fallfeather@Pony-u71ip5.internode.on.net) (Connection closed)
+[15:09:37] <mniip> I don't think any packages have files in there
+[15:09:41] <mniip> all of them are generated iirc
+[15:14:43] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (Connection closed)
+[15:14:55] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[15:15:01] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[15:21:12] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[15:22:49] *** Joins: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[15:26:47] *** Joins: Ashfire (Ashfire@Ashfire.bronytv.net)
+[15:30:04] <Starthunder> Well, there's the kernel packages…
+[15:30:13] <Starthunder> Past that point, anyway. Progress.
+[15:31:02] <Starthunder> I'm not getting prompted for my passphrase.
+[15:31:32] <Starthunder> After half a minute, it gives up waiting for the root device, complains about the lack of a /dev/mapper/caramel--vg-root, and dumps me into a shell.
+[15:50:39] *** Joins: ShadyLightz (uid71401@Pony-un9cbp.charlton.irccloud.com)
+[15:51:11] *** Parts: ShadyLightz (uid71401@Pony-un9cbp.charlton.irccloud.com) ("")
+[16:05:43] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:10:53] *** Joins: DataByteBrony (DataByte@Pony-bk2e3k.lrpe.i2gu.000d.2601.IP)
+[16:15:16] <DataByteBrony> it is slightly amusing to have a tech remote to your pc.. then a few minutes in flail about randomly, trying to figure out how to open windows explorer in windows 8
+[16:20:46] <mniip> does the good old Win+R not work anymore?
+[16:21:10] *** Joins: SilveR^SurfeR (wixhtmledit@Pony-a8q.7i2.98.86.IP)
+[16:24:01] <DataByteBrony> mniip: win+r for run, win+e for explorer.. but it's amusing when someone doesn't know or try that.. especially after using win+break
+[16:24:34] <tiwake> hmm.. didnt know that
+[16:26:41] <DataByteBrony> little shortcuts that are really helpful
+[16:28:38] *** Quits: DataByteBrony (DataByte@Pony-bk2e3k.lrpe.i2gu.000d.2601.IP) (Quit: Leaving)
+[16:28:48] *** Joins: DataByteBrony (DataByte@Pony-bk2e3k.lrpe.i2gu.000d.2601.IP)
+[16:28:50] <tiwake> yeah
+[16:29:21] <tiwake> though I don't use windows enough to reserve braincells for windows shortcuts... heh
+[16:31:03] <johnsey> all you neeeeed is ctrl+alt+deleeeeete
+[16:31:22] <johnsey> ♪
+[16:31:59] <tiwake> well, time to go to work
+[16:33:54] *** Parts: SilveR^SurfeR (wixhtmledit@Pony-a8q.7i2.98.86.IP) ()
+[16:40:27] *** Compu_ is now known as CompuDesktop
+[16:47:31] *** Joins: ShadyLightz (uid71401@Pony-un9cbp.charlton.irccloud.com)
+[16:48:47] *** ShadyLightz is now known as LoneShades
+[17:00:00] *** Q0|Away is now known as Q0
+[17:01:04] <mniip> johnsey, you mean
+[17:01:07] <mniip> ctrl+shift+esc
+[17:50:52] *** Joins: coppercore (coppercore@Pony-kr5t8h.coppercore.net)
+[17:51:21] *** coppercore is now known as Pony_39641
+[18:11:27] *** Pony_39641 is now known as coppercore
+[18:31:57] <DataByteBrony> install steam on mint
+[18:32:20] <DataByteBrony> set library location to steam location on data partition (shared with windows install)
+[18:32:30] <DataByteBrony> games suddenly show up as installed
+[18:32:33] <DataByteBrony> will not run
+[18:32:48] <DataByteBrony> "failed to start game, missing executable'
+[18:34:21] <Colgate> probably missing the linux binaries
+[18:34:42] <Colgate> verify local game cache, etc.
+[18:35:06] <DataByteBrony> clearly it's missing the linux files.. i can't seem to convince it that, though
+[18:35:17] *** Quits: DataByteBrony (DataByte@Pony-bk2e3k.lrpe.i2gu.000d.2601.IP) (Connection closed)
+[18:35:56] *** Joins: DataByteBrony (DataByte@Pony-bk2e3k.lrpe.i2gu.000d.2601.IP)
+[18:36:05] <DataByteBrony> whoa..
+[18:36:27] <DataByteBrony> hit play again, suddenly get logged out of the machine, and the graphics went funny
+[18:37:07] <Colgate> sounds like an xorg crash
+[18:37:31] <DataByteBrony> going to attempt a reboot, i guess..
+[18:37:38] *** Quits: DataByteBrony (DataByte@Pony-bk2e3k.lrpe.i2gu.000d.2601.IP) (Connection closed)
+[18:39:17] *** Joins: DataByteBrony (DataByte@Pony-5sa37u.lrpe.i2gu.000d.2601.IP)
+[18:41:43] <DataByteBrony> there, now updating
+[18:41:50] <DataByteBrony> just took a reboot, i guess :/
+[18:48:52] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[18:57:23] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[19:05:20] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:06:54] *** Joins: yemi_bas (yemibas@Pony-8e1d71.static-ip.telepacific.net)
+[19:07:25] *** Parts: yemi_bas (yemibas@Pony-8e1d71.static-ip.telepacific.net) ()
+[19:27:20] *** Init3-away is now known as init3
+[19:38:42] <DataByteBrony> portal on mint!
+[19:38:42] <DataByteBrony> woo!
+[19:39:11] <AppleDash> Hurray
+[19:49:06] <coppercore> huzzah
+[19:49:21] <coppercore> i've got steam on my debian 8 install and it is <3
+[19:54:41] <JockeTF> coppercore: Does it contain alpacas?
+[19:54:50] <coppercore> not yet
+[19:54:52] <coppercore> but it has ponysay
+[19:56:03] *** Quits: LoneShades (uid71401@Pony-un9cbp.charlton.irccloud.com) (Quit: Connection closed for inactivity)
+[19:56:13] <JockeTF> coppercore: Oh, well make sure it gets alpacas too.
+[20:02:37] <DataByte> all the fuzzy critters!
+[20:02:41] *** Joins: Kiyiko (NULL@Pony-9u4h86.dyn.nltelcom.net)
+[20:03:31] <DataByte> JockeTF: over 1,800 new fics in the past two weeks, and not one of them with alpacas...
+[20:12:59] <JockeTF> DataByte: That's awful!
+[20:13:09] <JockeTF> DataByte: How do you propose we solve this issue?
+[20:16:38] *** Quits: Crimson_Tail (ChaoticRift@Pony-thng7i.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[20:18:56] *** init3 is now known as init3_1
+[20:19:09] *** init3_1 is now known as init3
+[20:19:24] <DataByte> JockeTF: send in the lamas 
+[20:19:29] <DataByte> show no mercy
+[20:19:59] *** Parts: Ashfire (Ashfire@Ashfire.bronytv.net) ("Leaving")
+[20:20:54] *** Joins: Crimson_Tail (ChaoticRift@Pony-5jkijg.7h3b.037j.000a.2601.IP)
+[20:32:12] <DataByte> pretty cool story: http://www.reddit.com/r/talesfromtechsupport/comments/3079fk/sometimes_its_worth_it/
+[20:33:50] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:35:44] <JockeTF> DataByte: That doesn't make any sense. Llamas have little power.
+[20:36:20] <DataByte> so they are easy to send!
+[20:36:23] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:36:28] <DataByte> with time, they will see the light!
+[21:16:30] *** Gigabit is now known as worthless
+[21:19:25] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[21:21:23] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Ping timeout: 121 seconds)
+[21:28:48] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[21:30:59] *** init3 is now known as Init3-away
+[21:34:08] <MistVeil> Super quick question: Anyone has some best practices tips on cable management?
+[21:34:22] *** Init3-away is now known as init3
+[21:34:53] <AppleDash> Um
+[21:35:02] <AppleDash> Tie the cables in such a way that they are out of the way :P
+[21:36:13] <coppercore> bundle similar cables together and always leave just a bit of slack but not too much
+[21:37:11] <MistVeil> I usually leave about 2 mts. of extra cable on the rack end, and about 1 mt. (when possible) on the other end
+[21:37:29] <AppleDash> What's a mt?
+[21:37:36] <MistVeil> meter
+[21:37:49] <MistVeil> Decimal system
+[21:37:58] <AppleDash> Generally we use "m" :P
+[21:38:27] <MistVeil> Oh, so do we, but I've seen plenty of non-hispanic people not understanding it as "m"
+[21:38:46] <MistVeil> ...Which is less people than the ones who don't even use the decimal system
+[21:39:07] *** LightningCrash is now known as ThunderStorm
+[21:39:23] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[21:39:28] <AppleDash> lol
+[21:41:09] <MistVeil> Every time I see someone using it, I die a little inside...
+[21:41:18] <MistVeil> The imperial metric system, that is
+[21:41:36] <Phase4> 'imperial metric'?
+[21:42:58] <MistVeil> http://en.wikipedia.org/wiki/Imperial_units
+[21:42:59] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:42:59] <PinkiePieBot> [ Imperial units - Wikipedia, the free encyclopedia ]
+[21:44:25] *** init3 is now known as Init3-away
+[21:47:24] <MistVeil> Oh well, time for server room cleaning
+[21:47:25] <MistVeil> AFK
+[21:47:28] *** MistVeil is now known as Mist|Cleaning
+[21:49:59] *** Init3-away is now known as init3
+[22:04:32] <Phase4> Mist|Cleaning, i figured what you meant, just never heard it called imperial metric
+[22:15:10] <AppleDash> JustAberrant: Ponies :)
+[22:21:31] *** Quits: Phase4 (Phase4@Pony-arvig7.internode.on.net) (Ping timeout: 121 seconds)
+[22:31:07] <MisterSkids> going live in 30 minutes http://celestiaradio.com/
+[22:41:12] *** Quits: Mist|Cleaning (aqua@Pony-hahd0r.static.axtel.net) (Ping timeout: 121 seconds)
+[22:49:25] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:52:31] *** mniip is now known as \m
+[23:00:26] *** Quits: DataByteBrony (DataByte@Pony-5sa37u.lrpe.i2gu.000d.2601.IP) (Quit: Leaving)
+[23:02:10] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[23:02:43] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[23:07:42] *** Quits: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net) (Quit: Leaving.)

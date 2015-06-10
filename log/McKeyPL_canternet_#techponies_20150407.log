@@ -1,0 +1,361 @@
+[00:12:59] *** Quits: cyborg_ar (cyborgar@Pony-440.7gu.25.181.IP) (Ping timeout: 121 seconds)
+[00:21:48] * JustAberrant gently AppleDash 
+[00:22:39] <AppleDash> :)
+[00:22:44] <AppleDash> JustAberrant: you use gentoo right?
+[00:22:48] <JustAberrant> aye
+[00:22:57] <AppleDash> Mind helping me with something?
+[00:23:01] <JustAberrant> mebbie
+[00:23:58] <AppleDash> JustAberrant, I'm trying to emerge a package and I'm getting something about multiple package instances in a single package slot
+[00:25:18] <JustAberrant> mm
+[00:25:38] <JustAberrant> do a oneshot upgrade to whatever the highest listed version of that package is
+[00:25:46] <JustAberrant> usually fixes that
+[00:25:48] <AppleDash> Tried that
+[00:25:50] <AppleDash> It didn't fix it
+[00:26:06] <JustAberrant> :(
+[00:26:24] <AppleDash> Indeed :(
+[00:26:39] <JustAberrant> do you have something that depends on a specific version of something?
+[00:26:47] <AppleDash> I don't know
+[00:27:16] <JustAberrant> you can get that kinda problem if you are mixing branches (i.e. have some that were ~amd64 masked that you unmasked)
+[00:27:18] <AppleDash> I'm not smart JustAberrant, I just looked over my terminal history
+[00:27:26] <AppleDash> I oneshot'd the lower version, not the higher
+[00:27:33] <JustAberrant> ah
+[00:27:37] <JustAberrant> yeah, that won't help much ;p
+[00:28:02] <AppleDash> :P
+[00:28:11] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[00:29:04] <AppleDash> It is still not very happy with me :(
+[00:29:08] <JustAberrant> :(
+[00:29:17] <JustAberrant> same or different problem :(
+[00:30:02] <AppleDash> Similar, one moment
+[00:32:12] <AppleDash> JustAberrant, http://pastebin.com/GpAp7HDm
+[00:32:13] <PinkiePieBot> [ appledash@ponybook ~ $ sudo emerge -av1 =libav-11.3 !!! SYNC setting found in m - Pastebin.com ]
+[00:33:46] <JustAberrant> maybe try upgrading ffmpeg\
+[00:34:11] <AppleDash> sure, why not
+[00:34:45] <AppleDash> nope
+[00:34:51] <JustAberrant> also, did you try --backtrack=30 as is recommended, cause that does actually sometimes help
+[00:35:05] <AppleDash> What's that meant to do?
+[00:35:41] <JustAberrant> no idea
+[00:35:50] <JustAberrant> oh, the backtrack thing
+[00:35:55] <JustAberrant> it just tries harder to figure this out ;p
+[00:35:58] <AppleDash> lol
+[00:36:14] <AppleDash> I will try
+[00:36:35] <JustAberrant> do you have mplayer or similar installed?
+[00:36:42] <JustAberrant> cause I think it still doesn't like libav
+[00:37:00] <AppleDash> not unless it comes with gentoo
+[00:37:45] <AppleDash> adding the backtrack thing has not helped
+[00:39:27] <AppleDash> It feels that gst-plugins-ffmpeg wants a libav version less than 10
+[00:39:30] <AppleDash> err, seems*
+[00:40:43] * JustAberrant really doesn't know :(
+[00:40:47] <AppleDash> :(
+[00:40:53] <JustAberrant> the whole mplayer/ffmpeg/libav thing is kinda a nightmare
+[00:41:07] <JustAberrant> I don't use libav specifically because I wuv mplayer
+[00:41:16] <AppleDash> It is
+[00:42:05] <JustAberrant> if you want to do that I can tell you how, otherwise, sorry :(
+[00:42:14] <JustAberrant> can try asking in #gentoo-amd64 on freenode
+[00:43:57] <JustAberrant> but yeah, systemd and libav/ffmpeg are the two bits of gentoo that make gentoo still a pain
+[00:44:20] <AppleDash> I'll see if I can make it work first
+[00:44:20] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[00:45:09] <AppleDash> I don't even remember what I originally wanted to do
+[00:45:15] <AppleDash> Oh, I wanted to install networkmanager
+[00:45:35] <AppleDash> I fixed it
+[00:45:47] <AppleDash> I dicked with package.mask like it suggested
+[00:46:03] *** Joins: cyborg_ar (cyborgar@Pony-440.7gu.25.181.IP)
+[00:46:15] <JustAberrant> masked ffmpeg, upgraded, unmasked it, then upgraded again?
+[00:46:23] <AppleDash> nah
+[00:46:33] <JustAberrant> cyborg_ar: cyborg_ar :)
+[00:46:34] <AppleDash> I masked libav and am currently upgrading
+[00:46:49] <cyborg_ar> sup?
+[00:47:28] <JustAberrant> hah, well I guess that will kinda maybe work in the short term ;p
+[00:47:39] <AppleDash> lol
+[00:47:42] <JustAberrant> cyborg_ar: nothin :)
+[00:47:50] <AppleDash> I will speak to someone else to help me unbreak my system later
+[00:48:57] <JustAberrant> :)
+[00:49:17] *** Joins: Fallfeathers (Fallfeather@Pony-kruai5.internode.on.net)
+[00:49:36] * JustAberrant grabs Fallfeathers and runs 16 meters 
+[00:49:56] * Fallfeathers is relocated.
+[01:02:59] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[01:19:04] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[01:23:45] *** GigaWork is now known as Gigabit
+[01:29:09] <Moonlightning> So I'm making a container in Python that's like a list, but keeps itself sorted.
+[01:29:55] <JustAberrant> python doesn't have a built in for that? :(
+[01:30:03] <Moonlightning> Nope. :|
+[01:30:07] <JustAberrant> java does ;p
+[01:30:13] <JustAberrant> (priority queue)
+[01:30:34] <Moonlightning> SortedSet.
+[01:31:08] <Moonlightning> As such, it has an order, but that order can't be changed—you can get an item at index `i`, but you can't /insert/ an item at index `i`. It gets inserted wherever it would be inserted in order to maintain the order.
+[01:31:54] <Moonlightning> Should I implement the MutableSequence interface, or the MutableSet interface, or neither?
+[01:32:07] * JustAberrant does not know these things :(
+[01:33:13] <Moonlightning> …oh, I could do Sequence and MutableSet
+[01:47:11] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Connection closed)
+[01:48:15] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[01:56:41] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:59:35] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:04:02] *** Quits: Crimson_Tail (ChaoticRift@Pony-37im66.7h3b.037j.000a.2601.IP) (Quit: Oops, a kernel panic)
+[02:06:49] *** Quits: Phase5 (Phase4@Pony-0nc5nh.internode.on.net) (Quit: Leaving)
+[02:09:28] *** Quits: Shnuggles (Brolf_pog@Pony-c0qhtu.client.bresnan.net) (Ping timeout: 121 seconds)
+[02:27:28] <Gigabit> https://www.youtube.com/watch?feature=player_embedded&v=RWZE2Bh48fM
+[02:27:29] <PinkiePieBot> [ Aluminum battery offers safe alternative to conventional batteries - YouTube ]
+[02:29:33] *** Quits: cyborg_ar (cyborgar@Pony-440.7gu.25.181.IP) (Ping timeout: 121 seconds)
+[02:31:06] *** Joins: AquaBrandish (aqua@Pony-prm9c8.static.axtel.net)
+[02:33:51] *** Joins: Tear|log (aqua@Pony-prm9c8.static.axtel.net)
+[02:34:33] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Ping timeout: 121 seconds)
+[02:37:08] *** Quits: AquaBrandish (aqua@Pony-prm9c8.static.axtel.net) (Ping timeout: 121 seconds)
+[02:37:47] <Kinsley> I'm going to try a quick test in here with a different version of Pinkie. I don't expect anyone's going to be negatively affected by it, but this may totally blow up in my face.
+[02:38:05] *** Joins: InkiePieBot (InkiePieBot@Pony-fmh7um.wa.comcast.net)
+[02:38:29] <Kinsley> Inkie, is AutoLapsus best pony?
+[02:38:29] <InkiePieBot> UnboundLocalError: local variable 'channel_nicks' referenced before assignment (file "/home/jordan/PinkiePyBot/modules/bestpony.py", line 51, in is_best_pony)
+[02:38:30] <PinkiePieBot> Yeah, Autolapsus is pretty awesome!
+[02:40:08] *** Quits: Tear|log (aqua@Pony-prm9c8.static.axtel.net) (Ping timeout: 121 seconds)
+[02:47:48] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[02:49:29] <Lapsus> :v
+[02:49:33] *** Joins: Crimson_Tail (ChaoticRift@Pony-3ql20g.7h3b.037j.000a.2601.IP)
+[02:55:31] *** Joins: Kinsley|Laptop (JKinsley@Pony-fmh7um.wa.comcast.net)
+[02:57:54] *** Quits: Kinsley|Laptop (JKinsley@Pony-fmh7um.wa.comcast.net) (Quit: The Princess Is Out)
+[03:05:20] <ShivalPonyWolf> https://cantheyseemydick.com/
+[03:05:21] <PinkiePieBot> [ Can They See My Dick? ]
+[03:05:22] <InkiePieBot> [ Can They See My Dick? ]
+[03:07:04] <Phase4> they're multiplying
+[03:07:35] <ShivalPonyWolf> Phase4: the bots or the dick pages
+[03:07:55] <Phase4> probably both
+[03:24:20] <Kinsley> Inkie is here to test some stuff.
+[03:24:36] <Kinsley> Including whyever the fuck that variable is out of scope.
+[03:24:50] <Kinsley> (probably threading issues)
+[03:27:25] <AppleDash> Anyone had issues on Windows with VLC fullscreen still showing the taskbar?
+[03:33:15] <Phase4> Kinsley, is pinkie the one that's written in c?
+[03:33:16] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[03:33:28] <Phase4> someone wrote a bot in c, had stack traces printed to irc and everything
+[03:33:55] <Kinsley> No, Pinkie and Inkie are the same code, both in Python, Inkie has just always been the "testing" version I run locally.
+[03:44:32] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Quit: )
+[03:44:35] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[03:45:05] *** locodashie11 is now known as Pony_78722
+[03:45:39] *** Pony_78722 is now known as locodashie11
+[03:45:50] *** Joins: ModusPonens (ModusPonens@Pony-39rht5.xnet.uga.edu)
+[03:48:34] *** Neptune is now known as Neptune|sleep
+[03:49:21] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[03:56:26] *** Quits: ModusPonens (ModusPonens@Pony-39rht5.xnet.uga.edu) (Connection closed)
+[03:56:40] *** Joins: ModusPonens (ModusPonens@Pony-39rht5.xnet.uga.edu)
+[04:04:12] *** Quits: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (Killed (NickServ (GHOST command used by Quindo|home!Quindo@Pony-jnna6q.mo.comcast.net)))
+[04:04:48] *** Joins: TuxRug (TuxRug@TuxRug)
+[04:05:06] *** Quits: Crimson_Tail (ChaoticRift@Pony-3ql20g.7h3b.037j.000a.2601.IP) (Quit: Oops, a kernel panic)
+[04:06:19] *** Joins: MalevolentSpoon (MalevolentS@Fork.Aint.Got.Nothin.On.Me)
+[04:06:27] * MalevolentSpoon flops in
+[04:43:15] *** Joins: cyborg_ar (cyborgar@Pony-440.7gu.25.181.IP)
+[04:49:11] *** MalevolentSpoon is now known as MS-SHower
+[04:59:45] *** MS-SHower is now known as MalevolentSpoon
+[05:09:24] <cyborg_ar> https://www.youtube.com/watch?v=z47Gv2cdFtA that's so dorky
+[05:09:24] <PinkiePieBot> [ Fairchild Briefing on Integrated Circuits - 101523 views - 0:29:52 long - 709 likes - 98.61% ]
+[05:09:24] <InkiePieBot> [ Fairchild Briefing on Integrated Circuits - 101523 views - 0:29:52 long - 709 likes - 98.61% ]
+[05:09:53] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[05:14:00] <cyborg_ar> man those masks are so tiny
+[05:14:07] <cyborg_ar> err wafers i mean
+[05:40:28] <Lapsus> GTA5 retail version is 7 discs :v
+[05:41:56] *** Joins: Brolf_pog (Brolf_pog@Pony-c0qhtu.client.bresnan.net)
+[05:49:21] *** Q0|Away is now known as Q0
+[05:51:11] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[06:21:20] <ShivalPonyWolf> lol who didnt see this fail comming - http://www.theregister.co.uk/2015/04/07/anonabox_still_insecure_says_cloak_project_analyst/
+[06:21:20] <PinkiePieBot> [ Supposed spook-buster Anonabox still insecure, says Cloak Project • The Register ]
+[06:21:21] <InkiePieBot> [ Supposed spook-buster Anonabox still insecure, says Cloak Project • The Register ]
+[06:22:25] *** Quits: InkiePieBot (InkiePieBot@Pony-fmh7um.wa.comcast.net) (Client exited)
+[06:52:28] <Twilightlicious> Lapsus, there's a retail version?
+[06:52:36] <Twilightlicious> that isnt just a Steam Key in a box?
+[06:52:47] <Phase4> steam key split across 7 discs
+[06:52:54] <Phase4> the drm took up a lot of space
+[06:56:43] <Lapsus> lol
+[06:56:49] *** Joins: ZigSphere (xzixmwhtutn@Pony-lj8.4k8.126.76.IP)
+[06:56:59] <Lapsus> each disc holds 1/7th of the key
+[06:57:14] <Twilightlicious> the disks are spread across different gamestops nation wide
+[06:57:20] <Twilightlicious> you must gather them on an epic quest
+[06:58:03] <Twilightlicious> -bane voice- then you will have my permission to install
+[06:58:17] <Lapsus> http://i.imgur.com/XbjvPZj.png
+[07:00:14] <Twilightlicious> thats only like 30GB
+[07:00:19] <Twilightlicious> where's the other 20
+[07:00:27] <Twilightlicious> i know it's compressed, but i doubt it's that much
+[07:00:34] <Twilightlicious> in b4 giant update
+[07:21:45] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[07:23:35] *** Joins: MistVeil (AndChat3408@Pony-prm9c8.static.axtel.net)
+[07:23:48] *** Parts: MistVeil (AndChat3408@Pony-prm9c8.static.axtel.net) ("Leaving")
+[07:32:13] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:36:42] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[07:37:00] <Colgate> "...the only difference is that the encrypting and decrypting is done in the computer itself."
+[07:37:20] <Colgate> as opposed to... printing out the encrypted data and having the person decrypt it by hand?
+[07:38:04] <Phase4> context?
+[07:38:22] <Colgate> http://www.smartpctricks.com/2013/05/how-to-setup-configure-free-vpn-virtual-private-network-with-team-viewer-vpn-client-software.html
+[07:38:36] <Colgate> "The principle of TeamViewer Tunneling is same as normal VPN but the only difference is that the encrypting and decrypting is done in the computer itself. No hardware required for encryption and decryption. Encrypting carried by a Virtual Network Adapter and Team Viewer software."
+[07:38:39] <Colgate> full paragraph
+[07:38:47] <Phase4> what?
+[07:38:58] <Colgate> no hardware needed!
+[07:39:07] <Phase4> "adding some extra bits to data"
+[07:41:23] <Colgate> yeah, there's a lot wrong with that page XD
+[08:09:16] *** Joins: Fillyfeathers (Fallfeather@Pony-gk7te9.bigpond.net.au)
+[08:10:18] <ShivalPonyWolf> wow
+[08:10:37] <MalevolentSpoon> ...
+[08:10:39] <MalevolentSpoon> Okay
+[08:10:43] <MalevolentSpoon> Who are you?
+[08:11:04] <ShivalPonyWolf> the stupidity in that is just painful
+[08:11:15] <ShivalPonyWolf> it sounds like bad advertising
+[08:11:39] <MalevolentSpoon> Wait
+[08:11:41] <MalevolentSpoon> Oops
+[08:11:45] <MalevolentSpoon> Wrong channel
+[08:11:50] <MalevolentSpoon> My B
+[08:16:36] *** Quits: MalevolentSpoon (MalevolentS@Fork.Aint.Got.Nothin.On.Me) (Quit: Leaving)
+[08:23:20] *** Quits: TuxRug (TuxRug@TuxRug) (Quit: Leaving)
+[08:26:06] <Twilightlicious> Not much longer now, my pretties.
+[08:26:15] * Twilightlicious bridges her fingers
+[08:26:56] *** Gigabit is now known as GigaZzz
+[08:32:00] *** Quits: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[08:32:33] <AppleDash> Colgate: I love how he blurs out the IP but it's quite visible still
+[08:33:01] <Colgate> I didn't read it, I just did a ddg search, and that quote I had came up in the short description
+[08:33:07] <AppleDash> lol
+[08:33:10] <Colgate> so I went striaght to it
+[08:38:08] *** Quits: ZigSphere (xzixmwhtutn@Pony-lj8.4k8.126.76.IP) (Connection closed)
+[08:43:35] *** Starburn is now known as Flowheart
+[08:52:23] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:09:03] *** Quits: cyborg_ar (cyborgar@Pony-440.7gu.25.181.IP) (Ping timeout: 121 seconds)
+[09:09:50] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:09:58] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Connection closed)
+[09:11:53] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:30:11] *** Quits: ModusPonens (ModusPonens@Pony-39rht5.xnet.uga.edu) (Quit: Leaving)
+[09:30:44] *** Joins: ModusPonens (ModusPonens@Pony-39rht5.xnet.uga.edu)
+[09:32:20] *** Joins: Phase4 (Phase4@Pony-0nc5nh.internode.on.net)
+[09:53:53] *** Joins: Phase5 (Phase4@Pony-es7n5m.internode.on.net)
+[09:56:42] *** Quits: Phase4 (Phase4@Pony-0nc5nh.internode.on.net) (Ping timeout: 121 seconds)
+[10:11:52] *** Quits: Coco_Pommel (coco@Pony-v0kmu3.bu.edu) (Ping timeout: 121 seconds)
+[10:18:29] *** Phase5 is now known as Phase4
+[10:24:44] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[11:12:41] *** Quits: Fillyfeathers (Fallfeather@Pony-gk7te9.bigpond.net.au) (Connection closed)
+[11:28:30] *** Quits: ModusPonens (ModusPonens@Pony-39rht5.xnet.uga.edu) (Quit: Leaving)
+[11:40:02] *** Joins: cyborg_ar (cyborgar@Pony-440.7gu.25.181.IP)
+[11:57:24] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[11:59:32] *** Quits: cyborg_ar (cyborgar@Pony-440.7gu.25.181.IP) (Ping timeout: 121 seconds)
+[12:27:27] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[12:40:47] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[12:44:34] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[12:53:07] *** Q0 is now known as Q0|Away
+[13:03:48] *** [A]McKey is now known as McKey
+[13:15:32] *** Joins: Phase5 (Phase4@Pony-k8psb1.internode.on.net)
+[13:18:30] *** Quits: Phase4 (Phase4@Pony-es7n5m.internode.on.net) (Ping timeout: 121 seconds)
+[14:08:12] *** McKey is now known as [A]McKey
+[14:19:40] *** Joins: cyborg_ar (cyborgar@Pony-r1v964.neunet.com.ar)
+[14:31:29] *** [A]McKey is now known as McKey
+[14:36:12] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[14:52:49] *** Quits: cyborg_ar (cyborgar@Pony-r1v964.neunet.com.ar) (Client exited)
+[15:07:03] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[15:08:54] *** Joins: ariscop__ (Phase4@Pony-ni078p.internode.on.net)
+[15:08:59] *** Joins: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[15:11:30] *** Quits: Phase5 (Phase4@Pony-k8psb1.internode.on.net) (Ping timeout: 121 seconds)
+[15:13:21] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Connection closed)
+[15:14:03] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[15:15:18] *** Quits: WorkingData (DataByteBro@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[15:15:44] *** Joins: Freak (Freak@Freak.Freak.Freak.Freak)
+[15:19:34] *** Parts: Freak (Freak@Freak.Freak.Freak.Freak) ()
+[15:27:20] *** Quits: Stik (drakon@Pony-ql55m5.cable.virginm.net) (Ping timeout: 121 seconds)
+[15:28:21] *** Joins: Stik (drakon@Pony-ql55m5.cable.virginm.net)
+[15:29:32] *** Joins: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[15:31:20] *** Stik is now known as Pony_6018
+[15:40:22] *** Pony_6018 is now known as Stik
+[15:49:04] <ola> http://olatheskunk.pl/computers/
+[15:49:06] <PinkiePieBot> [ My computer collection ]
+[15:49:16] *** Joins: MistVeil (AndChat3408@Pony-hahd0r.static.axtel.net)
+[15:51:19] <MistVeil> So Linux
+[15:56:34] *** Joins: WorkingData (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[15:59:48] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[16:00:20] *** Quits: WorkingData (DataByteBro@Pony-d3c.bgn.198.64.IP) (Connection closed)
+[16:00:35] *** Joins: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[16:00:54] *** DataByte is now known as WorkingData
+[16:01:10] *** WorkingData is now known as DataByte
+[16:05:38] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:08:29] *** Quits: Fallfeathers (Fallfeather@Pony-kruai5.internode.on.net) (Connection closed)
+[16:09:52] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[16:17:16] *** GigaZzz is now known as Gigabit
+[16:54:52] *** Joins: ModusPonens (ModusPonens@Pony-39rht5.xnet.uga.edu)
+[17:03:05] *** Quits: Neptune|sleep (neptune@Planet.Neptune) (Killed (Luna (Lost at Russian Roulette.)))
+[17:03:59] *** Joins: Neptune (neptune@Planet.Neptune)
+[17:08:00] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:12:43] *** Joins: MidniteDew (user@Pony-73gqss.dyn.nltelcom.net)
+[17:25:07] <tiwake> that font
+[17:33:15] *** Gigabit is now known as GigaNoms
+[17:33:59] *** Joins: Datalink (Datalink@Datalink)
+[17:56:24] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[17:57:32] <Quindo> anyone know of a USB cable that has a Connect/Disconnect switch on it?
+[17:59:09] <MidniteDew> I use this as a power on off button for my raspberry pi, I'm not sure if it can still handle data http://www.amazon.com/Raspberry-Micro-USB-Cable-Switch/dp/B00GGX94JI
+[17:59:11] <PinkiePieBot> [ Amazon.com: Raspberry Pi Micro USB Cable with ON/OFF Switch - Easy Start / Reboot !: Computers & Accessories ]
+[18:00:15] <DataByte> Quindo: like this? http://www.amazon.com/DIYLooks-Transfer-Charging-Switch-Samsung/dp/B00KEZQGHM
+[18:00:26] <PinkiePieBot> [ Amazon.com: DIYLooks Micro USB 5 Pin Data Transfer & Charging Cable with Switch for Samsung Galaxy Tab 3 (7.0 8.0 10.1) / Note 10.1 / Kindle Fire/Fire HD, Length: 80cm (Black): Electronics ]
+[18:01:23] <Quindo> That is almost exactly what I need, except without the usb micro
+[18:04:46] *** Joins: Coco_Pommel (coco@Pony-l3n1m0.ma.comcast.net)
+[18:08:15] *** GigaNoms is now known as Gigabit
+[18:37:52] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[18:38:50] *** Quits: Brolf_pog (Brolf_pog@Pony-c0qhtu.client.bresnan.net) (Ping timeout: 121 seconds)
+[18:41:19] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:53:10] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[18:57:07] <Gigabit> https://www.youtube.com/watch?v=I5P9Se2nMfQ
+[18:57:07] <PinkiePieBot> [ Windows Vista... (MLP SFM) - 341526 views - 0:00:11 long - 4480 likes - 97.71% ]
+[18:59:42] <locodash11[server]> heh, I remember that one
+[19:19:31] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[19:35:36] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:37:32] *** Quits: MistVeil (AndChat3408@Pony-hahd0r.static.axtel.net) (Quit: Bye)
+[19:56:49] *** Joins: Ruthalas__ (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[19:57:17] *** Joins: Phase5 (Phase4@Pony-1r5tso.internode.on.net)
+[19:59:23] *** Quits: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Ping timeout: 121 seconds)
+[19:59:55] *** Quits: ariscop__ (Phase4@Pony-ni078p.internode.on.net) (Ping timeout: 121 seconds)
+[20:00:12] *** Joins: Phase4 (Phase4@Pony-s1qef7.internode.on.net)
+[20:02:26] *** Quits: Phase5 (Phase4@Pony-1r5tso.internode.on.net) (Ping timeout: 121 seconds)
+[20:06:41] *** Quits: ModusPonens (ModusPonens@Pony-39rht5.xnet.uga.edu) (Ping timeout: 121 seconds)
+[20:11:21] *** Joins: ModusPonens (ModusPonens@Pony-39rht5.xnet.uga.edu)
+[20:43:18] *** Joins: Crimson_Tail (ChaoticRift@Pony-sloao5.7h3b.037j.000a.2601.IP)
+[20:45:55] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[20:46:57] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[20:56:45] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[20:58:04] *** Joins: RekttothePecs (ModusPonens@Pony-nltje2.xnet.uga.edu)
+[20:58:15] *** Quits: ModusPonens (ModusPonens@Pony-39rht5.xnet.uga.edu) (Ping timeout: 121 seconds)
+[21:01:00] *** Quits: Coco_Pommel (coco@Pony-l3n1m0.ma.comcast.net) (Quit: oh long johnson)
+[21:01:25] *** Joins: Coco_Pommel (coco@Pony-l3n1m0.ma.comcast.net)
+[21:01:52] *** Quits: Coco_Pommel (coco@Pony-l3n1m0.ma.comcast.net) (Connection closed)
+[21:03:00] *** Quits: RekttothePecs (ModusPonens@Pony-nltje2.xnet.uga.edu) (Ping timeout: 121 seconds)
+[21:03:10] *** Joins: RekttothePecs (ModusPonens@Pony-39rht5.xnet.uga.edu)
+[21:23:03] *** Joins: MistVeil (AndChat3408@Pony-hahd0r.static.axtel.net)
+[21:28:12] *** Quits: MidniteDew (user@Pony-73gqss.dyn.nltelcom.net) (Quit: Konversation terminated!)
+[21:45:28] <Compu> :P lag is back
+[21:46:57] *** Quits: Shutter (tips@sudoku.prevention.hotline) (Ping timeout: 121 seconds)
+[21:47:09] *** Joins: Shutter (tips@sudoku.prevention.hotline)
+[21:53:25] <locodash11[server]> weee
+[21:53:59] <locodash11[server]> I've never noticed lag before on my comcast connection, hmmm
+[21:55:04] *** Quits: RekttothePecs (ModusPonens@Pony-39rht5.xnet.uga.edu) (Ping timeout: 121 seconds)
+[21:58:04] <Compu> ping is back to normal
+[21:58:13] <Compu> locodash11[server]: i have time warner cable
+[21:58:56] <locodash11[server]> heh
+[22:03:22] *** Joins: ModusPonens (ModusPonens@Pony-39rht5.xnet.uga.edu)
+[22:09:10] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[22:12:40] *** Quits: Phase4 (Phase4@Pony-s1qef7.internode.on.net) (Ping timeout: 121 seconds)
+[22:13:26] *** Quits: ModusPonens (ModusPonens@Pony-39rht5.xnet.uga.edu) (Ping timeout: 121 seconds)
+[22:20:44] *** Joins: cyborg_ar (cyborgar@Pony-2c8.ifv.25.181.IP)
+[22:25:05] *** McKey is now known as [A]McKey
+[22:31:22] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[22:31:33] *** Joins: ModusPonens (ModusPonens@Pony-39rht5.xnet.uga.edu)
+[22:32:45] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[22:37:26] *** Quits: ModusPonens (ModusPonens@Pony-39rht5.xnet.uga.edu) (Ping timeout: 121 seconds)
+[22:38:45] *** Quits: cyborg_ar (cyborgar@Pony-2c8.ifv.25.181.IP) (Ping timeout: 121 seconds)
+[22:40:16] *** Joins: cyborg_ar (cyborgar@Pony-2c8.ifv.25.181.IP)
+[22:43:49] *** Joins: ModusPonens (ModusPonens@Pony-9tm.enl.137.198.IP)
+[22:47:16] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:55:44] <Quindo> I somehow opened outlook from Notepad++ O.o
+[22:57:15] *** Quits: cyborg_ar (cyborgar@Pony-2c8.ifv.25.181.IP) (Client exited)
+[22:58:05] <AppleDash> o.o
+[22:58:14] <AppleDash> Maybe there's like a file->email to?
+[22:59:30] *** Joins: AquaBrandish (AndChat3408@Pony-of9.05d.210.187.IP)
+[23:00:01] *** Joins: AndChat-34089 (AndChat3408@Pony-tf48k7.static.axtel.net)
+[23:02:14] *** Quits: MistVeil (AndChat3408@Pony-hahd0r.static.axtel.net) (Ping timeout: 121 seconds)
+[23:02:33] *** Joins: MistVeil (AndChat3408@Pony-hahd0r.static.axtel.net)
+[23:03:32] *** Quits: AquaBrandish (AndChat3408@Pony-of9.05d.210.187.IP) (Ping timeout: 121 seconds)
+[23:04:10] *** Quits: AndChat-34089 (AndChat3408@Pony-tf48k7.static.axtel.net) (Ping timeout: 121 seconds)
+[23:11:21] *** Quits: MistVeil (AndChat3408@Pony-hahd0r.static.axtel.net) (Quit: Bye)
+[23:19:16] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[23:25:17] *** Quits: ModusPonens (ModusPonens@Pony-9tm.enl.137.198.IP) (Ping timeout: 121 seconds)
+[23:34:41] *** Joins: ModusPonens (ModusPonens@Pony-39rht5.xnet.uga.edu)
+[23:35:08] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[23:38:54] *** Quits: ModusPonens (ModusPonens@Pony-39rht5.xnet.uga.edu) (Ping timeout: 121 seconds)
+[23:40:35] *** Joins: nscoots (FreyGrimrod@Pony-blf8dn.sub-70-192-22.myvzw.com)
+[23:42:06] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[23:53:29] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[23:56:24] *** Joins: Compu_ (quassel@snuggly.filly)
+[23:56:34] *** Joins: zeta_ (ChaoticRift@Pony-sloao5.7h3b.037j.000a.2601.IP)
+[23:59:07] *** Quits: Crimson_Tail (ChaoticRift@Pony-sloao5.7h3b.037j.000a.2601.IP) (Ping timeout: 121 seconds)

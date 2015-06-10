@@ -1,0 +1,198 @@
+[10:00:15] *** Joins: McKey (Kordus@Pony-vb7.quj.222.92.IP)
+[10:00:15] -discord.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[10:00:19] *** Server sets mode: +AHJPnt 10:300 30
+[10:11:46] <Apple_Bloom> People should seriously stop using the term SSL
+[10:12:36] <Gigabit> ?
+[10:13:04] <Googie> It really doesn't matter.
+[10:13:09] <Apple_Bloom> SSL was replaced by TLS nearly 15 years ago
+[10:13:30] <Googie> As it turns out, language and ideas are defined by the people who speak :V
+[10:13:57] <Apple_Bloom> Apparently a majority of people are idiots
+[10:13:58] * Googie doesn't know /anyone/ who would think. "Oh, time to deploy SSLv3"
+[10:14:08] <Googie> When they hear about SSL deployments.
+[10:14:27] <Apple_Bloom> Either way, the term is now irrelevant and inaccurate
+[10:14:39] <Googie> Honestly, the whole argument just makes me want to use the term SSL even more :P
+[10:15:15] <Phase> Apple_Bloom, considering one of the largest tls libraries is called OpenSSL it'll take a while to filter out of the language
+[10:15:42] <Apple_Bloom> It should have started 15 years ago
+[10:15:43] <Googie> It's like x86. That technically refers to a nice old 16 bit real mode processor that is basically completely incompatible with modern computing.
+[10:16:21] <Apple_Bloom> Why must people use incorrect terms? ._.
+[10:16:23] <Phase> Apple_Bloom, and ssl 3 was around until fairly recently, plus they have compatible handshakes
+[10:16:37] <Phase> at least i assume they're compatible
+[10:17:19] <Apple_Bloom> SSL 3 has been known to have critical flaws for years
+[10:17:45] <Googie> Doesn't mean people weren't still using it though.
+[10:17:54] <Phase> didn't stop people using it, though that was mostly windows iirc
+[10:18:02] <Phase> was it xp that couldn't do over ssl3?
+[10:18:09] <Googie> SSL just refers to that whole family of encryption these days.
+[10:18:21] <Apple_Bloom> Unfortunately
+[10:18:28] <Googie> XChat still can't :V
+[10:18:30] <Gigabit> Doesn't both protocols create a socket to negotiate the handshake?
+[10:18:47] <Apple_Bloom> Yeah
+[10:18:48] <Phase> Googie, you sure? fairly sure they yanked ssl3 from openssl and gnutls
+[10:19:03] <Phase> or distros aren't building them, either way
+[10:19:20] *** Quits: cyborg_ar (cyborgar@Pony-obf.p8l.25.181.IP) (Ping timeout: 121 seconds)
+[10:19:53] <Googie> Back when the heartbleed rush was happening, and all the IRC servers were disabling SSLv3 support, there were tons of complaints from Xchat users that could no longer connect.
+[10:20:15] <Gigabit> So..we should call it SSTLS since it creates secure sockets 
+[10:20:44] <Googie> Xchat hasn't had a release in five years though.
+[10:20:50] <Phase> Oh, xchat
+[10:20:50] <Apple_Bloom> I'd like to be able to disable TLS 1.0 but unfortunately a lot of sites still don't support 1.1 or 1.2
+[10:20:56] <Phase> thought you meant hexchat for some reason
+[10:21:12] <Phase> no reason to be on xchat these days
+[10:21:23] <Apple_Bloom> It is known to have exploitable weaknesses
+[10:21:34] <Apple_Bloom> I use IRCCloud
+[10:22:47] <Googie> Oh IRCCloud.
+[10:22:54] <Apple_Bloom> I like to stay connected all the time and keep all my logs
+[10:23:15] <Apple_Bloom> And use IRC on multiple devices
+[10:23:30] <Googie> There's a lot of ways to do that.
+[10:23:34] <Dusk> That's precisely why I operate my own ZNC >.>
+[10:23:39] <Apple_Bloom> Eh
+[10:23:43] * Googie is personally a fan of Weechat+the various connectors
+[10:23:47] <Dusk> ^
+[10:23:48] <Apple_Bloom> I prefer IRCCloud
+[10:23:53] <Apple_Bloom> Much simpler
+[10:23:53] <Dusk> I use Weechat + ZNC
+[10:24:06] <Dusk> IRCCloud isn't much simpler than the combo of weechat and znc >.>
+[10:24:06] <Apple_Bloom> With the mobile apps
+[10:24:13] <Dusk> Espcially with the weechat relay
+[10:24:14] <Apple_Bloom> Which I'm using right now
+[10:24:21] <Googie> As much as IRCCloud is technically a fairly decent service, it's proprietary, and I'd rather not mix that in with IRC.
+[10:24:35] <Googie> Unfortunately IRCAnywhere looks like a dead project.
+[10:24:57] <Dusk> Googie: Trying to work on something automated for ZNC that uses Docker to create Weechat instances
+[10:25:05] <Googie> You mentioned.
+[10:25:16] <Dusk> It should work fine in theory
+[10:25:29] <Dusk> And it allows for the seamless automation that IRCCloud has
+[10:25:40] <Googie> I'd still unsure about that approach TBH, the security nut in me dislikes the idea of giving users access to a full unrestricted version of Weechat, even if it is in a VM.
+[10:25:41] <Dusk> and supports any device that can use a web browser.
+[10:26:23] <Googie> It's a very nice design in theory though, yeah.
+[10:26:31] <Dusk> Well it's in a Docker vm, and I'm sure AppleDash can think of the various ways to break the system so that we can wortk around them
+[10:26:38] <Dusk> :p
+[10:27:08] <Dusk> I'm also working on another solution, using Shout-IRC
+[10:27:22] <Dusk> Which is something neat I saw but is browser only
+[10:27:53] <Googie> I've been looking into the Weechat Relay Protocol. It's actually really simple at its heart.
+[10:27:56] <Dusk> It works really well from my experience though, and once it's updated and has a few more features might actually replace my idea to using weechat.
+[10:28:01] <Dusk> Yes it is :D
+[10:28:25] <Googie> There's part of me (if I didn't already have far too much stuff I wanted to do) to just reimplement that in a program designed for untrusted access.
+[10:28:34] <Googie> I wonder how hard it would be to write as a ZNC module...
+[10:28:51] <Phase> been thinking of adding bouncer-like abilities to an irc server
+[10:29:18] <Googie> Yeah, IRCv3 has plans for IRC client roaming, and older versions of InspIRCd had a built in bouncer.
+[10:29:29] <Googie> (I don't think it ever really worked that well though)
+[10:29:42] <Phase> the ircv3 plans public?
+[10:30:08] <Googie> -- Topic for #ircv3 is "http://ircv3.net (for now) | 3.2's out | Stakeholders: http://goo.gl/85s9NS | 3.3: named modes, xinfo, login, alt to numerics, labeled replies, SRV records, strict transport security, account registration and verification, basic JSON, roaming, SDP/ICE (like webrtc), etc."
+[10:30:11] <PinkiePieBot> [ IRCv3 members - Google Sheets ]
+[10:30:24] <Googie> It's all relatively open.
+[10:30:38] <Phase> i've not seen anything solid for a while though
+[10:30:54] <Googie> 3.2 just got released about a month or two ago.
+[10:31:06] <Googie> The website is undergoing an overhaul though.
+[10:31:25] <Phase> why message intents again
+[10:31:32] <Phase> go away silly spec, don't bother me
+[10:32:23] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[10:33:18] <Googie> But yeah, I think the end game is to kill off bouncers all together.
+[10:34:00] <Googie> Client roaming basically requires at least a subset of BNC features.
+[10:34:07] <Phase> my plans were two extensions, one for joining multiple clients to a single nick, another for scrollback query
+[10:39:00] <Googie> Heh, looking back, m_park got killed off before InspIRCd 1.1 released
+[10:39:10] <Googie> Last commit in the 1.0 line is 06 :P
+[10:42:40] <Phase> real joy with ircd-side scrollback is capabilities
+[10:43:24] <Googie> I've wondered about implementing that with a server command and the server-time CAP
+[10:43:35] <Phase> that's the plan
+[10:43:47] <Googie> In /theory/, for a properly coded client, it should reorder the messages correctly.
+[10:44:19] <Phase> the only thing i'm not sure how to solve is synchronizing the scrollback log across servers
+[10:44:58] <Phase> irc doesn't have a canonical message order, so scrollback from different servers will be inconsistent
+[10:45:17] <Googie> Strictly speaking, I don't think that matters too much though. As long as it's roughly in the right order.
+[10:45:49] <Googie> If the user really cares about defined order, they'll have traditional logging. They probably won't be able to notice the occasional out of order privmsg
+[10:46:13] <Phase> eh, it's pretty noticable on globally distributed networks
+[10:47:17] <Googie> Yeah, but I guess my point is that it doesn't really matter as long as they're in some sort of chronological order.
+[10:47:45] <Phase> the concern is with server-time, a client re-ordering messages in a busy channel will look really confusing
+[10:48:01] <Phase> or even some random network lag 
+[10:48:05] <Phase> plus netsplits/netbursts
+[10:48:59] <Phase> actually server-time is enough if clients don't keep local logs
+[10:49:03] <Googie> netsplits would be a problem, yeah. I didn't quite considered that. Server-time wouldn't be a problem though I don't think ? It's not like the client would need to request scrollback except on a new connection, and it can just wipe the old buffer.
+[10:49:21] <Googie> No real time reordering at all needed.
+[10:49:27] <Phase> yeah, server-time would be enough then
+[10:51:53] <Phase> though you still have some edge cases when requesting scrollback, what time do you request from?
+[10:52:49] <Phase> wouldn't be unreasonable to impose a max delay actually
+[10:53:03] <Phase> don't like it but it solves the consistency problem nicely
+[10:53:25] <Googie> I don't think it actually matters ? Upon a connection, the server sends you logs until X seconds ago, if you want more, you request X seconds before you connected.
+[10:53:44] <Googie> I guess it depends on how you want scrollback treated.
+[10:54:23] <Googie> If you completely cleared the existing scrollback on the client each time, it shouldn't be a problem.
+[10:54:26] <Phase> i was thinking requesting an absolute time, maybe some offset from the most recently received server-time
+[10:56:23] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[10:59:15] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[11:00:34] *** Dusk is now known as Selina
+[11:16:16] *** init3 is now known as Init3-away
+[11:22:04] *** Joins: Asoka (Asoka@Pony-lif963.net-htp.de)
+[11:22:12] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[11:58:02] *** \m is now known as mniip
+[11:59:37] *** Joins: Pony_79503 (sleumie@Pony-p114of.dsl.as9105.com)
+[12:04:11] *** Pony_79503 is now known as sleumas2000
+[12:07:13] *** Joins: Asoka_White (Asoka@Pony-kqb5t4.net-htp.de)
+[12:09:18] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[12:09:37] *** Quits: Asoka (Asoka@Pony-lif963.net-htp.de) (Ping timeout: 121 seconds)
+[12:40:37] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[13:22:57] *** Joins: Pony_25100 (IceChat9@Pony-g51.ku4.191.180.IP)
+[13:23:05] <Pony_25100> Does anyone use Icechat 9?
+[13:27:32] *** Pony_25100 is now known as Cydie
+[13:37:34] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[13:49:42] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[13:51:14] *** Quits: Fallfeathers (Fallfeather@Pony-7vquq0.bigpond.net.au) (Connection closed)
+[13:53:32] <ola> https://dl.dropboxusercontent.com/u/14556313/SAM_4574.JPG
+[13:55:23] *** Joins: Fallfeathers (Fallfeather@Pony-7vquq0.bigpond.net.au)
+[14:14:11] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[14:14:15] *** Joins: sleumas2k (sleumie@Pony-mgvdhi.dsl.as9105.com)
+[14:22:46] *** sleumas2k is now known as sleumas2000
+[14:24:16] *** sleumas2000 is now known as sleumas2k
+[14:24:25] *** sleumas2k is now known as sleumas2000
+[15:01:18] *** Q0|Away is now known as Q0
+[15:38:20] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[15:39:25] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[15:42:50] *** Quits: Cydie (IceChat9@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[15:49:26] *** CyberJacob is now known as zz_CyberJacob
+[15:53:28] *** Init3-away is now known as init3
+[16:19:54] *** init3 is now known as Init3-away
+[16:36:43] *** AutoLapsus changes topic to 'Hardware, Software, Whatever! | Internet speed survey! http://www.speedtest.net/wave/6841b5b75c918540 '
+[16:45:18] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:47:10] *** Joins: cyborg_ar (cyborgar@Pony-obf.p8l.25.181.IP)
+[17:01:22] *** Quits: Fallfeathers (Fallfeather@Pony-7vquq0.bigpond.net.au) (Connection closed)
+[17:05:56] *** Joins: Kassc (Kassc@Pony-9cfje5.sd.cox.net)
+[17:15:41] *** Quits: cyborg_ar (cyborgar@Pony-obf.p8l.25.181.IP) (Ping timeout: 121 seconds)
+[17:47:49] *** Joins: S2K (sleumie@Pony-fcpoco.as13285.net)
+[17:48:43] *** Quits: sleumas2k (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[18:03:02] *** Joins: MidniteDew (user@Pony-f7d.s3t.221.82.IP)
+[18:10:21] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[18:11:00] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[18:23:54] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[18:24:38] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[18:57:18] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[19:31:00] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[19:31:45] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[19:47:48] *** Neptune|sleep is now known as Neptune
+[20:43:20] *** mniip is now known as \m
+[20:45:59] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[20:56:28] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:04:06] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[21:17:40] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[21:18:36] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[21:19:18] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[21:23:53] *** Quits: Asoka_White (Asoka@Pony-kqb5t4.net-htp.de) (Quit: Ex-Chat)
+[21:24:12] *** Joins: Asoka (Asoka@Pony-kqb5t4.net-htp.de)
+[21:31:25] *** Quits: Asoka (Asoka@Pony-kqb5t4.net-htp.de) (Quit: Ex-Chat)
+[21:44:17] *** Quits: MidniteDew (user@Pony-f7d.s3t.221.82.IP) (Ping timeout: 121 seconds)
+[21:51:22] *** S2K is now known as sleumas2000
+[22:09:05] *** Finwe is now known as DinkyBot`
+[22:09:41] *** DinkyBot` is now known as DinkyBot_
+[22:10:19] *** DinkyBot_ is now known as Finwe
+[22:16:38] *** Gigabit is now known as worthless
+[22:25:51] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[22:38:57] *** Joins: Asoka (Asoka@Pony-kqb5t4.net-htp.de)
+[22:39:14] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[22:51:02] *** Quits: Asoka (Asoka@Pony-kqb5t4.net-htp.de) (Quit: Ex-Chat)
+[22:51:40] *** Joins: Asoka (Asoka@Pony-kqb5t4.net-htp.de)
+[22:52:24] *** Joins: cyborg_ar (cyborgar@Pony-obf.p8l.25.181.IP)
+[22:56:03] *** Quits: Asoka (Asoka@Pony-kqb5t4.net-htp.de) (Quit: Ex-Chat)
+[22:56:18] *** Joins: Asoka (Asoka@Pony-kqb5t4.net-htp.de)
+[22:58:37] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[22:58:58] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[23:02:31] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[23:08:21] *** Quits: Asoka (Asoka@Pony-kqb5t4.net-htp.de) (Quit: Ex-Chat)
+[23:08:32] *** Joins: Asoka (Asoka@Pony-kqb5t4.net-htp.de)
+[23:47:04] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:48:10] *** Joins: MidniteDew (user@Pony-nr0.4d1.221.82.IP)
+[23:49:28] *** Quits: Kassc (Kassc@Paradox.Time) (Connection closed)
+[23:57:30] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)

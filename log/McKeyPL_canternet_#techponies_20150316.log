@@ -1,0 +1,287 @@
+[00:01:03] *** Joins: mkr (mkr@Pony-iinahj.radioyay.net)
+[00:02:37] <Lapsus> I love the way it looks, but I question the choices of parts
+[00:02:38] <Lapsus> lol
+[00:03:17] <Lapsus> also I can't quite grasp the loop order, but I think that's because of the T fittings that head off to the cpu
+[00:07:08] <tiwake> Lapsus: heh... trying to build a metal flow-chart?
+[00:14:21] *** Joins: Fallfeathers (Fallfeather@Pony-r48e1b.internode.on.net)
+[01:08:08] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:23:11] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[01:42:46] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[01:45:49] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[01:46:00] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[01:52:08] *** Joins: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[02:03:03] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[02:30:26] *** Joins: nscoots (FreyGrimrod@Pony-pu5jtn.sub-70-192-13.myvzw.com)
+[02:47:50] *** Quits: Brolf_pog (Brolf_pog@Pony-ve4vfj.blng.qwest.net) (Ping timeout: 121 seconds)
+[03:02:58] *** Quits: Crimson_Tail (ChaoticRift@Pony-l407aa.7h3b.037j.000a.2601.IP) (Quit: Oops, a kernel panic)
+[03:05:19] *** Joins: Crimson_Tail (ChaoticRift@Pony-f3al27.7h3b.037j.000a.2601.IP)
+[03:25:08] *** Q0 is now known as Q0|Away
+[03:33:55] *** Quits: Crimson_Tail (ChaoticRift@Pony-f3al27.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[03:37:08] *** Joins: Brolf_pog (Brolf_pog@Pony-sdl.nig.59.108.IP)
+[03:39:49] *** Joins: cyborg_ar (cyborgar@Pony-j6t.73f.153.187.IP)
+[03:44:37] *** Quits: Brolf_pog (Brolf_pog@Pony-sdl.nig.59.108.IP) (Ping timeout: 121 seconds)
+[03:48:19] *** Joins: Brolf_pog (Brolf_pog@Pony-sdl.nig.59.108.IP)
+[03:51:47] *** Quits: cyborg_ar (cyborgar@Pony-j6t.73f.153.187.IP) (Connection closed)
+[03:55:49] *** Joins: Candice (Candice@corset.mare)
+[03:56:21] <Candice> so "perl" keeps running under www-data and using 100% of my CPU and i have no idea what it is, why it runs, or how to stop it.  pls 2 help? D:
+[03:57:37] <JustAberrant> mm
+[03:57:46] <JustAberrant> my guess would be a cgi script?
+[03:58:06] <Candice> ive checked /var/www/cgi-bin and its empty
+[03:58:15] <Candice> suppose i could disable cgi
+[03:58:25] <wolfyshy> something like htop or ps in tree mode should tell you what's spawning perl
+[03:58:27] <wolfyshy> that might help
+[03:58:35] <JustAberrant> ^
+[03:58:39] <JustAberrant> just do ps aux | grep perl
+[03:58:50] <Candice> tried that.  no infu.
+[03:58:50] <wolfyshy> well that won't tell you the owning process
+[03:58:52] <Candice> info*
+[03:58:53] <JustAberrant> and go from there
+[03:59:28] <JustAberrant> then through an -f in there ;p
+[03:59:55] <JustAberrant> like wolfyshy said
+[04:00:04] <wolfyshy> pstree or ps jf (maybe?)
+[04:00:39] <Candice> htop i cant get to work
+[04:00:48] <Candice> ps -auxf just gives me, and i quote, "-"
+[04:01:04] <Candice> specifically www-data 14243 27.0  0.0   4740  3920 ?        RN   17:41  70:06 -           
+[04:01:10] <JustAberrant> what kinda micky mouse system you running ;p
+[04:02:33] <wolfyshy> can you pastebin the entire output of ps auxf?
+[04:03:22] <JustAberrant> inb4   root root 27.0  0.0   4740  3920 ?        RN   17:41  70:06 wine "mirc.exe"     
+[04:03:38] <wolfyshy> lol
+[04:03:47] <wolfyshy> wine "cryptolocker.exe"
+[04:03:53] <JustAberrant> :>
+[04:04:18] <Candice> wolfyshy: http://pastebin.com/VBc94vNQ
+[04:04:18] <PinkiePieBot> [ USER PID %CPU %MEM VSZ RSS TTY STAT START TIME COMMAND root - Pastebin.com ]
+[04:04:52] <JustAberrant> uh.. webmin...
+[04:05:03] <Candice> is that the problem?
+[04:05:07] <Candice> i can remove it.  aint no thang.
+[04:05:09] <JustAberrant> possibly
+[04:05:30] <Candice> done
+[04:05:49] <Candice> but now another perl process has spawned....now its 2 instead of 1
+[04:06:08] <Candice> and the second finished.  first one is still going strong.
+[04:06:30] <Blackjack> Look at the last few logs in access.log
+[04:06:34] <Blackjack> See what they are
+[04:06:56] <Candice> nothing out of the ordinary
+[04:07:03] <Candice> just a google bot
+[04:07:15] <Blackjack> Doing anything suspicious?
+[04:07:49] <Candice> just a simple GET /robots.txt
+[04:08:24] <Blackjack> 6Ah
+[04:08:27] <Blackjack> Ah*
+[04:12:52] *** Pony_46895 is now known as RedHelper
+[04:15:30] *** GigaWork is now known as Gigabit
+[04:25:58] *** Quits: Webster (Webster@Pony-mme.2eo.212.73.IP) (Quit: Leaving)
+[05:43:27] *** Q0|Away is now known as Q0
+[06:15:39] *** Joins: TuxRug (TuxRug@TuxRug)
+[06:31:28] <tiwake> https://www.youtube.com/watch?v=s1i-dnAH9Y4
+[06:31:28] <PinkiePieBot> [ Mechanical Computer (All Parts) - Basic Mechanisms In Fire Control Computers - 132767 views - 0:41:53 long - 1623 likes - 99.21% ]
+[06:46:31] <TuxRug> Whewww... considering unlocking the bootloader on my phone and flashing a custom kernel. I love the stock ROM, but I'm willing to believe the hype on this kernel because some of the changes from stock make sense and it has great reviews.
+[06:53:01] <init3> What does it claim to do?
+[06:57:24] <TuxRug> (Nexus 5) Mainly stock kernel with a few config changes. For example, stock kernel boosts clock speed on any touch event even if not needed for 3 full seconds (presumably to make it "feel" faster). This kernel boosts the clock speed for a shorter duration, helping improve screen-on-time battery life when doing something where you touch the screen every few seconds.
+[06:57:53] <TuxRug> Also merges generic non-hardware-specific optimizations from released kernel sources of similar devices.
+[06:58:56] <TuxRug> I'm looking at Franco Kernel. I think it's one of the most popular ones for the Nexus 5, maybe the whole Nexus line?
+[06:59:13] <init3> Got ya.
+[06:59:38] <TuxRug> The part I'm apprehensive about is the factory reset. It's way better in Lollipop but I still don't care for it.
+[06:59:56] <init3> Makes me a bit sad. I had a nice Nexus 7 tablet that some asswipe stole out of my laptop bag because I was nice enough to give him a ride home.
+[07:00:44] <init3> And it was locked, but I had given him the password earlier like a dumbass to let him use it.
+[07:00:50] <init3> while I was driving.
+[07:01:33] <TuxRug> If the rumored Nexus 5 refresh comes true, that might be my next phone whenever this one bites the dust. I'm making googoo eyes at the G Flex 2, but I love having the stock OS without a ton of manufacturer fluff. Most of the Google fluff I actually do use.
+[07:02:07] <init3> Yeah
+[07:02:21] <TuxRug> I have the smart-lock on mine so I don't have to share my code. If my watch is in range, no lock. If it disconnects, locked.
+[07:02:57] <TuxRug> And I've got the remote password-change-and-track-and-wipe from Android Device Manager.
+[07:03:34] <TuxRug> I wonder if that works with unlocked bootloader though. I doubt it with custom recovery but I'd only really need that if I was switching roms, making nandroids, or kernel-hopping.
+[07:04:22] <TuxRug> The best part of TWRP on my old phone was I /didn't/ have an easy way to return to a stock image without unrooting, unless I kept a nandroid of the (slightly modded) stock.
+[07:04:26] <Kinsley> TuxRug: my experience? Android Device Manager still works with unlocked bootloaders and custom ROMs.
+[07:04:36] <TuxRug> Even the remote wipe?
+[07:04:41] <Kinsley> At least, it did with my Galaxy S4.
+[07:04:43] <Kinsley> Never found out?
+[07:04:55] <Kinsley> I figure it still would, since everything else did.
+[07:05:09] <Kinsley> Might've been something to try, since I had to turn it in when I upgraded to the Note 4.
+[07:05:21] <TuxRug> I knew root apps were able to reboot to TWRP and have it do something and reboot.
+[07:05:23] <init3> Yeah, I had such a security thing on mine too. Problem was, he knew I was going to remoke lock it but that he has 20 minutes before I got home.
+[07:06:00] <init3> And apparently had someone waiting at his house who knew how to wipe without a password.
+[07:06:16] <init3> I think my other issue was I had several OSes on it.
+[07:06:25] <init3> Ubuntu touch, stock, and CWM.
+[07:06:33] <TuxRug> I had to keep my stock image around on my old phone because I was on Sprint and they loved changing the profile on their end for some reason and Data would goof up until I updated the profile on my phone. 
+[07:07:12] <TuxRug> I jumped ship from Sense to Cyanogenmod but Cyanogenmod didn't have any mechanism of updating the phone's profile.
+[07:07:46] <TuxRug> So if data bonkered up, I'd backup my current state, flash my backup of stock, update profile, then flash back to cyanogenmod.
+[07:07:58] <TuxRug> Turned a 30-second process into about a 10 minute process.
+[07:08:17] <TuxRug> Luckly now, SIM card. No need for profile updates.
+[07:08:32] <init3> Err I meany cyanogen. not CWM
+[07:09:29] <TuxRug> I don't even know if I want to flash TWRP, or the kernel, but I at least want to boot it.
+[07:09:45] <TuxRug> You can just boot a kernel without flashing it right, just adb boot <image> right?
+[07:10:03] <TuxRug> Then I can trial it out with only needing a reboot to revert, right?
+[07:10:39] <init3> I wasn't aware of a way to do that. Not saying I know it can't be.
+[07:11:41] <TuxRug> The two popular kernels for my phone are ElemenalX and Franco. ElementalX looks really advanced though, with user-side overclocking and voltage control....
+[07:12:24] <TuxRug> Franco looks like a drop-in replacement for stock.
+[07:12:25] *** Candice is now known as Candice|Away
+[07:13:51] <TuxRug> I've done sideloads of OTA updates, this shouldn't be a problem.
+[07:15:01] <TuxRug> Untarring the factory image because I wanted to flash it clean for giggles as well.
+[07:21:42] <TuxRug> Here we go.... Nervous... I've only done this on one phone before...
+[07:21:54] <TuxRug> fastboot oem unlock
+[07:22:38] <TuxRug> And it is unlocked and erasing....
+[07:23:07] <TuxRug> That ws fast.
+[07:23:15] <TuxRug> Rebooting to test.
+[07:23:22] <TuxRug> Ah, I have the wiggly android now.
+[07:23:27] <TuxRug> I'm guessing that's the wipe.
+[07:23:34] <TuxRug> Yep, it is.
+[08:06:07] <TuxRug> http://forum.xda-developers.com/showthread.php?t=2532422 Here's the info about that kernel.
+[08:06:09] <PinkiePieBot> [ [FAQ] Franco Kernel & FKU APK Learner's … | Android Development and Hacking | XDA Forums ]
+[08:06:46] <TuxRug> I just booted to it but didn't flash it. It only exists in memory on my phone right now and will go back to stock when I reboot. Great for just testing out for now.
+[08:17:06] *** Quits: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net) (Ping timeout: 121 seconds)
+[08:33:04] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:35:55] *** Joins: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net)
+[08:45:39] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Connection closed)
+[09:01:42] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[09:12:59] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:54:39] *** Quits: reiuiji (reiuiji@nuclear.raven) (Ping timeout: 121 seconds)
+[09:55:45] *** Joins: reiuiji (reiuiji@Pony-6vp0lq.ma.comcast.net)
+[10:12:01] *** Neptune is now known as Neptune|sleep
+[10:31:55] *** Quits: TuxRug (TuxRug@TuxRug) (Quit: Leaving)
+[11:11:16] *** Q0 is now known as Q0|Away
+[11:13:47] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[11:51:50] *** Quits: WildSoft (WildSoft@Pony-hfh.2pc.101.213.IP) (Quit: Everywhere I look I see Dust Mites! :o)
+[12:11:33] *** Joins: WildSoft (WildSoft@Pony-hfh.2pc.101.213.IP)
+[12:26:28] *** Quits: WildSoft (WildSoft@Pony-hfh.2pc.101.213.IP) (Quit: Everywhere I look I see Dust Mites! :o)
+[12:50:07] *** Joins: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com)
+[12:52:45] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[12:52:50] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[12:58:58] *** Quits: nscoots (FreyGrimrod@Pony-pu5jtn.sub-70-192-13.myvzw.com) (Ping timeout: 121 seconds)
+[13:04:18] *** Joins: WildSoft (WildSoft@Pony-hfh.2pc.101.213.IP)
+[13:49:41] *** Gigabit is now known as Gigaway
+[13:52:16] *** Candice|Away is now known as Candice
+[14:39:30] *** Joins: Datalink (Datalink@Datalink)
+[14:40:36] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:42:16] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[14:42:49] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[14:50:16] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[14:57:00] *** Joins: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[14:58:33] *** Joins: Hoofy (~Hoofy@Pony-fc3h53.bcvloh.sbcglobal.net)
+[14:58:48] *** Parts: Hoofy (~Hoofy@Pony-fc3h53.bcvloh.sbcglobal.net) ("")
+[15:32:38] *** Quits: Fallfeathers (Fallfeather@Pony-r48e1b.internode.on.net) (Connection closed)
+[15:34:25] *** Joins: Datalink_ (Datalink@Datalink)
+[15:35:15] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[15:52:40] *** Quits: Datalink_ (Datalink@Datalink) (Ping timeout: 121 seconds)
+[15:55:55] *** Joins: Datalink_ (Datalink@Datalink)
+[15:58:02] *** Datalink_ is now known as Datalink
+[15:59:56] *** Quits: Phase4 (Phase4@Pony-gmevtj.internode.on.net) (Ping timeout: 121 seconds)
+[16:03:54] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[16:07:23] *** Joins: Phase4 (Phase4@Pony-mdi7v2.internode.on.net)
+[16:29:25] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[17:18:39] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[17:23:29] <wolfyshy> #/b 26
+[17:24:37] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:34:20] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[17:34:49] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[17:35:29] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[17:49:04] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:54:22] *** Joins: averagejoey20001 (averagejoey@Pony-m81a8n.lv.cox.net)
+[17:55:44] *** Quits: averagejoey2000 (averagejoey@Pony-m81a8n.lv.cox.net) (Ping timeout: 121 seconds)
+[18:22:58] *** [A]McKey is now known as McKey
+[18:32:53] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:42:08] *** Quits: Nelly (N3sTlyPhaNt@tor.sasl.Nelly) (Ping timeout: 121 seconds)
+[18:42:37] <Lapsus> I knew I wouldn't be able to fit under a bandwidth cap :v
+[18:43:16] * wolfyshy squishes Lapsus in
+[18:43:47] <Lapsus> 19 days, 423.68GB so far
+[18:44:07] <Colgate> I don't have one atm, but I'm not even remotely a high bandwidth user :O
+[18:44:11] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[18:44:21] <Lapsus> the highest non-unlimited cap offered to me was 350gb/month
+[18:44:22] <Colgate> I use like, 50GB/month max
+[18:45:22] <wolfyshy> I did a calculation and I use about 600gb/mo
+[18:45:46] <wolfyshy> but my mum watches a lot of netflix, and I stream high quality music off spotify the entire time I'm awake almost >.>
+[18:46:04] <wolfyshy> not to mention my mate's playing her online games
+[18:46:22] <Colgate> only thing I stream is a bunch of irc text :O
+[18:46:27] <wolfyshy> hehe
+[18:47:15] <Lapsus> I've got two houses on my line, don't tell rogers :v
+[18:47:56] <Colgate> what? is that illegal?
+[18:48:46] <johnsey> https://github.com/lhartikk/AstroBuild
+[18:48:47] <PinkiePieBot> [ lhartikk/AstroBuild · GitHub ]
+[18:56:48] <Lapsus> oooookay
+[18:56:53] <Lapsus> so it might be road trip time
+[18:57:06] <Lapsus> just changed to a cheaper and faster plan
+[19:00:12] *** Joins: faalentijn (faalentijn@Pony-hp8.ip7.85.86.IP)
+[19:22:58] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:43:03] <Lapsus> okay so the store nearest me doesn't have the new modems yet and apparently everyone stops answering all the phones at rogers stores after 2pm?
+[19:44:35] <Lapsus> either way, fuck yeah, $4 cheaper per month for an extra 90/5
+[19:44:49] <Lapsus> er, 60/5
+[19:44:53] <Lapsus> derp :v
+[19:45:52] <Blackjack> lol
+[19:46:20] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[19:46:44] <locodash11[server]> heh, mine went $80 per month cheaper going from 60/6 to 105/12
+[19:47:55] *** Joins: Crimson_Tail (ChaoticRift@Pony-jf7icb.md.comcast.net)
+[19:50:20] <Lapsus> well, I've had this 30/5 for like a month, so I'd be crazy not to upgrade
+[19:50:49] * JustAberrant appears around Lapsus 
+[19:54:44] <locodash11[server]> yes, more bandwidth is always better
+[19:55:07] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:58:55] * Blackjack 
+[19:59:49] <Colgate> then the trial period ends
+[19:59:53] <Colgate> and the price jacks up
+[20:00:19] <JustAberrant> yeah, I kinda hate how ISPs bury the actual price
+[20:00:49] <locodash11[server]> just the same as TV providers
+[20:00:58] <JustAberrant> I don't care about the 3 month price.. I'm not gonna switch/subscribe based on that
+[20:01:02] <Lapsus> Colgate: I do my calculations after removing the discounts :v
+[20:01:36] <JustAberrant> maybe some people do, I dunno, and I'm fine with them emphasizing it, but finding out what it costs afterwards shouldn't be _hard_
+[20:02:17] <Colgate> Lapsus: alright, just checkin :D
+[20:03:13] <locodash11[server]> comcast at least told me exactly what it should be after fhe first year, which is about 1/4th more
+[20:03:44] <Lapsus> They're surprisingly upfront about it since the CRTC fined them a shitload a couple times
+[20:04:02] <Lapsus> there's still fine print but you can at least find it now
+[20:04:19] *** Quits: averagejoey20001 (averagejoey@Pony-m81a8n.lv.cox.net) (Ping timeout: 121 seconds)
+[20:06:56] <Compu> woo http://screencloud.net/v/flvT
+[20:06:59] <PinkiePieBot> [ Screenshot at 15:05:35 | ScreenCloud ]
+[20:10:51] <JustAberrant> Lapsus: :>
+[20:11:32] <JustAberrant> the CRTC has lately been doing things in the interest of Canadian consumers as per their mandate
+[20:11:50] <JustAberrant> which.. quite frankly scares the fuck out of me and challanges just about every pre-existing notion I have about them
+[20:19:50] * Quindo has a blinking breadboard of lights :D
+[20:34:24] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[20:38:26] *** Joins: averagejoey20001 (averagejoey@Pony-m81a8n.lv.cox.net)
+[20:51:30] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[20:52:12] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[21:01:16] *** Quits: Crimson_Tail (ChaoticRift@Pony-jf7icb.md.comcast.net) (Quit: Signal 9 happened)
+[21:08:13] *** Joins: Crimson_Tail (ChaoticRift@Pony-5hmqb5.7h3b.037j.000a.2601.IP)
+[21:18:10] *** Joins: Asoka (Asoka@Pony-p5uhug.net-htp.de)
+[21:18:15] <wolfyshy> http://arstechnica.com/security/2015/03/anti-doxing-strategy-or-how-to-avoid-50-qurans-and-287-of-chick-fil-a/
+[21:18:16] <PinkiePieBot> [ Anti-doxing strategy—or, how to avoid 50 Qurans and $287 of Chick-Fil-A | Ars Technica ]
+[21:18:50] <Blackjack> lol
+[21:28:39] *** McKey is now known as [A]McKey
+[21:40:30] <Blackjack> Guys
+[21:40:35] <Blackjack> People who know what they are doing
+[21:40:36] <Blackjack> like wolfyshy
+[21:40:43] <Blackjack> How do I make a tmux session with a command in it
+[21:41:08] <Blackjack> Like, one command to create a tmux session, run a command in the first window, and return immediately (don't attach)
+[21:42:57] <wolfyshy> # tmux new-session -d python3.4
+[21:43:09] <wolfyshy> = make a new session with python's repl and don't attach to it
+[21:45:06] <wolfyshy> Compu, mini vmac can run 7.5.5 now?
+[21:45:48] <Compu> wolfyshy: it always could
+[21:45:52] <Blackjack> Thanks, wolfyshy
+[21:45:59] <wolfyshy> no problem, Blackjack =3
+[21:46:39] <Compu> wolfyshy: i just never could find the files necessary to install 7.5.5, someone on the vintage apple subreddit helped me
+[21:52:34] * JustAberrant provides Compu with 27 thousand meters of orange masonry leveling string
+[21:55:32] * locodash11[server] gives JustAberrant two feet of blue
+[21:57:23] *** Gigaway is now known as Gigabit
+[22:05:02] <sniperfox> What's mini vmac?
+[22:05:29] <sniperfox> Oh god.  Why would you want this?
+[22:07:16] <Quindo> .......
+[22:07:34] <Quindo> I wonder if we are going to see an encrypted streaming survice sometime soon...
+[22:08:31] <Quindo> EG, the streamer creates a code and unless you have that code you can still view the stream, it is simply digital noise though.
+[22:09:23] * locodash11[server] has encrypted video output on his DRAC...
+[22:09:24] <locodash11[server]> heh
+[22:10:10] <Quindo> The main benifit of it is the hosting company can actually be immune to DMCA's and such to a certain extent.
+[22:10:53] <Quindo> Obviously, if a company wanted to track someone down their personal info would not be kept under lock and key.
+[22:11:18] <Quindo> I am nust sure if having that type of service would be good or bad...
+[22:13:31] *** Quits: Crimson_Tail (ChaoticRift@Pony-5hmqb5.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[22:16:11] *** Joins: Crimson_Tail (ChaoticRift@Pony-8j1rk0.7h3b.037j.000a.2601.IP)
+[22:22:43] <Compu> sniperfox: its a mac plus emulator
+[22:43:30] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[22:43:45] *** Joins: Webster (Webster@Pony-mme.2eo.212.73.IP)
+[22:47:30] *** Joins: Fallfeathers (Fallfeather@Pony-u71ip5.internode.on.net)
+[22:54:00] <wolfyshy> Quindo: sounds like HDCP applied to the internet
+[22:54:06] <wolfyshy> we see how well that worked for them :)
+[22:55:12] <Phase4> HDCP used a weak cipher, and version 2 will be exactly as ineffectual for different reasons
+[23:01:42] <Colgate> I don't see why you couldn't do that, I've seen services where the host doesn't have the key and what not
+[23:01:50] <Colgate> usually with pastebins
+[23:09:34] <wolfyshy> 0bin was a great one
+[23:09:48] <wolfyshy> oh looks like they are back up!
+[23:10:03] <wolfyshy> okay, 0bin *is* a great one =3
+[23:16:36] *** Gigabit is now known as GigaWork
+[23:35:18] <Phase4> Quindo, only problem is this service would need to sustain itselgf
+[23:35:20] <Phase4> itself'
+[23:35:23] <Phase4> which means money
+[23:57:12] <Googie> Yeah, there's nothing stopping you from doing it. It's just... you'd have to find someone willing to relay it, and since it's difficult to sustain due to cost...
+[23:58:11] <Googie> There'd be a money trail if you paid. (Bitcoins could maybe help with the anonymity there)

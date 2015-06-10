@@ -1,0 +1,252 @@
+[00:00:52] *** Joins: nscoots (FreyGrimrod@Pony-0rfp4r.sub-70-192-15.myvzw.com)
+[00:13:01] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:47:35] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:55:17] *** Brolf_pog is now known as Shnuggles
+[01:07:54] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[01:08:15] <cyborg_ar> yay assembly coding still pays
+[01:08:23] <cyborg_ar> got a 57% performance increase in a crc16 function in hand coded assembly vs C
+[01:08:34] <Webster> Wow.
+[01:08:47] <Webster> I'm surprised.
+[01:09:07] <cyborg_ar> well not on x86, but an 8 bit microcontroler :)
+[01:09:22] <Webster> Alright, less surprised.
+[01:09:42] <cyborg_ar> C was being stupid and dropping vital data that were left in the flags by the processor
+[01:09:47] <cyborg_ar> then recalculated them
+[01:13:18] <cyborg_ar> yeah on x86 most performance issues have to do with memory instead of raw cpu cycles
+[01:13:21] <cyborg_ar> nowadays
+[01:14:26] <cyborg_ar> stuff like branch prediction and caches makes it harder to predict how code is gonna perform
+[01:15:10] <cyborg_ar> but on a simple non-pipelined risc architecture you can tell what's gonna peform best at a glance :)
+[01:16:51] <JustAberrant> ricer :(
+[01:18:09] <cyborg_ar> heheh
+[01:18:30] <cyborg_ar> well i'm trying to fit a reasonably complex thing into a really small part
+[01:20:25] <cyborg_ar> because cheapass
+[01:21:09] <cyborg_ar> namely a modbus RTU slave into a PIC16F887
+[01:26:55] *** Q0|Away is now known as Q0
+[01:27:24] <Phase4> and crash
+[01:31:51] <cyborg_ar> ?
+[01:39:03] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[01:40:27] <Phase4> cyborg_ar, minecraft crashed
+[01:49:31] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[02:10:50] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[02:14:15] *** Neptune|sleep is now known as Neptune
+[02:22:25] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (Quit: )
+[02:29:17] <Compu> well we got a 5000 BTU AC window unit
+[02:30:35] <locodashie11> excite?
+[02:32:29] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[02:34:39] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[02:35:15] <AppleDash> I read that as a "5000 BTC AU unit" and I was really confused
+[02:36:41] <Compu> my grandpa helped us get it
+[02:42:11] <JustAberrant> cool (pun intended) ;p
+[03:21:11] *** Null is now known as CarbonKitty
+[03:42:00] *** Quits: cyborg_ar (cyborgar@Pony-2b2.3df.49.190.IP) (Ping timeout: 121 seconds)
+[03:56:05] *** Joins: Sol (Sol@Pony-nc8b4c.res.rr.com)
+[04:01:41] *** Joins: cyborg_ar (cyborgar@Pony-61k.gm4.25.181.IP)
+[04:23:27] * ShivalPonyWolf giggles at google search predition. search for 'sudo get' and it fills in 'a sandwich'
+[04:28:53] *** CarbonKitty is now known as Null
+[04:42:46] *** Joins: Sombra (Iceman@Pony-iehpab.mn.charter.com)
+[04:47:17] <AppleDash> lol
+[04:52:03] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[05:06:05] *** Pony_72176 is now known as averagejoey2000
+[05:09:33] *** Quits: Crimson_Tail (Bluepon@Pony-0lh9a1.s0tm.sdub.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[05:12:58] *** Quits: Sombra (Iceman@Pony-iehpab.mn.charter.com) (Quit: quit)
+[05:25:45] <Twilightlicious> So i hear people who installed Windows 8.1 from a Disk won't be able to Upgrade to Windows 10 via Windows Update
+[05:27:00] <Twilightlicious> http://i.imgur.com/lC8Ed1F.png
+[05:28:08] <Twilightlicious> Oh wait, you'll just need to have "Windows 8.1 Update 1" Installed, or something
+[05:28:11] * Twilightlicious shrugs in confusion
+[05:35:14] <JustAberrant> windows upgrade path confusing.. you don't say ;p
+[05:37:21] <Twilightlicious> Windows RTM won't get the update automatically
+[05:37:29] <Twilightlicious> But windows S14 will
+[05:37:35] <Twilightlicious> but Windows S14 can be RTM
+[05:37:37] <Twilightlicious> so ??????
+[05:48:24] *** Joins: Gigabit (GigabitPony@wonderbolt.wannabe)
+[05:49:48] <Gigabit> anypony seen this yet?   
+[05:49:48] <Gigabit> https://www.kickstarter.com/projects/1598272670/chip-the-worlds-first-9-computer
+[05:49:50] <PinkiePieBot> [ CHIP - The World's First Nine Dollar Computer by Next Thing Co. — Kickstarter ]
+[05:50:11] <ShivalPonyWolf> Gigabit: im having issues trusting them due to lack of contact and responses to queries
+[05:50:21] <ShivalPonyWolf> and their 20$ shippng international is abit high
+[05:50:22] <cyborg_ar> Gigabit: yes
+[05:50:35] <cyborg_ar> my answer = meh
+[05:50:41] <Gigabit> Hmm.. I was tempted to back it
+[05:50:44] <cyborg_ar> i have a raspberry pi collecting dust
+[05:51:03] <Gigabit> I have one too, being used and collecting dust
+[05:54:20] *** Init3-away is now known as init3
+[05:58:22] *** Joins: Sombra (Iceman@Pony-iehpab.mn.charter.com)
+[06:07:45] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[06:08:36] <AppleDash> Hmm, something like what Gigabit linked could be useful for a lot of projects
+[06:08:46] <Gigabit> Exactly
+[06:09:01] <Gigabit> I am tempted to back it
+[06:20:12] <Sol> Lol all the news sites calling that the pi killer
+[06:20:22] <Sol> I dunno..
+[06:20:47] <ShivalPonyWolf> for small projects yeah it would be good
+[06:21:50] <Sol> Could be nice to have a cheaper/smaller/lower-spec thing for cases where the pi would be overkill or too big
+[06:22:46] <ShivalPonyWolf> i saw a post that someone was trying to build micropython onto the esp8266
+[06:22:49] <ShivalPonyWolf> i wonder how that would go
+[06:24:18] <Googie> Something about that does smell a little bit fishy. Just overpromising, and that cost seems a bit low unless they can move /extreme/ volumes (although I don't know enough about that side of things)
+[06:24:28] *** Quits: Michl0d (Michl0d@Pony-8s6.3h9.53.72.IP) (Ping timeout: 121 seconds)
+[06:24:53] <Webster> Yeah, it's really tempting for $9. Would probably be another dev board that goes on my pile of unused electronics though.
+[06:27:18] *** init3 is now known as Init3-away
+[06:29:20] *** Quits: Webster (Webster@Pony-mme.2eo.212.73.IP) (Quit: Leaving)
+[06:31:03] <Googie> Allwinner has been doing really well from what I can see in the low-end ARM space though.
+[06:32:02] <Gigabit> Well 25 days from now I will back it and see what comes of it
+[06:33:35] <Twilightlicious> nothing lol
+[06:33:40] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[06:34:02] <Googie> Well, it does look like the company behind it has already launched and shipped a successful hardware kickstarter.
+[07:05:48] *** Quits: Nick (nobody@Pony-o1k.cjc.74.71.IP) (Ping timeout: 121 seconds)
+[07:06:07] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[07:22:57] *** Init3-away is now known as init3
+[07:27:56] *** Neptune is now known as Neptune|sleep
+[07:31:33] *** Quits: Sombra (Iceman@Pony-iehpab.mn.charter.com) (Quit: quit)
+[07:37:56] *** Quits: Sol (Sol@Pony-nc8b4c.res.rr.com) (Quit: Leaving)
+[07:44:16] *** init3 is now known as Init3-away
+[07:48:48] *** Null is now known as Nell
+[07:59:23] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[08:08:13] *** Quits: cyborg_ar (cyborgar@Pony-61k.gm4.25.181.IP) (Client exited)
+[08:28:09] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Connection closed)
+[08:30:05] *** Quits: MisterSkids (ejd@Pony-aaa.lna.79.74.IP) (Ping timeout: 121 seconds)
+[08:31:50] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:38:54] *** Joins: RedHelper (PinkieP@The.Pony.That.Makes.You.Smile)
+[08:48:28] *** Quits: RedHelper (PinkieP@The.Pony.That.Makes.You.Smile) (Quit: Leaving)
+[09:11:20] *** Quits: Nell (Carrot_Top@Anon.Theroleplaypony.Starlight) (Ping timeout: 121 seconds)
+[09:11:38] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[09:16:36] *** Joins: Carrot_Top (Carrot_Top@Anon.Theroleplaypony.Starlight)
+[09:17:06] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[09:21:24] *** Joins: Michl0d (Michl0d@Pony-8s6.3h9.53.72.IP)
+[09:23:34] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:25:37] *** Quits: Michl0d (Michl0d@Pony-8s6.3h9.53.72.IP) (Ping timeout: 121 seconds)
+[09:41:46] <Twilightlicious> is it weird if Microsoft is suddenly sending me tons of Windows 8.1 email ads?
+[09:43:00] <Twilightlicious> over the past week Microsoft has sent me introduction emails to Windows 8.1
+[09:43:07] <Twilightlicious> then again, maybe it's because i just got a new tablet
+[10:23:47] *** [A]McKey is now known as McKey
+[10:30:56] <Googie> I'm guessing you registered with a Microsoft account instead of a local account ?
+[10:33:21] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Rain called on account of pony.)
+[10:40:04] *** Quits: Q0 (Q0@literallyshit.net) (Ping timeout: 121 seconds)
+[10:43:53] *** Joins: Q0 (Q0@literallyshit.net)
+[10:50:38] *** Quits: reiuiji (reiuiji@nuclear.raven) (Connection closed)
+[10:51:00] *** Joins: reiuiji (reiuiji@Pony-dui.epf.217.98.IP)
+[11:20:37] *** Joins: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com)
+[11:31:53] *** Gigabit is now known as gigazzz
+[11:47:58] *** Q0 is now known as Q0|Away
+[13:24:56] *** Quits: nscoots (FreyGrimrod@Pony-0rfp4r.sub-70-192-15.myvzw.com) (Ping timeout: 121 seconds)
+[13:30:05] *** Joins: ThunderBolt (ThunderBolt@Sliverpony)
+[13:31:08] *** Quits: ThunderBolt (ThunderBolt@Sliverpony) (Quit: Thundarrrrr)
+[14:07:25] *** Joins: ThunderBolt (IceChat9@Sliverpony)
+[14:08:11] *** Quits: ThunderBolt (IceChat9@Sliverpony) (Quit: Easy as 3.14159265358979323846... )
+[14:08:30] *** Joins: ThunderBolt (IceChat9@Sliverpony)
+[14:10:21] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[14:13:10] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[14:21:28] *** Quits: ThunderBolt (IceChat9@Sliverpony) (Ping timeout: 121 seconds)
+[14:23:05] *** Joins: ThunderBolt (IceChat9@Sliverpony)
+[14:27:40] *** Quits: ThunderBolt (IceChat9@Sliverpony) (Ping timeout: 121 seconds)
+[14:30:12] *** Joins: ThunderBolt (IceChat9@Sliverpony)
+[14:34:47] *** Quits: ThunderBolt (IceChat9@Sliverpony) (Ping timeout: 121 seconds)
+[14:34:58] *** Carrot_Top is now known as CarbonCat
+[14:36:40] *** Joins: ThunderBolt (IceChat9@Sliverpony)
+[14:41:15] *** Quits: ThunderBolt (IceChat9@Sliverpony) (Ping timeout: 121 seconds)
+[14:49:54] *** Joins: cyborg_ar (cyborgar@Pony-na4.4ot.172.190.IP)
+[14:55:07] *** Quits: sniperfox (sniperfox@Pony-raa.vkb.114.167.IP) (Quit: reboot)
+[14:58:15] *** Joins: DataByteBrony (DataByte@Pony-n4pqoh.lrpe.i2gu.000d.2601.IP)
+[14:59:37] *** Joins: sniperfox (sniperfox@Pony-raa.vkb.114.167.IP)
+[15:46:25] *** CarbonCat is now known as Nell
+[15:55:07] *** Quits: DataByteBrony (DataByte@Pony-n4pqoh.lrpe.i2gu.000d.2601.IP) (Ping timeout: 121 seconds)
+[15:55:24] *** Joins: Skipper (Skipp@Pony-llqabm.unitymedia.biz)
+[16:10:53] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[16:16:08] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[16:16:44] *** Quits: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP) (Connection closed)
+[16:16:50] *** Joins: DataByteBrony (DataByte@Pony-1f5n0b.lrpe.i2gu.000d.2601.IP)
+[16:30:46] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:34:01] *** Parts: Skipper (Skipp@Pony-llqabm.unitymedia.biz) ("Leaving")
+[16:37:23] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[16:42:49] *** Joins: vi[NLR]1 (vi[NLR]@Pony-mio.qp9.144.89.IP)
+[16:46:32] *** Nell is now known as Null
+[16:46:48] *** Quits: vi[NLR]1 (vi[NLR]@Pony-mio.qp9.144.89.IP) (Quit: Leaving.)
+[16:55:09] *** Joins: fiyahsparkle|laptop (fiyahspark@irc.fiyahsparkle.com)
+[16:55:13] *** Quits: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com) (Ping timeout: 121 seconds)
+[16:56:48] *** Joins: locodashie11 (locodash11@Pony-f2q.sut.163.82.IP)
+[17:01:42] *** Quits: Cloud_Kicker (lightning@property.of.moonlightning) (Ping timeout: 121 seconds)
+[17:03:51] *** Joins: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com)
+[17:05:23] *** Quits: fiyahsparkle|laptop (fiyahspark@irc.fiyahsparkle.com) (Ping timeout: 121 seconds)
+[17:14:30] *** sleumas2k is now known as sleumas2000
+[17:15:39] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:31:16] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Quit: )
+[17:36:12] *** Init3-away is now known as init3
+[17:41:52] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[17:46:10] *** Quits: johnsey (johnsey@netadmin.canternet.org) (discord.canternet.org derpy.canternet.org)
+[17:46:31] *** Joins: johnsey (johnsey@netadmin.canternet.org)
+[17:47:20] *** Quits: endoriazel (coprah@endoriazel) (Ping timeout: 121 seconds)
+[17:48:04] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Ping timeout: 121 seconds)
+[17:49:18] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[17:50:23] *** Joins: endoriazel (coprah@endoriazel)
+[18:07:26] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[18:14:40] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[18:17:51] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[18:35:26] <Twilightlicious> Hey guys i have a question! :3
+[18:35:52] <Twilightlicious> You know those like, Logitec Mice and Keyboards that say the battery lasts 1 year based on "average use"?
+[18:36:15] <Twilightlicious> How long do they actually last, like hour wise, or for someone who spends 6~ hours a day on average using one
+[18:37:29] <DataByteBrony> i quit using wireless.. sorry :P
+[18:37:47] <locodash11[server]> I have a logitec mouse rated at that much, and used at least 6 hours a day almost every day since getting it, it lasted about 15 months
+[18:38:28] <Twilightlicious> I see.
+[18:38:31] <DataByteBrony> have a logitech m505 at work, lithium batteries, i got it used (about a year old), and use it occasionally, still have never needed a battery change
+[18:38:39] <locodash11[server]> never had a wireless keyboard though
+[18:39:06] <Twilightlicious> DataByteBrony, i got it for my Tablet, but im starting to think it's actually nicer than the wired set i'm currently using on my Desktop, so im thinking about just using it on my Desktop
+[18:40:10] <DataByteBrony> i have a wireless bluetooth kbd i use w/ my phone.. no idea on runtime
+[18:40:32] <DataByteBrony> a few months, with steady useage
+[18:45:51] <Twilightlicious> stupid hotspot stopped working, Again.
+[18:48:13] * Twilightlicious is on hold with tech support
+[18:54:41] <Twilightlicious> raaaaage >3>
+[18:57:26] <Twilightlicious> How do i unhide the menu bar
+[18:57:30] <Twilightlicious> on Hexchat ._.
+[18:57:44] <Twilightlicious> oh, CTRL+F9
+[18:57:47] <Twilightlicious> Found it lol
+[19:03:07] *** Q0|Away is now known as Q0
+[19:07:41] *** miggyb is now known as MBscript
+[19:07:43] *** Null is now known as Nel
+[19:13:20] *** gigazzz is now known as Gigabit
+[19:15:23] *** Nel is now known as Null
+[19:20:56] *** Neptune|sleep is now known as Neptune
+[19:21:52] *** Q0 is now known as Q0|Away
+[19:21:53] *** Joins: Sombra (Iceman@Pony-iehpab.mn.charter.com)
+[19:35:08] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[19:36:48] *** Quits: Sellyme_ (quassel@Pony-rff.901.156.104.IP) (Ping timeout: 121 seconds)
+[19:37:08] *** Joins: Sellyme (quassel@Pony-a07utk.vxnd.net)
+[19:38:03] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[19:46:00] *** Quits: Asoka (Asoka@Pony-avjmb2.net-htp.de) (Ping timeout: 121 seconds)
+[19:46:15] *** Joins: Asoka (Asoka@Pony-si5.4dr.182.89.IP)
+[19:59:20] *** Quits: Sombra (Iceman@Pony-iehpab.mn.charter.com) (Quit: quit)
+[20:02:14] *** Joins: S2K (sleumie@Pony-9b8.1mq.100.2.IP)
+[20:02:41] *** Quits: sleumas2k (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[20:03:14] *** S2K is now known as sleumas2000
+[20:03:45] *** sleumas2000 is now known as Pony_52042
+[20:07:57] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[20:15:36] *** Pony_52042 is now known as sleumas2000
+[20:20:52] <Kinsley> Wow, GOG.com just scored a huge deal to do DRM free Deep Silver games. They've got Metro: Last Light and Saints Row 2 and 3. They also got the entire Darksiders series from Nordic DRM free.
+[20:21:16] <Kinsley> I think GOG Galaxy just became a helluva lot more impressive.
+[20:22:55] <Twilightlicious> what does one do about this? https://gigaom2.files.wordpress.com/2015/01/img_20150126_135604919.jpg?quality=80&strip=all
+[20:24:05] <Twilightlicious> >3<
+[20:27:03] <Twilightlicious> "WIMBOOT devices present a capacity challenge to the upgrade process and we are evaluating a couple of options for a safe and reliable upgrade path for those devices."
+[20:34:01] <Twilightlicious> Why the upgrade process can't just check total disk space, and free space, the world will never know. :P
+[20:47:01] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[20:49:35] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[20:59:03] *** Null is now known as Nell
+[21:06:50] *** Joins: Asoka_White (Asoka@Pony-rij.8ma.182.89.IP)
+[21:08:26] *** sleumas2k is now known as sleumas2000
+[21:09:07] *** Quits: Asoka (Asoka@Pony-si5.4dr.182.89.IP) (Ping timeout: 121 seconds)
+[21:09:21] *** Joins: Asoka (Asoka@Pony-cul5qd.net-htp.de)
+[21:10:32] *** Nell is now known as Halcyon
+[21:11:42] *** Quits: Asoka_White (Asoka@Pony-rij.8ma.182.89.IP) (Ping timeout: 121 seconds)
+[21:19:48] *** Halcyon is now known as Nell
+[21:30:46] *** Nell is now known as Null
+[22:04:37] *** Quits: PeakVolume (k9ldt@Pony-mtb.f13.6.100.IP) (Ping timeout: 121 seconds)
+[22:08:39] *** Joins: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net)
+[22:09:57] *** Joins: Sol (Sol@Pony-vvn.i1u.133.74.IP)
+[22:40:55] *** Quits: cyborg_ar (cyborgar@Pony-na4.4ot.172.190.IP) (Ping timeout: 121 seconds)
+[22:42:01] *** Joins: Crimson_Tail (Bluepon@Pony-bo7q3g.s0tm.sdub.0151.2601.IP)
+[22:59:41] *** init3 is now known as Init3-away
+[23:01:35] *** Null is now known as Nell
+[23:16:01] *** Nell is now known as Null
+[23:25:46] *** Joins: [A]McKey (Kordus@twilightsparkle.ovh)
+[23:25:46] -daring.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[23:26:08] *** [A]McKey is now known as McKey
+[23:29:00] *** Joins: Asoka_White (Asoka@Pony-4q2iqk.net-htp.de)
+[23:32:14] *** Quits: Asoka (Asoka@Pony-cul5qd.net-htp.de) (Ping timeout: 121 seconds)
+[23:41:01] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:47:47] *** Joins: cyborg_ar (cyborgar@Pony-61k.gm4.25.181.IP)
+[23:59:25] *** Quits: DataByteBrony (DataByte@Pony-1f5n0b.lrpe.i2gu.000d.2601.IP) (Connection closed)

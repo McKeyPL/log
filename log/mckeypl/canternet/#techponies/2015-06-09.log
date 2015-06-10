@@ -1,0 +1,516 @@
+[00:01:59] *** Quits: DataByteBrony (DataByte@Pony-f68tdk.5jsm.i2gu.000d.2601.IP) (Ping timeout: 121 seconds)
+[00:02:59] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Rain called on account of pony.)
+[00:19:21] *** Quits: Neptune (Neptune@Planet.Neptune) (Ping timeout: 121 seconds)
+[00:20:30] *** Quits: ariscop__ (Phase4@Pony-n241ii.internode.on.net) (Ping timeout: 121 seconds)
+[00:24:25] *** CyberJacob is now known as zz_CyberJacob
+[00:25:30] *** Joins: Neptune (Neptune@Pony-dce.ejr.223.104.IP)
+[00:47:32] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[00:51:04] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[00:51:13] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[00:57:32] *** Quits: dekeccho (dekeccho@dekeccho.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[01:05:21] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[01:06:01] *** Joins: dekeccho (dekeccho@Pony-dbjo4v.servers.jiffybox.net)
+[01:17:12] *** Joins: Sombra (Iceman@Darkhorse21)
+[01:23:27] *** Dusk is now known as AppleDash
+[01:24:15] *** Init3-away is now known as init3
+[01:26:57] <Moonlightning> [01:08:29] < Phase4> iirc ios dev kits are ~$900
+[01:26:58] <Moonlightning> waaaaaaaaaaat
+[01:27:07] <Moonlightning> it used to be $100/year a few years ago
+[01:27:39] <JustAberrant> apple gotta pay for toothpaste like everyone else :(
+[01:28:41] *** Compu_ is now known as CompuDesktop
+[01:34:23] <Moonlightning> TIL of hum bars.
+[01:35:20] <Phase> Moonlightning, $900 is a thing i read once on one site
+[01:35:50] <Phase> poit is it's outside disposable cash pricing, so you're not gonna see too many open source projects on ios
+[01:51:42] <cyborg_ar> :( goddamn AFIP
+[01:51:50] <cyborg_ar> (argentina's IRS)
+[01:52:43] <cyborg_ar> their website is slow on purpose
+[01:53:05] <cyborg_ar> it was blazing fast up to the point i asked them for a tax excemption
+[01:53:11] <Phase> XD
+[01:53:15] <Moonlightning> :/
+[01:53:45] <cyborg_ar> actually, authorization to do something i should be able to do anyway
+[01:54:03] <Moonlightning> Why does DNS explicitly ban multiple CNAMEs? :(
+[01:54:13] <Moonlightning> That would've been an awesome feature. :(
+[01:58:54] <cyborg_ar> sounds confusing
+[01:59:49] <cyborg_ar> i thought cname was "this is the canonical name", to be used once in each alias dns entry
+[01:59:55] <cyborg_ar> no "here's a list of aliases"
+[02:00:57] <Moonlightning> …okay, so maybe another kind of entry.
+[02:01:44] <Moonlightning> …oh! I'm looking for SRV records.
+[02:02:00] <Moonlightning> …so, wait…is SRV not widely-supported? o.o
+[02:03:54] <cyborg_ar> hmm
+[02:04:04] <cyborg_ar> i wonder if there's a cname chain ddos attack
+[02:04:20] <Phase> Moonlightning, i think it has to be explicitly supported by applications
+[02:04:44] <Moonlightning> ahhh
+[02:04:45] <cyborg_ar> make a really long chain of cnames that hit several servers to DOS a recursive server
+[02:04:56] <Phase> cyborg_ar, there'll be a limit
+[02:05:09] <cyborg_ar> hehe
+[02:05:29] <Phase> but feel free to set it up and dig +trace, would be interesting to see
+[02:05:33] <Moonlightning> Okay…so we need an SRV that doesn't require explicit app support. :<
+[02:06:21] <cyborg_ar> the number of CNAMEs to follow in a chain shall be three, two is too little, four is too much; five is right out! three are the CNAMEs to follow in a chain.
+[02:16:31] *** Joins: DataByteBrony (DataByte@Pony-b9i2rt.sub-70-194-104.myvzw.com)
+[02:17:09] <Moonlightning> Using Canternet as an example: https://gist.github.com/BlacklightShining/eada832cc8818e277c22
+[02:17:10] <PinkiePieBot> [ db.canternet ]
+[02:19:04] <Moonlightning> (This isn't meant to be complete, btw.)
+[02:19:54] <Colgate> spidershy?
+[02:20:07] <Moonlightning> I dunno. Does your webserver have a name?
+[02:21:05] <Moonlightning> It's sort of an anycast thing.
+[02:21:15] <Moonlightning> You can use any of these names.
+[02:21:48] <Moonlightning> Like SRV, but without specifying more information than that, and without requiring explicit app support.
+[02:21:49] <Colgate> Server:"Rainbow Dash - Serving at the speed of rainbooms"
+[02:21:50] <Colgate> ha
+[02:22:56] <Moonlightning> The implication is that the a server with an ANY record pointing to it provides that service.
+[02:23:06] <Moonlightning> It's cleaner than having all those IPs in multiple places.
+[02:23:12] <Moonlightning> AND
+[02:23:30] <Colgate> yeah, lets make another standard for dns!
+[02:23:48] <Moonlightning> It also lets you point the root of the zone at something, for e.g. Web purposes, so people can forgo the leading `www.` when typing into their address bar 9.9
+[02:24:21] <Moonlightning> Rather than having to `www CNAME @` and then have A and AAAA records for @, which is incredibly dirty
+[02:24:23] <Colgate> um, but you don't need a www.?
+[02:24:51] <Moonlightning> If www doesn't resolve, it doesn't resolve. :p
+[02:24:55] <Moonlightning> er
+[02:25:01] <Colgate> www. is just historical, it isn't needed
+[02:25:17] <Moonlightning> What, all major web browsers try www if @ doesn't resolve?
+[02:25:32] <Colgate> and? programs can do whatever they want
+[02:25:56] <Moonlightning> I'm asking you if they do. Because I'd been assuming they don't.
+[02:26:01] <Colgate> they do
+[02:26:05] <Colgate> ate least firefox does
+[02:26:08] <Colgate> at*
+[02:30:00] *** Quits: DataByteBrony (DataByte@Pony-b9i2rt.sub-70-194-104.myvzw.com) (Ping timeout: 121 seconds)
+[02:30:17] *** Joins: Fallfeathers (Fallfeather@Pony-7vquq0.bigpond.net.au)
+[02:30:22] <Moonlightning> Cool, so I can let the root of my domain not resolve at all, which is even cleaner.
+[02:31:06] <Colgate> how is that cleaner?
+[02:31:21] <Moonlightning> Why should @ be the same as www for some intents and purposes?
+[02:31:45] <Moonlightning> But not the same as irc?
+[02:31:48] <Moonlightning> Why is HTTP special?
+[02:32:07] <Colgate> because people are stupid and don't know about the thousands of other protocols besides http
+[02:32:22] <Moonlightning> /Because people are stupid/ is not a good reason for something like this.
+[02:32:34] <Moonlightning> It's unclean. :p
+[02:32:36] <Colgate> SRV already exists
+[02:32:46] <Moonlightning> But it requires explicit application support.
+[02:33:03] <Colgate> your solution does too?
+[02:33:07] <Moonlightning> No it doesn't?
+[02:33:18] <Colgate> how doesn't it
+[02:33:33] <Moonlightning> Same way CNAME doesn't?
+[02:33:52] <Colgate> that just returns another address to look up
+[02:34:05] <Moonlightning> ANY does, too.
+[02:34:08] <Moonlightning> Only /multiple/ addresses.
+[02:34:29] <Colgate> how is this better than multiple A/AAAA records?
+[02:35:19] <Moonlightning> It's cleaner. You don't have to specify IPs multiple times, and you have more of a structure.
+[02:35:42] <Colgate> not good enough of a reason, will never get adopted
+[02:35:47] <Moonlightning> Service names (like irc and www) have ANY records for machine names (like cadance and chrysalis) that support those services, and those names have address records
+[02:36:32] <Colgate> you do realize that a lot of this stuff is just automated
+[02:37:01] <Moonlightning> I'm sure.
+[02:40:22] *** init3 is now known as Init3-away
+[02:41:22] *** Joins: Asoka_White (Asoka@Pony-s437ub.net-htp.de)
+[02:44:35] *** Quits: Asoka (Asoka@Pony-ajkpot.net-htp.de) (Ping timeout: 121 seconds)
+[02:56:26] *** Init3-away is now known as init3
+[03:00:37] <Moonlightning> > The Domain Name System (DNS) provides a replicated distributed secure hierarchical database
+[03:00:41] <Moonlightning> hierarchical, yes
+[03:00:44] <Moonlightning> replicated, sure
+[03:00:49] <Moonlightning> distributed…ehhhhhh…
+[03:00:52] <Moonlightning> secure? //hell no//
+[03:06:58] <JustAberrant> it's distributed, just not de-centralized
+[03:07:56] <Moonlightning> oh
+[03:08:05] <Moonlightning> I was equating replication with distribution.
+[03:08:14] <Moonlightning> err
+[03:08:21] <Moonlightning> Not that 6_9
+[03:09:18] <JustAberrant> also I'd say it's pretty hard to implement a de-centalized DNS in a way that offers any security to the average dude at a level of interest they'll have in it
+[03:10:41] <Moonlightning> //the average dude// generally doesn't care about surveillance; it's pretty hard to implement ANYTHING in a way that offers any security to the average dude at a level of interest they'll have in it. :V
+[03:11:06] <JustAberrant> indeed
+[03:11:18] <JustAberrant> but unless people do, everyone's security suffers
+[03:11:38] <Moonlightning> So we should, for everyone /else's/ sake.
+[03:11:56] <JustAberrant> security nerds coming up with better techniques for security nerds is a short term solution that'll fail 
+[03:12:07] *** Quits: cyborg_ar (cyborgar@Pony-obf.p8l.25.181.IP) (Ping timeout: 121 seconds)
+[03:12:16] <JustAberrant> it needs to be intuitive and just work 
+[03:12:56] <JustAberrant> email is still mostly unencrypted because doing encrypted email is a pain in the ass for the average guy
+[03:12:57] <JustAberrant> etc
+[03:13:02] <Moonlightning> *mumble mumble* namecoin *mumble*
+[03:22:34] *** zeta_ is now known as ZetaRift
+[03:24:02] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[03:26:38] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[03:37:13] <Phase> bootstraping is always the trouble with decentralized systems
+[03:38:13] <JustAberrant> at some point you need to trust someone... and at that point you're not really gaining much ;p
+[03:38:19] <JustAberrant> because once it scales you have the same problem
+[03:50:07] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:51:26] *** Joins: cyborg_ar (cyborgar@Pony-sba.fda.49.190.IP)
+[04:07:42] *** init3 is now known as Init3-away
+[04:14:16] *** Init3-away is now known as init3
+[04:33:33] <cyborg_ar> http://hackaday.com/2015/06/08/subwoofer-vortex-cannon-300v-of-thwup/ 
+[04:33:42] <cyborg_ar> :D BASS CANNON
+[04:33:55] <Phase> thwup
+[04:39:49] <cyborg_ar> they should play this through it https://www.youtube.com/watch?v=tvYl01tDhZo
+[04:39:50] <PinkiePieBot> [ Omnipony - Bass Cannon [Full Version Remastered By Blaze Chaser] - 9242 views - 4m 43s long - 191 likes - 99.48% ]
+[04:42:16] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[04:42:47] *** Quits: Asoka_White (Asoka@Pony-s437ub.net-htp.de) (Ping timeout: 121 seconds)
+[04:43:04] *** Joins: Asoka_White (Asoka@Pony-s437ub.net-htp.de)
+[04:43:14] <cyborg_ar> and make the kick drum parts trigger the high power discharge
+[04:43:31] <cyborg_ar> probably would need water cooling
+[04:43:33] <cyborg_ar> lol
+[04:52:47] *** Quits: JustAberrant (JustAberran@Pony-ffr.0tv.116.50.IP) (Connection closed)
+[04:56:09] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[05:03:24] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[05:06:09] *** Quits: frackster (sid20128@Pony-lboor4.highgate.irccloud.com) (Connection closed)
+[05:13:46] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[05:14:29] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[05:15:28] <Twilightlicious> new one click root method :P
+[05:15:47] <Twilightlicious> testing it on my unrootable phone lol
+[05:16:11] <Moonlightning> O.o
+[05:16:47] <Twilightlicious> sitting at 40% Lol
+[05:18:23] *** Joins: Cloudrunner (cloud@the.little.cloud.colt)
+[05:19:48] <Twilightlicious> failed
+[05:20:24] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[05:21:37] <Twilightlicious> but maybe a root method exists after all
+[05:27:56] <Twilightlicious> Here goes nothing :3
+[05:31:31] *** Joins: ModusPonens (ModusPonens@Pony-6v8n3b.ga.comcast.net)
+[05:38:31] *** Selina is now known as Dusk
+[05:44:11] *** Q0|Away is now known as Q0
+[05:56:20] *** Cloudrunner is now known as Wanda
+[06:02:30] *** Joins: Asoka (Asoka@Pony-hroj5f.net-htp.de)
+[06:04:24] *** Quits: Asoka_White (Asoka@Pony-s437ub.net-htp.de) (Ping timeout: 121 seconds)
+[06:06:11] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[06:06:21] *** Quits: LightningCrash (lightning@Pony-35aoef.ph.cox.net) (Connection closed)
+[06:24:46] <SilverEagle> so Seagate has a sale going on, 3x3TB barracauda 7200rpm drives for $240...compared to a single WD Red 4TB at $220
+[06:24:56] <SilverEagle> considering I don't give *that* much of a damn about my data
+[06:25:00] <SilverEagle> lol
+[06:25:21] <JustAberrant> I got burned way too much by seagate when they had that bad batch
+[06:25:59] <SilverEagle> well I mean
+[06:26:07] <SilverEagle> a majority of what goes onto my NAS environment is replaceable
+[06:26:17] <SilverEagle> the irreplaceable stuff is backed up super-redundantly
+[06:27:02] <SilverEagle> convention footage isn't replaceable, but it's also not all that useful beyond like a month afterward
+[06:28:01] <SilverEagle> but that's a huge price differential
+[06:28:38] <SilverEagle> and isn't the whole thing with WD Reds that they spin *slower* to preserve lifespan
+[06:30:35] <SilverEagle> I guess they're specifically built for NAS...ses in several ways
+[06:30:37] <Googie> Should already have traditional backup anyway, so I'd say that's probably a decent deal. RAID5 gives you 6TB with medicre redundancy.
+[06:31:02] <JustAberrant> meh.. I've got a raid6 and a complete mirror server.. but replacing disks is still a huge pain in the ass
+[06:31:53] * Googie has been looking into increasing his home storage. 4TB isn't enough these days.
+[06:32:05] <JustAberrant> hehe
+[06:32:19] <Googie> Still wondering if I can justify setting up one of these: http://www.norcotek.com/product_images/rpc-4224b.jpg
+[06:32:25] <JustAberrant> I wanna upgrade all my stuff.. but yeah.. probably won't do that till next year
+[06:32:32] <SilverEagle> yeah I have about 9TB internal (1TB SSD + 2x4TB Seagates)
+[06:32:36] <Googie> Probably about a $1200 build or so.
+[06:32:37] <SilverEagle> but it's not raided
+[06:32:44] <SilverEagle> and I want a NAS anyhow
+[06:33:03] <SilverEagle> see this is the problem I have though...if I go buy a NAS, and I wanna put these two drives straight in it
+[06:33:15] <SilverEagle> where do you store the 8TB of crap on it if it decides it *has* to reformat them
+[06:33:31] <SilverEagle> you gotta go get disks anyway
+[06:33:50] <JustAberrant> Googie: I'm more or less considering the 16 bay version of that
+[06:34:01] <SilverEagle> terrible idea: rentable hard drives
+[06:34:02] <JustAberrant> (probably only use 12 bays)
+[06:34:07] <Googie> The 16 bay doesn't exist here in Aus
+[06:34:47] <Googie> And yeah, no way I'd use 24 bays
+[06:35:03] <Googie> SilverEagle: How many bays do you want in a NAS ?
+[06:35:03] <JustAberrant> also current server is 20TB (12x 2TB drives in a raid6)
+[06:35:07] *** Quits: Sellyme (quassel@Pony-a07utk.vxnd.net) (Quit: No Ping reply in 180 seconds.)
+[06:35:09] <SilverEagle> 2 or 4
+[06:35:11] <Googie> Are you comfortable with Linux ?
+[06:35:11] <SilverEagle> I'm cheap =D
+[06:35:16] <SilverEagle> reasonably sure
+[06:35:32] <SilverEagle> probably 4
+[06:35:51] <SilverEagle> I'm fond of Synology
+[06:36:03] <Googie> I've got an HP Microserver Gen 8 and an n54l. They're both pretty cheap, good general purpose servers that work well as a NAS.
+[06:36:11] <Googie> Four bays and x86
+[06:36:13] * JustAberrant just has a linux (gentoo) install on it running nfs
+[06:36:19] *** Joins: Sellyme (quassel@Pony-mte81t.0880.gi54.19f0.2001.IP)
+[06:36:25] <SilverEagle> yeah I wanna save on power consumption
+[06:36:33] <SilverEagle> no doubt a NAS hooked up to Plex would save me a buttload on power
+[06:36:40] <SilverEagle> vs keeping this desktop running constantly
+[06:37:06] <Googie> They're pretty low power consumption. I can't recall exactly, but IIRC my UPS was telling me about 30w or so ?
+[06:37:12] <SilverEagle> orly?
+[06:37:18] <SilverEagle> that's nuffin
+[06:37:43] <Googie> I'd give you an exact number, but I'd have to shut down my desktop first :P
+[06:38:05] <Googie> It's under 60w though, with four HDDs loaded.
+[06:38:33] <SilverEagle> not bad
+[06:38:44] <SilverEagle> well I'd just run simple SMB mounts and Plex server
+[06:38:51] <SilverEagle> both of which are rather easy on linux
+[06:39:03] <SilverEagle> and whatever OSX uses
+[06:39:07] <SilverEagle> can it do NFS direct?
+[06:39:14] <SilverEagle> I never mount things to my mac
+[06:39:48] <Googie> Well, they're standard low powered x86 servers, so they do whatever you configure them to.
+[06:39:56] <SilverEagle> no um
+[06:40:00] <Googie> I've got NFS and SMB running on mine.
+[06:40:00] <SilverEagle> I mean can a Mac do NFS direct
+[06:40:04] <Googie> Oh, no idea.
+[06:42:37] *** RedHelper[NLR] is now known as Creeps|AFK
+[06:46:07] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[06:49:41] <SilverEagle> idk I'm pulled in 40 different directions on new gadget purchases right now
+[06:49:52] <SilverEagle> I want a NAS but I don't need one, I want a phone that isn't a piece of garbage
+[06:50:12] <SilverEagle> and doesn't have the Dialer app crash about 50% of the time when making outgoing calls, the hilarity of which isn't lost on me
+[06:50:27] <SilverEagle> (for that 50% of the time, it's just a "smart-----")
+[07:00:59] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[07:01:17] *** Dusk is now known as Selina
+[07:01:28] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:25:26] *** Quits: cyborg_ar (cyborgar@Pony-sba.fda.49.190.IP) (Ping timeout: 121 seconds)
+[07:27:54] <Wanda> Wow 20TB
+[07:28:06] <Wanda> That would be so alot of memory man.
+[07:28:38] <Wanda> Storing huge amounts of pics, scripts, also vames
+[07:28:43] <Wanda> *games
+[07:29:44] <Wanda> Also RAIDbanj
+[07:29:45] <Phase> you'd be amazed how fast a family of 7 fills that
+[07:34:22] <Wanda> X-Plane 9 is 80gb
+[07:38:54] *** Joins: cyborg_ar (cyborgar@Pony-obf.p8l.25.181.IP)
+[07:40:24] *** init3 is now known as Init3-away
+[07:46:48] *** Init3-away is now known as init3
+[07:48:14] <SilverEagle> omg 4 bay nasses are expensive
+[07:51:56] <Phase> ikr
+[07:52:12] <Phase> a lot of them cost as much as, or more, than the drives
+[07:52:38] <Phase> SilverEagle, i recomend netgear, they're debian and can get root easily
+[07:52:53] <SilverEagle> ...really?
+[07:52:59] <SilverEagle> not every day you hear a netgear recommendation
+[07:53:08] <Phase> yeah, just their nas though
+[07:53:14] <Phase> ReadyNAS is nice
+[07:53:40] <Phase> and full of features very few people use
+[07:54:30] <SilverEagle> interesting...
+[07:54:37] <SilverEagle> their NASses really do look nice
+[07:54:40] <SilverEagle> dual ethernet
+[07:55:30] <Phase> SilverEagle, i've got an rn104, little arm thing, 30MB/s raid 5 but that's enough for me
+[07:55:55] <SilverEagle> one of the cheapest 4 bays
+[07:55:58] <SilverEagle> I've seen
+[07:56:10] <Phase> yup, 'tis why i got that one
+[07:56:19] <SilverEagle> you said it's Debian under it?
+[07:56:23] <SilverEagle> that could do plex easily
+[07:56:30] <Phase> there's actually a plex thing built in
+[07:56:43] <SilverEagle> ooooo
+[07:56:46] <SilverEagle> sold! =D
+[07:56:48] <Phase> or easily installable, either way
+[07:56:51] * SilverEagle buys 40
+[07:56:54] <Phase> XD
+[07:56:58] * SilverEagle fills it with Seagate drives
+[07:57:00] <SilverEagle> I like to live dangerously
+[07:57:12] <Phase> i've never had a seagate die
+[07:57:22] <Phase> apparently wd are great but they keep dying on me :(
+[07:57:29] <SilverEagle> see
+[07:57:31] <SilverEagle> my seagate
+[07:57:34] <SilverEagle> I don't wanna say it's good
+[07:57:37] <SilverEagle> because it'll die to spite me
+[07:58:39] *** Wanda is now known as Monochrome
+[07:59:34] <SilverEagle> I may end up wanting the faster (yet much more $$) RN314
+[08:00:05] <Phase> the higher end models are much faster, and have x86 chips
+[08:00:46] <Phase> SilverEagle, https://github.com/ariscop/deluge-readynas also can make your own packages
+[08:00:48] <PinkiePieBot> [ ariscop/deluge-readynas · GitHub ]
+[08:01:01] <Phase> thought i had updated that
+[08:01:53] <SilverEagle> ah yep the 314 has an Atom on it
+[08:01:57] <SilverEagle> 2.1ghz dual core
+[08:02:06] <SilverEagle> and can do on-the-fly transcoding
+[08:02:08] <SilverEagle> which cheapie can't
+[08:02:22] <SilverEagle> but cheapie can still do plex, just untranscoded
+[08:07:56] <Colgate> oh, 20TB storage, not 20TB memory XD
+[08:08:03] <SilverEagle> hahah
+[08:08:04] <Colgate> 20TB memory would be crazy >.>
+[08:11:57] <SilverEagle> ok so current cheapin' out plan is
+[08:12:04] <SilverEagle> 4x4TB Seagates
+[08:12:08] <SilverEagle> in the nicer NAS
+[08:12:12] <SilverEagle> good perf, total shit reliability
+[08:14:10] *** zz_CyberJacob is now known as CyberJacob
+[08:14:34] <SilverEagle> $1000 for 12TB of capacity
+[08:14:37] <SilverEagle> not bad =)
+[08:14:42] <SilverEagle> (including RAID 5)
+[08:18:53] *** Neptune is now known as Neptune|sleep
+[08:23:25] <Googie> Getting an HP microserver here was cheaper than a 4 bay NAS, and way more powerful :V
+[08:23:37] <SilverEagle> yea but isn't it...server-shaped
+[08:24:39] <SilverEagle> well it's a little bigger
+[08:24:39] <Googie> No
+[08:24:51] *** Joins: frackster (sid20128@Pony-lboor4.highgate.irccloud.com)
+[08:24:55] <SilverEagle> but still, Netgear readynas = $515, HP Microserver $440
+[08:25:00] <SilverEagle> but Netgear is already preconfiged
+[08:25:02] <Googie> It's about the size and shape of a 4 bay NAS
+[08:25:27] <Googie> I suppose it depends, I'd view preconfigured as a negative :P
+[08:26:42] <Phase> Microserves aren't bad but it doesn't come with a nice interface
+[08:26:53] <Phase> plus it has glacial boot speed
+[08:27:17] <SilverEagle> yea I kinda want the NAS
+[08:27:27] <SilverEagle> since it also has a lot of really nice x-raid features
+[08:27:30] <Googie> I guess I've never noticed that, I never reboot it + SSH is fine for me on something like that
+[08:27:41] <SilverEagle> it can re-raid without needing to teardown/recreate the raid
+[08:28:31] <Phase> it runs btrfs ontop of that
+[08:28:45] <Phase> so you avoid the sharp edges of btrfs arrays and get cheap snapshots
+[08:32:44] *** Quits: Apple_Bloom (sid52418@Pony-obrprk.ealing.irccloud.com) (Ping timeout: 121 seconds)
+[08:36:56] <Googie> I've actually got my Gen8 as an ESXi host. Added a bit of extra ram and it's a great AIO server unit. Plus dual-nics mean it works nicely as a router
+[08:37:08] <Googie> Though that's a bit beyond the scope of a NAS
+[08:39:51] <SilverEagle> yes lol
+[08:40:56] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[08:53:24] *** Quits: sleumasPhone (uid91753@my.little.karaoke) (A TLS packet with unexpected length was received.)
+[08:53:36] *** Quits: ZetaRift (Bluepon@Pony-va1ci9.s0tm.sdub.0151.2601.IP) (Connection closed)
+[08:54:06] *** Joins: ZetaRift (Bluepon@Pony-mfh7oq.md.comcast.net)
+[08:57:01] *** Quits: urioxis (urioxis@the.onion.princess) (Ping timeout: 121 seconds)
+[08:58:12] *** Joins: urioxis (urioxis@the.onion.princess)
+[09:19:21] *** Quits: ZetaRift (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[09:24:30] *** Joins: Asoka_White (Asoka@Pony-lsshdd.net-htp.de)
+[09:24:41] *** CyberJacob is now known as zz_CyberJacob
+[09:25:24] *** Quits: Monochrome (cloud@the.little.cloud.colt) (Connection closed)
+[09:27:14] *** Quits: Asoka (Asoka@Pony-hroj5f.net-htp.de) (Ping timeout: 121 seconds)
+[09:33:41] *** Jaysun_Deckhail is now known as Finnfinn
+[09:35:18] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:40:14] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Connection closed)
+[09:40:37] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[09:46:53] *** Joins: Apple_Bloom (sid52418@Pony-obrprk.ealing.irccloud.com)
+[09:54:44] *** init3 is now known as Init3-away
+[09:55:37] <Gigabit> Did anyone else get an email fr Google accounts about new account features?
+[10:00:55] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[10:01:43] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[10:03:38] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[10:04:41] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[10:10:41] *** Joins: Phase (Phase4@Pony-n241ii.internode.on.net)
+[10:12:27] *** Joins: sleumasPhone (uid91753@my.little.karaoke)
+[10:16:29] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:18:02] *** Joins: S2K (sleumie@Pony-3ar2h5.dsl.as9105.com)
+[10:19:03] *** Quits: ModusPonens (ModusPonens@Pony-6v8n3b.ga.comcast.net) (Ping timeout: 121 seconds)
+[10:20:04] *** Awaykitty is now known as Unixkitty
+[10:20:19] *** Quits: sleumas2k (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[10:28:09] *** Joins: Sin (Sin@is.hustlin.everyday)
+[11:00:17] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[11:00:43] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[11:01:22] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[11:02:25] *** Quits: cyborg_ar (cyborgar@Pony-obf.p8l.25.181.IP) (Ping timeout: 121 seconds)
+[11:06:26] *** Joins: Asoka (Asoka@Pony-pvc18q.net-htp.de)
+[11:08:52] *** Quits: Asoka_White (Asoka@Pony-lsshdd.net-htp.de) (Ping timeout: 121 seconds)
+[11:54:05] *** S2K is now known as sleumas2000
+[12:04:22] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[12:05:10] *** Q0 is now known as Q0|Away
+[12:06:53] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[12:15:28] *** Quits: Sellyme (quassel@Pony-mte81t.0880.gi54.19f0.2001.IP) (Quit: No Ping reply in 180 seconds.)
+[12:16:29] *** Joins: Sellyme (quassel@Pony-mte81t.0880.gi54.19f0.2001.IP)
+[12:16:48] *** Quits: urioxis (urioxis@the.onion.princess) (Ping timeout: 121 seconds)
+[12:20:38] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[12:21:21] *** Quits: sleumas2k (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[12:24:08] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[12:27:36] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 121 seconds)
+[12:31:25] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[12:31:34] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[12:43:43] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[12:44:14] *** Joins: urioxis (urioxis@the.onion.princess)
+[12:49:12] *** sleumas2k is now known as sleumas2000
+[12:59:44] *** Joins: Asoka_White (Asoka@Pony-h8dt2l.net-htp.de)
+[13:02:01] *** Quits: Asoka (Asoka@Pony-pvc18q.net-htp.de) (Ping timeout: 121 seconds)
+[13:17:14] *** Joins: Cydie (Cydie@the.little.cloud.colt)
+[13:17:45] *** Quits: Cydie (Cydie@the.little.cloud.colt) (Connection closed)
+[13:18:01] *** Joins: Cydie (Cydie@the.little.cloud.colt)
+[13:42:21] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[13:50:08] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[13:52:13] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Connection closed)
+[13:52:32] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[13:57:02] <miggyb> Gigabit: I did, haven't read it yet
+[14:00:39] *** Joins: Asoka (Asoka@Pony-m4oh30.net-htp.de)
+[14:03:36] *** Quits: Asoka_White (Asoka@Pony-h8dt2l.net-htp.de) (Ping timeout: 121 seconds)
+[14:23:36] *** Joins: DataByteBrony (DataByte@Pony-n3en0j.hfc.comcastbusiness.net)
+[14:28:08] *** Joins: cyborg_ar (cyborgar@Pony-obf.p8l.25.181.IP)
+[14:31:35] <miggyb> "vSphere Client (5.5) can manage VM of up to hardware version 9. But it can create VM only of hw-version 8, and upgrade them directly to v10 (which it can not manage). But it can still manage VMs with hw-version 9 (i.e. those created & upgraded by vSphere Client 5.1)..."
+[14:31:38] <miggyb> This is why I drink
+[14:34:18] *** Quits: cyborg_ar (cyborgar@Pony-obf.p8l.25.181.IP) (Client exited)
+[14:49:07] *** Quits: DataByteBrony (DataByte@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[14:50:23] *** Quits: Cydie (Cydie@the.little.cloud.colt) (Connection closed)
+[15:00:52] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[15:02:25] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[15:03:55] *** Quits: Fallfeathers (Fallfeather@Pony-7vquq0.bigpond.net.au) (Connection closed)
+[15:04:01] *** Joins: S2K (sleumie@Pony-mgvdhi.dsl.as9105.com)
+[15:05:22] *** Quits: sleumas2k (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[15:06:22] *** S2K is now known as sleumas2000
+[15:06:54] *** Joins: DataByteBrony (DataByte@Pony-2hvqo4.5jsm.i2gu.000d.2601.IP)
+[15:11:44] *** Init3-away is now known as init3
+[15:16:30] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[15:17:11] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[15:19:12] *** Joins: Asoka_White (Asoka@Pony-s4vrav.net-htp.de)
+[15:21:12] *** Quits: Asoka (Asoka@Pony-m4oh30.net-htp.de) (Ping timeout: 121 seconds)
+[15:49:45] <johnsey> http://arstechnica.com/business/2015/06/10gbps-internet-for-400-a-month-can-be-yours-if-you-move-to-vermont/
+[15:49:46] <PinkiePieBot> [ 10Gbps Internet for $400 a month can be yours if you move to Vermont | Ars Technica ]
+[15:50:14] <johnsey> that's it, I'm moving!
+[15:50:52] <DataByteBrony> hahaha
+[15:54:48] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:55:28] <Googie> I wonder if you literally lived next door to a data center...
+[15:56:14] <Googie> Meanwhile, here, our new FTTN network is going to be capped to 12mbit down for a while :/
+[15:57:29] <Unixkitty> 10Gbps? Why in the world could anyone possibly need that kind of speed for a personal internet connection
+[16:00:36] <Googie> Peak speeds it could be nice, though little on the internet is hooked up to that sort of connectivity in general
+[16:04:22] * Googie was transferring data from his dedi recently, for temporary storage while he reconfigured it, 1GBPS local connectivity would have been nice though, instead of having to spin up a temporary EC2 instance
+[16:07:43] *** Unixkitty is now known as Awaykitty
+[16:11:28] <Googie> Come to think of it, 10gbE NICs are quite expensive though. Not quite sure how I'd hook it up on a budget. My router would probably need a bit of an upgrade too :P
+[16:15:38] *** Quits: Sellyme (quassel@Pony-mte81t.0880.gi54.19f0.2001.IP) (Quit: No Ping reply in 180 seconds.)
+[16:16:40] *** Joins: Sellyme (quassel@Pony-mte81t.0880.gi54.19f0.2001.IP)
+[16:22:21] *** Awaykitty is now known as Unixkitty
+[16:35:08] *** Joins: Asoka (Asoka@Pony-au04c4.net-htp.de)
+[16:37:48] *** Quits: Asoka_White (Asoka@Pony-s4vrav.net-htp.de) (Ping timeout: 121 seconds)
+[16:41:03] *** Joins: Asoka_White (Asoka@Pony-9i3mfs.net-htp.de)
+[16:43:19] *** Quits: Asoka (Asoka@Pony-au04c4.net-htp.de) (Ping timeout: 121 seconds)
+[16:58:51] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[16:59:48] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[17:06:48] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:09:26] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[17:19:45] *** Joins: cyborg_ar (cyborgar@Pony-obf.p8l.25.181.IP)
+[17:35:58] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Quit: Leaving)
+[17:36:19] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[17:50:22] *** Quits: sleumas2k (sleumie@my.little.karaoke) (Connection closed)
+[17:50:52] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[18:05:48] *** Quits: Datalink__ (Datalink@Datalink) (Ping timeout: 121 seconds)
+[18:15:32] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:23:43] *** init3 is now known as Init3-away
+[18:49:02] <cyborg_ar> There are lies, damned lies, statistics - and ADC/DAC specs
+[18:49:30] *** Joins: Crimson_Tail (Bluepon@Pony-dr10rm.s0tm.sdub.0151.2601.IP)
+[18:54:12] *** Unixkitty is now known as Awaykitty
+[18:55:21] *** Joins: GeoPon-E (nnondmwfubj@Pony-ml9i62.abo.wanadoo.fr)
+[19:11:06] <AppleDash> cyborg_ar: lol
+[19:12:05] <cyborg_ar> headline specs for pretty much any component actually
+[19:14:07] * AppleDash adds a DAC to cyborg_ar
+[19:14:41] * cyborg_ar violates the DAC's timing specs
+[19:16:36] <AppleDash> :(
+[19:45:31] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (A TLS packet with unexpected length was received.)
+[19:45:41] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[19:55:33] *** Quits: urioxis (urioxis@the.onion.princess) (Ping timeout: 121 seconds)
+[20:12:10] <Apple_Bloom> Apple Wants to Kill the Unencrypted Internet (http://motherboard.vice.com/read/apple-wants-to-kill-the-unencrypted-internet)
+[20:12:44] <Apple_Bloom> I approve of this
+[20:16:38] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:22:58] *** Joins: urioxis (urioxis@the.onion.princess)
+[20:23:24] <Colgate> Apple_Bloom: I find it ironic that that news post is unencrypted
+[20:23:52] <Apple_Bloom> Colgate: I was actually thinking the same thing.
+[20:23:58] <Colgate> also >implying http is "the internet"
+[20:25:04] <Colgate> "Apple has basically deprecated HTTP in iOS 9 and OS X 10.11."
+[20:25:08] <Colgate> I find that quote hilarious
+[20:25:51] <Apple_Bloom> They can't even do that
+[20:26:23] <Apple_Bloom> It would wreak havoc 
+[20:26:29] <Colgate> uh, well, news flash, https is http over tls
+[20:26:33] <Colgate> go figure
+[20:26:45] <Colgate> I don't think that quote means what that guy thinks it means
+[20:28:17] <Apple_Bloom> You cannot deprecate HTTP without deprecating HTTPS
+[20:28:21] <Apple_Bloom> Also
+[20:28:39] <Apple_Bloom> +1 to you for using the term TLS rather than SSL
+[20:28:43] <Colgate> either way, I still disagree with forcing https everywhere
+[20:29:07] <Colgate> should you use tls? yes
+[20:29:09] <frackster> http://www.theregister.co.uk/2015/06/03/admins_rebel_over_guiless_install_for_windows_server_2016/
+[20:29:10] <PinkiePieBot> [ Sysadmins rebel over GUI-free install for Windows Server 2016 • The Register ]
+[20:29:39] <Colgate> but it shouldn't be mandatory
+[20:29:57] <frackster> Colgate: I bet you're gonna enjoy that upgrade ;)
+[20:30:18] <Apple_Bloom> I'm all for using HTTPS everywhere
+[20:31:19] <Colgate> well, the CA system needs to be fixed first
+[20:31:40] <Colgate> frackster: I already use RSAT all the time, nothing will change for me
+[20:32:25] <Apple_Bloom> The CA system is completely fucked the way it is now
+[20:32:36] <frackster> oh nice
+[20:33:29] <Colgate> I don't know why my coworkers remote desktop into the windows servers
+[20:36:26] <Colgate> Apple_Bloom: get DANE and dnssec implemented everywhere first, then we can talk about requiring tls on every http connection
+[20:48:59] *** Awaykitty is now known as Unixkitty
+[20:58:47] *** Init3-away is now known as init3
+[21:01:19] *** Quits: cyborg_ar (cyborgar@Pony-obf.p8l.25.181.IP) (Client exited)
+[21:01:40] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[21:02:49] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[21:40:08] *** Joins: Eventide (uid61788@Tips.Fedora)
+[21:41:49] *** Unixkitty is now known as Awaykitty
+[21:42:03] *** Joins: Sombra (Iceman@Darkhorse21)
+[21:47:36] *** Quits: Phase (Phase4@Pony-n241ii.internode.on.net) (Quit: Leaving)
+[21:57:35] *** Joins: Phase (Phase4@Pony-n241ii.internode.on.net)
+[22:05:43] *** Quits: Phase (Phase4@Pony-n241ii.internode.on.net) (Quit: Leaving)
+[22:08:09] *** Quits: GeoPon-E (nnondmwfubj@Pony-ml9i62.abo.wanadoo.fr) (Quit: Quitte)
+[22:21:22] *** Gigabit is now known as GigaTown
+[22:49:32] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[23:23:54] <AppleDash> Hey, guys... Question
+[23:24:10] <AppleDash> You know in some programs, example Audacity, you have a little "playback level" meter
+[23:24:36] <AppleDash> Is there some way to play an audio file in like mplayer (or anything else really) and through an external program, get that value at like 100 samples/sec?
+[23:27:05] <AppleDash> If I could even do it through pulse or something that would be great
+[23:27:09] * AppleDash wonders if wolfyshy might know
+[23:29:44] *** eyeburn is now known as Starburn
+[23:33:25] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[23:42:52] *** Creeps|AFK is now known as RedHelper[NLR]
+[23:50:26] <johnsey> AppleDash: http://www.alsa-project.org/alsa-doc/alsa-lib/group___p_c_m___scope.html
+[23:50:27] <PinkiePieBot> [ ALSA project - the C library reference: Scope Plugin Extension ]
+[23:50:39] <johnsey> for an example of how to use it: http://laugeo.free.fr/ameter.html
+[23:50:40] <PinkiePieBot> [ ameter ]
+[23:50:43] <AppleDash> I'd prefer to be able to do this with a shell command and stuff
+[23:51:28] <Phase> pavucontrol has such a level display
+[23:51:49] <Phase> i'm not aware of anything that works in a console
+[23:53:12] *** init3 is now known as Init3-away
+[23:55:45] <AppleDash> Hmm, following the instructions there johnsey, I can't make it work (I wanted to test the example you linked)
+[23:56:16] <johnsey> was just the only thing i found that uses scopes
+[23:56:16] <AppleDash> And yeah, the pavucontrol display is another example of what I mean
+[23:59:42] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)

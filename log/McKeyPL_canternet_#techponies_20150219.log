@@ -1,0 +1,287 @@
+[00:03:30] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[00:05:18] <ShivalPonyWolf> and this just made my morning - https://twitter.com/Liban1arda/status/568170762919669760/photo/1
+[00:05:19] <PinkiePieBot> [ trippin on Twitter: "You know when your new bank card looks so fresh, how can my security number be 981 😂 http://t.co/glmWQoeLBg" ]
+[00:20:26] <ShivalPonyWolf> https://www.defcon.org/images/defcon-22/dc-22-presentations/Campbell/DEFCON-22-Christopher-Campbell-The-Secret-Life-of-Krbtgt.pdf
+[00:27:44] *** Quits: cyborg_ar (cyborgar@Pony-39f.bq3.25.181.IP) (Ping timeout: 121 seconds)
+[00:38:55] *** Joins: Asoka_White (Asoka@Pony-tt6sov.net-htp.de)
+[00:42:09] *** Quits: Asoka (Asoka@Pony-0n388o.net-htp.de) (Ping timeout: 121 seconds)
+[01:03:33] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[01:05:49] *** Joins: cyborg_ar (cyborgar@Pony-39f.bq3.25.181.IP)
+[01:07:04] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[01:30:50] *** Quits: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile) (Connection closed)
+[01:32:35] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[01:38:51] *** Joins: nscoots (FreyGrimrod@Pony-137r1m.sub-70-192-10.myvzw.com)
+[01:42:59] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[01:44:00] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[01:44:48] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[01:51:41] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[01:59:43] *** Neptune|sleep is now known as Neptune
+[02:03:23] *** Quits: nscoots (FreyGrimrod@Pony-137r1m.sub-70-192-10.myvzw.com) (Ping timeout: 121 seconds)
+[02:03:45] *** Joins: nscoots (FreyGrimrod@Pony-137r1m.sub-70-192-10.myvzw.com)
+[02:23:25] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[02:30:44] *** Quits: Webster (Webster@Pony-mme.2eo.212.73.IP) (Quit: Leaving)
+[02:46:29] <Moonlightning> hmmm
+[02:47:00] <Moonlightning> If you only specify audio-related options to `ffmpeg`, does it also reencode the video?
+[03:02:01] *** Quits: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (The TLS connection was non-properly terminated.)
+[03:04:31] <JustAberrant> depends
+[03:04:46] <JustAberrant> if you specify the video codec as "copy" it shouldn't
+[03:04:56] <JustAberrant> though it might do stuff to make it work with the container?
+[03:09:39] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[03:41:14] <Moonlightning> I just copied these options xP
+[03:41:24] <Moonlightning> >> https://trac.ffmpeg.org/wiki/AudioChannelManipulation
+[03:41:27] <PinkiePieBot> [ AudioChannelManipulation – FFmpeg ]
+[03:41:53] <Moonlightning> > ffmpeg -i $infile -ac 1 $outfile
+[03:42:13] * AppleDash manipulates Moonlightning's audio channel until he sounds like a mare
+[03:42:43] <JustAberrant> whatchadoing?
+[03:44:21] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[03:45:19] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[03:46:17] <AppleDash> Guys I need some help
+[03:46:33] <AppleDash> For /whatever reason/ I can't authenticate to my desktop from my laptop with my SSH key.
+[03:47:19] <AppleDash> ~/.ssh and all files therein are 700 and 600 respectively on both machines, my desktop has SSH key auth in the sshd config, and my SSH public key is in my desktop
+[03:47:29] <AppleDash> 's /home/appledash/.ssh/authorized_keys
+[03:47:38] <AppleDash> Yet it still asks me for a password when I try to SSH. Why?
+[03:47:44] <AppleDash> (Not a key password)
+[04:01:41] <ShivalPonyWolf> aanyoen familliar with krb5.conf and AD intergration
+[04:01:42] <ShivalPonyWolf> is the kpasswd_server required if the passwords arnt being changed in AD on that system
+[04:14:19] <Moonlightning> AppleDash: check the permissions on parent dirs
+[04:14:38] <Moonlightning> They should all be go-w
+[04:16:18] <Googie> http://www.businessinsider.com.au/att-gigapower-tackles-google-fiber-in-kansas-city--but-its-charging-more-for-privacy-2015-2
+[04:16:34] <Googie> $30 a month to opt o ut of the company's "internet preferences program"
+[04:16:58] <Moonlightning> -.-
+[04:18:27] <AppleDash> Later Moonlightning
+[04:18:35] <AppleDash> Too busy installing freebsd
+[04:19:00] <Moonlightning> AppleDash: https://xkcd.com/518/
+[04:19:01] <PinkiePieBot> [ xkcd: Flow Charts ]
+[04:20:00] <AppleDash> Lol
+[04:20:18] <Googie> I should try installing FreeBSD :P
+[04:20:33] <Googie> I actually do need to get around to knowing it a bit better at some point
+[04:21:20] <Moonlightning> Now I'm curious as to what the FreeBSD installer looks like
+[04:22:54] <AppleDash> http://i.imgur.com/yAs1mxL.jpg
+[04:23:08] <AppleDash> Moonlightning
+[04:25:35] <ShivalPonyWolf> https://forums.lenovo.com/t5/Lenovo-P-Y-and-Z-series/Lenovo-Pre-instaling-adware-spam-Superfish-powerd-by/m-p/1863174#M79882
+[04:25:36] <PinkiePieBot> [ Re: Lenovo Pre-instaling adware/spam - Superfish -... - Page 3 - Lenovo Community ]
+[04:25:38] <ShivalPonyWolf> https://pbs.twimg.com/media/B-LFlqYCMAE_Zy2.jpg:large
+[04:25:42] <ShivalPonyWolf> way to go lenovo
+[04:25:49] <ShivalPonyWolf> you adware wriddled whore of a laptop provider
+[04:32:43] <ShivalPonyWolf> ahh micorosft how not to fix a critical security failure in your app - http://www.theregister.co.uk/2015/02/19/redmond_updates_outlook_app_but_haters_still_gunna_hate/
+[04:32:44] <PinkiePieBot> [ Redmond updates Outlook app security, but haters still gunna hate • The Register ]
+[04:35:29] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[04:44:04] *** Starburn is now known as eyeburn
+[04:58:17] *** Nelly is now known as Nully
+[05:12:23] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[05:15:41] *** Quits: Nully (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (The TLS connection was non-properly terminated.)
+[05:16:20] *** Quits: ChaoticRift (ChaoticRift@Pony-trkato.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[05:30:18] <cyborg_ar> https://www.youtube.com/watch?v=yO7MWuJ7zLA
+[05:30:18] <PinkiePieBot> [ Takeo Ischi - New Bibi Hendl (Chicken Yodeling) 2011 - 3511985 views - 0:02:55 long - 35784 likes - 97.88% ]
+[05:55:34] <ShadySound> nice explanation of YouTube copyright: https://www.youtube.com/watch?v=1PphqQFLw7k&index=20&list=PLNC_sRuPtMommuVWDxHiNP3ntlrG_wY4W
+[05:55:35] <PinkiePieBot> [ The Real Youtube Copyright School - 11706 views - 0:12:25 long - 864 likes - 99.08% ]
+[06:00:31] *** RedHelper is now known as Creeps|AFK
+[07:12:31] *** Ashfire is now known as Ashleep
+[08:05:39] *** Joins: Fallfeathers (Fallfeather@Pony-v0u6nc.internode.on.net)
+[08:07:34] *** Joins: GigabitPony (Gigabit@AppleDash.is.my.pet)
+[08:38:41] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Ping timeout: 121 seconds)
+[08:49:06] *** Finnfinn is now known as FinnSHOWER
+[08:54:01] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:55:49] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[08:56:49] *** Quits: nscoots (FreyGrimrod@Pony-137r1m.sub-70-192-10.myvzw.com) (Ping timeout: 121 seconds)
+[09:04:09] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Ping timeout: 121 seconds)
+[09:05:38] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[09:09:27] *** FinnSHOWER is now known as Finnfinn
+[09:15:36] *** [A]McKey is now known as McKey
+[09:17:05] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[09:30:39] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[09:46:42] *** Joins: nscoots (FreyGrimrod@Pony-137r1m.sub-70-192-10.myvzw.com)
+[09:56:45] *** Quits: nscoots (FreyGrimrod@Pony-137r1m.sub-70-192-10.myvzw.com) (Ping timeout: 121 seconds)
+[09:57:17] *** Joins: JockeTF (jocke@Pony-pbm.r3h.28.195.IP)
+[10:09:19] *** Joins: Datalink (Datalink@Datalink)
+[10:11:35] <ShivalPonyWolf> https://pbs.twimg.com/media/B-McfHeCMAAPmkv.png:large
+[10:14:41] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Connection closed)
+[10:15:12] *** Joins: Starthunder (blackl@property.of.lightningcrash)
+[10:19:20] <Datalink> trying to make: http://pastebin.com/89vnTCDX render from translated data from https://github.com/OoliteProject/oolite-assets/blob/master/Models/cobramk3-old.mesh and failing
+[10:19:21] <PinkiePieBot> [ oolite-assets/cobramk3-old.mesh at master · OoliteProject/oolite-assets · GitHub ]
+[10:22:52] <Phase4> ShadySound, http://youtu.be/GZadCj8O1-0
+[10:22:52] <PinkiePieBot> [ Rob Reid: The $8 billion iPod - 822117 views - 0:05:12 long - 15544 likes - 98.63% ]
+[10:23:03] *** McKey is now known as [A]McKey
+[10:29:08] <Googie> https://maps.google.com/locationhistory/b/1/
+[10:29:09] <PinkiePieBot> [ Sign in - Google Accounts ]
+[10:53:23] *** Quits: reiuiji (reiuiji@nuclear.raven) (Ping timeout: 121 seconds)
+[10:54:48] *** Joins: reiuiji (reiuiji@Pony-6vp0lq.ma.comcast.net)
+[11:20:50] *** Quits: cyborg_ar (cyborgar@Pony-39f.bq3.25.181.IP) (Ping timeout: 121 seconds)
+[11:28:59] *** [A]McKey is now known as McKey
+[12:09:13] *** McKey is now known as [A]McKey
+[12:09:41] *** Q0 is now known as Q0|Away
+[12:20:12] *** GigabitPony is now known as Gigabit
+[12:47:33] *** Joins: nscoots (FreyGrimrod@Pony-137r1m.sub-70-192-10.myvzw.com)
+[12:49:27] *** Quits: Cameron_D (cameron@cam.mylittle.horse) (Ping timeout: 121 seconds)
+[12:58:43] *** \m is now known as mniip
+[12:59:02] *** Quits: mniip (m@Pony-o9q.v2g.219.178.IP) (Quit: ZNC - http://znc.in)
+[12:59:08] *** Joins: mniip (mniip@Pony-o9q.v2g.219.178.IP)
+[12:59:36] *** mniip is now known as Pony_57611
+[12:59:47] *** Pony_57611 is now known as mniip
+[13:20:01] *** Joins: Cameron_D (cameron@Pony-be0im7.mylittle.horse)
+[13:25:05] *** Quits: nscoots (FreyGrimrod@Pony-137r1m.sub-70-192-10.myvzw.com) (Ping timeout: 121 seconds)
+[13:28:39] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[13:30:18] *** mniip is now known as \m
+[14:33:51] *** [A]McKey is now known as McKey
+[16:06:44] *** Neptune is now known as Neptune|sleep
+[16:25:52] *** Quits: Fallfeathers (Fallfeather@Pony-v0u6nc.internode.on.net) (Connection closed)
+[16:33:56] *** Joins: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[16:48:30] *** Quits: JockeTF (jocke@Pony-pbm.r3h.28.195.IP) (Quit: Leaving.)
+[16:53:18] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[17:02:14] *** Joins: cyborg_ar (cyborgar@Pony-r44.bg5.172.190.IP)
+[17:14:44] *** McKey is now known as [A]McKey
+[17:30:14] *** [A]McKey is now known as McKey
+[17:32:20] *** Quits: cyborg_ar (cyborgar@Pony-r44.bg5.172.190.IP) (Client exited)
+[17:44:40] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[18:47:15] *** McKey is now known as [A]McKey
+[18:49:50] *** Joins: Misan (misan@Pony-vmqpec.cm.kabsi.at)
+[19:11:54] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[19:13:50] *** [A]McKey is now known as McKey
+[19:15:50] <johnsey> https://pbs.twimg.com/media/B-JV4gcIUAA_3Nz.jpg:large
+[19:15:54] <johnsey> https://pbs.twimg.com/media/B-Ikf94CUAAGeLZ.jpg:large
+[19:30:10] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[19:31:51] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[19:37:17] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[21:19:57] *** Quits: Creeps|AFK (RedHelper@The.Pony.That.Makes.You.Smile) (Connection closed)
+[21:20:39] *** Joins: Creeps|AFK (RedHelper@Pony-h3g.h5p.41.73.IP)
+[21:36:16] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[22:00:59] *** Gigabit is now known as GigaWork
+[22:03:49] *** Joins: Webster (Webster@Pony-mme.2eo.212.73.IP)
+[22:12:11] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[22:19:36] *** Joins: Featherdust (kehogcndnqd@Pony-qdiojh.fios.verizon.net)
+[22:19:40] *** Parts: Featherdust (kehogcndnqd@Pony-qdiojh.fios.verizon.net) ()
+[22:50:56] <AppleDash> ShivalPonyWolf: hi
+[22:56:18] <ShivalPonyWolf> how the superfish key and password were extracted from the adware affecting lenovo laptops - http://blog.erratasec.com/2015/02/extracting-superfish-certificate.html
+[22:56:18] <PinkiePieBot> [ Errata Security: Extracting the SuperFish certificate ]
+[22:57:27] <AppleDash> ShivalPonyWolf: Can you read this text?
+[22:57:36] <ShivalPonyWolf> no no i cant
+[22:57:39] <ShivalPonyWolf> its all text like
+[22:57:49] <ShivalPonyWolf> squiggly little letters and all
+[22:57:59] <AppleDash> OK, good to know
+[22:58:14] * ShivalPonyWolf crys, its my big secret. im on irc and i cant read
+[22:58:34] <AppleDash> ShivalPonyWolf: Can you do me a favor
+[22:58:59] <ShivalPonyWolf> depends. im at work
+[22:59:34] <AppleDash> SSH to your ftb server, go to the server folder, mv world/players/jordinjm.dat world/players/Jordin.dat
+[23:00:12] <Phase4> lolnice
+[23:00:29] <ShivalPonyWolf> does the server need to be stopped and started for that to take affect
+[23:00:37] <AppleDash> I don't think so
+[23:00:47] <AppleDash> It couldn't hurt thought right?
+[23:00:48] <AppleDash> though*
+[23:01:14] <ShivalPonyWolf> there is no players
+[23:01:16] <ShivalPonyWolf> but therse a playersdata
+[23:01:30] <AppleDash> In the world folder?
+[23:01:33] <ShivalPonyWolf> hmm that seeems to only contain thaumcraft stuff
+[23:01:47] <AppleDash> What exists in the world folder then?
+[23:03:14] <ShivalPonyWolf> AE2            cofh      DIM1    DIM-17  DIM-47     DIM_MYST4     forcedchunks.dat  level.dat_old  playerdata     session.lock
+[23:03:17] <ShivalPonyWolf> aroma1997      computer  DIM-1   DIM-19  DIM_MYST2  enderio       JABBA             multipart.dat  RedstoneEther  stats
+[23:03:20] <ShivalPonyWolf> chickenchunks  data      DIM-15  DIM-20  DIM_MYST3  EnderStorage  level.dat         NEI            region
+[23:03:41] <AppleDash> Anything interesting in like DIM-1?
+[23:04:03] <ShivalPonyWolf> no
+[23:04:11] <AppleDash> WTF
+[23:04:15] <ShivalPonyWolf> hmm the data folder has alot in it
+[23:04:20] <ShivalPonyWolf> inventory-jordinjm-2015-01-11_13.52.15-grave-0.dat
+[23:04:22] <ShivalPonyWolf> stuff liek that
+[23:04:38] <AppleDash> What if you do like
+[23:04:43] <ShivalPonyWolf> NEI contains a players folder
+[23:04:43] <AppleDash> find . name 'jordinjm.dat'
+[23:04:46] <AppleDash> Does that bring up anything?
+[23:04:59] <ShivalPonyWolf> World/NEI/players/jordinjm.dat
+[23:05:23] <AppleDash> Sure, change the name of that to Jordin.dat, couldn't hurt.
+[23:06:26] <ShivalPonyWolf> i wonder if any of this is actually case sensative
+[23:06:35] <AppleDash> Probably is
+[23:06:51] <AppleDash> I'd suggest you name it Jordin.dat
+[23:06:57] <ShivalPonyWolf> yep
+[23:07:47] <ShivalPonyWolf> il leave the death and grave files alone for now
+[23:07:54] <AppleDash> OK
+[23:07:57] <ShivalPonyWolf> ok server is starting back up again
+[23:08:07] <AppleDash> Thanks
+[23:09:19] <ShivalPonyWolf> if it fails il try lowercase filename
+[23:09:39] <AppleDash> He'll be joining later
+[23:09:53] <ShivalPonyWolf> oks
+[23:11:37] <Starthunder> > EnderStorage
+[23:11:39] <Starthunder> > chickenchunks
+[23:11:43] <Starthunder> > aroma1997
+[23:11:53] <Starthunder> whoever made this directory tree had a sense of humor
+[23:12:32] <ShivalPonyWolf> why is that amusing
+[23:12:36] <ShivalPonyWolf> its just the mod names
+[23:13:12] <Starthunder> whoever came up with these mod names had a sense of humor
+[23:13:56] <ShivalPonyWolf> that would be the mod authors they all have weird names
+[23:14:37] *** Neptune|sleep is now known as Neptune
+[23:20:24] <Colgate> ShivalPonyWolf: only question I have about that article is, what is superfish? :P
+[23:20:39] <Colgate> and why does it only affect lenovo laptops
+[23:21:06] <Creeps|AFK> Does anypony know where I can get a good cheap VPS?
+[23:21:12] *** Creeps|AFK is now known as RedHelper
+[23:22:38] <ShivalPonyWolf> Colgate: for the last 6 motnhs lenovo has been bundling the adware with their new laptops
+[23:22:56] <ShivalPonyWolf> its generic adware so other people are use it in they installed somethign with it
+[23:23:15] <ShivalPonyWolf> but the big issue is that lenovo knowingly included it with their laptops builds
+[23:24:58] <Colgate> I don't see how extracting this cert lets him mitm?
+[23:25:20] <ShivalPonyWolf> the adware installs a fully trusted root cert into the system
+[23:25:37] <ShivalPonyWolf> that can be used to sign any domain
+[23:25:44] <Colgate> sure, but you still need the private key of the CA cert
+[23:25:51] <ShivalPonyWolf> Colgate: which we have
+[23:25:55] <ShivalPonyWolf> it was ripped out of the application
+[23:26:04] <Colgate> oh, I must ahve misread that part
+[23:26:23] <Colgate> wait, why did they bundle the private key in the program? o.O
+[23:26:23] <ShivalPonyWolf> the key and cert are both sitting as rsa files in memory
+[23:26:27] <ShivalPonyWolf> with the proper headers
+[23:26:34] <ShivalPonyWolf> and the password was cracked very easily
+[23:26:40] <ShivalPonyWolf> becuase it has to sign new domains on the fly
+[23:26:46] <Colgate> ah
+[23:26:51] <ShivalPonyWolf> when you go to a https site it intercepts, and gens a matching cert
+[23:26:57] <ShivalPonyWolf> its so the adware can inject into https sites
+[23:27:02] <Colgate> yeah, I fully understand now
+[23:27:11] <Colgate> I just didn't know what the program actually did
+[23:27:19] <ShivalPonyWolf> ahh
+[23:27:33] <ShivalPonyWolf> sad thing is avast does the same thing
+[23:27:38] <ShivalPonyWolf> in order to 'protect' you
+[23:28:06] <ShivalPonyWolf> not sure if the key is local though
+[23:28:16] <ShivalPonyWolf> i dont think its been publicly looked at
+[23:28:21] <Colgate> that's a hard thing though
+[23:29:09] <Colgate> I mean
+[23:29:52] <Colgate> AV is made to protect from malicious downloads too
+[23:30:04] <Colgate> but if it can't can tls connections, it is a huge blindspot for it
+[23:30:08] <Colgate> can't scan*
+[23:30:16] <ShivalPonyWolf> it can scan the file as its written to disk
+[23:30:30] <Colgate> that... is a fair point
+[23:30:41] <Colgate> there really isn't a reason then
+[23:30:43] <ShivalPonyWolf> the web scanner is designed not to protect you from downloads
+[23:30:53] <ShivalPonyWolf> its for in browser exploitation
+[23:31:15] <ShivalPonyWolf> and i think stuff like hidden click interception and dodgy iframes
+[23:31:27] <ShivalPonyWolf> its useful if you want it
+[23:31:32] <ShivalPonyWolf> but its a feature thats on by default
+[23:31:34] <Colgate> protect against last measure and such?
+[23:31:44] <ShivalPonyWolf> and it doesnt mention that it it does it in a very dodgy way
+[23:31:49] <ShivalPonyWolf> sort of
+[23:32:11] <ShivalPonyWolf> its suppsoed to protect you before the malware is downloaded/hits your sytem
+[23:32:42] <ShivalPonyWolf> i just cant trust anything that tampers with root CAs and can sign everything
+[23:33:01] <Colgate> I wouldn't trust that either
+[23:34:24] <ShivalPonyWolf> only browsers and the OS shoudl really be able to touch the root cert store. everythign manual should require emplicit authorisation from the user and go into the trusted 3rd party store
+[23:34:37] <Phase4> i'm not sure how avast handles browsers, but for email it just asked you to turn off ssl
+[23:35:19] <ShivalPonyWolf> Phase4: thats a whole nother issue
+[23:35:27] <ShivalPonyWolf> Phase4: but i know how avast handles browser
+[23:35:34] <ShivalPonyWolf> go into your systems certificate truste root store
+[23:35:41] <ShivalPonyWolf> find the cert for avast! Web/Mail Sheild Root
+[23:35:49] <ShivalPonyWolf> it signs everything if you have secure web scanning on
+[23:35:51] *** Joins: ChaoticRift (ChaoticRift@Pony-17i1s9.7h3b.037j.000a.2601.IP)
+[23:35:53] <ShivalPonyWolf> but its not removed if you have that off
+[23:36:02] <ShivalPonyWolf> oh and it has a 10 year expiry
+[23:36:13] <johnsey> Lower your shields and surrender your privacy, resistance is futile
+[23:37:40] <johnsey> We will add your personal and private life to our databases. Your PC will adapt to service us.
+[23:39:55] <johnsey> or "Avast! Security by insecurity"
+[23:40:14] *** Joins: cyborg_ar (cyborgar@Pony-c5g.263.49.190.IP)
+[23:40:43] <Colgate> ick
+[23:40:45] <ShivalPonyWolf> sadly its still better then most AV vendors
+[23:40:51] <ShivalPonyWolf> just need to remove certain parts of it
+[23:41:56] *** McKey is now known as [A]McKey
+[23:42:54] * ShivalPonyWolf is seriously pondering an app that audits your certificate stores and activly monitors them for tampering
+[23:45:22] <Colgate> I don't think that they can really use the cracked password as evidence for anything though
+[23:45:31] <Colgate> anyone can make that password
+[23:45:43] *** Joins: nscoots (FreyGrimrod@Pony-oplli7.sub-70-192-25.myvzw.com)
+[23:46:17] <ShivalPonyWolf> what you mean using it as evidence?
+[23:46:24] <ShivalPonyWolf> what needs evidence?
+[23:46:44] *** Quits: Misan (misan@Pony-vmqpec.cm.kabsi.at) (Connection closed)
+[23:49:02] *** Parts: nscoots (FreyGrimrod@Pony-oplli7.sub-70-192-25.myvzw.com) ()
+[23:53:11] * JustAberrant wanders with little purpose in the near vicinities of both Colgate and johnsey 
+[23:59:02] <Colgate> "Note that the password "komodia" is suggestive..."
+[23:59:07] <Colgate> from the article
+[23:59:25] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)

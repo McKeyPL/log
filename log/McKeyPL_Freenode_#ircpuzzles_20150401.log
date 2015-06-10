@@ -1,0 +1,2039 @@
+[00:00:46] <yano> i forgot how much i fucking hate webdev
+[00:01:36] <ser_berry> haha what makes you say that?
+[00:04:56] <yano> fucking cloud services
+[00:05:14] <yano> i deleted the hello world thing and it wasn't changing anything on the site
+[00:05:39] <ser_berry> hehe caching is always a fun time
+[00:05:50] <yano> wow
+[00:06:03] <yano> this thing insists on using old versions
+[00:06:08] <yano> oh wait
+[00:06:25] <yano> omg, it finally did what i expected it to do
+[00:06:36] <yano> stupid fucking thing
+[00:08:12] <ser_berry> \o/
+[00:10:23] <FireFly> Soon
+[00:11:40] <ser_berry> that's a great show
+[00:12:58] <yano> blah
+[00:13:07] <yano> finally i'm getting errors
+[00:14:35] <yano> https://github.com/mbr/flask-bootstrap/blob/master/sample_application/templates/index.html
+[00:14:36] <jenni> [ flask-bootstrap/index.html at master · mbr/flask-bootstrap · GitHub ] - https://j.mp/1bOoDtC
+[00:14:40] <yano> i'm not even sure if this works anymore
+[00:16:06] <ser_berry> haha ie8
+[00:16:08] <ser_berry> so glad I don't have to support THAT anymore
+[00:17:33] <yano> hah
+[00:19:43] <yano> time to deploy is soooo long on dotcloud
+[00:19:44] <yano> geezus
+[00:21:04] <yano> i feel like it only deploys git log -2
+[00:22:25] *** Joins: ErrantEgo (~ErrantEgo@freenode/jester/errantego)
+[00:25:56] <yano> aaah
+[00:26:40] <ser_berry> you have to deploy for every change or what?
+[00:27:50] <yano> only if i want to see the changes on the remote server rather than locally
+[00:28:33] <yano> and i take the Bill O'Reilly method: FUCK IT, WE'RE DOING IT LIVE
+[00:28:50] <yano> i hate dev environment
+[00:28:50] <ser_berry> nice I used to have a boss like that
+[00:28:52] <yano> *envs
+[00:29:16] <yano> mostly because, in my experience, i have *never* *ever* been able to get shit that works in dev to work on production and visa versa
+[00:29:20] <yano> fucking shit
+[00:29:38] <ser_berry> yeah it's not always easy
+[00:29:46] <yano> "Container did not come up within 120 seconds."
+[00:29:48] <yano> ಠ_ಠ
+[00:29:55] <ser_berry> hehehe
+[00:31:56] <yano> i don't see the point of why that example thing has a create_app wrapped around the routes
+[00:32:57] <yano> and it makes me annoyed that git says my local repo is ahead by 2 commits, even though i keep pushing >_>
+[00:33:47] <ser_berry> that does sound annoying
+[00:34:55] <yano> oh and it seems i have to wait until these stupid 120 second timeouts happen before deploying again or that deploy move overwrite a newer deploy that i'm doing to attempt to fix the first
+[00:35:15] <ser_berry> haha holy shit
+[00:35:23] <ser_berry> reminds me of my old dev env at work
+[00:35:24] <yano> at least dotcloud is free
+[00:35:28] <yano> heroku isn't free anymore
+[00:35:40] <ser_berry> they expected me to compile the java app, sftp it over, and restart the service for every single change I made
+[00:35:47] <yano> haha, wow
+[00:35:47] <ser_berry> this took ~1:30
+[00:36:13] <ser_berry> so instead I just made a directory on the server and I make changes right on the dev machine
+[00:36:19] <ser_berry> I can't believe nobody tried that before
+[00:36:37] <ser_berry> it blows my mind that they just accepted that workflow
+[00:37:10] <yano> hah
+[00:37:27] <yano> i volunteer to update a local non-profits website  when they send me changes
+[00:37:30] <yano> i find it so annoying
+[00:37:39] <yano> because their box is linux, but is only accessible via ftp
+[00:37:44] <yano> so i can't just ssh and make the changes remotely
+[00:37:47] <yano> it is so annoying
+[00:37:53] * FireFly wonders if the non-profit is freenode :p
+[00:37:55] <yano> who even does that anymore
+[00:37:57] <yano> no
+[00:37:58] <FireFly> oh wait, local
+[00:38:00] <yano> i said *local*
+[00:38:01] <ser_berry> ftp in 2015 :[
+[00:38:02] <yano> yea
+[00:38:06] <yano> ikr?
+[00:38:09] <yano> not even sftp
+[00:38:11] <yano> just ftp
+[00:38:18] <ser_berry> wtf
+[00:38:23] <FireFly> That sucks
+[00:38:26] <yano> so i downloaded there entire massive site and put it into a local git repo
+[00:38:30] <ser_berry> they insist on a less secure solution?
+[00:38:35] <yano> they don't know what they are doing
+[00:38:42] <ser_berry> haha obv
+[00:38:43] <yano> they had some other tech guy do it before me
+[00:38:57] <yano> and they keep asking me every few months what "framework" the site uses because they want to update the layout
+[00:39:09] <ser_berry> haha
+[00:39:15] <yano> and i'm like... "your piece of shit website is a really hacked up PHP-custom-made template. there is no framework."
+[00:39:25] <ser_berry> job security right there
+[00:39:29] <yano> ikr?
+[00:39:40] <ser_berry> a few years got I did the same thing and the same company paid me for years afterwards to update it
+[00:39:43] <yano> it is volunteer
+[00:39:48] <yano> i don't get paid
+[00:40:03] <yano> are you kidding me:
+[00:40:05] <yano> NameError: global name 'flash' is not defined
+[00:40:07] <yano> ಠ_ಠ
+[00:40:25] <ser_berry> ruh roh
+[00:40:39] <xnr> yano: from dcuniverse import flash 
+[00:41:07] <ser_berry> fantastic tv show
+[00:41:09] <yano> my commit messages are basically garbage at this point
+[00:41:36] <ser_berry> ugh. that same job with the php framework, when I first got there they could commit every change to see updates
+[00:41:44] <ser_berry> the entire svn commit history was USELESS
+[00:41:48] <yano> haha
+[00:41:48] <xnr> "commit messages are garbage" is the second-to-last stage of VCS madness
+[00:41:51] <yano> that's what this is like
+[00:41:54] <xnr> last stage being rewriting history
+[00:42:33] <yano> indeed
+[00:42:49] <yano> at least i have a record of me losing my mind
+[00:43:20] <yano> "Why did yano go crazy and jump off that bridge?" "you can see this timestamp in the git log where they lost their mind."
+[00:43:33] <yano> omg
+[00:43:34] <yano> UndefinedError: 'fixes' is undefined
+[00:44:33] <yano> it'll be a miracle if i can even get back to a Hello World with bootstrap on flask before this starts
+[00:45:53] <ser_berry> maybe just do hello world with flask
+[00:46:00] <ser_berry> bootstrap is very easy to add by itself
+[00:46:25] <yano> lol
+[00:46:27] <yano> ahahaha
+[00:46:29] <yano> i wish
+[00:46:51] <yano> i spent the last 2 days trying to use fancy django packages to streamline bootstrap on heroku
+[00:46:54] <yano> didn't get anywhere
+[00:47:00] <yano> even just tried doing static files
+[00:47:02] <yano> and building a custom layout
+[00:47:04] <yano> nope
+[00:47:07] <yano> heroku didn't want any of that
+[00:47:14] <ser_berry> dang
+[00:47:22] <xnr> yano thou shalt use DICSS
+[00:47:29] <yano> trying to configure the the static paths on django on heroku is different than on any other fucking django thing i've done
+[00:47:44] <xnr> yano: when building websites, https://github.com/letsgetrandy/DICSS is all you need
+[00:47:46] <jenni> [ letsgetrandy/DICSS · GitHub ] - https://j.mp/19zT3P7
+[00:47:47] <yano> i think they do something funky with their system paths
+[00:48:05] <ser_berry> with django you gotta put it in that static folder
+[00:48:10] <ser_berry> and you have to define that folder in the middleware
+[00:48:13] <ser_berry> iirc
+[00:48:19] <yano> what is this DICSS?
+[00:48:26] <yano> ser_berry: yea i did that
+[00:48:28] <xnr> yano: read its readme.md xD
+[00:48:48] <xnr> (it's really worth reading)
+[00:48:57] <yano> huh
+[00:49:03] <ser_berry> tl;dr it's the longest dick joke you'll ever read
+[00:49:09] <yano> ser_berry: that's what i'm thinking
+[00:49:24] <yano> i don't see why you would want/need: Sass, LESS, nor DICSS
+[00:49:41] <yano> is this just a way to avoid writing js?
+[00:49:42] <xnr> also the most popular and most controversial dick joke you'll ever read
+[00:49:52] <yano> omg
+[00:49:54] <yano> it is a dick joke
+[00:49:56] <yano> »It's not the size of DICSS that matters, it's what you can do with it.«
+[00:50:00] <ser_berry> yeah I wasn't kidding :D
+[00:50:06] <xnr> http://uk.businessinsider.com/joke-github-dicss-project-goes-nuts-2015-3?r=US
+[00:50:08] <jenni> [ Joke GitHub DICSS project goes nuts - Business Insider ] - https://j.mp/19zTSaA
+[00:50:11] <yano> »Is it in yet?«
+[00:50:46] <yano> also, what is the point of travis-ci anyways?
+[00:50:51] <yano> i feel like that is just more headache
+[00:51:06] <yano> just what i need another production environment to try to set up just to get a cool green-checkmark
+[00:51:16] <ser_berry> continuous integration is a way to know when stuff breaks
+[00:51:27] <ser_berry> it's pretty awesome in some circumstances
+[00:51:31] <yano> wouldn't you know when stuff breaks when... oh i don't know... when you change it?
+[00:51:33] <xnr> https://github.com/letsgetrandy/DICSS/blob/master/dicss.js#L5
+[00:51:35] <jenni> [ DICSS/dicss.js at master · letsgetrandy/DICSS · GitHub ] - https://j.mp/19zUjl8
+[00:51:39] <ser_berry> not so awesome if you work with me and assholes break the build constantly
+[00:51:46] <yano> xnr: ahahaha
+[00:52:03] <ser_berry> I feel so dumb for laughin at this
+[00:52:05] <ser_berry> but I totally did
+[00:52:47] <xnr> now take a deep breath, brace yourself for social justice warriors and read through https://github.com/letsgetrandy/DICSS/pull/16
+[00:52:50] <jenni> [ Here's what you should do. by chriseppstein · Pull Request #16 · letsgetrandy/DICSS · GitHub ] - https://j.mp/19zUKMo
+[00:53:00] <xnr> all the 260 comments
+[00:53:13] <yano> who likes fancy web-dev?
+[00:53:31] <xnr> i like fancy web-dev!
+[00:53:39] <ser_berry> depends on what you mean by fancy
+[00:53:42] <xnr> fancy web-dev being done without me, that is
+[00:53:47] <ser_berry> you can take your parallax websites and take a hike
+[00:55:11] <yano> any of you want to make a fake cruise website for me?
+[00:55:20] *** Quits: Guest84316 (~heidy@150.216.254.154) (Read error: Connection reset by peer)
+[00:55:29] <yano> hypothetically, i might have control of https://ted.cruises/
+[00:55:31] *** Joins: Guest84316 (~heidy@150.216.254.154)
+[00:55:49] <xnr> if you can spare 5 bucks, take any of the webdev fiverrs
+[00:56:16] <yano> webdev fivvers?
+[00:56:43] <xnr> fiverrs = users of the website fiverr.com
+[00:57:02] <yano> ooh, lol
+[01:05:01] *** Joins: ebuch (~quassel@unaffiliated/ebuch)
+[01:09:23] *** Joins: SmoothPorcupine (~smooth@207.224.112.149)
+[01:10:36] <SmoothPorcupine> Is this going to be a big April fools and nothing happens?
+[01:10:59] <xnr> SmoothPorcupine: yes
+[01:11:07] <SmoothPorcupine> Thank god.
+[01:11:10] <yano> nope
+[01:11:12] <SmoothPorcupine> You had me going there for a second.
+[01:11:18] <SmoothPorcupine> yano: nani?!
+[01:11:23] <yano> hm?
+[01:11:29] <xnr> yano's "nope" is an april fool's joke
+[01:11:34] <yano> no comment
+[01:11:41] <SmoothPorcupine> xnr: Oh thank god.
+[01:11:57] <SmoothPorcupine> Gosh, I was about to cry.
+[01:12:20] <xnr> yano's "no comment" is an april fool's joke too, because "no comment" is a comment itself
+[01:12:26] <thommey> UVB-76
+[01:12:44] <SmoothPorcupine> You'd like me to believe that, wouldn't you?
+[01:13:20] <MinceR> xnr's "yano's "nope" is an april fool's joke" is an april fool's joke
+[01:13:36] <SmoothPorcupine> Whhaaaaaat.
+[01:13:39] <SmoothPorcupine> How?!
+[01:13:48] <FireFly> Excessive joking
+[01:13:48] <MinceR> also, my "xnr's "yano's "nope" is an april fool's joke" is an april fool's joke" is an april fool's joke too
+[01:13:49] <xnr> MinceR's "xnr's "yano's "nope" is an april fool's joke" is an april fool's joke" is an april fool's joke
+[01:13:53] <yano> lol
+[01:13:56] <xnr> dammit.
+[01:14:13] <MinceR> it's april's fool all the way down
+[01:14:14] <SmoothPorcupine> xnr: Nice try, but you got recurse'd/
+[01:14:23] <SmoothPorcupine> MinceR: :D
+[01:14:35] <SmoothPorcupine> Funny, I thought it was turtles...
+[01:14:42] <xnr> SmoothPorcupine: i got more stack space so i'm at an advantage 
+[01:14:55] <SmoothPorcupine> .............Are turtles an April fool's joke?
+[01:15:00] <SmoothPorcupine> Is my life a lie?
+[01:15:07] <MinceR> lol
+[01:15:19] <SmoothPorcupine> Some elaborate Truman show hoax, designed to make my believe in turtles?
+[01:15:24] <xnr> no, your life is a cake
+[01:15:24] <SmoothPorcupine> me*
+[01:15:30] <xnr> and the cake, then again, is a lie
+[01:15:32] <SmoothPorcupine> xnr: Oh god!
+[01:15:40] <SmoothPorcupine> ;_;
+[01:16:57] <MinceR> the cake is lye.
+[01:17:11] <xnr> it's all about who sparks the innermost joke, cause you know
+[01:17:24] <SmoothPorcupine> MinceR: That's even worse!
+[01:17:37] <xnr> a joke is like a virus. resilient, highly contagious. and even the smallest seed of a joke can grow, it can grow to define or to destroy you.
+[01:18:17] <SmoothPorcupine> A joke is like an idea whose time has come.
+[01:18:19] <SmoothPorcupine> Immediately.
+[01:18:43] <SmoothPorcupine> Only now are people realizing how big a joke politics has been all along.
+[01:18:58] <xnr> once a joke has taken hold of the brain it's almost impossible to eradicate
+[01:19:02] <SmoothPorcupine> "The day everyone got the joke."
+[01:19:10] <xnr> a joke that is fully formed - fully understood - that sticks, right in there somewhere
+[01:19:23] <FireFly> hm
+[01:19:40] * FireFly pondering whether to sleep
+[01:19:51] <xnr> sleep is an april fool's joke
+[01:20:14] <yano> it starts in 1:40
+[01:20:21] <SmoothPorcupine> Luckily, jokes don't have forms, just delivery.
+[01:20:30] <SmoothPorcupine> If you don't deliver it just so, it's not even funny anymore.
+[01:21:45] <SmoothPorcupine> It's like a short little story that stops itself.
+[01:21:51] <SmoothPorcupine> A mini narrative.
+[01:22:17] *** Joins: PyroPeter (~pyropeter@april-fools/2013/tenth/pyropeter)
+[01:22:28] * SmoothPorcupine snickers to itself
+[01:22:43] <SmoothPorcupine> But I doubt anyone gets /that/ joke. :P
+[01:24:37] *** ^j is now known as jacob1
+[01:24:40] <PyroPeter> so, how is this supposed to work?
+[01:24:41] <SmoothPorcupine> So what brings each and every one of you here?
+[01:25:09] <jacob1> moo
+[01:25:26] <Pici> they said there would be snacks
+[01:25:27] <jacob1> i'm here too moo encouragingly at people doing the april fools contest
+[01:25:59] <jacob1> just type !moo in pm :P
+[01:26:12] <SmoothPorcupine> !moo in pm :P
+[01:26:20] <SmoothPorcupine> You're broken.
+[01:26:25] <SmoothPorcupine> :V
+[01:26:26] * jacob1 slaps SmoothPorcupine with a sack of moldy potatoes
+[01:26:31] * SmoothPorcupine is disappointed
+[01:26:38] <SmoothPorcupine> Oh, just lag.
+[01:26:41] <SmoothPorcupine> Nevermind.
+[01:26:44] * SmoothPorcupine hugs jacob1
+[01:30:54] <PyroPeter> so, where is the first riddle?
+[01:31:22] <SmoothPorcupine> Depends.
+[01:31:34] <SmoothPorcupine> Have you read the Harry Potter series at all?
+[01:31:39] <PyroPeter> yes, completely
+[01:31:52] <PyroPeter> I thought about that too, actually
+[01:31:58] <SmoothPorcupine> Okay then you know all about Tom Riddle.
+[01:32:05] <SmoothPorcupine> Obviously. :P
+[01:32:30] <SmoothPorcupine> If we've both read it, it'd naturally come to mind as the only way to relate to a common stranger.
+[01:32:52] <SmoothPorcupine> Stories are like books of behavior we don't need.
+[01:33:37] <SmoothPorcupine> Popular culture isn't even almost religion-like, it's almost like a complete religion, at this point.
+[01:34:25] <SmoothPorcupine> Human devotion is an unnerving prospect. :y
+[01:38:03] *** Parts: Guest67663 (~larina@larina.znc.sactage.com) ()
+[01:38:34] <yano> PyroPeter: the starting clue will be given at 0100 UTC
+[01:38:34] *** Quits: stac (~stac@april-fools/2013/runnerup/stac) (Ping timeout: 245 seconds)
+[01:38:35] <yano> .t
+[01:38:35] <jenni> Tue, 31 Mar 2015 23:38:35 GMT
+[01:38:50] <yano> this gives me time to shower, eat, and maybe get the website up and running
+[01:38:52] <yano> :p
+[01:39:14] *** Joins: larina (~larina@april-fools/2014/seventh/larina)
+[01:40:16] <PyroPeter> yano: oh, I see. I actually failed to notice that the offset between CET and UTC isn't 0 hours, but 2
+[01:40:39] <yano> heh
+[01:40:51] <yano> this was a bit last minute
+[01:41:07] <MinceR> that would be CEST vs UTC :>
+[01:41:35] <SmoothPorcupine> yano: It shows. :y
+[01:41:58] <yano> SmoothPorcupine: heh
+[01:42:24] <yano> at least it is still happening
+[01:42:52] <SmoothPorcupine> Not if you don't showed. >:(
+[01:42:58] <SmoothPorcupine> shower*
+[01:43:01] <yano> haha
+[01:43:09] *** Joins: ishanyx (ishanyx@junethack/teamsplat/ishanyx)
+[01:43:24] <SmoothPorcupine> Got keep up appearance, yaknow?
+[01:43:56] *** Joins: bcode (bcode@unaffiliated/bcode)
+[01:44:16] <yano> indeed
+[01:44:54] <ser_berry> Butt3rfly: o/
+[01:44:57] <ser_berry> oops bcode 
+[01:45:07] <Butt3rfly> \o
+[01:45:26] <yano> finally got bootstrap and the damn theme working, https://ircpuzzles.org/
+[01:45:27] <ser_berry> hello to you too :)
+[01:45:28] <jenni> [ Index - Flask Super Example ] - https://j.mp/UHkdw5
+[01:45:32] <yano> \o/
+[01:45:38] <ser_berry> yano: HIRED
+[01:45:46] <yano> ser_berry: i'm hired?
+[01:45:47] <yano> lol
+[01:45:54] <ser_berry> :P
+[01:46:03] <bcode> hi ser_berry!
+[01:46:04] <yano> you don't realize how long it took me to figure that out
+[01:46:11] <ser_berry> lmao
+[01:46:16] <yano> i blame dotcloud for all the stupid "gotchas"
+[01:46:34] <yano> like the race condition with deploying
+[01:47:45] <SmoothPorcupine> Non-open source programmers love undocumented gotchas.
+[01:47:53] <SmoothPorcupine> Like Easter eggs.
+[01:47:59] <ser_berry> that timeout thing sounds awful
+[01:48:27] <SmoothPorcupine> yano: What's the race condition?
+[01:50:10] <yano> SmoothPorcupine: if one has deployed something that won't work, dotcloud keeps trying for up to 120 seconds, if you try to deploy between then and your second deployment works, dotcloud goes with the thing before your first attempt at deployment to display on the site, *and* if it gets the first deployment to work it will override the second deployment
+[01:52:19] <SmoothPorcupine> Hahaha
+[01:52:32] <SmoothPorcupine> See, this is when you stop using datcloud.
+[01:52:36] <SmoothPorcupine> Before you ever deploy.
+[01:52:40] <SmoothPorcupine> :y
+[01:52:55] <SmoothPorcupine> Well, before you ever make the mistake of deploying through dotcloud.
+[01:53:30] *** Joins: Nem0 (~nem0@unaffiliated/nem0)
+[01:54:48] *** Quits: Guest84316 (~heidy@150.216.254.154) (Read error: Connection reset by peer)
+[01:55:01] *** Joins: Twilight`Sparkle (~heidy@150.216.254.154)
+[01:55:24] *** Twilight`Sparkle is now known as Guest47040
+[01:58:20] *** Quits: Guest47040 (~heidy@150.216.254.154) (Client Quit)
+[01:58:38] *** Joins: Guest47040 (~toagac@trivialand/staff/toagac)
+[01:58:38] *** Guest47040 is now known as Twilight`Sparkle
+[01:59:40] *** Parts: Nem0 (~nem0@unaffiliated/nem0) ("There he goes. One of God's own prototypes. A high-powered mutant of some kind never even considered for mass production. Too weird to live, and too rare to die.")
+[02:00:58] <yano> SmoothPorcupine: at least it is better than heroku
+[02:01:56] <SmoothPorcupine> :y
+[02:02:00] <SmoothPorcupine> >lesser of two evils
+[02:02:07] <yano> heh
+[02:02:08] <SmoothPorcupine> >ability to craft entire worlds at your fingertips
+[02:02:16] <SmoothPorcupine> ISHYGDDT
+[02:02:17] <SmoothPorcupine> :y
+[02:02:28] * SmoothPorcupine is a game programmer/virtual reality enthusiast
+[02:02:59] <yano> i put the website on hold, i'm adding another level
+[02:04:44] <jacob1> D: no more levels, do website now
+[02:08:41] <cracker64> oh dear
+[02:09:20] <yano> tehe
+[02:09:44] <jacob1> we haven't even 01,01cheatedstarted yet, no need to add levels yet :P
+[02:22:34] <yano> hehe
+[02:22:40] <FireFly> "tehe"
+[02:23:14] <yano> indeed
+[02:24:54] <yano> okay
+[02:27:29] <yano> trying to add the negative levels like i did early was confusing
+[02:30:51] <yano> 30 minutes!
+[02:33:27] <MinceR> immunity to energy drain is useful :>
+[02:34:04] *** Joins: Nem0 (~nem0@unaffiliated/nem0)
+[02:34:10] <SmoothPorcupine> Most things are.
+[02:35:01] *** Joins: crashdemons (cd@unaffiliated/crashdemons)
+[02:36:50] <ubuntor> hype
+[02:37:00] *** Joins: mexicanjeans (~bixnood@unaffiliated/territoriojoven)
+[02:37:02] <yano> indeed
+[02:37:06] <yano> ooh more and more are showing up
+[02:37:08] <yano> it's getting closer!
+[02:37:10] <yano> .t
+[02:37:10] <jenni> Wed, 01 Apr 2015 00:37:10 GMT
+[02:37:15] <yano> 23 minutes!
+[02:37:29] <xnr> why didnt you choose midnight UTC in the first place?
+[02:38:07] <yano> because originally i thought i was going out to eat with a friend this evening, and thought i'd be back by 9pm, then they canceled so i stayed at home and cooked
+[02:38:25] <yano> (9pm EDT)
+[02:38:57] <xnr> excuses, excuses
+[02:39:11] <xnr> 01:00 UTC is 03:00 (AM) here :/
+[02:39:23] <yano> .excuse
+[02:39:24] <jenni> Did you check for a virus on your system?.
+[02:39:27] <yano> .excuse
+[02:39:27] <jenni> What did you type in wrong to get it to crash?.
+[02:39:33] <yano> .excuse
+[02:39:33] <jenni> There's currently a problem with our hosting company.
+[02:39:39] <crashdemons> inb4 the challenge is a joke - april fools (all 52 of us)
+[02:39:45] <yano> heh
+[02:39:47] <yano> it's real
+[02:40:28] <crashdemons> does this happen yearly?
+[02:40:33] <mexicanjeans> what is this and why should i care
+[02:40:41] <ubuntor> yep
+[02:40:55] <crashdemons> anything in particular I should expect / specific format ?
+[02:40:58] <jacob1> yes it happens yearly :P
+[02:41:08] <mexicanjeans> what is the reward
+[02:41:08] <yano> crashdemons: yes
+[02:41:15] <xnr> it used to be more network-official 
+[02:41:17] <jacob1> http://blog.freenode.net/2014/04/april-1st-2014-followup/ all the answers from last year
+[02:41:18] <jenni> [ April 1st 2014, Followup | staffblog ] - https://j.mp/1tOlSx4
+[02:41:30] <yano> *https
+[02:41:35] <jacob1> ):
+[02:41:42] *** mexicanjeans is now known as Territoriojoven
+[02:41:49] <jacob1> is there a plugin for firefox to force that?
+[02:41:59] <yano> and https://blog.freenode.net/2013/04/april-1st-2013-the-aftermath/
+[02:42:01] <jenni> [ April 1st 2013, the aftermath | staffblog ] - https://j.mp/10RI6wG
+[02:42:04] <yano> jacob1: yes, HTTPS Everywhere
+[02:42:04] <jacob1> also the main website I moderate forces http, idk why >_>
+[02:42:04] <bcode> https everywhere, iirc
+[02:42:06] <yano> Looks like someone isn't using HTTPS Everywhere. :-)
+[02:42:10] <jacob1> I thought that was chrome only :P
+[02:42:18] <xnr> TLS with mozilla or google or etc CA databases is broken by design
+[02:42:18] <yano> i added the ruleset to HTTPS Everywhere for freenode
+[02:42:32] <crashdemons> it's like christelmas in april
+[02:42:36] <yano> xnr: give Perspectives Project a try in Firefox
+[02:43:18] <Territoriojoven> yano: how do you add metadata to your nick's info
+[02:43:31] <yano> Territoriojoven: /msg NickServ help set property
+[02:43:57] <SmoothPorcupine> jacob1: "Chrome only" isn't valid.
+[02:44:50] <SmoothPorcupine> Aside from "crashing when the server doesn't send a Content-Type response header," I can't think of anything Chrome does or did that was ever even slightly innovative of different from any other software.
+[02:45:00] <SmoothPorcupine> or*
+[02:45:32] <yano> they made js fast
+[02:45:33] <xnr> SmoothPorcupine: sandboxing and tabs having their own processes
+[02:45:34] <yano> ooh shiny
+[02:45:40] <crashdemons> sounds like time for me to make a page that doesn't send the Content-Type
+[02:45:49] <crashdemons> lol
+[02:45:51] <SmoothPorcupine> xnr: Okay so I notice that's redundant.
+[02:45:51] <yano> 15 minutes!
+[02:45:59] -yano- 15 minutes!
+[02:46:19] <SmoothPorcupine> crashdemons: I think that was probably fixed awhile ago, but tab title updating is probably still broken.
+[02:46:33] <yano> i only use chrome for google sites
+[02:46:38] <yano> i use firefox for mostly everything
+[02:46:38] <crashdemons> 2015 and most major browsers still can't handle an infinite JS do-while loop or frame bomb, it's sad
+[02:46:50] <SmoothPorcupine> I only complain about Google when it wants me to install Chrome. :V
+[02:47:03] <xnr> but dont use chrome, use chromium
+[02:47:08] <crashdemons> firefox at least does the busy prompt for other busy scripts, except that case ... :-/
+[02:47:18] <SmoothPorcupine> crashdemons: No, it's normal.
+[02:47:28] <SmoothPorcupine> Strictly economically standard.
+[02:47:38] <yano> i use Chrome when i want things to "just work"
+[02:47:41] <crashdemons> I mean, 15 years we should have found a way to avoid that being program-breaking
+[02:47:47] <crashdemons> :P
+[02:47:48] <yano> i've noticed, that over the years i've gotten tired of doing things the hard way
+[02:48:00] <ser_berry> hehe
+[02:48:02] <SmoothPorcupine> crashdemons: Finding a solution isn't the issue. Bothering to implement it is.
+[02:48:03] <ser_berry> I know that feeling
+[02:48:05] <xnr> simple js setTimeout forkbomb makes your whole firefox browser unusable (and stop script dialog either doesnt show or doesnt work)
+[02:48:09] <crashdemons> true
+[02:48:11] <yano> i might buy a Macbook :-P
+[02:48:30] <SmoothPorcupine> Bothering to implement is a function of free time, ie., market pressure/economics.
+[02:48:46] <SmoothPorcupine> yano: Same. :/
+[02:48:54] <SmoothPorcupine> I wish I could afford to do things the hard way.
+[02:49:06] <SmoothPorcupine> Best years of my life.
+[02:49:10] <crashdemons> I still wish JS had some support for synchronous delays also, there's no sense in freezing everything for one script thread   vs.  forcing async timers for everything
+[02:50:11] <yano> i really hate web-dev when it deals with making things preetty
+[02:50:19] <SmoothPorcupine> It's contrathetical to the design; JS was never meant for this.
+[02:50:47] <xnr> yano: plain text! all html you'll need is <pre></pre>
+[02:50:59] <yano> lol
+[02:51:06] <yano> you should see my /contact page on my personal site
+[02:51:13] <SmoothPorcupine> yano: If your templating system is more complex than the C preprocessor, you're probably fucked, by design.
+[02:51:16] <yano> xnr: https://yanovich.net/contact.php
+[02:51:18] <jenni> [ Michael Yanovich :: Contact ] - https://j.mp/Sx3K8E
+[02:51:21] <yano> SmoothPorcupine: ahaha
+[02:51:35] <ser_berry> very nice yano 
+[02:51:35] <yano> view-source
+[02:51:40] <yano> check that shit out
+[02:51:42] <SmoothPorcupine> PUN INTENDED.
+[02:51:42] <yano> \o/
+[02:51:49] *** Joins: Klaghills (~himr@ool-45700537.dyn.optonline.net)
+[02:51:51] <yano> lol
+[02:52:52] <crashdemons> personally, web design languages have a lot of baggage and verbosity that could be lost,  where really we should have scripting, data structures, layout information (rectangle packing/overlapping & structure id's) as elements, and styling for those elements
+[02:53:17] <ser_berry> dat base64 image
+[02:53:18] <crashdemons> which I know HTML is for data structures like that but...
+[02:53:19] *** Joins: kitten (~kitten@defocus/regular/crazycatlady)
+[02:53:20] <yano> personally, the amount of work for a simple static site in bootstrap should'nt be difficult
+[02:53:24] <crashdemons> it's not abstract enough I think
+[02:53:36] <yano> you know what someone should do, they should make a free site hosting that only hosts static sites in any free bootstrap theme they want
+[02:53:48] <xnr> the answer is DICSS
+[02:53:52] <yano> yes, DICSS
+[02:54:05] <xnr> DICSS all over the place
+[02:54:13] *** Quits: Twilight`Sparkle (~toagac@trivialand/staff/toagac) (Read error: Connection reset by peer)
+[02:54:14] <SmoothPorcupine> crashdemons: But if we don't allow it to evolve organically, how will the cybernetic template organism emerge?!
+[02:54:30] <crashdemons> lol
+[02:54:35] *** Joins: Twilight`Sparkle (~toagac@trivialand/staff/toagac)
+[02:54:36] <yano> lol
+[02:54:39] <yano> .t
+[02:54:39] <jenni> Wed, 01 Apr 2015 00:54:39 GMT
+[02:54:43] <yano> .yi
+[02:54:43] <jenni> Not yet...
+[02:54:47] <SmoothPorcupine> Think of the artificially intelligent children!
+[02:55:17] <Territoriojoven> yano: what is the cloack for the winners
+[02:55:21] <Territoriojoven> cloak
+[02:55:37] <Buizel> /unaffiliated/DICSS
+[02:55:42] <yano> @ircpuzzles/april-fools/2015/first/irc_nick
+[02:55:42] <xnr> if i understood that correctly, none until GMS is implemented
+[02:55:49] <yano> but they won't be issued until GMS is done
+[02:55:50] <Territoriojoven> boring
+[02:55:51] <xnr> tl;dr never
+[02:55:52] <SmoothPorcupine> Or artificially unintelligent, w/e.
+[02:56:18] <Territoriojoven> why can't we choose whatever vhost we want ?
+[02:56:24] <yano> but the nice thing about the @ircpuzzles cloaks will be they won't be magically taken away by staff
+[02:56:31] <yano> because this is freenode
+[02:56:33] <SmoothPorcupine> Territoriojoven: Because this isn't <that other network>.
+[02:56:41] <Buizel> (the fun networks)
+[02:56:55] <yano> ooh man 3 minutes
+[02:57:06] <yano> i better find that first clue
+[02:57:12] <kitten> yano: but can i have an ircpuzzles AND a defocus cloak?
+[02:57:13] <SmoothPorcupine> I bet those other networks don't even understand what identd was designed for...
+[02:57:25] <yano> kitten: sure, dual cloaks are allowed
+[02:57:39] <Buizel> yano: how can you (temporarily) disable a cloak?
+[02:57:40] <yano> !https://youtu.be/lyDu_sZvcaU
+[02:57:48] <jacob1> I like my cloak :P, last year I opted out of the cloak lottery
+[02:57:49] <Territoriojoven> what is a defocus cloak and how do i get it
+[02:57:53] <yano> Buizel: leaving the network and not signing into your nickserv account
+[02:57:55] <SmoothPorcupine> I like how freenode calls 'em cloaks rather than vhosts.
+[02:57:56] <kitten> Buizel: log out?
+[02:58:08] <Buizel> logging out once you've logged in doesn't change it
+[02:58:08] <jacob1> logging out doesn't remove your cloak
+[02:58:16] <Buizel> i assumed freenode had a graceful way of removing it
+[02:58:20] <Territoriojoven> you need to log in to log out
+[02:58:20] <yano> that's why you disconnect from the network and then reconnect without logging in
+[02:58:30] <Buizel> but that's stupid :<
+[02:58:34] <kitten> that would be so much effort
+[02:58:39] <crashdemons> SmoothPorcupine,  for the cybernetic template organism, I imagine it would evolve from virus utilizing XMLRequest/Websocket -> scan and use SQL Injection -> Produce self with XSS  (on specific website packages)
+[02:58:39] <kitten> my client always identifies
+[02:58:44] <yano> aww, man, i should have made the theme for the puzzles related to Blues Clues
+[02:58:48] <yano> then i could have punned with the clues
+[02:58:53] <crashdemons> the fun thing there is the browser is actually what is propagating it
+[02:58:54] <jacob1> lol
+[02:59:02] <Territoriojoven> .yi
+[02:59:02] <jenni> Not yet...
+[02:59:44] <SmoothPorcupine> crashdemons: Your website needs hits for the to work.
+[03:00:00] <xnr> yano get yo buttocks over here and let the games begin
+[03:00:04] *** ChanServ changes topic to 'IRCPuzzles | Welcome to the 2015 April Fool's Day Challenge | The game has begun! | First clue: morning light | Hint: one of four'
+[03:00:08] <Territoriojoven> 04it's time
+[03:00:10] <SmoothPorcupine> Most virus designers don't think in terms of metaprogramming, so we're pretty safe for awhile.
+[03:00:23] <crashdemons> welp, I already lost the challenge.
+[03:00:23] -yano- It has started! Check /topic to being!
+[03:00:26] <yano> *begin
+[03:00:34] <PyroPeter> I AM!
+[03:00:35] <brrr> lol
+[03:00:43] *** Joins: Tamini (~Tamini@23.226.238.12)
+[03:00:45] * jacob1 is being
+[03:00:46] <Agent_Isai> uh
+[03:00:47] <crashdemons> idk even what we're supposed to do with that
+[03:00:51] <kitten> how do these work yano
+[03:00:55] *** ChanServ changes topic to 'IRCPuzzles | Welcome to the 2015 April Fool's Day Challenge | The game has begun! | All answer channels will begin with '####' | First clue: morning light | Hint: one of four'
+[03:00:56] <SmoothPorcupine> How do we guess? Join ####dawn or something?
+[03:00:59] <yano> yea
+[03:01:03] *** Joins: BigBobbyTable (sid33285@gateway/web/irccloud.com/x-ceezahzrbfpyugdv)
+[03:01:07] <SmoothPorcupine> Ah, okay.
+[03:01:09] <yano> i accidentally removed that part
+[03:01:43] <Territoriojoven> what even is morning light
+[03:01:54] <Territoriojoven> monday blues
+[03:01:58] <kitten> ####lucifer
+[03:02:00] *** Joins: EpicOne (root@colchester-lug/silly-fool/donut)
+[03:02:02] <Agent_Isai> uh
+[03:02:06] <kitten> ooops
+[03:02:10] *** ChanServ changes topic to 'IRCPuzzles | Welcome to the 2015 April Fool's Day Challenge | The game has begun! | All answer channels will begin with '####' | First clue: morning light | Hint: one of four | Hint: cardinal'
+[03:02:14] <kitten> cardinal?
+[03:02:25] <crashdemons> the what
+[03:02:28] <EpicOne> moon ?
+[03:02:37] <kitten> one as in the first?
+[03:02:46] <yano> sssh
+[03:02:54] <FireFly> Y'all are doing it wrong :P
+[03:03:05] <Agent_Isai> Uhhh
+[03:03:07] <Agent_Isai> i dunno
+[03:03:11] <Territoriojoven> i think i got it
+[03:03:22] <crashdemons> >TJ gets it
+[03:03:28] <kitten> i dont get it
+[03:03:35] <Territoriojoven> crashdemons: bitch u gon see
+[03:03:42] <crashdemons> Territoriojoven, http://i.imgur.com/wCh6WcS.gif
+[03:03:42] <yano> 7 people have progressed to the next level
+[03:03:49] <kitten> are these supposed to be a word or a phrase?
+[03:03:52] <Agent_Isai> D:
+[03:04:02] <yano> no comment
+[03:04:13] <kitten> but if its a phrase how owuld i format it?
+[03:04:19] <yano> no spaces
+[03:04:27] *** Parts: SmoothPorcupine (~smooth@207.224.112.149) ("Away.")
+[03:04:30] <yano> that's been the pattern in years past
+[03:04:44] <kitten> there were no channels last time
+[03:04:49] <yano> yes there was
+[03:04:50] <kitten> last time i did it
+[03:04:56] <yano> that must have been several years ago
+[03:05:02] <kitten> when it was pink unicorn
+[03:05:03] <yano> every since i started doing this it has involved channels
+[03:05:08] <yano> yea, that was back in 2011
+[03:05:13] *** Joins: z3t (~jake@unaffiliated/z3t)
+[03:05:34] * kitten gives u
+[03:05:38] <crashdemons> will we know when someone solves it?
+[03:06:02] <yano> nope
+[03:06:11] <yano> but i can tell you if you'd like and if i remember
+[03:06:17] <kitten> yes becayse their cloak will changeg?
+[03:06:43] *** Joins: jwoglom (~jwoglom@unaffiliated/jwoglom)
+[03:07:11] <yano> no, i'll announce when somebody has complete the whole thing
+[03:07:15] <yano> it'll probably take a few days
+[03:07:23] <xnr> more like forever cause no GMS
+[03:07:23] <yano> depending on how many clues i givce
+[03:07:29] <xnr> oh, that
+[03:07:53] <kitten> where are the answers to last years?
+[03:07:57] <Territoriojoven> days?
+[03:08:00] <Territoriojoven> i thought it was just hours
+[03:08:43] *** Parts: ErrantEgo (~ErrantEgo@freenode/jester/errantego) ("Textual IRC Client: www.textualapp.com")
+[03:08:54] <Agent_Isai> I'm completely stuck >.>
+[03:09:28] <yano> 12 people have made it to the next level
+[03:09:41] <Agent_Isai> :/
+[03:10:01] <xnr> is this something that requires you to be a native english speaker of having went to school in an english-speaking country?
+[03:10:03] *** Joins: vehk (~vehk@unaffiliated/vehk)
+[03:10:47] <Agent_Isai> idk
+[03:10:52] <kitten> probably
+[03:10:53] *** Joins: jacoliobo (~jacoliobo@cpe-107-015-189-200.nc.res.rr.com)
+[03:10:59] <Territoriojoven> xnr: you only need half a brain
+[03:11:02] <jacob1> depends on what they teach you exactly, it's possible the way you learned it makes it easier? :P
+[03:11:23] <yano> xnr: possibly :-\
+[03:11:27] *** Parts: jacoliobo (~jacoliobo@cpe-107-015-189-200.nc.res.rr.com) ()
+[03:11:42] <xnr> yano: well thats just great, thanks for caring about the international community of freenode
+[03:11:47] *** Parts: xnr (xnrand@unaffiliated/xy) ("They know.")
+[03:11:54] <yano> wat
+[03:11:57] <jacob1> .-. lol
+[03:12:01] <Territoriojoven> lol
+[03:12:01] <Klaghills> lol
+[03:12:03] <yano> i don't really know
+[03:12:07] * kitten is dumb :(
+[03:12:15] <Territoriojoven> you gotta think bout dem africans not getting education
+[03:12:27] <Territoriojoven> need mo money fo dem programs
+[03:12:32] <kitten> pretty sure hes european or something
+[03:12:43] <jacob1> i'm not sure about how one of these hints translates into other languages but the hints really do make sense
+[03:12:43] <jacob1> in any language
+[03:12:46] <kitten> jacob1: how do they make sense
+[03:12:52] <jacob1> they just do :P
+[03:12:55] <EpicOne> last year and year before was some silly base64 in some rot13... wtf is this
+[03:12:58] <yano> 2 have made it to level 2
+[03:13:02] <EpicOne> ... for the forst room 
+[03:13:04] <Klaghills> level 2?
+[03:13:11] <EpicOne> s/forst/first/
+[03:13:11] <jenni> EpicOne meant to say: ... for the first room 
+[03:13:41] <kitten> does 4 mean anything?
+[03:14:01] <yano> yes
+[03:14:22] *** ChanServ changes topic to 'IRCPuzzles | Welcome to the 2015 April Fool's Day Challenge | The game has begun! | All answer channels will begin with '####' | First clue: morning light | Hint: one of four | Hint: cardinal | Hint: map'
+[03:16:32] *** Joins: mniip (mniip@april-fools/2014/third/mniip)
+[03:17:01] <yano> okay
+[03:17:05] <yano> just to clarify
+[03:17:06] <mniip> so
+[03:17:12] <mniip> it's unofficial this year?
+[03:17:12] *** Parts: Pici (~pici@ubuntu/member/pdpc.professional.pici) ()
+[03:17:31] <yano> if a word has an international spelling that is different than an American spelling, the international spelling is used
+[03:17:38] <jacob1> there was a wallops about it at least
+[03:17:52] *** Joins: Eureka7 (Reaper119@trivialand/guesser/reap3r119)
+[03:17:59] <mniip> oh man
+[03:18:06] <jacob1> yano: is that a hint for the puzzle after this? >_>
+[03:18:15] <jacob1> as far as I know the answer to this has no alternate spellings
+[03:18:16] <jacob1> but idk
+[03:18:16] <jacob1> lol
+[03:18:17] <mniip> I should really make it set +w when conneting
+[03:18:18] <yano> jacob1: it may be a hint for a later level, i will not confirm nor deny that
+[03:18:20] <brrr> what's the command to check if a channel exists?
+[03:18:29] *** Parts: vehk (~vehk@unaffiliated/vehk) ("WeeChat 1.1.1")
+[03:18:31] <ser_berry>  /msg chanserv info ##channel
+[03:18:31] <jacob1> /mode ####channel
+[03:18:34] <jacob1> or that
+[03:18:38] <brrr> ah ok
+[03:18:40] <brrr> ty
+[03:18:41] <jacob1> +p doesn't prevent /mode right?
+[03:18:44] <ser_berry> nope
+[03:18:46] <jacob1> I tested it and it still seemed to work
+[03:18:56] <jacob1> and i'd rather use /mode than have to query chanserv :P
+[03:19:01] <ser_berry> yeah mode is probably better
+[03:19:03] *** Parts: Eureka7 (Reaper119@trivialand/guesser/reap3r119) ("Laterz")
+[03:19:33] <yano> if an answer has multiple words: they are combined together without spaces
+[03:20:08] <mniip> so uh
+[03:20:19] <mniip> what does one do with these conglomerations of words
+[03:20:48] <jacob1> put them together, ####morningfourcardinalmaplightofone
+[03:21:22] *** Joins: sdamashek (~sdamashek@gentoo/developer/sdamashek)
+[03:21:22] *** ChanServ sets mode: +v sdamashek
+[03:21:26] *** ChanServ changes topic to 'IRCPuzzles | Welcome to the 2015 April Fool's Day Challenge | The game has begun! | All answer channels will begin with '####' | General tips for the game: https://git.io/j5Zj | First clue: morning light | Hint: one of four | Hint: cardinal | Hint: map |'
+[03:21:32] *** ChanServ changes topic to 'IRCPuzzles | Welcome to the 2015 April Fool's Day Challenge | The game has begun! | All answer channels will begin with '####' | General tips for the game: https://git.io/j5Zj | First clue: morning light | Hint: one of four | Hint: cardinal | Hint: map'
+[03:21:52] <mniip> hold on
+[03:21:53] <yano> 3 people have made it to level 2
+[03:21:55] <Territoriojoven> no don't let them know!!!
+[03:22:01] <mniip> "clue" implies there's the main "puzzle"
+[03:22:01] <Territoriojoven> otherwise they might catch up :p
+[03:22:10] <yano> it is
+[03:22:23] *** Joins: CrissiD (~crissid@freenode/staff/crissid)
+[03:22:28] <yano> CrissiD: welcome! :D
+[03:22:33] <CrissiD> hihi!
+[03:22:39] <EpicOne> afft 
+[03:22:46] <mniip> yano, which is...?
+[03:22:48] <yano> 1 person has made it to level 3
+[03:22:49] <jacob1> hi CrissiD 
+[03:22:49] *** Joins: alokpathy (~tripathy@pool-173-72-2-183.cmdnnj.fios.verizon.net)
+[03:22:50] <jacob1> :P
+[03:22:55] <CrissiD> jacob1: !
+[03:23:00] * CrissiD gnaws on jacob1 a bit.
+[03:23:03] <jacob1> D:
+[03:23:04] <CrissiD> oh wait..wrong chan for that
+[03:23:06] <CrissiD> :P
+[03:23:52] *** Joins: Eureka7 (Reaper119@trivialand/guesser/reap3r119)
+[03:24:08] *** Parts: Eureka7 (Reaper119@trivialand/guesser/reap3r119) ("Laterz")
+[03:24:12] <yano> two people have made it to level 3
+[03:24:19] <Klaghills> jeez
+[03:24:21] <crashdemons> crap
+[03:24:31] <yano> the last level is level 10
+[03:24:32] * crashdemons is stupid
+[03:24:41] <yano> i think level 3 is the bottleneck
+[03:24:44] <Klaghills> okay
+[03:24:45] <yano> will be the bottleneck
+[03:24:47] <yano> so don't worry
+[03:24:53] <mniip> I'm not even sure what I'm supposed to do
+[03:25:00] <mniip> there's supposed to be some question or ciphertext...
+[03:25:01] <yano> i expect people to be stuck at level 3 until next morning EDT/UTC
+[03:25:06] *** Joins: pipework (~pipework@unaffiliated/spaceghostc2c)
+[03:25:11] <jacob1> mniip: hopefully later >_>, for now it's a word puzzle
+[03:25:18] <jacob1> which I thought was really easy
+[03:25:23] <mniip> but where is the puzzle
+[03:25:26] <CrissiD> wait, so what do we do?
+[03:25:28] <mniip> I see a clue and 3 hints
+[03:25:29] <yano> 1 person has made it to level 4
+[03:25:39] <yano> CrissiD: you join channels with ####<your_guess_here>
+[03:25:49] <yano> until you find the correct answer and then move along to the next level :D
+[03:25:50] <jacob1> mniip: well yes, figure out what they mean
+[03:26:12] <Territoriojoven> lol
+[03:26:21] <Territoriojoven> until next morning and someone already made it to 4?
+[03:26:27] <pipework> Is part of the puzzle finding the puzzle and finding out how to interact with the puzzle?
+[03:26:33] <Klaghills> no
+[03:26:35] <CrissiD> that makes no sense.
+[03:26:37] <yano> 1 person has made it to level 5
+[03:26:40] <Klaghills> lol
+[03:26:44] <pipework> Then it's not puzzly enough!
+[03:26:49] <CrissiD> is there a clue somewhere?
+[03:26:55] <Klaghills> the clues are in the topic
+[03:26:59] <CrissiD> ah
+[03:27:06] *** Quits: brrr (~brrr@trivialand/emeritus/brrr) (Quit: Bye!)
+[03:27:10] <CrissiD> ####sunshine
+[03:27:13] <CrissiD> er...
+[03:27:14] <CrissiD> sorry
+[03:27:21] <Territoriojoven> don't worry, it's not that
+[03:27:21] *** Joins: brrr (~brrr@trivialand/emeritus/brrr)
+[03:27:27] *** Parts: pipework (~pipework@unaffiliated/spaceghostc2c) ("Textual IRC Client: www.textualapp.com")
+[03:27:32] *** Joins: \mSg (~mSg@unaffiliated/msg/x-4576342)
+[03:28:07] <yano> CrissiD: the clues/hints are always in the /topic
+[03:28:22] <CrissiD> yeah i'm seeing it now
+[03:28:27] <CrissiD> i'm going to suck at this
+[03:28:39] <Territoriojoven> you probably sucked before, too
+[03:28:49] <Territoriojoven> jk
+[03:29:33] <CrissiD> :(
+[03:31:13] <larina> oh this started 
+[03:31:44] <crashdemons> can't even get past 3, crap
+[03:32:29] <yano> 2 people are on level 5, nobody on level 6
+[03:33:20] <yano> 5 people are on level 3
+[03:33:45] <larina> lol yano there are negative levels?
+[03:33:52] <yano> larina: yes
+[03:33:52] <CrissiD> larina: lol...
+[03:34:01] <Klaghills> this is -2 technically
+[03:34:01] <CrissiD> I would imagine i'll be the biggest fail fail.. 
+[03:34:05] <yano> you end up in level -1
+[03:34:11] <yano> CrissiD: no you won't
+[03:34:12] <sdamashek> evil yano :P
+[03:34:14] <yano> tehe
+[03:34:19] *** Joins: drathir (~kamiljk8@unaffiliated/drathir)
+[03:34:34] <larina> w8
+[03:34:36] <mniip> I'm not sure if it's me or this first level that is a total failure
+[03:34:36] <larina> is this 0?
+[03:34:37] <larina> or -2
+[03:34:38] <yano> originally there was only levels: 0 through 6. now there is -2 through 10
+[03:34:41] <larina> im confused
+[03:34:42] <yano> this is level -2
+[03:34:45] <larina> ah okay
+[03:34:46] <yano> don't worry about the level numbers
+[03:34:50] <yano> they don't matter
+[03:34:54] <yano> unless you accidentally skip a level
+[03:34:56] <yano> then i'll be mad
+[03:34:58] <yano> :p
+[03:35:26] <yano> 8 people are on level 3
+[03:35:49] <yano> 11 on level 2
+[03:35:53] <CrissiD> i'm confused.
+[03:35:57] *** Quits: Klaghills (~himr@ool-45700537.dyn.optonline.net) (Quit: cya)
+[03:36:01] <CrissiD> heh
+[03:36:02] <yano> *12
+[03:36:20] *** Joins: Klaghills (~himr@ool-45700537.dyn.optonline.net)
+[03:39:46] *** Joins: PikalaxBOT (PikalaxALT@hntvlan569.1891.wlan.wireless-resnet.upenn.edu)
+[03:40:32] <Klaghills> hi pikalax
+[03:41:19] <larina> laundry times
+[03:43:07] <PikalaxBOT> hi
+[03:43:18] <yano> Territoriojoven | yano: u cheeky cunt
+[03:43:19] <yano> :D
+[03:43:37] <mniip> dude what
+[03:46:56] <yano> tehe
+[03:47:19] *** Joins: klg (~klg@89-71-235-90.dynamic.chello.pl)
+[03:49:29] <ChasedSpade> CrissiD: On a scale on 1-10, how easy was -1's answer
+[03:49:40] *** Parts: klg (~klg@89-71-235-90.dynamic.chello.pl) ()
+[03:49:46] <Territoriojoven> wait
+[03:49:48] <CrissiD> it was horrible until I realized it was obvious
+[03:49:49] <Territoriojoven> yano: what level is this?
+[03:49:51] <CrissiD> lol
+[03:49:55] <Klaghills> -2
+[03:50:06] <ChasedSpade> oh jeez
+[03:50:20] <yano> this channel is level -2
+[03:52:44] *** Quits: Twilight`Sparkle (~toagac@trivialand/staff/toagac) (Read error: Connection reset by peer)
+[03:52:57] *** Joins: Twilight`Sparkle (~toagac@trivialand/staff/toagac)
+[03:53:51] <yano> the git.io url has been updated to include some rules that should be obvious
+[03:54:34] *** Joins: Ratburntro44 (~Ratburntr@71-220-72-11.mpls.qwest.net)
+[03:54:44] <MinceR> btw on several topics "begin" is misspelled as "being" :>
+[03:55:09] <yano> ah, damnit
+[03:55:53] <jacob1> >_> or on all the topics
+[03:56:23] <yano> fixed
+[03:56:32] <MinceR> :)
+[03:57:06] <yano> 1 person has made it to level 6
+[03:57:30] <Tamini> ;)
+[03:58:43] <Territoriojoven> what is it like up there?
+[03:59:17] <ChasedSpade> If it's anything like -2, I feel sorry for them
+[03:59:23] <ChasedSpade> Er
+[03:59:25] <ChasedSpade> -1
+[04:00:22] <Tamini> I'm stuck
+[04:00:27] <Tamini> so... not very nice
+[04:00:54] *** Joins: billybobMario (~billybobM@96.237.181.216)
+[04:01:05] <Klaghills> hey bbm
+[04:01:46] *** Parts: ishanyx (ishanyx@junethack/teamsplat/ishanyx) ("Follow the light in the wood...")
+[04:05:23] *** Quits: billybobMario (~billybobM@96.237.181.216) (Client Quit)
+[04:06:17] *** Joins: PyroPeter_ (~pyropeter@april-fools/2013/tenth/pyropeter)
+[04:07:15] <ScifiSpirit> level 3 bottleneck? Lucky if i get there at all :) But this is why i joined this, maybe i'll learn something while having fun
+[04:07:42] *** Joins: billybobMario (~billybobM@96.237.181.216)
+[04:07:43] <ScifiSpirit> not very good at these though
+[04:08:08] <larina> you'll be fine ScifiSpirit just enjoy
+[04:08:19] <ChasedSpade> yano: You should add another hint to -1 for those of us who are thinking too deep
+[04:08:37] *** Parts: billybobMario (~billybobM@96.237.181.216) ()
+[04:09:09] *** Joins: billybobMario_ (60edb5d8@gateway/web/freenode/ip.96.237.181.216)
+[04:09:25] *** Quits: PyroPeter (~pyropeter@april-fools/2013/tenth/pyropeter) (Ping timeout: 256 seconds)
+[04:09:25] *** PyroPeter_ is now known as PyroPeter
+[04:11:07] *** Joins: cannotsendtochan (~billybobM@96.237.181.216)
+[04:11:38] *** Parts: cannotsendtochan (~billybobM@96.237.181.216) ()
+[04:11:48] *** Joins: ChimChimmery (~AndChat73@c-76-126-88-162.hsd1.ca.comcast.net)
+[04:13:00] <Klaghills> yano: you here?
+[04:13:05] <yano> Klaghills: what's up?
+[04:13:29] <Klaghills> billybobmario can't speak here apparently
+[04:13:38] <Klaghills> and he may or may not be banned
+[04:13:41] <Klaghills> and he does not know why
+[04:13:52] <Klaghills> [22:04:04] <billybobMario> The error is * #ircpuzzles :Cannot send to channel
+[04:14:01] <Klaghills> [22:12:24] <billybobMario> It says "cannot change nick while banned"
+[04:14:10] <yano> oh
+[04:14:15] <yano> $~a is quieted here
+[04:14:22] *** ChanServ sets mode: +o yano
+[04:14:23] *** yano sets mode: -q *!*@*hahah.org
+[04:14:25] *** yano sets mode: -o yano
+[04:14:29] <yano> you need to be identified to nickserv to chat here
+[04:14:35] <Klaghills> ah
+[04:14:44] *** Joins: billybobMario (~billybobM@96.237.181.216)
+[04:14:54] *** Joins: SmoothPorcupine (~smooth@207.224.112.149)
+[04:15:23] <Territoriojoven> can i sell answers ?
+[04:15:31] <billybobMario> There we go!
+[04:15:32] <Territoriojoven> totally maybe serious
+[04:15:58] * CrissiD pays in btc!
+[04:15:58] <CrissiD> :P
+[04:16:14] * ChasedSpade ponders using for -1
+[04:16:15] <billybobMario> Thanks
+[04:17:27] <kitten> CrissiD: i will sell you an answer
+[04:17:35] <CrissiD> lol
+[04:17:37] <yano> no selling of answers
+[04:17:55] <kitten> answer -2 for answer 5
+[04:18:45] -yano- "Running Tips" and "Rules" updated, https://is.gd/O7J0lQ
+[04:18:50] <CrissiD> lol
+[04:18:55] <yano> lol
+[04:18:59] <kitten> lol
+[04:19:02] <larina> lol
+[04:19:26] <kitten> yano: what about trading?
+[04:19:31] <kitten> technically thats a trade
+[04:19:46] <yano> kitten: no
+[04:20:03] <kitten> am i annoying you with stupid questions
+[04:20:04] <SmoothPorcupine> But can I cheat though?
+[04:20:20] <yano> SmoothPorcupine: no
+[04:20:23] *** Joins: klg (~klg@89-71-235-90.dynamic.chello.pl)
+[04:20:26] <yano> SmoothPorcupine: see, https://gist.github.com/myano/a1e581614ee79b9bc42b
+[04:20:28] <jenni> [ gist:a1e581614ee79b9bc42b ] - https://j.mp/1NGMUzB
+[04:20:31] <SmoothPorcupine> But what if I really wanna cheat?
+[04:23:16] *** Joins: jes (~jessica@75-41-105-156.lightspeed.dtrtmi.sbcglobal.net)
+[04:25:28] <yano> xnr | i think i shall hack services
+[04:25:32] <yano> jenni!
+[04:25:32] <jenni> yano!
+[04:25:36] <yano> i should add these quotes
+[04:25:37] <yano> lol
+[04:25:42] <CrissiD> and i'm finished... lol
+[04:25:51] <CrissiD> this game is driving me mad
+[04:25:55] <CrissiD> it is not a good state of mind
+[04:26:07] <Territoriojoven> jenniª
+[04:26:07] <yano> aww
+[04:26:11] <Territoriojoven> ª"/)¡!
+[04:26:14] <Territoriojoven> i fucked my keyboard
+[04:26:17] <Territoriojoven> yano: isnt jenni a bot+
+[04:26:22] <yano> if you want to break jenni, please try it in: #jenni-playground
+[04:26:24] <crashdemons> jenni from the bloc
+[04:26:33] *** ChanServ sets mode: +o yano
+[04:26:35] *** yano sets mode: -qo $~a yano
+[04:26:38] *** Parts: SmoothPorcupine (~smooth@207.224.112.149) ("Hue.")
+[04:26:57] <MinceR> eastern bloc?
+[04:27:10] <yano> still only 2 people on level 6, with no signs of progress
+[04:27:27] <yano> at least 13 people made it to level 5
+[04:27:34] <PikalaxBOT> :O
+[04:27:43] <PikalaxBOT> i'm still on level 2
+[04:27:52] <yano> don't worry, there are 10 levels
+[04:28:01] <yano> also, you might find it useful to see, https://gist.github.com/myano/a1e581614ee79b9bc42b
+[04:28:01] <CrissiD> heh.. i'm still on 1
+[04:28:03] <jenni> [ gist:a1e581614ee79b9bc42b ] - https://j.mp/1NGMUzB
+[04:28:06] * billybobMario is on 0 due to not being able to find the permutation
+[04:28:19] <billybobMario> Of a certain thing
+[04:28:23] <jacob1> does the 10 levels include the negative levels?
+[04:28:28] <Klaghills> no
+[04:28:32] <jacob1> ):
+[04:28:33] <Klaghills> it's -2 to 10
+[04:28:46] <jacob1> and there is a puzzle on level 10 channel?
+[04:28:57] <yano> lemme check
+[04:29:11] <yano> yes, level 10 is a level with a puzzle
+[04:29:14] <jacob1> i'm on 3 so ... that would be 3-4-5-6-7-8-9-10 = 8 more puzzles to solve
+[04:29:15] <yano> but that is an easy one
+[04:30:44] <PikalaxBOT> !m yano
+[04:30:56] <PikalaxBOT> any reason why jenni isn't responding?
+[04:31:10] <yano> oh, because you have "BOT" in your nick
+[04:31:20] <yano> she blocks on "BOT" to prevent cycling with bots
+[04:31:29] <CrissiD> ok i'm off
+[04:31:30] <MinceR> lol
+[04:31:31] <CrissiD> night!
+[04:31:40] <PikalaxBOT> oh
+[04:31:41] <MinceR> that's what NOTICEs were invented to fix
+[04:31:42] <PikalaxBOT> ffs
+[04:31:42] *** Parts: CrissiD (~crissid@freenode/staff/crissid) ()
+[04:31:52] <billybobMario> Maybe you should be NotBot
+[04:32:01] <MinceR> bots are only supposed to send notices and they aren't supposed to reply to notices
+[04:34:39] <yano> now 3 people on level 6
+[04:34:59] <FireFly> o.o
+[04:36:20] <yano> well, technically 2
+[04:36:24] <yano> the third is a beta tester
+[04:40:01] *** Quits: billybobMario_ (60edb5d8@gateway/web/freenode/ip.96.237.181.216) (Quit: Page closed)
+[04:40:37] <yano> no one is on level 7
+[04:40:42] <MinceR> what are they beta testing?
+[04:40:45] <MinceR> the puzzle?
+[04:40:58] <yano> yea
+[04:44:44] *** Joins: Jacnoc (~Joshua@Crissic.LA.VPS.joshuacasey.net)
+[04:48:14] *** Joins: Leonys (~Leonys@unaffiliated/leonys)
+[04:49:57] *** Joins: Senpaiander (65b60108@gateway/web/freenode/ip.101.182.1.8)
+[04:51:04] *** Quits: Twilight`Sparkle (~toagac@trivialand/staff/toagac) (Read error: Connection reset by peer)
+[04:51:07] *** Joins: Cerebral_Harlot (~Cerebral_@2602:306:bd83:5b30:5053:668f:8882:4902)
+[04:51:22] *** Joins: Twilight`Sparkle (~toagac@trivialand/staff/toagac)
+[04:51:28] *** Joins: SgvSth (~SgvSth@204.106.251.214)
+[04:51:36] *** Joins: alliberry (allison@unaffiliated/alliberry)
+[04:54:12] *** Parts: Senpaiander (65b60108@gateway/web/freenode/ip.101.182.1.8) ()
+[04:56:31] *** Joins: stac (~stac@april-fools/2013/runnerup/stac)
+[04:58:27] *** Parts: PikalaxBOT (PikalaxALT@hntvlan569.1891.wlan.wireless-resnet.upenn.edu) ("Used Parting Wish!")
+[05:07:45] <MinceR> birds are singing, time for me to sleep
+[05:09:05] *** Parts: Buizel (~buizel@unaffiliated/buizel) ()
+[05:10:38] *** Joins: walle303 (~walle303@unaffiliated/walle303)
+[05:14:49] <walle303> Hello
+[05:14:55] <Cerebral_Harlot> yo
+[05:15:01] <walle303> I sense dead channel
+[05:15:04] <yano> hello
+[05:15:06] <yano> nope
+[05:15:14] <walle303> lol
+[05:15:15] <yano> feel free to get started
+[05:15:18] <yano> see the /topic
+[05:15:24] <Cerebral_Harlot> you are just at the starting line
+[05:15:29] <Territoriojoven> yano: 
+[05:15:30] <Cerebral_Harlot> 2 hours after the race has started
+[05:15:33] <yano> Territoriojoven: hm?
+[05:15:38] <Territoriojoven> what about next year
+[05:15:42] <yano> these competitions usually take a few days
+[05:15:49] <yano> Territoriojoven: what about next year?
+[05:16:08] <Territoriojoven> will you remind us
+[05:16:44] <yano> more than the day before?
+[05:16:46] <yano> sure
+[05:16:53] <yano> you are free to idle in here throughout the year
+[05:17:05] <yano> we also try to hold competitions in here outside of April Fool's Day
+[05:18:21] <yano> .tw ircpuzzles
+[05:18:23] <jenni> The games have begun! (It started nearly 2 hrs ago) There is still time to join in on the fun! Join #ircpuzzles on http://freenode.net (@ircpuzzles)
+[05:21:32] <walle303> hmm
+[05:21:46] <walle303> all awnser channels are +s correct
+[05:21:52] <yano> correct
+[05:21:54] <yano> and +pnt
+[05:22:02] <walle303> so +spnt
+[05:22:04] <yano> walle303: you should also read this, https://gist.github.com/myano/a1e581614ee79b9bc42b
+[05:22:05] <jenni> [ gist:a1e581614ee79b9bc42b ] - https://j.mp/1NGMUzB
+[05:22:09] <ser_berry> yano: you should add something about /mode and /msg chanserv info I think
+[05:22:21] *** Parts: alliberry (allison@unaffiliated/alliberry) ("i've got a thick skin and an elastic heart")
+[05:22:39] <walle303> yano, channels ARE registered correct
+[05:22:42] <yano> walle303: yes
+[05:22:48] *** Parts: Cerebral_Harlot (~Cerebral_@2602:306:bd83:5b30:5053:668f:8882:4902) ("Leaving")
+[05:22:49] <yano> walle303: they are registered to `ircpuzzles`
+[05:24:55] <walle303> can someone link to last years
+[05:25:38] <yano> yea
+[05:25:46] <yano> https://blog.freenode.net/2014/04/april-1st-2014-followup/
+[05:25:48] <jenni> [ April 1st 2014, Followup | staffblog ] - https://j.mp/1tOj2IA
+[05:25:50] <yano> https://blog.freenode.net/2013/04/april-1st-2013-the-aftermath/
+[05:25:51] <jenni> [ April 1st 2013, the aftermath | staffblog ] - https://j.mp/10RI6wG
+[05:25:55] <yano> https://blog.freenode.net/2012/04/april-1st-the-aftermath/
+[05:25:56] <jenni> [ April 1st, the aftermath | staffblog ] - https://j.mp/1NGYdaR
+[05:26:38] <walle303> and has anyone figured out the first awnser yet
+[05:26:38] <walle303> lol
+[05:26:54] <ser_berry> yes
+[05:26:55] <walle303> meh
+[05:26:59] <walle303> ah
+[05:27:00] <ser_berry> keep at it :)
+[05:27:13] <walle303> nothing on the blog yet?
+[05:27:14] <walle303> aww
+[05:27:32] -yano- Updated! -- https://gist.github.com/myano/a1e581614ee79b9bc42b
+[05:28:16] <walle303> lol
+[05:28:19] <walle303> GOOGLE+ ON
+[05:28:28] <Territoriojoven> yano: btw duckduckgo is just as bad as google
+[05:29:15] <yano> meh
+[05:29:22] <walle303> did i miss any info
+[05:29:28] <walle303> i dont see anything on the blog
+[05:29:48] <ser_berry> all the info you need is on that link above
+[05:30:36] <walle303> the github gist?
+[05:31:06] *** Parts: Ratburntro44 (~Ratburntr@71-220-72-11.mpls.qwest.net) ()
+[05:31:14] <ser_berry> yeah
+[05:31:31] <walle303> are channel names case-sensitive
+[05:31:35] <walle303> cant remember
+[05:31:37] <walle303> i think not
+[05:31:38] <Territoriojoven> no
+[05:32:08] <yano> the IRCD freenode is case-insensitive for channel names
+[05:32:57] <walle303> why dont you want people working together?
+[05:33:12] <yano> because it spoils the fun
+[05:33:17] <yano> and makes it less competitive
+[05:33:22] <walle303> very well
+[05:33:27] <ser_berry> it's much less satisfying if you don't solve it yourself too
+[05:33:46] <ser_berry> why deprive yourself of the wonderful feeling of epiphany?
+[05:33:59] <ChasedSpade> yano: What's the farthest puzzle solved so far?
+[05:34:14] <Klaghills> 5 has been solved by only 3 people
+[05:34:25] <walle303> how many puzzels
+[05:34:26] <yano> 3 people are stuck on level 6
+[05:35:04] <Territoriojoven> so the other 2 didnt leave yet?
+[05:35:42] <yano> heh
+[05:36:04] <Tamini> i hate life okay
+[05:36:05] <Tamini> :(
+[05:36:09] <Tamini> also technically 3.5 right
+[05:36:13] <Tamini> does the betatester count as a player
+[05:36:30] <yano> yes
+[05:36:46] <yano> because, even though the beta-tester is on IRCPuzzles staff, i haven't shared any of the answers with anybody
+[05:37:57] <Territoriojoven> is it furry
+[05:38:27] <yano> no comment
+[05:38:41] <Territoriojoven> what happens if you win 2 years
+[05:39:15] <yano> huh
+[05:39:19] <yano> 2 years in a row?
+[05:39:23] <Territoriojoven> like
+[05:39:27] <yano> you could get a dual-cloak when GMS is done
+[05:39:47] <Territoriojoven> does it look like aprilfools/2014-2015/
+[05:40:09] <yano> er
+[05:40:42] <yano> it'll probably look like this: @ircpuzzles/april-fools/2015/place_in_2015/afp.2014.place_in_2014.irc_nick
+[05:41:01] <yano> er, hm
+[05:41:06] <mniip> tfw in ircpuzzles namespace and not april-fools
+[05:41:20] <yano> @ircpuzzles/2015/april-fools/place_in_2015/afp.2014.place_in_2014.irc_nick
+[05:41:30] <larina> what about 5 years in a row
+[05:41:35] <yano> lol, what i could do for the time being is put this in the @jenni/ namespace
+[05:41:46] <yano> larina: fn staff only allow dual cloaks
+[05:42:00] <walle303> yano, hmm does that confirm that the first level is an abrivation or is that just there to potentiall troll or both
+[05:42:01] <walle303> lol
+[05:42:02] <yano> within the @ircpuzzles namespace, i'll have to consult the counsel of IRCPuzzles
+[05:42:10] <yano> walle303: no comment
+[05:42:15] <walle303> damn
+[05:42:18] <walle303> i take that as both
+[05:42:35] <yano> the first few levels are intentionally easy (and maybe a bit vague)
+[05:43:21] <mniip> easy? you're calling this easy?
+[05:43:24] <yano> hehe
+[05:43:37] <mniip> this is harder than the aaron swartz shit
+[05:43:40] <Tamini> level 6 is death
+[05:43:40] <Tamini> okay
+[05:43:44] *** Quits: walle303 (~walle303@unaffiliated/walle303) (Read error: Connection reset by peer)
+[05:43:48] <Tamini> everything before looks like a cakewalk
+[05:43:51] <Tamini> ;-;
+[05:44:32] *** Joins: walle303 (~walle303@unaffiliated/walle303)
+[05:44:44] <sdamashek> Tamini: lol
+[05:44:48] <sdamashek> Tamini: are you dead yet
+[05:44:58] <Tamini> i am death destroyer of all things
+[05:45:02] <walle303> i suck at vague things
+[05:45:18] <MinceR> @ircpuzzles/<base64 encoded list of achievements>
+[05:45:31] <walle303> darn base64
+[05:45:41] <Klaghills> nice h i n t
+[05:46:03] <yano> hehehe
+[05:46:07] <yano> MinceR: that's actually not a bad idea
+[05:46:23] <jwoglom> @freenode/organizations/yano/ircpuzzles/competition/twothousandandfifteen/place_in_2015/city_of_residence/mothers_maiden_name/irc_nick
+[05:46:37] <yano> vhosts are limited to 63 chars
+[05:46:41] <yano> on freenode, at least
+[05:46:43] <jwoglom> drat.
+[05:46:52] <ChasedSpade> syn would get fussy with a cloak that long
+[05:46:56] <jwoglom> that's definitely not long enough.
+[05:47:00] <walle303> lol
+[05:47:09] <sdamashek> jwoglom: ;)
+[05:47:13] <walle303> yano, modify server, make it better
+[05:47:13] <walle303> lol
+[05:47:33] <yano> can't
+[05:47:35] <walle303> hmm
+[05:47:36] <yano> i'm not staff anymore ;-p
+[05:47:39] <walle303> aww
+[05:47:52] <jwoglom> sdamashek: ay bby
+[05:48:31] <walle303> combined together without spaces
+[05:48:32] <walle303> hmm
+[05:48:59] <walle303> yano, are the �hints� in the topic actually hints
+[05:48:59] *** Quits: billybobMario (~billybobM@96.237.181.216) (Ping timeout: 245 seconds)
+[05:49:22] <MinceR> lol
+[05:49:22] <Klaghills> yes
+[05:49:34] <walle303> just suspicious
+[05:49:35] <yano> walle303: yes
+[05:49:35] <yano> omg, especially in this channel
+[05:49:54] <Territoriojoven> you forgot blood type
+[05:50:09] <jacob1> this is the only channel i'm in that is even nice enough to have hints D:
+[05:50:20] <walle303> oh hi jacob1 
+[05:50:27] <jacob1> hi?
+[05:50:44] *** Quits: Twilight`Sparkle (~toagac@trivialand/staff/toagac) (Read error: Connection reset by peer)
+[05:50:52] *** Joins: Toagac`3 (~toagac@trivialand/staff/toagac)
+[05:51:04] <walle303> jacob1, i know you as the one of the developers of the powder toy
+[05:51:04] <walle303> lol
+[05:51:14] <cracker64> boo
+[05:51:14] <jacob1> I see, ok :P
+[05:51:16] <jacob1> hi
+[05:51:16] <walle303> thought the name sounded famillier first time i saw it
+[05:51:16] <walle303> lol
+[05:51:19] <walle303> oh hey cracker64 
+[05:51:22] <walle303> you too
+[05:51:22] <jacob1> we do have an irc channel
+[05:51:23] <jacob1> lol
+[05:51:25] <walle303> i know
+[05:51:43] <walle303> GooServ lol
+[05:51:43] <cracker64> I left the game on level 5 because googling isn't fun
+[05:51:54] <walle303> googleing is fun 
+[05:52:00] <walle303> solving vague puzzels is not
+[05:52:39] <walle303> too many damn red herrings for vague puzzles
+[05:53:04] <walle303> yano, is there any chance the channel name has a number in it
+[05:53:34] <yano> no comment
+[05:53:37] <walle303> damn
+[05:54:40] <walle303> yano, are all the challanges crypto-challanges
+[05:54:48] <yano> walle303: no
+[05:55:02] <walle303> ah
+[05:55:02] <walle303> i see
+[05:55:02] <jacob1> well this one doesn't appear to be at least :P
+[05:55:07] <jacob1> so there is your answer
+[05:55:24] <walle303> good, i dont have to break out my decrypting tools
+[05:55:25] <walle303> lol
+[05:56:14] * jes just joins every channel starting with ####
+[05:56:36] <walle303> jes wont work
+[05:56:40] <walle303> the channels are +s
+[05:56:41] <walle303> lol
+[05:56:50] <jwoglom> just break freenode into telling you!
+[05:56:53] <jwoglom> simple!
+[05:57:43] <jes> walle303: That's prevents you from searching for it, you can still just happen to join it if you join every single channel (which isn't going to happen for different reasons)
+[05:57:57] <ser_berry> jes: also the rules state that in order to be eligible for the prize you must join the channels in order
+[05:58:00] <walle303> jes, but if you join them in the wrong order
+[05:58:08] <Territoriojoven> bruteforce all the chans
+[05:58:09] <walle303> then you get disqualified from the cloak
+[05:58:23] <cracker64> it is definitely possible to skip a channel, from what I saw
+[05:58:44] <jacob1> someone did accidentally, yes
+[05:58:46] <jes> hmmm, true
+[05:58:46] <Territoriojoven> :o
+[05:58:51] <Territoriojoven> how does that happen
+[05:58:59] <cracker64> you would know if you got there
+[05:59:14] <cracker64> possibly two skips, but unlikely
+[05:59:18] <Territoriojoven> you are not even on my level mate
+[05:59:24] <cracker64> I left it all
+[05:59:36] <Klaghills> what
+[05:59:41] <Klaghills> how could you skip it
+[06:00:05] <jacob1> I suggest figuring out this level first and not caring about possible skips due to things people accidentally say :P
+[06:00:21] <Klaghills> can you say in level 5 how skips would be possible
+[06:00:24] <sdamashek> last year we had a bot that enforced the join-channels-in-order rule
+[06:00:41] <jacob1> how? by the time they joined they could already have the topic
+[06:00:52] <jacob1> unless it just immediately disqualified them then
+[06:01:14] <yano> Happy April Fool's Day to the east coast of the US
+[06:01:16] <sdamashek> it keeps track of joins, and only increments their level to the furthest joined in order
+[06:01:29] <sdamashek> and it did the official scoreboard
+[06:01:52] <sdamashek> but yeah I think it also logged joins, so we could see if somebody joined out of order anyways :P
+[06:02:40] <BigBobbyTable> So what if I joined in reverse order
+[06:02:53] <yano> then you don't get a fancy cloak
+[06:03:10] <mniip> [06:50:34] <walle303> jacob1, i know you as the one of the developers of the powder toy
+[06:03:13] <mniip> >:(
+[06:03:20] <cracker64> no one cares about mniip
+[06:03:24] <cracker64> we have Powder cloaks
+[06:03:24] <jacob1> lol
+[06:03:43] <yano> oh baby
+[06:03:43] <mniip> I have an april fools cloak
+[06:04:04] <Territoriojoven> wait really
+[06:04:10] <mniip> my cloak is also longer ( ͡° ͜ʖ ͡°)
+[06:04:15] <jacob1> :P
+[06:04:16] <Territoriojoven> jacob1: you made it?
+[06:04:26] <jacob1> you haven't pushed a commit to tpt in a while. Of course cracker64 hasn't in even longer
+[06:04:29] <jacob1> Territoriojoven: made it where?
+[06:04:33] <Territoriojoven> http://powdertoy.co.uk/
+[06:04:35] <cracker64> I did!
+[06:04:36] <jenni> [ The Powder Toy - Download ] - https://j.mp/1yy7oBJ
+[06:04:47] <jacob1> I didn't make the game itself, but i'm probably the current main developer yes
+[06:04:53] <Territoriojoven> awesome
+[06:04:54] <mniip> jacob1, march 6
+[06:05:17] <mniip> 4 commits ago
+[06:05:28] <Territoriojoven> i havent found another game like this yet
+[06:05:43] <Territoriojoven> c-can you add mechanisms pls
+[06:05:47] <Territoriojoven> it would be perfect
+[06:05:48] <jacob1> mniip: oh, lol
+[06:06:02] <walle303> hmm
+[06:06:20] <mniip> see http://mniip.com/powder/commits/
+[06:06:31] <jacob1> so useful
+[06:06:57] <Territoriojoven> why is that sideways
+[06:07:08] <mniip> well
+[06:07:17] <mniip> my whole website is sideways today
+[06:07:43] <jacob1> it's his new awesome website design obviously
+[06:07:47] <mniip> yeah
+[06:07:52] <jacob1> just hold your computer sideways
+[06:07:54] <jacob1> it's the new trend
+[06:07:57] <cracker64> you guys don't turn your screens on april fools?
+[06:08:16] <jacob1> ctrl+alt+right/left on windows :P
+[06:08:20] <mniip> if you have a laptop you can read it like a book
+[06:08:35] <jacob1> wow such a cool idea, you should copyright that
+[06:09:22] <yano> lol
+[06:10:34] *** Joins: Culey (uid75557@gateway/web/irccloud.com/x-yhazgcxmueicgiuk)
+[06:13:06] *** Quits: \mSg (~mSg@unaffiliated/msg/x-4576342) (Remote host closed the connection)
+[06:15:32] <yano> https://com.google/
+[06:15:34] <jenni> [ elgooG ] - https://com.google
+[06:16:15] <Klaghills> http://elgoog.im/
+[06:16:17] <jenni> [ Google Mirror - I'm elgooG ] - http://elgoog.im
+[06:16:52] <Klaghills> i like the gravity one a lot
+[06:17:28] <walle303> ElGoog?
+[06:17:43] *** Joins: vagweif7 (~vagweif7@ool-43577979.dyn.optonline.net)
+[06:17:56] *** Joins: slidercrank (~slidercra@unaffiliated/slidercrank)
+[06:18:01] <slidercrank> hi there
+[06:18:16] *** Joins: Cassini (~Cassini@unaffiliated/cassini)
+[06:18:55] <vagweif7> hi
+[06:22:07] <slidercrank> damn. the first puzzle and I'm stuck :) I hope not for long
+[06:24:26] <slidercrank> am I allowed to think aloud? 
+[06:24:58] <slidercrank> or will it be considered providing (maybe accidental) solution to other players?
+[06:25:27] <yano> please don't think allowed in channels
+[06:25:29] *** Joins: knivey (~knivey@oh-71-50-239-213.dhcp.embarqhsd.net)
+[06:27:06] <vagweif7> why are there 4 hints ?
+[06:27:22] <slidercrank> I think I know what the answer is (approximately).
+[06:29:48] *** Joins: Consuela (~anonymous@unaffiliated/stupid)
+[06:29:49] *** Joins: noteness (~noteness@unaffiliated/nessessary129)
+[06:29:55] *** Joins: homerj (~homerj@april-fools/2013/second/homerj)
+[06:30:23] <sdamashek> slidercrank: thinking aloud is not allowed, heh
+[06:31:26] *** Joins: [|] (~phobos@unaffiliated/phobos-anomaly/x-6744724)
+[06:31:28] *** Parts: kitten (~kitten@defocus/regular/crazycatlady) ()
+[06:31:30] <slidercrank> damn. I tried a few answers and none worked :) lol
+[06:33:15] <noteness> How to answer?
+[06:33:27] <yano> try to join ####<answer>
+[06:33:32] <yano> without the literal brackets
+[06:34:08] *** Quits: Nem0 (~nem0@unaffiliated/nem0) (Read error: Connection reset by peer)
+[06:34:19] <slidercrank> I did
+[06:34:41] <yano> you can test to see if the channel exist quicker by doing /mode ####channel_name
+[06:34:46] <noteness> How to answer the questions?
+[06:34:48] <slidercrank> lol. I met a guy on the wrong channel :) I mean the answer appeared to be wrong
+[06:34:52] <noteness> then?
+[06:35:40] <slidercrank> in the previous years it was allowed to talk. I mean to say things like "I tried this and that. I'll try this now"
+[06:36:21] <yano> please don't do that
+[06:36:32] <slidercrank> okay
+[06:38:06] *** Quits: [|] (~phobos@unaffiliated/phobos-anomaly/x-6744724) (Quit: Konversation terminated!)
+[06:40:24] <yano> https://peoplewhatabunchofbastards.com/
+[06:40:26] <jenni> [ People, what a bunch of bastards. ] - https://j.mp/1xvKa41
+[06:41:08] <slidercrank> the phrase of the day: no comment :)
+[06:42:08] <yano> indeed :-)
+[06:43:18] <slidercrank> how far have the players progresses? how many channels ahead?
+[06:43:23] <slidercrank> *progressed
+[06:43:34] <yano> level 6
+[06:43:37] <slidercrank> wow
+[06:44:55] <slidercrank> to solve a quiz I should think like a quiz. What would I do if I were a quiz? I would probably look in the mirror and read myself backwards! That's the answer!
+[06:45:13] <yano> lol
+[06:47:35] *** Quits: Consuela (~anonymous@unaffiliated/stupid) (Quit: Consuela)
+[06:47:36] <slidercrank> I recognise almost no one on this channel. mniip, BlueShark and furry look familiar. I think they won in the previous years
+[06:47:52] <mniip> yes
+[06:48:01] <slidercrank> mniip, terve.
+[06:48:10] <slidercrank> for some reason if feels like you're a Finn
+[06:48:26] <mniip> almost
+[06:48:31] <mniip> russian
+[06:48:38] *** Joins: DocScrutinizer05 (~saturn@openmoko/engineers/joerg)
+[06:48:40] <slidercrank> ah!
+[06:50:15] *** Quits: Toagac`3 (~toagac@trivialand/staff/toagac) (Read error: Connection reset by peer)
+[06:50:32] *** Joins: Twilight`Sparkle (~toagac@trivialand/staff/toagac)
+[06:53:29] *** Joins: Eureka7 (Reaper119@trivialand/guesser/reap3r119)
+[06:53:37] <homerj> well I don't recognize you either!
+[06:53:53] <mniip> I know a ton of people here
+[06:54:43] *** Parts: noteness (~noteness@unaffiliated/nessessary129) ("Leaving")
+[06:54:45] <slidercrank> there are so many directions in which to go to solve this quiz.
+[06:55:02] <slidercrank> but I can't link all the clues at. 
+[06:56:31] <slidercrank> yano, what will happen if you accidentally go to the right channel (not in is sequential order)? Are you automatically disqualified?
+[06:56:34] <knivey> i miss the crypto
+[06:56:48] <knivey> you're banned from irc for life
+[06:56:53] *** Joins: SmoothPorcupine (~smooth@207.224.112.149)
+[06:57:03] <slidercrank> knivey, maybe there will be crypto puzzles in the future channels
+[06:57:05] <yano> slidercrank: you aren't eligible for the cloak prizes (which won't even be awarded until GMS is up)
+[06:57:20] <yano> there is crypto
+[06:57:20] <Eureka7> GMS?
+[06:57:31] <ser_berry> Group Management System
+[06:57:34] <Cassini> yano so... never? xD
+[06:57:48] <yano> it'll be up, eventually
+[06:57:49] <slidercrank> yano, aren't you supposed to ask "how did you get to this channel?" 
+[06:57:59] <yano> slidercrank: i ain't got time for that
+[06:58:01] *** Parts: SmoothPorcupine (~smooth@207.224.112.149) ()
+[06:58:19] *** Joins: Bijan-E (~beejan@unaffiliated/bijan-e)
+[06:58:32] <jacob1> I guess you should just be careful if you accidentally discover a channel and don't know how the clue leads to it :P
+[06:58:36] <slidercrank> for example, I'm trying numerous answers (which are wrong). But taking into account how many of them I try. I may accidentally get to the channel I'm not supposed to get
+[06:58:58] <knivey> lol
+[06:58:58] <jacob1> slidercrank: you won't accidentally find the wrong channel through the clues here lol
+[06:59:04] <slidercrank> okay
+[06:59:07] <Eureka7> maybe...
+[06:59:10] <ser_berry> slidercrank: as noted in the tips doc, you can use /mode ##channel to see if a channel exists without joining
+[06:59:14] <jacob1> if you see anything that looks right, immediately join it :P
+[06:59:17] <jacob1> for now
+[06:59:24] <yano> brute-forcing the lower level channels (lower than level 4) is not advisable
+[06:59:32] <ser_berry> if you want to be eligible for the cloak I wouldn't join unless you're sure it's the right order
+[06:59:53] <jacob1> ^ you also need to learn how to solve the lower level channels because higher level ones use some of the same strategies
+[07:00:03] <jacob1> if it's anything like last year at least
+[07:00:15] <homerj> well, also generally, you know of know who's who on the higher levels
+[07:00:43] <homerj> if you see someone in a level 5 you didn't see in level 3, something's fishy
+[07:01:11] <yano> plus i'll be double checking the order of joins for cloaks
+[07:01:49] <homerj> I need to refresh mine, after last year's meridian debacle
+[07:01:54] * jacob1 randomly joins and parts the channels in different order to confuse yano 
+[07:02:13] <yano> you can see if the channel exists without joining it by doing, /mode ##channel_name
+[07:02:21] <Klaghills> but brute-forcing the higher channels is advisable?
+[07:02:27] <Eureka7> /mode ####channel_name :P
+[07:02:31] <jacob1> Klaghills: ... no
+[07:02:35] <yano> Klaghills: no, you'll be here until the end of time
+[07:02:36] <jacob1> solve the puzzles for real all the time
+[07:02:40] <jacob1> and yeah that :P
+[07:02:41] <Klaghills> :>
+[07:02:49] <jacob1> i mean last year, the final level channel was like 40 characters long
+[07:03:12] <knivey> stupid connection timedout
+[07:03:12] <Cassini> yano the cloak is ircpuzzles/ and not april-fools?
+[07:03:33] <yano> correct
+[07:03:47] <yano> it'll be @ircpuzzles/2015/april-fools/rank_place/nick
+[07:03:51] <yano> only the top-10 get cloaks
+[07:03:58] <Eureka7> no lottery?
+[07:04:03] <knivey> yano, how many people have finished already?
+[07:04:07] <Eureka7> none
+[07:04:13] <knivey> wat?!
+[07:04:17] <Eureka7> :P
+[07:04:20] <yano> nobdy has made it to the end yet
+[07:04:21] <Eureka7> it's harder than you think
+[07:04:25] <yano> i expect the competition to take days
+[07:04:32] <Cassini> lol
+[07:04:32] <knivey> :D
+[07:04:45] *** Parts: DocScrutinizer05 (~saturn@openmoko/engineers/joerg) ("systemd breaking up recursion in dbus")
+[07:04:47] <Eureka7> yano: would you be suspicious if someone solved it in less than a day?
+[07:05:04] <knivey> someone last year finished pretty quickly
+[07:05:17] <knivey> but he was just that good
+[07:05:33] *** Quits: cracker64 (~cracker64@Powder/Developer/cracker64) (Read error: Connection reset by peer)
+[07:05:48] <yano> Eureka7: maybe
+[07:05:50] <Eureka7> knivey: it still took him over a day
+[07:05:56] <Eureka7> yano: :P
+[07:06:20] <crashdemons> the only bad thing is the special cloak actually reduces the number of chars you can post because of the command limit :p
+[07:06:34] <yano> huh
+[07:06:43] <yano> i'm pretty sure irc doesn't work that
+[07:06:45] <yano> way
+[07:06:45] <Eureka7> yano: what's the diff between yur 2 nicks?
+[07:06:47] <crashdemons> yes
+[07:06:52] <yano> Eureka7: which 2 nicks?
+[07:07:01] <Eureka7> yurs & yurs+me
+[07:07:04] <jacob1> actually it does work how crashdemons said
+[07:07:13] <jenni> oh baby
+[07:07:19] <crashdemons> your posts are limited by the full server-side PRIVMSG:   nick!user@host PRIVMSG dest :text
+[07:07:21] <crashdemons> 512 max
+[07:07:26] <slidercrank> jenni, hi
+[07:07:27] <jacob1> ^ :P
+[07:07:40] <yano> crashdemons: no they aren't, it is 512 chars after the : part
+[07:07:42] <yano> the last :
+[07:07:44] <jacob1> i've had bots that calculate that out to figure out how much they can post before
+[07:07:54] <yano> you get 510 usable chars because the last part is always \r\n
+[07:08:09] <crashdemons> yano, no.  the IRC command itself cannot be over 512, including newline
+[07:08:19] <crashdemons> try to send one, it will be dropped
+[07:08:26] <yano> that is false
+[07:08:28] <jacob1> i'm pretty sure it works that way, but idk. Would have to read the specification / do testing :P
+[07:08:48] <yano> EpicOne: ^
+[07:08:53] <yano> EpicOne would know
+[07:08:59] <crashdemons> after messing with a bot and trying to send posts that are only 490 chars and having them fail, I'm 100% sure.
+[07:09:09] <knivey> [01 01:07:40] <+yano> crashdemons: no they aren't, it is 512 chars after the : part
+[07:09:12] <crashdemons> also, read the RFC
+[07:09:13] <knivey> ow
+[07:09:24] <knivey> yano making me cry
+[07:09:28] <jacob1> if I keep putting :'s in my messages i'll have unlimited length!
+[07:09:33] <yano> jacob1: lol
+[07:09:36] <Eureka7> :P
+[07:09:53] <yano> EpicOne: is the limit limited to the paylod or the entire nick+user+host?
+[07:10:04] <Eureka7> yolo
+[07:10:21] <Eureka7> doesn't matter
+[07:10:27] <knivey> its limited to the entire command
+[07:10:31] <EpicOne> nick limit is 12, identd is 10, host is 63
+[07:10:41] <Eureka7> why would you even need to post a single line of 500?
+[07:10:41] <knivey> at least in real implementations
+[07:10:42] <yano> wat
+[07:10:53] <crashdemons> from RFC 2812: http://pastebin.com/vFSfuKsx
+[07:10:54] <jenni> [ IRC messages are always lines of characters terminated with a CR-LF (Carriag - Pastebin.com ] - https://j.mp/1xxtZTP
+[07:10:58] <crashdemons> enjoy
+[07:11:01] <yano> .py print "0" * 512
+[07:11:01] <jenni> 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+[07:11:06] <jacob1> hmm, and that's also why when you have the identify-msg CAP loaded, it cuts off a character of every message
+[07:11:10] <crashdemons> now how many did it post?
+[07:11:13] <yano> count those 0's
+[07:11:17] <knivey> strlen it
+[07:11:26] <crashdemons> 456
+[07:11:29] <EpicOne> 457
+[07:11:34] <crashdemons> the server cut it off
+[07:11:34] <jacob1> 457 :P
+[07:11:43] <crashdemons> your command was too long
+[07:11:43] <jacob1> crashdemons has identify-msg on then :P
+[07:11:43] <yano> 457
+[07:11:44] <knivey> 456
+[07:12:09] <yano> .py print len("jenni@jenni/cell-8675309")
+[07:12:09] <jenni> 24
+[07:12:13] <crashdemons> point is, you don't get 510 for the text
+[07:12:14] <knivey> can't even count
+[07:12:15] <yano> .py 24 + 457
+[07:12:16] <jenni> 481
+[07:12:22] <yano> .py 510 - 481
+[07:12:22] <jenni> 29
+[07:12:32] <EpicOne> now the len of this channel name... 
+[07:12:36] <yano> .py print len("PRIVMSG :")
+[07:12:37] <jenni> 9
+[07:12:42] <jacob1> also be sure to count the nick itself, the PRIVMSG, the spaces, and the newlines. Oh right and the length of the channel :P
+[07:12:44] <yano> .py print len("#ircpuzzles")
+[07:12:44] <jenni> 11
+[07:12:51] <yano> still missing 9 chars
+[07:13:13] <yano> not counting the newlines
+[07:13:14] <ChasedSpade> nick!ident@host PRIVMSG #Channel :Blah de bloo
+[07:13:31] <yano> .py print len("jenni@jenni/cell-8675309 PRIVMSG #ircpuzzles :")
+[07:13:31] <jenni> 46
+[07:13:33] <crashdemons> I usually just end up building a simulated server-side command without text to count how many chars I have left
+[07:13:35] <yano> .py 46 + 457
+[07:13:35] <jenni> 503
+[07:13:55] <crashdemons> but anyway, your cloak (especially long ones) detract from how much you can post in a single line
+[07:13:59] <jacob1> hmm ...
+[07:14:08] <Eureka7> crashdemons: again, why would you need that many chars?
+[07:14:15] <jacob1> i'm not sure where the other missing characters are from then
+[07:14:27] <jacob1> but at least it does show that the limit isn't always 512 :P
+[07:14:49] <crashdemons> Eureka7, really you don't but it sucks when you randomly do and it gets cut off on the far side unexpectedly
+[07:14:55] <EpicOne> ... i get 510
+[07:15:12] <ChasedSpade> Isn't nick also prefixed with a colon
+[07:15:33] <jacob1> test
+[07:15:35] <crashdemons> yes
+[07:15:48] <EpicOne> ... //echo -ag $len(jenni!~jenni@jenni/cell-8675309 PRIVMSG #ircpuzzels :0000000....)
+[07:16:25] <EpicOne> copy/paste all them 00000's that was spammed 
+[07:16:44] <crashdemons> StringLen(":jenni!~jenni@jenni/cell-8675309 PRIVMSG #ircpuzzels :0000000000...00000000000000xx")  = 512
+[07:16:48] <crashdemons> xx for CRLF
+[07:17:04] <jacob1> I get 511 now
+[07:17:06] <EpicOne> https://gist.github.com/grawity/3257896
+[07:17:08] <jenni> [ gist:3257896 ] - https://j.mp/19C3u4t
+[07:17:12] <EpicOne> read that gist
+[07:17:29] <crashdemons> exactly
+[07:17:32] <ChasedSpade> 510
+[07:17:38] <ChasedSpade> I get 510 exactly
+[07:17:53] <jacob1> oh I had the ~ in the ident because crashdemons put it
+[07:17:57] <jacob1> yep, get 510 now
+[07:18:10] <jacob1> good :)
+[07:18:13] *** Joins: egrep (egrepnix@unaffiliated/egrep)
+[07:18:47] <yano> i stand corrected
+[07:19:06] <EpicOne> kinda sure my //echo exeamp is wrong.. too lazy to check 
+[07:19:11] <crashdemons> but, you're right too, it's not that big of a deal, and I guess I kind of blew this up
+[07:19:27] <crashdemons> and it /is/ a choice, so...
+[07:19:27] <yano> lol
+[07:19:53] <jacob1> I like how my hostmask it short then, I can spam more :P
+[07:20:12] <jacob1> it was actually useful in trying to break a bot once, I had to have a shorter nick+ident+host than the bot did
+[07:20:16] <EpicOne> technically still the same spam 
+[07:20:37] <yano> lol
+[07:20:42] <yano> .addpoint EpicOne
+[07:20:42] <jenni> epicone: +1/-0, 1
+[07:21:49] <EpicOne> I should register a single letter group, get a single letter nick, with a single letter identd... 
+[07:21:58] <EpicOne> ... MOAR SPAM PER LINE ! ! ! 
+[07:21:59] <yano> oh baby
+[07:22:40] <EpicOne> and have the single letter in the cloak like "a/."
+[07:22:46] <jacob1> :P
+[07:22:54] *** Quits: alokpathy (~tripathy@pool-173-72-2-183.cmdnnj.fios.verizon.net) (Quit: WeeChat 0.3.7)
+[07:23:25] <ChasedSpade> welp, I'ma sleep on puzzle #5.. Some sleep should help
+[07:23:35] <yano> yea, i'm not planning on staying awake much longer
+[07:23:56] <EpicOne> sleep is for the weak 
+[07:24:00] <slidercrank> ChasedSpade, you make me feel stupid. I'm stuck on #1
+[07:24:12] <Eureka7> D:
+[07:24:14] <ChasedSpade> slidercrank: I've been at this for several hours now xD
+[07:24:21] <Eureka7> same here :P
+[07:24:28] <ChasedSpade> 4 hours now
+[07:24:30] *** Joins: Zachary_DuBois (~Zachary_D@yuki.morikawa.apservers.io)
+[07:24:32] <ChasedSpade> :D
+[07:24:35] <ChasedSpade> Sleepy time
+[07:25:58] <nyuszika7h> hi
+[07:26:18] *** Joins: [joker] (joker@just.phear.com)
+[07:26:29] <Eureka7> hi nyu :P
+[07:26:38] <Eureka7> nyuszika7h: yu participating this year?
+[07:26:41] <Cassini> hi [joker] 
+[07:26:41] <nyuszika7h> yes
+[07:26:59] <Eureka7> this is getting out of hand :/
+[07:27:44] *** Joins: Reap3r119 (~Doge@trivialand/guesser/reap3r119)
+[07:27:48] <Reap3r119> separate for this :P
+[07:28:20] <knivey> something tells me yano is a fan of a certain singer
+[07:28:25] <Reap3r119> :p
+[07:28:31] <Reap3r119> nyuszika7h: yur not in anything
+[07:28:45] <nyuszika7h> I just woke up
+[07:29:22] <slidercrank> I think I'm on the right track. 
+[07:29:40] <Cassini> slidercrank wouldn't you know based on the channel?
+[07:30:30] <slidercrank> Cassini, I am sure I correctly linked two of the clues. That's what makes me think I'm on the right track
+[07:30:39] <slidercrank> but I need to link all the four clues
+[07:32:08] <Reap3r119> nyuszika7h: yu better hurry :P
+[07:36:59] <slidercrank> I wonder if "cardinal" refers to a number of, rank, a bird species or if it means "important"
+[07:38:21] <knivey> lol
+[07:38:59] <Cassini> does capitalization matter?
+[07:39:05] <Klaghills> no
+[07:41:57] <jacob1> channels are case insensitive also
+[07:43:27] *** Quits: Klaghills (~himr@ool-45700537.dyn.optonline.net) (Quit: cya)
+[07:43:57] *** Quits: Reap3r119 (~Doge@trivialand/guesser/reap3r119) (Quit: Bye)
+[07:45:17] <slidercrank> damn. I've linked all the clues. Yet not getting the correct answer
+[07:47:40] <Eureka7> :P
+[07:48:28] *** Quits: Twilight`Sparkle (~toagac@trivialand/staff/toagac) (Read error: Connection reset by peer)
+[07:48:46] <Arch-TK> I'm here!!!
+[07:48:50] *** Joins: Twilight`Sparkle (~toagac@trivialand/staff/toagac)
+[07:48:50] <Arch-TK> Did I miss it?
+[07:49:14] <slidercrank> Arch-TK, no. 
+[07:49:47] <nyuszika7h> I think cardibal is pretty obvious
+[07:50:02] <nyuszika7h> the hint gives it away, not gonna make it more obvious
+[07:50:11] <nyuszika7h> *cardinal
+[07:50:46] <slidercrank> nyuszika7h, have you solved it?
+[07:51:12] <nyuszika7h> not yet
+[07:51:22] <nyuszika7h> I got one part of it
+[07:51:26] <slidercrank> then why do you think it's obvious?
+[07:51:35] <nyuszika7h> because it is
+[07:51:38] <Eureka7> I think nyu means he solved this one
+[07:51:42] <nyuszika7h> bot yet
+[07:51:44] <nyuszika7h> *not
+[07:51:55] <Eureka7> :/
+[07:51:56] <slidercrank> Eureka7, have you?
+[07:52:01] <Eureka7> yes
+[07:52:01] <nyuszika7h> one of four, cardinal, map... only 4 possible answers to that
+[07:52:10] <nyuszika7h> now I just need to solve morning light
+[07:52:24] <slidercrank> morning light and one of four are obvious
+[07:54:58] <yano> knivey
+[07:55:00] <yano> https://i.imgur.com/LygCoaa.png
+[07:56:00] *** Joins: tbqzbqr (~pzzt@104-55-170-125.lightspeed.sntcca.sbcglobal.net)
+[07:59:22] <slidercrank> is the answer a single word?
+[07:59:41] <slidercrank> or a married word?
+[08:08:28] * slidercrank gets mad
+[08:08:36] <Arch-TK> wat?
+[08:08:39] *** Quits: z3t (~jake@unaffiliated/z3t) (Quit: WeeChat 0.4.2)
+[08:08:48] <slidercrank> Arch-TK, I can't solve it :(
+[08:08:51] <Arch-TK> :P
+[08:09:02] <Arch-TK> Wait till the next level.
+[08:09:04] <slidercrank> and I've been on this channel for two hours
+[08:09:13] <yano> you are way over thinking it
+[08:09:26] <Arch-TK> Overthinking things on the earlier levels is bad.
+[08:09:33] <yano> indeed
+[08:09:53] <Cassini> i think im underthinking
+[08:09:55] <Cassini> lol
+[08:11:12] <slidercrank> Cassini, I wish we could cooperate :) But it's against the rules
+[08:14:19] <nyuszika7h> you know what would be funny
+[08:14:24] <nyuszika7h> if tomorrow yano told us
+[08:14:33] <nyuszika7h> "this was an april fools' joke, nobody gets cloaks"
+[08:14:39] <nyuszika7h> :L
+[08:14:43] <nyuszika7h> :P *
+[08:18:46] <slidercrank> hm. I've found a couple of channels. One of them can't be joined (password protected)
+[08:19:09] <klg> these are decoys
+[08:19:12] <slidercrank> both starting with ####
+[08:19:14] <slidercrank> maybe
+[08:19:41] <yano> slidercrank: https://gist.github.com/myano/a1e581614ee79b9bc42b
+[08:19:42] <jenni> [ gist:a1e581614ee79b9bc42b ] - https://j.mp/1NGMUzB
+[08:19:49] <yano> the official channels are reigstered by `ircpuzzles`
+[08:21:36] <slidercrank> yano, so I can reveal them then? If they are not registered by ircpuzzles?
+[08:21:56] *** Eureka7 is now known as Reap3r119
+[08:22:19] <yano> slidercrank: the channels that aren't related to the puzzles? yea you can mention the ones you find that are *not* valid
+[08:22:34] <jacob1> ####notvalid
+[08:22:42] <slidercrank> yano, well, one of them is ####chat 
+[08:22:52] <slidercrank> ####chat Cannot join channel (+k) - bad key
+[08:25:06] <slidercrank> the other is ####cbel. but there is only one person there. 
+[08:25:43] <crashdemons> ####cmc was really confused when I joined because they don't know anything about this puzzle
+[08:25:58] <slidercrank> Cypi, lol. It looks like we thought in the same direction
+[08:26:24] *** Joins: Spydar007 (Spydar@unaffiliated/spydar007)
+[08:26:57] <Cypi> Probably the wrong one byw, I decidedly do not think as yano at all :p
+[08:28:16] <slidercrank> yes, that direction was wrong. you too overthink it
+[08:29:29] <Cypi> Indeed
+[08:31:57] *** Joins: anderson (~ande@unaffiliated/anderson)
+[08:32:28] <slidercrank> perhaps I should take a break. to chew something :)
+[08:35:29] <walle303> slidercrank, chew yano�s keyboard till he gives us hints on level 5
+[08:35:30] <walle303> lol
+[08:36:28] <slidercrank> I'll laugh hard if I spend a day on the first level and instantly solve the puzzle from level 5
+[08:36:37] *** Quits: SgvSth (~SgvSth@204.106.251.214) (Ping timeout: 248 seconds)
+[08:36:54] <jacob1> you are probably overthinking it, someone else I know had problems too though
+[08:37:30] *** jacob1 is now known as ^j
+[08:37:51] <Cypi> Since we were headed in the same direction at some point, I can confirm that you are overthinking it. By far.
+[08:40:09] <slidercrank> Cypi, so you've solved it too?
+[08:40:17] <slidercrank> everyone has solved it but me :(
+[08:45:05] *** Joins: amonenotatwork (75c863c1@gateway/web/freenode/ip.117.200.99.193)
+[08:45:57] *** Joins: Anoniem4l (~Anoniem4l@unaffiliated/anoniem4l)
+[08:47:01] *** Quits: Twilight`Sparkle (~toagac@trivialand/staff/toagac) (Read error: Connection reset by peer)
+[08:47:21] *** Joins: Twilight`Sparkle (~toagac@trivialand/staff/toagac)
+[08:50:07] <amonenotatwork> ####Aamun
+[08:52:22] *** Quits: amonenotatwork (75c863c1@gateway/web/freenode/ip.117.200.99.193) (Quit: Page closed)
+[08:57:02] *** Joins: amone (75c863c1@gateway/web/freenode/ip.117.200.99.193)
+[08:59:40] <slidercrank> hm! a new idea!
+[09:05:25] *** Quits: vagweif7 (~vagweif7@ool-43577979.dyn.optonline.net) (Quit: Sleep)
+[09:08:17] *** Joins: vlol_ (8666841e@gateway/web/freenode/ip.134.102.132.30)
+[09:09:27] *** Joins: GaimeGuy (~hi@c-76-17-218-11.hsd1.mn.comcast.net)
+[09:09:41] <GaimeGuy> /shock
+[09:09:54] <GaimeGuy> （ ﾟДﾟ）
+[09:10:00] <GaimeGuy> so what is this place
+[09:10:02] <GaimeGuy> who are you
+[09:10:09] <GaimeGuy> and what does your daddy do
+[09:11:05] *** Joins: AAA_awright (~aaa@2607:5300:60:7d4::1)
+[09:13:00] <vlol_> someone wanna try my puzzle?
+[09:13:57] <yano> : Who is your daddy? and what does he do?
+[09:18:08] <yano> http://home.web.cern.ch/about/updates/2015/04/cern-researchers-confirm-existence-force
+[09:18:10] <jenni> [ CERN researchers confirm existence of the Force | CERN ] - https://j.mp/1IltxZc
+[09:18:51] <crashdemons> which force?
+[09:18:57] *** Reap3r119 is now known as Eureka7
+[09:19:12] <brrr> THE Force
+[09:19:25] <brrr> lol
+[09:21:27] <crashdemons> luckily I haven't see any outlets copy-paste their article as "news" yet as has happened in the past
+[09:23:05] *** Joins: amone_ (75caadf5@gateway/web/freenode/ip.117.202.173.245)
+[09:23:16] *** Quits: amone (75c863c1@gateway/web/freenode/ip.117.200.99.193) (Ping timeout: 246 seconds)
+[09:23:27] *** amone_ is now known as amone
+[09:24:57] *** Quits: ebuch (~quassel@unaffiliated/ebuch) (Ping timeout: 252 seconds)
+[09:29:11] *** [A]McKey is now known as McKey
+[09:29:52] *** Joins: ebuch (~quassel@c-50-181-214-26.hsd1.wa.comcast.net)
+[09:29:52] *** Quits: ebuch (~quassel@c-50-181-214-26.hsd1.wa.comcast.net) (Changing host)
+[09:29:52] *** Joins: ebuch (~quassel@unaffiliated/ebuch)
+[09:30:33] *** Parts: Butt3rfly (~Butt3rfly@trivialand/genius/butt3rfly) ("Leaving")
+[09:31:09] *** Quits: vlol_ (8666841e@gateway/web/freenode/ip.134.102.132.30) (Quit: Page closed)
+[09:35:31] <yano> bottle neck on Level 6
+[09:35:38] <yano> at least 19 people have made it that far
+[09:35:47] <slidercrank> I'm close
+[09:43:34] *** Quits: amone (75caadf5@gateway/web/freenode/ip.117.202.173.245) (Ping timeout: 246 seconds)
+[09:45:37] *** Quits: Twilight`Sparkle (~toagac@trivialand/staff/toagac) (Read error: Connection reset by peer)
+[09:45:51] *** Joins: Twilight`Sparkle (~toagac@trivialand/staff/toagac)
+[09:48:15] *** Joins: Zupoman (~mistrzmag@91.224.129.184)
+[09:48:37] *** Quits: Zupoman (~mistrzmag@91.224.129.184) (Changing host)
+[09:48:37] *** Joins: Zupoman (~mistrzmag@unaffiliated/zupoman)
+[09:49:01] *** Joins: amone (75caaf49@gateway/web/freenode/ip.117.202.175.73)
+[09:51:33] *** Quits: amone (75caaf49@gateway/web/freenode/ip.117.202.175.73) (Client Quit)
+[09:52:01] *** Joins: amone (75caaf49@gateway/web/freenode/ip.117.202.175.73)
+[09:54:30] *** Joins: _goeo (uid7911@gateway/web/irccloud.com/x-atmnxprmopxfbmgq)
+[09:54:34] *** Joins: dtscode (~dtscode@dtscode.io)
+[09:54:45] *** Joins: tjtoml (~tjtoml@sandor.tjtoml.com)
+[09:57:20] <dtscode> anyone have any ideas?
+[09:58:50] *** Quits: brrr (~brrr@trivialand/emeritus/brrr) (Quit: Cya!)
+[09:59:42] <_goeo> the "general tips" says no abbreviations past level 1
+[10:01:26] <Cassini> hi dtscode 
+[10:01:37] <dtscode> :D hi again Cassini 
+[10:03:31] <dtscode> yano, other than porn can the answer be any topic?
+[10:04:43] *** Joins: flarn2006 (~flarn2006@unaffiliated/flarn2006)
+[10:04:59] <flarn2006> east
+[10:05:08] <flarn2006> EAST
+[10:06:14] <dtscode> east?
+[10:06:42] *** Quits: amone (75caaf49@gateway/web/freenode/ip.117.202.175.73) (Quit: Page closed)
+[10:06:50] <dtscode> east
+[10:06:56] <crashdemons> much disqualification
+[10:07:02] <crashdemons> so drama
+[10:07:09] <dtscode> west
+[10:14:28] <Zachary_DuBois> yano
+[10:14:30] <Zachary_DuBois> Boop
+[10:14:35] <Zachary_DuBois> Look above ^
+[10:17:26] *** Joins: transacid (~transacid@pdpc/supporter/professional/transacid)
+[10:31:16] <yano> 1 person has made it to level 7
+[10:31:21] <yano> the last level is level 10
+[10:31:37] *** Parts: Bijan-E (~beejan@unaffiliated/bijan-e) ("Abra Ka daabra ... Poof")
+[10:31:51] <GaimeGuy> But if only one person has made it to level 6
+[10:31:54] <GaimeGuy> *7
+[10:31:59] <GaimeGuy> how would you know what the last level is?!
+[10:32:06] <yano> i created it
+[10:32:23] <GaimeGuy> So that means that two people have made it to level 7
+[10:32:51] <yano> no
+[10:32:58] <yano> 1 person has solved level 6 to get to level 7
+[10:40:35] <yano> http://news.softpedia.com/news/Microsof-Admits-It-s-Using-a-Modfied-Linux-Kernel-for-Years-477269.shtml
+[10:40:36] <jenni> [ Microsoft Admits It's Been Using a Modified Linux Kernel for Years - Softpedia ] - https://j.mp/1BOs6P8
+[10:42:03] *** Joins: noteness (~noteness@unaffiliated/nessessary129)
+[10:42:12] *** Parts: DaGardner (~DaGardner@unaffiliated/dagardner) ()
+[10:43:45] *** Parts: noteness (~noteness@unaffiliated/nessessary129) ("Leaving")
+[10:43:58] *** Joins: NeoMahler (~NeoMahler@wikipedia/unapersona)
+[10:44:00] *** Quits: Twilight`Sparkle (~toagac@trivialand/staff/toagac) (Read error: Connection reset by peer)
+[10:44:17] *** Parts: NeoMahler (~NeoMahler@wikipedia/unapersona) ()
+[10:44:48] *** Joins: Twilight`Sparkle (~toagac@trivialand/staff/toagac)
+[10:45:25] <slidercrank> not many new people
+[10:45:32] *** Joins: Protcom (~Protcom@unaffiliated/protcom)
+[10:45:52] <slidercrank> yano, can you do a global notice? because clearly many people are unaware of the quiz
+[10:46:05] <yano> slidercrank: we did a wallops yesterday
+[10:46:39] <yano> http://techgnotic.deviantart.com/journal/Disney-Buys-Star-Trek-492977809
+[10:46:41] <jenni> [ Disney Buys Star Trek by techgnotic on DeviantArt ] - https://j.mp/1GKxoRm
+[10:48:03] *** Parts: Protcom (~Protcom@unaffiliated/protcom) ("Leaving")
+[10:48:29] <nyuszika7h> which part of "don't part" did you not understand?
+[10:48:31] <yano> http://dev.w3.org/csswg/css-egg/
+[10:48:34] <jenni> [ CSS Expressive Generalizations and Gadgetry Level 1 ] - https://j.mp/1GKxBEc
+[10:52:50] <_goeo> yano, i never got that
+[10:53:07] <_goeo> had to ask in freenode to find this channel
+[10:53:16] <yano> yea, you have to be umode +w to see wallops
+[10:53:20] <yano> wallops aren't sent to everybody
+[10:53:32] <_goeo> oh.
+[10:53:49] <walle303> you lost the game
+[11:04:49] *** Joins: Weetos (~Weetos@unaffiliated/weetos)
+[11:04:55] *** Eureka7 is now known as Eureka|Away
+[11:12:53] <yano> watching the levels spill over is probably like watching each chamber in the titanic spill over
+[11:13:52] <crashdemons> especially when you're side is sinking
+[11:13:55] <crashdemons> *your
+[11:14:31] <Cassini> lol
+[11:15:26] <yano> hah
+[11:15:58] <walle303> guise
+[11:16:00] <walle303> someones at 8
+[11:16:06] <yano> yes
+[11:16:10] <yano> 1 person has made it to level 8
+[11:16:15] <yano> 2 people have made it to level 7
+[11:16:20] <yano> most are stuck on level 6
+[11:16:22] <Cassini> halp
+[11:16:43] <crashdemons> no seriously, halp
+[11:19:58] *** Joins: PartNAS (6dc81b73@gateway/web/cgi-irc/kiwiirc.com/ip.109.200.27.115)
+[11:20:10] <PartNAS> aprils fools channel?
+[11:21:02] <yano> yes
+[11:24:05] *** Joins: azum4roll (7bcbc457@gateway/web/freenode/ip.123.203.196.87)
+[11:24:30] *** Joins: halfawaytag (c0c693a5@gateway/web/cgi-irc/kiwiirc.com/ip.192.198.147.165)
+[11:25:07] <halfawaytag> ####east
+[11:25:10] <halfawaytag> oops
+[11:25:35] *** Parts: halfawaytag (c0c693a5@gateway/web/cgi-irc/kiwiirc.com/ip.192.198.147.165) ()
+[11:25:39] <yano> .in 3 weeks ping yano about discussion for next competition
+[11:25:39] <jenni> yano: Okay, will remind on 22 Apr 2015 at 09:25Z
+[11:26:57] *** Parts: azum4roll (7bcbc457@gateway/web/freenode/ip.123.203.196.87) ()
+[11:30:41] *** Quits: ScifiSpirit (kvirc@91-159-99-184.elisa-laajakaista.fi) (Quit: gn)
+[11:31:37] *** Joins: azum4roll (7bcbc457@gateway/web/freenode/ip.123.203.196.87)
+[11:36:06] *** Joins: MegaZard (~Mega-Char@unaffiliated/mega-charizard)
+[11:36:33] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[11:37:03] *** Parts: ImQ009 (~ImQ009@unaffiliated/imq009) ("Leaving")
+[11:42:51] *** Quits: Twilight`Sparkle (~toagac@trivialand/staff/toagac) (Read error: Connection reset by peer)
+[11:43:00] *** Joins: Toagac`3 (~toagac@trivialand/staff/toagac)
+[11:43:46] *** Joins: halfawaytag (c0c693a5@gateway/web/cgi-irc/kiwiirc.com/ip.192.198.147.165)
+[11:55:15] <yano> 1 person has made it to level 9
+[11:55:50] *** McKey is now known as [A]McKey
+[11:56:15] *** Joins: MasterLeoZangets (0ec0d0ba@gateway/web/freenode/ip.14.192.208.186)
+[11:56:41] <MegaZard> gratz to that person
+[11:57:12] *** Parts: Anoniem4l (~Anoniem4l@unaffiliated/anoniem4l) ("Leaving")
+[12:01:30] *** [A]McKey is now known as McKey
+[12:08:39] <yano> 2 people have made it to level 8
+[12:10:01] *** Parts: MasterLeoZangets (0ec0d0ba@gateway/web/freenode/ip.14.192.208.186) ()
+[12:11:39] <dtscode> yano, so the highest is one person in level 9?
+[12:11:47] <yano> yes
+[12:11:56] <dtscode> thanks
+[12:12:03] <yano> yw
+[12:12:20] <jenni> are you a real person!?!
+[12:12:43] <yano> lol
+[12:13:06] <MegaZard> no
+[12:13:17] <MegaZard> yano is a machine from teh future that can interact with us
+[12:13:24] <Cypi> jenni freaking out :o
+[12:13:55] <jenni> we are married dither.
+[12:20:21] *** Joins: amone (dfe3f531@gateway/web/freenode/ip.223.227.245.49)
+[12:24:34] *** Parts: amone (dfe3f531@gateway/web/freenode/ip.223.227.245.49) ()
+[12:31:40] <yano> 3 people have made it to level 7
+[12:40:55] *** Joins: amone (dfe3f531@gateway/web/freenode/ip.223.227.245.49)
+[12:40:55] *** Quits: Toagac`3 (~toagac@trivialand/staff/toagac) (Read error: Connection reset by peer)
+[12:41:16] *** Joins: Toagac`3 (~toagac@trivialand/staff/toagac)
+[12:51:41] *** walle303 is now known as [SLEEP]walle303
+[12:52:52] *** Joins: touhoufix (~xfix@unaffiliated/xfix)
+[12:53:06] *** touhoufix is now known as xfix
+[12:56:44] *** Joins: pad (~pad@unaffiliated/pad)
+[12:59:15] *** Quits: Eureka|Away (Reaper119@trivialand/guesser/reap3r119) (Ping timeout: 252 seconds)
+[13:01:08] *** Quits: mniip (mniip@april-fools/2014/third/mniip) (Ping timeout: 272 seconds)
+[13:07:37] *** Joins: Lynx|Away (Reaper119@trivialand/guesser/reap3r119)
+[13:08:02] *** Lynx|Away is now known as Eureka7
+[13:10:33] *** Joins: mniip (mniip@april-fools/2014/third/mniip)
+[13:33:02] *** Joins: xnr (xnrand@unaffiliated/xy)
+[13:34:34] <xnr> yano: question on the rules, in particular "don't work together" - does that mean freenode users arent allowed to work together or people in general arent allowed to work together 
+[13:35:29] <xnr> i.e. am i allowed to ask someone IRL for help?
+[13:35:58] <MegaZard> i think that most of the answers need internet so irl ppl wont help much
+[13:39:28] *** Quits: Toagac`3 (~toagac@trivialand/staff/toagac) (Read error: Connection reset by peer)
+[13:39:40] *** Joins: Toagac`3 (~toagac@trivialand/staff/toagac)
+[13:47:00] <_goeo> it could in level 6
+[13:47:15] <MegaZard> dam
+[13:47:18] <MegaZard> im in lvl 5
+[13:47:23] <MegaZard> and cant beat that
+[13:47:45] <dtscode> im still stuck on lvl 3
+[13:57:39] *** Joins: HazorEx (01096a11@gateway/web/freenode/ip.1.9.106.17)
+[14:06:38] *** Joins: PennStater (~Aaron@unaffiliated/pennstater)
+[14:06:50] <Weetos> so do I
+[14:07:16] *** Parts: PartNAS (6dc81b73@gateway/web/cgi-irc/kiwiirc.com/ip.109.200.27.115) ()
+[14:16:10] *** Parts: azum4roll (7bcbc457@gateway/web/freenode/ip.123.203.196.87) ()
+[14:16:18] *** Joins: azum4roll (7bcbc457@gateway/web/freenode/ip.123.203.196.87)
+[14:17:18] *** Quits: crashdemons (cd@unaffiliated/crashdemons) (Quit: crashdemons)
+[14:28:35] *** Joins: vagweif7 (~vagweif7@ool-43577979.dyn.optonline.net)
+[14:29:32] *** Joins: driedgrape (~freak@217.118.79.42)
+[14:32:52] *** Joins: auscompgeek (aucg@firefox/community/auscompgeek)
+[14:36:55] *** Joins: realname (realname@gateway/shell/panicbnc/x-obugjypvvtrhjuhq)
+[14:37:11] <realname> ###
+[14:37:13] <realname> ####
+[14:37:16] <slidercrank> realname, hi
+[14:37:23] <realname> Hello
+[14:37:58] *** Joins: genera (~genera@unaffiliated/genera)
+[14:38:32] *** Joins: ntz (~jdoe@static-84-42-228-122.net.upcbroadband.cz)
+[14:38:34] <ntz> servus
+[14:38:52] <ntz> someone recommended this channel for me to check, so I'm here and checking
+[14:38:54] <ntz> :)
+[14:41:40] *** Quits: Toagac`3 (~toagac@trivialand/staff/toagac) (Ping timeout: 256 seconds)
+[14:44:42] <halfawaytag> yeah, try it
+[14:45:01] <halfawaytag> to prove your geek-cred, i suppose
+[14:46:25] *** Joins: Twilight`Sparkle (~toagac@trivialand/staff/toagac)
+[14:46:36] *** Parts: realname (realname@gateway/shell/panicbnc/x-obugjypvvtrhjuhq) ("Leaving")
+[14:51:25] <ntz> tools proves my geek-cred :)
+[14:51:41] <dtscode> no they dont
+[14:52:00] <halfawaytag> "that's cheating"
+[14:52:05] <ntz> hehe
+[14:52:12] <ntz> fair
+[14:52:14] *** Joins: Deadinsky66 (~Deadinsky@gateway.ncdsb.com)
+[14:52:17] <halfawaytag> but i did use primitive tools
+[14:52:31] <halfawaytag> but weren't familiar with them
+[14:52:44] *** Parts: Deadinsky66 (~Deadinsky@gateway.ncdsb.com) ("NO MORE OPPRESSION!")
+[14:52:44] <ntz> stones and wood ?
+[14:53:06] <ntz> okay, I can use stones and wood instead of perl or such like, why not
+[14:53:13] <halfawaytag> yeah, like one function somewhere
+[14:53:18] <halfawaytag> another function elsewhere
+[14:53:21] <ntz> mechanical computing machines still have some use
+[15:00:27] *** Quits: genera (~genera@unaffiliated/genera) (Ping timeout: 252 seconds)
+[15:03:38] *** Joins: benonsoftware (benny@ubuntu/member/benonsoftware)
+[15:13:20] *** Parts: driedgrape (~freak@217.118.79.42) ("Leaving")
+[15:17:27] *** Parts: azum4roll (7bcbc457@gateway/web/freenode/ip.123.203.196.87) ()
+[15:19:17] *** Joins: SvenGek (~scht@2602:30a:c079:8ed0:6c54:28c4:2fe6:f69)
+[15:20:03] *** Quits: tjtoml (~tjtoml@sandor.tjtoml.com) (Changing host)
+[15:20:03] *** Joins: tjtoml (~tjtoml@unaffiliated/tjtoml)
+[15:21:10] *** McKey is now known as [A]McKey
+[15:22:34] *** Joins: Kaelcee (c2365694@gateway/web/freenode/ip.194.54.86.148)
+[15:24:01] *** Joins: MasterLeoZangets (0ec0d0ba@gateway/web/freenode/ip.14.192.208.186)
+[15:25:57] *** Parts: MasterLeoZangets (0ec0d0ba@gateway/web/freenode/ip.14.192.208.186) ()
+[15:27:34] *** Joins: MasterLeoZangets (0ec0d0ba@gateway/web/freenode/ip.14.192.208.186)
+[15:33:54] *** Joins: aztekk (lza@dsl-tkubrasgw2-54faa4-183.dhcp.inet.fi)
+[15:43:02] *** Parts: MasterLeoZangets (0ec0d0ba@gateway/web/freenode/ip.14.192.208.186) ()
+[15:43:50] *** Parts: aztekk (lza@dsl-tkubrasgw2-54faa4-183.dhcp.inet.fi) ()
+[15:43:52] *** Quits: ChasedSpade (CSpade@unaffiliated/chasedspade) (Quit: No reason specified.)
+[15:44:00] *** Joins: boolerex (5279045b@gateway/web/freenode/ip.82.121.4.91)
+[15:45:09] *** Quits: Twilight`Sparkle (~toagac@trivialand/staff/toagac) (Read error: Connection reset by peer)
+[15:45:28] *** Joins: Twilight`Sparkle (~toagac@trivialand/staff/toagac)
+[15:47:07] *** Joins: ChasedSpade (CSpade@unaffiliated/chasedspade)
+[15:48:49] *** Quits: Twilight`Sparkle (~toagac@trivialand/staff/toagac) (Client Quit)
+[15:53:36] *** Quits: xfix (~xfix@unaffiliated/xfix) (Quit: Konversation terminated!)
+[15:54:55] *** Quits: HazorEx (01096a11@gateway/web/freenode/ip.1.9.106.17) (Ping timeout: 246 seconds)
+[15:57:39] *** Joins: Twilight`Sparkle (toagac@trivialand/staff/toagac)
+[15:58:58] *** Eureka7 is now known as Eureka|Away
+[15:59:50] *** Joins: HazorEx (01096ba9@gateway/web/freenode/ip.1.9.107.169)
+[16:00:13] *** Joins: genera (~genera@unaffiliated/genera)
+[16:02:26] *** Quits: HazorEx (01096ba9@gateway/web/freenode/ip.1.9.107.169) (Disconnected by services)
+[16:02:54] *** Joins: HazorEx (~HaxorusEx@1.9.107.169)
+[16:08:22] *** Quits: genera (~genera@unaffiliated/genera) (Ping timeout: 255 seconds)
+[16:09:28] *** Joins: boxmein (~boxmein@unaffiliated/boxmein)
+[16:10:15] *** Eureka|Away is now known as Eureka7
+[16:10:21] *** Quits: tjtoml (~tjtoml@unaffiliated/tjtoml) (Quit: ZNC - 1.6.0 - http://znc.in)
+[16:10:32] *** Joins: tjtoml (~tjtoml@unaffiliated/tjtoml)
+[16:11:34] *** ^j is now known as jacob1
+[16:12:50] *** [A]McKey is now known as McKey
+[16:15:48] *** Joins: genera (~genera@unaffiliated/genera)
+[16:23:43] *** Eureka7 is now known as Eureka|Away
+[16:27:52] <boolerex> h
+[16:28:10] <HazorEx> j
+[16:28:21] <jwoglom> k
+[16:28:27] <HazorEx> l
+[16:30:51] *** Joins: Hazor (~HaxorusEx@1.9.107.169)
+[16:32:47] <Territoriojoven> ñ
+[16:33:35] *** Quits: Territoriojoven (~bixnood@unaffiliated/territoriojoven) (Read error: Connection reset by peer)
+[16:33:42] <MinceR> ;
+[16:34:18] *** Quits: HazorEx (~HaxorusEx@1.9.107.169) (Ping timeout: 246 seconds)
+[16:34:29] *** Quits: MegaZard (~Mega-Char@unaffiliated/mega-charizard) (Read error: Connection reset by peer)
+[16:34:45] *** Joins: Omniflux (Omniflux@april-fools/2014/eighth/Omniflux)
+[16:34:53] *** Joins: MegaZard (~Mega-Char@unaffiliated/mega-charizard)
+[16:35:57] *** Joins: Territoriojoven (~bixnood@unaffiliated/territoriojoven)
+[16:36:32] <Territoriojoven> what level was this again?
+[16:37:12] <SvenGek> -2
+[16:39:42] *** Joins: Nexia (~cheeeese@unaffiliated/nexia)
+[16:39:54] <rika> Nexia: look into the topic
+[16:40:00] <Nexia> got ya
+[16:46:37] *** Joins: fwilson (~fwilson@wikipedia/Fox-Wilson)
+[16:46:37] *** ChanServ sets mode: +v fwilson
+[16:48:00] <Arch-TK> ah
+[16:48:06] <Arch-TK> hjkl > wasd
+[16:49:03] *** Joins: Aquawave (4765f814@gateway/web/freenode/ip.71.101.248.20)
+[16:49:49] *** Quits: Twilight`Sparkle (toagac@trivialand/staff/toagac) (Quit: Leaving)
+[16:50:49] *** Joins: NonSecwitter (~NonSecwit@50.247.185.253)
+[16:53:57] *** Joins: Bremsstrahlung (~Bremsstra@unaffiliated/metaleer)
+[16:54:18] *** Parts: Bremsstrahlung (~Bremsstra@unaffiliated/metaleer) ()
+[16:56:40] *** Joins: Twilight`Sparkle (toagac@trivialand/staff/toagac)
+[16:57:15] *** Joins: ne555 (~ne555@181.88.212.12)
+[16:58:32] *** Joins: usandfriends (~usandfrie@unaffiliated/usandfriends)
+[17:00:43] *** Joins: Liria_10 (~Liria_10@AStrasbourg-157-1-29-34.w90-40.abo.wanadoo.fr)
+[17:03:04] *** Parts: boolerex (5279045b@gateway/web/freenode/ip.82.121.4.91) ()
+[17:05:07] *** Eureka|Away is now known as Eureka7
+[17:06:19] *** Parts: Liria_10 (~Liria_10@AStrasbourg-157-1-29-34.w90-40.abo.wanadoo.fr) ()
+[17:07:57] *** Quits: Hazor (~HaxorusEx@1.9.107.169) (Ping timeout: 250 seconds)
+[17:13:31] *** Parts: ne555 (~ne555@181.88.212.12) ()
+[17:14:08] *** Parts: halfawaytag (c0c693a5@gateway/web/cgi-irc/kiwiirc.com/ip.192.198.147.165) ()
+[17:20:19] *** Quits: amone (dfe3f531@gateway/web/freenode/ip.223.227.245.49) (Ping timeout: 246 seconds)
+[17:27:29] *** Joins: PapaFrog (~PapaFrog@c-73-40-100-84.hsd1.va.comcast.net)
+[17:27:34] *** Joins: knivers (~knivey@2001:470:1f11:201::dead:c0de)
+[17:33:15] <vagweif7> when does the quiz end ?
+[17:33:25] <vagweif7> s/quiz/puzzle
+[17:33:25] <jenni> vagweif7 meant to say: when does the puzzle end ?
+[17:33:27] <ser_berry> when 10 people solve the last level I think
+[17:33:48] <vagweif7> no time limit ?
+[17:34:13] <ser_berry> not afaik 
+[17:34:20] <ser_berry> double check the tips document in the topic
+[17:34:32] <vagweif7> tips are useless
+[17:34:52] <MegaZard> not really
+[17:35:23] <vagweif7> MegaZard, i've given up.
+[17:35:29] <MegaZard> rip
+[17:35:54] *** [SLEEP]walle303 is now known as walle303
+[17:36:42] <ser_berry> don't give up vagweif7 !
+[17:38:09] <vagweif7> i reached the point of typing in nonsense
+[17:38:30] <MegaZard> wont get u anywhere
+[17:38:45] <vagweif7> i obviously dont see the pattern
+[17:39:00] <vagweif7> so i've given up
+[17:45:18] <Territoriojoven> what level
+[17:46:37] <vagweif7> 5
+[17:47:43] <Territoriojoven> ha
+[17:49:14] *** Quits: stac (~stac@april-fools/2013/runnerup/stac) (Ping timeout: 256 seconds)
+[17:49:16] <anderson> how many get custom cloaks?
+[17:49:35] <Territoriojoven> 10
+[17:49:47] <Territoriojoven> then 25 in a lottery
+[17:51:09] <vagweif7> are there any other prizes awarded ?
+[17:51:30] <vagweif7> like for worst performer ?
+[17:52:01] <anderson> How about 3 clues 3 years in a row?
+[17:52:05] <ser_berry> vagweif7: since you got to level 5 you are far from the worst
+[17:52:16] <ser_berry> also there are links in the tips doc to last year's aftermath
+[17:52:21] <ser_berry> so you can see what was awarded
+[17:52:42] <anderson> lol aftermath. Like it was a natural disaster.
+[17:52:52] <SvenGek> vagweif7: I'm stuck on level 1
+[17:53:57] <vagweif7> someone else was stuck on level -2, and then blitz the next 7 levels...
+[17:54:29] <anderson> SvenGek, man don't be like that. of course then you might tempt me to ask you.
+[17:54:46] <anderson> I keep thinking this is like #freenode, no chat
+[17:56:24] *** Joins: Cosmicjoker (~Cosmicjok@trivialand/master/cosmicjoker)
+[17:57:02] <Cosmicjoker> larina, benchod
+[17:58:48] *** Quits: vagweif7 (~vagweif7@ool-43577979.dyn.optonline.net) (Quit: Leaving)
+[17:58:59] <Aquawave> Stuck on level 1 as well
+[18:00:20] *** Joins: vagweif7 (~vagweif7@ool-43577979.dyn.optonline.net)
+[18:00:36] <vagweif7> so how many people have reached level 10 ?
+[18:00:50] <MegaZard> i think 0
+[18:01:03] <MegaZard> afaik only 1 went to lvl 9
+[18:01:09] *** Quits: usandfriends (~usandfrie@unaffiliated/usandfriends) (Remote host closed the connection)
+[18:01:18] <Kaelcee> all these puzzles are for guys from it
+[18:01:19] <Kaelcee> not me
+[18:01:50] <vagweif7> from IT ?
+[18:02:13] *** Quits: Twilight`Sparkle (toagac@trivialand/staff/toagac) (Ping timeout: 264 seconds)
+[18:03:20] *** Parts: PennStater (~Aaron@unaffiliated/pennstater) ("Don't be dismayed at goodbyes; A farewell is necessary before you can meet again, and meeting again is certain for friends.")
+[18:03:28] *** Joins: shikhin (~shikhin@unaffiliated/shikhin)
+[18:04:29] *** McKey is now known as [A]McKey
+[18:05:25] *** Joins: bender| (~anonymous@unaffiliated/bender/x-9459530)
+[18:07:59] *** Joins: usandfriends (~usandfrie@unaffiliated/usandfriends)
+[18:08:01] *** [A]McKey is now known as McKey
+[18:08:44] *** Quits: Aquawave (4765f814@gateway/web/freenode/ip.71.101.248.20) (Quit: Page closed)
+[18:09:55] *** Joins: Aquawave (4765f814@gateway/web/freenode/ip.71.101.248.20)
+[18:10:45] <furry> i can find out
+[18:12:27] *** Joins: Aquawave_ (4765f814@gateway/web/freenode/ip.71.101.248.20)
+[18:12:43] *** Quits: Aquawave (4765f814@gateway/web/freenode/ip.71.101.248.20) (Disconnected by services)
+[18:12:48] *** Aquawave_ is now known as Aquawave
+[18:15:53] *** Joins: Twilight`Sparkle (~toagac@trivialand/staff/toagac)
+[18:16:01] <vagweif7> okay ?
+[18:16:04] <usandfriends> Will there be a notification on all the channels when someone has made it to the end?
+[18:16:14] <usandfriends> or when 10 people have made it to the end?
+[18:16:22] <MegaZard> yano pls answer
+[18:16:31] *** Joins: stac (~stac@april-fools/2013/runnerup/stac)
+[18:17:21] *** phy1729 is now known as phyl729
+[18:17:27] *** phyl729 is now known as phy1729_
+[18:17:36] *** phy1729_ is now known as Troll_0p
+[18:17:46] *** Quits: bender| (~anonymous@unaffiliated/bender/x-9459530) (Remote host closed the connection)
+[18:18:40] *** Joins: Latin (uid20999@gateway/web/irccloud.com/x-gdjtfcbfsagmybgi)
+[18:18:57] <Latin> uh
+[18:20:51] <SvenGek> translate.google.com For Latin to English translations
+[18:21:13] <Latin> grassyass.
+[18:21:32] <SvenGek> day Nadia
+[18:23:43] <Latin> de nalgas ;p
+[18:32:08] *** Joins: brrr (~brrr@trivialand/emeritus/brrr)
+[18:32:19] *** Joins: amone (dfe31b8c@gateway/web/freenode/ip.223.227.27.140)
+[18:32:32] *** rika is now known as oqritwq
+[18:32:37] *** oqritwq is now known as rika
+[18:32:54] *** Quits: Nexia (~cheeeese@unaffiliated/nexia) (Excess Flood)
+[18:33:03] *** Joins: Nexia (~cheeeese@ip2.freeshells.org)
+[18:33:03] *** Quits: Nexia (~cheeeese@ip2.freeshells.org) (Changing host)
+[18:33:03] *** Joins: Nexia (~cheeeese@unaffiliated/nexia)
+[18:37:02] *** Joins: Nem0 (~nem0@unaffiliated/nem0)
+[18:40:49] *** Joins: MechanicalMoth (~Eingana@unaffiliated/eingana)
+[18:40:51] *** Parts: Aquawave (4765f814@gateway/web/freenode/ip.71.101.248.20) ()
+[18:43:43] *** Parts: Nem0 (~nem0@unaffiliated/nem0) ("There he goes. One of God's own prototypes. A high-powered mutant of some kind never even considered for mass production. Too weird to live, and too rare to die.")
+[18:49:44] *** Parts: Kaelcee (c2365694@gateway/web/freenode/ip.194.54.86.148) ()
+[19:08:10] *** Joins: cracker64 (~cracker64@Powder/Developer/cracker64)
+[19:24:55] <walle303> awnser: https://www.youtube.com/watch?v=SQoA_wjmE9w
+[19:24:57] <walle303> oh hi cracker64 
+[19:24:57] <jenni> [ Darude Astley - Sandroll - YouTube ] - https://j.mp/1BLX0Xm
+[19:24:58] <walle303> lol
+[19:25:14] <cracker64> hi, I am here now
+[19:29:17] *** Parts: anderson (~ande@unaffiliated/anderson) ("cha")
+[19:32:23] *** Quits: shikhin (~shikhin@unaffiliated/shikhin) (Ping timeout: 256 seconds)
+[19:35:09] *** Joins: shikhin (~shikhin@unaffiliated/shikhin)
+[19:39:14] <walle303> cracker64, what level are you on
+[19:39:41] <cracker64> uhh 6
+[19:40:20] *** Quits: usandfriends (~usandfrie@unaffiliated/usandfriends) (Remote host closed the connection)
+[19:45:53] *** Quits: MechanicalMoth (~Eingana@unaffiliated/eingana) ()
+[19:46:28] <Eureka7> 7 sucks >:(
+[19:47:06] <Leonys> Still stuck on 6 too
+[19:47:16] <MegaZard> ^
+[19:47:34] <MegaZard> i want to rant about it but im tired of doing that
+[20:06:37] *** Joins: Beedrill (4e957a7e@gateway/web/freenode/ip.78.149.122.126)
+[20:07:36] *** Joins: Natsugan (~Natsugan@71.42.153.32)
+[20:11:51] <yano> i'm going to add more levels, so that there is no end to the game
+[20:11:56] <yano> April Fools!
+[20:11:58] <yano> :p
+[20:12:00] <MegaZard> pls pls
+[20:14:02] <vagweif7> yano has anyone completed all the levels ?
+[20:14:13] <yano> nope
+[20:14:23] <yano> nobody has won the whole thing yet
+[20:14:26] <vagweif7> is anyone on 10 ?
+[20:14:34] <MegaZard> no
+[20:14:48] <yano> nope
+[20:14:52] <vagweif7> wow
+[20:15:04] <yano> the furthest people have made it is level 9, and only 2 people are there
+[20:15:19] <Territoriojoven> 10 can't be the last
+[20:15:20] <jacob1> there are 90 people on level 8 though
+[20:15:42] <yano> only 2 people are on level 8
+[20:15:56] <yano> 8 on level 7
+[20:15:59] <jacob1> :P
+[20:16:01] <vagweif7> jacob1, are you trolling
+[20:16:07] <yano> and at least 37 on level 6
+[20:16:10] <jacob1> I never troll
+[20:17:17] *** Quits: Cosmicjoker (~Cosmicjok@trivialand/master/cosmicjoker) (Quit: Leaving)
+[20:20:13] *** Joins: Nedviles (~nedviles@unaffiliated/nedviles)
+[20:33:40] *** Joins: Coryn (~Popcoryn@ip72-205-212-36.pn.at.cox.net)
+[20:38:21] *** Coryn is now known as Obama
+[20:38:31] *** Obama is now known as Coryn
+[20:39:30] *** Parts: Coryn (~Popcoryn@ip72-205-212-36.pn.at.cox.net) ("It remained stiff.")
+[20:41:50] *** Quits: genera (~genera@unaffiliated/genera) (Remote host closed the connection)
+[20:43:07] *** Joins: genera (~genera@unaffiliated/genera)
+[20:44:04] *** Joins: vexn (vexn@unaffiliated/vexn)
+[20:49:17] *** Joins: Jacob123 (~IceChat9@77.81.245.18)
+[20:49:43] *** Parts: Natsugan (~Natsugan@71.42.153.32) ("Leaving")
+[20:57:52] * NonSecwitter wonders if these people are working
+[20:58:22] *** Quits: Beedrill (4e957a7e@gateway/web/freenode/ip.78.149.122.126) (Ping timeout: 246 seconds)
+[20:58:47] *** Quits: Nedviles (~nedviles@unaffiliated/nedviles) (Read error: Connection reset by peer)
+[21:01:17] *** Joins: shikhin_ (~shikhin@unaffiliated/shikhin)
+[21:01:22] <vexn> are we allowed to ask if the previous hints are related to future hints
+[21:01:26] <vexn> or is each its own pusszle
+[21:01:30] <vexn> puzzle*
+[21:02:09] <jacob1> they may or may not be. But this is the first level so you don't have to worry about that :P
+[21:02:30] <vexn> that's the kind of whimsical unhelpful answer you get in #httpd plz don't do that
+[21:02:41] <jacob1> ):
+[21:02:46] <jacob1> i'm not allowed to give you the answers
+[21:03:39] <MinceR> are you allowed to give us the questions?
+[21:04:38] *** Quits: shikhin (~shikhin@unaffiliated/shikhin) (Ping timeout: 265 seconds)
+[21:06:45] *** shikhin_ is now known as shikhin
+[21:06:48] <jacob1> here is part of the topic question on the next level: "| General tips: https://git.io/j5Zj | "
+[21:06:50] <jenni> [ gist:a1e581614ee79b9bc42b ] - https://git.io
+[21:07:07] <MegaZard> lol
+[21:07:35] <MinceR> that's not a question
+[21:07:57] <jacob1> that space at the end is part of the question
+[21:08:07] <jacob1> i'll even give you the next letter: 'C'
+[21:08:11] <MegaZard> #rekt
+[21:10:26] <MinceR> and the next letter is 'l'
+[21:10:30] <MinceR> followed by 'u'
+[21:10:33] <MinceR> how exciting!
+[21:10:52] <jacob1> I thought the first word in the question was going to be "Canada", I guess I was wrong ):
+[21:11:32] <MinceR> "yes we canada!"
+[21:11:34] *** Joins: Cosmicjoker_ (~Cosmicjok@trivialand/master/cosmicjoker)
+[21:11:35] *** Joins: Kanerix (~kanerix@reverse.control4.com)
+[21:12:21] *** Parts: amone (dfe31b8c@gateway/web/freenode/ip.223.227.27.140) ()
+[21:13:40] *** Cosmicjoker_ is now known as Cosmicjoker
+[21:16:07] *** Joins: crashdemons (cd@unaffiliated/crashdemons)
+[21:18:29] *** Quits: Jacob123 (~IceChat9@77.81.245.18) (Remote host closed the connection)
+[21:23:39] *** Joins: HotTopic (~Hot@162.72.70.141)
+[21:24:39] *** Parts: HotTopic (~Hot@162.72.70.141) ()
+[21:30:15] *** Parts: Eureka7 (Reaper119@trivialand/guesser/reap3r119) ("Laterz")
+[21:34:46] *** Parts: Kanerix (~kanerix@reverse.control4.com) ("Leaving")
+[21:36:30] *** Joins: uroboro (uid14996@gateway/web/irccloud.com/x-kpvmeupuytpmurbs)
+[21:39:46] *** MegaZard is now known as MegaBot
+[21:39:51] *** MegaBot is now known as Mega-Bot
+[21:41:10] *** Parts: uroboro (uid14996@gateway/web/irccloud.com/x-kpvmeupuytpmurbs) ()
+[21:41:38] *** Joins: Russell21 (689ce48e@gateway/web/cgi-irc/kiwiirc.com/ip.104.156.228.142)
+[22:01:58] *** Quits: Mega-Bot (~Mega-Char@unaffiliated/mega-charizard) (Quit: Mega-Charizard fainted!)
+[22:06:18] *** Parts: boxmein (~boxmein@unaffiliated/boxmein) ("whoops")
+[22:23:49] *** Quits: Cosmicjoker (~Cosmicjok@trivialand/master/cosmicjoker) (Quit: Leaving)
+[22:31:26] *** Joins: amone (dfe391c9@gateway/web/freenode/ip.223.227.145.201)
+[22:43:04] *** Joins: Sublim3 (~CharlesV@104.156.67.66)
+[22:43:14] *** Joins: shovel_boss (~chatzilla@unaffiliated/shovel-boss/x-4881665)
+[22:49:11] *** Joins: Techwolf (~Techwolf@unaffiliated/techwolf)
+[22:53:24] *** Joins: SgvSth (~SgvSth@204.106.251.214)
+[23:00:03] *** Quits: NonSecwitter (~NonSecwit@50.247.185.253) (Ping timeout: 252 seconds)
+[23:00:17] *** Joins: NonSecwitter (~NonSecwit@50.247.185.253)
+[23:01:36] *** Quits: shikhin (~shikhin@unaffiliated/shikhin) (Ping timeout: 265 seconds)
+[23:06:05] *** Joins: shikhin (~shikhin@unaffiliated/shikhin)
+[23:13:30] *** McKey is now known as [A]McKey
+[23:17:11] *** jacob1 is now known as ^j
+[23:26:38] *** Joins: ScifiSpirit (kvirc@91-159-99-184.elisa-laajakaista.fi)
+[23:32:37] *** Quits: crashdemons (cd@unaffiliated/crashdemons) (Quit: crashdemons)
+[23:33:09] <vexn> WHY IS THIS SO HARD
+[23:33:12] <vexn> YOU SICK BASTARDS
+[23:33:37] <ser_berry> what level you on?
+[23:33:43] <MinceR> that's what she said.
+[23:34:51] *** Joins: iIIustrious (~iIIustrio@unaffiliated/iiiustrious)
+[23:34:57] <sfan5> lol
+[23:35:19] <Cassini> hot
+[23:37:01] *** Joins: Sublim3|Home (~sublime__@modemcable192.0-83-70.mc.videotron.ca)
+[23:45:22] *** Parts: dtscode (~dtscode@dtscode.io) ("Leaving")
+[23:46:07] *** Joins: Klaghills (~himr@ool-45700537.dyn.optonline.net)
+[23:56:23] *** Quits: Zupoman (~mistrzmag@unaffiliated/zupoman) (Quit: Plan B failed, time for Plan 9!)

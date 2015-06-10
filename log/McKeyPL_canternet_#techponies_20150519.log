@@ -1,0 +1,337 @@
+[00:08:01] *** Quits: cyborg_ar (cyborgar@Pony-2q9.q1h.25.181.IP) (Client exited)
+[00:08:32] *** McKey is now known as [A]McKey
+[00:16:40] <Twilightlicious> You know what i miss?
+[00:16:46] <Twilightlicious> The ability to fullscreen CMD.exe
+[00:18:31] <Twilightlicious> sounds like a dumb thing to miss
+[00:18:36] <Twilightlicious> but it's the little things. Q~Q
+[00:19:16] <Seoson> But it would be too much to ask microsoft to implement a variable window width  ;-)
+[00:19:28] <Twilightlicious> Actually
+[00:19:34] <Twilightlicious> Windows XP had full screen CMD
+[00:19:36] <Twilightlicious> by ALT+Enter
+[00:19:55] <Seoson> I didn't know that
+[00:21:05] <Seoson> Even the powershell doesn't ...
+[00:23:21] <Twilightlicious> it would change the resolution of the screen to match the CMD Window
+[00:23:26] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[00:23:59] <Twilightlicious> I believe Windows Vista and Windows 7 would tell you That your video card doesn't support fullscreen CMD
+[00:24:05] <Twilightlicious> And Windows 8 says nothing
+[00:26:33] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[00:41:00] <Phase> Twilightlicious, in 10 you can maximize cmd, it's actually properly resizable
+[00:41:33] *** Joins: cyborg_ar (cyborgar@Pony-2q9.q1h.25.181.IP)
+[00:51:09] <Twilightlicious> nonworking 64-bit builds of Project64 are popping up :P
+[00:51:50] *** Pony_89185 is now known as WestJ
+[01:00:43] *** Joins: Sombra (Iceman@Darkhorse21)
+[01:17:04] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[01:21:47] *** Joins: Crimson_Tail (Bluepon@Pony-f07ajs.s0tm.sdub.0151.2601.IP)
+[01:49:34] *** Joins: zeta_ (Bluepon@Pony-mfh7oq.md.comcast.net)
+[01:52:33] *** Quits: Crimson_Tail (Bluepon@Pony-f07ajs.s0tm.sdub.0151.2601.IP) (Ping timeout: 121 seconds)
+[01:56:22] *** Joins: Fallfeathers (Fallfeather@Pony-iv8sg6.internode.on.net)
+[02:10:21] *** Quits: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se) (Ping timeout: 121 seconds)
+[02:18:56] *** Joins: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se)
+[02:38:21] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[02:46:09] * JustAberrant takes a little of Colgate 's hair and runs for it
+[02:47:29] * tiwake whistles a little thing and trips JustAberrant as he runs by
+[02:58:49] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[03:07:14] <DataByteBrony> I have been on a call with a 'service tech' from microsoft for the past 4 hours
+[03:07:25] <Twilightlicious> lol
+[03:07:30] <Twilightlicious> on hold, or talking for 4 hours?
+[03:07:59] <DataByteBrony> at one point, he navigated to the network connections page, pulled up the ipv4 configuration, then asked me to add the machine to the domain from there
+[03:09:10] <DataByteBrony> and just now, he wanted me to browse to a network location to confirm that the networking is working.. WHEN THE MACHINE WAS JUST JOINED TO THE DOMAIN AN HOUR AGO
+[03:09:13] <DataByteBrony> argh
+[03:10:02] <DataByteBrony> the last three weeks with this guy is him trying everything i tried, over and over
+[03:10:06] <DataByteBrony> nothing different
+[03:10:21] <DataByteBrony> now today we're re-imaging the vm.. AGAIN
+[03:10:29] <tiwake> heh
+[03:10:43] <tiwake> people over rate software support
+[03:11:36] <Colgate> every once in a while you get someone who knows what they're doing
+[03:12:22] <DataByteBrony> i would like if i could ask for one
+[03:12:35] <DataByteBrony> i knew from day one that he was only following a tutorial
+[03:12:44] <DataByteBrony> the same one i did months ago
+[03:14:53] <DataByteBrony> a few times he's even asked to change arbitrary things, like the machine name, because this or that.. then i show him why that's not the error, we change it anyway, and surprise! still not working!
+[03:15:30] <wolfyshy> 3 weeks?
+[03:15:56] <wolfyshy> after 8 days with tier 1 and tier 2 I bitched and moaned (heh.. I'm a wolfess and I bitched... woof)
+[03:16:03] <wolfyshy> and they gave me "tier 4"
+[03:16:10] <wolfyshy> which was a guy on the windows networking development team
+[03:16:15] <wolfyshy> and he fixed it in 2 hours
+[03:16:37] <wolfyshy> this was back in 2008, when win2k8 was new, so no guarantees it's still tiered like that
+[03:16:50] <wolfyshy> but yes, there are ways to escalate if you are persistent
+[03:17:11] <wolfyshy> just be up front... you know this is wasting their time, your time, you just want the issue fixed... you need to speak with someone with more in-depth knowledge
+[03:19:58] <DataByteBrony> that's my problem, i guess..
+[03:20:20] <DataByteBrony> i know this is a pretty involved problem - i've been at it for a good two months
+[03:20:37] <wolfyshy> mine involved a bug in the L2TP stack
+[03:20:40] <wolfyshy> in win2k8
+[03:21:06] <DataByteBrony> i'm just too polite to tell this guy he shouldn't be working on something this tough when he doesn't know the difference between a network and a domain
+[03:21:10] <wolfyshy> the "tier 4" guy wasted no time, he was like, throw me rdp on a VM and put netmon/wireshark on it
+[03:21:46] <wolfyshy> then again, MS 'knows' me
+[03:22:11] <wolfyshy> I had an enterprise contract with them back in 2002-2004, at home, lol
+[03:31:33] <JustAberrant> <tiwake> people over rate software support
+[03:31:38] <JustAberrant> sometimes it's not bad
+[03:32:13] <tiwake> also, look at this new thing I'm making https://www.dropbox.com/s/u2mj84el3j1havi/20150518_001.jpg?dl=0
+[03:32:14] <JustAberrant> place I work is a pretty big company[tm], and we've got fairly expensive contracts with companies like presagis
+[03:32:26] <JustAberrant> where the support is basically like..
+[03:33:11] <JustAberrant> "ok, we've looked at your problem and built a list of things for you to try while our FSR is flying out to your site.."
+[03:33:51] <JustAberrant> but yeah, any support that you didn't explicitly pay for is gonna suck :>
+[03:34:05] <JustAberrant> it's just a cost center that they try to fill as cheaply as possible
+[03:35:56] <ShivalPonyWolf> https://pbs.twimg.com/media/CFT2STtUgAAhRdZ.jpg:large
+[03:36:20] <tiwake> IOT?
+[03:36:38] <JustAberrant> hehe
+[03:36:41] <JustAberrant> yeah
+[03:36:44] <ShivalPonyWolf> tiwake: internet of things
+[03:37:00] <tiwake> what is that?
+[03:37:10] <ShivalPonyWolf> where have you been for the last 2 years
+[03:37:24] <JustAberrant> pretty much everyone that has a thing that happens to have network support is stamping the IOT label 
+[03:37:27] <tiwake> sounds like the ominous sister to the cloud
+[03:37:34] <JustAberrant> the fine folks at OpenSplice recently made the jump
+[03:37:57] <JustAberrant> they no longer make data centric middleware
+[03:38:04] <JustAberrant> they FACILITATE THE INTERNET OF THINGS YO!
+[03:38:10] <JustAberrant> *ahem*
+[03:38:20] <tiwake> so it is "the cloud"?
+[03:38:24] <ShivalPonyWolf> its connecting the net to things that really shouldnt be
+[03:38:39] <ShivalPonyWolf> becuase noone thinks about the security issues
+[03:38:41] <Colgate> gotta put dem lightbulbs on the internet
+[03:38:45] <tiwake> ah, that thing
+[03:38:50] <ShivalPonyWolf> Colgate: and the toasters
+[03:38:52] <ShivalPonyWolf> and the cofee makers
+[03:39:02] <JustAberrant> it's like.. home automation fad part 2
+[03:39:10] <JustAberrant> where they still haven't found a use for it yet..
+[03:39:14] <JustAberrant> but they can do so much more
+[03:39:15] <tiwake> heh
+[03:39:25] <tiwake> ...watches
+[03:39:29] <JustAberrant> and make it so much shinier
+[03:39:32] <ShivalPonyWolf> i need my toilet connected to twitter to make sure it publicly posts how much its used
+[03:39:41] <tiwake> ha
+[03:39:49] * JustAberrant waiting for the smart fridge thing to come back
+[03:39:54] <ShivalPonyWolf> and then someone hacks into it
+[03:39:54] <tiwake> "mass flushed by day"
+[03:40:02] <ShivalPonyWolf> and makes it flush water constantly becuase they can
+[03:41:10] <tiwake> well, I don't own a house yet and havent been looking at home appliances at all
+[03:41:31] <tiwake> I have noticed it on heat pumps though
+[03:41:42] <tiwake> lamers
+[03:42:38] <JustAberrant> well, it hasn't really made it into homes yet
+[03:42:59] <JustAberrant> its more of a concept that about 40% of the computer industry feels compelled to rattle on about
+[03:43:16] <JustAberrant> again, very home automation fad-ish
+[03:43:59] <JustAberrant> "In the future, you fridge will tell you when you are running low on ketchup! All you'll need to do is enter the amount of ketchup used every time into this keypad whilst scanning it's UPC bar code!"
+[03:44:04] <JustAberrant> * your
+[03:44:12] <tiwake> ...yeah
+[03:44:12] <tiwake> well
+[03:44:33] <tiwake> by then it will have built in scales on the shelves
+[03:44:52] <JustAberrant> seriously, were you not alive in the 90s.. do you not remember the whole smart home thing?
+[03:45:03] <tiwake> actually it only needs one scale... where it scans whatever goes in and out
+[03:45:09] <tiwake> lol
+[03:45:53] <JustAberrant> sooo much shit that brought a marginal functionality at the expense of you following a ridged routine
+[03:46:21] <tiwake> didnt know it was happening in the 90's...
+[03:46:45] * JustAberrant had an x10 system back int he day
+[03:46:47] <tiwake> ...and didnt really know it was happening these days.. heh
+[03:46:48] <JustAberrant> * in the
+[03:46:52] <JustAberrant> oh man was that shit
+[03:47:07] <JustAberrant> like.. imagine a protocol with no handshake.. running over your powerlines
+[03:47:37] <tiwake> I try not to
+[03:47:44] <JustAberrant> with a dead simple protocol where random interference could easily be valid commands
+[03:48:05] <JustAberrant> convention was to send commands 3 times to ensure delivery.. and even then.. 
+[03:49:19] <tiwake> I'm thinking I'm going to go home
+[03:50:07] <tiwake> or I could stay and set up the next program... herm
+[03:51:01] <tiwake> I should have bumped up the bar size to 1" from 7/8"
+[04:24:54] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[04:25:37] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[04:39:45] *** Quits: DataByteBrony (DataByte@Pony-48e6na.lrpe.i2gu.000d.2601.IP) (Ping timeout: 121 seconds)
+[04:42:38] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Rain called on account of pony.)
+[04:59:16] *** Quits: Fallfeathers (Fallfeather@Pony-iv8sg6.internode.on.net) (Connection closed)
+[05:09:49] *** Joins: Sombra (Iceman@Darkhorse21)
+[05:26:38] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[05:28:05] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[05:29:54] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[05:31:06] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[05:36:10] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[05:38:02] *** GigaWork is now known as Gigabit
+[05:40:51] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[05:43:53] <Moonlightning> huh
+[05:44:27] <Moonlightning> the GNU `touch` without -[am] also changes creation time on files on HFS filesystems under OS X
+[06:10:21] <Moonlightning> >> http://www.merit.edu/mail.archives/nanog/2006-09/msg00364.html
+[06:10:22] <PinkiePieBot> [ Re: Why is RFC1918 space in public DNS evil? ]
+[06:10:22] <Moonlightning> > I know the common wisdom is that putting 192.168 addresses in a public zonefile is right up there with kicking babies who have just had their candy stolen, but I'm really struggling to come up with anything more authoritative than "just because, now eat your brussel sprouts".
+[06:14:00] <ShivalPonyWolf> it leaks info about your internal network layout
+[06:15:32] <ShivalPonyWolf> it also means if a system is out of your internal network it will still get a resolution on the outside world and then try and send trafic to that and you dont know what it is
+[06:17:28] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[06:17:34] <cyborg_ar> lol kicking babies
+[06:17:56] <cyborg_ar> well i consider hijacking NXDOMAIN to be in that level of evil
+[06:17:59] <cyborg_ar> if not more
+[06:18:04] <cyborg_ar> fucking greedy ISPs
+[06:18:39] <Moonlightning> > I believe Windows Vista and Windows 7 would tell you That your video card doesn't support fullscreen CMD
+[06:19:12] <Moonlightning> This now ranks highly on the list of great loads of bullshit I've heard.
+[06:20:00] <ShivalPonyWolf> Moonlightning: i think this ranks higher - https://pbs.twimg.com/media/CFUkNa0UEAAkbol.jpg:large
+[06:20:49] <cyborg_ar> that's just stupid
+[06:20:57] <cyborg_ar> the windows thing is probably just lazy
+[06:21:22] <cyborg_ar> they probably use the code from NT 3.5 that puts the video card in CGA mode to display the DOS prompt
+[06:22:03] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[06:23:25] <Moonlightning> ShivalPonyWolf: they're on the same tier.
+[06:24:02] <Moonlightning> i.e. the /*facehoofs…* You /really/ don't know what you're talking about. Please, for the sake of everypony's sanity, just //shut up./// tier
+[06:24:26] <Moonlightning> I can't tell which ranks higher though x.x
+[06:24:47] <Moonlightning> ShivalPonyWolf: That's always an issue, though.
+[06:25:21] <Moonlightning> Client resolves private name, gets private address, moves to a different network, tries to send the same data to the same address. Oops?
+[06:26:49] <Moonlightning> The thing to do is authenticate the server and not blindly assume that it's what you think it is because it has this address.
+[06:27:05] <Moonlightning> As for the network layout…IDGAF.
+[06:27:13] <Moonlightning> Hay, everypony! Here's my network layout!
+[06:27:37] <Moonlightning> It's a VPN. One server, usually about one to four clients at any given time. Most of those are laptops and phones.
+[06:28:23] <Moonlightning> Star topology.
+[06:29:19] * cyborg_ar sends intelligence to interested parties
+[06:31:24] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[06:32:41] <Moonlightning> …wow, okay
+[06:33:34] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[06:33:53] <Moonlightning> I typed /mycroft holmes / into DDG and got /mycroft holmes/, /mycroft holmes bbc/, and /mycroft holmes fanfiction/ as the first three suggestions.
+[06:33:59] <Moonlightning> In that order.
+[06:35:27] <Moonlightning> Also, this: [text [NSFW]] https://40.media.tumblr.com/1d57ec11b9f949103667c92d90135f30/tumblr_ne0inq5BEE1rbp4plo1_500.jpg
+[06:39:19] *** Quits: cyborg_ar (cyborgar@Pony-2q9.q1h.25.181.IP) (Client exited)
+[07:13:50] *** Joins: Carrot_Top (Carrot_Top@Anon.Theroleplaypony.Starlight)
+[07:15:13] *** Carrot_Top is now known as Halcyon
+[07:20:40] *** Q0|Away is now known as Q0
+[07:23:33] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:28:12] <Moonlightning> Okay, so I'll need to supply OpenVPN with a script that will parse DHCP options out of the environment and push them to resolvconf
+[07:28:37] <AppleDash> OK
+[07:28:46] <Moonlightning> Is there something that already does that? Given a list of DHCP options, rewrite them into resolvconf format?
+[07:29:31] <AppleDash> Moonlightning
+[07:29:34] <AppleDash> ...
+[07:29:37] <AppleDash> `resolveconf` ?
+[07:29:44] <AppleDash> `resolvconf`* ?
+[07:29:52] <Moonlightning> yes, resolvconf
+[07:30:02] <AppleDash> `resolvconf`
+[07:30:07] <AppleDash> Is what you want, I think
+[07:30:32] <Moonlightning> Those strings are identical
+[07:30:50] <AppleDash> OK
+[07:31:07] <AppleDash> You want the command-line tool that is involed by typing `resolvconf`
+[07:31:10] <AppleDash> invoked*
+[07:32:04] <Moonlightning> I'd be rather surprisde if DHCP options were /already/ resolvconf format
+[07:32:24] <AppleDash> I'm confused as to what you want
+[07:34:05] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[07:34:47] * Moonlightning backs up a step.
+[07:35:34] <Moonlightning> I'm trying to get my VPN clients to use a certain DNS server and certain search domains when they're on the VPN.
+[07:37:13] <Moonlightning> OpenVPN provides a `dhcp-option` option which works as expected on Android, iOS, and Windows; but on Linux and OS X systems, it puts the option into the environment used for running hook scripts.
+[07:37:54] <Moonlightning> So I figured I'd write such a hook script that would parse the options out of the environment and pass them off to `resolvconf`.
+[07:38:33] <Moonlightning> Then I found the list of DHCP options and wondered if somepony had already written a thing that took DHCP options and gave back something formatted for `resolvconf`. :P
+[07:45:54] <Moonlightning> …okay, now I'm generally confused about the semantics of OpenVPN's `dhcp-option`
+[07:46:41] <Moonlightning> fuck it, I'm going to sleep
+[08:12:22] <Twilightlicious> How many Megabytes is 6 Megabits?
+[08:12:26] <Twilightlicious> >3>
+[08:12:44] <Twilightlicious> like, 650~Kbps?
+[08:17:25] *** Quits: zeta_ (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[08:18:57] <Googie> 6000/8
+[08:27:57] *** Quits: Sol (Sol@Pony-nc8b4c.res.rr.com) (Quit: Leaving)
+[08:38:22] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:38:56] *** Joins: Fallfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au)
+[08:48:46] <AppleDash> `wa 6 megabits to megabytes
+[08:48:48] <derpy> 0.75 MB  (megabytes)
+[08:55:43] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[09:16:32] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:21:21] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:37:01] *** Quits: M1CHL0D[FireBolt] (Michl0d@Pony-8s6.3h9.53.72.IP) (Connection closed)
+[09:39:33] *** [A]McKey is now known as McKey
+[09:44:13] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[09:54:14] *** McKey is now known as [A]McKey
+[09:54:15] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[10:09:14] *** Joins: Cloudrunner_ (deltapony@Pony-nn8.u8m.190.180.IP)
+[10:10:35] <Cloudrunner_> So I'm using MIRC
+[10:46:02] *** Quits: Cloudrunner_ (deltapony@Pony-nn8.u8m.190.180.IP) (Ping timeout: 121 seconds)
+[10:50:10] *** [A]McKey is now known as McKey
+[10:54:03] <AppleDash> I see mIRC worked well for them
+[10:59:34] *** McKey is now known as [A]McKey
+[11:03:15] <init3> Hue
+[11:04:43] *** Quits: init3 (Jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[11:09:29] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[11:11:00] <AppleDash> Fuckkkkkkkk
+[11:11:07] <AppleDash> Anyone here good with nginx?
+[11:11:26] <AppleDash> I'm using proxy_pass with nginx, and at the URL I'm proxying to, it is sending a GET //page/whatever
+[11:11:29] <AppleDash> Note the double slash.
+[11:11:38] <AppleDash> The server running at that URL doesn't support that
+[12:05:23] *** Joins: cyborg_ar (cyborgar@Pony-2q9.q1h.25.181.IP)
+[12:19:02] <Phase> AppleDash, it'll be as simple as "/$url" instead of "$url"
+[12:19:35] <AppleDash> I fixed it
+[12:19:51] <Phase> was it that?
+[12:20:00] <AppleDash> It was me doing a rewrite /list(.*) /$1 break;, the second arg shouldn't have a ./
+[12:20:03] <AppleDash> a / *
+[12:22:31] *** Quits: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se) (Quit: Everywhere I look I see Dust Mites! :o)
+[12:25:24] *** Quits: cyborg_ar (cyborgar@Pony-2q9.q1h.25.181.IP) (Ping timeout: 121 seconds)
+[12:25:24] *** init3 is now known as Init3-away
+[12:30:25] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[12:39:26] *** Q0 is now known as Q0|Away
+[13:21:06] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[13:21:11] *** Joins: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se)
+[13:39:48] *** Quits: Halcyon (Carrot_Top@Anonlight.Starsarebeautiful) (Ping timeout: 121 seconds)
+[13:40:55] *** Joins: Carrot_Top (Carrot_Top@Anon.Theroleplaypony.Starlight)
+[13:44:55] *** Joins: DataByteBrony (DataByte@Pony-r9d31q.sub-70-194-70.myvzw.com)
+[13:49:26] *** Quits: DataByteBrony (DataByte@Pony-r9d31q.sub-70-194-70.myvzw.com) (Ping timeout: 121 seconds)
+[14:02:16] *** Joins: cyborg_ar (cyborgar@Pony-bu5.i5q.172.190.IP)
+[14:03:12] *** Joins: DataByteBrony (DataByte@Pony-r9d31q.sub-70-194-70.myvzw.com)
+[14:08:26] *** Quits: DataByteBrony (DataByte@Pony-r9d31q.sub-70-194-70.myvzw.com) (Ping timeout: 121 seconds)
+[14:13:39] *** Quits: Lapsus (Lapsus@i-forget.ca) (Quit: )
+[14:17:26] *** Carrot_Top is now known as Black
+[14:18:26] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[14:18:26] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[14:26:22] *** Black is now known as Pony_51015
+[14:27:58] *** Pony_51015 is now known as RedSwagger
+[14:30:38] *** RedSwagger is now known as ThatOneMare
+[14:42:19] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Rain called on account of pony.)
+[14:48:11] *** ThatOneMare is now known as Poison_Ivy
+[14:56:08] *** Joins: DataByteBrony (DataByte@Pony-u4f69s.lrpe.i2gu.000d.2601.IP)
+[15:28:37] *** Poison_Ivy is now known as Black
+[15:41:53] *** Black is now known as Poison_Ivy
+[15:45:07] *** Neptune is now known as Neptune|sleep
+[15:49:24] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:57:49] *** Joins: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com)
+[16:02:37] *** Quits: Fallfeathers (Fallfeather@Pony-0k8geu.bigpond.net.au) (Connection closed)
+[17:13:37] *** Poison_Ivy is now known as Cyborg
+[17:16:12] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:17:31] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:19:31] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[17:21:16] *** Cyborg is now known as Poison_Ivy
+[17:23:50] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[17:25:42] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:53:53] *** Quits: Caerdwyn (midnight@always.broken.sometimes.patched.never.fixed) (Ping timeout: 121 seconds)
+[18:19:53] *** Joins: Crimson_Tail (Bluepon@Pony-78au2q.s0tm.sdub.0151.2601.IP)
+[18:34:37] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:36:26] *** Joins: Asoka (Asoka@Pony-h4535a.net-htp.de)
+[18:39:37] *** Quits: Asoka_White (Asoka@Pony-cm14rh.net-htp.de) (Ping timeout: 121 seconds)
+[18:49:29] *** Joins: zeta_ (Bluepon@Pony-mfh7oq.md.comcast.net)
+[18:50:35] *** Quits: Crimson_Tail (Bluepon@Pony-78au2q.s0tm.sdub.0151.2601.IP) (Killed (NickServ (GHOST command used by zeta_!Bluepon@Pony-mfh7oq.md.comcast.net)))
+[18:50:35] *** zeta_ is now known as Crimson_Tail
+[19:04:33] *** Joins: Sable (BlackCat@Anonlight.Starsarebeautiful)
+[20:09:53] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[20:13:02] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[20:13:22] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Connection closed)
+[20:13:37] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:36:10] *** Sable is now known as Black
+[20:52:52] *** init3 is now known as Init3-away
+[20:56:54] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[21:07:58] *** Black is now known as Nelly
+[21:19:43] *** Quits: Nelly (BlackCat@Anonlight.Starsarebeautiful) (Quit: POOOOF)
+[21:21:18] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[21:21:19] *** init3 is now known as Init3-away
+[21:26:51] *** Poison_Ivy is now known as RedSwagger
+[21:28:35] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[22:01:51] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[22:05:58] *** Quits: Phase (Phase4@Pony-ti2r9g.internode.on.net) (Ping timeout: 121 seconds)
+[22:10:16] *** Quits: cyborg_ar (cyborgar@Pony-bu5.i5q.172.190.IP) (Ping timeout: 121 seconds)
+[22:17:38] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Connection closed)
+[22:17:50] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:25:45] *** Joins: Black (BlackCat@Anonlight.Starsarebeautiful)
+[22:26:55] *** RedSwagger is now known as Observer
+[22:27:55] *** Observer is now known as Pony_10886
+[22:31:38] *** Black is now known as RedSwagger
+[22:36:42] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:36:49] *** Joins: Sol (Sol@Pony-nc8b4c.res.rr.com)
+[22:44:08] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[22:49:38] *** Joins: init3 (Jason@init3.Is.Not.A.Clever.Poni)
+[23:08:57] *** Joins: Sombra (Iceman@Darkhorse21)
+[23:16:16] *** Joins: nscoots (FreyGrimrod@Pony-dpg.afa.222.209.IP)
+[23:31:52] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[23:36:45] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[23:36:55] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[23:45:36] *** Joins: LordShadowWing (quassel@Pony-9i5.ak4.49.69.IP)
+[23:48:49] <LordShadowWing> Does anyone have a suggestion of a secure Email service for lawyer that I have as a Client It MUST have IMAP/SMTP support
+[23:49:53] <Seoson> SMTP is required by definition
+[23:50:06] <DataByteBrony> google is good for me.. and if you're worried about content being read by the government uses pgp
+[23:50:06] <Seoson> Otherwise you cannot send e-mails
+[23:50:30] <DataByteBrony> i think he means outside of a web interface, Seoson 
+[23:50:52] <Seoson> I can recommend GMail, but as a professional I would only use it with a custom domain
+[23:51:19] <DataByteBrony> costs money monthly, but it's pretty nice
+[23:51:45] <Seoson> Also most webhosts have a good e-mail service for their clients
+[23:52:16] <Seoson> Keyword for larger groups is "Groupware"
+[23:53:32] <Seoson> They almost always include IMAP(S), POP3(S), SMTP(S) and sometimes even more advanced things like Sieve(Rules for e-mail sorting)
+[23:56:56] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)

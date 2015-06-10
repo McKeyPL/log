@@ -1,0 +1,432 @@
+[00:00:20] <BlackBird> Eivel, [A]McKey: Czy jezeli chce uzyc php na mojej stronie musze cos zrobic w configu? bo jak zrobie skrypt to go nieznajduje mimo iz napewno skrypt jest zrobiony dorze.. np. <?php echo 'Hello World!'; ?> <-- to niedziala..
+[00:31:51] *** Quits: Andragor (Andrabot@Pony-5t3.mrt.255.77.IP) (Quit: ChatZilla 0.9.91.1 [Firefox 37.0.2/20150415140819])
+[00:36:53] <BlackBird> ide spac
+[00:36:53] <Derpi> Do jutra
+[00:36:58] <BlackBird> niech luna bedzie z wami
+[00:36:58] <Derpi> Dobranoc
+[00:37:00] * BlackBird przytula Derpi
+[00:37:00] * Derpi mruczy
+[01:12:04] *** Quits: FlutterBot (ircbot@Pony-47p0es.nsic.vg3e.41d0.2001.IP) (Ping timeout: 121 seconds)
+[01:13:12] *** Quits: mkr (mkr@Pony-urd.pn7.222.92.IP) (Ping timeout: 121 seconds)
+[01:26:52] *** Quits: Lunia (ellen@ChumPony.Enterprises) (Quit: Konversation terminated!)
+[02:53:58] *** Joins: mkr (mkr@Pony-urd.pn7.222.92.IP)
+[02:53:58] *** Pinkamena sets mode: +qo mkr mkr
+[02:56:23] *** Joins: FlutterBot (ircbot@Pony-47p0es.nsic.vg3e.41d0.2001.IP)
+[02:56:23] *** Pinkamena sets mode: +v FlutterBot
+[08:43:17] <Eivel> BlackBird: musisz zainstalować interpreter języka z oficjalnej strony
+[09:39:07] <Eivel> .now
+[09:39:07] <Derpi> Na antenie: 51Evening Star - Starswirl the Bearded - Aby posłuchać radia, wejdź na http://radioyay.net/player
+[09:39:11] <Eivel> .player
+[09:39:11] <Derpi> http://radioyay.net/player/
+[10:01:25] *** Joins: hawaj27 (~hawaj27@Pony-tlp1oi.adsl.tpnet.pl)
+[10:02:10] <hawaj27> witam
+[10:02:10] * Derpi glomps hawaj27
+[10:03:31] *** Quits: hawaj27 (~hawaj27@Pony-tlp1oi.adsl.tpnet.pl) (Quit: Page closed)
+[10:17:26] *** [A]McKey is now known as McKey
+[10:18:53] <McKey> BlackBird, tak, musisz skonfigurować Lighttpd to działania z socketem PHP
+[11:33:31] *** Joins: Lunia (ellen@ChumPony.Enterprises)
+[11:33:31] *** Pinkamena sets mode: +h Lunia
+[11:40:48] *** Lunia is now known as Lunia_Drawing
+[12:05:23] *** Joins: Andragor (Andrabot@Pony-5t3.mrt.255.77.IP)
+[12:07:11] *** Quits: Andragor (Andrabot@Pony-5t3.mrt.255.77.IP) (Quit: ChatZilla 0.9.91.1 [Firefox 37.0.2/20150415140819])
+[12:09:50] *** Joins: Andragor (Andrabot@Pony-5t3.mrt.255.77.IP)
+[13:26:18] *** Lunia_Drawing is now known as Lunia
+[13:42:38] *** Quits: Lunia (ellen@ChumPony.Enterprises) (Ping timeout: 121 seconds)
+[13:52:50] *** McKey is now known as [A]McKey
+[14:31:12] *** Joins: ShadowWeed (ShadowWeed@Pony-fjpaak.dynamic.chello.pl)
+[14:31:25] * ShadowWeed hugs derpi
+[14:31:25] * Derpi przytula się do ShadowWeed
+[14:57:13] *** Quits: Andragor (Andrabot@Pony-5t3.mrt.255.77.IP) (Ping timeout: 121 seconds)
+[14:57:38] *** Joins: Andragor (Andrabot@Pony-5t3.mrt.255.77.IP)
+[15:01:31] <BlackBird>  jeste
+[15:01:35] <BlackBird> hai
+[15:01:35] <Derpi> Hej ;)
+[15:02:23] <ShadowWeed> hai
+[15:02:23] <Derpi> hejka ShadowWeed
+[15:08:47] *** Joins: Lunia (ellen@ChumPony.Enterprises)
+[15:08:47] *** Pinkamena sets mode: +h Lunia
+[15:20:49] <Derpi> Znasz ciekawe kucykowe creepypasty? Wyślij je na adres: "kejosnote@wp.pl", aby posłuchać ich podczas czwartkowej audycji "Z archiwum K"!
+[15:48:55] *** Joins: Lunia2 (ellen@Pony-hp5.dkv.242.62.IP)
+[15:50:42] *** Quits: Lunia (ellen@ChumPony.Enterprises) (Ping timeout: 121 seconds)
+[15:56:48] *** Joins: Lunia (ellen@ChumPony.Enterprises)
+[15:56:48] *** Pinkamena sets mode: +h Lunia
+[15:58:16] *** Quits: Lunia2 (ellen@Pony-hp5.dkv.242.62.IP) (Connection closed)
+[16:03:52] *** Joins: Lunia2 (ellen@Pony-hp5.dkv.242.62.IP)
+[16:04:21] *** Quits: Lunia (ellen@ChumPony.Enterprises) (Ping timeout: 121 seconds)
+[16:15:25] <BlackBird> bana luni za flood xd
+[16:16:15] <Lunia2> Bana działowi IT
+[16:17:16] <Lunia2> zrąbańcy z pierwszego piętra zrobili beznadziejny system i ignorują skargi
+[16:17:49] <Lunia2> zjaadę do nich wózkiem i pozabijam
+[16:17:58] <BlackBird> xd
+[16:18:57] <Lunia2> zglaszam brak połączenia z hotspotem a ci mi kurna nowy login dają
+[16:19:37] <Lunia2> ciekawe jak miałam go wpisać bez sieci
+[17:13:09] <ShadowWeed> preste wędką 
+[17:18:24] <Eivel> Lunia2: Dział IT z I piętra, mówisz?
+[17:18:43] <Eivel> to napewno przypadek... ale właśnie w takim pracuję :P
+[17:19:06] <Eivel> I dosłownie 20 minut temu ktoś koledze jakiś problem zgłaszał
+[17:19:21] <Eivel> (ale widzę, że to info z przed godziny xd)
+[17:19:50] <Lunia2> to było o 9
+[17:20:00] <Lunia2> lo 9 zglaszalam
+[17:20:01] <Lunia2> afk
+[17:28:41] *** Joins: ElectricPsoras (Thunderbird@Pony-m6g.98h.21.83.IP)
+[17:31:15] *** Joins: Proenix (Proenix@proenix.pl)
+[17:31:24] <Proenix> ave
+[17:31:24] <Derpi> fogadtatás (HU)
+[17:32:26] <ElectricPsoras> hej
+[17:32:26] <Derpi> hejka ElectricPsoras
+[17:32:28] <ElectricPsoras> http://puu.sh/hAT7f/bd6708a343.png
+[17:42:39] <BlackBird> .steam
+[17:42:45] <BlackBird> .stream
+[17:42:45] <Derpi> http://stream.radioyay.net:9000/listenlq.aac
+[17:51:49] <BlackBird> .song
+[17:51:50] <Derpi> Na antenie: 51YourEnigma - Uptown Funk (Remix) - Aby posłuchać radia, wejdź na http://radioyay.net/player
+[18:00:32] * misiek200m hugs Derpi
+[18:00:32] * Derpi gryzie misiek200m
+[18:00:34] <misiek200m> :3
+[18:04:58] <Eivel> misiek200m: konfigurowałem mailera dla sklepu internetowego
+[18:05:02] <Eivel> zadziałał za pierwszy razem
+[18:05:14] <Eivel> Tak apropo twojego wczorajszego cytatu :P
+[18:05:20] <misiek200m> :D
+[18:05:40] <misiek200m> http://gfycat.com/DamagedConsciousBrahmancow xD
+[18:05:41] <Derpi> [ whitepeoplegifs - Jiffier gifs through HTML5 Video Conversion. ] - gfycat.com
+[18:06:45] <misiek200m> No ja dzisiaj też tak wyglądałem, bo odpowiadałem z tematu, którego nie opracowałem, ale wybrnąłem xD
+[18:12:07] <ShadowWeed> pisiont twarzy RD
+[18:12:31] <Eivel> misiek200m: matura?
+[18:12:45] <misiek200m> Eivel... przecież ja studiuję już dawno xD
+[18:14:38] <Eivel> misiek200m: Przepraszam, nie ogarniam już kto studiuje i gdzie, jak tylu ludzi w radiu :P
+[18:14:55] <Eivel> I chyba raz może o tym mówiłeś
+[18:15:03] <Eivel> bo teraz coś mi świta
+[18:16:10] <misiek200m> Yup ;p
+[18:16:28] <misiek200m> Eivel a co tam u was z tą adminką nową w pracy? :p
+[18:16:40] <Eivel> Zaczyna chyba od połowy maja
+[18:16:46] <Eivel> Jak na razie jest cisza przed burzą
+[18:28:12] *** Quits: ShadowWeed (ShadowWeed@Pony-fjpaak.dynamic.chello.pl) (Quit: Page closed)
+[18:47:46] *** Joins: FlyingButter (~FlyingButte@Pony-af5ltr.interkar.pl)
+[18:48:00] <FlyingButter> Jest tu może Delta albo Nero?
+[18:56:04] *** Quits: FlyingButter (~FlyingButte@Pony-af5ltr.interkar.pl) (Ping timeout: 121 seconds)
+[19:14:12] *** Joins: Lowsignal (Lowsignal@Pony-jcmk7s.bb.online.no)
+[19:14:18] <BlackBird> Witaj!
+[19:14:18] <Derpi> dobry ;)
+[19:22:30] *** Quits: Lowsignal (Lowsignal@Pony-jcmk7s.bb.online.no) (Quit: Page closed)
+[19:25:56] *** Joins: Flyghtning (Flyghtning@Pony-fga.d6c.175.93.IP)
+[19:25:57] *** Pinkamena sets mode: +v Flyghtning
+[20:06:07] *** Joins: Eragon333 (Eragon333@Pony-4sv7mr.adsl.inetia.pl)
+[20:07:29] <BlackBird> Witaj!
+[20:07:29] <Derpi> yay!
+[20:07:57] *** Joins: Lazy (Lazy@Pony-c32d48.adsl.tpnet.pl)
+[20:07:59] <BlackBird> Witaj!
+[20:08:00] <Derpi> przecież się witaliśmy...
+[20:08:02] <Lazy> mornin
+[20:08:03] <BlackBird> noi\
+[20:08:19] <Lazy> omg omg byle do czwartku omg omg
+[20:08:29] <Lazy> cos mnie omijalo ostatnio?
+[20:08:36] <BlackBird> niezbyt
+[20:08:49] <BlackBird> audycji w niedziele niebylo
+[20:08:55] <Lazy> a khm khm litwinkey itp? khmkhmkmh
+[20:09:04] <BlackBird> byl na norulez..
+[20:09:17] <Lazy> i jak to w koncu?
+[20:09:48] <BlackBird> ale co
+[20:09:58] <misiek200m> O, zgodzę się, byle do czwartku, juwenalia :3
+[20:10:06] <Lazy> z wami?  rozejm?
+[20:10:11] <BlackBird> nie
+[20:10:11] <Derpi> Prawdopodobnie
+[20:10:23] <BlackBird> dalej mnie wkuza ale zabardzo mi go szkoda zeby go banowac
+[20:10:41] <Lazy> misiek200m:  dla gimbow czwartek to swieto avengersow, nie wierze ze dalam sie w to wiagnac
+[20:11:04] <misiek200m> ok :D
+[20:11:06] <Lazy> ale to jest takie ASOOOOOOOOOM
+[20:12:22] <Lazy> a jak tam maturzysci? xD nishi sie stresowal w sobote? xD
+[20:12:36] <BlackBird> nishi ma juz dosc matur xd
+[20:13:55] <Lazy> xD
+[20:14:42] <ElectricPsoras> siemasz Lazy ^^
+[20:15:00] *** Joins: Andragor_ (Andrabot@Pony-5t3.mrt.255.77.IP)
+[20:15:02] <BlackBird> Witaj!
+[20:15:02] <Derpi> dobre doshŭl (BR)
+[20:15:27] <Lazy> heja ElectricPsoras , nadrobilam wszystkie marvele, oprocz hulka, w jakie 4 dni, jestem z siebie taka dumna!
+[20:15:41] <Eivel> aaaa, to Nishi ma maury? hej Lazy ;)
+[20:15:56] <Eivel> matury*
+[20:16:00] <ElectricPsoras> gratuluję
+[20:16:04] <Lazy> heejka Eivel 
+[20:16:15] <Lazy> ale zawiodlam sie na sobie
+[20:16:18] *** Quits: Andragor (Andrabot@Pony-5t3.mrt.255.77.IP) (Ping timeout: 121 seconds)
+[20:16:26] *** Andragor_ is now known as Andragor
+[20:16:34] <Lazy> i dotego tak nie moge sie doczekac czwartku!
+[20:16:43] <ElectricPsoras> ciekawe, że ja zacząłem od Iron Mana 2, bo... był w wyborze filmów w samolocie :>
+[20:16:58] <Eivel> iron many fajne były
+[20:17:01] <Lazy> czy tylko ja uwazam ze 2 byla lepsza od 3?
+[20:17:06] <ElectricPsoras> była
+[20:17:07] <Eivel> hm
+[20:17:14] <Eivel> tak, była
+[20:17:30] <Lazy> łuhu! chociaz ktos!
+[20:17:30] <Eivel> chociaż muzycznie lepsza 3
+[20:17:51] <ElectricPsoras> lato 2010, yay, to był czas
+[20:17:57] * ElectricPsoras wzdycha
+[20:20:24] <Eivel> moja najdłuższe lato w życiu
+[20:20:24] <Lazy> i jestem okropna ...... obiecalam sobie, nie bede fangirlowac, obejrze, poogladam wpanialy crossover, zauwaze dziury fabularne i podejde krytycznie .... pierwsza scena: BUM Tom hiddleson *shut up and take my money, lazy is fangirling*
+[20:20:24] <Eivel> najdłuższe wakacje*
+[20:20:24] <Lazy> eh.... naprawde sie zawiodlam
+[20:20:24] <ElectricPsoras> no nic, nie wiem czy będę szedł na premierę Ultrona, ale na pewno rzucę okiem, jak tłumy w kinach trochę się rozluźnią
+[20:20:24] <ElectricPsoras> może obejrzę w Warszawie, bo będę w ten weekend
+[20:20:24] <Lazy> czyli moge liczyc na wasze opinie tydzien po premierze?
+[20:20:24] <ElectricPsoras> myślę że tak
+[20:20:24] <Lazy> good
+[20:20:31] <Lazy> ja lece na premiere, jak jestes z duza iloscia ludzi na sali czuje sie jakis wieksze podekscytowanie
+[20:20:48] <Lazy> a wlasnie avengersi leca teraz na polsacie
+[20:21:01] *** Joins: OficerMietek (OficerMiete@Pony-a2bes8.dynamic.chello.pl)
+[20:21:04] <Eivel> O tak, ten niezapomniany klimat dzieciaków rzucających popcornem, bawiących się komórkami...
+[20:21:28] <Lazy> Eivel:  psujesz moj entuzjazm :9
+[20:21:35] <Eivel> Psieplasiam :3
+[20:21:47] <Lazy> a i ogladaliscie z dubbingiem? xD
+[20:22:04] <Eivel> Lazy: mam ci dać teraz bana, czy coś?
+[20:22:14] <Eivel> Nie mówi się głośno o dubbingu :P
+[20:22:22] <Lazy> a bardzo sie prosze? :D
+[20:22:27] <Lazy> uu jak wyszedl?
+[20:22:50] <Lazy> albo sama sprawdze...
+[20:22:51] <Eivel> Niestety okazało się, że to dubbing, gdy ... wypożyczyłem z pływającej wypożyczalni filmów
+[20:22:59] <Eivel> więc tak, dokonałem tej zbrodni
+[20:23:16] <Eivel> Na początku skręcało kiszki
+[20:23:21] *** Quits: OficerMietek (OficerMiete@Pony-a2bes8.dynamic.chello.pl) (Quit: Page closed)
+[20:23:21] <Eivel> ale po 20 min człowiek się przyzwyczaja
+[20:23:40] *** Joins: GreenWay (~GreenWay@Pony-cae5g9.bielskpodlaski.mm.pl)
+[20:23:40] *** Eivel sets mode: +v GreenWay
+[20:23:51] <mkr> Fluntnisch pracuje?
+[20:24:19] <GreenWay> dobry
+[20:24:19] <Derpi> dżem dziś dobry!
+[20:24:19] <Eivel> hej mkr
+[20:24:22] <Eivel> i GreenWay
+[20:24:54] <mkr> Ta, cześć, cześć.
+[20:25:06] <Lazy> mkr !
+[20:25:07] <Derpi> No pewnie jest na skype
+[20:25:23] <mkr> Tak, Lazy?
+[20:25:31] <Lazy> wróciłeś <3
+[20:25:58] <Flyghtning> pracuje
+[20:26:31] <Lazy> Eivel:  mother of god ... ał, kto podklada glos starkowi? moje uszy krwawia
+[20:26:44] <Eivel> Nie wiem, ale też Stark mnie najbardziej bolał
+[20:26:51] <Eivel> Jeszcze Thor uszedł w tłoku
+[20:26:52] <mkr> Gut Fluntnisch.
+[20:27:35] <Eivel> Lazy: Chyba i tak nie tyle głosy są ciężkie do przetrawienia, co desynchronizacja ust
+[20:27:46] <Eivel> oczy mówią co innego, uszy co innego
+[20:27:52] <Eivel> dlatego nie znoszę dubbingów w filmach z aktorami
+[20:28:01] <Eivel> I w kreskówkach z kucykami
+[20:28:08] <Lazy> Eivel:  Kapitan Ameryka i Loki *gaad* ... ok, Czarna wdowa niezle im wyszla
+[20:28:46] <Lazy> i guess
+[20:29:01] <Lazy> Eivel:  insynuujesz ze
+[20:29:54] <Lazy> poslki dubbing jest zly? :p
+[20:30:03] <mkr> Lazy, ja cały czas byłem i jestem.
+[20:30:10] <mkr> Na IRCa nie wchodzę, bo nie mam po co.
+[20:30:19] <ElectricPsoras> Lazy: mam już bilet na IMAX-a w 3D, niech żyje Warszawa
+[20:30:20] <Lazy> ugh
+[20:30:28] <mkr> Są tu odpowiednie osoby na odpowiednich stanowiskach, pilnują wszystkiego.
+[20:30:29] <Lazy> ElectricPsoras:  0.0
+[20:30:38] <Lazy> czy aby na pewno?
+[20:30:49] <Lazy> ElectricPsoras:  multikino?
+[20:30:51] <Lazy> xD
+[20:30:59] <ElectricPsoras> Cinema City Sadyba
+[20:32:14] <Lazy> u mnie multi ma wieksze sale
+[20:32:24] <ElectricPsoras> korzystam, bo u mnie we Wrocławiu nie ma IMAX-a
+[20:32:28] <Eivel> Lazy: Nie znam nikogo, kto by przeniósł się z angielskiego dubbingu na polski. Znam natomiast osoby, które przeniosły się na angielski, bo uznały go po czasie za lepszy.
+[20:32:38] <ElectricPsoras> sala salą, IMAX ma większy ekran
+[20:33:06] <Lazy> Eivel:  ale nie jest taki zly, porownujac co do niektorych
+[20:33:13] *** Joins: Pony_7 (Pony_7@Pony-bjmp7c.tktelekom.pl)
+[20:33:26] *** Quits: Pony_7 (Pony_7@Pony-bjmp7c.tktelekom.pl) (Quit: Page closed)
+[20:33:29] <Eivel> Lazy: Nie porównuję do innych. Porównuję tylko z oryginałem :p
+[20:33:31] <Lazy> ElectricPsoras:  zaklad, ze w ultornie pojawi sie loki?
+[20:33:45] <ElectricPsoras> nie będę się zakładał, idę z czystym umysłem
+[20:34:07] <Lazy> Eivel:  hm... jak dla mnie niektore postacie stoja na tym samym poziomie co amerykanskie
+[20:34:20] <Lazy> ElectricPsoras:  psujesz zabawe :c
+[20:34:43] <Eragon333> Eivel nie chciałbym sięwtrącać ale dubbing jest to tłumaczenie
+[20:34:58] <Eragon333> filmów
+[20:35:03] <Lazy> a i przed wami jedno, wazne pytanie, Eivel ElectricPsoras  jestescie gotowi?
+[20:35:34] <Eivel> Lazy: Grzegorz pawlak, tak. Ale zauważ, że on jest aktorem, który podkładał głos pod wysokobudżetowe produkcje. Niestety ludzie odpowiedzialni za dubbing kucyków zapóźno zrozumieli, jaką popularnością będzie się cieszyć ten serial
+[20:35:53] <ElectricPsoras> na pytania zawsze jestem gotowy, na odpowiedzi niekoniecznie... ale dawaj
+[20:36:13] <Lazy> Marvel vs. DC, co wybierasz?
+[20:36:22] <Eivel> nigdy tego nie odróżniałem
+[20:36:29] <ElectricPsoras> why not both? ^^
+[20:36:41] <Lazy> xD ale w ostatecznosci?
+[20:36:59] <ElectricPsoras> lepszą, bardziej spójną filmową serię ma Marvel
+[20:37:00] <Lazy> Eivel:  jak to
+[20:37:22] <Eivel> Nigdy nie wiem, które postacie są gdzie :P
+[20:37:32] <ElectricPsoras> i w ostateczności tym by wygrał
+[20:37:33] <Lazy> znaczy marvel najbardziej zna sie nainterakcjach miedzy postaciami, dlatego avengersi byli takim sukesem wg mnie
+[20:37:47] <ElectricPsoras> Eivel: jakby co, DC to Batman i Superman, i na nich głównie jadą
+[20:38:15] <Lazy> mamoo przestan ogladac m jak milosc, chce na polsat, chce na avengersow D:
+[20:39:04] <Eivel> Okej, zobaczyłem rysunek serparujący postacie
+[20:39:08] <Eivel> Marvel w takim razie
+[20:39:13] <ElectricPsoras> Marvel konsekwentnie od dłuższego czasu promował postacie, które guzik kogokolwiek obchodziły (Hulk, Kapitan Ameryka, Thor), żeby potem zrobić o nich całą serię filmów
+[20:39:39] <ElectricPsoras> DC jedzie właśnie głównie na Batmanie i Supermanie, a i tu nie widać jakiejś spójnej polityki
+[20:39:44] <Lazy> Eivel:  back to ponies: ale jak dla mnie krysia, tilight i celestia stoja na rownym poziomie co amerykanskie, jeszcze pare innych postaci, ale nie chce mi sie myslec jakich 
+[20:40:10] * ElectricPsoras dubbingu nie oglądał
+[20:40:37] <Eivel> Głos Twilight był pierwszym, który mnie do polskiego dubbingu zniechęcił :p
+[20:40:51] <Lazy> ElectricPsoras:  dlatego obawiam sie ze Batman v. superman bedzie klapa ... i tak wydam na to pieniadze, ale mam wrazenie ze sie rozczaruje
+[20:40:55] <Lazy> Eivel:  jak to?
+[20:41:04] <Eivel> Flyghtning: przyjemny mix
+[20:41:13] <Flyghtning> dzieki
+[20:41:35] <Eivel> Flyghtning: co teraz leci?
+[20:41:57] <Lazy> a co do Suicade Squad ... eheh, jak ja nienawidze a zaram ich nienawidze
+[20:42:27] <Eivel> Lazy: głos Twlight bardzo mi się nie podoba. Jest mało kreskówkowy. Przypomina te wszystkie niskobudżetowe seriale dla nastolatków
+[20:42:59] <Lazy> a amerykanski jaki jest? :p 
+[20:43:06] <Lazy> dobra cofam pytanie
+[20:43:57] <Lazy> czemu nie chcecie ciagnac tematu o marvelu D: 
+[20:44:03] <Eivel> Właśnie moim zdaniem głos w oryginale jest zmodulowany odpowiednio. Ale to może też wynikać z mojego przyzwyczajenia. Nigdy nie wytrzymałem tyle odcinków pl duba, by do niego przywyknąć
+[20:44:43] <Eivel> "<Lazy> Eivel:  back to ponies:"
+[20:44:47] <Eivel> to nie my
+[20:45:05] <Eivel> Ja ci odpowiedziałem, że w takim razie wolę Marvel :p
+[20:45:53] <Lazy> xD 
+[20:46:04] <Lazy> slyszales o Leto? Nowy Joker itp
+[20:46:04] <Eivel> .audycja
+[20:46:06] <Derpi> Audycja 51"Flyghtmix" właśnie trwa!
+[20:46:12] <Flyghtning> juz po
+[20:46:17] <Flyghtning> 45 min bylo
+[20:46:35] <Eivel> Flyghtning: to powiedz mi, co wtedy leciało. Ten taki melodyjny transik w okolicach 20:40
+[20:46:52] <Flyghtning> Tiesto - Theme From Norefjell (Magikal Remake)
+[20:46:59] <Eivel> dziękuję ;)
+[20:47:02] <Flyghtning> prosz
+[20:47:34] <Lazy> :'C
+[20:47:38] <mkr> Fly jak zwykle pomocny w sprawach muzycznych.
+[20:48:01] <Flyghtning> zdarza się
+[20:48:31] <Eivel> Lazy: Tak, kojarzę tego nowego Jokera
+[20:48:46] <Lazy> i jak? 
+[20:49:28] <Eivel> Lazy: Joker Ledgera jest nie do przebicia. Kolejne tak skrajne wcielenia jakoś mnie nie przekonują
+[20:49:34] <Lazy> a i kolejla sąda: Heth Ledger, Jck Nicholson czy Mark Hamill, ktory byl lepszym Jokerem?
+[20:49:45] <Eivel> jw
+[20:50:02] <Eivel> mkr: to ironia? Ta piosenka wybuchnie, jak ją włączę?
+[20:50:08] <Lazy> telepatia, skonczy z tym xD 
+[20:50:15] <mkr> Dlaczego ironia?
+[20:50:19] <mkr> Stwierdzam fakt.
+[20:51:57] *** Parts: Flyghtning (Flyghtning@Pony-fga.d6c.175.93.IP) ("Closing Window")
+[20:52:06] <Lazy> a Eivel  przeczylates cos? :p
+[20:52:22] <Lazy> mkr:  na jakich letnich meetach sie pojawisz?
+[20:52:30] <Eivel> Tak, teraz jestem na początku rozdziału z królową
+[20:52:39] <mkr> Nie wiem.
+[20:52:43] <mkr> Może na żadnym.
+[20:52:49] *** Quits: ElectricPsoras (Thunderbird@Pony-m6g.98h.21.83.IP) (Connection closed)
+[20:52:53] *** Joins: ElectricPsoras (Thunderbird@Pony-m6g.98h.21.83.IP)
+[20:52:54] <Eivel> a tak btw, chyba na MLK się nie pojawię
+[20:53:20] <Lazy> why? D:
+[20:53:54] <Eivel> Jak przesunęli termin, to nakłada mi się z krytycznym okresem w pracy, gdy 3 z 5 operatorów bierze urlop i będę pewnie miał robotę codziennie
+[20:54:26] <Lazy> kiepsko, po co w sumie te targi, czy cos tam?
+[20:54:29] <Eivel> Jeszcze zobaczę. Bo jak Allegro mnie jeszcze zatrudni, to moje wakacje będą w Pythonie xd
+[20:54:45] <Lazy> :/
+[20:54:46] <Eivel> targi?
+[20:55:15] <Lazy> znaczy, dlatego przesuneli termin, bo chca to polaczyc z jakas zewnatrzna impreza, ale jakos czarno to widze
+[20:55:36] <Eivel> Termin baaardzo kiepski teraz sobie wybrali
+[20:55:53] <Eivel> bo jest blisko Woodstocku, a ten jest zawsze oblegany przez parę ekip bronies
+[20:56:13] <Lazy> moze to wgl przeloza na sierpien
+[20:56:25] <Eivel> To już byłoby niepoważne z ich strony
+[20:56:41] <Eivel> Jedna zmiana terminu ujdzie. Niezdecydowanie podburza zaufanie w kompetencje organizacji
+[20:57:51] <Lazy> tak jak  wzeslym roku/ ? :p
+[20:58:27] <Eivel> Nie pamiętam, jak wtedy było
+[20:58:48] <Lazy> xD
+[20:58:49] <Eivel> ALe z komentarzy ludzi widziałem, że był to.... "niezapomniany" meet.
+[20:58:50] <mkr> Meh.
+[20:58:50] <Derpi> Mech wodny, (Riccia fluitans)
+[20:59:13] <Lazy> Oj mkr usmiechnij sie :)
+[20:59:26] <mkr> Nie mam zbytnio powodów.
+[20:59:37] <mkr> Jutro, pojutrze, popojutrze do pracy.
+[20:59:45] <mkr> Dziewczyna wyjechała na 10 dni.
+[21:00:03] <mkr> A ja nadal nie mogę się wyprowadzić z domu.
+[21:00:29] <Lazy> to juz wiemy co cie sprowadzilo na irca
+[21:01:14] <Eivel> mkr: gdzie pracujesz?
+[21:01:45] <mkr> Na IRC przyszedłem, bo w końcu mam czas posprawdzać niektóre miejsca w internecie.
+[21:01:50] <mkr> Pracuje Eivel na stacji benzynowej.
+[21:02:42] <Eivel> Nocki też, czy tylko zmiany dzienne?
+[21:02:44] <Lazy> ok lece, see ya 
+[21:02:48] <Eivel> pa, Lazy
+[21:02:53] <mkr> Bajos.
+[21:02:56] <mkr> Nocki i dniówki.
+[21:03:03] <mkr> jutro i pojutrze dniówki, potem nocka.
+[21:03:13] *** Quits: Lazy (Lazy@Pony-c32d48.adsl.tpnet.pl) (Quit: Page closed)
+[21:03:14] <Eivel> a, czyli pełne wypełnienie 24h
+[21:04:18] <mkr> No nie.
+[21:04:23] <mkr> Zmiany są po 12.
+[21:04:41] <Eivel> Omg x.x
+[21:05:12] <Eivel> ciekawe jak omijają wymogi pracy co do 24-godzinnej przerwy między dyżurami
+[21:05:29] <Eivel> A nie próbowałeś/chciałeś szukać pracy w web devie?
+[21:06:58] <mkr> W ogóle taki wymóg jest?
+[21:07:12] <mkr> Niby coś szukałem, ale prawda jest taka, że ja to wszystko robię hobbystycznie.
+[21:07:33] <Eivel> Tak u mnie mówią układający grafik. Ale zazwyczaj do księgowości daje się grafik "oficjalny" przestrzegający zasad, a pracuje się na nieoficjalny.
+[21:07:44] <Eivel> Tylko nie zawsze do takich ustaleń są warunki
+[21:08:30] <mkr> Wiesz, zazwyczaj jest tak, że mam 12h jeden dzień, 12h drugi dzień, a potem 2 dni wolne.
+[21:08:43] <mkr> Choć aktualnie nie, bo nie mamy pełnego składu i wyrabiamy ponad norme.
+[21:08:45] <Eivel> mkr: Hobbystycznie czy nie, masz radioyay jako solidną stronę działającą długo w produkcji i całkiem solidne doświadczenie hobbystyczne. To często całkowicie wystarczy na płatny staż / senior deva, co po paru miesiącach zamienia się już w deva normalnego.
+[21:09:17] <Eivel> Mnie nie chcieli przyjąć jako junior Djangowca, bo mimo znajomości frameworka nie miałem żadnego poważnego deploya
+[21:10:27] <mkr> No cóż.
+[21:10:49] <mkr> Nigdy nie próbowałem, bo nie czułem się na siłach.
+[21:11:26] <mkr> Radio Yay to zwykła strona na wordpressie, nic wielkiego.
+[21:12:45] <Eivel> Nie miałem do czynienia z wordpressem, ale jeśli wiele modułów pisałeś w PHP, to doświadczenie to ma podobną wartość w CV, co praca z frameworkami. Choć to drugie oczywiście jest zawsze ciut bardzije cenione ze względu na znajomość metodyk pracy]
+[21:13:27] <mkr> Żadnego z modułów sam nie pisałem.
+[21:14:49] <Eivel> Frontendowiec w takim razie? Czy to też gotowe moduły?
+[21:16:39] <mkr> Teoretycznie mógłbym sobie dopisać "front-end"
+[21:17:06] <mkr> Ale prawda jest taka, że tak na pewniaka to ja umiem wyłącznie CSS i HTML.
+[21:17:15] <mkr> A to żadna znacząca umiejętność.
+[21:27:29] <Derpi> Znasz ciekawe kucykowe creepypasty? Wyślij je na adres: "kejosnote@wp.pl", aby posłuchać ich podczas czwartkowej audycji "Z archiwum K"!
+[21:30:11] <Eivel> mkr: Byś się zdziwił z jakimi umiejętnościami ludzie potrafią startować do firm
+[21:30:41] <Eivel> Na ostatniej rekrutacji do nas najlepszy kandydat otrzymał poniżej 50% z testu zamkniętego, a inny nie wiedział co to SSH (robota to sysadminowanie)
+[21:31:37] <mkr> Welp.
+[21:31:44] <mkr> A w jakiej ty firmie pracujesz?
+[21:32:05] <Eivel> poznańskie centrum superkomputerowo-sieciowe
+[21:32:29] <Eivel> operator sieciowy. To stanowisko podlegające władzy administratorów sieci Pioneer
+[21:32:47] <Eivel> Ładnie brzmi, a w zasadzie nic tu nie robię
+[21:32:52] <Eivel> Więc będę szukał normalnej pracy
+[21:33:25] <Eivel> (bo z kasą też tu cienko, ale nie spodziewam się więcej za takie stanowisko. To taki informatyczny Night guard tak naprawdę)
+[21:34:42] <mkr> No, a ile niby dostajesz?
+[21:34:45] <mkr> Bo cienko to ja dostaje.
+[21:34:52] <mkr> No, ale nic dziwnego. To tylko stacja.
+[21:50:51] *** [A]McKey is now known as McKey
+[21:54:23] <McKey> Eivel, szukają sysadmina tak? A jakie wymagania? xD
+[21:54:24] <Derpi> McKey: 2015-05-04 - 15:07:19 <MuLiSz> ło luju, no korwin, yeeeee
+[22:02:46] *** Quits: Lunia2 (ellen@Pony-hp5.dkv.242.62.IP) (Quit: Konversation terminated!)
+[22:02:48] *** Joins: Lunia (ellen@ChumPony.Enterprises)
+[22:02:48] *** Pinkamena sets mode: +h Lunia
+[22:24:45] *** Joins: ShadowWeed (ShadowWeed@Pony-fjpaak.dynamic.chello.pl)
+[22:24:58] * ShadowWeed hugs derpi
+[22:24:58] * Derpi gryzie ShadowWeed
+[22:25:05] <ShadowWeed> a to miło
+[22:25:11] <Lunia> http://www.slate.com/content/dam/slate/blogs/bad_astronomy/2015/05/03/spacex_f9booster_bencooper_apr142015.jpg.CROP.original-original.jpg
+[22:25:14] <Lunia> <33
+[22:25:24] <Lunia> piękne
+[22:25:32] <ShadowWeed> O.o
+[22:25:42] <Eivel> McKey: Pytania najróżniejsze. Od interpretacji logów Nagiosa, do charakteryzowania kilku protokołów
+[22:26:02] <Eivel> Lunia: wylądowała tym razem?
+[22:26:09] <Lunia> nie
+[22:26:09] <Derpi> E.... nie
+[22:26:09] <McKey> Eivel, wymagania nie pytanie xD
+[22:26:31] <Eivel> McKey: to są wymagania. Takie pytania dostajesz na rozmowie kwalifikacyjnej
+[22:26:33] <Lunia> to zdjecie na chwile przed boom
+[22:26:48] <Eivel> Lunia: ;_;
+[22:26:50] <McKey> aha :P
+[22:26:55] <Eivel> kiedyś się uda...
+[22:27:00] <Lunia> yep
+[22:27:17] <ShadowWeed> ja chce byc astronautem
+[22:27:37] <Lunia> astronut?
+[22:27:48] <ShadowWeed> eeyup
+[22:27:48] <Derpi> nnnope
+[22:28:01] <ShadowWeed> c:
+[22:29:13] <McKey> Nagios nie znam ale podejrzewam że nie jest tródny, co do protokołów to beatch ples ja to mam w technikum :P
+[22:29:20] <Lunia> wejdz do sporego pudła, wypal kilka zielonych i graj w Kerbal Space Program
+[22:29:39] <Lunia> nawet stan nieważkości osiągniesz
+[22:29:56] <ShadowWeed> nieważność
+[22:30:23] <ShadowWeed> mam wszystko poza pudelkiem
+[22:30:29] <Lunia> huehue
+[22:33:16] <ShadowWeed> baju 
+[22:33:24] *** Quits: ShadowWeed (ShadowWeed@Pony-fjpaak.dynamic.chello.pl) (Quit: )
+[22:34:24] *** Quits: Proenix (Proenix@proenix.pl) (Connection closed)
+[22:37:24] *** Quits: GreenWay (~GreenWay@Pony-cae5g9.bielskpodlaski.mm.pl) (Ping timeout: 121 seconds)
+[23:04:54] *** Joins: Truss (Truss@Pony-osa.0cm.130.31.IP)
+[23:08:23] <Eivel> dobranoc
+[23:08:23] <Derpi> Dobranoc Eivel
+[23:09:40] <McKey> baj
+[23:13:00] <BlackBird> Witaj!
+[23:13:00] <Derpi> Już jesteś?
+[23:13:02] <BlackBird> nie to
+[23:13:04] <BlackBird> Dobranoc /)
+[23:13:04] <Derpi> Już idziesz?
+[23:13:06] <BlackBird> Niech Luna będzie z tobą
+[23:13:06] <Derpi> Niech luna ma cie pod opieką
+[23:14:59] <McKey> xD
+[23:18:13] <McKey> .tell Firesky Poprawka do bazy David Larsen ft. Mandopony - Double Rainboom czyli że mando NIE jest twórcą. Takie małe sprostowanie :P
+[23:18:14] <Derpi> McKey: Przekażę wiadomość, gdy Firesky będzie w pobliżu.
+[23:20:26] <McKey> WTF https://www.youtube.com/watch?v=K2V-xbD1GB0
+[23:20:26] <Derpi> [YouTube] Title: Double Rainboom - Secrets | Uploader: EpicLPer | Uploaded: 06/04/2013, 02:56 | Duration: 4mins 24secs | Views: 168,241 | Comments: 1,435 | Likes: 2,243 | Dislikes: 590
+[23:30:09] *** Quits: ElectricPsoras (Thunderbird@Pony-m6g.98h.21.83.IP) (Quit: Bye horsies!)
+[23:34:32] *** McKey is now known as [A]McKey
+[23:54:15] *** Quits: Eragon333 (Eragon333@Pony-4sv7mr.adsl.inetia.pl) (Quit: Page closed)

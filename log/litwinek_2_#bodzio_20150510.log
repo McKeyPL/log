@@ -1,0 +1,1746 @@
+[00:00:00] <xandros> *******
+[00:00:09] *** Parts: xandros (~SoYouKnow@kono.sekainiwa.himitsuga.aru) ()
+[00:00:09] *** Joins: xandros (~SoYouKnow@kono.sekainiwa.himitsuga.aru)
+[00:00:09] *** ChanServ sets mode: +v xandros
+[00:00:52] <Hunter_Killer> ee... dalej mozna sobie klikac
+[00:01:00] <xandros> ta...
+[00:01:05] <xandros> startu jeszcze nie poprawilem
+[00:01:51] <Hunter_Killer> moze daj po prostu, ze po przycisnieciu startu zamienia sie na stop?
+[00:02:16] <xandros> to nie jest rozwiazanie :p
+[00:03:18] <xandros> moge dac kolejna zmienna
+[00:03:39] <xandros> albo jest jakas funkcja, czy dany interval jest odpalony
+[00:03:42] <Hunter_Killer> to jest "ficzer" :P
+[00:04:09] *** Quits: atm (dmf@164642ae.1654620b.dynamic.chello.pl) (Ping timeout: 360 seconds)
+[00:04:47] *** Joins: hubi1 (~hubi1@shinjitsu.wa.itsumo.hitotsu)
+[00:04:47] *** ChanServ sets mode: +v hubi1
+[00:05:17] *** Quits: Innostian (~Innostian@112cbe95.a6c6559.internetdsl.tpnet.pl) (Client closed connection)
+[00:05:56] <xandros> teraz sprobuj
+[00:06:31] <Hunter_Killer> git
+[00:07:23] <Hunter_Killer> a wiesz, jak zrobic ta srednia?
+[00:07:44] <xandros> lol
+[00:07:48] <Hunter_Killer> *te srednia
+[00:08:08] <xandros> widzisz ten guzik send?
+[00:08:24] <xandros> on wysyla za pomoca jquery timestampa w formacie unix
+[00:08:50] <xandros> po stronie serwera za pomoca np. php wysylasz to do bazy
+[00:09:09] <Hunter_Killer> a, to konwersja tylko
+[00:09:12] <Hunter_Killer> to spox
+[00:09:12] <xandros> a potem, zczytujesz wszystkie wyniki i wyliczasz srednia
+[00:09:53] <xandros> to, co ci sie tu pokazuje, to sa zmienione ms na nasz normalny czas
+[00:10:02] <xandros> a wysylasz php ms
+[00:10:08] <xandros> do php ms*
+[00:11:22] <xandros> http://pastebin.com/5xd3q5Cj i tak na razie jest to troche pokracznie zrobione
+[00:11:23] <Tokido> 7Title: [JavaScript] Polecam - Czyli polecamy sobie wartościowe Anime - Pastebin.com
+[00:11:41] <xandros> polecam uzyc jquery w celu wywolywania tych funkcji za pomoca buttonow
+[00:13:21] <Hunter_Killer> doszlifuje sie temat ;)
+[00:20:35] <xandros> Hunter_Killer, odswiez. Teraz na jquery w switchu (na buttonach nie ma onclick=funkcja();)
+[00:22:03] <Hunter_Killer> mhm -> tylko trzeba rozciagnac "start", bo ma mniej liter i pseudo animacja jest ;D
+[00:22:18] <Hunter_Killer> ale to detal
+[00:27:23] <xandros> do tego jest css xd
+[00:28:40] *** Quits: Thebassa (~Thebassa@aaaa.aaaa) (Ping timeout: 360 seconds)
+[00:28:51] <xandros> masz: 50px na kazdym
+[00:30:42] <Hunter_Killer> w sumie i tak css porobilem, wiec prawda, problem niewarty uwagi
+[00:30:54] *** Joins: Rin-chan (webchat@24988c47.a9a2d23.14ef3beb.371cd19eX)
+[00:31:02] <xandros> teoretycznie moge nawet to w spanach zrobic
+[00:31:06] *** Joins: Takto (webchat@18377e3c.13919cb5.interpc.pl)
+[00:31:23] <xandros> ale od czegos sa buttony
+[00:31:43] <xandros> u mnie na stronie te wszystkie odnosniki do downloadu
+[00:31:46] <xandros> to tez buttony
+[00:32:18] <xandros> wszystko to kwestia cssa
+[00:33:30] <xandros> odnosnie sqla i bazy: http://redbeanphp.com/
+[00:33:32] <Tokido> 7Title: RedBeanPHP4 ~ Welcome
+[00:33:36] <xandros> jak nie lubisz sql
+[00:33:49] <xandros> mozesz wszystko w php napisac uzywajac tej biblioteki
+[00:35:14] <Hunter_Killer> sql jest prosty - trzeba sobie tylko wszystko rozplanowac
+[00:35:48] <xandros> nie no
+[00:35:50] <xandros> to jasne
+[00:36:10] <xandros> mi bardziej chodzi o query
+[00:36:17] <xandros> i pisanie tego...
+[00:39:33] <xandros> Hunter_Killer, wiesz, co jest najlepsze
+[00:39:34] <xandros> ?
+[00:40:13] <Hunter_Killer> hmm?
+[00:40:52] <Rin-chan> :)
+[00:41:19] <xandros> sorry, znalazlem blad
+[00:41:25] <xandros> najlepsze jest to
+[00:41:53] <xandros> ze od kiedy przyszedles, nie ruszylem ani jednej lini xD
+[00:42:02] <xandros> przez ten JS
+[00:44:28] <Hunter_Killer> wybacz
+[00:44:32] <Hunter_Killer> :P
+[00:44:51] <xandros> nie no
+[00:44:57] <xandros> nie twoja wina
+[00:45:05] <xandros> to ja jestem taki slaby
+[00:47:36] <xandros> Invi, ty masz w planach wyparowac nazajutrz, tak jak ostatnio?
+[00:47:52] <Invi> w sensie
+[00:48:04] <Invi> jak nażoczona nie uzna irca za zło
+[00:48:19] <Invi> rz*
+[00:48:26] <Invi> to zostaje na dłużej :D
+[00:48:29] <xandros> hmm
+[00:48:50] <xandros> ktos kiedys mowil, ze to okropny zlodziej czasu
+[00:48:59] <xandros> nie wiem, czy nie byl to Hunter_Killer
+[00:49:04] <xandros> zlodziej = zlo
+[00:49:11] <xandros> wiec...
+[00:49:12] <xandros> ._.
+[00:49:12] <Invi> wiem coś o tym :D
+[00:49:39] <Rin-chan> yo tymczasem znikam może odezwe się za miesiąc
+[00:49:45] <Invi> miałem pierdyliard logów w których ciągle trzeba było grzebać, żeby coś wyciągnąć i wrzucić na forum
+[00:50:00] <Hunter_Killer> zlodziej, jesli sie czyta caly czas :P
+[00:50:15] <Invi> czytanie irca to jedno, jeszcze ujdzie
+[00:50:48] <Invi> problem jak ktoś jest na irc 24/7 a później przychodzi i czyta logi, bo co tam ciekawego :D
+[00:51:13] <xandros> tez tak mialem
+[00:51:24] <xandros> w koncu zainwestowalem w VPS
+[00:51:27] <xandros> postawilem bota
+[00:51:31] <xandros> i niech zbiera logi
+[00:51:38] <xandros> nawet ich nie sprawdzam
+[00:51:53] <Takto> szukasz haczyków, tak?? :>
+[00:52:11] <Invi> Takto, teraz już nie
+[00:52:15] <xandros> wlasnie
+[00:52:19] <xandros> nie ma na kogo
+[00:52:31] <Invi> ale kiedyś :D spytaj bodzia o Inviego i akcje z logami :D
+[00:52:39] <Invi> albo qwiga
+[00:52:46] <Invi> właśnie, qwig jeszcze żyje?
+[00:52:55] <Takto> ostatnio coś się odezwał
+[00:53:03] <Takto> ale na blogu od bodzia :)
+[00:53:10] <Invi> hmm
+[00:53:15] <Takto> na nazi nie było go dość długo
+[00:53:23] <Invi> nazi lol :D
+[00:53:40] <Takto> bo wybuchł tam ortofaszyzm :)
+[00:53:47] *** Quits: hubi1 (~hubi1@shinjitsu.wa.itsumo.hitotsu) (Ping timeout: 360 seconds)
+[00:54:02] <Takto> nie odpowiadali, tylko wytykali przecinki itp. :)
+[00:54:18] <Invi> to nie ortofaszyzm
+[00:54:24] <Invi> tylko bodzizm
+[00:54:29] <Takto> xd
+[00:55:27] <Takto> był też fajny krótki okres czasu, gdy na pytanie "czy ktoś przetłumaczy..." zawsze pisano "tak" :)
+[00:55:28] <xandros> ach, ta slawa
+[00:56:07] <Takto> grunt, żeby sodówka do głowy zbytnio nie uderzyła
+[00:56:41] *** Quits: Rin-chan (webchat@24988c47.a9a2d23.14ef3beb.371cd19eX) (Ping timeout: 360 seconds)
+[00:57:52] <Invi> :D
+[00:58:17] <Invi> kurde szkoda, że nie mam tych logów now :D
+[00:58:41] <xandros> jakich logow? :D
+[00:58:43] <Invi> bym zrobił jakiegoś sajta z opisem każdej irco dramy i dawką logów :D
+[00:58:56] <Invi> sprzed 3 do 5 lat
+[00:59:12] <Invi> jak było fansubs.pl a przednim jeszcze anfo
+[00:59:12] <Tokido> 7Title: fansubs.pl
+[00:59:25] <Invi> jak non stop były dramy i gównoburze o byle co :D
+[00:59:42] <Invi> a później gównoburze o to samo tylko ludzie zmieniali zdanie
+[00:59:54] <xandros> o co na przyklad?
+[00:59:59] <xandros> dlaczego naruto ssie?
+[01:00:28] <Invi> i jak się rzuciło logiem, że wcześniej pisali inaczej to były fochy, że jak tak moża
+[01:00:50] <Invi> nie
+[01:00:53] <Takto> Invi: to się nazywa ewolucja :)
+[01:00:55] <Yenot> dobranoc
+[01:00:59] <Takto> bb
+[01:01:00] <Invi> bardziej o suby :)
+[01:01:00] <xandros> gn
+[01:01:05] <Invi> dobranoc
+[01:01:11] <xandros> Takto, raczej Palikot
+[01:01:24] <Takto> true :D
+[01:01:32] <Invi> albo o to, że ktoś komuś pojechał po relisie :D
+[01:02:12] <Invi> były tematy z gówno burzą na dziesiątki postów :D
+[01:02:21] <Invi> a na ircu to już inny kosmos
+[01:02:38] <Invi> teraz to jest cisza i spokój jak tak się rozglądam po nazi
+[01:02:39] *** Quits: Yenot (~yenot@3a15f1cd.76b3cfb.adsl.tpnet.pl) (Quit: -=SysReset 2.53=-)
+[01:02:55] <Takto> ostatnio ucichło
+[01:02:57] <xandros> ej, jak ktos konstruktywnie powie mi, gdzie zrobilem blad, to go bede staral sie poprawic
+[01:03:06] <Takto> ale ansi miało też oblężęnie onlajnowe :)
+[01:03:34] <Invi> xandros: no czasami tak było, że ludzie dostawali konstruktywny post wszystko co i jak
+[01:03:44] <xandros> https://scontent-fra.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10846018_673235819459642_9041317212867830555_n.jpg?oh=c8c8dbbcfc9c800389b68436ea28066f&oe=560A10AF <- gebe ma calkiem calkiem, ale pewnie nawet 18 nie ma
+[01:03:45] <Tokido> 7Image: 720 x 720 in 42.76kB
+[01:03:48] <Invi> a oni z tego gównoburze, że on wie lepiej :
+[01:03:48] *** Invi was kicked by przemoc (przed kropka, przecinkiem, dwukropkiem, srednikiem, wykrzyknikiem, pytajnikiem i wielokropkiem nie stawiamy spacji)
+[01:03:59] *** Joins: Invi (~kvirc@1366b407.2f9b2a4a.rev.vline.pl)
+[01:04:02] <Invi> biach
+[01:04:24] <xandros> !mode -o przemoc
+[01:04:26] <xandros> meh
+[01:04:29] <Hunter_Killer> cya
+[01:04:32] <xandros> bb
+[01:04:34] <Takto> bb
+[01:04:35] <xandros> aa
+[01:04:37] <xandros> czekaj
+[01:04:37] <Hunter_Killer> : )
+[01:04:37] *** Hunter_Killer was kicked by przemoc (nie rozrywamy emotikon)
+[01:04:39] <xandros> fk
+[01:04:46] <xandros> ciekawe, czy wroci?
+[01:04:56] <Invi> pa
+[01:05:00] <Invi> :D
+[01:05:16] <Takto> ty też?
+[01:05:25] <xandros> chcialem napisac, ze jutro moge sie nie wyrobic z plamemo
+[01:05:30] <xandros> kurwa mac
+[01:05:31] *** xandros was kicked by przemoc (nie przeklinamy)
+[01:05:31] *** Joins: xandros (~SoYouKnow@kono.sekainiwa.himitsuga.aru)
+[01:05:31] *** ChanServ sets mode: +v xandros
+[01:05:49] <Takto> a to źle?
+[01:06:40] <xandros> meh
+[01:06:42] <Takto> xandros: podchodź do tego spokojniej
+[01:06:53] <xandros> nie
+[01:06:59] <Invi> Takto: nie ja nie też:D
+[01:07:25] <Takto> okej...
+[01:07:28] <xandros> Litwinek, Witax, I.... gdzie ino? meh. Lapcie: https://youtu.be/jgkeytdqs-c
+[01:07:30] <Tokido> 7Title: NIEOCZEKIWANA ZAMIANA MIEJSC [HiHot TV] - YouTube
+[01:07:57] <Witax> ogladalem w dzien
+[01:08:29] <xandros> ten pies xD
+[01:08:33] <xandros> teleportujacy sie
+[01:09:11] <Witax> nie zauwazylem
+[01:09:52] <xandros> 1 scena
+[01:10:07] <Invi> xandros: myślisz, że będzie drama jak podpiszę się moim nazwiskiem pod moim takim se tłumaczeniem UI Aegisuba
+[01:10:27] <Invi> a ktoś posądzi o nie, gościa o takim samym nazwisku, który jest pro tłumaczem? :D
+[01:10:29] <xandros> dlaczego miala by byc?
+[01:10:38] <xandros> ach xD
+[01:10:41] <xandros> nie
+[01:10:43] <xandros> gdzie tam
+[01:11:08] <Invi> bo jak robiłem wałki z visual novels i jakimiś tam tłumaczeniami
+[01:11:20] <Witax> hyhy
+[01:11:31] <Invi> to już było, że musiałem wyraźnie zaznaczać, że ja to nie on :D
+[01:14:57] <xandros> Invi != Invi?
+[01:15:26] <xandros> ale to ty jestes tym Invim, ktory zabieral sie kiedys do tlumaczenia clannada?
+[01:15:48] <Takto> część przetłumaczono
+[01:15:56] <Invi> W sumie, tłumaczenie clannad to był troll
+[01:16:12] <Invi> ale później się znaleźli chętni to im pomagałem
+[01:16:25] <Invi> ale i tak wyszła z tego gównoburza w szklance wody :)
+[01:16:33] <Invi> Takto: jest jakieś pl clannada?
+[01:16:46] <xandros> szklanka nie wytrzymala? :D
+[01:16:58] <Takto> nie, mówię teraz o tym twoim projekcie, co wisi na ansi :)
+[01:17:46] <Invi> https://www.youtube.com/watch?v=9FXPJt5Edbw
+[01:17:47] <Tokido> 7Title: Visual novel "Clannad", polski interfejs. - YouTube
+[01:18:00] <Invi> ja zrobiłem tylko interface, nic więcej :)
+[01:18:13] <Invi> xandros: no można tak powiedzieć
+[01:18:34] *** Joins: Thebassa (~Thebassa@aaaa.aaaa)
+[01:18:34] *** ChanServ sets mode: +h Thebassa
+[01:18:40] <Invi> ludzie mieli wielkie zamiary, ale jakoś brakło siły czy odpowiedniego lidera
+[01:18:45] <xandros> mi mozesz przeportowac wersje EN na PSP
+[01:19:22] <xandros> ale tak, by wygladala jak oficjalna
+[01:19:44] <xandros> a nie crasz za craszem i odpalanie po 5min na starcie
+[01:20:05] <Invi> a mogą byc dickbuty tu i ówdzie? :D
+[01:20:39] <xandros> dickbuty? xD
+[01:21:16] <Invi> google:dickbut
+[01:21:42] <xandros> !random dickbut
+[01:21:43] <Thebassa> taki but który się nazywa richard
+[01:21:44] <Tokido> Sorry, I didn't find dickbut
+[01:22:07] <Invi> jak ja ci przeportuje clannada to będziesz miał clannad psp dickbut edyszyn :D
+[01:22:09] <Takto> nowe zwierzątko :D
+[01:22:21] <xandros> heh
+[01:22:24] <xandros> nie za takie podziekuje
+[01:22:42] <Thebassa> zrób na czole nagisie jak umierać będzie
+[01:22:54] <Thebassa> 10/10 would read
+[01:24:38] <Takto> zmienić podkład dźwiękow i będzie git
+[01:27:07] <Invi> lolz
+[01:30:46] <Invi> http://animesub.info/forum/viewtopic.php?id=256657
+[01:30:47] <Tokido> 7Title: Officjalne przeprosiny (Strona 1) / Prawie o wszystkim i o niczym / Forum AnimeSub.info
+[01:31:08] <Invi> aż się łezka w oku kręci ;D
+[01:31:34] <Invi> ale szkoda, że nie zrealizowali pomysłu z prepaid ansi, za założenie tematu 5gr :D
+[01:32:52] <xandros> lol
+[01:34:05] <Thebassa> przypomnienie że xandros nadal mnie nie przeprosił
+[01:34:45] <xandros> tam chyba byl jakis pajacyk czyc cus
+[01:35:58] <Takto> pajacyk to wyskocztł w jakimś tutorialu xD
+[01:39:14] <xandros> anyway, Takto, kenshiro pojechal twoj relek. Nie wiem, co bym zrobil na twoim miejscu, ale pewnie bym mu nie popuscil xD
+[01:39:26] <Invi> fight!
+[01:39:31] <Invi> lece po popkorn
+[01:39:48] <xandros> [1:39am] <%Storyteller> YOU GOT 5!!! Lolis O_O You Really are a PEDO!!! You Have a Total of 306 lolis.
+[01:39:53] <Takto> a ty widziałeś relka? :>
+[01:39:59] <xandros> nope
+[01:40:07] <xandros> kiedys gdzies przypadkiem
+[01:40:20] <Takto> boisz się?
+[01:40:21] <Thebassa> byś mu znalazł na szybko błędy w poście w ramach zemsty?
+[01:40:35] <xandros> o.o, czego?
+[01:40:46] <Takto> no nie wiem...
+[01:41:00] <xandros> te same zarty nie smiesza tak samo 2. raz
+[01:41:24] <xandros> > Android Protection Laws
+[01:41:34] <xandros> Kodeks Ochrony Androidow?
+[01:41:48] <Takto> ale większośc ludzi zgodziłaby się z Tomem
+[01:42:21] <Takto> nie chodzi przypadkiem o te 3 prawa, w których robot nie może skrzywdzić człowieka?\
+[01:42:33] <xandros> ;o
+[01:42:37] <xandros> chyba nie
+[01:42:37] <Invi> to są 3 prawa robotyki czy cos
+[01:42:47] <Invi> to chyba co innego
+[01:42:50] <Takto> a, to sorry
+[01:43:24] <xandros> slabo ta scene widze
+[01:43:28] <xandros> poczatek mam jako taki
+[01:43:31] <xandros> pozniej lezy
+[01:44:58] <xandros> > Hey, you sure these Giftias still don't come with transmitters?
+[01:45:04] <xandros> da faq
+[01:52:18] <xandros> Invi, koniec koncow, kiedy ty sie hajtasz?
+[01:52:33] <Invi> 1 sierpnia
+[01:53:05] <Invi> jak dobrze pojdzie
+[01:53:16] <xandros> to juz nie dlugo...
+[01:53:18] <Invi> bo Panna jeszcze może mi uciec :D
+[01:53:26] <Invi> no wiem
+[01:54:04] <xandros> a isek z mari chyba dalej bez slubu
+[01:54:32] <Invi> :D
+[01:54:44] <Invi> wiesz u mnie historia rodem z mango i animu
+[01:54:51] <Invi> prawie jak welcome to NHK :D
+[01:55:06] <Invi> mieszkam sobie w moim wynajetym pokoju
+[01:55:32] <Invi> nagle przychodzi stydudenta medycyny i mówi, że bedzie mieszkać w pokoju obok
+[01:55:42] <Invi> i po 3 latach się hajtamy :D
+[01:57:28] <xandros> mange i anime uwaza za zlo i pedalstwo?
+[01:57:59] <xandros> takie luzne pytanie
+[01:58:14] <Takto> zależy co jej pokazał ^^
+[01:59:16] <Invi> Takto: No prosze jaki taktyk :D
+[01:59:26] <Invi> W sumie, chyba nie ma zdania
+[01:59:48] <Invi> ale chce jej pokazać np GTO :D
+[01:59:55] <Invi> powinno się jej spodobać :D
+[02:00:29] <Invi> Spice & Wolf novelki się jej podobały na pierwszy rzut oka
+[02:00:50] <xandros> ale to raczej fantasy
+[02:00:55] <xandros> inaczej
+[02:01:00] <xandros> to podchodzi pod fantasy
+[02:02:22] <Invi> No wiem
+[02:02:30] <Invi> ale GTO jej się spodoba :D
+[02:03:11] <Invi> Jak bedzie się tak dobrze przy tym bawić jak ja, to na 100% wiem, że wybrałem właściwą pannę :D
+[02:03:40] <Invi> jeszcze welcome to the n.h.k. mam w planach
+[02:05:58] <xandros> tego nie czytalem/ogladalem
+[02:06:06] <xandros> widzialem pare stron mangi
+[02:06:08] <xandros> tyle
+[02:06:25] <xandros> w sumie ze mnie taki mangowiec jak programista
+[02:08:37] <Invi> :D
+[02:08:41] <Invi> witaj w klubie :P
+[02:09:09] <Invi> ja póki co to skrobie w .net mniejsze programiki na zamówienie
+[02:09:09] *** Invi was kicked by przemoc (przed kropka, przecinkiem, dwukropkiem, srednikiem, wykrzyknikiem, pytajnikiem i wielokropkiem nie stawiamy spacji)
+[02:09:20] *** Joins: Invi (~kvirc@1366b407.2f9b2a4a.rev.vline.pl)
+[02:09:54] <Invi> F. U. dotNET to nazwa własna! głupi bot
+[02:11:07] <xandros> taaa
+[02:11:15] <xandros> co ty nie powiesz :D
+[02:11:20] <xandros> ale najlepsze jest to
+[02:12:04] <xandros> > moge je bardziej popsuc
+[02:12:04] *** xandros was kicked by przemoc (nie przeklinamy)
+[02:12:04] *** Joins: xandros (~SoYouKnow@kono.sekainiwa.himitsuga.aru)
+[02:12:04] *** ChanServ sets mode: +v xandros
+[02:12:10] <xandros> :D
+[02:14:23] *** Joins: hubi1 (~hubi1@shinjitsu.wa.itsumo.hitotsu)
+[02:14:23] *** ChanServ sets mode: +v hubi1
+[02:17:04] <hubi1> https://www.youtube.com/watch?v=ULSq7-vJNHo whoa
+[02:17:05] <Tokido> 7Title: AMAZING GOAL - James Island Boys Soccer Team - 5/5/15 2 Bicycle Kicks GOAL 1301085 - YouTube
+[02:18:07] <Takto> mnie się nawet w fifie nie udawało :D
+[02:20:04] <hubi1> mnie tez
+[02:20:10] <hubi1> Tsuabasy duzo ogladali pewnie
+[02:20:17] <hubi1> Tsubasy*
+[02:23:03] <Takto> z piłki to lubię to https://www.youtube.com/watch?v=YPQ_N4imYVE
+[02:23:05] <Tokido> 7Title: Funny Football - YouTube
+[02:23:58] <xandros> Takto, przeczytalem w Tiffie xD
+[02:24:01] <xandros> fml xD
+[02:24:13] <Takto> xd
+[02:24:39] <xandros> Invi, skad bierzesz zlecenia?
+[02:24:49] <Invi> po znajomosci
+[02:25:13] <xandros> myslalem juz, ze jakas magiczna stronka...
+[02:25:25] <Invi> pracowałem w pewnej firmie jako nadworny informatyk, pozniej robilem dla nich kilka programikow
+[02:25:36] <Invi> Boss był zadowolony to mnie poleca na prawo i lewo
+[02:25:43] <Invi> :3
+[02:25:48] <xandros> a czemu juz tam nie robisz?
+[02:26:30] <Invi> bo ja raczej czuje sie programistą, a nie gościem od wszystkiego i uczenia działu marketingu jak wysyłać maile :D
+[02:27:09] <Invi> w sensie, ta firma nie robi softu tylko tonery do drukarek :P
+[02:27:28] <Invi> a ja im tylko kilka progsów skrobnąłem co by im ułatwić trochę życie
+[02:27:57] <Invi> wiem, że do tej pory nie używają kodów kreskowych na produktach a ich szef bardzo by sobie tego życzył
+[02:28:13] <Invi> i zstanawiam się czy by się w to nie wpakować :D
+[02:28:23] <Invi> pierwszy duży projekt z wdrożeniem :P
+[02:28:47] <Invi> tylko kuzwa, niech wywalą te kompy z windowsem 98 i możemy rozmawiać :D
+[02:30:15] <Takto> aż mnie się przypomniało technikum :D
+[02:30:49] *** Quits: Thebassa (~Thebassa@aaaa.aaaa) (Quit: Sayonara bai bai!!)
+[02:32:05] <xandros> lol
+[02:32:13] <xandros> >kompy z windowsem 98
+[02:32:27] <xandros> 2 gb dyski mi sie przypominaja
+[02:32:48] <Takto> na naszych to ski jump miał lagi xD
+[02:33:25] <Invi> xandros: sie smiejesz
+[02:33:34] <xandros> nie
+[02:33:37] <xandros> nie smieje sie
+[02:33:49] <Invi> jak ja tam zaczynałem pracę, to mojej asystentce dali kompa z windowsem 95!
+[02:33:55] <xandros> ja w diablo 2 na takim gralem
+[02:34:01] <Invi> i kazali jej przez IE obsługiwać sklep internetowy :D
+[02:34:12] <xandros> kiedy to bylo?
+[02:34:21] <Invi> 4 może 5 lat temu?
+[02:34:21] *** Quits: roobalek (~roobalek@3239def7.31b34b44.c74.petrotel.pl) (Quit: Anooo... naraaa-saajooo)
+[02:34:31] <xandros> jak powiesz, ze 10 lat temu, to jeszcze zrozumiem
+[02:34:41] <xandros> aa
+[02:34:42] <Takto> to fest
+[02:34:43] <xandros> ok
+[02:34:43] <Invi> dziwne że w ogóle się dało odpalić ten sklep
+[02:34:44] <xandros> xd
+[02:35:03] <xandros> ciecia budzetowe?
+[02:35:15] <Takto> może to biedna firma była...
+[02:35:22] <Invi> nie, firma w ktorej czas sie zatrzymał
+[02:35:30] <Invi> wszystko na karteczki itd
+[02:35:38] <Takto> sentymentalizm :)
+[02:36:03] <Invi> jakoś przekonałem szefunia, żeby marketingowcom kupił kompy używane z banku z windowsem xp i pentium 4 lol :D
+[02:36:18] <Invi> dali chyba po 300 czy 400 zł za sztukę :P
+[02:36:19] <hubi1> ale mieli przeskok!
+[02:36:31] <Invi> yep
+[02:36:37] <hubi1> pewnie byli wszyscy w szoku
+[02:36:44] <xandros> poleasingowe
+[02:36:52] <Invi> było "o wow, to to może tak szybko działać?!"
+[02:37:03] <Invi> a po miesiącu "ale wolne gówna"
+[02:37:10] <hubi1> xd
+[02:37:12] <hubi1> chca wiecej!
+[02:37:12] <Invi> xandros: tak
+[02:37:13] <xandros> norma
+[02:38:47] <Invi> oni dostali xpeki
+[02:38:59] <Invi> a ja kompa z vista i upgrade do 7 :D
+[02:39:32] <Invi> bo na złomie nie bedę pracował :D
+[02:39:59] <Takto> trzeba się cenić :)
+[02:44:00] <Invi> Najlepsze, że szef nie mógł mieć gorszego sprzętu od pracownika
+[02:44:23] <Invi> więc miał zestaw który praktycznie do gier :D
+[02:44:44] <xandros> ;d
+[02:45:03] <xandros> gral w firmie w gry
+[02:46:02] *** Quits: Witax (~witax@1908d3ef.26d9672f.adsl.inetia.pl) (Read error: Connection reset by peer)
+[02:47:41] *** Quits: kimek (~iyu@zjem.cie) (Read error: Connection reset by peer)
+[02:47:44] <Takto> a co szef może innego robić? xD
+[02:48:28] <Invi> Opierdalać pracowników, którzy wkurzają nadwornego informatyka :3
+[02:50:15] <Takto> to może pełnić rolę drugorzędną :>
+[02:50:38] <xandros> albo zajmowac sie biurokracja
+[02:51:31] <Invi> od tego ma biuraokratów
+[02:53:38] <xandros> hmm
+[02:53:41] <xandros> cos w tym jest
+[02:58:19] <Invi> jeszcze tylko 60 linijek tłumaczenia aegi :3
+[02:58:37] <Invi> po 3 latach w końcu będzie zaktualizowany pl interface
+[03:12:39] <xandros> do wersji 3.2.2?
+[03:20:47] *** Quits: hubi1 (~hubi1@shinjitsu.wa.itsumo.hitotsu) (Ping timeout: 360 seconds)
+[03:23:54] *** Takto is now known as Takto_oddalony
+[03:25:05] <Invi> xandros: yep
+[03:28:31] <xandros> ja tymczasem spadam spac
+[03:28:35] <xandros> dobranoc foczki
+[03:28:43] *** Quits: xandros (~SoYouKnow@kono.sekainiwa.himitsuga.aru) (Quit: 12—14I12-15n12-15v12-00i12-00s12-15i12-15o12-14n12— 3.3 (November '11))
+[03:45:43] *** Joins: Innostian (~Innostian@112cbe95.a6c6559.internetdsl.tpnet.pl)
+[04:19:42] *** Takto_oddalony is now known as Seal
+[04:19:50] <Seal> branoc : )
+[04:19:51] *** Seal was kicked by przemoc (nie rozrywamy emotikon)
+[04:28:34] *** Joins: hubi1 (~hubi1@shinjitsu.wa.itsumo.hitotsu)
+[04:28:34] *** ChanServ sets mode: +v hubi1
+[04:42:57] *** Quits: Innostian (~Innostian@112cbe95.a6c6559.internetdsl.tpnet.pl) (Ping timeout: 360 seconds)
+[05:34:56] *** Quits: hubi1 (~hubi1@shinjitsu.wa.itsumo.hitotsu) (Ping timeout: 361 seconds)
+[08:28:43] <_paranoid_android> czesc
+[08:42:37] <Invi> yo
+[09:56:52] <_paranoid_android> ;j
+[10:11:47] *** Joins: kimek (~iyu@zjem.cie)
+[11:03:10] *** Joins: bodzio (~bogusz_cz@10eff834.24624475.adsl.tpnet.pl)
+[11:03:17] *** ChanServ sets mode: +oa bodzio bodzio
+[11:03:27] <bodzio> niaho
+[11:10:55] *** Joins: reddd (~reddd@1a9e3c85.2b24ce30.dynamic.chello.pl)
+[11:10:55] *** ChanServ sets mode: +v reddd
+[11:24:15] <_paranoid_android> co tam leszcze?
+[11:38:05] <bodzio> pogoda u mnie slaba. Cala noc padalo i dalej pada.
+[11:39:21] *** Joins: Thebassa (~Thebassa@aaaa.aaaa)
+[11:39:21] *** ChanServ sets mode: +h Thebassa
+[11:39:30] <_paranoid_android> dobrze ci tak
+[11:39:33] <_paranoid_android> u mnie slonce
+[11:47:56] *** Joins: Solve (~Solve@1dad8cc8.f8171.25a4ad7.1f5b825bX)
+[11:47:57] *** ChanServ sets mode: +o Solve
+[12:17:24] <_paranoid_android> czesc lajzo
+[12:17:54] <Solve> cześć, buraku ;)
+[12:17:58] <_paranoid_android> [;
+[12:18:03] <Solve> Zadałem Ci wczoraj pytanie
+[12:18:53] <_paranoid_android> mhm moglbys powtorzyc? bo zanim znajde...
+[12:25:58] *** Joins: bigdo (~bigdo@6a63aef.a34b1a3.adsl.inetia.pl)
+[12:26:01] <bigdo> hi
+[12:26:37] <Thebassa> http://i.4cdn.org/a/1431251974298.webm reminder
+[12:26:42] <Tokido> 7Notice: Video file, binary file or sth else
+[12:26:50] <Thebassa> cześ, bigdo
+[12:26:54] <_paranoid_android> Solve:?
+[12:27:06] <Solve> _paranoid_android: znasz Grzegorza Sieńko?
+[12:27:27] <Solve> Tego: http://www.goldenline.pl/grzegorz-sienko/
+[12:27:29] <Tokido> 7Title: Grzegorz Sieńko - Inżynier Budowy - Lublin - GoldenLine.pl
+[12:27:53] <bigdo> spelniliscie juz swoj obywatelski obowiazek? xD
+[12:28:04] <Solve> Tak, właśnie byłem siku
+[12:28:07] <bigdo> xD
+[12:29:30] <_paranoid_android> Solve: a czemu pytasz? :)
+[12:29:31] *** bigdo was kicked by bodzio (cisza wyborcza :D)
+[12:29:40] <Solve> _paranoid_android: czysta ciekawość
+[12:30:03] <_paranoid_android> generalnie tak
+[12:30:21] <Solve> Ha, wiedziałem :D
+[12:30:38] <_paranoid_android> i co w zwiazku z tym? :P
+[12:30:59] <Solve> Zebrał kiedyś 1000 zł od ludzi i przepadł :D
+[12:31:29] <_paranoid_android> ale lacznie 1000zl? czy po 1000zl od kazdego? :P
+[12:31:34] <Solve> Łącznie
+[12:31:48] *** Joins: AtoMan (dmf@164642ae.1654620b.dynamic.chello.pl)
+[12:32:03] <bodzio> Solve drazy temat :D
+[12:32:04] <_paranoid_android> e to caly uj
+[12:32:04] <_paranoid_android> ;d
+[12:32:56] <_paranoid_android> i co? szukasz kontaktu z nim? :P
+[12:33:16] <Solve> Nieeeee, ja nie płaciłem ;d Pytałem z czystej ciekawości :P
+[12:33:24] <_paranoid_android> skad on w ogole pochodzi? gdzies kolo ciebie sie urodzil?
+[12:33:38] <Solve> Dunno, podobno jest od Ciebie
+[12:33:52] *** Joins: xandros92 (~SoYouKnow@76b3cfb.1b415a10.dynamic.chello.pl)
+[12:34:02] <_paranoid_android> hm nie wiem
+[12:34:09] *** xandros92 is now known as xandros
+[12:34:15] *** ChanServ sets mode: +v xandros
+[12:34:40] <xandros> hi
+[12:34:48] <xandros> wiem, ze nic nie wiem
+[12:34:49] <Solve> yo
+[12:35:02] <xandros> co tam, misie?
+[12:35:19] <_paranoid_android> "gowno, spierdalaj"
+[12:35:22] <_paranoid_android> :*
+[12:35:58] <xandros> brzmi jak Thebassa
+[12:36:14] <_paranoid_android> ojej :( to mi pojechales
+[12:36:22] <xandros> przepraszam
+[12:36:27] <xandros> nie mialem takiego zamiaru
+[12:36:38] <Thebassa> mi chciał pojechać
+[12:36:40] <Thebassa> : (
+[12:36:41] *** Thebassa was kicked by przemoc (nie rozrywamy emotikon)
+[12:36:41] *** Joins: Thebassa (~Thebassa@aaaa.aaaa)
+[12:36:41] *** ChanServ sets mode: +h Thebassa
+[12:36:58] <Thebassa> ale mnie nie przeprosi
+[12:37:04] <Thebassa> bo to właśnie był jego zamiar
+[12:37:18] <_paranoid_android> ja  cie przepraszam Thebassa 
+[12:37:20] <_paranoid_android> ;d
+[12:37:28] <_paranoid_android> dopisz sobie za co chcesz
+[12:38:52] <Thebassa> w porządku z ciebie gość, _paranoid_android
+[12:40:10] <_paranoid_android> ufam ci
+[12:40:24] <bodzio> screen zrobiony
+[12:40:37] <_paranoid_android> teraz na pulpit jako tapetke, bodzio 
+[12:40:46] <bodzio> jak bedzie mi potem ktory pisal, ze ktos go tam jedzie czy wyrzuca za cos - z miejsca banuje
+[12:41:01] <_paranoid_android> ale innych moge?
+[12:41:17] <bodzio> jak maja @ to nie radze
+[12:41:35] <Thebassa> Tokido możesz 
+[12:41:38] <Thebassa> i tak nie ma duszy 
+[12:41:54] <_paranoid_android> daj opa bodzio 
+[12:41:54] <xandros> tokido moze sie odegrac
+[12:42:04] <_paranoid_android> :D
+[12:42:12] *** bodzio sets mode: +o _paranoid_android
+[12:42:12] *** ChanServ sets mode: -o _paranoid_android
+[12:42:16] <_paranoid_android> for ever
+[12:42:17] <_paranoid_android> biocz
+[12:55:17] <xandros> lel https://youtu.be/u1RUbOxibj8?t=145
+[12:55:18] <Tokido> 7Title: BIGGEST ZIT EVER! - YouTube
+[12:56:25] *** xandros was kicked by bodzio (bodzio)
+[12:56:25] *** Joins: xandros (~SoYouKnow@kono.sekainiwa.himitsuga.aru)
+[12:56:25] *** ChanServ sets mode: +v xandros
+[12:57:05] <xandros> for lulz?
+[12:57:52] <Invi> http://img341.imageshack.us/img341/1690/ircmap.png
+[12:57:55] <Tokido> 7Image: 794 x 1123 in 131.20kB
+[12:58:08] <xandros> https://youtu.be/u1RUbOxibj8?t=277
+[12:58:10] <Tokido> 7Title: BIGGEST ZIT EVER! - YouTube
+[12:58:16] <Invi> poki co to chyba tylko #bodzi przetrwało nie?
+[12:59:08] <xandros> jako kanal?
+[13:01:14] <Invi> no. A co? pozycję zmienił? :D
+[13:02:06] <xandros> irc juz nie ma, ale grupa dalej istnieje :p
+[13:07:09] *** xandros was kicked by bodzio (naucz sie budowac zdania)
+[13:07:09] *** Joins: xandros (~SoYouKnow@kono.sekainiwa.himitsuga.aru)
+[13:07:09] *** ChanServ sets mode: +v xandros
+[13:07:38] <bodzio> z kanalow to praktycznie chyba nic nie przetrwalo z tamtych czasow
+[13:07:48] <xandros> nie ma juz kanalu irc, ale grupa dalej istnieje*
+[13:08:18] <bodzio> to niby gdzie my teraz siedzimy, zandros?
+[13:08:33] <xandros> fk
+[13:08:44] <xandros> myslalem, ze napisalem
+[13:09:04] <_paranoid_android> ale piczaa
+[13:09:06] <_paranoid_android> ;d
+[13:09:27] <xandros> np. jinja-temple juz nie ma kanalu irc, ale jako grupa dalej istnieje
+[13:09:58] <bodzio> ansi nie ma juz kanalu irc od dawna
+[13:10:02] <xandros> lol
+[13:10:13] <bodzio> kuruoshii jest prawie zdechle, bo tylko slymsc cos tam robi
+[13:10:13] <przemoc> jeszcze pare lat temu byl
+[13:10:22] <przemoc> ten ansiowy
+[13:10:30] <xandros> ostatnio #animowcy sie odrejestrowal
+[13:10:40] <xandros> a #ansi dalej jest
+[13:10:49] <bodzio> #bodzio na rizonie chyba zyje
+[13:10:58] <xandros> tylko troche cicho tam :p
+[13:10:59] <bodzio> jak i Besamira kanal
+[13:11:09] <bodzio> bo mi sie nick wyrejestrowal tam xD
+[13:11:55] <Invi> xD
+[13:12:12] <Invi> Dzieci jeszcze pomyślą, że o hashtagi są :D
+[13:13:01] <xandros> #lol-tan dalej istnieje (skoro Solve tam przebywa)
+[13:15:09] <xandros> > #bodzio na rizonie chyba zyje
+[13:15:18] <xandros> zyje, ale tam tylko bot i znc Besa
+[13:15:53] <xandros> > Topic is 'Trolololo~| https://www.dropbox.com/s/vkiw3ad0oee6erd/Linki.txt'
+[13:15:54] <xandros> lol
+[13:15:57] <Tokido> 7Title: Dropbox - Error
+[13:19:13] <bodzio> prawidlowo
+[13:23:00] *** Joins: Witax (~witax@1908d3ef.26d9672f.adsl.inetia.pl)
+[13:31:53] *** Joins: FAiM (~faim@1df4f87e.2e099bf0.adsl.inetia.pl)
+[13:31:57] *** ChanServ sets mode: +o FAiM
+[13:32:11] <FAiM> yo
+[13:32:15] <xandros> elo
+[13:32:36] *** Quits: Guest6732954 (~pi@1ccf6d0.355d5b65.adsl.inetia.pl) (Ping timeout: 360 seconds)
+[13:32:38] <FAiM> xandros, bawiles sie api YT przez js?
+[13:32:49] <xandros> nope
+[13:33:00] *** Joins: KieR (webchat@6b45bb2.7f8dc.is.net.pl)
+[13:33:10] *** Joins: taku (~pi@df46914.3ee19918.35556308.29655c0fX)
+[13:33:10] *** ChanServ sets mode: +v taku
+[13:33:13] <FAiM> hm
+[13:33:14] <Thebassa> cześć, KieR
+[13:33:16] <Invi> FAiM: nowym czy starym? 
+[13:33:21] <KieR> czesc
+[13:33:25] <FAiM> a bo ja wiem ;p
+[13:33:36] <Invi> bo zmienili, alo zmieniaja
+[13:33:44] <FAiM> bo probuje zrobic
+[13:33:55] <FAiM> by mi automatycznie odpalalo wideo
+[13:33:58] <Invi> i sąsiad już płacze, że mu YT na TV przestało działać :P
+[13:33:59] <FAiM> jak je odkryje
+[13:34:20] <FAiM> gdy wczesniej bylo juz odpalone
+[13:34:23] <Invi> tak jak na faceksiążce?
+[13:34:51] <FAiM> odala sie strona
+[13:34:57] <xandros> mozna zrobic event
+[13:34:59] <FAiM> naciskajac na przycisk pojawia sie wideo
+[13:35:04] *** Joins: Besamir (~animenimk@lick.the.loli)
+[13:35:04] *** ChanServ sets mode: +oa Besamir Besamir
+[13:35:05] <FAiM> bez odpalania
+[13:35:06] <Besamir> yo
+[13:35:11] <FAiM> odpalam sobie recznie
+[13:35:12] <Invi> a takie klocki
+[13:35:15] <FAiM> naciskam na przycisk
+[13:35:25] <FAiM> to sie pauzuje - to akurat dziala
+[13:35:28] <FAiM> a teraz chce
+[13:35:38] <FAiM> zeby po ponownym kliknieciu na przycisk
+[13:35:41] <FAiM> pojawilo sie
+[13:35:49] <FAiM> i zaczelo dalej odtwarzac
+[13:36:50] <FAiM> pauzowanie zalatwiam czyms takim
+[13:36:52] <FAiM> $(this).next().find('iframe')[0].contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+[13:38:01] <FAiM> odpalic tez nie problem
+[13:38:07] <FAiM> bo wystarczy zmienic na playVideo
+[13:38:16] <FAiM> tylko musze wiedziec
+[13:38:22] <FAiM> czy wideo bylo wczesniej odpalone ;p
+[13:38:37] <xandros> FAiM, zmienna pomocnicza?
+[13:39:20] <FAiM> onlick na iframe dorabiac?
+[13:39:34] <FAiM> myslalem, ze da sie to jakos dzieki api zalatwic
+[13:39:45] <xandros> po co onclick jak masz jquery?
+[13:40:12] <_paranoid_android> glosowaliscie juz osiolki?
+[13:40:58] *** _paranoid_android was kicked by bodzio (cisza wyborcza :D)
+[13:47:03] <xandros> FAiM, https://developers.google.com/youtube/iframe_api_reference#Getting_Started?
+[13:47:06] <Tokido> 7Title: YouTube Player API Reference for iframe Embeds - YouTube — Google Developers
+[13:47:50] <FAiM> ale takie czyste funkcje u mnie nie smigaja
+[13:48:04] <FAiM> np. $(this).next().find('iframe')[0].contentWindow.pauseVideo();
+[13:48:35] <FAiM> wywal jakis alert o bezpieczenstwie ;/
+[13:49:09] <FAiM> > Uncaught SecurityError: Blocked a frame with origin "http://localhost" from accessing a frame with origin "https://www.youtube.com".  The frame requesting access has a protocol of "http", the frame being accessed has a protocol of "https". Protocols must match.
+[13:54:07] <Witax> yo
+[13:56:40] <Invi> FAiM: no nie wiem jak to obejdziesz
+[13:57:11] <Invi> chociaz w sumie
+[13:57:27] <Invi> opalasz youtuba po https?
+[13:59:03] <FAiM> <iframe width="350" height="197" src="http://www.youtube.com/embed/'.$matches[1].'?rel=0&controls=0&showinfo=0&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+[13:59:10] *** Joins: _paranoid_android (~paranoid@1d2128.2b24ce30.vline.pl)
+[13:59:18] <_paranoid_android> ...
+[13:59:30] <_paranoid_android> brawo bodzio 
+[14:00:08] <bodzio> no juz wczesniej bigdo za to wylecial. A to powielasz bledy widze
+[14:01:00] <_paranoid_android> akurat czytam wszystko
+[14:01:01] <_paranoid_android> poza tym
+[14:01:07] <_paranoid_android> pytanie czy bliscie na wyborach nie lamie ciszy
+[14:01:48] <bodzio> dalej nie rozumiesz: gowno mnie obchodza wasze poglady polityczne/glosowania itp. Polityce na tym kanale mowie nie.
+[14:02:16] <bodzio> jesli rozmawiacie o tym, gdy mnie nie ma - ok
+[14:02:17] <_paranoid_android> a kto powiedzial ze chce o tym rozmawiac? 
+[14:02:25] <_paranoid_android> :D :D matko
+[14:02:47] <bodzio> zadales pytanie, mi to wystarczy
+[14:02:52] <xandros> Jaka ladna pogoda. Byl ktos juz, by odetchnac swierzym powietrzem? :D
+[14:03:01] <_paranoid_android> ban za orta !!
+[14:03:01] *** _paranoid_android was kicked by przemoc (przed kropka, przecinkiem, dwukropkiem, srednikiem, wykrzyknikiem, pytajnikiem i wielokropkiem nie stawiamy spacji)
+[14:03:02] <xandros> żym
+[14:03:04] <xandros> :D
+[14:03:06] *** Joins: _paranoid_android (~paranoid@1d2128.2b24ce30.vline.pl)
+[14:03:06] <xandros> : D
+[14:03:06] *** xandros was kicked by przemoc (nie rozrywamy emotikon)
+[14:03:06] *** Joins: xandros (~SoYouKnow@kono.sekainiwa.himitsuga.aru)
+[14:03:06] *** ChanServ sets mode: +v xandros
+[14:03:15] <_paranoid_android> tak jest tak jest KILL KILL ;)
+[14:03:17] <_paranoid_android> ide na obiad elo
+[14:09:36] *** Joins: Takto (webchat@18377e3c.13919cb5.interpc.pl)
+[14:09:45] <Takto> dobry
+[14:11:44] <xandros> FAiM, http://pastebin.com/mz18ca0m
+[14:11:45] <Tokido> 7Title: [JavaScript] re543 - Pastebin.com
+[14:12:03] <FAiM> sedno jest takie
+[14:12:11] <FAiM> za ja juz mam te iframe
+[14:13:51] <xandros> > http://pastebin.com/fRFHZ5AB
+[14:13:52] <Tokido> 7Title: [JavaScript] re543 - Pastebin.com
+[14:14:16] <xandros> i teraz uzywasz tych funkcji
+[14:15:07] <xandros> $('button#a').click(function(){player.playVideo();});
+[14:16:13] <xandros> lub inny event
+[14:16:16] <Solve> >onlick
+[14:16:16] <xandros> tak samo z pause
+[14:16:37] <xandros> moze byc onlick, Solve :D
+[14:16:44] <Solve> A co trzeba polizać, żeby zadziałało?
+[14:16:45] <xandros> ale nie wiem, na ile to bedzie dzialalo
+[14:17:02] <FAiM> bo to dla smarfonow ;p
+[14:17:08] <xandros> xD
+[14:17:17] <Solve> A, to pewnie wyświetlacz
+[14:19:12] <FAiM> xandros, ale juz mam iframy
+[14:19:21] <FAiM> i wolabym uniknac tworzenia ich przez js
+[14:23:51] *** Quits: Solve (~Solve@doushio.doushio) (Quit: )
+[14:26:29] *** Joins: redozord (~reddd@1a9e3c85.2b24ce30.dynamic.chello.pl)
+[14:29:25] *** Quits: reddd (~reddd@1a9e3c85.2b24ce30.dynamic.chello.pl) (Ping timeout: 360 seconds)
+[15:06:02] <_paranoid_android> ssss
+[15:08:21] *** Joins: atm (dmf@164642ae.1654620b.dynamic.chello.pl)
+[15:08:23] <Takto> i co sycys? :>
+[15:08:33] <xandros> https://www.youtube.com/watch?v=05qjYHlhOzs
+[15:08:34] <Tokido> 7Title: Angel Beats! - Theme Of SSS (HD/HQ) - YouTube
+[15:08:56] *** Quits: AtoMan (dmf@164642ae.1654620b.dynamic.chello.pl) (Ping timeout: 360 seconds)
+[15:15:08] <_paranoid_android> ale slicznie paadaaa
+[15:15:13] <FAiM> geez
+[15:15:16] <_paranoid_android> wolno mi projekt idzie dzis ;/
+[15:15:26] <FAiM> i zapomnialem postawic karnego kutasa zamiast X xD
+[15:15:52] <Takto> za parę miesięcy inne wybory, więc sobie odbijesz :)
+[15:17:24] <xandros> > http://www.repostuj.pl/files/2015/05/487_554f35fce4735_612.jpg nigdy nie zrozumiem
+[15:17:25] <Tokido> 7Image: 612 x 1116 in 139.85kB
+[15:17:35] <xandros> > jak tak glosowac to pochuj w ogóle iść
+[15:17:54] <FAiM> for fun ;p
+[15:18:04] <_paranoid_android> nie mow o wyborach bo bodzio jest na kanale
+[15:18:14] <_paranoid_android> AAAAAAAAAAAAAAAAA
+[15:18:28] <FAiM> i nadal brak Zaden z powyzszych :/
+[15:18:35] *** atm is now known as AtoMan
+[15:20:18] *** Takto was kicked by bodzio (za gadanie o wyborach)
+[15:20:31] *** Joins: Takto (webchat@18377e3c.13919cb5.interpc.pl)
+[15:20:38] <Takto> xd xd xd
+[15:21:19] <_paranoid_android> jeszcze xandros 
+[15:21:22] <_paranoid_android> ...
+[15:21:32] <_paranoid_android> i w sumie ja bo poweidzialem ze ni ewolno o nich rozmawiac
+[15:21:39] <_paranoid_android> w pewnym sensie tez przez to o nich rozmawialem
+[15:21:42] *** xandros was kicked by bodzio (bodzio)
+[15:21:42] *** Joins: xandros (~SoYouKnow@kono.sekainiwa.himitsuga.aru)
+[15:21:42] *** ChanServ sets mode: +v xandros
+[15:21:44] <_paranoid_android> :(
+[15:21:46] *** _paranoid_android was kicked by bodzio (bodzio)
+[15:21:47] <Takto> ale wspomniałeś o słowie na "w" :D
+[15:21:49] *** Joins: _paranoid_android (~paranoid@1d2128.2b24ce30.vline.pl)
+[15:21:59] <bodzio> wedle zyczenia
+[15:22:09] <Besamir> +b?
+[15:22:12] <_paranoid_android> i moglbys jeszcze bodzia kicknac? bo on tez ciagle o tym samym
+[15:22:14] <_paranoid_android> ;)
+[15:22:27] <_paranoid_android> Besamir: banuj
+[15:22:37] *** bodzio was kicked by bodzio (bodzio)
+[15:22:40] *** Joins: bodzio (~bogusz_cz@przecinki.sa.zbedne)
+[15:22:40] *** ChanServ sets mode: +oa bodzio bodzio
+[15:22:45] <_paranoid_android> bodzio: :)
+[15:22:48] <Takto> :D
+[15:24:27] *** Besamir sets mode: +m 
+[15:25:37] *** FAiM sets mode: +v Invi
+[15:26:16] *** bodzio sets mode: +v Takto
+[15:27:18] <FAiM> http://www.nyaa.se/?page=view&tid=688963
+[15:27:23] <Tokido> 7Title: NT > [Yokoku] Plastic Memories - Episode 07 Preview (Web 1280x720 x264 AAC).mp4
+[15:34:33] <FAiM> wow
+[15:34:49] <FAiM> na stronie shokugeki no soma
+[15:34:54] <FAiM> chyba pierwszy raz widze
+[15:35:06] <FAiM> by zapowiedz 7 odcinka
+[15:35:13] <FAiM> znajdowala sie na stronie 6 odcinka ;p
+[15:36:19] <Invi> bodzio [...] został wyrzucony z #bodzio przez bodzio [...] bo: bodzio
+[15:36:21] <Invi> :D
+[15:37:35] <Invi> przecinkocepcja
+[15:47:02] <xandros> [8:02pm] <@FAiM> > ponad 200 tys. liczba głosów nieważnych
+[15:47:10] <xandros> [8:03pm] <@FAiM> czy naprawde w polsce mamy tele nieogarow?
+[15:47:19] <xandros> [8:04pm] <@FAiM> niska frekwencja daje cos do zrozumienia
+[15:47:23] <xandros> [8:05pm] <@FAiM> niewazne glosy, ze w polsce sa idioci ;p
+[15:48:16] <xandros> no i hl: FAiM
+[15:49:22] <FAiM> moglbys nie wrzucac cytatow wyrwanych z kontekstu?
+[15:49:35] <FAiM> [2014-05-27 20:01:15] <FAiM> > ponad 200 tys. liczba głosów nieważnych
+[15:49:36] <FAiM> [2014-05-27 20:01:26] <FAiM> byla jakas akcja oddaj niewazny glos
+[15:49:38] <FAiM> [2014-05-27 20:01:39] <FAiM> czy naprawde w polsce mamy tele nieogarow?
+[15:50:04] <xandros> zmienia to kontekst?
+[15:50:08] <FAiM> owszem
+[15:50:17] <FAiM> [2014-05-27 20:02:02] <xandros> FAiM, lepiej bylo oddac niewazny glos, niz w ogole nie pojsc
+[15:50:18] <FAiM> [2014-05-27 20:02:17] <Solve> olol
+[15:50:20] <FAiM> [2014-05-27 20:02:21] <Solve> teraz to dałeś
+[15:50:22] <FAiM> [2014-05-27 20:02:48] <FAiM> nope
+[15:50:23] <FAiM> [2014-05-27 20:03:09] <FAiM> niska frekwencja daje cos do zrozumienia
+[15:50:24] <FAiM> [2014-05-27 20:03:22] <FAiM> niewazne glosy, ze w polsce sa idioci ;p
+[15:51:51] <xandros> to > for fun ;p
+[15:52:05] <xandros> czy bo jest sie idiota?
+[15:52:27] <xandros> czy:*
+[15:53:36] *** xandros was kicked by bodzio (a co mowilem o wyborach i polityce na tym kanale?)
+[15:53:37] *** Joins: xandros (~SoYouKnow@kono.sekainiwa.himitsuga.aru)
+[15:53:37] *** ChanServ sets mode: +v xandros
+[15:54:44] <xandros> polityka i wybory to swoja droga, chcialem tylko napomniec, ze FAiM zmienil zdanie :p
+[15:55:58] <xandros> var FAiM; : D
+[15:55:59] *** xandros was kicked by przemoc (nie rozrywamy emotikon)
+[15:55:59] *** Joins: xandros (~SoYouKnow@kono.sekainiwa.himitsuga.aru)
+[15:55:59] *** ChanServ sets mode: +v xandros
+[15:56:41] <FAiM> nie, nie zmienilem
+[15:56:59] <xandros> ciesze sie
+[16:02:10] <xandros> !iroha 24
+[16:04:58] <xandros> bodzio, > Due to unexpected… We’re temporarily closed. Sorry.
+[16:05:38] *** Joins: DziedzictwoZaIrohe|81080 (~Dziedzict@2308fbe7.2ae78891.clients.kiwiirc.com)
+[16:05:39] *** Parts: DziedzictwoZaIrohe|81080 (~Dziedzict@2308fbe7.2ae78891.clients.kiwiirc.com) ()
+[16:05:54] *** Quits: Takto (webchat@18377e3c.13919cb5.interpc.pl) (Quit: Page closed)
+[16:06:02] *** Joins: Takto (webchat@18377e3c.13919cb5.interpc.pl)
+[16:09:18] <bodzio> sie zandros obudzil
+[16:09:24] <xandros> ke?
+[16:09:32] <bodzio> !iroha 24
+[16:09:56] <bodzio> to juz wisi na blogu kilka dni
+[16:10:07] <xandros> nie wchodze tam codziennie
+[16:10:15] <xandros> a chcialem dac linka do info
+[16:10:37] <xandros> redozord, https://www.youtube.com/watch?v=Wp98wLUKtYo
+[16:10:38] <Tokido> 7Title: 【MMD】甘ブリキャストの疑心暗鬼1080p【艦コレコス】 - YouTube
+[16:14:25] *** Joins: Guest6733439 (~hubi1@a763dad.24785cc1.aero2.net.pl)
+[16:16:35] *** Parts: Guest6733439 (~hubi1@a763dad.24785cc1.aero2.net.pl) ()
+[16:16:55] *** Joins: hubi1 (~hubi1@shinjitsu.wa.itsumo.hitotsu)
+[16:16:55] *** ChanServ sets mode: +v hubi1
+[16:18:14] *** Parts: redozord (~reddd@1a9e3c85.2b24ce30.dynamic.chello.pl) ()
+[16:18:21] *** Joins: reddd (~reddd@1a9e3c85.2b24ce30.dynamic.chello.pl)
+[16:18:21] *** ChanServ sets mode: +v reddd
+[16:18:28] <reddd> obeszloby sie bez Sento :)
+[16:19:38] *** Joins: GCx1 (webchat@831ef56.763458a.dynamic.mm.pl)
+[16:19:58] <xandros> bodzio -m :D
+[16:19:59] <xandros> ?
+[16:21:14] *** Besamir sets mode: -m 
+[16:28:10] *** Quits: Besamir (~animenimk@lick.the.loli) (Quit: )
+[16:28:41] <xandros> o, Bes zmienil vhosta
+[16:29:00] <Invi> vhost jak u Xellosa
+[16:34:08] *** Joins: DziedzictwoZaIrohe|75664 (~Dziedzict@16b4fba6.1de2983b.clients.kiwiirc.com)
+[16:34:28] *** Quits: DziedzictwoZaIrohe|75664 (~Dziedzict@16b4fba6.1de2983b.clients.kiwiirc.com) (Client exited)
+[16:34:50] <Takto> xandros: te info o przątaczce ma mieć taki link? :>
+[16:35:09] <xandros> a jaki ma?
+[16:35:43] *** Joins: marc99 (~marc99@1c3781d3.7f8dc.adsl.inetia.pl)
+[16:35:48] <marc99> czesc
+[16:35:53] <Takto> hi
+[16:35:57] <xandros> hej
+[16:36:00] <GCx1> elo
+[16:36:11] <Takto> ładuje na stronę z hardubami od irohy
+[16:36:26] <marc99> !iroha23
+[16:36:32] <xandros> marc99, spacja
+[16:36:41] <xandros> !iroha 23
+[16:36:42] <bodzio> 23 nie 24 :D
+[16:36:49] <xandros> i 24
+[16:36:51] <xandros> tak samo
+[16:36:58] *** Joins: DziedzictwoZaIrohe|52196 (~Dziedzict@16b4fba6.1de2983b.clients.kiwiirc.com)
+[16:37:16] *** bodzio changes topic to 'http://i.imgur.com/lYSyViY.jpg | http://gg.gg/Commander | BodzioZeitung: !iroha 25, !iroha 24, !iroha23 !gargas1 !cobra15 !iroha22 petite-ranma !imocho !danna13 !ranma052 !wilcz12 | http://gg.gg/bodzio | http://gg.gg/bodzio-irc | http://gg.gg/onlajn | http://gg.gg/animu'
+[16:37:27] <Takto> 25? o.O
+[16:37:30] <xandros> jeszcze 7%
+[16:37:35] <hubi1> whoa 
+[16:37:53] <GCx1> !iroha 24
+[16:38:15] <GCx1> !iroha 25
+[16:38:26] <xandros> GCx1, czytasz, co sie pisze ;x
+[16:38:44] <xandros> done
+[16:38:49] <xandros> !iroha 25
+[16:39:01] <xandros> !weaboo
+[16:39:02] <Tokido> Weaboo song: https://www.youtube.com/watch?v=TBfWKmRFTjM
+[16:40:18] <marc99> !iroha 24
+[16:40:35] <marc99> !iroha 25
+[16:40:56] <xandros> https://youtu.be/o5SSGhmTvr0?list=RD05qjYHlhOzs tej wersji nie slyszalem
+[16:40:57] <Tokido> 7Title: Karuta - Ichiban no Takaramono [English Sub] 一番の宝物 Angel Beats! - YouTube
+[16:45:11] <bodzio> zeby nie bylo - jak ktos jest inteligentny moze dostac sie do wpisow na blogu ;)
+[16:45:56] *** Quits: DziedzictwoZaIrohe|52196 (~Dziedzict@16b4fba6.1de2983b.clients.kiwiirc.com) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[16:47:26] <FAiM> dziedzictwo?
+[16:47:56] <bodzio> no rzeczy/dobra, ktore sie dziedziczy xD
+[16:48:06] <bodzio> chyba ze mialo byc dziewictwo :D
+[16:48:23] *** Joins: DziewictwoZaIrohe|44111 (~Dziewictw@2308fbe7.2ae78891.clients.kiwiirc.com)
+[16:48:23] <xandros> https://justawaygintama.wordpress.com/2015/05/10/bodzio-hanasaku-iroha-24-26/
+[16:48:26] <Tokido> 7Title: [bodzio] Hanasaku Iroha 24-26 | Justaway
+[16:49:05] <bodzio> no mowilem, ze wiele nie rzeba
+[16:49:08] <bodzio> trzeba
+[16:49:30] <xandros> wrzucilem do query dzisiejsza date i dalo mi tego posta :p
+[16:49:48] <DziewictwoZaIrohe|44111> W BodzioZeitung nie ma odcinka 26
+[16:49:49] <xandros> this query -> /2015/05/10/
+[16:50:04] <bodzio> nom, bo nie chcialo mi sie patchowac
+[16:50:12] <bodzio> wiec wpis jest taki troche oszukany
+[16:50:26] <bodzio> jak ep bedzie - info pojawi sie na nazi
+[16:50:49] <FAiM> http://animesub.info/forum/viewtopic.php?pid=446491#p446491
+[16:50:50] <Tokido> 7Title: Nowy sezon anime już za pasem (Strona 332) / Dyskusje / Forum AnimeSub.info
+[16:50:55] <DziewictwoZaIrohe|44111> A co powiesz o odcinkach 19 i 20 Sprzątaczki iroha?
+[16:50:57] <FAiM> ten to sie chyba jara kazda adaptacja LN xD
+[16:51:21] <xandros> ZnT tez sie jaral?
+[16:51:27] <Thebassa> a jak
+[16:51:31] <bodzio> powiem, ze mam je gdzies :D
+[16:51:47] <DziewictwoZaIrohe|44111> To się nie godzi :(
+[16:51:51] <xandros> dwuznaczna odpowiedz
+[16:54:34] <bodzio> jak nie, jak tak. 9 lat tlumaczenia animu to o wiele za duzo. Czas to gowno rzucic. Nic nie konczyc, wszystko olac.
+[16:56:45] <DziewictwoZaIrohe|44111> Jak już 9 lat to dobrze by było pobić rekord ANSI na najdłużej działającego tłumacza.
+[16:57:30] *** Quits: KieR (webchat@6b45bb2.7f8dc.is.net.pl) (Quit: Page closed)
+[16:58:20] *** Joins: Magic_ (~Magic@2c464aa6.1c6ad229.master.pl)
+[16:58:21] <Magic_> cześć
+[16:58:31] <hubi1> elo
+[16:58:43] *** Joins: kIEr (webchat@6b45bb2.7f8dc.is.net.pl)
+[16:58:50] <bodzio> nie da rady - slymsc dziala dluzej :D
+[16:59:12] <AtoMan> o, moje pierwsze napisy na ansi wrzuciłem ponad 9 lat temu
+[16:59:23] <AtoMan> a ostatnie prawie 7 :P
+[17:00:19] <FAiM> http://www.ittoshura.com/img/mainvisual.png
+[17:00:28] <Tokido> 7Image: 1093 x 1063 in 1.48MB
+[17:00:33] *** DziewictwoZaIrohe|44111 is now known as iroha19i20
+[17:00:33] <FAiM> postaci jakby znajome ;p
+[17:01:17] <iroha19i20> Kto działa najdłużej na ANSI?
+[17:02:06] <bodzio> byc moze slymsc
+[17:02:15] <Thebassa> te wszystkie LNki wyglądają tak samo
+[17:02:18] <bodzio> z tych, ktorzy caly czas cos tam tlumaczyli i tlumacza
+[17:02:19] <Thebassa> nawet nie przesadzam 
+[17:02:34] <reddd> agree
+[17:02:50] <FAiM> http://www.animenewsnetwork.com/news/2015-05-10/yoshiaki-hasegawa-rumi-ookubo-m.a.o-star-in-school-battle-story-hundred/.88020
+[17:02:53] <bodzio> choc on swego czasu troche napisow wyrzucil, poprawil i wrzucil ponownie
+[17:02:53] <Tokido> 7Title: Yoshiaki Hasegawa, Rumi Ookubo, M.A.O Star in School Battle Story 'Hundred' - News - Anime News Network
+[17:02:54] <FAiM> i kolejne
+[17:03:03] <bodzio> wiec nie da sie tego zweryfikowac juz
+[17:03:07] <iroha19i20> No to może będziesz z nim rywalizować o najdłuższe tłumaczenie?
+[17:03:19] <bodzio> po cholere?
+[17:03:51] <xandros> i tak nic z tego nie ma
+[17:04:08] <iroha19i20> Prestiż ludzi ANSI.
+[17:04:20] <xandros> czego?
+[17:04:33] <bodzio> ^+10
+[17:04:35] *** iroha19i20 is now known as Iroha19i20czekam
+[17:05:11] <bodzio> daj sobie siana, mowilem juz, ze 19 i 20 ep tez beda, moze troche pozniej, ale beda.
+[17:05:44] <xandros> > Przy takiej frekwencji raczej nie będzie następnego roku.
+[17:06:11] <xandros> to z pewnego topicu na ansi
+[17:06:41] <bodzio> no i jednak byl
+[17:07:49] <Iroha19i20czekam> Głosy o końcu ANSI słychać przynajmniej od roku i nic, nadal działa i ma dobre pokrycie sezonu, a na stare bajki ma czas.
+[17:08:26] *** Iroha19i20czekam is now known as N31
+[17:09:00] <bodzio> mowa o plebiscycie, nie o samym nazi
+[17:09:15] <bodzio> http://animesub.info/forum/viewtopic.php?pid=446546#p446546
+[17:09:16] <Tokido> 7Title: Plebiscyt na najlepszych suberów ANSI 2014 (Strona 3) / Aktualności / Forum AnimeSub.info
+[17:09:16] <FAiM> ansi 2.0
+[17:09:20] <FAiM> zgniecie wszystko ;p
+[17:09:28] <FAiM> zabije onliny
+[17:09:35] <FAiM> zbanuje trolle
+[17:10:23] <bodzio> wybicie onlajnow - robisz wlasny, wrzucasz wstawki szybciej od innych, blokujesz mozliwosc podbierania linkow i trzepiesz kapuste
+[17:10:26] <Takto> i umrze xD
+[17:10:51] <N31> Ja właśnie o tym plebiscycie, gdyż na pewno będzie, bo ANSI ma się dobrze pomimo głosów zwątpienia.
+[17:10:51] *** Quits: hubi1 (~hubi1@shinjitsu.wa.itsumo.hitotsu) (Ping timeout: 360 seconds)
+[17:11:08] <xandros> FAiM, zmiana zasad i systemu forum, ANSI 2.0 i dobra reklama... ale wiesz sam
+[17:11:12] <xandros> sam wiesz*
+[17:11:18] <xandros> yoda moim mistrzem
+[17:11:20] *** Joins: OpelZaIrohe (~OpelZaIro@2308fbe7.2ae78891.clients.kiwiirc.com)
+[17:11:24] <FAiM> bodzio
+[17:11:28] <FAiM> ale nie da sie zablokowac
+[17:11:41] <FAiM> no chyba ze na wlasnym serwerze
+[17:11:52] <OpelZaIrohe> !iroha 24
+[17:11:55] <OpelZaIrohe> !iroha 25
+[17:11:58] <N31> Bodzio, tak robili goście od filmów i seriali online, a teraz pójdą do pierdla.
+[17:12:07] <FAiM> ale wtedy
+[17:12:11] <FAiM> to przestanie sie oplacac ;p
+[17:12:21] <GCx1> !iroha 25
+[17:12:24] <FAiM> bo jednak trza miec porzadnego serwera
+[17:12:29] <FAiM> do tego ;p
+[17:12:32] <Takto> anime-eden zrobi porządek :D
+[17:12:41] <Takto> będą wydawać wszystkie serie :D
+[17:12:43] <FAiM> a do linkowni wystarczy toster ;p
+[17:13:03] <N31> Anime eden śmierdzi trollowaniem fandomu.
+[17:13:15] <Takto> mówisz??
+[17:13:22] <N31> Pisze, a co?
+[17:13:28] <Takto> to to by był niezły troll :)
+[17:13:31] <xandros> wlasnie, Takto, co za seria wygrala?
+[17:13:42] <Takto> chyba tytani
+[17:13:55] <Takto> jak ostatnio (z miesiąc temu) oglądałem
+[17:13:59] <AtoMan> ho ho
+[17:14:07] <N31> Tytani, ale i nikt nie napisał, że to będzie wydane.
+[17:14:07] <Takto> raczej jako ta druga
+[17:14:16] <xandros> > Liczba głosów : 263
+[17:14:41] <Takto> jak wydwać, to na dobry początek filmy imo :)
+[17:14:49] *** Joins: hubi1 (~hubi1@shinjitsu.wa.itsumo.hitotsu)
+[17:14:49] *** ChanServ sets mode: +v hubi1
+[17:15:04] <FAiM> jakiegos hardkorowego hentaja
+[17:15:09] <FAiM> by zaczac od skandalu
+[17:15:11] <bodzio> ale na tym sie w tym kraju nie da zarobic
+[17:15:13] <FAiM> i miec darmowa reklame
+[17:15:15] <bodzio> wiec... xD
+[17:15:19] <xandros> FAiM, dobre :D
+[17:15:28] <bodzio> FAiM mistrzem marketingu
+[17:15:32] <Witax> !iroha24
+[17:15:32] <Takto> +1
+[17:15:37] <xandros> Witax, spacja
+[17:15:49] <Witax> !iroha 24
+[17:15:58] <N31> !iroha 10
+[17:16:03] <Witax> !iroha 25
+[17:16:09] <FAiM> ma sie te doswiadczenie ;p
+[17:16:10] <Takto> !irochabatch
+[17:16:18] <xandros> !witax
+[17:16:20] <xandros> :c
+[17:16:20] <bodzio> !biba
+[17:16:21] <Tokido> https://www.youtube.com/watch?v=kpJcgkEdMRg
+[17:16:22] <Takto> *iroha
+[17:16:24] <bodzio> !rolypoly
+[17:16:25] <Tokido> Roly-poly: http://www.youtube.com/watch?v=3Xolk2cFzlo
+[17:16:26] <N31> !iroha 19 i 20
+[17:16:26] <Witax> 23 byl bez
+[17:16:30] <hubi1> Takto spacja
+[17:16:33] <Witax> xD
+[17:16:33] <xandros> !random hanasaku_iroha
+[17:16:35] <Tokido> Random hanasaku_iroha: 7Questionable http://ujeb.se/U4edi
+[17:16:56] <bodzio> ona ma mniejsze cycki
+[17:17:06] <AtoMan> ‹ !bodzio › ale na tym sie w tym kraju nie da zarobic < jesteś pewien?
+[17:17:06] *** AtoMan was kicked by przemoc (przed kropka, przecinkiem, dwukropkiem, srednikiem, wykrzyknikiem, pytajnikiem i wielokropkiem nie stawiamy spacji)
+[17:17:06] *** Joins: AtoMan (dmf@164642ae.1654620b.dynamic.chello.pl)
+[17:17:09] <AtoMan> ...
+[17:17:19] <N31> Znikam już, część : )
+[17:17:20] *** N31 was kicked by przemoc (nie rozrywamy emotikon)
+[17:17:25] <Takto> ale wulgarna strona - uyeb,se xD
+[17:17:31] <bodzio> jak zabijesz onlajny to moze wtedy
+[17:17:38] <Witax> jeszcze 20-21 i 26
+[17:17:44] <Witax> xD
+[17:17:48] <Takto> onlajny już raz padły :D
+[17:17:51] <bodzio> a tak to koszta licencji i produkcja/dystrybucja ubija
+[17:18:01] <Witax> i mozna ogladac xD
+[17:18:52] <FAiM> przyklady tych stron z filmami i serialami
+[17:19:02] <FAiM> pokazaly, ze linkownie jednak nie sa legalne ;p
+[17:19:22] <FAiM> chociaz to kazdy wiedzial
+[17:19:26] <AtoMan> licencje na anime akurat zawsze był tanie
+[17:19:30] <bodzio> wlasnie mialem napisac
+[17:19:36] <FAiM> tylko czemu policja dopiero po tylu latach na to wpadla ;p
+[17:19:37] <AtoMan> stąd ten zalew w latach 90
+[17:20:11] <FAiM> ale teraz jest CR, funi, hulu
+[17:20:12] <AtoMan> FAiM: może ktoś poczuł się zbyt pewnie, a może po prostu dopiero teraz mamy jakąś normalną, legalną dystrybucję online
+[17:20:18] <bodzio> licencja na jakis szajs i tak sie nie zwroci, jak towar bedzie lezal na magazynie
+[17:20:19] <FAiM> i co tam jeszcze
+[17:20:21] <AtoMan> CR, funi i hulu nie są dostępne u nas
+[17:20:27] <FAiM> jak nie
+[17:20:29] <FAiM> CR jest ;p
+[17:20:31] <AtoMan> a nawet jak są to nie po naszemu
+[17:20:36] <AtoMan> i nie wszystko
+[17:20:41] <FAiM> ale nie o to mi chodzi
+[17:20:45] <FAiM> jest popyt
+[17:20:49] <FAiM> to i ceny ida w gore ;p
+[17:20:53] <AtoMan> zresztą target jest inny
+[17:21:03] <Takto> ludzie wolą mieć za darmo :)
+[17:21:12] <AtoMan> oczywiście, próba wydawania samych nowości to samobójstwo
+[17:21:37] <FAiM> raczej jedyna sluszna droga ;p
+[17:21:46] <FAiM> inaczej ludzie obejrza za darmo
+[17:21:47] <AtoMan> nah
+[17:21:56] <AtoMan> i tak i tak obejrzą za darmo
+[17:22:05] <AtoMan> skoro są simulcasty
+[17:22:11] <AtoMan> i torrenty
+[17:22:26] <FAiM> ale jak twoj simulcast
+[17:22:28] <AtoMan> rzecz nie w tym żeby dostarzyć szybko, tylko porządnie
+[17:22:31] <FAiM> bedzie simulcastem
+[17:22:37] <FAiM> to jest szansa na ten procent
+[17:22:37] *** Quits: kIEr (webchat@6b45bb2.7f8dc.is.net.pl) (Quit: Page closed)
+[17:22:40] <FAiM> co jednak obejrzy ;p
+[17:23:26] <bodzio> porzadnie? Lata fansubowania pokazuja, ze chodzi tylko o szybkosc
+[17:23:34] <AtoMan> eh, niby tak. ale na razie mowa o fizycznych nośnikach, na które jest zapotrzebowanie
+[17:23:54] <FAiM> eee
+[17:24:02] <FAiM> mowa byla o legalnym online
+[17:24:06] <xandros> co do filmow, wystarczy znalezc dobry target i tyle
+[17:24:09] <Witax> AtoMan jest?:o
+[17:24:10] *** Quits: OpelZaIrohe (~OpelZaIro@2308fbe7.2ae78891.clients.kiwiirc.com) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[17:24:19] <xandros> widzisz, ze naruto sie sprzedaje, to wydajesz naruto
+[17:24:20] <xandros> tyle
+[17:24:25] <bodzio> AtoMan to ukryty agent tarczy
+[17:24:39] <AtoMan> tak bardzo to
+[17:24:41] <FAiM> i nie sadze
+[17:24:48] <FAiM> by bylo zapotrzebowanie na dvd z anime
+[17:24:53] <Witax> Tylko PL odpowiednik CR ma sens u nas
+[17:24:56] <FAiM> skoro w necie jest za darmo
+[17:25:02] <Takto> ja ogólnie wolę mieć na nośniku :)
+[17:25:05] <FAiM> szybciej
+[17:25:08] <FAiM> i w lepszej jakosci
+[17:25:10] <AtoMan> FAiM: w takim razie jakim cudem mangi wychodzą
+[17:25:25] <AtoMan> skoro są za darmo, szybciej i jeszcze połowa narzeka że tytuł tłumaczą
+[17:25:28] <Takto> bo papier ma przyszłość :P
+[17:25:34] <bodzio> Anime Gate w koncowce zycia notowalo zarobek - ale i tak to ubito xD
+[17:25:43] <Witax> nosnik to produkt niszowy obecnie
+[17:25:47] <AtoMan> anime gate robiło od cholery rzeczy źle
+[17:25:51] <FAiM> bo papier mozna spalic ;p
+[17:26:02] <AtoMan> najlepsze co miało to okładki
+[17:26:08] <FAiM> nie meczy oczu
+[17:26:11] <FAiM> itd. itp.
+[17:26:12] <Takto> dawali bonusiki jeszcze :)
+[17:26:21] <FAiM> anime ostatecznie i tak obejrzysz na monitorze/tv
+[17:26:27] <AtoMan> FAiM: mnie bardziej męczy czytanie papieru niż z monitora/tabletu
+[17:26:45] <bodzio> AtoMan - polecam wizyte u okulisty zatem ;D
+[17:26:53] <Takto> ja chyba jestem zatwardziałym tradycjonalistą
+[17:26:57] <AtoMan> byłem ze 3 razy w zeszłym roku :P
+[17:27:00] <Takto> wolę mieć komiks w ręce
+[17:27:06] <AtoMan> a ja płytę na półce
+[17:27:40] <FAiM> ale ksiazka/komiks ma wiecej zastosowan
+[17:27:41] <Magic_> a ja komiks i płytę na półce 
+[17:27:44] <FAiM> przeczytasz
+[17:27:54] <FAiM> pozniej zapalisz w kominku
+[17:27:59] <FAiM> mozesz sie podetrzec
+[17:28:04] <FAiM> zrobic skreta
+[17:28:06] <AtoMan> podłożysz pod nogę od krzesła
+[17:28:06] <Takto> albo się podetrzesz :>
+[17:28:09] <FAiM> pokolorowac ;p
+[17:28:13] <xandros> Takto, ostatnio mangi czytalem na kindlu :D (nie liczac tych, co FAiM podsyla)
+[17:28:29] <FAiM> a plytka
+[17:28:29] <AtoMan> płytą można porzucać, ozdobić mieszkanie, zrobić tarczę na zegar :P
+[17:28:32] <FAiM> to co zrobisz?
+[17:28:33] <Takto> mnie zalegają na pólce :D
+[17:28:33] <bodzio> na kiblu? xD
+[17:28:38] <Witax> Ale porównywanie mang do rynku anime jest bez sensu
+[17:28:45] <FAiM> powiesz w aucie
+[17:28:46] *** Joins: DziedzictwoZaIrohe|22463 (~Dziedzict@16b4fba6.1de2983b.clients.kiwiirc.com)
+[17:28:46] <AtoMan> niby dlaczego?
+[17:28:55] <xandros> > a plytka
+[17:28:57] <AtoMan> tzn. mangi są tańsze w opracowaniu
+[17:29:01] <AtoMan> i to tyle
+[17:29:01] <bodzio> Dajci wy mu juz spokoj, to ukryta opcja niemiecka jest
+[17:29:10] <DziedzictwoZaIrohe|22463> iroha 25
+[17:29:16] <xandros> zripujesz, skompresujesz i wrzucisz na tablet
+[17:29:18] <Takto> do wydań komiksów winny być dołączone adaptacje animowane :)
+[17:29:19] <AtoMan> w obu przypadkach masz rozwiniętą na zachodzie dystrybucję cyfrową
+[17:29:23] <xandros> i na kiblu bedziesz ogladac
+[17:29:27] <DziedzictwoZaIrohe|22463> !iroha 25
+[17:29:28] <FAiM> nosniki dvd/bd filmow
+[17:29:30] <FAiM> to przezytek
+[17:29:42] <DziedzictwoZaIrohe|22463> !iroha 24
+[17:29:57] <xandros> FAiM, a jak z wydawaniem edycji elektronicznych?
+[17:29:58] <AtoMan> masz spaczoną opcję rynku
+[17:30:00] <Witax> Płyty wymierają
+[17:30:01] <AtoMan> *wizję
+[17:30:08] <Takto> skoro onlajn to przyszłość, to chcę mieć możliwość ściągnięcia epka
+[17:30:11] <xandros> za doplata moga wyslac fizyczny nosnik
+[17:30:13] <AtoMan> płyty BD jeszcze się nawet u nas nie zadomowiły
+[17:30:27] <FAiM> i sie nie zadomowia
+[17:30:31] <AtoMan> ale
+[17:30:32] <FAiM> nie z taka polityka cenowa
+[17:30:44] <FAiM> gdzie plyta 5 lat po premierze
+[17:30:46] <AtoMan> DVD nigdzie się nie wybierają, chociaż faktycznie rynek też ciężki
+[17:30:49] <hubi1> <FAiM> nosniki dvd/bd filmow > najczesciej dla kolekcjonerow
+[17:30:50] <FAiM> kosztuje tyle co na starcie
+[17:30:56] <AtoMan> ale mówimy teraz o różnych niszach
+[17:30:58] <Takto> niekiedy tak
+[17:31:30] <AtoMan> filmy są drogie bo jest mało kupujących, jest mało kupujących to są drogie
+[17:31:34] <Takto> najlepsze są wydania na dvd, które są zripowane z vhs :D
+[17:31:37] <bodzio> nich sobie "nowe wydawnictwo animu" topi pieniadze, skoro chce. Nas to nie dotyczy. :D
+[17:32:05] <AtoMan> ano właśnie możliwe że nie dotyczy
+[17:32:13] <AtoMan> ale są jednak ludzie co sprowadzają to i owo
+[17:32:15] <Takto> może liczą na odszkodowanie :P
+[17:32:39] *** Quits: DziedzictwoZaIrohe|22463 (~Dziedzict@16b4fba6.1de2983b.clients.kiwiirc.com) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[17:32:49] <AtoMan> skoro jest rynek na mangi to jest i na anime, to jest proste jak drut
+[17:32:59] <AtoMan> i nie, nie jest to aż tak droga impreza jak się wydaje
+[17:33:31] *** Quits: reddd (~reddd@1a9e3c85.2b24ce30.dynamic.chello.pl) (Read error: Connection reset by peer)
+[17:33:40] <AtoMan> rzecz w tym że duże wydawnictwa w to nie wejdą bo to nie jest duży i pewny zysk + wymaga własnego wkładu pracy
+[17:33:57] <bodzio> Kiedy ja ogladam moze z 5-6 serii rocznie w calosci. A nawet jakby ktos mial ja wydac - nie kupilbym, bo obraz i tlumaczenie beda do bani. :D
+[17:34:06] <AtoMan> przy np. filmach kinowych ten wkład jest praktycznie zerowy
+[17:34:20] <bodzio> wiec mam w dupie :D
+[17:34:24] <AtoMan> tak, zakładaj z góry że będzie gówno jak AG :P
+[17:34:25] <Magic_> bodzio, nie jesteś typowym oglądaczem chinskich bajek
+[17:34:34] <AtoMan> oh wait, sam mówiłeś że były zyski
+[17:35:00] <bodzio> nom
+[17:35:06] <bodzio> bedzie gowno :D
+[17:35:15] <FAiM> taa, jest
+[17:35:17] <FAiM> widze
+[17:35:26] <Witax> Ato Edena to Daru stworzył?
+[17:35:30] <AtoMan> oj żebyś się nie zdziwił :P
+[17:35:38] <FAiM> nie bez powodu wszyscy zwineli manatki
+[17:35:44] <AtoMan> Witax: stworzył to za dużo powiedziane
+[17:35:49] <bodzio> nie zdziwie sie, bo i tak nie kupie niczego, co wydadza
+[17:36:31] <Witax> Mniejsza xD
+[17:36:35] <AtoMan> zwinęli manatki bo jechali na fali wznoszącej i sami nie zrobili nic, żeby polepszyć sytuację; a jak jebło to się zwinęli
+[17:36:41] <bodzio> choc pewnie nie dozyje czasu wydania czego xD
+[17:36:52] <bodzio> +s
+[17:37:09] <AtoMan> ostatni plan na wydanie to bodaj połowa czerwca?
+[17:37:35] <AtoMan> tylko japończyki zwlekają z akceptacją
+[17:37:35] <bodzio> podtrzymuje opinie :D
+[17:38:07] <xandros> AtoMan, ty tam robisz?
+[17:38:20] <Witax> Polski rynek jest chory
+[17:38:21] *** xandros was kicked by bodzio (bodzio)
+[17:38:21] *** Joins: xandros (~SoYouKnow@kono.sekainiwa.himitsuga.aru)
+[17:38:28] <AtoMan> polskiego rynku nie m
+[17:38:34] <xandros> znowu styl?
+[17:38:37] <bodzio> nie zadawaj glupich pytan :D
+[17:38:45] <xandros> juz myslalem
+[17:39:00] <AtoMan> bo trudno za taki uznać to co robią monolith i mayfly
+[17:39:33] <xandros> to mam kolejne: kotori wyszlo na czysto za SAO?
+[17:40:08] <FAiM> hm
+[17:40:19] <FAiM> tego nie wiem
+[17:40:25] <FAiM> albo podobno SAO tak sie dobrze sprzedaje
+[17:40:50] <FAiM> ze studio jg wchodzi w ten interes
+[17:40:51] *** Joins: CiastkaZaIrohe|12743 (~CiastkaZa@16b4fba6.1de2983b.clients.kiwiirc.com)
+[17:41:05] <FAiM> w koncu maja wydac toradore i lh
+[17:41:18] <xandros> lh?
+[17:41:47] *** Joins: reddd (~reddd@1a9e3c85.2b24ce30.dynamic.chello.pl)
+[17:41:47] *** ChanServ sets mode: +v reddd
+[17:41:48] *** Quits: CiastkaZaIrohe|12743 (~CiastkaZa@16b4fba6.1de2983b.clients.kiwiirc.com) (Client exited)
+[17:42:13] <xandros> [5:41pm] <CiastkaZaIrohe|12743> Czemu masz zamiar dublować w sezonie letnim?
+[17:42:14] <xandros> [
+[17:42:23] <xandros> w00t!?
+[17:43:20] <Takto> stop kradzieży!
+[17:43:36] <Takto> ;_;
+[17:44:05] <bodzio> ke?
+[17:44:10] <xandros> juz wiem...
+[17:44:10] <Witax> xandros, nie ładnie xD
+[17:44:12] <Takto> dublowanie :)
+[17:44:19] <xandros> bo rein zupdejtowal dzisiaj
+[17:44:20] <xandros> http://animesub.info/forum/viewtopic.php?id=163791
+[17:44:21] <Tokido> 7Title: Co kto tłumaczy (Strona 1) / Tłumaczenie anime / Forum AnimeSub.info
+[17:44:28] <reddd> stop kradziejom!
+[17:44:47] <Takto> kick xandros! :>
+[17:44:48] <xandros> i ze niby ja dubluje, a nie jakis onlajn
+[17:45:01] <reddd> no bo dublujesz 
+[17:45:03] <reddd> taka prawda
+[17:45:18] <FAiM> ale cham
+[17:45:21] <FAiM> dubluje animu
+[17:45:23] <reddd> zero kultury 
+[17:45:26] <xandros> juz juz
+[17:45:29] <bodzio> tytul, bo jak mam sie przekopac przez calosc...
+[17:45:31] *** Parts: xandros (~SoYouKnow@kono.sekainiwa.himitsuga.aru) ()
+[17:45:31] *** Joins: xandros (~SoYouKnow@kono.sekainiwa.himitsuga.aru)
+[17:45:33] <Takto> brzydzę się tobom 
+[17:45:37] <xandros> charlotte
+[17:46:04] <bodzio> dunno co za gowno
+[17:46:24] *** Quits: reddd (~reddd@1a9e3c85.2b24ce30.dynamic.chello.pl) (Quit: )
+[17:47:11] <FAiM> no
+[17:47:18] <FAiM> kolejne gowno od P.A.Works ;p
+[17:47:44] <Takto> za dużo wymagacie xd
+[17:47:59] <FAiM> z historia i postaciami ludzi z Key
+[17:48:01] <Takto> cieszyć się powinno z tego, co jest :)
+[17:48:17] <xandros> AB bylo spoko
+[17:48:25] <Takto> b. spoko
+[17:49:21] <Takto> ciągle czekam na 3 ep :D
+[17:49:21] <xandros> https://youtu.be/eW2WWrzD5KI
+[17:49:22] <Tokido> 7Title: Angel Beats! » Opening 2 - YouTube
+[17:49:28] <Takto> *13
+[17:49:31] <FAiM> i za pare lat wydadza gre xD
+[17:49:42] <xandros> moze dozyjemy
+[17:49:51] *** Quits: Thebassa (~Thebassa@aaaa.aaaa) (Ping timeout: 360 seconds)
+[17:50:15] <Takto> w polszy? o.O
+[17:51:32] <Takto> uciekam
+[17:51:42] <Takto> do zaś, panowie i pani(e)
+[17:51:45] <Takto> : )
+[17:51:45] *** Takto was kicked by przemoc (nie rozrywamy emotikon)
+[17:55:03] *** bodzio was kicked by bodzio (bodzio)
+[17:55:08] *** Joins: DziedzictwoZaIrohe|10154 (~Dziedzict@16b4fba6.1de2983b.clients.kiwiirc.com)
+[17:55:13] <DziedzictwoZaIrohe|10154> elo
+[17:55:16] <xandros> elo
+[17:55:23] <GCx1> elo
+[17:55:24] <DziedzictwoZaIrohe|10154> !iroha 25
+[17:55:26] <xandros> tylko jestem ciekawy, kto to napisal
+[17:55:31] <xandros> wbil na kanal
+[17:55:47] <xandros> rzucil mi na privie ten tekst
+[17:55:51] <xandros> nawet sie nie przedstawil
+[17:56:02] <DziedzictwoZaIrohe|10154> !iroha 24
+[17:56:46] <DziedzictwoZaIrohe|10154> !iroha22
+[17:57:50] <FAiM> xandros, ale who cares?
+[17:57:51] *** Quits: DziedzictwoZaIrohe|10154 (~Dziedzict@16b4fba6.1de2983b.clients.kiwiirc.com) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[17:58:35] *** Joins: reddd (~reddd@1a9e3c85.2b24ce30.dynamic.chello.pl)
+[17:58:35] *** ChanServ sets mode: +v reddd
+[18:04:08] <hubi1> ktos glosowal dzis juz? do kiedy to w ogole mozna glosowac?
+[18:04:13] <przemoc> do 21
+[18:05:19] <hubi1> to moze sie przejade, ale taka kijowa pogoda, ze jakos sie nie chce. pamietam ze porzednie wybory, te lokalne to tez bylo ulewnie
+[18:05:26] <FAiM> bodzio nie m
+[18:05:28] <FAiM> +a
+[18:05:43] <FAiM> i myszy harcuja ;p
+[18:06:18] <FAiM> oglada ktos moze Arslan Senki?
+[18:08:37] *** Quits: hubi1 (~hubi1@shinjitsu.wa.itsumo.hitotsu) (Quit: See you next illusion!)
+[18:09:39] <przemoc> a wlasnie mialem go kopnac z komentarzem: Wahl und Politik Themen sind verboten in #bodzio
+[18:10:00] *** Quits: Witax (~witax@1908d3ef.26d9672f.adsl.inetia.pl) (Read error: Connection reset by peer)
+[18:11:12] <przemoc> kurde, z matrasa moglem kiedys do okolicznego kiosku zamawiac, a teraz juz nie moge, choc kiosk dalej stoi tam, gdzie stal...  hm...
+[18:21:54] *** Joins: bigdo (~bigdo@6a63aef.a34b1a3.adsl.inetia.pl)
+[18:22:11] <bigdo> re
+[18:26:04] *** Joins: Witax (~witax@1908d3ef.26d9672f.adsl.inetia.pl)
+[18:29:01] *** Joins: Thebassa (~Thebassa@aaaa.aaaa)
+[18:29:01] *** ChanServ sets mode: +h Thebassa
+[18:42:59] *** Joins: luki (~luki@263fce7a.e8a4d95.adsl.tpnet.pl)
+[18:43:52] <luki> witam wszystkich
+[18:44:25] <luki> besamir mówił mi żeby pytać bodzia o hardki do Nisemonogatari i Nisekoi, czy ktoś z obecnych wie coś na ten temat?
+[18:44:33] *** Joins: bodzio (~bogusz_cz@10eff834.24624475.adsl.tpnet.pl)
+[18:44:36] *** ChanServ sets mode: +oa bodzio bodzio
+[18:45:23] *** Parts: marc99 (~marc99@1c3781d3.7f8dc.adsl.inetia.pl) (Once you know what it is you want to be true, instinct is a very useful device for enabling you to know that it is)
+[18:45:25] <xandros> moze bodzio
+[18:45:26] *** Quits: Witax (~witax@1908d3ef.26d9672f.adsl.inetia.pl) (Read error: Connection reset by peer)
+[18:45:27] <przemoc> chyba nawet sam bodzio niewiele wie na ten temat ;)
+[18:45:38] <bodzio> ke?
+[18:45:54] <luki> pytałem o hardki do Nisemono i Nisekoi
+[18:46:06] <xandros> a nisekoi to nie broszka reddd -a?
+[18:46:20] <bodzio> Nisekoi? Trololo Besa. 
+[18:46:25] <luki> besemir mówił żeby bodzia pytać ;)
+[18:46:26] <bodzio> Nisemono?
+[18:46:35] <luki> Nisemonogatari
+[18:46:51] <bodzio> chwila, sprawdze anidb
+[18:46:55] <przemoc> xandros: czemu -a po spacji?
+[18:47:04] <xandros> bo hl
+[18:47:36] <przemoc> przestan, jak ktos ma normalny hl, to odmienione nicki tez lyka :P
+[18:47:42] <bodzio> ja z tym chyba nie mialem nic wspolnego
+[18:47:57] <bodzio> z monogatari tylko to, co mialo 4 ova
+[18:48:38] <luki> w zasadzie chyba o to chodzi
+[18:48:53] <luki> to chyba szło jako ova "Kot Tsubasa" do Bakemono
+[18:49:41] <luki> a przynajmniej u besamira tak jest zapisane na jego blogu, ale mówił żeby pytać ciebie ;)
+[18:51:18] <bodzio> rzuc mi linkiem do jego wpisu
+[18:51:33] <bodzio> u mnie teraz na skorce nie ma tagow, wiec znalezienie tego... :/
+[18:51:46] <przemoc> !iroha 24
+[18:51:49] <przemoc> !iroha 25
+[18:52:01] <luki> tutaj jest: http://animenimki.blogspot.com/search/label/Bakemono
+[18:52:02] <Tokido> 7Title: b-subs blog: Bakemono
+[18:52:15] <luki> a żeby pytać u ciebie powiedział mi na pw
+[18:54:04] <FAiM> http://www.danmachi.com/special/index.html?sid=endcard
+[18:54:05] <FAiM> wow
+[18:54:07] <Tokido> 7Title: スペシャル｜TVアニメ「ダンまち」公式サイト
+[18:54:09] <bodzio> mozliwe, ze cos przy tym robilem, dawno bylo i nie pamietam
+[18:54:11] <FAiM> endcardy w 1080p xD
+[18:54:29] <bodzio> ale raczej na pewno tylko on ma linki do tego. Ja nic nie posiadam w swoich zasobach
+[18:54:40] <bodzio> wiec albo trollowal, albo sie zapomnial.
+[18:54:50] <FAiM> a w ogole to wyszlo?
+[18:55:14] <luki> hmm, ok w takim razie jeszcze dopytam
+[18:55:21] <bodzio> no skonczyl to na pewno
+[18:55:22] <luki> a gdzie szukać Nisekoi?
+[18:55:25] <bodzio> bo linkami rzucal
+[18:55:26] <xandros> > Podziękowania dla gu4rda
+[18:55:28] <xandros> whoa
+[18:55:29] <FAiM> w koszu na smieci
+[18:55:33] <xandros> dawno go nie widzialem
+[18:55:38] <bodzio> ale ja mam zwyczaj sciagnac cos i nie obejrzec/wywalic
+[18:55:44] <bodzio> albo miec linki i nie sciagac
+[18:55:48] <bodzio> i zapomniec
+[18:55:57] <bodzio> w koncu nie ogladam [prawie] animu
+[18:57:59] <luki> ok, dzięki za odpowiedź
+[18:58:01] *** przemoc changes topic to 'http://gg.gg/ScarfGirl | http://gg.gg/Commander | BodzioZeitung: !iroha25 !iroha24 !gargas1 !cobra15 petite-ranma !imocho !danna13 !ranma052 !wilcz12 | http://gg.gg/bodzio | http://gg.gg/bodzio-irc | http://gg.gg/onlajn | http://gg.gg/animu '
+[18:58:34] *** Quits: luki (~luki@263fce7a.e8a4d95.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[18:58:34] <xandros> przemoc wprowadza swoje wlasne zasady =/
+[18:59:20] <FAiM> jedynie porzadek ;p
+[19:00:14] <reddd> http://i.imgur.com/lKgqoW0.jpg :o
+[19:00:15] <Tokido> 7Image: 1500 x 953 in 472.02kB
+[19:00:41] <xandros> seems legit
+[19:01:52] <przemoc> hestia jest chyba dostatecznie stara, by nie byl to jailbait, ale nie jestem pewien co do Aizu
+[19:07:24] *** Quits: Invi (~kvirc@1366b407.2f9b2a4a.rev.vline.pl) (Ping timeout: 360 seconds)
+[19:14:50] <FAiM> http://i.imgur.com/lDwPvmW.jpg
+[19:14:51] <Tokido> 7Image: 1600 x 1071 in 292.69kB
+[19:16:44] <bodzio> nice
+[19:26:41] <FAiM> hm
+[19:26:58] <FAiM> ta adaptacja yamada-kun
+[19:27:11] <bodzio> ssssssssssssssssssssssssssssssssssssssssssssssie
+[19:27:12] <FAiM> to jednym slowem pominiecie wszystkie pobocznych gagow
+[19:27:18] <FAiM> i skupienie sie na fabule
+[19:27:21] <bodzio> dokladnie ;_;
+[19:27:29] <FAiM> czemu tak nie zrobili z falszywym karpiem
+[19:27:36] <FAiM> wroc
+[19:27:43] <FAiM> wiem
+[19:27:46] <bodzio> bo by nie bylo co ekranizowac?
+[19:27:53] <FAiM> nie wyszlo by im nawet 12 odcinkow ;p
+[19:28:36] <FAiM> o
+[19:28:51] <FAiM> xandros, juz znizasz sie do takiego poziomu
+[19:30:19] <reddd> tak samo bylo z the world god only know 
+[19:30:22] <reddd> w sensie trzeci sezon
+[19:30:52] <bodzio> zandros, przeca to w lipcu wyjdzie dopiero ;_;
+[19:31:28] <FAiM> http://exsubs.anidb.pl/charlotte#comment-header
+[19:31:29] <Tokido> 7Title: Charlotte ~ exsubs
+[19:31:30] <FAiM> :P
+[19:33:38] <FAiM> <?php die(); ?>
+[19:34:09] *** Joins: hubi1 (~hubi1@shinjitsu.wa.itsumo.hitotsu)
+[19:34:09] *** ChanServ sets mode: +v hubi1
+[19:34:13] *** FAiM sets mode: +b *!*@is.best.girl
+[19:34:14] *** Tokido was kicked by FAiM (FAiM)
+[19:34:17] <FAiM> test
+[19:34:38] *** FAiM sets mode: -b *!*@is.best.girl
+[19:34:44] <Thebassa> cześć, hubi1
+[19:34:58] <hubi1> hej Thebassa
+[19:35:30] <FAiM> ladnie to to tak wyswietlac bodziowy kanal na swojej stronie?
+[19:35:36] <hubi1> co slychac?
+[19:36:07] *** Joins: Witax (~witax@1908d3ef.26d9672f.adsl.inetia.pl)
+[19:38:45] <FAiM> nic
+[19:39:08] <Witax> malware złapałem przez Jdownloader 2 xd
+[19:39:17] <FAiM> lol
+[19:39:32] <Thebassa> no patrz
+[19:39:40] <Thebassa> a myślałem, że czegoś się nauczył po ostatnim 
+[19:39:50] <FAiM> tak to jest
+[19:39:56] <FAiM> jak sie sciaga pornosy i piraty
+[19:39:58] <Witax> juz wykasowałem :D
+[19:40:01] <FAiM> z szemranych stron
+[19:40:18] <Thebassa> ten jdownloader to gówno straszne 
+[19:40:30] <Thebassa> jak pobierasz przez klienta 
+[19:40:35] <Witax> tylko maly bialy pasek został w FF
+[19:40:42] <xandros> fl
+[19:40:45] <xandros> fk
+[19:40:45] <Witax> wkurza troche
+[19:40:47] <Thebassa> dopiero niedawno wywaliłem ostatnie resztki tego gówna
+[19:40:52] <xandros> dzieki, FAiM
+[19:40:57] <Thebassa> które mi się zainstalowałiy razem z nim
+[19:41:08] <przemoc> kurde, getin wprowadza dla wszystkich nowe oplaty za karte od lipca, wiec przyjdzie mi zrezygnowac z niej, a troche liczylem, ze do konca jej waznosci (2016) bede mial karte bezwarunkowo darmowa...
+[19:41:21] <hubi1> ja uzywalem tylko flashgeta, z tych klientow
+[19:41:38] <Witax> Thebassa a masz taki bialy pasek w FF?
+[19:41:48] <FAiM> bo trzeba patrzec na co sie klika
+[19:41:51] <FAiM> przy isntalacji ;p
+[19:41:53] <Thebassa> nie
+[19:41:57] <Thebassa> ale mogłem mieć
+[19:42:05] <Thebassa> to ci instaluje dodatki do przeglądarek 
+[19:42:17] <Thebassa> zmienia strony startowe
+[19:42:21] <Witax> Anti-malware uratowało
+[19:42:24] <Thebassa> wyświetla reklamy
+[19:42:26] <Thebassa> i inne
+[19:42:35] <Thebassa> dosłownie rak
+[19:42:43] <FAiM> a nie ma podczas instalacji
+[19:42:43] <Thebassa> (tylko uleczalny)
+[19:42:45] <FAiM> o tym info?
+[19:42:49] <Thebassa> nie ma
+[19:42:53] <FAiM> na pewno?
+[19:42:55] <hubi1> najpierw czytaj, potem klikaj dalej
+[19:43:03] <hubi1> ano, czasami nie ma
+[19:43:06] *** Joins: Tokido (~Saya@is.best.girl)
+[19:43:06] *** ChanServ sets mode: +o Tokido
+[19:43:07] <Thebassa> zainstaluj sam sobie
+[19:43:09] <FAiM> jak nie ma
+[19:43:12] <Thebassa> jak mi nie ufasz 
+[19:43:16] <FAiM> to sam program jest malware ;p
+[19:43:20] <FAiM> no nie wiem
+[19:43:24] <FAiM> ostatnio wpadli na to
+[19:43:25] <Thebassa> (ja bym sobie nie ufał)
+[19:43:26] <hubi1> raz mi sie trafilo, ze nie bylo info
+[19:43:45] <FAiM> ze juz nie daja
+[19:43:48] <FAiM> by odznaczyc
+[19:43:52] <FAiM> ze nie  chcesz zasintalowac
+[19:43:56] <FAiM> tylko na poczatku masz
+[19:44:04] <FAiM> tak/nie
+[19:44:07] <FAiM> dalej/anuluj
+[19:44:33] <FAiM> gdzie normalnie myslisz, ze nie/anuluj wylaczy instalator
+[19:44:46] <FAiM> a tu po prostu nie instaluje tych dodatkow i przechodzi dalej
+[19:44:57] <xandros> !bye
+[19:44:57] <Tokido> bye bye
+[19:44:57] *** Quits: Tokido (~Saya@is.best.girl) (Quit: Sayounara)
+[19:45:02] *** Joins: Tokido (~Saya@2b32ee69.31a16b5d.greendata.pl)
+[19:45:04] *** ChanServ sets mode: +o Tokido
+[19:45:21] <Witax> https://www.dropbox.com/s/oy8675jak51kdck/pasek.JPG?dl=0
+[19:45:25] <Tokido> 7Title: Dropbox - pasek.JPG
+[19:45:36] <Witax> wkurza xd
+[19:45:37] <xandros> myslalem, ze naprawilem ten "blad"
+[19:45:52] <xandros> ale zapomnialem, ze wprowadzilem jedna poprawke
+[19:46:03] <Thebassa> może zobacz czy masz jakieś dodatki dziwne
+[19:46:06] <Thebassa> zainstalowane
+[19:46:12] <Thebassa> w firefoxie
+[19:47:06] <Witax> Nie ma
+[19:47:27] <hubi1> albo w dodaj/usun
+[19:47:29] <FAiM> AdwCleaner.exe nie pomoga?
+[19:47:38] <Thebassa> to moja rada jest taka
+[19:47:43] <Witax> pomoglo
+[19:47:50] <Thebassa> zmień kolor na biały wszystkiego
+[19:47:51] <Thebassa> : )
+[19:47:51] *** Thebassa was kicked by przemoc (nie rozrywamy emotikon)
+[19:47:52] *** Joins: Thebassa (~Thebassa@aaaa.aaaa)
+[19:47:52] *** ChanServ sets mode: +h Thebassa
+[19:47:54] <Witax> ale pasek zostal
+[19:48:14] <FAiM> skasuj i zainstaluj jeszcze raz ;p
+[19:48:19] <hubi1> format
+[19:49:12] <bodzio> wywal dysk i kup nowy
+[19:49:35] <Witax> SSD szkoda xD
+[19:49:49] <FAiM> wloz na 10 minut do mikrofali
+[19:49:52] <Thebassa> zabij rodziców
+[19:49:54] <FAiM> na pewno pomoze ;p
+[19:50:55] <Witax> :P
+[19:51:43] *** Joins: Yenot (~yenot@229ed2b4.19108886.adsl.tpnet.pl)
+[19:52:29] <Yenot> nihao
+[19:52:35] <Witax> Najgorsze ze w FF mam z 100 kart otwarych przy odpalaniu :P
+[19:52:49] <FAiM> heh
+[19:52:53] <FAiM> te gowna sa meczace ;p
+[19:52:54] <bodzio> Yenot wieczorowa pora
+[19:53:04] <FAiM> ja co jakis czas musialem naprawiac na kompie siostry
+[19:53:08] <Witax> Nie mam ochoty babrać z formatem :D
+[19:53:24] <FAiM> bo instalowala jakies darmowe gierki
+[19:53:27] <FAiM> z tym gownem ;p
+[19:54:01] <Witax> Teraz na kazdym kroku xD
+[19:54:05] <FAiM> swojego kompa tez raz zostawilem wlaczonego
+[19:54:12] <FAiM> to mi ktos cos zaktualizowal
+[19:54:22] <FAiM> przy okazji instalujac pare gowienek
+[19:55:31] *** FAiM sets mode: +b *!*@is.best.girl
+[19:55:32] *** irc.irchighway.net sets mode: -b *!*@is.best.girl
+[19:55:32] *** Tokido was kicked by FAiM (FAiM)
+[19:55:33] *** Joins: Tokido (~Saya@is.best.girl)
+[19:55:33] *** ChanServ sets mode: +o Tokido
+[19:55:52] *** Tokido was kicked by FAiM (FAiM)
+[19:55:52] *** Joins: Tokido (~Saya@is.best.girl)
+[19:55:52] *** ChanServ sets mode: +o Tokido
+[19:56:01] *** Joins: djbeast (~Putin@mameshiba.mameshiba)
+[19:56:13] <djbeast> o/ mamecipa
+[19:56:27] <xandros> \o mamecycki
+[19:57:07] *** djbeast was kicked by bodzio (nie podoba mi sie to powitanie, sio)
+[19:57:07] *** Joins: djbeast (~Putin@mameshiba.mameshiba)
+[19:57:36] *** Tokido was kicked by FAiM (FAiM)
+[19:57:37] *** Joins: Tokido (~Saya@is.best.girl)
+[19:57:37] *** ChanServ sets mode: +o Tokido
+[19:57:38] *** FAiM sets mode: +b *!*@is.best.girl
+[19:57:38] *** irc.irchighway.net sets mode: -b *!*@is.best.girl
+[19:57:41] *** Tokido was kicked by FAiM (FAiM)
+[19:57:41] *** Joins: Tokido (~Saya@is.best.girl)
+[19:57:41] *** ChanServ sets mode: +o Tokido
+[19:57:43] *** Tokido was kicked by FAiM (FAiM)
+[19:57:43] *** Joins: Tokido (~Saya@is.best.girl)
+[19:57:43] *** ChanServ sets mode: +o Tokido
+[19:57:44] *** FAiM sets mode: +b *!*@is.best.girl
+[19:57:44] *** irc.irchighway.net sets mode: -b *!*@is.best.girl
+[19:57:54] <FAiM> za wolny ten klient xD
+[19:58:00] <xandros> xD
+[19:58:36] *** FAiM sets mode: -o Tokido
+[19:58:44] *** FAiM sets mode: +b *!*@is.best.girl
+[19:58:45] *** irc.irchighway.net sets mode: -b *!*@is.best.girl
+[19:58:45] *** Tokido was kicked by FAiM (FAiM)
+[19:58:46] *** Joins: Tokido (~Saya@is.best.girl)
+[19:58:46] *** ChanServ sets mode: +o Tokido
+[19:58:49] <xandros> ;>
+[19:59:13] <FAiM> takie buty
+[19:59:21] <xandros> inaczej by nie wyrobil
+[19:59:30] <xandros> juz to testowalem
+[20:01:29] <djbeast> o/ mameciastko :P
+[20:02:56] <Witax> http://www.fotosik.pl/showFullSize.php?id=7f26d6b948bc00f1 mogło byc gorzej xd
+[20:02:57] <Tokido> 7Title: Bez�tytułu.jpg - Rozmiar oryginalny - Fotosik.pl
+[20:03:05] *** Joins: RedDevil (~RedDevil@6a63aef.3682fb09.27ea28c2.24862c5aX)
+[20:04:05] *** RedDevil is now known as Guest6733463
+[20:13:10] <FAiM> i zamkneli temat xandrosowi ;p
+[20:13:32] <FAiM> o, bodziowe bobrostwory tez
+[20:14:30] <hubi1> szalenstwo 
+[20:16:17] <bodzio> moj dlatego, ze o to prosilem
+[20:16:20] <hubi1> kurde, xandros. wkurzyles kamiyana
+[20:16:52] <xandros> serio?
+[20:18:01] <_paranoid_android> omatkoooooo
+[20:18:04] <_paranoid_android> bedzie bubu
+[20:27:07] <Yenot> !iroha24
+[20:27:11] <Yenot> !iroha25 
+[20:27:29] <Yenot> !iroha25
+[20:28:33] *** Quits: hubi1 (~hubi1@shinjitsu.wa.itsumo.hitotsu) (Ping timeout: 360 seconds)
+[20:28:57] *** Joins: hubi1 (~hubi1@shinjitsu.wa.itsumo.hitotsu)
+[20:28:57] *** ChanServ sets mode: +v hubi1
+[20:30:04] <bodzio> !iroha24
+[20:30:35] <bodzio> moze zandros dostanie jutro 26 to bede mial z glowy
+[20:31:49] <Yenot> to jeszcze tylko te zaginione wczesniejsze i bedzie komplet
+[20:32:05] <bodzio> a po co komu one :D
+[20:32:32] <Yenot> a mi zebym mial :]
+[20:32:53] <bodzio> a, chyba ze tak xD
+[20:33:35] *** Joins: Hunter_Killer (webchat@3856dc6.3eb8f587.adsl.tpnet.pl)
+[20:33:48] <Hunter_Killer> hej
+[20:33:55] <Magic_> cześć
+[20:34:25] <Hunter_Killer> xandros, cos ode mnie chciales podobno wczoraj :P
+[20:34:35] <xandros> hey
+[20:34:44] <Hunter_Killer> gdy juz poszedlem w kime
+[20:34:45] <xandros> a, ze dzisiaj nie skoncze tego xD
+[20:34:50] *** Joins: Solve (~Solve@1dad8cc8.f8171.25a4ad7.1f5b825bX)
+[20:34:51] *** ChanServ sets mode: +o Solve
+[20:35:04] <hubi1> elo Solce
+[20:35:07] <hubi1> Solve*
+[20:35:10] <xandros> wejdz na strone, powinnien tam byc troche ulepszony kod
+[20:35:17] <Solve> cześć, kablu xD
+[20:35:20] <xandros> popytalem paru ludkow
+[20:35:34] <xandros> siema, Solve
+[20:35:37] <Solve> yo
+[20:36:22] <Solve> Gram w Ys 1
+[20:36:34] <Solve> Przeszedłem pieprzonego nietoperza/wampira
+[20:37:12] *** Joins: Winnetou (webchat@18377e3c.13919cb5.interpc.pl)
+[20:37:21] <Winnetou> howgh, kanałowi bracia
+[20:37:38] <Solve> Wino tu
+[20:37:40] <Solve> Wino tam
+[20:38:01] *** Winnetou is now known as Takto
+[20:38:16] <Thebassa> cze, Solve
+[20:38:21] <Solve> o/
+[20:38:22] <Thebassa> grasz na steaminie?
+[20:38:35] <Solve> na androidzie
+[20:39:20] <Hunter_Killer> jakiego nietoperza?
+[20:39:26] <Solve> Bossa
+[20:39:34] <Solve> Trzeci boss
+[20:39:43] <Hunter_Killer> ale w czym :P
+[20:39:50] <Solve> Ys Chronicles 1
+[20:40:14] <Thebassa> kiedy te wszystkie chińskie gry na androida wydali
+[20:40:21] <Solve> Nie wiem
+[20:40:25] <Solve> Zobaczyłem tylk oYs
+[20:40:26] <Solve> asdasd
+[20:40:29] <Solve> tylko Ys*
+[21:01:37] <_paranoid_android> napilbym sie wina dobrego 
+[21:01:38] <_paranoid_android> bialego
+[21:01:38] <bodzio> ktos proponuje dziaciakowi alkohol a ten gada, ze jest niepelnoletni. Takie nierealne te chinskie bajki xD
+[21:01:39] <_paranoid_android> :)
+[21:01:48] <bodzio> dzieciakowi*
+[21:02:12] <bodzio> hm, daleko mieszkasz? :D
+[21:02:29] <_paranoid_android> na drugim koncu polski bodzio 
+[21:02:31] <przemoc> z tym getinem to jednak lepszy numer, bo BOK roznie roznym osobom odpisuje i nie jest jasne, czy zastrzezenie karty wystarczy, zeby uniknac oplat od lipca, czy tez trzeba isc do banku i wypowiedziec umowe o karte (jak niektorzy z getina odpisuja klientom).
+[21:03:29] <bodzio> raczej wypowiedziec ;)
+[21:04:36] <przemoc> normalnie zastrzenie wystarcza, bo dezaktywuje Twoja karte, wiec de facto nie masz juz wtedy karty, wiec oplaty za karte nie sa naliczane, ale byc moze wymyslili tu cos niekonwencjonalnego...
+[21:05:23] <Hunter_Killer> !iroha24
+[21:05:35] <Solve> !bodzio
+[21:05:37] <Solve> !xandros
+[21:05:38] <Tokido> [9:58pm] <Inkwizytor> xandros, kup sobie slownik
+[21:06:00] <xandros> co ja?
+[21:06:15] <xandros> przeciez nic nie napisalem...
+[21:06:22] <Hunter_Killer> !iroha25
+[21:06:29] <przemoc> nawet jak nie piszesz, to robisz bledy
+[21:06:33] <xandros> !iroha 25
+[21:06:36] <xandros> !iroha 26
+[21:06:44] <hubi1> Kukiz ma 20% poki co, ciekawie
+[21:06:51] <Takto> !wszystko
+[21:06:59] <Hunter_Killer> a Komorowski?
+[21:07:03] <Solve> 80
+[21:07:05] <Solve> xD
+[21:07:15] <Hunter_Killer> nie zalamuj mnie nawet ;P
+[21:07:17] <hubi1> mniej niz duda
+[21:07:28] <Hunter_Killer> mniej niz zero...
+[21:07:30] <Hunter_Killer> xD
+[21:07:32] <hubi1> nie pamietam dokladnie, ale 34 z kawalkiem, a bronek 32 z kawalkiem
+[21:07:33] <xandros> ooo
+[21:07:33] <hubi1> jakos tak
+[21:07:35] <Solve> Szczęście dla wszystkich za darmo
+[21:07:35] <Solve> i niech nikt nie odejdzie skrzywdzony
+[21:07:46] *** Solve sets mode: +vvvv AtoMan bigdo djbeast GCx1
+[21:07:46] *** Solve sets mode: +vvv Guest6733463 Hunter_Killer kimek
+[21:07:46] *** Solve sets mode: +vvv Litwinek Magic_ Takto
+[21:07:46] *** Solve sets mode: +vvv Witax xandros Yenot
+[21:07:46] *** Solve sets mode: +v _paranoid_android
+[21:07:57] *** Solve sets mode: +o Thebassa
+[21:07:57] <Takto> :O
+[21:08:11] <przemoc> zakamuflowana opcja opowa ;)
+[21:08:25] <hubi1> Solve oddal glos na wszystkich
+[21:08:57] <Solve> Nie, mam dorby humor
+[21:09:00] <Solve> ps nie głosowałem
+[21:09:07] <Solve> >dorby
+[21:09:14] <przemoc> derby
+[21:09:16] <Takto> xd
+[21:09:17] <Solve> co ten ja, to ja nawet nie
+[21:09:39] <hubi1> Solve, nie masz sumienia...
+[21:09:47] <Solve> Od urodzenia
+[21:09:51] <hubi1> xd
+[21:09:57] <reddd> 21:05 Bronisław Komorowski wezwał też Andrzeja Dudę do debaty wyborczej
+[21:09:59] <reddd> co ja czytam
+[21:09:59] <Takto> trzyma pewnie w lodóce
+[21:10:09] <Solve> Mama też mi mówiła "ty kurwiarzu"
+[21:10:09] *** Solve was kicked by przemoc (nie przeklinamy)
+[21:10:10] *** Joins: Solve (~Solve@doushio.doushio)
+[21:10:10] *** ChanServ sets mode: +o Solve
+[21:10:35] <hubi1> zamiast gowniarzu?
+[21:10:44] <Takto> to to samo :)
+[21:10:58] <przemoc> zamiast synku
+[21:11:01] <Takto> wyraz bliskoznaczny
+[21:11:27] <Solve> https://www.youtube.com/watch?v=3UhzjWkvQeg
+[21:11:28] <Tokido> 7Title: ATB - Long Way Home - YouTube
+[21:11:38] <hubi1> tak to wyglada z sondazowych:
+[21:11:39] <hubi1> Andrzej Duda - 34,8 proc.
+[21:11:40] <hubi1> Bronisław Komorowski - 32,2 proc.
+[21:11:40] <hubi1> Paweł Kukiz - 20,3 proc.
+[21:11:40] <hubi1> Janusz Korwin-Mikke -  4,4 proc.
+[21:11:40] <hubi1> Magdalena Ogórek - 2,4 proc.
+[21:11:41] <hubi1> Adam Jarubas - 1,6 proc.
+[21:11:43] <hubi1> Janusz Palikot - 1,5 proc.
+[21:11:45] <hubi1> Grzegorz Braun - 1,1 proc.
+[21:11:46] <Solve> >Ogórek
+[21:11:47] <hubi1> Marian Kowalski - 0,8 proc.
+[21:11:49] <hubi1> Jacek Wilk - 0,6 proc.
+[21:11:49] <Solve> >Ogórek
+[21:11:51] <Solve> >Ogórek
+[21:11:51] <hubi1> Paweł Tanajno - 0,3 proc. 
+[21:11:52] <Solve> >Ogórek
+[21:11:53] <hubi1> xd
+[21:11:54] <Solve> >Ogórek
+[21:11:58] <Solve> Weeeeeeeeeeeeeeeeeeeeeeeeeeź
+[21:11:59] <Solve> xD
+[21:12:17] <Solve> Pysk ma ładny, ale w tej główce...
+[21:12:27] <Solve> Aha, zapomniałem
+[21:12:31] <Solve> Na tym kanale nie ma polityki
+[21:12:43] <hubi1> o ogorkach chyba mozna
+[21:12:47] <hubi1> rozmawiac
+[21:12:51] <przemoc> bodzio zaraz zrobi /kick all i problem z glowy
+[21:13:27] <xandros> mozna tak?
+[21:13:53] <Solve> nie
+[21:14:05] <xandros> mhm =/
+[21:14:05] <Solve> Chyba że przez alias klienta
+[21:14:17] * Solve może
+[21:14:22] <xandros> :D
+[21:14:26] <bodzio> chyba ban a nie kick
+[21:14:34] <bodzio> wam mowic to jak grochem o sciane
+[21:14:47] <xandros> a o muzyce mozna gadac? https://www.youtube.com/watch?v=vrMU7fnUvrA
+[21:14:48] <Tokido> 7Title: Paweł Kukiz Jan Borysewicz - Bo tutaj jest jak jest - YouTube
+[21:15:02] *** bodzio sets mode: +b *!*SoYouKnow@*.sekainiwa.himitsuga.aru
+[21:15:05] <hubi1> xd
+[21:15:09] *** xandros was kicked by bodzio (bodzio)
+[21:15:13] <Solve> https://www.youtube.com/watch?v=VDaj2HgFbQc
+[21:15:15] <Tokido> 7Title: krzycząca koza - YouTube
+[21:15:37] <Solve> bodzio, nie zabijaj
+[21:15:39] *** Solve sets mode: -b *!*SoYouKnow@*.sekainiwa.himitsuga.aru
+[21:16:07] *** bodzio sets mode: +b *!*Solve@doushio.doushio
+[21:16:08] *** irc.irchighway.net sets mode: -b *!*Solve@doushio.doushio
+[21:16:08] *** Joins: xandros92 (~SoYouKnow@76b3cfb.1b415a10.dynamic.chello.pl)
+[21:16:25] *** xandros92 is now known as xandros
+[21:16:30] <Solve> xandros, nie dziękuj :D
+[21:16:31] <xandros> ale to jest ladna piosenka :c
+[21:16:41] *** bodzio sets mode: +b *!*SoYouKnow@*.sekainiwa.himitsuga.aru
+[21:16:46] <przemoc> ale Ty ja brzydko zalinkowales
+[21:16:51] *** Solve sets mode: +v xandros
+[21:17:07] <Solve> bodzio w złym humorze?
+[21:17:19] <przemoc> na pewno nie tak dobrym jak Ty
+[21:17:24] <Solve> To spać
+[21:17:33] <bodzio> rownowaga musi byc
+[21:17:36] <przemoc> ma jeszcze 3 kwadranse, nie poganiaj go
+[21:17:43] <bodzio> jeden w dobrym, drugi zlym
+[21:17:46] <hubi1> macie ladna https://www.youtube.com/watch?v=9r4RucxXIfQ
+[21:17:47] <Tokido> 7Title: David Hasselhoff - It's A Real Good Feeling (Offizielles Video) - YouTube
+[21:17:55] *** bodzio was kicked by bodzio (bodzio)
+[21:18:00] <Solve> :>
+[21:18:04] *** Solve sets mode: -b *!*SoYouKnow@*.sekainiwa.himitsuga.aru
+[21:18:11] <hubi1> bodzio nie lubi Hoffy
+[21:18:16] <xandros> glupi ten serwer
+[21:18:21] <Solve> Teraz ja będę w złym
+[21:18:26] <xandros> nawet nie mozna pisac, jak jest sie zbanowanym
+[21:18:39] <przemoc> bo o to chodzi w banowaniu? :P
+[21:18:50] <Thebassa> kto by pomyślał, nie?
+[21:19:16] <xandros> ban = osoba, ktora nie jest tu mile widziana
+[21:19:41] <xandros> kick = wyproszenie osoby
+[21:19:50] <Takto> nie zawsze
+[21:20:01] <Thebassa> to jakaś logika z lola?
+[21:20:15] <xandros> albo to jakas opcja kanalu, albo to serwer
+[21:21:05] <xandros> jak dostalem bana na jakims kanale na rizonie (dokladnie to bot dostal), to moglem swobodnie pisac
+[21:22:16] <Thebassa> to nie jest dobrze 
+[21:23:45] <Magic_> ja tutaj, to też prawie swobodnie
+[21:26:29] *** Quits: hubi1 (~hubi1@shinjitsu.wa.itsumo.hitotsu) (Quit: See you next illusion!)
+[21:29:56] <Solve> ludu
+[21:30:00] <Solve> dajcie mi 1000 zł
+[21:30:03] <Solve> A ja zniknę
+[21:30:09] <Solve> całkiem jak alfi xD
+[21:30:43] *** Joins: hubi1 (~hubi1@shinjitsu.wa.itsumo.hitotsu)
+[21:30:43] *** ChanServ sets mode: +v hubi1
+[21:30:58] <Takto> musisz się jakoś zakamuflować, Solve
+[21:31:00] <przemoc> zabojca tanszy by nie byl, wiec jest to calkiem uczciwa propozycja
+[21:31:07] <Takto> inaczej może być ciężko
+[21:31:25] <Hunter_Killer> musisz podac cel :P
+[21:31:38] <Takto> np "zbieram na onlajn" :)
+[21:31:46] <przemoc> juz podal: znikniecie
+[21:33:03] *** Quits: Magic_ (~Magic@2c464aa6.1c6ad229.master.pl) (Quit: ChatZilla 0.9.91.1 [Firefox 37.0.2/20150415140819])
+[21:38:59] <Thebassa> http://i.4cdn.org/a/1431283115028.gif toloveru.gif
+[21:39:00] <Tokido> 7Image: 209 x 150 in 717.72kB
+[21:44:47] <hubi1> whoa
+[21:46:16] *** Quits: Guest6733463 (~RedDevil@6a63aef.3682fb09.27ea28c2.24862c5aX) (Quit: )
+[21:47:50] *** Quits: hubi1 (~hubi1@shinjitsu.wa.itsumo.hitotsu) (Quit: See you next illusion!)
+[22:02:04] *** Joins: KieR (webchat@6b45bb2.7f8dc.is.net.pl)
+[22:04:02] *** Quits: Solve (~Solve@doushio.doushio) (Quit: )
+[22:04:23] <Takto> branoc : )
+[22:04:23] *** Takto was kicked by przemoc (nie rozrywamy emotikon)
+[22:13:25] *** Joins: Invi (~_@1366b407.2f9b2a4a.rev.vline.pl)
+[22:14:49] <Hunter_Killer> co to za dramy na nazi, lol
+[22:14:58] <Hunter_Killer> http://animesub.info/forum/viewtopic.php?id=258688&p=3
+[22:14:59] <Tokido> 7Title: Nowy moderator napisów? (Strona 3) / Wszystko inne... / Forum AnimeSub.info
+[22:20:51] <xandros> kamiyan placze, ze dostal warna
+[22:20:59] <xandros> przynajmniej z tego, co pisze
+[22:21:03] <xandros> nic nowego
+[22:21:06] <xandros> nic ciekawego
+[22:21:11] <xandros> to juz...
+[22:21:13] <xandros> <.<
+[22:21:17] <xandros> >.>
+[22:21:22] <xandros> polityka ciekawsza
+[22:22:48] <bigdo> https://www.youtube.com/watch?t=14&v=chaqkbO0zSM
+[22:22:49] <Tokido> 7Title: Paweł Kukiz masakruje TVN po ogłoszeniu wyników wyborów prezydenckich 2015 - YouTube
+[22:23:35] <Hunter_Killer> no widze, ale ktos tam odgrzebal jakis stary temat (rok temu ostatni komentarz) i sobie sprawdzil wyniki jakiejs pseudo ankiety
+[22:26:06] *** Joins: roobalek (~roobalek@3239def7.31b34b44.c74.petrotel.pl)
+[22:26:16] <xandros> ty a Hitler przypadkiem nie byl malarzem?
+[22:26:23] <roobalek> Anooo... koniczynka nocna zmiano ;DD
+[22:26:23] *** roobalek was kicked by przemoc (przed kropka, przecinkiem, dwukropkiem, srednikiem, wykrzyknikiem, pytajnikiem i wielokropkiem nie stawiamy spacji)
+[22:26:23] *** Joins: roobalek (~roobalek@3239def7.31b34b44.c74.petrotel.pl)
+[22:27:03] *** FAiM sets mode: +b *!*@1df4f87e.2e099bf0.adsl.inetia.pl
+[22:27:26] *** FAiM sets mode: -b *!*@1df4f87e.2e099bf0.adsl.inetia.pl
+[22:27:31] <xandros> :o?
+[22:27:48] <xandros> sam siebie banujesz?
+[22:27:53] <FAiM> jak zrobic, by to irc.irchighway.net odbanowal?
+[22:28:01] <xandros> lol
+[22:28:09] <xandros> ./unban <chanel>
+[22:28:14] <xandros> channel
+[22:28:35] <xandros> albo /cs unban <channel>
+[22:28:44] *** FAiM sets mode: +b *!*@1df4f87e.2e099bf0.adsl.inetia.pl
+[22:28:54] *** perverted.fr.eu.irchighway.net sets mode: -b *!*@1df4f87e.2e099bf0.adsl.inetia.pl
+[22:29:06] <FAiM> hm
+[22:29:12] <FAiM> > perverted.fr.eu.irchighway.net
+[22:34:48] *** Joins: Shounen (domin@8d7465b.11de379d.chelmnet.pl)
+[22:36:27] <xandros> FAiM, dales rade z tym playerem?
+[22:36:36] <FAiM> nie
+[22:36:44] <xandros> =/
+[22:38:37] *** Quits: AtoMan (dmf@164642ae.1654620b.dynamic.chello.pl) (Ping timeout: 360 seconds)
+[23:00:25] <_paranoid_android> groch fasolaa
+[23:01:34] <_paranoid_android> ej to mowicie ze grzesio sienko was zrobil w bambuko...
+[23:01:52] <_paranoid_android> przykro mi
+[23:02:03] <_paranoid_android> on chyba troche taki jest 
+[23:02:22] <_paranoid_android> ;/
+[23:08:20] *** Joins: Putin (~Putin@3974cd3.2e099bf0.elwico.pl)
+[23:09:10] <FAiM> xandros, dziala
+[23:09:25] <xandros> ten player?
+[23:09:28] <xandros> jak to zrobiles
+[23:09:29] <xandros> ?
+[23:09:43] <FAiM> troche z dupy strony xD
+[23:11:33] <djbeast> gomen za zdublowany nick, sprawdzam se coś
+[23:12:22] <FAiM> http://pastebin.com/4JbRFZt9
+[23:12:23] <Tokido> 7Title: [HTML] <div class="youtube-video" id="M7lc1UVf-VE"></div> <script> var tag = documen - Pastebin.com
+[23:13:03] <FAiM> pauzyje czyms takim:
+[23:13:05] <FAiM> players[$(this).next().find('iframe').attr('id')].pauseVideo();
+[23:13:14] <FAiM> a startuje
+[23:13:23] <FAiM> if(players[$(this).next().find('iframe').attr('id')].getPlayerState() == 2) {
+[23:13:24] <FAiM> 	players[$(this).next().find('iframe').attr('id')].playVideo();
+[23:13:26] <FAiM> }
+[23:14:21] <FAiM> jeszcze tylko dodam parametry do YT.Player by bylo jak chce ;p
+[23:17:44] <FAiM> czyli
+[23:17:46] <FAiM> playerVars: { 'controls': 0, 'showinfo': 0 }
+[23:17:46] *** FAiM was kicked by przemoc (nie rozrywamy emotikon)
+[23:17:48] *** Joins: FAiM (~faim@1df4f87e.2e099bf0.adsl.inetia.pl)
+[23:17:48] *** ChanServ sets mode: +o FAiM
+[23:18:34] <xandros> czyli jednak robisz iframe JSem
+[23:19:07] *** Quits: bigdo (~bigdo@6a63aef.a34b1a3.adsl.inetia.pl) (Quit: )
+[23:19:51] <FAiM> niestety ;p
+[23:19:59] <FAiM> ale w sumie
+[23:20:07] <FAiM> pokazanie wideo
+[23:20:14] <FAiM> tez sie dzieje przez js
+[23:20:24] <FAiM> wiec bez js i tak ich nie zobacza xD
+[23:27:39] <xandros> nom
+[23:28:31] <xandros> cos chcialem...
+[23:28:55] <FAiM> och
+[23:29:02] <FAiM> teraz juz sa iframy ;p
+[23:30:12] *** Quits: Thebassa (~Thebassa@aaaa.aaaa) (Ping timeout: 360 seconds)
+[23:30:26] <FAiM> perverted.fr.eu.irchighway.net
+[23:30:37] <FAiM> glupi schowek ;p
+[23:30:38] <FAiM> http://pastebin.com/HgtqJ4PU
+[23:30:46] <FAiM> teraz tak wyglada ;p
+[23:31:02] <FAiM> komenty sterujace jak poprzednio ;p
+[23:31:07] <Tokido> 7Title: [HTML] <script> var tag = document.createElement('script'); tag.src = "https://w - Pastebin.com
+[23:31:13] <xandros> ale lag
+[23:32:31] <_paranoid_android> xandros: internet z netii?
+[23:32:42] <xandros> nie wiem
+[23:32:54] <xandros> http://biznes-host.pl/
+[23:32:55] <Tokido> 7Title: Biznes Host: Hosting i serwery WWW
+[23:35:16] <Yenot> dobranoc
+[23:35:40] *** Quits: Yenot (~yenot@229ed2b4.19108886.adsl.tpnet.pl) (Quit: -=SysReset 2.53=-)
+[23:41:24] *** Quits: FAiM (~faim@1df4f87e.2e099bf0.adsl.inetia.pl) (Quit: ChatZilla 0.9.91.1 [Firefox 37.0.2/20150415140819])

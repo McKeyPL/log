@@ -1,0 +1,453 @@
+[00:01:36] *** Fallfeathers is now known as Fillyfeathers
+[00:30:26] *** Joins: Wanda (cloudiness@Pony-ui0.vsf.191.180.IP)
+[00:30:52] *** Ashley is now known as Ash[Away]
+[00:38:58] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[00:57:54] *** Joins: Asoka_White (Asoka@Pony-k7qlot.net-htp.de)
+[01:01:08] *** Quits: Asoka (Asoka@Pony-11ks3d.net-htp.de) (Ping timeout: 121 seconds)
+[01:11:13] *** Wanda is now known as Cloudrunner
+[01:35:55] *** Quits: cyborg_ar (cyborgar@Pony-mt3.lui.25.181.IP) (Ping timeout: 121 seconds)
+[01:59:34] *** Quits: Cloudrunner (cloudiness@Pony-ui0.vsf.191.180.IP) (Connection closed)
+[02:16:18] *** Ash[Away] is now known as Ashfire
+[02:30:46] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Ping timeout: 121 seconds)
+[02:41:12] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[02:43:25] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:43:48] *** Joins: FunkyFried (averagejoey@Pony-m81a8n.lv.cox.net)
+[02:58:55] <Moonlightning> Colgate: when did `!=` get added?
+[02:59:12] <Colgate> ...what?
+[02:59:27] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[03:08:52] <AppleDash> Moonlightning: I second that "what?".
+[03:09:06] <Moonlightning> To Python. :p
+[03:09:27] <AppleDash> How the hell is Colgate supposed to know that?
+[03:09:33] <Moonlightning> He's using Python 1? :P
+[03:10:13] <Colgate> I would imagine != was added to python very early on
+[03:10:28] <AppleDash> I feel like there used to be a <>
+[03:10:41] <Colgate> oh, I jsut meant the operator
+[03:10:53] <AppleDash> I meant operator <> before ==
+[03:10:56] <Colgate> not the specific formatting of it
+[03:12:39] <Moonlightning> <> was removed in Python 3.
+[03:13:06] <AppleDash> What if I want to use <> to check what the Python version number is?
+[03:13:09] <AppleDash> WHAT THEN?!!?!?
+[03:13:23] <Moonlightning> Well, then you can figure out if you have Python 3 or something earlier :p
+[03:13:35] <AppleDash> lol
+[03:13:43] <Moonlightning> really, though, you should just try to use whatever you actually need to use, and catch exceptions
+[03:25:28] *** Neptune|sleep is now known as Neptune
+[03:32:50] * JustAberrant stretches out incoherently on the channel floor and mumbles something about turning off the sky 
+[04:10:31] <Moonlightning> Phase5: …wait, so /why/ is BTRFS slow on spinning disks, again?
+[04:10:48] *** Phase5 is now known as Phase4
+[04:11:08] <Phase4> Moonlightning, strictly copy on write, new data is always written to a new location
+[04:11:22] <Phase4> if you write an entire file out all at once it's on par with anything else
+[04:11:30] <Phase4> but any edits to that file *will* fragment
+[04:11:31] <Moonlightning> Ah, so fragmentation.
+[04:11:59] <Phase4> unless you set +C (disable cow)
+[04:12:20] <Kinsley> Isn't the point of BTRFS to have a CoW filesystem?
+[04:12:28] <Phase4> but +C breaks some safety guarantees
+[04:12:37] <Phase4> Kinsley, in part, yeah
+[04:13:08] <AppleDash> moo
+[04:13:13] <Moonlightning> Does it have a mechanism for undoing file writes, then? >.>
+[04:13:26] <Phase4> Moonlightning, you can use snapshots
+[04:13:43] <Phase4> it's a copy-on-write clone of a subvolume
+[04:13:54] <Moonlightning> Besides that. XD
+[04:14:01] <Moonlightning> Something that can be done completely after the fact
+[04:14:07] <Phase4> Moonlightning, it's *possible* but i'm not sure the tools exist
+[04:14:22] <Phase4> plus space is garbage collected so you can't predect when something will be overwritten
+[04:15:10] <Phase4> existing data will not be touched until it's been replaced by new data is basically what btrfs does
+[04:16:44] <Moonlightning> …doesn't that make it not strictly copy-on-write?
+[04:17:19] <Moonlightning> I mean, yes, everything is copied when it's written, but the originals might get destroyed at any time, so… xP
+[04:17:40] <Phase4> only once they're already de-referenced and unaccessible anyway
+[04:17:50] <Webster> You need to overwrite at some point, unless you have an infinitely large storage device. :P
+[04:17:53] <Moonlightning> wait, what?
+[04:18:01] <Kinsley> So what, pray tell, is the benefit of a CoW filesystem compared to a journaled one like NTFS or ext4?
+[04:18:35] <Phase4> Kinsley, snapshots and reflinks
+[04:19:06] <Phase4> you *can* do snapshots on ntfs, the same hack could be done for ext4, but they're a natural extension of a cow filesystem
+[04:19:17] <Phase4> it's also intended to be very failure resistant
+[04:19:57] <Phase4> what's the mount option again...
+[04:21:16] <Phase4> Kinsley, ext3/4's default mode is data=ordered, which will attempt to write data out to disk first, then journal it. a crash mid disk write corrupts data. journal=data gives you similar protection to btrfs
+[04:21:22] <Phase4> or
+[04:21:28] <Phase4> data=journal, i don't remember the flags
+[04:21:46] <Phase4> that has it write the data out to the journal fist, in a sorta-cow like way
+[04:22:03] <Moonlightning> I think an option to /guarantee/ that originals will stay intact for a while would be nice.
+[04:22:12] <Phase4> Moonlightning, snapshots :P
+[04:22:27] <Phase4> the originals are garuenteed to exist until after the new copies are on disk
+[04:22:37] <Moonlightning> Sure, let me just configure it to make a snapshot on literally every write
+[04:23:27] <Kinsley> While I can see the appeal of bare-metal level disk snapshots, I just want my file system to read and write data as fast as the physical hardware will allow without everything blowing up. And being efficient at allocating space for files would be a bonus.
+[04:23:32] <Phase4> Moonlightning, it's about crash safety, not journaling individual bytes. your filesystem will be in either the state before the transaction or after, and checksums garunetee this
+[04:24:10] <Phase4> Kinsley, if you need performance then naturally some other filesystem is more suitable
+[04:24:12] <Webster> Moonlightning: Make your software rotate out versions of files.
+[04:24:30] <Moonlightning> No, see…
+[04:24:47] <Phase4> Moonlightning, you can walk the transaction history, but i'm not aware of any tools to do this
+[04:25:08] <Moonlightning> My use case here is “whoops, I accidentally fucked this file up, lemme just roll those writes back”
+[04:25:15] <Moonlightning> And, I know, I know, //be careful and keep backups//
+[04:25:21] <Phase4> and a single write() isn't a single transaction, they're globed together, so a whole bunch of writes are caught up in the transaction
+[04:25:28] <Webster> At that point you're asking for something OS level.
+[04:25:40] <Moonlightning> But that extra little safety net would be nice.
+[04:25:47] <Kinsley> Probably, yeah.
+[04:25:49] <Webster> Like how Windows supports versioning files.
+[04:26:04] <Phase4> Webster, that's the snapshot hack i talked about before
+[04:26:10] <Moonlightning> And it seems to me it'd be pretty easy to implement, and wouldn't cause any performance hits
+[04:26:20] <Kinsley> I just wind up either using version control like git because it's source code or I just copy the original and tack on a .bak or something.
+[04:26:25] <Moonlightning> The filesystem is already fully copy-on-write :p
+[04:27:27] <Webster> Yes, it would be nice, especially if it handles removing the oldest copies when disk space is used up.
+[04:28:32] <Phase4> Moonlightning, https://superuser.com/questions/603708/btrfs-undelete-file
+[04:28:54] <Phase4> apparently the tools do exist
+[04:29:14] <Phase4> not terribly easy to use but they exist
+[04:29:56] <Phase4> Kinsley, the other thing it does is solve the 'raid 5 write whole' and similar timing problems for disk arrays
+[04:30:16] <Phase4> though multi-device is still in the works, use some care
+[04:30:25] <Kinsley> Trust me, I wish I had the money and number of disks that I could have that problem.
+[04:31:12] <Kinsley> Right now, all my storage is handled by one or two disks per device.
+[04:31:27] <Phase4> there's also some really cool shit that's being talked about, like zero-reboot instalations
+[04:32:45] <Phase4> might be possible now, requires support for read-only array members
+[04:33:09] <Moonlightning> But snapshots are definitely gonna be awesome for those things that go “it is recommended to back up your data before this operation”
+[04:33:24] <Moonlightning> Okay! *snapshot* Proceed. :3
+[04:33:27] <Phase4> Moonlightning, i just have a cron script making them
+[04:33:49] <Phase4> should probably clear some of them out
+[04:33:56] <Moonlightning> …Apple's Time Machine's local-snapshots thing could…just be that!
+[04:33:57] <Phase4> i also have an ssd so fragmentation isn't an issue :3
+[04:34:01] <Moonlightning> Apple should really get behind btrfs.
+[04:34:07] <Moonlightning> It's perfect for their backup thing. xP
+[04:34:11] <Moonlightning> It's just so perfect.
+[04:34:26] <Phase4> i'm willing to bet they either added the same hack as ms to hfs, or are using block level snapshots
+[04:38:08] <Moonlightning> They hardlink entire directory trees of stuff that hasn't changed since the last backup.
+[04:38:37] <Moonlightning> And they monitor the source filesystem using their own proprietary thing which is similar to inotify
+[04:38:44] <Phase4> ah
+[04:38:59] <Phase4> so very space inefficient
+[04:39:07] <Moonlightning> If it's been too long since the last backup that the event chain doesn't go back far enough…
+[04:39:13] <Moonlightning> Then they just rescan the entire filesystem xP
+[04:39:26] <Moonlightning> Space inefficient?
+[04:39:35] <Moonlightning> well, compared to btrfs, sire
+[04:39:36] <Moonlightning> sure *
+[04:42:24] <Phase4> Moonlightning, both to btrfs and ntfs
+[04:43:31] <Moonlightning> Why, what's NTFS do?
+[04:43:52] <Phase4> i *think* the volume snapshot service on windows locks the filesystem, copies some metadata, creates a filesystem image, then unlocks somehow marking data as cow
+[04:44:03] <Phase4> marks'
+[04:45:02] <Phase4> it's not exatcly documented, but in \System Volume Information\[something] you'll find the images
+[04:45:05] <Phase4> identified by uuid
+[04:46:27] <Phase4> seems to hide them on windows itself, but they are there
+[04:46:31] <Phase4> need to mount on linux to see them
+[04:50:07] <Moonlightning> I love how the special directory is '/System Volume Information'
+[04:50:21] <Moonlightning> HFS's special directory has nullbytes in it. :P
+[04:52:19] <FunkyFried> I have an ebook collection with a bunch of .mobi files. I have X11 but I'd prefer to use a terminal to read them. I have calibre running on my xserver adding them all to a collection, but I don't know where to go from there. Any Ideas?
+[04:54:11] <JustAberrant> :(
+[04:58:38] <JustAberrant> use ebook-convert to turn them into text files maybe (should have been installed with calibre
+[04:58:52] <JustAberrant> but you'll be depriving yourself of the rich mobi experience :(
+[04:59:38] <Phase4> hmm, seems they're not filesystem images, or at least not on this
+[04:59:49] <Phase4> how odd
+[05:00:24] <JustAberrant> Phase4: :)
+[05:00:38] *** Quits: FunkyFried (averagejoey@Pony-m81a8n.lv.cox.net) (Ping timeout: 121 seconds)
+[05:04:38] *** Joins: FunkyFried (averagejoey@Pony-m81a8n.lv.cox.net)
+[05:04:55] * JustAberrant looks at FunkyFried carefully
+[05:12:32] * Phase4 looks at FunkyFried without being careful
+[05:17:18] * JustAberrant looks at Phase4 with complete reckless abandon for his and everyone elses well being
+[05:18:27] * JustAberrant may bea might drunk :>
+[05:18:35] <JustAberrant> * be a
+[05:22:11] <aji> may be a mighty drunk
+[05:23:39] *** Quits: FunkyFried (averagejoey@Pony-m81a8n.lv.cox.net) (Ping timeout: 121 seconds)
+[05:34:33] <JustAberrant> it was way too hot in here so I opened the window and now it's way too cold :(
+[05:39:49] *** Ashfire is now known as Ashleep
+[05:47:03] <Webster> You need an automatic window opener-closer.
+[05:54:52] *** Quits: Lapsus (Lapsus@i-forget.ca) (Quit: )
+[05:56:16] <Colgate> it is called a really long stick
+[05:56:27] <JustAberrant> :(
+[06:03:30] <AppleDash> aji: what's your oper pw?
+[06:03:38] <aji> 123iloveappledash
+[06:04:14] <AppleDash> ,3
+[06:04:16] <AppleDash> <3
+[06:04:19] <aji> <.
+[06:04:48] <AppleDash> aji: my staticbox oline password was a derivative of i<3aji
+[06:04:50] <AppleDash> just saying
+[06:05:05] <aji> lol
+[06:06:59] <Colgate> ...
+[06:07:04] <Colgate> my silverboard just fell down
+[06:07:08] <Colgate> and turned off my light
+[06:07:33] <Colgate> I need a good way to mount this stupid thing
+[06:08:01] <AppleDash> Wow
+[06:08:09] <AppleDash> Colgate: Nails?
+[06:08:31] <JustAberrant> I'd recommend appropriate sized self tapping screws :(
+[06:08:52] <JustAberrant> or construction grade adhesive :(
+[06:09:18] <Colgate> it doesn't actually have anything to mount it to the wall with
+[06:09:23] <Colgate> it just has these awful sticky pads
+[06:09:31] * AppleDash applies the latter to JustAberrant and the (unpresent) cyborg_ar and presses them together firmly
+[06:09:39] <Colgate> going to have to install a hook into it
+[06:09:47] <JustAberrant> :(
+[06:10:05] <AppleDash> Colgate: Find me a silverboard
+[06:10:07] <AppleDash> I require one
+[06:10:32] <JustAberrant> isn't a silverboard a chunk of insulation foam
+[06:10:36] <JustAberrant> or am I thinking of something else
+[06:11:13] * JustAberrant thinking of the foam with the silver foil over it :(
+[06:11:13] <Colgate> I call it a silverboard, because it is a silver whiteboard
+[06:11:21] <JustAberrant> oh :(
+[06:11:32] <JustAberrant> well that's just silly ;p
+[06:12:31] <Colgate> https://sparkler.minuette.net/owncloud/public.php?service=files&t=c7dbdf7ca0020984d19d5f73d75d3831
+[06:12:32] <PinkiePieBot> [ ownCloud ]
+[06:12:33] <JustAberrant> http://www.ihlcanada.com/assets/images/silverboard-front-small.jpg  :(
+[06:13:13] * JustAberrant a traditionalist, I don't like alternate colored whiteboards :(
+[06:17:10] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[06:17:10] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[06:20:44] <AppleDash> Colgate: you dongflap
+[06:20:49] <AppleDash> Why did you erase the board
+[06:20:52] <Colgate> wat
+[06:20:56] <Colgate> that picture is old
+[06:21:00] <Colgate> that's when I first got it
+[06:21:05] <AppleDash> Oh :P
+[06:21:15] <AppleDash> Carry on then
+[06:21:49] <JustAberrant> we don't rate a fresh pic :(
+[06:22:03] <AppleDash> :(
+[06:27:29] <AppleDash> In movies and TV, answering machines always play the person leaving the  message out loud, and if someone's present they can pick up the phone and start talking to the person
+[06:27:40] <AppleDash> does any device actually do that IRL>
+[06:27:45] <AppleDash> ?
+[06:27:49] <JustAberrant> yes
+[06:28:17] <JustAberrant> actually I think all of them that I've seen do that
+[06:28:32] <AppleDash> None of them that I have do :P
+[06:28:41] <JustAberrant> though how answering machines haven't been completely replaced by voicemail is a mystery
+[06:28:46] <JustAberrant> I guess it's cheaper
+[06:30:25] <AppleDash> ...Aren't they the same thing?
+[06:31:36] <JustAberrant> not really
+[06:31:42] <JustAberrant> voice mail is handled by the phone company
+[06:31:52] <JustAberrant> answering machines are actually pretending to be you/your phone
+[06:32:14] <AppleDash> Ahh
+[06:32:53] * JustAberrant fetal position in the corner "I'm not that old, I'm not that old.."
+[06:33:24] <ShivalPonyWolf> JustAberrant: probably becuase some companies charge you for voicemail/voicemail access
+[06:33:27] <ShivalPonyWolf> and an answering machine is free
+[06:33:57] <JustAberrant> yeah, that seems the most reasonable explanation
+[06:34:57] * ShivalPonyWolf loved teh old vulnerbilities in voicemail systems. you could dial certain machines and type in a code and it would read your voicemail
+[06:35:12] <ShivalPonyWolf> if you sent them a long tone it didnt recognise it would wipe the machine
+[06:35:27] <ShivalPonyWolf> i forget which one it was i just remmeber reading about it years ago
+[06:43:24] <JustAberrant> :(
+[06:45:37] <Googie> Answering machines honestly are often nicer too :P I get to listen to whoever is trying to call before I pickup the phone :P
+[06:46:06] <JustAberrant> yeah I miss that ability
+[06:47:38] <ShivalPonyWolf> i only answer calls froom numbers i recognise
+[06:47:47] <ShivalPonyWolf> and the only calls i really get are work related
+[06:47:52] <ShivalPonyWolf> which is kinda depressing
+[06:47:58] <ShivalPonyWolf> one day i will get a social life
+[06:48:22] <Colgate> screeners, whooo
+[06:48:24] <JustAberrant> unfortunately calls from my office come up unknown/unlisted number
+[06:48:27] <JustAberrant> it's real fucking annoying
+[06:48:33] <Colgate> :(
+[06:48:46] <Colgate> I have my phone configured to automatically send unknown numbers straight to voice mail
+[06:49:01] <ShivalPonyWolf> JustAberrant: all my work calls get IDed by our contact system
+[06:49:03] <ShivalPonyWolf> so it comes up with their name
+[06:49:19] <JustAberrant> well, that happens within our office
+[06:49:29] <JustAberrant> but externally it's unknown
+[06:50:02] <JustAberrant> our phone system is actually pretty fucked up
+[06:50:12] <JustAberrant> each office has a number
+[06:50:16] <JustAberrant> and a bunch of extensions
+[06:50:24] <JustAberrant> but my extension is actually connected to a different office
+[06:51:00] <JustAberrant> the extensions are unique across the whole company (that is, if I have 1234 in my office, there is no 1234 elsewhere)
+[06:51:33] <JustAberrant> but none the less, if someone calls the number to my office then puts in the extension, they get unknown extension
+[06:51:47] <Colgate> phone systems are weird
+[06:52:03] * JustAberrant nods
+[06:52:09] <JustAberrant> it's some cisco/nortel voip thing
+[06:52:24] <JustAberrant> the phones themselves are nice.. but the system behind it is messed up
+[06:52:55] <JustAberrant> also the settings and such arn't password protected
+[06:53:21] <JustAberrant> so everyone screws with them.. dropping the contrast down.. setting the ring tone to the most annoying one available (a voice saying "are you there")
+[06:53:50] <JustAberrant> it's an interesting commentary that I have the key presses to reset the brightness/contrast memorized :>
+[06:54:11] <JustAberrant> (settings -> 5 -> 2 -> hit up arrow a bunch of times) :D
+[06:54:25] <ShivalPonyWolf> JustAberrant: ours are all polycom
+[06:54:42] <ShivalPonyWolf> mobile phone is tied into works active directory mail platform
+[06:54:50] <ShivalPonyWolf> so it can lookup numbesr in that to get id data
+[06:54:57] <JustAberrant> mm, nifty :)
+[06:55:51] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[06:56:13] *** Joins: cyborg_ar (cyborgar@Pony-c5g.263.49.190.IP)
+[06:56:17] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[06:56:40] * JustAberrant runs across the room and jump-tackles cyborg_ar 
+[07:04:59] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[07:08:33] <AppleDash> I might build my own answering machine type thing
+[07:10:19] <AppleDash> Whenever a call comes in it instantly picks up and plays audio through a speaker, while also buffering that audio to a tape. I can hit a button to send the call to my headset, or another one to send it to the actual recording tape. If I hit the second, it flushes the buffer it was keeping earlier and then continues recording the rest of the call, otherwise it just discards the buffer.
+[07:10:19] <AppleDash> Default action after like 10 seconds is to start recording
+[07:11:45] <AppleDash> also, I'd totally have a button to route the mic input to my PC's audio output
+[07:12:10] <AppleDash> So I can play "You are a cunt" to the collection company that keeps. calling. me. even. though. I've. said. I. will. pay.
+[07:18:19] <Googie> AppleDash: http://www.voip-info.org/wiki/view/Asterisk+Telemarketer+Torture
+[07:18:20] <PinkiePieBot> [ Asterisk Telemarketer Torture - voip-info.org ]
+[07:18:50] <ShadySound> Have you guys seen Google cardboard?
+[07:19:40] <AppleDash> Googie: Oh dear that looks awesome
+[07:23:22] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:23:43] *** Quits: Webster (Webster@Pony-mme.2eo.212.73.IP) (Quit: Leaving)
+[07:34:25] *** Quits: firestream1 (firestream@Pony-861.n8f.50.70.IP) (Quit: )
+[07:40:33] *** Quits: cyborg_ar (cyborgar@Pony-c5g.263.49.190.IP) (Client exited)
+[07:51:24] *** Ruthalas_ is now known as ruthalasleep
+[07:53:02] *** Joins: cyborg_ar (cyborgar@Pony-mt3.lui.25.181.IP)
+[08:04:23] *** Quits: ChaoticRift (ChaoticRift@Pony-fq95gm.7h3b.037j.000a.2601.IP) (Ping timeout: 121 seconds)
+[08:16:24] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[09:14:24] *** Tranquil_Archive is now known as Nelly
+[09:18:36] *** Joins: a-stray-cat (stray@Pony-gpa4n8.ca.comcast.net)
+[09:24:50] *** Joins: Misan (misan@Pony-vmqpec.cm.kabsi.at)
+[10:02:41] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[10:12:07] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:35:28] *** Joins: rickyis911 (Firestream@Pony-861.n8f.50.70.IP)
+[10:36:26] *** Nelly is now known as Nully
+[10:40:14] *** Quits: rickyis911 (Firestream@Pony-861.n8f.50.70.IP) (Quit: )
+[10:45:08] *** Joins: rickyis911 (Firestream@Pony-861.n8f.50.70.IP)
+[10:45:13] *** rickyis911 is now known as firestream
+[10:47:17] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[10:50:37] *** Quits: reiuiji (reiuiji@nuclear.raven) (Connection closed)
+[11:00:49] *** Joins: reiuiji (reiuiji@Pony-6vp0lq.ma.comcast.net)
+[11:18:38] *** Quits: a-stray-cat (stray@Pony-gpa4n8.ca.comcast.net) (Quit: Leaving)
+[11:29:44] *** Quits: firestream (Firestream@Pony-861.n8f.50.70.IP) (Quit: )
+[11:50:05] *** Starburn is now known as eyeburn
+[12:05:13] *** Quits: aji (alex@ajitek.net) (Quit: Segmentation fault (aji dumped))
+[12:18:43] *** Joins: aji (alex@ajitek.net)
+[12:18:43] *** AutoLapsus sets mode: +o aji
+[12:23:11] <aji> so how long has weechat had extended-join support.
+[12:23:14] <aji> this is p neat
+[12:34:55] *** Q0 is now known as Q0|Away
+[13:51:05] <Moonlightning> hmm
+[13:51:54] <Moonlightning> How much do decent 128|256GiB laptop SSDs go for? (Google's being a birch right now.)
+[13:52:56] <Moonlightning> s/(decent)/\1|good/
+[14:00:27] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[14:02:35] *** Quits: Fillyfeathers (Fallfeather@Pony-v0u6nc.internode.on.net) (Connection closed)
+[15:11:28] <Moonlightning> yep, ShadySound
+[15:17:54] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[15:20:04] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:34:37] <Shutter> Moonlightning: Define laptop SSD. Like those extremely mini ones, or standard laptop size disk?
+[15:35:13] <Moonlightning> One that goes in this specific model of laptop, which I will figure out in just a second.
+[15:35:19] * Moonlightning should know these things. vv
+[15:35:20] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[15:43:36] <Moonlightning> …oh, derp
+[15:43:44] <Moonlightning> Shutter: probably just a standard laptop-sized one
+[15:44:28] <Shutter> Ah, so normal SSD size then.
+[15:44:51] <Moonlightning> hmm?
+[15:45:16] <Shutter> Normal SSDs are laptop-spinny-disk-sized
+[15:45:43] <Shutter> And then there is the mSATA format often used in laptops with no spinny disk version
+[15:46:36] <Shutter> Either way, probably a little less than $150 for 256G?
+[15:47:03] <Moonlightning> What about 128?
+[15:48:23] <Shutter> $80-$90 I'd think. Maybe cheaper, I'm just guessing from how it's prized here which might be a bit different to there ...
+[15:51:24] <Moonlightning> Mmm, thanks.
+[15:52:08] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[16:14:58] *** Joins: FunkyFried (averagejoey@Pony-m81a8n.lv.cox.net)
+[16:15:25] *** FunkyFried is now known as Pony_2915
+[16:42:08] *** Joins: ChaoticRift (ChaoticRift@Pony-jf7icb.md.comcast.net)
+[16:47:38] *** Quits: ChaoticRift (ChaoticRift@Pony-jf7icb.md.comcast.net) (Quit: Signal 9 happened)
+[16:49:34] <cyborg_ar> boop
+[16:56:59] * Moonlightning boops cyborg_ar
+[16:57:09] <cyborg_ar> :>
+[17:06:19] *** Joins: ChaoticRift (ChaoticRift@Pony-r2d6kr.7h3b.037j.000a.2601.IP)
+[17:15:16] <JustAberrant> :)
+[17:38:47] <cyborg_ar> so our customers think this file format is a super secure audit trail document
+[17:38:57] <cyborg_ar> it's just a renamed mdb file
+[17:39:00] <cyborg_ar> lol
+[17:40:12] <JustAberrant> :>
+[17:40:49] <cyborg_ar> good to know i can adulterate it when i need to
+[17:40:52] <cyborg_ar> :)
+[17:41:22] <JustAberrant> :(
+[17:44:05] <cyborg_ar> is there a reliable way to get a blue screen on windows? to simulate a system crash for application robustness testing purposes :)
+[17:44:41] <Pony_39183> there is a bluescreen shortcut key you can enable
+[17:44:45] *** Pony_39183 is now known as coppercore
+[17:44:46] <coppercore> ...
+[17:45:01] <cyborg_ar> oooh
+[17:45:31] <JustAberrant> :)
+[17:45:55] <cyborg_ar> http://www.howtogeek.com/howto/windows-vista/keyboard-ninja-kill-windows-with-the-blue-screen-of-death-in-3-keystrokes/
+[17:45:55] <PinkiePieBot> [ Keyboard Ninja: Kill Windows with the Blue Screen of Death in 3 Keystrokes ]
+[17:45:57] <cyborg_ar> :D
+[17:46:02] <cyborg_ar> that's handy, thanks
+[17:46:34] <cyborg_ar> it's also useful for buying time while in the field :)
+[17:50:00] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[17:51:17] *** nscoots is now known as zombieloo
+[17:53:13] <cyborg_ar> echo c > /proc/sysrq-trigger for a panic on linux
+[17:53:16] <cyborg_ar> :)
+[17:53:28] <cyborg_ar> man i havent seen a kernel panic in years
+[17:53:46] <cyborg_ar> bbl
+[17:53:52] *** Quits: cyborg_ar (cyborgar@Pony-mt3.lui.25.181.IP) (Client exited)
+[18:26:24] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[18:33:40] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[18:38:26] *** Q0|Away is now known as Q0
+[18:42:03] *** Nully is now known as Nelly
+[18:43:02] *** Joins: cyborg_ar (cyborgar@Pony-o43.b05.49.190.IP)
+[19:14:59] <Nelly> What's the font in command prompt?
+[19:15:05] <JustAberrant> ?
+[19:15:11] <JustAberrant> depends on your terminal emulator?
+[19:15:57] <JustAberrant> cyborg_ar: cyborg_ar :>
+[19:17:24] <cyborg_ar> i like using droid sans mono slashed
+[19:17:38] * cyborg_ar is repairing a popcorn machine
+[19:17:49] <cyborg_ar> this is the most life critical repair i've done in my life
+[19:18:00] <JustAberrant> hehe
+[19:18:05] <JustAberrant> do you actually use it for popcorn?
+[19:18:20] * JustAberrant assumes some people do... :D
+[19:18:43] <cyborg_ar> it's my mom's
+[19:18:50] <JustAberrant> ah
+[19:19:15] <JustAberrant> (not that there is anything wrong with making popcorn in a popcorn maker.. just seems like everyone uses them for something else..)
+[19:41:08] * cyborg_ar epoxies things to other things
+[19:42:59] <JustAberrant> cause you know, chemical adhesives and food go together well ;p
+[19:43:44] <cyborg_ar> shouldnt be more toxic than the plastic it's sticking
+[19:44:09] <JustAberrant> uh huh ;p
+[19:45:59] <ola> hi cyborg_ar 
+[19:46:53] <cyborg_ar> hi ola
+[19:46:58] <ola> :3
+[19:49:13] *** Quits: ChaoticRift (ChaoticRift@Pony-r2d6kr.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[19:53:36] *** Quits: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (Quit: *Pewf*)
+[19:59:06] <cyborg_ar> hehe hola ol
+[19:59:08] <cyborg_ar> ola*
+[20:02:38] *** Joins: ChaoticRift (ChaoticRift@Pony-37ssqh.7h3b.037j.000a.2601.IP)
+[20:04:02] *** Joins: Webster (Webster@Pony-mme.2eo.212.73.IP)
+[20:16:51] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[20:18:36] *** Quits: ChaoticRift (ChaoticRift@Pony-37ssqh.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[20:22:14] <cyborg_ar> popcorn machine = fixed
+[20:25:29] *** Joins: ChaoticRift (ChaoticRift@Pony-orslbp.7h3b.037j.000a.2601.IP)
+[20:40:54] <Moonlightning> > POSIX requires that opening a file with the O_APPEND flag should have no affect on the location at which pwrite() writes data.
+[20:41:12] <Moonlightning> Does that mean you can get around a file's append-only xattr by using pwrite()?
+[20:41:26] <Moonlightning> If Linux fixes the bug, that is
+[20:50:34] <cyborg_ar> Moonlightning: wut
+[20:51:51] * AppleDash performs the cyborg_ar/JustAberrant operation again, but this time with both present
+[20:51:52] <cyborg_ar> hmm
+[20:51:55] <Moonlightning> > However, on Linux, if a file is opened with O_APPEND, pwrite() appends data to the end of the file, regardless of the value of offset.
+[20:52:02] <JustAberrant> :(
+[20:52:08] <cyborg_ar> that's a good feature to have
+[20:52:11] <Moonlightning> AppleDash, why are you dividing cyborg_ar?
+[20:52:12] <cyborg_ar> no need to fix
+[20:52:18] <AppleDash> Moonlightning: I am not
+[20:52:21] <JustAberrant> Moonlightning: these are questions people don't ask :(
+[20:52:29] <AppleDash> I have just combined him with JustAberrant
+[20:52:29] <cyborg_ar> if you intend to write anywhere, do not open with O_APPEND
+[20:52:35] <Moonlightning> AppleDash: you said you were performing the `cyborg_ar / JustAberrant` operation!
+[20:52:37] <AppleDash> They are now glued together with construction glue
+[20:52:44] <AppleDash> Moonlightning: replace "/" with "and".
+[20:52:45] <cyborg_ar> makes it it easier on FS code too
+[20:53:09] * cyborg_ar overloads the / operator
+[20:53:41] <Moonlightning> cyborg_ar: maybe you don't want to deal with the race condition if someone else is appending the file. xP
+[20:53:52] <AppleDash> I need someone to assist me with something
+[20:54:51] <AppleDash> I don't know what I need though
+[20:54:56] <cyborg_ar> Moonlightning: that's a patological case though
+[20:55:10] <cyborg_ar> you shouldnt have multiple processes with a file opened for writing at the same time
+[20:55:32] <AppleDash> Isn't it fine to do that?
+[20:55:33] <Moonlightning> Fair enough
+[20:55:47] <AppleDash> The one that came last just blocks until the one that came first closes the file, no?
+[20:56:11] <cyborg_ar> AppleDash: it is a problem if the files are opened for read and write
+[20:56:32] <AppleDash> Also
+[20:56:46] <AppleDash> Do modern ethernet cards support built in crossover yet?
+[20:56:53] <cyborg_ar> buffers can get a bit messed up
+[20:57:14] <cyborg_ar> AppleDash: hmm i remember being able to use random patches without looking if they were crossover or not
+[20:57:22] <cyborg_ar> but it could be the switch that fixed it up
+[20:57:36] <AppleDash> Hmm
+[21:02:45] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[21:03:02] *** Ashleep is now known as Ashfire
+[21:07:05] *** Quits: Pony_2915 (averagejoey@Pony-m81a8n.lv.cox.net) (Quit: WeeChat 1.1.1)
+[21:07:07] <Colgate> also, linux isn't posix compliant
+[21:07:19] <Colgate> just mostly
+[21:07:23] <Kinsley> Parts of it are, yeah.
+[21:07:52] <Kinsley> I'm sure some distribution out there is like "WE'RE POSIX COMPLIANT, AW YEAH!"
+[21:11:30] <cyborg_ar> lol
+[21:11:44] <cyborg_ar> osx is posix compliant :)
+[21:11:51] <cyborg_ar> well at least some versions were
+[21:11:53] <Kinsley> OS X is a steaming pile of shit.
+[21:11:57] <cyborg_ar> dunno if the latest is certified
+[21:17:54] <Phase4> windows is posix compliant
+[21:17:55] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[21:18:05] <Phase4> posix isn't as important as it thinks it is
+[21:19:11] *** Neptune is now known as Neptune|sleep
+[21:19:58] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[21:22:38] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[21:30:13] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[22:02:42] *** Joins: Fallfeathers (Fallfeather@Pony-v0u6nc.internode.on.net)
+[22:06:47] *** Joins: ModusPonens (ModusPonens@Pony-6v8n3b.ga.comcast.net)
+[22:14:56] *** Quits: Phase4 (Phase4@Pony-2hrj9k.internode.on.net) (Ping timeout: 121 seconds)
+[22:44:51] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[22:55:22] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[23:00:48] <ShivalPonyWolf>  /9
+[23:09:26] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[23:11:29] *** Quits: ModusPonens (ModusPonens@Pony-6v8n3b.ga.comcast.net) (Ping timeout: 121 seconds)
+[23:22:38] *** Quits: Misan (misan@Pony-vmqpec.cm.kabsi.at) (Client exited)
+[23:38:07] *** Joins: Ashley (Ashfire@Ashfire.bronytv.net)
+[23:40:59] *** Quits: Ashfire (Ashfire@Ashfire.bronytv.net) (Ping timeout: 121 seconds)
+[23:41:07] *** Ashley is now known as Ashfire
+[23:41:50] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[23:46:53] *** Joins: Ashley (Ashfire@Ashfire.bronytv.net)
+[23:49:32] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[23:50:20] *** Quits: Ashfire (Ashfire@Ashfire.bronytv.net) (Ping timeout: 121 seconds)

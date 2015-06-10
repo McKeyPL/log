@@ -1,0 +1,796 @@
+[00:12:50] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:14:54] *** Quits: ChaoticRift (ChaoticRift@Pony-1d0o3o.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[00:17:32] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:27:56] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[00:41:58] <wolfyshy> badly written js, too
+[00:42:16] <wolfyshy> sniperfox: firefox keeps coring for me, if I use html5 video too much
+[00:42:25] <wolfyshy> sniperfox: otherwise, it's been a very good browser and uses much less RAM than chrome so *shrug*
+[00:44:10] <faalentijn> One time running Facebook crashed my computer
+[00:45:15] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:45:18] *** Quits: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net) (Ping timeout: 121 seconds)
+[00:48:30] <faalentijn> Acer sure is one special company
+[00:53:09] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[01:00:35] <Phase4> faalentijn, had a youtube video crash mine once
+[01:00:44] <Phase4> older thinkpad, bug in the wifi driver i'm guessing
+[01:00:55] <Phase4> don't think it crashed over ethernet
+[01:02:14] <Colgate> was it repeatable?
+[01:02:30] <Phase4> yeah
+[01:02:40] *** Joins: cyborg_ar (cyborgar@Pony-lr2.8oa.25.181.IP)
+[01:02:41] <Phase4> tried 3 times to make sure it wasn't a coincidence
+[01:03:05] <Colgate> I don't think it would be the wifi driver, since isn't youtube tls only now?
+[01:03:20] <Phase4> it was many years ago
+[01:03:23] <wolfyshy> wifi is just a network card
+[01:03:29] <wolfyshy> TLS goes over it the same as other protocols
+[01:03:40] <Colgate> yes, but the point was that the data sent would be different every time
+[01:03:46] <Colgate> since tls
+[01:03:50] <wolfyshy> it was probably the weight of how youtube pushes at max speed in the start, then trickles, then pushes max speed again, as it buffers
+[01:04:12] <wolfyshy> that actually killed a buggy gigE driver back when I was testing gigE on linux
+[01:04:14] <wolfyshy> back when it was new
+[01:04:49] <Phase4> Colgate, wifi driver is what i concluded at the time, could have been anything tbh
+[01:04:59] <Phase4> but that particular video reliably bluescreened my machine
+[01:05:26] <Colgate> just... odd
+[01:06:35] <Phase4> it was very odd
+[01:06:40] <Phase4> and annoying
+[01:10:13] *** Joins: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net)
+[01:16:23] * JustAberrant investigates Phase4 two times
+[01:17:36] <sniperfox> wolfyshy: Get an extension called bartab heavy for firefox.  It lets you set tabs to completely unload from memory after X minutes idle.  Cuts firefox memory usage to the floor and helps with heavy video sites.
+[01:17:51] <wolfyshy> holy moly what
+[01:17:55] <wolfyshy> I need this
+[01:18:11] <sniperfox> You know how when you first cold load up firefox all your tabs are kind of grey out
+[01:18:23] <sniperfox> BarTab Heavy lets them return to that state after they idle too long
+[01:18:30] <wolfyshy> wow
+[01:18:32] <sniperfox> You can set exceptions for your gmail and streaming sites and stuff
+[01:18:40] <sniperfox> https://addons.mozilla.org/en-us/firefox/addon/bartab-heavy/?src=search
+[01:18:40] <PinkiePieBot> [ BarTab Heavy :: Add-ons for Firefox ]
+[01:18:41] <sniperfox> There we go
+[01:18:48] <wolfyshy> I use an 'actual' desktop mail client (or my phone) for email
+[01:18:51] <wolfyshy> so I don't need an email tab
+[01:19:29] <sniperfox> eww, thick client for email?  How 2003! heh
+[01:21:16] *** Joins: ChaoticRift (ChaoticRift@Pony-91lof8.7h3b.037j.000a.2601.IP)
+[01:23:10] *** Neptune is now known as Neptune|sleep
+[01:23:17] <wolfyshy> sniperfox: I hate browser-based mail clients that much.
+[01:23:39] <wolfyshy> sniperfox: they don't work, they're slow, they eat RAM, they eat CPU, they crash, they can't handle connection interruptions (which happen A LOT when you're tethered to a phone)
+[01:23:50] <wolfyshy> no thank you no thank you no thank you I'll stick by Thunderbird
+[01:24:05] <JustAberrant> thunderbird sucks
+[01:24:07] <JustAberrant> :(
+[01:24:24] <JustAberrant> imo there is no decent open source desktop email client ..
+[01:24:48] <JustAberrant> outlook is one of the few things windows got that actually doesn't suck (at least the client.. mostly)
+[01:25:02] <JustAberrant> I find thunderbird clunky and unreliable
+[01:25:14] <JustAberrant> gmail _was_ good.. but they keep penising with the UI
+[01:26:20] <ola> https://dl.dropboxusercontent.com/u/14556313/PowerMacintoshG3IsBestMac.png
+[01:26:29] <ola> outlook sucked and always will
+[01:26:37] <ola> Sylpheed is best client
+[01:27:33] <wolfyshy> outlook is okay
+[01:27:36] <Colgate> I would consider using bartab... if I had memory issues
+[01:27:41] <wolfyshy> ola: no ShadowIRC?  SHAME!
+[01:28:04] <ola> wolfyshy: i mean mail
+[01:28:07] <Colgate> also, I use thunderbird as well
+[01:28:11] <ola> wolfyshy: and for IRC, hrm... only Weechat!
+[01:28:13] <wolfyshy> and no classila
+[01:28:21] <ola> wolfyshy: ah
+[01:28:30] <ola> wolfyshy: the compatibility isn't still as good as i wish it was
+[01:28:36] <ola> wolfyshy: and again, i use irc from shell
+[01:29:06] <wolfyshy> ssh on OS 9?  how?!
+[01:29:25] <Colgate> I tried using mutt, but I couldn't get into it
+[01:29:40] <ola> wolfyshy: nio, i don;'t do this, although there IS a program for that
+[01:36:16] <tiwake> outlook? including all its security issues?
+[01:37:07] <wolfyshy> there haven't been a whole lot of them, at least not disclosed, in many years
+[01:37:27] <wolfyshy> the problem is, outlook grew out of microsoft's internal mail solution, where all senders could be trusted
+[01:37:29] <JustAberrant> tiwake: tthe client ;p
+[01:37:33] <wolfyshy> it was not designed for the 'real' internet
+[01:37:39] <wolfyshy> so the first few versions trusted too much
+[01:37:40] <JustAberrant> * the
+[01:37:48] <JustAberrant> by all accounts, exchange server is a pile of shit
+[01:37:51] <JustAberrant> but the client is nice ;p
+[01:37:53] <wolfyshy> they've locked it down starting with the 2002/2003 versions and I don't think I've even heard of any vulns in 2010/2013
+[01:38:12] <wolfyshy> JustAberrant: exchange server is shit mainly because for 10 mailboxes it uses about 4 GB RAM
+[01:38:22] <wolfyshy> sweet jesus, I run 100 mailboxes off 1 GB RAM with dovecot+qmail
+[01:38:41] <wolfyshy> (mail for the local LUG + friends + family)
+[01:39:19] <tiwake> they kinda stopped making the client though didnt they?
+[01:40:03] <wolfyshy> nope, outlook still exists
+[01:40:31] <JustAberrant> I just find it integrates with everything really well
+[01:40:39] <JustAberrant> communicator, calendar, etc
+[01:41:34] <JustAberrant> thunderbird and friends just feel really rough and unpolished by comparison
+[01:41:35] <tiwake> meh
+[01:41:37] <wolfyshy> netscape used to do that
+[01:41:42] <wolfyshy> back in the 90s
+[01:41:54] <JustAberrant> hehe
+[01:42:06] <wolfyshy> in 1998, I was one of the first people to use their 'collabra' thing, integrated calendar / group todo list / etc
+[01:42:08] <JustAberrant> oh yeah.. netscape communicator was actually decent too.. in it's time
+[01:42:15] <wolfyshy> it was quite nice
+[01:42:30] <wolfyshy> the problem was navigator would crash with too many CSS rules...
+[01:42:38] <JustAberrant> it's nice to be able to email someone a task
+[01:42:40] <wolfyshy> you can imagine how well it fares now...
+[01:42:49] <JustAberrant> or get an email, click a button, and have it added to your task list
+[01:42:52] <JustAberrant> or your calendar
+[01:42:53] <JustAberrant> etc
+[01:42:53] <wolfyshy> YES
+[01:43:01] <wolfyshy> netscape 4 and outlook 98 both pioneered that
+[01:43:21] <JustAberrant> not great for large scale project managementr
+[01:43:23] <wolfyshy> google's tried something similar with their calendar/mail thing but it doesn't feel quite as nice
+[01:43:33] <JustAberrant> but quick "oh I gotta get back to that guy" type stuff.. works wonders
+[01:45:18] <tiwake> never had to do that before
+[01:46:30] <tiwake> IRC has always been my preferred method of communication
+[01:48:01] <tiwake> also
+[01:48:11] <tiwake> I still want AMD to release their A1100 processor
+[01:48:29] <JustAberrant> yeah but you don't strike me as someone who communicates with co-workers/managers/customers on a constant basis ;p
+[01:48:54] <tiwake> JustAberrant: I have rather recently, with my shiny new CNC machine shop business
+[01:49:34] <JustAberrant> yeah, but I'm guessing you don't have a few dozen people you need to talk to daily ;p
+[01:50:58] <tiwake> not yet
+[01:51:04] <tiwake> getting there
+[01:52:17] <tiwake> is a MIPS based motherboard and processor I can just buy?
+[01:52:35] <JustAberrant> point is, email starts to make a lot more sense when things scale up ;p
+[01:54:45] <tiwake> right now we have two main customers that we push a lot of product for both
+[01:56:27] <tiwake> we (I) have been working closely with a startup company for designing, prototyping, and production of competition archery equipment
+[01:57:25] <tiwake> if you hunt or shoot bow competitively, look out for performance archery gear... they will be on the rise :)
+[01:57:44] <JustAberrant> :)
+[01:57:58] <wolfyshy> tiwake: MIPS, you might want to look at Loongson boards
+[01:58:00] <wolfyshy> that's mips64 though
+[01:59:16] <tiwake> wolfyshy: not the same thing?
+[01:59:47] <wolfyshy> tiwake: well it's 64-bit, the same way 64-bit intel core 2 duo isn't the same architecture as 32-bit intel pentium 3/4
+[02:00:31] <tiwake> wolfyshy: oh, thats no problem... I just want a nice not-x86 based server for my own home use
+[02:00:45] <JustAberrant> sounds reasonable
+[02:00:59] <Phase4> wolfyshy, aren't loongson the ones who did that accelerated x86 emulation thing?
+[02:01:00] <JustAberrant> cause you know, using a platform that most of the software you'll want to use was primarily developed for is silly ;p
+[02:01:05] <wolfyshy> MIPS is more suited for embedded/routers/stuff... you could run a server on it but for servers I'd more readily recommend one of tyan's POWER boards
+[02:01:08] <wolfyshy> it's good
+[02:01:22] <JustAberrant> you want something where there'll be untold weird issues that most devs won't give a shit about because who the hell uses MIPS ;p
+[02:01:39] <wolfyshy> JustAberrant: every cisco router made since 2008, both enterprise and consumer
+[02:01:56] <JustAberrant> which is great if your making a router ;p
+[02:02:06] <wolfyshy> JustAberrant: some brocade switches, some netgear consumer routers though there are a lot of arm ones there
+[02:02:09] <wolfyshy> well
+[02:02:11] <wolfyshy> they all run linux
+[02:02:13] <JustAberrant> running ngnix on it or whatever.. maybe not ;p
+[02:02:13] <wolfyshy> underneath
+[02:02:44] <ola> http://marineacu.deviantart.com/art/MLP-OC-and-UT-99-2004-Brock-Iron-Guard-team-292277034
+[02:02:45] <PinkiePieBot> [ MLP OC and UT 99-2004 - Brock 'Iron Guard' team by MarineACU on DeviantArt ]
+[02:02:52] <JustAberrant> also brocade switches are weird
+[02:02:58] <JustAberrant> real weird :(
+[02:03:04] <wolfyshy> yes they are
+[02:03:05] <wolfyshy> I hate them
+[02:03:09] <wolfyshy> but they use MIPS underneath
+[02:03:11] <tiwake> JustAberrant: hey, the MIPS assembly instruction set is pretty nice
+[02:03:14] <wolfyshy> it is
+[02:03:30] * wolfyshy <- former hobby kernel dev, still contributes to linux and freebsd
+[02:03:55] * wolfyshy has a few SGI boxes, R5k and R10k mostly
+[02:03:59] <tiwake> ARM is slightly clunkier, but still flankloads better than X86
+[02:04:03] * JustAberrant slacker, doesn't contribue shit to anything any more
+[02:04:25] <wolfyshy> tiwake: I really recommend POWER, it is very well supported by everything, ubuntu even has a power distribution iirc
+[02:04:44] <tiwake> wolfyshy: PowerPC?
+[02:04:50] <tiwake> or Power7?
+[02:04:50] <wolfyshy> not quite
+[02:04:53] <wolfyshy> power7/8
+[02:05:02] <tiwake> you cant buy just a botherboard though
+[02:05:10] <tiwake> I dont want a U-rack mount thing
+[02:05:32] <tiwake> at least you cant as far as I know
+[02:05:35] <JustAberrant> just call it a day and get yourself a vme enclosure ;p
+[02:05:43] <wolfyshy> http://www.tyan.com/campaign/openpower/
+[02:05:45] <PinkiePieBot> [ TYAN's OpenPOWER Customer Reference System: GN70-BP010 ]
+[02:05:49] <wolfyshy> oh, you don't want a rack mount
+[02:05:55] <wolfyshy> you can run them not in a rack, fwiw
+[02:06:01] <JustAberrant> (kidding aside, some of the VME stuff I've worked on is the nicest gear I've ever dealt with)
+[02:06:06] <wolfyshy> one of my friends has a proliant blade running on their dining room table, lol :)
+[02:06:16] <JustAberrant> especially the militarized stuff
+[02:06:31] <JustAberrant> shits designed to be taken apart by one guy on a moving ship with a single tool
+[02:06:45] <tiwake> wolfyshy: yeah, I would just take it out of the U2 or U1 or whatever rackmount it is in
+[02:06:52] <JustAberrant> and still survive being dropped like 3 feet
+[02:07:04] <tiwake> wolfyshy: http://tiwake.com/img_0063_small.jpg is what my goal is
+[02:07:18] <tiwake> smallest volume possible, and rather low power
+[02:07:22] <wolfyshy> oh wow
+[02:07:28] <wolfyshy> you definitely want loongson then
+[02:07:30] <JustAberrant> also you can get powerpc boards for them ;p
+[02:07:31] <wolfyshy> or another MIPS board
+[02:07:50] <wolfyshy> gentoo has a stage3 for loongson
+[02:07:56] <tiwake> that box is 8"x9"x9.5" :P
+[02:07:58] <wolfyshy> so you might want to start there if you want 'easy'
+[02:08:26] <tiwake> I've been holding off for AMD's ARM A1100 processor...
+[02:08:35] <JustAberrant> http://www.google.ca/imgres?imgurl=http://milper.com/wp-content/uploads/MRC-508-1-444x300.jpg&imgrefurl=http://milper.com/product/mrc-508&h=300&w=444&tbnid=Yj8HqfIMOCyutM:&zoom=1&docid=wZds5fJHmJbGoM&ei=dCDtVMWGMIK7ggTdh4HoDA&tbm=isch&ved=0CDoQMygyMDI4yAE   <-- I'd buy one if it didn't cost more than my car ;p
+[02:08:39] <tiwake> because shiny 10gig ethernet :3
+[02:08:46] <JustAberrant> * http://milper.com/wp-content/uploads/MRC-508-1-444x300.jpg
+[02:09:14] <wolfyshy> ARM really sucks, just my opinion though
+[02:09:40] <wolfyshy> aarch64 which is 64-bit ARM is much better
+[02:09:41] <tiwake> hmm
+[02:10:13] <wolfyshy> unfortunately the only production aarch64 machines I know of are SoCs, samsung galaxys, and apple iphones
+[02:10:15] <wolfyshy> :P
+[02:10:16] <tiwake> the A1100 is def. 64bit...
+[02:10:43] <wolfyshy> ah, if that is the case then that should be okay as a server I suppose
+[02:11:20] <tiwake> yeah I wouldent want 32bit
+[02:11:42] <tiwake> as far as I know it will work with DDR4 ECC memory
+[02:13:22] <tiwake> my old intel atom D510 is getting old too
+[02:13:48] <tiwake> (that and I dont like X86 assembly... lol)
+[02:14:46] <tiwake> wolfyshy: http://images.anandtech.com/doci/8362/seattle%20SOC.JPG
+[02:16:06] <tiwake> thats kinda old information though, and AMD still hasent officially released it
+[02:17:05] <tiwake> wolfyshy: linky to Loongson mips64 stuff?
+[02:18:08] <wolfyshy> http://www.loongson.cn/news_info.php?id=259 this seems to be the exact size you want
+[02:18:11] <PinkiePieBot> [ loongson technology ]
+[02:18:14] <wolfyshy> unfortunately, I can only find pages in chinese..
+[02:20:04] *** Quits: Kiyiko (Kiyiko@Pony-33j62l.dsl.netins.net) (Ping timeout: 121 seconds)
+[02:20:07] <tiwake> hmm
+[02:20:16] <tiwake> what are the specs of it? lol
+[02:20:33] <tiwake> 32nm... heh
+[02:23:28] <wolfyshy> 6 cores, 1.6ghz, ddr3 iirc
+[02:23:52] <tiwake> TDP?
+[02:24:36] <tiwake> enh, I'll just wait for the A1100 to come out
+[02:28:27] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[02:28:32] *** Quits: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[02:34:39] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[03:01:03] <ShivalPonyWolf> http://www.gemalto.com/press/Pages/Update-on-the-SIM-card-encryption-keys-matter.aspx
+[03:01:05] <PinkiePieBot> [ Pages - Update on the SIM card encryption keys matter ]
+[03:04:37] *** Quits: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (The TLS connection was non-properly terminated.)
+[03:04:45] *** Joins: Kiyiko (Kiyiko@Pony-33j62l.dsl.netins.net)
+[03:11:30] <wolfyshy> http://www.thedailybeast.com/articles/2015/02/24/the-serial-killer-castro-sent-to-new-york-city.html kind of written dramatically, but glad to see there is still justice out there
+[03:11:31] <PinkiePieBot> [ The Serial Killer Castro Sent to New York City - The Daily Beast ]
+[03:33:40] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[04:05:51] *** Joins: Fallfeathers (Fallfeather@Pony-v0u6nc.internode.on.net)
+[04:08:16] *** Quits: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[04:10:35] *** Joins: Trollestia (zqxihuoukqv@Pony-egd.gpv.239.181.IP)
+[04:10:37] <Trollestia> hi
+[04:10:50] <Trollestia> i am Trollestia, the queen of the Trolls
+[04:14:47] <Webster> Meh.
+[04:24:40] *** Quits: Datalink_ (Datalink@Datalink) (Connection closed)
+[04:25:02] *** Joins: Datalink_ (Datalink@Datalink)
+[04:31:30] *** Ashfire is now known as AshleyAnabeil
+[04:33:01] *** Quits: Trollestia (zqxihuoukqv@Pony-egd.gpv.239.181.IP) (Ping timeout: 121 seconds)
+[04:35:05] *** Joins: Datalink__ (Datalink@Datalink)
+[04:37:55] *** Quits: Datalink_ (Datalink@Datalink) (Ping timeout: 121 seconds)
+[04:45:10] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[04:45:14] *** Joins: Pony_95738 (Lapsus@Pony-0tb.9m7.222.209.IP)
+[04:47:07] *** Quits: Lapsus (Lapsus@i-forget.ca) (Ping timeout: 121 seconds)
+[04:51:14] *** Joins: Lapsus (Lapsus@Pony-49v.tki.222.209.IP)
+[04:51:43] *** Lapsus is now known as Pony_88362
+[04:52:30] *** Pony_88362 is now known as Lapsus
+[04:52:32] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[04:53:24] *** Quits: Pony_95738 (Lapsus@Pony-0tb.9m7.222.209.IP) (Ping timeout: 121 seconds)
+[05:01:46] *** AppleDash is now known as Blackjack
+[05:21:09] *** Quits: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[05:21:58] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[05:22:02] *** Quits: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net) (A TLS packet with unexpected length was received.)
+[05:22:27] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[05:27:00] <Phase4> apparently webrtc uses sctp
+[05:29:58] <Googie> Huh. That's actually really good news :P
+[05:31:25] *** Quits: Lapsus (Lapsus@i-forget.ca) (Quit: )
+[05:32:34] <Kiyiko> all my computers have a different public IP
+[05:33:09] <Phase4> oh, ontop of udp
+[05:33:12] <Phase4> wrapped in DTLS
+[05:34:14] *** Joins: Pony_95738 (Lapsus@Pony-49v.tki.222.209.IP)
+[05:34:26] <Phase4> with a thing called ICE off to the side somewhere
+[05:34:27] *** Pony_95738 is now known as Lapsus
+[05:34:30] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[05:36:49] *** Joins: Chocolate_Chip (CRL@I.like.ponies.now_Ponies.are.cool)
+[05:37:27] <Chocolate_Chip> Hello. Is anypony here? I am having dificulty parsing my icecast's XHTML files to relay the Metadata to an external player
+[05:38:01] <Webster> Folks are here. Not sure what the problem is exactly though.
+[05:38:22] <Chocolate_Chip> I'll pastebin my code
+[05:40:25] <Phase4> http://media-cache-ak0.pinimg.com/736x/b8/2e/cb/b82ecbb359048fd7ecccece5d363b99a.jpg
+[05:40:48] <Chocolate_Chip> http://pastebin.com/tGwfZab5
+[05:40:50] <PinkiePieBot> [ [XML] Status.xsl (Icecast) - Pastebin.com ]
+[05:41:10] <Chocolate_Chip> http://www.stream24.com/webplayer.php
+[05:41:11] <PinkiePieBot> [ stream24™ - Flash / HTML5 web radio livestream player ]
+[05:41:16] <Phase4> Chocolate_Chip, and what error are you getting?
+[05:41:36] <Chocolate_Chip> No error. The metadata just isn't relaying
+[05:42:04] <Chocolate_Chip> The music is relaying. Right now, I'm streaming radio static as a test signal
+[05:43:21] <Phase4> Chocolate_Chip, ip/port?
+[05:44:10] <Chocolate_Chip> 24.20.13.79
+[05:44:19] <Chocolate_Chip> website is on port 80, of course'
+[05:44:27] <Chocolate_Chip> icecasat is on port 8000
+[05:45:06] <Chocolate_Chip> It's a very early draft, so don't judge it too harshly :p
+[05:45:23] *** Quits: ChaoticRift (ChaoticRift@Pony-91lof8.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[05:45:37] <Phase4> stream is working
+[05:45:45] <Chocolate_Chip> But no metadata
+[05:45:48] <Phase4> "icy-title: geherh6e5"
+[05:45:57] *** ruthalaway is now known as Ruthalas
+[05:46:03] <Phase4> you sure you're sending metadata?
+[05:46:05] <Chocolate_Chip> Are you reading that on port 8000
+[05:46:08] <Phase4> yeah
+[05:46:15] <Phase4> mpv http://24.20.13.79:8000/stream
+[05:46:18] <Chocolate_Chip> Cuz my problem is it's not relaying to the player on port 80
+[05:46:23] <Phase4> ahhhh
+[05:46:47] <Chocolate_Chip> The websdite that I generated it from tells me that <header>0</header> must be set
+[05:46:50] <Chocolate_Chip> Which I did
+[05:47:46] <Chocolate_Chip> http://www.stream24.com/webplayer.php#code
+[05:47:47] <PinkiePieBot> [ stream24™ - Flash / HTML5 web radio livestream player ]
+[05:48:41] <Phase4> Access-Control-Allow-Origin is being set twice
+[05:48:46] <Phase4> not your issue but still
+[05:49:17] <Chocolate_Chip> hmm. k
+[05:49:24] <Phase4> Chocolate_Chip, it's pulling the same stream, probably just looking for different tags
+[05:49:39] <Chocolate_Chip> Uh...
+[05:50:18] <Phase4> no idea where geherh6e5 is coming from
+[05:50:27] <Chocolate_Chip> My player
+[05:50:34] <Chocolate_Chip> I typed something random, to test it
+[05:50:50] *** Q0|Away is now known as Q0
+[05:51:07] <Chocolate_Chip> See. I just changed it. My only problem is this player isn't showing it
+[05:51:48] <Chocolate_Chip> I found a better player, which charged money to relay it. I found JSPlayer, which is beyond my understanding so I sorta abandoned that
+[05:52:23] <JustAberrant> :(
+[05:53:22] <Phase4> Chocolate_Chip, http://html5please.com/#polyfill
+[05:53:23] <PinkiePieBot> [ HTML5 Please - Use the new and shiny responsibly ]
+[05:54:33] <Chocolate_Chip> what is the Polyfil element
+[05:55:03] <Phase4> a polyfill is code that implements a new feature ontop of existing code
+[05:55:16] <JustAberrant> sounds like a denture adhesive product :(
+[05:55:24] <Blackjack> :(
+[05:55:50] <Phase4> Chocolate_Chip, for example, you can get libraries that implement websockets for browsers that don't support them via a flash plugin
+[05:56:05] <Chocolate_Chip> k...
+[05:56:06] <Phase4> presents the same api either way so your code doesn't need to know about it
+[05:56:55] <Phase4> Chocolate_Chip, point is: <audio><source href="http://24.20.13.79:80/stream"/></audio> should work on every browser with one of those
+[05:57:02] <Phase4> i don't think that's the right syntax, dont' remember
+[05:57:15] <Chocolate_Chip> it does
+[05:57:22] <Chocolate_Chip> But my problem is metadata
+[05:57:30] <Chocolate_Chip> Now playing, Stream Name
+[05:57:33] <Chocolate_Chip> That stuff
+[05:57:56] <Phase4> Chocolate_Chip, the issue is you're not sending metadata
+[05:58:10] <Chocolate_Chip> I linked you my XSL
+[05:58:15] <Phase4> where's icecast getting the stream?
+[05:58:24] <Chocolate_Chip> localhost
+[05:58:38] <Chocolate_Chip> 24.20.13.79:8000
+[05:58:59] <Phase4> that is the icecast server
+[05:59:26] <Chocolate_Chip> yeah
+[05:59:42] <Phase4> what's putting audio into that is what i want to know
+[05:59:47] <Chocolate_Chip> Ah
+[05:59:58] <Chocolate_Chip> Line in connected to my radio. I'm sdtreaming static to test it
+[06:00:16] <Phase4> well the radio obviously isn't emiting metadata
+[06:00:31] <Chocolate_Chip> But my broadcaster is
+[06:00:41] <Chocolate_Chip> BUTT (Broadcast With This Tool)
+[06:00:52] <Phase4> o_O
+[06:00:54] <Chocolate_Chip> And I see it on the Icecast Server's public home
+[06:01:04] <Chocolate_Chip> *Using
+[06:01:09] <Chocolate_Chip> Broadcast Using This Tool
+[06:03:05] <Chocolate_Chip> Do you see the problem?
+[06:03:27] <Chocolate_Chip> it has to be in my XSL
+[06:06:00] <Chocolate_Chip> Phase4, you here?
+[06:06:05] <Phase4> reading
+[06:06:20] <Phase4> http://icecast.org/ices/docs/ices-2.0.2/inputs.html list "metadatafilename" as a way to specify metadata
+[06:06:21] <PinkiePieBot> [ Icecast Docs — Input Modules ]
+[06:06:46] <Chocolate_Chip> That's an old versuioinm though
+[06:08:20] <Phase4> don't know then
+[06:08:26] <Chocolate_Chip> I don't evben see the directory it's refering to
+[06:09:13] <Chocolate_Chip> Wait
+[06:09:20] <Chocolate_Chip> This is their own broadcaster
+[06:09:26] <Chocolate_Chip> I said I'm using BUTT
+[06:09:36] <Chocolate_Chip> I configured the metadta di nthat
+[06:09:48] <Chocolate_Chip> it is appearing on the public home, on port 80
+[06:09:57] <Chocolate_Chip> The player is not displaying it
+[06:10:38] <JustAberrant> :)
+[06:10:51] <Chocolate_Chip> *it is apearing on the Icecasst public home, on port 8000
+[06:11:07] <Chocolate_Chip> *the player iframe on port 80 does not display it
+[06:11:12] <Phase4> Chocolate_Chip, http://icecast.org/docs/icecast-2.4.0/config-file.html#mountsettings
+[06:11:13] <PinkiePieBot> [ Icecast Docs — Config File ]
+[06:11:51] <Chocolate_Chip> I read this already
+[06:12:01] <Phase4> that seems to be what you want, the stream-name and stream-description tags
+[06:12:06] <Phase4> your config isn't using them
+[06:12:23] <Chocolate_Chip> I added them, and it overwrote the BUTT meta
+[06:12:31] <Chocolate_Chip> And still ddidn't broadcast to the player...
+[06:12:55] <Phase4> can you set them again and i'll check what's actually in the stream?
+[06:13:54] <Chocolate_Chip> It's broadcasting already
+[06:13:56] <Chocolate_Chip> Never stopped
+[06:14:08] <Chocolate_Chip> 21:03:
+[06:14:09] <Chocolate_Chip> Updated songname to:
+[06:14:09] <Chocolate_Chip> Test (Can you see this?)
+[06:14:19] <Phase4>  icy-title: Test (Can you see this?)
+[06:14:27] <Chocolate_Chip> yep
+[06:14:30] <Phase4> so your player is the problem
+[06:14:35] <Chocolate_Chip> You sure?
+[06:14:50] <Phase4> well i don't know, all it's sending is icy-title
+[06:14:58] <Chocolate_Chip> http://www.stream24.com/webplayer.php#code
+[06:14:59] <PinkiePieBot> [ stream24™ - Flash / HTML5 web radio livestream player ]
+[06:15:04] <Chocolate_Chip> It's not even sending that
+[06:15:22] <Chocolate_Chip> he correct recognition of the stream status and META data on external Icecast servers requires that the mountpoint is non hidden (configuration: <hidden>0</hidden>). The file status.xsl must be available inside the "web"-directory as well.
+[06:15:28] <Chocolate_Chip> All this is true
+[06:16:48] <Chocolate_Chip> The META-data (broadcast, title | charset ISO-8859-1) are read directly from the stream server and are updated automatically every 60 seconds
+[06:16:51] <Chocolate_Chip> Correct
+[06:17:02] <Phase4> no idea then
+[06:17:03] <Chocolate_Chip> is it the players falt then?
+[06:17:32] <Phase4> you're sending icy-title, it's ignoringi t
+[06:17:36] <Chocolate_Chip> If it's the player, I'm going to be so mad. IU've been working on it on and off since noon
+[06:18:04] <Phase4> if that's not the tag it's looking for then *shrug* i'm still not sure how these bits are pieced together
+[06:19:46] <Chocolate_Chip> Well, fuck
+[06:21:25] <Chocolate_Chip> So, if I did find a working player, everythign is set up to strem the the metadata, right?
+[06:21:40] <Phase4> i have no idea
+[06:23:01] <Chocolate_Chip> k...
+[06:23:06] <Chocolate_Chip> I'll bbl then?
+[06:23:08] *** Parts: Chocolate_Chip (CRL@I.like.ponies.now_Ponies.are.cool) ("I left. Sorry about that.")
+[06:28:18] *** AshleyAnabeil is now known as Ashleep
+[07:07:10] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[07:09:05] <Moonlightning> faalentijn: shadow /program?/ O.o
+[07:09:07] <Moonlightning> You mean user|group?
+[07:11:36] <Moonlightning> Also: what's this about Chrome and Snowden stuff? o.O
+[07:11:44] <Moonlightning> I've been trusting Chrome. :|
+[07:12:13] <wolfyshy> chrome is the worst possible thing you can trust
+[07:12:27] *** Quits: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[07:18:12] *** Joins: Datalink (Datalink@Datalink)
+[07:22:42] *** Quits: Webster (Webster@Pony-mme.2eo.212.73.IP) (Quit: Leaving)
+[07:23:20] <Moonlightning> Seriously?
+[07:23:22] <Moonlightning> Fuck.
+[07:24:41] <Moonlightning> Any suggestions, then?
+[07:25:07] <Moonlightning> Preferably something with per-window or per-tab process separation, so that one derpy page doesn't bring down the entire session (a la Safari)
+[07:25:21] <Moonlightning> And also something that isn't a total resource hog
+[07:25:58] <wolfyshy> Moonlightning: yeah there's literally nothing, Firefox is what I recommend
+[07:26:08] <wolfyshy> they are working towards process separation
+[07:26:15] <Moonlightning> … :|
+[07:26:17] <wolfyshy> it hasn't happened yet
+[07:26:19] <Moonlightning> How about Chromium?
+[07:26:21] <wolfyshy> there's some tests in Nightly
+[07:26:42] <Moonlightning> My browser tends to stay running as long as my IRC client and my OS
+[07:26:47] <Moonlightning> i.e. all the fuckin' time
+[07:27:03] <wolfyshy> Moonlightning: I've hit 12 days uptime with firefox, it only uses ~700-800MB RAM here with 31 tabs open
+[07:27:15] <wolfyshy> Moonlightning: but it will easily go to 2gb if I try and watch flash videos in hd
+[07:27:20] <wolfyshy> but that's because flash is sucky
+[07:27:21] <wolfyshy> and stupid
+[07:27:23] <wolfyshy> and needs to die
+[07:27:30] <wolfyshy> .... :o oopsie, got a little sidetracked
+[07:27:34] <Moonlightning> 12 days?
+[07:27:37] <Moonlightning> Try two months
+[07:27:43] <wolfyshy> I reboot a lot, kernel development does that
+[07:27:55] <wolfyshy> some things you can't test in VMs
+[07:27:56] <Moonlightning> Also, again, process separation…
+[07:28:05] <Moonlightning> I really can't have one page bringing down my entire session
+[07:28:10] <Moonlightning> That's a deal breaker
+[07:28:11] <wolfyshy> Moonlightning: well, firefox has pluginviewer/nsp.bin which separates flash
+[07:28:19] <Moonlightning> wat?
+[07:28:25] <wolfyshy> Moonlightning: I can kill those processes and still have a usable browser
+[07:28:25] <Moonlightning> (I am working on bailing from Chrome right now though)
+[07:28:34] <wolfyshy> Moonlightning: like Chrome's "Plugin Process"
+[07:28:40] <wolfyshy> Moonlightning: Firefox's name is "pluginviewer"
+[07:29:32] <Moonlightning> So…what should I assume? :/
+[07:29:34] <Moonlightning> Because…geez…
+[07:30:05] <wolfyshy> Moonlightning: if you continue to use chrome, multiple governments (at least the US and UK) can see everything, is what you should assume
+[07:30:08] <wolfyshy> oh, and AU
+[07:30:25] <Moonlightning> Fuck.
+[07:30:30] <Moonlightning> So I need to change passwords and shit. :/
+[07:36:44] <Blackjack> Wow, Moonlightning just believes anythiung anyone says on the Internet
+[07:37:22] <Blackjack> Hey Moonlightning, the Linux kernel has a backdoor in it, all keys and mouse input are logged and screenshots are taken every 10 seconds, Better switch to BSD.
+[07:37:39] <tiwake> heh
+[07:40:04] <Moonlightning> I should be using more FOSS anyway
+[07:40:38] <tiwake> huh, why is my firefox crashing
+[07:41:01] <Blackjack> Moonlightning: I have your alternative
+[07:41:06] <Blackjack> It's called "chromium"
+[07:41:09] <Googie> Moving away from Google dependence was my biggest reason for switching back to Firefox, before a lot of the Snowden leaks.
+[07:41:48] <Blackjack> Does nobody know about Chromium .-.
+[07:42:17] <tiwake> apt-get install chromium
+[07:42:18] <Googie> Sure, but I'd rather support Mozilla.
+[07:42:27] <Blackjack> I wouldn't
+[07:42:32] <tiwake> why?
+[07:42:45] <Blackjack> Because I don't like their software :(
+[07:43:00] <tiwake> chromium does not have tab groups
+[07:43:08] <tiwake> at least not last I knew
+[07:43:12] <Moonlightning> I do have a challenge, though, wolfyshy
+[07:43:18] <Googie> Still Google "dependence" with Chromium. Firefox's e10s is also going to be released soon, which will be a major improvement.
+[07:43:19] <Moonlightning> Why isn't this mentioned on the Wikipedia article?
+[07:43:26] <Moonlightning> e10s?
+[07:43:44] <Googie> Moving to a multi-process model with sandboxing.
+[07:43:51] <Blackjack> What is a tab group.
+[07:44:09] <Blackjack> Googie: You have the option to login to a Google account 
+[07:44:12] <Blackjack> That's not dependence
+[07:44:21] <tiwake> Blackjack: http://i.i.cbsi.com/cnwk.1d/i/tim//2010/08/24/firefox-panorama.jpg
+[07:44:41] <tiwake> that is 4 different tab groups
+[07:44:49] <Blackjack> Such a thing does not seem useful at all to me :P
+[07:45:04] <tiwake> its fantastically useful for me :P
+[07:45:10] <Googie> It is dependence, just look at what happened with IE6 :P
+[07:45:17] <Blackjack> I don't understand
+[07:45:31] <Googie> Everyone using the same browser is a bad thing. Everyone depending on Google's choices is a bad thing
+[07:45:40] <Blackjack> I'm not depending on anything
+[07:45:55] <Googie> Sure you are. You always have to depend on something
+[07:45:57] <Blackjack> I can fork Chromium right now and make it sync to my own server
+[07:46:05] <Blackjack> I can do whatever I want to use it
+[07:46:16] <Blackjack> Sure, I'm depending on something, I'm depending on blackjack-browser now
+[07:46:31] <Blackjack> The only solution is apparently to not use the computer
+[07:46:33] <Googie> Yeah, you can, congrats, now you have a fork that nobody cares about and will never get merged upstream, and is still dependant on Chromium for updates.
+[07:46:48] <Blackjack> Why would I want it to be merged?
+[07:46:58] <Blackjack> The whole point would be to make my own changes, for me.
+[07:47:46] <Googie> The point is, Chromium (which is mostly Google) still decides for you, simply because they have the manpower to actually maintain Chrome/Chromium properly.
+[07:48:07] <Blackjack> So what is your solution?
+[07:48:24] <Blackjack> Use Firefox and rely on Mozilla?
+[07:48:36] <Googie> Trading Google dependence for Mozilla dependence.
+[07:48:49] <Blackjack> ...Why?
+[07:49:13] <Googie> Because I don't trust Google, and I think they are getting a little too much market control in too many areas.
+[07:49:15] <Blackjack> Why should I trust people who make a slow, non-threaded browser and a mail client that crashes if I have any reasonable amount of mail?
+[07:50:31] <Googie> Why should I trust a company that has been shown to have major privacy issues ?
+[07:50:45] <Blackjack> At least their browser is good.
+[07:51:04] <Googie> Firefox is pretty good also :V
+[07:51:22] <Googie> I switched around the same time I also moved away from gmail to self-hosting.
+[07:51:42] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:52:41] <Blackjack> I don't like it
+[07:52:45] <wolfyshy> I see both points
+[07:52:57] <wolfyshy> the thing is, chromium/chrome also uses blink
+[07:53:02] <wolfyshy> their own private webkit fork
+[07:53:04] <tiwake> I want to self host my own email
+[07:53:14] <wolfyshy> they said in 2012 "we'll keep submitting patches to real webkit!"
+[07:53:15] <tiwake> it is a lot of effort to correctly set everything up though
+[07:53:17] <wolfyshy> they haven't.
+[07:53:35] <wolfyshy> tiwake: not sure if you run linux or not, if so gentoo wiki has great articles, and if you replace 'emerge' with 'apt-get' it works great on debian too hehe :)
+[07:53:38] <Blackjack> I could self-host my own email but I don't own the domain I'm using so it'd be a pain to swith over
+[07:53:40] <Googie> Also, as much as Chrome is "open source", there's a big difference between community style open source, and just doing what you want and then open-sourcing after the fact.
+[07:54:11] <Googie> Well, Chromium
+[07:54:17] <tiwake> wolfyshy: I've gotten most of it set up before, so I could receive and actually send mail before... but it was never quite right
+[07:54:20] <wolfyshy> let me put it this way
+[07:54:30] <Blackjack> The point is Googie, I can inspect the code and see there is no NSA backdoor
+[07:54:31] <tiwake> dovecot and postfix
+[07:54:49] <tiwake> there is the whole SSL garbage and stuff
+[07:54:51] <tiwake> bleh
+[07:54:54] <tiwake> hassle
+[07:55:14] <wolfyshy> I have filed 3 bugs with chromium and 7 bugs with firefox
+[07:55:41] <wolfyshy> all 7 firefox bugs have been fixed
+[07:55:46] <wolfyshy> none of the chromium bugs have
+[07:56:00] <Blackjack> How about I just use netcat
+[07:56:04] <Blackjack> Problem solved
+[07:56:11] <tiwake> wget :P
+[07:56:22] <Blackjack> No, too high level
+[07:56:36] <tiwake> but with wget I can -r it!
+[07:57:17] <Blackjack> Doesn't RMS wget websites and then like browse them offline in a secure bunker 10 miles under the earth's surface
+[07:57:52] *** Joins: Misan (misan@Pony-vmqpec.cm.kabsi.at)
+[07:58:25] <Googie> Chromium... I worry about the possibility of Chrome getting too much extra market share. I mean, Microsoft and Google alone were spearheading the idea of DRM in the browser.
+[07:58:32] <Googie> (As part of HTML5)
+[07:58:57] <Blackjack> How about we just write our own browser
+[07:59:11] <wolfyshy> Blackjack: yes, he uses wget and reads them in emacs.
+[07:59:19] <Blackjack> Ah
+[07:59:40] <Blackjack> Isn't it gemacs, doesn't he hate normal emacs
+[07:59:41] <Googie> Our browser would need to be under a nonprofit as it's a big community driven project. We could call it Firefox
+[07:59:44] <Moonlightning> wtf
+[07:59:45] <Blackjack> Or was it the other way around?
+[07:59:49] <Moonlightning> why is /Applications g+w
+[07:59:51] <wolfyshy> he wrote normal emacs.
+[07:59:55] <Blackjack> Oh
+[08:00:00] <wolfyshy> Moonlightning: so you can install apps without authenticating
+[08:00:02] <wolfyshy> Moonlightning: 'drag to install'
+[08:00:13] <wolfyshy> Blackjack: it's xemacs he doesn't like, aka Lucid Emacs
+[08:00:16] <Blackjack> Googie: I'm OK thanks
+[08:00:18] <Blackjack> wolfyshy: Ah
+[08:00:22] <Moonlightning> Um, yes, that's why it /offers you the authentication option/ when you drag to install
+[08:00:31] <Googie> Well, you're the one who suggested it, just telling you that such a project already exists :V
+[08:00:35] <Blackjack> If I knew how to even begin to write a browser I'd do it myself
+[08:00:43] <Moonlightning> I don't like this. :|
+[08:00:48] <Blackjack> I don't do visual things
+[08:00:52] <wolfyshy> I already wrote my own http and https transport libraries
+[08:00:55] <Blackjack> Browsers are extremely visual things
+[08:00:57] <wolfyshy> and most of ftp, though auth isn't supported
+[08:01:03] <Blackjack> wolfyshy: Yeah, well that is easy
+[08:01:18] <wolfyshy> Blackjack: not cross-platform threaded
+[08:01:23] <Blackjack> The hard part is converting the HTML into something that looks nice (and as it should)
+[08:01:25] <wolfyshy> god someone actually tested it
+[08:01:27] <wolfyshy> on fucking vms
+[08:01:40] <wolfyshy> (can I say curses here?)
+[08:01:44] <wolfyshy> (like 'fucking vms'?)
+[08:01:47] <Blackjack> Yes
+[08:01:50] <wolfyshy> okay
+[08:01:54] <wolfyshy> yeah, they tested it on *fucking* VMS
+[08:01:57] <Blackjack> This channel is unrated
+[08:02:06] * Blackjack fux wolfyshy
+[08:02:09] <tiwake> heh
+[08:02:17] <Blackjack> Something someething not an RP channel
+[08:02:27] * wolfyshy yelps! .-.
+[08:02:43] * wolfyshy tries to swat Blackjack with her tail
+[08:02:45] <wolfyshy> also
+[08:02:51] <wolfyshy> DECthreads are like posix threads, only not
+[08:03:04] * Blackjack wonders how this is working because mare
+[08:03:27] <Moonlightning> fucking doesn't imply penetration
+[08:03:33] <wolfyshy> scissoring
+[08:03:36] <Moonlightning> ^
+[08:03:50] <Moonlightning> alternately, you could claim implied futa and|or strapon
+[08:04:47] <tiwake> that was a quick topic change
+[08:05:03] <tiwake> I'm going to bed to do a bit of reading... TTFN poners
+[08:05:33] <wolfyshy> what about woofers :(
+[08:05:44] <Moonlightning> WTF
+[08:05:48] <Moonlightning> why is Silverlight installed
+[08:05:52] <Moonlightning> also, how do I remove it
+[08:05:54] <wolfyshy> netflix?
+[08:05:56] <Moonlightning> completely
+[08:06:10] <Moonlightning> yes, this is why I don't watch Netflix on my computer
+[08:06:21] <Blackjack> Netflix works with HTML5...
+[08:06:36] <Googie> Kinda.
+[08:06:43] <Googie> That DRM stuff I talked about...
+[08:06:45] <Moonlightning> I don't trust Microsoft to not go “sure, uninstalled!” and secretly install a backdoor or something
+[08:07:00] <Moonlightning> Sigh. I should really just start fresh.
+[08:07:03] <Blackjack> Moonlightning: How? Erase your HDD.
+[08:07:05] <wolfyshy> well if this is... wait /Applications
+[08:07:06] <wolfyshy> this is a mac?
+[08:07:09] <Moonlightning> yes
+[08:07:21] <Googie> https://w3c.github.io/encrypted-media/
+[08:07:21] <PinkiePieBot> [ Encrypted Media Extensions ]
+[08:07:23] <wolfyshy> I was going to say 'if this is windows they can already put a backdoor in using Windows Updates'
+[08:07:43] <Moonlightning> Note the lack of drive letters [which are a stupid idea]
+[08:07:53] <Moonlightning> volume letters *
+[08:07:58] <Moonlightning> they're not just for drives
+[08:08:08] <wolfyshy> junction points :D
+[08:08:15] <Blackjack> I don't care about DRM
+[08:08:19] <Blackjack> If I want DRM-free I will torrent
+[08:16:41] *** Blackjack is now known as AppleDash
+[08:25:15] <Moonlightning> So what about Firefox's “data choices” tab thing?
+[08:25:58] <Moonlightning> I mean, I'm all for helping improve stuffs, but obviously I don't want e.g. what sites I visit to be in any way linked with any personally-identifiable information
+[08:26:01] <Moonlightning> including stuff like IP
+[08:31:59] <Fallfeathers> Who wants to take a look at my firewall rules with me to see why they aren't working
+[08:34:14] * Moonlightning raises hoof
+[08:35:02] <worthless> why what isn't working about them?
+[08:36:21] <Fallfeathers> This company's IP phone provider is trying to access a device on the LAN from the WAN through port 3306. I've created a SAT rule which forwards incoming connections from the WAN to the device, and then an Allow rule after that to allow incoming traffic from the WAN to access the device on 3306. However they're still unable to connect and portscanning says the port isn't open.
+[08:37:07] <worthless> Behind a router?
+[08:37:16] <Fallfeathers> Router/firewall combo
+[08:37:53] <worthless> Set port forwarding from the destination port to the internal IP/port?
+[08:38:08] <Fallfeathers> Yep, that's what the SAT rule does
+[08:39:02] <worthless> not sure without looking. besides you would be better off with help from someone else besides me
+[08:42:04] <Lapsus> Average packet loss: 89.74%
+[08:42:12] <Lapsus> yaaay -.-
+[08:43:44] *** Nelly is now known as Nully
+[08:50:25] *** Joins: Phase4 (Phase4@Pony-72j04h.internode.on.net)
+[08:50:48] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:08:52] <Googie> Let's see how this goes/fails.
+[09:09:00] * Googie begins updating his router.
+[09:14:27] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[09:15:00] *** Joins: JockeTF (jocke@Pony-pbm.r3h.28.195.IP)
+[09:28:38] *** [A]McKey is now known as McKey
+[09:30:06] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[09:37:09] *** Joins: Googolplexed (Googol@gnaws.on.keratin.and.ears)
+[09:37:54] *** Quits: Googolplexed (Googol@gnaws.on.keratin.and.ears) (Decryption has failed.)
+[09:39:39] *** Joins: Googolplexed (Googol@gnaws.on.keratin.and.ears)
+[09:40:34] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (Ping timeout: 241 seconds)
+[09:45:43] *** Quits: Googolplexed (Googol@gnaws.on.keratin.and.ears) (Connection closed)
+[09:48:11] *** Joins: Googolplexed (Googol@gnaws.on.keratin.and.ears)
+[09:49:01] *** Googolplexed is now known as Googie
+[10:11:56] *** Joins: Datalink_ (Datalink@Datalink)
+[10:15:08] *** Quits: Datalink__ (Datalink@Datalink) (Ping timeout: 121 seconds)
+[10:53:10] *** Quits: reiuiji (reiuiji@nuclear.raven) (Ping timeout: 121 seconds)
+[10:55:19] *** Joins: reiuiji (reiuiji@Pony-6vp0lq.ma.comcast.net)
+[11:28:12] *** Quits: cyborg_ar (cyborgar@Pony-lr2.8oa.25.181.IP) (Ping timeout: 121 seconds)
+[11:33:48] *** Joins: Alphagamer774 (Alphagamer7@Pony-pifbnt.cc.shawcable.net)
+[11:37:55] *** Quits: Alphagamer774 (Alphagamer7@Pony-pifbnt.cc.shawcable.net) (Quit:  HydraIRC -> http://www.hydrairc.com <- Now with extra fish!)
+[11:55:32] *** Q0 is now known as Q0|Away
+[12:52:16] *** Neptune|sleep is now known as Neptune
+[13:17:27] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[13:22:35] *** Joins: Datalink (Datalink@Datalink)
+[13:35:57] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[13:45:51] <Fallfeathers> I'm doing late night firewall testing and I restarted the company's VoIP system to test and nnnnow it's not responding to anything except HTTP
+[14:23:05] *** Quits: faalentijn (faalentijn@Pony-hp8.ip7.85.86.IP) (Connection closed)
+[14:27:03] *** Quits: Fallfeathers (Fallfeather@Pony-v0u6nc.internode.on.net) (Connection closed)
+[15:02:50] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[15:05:57] *** Joins: Datalink (Datalink@Datalink)
+[15:08:19] <Moonlightning> wolfyshy: so why do you say Chrome is bad?
+[15:10:07] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[15:13:19] *** Joins: Datalink (Datalink@Datalink)
+[15:58:41] *** Joins: duskchaser (uzwhedfctkd@Pony-tnh.f0s.231.212.IP)
+[15:58:45] *** Parts: duskchaser (uzwhedfctkd@Pony-tnh.f0s.231.212.IP) ()
+[16:07:21] *** Joins: Datalink__ (Datalink@Datalink)
+[16:10:44] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[16:20:05] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:48:18] *** Quits: Datalink__ (Datalink@Datalink) (Ping timeout: 121 seconds)
+[17:01:58] *** Joins: Datalink__ (Datalink@Datalink)
+[17:11:08] *** Quits: Datalink__ (Datalink@Datalink) (Ping timeout: 121 seconds)
+[17:20:41] *** Joins: Datalink (Datalink@Datalink)
+[17:25:47] *** Ashleep is now known as Ashfire
+[17:49:19] *** McKey is now known as [A]McKey
+[17:49:35] *** Joins: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[17:51:02] *** [A]McKey is now known as McKey
+[17:56:04] *** Quits: JockeTF (jocke@Pony-pbm.r3h.28.195.IP) (Quit: Leaving.)
+[18:00:15] *** Q0|Away is now known as Q0
+[18:04:58] *** Nully is now known as Null|Waters
+[18:30:42] *** Quits: Null|Waters (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (Quit: *Pewf*)
+[18:33:16] *** Ashfire is now known as Ash[Away]
+[18:56:18] <sniperfox> NSA/Google alliance = Chrome bad (in my opinion)
+[18:56:54] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[19:02:27] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[19:03:55] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[19:30:26] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[19:40:50] <Lapsus> yay networks http://i.imgur.com/YWtlAdX.png
+[19:52:17] <Lapsus> apparently I can't type and mislabeled some systems on the right
+[19:52:18] <Lapsus> fuck
+[20:03:48] *** Quits: Phase4 (Phase4@Pony-72j04h.internode.on.net) (Ping timeout: 121 seconds)
+[20:05:39] *** Joins: ChaoticRift (ChaoticRift@Pony-91lof8.7h3b.037j.000a.2601.IP)
+[20:45:00] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[20:46:51] *** Quits: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (Killed (Luna (Lost at Russian Roulette.)))
+[20:47:29] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[20:50:25] *** Quits: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (Quit: BRBRBRBRBRBRB)
+[20:54:49] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[21:12:51] <Moonlightning> wtf
+[21:12:58] <Moonlightning> I told Firefox to import my history from Chrome
+[21:13:04] <Moonlightning> It only imported stuff up until last November
+[21:13:11] *** Quits: ChaoticRift (ChaoticRift@Pony-91lof8.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[21:20:42] <Twilightlicious> i updated my version of Tor and now it has no Window
+[21:20:58] <Twilightlicious> anyone know how to make it show the command window?
+[21:24:52] <Nelly> there was an update for tor?
+[21:24:54] * Nelly flails.
+[21:27:24] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[21:29:15] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[21:29:36] *** Joins: Skids (ejd@Pony-fej07d.res.rr.com)
+[21:31:28] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[21:34:11] *** Nelly is now known as Melly
+[21:34:58] *** Ash[Away] is now known as Ashfire
+[21:35:23] <ShivalPonyWolf> LOL - https://pbs.twimg.com/media/B-tJA32WwAEz5kd.png:large
+[21:35:43] <Twilightlicious> So uh.
+[21:36:05] <Twilightlicious> i'm thinking about getting the GTX 960
+[21:36:10] <Twilightlicious> because it's cheap :3
+[21:36:24] <Twilightlicious> But it only has one DVI port.
+[21:36:53] <Twilightlicious> which means i plan on keeping my current GPU attached as well for my 2nd moniter.
+[21:37:06] <locodash11[server]> gotta get some old radeon cards, still more powerful, and cheaper
+[21:37:09] <Twilightlicious> i dunno if my PSU can handle it lol
+[21:37:51] *** McKey is now known as [A]McKey
+[21:45:02] <Kinsley> Twilightlicious: the 960 has at least one DisplayPort output as well, yeah?
+[21:45:17] <Kinsley> Because you can get a DisplayPort to DVI adapter for like $8
+[21:48:42] <Twilightlicious> I need Display port to VGA
+[21:48:55] <Twilightlicious> Which exists, but.
+[21:48:58] <Twilightlicious> reviews say it blurs the image
+[21:49:38] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:53:14] <Kinsley> Might be time to replace the monitor, then.
+[21:54:02] <Twilightlicious> I'm poor :3
+[21:54:08] <Twilightlicious> thats why im getting a 960 lol
+[21:54:57] <Twilightlicious> i could get one new moniter as my main moniter that supports displayport?
+[21:55:03] <Twilightlicious> and then use my current DVI moniter as my 2nd.
+[22:01:07] <wolfyshy> I haven't had any issue with dp->vga
+[22:01:23] <AppleDash> Twilightlicious: Using 2 different GPUs to drive 2 different monitors is not ideal, and I'm not certain if it will even /work.
+[22:01:26] <wolfyshy> it's worked well for me, up to 1600x1200.. never tried with 1920x1080... might be blurry because they didn't set the resolution right
+[22:01:28] <AppleDash> /work/*
+[22:01:34] <wolfyshy> with those adaptors, you have to set the mode manually
+[22:01:39] <wolfyshy> the reviewer may not have known that
+[22:01:51] <Twilightlicious> i had a DVI to VGA adapter be blurry once.
+[22:02:02] <Twilightlicious> And it wasnt because of the resolution
+[22:02:09] <Twilightlicious> was a cheap chinese adapter lol
+[22:02:15] <AppleDash> Then it was because of your GPU
+[22:02:26] <Twilightlicious> no because another adapter worked fine
+[22:02:29] <AppleDash> A DVI to VGA adaptor is literally just a thing that connects pins together
+[22:03:02] <wolfyshy> well
+[22:03:05] <wolfyshy> DVI-A to VGA is
+[22:03:11] <wolfyshy> DVI-D to VGA is a bit different
+[22:03:17] <wolfyshy> rather
+[22:03:19] <AppleDash> That;s no longer an adaptor
+[22:03:21] <wolfyshy> DVI-A to VGA is just pins
+[22:03:35] <wolfyshy> sure it is, it's an adaptor with a lil chip inside to convert digital signals to analogue
+[22:05:34] *** Quits: Lapsus (Lapsus@i-forget.ca) (Quit: )
+[22:06:31] <locodash11[server]> active vs passive adapter
+[22:07:12] <AppleDash> I consider something with a chip inside to be a convertor. It converts the signals
+[22:07:17] <AppleDash> converter*
+[22:08:19] <locodash11[server]> though it's still called an adapter
+[22:08:35] <AppleDash> Not to me
+[22:20:10] *** Joins: ChaoticRift (ChaoticRift@Pony-n00ale.7h3b.037j.000a.2601.IP)
+[22:27:41] <Moonlightning> According to setpgid()s ponypage, the calling process must either be a parent of the target process, or have the same euid
+[22:27:52] <Moonlightning> The latter is true, but I'm getting ESRCH :/
+[22:27:57] <AppleDash> OK
+[22:28:51] <Moonlightning> halp
+[22:28:53] <ola> http://img689.imageshack.us/img689/637/splashpng.png
+[22:34:15] *** Joins: Pony_95738 (Lapsus@Pony-m8v.m2p.239.99.IP)
+[22:34:24] *** Pony_95738 is now known as Lapsus
+[22:34:27] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[22:34:47] <Lapsus> INTERNEEEEEEET
+[22:35:00] *** Phase4 is now known as Internet
+[22:35:02] <AppleDash> hello Lapsus
+[22:35:03] <Internet> Lapsus, yes?
+[22:35:22] <Lapsus> http://www.speedtest.net/result/4171175257.png
+[22:35:25] <Lapsus> :D
+[22:35:34] *** Internet is now known as Phase4
+[22:35:40] <Phase4> Lapsus, i want
+[22:36:12] <AppleDash> Lapsus, weren't you promised 50
+[22:36:38] <Lapsus> AppleDash: no, 30/5
+[22:36:43] <AppleDash> Ah
+[22:36:52] <Lapsus> they tried to upsell to 50
+[22:37:48] <locodash11[server]> I have 25/6, I actually get 60/6
+[22:39:13] <AppleDash> Lapsus, give me op for a minute
+[22:39:16] <AppleDash> just do it trust me I'm a doctor
+[22:41:31] * Lapsus sets mode +no AppleDash AppleDash
+[22:41:44] <AppleDash> Lapsus: I want to modify the topic
+[22:42:24] <Lapsus> I can change it for you :3
+[22:42:31] <AppleDash> OK
+[22:43:34] *** Lapsus changes topic to 'Hardware, Software, Whatever! | Internet speed survey! http://www.speedtest.net/wave/6841b5b75c918540'
+[22:43:52] <Lapsus> close enough?
+[22:43:55] <AppleDash> Yes
+[22:43:58] <AppleDash> Now we wait and see who has the fastest connection here
+[22:44:16] <Lapsus> someone's server, I'm sure
+[22:44:21] <AppleDash> That doesn't count
+[22:44:35] <AppleDash> I'll just ignore results from server companies :P
+[22:48:31] <ShivalPonyWolf> damn
+[22:49:04] <ShivalPonyWolf> i can max out the local speedtest
+[22:57:11] <wolfyshy> wow whoever is in colorado just made the wave take a nosedive lol
+[22:58:14] <wolfyshy> oh wow you can retest?
+[22:58:19] <locodash11[server]> lol
+[22:58:41] <wolfyshy> maybe at some point I'll add my speed
+[22:58:48] <wolfyshy> need to fix wifi first... or do it over ethernet
+[22:59:39] <locodash11[server]> mine randomly drops to 1/100th on download sometimes
+[23:04:13] <Twilightlicious> Speeeeeds
+[23:04:42] *** Joins: faalentijn (faalentijn@Pony-hp8.ip7.85.86.IP)
+[23:08:23] *** Quits: Finnfinn (Finnfinn@Incidental.Unicorn.Finnfinn) (Quit: He's dead, Jim.)
+[23:17:49] *** Joins: Finnfinn (Finnfinn@Incidental.Unicorn.Finnfinn)
+[23:20:58] <ShivalPonyWolf> do home connections paid for by work count on this chart?
+[23:22:00] <faalentijn> I got the most basic LFS system work. Now up to the next book!
+[23:23:10] <faalentijn> http://preview.tinyurl.com/lubtau5
+[23:23:11] <PinkiePieBot> [ TinyURL.com - shorten that long URL into a tiny URL ]
+[23:41:13] *** Joins: cyborg_ar (cyborgar@Pony-53c.eai.25.181.IP)
+[23:42:53] <faalentijn> Mentioning SystemD in a Gentoo mailing list is like throwing meat in front of a pack of hungry wolves
+[23:45:48] <wolfyshy> mmmm
+[23:45:49] <wolfyshy> meat ^.^
+[23:50:28] <faalentijn> As has been more or less officially stated, systemd is an attempt to
+[23:50:30] <faalentijn> provide a uniform and monolithic kernel-user space interface FOR THE
+[23:50:32] <faalentijn> BENEFIT OF POTENTIAL (COMMERCIAL) SOFTWARE DEVELOPERS.  RedHat wants
+[23:50:34] <faalentijn> Linux to be just like MS Windows so that *they* (RedHat) can be just
+[23:50:53] <faalentijn> Ah conspiracies. Delicious
+[23:59:21] <AppleDash> ShivalPonyWolf: Sure

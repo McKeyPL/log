@@ -1,0 +1,674 @@
+[00:00:03] *** Joins: cyborg_ar (cyborgar@Pony-sd2.263.49.190.IP)
+[00:01:45] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[00:16:32] *** Joins: Asoka (Asoka@Pony-hqi0v6.net-htp.de)
+[00:19:44] *** Quits: Asoka_White (Asoka@Pony-k94378.net-htp.de) (Ping timeout: 121 seconds)
+[00:25:30] *** Quits: DataByteBrony (DataByte@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[00:35:56] *** Joins: AquaBrandish (AndChat3408@Pony-kr2.23f.144.201.IP)
+[00:36:14] *** Joins: AndChat-34089 (AndChat3408@Pony-tf48k7.static.axtel.net)
+[00:37:19] *** Quits: MistVeil (AndChat3408@Pony-hahd0r.static.axtel.net) (Ping timeout: 121 seconds)
+[00:37:59] *** Joins: MistVeil (AndChat3408@Pony-hahd0r.static.axtel.net)
+[00:38:04] *** Quits: MistVeil (AndChat3408@Pony-hahd0r.static.axtel.net) (Connection closed)
+[00:40:05] *** Quits: AquaBrandish (AndChat3408@Pony-kr2.23f.144.201.IP) (Ping timeout: 121 seconds)
+[00:40:24] *** Quits: AndChat-34089 (AndChat3408@Pony-tf48k7.static.axtel.net) (Ping timeout: 121 seconds)
+[00:41:57] <Colgate> what happens on windows if you name a ".txt" and then tell windows to hide file extensions of known file types?
+[00:42:03] <Colgate> name a file*
+[00:42:58] <Colgate> windows itself won't let you, but you could probably do it from linux and then mount the drive on windows
+[00:43:07] <Webster> You can do that from the command line, actually.
+[00:43:08] <Kinsley> Hmmm.
+[00:43:12] <Webster> As far as I know it won't hide it.
+[00:43:13] <Phase4> ^ Webster
+[00:43:24] <Phase4> yeah, it doesn't hide dot files
+[00:43:31] <Colgate> ah
+[00:43:38] <Colgate> that's disappointing
+[00:44:09] <Colgate> how do you even create a file from windows command line, echo and touch are failing me >:(
+[00:44:34] <Phase4> if you don't care about content, dir > .txt
+[00:44:47] <mniip> type > .txt
+[00:44:48] <Phase4> cmd echo isn't posix echo
+[00:44:49] <mniip> ^Z
+[00:45:02] <Colgate> ...damn it, now I feel dumb, too obvious >.>
+[00:45:57] <Colgate> oh, it still displays it, but doesn't have a name
+[00:46:23] <wolfyshy> copy con .txt
+[00:46:26] <wolfyshy> :D
+[00:46:57] <wolfyshy> and the horrible truth: if you have a legitimate printer port, you can make your screen a teletype with MODE redirection from CON to LPT1
+[00:46:57] <Phase4> oh neat, didn't think it hide files like that
+[00:47:01] <Phase4> hid filenames'
+[00:47:30] <mniip> wolfyshy, you still can't name a file "con"
+[00:48:06] <Colgate> I know there's a bunch of reserved names you can't use due to legacy stuff
+[00:48:12] <mniip> oh man, now I wonder what happens if I mount an ntfs in linux
+[00:48:17] <mniip> and create a file named con
+[00:49:01] <Phase4> mniip, it can't be touched from win32
+[00:49:14] <mniip> [01:47:42] <mniip> oh man, now I wonder what happens if I mount an ntfs in linux
+[00:49:18] <Phase4> CON, LPT1, COM1, COM2 and so on
+[00:49:26] <mniip> >if I mount an ntfs in linux
+[00:49:48] <Phase4> you can delete them from the ntdll functions, but those names are special cased in kernel32.dll
+[00:51:26] <mniip> aw damn
+[00:51:34] <mniip> can't mount rw because windows is hibernated
+[00:54:03] *** init3 is now known as Init3-away
+[01:03:27] *** Creeps|AFK is now known as RedHelper
+[01:03:46] <Phase4> mniip, you should create a file like that in a random folder, then mark it hidden and system
+[01:03:53] <Phase4> they'll never be able to delete that folder
+[01:05:30] *** Gigabit is now known as Gigaway
+[01:10:05] *** Joins: MistVeil (AndChat3408@Pony-hahd0r.static.axtel.net)
+[01:13:43] *** Joins: AquaBrandish (AndChat3408@Pony-ke3.6so.254.189.IP)
+[01:14:26] *** Joins: AndChat-34089 (AndChat3408@Pony-tf48k7.static.axtel.net)
+[01:16:09] *** Quits: MistVeil (AndChat3408@Pony-hahd0r.static.axtel.net) (Ping timeout: 121 seconds)
+[01:17:50] *** Quits: AquaBrandish (AndChat3408@Pony-ke3.6so.254.189.IP) (Ping timeout: 121 seconds)
+[01:18:14] *** Joins: AquaBrandish (AndChat3408@Pony-hahd0r.static.axtel.net)
+[01:18:40] *** AquaBrandish is now known as MistVeil
+[01:20:34] *** Quits: AndChat-34089 (AndChat3408@Pony-tf48k7.static.axtel.net) (Ping timeout: 121 seconds)
+[01:29:23] <mniip> woah
+[01:29:24] <mniip> dude
+[01:29:25] <mniip> duuude
+[01:29:26] <mniip> https://www.gentoo.org/
+[01:29:28] <PinkiePieBot> [ Welcome – Gentoo Linux ]
+[01:33:56] <coppercore> bqaahahaha
+[01:33:59] <coppercore> that si BEAUTIFUL
+[01:37:09] *** Quits: MistVeil (AndChat3408@Pony-hahd0r.static.axtel.net) (Quit: Bye)
+[01:39:26] <Phase4> anyone have a gopher client?
+[01:41:40] <cyborg_ar> that is actually really beautiful
+[01:41:52] <Phase4> there's a firefox extension that adds gopher support, can confirm it works
+[01:42:38] <cyborg_ar> aw, shame it doesnt look that nice in w3m
+[01:44:31] <mniip> anyone into CSS
+[01:45:01] <mniip> how can I make the body object be only as large as the content
+[01:45:29] <mniip> display: inline-block; seems to do the job
+[02:01:57] <Starthunder> Where can I find an online copy of the C standard? >.>
+[02:02:53] <AppleDash> Starthunder: http://google.com/
+[02:02:54] <PinkiePieBot> [ Google ]
+[02:04:23] *** Quits: Crimson_Tail (ChaoticRift@Pony-5c72qc.7h3b.037j.000a.2601.IP) (Connection closed)
+[02:04:55] <Starthunder> …dammit
+[02:05:04] <Starthunder> DuckDuckGo, why you no put Stack Exchange results at the top?!
+[02:05:15] <cyborg_ar> because stack exchange sucks
+[02:05:49] <cyborg_ar> it's amazing how they managed to create an environment even more toxic and less fun than wikipedia
+[02:06:26] <Starthunder> :|
+[02:06:29] <Starthunder> I haven't noticed.
+[02:06:55] <cyborg_ar> (i still do use stack exchange as much as i use wikipedia)
+[02:07:01] <cyborg_ar> but i wouldnt dare contributer
+[02:07:03] <cyborg_ar> te*
+[02:09:00] *** Joins: Crimson_Tail (ChaoticRift@Pony-toa3i1.7h3b.037j.000a.2601.IP)
+[02:19:57] <cyborg_ar> Phase4: gopher://gopher.ssb.is/g/glog/imgs/hitler_water.gif
+[02:20:36] <Phase4> cyborg_ar, what you didn't realise is that i'm drinking water RIGHT NOW
+[02:21:19] <cyborg_ar> while people are being murdered in this instant
+[02:21:27] <cyborg_ar> you're a monsther
+[02:21:29] <cyborg_ar> ter*
+[02:21:36] <cyborg_ar> monster mother
+[02:21:38] <cyborg_ar> haha
+[02:21:48] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (A TLS packet with unexpected length was received.)
+[02:21:58] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[02:26:43] *** Quits: eyeburn (eyeburn@secret.den.of.flaming.evil) (A TLS packet with unexpected length was received.)
+[02:26:51] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[02:27:57] *** Init3-away is now known as init3
+[02:35:15] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[02:42:46] *** Joins: init3 (Jason@Pony-e2r1a6.dyn.centurytel.net)
+[02:45:10] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[03:07:48] *** eyeburn is now known as Starburn
+[03:44:33] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[03:45:10] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[04:06:42] *** Gigaway is now known as Gigabit
+[04:11:51] *** Quits: cyborg_ar (cyborgar@Pony-sd2.263.49.190.IP) (Client exited)
+[04:19:46] *** RedHelper is now known as Creeps|AFK
+[04:38:09] *** Joins: cyborg_ar (cyborgar@Pony-le8.j81.25.181.IP)
+[04:44:12] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[05:00:13] *** Brolf_pog is now known as Minigash
+[05:05:53] *** Minigash is now known as Big
+[05:06:09] *** Big is now known as Bigbuck
+[05:16:04] *** Gigabit is now known as GigaZzz
+[05:31:23] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[05:31:52] *** locodashie11 is now known as Pony_13004
+[05:43:22] *** Joins: Coco (coco@Pony-l3n1m0.ma.comcast.net)
+[05:46:49] *** Coco is now known as Coco_Pommel
+[05:49:55] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[05:51:59] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[05:59:50] *** Q0|Away is now known as Q0
+[06:01:53] *** Bigbuck is now known as Shnuggles
+[06:05:06] *** Quits: init3 (Jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[06:06:45] *** Pony_13004 is now known as locodashie11
+[06:08:29] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[06:24:21] *** Quits: Crimson_Tail (ChaoticRift@Pony-toa3i1.7h3b.037j.000a.2601.IP) (Ping timeout: 121 seconds)
+[06:27:42] *** Quits: Coco_Pommel (coco@Pony-l3n1m0.ma.comcast.net) (Connection closed)
+[06:28:59] *** Joins: Coco_Pommel (coco_pommel@Pony-l3n1m0.ma.comcast.net)
+[06:31:32] *** Joins: Crimson_Tail (ChaoticRift@Pony-toa3i1.7h3b.037j.000a.2601.IP)
+[06:34:38] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[06:47:23] *** Quits: Compu (compu@snuggly.filly) (Ping timeout: 121 seconds)
+[06:49:07] *** Joins: Compu (compu@snuggly.filly)
+[07:13:19] <cyborg_ar> http://brunching.com/images/geekchartbig.gif
+[07:28:18] *** init3 is now known as Init3-away
+[07:29:09] *** Quits: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[07:29:12] <AppleDash> How are furries geeky in any way
+[07:34:34] <Coco_Pommel> i think you are confusing geeks with nerds
+[07:36:48] <Coco_Pommel> it might be nitpicking, but a geek is generaly just a person who goes beyond being a fan
+[07:37:53] <Kinsley> Furries aren't nerds either.
+[07:38:45] <Shnuggles> it's just a consistent joke really
+[07:38:50] <cyborg_ar> furries are furries
+[07:38:59] <Shnuggles> that furries are everywhere, just not liked everywhere
+[07:39:01] <Shnuggles> which is stupid
+[07:39:15] <Shnuggles> It has gotten better
+[07:39:40] <Shnuggles> but, people are still dicks to people that identify as furries
+[07:39:44] <Coco_Pommel> furries, like trekies, are geeks, but not nessesarly nerds
+[07:40:02] <cyborg_ar> yes
+[07:40:40] <cyborg_ar> they use the word geek there as "obsessive" on the thing they're into
+[07:40:52] <Coco_Pommel> furries are just the new trekies, and in another 15 years we wont see much drama around them
+[07:41:08] <Coco_Pommel> something else will take its place
+[07:41:23] <cyborg_ar> i think it will take a while
+[07:42:01] <cyborg_ar> the thing with furries being ostracized on the internet is really as old as the internet itself
+[07:42:12] <cyborg_ar> goes some 30 years back
+[07:42:16] <Coco_Pommel> look how fast nerdy culture got integrated, if you went to comiccon 20 years ago you would have been laughed out of the room
+[07:43:04] <Coco_Pommel> though i think a lot of that is thanks to marvel and the movies
+[07:43:25] *** Init3-away is now known as init3
+[07:43:31] <Starthunder> as always, relevant xkcd: https://xkcd.com/747/
+[07:43:32] <PinkiePieBot> [ xkcd: Geeks and Nerds ]
+[07:43:45] <Coco_Pommel> all it would take is 1 major production and they could become somewhat mainstream
+[07:44:19] <Coco_Pommel> ah, i was looking for that comic
+[07:44:21] <Starthunder> Of course, none of the big entities are going to make such a thing, because it wouldn't have enough mainstream appeal. :V
+[07:44:33] <Starthunder> site:xkcd geek vs nerd  # you're welcome
+[07:44:38] <Starthunder> site:xkcd.com *
+[07:44:39] <Coco_Pommel> they would have said the same thing pre spiderman about superheros
+[07:44:40] <Starthunder> herp derp
+[07:45:04] <Starthunder> …what?
+[07:46:00] <Coco_Pommel> prior to spiderman 1 in 2001, superheros wernt really taken that seriously as a genre
+[07:48:39] <Starthunder> How does this relate to furries, though?
+[07:49:15] <Coco_Pommel> the point, is it only takes 1 transformitive work to sway public opinion
+[07:49:23] <cyborg_ar> not really
+[07:49:34] <Starthunder> …and we just haven't had such a work for furries yet?
+[07:49:51] <Coco_Pommel> can you think of one, i certanly cant
+[07:50:22] <cyborg_ar> how? there are some really awesome productions with anthropomorphic characters
+[07:50:51] <cyborg_ar> there's this one with the ponies, though it's technically not "anthro" under some definitions :)
+[07:51:14] <Coco_Pommel> i supose yes, that would be the closest i can think of :P
+[07:51:21] <Coco_Pommel> and maybe howard the duck :P
+[07:51:21] <cyborg_ar> it's really funny though
+[07:51:52] <cyborg_ar> that it's some kind of proof to the infinite supply of hate on the internet
+[07:52:24] <Coco_Pommel> but say idk, 2kinds is made into a movie and its actually good, i think you would see public opinion change overnight
+[07:52:37] <cyborg_ar> the rise of otakus and then bronies hasnt been enough to distract the trolls enough to leave the furries alone
+[07:52:47] <Coco_Pommel> and by overnight i mean about 5-10 years
+[07:53:08] <cyborg_ar> hate just multiplies to cover the demand
+[07:53:10] <cyborg_ar> haha
+[07:53:23] <Coco_Pommel> yea, but theres so many of us now i think we outnumber the haters for once
+[07:54:00] <cyborg_ar> they dont need to be numerous to be effective
+[07:54:08] *** init3 is now known as init3_WindowsIsBestOS
+[07:54:09] <Coco_Pommel> it dosent hurt though
+[07:54:46] <Coco_Pommel> a hating minority under presure will tend to cave due to social stigma
+[07:56:19] <Coco_Pommel> the biggest problem bronies and furries have is they tend to get lumped in with all the lgbt hate, i think as we see that start to fade, so too will the hate fade for them.
+[07:56:22] <cyborg_ar> there arent many social consequences on hating furries, and that wont change in a while
+[07:56:46] <cyborg_ar> in some parts of the world it's still ok to hate black people, even after all they fought
+[07:57:16] *** Joins: PeakVolu1e (k9ldt@Pony-tqvh62.fios.verizon.net)
+[07:57:42] <cyborg_ar> and that took hundreds of years
+[07:57:46] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:58:02] <cyborg_ar> public image may change fast but not social norms
+[07:58:20] <Coco_Pommel> social norms only take a generation
+[07:58:21] <cyborg_ar> i think the fastest thing i've noticed is cigarettes
+[07:58:39] *** Quits: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net) (Ping timeout: 121 seconds)
+[07:58:56] <cyborg_ar> it only took a couple generations to sway from the social norm being that cigs are cool and healthy to being abhorrent
+[07:59:11] <Coco_Pommel> we wont see race issues resolved in the US until the boomers and GenXers are all dead
+[07:59:41] <cyborg_ar> now count all the generations that need to die off before furry hate subsides :)
+[08:00:30] <Coco_Pommel> hmm, furry hate is likly tied to religous conservitism, so 60ish years in US?
+[08:00:59] <Shnuggles> furries aren't tied to that..
+[08:01:05] <Shnuggles> furries are tied to sexuality...
+[08:01:12] <Shnuggles> deviant sexuals
+[08:01:12] <cyborg_ar> i think most 13 year old trolls will keep trolling when they're 73
+[08:01:26] <Coco_Pommel> i disagree, a lot of that stems from disgust bread from that religous conservitism
+[08:01:38] <Shnuggles> a lot of what?
+[08:01:44] <Coco_Pommel> the hate
+[08:01:51] <cyborg_ar> well a good chunk of sexual based hate comes from religious norms
+[08:02:07] <cyborg_ar> that puts furries, homosexuals and transexuals in the same bag
+[08:02:10] <Shnuggles> that's what i was thinking coco was saying cyborg
+[08:02:17] *** Quits: Crimson_Tail (ChaoticRift@Pony-toa3i1.7h3b.037j.000a.2601.IP) (Quit: Oops, a kernel panic)
+[08:02:20] <Shnuggles> but he said a lot of that
+[08:02:32] <Shnuggles> so it left it ambiguous
+[08:02:49] <Shnuggles> sad part is
+[08:02:57] <cyborg_ar> man, it must be really bad for the poor black gay trans otaku furry
+[08:03:01] <Shnuggles> it's not as religious based as i originally thought
+[08:03:04] <cyborg_ar> brony
+[08:03:23] <cyborg_ar> i'd shake his hand
+[08:03:39] <Shnuggles> wait what
+[08:03:51] <Kinsley> He's jewish, too.
+[08:03:52] <Coco_Pommel> i think a black gay trans otaku furry athiest would have it worse, at least down south
+[08:03:59] <Kinsley> Nah, Jewish.
+[08:04:01] <Shnuggles> nah
+[08:04:02] <cyborg_ar> jew
+[08:04:02] <Shnuggles> jewish
+[08:04:05] <Kinsley> Jewish would be worse.
+[08:04:06] <AppleDash> I'm waiting for people to stop sticking to outdated social norms
+[08:04:14] <Shnuggles> or mormon
+[08:04:18] <Kinsley> Muslim.
+[08:04:23] <cyborg_ar> AppleDash: you're likely to die before that
+[08:04:25] <cyborg_ar> oh yes
+[08:04:29] <Kinsley> Or, bonus points, Sikh.
+[08:04:31] <cyborg_ar> muslim converted jew
+[08:04:33] <Shnuggles> also cyborg
+[08:04:34] <AppleDash> I'll be waiting my whole life then
+[08:04:36] <Shnuggles> i know this sounds stupid
+[08:04:39] <Shnuggles> but with how you were saying it
+[08:04:44] <Shnuggles> wouldn't you want to shake her hand?
+[08:04:45] <Coco_Pommel> where are you all from? because here in new england i think people would smack you for saying bad things about jews
+[08:04:58] <cyborg_ar> Shutter: oh i was about to clarify later
+[08:05:16] <cyborg_ar> "or her, or its, or whatever pronoun they consider appropriate"
+[08:05:17] <Kinsley> I'm from out West.
+[08:05:25] <AppleDash> I'm from a place.
+[08:05:31] <Kinsley> So I got little problem with anyone 'cept haters.
+[08:05:46] <Kinsley> (And Mormons, cuz they're haters)
+[08:05:59] <cyborg_ar> i think the whole pc language thing is pretty annoying
+[08:06:09] <AppleDash> Hmm?
+[08:06:11] <Shnuggles> Montana, USA
+[08:06:18] <Coco_Pommel> pc has its uses, especially in gov
+[08:06:28] <cyborg_ar> not in gov
+[08:06:31] <cyborg_ar> in politic
+[08:06:33] <cyborg_ar> s
+[08:06:35] <cyborg_ar> it's in the name
+[08:06:53] <cyborg_ar> thing is, you dont need to turn every conversation into a political debate
+[08:06:54] <Kinsley> Sadly, a lot of government is politics, even when it shouldn't be.
+[08:06:58] <Coco_Pommel> better to irk people with pc than to cause riots, you do the non pc stuff away from the cameras
+[08:07:13] <Shnuggles> and coco, you are correct, but we were saying the subcultures combined that would be the most hated
+[08:07:18] <Shnuggles> or outcasted i suppose
+[08:07:20] *** Joins: Phase4 (Phase4@Pony-a2l9ej.internode.on.net)
+[08:07:24] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[08:07:37] <AppleDash> I think the whole "people getting offended because someone called them a name" thing is stupid. If people would just ignore people who used racist terms and such towards them, then the terms would lose meaning and the world would be a better place
+[08:07:55] <cyborg_ar> oh that's a dangerous line
+[08:08:06] <Shnuggles> it is, even though i agree
+[08:08:12] <cyborg_ar> in my opinion it's all about intent
+[08:08:53] <AppleDash> It's just silly in my opinion
+[08:09:20] <cyborg_ar> nobody has the right to not be offended, but targetted name calling can quickly get into harassment territory
+[08:09:30] <Coco_Pommel> the name calling stems a lot from human psycology, its about making the thing you fear or hate less human, thus easier to ignore or remove, in small amounts it leads to party politcs, in large amounts to warfare
+[08:09:45] <cyborg_ar> but taking offense on something that demostrably wasnt targetted to you?
+[08:09:48] <cyborg_ar> that's just silly
+[08:09:55] <AppleDash> Well, yes
+[08:10:01] <cyborg_ar> it's like purposedly jumping in front of a gun as it's being fired
+[08:10:13] <AppleDash> But even things targeted at me
+[08:10:42] <AppleDash> You can call me whatever you want, I do not care, because it would be dumb to let myself be affected by something like that
+[08:10:49] <Coco_Pommel> not really, i can still be outraged for someone saying burn the gays even though im not
+[08:10:53] <cyborg_ar> that's a nice thing to say
+[08:11:14] <cyborg_ar> but if i intentionally attack you psychologically i am doing you harm
+[08:11:16] <cyborg_ar> willfully
+[08:11:23] <AppleDash> You're not doing me harm
+[08:11:28] <AppleDash> You're attempting to, but not succeeding
+[08:11:42] <AppleDash> And in the process making you look like a fool
+[08:11:51] <cyborg_ar> that depends on society
+[08:12:03] <cyborg_ar> if all my friends hate you i'll just look normal
+[08:12:14] <cyborg_ar> and your psyche is not infallible
+[08:12:25] <cyborg_ar> so i'm not against people protesting they're getting bullied
+[08:12:56] <cyborg_ar> what i am agaisnt is people seeking to get bullied in exchange of attention
+[08:13:00] <AppleDash> The point is to learn how to identify when someone is trying to offend you or what have you, and learn how to ignore that
+[08:13:20] <cyborg_ar> because most reasonable people in a society commiserate with perceived victims
+[08:14:03] <cyborg_ar> people who get high on getting that victim attention are just as bad as the bullies they use for their purposes
+[08:14:26] <cyborg_ar> and adds insult to injury for real victims
+[08:14:48] <cyborg_ar> that doesnt only happen with things like slander and discrimination
+[08:15:06] <cyborg_ar> it's an issue with heinous crimes like rape and child abuse
+[08:15:14] <AppleDash> I realize thias
+[08:15:15] <AppleDash> this*
+[08:15:32] <cyborg_ar> it's a really tough problem to crack
+[08:15:58] <cyborg_ar> because it requires a society that can support real victims while severely punishing fake victim behavior
+[08:15:59] <Shnuggles> that moment when i've heard that people have fetishes of being raped
+[08:16:11] <cyborg_ar> that's another thing entirely
+[08:16:33] <AppleDash> Everything is a fetish if you look around enough
+[08:16:45] <Shnuggles> yea...
+[08:17:00] <cyborg_ar> what i'm describing is people who put themselves in a victim situation on purpose to receive the attention real victims deserve
+[08:17:06] <cyborg_ar> it's a form of self harm
+[08:17:10] <Kinsley> I feel like we might be stepping a little too far from the channel, folks.
+[08:17:18] <cyborg_ar> ok
+[08:17:22] <cyborg_ar> ponies
+[08:17:22] <Shnuggles> that is true
+[08:17:23] <Shnuggles> but...
+[08:17:24] <cyborg_ar> :)
+[08:17:31] <Shnuggles> it is a tech thing actually..
+[08:17:34] * AppleDash shrugs
+[08:17:42] <cyborg_ar> not really
+[08:17:43] <AppleDash> It's not like we're interrupting anyone else's discussion
+[08:17:48] <Shnuggles> ethics! what a wonderful thing to learn... when.. it comes to technology..
+[08:17:49] <AppleDash> Or being disruptive in some way
+[08:18:01] <cyborg_ar> i take offense on that
+[08:18:08] <cyborg_ar> i will call my lawyer
+[08:18:15] <AppleDash> :(
+[08:18:22] <tiwake> lol
+[08:18:41] <Shnuggles> seriously, it is a technological thing to discuss to be honest..
+[08:18:50] <Kinsley> IANAL but I'm pretty sure that case would have no merit.
+[08:19:13] <cyborg_ar> not with lawyers we can afford
+[08:19:15] <AppleDash> We know you anal, Kinsley
+[08:19:20] <cyborg_ar> HAHHAHA
+[08:19:25] <Shnuggles> what AppleDash...
+[08:19:30] <Kinsley> That's definitely too far. :|
+[08:19:31] <Shnuggles> oh...
+[08:19:34] <Shnuggles> it's uhh
+[08:19:42] <cyborg_ar> yep
+[08:19:45] <AppleDash> This channel is unrated
+[08:19:46] <cyborg_ar> funny but far
+[08:19:46] <Shnuggles> keep it classy?
+[08:19:54] <Shnuggles> is this channel unrated?
+[08:19:58] <AppleDash> Yes,
+[08:20:03] <Shnuggles> why is there an after dark version then?
+[08:20:09] <AppleDash> Because I made it as a joke.
+[08:20:09] <Kinsley> It's supposed to be SFW.
+[08:20:16] <Kinsley> Appledash.
+[08:20:22] <Kinsley> This is #techponies
+[08:20:25] <AppleDash> Yes?
+[08:20:26] <Kinsley> Not TDAP
+[08:20:30] <AppleDash> OK?
+[08:20:43] <Shnuggles> TPAD
+[08:21:01] <Kinsley> The after dark version of this channel.
+[08:21:19] <Kinsley> But back to what I said. Cursing's OK, but it's supposed to be SFW>
+[08:21:41] <Coco_Pommel> i think all of the above was
+[08:21:41] <AppleDash> Apologies for going off of the fact that in the past I've been told by the founder that this channel is unrated and that the only thing similar I've ever been told "no" to in the past is RP.
+[08:21:57] <Coco_Pommel> its no worse than what you would find on an evning newscast
+[08:22:18] <Shnuggles> meh
+[08:22:26] <cyborg_ar> well you can interpret it as "anal retentive"
+[08:22:28] <Shnuggles> i was about to say, just because it's on the news doesn't mean it's SFW
+[08:22:33] <Shnuggles> but it's played there so lol..
+[08:22:47] <Kinsley> Coco_Pommel: I'm referring specifically to AppleDash's comment towards me. That definitely crossed a line for the channel.
+[08:23:04] <AppleDash> See my previous message
+[08:23:07] <Googie> My understanding of this channel has always been unrated talk, with mostly a tech focus. Only real rule has been no RP
+[08:23:11] *** Quits: Phase4 (Phase4@Pony-a2l9ej.internode.on.net) (Ping timeout: 121 seconds)
+[08:23:21] <Shnuggles> hmm well..
+[08:23:55] <Kinsley> My understanding has always been SFW.
+[08:24:20] <AppleDash> I have never heard such a thing
+[08:24:27] <cyborg_ar> me neither
+[08:24:41] * Googie drags Lapsus in by an ear.
+[08:25:14] <Googie> Though I think he's sleeping right now :V
+[08:25:31] <Coco_Pommel> nothing in rules says eather way, or more speciicly to keep it pg
+[08:26:00] <Coco_Pommel> Topic: Hardware, Software, Whatever! | Internet speed survey! http://www.speedtest.net/wave/6841b5b75c918540
+[08:26:01] <PinkiePieBot> [ Speedtest.net by Ookla - #techponies ]
+[08:26:23] <Coco_Pommel> key word there being whatever
+[08:26:46] <cyborg_ar> well it says whatever, no what the buttfuck ever
+[08:26:53] <Shnuggles> meh
+[08:26:55] <cyborg_ar> haha
+[08:27:23] <AppleDash> If you personally took offense to my comment, then I apologize for it, Kinsley
+[08:27:41] <Kinsley> Point is, both personally and as a ChanOP, I took issue with the comment.
+[08:27:47] <Kinsley> Apology accepted.
+[08:27:53] <cyborg_ar> :)
+[08:27:55] <cyborg_ar> we move on
+[08:28:14] <AppleDash> I'm interrogating Lapsus as soon as he returns, though
+[08:28:48] <Kinsley> Can we not?
+[08:28:52] <Coco_Pommel> oh thats a new record for me, 123 mbps
+[08:29:01] <AppleDash> Cab we not what?
+[08:29:01] <Kinsley> It's a simple question of where the line gets drawn.
+[08:29:16] <AppleDash> I want him to clarify whether NSFW talk is allowed here or not
+[08:29:40] <Kinsley> Which is a simple question.
+[08:29:51] <AppleDash> And I'm going to ask him! What's the issue?
+[08:29:51] <Kinsley> Geez, don't interrogate the poor guy.
+[08:29:57] <AppleDash> It was a joke .-.
+[08:30:05] <Shnuggles> what
+[08:30:05] <Shnuggles> the
+[08:30:07] <Shnuggles> bloody hell..
+[08:30:11] * Kinsley is clearly not in a joking mood?
+[08:30:12] <cyborg_ar> AppleDash: your jokes are falling flat lately
+[08:30:21] <Shnuggles> 64 down... 4 up...
+[08:30:46] <AppleDash> I'm dropping out of this conversation because this is just silly
+[08:31:13] <Coco_Pommel> oh joy, the april 1 trolling has begun
+[08:31:38] <Coco_Pommel> equestria daily is now man daily, and the epesode list is upside down
+[08:31:57] <cyborg_ar> 3.07 up 0.49 down
+[08:32:18] <cyborg_ar> T_T
+[08:32:25] <cyborg_ar> err
+[08:32:29] <cyborg_ar> swap those numbers
+[08:32:42] <Googie> 1.69 down, 0.41 up.
+[08:33:19] <Shnuggles> huh?
+[08:33:23] <Shnuggles> i feel.. less.. bad?
+[08:33:25] <Shnuggles> what units?
+[08:33:31] <Googie> Mbits
+[08:33:40] <Shnuggles> kk
+[08:33:52] <Googie> If you think a 64Mbit connection is bad...
+[08:34:03] <Shnuggles> 64 Mbit down, no
+[08:34:06] <Shnuggles> but 4 up...
+[08:34:09] <Shnuggles> to go with that...
+[08:34:27] <cyborg_ar> mbits
+[08:34:28] <Shnuggles> i'm kind of glad i haven't tried streaming in the past two months
+[08:34:30] <Googie> That's fairly normal really.
+[08:34:31] <cyborg_ar> err
+[08:34:33] <cyborg_ar> Mbits
+[08:34:37] <Coco_Pommel> Capcom has announced Dog: Ace Attorney
+[08:34:41] <Shnuggles> i would've been royally ticked
+[08:34:43] <Coco_Pommel> https://www.youtube.com/watch?v=TayVCvUCImM
+[08:34:44] <PinkiePieBot> [ 犬逆転裁判 -戌歩堂龍ノ介の冒險- - 76780 views - 0:00:59 long - 943 likes - 97.92% ]
+[08:35:15] <cyborg_ar> that's what the furries need!
+[08:35:18] <Googie> Typically the ratio between upload and download is pretty poor
+[08:35:25] <cyborg_ar> a successful furry lawyer
+[08:35:42] <cyborg_ar> yeah that's what the A in adsl stands for
+[08:35:56] <cyborg_ar> (Atrocious)
+[08:35:56] <Googie> Symmetric home connections are fairly rare in general
+[08:36:57] <Coco_Pommel> yea, i only have 11 mbps upload
+[08:37:15] <Googie> "Only" :V
+[08:37:15] <cyborg_ar> :(
+[08:37:25] * Googie feels sad with his connection.
+[08:37:26] <cyborg_ar> i have half a megbit upload
+[08:37:51] <Googie> cyborg_ar's connection is what I had back when I first got ADSL2... then it steadily got worse.
+[08:38:19] <cyborg_ar> with everything else stopped dropbox peaks at 50 kB/s uploads
+[08:38:43] <cyborg_ar> never seen more than 200kB/s in a download (in short bursts)
+[08:38:44] <Kinsley> I want fiber. 1Gbps symmetric.
+[08:38:52] <cyborg_ar> and i want a pony
+[08:38:57] <cyborg_ar> :)
+[08:39:56] *** Joins: Phase4 (Phase4@Pony-dtu0kf.internode.on.net)
+[08:40:05] <Coco_Pommel> the only time i see my dl speed really ramp up to max is in steam
+[08:40:29] <cyborg_ar> i think 1Gbps is about the size of my ISP's trunk line
+[08:40:31] <cyborg_ar> lol
+[08:41:02] <AppleDash> Sometimes I wonder if the entire pipe from Australia to the rest of the world is just like 1Gbps
+[08:41:20] <cyborg_ar> it's quite possible
+[08:41:27] <Phase4> nah
+[08:41:32] <cyborg_ar> south america also has very few pipes
+[08:41:35] <Phase4> it's 2Gbps
+[08:41:40] <cyborg_ar> haha
+[08:41:48] <AppleDash> lo
+[08:41:48] <AppleDash> l
+[08:42:07] <Coco_Pommel> worst internet speeds are actually in the middle east and north africa
+[08:42:08] <cyborg_ar> the whole southern hemisphere is pretty shafted re: internet connectivity
+[08:42:22] <Phase4> cyborg_ar, to be fair, there's not much down here
+[08:42:28] <cyborg_ar> D:
+[08:42:28] <PinkiePieBot> Cheer up, cyborg_ar, all of your friends are here!
+[08:42:30] <Phase4> spiders, jungle, and desert mostly
+[08:42:43] * cyborg_ar looks around
+[08:42:56] <cyborg_ar> well i do have quite a few spiders in my house
+[08:43:13] <Phase4> or is it the spiders that have a few people in their house
+[08:43:45] <cyborg_ar> well to be honest
+[08:43:46] <Coco_Pommel> http://www.newscientist.com/data/images/ns/cms/mg20227062.200/mg20227062.200-7_3000.jpg
+[08:43:57] <Coco_Pommel> that shows all the undersea internet cables
+[08:44:14] <cyborg_ar> this place is currently housing me, my cat, and some 50 daddy long legs
+[08:44:46] <cyborg_ar> yep
+[08:45:11] <cyborg_ar> my whole country has to only 3 pipes that have to bounce through brazil to get anywhere useful
+[08:45:22] <cyborg_ar> has only*
+[08:46:25] <Coco_Pommel> thats only sea pipes
+[08:46:35] <Coco_Pommel> there may also be land ones
+[08:48:34] <cyborg_ar> well they wont go to chile
+[08:48:55] <cyborg_ar> maybe something goes to paraguay or bolivia i guess
+[08:49:01] <cyborg_ar> it's a shit ton of hops
+[08:50:19] <cyborg_ar> oh
+[08:50:22] <Kinsley> I'm clearly a bigger beer geek than network geek. I thought "shit ton of hops" was a commentary on a beverage.
+[08:50:26] <cyborg_ar> surprisingly it does go to chile
+[08:51:14] <cyborg_ar> http://maps.level3.com/default/#.VRuU_nTd2jQ
+[08:51:16] <PinkiePieBot> [ Level 3 Interactive Network Map ]
+[08:51:32] <cyborg_ar> but yeah looks like most goes to the sea cable to brazil
+[08:51:48] *** Quits: MidniteDew (user@Pony-53i2n1.dyn.nltelcom.net) (Quit: Konversation terminated!)
+[08:51:52] <cyborg_ar> and a land cable
+[08:51:55] <cyborg_ar> to brazil too
+[08:53:29] <cyborg_ar> hehe
+[08:53:33] <cyborg_ar> it's an ipa network
+[08:54:46] <cyborg_ar> well, gotta sleep
+[08:54:48] <cyborg_ar> cya
+[09:02:19] <Googie> Australia's international connectivity is actually underused at the moment, but intranational connectivity is really expensive IIRC.
+[09:02:40] *** Quits: cyborg_ar (cyborgar@Pony-le8.j81.25.181.IP) (Ping timeout: 121 seconds)
+[09:05:17] <Googie> Also the last mile is predominantly ADSL
+[09:06:55] <Phase4> even where cable is available, it's either at adsl speeds or prohibitively expensive
+[09:12:54] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:17:14] <Googie> ADSL is wholesaled and regulated, Cable isn't.
+[09:18:02] <init3_WindowsIsBestOS> Y'all ready to upgrade your inferior Linux installs to Vista?
+[09:19:02] <Googie> init3_WindowsIsBestOS: You'll need a better shtick today :P
+[09:19:21] <init3_WindowsIsBestOS> I'll have it. This is what I'm going with for now.
+[09:19:32] <init3_WindowsIsBestOS> At least around here. 
+[09:21:42] *** Neptune is now known as Neptune|sleep
+[09:29:11] *** [A]McKey is now known as McKey
+[09:44:14] <tiwake> Coco_Pommel: that does not look like russia has much then?
+[09:44:48] <Coco_Pommel> hmm yea i supose not there, but they may have many over the land ones
+[09:45:53] *** Quits: Coco_Pommel (coco_pommel@Pony-l3n1m0.ma.comcast.net) (Quit: Nettalk6 - www.ntalk.de)
+[09:58:37] <CompuDesktop> god i love my winamp skin http://code2.deviantart.com/#/art/HALION-FOR-WINAMP-BETA-RELEASE-119466409?hf=1
+[09:58:40] <PinkiePieBot> [ code2 (Florian Egerer) - DeviantArt ]
+[10:22:19] *** init3_WindowsIsBestOS is now known as Init3-away
+[10:56:24] *** Init3-away is now known as init3_WindowsIsBestOS
+[11:06:48] *** Q0 is now known as Q0|Away
+[11:18:07] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[11:22:44] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[11:33:00] *** Joins: Phase5 (Phase4@Pony-6tdgas.internode.on.net)
+[11:33:30] *** Quits: Phase4 (Phase4@Pony-dtu0kf.internode.on.net) (Ping timeout: 121 seconds)
+[11:53:10] <init3_WindowsIsBestOS> https://com.google/
+[11:53:10] <PinkiePieBot> [ elgooG ]
+[11:54:19] * WildSoft was sadden for the lack of pony in CompuDesktop skin
+[11:54:59] * WildSoft but got a little happier when trying to download Notepad++ from their website (I dare you, go check it out)
+[11:55:44] *** McKey is now known as [A]McKey
+[11:57:26] <WildSoft> Note sure if it's due to the day or it is pointing me to a malicious download :P
+[11:57:35] <CompuDesktop> WildSoft: couldnt find a good pony skin
+[11:58:45] <WildSoft> https://addons.mozilla.org/firefox/addon/rainbow-dash-on-blue/ <-- My Firefox skin for the last year or so
+[11:58:47] <PinkiePieBot> [ Rainbow Dash on blue :: Add-ons for Firefox ]
+[12:01:30] *** [A]McKey is now known as McKey
+[12:12:53] *** Quits: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner) (Ping timeout: 121 seconds)
+[12:13:26] *** Joins: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner)
+[12:13:26] *** AutoLapsus sets mode: +v PinkiePieBot
+[12:45:05] <Compu> http://www.deviantart.com/art/Sassy-Twi-522611751
+[12:45:07] <PinkiePieBot> [ Sassy Twi by CaptainPudgeMuffin on DeviantArt ]
+[12:45:08] <Compu> http://www.deviantart.com/art/Princess-of-Mood-Swings-498180449
+[12:45:09] <PinkiePieBot> [ Princess of Mood Swings by CaptainPudgeMuffin on DeviantArt ]
+[12:45:57] *** Joins: Phase4 (Phase4@Pony-7ddcd7.internode.on.net)
+[12:48:04] <ShivalPonyWolf> http://www.windowscentral.com/microsoft-launches-ms-dos-mobile
+[12:48:06] <PinkiePieBot> [ Microsoft launches MS-DOS Mobile for Lumia smartphones | Windows Central ]
+[12:48:53] *** Quits: Phase5 (Phase4@Pony-6tdgas.internode.on.net) (Ping timeout: 121 seconds)
+[13:00:04] *** Quits: mniip (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 121 seconds)
+[13:08:03] *** Joins: mniip (mniip@Pony-o9q.v2g.219.178.IP)
+[13:08:08] *** mniip is now known as Pony_6975
+[13:13:39] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[13:19:05] *** Quits: Phase4 (Phase4@Pony-7ddcd7.internode.on.net) (Quit: Leaving)
+[14:06:00] <ShivalPonyWolf> https://wftogame.com/australian-edition/
+[14:07:07] *** init3_WindowsIsBestOS is now known as Init3-away
+[14:08:28] *** Joins: Pikachu (AshKetchup_@best.pokemon)
+[14:29:16] *** Joins: DataByteBrony (DataByte@Pony-d3c.bgn.198.64.IP)
+[14:38:40] *** Neptune|sleep is now known as Neptune
+[14:57:30] <Googie> https://lists.debian.org/debian-devel-announce/2015/03/msg00016.html
+[14:57:32] <PinkiePieBot> [ Jessie Release Date: 2015-04-25 ]
+[14:59:27] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[15:20:54] *** McKey is now known as [A]McKey
+[15:25:01] *** Pony_6975 is now known as mniip
+[15:37:45] *** Quits: Pikachu (AshKetchup_@best.pokemon) (Quit: Leaving)
+[15:40:17] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[15:43:21] *** Quits: Fallfeathers (Fallfeather@Pony-u71ip5.internode.on.net) (Connection closed)
+[15:45:26] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[16:06:20] *** GigaZzz is now known as Gigabit
+[16:12:50] *** [A]McKey is now known as McKey
+[16:28:37] *** Starburn is now known as eyeburn|afk
+[16:37:57] *** Joins: MistVeil (AndChat3408@Pony-vthdld.telefonia.InterCable.net)
+[16:59:04] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:02:51] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[17:04:06] *** Joins: Crimson_Tail (ChaoticRift@Pony-60pvc0.7h3b.037j.000a.2601.IP)
+[17:04:58] *** Joins: MidniteDew (user@Pony-lva.21p.166.46.IP)
+[17:20:14] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[17:29:29] *** miggyb is now known as miggyb_
+[17:38:40] *** miggyb_ is now known as miggyb
+[17:39:48] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[17:58:40] *** Gigabit is now known as GigaCity
+[17:59:44] *** Q0|Away is now known as Q0
+[18:03:38] *** Joins: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net)
+[18:04:14] *** McKey is now known as [A]McKey
+[18:08:01] *** [A]McKey is now known as McKey
+[18:13:57] *** Quits: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com) (Connection closed)
+[18:23:32] *** PeakVolu1e is now known as PeakVolume
+[18:30:09] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:34:48] <DataByteBrony> two things that always seem to amuse me:
+[18:35:06] <DataByteBrony> USB ball mice, and PS/2 laser mice
+[18:35:37] <MistVeil> Dat wtf moment
+[18:50:03] <DataByteBrony> this amuses me greatly, as well:
+[18:50:04] <DataByte> https://dl.dropboxusercontent.com/u/110667610/img20150401_113736-2.jpg
+[18:50:12] <DataByteBrony> xD
+[18:51:10] <MistVeil> In the style of "the chicken and the egg"
+[19:06:51] *** Quits: MistVeil (AndChat3408@Pony-vthdld.telefonia.InterCable.net) (Connection closed)
+[19:06:52] *** Joins: AquaBrandish (AndChat3408@Pony-vthdld.telefonia.InterCable.net)
+[19:07:26] *** AquaBrandish is now known as MistVeil
+[19:16:39] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:17:51] *** Quits: MistVeil (AndChat3408@Pony-vthdld.telefonia.InterCable.net) (Ping timeout: 121 seconds)
+[19:20:40] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:21:11] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[19:22:00] *** Joins: MistVeil (AndChat3408@Pony-3cm.23f.144.201.IP)
+[19:23:57] *** Init3-away is now known as init3_WindowsIsBestOS
+[19:32:40] <DataByteBrony> hahaha, april fools is awesome xD
+[19:32:40] <DataByteBrony> http://home.web.cern.ch/about/updates/2015/04/cern-researchers-confirm-existence-force
+[19:32:52] <PinkiePieBot> [ CERN researchers confirm existence of the Force | CERN ]
+[19:43:58] *** init3_WindowsIsBestOS is now known as Init3-away
+[19:44:46] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Ping timeout: 121 seconds)
+[20:03:55] *** Init3-away is now known as init3_WindowsIsBestOS
+[20:21:39] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[20:23:58] *** init3_WindowsIsBestOS is now known as Init3-away
+[20:24:27] *** Joins: Xero (Xero@Pony-hgj.222.243.96.IP)
+[20:33:33] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:40:58] *** Neptune is now known as Neptune|sleep
+[21:11:58] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:34:39] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[21:37:01] <Kinsley> I ought to learn some basic electronic repair skills. All the USB ports on my old laptop are failed or failing.
+[21:40:21] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[21:45:50] *** Starthunder is now known as Moonlightning
+[21:49:19] *** Quits: Xero (Xero@Pony-hgj.222.243.96.IP) (Quit: My MacBook Pro has gone to sleep. ZZZzzz…)
+[21:52:34] *** Joins: Coco_Pommel (coco_pommel@Pony-l3n1m0.ma.comcast.net)
+[22:12:11] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:19:27] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Ping timeout: 121 seconds)
+[22:34:07] *** Init3-away is now known as init3_WindowsIsBestOS
+[22:37:22] <Lapsus> Kinsley: https://www.youtube.com/watch?v=J5Sb21qbpEQ :3
+[22:37:22] <PinkiePieBot> [ EEVblog #180 - Soldering Tutorial Part 1 - Tools - 408907 views - 0:27:14 long - 3401 likes - 97.31% ]
+[22:38:35] *** Quits: MistVeil (AndChat3408@Pony-3cm.23f.144.201.IP) (Quit: Bye)
+[22:39:48] *** Quits: Lapsus (Lapsus@i-forget.ca) (Quit: )
+[22:40:54] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[22:42:53] <Kinsley> I should amend that statement to include needing some tools, as well. Like a soldering iron.
+[22:59:02] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[22:59:02] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[23:06:03] *** Joins: MistVeil (AndChat3408@Pony-raj.bpr.95.200.IP)
+[23:06:10] *** Parts: MistVeil (AndChat3408@Pony-raj.bpr.95.200.IP) ("Leaving")
+[23:11:18] *** Joins: cyborg_ar (cyborgar@Pony-le8.j81.25.181.IP)
+[23:13:31] *** McKey is now known as [A]McKey
+[23:20:50] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[23:26:24] *** Quits: cyborg_ar (cyborgar@Pony-le8.j81.25.181.IP) (Client exited)
+[23:29:18] <ShivalPonyWolf> LOL - http://home.web.cern.ch/about/updates/2015/04/cern-researchers-confirm-existence-force
+[23:29:22] <PinkiePieBot> [ CERN researchers confirm existence of the Force | CERN ]
+[23:30:29] *** init3_WindowsIsBestOS is now known as init3
+[23:32:27] <AppleDash> 3rd time's the charm maybe?
+[23:34:07] <JustAberrant> hehe, sigh
+[23:34:20] <JustAberrant> I.. pretty much just ignore most of the internet today :(
+[23:39:54] <ShivalPonyWolf> i get a good laugh out of what happens
+[23:40:05] <ShivalPonyWolf> google having packman is good
+[23:40:22] <JustAberrant> I dunno, maybe I've gotten too bitter
+[23:40:30] <JustAberrant> I used to find some of it funny, now it all just feels lame
+[23:40:32] <ShivalPonyWolf> though i did really like the Australian edition of war for the overworld
+[23:40:43] <JustAberrant> like, actual plausible stuff is funny.. 
+[23:41:03] <JustAberrant> stuff that basically amounts to "hurr dur, microsoft announces it'll be using linux kernel in windows 10" is just.. meh
+[23:41:16] <ShivalPonyWolf> JustAberrant: what about dos for windows phone?
+[23:41:25] <JustAberrant> yeah, see, that's just lame
+[23:41:51] <JustAberrant> like, I think it was last year or the year before, the svn using git as a backend was actually good because of how well they sold it
+[23:42:28] <JustAberrant> but just publishing an article enthusiastically talking about how you're going to do something ridiculously implausible does even get a chuckle from me
+[23:43:22] <JustAberrant> the svn git thing was amazing because they didn't just come out and say it.. they actually pushed it through their normal process and had a huge (and very authentic looking) shitstorm involving senior people that spilled out into twitter and elsewhere
+[23:43:30] *** Joins: cyborg_ar (cyborgar@Pony-le8.j81.25.181.IP)
+[23:43:56] <JustAberrant> like everyone started out assuming it was an apr fools joke, but by the end a lot of people thought it was legit with bad timing
+[23:44:06] <JustAberrant> _that's_ a good apr fools joke
+[23:44:07] *** Joins: Pikachu (AshKetchup_@best.pokemon)
+[23:44:45] <cyborg_ar> JustAberrant: :(
+[23:44:47] <AppleDash> lol
+[23:44:57] <cyborg_ar> so we have a beancounter as head of HR
+[23:44:58] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[23:44:59] <JustAberrant> cyborg_ar: :>
+[23:45:07] <cyborg_ar> she is rationing our gloves
+[23:45:15] <JustAberrant> hahaha
+[23:45:19] <JustAberrant> damn
+[23:45:53] <cyborg_ar> she's a psycho
+[23:45:57] *** Joins: AquaBrandish (AndChat3408@Pony-tc946q.telefonia.intercable.net)
+[23:46:02] <JustAberrant> :>
+[23:46:25] <AppleDash> lol
+[23:47:41] <cyborg_ar> she's doing all these little tweaks that save pennies and destroy trust and morale
+[23:48:44] <ShivalPonyWolf> http://talkingpointsmemo.com/livewire/memories-pizza-indiana-anti-gay-law
+[23:48:46] <ShivalPonyWolf> Someone registered a domain for them and created a website - http://memoriespizza.com/
+[23:48:46] <PinkiePieBot> [ Indiana Pizzeria Vows To Never Deliver A Pizza To A Gay Wedding ]
+[23:48:53] <PinkiePieBot> [ Memories Pizza | Walkerton, IN | We cater gay weddings! ]
+[23:49:31] *** Quits: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net) (Quit: Leaving.)
+[23:51:09] <AppleDash> JustAberrant: This is why I can't get rid of any old hardware
+[23:51:17] <AppleDash> I have this old 15GB IDE WD caviar drive
+[23:51:26] <AppleDash> It's dated september 14, 2000
+[23:51:33] <AppleDash> It has been working flawlessly for almost 15 years
+[23:51:39] <AppleDash> Getting rid of it seems... wrong :(
+[23:52:00] <ShivalPonyWolf> lol its like my old scsi tape drive
+[23:52:03] <ShivalPonyWolf> i cant bring myself to throw it out
+[23:52:10] *** Quits: Creeps|AFK (PinkieP@The.Pony.That.Makes.You.Smile) (Quit: ZNC - http://znc.in)
+[23:53:34] *** Joins: RedHelper (PinkieP@The.Pony.That.Makes.You.Smile)
+[23:53:42] <AppleDash> I have one from 04... Still working, 10 years
+[23:53:48] <AppleDash> They're both out of the same machine
+[23:54:56] <ShivalPonyWolf> mines a dds-4 tape drive + autoloader
+[23:55:02] <ShivalPonyWolf> it holds 8 tapes
+[23:56:28] <AppleDash> Much cooler then my stuff
+[23:56:58] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[23:57:38] <ShivalPonyWolf> well 7 tapes and a cleaning tape
+[23:57:51] <ShivalPonyWolf> i have actually used tar for its intended pourpose
+[23:58:05] <AppleDash> Oh?
+[23:58:11] <ShivalPonyWolf> to control a tape drive
+[23:59:03] <AppleDash> lol

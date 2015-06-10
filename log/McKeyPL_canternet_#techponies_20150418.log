@@ -1,0 +1,554 @@
+[00:05:59] *** Joins: Asoka (Asoka@Pony-bot.t1j.182.89.IP)
+[00:09:10] *** Quits: Asoka_White (Asoka@Pony-cu8q3k.net-htp.de) (Ping timeout: 121 seconds)
+[00:11:19] <Twilightlicious> Lol Postal 2 is getting another Stand Alone Expansion
+[00:11:36] <Twilightlicious> even though it's over 10 years old, and Postal 3 exists.
+[00:15:20] *** Joins: Hickory (Iceman@Pony-fr4.tal.42.96.IP)
+[00:19:54] *** McKey is now known as [A]McKey
+[00:24:08] *** Quits: Pony_89335 (ChaoticRift@Pony-up5.b6a.250.69.IP) (Quit: Oops, a kernel panic)
+[00:30:54] *** Joins: Crimson_Tail (ChaoticRift@Pony-up5.b6a.250.69.IP)
+[00:31:19] *** Crimson_Tail is now known as Pony_76466
+[00:34:34] *** Joins: MisterSkids (ejd@Pony-aaa.lna.79.74.IP)
+[00:39:40] *** Quits: DataByteBrony (DataByte@Pony-nf6.hp8.15.173.IP) (Ping timeout: 121 seconds)
+[00:43:46] *** Joins: cyborg_ar (cyborgar@Pony-ocs.41g.25.181.IP)
+[00:44:26] *** Quits: Hickory (Iceman@Pony-fr4.tal.42.96.IP) (Quit: quit)
+[00:49:06] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[01:10:13] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[01:15:19] <Starthunder> So I'm trying to boot this rackserver to a USB
+[01:17:05] <Starthunder> > Initializing and establishing link...
+[01:17:16] <Starthunder> > PXE-E61: Media test failure, check cable
+[01:17:24] <Starthunder> > PXE-M0F: Exiting Intel Boot Agent.
+[01:23:11] <Starthunder> ...duh. The image on the USB was no good.
+[01:23:15] <Starthunder> Okay, let's try this again.
+[01:24:26] <Starthunder> Nnnnope, getting the same thing. Anypony have any idea what that's about?
+[01:25:38] * Starthunder also pokes AppleDash
+[01:25:45] <AppleDash> Yes Starthunder?
+[01:25:58] <AppleDash> That's expected behaviour.
+[01:26:15] <AppleDash> It means it can't boot over the network... And since you're trying to do a USB boot, you don't want to boot over the network.
+[01:26:22] <Starthunder> Right.
+[01:26:25] <AppleDash> Make sure the USB drive is somewhere in the boot order in the BIOS.
+[01:26:28] <Starthunder> It is?
+[01:26:34] * Starthunder pulls up setup again
+[01:26:41] <AppleDash> Then there should be no problem. Plug in the drive and pres the power button.
+[01:27:47] <Starthunder> That's what I did.
+[01:27:56] * Starthunder pokes around in setup.
+[01:28:00] <AppleDash> And what's the issue then?
+[01:28:08] <AppleDash> You'll get that error either way, it's not an issue
+[01:28:27] <Starthunder> It seems to stop at the error.
+[01:29:15] <AppleDash> Is there any more output?
+[01:31:06] <Starthunder> Yeah, but it seems to be just copyright headings and such. I'll gist it in a sec if you want.
+[01:31:11] <AppleDash> Sure
+[01:31:12] <Starthunder> I don't see the USB as an option in the boot order.
+[01:31:21] <AppleDash> What options are in the boot order?
+[01:31:36] <Starthunder> > IBA GE Slot 0400 v1245
+[01:31:49] <Starthunder> > SATA 0: WDC
+[01:31:53] <Starthunder> > [EFI Shell]
+[01:32:18] <AppleDash> Is that it?
+[01:32:25] <Starthunder> > [Disabled]
+[01:32:28] <Starthunder> That's it.
+[01:33:00] <AppleDash> Is the USB drive plugged into a valid USB port? Does it have a good image on it? Can you boot other machines from it? How did you make the USB drive?
+[01:33:07] <Starthunder> Oh, the USB shows up in the HDD order, though
+[01:33:13] <AppleDash> There you go
+[01:33:38] <Starthunder> Oh, there we go.
+[01:33:39] * Starthunder reboots.
+[01:34:45] <Starthunder> Wow.
+[01:34:47] <Starthunder> I feel stupid now.
+[01:34:53] <AppleDash> lol
+[01:34:54] <Starthunder> Thanks for putting up with that. XD;
+[01:34:59] <AppleDash> Mmhmm
+[01:37:43] <Starthunder> …uh-oh.
+[01:37:50] <Starthunder> It doesn't seem to recognize the Wi-Fi card.
+[01:38:00] <Starthunder> It's giving me eth0 and eth1 as options
+[01:38:20] <AppleDash> Is it installed properly? If so then you probably just don't have drivers at this point
+[01:39:02] <Starthunder> Okay. I'll use my laptop as an uplink for now.
+[01:39:08] <AppleDash> That'll work
+[01:44:51] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[01:53:52] <ShivalPonyWolf> https://github.com/nvbn/thefuck - Magnificent app which corrects your previous console command.
+[01:53:53] <PinkiePieBot> [ nvbn/thefuck · GitHub ]
+[01:55:30] <Starthunder> Gotta find those drivers.
+[01:59:16] <AppleDash> What's the wireless card?
+[02:10:03] *** Quits: JockeTF (jocke@Pony-v9k.2pb.227.87.IP) (Quit: Leaving.)
+[02:11:47] *** Joins: locodashie11 (locodash11@Pony-q7h.1no.217.73.IP)
+[02:15:29] *** CyberJacob is now known as zz_CyberJacob
+[02:19:42] *** init3 is now known as Init3-away
+[02:20:20] *** Init3-away is now known as init3
+[02:35:36] *** Joins: Fallfeathers (Fallfeather@Pony-lna.fpa.208.118.IP)
+[02:37:48] *** Quits: Phase4 (Phase4@Pony-45e.71l.209.118.IP) (Ping timeout: 121 seconds)
+[02:41:23] <Twilightlicious> Witcher 3 is only 25GB :P
+[02:43:12] *** Joins: Phase4 (Phase4@Pony-965.2q4.209.118.IP)
+[02:43:20] <Kinsley> "Only"
+[02:45:32] <Twilightlicious> https://www.youtube.com/watch?v=14JuGRUu_bo
+[02:45:32] <PinkiePieBot> [ Batman v Superman: Dawn of Justice - Trailer #1 - 301 views - 0:02:15 long - 2114 likes - 97.55% ]
+[02:45:35] <Twilightlicious> Just seems small to me
+[02:46:28] <Twilightlicious> I thought about getting Witcher 3
+[02:46:35] <Twilightlicious> but i didn't like the first two.
+[02:46:37] <Twilightlicious> at all.
+[02:48:57] *** Joins: MistVeil (aqua@Pony-apm.8f9.211.189.IP)
+[03:00:44] <Starthunder> Oh nooooo.
+[03:00:47] <Starthunder> It's not in the table.
+[03:02:00] <Starthunder> silverspeed:~ blackl% lspci -nnd 14e4:
+[03:02:00] <Starthunder> 07:00.0 Network controller [0280]: Broadcom Corporation BCM4352 802.11ac Wireless Network Adapter [14e4:43b1] (rev 03)
+[03:06:22] <AppleDash> That could be problematic
+[03:06:32] <AppleDash> Google more?
+[03:07:50] <Starthunder> >> http://www.ubuntu.com/certification/catalog/component/pci/14e4:43b1/
+[03:07:52] <PinkiePieBot> [ Broadcom BCM4352 802.11ac Wireless Network Adapter Wireless | Ubuntu ]
+[03:13:16] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[03:13:33] <AppleDash> ?
+[03:14:30] <Starthunder> Oh, the other Ethernet port is apparently disabled. I should enable it at some point.
+[03:15:08] <Starthunder>   *-network:1 DISABLED
+[03:15:08] <Starthunder>        description: Ethernet interface
+[03:16:18] <AppleDash> Probably
+[03:16:29] *** Joins: init3 (Jason@Pony-kmp.sp3.124.174.IP)
+[03:16:49] <Starthunder> First things first, though.
+[03:17:36] <AppleDash> Hmm?
+[03:18:01] <Starthunder> Wi-Fi card first
+[03:18:07] <AppleDash> Ah
+[03:18:19] <AppleDash> Try installing linux-firmware-nonfree
+[03:22:06] <Starthunder> I installed bcmwl-kernel-source
+[03:22:12] <Starthunder> And I think that did it ._.
+[03:22:34] <Starthunder> `lshw` shows it as DISABLED instead of UNCLAIMED now.
+[03:25:46] <AppleDash> That's good
+[03:25:51] <AppleDash> Anything exciting in `ip link`? 
+[03:27:42] <Starthunder> Don't think so, no
+[03:28:25] <AppleDash> Interface doesn't show up? No wlan0 or something like wlps32892QWjsldkj2-43e239u9342789udhiowhd89223$*)@#$*E#@!$@#&$% ?
+[03:28:38] <Starthunder> https://gist.github.com/BlacklightShining/d90c5879c72d64c85051/raw
+[03:28:45] <Starthunder> Oh, it shows up
+[03:28:52] <AppleDash> Good, it works
+[03:28:57] <AppleDash> Congratulations :P
+[03:29:03] <AppleDash> Now you can do whatever you wanted to do with it
+[03:29:07] <Starthunder> ifconfig only shows eth0 and lo
+[03:29:27] <Starthunder> Tried `ifup`ing eth1 and wlan0; said it didn't know about them
+[03:29:42] <Starthunder> Ignoring unknown interface eth1=eth1.
+[03:29:42] <Starthunder> Ignoring unknown interface wlan0=wlan0.
+[03:29:57] <AppleDash> you shouldn't ifup wlan0
+[03:30:06] <AppleDash> Also, have you tried rebooting?
+[03:30:12] <Starthunder> butbut Linux
+[03:30:17] <AppleDash> Try rebooting.
+[03:30:24] <Starthunder> Fiiiine :c
+[03:31:09] <Starthunder> Also the faaaaans
+[03:31:14] <Starthunder> Gotta get those fans to turn down
+[03:32:05] <AppleDash> Good luck witht hat
+[03:32:08] <AppleDash> with that*
+[03:32:13] <AppleDash> I don't think that's possible
+[03:34:27] <Starthunder> Well, I rebooted. `ifconfig` still doesn't show either, and I can't `ifup` eth1
+[03:34:36] <AppleDash> Weird
+[03:34:39] <AppleDash> Google it? :P
+[03:34:58] <Starthunder> I tried that. Not helpful.
+[03:36:19] <AppleDash> Starthunder: output of iwconfig?
+[03:36:57] <Starthunder> https://gist.github.com/BlacklightShining/2b644cfbc07ea55e911b
+[03:36:58] <PinkiePieBot> [ gist:2b644cfbc07ea55e911b ]
+[03:37:47] <AppleDash> wlan0 seems to be working fine
+[03:38:16] <AppleDash> I'll be back in a bit
+[03:39:27] <Starthunder> Uh, no, it's not.
+[03:39:39] <Starthunder> > wlan0  Interface doesn't support scanning: Network is down
+[03:40:02] *** ThunderBolt|Sleeping is now known as ThunderBolt
+[03:41:12] <Twilightlicious> Anyone here know of a good OTG Cable?
+[03:41:17] <Twilightlicious> I bought one once and it didn't last very long.
+[03:41:58] <Twilightlicious> i bought this one, eventually the male end stopped connecting tightly and any wiggle would cause a disconnect http://www.amazon.com/niceeshop-Degree-Female-Converter-Adaptor/dp/B00871Q5PI/ref=sr_1_1?ie=UTF8&qid=1429321255&sr=8-1&keywords=OTG
+[03:43:07] *** Joins: Hickory (Iceman@Pony-fr4.tal.42.96.IP)
+[03:43:17] <AppleDash> Starthunder: ip link set wlan0 up
+[03:43:35] <Twilightlicious> dunno what startech is but it looks like a fancy OTG cable so i'll get it.
+[03:44:04] <Starthunder> AppleDash: that doesn't persist, does it?
+[03:44:12] <AppleDash> Starthunder: Dunno
+[03:44:49] <Starthunder> I feel like I should be editing /etc/network/interfaces
+[03:49:46] <Starthunder> ...I can't set the card's mode to Master :|
+[03:51:22] <cyborg_ar> Thought for the day: There is more money being spent on breast  Implants  and Viagra today than on Alzheimer's research. This means that by 2040, there  should be a large elderly population with perky boobs and huge erections and absolutely no recollection of what to do with them.
+[03:54:48] <ThunderBolt> My Build (Computer I'm using now) http://au.pcpartpicker.com/p/DDQKgs
+[03:54:49] <PinkiePieBot> [ Intel Core i7-4790, GALAX GeForce GTX 980, Cooler Master Elite 335 Upgraded - System Build - PCPartPicker Australia ]
+[03:55:12] <AppleDash> cyborg_ar: lol
+[03:57:57] <cyborg_ar> :]
+[03:58:08] <ThunderBolt> OMG its finally here https://www.youtube.com/watch?v=ZwWLns7-xN8
+[03:58:08] <PinkiePieBot> [ Star Wars Battlefront Reveal Trailer - 1917355 views - 0:02:13 long - 50318 likes - 97.7% ]
+[04:14:55] *** ThunderBolt is now known as ThunderBolt|GTA
+[04:17:31] *** Quits: Hickory (Iceman@Pony-fr4.tal.42.96.IP) (Quit: quit)
+[04:23:31] *** Quits: Maple (Maple@Maple) (Quit: WeeChat 1.1.1)
+[04:24:40] *** Joins: Maple (Maple@Maple)
+[04:26:13] *** Quits: Maple (Maple@Maple) (Quit: WeeChat 1.1.1)
+[04:26:24] *** Joins: Maple (Maple@Maple)
+[04:49:43] *** Quits: MisterSkids (ejd@Pony-aaa.lna.79.74.IP) (Connection closed)
+[04:54:28] <locodashie11> november 17, woo
+[04:58:32] <locodashie11> I've still been playing battlefront 1 a lot...
+[05:00:32] *** Joins: MisterSkids (ejd@Pony-aaa.lna.79.74.IP)
+[05:10:24] *** Quits: Maple (Maple@Maple) (Ping timeout: 121 seconds)
+[05:14:14] *** Quits: Phase4 (Phase4@Pony-965.2q4.209.118.IP) (Connection closed)
+[05:14:19] *** Joins: Phase5 (Phase4@Pony-965.2q4.209.118.IP)
+[05:27:16] *** Quits: init3 (Jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[05:27:26] *** Joins: init3 (Jason@Pony-kmp.sp3.124.174.IP)
+[05:27:32] *** Quits: Ruthalas__ (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Connection closed)
+[05:43:47] *** Quits: cyborg_ar (cyborgar@Pony-ocs.41g.25.181.IP) (Ping timeout: 121 seconds)
+[05:46:57] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[06:26:36] *** Joins: init31 (Jason@Pony-kmp.sp3.124.174.IP)
+[06:27:33] *** Quits: init3 (Jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[06:36:42] *** Joins: Ruthalas_ (Ruthalas@Pony-nlt.b4h.171.67.IP)
+[06:40:58] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[06:57:31] <Starthunder> Anypony know how I can make dnsmasq get information from DHCP on one interface, and then turn around and act as a server on two others based on that information?
+[06:58:08] <AppleDash> You want a DHCP relay
+[06:58:19] <AppleDash> I have no idea how to set that up but I'm fairly certain that's what you want
+[06:58:28] <Starthunder> Okay? Thanks.
+[06:58:34] <Starthunder> I also want DNS (`.local` wooo)
+[06:58:38] <AppleDash> Google :P
+[06:58:41] <Starthunder> :P
+[06:59:00] <JustAberrant> isn't that pretty much exactly what dnsmasq is for?
+[06:59:09] <JustAberrant> i.e. being a dns server without actually being a dns server
+[06:59:23] <Starthunder> that's /DHCP/ * server
+[06:59:26] <JustAberrant> and just forwarding requests on to an actual dns server if it's not in it's magical list
+[07:00:45] <JustAberrant> yeah but again, isn't the DHCP server integrated into it 
+[07:02:59] <JustAberrant> --dhcp-range=x.y.a.b,proxy ?
+[07:03:18] * JustAberrant just took a quick look at man page, that would seem to be along the lines of what you want?
+[07:04:15] <JustAberrant> --dhcp-relay also looks interesting?
+[07:04:43] <JustAberrant> dnsmasq would appear to be surprisingly well documented :>
+[07:16:45] <ShivalPonyWolf> brilliant - https://40.media.tumblr.com/19e4b7350924ec7af66e9067c3984d2f/tumblr_nmyf1vL7MI1u66mf2o1_1280.jpg
+[07:27:52] *** Quits: Nick (nobody@Pony-o1k.cjc.74.71.IP) (Ping timeout: 121 seconds)
+[07:32:25] <Starthunder> …oh, what
+[07:32:37] <Starthunder> dnsmasq doesn't do v6 blocks bigger than /64
+[07:32:41] <Starthunder> nnnnnnope.
+[07:32:49] <Starthunder> I have a /56 block :V
+[07:33:03] *** Phase5 is now known as Phase4
+[07:33:26] <Phase4> Starthunder, iirc linux complains if it receives ra's with anything other than a /64
+[07:33:37] <Starthunder> …what!
+[07:33:42] <Starthunder> You're kidding!
+[07:33:50] <Starthunder> What am I supposed to do with my /56 :C
+[07:34:02] <Phase4> there's one incident of it happening to me on a vps a while ago, cbf checking the details
+[07:35:15] <Phase4> Starthunder, somehow i think you'll manage with 64bits of routable ip space
+[07:36:44] <Phase4> https://xkcd.com/865/
+[07:36:45] <PinkiePieBot> [ xkcd: Nanobots ]
+[07:36:52] <Starthunder> xD
+[07:47:38] <Starthunder> PinkiePieBot: I COULD, but you can't do stateless autoconfig without a /64 for each host. :/
+[07:48:54] <Starthunder> Realistically, there could be over four devices on this network…so I'd need to use at least a /60
+[07:52:27] <Phase4> yeah PinkiePieBot, can't do stateless without a /64
+[07:52:38] <Starthunder> Phase4 * :p
+[07:52:58] <Phase4> Starthunder, \64 for each host? stateless is broadcasting a single /64 prefix
+[07:53:10] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[07:55:54] <Starthunder> …so it is. 6_9
+[08:00:30] <Starthunder> I dunno.
+[08:00:43] <Starthunder> I like this whole temporary-ephemeral-address thing
+[08:01:02] <Starthunder> But I also want the permanent addresses to be predetermined
+[08:01:04] *** Quits: MisterSkids (ejd@Pony-aaa.lna.79.74.IP) (Ping timeout: 121 seconds)
+[08:02:48] <AppleDash> I hate it
+[08:03:25] <Starthunder> So I guess I would want the lowest /32 reserved for those predetermined addresses
+[08:04:34] <Phase4> Starthunder, can do that with dhcpv6
+[08:05:02] <Phase4> or static addresses
+[08:05:35] <Starthunder> I dunno about static. Attempts to join the network with a reserved address should be rejected
+[08:05:43] <Starthunder> Unless, of course, the device has that address in the list
+[08:07:05] <Starthunder> …I still feel like my /56 is going to waste. :<
+[08:07:16] <Phase4> it's ipv6
+[08:07:25] <Phase4> it's mostly wasted address space by design
+[08:07:32] <AppleDash> I have 2 /48s and I am using a total of 3 addresses total across both.
+[08:07:45] <AppleDash> Remove the "total" of your choice.
+[08:07:53] <Starthunder> Yeah, but I wanna see that little `prefixlen 56` :c
+[08:10:22] <Phase4> Starthunder, have to use dhcpv6 for that, not sure why dnsmasq wouldn't support it
+[08:10:48] <Starthunder> Phase4: you just said Linux complains if it gets a router advertisement with anything other than a /64
+[08:11:03] <Phase4> router advertisment != dhcpv6
+[08:11:32] <Phase4> ra's are the stateless method, where routers broadcast the prefixes available on the link
+[08:13:40] <Starthunder> ahh
+[08:14:41] <Starthunder> > The mimimum size of the prefix length is 64.
+[08:15:08] <Starthunder> Am I reading that right?
+[08:17:29] <Phase4> not sure what context you're reading it in
+[08:18:07] <Phase4> i've not done a lot of ipv6 work, but i am fairly sure dhcpv6 handles arbitrary prefix sizes
+[08:18:21] <Starthunder> From the dnsmasq ponypage.
+[08:18:39] <Starthunder> > For IPv6, the parameters are slightly different: instead of netmask and broadcast address, there is an optional prefix length which must be equal to or larger then the prefix length on the local interface. If not given, this defaults to 64. Unlike the IPv4 case, the prefix length is not automatically derived from the interface configuration. The mimimum size of the prefix length is 64.
+[08:19:38] <Phase4> strange
+[08:19:44] <Phase4> guessing that's a dnsmasq limit though
+[08:20:44] <Starthunder> Any recommendations for an alternative?
+[08:21:57] <Phase4> the isc dhcp server?
+[08:22:31] <Starthunder> ISC?
+[08:23:43] <Starthunder> Irish Sugar Company?
+[08:23:44] <Phase4> https://www.isc.org/downloads/dhcp/
+[08:23:47] <Starthunder> Internet Scrabble Club?
+[08:23:47] <PinkiePieBot> [ DHCP | Internet Systems Consortium ]
+[08:23:49] <Starthunder> Oh.
+[08:23:54] <AppleDash> lol
+[08:23:55] <Phase4> distros should have a package for it
+[08:24:22] <Phase4> it's the 'canonical' dhcp implementation, config files are a bit complex but it is rather powerful
+[08:24:46] <Starthunder> :3
+[08:24:58] <Starthunder> Thanks. I'll take a look at it in the morning.
+[08:25:01] <Starthunder> g'night, ponies.
+[08:33:18] *** Quits: Pony_76466 (ChaoticRift@Pony-up5.b6a.250.69.IP) (Quit: Oops, a kernel panic)
+[08:39:41] *** Quits: MidniteDew (user@Pony-t1r.39f.166.46.IP) (Quit: Konversation terminated!)
+[08:51:47] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[08:52:12] *** Quits: MistVeil (aqua@Pony-apm.8f9.211.189.IP) (Quit: Saliendo)
+[09:07:22] *** Quits: init31 (Jason@Pony-kmp.sp3.124.174.IP) (Connection closed)
+[09:19:25] *** [A]McKey is now known as McKey
+[09:20:14] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[09:20:26] *** McKey is now known as [A]McKey
+[09:22:24] *** Joins: MistVeil (AndChat3408@Pony-apm.8f9.211.189.IP)
+[09:23:19] *** Quits: MistVeil (AndChat3408@Pony-apm.8f9.211.189.IP) (Quit: Bye)
+[09:33:31] * AppleDash has exactly 17,892 grapes delivered to JustAberrant at the most inconvenient time :(
+[09:43:48] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[09:54:40] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[10:39:27] *** init3 is now known as Init3-away
+[10:42:07] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[10:46:27] *** \m is now known as mniip
+[10:46:53] <mniip> dude look at that dependency list http://hackage.haskell.org/package/acme-everything
+[10:47:01] <PinkiePieBot> [ acme-everything: Everything. | Hackage ]
+[10:47:37] <AppleDash> dude look at that package name
+[10:48:06] <mniip> that's the joke
+[10:50:38] *** Quits: reiuiji (reiuiji@nuclear.raven) (Connection closed)
+[10:51:08] *** Joins: reiuiji (reiuiji@Pony-dui.epf.217.98.IP)
+[11:08:21] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[11:09:20] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[11:10:42] *** Joins: JockeTF (jocke@Pony-v9k.2pb.227.87.IP)
+[11:12:01] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[11:12:01] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[11:30:14] *** Neptune is now known as Neptune|sleep
+[12:05:54] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[12:26:05] *** zz_CyberJacob is now known as CyberJacob
+[13:05:44] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[13:05:47] *** ThunderBolt|GTA is now known as ThunderBolt
+[13:37:52] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[13:42:20] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[14:13:27] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[14:31:35] *** Quits: coppercore (coppercore@Pony-kr5t8h.coppercore.net) (Ping timeout: 121 seconds)
+[14:46:02] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[14:48:24] *** ThunderBolt is now known as ThunderBolt|GTAV
+[14:52:09] *** Quits: Nick (nobody@Pony-o1k.cjc.74.71.IP) (Ping timeout: 121 seconds)
+[15:06:21] *** Joins: Maple (Maple@Maple)
+[15:09:03] *** Xena is now known as Cadance
+[15:35:43] *** ThunderBolt|GTAV is now known as ThunderBolt
+[15:43:06] <Starthunder> So if I'm configuring a LAN, I should use fc00::/8 and not fe80::/10, right?
+[15:43:25] <Starthunder> …wait. This is v6. I should just distribute from the //globally-routable// block I have. :D
+[15:47:16] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[15:54:43] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[16:00:01] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[16:06:10] *** Joins: vi[NLR] (vi[NLR]@Pony-ohu.qnc.108.80.IP)
+[16:27:16] *** Joins: cyborg_ar (cyborgar@Pony-76d.tog.25.181.IP)
+[16:31:22] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[16:37:42] *** Quits: Fallfeathers (Fallfeather@Pony-lna.fpa.208.118.IP) (Connection closed)
+[16:46:23] *** Quits: JockeTF (jocke@Pony-v9k.2pb.227.87.IP) (Quit: Leaving.)
+[16:56:48] *** Init3-away is now known as init3
+[17:14:52] *** Joins: Pikachu (AshKetchup_@best.pokemon)
+[17:15:33] *** Quits: Pikachu (AshKetchup_@best.pokemon) (Quit: kill -9 self)
+[17:24:28] *** Joins: Tohler (rattle@Pony-i9m.iqp.106.68.IP)
+[17:42:12] *** Joins: coppercore (coppercore@Pony-809.k1q.27.198.IP)
+[17:42:42] *** coppercore is now known as Pony_93075
+[17:43:07] *** Joins: Crimson_Tail (ChaoticRift@Pony-up5.b6a.250.69.IP)
+[17:43:19] *** Pony_93075 is now known as coppercore
+[17:43:32] *** Crimson_Tail is now known as Pony_97501
+[18:10:47] *** Quits: cyborg_ar (cyborgar@Pony-76d.tog.25.181.IP) (Ping timeout: 121 seconds)
+[18:14:47] <Starthunder> isc-dhcp-server doesn't like me trying to allocate a /56 for temporary addresses, either 6_9
+[18:15:46] <JustAberrant> 56 :O
+[18:15:50] <JustAberrant> .. oh.. ipv6? :(
+[18:16:15] <Starthunder> Yes.
+[18:16:22] <Starthunder> And Google has nothing.
+[18:16:28] <Starthunder> Seriously. Just the source code.
+[18:16:44] *** ThunderBolt is now known as ThunderBolt|Sleeping
+[18:18:39] <Starthunder> What's with this obsession with making /64 the maximum network size? :|
+[18:19:43] *** Quits: Tohler (rattle@Pony-i9m.iqp.106.68.IP) (Quit: )
+[18:42:33] <Starthunder> Also, where are all the ponies?
+[18:42:39] * Starthunder boopspams the channel.
+[18:42:51] <Colgate> zzzes
+[18:43:01] <tiwake> poners
+[18:44:28] <JustAberrant> :)
+[18:45:24] <tiwake> I feel like I should do something, but I don't know what
+[18:46:39] *** init3 is now known as Init3-away
+[18:54:20] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[18:56:12] * JustAberrant is playing minecraft, which is something :>
+[18:56:28] <JustAberrant> also I made a shepherds pie :>
+[18:57:36] <tiwake> Starthunder: what should I do?
+[18:57:48] <JustAberrant> :(
+[18:58:47] <Starthunder> tiwake: the same thing you do every night!
+[18:58:53] <Starthunder> …wait.
+[18:59:20] <tiwake> fall asleep?
+[19:14:30] <AppleDash> JustAberrant: :)
+[19:16:03] <JustAberrant> :)
+[19:22:52] *** Init3-away is now known as init3
+[19:23:20] <JustAberrant> I don't like that turtles now cap out at 20k fuel :(
+[19:34:52] *** Joins: Nelly (BlackCat@Anonlight.Starsarebeautiful)
+[19:35:04] <Nelly> https://www.youtube.com/watch?v=UomhczVNoBw
+[19:35:04] <PinkiePieBot> [ SoGreatandPowerful : On My Own - 20056 views - 0:04:41 long - 379 likes - 99.21% ]
+[19:35:10] <Nelly> Thank you PinkiePieBot 
+[19:35:10] <PinkiePieBot> No problemo.
+[19:35:42] <AppleDash> That's dumb JustAberrant
+[19:37:35] *** Joins: cyborg_ar (cyborgar@Pony-ut2.e33.49.190.IP)
+[19:45:41] <cyborg_ar> JustAberrant: AppleDash: https://isotropic.org/papers/chicken.pdf :3
+[19:49:43] *** Quits: cyborg_ar (cyborgar@Pony-ut2.e33.49.190.IP) (Ping timeout: 121 seconds)
+[19:51:47] <Nelly> AppleDash can a video uploaded to YouTube be downloaded losslessly?
+[19:56:46] <Nelly> Does anyone have an answer for that?
+[19:56:55] <Nelly> And when a YouTube video is put into an editing software like Vegas and exported, can it be exported with the same quality? ( audio and video )
+[19:57:03] <Nelly> https://www.youtube.com/watch?v=QaUmJdJ354w
+[19:57:03] <PinkiePieBot> [ SoGreatandPowerful : The Standard Model - 7290 views - 0:05:52 long - 113 likes - 100.0% ]
+[19:57:20] * Nelly copy pastas.
+[20:00:57] <AppleDash> Aw, I missed cyborg_ar
+[20:01:23] <AppleDash> Nelly: Fairly sure YouTube compresses videos lossily. And sure it can be exported with the same quality if you make sure to set the settings properly
+[20:01:39] <Nelly> Settings???
+[20:01:45] <Nelly> Oh you mean on vegas.. derp
+[20:01:46] <Nelly> okay..
+[20:01:47] <mniip> dude just use ffmpeg
+[20:01:48] <AppleDash> Yes, settings...
+[20:03:01] <Nelly> I was only asking because I found two different videos of the same thing but one has animations for audio and the other has B n G clips from the show. I was thinking someone might be able to mix them together. Wasn't sure about those details until now so thank you.
+[20:03:43] <mniip> oh yeah, you guys too
+[20:03:50] <mniip> if anyone needs the newest ep 1080p
+[20:04:13] <Starthunder> > dude just ffmpeg
+[20:04:15] <Starthunder> This. ^
+[20:04:41] <Nelly> I don't have any hardware or software for doing any of this. I was only asking so I could potentially pass the information along >_>
+[20:06:22] <Nelly> I don't know what ffmpeg is but thanks for the suggestion, mniip and Starburn. I will 'look into it' for knowledge's sake I suppose.
+[20:06:41] <Starburn> ?
+[20:06:43] <mniip> ffmpeg is a command-line video editing software
+[20:07:12] <coppercore> ?
+[20:07:14] <coppercore> o.O
+[20:07:28] <Starburn> ohai coppercore
+[20:07:28] <coppercore> hi Starburn :P
+[20:08:08] <coppercore> ^.^
+[20:18:14] *** Joins: MistVeil (aqua@Pony-qbk.jpi.211.189.IP)
+[20:18:42] *** MistVeil is now known as Pony_9529
+[20:19:16] *** Pony_9529 is now known as MistVeil
+[20:20:20] <JustAberrant> mniip: :)
+[20:22:11] <mniip> ?
+[20:26:30] *** Quits: MistVeil (aqua@Pony-qbk.jpi.211.189.IP) (Quit: Saliendo)
+[20:27:32] <AppleDash> !
+[20:30:46] <Nelly> https://www.youtube.com/watch?v=mb0q2ED4B_Y
+[20:30:46] <PinkiePieBot> [ SoGreatandPowerful : What Went Wrong - 3282 views - 0:01:27 long - 63 likes - 100.0% ]
+[20:35:47] <Starthunder> > # Enabling this option disables Stateless Address Autoconfiguration based on Router Advertisements for this host
+[20:35:49] <Starthunder> > #net.ipv6.conf.all.forwarding=1
+[20:37:17] <Nelly> Ooh I pinged the wrong horse.
+[20:38:42] *** Pony_97501 is now known as Crimson_Tail
+[20:48:16] *** Nelly is now known as BlackCat
+[20:53:16] <BlackCat> https://www.youtube.com/watch?v=AXlPvyl6qEs
+[20:53:16] <PinkiePieBot> [ SoGreatandPowerful : A Beautiful Heart - 20017 views - 0:05:04 long - 350 likes - 98.59% ]
+[20:53:42] <AppleDash> Starthunder: ?
+[21:01:01] *** Gigabit is now known as Gigaway
+[21:09:42] *** [A]McKey is now known as McKey
+[21:19:01] <mniip> woohoo haddocks have been generated
+[21:19:08] <mniip> http://hackage.haskell.org/package/acme-timemachine-0.0.0.0/docs/Acme-TimeMachine.html#t:TimeMachine
+[21:19:08] <PinkiePieBot> [ Acme.TimeMachine ]
+[21:20:37] *** Quits: BlackCat (BlackCat@Anonlight.Starsarebeautiful) (Ping timeout: 121 seconds)
+[21:33:27] *** Gigaway is now known as Gigabit
+[21:34:11] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[21:39:21] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[21:51:04] *** Joins: WildSoft_ (WildSoft@Pony-7nb.h37.13.193.IP)
+[22:03:53] <Gigabit> Can I use two stereo speakers on my PC? And if so what would I need to do to make it work right.
+[22:04:54] <JustAberrant> ?
+[22:05:15] <JustAberrant> depends on what exactly you want to do with them
+[22:05:30] <Gigabit> I have two speakers from an old table unit stereo unit. Want to set them up in the room but connected to my pc
+[22:05:43] <JustAberrant> you can have several sound cards/devices connected to a PC
+[22:05:44] <Gigabit> Want go use one of the audio ports in the rear of my pc
+[22:05:52] <Gigabit> To*
+[22:06:02] <Gigabit> So I guess what kind of cable would I beed
+[22:06:04] <Gigabit> Need*
+[22:06:33] <JustAberrant> do you want to be able to send stuff to them independently?
+[22:06:46] <Gigabit> Nah
+[22:07:05] <JustAberrant> you can just simply split them, but you'll get potato audio quality
+[22:07:07] <Gigabit> Just want both to transmit the audio out
+[22:07:39] <Gigabit> Well I'm currently using USB powered small speakers. Sound is not the best from those either 
+[22:08:06] <JustAberrant> is it just powered via usb, or is it it's own audio device?
+[22:08:24] <Gigabit> Powered via usb
+[22:08:46] <Gigabit> And these other speakers are sitting here unused.
+[22:08:49] *** Joins: Nelly (BlackCat@Anonlight.Starsarebeautiful)
+[22:08:58] <Gigabit> So I figured if I could set them up in the room, why not
+[22:09:10] <JustAberrant> are they about the same impedance? 
+[22:09:19] <Gigabit> Not sure go be honest
+[22:09:25] <JustAberrant> or can you control the level on them individually at least?
+[22:09:34] <Gigabit> The markings on these small ones I am using now, have all but faded off
+[22:09:40] <Gigabit> Nope I cant
+[22:09:59] <AppleDash> You would most likely need an amplifier
+[22:10:15] <Gigabit> Damn.. Wanted to just do some splicing of cords
+[22:10:27] <AppleDash> It would probably be very quiet
+[22:10:29] <JustAberrant> depends on how much impedance the speakers have and how much output your output has
+[22:10:45] <JustAberrant> but yeah, you're basically taking a signal meant for one speaker and making it drive 2
+[22:10:51] <Gigabit> Well I guess I could see about going to the resale shop and looking for an amp
+[22:11:02] <JustAberrant> meh
+[22:11:13] <JustAberrant> if they are shit speakers, just get a cheap $20 usb audio device
+[22:11:38] <Gigabit> Not sure how good these old ones are. They haven't been used in 5 years or more
+[22:11:46] <Gigabit> Been in a dry storage.
+[22:11:56] <JustAberrant> driving two different speakers from the same output is gonna be shit regardless
+[22:12:00] <AppleDash> JustAberrant, to me you seem like the type of person to use a 500$ DAC
+[22:12:01] <JustAberrant> unless you get like a proper mixer/amp setup
+[22:12:02] <AppleDash> just saying
+[22:12:05] <Gigabit> I know they used to be connected to a nice head unit. Old Yamaha
+[22:12:18] *** Joins: MisterSkids (ejd@Pony-aaa.lna.79.74.IP)
+[22:12:18] <JustAberrant> AppleDash: hehe.. I actually have shitty-ish speakers ;p
+[22:12:22] <AppleDash> lol
+[22:12:36] <JustAberrant> I do have 3 sound cards though :>
+[22:12:42] <JustAberrant> well, not cards
+[22:12:52] <Gigabit> Well I have 7.1 audio on my mobo.. I have 5 more audio ports I can use. Orange, black, and etc.
+[22:13:08] <Gigabit> Couldn't I use one speaker per port?
+[22:13:11] <JustAberrant> but yeah.. I have a tascam us-100 (cheap but effective guitar in), usual shitty onboard sound, and a decent sound card
+[22:13:30] <JustAberrant> Gigabit: sure, but you'll need something like jackd to make that actually work sanely
+[22:13:40] <AppleDash> I've never owned a sound card :(
+[22:13:45] <AppleDash> Other than my internal ones :P
+[22:14:02] <Gigabit> Okay so then would a simple aux cord work then?
+[22:14:04] <JustAberrant> Gigabit: unless you actually want them to act as front/side/back/sub speakers
+[22:14:34] <JustAberrant> Gigabit: I dunno, depends on what the speakers input is
+[22:14:53] <Gigabit> Wish I had the money for a 2.1 sound system..found a nice altec Lansing one at walmart
+[22:16:00] <Gigabit> Again not sure. No markings on the speakers
+[22:16:19] <JustAberrant> it's usually gonna be pretty simple
+[22:16:30] <Gigabit> Anyways ty for the info. I am not an audio guy at all x.x
+[22:16:31] <JustAberrant> the individual speakers should have two terminals
+[22:16:42] <JustAberrant> or two wires going into them
+[22:16:44] <JustAberrant> or something
+[22:17:15] <JustAberrant> the input into your pc will be a 3 part plug
+[22:17:30] <Gigabit> Yep
+[22:17:56] <JustAberrant> a so called "balanced" connector ;p
+[22:18:05] <JustAberrant> so basically the two speakers will share a common ground
+[22:18:17] <Gigabit> Don't head units usually send power to speakers too?
+[22:18:30] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[22:19:05] <JustAberrant> not that I know ;p
+[22:20:13] <JustAberrant> but yeah, if you look at the connector, you have the tip, middle bit, and the lst bit
+[22:20:19] <JustAberrant> * last
+[22:20:21] <JustAberrant> the last bit is the ground
+[22:20:27] <JustAberrant> the ground from both speakers get hooked to that
+[22:20:46] <JustAberrant> and I can't remember which way it is, but say the top is right and the middle bit is left
+[22:21:29] *** Joins: locodashie11 (locodash11@Pony-q7h.1no.217.73.IP)
+[22:21:30] <JustAberrant> so the remaining wire from your left speaker goes to the middle bit, and the remaining wire from your right speaker goes to the tip
+[22:22:06] <Gigabit> Confused me but okay
+[22:22:43] <JustAberrant> ok, well lets start at the basics..
+[22:22:49] <JustAberrant> what actually comes out of your speakers?
+[22:23:06] <JustAberrant> like.. is there a wire coming out of it with a connector (and if so, what type) or is it terminals or something else?
+[22:23:22] <JustAberrant> and do the speakers share the same wire, or are they separate ?
+[22:24:10] <JustAberrant> also I googled it.. https://cdn.sparkfun.com/assets/c/a/3/6/6/5113dc95ce395fe501000000.png  (50/50 chance and natrually I got it wrong.. :D )
+[22:25:02] <JustAberrant> damnit.. I hate when google image search gives a different image when you actually click the link.. I meant  http://doswa.com/images/2010/01/01/ak203mm.jpg
+[22:27:39] <AppleDash> lol
+[22:27:41] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[22:27:58] <JustAberrant> AppleDash: also is it just me, or have item ducts gotten really, really stupid :>
+[22:28:00] <AppleDash> The terms tip and ring in the sense of audio confuse me because I know them in the sense of a POTS system
+[22:28:13] <AppleDash> JustAberrant, they kinda have
+[22:28:24] <AppleDash> You need servos and filters and such
+[22:30:08] <JustAberrant> it's like all the mod authors are having a contest to make their mods the hardest to use :>
+[22:30:24] *** Nelly is now known as BlackCat
+[22:31:24] <AppleDash> You know what, that might be the case
+[22:37:06] <coppercore> Mine craft? 
+[22:37:08] *** Quits: Maple (Maple@Maple) (Quit: ow)
+[22:37:51] <JustAberrant> like I get that everyone wants to make it more challanging I guess
+[22:38:02] <JustAberrant> but just seems like every mod has nerfed all the things
+[22:38:15] <tiwake> http://www.kitguru.net/components/cpu/anton-shilov/amd-delays-its-first-arm-based-opteron-seattle-cpu-to-second-half-of-2015/
+[22:38:16] <PinkiePieBot> [ AMD delays its first ARM-based Opteron ‘Seattle’ CPU to 2H 2015 | KitGuru ]
+[22:39:45] <AppleDash> Indeed JustAberrant
+[22:40:01] <AppleDash> I'm waiting for the 1.8 versions of the mods
+[22:40:12] <AppleDash> Oh, you want an ME cable? 8 diamond blocks around a quartz!
+[22:40:42] <JustAberrant> I actually don't mind the resource demands
+[22:40:54] <JustAberrant> because that's a solved problem once you get something going like a quarry
+[22:41:01] <JustAberrant> it's all the intermediary steps
+[22:41:22] *** Gigabit is now known as GigaTown
+[22:41:29] <AppleDash> lol
+[22:41:40] <JustAberrant> oh.. now you can't just craft a wire from 3 copper.. you have to process the copper ore into powder thenrun it through an extruder and a winding mill and anoint it in the blood of 4 sheep...
+[22:41:50] <AppleDash> Yeah really
+[22:41:51] <AppleDash> lol
+[22:42:14] <JustAberrant> the turtle fuel nerf hits me hard though :>
+[22:42:19] <AppleDash> :(
+[22:44:19] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[22:47:08] <tiwake> also, have some parts I machined that this guy is trying to sell http://www.performancearcherygear.com/Rear-Mount-p/pag-rmnt.htm
+[22:47:09] <PinkiePieBot> [ Rear Mount ]
+[22:47:39] * AppleDash machines tiwake
+[22:47:54] *** Quits: WildSoft_ (WildSoft@Pony-7nb.h37.13.193.IP) (Quit: has left)
+[22:48:42] *** Joins: WildSoft_ (WildSoft@Pony-7nb.h37.13.193.IP)
+[22:57:29] <JustAberrant> also cache's are buggy as hell :>
+[22:58:05] <AppleDash> Don't put a cache in a cache
+[22:58:16] <AppleDash> It permanently corrupts the outer cache and you can't put anything else in it ever
+[22:58:35] <AppleDash> It stays at 0/10000 cache when you hover over it and you can't get it empty again and trying to put something else in it doesn't work
+[23:03:41] *** Quits: WildSoft_ (WildSoft@Pony-7nb.h37.13.193.IP) (Quit: has left)
+[23:03:45] *** Joins: Maple (Maple@Maple)
+[23:09:20] <JustAberrant> also like all thermal* stuff, there is basically no documentation on it anywhere
+[23:10:20] *** BlackCat is now known as Black
+[23:13:48] <AppleDash> Ywah
+[23:15:20] <AppleDash> JustAberrant, I vote to rename the mod to Thermal Confusion
+[23:15:33] *** Joins: WildSoft_ (WildSoft@Pony-7nb.h37.13.193.IP)
+[23:15:50] <JustAberrant> well, I already call ic2 that actually ;p
+[23:15:50] *** McKey is now known as [A]McKey
+[23:15:56] <AppleDash> lol
+[23:16:07] <JustAberrant> err, well, industrial confusion ;p
+[23:18:12] *** Quits: WildSoft_ (WildSoft@Pony-7nb.h37.13.193.IP) (Quit: has left)
+[23:19:32] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[23:24:47] *** Joins: WildSoft_ (WildSoft@Pony-7nb.h37.13.193.IP)
+[23:43:49] *** CyberJacob is now known as zz_CyberJacob
+[23:43:56] *** Quits: WildSoft_ (WildSoft@Pony-7nb.h37.13.193.IP) (Quit: has left)
+[23:47:56] *** init3 is now known as Init3-away
+[23:56:10] *** Joins: WildSoft_ (WildSoft@Pony-7nb.h37.13.193.IP)

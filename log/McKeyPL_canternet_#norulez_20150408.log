@@ -1,0 +1,254 @@
+[00:15:21] *** Joins: BlackWolffe (BlackWolffe@Pony-q6qs6s.ovh)
+[00:15:30] <BlackBird> test
+[00:15:31] *** Quits: BlackWolffe (BlackWolffe@Pony-q6qs6s.ovh) (Connection closed)
+[00:15:35] <BlackBird> dammn
+[00:15:52] <BlackBird> i why niedziałasz xd
+[00:32:00] *** Joins: BlackWolffe (BlackWolffe@Pony-q6qs6s.ovh)
+[00:32:50] <BlackBird> wrr
+[00:32:52] <BlackBird> test
+[00:32:54] <BlackBird> git
+[00:33:00] <BlackBird> czyli to cos z tym modulem xd
+[00:33:11] *** Quits: BlackWolffe (BlackWolffe@Pony-q6qs6s.ovh) (Connection closed)
+[00:34:06] *** Joins: BlackWolffe (BlackWolffe@Pony-q6qs6s.ovh)
+[00:34:07] *** Quits: BlackWolffe (BlackWolffe@Pony-q6qs6s.ovh) (Connection closed)
+[00:34:21] <BlackBird> teraz bedzie troche spam...
+[00:44:57] *** Joins: BlackWolffe (BlackWolffe@Pony-q6qs6s.ovh)
+[00:45:45] *** Quits: BlackWolffe (BlackWolffe@Pony-q6qs6s.ovh) (Connection closed)
+[00:45:47] *** Joins: BlackWolffe (BlackWolffe@Pony-q6qs6s.ovh)
+[00:46:35] *** Quits: BlackWolffe (BlackWolffe@Pony-q6qs6s.ovh) (Connection closed)
+[00:46:38] *** Joins: BlackWolffe (BlackWolffe@Pony-q6qs6s.ovh)
+[00:49:21] <BlackBird> hmm
+[00:49:55] <BlackBird> eivel: jak zrobic zeby to co jest w pliku zapisalo mi sie do zmiennej?
+[00:50:24] <BlackBird> var db = require(./nazwa); niedziala
+[00:50:37] <BlackBird> a fs.readFile wywala jakis syf zamiast tego co w pliku
+[00:50:56] <Eivel> a co masz w tym pliku?
+[00:51:08] <BlackBird> tablice
+[00:51:21] <BlackBird> bo chce zrobic cos w rodzaju bazy danych :/
+[00:52:01] <BlackBird> w pliku mam [['test'],['test1']]
+[00:52:47] <Eivel> nieeee
+[00:52:50] <Eivel> nie korzystaj z pliku
+[00:52:53] <Eivel> postaw sobie Redisa
+[00:54:03] <BlackBird> jagbym wiedzial coto xd
+[00:54:40] <Eivel> Redis to jest baza nosql. Praktycznie powinieneś wiedzieć, że zapisujesz w niej zmienne w postaci "nazwa" : "wartość"
+[00:54:55] <Eivel> client.set("string key", "string val", redis.print);
+[00:55:11] <Eivel> a potem get i masz to co chcesz
+[00:55:27] <BlackBird> ale mi chodzi oto zeby cala baza danych byla poza glownym plikiem
+[00:55:39] <Eivel> http://redis.io/topics/quickstart  Instalacja jest prosta, sprowadza się do odpalenia tych 4 komend tam, a potem jeszcze sudo make install
+[00:55:45] <Eivel> Baza danych zupełnie jest osobno
+[00:55:54] <Eivel> możesz do niej się łączyć z czego chcesz
+[00:56:02] <Eivel> node/python/ruby/whatever
+[00:56:07] <Eivel> i masz tą samą bazę dla każdego
+[00:56:18] <BlackBird> aha
+[00:56:18] <Eivel> z kazdego miejsca skryptu możesz pobrać te wartości i zapisać
+[00:56:26] <BlackBird> spojże dzieki ^^
+[00:56:37] <Eivel> https://github.com/mranney/node_redis  a tu masz bibliotekę interfejs do redisa w Node
+[00:56:53] <Eivel> Jak postawisz bazę i będzie ona już chodzić, to komunikujesz się z nią właśnie za pomocą tego
+[00:58:24] *** Quits: BlackWolffe (BlackWolffe@Pony-q6qs6s.ovh) (Connection closed)
+[01:05:22] <Eivel> BlackBird: jak byś miał problem z instalacją redisa, to pisz
+[01:09:15] <BlackBird> no wlasnie mam..
+[01:09:19] <BlackBird> eivel
+[01:09:50] <BlackBird> pobieram, wypakowuje, pisze 'make' wyala: error error error i koniec zabawy ;/
+[01:10:44] <Eivel> BlackBird: tar xvzf redis-stable.tar.gz to wywala błąd?
+[01:10:49] <Eivel> a
+[01:10:50] <BlackBird> nie
+[01:10:52] <Eivel> nei doczytałem
+[01:11:11] <Eivel> BlackBird: zapomniałem, że potrzeba ci paru bibliotek
+[01:11:15] <Eivel> spróbuj zgodnie z tym poradnikiem
+[01:11:16] <Eivel> https://www.digitalocean.com/community/tutorials/how-to-install-and-use-redis
+[01:11:18] <Eivel> krok po kroku
+[01:11:40] <BlackBird> spk
+[01:11:54] <BlackBird> na roocie czy na zwyklym koncie zadziala?
+[01:12:16] <Eivel> na zwykłym koncie zadziała
+[01:12:21] <Eivel> bo tam masz napisane, kiedy sudo użyc
+[01:14:19] <BlackBird> kij robie na roocie xP 
+[01:14:55] <BlackBird> eivel: przy instalacji build-essential error 404 (not found) i wszystko niedziala xP
+[01:15:23] <Eivel> lol
+[01:15:26] <Eivel> ubuntu masz?
+[01:16:04] <BlackBird> tia
+[01:16:13] <Eivel> napewno wcześniej dałeś sudo apt-get update?
+[01:16:14] <BlackBird> ubuntu server 14.04 dokładnie
+[01:16:18] <BlackBird> tia
+[01:16:21] <Eivel> o.o
+[01:16:44] <BlackBird> az jeszcze raz wszystko zrobie
+[01:17:39] <Eivel> ja znikam się myć, zw
+[01:18:04] <BlackBird> error 404 xd
+[01:18:15] <BlackBird> albo ja nieumiem kopiowac albo to niedziala
+[01:20:06] <BlackBird> o luju za 3 razem ruszylo xd
+[01:20:28] <BlackBird> nwm jak, jak ja nawet nowych komed nierobilem tylko uzywalem strzalki w gore xd
+[01:20:37] <BlackBird> magia bardzo
+[01:25:38] <BlackBird> dalej 'make' niedziala..
+[01:25:41] <BlackBird> http://pastebin.com/21Jf1mqM
+[01:47:21] <BlackBird> dobra ja ide spac
+[01:47:28] <BlackBird> jutro sie to jakos ogarnie
+[01:52:50] <Eivel> jj
+[01:54:08] <Eivel> przede wszystkim nie rób takich rzeczy na roocie. Druga sprawa - spróbuj ściągnąć najnowszego redisa i tak jak na poczatku wysłałem, mając te paczki zrobić make
+[01:55:47] <Eivel> znalazłem też takie coś, może zadziała: http://tosbourn.com/install-latest-version-redis-ubuntu/
+[14:48:10] <BlackBird> fajnie jak ja mam to robic nie z roota jak mi na normalnym koncie sudo niedziala ;_;
+[14:48:55] <BlackBird> pisze ze niemam permissi
+[14:51:45] <BlackBird> i ten ostatni poradnik tez niedziala ;_;
+[14:51:57] <BlackBird> make wywala ten sam error co wczesniej
+[15:27:44] <Eivel> BlackBird: w tym ostatnim poradniku nie ma make x.x
+[16:06:57] <BlackBird> że niby bez?
+[16:07:29] <BlackBird> Eivel: bo jak tak to niby działa.. jak sprawdzić?
+[16:07:47] <Eivel> przecież tam masz sam apt-get
+[16:07:49] <Eivel> binark same 
+[16:07:52] <Eivel> binarki*
+[16:08:17] <BlackBird> no tak..
+[16:08:31] <BlackBird> to niby wszystko zrobiłem bez errora jak sprawdzic czy działa
+[16:08:49] <BlackBird> jakas komeda jest czy musze z tym kod zrobić?
+[16:09:26] <Eivel> sudo service redis_6379 start
+[16:09:57] <BlackBird> redis_6379: unrecognized service
+[16:10:00] <BlackBird> 9_6
+[16:10:03] <BlackBird> derp bardzo
+[16:10:36] <Eivel> zajrzyj do /etc/init.d/ i sprawdź czy masz coś co się zaczyna na "redis"
+[16:10:45] <Eivel> bo może po prostu inaczej się ten demon nazywa
+[16:11:25] <BlackBird> redis-server
+[16:11:35] <BlackBird> taka nazwa ^
+[16:13:12] <Eivel> to sudo service redis_server start
+[16:13:46] <BlackBird> radis-server* ii.. 
+[16:13:48] <BlackBird> Starting redis-server: failed
+[16:13:53] <BlackBird> derp
+[16:17:30] <Eivel> jakieś błędy?
+[16:17:36] <BlackBird> tylko ten ^
+[16:18:47] <BlackBird> ja z/
+[16:18:49] <BlackBird> z/w
+[16:18:59] <Eivel> wyślij mi potem swój /etc/redis/redis.conf
+[16:26:53] <BlackBird> jj
+[16:28:53] <BlackBird> http://theblackkingdom.ovh/db/other/redis.conf
+[16:29:41] <BlackBird> sry ze tak ale na tablecie jestem i niechce mi sie bawic zeby to otworzyc
+[16:34:56] <BlackBird> wgl co mi sie z sudo dzieje? wywala mi "blackbird is not in the sudoers file.  This incident will be reported." jak prubuje uzyc...
+[16:35:17] <BlackBird> mam fail2ban i chyba config zrypany ale nwm gdzie i jak naprawic
+[17:54:41] *** [A]McKey is now known as McKey
+[18:16:23] <Eivel> BlackBird: musisz dodać swoje konto do sudoersów
+[18:16:49] <Eivel> sudo adduser <username> sudo
+[18:16:52] <Eivel> i relog
+[18:20:13] <Eivel> config redisa wygląda w porządku
+[18:27:19] <McKey> Eivel, nie tag
+[18:27:21] <McKey> visudo :P
+[19:17:16] <Hck> Ja tam wolę sqlite'a... zresztą BlackBird ogarnij najpierw podstawy a potem baw się w bazy danych
+[19:18:26] <Hck> więc spędź trochę czasu na nauce zarządzania linuksem, żeby później nie marnować 4h i czekać aż taki Eivel zgadnie co porobiłeś
+[19:19:22] <McKey> Hck, eivel jak eivel ale najczęściej to ja pomagam xD
+[19:19:24] <Eivel> ^ podbijam. Fakt, że redis jest prosty, to jednak podstawowe zarządzanie unixami jest niezbędne
+[19:20:17] <Hck> bez umiejętności instalacji programów może być ciężko..
+[19:20:20] <McKey> Eivel, nie unixem a Linuxem :P
+[19:20:24] <McKey> Unix jest tródniejszy xD
+[19:20:28] <McKey> tak tródniejszy
+[19:20:42] <Hck> Mamy bezwzględną większość BlackBird... do nauki!
+[19:23:56] <BlackBird> ale co ja
+[19:24:22] <McKey> UCZYĆ SIĘ!
+[19:28:46] <BlackBird> ee
+[19:28:49] <BlackBird> ucze sie ciagle ;p
+[19:32:01] <McKey> UCZYĆ SIĘ!
+[19:36:41] <BlackBird> nie
+[19:36:49] <McKey> to nie pomagamy ci
+[19:36:56] <BlackBird> ...
+[19:38:05] <BlackBird> wszystko co potrzebuje do botow juz umiem...
+[19:38:15] <BlackBird> prawie.. bazy danych nieumie :V
+[19:38:48] <McKey> no to widzisz
+[19:39:10] <Hck> nie potrafisz do botów...
+[19:39:18] <BlackBird> ale mi redis niechadzia :v
+[19:39:22] <BlackBird> cichaj umie xd
+[19:39:42] <BlackBird> dzialaja wiec umiem! xP
+[19:39:55] <McKey> Nie chce mi się udowadniać ci że napisze wszystkie twoje boty lepiej w node niż ty :P
+[19:40:05] <BlackBird> pff
+[19:40:07] <McKey> a przypominam że nic z niego nie umiem
+[19:40:36] <BlackBird> no dobrz wierze ze umiesz ale tu chodzi czy ja umiem ;p
+[19:40:42] <Hck> 1 week bot programming challenge
+[19:40:51] <McKey> Hck, to ja się nie pisze :P
+[19:40:57] <McKey> Bo przegram z tobą xD
+[19:41:04] <Hck> czy ja wiem
+[19:41:08] <McKey> ja wiem
+[19:41:16] <Hck> można w wakacje spróbować
+[19:41:32] <McKey> weście se jeszcze Raina do tego
+[19:41:48] <Hck> nwm czy rain robi coś w tych klimatach...
+[19:42:07] <McKey> podobno uczy się pythona wraz z Nerwussem
+[19:42:32] <Hck> Nerwussem ?
+[19:42:47] <McKey> Filip Białogrecki
+[19:42:55] <Hck> ?
+[19:42:55] <McKey> pipa która się tylko wymądrzać umie
+[19:43:01] <McKey> jest na HG
+[19:43:06] <McKey> Jako jedyny ma dziewczyne :P
+[19:44:58] <Hck> jakiś random
+[19:45:07] <Hck> nie mogę odkopać na hq
+[19:45:11] <Hck> *hg
+[19:45:23] <McKey> no własnie :P
+[19:45:30] <McKey> ja go mam zablokowanego na g+ xD
+[19:46:41] <BlackBird> dobra ide dalej sie bawic z baza danych w pliku xD
+[19:46:57] <McKey> tag
+[19:47:03] <McKey> a nie łatwiej MySql postawić?
+[19:47:08] <BlackBird> nie
+[19:47:10] <Hck> nie
+[19:47:28] <Hck> bo sql nie jest plikowy
+[19:47:32] <McKey> no ja wiem
+[19:47:34] <Hck> *mysql
+[19:47:50] <McKey> ale mi chodzi o łatwość pobierania danych
+[19:47:54] <Hck> chociaż jeśli chodzi o łatwość...
+[19:47:58] <Hck> no właśnie
+[19:48:04] <Hck> nie wiem
+[19:48:14] <Hck> mysql tylko z PHP używałem
+[19:48:17] <McKey> wydaje mi się że MsQ jest łatwiejszy xD
+[19:48:27] <McKey> ale bardzo zjada zasoby
+[19:49:04] <Hck> znalazłem
+[19:49:11] <Hck> tydzień temu...
+[19:49:15] <McKey> tak
+[20:26:45] <BlackBird> zrobilem baze danych w plku 9_6
+[20:27:32] <BlackBird> teraz problem poniewaz: zrobilem bota ktory ma moduly ale niechce dzialac mimo iz wszystko jest dobrze http://pastebin.com/5vQFRyt3 <--- kto pomoze bo nieogarniam xP
+[20:28:37] *** Joins: LithoV2 (LithoV2@Pony-q6qs6s.ovh)
+[20:28:45] <BlackBird> jak cos napisze to wywala..
+[20:28:46] *** Quits: LithoV2 (LithoV2@Pony-q6qs6s.ovh) (Connection closed)
+[20:29:14] <BlackBird> error: TypeError: string is not a function
+[20:29:29] <BlackBird> i tak wiem ze mowilem ze umiem ale to jest magia bo wszystko jest dobrze ;_;
+[20:42:40] <Hck> masz napisane co jest
+[20:47:43] <BlackBird> nierozumie ;v
+[20:47:54] <BlackBird> string niejest funkcja
+[20:47:57] <BlackBird> czyli? xd
+[20:55:56] <Hck> czyli gdzieś użyłeś stringa jako funkcji
+[20:56:11] <Hck> pewnie gdzieś do callbacku przekazałeś zmienną tekstową
+[21:08:14] <BlackBird> wut
+[21:09:26] *** Joins: LithoV2 (LithoV2@Pony-q6qs6s.ovh)
+[21:09:28] <BlackBird> klj
+[21:09:28] *** Quits: LithoV2 (LithoV2@Pony-q6qs6s.ovh) (Connection closed)
+[21:09:32] <BlackBird> noope
+[21:10:49] *** Joins: LithoV2 (LithoV2@Pony-q6qs6s.ovh)
+[21:10:50] <BlackBird> asd
+[21:10:53] <BlackBird> test
+[21:10:53] *** Quits: LithoV2 (LithoV2@Pony-q6qs6s.ovh) (Connection closed)
+[21:10:55] <BlackBird> xd
+[21:11:36] <BlackBird> wiem ze 1 blad to to, ze 2 zmienne byly takie same i sie 1 na drugie nakladalo itp bugi
+[21:13:13] *** Joins: LithoV2 (LithoV2@Pony-q6qs6s.ovh)
+[21:13:16] <BlackBird> hmm
+[21:13:19] <BlackBird> test
+[21:13:19] <LithoV2> tak dzialam
+[21:13:21] <BlackBird> yay
+[21:13:24] <BlackBird> w koncu ;_;
+[21:13:48] <BlackBird> tk ten bot potrafi az tyle ze tylko "test"
+[21:15:28] *** Quits: LithoV2 (LithoV2@Pony-q6qs6s.ovh) (Connection closed)
+[21:18:21] *** Joins: LithoV2 (LithoV2@Pony-q6qs6s.ovh)
+[21:18:27] <BlackBird> test
+[21:18:27] <LithoV2> tak dzialam
+[21:19:27] *** Quits: LithoV2 (LithoV2@Pony-q6qs6s.ovh) (Connection closed)
+[21:19:29] *** Joins: LithoV2 (LithoV2@Pony-q6qs6s.ovh)
+[21:19:37] <BlackBird> test
+[21:19:37] <LithoV2> tak dzialam
+[21:19:53] <BlackBird> so 2 moduly 9_6 na odpowiadanie na czacie i na odpowiadanie na priv
+[21:20:27] <BlackBird> yay w koncu mam bota ale takiego normale zrobionego
+[21:22:52] *** McKey is now known as [A]McKey
+[21:28:34] <BlackBird> meh przydlo by sie pouczyc basha
+[21:28:47] <BlackBird> jutro PSK i bede robic skrypty w bashu ;_;
+[22:18:29] <Hck> 1. postaw se testowy serwer IRC
+[22:18:34] <Hck> bo:
+[22:18:49] <Hck> a) dostaniesz bana za floodowanie canternetu
+[22:18:58] <Hck> b) są większe opóźnienia
+[22:19:04] <Hck> c) łatwiej się testuje
+[22:19:21] <Hck> 2. Ty linuksa naucz się obsługiwać
+[22:19:50] <Hck> 3. I podstaw pragramowania(w kontekscie pracy z kodem i debugowania)
+[22:21:03] <BlackBird>  em ok?
+[22:21:36] <BlackBird> 1. nieumiem 2. ucze sie :v chociazby w szkole mam teraz linuxa 3. ucze sie ciagle a tek serio mi sie niechce xP
+[22:22:20] <Hck> 1. apt-get install <wybrany ircd>;service ircd start
+[22:22:34] <Hck> 2. jak IRCa nie potrafisz postawić to znaczy że się nie uczysz
+[22:22:48] <Hck> 2a i tak guwno cię to nauczy
+[22:23:05] <Hck> 3. To po co programujesz jak ci się nie chce
+[22:26:07] <BlackBird> 1. myslalem ze to jest trudniejsze xd 
+[22:26:14] <BlackBird> 2. naucze.. kiedys ale naucze
+[22:26:28] <BlackBird> 3. niechce mi sie uczyc ale programowac juz tak xd
+[22:26:56] <BlackBird> poprostu jak widze te zaawansowane boty i nieogarniam z tamtad nic to mi sie odechciewa ;_;

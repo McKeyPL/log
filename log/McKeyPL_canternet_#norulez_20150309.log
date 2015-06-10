@@ -1,0 +1,135 @@
+[15:24:26] *** [A]McKey is now known as McKey
+[15:29:21] *** Joins: [A]McKey (Kordus@twilightsparkle.ovh)
+[15:29:21] <Litho> It's wonderful to see you [A]McKey!
+[15:29:54] *** [A]McKey is now known as McKey
+[15:33:55] *** Joins: Pony_96635 (Hexie@Pony-3agfts.antyklay.pl)
+[15:33:55] <Litho> Dzieńdobry Pony_96635!
+[15:34:35] *** Quits: Pony_96635 (Hexie@Pony-3agfts.antyklay.pl) (Quit: WeeChat 1.1.1)
+[18:42:13] <BlackBird> McKey: żyjesz?
+[18:42:23] <McKey> ?
+[18:42:43] <BlackBird> powiedzmy że mam plik www.js w którym mam zrobioną strone 
+[18:42:47] <BlackBird> jak go odpalić?
+[18:42:51] <McKey> node www
+[18:43:36] <BlackBird> ale to niechadzia
+[18:43:54] <McKey> a node www.js ?
+[18:44:13] <BlackBird> nwm co mam wpisać w "listen.server(port, 'tu cos')
+[18:44:19] <McKey> 80
+[18:44:26] <McKey> czyli port http
+[18:44:31] <McKey> albo 443 jak masz https
+[18:44:38] <BlackBird> port 80 a w drugim?
+[18:44:41] <BlackBird> ip vpsa?
+[18:44:57] <McKey> czek
+[18:45:01] <McKey> zobacze dokumentacje
+[18:45:10] <BlackBird> i czy robić to na root czy 'tu' też  ruszy?
+[18:45:21] <BlackBird> w sensie 'tu' czyli nie na roocie
+[18:47:20] <McKey> dobra
+[18:47:30] <McKey> tam nic nie podajesz bo to jest hostname
+[18:47:42] <McKey> a "tu" to nie wiem o co cho ci :P
+[18:47:56] <BlackBird> w sensie nie na roocie
+[18:48:03] <McKey>  /
+[18:48:04] <McKey> ?
+[18:48:10] <BlackBird> na moim koncie
+[18:48:14] <McKey> no tak
+[18:48:19] <BlackBird> ok
+[18:48:20] <McKey> na koncie root nic się nie odpala
+[18:48:39] <BlackBird> server.listen(80, '');
+[18:48:41] <BlackBird> i niechadzia
+[18:48:49] <McKey> to podaj tam IP
+[18:48:53] <BlackBird> też nie :V
+[18:49:00] <BlackBird> podam domene to też n ie
+[18:49:01] <McKey> domene
+[18:49:39] <BlackBird> Error: listen EADDRNOTAVAIL
+[18:49:44] <BlackBird> taki error
+[18:50:13] <McKey> https://nodejs.org/api/http.html#http_server_listen_port_hostname_backlog_callback
+[19:14:18] <BlackBird> meeeeh
+[19:14:19] <BlackBird> nwm
+[19:14:21] <BlackBird> nieumem
+[19:14:47] <BlackBird> jak zrobiłem tą strone i dałem jako ip 127.0.0.1 i odpaliłem u siebie na pc to działa..
+[19:14:51] <BlackBird> czyli sam plik ok
+[19:15:02] <BlackBird> ale nwm jak zrobić aby odpaliło na domenie
+[19:15:39] <BlackBird> McKey: czy ten plik musi być tam gdzie są teraz pliki .html czy może być umnie na vps
+[19:15:46] <BlackBird> bo mam 2 ftp
+[19:15:48] <BlackBird> 1 do vps 
+[19:15:50] <BlackBird> 2 do domeny
+[19:15:56] <McKey> e...
+[19:16:06] <McKey> no to tak troche nie dziwie sie że nie dziala :P
+[19:16:10] <BlackBird> i domena niejest na vps..
+[19:16:19] <BlackBird> i nieogarniam
+[19:16:36] <McKey> aby działało na domenie to domena musi być skierowana tam gdzie działa node
+[19:16:53] <BlackBird> to teraz jak przenieść domene na vps
+[19:17:02] <McKey> ;_;
+[19:17:25] <BlackBird> w sensie żeby pliki były na vps
+[19:17:29] <BlackBird> a nie gdzieś w dupiu
+[19:17:31] <BlackBird> :D
+[19:18:46] <McKey> szczeże?
+[19:18:57] <McKey> to serio najpierw poczytaj i sie naucz
+[19:19:07] <McKey> bo ja nie mam sił aby ci opisać to
+[19:19:16] <BlackBird> niedziwie sie
+[19:20:18] <McKey> bo dla przykładu kupiłem kolejną domene
+[19:20:22] <McKey> http://bronies.info
+[19:20:36] <McKey> testowo wisi na hostinger.pl
+[19:20:44] <McKey> i napewno długo tam nie powisi
+[19:21:42] <BlackBird> aha?
+[19:21:58] <McKey> tak ujowego hostingu to nie widziałem jeszcze
+[19:32:00] <BlackBird> bosh
+[19:32:26] <BlackBird> nwm co ja z tą domeną zrobiłem ale wiem że chyba zjebałem
+[19:32:40] <McKey> xDD
+[19:35:11] <BlackBird> i to tak bardzo że mam po domenia
+[19:35:15] <BlackBird> domen ie*
+[19:35:17] <BlackBird> kurw
+[19:35:47] <McKey> nie da sie tak
+[19:36:55] <BlackBird> eeem
+[19:36:57] <BlackBird> chyba wiem
+[19:37:14] <BlackBird> mam jakieś start1m
+[19:37:20] <BlackBird> od ovh
+[19:37:49] <McKey> no gz
+[19:39:01] <BlackBird> jak zrobić suybdomene?
+[19:39:04] <BlackBird> subdomene*
+[19:39:15] <McKey> normalnie
+[19:39:28] <BlackBird> jak..
+[19:40:04] <McKey> jak dodajesz rekord a
+[19:40:12] <McKey> to nadajesz X.Domain.pl
+[19:40:18] <McKey> gdzie X to subdomena
+[19:40:21] <McKey> a IP no to IP
+[19:40:43] <BlackBird> a ok
+[19:43:27] <BlackBird> kurw no
+[19:43:39] <BlackBird> teraz jeszcze przez ftp niemoge wejsc -.-
+[19:44:15] <McKey> :P
+[19:47:15] <BlackBird> hmm chciałem dodać domene do dns przez manager ovh
+[19:47:19] <BlackBird> errur oczywiście:
+[19:47:21] <BlackBird> Wystąpił błąd podczas zlecania dodania domeny do DNS secondary. (First we need to verify you are the owner of this domain. To do so, please add a TXT field on your DNS zone for the domain theblackkingdom.ovh, with the subdomain 'ownercheck' and the following value: 'bf376900'. Once done and your zone reloaded, try again (you don't need to wait for DNS propagation).)
+[19:47:30] <BlackBird> jak dodam to dalej to samo..
+[19:48:34] <McKey> -_-
+[19:48:38] <McKey> nie secendary
+[19:48:52] <BlackBird> niema innego :V
+[19:49:02] <McKey> ...
+[19:49:15] <BlackBird> wiem mam cloudflare
+[19:49:21] <McKey> no i tam to dodajesz
+[19:49:31] <BlackBird> też niechadzia
+[19:49:37] <BlackBird> wogule sie dodać niechce subdomena..
+[19:49:37] <McKey> daj mu 24h ...
+[19:49:41] <BlackBird> -.-
+[19:49:45] <BlackBird> #jebiemieto
+[19:49:57] <BlackBird> odsprzedam domene za darmo :V
+[19:50:02] <McKey> nie kupie
+[19:50:13] <BlackBird> xd
+[19:50:55] <BlackBird> nedziała ftp, zjebane dns, pliki strony gdzieś na zadupiu internetu, niewiem jak ci niby mam dać domene
+[19:50:57] <BlackBird> xd
+[19:53:39] <BlackBird> o odzyskałem ftp
+[19:54:11] <McKey> gz
+[19:54:16] <BlackBird> znaczy sie samo
+[19:54:19] <BlackBird> i musze iść..
+[19:54:21] <BlackBird> -.-
+[19:54:25] <BlackBird> ave ja
+[21:46:08] *** McKey is now known as [A]McKey
+[21:47:41] *** Joins: Hck (Hexie@Twilight.Is.Best.Pony)
+[21:47:41] <Litho> Dzieńdobry Hck!
+[21:51:27] *** Quits: Hck (Hexie@Twilight.Is.Best.Pony) (Quit: WeeChat 1.1.1)
+[21:53:25] *** Joins: Hck (Hexie@Twilight.Is.Best.Pony)
+[21:53:26] <Litho> Hai Hck!
+[23:03:30] <BlackBird> jeżeli ktoś wie jak przenieść pliki domeny na mojego vps'a to proszę o pomoc :v
+[23:07:17] <Hck> wiem
+[23:07:44] <Hck> użyj SCP
+[23:10:50] <BlackBird> po mojemu polskiemu prosze
+[23:10:59] <BlackBird> czyli wytłumacz jak debilowi
+[23:11:11] <Hck> potem

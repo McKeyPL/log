@@ -1,0 +1,406 @@
+[00:03:16] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[00:09:23] *** Joins: Webster (Webster@Pony-mme.2eo.212.73.IP)
+[00:15:55] *** Quits: ChaoticRift (ChaoticRift@Pony-bm75er.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[00:18:41] *** Joins: Asoka (Asoka@Pony-uotded.net-htp.de)
+[00:19:24] *** Joins: ChaoticRift (ChaoticRift@Pony-i5gn52.7h3b.037j.000a.2601.IP)
+[00:21:53] *** Quits: Asoka_White (Asoka@Pony-1qffeo.net-htp.de) (Ping timeout: 121 seconds)
+[00:29:29] <SpikeDragon> Hey. Anyone here good with mysql and python? My friend build out a fimfiction archiver and we can't figure out how to stop a memory leak that happens upon every cursor.execute. Here's the repo: https://github.com/woodenphone/fimfic_dl
+[00:29:30] <PinkiePieBot> [ woodenphone/fimfic_dl · GitHub ]
+[00:31:31] <SpikeDragon> *built. Sorry on my phone. 
+[00:34:03] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[00:37:36] <Webster> My first guess would be the data structure isn't getting freed up properly.
+[00:37:38] <Colgate> for a moment, I thought you said that you built it on your phone, as in compiling
+[00:38:16] <ShivalPonyWolf> http://www.sansbullshitsans.com/ - The font that replaces every buzzword by a Comic Sans-styled censorship bar
+[00:38:17] <init3> Does your phone even lift?
+[00:38:20] <PinkiePieBot> [ Sans Bullshit Sans — Leveraging the synergy of ligatures ]
+[00:39:28] *** [A]McKey is now known as McKey
+[00:42:27] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: Konversation terminated!)
+[00:42:32] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[00:42:33] <SpikeDragon> Webster, how so? 
+[00:43:20] <Webster> SpikeDragon: No idea, I'd have to look at all the code. I'm done with work for the day, though, not interested in debugging even more code. ;)
+[00:43:51] *** McKey is now known as [A]McKey
+[00:44:02] <SpikeDragon> Alright. Thanks for your insight regardless :) 
+[00:44:19] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:51:26] <Compu> hey were any of u in #Indigo before?
+[00:51:48] * JustAberrant doesn't know
+[00:52:29] <Compu> well its back, im the new owner and the guy who was kickbanning everyone is gone
+[00:52:55] <SpikeDragon> What's that? 
+[00:53:22] <SpikeDragon> Nvm
+[00:53:57] <SpikeDragon> Oh guys. PSA. Don't ever restart a server. Ever. 
+[00:54:40] <init3> Oh man. That feel. I know it all too well.
+[00:54:40] <SpikeDragon> I logged into mine and I restarted it to install a kernel update. Well, it didn't come back up. 
+[00:54:49] <Colgate> that's always fun
+[00:55:06] <SpikeDragon> I drove 30 mins to the physical location and was greeted by a grub rescue prompt... 
+[00:55:30] <init3> I worked at a Datacenter that lost power while we were still waiting on the permits to install our generator. 300+ servers all rebooting at once.
+[00:55:42] <init3> Complete disaster.
+[00:55:50] <SpikeDragon> Oh gawd... 
+[00:56:03] <init3> Yeah...
+[00:56:12] <SpikeDragon> I was lucky... Only had 13 hours downtime... :/
+[00:56:28] <init3> We had been waiting over a year for the permit to pour the concrete to set our generator on.
+[00:56:42] <SpikeDragon> The update apparently nuked the /boot folder and removed the kernel... 
+[00:56:50] <init3> Who needs that?
+[00:57:02] <Colgate> I run the systemd kernel
+[00:57:03] <SpikeDragon> And what state is that? And exactly. It's optional right? 
+[00:57:37] <SpikeDragon> Let me rephrase my first question. What government were you waiting on to approve your permit? 
+[00:57:43] <Compu> SpikeDragon: at least it got rid of that system32 virus o3o
+[00:57:51] <init3> Flint, Michigan.
+[00:57:57] <SpikeDragon> Fun. 
+[00:57:58] <init3> If you know about flint
+[00:58:04] <init3> You probably know why
+[00:58:04] <SpikeDragon> No idea
+[00:58:12] <SpikeDragon> Strict codes? 
+[00:58:27] <SpikeDragon> Or lazy? :P
+[00:58:37] <init3> Well... It is (was?) the most violent cities in the US. 
+[00:58:45] <init3> Also completely broke.
+[00:58:49] <SpikeDragon> Oh... 
+[00:59:21] <init3> We just decided to just say to hell with the permit and just did it anyway and pay a fine if they ever bitched. 
+[01:00:28] <SpikeDragon> They location I keep my stuff at is one of my friends houses and he has business class Internet :P 
+[01:00:39] <init3> Ahh
+[01:01:08] <SpikeDragon> *The... You never realize how horrible someone's electric and ethernet wiring are until you try to run infrastructure there
+[01:01:36] <SpikeDragon> And did they even notice you built it? 
+[01:01:55] <init3> Not sure. Got laid off shortly after :(
+[01:02:01] <init3> but I highly doubt it.
+[01:02:10] <SpikeDragon> Oh :/ sorry to hear that. 
+[01:02:22] <init3> Meh, 'tis life.
+[01:02:26] <SpikeDragon> You backdoored the whole place though right? 
+[01:02:42] <init3> Heh. Really didn't need to.
+[01:02:54] <init3> A year on and they still haven't asked for the keys back.
+[01:02:59] <SpikeDragon> Haha 
+[01:03:02] <SpikeDragon> Nice 
+[01:03:02] <init3> I keep asking them if they want them
+[01:03:57] <init3> I know the bossman says he wants to bring me back as soon as he can but the web hosting industry is so saturated nowadays. 
+[01:04:21] <SpikeDragon> Sure is... 
+[01:04:47] <SpikeDragon> Target node.js people. You can't do websockets on godaddy :P
+[01:05:20] <init3> Well I think our biggest competition was more like AWS
+[01:05:24] <AppleDash> I don't use shared hosting for anything
+[01:05:38] <JustAberrant> ALL HOSTING IS SHARED!
+[01:05:42] <JustAberrant> *ahem*
+[01:05:55] <AppleDash> You know what I mean :P
+[01:06:02] <JustAberrant> :>
+[01:06:05] <init3> Shared hosting is a great money maker though
+[01:06:30] <JustAberrant> I dunno, I got a friend who, in his words, "is getting outa that shit"
+[01:06:56] <init3> Well support is where you go to die really,
+[01:07:07] <SpikeDragon> Aws... *vomit*
+[01:07:16] <JustAberrant> says margins are too small, support is too expensive, and dealing with abuse complaints is a major headache
+[01:07:17] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[01:07:29] <AppleDash> AWS isn't that bad
+[01:07:30] <init3> Lol abuse complaints
+[01:07:34] * init3 pukes
+[01:08:14] <JustAberrant> he mainly does design/consulting/management stuff, hosting things on his own colocated servers
+[01:08:17] <SpikeDragon> Google app engine
+[01:08:20] * SpikeDragon dies
+[01:08:24] <JustAberrant> but he also offered straight hosting
+[01:08:24] <Colgate> microsoft azure
+[01:08:31] <SpikeDragon> Lol
+[01:08:36] <init3> The margins are decent if you have a lot of smaller sites and use good hardware. 
+[01:08:38] <JustAberrant> so part of it is probably that he isn't really a hosting company ;p
+[01:08:55] <init3> but the support overhead is the killer
+[01:09:19] <Colgate> like, what kind of support are you looking for?
+[01:09:26] <JustAberrant> and also he's a local guy, and yeah, the kind of people who pay those kind of prices for shitty shared hosting also tend to need a lot of support I guess
+[01:09:39] <init3> Yeah
+[01:09:42] <Colgate> most of the places I host are just like, we will reformat and hard reboot your machine, beyond that, screw you
+[01:09:47] <Colgate> I host at*
+[01:10:12] <JustAberrant> Colgate: well yeah, but we're talking people who arn't primarily targetting geeks
+[01:10:16] <Colgate> if you want more, get managed hosting
+[01:10:20] <init3> I've worked at a number of DCs and they are all different support wise for dedis
+[01:10:20] <Colgate> and pay the $$$
+[01:10:29] <init3> Yeah.
+[01:10:32] <JustAberrant> Colgate: we specifically are (I thought) talking about managed hosting ;p
+[01:10:43] *** Joins: Datalink (Datalink@Datalink)
+[01:10:58] <JustAberrant> trying to undercut prices from guys like dreamhost with unmanaged hosting sounds.. well.. painful
+[01:11:01] <Colgate> oh, /shrug
+[01:11:22] <init3> Depends
+[01:11:27] <JustAberrant> also random: just me or is prgmr basically stalled
+[01:11:56] <init3> i mean, if you just throw cpanel on a box and most of the time your users can help themselves if they are somewhat competent. 
+[01:12:00] <JustAberrant> they used to be the shit, feels like they just said "fuck it, we'll keep running with what we've got"
+[01:12:49] <init3> Thogh the last place I worked used Plesk on Linux. Talk about stupid. 
+[01:13:08] <init3> I hate that CP so much
+[01:13:23] <JustAberrant> hehe
+[01:13:35] <init3> As an example of it's bullshit.
+[01:13:36] * JustAberrant hasn't used either enough to really have an opinion
+[01:13:56] <JustAberrant> dreamhost is the only shared hosting I've used for any length of time, and they've got their own (pretty good) panel
+[01:14:24] <JustAberrant> (got my stuff on a linode VPS now)
+[01:14:26] <init3> It uses MySQL to hold all the variables so if MySQL crashes the box has an aneurysm. 
+[01:14:26] <Kinsley> I just roll a VPS. Having a full shell and root access for $60 a year is pretty decent.
+[01:14:57] <JustAberrant> yeah, these days, there's no reason for a respectable computer geek to use shared hosting
+[01:15:01] <init3> I thought dreamhost used cpanel.
+[01:15:18] <JustAberrant> cheap VPSes are plentiful and yeah, so much nicer
+[01:15:31] <JustAberrant> init3: they might have switched, but back when I used them, their custom panel was their big selling point
+[01:17:16] <init3> Dunno. I know that a lot of companies with "custom" control panels are just slapping a skin or making API calls to a cpanel box.
+[01:17:44] <Colgate> I should setup a panel for my dedis
+[01:17:52] <Colgate> instead of using virt-manager over ssh
+[01:17:59] <init3> I used to work for Host Gator though. Damn that was a shit company.
+[01:18:30] <JustAberrant> init3: it's possible, though if that is what they did, they did a damn good job imo
+[01:18:54] <init3> Yeah, nothing wrong with that at all.
+[01:19:20] <init3> Well actually, I'd probably perfer that in a way. Cpanel is a great piece of software.
+[01:19:38] <JustAberrant> quick google, everything says it's specifically not cpanel ;p
+[01:19:55] <johnsey> i used cPanel once. fuck panels, rather set everything up myself
+[01:20:09] <init3> Yeah. If you know what you are doing for sure.
+[01:20:22] <johnsey> only 1 way to learn :) 
+[01:20:29] <init3> I'd never use on on my own servers, but for shared hosts it's decent.
+[01:20:30] <JustAberrant> depends on what you want
+[01:20:32] <Colgate> it just want people to be able to restart their own VMs and get serial access to them, but nothing else >.>
+[01:20:40] <Colgate> I just*
+[01:20:50] <init3> And cpanel does have some of the best support I've ever worked with.
+[01:21:08] * JustAberrant same way though, I find myself thinking "what is it actually putting in the config files" anyway, so may as well just write the damn config files myself
+[01:21:25] <johnsey> (granted, it's about 10 years since i used cPanel last time)
+[01:21:48] <init3> Yeah, I mean we were making a custom panel where I was last at.
+[01:22:01] <init3> Was actually pretty cool how we had it set up.
+[01:23:07] <init3> A cpanel-esque setup but not set up like those boxes in that the DB, Mail, DNS, and web servers weren't all on the same box.
+[01:23:33] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:23:35] <init3> And since some of our customers "need" windows "hosting"
+[01:24:09] <johnsey> Colgate: you could give them picocom or something as a login shell ;)
+[01:24:15] <init3> It was kind of cool being able to keep the mail on postfix and whatnot and let them play in their IIS hellhole
+[01:27:24] <init3> I don't know if I'll ever understand why people make websites in .NET.
+[01:27:57] <init3> PHP has its problems, granted but come the fuck on.
+[01:29:46] *** Quits: Nell (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (Ping timeout: 121 seconds)
+[01:31:04] *** Joins: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful)
+[01:31:14] *** Joins: cyborg_ar (cyborgar@Pony-53c.eai.25.181.IP)
+[01:34:40] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[01:35:45] *** Quits: DonutSteele (averagejoey@Pony-m81a8n.lv.cox.net) (Ping timeout: 121 seconds)
+[01:37:18] *** Joins: DonutSteele (averagejoey@Pony-m81a8n.lv.cox.net)
+[01:37:47] *** DonutSteele is now known as Pony_23129
+[01:40:15] *** Joins: CompuDesktop (quassel@snuggly.filly)
+[01:40:34] *** Quits: Compu (compu@snuggly.filly) (A TLS packet with unexpected length was received.)
+[01:45:19] *** Joins: Compu (compu@snuggly.filly)
+[01:48:48] *** Quits: CompuDesktop (quassel@snuggly.filly) (A TLS packet with unexpected length was received.)
+[02:18:07] *** GigaWork is now known as Gigabit
+[02:18:38] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[02:21:39] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[02:21:57] *** Joins: locodash11[server] (locodash11@Pony-osmcfg.co.comcast.net)
+[02:24:18] <Googie> C# is a nice language, I haven't dealt with ASP.net, but I can't imagine it's too bad. Not worth the tradeoff for IIS at all though
+[02:25:00] *** Quits: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net) (Ping timeout: 121 seconds)
+[02:26:10] * JustAberrant sits in the corner and makes a gentle buzzing sound
+[02:30:41] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[02:32:40] *** Quits: ChaoticRift (ChaoticRift@Pony-i5gn52.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[02:34:49] *** Joins: ChaoticRift (ChaoticRift@Pony-l2bdn8.7h3b.037j.000a.2601.IP)
+[02:42:39] <Phase4> Googie, my understanding is it's similar to php, but with @ and derivatives instead of <?php
+[02:42:52] <Phase4> and you get to use whatever .net language you want
+[02:50:36] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[03:01:38] <AppleDash> What is actually the key combo to perform a history search in zsh?
+[03:01:53] <AppleDash> I've done it by accident loads of times, but I don't know how to trigger it when I actually want to.
+[03:05:33] *** Quits: Nelly (N3sTlyPhaNt@Anonlight.Starsarebeautiful) (Ping timeout: 121 seconds)
+[03:09:29] <JustAberrant> ctrl-shift-stop-using-hipster-shells ;p
+[03:10:51] <wolfyshy> AppleDash: ctrl-r is bck-i-search by default, 
+[03:10:58] <wolfyshy> I meant . not ,
+[03:11:28] <AppleDash> wolfyshy: Amazing
+[03:11:29] <AppleDash> Thanks
+[03:11:47] <AppleDash> JustAberrant: :(
+[03:12:45] <Compu> wolfyshy: what is ctrl+f then?
+[03:12:59] <wolfyshy> doesn't seem bound to anything by default
+[03:15:34] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[03:22:33] <wolfyshy> http://www.thisis50.com/forum/topics/the-longest-password-funny?xg_source=activity
+[03:22:33] <PinkiePieBot> [ The Longest Password *funny* - ThisIs50.com ]
+[03:23:12] <AppleDash> xD
+[03:23:19] <AppleDash> I expected a penis joke
+[03:27:02] <init3> So... like anyone else see the leaked Canadian "pony express" thing? I am baffled as to how anyone could equate scanning incoming emails with government mass surveillance.
+[03:32:38] <Googie> Scanning and archiving...
+[03:32:47] <Googie> That's pretty much the definition of mass surveillance.
+[03:33:29] <init3> If we weren't only talking email that are already destined to a government server. 
+[03:33:58] <Googie> I missed that.
+[03:34:04] <JustAberrant> yeah, that was pretty stupid
+[03:34:05] <Googie> If that's the case, then that's a very different thing.
+[03:34:24] <JustAberrant> there scanning email.. that uh.. people send them!
+[03:34:44] <JustAberrant> and storing it.. for hours.. soemtimes even days!
+[03:34:45] <init3> Yeah, I read the whole ppt just to make sure I wasn't missing something that made it a big deal.
+[03:34:47] <JustAberrant> * sometimes
+[03:35:22] <init3> Yeah. Hell, for all we know, they government could have hundreds of servers containing data we gave them.
+[03:35:29] <init3> Whole datacenters perhaps.
+[03:36:10] <init3> They might even be tricky and try to pass them off as "mail servers"
+[03:36:27] <init3> but we all know postfix is just a code word for something evil.
+[03:36:53] <init3> (although postfix itself /can/ be a little evil)
+[03:36:58] <AppleDash> lol
+[03:37:53] <Googie> All mail servers are evil. I've yet to find one that isn't :P
+[03:41:09] <Colgate> ^
+[03:51:46] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Connection closed)
+[03:51:51] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[04:48:24] *** Quits: ChaoticRift (ChaoticRift@Pony-l2bdn8.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[04:51:58] *** Joins: Datalink (Datalink@Datalink)
+[05:17:15] *** Quits: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[05:30:29] <wolfyshy> is it bad that when I was chosen to pick a codename for this release (like software, at work)
+[05:30:35] <wolfyshy> I picked 'Sonata'
+[05:30:43] <wolfyshy> everyone thinks it's the music term
+[05:30:51] <wolfyshy> I picked it because of the Dazzlings >.>
+[05:38:47] <tiwake> wolfyshy: every once in a while when I order tooling for the shop I have them put a pony name in the purchase order number
+[05:39:25] <tiwake> normally I ask whoever answers the phone if they have a favorite dog or cat or flower type or whatever
+[05:40:06] <tiwake> most recent one was elmer fud.. heh
+[05:40:18] <wolfyshy> hah
+[05:40:30] <wolfyshy> I was reading a blog a few nights ago and it was talking about "Trixie the Dog (not Trixie the Great and Powerful (I AM NOT A BRONY))"
+[05:40:41] <wolfyshy> made me giggle
+[05:41:17] <tiwake> heh
+[05:42:05] <tiwake> I want to make a bigass rocket and paint ponies all over it... but I wont have time for that for probably a long time
+[05:42:27] *** eyeburn is now known as Starburn
+[05:42:41] <tiwake> by bigass I mean ~5000lbs of thrust
+[05:47:15] *** Quits: cyborg_ar (cyborgar@Pony-53c.eai.25.181.IP) (Ping timeout: 121 seconds)
+[05:58:09] <tiwake> what movie should I watch?
+[05:58:10] *** Joins: Phase4 (Phase4@Pony-ml44gq.internode.on.net)
+[05:58:23] <Kinsley> Tiwake: XCOM gameplay! 
+[05:58:33] <tiwake> never played xcom
+[05:58:41] <tiwake> the new one or any of the old ones
+[05:59:52] <Kinsley> Then watch anyway because I tell fun stories!
+[06:00:34] <tiwake> oh, I havent seen any of the hobbit movies
+[06:14:30] *** Neptune is now known as Neptune|sleep
+[06:19:36] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[06:20:49] *** Quits: Webster (Webster@Pony-mme.2eo.212.73.IP) (Quit: Leaving)
+[07:06:18] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[07:08:53] *** Q0|Away is now known as Q0
+[07:13:42] <Compu> D:
+[07:13:45] <Compu> greg is leaving the completionist
+[07:33:44] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[07:40:05] *** Joins: Misan (misan@Pony-vmqpec.cm.kabsi.at)
+[07:42:49] *** ThunderBolt|Sleep is now known as ThunderBolt
+[08:08:45] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:10:51] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Connection closed)
+[08:23:27] *** Joins: Phase5 (Phase4@Pony-9iav48.internode.on.net)
+[08:24:12] *** Quits: Phase4 (Phase4@Pony-ml44gq.internode.on.net) (Ping timeout: 121 seconds)
+[08:57:13] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[09:35:16] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[09:41:17] *** Joins: JockeTF (jocke@Pony-pbm.r3h.28.195.IP)
+[10:04:31] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:18:29] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[10:36:06] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[10:53:35] *** Quits: reiuiji (reiuiji@nuclear.raven) (Ping timeout: 121 seconds)
+[10:55:43] *** Joins: reiuiji (reiuiji@Pony-6vp0lq.ma.comcast.net)
+[11:57:58] <Googie> Bloody GTLDs. http://www.businessinsider.com/google-just-paid-25-million-to-buy-the-entire-app-web-domain-2015-2
+[11:57:58] <PinkiePieBot> [ Google just paid $25 million to buy the entire '.app' web domain - Business Insider ]
+[12:16:07] *** Q0 is now known as Q0|Away
+[12:18:49] *** Joins: Datalink (Datalink@Datalink)
+[12:31:47] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[13:21:08] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[13:50:35] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[14:21:04] *** Quits: Fallfeathers (Fallfeather@Pony-v0u6nc.internode.on.net) (Connection closed)
+[14:23:24] *** Joins: faalentijn (faalentijn@Pony-hp8.ip7.85.86.IP)
+[14:59:59] * Urioxis wonders if GTLDs are just the C21 version of vanity plates
+[15:08:30] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[15:11:11] *** Joins: Ashfire (Ashfire@Ashfire.bronytv.net)
+[15:12:59] *** Quits: Ashley (Ashfire@Ashfire.bronytv.net) (Ping timeout: 121 seconds)
+[15:15:46] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[15:30:25] *** Quits: Caerdwyn (moonlight@always.broken.sometimes.patched.never.fixed) (Connection closed)
+[15:53:47] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[15:56:50] *** Joins: SqueakyNote (Squeaky@Pony-thbjgi.tukw.qwest.net)
+[16:31:21] *** Quits: Misan (misan@Pony-vmqpec.cm.kabsi.at) (Connection closed)
+[16:34:11] *** Joins: Datalink (Datalink@Datalink)
+[16:34:29] *** Neptune|sleep is now known as Neptune
+[16:40:05] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[16:42:21] <tiwake> Googie: thats dumb
+[16:44:16] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:46:36] *** [A]McKey is now known as McKey
+[17:11:26] *** Quits: JockeTF (jocke@Pony-pbm.r3h.28.195.IP) (Quit: Leaving.)
+[17:40:30] *** Joins: Datalink (Datalink@Datalink)
+[18:02:07] *** Joins: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net)
+[18:41:49] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[18:46:48] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[18:55:25] *** Joins: Datalink (Datalink@Datalink)
+[19:04:14] *** Joins: Datalink_ (Datalink@Datalink)
+[19:04:58] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[19:20:07] *** Joins: Datalink__ (Datalink@Datalink)
+[19:22:39] *** Quits: Datalink_ (Datalink@Datalink) (Ping timeout: 121 seconds)
+[19:36:29] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[19:38:07] *** Joins: locodash11[server] (locodash11@Pony-osmcfg.co.comcast.net)
+[19:40:12] *** Quits: Datalink__ (Datalink@Datalink) (Ping timeout: 121 seconds)
+[19:41:41] *** Joins: Datalink (Datalink@Datalink)
+[19:44:25] *** Quits: locodash11[server] (locodash11@Pony-osmcfg.co.comcast.net) (Ping timeout: 121 seconds)
+[19:44:46] *** Joins: locodash11[server] (locodash11@Pony-osmcfg.co.comcast.net)
+[19:58:08] *** Joins: Datalink_ (Datalink@Datalink)
+[20:00:21] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[20:05:30] *** Quits: Datalink_ (Datalink@Datalink) (Ping timeout: 121 seconds)
+[20:14:54] *** Joins: Datalink (Datalink@Datalink)
+[20:33:28] *** Quits: Datalink (Datalink@Datalink) (Connection closed)
+[20:45:00] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[20:57:50] *** Gigabit is now known as GigaWork
+[21:01:48] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[21:10:51] *** Joins: ChaoticRift (ChaoticRift@Pony-l2bdn8.7h3b.037j.000a.2601.IP)
+[21:28:41] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[21:30:02] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[21:48:41] <aji> ez
+[21:49:26] <SqueakyNote> ?
+[21:57:11] *** Quits: faalentijn (faalentijn@Pony-hp8.ip7.85.86.IP) (Connection closed)
+[22:09:52] *** Quits: ChaoticRift (ChaoticRift@Pony-l2bdn8.7h3b.037j.000a.2601.IP) (Quit: Signal 9 happened)
+[22:19:16] <Twilightlicious> I disabled hangouts on chrome, how do i undisable it lol
+[22:20:15] <Twilightlicious> nvm found it
+[22:20:59] <Twilightlicious> doesn't work on my high latency connection, yay
+[22:24:15] <SqueakyNote> Woo. :P
+[22:24:39] <SqueakyNote> What's your general uptick?
+[22:25:53] * Twilightlicious doesn't know what that means~
+[22:26:06] <Twilightlicious> never heard the term "uptick" before >3>
+[22:26:45] <Twilightlicious> but my ping on an idle connection is around 750ms
+[22:26:48] <SqueakyNote> I use that term in place of the longer actual term.
+[22:27:08] <SqueakyNote> What's your ISP's upload rate?
+[22:27:35] <Twilightlicious> uhhhh... like... 150Kilabytes per second
+[22:27:36] <Twilightlicious> D;
+[22:27:36] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:27:45] <Twilightlicious> i spell it out because i dunno the difference between Kb and KB.
+[22:27:51] * Twilightlicious is noob =3
+[22:28:22] <SqueakyNote> I know it like this.
+[22:28:26] <Twilightlicious> oh! did you guys hear the DX12 news that leaked todat?
+[22:28:31] <SqueakyNote> A 'bit' is smaller than a 'Byte'
+[22:29:05] <Twilightlicious> DX12 will be able to combine all the GPU's in your PC, no matter what model
+[22:29:13] <SqueakyNote> That's how I tell between a 'Kbit' and a 'KByte'
+[22:29:16] <Twilightlicious> AMD + Nvidia, or any combination.
+[22:29:58] <SqueakyNote> Doesn't much help me. My machine would probably be kicked in the nuts if I tried to run anything with DX12.
+[22:30:15] <Twilightlicious> DX12 is also supposed to use like 80% Less power, or something.
+[22:30:17] <Twilightlicious> i dunno.
+[22:30:22] <SqueakyNote> Phenomenal net speeds. Crap PC.
+[22:30:40] <Twilightlicious> Mostly in an effort to get DX12 functioning on Tablets n devices running on Battery.
+[22:31:11] <SqueakyNote> Power isn't the problem with me, though.
+[22:31:26] <SqueakyNote> It's a general combination of a multitude of factors.
+[22:31:27] <Twilightlicious> now we sit back and wait for them to say "DX12: Only on Windows 10"
+[22:31:34] <SqueakyNote> lol
+[22:31:39] <Twilightlicious> then again, Windows 10 is a free upgrade, so that would make sense too.
+[22:31:59] <SqueakyNote> Yeah, I'm curious about that. When they say it's a free upgrade... what would it be upgrading from?
+[22:32:07] <Twilightlicious> 7+
+[22:32:07] <SqueakyNote> Windows 8? Windows 7? Vista? XP?
+[22:32:12] <Twilightlicious> Requires Windows 7 or higher.
+[22:32:15] <SqueakyNote> Ah
+[22:32:26] <SqueakyNote> Does it require a valid Windows 7 key?
+[22:32:36] <Twilightlicious> The verification method isnt known yet :P
+[22:33:06] <Twilightlicious> But i'd be willing to bet you can just use an OEM Verification trick on Windows 7 to pass the upgrade test
+[22:33:13] <SqueakyNote> If it reuses the key you used when installing your Windows 7, that's a genius way as well.
+[22:33:24] <Twilightlicious> i say "oem verification trick" to avoid advertising piracy ;P
+[22:33:35] <SqueakyNote> lol
+[22:34:00] <Twilightlicious> It's how i got Windows 8 cheap
+[22:34:13] <Twilightlicious> i went to walmart and bought a Windows 8 upgrade disk
+[22:34:21] <Twilightlicious> and installed it on my not-so-legit Windows 7 copy.
+[22:34:50] <SqueakyNote> Well, when I say it's a genius way, most people have tossed out their Windows 7 boxes after verifying their codes. At least, the not-so-smart people.
+[22:35:08] <Twilightlicious> Don't talk about me like that Q~Q Lol
+[22:35:11] <Twilightlicious> I lost my Windows 8 key.
+[22:35:18] <Twilightlicious> i didn't "Toss it out" though
+[22:35:34] <SqueakyNote> Then there are some like you, who lose their keys.
+[22:35:37] <Twilightlicious> i genuinely misplaced it.
+[22:35:50] <Twilightlicious> i think someone in my family probably mistook it for garbage
+[22:36:40] <SqueakyNote> If Microsoft required you to re-input a key that you had with your current install, then check your Registry for verification of said key... that'd be a very smart way to allow Windows 10 to work free.
+[22:36:52] <Twilightlicious> i doubt it will do that
+[22:37:07] <Twilightlicious> it will probably do something similar to WGa
+[22:37:12] <Twilightlicious> And then just accept it
+[22:37:16] <SqueakyNote> And then, Microsoft would STILL be the dumbest smart people alive.
+[22:37:22] <Twilightlicious> Microsoft isn't as concerned with Piracy as you'd think.
+[22:37:30] <SqueakyNote> Heh
+[22:37:50] <Twilightlicious> they're giving away their OS for free, for example.
+[22:38:07] <Twilightlicious> And if you've ever called Microsoft about product activiation, they'll pretty much activate it for you under any excuse
+[22:38:38] <Twilightlicious> i had one Support guy, i told him "I lost my key" and he just said okay and activated my Windows 8 for me
+[22:38:39] <SqueakyNote> Yeah, but they say you would need to have Windows 7 or higher to upgrade...
+[22:38:58] <SqueakyNote> they would probably have some way to check that.
+[22:39:03] <Twilightlicious> and i was thinking "I didn't even need to buy windows 8 Q~Q"
+[22:40:04] *** Phase5 is now known as Phase4
+[22:40:06] <Twilightlicious> then they have their activation bot
+[22:40:28] <Twilightlicious> that if it sees your using the Key multiple times, will ask "How many PCs have you activated using this key?"
+[22:40:35] <Phase4> Twilightlicious, their money os from oem preinstalls and corporates, they don't much care about the retail market
+[22:40:41] <Twilightlicious> ^ Exactly
+[22:40:47] <Twilightlicious> thats what im explaining to SqueakyNote :P
+[22:40:57] <Twilightlicious> theyre not as worried about Piracy as you'd think
+[22:44:34] <Colgate> we had an MS audit a few years back at my work
+[22:44:38] <Colgate> that was fun
+[22:45:58] <Phase4> in the corporate market though they do care
+[22:46:05] <Phase4> since they have money
+[23:00:51] <Twilightlicious> i can't figure out how to delete people on my Android Phone Q~Q
+[23:01:01] <Twilightlicious> going to contacts.google.com on my PC hoping that'll be easier.
+[23:02:05] <Twilightlicious> There, now i sync my phone somehow.
+[23:02:22] <Twilightlicious> oh, it was instantaneous.
+[23:02:29] <Twilightlicious> Fascinating.
+[23:05:56] *** Joins: cyborg_ar (cyborgar@Pony-53c.eai.25.181.IP)
+[23:12:31] *** McKey is now known as [A]McKey
+[23:14:32] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[23:30:08] *** [A]McKey is now known as McKey
+[23:30:22] *** Parts: pwnie (pwnie@Pony-2bnu0u.range81-157.btcentralplus.com) ("Leaving")
+[23:42:26] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[23:45:17] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)

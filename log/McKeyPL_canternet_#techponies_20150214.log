@@ -1,0 +1,442 @@
+[00:02:20] *** Quits: Xena (liska@yolo-swag.com) (Ping timeout: 121 seconds)
+[00:07:21] <JustAberrant> lets have a roman candle duel :D
+[00:08:07] * nscoots shudders
+[00:08:12] <nscoots> know folks who have
+[00:08:19] <nscoots> have actively avoided it myself
+[00:08:19] * JustAberrant has :D
+[00:08:30] <nscoots> also know someone who got a nasty burn in the stomache
+[00:08:39] <nscoots> does look "fun" though :P
+[00:08:46] <JustAberrant> they don't hurt that much.. but yeah.. it's one of those things you look back on and wonder wtf you were thinking
+[00:09:14] <nscoots> I think seeing a roman candle go wrong
+[00:09:18] <nscoots> and not launch
+[00:09:26] <nscoots> helps convince you to not hold them in your hoof
+[00:09:28] <nscoots> also
+[00:09:44] <JustAberrant> I'd be more worried about taking one in the face
+[00:10:54] *** Dusk is now known as Dusk|Food
+[00:12:27] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[00:13:18] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:13:47] *** Joins: Xena (liska@yolo-swag.com)
+[00:22:22] *** Joins: Asoka (Asoka@Pony-sve37e.net-htp.de)
+[00:25:33] *** Quits: Asoka_White (Asoka@Pony-gl672n.net-htp.de) (Ping timeout: 121 seconds)
+[00:29:01] *** Quits: Misan (misan@Pony-vmqpec.cm.kabsi.at) (Client exited)
+[00:29:37] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:36:04] *** Dusk|Food is now known as Dusk
+[00:55:16] <Moonlightning> In a makefile, how do I make `make` invoke the compiler with `-Wall -Wextra -pedantic -Werror`? >.>
+[00:58:09] <AppleDash> Uhm
+[00:58:19] <AppleDash> Do you know how to use makefiles?
+[00:58:54] <AppleDash> You just... Put those flags after the command? Or if you've got a variable containing compiler flags, add them to that variable?
+[00:59:53] <Moonlightning> No, I don't. -.-
+[00:59:57] <Moonlightning> I didn't /want/ to in the first place…
+[01:01:32] <AppleDash> Google for a Makefile tutorial
+[01:02:04] <JackG> Moonlightning: if you really don't want to, you could try moving your compiler (sudo mv gcc gcc-base) and then putting a script in its place
+[01:02:55] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[01:03:13] <aji> one of the things i love about math is being able to define and describe things that can't possibly exist in the real world
+[01:03:23] <wolfyshy> normally with makefiles you can just specify CFLAGS
+[01:03:23] <aji> very easy example, N, the set of natural numbers
+[01:03:44] <aji> there will always be more natural numbers than particles in the universe, because the number of particles in the universe is finite
+[01:04:02] <aji> so N can't exist in our universe, it's simply too big.
+[01:04:31] <johnsey> [citation needed]
+[01:04:45] <aji> and yet it's one of the first things you learn about in proof-based math classes
+[01:12:36] <Moonlightning> ././include/linux/kconfig.h:23:43: error: anonymous variadic macros were introduced in C99 [-Werror=variadic-macros]
+[01:12:37] <Moonlightning>  #define ___config_enabled(__ignored, val, ...) val
+[01:12:37] <Moonlightning>                                            ^
+[01:12:44] <Moonlightning> You're kidding.
+[01:12:47] <Moonlightning> You're kidding, right?
+[01:13:05] <Moonlightning> The LINUX KERNEL has stuff in it that's not compatible with C89.
+[01:13:36] <Moonlightning> AND it doesn't compile with -std=c99 or something
+[01:13:40] <Moonlightning> That, or I'm still doing stuff wrong >.>
+[01:13:49] <AppleDash> The Linux kernel is not meant to be compiled with c89
+[01:15:00] <Moonlightning> Then why doesn't it invoke the compiler with `-std=`?
+[01:16:28] <wolfyshy> because it uses a lot of GNU extensions
+[01:16:32] <wolfyshy> it isn't even really C
+[01:16:34] <wolfyshy> it's GNU C
+[01:16:39] <wolfyshy> you have to use std=gnu99
+[01:17:08] <Moonlightning> Why is that MY job?
+[01:17:15] <Moonlightning> And the job of everyone who wants to build it?
+[01:17:25] <Moonlightning> Why doesn't it makefile or something specify that?
+[01:17:30] <Phase4> it isn't, the build tools should check for this
+[01:17:44] <Phase4> i'm not sure how you're compiling it to make them not check
+[01:17:46] <Moonlightning> Wouldn't it be better to put `-std=gnu99` in the master makefile or whatever instead of making everyone add it?
+[01:18:46] <johnsey> why would you add that?
+[01:18:56] <AppleDash> ^
+[01:19:06] <aji> can't you just add -std=gnu99 to the config's C flags?
+[01:19:26] <Moonlightning> > Can't everypony who ever wants to build Linux ever just add `-std=gnu99` to the config's C flags?
+[01:19:51] <Moonlightning> Well, yes, but you could also make everypony's lives that much easier and just include it in /the/ makefile
+[01:20:00] <Moonlightning> Why not do /that?/
+[01:20:10] *** Quits: Datalink (Datalink@Datalink) (Connection closed)
+[01:20:41] <aji> i'm assuming you're using a custom or old c compiler?
+[01:21:03] <AppleDash> aji: Moonlightning is just weird
+[01:21:11] <AppleDash> Nobody ever knows what he's trying to do
+[01:21:19] <Moonlightning> gcc (Ubuntu 4.9.1-16ubuntu6) 4.9.1
+[01:21:27] <Moonlightning> To my knowledge, this is the only compiler installed on the system.
+[01:21:49] <JustAberrant> when your talking about compiling a kernel, there might be some hoops ;p
+[01:22:33] <Moonlightning> -.-
+[01:31:15] <Phase4> no, linux kernel compiles very cleanly
+[01:31:30] <JustAberrant> :(*
+[01:31:41] <Phase4> if cross compiling or you have an odd toolchain then sometimes there's issues, but even then
+[01:31:53] <Phase4> Moonlightning, what are you doing to hit this error?
+[01:33:12] <johnsey> Moonlightning: if you're using C99 features such as mixed code and variable declarations, Linus will come personally to hunt you down, kill you and burn your corpse
+[01:33:24] <Moonlightning> johnsey: I'M not using C99 features.
+[01:33:27] <Moonlightning> That's not my code.
+[01:33:40] <Phase4> Moonlightning, is it mainline or a vendor tree?
+[01:34:37] <Moonlightning> Phase4: distribution, I guess. It's just in…wherever this is looking for kernel headers
+[01:34:58] <Phase4> driver or a kernel?
+[01:35:42] <Moonlightning> Dunno.
+[01:35:49] <Moonlightning> full path: /usr/src/linux-headers-3.16.0-30/include/linux/kconfig.h
+[01:35:50] <Phase4> i mean are you compiling a driver or a whole kernel
+[01:35:56] <Moonlightning> A module.
+[01:36:17] <johnsey> Moonlightning: I linked you this before: http://tldp.org/LDP/lkmpg/2.6/html/lkmpg.html#AEN189
+[01:36:18] <PinkiePieBot> [ The Linux Kernel Module Programming Guide ]
+[01:36:19] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[01:36:37] <johnsey> that sample makefile does not look terribly complicated, does it?
+[01:36:38] <Moonlightning> johnsey: yes, and I have it open
+[01:36:44] <Phase4> Ah, if your distro has dkms use that. i've gotta look up how out of tree modules are built again
+[01:36:57] <Moonlightning> None of the sample makefiles have `-std=` in them, johnsey.
+[01:37:03] <johnsey> why would they?
+[01:37:16] <johnsey> forget about -std
+[01:37:17] <Phase4> Moonlightning, they include makefiles from the  kernel source
+[01:37:18] <Moonlightning> Because apparently Linux uses C99 features
+[01:37:24] <Phase4> or are at least supposed to
+[01:37:25] <Moonlightning> According to the error I got
+[01:37:43] <Phase4> https://www.kernel.org/doc/Documentation/kbuild/modules.txt
+[01:38:08] <Phase4> make -C <path_to_kernel_src> M=$PWD
+[01:38:31] <Moonlightning> That's what I'm doing.
+[01:38:55] <Moonlightning> …wait a second, isn't that the line from the makefile?
+[01:39:36] <Phase4> ?
+[01:44:47] <Moonlightning> Oh, no, it's not.
+[01:45:10] <Moonlightning> make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules  # so this goes in the makefile
+[01:45:52] <Moonlightning> make -C /usr/src/$(uname -r) M=$(pwd)                          # and then you invoke `make` like this?
+[01:46:08] <johnsey> if you read the link above, you would know the answer -.-
+[01:46:26] <johnsey> -> Example 2-4. Makefile
+[01:47:21] <johnsey> you put it in a file called Makefile and invoke rm -rf /*
+[01:47:23] <johnsey> sorry i mean make
+[01:48:14] <Moonlightning> In section 2.1, it says to use `make -C <path_to_kernel_src> M=$PWD` to build an external module, but `make -C /lib/modules/$(uname -r)/build M=$PWD` to build an external module against the running kernel.
+[01:49:28] <johnsey> and this is different from the Makefile how?
+[01:49:35] <Moonlightning> It's not!
+[01:49:37] <johnsey> see
+[01:49:53] <Moonlightning> So…since you're apparently giving `make` this information on the command line
+[01:50:00] <Moonlightning> What exactly is the point of having it in the makefile?
+[01:50:13] <johnsey> that you can just type "make"?
+[01:51:03] <Moonlightning> …okay.
+[01:51:08] <cyborg_ar> :>
+[01:51:20] <johnsey> that happens to be the sole purpose of Makefiles
+[01:51:30] <cyborg_ar> lol
+[01:52:16] <cyborg_ar> and rule-based dependency tracking recipes :)
+[01:53:02] <johnsey> in the end, it's about noting having to type a million lenghty, hard-to-remember commands
+[01:55:57] <Moonlightning> So…I'm supposed to include Linux' makefile?
+[01:56:46] <johnsey> Moonlightning: man make, /-C
+[01:57:37] <johnsey> i.e. you're invoking the Linux Makefile and you're telling it to build your module.
+[01:57:54] <Moonlightning> Ohhhhhh.
+[01:58:01] <johnsey> oh and by the way
+[01:58:41] <johnsey> grep HOSTCFLAGS /lib/modules/$(uname -r)/build/Makefile
+[01:58:59] <johnsey> maybe this helps with your -std question in regards to the linux kernel
+[01:59:51] <Moonlightning> Mmmm, don't see a `-std` in there
+[01:59:56] <Moonlightning> Or anywhere in the file, actually
+[02:00:43] <Moonlightning> And yet…I'm getting all these errors… :I
+[02:02:39] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[02:05:03] *** Joins: Fallfeathers (Fallfeather@Pony-17o5i5.internode.on.net)
+[02:06:17] <Moonlightning> https://gist.github.com/BlacklightShining/05ccc7e2173c5db41fea
+[02:06:19] <PinkiePieBot> [ gist:05ccc7e2173c5db41fea ]
+[02:08:18] <johnsey> ah but that's 3.16. where are you pulling your header from, "././" at the beginning of the path looks suspicious
+[02:10:21] <johnsey> std was added in 51b97e354ba9fce1890cf38ecc754aa49677fc89, which was shortly before 3.18-rcsomething
+[02:12:11] *** Quits: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[02:12:24] *** Joins: Datalink (Datalink@Datalink)
+[02:18:48] *** Quits: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net) (Quit: Leaving.)
+[02:37:20] <JustAberrant> http://i.imgur.com/J8JVX.jpg  :D
+[02:41:02] *** Joins: Rainb (RRainb@Pony-1q8.grp.50.181.IP)
+[02:41:05] *** Joins: Rainb_ (RRainb@Pony-1q8.grp.50.181.IP)
+[02:42:45] <Phase4> JustAberrant, i like how linux even comes with the screwdriver tips
+[02:42:56] <JustAberrant> :>
+[02:43:04] <JustAberrant> silly as it is, it's kinda apt ;p
+[03:06:50] *** Quits: Rainb_ (RRainb@Pony-1q8.grp.50.181.IP) (Connection closed)
+[03:06:50] *** Quits: Rainb (RRainb@Pony-1q8.grp.50.181.IP) (Connection closed)
+[03:08:50] *** Dusk is now known as Night
+[03:09:58] *** Night is now known as Dusk
+[03:13:41] *** Quits: cyborg_ar (cyborgar@Pony-mie.os0.25.181.IP) (Client exited)
+[03:41:13] *** Q0 is now known as Q0|Away
+[03:45:28] *** Q0|Away is now known as Q0
+[04:25:07] <Moonlightning> > security answer [mandatory]:
+[04:25:17] <Moonlightning> > Your security answer must be between 3 and 35 characters.
+[04:25:23] <Moonlightning> But they don't tell you what the charset is :/
+[04:25:43] <Moonlightning> So I'm stuck picking characters out of [:punct:] trying to find a string that they'll accept :\
+[04:25:44] <JustAberrant> well, I'm sure that is a problem for someone, somewhere ;p
+[04:25:55] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[04:26:41] <JustAberrant> a secret question isn't supposed to be a strong second password, it's supposed to be a weak word based password with a publically accessible hint :(
+[04:26:50] <JustAberrant> your using the internet wrong :(
+[04:26:56] <JustAberrant> * you're
+[04:31:12] *** Quits: Datalink (Datalink@Datalink) (Quit: Datalink offline)
+[04:42:20] <Moonlightning> Yeah, well, fuck you, services.
+[04:42:54] <Moonlightning> If there's an authentication method that's mandatory, but I don't want, I'll set it to the most complex random string it'll take
+[04:43:44] <Moonlightning> If it's not supposed to be strong, then why will you let anyone authenticate as me using it?
+[04:44:19] <Moonlightning> Password equivalents must be treated as *ahem* //equivalent to passwords.//
+[04:44:45] <Moonlightning> I treat them as such. Do you? :V
+[04:51:04] *** Starburn is now known as CardboardBox
+[04:52:37] <Kiyiko> does anyone here have access to ISO publications?
+[04:56:06] <Phase4> if any of us did, i'd reckon it'd be under a fairly restrictive licence
+[04:57:26] <Kiyiko> right
+[04:57:45] <Kiyiko> That's why we don't tell the ISO
+[04:57:58] <Kiyiko> Those guys wanna be the INTERNATIONAL STANDARDS ORGANIZATION
+[04:58:08] <Phase4> well if you want to go that route there's a cheaper way that doesn't involve us on any way
+[04:58:17] <Kiyiko> and then charge us $200 (per subject) just to read the rules they set
+[05:01:27] *** Quits: Ashley (Ashfire@Ashfire.bronytv.net) (Connection closed)
+[05:06:32] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[05:39:07] <Moonlightning> …
+[05:39:09] <Moonlightning> seriously?!
+[05:39:27] <Moonlightning> And here I was thinking they were doing a /good/ thing. :/
+[05:40:10] <Moonlightning> …wait, isn't the `%Y-%m-%dZ%H:%M:%S` format in UTC an ISO thing?
+[05:40:35] <wolfyshy> ISO 8601
+[05:40:56] <wolfyshy> 2015-02-14T04:40:11Z is ISO 8601 format
+[05:41:24] <Moonlightning> So…how does anypony know that?
+[05:51:07] <AppleDash> One of the reasons I like Python
+[05:51:18] <AppleDash> You know how you can declare a file encoding at the top in a comment?
+[05:51:24] <AppleDash> rot13 is a valid encoding to declare there
+[05:53:04] <Moonlightning> >>> a = []
+[05:53:04] <Moonlightning> >>> a.append(a)
+[05:53:04] <Moonlightning> >>> a
+[05:53:04] <Moonlightning> [[...]]
+[05:53:10] <Moonlightning> stare into the void @.@
+[05:53:25] <Phase4> Moonlightning, it's not like absolutely everything is under a $200 price tag
+[05:53:43] *** CardboardBox is now known as Starburn
+[05:54:05] <Moonlightning> < You charge $200 to read your standards?!
+[05:54:14] <Moonlightning> < Fine! I'll go start my /own/ standards organization!
+[05:54:22] <Moonlightning> < With blackjack! And hookers!
+[05:54:34] <Phase4> ^ standards in a nutshell
+[06:01:39] <JustAberrant> hehe
+[06:01:52] <JustAberrant> well, standards organizations are fine when they are backed by industry
+[06:02:20] <JustAberrant> but yeah, having a standard that's hard to access is kinda counter to the purpose ;p
+[06:03:04] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[06:03:18] <JustAberrant> meanwhile you can go and read the very exciting NATO NSO Stanegs 
+[06:05:19] <JustAberrant> something that still blows my mine, apparently the PCI spec is like a closely guarded secret
+[06:11:02] <Phase4> available on the pirate bay'
+[06:11:29] <Phase4> and i'm fairly sure there are gpl'd implementations on opencores
+[06:11:46] <JustAberrant> s/is/was ? ;p
+[06:12:42] <Phase4> is
+[06:14:25] <JustAberrant> (@ closely guarded)
+[06:17:55] <Phase4> lotta things are closely guarded
+[06:23:07] *** Joins: RazorSharpFang (fkhcdkkxxpi@sharpest.of.all.fangs)
+[06:23:12] <RazorSharpFang> Hey everypony
+[06:23:47] <RazorSharpFang> Anypony here good at flash actionscript 3?
+[06:25:19] <Phase4> unlikely, what do you need help with?
+[06:27:48] <RazorSharpFang> I wanted to ask about the feasibility of a html5-compliant browser written in actionscript.
+[06:28:02] <Phase4> uh...
+[06:28:10] <JackG> ActionScript ~ ECMAScript ~ JavaScript
+[06:28:10] <Phase4> 'possible'
+[06:28:33] <JackG> given how much people are doing with JS these days...
+[06:28:34] <Phase4> it's a superset of javascript circa ~97
+[06:29:02] <Phase4> but it is not javascript compatible, nor does it have a dom or any kind of sandboxing
+[06:29:13] <RazorSharpFang> Specifically, i wanted to emulate a browser.
+[06:29:24] <RazorSharpFang> Implementing the DOM and the like manually
+[06:29:28] <JackG> Phase4: I know, but I was just pointing it out
+[06:29:45] <JackG> also, "circa around 97"
+[06:31:18] <Phase4> RazorSharpFang, well there's dom and js implementations written in javascript
+[06:31:25] <Phase4> it 'might' not be too much work to port them
+[06:31:47] <RazorSharpFang> Phase4: Hmm. That does sound intriguing.
+[06:32:03] <Phase4> you'd need to write all the css related code yourself
+[06:32:22] <Phase4> RazorSharpFang, so again, possible, but why?
+[06:32:58] <RazorSharpFang> If I could make a html5 browser in flash, we could deliver html5 content to IE6 with flash.
+[06:35:28] <Phase4> RazorSharpFang, IE6 is thankfully not relevant anymore, and there's other ways to work around it
+[06:35:35] <JackG> I doubt you would need an entire browser for that
+[06:35:38] <Phase4> a whole browser in flash would be huge and slow
+[06:36:02] <RazorSharpFang> I imagine it like a flash i-frame.
+[06:36:06] <RazorSharpFang> No nav-bar, etc...
+[06:36:38] <RazorSharpFang> Phase4: IE6 irrelevancy is music to my ears, but what of IE8?
+[06:37:01] <Phase4> 8 and 9 are 'good enough' that you can shim individual extensions
+[06:40:04] <RazorSharpFang> Hmm.
+[06:40:14] <Phase4> RazorSharpFang, there's libraries that implement <video> and websockets, and most js extensions can be implemented in js itself
+[06:40:52] <RazorSharpFang> Phase4: So, they use flash to make up for the browser's defeciencies?
+[06:41:27] <RazorSharpFang> **deficiencies.
+[06:41:41] <RazorSharpFang> Almost got that one.
+[06:42:00] <Phase4> in some cases, depends on the site
+[06:46:29] <RazorSharpFang> Well, I'm gonna give it a loose attempt, and see what I can come up with.
+[06:52:05] <RazorSharpFang> I have created the dynamic text and it says "Poo".
+[06:52:12] <RazorSharpFang> Victory.
+[06:57:32] <RazorSharpFang> Now I have to get variables from html into flash.
+[06:59:59] <JustAberrant> hmm
+[07:00:16] <JustAberrant> I agree with Phase4, this is pretty much the worst way to go about solving that problem ;p
+[07:00:55] <Moonlightning> Good night, everypony.
+[07:01:25] <RazorSharpFang> JustAberrant: Only I would attempt something like this. : D
+[07:02:44] <JustAberrant> you don't sound overly familiar with flash, and you are proposing to write an html engine using it (something that takes large teams significant amounts of time to do) to solve an already solved problem ;p
+[07:03:14] <RazorSharpFang> Well, I've just gotten used to re-inventing the wheel from schooling.
+[07:03:34] <RazorSharpFang> Let's re-invent the wheel!
+[07:03:54] <JustAberrant> uh huh, good luck ;p
+[07:08:57] *** Q0 is now known as Q0|Away
+[07:09:05] <Colgate> groupadd wheel2
+[07:10:15] <RazorSharpFang> I'm successfully passing variables into flash from html.
+[07:14:38] *** Q0|Away is now known as Q0
+[07:16:18] <Phase4> oh god, you're not using the native interaction api thingy are you
+[07:18:09] <Phase4> RazorSharpFang, just note that ExternalInterface is horribly broken
+[07:18:30] <Phase4> it does some insane thing like serialize to xml then deserialize to json, and finally parses that
+[07:18:42] <RazorSharpFang> Phase4: I'm just using flashvars
+[07:19:56] <Phase4> if you ever do need ExternalInterface, what you have to do https://github.com/ariscop/iris/blob/for-atheme/swf/flashsocket.as#L67
+[07:19:57] <PinkiePieBot> [ iris/flashsocket.as at for-atheme · ariscop/iris · GitHub ]
+[07:20:16] <RazorSharpFang> I'll keep that in mind, thanks.
+[07:22:25] <Phase4> wish i could say i was drunk that weekend
+[07:26:27] *** Joins: Misan (misan@Pony-vmqpec.cm.kabsi.at)
+[07:40:31] *** Quits: Lapsus (Lapsus@i-forget.ca) (Ping timeout: 121 seconds)
+[07:42:28] *** Quits: RazorSharpFang (fkhcdkkxxpi@sharpest.of.all.fangs) (Ping timeout: 121 seconds)
+[07:42:41] *** Joins: RazorSharpFang (fkhcdkkxxpi@Pony-bcaul8.iinet.net.au)
+[07:44:26] *** Quits: Webster (Webster@Pony-mme.2eo.212.73.IP) (Quit: Leaving)
+[07:45:31] *** Joins: Lapsus (Lapsus@Pony-tjg.q5q.222.209.IP)
+[07:46:02] *** Lapsus is now known as Pony_39044
+[07:46:46] *** Quits: RazorSharpFang (fkhcdkkxxpi@sharpest.of.all.fangs) (Ping timeout: 121 seconds)
+[07:47:14] *** Joins: RazorSharpFang (fkhcdkkxxpi@Pony-ri7oud.iinet.net.au)
+[07:50:35] *** Joins: RazorSharpFang_ (fkhcdkkxxpi@Pony-ri7oud.iinet.net.au)
+[07:50:40] <RazorSharpFang_> ....
+[07:50:45] <RazorSharpFang_> >.<
+[07:51:20] *** Quits: RazorSharpFang (fkhcdkkxxpi@sharpest.of.all.fangs) (Ping timeout: 121 seconds)
+[07:52:26] <Kiyiko> hi tech pony
+[08:11:46] <JustAberrant> :)
+[08:31:15] *** Quits: ChaoticRift (ChaoticRift@Pony-jf7icb.md.comcast.net) (Quit: Signal 9 happened)
+[09:24:20] *** gigawork is now known as Gigabit
+[09:46:48] <Twilightlicious> So i got the New 3DS system~
+[09:47:08] <Twilightlicious> it's actually quite marvelous.
+[09:53:19] <Twilightlicious> got my Amiibo up to level 35
+[09:53:23] <Twilightlicious> 36* :P
+[09:59:39] *** Dusk is now known as Sleep
+[10:00:47] <Twilightlicious> my Amiibo is officially better than me Q~Q
+[10:03:12] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Quit: )
+[10:53:18] *** Quits: reiuiji (reiuiji@nuclear.raven) (Ping timeout: 121 seconds)
+[10:55:22] *** Joins: reiuiji (reiuiji@Pony-6vp0lq.ma.comcast.net)
+[11:07:13] *** Joins: Fillyfeathers (Fallfeather@Pony-uv1r2a.internode.on.net)
+[11:09:41] *** Quits: Fallfeathers (Fallfeather@Pony-17o5i5.internode.on.net) (Ping timeout: 121 seconds)
+[11:29:54] *** Quits: Phase4 (Phase4@Pony-l1iur1.internode.on.net) (A TLS packet with unexpected length was received.)
+[11:34:21] *** Joins: Phase4 (Phase4@Pony-l1iur1.internode.on.net)
+[11:35:47] *** Quits: Phase4 (Phase4@Pony-l1iur1.internode.on.net) (Connection closed)
+[11:48:45] *** Joins: Phase4 (Phase4@Pony-l1iur1.internode.on.net)
+[12:02:46] *** Quits: Asoka (Asoka@Pony-sve37e.net-htp.de) (Ping timeout: 121 seconds)
+[12:06:46] *** Joins: Asoka (Asoka@Pony-rqr9ri.net-htp.de)
+[12:12:10] *** Joins: Datalink (Datalink@Datalink)
+[12:15:23] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[12:15:36] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[12:46:56] *** Q0 is now known as Q0|Away
+[13:15:21] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[13:26:24] *** Joins: cyborg_ar (cyborgar@Pony-h3q.ias.25.181.IP)
+[13:32:25] *** Quits: RazorSharpFang_ (fkhcdkkxxpi@Pony-ri7oud.iinet.net.au) (Connection closed)
+[13:39:01] *** Joins: Datalink_ (Datalink@Datalink)
+[13:42:28] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[14:04:39] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:38:26] *** Quits: Fillyfeathers (Fallfeather@Pony-uv1r2a.internode.on.net) (Connection closed)
+[15:05:51] * Rylee makes AppleDash live in the gangsta's paradise
+[15:39:26] *** Quits: cyborg_ar (cyborgar@Pony-h3q.ias.25.181.IP) (Ping timeout: 121 seconds)
+[16:10:52] *** Quits: Asoka (Asoka@Pony-rqr9ri.net-htp.de) (Ping timeout: 121 seconds)
+[16:11:37] *** Joins: Asoka (Asoka@Pony-7f53tl.net-htp.de)
+[16:42:34] *** Joins: ModusPonens (ModusPonens@Pony-0s4hgg.xnet.uga.edu)
+[16:42:59] <ModusPonens> HF acid is some scary shit
+[16:50:27] <tiwake> I like the guy who wrote this http://www.shamusyoung.com/twentysidedtale/?p=24421
+[16:50:29] <PinkiePieBot> [ glNext - Twenty Sided ]
+[16:50:32] <tiwake> rather funny XD
+[16:59:16] *** Quits: ModusPonens (ModusPonens@Pony-0s4hgg.xnet.uga.edu) (Ping timeout: 121 seconds)
+[16:59:35] *** Joins: ChaoticRift (ChaoticRift@Pony-jf7icb.md.comcast.net)
+[17:07:21] *** Datalink_ is now known as Datalink
+[17:09:32] *** Joins: cyborg_ar (cyborgar@Pony-h3q.ias.25.181.IP)
+[17:10:48] * cyborg_ar makes Rylee live in the amish paradise
+[17:25:17] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[17:26:02] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[17:42:19] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[18:02:53] *** Joins: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net)
+[18:13:22] <AppleDash> JustAberrant: heelp :(
+[18:13:25] <AppleDash> help*
+[18:15:07] * JustAberrant halps
+[18:16:41] <AppleDash> JustAberrant: How do I use java NIO help it's not working
+[18:18:39] * JustAberrant does not know :(
+[18:18:52] <AppleDash> You don't? :(
+[18:18:56] <AppleDash> I need someone who knows :(
+[18:19:00] <JustAberrant> :(
+[18:19:51] <AppleDash> I'm reading from one channel, I print out the buffer and there IS the right data in it, and then I'm writing it to another channel
+[18:19:57] <AppleDash> But writing it to another channel is not working
+[18:22:49] <AppleDash> I fixed it
+[18:23:01] <AppleDash> Apparently you have to call .flip() on a buffer you just read into, before you can write from it
+[18:31:08] <JustAberrant> :)
+[18:45:52] <Moonlightning> The bigger question AppleDash, is why are you writing Java?
+[18:52:06] <AppleDash> Because it's the language I have chosen for this project.
+[18:52:24] <JustAberrant> probably came to the realization that life doesn't have to be miserable, and you can have nice things :)
+[18:53:49] <Moonlightning> Why are you doing this? What's it for? .-.
+[19:24:33] *** Sleep is now known as Dusk
+[19:40:53] *** Q0|Away is now known as Q0
+[19:48:43] *** Joins: DonutSteele (averagejoey@Pony-m81a8n.lv.cox.net)
+[19:49:33] <DonutSteele> Stupid Question: Do Dialup BBSystems even exist anymore? If so, How can I find them and access them?
+[19:49:41] <DonutSteele> Like, Telnet or something?
+[19:52:11] <DonutSteele> UNRELATED! Survey: What client are yall using? Irssi for me. Super comfy.
+[19:52:45] *** Dusk is now known as Dusk|Food
+[19:53:51] <Pony_39044> I was trying to set one up for laughs, but I couldn't really get anything to talk to my modems
+[19:54:29] <Pony_39044> I did eventually get one talking to an arduino, but one modem is about as useful as one chopstick
+[19:54:44] *** Pony_39044 is now known as Lapsus
+[19:54:45] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[19:55:02] <DonutSteele> HEY! You can get a lot done with 1 chopstick.
+[19:55:04] <Lapsus> also, mirc
+[19:55:05] <Lapsus> :p
+[19:56:23] <DonutSteele> Why mirc in particular? GUI or term? Riced Config or getting used to the defaults?
+[19:56:57] <Lapsus> I'm just so used to it, I've been using it forever
+[19:57:11] <Lapsus> heck, I even have a licence for it
+[19:58:43] <JustAberrant> scary ;p
+[19:59:03] <DonutSteele> A license for mirc? What does it do?
+[19:59:04] * JustAberrant uses mIRC way back in the day, then bitchx for a long damn time, and now irssi
+[19:59:17] <JustAberrant> actually come to think of it, I've probably been using irssi now longer than bitchx
+[19:59:37] <JustAberrant> I'll probably be using irssi long after weechat makes it obsolete.. cause I'm like that :>
+[20:00:19] <Lapsus> The licence removes the nag screen? That's it as far as I can tell
+[20:00:48] <DonutSteele> Forgot that mirc was nagware.
+[20:00:54] <Lapsus> I'm pretty sure it also used to disconnect after a few hours at regular intervals, but I never had solid proof of that
+[20:01:01] <DonutSteele> I haven't used pay for software in years.
+[20:01:15] <JustAberrant> hippy :(
+[20:01:26] <Lapsus> What, you don't play videogames? :v
+[20:01:30] <DonutSteele> I saw it in winrar on my brother's computer, and I just had no idea what to do.
+[20:01:35] <Lapsus> I guess that's not too weird
+[20:01:58] <Lapsus> anyways I got a free licence so I figure I might as well use it
+[20:02:04] <Lapsus> Thanks khaled
+[20:02:04] <Lapsus> :v
+[20:02:12] <JustAberrant> irony: I probably pay for more software now, having used linux almost exclusively for like 10 years, then I did back in the bad ol` days :>
+[20:03:18] <DonutSteele> ol' days? Stop it! I want to feel young forever.
+[20:03:42] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:03:43] * JustAberrant doesn't pirate software at all now.. I prefer open source, but when I do actually need something that's not free/open source .. I just buy it :(
+[20:04:13] <DonutSteele> Like a boss.
+[20:04:17] <Lapsus> I think the only major bits of software I haven't bought so far that I use all the time is windows itself?
+[20:04:19] * JustAberrant nods :(
+[20:04:24] <DonutSteele> Who's looking forward to CSI: Cyber?
+[20:04:49] <JustAberrant> hehe, is that an actual thing? :>
+[20:04:57] <JustAberrant> like, wouldn't surprise me.. but ugh :D
+[20:04:58] <Lapsus> I'm going to see if I can steal a free upgrade to w10 because this copy passes windows genuine whatever
+[20:04:58] <Lapsus> lol
+[20:05:10] <Lapsus> if not, I might just buy it and get it over with
+[20:05:15] <JustAberrant> hehe
+[20:05:30] <JustAberrant> the one time I bought windows, it took a lot of effort
+[20:05:58] <JustAberrant> was around when I got my oculus rift and decided you pretty much needed windows to get anything out of it
+[20:06:13] <DonutSteele> Yeah. I'm gonna get a wintablet too. Gonna put W10 on it, get cortana, and then use chocoloatey and cygwin so I don't feel like a fish out of water.
+[20:06:15] <JustAberrant> didn't want win8.. took forever to find a legit copy of win7
+[20:06:44] <Lapsus> IIRC win8 licences include win7 downgrade rights
+[20:06:54] <JustAberrant> it's like.. jesus fuck.. take my money you idiots!
+[20:07:07] <JustAberrant> Lapsus: I think that's only at a certain tier
+[20:07:37] <Lapsus> either way I'm trying to get the nonprofit I volunteer at to get to at least win7 so we can homogenize the systems when the w10 upgrade becomes available
+[20:07:44] <DonutSteele> I remember being so exited about XP service pack 2
+[20:08:00] <DonutSteele> Damn.
+[20:08:17] <JustAberrant> Lapsus: :>
+[20:08:54] <Lapsus> :3 ?
+[20:09:00] * JustAberrant nods :(
+[20:09:06] <Moonlightning> DonutSteele: weechat
+[20:09:11] <Moonlightning> Colgate uses weechat, too
+[20:09:12] <Moonlightning> best client :3
+[20:09:18] <JustAberrant> hipsters ;p
+[20:10:11] * JustAberrant should go eat food and stuff
+[20:10:31] <DonutSteele> Have a snickers JustAbberant.
+[20:10:47] <Moonlightning> XD
+[20:11:45] *** Joins: Hadjii (jircii@Pony-ost.mu8.73.38.IP)
+[20:12:45] *** Dusk|Food is now known as Dusk
+[20:13:04] <Hadjii> jIRCii?
+[20:51:59] *** Joins: ModusPonens (ModusPonens@Pony-0s4hgg.xnet.uga.edu)
+[20:55:45] *** Gigabit is now known as Gigawork
+[21:15:22] *** Quits: ModusPonens (ModusPonens@Pony-0s4hgg.xnet.uga.edu) (Quit: Leaving)
+[21:23:41] *** Quits: cyborg_ar (cyborgar@Pony-h3q.ias.25.181.IP) (Client exited)
+[21:50:42] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[21:55:06] *** Joins: cyborg_ar (cyborgar@Pony-ku8.o16.49.190.IP)
+[22:20:50] <JustAberrant> random: what do graphic types use on linux these days for non-vector stuff.. 
+[22:21:10] <JustAberrant> gimp seems more of an editor, I can't imagine actually drawing something with it
+[22:22:56] <Colgate> inkscape?
+[22:23:14] <JustAberrant> seems suited mostly to vector stuff
+[22:24:18] <Colgate> krita?
+[22:24:25] <johnsey> ^
+[22:24:39] <Colgate> couldn't think of the name for a while
+[22:26:05] <johnsey> mypaint is quite good too
+[22:33:35] <JustAberrant> hmm
+[22:56:42] *** [A]McKey is now known as McKey
+[23:05:52] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[23:25:41] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[23:50:29] *** Quits: Misan (misan@Pony-vmqpec.cm.kabsi.at) (Connection closed)

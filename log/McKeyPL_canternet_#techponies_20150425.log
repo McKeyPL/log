@@ -1,0 +1,835 @@
+[00:02:52] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[00:08:31] *** Quits: Sin_ (Sin@Pony-j8c.vrk.49.68.IP) (Quit: leaving)
+[00:09:20] *** Joins: Sin (Sin@is.hustlin.everyday)
+[00:21:38] *** Joins: locodashie11 (locodash11@Pony-q7h.1no.217.73.IP)
+[00:25:08] *** McKey is now known as [A]McKey
+[00:26:00] *** Joins: Hickory (Iceman@Pony-fr4.tal.42.96.IP)
+[00:28:16] *** Quits: Phase4 (Phase4@Pony-qur.r85.209.118.IP) (Ping timeout: 121 seconds)
+[00:38:03] *** Quits: Hickory (Iceman@Pony-fr4.tal.42.96.IP) (Quit: quit)
+[00:39:14] *** Joins: Phase4 (Phase4@Pony-b57.r3i.209.118.IP)
+[00:54:51] *** GigaTown is now known as Gigabit
+[00:55:09] <Starthunder> Neptune|sleep: …that's…not…encryption.
+[00:55:12] <Starthunder> encryption != encoding
+[00:55:43] <AppleDash> Phase4 etc, looks like server is down because my ESXi server rebooted
+[00:55:54] <Starthunder> Encryption requires the relevant key or cryptanalysis to reverse. Encoding only requires knowledge of the protocol to reverse.
+[00:57:06] <Phase4> ^ otherwise base64 would be called encryption, which some people think it is and it's incredibly wrong
+[01:00:12] <AppleDash> fixed server
+[01:03:45] *** \m is now known as mniip
+[01:19:46] <Starthunder> …I just realized, I'm trying to factor a 2191-bit number
+[01:19:53] <Starthunder> that's not going to work very well, is it
+[01:19:59] <Starthunder> s/, is it//
+[01:24:44] <Starthunder> So far my Python thing has only found four factors
+[01:25:03] <Starthunder> 13 29 13901 159908893
+[01:26:26] <Colgate> ​have fun with that
+[01:28:24] <Starthunder> I should probably kill the Python thing that started later
+[01:28:38] <Starthunder> I should probably rewrite this in C, somehow
+[01:28:43] <Starthunder> actually, I should probably give up
+[01:35:10] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[01:38:32] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[01:46:40] <Twilightlicious> I can't find drivers for the HP Stream 7
+[01:47:11] <Twilightlicious> Certan older forum posts mention finding them on the support page, and even provide direct links to them, but they now lead to an empty driver download page
+[01:47:35] *** Brolf_pog is now known as Shnuggles
+[01:47:59] <Starthunder> wat
+[01:48:04] <Starthunder> this file is a+r
+[01:48:15] <Starthunder> but guest can't `cat` it
+[01:48:16] *** Quits: Iron_Wofle (Wofle@The.Mecha.Pony.Brigade) (Quit: Leaving)
+[02:01:13] <JustAberrant> Stik: @ way earlier.. yeah.. that's why I'm going that route...
+[02:01:41] <JustAberrant> Stik: but.. unlike rent.. you can't just walk away from it relatively unscaved 
+[02:01:52] <JustAberrant> that's what scares me way more than I thought it would
+[02:02:24] <JustAberrant> like I'm reasonably comfortable in my job security.. but still..
+[02:02:33] *** Joins: nscoots (FreyGrimrod@Pony-kjk.749.192.70.IP)
+[02:04:57] * nscoots raises a hoof and starts jabbering on about emergency funds
+[02:05:53] <JustAberrant> well of course, but still
+[02:06:21] *** Joins: nscoots1 (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[02:09:36] *** Quits: nscoots (FreyGrimrod@Pony-kjk.749.192.70.IP) (Ping timeout: 121 seconds)
+[02:10:11] * JustAberrant carefully places nscoots1 in light sauce
+[02:10:35] *** nscoots1 is now known as nscoots
+[02:11:25] * nscoots doesn't like where this is going
+[02:12:09] <mniip> [03:10:12] <mniip> MiningMarsh, boxmein http://i.imgur.com/1c46E4x.gif
+[02:12:09] <mniip> [03:11:11] <MiningMarsh> mniip: You need to rewrite the gentoo install guide using gifs
+[02:12:11] <mniip> xD
+[02:14:12] <JustAberrant> hehe.. classic :>
+[02:14:19] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[02:14:33] <JustAberrant> also, vtshot wut
+[02:14:50] <JustAberrant> did.. you make a terminal screen recorder?
+[02:14:53] <mniip> yes
+[02:15:30] <JustAberrant> I.. uh.. nice :)
+[02:16:36] <JustAberrant> I hate to be "that guy" .. but you should now play back that video with mplayer -vo caca and record the result ;p
+[02:17:16] <JustAberrant> or I guess it records a series of ppm
+[02:17:20] <JustAberrant> so yeah, nm 
+[02:17:30] <mniip> I'm going to integrate libgif tonight
+[02:17:57] <mniip> also lol
+[02:18:32] <mniip> VCSA mode reacts funny to font change
+[02:18:47] <mniip> check out
+[02:18:48] <mniip> http://i.imgur.com/iUq2Roz.gif
+[02:19:10] <JustAberrant> :>
+[02:21:18] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[02:22:25] *** Init3-away is now known as init3
+[02:23:52] <mniip> I wonder what would happen if I do the inverse
+[02:24:38] <mniip> nothing interesting at all
+[02:33:13] *** Quits: DonutSteele (averagejoey@Pony-a10.3d2.180.70.IP) (Ping timeout: 121 seconds)
+[02:34:01] <mniip> JustAberrant, just pushed recording features to github! https://github.com/mniip/vtshot
+[02:34:02] <PinkiePieBot> [ mniip/vtshot · GitHub ]
+[02:34:24] *** Quits: Phase4 (Phase4@Pony-b57.r3i.209.118.IP) (Quit: Leaving)
+[02:34:55] *** Joins: Webster (Webster@Pony-mme.2eo.212.73.IP)
+[02:35:04] *** Joins: Phase4 (Phase4@Pony-b57.r3i.209.118.IP)
+[02:40:04] *** Quits: FallfeathersHTC (shaggydoogy@Pony-pu1.0l3.208.118.IP) (Quit: Rocks fall, everyone dies.)
+[02:40:20] *** Joins: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP)
+[02:54:35] <JustAberrant> :)
+[02:58:20] *** Quits: Phase4 (Phase4@Pony-b57.r3i.209.118.IP) (Quit: Leaving)
+[02:59:04] *** Joins: Phase4 (Phase4@Pony-b57.r3i.209.118.IP)
+[03:02:03] <Lapsus> https://www.youtube.com/watch?v=MFzDaBzBlL0
+[03:02:03] <PinkiePieBot> [ The Backwards Brain Bicycle - Smarter Every Day 133 - 301 views - 0:07:58 long - 4565 likes - 99.69% ]
+[03:02:19] <Lapsus> Destin has got to be my favourite youtuber overall
+[03:07:58] *** Neptune|sleep is now known as Neptune
+[03:17:31] *** Quits: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Quit: Leaving.)
+[03:17:59] *** Joins: cyborg_ar (cyborgar@Pony-prb.r9t.49.190.IP)
+[03:18:20] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[03:20:21] *** Joins: Topkasa (IDontCare@Pony-828.mcl.67.70.IP)
+[03:21:46] *** Quits: Sukasa (IDontCare@Pony-828.mcl.67.70.IP) (Ping timeout: 121 seconds)
+[03:21:54] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[03:23:07] *** Quits: Nick (nobody@Pony-o1k.cjc.74.71.IP) (Connection closed)
+[03:23:49] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[03:44:14] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Connection closed)
+[03:48:26] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[03:56:15] *** Quits: cyborg_ar (cyborgar@Pony-prb.r9t.49.190.IP) (Client exited)
+[03:58:44] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[04:18:43] <Twilightlicious> Very useful information when trying to log in, Gamestop.com "{"Success":false,"Error":null,"DestinationUrl":null}"
+[04:18:48] *** init3 is now known as Init3-away
+[04:29:40] <Starthunder> Twilightlicious: invalid syntax at position 63 of IRC PRIVMSG content (position 129 of received IRC line): string literal detected, but seems to contain garbage (did you mean to use single quotes?)
+[04:29:48] *** ThunderBolt|PassedOut is now known as ThunderBolt
+[04:34:21] *** Joins: ThunderBolt_ (ThunderBolt@Pony-i1p.leq.168.58.IP)
+[04:38:15] *** Joins: Maple (Maple@Maple)
+[04:42:54] *** Quits: Nick (nobody@Pony-o1k.cjc.74.71.IP) (Connection closed)
+[04:43:41] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[04:45:16] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Connection closed)
+[04:48:20] *** Joins: Hickory (Iceman@Pony-fr4.tal.42.96.IP)
+[04:50:56] *** Joins: cyborg_ar (cyborgar@Pony-sm9.lui.25.181.IP)
+[05:01:35] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[05:06:50] *** Quits: Maple (Maple@Maple) (Quit: WeeChat 1.1.1)
+[05:21:29] *** Quits: ThunderBolt_ (ThunderBolt@Sliverpony) (Ping timeout: 121 seconds)
+[05:25:01] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[05:29:45] <Hickory> Where do you think the best place would be to sell a motherboard/cpu/ram combo?
+[05:30:38] <JustAberrant> ebay?
+[05:30:51] <JustAberrant> used computer gear doesn't get a lot of money though
+[05:31:12] <Hickory> I wouldn't think so.
+[05:31:21] <Hickory> Do you think it's possible you guys could give me an estimate of I told you what I had?
+[05:31:40] * JustAberrant not really
+[05:32:09] <Hickory> darn
+[05:32:45] <JustAberrant> what are you trying to get rid of though out of curiosity?
+[05:33:02] <Starthunder> A motherboard, some RAM, and a CPU
+[05:33:51] * JustAberrant sighs and puts a few more millipedes in Starthunder 's left ear
+[05:34:11] <Hickory> An intel i5-3570k, an asrock pro4, and 16GB of gskill ram.
+[05:35:47] <JustAberrant> mm, yeah don't think you'd get much for that used
+[05:36:36] <Hickory> $200?
+[05:36:44] <JustAberrant> mebbie
+[05:43:53] *** Joins: Fillyfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP)
+[05:45:18] <Hickory> It looks like the used chips themselves are going for around 150 on ebay.
+[05:46:58] <JustAberrant> seems high, but whatever
+[05:47:40] <Hickory> Yeah it kinda does.
+[05:48:54] <Fillyfeathers> so the RAM issue I had earlier
+[05:48:57] <Fillyfeathers> seems to have fixed itself
+[05:48:59] <Fillyfeathers> ~magic~
+[05:49:21] <JustAberrant> hmm?
+[05:49:33] * JustAberrant too tired to read yp
+[05:49:37] <Hickory> Well if anyone is interested, let me know.
+[05:49:46] <JustAberrant> * up
+[05:49:58] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[05:50:12] <JustAberrant> but ram issues in general can be sporadic.. usually a good idea to replace the ram though if you are having them
+[05:50:19] <JustAberrant> at least run memtest for awhile
+[05:53:28] <Hickory> Especially give the price of rm
+[05:53:30] <Hickory> ram
+[05:53:32] <Fillyfeathers> JustAberrant: http://www.tomshardware.com/answers/id-2621232/installing-sticks-ram-repeated-power-cycling.html
+[05:53:38] <Starthunder> pffff. `rm` is free.
+[05:54:07] <Fillyfeathers> xD
+[05:54:46] <JustAberrant> that sounds more like shitty mobo/mobo firmware
+[05:55:20] <JustAberrant> long shot, but check your mobo for leaking caps maybe.. could be the extra draw is (sometimes) pushing it to failing
+[05:55:37] <Fillyfeathers> nope, all capacitors are fine
+[05:55:49] <JustAberrant> and also, everyone has probably already seen this, but: http://www.downloadmoreram.com/ ;p
+[05:55:50] <PinkiePieBot> [ Download More RAM! ]
+[05:56:30] <JustAberrant> Fillyfeathers: don't suppose your PSU was boarderline big enough?
+[05:56:36] <Fillyfeathers> 850W? :P
+[05:56:49] <JustAberrant> hah, yeah no then :>
+[05:57:04] * JustAberrant shruggles
+[05:57:12] <JustAberrant> maybe just poorly seated?
+[05:57:23] <JustAberrant> if the slots sat empty for awhile, maybe a bit of corrosion
+[05:57:25] <JustAberrant> or dust
+[05:57:29] <JustAberrant> or spiders..
+[05:57:31] <Fillyfeathers> maybe, but I did clean the fuck outta them
+[05:58:09] <JustAberrant> didn't use soap and water and an old dish cloth did you? ;p
+[05:58:11] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[05:58:23] <Fillyfeathers> no i used holy water
+[05:58:36] <JustAberrant> ah :(
+[05:58:47] <Fillyfeathers> TO DRIVE OUT THE EVIL
+[05:59:03] <JustAberrant> you need some evil :(
+[05:59:12] * Fillyfeathers hits JustAberrant with a rosary
+[05:59:20] <JustAberrant> :(
+[05:59:47] <JustAberrant> but yeah, I got no ideas then.. 
+[06:00:19] <JustAberrant> shitty ram, shitty mobo, shitty firmware, or an imbalance in your good/evil mixture..
+[06:00:25] <Fillyfeathers> fairies
+[06:00:30] <Fillyfeathers> definitely fairies
+[06:02:01] <JustAberrant> did you remember to keep a battery in your mouth while working on it, to negate the electro-static energy?
+[06:02:32] <Fillyfeathers> no I just recited dies irae repeatedly while filling the room with incense
+[06:02:33] <JustAberrant> (all seriousness, I actually had someone all but convinced of that...)
+[06:02:52] <JustAberrant> but I felt bad and fessed up
+[06:03:20] <JustAberrant> and on that note, I am to bed
+[06:03:23] <Starthunder> I tried to download 32 gigs of RAM, but I don't have enough free disk space :(
+[06:03:36] <Fillyfeathers> did you download more disk space
+[06:03:50] <Hickory> Well
+[06:04:08] * ShivalPonyWolf giggles and remembers when he posted on IRC that he needed a blank CD several years ago
+[06:04:14] <ShivalPonyWolf> a friend emailed me an empty 650mb iso
+[06:04:20] <Hickory> If I'm able to sell my current cpu/ram/mobo... I'll have enough to get a set up with 16gb of ddr4 ram, a motherboard, and a 6 core i78
+[06:04:22] <Hickory> i7
+[06:06:04] <AppleDash> with where Fillyfeathers is at, spiders seems a likely possibility
+[06:06:14] <Fillyfeathers> ShivalPonyWolf: what SMTP server would allow you to send 650mb as an attachment :P
+[06:06:27] <ShivalPonyWolf> Fillyfeathers: zip up an empty iso and its the size of the container header
+[06:06:29] <AppleDash> One that is configured to
+[06:06:38] <Fillyfeathers> oh
+[06:06:38] <Fillyfeathers> hm
+[06:06:44] <Starthunder> xz it
+[06:06:49] <JustAberrant> hehe, that's a classic prank
+[06:06:50] <ShivalPonyWolf> but the file it contains extracts to 650mb
+[06:07:02] <JustAberrant> make like a 10G file with dd and /dev/zero.. then bzip it
+[06:07:10] <AppleDash> lol
+[06:07:18] <ShivalPonyWolf> alot of things are vulnerble to attacks like that
+[06:07:28] <mniip> JustAberrant, I made a 1T file like that once
+[06:07:28] <ShivalPonyWolf> repeating data
+[06:07:29] <ShivalPonyWolf> or 0 data
+[06:07:40] <ShivalPonyWolf> look at the attack against minecraft servers
+[06:07:53] <ShivalPonyWolf> big file compresses down to afew kb
+[06:07:58] <mniip> it's not a big file
+[06:08:00] <ShivalPonyWolf> and then the server loads the entire thing into array tables
+[06:08:06] <mniip> it's a big data structure
+[06:08:15] <JustAberrant> also there is something really cathartic about looking at the result in hexdump
+[06:08:19] <ShivalPonyWolf> mniip: yeah but it only works becuase the data structure compresses down
+[06:08:23] <JustAberrant> it's like..
+[06:08:30] <JustAberrant> (some header bytes)
+[06:08:34] <JustAberrant> * 223423412 the same
+[06:08:36] <mniip> ShivalPonyWolf, compare char *
+[06:08:41] <mniip> and std::list<char>
+[06:08:44] <Fillyfeathers> http://puu.sh/hpVnt/5307692f53.png mmm yeeaaah
+[06:08:52] <JustAberrant> also minecraft is self attacking
+[06:09:20] <ShivalPonyWolf> i think it was wordpress had some major issues with compressed data to
+[06:09:20] <Phase4> Fillyfeathers, got it working?
+[06:09:24] <JustAberrant> external exploits are un-necessary.. just play it for a few days :D
+[06:09:25] <Fillyfeathers> yep
+[06:09:27] <Phase4> awesome
+[06:09:27] <Fillyfeathers> magically
+[06:09:31] <ShivalPonyWolf> send it a compressed POST
+[06:09:33] <JustAberrant> anyway, I'm really bed before I pass out
+[06:09:40] <ShivalPonyWolf> and it panicked when it maxed out its memory
+[06:09:44] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[06:09:44] <Fillyfeathers> "The issue seems to have.. fixed itself? I toggled the "advanced mode" options in the BIOS for memory settings, and without changing anything, I can now boot up with all four sticks of RAM."
+[06:09:47] * Starthunder makes a mutable-string class out of unrolled linked lists
+[06:09:55] * Fillyfeathers throws Mike_Coltfield
+[06:10:15] <Phase4> Fillyfeathers, depending on what you run, i might recomend turning off the page file
+[06:10:19] * Mike_Coltfield catches himself as an exception.
+[06:10:28] <Phase4> there's very little that needs 16GB on windows
+[06:10:41] <mniip> google chrome
+[06:10:42] <ShivalPonyWolf> Phase4: vmware workstation
+[06:11:03] <Phase4> even then
+[06:11:05] <Fillyfeathers> Phase4: i regularly run 3ds max, photoshop, marmoset toolbag an unreal engine 4 all at the same time
+[06:11:13] <Phase4> hand 8GB to vms and you've got tonns to spare
+[06:11:14] <Phase4> ah
+[06:11:15] <ShivalPonyWolf> its why my work laptop has 16gb
+[06:11:17] <Phase4> nevermind then, keep the page file
+[06:11:20] <Fillyfeathers> :B
+[06:11:31] <Fillyfeathers> game dev lyfe
+[06:11:40] <ShivalPonyWolf> Phase4: would be nice if your not running up 6 or so vms at once
+[06:11:59] <ShivalPonyWolf> dont get much left for the host to run nicely if you only have 8gb
+[06:12:01] <Phase4> ShivalPonyWolf, well i've got 24GB in my laptop so :P
+[06:12:02] <AppleDash> I have the problem of OOMing with too many VMs
+[06:12:18] <AppleDash> 16GB of RAM here
+[06:12:21] <ShivalPonyWolf> Phase4: i used the excuse of vms to get a nice laptop
+[06:12:26] <ShivalPonyWolf> but i now just do all my work on esx servers
+[06:12:30] <ShivalPonyWolf> 512gb of ram
+[06:12:31] <Fillyfeathers> out of curiosity what do you guys run VMs for
+[06:12:32] <Phase4> can run a small fleet of vms
+[06:12:42] <Phase4> ShivalPonyWolf, i want that in a laptop
+[06:12:44] <Phase4> somehow, i want that
+[06:12:47] <ShivalPonyWolf> Phase4: woudl be nice
+[06:12:48] <Phase4> Fillyfeathers, windows
+[06:12:56] <Fillyfeathers> why not dual boot
+[06:12:58] <ShivalPonyWolf> servers in datacenters are much nicer to work on
+[06:13:01] <AppleDash> For testing things on different OSes and the odd Windows task under Linux
+[06:13:06] <Phase4> Fillyfeathers, dual booting sucks, sick of doing it
+[06:13:09] <AppleDash> ^
+[06:13:10] <Fillyfeathers> :<
+[06:13:16] <Fillyfeathers> I have xubuntu and win8 dualbooted on my laptop
+[06:13:23] <ShivalPonyWolf> having 80 proccessor cores is useful to
+[06:13:25] <Phase4> win8 sucks also
+[06:13:37] <Fillyfeathers> eh
+[06:13:40] <Fillyfeathers> i have to use it as part of my jerb
+[06:13:42] <AppleDash> What about windows 10
+[06:13:51] <AppleDash> There are improvements
+[06:14:01] <Phase4> AppleDash, better, but still crap
+[06:14:10] <Fillyfeathers> really the only thing I'm looking forward to with Win10 is the lack of bloatware
+[06:14:12] <AppleDash> If it's Windows it's crap
+[06:14:12] <ShivalPonyWolf> im still trying to get the OK to move my personal servers onto work equipmnet
+[06:14:14] <AppleDash> So yeah
+[06:14:19] <ShivalPonyWolf> when they arnt in use
+[06:14:26] <Fillyfeathers> so why else would you run VMs
+[06:14:27] <ShivalPonyWolf> MC server with 512gb of ram
+[06:14:29] <Fillyfeathers> other than windows
+[06:14:36] <Phase4> Fillyfeathers, don't worry, microsoft is compiling their bloatware into the os
+[06:14:41] <AppleDash> As I said, testing things on other OSes.
+[06:14:46] <Fillyfeathers> :v
+[06:14:46] <Phase4> don't like one drive? too bad, you CANNOT remove it from explorer
+[06:14:51] <AppleDash> Or just experimenting with other OSes
+[06:14:53] <ShivalPonyWolf> malware lots and lots of malware
+[06:14:55] <Starthunder> That made me think of systemd
+[06:14:57] <AppleDash> Phase4: I can turn it off though .-.
+[06:15:13] <Fillyfeathers> I must be the only sysadmin alive who actually appreciates windows
+[06:15:21] <Phase4> AppleDash, via group policy you can 'disable' it, but it's still there, still shows the icon in explorer
+[06:15:31] <AppleDash> I don't care about an icon
+[06:15:34] <Phase4> i do
+[06:15:48] <AppleDash> Write your own file explorer than and replace explorer.exe with t
+[06:15:49] <AppleDash> it*
+[06:15:52] <AppleDash> problem solved
+[06:16:00] <Phase4> people have done that, that's pretty much what 'classic shell' is
+[06:16:15] <Phase4> but microsoft is on the path to fixing that particular problem
+[06:16:17] <Fillyfeathers> put tape over your monitor where the icon is
+[06:16:21] <AppleDash> lol
+[06:16:34] <ShivalPonyWolf> Fillyfeathers: isnt the joke normaly using whiteout?
+[06:16:38] <Phase4> Fillyfeathers, i can appreciate what windows does, and why it's successful, that doesn't make me hate it any less
+[06:16:45] <Fillyfeathers> whiteout is so 2010
+[06:16:47] <AppleDash> I'm going to quadruple my RAM in my next build, no more OOM issues
+[06:16:51] <AppleDash> at least for a couple years
+[06:18:17] <Phase4> Fillyfeathers, and 8 is just an irresponsible move on microsofts part, it's a multi-billion $ company jumping on the post-pc-cloud hype train, to the detriment of their primary business which is corperates
+[06:18:27] <Fillyfeathers> shrug.
+[06:18:41] <Fillyfeathers> i like being able to rub my face on a touchscreen monitor
+[06:18:52] <Colgate> AppleDash: 
+[06:19:00] <AppleDash> Colgate:
+[06:19:06] <Colgate> check icq
+[06:19:10] <Phase4> only reason i've used the touchscreen on the one 8.1 laptop i've used is the touchpad was impossible to use
+[06:19:12] <AppleDash> OK, will do
+[06:19:14] <Phase4> probably intentionally so
+[06:19:53] *** Quits: Hickory (Iceman@Pony-fr4.tal.42.96.IP) (Quit: quit)
+[06:22:14] <Phase4> 10 might still not be shit, but i'm not hopeful
+[06:22:17] <Phase4> at least you can resize cmd now
+[06:22:39] <Phase4> about 30 years after the rest of the world has had resizable terminals but it's something
+[06:23:02] * JustAberrant sighs at his still awakeness :(
+[06:23:26] <JustAberrant> Colgate: AppleDash: do.. you guys have a time machine? ;p
+[06:23:34] <AppleDash> Maybe
+[06:23:35] <JustAberrant> icq.. like.. really?
+[06:23:51] <Phase4> JustAberrant, http://goo.gl/V5MLfR
+[06:23:55] <JustAberrant> this is a thing people still use? :>
+[06:24:01] <\033> what, irc?
+[06:24:12] <Phase4> icq does still exist
+[06:24:22] <\033> they also have an irc network
+[06:24:25] <\033> icqnet
+[06:24:48] <JustAberrant> also I'll pile on to the windows hate...
+[06:25:07] <JustAberrant> even ignoring how painful it is to use, and has continued to become more painful
+[06:25:09] <Starthunder> rabblerablle
+[06:25:12] <Starthunder> Windows baaaaaad
+[06:25:19] <JustAberrant> the main thing I've got against microsoft is I don't trust them
+[06:25:22] <Starthunder> horrible proprietary non-standards-conforming
+[06:25:29] <JustAberrant> like.. they seem cool now.. but they were really damn evil back in the 90s
+[06:25:47] <JustAberrant> (cool as in, average corporate evil)
+[06:25:50] <Phase4> they've just seemed incompetent recently
+[06:26:07] <JustAberrant> I gotta imagine the old microsoft that left a trail of corpses and burning bodies behind them
+[06:26:12] <Phase4> though i'll reserve further comments until 10 is done, they've been acting strange recently
+[06:26:13] <JustAberrant> and pretty much declared all out war on open source
+[06:26:15] <JustAberrant> is still in there
+[06:26:31] <Fillyfeathers> you all sound like richard stallman. :v
+[06:26:42] <JustAberrant> pff, I can't stand him either ;p
+[06:26:47] <Phase4> he's worse
+[06:27:01] <Phase4> like, you think we're bad? actually read what the guys written
+[06:27:21] <Fillyfeathers> "nothing is real, everything is code, the decimal system should start from zero"
+[06:27:22] <JustAberrant> but seriously, microsoft of past was all about not winning through better products, but winning through momentum, lockout, and just generally throwing their weight around
+[06:27:40] <Phase4> they purchased the majority of their 'innovations'
+[06:27:50] <Colgate> what's wrong with icq? :O
+[06:27:52] <JustAberrant> they pretty much bought you out or destroyed you
+[06:28:04] <Starthunder> https://xkcd.com/225/
+[06:28:05] <PinkiePieBot> [ xkcd: Open Source ]
+[06:28:27] <Phase4> don't think they were too bad about it but yeah, bought out a lot of companies
+[06:28:34] <JustAberrant> any time they do anything that appears to be good, like open sourcing .NET .. I immediately assume it's a trap
+[06:28:43] <JustAberrant> because up until very recently, everything they did _was_ a trap
+[06:28:43] <Phase4> https://en.wikipedia.org/wiki/List_of_mergers_and_acquisitions_by_Microsoft
+[06:28:44] <PinkiePieBot> [ List of mergers and acquisitions by Microsoft - Wikipedia, the free encyclopedia ]
+[06:29:16] <Phase4> huh, visio was purchased too
+[06:29:25] <JustAberrant> yeah
+[06:30:07] <JustAberrant> pretty much any non-crap microsoft product (like visio) was made by someone else
+[06:30:07] <JustAberrant> they just bought it, and added brilliant microsoft innovations.. like you know.. the chaos bar
+[06:30:35] <Phase4> Fillyfeathers, clearly we should count in multiples of pi
+[06:30:59] <JustAberrant> I'm reasonably sure they spent a great deal of time figuring out what features people tended to use in based on what they were doing and created appropriate and sane groups so that all those shortcuts would be on the same.. ribbon page dealie..
+[06:31:11] <JustAberrant> and then, for whatever reason, said "fuck it" and just shuffled everything
+[06:31:16] <Phase4> wondering what the docker thing will be like
+[06:31:54] <JustAberrant> also all docker things suck.. anything that pops out when you move the mouse too close to a corner is a terrible idea.. the world is bad and everyone should feel bad :(
+[06:32:18] <\033> i launch things via ratpoison
+[06:32:22] <Phase4> i'm not sure we're talking about the same thing
+[06:32:25] <\033> ctrl-T, !, "firefox"
+[06:32:29] <\033> ctrl-T, !, "audacity"
+[06:32:32] <JustAberrant> probably not :(
+[06:32:39] *** Quits: Webster (Webster@Pony-mme.2eo.212.73.IP) (Quit: Leaving)
+[06:32:44] <Phase4> JustAberrant, i mean microsoft is porting docker
+[06:32:45] <\033> it has tab completion too so it's more like
+[06:32:51] <\033> ctrl-T, !, "fir", tab
+[06:32:52] <JustAberrant> Phase4: oh god
+[06:32:55] <Phase4> https://github.com/Microsoft/docker
+[06:32:56] <PinkiePieBot> [ Microsoft/docker · GitHub ]
+[06:33:00] <JustAberrant> yeah see...
+[06:33:25] <JustAberrant> my brain is saying "run run, it's a trap! you'll try to use it and end up with all your stuff on a one drive library or something"
+[06:33:27] <Phase4> which is.. again, not until it's actually out will i actually have a complete opinion
+[06:33:37] <Phase4> but it's interesting
+[06:33:47] <JustAberrant> see that's where they get you
+[06:34:00] <JustAberrant> you don't even realize it, but you go down that road and start installing bits of microsoft to supported
+[06:34:15] <JustAberrant> cause of course you need a domain, and active directory.. and god knows what else.. to use it sanely
+[06:34:30] * Phase4 needs a domain set up at work soon
+[06:34:40] <Phase4> JustAberrant, ad is actually surprisingly open, all things considered
+[06:34:57] <Phase4> it's kerberos+ldap, microsofified of course but still
+[06:34:59] <Starthunder> …doesn't OS X use AD, too?
+[06:35:07] <Phase4> most things can be AD clients
+[06:35:16] <JustAberrant> stop being pragmatic!
+[06:35:26] <Phase4> ^ is where stallman and i differ :P
+[06:35:33] <JustAberrant> hehe
+[06:35:47] <JustAberrant> kidding aside, I consider myself reasonably pragmatic
+[06:36:06] <JustAberrant> end of the day, I do tend to go with what works most of the time, with a few exceptions
+[06:36:40] <JustAberrant> I prefer open source, but I'll pay for something proprietary if it does the job better
+[06:37:04] <JustAberrant> biggest exception to my pragmatism is probably apple
+[06:37:26] <JustAberrant> I pretty much refuse to involve myself at all with apple.. I don't even consider technical merit
+[06:37:31] <JustAberrant> I just don't like `em
+[06:37:39] <Phase4> i'd be more willing to pay for software if the majority of it wasn't utterly trivial dressed up with mountians of marketing
+[06:37:56] <JustAberrant> hehe, yes
+[06:37:58] <Phase4> for example, running a normal windows program as a service
+[06:38:20] <Starthunder> isn't software as a service like those horrible DRMed things?
+[06:38:30] <Phase4> as a windows service
+[06:38:34] <Starthunder> Oh.
+[06:38:36] <Phase4> start at boot, event logs, that crap
+[06:38:53] <JustAberrant> completely random: I.. actually don't mind the whole hptoshop subscription thing
+[06:38:56] <JustAberrant> * photoshop
+[06:39:43] <Phase4> there was a great example of exactly that as a mountian of code, can't seem to find it
+[06:40:01] <Phase4> would send emails and store your shopping list, stupidly complicated
+[06:40:13] <Phase4> ended up writing my own https://github.com/ariscop/srvany
+[06:40:14] <PinkiePieBot> [ ariscop/srvany · GitHub ]
+[06:41:17] <JustAberrant> but yeah: photoshop, visio, IDA, and a handful of other tools are actually worth the money
+[06:41:29] <Phase4> IDA works nicely under wine
+[06:41:55] <Phase4> is a linux version but it's actually a little better in wine
+[06:42:05] <JustAberrant> hehe
+[06:42:39] <JustAberrant> same goes with libraries
+[06:43:22] <JustAberrant> stuff like vega prime (3D modeling/simulated environment thing) is obscenely expensive.. but it works
+[06:43:52] <JustAberrant> but then theres stuff like solid db, which is stupidly overpriced and performs _worse_ than open source alternatives
+[06:44:50] <Starthunder> >.>
+[06:44:59] <Phase4> JustAberrant, i can kinda buy that argument, but blender exists, and maybe its interface isn't the best (only complaint i've heard about it) but it is still a fully featured domain-specific product
+[06:45:17] <JustAberrant> vega prime is more of an engine
+[06:45:29] <Phase4> i think we could sustain most code as open source
+[06:45:52] <JustAberrant> and it has a lot of off the stuff shelf stuff that you just plug in and it works
+[06:45:52] <Phase4> considering what is sustained now, with a tiny fraction of the total money in software
+[06:46:31] <JustAberrant> so you spend like 300k or so on a license.. but you would have spent way more building it in house yourself and probably end up with a shittier product
+[06:48:48] *** Starburn is now known as CardboardBox
+[06:49:32] <Phase4> JustAberrant, solidDB sounds like an expensive sqlite
+[06:49:37] <Starthunder> shellstuff sells stuff by the shellshelf.
+[06:49:44] <JustAberrant> it is, only it's less reliable
+[06:49:53] <JustAberrant> and a much bigger pain to deal with
+[06:50:07] * Phase4 isn't quite sure why you would use anything other than sqlite
+[06:50:31] <JustAberrant> because solid db comes from ibm
+[06:50:45] <JustAberrant> and ibm are absolute masters in the art of the buzzword
+[06:51:14] <JustAberrant> seriously, if you've ever wanted to actually feel yourself becoming stupider, talk to an IBM sales rep for an hour
+[06:51:19] <Starthunder> x.x
+[06:51:45] <JustAberrant> they seem normal at first, pleasant, literate.. but several minutes in you realize something is amis
+[06:52:22] <JustAberrant> and then.. yeah
+[06:52:28] * Phase4 likes https://i.imgur.com/Ggdm7cc.png
+[06:53:01] <JustAberrant> :>
+[06:53:13] <Phase4> source: https://youtu.be/ZvmMzI0X7fE is quite an interesting watch
+[06:53:14] <PinkiePieBot> [ SQLite: Protégé of PostgreSQL - 2491 views - 0:39:00 long - 51 likes - 100.0% ]
+[06:53:39] * JustAberrant is actually a postgres fanboy
+[06:53:57] <Phase4> i was storing time series data in mysql
+[06:54:05] <Phase4> switched to postgres, smaller and faster
+[06:54:10] <JustAberrant> mysql is _full_ of gotchas
+[06:54:20] <Phase4> yeah, datetime was the thing that made me switch
+[06:54:38] <Phase4> no one seems to get date time right, at all, anywhere
+[06:54:38] <Starthunder> Really? Is that accurate?
+[06:54:53] <JustAberrant> postgres is really damn solid
+[06:54:59] <Phase4> it is
+[06:55:00] <JustAberrant> has enough bells and whistles
+[06:55:08] <JustAberrant> and is reasonably simple to use
+[06:55:14] <Phase4> plethora of types, very clever query planner
+[06:55:19] <JustAberrant> not mysql simple.. but way simpler than oracle
+[06:55:24] <Phase4> native json support
+[06:55:38] <Phase4> and xml, which everything except mysql seems to have
+[06:56:04] <JustAberrant> for a fairly long time, mysql couldn't even do transactions well
+[06:56:20] <Phase4> Starthunder, first thing to know if you want to use postgress, what mysql calls a database, the sql standard and postgres call a schema
+[06:56:24] <JustAberrant> there were a number of edge cases you had to deal with where it could outright fail
+[06:56:47] <Phase4> different databases in postgres are isolated
+[06:56:56] <JustAberrant> mysql does get credit for making databases warm and fuzzy and really simple 
+[06:57:00] <Phase4> and the server is a 'cluster', that can host many databases
+[06:57:07] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[06:57:42] <JustAberrant> mysql has a really simple authentication system (compared to postgres which is flexible but a bit confusing initially).. and yeah, uses really simple terminology and fewer levels of seperation
+[06:57:50] <JustAberrant> you've got databases and they have tables.. all you need to know
+[06:58:10] <JustAberrant> you've got users and they've got privileges on those databases.. etc
+[06:58:13] <Phase4> Starthunder, also *everything* in postgres is transactional, including schema changes (you can revert a DROP TABLE), and there's no replication gotchas
+[06:58:15] <Starthunder> I hardly know anything abotu databases
+[06:58:24] <Starthunder> Ooh? That sounds kinda nice o.o
+[06:58:42] <Phase4> it is very nice
+[06:58:51] <JustAberrant> mysql also has weird stuff.. like dunno if it's still the case.. but the check constraint wasn't actually implemented
+[06:59:01] <JustAberrant> like.. it was in the spec, and you could apply one
+[06:59:05] <JustAberrant> but it wouldn't actually do anything
+[06:59:31] <Phase4> check constraint is parsed, not implemented, you *could* use triggers to implement it but the default settings can lead to inconsistency accross a replication set if you do that
+[06:59:42] <Phase4> postgres though works nicely
+[07:00:03] <Starthunder> huh.
+[07:00:11] <Phase4> the one thing you can't do in postgres that mysql can is an upsert
+[07:00:18] <JustAberrant> but yeah, mysql is loaded with that kind of bullshit
+[07:00:51] <Starthunder> upsert?
+[07:00:59] <JustAberrant> update or insert
+[07:01:06] <JustAberrant> admittedly very useful, but non-standard :(
+[07:01:15] <Starthunder> Awh
+[07:01:22] * JustAberrant tries to avoid using blatantly non-standard stuff like that :(
+[07:01:39] <Phase4> isn't it standard?
+[07:01:59] <JustAberrant> I didn't think so
+[07:02:03] <Phase4> either way it is something postgres plans to implement eventually, very useful for statistics, but doesn't yet implement
+[07:02:08] <JustAberrant> I.. actually you know I don't know how the sql standard is maintained
+[07:02:20] <Phase4> with fire and brimstone
+[07:02:21] <JustAberrant> like, I always assume there was some group like OMG managing it
+[07:02:30] <JustAberrant> but I've never heard of the "sql committee" putting out anything
+[07:02:56] <JustAberrant> is there even an actual standard?
+[07:02:56] <Phase4> ahh, this is the problem https://bugs.mysql.com/bug.php?id=68656
+[07:03:02] <PinkiePieBot> [ MySQL Bugs: #68656: ORDER BY ignored in some situations for UPDATE query ]
+[07:03:10] <Phase4> JustAberrant, there is some kind of standard, somewhere
+[07:03:24] <JustAberrant> sign of a good standard: you can't actually find it
+[07:03:28] <Phase4> also yeah, in mysql you can ORDER BY and LIMIT an UPDATE
+[07:03:41] <JustAberrant> hehehe
+[07:03:49] <Phase4> which leads to data inconsistency
+[07:03:59] <Phase4> mysql considers this a non-trivial bug
+[07:04:05] <Phase4> non-critical'
+[07:04:34] <Starthunder> …wait, what?
+[07:05:06] <JustAberrant> basically mysql is ok for wobsites and small stuff.. but yeah.. I wouldn't trust it for anything sizable
+[07:05:27] <Phase4> Starthunder, linked the bug before, there's a blog post on kickstarter about it, they hit the bug apparently
+[07:05:35] <JustAberrant> especially when postgres is just (actually more) as free.. and like a billion times better
+[07:05:44] <Phase4> inconsistency in a replication set is a big no-no
+[07:06:12] <JustAberrant> if you're doing something complicated like a cluster, the ease of use of mysql shouldn't be a concern over the only slightly harder to use postgres
+[07:06:14] <Phase4> JustAberrant, and implements foreign keys
+[07:06:20] <JustAberrant> so why not just use postgres and not have to deal with all the bs
+[07:06:59] <Phase4> MyISAM doesn't do foreign keys, which seems like something you kinda expect in a Relation database
+[07:07:05] <Phase4> relational'
+[07:07:08] <JustAberrant> hehe
+[07:07:11] <JustAberrant> yeah
+[07:07:15] <JustAberrant> innodb does
+[07:07:31] <Phase4> and it implements transactions
+[07:07:35] <JustAberrant> but.. yeah.. that seems like a pretty big thing to be missing in a database engine
+[07:07:42] <Phase4> i'm not sure what it does if your transaction spans multiple storage engines
+[07:07:55] <JustAberrant> flails? :>
+[07:08:19] <Phase4> schema updates also aren't transactional which i'm sure has caused at least a few bad weekends
+[07:08:51] *** Joins: loadhigh (ia1@Pony-m50.4sg.88.167.IP)
+[07:09:04] <JustAberrant> yeah, though if you're just modifying your schema n a production system .. probably bad anyway
+[07:09:27] <Phase4> you need to change schema sometimes
+[07:10:18] <JustAberrant> I suppose, and I guess sometimes you can't just take it down for maintenance
+[07:10:40] * JustAberrant never worked in that kind of environment to be honest
+[07:10:55] <Phase4> even if you do take it down, transactional schema changes means you can just ROLLBACK if there's a problem
+[07:11:02] <Phase4> i don't know what mysql does on failure
+[07:11:24] <JustAberrant> the stuff I work on is installed and used for awhile.. when we make any changes, it's a big deal, and the system is usually down for awhile for regrooming/testing/certification/sacrifice to our dark lord/etc
+[07:11:46] <JustAberrant> we actually don't "change" anything
+[07:11:50] <JustAberrant> we wipe and regroom
+[07:11:57] *** Joins: TuxRug (TuxRug@TuxRug)
+[07:12:50] <Twilightlicious> what is WIMBoot
+[07:13:14] *** CardboardBox is now known as Starburn
+[07:13:27] <Twilightlicious> Oh, i see.
+[07:13:36] <Twilightlicious> How do updates work with WIMBoot, though
+[07:13:46] <JustAberrant> alright, actually gonna try to go to bed now!
+[07:13:56] <Phase4> gnight
+[07:14:45] <Phase4> Twilightlicious, binary patch on the image i'm guessing
+[07:15:02] <Starthunder> So are modifications generally logged so they can be undone later?
+[07:15:03] <Twilightlicious> i dunno, it sounds like the image is never modified
+[07:15:28] <Twilightlicious> plus due to the image being compressed, that would be difficult/impossible
+[07:16:03] <Phase4> Starthunder, they can be, postgres has a method of undoing transactions but it requires a bit of infrastructure, it's not something you can do in SQL
+[07:16:33] <Phase4> Twilightlicious, i think you can 'layer' WIM files, not to clear on how it works
+[07:17:04] <Twilightlicious> the Technet page says WIMBoot versions of Windows don't receive minor fixes
+[07:17:08] <Twilightlicious> only Major security updates
+[07:17:17] *** Joins: MistVeil (AndChat3408@Pony-apm.8f9.211.189.IP)
+[07:17:24] <Phase4> it looks like WIM files are mutable
+[07:17:30] <Phase4> so you mount, apply the update, unmount
+[07:17:48] <Twilightlicious> It says they can be installed manually if needed, however. So i'm guessing there's a registry tweak to get the updates functioning like on Desktop
+[07:18:38] <Twilightlicious> I have a device coming in the mail that runs via this method.
+[07:19:41] <firestream> hey
+[07:20:20] <Phase4> wimboot could be useful for vm deployments
+[07:20:33] <Phase4> share one image, once in the page cache, once on disk
+[07:24:52] <firestream> Ughhh i need to get a new sSD :(
+[07:26:48] <mniip> [08:12:53] <Twilightlicious> what is WIMBoot
+[07:26:59] <mniip> that is microsoft reinventing the wheel
+[07:27:07] <Starthunder> I keep reading that as WimBot
+[07:27:46] <Twilightlicious> I was wondering how they got Windows 8.1 to fit on such small drives
+[07:27:46] <Twilightlicious> now i know :3
+[07:34:45] *** Quits: loadhigh (ia1@Pony-m50.4sg.88.167.IP) (Quit: Disconnecting)
+[07:35:53] <Phase4> wonder if windows can boot from a vhd
+[07:36:07] *** Joins: loadhigh (ia1@Pony-m50.4sg.88.167.IP)
+[07:37:13] <Phase4> mniip, not really, it's basically what most embedded linux setups already do
+[07:37:20] <Phase4> though with WIM instead of squashfs
+[07:37:29] <mniip> that's what I was referring to
+[07:38:01] <Phase4> not really re-inventing though, it's building their own wheel after everyones had their own for years
+[07:39:14] <firestream> anyone want to reinstall and re raid my server xD it kind of died a bad death
+[07:39:21] <mniip> I seriously wonder why does microsoft keep coming up with proprietary standards and formats
+[07:39:56] <Starthunder> Because they have their little vicious cycle and… :/
+[07:40:15] <Phase4> mniip, WIM sorta makes sense, i'm not aware of any other archive that can store windows acl's
+[07:40:30] <mniip> windows whatnow
+[07:40:40] <Phase4> filesystem permissions
+[07:40:40] *** Parts: MistVeil (AndChat3408@Pony-apm.8f9.211.189.IP) ("Leaving")
+[07:41:24] <mniip> something like selinux?
+[07:41:30] <firestream> I hate windows its on my gaming system but for eveything eles i use  Luinux then mac
+[07:41:46] <Phase4> mniip, selinux is mandatory access control, != filesystem permissions
+[07:43:31] <Phase4> i can't explain windows acl behaviour because it's not documented, there's a partial implementation in wine-staging, it's still being reverse-engineered
+[07:46:00] <Twilightlicious> I don't think they're allowed to profit from using open source software, but i could be wrong.
+[07:46:05] <Twilightlicious> So there's your reason why :P
+[07:46:34] <Phase4> Twilightlicious, you're allowed to profit as much as you please, most licences are concerned primarily with keeping the code open
+[07:46:42] <Starthunder> Aha.
+[07:46:50] <Starthunder> They want to keep it closedsource
+[07:47:00] <Phase4> though wanting to keep it closed is part of it
+[07:47:17] <Twilightlicious> Actually Microsoft said they're thinking of opening a lot of their source. But, this could have just been said to win some people over.
+[07:48:38] <Phase4> they have been opening a bunch of code, most of it .net that mono already had implemented ages ago
+[07:51:32] <Phase4> mniip, i did read a thing once about why, and the argument consisted entirely of "we don't know if we're gonna get sued for using it"
+[07:51:35] <Twilightlicious> “If you open source something but it comes with a build system that takes rocket scientists and three months to set up, what’s the point?”
+[07:51:50] <firestream> well fuck steam right now
+[07:51:50] <Phase4> they called it 'code pedigree' in the document
+[07:51:59] <firestream> letting modders chage for mods
+[07:52:02] <Phase4> the paid mods thing?
+[07:52:13] <firestream> eeyup
+[07:52:34] <firestream> a freind of mine had his mod stolen off anther website and someone uploaded it to steam and made money from it
+[07:52:41] * Phase4 expects to be hearing about that for a while
+[07:52:42] <firestream> and steam won't do crap unless said friend gets a layer
+[07:52:59] <firestream> lawers * spelling ... i can't spell * ugh
+[07:54:35] <Phase4> firestream, he could just put it up himself for free
+[07:55:06] <Phase4> not that it excuses anyone elses actions, but it's an option
+[07:55:40] <firestream> he does have it free on nexxus not steam :S
+[07:55:42] <mniip> [08:51:38] <Twilightlicious> “If you open source something but it comes with a build system that takes rocket scientists and three months to set up, what’s the point?”
+[07:55:48] <mniip> I have windows 2000 source over here
+[07:55:51] <Twilightlicious> A Microsoft statement :P
+[07:56:09] * Phase4 is actually quite sick of windows source leaks
+[07:56:21] <Phase4> every time you google for some obscure piece of windows api, leaks everywhere
+[07:56:24] <firestream> last time i loved windows was ME'
+[07:56:33] <mniip> Phase4, sick of th leaks or of the code that you find inside
+[07:56:33] <Twilightlicious> Haha, you loved windows
+[07:56:39] <firestream> i was a kid then
+[07:56:40] * Twilightlicious laughs like Nelson on The Simpsons
+[07:56:41] <firestream> xD
+[07:56:56] <firestream> when did me come out 1999? 
+[07:56:59] <Phase4> mniip, well i'm usually doing it to fix something in wine
+[07:57:18] <Twilightlicious> How am i supposed to know when you came out >3> (I JOKE <3)
+[07:57:26] <firestream> i was like 10 lol
+[07:57:37] <firestream> had dialup so linux was a pita to download
+[07:57:56] <Twilightlicious> There was DSL (The Linux distro, not the internet connection)
+[07:58:00] <Twilightlicious> it was only like 30MB
+[07:58:06] <firestream> i had dialup then 
+[07:58:09] <Twilightlicious> so it only took like an hour
+[07:58:17] <Twilightlicious> i did too lol
+[07:58:17] <firestream> when i had to get on late atnight 
+[07:58:27] <mniip> lol
+[07:58:28] <firestream> thing is it was a stolen dialup pass/id
+[07:58:30] <Twilightlicious> I had dial up until like 2005
+[07:58:31] <firestream> of a dead guy xD
+[07:58:35] <Phase4> it is kinda hard to distribute binaries over dialup
+[07:58:35] <mniip> opened a random file in 2000 source
+[07:58:37] <mniip>     szC[0]='C'; szC[1]='r'; szC[2]='e'; szC[3]='d'; szC[4]='i';
+[07:58:37] <mniip>     szC[5]='t'; szC[6]='s'; szC[7]=0;
+[07:59:02] <Phase4> mniip, oi, stahp
+[07:59:16] <firestream> now i use Linux  for daily > hackentosh for video/pic/music  > win for gaming
+[08:00:01] <Twilightlicious> Windows for all the things > Android for all of the (mobile) things
+[08:00:04] <mniip>         FUNCTION:       UnescapeAmpersands
+[08:00:04] <mniip>         PURPOSE:    Opposite of EscapeAmpersands.  (Isn't Windows fun?)
+[08:00:16] <mniip> that was literally in a comment
+[08:00:50] <Phase4> mniip, two favorite bits of windows behaviour: CreateFile, and the cmd parser
+[08:00:59] <firestream> its like there never will be a windows x.9 because of old code
+[08:01:09] <Phase4> wine has fairly complete implementations of those
+[08:01:22] <mniip> Phase4, I know about cmd, but what's with CreateFile
+[08:02:06] <firestream> i think its time for me to try to make a crack for xsplit v2 :S as there is none
+[08:02:57] <Phase4> mniip, it maps to NtCreateFile, NtOpenFile, NtCreatePipe, NtOpenPipe, (several other primitives here), and several 'special' names that produce handles that aren't actually handles
+[08:03:28] <Phase4> mniip, also HANDLE on windows can be things that aren't handles
+[08:03:42] <mniip> so like sys_read then
+[08:04:10] <mniip> (there are so many options to what code path would sys_read take)
+[08:04:13] <Phase4> mniip, not really, sys_read is generic
+[08:04:35] <Phase4> iirc descriptors have an associated struct fdops
+[08:04:46] <Phase4> it's one consistent interface
+[08:05:00] <Phase4> CreateFile ties together a plethora of incompatible, inconsistent interfaces
+[08:05:10] <Phase4> as does ReadFile and WriteFile
+[08:05:38] <mniip> I don't think descriptors have anything themselves
+[08:05:44] <Phase4> and the returned HANDLE is not a generic thing that you can pass to, say, WaitForMultipleObjects
+[08:05:51] <mniip> but they do store a pointer to the host filesysem
+[08:06:00] <mniip> which does have a struct defining all the methods
+[08:06:01] <Phase4> sometimes it is, but not everything can
+[08:06:13] <Phase4> mniip, yeah, fdops, which may or may not opperate on a file
+[08:06:33] <mniip> I have very little knowledge of the windows api
+[08:06:38] <mniip> what is even a HANDLE
+[08:07:10] <Phase4> it's the 'windows equivalent of a file descriptor' though the semantics are subtly different in important ways
+[08:07:21] <Phase4> that is, if you've actually been given a kernel handle
+[08:07:31] <Phase4> many windows handles exist only in userspace
+[08:07:32] *** Quits: Skids (ejd@Pony-aaa.lna.79.74.IP) (Ping timeout: 121 seconds)
+[08:08:51] <mniip> Phase4, what is it typedef'd to
+[08:08:58] <Phase4> mniip, pointer
+[08:09:05] <mniip> some struct pointer?
+[08:09:15] <Phase4> or some pointer-sized value, i forget the exact typedef
+[08:10:09] <Phase4> it is a 64bit value on 64bit windows, but wont exceed a 32bit value in size
+[08:10:15] <mniip> hmm
+[08:10:17] <mniip> reading SE
+[08:10:28] <Phase4> also the lower two bits are usable as flags, the kernel ignores them
+[08:10:42] <Phase4> and some of the upper bits are used as flags by kernel32.dll for the fake-handles
+[08:11:06] <AppleDash> lol
+[08:11:28] * Phase4 knows too much
+[08:11:51] <mniip> Phase4, so pretty much it is a box
+[08:12:27] <Phase4> asside from the lower two bits, it is just a token, unlike linux you have no control of the handle table
+[08:12:30] <firestream> i know my way arund windows but not a ton about how it works
+[08:12:31] <Phase4> values may as well be random
+[08:12:32] <mniip> unique identifier, that identifies something in the... windows
+[08:12:50] <Phase4> mniip, they're process specific, not unique, similar to file descriptors
+[08:12:59] <mniip> hmm
+[08:14:26] <Phase4> ah, here it is http://lxr.free-electrons.com/source/include/linux/fs.h#L1538
+[08:14:28] <PinkiePieBot> [ Linux/include/linux/fs.h - Linux Cross Reference - Free Electrons ]
+[08:14:34] <Phase4> that's the struct i was talking about
+[08:16:27] <Phase4> mniip, and the various system calls mostly expose operations in this struct. windows does not make it generic, different object types have their own calls
+[08:16:59] <Phase4> semantics vary wildly between different types of object, which is likely why there's no equivalent of epoll or kqueue on windows
+[08:17:15] <Phase4> (completion ports don't count, they're very limited compared to poll)
+[08:17:20] <Phase4> (windows also lacks poll)
+[08:17:32] <mniip> I know
+[08:17:41] <mniip> file descriptors
+[08:17:47] <mniip> minus dip*
+[08:17:56] <mniip> and everything via ioctl
+[08:18:02] <mniip> er dup*
+[08:19:08] <Phase4> ioctl are device nodes only afaik
+[08:19:24] <firestream> i forget what afaik means
+[08:19:30] <Phase4> as far as i know
+[08:19:47] <firestream> <--- im to tired to member all  the terms lol 
+[08:19:57] <firestream> was up all day re doing my site
+[08:20:41] <Phase4> mniip, there is fnctl, which operates on the descriptor itself, and that's the big difference. windows handles are more or less a pointer, the reference a kernel object. file descriptors are a thing with their own state
+[08:20:52] <Phase4> they reference'
+[08:21:01] <Phase4> unless they're fake handles obviously
+[08:27:53] *** Quits: TuxRug (TuxRug@TuxRug) (Quit: WeeChat 1.1.1)
+[08:33:32] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:39:03] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Connection closed)
+[08:41:00] <Phase4> mniip, best place to learn about these weird corners of windows is wine and reactos
+[08:41:35] <Phase4> the offical documentation is more of an overview than anything, especially if you're working on more than one version
+[09:01:32] *** [A]McKey is now known as McKey
+[09:01:35] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[09:08:45] *** Gigabit is now known as gigazzz
+[09:16:30] *** Q0 is now known as Q0|Away
+[09:27:39] *** Quits: Baron_Von_Clop (Baron_Von_C@Pony-pdj.sjl.100.97.IP) (Connection closed)
+[09:55:09] *** Quits: Crimson_Tail (Bluepon@Pony-up5.b6a.250.69.IP) (Quit: Oops, a kernel panic)
+[10:49:22] <firestream> you kno what Fk Xsplit
+[10:53:03] *** Joins: Baron_Von_Clop (Baron_Von_C@Pony-pdj.sjl.100.97.IP)
+[11:06:21] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[11:56:49] *** Hoofy is now known as Hoofy_sleeps
+[12:38:27] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[12:46:29] *** Quits: Phase4 (Phase4@Pony-b57.r3i.209.118.IP) (Quit: Leaving)
+[12:47:55] *** Quits: Nick (nobody@Pony-o1k.cjc.74.71.IP) (Ping timeout: 121 seconds)
+[12:48:08] *** Joins: Phase4 (Phase4@Pony-b57.r3i.209.118.IP)
+[12:48:17] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[13:34:53] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[14:01:22] *** Hoofy_sleeps is now known as Hoofy
+[14:13:52] *** Parts: vi[NLR] (vi[NLR]@Pony-ohu.qnc.108.80.IP) ()
+[14:36:57] *** Quits: Fillyfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP) (Connection closed)
+[14:42:21] *** Joins: Fillyfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP)
+[14:50:37] *** Joins: vi[NLR] (vi[NLR]@Pony-ohu.qnc.108.80.IP)
+[14:53:14] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Connection closed)
+[14:54:25] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[15:02:37] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[15:08:24] *** Joins: Maple (Maple@Maple)
+[15:10:23] *** Quits: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP) (Connection closed)
+[15:18:23] *** mniip is now known as \m
+[15:27:13] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[15:34:21] *** Joins: Crimson_Tail (Bluepon@Pony-up5.b6a.250.69.IP)
+[15:52:29] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[15:53:56] *** Hoofy is now known as Hoofy_nap
+[16:09:28] *** Quits: Nick (nobody@Pony-o1k.cjc.74.71.IP) (Ping timeout: 121 seconds)
+[16:09:42] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[16:20:24] *** Neptune is now known as Neptune|sleep
+[16:27:28] *** Joins: Skids (ejd@Pony-aaa.lna.79.74.IP)
+[16:33:03] *** Quits: Fillyfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP) (Connection closed)
+[16:34:29] *** Quits: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[16:52:49] *** Quits: Phase4 (Phase4@Pony-b57.r3i.209.118.IP) (Ping timeout: 121 seconds)
+[17:01:43] *** \m is now known as mniip
+[17:14:04] *** Quits: CompuDesktop (quassel@snuggly.filly) (Connection closed)
+[17:18:15] *** Quits: loadhigh (ia1@Pony-m50.4sg.88.167.IP) (Quit: Disconnecting)
+[17:18:55] *** Joins: loadhigh (ia1@Pony-m50.4sg.88.167.IP)
+[17:21:12] *** Init3-away is now known as init3
+[17:26:21] *** Joins: Tahlorz (rattle@Pony-i9m.iqp.106.68.IP)
+[17:33:41] *** Joins: CompuDesktop (quassel@snuggly.filly)
+[17:37:33] *** Q0|Away is now known as Q0
+[17:45:24] *** McKey is now known as [A]McKey
+[17:51:30] *** [A]McKey is now known as McKey
+[17:51:50] *** Hoofy_nap is now known as Hoofy
+[18:03:58] *** McKey is now known as [A]McKey
+[18:05:47] *** Quits: Skids (ejd@Pony-aaa.lna.79.74.IP) (Ping timeout: 121 seconds)
+[18:09:58] *** Quits: cyborg_ar (cyborgar@Pony-sm9.lui.25.181.IP) (Ping timeout: 121 seconds)
+[18:11:54] *** Quits: Tahlorz (rattle@Pony-i9m.iqp.106.68.IP) (Quit: )
+[18:32:01] *** Quits: loadhigh (ia1@Pony-m50.4sg.88.167.IP) (Quit: Disconnecting)
+[18:32:32] *** init3 is now known as Init3-away
+[18:32:38] *** Joins: loadhigh (ia1@Pony-m50.4sg.88.167.IP)
+[18:36:40] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[18:37:37] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[18:39:27] *** Joins: Sol (Sol@Pony-vvn.i1u.133.74.IP)
+[18:57:55] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[18:59:00] *** gigazzz is now known as Gigabit
+[18:59:42] *** Init3-away is now known as init3
+[19:10:24] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[19:12:55] <Starthunder> Connecting a USB3 disk to a USB3 port and `rsync`ing a directory hierarchy oto another machine over gigabit ethernet should be blindingly fast, yeah? >.>
+[19:13:10] <Starthunder> Significantly more so than connecting the disk directly to the second computer with USB2?
+[19:14:18] <AppleDash> Starthunder: Depends on the disk
+[19:14:25] <AppleDash> If it's a slow disk, then no
+[19:15:54] <coppercore> USB2 runs at roughtly 30MiB/s transfer rate
+[19:16:12] <coppercore> Gigabit Ethernet comes out to around 120MiB/s
+[19:16:20] <coppercore> USB 3 is about 250MiB/s
+[19:16:42] <Starthunder> Maybe this is individual-file overhead, then, because both are slowwwww
+[19:16:43] <coppercore> honestly, use usb3 --> gig-ethernet --> target machine
+[19:16:49] <coppercore> Starthunder: is it a BUNCH of tiny files?
+[19:16:54] <Starthunder> Yeah, that's what I was thinking.
+[19:16:56] <Starthunder> …yeah. It is.
+[19:16:58] <AppleDash> Random HDD read is generally very slow
+[19:16:59] <coppercore> zip them up
+[19:17:03] <Starthunder> Bunch of eight-meg files.
+[19:17:04] <coppercore> then send the one big file
+[19:17:09] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[19:17:12] <Starthunder> I want all my metadata though :c
+[19:17:14] <coppercore> and then unpack on destination
+[19:17:15] <coppercore> OH
+[19:17:16] <coppercore> nvm
+[19:17:26] <coppercore> rsync -arvz --progress 
+[19:17:28] <coppercore> is thy friend
+[19:17:39] <coppercore> hell, compression might help here tbh
+[19:17:48] <coppercore> just on the fly magic
+[19:17:54] <Starthunder> Not really. They're encrypted. Compression isn't gonna do shit.
+[19:18:56] *** Q0 is now known as Q0|Away
+[19:25:30] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[19:26:13] <coppercore> whelp
+[19:26:54] <coppercore> regardless, it'll be fastest sending it via gigabit ethernet over usb2 either way
+[19:50:38] *** ThunderBolt is now known as ThunderBolt|Sleeping
+[19:59:15] *** Neptune|sleep is now known as Neptune
+[20:02:54] *** Joins: Webster (Webster@Pony-mme.2eo.212.73.IP)
+[20:07:02] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Connection closed)
+[20:18:33] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[20:33:34] *** Quits: mniip (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 121 seconds)
+[20:39:00] *** Neptune is now known as Neptune|sleep
+[20:41:56] *** Joins: mniip (mniip@Pony-o9q.v2g.219.178.IP)
+[20:42:03] <mniip> johnsey
+[20:42:19] <mniip> the server just crashed again
+[20:42:29] <mniip> nothing particularly interesting in messages
+[20:42:35] <mniip> the same down-down-down-down-down-down
+[20:44:20] *** Topkasa is now known as Sukasa
+[21:01:12] *** Joins: locodashie11 (locodash11@Pony-q7h.1no.217.73.IP)
+[21:08:09] *** Quits: mniip (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 121 seconds)
+[21:10:06] *** Joins: mniip (mniip@Pony-o9q.v2g.219.178.IP)
+[21:16:12] *** [A]McKey is now known as McKey
+[21:24:09] *** init3 is now known as Init3-away
+[21:31:28] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[21:31:59] *** Joins: ModusPonens (ModusPonens@Pony-geu.enl.137.198.IP)
+[21:33:10] <AppleDash> does anyone know of a way to set up an HTTP proxy that forwards requests for a certain URL pattern to a different proxy but handles all other requests locally?
+[21:33:24] <AppleDash> I can't do something like that with a browser extension for some reason
+[21:34:40] <Starthunder> That sounds like a common use case.
+[21:36:44] <AppleDash> I'm mostly just wanting to proxy Pandora through a US proxy while keeping everything else going through my normal connection
+[21:36:59] <AppleDash> My current solution is running a second browser entirely proxied through the US proxy
+[21:55:47] <JustAberrant> :>
+[21:59:11] * AppleDash forces JustAberrant to use a proxy located in Montenegro for all of his Internet activities
+[21:59:34] <JustAberrant> :(
+[21:59:40] <AppleDash> :)
+[22:00:07] * JustAberrant has just drunk an entire bottle of wine :(
+[22:00:11] <JustAberrant> this.. is not good
+[22:00:53] <AppleDash> JustAberrant: WiMAX access is provided by MTEL, and also by WiMax Montenegro. There were 7,381 WiMAX connections in Montenegro in October 2010. Speeds of up to 4 Mbit/s down and 1 Mbit/s up are available.
+[22:00:54] <AppleDash> :>
+[22:01:22] <JustAberrant> :(
+[22:08:42] *** Quits: ModusPonens (ModusPonens@Pony-geu.enl.137.198.IP) (Quit: Leaving)
+[22:08:54] *** Joins: ModusPonens (ModusPonens@Pony-geu.enl.137.198.IP)
+[22:13:00] *** mniip is now known as \m
+[22:14:37] <ola> https://www.youtube.com/watch?v=XmXNUp-Nh5c :>
+[22:14:37] <PinkiePieBot> [ i can has ntsc vhs - 3 views - 0:02:45 long - 0 likes - 0.00% ]
+[22:35:31] *** Init3-away is now known as init3
+[22:50:05] *** Joins: Phase4 (Phase4@Pony-b57.r3i.209.118.IP)
+[23:04:50] *** Joins: cyborg_ar (cyborgar@Pony-prb.r9t.49.190.IP)
+[23:10:34] *** McKey is now known as [A]McKey
+[23:17:58] *** init3 is now known as Init3-away
+[23:41:15] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[23:41:20] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Connection closed)
+[23:44:00] *** Quits: Webster (Webster@Pony-mme.2eo.212.73.IP) (Quit: Leaving)

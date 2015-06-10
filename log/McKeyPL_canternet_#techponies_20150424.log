@@ -1,0 +1,921 @@
+[00:02:12] <tiwake> what?
+[00:07:55] *** Quits: DataByteBrony (DataByte@Pony-nf6.hp8.15.173.IP) (Ping timeout: 121 seconds)
+[00:38:09] *** Joins: Asoka (Asoka@Pony-5da.ctk.182.89.IP)
+[00:39:13] *** Naptune is now known as Neptune
+[00:41:19] *** Quits: Asoka_White (Asoka@Pony-s4m.jo6.182.89.IP) (Ping timeout: 121 seconds)
+[00:43:23] *** Joins: Webster (Webster@Pony-mme.2eo.212.73.IP)
+[00:50:42] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[01:04:35] *** Joins: locodashie11 (locodash11@Pony-q7h.1no.217.73.IP)
+[01:19:54] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[01:26:03] *** Quits: Shutter (tips@sudoku.prevention.hotline) (Ping timeout: 121 seconds)
+[01:26:07] *** Joins: ShutterQuick (tips@sudoku.prevention.hotline)
+[01:28:47] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[01:32:40] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[01:50:42] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[01:59:35] *** Quits: MistVeil (aqua@Pony-qbk.jpi.211.189.IP) (Quit: Saliendo)
+[02:05:18] *** Joins: MistVeil (AndChat3408@Pony-v7q.bpr.95.200.IP)
+[02:11:39] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[02:17:17] *** Quits: Phase4 (Phase4@Pony-qur.r85.209.118.IP) (Quit: Leaving)
+[02:17:25] *** Joins: DataByteBrony (DataByte@Pony-s9k.h47.94.66.IP)
+[02:22:24] *** Joins: Phase4 (Phase4@Pony-qur.r85.209.118.IP)
+[02:26:06] *** Quits: MistVeil (AndChat3408@Pony-v7q.bpr.95.200.IP) (Quit: Bye)
+[02:39:43] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[02:43:44] *** Joins: cyborg_ar (cyborgar@Pony-sm9.lui.25.181.IP)
+[02:44:28] *** Joins: Sol (Sol@Pony-vvn.i1u.133.74.IP)
+[02:50:11] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[02:54:25] *** Joins: Hoofy (HoofSounds_@Pony-dsovdr.res.rr.com)
+[02:57:28] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[02:57:40] *** mniip is now known as \m
+[02:58:22] *** \m is now known as mniip
+[03:04:22] <ShivalPonyWolf> http://reventlov.com/advisories/using-the-docker-command-to-root-the-host - the vendor response makes me laugh but also makes me sad
+[03:04:23] <PinkiePieBot> [ Using the docker command to root the host (totally not a security issue) // reventlov's silly hacks ]
+[03:04:45] *** mniip is now known as \m
+[03:06:11] <Phase4> ShivalPonyWolf, the proper solution is user namespaces
+[03:22:46] *** Joins: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP)
+[03:22:52] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[03:25:07] *** \m is now known as mniip
+[03:25:13] <mniip> today I learned
+[03:25:26] <mniip> linux displayes are magical
+[03:25:36] <mniip> everything works out of the box, but dare to dig deeper
+[03:25:39] <mniip> god that's horrible
+[03:25:51] <AppleDash> lol
+[03:27:32] *** Quits: Nick (nobody@Pony-o1k.cjc.74.71.IP) (Ping timeout: 121 seconds)
+[03:28:24] <mniip> check out http://i.imgur.com/GoG0VzN.png
+[03:28:39] <Colgate> my log with this bot is funny
+[03:28:52] <mniip> UHDTV on a laptop display
+[03:28:57] <AppleDash> Congratulations, you have a 4k monitor?
+[03:29:17] <mniip> I am emulating a 4K monitor with X11
+[03:29:30] <AppleDash> ...why
+[03:29:46] <mniip> because I can?
+[03:29:54] <AppleDash> :(
+[03:29:54] <PinkiePieBot> Cheer up, AppleDash, all of your friends are here!
+[03:30:11] <mniip> you can too!
+[03:30:21] <mniip> xrandr --fb 3840x2160
+[03:30:41] <AppleDash> That flashed my screen off and then back on with no change :P
+[03:31:40] <Colgate> I don't think my laptop's gpu could push that many pixels even without any 3d rendering going on
+[03:32:21] <AppleDash> I think mine can
+[03:32:24] <AppleDash> It already almost does
+[03:33:34] <Colgate> AppleDash: my tablet stopped falling down :D
+[03:33:41] <AppleDash> Yay!
+[03:33:49] <mniip> AppleDash, what devices do you have in xrandr
+[03:33:59] <AppleDash> AHJHHHH MNIIIP WHJAT THE THDFUCK
+[03:34:14] <AppleDash> I moved my mouse to the bottom of the screen SHIT IS SLIDING AROUND
+[03:34:16] * mniip whistles innocently
+[03:34:33] <AppleDash> I don't think you understand what'd going on right now
+[03:34:44] <Webster> They probably do.
+[03:35:03] <Webster> It's a virtual desktop. Been able to do that for ages.
+[03:35:18] <AppleDash> No, it is NOT A virtual desktop
+[03:35:23] <AppleDash> 100% guarantee it isn't
+[03:35:33] <mniip> xrandr -s 0
+[03:35:48] <mniip> to reset
+[03:36:00] <Webster> Virtual monitor I guess.
+[03:36:06] <mniip> Webster, no
+[03:36:13] <Webster> Bad words.
+[03:36:17] <mniip> imagine a huge pixmap
+[03:36:26] <mniip> and your monitor is a subsection of that pixmap
+[03:36:36] <mniip> that you can move around to explore the pixmap
+[03:36:38] <Webster> Dunno what you call it, but point is, the desktop is the pixel size you made it, and you move around what is shown on the smaller monitor.
+[03:36:45] <mniip> yeah
+[03:38:20] <AppleDash> https://i.imgur.com/0lPkQCA.jpg
+[03:38:40] <mniip> right
+[03:39:23] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[03:39:54] *** Quits: DataByteBrony (DataByte@Pony-s9k.h47.94.66.IP) (Connection closed)
+[03:39:56] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[03:40:49] *** Joins: ModusPonens (ModusPonens@Pony-u6v.enl.137.198.IP)
+[03:41:14] <AppleDash> The reset command worked though
+[03:41:18] <Colgate> I hate it when that happens
+[03:41:24] <AppleDash> lol
+[03:41:29] <Colgate> when random programs change the screen size and you have to scroll around
+[03:41:32] <Colgate> so annoying
+[03:42:17] <mniip> they do that?
+[03:42:38] <Colgate> some games do, usually wine games :P
+[03:42:40] <AppleDash> They do? O.o
+[03:42:57] <tiwake> yeah
+[03:42:58] <mniip> the worst I've encountered is SDL failing to clean up after itself leaving the screen in 800x600
+[03:43:36] <Colgate> they like to fuck with my vertical monitor too
+[03:43:55] <tiwake> take pictures
+[03:44:11] <AppleDash> Maybe I should get a hardware 4k display
+[03:44:31] <AppleDash> I wonder if 2 9800gts in SLI can drive that
+[03:44:46] <tiwake> one can
+[03:44:47] <mniip> AppleDash, what's your display named
+[03:44:59] <AppleDash> Like, the model?
+[03:45:06] <mniip> nope, in xrandr
+[03:45:17] <AppleDash> So you want the output?
+[03:45:44] <Colgate> Screen 0: minimum 320 x 200, current 1440 x 900, maximum 4096 x 4096
+[03:45:45] <mniip> LVDS1 connected 1366x768+0+0
+[03:45:46] <mniip> for me
+[03:45:47] <Colgate> :O
+[03:45:57] <AppleDash> DVI-I-0 connected primary 1920x1080+0+0
+[03:46:10] <mniip> xrandr --output DVI-I-0 --transform 0.99,0,0,0,0.99,0,0,0,1
+[03:46:12] <mniip> >:)
+[03:46:18] <AppleDash> gonna do it.
+[03:46:30] <AppleDash> That just made everything blurry
+[03:46:31] <AppleDash> lol
+[03:46:43] <mniip> that's the idea
+[03:46:44] <AppleDash> Was that the intended effect?
+[03:46:45] <AppleDash> Oh
+[03:46:45] <AppleDash> lol
+[03:46:49] <Colgate> lol
+[03:46:52] <AppleDash> How do I fix it? Same command?
+[03:47:00] <AppleDash> As in same command as to fix the other thing
+[03:47:03] <mniip> --transform 1,0,0,0,1,0,0,0,1
+[03:47:05] <mniip> or --scale 1x1
+[03:47:20] <AppleDash> yay
+[03:47:34] <tiwake> lol
+[03:47:38] <tiwake> silly
+[03:47:49] <mniip> that changes your resolution by 1% introducing blurriness
+[03:48:08] <mniip> you can also do silly stuff like rotate the screen
+[03:50:15] <mniip> xrandr --output DVI-I-0 --transform 1.4,1.4,0,-1.4,1.4,0,0,0,1
+[03:50:18] <mniip> if you like to risk
+[03:50:37] <AppleDash> What's that gonna break?
+[03:50:57] <mniip> I suggest you drag your terminal window to top-right :P
+[03:51:05] <AppleDash> Will do
+[03:51:19] <AppleDash> AUGH
+[03:51:28] <AppleDash> Not only is it messed up but it's tiny
+[03:51:40] <AppleDash> OK, how do I fix this xD
+[03:51:43] <mniip> same
+[03:51:46] <mniip> --scale 1x1
+[03:51:47] <AppleDash> OK
+[03:52:05] <AppleDash> Kinda neat though
+[03:52:10] <mniip> learning xrandr the hard way
+[03:52:13] <AppleDash> lol
+[03:52:25] <mniip> I did the same a few minutes ago
+[03:52:32] <mniip> except I crashed 3 times and had to kill X once
+[03:56:23] <AppleDash> :(
+[04:15:49] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[04:51:37] *** Quits: Crimson_Tail (Bluepon@Pony-up5.b6a.250.69.IP) (Quit: Oops, a kernel panic)
+[04:53:19] *** Quits: Maple (Maple@Maple) (Quit: WeeChat 1.1.1)
+[05:09:14] *** Joins: TuxRug (TuxRug@Pony-5im.uqu.176.67.IP)
+[05:09:48] <JustAberrant> :)
+[05:10:10] *** Cadance is now known as Xena
+[05:10:18] *** Xena is now known as Cadance
+[05:12:36] <JustAberrant> http://www.theregister.co.uk/2015/04/23/vms_compared/ 
+[05:12:36] <PinkiePieBot> [ If hypervisor is commodity, why is VMware still on top? • The Register ]
+[05:12:44] <JustAberrant> "VMware can be set up by a lobotomised monkey wigging out on bad crack, but Hyper-V server requires having the Mystical Book Of Commands to not only feed it set-up information it's supposed to have, but to work around WONTFIX bugs."   <3
+[05:13:11] <ShivalPonyWolf> LOL
+[05:13:32] <JustAberrant> entire article worth it for that one quote
+[05:13:52] <ShivalPonyWolf> soo sending that around work
+[05:14:33] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[05:25:32] *** Joins: nscoots1 (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[05:26:51] *** Quits: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[05:26:51] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Ping timeout: 121 seconds)
+[05:32:42] *** Quits: Webster (Webster@Pony-mme.2eo.212.73.IP) (Quit: Leaving)
+[05:39:01] *** Quits: Phase4 (Phase4@Pony-qur.r85.209.118.IP) (Ping timeout: 121 seconds)
+[05:40:05] *** Joins: Phase4 (Phase4@Pony-qur.r85.209.118.IP)
+[05:40:11] <Phase4> * Closing link: (Phase4@118.209.216.155) [Ping timeout: 121 seconds]
+[05:40:25] <Phase4> love when you get your own ping-timeout messages
+[05:41:58] <AppleDash> xD
+[05:42:06] <AppleDash> That usually happens to me on tor or i2-
+[05:42:09] <AppleDash> i2p*
+[05:44:05] <Phase4> was connected to cadence, after that i couldn't reconnect
+[05:45:58] *** Joins: RekttothePecs (ModusPonens@Pony-dg2.enl.137.198.IP)
+[05:48:00] *** Quits: ModusPonens (ModusPonens@Pony-u6v.enl.137.198.IP) (Ping timeout: 121 seconds)
+[05:52:31] <Colgate> :O
+[05:52:57] <Colgate> hmm, bad routing?
+[05:53:07] <Phase4> not a clue
+[05:53:48] *** Quits: RekttothePecs (ModusPonens@Pony-dg2.enl.137.198.IP) (Quit: Leaving)
+[05:53:59] *** Joins: ModusPonens (ModusPonens@Pony-dg2.enl.137.198.IP)
+[06:06:20] *** Quits: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP) (Quit: Leaving)
+[06:07:46] *** Joins: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP)
+[06:19:46] *** Quits: Sol (Sol@Pony-vvn.i1u.133.74.IP) (Quit: Leaving)
+[06:23:27] *** Joins: averagejoey2000 (averagejoey@Pony-a10.3d2.180.70.IP)
+[06:26:00] <averagejoey2000> Just fixed the xorg on a broken archlinux system. I nearly came.
+[06:26:02] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[06:26:06] *** averagejoey2000 is now known as DonutSteele
+[06:34:02] <Fallfeathers> got an interview with cisco
+[06:34:03] <Fallfeathers> woop woop
+[06:35:08] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[06:36:09] <Fallfeathers> Mike_Coltfield.
+[06:36:19] <Mike_Coltfield> Poni?
+[06:36:38] <Fallfeathers> Cisco.
+[06:42:02] <AppleDash> Fallfeathers.
+[06:42:26] <DonutSteele> What position did you get>
+[06:42:29] <Fallfeathers> AppleDash.
+[06:42:33] <Fallfeathers> DonutSteele, customer support engineer
+[06:43:16] <AppleDash> Fallfeathers, http://i.imgur.com/5iCkxnv.jpg
+[06:43:19] <AppleDash> I don't need your dumb mice
+[06:43:37] <Fallfeathers> razor imperator?
+[06:43:45] <mniip> you need a numpad minus key though
+[06:43:58] <AppleDash> That's a deathadder
+[06:44:01] <AppleDash> mniip: I need a new keyboard
+[06:44:12] <Fallfeathers> I have the  imperator
+[06:44:15] <Fallfeathers> it's okay I guess
+[06:44:22] <AppleDash> I like this mouse a lot 
+[06:44:40] <AppleDash> bonus because I can make it the color of dumb AppleDash horse (which you can't really see in the photo too well)
+[06:44:53] <Fallfeathers> hah gay
+[06:44:57] <AppleDash> no u
+[06:45:31] <AppleDash> mniip, surprised you didn't mention my need of a new safety bit set
+[06:45:50] <AppleDash> All the ones that are actually useful for anything are missing, except one
+[06:49:55] <JustAberrant> :>
+[07:12:22] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[07:12:44] *** mniip is now known as \m
+[07:20:41] *** Quits: Skids (ejd@Pony-aaa.lna.79.74.IP) (Ping timeout: 121 seconds)
+[07:36:50] *** Quits: AutoLapsus (Lapsus@Totally.Is.A.Network.Service) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Q0 (Q0@literallyshit.net) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: johnsey (johnsey@netadmin.canternet.org) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Sellyme (quassel@Pony-9oec4l.nectar.org.au) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Asoka (Asoka@Pony-5da.ctk.182.89.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: icelesstea (berry@Pony-obvbah.lahem.in) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Neptune (neptune@Planet.Neptune) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: zz_CyberJacob (CyberJacob@Pony-8adl2m.bluesapphiremedia.co.uk) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Finwe (vhalkola@Pony-25l.vcn.233.130.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: WildSoft (WildSoft@Pony-hfh.2pc.101.213.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Stik (drakon@Pony-ql55m5.cable.virginm.net) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Phase4 (Phase4@Pony-qur.r85.209.118.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Baron_Von_Clop (Baron_Von_C@Pony-pdj.sjl.100.97.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: endoriazel (coprah@endoriazel) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: reiuiji (reiuiji@nuclear.raven) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: shnuggles (Brolf_pog@Pony-l0c.i4e.166.184.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Lorix_ (Lorix_@flutter.shy.yay) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Aww (aww@Pony-s66.2lf.34.64.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: cyborg_ar (cyborgar@Pony-sm9.lui.25.181.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: ola (ola@Pony-k5v.64a.226.188.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Jouva (jouva@Pony-odi.08q.11.100.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: sniperfox (sniperfox@Pony-raa.vkb.114.167.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: JustAberrant (JustAberran@Pony-lq4qe0.com) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: derpy (derp@muffins) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: tiwake (Octavia@Pony-njonl3.wa.charter.com) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Hoofy (HoofSounds_@Pony-dsovdr.res.rr.com) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: GumballCrash (GumballCras@0.to.pony.10secondsflat) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: init3 (Jason@init3.Is.Not.A.Clever.Poni) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: vi[NLR] (vi[NLR]@Pony-ohu.qnc.108.80.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: firestream (firestream@Pony-861.n8f.50.70.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Cameron_D (cameron@cam.mylittle.horse) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Finnfinn (Finnfinn@finn.isher) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Colgate (rabbit@brushie.horse) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: CompuDesktop (quassel@snuggly.filly) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Eivel (Eivel@Keep.Calm.and.Pony.On) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: TuxRug (TuxRug@TuxRug) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: saneki (saneki@Pony-torblo.zylongaming.com) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: klaxa (klaxa@Pony-1kuq6f.eu) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Quindo (Quindo@Pony-4tv.ja8.194.162.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Fusl (Fusl@1.0.0.127.in-addr.arpa.li) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Kinsley (JKinsley@Bow.To.Your.Princess) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: coppercore (coppercore@Pony-809.k1q.27.198.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Rylee (rylai@within.a.hail.of.gemstones) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: miggyb (miggyb@horsetornado.co.uk) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: \033 (alex@ajitek.net) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Lapsus (Lapsus@i-forget.ca) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: enginemaniac (flail@flail.flail.flail) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: PeakVolume (k9ldt@Pony-mtb.f13.6.100.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:36:50] *** Quits: Sukasa (IDontCare@Pony-828.mcl.67.70.IP) (daring.canternet.org cloudchaser.canternet.org)
+[07:37:01] *** Joins: AutoLapsus (Lapsus@Totally.Is.A.Network.Service)
+[07:37:01] *** services.canternet.org sets mode: +o AutoLapsus
+[07:37:21] *** Joins: Sukasa (IDontCare@Pony-828.mcl.67.70.IP)
+[07:37:21] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[07:37:21] *** Joins: coppercore (coppercore@Pony-809.k1q.27.198.IP)
+[07:37:21] *** Joins: Kinsley (JKinsley@Bow.To.Your.Princess)
+[07:37:21] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[07:37:21] *** Joins: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner)
+[07:37:21] *** Joins: Lorix_ (Lorix_@flutter.shy.yay)
+[07:37:21] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[07:37:21] *** Joins: Neptune (neptune@Planet.Neptune)
+[07:37:21] *** Joins: Sellyme (quassel@Pony-9oec4l.nectar.org.au)
+[07:37:21] *** Joins: Stik (drakon@Pony-ql55m5.cable.virginm.net)
+[07:37:21] *** Joins: zz_CyberJacob (CyberJacob@Pony-8adl2m.bluesapphiremedia.co.uk)
+[07:37:21] *** Joins: endoriazel (coprah@endoriazel)
+[07:37:21] *** Joins: ola (ola@Pony-k5v.64a.226.188.IP)
+[07:37:21] *** Joins: icelesstea (berry@Pony-obvbah.lahem.in)
+[07:37:21] *** Joins: johnsey (johnsey@netadmin.canternet.org)
+[07:37:21] *** Joins: CompuDesktop (quassel@snuggly.filly)
+[07:37:21] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[07:37:21] *** Joins: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com)
+[07:37:21] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[07:37:21] *** Joins: Asoka (Asoka@Pony-5da.ctk.182.89.IP)
+[07:37:21] *** Joins: GumballCrash (GumballCras@0.to.pony.10secondsflat)
+[07:37:21] *** Joins: enginemaniac (flail@flail.flail.flail)
+[07:37:21] *** Joins: PeakVolume (k9ldt@Pony-mtb.f13.6.100.IP)
+[07:37:21] *** Joins: TuxRug (TuxRug@TuxRug)
+[07:37:21] *** Joins: init3 (Jason@init3.Is.Not.A.Clever.Poni)
+[07:37:21] *** Joins: Rylee (rylai@within.a.hail.of.gemstones)
+[07:37:21] *** Joins: derpy (derp@muffins)
+[07:37:21] *** Joins: Phase4 (Phase4@Pony-qur.r85.209.118.IP)
+[07:37:21] *** Joins: \033 (alex@ajitek.net)
+[07:37:21] *** Joins: Jouva (jouva@Pony-odi.08q.11.100.IP)
+[07:37:21] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[07:37:21] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[07:37:21] *** Joins: Eivel (Eivel@Keep.Calm.and.Pony.On)
+[07:37:21] *** Joins: Q0 (Q0@literallyshit.net)
+[07:37:21] *** Joins: vi[NLR] (vi[NLR]@Pony-ohu.qnc.108.80.IP)
+[07:37:21] *** Joins: shnuggles (Brolf_pog@Pony-l0c.i4e.166.184.IP)
+[07:37:21] *** Joins: sniperfox (sniperfox@Pony-raa.vkb.114.167.IP)
+[07:37:21] *** cadance.canternet.org sets mode: +ovo Kinsley PinkiePieBot \033
+[07:37:21] *** Joins: miggyb (miggyb@horsetornado.co.uk)
+[07:37:21] *** Joins: Quindo (Quindo@Pony-4tv.ja8.194.162.IP)
+[07:37:21] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[07:37:21] *** Joins: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[07:37:21] *** Joins: Baron_Von_Clop (Baron_Von_C@Pony-pdj.sjl.100.97.IP)
+[07:37:21] *** Joins: Finwe (vhalkola@Pony-25l.vcn.233.130.IP)
+[07:37:21] *** Joins: Aww (aww@Pony-s66.2lf.34.64.IP)
+[07:37:21] *** Joins: reiuiji (reiuiji@nuclear.raven)
+[07:37:21] *** Joins: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP)
+[07:37:21] *** Joins: WildSoft (WildSoft@Pony-hfh.2pc.101.213.IP)
+[07:37:21] *** Joins: Colgate (rabbit@brushie.horse)
+[07:37:21] *** Joins: klaxa (klaxa@Pony-1kuq6f.eu)
+[07:37:21] *** Joins: saneki (saneki@Pony-torblo.zylongaming.com)
+[07:37:21] *** Joins: Cameron_D (cameron@cam.mylittle.horse)
+[07:37:21] *** Joins: Hoofy (HoofSounds_@Pony-dsovdr.res.rr.com)
+[07:37:21] *** Joins: Starburn (eyeburn@secret.den.of.flaming.evil)
+[07:37:21] *** Joins: firestream (firestream@Pony-861.n8f.50.70.IP)
+[07:37:21] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[07:37:21] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[07:37:21] *** Joins: cyborg_ar (cyborgar@Pony-sm9.lui.25.181.IP)
+[07:37:21] *** Joins: Finnfinn (Finnfinn@finn.isher)
+[07:37:21] *** Joins: tiwake (Octavia@Pony-njonl3.wa.charter.com)
+[07:37:21] *** cadance.canternet.org sets mode: +qo Lapsus Lapsus
+[07:38:15] *** Quits: cyborg_ar (cyborgar@Pony-sm9.lui.25.181.IP) (Ping timeout: 121 seconds)
+[07:43:00] *** Joins: Hickory (Iceman@Pony-fr4.tal.42.96.IP)
+[07:49:16] *** Parts: Twilightlicious (Twilightlic@Pretty.Princess) ("Bai ♥")
+[07:49:42] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[08:10:37] <Twilightlicious> Smash Bros 3DS in-game updater says an update is available, but it downloads extremely slow and eventually fails. the two normal locations in the system to get title updates says there is no update
+[08:12:37] *** Quits: TuxRug (TuxRug@TuxRug) (Quit: WeeChat 1.1.1)
+[08:14:32] <Twilightlicious> I seeeeee
+[08:14:37] <Twilightlicious> I finally got the update
+[08:14:43] <Twilightlicious> now the servers are down for maintinence
+[08:16:49] <Twilightlicious> Maintenance over :P
+[08:17:53] <Twilightlicious> still no mewtwo :P
+[08:25:03] *** Quits: Hickory (Iceman@Pony-fr4.tal.42.96.IP) (Quit: quit)
+[09:03:54] *** Joins: HarvestLeaf (HarvestLeaf@Pony-kog.4si.55.45.IP)
+[09:05:07] *** Quits: shnuggles (Brolf_pog@Pony-l0c.i4e.166.184.IP) (Ping timeout: 121 seconds)
+[09:16:55] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[09:22:39] *** Quits: Nick (nobody@Pony-o1k.cjc.74.71.IP) (Ping timeout: 121 seconds)
+[09:23:07] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[09:27:01] *** Quits: Asoka (Asoka@Pony-5da.ctk.182.89.IP) (Ping timeout: 121 seconds)
+[09:35:02] *** Q0 is now known as Q0|Away
+[09:39:03] *** Quits: Nick (nobody@Pony-o1k.cjc.74.71.IP) (Connection closed)
+[09:39:39] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[09:41:39] *** Quits: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP) (Connection closed)
+[09:43:17] *** Joins: Asoka (Asoka@Pony-jbq.5q9.182.89.IP)
+[09:44:23] *** Joins: Asoka_White (Asoka@Pony-k4m.e41.182.89.IP)
+[09:47:31] *** Quits: Asoka (Asoka@Pony-jbq.5q9.182.89.IP) (Ping timeout: 121 seconds)
+[09:53:37] *** Joins: GigabitPony (Gigabit@AppleDash.is.my.pet)
+[09:54:14] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[09:54:58] *** Joins: Asoka (Asoka@Pony-1ib.p04.182.89.IP)
+[09:55:05] *** Quits: Asoka_White (Asoka@Pony-k4m.e41.182.89.IP) (Ping timeout: 121 seconds)
+[09:56:34] *** GigabitPony is now known as Gigabit
+[09:59:12] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[10:04:01] *** Quits: firestream (firestream@Pony-861.n8f.50.70.IP) (Quit: )
+[10:08:34] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Connection closed)
+[10:08:35] *** Joins: firestream (firestream@Pony-861.n8f.50.70.IP)
+[10:08:35] *** Joins: Ruthalas__ (Ruthalas@Pony-nlt.b4h.171.67.IP)
+[10:08:35] *** Joins: RekttothePecs (ModusPonens@Pony-dg2.enl.137.198.IP)
+[10:08:40] *** Joins: Starthunder (blackl@property.of.lightningcrash)
+[10:08:40] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[10:10:39] *** Quits: nscoots1 (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[10:11:06] *** Quits: ModusPonens (ModusPonens@Pony-dg2.enl.137.198.IP) (Ping timeout: 121 seconds)
+[10:12:33] *** Quits: Nick (nobody@Pony-o1k.cjc.74.71.IP) (Ping timeout: 121 seconds)
+[10:12:33] *** Quits: Ruthalas_ (Ruthalas@Pony-nlt.b4h.171.67.IP) (Ping timeout: 121 seconds)
+[10:13:01] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[10:14:25] *** Joins: Asoka_White (Asoka@Pony-1tl.s81.182.89.IP)
+[10:17:07] *** Quits: Asoka (Asoka@Pony-1ib.p04.182.89.IP) (Ping timeout: 121 seconds)
+[10:24:15] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[10:39:42] *** Neptune is now known as Neptune|sleep
+[10:45:16] *** Quits: init3 (Jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[10:54:08] *** Joins: Fallfeathers (Fallfeather@Pony-m49.v9e.165.58.IP)
+[11:06:46] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[11:12:39] *** Quits: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Connection closed)
+[11:12:58] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[11:15:26] *** Quits: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Connection closed)
+[11:16:14] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[11:18:08] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[11:23:41] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[11:24:00] <Fallfeathers> http://www.tomshardware.com/answers/id-2621232/installing-sticks-ram-repeated-power-cycling.html
+[11:24:01] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[11:25:13] *** Quits: Asoka_White (Asoka@Pony-1tl.s81.182.89.IP) (Ping timeout: 121 seconds)
+[11:30:57] *** Joins: Asoka_White (Asoka@Pony-at3.kqm.182.89.IP)
+[11:36:10] <coppercore> Fallfeathers: sounds like a bad Mobo
+[11:37:29] <Fallfeathers> yeah but it's unusual because all the slots work fine, just when they're all being used does it fart up
+[11:43:48] <AppleDash> fart up
+[11:44:10] <AppleDash> you can swear here Fallfeathers
+[11:44:35] * Phase4 thinks fart up sounds better
+[11:44:39] <AppleDash> lol
+[11:45:39] *** Hoofy is now known as Hoofy_sleep
+[11:45:47] <coppercore> yeah, i can't be in an IRC where i can't swear
+[11:45:49] <coppercore> bad. things. happen
+[11:46:00] <coppercore> i come on IRC to actually be myself :P
+[11:46:23] <Fallfeathers> FART
+[11:46:35] * Fallfeathers looks around for cops
+[11:46:40] * Fallfeathers whispers "frick"
+[11:46:55] <AppleDash> xD
+[11:48:17] * coppercore yells "FUCK" at the top of his lungs
+[11:48:59] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[11:49:11] <Fallfeathers> WOW I'M TELLING LAPSUS
+[11:49:43] <coppercore> K
+[11:51:44] *** Quits: Asoka_White (Asoka@Pony-at3.kqm.182.89.IP) (Ping timeout: 121 seconds)
+[11:52:59] <AppleDash> lol
+[11:53:09] * AppleDash calls the police on Fallfeathers
+[11:53:25] <AppleDash> For not snuggling him enough
+[11:53:27] <Fallfeathers> also I am just
+[11:53:36] <Fallfeathers> freaking out about this interview with Cisco I have coming up
+[11:53:42] <AppleDash> It'll be fine
+[11:53:47] <Fallfeathers> what if they ask me about programming
+[11:53:51] <Fallfeathers> I don't know that ;_;
+[11:53:55] <AppleDash> I'll teach you
+[11:54:05] <Phase4> https://i.imgur.com/1JNHH.png
+[11:54:05] <Fallfeathers> you can't in three days
+[11:54:08] <AppleDash> fuck
+[11:54:10] <AppleDash> I can't
+[11:54:17] <Fallfeathers> yes that is basically me, Phase4
+[11:54:35] <Phase4> Fallfeathers, what sort of position?
+[11:54:43] <Fallfeathers> customer service engineer
+[11:54:56] *** Joins: cyborg_ar (cyborgar@Pony-sm9.lui.25.181.IP)
+[11:55:05] <Fallfeathers> i.e. i set up the shit and i fix the shit
+[11:55:20] <Phase4> doesn't sound like a field programming is strictly needed for
+[11:55:57] <Fallfeathers> well yeah, but I'm very good at worrying about things that will never happen
+[11:58:29] *** Quits: Fallfeathers (Fallfeather@Pony-m49.v9e.165.58.IP) (Quit: Leaving)
+[11:59:33] <Phase4> seems nice, hope he/she gets the job
+[11:59:42] * Phase4 *minecrafts*
+[12:03:42] *** Joins: FallfeathersHTC (shaggydoogy@Pony-m49.v9e.165.58.IP)
+[12:04:05] <FallfeathersHTC> Phase4: why does everyone assume I'm a lady :v
+[12:04:11] <Phase4> name
+[12:04:28] <Phase4> plus you'll notice i wasn't sure about your gender :P
+[12:04:41] <FallfeathersHTC> I didn't get scrollback that far
+[12:05:04] <Phase4> <Phase4> seems nice, hope he/she gets the job < ?
+[12:05:27] <FallfeathersHTC> oh furp
+[12:05:30] <FallfeathersHTC> misread
+[12:05:44] <FallfeathersHTC> but yeah a lot of people seem to think I'm a woman
+[12:06:10] <FallfeathersHTC> maybe I should be MANfeathera
+[12:06:18] *** init3 is now known as Init3-away
+[12:06:41] *** FallfeathersHTC is now known as Dude_Horse
+[12:06:44] <Dude_Horse> there
+[12:16:25] <Googie> You should probably be fine.
+[12:16:26] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[12:17:52] <Phase4> AppleDash, you around?
+[12:19:12] * Dude_Horse punts AppleDash
+[12:20:10] *** Quits: cyborg_ar (cyborgar@Pony-sm9.lui.25.181.IP) (Client exited)
+[12:20:22] <Phase4> Dude_Horse, not sure why people would think "Fallfeathers" is feminine, i couldn't figure a gender from it
+[12:21:22] <Dude_Horse> Yeah it's confusing
+[12:22:35] <Phase4> unless people are thinking "masculine" and "not masculine"
+[12:22:58] <Dude_Horse> I am pretty girly though :v
+[12:23:40] <Googie> Gender is so confusing on the internet... I kinda can't help but feel like there's no point in fussing over it :V
+[12:24:09] <Dude_Horse> I'm also in a relationship with another guy though
+[12:24:35] <Dude_Horse> He's in America, I'm in Australia.. which is kind of why I want the job
+[12:24:52] <Dude_Horse> Because I could move to the U.S. if I get in good with Cisco.
+[12:27:56] * Phase4 is hoping AppleDash can tpx him so he doesn't have to lose a full mana band
+[12:28:12] <Phase4> everything else i'm carrying can be remade, but mana is a bugger to generate
+[12:41:29] *** ShutterQuick is now known as Shutter
+[12:53:46] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[13:02:00] <Phase4> man, there must be a lot of money in small loans
+[13:02:04] <Phase4> ads everywhere
+[13:03:00] *** Quits: Dude_Horse (shaggydoogy@Pony-m49.v9e.165.58.IP) (Quit: Rocks fall, everyone dies.)
+[13:35:11] *** [A]McKey is now known as McKey
+[13:41:07] *** Hoofy_sleep is now known as Hoofy
+[13:56:27] *** Quits: RekttothePecs (ModusPonens@Pony-dg2.enl.137.198.IP) (Quit: Leaving)
+[14:02:34] *** Joins: nscoots1 (FreyGrimrod@Pony-6rt.7pv.192.70.IP)
+[14:04:46] *** Quits: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[14:08:06] *** Quits: nscoots1 (FreyGrimrod@Pony-6rt.7pv.192.70.IP) (Ping timeout: 121 seconds)
+[14:34:28] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (Connection closed)
+[14:35:59] <JustAberrant> Phase4: you mean like payday loans? there totally is
+[14:36:16] <Phase4> never heard the term "payday lones"
+[14:36:25] <JustAberrant> it's pretty much the bottom rung of scum
+[14:36:40] <JustAberrant> basically taking advantage of the working poor
+[14:36:41] <Phase4> there's two companies that are advertising the shit out of themselves
+[14:36:48] <Phase4> nimble and... wallet something
+[14:37:04] <Phase4> ~100 to ~5000 AUD$ loans
+[14:37:47] <JustAberrant> the basic idea is that they are short term loans to carry you through till your next payday
+[14:38:02] <Phase4> at a 200% interest rate?
+[14:38:17] <JustAberrant> not that high, but still very high
+[14:38:23] <Phase4> figured
+[14:38:44] <JustAberrant> basically aimed at people who can't even get a shitty credit card
+[14:38:56] <Phase4> and don't know what a savings account is
+[14:39:48] <JustAberrant> meh, I try not to judge unless it's obvious someone blew their money on stupid shit[tm]
+[14:41:56] *** Joins: MangoBloom (djazz@djazz.se)
+[14:42:05] <Phase4> JustAberrant, naturally it depends on their situation, but they are taking out a small high interest loan
+[14:42:52] <JustAberrant> that's kinda the thing though, everyone knows they are terrible.. it's something one only does if it's basically that or starvation
+[14:42:59] <Phase4> they will have to have the money eventually, surely you could have spent money more efficently
+[14:43:30] <JustAberrant> usually the amount + interest is limited to the amount of their paycheck (hence the name)
+[14:43:36] <Phase4> JustAberrant, i guess, it's not a service i really see a rational time to use
+[14:44:07] <MangoBloom> hi!
+[14:44:18] <Phase4> a wild mango appears!
+[14:44:22] <MangoBloom> :D
+[14:44:24] <JustAberrant> lets say you've got a shitty job delivering pizzas or something and your car breaks down
+[14:44:34] <JustAberrant> and you don't have the money to fix it
+[14:44:43] <JustAberrant> it's for that kinda stuff
+[14:44:54] <Phase4> JustAberrant, after the fact of course, you don't have a lot of choice
+[14:44:58] <MangoBloom> has anyone here used Liquidsoap?
+[14:45:07] <Phase4> but this is what bank accounts are supposed to be fore
+[14:45:08] <Phase4> for'
+[14:45:22] <JustAberrant> Phase4: well yes, if poor people just had more money there would be fewer problems in the world ;p
+[14:45:35] <JustAberrant> Phase4: but I'd like to acquaint you with the definition of poor ;p
+[14:45:46] <Phase4> JustAberrant, all those poor people who need their car fixed :P
+[14:46:08] <JustAberrant> hah, well there is "spare some change" poor and working poor
+[14:46:10] <Phase4> i've never met someone in that situation who wasn't poorly managing their money
+[14:46:41] <JustAberrant> working poor make just enough to pay the rent/basic living expenses.. and yeah they probably have extra they could be putting away sometimes.. but not much
+[14:47:25] <JustAberrant> I guess I try not to feel too high and mighty.. I've done well enough, but I really think 50% of it comes down to dumb luck
+[14:48:15] <JustAberrant> either way, even poor types hate payday loans, because unlike a CC the lose of money is direct and obvious
+[14:48:43] <JustAberrant> instead of getting paid $400 today, they get $300 something now .. and next week they'll be in the same situation..
+[14:48:46] <Phase4> that's another point, credit cards are perfect for that sort of cost
+[14:49:02] <Phase4> which... you mentioned earlier
+[14:49:26] <JustAberrant> right, so by the time someone does a payday loan, they've maxed out their CCs and can;t get any more ;p
+[14:49:35] <Phase4> MangoBloom, not quite sure what liquidsoap does
+[14:49:45] * Phase4 hasn't used it
+[14:50:00] <JustAberrant> apparently it's some kind of streaming knife or something
+[14:50:10] <MangoBloom> i use it to broadcast my web radio
+[14:50:20] <MangoBloom> streaming knfile.. lol
+[14:50:21] <Phase4> JustAberrant, that sounds like a *really* bad place to be
+[14:50:23] <MangoBloom> knife*
+[14:50:26] <JustAberrant> Phase4: yeah
+[14:50:34] <JustAberrant> like I said, it's pretty much the bottom rung
+[14:50:41] <Phase4> and high interest loan is only going to make it worse
+[14:50:45] <JustAberrant> exactly
+[14:51:11] <Phase4> which in a sideways sort of way validates my argument :P
+[14:51:26] <JustAberrant> that poor people should just stop being poor? :>
+[14:51:36] <Phase4> should stop taking out loans they can't afford
+[14:52:33] <Phase4> JustAberrant, it's not like i'm going to go up to someone and say "you don't know how to money", but given this one fact i could only assume they're living outisde their means
+[14:52:48] <Phase4> of course they *may* have had an incredibly bad week, but that's not the common case
+[14:53:34] <JustAberrant> whole thing is just a mess in general
+[14:54:35] <JustAberrant> yes people should be way better with regards to credit, I'm even a fan of getting rid of credit cards if it could be made practical/secure .. reserve loans for big things like cars and houses
+[14:54:57] <JustAberrant> but at the same time, the whole system is pretty deliberately set up to hook people in and keep them there
+[14:55:41] <Phase4> yeah
+[14:55:49] <JustAberrant> someone is short one week so they carry a balance, and from that point if they don't manage to get back on top of it, they eventually end up buried under debt .. which is pretty scary
+[14:56:08] <JustAberrant> but yeah, not arguing there are also lots of people who use CC to live beyond their means
+[14:56:16] <JustAberrant> I have little sympathy for them
+[14:56:46] <JustAberrant> anyway, I should probably go to work :(
+[14:56:47] <Phase4> yeah, that's the type of person i'm talking about
+[14:56:50] <Phase4> XD
+[14:57:02] <Phase4> least you end up needing to 'nimble' something
+[14:57:19] <JustAberrant> hehe.. I just got pre-approved for my mortgage yesterday .. I'm about to go from having a huge pile of savings to.. not :>
+[14:57:56] <Phase4> buying a house?
+[14:58:01] <JustAberrant> aye
+[14:58:06] <Phase4> congrats
+[14:58:14] <JustAberrant> haven't found one yet, but pre-approval is basically step 1
+[14:58:26] <JustAberrant> but yeah.. gonna be weird not having that kind of safety net any more + a huge liability
+[14:58:34] <Phase4> ah, well best of luck with house hunting
+[14:58:42] <JustAberrant> anyway, I really gotta go
+[14:58:46] <Phase4> yeah, mortgage is not something i'm looking forward to
+[14:58:48] <JustAberrant> and thanks :)
+[14:59:08] <Phase4> ^_^
+[14:59:10] <Phase4> later JustAberrant
+[15:01:04] *** Joins: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[15:02:30] *** Joins: FallfeathersHTC (shaggydoogy@Pony-pu1.0l3.208.118.IP)
+[15:02:34] <FallfeathersHTC> OKAY
+[15:02:42] <Stik> mortgages aren't so bad, it's like paying rent, except you get some of it back one day
+[15:02:45] <FallfeathersHTC> After a scare and a CMOS reset
+[15:02:46] <Stik> not so futile :)
+[15:02:50] <FallfeathersHTC> I updated the BIOS
+[15:03:02] <Phase4> FallfeathersHTC, still no luck?
+[15:03:16] <FallfeathersHTC> But I'm still getting power cycling with four RAM slots
+[15:03:23] <Phase4> dang
+[15:03:27] <Phase4> what board is it?
+[15:03:43] <FallfeathersHTC> H77M-something
+[15:04:00] <Phase4> Stik, yeah but it is still a liability, wont fully understand until i'm actually getting one, which is likely many years from now
+[15:04:13] <Phase4> FallfeathersHTC, asrock?
+[15:04:26] <FallfeathersHTC> Gigabyte H77M-D3H
+[15:04:31] <Phase4> there's a surprising number of "H77M"motherboards
+[15:05:10] <Phase4> FallfeathersHTC, how large are the sticks?
+[15:05:19] <FallfeathersHTC> 4gb each
+[15:05:26] <FallfeathersHTC> all identical though
+[15:06:43] <Stik> suppose a lot depends on your financial situation
+[15:07:03] <Stik> but if you're in a stable career and you plan accordingly i think it's a pretty safe bet
+[15:07:42] <Stik> they recommend having enough savings that you can pay your mortgage for 6 months in the event of losing your main income
+[15:08:39] <Stik> and (at least over in the uk) they don't really want to have to down the route of reposession so the banks will usually be willing to negotiate if you did end up in a sticky spot, so you can agree to pay a lot less for a year or something
+[15:09:38] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: I've run out of witty things for a qute message. Submit your ideas when I get back.)
+[15:09:51] <Phase4> yeah, they'd probably rather have less income than take a possible loss selling the house
+[15:10:17] <Phase4> plus the work involved repossessing the house and costs in geting it sold
+[15:12:58] <DataByte> hm.. i have... 4 months in savings.. that i was planning on spending on getting insulation installed with
+[15:13:23] *** Joins: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP)
+[15:33:25] *** Quits: Nick (nobody@Pony-o1k.cjc.74.71.IP) (Ping timeout: 121 seconds)
+[15:33:30] *** Quits: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP) (Connection closed)
+[15:38:50] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[15:40:22] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[16:00:02] *** Joins: MistVeil (aqua@Pony-qbk.jpi.211.189.IP)
+[16:00:49] <MistVeil> Oh, was going to ask something, but I think it's an isolated issue with my workstation
+[16:00:53] <MistVeil> Brb rebooting
+[16:00:59] *** Quits: MistVeil (aqua@Pony-qbk.jpi.211.189.IP) (Quit: Saliendo)
+[16:04:04] *** Joins: Skids (ejd@Pony-aaa.lna.79.74.IP)
+[16:10:26] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[16:11:22] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (A TLS packet with unexpected length was received.)
+[16:12:07] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[16:20:57] *** Joins: MistVeil (aqua@Pony-qbk.jpi.211.189.IP)
+[16:23:42] *** Quits: MistVeil (aqua@Pony-qbk.jpi.211.189.IP) (Quit: Saliendo)
+[16:28:04] *** Joins: MistVeil (aqua@Pony-qbk.jpi.211.189.IP)
+[16:29:31] *** Joins: AquaBrandish (aqua@Pony-qbk.jpi.211.189.IP)
+[16:29:42] *** Quits: MistVeil (aqua@Pony-qbk.jpi.211.189.IP) (Killed (NickServ (GHOST command used by AquaBrandish)))
+[16:29:44] *** AquaBrandish is now known as MistVeil
+[16:29:52] <MistVeil> Arr... Doesn't work yet
+[16:30:12] <MistVeil> For some reason, my laptop suddenly stopped being able to log into shares using netbios names
+[16:30:53] <MistVeil> Already tried some CSC thing, deleting old credentials, and flush+register DNS in it. Nothing so far
+[16:33:15] <DataByte> nslookup work ok?
+[16:34:05] *** Joins: BaronVonClop (Baron_Von_C@Pony-pdj.sjl.100.97.IP)
+[16:34:55] *** Quits: Baron_Von_Clop (Baron_Von_C@Pony-pdj.sjl.100.97.IP) (Killed (NickServ (GHOST command used by BaronVonClop)))
+[16:35:01] *** BaronVonClop is now known as Baron_Von_Clop
+[16:36:48] *** Quits: MistVeil (aqua@Pony-qbk.jpi.211.189.IP) (Quit: Saliendo)
+[16:55:55] *** Joins: MistVeil (aqua@Pony-qbk.jpi.211.189.IP)
+[16:56:11] <MistVeil> DataByte: Just read your message. Lemme try
+[16:59:14] <MistVeil> ...I think I'm not certain I'm using it right.
+[17:01:20] <DataByte> well, the idea is to check to see if your computer is resolving the name->ip correctly
+[17:01:52] <DataByte> ping, even
+[17:02:04] <MistVeil> Nope, not even ping works
+[17:02:14] <MistVeil> IPs work just fine, but not netbios names
+[17:02:20] <DataByte> hm
+[17:02:52] <MistVeil> The "hosts" file is a decent workaround, since I have every workstation with a static IP, but it isn't a solution by itself
+[17:09:24] <MistVeil> Waaaaa?
+[17:09:33] <MistVeil> I apparently have a gazillion of LAN adapters?
+[17:10:52] <MistVeil> Tunnel adapters
+[17:11:17] <DataByte> that would be a problem
+[17:11:32] *** Quits: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com) (Connection closed)
+[17:11:37] *** ThunderBolt is now known as ThunderBolt|Passedout
+[17:12:15] <MistVeil> Gotta uninstall them all...
+[17:12:19] <MistVeil> 132 adapters...
+[17:12:47] *** ThunderBolt|Passedout is now known as ThunderBolt|PassedOut
+[17:16:05] <Lapsus> How did you manage that, MistVeil?
+[17:24:44] *** Joins: Brolf_pog (Brolf_pog@Pony-87u.13p.144.69.IP)
+[17:27:47] <MistVeil> No idea
+[17:29:22] <MistVeil> It has something to do with WLAN cards and some virtual adapter from Microsoft
+[17:29:29] <MistVeil> I already disabled the latter, btw
+[17:30:48] *** Joins: Iron_Wofle (Wofle@The.Mecha.Pony.Brigade)
+[17:31:07] <Iron_Wofle> Hey folks, anyone familiar with using linux present?
+[17:31:31] <MistVeil> Linux "present"?
+[17:31:43] <Iron_Wofle> Present, as in, in this room right now
+[17:31:50] <Lapsus> Iron_Wofle: I daresay that a few people in here know how to linux :v
+[17:31:56] <Iron_Wofle> Yeah I figured as much
+[17:32:00] <Iron_Wofle> I want to clone a disk using dd
+[17:32:16] <Iron_Wofle> But I can't remember how to figure out which disk is which for the commands
+[17:32:28] <Iron_Wofle> It's been years since I used linux actively
+[17:32:44] <Iron_Wofle> These days I just use it to recover computers that have broken down
+[17:33:11] <DataByte> dd if=/dev/source of=/dev/target
+[17:33:22] <Iron_Wofle> Yeah, I know the dd command
+[17:33:38] <MistVeil> I think he means how to identify which device is which
+[17:33:38] <DataByte> what's the question?
+[17:33:39] <Iron_Wofle> I need to know how to find out the names for the source and target disks for the dd options
+[17:33:47] <Iron_Wofle> Yeah, MistVeil got it
+[17:33:56] <MistVeil> If we're talking about HDDs, they'd be listed as "sdx", where "x" changes for each device
+[17:34:10] <MistVeil> It stands for "storage device x"
+[17:34:39] <Lapsus> if google is to be trusted, "fdisk -l"
+[17:34:45] <Lapsus> ?
+[17:34:53] <MistVeil> I think so
+[17:34:55] <Lapsus> I don't have a vm up to test at the moment
+[17:35:08] <Lapsus> mainly because someone's sleeping and my server is loud
+[17:35:08] <Lapsus> lol
+[17:35:12] * MistVeil tests it in her SQL server. Fuck VMs, I play with operations!
+[17:35:19] <MistVeil> ...Except I just got busy, brb!
+[17:35:42] <Iron_Wofle> Yeah, I know sdx is the default name stuff, I need a way to identify which is which. I'll try fdisk -l once I've installed the disk I'm cloning to
+[17:36:25] <Lapsus> df -H could also probably help you figure out which is which based on size
+[17:37:52] *** Q0|Away is now known as Q0
+[17:38:32] <Iron_Wofle> Yeah, size should be enough
+[17:38:37] <Iron_Wofle> I think they're all different size
+[17:39:16] <Iron_Wofle> Can't even remember the size of the disks in my computer.. jeez.
+[17:39:35] <Iron_Wofle> But i know the size of the one I'm cloning and the one I'm cloning it too, which should be enough
+[17:43:06] <Iron_Wofle> fdisk -l did the job, thanks Lapsus 
+[17:43:20] <Iron_Wofle> I'd google it but my internet is sketchy as fuck so most of the time I can't browse the internet
+[17:43:36] <Iron_Wofle> Skype also drops out regularly, although most other IM clients seem to be working fine
+[17:43:53] <Lapsus> Glad it helped, but I totally googled it anyways, so :p
+[17:44:27] <MistVeil> Back
+[17:44:34] <MistVeil> Aww, Lapsus beat me at checking fdisk
+[17:44:53] * MistVeil wanted to feel Linux-savvy
+[17:45:09] <Iron_Wofle> Thanks for the help, maybe I can finally get my desktop computer working again
+[17:45:23] <Iron_Wofle> In hindsight, using an 80GB SSD to run windows 7 was a bad idea
+[17:45:37] <Lapsus> lol, no kidding!
+[17:45:42] <Lapsus> windows is fat
+[17:45:52] <Iron_Wofle> No shit, it takes up 60 of those 80GB
+[17:45:58] <MistVeil> ...Wat?
+[17:46:06] <MistVeil> Are you sure, Win 7 takes 15GB tops
+[17:46:15] <Iron_Wofle> Uh
+[17:46:15] <Iron_Wofle> No.
+[17:46:26] <Iron_Wofle> 60GB is kinda unusually large, but it's not uncommon for it to go well past 20GB
+[17:46:29] <Lapsus> you can get away with it if you move a lot of directories off of the ssd, but it's easier with a larger ssd, obviously
+[17:46:59] <Iron_Wofle> Yeah, currently I'm just putting in a regular old fashion hard drive as a stopgap solution
+[17:47:00] <MistVeil> Lemme check how big my Win folder is...
+[17:47:34] <MistVeil> Because I'm running Win7 on a 50GB partition, and I still have 8 GB left. That's considering I have a lot of big software in it
+[17:47:42] <MistVeil> 11.6 GB
+[17:47:46] <Lapsus> MistVeil: don't forget the program files and users directories
+[17:47:50] <Lapsus> those count :p
+[17:47:52] <Iron_Wofle> how the fuck do you get it that small
+[17:48:15] <MistVeil> Well, it's x86 version, but even x64 one has about 15 GB
+[17:48:16] <Iron_Wofle> The windows folder alone on this computer is 30GB
+[17:48:35] <Iron_Wofle> Windows gets.. REALLY bloated after a while
+[17:48:44] <MistVeil> I thought my size was the standard! D:
+[17:48:45] <Baron_Von_Clop> yeah, apparently
+[17:48:45] <Lapsus> My windows folder is 21GB and this install is only a couple months old
+[17:48:53] <Baron_Von_Clop> my x64 win 7 ultimate is 14.8 gb
+[17:49:07] <MistVeil> Crap, I don't have my home PC on. I could check that one
+[17:49:17] <MistVeil> I've had that install for about 2 years already. Win7 Ultimate x64
+[17:49:28] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:49:37] <MistVeil> And I'm certain the Win folder is nowhere that big. 60GB is OUTRAGEOUS
+[17:49:56] <Lapsus> well yeah, that's a bit excessive
+[17:49:56] <Lapsus> lol
+[17:49:59] <Iron_Wofle> Yeah, I think something's gone wrong with it, 60GB is not normal
+[17:50:05] <Iron_Wofle> But I can't be arsed to reinstall
+[17:50:07] <MistVeil> Heck, even 30GB isn't normal
+[17:50:26] <Iron_Wofle> The computers at work are usually in the 20-30 range
+[17:50:39] <MistVeil> I have a feeling it's more an issue with the software you've installed through all this time
+[17:50:50] <MistVeil> Maybe it adds stuff into the it. You know, libraries and crap
+[17:50:54] <MistVeil> *it
+[17:51:01] <Iron_Wofle> nope, barely any software gets installed on my C: drive because it's a small SSD
+[17:51:33] <Iron_Wofle> I've even moved user folders and messed around with the page file to keep it small
+[17:51:40] <Iron_Wofle> But the appdata folder still bloats
+[17:52:04] <Iron_Wofle> All right, here's hoping I didn't screw up dd and fucked one of my disks over
+[17:52:56] <Lapsus> data destroyer
+[17:52:57] <Lapsus> :v
+[17:53:16] <Iron_Wofle> yeah, that's what I've seen on pretty much everything I've looked at regarding dd
+[17:53:20] <Iron_Wofle> "don't mix up the i and o"
+[17:53:55] <Iron_Wofle> Oh well. From what I've read this is also going to take quite a lot of time, but that's fine, I've got all day
+[17:54:10] <Iron_Wofle> It's friday and I've got nothing planned for tomorrow
+[17:54:15] <MistVeil> Brb rebooting
+[17:54:17] *** Quits: MistVeil (aqua@Pony-qbk.jpi.211.189.IP) (Quit: Saliendo)
+[17:54:54] <Iron_Wofle> I have to admit, I'm extremely fond of my linux liveUSB, it's so convenient for fixing broken windows computers
+[17:56:12] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[17:56:45] <Iron_Wofle> And you better believe I see a lot of those, working at a small municipality with a few hundred computers in an almost exclusively windows environment
+[17:57:26] <Iron_Wofle> We've got a few unix servers running stuff I don't even know what is, and some macs here and there, but those are a small handful of exception to the vast majority of windows machines
+[17:57:37] <Iron_Wofle> ACtually, make that several hundred. I don't actually know how many computers are in use
+[17:57:56] <Iron_Wofle> I do know that we do still have a pentium 2 desktop computer that's still in use though
+[17:58:10] *** Joins: MistVeil (aqua@Pony-qbk.jpi.211.189.IP)
+[17:58:19] <MistVeil> There, finally found what was wrong
+[17:58:21] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[17:58:25] <Iron_Wofle> My reaction to that was basically "how the hell is this thing even working"
+[17:59:08] <Iron_Wofle> I mean, sure, the pentium 4 computers running XP, I can understand those, they're really just used to run terminal server sessions on anyway so they don't need more, but a pentium 2 with windows 2000? Really?
+[18:00:14] <MistVeil> My network was configured to use the NetBIOS config of my DHCP server, and move to NetBIOS through TCP/IP if it didn't work
+[18:00:23] <MistVeil> For some reason, it wasn't doing the second step
+[18:00:32] <MistVeil> So, I straight swapped to NetBIOS through TCP/IP
+[18:01:09] * MistVeil wants a MikroTik routerboard so badly!
+[18:01:46] <Iron_Wofle> I get my share of fun stuff to play with at work, so I don't feel the need to spend my own money on fancy hardware outside of my desktop computer
+[18:02:16] <MistVeil> Bad, you shouldn't play at work :X
+[18:02:32] <Iron_Wofle> XD
+[18:03:04] <Iron_Wofle> Hey, if I can do some testing with the new switches and have fun in the process, is that really so bad?
+[18:03:19] *** Joins: AquaBrandish (aqua@Pony-qbk.jpi.211.189.IP)
+[18:03:32] <Iron_Wofle> Obviously I'm not going to start playing around with the firewall, because that thing scares me
+[18:03:42] <Colgate> routerboards are fun :D
+[18:03:46] <Iron_Wofle> Well, not the firewall in itself but the potential consequences of doing something wrong
+[18:04:02] <Colgate> eh, just restore the config if something goes wrong
+[18:05:03] <Iron_Wofle> Well, yeah, I can do that, but I'd rather just not mess around with it more than neccessary because suddenly I'm causing downtime for everyone and nobody likes that
+[18:05:05] <AquaBrandish> Oh, I mean, like, "play" play
+[18:05:15] <AquaBrandish> If you're just being a nerd sysadmin, that's fine
+[18:05:45] <Iron_Wofle> Well, yeah, being a sysadmin is kinda my job :p and getting new and fancy equipment in to play around with a little is always fun
+[18:06:07] <Iron_Wofle> I mean we gotta see what can go wrong before putting it into the production environment, right?
+[18:06:17] *** Quits: MistVeil (aqua@Pony-qbk.jpi.211.189.IP) (Ping timeout: 121 seconds)
+[18:08:01] <Colgate> true, downtime is death
+[18:08:03] <Colgate> :O
+[18:08:11] <Iron_Wofle> You're telling me
+[18:08:23] <Iron_Wofle> First day I was the only IT guy at work the terminal servers just stopped working
+[18:08:27] <Iron_Wofle> And I had no idea how to fix it
+[18:08:45] <Iron_Wofle> That was a fun day
+[18:08:47] <Colgate> try rebooting the windows server? lol
+[18:09:13] <Iron_Wofle> Well yeah, now I've learnt that there's usually not much harm in rebooting the servers if they're not working properly
+[18:09:31] <Iron_Wofle> At the time the systems were still fairly new to me though, so I wasn't sure if I could just do that
+[18:09:43] <Iron_Wofle> Oh hey, dd is done
+[18:09:47] <DataByte> when in doubt, reboot
+[18:09:50] <DataByte> hehehe
+[18:09:50] <Iron_Wofle> Let's see if this thing will boot from the cloned disk
+[18:10:01] <Colgate> oh geez, this email, "I keep trying to get into X, but it says access denied"
+[18:10:13] <DataByte> fixed a laptop battery charging error by removing the battery & putting it back in xD
+[18:10:46] <Colgate> with windows, doesn't matter if server or desktop, rebooting is usually a good first step XD
+[18:10:53] <Colgate> unless it is your hypervisor...
+[18:10:59] <Colgate> then that's just dicks
+[18:11:36] <Lapsus> Eventually I'm sure I'll have to deal with a windows hypervisor but until then I'm not looking forward to it
+[18:11:45] <Lapsus> I have enough trouble with esxi and proxmox and whatnot
+[18:12:03] <Iron_Wofle> 'ere we go
+[18:12:26] <Colgate> hyper-v is amazing, it has so manny things in its interface... but not a clone button
+[18:12:36] <Colgate> they make it incredibly difficult to copy a VM for some reason
+[18:12:43] <Iron_Wofle> welp, looks like it ain't booting. Clearly something went wrong.
+[18:13:39] *** AquaBrandish is now known as MistVeil
+[18:13:44] <Lapsus> I finally went out and bought 100' of indoor/outdoor ethernet cable, so once I relocate the ends of my wireless link to the outsides of the houses the first thing I'm planning to try is a live vm migration across the link :v
+[18:13:54] <MistVeil> Legasp, new equipment
+[18:14:02] <MistVeil> I'm finally getting my MikroTik router!
+[18:14:41] <Lapsus> MistVeil: awesome! Which one are you getting?
+[18:15:23] <MistVeil> I'm still checking that. Any suggestions?
+[18:15:50] <MistVeil> Remember, just a router, I don't need a giant switch, that's the job for the future Cisco GBit one I'll get
+[18:15:52] <Lapsus> IIRC they're coming out with some wireless a/c stuff soon :D
+[18:15:54] <Iron_Wofle> HAH!
+[18:15:57] <Iron_Wofle> It boots!
+[18:16:18] <Iron_Wofle> Boot priority was just messed up
+[18:16:27] <Lapsus> you didn't wipe your disks! yay!
+[18:16:36] <Iron_Wofle> So the cloned disk wasn't even in the list of disks it tried to boot from
+[18:17:09] <Lapsus> MistVeil: so you need gigabit, what else? wireless? sfp? poe?
+[18:17:33] <Gigabit> Im needed? Shocking development
+[18:17:38] <Iron_Wofle> XD
+[18:17:46] * Lapsus hugs Gigabit
+[18:17:55] * Gigabit hugs
+[18:17:55] * Iron_Wofle installs Gigabit in his house to replace his sketchy ass mobile internet
+[18:18:39] <MistVeil> SFP?
+[18:18:43] * MistVeil tilts her head
+[18:19:15] <Iron_Wofle> Thanks for the help guys, now I can finally start using my desktop again ^^
+[18:19:16] <MistVeil> I really don't need much on the router itself. The Gigabit ones have more than enough proccessing power as well
+[18:19:32] <Lapsus> http://en.wikipedia.org/wiki/Small_form-factor_pluggable_transceiver etc
+[18:19:33] <PinkiePieBot> [ Small form-factor pluggable transceiver - Wikipedia, the free encyclopedia ]
+[18:19:52] <Lapsus> I'm waiting for their sfp+ offerings so I can try some 10gbit
+[18:21:01] <Lapsus> MistVeil: if you don't need wireless, http://routerboard.com/RB750GL
+[18:21:02] <PinkiePieBot> [ RouterBoard.com : RB750GL ]
+[18:21:19] <Lapsus> if you do, http://routerboard.com/RB951G-2HnD or http://routerboard.com/RB2011UiAS-2HnD-IN
+[18:21:21] <MistVeil> Ho, yup, the one I thought
+[18:21:21] <PinkiePieBot> [ RouterBoard.com : RB2011UiAS-2HnD-IN ]
+[18:21:28] <Lapsus> I have had all 3
+[18:21:28] <Lapsus> lol
+[18:21:41] <MistVeil> I'll skip the wireless since it's in a place where no one needs wi-fi
+[18:21:53] <MistVeil> The AP at the lower floor easily reaches the one right above
+[18:24:17] <Lapsus> It'll take a bit to get used to the UI, but routerboards rock
+[18:24:17] <Lapsus> lol
+[18:27:46] <WeAreBorg> What's shaken bacon?
+[18:28:01] <Iron_Wofle> I have to say, as much as I may prefer windows for my day-to-day computer needs, linux is a lifesaver
+[18:28:31] <Lapsus> WeAreBorg: routerboards and linux and shit
+[18:28:57] <WeAreBorg> of those 3, I deal with shit the most
+[18:34:19] *** Init3-away is now known as init3
+[18:35:32] <MistVeil> I've used a Routerboard before, yup
+[18:35:39] <MistVeil> So, no worries there
+[18:35:50] <WeAreBorg> routerboard looks nice. I might think about those for my off-site project needs.
+[18:39:11] <MistVeil> They're great, basically "install & forget" devices
+[18:39:44] <WeAreBorg> are they rugged?
+[18:40:35] <Lapsus> how rugged do you need?
+[18:40:54] <Colgate> they have outdoor ones, or you can just buy the board itself and make your own case
+[18:41:12] <WeAreBorg> airplane carry-on 
+[18:41:33] <Lapsus> like, while active?
+[18:41:42] <Lapsus> you might have some trouble with the tsa about that
+[18:41:42] <Lapsus> lol
+[18:41:58] <WeAreBorg> oops i meant can they surive a plane trip in checked luggage
+[18:42:06] <Colgate> eh? trouble with the tsa with a router?
+[18:42:07] <MistVeil> Just link the Routerboard site Lapsus
+[18:42:10] <MistVeil> They have pictures there
+[18:42:22] <Lapsus> Colgate: you'd have trouble with them and ANYTHING iirc
+[18:42:37] <Lapsus> lol
+[18:42:47] <Colgate> I haven't had any issues with tsa :P
+[18:42:52] <Lapsus> WeAreBorg: http://routerboard.com/
+[18:42:54] <PinkiePieBot> [ RouterBoard.com : Products ]
+[18:43:08] <Colgate> inb4 white male privilege
+[18:43:18] <WeAreBorg> I have a 5 lbs brick for a steady cam and its the worst when i dont take it out of the luggage
+[18:43:22] <Lapsus> Colgate: I can't imagine them allowing active electronics more esoteric than a phone or laptop
+[18:43:23] <Lapsus> lol
+[18:43:35] <Iron_Wofle> Well, I hope this will work. It booted, but diskchk found a whole lot of errors. While I don't find that all that surprising, it might still be a problem.
+[18:43:56] <Colgate> why would you have it turned on in your baggage anyways? what use would that be? >.>
+[18:44:05] <Lapsus> fuck I dunno
+[18:44:07] <WeAreBorg> I reguallly get on a plane with 5 laptops, a 5 lb lead weight and enough extension cords to reach the ground whil flying
+[18:44:14] <Iron_Wofle> Tons of orphaned file, bunch of corrupt file attributes, and one index error. Seems like it's managing to fix it though..
+[18:44:35] <Colgate> Iron_Wofle: you have backups, right? :P
+[18:44:41] <Lapsus> Iron_Wofle: I'm guessing the ssd to hdd might be the issue
+[18:44:45] <Iron_Wofle> Yeah, I've still got the original source disk
+[18:44:50] <Iron_Wofle> Yeah, could be
+[18:44:51] <Lapsus> you'll also need a hell of a defrag
+[18:45:05] <Iron_Wofle> I'll have to see how it runs after diskchk is done
+[18:45:42] <Iron_Wofle> I wasn't expecting it to go silky smooth, but so long as it works I'm happy
+[18:45:54] <Colgate> I'm confused, I thought this was a physical windows machine that you just rebooted
+[18:46:22] <Iron_Wofle> No, I cloned the old system disk using dd onto another disk because the old disk was ful
+[18:47:43] <Iron_Wofle> Because I don't want to deal with reinstalling
+[18:48:23] <Colgate> ahhh
+[18:48:34] <Iron_Wofle> It should work, because the only hardware change is the hard disk, but obviously there's a lot that can go wrong
+[18:51:28] <WeAreBorg> no one has played with vSAN have they?
+[18:52:05] <Colgate> virtual SANs? no
+[18:53:58] <WeAreBorg> I have to decide if I want to go with a traditional SAN or vmware's vsan
+[19:03:05] <WeAreBorg> software defined storage seems kinda sexy
+[19:03:15] <coppercore> and slow
+[19:03:50] <WeAreBorg> I could see it being slower
+[19:04:18] <Iron_Wofle> Okay, diskchk is done, let's see if windows shits itself
+[19:06:24] <Iron_Wofle> Well would you look at that. Windows started. It's really slow though
+[19:07:36] <Colgate> windows servers can take 15+ minutes to boot, really annoying :(
+[19:07:36] <Iron_Wofle> ALthough with 113 megs free on the partition and the likely heavily fragmented state my C: drive is in, that's hardly surprising
+[19:11:56] <Iron_Wofle> Oh joy, the defragmenting tool froze just by trying to analyze the disk
+[19:13:26] <Lapsus> get us a screenshot when it reveals 100% fragmentation
+[19:13:36] <Iron_Wofle> XD
+[19:14:36] <Iron_Wofle> Maybe I should have extended the partition before doing this, so it'd at least have some free space to work on
+[19:16:41] <Colgate> that would help immensely
+[19:16:58] <Lapsus> !
+[19:17:23] <Iron_Wofle> It probably would!
+[19:17:25] <Iron_Wofle> Oh well
+[19:17:34] <Iron_Wofle> I can give it some more once it finishes analyzing
+[19:17:51] <Iron_Wofle> Didn't start the actual defrag, just anazlyzing it
+[19:21:40] <Iron_Wofle> Oh well, it managed to start windows with no visible errors, so I'm happy
+[19:30:27] <MistVeil> I should defrag this thing as well
+[19:30:29] <MistVeil> Let's see...
+[19:33:00] <MistVeil> 6% fragmentation
+[19:33:22] <Iron_Wofle> 47% fragmentation, and that's after adding the empty partition
+[19:33:47] <Iron_Wofle> hoo boy
+[19:35:03] *** init3 is now known as Init3-away
+[19:36:08] <MistVeil> Boredooooom
+[19:36:40] <Iron_Wofle> I have a feeling this defrag will take a while
+[19:45:00] *** Quits: Q0 (Q0@literallyshit.net) (Ping timeout: 121 seconds)
+[19:47:10] *** Joins: Q0 (Q0@literallyshit.net)
+[19:47:51] * Shutter defrags all of Iron_Wofle's SSDs over and over again until the blocks reach their maximum write cycles
+[19:48:16] <Iron_Wofle> I don't have any SSDs in my home computers now
+[19:56:27] <Lapsus> Iron_Wofle: after you make sure you haven't lost anything, put the ssd back in for videogames! :v
+[19:56:51] <Lapsus> there's a few that are really dependent on disk speed, but not too many, lol
+[20:06:37] <Colgate> this person who has been using outlook for at least 3 years, probably much longer, just asked me if it was possible to send the same email to multiple people without retyping it every time :V
+[20:08:12] <WeAreBorg> coppercore, what makes you say software defined storage would be slow?
+[20:19:15] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[20:26:15] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[21:10:22] <coppercore> maybe i misunderstood what i read now that i think about it
+[21:23:54] <Iron_Wofle> There we go, finally done
+[21:24:11] <Iron_Wofle> 223GB free space and 0% fragmentation
+[21:25:14] *** Joins: Crimson_Tail (Bluepon@Pony-up5.b6a.250.69.IP)
+[21:27:14] *** Init3-away is now known as init3
+[21:27:44] *** Quits: MistVeil (aqua@Pony-qbk.jpi.211.189.IP) (Quit: Saliendo)
+[21:31:44] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[21:57:14] <WeAreBorg> I think i'll stick with a traditional SAN and get a nimble
+[22:09:16] *** Quits: Crimson_Tail (Bluepon@Pony-up5.b6a.250.69.IP) (Quit: Oops, a kernel panic)
+[22:11:11] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Quit: )
+[22:16:21] *** Joins: Crimson_Tail (Bluepon@Pony-up5.b6a.250.69.IP)
+[22:33:13] *** init3 is now known as Init3-away
+[23:00:19] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[23:27:35] *** McKey is now known as [A]McKey
+[23:27:58] *** Gigabit is now known as GigaTown
+[23:56:29] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[23:57:09] *** [A]McKey is now known as McKey
+[23:59:47] *** Quits: Caerdwyn (midnight@always.broken.sometimes.patched.never.fixed) (Ping timeout: 121 seconds)

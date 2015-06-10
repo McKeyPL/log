@@ -1,0 +1,137 @@
+[00:23:59] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[00:25:08] *** Fluttershi is now known as afkshi
+[00:28:45] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[00:32:54] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Connection closed)
+[00:50:45] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[00:52:30] *** McKey is now known as [A]McKey
+[01:08:58] *** Joins: Pony_2 (~Pony_2@Pony-005.gro.248.50.IP)
+[01:13:45] *** Pony_2 is now known as MissTake
+[01:28:34] *** afkshi is now known as Fluttershi
+[01:34:35] *** Joins: Toothpaste (uid63062@Pony-f8galh.hqe2.tdoh.8300.2604.IP)
+[01:43:54] *** Joins: [A]McKey (Kordus@twilightsparkle.ovh)
+[07:16:36] *** Joins: [A]McKey (Kordus@twilightsparkle.ovh)
+[07:16:54] *** [A]McKey is now known as McKey
+[07:19:15] *** Joins: Compu_ (quassel@snuggly.filly)
+[07:22:04] *** Quits: Hoofy (HoofSounds_@Pony-dsovdr.res.rr.com) (Ping timeout: 121 seconds)
+[07:25:04] *** Parts: Compu_ (quassel@snuggly.filly) ("http://quassel-irc.org - Chat comfortably. Anywhere.")
+[07:36:24] *** Quits: Silverlight (silverlight@voiceofequestria.com) (Connection closed)
+[07:37:03] *** Joins: Silverlight (silverlight@Pony-a1f.uaq.74.24.IP)
+[07:38:09] *** Joins: Hoofy (HoofSounds_@Pony-dsovdr.res.rr.com)
+[07:39:09] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[08:00:08] *** Joins: Pakistan (Pakistan@janam.samgha.kero)
+[08:00:10] <Pakistan> helo 
+[08:00:24] <Pakistan> is there any flag for channel . to stop kicking ops
+[08:00:40] *** Q0 is now known as Q0|Away
+[08:00:56] <Pakistan> i want to set flag none of admin can kick any other admin
+[08:02:35] <Pakistan> ?
+[08:04:40] <Hoofy> hi
+[08:04:54] <Pakistan> hello Hoofy how are you
+[08:05:03] <Hoofy> great ^^
+[08:05:34] <Pakistan> hoffy i want to sed mode of chatroom . by which all admins cant kick any admin
+[08:06:41] <Pakistan> can any one help
+[08:06:42] <Colgate> Pakistan: there is, it is called revoking their op status
+[08:06:52] <Colgate> if you can't trust your ops to not kick each other, don't make them op
+[08:07:56] <Pakistan> ok thanks Colgate
+[08:08:35] <Pakistan> is there any mode i could stop users to stop bg clors
+[08:08:47] <Colgate> +S
+[08:09:02] <Pakistan>  like they can do this but  cant do this
+[08:09:14] <Colgate> no
+[08:09:29] <Colgate> also, this channel is +S, so that didn't show up anyways
+[08:09:35] <Colgate> but it strips all color codes
+[08:10:43] <Pakistan> i just want to stop using bg color . but want to allow text color
+[08:10:48] <Fluttershi> on the no kicking eachother, i believe there's a flag you can but on individual people to make such things not work on them?
+[08:10:53] <Colgate> Pakistan: can't do that
+[08:11:08] <Colgate> you can set +a on everyone, yes
+[08:12:06] <Fluttershi> set +a on someone and they can't get kicked, bans don't actually work on them, ect.?
+[08:12:25] <Colgate> depends on the ban
+[08:14:40] <Pakistan> Can't change mode for other users
+[08:14:49] <Colgate> well yes, I t is a channel mode
+[08:14:58] <Colgate> /mode #channel +a nick
+[08:15:10] <Pakistan> ok thanks
+[08:15:23] <Colgate> although you probably want to set it in chanserv via /chanserv flags #channel nick +a
+[08:15:53] <Colgate> note that those ops can still kick each other if they want
+[08:16:07] <Colgate> by using /chanserv deprotect, and then /kicking them
+[08:16:29] <Colgate> there really is no technical way of preventing this unless you demote them to halfops instead
+[08:16:47] <Colgate> halfops can't kick other halfops or higher, etc.
+[08:17:58] <Pakistan> thanks
+[08:26:59] *** ama is now known as ama|sleep
+[08:28:18] *** Parts: Pakistan (Pakistan@janam.samgha.kero) ()
+[08:58:18] *** Joins: Ashley` (me@Pony-b7jkls.sv08.vg3e.41d0.2001.IP)
+[11:10:48] *** Sleepykitty is now known as Unixkitty
+[11:23:53] *** Joins: Freak (Freak@Freak.Freak.Freak.Freak)
+[11:23:57] <Freak> Hi
+[11:24:08] <Freak> What is +X mode
+[11:25:26] *** Joins: SP (Mibbit@Pony-im0.7kq.50.2.IP)
+[11:25:36] <SP> anyone hre
+[11:25:53] <SP>  / msg ChanServ BADWORDS #sailors ADD *dam?it* quiet
+[11:25:59] <SP> it keep saying invalid action
+[11:26:05] <SP> i used my channel name
+[11:26:15] <SP> there is no valid action on quiet
+[11:28:22] <Fluttershi> i would guess that BADWORDS wasn't a thing
+[11:28:59] <Fluttershi> looks like i would guess wrong
+[11:29:06] <Googie> In the current configuration, badwords doesn't support quiet.
+[11:29:06] <Fluttershi> hm...
+[11:29:20] *** SP is now known as Shan
+[11:29:49] <Shan> is there anyoption
+[11:29:53] <Shan> where i can set 
+[11:29:57] <Shan> don't kick ops ?
+[11:30:07] <Shan> so my operators can't be kicked by chan serv
+[11:30:41] *** Shan is now known as Sp
+[11:33:25] *** Quits: Sp (Mibbit@Pony-im0.7kq.50.2.IP) (Quit: http://www.mibbit.com ajax IRC Client)
+[11:36:12] <Freak> What is +X mode
+[11:36:33] <Freak>  Freak sets mode: +X Freak what is it function?
+[11:38:35] *** Unixkitty is now known as Awaykitty
+[11:41:46] <Googie> A list of modes and their descriptions can be found here: https://canternet.org/support
+[11:51:50] <Freak> Googie i have seen the mode /quote help chmodes
+[11:52:03] <Freak> i set +X mode in me
+[11:52:04] <Freak> #abc Freak Freak 1429782033
+[11:52:04] <Freak> #abc End of channel exemptchanops list
+[11:52:16] <Freak> i just wanna know what is the function of it
+[11:53:22] <Fluttershi> +X 	[restriction]:[flag] Allows ignoring of certain channel modes for certain users.
+[11:53:22] <Fluttershi> Flag is the power level(+qaohv) needed, and restriction.
+[11:53:22] <Fluttershi> To see a current list of +X's do /mode #Channel +X
+[11:53:22] *** Fluttershi was kicked by daring.canternet.org (Channel flood triggered (limit is 4 lines in 5 secs))
+[11:53:56] <Freak> ok
+[11:53:57] *** Parts: Freak (Freak@Freak.Freak.Freak.Freak) ()
+[12:07:27] *** Joins: Fluttershi (Fluttershi@Hipsterluna.is.my.waifu)
+[13:06:48] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[13:10:21] *** Quits: Fluttershi (Fluttershi@Hipsterluna.is.my.waifu) (Quit: )
+[13:54:47] *** Joins: Personifire (Tilde@Pony-hk4.unv.62.128.IP)
+[13:57:33] *** Quits: Persona (Tilde@Pony-t4r.5t3.116.129.IP) (Ping timeout: 121 seconds)
+[14:00:16] *** Joins: Person (Tilde@Pony-t4r.5t3.116.129.IP)
+[14:03:04] *** Quits: Personifire (Tilde@Pony-hk4.unv.62.128.IP) (Ping timeout: 121 seconds)
+[14:05:20] *** Joins: Deku-Tri_ (Deku-Tri@Pony-19p5s5.iinet.net.au)
+[14:07:29] *** Parts: Deku-Tri_ (Deku-Tri@Pony-19p5s5.iinet.net.au) ("")
+[14:11:26] *** McKey is now known as [A]McKey
+[14:16:50] *** Awaykitty is now known as Unixkitty
+[14:46:42] *** Joins: Grrr-iffonbutt (Grrr-iffonb@Pony-3ijirf.dedicated.allstream.net)
+[15:04:18] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[15:06:06] *** Parts: Grrr-iffonbutt (Grrr-iffonb@Pony-3ijirf.dedicated.allstream.net) ("")
+[15:38:57] *** Quits: Lapsus (Lapsus@i-forget.ca) (Ping timeout: 121 seconds)
+[15:39:05] *** Joins: Lapsus (Lapsus@Pony-m8v.m2p.239.99.IP)
+[15:54:46] *** Unixkitty is now known as Awaykitty
+[16:50:52] *** ama|sleep is now known as ama|work
+[16:59:54] *** Awaykitty is now known as Unixkitty
+[17:24:13] *** Joins: Pony_8 (Pony_8@Pony-6ucuk7.broadband4.iol.cz)
+[17:27:11] *** Quits: Pony_8 (Pony_8@Pony-6ucuk7.broadband4.iol.cz) (Quit: Page closed)
+[18:01:07] *** Joins: lightblue (~lightblue@Pony-unrcgu.tmodns.net)
+[18:07:21] *** Unixkitty is now known as Awaykitty
+[18:10:45] *** Q0|Away is now known as Q0
+[18:27:53] *** lightblue is now known as lightbluShock
+[18:41:47] *** Quits: lightbluShock (~lightblue@Pony-unrcgu.tmodns.net) (Ping timeout: 121 seconds)
+[18:46:57] *** Joins: Darkblue (~Darkblue@Pony-6i9.tvo.126.205.IP)
+[19:06:07] *** Quits: Darkblue (~Darkblue@Pony-6i9.tvo.126.205.IP) (Ping timeout: 121 seconds)
+[19:08:59] *** Awaykitty is now known as Unixkitty
+[20:17:17] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[22:38:46] *** Joins: Fluttershi (Fluttershi@Hipsterluna.is.my.waifu)
+[23:07:44] *** Unixkitty is now known as Sleepykitty
+[23:07:50] *** Quits: RubyPinch (x@Gem.Stealer) (Quit: eep)
+[23:07:59] *** Joins: RubyPinch (x@Pony-73g.9lk.199.128.IP)
+[23:08:00] *** RubyPinch is now known as Pony_91721
+[23:09:26] *** Quits: Pony_91721 (x@Pony-73g.9lk.199.128.IP) (Quit: eep)
+[23:09:40] *** Joins: RubyPinch (x@Pony-73g.9lk.199.128.IP)
+[23:09:43] *** RubyPinch is now known as Pony_16802
+[23:13:48] *** Quits: Pony_16802 (x@Gem.Stealer) (Quit: eep)
+[23:14:28] *** Joins: RubyPinch (x@Pony-73g.9lk.199.128.IP)
+[23:14:29] *** RubyPinch is now known as Pony_11985
+[23:18:55] *** Pony_11985 is now known as RubyPinch

@@ -1,0 +1,341 @@
+[00:08:45] <DataByteBrony> .
+[00:08:52] <DataByteBrony> figured it out.
+[00:08:55] <DataByteBrony> .
+[00:09:04] <DataByteBrony> gr
+[00:09:47] <DataByteBrony> there is a span at the start of some of these matches, which ends before the end of the block
+[00:10:05] <DataByteBrony> fine, yes.. but the pattern matcher keeps looking past the </p>
+[00:10:51] <DataByteBrony> are you much good with regex, johnsey?
+[00:11:12] <AppleDash> Can I provide you a suggestion, DataByteBrony
+[00:11:17] <DataByteBrony> ok?
+[00:11:19] <AppleDash> Use an HTML parser, not regex.
+[00:11:22] <AppleDash> Right tool for the job.
+[00:11:35] <DataByteBrony> heh.. maybe
+[00:11:46] <AppleDash> What language are you working in?
+[00:11:46] <DataByteBrony> i was just trying to fix the bad syntax
+[00:11:49] <DataByteBrony> java
+[00:11:58] <AppleDash> I've heard JSoup is good
+[00:12:47] <AppleDash> I think most parsers will let you parse something, modify how you like, and then output a new valid document
+[00:14:06] <DataByteBrony> real quick, though.. as a temp fix until i need something nicer.. is there any way to modify (.*?) to not include </p> ??
+[00:14:28] <AppleDash> I don't really know
+[00:14:31] <DataByteBrony> not the first time i've wanted to do something like this, why i'm asking..
+[00:14:55] *** Joins: Asoka (Asoka@Pony-54g.g5q.182.89.IP)
+[00:18:02] *** Quits: Asoka_White (Asoka@Pony-kdg.opb.182.89.IP) (Ping timeout: 121 seconds)
+[00:23:59] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[00:28:19] *** Quits: DataByteBrony (DataByte@Pony-nf6.hp8.15.173.IP) (Quit: Leaving)
+[00:28:50] *** Joins: LightningCrash (lightning@Pony-lvs.lv2.99.68.IP)
+[00:30:50] *** Joins: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP)
+[00:31:37] *** Joins: nscoots (FreyGrimrod@Pony-31s.5h3.192.70.IP)
+[00:32:37] *** Quits: JoneZ (JoneZ@lugburz) (Ping timeout: 121 seconds)
+[00:32:54] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Connection closed)
+[00:33:54] *** Joins: JoneZ (JoneZ@lugburz)
+[00:33:55] *** Quits: MistVeil (aqua@Pony-qbk.jpi.211.189.IP) (Quit: Saliendo)
+[00:39:36] *** Joins: nscoots1 (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[00:41:38] *** Quits: nscoots (FreyGrimrod@Pony-31s.5h3.192.70.IP) (Ping timeout: 121 seconds)
+[00:45:03] *** Joins: Webster (Webster@Pony-mme.2eo.212.73.IP)
+[00:50:45] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[00:52:30] *** McKey is now known as [A]McKey
+[01:29:47] *** Quits: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP) (Connection closed)
+[01:43:58] *** Joins: [A]McKey (Kordus@twilightsparkle.ovh)
+[01:43:59] -daring.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[07:16:36] *** Joins: [A]McKey (Kordus@twilightsparkle.ovh)
+[07:16:36] -daring.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[07:16:36] <Webster> notepad++
+[07:16:36] <Moonlightning> Nell: any command-line editor
+[07:16:36] * Nell already has ++ but didn't think to use it and also I have no idea what you are talking about Moonface.
+[07:16:54] *** [A]McKey is now known as McKey
+[07:18:33] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Killed (NickServ (GHOST command used by Legion_Red!LegionRed@Pony-2ca.bse.207.68.IP)))
+[07:18:36] *** Joins: Legion_Red (LegionRed@Pony-2ca.bse.207.68.IP)
+[07:18:41] *** Quits: Legion_Red (LegionRed@Pony-2ca.bse.207.68.IP) (Connection closed)
+[07:19:15] *** Joins: Compu_ (quassel@snuggly.filly)
+[07:20:12] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[07:21:46] *** Quits: CompuDesktop (quassel@snuggly.filly) (Ping timeout: 121 seconds)
+[07:22:18] *** Quits: Nick (nobody@Pony-o1k.cjc.74.71.IP) (Ping timeout: 121 seconds)
+[07:23:09] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[07:25:34] *** Compu_ is now known as CompuDesktop
+[07:29:19] *** Neptune is now known as Neptune|sleep
+[07:39:09] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[07:43:34] *** Joins: JockeTF (jocke@Pony-v9k.2pb.227.87.IP)
+[07:50:51] *** aji is now known as \033
+[07:51:01] <\033> behold, my final form
+[07:51:04] <\033> there is no escape
+[07:51:06] <\033> BECAUSE I AM THE ESCAPE
+[07:51:24] <Nell> :O
+[07:51:33] * JustAberrant was not ready for this
+[07:51:45] * Nell still doesn't get it.
+[07:51:57] * \033 1;31m
+[07:52:11] <\033> somebody should make a unix-based text adventure
+[07:52:16] <\033> wait
+[07:52:19] * \033 [1;31m
+[07:52:28] <\033> and i could be a minor boss
+[07:52:36] <JustAberrant> hehe
+[07:52:44] * JustAberrant munches on a grue
+[07:52:54] * Nell is just gonna wuht super hard then esplode into cream now. Mmk.
+[07:52:59] * Nell esplode.
+[07:53:04] *** Parts: Nell (BlackCat@Anonlight.Starsarebeautiful) ("*Poof*")
+[07:55:00] <JustAberrant> :(
+[07:55:00] <PinkiePieBot> I'm not here to wipe up any tears, OK?
+[07:55:04] <JustAberrant> :D
+[07:55:34] * JustAberrant should go to bed
+[08:00:40] *** Q0 is now known as Q0|Away
+[08:05:49] *** Parts: Twilightlicious (Twilightlic@Pretty.Princess) ("Bai ♥")
+[08:05:55] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[08:06:03] <Twilightlicious> Xbox One is getting a Miracast app
+[08:06:29] <ShivalPonyWolf> http://arstechnica.com/security/2015/04/just-released-minecraft-exploit-makes-it
+[08:06:31] <Twilightlicious> so anyone with an Xbox One can now use it to cast their tablets/phones/etc
+[08:06:31] <PinkiePieBot> [ Just-released Minecraft exploit makes it easy to crash game servers | Ars Technica ]
+[08:06:32] <ShivalPonyWolf> -easy-to-crash-game-servers/
+[08:06:33] <ShivalPonyWolf> oops
+[08:06:40] <ShivalPonyWolf> that didnt paste right
+[08:08:36] <Twilightlicious> Do i blame my Adapter? http://i.imgur.com/bgBAvnF.png
+[08:08:54] <Twilightlicious> i'll see if it does it durring a speedtest
+[08:10:21] <Twilightlicious> speedtest.net doesn't run long enough to be sure
+[08:12:30] <JustAberrant> crashing a minecraft server on purpose isn't particularly difficult ;p
+[08:13:04] <Twilightlicious> ^
+[08:13:35] <LegionRed> I remember when you could do it by just spending a day or two on the server to collect the needed amount of items. 
+[08:13:41] <Twilightlicious> I need to find a USB Wi-Fi dongle with a decent Windows 8 driver, that is likely to get a Windows 10 driver as well
+[08:13:47] <Twilightlicious> Any recommendations?
+[08:13:53] <JustAberrant> hammer!
+[08:13:53] <LegionRed> Then you could just drop them all at once, and the whole thing would go down.
+[08:14:23] <JustAberrant> hehe, or die with a shit tonne of experience.. back when each experience bit was an orb
+[08:14:41] <JustAberrant> I remember purposefully diving into lava to "clean out" my experience :D
+[08:15:32] <JustAberrant> ok, really bed
+[08:17:16] <LegionRed> lol
+[08:17:24] <LegionRed> redstone.
+[08:18:32] <LegionRed> People designed machines just for crashing servers or causing a configurable amount of lag.
+[08:20:13] <Twilightlicious> Vendor signed driver from 2012, or Microsoft signed driver from 2013
+[08:20:15] <Twilightlicious> :P
+[08:20:35] <Twilightlicious> Pretty sure the vendor one is for an older version of Windows.
+[08:39:00] *** ThunderBolt|Sleeping is now known as ThunderBolt
+[08:43:00] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[08:51:09] *** Joins: Fillyfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP)
+[08:51:24] <Fillyfeathers> PC probme
+[08:51:28] <Fillyfeathers> .. problem
+[08:52:16] <Fillyfeathers> I bought another two sticks of RAM identical to the pair I already have installed in my PC. Inserting them into the free DIMM slots causes the PC to repeatedly power cycle until I turn it off at the wall. No beeping, it doesn't even POST. Just power on for two seconds, power off for two seconds, repeat.
+[08:52:44] <Fillyfeathers> Removing them fixes the issue though.
+[08:54:14] <Lapsus> what if you put in just the new ram?
+[08:54:28] <Fillyfeathers> And take out the old, you mean?
+[08:54:38] <Phase4> yeah
+[08:54:43] <Fillyfeathers> haven't tried that yet
+[08:54:56] <Baron_Von_Clop> pop out the old, put the new in
+[08:55:06] <Phase4> AppleDash, the server been updated yet?
+[08:55:23] <AppleDash> Phase4: Not yet
+[08:55:42] <Phase4> would it take long to update or should i just start with 1.3.9
+[08:55:50] <AppleDash> I can update it if you want
+[08:56:08] <Phase4> that'd be cool, thanks
+[08:56:53] <AppleDash> Give me a minute to make a backup first
+[08:57:34] <Phase4> they've turned off harvestcraft salt, which is nice, particularly useless ore
+[08:57:54] <Lapsus> Fillyfeathers: Give just the new ram a shot with none of the old ram and if it still doesn't work the new ram is probably dead
+[08:57:55] <Lapsus> lol
+[08:58:13] <Lapsus> Phase4: but how can I make delighted meals without salt D:
+[08:58:21] <Fillyfeathers> Lapsus: that'd be unlikely because i had the same issue earlier but then i brought them back as DOA and got a new pair and it's still happening
+[08:58:28] <Phase4> can get it from 'fresh water' (bucket of water in crafting table yeilds 4, bucket returned), then crafting that with a pot (pot returned)
+[08:58:31] <Fillyfeathers> my boyfriend said i need to clean the fuck out of the DIMM slot though so
+[08:59:04] <Lapsus> Phase4: greg's harvestcraft? lolol
+[08:59:05] <Phase4> Fillyfeathers, unlikely or not, by checking you'll know
+[08:59:09] <Phase4> Lapsus, XD
+[08:59:28] <Phase4> Lapsus, it works with just a bucket of water, but the fresh water means you don't have to pick up as many water sources
+[08:59:43] <Lapsus> Fillyfeathers: make sure to try the new ram in the slots that the old ram was in, it could possibly be a dead slot I guess
+[08:59:44] <Phase4> too bad extra cells isn't installed, fluid crafting chamber would skip the bucket
+[08:59:49] <Lapsus> I've had those before and they suck
+[08:59:50] <AppleDash> Phase4: Updated, server is starting
+[08:59:55] <Phase4> awesome, thanks
+[09:00:04] <Fillyfeathers> yeah
+[09:00:05] <AppleDash> Apparently it just crashed
+[09:00:09] <Fillyfeathers> I'll try a few things thanks
+[09:01:31] <Phase4> Lapsus, harvestcraft is a little greg-ish but it's more 'i'm using the cutting board' than 'COLLECT ELEVENTY BILLION SILICON'
+[09:01:38] <Phase4> or whatever it is you do in gregtech
+[09:01:48] <AppleDash> lol
+[09:01:53] <Phase4> it was enabled once on one pack i played
+[09:02:10] <Phase4> looked up the recipe for solar panels, disabled it real fast
+[09:02:19] <Lapsus> yeah to be honest I love the complexity it adds to food but only if you want it to be complex
+[09:02:31] <Lapsus> you can still eat bread and porkchops forever if you want
+[09:02:36] <Phase4> yeah, i kinda like it
+[09:02:57] <Phase4> salt ore is probably my main complaint and only because of quarries
+[09:03:30] <Phase4> Lapsus, btw, you can do the same with a milk bucket
+[09:03:43] <Phase4> alone in a crafting table yeilds 4 fresh milk, which is ore-dictionaried to milk bucket
+[09:03:46] <Fillyfeathers> wait are we talking about minecraft
+[09:03:49] <Lapsus> but if you're me you can make bread and toast and hamburgers and cheeseburgers and deluxe cheeseburgers and fries and smoothies and suddenly you have a delighted mean that fills the entire hunger bar to full from starving to death
+[09:03:51] <Phase4> yeah
+[09:03:54] <Fillyfeathers> my god
+[09:04:01] <Lapsus> meal*
+[09:04:06] <Phase4> minecraft is srs bsns
+[09:04:11] <Fillyfeathers> the last time I played it, the hell thing was still new
+[09:04:15] <Fillyfeathers> what the heckie
+[09:04:21] <Fillyfeathers> the nether?
+[09:04:35] <Lapsus> I would be playing at the moment but gta5
+[09:04:51] <Fillyfeathers> i like making games more than playing them ._.
+[09:04:59] <Phase4> Fillyfeathers, it's a modpack though, vanilla minecraft hasn't had any real major change since... ever
+[09:05:03] <Fillyfeathers> oh
+[09:05:32] <AppleDash> Phase4: OK it's starting now
+[09:06:19] <Phase4> they did add the hopper though, depending on how you play that was quite a change
+[09:06:32] <Phase4> AppleDash, k, i'll tell you if anything breaks
+[09:06:38] <AppleDash> OK
+[09:07:05] <locodashie11> heh, I've been playing a new custom modpack for the last week or so
+[09:07:18] <locodashie11> I knew almost nothing past minecraft 1.5.7 mods
+[09:07:28] <Phase4> ok, ftb infinity 1.4.1 causes java to SIGBUS
+[09:07:37] <Phase4> might be since i've got 8 installed
+[09:07:45] <ShivalPonyWolf> ive been playing ftb infinity i think it is
+[09:07:55] <Phase4> though it seems to be using 7...
+[09:11:16] <Phase4> but not the second time, random sigbus?
+[09:12:51] <ShivalPonyWolf> ive found my server muxh better and muxh more responsive since i have the process restarting every night
+[09:16:56] *** Quits: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP) (Ping timeout: 121 seconds)
+[09:20:58] *** Quits: Fillyfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP) (Connection closed)
+[09:22:03] *** Joins: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP)
+[09:22:21] *** Quits: Fallfeathers (Fallfeather@Pony-pu1.0l3.208.118.IP) (Quit: Leaving)
+[09:30:24] <Phase4> interesting, you need honey for the pams cake recipe
+[09:31:40] *** ThunderBolt is now known as ThunderBolt|GTA
+[09:35:19] *** Quits: init3 (Jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[09:35:31] <Lapsus> this is like the 5th time I've had to remove and install java the past 2 days D:
+[09:35:32] <Lapsus> lol
+[09:35:44] * nscoots1 shakes a hoof @ java
+[09:37:17] *** Quits: Phase4 (Phase4@Pony-odh.t6c.45.203.IP) (Ping timeout: 121 seconds)
+[09:52:33] *** Quits: TuxRug (TuxRug@TuxRug) (Quit: Sleepytime.)
+[09:53:20] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[10:08:01] *** Joins: Sin_ (Sin@Pony-j8c.vrk.49.68.IP)
+[10:10:51] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[10:50:49] *** init3 is now known as Init3-away
+[10:54:45] *** Quits: reiuiji (reiuiji@nuclear.raven) (Ping timeout: 121 seconds)
+[10:55:52] *** Joins: reiuiji (reiuiji@Pony-dui.epf.217.98.IP)
+[10:56:53] *** ThunderBolt|GTA is now known as ThunderBolt
+[10:58:34] *** Joins: Phase4 (Phase4@Pony-qur.r85.209.118.IP)
+[11:02:15] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[12:12:01] *** Quits: cyborg_ar (cyborgar@Pony-sm9.lui.25.181.IP) (Connection closed)
+[12:12:09] *** Joins: cyborg_ar (cyborgar@Pony-sm9.lui.25.181.IP)
+[12:33:40] *** Quits: cyborg_ar (cyborgar@Pony-sm9.lui.25.181.IP) (Ping timeout: 121 seconds)
+[12:38:06] *** Joins: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[12:40:42] *** Quits: nscoots1 (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[13:05:47] *** Quits: Nick (nobody@Pony-o1k.cjc.74.71.IP) (Connection closed)
+[13:06:04] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[13:06:48] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[13:46:50] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[14:10:39] *** Joins: nscoots1 (FreyGrimrod@Pony-pgr.ff4.191.107.IP)
+[14:11:08] *** Quits: nscoots (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Ping timeout: 121 seconds)
+[14:11:26] *** McKey is now known as [A]McKey
+[14:13:00] *** Quits: nscoots1 (FreyGrimrod@Pony-pgr.ff4.191.107.IP) (Quit: Leaving.)
+[14:21:51] *** Quits: Compu (compu@snuggly.filly) (Quit: No Ping reply in 120 seconds.)
+[14:26:11] *** Joins: Compu (compu@snuggly.filly)
+[14:43:16] *** Neptune|sleep is now known as Neptune
+[14:44:38] *** Quits: Compu (compu@snuggly.filly) (A TLS packet with unexpected length was received.)
+[15:01:57] *** Joins: Compu (compu@snuggly.filly)
+[15:04:18] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[15:26:03] *** Joins: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[15:26:03] *** Joins: Maple (Maple@Maple)
+[15:30:57] <Neptune> so yesterday I got a weird email, and it appears to be encrypted
+[15:31:01] <Neptune> can anyone help me out?
+[15:34:16] <DataByte> a pgp encrypted email can only really be opened if you have the private key that pairs with the public key used to encrypt it
+[15:36:37] <Neptune> oh, well here's the email I got anyways
+[15:36:38] <Neptune> http://pastebin.com/NMYjQxwy
+[15:36:38] <PinkiePieBot> [ CjI4NzQxNDQ3MDgzMDU4OTA2MTQxMzcwMTc5ODM3MDI5MTc3MjU5MTI2Njc2OTk4NjE4ODE4NTkz Mz - Pastebin.com ]
+[15:37:59] <Neptune> if that's the case DataByte then I don't know why they sent it to me in particular
+[15:38:03] <Neptune> probably spam or something?
+[15:38:57] *** Quits: Lapsus (Lapsus@i-forget.ca) (Ping timeout: 121 seconds)
+[15:39:05] *** Joins: Lapsus (Lapsus@Pony-m8v.m2p.239.99.IP)
+[15:39:15] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[15:39:27] <DataByte> if it's someone you know, i'd ask them.. if not, ignore as spam ;)
+[15:39:40] <Neptune> it's from someone I don't know
+[15:39:53] <Neptune> but if it's encrypted I'm really curious to know what it is
+[15:43:47] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[16:05:50] *** Joins: MistVeil (aqua@Pony-qbk.jpi.211.189.IP)
+[16:08:13] *** Quits: Red_M (potato@Pony-4pa04c.red-m.net) (Quit: |)
+[16:08:16] *** Joins: Red_M (potato@Pony-afr.ndf.29.23.IP)
+[16:13:04] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: I've run out of witty things for a qute message. Submit your ideas when I get back.)
+[16:36:56] *** Quits: Nick (nobody@Pony-o1k.cjc.74.71.IP) (Ping timeout: 121 seconds)
+[16:37:33] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[16:52:35] <johnsey> Neptune: that's a long base64 string which decodes into a long number
+[16:52:59] <Neptune> johnsey: what's the number?
+[16:53:13] <Neptune> pm or pastebin it
+[16:53:50] <johnsey> just pipe your pastebin thorugh base64 -d
+[16:55:20] *** Quits: MistVeil (aqua@Pony-qbk.jpi.211.189.IP) (Quit: Saliendo)
+[16:55:54] <Neptune> hmm... alright
+[16:56:08] <Neptune> so it's a bunch of encrypted numbers then. dunno why someone would email me that
+[16:57:21] <Neptune> there has to be a reason behind it. either that or it's spam
+[16:57:43] <Neptune> but i've never seen spam in the form of encrypted numbers before 
+[17:00:07] <Neptune> huh
+[17:00:27] <Neptune> apparently the address from the person who sent it to me doesn't even exist
+[17:04:47] <Lapsus> Neptune: assuming this isn't you, it's just spam
+[17:04:48] <Lapsus> http://imgur.com/gallery/Acz3A6i
+[17:04:48] <PinkiePieBot> [ Something odd in the mail - Imgur ]
+[17:05:05] <Lapsus> might be some form of c&c for malware also
+[17:06:45] <Neptune> so apparently someone else got this too
+[17:26:28] *** Joins: vi[NLR] (vi[NLR]@Pony-ohu.qnc.108.80.IP)
+[17:37:18] <DataByte> load average: 122.14, 145.47, 99.28
+[17:37:22] <DataByte> a bit much?
+[17:41:45] <DataByte> threading derp.. i just don't know what went wrong..
+[17:42:47] <DataByte> i extended a process thread manager i made.. but it for some reason decides to spawn 1000 processes all at once instead of 10 at a time
+[17:43:02] <DataByte> the original works, though :/
+[18:10:45] *** Q0|Away is now known as Q0
+[18:16:19] *** Quits: JockeTF (jocke@Pony-v9k.2pb.227.87.IP) (Quit: Leaving.)
+[18:19:51] *** Quits: Compu (compu@snuggly.filly) (Quit: No Ping reply in 120 seconds.)
+[18:22:02] *** Joins: Compu (compu@snuggly.filly)
+[18:22:06] <coppercore> what the fuck happened there DataByte?
+[18:24:10] *** Quits: Asoka (Asoka@Pony-54g.g5q.182.89.IP) (Ping timeout: 121 seconds)
+[18:33:09] *** Joins: Asoka (Asoka@Pony-oji.4dr.182.89.IP)
+[18:36:33] *** Joins: Asoka_White (Asoka@Pony-7on.i3h.182.89.IP)
+[18:38:46] *** Quits: Asoka (Asoka@Pony-oji.4dr.182.89.IP) (Ping timeout: 121 seconds)
+[18:44:58] *** Joins: Asoka (Asoka@Pony-073.mct.182.89.IP)
+[18:46:17] *** Quits: Asoka_White (Asoka@Pony-7on.i3h.182.89.IP) (Ping timeout: 121 seconds)
+[18:49:47] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[18:52:19] *** Joins: Asoka_White (Asoka@Pony-ec5.eqd.182.89.IP)
+[18:54:17] *** Quits: Asoka (Asoka@Pony-073.mct.182.89.IP) (Ping timeout: 121 seconds)
+[18:58:59] *** Init3-away is now known as init3
+[19:04:05] *** Joins: DataByteBrony (DataByte@Pony-nf6.hp8.15.173.IP)
+[19:07:32] <DataByteBrony> there we go.. silly me, calling the spawn function instead of the queue
+[19:07:38] <DataByteBrony> now stuff can be done xD
+[19:22:02] *** Joins: Asoka (Asoka@Pony-j33.v0c.182.89.IP)
+[19:22:49] *** Quits: Asoka_White (Asoka@Pony-ec5.eqd.182.89.IP) (Ping timeout: 121 seconds)
+[19:23:45] *** Joins: Asoka_White (Asoka@Pony-ch1.imk.182.89.IP)
+[19:26:40] *** Quits: Asoka (Asoka@Pony-j33.v0c.182.89.IP) (Ping timeout: 121 seconds)
+[19:27:03] *** Joins: Asoka (Asoka@Pony-knn.rql.182.89.IP)
+[19:27:54] *** Quits: Asoka_White (Asoka@Pony-ch1.imk.182.89.IP) (Ping timeout: 121 seconds)
+[19:29:27] *** Quits: Asoka (Asoka@Pony-knn.rql.182.89.IP) (Quit: Ex-Chat)
+[19:29:51] *** Joins: Asoka (Asoka@Pony-knn.rql.182.89.IP)
+[19:30:30] *** init3 is now known as Init3-away
+[19:31:52] *** Joins: Asoka_White (Asoka@Pony-ufd.vpi.182.89.IP)
+[19:34:20] *** Quits: Asoka (Asoka@Pony-knn.rql.182.89.IP) (Ping timeout: 121 seconds)
+[19:34:22] *** Quits: Asoka_White (Asoka@Pony-ufd.vpi.182.89.IP) (Connection closed)
+[19:35:44] *** Joins: Asoka_White (Asoka@Pony-baa.lvc.182.89.IP)
+[19:47:19] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[19:50:20] *** Quits: sniperfox (sniperfox@Pony-htd84a.distributed.denialofservice.org) (Quit: Bye)
+[19:50:43] *** Joins: Asoka (Asoka@Pony-eqe.oo4.182.89.IP)
+[19:52:48] *** Quits: Asoka_White (Asoka@Pony-baa.lvc.182.89.IP) (Ping timeout: 121 seconds)
+[20:02:24] *** Quits: GauntletWizard (ted@Pony-3mqsfi.com) (Quit: WeeChat 1.1.1)
+[20:04:45] *** Joins: Asoka_White (Asoka@Pony-u9c.mql.182.89.IP)
+[20:07:19] *** Quits: Asoka (Asoka@Pony-eqe.oo4.182.89.IP) (Ping timeout: 121 seconds)
+[20:13:29] *** Joins: Asoka (Asoka@Pony-gqg.i0p.182.89.IP)
+[20:13:50] *** Quits: Asoka_White (Asoka@Pony-u9c.mql.182.89.IP) (Ping timeout: 121 seconds)
+[20:15:12] *** Joins: Asoka_White (Asoka@Pony-jvc.20g.182.89.IP)
+[20:17:17] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[20:17:37] *** Quits: Asoka (Asoka@Pony-gqg.i0p.182.89.IP) (Ping timeout: 121 seconds)
+[20:17:59] *** Joins: Asoka (Asoka@Pony-9dj.7cr.182.89.IP)
+[20:19:50] *** Quits: Asoka_White (Asoka@Pony-jvc.20g.182.89.IP) (Ping timeout: 121 seconds)
+[20:31:47] *** Neptune is now known as Naptune
+[20:40:29] *** Joins: MistVeil (aqua@Pony-qbk.jpi.211.189.IP)
+[20:46:22] *** Joins: Asoka_White (Asoka@Pony-s4m.jo6.182.89.IP)
+[20:47:22] *** Joins: Crimson_Tail (Bluepon@Pony-up5.b6a.250.69.IP)
+[20:48:29] *** Quits: Asoka (Asoka@Pony-9dj.7cr.182.89.IP) (Ping timeout: 121 seconds)
+[20:58:16] *** Joins: sniperfox (sniperfox@Pony-raa.vkb.114.167.IP)
+[21:19:54] <mniip> close enough http://i.imgur.com/GklTblt.png
+[21:22:15] <Baron_Von_Clop> this looks shockingly like dwarf fortress
+[21:43:05] *** Init3-away is now known as init3
+[21:44:04] <AppleDash> Naptune: There was some exploit in the past IIRC for phones that involved sending them a base64 string
+[21:44:06] <AppleDash> Could be that.
+[21:47:11] <mniip> AppleDash, I made a software!
+[21:47:30] <AppleDash> mniip: Oh?
+[21:47:47] <mniip> https://github.com/mniip/vtshot
+[21:47:48] <PinkiePieBot> [ mniip/vtshot · GitHub ]
+[21:51:23] <AppleDash> mniip: But there's already things to do that :(
+[21:51:33] <mniip> no there are not
+[21:52:30] <mniip> also I'm not done yet
+[21:52:37] <mniip> there's a major feature coming for 0.1.0
+[21:55:58] <AppleDash> Yes there are? .-.
+[21:56:01] *** Joins: Skids (ejd@Pony-aaa.lna.79.74.IP)
+[21:56:14] <mniip> AppleDash, haven't seen a single VCSA reader
+[21:56:33] * AppleDash shrugs
+[22:39:49] *** init3 is now known as Init3-away
+[22:43:51] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[22:45:19] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[22:45:42] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[22:52:48] *** Joins: init3 (Jason@Pony-l55.08m.124.174.IP)
+[23:40:26] *** Quits: sniperfox (sniperfox@Pony-raa.vkb.114.167.IP) (Quit: reboot)
+[23:44:45] *** Joins: sniperfox (sniperfox@Pony-raa.vkb.114.167.IP)
+[23:45:35] <sniperfox> So much more vivid.  Not nearly as utopic.

@@ -1,0 +1,219 @@
+[00:04:54] <Moonlightning> What was the tradeoff between gz and bz2?
+[00:05:16] <Moonlightning> One of them compresses better, but I think takes longer to compress and maybe also decompress?
+[00:05:32] <Moonlightning> And then xz is better than one of them in that regard?
+[00:07:38] *** Joins: Webster (Webster@Pony-mme.2eo.212.73.IP)
+[00:07:41] *** Quits: mkr (mkr@Pony-iinahj.radioyay.net) (Ping timeout: 121 seconds)
+[00:09:18] <Colgate> bz2 takes much longer to compress, but has better compression
+[00:09:28] <Colgate> is xz lsmz?
+[00:09:33] <Colgate> lzma*
+[00:09:40] <Moonlightning> I think xz is somehow related to lzma. Maybe a successor?
+[00:09:58] <Colgate> xz is a lossless data compression program and file format which incorporates the LZMA/LZMA2 compression algorithms.
+[00:10:03] <Colgate> thanks wikipedia!
+[00:10:06] <Moonlightning> ah, lzma2
+[00:10:31] <Colgate> yeah, xz is probably going to supercede gzip for everything later
+[00:10:44] <Colgate> er
+[00:10:46] <Colgate> everything but
+[00:10:52] <Colgate> GAH
+[00:11:07] <Colgate> jdg;ajdlagjl gzip will still be around, for when compression speed is really important
+[00:11:11] <Colgate> is what I mean
+[00:11:16] * Moonlightning nodnods.
+[00:11:47] <Colgate> because yeah, gzip is stupid fast
+[00:13:03] <johnsey> also, pxz
+[00:13:07] <Moonlightning> pxz? x.x
+[00:13:35] <johnsey> parallel xz compression
+[00:13:41] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:14:16] <Moonlightning> Ah.
+[00:14:29] * Colgate wants a pkernel
+[00:14:35] <johnsey> because xz on its own is pretty damn slow
+[00:14:49] <Colgate> isn't it faster than bzip?
+[00:14:50] * johnsey gives Colgate a zImage
+[00:15:46] <johnsey> not on highest compression level
+[00:16:02] <johnsey> then it's a lot slower
+[00:16:54] *** Joins: GumballCrash (GumballCras@0.to.pony.10secondsflat)
+[00:20:46] *** Neptune|sleep is now known as Neptune
+[00:21:41] <Colgate> ah
+[00:32:02] <Twilightlicious> o3o;
+[00:32:23] <Twilightlicious> LZMA? >3>
+[00:32:25] * Twilightlicious hides
+[00:33:56] <Moonlightning> :?
+[00:35:14] *** Joins: nscoots (FreyGrimrod@Pony-7ctska.sub-70-192-34.myvzw.com)
+[00:36:17] *** Quits: Sellyme (quassel@Pony-9oec4l.nectar.org.au) (Connection closed)
+[00:37:58] *** Joins: Phase4 (Phase4@Pony-gosbpn.optusnet.com.au)
+[00:40:31] *** Joins: cyborg_ar (cyborgar@Pony-ebc.1pq.49.190.IP)
+[00:50:21] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[00:56:44] *** Quits: Phase4 (Phase4@Pony-gosbpn.optusnet.com.au) (Ping timeout: 121 seconds)
+[01:14:55] *** Joins: Jouva_ (jouva@Pony-6a6np1.fios.verizon.net)
+[01:14:56] *** Quits: Jouva (jouva@Pony-6a6np1.fios.verizon.net) (Connection closed)
+[01:23:23] *** Joins: Sellyme (quassel@Pony-9oec4l.nectar.org.au)
+[01:27:40] *** Quits: Sellyme (quassel@Pony-9oec4l.nectar.org.au) (Ping timeout: 121 seconds)
+[01:28:23] *** Joins: Sellyme (quassel@Pony-9oec4l.nectar.org.au)
+[01:29:18] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[01:44:59] *** Joins: mkr (mkr@Pony-iinahj.radioyay.net)
+[02:03:27] *** Jouva_ is now known as Jouva
+[02:30:42] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[02:39:13] *** Quits: Crimson_Tail (ChaoticRift@Pony-s2d7ec.7h3b.037j.000a.2601.IP) (Quit: Oops, a kernel panic)
+[03:06:11] *** GigaWork is now known as Gigabit
+[03:32:00] *** nscoots is now known as sleepyloo
+[03:38:20] *** Quits: Fallfeathers (Fallfeather@Pony-r48e1b.internode.on.net) (Connection closed)
+[03:44:15] *** Quits: cyborg_ar (cyborgar@Pony-ebc.1pq.49.190.IP) (Client exited)
+[04:07:02] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[04:11:32] *** Joins: cyborg_ar (cyborgar@Pony-k9t.bq3.25.181.IP)
+[04:18:32] *** Quits: SpikeDragon (Spike@sorting.those.books) (Quit: Cya.)
+[04:33:07] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[04:39:11] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[04:45:57] *** Joins: SpikeDragon (Spike@sorting.those.books)
+[04:53:31] *** Joins: Ashley (Ashfire@Ashfire.bronytv.net)
+[04:54:35] *** Quits: Ashfire (Ashfire@Ashfire.bronytv.net) (Ping timeout: 121 seconds)
+[04:59:55] *** Joins: averagejoey2000 (averagejoey@Pony-m81a8n.lv.cox.net)
+[05:04:01] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[05:19:12] * JustAberrant fills fills Colgate's dreams with a large ghastly man with a vulgar voice and snow blower augers for eyes
+[05:19:55] <JustAberrant> when he opens his mouth as though to speak, only loud mechanical grinding noises are heard
+[05:20:05] *** Quits: Webster (Webster@Pony-mme.2eo.212.73.IP) (Quit: Leaving)
+[05:32:48] *** Joins: TuxRug (TuxRug@TuxRug)
+[05:40:48] *** Joins: Fallfeathers (Fallfeather@Pony-n1g9le.bigpond.net.au)
+[05:57:22] <Twilightlicious> USB Type-C?
+[05:57:49] <Twilightlicious> https://www.youtube.com/watch?v=0-J0FWWDuRg
+[05:57:50] <PinkiePieBot> [ USB Type-C: A new standard for power, data and display - 61726 views - 0:01:26 long - 1216 likes - 97.91% ]
+[05:58:15] <locodashie11> weee
+[06:11:18] <Blackjack> JustAberrant: :(
+[06:22:52] <Twilightlicious> someone bring me a drink
+[06:23:00] * Blackjack performs horrible acts of inflation on Fallfeathers as a birthday gift
+[06:23:07] <Blackjack> wait wrong buffer
+[06:23:17] <Twilightlicious> lol
+[06:24:14] <Fallfeathers> wow
+[06:24:32] <Blackjack> WRONG BUFFER OK
+[06:24:56] <Fallfeathers> wooooow
+[06:25:13] <Kinsley> How is there a right buffer for that?
+[06:25:15] <Blackjack> shhh Fallfeathers
+[06:25:18] <Blackjack> Kinsley: There is, trust me.
+[06:25:57] <Blackjack> There's a right buffer for anything if you know what to join
+[06:26:19] <Twilightlicious> i don't understand how this conversation leads to someone bringing me a drink
+[06:26:22] * Twilightlicious cracks her whip
+[06:26:50] <Fallfeathers> you need jesus
+[06:27:01] <Twilightlicious> why? does he have drinks?
+[06:27:09] <Fallfeathers> Twilightlicious: i have all this sangria
+[06:27:12] <Fallfeathers> and you can't have any
+[06:29:00] <Twilightlicious> i see how it is, making me get up and go to the other room to get a drink ._.
+[06:29:14] <Twilightlicious> When the portal to equestria opens, none of you will be allowed in
+[06:30:06] <Fallfeathers> fine by me
+[06:30:18] <Fallfeathers> they don't even have whiskey there
+[06:30:28] <Twilightlicious> They have Cider
+[06:30:33] * Blackjack provides whiskey for all... but mostly for herself
+[06:30:38] <Fallfeathers> cider is awful
+[06:30:50] <Twilightlicious> So is Whiskey
+[06:30:55] <Fallfeathers> you're awful
+[06:31:04] <Twilightlicious> I love you too
+[06:40:55] *** Joins: Phase4 (Phase4@Pony-9iav48.internode.on.net)
+[06:44:57] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[06:49:42] *** Quits: Q0 (Q0@literallyshit.net) (Ping timeout: 121 seconds)
+[07:08:17] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: *poof*)
+[07:17:05] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[07:47:57] *** ThunderBolt|Work is now known as ThunderBolt
+[07:59:55] *** Joins: Fillyfeathers (Fallfeather@Pony-n1g9le.bigpond.net.au)
+[08:02:35] *** Quits: Fallfeathers (Fallfeather@Pony-n1g9le.bigpond.net.au) (Ping timeout: 121 seconds)
+[08:27:05] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:29:18] *** Quits: Ashley (Ashfire@Ashfire.bronytv.net) (Ping timeout: 121 seconds)
+[08:29:32] *** Joins: Ashfire (Ashfire@Ashfire.bronytv.net)
+[08:35:28] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Connection closed)
+[08:44:48] *** Joins: Q0|Away (Q0@Pony-fr7drh.omsg.vl5g.0008.2601.IP)
+[08:44:54] *** Q0|Away is now known as Q0
+[08:49:37] *** Quits: sleepyloo (FreyGrimrod@Pony-7ctska.sub-70-192-34.myvzw.com) (Connection closed)
+[08:52:06] *** Quits: Fillyfeathers (Fallfeather@Pony-n1g9le.bigpond.net.au) (Connection closed)
+[08:56:13] *** Quits: TuxRug (TuxRug@TuxRug) (Quit: Leaving)
+[08:58:07] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:22:31] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[09:36:15] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[10:03:00] *** Quits: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile) (Ping timeout: 121 seconds)
+[10:05:15] *** Joins: Bit (Bit@lolpurr.net)
+[10:08:08] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[10:14:26] *** Joins: RedHelper (RedHelper@Pony-h3g.h5p.41.73.IP)
+[10:14:48] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[10:14:55] *** RedHelper is now known as Pony_19331
+[10:17:29] *** Joins: JockeTF (jocke@Pony-tipsli.cust.telenor.se)
+[11:20:34] *** Quits: cyborg_ar (cyborgar@Pony-k9t.bq3.25.181.IP) (Ping timeout: 121 seconds)
+[11:27:56] *** Q0 is now known as Q0|Away
+[12:09:31] *** Joins: cyborg_ar (cyborgar@Pony-v4l.tuj.172.190.IP)
+[12:22:35] <ShivalPonyWolf> i love this story every time it pops up
+[12:22:35] <ShivalPonyWolf> http://serverfault.com/questions/293217/our-security-auditor-is-an-idiot-how-do-i-give-him-the-information-he-wants
+[12:30:26] *** Gigabit is now known as GigaZzz
+[12:54:23] *** Quits: Pony_19331 (RedHelper@Pony-h3g.h5p.41.73.IP) (Ping timeout: 121 seconds)
+[13:07:35] *** ThunderBolt is now known as ThunderBolt|Sleeping
+[13:39:27] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[13:45:17] *** Joins: RedHelpe- (RedHelper@Pony-h3g.h5p.41.73.IP)
+[14:18:05] *** Quits: cyborg_ar (cyborgar@Pony-v4l.tuj.172.190.IP) (Connection closed)
+[14:18:43] *** Joins: cyborg_ar (cyborgar@Pony-e0v.jfn.172.190.IP)
+[14:20:57] <DataByte> "As explained, this information should be easily available on any well maintained system to any competent administrator." - what.
+[14:27:53] <cyborg_ar> lol
+[14:38:38] <Moonlightning> > I have been in this industry longer than anyone on that site
+[14:39:13] <Moonlightning> He says that if you can't provide plaintext passwords, your system in insecure
+[14:39:21] <Moonlightning> it's the OPPOSITE, idiot
+[14:39:43] <Moonlightning> Damn, all these credentialed idiots who have no idea what they're doing -.-
+[14:51:55] <DataByte> or, at least this particular one, anyway
+[14:52:12] <DataByte> i've run into that type before, actually
+[14:53:08] <DataByte> i was helping some guy set up a mc game server, he was paying me for the program and database, and another guy to do php for the site he'd made
+[14:54:01] <DataByte> this other guy told me string PK are bad and that i was bad and didn't know anything
+[14:54:39] <DataByte> guy charged $400 for adding a login/logout that saved passwords as plain text
+[14:54:48] <DataByte> took him a week
+[14:55:52] <DataByte> i got so mad when i saw what he did, i re-wrote it all in 4 hours using SHA-512 and mysqli (he'd used the deprecated mysql methods)
+[14:56:21] <DataByte> even added a nifty stats browser with pages xD
+[15:28:51] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:31:21] *** Quits: RedHelpe- (RedHelper@Pony-h3g.h5p.41.73.IP) (Ping timeout: 121 seconds)
+[15:35:19] <Moonlightning> Twilightlicious ;-;
+[15:35:40] <Moonlightning> Also: right buffer? PonyChat/#vore
+[15:45:12] <DataByte> heh.. our webpage has been hacked
+[15:45:13] <DataByte> finally
+[15:45:26] <DataByte> one of the service alerts was set to "Uploaded By AnonGhost"
+[15:45:41] <DataByte> i keep telling these people their passwords are horrible
+[15:47:14] <DataByte> i wouldn't be upset about it if the guy hadn't changed the password for the account xD
+[15:48:15] *** Quits: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (Quit: )
+[15:55:44] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[15:58:39] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[16:05:35] *** Joins: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[16:12:35] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (Connection closed)
+[16:14:21] *** Neptune is now known as Neptune|sleep
+[16:17:32] *** Joins: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[16:18:15] *** init3_1 is now known as init3
+[16:22:47] *** Quits: Bit (Bit@lolpurr.net) (Quit: et nos unum sumus)
+[16:23:23] *** Joins: Bit (Bit@lolpurr.net)
+[16:35:12] *** Joins: RedHelper (RedHelper@Pony-h3g.h5p.41.73.IP)
+[16:35:40] *** RedHelper is now known as Pony_22279
+[16:36:33] *** [A]McKey is now known as McKey
+[16:44:02] *** Quits: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[16:50:35] *** Quits: JockeTF (jocke@Pony-tipsli.cust.telenor.se) (Quit: Leaving.)
+[17:31:35] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[17:38:02] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[17:38:12] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[17:51:57] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:24:43] *** Joins: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP)
+[19:08:59] *** Joins: McKeyPL (Kordus@twilightsparkle.ovh)
+[19:08:59] -discord.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[19:09:22] *** McKeyPL is now known as McKey
+[19:14:59] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:16:56] *** Joins: JackG (JackG@Pony-taafcf.res.rr.com)
+[19:16:59] *** Quits: JackG (JackG@Pony-taafcf.res.rr.com) (Connection closed)
+[19:18:21] *** Joins: JackG (JackG@JackG)
+[19:19:35] <Compu> http://imgur.com/lflIORn
+[19:19:36] <PinkiePieBot> [ Imgur ]
+[19:23:02] <JackG> relevant http://skeptoid.com/blog/2014/11/17/stop-hating-common-core-math/
+[19:23:02] <PinkiePieBot> [ Stop Hating Common Core Math | Skeptoid ]
+[19:54:43] *** Joins: Crimson_Tail (ChaoticRift@Pony-5pj5ph.7h3b.037j.000a.2601.IP)
+[20:07:07] *** ThunderBolt|Sleeping is now known as ThunderBolt
+[20:08:25] <cyborg_ar> C-M-v t <ret> has become my favourite excel shortcut
+[21:13:47] *** Quits: Jamaic (Jamaic@Pony-8ut.pa2.49.86.IP) (Quit: Leaving)
+[21:32:00] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[21:39:44] *** Quits: cyborg_ar (cyborgar@Pony-e0v.jfn.172.190.IP) (Ping timeout: 121 seconds)
+[21:43:50] *** GigaZzz is now known as Gigabit
+[22:00:03] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[22:07:02] *** Joins: nscoots (FreyGrimrod@Pony-f7h9p9.sub-70-192-38.myvzw.com)
+[22:12:39] *** Gigabit is now known as gigaway
+[22:24:42] *** McKey is now known as [A]McKey
+[22:41:21] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[22:51:18] *** Quits: nscoots (FreyGrimrod@Pony-f7h9p9.sub-70-192-38.myvzw.com) (Ping timeout: 121 seconds)
+[22:52:53] *** Quits: Crimson_Tail (ChaoticRift@Pony-5pj5ph.7h3b.037j.000a.2601.IP) (Quit: Oops, a kernel panic)
+[22:58:30] *** Joins: cyborg_ar (cyborgar@Pony-j69.b34.168.181.IP)
+[22:59:20] *** Joins: Crimson_Tail (ChaoticRift@Pony-0v23id.7h3b.037j.000a.2601.IP)
+[23:05:43] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: The most Metal thing never.)
+[23:20:43] *** Quits: cyborg_ar (cyborgar@Pony-j69.b34.168.181.IP) (Client exited)
+[23:36:12] *** Joins: Webster (Webster@Pony-mme.2eo.212.73.IP)
+[23:51:34] *** Quits: Pony_22279 (RedHelper@Pony-h3g.h5p.41.73.IP) (Ping timeout: 121 seconds)
+[23:57:32] *** Joins: LightningCrash (lightning@property.of.moonlightning)
