@@ -1,0 +1,635 @@
+[00:01:50] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:02:13] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[00:05:58] *** Eventide is now known as Nilak
+[00:06:31] *** Nilak is now known as Eventide
+[00:07:43] *** Creeps|AFK is now known as RedHelper[NLR]
+[00:10:38] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[00:13:19] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[00:15:32] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:16:44] *** Joins: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile)
+[00:20:20] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[00:35:33] *** Joins: Asoka_White (Asoka@Pony-bpoeb6.net-htp.de)
+[00:37:28] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[00:37:52] *** Quits: Asoka (Asoka@Pony-bptvvq.net-htp.de) (Ping timeout: 121 seconds)
+[00:51:36] *** cyzon is now known as l
+[01:02:49] *** l is now known as cyzon
+[01:10:12] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:17:04] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:19:16] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[01:38:49] *** Joins: Asoka (Asoka@Pony-j7f2fe.net-htp.de)
+[01:41:11] *** Quits: Asoka_White (Asoka@Pony-bpoeb6.net-htp.de) (Ping timeout: 121 seconds)
+[01:41:45] <Moonlightning> Hmm…so HSTS.
+[01:42:29] <Moonlightning> I'm going to be linking to my site (such as it is) mostly using www.blackl.net., but I should somehow get clients to request a resource from blackl.net. too, so that they get served an HSTS header with includeSubDomains for blackl.net.
+[01:42:57] <Moonlightning> How do, particularly if things are often not HTML documents? A lot of what I link to will just be single images or plain text files.
+[01:48:25] <Sour_Sweet> Actually I'd do it the other way around. Redirect anything www to non www
+[01:48:38] <Moonlightning> Well, I can't really do that, because of the semantics of @
+[01:48:50] <Sour_Sweet> What?
+[01:49:09] <Moonlightning> `www` means /any server that provides HTTP service/
+[01:49:34] <Moonlightning> `@` means /any server that provides all of the public services/, which is going to be a subset of `www`
+[01:49:47] <Moonlightning> so, for load-balancing purposes, www should be used instead of @
+[01:50:31] <Sour_Sweet> I don't see any practical impact their. The www subdomains just makes links ugly and long
+[01:51:15] <Sour_Sweet> I don't enter the www subdomain when visiting a site anyway, so they'll need a redirect in any case.
+[01:51:39] <Moonlightning> I'm told that most modern browsers try prepending `www.`.
+[01:52:20] <Sour_Sweet> Yeah, but only if they fail to fetch a resource from the main domain. Depending on the browser they'll do other silly things as well
+[01:52:43] <Sour_Sweet> Like just trying "hostname.com" if you enter "hostname"
+[01:52:44] <Moonlightning> So, removing the `www.` from a link may or may not break it, depending on your browser. I'm okay with that.
+[01:53:20] <Sour_Sweet> Removing the www will never break a link, unless the webserver is setup in a stupid manner
+[01:53:55] <Googie> No web browser has ever been broken for URLs that don't start with www.
+[01:54:29] <Googie> Maybe something from the early 90s :V
+[01:54:35] <Sour_Sweet> If you redirect correctly you will append the query string to the new url
+[01:54:35] * Gladiolus hears the 90s
+[01:54:43] * Gladiolus earperks
+[01:55:10] <Sour_Sweet> The only thing you "might" loose is the anchor
+[01:56:25] <Moonlightning> I'm not going to be redirecting.
+[01:56:49] <Googie> You really should do redirection.
+[01:57:05] <Moonlightning> Maybe if I ever write something that involves lots of demanding requests, and then, @ -> www, because that makes for better load balancing. :P
+[01:57:07] <Moonlightning> …why?
+[01:57:12] <Sour_Sweet> Some old people like putting a www in front
+[01:57:31] <Googie> People manually typing URLs for example, yeah.
+[01:57:48] <Sour_Sweet> Also when using print I use the www to indicate a website
+[01:57:59] * Googie tends never to type "www"
+[01:58:09] * Moonlightning tends to always type it.
+[01:58:16] <Sour_Sweet> Because printing https:// looks ugly
+[01:58:20] <Moonlightning> -.-
+[01:58:32] <Moonlightning> How are you supposed to differentiate protocols, then? :V
+[01:58:37] *** Starburn is now known as Flowheart
+[01:58:48] <Sour_Sweet> You don't. People will assume it's a website
+[01:58:49] <Moonlightning> Assuming there aren't service subdomains (e.g. Wikipedia et al)
+[01:58:53] <Moonlightning> :/
+[01:59:05] <Moonlightning> HTTP is not the only application-layer protocol *rabblerabble*
+[01:59:20] <Moonlightning> I refuse to behave as if it is, or as if it somehow matters more.
+[01:59:31] <Sour_Sweet> If it's not a website nor an e-mail address use a protocol or fitting subdomain (e.g. irc.example.com)
+[02:00:09] <Moonlightning> Or, to conform to ^2, always include a scheme or service-indicating subdomain.
+[02:00:11] <Sour_Sweet> And put a webserver on that subdomain explaining to people what they did wrong when they use it in a browser
+[02:00:45] <Sour_Sweet> You can, but as you've already noticed yourself that causes problems.
+[02:00:55] <Moonlightning> I've just put address records for all the servers that serve all the services on @
+[02:01:19] <Moonlightning> But you /should/ use www, because you can get servers you can't get with @ that way.
+[02:01:24] <Moonlightning> Load balancing.
+[02:02:17] <Moonlightning> (I do need https://blackl.net/ to return a 200 with proper HSTS headers anyway, for preloading purposes; might as well just make it so that it goes to a regular webserver)
+[02:02:26] <Sour_Sweet> My mail server would allow you to connect through smtp. imap. pop3. mail. and using the root domain. But I do that just for compatibility reasons. You can mix them in any way you want and still get the service
+[02:03:14] <Moonlightning> I need like a Check-Strict-Transport-Security or something
+[02:03:24] <Moonlightning> HTTP/1.1 200 OK
+[02:03:31] <Moonlightning> Check-Strict-Transport-Security: https://blackl.net/
+[02:04:14] <Moonlightning> That would cause the client to request HEAD for https://blackl.net/ ; they'd then get the STS header from that and everything would be groovy
+[02:04:44] <Sour_Sweet> Also proper load balancing on HTTP traffic is done via load balancing through reverse proxies or anycast anyway
+[02:05:29] <Sour_Sweet> Some weird setups use redirects to mirror sites, but that's a SEO nightmare
+[02:05:32] * JustAberrant points out port numbers
+[02:05:53] <Moonlightning> Go away, JustAberrant. Nopony uses port numbers in URIs anyway.
+[02:05:59] <JustAberrant> exactly
+[02:06:18] <JustAberrant> but you can generally assume if it's on 80 or 443 it's looking for a web page
+[02:06:27] <Moonlightning> I don't need /proper/ load-balancing
+[02:06:31] <Sour_Sweet> Round robin a records are not a thing for websites useally.
+[02:06:45] <JustAberrant> indeed.. have a front end with squid or whatever
+[02:06:48] * Sour_Sweet use port 21 to run a proxy for a long time.
+[02:06:49] <JustAberrant> and back end nodes
+[02:06:50] <Moonlightning> But if everyone submitted requests for blackl.net., then no one would ever hit the webservers that don't also run IRC servers, which would defeat the purpose of having them.
+[02:07:17] <AppleDash> So Moonlightning 
+[02:07:24] <AppleDash> If you ever get email and Jabber
+[02:07:24] <Sour_Sweet> used*
+[02:07:38] <Moonlightning> yes, I'm going to have to have at least one server that runs /all/ of them. @.@
+[02:07:38] <AppleDash> Will your IDs be blackl@email.blackl.net and blackl@jabber.blackl.net ?
+[02:07:43] <Moonlightning> …oh, no.
+[02:07:51] <Moonlightning> That's what MX records are for, yeah?
+[02:07:55] <AppleDash> Because going by your www thing, they have to be.
+[02:07:55] <Sour_Sweet> AppleDash: In the later case I probably would
+[02:08:02] <Moonlightning> @ MX mail ...
+[02:08:21] <Sour_Sweet> Because people being stupid and sending emails to the jabber address
+[02:08:28] <Moonlightning> For anything that uses SRV widely, you can just use @
+[02:08:45] * JustAberrant thinks Moonlightning is being crazy again :(
+[02:08:51] <AppleDash> ^
+[02:09:07] <Moonlightning> Hay, AppleDash. Putting address records on @ was YOUR idea.
+[02:09:08] <Sour_Sweet> "again"? When did that ever change? :D
+[02:09:23] <JustAberrant> :>
+[02:09:26] <Moonlightning> //I// was going to just leave it blank.
+[02:10:12] <Moonlightning> Then //you// were all like, nooooo, people have to be able to access things by typing in just blackl.net., even without SRV support
+[02:10:23] <Moonlightning> So, here we are. You can now access any public service using blackl.net.
+[02:10:45] <AppleDash> Good
+[02:11:39] <Moonlightning> Am I the only one who thinks MX should be deprecated in favor of SRV >.>
+[02:11:49] <Moonlightning> It's really just a special case, yes? :P
+[02:13:31] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:14:52] <Ola> http://olatheskunk.pl/SAM_5869.JPG
+[02:14:58] <AppleDash> Moonlightning: Priorities
+[02:15:03] <AppleDash> and things
+[02:15:19] <AppleDash> Ola: Is that a VT terminal of some sort to the left
+[02:15:19] <Moonlightning> SRV does those, too, in the same way, doesn't it?
+[02:15:27] * Moonlightning actually looks up the MX RFC
+[02:15:43] <Ola> no
+[02:15:48] <Ola> just a small black and white crt
+[02:15:49] <AppleDash> Then what is it o.o
+[02:15:58] <AppleDash> Aww
+[02:16:08] <AppleDash> I've never seen one that small and in that shape
+[02:16:11] <Ola> ^^
+[02:16:32] * Moonlightning wonders what nk. is.
+[02:16:45] <Moonlightning> olathesku.nk.? x3
+[02:17:24] <AppleDash> Doesn't exist
+[02:17:28] <Moonlightning> Aww.
+[02:17:41] <AppleDash> and if it did, it would be North Korea :P
+[02:17:48] <Moonlightning> Anyway, SRV has /finer-grained/ priorities than MX.
+[02:18:10] <Moonlightning> So you can achieve the same thing by putting the MX priority field in the the first SRV one and setting the second one to zero
+[02:26:35] <JustAberrant> :(
+[02:26:50] * JustAberrant goes back to trying to decipher the manual for his ETS system :D
+[02:27:56] <Sour_Sweet> Mhh is there any way I can tell apache in a vhost block to just drop the connection?
+[02:29:12] <AppleDash> Install nginx :(
+[02:29:28] <Sour_Sweet> mod_security might do what I want, but I don't want to install it
+[02:30:16] <Sour_Sweet> AppleDash: I'm hosting 3rd party websites. nginx means no .htaccess and I cannot give people direct access to my config files.
+[02:31:06] <AppleDash> You could just include /var/www/somebodiessite/nginx.conf
+[02:31:11] <AppleDash> and let them modify that
+[02:31:28] * Moonlightning throws a blanket-sized red flag over AppleDash.
+[02:31:33] <AppleDash> wat
+[02:31:45] <Moonlightning> Wouldn't that let them generally mess with the webserver config?
+[02:31:56] <Sour_Sweet> Which would require them to know nginx (not too much of an issue), but also allow them to overwrite security sensitive settings
+[02:32:03] <JustAberrant> that was something I didn't like about ngnix during my brief experiment
+[02:32:07] <AppleDash> Not if it's included inside of their server { } block
+[02:32:19] *** Joins: Asoka_White (Asoka@Pony-f5ronf.net-htp.de)
+[02:32:20] <AppleDash> Then they can only modify things in their own scope
+[02:32:24] <Sour_Sweet> They could say change their php.ini path
+[02:32:30] <AppleDash> Sure
+[02:32:34] <Sour_Sweet> Or allow followsymlinks
+[02:32:38] <JustAberrant> or set their root dir to /
+[02:32:40] <Moonlightning> ^
+[02:33:03] <AppleDash> If you have PHP access, there's ALWAYS a way to read any file on the system
+[02:33:12] <Moonlightning> Ban PHP, then.
+[02:33:12] <Sour_Sweet> Nope
+[02:33:15] <AppleDash> No matter what any secure mode (forget what it's actually called) says otherwise
+[02:33:24] <Sour_Sweet> chroot is used
+[02:33:28] <Moonlightning> No PHP on the system. Uninstall everything PHP.
+[02:33:35] <Sour_Sweet> There is little chance you can escape that
+[02:33:37] <AppleDash> Then there you go, your problem with nginx is mitigated too
+[02:34:01] <Googie> This is one of those cases IMO where Apache just makes more sense.
+[02:34:12] <AppleDash> Apache never makes sense
+[02:34:18] <Sour_Sweet> Yeah, but allowing them to change their apache/nginx confs means allowing them to change their chroot path
+[02:34:24] <AppleDash> wat
+[02:34:36] <Sour_Sweet> The chroot path is in the php.ini
+[02:34:39] <AppleDash> ...
+[02:34:43] <AppleDash> It shouldn't be, but OK
+[02:34:44] <Sour_Sweet> Every user has his own
+[02:34:46] <Moonlightning> I thought you meant nginx itself was chrooted
+[02:34:53] <AppleDash> Yeah
+[02:35:04] <Moonlightning> per-site chroot paths means that nginx would have to spawn one process for each site
+[02:35:18] <Moonlightning> and somehow communicate with it to get it to read files and pass the contents along
+[02:35:22] *** Quits: Asoka (Asoka@Pony-j7f2fe.net-htp.de) (Ping timeout: 121 seconds)
+[02:35:23] <Sour_Sweet> No. Only php does that
+[02:35:41] <Moonlightning> why are you running PHP as root, and trusting it to chroot itself properly?
+[02:35:47] <Sour_Sweet> Every PHP script runs with the permission of it's owner the the UID is >1000
+[02:35:49] <Moonlightning> s/, and trusting it to chroot itself properly//
+[02:35:54] <Moonlightning> s/ as root//
+[02:36:00] <Sour_Sweet> when*
+[02:36:19] <AppleDash> s/ are you running PHP//
+[02:36:27] <Sour_Sweet> I don't. A wrapper around PHP chroots php
+[02:37:04] <Moonlightning> Mmmmm…
+[02:37:05] <Sour_Sweet> Also the php.ini contains lines that disallow the use of system() for example
+[02:37:29] <Sour_Sweet> And other things such as memory limits
+[02:37:47] <Sour_Sweet> If a user can change that file I'm screwed
+[02:38:02] <Googie> Shared hosting environments is one of the areas where nginx kinda sucks :P
+[02:38:32] <Sour_Sweet> Mass hosting providers solve that by providing a wrapper for config editing (e.g. a web panel)
+[02:38:53] <Sour_Sweet> But the last thing I want is some cPanel piece of crap on my carefully setup server
+[02:40:04] <AppleDash> I personally think shared hosting needs to go
+[02:40:20] <Sour_Sweet> You can get nginx to work in shared hosting, but not without a proper wrapper for the users
+[02:40:20] <AppleDash> You shouldn't be allowed to write a website if you don't know how to set up the server running it
+[02:41:05] <Sour_Sweet> Also still a lot of software requires .htaccess files by default for rewriting etc.
+[02:42:04] <Googie> AppleDash: You shouldn't be allowed to use a computer if you don't know how to build a CPU from TTL logic gates!
+[02:42:12] <AppleDash> Pretty much
+[02:42:32] <Googie> And you shouldn't be allowed to use TTL logic gates unless you know how to build TTL logic gates.
+[02:42:52] <Sour_Sweet> And last thing I want is to teach people I provide free hosting for how to translate their .htaccess files into a proper nginx config
+[02:42:53] <AppleDash> Honestly I think at least learning the theory behind stuff like that should be a requirement :P
+[02:43:04] <Googie> And obviously, you need to know the math and the physics behind electricity before you even touch logic gates.
+[02:43:34] <Googie> And /obviously/ don't get started on such macro scale things until you know how they work at the quantum level.
+[02:43:51] <Sour_Sweet> I would not know how to build a computer from logic gates ^^
+[02:43:57] <AppleDash> I would be all for a higher intelligence standard before you're allowed to use the Internet :P
+[02:44:00] <Googie> (I'm being sarcastic :P)
+[02:44:19] <Googie> Shared hosting has its place. I got started with it.
+[02:44:27] <Sour_Sweet> A simple feedback controlled circuit if anything (I'm aware)
+[02:44:31] <AppleDash> I, surprisingly, didn't
+[02:44:54] <AppleDash> I did start with Apache though
+[02:45:04] <Sour_Sweet> When I got started I had full admin access on a windows server a friend provided for me:D
+[02:45:11] *** Joins: Asoka (Asoka@Pony-navna7.net-htp.de)
+[02:45:11] <AppleDash> I only switched to nginx when my site started getting enough traffic that apache was a bottleneck
+[02:45:12] <Sour_Sweet> That was a bad start I can tell you
+[02:45:28] <AppleDash> Unrelated, I got bored and made a thing: https://www.youtube.com/watch?v=hpRrjwQ5V6g
+[02:45:29] <PinkiePieBot> Fallout terminal thingy - 5 views - 27s long - 0 likes - 0.00%
+[02:45:32] <AppleDash> Needs some tweaks
+[02:47:00] <Googie> Your site got enough traffic that Apache was a bottleneck ?
+[02:47:16] * Googie knows that in default configuration it's a bit heavy, but it's not /that/ bad.
+[02:47:17] * Sour_Sweet doesn't know of Princess McButt AppleDash can be bored. Still no bookmarklets on derpy.me
+[02:47:28] <Sour_Sweet> how* Silly me
+[02:47:34] *** Quits: Asoka_White (Asoka@Pony-f5ronf.net-htp.de) (Ping timeout: 121 seconds)
+[02:47:53] <AppleDash> lol
+[02:47:54] <AppleDash> Soon!
+[02:48:03] <AppleDash> I need the API first :(
+[02:48:52] <AppleDash> Googie: It was a single core box on 2.8Ghz with like 2GB of RAM at the time
+[02:49:11] <AppleDash> And handles around 1000 requests/sec at peak, or 10,000 when someone decided to DDoS it
+[02:49:16] <AppleDash> well, handled
+[02:49:34] * Googie didn't realize AppleDash ran a site which actually got decent amounts of traffic.
+[02:49:40] <AppleDash> I used to!
+[02:50:12] <AppleDash> Stopped, though, because we ended up needing better hosting but stopped being able to afford it, and moving back to the old wasn't an option
+[02:52:05] <Sour_Sweet> You're terminal doesn't appear to have the option to reset failed attempts (Which the original does). All those equestrian fakes popping up. Worse than China.
+[02:52:33] <AppleDash> :(
+[02:52:35] <Sour_Sweet> *Hehe*
+[02:52:48] *** AppleDash is now known as Princess_AppleDash
+[02:53:04] <Moonlightning> [17:40:20] < AppleDash> You shouldn't be allowed to write a website if you don't know how to set up the server running it
+[02:53:06] <Moonlightning> Heheheh. :p
+[02:53:19] <Princess_AppleDash> I did say it needed tweaking!
+[02:53:30] <Moonlightning> Googie XD
+[02:53:42] <Moonlightning> Sour_Sweet: Windows…server? What?
+[02:53:54] <Moonlightning> How do you run a /server/ with…/Windows?/
+[02:54:10] <Sour_Sweet> Yes. My very first website (which is down thankfully) ran on a windows server
+[02:54:13] <Googie> Apache has windows binaries.
+[02:54:16] <Moonlightning> I mean…maybe for gaming nights, I guess? But certainly nothing that couldn't stand being rebooted on a daily basis…
+[02:54:21] <Princess_AppleDash> Uhh
+[02:54:32] <Princess_AppleDash> there are Windows server editions and a ton of popular daemons have Windows versions
+[02:55:04] <Sour_Sweet> DayZ still doesn't have proper dedicated windows server support ^^
+[02:55:33] <Sour_Sweet> I used to frankenstein some pearl script to parse logfiles to make it work
+[02:55:47] * Googie is annoyed that Killing Floor 2 still doesn't have decent Linux dedicated server support :(
+[02:56:27] <Sour_Sweet> ... dedicated LINUX server ...*
+[02:56:37] <Princess_AppleDash> lol
+[02:57:11] <Sour_Sweet> Sometimes I should really read the stuff I write before sending
+[02:57:31] <Princess_AppleDash> It's interesting
+[02:57:44] <Princess_AppleDash> My /usr/share/dict/words doesn't contain "aardvark"
+[02:57:45] <Sour_Sweet> Wine is no option for killing floor I assume?
+[02:57:48] <Princess_AppleDash> But it does contain "sluts"
+[02:58:09] <Googie> It's an option, kinda.
+[02:58:20] <Googie> More hassle than it was worth to setup on a headless box.
+[02:58:43] <Googie> (It refuses to run without an X display server... to show a console popup)
+[02:58:59] <Sour_Sweet> YAY
+[02:59:04] <Princess_AppleDash> hah
+[02:59:07] <Moonlightning> Mine contains not only /aardvark/ and /sluts/, but /sluthood/, /slutter/, /sluttery/, /sluttikin/, /sluttish/, /sluttishly/, /sluttishness/, /slutty/, and /coverslut/
+[02:59:40] <Princess_AppleDash> lol
+[02:59:43] <Princess_AppleDash> What is a sluttikin?
+[03:00:16] <Moonlightning> …I dunno. My actual dictionary doesn't have it. :p
+[03:00:26] <Princess_AppleDash> Mine contains all of those except ikin, ishly, and ishness
+[03:00:31] <Princess_AppleDash> and aardvark of course
+[03:01:04] <Moonlightning> Mine on Gentoo has all of those, too
+[03:01:17] <Princess_AppleDash> Weird
+[03:01:25] <Princess_AppleDash> My friend's on OSX doesn't have aardvark either
+[03:01:39] <Moonlightning> Ubuntu's only has /slut/, /slut's/, /sluts/, and /sluttish/, though
+[03:01:50] <Moonlightning> though it has not only /aardvark/, but also /aardvark's/ and /aardvarks/
+[03:02:12] *** Joins: Asoka_White (Asoka@Pony-0tmskf.net-htp.de)
+[03:03:27] <Sour_Sweet> I'm thinking about switching away from Debian the next time I need to reinstall my server
+[03:04:04] <Sour_Sweet> It annoyed me recently with quite a few things (systemd not included)
+[03:04:09] <Moonlightning> I'm going to be switching to Gentoo.
+[03:04:19] <Princess_AppleDash> On a server?>
+[03:04:28] * Moonlightning headtilts.
+[03:04:29] <Moonlightning> Why not?
+[03:04:50] <Princess_AppleDash> Compiling takes a long time, and rebooting often
+[03:04:57] <Moonlightning> Rebooting often?
+[03:05:05] <Moonlightning> I never really reboot my Gentoo laptop
+[03:05:07] *** Quits: Asoka (Asoka@Pony-navna7.net-htp.de) (Ping timeout: 121 seconds)
+[03:05:07] <Princess_AppleDash> Kernel updates
+[03:05:27] <Moonlightning> Ubuntu updates the kernel often, too?
+[03:05:36] <Moonlightning> And I don't reboot for them
+[03:05:52] <Princess_AppleDash> Not as often, though
+[03:06:19] <Moonlightning> I actually don't install any of the Gentoo kernel updates, either
+[03:08:29] <Googie> Gentoo updates the kernel way more often than Ubuntu IIRC. Though you don't actually need to reboot until you actually want to upgrade the kernel.
+[03:08:39] <Princess_AppleDash> Well, of course
+[03:08:43] <Princess_AppleDash> But some things break
+[03:08:55] <Moonlightning> Some thigns break if you have a newer kernel installed than running?
+[03:08:56] <Googie> Not over a short period of time.
+[03:08:58] <Princess_AppleDash> Like I know after certain kernel updates, VirtualBox breaks until I reboot, and reloading the modules doesn't help
+[03:09:19] <Googie> Yeah, Virtualbox uses kernel modules.
+[03:09:40] <Princess_AppleDash> The fact I said "reloading the modules doesn't help" should tell you I knew that :P
+[03:10:08] <Googie> You need to recompile them for each kernel update.
+[03:11:16] <Googie> emerge @module-rebuild apparently.
+[03:12:24] <Princess_AppleDash> Yeah
+[03:12:33] <Princess_AppleDash> and the issue is that they have been recompiled for the new kernel
+[03:12:38] <Princess_AppleDash> But the old kernel is still running
+[03:14:59] <Googie> If you don't plan to upgrade the kernel yet though... don't install a new kernel and leave the old one running :P Leave all the symlinks to the currently running kernel sources.
+[03:15:40] <Moonlightning> The problem is, I never want to reboot my servers. The only reboots they get are power outages. @.@
+[03:15:43] <Moonlightning> Which I have no warning of. :P
+[03:16:13] <Moonlightning> …oh, wait, I can upgrade the kernel on my actual server just before host maintenance
+[03:17:14] <Googie> You don't /need/ to upgrade the kernel until you actually are willing to reboot in order to use it.
+[03:17:26] <Moonlightning> But I'm never willing to reboot. XP
+[03:17:56] <Googie> You have to at some point :P
+[03:18:04] <Moonlightning> Nuuuuuuuuuuuu
+[03:18:06] <Moonlightning> nevar!
+[03:18:47] <Googie> In theory you could use an LTS kernel with ksplice/kpatch/whatever the current way of handling live patches is, but I don't think Gentoo provides patches in that form.
+[03:18:58] <Sour_Sweet> I useally reboot my server 2-4 times a year. The last month is out of order due to annoying routing issues.
+[03:19:23] <Sour_Sweet> AND hardware failure
+[03:20:46] <Moonlightning> I want stable kexec :(
+[03:20:59] <Moonlightning> proper in-place kernel updates, without having to stop anything
+[03:21:28] <Googie> kexec doesn't do that IIRC.
+[03:21:50] <Googie> It's not for live patching, it's more of a "hot-reboot"
+[03:22:16] <Googie> So you'll basically have to go through the whole boot sequence again... you're just skipping the bios and device initialization.
+[03:22:32] <Moonlightning> oh what
+[03:22:47] <Moonlightning> So it's only faster than rebooting. You can't actually keep damons running across it.
+[03:22:52] <Googie> Yeah.
+[03:23:03] <Googie> What you want is kGraft/kSplice/kPatch
+[03:24:09] <wolfyshy> Top CPU Top Tip: `eselect kernel set <your currently running kernel>` will set your symlink to the current running one, and then emerge will never break.  then when you are ready to reboot, `eselect kernel set <new kernel> && emerge -av @module-rebuild`
+[03:24:31] <wolfyshy> cite: former sysadmin of 14 Gentoo servers
+[03:24:42] <Googie> Thanks wolfyshy. Didn't really know enough about Gentoo to suggest the best approach :P
+[03:25:08] <Moonlightning> That's fourteen thousand Gentoo servers!
+[03:25:09] <wolfyshy> Googie: you were right with @module-rebuild, but it's the eselect kernel business nobody knows about
+[03:25:10] <Moonlightning> *DROP*
+[03:25:27] <wolfyshy> which is sad, because eselect magick is one of the real gems of gentoo imo
+[03:25:42] * JustAberrant runs gentoo on his servers, but that's just cause I use it on the desktop and it's nice having everything the same ;p
+[03:25:45] <Princess_AppleDash> wolfyshy: Can you look at XMPP please?
+[03:25:52] <wolfyshy> sure, your highness
+[03:26:25] <Moonlightning> …not sure if sarcastic or sincere…
+[03:26:26] <Googie> All I really knew about is the good old symlink in /usr/src/linux
+[03:26:37] <Princess_AppleDash> Look at my nick
+[03:26:43] <Moonlightning> I know.
+[03:27:06] <Googie> Anyway, Moonlightning, k(something) still won't allow for full kernel upgrades, but it does allow specially prepared security patches.
+[03:27:12] <wolfyshy> Googie: yeah, eselect manages it for you and lets you pivot it around; it does the same for /usr/bin/python, /usr/bin/ruby, global EDITOR, and a few other things
+[03:27:17] <Moonlightning> ;-;
+[03:27:18] * JustAberrant prefers to just reboot
+[03:27:25] <Moonlightning> There's gotat be a way…
+[03:27:27] <JustAberrant> good idea to test init scripts and everything periodically anyway
+[03:27:40] <Googie> In theory yes, in practice, it'd be a pain to implement.
+[03:27:40] <JustAberrant> otherwise you need to 2 years down the road and nothing comes back up properly
+[03:27:51] <wolfyshy> one hilarious thing it can do is switch before all four competing implementations of 'yacc'.
+[03:28:06] <JustAberrant> if you really need high availability, you should be running a cluster and rebooting one node shouldn't cause any drama
+[03:28:17] <JustAberrant> also crm and drbd are the devil, just saying ;p
+[03:28:20] <Sour_Sweet> Or a raid drive failed, the server starts with the broken drive and your system is on a state of 6 months in the past
+[03:28:25] <wolfyshy> Moonlightning: there is!  clustering
+[03:28:31] <wolfyshy> yes, what JustAberrant said
+[03:28:47] <Sour_Sweet> And yes that actually happened and I was asked to fix it :P
+[03:28:53] <wolfyshy> that was why we had 14 servers, we only really needed 10, but 4 were hot spares we used when the others went down for updates
+[03:28:54] *** Quits: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au) (Quit: My people need me!)
+[03:30:29] <Moonlightning> JustAberrant: It's just that I keep month-long weechat scrollbacks, and seeing `disconnected from server / Moonlightning (blackl@property.of.lightningcrash) has joined $foo / Channel $foo: / Mode $foo / -$server:$foo- Replaying up to $x lines of pre-join history ... / Channel created at ...` half a dozen times on a scrollback bothers me.
+[03:30:30] <Googie> The problem is that you can't guarantee all the kernel memory structures will be the same between versions, with the same offsets and all that fun stuff. So if you wanted to do an upgrade, you'd need a spec to serialize all important data into a specific, defined format, and then the new kernel would need to read that and work from it.
+[03:31:10] * JustAberrant wonders if anyone has made a high availability IRC client
+[03:31:21] * JustAberrant wonders how the hell you'd even do that.. you'd need some switch foo for sure
+[03:31:36] <Googie> Weechat actually supports hot reloading without dropping connections.
+[03:31:37] <JustAberrant> (and of course you'd need redundant switches)
+[03:31:47] <Moonlightning> Googie: no it doesn't. :p
+[03:31:50] <Googie> Except for one really annoying limitation
+[03:31:56] * JustAberrant just imagines Moonlightning with his high availability IRC cluster
+[03:32:00] <JustAberrant> "so, it's an IRC server"
+[03:32:04] <JustAberrant> '.. nah, client.."
+[03:32:06] <Googie> GnuTLS/openSSL :V
+[03:32:34] <Googie> It only supports resuming plaintext connections because there's no way to handle TLS connections because of library limitations :(
+[03:32:40] <JustAberrant> massive stacked cisco catalyst switches with cross connect and dual control modules, redundant PSU, trunked connections
+[03:32:45] <Moonlightning> In other words, it doesn't support hot updates without dropping conncetions. :p
+[03:32:46] <JustAberrant> connecting to a set of 4 rasp pi's
+[03:32:46] <Googie> (With the exception of using a second binary to proxy them)
+[03:32:47] <JustAberrant> :D
+[03:33:30] * JustAberrant deals with this kinda bs at work btw.. it's fun but frustrating as hell sometimes
+[03:33:53] <Moonlightning> JustAberrant: four Raspberry Pis, each running an IRC server, for a grand total of seven users, including me and counting services as one user.
+[03:33:58] <Moonlightning> sounds like me
+[03:34:09] <JustAberrant> a _lot_ of applications arn't designed for this kind of stuff, and while drbd and friends do a reasonable job of making things transparent, sometimes software goes out of it's way to be finicky
+[03:34:32] <JustAberrant> the default java class loader for instance _really_ doesn't like loss of the underlying file system when it tries to load a new class definition
+[03:34:38] <JustAberrant> gets all kinds of pissy
+[03:35:05] <JustAberrant> "oh, I couldn't access the file system for like 10ms, better freeze the jvm up for about a minute or so.."
+[03:35:08] <JustAberrant> </rant>
+[03:35:59] <Princess_AppleDash> lol
+[03:43:19] *** Snoarin is now known as Gigabit
+[03:52:29] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[04:06:50] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[04:15:09] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[04:20:16] *** Sour_Sweet is now known as Seoson|BNC
+[04:22:08] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[04:22:11] *** Quits: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Connection closed)
+[04:30:06] *** Joins: Asoka (Asoka@Pony-p7e1be.net-htp.de)
+[04:32:51] *** Quits: Asoka_White (Asoka@Pony-0tmskf.net-htp.de) (Ping timeout: 121 seconds)
+[04:51:44] *** Joins: Asoka_White (Asoka@Pony-gm52fs.net-htp.de)
+[04:53:58] *** Quits: Asoka (Asoka@Pony-p7e1be.net-htp.de) (Ping timeout: 121 seconds)
+[05:08:02] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[05:19:42] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Ping timeout: 121 seconds)
+[05:23:22] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[05:32:30] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Connection closed)
+[05:39:21] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[05:49:18] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[06:02:27] *** Quits: Quindo (Quindo@Pony-8qt.17k.198.99.IP) (Ping timeout: 121 seconds)
+[06:04:57] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[06:07:08] * Moonlightning frowns.
+[06:07:09] * PinkiePieBot hugs Moonlightning
+[06:07:15] <Moonlightning> Is this going over bands it's already done before?
+[06:07:20] <Moonlightning> gah, I can't tell, lost the scrollback…
+[06:07:24] <Moonlightning> speed is too high.
+[06:09:24] <Moonlightning> …oh, yeah, this is just stuff that's partially changed.
+[06:09:36] <Moonlightning> All the new stuff is in the 800s
+[06:09:41] <Moonlightning> we're down in the 2200s
+[06:10:03] <Princess_AppleDash> Moonlightning: what?
+[06:10:20] <Moonlightning> backup rsync
+[06:11:14] <Moonlightning> netbox died, and rsync with it, so the new rsync instance is updating bands earlier in the lexicographical sort that have changed recently
+[06:12:19] <Princess_AppleDash> Why do we care?
+[06:12:50] <Moonlightning> You don't, but I'm irritated and I'm talking out loud, so shut up.
+[06:12:55] <Princess_AppleDash> no
+[06:13:48] * Moonlightning prods Stik
+[06:14:42] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:15:03] *** Joins: Asoka (Asoka@Pony-bjkhbh.net-htp.de)
+[06:16:03] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[06:17:42] *** Quits: Asoka_White (Asoka@Pony-gm52fs.net-htp.de) (Ping timeout: 121 seconds)
+[06:18:01] * Gladiolus licks a thorses
+[06:19:52] <Lapsus> http://imgur.com/gallery/zzxz87H
+[06:19:53] <PinkiePieBot> [ Found the illusive muffler bearing. (friends shop) - Imgur ]
+[06:22:01] <Moonlightning> elusive *
+[06:22:44] <Princess_AppleDash> "illusive" is also a word.
+[06:23:22] <Princess_AppleDash> "elusive" -> hard to get, "illusive" -> not real
+[06:24:30] *** Quits: Eventide (uid61788@Tips.Fedora) (Killed (NickServ (GHOST command used by Apple_Jack!AndChat2372@Oh...uh...hello...)))
+[06:25:44] <Moonlightning> …oh.
+[06:26:03] <Lapsus> not my image, but eh
+[06:32:46] <Princess_AppleDash> Moonlightning: I think I have a somewhat valid argument for using PHP
+[06:33:16] <Moonlightning> Let's hear it
+[06:34:27] <Princess_AppleDash> A lot of the time, I noticed, for a lot of small projects, PHP is just quicker, easier, and simpler than using something that's generally better, like Rails, Django, or Flask
+[06:34:57] <Princess_AppleDash> To me, a lot of framework stuff is rather unintuitive and I'd rather have an app up in 15 minutes than an app up in 2 hours, 1.5 of which was spent reading docs and debugging
+[06:39:02] <Moonlightning> No.
+[06:39:15] <Moonlightning> Easier is not always better.
+[06:39:21] <Princess_AppleDash> Note what else I said
+[06:39:25] <Princess_AppleDash> Quicker, easier, and simpler
+[06:39:35] <Moonlightning> You would be better served gaining a better understanding of Flask or whatever.
+[06:39:37] <Princess_AppleDash> Also, frameworks have a lot of magic
+[06:39:43] <Moonlightning> But, PHP. :V
+[06:39:45] <Princess_AppleDash> And behind that magic is a giant mess of hacks
+[06:39:59] <Princess_AppleDash> At least, it seems to be the case with Rails
+[06:40:14] <Princess_AppleDash> Flask is great and I use it a lot, I know mostly how to use it, but sometimes it doesn't suit my needs
+[06:41:04] <Princess_AppleDash> What if I need one endpoint that accepts an API key, validates it, pulls a little bit of data from a DB, does some processing to the data, and returns a JSON representation of the processed data
+[06:41:30] <Princess_AppleDash> That's like 50 lines of PHP that I can write in 10 or 15 minutes
+[06:41:40] <Princess_AppleDash> and I have a guarantee of it working if I test it and it works
+[06:41:46] <Princess_AppleDash> There's no magic - I can plainly see what I've done
+[06:44:04] <Moonlightning> > PHP
+[06:44:08] <Moonlightning> > can plainly see what you've done
+[06:44:32] <Princess_AppleDash> I can.
+[06:44:33] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[06:44:39] <Princess_AppleDash> It's fairly straightforward
+[06:44:51] <Princess_AppleDash> I would share you the script but it countains some sensitive-ish business logic
+[06:45:32] <Princess_AppleDash> I wrote a custom PHP site framework like... 2 years ago
+[06:45:38] <Princess_AppleDash> And I wrote about 4 large sites using it
+[06:45:51] <Princess_AppleDash> I went back to one of them last week and I could understand how it all worked as clear as the week I wrote it
+[06:46:14] <cyzon> that's called "good design".  It applies to any language
+[06:46:26] <Princess_AppleDash> I had a look at some Rails code I wrote last week, using "good design"
+[06:46:31] <Princess_AppleDash> My reaction was http://i.imgur.com/NbBNmSj.gif
+[06:46:39] <cyzon> well then obviously it was not well designed
+[06:47:04] <Princess_AppleDash> It was designed according to at least 10 "Rails best practices" documents I've read through
+[06:47:40] <cyzon> sure, PHP is easier for beginners to get started, and I don't claim to know how rails works (I've never used it) but so many people on both sides of the "is PHP shit or not" argument don't realize how much familiarity skews their perspective
+[06:48:10] <Princess_AppleDash> I mean, PHP for a lot of applications is shit, and it has a ton of WTF aspects
+[06:48:29] <Princess_AppleDash> But I've been working with both PHP and other web development languages for like... 4 years
+[06:48:43] <cyzon> people are like "PHP is so much easier than x" and it's like yeah, because you've been using PHP for years and you've only tried x once.  And then people say "x is easy!" because they've been using x for years and it's easy for them
+[07:10:03] *** Joins: Asoka_White (Asoka@Pony-q9dllu.net-htp.de)
+[07:10:19] * Princess_AppleDash shrugs
+[07:10:24] <Princess_AppleDash> I've been uing Python for years :P
+[07:10:38] <cyzon> which is not entirely a fair comparison since Python is used for a lot of not-web things
+[07:10:56] <cyzon> I'm talking about people that have been using Flask for years and then proclaim how easy it is and why would you ever use anything else
+[07:12:19] <Princess_AppleDash> I've been using Flask for at least a year, it's easy but it isn't for every use case :P
+[07:12:31] *** Quits: Asoka (Asoka@Pony-bjkhbh.net-htp.de) (Ping timeout: 121 seconds)
+[07:12:32] <cyzon> sure, and the same can be said for anything
+[07:12:56] <cyzon> I've used flask before and I thought it was nice, but since I'm not familiar with it I end up referring to the docs, which is expected
+[07:13:12] <cyzon> I'd have to do the same if I touched PHP for the first time in 6+ years
+[07:13:19] <Princess_AppleDash> True
+[07:14:05] *** Quits: Crimson_Tail (Bluepon@Pony-r1nnri.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[07:24:40] *** Joins: Eventide (uid61788@Tips.Fedora)
+[07:24:44] *** Joins: Flowey (Quindo@Pony-8qt.17k.198.99.IP)
+[07:25:13] *** Flowey is now known as Pony_87224
+[07:44:14] *** Joins: derpy (derp@muffins)
+[08:00:23] *** Gladiolus is now known as Notiolus
+[08:08:25] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[08:11:47] *** Quits: Notiolus (uid110916@the.truth.is.out.there) (Quit: )
+[08:12:28] *** Eventide is now known as Eventide|Sleepies
+[08:20:57] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[08:23:33] *** RedHelper[NLR] is now known as Creeps|AFK
+[08:35:42] *** Quits: thatdguy (WebChat@Pony-ff6ltf.abo.wanadoo.fr) (Ping timeout: 121 seconds)
+[08:48:03] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[08:50:31] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[08:50:33] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[09:00:52] *** djazz is now known as MangoBloom
+[09:05:07] *** Flowheart is now known as Starburn
+[09:08:39] *** Joins: Asoka (Asoka@Pony-bs9nu0.net-htp.de)
+[09:10:13] *** Quits: Asoka_White (Asoka@Pony-q9dllu.net-htp.de) (Ping timeout: 121 seconds)
+[09:26:34] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[09:27:48] <Moonlightning> Anypony here use Tahoe-LAFS?
+[09:55:04] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[10:01:14] *** Joins: WuBzY (WuBzY@Pony-bme4u4.dhcp.inet.fi)
+[10:17:19] *** Quits: WuBzY (WuBzY@Pony-bme4u4.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[10:22:51] <Princess_AppleDash> Moonlightning: Sounds like a candidate for use in your thingy
+[10:23:12] <Moonlightning> Right?
+[10:23:32] <Moonlightning> Besides the fact that they recommend not using disks with varying sizes. :(
+[10:23:40] <Moonlightning> sooo…nope, I guess
+[10:24:49] <Princess_AppleDash> "recommend"
+[10:24:51] <Princess_AppleDash> Not require :P
+[10:26:15] * Moonlightning reads the thing again
+[10:31:25] <Moonlightning> fuck, I can't find it
+[10:46:39] <Moonlightning> >> https://youtu.be/MWmbLpeoLZA
+[10:46:40] <PinkiePieBot> Before Airlift Drift - Official JOYRIDE Prequel - 373153 views - 2m 7s long - 355 likes - 96.47%
+[10:46:53] <Moonlightning> (For AppleDash: This link is unrelated to the previous thing.)
+[10:47:10] <Moonlightning> This was shown to me as an ad, and I was intrigued enoguh to watch it to the end.
+[10:47:19] <Moonlightning> I thought it was a movie trailer at first. xD
+[10:47:27] *** zz_CyberJacob is now known as CyberJacob
+[10:47:30] <Moonlightning> Then about halfway in I realized it was probably a car ad
+[10:49:39] *** Joins: thatdguy (WebChat@Pony-70t9ea.abo.wanadoo.fr)
+[10:54:53] *** Joins: Asoka_White (Asoka@Pony-dej1j5.net-htp.de)
+[10:57:26] *** Quits: Asoka (Asoka@Pony-bs9nu0.net-htp.de) (Ping timeout: 121 seconds)
+[11:00:51] *** Joins: Asoka (Asoka@Pony-pvev5f.net-htp.de)
+[11:02:26] *** Quits: Asoka_White (Asoka@Pony-dej1j5.net-htp.de) (Ping timeout: 121 seconds)
+[12:06:29] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[12:16:20] *** Quits: Phase (Phase4@Pony-f34100.internode.on.net) (Ping timeout: 121 seconds)
+[12:21:35] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[12:26:19] *** Quits: Pony_87224 (Quindo@Pony-8qt.17k.198.99.IP) (Ping timeout: 121 seconds)
+[12:36:40] *** Joins: Sombra (Iceman@Darkhorse21)
+[12:41:41] *** Joins: Asoka_White (Asoka@Pony-nvrr1v.net-htp.de)
+[12:44:06] *** Quits: Asoka (Asoka@Pony-pvev5f.net-htp.de) (Ping timeout: 121 seconds)
+[12:45:57] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: sleeps)
+[12:46:07] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[12:54:25] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[12:58:34] *** Joins: Asoka (Asoka@Pony-fq2g2n.net-htp.de)
+[13:00:38] *** Quits: Asoka_White (Asoka@Pony-nvrr1v.net-htp.de) (Ping timeout: 121 seconds)
+[13:07:58] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Connection closed)
+[13:09:57] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[13:15:36] *** Joins: PeakVolu1e (k9ldt@Pony-tqvh62.fios.verizon.net)
+[13:16:58] *** Quits: PeakVolume (k9ldt@Pony-mtb.f13.6.100.IP) (Ping timeout: 121 seconds)
+[13:21:09] <firestream> if anyone wants EP let me know i have a DL link
+[13:22:41] <Googie> That's actually a big problem I didn't realize about WoSign
+[13:22:43] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[13:22:48] <Googie> It seems that Apple doesn't have them in their CA store.
+[13:23:00] <Moonlightning> Wrong channel, Googie? :p
+[13:23:09] <Googie> No, it's just interesting info in general.
+[13:24:38] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[13:27:03] <Googie> Or not. Looks like it might just be older Apple stuff.
+[13:28:55] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[13:29:56] <Moonlightning> Well, WoSign isn't /new/, is it?
+[13:30:15] <Moonlightning> Because I'm on Yosemite and I don't have that cert
+[13:31:02] <Seoson|BNC> Isn't WoSign cross signed by StartCom?
+[13:31:10] *** Seoson|BNC is now known as Sour_Sweet
+[13:33:03] <Sour_Sweet> also enjoy some marketing bullshit: https://blog.namecheap.com/ssl-from-namecheap-whats-the-difference/
+[13:33:04] <PinkiePieBot> [ SSL from Namecheap: What’s the Difference? • Namecheap Blog ]
+[13:33:36] <Googie> I think so. I'm just looking into a few things.
+[13:55:45] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[14:05:19] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:11:25] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Ping timeout: 121 seconds)
+[14:39:52] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed) (Quit: .)
+[14:53:33] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[15:02:23] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[15:04:15] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[15:08:12] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[15:10:31] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[15:42:48] *** CyberJacob is now known as zz_CyberJacob
+[15:52:17] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[15:57:55] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[15:58:47] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[16:03:21] <JustAberrant> Googie: kvm? :)
+[16:04:03] * Googie blinks; not sure on the context
+[16:04:14] * JustAberrant nods
+[16:07:47] *** Joins: Asoka_White (Asoka@Pony-ejumkl.net-htp.de)
+[16:10:26] *** Quits: Asoka (Asoka@Pony-fq2g2n.net-htp.de) (Ping timeout: 121 seconds)
+[16:18:55] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[16:21:31] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[16:23:05] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:31:31] <Sour_Sweet> lol popular German websites were down earlier today (I noticed this as well) due to a power outage in a data center. How is there no redundancy? WTF?
+[16:33:16] <JustAberrant> either poor planning, or they did a risk analysis and determined that the cost of redundancy was more than the cost of estimated future downtime ?
+[16:34:07] <JustAberrant> or you mean the data center.. in which case probably just poor planning or lack of options? ;p
+[16:36:04] *** Joins: Crimson_Tail (Bluepon@Pony-fs9546.cg80.k4gu.0151.2601.IP)
+[16:37:14] <Sour_Sweet> We're talking about probably the biggest and definitely most profitable German online news plattform being affected. There should really be no cost issue.
+[16:38:13] <JustAberrant> well, depends on how much money they lost by being down
+[16:38:29] <JustAberrant> and what it would cost to have geographic redundancy
+[16:38:40] <JustAberrant> but yeah, probably just good ol` poor planning
+[16:57:54] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[17:02:14] *** Joins: Deathpony (IceChat9@Pony-6ki.g2r.54.50.IP)
+[17:02:44] *** Deathpony is now known as Pony_81903
+[17:22:16] *** Joins: Tahlorz (rattle@Pony-04f8is.ph.cox.net)
+[17:44:51] *** Eventide|Sleepies is now known as Eventide
+[18:12:48] *** Quits: Tahlorz (rattle@Pony-04f8is.ph.cox.net) (Quit: )
+[18:24:53] *** Joins: Seraph_Pony (quassel@Pony-t2f.r2b.40.50.IP)
+[19:02:16] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[19:04:14] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[19:39:28] *** Joins: Asoka (Asoka@Pony-o1j8la.net-htp.de)
+[19:42:15] *** Quits: Asoka_White (Asoka@Pony-ejumkl.net-htp.de) (Ping timeout: 121 seconds)
+[19:49:50] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-jc2.72b.58.172.IP)))
+[19:50:32] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[19:56:31] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[20:09:15] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[20:13:12] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[20:13:47] <Compu> bluh
+[20:13:52] <Compu> dumb sharp cd changer
+[20:14:01] <Compu> skips anytime someone even walks near it
+[20:21:10] <Compu> which sucks cuz it sounds great otherwise
+[20:21:57] <Compu> and the tape deck on it is awesome, sounds perfect, CD quality audio
+[20:22:50] *** Parts: Seraph_Pony (quassel@Pony-t2f.r2b.40.50.IP) ("http://quassel-irc.org - Chat comfortably. Anywhere.")
+[20:22:54] *** Octavia is now known as One-Trick
+[20:55:50] <Compu> well my moms cd player records like shit, the left audio channel wasnt recorded at all, so now i gotta record again using my dvd player and the aux input on my sharp cd player
+[21:02:01] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[21:04:43] *** Gigabit is now known as GigaTown
+[21:35:02] *** Joins: Phase (Phase4@Pony-f34100.internode.on.net)
+[21:40:39] *** Moka is now known as Eclipse
+[21:48:47] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[22:00:37] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[22:09:42] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:12:13] <wolfyshy> GigaTown: woof
+[22:12:49] <wolfyshy> GigaTown: I hold in my paws a Raspberry Pi
+[22:13:05] <wolfyshy> GigaTown: the guy at 715 had it in his truck all this time -.-
+[22:32:35] <Moonlightning> Princess_AppleDash: …and we would need more than /two ponies/ in order to run a proper Tahoe grid :P
+[22:33:10] <Princess_AppleDash> I could join!
+[22:33:23] <Moonlightning> Really? What've you got?
+[22:49:19] <Gladiolus> what the heck is a Tahoe grid
+[22:49:24] <Gladiolus> is it either a large truck or a lake?
+[22:57:37] <Moonlightning> Tahoe-LAFS
+[22:57:46] <Moonlightning> distributed filesystem
+[22:58:20] <Moonlightning> designed for confidentiality, integrity, /and/ availability
+[22:59:18] <Moonlightning> uses fancy mathematics to scatter your files such that you only need X good servers to read them.
+[23:06:38] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[23:09:50] <GigaTown> Glad to hear it wolfyshy, did he give you any problems?
+[23:10:55] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[23:12:32] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[23:20:45] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[23:24:05] <Moonlightning> https://twitter.com/duggan/status/664541126469226497
+[23:24:06] <PinkiePieBot> [ Ross Duggan on Twitter: "In Ruby, everything is an object.In Clojure, everything is a list.In Javascript, everything is a terrible mistake." ]
+[23:27:44] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:37:33] *** Quits: Pony_81903 (IceChat9@Pony-6ki.g2r.54.50.IP) (Ping timeout: 121 seconds)
+[23:39:33] *** Joins: Deathpony (IceChat9@Pony-1su.fmr.54.50.IP)
+[23:40:02] *** Deathpony is now known as Pony_48423
+[23:44:35] <Phase> https://twitter.com/duggan/status/651484657515671554
+[23:44:35] <PinkiePieBot> [ Ross Duggan on Twitter: "I love how some sort of connectivity issue I’m having makes the Surface Book site look like a doge meme http://t.co/H4GmWv9Xjf" ]
+[23:45:47] <Moonlightning> x3
+[23:46:21] <Moonlightning> Princess_AppleDash: …you /could/ join, sure. /Will/ you, though?
+[23:47:16] <Princess_AppleDash> Maybge
+[23:47:22] <Princess_AppleDash> Maybe*
+[23:47:56] <Moonlightning> ' take that as a no
+[23:50:54] *** Sakura is now known as Stimpy
+[23:52:39] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)

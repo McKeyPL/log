@@ -1,0 +1,67 @@
+[00:56:00] *** Joins: Stannum (~Robotroni@82-197-195-74.dsl.cambrium.nl)
+[01:29:41] *** Quits: shhx (~shhx@47.176.132.37.dynamic.jazztel.es) (Read error: Connection reset by peer)
+[02:00:45] *** Quits: Viech (~Viech@unvanquished/developer/viech) (Ping timeout: 264 seconds)
+[02:02:15] *** Quits: Pevel (pevel@unvanquished/developer/pevel) (Ping timeout: 260 seconds)
+[02:02:21] *** Joins: Viech (~Viech@v220120913958924899.yourvserver.net)
+[02:02:22] *** Quits: Viech (~Viech@v220120913958924899.yourvserver.net) (Changing host)
+[02:02:22] *** Joins: Viech (~Viech@unvanquished/developer/viech)
+[02:02:24] *** Quits: cu-kai (~cu-kai@unaffiliated/cu-kai) (Read error: Connection reset by peer)
+[02:02:33] *** Joins: Pevel (pevel@unvanquished/developer/pevel)
+[02:02:44] *** Joins: cu-kai (~cu-kai@unaffiliated/cu-kai)
+[03:04:04] *** Joins: ZdrytchX (~zdrytchx@27-33-98-203.static.tpgi.com.au)
+[04:15:20] *** Quits: Norfenstein (~Norfenste@tremulous/developer/Norfenstein) (Quit: Norfenstein)
+[04:32:22] *** Quits: ZdrytchX (~zdrytchx@27-33-98-203.static.tpgi.com.au) (Read error: Connection reset by peer)
+[06:07:48] *** Quits: Stannum (~Robotroni@82-197-195-74.dsl.cambrium.nl) ()
+[06:18:25] *** Quits: Who-[Soup] (~soup@p57A5139F.dip0.t-ipconnect.de) (Ping timeout: 250 seconds)
+[06:22:35] *** Joins: Who-[Soup] (~soup@p57A51292.dip0.t-ipconnect.de)
+[06:40:24] *** Quits: StalKermit (~StalKermi@unaffiliated/stalkermit) (Read error: Connection reset by peer)
+[07:06:18] *** Quits: cron1 (~cron@c-68-53-95-132.hsd1.tn.comcast.net) (Read error: Connection reset by peer)
+[07:08:02] *** Joins: cron (~cron@unaffiliated/cron)
+[07:28:46] *** Joins: cron1 (~cron@c-68-53-95-132.hsd1.tn.comcast.net)
+[07:30:25] *** Quits: cron (~cron@unaffiliated/cron) (Ping timeout: 252 seconds)
+[08:37:31] *** Joins: jackforward (~jack@p200300700D327175750D6035BB6AAF54.dip0.t-ipconnect.de)
+[08:49:59] *** Joins: ImQ009_ (~ImQ009@unaffiliated/imq009)
+[08:52:49] *** Quits: ImQ009_ (~ImQ009@unaffiliated/imq009) (Client Quit)
+[08:53:15] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[09:31:11] *** Joins: dibblego (~dibblego@haskell/developer/dibblego)
+[09:42:03] <dibblego> when I set g_humanBuildPoints in base/server.cfg it isn't used, but I can set it through /rcon, why is this?
+[10:12:35] <Undeference> might have to use a default map config to set it
+[10:14:27] <dibblego> yeah, just found that, lots of googling
+[10:16:24] <dibblego> all the different .cfg files confuse me
+[10:19:56] <Undeference> iirc the issue was lots of maps set their own built point amounts and that replaced the cvar's value, so the specified bp amount might have never been used
+[10:51:53] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Quit: Leaving)
+[10:54:47] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[11:17:14] <dibblego> given that usually there are three of us who play, is there a way to include a bot player to even it out?
+[11:57:26] *** Joins: ZdrytchX (~zdrytchx@27-33-98-203.static.tpgi.com.au)
+[12:06:32] *** Quits: Undeference (~msk@2001:470:1f07:1427:a52c:eadf:c25e:3f3f) (Quit: Leaving.)
+[12:27:40] <dGr8LookinSparky> dibblego , https://github.com/lepe/trem-gpp-bots
+[12:27:58] <dGr8LookinSparky> for a gpp server
+[12:28:12] <ZdrytchX> did he ask for a p-bot?
+[12:28:31] <dGr8LookinSparky> <dibblego> given that usually there are three of us who play, is there a way to include a bot player to even it out?
+[12:28:59] <ZdrytchX> https://github.com/cmf028/CoW-Tremulous >> best 1.1 pbot system that wasn't coded by me
+[12:29:15] <ZdrytchX> oh
+[12:29:39] <ZdrytchX> yeah GW's server is the only one i recognise that autobalances with bots
+[12:47:52] *** Quits: Nux (~Nuxular@94.197.120.116.threembb.co.uk) (Ping timeout: 250 seconds)
+[12:54:16] *** Joins: Nux (~Nuxular@94.197.120.116.threembb.co.uk)
+[13:35:48] *** Quits: Forty-3 (~kvirc@pool-71-191-219-16.washdc.fios.verizon.net) (Ping timeout: 246 seconds)
+[14:10:16] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Quit: Leaving)
+[14:12:05] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[14:34:34] *** Joins: StalKermit (~StalKermi@unaffiliated/stalkermit)
+[15:01:46] *** Joins: shhx (~shhx@47.176.132.37.dynamic.jazztel.es)
+[15:58:51] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Quit: Leaving)
+[16:05:04] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[16:38:23] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Quit: Leaving)
+[17:01:05] *** Joins: Stannum (~Robotroni@82-197-195-74.dsl.cambrium.nl)
+[17:17:48] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[17:42:08] *** Quits: ZdrytchX (~zdrytchx@27-33-98-203.static.tpgi.com.au) (Quit: 404 IIRC, IRC NOT FOUND)
+[20:56:21] *** Quits: Nux (~Nuxular@94.197.120.116.threembb.co.uk) (Ping timeout: 250 seconds)
+[21:32:51] *** Quits: jackforward (~jack@p200300700D327175750D6035BB6AAF54.dip0.t-ipconnect.de) (Quit: Ex-Chat)
+[21:45:26] *** Joins: Nux (~Nuxular@94.197.120.116.threembb.co.uk)
+[21:54:24] *** Quits: shhx (~shhx@47.176.132.37.dynamic.jazztel.es) (Ping timeout: 265 seconds)
+[22:08:10] *** Quits: cu-kai (~cu-kai@unaffiliated/cu-kai) (Ping timeout: 250 seconds)
+[22:09:18] *** Joins: cu-kai (~cu-kai@192.99.248.34)
+[22:09:18] *** Quits: cu-kai (~cu-kai@192.99.248.34) (Changing host)
+[22:09:18] *** Joins: cu-kai (~cu-kai@unaffiliated/cu-kai)
+[22:27:47] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Quit: Leaving)
+[23:14:20] *** Joins: shhx (~shhx@47.176.132.37.dynamic.jazztel.es)
+[23:32:13] *** Joins: Undeference (~msk@2001:470:1f07:1427:4d17:b7ab:bec:c1e9)

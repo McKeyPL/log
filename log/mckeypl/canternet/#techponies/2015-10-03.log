@@ -1,0 +1,1349 @@
+[00:01:00] <mniip> [01:00:52]  mniip\tor's IP is 127.0.0.1
+[00:01:08] <Colgate> congrats :P
+[00:01:31] <mniip> tsk tsk
+[00:01:33] <Colgate> that's the only effective way to cloak your IP on irc
+[00:01:39] <mniip> not scrubbing out your gateway's host
+[00:01:50] <Moonlightning> Or just disable autorejoin -.-
+[00:02:01] <Colgate> why would I care if you know that it is connecting over localhost?
+[00:02:01] <mniip> Moonlightning, not using autorejoin here
+[00:02:22] <mniip> Moonlightning, I could devhost you and you wouldn't even know it
+[00:02:25] <Moonlightning> …the tor-sasl thing registers as connecting over localhost? Wut?
+[00:02:36] <Colgate> I mean, it is a tor hidden node, you already know it is connecting over localhost
+[00:02:52] <mniip> well it could be connecting over ::1
+[00:02:55] <Moonlightning> Why doesn't it show up as a Tor relay node's IP?
+[00:02:55] * JustAberrant bounces around mniip 
+[00:02:59] <JustAberrant> DO ME DO ME DO ME!
+[00:03:00] <mniip> or... 127.13.44.102
+[00:03:07] <Colgate> because it doesn't matter?
+[00:03:36] <Colgate> Moonlightning: inspircd has no knowledge of tor
+[00:03:55] <Colgate> and writing that in would be considerable effort for no gain
+[00:04:16] <mniip> JustAberrant, well I have your IP, may I paste or should I PM
+[00:04:38] <JustAberrant> paste away 
+[00:04:40] <mniip>  50.116.20.45
+[00:04:51] <Moonlightning> mniip: without finding it, how the hell do you do that?
+[00:04:52] <JustAberrant> :>
+[00:05:15] <JustAberrant> oh.. I guess that makes sense actually
+[00:05:15] <Colgate> Moonlightning: /chanserv unban
+[00:05:21] <mniip> Moonlightning, http://i.imgur.com/iZcUNxH.gif
+[00:05:39] <Colgate> it is a known thing, that really, nobody cares about
+[00:05:48] <mniip> yeah until recently
+[00:05:53] <Moonlightning> … :I
+[00:06:03] <Colgate> if you want to hide your IP, the only effective way is to use our tor node
+[00:06:08] <Colgate> I will say that until the end of time
+[00:06:09] <mniip> over there at freenode we found a way to do it in 7 UNQUIET invocations
+[00:06:11] <mniip> and later
+[00:06:12] <mniip> in just one
+[00:06:17] <mniip> one call to chanserv
+[00:06:23] <Moonlightning> Seriously, how's it work?
+[00:06:33] <Colgate> Moonlightning: you set a whole bunch of cidr bans, then unquiet a use
+[00:06:38] <Colgate> chanserv removes the matching bans
+[00:06:46] <JustAberrant> this is actually one of the reasons I only connect to IRC via my vps
+[00:06:52] <mniip> the simplest case is a binary search
+[00:06:52] <Moonlightning> Oh.
+[00:07:03] <JustAberrant> I figure if something's gonna get DoS'd, it's not gonna be my home connection
+[00:07:06] <mniip> I implemented a binary-aligned polyary search
+[00:07:25] <mniip> for example on canternet the banlist limit is 69, so I do 69-ary search aligned to 6-bit blocks
+[00:07:35] <JustAberrant> also, very impressive :)
+[00:07:56] <Colgate> if you want to hide your IP, use tor, plain and simple :P
+[00:07:59] <mniip> it also supports IPv6!
+[00:08:14] <mniip> in a really retarded way though ::)
+[00:08:15] <JustAberrant> Colgate: personally I avoid tor, but that's me ;p
+[00:08:16] <mniip> :)
+[00:08:26] <Moonlightning> Getting a 56-bit prefix would be harder, though, wouldn't it?
+[00:09:04] <mniip> instead of :: it says 0:0:0:0:0:0:0:0
+[00:09:10] <Colgate> Moonlightning: this isn't new either, it wasn't new 1-2 years ago when some guy did a talk about it at defcon or whatever
+[00:09:31] <mniip> Colgate, I've seen that talk, it's retarded :v
+[00:09:40] <mniip> the guy knows absolutely nothing about irc \o/
+[00:10:07] <Colgate> the fact of the matter is, cidr bans are more useful than not, so removing them is a bigger annoyance than the chance of a connecting IP being leaked
+[00:10:56] * mniip\tor wonders
+[00:11:11] *** mniip\tor is now known as mniip^tor
+[00:11:14] <Moonlightning> How's the lag on the Tor gateway?
+[00:11:27] <Colgate> depends on your circuit :P
+[00:11:42] <mniip^tor> [01:11:39] * Ping reply from Moonlightning: 0.681 second(s)
+[00:11:42] <Moonlightning> best|average|worst estimates?
+[00:11:46] <Colgate> my current tor connection is getting .7s latency
+[00:11:57] <Colgate> it is usually .5-1s lag
+[00:12:16] *** mniip^tor is now known as Pony_51481
+[00:12:21] <mniip> whoa
+[00:12:23] <mniip> dude
+[00:12:34] <mniip> I broke your irc network
+[00:12:41] <Colgate> oh really? :P
+[00:12:45] <Moonlightning> No, that's just aggressive casefolding.
+[00:13:03] <Moonlightning> …wait, that would be 
+[00:13:08] <Moonlightning> '\\' and '|' though *
+[00:13:18] <mniip> I got a tilded nickname in accordance with RFC2812
+[00:13:27] <mniip> even though the server disallows tilded nicknames
+[00:13:31] <Moonlightning> o.o
+[00:13:33] *** Quits: Pony_51481 (mniip@tor.sasl.mniip) (Quit: Leaving)
+[00:13:45] <Moonlightning> …wait, you /registered/ it, or you /got/ it?
+[00:14:01] <Colgate> hmm, can confirm
+[00:14:02] *** Joins: mniip~ (mniip@Pony-o9q.v2g.219.178.IP)
+[00:14:07] <Colgate> must be an inspircd bug
+[00:14:08] <Moonlightning> O.O
+[00:14:21] <mniip> holdonholdon
+[00:14:26] *** Parts: mniip~ (mniip@Pony-o9q.v2g.219.178.IP) ("Leaving")
+[00:14:28] <Moonlightning> No don't do it in front D:
+[00:14:38] <Colgate> mniip: can you message me the steps in query for that?
+[00:14:52] <Moonlightning> …post 'em here; I wanna know too >.>
+[00:14:52] *** Joins: ~mniip (mniip@Pony-o9q.v2g.219.178.IP)
+[00:14:56] <Moonlightning> AUGH
+[00:14:58] <AppleDash> lol
+[00:15:15] <Moonlightning> …hmm, wait a sec…
+[00:15:24] <Moonlightning> But that's impossible.
+[00:15:46] <Moonlightning> …ohp, nope, weechat isn't handling it as well as I thought
+[00:15:51] <Moonlightning> I can't tabcomplete you. :c
+[00:16:02] <Moonlightning> Say something, though, ~mniip?
+[00:16:04] <~mniip> moo
+[00:16:15] <Moonlightning> Yeah, the tilde registers as part of your nick
+[00:16:16] <JustAberrant> :)
+[00:16:18] <Moonlightning> Not as a prefix.
+[00:16:35] <Moonlightning> I guess that'd be different if I joined a channel you were already in
+[00:16:35] <mniip> but
+[00:16:37] <mniip> if you cycle
+[00:16:48] <mniip> will you see me as whateverstatusmodeitis
+[00:16:49] <Moonlightning> …or maybe it wouldn't! Because it's sent as part of your nick!
+[00:16:52] *** Parts: AppleDash (appled@dusks.adorable.pet.pegasus) ("Leaving")
+[00:16:52] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[00:16:55] <JustAberrant> mniip: yeah
+[00:16:56] <AppleDash> nope
+[00:16:58] <AppleDash> you're not owner
+[00:17:01] <Moonlightning> :D
+[00:17:06] <mniip> :(
+[00:17:07] <JustAberrant> I don't see the tild in PRIVMSG's
+[00:17:10] <JustAberrant> only the join/part
+[00:17:11] <Moonlightning> AppleDash, you use weechat, right?
+[00:17:12] <JustAberrant> neat
+[00:17:16] <AppleDash> yes
+[00:17:17] <~mniip> my evil plan is foiled
+[00:17:19] <~mniip> again
+[00:18:07] <JustAberrant> nor in the NAMES reply
+[00:18:26] *** Parts: mniip (mniip@Pony-o9q.v2g.219.178.IP) ()
+[00:18:26] *** Joins: mniip (mniip@Pony-o9q.v2g.219.178.IP)
+[00:18:29] <~mniip> moo
+[00:18:36] <JustAberrant> bah ;p
+[00:18:44] *** Parts: mniip (mniip@Pony-o9q.v2g.219.178.IP) ()
+[00:18:44] *** Joins: mniip (mniip@Pony-o9q.v2g.219.178.IP)
+[00:18:48] <Moonlightning> Is it as simple as `/nick ^mniip` `/nick ~mniip`, or what?
+[00:18:59] <JustAberrant> hang on
+[00:19:26] <mniip> oh look
+[00:19:36] <Moonlightning> And if you can do that…can you `/nick _mniip` `/nick \x7fmniip`? :O
+[00:19:48] <mniip> http://i.imgur.com/YTOhvLC.png
+[00:19:48] <Colgate> mniip: see if it works now
+[00:20:04] <787ALQBUC> moo
+[00:20:05] <Colgate> I want to see if my thing to block it worked
+[00:20:12] <mniip> I think you broke my irc client instead :v
+[00:20:17] <Colgate> lol
+[00:20:21] *** Parts: mniip (mniip@Pony-o9q.v2g.219.178.IP) ()
+[00:20:21] *** Joins: mniip (mniip@Pony-o9q.v2g.219.178.IP)
+[00:21:02] <Colgate> hmm, I see
+[00:21:22] <mniip> this is...
+[00:21:27] <mniip> an interesting vector for impersonation
+[00:21:38] <Moonlightning> Do it in Daily :D
+[00:21:51] <Colgate> please don't :P
+[00:22:02] <mniip> Moonlightning, he said please /shrug
+[00:22:02] * Moonlightning is now known as ~Lapsus
+[00:22:20] <Moonlightning> mniip: pretty please do? :3
+[00:22:27] <mniip> ಠ_ಠ
+[00:22:29] * Moonlightning dangles a cherry in front of mniip
+[00:22:42] <mniip> ಠ.ಠ
+[00:23:51] <Lapsus> mniip: be me? :v
+[00:24:28] <Lapsus> also apparently mirc is sorting you to the bottom of the nicklist
+[00:24:38] <Moonlightning> lexicographical sort
+[00:24:46] <~mniip> I think Colgate just patched it
+[00:24:49] *** Parts: Lapsus (Lapsus@i-forget.ca) ()
+[00:24:49] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[00:24:49] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[00:24:52] *** CyberJacob is now known as zz_CyberJacob
+[00:24:52] <Colgate> I did not
+[00:24:56] <~mniip> oh wait
+[00:25:03] <Lapsus> and now you're at the top as expected
+[00:25:07] <~mniip> that's just me being silly
+[00:25:08] <Lapsus> wait a sec
+[00:25:21] *** Lapsus sets mode: +q ~mniip
+[00:25:24] <Colgate> working on patching it though, just looking up the right function to call in atheme
+[00:25:31] <Moonlightning> Say something mniip :o
+[00:25:38] <mniip> moo
+[00:25:40] <Lapsus> aw
+[00:25:41] <Moonlightning> I mean, ~mniip
+[00:25:44] *** Joins: RazorSharpFang (chatzilla@sharpest.of.all.fangs)
+[00:25:44] <~mniip> moo
+[00:25:48] <Moonlightning> :D
+[00:25:48] *** Lapsus sets mode: -q ~mniip
+[00:25:48] *** Parts: AppleDash (appled@dusks.adorable.pet.pegasus) ("Leaving")
+[00:25:49] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[00:25:54] <Moonlightning> As long as I don't leave the channel, I'm /okay!/
+[00:26:02] <~mniip> also now I can become lapsus :D
+[00:26:05] <AppleDash> You're OK even if you do leave
+[00:26:06] <RazorSharpFang> Heya mniip 
+[00:26:12] <Moonlightning> The first ~ registers as teh prefix, the second one as part of your nick
+[00:26:25] <Moonlightning> …ohhh…what the hay, I'll try it.
+[00:26:28] *** Parts: Moonlightning (blackl@property.of.lightningcrash) ()
+[00:26:28] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[00:26:36] <Lapsus> mniip: be ~Lapsus so we can see how confused it will get?
+[00:26:42] <Moonlightning> …uh
+[00:26:49] <Moonlightning> You're not showing up in the nicklist
+[00:26:57] <~Lapsus> :o Lapsus is impersonating me
+[00:27:04] <Lapsus> oh noe
+[00:27:05] <~Lapsus> I'm the real lapsus
+[00:27:06] <Moonlightning> WOOOO
+[00:27:11] <Lapsus> no I'm spartacus
+[00:27:26] <Lapsus> this is weird
+[00:27:29] <ShivalWolf> 08:27:06 < ~Lapsus> I'm the real lapsus
+[00:27:29] <ShivalWolf> 08:27:11 <~Lapsus> no I'm spartacus
+[00:27:32] <Moonlightning> The The best part is, my logs handle it perfectly too :D
+[00:27:32] <ShivalWolf> irssi sees the space
+[00:27:46] <~Lapsus> ShivalWolf, try cycling
+[00:27:52] <Lapsus> mirc has no idea what the fuck
+[00:27:54] *** Parts: Lapsus (Lapsus@i-forget.ca) ()
+[00:27:54] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[00:27:54] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[00:27:57] <Moonlightning> The prefix is a space for fake ~Lapsus
+[00:28:13] <Lapsus> yeah, other me, you don't show up in the channel at all
+[00:28:15] <Moonlightning> The only thing is that you don't show up in the nicklist once I cycle
+[00:28:16] <Lapsus> :3
+[00:28:19] *** Parts: ShivalWolf (ShivalWolf@BigMac.is.a.Coltcuddler.org) ()
+[00:28:23] *** Joins: ShivalWolf (ShivalWolf@BigMac.is.a.Coltcuddler.org)
+[00:28:32] <~Lapsus> moo
+[00:28:37] <ShivalWolf> still sees the space
+[00:28:38] <Lapsus> oom
+[00:28:40] <RazorSharpFang> I don't get it
+[00:28:42] <Moonlightning> See…this is why we need integrated registrations :V
+[00:28:43] <~Lapsus> ShivalWolf, but in the nicklist
+[00:29:00] <ShivalWolf> people use the nick list?
+[00:29:04] <~Lapsus> it should be indistinguishable from Lapsus thanks to the irc standard
+[00:29:06] <Lapsus> RazorSharpFang: Mniip is pretending to be me
+[00:29:09] <Lapsus> and I'm also me
+[00:29:22] <Lapsus> also every time he speaks it hilights me
+[00:29:25] <~Lapsus> RazorSharpFang, hacking tilde signs into nickname
+[00:29:27] <~Lapsus> s
+[00:29:37] <~Lapsus> [01:29:22] <Lapsus> also every time he speaks it hilights me
+[00:29:38] <Moonlightning> Can you hack in backspaces? o3o
+[00:29:39] <~Lapsus> ahahahah
+[00:29:49] <RazorSharpFang> XD
+[00:29:49] <Moonlightning> GAISE try to hack in a backspace
+[00:30:06] <Moonlightning> Or an @ o3o
+[00:30:08] <mniip> nope
+[00:30:09] <Lapsus> lol put a carriage return in there
+[00:30:10] <Moonlightning> Or all three!
+[00:30:12] <mniip> tilde is the only character
+[00:30:19] <Moonlightning> Awwww.
+[00:30:21] <Moonlightning> No ats?
+[00:30:27] <mniip> it's a really weird coincidence
+[00:30:51] <AppleDash> I have nick colors
+[00:30:58] <Lapsus> hm
+[00:31:04] <AppleDash> ~Lapsus is light green, Lapsus is dark green with a red ~
+[00:31:04] * Moonlightning boops wolfyshy. :P
+[00:31:05] <ShivalWolf> Lapsus: i never really use the /names list i generaly /who the channel instead
+[00:31:09] *** Lapsus sets mode: +o ~Lapsus
+[00:31:14] <ShivalWolf> and both show up seperatly
+[00:31:23] <wolfyshy> hi
+[00:31:25] <wolfyshy> woof
+[00:31:31] <ShivalWolf> but it is amusing how it treats it
+[00:31:33] <~Lapsus> moo
+[00:31:36] <Lapsus> aw
+[00:31:47] <ShivalWolf> the name list only shows you once
+[00:31:50] *** Lapsus sets mode: -o ~Lapsus
+[00:31:52] <~Lapsus> :(
+[00:31:56] <Lapsus> :D
+[00:32:20] <~Lapsus> if only I had found my takeover script faster
+[00:32:22] <wolfyshy> what's going on
+[00:32:34] <Lapsus> wolfyshy: only one of me is real
+[00:32:54] <~Lapsus> hey its me ur brother
+[00:33:14] <wolfyshy> how'd you manage that?
+[00:33:28] <Lapsus> mniip is hax
+[00:33:53] <~Lapsus> I have a tendency to abuse all kinds of edge cases :v
+[00:34:26] <~Lapsus> I got a bug fixed in charbdis recently, that allowed leaking of some bits in the stackspace through cidr bans
+[00:34:50] <Moonlightning> wolfyshy: something about abusing services to get a tilded nick
+[00:34:54] <Moonlightning> hence why we need woofircd
+[00:34:57] <Colgate> ^mniip: try now
+[00:34:58] <^mniip> moo, because nickname changes are probably broken in everyone's client
+[00:35:05] <Lapsus> ohhey
+[00:35:17] <Moonlightning> wait when did ^mniip happen? O.o
+[00:35:34] <Moonlightning> That one just appeared out of nowhere D:
+[00:35:38] <mniip^moo> [01:35:35] -NickServ- That is not a valid nick.
+[00:35:41] <Colgate> :)
+[00:35:42] <mniip^moo> \o/
+[00:35:42] <AppleDash> ^mniip ~Lapsus and ~mniip are all in my nicklist now
+[00:35:51] <Lapsus> aaaa
+[00:35:59] <Colgate> thanks, I will do a request for this upstream and give you credit
+[00:36:22] <wolfyshy> AppleDash: I'm not seeing it here.
+[00:36:30] <AppleDash> wolfyshy: ?
+[00:36:32] <AppleDash> Oh
+[00:36:36] <wolfyshy> there are no dups in my nicklist
+[00:36:37] <Moonlightning> wolfyshy: you should make a channel, so I can join and lurk and nitpick and inject my opinions into everything
+[00:36:37] <AppleDash> I saw that as "saying"
+[00:36:59] <wolfyshy> AppleDash: should I
+[00:37:08] <Moonlightning> As opposde to repeatedly bothering you in other channels for news :D
+[00:37:29] * RazorSharpFang shivers
+[00:37:33] <AppleDash> wolfyshy: no
+[00:37:38] <wolfyshy> well first of all, after some ugly debates on freenode/#ircv3 I kind of gave up
+[00:37:56] <wolfyshy> but apparently there has been a mass exodus in the past week
+[00:38:13] <Moonlightning> AppleDash: …she should what?
+[00:38:15] * Moonlightning missed something
+[00:38:18] <wolfyshy> the ratbox people removed all their ircv3 extensions because they're fed up with the drama too
+[00:38:31] <AppleDash> I am really, really confused
+[00:38:33] <mniip> drama?
+[00:38:39] * Moonlightning groans.
+[00:38:42] <AppleDash> Moonlightning: When did I say that anyone should anything?
+[00:38:43] <mniip> there's drama in ircv3?
+[00:38:47] <wolfyshy> lol
+[00:38:52] <Moonlightning> This sounds like politics preventing progress >:(
+[00:38:56] * mniip <- drama expert
+[00:39:01] <wolfyshy> that is exactly what it is Moonlightning 
+[00:39:12] <Moonlightning> drama shouldn't stop IRCv3 from happening!
+[00:39:18] <Moonlightning> v3 will bring with it so much good stuff!
+[00:39:25] <Moonlightning> sasl and echo-message and server-time and multi-prefix
+[00:39:33] <mniip> let's get rid of PRIVMSG
+[00:39:34] <Moonlightning> I needs this ;-;
+[00:39:56] * Moonlightning says fuck it all, implements everything as @blackl.net capabilities.
+[00:40:16] <Moonlightning> …actually! I wonder how hard echo-message and server-time are to implement.
+[00:40:21] <Moonlightning> They can't be THAT tricky, can they? >.>
+[00:40:36] <mniip> server-time already exists, no?
+[00:40:37] <wolfyshy> echo-message is already in inspircd
+[00:41:06] <Moonlightning> Okay, what about server-time?
+[00:41:10] * Moonlightning should probably update his installation.
+[00:41:22] <wolfyshy> https://github.com/inspircd/inspircd-extras/blob/master/2.0/m_replaymsg.cpp
+[00:41:23] <PinkiePieBot> [ inspircd-extras/m_replaymsg.cpp at master · inspircd/inspircd-extras · GitHub ]
+[00:41:28] <wolfyshy> extras for 2.0, core for 2.2
+[00:42:20] <wolfyshy> Moonlightning: there are two people that need to leave ircv3 for me to go back to it.
+[00:42:57] <Moonlightning> wolfyshy: but I don't see the link between woofircd and IRCv3 and Freenode/#ircv3 D:
+[00:43:02] <mniip> Colgate, what's your github handle :o
+[00:43:11] <Colgate> killerrabbit008
+[00:43:29] <mniip> bless you
+[00:43:34] <Colgate> I don't use it much, coding is just a hobby for me :P
+[00:43:49] <mniip> in case you were serious that's not a real handle
+[00:44:01] <Colgate> what?
+[00:44:05] <wolfyshy> Moonlightning: my publicly-stated goal was to become the IRCv3 reference implementation.
+[00:44:08] <Colgate> that's definitely my github username
+[00:44:21] <Colgate> should be part of the canternet organization on there
+[00:44:23] <Colgate> :P
+[00:44:39] <mniip> > This organization has no public members. You must be a member to see who’s a part of this organization.
+[00:44:48] <Moonlightning> wolfyshy: and you're dropping that because of drama? D:
+[00:45:24] <wolfyshy> Moonlightning: can I PM
+[00:45:30] <Moonlightning> Sure.
+[00:45:38] * Moonlightning isn't one of those that requires permission to PM
+[00:45:47] <Moonlightning> Canternet in general doesn't seem to do that, actually
+[00:45:56] <mniip> From a6974833a10aa7afc17098d352730f1a8576cd45 Mon Sep 17 00:00:00 2001
+[00:45:56] <mniip> From: Colgate Minuette <Colgate@canternet.org>
+[00:45:56] <mniip> Date: Fri, 15 May 2015 11:41:07 -0700
+[00:46:04] <mniip> no github handle associated with that address though
+[00:47:12] <Colgate> there is not
+[00:47:43] <Colgate> I don't remember what email account my github is registered to honestly
+[00:48:48] <Sour_Sweet> killerrabbit008@gmail.com ?
+[00:49:19] <Sour_Sweet> https://github.com/killerrabbit/
+[00:49:20] <PinkiePieBot> [ killerrabbit · GitHub ]
+[00:49:37] <Colgate> probably
+[00:49:44] <mniip> yeah you can link multiple email addresses to one account
+[00:49:48] <Colgate> oh, is it just killerrabbit?
+[00:49:52] <Colgate> eh, whatever
+[00:49:57] <Colgate> shows how often I use it :P
+[00:50:04] <mniip> I have 4 linked
+[00:58:50] <RazorSharpFang> Urhfhgh
+[00:59:19] <RazorSharpFang> Someone just used the x-coordinate of an object as the input to a function which takes the argument as a direction. Please no...
+[01:02:23] <Sour_Sweet> Oh I've seen worse fails. Ask the guys generating certs for embedded devices up on first launch with zero entropy, not even the freaking time.
+[01:03:15] <mniip> identical certs :o
+[01:03:21] <Moonlightning> the hell?
+[01:03:27] <Moonlightning> How do you even generate a keypair with no entropy?
+[01:03:31] <Moonlightning> Do you have like all zeroes or what?
+[01:03:38] <Colgate> easy really
+[01:03:41] <Colgate> just not secure
+[01:03:43] <Colgate> ;)
+[01:04:28] <RazorSharpFang> IE may be slow, but it's there for you wherever you go. As long as you're using windows.
+[01:04:35] <mniip> Moonlightning, here's a stream of random numbers: iterate ((`mod` 0x10000) . (+ 12967) . (* 41219)) 1
+[01:04:55] <Sour_Sweet> Set the systime to 01.01.1970, use /dev/random instead of /dev/urandom on indetical setups - easy
+[01:06:05] <Moonlightning> mniip: where . is bitwise concatenation?
+[01:06:13] <mniip> function composition
+[01:07:02] <Sour_Sweet> I mean hey nobody is perfect, but you should know the basics if you're doing something like that. ask the guys from Jeep. Their key generation was flawed as well
+[01:09:34] <Sour_Sweet> If I setup something silly I know at least about it and keep it's relevance low (e.g. my mailserver using unsalted md5 hashes, but only storing uniquely randomly generated passwords)
+[01:15:43] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[01:29:48] *** Sour_Sweet is now known as Seoson|BNC
+[01:35:53] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:01:45] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[02:06:42] <RazorSharpFang>  // This global static class is for storing global game constants, because I am lazy.
+[02:24:26] <RazorSharpFang> AHA! IT WORKS!!
+[02:27:29] <RazorSharpFang> Okay, never mind. That's NOT the desired behaviour
+[02:28:20] <RazorSharpFang> Is anypony here running linux?
+[02:28:34] <tiwake> most are, yeah
+[02:29:03] <RazorSharpFang> Would you care to test the linux build of my game? I'm noticing weird bahaviour that I want to know if it can be duplicated by others.
+[02:29:25] <RazorSharpFang> Would you prefer a *.deb or a *.zip ?
+[02:30:06] <tiwake> .deb is a zip I thought
+[02:30:21] <Moonlightning> Nawww. Tarball, right?
+[02:30:23] <tiwake> or am I thinking of .jar
+[02:30:29] <tiwake> .jar is zip
+[02:30:32] <Moonlightning> Yeah.
+[02:30:33] <RazorSharpFang> tiwake: Maybe both.
+[02:31:07] <RazorSharpFang> Or would you prefer a *.tar.gz ?
+[02:36:12] <RazorSharpFang> Uploading...
+[02:37:43] <RazorSharpFang> http://razorsharpfang.com/games/Project2DTankFighter.zip - there we go. You'll have to grant execute permissions to 'runner' and do ./runner XD
+[02:37:58] *** init3 is now known as Init3-away
+[02:38:50] <RazorSharpFang> I'm getting odd behavior when you resize the game-window.
+[02:38:58] <RazorSharpFang> It kinda... goes slowly.
+[02:39:44] <RazorSharpFang> (WASD to move, F4 to fullscreen)
+[02:43:47] <JustAberrant> gamemaker :O
+[02:43:54] <RazorSharpFang> Yeah. That's a thing.
+[02:44:04] <RazorSharpFang> It's amazing for fast prototyping.
+[02:44:12] * RazorSharpFang prototypes all the things
+[02:44:25] <JustAberrant> I see
+[02:45:34] <RazorSharpFang> JustAberrant: Is it working?
+[02:45:43] <JustAberrant> dunno, I didn't run it
+[02:45:57] <RazorSharpFang> How did you know it was GM then?
+[02:46:00] <JustAberrant> hexdumped the binary
+[02:46:04] <RazorSharpFang> .
+[02:46:23] <JustAberrant> as a general rule I don't run binaries
+[02:46:31] <JustAberrant> well, unless the source is available
+[02:46:38] <RazorSharpFang> JustAberrant: Could you run it? I'm trying to debug an issue. : /
+[02:46:41] <JustAberrant> (obviously I occasionally run a binary) ;p
+[02:46:47] <RazorSharpFang> Resizing the display causes a weird issue.
+[02:46:59] <RazorSharpFang> It adjusts the viewwindow VERY slowly.
+[02:47:07] <RazorSharpFang> This does NOT happen on windows.
+[02:48:30] <JustAberrant> arg@lyra ~/tmp/Project2DTankFighter/Project2DTankFighter $ ldd runner | grep -e "not found" | wc -l
+[02:48:31] <JustAberrant> 7
+[02:48:33] <JustAberrant> ^ nope ;p
+[02:48:58] <RazorSharpFang> I don't know what that is. : /
+[02:49:19] <JustAberrant> means even if I did run it, it won't work because it requires 7 libraries I don't have installed
+[02:49:36] <RazorSharpFang> Oh. Which libraries are those?
+[02:49:44] <RazorSharpFang> probably openAL and something else
+[02:49:58] <RazorSharpFang> (It uses the 32-bit ones specifically)
+[02:50:26] <Moonlightning> [17:37:43] < RazorSharpFang> http://razorsharpfang.com/games/Project2DTankFighter.zip - there we go. You'll have to grant execute permissions to 'runner' and do ./runner XD
+[02:50:38] <Moonlightning> You're talking to #techponies . I think we know how to binaries.
+[02:50:52] <RazorSharpFang> XD
+[02:51:07] <JustAberrant> openal crypto xrandr glu ssl xau xdmcp ..
+[02:51:21] <Moonlightning> libssl?
+[02:51:36] <JustAberrant> it's looking for a 32 bit version like RazorSharpFang said
+[02:51:38] <Moonlightning> Just…libssl. Not libopenssl or libgnutls? >.>
+[02:51:50] <JustAberrant> libssl.so.1.0.0 => not found
+[02:51:51] <JustAberrant> ;p
+[02:52:16] *** Joins: Asoka (Asoka@Pony-ofue0n.net-htp.de)
+[02:55:26] *** Quits: Asoka_White (Asoka@Pony-oat1i0.net-htp.de) (Ping timeout: 121 seconds)
+[03:00:08] <RazorSharpFang> JustAberrant: Would you test a html5 version then? (Run in the browser)
+[03:00:30] <JustAberrant> possibly, though if it needs opengl it probably won't work either as I don't have webgl
+[03:00:44] <RazorSharpFang> It'll prefer webgl, but fall back to canvas2D
+[03:01:01] * Moonlightning makes RazorSharpFang a canvas3D :o
+[03:01:03] <JustAberrant> worth a try I guess ;p
+[03:01:13] <RazorSharpFang> http://razorsharpfang.com/games/Project2DTankFighter/ - Thar you go
+[03:01:15] <PinkiePieBot> [ Created with GameMaker: Studio ]
+[03:01:25] <RazorSharpFang> Thanks, PinkiePieBot 
+[03:01:25] <PinkiePieBot> I'm always there for my friends.
+[03:01:44] <JustAberrant> well.. it runs
+[03:01:51] <RazorSharpFang> Try resizing the browser, it should accomodate your changes.
+[03:02:06] * Moonlightning resizes RazorSharpFang's browser
+[03:02:08] <RazorSharpFang> It'll try to keep 1280x720 worth of in-game pixels viewable
+[03:02:26] <JustAberrant> hmm
+[03:02:35] <RazorSharpFang> This way, people with a 1920x1080 screen won't see MORE of the world than those who have a 800x600 display
+[03:02:47] <RazorSharpFang> They'll just get better fidelity.
+[03:02:53] <RazorSharpFang> (WASD to move, btw)
+[03:04:06] <JustAberrant> sec
+[03:05:20] <JustAberrant> http://justaberrant.com/images/misc/game_thing/
+[03:05:20] <PinkiePieBot> [ Index of /images/misc/game_thing ]
+[03:05:32] <JustAberrant> also it definitely slows down as it gets bigger
+[03:06:03] *** Init3-away is now known as init3
+[03:06:22] <RazorSharpFang> Yeah, that's cos canvas2D.
+[03:06:30] <RazorSharpFang> WebGL doesn't suffer that much from it.
+[03:06:57] <JustAberrant> either way, I think your game needs more character focus, just saying
+[03:07:09] <JustAberrant> I mean, we don't need to know the blue rectangles life story
+[03:07:14] <JustAberrant> but we should at least care about it
+[03:07:28] <Moonlightning> Call me Square.
+[03:07:31] <Moonlightning> Arthur Square.
+[03:07:31] <RazorSharpFang> JustAberrant: In what way? Should it be zoomed in more? Should it center on the rectangle?
+[03:07:51] <RazorSharpFang> Also, that's a tank. It's just... placeholder art.
+[03:07:53] <JustAberrant> I meant more from a story perspective
+[03:08:12] <Moonlightning> Call me Tank.
+[03:08:15] <Moonlightning> Arthur Tank.
+[03:08:18] <RazorSharpFang> This isn't a story driven game. It's an top-down arcade shooter.
+[03:08:33] <JustAberrant> fair enough I guess :(
+[03:08:46] <RazorSharpFang> Were you hoping for a story-driven game?
+[03:08:51] <Moonlightning> Who am I? That's not important. What /is/ important is the tanks over there, about to start firing at you…
+[03:10:23] <JustAberrant> RazorSharpFang: I'm more or less just being an asshole ;p
+[03:10:56] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (Ping timeout: 241 seconds)
+[03:12:39] <RazorSharpFang> I've found that diagonal movement /feels/ too slow, even though that speed is technically correct. I'm going to use 0.8 instead of 0.707 (sqrt(2)/2).
+[03:13:24] <Moonlightning> But that will mean you can go faster by going diagonally.
+[03:13:32] <RazorSharpFang> Yeah.
+[03:13:43] <JustAberrant> serious critique: the game arena feels kinda small relative to the size of the rectangle
+[03:14:08] <RazorSharpFang> JustAberrant: The brown blocks are just collision testers. This entire room is placeholder.
+[03:14:27] <RazorSharpFang> Oh, do you mean the display/view window itself?
+[03:14:39] <RazorSharpFang> Should the game be more zoomed in?
+[03:14:55] * JustAberrant has no opinion
+[03:15:07] <JustAberrant> though it does look kinda silly occupying a small corner of my browser
+[03:15:13] <RazorSharpFang> But you just... : /
+[03:15:34] <RazorSharpFang> It's not going to look like that when the level's done.
+[03:16:23] <RazorSharpFang> Also, what browser JustAberrant ?
+[03:16:31] <JustAberrant> palemoon
+[03:16:41] <RazorSharpFang> I haven't even heard of that one.
+[03:16:51] *** Joins: MistVeil (AndChat3408@Pony-5tf.05d.210.187.IP)
+[03:16:58] <JustAberrant> it's nifty.. it's basically firefox with the shit removed
+[03:17:51] <Moonlightning> [ Results for search key : palemoon ]
+[03:17:51] <Moonlightning> [ Applications found : 0 ]
+[03:17:54] <Moonlightning> :(
+[03:18:05] *** Quits: MistVeil (AndChat3408@Pony-5tf.05d.210.187.IP) (Quit: Bye)
+[03:18:06] * JustAberrant uses an overlay in gentoo
+[03:18:20] <JustAberrant> the future of it isn't too certain.. but for now, it's kinda awesome
+[03:18:20] * Moonlightning finds out about overlays already.
+[03:18:45] <Moonlightning> What shit does Firefox have that needs to be removed? o.o
+[03:19:03] <RazorSharpFang> JustAberrant: I'll probably make the game a tad more zoomed in, but that's for later.
+[03:19:26] <Moonlightning> Oh, so they're like PPAs. Kinda.
+[03:19:33] <Moonlightning> Basically.
+[03:20:20] <JustAberrant> Moonlightning: accessibility features, parental controls, web rtc, the pdf reader, the social api, tab groups/panorama, and the new UI engine
+[03:20:57] * Moonlightning found the pdf reader convenient o.o
+[03:21:04] <Moonlightning> But it's non-free, isn't it.
+[03:21:15] <Phase> afaik it's an open source js thing
+[03:21:19] <Phase> used to be an extension
+[03:21:54] <Moonlightning> Years in the past, but not many?
+[03:22:01] <JustAberrant> the main difference is the absence of the new interface
+[03:22:15] <JustAberrant> it's basically firefox from a few years ago before they started losing their shit
+[03:22:15] <Phase> i'm 50/50 on it
+[03:22:17] <Moonlightning> What new interface? >.>
+[03:22:25] <Phase> the 'aurora' thing
+[03:22:33] <Moonlightning> :?
+[03:22:34] <Phase> firefox... 32 and up?
+[03:22:58] <Moonlightning> I thought Aurora meant Firefox nightly
+[03:23:01] <Phase> ui overhall, the new engine is nicer but change is scary
+[03:23:09] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[03:23:09] <Moonlightning> :I
+[03:23:29] <JustAberrant> Phase: hehe, I'll admit I don't like change
+[03:23:40] <JustAberrant> Phase: but I feel like firefox hasn't been changing in a good way for awhile
+[03:23:52] <JustAberrant> Phase: excluding the rendering engine/etc
+[03:23:54] <Phase> nightly on gnome 3 has a really nice theme
+[03:24:13] <JustAberrant> Phase: Ui and feature wise it feels like they are struggling to find something to do to justify the existence of paid developers
+[03:24:36] <JustAberrant> which seems to boil down to "add bloat!"
+[03:24:36] <Phase> huh
+[03:25:13] * Moonlightning facehoofs.
+[03:25:25] <Moonlightning> what, like they have illiterate upper management?
+[03:25:45] <JustAberrant> this is kinda what killed ebay imo
+[03:26:00] <Moonlightning> “no progress is being made unless the app shows dramatic visual changes!”
+[03:26:04] <JustAberrant> they had a good thing, did exactly what it was supposed to do
+[03:26:07] <JustAberrant> but you can't just stop
+[03:26:23] <JustAberrant> you have to keep piling on shit..
+[03:27:09] * JustAberrant rambling :D
+[03:28:34] <Colgate> but can it read mail?
+[03:29:28] <Moonlightning> let's keep the MRAs, MUAs, and MSAs allll separate!
+[03:29:55] <Phase> Colgate, sorta, thunderbird is built atop the same infrastructure
+[03:31:28] *** Joins: star_moon (Starry@the.little.cloud.colt)
+[03:39:20] <RazorSharpFang> Should I have VSYNC on by default?
+[03:40:31] * Moonlightning syncs RazorSharpFang's V
+[04:07:00] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[04:16:59] *** Quits: star_moon (Starry@the.little.cloud.colt) (Connection closed)
+[04:17:22] <RazorSharpFang> Oh dear. There's a bug that only occurs on chrome, and not firefox.
+[04:17:25] <RazorSharpFang> How perplexing.
+[04:20:06] *** Quits: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net) (Ping timeout: 121 seconds)
+[04:24:37] *** Joins: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net)
+[04:25:18] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[04:25:44] *** Joins: star_moon (Starry@the.little.cloud.colt)
+[04:30:48] <RazorSharpFang> Oh dear, I haven't tested it in  internet explorer yet...
+[04:30:57] * RazorSharpFang is scared to
+[04:31:37] <RazorSharpFang> Okay, this particular bug isn't present in IE, but OTHER bugs are. Comforting...
+[04:37:31] <Moonlightning> Don't even.
+[04:37:33] <Moonlightning> Just don't even.
+[04:38:56] <RazorSharpFang> Moonlightning: But I need to.
+[04:48:08] <Moonlightning> D:<
+[04:48:10] <Moonlightning> nooooooooooooo
+[04:51:10] <RazorSharpFang> For some reason, the tank isn't getting drawn in IE.
+[04:51:25] * RazorSharpFang tries Microsoft Edge
+[04:51:45] <RazorSharpFang> This can only end badly
+[04:52:02] <RazorSharpFang> Now microsoft has 2 browsers we need to work with.
+[04:52:12] <RazorSharpFang> Thanks, Obama,
+[04:54:31] <JustAberrant> random: I've discovered the greatest thing in the universe
+[04:55:22] <RazorSharpFang> Huh, it actually works fine in Microsoft Edge.
+[04:55:40] <RazorSharpFang> It's a bit laggy because Win10 is running in a virtual machine, but it works.
+[04:55:46] <RazorSharpFang> No bugs.
+[04:57:13] <JustAberrant> http://justaberrant.com/images/food/frozen_vodka/  :D
+[04:57:14] <PinkiePieBot> [ Index of /images/food/frozen_vodka ]
+[04:57:27] <RazorSharpFang> Okay. I crashed Microsoft Edge.
+[04:57:36] <RazorSharpFang> That's totally not the game's fault.
+[04:57:41] * RazorSharpFang ignores that.
+[04:57:59] <Colgate> JustAberrant: do I even want to know how cold that is?
+[04:58:08] <JustAberrant> quite cold ;p
+[04:58:17] <JustAberrant> but not like, insane
+[04:58:51] <JustAberrant> the secret is there's just enough water from the lime cordial and other fruit to freeze around the vodka
+[04:59:13] <Colgate> wolfram alpha doesn't know the freezing point of vodka, sad
+[04:59:28] <Colgate> useless thing
+[04:59:34] <JustAberrant> I don't think the vodka is actually frozen so much as suspended by the expanded ice around it
+[04:59:41] <Colgate> "80 proof vodka will freeze at approximately -26.95 °C" -- yahoo answers, legit
+[04:59:44] <RazorSharpFang> Colgate: It'l l probs vary a lot.
+[05:00:08] <Colgate> eh, probably wouldn't vary that much, it is mostly just ethanol + water
+[05:00:14] <Colgate> with very few other things
+[05:00:38] <RazorSharpFang> How much wood would a woodchuck chuck if a woodchuck could chuck wood? As much wood as a woodchuck would chuck if a woodchuck could chuck wood.
+[05:01:18] <RazorSharpFang> But the value presented sounds legitimate. 
+[05:01:38] <RazorSharpFang> Less concentrated vodka would probs have a higher freezing point tho.
+[05:02:05] <tiwake> Colgate: I want a gentoo install with this https://github.com/hawaii-desktop
+[05:02:06] <PinkiePieBot> [ Hawaii · GitHub ]
+[05:02:18] <tiwake> but I'm not seeing much information on it
+[05:02:36] <Colgate> yeah, they listed 100 proof as a bit colder
+[05:08:45] <JustAberrant> mm, as I'm drinking it, it seems clear it's definitely the water freezing on the top :>
+[05:11:11] <JustAberrant> https://youtu.be/fWA-fpJTRZk :D
+[05:11:11] <PinkiePieBot> [ thaw - 1 views - 20s long - 0 likes - 0.00% ]
+[05:11:23] <JustAberrant> still tastes amazing
+[05:14:50] <RazorSharpFang> Suppose I have two points, A {x,y} and B {x,y}. Suppose I wanted to draw 10 dots between A and B such that they would be equally spread out. How might I do this? 
+[05:15:28] <tiwake> you need the length function
+[05:15:51] <tiwake> http://www.purplemath.com/modules/distform.htm
+[05:15:51] <PinkiePieBot> [ The Distance Formula ]
+[05:16:00] <One-Trick> algebraaaaaaaaaaa
+[05:16:14] <RazorSharpFang> Purple math? I wanted blue..
+[05:16:36] <tiwake> shush, twilight sparkle is best pony
+[05:17:10] <RazorSharpFang> Nah bru. Element of Kindness is best.
+[05:17:23] <RazorSharpFang> Magic comes close though.
+[05:17:28] <RazorSharpFang> Certainly trumps Honesty.
+[05:19:17] <RazorSharpFang> Also, the distance isn't really helpful to know.
+[05:19:32] <tiwake> distance/number of points
+[05:19:47] <Moonlightning> And…what do you do with that?
+[05:19:51] <RazorSharpFang> I'd be better off using deltaX and deltaY
+[05:19:56] <tiwake> then for each point, undo the distance thing
+[05:20:22] <Moonlightning> Couldn't you just add 1/10th of the X-difference and 1/10th of the Y-difference to get the first point in the middle, 2/10th and 2/10th for the second one, ...?
+[05:21:13] <RazorSharpFang> Moonlightning: That sounds like it might work.
+[05:21:16] * RazorSharpFang uses a for-loop
+[05:21:29] <tiwake> oh, programming?
+[05:21:40] <RazorSharpFang> for(int i = 1; i < dots; i++) { ... }
+[05:21:42] <tiwake> thought it was a paper problem
+[05:21:51] <RazorSharpFang> Nah, programming.
+[05:22:13] <Moonlightning> tiwake: it's the /useful/ kind of math
+[05:22:23] <tiwake> sure
+[05:22:30] <tiwake> well, more useful
+[05:23:13] <Moonlightning> RazorSharpFang: double-check that
+[05:23:25] <Moonlightning> Your range there is [1, dots)
+[05:23:31] <tiwake> I'd still probably work out an equation on paper though
+[05:23:49] <RazorSharpFang> Moonlightning: Yeah. I don't want a dot at point A.
+[05:24:08] <Moonlightning> RazorSharpFang: that gives you dots - 1 dots though
+[05:24:15] <RazorSharpFang> Hmm.
+[05:25:04] <Moonlightning> I think you may need to use 11 instead of 10
+[05:25:21] <Moonlightning> If you want 10 in the middle
+[05:25:35] <Moonlightning> 'cos 0/10 is A and 10/10 is B
+[05:31:59] <RazorSharpFang> Wow, I'm terrible at this.
+[05:32:00] *** Eventide is now known as Eventide|Sleepies
+[05:33:26] <tiwake> just bought Pillars of Eternity
+[05:33:30] <RazorSharpFang> 10 dots is too many dots, dots are too big, dots should not be layered over player...
+[05:34:47] <Colgate> tiwake: is that the DnD game?
+[05:38:03] <tiwake> Colgate: yeah
+[05:39:15] <tiwake> its half price right now
+[05:39:47] <tiwake> just bought Pillars of Eternity
+[05:39:57] <tiwake> erm
+[05:39:59] <tiwake> stupid
+[05:40:06] <tiwake> http://store.steampowered.com/app/291650/
+[05:40:09] <PinkiePieBot> [ Save 50% on Pillars of Eternity on Steam ]
+[05:41:50] <RazorSharpFang> Okay, another question. There's this integer variable that holds the anti-aliasing capabilities. It could be any of these values { 1, 2, 4, 6, 8, 12, 14 } How might I extract the highest level of anti-aliasing from it? 1 means not available, 2 means 2xAA, 4 means 4xAA (only), 6 means 2xAA and 4xAA, 8 means 8xAA, 12 means 8xAA 4xAA, and 14 means 2xAA 4xAA and 8xAA are all available.
+[05:42:19] <RazorSharpFang> I'm a bit stumped.
+[05:42:45] <RazorSharpFang> I kinda don't want to use a bit switch-case.
+[05:43:20] <tiwake> what are you doing?
+[05:43:32] <RazorSharpFang> I want to automatically select the largest AA mode.
+[05:44:34] <Moonlightning> That sounds like a bitset.
+[05:44:40] <Moonlightning> Or…whatever you call the bitwise option things.
+[05:44:45] <tiwake> Colgate: I think I'm going to go with a standard install
+[05:45:00] <Moonlightning> Except that you should be using 1 instead of 0
+[05:45:00] <tiwake> and maybe try wayland later... or something
+[05:45:08] <Moonlightning> er, 0 instead of 1
+[05:45:16] <Moonlightning> You should be using 0 to mean none of them. :P
+[05:45:44] <RazorSharpFang> Moonlightning: Sorry, error on my part. 0 DOES mean not available.
+[05:45:49] <Moonlightning> Good :D
+[05:46:01] <RazorSharpFang> Could I use bit-wise and?
+[05:46:22] <Moonlightning> So in other words, it can be any bitwise combination of 1 << 8 for 8AA, 1 << 4 for 4AA, and 1 << 2 for 2AA.
+[05:46:38] <Moonlightning> err, off by one
+[05:46:47] <RazorSharpFang> But which one?
+[05:46:48] <Moonlightning> 1 << 7, 1 << 3, and 1 << 1 *
+[05:47:00] <RazorSharpFang> All of them.
+[05:47:06] <tiwake> Colgate: when did you want to meet at frys electronics?
+[05:47:23] <Moonlightning> `&` smaller and smaller possible values until you get a nonzero result; that's the highest level it supports.
+[05:47:45] <Moonlightning> RazorSharpFang: wait, there's no 10?
+[05:48:17] <RazorSharpFang> Moonlightning: There /might/ be, the documentation i s a tad loose in this one.
+[05:48:35] <RazorSharpFang> This variable will return a value based on the setting of bits for the different levels. So for only 2xAA, this will report 2, for 2x and 4x availability it will report 6. For 8 and 4 it will report 12. For all 3 levels (2,4 and 8) it will report 14.
+[05:48:52] *** Quits: Midnight_Tinker_Mobile (uid102824@Pony-tjmceb.tooting.irccloud.com) (Quit: Connection closed for inactivity)
+[05:49:14] <Moonlightning> Ahh, that's not exhaustive.
+[05:49:15] <Moonlightning> So yeah.
+[05:49:19] <RazorSharpFang> 10 is probably possible.
+[05:49:31] <Moonlightning> Anyway yeah.
+[05:50:48] * RazorSharpFang tries it
+[05:51:34] <RazorSharpFang> Hmm, my windows machine has 4x AA, but not 8x?
+[05:51:43] <RazorSharpFang> Probs cos of Intel HD Graphics 3000.
+[05:59:41] <Colgate> tiwake: uh, 1300?
+[06:00:23] <tiwake> Colgate: that seems kinda late...
+[06:00:43] <tiwake> hmm
+[06:01:09] <tiwake> how about an hour earlier
+[06:01:12] <tiwake> about noon
+[06:01:14] <Colgate> if you want me to be down there before noon, it probably won't happen :P
+[06:01:41] <tiwake> its a 4 hour drive for you isnt it?
+[06:01:41] <RazorSharpFang> Hmmm.... html5 antialiasing is not behaving itself.
+[06:01:48] <Colgate> 3.5
+[06:07:36] <JustAberrant> ... ponies :)
+[06:08:47] <RazorSharpFang> Damn it. I'm getting no antialiasing on linux.
+[06:09:38] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[06:10:02] <RazorSharpFang> Also damn it, I'm missing libcrypto.so and libssl.so
+[06:10:26] <RazorSharpFang> clang: error: no such file or directory: '/usr/lib/i386-linux-gnu/libcrypto.so'        clang: error: no such file or directory: '/usr/lib/i386-linux-gnu/libssl.so'
+[06:11:17] <tiwake> Colgate: would being there at noon be too early?
+[06:12:23] <Colgate> I can try, but I might be a bit late
+[06:17:25] <RazorSharpFang> i386?
+[06:18:41] <Moonlightning> 32-bit Intel architecture
+[06:18:46] <Moonlightning> see also x86_64
+[06:19:02] *** Joins: Googie|M (Googolplexe@Pony-8l2ent.tpgi.com.au)
+[06:19:04] <RazorSharpFang> Shouldn't it be i686?
+[06:20:57] <Googie|M> i386 is the baseline 32-bit intel architecture. i686 has a bunch of instructions and the like that older Intel chips didn't have, so if you want full portability you can't target it.
+[06:21:07] <Googie|M> (Not that anyone is using anything that old these days 99% of the time :V)
+[06:21:08] <RazorSharpFang> Ah, I see.
+[06:21:16] <Googie|M> Also, woo, internet death
+[06:21:30] <RazorSharpFang> internet death?
+[06:21:43] <JustAberrant> isn't i386 deprecated in the kernel at this point?
+[06:22:18] <RazorSharpFang> Farrrk I hate linker errors.
+[06:22:20] <Googie|M> My connectivity to the DSLAM is basically busted. 0.3mbps down, with latency all over the place, hitting > 1s latency pretty regularly.
+[06:22:23] <Googie|M> Yeah, that it is.
+[06:22:48] <JustAberrant> I'd say once something's out of the kernel, it's time to stop worrying about it ;p
+[06:23:10] <JustAberrant> the 1 person using something that old that _also_ wants to use your program is on his/her/its own ;p
+[06:23:38] <RazorSharpFang> Well, I can't get it to compile. : /
+[06:24:22] * Googie|M has no idea of the context of the conversation :P
+[06:24:36] <RazorSharpFang> Googie|M: Trying to get a linux build working with AA.
+[06:25:27] <RazorSharpFang> I've got VSync working now, but no AA.
+[06:30:28] <RazorSharpFang> I mean, the Nvidia GeForce 8500 GT should be capable of at least 2x AA, right?
+[06:31:38] <Googie|M> Depends on the implementation and the requirements of the game otherwise
+[06:35:14] <RazorSharpFang> Hmmm....
+[06:35:32] <RazorSharpFang> I'd imagine the requirements are low if it's 60fps on a Pentium 4.
+[06:41:02] *** Joins: nscoots (FreyGrimrod@Pony-7c95rl.sub-70-192-29.myvzw.com)
+[06:41:06] *** Quits: Googie|M (Googolplexe@Pony-8l2ent.tpgi.com.au) (Quit: Leaving)
+[06:41:08] *** init3 is now known as Init3-away
+[06:41:52] *** Joins: Googolplexed (Googolplexe@Pony-8l2ent.tpgi.com.au)
+[06:43:08] <One-Trick> kinda scary. all the info i can get off my insulin pump using my phones nfc scanner.
+[06:43:11] *** Googolplexed is now known as Googie|M
+[06:49:08] *** Init3-away is now known as init3
+[06:49:51] *** Quits: star_moon (Starry@the.little.cloud.colt) (Quit: Leaving)
+[06:54:33] <RazorSharpFang> Okay, it comes and runs, but still no AA.
+[06:58:59] <Moonlightning> o3o
+[06:59:09] <Moonlightning> Vim has a "* register now! :D
+[06:59:16] <Moonlightning> And it looks like it works o3o
+[06:59:30] <Moonlightning> well, I mean. My copy of vim has the "* register now.
+[07:09:34] *** GigaCity is now known as Gigabit
+[07:17:15] *** init3 is now known as Init3-away
+[07:26:15] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:31:50] * JustAberrant sells One-Trick 's insulin habits to the tabloids
+[07:33:04] <RazorSharpFang> http://razorsharpfang.com/games/Project2DTankFighter/ - I've updated it.
+[07:33:06] <PinkiePieBot> [ Created with GameMaker: Studio ]
+[07:33:11] <RazorSharpFang> Thanks, PinkiePieBot 
+[07:33:11] <PinkiePieBot> No problemo!
+[07:36:15] *** Init3-away is now known as init3
+[07:44:01] <tiwake> RazorSharpFang: "shooting" into the corner is weird
+[07:44:16] <JustAberrant> if I shoot a bunch at the same spot, some go off in different dirextions
+[07:44:25] <JustAberrant> * directions
+[07:44:35] <JustAberrant> THIS INVALIDATES ME USER EXPERIENCE *ahem*
+[07:44:40] <JustAberrant> * my
+[07:44:46] <tiwake> corners are bugged
+[07:44:53] <RazorSharpFang> JustAberrant: Are you shooting into the corner?
+[07:44:57] <JustAberrant> I am not
+[07:45:11] <JustAberrant> seems to work pretty much anywhere
+[07:45:40] <RazorSharpFang> I'm not really seeing that.
+[07:45:46] <RazorSharpFang> tiwake: Yeah, the corner are weird.
+[07:45:58] <RazorSharpFang> But what SHOULD happen if you shoot into the corner?
+[07:46:35] <tiwake> it should sqrt(-1)
+[07:46:48] <RazorSharpFang> It should imagine?
+[07:49:43] <JustAberrant> https://www.youtube.com/watch?v=bxMyvTRqPSE  ;p
+[07:49:43] <PinkiePieBot> [ boing - 0 views - 10s long - 0 likes - 0.00% ]
+[07:49:57] <JustAberrant> proper_screen_recording++
+[07:50:17] <RazorSharpFang> I can't watch youtube vids. : /
+[07:50:26] <JustAberrant> :S
+[07:50:45] <RazorSharpFang> Wait, lemme try chrome instead of FF.
+[07:51:17] * JustAberrant looks cautiously at RazorSharpFang 
+[07:51:40] <RazorSharpFang> JustAberrant: Whao, that doesn't happen on my computer at all.
+[07:53:02] <RazorSharpFang> !!
+[07:53:12] <RazorSharpFang> It ONLY happens if you fire TOO MANY BULLETS!
+[07:53:24] <RazorSharpFang> They start bouncing OFF EACHOTHER
+[07:53:34] <RazorSharpFang> JustAberrant: How are you able to click that fast?
+[07:54:32] * JustAberrant shruggles
+[07:54:43] <RazorSharpFang> I'll need to cap the rate of firing to avoid that.
+[07:55:04] <RazorSharpFang> Maybe 1 per second.
+[07:55:08] *** RedHelper is now known as RedHelper|AFK
+[07:55:20] <RazorSharpFang> Also, the html5 version stutters a lot on the Pentium 4.
+[07:58:23] *** init3 is now known as Init3-away
+[08:15:36] *** Joins: star_moon (Starry@the.little.cloud.colt)
+[08:17:10] *** DJ-C0L7[CSS]_ is now known as DJ-C0L7[CSS]
+[08:27:58] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "night")
+[08:32:30] *** Joins: firestream (vinylderpy@Pony-i78.l4s.158.69.IP)
+[08:33:25] <RazorSharpFang> JustAberrant: http://razorsharpfang.com/games/Project2DTankFighter/ - Doesn't have that issue no more, but corners still act weird. Also added explosions.
+[08:33:26] <PinkiePieBot> [ Created with GameMaker: Studio ]
+[08:33:31] <RazorSharpFang> Thanks, PinkiePieBot 
+[08:33:31] <PinkiePieBot> My pleasure.
+[08:33:33] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[08:33:33] <firestream> Welcome Googie to the chat!
+[08:34:58] <Moonlightning> More like welcome firestream to the chat
+[08:35:11] <Moonlightning> G__gie's been around a while.
+[08:35:15] * Moonlightning patpats the changeling's head.
+[08:35:59] * Googie|M blinks. He thought that server was still offline.
+[08:36:17] * Moonlightning can't find the ears. TLD D:
+[08:36:40] <Googie|M> Actually, no, it was online, and that was the DHCP lease expiring.
+[08:36:56] <Moonlightning> …Insp should use the actual in-addr.arpa. namespace for v4 addresses that don't resolve
+[08:37:06] * Moonlightning 's Brilliant Ideas™
+[08:37:35] * Googie|M isn't really sure what that gets over plain IP addresses.
+[08:38:03] <Moonlightning> Well, they're not plain IP addresses. They have this '.IP' suffix.
+[08:38:11] <Moonlightning> May as well go all-out…
+[08:38:18] <Googie|M> Oh right.
+[08:39:03] <Moonlightning> The nibble form used in ip6.arpa. isn't very suitable for IRC, though
+[08:39:21] <Moonlightning> I don't suppose there's another arpa. namespace that's more like the written form?
+[08:43:14] *** Quits: Googie|M (Googolplexe@gnaws.on.keratin.and.ears) (Quit: Leaving)
+[08:44:13] *** Quits: Pony_27906 (Fusl@1.0.0.127.in-addr.arpa.li) (Ping timeout: 121 seconds)
+[08:52:36] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[08:52:36] <firestream> Welcome Fusl to the chat!
+[08:53:06] *** Fusl is now known as Pony_29103
+[08:55:43] <Lapsus> firestream: No
+[09:01:35] <Googie> I had half a dozen pings, all from that script in different channels
+[09:04:19] *** Lapsus sets mode: +g *
+[09:04:27] *** Lapsus sets mode: -g *
+[09:04:30] <Lapsus> that's not right
+[09:04:32] <Lapsus> :v
+[09:04:36] <ShivalWolf> https://www.yubico.com/github-special-offer/github-yubikey-special-offer/ - for those who havent seen it
+[09:04:46] *** Lapsus sets mode: +g "*
+[09:04:49] *** Lapsus sets mode: -g "*
+[09:04:53] <Lapsus> fucking
+[09:05:02] * Lapsus derp
+[09:05:53] *** Lapsus sets mode: +g *?to?the?chat!
+[09:05:59] *** Parts: Lapsus (Lapsus@i-forget.ca) ()
+[09:05:59] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[09:05:59] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[09:08:01] *** Lapsus sets mode: -qo Lapsus Lapsus
+[09:10:38] <RazorSharpFang> Derpy derp
+[09:10:44] *** Init3-away is now known as init3
+[09:15:56] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[09:16:08] <Googie> That is a very nice deal
+[09:16:16] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[09:16:31] <ShivalWolf> Googie: wish i had more github accounts lol
+[09:16:45] <ShivalWolf> and more names addresses and credit cards
+[09:18:53] *** locodash11[lagout] is now known as locodashie11
+[09:19:05] <Googie> I just ordered my maximum of two :P
+[09:19:14] <ShivalWolf> lol yeah
+[09:20:58] <Lapsus> what are the prices like, I'd create an account for that :V
+[09:23:15] *** zz_CyberJacob is now known as CyberJacob
+[09:23:36] <Colgate> doesn't seem to work :P
+[09:23:59] <ShivalWolf> i think you have to already have a github account
+[09:24:37] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[09:26:14] <Colgate> click link, sign into github in the popup window, it disappears... now what?
+[09:26:16] <Colgate> nothing happens :P
+[09:26:56] <ShivalWolf> did you get the prompt to authorise access to your githiub account for info?
+[09:27:04] <Colgate> yes, and I authorized it to use my email
+[09:27:46] <ShivalWolf> hmmm once that happend it brang up the option to select how many you wanted
+[09:27:50] <ShivalWolf> and then bought you to a sales page
+[09:28:07] <Colgate> totally isn't on firefox 38
+[09:28:13] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (Ping timeout: 241 seconds)
+[09:28:27] <ShivalWolf> scrpt block?
+[09:28:54] <Colgate> no scripts are blocked according to no script besides google-analytics
+[09:29:26] <ShivalWolf> weird
+[09:30:18] * Colgate disables noscript completely for a bit
+[09:30:35] <Colgate> same thing
+[09:30:57] <Colgate> uh, httpseverywhere I guess would be my next one to try
+[09:30:57] <ShivalWolf> i cant bring up the page again
+[09:31:00] <ShivalWolf> as ive already ordered
+[09:31:53] <ShivalWolf> hmmm looks like i can bring up the page again
+[09:32:05] <Colgate> no good on that either
+[09:32:05] <ShivalWolf> do you get the text about regular delivery times?
+[09:32:11] <ShivalWolf> right under that is a pic of the keys
+[09:32:14] <ShivalWolf> and a button buy now
+[09:32:20] <Colgate> nope
+[09:32:36] <Colgate> the login to github button is simply replaced by 4 animated squares
+[09:32:38] <Colgate> and there it sits
+[09:33:00] <ShivalWolf> is there text about who you are signed is as?
+[09:33:04] <Colgate> nope
+[09:33:08] <ShivalWolf> hmm
+[09:33:13] <ShivalWolf> maybe it didnt sign you in right
+[09:33:20] <ShivalWolf> mine has the text that im signed in as my email address
+[09:33:22] <ShivalWolf> and lets me log out
+[09:33:45] * Colgate signs out of github
+[09:34:59] <ShivalWolf> up the very top of the page after login it pops up
+[09:35:01] <ShivalWolf> Congratulations! You have received a GitHub discount on YubiKeys.
+[09:35:49] <Colgate> nope, still no good
+[09:36:05] * Colgate strikes this down as bad web development
+[09:39:18] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[09:44:35] <tiwake> dumb question, what is a stage 3 gentoo?
+[09:46:33] <Googie> A sort of initial precompiled gentoo environment IIRC
+[09:46:50] <Googie> Also, oh boy. First time I've ever seen my downstream sync rate lower than my upstream sync rate.
+[09:47:48] * Googie is apparently getting 0.35mbps down/0.76mbps up. :V
+[09:47:58] <Googie> (Though it could be the modem having its stats reversed)
+[09:52:50] *** init3 is now known as Init3-away
+[10:00:38] <tiwake> Googie: for a first timer, do I want to stage3 install?
+[10:03:18] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (Ping timeout: 241 seconds)
+[10:05:47] <JustAberrant> :)
+[10:06:45] <tiwake> I'm suspecting not
+[10:07:12] <JustAberrant> anything besides stage3 is pretty silly at this point imo
+[10:08:00] <tiwake> ..?
+[10:09:18] <JustAberrant> stage3 is basically the sane option
+[10:09:45] <JustAberrant> it gives you a minimal pre-compiled system that you can then use to get everything else going
+[10:10:07] <JustAberrant> if you _really_ want to, you can re-compile everything after the fact to do whatever crazy optimizations you want to do
+[10:10:21] <JustAberrant> the earlier stages are basically building that initial environment yourself
+[10:10:27] <JustAberrant> so bootstrapping gcc/etc
+[10:11:00] <tiwake> wouldent it eventually get replaced by compiled things as you update your system over time?
+[10:11:05] <JustAberrant> yes
+[10:11:38] <tiwake> erm, self compiled...
+[10:11:42] <JustAberrant> even if you don't update your system, it'll probably mostly get replaced anyway due to different use flags
+[10:12:24] <JustAberrant> and like I said, you can tell portage to rebuild _everything_ if you really want to
+[10:13:31] <tiwake> enh
+[10:13:38] <tiwake> I want the least amount of hassle
+[10:13:44] <JustAberrant> then use stage3
+[10:13:45] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[10:13:59] <tiwake> alright
+[10:14:18] <JustAberrant> if it's your first install, you really should just follow along with the handbook
+[10:14:38] <tiwake> I'll have Colgate there to hold my hand
+[10:15:02] <JustAberrant> I don't think they even have the stage 1/2 instructions in there any more, there hasn't been much point to it for awhile
+[10:15:12] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:16:52] <tiwake> wish I had my tablet
+[10:19:32] <tiwake> https://wiki.gentoo.org/wiki/Handbook:AMD64/Full/Installation
+[10:19:32] <PinkiePieBot> [ Gentoo Linux amd64 Handbook: Installing Gentoo - Gentoo Wiki ]
+[10:19:34] <tiwake> that?
+[10:19:51] *** Quits: star_moon (Starry@the.little.cloud.colt) (Connection closed)
+[10:20:10] <JustAberrant> hmm
+[10:20:11] *** Joins: star_moon (Starry@the.little.cloud.colt)
+[10:20:20] <JustAberrant> I find it weird that there's one on the wiki and one on the site
+[10:20:27] <JustAberrant> both probably get you there, but.. strange..
+[10:20:42] <JustAberrant> (they're probably the same)
+[10:20:44] <JustAberrant> and yeah
+[10:21:51] <tiwake> looks like you use a liveCD, and then stage3 or something, something something, boot into your fresh gentoo install and maybe finish compiling things 
+[10:22:21] <tiwake> I think more reading is necessary
+[10:23:20] *** Init3-away is now known as init3
+[10:25:51] <JustAberrant> that's pretty much the jist really
+[10:26:45] <JustAberrant> live cd, copy the stage3 to your hard drive (basically giving you a minimal linux install), do some basic configuration, build yourself a kernel, install a boot loader, and reboot
+[10:26:57] *** Quits: Crimson_Tail (Bluepon@Pony-a3o7j6.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[10:27:34] <JustAberrant> and honestly, the hardest parts (picking out use flags/compiler options and building your kernel) are pretty straight forward now
+[10:28:24] *** Gigabit is now known as Snoarin
+[10:29:43] <tiwake> JustAberrant: I know GCC has basically an all-inclusive compiler flag to optimize for whatever processor you have installed... is that what you are talking about?
+[10:30:20] * Phase would use -Og -fno-omit-frame-pointer
+[10:30:26] <Phase> because debugging
+[10:32:09] <JustAberrant> tiwake: more or less
+[10:32:21] <JustAberrant> -march=auto basically does like 99% of the work for you
+[10:32:40] <JustAberrant> the default use flags are now pretty sane in the profiles
+[10:32:55] <JustAberrant> and the default kernel options, again, are mostly sane
+[10:32:58] <Phase> i assume that implies -mtune=auto
+[10:33:01] <tiwake> or I could look up my processor?
+[10:33:03] <JustAberrant> or you can use genkernel and not need to think about it at all
+[10:33:19] <JustAberrant> tiwake: sure, but unless you have a reason to, why?
+[10:33:40] <tiwake> donno... lol
+[10:33:40] * JustAberrant has CFLAGS="-O2 -pipe -march=native -ggdb"  :D
+[10:34:05] <Phase> -ggdb vs -g, does it add much?
+[10:34:32] <tiwake> amd A6-4455M
+[10:34:52] <JustAberrant> Phase: probably not
+[10:35:02] <Phase> i would also use https://wiki.gentoo.org/wiki/Hardened/Toolchain
+[10:35:03] <PinkiePieBot> [ Hardened/Toolchain - Gentoo Wiki ]
+[10:35:12] <Phase> but compile times :(
+[10:35:18] <JustAberrant> ggdb produces debug information specifically for gdb, but the native debug info produced by -g is almost certainly going to be fine
+[10:35:22] * Phase would likely use gentoo if not for compile times
+[10:35:40] <tiwake> how long does it take to compile? lol
+[10:35:50] <JustAberrant> to be honest I'm pretty sure I use ggdb because something somewhere at somepoint told me to :>
+[10:36:09] <Phase> there's no reason not to unless you're using lldb
+[10:36:19] <Phase> which can probably digest the gdb specific stuff anyway
+[10:36:37] <Phase> tiwake, if you want firefox, leave your machine on overnight
+[10:36:43] <JustAberrant> hehe
+[10:36:46] <JustAberrant> firefox is brutal
+[10:36:57] <Phase> there's a binary package but its use flags may not match yours
+[10:37:05] <JustAberrant> the ebuild will actually bail out if you don't have some ridiculous amount of ram
+[10:37:30] <Phase> as in available space (ram + swap) or straight up ram
+[10:37:35] <tiwake> the SSD I have should help at least somewhat
+[10:38:02] <Phase> io isn't that large a portion of build time imo, especially with c++
+[10:38:40] <JustAberrant> Phase: straight ram
+[10:39:11] * ShivalWolf remembers his ex trying to build gentoo from scratch on his laptop
+[10:39:20] <ShivalWolf> no speedstep controls so laptop limited to 600mhz
+[10:39:44] <JustAberrant> Phase: https://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/www-client/firefox/firefox-38.1.1.ebuild?view=markup  (see line 126)
+[10:39:45] <PinkiePieBot> [ [gentoo-x86] Contents of /www-client/firefox/firefox-38.1.1.ebuild ]
+[10:40:03] <JustAberrant> I guess 8G isn't "insane" any more.. but still
+[10:40:21] <JustAberrant> err, I guess 4G if you don't have debug/etc
+[10:40:21] * Phase has 24
+[10:40:31] <JustAberrant> for some reason I thought this was higher
+[10:40:36] <Phase> though i remember the build peaking at something like 10GB
+[10:40:50] <Phase> too many templates
+[10:40:53] <JustAberrant> KDE possibly
+[10:41:16] <Phase> never built kde
+[10:41:48] * JustAberrant hasn't in awhile.. I use dolphin, but that's about it
+[10:41:59] <JustAberrant> and at least for now, that doesn't seem to require the whole party
+[10:42:13] * JustAberrant has gnome straight up blacklisted :>
+[10:44:10] <JustAberrant> Sat Oct  3 05:44:10 ADT 2015
+[10:44:17] * JustAberrant really should bed :D
+[10:52:39] <Compu> i just got an email from linkedin saying i can sue linkedin
+[10:53:24] <JustAberrant> this the email harvesting fiasco?
+[10:53:44] <Compu> it says its from legalnotice@linkedin.com
+[10:54:02] <Compu> something about linkedin's improper use of the add connections feature
+[10:54:22] <Compu> perkins v linkedin corp
+[10:55:03] <JustAberrant> hehe, it might actually be legit, but could be some scammer trying to take advantage of the situation like some did with the sony thing
+[10:55:11] <JustAberrant> I'd be very careful about it
+[10:55:17] <Compu> JustAberrant: so what should i do?
+[10:55:49] <Compu> i could definetely use the money from the settlement no matter how much it is
+[10:55:55] *** init3 is now known as Init3-away
+[10:56:00] <JustAberrant> up to you
+[10:56:11] <JustAberrant> class action payouts are usually pretty damn worthless
+[10:56:19] <Compu> apparetly it can be up to $3,250,000
+[10:56:46] <Compu> that would probably have me set for life
+[10:57:12] <JustAberrant> I'll guess you'd be lucky to see $10 ;p
+[10:57:25] <Compu> even that would be better than nothing
+[10:57:49] <tiwake> ask google about it
+[10:58:00] <Compu> i might later
+[10:58:13] * JustAberrant googled out of curiosity
+[10:58:15] <JustAberrant> http://www.businessinsider.com/linkedin-settles-class-action-lawsuit-2015-10
+[10:58:15] <PinkiePieBot> [ LinkedIn settles class-action lawsuit - Business Insider ]
+[10:58:35] <JustAberrant> LinkedIn's $13 million will be distributed pro rata, meaning that the amount each person gets will depends on how many people file claims. But if the number of claims means that the pay-out amounts to less than $10 per person who filed, LinkedIn will have to add on an additional $750,000.
+[10:58:37] <JustAberrant> called it ;p
+[11:00:16] <JustAberrant> so basically there's a big pot of money, and the amount everyone gets depends on how many people make a claim
+[11:00:33] <tiwake> yeah, class action lawsuits are pretty worthless, as its just the lawyers getting any amount of money
+[11:01:02] <JustAberrant> but yeah, it's more about punishing the company than actually getting anything for the plaintiffs
+[11:01:09] <JustAberrant> most of the money goes to lawyers
+[11:01:20] <JustAberrant> and what's left is spread so broadly it doesn't matter
+[11:05:07] <tiwake> alright, bedtime
+[11:05:18] * JustAberrant as well :(
+[11:05:35] <Compu> woo we can rent avengers age of ultron on google play for $6 this month
+[11:26:25] *** Quits: firestream (vinylderpy@Pony-i78.l4s.158.69.IP) (Connection closed)
+[12:02:36] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[12:04:38] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[12:10:41] *** Init3-away is now known as init3
+[12:19:27] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (Ping timeout: 241 seconds)
+[12:29:34] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[12:34:10] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Connection closed)
+[12:42:04] * Googie sighs a sigh of relief.
+[12:42:19] <Googie> Line is back to normal and ADSL is stable again.
+[13:44:59] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[15:00:28] *** Quits: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP) (Connection closed)
+[15:02:25] *** init3 is now known as Init3-away
+[15:07:18] *** Seoson|BNC is now known as Sour_Sweet
+[15:16:10] *** Quits: Stik (drakon@Pony-ql55m5.cable.virginm.net) (Ping timeout: 121 seconds)
+[15:16:12] *** Joins: Stik (drakon@Pony-ql55m5.cable.virginm.net)
+[15:19:11] *** Stik is now known as Pony_62618
+[15:25:51] *** Quits: nscoots (FreyGrimrod@Pony-7c95rl.sub-70-192-29.myvzw.com) (Ping timeout: 121 seconds)
+[15:42:47] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[15:43:45] <Sour_Sweet> Microsoft's media creation tool is a pain
+[15:54:10] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[15:58:37] *** Eventide|Sleepies is now known as Eventide
+[16:08:19] *** Joins: firestream (vinylderpy@Pony-i78.l4s.158.69.IP)
+[16:31:53] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[16:36:03] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[16:44:15] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[16:45:25] <Compu> http://i.imgur.com/3ujWaC8.gifv
+[16:49:34] <Sour_Sweet> So Mozilla you've done it. I'm switching to Chrome(-ium)
+[16:50:36] <Dusk> what did they do?
+[16:50:49] <Compu> Sour_Sweet: ?
+[16:51:34] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-dos.6j9.56.172.IP)))
+[16:52:10] *** Joins: DJ-C0L7[EIT]_ (IceChat77@DJ-C0L7.EIT.LLC)
+[16:52:22] *** DJ-C0L7[EIT]_ is now known as DJ-C0L7[EIT]
+[16:53:35] <Compu> Sour_Sweet: check out vivaldi, it seems cool
+[16:54:29] <Sour_Sweet> FF randomly decides not to load any bookmarks in my toolbar, gets in a weird peudo fullscreen mode that cannot be closed correctly, has messed up keybindings that conflict with other software, has a broken flash lcikjacking implementation ...
+[16:55:59] <Compu> Sour_Sweet: vivaldi can import bookmarks and such from firefox
+[16:56:14] <Sour_Sweet> pseudo* clickjacking*
+[16:56:58] <Sour_Sweet> I'm not concerned about my bookmarks. I need webdev tools and KeePass HTTP support
+[16:57:28] <Compu> Sour_Sweet: dunno about those but still look into vivaldi
+[16:57:36] <Sour_Sweet> I'll have a look
+[16:57:53] <Compu> i've heard its written entirely in node.js
+[16:58:21] <Compu> it also apparently has a built in email client that u wouldnt know was there if u werent told by the website
+[16:58:38] <Sour_Sweet> Oh and audio is sometimes messed up when played via flash and high volumes for some reason plus Mozilla wanting to get me to use their hello thing
+[16:58:59] <Sour_Sweet> I use a modified version of Roundcube Mail anyway
+[16:59:12] <Compu> not sure if vivaldi does flash but it probably does, i havent tested it or looked into it really
+[16:59:41] <Sour_Sweet> Flash is click2play or disabled by default anyway. I need it for Google Play Music only
+[17:00:13] <Compu> Sour_Sweet: go into google play music settings, they have an html5 option under the labs stuff
+[17:00:15] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[17:00:30] <Sour_Sweet> Yeah I know, but I had problems with that in the past
+[17:00:45] <Compu> Sour_Sweet: still worth a try now, things change all the time
+[17:00:58] <Sour_Sweet> (Probably works fine with Chrome xD)
+[17:01:11] <Compu> i've used it in firefox and it worked for me
+[17:01:31] <Sour_Sweet> I have been using Firefox since forever. But lately they really annoy me
+[17:01:32] <Compu> firefox recently got better with html5 stuff
+[17:01:52] <Compu> about the same time the loading spinny thing turned blue
+[17:02:06] * Sour_Sweet is colorblind.
+[17:02:38] <Compu> .search firefox loading icon turns blue
+[17:02:42] <PinkiePieBot> Compu: http://superuser.com/questions/21761/meaning-of-the-clockwise-counter-clockwise-rolling-circle-in-google-chrome (g), - (b), https://www.bing.com/ (d)
+[17:02:55] <Compu> well
+[17:03:05] <Compu> that is unbelievably unhelpful
+[17:03:34] <Sour_Sweet> Oh and Firefox mobile broke the zoom, which I really really need
+[17:03:41] <Sour_Sweet> (in some rare cases)
+[17:04:01] <Sour_Sweet> So I've switched to Chrome on mobile already
+[17:04:24] <Compu> Sour_Sweet: looks like firefox's loading icon is only blue on windows and maybe mac
+[17:04:29] <Compu> linux gets orange?
+[17:05:24] <Compu> meh
+[17:05:27] <Compu> confusing
+[17:06:06] <Compu> supposedly the mac one was always blue and in an update they accidentally used the icon from mac for the windows version so they just rolled with it
+[17:09:43] <Sour_Sweet> Enjoy your last pony livestream Firefox. You're not going to see those anytime soon again
+[17:10:08] <Compu> Sour_Sweet: so did u look into vivaldi?
+[17:10:25] <Sour_Sweet> Yes. The UI looks awesome. I'm still reading
+[17:10:35] <Compu> k
+[17:10:39] <Compu> yeah i thought so too
+[17:11:06] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:11:22] <Compu> Sour_Sweet: by the way when u mention firefox for mobile do u mean on android?
+[17:11:31] <Sour_Sweet> Yes
+[17:11:39] <Compu> what android version is that?
+[17:12:19] <Sour_Sweet> Android 5.1.1; CM 12.1; Custom Kernel
+[17:12:43] <Compu> Sour_Sweet: cool, u got chrome's tab integration turned?
+[17:12:46] <Compu> turned on*
+[17:13:00] <Sour_Sweet> What is that?
+[17:13:19] <Compu> integrates tabs into the app switcher
+[17:13:47] <Sour_Sweet> Ahh yes I have
+[17:14:08] <Compu> Sour_Sweet: cool, visit my website on chrome for android http://www.compu.ml/
+[17:14:09] <PinkiePieBot> [ Compu's Website ]
+[17:15:37] <Compu> Sour_Sweet: i did the color bit that works on chrome for android
+[17:20:24] *** Quits: star_moon (Starry@the.little.cloud.colt) (Quit: Leaving)
+[17:25:37] *** Joins: Tahlorz (rattle@Pony-04f8is.ph.cox.net)
+[17:29:58] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:44:27] *** CyberJacob is now known as zz_CyberJacob
+[18:12:21] *** Pony_62618 is now known as Stik
+[18:22:26] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[18:24:58] <Sour_Sweet> So I've migrated to Chrome now for the mean time. Bye Firefox ;-(
+[18:26:59] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[18:29:33] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[18:35:25] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[18:39:46] *** Joins: Crimson_Tail (Bluepon@Pony-6bc6ok.cg80.k4gu.0151.2601.IP)
+[18:42:20] <Sour_Sweet> Now I somehow need to teach Chrome to clear my histroy when I close my browser
+[18:46:27] <DJ-C0L7[EIT]> incognito mode?
+[18:46:51] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[18:48:32] <Sour_Sweet> Not an option.
+[18:52:30] <Dusk> Compu: you like handing out your IP to people?
+[18:53:01] <Compu> Dusk: ?
+[18:53:15] <Sour_Sweet> Chrome lacks this feature for some reason. Luckly there is a plugin for that
+[18:53:17] <Dusk> Where is that website hosted?
+[18:53:32] <Compu> Dusk: in my house, i cant afford it otherwise
+[18:53:40] <Dusk> You're giving away your IP
+[18:53:42] <Dusk> :T
+[18:53:45] <Compu> i know
+[18:54:01] <Dusk> Ok...
+[18:54:02] <Compu> but either i give away my ip or i dont have a website and such
+[18:54:13] <Dusk> You don't need a website
+[18:54:17] <AppleDash> ^
+[18:54:32] <Compu> well i can choose to have one
+[18:54:35] <Dusk> Sure
+[18:54:38] <Compu> and i have
+[18:54:43] <Compu> so leave it
+[18:54:45] <Dusk> But you could opt for free hosting elsewhere
+[18:54:55] <Dusk> and not hand your IP out to a bunch of tech junkies
+[18:55:01] <Compu> pretty sure free hosting doesnt exist
+[18:55:08] <Dusk> orly
+[18:55:19] <Compu> at least not without a data cap or some other restriction
+[18:55:26] <tiwake> whats wrong with self-hosting?
+[18:55:40] <Dusk> tiwake: giving your IP to people isn't very secure.
+[18:56:02] <Dusk> Unless you like people knowing your IP and stuff
+[18:56:05] <Dusk> then I guess
+[18:56:10] <Compu> tiwake: apparently ur ip address is the super secret thing that u should never give out to anyone except for every website u visit ever
+[18:56:27] <AppleDash> The free hosting I used to use offered 100 GB of transfer per month
+[18:56:34] <Compu> and irc servers, and a lot of other stuff
+[18:56:35] <AppleDash> I run a few high traffic sites and I don't even use 100GB
+[18:56:46] <Compu> AppleDash: k well im not u
+[18:56:47] <Dusk> Compu: no IRC server that I use gets /my/ IP address
+[18:57:00] <Dusk> and most websites don't either
+[18:57:00] <tiwake> erm
+[18:57:12] <Dusk> They get the stuff on my my server that I use
+[18:57:27] <AppleDash> Compu: I seriously don't think your site gets 100GB of traffic per month. I'd be surprised if it got 100MB.
+[18:57:30] <JustAberrant> unless your worried about kiddies DoS'ing you.. shouldn't be a big deal
+[18:57:38] <Compu> Dusk: yes well routing everything through ur server isnt always the best
+[18:57:39] <Dusk> JustAberrant: It happens
+[18:57:44] <Dusk> Compu: is it not?
+[18:57:58] <Dusk> It adds like 30ms ping and doesn't have a data cap
+[18:58:00] <tiwake> security by obscurity is not very good... it helps some things, but wont withstand a targeted attack
+[18:58:06] <JustAberrant> that said, I run most stuff from a vps for that kinda reason ;p
+[18:58:16] <Compu> Dusk: how does it not have a data cap if im using free hosting?
+[18:58:37] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[18:58:51] <Dusk> what?
+[18:58:54] <Compu> AppleDash: anyways can it host a mumble server too? and icecast? and pretty much anything else i want? does it have ipv6?
+[18:59:12] <Compu> Dusk: i cant afford paying for a hosted server
+[18:59:12] <Dusk> Why do you need icecast?
+[18:59:18] <Dusk> @.@
+[18:59:19] <Compu> because i want icecast
+[18:59:24] <Dusk> ...
+[18:59:25] *** Snoarin is now known as Gigabit
+[18:59:33] <Dusk> But why?
+[18:59:45] <Compu> does there need to be a reason? its my server
+[18:59:47] <AppleDash> You can get free hosting for all of those things
+[19:00:03] <Compu> AppleDash: i've seen the free icecast shit, its shit
+[19:00:03] <Dusk> I'm asking what you use icecast for
+[19:00:13] <Compu> Dusk: radio station i sometimes do
+[19:00:37] <Dusk> Ew
+[19:00:51] <Compu> i play musics on it
+[19:01:01] <Dusk> Icecast from home is bad
+[19:01:08] <Compu> also CompuBot runs on my server
+[19:01:09] <Dusk> any radio station from home is bad
+[19:01:14] <Dusk> home connections aren't meant for that
+[19:01:20] <Dusk> Mumble from home is also bad
+[19:01:21] <Compu> besides i have no other use for the machine i use as my server
+[19:01:33] <Compu> it has no working graphics
+[19:01:40] <tiwake> talking smack about people is bad
+[19:01:47] <Dusk> tiwake: :ooo
+[19:02:05] <JustAberrant> you have to use a lot of bandwidth though before an ISP is gonna give you a hard time
+[19:02:13] <Dusk> I mean a radio station that's hosted at home but multiplexed elsewhere is fine
+[19:02:20] <Dusk> that's ok, and I've seen that done well
+[19:02:24] <tiwake> hobbies are just that, hobbies. and generally done with whatever is laying around the house
+[19:02:46] <Compu> JustAberrant: i have time warner cable, im gonna switch to fiber as soon as the local fiber company decides to support ipv6
+[19:02:52] <Dusk> Sure but like it doesn't make it a good idea D:
+[19:03:08] <Compu> Dusk: yes well thats ur opinion
+[19:03:11] <JustAberrant> not if you rely on it for business, of course not.. but for a hobby, it's not that bad
+[19:03:19] <Dusk> I suppose
+[19:03:25] <JustAberrant> absolute worse that's gonna happen, the ISP will call you up and tell you to knock that shit off
+[19:03:33] <JustAberrant> which is pretty damn unlikely
+[19:03:40] <Dusk> Compu: doesn't Time warner do data caps?
+[19:03:54] <Dusk> I don't remember as it's been a while since I've used them
+[19:04:02] <Compu> JustAberrant: ISP doesnt care, they know i run a website and such and they dont care as long as i dont mind dealing with sticky dynamic ip addressing
+[19:04:10] <Compu> Dusk: no thats comcast
+[19:04:20] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[19:04:20] <Dusk> comcast doesn't have a data cap anymore
+[19:04:22] <JustAberrant> Compu: yeah, that's pretty normal
+[19:04:29] <Dusk> They haven't for a while
+[19:04:34] <Compu> k
+[19:04:41] <Dusk> Source: I'm using comcast right now
+[19:04:49] <JustAberrant> people have run small servers on their home connections forever.. as long as you arn't moving TBs of data a month like that fios guy..
+[19:04:55] <JustAberrant> they're not gonna care
+[19:05:01] <Compu> i really wanna switch to fiber but i dont want to lose my ipv6 support
+[19:05:22] <Dusk> JustAberrant: I wasn't concerned about the ISP
+[19:05:34] <Compu> JustAberrant: most people just use the lightirc clients i host
+[19:05:36] <Dusk> most ISPs don't care unless you're getting hammered with traffic then they complain
+[19:05:49] <Compu> some people like them better than canternet's webclient
+[19:06:00] <Dusk> Canternet uses lightirc....
+[19:06:08] <Compu> yeah but i use the dark theme
+[19:06:13] <Dusk> "T
+[19:06:16] <Dusk> :T*
+[19:06:22] <Dusk> okidoke then I guess
+[19:06:25] <Compu> people like the dark theme
+[19:06:35] <Dusk> I mean I won't go back to using a web client if I can help it.
+[19:06:38] * JustAberrant doesn't believe in themes ;p
+[19:06:39] <Dusk> I'm too attached to weechat
+[19:06:43] <Compu> me neither
+[19:07:03] <Compu> but i know people who r deathly afraid of ever installing anything new on their computer
+[19:07:05] <Dusk> But for people who don't know how to IRC or just don't use it then sure
+[19:08:10] <Compu> Dusk: one of my main rpers in my channel is afraid of ever installing anything or sometimes even just downloading anything (like a picture or something) to their hard drive
+[19:08:26] <Compu> they also r deathly afraid of ever signing up for anything ever
+[19:08:37] <Compu> it took my a few days to get him to register with nickserv
+[19:08:39] <JustAberrant> ironically using a web based client is probably far less secure
+[19:08:41] <Compu> me*
+[19:09:02] <Compu> JustAberrant: meh not like hes giving credit card numbers over irc
+[19:09:09] <JustAberrant> it's not that
+[19:09:24] <JustAberrant> you're basically repeatedly downloading and running something off the internet
+[19:09:43] <JustAberrant> and flash is an exploit posterchild
+[19:09:52] *** Quits: firestream (vinylderpy@Pony-i78.l4s.158.69.IP) (Connection closed)
+[19:09:53] <Compu> yeah but u try to convince him to use a client u have to install
+[19:09:56] <Dusk> Yea flash is great for exploits
+[19:10:06] <Dusk> Everyone loves to break it
+[19:10:22] <tiwake> screw flash
+[19:10:36] <Dusk> Compu: Also you should ssl
+[19:10:37] <Compu> and non flash clients apparently have to route everything through the server which makes it appear that everyone using my webclient is connecting from my ip address
+[19:10:53] <Compu> Dusk: couldnt figure out how to set it up for free
+[19:10:57] <Dusk> wosign
+[19:11:56] <Compu> i tried kiwi for a while and link liked it but got mad when i shut it down cuz i found out it looked like everyone was connecting from my ip
+[19:12:13] <JustAberrant> Compu: hehe, it's his machine, I just fine it amusing someone using a flash based irc client for security ;p
+[19:12:21] <Dusk> ^
+[19:12:21] <Compu> i told him that he can use the one hosted on kiwi's website but he doesnt like having to type the server address and stuff in
+[19:12:31] <Dusk> Compu: make him a custom client
+[19:12:38] <Compu> Dusk: custom client?
+[19:12:39] <Dusk> You can do that with kiwi
+[19:12:42] <Dusk> yea
+[19:12:47] <Dusk> Something that he can bookmark
+[19:12:51] <Compu> wouldnt i have to host it?
+[19:12:53] <Dusk> No
+[19:13:00] <Compu> mmm
+[19:13:03] *** RedHelper|AFK is now known as RedHelper
+[19:13:08] <Compu> maybe later then
+[19:13:23] <Dusk> You have to have an account with kiwi (You the creator of the custom client)
+[19:13:31] <Dusk> but it would just be a link on their server
+[19:13:37] <Compu> eh
+[19:13:42] <Compu> he might not go for it
+[19:13:54] <Dusk> If you make the custom client he wouldn't know :p
+[19:13:57] <Compu> i think he likes using my website rather than someone elses cuz we're friends
+[19:14:08] <Dusk> And all you'd have to do is make a page with an iframe embed of this client
+[19:14:11] <Compu> he'll know its not on my website
+[19:14:16] <Compu> oh
+[19:14:18] <Compu> eh
+[19:14:23] <Compu> maybe
+[19:14:26] <tiwake> Compu: http://derpy.me/mdkYy mibbit IRC client... I put the theme together
+[19:14:27] <PinkiePieBot> [ derpy.me - Index ]
+[19:14:29] <Dusk> It's easy and effective
+[19:14:35] <Dusk> tiwake: ew mibbit
+[19:14:42] <Compu> tiwake: i've found mibbit to be a bit meh
+[19:14:48] <tiwake> hmm, link is no good?
+[19:15:02] <Dusk> No the link isn't good
+[19:15:04] <JustAberrant> mibbit :)
+[19:15:06] <Compu> by the way i did make a custom 404 page
+[19:15:12] <tiwake> mibbit is kinda meh, but its flank tons better than flash
+[19:15:16] <Compu> http://www.compu.ml/iuhuwerg
+[19:15:30] <JustAberrant> mibbit (at least used to, dunno if it still does), had a feature where it would thumbnail images
+[19:15:38] <tiwake> well fudge
+[19:15:48] <tiwake> JustAberrant: yeah, it does that
+[19:15:48] <JustAberrant> so I wrote a script that chunks up an images
+[19:15:59] <JustAberrant> and gave me a block of URLs to paste into the channel
+[19:16:01] <Compu> tiwake: kiwi seems a lot better
+[19:16:03] <Dusk> kiwi is a bit quicker and stuff and looks nicer by default
+[19:16:03] <tiwake> I might be able to turn that off though, or maybe I did in my theme
+[19:16:17] <tiwake> I dont recall
+[19:16:17] <Compu> tiwake: try kiwi out first
+[19:16:21] * JustAberrant used to torture someone in particular with that back before freenode banned mibbit
+[19:16:44] <Dusk> tiwake: https://kiwiirc.com/client
+[19:16:46] <PinkiePieBot> [ Kiwi IRC ]
+[19:17:21] <tiwake> it was the first pony thing I did... heh
+[19:17:25] <Compu> JustAberrant: freenode banned mibbit? i see people still using it
+[19:17:29] <Compu> on freenode
+[19:17:54] <JustAberrant> hmm, possibly they've unbanned it
+[19:18:01] <JustAberrant> this was awhile ago
+[19:18:09] <Compu> maybe, or mibbit found a way around the ban
+[19:18:19] <JustAberrant> like probably 2009
+[19:18:21] <Dusk> No I believe the unbanned it
+[19:18:41] <Dusk> I've definitely seen people in some channels I'm in using mibbit
+[19:19:21] <Dusk> Or maybe they just like their ident to be mibbit
+[19:19:23] <Dusk> iunno
+[19:19:29] <Dusk> it's not impossible I guess
+[19:19:37] <JustAberrant> hehe
+[19:19:43] <JustAberrant> probably people being smart-asses
+[19:19:47] <Dusk> XD
+[19:20:04] <JustAberrant> like people who set their username to root to troll 
+[19:20:18] <tiwake> http://widget.mibbit.com/?settings=022fa18d030fd01de7a72f821573d690&server=irc.canternet.org%3A%2B6697&channel=%23techponies
+[19:20:19] <PinkiePieBot> [ Mibbit IRC client widget ]
+[19:20:28] *** Joins: mib_igifej (Mibbit@Pony-b8vo6b.nj.comcast.net)
+[19:20:30] <JustAberrant> https://wiki.mibbit.com/index.php/Problem_Networks  <-- freenode's still listed at least here ;p
+[19:20:31] <PinkiePieBot> [ Problem Networks - Mibbit Wiki ]
+[19:20:49] *** Joins: tiwake-test (Mibbit@Pony-njonl3.wa.charter.com)
+[19:21:20] <tiwake> hmm, not too bad I guess
+[19:21:35] <Dusk> Tiwake the colors reallly clash
+[19:21:59] <tiwake> http://i.telegraph.co.uk/multimedia/archive/03235/hagrid2_3235619b.jpg
+[19:22:18] *** Quits: mib_igifej (Mibbit@Pony-b8vo6b.nj.comcast.net) (Quit: http://www.mibbit.com ajax IRC Client)
+[19:22:28] <tiwake> looks like it still tries to load the thumbnail
+[19:22:42] <JustAberrant> :>
+[19:23:02] <AppleDash> tiwake: That's probably an old derpy.me link from before the site died and was re-created
+[19:23:38] <tiwake> ohh, I didnt know that happened
+[19:23:47] <AppleDash> it did :P
+[19:23:53] <AppleDash> in like march
+[19:24:00] <Compu> i like http://goo.gl/
+[19:24:01] <PinkiePieBot> [ Redirecting ]
+[19:24:25] <AppleDash> I'd rather not have Google in another part of my life 
+[19:25:35] <tiwake> :3
+[19:25:52] <tiwake> :)
+[19:25:54] <tiwake> hmm
+[19:25:59] <tiwake> I should turn off smilies
+[19:26:16] <Sour_Sweet> *cough* AppleDash: A bookmarklet for derpy.me would be awesome *cough*
+[19:26:22] <tiwake> and image thumbnails
+[19:26:59] <tiwake> better
+[19:27:12] <AppleDash> Sour_Sweet: How would you like it to work? :P
+[19:27:54] *** Quits: tiwake-test (Mibbit@Pony-njonl3.wa.charter.com) (Quit: http://www.mibbit.com ajax IRC Client)
+[19:28:15] <Sour_Sweet> Like all bookmarklets work? Visit randome website, click bookmarklet, get short url in prompt, profit!
+[19:28:45] <JustAberrant> tiwake: aw ;p
+[19:28:59] <AppleDash> Alright
+[19:29:07] <AppleDash> I just wasn't sure where you wanted the short URL to happen
+[19:29:09] * JustAberrant just found his old script :D
+[19:29:24] <AppleDash> be it in a prompt or in a "shortened" page in a new tab
+[19:29:42] <Sour_Sweet> Best thing would be indeed a javascirpt prompt (cause copy paste and things without leaving the site linked)
+[19:30:01] <AppleDash> alright
+[19:30:25] <Sour_Sweet> Negative site is users won't see the derpy.me page (and therefor no ads and similar)
+[19:30:30] <AppleDash> The issue with a bookmarklet though is it kinda opens up a vector for spamming URLs
+[19:30:30] <Sour_Sweet> side*
+[19:30:32] <AppleDash> but we'll see
+[19:30:43] <Sour_Sweet> Sure that's a problem
+[19:31:27] <AppleDash> Any suggestions on how to combat that?
+[19:31:51] <Sour_Sweet> One could use a one time registration (silly CAPTCHA) and include a unique API key in the bookmarklet
+[19:31:54] <tiwake> no you stupid GPS
+[19:31:57] <tiwake> bah
+[19:32:34] <AppleDash> There's an idea
+[19:32:43] <AppleDash> I THINK there's actually support for generating an API key
+[19:32:47] <AppleDash> Or was that in the Rails version?
+[19:33:38] * Sour_Sweet doesn't even know what software derpy.me uses :P
+[19:33:48] <AppleDash> It's running on Python/Flask
+[19:37:45] *** Joins: mib_xj73qn (Mibbit@Pony-5h9se6.ns.bellaliant.net)
+[19:37:53] *** Init3-away is now known as init3
+[19:39:38] <JustAberrant> aw, it doesn't thumbnail them :(
+[19:40:01] <JustAberrant> ah well :(
+[19:40:07] *** Quits: mib_xj73qn (Mibbit@Pony-5h9se6.ns.bellaliant.net) (Quit: http://www.mibbit.com ajax IRC Client)
+[19:42:09] <tiwake> heh
+[19:50:49] <AppleDash> Sour_Sweet: I'll work on it soonb
+[19:50:56] <AppleDash> soon*
+[19:51:12] <Sour_Sweet> Sound great ;-)
+[19:51:15] <Sour_Sweet> Sounds*
+[20:07:55] *** init3 is now known as Init3-away
+[20:23:08] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:26:45] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[20:28:51] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:31:04] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[20:35:22] *** Joins: Kayle (Im@the.derptown.express)
+[20:35:26] *** Kayle is now known as e
+[20:36:08] *** Gigabit is now known as Gigaway
+[20:41:18] *** Ruthalasleep is now known as Ruthalas
+[20:49:08] <Sour_Sweet> Now chrome feels like home ;-) http://imgur.com/wIBlwxV
+[20:49:09] <PinkiePieBot> [ Imgur: The most awesome images on the Internet ]
+[21:10:16] <Sour_Sweet> Sadly the KeePass integration is not even half as good as it was with Firefox ...
+[21:38:27] *** Quits: Crimson_Tail (Bluepon@Pony-6bc6ok.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[21:43:22] *** Joins: Crimson_Tail (Bluepon@Pony-7s14el.cg80.k4gu.0151.2601.IP)
+[21:56:01] *** Quits: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net) (Quit: )
+[22:01:57] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[22:02:04] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[22:45:22] *** Quits: Tahlorz (rattle@Pony-04f8is.ph.cox.net) (Quit: )
+[22:48:58] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[22:51:05] <ShivalWolf> http://imgur.com/gallery/3POtveC
+[22:51:05] <PinkiePieBot> [ In case of fire - Imgur ]
+[23:53:45] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)

@@ -1,0 +1,483 @@
+[00:01:36] *** Joins: tiwake (Octavia@Pony-njonl3.wa.charter.com)
+[00:11:58] *** Joins: Fallfeathers (Fallfeather@Pony-ils488.bigpond.net.au)
+[00:40:16] <Divide|TechSupport> Dear customer: I requested that you unplug your TV from the power source after turning it off.  At what point did I request that you also unplug your PVR, your modem, and your phone?  Sincerely, someone who hates powerstrips when they cause this sort of sloth.
+[01:04:34] * Moonlightning gives Divide a UPS that's also a proper Linux box.
+[01:05:22] <JustAberrant> is.. is that a thing?
+[01:05:52] <Moonlightning> Twitch Installs Linux?! XD
+[01:05:55] <Moonlightning> seriously?
+[01:06:11] <Moonlightning> [13:18:01] <+HoneyDrops> Next up is to create the entire works of Shakespeare on twitch, we can really have a million monkeys on a million keyboards!
+[01:06:18] <Moonlightning> No, that would be a million monkeys at ONE keyboard. :D
+[01:06:29] <Moonlightning> Sour_Creep: that's not hard, is it? Just…register?
+[01:07:18] <Moonlightning> You might be breaking that law, though. By having an offshore server you use as a proxy, you might count as an ISP under that law and be required to log all of your own traffic for the local NSA… -.-
+[01:07:55] <Moonlightning> Sour_Creep: So…uh…do it the manual way! I didn't want it messing with my config, either; I just had it drop the relevant files in a directory and leave the configuration to me.
+[01:08:18] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[01:08:44] <Moonlightning> </late>
+[01:13:55] <Moonlightning> Derpibooru lost all of my notifications from before the migration! D:
+[01:17:28] <Divide|TechSupport> JustAberrant: Yes, as a matter of fact, it is.  Heck, an innumerable number of devices simply run one version of Linux or another.  Many of my customers are confused when they see a Linux box on their network which is, in fact, just a modem/router.
+[01:24:44] <Moonlightning> A /proper/ Linux box. Not just something that runs Linux.
+[01:25:08] <Moonlightning> Android and OpwnWRT devices are, for example, not proper Linux boxes.
+[01:25:31] <Moonlightning> I should say proper *nix box, actually. Doesn't have to be Linux, just a full-featured POSIX-compliant OS.
+[01:45:05] <JustAberrant> what Moonlightning said..
+[01:46:45] <Moonlightning> So…depends on what you distribute as your netboxes :p
+[01:46:52] <Moonlightning> /My/ netbox is a proper Linux box, but that's just /me/
+[01:46:57] <JustAberrant> big difference between a minimalist linux or bsd running on a sbc and something you can ssh to without soldering
+[01:46:59] <Moonlightning> presumably, yours are less…featured
+[01:47:07] <Moonlightning> yeah, exactly
+[01:47:32] <Moonlightning> note that if it makes attempts to stop you from messing with it *cough* ANDROID *cough*, it's not a proper box
+[01:49:40] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[01:49:56] <JustAberrant> Im actually working on converting a dumb kvm into a "smart" one by using a rasp pi to press the buttons and read the status leds :D
+[01:50:29] <JustAberrant> should be good and hackish
+[01:56:12] <Moonlightning> I know OSes zero memory previously allocated to one process before allocating it to a new one…do they also tend to zero memory allocated to a process when it exits?
+[02:04:38] <Phase> i wouln't imagine they do
+[02:04:56] <wolfyshy> Moonlightning: lots of different ways to go about that.
+[02:06:43] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Quit: Leaving)
+[02:08:14] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[02:09:29] <Moonlightning> I mean, it's either zero it then, or zero it when it needs to be reused
+[02:09:43] <Moonlightning> but, once the process exits, you know you're gonna have to zero it anyway before you give it to anything else
+[02:10:03] <wolfyshy> there is https://msdn.microsoft.com/en-us/library/system.security.securestring%28v=vs.110%29.aspx on windows
+[02:10:07] <wolfyshy> which uses DPAPI internally
+[02:10:09] <PinkiePieBot> [ SecureString Class (System.Security) ]
+[02:10:17] <Moonlightning> Or…I guess you could zero it slowly, using system idle time
+[02:10:21] <Moonlightning> …what?
+[02:11:20] <wolfyshy> it is encrypted in memory and erased (0'd) immediately on free
+[02:11:48] <wolfyshy> FIPS-compliant payment gateways use securestring for PANs
+[02:12:15] <Moonlightning> that's…kinda not at all what I was asking
+[02:12:51] <wolfyshy> Moonlightning: at least all of windows, linux, solaris, aix, and freebsd don't 0 out when it exits because it will just be 0d out again when another process needs it
+[02:12:55] <wolfyshy> why 0 it twice
+[02:13:20] *** Quits: ButterBean (Dragony@Pony-458.d8k.20.198.IP) (Ping timeout: 121 seconds)
+[02:13:21] <wolfyshy> but typically you only care/ask about that if you have something sensitive in your memory, so you use something like securestring for that
+[02:13:23] <wolfyshy> then it doesn't matter
+[02:13:45] <Moonlightning> oh, allocations are zeroed unconditionally during allocation?
+[02:13:52] <wolfyshy> I think openbsd can be coerced to 0 out memory as it is freed, which would include the entire process image on exit, but it incurs a severe performance penalty
+[02:14:17] <Moonlightning> why zero the process image though?
+[02:14:35] <Moonlightning> most of the time, the binary's going to be sitting on disk anyway
+[02:14:49] <wolfyshy> uh, that includes .data, .bss, etc.
+[02:14:51] <Moonlightning> and if you're storing passwords or keys in the binary, you're doing it wrong :p
+[02:15:00] <Moonlightning> …ohh.
+[02:15:05] <wolfyshy> static allocations (i.e. char passwd[64];)
+[02:15:13] <Moonlightning> Okay yeah.
+[02:15:37] <Moonlightning> as an author, though, shouldn't you be doing all that stuff on the heap?
+[02:15:41] <Moonlightning> for exactly that reason
+[02:17:36] <wolfyshy> also, something like securestring can be done on linux using a variety of syscalls
+[02:17:51] <wolfyshy> madvise with MADV_DONTDUMP, mprotect with PROT_READ
+[02:18:03] <wolfyshy> or even PROT_NONE until you need it
+[02:18:28] <wolfyshy> was looking hard into implementing a securestr in python, but it's a LOT harder than it seems.
+[02:19:10] <Moonlightning> I feel like Python is not the kind of thing you wanna be doing that with anyway :P
+[02:19:15] <Moonlightning> password and crypto stuff
+[02:20:18] <wolfyshy> well I was writing a chat client in it
+[02:20:30] <wolfyshy> and wanted to dispose of the user's sasl password or certificate when it was no longer needed
+[02:20:45] <wolfyshy> turns out that is a lot harder than it sounds with python
+[02:21:18] <Moonlightning> Yeah.
+[02:22:03] <Moonlightning> and then, there's the risk that something you pass it to might make a copy
+[02:22:51] *** Joins: Dragony (Dragony@Pony-458.d8k.20.198.IP)
+[02:23:00] <wolfyshy> I don't think socket.write does, but sure :P
+[02:23:19] *** Dragony is now known as Pony_33744
+[02:23:22] <wolfyshy> I took the same design route that thunderbird does; ask the user only when the password is /actually/ required
+[02:26:53] *** Quits: Pony_33744 (Dragony@Pony-458.d8k.20.198.IP) (Ping timeout: 121 seconds)
+[02:27:36] <Phase> my client stores those in plaintext under ~/.config
+[02:27:39] <Phase> #yolo
+[02:31:00] *** Joins: Dragony (Dragony@Pony-458.d8k.20.198.IP)
+[02:31:26] *** Dragony is now known as Pony_27479
+[02:33:59] *** Pony_27479 is now known as Dragony
+[02:34:12] *** Dragony is now known as ButterBean
+[02:34:42] *** ButterBean is now known as Pony_49131
+[02:34:49] *** Pony_49131 is now known as Dragony
+[02:35:19] *** Dragony is now known as Pony_51153
+[02:36:02] *** Pony_51153 is now known as Draogny
+[02:36:59] *** Draogny is now known as ShadowPony
+[02:38:07] *** Joins: MangoButter (Dragony@Pony-4h36h8.chtnsc.sbcglobal.net)
+[02:40:38] *** Quits: MangoButter (Dragony@Pony-4h36h8.chtnsc.sbcglobal.net) (Quit: )
+[02:41:50] *** ShadowPony is now known as Dragony
+[02:42:34] *** Dragony is now known as ButterBean
+[02:47:55] *** Joins: MangoButter (Dragony@Pony-4h36h8.chtnsc.sbcglobal.net)
+[02:48:04] *** MangoButter is now known as Dragony
+[02:48:22] *** Quits: Dragony (Dragony@Pony-4h36h8.chtnsc.sbcglobal.net) (Quit: )
+[02:49:18] *** Joins: Dragony (Dragony@Pony-4h36h8.chtnsc.sbcglobal.net)
+[02:50:55] *** Quits: ButterBean (Dragony@Pony-458.d8k.20.198.IP) (Ping timeout: 121 seconds)
+[02:51:08] *** Dragony is now known as ButterBean
+[02:53:57] *** Starburn is now known as Starzie
+[02:54:11] *** Joins: Dragony (Dragony@Pony-458.d8k.20.198.IP)
+[02:54:40] *** Dragony is now known as Pony_23256
+[03:17:41] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:18:11] *** Joins: Zombie-Gladiolus (uid110916@Pony-qjfks9.brockwell.irccloud.com)
+[03:18:52] <Sour_Creep> Anyone any experience with a good (active) stylus? I'm looking for one with a small tip compatible with regular smartphones/tablets.
+[03:29:22] * JustAberrant nope, but curious how well those actually work
+[03:30:22] <Sour_Creep> I've seen ones with a sort of "disc" as a tip. They look promising
+[03:30:32] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[03:31:34] <Sour_Creep> Not buying one for myself, but for my grandma. She uses a smartphone and watching her type with her rubber tip stylus makes me feel more pain than it does actually her.
+[03:36:41] <One-Trick> i have the wacom stylus with my ipad air 2 and its... eh
+[03:37:22] <JustAberrant> I have a hard time picturing it working well unless the device is built for it
+[03:37:37] <One-Trick> the wacom stylus really needs the little glove thing cuz the hand rejection detection is shakey
+[03:40:17] <wolfyshy> they sell one at walmart
+[03:40:20] <wolfyshy> a stylus for phones
+[03:40:26] <wolfyshy> I got it for my own grandma's birthday
+[03:40:38] <wolfyshy> she is like "YAY NOW I CAN USE MY S5 \o/"
+[03:46:15] *** Quits: ButterBean (Dragony@Pony-4h36h8.chtnsc.sbcglobal.net) (Ping timeout: 121 seconds)
+[03:46:59] <Sour_Creep> Thanks for the feedback. I've placed an order and will report as soon as it arrives ;-)
+[03:47:06] <Sour_Creep> Also have a good night!
+[03:49:15] *** Divide|TechSupport is now known as Dividenstein
+[03:49:33] *** Sour_Creep is now known as Seoson|BNC
+[03:51:51] *** Joins: ButterBean (Dragony@Pony-4h36h8.chtnsc.sbcglobal.net)
+[03:52:00] *** Quits: ButterBean (Dragony@Pony-4h36h8.chtnsc.sbcglobal.net) (Quit: )
+[03:53:10] *** Pony_23256 is now known as ButterBean
+[03:54:22] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[03:54:22] <wolfyshy> you have a good night too 8)
+[03:54:29] *** Starzie is now known as Starburn
+[04:10:03] *** RedHelper is now known as RedHelper|Shower
+[04:27:16] *** RedHelper|Shower is now known as RedHelper
+[04:34:36] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[04:39:50] *** Soarin is now known as Gigabit
+[04:56:42] <Moonlightning> New Kurzgesagt.
+[04:57:07] <Moonlightning> https://www.youtube.com/watch?v=ao8L-0nSYzg
+[04:57:08] <PinkiePieBot> [ Everything We Think We Know About Addiction Is Wrong - 1739394 views - 5m 42s long - 70312 likes - 98.43% ]
+[05:05:06] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[05:05:12] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[05:06:13] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[05:10:44] *** Starburn is now known as Starzie
+[05:13:05] *** Eventide is now known as John_Cena
+[05:13:51] *** John_Cena is now known as Spookentide
+[05:16:57] *** Zombie-Gladiolus is now known as Gladidoot
+[05:25:50] *** Spookentide is now known as Eventide|Sleepies
+[06:01:12] *** RedHelper is now known as Creeps|AFK
+[06:03:22] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (Connection closed)
+[06:03:22] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[06:13:58] *** Joins: TuxRug (TuxRug@TuxRug)
+[06:17:12] *** ButterBean is now known as DragonOfTheNight
+[06:17:31] *** DragonOfTheNight is now known as Nightfury
+[06:29:27] *** Quits: Gladidoot (uid110916@Pony-qjfks9.brockwell.irccloud.com) (Quit: )
+[06:53:23] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[06:57:55] *** Quits: TuxRug (TuxRug@TuxRug) (Connection closed)
+[07:02:14] <Googie> Something tells me this won't succeed: https://www.twitchinstalls.com/
+[07:02:44] * Googie wonders how long before an rm -rf
+[07:06:45] <Colgate> eh, rm -rf won't do much anyways
+[07:06:52] <Colgate> at least not until they're in the chroot
+[07:07:03] <Colgate> then they have to pacstrap again
+[07:09:07] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[07:09:26] *** Joins: Gladidoot (uid110916@the.truth.is.out.there)
+[07:09:48] * Gladidoot booooops Colgate
+[07:09:53] <Colgate> hi
+[07:09:55] <Gladidoot> Thank you for running Canternet.
+[07:09:56] <Gladidoot> :3
+[07:10:01] <Colgate> -.-
+[07:10:15] <Gladidoot> wut it’s what you do
+[07:10:30] * Colgate squints at Gladidoot's "’"
+[07:10:35] <Gladidoot> you gave me the platform that put me in touch with so many good people and probably made me a better person
+[07:10:35] <Colgate> I smell a smart quote
+[07:10:46] <Gladidoot> wat
+[07:10:51] <Gladidoot> I don’t see any quote marks.
+[07:11:43] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[07:12:55] <Gladidoot> I wish that you took donations, and that I wasn’t a brokeass liberal arts student so that I could donate.
+[07:12:59] <Gladidoot> Yeah, thos ewould be good things.
+[07:13:15] <Colgate> >.>
+[07:13:55] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Quit: Leaving)
+[07:14:03] <Colgate> donate that money to a good cause instead :P
+[07:14:11] <wolfyshy> I should get a few of my friends together and try to extract a gentoo stage3 to it instead.
+[07:14:13] <wolfyshy> >.>
+[07:15:21] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[07:15:45] <Moonlightning> I think this is a good cause :p
+[07:16:05] <Gladidoot> I have donated money twice.
+[07:16:14] <Gladidoot> Once to the red cross, and the second time to the NDP.
+[07:16:18] <Gladidoot> Who, I will point out.
+[07:16:21] <Gladidoot> LOST THE ELECTION HARD
+[07:16:23] <Gladidoot> ;_;
+[07:16:35] * Gladidoot stares at his party membership
+[07:16:41] * Gladidoot fucking gets wasted and cries
+[07:16:51] <Colgate> Moonlightning: a good cause that can use the money >.>
+[07:17:15] <Moonlightning> I mean…you pay for this out of pocket, yeah? :p
+[07:17:42] <Gladidoot> IRC ain’t that expensive though I mean like, price of a server and a stable connection.
+[07:17:44] <Colgate> sure? but it isn't a big deal
+[07:17:50] <Gladidoot> Server defined as like… a pentium 4
+[07:18:10] <Gladidoot> Shit, Colgate what do the servers run on?
+[07:18:45] <Colgate> chrysalis, discord, and cadance are aws
+[07:18:53] <Gladidoot> o
+[07:19:04] <Gladidoot> Any of them running on hardware the server owner owns?
+[07:19:18] <Colgate> cloudchaser runs on a dedi from OVH I run
+[07:19:25] <Colgate> well, rent :P
+[07:19:34] <Gladidoot> awww no wacky basement xeons
+[07:19:41] <Colgate> and derpy is one that johnsey runs on a hetzner dedi
+[07:19:52] <Gladidoot> I had a chance to get a quad-processor itanium from the early 2000s for only 100 bucks
+[07:19:56] <Gladidoot> I was broke tho and someone bought it
+[07:19:57] <Colgate> daring is an OVH vps... but it is kinda... unreliable heh
+[07:20:04] <Gladidoot> it had 256 gigs of DDR1
+[07:20:06] <Gladidoot> so many banks
+[07:20:14] <Colgate> that's a lot of DDR1 memory o.O
+[07:20:18] <Gladidoot> i know right
+[07:20:34] <Gladidoot> I think it was upgraded at some point because like, that amount didn’t even exist in 2001!
+[07:20:51] <Colgate> but then you're using itanium
+[07:21:02] <Gladidoot> yeah that’s probably why it was cheap
+[07:21:10] <Gladidoot> the cost/current value ratio here is laffo
+[07:21:20] <Colgate> still, 256 GB of ram
+[07:21:26] <Colgate> that could run a solid amount of VMs
+[07:21:43] <wolfyshy> run qemu-system-x86_64 on it
+[07:21:46] <wolfyshy> start a really shitty VPS host
+[07:21:47] <Gladidoot> would probably end up limited by the fact it still used a relatively limited FSB tho, right?
+[07:22:00] <Colgate> the CPU speed would be... yeah, bad XD
+[07:22:02] <Gladidoot> and i doubt those are multicore processors, so you get a whole 4
+[07:22:02] <wolfyshy> "the CPU lag is SO BAD on this thing"
+[07:22:10] <wolfyshy> "I can't imagine why"
+[07:22:13] <wolfyshy> -- your poor customers
+[07:22:20] <Colgate> but look!
+[07:22:25] <Colgate> you get 8 GB of memory!
+[07:22:39] <Gladidoot> * DDR1 memory with a bandwidth less than a new SSD
+[07:22:44] <Gladidoot> but don’t tell them that >.>
+[07:23:00] <Colgate> why would you tell them that? :P
+[07:23:15] <Colgate> you also wouldn't say you are using processors from 2001!
+[07:23:26] <Colgate> you would just say the vps has access to 1 core!
+[07:24:11] <Gladidoot> o3o
+[07:39:04] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Connection closed)
+[07:41:16] *** Joins: Fillyfeathers (Fallfeather@Pony-vandmf.bigpond.net.au)
+[07:42:37] *** Quits: Fallfeathers (Fallfeather@Pony-ils488.bigpond.net.au) (Ping timeout: 121 seconds)
+[07:48:41] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[08:03:02] *** Quits: Crimson_Tail (Bluepon@Pony-ptovrf.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[09:15:41] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[09:32:35] *** Quits: Gladidoot (uid110916@the.truth.is.out.there) (Quit: )
+[09:32:46] *** Quits: Fillyfeathers (Fallfeather@Pony-vandmf.bigpond.net.au) (Quit: My people need me!)
+[09:55:03] <JustAberrant> wow, I'm making DVDs .. for like the first time in gotta be 5 years
+[09:55:08] <JustAberrant> it's.. still a painful process
+[10:18:39] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[11:12:09] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[11:23:38] *** Joins: RazorSharpFang (chatzilla@sharpest.of.all.fangs)
+[11:37:13] <RazorSharpFang> Anyone here familiar with the twitch API?
+[12:38:40] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Connection closed)
+[12:49:24] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[12:50:32] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[13:29:51] *** Eventide|Sleepies is now known as Eventide
+[13:58:10] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[14:15:47] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:35:49] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[14:49:37] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[14:51:21] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[15:00:32] *** Joins: Gladiator (Freak@G.L.A.D.I.A.T.O.R)
+[15:01:03] *** Parts: Gladiator (Freak@G.L.A.D.I.A.T.O.R) ()
+[15:26:17] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:27:23] *** Joins: Imraan (Mibbit@Beyond.Your.Limits)
+[15:45:38] *** Parts: Imraan (Mibbit@Beyond.Your.Limits) ()
+[16:01:04] <AppleDash> JustAberrant: :>
+[16:03:41] <AppleDash> Does anyone here know NASM?
+[16:04:11] <AppleDash> argc is supposed to be at the top of the stack when the program is initially run, but for some reason that value is always 1 for me
+[16:04:27] <AppleDash> Even if I pass 10 args, the first value on the stack interpreted as a dword is equal to 1
+[16:06:03] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:06:17] <AppleDash> Disregard
+[16:06:26] <AppleDash> I was doing esp instead of [esp]
+[16:10:32] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[16:14:12] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:27:03] *** Joins: Tahlorz (rattle@Pony-04f8is.ph.cox.net)
+[17:00:26] *** Seoson|BNC is now known as Sour_Creep
+[17:09:13] *** Dividenstein is now known as Divide|TechSupport
+[17:14:26] *** Creeps|AFK is now known as RedHelper
+[17:20:12] *** Quits: Tahlorz (rattle@Pony-04f8is.ph.cox.net) (Quit: )
+[17:32:29] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:59:58] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:25:53] *** Joins: Crimson_Tail (Bluepon@Pony-a06tn3.cg80.k4gu.0151.2601.IP)
+[18:33:17] *** Joins: jackg (JackG@JackG.Is.Not.A.Clever.Poni)
+[19:10:01] <Divide|TechSupport> Freeeeow.  Last call of the day, some customer infected with Win32/Bedep.
+[19:27:18] *** Joins: CrassyPaddles (test@Pony-6v8n3b.ga.comcast.net)
+[19:32:40] <CrassyPaddles> Does Quantum mechanics rebut the law of noncontradiction?
+[19:52:56] <Divide|TechSupport> Mu.
+[20:08:30] *** Dawn is now known as DUsk
+[20:08:34] *** DUsk is now known as Dusk
+[20:09:44] *** Quits: roflincopter (dennis@Pony-aend1d.es) (Ping timeout: 121 seconds)
+[20:27:04] <Moonlightning> “last call of the day” one hour later, still -TechSupport
+[20:27:26] <Moonlightning> Anypony know why this rsync might be causing a lot of latency, even though it wasn't initially?
+[20:28:07] * Moonlightning is rsyncing up a bunch of 8 MiB files all at once. Was fine at first, but for the past few days it's come with an increased latency.
+[20:28:20] *** jackg is now known as JackG
+[20:30:15] <Moonlightning> Connections take a long time to establish, but once they are, the download speed seems normal
+[20:31:41] <Moonlightning> It's just really annoying, especially when I try to use my weechat relay, 'cos I connect over the VPN, and everything takes a long time to upload to the relay client.
+[20:31:52] <Moonlightning> Also, the laaaag in IRC
+[20:32:18] <Moonlightning> Anyway, my point is that I want to throttle this upload so that everything else has normal latency.
+[20:40:26] <Divide|TechSupport> This promises to be a trainwreck of significant proportions: in 20 minutes, Twitch will install Arch Linux.
+[21:04:48] <Ola> https://www.dropbox.com/sh/4ter2ztbq5zs2tv/AADfDNWubFHLyWrn_qX9iZpga?dl=0
+[21:04:53] <PinkiePieBot> [ Dropbox - FREE STUFF ]
+[21:07:42] <wolfyshy> Moonlightning: 
+[21:07:45] <wolfyshy>   --bwlimit=RATE
+[21:07:47] <wolfyshy>     This  option  allows  you  to specify the maximum transfer rate for the data sent over the socket, specified in units per second.  The RATE value can be suffixed with a string to indicate a size multiplier, and may be a fractional value (e.g.  "--bwlimit=1.5m").  If no suffix is specified, the value will be assumed to be in units of 1024 bytes (as if "K" or "KiB" had been appended). 
+[21:07:49] <wolfyshy> See the --max-size option for a description of all the available suffixes. A value of zero specifies no limit.
+[21:08:22] <wolfyshy> hth :3
+[21:12:14] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "switchin' machines, be back shortly")
+[21:17:12] <Moonlightning> wolfyshy: you think?
+[21:17:30] <Moonlightning> I mean, it is a /large/ upload, so I don't want it throttled unnecessarily
+[21:17:36] <Moonlightning> Is there not like a QoS-y solution?
+[21:18:20] <wolfyshy> Moonlightning: implement QoS on your network? :v
+[21:18:46] <wolfyshy> PF with ALTQ is pretty snazzy for that
+[21:21:22] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:22:03] <wolfyshy> Ola: is that a CardBus TV adaptor!?
+[21:22:20] <wolfyshy> Ola: did you /get/ this stuff for free, or are you giving it away, because I'll pay shipping; bugger, I'll pay more than shipping
+[21:22:43] <AppleDash> wolfyshy status: excited
+[21:22:54] <Ola> wolfyshy: yes
+[21:23:01] <Ola> wolfyshy: 2. no
+[21:23:04] <Ola> wolfyshy: 1. friend
+[21:23:25] * Moonlightning giggles.
+[21:23:28] <wolfyshy> AppleDash: lol pretty much
+[21:23:41] <Ola> i mean, friend gave me
+[21:23:42] <wolfyshy> AppleDash: I've been trying to get a TV capture card for any of my computers at all, for a very long time
+[21:23:49] <wolfyshy> Ola: you lucky pone
+[21:23:56] <AppleDash> wolfyshy: Don't you have fat stacks now
+[21:24:00] * Ola saw a tv card somewhere a while ago, dunno where
+[21:24:03] <AppleDash> you can get a USB one for like 70$
+[21:24:06] <Ola> iwhere through
+[21:24:19] * Ola has also a PCi one, but it's important, mroeson than cardbus
+[21:24:28] <wolfyshy> AppleDash: uh
+[21:24:31] <Ola> wolfyshy: http://olatheskunk.pl/computers/
+[21:24:32] <PinkiePieBot> [ My computer collection ]
+[21:24:50] <AppleDash> go on
+[21:24:51] <wolfyshy> AppleDash: trying to save up for moving + new glasses + 250$ worth of accessories that didn't come with new desktop
+[21:24:56] <wolfyshy> AppleDash: I have like
+[21:25:01] <wolfyshy> AppleDash: I'm about to be negative again
+[21:25:07] <AppleDash> What do you need for 250$ for your desktop O.o
+[21:25:23] * Ola needs a PSu
+[21:25:30] <wolfyshy> AppleDash: keyboard, mouse, USB CD drive, 64 GB USB stick because my old stick died, sound card, graphics card.
+[21:25:38] <Ola> usb cd?
+[21:25:42] <wolfyshy> AppleDash: work sent me "a desktop", with absolutely nothing else
+[21:25:43] <Ola> why not use sata
+[21:25:43] <AppleDash> You have all of those things
+[21:25:53] <AppleDash> except the USB stick
+[21:25:53] <wolfyshy> Ola: yeah this computer has no bays for CD
+[21:25:58] <wolfyshy> AppleDash: I never had a USB CD drive
+[21:26:00] <Ola> wolfyshy: then change the case, wtf
+[21:26:03] <AppleDash> I am very surprised
+[21:26:05] <wolfyshy> AppleDash: I also never had a discrete sound card
+[21:26:12] <AppleDash> I don't believe you
+[21:26:12] <AppleDash> :P
+[21:26:15] <wolfyshy> AppleDash: and my graphics card was broke.
+[21:26:19] <wolfyshy> well you gotta realise
+[21:26:21] <wolfyshy> this is PCI-e only
+[21:26:25] <Ola> so?
+[21:26:26] <wolfyshy> all my sound cards are like, SB16 ISA
+[21:26:29] <AppleDash> You're PCIe only
+[21:26:30] <Ola> >isa
+[21:26:31] <Moonlightning> (I'm glad I use weechat. I have the feeling few other clients could keep up with this insanity…)
+[21:26:32] <wolfyshy> and one AC'97
+[21:26:39] <AppleDash> Moonlightning: What?
+[21:26:40] <Ola> wolfyshy: get a sound blaster pci
+[21:26:43] <Ola> wolfyshy: or live
+[21:26:47] <Ola> wolfyshy: or live 5.1
+[21:26:48] <Moonlightning> (The utter insanity that is Freenode/#twitchinstalls .)
+[21:27:00] <wolfyshy> Ola: my SBLive is PCI only, it won't go in PCI-e
+[21:27:13] <Ola> wolfyshy: hrhrh. then get a pcie sound card.
+[21:27:18] <Ola> wolfyshy: or get a normal computer xd
+[21:27:18] <wolfyshy> that's what I did
+[21:27:20] <wolfyshy> lol
+[21:27:29] <Ola> wolfyshy: my future phenom II x6 has both pci and pcie
+[21:27:44] <wolfyshy> Ola: I had no say in what computer I was getting :( work sent it to me because my laptop died in the butt
+[21:37:51] <Compu> the people in the upstairs apartment want ot play loud music and since theres no noise laws we cant do anything really so i decided to take my sharp CD-C2900 hooked up to my tv to volume level 20 and play spotify from my chromecast, got some blue man group playing
+[21:38:30] <wolfyshy> gonna make your neighbours blue (da ba dee da ba di)
+[21:38:42] <Compu> oooh good idea
+[21:38:43] <Moonlightning> da ba DEEE da ba DAII
+[21:38:46] <Moonlightning> yesh :D
+[21:38:47] <wolfyshy> hehehe
+[21:38:49] <Compu> i'll play that next
+[21:39:21] <Compu> right now im playing blue man group's rendition of Baba O'Reilly
+[21:39:22] *** Joins: roflin (dennis@Pony-aend1d.es)
+[21:40:50] <Compu> wolfyshy: i forget, who was the artist for that song?
+[21:41:37] <Moonlightning> Eiffel something?
+[21:41:46] <Moonlightning> Type in /blue/ to YouTube and you'll get it XP
+[21:42:13] <Moonlightning> Eiffel 65, there it is
+[21:42:50] <Compu> found it
+[21:43:06] <Compu> im playing from spotify
+[21:43:24] <Compu> the song title is Blue (Da Ba Dee)
+[21:43:38] <Compu> i was searching for "im blue" so thats why i couldnt find it
+[21:46:01] <Moonlightning> What's with that song, anyway. XD
+[21:46:05] <Moonlightning> Is it widely hated, or…?
+[21:47:44] <Compu> Moonlightning: its just odd
+[21:47:56] <Compu> there doesnt seem to be much of a point to the song
+[21:48:02] <Moonlightning> pff
+[21:48:06] <Moonlightning> there's not much point to a lot of songs
+[21:48:19] <Compu> and u know the internet loves completely pointless bullshit
+[21:48:45] <wolfyshy> could always do the hampster dance, that was another popular one online..
+[21:48:52] <wolfyshy> or Never Gonna Give You Up by Rick Astley
+[21:48:56] <wolfyshy> irl rickroll!
+[21:50:08] <Compu> wolfyshy: oooh!
+[21:50:22] <wolfyshy> hahaha is it obvious I've had similar problems? :)
+[21:50:54] <wolfyshy> my neighbours stopped having rowdy parties after I spent a night with linkin park and my chemical romance
+[21:51:03] <wolfyshy> I think they're legitimately afraid of me now
+[21:51:34] <wolfyshy> "I'm coming back from the dead / and I'll take you back with me"
+[21:52:41] <wolfyshy> meanwhile, opensource.org is down :(
+[21:53:29] *** Joins: Fallfeathers (Fallfeather@Pony-vandmf.bigpond.net.au)
+[21:53:54] <RazorSharpFang> "'Open source software is dead' declares Microsoft."
+[21:54:00] <RazorSharpFang> Or something
+[21:54:12] <wolfyshy> yep
+[21:54:20] <wolfyshy> the entire open source initiative is dead
+[21:54:27] <wolfyshy> (that's the name of the site... open source initiative)
+[21:54:36] <RazorSharpFang> Maybe Apple would be a better candidate for that, considering how closed OSX is.
+[21:54:42] <RazorSharpFang> And iOS
+[21:54:54] <wolfyshy> except darwin is open source and you can build it yourself :P
+[21:54:57] <wolfyshy> iOS, yes, that's closed
+[21:55:15] <Compu> wolfyshy: i had to stop cuz my grandpa showed up
+[21:56:45] <Compu> wolfyshy: our speakers have woofers, midranges, and tweeters
+[21:56:59] <wolfyshy> Compu: niiiiiiice
+[21:57:46] <Compu> wolfyshy: it was vibrating the windows at volume level 20, the system goes up to volume level 50
+[21:58:08] <Compu> we normally have it around 10-14, 14 is the highest we usually go
+[21:59:26] <Compu> wolfyshy: look up the Sharp CD-C2900
+[22:02:47] <Compu> wolfyshy: i was wrong sorry, the system goes to 30
+[22:03:48] <Compu> wolfyshy: we have asked them to turn down their music and they got super mad at us and starting telling us "its my house and i can do what i want"
+[22:04:10] <Compu> the landlord lives a few states away so they dont do much
+[22:04:28] <wolfyshy> haha, that's a nice system
+[22:04:58] <Compu> and the landlords enjoy calling us children cuz we're on ssi, saying "if u dont have a job then ur a child and will be treated as such"
+[22:05:41] <Compu> the upstairs neighbors have jobs but theyre jerks who dont take care of their pets or their kids and just blast music when theyre home
+[22:06:08] <Compu> the best we got from the landlord is the neighbors can only blast music from 9 AM to 11 PM
+[22:08:22] <AppleDash> wolfyshy: see xmpp
+[22:08:48] <Compu> anyways gtg
+[22:10:33] <wolfyshy> that's awful.  you're definitely not a child just because you need help :(
+[22:11:17] <Compu> wolfyshy: oh they also complain and blame us whenever our section 8 tells the landlords they have to fix something
+[22:11:57] <Compu> for things like having no smoke detector near the furnace in the basement or things "i wouldnt have to do this if u had just shut up about it"
+[22:12:15] <Compu> because, ya know, our safety doesnt matter even a tiny bit
+[22:13:09] *** Quits: CrassyPaddles (test@Pony-6v8n3b.ga.comcast.net) (Quit: Leaving)
+[22:15:06] <wolfyshy> wow >.<
+[22:17:45] <wolfyshy> I hope you can find somewhere better to live eventually...
+[22:20:37] <wolfyshy> Compu, you might want to see about filling a complaint about the way you're being treated http://portal.hud.gov/hudportal/HUD?src=/program_offices/fair_housing_equal_opp/online-complaint
+[22:20:38] <PinkiePieBot> [ online-complaint ]
+[22:20:43] <wolfyshy> because that is pretty illegal
+[22:21:36] <Compu> wolfyshy: our best outcome of that is us being forced to move, then WE have to find a new place that section 8 approves of within a month or we're on the street
+[22:22:23] <Compu> then we have to go without internet or tv for a few months because we need that money for the deposit on the new apartment
+[22:24:59] <wolfyshy> actually
+[22:25:05] <wolfyshy> they can't force you to move
+[22:25:18] *** Joins: Hadjii (jircii@Pony-vqg.mu8.73.38.IP)
+[22:25:23] <wolfyshy> and if the landlord tries to force you to move, you have grounds for a lawsuit and will get a fair sum of money + HUD forcing them to let you still live there
+[22:25:29] <wolfyshy> so there is that
+[22:25:45] <wolfyshy> anyway it was just an option
+[22:25:49] <wolfyshy> I don't like seeing people mistreated :(
+[22:26:43] <Moonlightning> the problem with that is that oftentimes they can still make your life miserable, so sometimes the better option is really just to move :/
+[22:27:01] <Compu> wolfyshy: no, section 8 will force us to move
+[22:27:22] <Moonlightning> anecdotally, a guy I know sued his employer for firing him unfairly, got rehired basically just to clean toilets all day
+[22:32:18] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[22:32:38] <Hadjii> according to newegg, you can buy a 3tb ssd for like $8 grand
+[22:43:06] <Moonlightning> ._.
+[22:43:10] <Gigabit> http://hackaday.com/2015/10/30/delightfully-horrible-idea-twitch-installs-linux
+[22:45:48] <Hadjii> that looks amazing
+[22:45:54] <Hadjii> and probably won't work but oh well
+[22:48:06] *** Gigabit is now known as Vega
+[22:50:31] <wolfyshy> http://www.theregister.co.uk/2015/10/31/brush_up_on_your_fortran/
+[22:50:32] <PinkiePieBot> [ Fortran, assembly programmers ... NASA needs you – for Voyager • The Register ]
+[22:52:22] <RazorSharpFang> Why not C?
+[22:56:27] <wolfyshy> there are no C compilers for 1970s microcontrollers
+[22:56:56] <RazorSharpFang> That sucks.
+[22:58:30] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[23:04:03] *** Joins: Gladidoot (uid110916@Pony-qjfks9.brockwell.irccloud.com)
+[23:09:22] *** init3 is now known as init7
+[23:12:51] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Connection closed)
+[23:14:57] <init7> Look at how unsettling and spoopy my nick is. 
+[23:15:01] <init7> BooooooOOOOoooo
+[23:16:13] <Divide|TechSupport> 7spoopy8me
+[23:16:18] *** Divide|TechSupport is now known as Dividenstein
+[23:19:04] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:19:42] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[23:23:38] <Sour_Creep> init7: Call yourself systemd and you'll scare even more ponies here :D
+[23:27:35] <init7> Hue
+[23:28:46] *** Gladidoot is now known as Netsplit
+[23:28:58] <init7> Scary
+[23:35:14] *** wolfyshy is now known as howlingwolfy
+[23:35:15] *** Quits: Netsplit (uid110916@Pony-qjfks9.brockwell.irccloud.com) (Quit: )
+[23:49:06] <Caerdwyn> ok, officially calling in for help on this one
+[23:49:19] <Caerdwyn> anyone here know about how to solve kernel panics on mac os x?
+[23:49:30] *** Joins: Ghostiolus (uid110916@Pony-qjfks9.brockwell.irccloud.com)
+[23:53:05] *** Joins: e (memes@the.derptown.express)
+[23:53:45] <Ghostiolus> What’s causing it, Caerdwyn?
+[23:54:03] <Ghostiolus> Is it at boot or otherwise?
+[23:54:09] <Caerdwyn> well, lemme first off say, its not on an actual apple machine
+[23:54:14] <Caerdwyn> its in virtualbox. a hackintosh VM
+[23:54:18] <Caerdwyn> os x 10.6
+[23:54:26] <Ghostiolus> boot verbose
+[23:54:41] <Ghostiolus> also virtualbox osx vms /suck/, I gave up along time ago.
+[23:55:05] <Caerdwyn> Boots up just fine, but on shutdown/reboot, after "MACH reboot" appears on screen, I see "CPU Halted", then a backtrace, showing something about com.apple.iokit.ioacpifamily or something on the screen
+[23:56:11] <Caerdwyn> in the process of reinstalling the os right now, then going to reboot and do a screencap and see if i can get it to work again
+[23:56:20] <Caerdwyn> s/work/break/

@@ -1,0 +1,842 @@
+[00:04:47] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:09:15] *** Quits: Apple_Bloom (sid52418@the.canon.pony) (Connection closed)
+[00:22:35] *** Quits: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com) (Connection closed)
+[00:45:03] *** Joins: sleumas2000_ (uid91753@Pony-5dnslh.ealing.irccloud.com)
+[00:54:10] *** Joins: Apple_Bloom (sid52418@the.canon.pony)
+[00:58:45] <Sakura> Does this look right when it comes to ports for an IRC server? http://imgur.com/kvy1RtO
+[00:58:46] <PinkiePieBot> [ Imgur: The most awesome images on the Internet ]
+[01:00:08] <AppleDash> It looks wrong because you are running an IRC server from home
+[01:00:15] <AppleDash> And why did you censor the last octet of your internal IP
+[01:00:17] <Crimson_Tail> Beginning port and ending port?
+[01:00:36] <Crimson_Tail> And what AppleDash said, home irc server..
+[01:00:39] <Crimson_Tail> What's wrong with you
+[01:01:08] <Sakura> Because I'm trying to test things out from home.
+[01:01:39] <Sakura> Then when I'm ready, I'll look into options.
+[01:02:10] <Crimson_Tail> So it lets you define a beginning port and ending port?
+[01:04:36] <Sakura> I don't know if I did it right or not. 6667>6667, 6697>6697, etc.
+[01:05:09] <Crimson_Tail> 6667>7000
+[01:05:25] <Crimson_Tail> One single port forward rule like that.
+[01:11:54] * JustAberrant assumes it's internal/external port
+[01:12:50] <Sakura> Alright. I did a 6667>7000 port forward
+[01:13:29] <Sakura> I still can't connect to my test server with my phone & it's on my wi-fi network. :/
+[01:13:36] <JustAberrant> do you actually have a specific group in mind for this server, or just planning one for the hell of it.. cause I mean I'm all for people doing what they want, but IRC wise the universe is kinda covered ;p
+[01:13:57] <JustAberrant> Sakura: your router might do wifi isolation, it might also not to LAN loopback
+[01:14:15] <JustAberrant> Sakura: a lot of your walmart routers do both
+[01:15:01] <JustAberrant> wifi isolation prevents clients on the wifi (WLAN) side connecting to other machines on your LAN.. sometimes both wase
+[01:15:23] <JustAberrant> loopback prevents an internal client from accessing your network via the external ip
+[01:15:37] <Sakura> Weird because my laptop is connected to my phone as my phone acts as wireless speakers.
+[01:15:47] <Sakura> All on the same network.
+[01:15:56] <JustAberrant> they'd both be on wifi I assume?
+[01:16:21] <JustAberrant> is this irc server also on your laptop?
+[01:16:29] <Crimson_Tail> machine 1 --> router <-- phone
+[01:16:32] <Sakura> The IRC Server is on my laptop right now.
+[01:16:35] <Crimson_Tail> If you connect from the phone
+[01:16:43] <Crimson_Tail> Use the machine's internal IP
+[01:16:45] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:16:46] <Crimson_Tail> Not your external.
+[01:17:05] <JustAberrant> ^ if your router doesn't do loopback
+[01:17:27] <Sakura> I'm using my machine's IP.
+[01:17:33] <Crimson_Tail> That's how I usually ssh into my old laptop, entering its internal IP
+[01:17:57] <Crimson_Tail> the 192.68.*.*, whatever it is
+[01:18:12] <JustAberrant> Sakura: and if your speaker thing is over the network and not bluetooth or something, then it's not isolation
+[01:18:19] <DJ-C0L7[EIT]> could be worse
+[01:18:35] <JustAberrant> Sakura: sure you've got the server set to bind on the IP?
+[01:18:37] <Sakura> Probably not isolation. My laptop is connected to my phone's IP Address.
+[01:19:07] <Crimson_Tail> Remote connections from the same network = specific internal IP
+[01:19:19] <Crimson_Tail> Different network, external IP
+[01:19:57] <Crimson_Tail> And oh, make sure the ports are assigned in the ircd's config.
+[01:20:16] <Crimson_Tail> Otherwise you're gonna get a connrefused
+[01:21:08] <Sakura> I have my laptop's internal IP Address listed as server actually, not as a bind.
+[01:22:00] <Crimson_Tail> Binding IPs don't matter unless the machine has multiple IPs
+[01:22:33] <Sakura> Then I don't think it matters as I"m only using my Internal IP.
+[01:22:46] <Crimson_Tail> A machine with one IP dosen't need any binding defined.
+[01:23:38] <JustAberrant> afaik you still need to bind .. by default just about everything binds to everything.. but possible it's only binding to loopback *shrugs*
+[01:23:53] <JustAberrant> I'm assuming you can connect to the ircd from the laptop itself?
+[01:24:00] <Crimson_Tail> localhost
+[01:24:13] <JustAberrant> and equally stupid question, you're not running any firewalls or anything on said laptop?
+[01:24:20] <Crimson_Tail> ^
+[01:24:23] <Sour_Sweet> Some applications only bind to localhost by default for secruity reasons
+[01:24:44] <Sour_Sweet> So that might still be important depending on the IRCd
+[01:24:45] <Crimson_Tail> Or on that matter
+[01:24:53] <Crimson_Tail> The router's firewall, if any
+[01:26:18] <Sakura> I"ll check for a firewall on my router.
+[01:26:39] <JustAberrant> far more likely to be a firewall on the laptop.. but worth checking
+[01:26:47] <Crimson_Tail> If there's any set, it might block inbound connections.
+[01:27:24] <JustAberrant> give yourself a quick iptables --list
+[01:27:36] <Sakura> I don't think I have a firewall blocking it on my laptop. I'm going to check anyway.
+[01:28:34] <JustAberrant> if you see anything at all besides the headers, it's probably that ;p
+[01:29:34] <Sakura> Yeah, I have firewall protection on my router.
+[01:29:53] <JustAberrant> between internal clients though?
+[01:30:22] *** Joins: Midnight_Tinker_Mobile (uid102824@Pony-tjmceb.tooting.irccloud.com)
+[01:30:36] <JustAberrant> most walmart-ish routers are gonna have a firewall between your network and the internet, never seen one that has one between internal clients though *shrugs*
+[01:30:46] <JustAberrant> either way, if it does, that would certainly explain it ;p
+[01:31:04] <Sour_Sweet> Does anyone have experience with Nginx +PHP-FPM in a multi-user environment?
+[01:31:20] * JustAberrant does not :(
+[01:31:31] <Crimson_Tail> Not me, sorry
+[01:31:34] <JustAberrant> apache4life!
+[01:31:37] <JustAberrant> *cough*
+[01:32:03] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:32:14] <Crimson_Tail> And oh, if any sort of connection error the client is showing out, what is it then?
+[01:32:30] <Sour_Sweet> Yeah I'm using Apache + suPHP right now
+[01:32:53] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[01:33:01] <JustAberrant> but yeah, PHP without suphp or suexec is kinda horrifying
+[01:33:13] <JustAberrant> and last I checked, suphp is pretty old
+[01:35:25] <Crimson_Tail> Assuming the ircd is running without any errors, which ircd is it?
+[01:37:11] <Sour_Sweet> It still works quite well. My problem is apache -.-
+[01:39:39] <JustAberrant> hehe
+[01:40:00] <JustAberrant> thing with apache is I know it's objectively terrible, but I'm so damn used to it that I can't be bothered to learn anything else
+[01:40:11] <JustAberrant> I gave lighttpd and ngnix a try and just couldn't get into it
+[01:40:16] * Crimson_Tail prefers nginx
+[01:40:24] <JustAberrant> * nginx
+[01:40:43] <Sakura> YES! It works. My laptop had a firewall.
+[01:40:45] <JustAberrant> I end up just going back to apache because I know how that shit works, even if it's an absolute mess
+[01:40:55] <Crimson_Tail> There you go, firewall was the problem
+[01:41:34] <Sakura> I legit thought it allowed InspIRCd but nope.
+[01:41:58] <Sour_Sweet> I've worked with nginx in the past. It's amazing, but a pain getting used to. I currently have problems with apache's followsymlink logic and therefor look for better alternatives
+[01:42:00] <Crimson_Tail> The modular ircd, I see
+[01:42:04] * JustAberrant cuts Sakura's turnip rations for the week for this silliness
+[01:42:38] <jaderain> nginx is pretty glorious
+[01:42:45] <jaderain> you can do some amazing stuff with it
+[01:43:00] <jaderain> that being said if you're using apache, you do get mod_security, and that's nice
+[01:43:01] <Sour_Sweet> Yeah I've live video streaming with it ;-)
+[01:43:22] <Sour_Sweet> WAFs are a failure my design
+[01:43:25] <jaderain> ah, with the rtmp patch?
+[01:43:29] <Sour_Sweet> by*
+[01:43:37] <Sour_Sweet> Yeah
+[01:44:14] <jaderain> i don't agree with failure-by-design
+[01:44:23] <Sour_Sweet> I managed to get a quite complex setup with it including multiple resolutions and things
+[01:44:50] <jaderain> It's not intended to be a catch-all solution obviously
+[01:45:05] <Sour_Sweet> I've bypassed 3 different WAFs in the last two week alone
+[01:45:08] <Crimson_Tail> IRC is so light that you can have 400 people on a server with a 300 MHz CPU.
+[01:45:13] <jaderain> lol
+[01:45:19] <jaderain> I'm not saying that the ones that exist are good
+[01:45:25] <jaderain> But I"m saying that the principle is good
+[01:45:36] <jaderain> I'm actually kind of excited about AWS's brand new WAF service
+[01:45:44] <Sour_Sweet> People think if they have a WAF they're secure and don't need to take care of their webapps
+[01:45:45] <jaderain> https://aws.amazon.com/blogs/aws/new-aws-waf/
+[01:45:47] <PinkiePieBot> [ New – AWS WAF | AWS Official Blog ]
+[01:45:51] <jaderain> Nobody good thinks that
+[01:46:09] <Sour_Sweet> But is effectively how they are used
+[01:46:16] <jaderain> Maybe some places
+[01:46:40] <Sour_Sweet> I don't see any benefit from using them, which cannot be done much more cost effective in-app
+[01:47:07] <Sour_Sweet> Except for 3rd party legacy apps maybe
+[01:47:15] *** Parts: Midnight_Tinker_Mobile (uid102824@Pony-tjmceb.tooting.irccloud.com) ("")
+[01:47:27] <Sour_Sweet> (But you shouldn't use them anyway)
+[01:48:55] *** Quits: Fusl (Fusl@1.0.0.127.in-addr.arpa.li) (Ping timeout: 121 seconds)
+[01:49:07] <jaderain> The advantage is that it's another layer and reduces risk for something that's done near-line-speed at no cost.
+[01:49:52] <jaderain> It's not a catch-all obviously, no more than than that HTTP header that prevents clickjacking, or toggling the secure bit on cookies.
+[01:50:00] <jaderain> Yeah, it can be bypassed.
+[01:50:24] <jaderain> But it effectively does reduce some risk less an APT, and you can also monitor/alert on it.
+[01:50:30] <jaderain> Shove that bitch into a delicious honeypot.
+[01:50:39] <Crimson_Tail> Oh, if you're trying SSL on your 'home irc server'
+[01:50:55] <Crimson_Tail> Clients don't like self-signed certs, just a heads-up
+[01:51:16] <Crimson_Tail> (Some can be set to accept anyway)
+[01:51:19] * HoneyDrops squeaks.
+[01:51:32] <jaderain> You can get a free one here: https://buy.wosign.com/free/
+[01:51:35] <PinkiePieBot> [ 沃通数字证书在线申请 WoSign数字证书:SSL证书 | 代码签名证书 | EV SSL证书 | OV SSL证书 | DV SSL证书 | 2048位服务器证书,全球通用, 支持所有浏览器和服务器, 全面支持中文和中文域名! ]
+[01:51:39] <jaderain> Let's Encrypt isn't available to the public yet :<
+[01:51:40] <Sour_Sweet> Even CanterNet uses a (semi) self signed cert
+[01:51:51] <Crimson_Tail> oh god the title
+[01:52:00] <Sour_Sweet> StartCom would work as well
+[01:52:16] <jaderain> Yup
+[01:52:24] <jaderain> Or shell out $50 for a wildcard
+[01:52:35] <AppleDash> StartCom is bad
+[01:52:37] <jaderain> and sup that glorious laziness
+[01:52:41] <AppleDash> They charge you if you want to revoke your cert
+[01:53:03] <Crimson_Tail> Really?
+[01:53:05] * Phase wonders if letsencrypt will do wildcards
+[01:53:16] <AppleDash> Rea;;y
+[01:53:17] <Sour_Sweet> Yeah, but revoking your cert doesn't really work anyway
+[01:53:18] <AppleDash> Really*
+[01:53:19] <jaderain> i would imagine not
+[01:53:24] <Crimson_Tail> Charge you for revoking your cert..
+[01:53:40] <Crimson_Tail> What is that even
+[01:53:52] <Sour_Sweet> Phase: Currently no, but they said they're gonna support SANs
+[01:53:59] <Phase> SAN?
+[01:54:10] <Sour_Sweet> Subject alternative names
+[01:54:22] <Sour_Sweet> Basically a cert for multiple domains
+[01:54:32] <Phase> nice
+[01:54:43] <Crimson_Tail> And off I go to eat dinner
+[01:55:16] <Sour_Sweet> You'd need to reissue it if you add a new domain, but since they offer auto-issue and it's free that's OK with me
+[01:55:32] <Sour_Sweet> I'd prefer wildcards, but SANs work as well
+[01:56:08] <Phase> well with auto-issue, you'd probably just use multiple certs
+[01:56:14] <jaderain> yeah
+[01:56:22] <Sour_Sweet> Requires SNI
+[01:56:35] <Sour_Sweet> Server Name Indication
+[01:56:37] <Phase> Ah, for https, yeah you'd want SAN
+[01:56:40] <jaderain> i imagine that let's encrypt will do SANs but not wildcard
+[01:56:41] <AppleDash> What's with the 3 month thing at LetsEncrypt?
+[01:57:10] <Sour_Sweet> If they're renewed automagically I don't care too much
+[01:58:04] *** Joins: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com)
+[01:58:21] <Sour_Sweet> My personal favorite would: Setup once. Point daemon to cert. Let daemon auto-renew them
+[01:58:25] <AppleDash> I don't want to run some daemon that renews my SSL certs
+[01:58:33] <jaderain> Yeah
+[01:58:37] <jaderain> That's not really a good policy
+[01:58:42] <Sour_Sweet> If that works it even increases security
+[01:58:47] <jaderain> lolwhat
+[01:58:57] <Sour_Sweet> Certs cannot be revoked really
+[01:59:05] <jaderain> well, you're wrong
+[01:59:10] <Sour_Sweet> Nope
+[01:59:19] <jaderain> oscp stapling much?
+[01:59:44] <jaderain> ocsp*
+[01:59:45] <Sour_Sweet> The only thing that works is blacklists shipped with the browser
+[01:59:54] <jaderain> https://en.wikipedia.org/wiki/OCSP_stapling
+[01:59:55] <PinkiePieBot> [ OCSP stapling - Wikipedia, the free encyclopedia ]
+[02:00:02] <jaderain> learn something new :)
+[02:02:05] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[02:04:05] <Sour_Sweet> And what if I just don't send it?
+[02:04:29] <Sour_Sweet> The client will perform the check itself - oh wait the server is offline
+[02:04:42] <jaderain> That's what that's intended to get around, yes.
+[02:04:54] <jaderain> Obviously if you use it, then CRLs would work. Obviously.
+[02:05:25] <jaderain> I mean, this isn't new.
+[02:05:34] <Sour_Sweet> No CRL works in case of a man in the middle attack
+[02:05:48] <Sour_Sweet> (except the hard coded once)
+[02:06:50] <jaderain> Yes, I guess if you have a rogue CA in your store, or choose to trust something you shouldn't.
+[02:07:00] <jaderain> But that's kind of a different problem.
+[02:07:08] <Sour_Sweet> No
+[02:08:13] <Sour_Sweet> As an attacker with a valid (compromised key - revoked) I just tell the client I don't support OCSP stapling and block any requests to CRLs
+[02:08:17] <jaderain> anyway
+[02:08:23] <Compu> http://bbsimg.ngfiles.com/1/25267000/ngbbs5442db7980e44.png
+[02:09:17] <Sour_Sweet> Unless this throws a hardfail exception I'll get away with that
+[02:09:19] <AppleDash> Wait
+[02:09:24] <AppleDash> The cert daemon doesn't work out
+[02:09:31] <AppleDash> Because... What if it's on an ircd
+[02:09:37] <AppleDash> when the cert is renewed, you have to restart it
+[02:09:40] <AppleDash> That disconnects all users
+[02:09:43] <AppleDash> that is not OK
+[02:09:54] *** Joins: Duck (sid3009@Pony-4r56u0.ealing.irccloud.com)
+[02:10:15] <Sour_Sweet> You can change the cert on some servers without restarting
+[02:10:26] <jaderain> Ah, yes. In the case where you have a mitm and you prevent the client from doing that, then yes. However, that's what https://tools.ietf.org/html/draft-hallambaker-muststaple-00 is for. But it's not there yet.
+[02:10:28] <PinkiePieBot> [ draft-hallambaker-muststaple-00 - X.509v3 Extension: OCSP Stapling Required ]
+[02:10:32] <jaderain> You have a point in that.
+[02:11:00] <Sour_Sweet> Canternet just did that btw. AppleDash
+[02:11:04] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[02:11:10] <jaderain> Anyway, I can't imagine someone who would want to just let security certificates autorenew without auditing the mechanism by which the key/cert is maintained when renewal comes up./
+[02:11:34] <Duck> I finally got to register my account here! 
+[02:11:34] *** Fusl is now known as Pony_41062
+[02:11:37] <Sour_Sweet> Well the software they want to use is open source and audited
+[02:12:00] <jaderain> OSS != audited
+[02:12:15] <jaderain> afk
+[02:12:22] <Sour_Sweet> I didn't say it's the same :P
+[02:12:32] <Sour_Sweet> BUT they have BOTH
+[02:12:34] <AppleDash> Yes, but that would only need to be done once a year or more
+[02:12:39] <AppleDash> With LE it would be 4 times per year
+[02:13:03] <AppleDash> Oh no
+[02:13:14] <AppleDash> Duck: You're close to Dusk and almost the same color
+[02:13:28] <Duck> what color am I
+[02:13:31] <Duck> Brown? 
+[02:13:36] <AppleDash> Purple
+[02:13:42] <Duck> i demand to be brown.
+[02:14:01] <AppleDash> Change your nick to something that weechat decides is deserving of the brown color :P
+[02:14:01] <Sour_Sweet> To be honest I don't know what their current plan is when it comes to issue dates
+[02:14:36] <Sour_Sweet> Anyhoof I'll go to bed now
+[02:14:46] <Duck> AppleDash: GREAT IDEA
+[02:14:52] *** Duck is now known as mismagius
+[02:15:05] <mismagius> holy crap this name is registered
+[02:15:08] *** mismagius is now known as Duck
+[02:15:09] *** GigaTown is now known as Gigabit
+[02:15:13] <Dusk> oh dear
+[02:15:18] * Dusk licks Duck
+[02:15:30] <AppleDash> ducoh no
+[02:15:34] <AppleDash> oh no
+[02:15:39] <Duck> OH YES
+[02:16:03] <Gigabit> well my truck runs but the gas tank hole is so large that I lost 5 gallons in a day
+[02:16:23] <AppleDash> Gigabit: Get some Duck tape
+[02:16:31] <Duck> Gigabit: long story
+[02:16:35] <Duck> I think I'm about to be murdered
+[02:16:41] <Gigabit> I broke the outlet gasline, got a high psi,high temp rubber hose and made it work with a new filter, truck runs but needs a new tank
+[02:17:53] *** Sour_Sweet is now known as Seoson|BNC
+[02:17:58] <Gigabit> huh?
+[02:18:07] <Compu> apple is trying to say that they have a patent on autocorrect -_-
+[02:18:30] <Compu> and theyre still trying to say that they have a patent on the idea of apps
+[02:18:31] <Gigabit> AppleDash, I would have to almost drop the tank, i cant afford new tank straps and possibly a new fuel pump assembly, the leak is under the support frame
+[02:18:35] <Compu> oh and multitouch
+[02:18:42] <Compu> and slide to unlock
+[02:18:43] <Duck> Compu: Next, apple attempts to patent the mobile phone
+[02:18:59] <Gigabit> or else I would smash a bar of soap into the hole as a temp fix
+[02:19:00] <Compu> Dusk: nah, next they attempt to patent electricity
+[02:19:14] <Duck> I can tell this is gonna be fun already
+[02:19:22] <Duck> there's a user here with a very similar name to mine
+[02:19:24] <Compu> Duck*
+[02:21:17] <Dusk> o.o
+[02:22:25] <Gigabit> my wrist and thumb hurt.. hitting the support frame hurts like hell
+[02:22:27] <Colgate> "Even CanterNet uses a (semi) self signed cert" -- what? that makes no sense
+[02:22:31] <Rylee> Duck is pretty much the worst
+[02:22:42] <Duck> Yeah I'm horrible :( 
+[02:25:19] <Compu> Colgate: watch out, apple might try to sue u over copying the idea of imessage
+[02:25:29] <Colgate> imessage?
+[02:25:43] <Compu> apple's instant messaging platform
+[02:27:01] *** Joins: firestream (vinylderpy@Pony-i78.l4s.158.69.IP)
+[02:27:08] <Colgate> oh right
+[02:27:28] <Colgate> doesn't that use gpg style encryption on every message?
+[02:27:43] <Compu> Colgate: after all apple has imessage which means they should be the only ones to be able to do any form of instant messaging ever
+[02:28:13] <Compu> but then again, maybe the patent on electricity they will try will overshadow the imessage patent
+[02:29:38] <Compu> https://s-media-cache-ak0.pinimg.com/736x/0d/ff/40/0dff40f53f1a23a0e378d7cd6c6d554f.jpg
+[02:51:05] <Compu> https://youtu.be/JzsLkbwi1LA
+[02:51:05] <PinkiePieBot> [ World Without Linux Episode 1: What's the Name of that Song? - 28330 views - 1m 4s long - 605 likes - 95.13% ]
+[03:00:24] *** Quits: sleumas2000_ (uid91753@Pony-5dnslh.ealing.irccloud.com) (Quit: Connection closed for inactivity)
+[03:07:33] *** Joins: Fillyfeathers (Fallfeather@Pony-1t7vp7.bigpond.net.au)
+[03:09:46] *** Quits: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP) (Ping timeout: 121 seconds)
+[03:23:03] *** Init3-away is now known as init3
+[03:52:30] <HoneyDrops> https://boingboing.net/2015/10/06/nz-government-leaks-on-tpp-co.html :I
+[03:52:31] <PinkiePieBot> [ NZ government leaks on TPP: copyright terms will go to life plus 70 years / Boing Boing ]
+[03:53:29] *** Quits: Darki (DK@Pony-92fd75.vs.webtropia.com) (Ping timeout: 121 seconds)
+[03:53:33] *** RedHelper|AFK is now known as Princess_Cadance
+[03:55:25] *** Joins: Darki (DK@Pony-92fd75.vs.webtropia.com)
+[03:55:56] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[04:04:48] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[04:10:15] <Compu> why must i have small hands? i cant even use a small smartphone in one hand easily
+[04:13:49] <Gigabit> I'll trade ya big manly hands for small ones :(
+[04:14:16] <Compu> Gigabit: nah i want hooves
+[04:15:00] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-63v.6j9.56.172.IP)))
+[04:15:40] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[04:18:22] <DJ-C0L7[EIT]> who wouldn't xP
+[04:19:17] <HoneyDrops> I want to know where they are getting bears an gorillas to test phones these days, human hands cannot possibly hold the size phones they are making.
+[04:19:20] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[04:19:41] <JustAberrant> dmesg
+[04:19:56] <JustAberrant> :(
+[04:21:43] *** Quits: Crimson_Tail (Bluepon@Pony-qc216c.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[04:21:55] *** Joins: Crimson_Tail (Bluepon@Pony-qc216c.cg80.k4gu.0151.2601.IP)
+[04:23:23] *** Quits: Crimson_Tail (Bluepon@Pony-qc216c.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[04:23:32] *** Joins: Crimson_Tail (Bluepon@Pony-qc216c.cg80.k4gu.0151.2601.IP)
+[04:25:24] <JustAberrant> Compu: kinda makes a silly point @ video
+[04:25:42] <JustAberrant> I mean I love linux and all, and there's no doubting it's important in powering the internet
+[04:25:51] <JustAberrant> but if it wasn't around, something else would have taken it's place
+[04:26:05] <JustAberrant> probably windows
+[04:26:13] <Phase> BSD
+[04:26:41] <Compu> JustAberrant: the flying spaghetti monster
+[04:26:43] <JustAberrant> well, I guess I was kinda lumping that along with solaris in the linux argument
+[04:26:44] <JustAberrant> but yeah
+[04:27:03] <Colgate> Phase: yes that
+[04:27:04] <JustAberrant> BSD was way more fundamental to the building of the internet
+[04:27:12] <Phase> carrier grade switches tend to use freebsd afaik
+[04:27:43] <JustAberrant> either way, world without x arguments are silly because the world adapts
+[04:27:48] <Colgate> if linux just disappeared today, of course there would be issues, in the same way that if windows just disappeared today, there would also be major issues
+[04:28:10] <JustAberrant> if we hadn't figured out gasoline, we'd probably have highly efficient steam powered cars by now
+[04:28:22] <Compu> Colgate: i would love it if the planet just disappeared
+[04:28:43] <Colgate> if it did, you wouldn't have much time to love it
+[04:28:52] <Compu> but i dont love it
+[04:29:01] <Phase> longer than you might think
+[04:29:02] <JustAberrant> that's bleak :(
+[04:29:12] <Compu> im a misanthrope
+[04:29:16] <Colgate> Phase: <5 minutes :P
+[04:29:29] <Phase> Colgate, yeah, about that
+[04:29:31] <JustAberrant> the world is full of wonders.. like grass and trees and vodka and freely available internet pornography and love and puppies and all that shit
+[04:29:41] * Phase looked it up at some point
+[04:29:51] <Phase> bout a minute and a half was the number i god
+[04:29:52] <Phase> got'
+[04:30:02] <Compu> JustAberrant: plenty of other worlds have grass and trees and puppies, just need dimensional travel
+[04:30:03] <Phase> exposure to vacuum'
+[04:30:10] <HoneyDrops> Mostly depends on how fast you use up your oxygen.
+[04:30:27] <JustAberrant> Compu: pff, they're probably not in much better shape than ours
+[04:31:06] <Compu> JustAberrant: depends on the dimension, ur assuming im talking about dimensions with humans
+[04:31:12] * JustAberrant suddenly gets urge to watch rick and morty
+[04:31:19] <Colgate> ...
+[04:31:49] <JustAberrant> Compu: humans, ponies, sentient cantaloupes.. I suspect it's mostly the same
+[04:32:09] <Compu> i want ponies
+[04:32:16] <Colgate> I think the video would have been more interesting if it was more along the lines of: what if for some reason open source software could never exist?
+[04:32:24] <JustAberrant> if you really look at the ponies universe, it's probably objectively terrible
+[04:32:45] <Phase> iirc in some cases, dogs were able to be revived after upward of 20 or 30 minutes in vacuum
+[04:32:50] <Colgate> I don't particularly want to deal with creatures from the depths of tartarus
+[04:32:55] <JustAberrant> like, world building wise everything is less than concrete, but it doesn't actually sounds like I place I'd want to live if you get down to it
+[04:33:07] <HoneyDrops> https://boingboing.net/2015/10/05/smurfs-vs-phones-gchqs-sec.html  Seems like a hardware switch to properly kill the GSM module could mitigate this (be completely disconnecting its power).
+[04:33:08] <PinkiePieBot> [ Smurfs vs phones: GCHQ's smartphone malware can take pics, listen in even when phone is off / Boing Boing ]
+[04:33:15] <Colgate> that seems to happen on a biweekly time :P
+[04:33:49] <JustAberrant> I mean like most fictional universes, it's fun and exciting if you're the main character(s) the show focues on.. but if you're one of the shlubs in the background with a carrot mark on your side because your entire existence resolves around them... not so much fun
+[04:33:54] *** Quits: Fillyfeathers (Fallfeather@Pony-1t7vp7.bigpond.net.au) (Quit: My people need me!)
+[04:34:53] <Compu> HoneyDrops: arent removeable batteries great?
+[04:35:09] <Compu> Colgate: humans r from the depths of tartarus imho
+[04:35:23] <Colgate> pretty sure I'm from my mother's womb
+[04:35:27] <Phase> that's an interesting thing to call your mum
+[04:35:43] <Colgate> I mean, I might not be, but I probably am
+[04:35:44] <JustAberrant> my mother says I was hatched ;p
+[04:36:05] <JustAberrant> (she actually does say that, we share a bizarre sense of humor)
+[04:36:10] <Compu> JustAberrant: i dont expect constant excitement like the mane 6 get, i just want a less shit planet to live on with less shit beings
+[04:36:15] <HoneyDrops> Compu: well I was thinking of have a still mostly-usable phone.  You have a local computing env, and just not the nasty GSM module you can't trust.
+[04:36:34] <Compu> Phase: humans in general, not specific humans
+[04:36:59] <Compu> HoneyDrops: i like my note 4
+[04:37:17] <JustAberrant> Compu: find less shitty people.. seriously.. they do exist
+[04:37:41] * HoneyDrops will build her next phone.  Until then, my n900 works fine.
+[04:37:44] <Compu> JustAberrant: prove it, keep in mind that to me just being human beings instantly makes them shit
+[04:38:03] *** AutoLapsus sets mode: +b m:*!*@snuggly.filly
+[04:38:05] <JustAberrant> this sounds like a very unhealthy world view :(
+[04:40:05] <HoneyDrops> I don't even personally know the ones that tend to frustrate/disappoint me.  For the most part, I don't even consider them malicious, just an unfortunate combination of stupid and fear-driven with the capacity to make decisions that they are ill-equipped to make.
+[04:41:02] <JustAberrant> same, except I don't think they're ill-equipt so much as ill-motivated
+[04:42:01] <HoneyDrops> Pretty much every decision made with fear as the primary (or even a major) motivator, is a bad one.  Be it fear of loss, change, the unknown, perceived threats (or even a real one, which is too often mis-perceived), etc.
+[04:42:10] <JustAberrant> either way, not much you can do about the world on the large scale, at least imo.. but you can work on the small bit of it you have to deal with on a daily basis
+[04:43:48] <HoneyDrops> I am content to let it work itself out.  Either we as a species/society get out collective act together, or we don't.  The latter will address itself via extinction.
+[04:43:58] <JustAberrant> I feel relatively helpless to stop the gradual erosion of privacy, the lock down on creativity, the restriction of technological progress for all kinds of terrible reasons... but I can find people who are fun to hang out with
+[04:45:31] <HoneyDrops> Fear is the root problem to all of those.  Irrational fear of mis-judged threats for the first, fear of competition for the second, and fear of loss of control for the third.
+[04:46:44] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-jq2.6j9.56.172.IP)))
+[04:47:24] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[04:47:46] *** Joins: Firestar (AndChat7064@Pony)
+[04:48:10] <HoneyDrops> But I can't really fault us for it... we carry a lot of evolutionary baggage.  We're mostly still scared little apes that climbed down from the trees.  Our better natures have enabled us to progress, but we still have to learn to control our baser instincts.
+[04:52:56] <HoneyDrops> The fact is, technological progression will win out.  Creativity will win out.  There will be those who will continue to claw at things trying to maintain the status quo, but they are doomed to fail.  However a quick death to such efforts/views would be better as it would reduce needless collateral.
+[05:09:35] *** locodash11[lagout] is now known as locodashie11
+[05:31:42] *** Eventide is now known as Eventide|Sleepies
+[05:37:44] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[05:54:57] *** Joins: Fallfeathers (Fallfeather@Pony-rlcauk.bigpond.net.au)
+[05:56:08] *** init3 is now known as Init3-away
+[06:03:32] <Googie> Halp. I want to found my own VPS company: https://www.digitalocean.com/community/questions/how-can-i-rent-droplets-for-vps-hosting
+[06:03:34] <Googie> :V
+[06:03:43] *** AutoLapsus sets mode: -b m:*!*@snuggly.filly
+[06:04:16] <Colgate> "Thank you for the info. Can I integrate digitalocean with wordpress?"
+[06:05:10] <Googie> Something tells me this guy doesn't have the technical aptitude...
+[06:06:53] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:17:28] <Sukasa> I think they're missing more than just that
+[06:20:15] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[06:20:29] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[06:20:49] <AppleDash> lol
+[06:24:58] <JustAberrant> :)
+[06:25:19] <JustAberrant> AppleDash: btw, dunno if you still talk to that friend of yours or if he still uses my server at all, but it's probably going down soon :(
+[06:25:28] *** Quits: firestream (vinylderpy@Pony-i78.l4s.158.69.IP) (Ping timeout: 121 seconds)
+[06:25:38] <JustAberrant> it's gotten to the point where it won't stay up for more than like 6 hours before running out of mem :(
+[06:25:46] <JustAberrant> and I'm pretty sure he's the only one who ever plays on it
+[06:26:20] <JustAberrant> probably gonna tar up the world file and make it available.. if you want to host it on your server or something that's cool, otherwise it could be played in single player with some tweaking
+[06:26:32] <JustAberrant> (which I could help with if necessary.. or I might just make both versions available)
+[06:29:55] <AppleDash> JustAberrant: World file sounds gret
+[06:29:58] <AppleDash> great*
+[06:30:03] <AppleDash> He's been wanting that for months
+[06:31:09] <DJ-C0L7[CSS]> the oklahoma tax commission issued me a new tag/plate for my '92 cherokee, the new tag is now 427LOL xD
+[06:34:55] <AppleDash> lol
+[06:34:56] <AppleDash> nice
+[06:35:41] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[06:36:37] <Gigabit> Heh, speaking of that.. I seen a '76 Camaro with the plate LOLOIL
+[06:43:09] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[06:45:33] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[06:53:16] *** Joins: firestream (vinylderpy@Pony-i78.l4s.158.69.IP)
+[06:55:16] *** Quits: firestream (vinylderpy@Pony-i78.l4s.158.69.IP) (Quit: )
+[06:55:23] *** Joins: firestream (vinylderpy@Pony-i78.l4s.158.69.IP)
+[06:56:00] *** Quits: firestream (vinylderpy@Pony-i78.l4s.158.69.IP) (Quit: )
+[06:56:08] *** Joins: firestream (vinylderpy@Pony-i78.l4s.158.69.IP)
+[06:58:59] <JustAberrant> AppleDash: I did one awhile back when he asked ;p
+[06:59:58] *** Alphagamer774 is now known as alpha774[GW2]
+[07:00:29] <AppleDash> I see
+[07:00:33] *** Quits: firestream (vinylderpy@Pony-i78.l4s.158.69.IP) (Quit: )
+[07:00:39] *** Joins: firestream (vinylderpy@Pony-i78.l4s.158.69.IP)
+[07:03:27] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[07:10:29] <JustAberrant> AppleDash: and done :(
+[07:10:41] <AppleDash> :>
+[07:10:46] <JustAberrant> I put a note on the site, but http://ftb.justaberrant.com/FTB_world__oct_07_2015.tar.gz ;p
+[07:11:36] <JustAberrant> if you do want to take over hosting it, let me know and I can give you all the config files/etc if you want them
+[07:16:36] <Moonlightning> DJ-C0L7[CSS]: awwwww…so close!
+[07:16:45] <Moonlightning> You could've had 240LOL
+[07:16:50] <Moonlightning> err, 420LOL *
+[07:40:57] <firestream> welp
+[07:40:58] *** Princess_Cadance is now known as Princess_Cadance|AFK
+[07:41:22] <firestream> my server array died D:
+[07:46:26] <JustAberrant> :(
+[07:51:54] <Moonlightning> D: !
+[07:51:57] <Moonlightning> What happened to it?
+[07:52:18] <Gigabit> It died
+[07:52:45] <firestream> yep
+[07:52:58] <firestream> a few drive's died and my mobo died 
+[07:53:17] <firestream> when there is smoke coming from thjem something is wrong XD
+[07:55:32] <Fallfeathers> So my phone line is currently experiencing an issue. Is it unusual for me to receive a degraded DSL connection but no POTS?
+[07:55:53] <Fallfeathers> I would have expected that if I couldn't use POTS then I wouldn't be able to use the phone line at all for any connection
+[07:56:09] <JustAberrant> yeah, that seems kinda backwards ;p
+[07:56:24] <firestream> im not sure
+[07:57:15] <Fallfeathers> Or rather ISDN, not POTS.
+[07:57:24] <Fallfeathers> Whichever.
+[07:57:29] <Fallfeathers> Telecomms isn't my thing
+[07:57:45] <firestream> i can't wait to today  i am getting True Fiber :D
+[07:57:51] <firestream> 1 GIG dowm + Up :D
+[08:00:04] <Moonlightning> :I
+[08:00:24] <Moonlightning> wanna talk about backwards…
+[08:01:02] <Moonlightning> I live right next to Silicon Fucking Valley, and about the best you can get in my area without paying an arm and a leg is 1.5 MiB/s down, asymmetrical
+[08:01:23] <Moonlightning> Google forgot about where it's based. :I
+[08:01:39] <firestream> lol
+[08:01:42] <firestream> l.ol
+[08:01:46] <firestream> was to know whats more mest up
+[08:01:48] <Fallfeathers> Silicon Fucking Valley is a development mecca, not an infrastructurial one. :v
+[08:02:10] <firestream> across the street from me  my friend can only get 512KB down and 118 Kb up
+[08:02:14] <firestream> from any isp even cable xD
+[08:14:02] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[08:15:08] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:17:59] *** Init3-away is now known as init3
+[08:28:22] *** Gigabit is now known as Snoarin
+[08:30:04] *** locodash11[lagout] is now known as locodashie11
+[08:30:19] <Moonlightning> Damn
+[08:30:30] <Moonlightning> firestream: you should extend your Wi-Fi network, let them use it
+[08:31:04] <firestream> i am thinking of that
+[08:31:22] <firestream>  there is a  storm pipe i can feed the cable thur also tho ;) 
+[08:31:39] <firestream> just have to get a good long cat6 cable tho and it would fit :D
+[08:35:00] <JustAberrant> I wouldn't want to touch the cable when it came out the other end ;p
+[08:35:29] <firestream> put it in a protetive pipe and i can see from my end to his 
+[08:36:21] <firestream> its  one of these https://treeyopermacultureedu.files.wordpress.com/2014/01/storm-pipe.jpg
+[08:36:23] <firestream> but smaller
+[08:37:04] <JustAberrant> also I imagine the city would be pissed off if they ever see it ;p
+[08:37:33] <firestream> haha they would but meh 
+[08:38:35] <firestream> they city  / ips/s should upgrade that sdie of the street for internet
+[08:38:41] <firestream> and not have Sub DLS speeds
+[08:40:44] *** zz_CyberJacob is now known as CyberJacob
+[08:54:45] *** Quits: AutoLapsus (Lapsus@Totally.Is.A.Network.Service) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: firestream (vinylderpy@Pony-i78.l4s.158.69.IP) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Pony_41062 (Fusl@1.0.0.127.in-addr.arpa.li) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Shutter (tips@why.did.you.even.rope.me.into.this) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: GeekBrony (GB@bronydom.net) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: dekeccho (dekeccho@dekeccho.Is.Not.A.Clever.Poni) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Asoka (Asoka@Pony-u43i4s.net-htp.de) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: meteor (meteor@Pony-6i9.jlf.236.104.IP) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: HoneyDrops (Honey@sweeter.than.honey) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Obaskyr (Tachy@Pony-pltgud.range109-146.btcentralplus.com) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Finwe (vhalkola@Pony-oi2dre.org.aalto.fi) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: JustAberrant (JustAberran@Pony-lq4qe0.com) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: derpy (derp@muffins) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: floogulinc (floogulinc@Pony-opvprb.floogul.net) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: CyberJacob (CyberJacob@Pony-8adl2m.bluesapphiremedia.co.uk) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: misiek200m (miskof@mysterious.chocolate.muffin) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: wolfyshy (woof@fluttering.shyly.through.the.forest) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Gumball (GumballCras@0.to.pony.10secondsflat) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Eventide|Sleepies (uid61788@Tips.Fedora) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Snoarin (Gigabit@the.girly.colt) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Kinsley (JKinsley@Bow.To.Your.Princess) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Rylee (rylai@Pony-71u6pe.so) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Datguy (Datguy@lord.of.nreboot.c0m) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Cameron_D (cameron@192.241.210.101) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Datalink (Datalink@Datalink) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Finnfinn (Finnfinn@finn.isher) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Firestar (AndChat7064@Pony) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: miggyb (miggyb@horsetornado.co.uk) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Colgate (rabbit@brushie.horse) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Princess_Cadance|AFK (RedHelper@The.Pony.That.Makes.You.Smile) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Cosmic (Neptune@Planet.Neptune) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: SilverEagle (SilverEagle@SilverEagle.is.best.pony) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: sleumas2000 (sleumas2000@my.little.karaoke) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Eivel (Eivel@Keep.Calm.and.Pony.On) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: jaderain (jaderain@jaderain.is.best.pony) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Darki (DK@Pony-92fd75.vs.webtropia.com) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: ButterBean (Dragony@Pony-458.d8k.20.198.IP) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: klaxa (klaxa@Pony-1kuq6f.eu) (discord.canternet.org cadance.canternet.org)
+[08:54:45] *** Quits: Sakura (Sakura@is.a.very.derpy.pony) (discord.canternet.org cadance.canternet.org)
+[08:56:42] *** Joins: sleumas2000 (sleumas2000@my.little.karaoke)
+[08:56:42] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[08:56:42] *** Joins: Kinsley (JKinsley@Bow.To.Your.Princess)
+[08:56:42] *** Joins: dekeccho (dekeccho@dekeccho.Is.Not.A.Clever.Poni)
+[08:56:42] *** Joins: Finnfinn (Finnfinn@finn.isher)
+[08:56:42] *** Joins: AutoLapsus (Lapsus@Totally.Is.A.Network.Service)
+[08:56:42] *** Joins: Sakura (Sakura@is.a.very.derpy.pony)
+[08:56:42] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[08:56:42] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[08:56:42] *** Joins: Eivel (Eivel@Keep.Calm.and.Pony.On)
+[08:56:42] *** Joins: Datalink (Datalink@Datalink)
+[08:56:42] *** Joins: Gumball (GumballCras@0.to.pony.10secondsflat)
+[08:56:42] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[08:56:42] *** Joins: derpy (derp@muffins)
+[08:56:42] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[08:56:42] *** Joins: misiek200m (miskof@mysterious.chocolate.muffin)
+[08:56:42] *** Joins: Snoarin (Gigabit@the.girly.colt)
+[08:56:42] *** Joins: Shutter (tips@why.did.you.even.rope.me.into.this)
+[08:56:42] *** Joins: Jouva (jouva@Pony-535ork.fios.verizon.net)
+[08:56:42] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[08:56:42] *** Joins: Rylee (rylai@Pony-71u6pe.so)
+[08:56:42] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[08:56:42] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[08:56:42] *** Joins: Datguy (Datguy@lord.of.nreboot.c0m)
+[08:56:42] *** Joins: Asoka (Asoka@Pony-u43i4s.net-htp.de)
+[08:56:42] *** Joins: miggyb (miggyb@horsetornado.co.uk)
+[08:56:42] *** Joins: meteor (meteor@Pony-6i9.jlf.236.104.IP)
+[08:56:42] *** Joins: SilverEagle (SilverEagle@SilverEagle.is.best.pony)
+[08:56:42] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[08:56:42] *** Joins: Princess_Cadance|AFK (RedHelper@The.Pony.That.Makes.You.Smile)
+[08:56:42] *** Joins: Obaskyr (Tachy@Pony-pltgud.range109-146.btcentralplus.com)
+[08:56:42] *** Joins: Colgate (rabbit@brushie.horse)
+[08:56:42] *** Joins: Cosmic (Neptune@Planet.Neptune)
+[08:56:42] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[08:56:42] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[08:56:42] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[08:56:42] *** Joins: Finwe (vhalkola@Pony-oi2dre.org.aalto.fi)
+[08:56:42] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[08:56:42] *** chrysalis.canternet.org sets mode: +oo Kinsley AutoLapsus
+[08:56:42] *** Joins: klaxa (klaxa@Pony-1kuq6f.eu)
+[08:56:42] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[08:56:42] *** Joins: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se)
+[08:56:42] *** Joins: Darki (DK@Pony-92fd75.vs.webtropia.com)
+[08:56:42] *** Joins: HoneyDrops (Honey@sweeter.than.honey)
+[08:56:42] *** Joins: Pony_41062 (Fusl@1.0.0.127.in-addr.arpa.li)
+[08:56:42] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[08:56:42] *** Joins: wolfyshy (woof@fluttering.shyly.through.the.forest)
+[08:56:42] *** Joins: Cameron_D (cameron@192.241.210.101)
+[08:56:42] *** Joins: GeekBrony (GB@bronydom.net)
+[08:56:42] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[08:56:42] *** Joins: Firestar (AndChat7064@Pony)
+[08:56:42] *** Joins: firestream (vinylderpy@Pony-i78.l4s.158.69.IP)
+[08:56:42] *** Joins: Eventide|Sleepies (uid61788@Tips.Fedora)
+[08:56:42] *** Joins: floogulinc (floogulinc@Pony-opvprb.floogul.net)
+[08:56:42] *** Joins: jaderain (jaderain@jaderain.is.best.pony)
+[08:56:42] *** Joins: Starburn (eyeburn@secret.den.of.flaming.evil)
+[08:56:42] *** Joins: ButterBean (Dragony@Pony-458.d8k.20.198.IP)
+[08:56:42] *** Joins: CyberJacob (CyberJacob@Pony-8adl2m.bluesapphiremedia.co.uk)
+[08:58:28] <Moonlightning> ._.
+[08:58:35] <Moonlightning> neeeeeeetspliiiiiit
+[09:05:29] * HoneyDrops mews.
+[09:07:10] <Sakura> Mew
+[09:07:18] <Sakura> Netsplit suck
+[09:08:43] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[09:21:59] <tiwake> dododo
+[09:22:13] <JustAberrant> :)
+[09:22:40] <tiwake> infinity battlescape is going to have their kickstarter very soon
+[09:22:46] <tiwake> I'd expect within a week
+[09:40:31] *** CyberJacob is now known as zz_CyberJacob
+[09:43:11] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[09:43:46] <tiwake> also, sleep time
+[10:12:15] *** Quits: Crimson_Tail (Bluepon@Pony-qc216c.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[10:20:37] <firestream> ohh does anyone need a teamspeak server i can host one for you :)
+[10:22:02] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:26:36] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[10:29:51] *** init3 is now known as Init3-away
+[10:47:33] *** Quits: alpha774[GW2] (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Quit:  HydraIRC -> http://www.hydrairc.com <- The alternative IRC client)
+[10:52:22] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[10:52:26] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[10:52:31] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[11:20:27] *** Joins: Phase (Phase4@Pony-pm0kpp.internode.on.net)
+[12:37:23] *** Seoson|BNC is now known as Sour_Sweet
+[13:17:39] * RainbowHacks derps
+[13:33:36] <Sour_Sweet> My certs start to expire on the 21th of november. Let's encrypt starts general availability on november the 16th. No further delay PLEASE ;-)
+[14:10:26] *** Quits: Firestar (AndChat7064@Pony) (Ping timeout: 121 seconds)
+[14:12:28] *** Joins: Firestar (AndChat7064@Pony)
+[14:14:33] *** Quits: Firestar (AndChat7064@Pony) (Quit: Bye)
+[14:42:34] <Cosmic> so there's a really weird WAV file in my documents folder and if I select it, left click on it just once, or try and drag it anywhere else, basically try to interact with it in any way, explorer.exe freezes up
+[14:42:41] <Cosmic> any ideas on how to delete i?
+[14:42:42] <Cosmic> it
+[14:43:57] <RainbowHacks> Cosmic, boot into rescue disk, rm -f ?
+[14:44:06] <RainbowHacks> :p
+[14:45:36] <Cosmic> I'm using Windows. Not Linux.
+[14:45:52] <RainbowHacks> i assumed that from the explorer.exe comment
+[14:45:57] <RainbowHacks> hence the Rescue Disk part
+[14:46:20] <RainbowHacks> I believe both RIP and Finnix have ntfs drivers built in
+[14:46:39] <RainbowHacks> though rm isn't exclusive to Linux. UNIX existed a long time before Linux did and still does :P
+[14:46:49] <Cosmic> I don't really feel like getting a whole rescue disk just to delete this one file
+[14:47:00] <RainbowHacks> dunno what to tell you then
+[14:47:04] <RainbowHacks> maybe try Eraser
+[14:47:17] <RainbowHacks> fairly neat little program that nukes files from orbit
+[14:47:23] <RainbowHacks> kinda like a dban for a single file.
+[14:50:43] <Cosmic> trying eraser
+[14:50:49] <Cosmic> right now nothing yet
+[14:50:53] <Cosmic> it says it's running
+[14:52:19] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:01:55] <roflin> well you could try cmd prompt... and... "del" is that the rm binary on windows... can't remember
+[15:03:23] <Cosmic> i tried using CMD already
+[15:03:25] <Cosmic> it didn't work
+[15:03:30] <Cosmic> i'm gonna try booting into safe mode
+[15:03:37] <Cosmic> and try to delete it then
+[15:24:18] <Cosmic> welp. it beat safe mode
+[15:24:26] <Cosmic> idk what else to try
+[15:25:58] <DataByte> not tried a checkdisk?
+[15:26:35] <Cosmic> i'll try that now
+[15:27:07] <DataByte> i agree with rainbow, though - linux doesn't typically care for windows' gimmicks - just deletes the file pointer xD
+[15:40:01] <Cosmic> so chkdsk found nothing wrong
+[15:44:24] <Compu> Cosmic: time to go for linux
+[15:46:08] <Compu> Cosmic: just download something like ubuntu, write the iso image to the disk (this does not mean just copying the iso file), and then reboot and boot off the disk, select the try ubuntu option and from there u can go into ur hard drive and delete the file
+[15:46:50] <Compu> u will need either a writable dvd or a thumb drive, dvds r usually easier to work with
+[15:47:51] <Cosmic> i think i have an actual disc of ubuntu somewhere
+[15:48:11] <Cosmic> but it's old and i think it might be a server version, but idk
+[15:48:30] <Cosmic> i might just download it
+[15:49:29] <Compu> Cosmic: k, i recommend the current LTS version which is 14.04.3
+[15:50:05] <Compu> but u can also download 15.04 (or maybe 15.10 is out now, its supposed to come out this month)
+[15:55:07] *** Quits: Fallfeathers (Fallfeather@Pony-rlcauk.bigpond.net.au) (Connection closed)
+[16:05:23] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[16:41:54] *** Eventide|Sleepies is now known as Eventide
+[16:45:13] *** Cosmic is now known as Cosmic|sleep
+[16:49:01] <Googie> Wait what, Perl6 is supposed to finally hit 1.0 at Christmas
+[16:54:44] *** Princess_Cadance|AFK is now known as Princess_Cadance
+[17:23:15] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[17:27:04] *** Parts: MistVeil (aqua@Pony-hahd0r.static.axtel.net) ("Saliendo")
+[17:27:46] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[17:41:18] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (Connection closed)
+[17:51:27] *** Joins: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se)
+[18:35:36] *** Init3-away is now known as init3
+[18:40:27] *** Joins: Crimson_Tail (Bluepon@Pony-bdemak.cg80.k4gu.0151.2601.IP)
+[19:05:10] *** Snoarin is now known as GigaTown
+[19:09:14] *** Joins: zeta_ (Bluepon@Pony-mfh7oq.md.comcast.net)
+[19:09:53] *** Quits: Crimson_Tail (Bluepon@Pony-bdemak.cg80.k4gu.0151.2601.IP) (Killed (NickServ (GHOST command used by zeta_!Bluepon@Pony-mfh7oq.md.comcast.net)))
+[19:09:55] *** zeta_ is now known as Crimson_Tail
+[19:14:48] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:28:24] <Moonlightning> Cosmic|sleep: You mean, you're using Windows rather than basically any other OS.
+[19:33:34] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[19:33:55] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[19:34:40] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[19:34:44] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:02:41] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:04:18] <Sakura> Mew
+[20:04:52] * Sakura gives a llama to JockeTF
+[20:12:18] *** init3 is now known as Init3-away
+[20:26:40] *** Init3-away is now known as init3
+[20:26:41] * JockeTF prefers alpacas.
+[21:06:39] *** init3 is now known as Init3-away
+[21:07:50] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[21:14:31] *** Joins: quin (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[21:14:34] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[21:26:46] *** Quits: Phase (Phase4@Pony-pm0kpp.internode.on.net) (Ping timeout: 121 seconds)
+[21:32:16] <Compu> *plays http://open.spotify.com/track/57ct8jKi6trntXiRV0NnXi *
+[21:32:17] <PinkiePieBot> [ If You Could Read My Mind, a song by Gordon Lightfoot on Spotify ]
+[21:50:12] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:57:31] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:03:15] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:06:37] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[22:13:46] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[22:15:06] *** GigaTown is now known as Soarin
+[22:17:57] *** Joins: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net)
+[22:21:00] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:41:16] *** Quits: JustAberrant (JustAberran@Pony-lq4qe0.com) (Connection closed)
+[22:55:35] *** Joins: Fallfeathers (Fallfeather@Pony-rlcauk.bigpond.net.au)
+[23:00:24] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[23:10:06] <DataByte> anyone familiar with a hash that would turn 'password' into 'p¦¸ÇÉ«Ê½Ëª¼ÏÐÕÎÒÅ“•—' ?
+[23:11:25] <Sour_Sweet> XOR cipher?
+[23:11:48] <Compu> DataByte: yes its called randomly smashing ur face on some weird foreign keyboard layout
+[23:11:54] <DataByte> heh
+[23:11:59] <Sour_Sweet> Would require a key though
+[23:12:18] <DataByte> so, this is a reversible cipher?
+[23:12:24] * JustAberrant doubts XOR
+[23:12:42] <JustAberrant> most XOR cyphers produce a result equal to the length of the input
+[23:12:57] <JustAberrant> the length of the output is probably the biggest clue
+[23:13:30] <Compu> hey i have a friend who needs help, in hexchat how do u change the port/address of the IRC server it connects to?
+[23:14:14] <JustAberrant> Servername/port in server options
+[23:14:16] <Sour_Sweet> I don't know of any other common thing that would produce such a result. Maybe if the result is stored in an unconventional way (e.g. not encoded(
+[23:14:18] <DataByte> password lengths range from 17 to 22 - not a fixed hash
+[23:14:47] <Sour_Sweet> Most common hash functions have a static length
+[23:14:53] <JustAberrant> yeah, probably not a has then
+[23:15:01] <DataByte> Compu: network list, the port is after the /
+[23:15:04] * JustAberrant assumed by 'password' you literally meant password
+[23:15:08] <DataByte> it is
+[23:15:32] <Sour_Sweet> Than it's not XOR :P
+[23:16:34] <DataByte> typing in '1234' yields ']“¥´¶˜·ª¸·©¼½Â»¿²'
+[23:16:39] *** Soarin is now known as Gigwway
+[23:16:48] *** Gigwway is now known as Gigaway
+[23:17:01] * JustAberrant shruggles
+[23:17:52] <DataByte> '1111' => 'y¯ÁÐÒ´ÓÆÔ”–˜š'
+[23:18:09] * DataByte is mildly annoyed with the results
+[23:18:23] <JustAberrant> most hash functions produce predictable output, this is probably a cypher
+[23:18:37] <JustAberrant> also possibly has to do with how it's being translated for output
+[23:18:43] <Sour_Sweet> Try helloworld and google the result, maybe it helps
+[23:18:51] <Sour_Sweet> (I doubt it however)
+[23:19:09] <JustAberrant> burning a bunch of random bits into printable text isn't exactly going to give you consistent lengths
+[23:19:17] <JustAberrant> * turning
+[23:19:33] <JustAberrant> ideally see if you can get a hex representation of the output
+[23:19:46] <DataByte> hm
+[23:21:11] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[23:21:29] <Sour_Sweet> Is the used software as an indicator a dead end?
+[23:21:56] <JustAberrant> what are you trying to do anyway, there's probably a much easier way to go about this ;p
+[23:22:01] <Sour_Sweet> You could probably find something in some documentation
+[23:23:55] <DataByte> this is a stupid piece of software we have used here for decades, i'm trying to write my own user management interface
+[23:24:11] <DataByte> i've already added everything else, just passwords left
+[23:24:35] <JustAberrant> if they're stored in a database it should be easy to get hex output
+[23:24:46] <DataByte> i can modify user permissions and be done before the original program can tick the progress bar twice for a sub-menu
+[23:24:54] <DataByte> stupid slow
+[23:25:07] <DataByte> sql backend, though :)
+[23:25:19] <DataByte> means i can get around it :)
+[23:25:28] <JustAberrant> dunno about other databases, but postgres has encode
+[23:25:35] <DataByte>         ' 'password'                    = 70 c2 a6 c2 b8 c3 87 c3 89 c2 ab c3 8a c2 bd c3 8b c2 aa c2 bc c3 8f c3 90 c3 95 c3 8e c3 92 c3 85 e2 80 9c e2 80 a2 e2 80 94
+[23:25:35] <DataByte>         ' '1111' = 'y¯ÁÐÒ´ÓÆÔ”–˜š'      = 79 c2 af c3 81 c3 90 c3 92 c2 b4 c3 93 c3 86 c3 94 e2 80 9d e2 80 93 cb 9c c5 a1
+[23:25:35] <DataByte>         ' '1234' = ']“¥´¶˜·ª¸·©¼½Â»¿²'  = 5d e2 80 9c c2 a5 c2 b4 c2 b6 cb 9c c2 b7 c2 aa c2 b8 c2 b7 c2 a9 c2 bc c2 bd c3 82 c2 bb c2 bf c2 b2
+[23:25:42] <DataByte> not too consistent
+[23:26:04] <DataByte> i was watching the trace, it's done within the program, not the database engine
+[23:26:19] <JustAberrant> is that you converting the string yourself or pulling it directly from the database?
+[23:26:29] <DataByte> converting myself
+[23:26:35] <JustAberrant> yeah, pull it from the database
+[23:26:53] <JustAberrant> once you try to print it you've lost information
+[23:26:58] <DataByte> it's sent to the database as a string, but i can verify the hex, i guess
+[23:27:06] <JustAberrant> ew
+[23:27:21] <JustAberrant> but in that case the data might already be lost ;p
+[23:29:15] <DataByte> it verifies passwords /somehow/, lol
+[23:29:33] <JustAberrant> well sure, but if it's doing the same conversion on the verification it doesn't matter
+[23:29:46] <JustAberrant> like.. if I do an md5 sum on password and remove the first 6 characters
+[23:29:50] <JustAberrant> and then do the same on verification
+[23:29:53] <JustAberrant> it's still gonna match
+[23:30:12] <JustAberrant> same as if I do an md5 sum and then turn the raw output into printable text
+[23:31:58] <DataByte> oh, even more confusing: same passwords yields different results
+[23:32:09] <Phase> joy
+[23:32:23] <Sour_Sweet> Any salt in the database?
+[23:32:27] <DataByte> nope
+[23:32:56] <Sour_Sweet> Oh dear. Have you tried coyping the password of one use to another and see if it still works?
+[23:33:07] <DataByte> hm
+[23:33:16] <Sour_Sweet> (e.g. username as salt or something like that)
+[23:33:17] <JustAberrant> I'd say you're gonna have to RE whatever it is.. it's obviously not just some known hash function ;p
+[23:39:00] <Sour_Sweet> Alternative would be to memory hook into the original program and use it's function. Without any knowledge of the function or documentation this is a difficult task not to mention writing such memory hacks is a pain itself
+[23:39:33] <Sour_Sweet> ... and requires reverse engineering skills
+[23:40:11] <DataByte> putting the password of one user onto another does not work
+[23:40:36] <JustAberrant> yeah then they're probably salting with username
+[23:40:43] <DataByte> if you know a way of decompiling an access macro, that could be of help
+[23:41:03] <Sour_Sweet> Isn't just VBScript?
+[23:41:41] <Sour_Sweet> (Never worked with access very long, only excel)
+[23:42:07] <DataByte> probably, but most of the program is tucked away in mde files (not mdb), so access won't let me open them
+[23:43:39] <Sour_Sweet> http://www.dbforums.com/showthread.php?372111-Decompiling-an-MDE-file
+[23:43:40] <PinkiePieBot> [ Decompiling an MDE file | dBforums  Everything on Databases, Design, Developers and Administrators ]
+[23:44:00] <Sour_Sweet> (Just readin myself, but there is an intresting post)
+[23:44:12] <Compu> well
+[23:44:20] <Compu> u know ur talking to a luser
+[23:44:27] <Compu> when they give u a link like file:///C:/Users/Moonview/Pictures/Screenshots/Screenshot%20(1).png
+[23:44:35] <DataByte> SELECT "dbo"."UserTable"."UserName" FROM "dbo"."UserTable" WHERE ("UserName" = 'TestUser' ) 
+[23:44:49] <DataByte> this software, egh
+[23:45:16] <Phase> " Our database programmer we dealth with interstate has dissappeared without a trace." beware the bus factor
+[23:46:16] <Sour_Sweet> http://www.everythingaccess.com/mdeconversion.asp is linked for example
+[23:46:17] <PinkiePieBot> [ MDE to MDB Conversion - Retrieve VBA code from your MDE/ADE Databases ]
+[23:47:10] <Sour_Sweet> I'd imagine there must be a free way as well
+[23:47:21] <DataByte> i'd hope so, lol
+[23:47:35] <Compu> anyways found the problem
+[23:47:45] <Compu> ponychat's ssl certificate has expired once again
+[23:48:20] <Phase> odd, it was just renewed
+[23:48:23] * Phase goes to check
+[23:48:55] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[23:49:10] <Compu> Phase: well this person's hexchat was throwing an expired ssl certificate error
+[23:49:25] <Phase> Compu, should be fixed soon
+[23:49:42] <Phase> someone forgot to deploy the new certs
+[23:49:46] * Sour_Sweet uses cert pinning
+[23:50:20] <Colgate> ^and that is why I don't like letsencrypt's 3 month certs
+[23:50:51] <Sour_Sweet> Is that final?
+[23:51:00] <Sour_Sweet> I hope not ....
+[23:51:41] <Compu> Colgate: what does canternet use?
+[23:51:51] * Phase wishes they figured out that domain restriction on ca certs
+[23:52:05] <Phase> then you could buy a *.domain.tld ca cert, and sign your own
+[23:52:12] <Colgate> cacert, which is on a 6 month duration
+[23:52:27] <Phase> and has been removed from a lot of browsers :(
+[23:52:36] <Colgate> pretty much all in fact
+[23:52:52] <Sour_Sweet> Phase: And pay 999.99$ for a one year valid CA cert :P
+[23:52:55] <Colgate> I was hoping letsencrypt would be better... but maybe it isn't :V
+[23:53:27] <Phase> well letsencrypt has support from browser vendors
+[23:53:34] <Phase> mozilla is running a chunk of it
+[23:53:35] <Sour_Sweet> Well one could still use WooSign (or whatever it was called again)
+[23:53:47] <Colgate> how hard can it be to have a critical x509 extension that says: this cert can sign these domains
+[23:53:49] <Phase> it should wind up ok
+[23:54:02] <Phase> Colgate, they have it, no on implemented it
+[23:54:12] <Colgate> Sour_Sweet: wosign removed the ability to have SANs, so they are garbage now :P
+[23:54:27] <Sour_Sweet> Oh.
+[23:54:41] <Sour_Sweet> Yeah that makes them pretty useless for IRC at least
+[23:54:52] <Colgate> just trivially better than rapidssl
+[23:55:02] <Colgate> since at least they don't charge for revoking
+[23:55:32] <Colgate> unless they changed that too since I last used them -.-
+[23:55:38] <Sour_Sweet> Comodo offers free certs for Open Source Project, don't you run a github for canternet? :D
+[23:55:56] <Compu> pigeon pony https://i.imgur.com/lkdTIzf.jpg
+[23:55:56] <Sour_Sweet> projects*
+[23:55:57] <Colgate> they do? haven't heard of that
+[23:56:20] <Sour_Sweet> There are 2 CAs that do that I know of
+[23:56:36] <Sour_Sweet> Have to find out if Comodo was the good one
+[23:57:05] <Colgate> have to get an "A" "when tested with the SSL Checker"
+[23:57:24] <Sour_Sweet> https://www.globalsign.com/de-de/ssl/ssl-open-source/
+[23:57:32] <Colgate> yeah, looking at that :P
+[23:57:33] <Sour_Sweet> Was the other
+[23:57:57] <Sour_Sweet> that's trivial - I get an A rating
+[23:58:27] <Colgate> my sites get an A- because I don't care about supporting ancient version of IE
+[23:58:31] <Colgate> :P
+[23:58:49] <Colgate> IE 7 doesn't get pfs? fucking update your browser gdi
+[23:58:58] <Colgate> not my problem
+[23:59:30] *** Quits: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se) (Quit: Leaving.)
+[23:59:49] <DataByte> this is irritating.. i've changed the password to "1234" 8 times now, and each time the value in the database is something different

@@ -1,0 +1,77 @@
+[00:07:15] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) ()
+[01:28:36] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[02:08:48] *** Quits: thisfred1 (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com) (Ping timeout: 264 seconds)
+[03:58:52] *** Quits: jturney (~jon@host86-179-113-234.range86-179.btcentralplus.com) (Read error: Connection reset by peer)
+[04:23:09] *** Joins: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com)
+[05:44:40] *** Joins: mgue1 (~mgue@f048191176.adsl.alicedsl.de)
+[05:47:30] *** Quits: mgue (~mgue@x5ce2f242.dyn.telefonica.de) (Ping timeout: 245 seconds)
+[08:44:25] *** Joins: meaning (~meaning@192.177-201-80.adsl-dyn.isp.belgacom.be)
+[08:45:51] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[09:00:44] *** Joins: soee (~soee@agvv30.neoplus.adsl.tpnet.pl)
+[09:01:41] *** Quits: meaning (~meaning@192.177-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[09:08:27] *** Joins: meaning (~meaning@192.177-201-80.adsl-dyn.isp.belgacom.be)
+[10:06:51] *** Joins: WillisMan (~Thunderbi@88.96.238.246)
+[10:44:21] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[12:04:48] *** Quits: meaning (~meaning@192.177-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[12:16:43] *** Joins: wilder_ (~quassel@160.80.10.178)
+[12:16:43] *** Quits: wilder_ (~quassel@160.80.10.178) (Changing host)
+[12:16:43] *** Joins: wilder_ (~quassel@kde/developer/wilder)
+[12:41:01] *** Joins: meaning (~meaning@192.177-201-80.adsl-dyn.isp.belgacom.be)
+[13:16:14] *** Joins: jturney (~jon@host86-179-113-234.range86-179.btcentralplus.com)
+[13:45:24] *** Joins: xintron (~xintron@unaffiliated/xintron)
+[13:46:03] <xintron> Is there playlist support for any music backend available in Tomahawk yet (again)?
+[14:14:05] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[14:39:21] *** Quits: h4ndy (H4ndy@ipv6.gemini.panicbnc.net) (*.net *.split)
+[14:39:32] *** Joins: h4ndy (H4ndy@ipv6.gemini.panicbnc.net)
+[16:08:45] <HorusHorrendus> aaaaand now I pushed the first piece of qml code to the master branch of an application I'm working on for work
+[16:29:13] *** Quits: meaning (~meaning@192.177-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[17:41:14] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[17:44:15] *** Joins: thisfred1 (~thisfred@66-193-100-238.static.twtelecom.net)
+[17:45:42] *** Joins: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com)
+[17:48:46] *** Quits: thisfred1 (~thisfred@66-193-100-238.static.twtelecom.net) (Ping timeout: 240 seconds)
+[17:56:23] <jherskowitz> xintron: sorry, what are you looking exactly?
+[18:28:14] <theli_ua> jherskowitz: playlist syncing with any service 
+[18:28:21] <theli_ua> i think thats what he meant
+[18:29:00] *** Quits: WillisMan (~Thunderbi@88.96.238.246) (Quit: WillisMan)
+[18:40:50] *** Quits: teo- (~teo@kde/teo) (Ping timeout: 244 seconds)
+[18:41:29] *** Joins: teo- (~teo@corkblock.jefferai.org)
+[18:41:29] *** Quits: teo- (~teo@corkblock.jefferai.org) (Changing host)
+[18:41:29] *** Joins: teo- (~teo@kde/teo)
+[19:09:39] <jherskowitz> theli_ua: xintron: ah.. we want to, but it’s a bit nasty to deal with bi-directionally syncing across multiple services.
+[19:38:46] *** Quits: kfunk (~krf@kde/kfunk) (Ping timeout: 250 seconds)
+[19:39:42] *** Joins: kfunk (~krf@kde/kfunk)
+[19:50:15] *** Quits: grindhold_ (~quassel@c035.cyan.servdiscount-customer.com) (Quit: No Ping reply in 180 seconds.)
+[19:51:27] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[20:22:49] *** Joins: meaning (~meaning@192.177-201-80.adsl-dyn.isp.belgacom.be)
+[20:50:30] <theli_ua> wow, jherskowitz http://i.imgur.com/dcX3FZo.png  wrt classical music
+[20:51:36] <jherskowitz> ugh, classical
+[20:52:04] <theli_ua> heh
+[20:52:15] <theli_ua> I need to find a service with those resolvable 
+[20:54:23] <jherskowitz> theli_ua: problem is we look for “artist” for those you probably want “composer” + “conductor” + “orchestra” + “performance” + “composition” + “movement”. :P 
+[20:54:59] <theli_ua> yeah, and the organ/place its played on
+[20:55:23] <theli_ua> wrt those particular pieces on the screenshot
+[20:56:33] <theli_ua> though some of those could be resolved via youtube if we had access to those music fields on youtube
+[20:57:45] <theli_ua> jherskowitz: do you build your own tomahawk or do you use nightlies?
+[20:58:15] <jherskowitz> build
+[20:58:48] <theli_ua> oh, I wonder would you like to build my branch and test if amazon resolver works for you?
+[20:59:08] <theli_ua> as it requires tomahawk changes :-/
+[21:02:27] <domme> theli_ua: yeah we added quite a bit of jsapi
+[21:02:39] <domme> not sure what we ported back to zomahawk yet
+[21:03:23] <theli_ua> domme: wat, I mean, I;m not sure what you talk about
+[21:12:23] *** Quits: meaning (~meaning@192.177-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[21:39:44] *** Joins: meaning (~meaning@192.177-201-80.adsl-dyn.isp.belgacom.be)
+[22:01:34] <theli_ua> hey muesli what could be the reason for tomahawk not to accept result?
+[22:02:44] <theli_ua> ohwait, nvm, looks like quotes around the track title o_O
+[22:14:09] <jherskowitz> theli_ua: sure
+[22:14:15] <jherskowitz> can’t do it right this moment though
+[22:31:11] *** Quits: Rasi (~carnager@archlinux/support/rasi) (Quit: WeeChat 1.2)
+[22:58:26] *** Quits: meaning (~meaning@192.177-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[23:03:08] *** Joins: meaning (~meaning@192.177-201-80.adsl-dyn.isp.belgacom.be)
+[23:21:35] <theli_ua> hey muesli what could be the reasons result is not accepted by tomahawk? :(
+[23:40:49] *** Quits: meaning (~meaning@192.177-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[23:44:51] <theli_ua> meh, youtube resolver fails to extract corrects url in a lot of pages
+[23:54:00] <theli_ua> oh, we seem to be blocked by user agent
+[23:54:06] <theli_ua> well, that sucks
+[23:57:53] <theli_ua> yeah, tomahawk is blocked to access tracks like https://www.youtube.com/watch?v=u8SBdvrotnM where there is a proper track with proper user - title info 
+[23:57:54] <tomabee> [ Loneliness House | www.youtube.com | https://i.ytimg.com/vi/u8SBdvrotnM/hqdefault.jpg ]
+[23:58:00] <theli_ua> which was recognised by google

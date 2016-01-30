@@ -1,0 +1,1323 @@
+[00:04:15] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:07:21] *** Joins: Fallfeathers (Fallfeather@Pony-k1obka.optusnet.com.au)
+[00:17:50] <Moonlightning> ;P
+[00:18:43] <AppleDash> Lapsus: Is it modded
+[00:18:53] <Lapsus> yes
+[00:19:00] <AppleDash> Can I join
+[00:19:10] <Lapsus> because Moonface won't get minecraft
+[00:19:10] <HoneyDrops> Phase: the tech exists, kinda.  At least for the former... however, you don't really want to be between the charger and the charge-e.
+[00:19:42] <Moonlightning> Lapsus: well, I don't think I'll be modding at first, so
+[00:20:19] <HoneyDrops> It is also highly directional, as inverse square law will win every time.
+[00:21:01] <Lapsus> Moonlightning: no kidding :p
+[00:21:17] <Lapsus> if you were able to play with us we'd have made it vanilla
+[00:22:05] * HoneyDrops started on modded.  I don't think I've spent more than 5 minutes in a given vanilla session, maybe a total of 25-30 min between them all.
+[00:23:06] <Moonlightning> Android, why you keep removing the hotspot button from my settings shade?
+[00:24:17] <AppleDash> Vanilla Minecraft gets boring after like... Beating it twice
+[00:26:25] <Kinsley> You can beat Minecraft?
+[00:28:34] <Taloverae> Technically, there is now an "End" condition in Minecraft as of, like, what, last year?
+[00:29:01] * Lapsus spent literal years playing vanilla D:
+[00:29:01] <Lapsus> lol
+[00:29:19] <Kinsley> Please tell me it's to build a giant dong out of gold.
+[00:29:21] <Googie> It even rolls credits and does all that end game stuff
+[00:29:49] <AppleDash> Taloverae: As of many years ago I believ
+[00:29:49] <AppleDash> e
+[00:29:53] <AppleDash> at least since 1.2.5...
+[00:29:57] <AppleDash> Which was a long time ago
+[00:30:07] <Taloverae> Heh, I wouldn't be surprised if it's been a while
+[00:30:18] <Googie> 1.2.5, back before the single/multiplayer merge
+[00:30:21] <Taloverae> I try to keep Java off my machines these days
+[00:30:33] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[00:31:37] <Kinsley> As a language, Java is just stupidly verbose to be practical for all but legacy or enterprise stuff. As a platform, it's a buggy, insecure pile of shit rivaled only by Flash.
+[00:34:01] *** Joins: CrassyPaddles (test@Pony-6v8n3b.ga.comcast.net)
+[00:39:56] *** Quits: CrassyPaddles (test@Pony-6v8n3b.ga.comcast.net) (Ping timeout: 121 seconds)
+[00:41:07] <HoneyDrops> And PHP is still worse~
+[00:41:42] *** zz_CyberJacob is now known as CyberJacob
+[00:44:54] <Googie> I don't think the JVM is /quite/ that bad, it's probably more secure than just running an arbitrary trusted binary. The problem is untrusted code specifically trying to break the JVM, such as in web applets
+[00:45:43] <Windsheer> it's more secure than running an arbitrary trusted binary on a computer with limited security features, anyway.
+[00:51:08] <Windsheer> the protections provided by the JVM are not massively different from those provided at the ISA level on other machines (S/38, Unisys Libra, etc)
+[00:57:19] <HoneyDrops> The model of running client-side code over the web without complete sandboxing is inherently broken.  Any access outside of a specifically created "space" should always require explicit user approval (in each an every instance).  If a page needs persistent storage, that should also require user approval (eg: cookies should require to user to ok them).
+[00:59:50] <Kinsley> HoneyDrops: the problem there is users are dumb.
+[01:00:13] <HoneyDrops> There is no patch for that.
+[01:00:31] <HoneyDrops> If the user doesn't personally invest themselves in security, they will never have it.
+[01:01:56] <Googie> Essentially that, I don't agree with the JVM being used as a platform for arbitrary code on web pages. (But I think a lot of people confuse that with being insecure in general)
+[01:18:45] *** CyberJacob is now known as zz_CyberJacob
+[01:18:49] <Kinsley> Googie: it's bad enough that the US Federal Trade Commission stepped in to tell Oracle to remove old versions that stayed behind. The JVM in and of itself may not be insecure when updated, but the fact that old versions stick around after "security" updates....
+[01:22:41] <HoneyDrops> I wouldn't put the whole blame on Oracle there (yes I realize I just said that).  MS shares some blame for having such a terrible system for installation of software, or more directly a lack of any proper package removal system.
+[01:23:24] <Kinsley> Yes, but.
+[01:23:39] <Kinsley> Oracle is big enough and smart enough to know how to work around that.
+[01:24:09] <Windsheer> afaict, oracle is mainly big enough and smart enough to figure out how to make arcane changes to make licensing more expensive
+[01:24:10] <HoneyDrops> If you're lucky you get a "unintall wizard" that might kinda, sorta remove "most" (for some lax def of "most") of an installation.  provided it is more or less as it was installed.
+[01:24:29] <Windsheer> (well, and to make SPARC less crappy than Sun was making it - at the cost of being orders of magnitude more expensive)
+[01:28:25] <Phase> <Windsheer> it's more secure than running an arbitrary trusted binary on a computer < in practice not really
+[01:31:33] <Googie> It heavily depends on how you're using it. A network daemon running under the openjdk on Linux ? /Probably/ better than a closed source black box binary running network services.
+[01:32:17] <Windsheer> indeed. an up-to-date VM running a J2EE app is not the same as a six-month-old Java in IE running applets, either.
+[01:33:32] <HoneyDrops> I will say the tools to pick apart a java "binary" are pretty good.  I would agree with the claim it is easier to audit a java binary than similarly complex native binary.
+[01:34:57] <HoneyDrops> Still, best to avoid being in a position where you are only stuck with a binary in either case.
+[01:35:12] <HoneyDrops> s/only stuck/stuck only/
+[01:35:45] <Phase> web assembly will be interesting
+[01:35:52] * HoneyDrops hisses.
+[01:36:16] <HoneyDrops> That concept is so completely broken in almost every way.
+[01:36:47] <HoneyDrops> I can only hope it dies, quickly.
+[01:37:06] <Googie> I'm in two minds about it. I mean, Javascript is already pretty horrible if you want to use it in that way...
+[01:37:18] * Phase would like it for things other than browsers
+[01:37:45] <Phase> think game engines, where a modded server could send webassembly to the client, lag-compensated custom entities
+[01:39:31] <Phase> cross platform binaries too
+[01:39:49] <Phase> cross-architecture rather
+[01:43:51] <Phase> HoneyDrops, wasm would also let you use whatever video codec you want, so no more h264 monopoly on the web
+[01:44:19] <Phase> emscripten in theory can do the same now for at least firefox, not sure if they're maintining asm.js support
+[01:45:03] <HoneyDrops> The harm it can cause is worse, at least now you can more or less audit everything running client-side (if you do the sane thing and not have flash or java applets).
+[01:45:49] <Phase> i wouldn't consider modern minified js too much easier than assembly
+[01:45:50] <HoneyDrops> Also I oppose video in-browser, provide the URI to a stream or file and let the system provide the player, and it can worry about the codec.
+[01:46:07] <Phase> it's if the system doesn't provide the codec
+[01:46:16] <Googie> HoneyDrops: asm.js already allows that though :/
+[01:46:19] <Phase> like apple or ie where the owners are h264 patent holders
+[01:46:21] <HoneyDrops> youtube-dl is the only way to use youtube~
+[01:46:35] <Phase> and have no interest in supporting things other than h264 as it's damaging to their business
+[01:46:53] <HoneyDrops> Well the fix there is invalidate patents on codecs.
+[01:47:14] <HoneyDrops> And just fix the whole mess at the actual problem, rather than trying to patch around the idiocy caused by it.
+[01:47:43] <Phase> as nice as that'd be, a lot of the people with the resources to do that either don't care or stand to lose from it
+[01:48:02] <HoneyDrops> Well fuck them, to put it bluntly.  Math is math.
+[01:48:24] <Phase> until the patent laws were changed, it agreed
+[01:48:55] <Phase> remember it is a country that has extended copywrite to, what, life+70 years?
+[01:48:59] <Phase> copyright'
+[01:49:13] <Phase> because disney offered some money for it to happen
+[01:49:36] <Phase> next time one or their movies is about to go public domain, it'll be lengthened again
+[01:49:50] <HoneyDrops> Copyright should be 15 years, w/ a one time 15 year extension, with a fee based on the "value" of the work in question. 
+[01:50:12] <JustAberrant8> HoneyDrops: the "make everything I disagree with illegal" approach is rarely successful
+[01:50:25] <Phase> that would be nice, but it isn't. i'm on the side of 'just do it anyway'
+[01:51:01] <HoneyDrops> I would rather the laws be fixed to reflect some semblance of sanity and reality.
+[01:51:03] <JustAberrant8> gotta work in the world we're given and all
+[01:51:05] <Phase> wasm is a nice solution in that it completely sidesteps the patent issue on the browser side
+[01:52:06] <JustAberrant8> the laws are what they are because the majority either disagree with you or don't care, is how democracy works
+[01:52:31] <HoneyDrops> I think they are laws because those with the money paid the right people.
+[01:52:41] <Phase> ^ and this is far too easy
+[01:52:43] <HoneyDrops> And yes, a general apathy.
+[01:53:03] <HoneyDrops> The problem is those that "care" are almost invariably, selfish.
+[01:53:22] <HoneyDrops> At least with regards to IP law.
+[01:53:25] <Phase> there's a spreadsheet somewhere that shows, since ~1850(?) all presidents have lost against voter apathy
+[01:54:16] <Phase> the solution would be to remove incentives for politicians to accept bribes
+[01:54:34] <Phase> i'm sorry, "donations", "campaign contributions"
+[01:55:14] <Phase> prevent gerrymandering, encourage voting and participation
+[01:55:16] <HoneyDrops> Well the core problem is you have to decouple wealth from "ability in influence others"  sadly, that is almost by definition what wealth is.
+[01:56:17] <HoneyDrops> Barring that, you have to resort to socialism, where you try to prevent the concentration of wealth, but more significantly, prevent the ability to concentrate power.
+[01:56:47] <Phase> for this specific problem, you only need to prevent influence over politicians
+[01:57:34] <Phase> make it very risky to accept bribes, remove the ungodly expensive campaigns and thus the need for wealth, pay them well
+[01:57:37] <HoneyDrops> But there are other problems, money buys you media exposure (ads or otherwise) allowing those with wealth a greater capacity to spread their ideas.
+[01:57:40] <JustAberrant8> only thing that works is a benevolant dictator, but that isn't any more sustainable than a capitalist democracy
+[01:58:24] <HoneyDrops> The problem is you cannot allow wealth to allow any idea spread more easily, you have to figure out how to have ideas spread on the actual merit of the idea.
+[01:58:27] <Phase> they're often offered high paying jobs after their time in office in exchange for passing a particular piece of legislation. if politicians couldn't work post office that's gone, but then they need some kind of support
+[01:58:46] <HoneyDrops> Well campaign finance reform would do wonders, I agree with that.
+[01:58:50] *** Quits: Fallfeathers (Fallfeather@Pony-k1obka.optusnet.com.au) (Ping timeout: 121 seconds)
+[01:58:53] <Phase> HoneyDrops, wealth is incentive, that's the issue you need to solve
+[01:59:00] <Phase> right now accepting bribes is rational
+[01:59:10] <Phase> that needs changing, not wealth itself
+[01:59:21] <HoneyDrops> Phase: my proposal is to eliminate the concept of wealth >_>
+[02:00:21] <Phase> i'm not sure i agree with the elimination of wealth
+[02:01:05] <JustAberrant8> hehe, eliminate hate and sadness and death while you're at it
+[02:01:41] <Phase> once we're post-scarcity then sure, until then somethings got to turn the wheels
+[02:02:07] <JustAberrant8> wealth as a concept gas existed since caveman oog noticed agg had a better knobby club
+[02:02:14] <Phase> the immense imbalance between the most and least wealthy needs fixing, but that's not an elimination of wealth
+[02:02:35] <Phase> whats it at now, top 1% controls 95% of the wealth in the states?
+[02:03:34] <Windsheer> ~40%, iirc
+[02:03:45] <Phase> so not as bad, that's still huge
+[02:04:07] <Moonlightning> AppleDash, Kinsley: Yeah, there's a The End, but it's not the kind of thing you put the game on a shelf and leave to gather dust afterwards
+[02:04:13] <HoneyDrops> Top 10% or so has 99% or something like that.
+[02:04:22] <Moonlightning> in fact, there's a /subsequent/ achievement called /The Beginning?/
+[02:04:38] <Moonlightning> Taloverae: I do, too. I use a liveusb for Minecraft.
+[02:04:50] <AppleDash> Yes, but I am saying that I get bored after playing enough that I've done so twice
+[02:05:03] * JustAberrant8 misses minecraft
+[02:05:24] * JustAberrant8 gotta find a server to play on aftet christmas
+[02:05:48] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:06:55] <Moonlightning> JustAberrant8, HoneyDrops: problem is, the United States of America is an unrepresentative democracy. :P
+[02:07:10] * Moonlightning points JustAberrant8 at Lapsus' new server
+[02:07:11] <Phase> HoneyDrops, there's also much simpler problems, capatilism REQUIRES competition but a good chunk of american business is built around eliminating competition
+[02:07:27] <Moonlightning> capitalism is inherently flawed.
+[02:07:41] <Moonlightning> We need an economic system built around a lack of scarcity.
+[02:07:46] <JustAberrant8> capitalism works initially
+[02:07:48] <Moonlightning> Sadly, that's not going to happen anytime soon.
+[02:07:54] <Phase> it works when there's competition, and a balance against socialism
+[02:08:00] <JustAberrant8> but it peaks and then declines
+[02:08:14] <Phase> no pure system works on its own
+[02:08:16] <Moonlightning> Anything that “peaks and then declines” like that is inherently flawed.
+[02:08:30] <Phase> and a democratic government is meant to achieve that balance
+[02:08:34] <Moonlightning> Or inherently unsustainable, at least
+[02:08:37] <JustAberrant8> sure, but no one has come up with anything bettet
+[02:08:49] <Moonlightning> Gotta get rid of scarcity first!
+[02:15:38] <HoneyDrops> lets start by not making things artificially scarce >_>  Quick way to do that would just be wipe IP laws.
+[02:16:31] <HoneyDrops> Capitalism works by exploiting our worst natures.  Long term, we have to fix those flaws.
+[02:17:50] *** Joins: Asoka_White (Asoka@Pony-onntqp.net-htp.de)
+[02:21:03] *** Quits: Asoka (Asoka@Pony-285ihf.net-htp.de) (Ping timeout: 121 seconds)
+[02:31:32] *** Joins: Fallfeathers (Fallfeather@Pony-k1obka.optusnet.com.au)
+[02:53:28] *** Quits: Fallfeathers (Fallfeather@Pony-k1obka.optusnet.com.au) (Ping timeout: 121 seconds)
+[03:03:59] <JustAberrant8> meh, much as I think IP laws need to be reeled in big time, in a digital age where things still cost a fucktonne to produce but are almost free to reproduce, there does need to be some control
+[03:04:57] <JustAberrant8> I think a few years protection is reasonable to make what profit you can, would provide enough incentive to produce it in the first place, etc
+[03:05:08] <JustAberrant8> but we have no idea how that would actually work if implemented
+[03:05:24] <JustAberrant8> people might say "meh, why buy it, I'll wait 2 years and download it for free legally"
+[03:05:47] <JustAberrant8> what I think _should_ be opened up is derivative works
+[03:05:56] <Moonlightning> Well, Honey did say 15 years
+[03:06:07] <Moonlightning> I think a lot less people would wait 15 years than 2
+[03:06:16] <Moonlightning> a lot fewer *?
+[03:06:22] <Moonlightning> fuck, both of those sound wrong
+[03:06:29] <JustAberrant8> yeah, but 15 years is still a long time for derivatives
+[03:06:47] <Moonlightning> Mmm.
+[03:07:10] <JustAberrant8> like, I'd be ok with hasbro being able to lock down actual ponies episodes for a bunch of years, but would be nice for things like FiW and MaS and RDP (and other TLAs) to be able to use their IP
+[03:07:49] <JustAberrant8> same as apple shouldn't own the idea of a phone that's basically a big touchscreen forever
+[03:08:06] <JustAberrant8> yes they came up with it, but would be nice if it was easier for others to build on it
+[03:09:08] <JustAberrant8> but there are valid arguments for why hasbro should be able to control their IP, and simply saying "can't own ideas man" isn't a great argument
+[03:09:32] <JustAberrant8> or at least not a persuasive one
+[03:09:45] <Phase> trademark covers most of it relly
+[03:10:01] * Phase has nothing against trademarks
+[03:10:18] <Phase> beyond things like trademarking colours which gets a bit wonky
+[03:11:26] <JustAberrant8> well, I can see the argument for both sides
+[03:11:42] <JustAberrant8> but it's sad to see legitimately creative works that really do bring something new get squashed
+[03:11:54] <Moonlightning> No, you shouldn't be able to be the only one who can e.g. make touchscreen phones
+[03:11:56] <Moonlightning> like…no
+[03:12:01] <Phase> ^
+[03:12:01] <HoneyDrops> Trademarks are fairly sane, the idea of an "identity" does benefit consumers.  It is actually fairly limited in scope.
+[03:12:04] <Moonlightning> talk about eliminating competition
+[03:12:15] <Phase> or square black phones as apple tried to enforce
+[03:12:52] <Phase> HoneyDrops, yeah, doesn't really affect anything except abuse
+[03:13:00] <HoneyDrops> Trademarks would never allow that, and something as vague as "square black phone" is beyond what most interpretations of trademarks allows (I belive they (ab)use "design" or "look and feel" patents for that anyway)
+[03:13:38] <Moonlightning> Reserving rights to logos is legit, if it's a bit of artwork
+[03:13:43] <HoneyDrops> But I can see a legitimate value to society in forbidding say arbitrary hardware being labeled with the little apple logo.
+[03:14:01] <Moonlightning> If your “logo” is just some text in a specific font…Iunno, that's kinda iffy.
+[03:14:12] <Moonlightning> Putting in a swooshy thing is better, but still ehh…
+[03:14:15] <HoneyDrops> As that is otherwise opening deceptive behaviors.  Though I suppose you could consider that fraud.
+[03:14:30] <Phase> logos are registered though
+[03:14:42] <HoneyDrops> Trademarks must be registered.
+[03:14:44] <Phase> so it's not like copyright where you have to duke it out in court, there's a clear answer
+[03:16:06] <Phase> and its not absolute control, it's mostly to prevent you from trading under their name
+[03:16:52] <HoneyDrops> yeah, you can still use a trademark in other fields, or to talk about that brand.
+[03:17:25] <HoneyDrops> It only applies to the scope of commercial activity /within/ the field that mark was registered for.
+[03:17:51] <Windsheer> trademarks don't have to be registered, at least in the US
+[03:17:53] <Moonlightning> what about things like Samsung though? ;p
+[03:17:54] <Windsheer> it just makes life vastly easier
+[03:18:03] <Phase> Windsheer, oh?
+[03:18:12] <Windsheer> Phase: lanham act specifically allows for common law trademarks
+[03:18:19] <Phase> ah
+[03:19:02] <Phase> i think that also covers some uses of a name
+[03:19:07] * Phase only has one reference for that
+[03:19:16] * Moonlightning loans Phase another reference.
+[03:19:20] <HoneyDrops> They should still be restricted in scope though, and to a sufficiently "novel" mark.
+[03:19:37] <HoneyDrops> (eg: you'd not be able to trademark a common English word)
+[03:19:50] <Phase> there needs to be some level of defense against court cases
+[03:20:06] <Moonlightning> I'd drop the /common/
+[03:20:16] <Moonlightning> If it's already in the dictionary, how about no
+[03:20:19] <Phase> because it's completely legal to sue someone, and just drag the case out until the legal fees crush the defender company
+[03:20:33] <Moonlightning> ^
+[03:20:36] <Moonlightning> This is bad
+[03:20:54] <Moonlightning> that kinda thing can destroy startups, too
+[03:21:21] <Moonlightning> if you can find one shred of anything against them, start legal action and no one's gonna wanna invest
+[03:21:26] <HoneyDrops> Phase: easy, remove the idea of buying a laywer - you go to court and you and the defendent both get a rep from a pool of those w/ the requisite knowledge/exp and are assigned randomly and paid by the state.
+[03:21:35] <Moonlightning> *cough* capitalism is broken *cough*
+[03:21:50] <Phase> Moonlightning, capitalism is broken when you can destroy competition
+[03:21:54] <HoneyDrops> You cannot leverage wealth for better representation, nor can you win by attrition.
+[03:22:05] <Phase> ^
+[03:22:05] <Moonlightning> Phase: /has holes in it/, then.
+[03:22:13] <Moonlightning> Phase: not that you can't already destroy competition
+[03:22:16] <JustAberrant8> that takes away any incentive for lawyers to become more skilled
+[03:22:51] <Phase> pure capitalism is broken as fuck, just as open to abuse by anyone as a comunist systems is by the government
+[03:23:04] <HoneyDrops> JustAberrant8: they should become better because that is why you do what you do.  If you become more skilled just for a bigger paycheck, I propose you're doing it for the wrong reason and the world is better off without you trying harder.
+[03:23:26] <JustAberrant8> HoneyDrops: pff, maybe in whatever fantasy land you live in ;p
+[03:23:29] <Moonlightning> I propose a new definition of /tryhard/ based on this ^2
+[03:23:46] <JustAberrant8> real world people take the path of least resistance
+[03:23:51] <JustAberrant8> it's why communism tends to fall apart
+[03:24:04] <JustAberrant8> people need more incentive than "to be a better person"
+[03:24:24] <Moonlightning> Hay, what about Maslow's Hierarchy?
+[03:24:40] <Moonlightning> If you guarantee fulfillment of basic needs (//scarcity!//)…
+[03:24:42] <JustAberrant8> pretty much everything on that hierarchy is tied to wealth ;p
+[03:24:46] <HoneyDrops> If they need it, then fine, they can loaf about.  We can afford it, and why does it matter?
+[03:24:52] <Moonlightning> yes, because you can /buy/ self-actualization
+[03:25:01] <JustAberrant8> you can buy the means to achieve it
+[03:25:09] <Phase> HoneyDrops, or money can create an incentive to perform better, where one might not self-incentivise, benefiting the whole; it depends on how you look at it
+[03:25:31] <Phase> and the incentive, patent hording is an example of bad incentive
+[03:25:41] <Moonlightning> fuck patent trolls
+[03:25:42] <JustAberrant8> HoneyDrops: it matters because the 1% who would do it just cause isn't enough
+[03:25:44] <HoneyDrops> I don't accept that everyone must do something, those that do it for the intrinsic joy/fulfillment will do and those that need external incentives will just not.
+[03:25:48] <Phase> https://youtu.be/KSWqx8goqSY where i've heard of the lanham act
+[03:25:49] <PinkiePieBot> [ DEFCON 17: That Awesome Time I Was Sued For Two Billion Dollars - 296676 views - 31m 28s long - 2705 likes - 98.29% ]
+[03:26:35] <HoneyDrops> I think the proportion that would do things for the sake of it is a lot higher than we would assume, as current systems tend to stifle it.
+[03:27:04] <Moonlightning> Current systems leave entire swathes of people unable to fulfill lower-level needs
+[03:27:09] <JustAberrant8> I dunno, there's also the "everyone can't be an artist" problem
+[03:27:16] <Moonlightning> so, um, why are you even trying to self-actualization right now
+[03:27:41] <JustAberrant8> I love programming, but while I like my job I don't love it
+[03:27:43] <HoneyDrops> Or we can just automate away more/most of it.
+[03:27:47] <Moonlightning> ^
+[03:27:49] <Moonlightning> This needs to happen.
+[03:28:04] <JustAberrant8> I do it because it's enjoyable and pays
+[03:28:14] <JustAberrant8> if I had a choice, I'd program other things
+[03:28:20] <aji> same
+[03:28:26] <HoneyDrops> But if you didn't need to be paid, what would you do?
+[03:28:30] <Phase> which is going to cause an interesting problem, when most unskilled labor is automated what happens to those who cant/wont do skilled work?
+[03:28:34] <JustAberrant8> HoneyDrops: that's the point
+[03:28:40] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:28:41] <JustAberrant8> HoneyDrops: I'd still program, but I'd work on things I want to
+[03:28:54] <JustAberrant8> HoneyDrops: and the things I (and likely others) wouldn't care about working on wouldn't get done
+[03:28:58] <HoneyDrops> yes, a lot might say nothing, but so what?  Automate whatever we can, and I think the few who will want to do things, will keep doing them.
+[03:29:06] <aji> i'd stay home and work on my personal projects
+[03:29:12] <Moonlightning> JustAberrant8: there you go
+[03:29:18] <Moonlightning> A project will need people /wanting/ to work on it to get done
+[03:29:34] <HoneyDrops> if no one wants to do it, and it can't be automated... the next question is, "does it really need to be done?"
+[03:29:37] <aji> the thing that's unique about programming though is just anybody can do it
+[03:29:48] <JustAberrant8> HoneyDrops: the answer is probably yes
+[03:29:51] <aji> HoneyDrops: what can and can't be automated?
+[03:29:52] <HoneyDrops> How many lives are pissed away on tasks that don't need to be done?
+[03:29:53] <Moonlightning> So we get stuff people actually care about, instead of corporate bullshit
+[03:29:56] <aji> are you assuming that nothing can't be automated?
+[03:30:03] <aji> what's an example of something that can't be automated?
+[03:30:16] <Moonlightning> aji: can we assume AI?
+[03:30:20] <JustAberrant8> automated in the near future or automated long after we're all dead
+[03:30:22] <aji> i don't know, i'm asking HoneyDrops 
+[03:30:27] <JustAberrant8> with AI anything is possible, right now, a fucktonne ;p
+[03:30:27] <HoneyDrops> I would assume eventually, everything can be.  However, that "eventually" does require a mean time.
+[03:30:46] <Moonlightning> awwh…why's the time gotta be so mean >:(
+[03:30:51] <JustAberrant8> you can't automate, say, software to control a nail galvanizing plant
+[03:30:52] <aji> right now, there is PLENTY that can't be automated, but still needs doing
+[03:30:54] <JustAberrant8> but you probably need it
+[03:31:09] <Moonlightning> AAAAAAIIIIIIIIIIIIII
+[03:31:14] <JustAberrant8> (you can automate the plant, you can't automate writing the software yet
+[03:31:41] <Phase> writing the software isn't that large a cost
+[03:31:58] <JustAberrant8> no, but it's a cost and requires people to do it ;p
+[03:32:08] <JustAberrant8> and given a lack of incentive to work on that specific problem, who would
+[03:32:15] <JustAberrant8> when they can work on something like spacex
+[03:32:34] <JustAberrant8> you'd end up with the really interesting stuff getting swamped and important but boring stuff getting ignored
+[03:33:12] <JustAberrant8> ..if only we had some way of Incentivising to work on that kinda thing 
+[03:33:15] <JustAberrant8> .. oh yeah, we totally do ;p
+[03:33:19] <Phase> https://youtu.be/KSWqx8goqSY?t=4m48s
+[03:33:20] <PinkiePieBot> [ DEFCON 17: That Awesome Time I Was Sued For Two Billion Dollars - 296676 views - 31m 28s long - 2705 likes - 98.29% ]
+[03:33:30] <HoneyDrops> As I said, "eventually" everything could be automated, until there we do have to work around the annoying bits.  Out of a few billion people, are we sure at least one who is able isn't also interested in tackling it?
+[03:33:43] * Moonlightning (steals HoneyDrops's quotation marks.)
+[03:33:47] <aji> it's not so much that there's not somebody who wants to do it,
+[03:33:51] <aji> it's are there ENOUGH people who want to do it
+[03:33:54] <JustAberrant8> HoneyDrops: I think so
+[03:34:00] <JustAberrant8> HoneyDrops: because most people are unhappy in their jobs
+[03:34:01] <aji> e.g. are there as many bathrooms as there are people who want to clean them more than anything else?
+[03:34:06] <JustAberrant8> HoneyDrops: or at least not dancing to work
+[03:34:27] <HoneyDrops> aji: we could probably design a bathroom to be self-cleaning.
+[03:34:32] <JustAberrant8> HoneyDrops: if every meh job had a programmer that was totally into it, everyone would be happy ;p
+[03:34:44] <aji> what happens if we start automating the things that people like to do
+[03:34:45] <JustAberrant8> assuming they could find each other, which would be a problem in your fantasy land
+[03:34:55] <aji> those people have to find something else they like to do
+[03:34:59] <HoneyDrops> I envision a system with water jets, UV lights, hydroscopic surfaces, etc.
+[03:35:04] <aji> it won't be the thing they liked most
+[03:35:11] <JustAberrant8> HoneyDrops: sure, but all that takes resources
+[03:35:19] <Moonlightning> HoneyDrops: need a /really really/ good wastewater system
+[03:35:26] <aji> i'm arguing that a society where the boring work is automated won't be perfect.
+[03:35:31] <aji> and will still have tons of flaws
+[03:35:31] <JustAberrant8> whole point of money is it tries to manage distribution of those resources
+[03:35:38] <HoneyDrops> aji: they could still do it?  Just because people automated doesn't mean people would have to stop.
+[03:35:46] *** Joins: Fallfeathers (Fallfeather@Pony-k1obka.optusnet.com.au)
+[03:35:59] <HoneyDrops> Moonlightning: filer/boil and re-circ?
+[03:36:21] <HoneyDrops> Which is what happens now, just more slowly, and using the sun to power it.
+[03:36:49] <aji> also what happens if there's not enough of the fun work to go around
+[03:37:03] <aji> like, imagine if you could attend any college you want
+[03:37:07] <JustAberrant8> the amount of resources to construct, install, and maintain that would negate the benefit even if most of it was automated
+[03:37:10] <aji> that'd be functionally equivalent to schools having 100% acceptance rates
+[03:37:13] <aji> which they don't.
+[03:37:24] <aji> why don't they? aside from the image it creates
+[03:37:25] <JustAberrant8> and pretty much what aji said ;p
+[03:37:26] <HoneyDrops> I wish I could keep getting degrees
+[03:37:40] <aji> e.g.
+[03:37:49] <Moonlightning> because there aren't enough places to go around?
+[03:37:50] <HoneyDrops> I like learning, I don't care so much about the degree itself, that's just a silly piece of paper.
+[03:38:06] <JustAberrant8> figures, I hated school ;p
+[03:38:15] <aji> i would LOVE to work on google spanner
+[03:38:15] <Moonlightning> ^
+[03:38:16] <JustAberrant8> well, not hated
+[03:38:20] <aji> but why can't i work on google spanner?
+[03:38:22] <Moonlightning> What JustAberrant8 said *
+[03:38:25] <aji> how many people are there like me?
+[03:38:29] <JustAberrant8> but I like to think of myself as a down to earth pragmatic guy..
+[03:38:43] <Moonlightning> aji: if only Google weren't for-profit, and they just made it an open repo…
+[03:38:46] <JustAberrant8> and university is like, the opposite of that, even in STEM people are so detached from the way the world actually works
+[03:39:28] <aji> lol
+[03:39:31] <JustAberrant8> it drove me insane, still does ;p
+[03:39:32] <HoneyDrops> JustAberrant8: knowing "how the world" works and accepting that that is how it "must" (or worse, "should") work isn't the same.
+[03:40:10] <Phase> https://youtu.be/6r65WwO1-uA good watch too
+[03:40:11] <PinkiePieBot> [ So You Want To Murder a Software Patent Jason Scott - 24966 views - 51m 15s long - 147 likes - 96.08% ]
+[03:40:39] <JustAberrant8> HoneyDrops: sure, but unless one plans to stay in university forever, eventually "how the world works" is going to be important
+[03:40:41] <HoneyDrops> I reject that the world (well more accurately society) either should or must be the way it is.  I accept that it is the way it is now, but I hold no fondness for it.
+[03:40:51] <Moonlightning> ^
+[03:41:04] <Phase> ^^
+[03:41:10] <aji> here's another one,
+[03:41:12] <Moonlightning> JustAberrant8: unless you plan to stay in academia forever? The fuck are you on about? Academia is terrible.
+[03:41:16] <aji> how many people want to be president of the united states?
+[03:41:25] <Moonlightning> aji: Here's a better one.
+[03:41:26] <JustAberrant8> Moonlightning: that's my point ;p
+[03:41:30] <aji> whoa whoa
+[03:41:30] <HoneyDrops> I can say, for absolute certain, I do not.
+[03:41:31] <Moonlightning> How many people are QUALIFIED to be president…
+[03:41:45] <aji> i think you guys are getting "undergraduate studies at university" and "academia" mixed up
+[03:41:54] <aji> HoneyDrops: oh well then i guess there will only ever be 1 person who wants to then.
+[03:42:03] <aji> or maybe we'll just automate the presidency
+[03:42:05] <JustAberrant8> Moonlightning: if you are actually going to go out and use that university knowledge, such as it is, at some poin one has to actually operate in the real world.. and all the university idealism crap goes out the window _reallly_ quickly
+[03:42:07] <Moonlightning> aji: so I ditched it as quickly as possible. Fuckkin' sue me.
+[03:42:08] <aji> then nobody gets it
+[03:42:09] <HoneyDrops> I vote for that, actually.
+[03:42:27] <Moonlightning> > university knowledge
+[03:42:30] <Moonlightning> BAHAHAHAHAHAHAHA
+[03:42:34] <Moonlightning> Good one!
+[03:42:37] <JustAberrant8> and yes, that
+[03:42:38] <HoneyDrops> Pulling the "benevolent dictator" mentioned earlier, a proper omni-benevolent AI~
+[03:42:39] <aji> ....
+[03:42:41] <JustAberrant8> especially for software
+[03:42:44] <aji> you guys are total STEM stereotypes lol
+[03:42:52] <aji> did you guys take a single humanities class you didn't scoff your entire way through
+[03:43:03] <JustAberrant8> aji: hehe, I accept that at least ;p
+[03:43:07] <HoneyDrops> I did, I like humanities.
+[03:43:12] <Phase> STEM?
+[03:43:19] <aji> since technology engineering mathematics
+[03:43:26] <aji> cool field, lots of interesting problems
+[03:43:30] <JustAberrant8> Phase: new age term for "stuff that you can probably get a job in" ;p
+[03:43:34] <Phase> since is my favorite field
+[03:43:35] <aji> but the STEM fanboys are a bit unsufferable
+[03:43:41] <HoneyDrops> My BS was in physics :)
+[03:43:44] <aji> e.g. with comments like that, lol
+[03:43:52] <Phase> :P
+[03:44:08] <JustAberrant8> meh, STEM wasn't even a word when I was in school
+[03:44:14] <JustAberrant8> but I embrace the attitude, sure ;p
+[03:44:33] <JustAberrant8> it's what happens when you're surrounded by people who think the power of their dreams is gonna take them anywhere when they graduate ;p
+[03:44:37] <aji> i loved the heck out of this class i took called "the human event"
+[03:44:49] <aji> we read books and things spanning basically all of humanity
+[03:45:02] <aji> picked them apart, studied what was different and what was common
+[03:45:06] <aji> really neat
+[03:45:08] <Phase> i want that class
+[03:45:25] <JustAberrant8> meh, not saying _some_ of it wasn't interesting, but a lot of it was too naval gazing for me
+[03:45:54] <aji> also the "power of your dreams" thing happens in STEM too
+[03:46:00] <aji> how many people think they're gonna be the next elon musk
+[03:46:02] <aji> next steve jobs
+[03:46:03] <JustAberrant8> I entirely agree ;p
+[03:46:09] <Phase> the only humanities class i enjoyed in high school was this one history class on vikings
+[03:46:15] <aji> haha thaht sounds awesome
+[03:46:19] <aji> especially awesome for high school
+[03:46:28] <Phase> we went through what it was actually like
+[03:46:34] <JustAberrant8> I don't think CS is some bastion of rationality, CS has the church of RMS crowd
+[03:46:35] <Phase> even the rape and pillage
+[03:46:40] <JustAberrant8> which was in full swing when I was in school
+[03:46:47] <aji> CS is probably the least rational of the STEM fields, lol
+[03:46:56] <HoneyDrops> CS is fun, but I like math.
+[03:46:59] <aji> only because it's so easy to get into and then everybody thinks they're fuckin dennis ritchie
+[03:47:07] <JustAberrant8> every time someone says "x doesn't respect your freedom" I get the urge to piss blood ;p
+[03:47:09] <aji> oo yay the button turns blue when you hover over it
+[03:47:28] <aji> HoneyDrops: math is AMAZING
+[03:47:33] <aji> i am on the fence about going back and studying math
+[03:47:37] <aji> and/or getting my Ph D in CS
+[03:47:42] <aji> publish some papers etc B)
+[03:47:52] <aji> i want a google scholar search for my name to turn something up at some point
+[03:47:55] * Phase wishes they taught math instead of making you memorize it
+[03:47:59] <JustAberrant8> bleh, my company would pay for me to go back to school and I wouldn't have it ;p
+[03:48:05] <JustAberrant8> screw that noise
+[03:48:13] <HoneyDrops> Well I majored in Physics, and took a fair bit of CS (I wish I had the time to take more theoretical).
+[03:48:35] <HoneyDrops> So math is a natural fit, as physics is just applied math.
+[03:48:39] <aji> Phase: you should read "introduction to graph theory" by richard trudeau
+[03:48:52] <aji> it teaches graph theory from ground level
+[03:49:12] <aji> graph theory which is both very accessible, and full of unsolved problems
+[03:49:29] <aji> i haven't finished it but in the intro he claims that he'll introduce you to some unsolved problems in graph theory
+[03:49:29] <JustAberrant8> also figures, I generally avoid math ;p
+[03:49:31] <HoneyDrops> Sure, there were aspects of undergrad I didn't care for, but on the whole I enjoyed spending my time learning.
+[03:49:40] <JustAberrant8> I at least accept math is useful for a lot of things
+[03:49:59] <HoneyDrops> I think there is no greater joy that learning more about the world and how it operates.
+[03:50:31] <aji> i like doing things that nobody's thought to do or been able to do
+[03:50:44] <aji> luckily there's a lot of that to go around
+[03:51:00] <HoneyDrops> I doubt there will ever be a shortage.
+[03:51:04] <JustAberrant8> I like to build stuff that works well, serves a purpose and gets used
+[03:51:14] <JustAberrant8> I don't really care about novelty
+[03:51:18] <aji> i think it finds its way into my music
+[03:51:25] <aji> i like to make music that people listen to and say "hm, never heard THAT before"
+[03:51:35] <aji> or at least, that's what i strive for.
+[03:51:36] <HoneyDrops> utility is just side effect to me
+[03:51:38] <JustAberrant8> that was the other thing that annoyed me about school, I _hate_ doing things for the sake of them
+[03:51:56] <aji> then what do you ultimately want to do
+[03:51:58] <JustAberrant8> if I'm going to invest serious energy into making something, I want to know that it's not just getting graded and thrown in a bin
+[03:52:06] <aji> ah
+[03:52:14] <aji> i thought you meant in general
+[03:52:19] <aji> like playing games for the sake of playing games
+[03:52:20] <HoneyDrops> I prefer to do things for the pure sake of doing it.  Infact payment, or obligation actively harms my motivation in the long run.
+[03:52:21] <JustAberrant8> I could never get into assignments for that reason
+[03:52:25] <aji> eating dessert for the sake of eating dessert
+[03:53:00] <JustAberrant8> they're rarely things I had any interest in doing nor things which would ever be used by anyone for any reason
+[03:53:23] <JustAberrant8> sure I'll code an mp3 decoder or whatever I need to get the grade, but I'm not gonna throw a lot of heart into it
+[03:53:43] <JustAberrant8> but I'll code the shit out of the stuff I work on, because people actually use and depend on it working well
+[03:54:28] <JustAberrant8> that my wealth is somewhat tied to how much I succeed in that is a nice byproduct ;p
+[03:54:49] <JustAberrant8> .. in summary, I'm not the university type ;p
+[03:55:02] <HoneyDrops> Well I can't disagree with that complaint about assignments, some I get some joy out of doing them, but others are just the required motions to mastering new skills.
+[03:56:49] <HoneyDrops> However, I prefer to do things for no other reason than I think it would be fun or interesting, or maybe just because it will improve my knowledge/skill set (which I mostly wish to expand for the sake of expanding it).
+[03:58:02] <Phase> HoneyDrops, back on wasm though, you can use whatever audio/video codec you want, which means both avoiding the need for h264 and the ability to deploy new codecs, there's no need to, say, convince microsoft to support vp9
+[03:58:12] <Phase> which they don't and thanks to patents have no interest in
+[03:59:41] <HoneyDrops> As long as the policy is default deny, and there are systems in place to allow me absolute control over it's operation on my system, I would be /mostly/ ok with it.
+[03:59:45] <Phase> deployment really is the only problem right now since we do rely on the system to provide codecs, and some have no interest in the open codecs, or aren't updated, or suffer some other similar vendor imposed limit
+[04:00:04] <Phase> HoneyDrops, firefox at the very least will have an about:config to disable it
+[04:00:21] <Phase> fairly sure you can turn off asm.js in there
+[04:00:35] <Phase> yeah, javascript.options.asmjs
+[04:00:57] <HoneyDrops> At no point should any party ever be able to run anything against my wishes on my system.  Simialrly, nothing should ever refuse to run because of anyone else's wishes.
+[04:01:21] <HoneyDrops> *refuse to run on my system
+[04:01:27] <Windsheer> HoneyDrops: do you browse with javascript disabled, just out of curiosity?
+[04:01:29] <Windsheer> or with NoScript?
+[04:01:44] <HoneyDrops> Noscript, uMatrix, flash is disabled (but sadly installed)
+[04:01:52] <Windsheer> ahh, wise
+[04:02:17] <HoneyDrops> I also block most cookies, and completely block ads.
+[04:03:05] <JustAberrant8> only a matter of time before sites just straight up stop working if they detect their ads are being blocked
+[04:03:38] <HoneyDrops> JustAberrant8: I would be content to download and just /dev/null them, but I also want wants to poison their metrics.
+[04:03:38] <JustAberrant8> actually surprised that isn't a big thing already
+[04:03:56] <HoneyDrops> s/wants//
+[04:03:59] <Phase> http://hardware.slashdot.org/story/15/12/24/1854236/pirate-bay-cofounder-utterly-bankrupts-the-music-industry
+[04:04:22] <Phase> https://torrentfreak.com/pirate-bay-founder-builds-the-ultimate-piracy-machine-151219/ probably a better link
+[04:04:24] <PinkiePieBot> [ Pirate Bay Founder Builds The Ultimate Piracy Machine - TorrentFreak ]
+[04:04:28] <JustAberrant8> read that earlier, makes half a point
+[04:04:34] <HoneyDrops> Ads are a pox, the amount to deliberate attempts to influence and manipulate others for profit.
+[04:05:00] <JustAberrant8> HoneyDrops: meh, I'd be ok if they wern't so scammy and actually sometimes relevant
+[04:05:19] <JustAberrant8> I don't hate ads in principle, in practice though they're definitely not a force of good
+[04:06:08] <HoneyDrops> I don't want to see any ads, and almost more importantly I don't want companies trying to collect data on me to better try to manipulate me.
+[04:06:28] <JustAberrant8> either way, probably doable to make a site very hard to view without ads, it's just a matter of whether anyone will bother and when
+[04:06:55] <JustAberrant8> lots of JS tomfoolery with callbacks and such
+[04:07:01] <HoneyDrops> And better and better tools will be developed to filter and extract the bits I want and discard the chaff~
+[04:07:32] <JustAberrant8> of course, should be interesting to see where things go though
+[04:08:09] <HoneyDrops> I would prefer not to fetch ads at all, but I'm willing to let them waste my and someone else's bandwidth and just not see them.  Though I've learned to just manually ignore them easily enough.
+[04:08:28] <HoneyDrops> Should I have to let some slip though.
+[04:08:33] <JustAberrant8> problem is no one has come up with a better model, microtransactions seem to be a dud, and subscriptions only work for some kinds of content
+[04:10:55] <JustAberrant8> wikipedia and archive.org can run on donations, but that's not viable for everyone either
+[04:10:58] <HoneyDrops> really the value of the internet is not in websites, it's that we have a global communications network that allows every lat human the ability to communicate with ever other human, and to publish their ideas for all to see.
+[04:11:17] <JustAberrant8> sure, it's called facebook ;p
+[04:11:56] <HoneyDrops> :p  I was thinking e-mail, irc, the dozen dozen IM protocols, etc.
+[04:12:09] <JustAberrant8> which almost no one uses any more ;p
+[04:12:26] <HoneyDrops> facebook would be neat in a p2p model, completely decentralized from any authority to monitor and filter.
+[04:12:49] <JustAberrant8> sure, but so few people care about any of that
+[04:12:58] <JustAberrant8> and diaspora was an absolute farce
+[04:13:00] <HoneyDrops> I still think it's vain to post about your day, but I won't stop those who get some fulfillment out of it.
+[04:13:35] <JustAberrant8> either way, without an easy way for _non technical_ people to post stuff, the internet would stay in the realm of geeks
+[04:13:49] <HoneyDrops> /I/ don't even care about my day by the end of it, I have no desire or compulsion to share it with others.
+[04:14:07] <JustAberrant8> geocities, myspace, facebook, blogger, tumblr, etc.. they're what made/make the internet what it is ;p
+[04:14:20] <HoneyDrops> Well I will not be shy in stating, I want a human race composed entirely of "geeks" ;)
+[04:14:39] <JustAberrant8> well yes, that would solve a lot of problems, but it's not gonna happen ;p
+[04:15:59] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[04:17:15] *** Gladiolus is now known as Wildcard
+[04:17:48] <JustAberrant8> speaking of facebook, have Canada's contribution:  https://www.facebook.com/Maritime.Forces.Pacific/videos/1091680777532596/  ;p
+[04:17:49] <PinkiePieBot> [ HMCS Winnipeg - Christmas Message - Maritime Forces Pacific / Forces maritimes du Pacifique | Facebook ]
+[04:17:57] *** Quits: Fallfeathers (Fallfeather@Pony-k1obka.optusnet.com.au) (Ping timeout: 121 seconds)
+[04:18:10] * JustAberrant8 cringed.. so.. hard..
+[04:18:59] *** Joins: Fallfeathers (Fallfeather@Pony-k1obka.optusnet.com.au)
+[04:21:13] <aji> oh c
+[04:21:17] <aji> vsnprintf
+[04:21:39] <aji> "print format to string buffer of size with varargs"
+[04:21:45] <JustAberrant8> // we found another bound you really aught to be checking ?
+[04:21:58] <aji> no just laughing at the name
+[04:22:02] <Phase> JustAberrant8, they seem to be having fun
+[04:22:08] <aji> i mean, i like short names
+[04:22:28] <aji> it's just that only in C would the name be so short
+[04:23:14] <Phase> imo it's better than print_format_to_string_buffer_of_size_with_varrgs()
+[04:23:29] * Phase has used a library which had names like that
+[04:24:37] <aji> gtk? lol
+[04:24:59] <Phase> no actually but it's got a similar issue
+[04:25:03] <JustAberrant8> pff, I'll take java
+[04:25:04] <JustAberrant8> StringBuffer.print(FormatPrinterFactory.createFormatPrinter(new VargSizingStrategy()).format(yourString));
+[04:25:07] <aji> and realistically it'd be something like "format_buffer_valist" in non-C languages
+[04:25:34] <aji> in C it'd be String.format().substring() or something
+[04:25:44] <aji> erm, java
+[04:26:06] <aji> wait no java can't take a list of arguments like C can
+[04:26:14] <JustAberrant8> it totally can
+[04:26:23] <aji> in python, '...'.format(*args)[:n]
+[04:26:27] <Phase> i think its a recent thing
+[04:26:31] <JustAberrant8> yeah
+[04:26:34] <aji> ah cool
+[04:26:48] <aji> does it work with functions that already take varargs like String.format?
+[04:26:50] <JustAberrant8> java 5 is
+[04:26:53] <JustAberrant8> * ish
+[04:26:55] <JustAberrant8> ;p
+[04:26:56] * Phase wonders if object[] would have worked
+[04:27:17] <Phase> though no autoboxing so
+[04:27:23] <HoneyDrops> Needs more void*
+[04:27:28] <JustAberrant8> man
+[04:27:36] <aji> void* is the worst lol
+[04:27:41] <JustAberrant8> major gripe with c++ is the lack of a byte type 
+[04:27:46] <Phase> HoneyDrops, object would be the equivalent
+[04:27:47] <HoneyDrops> Function pointers are wonderful things!
+[04:27:51] <JustAberrant8> for representing at minimum a pointer to arbitrary memory
+[04:27:55] <aji> can't you use uint8_t, JustAberrant8?
+[04:28:00] <JustAberrant8> having to use void* annoys the fuck out of me ;p
+[04:28:13] <JustAberrant8> (for taking pointers to a generic "thing"
+[04:28:15] <Phase> though int isn't an object, it's a primitive, and no autoboxing
+[04:28:21] <Phase> Integer is the object
+[04:28:25] <aji> void* represents a single address with no information about the size or type of the data it points to
+[04:28:26] <JustAberrant8> err, s/void/char
+[04:28:29] <aji> which is a valuable thing to have
+[04:28:32] <aji> ah
+[04:28:33] <Phase> stupid crappy exposed implementation detail
+[04:28:42] <Googie> In C++ you really shouldn't be using void ptrs in a modern codebase
+[04:28:49] <aji> good point, it really should have been boxed types everywhere
+[04:28:55] <Phase> void pointers are a pain to cast
+[04:29:01] <Phase> in c++ that is
+[04:29:07] <aji> they should be, lol
+[04:29:11] *** Quits: Quindo (Quindo@Pony-8qt.17k.198.99.IP) (Ping timeout: 121 seconds)
+[04:29:13] <aji> it's unsafe to cast up from void*
+[04:29:16] <Phase> that is to say, i have no idea how you cast them
+[04:29:27] <Phase> very unsafe but i was trying to compile a C program under C++
+[04:29:38] <JustAberrant8> but having ot use char* to represent stuff that I _know_ isn't a bunch of chars
+[04:29:40] <Phase> so every malloc call caused the problem
+[04:29:41] <JustAberrant8> * having to
+[04:29:48] <JustAberrant8> just annoys me ;p
+[04:29:48] <aji> in C, struct foo *p = something_void_pointer; will work
+[04:29:51] <aji> in C++ it will not
+[04:30:11] <JustAberrant8> I mean it's a really minor slight, just something that's always annoyed me
+[04:30:23] <aji> yeah that's really annoying
+[04:30:43] <aji> i can't think of a case where you'd want a pointer to bytes instead of a pointer to void, though
+[04:30:57] * Moonlightning pelts everypony discussing C++ with Rust references.
+[04:31:10] <aji> unless you're doing hacks that work at the byte level on other structures
+[04:31:15] * Phase throws C++17's improvements at Moonlightning
+[04:31:18] * JustAberrant8 coughs
+[04:31:21] <aji> which seems like it's not a case C++ should make easy, lol
+[04:31:30] <Phase> they're going to get a mostly ok language out of C++
+[04:31:32] * HoneyDrops curls up with her C and purrs contently.
+[04:31:33] * Windsheer tosses Oberon-2 into the ring at Moonlightning and Phase 
+[04:31:42] <aji> LANGUAGE FIGHTTT!!!!
+[04:31:49] <JustAberrant8> pff, they all suck
+[04:31:49] <Googie> C++ has this really big divide between "old" C with Classes, and new C++
+[04:31:50] <HoneyDrops> Hoe does C++ do function pointers?
+[04:31:51] * aji throws OCaml into the air
+[04:31:53] <JustAberrant8> </fight> ;p
+[04:31:55] <aji> lol
+[04:31:58] <HoneyDrops> s/Hoe/How/
+[04:32:01] <Phase> oberon 2 looks like ada
+[04:32:03] <Phase> i don't like ada
+[04:32:06] <aji> lol
+[04:32:08] * Moonlightning -immutably borrows- steals everypony's weapons!
+[04:32:08] <Windsheer> Phase: Oberon-2 is nothing like ada
+[04:32:11] <Googie> std::function
+[04:32:11] <JustAberrant8> I.. actually like ada ;p
+[04:32:16] <JustAberrant8> but I get why it's dying
+[04:32:18] <Windsheer> except very vaguely due to shared pascal ancestry
+[04:32:18] <Phase> JustAberrant8, :<
+[04:32:21] <JustAberrant8> and/or dead
+[04:32:25] <aji> ada is like rust before we knew we wanted rust :D
+[04:32:29] <aji> emphasis on safety etc
+[04:32:30] <Phase> my hatred is from the abysmal vhdl compilers i had to use
+[04:32:32] * JustAberrant8 does work in the defense industry, so it's bound to happen ;p
+[04:32:39] <aji> ah yeah lots of Ada there
+[04:32:47] <Phase> used the altera and xilinx compilers, segfaulted both of them
+[04:32:56] <Googie> C++ has a lot of neat stuff in the STL.
+[04:32:59] <aji> you ICEd them
+[04:33:02] <Phase> and my god if you thought old msvc had crappy error messages
+[04:33:06] <aji> you only get to say that with compilers :D
+[04:33:07] <HoneyDrops> Might be nice if LISP machines made a comeback.
+[04:33:10] <JustAberrant8> but yeah, charging a fucktonne for your _specificiation_ doesn't work in the modern age ;p
+[04:33:15] <aji> is "ice" also slang for "kill" in aus?
+[04:33:25] <Phase> combined with the incredibly large amount of infered behaviour in vhdl
+[04:33:34] <Googie> You're not actually even /supposed/ to use raw arrays anymore, over std::array, which is a compile-time wrapper (but no runtime overhead)
+[04:33:40] <Phase> aji, don't think so
+[04:33:57] <aji> google says it's north american
+[04:33:58] <Phase> i know the slang but can't say i've ever heard it in aussie media
+[04:34:01] <aji> anyway, you ICEd it :D
+[04:34:01] <JustAberrant8> also modern c++ makes my brain bleed ;p
+[04:34:22] <JustAberrant8> it feels like they're trying to bold too much new-age stuff onto a frame that really wasn't built for it
+[04:34:31] <aji> i like how in C++ you had to wrirte nested templates like foo<bar<baz> >
+[04:34:33] <Googie> It's... different, yeah. Really the language's ties with C hurt it more than help it these days.
+[04:34:34] <JustAberrant8> at some point one has to ask what the point is
+[04:34:35] <aji> because of the parser :D
+[04:34:44] <Googie> At least that's finally fixed.
+[04:34:47] <Phase> aji, how else would you write them?
+[04:34:52] <aji> foo<bar<baz>>
+[04:34:57] <Phase> wait
+[04:34:59] <Phase> you need a space?
+[04:34:59] <aji> but the parser thought the >> was right shift
+[04:35:01] <JustAberrant8> s/bold/bolt/
+[04:35:02] <aji> you used to
+[04:35:07] <aji> they fixed it
+[04:35:09] <Googie> Phase: You /need/ the space, otherwise >> would be interpreted as a bit shift.
+[04:35:10] <Phase> that sounds like a parser bug relly
+[04:35:17] <aji> yeah
+[04:35:18] <Googie> Bug in the spec :P
+[04:35:23] <Googie> More than a parser bug
+[04:35:25] <Phase> true
+[04:35:28] <JustAberrant8> that was a thing for a long damn time
+[04:35:40] <aji> it's probably still a recommended practice if you're writing hyper-compatible code
+[04:35:50] <Phase> bare expressions are valid template parameters aren't they
+[04:36:04] <aji> not sure, i'm not a C++ expert
+[04:36:05] <JustAberrant8> but really, even things like header files feel silly at this point
+[04:36:09] <aji> i only know enough to crap on it >:D
+[04:36:28] <Googie> I love it and hate it at the same time... it's a very "unique" language.
+[04:36:37] <aji> i feel like header files were invented before they became a practice, if that makes sense
+[04:36:44] <Moonlightning> Rust doesn't require spaces between closing alligatorbrackets in generics
+[04:36:46] <Moonlightning> or header files
+[04:36:48] <Googie> When you start to realize the pwoer of templates...
+[04:36:51] <aji> like "hm, maybe we should put these common definitions in a single file that people can have the preprocessor paste"
+[04:36:52] <Googie> *power
+[04:36:55] * Phase would like to see C++ with a minimal standard library
+[04:37:06] <aji> i was digging around the BSD 4.3 source code,
+[04:37:15] <Phase> and i mean real minimal
+[04:37:20] <aji> a lot of the common unix utilities like ed, grep, etc. were written as single C files
+[04:37:24] <Phase> no exceptions, new/delete as malloc/free
+[04:37:29] <aji> like, 4000 line C files
+[04:37:38] <aji> if you're coming from that world, you don't need .h files right away
+[04:37:54] <aji> like, asm doesn't have .h files
+[04:37:57] <JustAberrant8> a lot of the GNU toolstack is similar and also _really_ shitty ;p
+[04:37:58] <HoneyDrops> yeah, those are beautiful tools
+[04:38:09] <aji> if you want separate files, you write them so they work together
+[04:38:13] <JustAberrant8> like, looking at the code for stuff like cat is kinda scary ;p
+[04:38:22] * Phase read some glibc code once
+[04:38:28] <Phase> and only once
+[04:38:34] <HoneyDrops> glibc is pretty ugly >_<
+[04:38:36] <aji> i read it once to look at the strlen implementation
+[04:38:40] <aji> have you seen it?
+[04:38:42] <Googie> Yeah... the days of that code being beautiful examples of minimalism are way way /way/ past.
+[04:38:45] <aji> it goes 4 bytes at a time using some black magic
+[04:38:56] <JustAberrant8> hehe
+[04:39:21] <Phase> every time i've single stepped into some standard library header it's been a decent into madness
+[04:39:33] <Phase> ________________underscores_________________EVERYWHERE
+[04:39:41] <Moonlightning> __foo_thing
+[04:39:58] *** Quits: Windsheer (starfire@Pony-hd1.q3r.238.104.IP) (Quit: leaving)
+[04:40:11] * JustAberrant8 re-inflicts hungarian notation on everyone
+[04:40:32] <aji> i was just talking about hungarian notation in another channel
+[04:40:47] <aji> i have a convention for a lot of 1 or 2 letter variable names
+[04:41:08] <aji> e.g. i for index, n for number/count, sz for size, x for an arbitrary thing, s for a char*, etc
+[04:41:21] <aji> it's basically a much more evil version of hungarian notation lmao
+[04:41:33] <aji> where the variable name says something about what the data is
+[04:41:44] * JustAberrant8 takes the java approach of spelling things out
+[04:41:49] <JustAberrant8> i is about the only one I really use
+[04:42:02] <JustAberrant8> and only then for numerical indexes
+[04:42:04] <Googie> char* pointer_to_char;
+[04:42:08] <Moonlightning> aji WHY
+[04:42:12] <JustAberrant8> if I'm using an iterator I usually spell out iterator ;p
+[04:42:21] <aji> i use it or iter for that
+[04:42:24] <HoneyDrops> I prefer single letter for local vars in short functions (<50 lines).
+[04:42:32] <Googie> it for iterators, yeah.
+[04:42:36] <HoneyDrops> Blame TI-BASIC for that.
+[04:42:42] <JustAberrant8> also I do the typical java thing of...
+[04:42:45] <aji> HoneyDrops: yeah but most of my functions are short so..
+[04:42:46] <JustAberrant8> SomeClassName someClassName; 
+[04:42:49] <Phase> when they're that small in scope, long variable names are almost harmful
+[04:43:10] <Phase> JustAberrant8, i do the same for types, depending on the code style
+[04:43:19] <Phase> TypeName typeName;
+[04:43:31] <JustAberrant8> I find it really trying to use c++ with a library like postgres
+[04:43:35] <aji> my team insists on using long names for things
+[04:43:43] <JustAberrant8> because they have all their types start lowercase
+[04:43:43] <aji> e.g. futuresMap instead of just futures
+[04:43:55] <JustAberrant8> hehe, I do that ;p
+[04:43:59] <JustAberrant8> especially with collections
+[04:44:07] <aji> one of my codebases at works has a package full of *classes* that start lowercase
+[04:44:07] <JustAberrant8> somethingList somethingMap etc ;p
+[04:44:22] <aji> granted, the classes represent methods on a service, which are themselves written lowercase
+[04:44:33] <JustAberrant8> aji: hehe, postgres is that as I recall
+[04:44:47] <JustAberrant8> I actually wrote my own postgres wrapper cause the postgres libs piss me off so much
+[04:44:50] <aji> ☻
+[04:45:00] <JustAberrant8> seriously, the way they do prepared statements is criminal
+[04:45:14] <JustAberrant8> it's all the evidence one needs that operator overloading is a bad thing ;p
+[04:45:42] <JustAberrant8> example:  c.prepare("find", sql)("varchar", pqxx::prepare::treat_string)("integer");
+[04:45:53] <JustAberrant8> you can't look at that and _not_ know something really twisted is going on
+[04:46:37] *** Quits: Wildcard (uid110916@the.truth.is.out.there) (Quit: )
+[04:46:38] <aji> lmao
+[04:46:49] <aji> JustAberrant8 have you seen python's SQLAlchemy?
+[04:47:05] <JustAberrant8> I often need to build statements which have a variable number of tokenized parameters
+[04:47:11] <aji> it's a python ORM, the way you do queries is by using symbolic names
+[04:47:17] <JustAberrant8> figuring out that mess was.. an adventure
+[04:47:27] <JustAberrant8> aji: no, but I can imagine ;p
+[04:47:30] <aji> things like thedb.query(User, User.id == 'hello') or something to that effect
+[04:48:02] <aji> it's both amazing and terrifying
+[04:48:21] <JustAberrant8> hehe
+[04:49:29] <aji> https://github.com/aji/nursery/blob/master/bob/bob/db.py#L59-L66
+[04:49:30] <PinkiePieBot> [ nursery/db.py at master · aji/nursery · GitHub ]
+[04:49:36] <aji> for the url shortener portion of bob
+[04:49:49] <JustAberrant8> Qt still takes the prize for shenanigans, but at least they hide it really well
+[04:50:08] <aji> operator overloading is scary when it's not obvious what should be happening.
+[04:50:26] <aji> e.g. i wanted to overload ~ on String in ruby to mean "canonical form"
+[04:50:42] <aji> so if you wanted to compare canonical forms of a string, you'd write ~string1 == ~string2
+[04:50:46] <Googie> On the topic of weird things, https://github.com/mattbierner/Template-Assembly/blob/master/README.md
+[04:50:47] <PinkiePieBot> [ Template-Assembly/README.md at master · mattbierner/Template-Assembly · GitHub ]
+[04:50:56] <aji> i realize now that this would have been a terrible idea
+[04:51:05] <JustAberrant8> :>
+[04:51:08] <aji> and scala actively *encourages* operator overloading
+[04:51:44] <aji> e.g. the built-in Map type, + is used to create a new Map with the mapping
+[04:51:51] <aji> so values + ("key", value) is a new map
+[04:52:00] <aji> values += ("key", value) will add it to the existing map
+[04:52:18] <aji> it's a very functional way of implementing that data structure, but a horrible syntax for it (imo)
+[04:54:30] * JustAberrant8 hates operator overloading in general ;p
+[04:54:39] <JustAberrant8> I also have c++ stream operators
+[04:54:45] * JustAberrant8 just hates all the things
+[05:01:57] <Phase> the >> and << overloads
+[05:02:03] <Phase> i *HATE* those
+[05:02:05] <AppleDash> aji: I would do such a thing re: ~
+[05:05:11] <Phase> https://twitter.com/SwiftOnSecurity/status/680219907829673984
+[05:05:11] <PinkiePieBot> [ SecuriTay on Twitter: "Merry Christmas https://t.co/GOdxRfkm4M" ]
+[05:10:32] *** Eventide is now known as Eventide|Sleepies
+[05:10:54] *** Quits: Fallfeathers (Fallfeather@Pony-k1obka.optusnet.com.au) (Ping timeout: 121 seconds)
+[05:14:36] <HoneyDrops> How do you overload bit shifts? o›O
+[05:15:28] <Googie> HoneyDrops: They're overloaded to basically be input and output operators.
+[05:15:34] <Phase> operator<< as a method
+[05:16:38] <Googie> std::cout << "Hello world";
+[05:16:55] <JustAberrant8> all that headache to save what, a little extra syntax
+[05:17:16] <JustAberrant8> I'd take cout(something) and get rid of that shit 
+[05:17:34] <JustAberrant8> pretty much every use case for them can be done with a method
+[05:17:49] <JustAberrant8> which you usually end up having _anyway_
+[05:17:56] <JustAberrant8> so it just adds pointless work imo
+[05:18:03] <Phase> someone liked the syntax
+[05:18:11] <Phase> cout << "some text" << some_type
+[05:18:30] <Googie> There's some useful stuff that you can do, but I never really got why it exists like that in the STL :/
+[05:18:40] <Phase> HoneyDrops, https://youtu.be/6r65WwO1-uA?t=29m28s
+[05:18:40] <PinkiePieBot> [ So You Want To Murder a Software Patent Jason Scott - 24969 views - 51m 15s long - 147 likes - 96.08% ]
+[05:18:44] <Googie> For IO anyway
+[05:18:59] <JustAberrant8> Phase: hehe, I love that talk if for no other reason than the sky with lawyers quote ;p
+[05:19:04] <Phase> ikr
+[05:19:11] <Phase> that's the one i linked
+[05:19:26] <JustAberrant8> also jason scott is interesting but he does tend to drone on a bit too
+[05:19:36] <Phase> i like the tangents
+[05:19:42] <Googie> Smart pointers, std::function/std::bind... there's plenty of reasonable uses for operator overloading that isn't necessarily just pointless syntactic sugar.
+[05:19:58] <JustAberrant8> oh, you time linked right to that quote :>
+[05:20:06] * Phase doesn't view syntatic sugar as useless
+[05:20:20] <JustAberrant8> Phase: I would mind it less if it was effort free
+[05:20:34] <JustAberrant8> but it actually requires an annoying amount of crap to make stream operators work properly
+[05:20:41] <Phase> it's not really more effort than methods
+[05:20:43] <Googie> It isn't, but when it comes to operator overloads, that's one which I really don't see the point of.
+[05:20:44] <JustAberrant8> s/would/wouldn't/
+[05:20:46] <Phase> oh, stream operators are a pain
+[05:20:53] <JustAberrant8> Phase: no, but you usually need both
+[05:21:15] <JustAberrant8> my stream operators usually end up just calling whatever proper method I add to do it
+[05:21:22] <JustAberrant8> and which I ultimately end up using
+[05:21:37] <JustAberrant8> but there's always _someone_ who wants things to implement stream operators because why not
+[05:21:49] <Phase> we're in agreement that 'stream operators' are bullshit, but operator overloading is useful outside of that
+[05:21:51] <JustAberrant8> personally I'd happily implement them all with assert(false, "NOPE!!")
+[05:22:19] <JustAberrant8> I'll at least admit they make sense for some stuff, like mathy things and stringy things
+[05:22:28] <Phase> didn't we have this conversation?
+[05:22:28] <JustAberrant8> outside those use cases though they just make things less intuitive imo
+[05:22:33] <Googie> Yeah. Steam operators really just seem to break the main rule of always being /really/ conservative about operator overloads.
+[05:22:37] <Phase> but yes, and that's by no means useless sugar
+[05:22:58] <Phase> it's objectively unnecessary but so is everything that isn't machine-level
+[05:23:39] <Phase> complex_type + other_complex_type should do the right thing and is far easier to write, and more importantly, read
+[05:24:21] <Googie> At least there, you know that "+" is ultimately still addition. Stream operators have nothing to do with bit shifting.
+[05:24:39] <Phase> again it's just someone liking the syntax
+[05:25:17] <Phase> i don't know why they like it, bit too verbose and you can't format things
+[05:25:25] <Phase> int's operator<< does one thing
+[05:25:33] *** Joins: CrassyPaddles (test@Pony-6v8n3b.ga.comcast.net)
+[05:25:48] <Phase> string << cin does one thing
+[05:26:05] <Googie> I dislike it more because it's sorta an example of an objectively bad operator overload, completely redefining an operator to do something completely different, and unrelated to the original operator.
+[05:26:17] <Phase> ^^^^^^^^^^
+[05:26:25] <JustAberrant8> well, then get into the hackerty for things like putting formatting into cout
+[05:26:25] <Googie> And it's in the STL, so people will see it as an example
+[05:26:50] <JustAberrant8> i.e.
+[05:26:51] <Moonlightning> Doesn't STL stand for Standard Template Library?
+[05:26:54] <Googie> Yeah.
+[05:26:57] <JustAberrant8> cout << setw(10) << ...
+[05:26:59] <Phase> hoping for templates that allow type-checked printf
+[05:27:03] <Moonlightning> Wat?
+[05:27:20] <Phase> JustAberrant8, yes and i think that's absolutely horrid
+[05:27:22] <Moonlightning> Isn't it the C++ standard library though?
+[05:27:27] <Googie> Most of C++'s "standard library" is in the form of templates.
+[05:27:37] <Phase> afaik STL is a set of headers
+[05:27:43] * Moonlightning blinks.
+[05:27:46] <Moonlightning> How'd they manage that?
+[05:27:50] <JustAberrant8> c++, now with templates and unintelligible error messages if you dare to use them!
+[05:27:51] <Googie> Yeah, templates don't really make sense compiled.
+[05:27:54] <Moonlightning> I mean, gotta implement vector and stuff /somewhere/
+[05:27:56] <Phase> i don't know if its independent of stdc++ or a subset of it
+[05:28:26] <Phase> JustAberrant8, they're really working to improve error messages
+[05:28:50] <Googie> Moonlightning: C++ templates basically have the source code to a generic embedded in the headed, as opposed to separately
+[05:28:59] <Googie> It's one of the biggest technical problems with the language at the moment.
+[05:29:05] <JustAberrant8> good, cause some of them look like cyphertext ;p
+[05:29:07] <Googie> Since headers constantly have to be recompiled for each unit.
+[05:29:17] <JustAberrant8> * ciphertext
+[05:29:18] <Phase> the reason you need name mangling is for templates in headers
+[05:29:26] <Phase> + overloads in headers
+[05:29:37] <Phase> so both translation units can end up with the same symbol name
+[05:29:41] <Moonlightning> do they have name foxing, though?
+[05:29:59] <Phase> "name foxing"?
+[05:30:45] <Moonlightning> No? Okay, bad joke.
+[05:31:18] * JustAberrant8 very carefully hits Moonlightning with a supersoaker in the ear from across the room
+[05:32:08] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[05:32:54] <Moonlightning> I get wet without even trying?
+[05:32:56] <Googie> Moonlightning: You should really look into just how much C++ uses templates. They're a really interesting subject. I think Phase ? basically said that C++ is less C with classes these days, as much as C with templates.
+[05:33:17] <Phase> ^
+[05:33:43] <JustAberrant8> kinda annoys me really, some things don't shoe horn any better into templates than they did into classes ;p
+[05:33:57] <Phase> templates are a far more important part of the language imo
+[05:34:11] * JustAberrant8 been off the c++ train for too long
+[05:34:18] <JustAberrant8> the stuff we do at work with c++ is ancient
+[05:34:26] <Phase> and they work on functions too, not only classes
+[05:34:28] <JustAberrant8> I haven't worked with "modern" c++ for a long time
+[05:34:36] <Phase> and as of C++14(?) variables
+[05:34:45] <Moonlightning> …templates on variables?
+[05:34:47] <Moonlightning> How does that work?
+[05:35:02] <Phase> template<T> T Pi = 3.14(many digits)
+[05:35:11] <Phase> so there's a compile time cast for other numeric types
+[05:35:24] <Moonlightning> Oh.
+[05:35:27] *** Quits: CrassyPaddles (test@Pony-6v8n3b.ga.comcast.net) (Ping timeout: 121 seconds)
+[05:50:55] <Phase> overloads are nice too
+[05:51:51] <Phase> rust traits seem to have the right idea though
+[05:55:33] * Phase still hasn't done a rust project
+[05:56:49] <HoneyDrops> That is a template?  a fancy macro?
+[06:05:36] <HoneyDrops> Err... "What is"
+[06:06:00] <JustAberrant8> in a lot of cases they could probably be replaced by a template, but they are a bit more complicated then that ;p
+[06:06:15] <JustAberrant8> * replaced by a macro
+[06:07:05] <JustAberrant8> I mean at their core they are just what they claim to be, a "template" where you substitute a token for some arbitrary type
+[06:07:27] <HoneyDrops> I only had a half-semester of C++ back in HS (so circa 2001?), I didn't care for it.
+[06:07:28] <JustAberrant8> but you can put limits on that type, which extends beyond what you could easily do with a macro
+[06:07:45] <HoneyDrops> So a basically a fancy macro.
+[06:07:54] <HoneyDrops> a/a //
+[06:08:20] <JustAberrant8> in the sense that pretty much everything is a "fancy macro"
+[06:09:09] <JustAberrant8> and templates obey various rules whereas macros do not
+[06:10:00] <HoneyDrops> It is a thing you type that gets transformed in a regular way into proper C++ code?  Then that modified mass of C++ code gets sent to the compiler?
+[06:10:03] <JustAberrant8> they both cause a form of "code substitution" but they occur at different points in the compiling process
+[06:11:12] <JustAberrant8> macros are done by a preprocessor, templates are integrated with the type system and done during compiling
+[06:11:37] <HoneyDrops> Ok
+[06:12:51] <HoneyDrops> Sometimes I wish you could do fancy things with macros like loops or regex to procedurally generate code, could be handy at times.
+[06:13:08] <JustAberrant8> ugh, imo macros should be avoided unless absolutely necessary
+[06:13:42] * JustAberrant8 has seen way too much macro hackery and it always just makes things a mess
+[06:14:25] <JustAberrant8> and they are a pain to debug when the complex chain of macros fails somewhere
+[06:15:20] <JustAberrant8> macros also arn't bound to namespaces, which can become a bit of a problem on larger code bases
+[06:15:41] <HoneyDrops> Oh, I don't disagree that they can get you in trouble.
+[06:16:16] <HoneyDrops> But for small things, it seems silly to invoke the overhead of a function call. (eg: MAX(A,B))
+[06:16:32] <JustAberrant8> I figure most of that stuff gets optimized out
+[06:16:50] <HoneyDrops> and needlessly laborious to type A >= B ? A : B every time
+[06:17:14] * JustAberrant8 thinks we're well past where most programmers can out think the optimizer
+[06:17:37] <JustAberrant8> and if your constraints are that tight, might as well just do it in assembly directly
+[06:17:58] <JustAberrant8> have your max function and let the compiler sort it out ;p
+[06:18:17] <HoneyDrops> mmm Z80 and m68k
+[06:18:46] <JustAberrant8> it's actually funny because most of the assembly I've done is not on mainstream platforms
+[06:19:21] <HoneyDrops> Most of what I dabbled in was on calculators, as I hit the limits of TI-BASIC.
+[06:19:50] * JustAberrant8 did a bit on his dragon32 using t-bug way back
+[06:19:50] <HoneyDrops> I can understand why one would want to avoid assembly on x86-family, that's nightmarish.
+[06:20:09] * JustAberrant8 never done any on x86
+[06:20:42] * JustAberrant8 would be happy to never do it again honestly, I think it's worth knowing to be able to read sometimes, but screw writing it ;p
+[06:20:50] <HoneyDrops> I've only really messed with it when trying to RE some stuff, I've never really coded anything expansive in it.
+[06:21:32] *** Joins: Fallfeathers (Fallfeather@Pony-k1obka.optusnet.com.au)
+[06:21:33] <Moonlightning> HoneyDrops: a /good/ compiler will inline max() and min()
+[06:22:08] <Moonlightning> that's not at all a good place to use a macro
+[06:22:13] * JustAberrant8 hurls an AN/UYK-7 at Moonlightning 
+[06:22:19] <JustAberrant8> ok, on that note, I'm going to bed ;p
+[06:22:20] <JustAberrant8> `nite
+[06:23:20] <HoneyDrops> Moonlightning: the plus side though is that also handles multiple types.  I can MAX(char, char) or short/short, etc and not have to define distinct functions for each.
+[06:24:01] <Moonlightning> HoneyDrops: That's what generics are for.
+[06:24:18] <Moonlightning> By your logic, the vector classes should all be macros instead
+[06:24:34] <Moonlightning> So you can make a vector of char, or a vector of u16, etc and not have to define distinct classes for each one
+[06:26:34] <Moonlightning> https://doc.rust-lang.org/src/core/cmp.rs.html#348-364
+[06:26:34] <PinkiePieBot> [ cmp.rs.html -- source ]
+[06:28:00] <HoneyDrops> I guess I could do something like void* max(void* a, void* b) { return &a > &b : a ? b }... but then I'd have to cast and deref on each call.
+[06:28:23] <meep> &a &b?
+[06:28:25] <meep> you sure?
+[06:29:00] <aji> i saw a really cool thing to check the direction of stack growth
+[06:29:01] <aji> it was like
+[06:29:39] <meep> also consider
+[06:29:44] <aji> int direction() { int x; return _dir(&x); } int _dir(int *x) { return x < &x ? 1 : 0; }
+[06:29:50] <aji> something to that effect
+[06:29:58] <Moonlightning> HoneyDrops: no; you don't want it for differing types
+[06:30:09] <Moonlightning> Because then you can't know what the overall type is.
+[06:30:12] *** Joins: CrassyPaddles (test@Pony-6v8n3b.ga.comcast.net)
+[06:30:18] *** Quits: CrassyPaddles (test@Pony-6v8n3b.ga.comcast.net) (Connection closed)
+[06:30:26] <Moonlightning> That works in scripting languages. Not so much here.
+[06:30:34] <meep> void *max_8(void *a, void *b) { return *(uint64_t *)a > *(uint64_t *)b ? a : b; }
+[06:30:36] <meep> and then
+[06:30:50] <meep> #define max_l(a, b, l) max_##l(a, b)
+[06:31:00] <meep> #define max(a, b) max_l(a, b, sizeof(*a))
+[06:31:07] <meep> or hm, would that even work
+[06:31:10] <meep> guess not
+[06:31:32] <aji> i'm going to jump in on this discussion without reading that far back,
+[06:31:47] <aji>    HoneyDrops | Moonlightning: the plus side though is that also handles multiple types.  I can MAX(char, char) or short/short, etc and not have to define distinct functions for each.
+[06:32:00] <meep> oh yeah that
+[06:32:00] <aji> this is relying on > working for a variety of types,
+[06:32:05] <aji> something captured in the Ord trait in Rust
+[06:32:14] <meep> "and not have to define distinct functions for each."
+[06:32:17] <meep> disputable
+[06:32:24] <meep> because internally that is exactly what happens
+[06:32:30] <aji> sure
+[06:32:40] <meep> you get one symbol (complete with assembly and all) pre used typw
+[06:32:42] <aji> but is that really that big of a deal?
+[06:32:51] <aji> especially when it's probably going to get inlined and compile to the same code anyway?
+[06:32:54] *** Mike_Coltfield is now known as Larscis
+[06:35:09] <HoneyDrops> meep: yeah, I'm about 3 drinks past my Ballmer peak >_<
+[06:36:59] <HoneyDrops> Trying to find the max ofthings that you can'tmeaningfully compare less/greater than makes no sense, so you shouldn't be doing that to begin with.
+[06:37:53] <Moonlightning> Not just that, but things with differing types period.
+[06:38:24] <meep> aji, can rust do dynamic trait generation? :)
+[06:38:47] <HoneyDrops> why would you compare different types?  and not cast first?
+[06:39:36] <aji> meep: no :(
+[06:39:44] <aji> if i understand what you mean by that, anyway.
+[06:39:58] <meep> aji, https://hackage.haskell.org/package/reflection-2.1/docs/Data-Reflection.html
+[06:39:59] <PinkiePieBot> [ Data.Reflection ]
+[06:40:03] <aji> HoneyDrops: what about things that have no syntax, though?
+[06:40:14] <HoneyDrops> err?
+[06:40:18] <aji> like,
+[06:40:25] <Moonlightning> HoneyDrops: exactly.
+[06:40:28] <aji> like what about strings
+[06:40:29] <Moonlightning> HoneyDrops: so you can just use generics. :P
+[06:40:42] * Moonlightning baps aji.
+[06:40:46] <Moonlightning> Hush. Strings are well-defined.
+[06:40:57] <aji> i mean, there's a notion of comparison there
+[06:41:19] <aji> but C has no syntax to compare strings
+[06:41:41] <aji> in C++ you could overload >, <, etc.
+[06:41:42] <Moonlightning> C has no operator overloading.
+[06:41:51] <aji> but then you're just using >, <, etc. like the Ord trait
+[06:41:53] <Moonlightning> And thus no syntax to compare anything except primitives
+[06:42:06] <aji> and MAX() like a function that works with any type implementing Ord
+[06:42:15] <HoneyDrops> char arrays don't have a comparable value, you can iterate though and compare each char, and vrify all match, until you hit a null, then break (and return false if the other array isn't also null there)
+[06:42:34] <aji> and thanks to rust's inlining, it will probably get inlined
+[06:43:02] *** meep is now known as \m
+[06:43:11] <aji> what i'm saying is, a MAX() macro that uses a comparison operator will only work with types where the comparison operator is meaningful
+[06:43:12] <HoneyDrops> and max(string) doesn't make sense... what universal max is there to "dog" and "cat"?
+[06:43:13] <Moonlightning> aji: I //just finished explaining// why that's a bad idea
+[06:43:41] <aji> likewise, fn max<T: Ord>(a: T, b: T) -> T, will only work with types where the comparison operator is meaningful,
+[06:43:45] <HoneyDrops> if you are tying to take the max of two strings, your program is wrong
+[06:43:45] *** \m is now known as meep
+[06:43:48] <meep> oops
+[06:44:21] <Moonlightning> HoneyDrops: so how do I sort?
+[06:44:27] <aji> what i'm saying is,
+[06:44:41] <aji> if you think macros are the solution to the generics problem,
+[06:44:41] <HoneyDrops> Moonlightning: loop though chars
+[06:44:53] <aji> you're missing out on what makes generics good AND not providing any benefit over generics
+[06:44:59] <aji> at least as they're implemented in rust
+[06:46:06] <aji> i'm sorry what are we discussing?
+[06:46:28] <aji>    HoneyDrops | Trying to find the max ofthings that you can'tmeaningfully compare less/greater than makes no sense, so you shouldn't be doing that to begin with.
+[06:46:46] <aji> you're assuming that anything with meaningful less/greater already has syntax for it.
+[06:47:04] <meep> ^
+[06:47:18] <Moonlightning> Yes, it does, given that the way you express that it has a meaningful comparison is by implementing Ord|PartialOrd
+[06:47:20] <aji> that's the point i was trying to make with strings lol
+[06:47:36] <aji> Moonlightning: in C you can't do that, in C++ you can overload the operators which is like a less safe version of Ord/PartialOrd
+[06:48:02] <aji> AND, in rust, you CAN make a macro like MAX()
+[06:48:11] <HoneyDrops> You have to define how you will convert string into a value that a less/geater makes sense.
+[06:48:12] <Moonlightning> Butbut
+[06:48:13] <Moonlightning> the type issues!
+[06:48:39] <aji> macro_rules! max { ($a:tt, $b:tt) => { let a = $a; let b = $b; a > b ? a : b }
+[06:48:53] <aji> HoneyDrops: have you ever seen strcmp()?
+[06:49:04] <Moonlightning> But tyyyyyype
+[06:49:18] <aji> Moonlightning: that code won't work for anything that doesn't implement Ord anyway
+[06:49:36] <aji> it's just a much angrier way of writing std::cmp::max
+[06:50:22] <Moonlightning> aji: pass in a u8 and an i32, then try to pass the result as an argument
+[06:50:27] <Moonlightning> or return it from a function
+[06:51:05] <aji> it's looser than std::cmp::max too, fine, but it's not unsafe
+[06:51:13] <aji> it's not like interpreting the bytes as a number lmao
+[06:51:42] <aji> also, correctly writing MAX() in C is extremely difficult
+[06:51:50] <aji> to do it without evaluating each argument twice
+[06:52:10] <Moonlightning> got macro hygiene?
+[06:52:34] <aji> =]
+[06:53:20] <meep> [08:46:43] <aji> Moonlightning: that code won't work for anything that doesn't implement Ord anyway
+[06:53:28] <meep> max a b = if a > b then a else b
+[06:53:28] <aji> PartialOrd, okokokokokoko
+[06:53:41] <meep> max automatically infers the type Ord a => a -> a -> a
+[06:53:49] <aji> meep: that's impressive
+[06:53:57] <Moonlightning> meep: what?
+[06:54:05] <aji> haskell's type inference always impresses me.
+[06:55:12] <meep> in fact
+[06:56:25] <HoneyDrops> aji: I have seen strcmp
+[06:56:56] <aji> HoneyDrops: are you aware that it does more than return 0 for equal and nonzero for unequal?
+[06:57:23] <Moonlightning> It returns the difference of two chars the first time that difference isn't zero
+[06:57:30] <Moonlightning> if there's no such time, it returns zero
+[06:57:50] <aji> the difference of \0 and \0 is 0 =]
+[06:57:56] <HoneyDrops> I honestly rarely use it, and generally just use it in an if(strcmp) or if(!strcmp)
+[06:57:59] <aji> oh wait, isn't zero..
+[06:58:05] <aji> HoneyDrops: right but what i'm saying is,
+[06:58:10] <aji> there IS an established order for strings
+[06:58:34] <aji> in fact, python implements it for <, >, etc on its string type
+[06:58:35] <HoneyDrops> And does that order apply to every person who ever wants to order strings?
+[06:58:42] <aji> python seems to think so
+[06:58:58] <meep> I was going to demonstrate the source for max, but I can't seem to find it
+[06:59:04] <Moonlightning> I can't articulate why
+[06:59:19] <Moonlightning> but having strings be canonically ordered lexicographically makes sense to me
+[06:59:30] <meep> looks like Ord is bult-in
+[07:01:32] <HoneyDrops> Moonlightning: how about this gem "1" "10" "11" "2" "3" "4" "5" "6" "7" "8" "9" :p  (yes in this case you should convert them to int values and sort /those/)
+[07:01:38] <meep> https://hackage.haskell.org/package/base-4.2.0.1/docs/src/GHC-Classes.html#Ord
+[07:01:38] <PinkiePieBot> [ GHC/Classes.hs ]
+[07:01:39] <meep> there
+[07:02:19] <Moonlightning> HoneyDrops: Luna forbid you should want to display something to the user in lexicographical order. You'll have to implement the sorting function yourself.
+[07:02:49] <Moonlightning> That NEVER happens!
+[07:02:59] <aji> HoneyDrops: that's a data issue imo
+[07:03:04] <aji> using strings for numerical information
+[07:03:05] <HoneyDrops> Moonlightning: I'll use strcmp, but I also know it isn't universally applicable.
+[07:03:23] <aji> likewise, i use <, > in python on str but will write my own comparator if needed
+[07:03:34] <Moonlightning> HoneyDrops: and the OO equivalent of strcmp() would be…?
+[07:03:37] <Moonlightning> str::cmp()? :P
+[07:04:35] *** Quits: Fallfeathers (Fallfeather@Pony-k1obka.optusnet.com.au) (Ping timeout: 121 seconds)
+[07:05:54] <HoneyDrops> But I wouldn't expect my MAX(a,b) to handle arrays (which is all a string is)
+[07:06:20] <aji> that's fair enough
+[07:06:32] <Moonlightning> A string is more than an array
+[07:06:34] <aji> but does that apply to every person who ever wants to find the max of two things?
+[07:06:41] <Moonlightning> that's why it has its own type, instead of just being Vec<char>
+[07:07:04] <HoneyDrops> Similarly I would not expect it to handle something crazy like MAX({1,6},{3,5})
+[07:07:26] <Moonlightning> Well, you can have it that way if you use a function
+[07:07:29] <Moonlightning> but not if you use a macro
+[07:07:35] <aji> right
+[07:07:40] <Moonlightning> 'cos the function can be bound by `T: Ord`
+[07:07:42] <Moonlightning> which excludes sets
+[07:07:56] <Moonlightning> and also sequences, probably (except for strings)
+[07:07:56] <HoneyDrops> As asking "what int array is the max" doen't make sense.
+[07:08:28] <aji> sorry but i don't agree with that
+[07:08:31] <aji> what makes sense depends on context
+[07:08:38] <HoneyDrops> well yes
+[07:08:53] <HoneyDrops> it doesn't make sense w/o a context
+[07:09:14] <HoneyDrops> vs is 2 or 7 the max does in any sane context
+[07:09:15] <aji> in rust i can define a new type that is a thin wrapper around an int array, implement Ord on it, and use it with cmp::max
+[07:09:27] <aji> the type is the context
+[07:09:53] <aji> i can't do that with MAX() in C
+[07:10:08] <aji> i can do it in C++ but only because i can overload >, <, etc.,
+[07:10:17] <aji> which is just a more limited version of the trait system
+[07:10:26] <HoneyDrops> I suppose you could make some max function for int[], but again, that is a special case.
+[07:10:41] <aji> and rust will happily inline the cmp::max call for me in the vast majority of cases
+[07:11:04] <aji> in fact, if i do "struct Inches(f64);" and define Ord on Inches,
+[07:11:05] <HoneyDrops> I would expect to decide on my comparison logic and implement that.
+[07:11:12] * Moonlightning gets bored and starts pelting ponies with sugarcane paper
+[07:11:26] <aji> then cmp::max on two Inches will probably result in *exactly* the same code as MAX(double, double) in C
+[07:11:33] <aji> because of rust's optimizer
+[07:11:50] <Moonlightning> wouldn't it just end up being a `cmp`?
+[07:11:54] <Moonlightning> as in the instruction
+[07:11:58] <aji> probably!
+[07:12:07] <Moonlightning> and then conditional jumps after that
+[07:12:08] <aji> let's check play.rust-lang.org
+[07:12:23] * Moonlightning hoofs aji a bowl full of dots
+[07:17:08] <aji> hah
+[07:17:11] <aji> http://is.gd/0oSF34
+[07:17:18] <aji> in release mode it doesn't even bother calling max
+[07:17:23] <aji> it just loads 20 up :D
+[07:18:10] <Moonlightning> optimizations. :P
+[07:19:26] <aji> :D
+[07:46:46] *** Joins: Sombra (Iceman@Darkhorse21)
+[07:49:43] *** Joins: Fallfeathers (Fallfeather@Pony-k1obka.optusnet.com.au)
+[07:56:01] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[08:06:46] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:09:30] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[08:12:41] *** meep is now known as \m
+[08:16:53] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[08:27:44] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[08:39:57] *** zz_CyberJacob is now known as CyberJacob
+[08:41:13] *** Eventide|Sleepies is now known as Eventide
+[08:41:50] *** Quits: Fallfeathers (Fallfeather@Pony-k1obka.optusnet.com.au) (Ping timeout: 121 seconds)
+[08:47:50] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[09:32:52] *** Joins: Eclipse (rylai@Pony-71u6pe.so)
+[09:34:59] *** Quits: sleumas2000 (sleumas2000@my.little.karaoke) (Ping timeout: 121 seconds)
+[09:35:21] *** Quits: floogulinc (floogulinc@Pony-opvprb.floogul.net) (Ping timeout: 121 seconds)
+[09:35:21] *** Quits: Moka (rylai@libgryphon.so) (Ping timeout: 121 seconds)
+[09:35:23] *** Quits: catnickfl (catnickfl@catnickfl.bronytv.net) (Ping timeout: 121 seconds)
+[09:35:31] *** Quits: Dusk (Dusk@dusky.horse) (Quit: Sorry, but sometimes people need a break. I'm gonna focus on life for a day or so, cya on the other side!)
+[09:35:42] *** Eclipse is now known as Moka
+[09:35:44] *** Quits: Sakura (Sakura@is.a.very.derpy.pony) (Ping timeout: 121 seconds)
+[09:35:45] *** Quits: derpy (derp@muffins) (Ping timeout: 121 seconds)
+[09:35:48] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (Ping timeout: 121 seconds)
+[09:36:42] *** Quits: Dustrunner (eventide@Tips.Fedora) (Ping timeout: 121 seconds)
+[09:36:57] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (Ping timeout: 121 seconds)
+[09:37:03] *** Quits: wolfyshy (woof@fluttering.shyly.through.the.forest) (Ping timeout: 121 seconds)
+[09:37:17] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[09:38:20] *** Joins: Sakura (Sakura@Pony-fkc.i75.99.192.IP)
+[09:39:04] *** Joins: Dusk (Dusk@dusky.horse)
+[09:39:14] *** Joins: catnickfl (catnickfl@catnickfl.bronytv.net)
+[09:39:17] *** Sakura is now known as Pony_85930
+[09:39:31] *** Joins: Pony_9306 (eventide@Pony-9nm.fgd.50.198.IP)
+[09:39:36] *** Joins: Fallfeathers (Fallfeather@Pony-k1obka.optusnet.com.au)
+[09:45:07] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[09:47:44] *** Joins: sleumas2000 (sleumas2000@my.little.karaoke)
+[09:49:33] *** CyberJacob is now known as zz_CyberJacob
+[09:51:41] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[10:04:13] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[10:04:54] *** Joins: Melanosuchus (quassel@Pony-vj1146.as13285.net)
+[10:09:32] *** Quits: Melanosuchus (quassel@Pony-vj1146.as13285.net) (Ping timeout: 121 seconds)
+[10:09:57] *** Joins: Melanosuchus (quassel@Pony-vj1146.as13285.net)
+[10:29:34] *** Quits: Fallfeathers (Fallfeather@Pony-k1obka.optusnet.com.au) (Quit: Leaving)
+[10:36:43] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[10:48:27] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[10:52:18] *** \m is now known as meep
+[11:06:05] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[11:09:18] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[11:43:48] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[12:34:22] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[12:35:07] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[12:47:34] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[13:08:23] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[13:26:24] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[13:43:46] *** meep is now known as \m
+[13:56:09] *** \m is now known as meep
+[14:09:45] <johnsey> http://m.slashdot.org/story/304459
+[14:27:29] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[14:51:49] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[15:09:59] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[15:36:49] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:40:04] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Connection closed)
+[15:49:30] *** Quits: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se) (Ping timeout: 121 seconds)
+[16:04:47] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:05:33] <DJ-C0L7[CSS]> happy hearthswarming everypony
+[16:10:51] *** Joins: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP)
+[16:11:07] <Deathpony> IT CHRISTMAS http://scontent-iad3-1.xx.fbcdn.net/hphotos-xtl1/v/t1.0-9/10245490_770765179694338_2645681462558545388_n.jpg?oh=a52d7f4186d4a271c0a8f799ae6b83a8&oe=57152626
+[16:11:37] *** Joins: Xefir (xefir@Pony-p9lunf.1fe2.7gl6.e080.2a00.IP)
+[16:54:54] *** Quits: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP) (Quit: Not that there is anything wrong with that)
+[16:54:58] *** Joins: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP)
+[16:56:42] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:35:27] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "back in a few, rebooting")
+[17:39:28] *** Pony_85930 is now known as Sakura
+[17:42:25] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[17:42:41] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[17:49:37] *** meep is now known as \m
+[17:50:46] *** Larscis is now known as Mike_Coltfield
+[18:00:10] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[18:02:41] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[18:04:47] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:05:14] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[18:15:25] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[18:32:41] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[18:40:34] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:02:21] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:08:41] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:11:39] <Deathpony> IT'S MY ONLY WEAKNESS http://scontent-iad3-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/940877_770937296343793_4471437738633994440_n.jpg?oh=bd7c5e5192001046d834ecb519c74bae&oe=56D419BA
+[19:12:35] <roflin> "I regret nothing!"
+[19:25:11] *** GigaWork is now known as Gigabit
+[19:35:48] *** Joins: Pony_64080 (St@Pony-nfq.o95.193.130.IP)
+[19:36:20] *** Parts: Pony_64080 (St@Pony-nfq.o95.193.130.IP) ()
+[19:46:00] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:48:13] *** Gigabit is now known as gigaway
+[20:11:49] *** \m is now known as meep
+[20:12:12] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[20:13:35] *** Quits: init3 (quassel@Democratic.Ponies.Republic.of.Glimmer) (A TLS packet with unexpected length was received.)
+[20:13:41] *** Joins: init3 (quassel@Democratic.Ponies.Republic.of.Glimmer)
+[20:42:07] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[20:57:38] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[21:00:51] *** Quits: JustAberrant8 (JustAberran@Pony-lq4qe0.com) (Ping timeout: 121 seconds)
+[21:02:34] *** Joins: Ada_Pony (nlkhrlosolj@Pony-qhefsk.at.cox.net)
+[21:03:30] *** Quits: Ada_Pony (nlkhrlosolj@Pony-qhefsk.at.cox.net) (Quit: lightIRC.com Flash IRC Client)
+[21:06:21] *** Quits: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP) (Quit: Make it idiot proof and someone will make a better idiot.)
+[21:27:49] *** Pony_9306 is now known as Dustrunner
+[21:35:50] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[21:44:35] *** Joins: WuBzY (WuBzY@Pony-tt4jv5.dhcp.inet.fi)
+[21:49:22] *** Divide is now known as Divide|TechSupport
+[22:03:13] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:04:24] *** Lapsus changes topic to 'Merry Christmas! | Stats: https://appledash.org/stats/techponies.html | Dickwaving: http://www.speedtest.net/wave/6841b5b75c918540'
+[22:07:53] <gigaway> so, UBCD, gparted and then clonezilla?
+[22:08:32] <Divide|TechSupport> Why is it that people are so proud of being 'computer illiterate'?  It seems like the sort of thing you should be ashamed of.
+[22:09:56] <Lapsus> agreed
+[22:10:20] <Lapsus> It's like saying "Oh, I'm too old to learn to read, I'll never learn it now."
+[22:12:22] <Divide|TechSupport> More like saying, 'I don't want to learn to read, it's too much work, I'll just muddle through'.
+[22:12:59] <gigaway> Well, here goes cloning.
+[22:15:25] <gigaway> Huh odd.. System starts buzzing
+[22:18:47] <Lapsus> Hey everyone, just a heads up. Steam's servers are apparently a little fucked and aren't remembering whose sessions belong to who.
+[22:19:14] <Lapsus> Meaning if you browse the steam store or account details, you'll be in someone else's.
+[22:19:24] <aji> yeah this is kind of a disaster, everybody is in a tizzy
+[22:19:33] <gigaway> Hmm...gpartedis stuck at sata max udma/133 abar 
+[22:19:41] <HoneyDrops> Divide|TechSupport: it's not just limited to computers.  Sadly anti-intellectualism is not that narrowly focused.
+[22:19:47] <Lapsus> Might want to avoid steam sites for a little while and go into offline mode so you're not logged in, so people don't get into your info :p
+[22:19:50] <aji> wow, somebody linked this in another channel
+[22:19:53] <aji> http://www.theregister.co.uk/2015/12/25/steam_snafu/
+[22:19:54] <PinkiePieBot> [ Gaming souk Steam spews credit cards, personal info in Xmas Day security meltdown • The Register ]
+[22:20:39] <Lapsus> I'm keeping an eye on my bank account right now, but it has nothing in it anyways, so if someone tries to buy anything, it should fail :p
+[22:21:36] <Lapsus> I can't wait to hear how someone fucked this up
+[22:21:47] <Taloverae> Dis gon b gud, or it'll be kept quiet.
+[22:21:51] <Lapsus> I really want to know, and it's probably going to be something silly like a typo
+[22:21:53] <gigaway> Anyone have a clue why this keeps hanging on me?
+[22:24:22] <gigaway> https://www.dropbox.com/s/dph9w8dk9g1p6xf/IMG_20151225_162252.jpg?dl=0
+[22:24:59] <Lapsus> https://i.gyazo.com/9ba7ff303851db7d93b855c9051293e1.jpg <- hah, some people are getting store admin sessions
+[22:25:21] <aji> this is just getting worse and worse omg
+[22:27:43] *** Joins: Wildcard (uid110916@Pony-qjfks9.brockwell.irccloud.com)
+[22:30:34] <Taloverae> gigaway, not enough steelseries stickers
+[22:30:40] <Lapsus> I just think it's funny that they don't have a "Shut down everything" button handy for this sort of thing.
+[22:31:26] <Lapsus> I mean, yeah, worst case my email and false name get out, or someone fails to make a purchase through my paypal, but that's still pretty serious
+[22:31:38] <gigaway> ....
+[22:32:23] <Lapsus> they've disabled all transactions and stuff as far as I can find, but like, damn.
+[22:32:40] <aji> somebody in another channel suggested that
+[22:32:46] <aji> when steam was crumbling this morning they enabled caching
+[22:34:28] <Lapsus> That lines up with what I've been reading, everyone is getting cached pages from other people's accounts, and then when that times out, the next poor bastard to check gets cached, and so on
+[22:35:00] <Lapsus> hence all the warnings about avoiding all steam urls flying about
+[22:40:06] <gigaway> A bad SSD could cause a hangup on booting gparted couldn't it? 
+[22:47:53] <Colgate> yes
+[22:48:21] <Colgate> I don't store payment details on steam
+[22:48:23] <gigaway> Hmm, windows finally see's the disk, had to initialize it first. Maybe that is why UBCD was hanging up
+[22:49:00] <Colgate> "initializing" is just putting MBR/GPT tables on it
+[22:49:16] <Phase> gigaway, backup you files, then try optimize
+[22:49:28] <Phase> optimize is in the same place as defragment
+[22:49:33] <Phase> just runs a trim
+[22:49:43] <gigaway> Ny files are backed up, its just the OS drive that I am cloning, not the data
+[22:50:01] <gigaway> if I can do it from windows I will since ubcd is being a bitch
+[22:56:29] <Sour_Sweet> Hehe I'm reading funny articles on the steam downtime. News sites claim they've been hacked, but all I can see is a derped cache
+[22:56:59] <Sour_Sweet> I just returned from a family dinner. Too bad I missed most of the fun.
+[22:57:02] <Phase> gigaway, ubcd wouldn't happen to be a bcd editor for linux would it?
+[22:57:28] <gigaway> its Ultimate Boot CD 4.3 I think
+[22:57:43] <gigaway> I know its UBCD though, not sure the version
+[22:57:55] <Phase> ah
+[22:58:11] <Colgate> Sour_Sweet: it is just a derped cache, yeah
+[22:58:12] <Phase> also never look at a bcd store in regedit
+[22:58:18] <Phase> just don't
+[22:58:30] <Phase> it's like plist but as a registry hive with even more levels of indirection
+[22:59:16] <gigaway> I had everything ready to role for this and it gives me problems. I may just reinstall windows, but I am not sure if it will activate for me if I do
+[22:59:17] <Sour_Sweet> That's why you never cache HTML and only the compiled template :D
+[23:00:12] <Phase> it's why you set cache-control correctly
+[23:00:18] <Phase> and use varnish sparingly
+[23:00:33] * Phase sat behind a varnish server once
+[23:00:42] <Phase> absolute pain in the ass
+[23:07:31] *** Quits: Phase (Phase4@Pony-kjg7c5.internode.on.net) (Ping timeout: 121 seconds)
+[23:07:46] *** Joins: Phase (Phase4@Pony-r869bi.internode.on.net)
+[23:08:13] <Phase> yay for lose internet cable
+[23:08:20] <Phase> but yes never open a bcd store
+[23:08:31] <Phase> directly anyway, save yourself the pain
+[23:08:32] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[23:12:48] <gigaway> ya, just going to reinstall
+[23:13:23] <Colgate> it is funny reading about this steam thing
+[23:13:42] <Colgate> and seeing so many people who don't even know what an http caching server is trying to say technical things about the issue
+[23:13:50] <Colgate> no, you're dumb, shut up
+[23:15:33] <Sour_Sweet> Yeah it's amusing. People are making a bigger deal out of it than it actually is
+[23:16:05] <Phase> i douno, it is a pretty big deal if its leaking payment info
+[23:16:09] <Sour_Sweet> Wow you've got my address and maybe e-mail address now (Well you don't since I wasn't logged in)
+[23:16:17] <Sour_Sweet> It doesn't leak payment info really
+[23:16:28] <Sour_Sweet> CCs are not fully displayed
+[23:16:40] <Sour_Sweet> Paypal uses e-mail addresses
+[23:17:12] <Phase> still
+[23:17:27] <Phase> though not as bad as a compromise obviously, which i assume is what some people are treating it as
+[23:17:54] <Sour_Sweet> You cannot control which information you get
+[23:18:13] <Sour_Sweet> Worst case scenario are dedicated and well done phishing attacks
+[23:18:46] <Phase> lacking control doesn't matter for en-mass attacks 
+[23:18:59] <Sour_Sweet> Which thanks to 2FA and common sense shouldn't be an issue really
+[23:20:55] <gigaway> Wait, w10 activates at the bios level doesn't it? So I can change my drive and activate without a keycode since I have before?
+[23:21:14] <Sour_Sweet> No, it uses a hardware id
+[23:21:32] <Sour_Sweet> Nothing todo with your BIOS/EFI
+[23:21:38] <Phase> depends, i know it can use an acpi section
+[23:21:46] <gigaway> Shit, so it probably won't let me reinstall under the same key
+[23:21:57] * Phase has never really looked into it
+[23:22:23] <gigaway> I guess I'll find out
+[23:22:46] <Taloverae> If you reinstall Windows 10 build 10586 on the same hardware, it'll pull an activation down as a "digital entitlement"
+[23:22:50] <Sour_Sweet> Upto win8.1 OEM keys were stored somewhere in the BIOS/EFI (DOn't ask me for details) but afaik that's no longer the case
+[23:23:16] <Phase> Sour_Sweet, as part of acpi, though it could be an efi interface also, who knows
+[23:23:42] <Sour_Sweet> That's why you could crack 7 so easily with BIOS emulation
+[23:23:59] <Phase> >implying it's not easy without
+[23:24:25] <gigaway> Meh, fuck it. I'll call activation if I have to
+[23:24:45] <Sour_Sweet> Phase: Yeah I haven't looked on how that exactly worked. The "launcher" was so easy to use that i never felt the need to look into the details
+[23:25:07] <Sour_Sweet> gigaway: You have no 7 key around somewhere?!
+[23:25:14] <Sour_Sweet> I have dozens xD
+[23:25:46] <gigaway> I do, but its in my HDD, and I forgot to snag it before starting the install. I can enter the key later as well
+[23:26:11] <Sour_Sweet> Since the november update you can use any 7,8 or 8.1 to activate and yeah you can skip it to install
+[23:26:31] <gigaway> The shitty thing is trying to get all my steal games to not need reinstalled since they are on my HDD
+[23:26:40] <gigaway> Steam*
+[23:28:02] <gigaway> I may still clone but probably clone arch from my laptop drive to the old ssd
+[23:30:22] <Phase> http://i.4cdn.org/v/1451082082008.png this showed up in another channel
+[23:30:54] <Phase> no context, could just be a little too much spending
+[23:31:47] <Sour_Sweet> Looks like someone was shopping for 4 cs:go knifes xD
+[23:31:54] <Unixkitty> gigaway: it activates by digital entitlement if you'd already installed and licensed a copy on the same hardware before
+[23:32:10] <Phase> Sour_Sweet, xD
+[23:32:16] <Unixkitty> It compares at least the motherboard
+[23:32:31] <Phase> oh, maybe they're sending that info to the activation server then
+[23:32:33] <gigaway> Actually.m isn't that fairly easy to do? Since all my programs were installed on the HDD, can't they just be used still? Or because the registry has changed, the apps mess up?
+[23:32:41] <Phase> so the same key can reactivate the same hardware
+[23:33:01] <gigaway> The hardware but the add is the same lol
+[23:33:05] <Sour_Sweet> gigaway: Useally most app works just when when you upgrade
+[23:33:33] <Unixkitty> Phase: you click "I don't have a key" during install
+[23:33:35] <Sour_Sweet> gigaway: If you don't upgrade steam can add the missing registry keys for you if you copy the steam games folder
+[23:33:58] <gigaway> Not upgrading though, a complete reinstall of the OS, but the programs are on a different drivr
+[23:34:14] <Unixkitty> That is just steam, hardly all programs will work without their saved registry information
+[23:34:32] <gigaway> Some apps are not steam based, meh I will figure it out. I should buy acronis too
+[23:34:34] <Sour_Sweet> Yes, but steam is what would cost me most time
+[23:34:54] <Taloverae> Assume almost nothing will work if you're going to do what you say you're going to do.
+[23:34:57] <Sour_Sweet> Other apps will probably need files from %appfata% as well
+[23:34:58] <Phase> steam keeps setup information in the local machines registry, so you can just copy the steamapps folder
+[23:35:03] <Unixkitty> How so? Steam for me was the only one not requiring moving or reinstalling
+[23:35:05] <Sour_Sweet> appdata*
+[23:35:13] <Phase> appfata
+[23:35:23] <Unixkitty> I simply pointed the installer to the old folder and it immediately worked
+[23:35:49] <Sour_Sweet> Unixkitty: I meant if you don't coose to copy them, meaning redownloading
+[23:36:11] <Sour_Sweet> Steam also has a backup function which nobody ever uses
+[23:36:54] <Taloverae> I've had wonderful amounts of success adding secondary locations as steam library locations. Re-adding them on new OS installs is rather slick
+[23:36:56] <gigaway> Long as steam doesn't need to download, in good I guess
+[23:37:07] <Phase> because it's slow as fuck and you can just copy the steamapps folder directly
+[23:37:09] <gigaway> 50gb of games is to much for 3Mbps
+[23:37:32] * Sour_Sweet knows that feeling
+[23:37:38] <Phase> like really the backup option is way slow
+[23:37:42] <Phase> i don't even know how
+[23:38:09] <Sour_Sweet> You could also manually export reg keys and %appdata% files for other programs but for the most part that's not worth the effort
+[23:38:32] <Sour_Sweet> I do keep a backup of %appdata% and my user folder though
+[23:38:53] <Sour_Sweet> Because there is always one config file or save games I forget to copy 6_9
+[23:39:03] <Sour_Sweet> savegame*
+[23:39:37] <Sour_Sweet> Phase: Maybe it compresses files? I dunno
+[23:39:54] <Phase> it might but i'd rather it didn't
+[23:40:09] <Sour_Sweet> Compared to Steam UPlay and Origin are a nightmare to carry over
+[23:40:34] <Phase> iirc you can copy the games folder with origin and it'll discover the existing files
+[23:40:43] <Sour_Sweet> On Origin some CnC multiplayers are shipped broken due to missing reg keys
+[23:40:59] <Sour_Sweet> I think it was either Generals or some Red Alert part
+[23:41:13] <Sour_Sweet> I had to manually add them
+[23:44:02] <Wildcard> http://i.imgur.com/TcwSkYA.jpg
+[23:45:00] <Wildcard> http://40.media.tumblr.com/b837d4fba082c691c2e5e2970cbe09bd/tumblr_ngs648UEDX1rdfpvto1_500.png
+[23:46:51] <Sour_Sweet> I wonder if Steam is going to explain what exactly caused the issue. They did so at least once in the past
+[23:47:06] <Sour_Sweet> I consider that good practice.
+[23:50:58] *** Quits: WuBzY (WuBzY@Pony-tt4jv5.dhcp.inet.fi) (A TLS packet with unexpected length was received.)
+[23:55:09] *** Quits: Wildcard (uid110916@the.truth.is.out.there) (Quit: )

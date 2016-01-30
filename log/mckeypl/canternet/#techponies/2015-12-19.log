@@ -1,0 +1,829 @@
+[00:00:04] <Kinsley> A member of Bernie Sander's campaign staff was fired for accessing data on the DNC's servers that belonged to Hilary Clinton's campaign.
+[00:00:12] <Moonlightning> …
+[00:00:17] <Moonlightning> wait, they /fired…/
+[00:00:23] <Kinsley> Yes, fired.
+[00:00:26] <Colgate> mniip: some guy working for the sanders campaign found a bug that allowed them access to clinton's DBs
+[00:00:26] <Moonlightning> …okay, minimal effort.
+[00:00:29] <Moonlightning> THIS IS STUPID
+[00:00:32] * Moonlightning drops thread
+[00:00:46] <Colgate> they did a few queries, to see the scope of the vulnerability
+[00:01:02] <Colgate> "Uretsky said he was trying to investigate the data issue, to see what information was vulnerable on their end, so he could adequately report it to the software company. He said his team did not export any data. He said he intentionally left a record of what he was doing in the system and did not try to hide his actions. "
+[00:01:20] <Moonlightning> Anypony know how to DANE?
+[00:01:37] <mniip> [01:58:19] <sortie> 'Luthor' is a kickass name for a lex(1) implementation
+[00:02:00] <Moonlightning> Freenode pointed out that I need records for constructed names for every name I want the service to be accessible from
+[00:02:10] <Divide|TechSupport> HahahahahahahAHAHAHA.
+[00:02:15] <Moonlightning> e.g. _6697._tcp in addition to _6697._tcp.irc
+[00:02:23] <Divide|TechSupport> Customer called in, asking if we can help them get access to US Netflix.
+[00:02:32] <Divide|TechSupport> Nope, nope, NOPE, goodbye.
+[00:02:39] <mniip> Divide|TechSupport, and you work for?
+[00:02:41] <Moonlightning> …oh, I thought you were laughing at mniip
+[00:02:43] <Moonlightning> disappointing
+[00:02:44] <Divide|TechSupport> Rogers in Canada.
+[00:02:47] <Moonlightning> ++mniip, by the way
+[00:02:47] <Sour_Sweet> But U.S. Netflix <3
+[00:03:04] <Divide|TechSupport> Oh, I don't disagree, but it's not something we can provide service for at aaaalll.
+[00:03:06] <Kinsley> It's called a VPN.
+[00:03:06] <Colgate> Divide|TechSupport: hehe, maybe they will discover VPNs, or not, probably too complicated :P
+[00:03:24] <Divide|TechSupport> I'm sure they might, but they called their CANADIAN ISP asking if we can give them US Netflix.
+[00:03:46] <Colgate> I can get US IPs from OVH in their CA datacenter
+[00:03:49] <mniip> should've called comacast
+[00:03:52] <Colgate> it isn't that impossible!
+[00:04:01] <Divide|TechSupport> We can't do so legally.
+[00:04:14] <Divide|TechSupport> Licensing agreements, et al.  So, no.
+[00:04:48] <Kinsley> Geo-blocking based on IPs is stupid, though.
+[00:04:55] <Moonlightning> …why do I always use /etc/ when listing more than one and /et al/ when using only one?
+[00:04:56] <Sour_Sweet> Doing licensing with IPs is silly
+[00:05:14] <Moonlightning> /foo, bar, etc/ but /foo et al/
+[00:05:35] <Sour_Sweet> Go the Steam way if you want something half decent or just drop it :D
+[00:05:45] <Divide|TechSupport> I concur, Sour_Sweet, but ISPs continue to do so.  And so we continue to attempt (with a very gentle touch) access... and so on and so forth.
+[00:05:48] <Kinsley> Like, if I'm a US resident, and I cross the border into Canada, I can no longer access content restricted to the US. Even though Amazon ships tons of shit to me on a regular basis, even though my Netflix subscription is tied to a US billing address and a US bank issued card.
+[00:06:10] <Divide|TechSupport> Kinsley: Hey, I agree.  I absolutely and completely agree.
+[00:06:18] <Divide|TechSupport> I just can't do anything about it because /legal things/.
+[00:06:34] <Moonlightning> DANE, anypony?
+[00:07:09] <Kinsley> Moonlightning: it's actually two different things, et al is for lists of names only, et cetera is for lists of anything else. Either can be used after providing one item from a list.
+[00:07:13] <Sour_Sweet> Solution: 5$ US VPN
+[00:07:22] <Sour_Sweet> Or use a VPS*
+[00:07:33] <Moonlightning> Kinsley: oh really o.o
+[00:07:37] <Sour_Sweet> Or you could use a 3rd party VPN of cause
+[00:07:45] <Moonlightning> Damn…Oxford only said //et al/ means /and others//
+[00:07:59] <Sour_Sweet> But I don't feel good letting them access my traffic.
+[00:08:21] <Kinsley> "and others" meaning like "Paper authored by Moonlightning, et al" when you, me, and PinkiePieBot write a paper on how shit her code is.
+[00:08:40] <Moonlightning> Or, more appropriately, in citations.
+[00:09:08] <Moonlightning> “Because of the blatant disregard for style (Moonlightning et al, page 42)”
+[00:18:58] <mniip> et al = et alii
+[00:19:08] <mniip> where alii (alius) usually refers to a person
+[00:20:01] <Moonlightning> Ahhh.
+[00:21:37] *** Quits: Phase (Phase4@Pony-72i3r3.internode.on.net) (Quit: Leaving)
+[00:25:48] *** Joins: Phase (Phase4@Pony-72i3r3.internode.on.net)
+[00:26:14] *** Quits: Melanosuchus (quassel@Pony-asba80.as13285.net) (Connection closed)
+[00:30:20] *** Joins: Googolplexed (Googol@gnaws.on.keratin.and.ears)
+[00:33:12] *** Googolplexed is now known as Googie
+[00:40:19] *** Quits: Phase (Phase4@Pony-72i3r3.internode.on.net) (Quit: Leaving)
+[00:43:01] <GigaWork> fucking lol
+[00:43:08] <GigaWork> isp came today to upgrade them here right?
+[00:43:20] <GigaWork> Said I was doing "illegal" setup of the network here
+[00:43:24] <Moonlightning> What
+[00:43:36] <GigaWork> yep, I am not allowed to secure the routers at all I guess
+[00:43:43] <GigaWork> No admin password change or anything
+[00:43:50] <Sour_Sweet> Ahhh, what?
+[00:43:51] <Moonlightning> Seriously?
+[00:44:03] <Sour_Sweet> "illegal"
+[00:44:04] <Moonlightning> Either they're horribly wrong, or your ISP is horribly horrible.
+[00:44:06] <GigaWork> soon as I get home, fucking bombarded by "You cant do this, this this, they said"
+[00:44:13] <GigaWork> Moonlightning, my isp is horrible
+[00:44:18] <Moonlightning> Switch ISPs.
+[00:44:21] <GigaWork> cant
+[00:44:23] <Sour_Sweet> Who is it?
+[00:44:26] <GigaWork> no other available
+[00:44:32] <Sour_Sweet> Anything one should know?
+[00:44:36] <GigaWork> torch lake communications, AKA COLI Inc
+[00:44:37] <Moonlightning> Then continue as you are; if they take legal action, countersue.
+[00:44:42] <Moonlightning> Got a blog or anything?
+[00:44:45] <Moonlightning> Name and shame!
+[00:44:54] <GigaWork> Oh and I somehow am causing interference here
+[00:44:56] <Moonlightning> …after verifying that that is actually policy
+[00:45:01] <GigaWork> with how I set the network up
+[00:45:04] <Moonlightning> And not just one idiot
+[00:45:11] <Moonlightning> I find that hard to believe
+[00:45:25] <GigaWork> I am calling now and leaving a voicemail
+[00:45:27] <Moonlightning> I mean, Wi-Fi is designed to have lots of networks in a small area :P
+[00:45:34] <Moonlightning> In the meantime, continue as you are
+[00:45:39] <Moonlightning> Reinstate your security, etc etc
+[00:45:44] <Sour_Sweet> Their website makes me thing I'm in a different year  :D
+[00:45:52] <Sour_Sweet> +1 for time machines
+[00:46:06] <Googie> Moonlightning: Realistically they'd not sue, just cut off his only source of Internet access :/
+[00:46:19] <Googie> WISPs are terrible ISPs :/
+[00:46:56] <Moonlightning> …fuck.
+[00:47:21] <GigaWork> i am calling their 24-7 tech support
+[00:47:25] <Googie> That being said, certainly not illegal
+[00:47:28] <Moonlightning> Wait, hold on a minute.
+[00:47:42] <Moonlightning> GigaWork: I'd hold off on that for a minute
+[00:47:52] <GigaWork> why?
+[00:47:57] <Moonlightning> Googie: well, with property rights in the idiotic state they are, I'm sure it can be /made/ to be illegal to e.g. change the admin password from the default
+[00:48:09] <Moonlightning> GigaWork: [15:46:06] < Googie> Moonlightning: Realistically they'd not sue, just cut off [her] only source of Internet access :/
+[00:48:19] <Moonlightning> doubt you want that :P
+[00:48:35] <Moonlightning> …maybe check through the documentation you probably already have?
+[00:52:04] <Googie> Who owns the router ?
+[00:52:43] <Moonlightning> Mu. You can still be prevented from modifying something you own. See also: anything with cellnet access.
+[00:53:06] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:54:40] <Googie> Not by a third party company calling it "illegal"
+[00:55:05] <Moonlightning> Presumably it's the ISP that loaned|sold her the router.
+[00:55:09] <Moonlightning> |rented
+[00:55:44] <Moonlightning> (Ideally, configuration modifications could /never/ be banned. Ever heard of factory resets?)
+[00:56:35] <Kinsley> Moonlightning: it can be part of the contract that any device that connects to their network meets certain "standards" or service won't be provided.
+[00:56:51] <GigaWork> http://www.coliinc.com/acceptable-use-policy/  nothing in here says I cannot change the router login
+[00:56:53] <Moonlightning> Ewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww.
+[00:56:54] <PinkiePieBot> [ Acceptable Use Policy - COLI Inc ]
+[00:57:08] <Moonlightning> Fucking hell. That breaks net neutrality. :V
+[00:59:18] <Sour_Sweet> Their website is amazing. It gives you the full stack trace including the source code lines in question on any error.
+[00:59:33] <Moonlightning> Don't tell them about it, Sour_Sweet
+[00:59:38] <Moonlightning> they'll sue you for hacking
+[00:59:46] <Moonlightning> (see earlier discussion on DNC)
+[00:59:49] <Sour_Sweet> Catch me if you can ;-)
+[00:59:55] <Moonlightning> Use Tor.
+[01:00:01] <Sour_Sweet> Oh I don't
+[01:00:04] <Moonlightning> They'll have your IP address logged.
+[01:00:07] <Kinsley> I WAS BROWSING INCOGNITO, THEY CAN'T PROVE SHIT. LOLOLOLOL
+[01:00:15] <GigaWork> and I am being bitched at about devices not being able to get a good internet connection/netflix/etc, but someone else on the same network can
+[01:00:37] <Moonlightning> GigaWork: threaten to drop support 8D
+[01:00:41] <Sour_Sweet> I'm confident I don't violate any German law
+[01:00:50] <Sour_Sweet> I don't care about U.S. laws
+[01:01:02] <Moonlightning> Oh, well, in that case \o/
+[01:01:31] <GigaWork> I called, left a message and told them to come out and setup the network here, 2 routers, 2 networks, router 2 being a wireless repeater but connected via cat 6 to router 1
+[01:01:37] <Sour_Sweet> http://pastebin.com/vhKyZDeN
+[01:01:37] <PinkiePieBot> [ Line 41: btnSubmit.Text = "There is a Payment Already Pending on y - Pastebin.com ]
+[01:01:42] <GigaWork> because I am fucking done
+[01:01:49] *** GigaWork is now known as Gigabit
+[01:02:19] <Divide|TechSupport> Gigabit: Fuck that, yeah, I've gotten similar calls recently.
+[01:03:03] <wolfyshy> Sour_Sweet: is that... is that VBscript‽‽‽‽
+[01:03:19] <Sour_Sweet> It's something .NET, I dunno.
+[01:04:12] *** zz_CyberJacob is now known as CyberJacob
+[01:04:25] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[01:06:00] <Sour_Sweet> That website is almost as good as the one telling you not to use SQL control characters on the login form.
+[01:08:43] <Kinsley> My billing address? "101 Main St, Anytown, AA, 99999--; DROP TABLE subscribers;"
+[01:09:53] <mniip> you forgot '
+[01:10:18] <Sour_Sweet> Also I always use DROP DATABASE ;-(
+[01:10:57] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[01:11:18] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:16:58] <Googie> That's Visual Basic .net. Essentially C# but with a different syntax.
+[01:17:08] <Googie> (Seriously, the two languages are near identical)
+[01:17:11] <Sour_Sweet> This is what social media does with society: I don't know a single thing about electrical engineering and here I'm watching countless videos on the YT EEV blog.
+[01:19:55] *** Quits: eyeburn (eyeburn@secret.den.of.flaming.evil) (Connection closed)
+[01:20:19] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[01:20:56] <Googie> Bah.
+[01:21:04] * Googie starts complaining about his internet connection again
+[01:21:24] <Googie> Bloody degrading phone lines. First 4mbit, then 3... then 1.5, now I'm on 1.3mbit internet.
+[01:21:46] <Googie> My RRDGraph shows that the connection has been maxed out for over a week.
+[01:22:06] <Googie> And that's just regular usage.
+[01:24:06] <Googie> If I wasn't moving out soon, I'd seriously be looking at load balancing a second line :/ Just to get back to what I had.
+[01:26:26] *** Joins: Xefir (xefir@Pony-fgs03f.1fe2.7gl6.e080.2a00.IP)
+[01:29:29] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[01:30:30] *** Quits: Xefir (xefir@Pony-fgs03f.1fe2.7gl6.e080.2a00.IP) (Ping timeout: 121 seconds)
+[01:33:10] *** CyberJacob is now known as zz_CyberJacob
+[01:34:10] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:39:29] <Gigabit> ugh.. could someone explain how to add a printer in arch/xfce
+[01:39:49] <Gigabit> making a very specific set of instructions for the tech guy tomorrow and need to print it off
+[01:44:32] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[01:49:30] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:59:57] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[02:01:12] *** Joins: Asoka_White (Asoka@Pony-ilcmd9.net-htp.de)
+[02:04:25] *** Quits: Asoka (Asoka@Pony-n3hlqj.net-htp.de) (Ping timeout: 121 seconds)
+[02:07:26] <JustAberrant> Gigabit: why are you providing instructions for the tech guy, and for that matter why are you then asking us? ;p
+[02:09:39] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:10:01] <JustAberrant> also if this is your ISP, chances are they'll just say "no windows no dice" ;p
+[02:10:08] <Gigabit> Because the tech guy that came out today is a fucking dumbass and EVERY little thing I have told the isp, he spewed off the same shit, and suddenly they are right
+[02:10:43] <Gigabit> I asked them to put in a dish receiver instead of a nanostation. They told me it would make no difference at all, and now suddenly.. they are putting one in because the tech guy said to
+[02:11:12] <JustAberrant> no idea what your exact situation is, but personally I'd just treat whatever their stuff serves up as the internet
+[02:11:47] <JustAberrant> i.e. if they provide you a router/switch/wireless ap with NAT, put your own router behind it and do double NAT
+[02:11:49] <Gigabit> I explained that the focal patteren is more directed with the dish and would be better for connectivity, I was told I have no clue what I am talking about and now they are doing exactly that
+[02:12:49] <JustAberrant> i.e. leave their stuff untouched, but don't rely on it for anything but getting packets out to the interweb
+[02:13:00] <Gigabit> I don't care if people are smarter then me, but jesus fuck, if someone is right about something, don't say they are not and provide shit service, then turn around and do exactly as was said
+[02:13:53] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[02:13:55] <JustAberrant> but yeah, sucks that there are no better options
+[02:14:02] <Gigabit> I also provided instructions on what they need here network wise, because the last techs had no fucking clue how to set up a 2 router network
+[02:14:28] <JustAberrant> well, in fairness that's pretty normal for any ISP
+[02:14:43] <JustAberrant> like I said, best to just treat them as a pipe and do all your own actual networking
+[02:14:44] <mniip> whoa
+[02:14:49] <JustAberrant> and definitely using your own gear
+[02:14:49] <mniip> did you hear about the CISA thing
+[02:14:53] <Gigabit> even though I conversed with one of the techs that left the company (while he was employed) and he even backed me up on how I setup the network
+[02:15:42] <Gigabit> Ya I know JustAberrant.. trust me I have bitched, moaned, complained many times about needing to buy a good router and the people I live with wont.
+[02:16:12] <Gigabit> Also the tech tried to tell my cousins that "A virus probably is in the router" Meh could be, they arte shitty devices
+[02:16:27] <JustAberrant> honestly even a shitty router that you control is better
+[02:16:35] <JustAberrant> and you can get some pretty damn cheap decent routers
+[02:16:44] <JustAberrant> or just get a cheap box with dual eth and run pfsense
+[02:16:45] <Gigabit> the second router constantly needs rebooting as of late
+[02:17:35] <Gigabit> My day was going great till I got home and was told I am doing illegal network setup and yada yada with their equipment
+[02:17:41] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (Ping timeout: 241 seconds)
+[02:18:55] <Lapsus> Gigabit: do what I do and put your own router in instead of using their modem/router combo
+[02:19:12] <Gigabit> I would if it was my house and my internet provider
+[02:20:16] <Gigabit> This kind of shit is why I want to move because I get whined at when it doesn't go right, I call isp and explain, they give me the run around. I hear more whining and complaining and then they wonder why I get pissed off at them "ISP"
+[02:20:18] <Crimson_Tail> I feel that 'edge of space' is just misused when something goes up around 100k feet.
+[02:20:28] <ShivalWolf>  never help family with computer problems. it always ends badly and with problemsn during holidays wehre they expect you to fix everything
+[02:21:31] <Gigabit> anyways, sorry for bugging you all.
+[02:22:07] <JustAberrant> yeah, I'd say it's time to move.. preferably somewhere with non-shit internet ;p
+[02:22:44] <Gigabit> Oh I had a place in mind, 118 a week everything included but, you cannot bring your own furniture of any kind, and they do not have computer desks in the rooms
+[02:22:59] <Gigabit> its a bed, end table, chair, dresser
+[02:23:08] <JustAberrant> that's.. a weird kinda place
+[02:23:25] <JustAberrant> but cheap I guess
+[02:23:43] <Gigabit> It is a a duplex house, each room is 118/wk, except for the larger rooms with a private bath, those are 150/wk
+[02:23:45] <ShivalWolf> sounds really dodgy
+[02:23:47] <Crimson_Tail> Because 100,000 feet is just a third way up to true space
+[02:24:37] <Gigabit> It's one of those, low income working persons week to week renting. No lease, booted for 2 days late payment
+[02:25:00] <ShivalWolf> so is is really dodgy
+[02:25:03] <JustAberrant> yeah that sounds fairly dodgy :(
+[02:25:10] <ShivalWolf> it is
+[02:25:22] <JustAberrant> personally I'd recommend an increased income ;p
+[02:25:38] <ShivalWolf> id recomend finding a place where you atleast have a lease so you have rights
+[02:26:17] <Gigabit> trying, started my second day at the supermarket, already impressed a few people by my cash register speed and efficiency I guess
+[02:26:28] <ShivalWolf> i was kicked out of a place that didnt have a lease becuase one of the other people wanted their friend to move in.
+[02:26:36] <ShivalWolf> so yeah never without a lease again
+[02:26:49] <Gigabit> even though I am a systems gal, only trained on cash register for backup reasons
+[02:27:28] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[02:27:37] <ShivalWolf> soo glad i turned my airon on early
+[02:27:44] <ShivalWolf> 24 deg C inside. 39.2 outside
+[02:27:54] <Gigabit> There is a rental agreement form for this place but it says in there, if you are late on your weekly payment, you incure 25$ extra, if you do not pay by Tuesday you evicted
+[02:28:38] * JustAberrant wants to get a heat pump, but they are not in my "financial plan" right now 
+[02:29:16] <JustAberrant> (also my financial plan right now is mostly burning my money in a giant pile)
+[02:30:03] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[02:32:13] <JustAberrant> (aka I have apple stock...)
+[02:32:40] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Ping timeout: 121 seconds)
+[02:32:44] <Gigabit> XD
+[02:33:03] <JustAberrant> (yes yes, I know, for all I hate on apple I own a very tiny piece of them... )
+[02:33:19] <wolfyshy> heh, that reminds me of the second worst business decision I ever made
+[02:33:28] <JustAberrant> if they get back up to 120 or so I'm selling ;p
+[02:33:30] <wolfyshy> someone on IRC was telling me to invest in this startup with them
+[02:33:31] <Gigabit> Nah, it is smart to invest in a company that will do good
+[02:33:36] <wolfyshy> I was like "yeah.. right.. no thanks"
+[02:33:41] <wolfyshy> it was a little startup nobody heard of
+[02:33:43] <wolfyshy> called Netflix
+[02:33:46] <JustAberrant> haha
+[02:33:48] <wolfyshy> D:<<<<<<<<<<<<
+[02:33:56] <JustAberrant> yeah, ouch
+[02:34:07] <JustAberrant> though same can be said with bitcoin
+[02:34:11] <wolfyshy> the first worst business decision I ever made was ... yep
+[02:34:19] <wolfyshy> one of my friends was the first CPU miner
+[02:34:29] <wolfyshy> I was like "man that sounds illegal"
+[02:34:34] <wolfyshy> he is now a multimillionaire
+[02:34:44] <wolfyshy> sorry GPU miner*
+[02:35:00] <JustAberrant> friend of mine (interestingly who works at apple... the universe is connected!) went on and on about it eaely on
+[02:35:04] <JustAberrant> and yeah, I had the same reaction
+[02:35:19] <JustAberrant> I was really hesitant to get into it because of my job and the seediness around the whole thing tat the time
+[02:35:27] <JustAberrant> * thing at the
+[02:36:22] <JustAberrant> Gigabit: interesting thing is I actually mostly buy companies I hate ;p
+[02:36:28] <JustAberrant> or at least dislike
+[02:36:34] <JustAberrant> because, well, they tend to do the best
+[02:36:44] <mniip> ohh!
+[02:37:00] <mniip> I just have to convert a number from base-RANDOM_MAX to whatever base I need!
+[02:37:12] <JustAberrant> like I want to buy some walmart stock.. they are in the toilet right now (allegedly because of their whole paying people a living wage thing..) .. but I think they'll come back
+[02:37:25] <JustAberrant> well, not toilet, but down..
+[02:38:50] * JustAberrant shruggles
+[02:50:05] *** Joins: WuBzY (yaaic@Pony-gre1sk.rev.dnainternet.fi)
+[02:50:24] *** Quits: WuBzY (yaaic@Pony-gre1sk.rev.dnainternet.fi) (Quit: )
+[02:51:03] *** Joins: WuBzY_Sleepy (yaaic@Pony-gre1sk.rev.dnainternet.fi)
+[02:59:25] *** Joins: Asoka (Asoka@Pony-qtpced.net-htp.de)
+[03:02:36] *** Quits: Asoka_White (Asoka@Pony-ilcmd9.net-htp.de) (Ping timeout: 121 seconds)
+[03:06:53] <Sour_Sweet> When you Windows cannot even handle to switch from ethernet to WiFi without a restart -.-
+[03:07:31] <Sour_Sweet> (And yes I know in theory it should work just fine, but it didn't)
+[03:08:26] <Googie> Of all the issues I've seen with Windows, That's never been one of them...
+[03:08:28] <Googie> Huh.
+[03:10:57] <Sour_Sweet> Don't ask me why. The WiFi's activity LED was flashing. It was connected, but apperently Windows was unable to route through the correct interface(LAN interface being deactivated, not physically unplugged).
+[03:12:02] <Moonlightning> Sour_Sweet: does `drop database` even exist in most dialects?
+[03:12:08] <Moonlightning> also, yeah, how do you guess table names? <.<
+[03:12:15] <Sour_Sweet> Error messages
+[03:12:28] <Sour_Sweet> Very helpful
+[03:12:43] <Sour_Sweet> Also Open Source software is a thing
+[03:13:00] <Moonlightning> [17:11:49] < Gigabit> I explained that the focal patteren is more directed with the dish and would be better for connectivity, I was told I have no clue what I am talking about and now they are doing exactly that
+[03:13:03] <Moonlightning> Welcome to corporate America.
+[03:13:14] <Moonlightning> AFAIK this is basically routine.
+[03:13:26] <Moonlightning> Don't waste energy making good ideas for a corporation.
+[03:13:32] <Moonlightning> s/corporation/for-profit/
+[03:15:39] <Moonlightning> wolfyshy, JustAberrant: eh, don't be sad. There's really no way to know without a time machine.
+[03:16:21] <Moonlightning> Windows, man :P
+[03:16:53] <Sour_Sweet> Linux support AAA games really needs to become a thing
+[03:17:26] <Sour_Sweet> I'd be happy to finally move away from Windows
+[03:17:50] * Moonlightning wants a T-shirt of Tux, Beastie, and like a glacier or something smashing through a large window.
+[03:26:24] <wolfyshy> that exists
+[03:29:26] *** Joins: Xefir (xefir@Pony-fuhegm.1fe2.7gl6.e080.2a00.IP)
+[03:31:48] <Sour_Sweet> for* Wow I noticed this incredibly late
+[03:33:30] *** Quits: Xefir (xefir@Pony-fuhegm.1fe2.7gl6.e080.2a00.IP) (Ping timeout: 121 seconds)
+[03:41:40] <mniip> lel
+[03:41:46] <mniip> I've created 500000 files as a test
+[03:41:55] <mniip> and now I bash can't invoke rm on them
+[03:42:06] <Moonlightning> xargs to the rescue?
+[03:42:18] <mniip> well I just recursive'd the directory
+[03:42:27] <JustAberrant> or a for loop ;p
+[03:42:30] <JustAberrant> actually nm
+[03:42:37] <JustAberrant> that would't work either for the same reason :D
+[03:43:05] <ShivalWolf> find exec
+[03:43:18] <ShivalWolf> ive done similar before
+[03:43:23] <ShivalWolf> too many fils in a dir to remove
+[03:43:37] <ShivalWolf> typoed a loging split command
+[03:43:41] <ShivalWolf> isntead of a file per hour
+[03:43:44] <ShivalWolf> i was creating a file per second
+[03:43:55] <ShivalWolf> every second it created a new log file
+[03:46:01] * ShivalWolf grins and remembers a CTF challenge and a player panicing becuase they wrote a script to recursingly unzip a zipbomb and couldnt clean up his filesystem
+[03:46:04] <ShivalWolf> it ran out of nodes
+[04:07:08] *** One-Trick is now known as Octavia
+[04:16:41] *** Joins: Sombra (Iceman@Darkhorse21)
+[04:27:31] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[04:30:12] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[04:34:14] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Ping timeout: 121 seconds)
+[04:41:15] <mniip> how do ISPs count traffic?
+[04:41:42] <mniip> do they parse into the IP packets to determine the length of the TCP payload?
+[04:44:06] <Phase> depends on the software they use
+[04:44:18] <mniip> well I have this idea
+[04:44:41] <mniip> sending empty TCP packets that transfer data in the flow info field
+[04:44:58] <mniip> (ipv6)
+[04:44:59] * Phase has heard of isp's not counting small packets at all, leading to free mass port scans
+[04:45:46] <Phase> mniip, if you're doing that, there's always weird stuff you can do
+[04:46:16] <Phase> could transfer data by making dns queries through there server, assuming its uncounted, to a server you control elsewhere on the internet
+[04:46:23] <Phase> their'
+[04:47:43] <ShivalWolf> slow collectors
+[04:47:46] <ShivalWolf> flow
+[04:59:56] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[05:21:23] *** Joins: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net)
+[05:22:45] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[05:30:56] *** Joins: Xefir (xefir@Pony-tjaeac.1fe2.7gl6.e080.2a00.IP)
+[05:31:29] *** Valiant is now known as Gladiolus
+[05:34:59] *** Quits: Xefir (xefir@Pony-tjaeac.1fe2.7gl6.e080.2a00.IP) (Ping timeout: 121 seconds)
+[05:50:33] <mniip> what could lead to chown: changing ownership of ‘data’: Operation not permitted
+[05:50:55] <mniip> the target file belongs to me, the containing directory also belongs to me
+[05:54:25] <ShivalWolf> setuid or setgid on the folder/file, the target being a NFS share with permisiosn lock. or the full ACL being enabled
+[05:55:59] <Colgate> mniip: I imaging they just grab the length from the packet header and add that onto a counter
+[05:57:34] <Colgate> as for cisa, I kinda figured that once it was being included in the budget bill it would auto pass
+[05:58:07] <Colgate> nobody has the balls to filabuster that
+[05:59:32] <mniip> hmm
+[05:59:47] <mniip> how do I tell apache to "alias" two directories
+[05:59:58] <mniip> fetch files from one, and if that fails go for the seconds
+[05:59:59] <mniip> second*
+[06:03:41] <Moonlightning> Phase: IP over DNS isn't new ;p
+[06:04:21] <Moonlightning> mniip: failing an apche solution, as a hacky resort…oberlayfs ;p
+[06:17:06] *** Joins: Cyan_Spark (Cyan_Spark@incidental.unicorn.Cyan_Spark)
+[06:17:24] <Cyan_Spark> Does the press-backspace-on-login-window-28-times-on-Linux bug actually work? O.o
+[06:17:30] *** Joins: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net)
+[06:17:35] <Moonlightning> > Linux
+[06:17:37] * Cyan_Spark boops Moonlightning
+[06:17:38] <Moonlightning> > login window
+[06:17:43] <Moonlightning> What login manager? :P
+[06:17:45] <Moonlightning> There are multiple.
+[06:17:51] <mniip> what's a window
+[06:17:55] <Cyan_Spark> Something something Grub2
+[06:18:00] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Killed (NickServ (GHOST command used by Valiant)))
+[06:18:01] *** Valiant is now known as Gladiolus
+[06:18:05] <Moonlightning> grub is a bootloader…?
+[06:18:16] <mniip> ^
+[06:18:19] <mniip> grub has nothing to do with linux
+[06:18:45] * Cyan_Spark blinks. "Oh. Never mind then."
+[06:19:01] <Colgate> Cyan_Spark: it works on grub2, which as above, is not "linux," the linux kernel hasn't even booted at that point
+[06:19:24] <Colgate> it just reinforces the point that physical access == complete access
+[06:19:51] <Moonlightning> …wait, something happens if you press backspace twenty-eight times at a grub prompt?
+[06:20:03] <Colgate> yeah, it underflows a buffer, allowing for code execution
+[06:20:27] <Colgate> tldr; you can bypass a grub2's password if it had one and get total control over the bootloader
+[06:21:31] <AppleDash> lol
+[06:21:47] <Colgate> the article I read on it said the attack code had to be customized for different hardware, no real generic exploit, so it is very difficult to execute in practice
+[06:22:32] <mniip> do you type x86 code with your keyboard
+[06:22:49] <mniip> lel
+[06:22:53] <Colgate> dunno, it didn't get more specific than that :P
+[06:23:02] <mniip> I'm rm'ing a 2TB file and it's lagging
+[06:23:28] <Colgate> `rm` or `shred`? :P
+[06:23:37] <mniip> rm
+[06:23:53] <AppleDash> should be instant
+[06:24:10] <Colgate> ^ unless something strange is going on at the fs level?
+[06:24:59] <Moonlightning> Well, no.
+[06:25:00] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[06:25:03] <Moonlightning> It has to free up all those blocks.
+[06:25:19] <Moonlightning> taking a few seconds to unlink a 2 TiB file with one link is legit
+[06:25:20] <tiwake> I'm not sure why MTP is not working with my nexus 5 with sailfishOS
+[06:25:45] <Colgate> MTP?
+[06:25:58] <Moonlightning> Media Transfer Protocol?
+[06:26:08] <Colgate> oh, I never had very good luck with that
+[06:26:12] <Colgate> on any OS
+[06:26:16] <AppleDash> My Thin Penis
+[06:26:17] * Phase hasn't had issues
+[06:26:41] <tiwake> Colgate: it seems to work alright with android
+[06:27:01] <mniip> hm
+[06:27:14] <tiwake> Colgate: "mass storage mode" does not work either
+[06:27:28] <mniip> Moonlightning, seconds?
+[06:27:28] <mniip> it's been minutes
+[06:31:41] *** Joins: Xefir (xefir@Pony-a31q28.1fe2.7gl6.e080.2a00.IP)
+[06:32:45] <tiwake> well, I'm not really sure how to get music on to the cellphone
+[06:33:33] <Moonlightning> mniip: `strace unlink`?
+[06:33:49] <mniip> ?
+[06:34:15] <mniip> the file is already gone
+[06:34:31] <mniip> it's just the kernel is tearing up the inode and not returning from the unlink syscall
+[06:35:44] *** Quits: Xefir (xefir@Pony-a31q28.1fe2.7gl6.e080.2a00.IP) (Ping timeout: 121 seconds)
+[06:40:43] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[06:50:54] <mniip> Moonlightning, it's still removing
+[06:51:32] <Moonlightning> Odd.
+[06:53:28] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[06:54:32] *** Joins: Taloverae (Taloverae@Pony-cjhl8k.wa.comcast.net)
+[06:58:23] *** Joins: Sombra (Iceman@Darkhorse21)
+[07:09:40] *** Gigabit is now known as Snoarin
+[07:14:56] <tiwake> Colgate: you drinking?
+[07:15:17] <Colgate> nope, was yesterday :P
+[07:15:24] <tiwake> come on
+[07:15:32] <tiwake> yesterday I was at work till midnight
+[07:22:09] *** Eventide is now known as Eventide|Sleepies
+[07:27:31] <cyzon> lol
+[07:28:02] <Taloverae> much drink, so swaying
+[07:30:41] *** Quits: Aww (aww@Pony-ic0abh.online) (Quit: ♕ KEEP CALM AND COOKIE ON)
+[07:30:49] *** Joins: Aww (aww@Pony-9dvp5j.sh)
+[07:32:27] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[07:33:32] *** Joins: Phase (Phase4@Pony-72i3r3.internode.on.net)
+[07:36:29] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Ping timeout: 121 seconds)
+[07:45:53] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[07:45:57] *** Quits: Webster (Webster@Pony-4eid99.fios.verizon.net) (Quit: Leaving)
+[07:58:24] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[08:08:30] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:25:55] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[08:33:12] *** Joins: Xefir (xefir@Pony-sook2i.1fe2.7gl6.e080.2a00.IP)
+[08:35:32] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[08:36:36] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[08:37:14] *** Quits: Xefir (xefir@Pony-sook2i.1fe2.7gl6.e080.2a00.IP) (Ping timeout: 121 seconds)
+[08:39:10] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[08:39:44] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:40:34] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[08:41:57] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[09:02:43] *** Quits: WuBzY_Sleepy (yaaic@Pony-gre1sk.rev.dnainternet.fi) (Quit: )
+[09:03:01] *** Joins: WuBzY (yaaic@Pony-gre1sk.rev.dnainternet.fi)
+[09:03:27] *** zz_CyberJacob is now known as CyberJacob
+[09:03:48] <Moonlightning> How come DNS replies from my server don't have the Authentic Data flag set? >.>
+[09:04:03] <Moonlightning> When replies from Google's do?
+[09:04:12] <Colgate> they are counterfeit
+[09:04:55] <Moonlightning> :I
+[09:06:14] <tiwake> finally got music on to my cellphone
+[09:18:16] <tiwake> Colgate: https://blog.jolla.com/jolla-back-business/
+[09:18:20] <PinkiePieBot> [ Jolla is back in business! | Jolla Blog ]
+[09:20:22] <Colgate> so, they got a corporate backer of some sort, probably in india
+[09:26:15] <tiwake> well, they had lintex or intex or whatever its called for a while
+[09:26:21] <tiwake> which is india
+[09:26:57] <Moonlightning> …wait, so are you supposed to put the KSKs for the zones bind is authoritative for in a trusted-keys{} block or no?
+[09:28:37] <tiwake> anyone have a suggested screen protector brand?
+[09:30:03] <Taloverae> cheap multipacks
+[09:30:39] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:30:40] <tiwake> Taloverae: I was thinking about going glass... why should I go with plastic?
+[09:30:59] <Taloverae> Oh, if you were going with glass, then I don't have any suggestions.
+[09:31:28] <tiwake> Taloverae: do you like plastic over glass for a protector?
+[09:32:13] <Taloverae> I prefer the feel of the device's native glass, but have only ever bothered with the chep plastic protectors. I do like the concept of glass versions.
+[09:32:24] <tiwake> alright
+[09:32:35] <tiwake> thats basically what everyone says it seems
+[09:33:08] <Taloverae> I"m terribly lazy, and haven't bothered with switching what still works on a device that's almost two years old now.
+[09:33:56] *** Joins: Xefir (xefir@Pony-eq59e0.1fe2.7gl6.e080.2a00.IP)
+[09:35:30] <tiwake> well, I just got mine used (in pretty fantastic condition) on ebay... I want it to last as long as my other phone did
+[09:35:37] <tiwake> which was about 5 years
+[09:36:25] <tiwake> <3 N900
+[09:36:27] *** Joins: Melanosuchus (quassel@Pony-0n95q6.as13285.net)
+[09:37:59] *** Quits: Xefir (xefir@Pony-eq59e0.1fe2.7gl6.e080.2a00.IP) (Ping timeout: 121 seconds)
+[09:38:37] <Moonlightning> Dec 19 08:38:05 sugar-belle named[1973]: /etc/bind/named.conf.default-zones:2: zone '.': already exists previous definition: /etc/bind/named.conf.default-zones:2
+[09:38:43] <Moonlightning> what the fuck are you talkign about
+[09:43:12] <Moonlightning> I don't know what the fuck
+[09:43:18] <Moonlightning> Here, have an empty fucking file for that
+[09:43:26] <Moonlightning> I'm going to bed
+[09:44:27] <Moonlightning> …oh, it was included twice.
+[09:44:29] <Moonlightning> Okay, THERE.
+[09:56:58] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[09:58:58] *** Quits: Cyan_Spark (Cyan_Spark@incidental.unicorn.Cyan_Spark) (Quit: Sparks only last so long)
+[10:30:43] <Compu> man who make mistake on elevator wrong on many levels
+[10:32:57] * Moonlightning has decided not to go to sleep just yet
+[10:34:27] *** CyberJacob is now known as zz_CyberJacob
+[10:34:42] *** Joins: Xefir (xefir@Pony-fgmrkh.1fe2.7gl6.e080.2a00.IP)
+[10:38:44] *** Quits: Xefir (xefir@Pony-fgmrkh.1fe2.7gl6.e080.2a00.IP) (Ping timeout: 121 seconds)
+[10:56:45] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[10:59:05] *** Quits: Darki (DK@Pony-44f.v38.82.80.IP) (Ping timeout: 121 seconds)
+[11:00:36] *** Joins: Darki (DK@Pony-92fd75.vs.webtropia.com)
+[11:07:38] <Moonlightning> Oh, hello. https://security.stackexchange.com/questions/108428
+[11:07:39] <PinkiePieBot> [ linux - What is happening now with the Grub backspace key security vulnerability? - Information Security Stack Exchange ]
+[11:15:50] <Unixkitty> Moonlightning, what did you mean about the certificate?
+[11:16:12] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[11:16:24] <Moonlightning> Unixkitty: unixkitty.com., right?
+[11:16:55] <Unixkitty> That is the one you were referring to, no?
+[11:17:32] <Moonlightning> I've forgotten the TLD at this point.
+[11:17:36] <Moonlightning> also I'm tired.
+[11:18:06] <Unixkitty> Yes, that was the one.
+[11:18:20] <Moonlightning> Anyway, validation is failing for me, presumably because I'm not being served the intermediate certificate.
+[11:18:56] <Unixkitty> I'm just not sure why the certificate chain wouldn't work for you, it's been working for me in every browser for quite a bit now
+[11:19:25] <Moonlightning> Got Firefox here. Unknown issuer.
+[11:19:27] <Moonlightning> There isn't really a /chain…/
+[11:19:32] <Moonlightning> …can you call one certificate a chain?
+[11:19:47] <Unixkitty> There is a chain, it's in the same file in fact
+[11:19:57] <Moonlightning> Well, it's not being served to me
+[11:20:32] <Unixkitty> I see, thanks for pointing out
+[11:27:16] *** Quits: CompuDesktop (compu@snuggly.filly) (Quit: Leaving)
+[11:27:33] *** Joins: CompuDesktop (compu@snuggly.filly)
+[11:32:49] *** mniip is now known as \m
+[11:33:49] <Moonlightning> You're welcome. x3
+[11:35:27] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[11:39:32] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Ping timeout: 121 seconds)
+[11:42:42] *** Quits: Unixkitty (uni@the.unicorn.cat) (Quit: The rains weep over his hall, with no one there to hear.)
+[11:43:35] *** Joins: Unixkitty (uni@Pony-bbkp1e.com)
+[11:50:27] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[11:53:45] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[12:25:08] <tiwake> http://www.amazon.com/Google-Nexus-Phone-Little-cf5651/dp/B019BQWBH8/ref=sr_1_28?s=wireless&ie=UTF8&qid=1450524250&sr=1-28&keywords=nexus+5+mlp
+[12:25:09] <PinkiePieBot> [ Robot Check ]
+[12:29:04] <tiwake> Colgate: what do you think of that one?
+[12:30:23] <tiwake> http://www.amazon.com/Little-Google-Nexus-Anime-Personalized/dp/B00ZWQ5F2U/ref=sr_1_30?s=wireless&ie=UTF8&qid=1450524606&sr=1-30&keywords=nexus+5+mlp
+[12:36:13] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[12:40:17] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Ping timeout: 121 seconds)
+[12:46:34] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[12:46:41] <tiwake> looks like google will print one
+[12:46:46] <tiwake> for $15
+[12:57:44] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[12:59:21] <Obaskyr> I got something I never thought I'd need help with, but I weirdly enough have never needed to do it. My laptop's HDD has pooped out on me, so I slapped a fresh SSD in there along with my 8.1 install thumbdrive I made ages ago, and there's no product key sticker on the laptop! I've no idea how to retrieve the OEM key, please, #techponies, you're (one of) my only hope(s)!
+[13:01:19] <tiwake> Obaskyr: the hard drive died? or is it only mostly dead?
+[13:01:45] <Obaskyr> died died.
+[13:01:49] <tiwake> cause if its all dead the only thing you can do is go through its pockets for loose change
+[13:02:37] <Obaskyr> The OEM key is written to the BIOS though isnt it, so I shouldnt need the old HDD to recover it?
+[13:03:10] <tiwake> I donno... that confuses me too, about what to do if the drive dies
+[13:03:27] <tiwake> but I don't need to worry about keys and licenses and stuff, cause linux
+[13:04:58] <Obaskyr> I really wish I could linux, but autodesk software, PS, zbrush...
+[13:13:50] <Phase> if its the right version of 8 i *think* it should pull from the bios on its own
+[13:15:01] <Phase> Obaskyr, http://www.nirsoft.net/utils/product_cd_key_viewer.html
+[13:15:01] <PinkiePieBot> [ ProduKey - Recover lost product key (CD-Key) of Windows/MS-Office/SQL Server ]
+[13:16:43] *** Quits: WuBzY (yaaic@Pony-gre1sk.rev.dnainternet.fi) (Quit: )
+[13:16:55] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[13:18:47] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[13:19:29] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[13:20:21] *** Joins: Xefir (xefir@Pony-t3fr7s.1fe2.7gl6.e080.2a00.IP)
+[13:20:45] *** Quits: Xefir (xefir@Pony-t3fr7s.1fe2.7gl6.e080.2a00.IP) (Quit: Bye!)
+[13:22:25] *** \m is now known as mniip
+[13:22:40] <Obaskyr> the laptop previously had 8.1 Pro on it, which I installed 10 tech pre on top of.
+[13:23:07] <Obaskyr> Also, what good is a program going to be when I can't install windows? :P
+[13:25:40] <Phase> you can install windows
+[13:25:54] <Phase> there's a grace period if you don't enter a key during the installation
+[13:26:35] <Obaskyr> Up untill windows 7 you could, on 8.1 you cant advance the install without a product key  it seems.
+[13:26:38] <Phase> much as i hate windows, the way they try enforce licenses these days is quite reasonable
+[13:26:42] <Phase> you sure?
+[13:28:17] <Unixkitty> During Windows 10 installation there is a button "I don't have a product key", which advances the install to the fully working system.
+[13:28:43] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[13:28:47] <Obaskyr> I'll write some winten install media then.
+[13:29:22] <Phase> if you've got uefi, can just copy the cd's contents to a usb
+[13:29:44] <Obaskyr> What CD?
+[13:29:55] <Phase> dvd' iso', whatever works
+[13:30:20] <Obaskyr> I'm just going to grab the USB installer from MS
+[13:30:28] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[13:55:12] <Obaskyr> thanks for the advice though.
+[13:55:38] <Obaskyr> I was trying to use the recovery terminal to grab it from the BIOS, but none of the comands I tried worked :c
+[13:57:47] *** Quits: CompuDesktop (compu@snuggly.filly) (Quit: Leaving)
+[14:01:25] *** Joins: CompuDesktop (compu@snuggly.filly)
+[14:03:19] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[14:33:01] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[15:14:55] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[15:20:21] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[15:35:29] *** mniip is now known as \m
+[15:57:22] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[16:03:17] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[16:07:28] <Snoarin> I love when people fall prey to shit
+[16:08:00] <Snoarin> cousin found a site wish.com, they have flash drives listed up to 1tb for 7$, I called it bs and said it is a scam and she got huffy with me
+[16:09:16] <Snoarin> And after I said they "Its wish its not a scam!" Okay.. beleive what you want, order it and see the cheap shit you get
+[16:24:20] *** Snoarin is now known as GigaWork
+[16:34:00] <Moonlightning> Hah. :V
+[16:44:59] * JustAberrant helps Moonlightning 
+[16:46:25] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:48:09] <Sour_Sweet> Well they'll appear to your OS as 1 TiB sticks and start loosing your suff after 4 GiB :D
+[16:49:11] <Sour_Sweet> A modified firmware can do lots of cool things.
+[16:49:53] <Kinsley> I guess people caught on to the "1 TB external drive is a thumb drive in an enclosure with a big nut glued into it" scam.
+[16:52:11] <Lapsus> I'm amazed that it was even 4GiB!
+[16:52:25] <Lapsus> They used to only loop over 512MB or so
+[16:52:34] <Lapsus> I guess flash really is getting cheaper
+[16:57:05] <Moonlightning> That's incredibly cruel.
+[16:57:11] <Moonlightning> Like, seriously.
+[16:57:22] <Moonlightning> That may actually have severe moral implications
+[16:57:42] <AppleDash> Those people don't care
+[16:57:55] <Lapsus> At least you get some storage! :v
+[16:58:05] <Moonlightning> Not really!
+[16:58:12] <Lapsus> it's better than the ones that are, as Kinsley said, just a cable end and a nut to give it weight
+[16:58:16] <AppleDash> They don't know how to properly scam, or do they
+[16:58:18] <Moonlightning> The disk surely isn't aware of the structure of the data.
+[16:58:39] <AppleDash> You could argue that selling them for like 100$ would be more profitable
+[16:58:58] <AppleDash> But you could also argue that at 7$ people are less likely to pursue a refund, lading to a greater net profit across all sales
+[16:59:00] <Moonlightning> If it happens to overwrite, say, an encryption key, you could lose literally everything.
+[16:59:07] <Moonlightning> But never mind that…
+[16:59:34] *** Eventide|Sleepies is now known as Eventide
+[16:59:37] <Moonlightning> Say I just mkfs and begin dumping stuff onto there
+[17:00:15] <Moonlightning> And then, for some reason (other disks dying?) it becomes my only copy. :V
+[17:00:24] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[17:00:29] <Moonlightning> …wait, what am I doing? It's too early for this shit.
+[17:00:41] * Moonlightning wanders off.
+[17:03:07] <Lapsus> Moonlightning: then it's your fault for buying sketchy drives and not testing them :v
+[17:03:27] <Lapsus> Eventually I want to make one of those myself, just for the experience of learning to usb
+[17:05:43] <Moonlightning> Lapsus: is there a quick and easy way to test that? :o
+[17:05:54] <Moonlightning> …hmm, does badblocks cover it?
+[17:06:05] <Lapsus> write increasingly large files to it and see if you can copy them back off
+[17:06:17] <Lapsus> or like, drop the largest thing you can on there and see if it can open
+[17:06:21] <Lapsus> movies are good for that
+[17:06:47] <Lapsus> the best test is "was this price too good to be true"
+[17:06:50] <Lapsus> :p
+[17:06:53] <Moonlightning> Oooh. Fill it with uncompressed video and try to play it back.
+[17:06:59] <Lapsus> yes exactly
+[17:07:11] <Lapsus> it'll only have the last bit, so when you play the start it will not work
+[17:07:28] <Lapsus> or it will only have the start etc
+[17:07:38] <Moonlightning> ffmpeg until ENOSPC?
+[17:07:59] <Lapsus> or it will have nothing because it's just storing the names of the files! :v
+[17:08:19] <Moonlightning> Filesystem-aware? O.o
+[17:08:36] <Moonlightning> …what would happen if you slapped a LUKS container on it? XP
+[17:08:56] <Lapsus> there's a microcontroller in there, it just depends on how tricky you want to get :p
+[17:12:06] <Moonlightning> I wonder how that would react, though.
+[17:12:19] <Moonlightning> Presumably it wouldn't be written to handle any other case
+[17:13:05] <Moonlightning> …wait…such a disk would likely fail similarly if you slapped an ext on there
+[17:15:03] <Sour_Sweet> There are tools specifically to test devices against that scam
+[17:15:24] <Sour_Sweet> They write a seeded pattern to the drive and try to read it later on.
+[17:15:50] <Sour_Sweet> No need to use real data.
+[17:16:36] <Moonlightning> Ooohhh, clever.
+[17:18:23] <Sour_Sweet> And the scam is extremly common. http://www.ebay.de/itm/USB-Stick-1-TB-Terabyte-Speicher-rund-917-GB-NEU-KOSTENLOSER-VERSAND-/281884064873?hash=item41a1997c69:g:Qn8AAOSwcOFWbXIA
+[17:18:24] <PinkiePieBot> [ USB-Stick 1 TB - Terabyte - Speicher (rund 917 GB) - NEU - KOSTENLOSER VERSAND!! | eBay ]
+[17:18:48] <Sour_Sweet> There are dozens of them on eBay
+[17:18:58] <AppleDash> >1tb fat32
+[17:22:10] <Sour_Sweet> Iirc fat32 does more than that
+[17:22:27] <Sour_Sweet> (Not using Window's crappy format tool though)
+[17:22:31] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[17:23:04] <Sour_Sweet> "[...] this equates to a maximum disk size of approximately 8 terabytes (TB). "
+[17:23:11] <Sour_Sweet> Source: https://support.microsoft.com/en-us/kb/184006
+[17:25:54] <AppleDash> lol
+[17:26:05] <AppleDash> But the max filesize is small
+[17:26:22] <DJ-C0L7[EIT]> quick question, anypony know how to fix a problem with cast to device in win10?
+[17:27:06] <DJ-C0L7[EIT]> i.e. a coworker here used cast-to-device to play a video on his xbox one and now he is unable to delete the file because it says its in use by cast-to-device even when he is offline
+[17:28:03] <Sour_Sweet> If it's just about the file you can remove the lock with certain tools
+[17:29:15] <DJ-C0L7[EIT]> tried using unlocker and it told us that nothing was using the file, used unlocker to attempt to delete the file, and it was unable to delete because it was in use, i selected the option to delete the file on reboot, it failed to delete, i used eraser, that failed, and we used his webroot avs shred option, and that failed
+[17:29:27] <DJ-C0L7[EIT]> all saying that cast to device is using the file
+[17:29:51] <Sour_Sweet> Mhh. Never used cast to device.
+[17:30:08] <DJ-C0L7[EIT]> i've used play-to before i discovered serviio DLNA server
+[17:30:43] <Sour_Sweet> I always have a Linux live CD somewhere around for cases where Windows refuses to do something
+[17:31:13] <DJ-C0L7[EIT]> i was considering that, but i'm a little concerned that we might frag his OS, because its almost acting like its somehow flagged this .mp4 file as a system file
+[17:31:32] <Sour_Sweet> That shouldn't matter
+[17:32:03] <Sour_Sweet> You can flag pretty much every file as a system file. As long as it's not boot critical you should be fine
+[17:32:04] <DJ-C0L7[EIT]> i wasnt sure with w10, i'll try that when i see him tomorrow, i have a knoppix live disk, and i think someware in my bag-of-tricks i have a backtrack5 bootable usb
+[17:32:26] <Lapsus> Can't type my password properly, I think it might be time to cut my nails >.>;
+[17:32:41] <Sour_Sweet> lol
+[17:32:47] * DJ-C0L7[EIT] nosebumps Lapsus
+[17:33:15] <Sour_Sweet> You're obviously not a nervous pone
+[17:33:29] <Lapsus> oh yes I am :v
+[17:33:41] <Lapsus> I just decided one day that I wasn't going to chew my nails anymore
+[17:41:52] * AppleDash takes Lapsus to the place where they do horses' hooves
+[17:43:43] * Lapsus heads out to do grocery shopping instead.
+[17:46:10] <AppleDash> :(
+[17:53:15] *** Lapsus is now known as Laps_out
+[17:56:17] <Sour_Sweet> So UPlay redirects you over cdn.ubi.com with an SSO token which effectivlely is Akamai when you choose to edit your profile information from within the client. Only problem is that the cert Akamai presents to the browser is not valid for *.cdn.ubi.com, so you get a warning. Easy MITM to grab some SSO tokens, because most users will probably ignore the warning that always appears if you go
+[17:56:19] <Sour_Sweet> this path. Well done Ubisoft you made SSL pointless.
+[17:58:42] <AppleDash> lol
+[18:17:35] * JustAberrant contemplates actually looking into what all this "lets encrypt" stuff is about
+[18:19:41] <Moonlightning> Why does nothing ever have the root DNS key stored, or fetch it from the local system somehow?
+[18:20:06] <Moonlightning> That completely and utterly defeats the purpose of DNSSEC.
+[18:20:09] <Moonlightning> You can't validate shit.
+[18:20:40] <Moonlightning> The only reason /I/ //can// is because bind has a copy, and I'm mangling that into an acceptable format and passing it. :V
+[18:22:06] <Moonlightning> > 69.90.132.107 did not dane-validate, because: Could not PKIX validate
+[18:22:11] <Moonlightning> what are you talking about that certificate is fine
+[18:22:52] <Moonlightning> DJ-C0L7[EIT]: boot singleuser and away we go?
+[18:25:55] <Moonlightning> What, do I need to give you a bundle of CA certificates, /too?/
+[18:26:17] <Moonlightning> what the fuck is the point of centralizing this shit if I always need to pass trust anchors myself, anyway -.-
+[18:32:31] <Moonlightning> Holy fucking shit.
+[18:32:33] <Moonlightning> And it works.
+[18:32:38] <Moonlightning> With me passing TWO TRUST ANCHORS
+[18:32:46] <Moonlightning> TWO DIFFERENT ONES, FOR DIFFERENT SYSTEMS
+[19:35:54] <HoneyDrops> http://www.huffingtonpost.com/acm-the-association-for-computing-machinery/wanting-it-bad-enough-won_b_8762322.html  Best title ever.
+[19:35:55] <PinkiePieBot> [ Wanting It Bad Enough Won't Make It Work: Why Adding Backdoors and Weakening Encryption Threatens the Internet | ACM, the Association for Computing Machinery ]
+[20:04:18] <wolfyshy> http://www.theatlantic.com/magazine/archive/2015/09/the-coddling-of-the-american-mind/399356/
+[20:04:18] <PinkiePieBot> [ How Trigger Warnings Are Hurting Mental Health on Campus - The Atlantic ]
+[20:07:30] *** Joins: Phase4 (Phase4@Pony-r74qf3.internode.on.net)
+[20:09:04] *** Quits: Phase (Phase4@Pony-72i3r3.internode.on.net) (Ping timeout: 121 seconds)
+[20:11:06] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[20:13:49] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[20:15:35] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[20:16:13] *** Joins: Crimson_Tail (Zeta@Pony-lo2ca7.cg80.k4gu.0151.2601.IP)
+[20:18:27] *** eyeburn is now known as Flowheart
+[20:20:49] <Colgate> Unixkitty: /late on certs, browsers will cache intermediate certs, and they will try *very* hard to make a valid chain work when servers are misconfigured and don't send multiple certs when they are supposed to(as it was in your case)
+[20:21:45] <Unixkitty> I know, I've read up on that already :P I think it should be fixed now as well
+[20:23:45] <Colgate> you are sending 3 certs now
+[20:24:08] <Moonlightning> Yay~!
+[20:24:24] <Colgate> which verifies on debian stable
+[20:31:54] *** Joins: Webster (Webster@Pony-4eid99.fios.verizon.net)
+[21:14:19] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a Dream. <3)
+[21:14:38] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[21:15:56] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[21:23:27] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[21:28:35] *** Octavia is now known as One-Trick
+[21:29:06] <Sour_Sweet> I started watching The IT Crowd. It's kinda bad and I watch it anyway :P
+[21:32:17] <DJ-C0L7[EIT]> lol
+[21:32:24] <JustAberrant> the UK one or the shitty `merican one?
+[21:32:26] <DJ-C0L7[EIT]> hello I.T>, have you tried turning it off and on again
+[21:32:41] <JustAberrant> cause the UK one is pretty good imo.. I mean typical British humour, but still good ;p
+[21:34:19] <Sour_Sweet> The British original. By bad I mean the level of the jokes. I enjoy it, otherwise I wouldn't continue
+[21:34:52] <Sour_Sweet> Their answering machine is amazing. I could use something like that :P
+[21:34:57] <DJ-C0L7[EIT]> ikr
+[21:34:59] <JustAberrant> see also: red dwarf
+[21:35:15] *** Joins: Asoka_White (Asoka@Pony-fspcq0.net-htp.de)
+[21:36:36] <Sour_Sweet> There is a German audio sync apperently, but I didn't even bother. The English version is amazing.
+[21:37:49] *** Quits: Asoka (Asoka@Pony-qtpced.net-htp.de) (Ping timeout: 121 seconds)
+[21:49:58] <DJ-C0L7[EIT]> g2g
+[21:51:08] <tiwake> http://www.ebay.com/itm/361426944160 $18 10G network cards, free shipping
+[21:51:10] <PinkiePieBot> [ Chelsio S310E CR 10Gbps SFP Adapter PCI E x8 10GB 110 1107 30 10 GbE 10 Gigabit | eBay ]
+[21:51:15] <tiwake> Colgate: ^
+[21:51:57] <Phase4> dang
+[21:52:10] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[21:52:10] <Phase4> pci though
+[21:52:13] *** Phase4 is now known as Phase
+[21:52:50] <tiwake> its PCIe, at least thats what the description says
+[21:53:46] <locodash11[server]> pictures look like 8x like the description says
+[21:53:52] <Phase> i'm fairly sure that's a pci edge connector?
+[21:53:56] * Phase could be wrong
+[21:54:01] <tiwake> ah no, its PCIe
+[21:54:09] <tiwake> http://www.chelsio.com/assetlibrary/products/S310E%20Product%20Brief%20090721.pdf
+[21:54:37] <Phase> would have to be i guess, max transfer rate of pci is under 10g iirc
+[21:54:47] <tiwake> heh yeah
+[21:56:02] <tiwake> oh hey, its got a couple different optical things too
+[21:56:04] <tiwake> thats cool
+[21:56:11] <tiwake> and copper compatible
+[21:56:25] <locodash11[server]> that seems to be a pretty cheap card, as related postings have it quite cheap as well
+[21:57:09] <tiwake> or everyone is upgrading at the same time
+[21:57:25] <tiwake> not sure why though
+[21:58:23] <locodash11[server]> also, boop AppleDash
+[21:58:47] <AppleDash> ?
+[21:59:01] <locodash11[server]> that ebay link a bit up
+[21:59:20] <AppleDash> Wow, that's not bad
+[21:59:25] <AppleDash> I want one
+[21:59:31] <tiwake> I want 3-4
+[21:59:32] <tiwake> lol
+[21:59:40] <locodash11[server]> heh
+[21:59:40] <tiwake> one for each desktop
+[22:00:03] * Phase is considering them for work
+[22:00:27] <tiwake> I should buy some right now before #techponies goes crazy over them
+[22:00:36] <AppleDash> lol
+[22:00:36] <Phase> we've got this bullshit accounting package that 'networks' by keeping its database on a smb server
+[22:01:10] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:01:30] <tiwake> I mostly posted it here to confirm that it is indeed a good deal
+[22:01:40] <tiwake> lol
+[22:01:45] <Phase> inb4 tiwake buys all of them
+[22:01:52] <tiwake> ALL OF THEM
+[22:01:59] <tiwake> actually I don't have enough money
+[22:02:09] <tiwake> though I could use shop money... hmm
+[22:02:16] <tiwake> better not
+[22:02:22] <Phase> "83 available"
+[22:02:32] <Phase> i think there's enough to go around
+[22:02:44] <tiwake> I could buy all of them with shop money
+[22:02:55] <tiwake> 59 are sold though
+[22:03:10] <Taloverae> What transciever would you pair with it?
+[22:03:11] <tiwake> 24 left
+[22:03:38] <tiwake> Taloverae: did you read the specs?
+[22:03:44] <tiwake> Taloverae: http://www.chelsio.com/assetlibrary/products/S310E%20Product%20Brief%20090721.pdf
+[22:03:45] <Phase> the available number is currently available
+[22:04:22] <tiwake> Phase: ohh, ok, 142 was the starting number then
+[22:04:28] <locodash11[server]> and there's other people selling nearly priced ones as well, so quite a few
+[22:05:20] <tiwake> hmm
+[22:05:59] <Taloverae> What about the specs? It's an SFP+ module card that doesn't include transcievers.
+[22:09:50] <tiwake> Taloverae: for optical networks?
+[22:10:18] <Taloverae> Did you look at the card that's for sale? That big rectangular hole is missing the tranciever.
+[22:10:28] <Phase> ^
+[22:10:56] <Phase> need to get sfp modules as well, they vary in price a bit
+[22:11:09] <tiwake> oh, that part
+[22:11:24] <tiwake> no, I didnt notice... lol
+[22:12:05] <JustAberrant> that's still terrifyingly cheap
+[22:12:22] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Connection closed)
+[22:12:27] <tiwake> how much do the transceivers cost, approximately?
+[22:12:59] <JustAberrant> depends on if you want 1g or 10g
+[22:13:31] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[22:14:35] <JustAberrant> 1G stuff seems to bein the $100 range, 10g you're into the $600+ range
+[22:14:44] <JustAberrant> but I imagine you can probably find cheapie and overpriced versions of each
+[22:16:13] <Taloverae> http://www.ebay.com/itm/New-Chelsio-260-0012-00-SM10G-SR-PLRXPL-SC-S43-42B-10GB-SFP-GBIC-Transceiver-/361450018202?hash=item542819959a:g:mTUAAOSwpdpVdg6h
+[22:16:15] <PinkiePieBot> [ New Chelsio 260 0012 00 SM10G SR PLRXPL SC S43 42B 10GB SFP GBIC Transceiver | eBay ]
+[22:16:20] <Webster> You can get 1Gbps fiber modules for like $5 on eBay.
+[22:16:24] <Taloverae> Short reach fiber 10G 
+[22:17:27] <JustAberrant> yikes
+[22:17:32] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[22:17:35] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[22:17:48] <JustAberrant> my view is probably skewed cause company I work for likes spending lots of money on stuff ;p
+[22:18:28] <JustAberrant> though I've never heard of chelsio
+[22:18:54] <Taloverae> The company I work for also doesn't shit on IT, and we usually get whatver we want
+[22:19:32] <Taloverae> Heck, I've only ever touched an SFP module when a remote switche went down; transferred all the things into the replacement
+[22:20:11] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:20:51] <Taloverae> Also turns out that cooling fans do not like being packed full of construction dust :p
+[22:22:02] <DJ-C0L7[CSS]> lol
+[22:22:12] <DJ-C0L7[CSS]> achievement get: KABOOM
+[22:25:41] * JustAberrant was out supporting some testing out in the field and I got to replace a controller card in a cisco switch
+[22:26:09] <JustAberrant> (it failed during the test and I was the only one closest to a hardware guy (I'm a programmer/systems integration guy))
+[22:27:01] <JustAberrant> after the fact when they put in the procurement to replace the one from spares I got to see it
+[22:27:19] <JustAberrant> ... not.. cheap
+[22:27:41] <Taloverae> Yeeeep.
+[22:29:52] <JustAberrant> I mean it's all markup and overhead and because they can, but yeesh
+[22:30:33] <Taloverae> The price is whatever people are willing to pay...
+[22:30:52] <JustAberrant> hehe
+[22:31:03] <JustAberrant> well, the stuff I work on is all very complicated because it's not really our gear
+[22:31:29] <JustAberrant> it's the governments, but we are responsible for it..
+[22:31:40] <JustAberrant> but procurement has to go through all the RFP nonsense/etc
+[22:32:21] <JustAberrant> which means pretty much only the big guys can sell anything to us because any smaller supplier can't handle the sheer amount of BS associated with it
+[22:33:08] <JustAberrant> which means it is _way_ easier to buy literally millions of dollars worth of network gear from cisco than by a specialized $500 diagnostic tool from some small company
+[22:33:20] <Taloverae> Mm, big companies do enough business to warrant having dedicated people to wade through the BS
+[22:33:20] <JustAberrant> * buy
+[22:33:58] <JustAberrant> indeed.. if your cisco or hp or dell it's worth it to get on the authorized sellers list and get all the certifications and pay someone to fill out paperwork until they lose their mind
+[22:34:26] <JustAberrant> it's just ironic that the whole purpose of it all is to make it "fair", but in a lot of ways it serves the opposite purpose
+[22:36:04] <Taloverae> It's extra fair to the guy who has the most favors to call on
+[22:36:46] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[22:37:11] *** Joins: Sombra (Iceman@Darkhorse21)
+[22:41:20] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[22:41:58] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[22:44:02] *** Quits: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner) (A TLS packet with unexpected length was received.)
+[22:44:03] *** Quits: Kinsley (JKinsley@Bow.To.Your.Princess) (Quit: The Princess Is Out)
+[22:44:41] <Sombra> Question
+[22:44:57] <Sombra> I have an SSD, and I want to get another SSD.  And what I want to do is... have those two SSD's appear as one partition, what do?
+[22:45:18] <JustAberrant> well, first think about if that's actually what you want to do
+[22:45:24] <JustAberrant> then look into raid0
+[22:46:13] <Sombra> Okay, how do I do that.
+[22:46:25] <JustAberrant> you google it ;p
+[22:46:58] <JustAberrant> seriously, it varies from platform to platform, and there are specifics relating to what you want out of it, you'll want to read up on it
+[22:48:11] <JustAberrant> your mobo might be able to do it for you (though often shitty and sometimes requires windows/drivers to work), you can do it in software (no idea what windows has, but linux has md), or you can buy a dedicated hardware card to do it (which has pros and cons)
+[22:49:05] <Webster> You can also mount the second drive as a folder on the first if you want.
+[22:50:41] <Sombra> Maybe I don't want to, since it'd be raid 0, surely, I'd have no disadvantages as far as speed goes to having two seperate SSD drives.
+[22:51:24] <JustAberrant> with raid0 you get a speed boost, but you take a hit on reliability
+[22:51:43] <JustAberrant> if either drive fails you basically lose everything
+[22:52:39] <JustAberrant> which is fine if you've got backups and are willing to use them
+[22:52:43] <Sombra> Also, is there any difference physically between socket 2011 and socket 2011v2? As in, would I be able to put the same heatsink/cooler between both of them?
+[22:52:54] <Sombra> I have my important stuff backed up on my HDD
+[23:26:43] *** \m is now known as mniip
+[23:28:13] *** Quits: Aww (aww@Pony-9dvp5j.sh) (Quit: ♕ KEEP CALM AND COOKIE ON)
+[23:30:46] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:32:55] *** Joins: Dustrunner (eventide@Tips.Fedora)
+[23:41:53] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Connection closed)
+[23:45:51] *** Joins: Kinsley (JKinsley@Bow.To.Your.Princess)
+[23:45:52] *** AutoLapsus sets mode: +o Kinsley
+[23:48:04] *** Joins: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner)
+[23:48:04] *** AutoLapsus sets mode: +v PinkiePieBot
+[23:59:40] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)

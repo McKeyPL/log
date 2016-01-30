@@ -1,0 +1,374 @@
+[00:23:30] *** Joins: Fantasma (Iceman@Darkhorse21)
+[00:27:32] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[00:30:28] *** Joins: LightningCrash (lightning@Pony-3k02m8.tcso.qwest.net)
+[00:34:55] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Quit: party)
+[00:39:40] *** Quits: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net) (Quit: I am gone now)
+[00:43:46] *** Joins: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net)
+[00:46:58] <JustAberrant> Colgate|Bronycan: that was presented at blackhat?
+[00:47:09] <JustAberrant> either that's a bad summary or that convention really has gone down hill ;p
+[00:51:29] *** Gigaway is now known as Gigabit
+[00:55:40] <Moonlightning> …is there not an RFC for putting some message headers inside the encrypted|signed portion of the message?
+[00:55:57] <Moonlightning> In particular, it seems to me that the existence of the In-Reply-To and References field would leak private information
+[00:56:20] <Moonlightning> fields *
+[00:56:51] <ShivalWolf> blackhat has become vendorcon
+[00:57:34] <Gladiolus> http://www.kijiji.ca/v-laptops/edmonton/vintage-apple-powerbook-520c-w-ethernet-adapter-for-sale/1096674884?enableSearchNavigationFlag=true
+[00:57:35] <PinkiePieBot> [ Vintage Apple PowerBook 520c w/ Ethernet Adapter - For Sale | laptops | Edmonton | Kijiji ]
+[01:00:20] *** Init3-away is now known as init3
+[01:05:50] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[01:09:49] *** Gigabit is now known as GigaWork
+[01:33:38] <HoneyDrops|Half> "In the computer world, the manufacturers have largely figured out that threatening researchers just makes their claims more widely know (the big exceptions are Oracle and Cisco, but everyone knows they're shitty companies run by assholes)."   XD
+[01:45:39] *** Quits: HoneyDrops|Half (Honey@sweeter.than.honey) (Ping timeout: 121 seconds)
+[01:49:17] *** Joins: HoneyDrops|Half (Honey@sweeter.than.honey)
+[01:58:30] *** GigaWork is now known as Gigabit
+[02:20:05] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[02:28:39] *** Joins: Meteor (meteor@Pony-6i9.jlf.236.104.IP)
+[02:29:57] <Meteor> o/
+[02:30:25] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[02:46:39] *** Joins: Asoka_White (Asoka@Pony-j39l32.net-htp.de)
+[02:49:53] *** Quits: Asoka (Asoka@Pony-cmb5oi.net-htp.de) (Ping timeout: 121 seconds)
+[02:49:59] *** Quits: Asoka_White (Asoka@Pony-j39l32.net-htp.de) (Quit: Ex-Chat)
+[02:50:14] *** Joins: Asoka (Asoka@Pony-j39l32.net-htp.de)
+[02:50:28] *** Quits: Asoka (Asoka@Pony-j39l32.net-htp.de) (Connection closed)
+[02:50:48] *** Joins: Asoka (Asoka@Pony-j39l32.net-htp.de)
+[03:32:39] *** Cepheid is now known as Cephy-Streamin
+[04:13:26] *** Gigabit is now known as Gigaway
+[04:29:41] *** Cephy-Streamin is now known as Cepheid
+[04:31:55] *** Joins: star_moon (Starry@the.little.cloud.colt)
+[04:42:34] *** Quits: Fantasma (Iceman@Darkhorse21) (Quit: quit)
+[04:53:42] *** Quits: Asoka (Asoka@Pony-j39l32.net-htp.de) (Ping timeout: 121 seconds)
+[05:28:00] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[05:37:28] *** Joins: Asoka (Asoka@Pony-j39l32.net-htp.de)
+[05:45:00] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[05:48:22] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[05:48:49] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[05:49:24] *** Quits: locodash11[lagout] (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[05:49:30] <Gigaway> If 666 is considered evil.. is 25.8069 the root of all evil?
+[05:56:55] <Moonlightning> Close, but not quite. /3*sqrt(74)/ is the root of all evil.
+[05:57:34] <Moonlightning> Techpones, I have a question. How do I construct fake but plausible disk IDs?
+[05:57:44] <Moonlightning> As in /dev/disk/by-id/$id
+[05:57:57] <Moonlightning> given a specific brand|model number, but without actually having to buy such a disk
+[06:01:48] <HoneyDrops|Half> I would say look at udev and see how it goes about creating the names?
+[06:02:15] <HoneyDrops|Half> Or I guess systemd now... careful to not catch something while you're in there.
+[06:13:06] *** Joins: Fantasma (Iceman@Darkhorse21)
+[06:13:35] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[06:13:43] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[06:31:02] *** Joins: LightningCrash (lightning@Pony-3k02m8.tcso.qwest.net)
+[06:35:17] <Gigaway> This has to be a mistake, PC said I was transferring data over wifi to a pc on the network, at  3100 TB/s
+[06:36:48] *** Quits: Fantasma (Iceman@Darkhorse21) (Quit: quit)
+[06:37:01] <Moonlightning> Yeahno
+[06:38:19] <Moonlightning> even 2.75 pebibytes is insanely fast
+[06:38:23] <Moonlightning> No fuckkin' way.
+[06:38:57] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[06:41:26] <Moonlightning> I wonder if the 6to4 prefix should've been 2002::/24 instead of 2002::/16
+[06:41:32] <Moonlightning> give everyone /56es
+[06:41:43] <Moonlightning> I seriously don't know what to do with my /48, damn X.X
+[06:47:45] *** Quits: star_moon (Starry@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[07:05:22] <HoneyDrops|Half> Does anyone know off-hand of a 3G module with open firmware?  Something like https://www.adafruit.com/products/2687 but everything is fully open-spec and no binary blobs what-so-ever?
+[07:05:24] <PinkiePieBot> [ Adafruit FONA 3G Cellular Breakout - American version ID: 2687 - $79.95 : Adafruit Industries, Unique & fun DIY electronics and kits ]
+[07:08:04] <Colgate|Bronycan> nope, the cell companies don't want that
+[07:10:12] <Phase> from what i've been told, mobile basebands are trusted in the mobile network
+[07:10:36] <Moonlightning> yeah but they're absolute shit
+[07:10:45] <Moonlightning> 80s security and everything
+[07:10:53] <Phase> doesn't stop them trying
+[07:10:54] <Moonlightning> excuse me, 80s ““security””
+[07:11:05] <HoneyDrops|Half> I wonder how hard it would be to use a general purpose SDR for 3G.
+[07:11:20] <Phase> HoneyDrops|Half, already done
+[07:11:37] <Phase> both as a handset and tower
+[07:12:30] <HoneyDrops|Half> That might be the better route then...
+[07:13:55] <Moonlightning> SDR?
+[07:14:01] <HoneyDrops|Half> software defined radio
+[07:14:28] <Moonlightning> :?
+[07:16:47] *** MorningSong is now known as Dusk
+[07:17:31] <RedHelper> Hello, I need help with a small problem with a wordpress theme I am making. I have some pages that the ones I click on it shows this : http://i.imgur.com/EgX5tpj.png
+[07:18:28] <Moonlightning> > wordpress
+[07:18:32] * Moonlightning https://derpiboo.ru/49
+[07:18:33] <PinkiePieBot> [ Safe animated image_macro nope panic reaction_gif reaction_image running screencap spike twilight_sparkle upvotes_galore winter_wrap_up ]
+[07:19:34] <HoneyDrops|Half> Hmm, emulating a SIM card will be a pain...
+[07:20:17] *** RedHelper is now known as Creeps|AFK
+[07:24:15] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[07:42:07] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[07:43:19] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[07:44:01] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:47:54] <Moonlightning> how the fuck do you look up a v6 address
+[07:48:39] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[07:49:26] * Moonlightning …longblinks.
+[07:50:03] <Moonlightning> …what the fuck?
+[07:51:49] <Moonlightning> https://gist.github.com/BlacklightShining/345de73e1c7eed3749d5
+[07:51:50] <PinkiePieBot> [ gist:345de73e1c7eed3749d5 · GitHub ]
+[07:56:42] *** Joins: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net)
+[08:03:15] <Moonlightning> Okay, that's it. I'm going to really work at reproducing this zsh tabcomplete bug. >:(
+[08:05:01] <DJ-C0L7[CSS]> howdy Moonlightning
+[08:05:11] <Moonlightning> Hai.
+[08:07:14] *** zz_CyberJacob is now known as CyberJacob
+[08:15:21] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[08:39:14] <AppleDash> Moonlightning: Tabcomplete bug?
+[08:39:21] <AppleDash> Is it where you try and tab and your shell just locks up?
+[08:40:46] <Moonlightning> AppleDash: no, it's where you try to tabcomplete '.weechat/logs/irc.c.#equestriaaf', and it pauses for a moment and then replaces it with '..'
+[08:41:06] <AppleDash> Oh
+[08:41:27] <Moonlightning> …and now that I'm trying to figure it out, it's being inconsistent again! >.<
+[08:41:29] <Moonlightning> fuck.
+[08:42:07] <AppleDash> lol
+[08:49:23] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[08:59:33] *** Quits: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net) (Quit: I am gone now)
+[09:03:51] *** Gigaway is now known as Vega
+[09:09:37] *** Quits: firestream (firestream@Pony-8oqp7s.dsl.bell.ca) (Ping timeout: 121 seconds)
+[09:10:39] <Fallfeathers> one of my clients just set a new record for fastest infection after first power-on: I sent them instructions on how to get teamviewer so I could remote in - instead of using the link provided, they Bing searched it. and got the CNET download.
+[09:12:40] <HoneyDrops|Half> XD
+[09:14:18] <Phase> https://youtu.be/MqObJtGrKaA
+[09:14:18] <PinkiePieBot> [ Upper Class Twit of the Year - Monty Python's The Flying Circus - 612359 views - 5m 26s long - 5296 likes - 98.59% ]
+[09:20:06] *** Joins: firestream (firestream@Pony-cdrjop.dsl.bell.ca)
+[09:20:34] *** firestream is now known as Pony_78325
+[09:22:26] *** Joins: Fantasma (Iceman@Darkhorse21)
+[09:26:38] *** Quits: Pony_78325 (firestream@Pony-cdrjop.dsl.bell.ca) (Connection closed)
+[09:26:43] *** Joins: Pony_78325 (firestream@Pony-omj.56l.50.70.IP)
+[09:35:13] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (A TLS packet with unexpected length was received.)
+[09:45:02] *** Creeps|AFK is now known as RedHelper
+[09:46:19] *** Quits: Fallfeathers (Fallfeather@Pony-8cihja.bigpond.net.au) (Connection closed)
+[09:49:06] *** Joins: Fallfeathers (Fallfeather@Pony-8cihja.bigpond.net.au)
+[09:49:38] *** ThunderStorm is now known as Double_Diamond
+[09:49:45] *** Double_Diamond is now known as Cloud_Kicker
+[10:08:39] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[10:32:39] *** Joins: Phase (Phase4@Pony-l23b6v.internode.on.net)
+[10:38:50] *** Quits: Fantasma (Iceman@Darkhorse21) (Quit: quit)
+[10:43:05] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[10:44:22] *** CyberJacob is now known as zz_CyberJacob
+[10:45:02] *** RedHelper is now known as Creeps|AFK
+[11:05:01] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[11:08:22] *** Cosmic is now known as Cosmic|sleep
+[11:15:23] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[11:18:41] *** init3 is now known as Init3-away
+[11:31:00] *** Awaykitty is now known as Unixkitty
+[11:48:53] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[12:21:54] *** Init3-away is now known as init3
+[12:32:34] *** Quits: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net) (A TLS packet with unexpected length was received.)
+[12:32:41] *** Joins: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net)
+[12:51:57] *** init3 is now known as Init3-away
+[12:52:19] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (Ping timeout: 121 seconds)
+[13:10:38] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[13:19:17] *** Unixkitty is now known as Awaykitty
+[13:36:16] *** Vega is now known as GigaZzz
+[13:51:04] *** Dusk is now known as MorningSong
+[13:56:05] *** Awaykitty is now known as Unixkitty
+[14:22:56] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[15:04:15] *** Unixkitty is now known as Awaykitty
+[15:21:07] *** Awaykitty is now known as Unixkitty
+[15:38:38] *** Joins: LightningCrash (lightning@Pony-3k02m8.tcso.qwest.net)
+[15:44:03] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (Ping timeout: 121 seconds)
+[15:48:29] *** quindo is now known as Quindo
+[15:50:43] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[16:02:21] *** Joins: MistVeil (AndChat3408@Pony-lelp7v.static.axtel.net)
+[16:03:28] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:17:49] *** Quits: reiuiji (reiuiji@nuclear.raven) (Ping timeout: 121 seconds)
+[16:30:59] *** Joins: reiuiji (reiuiji@Pony-pgksa9.ma.comcast.net)
+[16:32:39] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[16:33:44] *** Joins: Fantasma (Iceman@Darkhorse21)
+[16:41:27] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (Ping timeout: 121 seconds)
+[16:41:35] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[16:49:24] *** Quits: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net) (Quit: Leaving.)
+[16:50:07] *** Quits: Fantasma (Iceman@Darkhorse21) (Quit: quit)
+[16:52:50] *** Joins: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net)
+[17:06:27] *** Joins: Skids (ejd@Pony-fej07d.res.rr.com)
+[17:09:12] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[17:58:33] *** Joins: AquaBrandish (AndChat3408@Pony-aii.bpr.95.200.IP)
+[18:01:01] *** Quits: MistVeil (AndChat3408@Pony-lelp7v.static.axtel.net) (Killed (NickServ (GHOST command used by AquaBrandish!AndChat3408@Pony-aii.bpr.95.200.IP)))
+[18:01:04] *** AquaBrandish is now known as MistVeil
+[18:21:42] *** Init3-away is now known as init3
+[18:46:38] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:52:50] *** Unixkitty is now known as Awaykitty
+[18:56:33] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[18:59:20] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[19:21:05] *** GigaZzz is now known as Soarin
+[19:21:25] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:23:35] <RainbowHacks> o/
+[19:23:46] <RainbowHacks> Colgate|Bronycan, make it back home safe? :3
+[19:44:59] *** Quits: Skids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[19:59:01] *** Soarin is now known as RainbowBlitz
+[20:03:10] *** RainbowBlitz is now known as Gigabit
+[20:12:06] *** Colgate|Bronycan is now known as Colgate
+[20:12:16] <Colgate> yeah, just woke up
+[20:12:31] <Colgate> took a nap after my drive home
+[20:15:42] <RainbowHacks> x3
+[20:15:48] * RainbowHacks noseboops Colgate 
+[20:15:49] <RainbowHacks> was super great to meet you <3
+[20:16:11] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[20:18:31] <Colgate> was fun :D
+[20:22:17] <HoneyDrops|Half> http://bb.osmocom.org/trac/  At least I now know someone else is also looking at a proper FOSS GSM implementation.
+[20:22:23] <PinkiePieBot> [ OsmocomBB ]
+[20:31:09] <johnsey> HoneyDrops|Half: that and OpenBTS is being used at the ccc congress/camp to provide an on-site gms network
+[20:32:50] <HoneyDrops|Half> :)
+[20:42:34] *** Quits: MistVeil (AndChat3408@Pony-aii.bpr.95.200.IP) (Quit: Bye)
+[20:44:05] *** init3 is now known as Init3-away
+[20:51:03] <Moonlightning> johnsey: CCCC/C?
+[20:53:27] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[20:54:59] *** Init3-away is now known as init3
+[20:59:29] *** Gigabit is now known as gigatown
+[21:02:22] *** Joins: Crimson_Tail (ZetaRift@Pony-mfh7oq.md.comcast.net)
+[21:04:08] *** Quits: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net) (Quit: Leaving.)
+[21:15:51] *** init3 is now known as Init3-away
+[21:17:37] *** Init3-away is now known as init3
+[21:19:09] *** Cosmic|sleep is now known as Cosmic
+[21:45:50] *** Joins: Skids (ejd@Pony-fej07d.res.rr.com)
+[21:50:16] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[21:50:46] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "switching machines, back in a bit")
+[21:56:01] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Connection closed)
+[21:56:56] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[21:58:25] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[21:59:40] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[22:00:39] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[22:02:12] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[22:03:01] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[22:03:59] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[22:04:05] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[22:05:18] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[22:05:21] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[22:06:51] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[22:07:04] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[22:08:23] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[22:08:40] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[22:09:46] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[22:09:57] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[22:10:40] <Cosmic> chrome why do you suck so much
+[22:10:45] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[22:11:30] <HoneyDrops|Half> Because every web browser sucks.
+[22:11:33] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[22:12:17] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[22:12:23] <Cosmic> lately it's been loading pages either very very slowly, or they don't load at all if I'm not tabbed into them
+[22:12:35] *** Quits: Phase (Phase4@Pony-l23b6v.internode.on.net) (Ping timeout: 121 seconds)
+[22:13:04] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[22:13:15] <HoneyDrops|Half> "The piece takes a Microsoft-friendly point of view, arguing that all Microsoft is doing is either helpful or already being done either by Google or older releases of Windows"  Because "Jimmy is doing it too" makes it alright now?! :I
+[22:14:07] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[22:14:13] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[22:15:24] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[22:15:46] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[22:17:12] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[22:17:20] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[22:18:49] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[22:18:54] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[22:20:13] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[22:20:24] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[22:21:46] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[22:22:01] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[22:23:20] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[22:23:31] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[22:24:46] <HoneyDrops|Half> https://www.theverge.com/2015/8/23/9191989/windows-privacy-and-you  "Your password is never visibly shared. Windows will send an encrypted form of the password to your friends with Wi-Fi sense compatible devices which will then automatically set up the connection; The password is never viewable by anyone." *facehoofs*  I don't know if this is ignorance or stupidity...
+[22:24:47] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[22:24:48] <PinkiePieBot> [ Windows, Privacy, and You | The Verge ]
+[22:24:54] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[22:25:10] *** Cepheid is now known as Cephy-shower
+[22:26:13] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[22:26:25] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[22:27:45] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:27:45] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[22:28:01] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[22:29:19] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[22:29:29] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[22:30:48] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[22:30:54] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[22:32:13] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[22:32:24] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[22:32:34] <Colgate> microsoft would have to be incredibly stupid to think that's how that works
+[22:32:45] <Colgate> and I don't believe they are that stupid, I blame their marketing department
+[22:33:23] <wolfyshy> For networks you choose to share access to, the password is sent over an encrypted connection and is stored in an encrypted file on a Microsoft server, and is then sent over an HTTPS connection to your contacts' PC or phone if they use Wi‑Fi Sense.
+[22:33:33] <wolfyshy> nope, they really believe that
+[22:33:45] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[22:34:01] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[22:35:00] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[22:35:00] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[22:35:00] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[22:36:17] <HoneyDrops|Half> Oh, I fully believe that it's encrypted as it is sent to the MS server, is encrypted on the MS server, and is encrypted as sent to the other system.  But I'm also damn sure that the other system has to decrypt it at some point to /use it/.  I also know that means it has the ciphertext and they key needed to access it, there is no way around this.  I similarly have little-to-no faith that MS
+[22:36:18] <HoneyDrops|Half> has set it up such that they can never access the credentials, even if compelled to.
+[22:37:09] <wolfyshy> HoneyDrops|Half: wpa2 sends hashes, so it would not need to be decrypted, but that is... saying you can't see the passphrase itself is moot
+[22:40:03] *** init3 is now known as Init3-away
+[22:42:07] <HoneyDrops|Half> Really the entire model for wifi security is broken, the notion that you have a single key for everyone makes it impossible to do per-user access revocation.  The proper way is a wifi client should share a key, out of band, and the admin of the access point adds that public key to the approved clients list.  Now, a client can share their private key, but it makes it easy to revoke access to
+[22:42:09] <HoneyDrops|Half> just that user and other users don't have to take any action and their access is not disrupted.  Unlike WPA2 where if someone leaks the key, you have to change it and then everyone has to do so as well... and you're one leak away from having to reset everything again :/
+[22:42:56] *** gigatown is now known as Gigabit
+[22:44:03] <Colgate> HoneyDrops|Half: uh, radius solves that problem, and some routers have local radius servers
+[22:44:04] <HoneyDrops|Half> This has the other bonus of, if you want to share access with a friend, they could give you their public key (via a service very similar to MS's) and you could petition the admin to add their key for approval.  It's easy for the user who wants to connect, and the admin still has control over who has access.
+[22:44:40] <Colgate> 802.1x whee
+[22:45:33] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[22:47:06] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[22:48:02] <HoneyDrops|Half> So we have a solution, but it's not used everywhere, be default? -_-
+[22:48:10] <HoneyDrops|Half> s/be/by/
+[22:48:37] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[22:49:52] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[22:50:14] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[22:50:15] <Colgate> people don't want it
+[22:50:26] <Colgate> a password for each person? user management? that's a lot of work
+[22:51:15] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[22:51:45] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[22:52:48] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[22:53:09] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[22:54:19] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[22:54:28] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[22:55:52] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[22:55:56] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[22:57:15] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[22:57:27] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[22:58:47] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[22:59:01] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[23:00:20] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[23:00:33] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[23:01:25] *** Cephy-shower is now known as Cepheid
+[23:01:30] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[23:01:56] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[23:01:59] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[23:02:53] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[23:03:26] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[23:03:52] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[23:04:47] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[23:05:24] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[23:06:11] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[23:06:51] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[23:07:14] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[23:08:14] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[23:08:31] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[23:09:44] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[23:10:06] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[23:11:17] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[23:11:32] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[23:12:49] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[23:12:55] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[23:14:12] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[23:14:23] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[23:15:44] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[23:15:59] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[23:17:17] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[23:17:30] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[23:18:44] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[23:18:53] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[23:19:28] <Moonlightning> HoneyDrops|Half: I'm looking at setting up RADIUS on my home network.
+[23:20:23] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[23:20:38] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[23:20:52] <MorningSong> ColtonDRG: fixitfixitfixit
+[23:21:54] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[23:22:10] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[23:23:37] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net) (Ping timeout: 121 seconds)
+[23:23:41] <Moonlightning> Lapsus! Laaaaaapsuuuuuuuss!
+[23:23:43] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[23:23:56] <Lapsus> freaking again
+[23:23:56] <Lapsus> lol
+[23:24:23] <MorningSong> Yea
+[23:24:25] <MorningSong> it's annoying
+[23:24:58] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d210b8.mpls.qwest.net)
+[23:25:15] *** Lapsus sets mode: +b *!coltondrg@*.*
+[23:25:19] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[23:25:48] *** ColtonDRG-Core was kicked by Lapsus (Fix your flappy connection <3)
+[23:25:55] *** ColtonDRG-Core_ was kicked by Lapsus (Lapsus)
+[23:25:58] *** ColtonDRG-Core__ was kicked by Lapsus (Lapsus)
+[23:28:01] <Moonlightning> We need a thing that detects those
+[23:29:51] <wolfyshy> we do, he was already Z-Lined once
+[23:30:51] <Moonlightning> …maybe it needs to be configured more strictly, then?
+[23:31:13] <Moonlightning> 'cos /look at all that spam/
+[23:41:04] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[23:47:14] *** Creeps|AFK is now known as RedHelper
+[23:47:56] <Colgate> Moonlightning: we get enough people with flaky connections that get hit by it already :P
+[23:48:05] <Colgate> that send in emails etc. etc.
+[23:52:03] <Seoson> They should really use a bouncer. I'd not connect to an IRC network using my phone for example without it :P
+[23:54:00] <ShivalWolf> so windows 95 is 20 years old yesterday/today
+[23:54:01] <ShivalWolf> lets all install it for the memories
+[23:54:51] <DJ-C0L7[EIT]> i think i still have a '95 VM floating around someware
+[23:56:12] <ShivalWolf> and now the depressing thought that there are probably people in this channel not born until after 95 came out
+[23:56:40] <DJ-C0L7[EIT]> sad but true
+[23:59:34] <Gladiolus> I have a pentium 2 with 95 on it beside me
+[23:59:39] <Gladiolus> like literally two feet away lol
+[23:59:47] <Gladiolus> First generation AGP/USB system from late 1997

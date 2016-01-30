@@ -1,0 +1,492 @@
+[00:12:56] *** Joins: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP)
+[00:23:26] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Quit: Saliendo)
+[00:28:21] <Moonlightning> HoneyDrops: If I do have a DE, but I use its log out command instead of any lockscreen, am I good, or do I need to reboot the box or something to be sure? X.X
+[00:37:16] *** zz_CyberJacob is now known as CyberJacob
+[00:37:44] *** GigaWork is now known as Soarin
+[00:37:49] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[00:38:47] <JustAberrant> Moonlightning: depends on a great many things
+[00:39:04] <JustAberrant> Moonlightning: if your using a display manager, chances are your DE exits out to that
+[00:39:12] <JustAberrant> Moonlightning: in which case, you're probably fine
+[00:39:18] <JustAberrant> * login manager
+[00:39:37] <Moonlightning> probably.
+[00:39:44] <JustAberrant> if you launched with startx, you'll probably be dropped back into your TTY, in which case, you should probably log out
+[00:39:57] <Moonlightning> yeah I'll be using a DM
+[00:40:08] <Moonlightning> LM *
+[00:40:11] <JustAberrant> (also if you launched with startx, someone could switch to that term and ctrl+c your x session) ;p
+[00:54:01] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:59:45] *** init3 is now known as Init3-away
+[01:07:11] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[01:08:50] *** Joins: GBCrash (GumballCras@Pony-svbp6u.nh.comcast.net)
+[01:11:14] *** Quits: Gumball_Crash (GumballCras@Pony-svbp6u.nh.comcast.net) (Ping timeout: 121 seconds)
+[01:17:26] *** Init3-away is now known as init3
+[01:26:44] <Colgate> startx;logout
+[01:27:51] <JustAberrant> hmm
+[01:28:11] <JustAberrant> ctrl+Z :>
+[01:28:20] <JustAberrant> but yeah
+[01:28:34] * JustAberrant does startx cause I hate login managers and I don't really care :>
+[01:28:58] <JustAberrant> I have VT switching turned off, but if you could manage to crash X you'd have full access to my stuff
+[01:29:46] <Colgate> hmm, didn't think about backgrounding hah
+[01:29:56] * Colgate shrugs
+[01:30:16] <Colgate> getting physical access to a powered on and logged in machine is basically full access anyways
+[01:30:49] <JustAberrant> not necessarily.. I mean, FDE + a lock screen is pretty secure assuming X crashing results in no access to a terminal
+[01:30:53] <Moonlightning> thread models though
+[01:31:14] <Moonlightning> I can press these key combos I found via Google vs I can take this laptop apart while it's running and hack the RAM
+[01:31:20] <Colgate> read from memory :P
+[01:31:26] <Moonlightning> thread models though
+[01:31:30] <Colgate> threat*
+[01:31:35] <Moonlightning> threat *, yes
+[01:31:45] <JustAberrant> Colgate: well sure, but that isn't the most accessible attack ;p
+[01:31:46] <Colgate> good enough to make it so some random person isn't going to get in
+[01:32:01] <Moonlightning> Anyone know how to get DA's sta.sh. thing to just serve me a damn file?
+[01:32:04] <Colgate> that's all I'm looking for from a powered on computer
+[01:32:24] <Moonlightning> the download button results in it serving me a short HTML document redirecting back to the file page with the download button on it
+[01:33:26] *** Joins: nscoots (FreyGrimrod@Pony-d2dtai.sub-70-192-35.myvzw.com)
+[01:36:11] <Moonlightning> …oh, I think it wanted cookies
+[01:36:17] <Moonlightning> fucking cookies, man, just serve me the damn file
+[01:36:33] <Moonlightning> you have a timestamp and a token in the fucking query string; you don't need COOKIES, /too/
+[01:37:29] <JustAberrant> that doesn't help with tracking over the long term though :(
+[01:40:17] <Seoson> Yeah you also need flash cookies, a faked image to cache attacks, silverlight cookies, local storage objects .... ah ... browser history recognition, browser fingerprinting: did I miss something?
+[01:42:28] <Moonlightning> Given a huuuuuge .png, how do I make one specific part of it into a color palette?
+[01:42:34] *** Soarin is now known as Gigabit
+[01:43:03] <Seoson> Load it into a photoshop like program and use the color picker tool?
+[01:44:08] <Moonlightning> Without one. Come on, seriously…
+[01:44:11] <Seoson> You could also use a dedicated color picker like COPI Colorpicker(German) or WinSpy (German, for programmers)
+[01:44:12] <Gigabit> Rome total war needs dx9, I have higher then that and the game wont launch XD
+[01:44:52] <Seoson> Sadly I don't know any similar english program
+[01:47:04] <HoneyDrops> Moonlightning: imagemagick surely can do it?
+[01:47:43] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[01:47:49] <HoneyDrops> You just want to extract the RGB value at a specific px coordinate?
+[01:48:12] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[01:48:41] <HoneyDrops> Moonlightning: http://www.imagemagick.org/discourse-server/viewtopic.php?t=12989
+[01:48:42] <PinkiePieBot> [ Looking for fast way to extract pixel values - ImageMagick ]
+[01:49:01] <Moonlightning> Thanks, HoneyDrops
+[01:49:20] <HoneyDrops> np
+[01:49:38] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Connection closed)
+[01:49:58] *** Joins: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile)
+[01:57:34] *** CyberJacob is now known as zz_CyberJacob
+[02:03:05] <Moonlightning> …well that was easy
+[02:03:43] <Moonlightning> count how many times each color appears
+[02:03:47] <Moonlightning> colors 2..5 are the ones I want
+[02:03:51] *** Joins: Asoka_White (Asoka@Pony-mkfbik.net-htp.de)
+[02:03:55] <Moonlightning> color 1 was #ffffff :p
+[02:07:04] *** Quits: Asoka (Asoka@Pony-dv0nh1.net-htp.de) (Ping timeout: 121 seconds)
+[02:10:37] <Compu> ish a choo choo http://imgur.com/gallery/MBrke
+[02:10:38] <PinkiePieBot> [ choo choo - Album on Imgur ]
+[02:16:29] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[02:23:16] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Quit: Leaving)
+[02:23:33] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[02:26:52] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[02:26:53] <Moonlightning> Working on an svg to use as a background image
+[02:27:41] <Moonlightning> `stroke-linecap: square` doesn't seem to be having any effect in <rect:style>
+[02:29:04] <Webster> Well, a rectangle doesn't have ends to cap.
+[02:29:51] <Moonlightning> …oh. *facehoof*
+[02:30:11] <Webster> At least I assume not.
+[02:30:12] <Moonlightning> Welllll…the stroke is kind of…clopping, through the edge of the image?
+[02:30:15] <Moonlightning> It kinda gets cut off.
+[02:30:26] <Moonlightning> You can especially see it with the stripe in the middle
+[02:31:11] <Moonlightning> …actually, I'm not sure I want to use stroke for this
+[02:31:29] <Moonlightning> I think I'll just break these out into separate rectangles. Never mind.
+[02:36:58] <Lapsus> clopping through the edge of the image?
+[02:37:06] <Moonlightning> …clipping *
+[02:37:12] <Lapsus> aw :p
+[02:37:23] <Moonlightning> anyway, what would be /really/ nice is if I could say “make this rectangle 1920x1080, but cut it off 24px from the top and bottom and show what's underneath”
+[02:40:31] <Moonlightning> Layering is just, whatever comes first goes on the bottom, and subsequent things get stacked on top of everything else, yeah?
+[02:40:34] <Webster> Can you do 'margin:24px 0 24px 0' with it? I always forget which bits it supports or not.
+[02:40:48] <Webster> Unless you mess with the z-layer settings.
+[02:42:07] <Moonlightning> Maybe.
+[02:43:04] <Moonlightning> nope, no `margin`
+[02:44:03] <Moonlightning> I can't figure out why the stripe in the middle isn't behaving
+[02:44:32] <Moonlightning> The darker <rect> has a larger height value and a lower y value
+[02:44:44] <Moonlightning> So it should start farther up and end farther down than the lighter <rect>
+[02:45:04] <Moonlightning> yet…no matter what I've done, I've never been able to see them overlap. I always only see one of the brown stripes or the other, never both at once
+[02:46:06] <Moonlightning> https://www.blackl.net/caramel-background.svg
+[02:46:19] <Moonlightning> You can open it with a text editor. It's six lines. :p
+[02:48:04] <Webster> I see dark yellow, yellow, brown, yellow, dark yellow.
+[02:49:11] <Moonlightning> Yeah.
+[02:49:42] <Moonlightning> It's supposed to go short dark yellow, yellow, short dark brown, brown, short dark brown, yellow, short dark yellow
+[02:49:51] <Moonlightning> the darker versions being outline colors
+[02:50:02] <Webster> The third is on top of the second?
+[02:50:12] <Moonlightning> …OHHHHHHHHHHH.
+[02:50:16] * Moonlightning derps hard.
+[02:50:36] <Moonlightning> duh. how'd I not catch that?
+[02:50:59] <Moonlightning> YAY~
+[02:51:04] <Webster> Ctrl+Shift+I and you can check the elements that way.
+[02:51:15] <Webster> Might be different in Firefox.
+[02:51:16] <Moonlightning> I actually just realized that
+[02:51:29] <Moonlightning> yeah, option-command-i
+[02:51:44] <Moonlightning> Anyway. Now I get to sort out making a SLiM theme :D
+[02:52:22] <Moonlightning> This should REALLY not be that hard. All it is is a background and a logo. >.>
+[03:09:23] *** Joins: nscoots1 (FreyGrimrod@Pony-d2dtai.sub-70-192-35.myvzw.com)
+[03:10:20] *** Quits: nscoots (FreyGrimrod@Pony-d2dtai.sub-70-192-35.myvzw.com) (Ping timeout: 121 seconds)
+[03:12:57] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Connection closed)
+[03:13:57] *** nscoots1 is now known as nscoots
+[03:14:57] *** Quits: nscoots (FreyGrimrod@Pony-d2dtai.sub-70-192-35.myvzw.com) (Connection closed)
+[03:16:01] *** Joins: nscoots (FreyGrimrod@Pony-d2dtai.sub-70-192-35.myvzw.com)
+[03:20:40] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[03:21:15] *** MistVeil is now known as Mist|Gaming
+[03:32:13] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[03:47:48] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[03:53:21] <Moonlightning> hmm
+[03:54:14] <Moonlightning> seems SLiM doesn't resize the panel image
+[03:59:05] <Moonlightning> Uh…okay, I got it /close!/
+[03:59:26] <Moonlightning> Background's good, cutie mark's good…but I'm missing the textbox. xD
+[04:02:34] <JustAberrant> Compu: :)
+[04:11:21] <Compu> JustAberrant: nya?
+[04:16:10] *** Joins: MorningSong (Dusk@dusky.horse)
+[04:17:22] *** Quits: Dusk (Dusk@dusky.horse) (Quit: Sorry...)
+[04:18:43] *** Quits: Lorix_ (Lorix_@flutter.shy.yay) (Ping timeout: 121 seconds)
+[04:19:14] *** Joins: Lorix_ (Lorix_@Pony-ahk.n7v.237.192.IP)
+[04:19:21] *** Lorix_ is now known as Pony_80871
+[04:19:36] <Moonlightning> I think I have to make the cutie mark part of the background image itself
+[04:20:44] <Webster> No idea what you're doing, but it's probably the easier way.
+[04:20:50] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[04:24:49] <Moonlightning> …no, wait, I can keep it part of the panel…
+[04:25:20] <Moonlightning> Okay, I'll just take the default panel image, overpaint the Gentoo logo with transparency, and stick the cutie mark on top.
+[04:29:32] *** Kinsley is now known as PrincessCelestia
+[05:02:20] *** init3 is now known as Init3-away
+[05:10:09] <Moonlightning> How do you erase part of an image in imagemagick X.X
+[06:03:58] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[06:04:33] *** Quits: nscoots (FreyGrimrod@Pony-d2dtai.sub-70-192-35.myvzw.com) (Ping timeout: 121 seconds)
+[06:14:11] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[06:14:22] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Connection closed)
+[06:49:41] *** Cosmic|sleep is now known as Cosmic
+[07:24:59] *** Blackjack is now known as AppleDash
+[07:25:45] <Googie> Apparently, my peak download speed is 3,384,731,648GB/s according to Steam
+[07:25:50] <Googie> I think it got a bit faster recently.
+[07:26:15] <Gigabit>  Is that all? ;p
+[07:26:35] <AppleDash> Googie: Nice
+[07:27:10] <Googie> It's great. Now the download speed chart is scaled to take that into account.
+[07:27:25] <Googie> There's just a single pixel stretching across the screen.
+[07:27:28] <AppleDash> lol
+[07:29:43] *** Joins: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[07:31:57] *** Quits: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[07:32:56] <HoneyDrops> o_O
+[07:35:32] *** Joins: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[07:35:45] <Moonlightning> Googie: that's like saying a billion kilometers
+[07:36:06] <Moonlightning> why do we even have the prefixes if you're not going to use them??
+[07:36:20] <Moonlightning> 3.38 EB/s *
+[07:36:23] *** Quits: Mist|Gaming (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[07:36:24] <Colgate> because everyone knows what a kilometer is
+[07:36:43] <Colgate> nobody knows what a terameter is
+[07:36:51] <Googie> To be fair, I doubt Steam's UI was designed to handle bandwidth in the > 1TB/s range :V
+[07:37:25] <Moonlightning> Googie: aren't there libraries for this? :V
+[07:38:28] *** Quits: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[07:39:08] <Moonlightning> Colgate: well, then, forgo the SI prefixes and use the multipliers instead
+[07:39:12] <Googie> I wonder. I mean, sure there's libraries. But LGPL libraries that Steam is already using (because adding in a whole library just for that is kinda overkill)
+[07:39:15] <Moonlightning> one trillion meters.
+[07:39:36] <Googie> *Steam might not already be using any cross platform libraries with that functionality.
+[07:47:06] <Moonlightning> Yeesh. This took way too long, both to make and to get a screenshot of
+[07:47:15] <Moonlightning> https://www.blackl.net/caramel-login-gui.png
+[07:47:33] <Moonlightning> (a1:9e:64:b8:27:23:f7:53:ac:5b:50:ff:86:ae:2f:a0:2c:08:eb:ca:7c:fe:90:68:8a:42:7e:90:10:de:2c:aa)
+[07:48:28] <AppleDash> Nobody cares
+[07:49:59] <MorningSong> ?
+[07:50:04] <MorningSong> I like the idea
+[07:50:12] <Moonlightning> :D
+[07:50:12] * HoneyDrops will always user startx (or xinit).
+[07:50:16] <Moonlightning> take that, MorningSong
+[07:50:22] <Moonlightning> err
+[07:50:24] <Moonlightning> take that, AppleDash *
+[07:50:28] * Moonlightning is clearly too tired.
+[07:50:31] <HoneyDrops> s/user/use/
+[07:50:31] <MorningSong> lol
+[07:50:35] <AppleDash> Nobody cares about your SSL cert I mean
+[07:50:38] *** Cosmic is now known as Cosmic|sleep
+[07:50:38] <AppleDash> or its fingerprint
+[07:51:07] <MorningSong> oh
+[07:51:33] <AppleDash> MorningSong: don't turn off your computer
+[07:51:40] <MorningSong> Are you going to get an actual one?
+[07:51:45] <MorningSong> AppleDash: what?
+[07:51:47] <MorningSong> Why?
+[07:51:48] *** Gigabit is now known as Snoarin
+[07:51:52] <AppleDash> MorningSong: That's what Windows 8 had to say
+[07:51:53] <AppleDash> :P
+[07:52:00] <Moonlightning> MorningSong: they're expensive X.X
+[07:52:06] <MorningSong> Nuuh
+[07:52:12] <MorningSong> Go get one from wosugn
+[07:52:14] <AppleDash> https://buy.wosign.com/free/
+[07:52:14] <MorningSong> Free.
+[07:52:17] <PinkiePieBot> [ 沃通数字证书在线申请 WoSign数字证书:SSL证书 | 代码签名证书 | EV SSL证书 | OV SSL证书 | DV SSL证书 | 2048位服务器证书,全球通用, 支持所有浏览器和服务器, 全面支持中文和中文域名! ]
+[07:52:29] <MorningSong> wosign*
+[07:52:35] <Moonlightning> Let's Encrypt isn't public yet; CACert isn't browser-trusted anymore; the other one is shite
+[07:52:42] <Moonlightning> not revoking for Heartbleed and such
+[07:53:02] <MorningSong> wosign doesn't?
+[07:53:22] <Moonlightning> wait, is this CA actually legit?
+[07:53:25] <MorningSong> yes
+[07:53:35] <Moonlightning> Browser-trusted and everything?
+[07:53:36] <MorningSong> They ride on Startcom's intermediate certs
+[07:53:38] <MorningSong> mhm
+[07:53:55] <AppleDash> Yes
+[07:54:04] <AppleDash> And user-trusted too, by Colgate, I, and MorningSong
+[07:54:18] <MorningSong> Mmm
+[07:54:31] <MorningSong> Their site has gotten better too
+[07:54:39] <MorningSong> The english one that is
+[07:54:44] <Moonlightning> huh.
+[07:56:29] <Colgate> Moonlightning: only issue with wosign is android 4.X and older won't trust it
+[07:56:35] <Colgate> every other modern thing will
+[07:56:40] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[07:56:45] <tiwake> what are you guys talking about?
+[07:56:51] <Colgate> if you just want a cert signed, bam, there you go
+[07:57:06] <MorningSong> They're pretty good about getting it to you in <6 hours
+[07:57:16] <Googie> What's their revocation policy ?
+[07:57:20] <MorningSong> I think I've only had one cert take more than that and it was like waiting a day
+[07:57:28] <Colgate> Googie: no fee
+[07:57:55] <MorningSong> Yea it's no fee which is nice
+[07:57:58] <AppleDash> I've revoked certs with no issue
+[07:58:01] <Moonlightning> > Format of Email is not correct
+[07:58:02] <Colgate> I revoked a cert to test it
+[07:58:10] <Moonlightning> clearly, you haven't read the mail RFC :V
+[07:58:19] <Colgate> clearly the mail RFC is drconic
+[07:58:20] <AppleDash> What email are you using?
+[07:58:22] <Colgate> draconic*
+[07:58:23] <MorningSong> what email are you using?
+[07:58:31] * AppleDash bites MorningSong
+[07:58:33] <Moonlightning> draconic?
+[07:58:34] <MorningSong> ouch
+[07:58:36] <AppleDash> :D
+[07:58:37] <Moonlightning> no; it's permissive
+[07:58:48] <AppleDash> Moonlightning: You don't expect anyone to actually use that massive like 100 line regex
+[07:58:54] <AppleDash> to validate emails
+[07:59:26] <Colgate> sorry, but I see no problem with restricting email address to domain characters :P
+[07:59:28] <Moonlightning> AppleDash: no; I expect people to use a library function to validate emails. :V
+[07:59:36] <AppleDash> JS doesn't have one of those.
+[07:59:50] <Moonlightning> Then…don't use Js? :V
+[08:00:08] <AppleDash> Then what are we going to use to validate emails on the client end?
+[08:00:09] <Colgate> so, you want code to run in browser, without javascript
+[08:00:10] <Colgate> good luck!
+[08:00:15] <MorningSong> ^
+[08:00:18] <Colgate> maybe they will run your java appler
+[08:00:20] <Colgate> applet*
+[08:00:25] <AppleDash> lol
+[08:00:30] <Moonlightning> AppleDash: you don't; you do validation server-side. 9.9
+[08:00:46] <Colgate> client side verification is more user friendly anyways
+[08:00:51] <Moonlightning> Or just hammer out a quick RFC-compliant parser.
+[08:00:53] <AppleDash> Show me the stdlib function in Python for email validation
+[08:00:54] <AppleDash> please
+[08:01:07] <AppleDash> Or show me the one in Ruby
+[08:01:18] <AppleDash> PHP has one but it has everything and you shouldn't use it
+[08:01:25] <Googie> Email address syntax is really really complex.
+[08:03:42] <Googie> IIRC it's actually impossible to parse using a traditional regex
+[08:04:46] <Moonlightning> AppleDash: https://docs.python.org/3/library/email.util.html#email.utils.parseaddr
+[08:04:46] <PinkiePieBot> [ 19.1.12. email.utils: Miscellaneous utilities — Python 3.5.0 documentation ]
+[08:04:47] <Moonlightning> :V
+[08:05:44] <AppleDash> Uhh
+[08:05:49] <AppleDash> That does not do what you think
+[08:06:10] <AppleDash> That converts AppleDash <derp@derpy.fr> to ("AppleDash", "derp@derpy.fr")
+[08:06:43] <Googie> A classic example is that email addresses support /nested/ comments.
+[08:07:27] <AppleDash> https://gist.github.com/AppleDash/daeb703c6070c47dc013
+[08:07:28] <PinkiePieBot> [ gist:daeb703c6070c47dc013 · GitHub ]
+[08:07:29] <AppleDash> Moonlightning: ^
+[08:08:06] <Moonlightning> le sigh
+[08:08:20] <AppleDash> Hmm?
+[08:08:22] <Moonlightning> let me look up the motherfucking RFC for this
+[08:08:45] <Googie> Incidentally, that Perl module posted states (in its documentation) that it isn't fully complete.
+[08:08:54] <Moonlightning> RDC 2822, yes?
+[08:08:57] <Moonlightning> RFC *
+[08:08:58] <Googie> "The specification for an email address allows for infinitely nestable comments. That's nice in theory, but a little over done. By default this module allows for one (1) level of nested comments."
+[08:10:16] <AppleDash> I just go for the ([^ ]+@[^ ]+\.[^ ]{2,}) or something like that
+[08:10:24] <AppleDash> It will do for most email addresses anyone will enter
+[08:10:47] <Moonlightning> or how about just do basic fuckkin' sanity checks and VRFY
+[08:10:56] <AppleDash> VRFY?
+[08:11:02] <Moonlightning> anyway, if you'll excuse me, I was trying to get shit done over here
+[08:11:10] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:11:54] <Googie> (Also VRFY is often disabled)
+[08:13:06] *** Cloud_Kicker is now known as LightningCrash
+[08:13:12] *** zz_CyberJacob is now known as CyberJacob
+[08:13:41] <AppleDash> Have fun with that
+[08:13:54] *** CyberJacob is now known as zz_CyberJacob
+[08:14:35] <Moonlightning> AppleDash: yeah, I don't feel like reading all this legalese for one month of certificate
+[08:14:39] <Moonlightning> fuckkin' deal with the temporary.
+[08:14:45] <AppleDash> You don't need to read anything?
+[08:15:06] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[08:15:21] <Moonlightning> This isn't like signing up for a Gmail account. Domain has my address on it for Luna's sake
+[08:15:27] <AppleDash> Aaand?
+[08:15:35] <AppleDash> You're not giving them access to your domain
+[08:15:37] <Moonlightning> I'm not going to take this lightly.
+[08:16:04] *** Quits: GeekBrony (GB@bronydom.net) (A TLS packet with unexpected length was received.)
+[08:16:04] *** Quits: sleumas2k (sleumas2000@my.little.karaoke) (A TLS packet with unexpected length was received.)
+[08:16:19] <Moonlightning> You have SSH access, anyway, so I have no idea why you're complaining -.-
+[08:17:18] <AppleDash> I do?
+[08:17:40] <Moonlightning> …you did, at least. You could still.
+[08:17:46] <AppleDash> lol
+[08:17:57] <Colgate> not sure why you're concerned about them having your address
+[08:18:06] <Colgate> it is in whois anyways
+[08:19:15] *** zz_CyberJacob is now known as CyberJacob
+[08:19:21] <AppleDash> Nope, Moonlightning
+[08:19:22] <Moonlightning> No it's not. >.>
+[08:19:23] <AppleDash> I do not
+[08:20:23] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:24:50] <tiwake> https://www.indiegogo.com/projects/flybi-first-drone-with-virtual-reality-goggles/x/9222319#/story
+[08:24:52] <PinkiePieBot> [ FLYBi - First Drone with Virtual Reality Goggles | Indiegogo ]
+[08:25:36] <tiwake> thats rather expensive though
+[08:25:50] <tiwake> hmm, probably uses a lot of bandwidth, wirelessly
+[08:26:49] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[08:27:30] <Googie> Latency is also a huge issue.
+[08:27:46] <Googie> At least depending on the implementation
+[08:28:12] <tiwake> I would guess it uses wireless AB or something
+[08:28:37] <tiwake> if not... I cant imagine the video would be worth anything at all
+[08:29:15] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[08:29:18] <tiwake> unless it compresses the video on the fly, but that adds a lot of latency
+[08:29:44] <tiwake> (heh... on the fly)
+[08:30:54] <tiwake> well, I just threw in $25 to this https://www.indiegogo.com/projects/them-s-fightin-herds/x/9222319#/story
+[08:30:56] <PinkiePieBot> [ Thems Fightin Herds | Indiegogo ]
+[08:33:02] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[08:33:14] * Moonlightning gives PinkiePieBot a bowl of apostrophes.
+[08:40:36] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:41:24] *** CyberJacob is now known as zz_CyberJacob
+[08:50:34] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[08:53:57] <Colgate> 1. windows only, 2. closed source, 3. don't like fighting games, :P
+[08:54:41] <Moonlightning> …wait, what?
+[08:55:09] <Colgate> what?
+[08:55:19] <Moonlightning> TFH is Windows only?!
+[08:55:34] <Colgate> the very first sentence
+[08:55:36] <Colgate> Them’s Fightin’ Herds is a 2D PC (Windows) fighting game...
+[08:55:49] <Moonlightning> well shit
+[08:58:05] <Moonlightning> I was getting all excited, too…
+[08:58:11] * Moonlightning sighs.
+[08:59:50] * HoneyDrops hugs Moonlightning.
+[09:00:18] * Moonlightning hugs HoneyDrops back.
+[09:00:28] <Compu> Colgate: has u seen da choo choo? http://imgur.com/gallery/MBrke
+[09:00:29] <PinkiePieBot> [ choo choo - Album on Imgur ]
+[09:01:49] *** Quits: ShivalWolf (ShivalWolf@2400:d400:9:7375:abcd::2) (Ping timeout: 121 seconds)
+[09:03:43] <AppleDash> That is indeed a train
+[09:03:49] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:05:57] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "night everypony")
+[09:06:53] <Compu> AppleDash: its a good choo choo
+[09:07:14] <Colgate> Compu: it is a train, anything special about it?
+[09:07:50] <Compu> Colgate: i took pictures of it with my phone while it was stopped and waiting for a train to come through the other direction ^_^
+[09:09:05] * Colgate sees trains all the time, lives by the tracks :P
+[09:09:28] <Colgate> well, maybe I don't see them all the time, but I hear them often enough
+[09:09:35] <Compu> i live about half a mile from tracks in a small town
+[09:28:06] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:31:44] *** Joins: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[09:34:00] *** Quits: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[09:43:04] *** Joins: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[09:46:00] *** Quits: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[09:49:06] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[09:53:57] *** Joins: GeekBrony (GB@bronydom.net)
+[09:54:43] *** Quits: GeekBrony (GB@bronydom.net) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[10:03:58] *** Joins: GeekBrony (GB@bronydom.net)
+[10:05:56] *** Joins: sleumas2000 (sleumas2000@my.little.karaoke)
+[10:06:15] *** Joins: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[10:08:31] *** Quits: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[10:11:15] <Compu> i put da choo choo on deviantart :D http://hotwheels14901.deviantart.com/art/choo-choo-D-562355953
+[10:11:16] <PinkiePieBot> [ choo choo :D by hotwheels14901 on DeviantArt ]
+[10:16:43] <JockeTF> Fancy!
+[10:20:29] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:37:44] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[10:44:38] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (Connection closed)
+[10:48:19] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[10:49:18] *** Awaykitty is now known as Unixkitty
+[10:54:19] <Moonlightning> > Duplicate
+[10:54:27] <Moonlightning> But does it reflink?
+[10:54:58] <Moonlightning> also, alas, the /make link/ command creates symlinks, not links
+[11:11:14] *** Init3-away is now known as init3
+[11:17:34] *** Joins: Phase (Phase4@Pony-d9rtg7.internode.on.net)
+[11:35:09] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[11:35:26] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[12:24:29] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[12:25:16] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Connection closed)
+[12:50:42] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[12:56:08] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[13:08:35] *** init3 is now known as Init3-away
+[13:09:07] *** Unixkitty is now known as Awaykitty
+[13:23:19] *** Awaykitty is now known as Unixkitty
+[13:54:27] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[13:59:30] *** Joins: RazorSharpFang (chatzilla@sharpest.of.all.fangs)
+[14:00:44] <RazorSharpFang> Still trying to make a mac virtual machine.
+[14:06:06] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[14:12:58] <Phase> RazorSharpFang, need apple hardware, or you can try one of the premade images
+[14:13:13] <RazorSharpFang> Phase: I can't afford apple hardware. : /
+[14:13:33] <RazorSharpFang> Otherwise I'd just get a legit mac.
+[14:33:31] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.never.fixed)
+[15:28:39] <Unixkitty> I'm fairly certain Hackintosh Zone ISO is made to work with Virtual Machines
+[15:28:57] <Unixkitty> http://www.macbreaker.com/2015/01/virtualbox-yosemite-zone.html
+[15:28:57] <PinkiePieBot> [ How to install OS X Yosemite in Virtualbox with Yosemite Zone ]
+[15:30:03] <RazorSharpFang> Unixkitty: I'm DLing Yosemite zone right now.
+[15:30:07] <RazorSharpFang> 3 hours remaining.
+[15:30:25] <Unixkitty> It's available on torrents for faster downloads
+[15:30:41] * RazorSharpFang is torrenting at 200kbps
+[15:30:52] <Unixkitty> That sounds rather slow
+[15:31:00] <RazorSharpFang> My internet is rather slow.
+[15:31:12] <Unixkitty> Oh, sorry
+[15:31:23] *** Quits: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP) (Connection closed)
+[15:32:13] <RazorSharpFang> My entire nation's internet can be described as slow.
+[15:44:11] <Moonlightning> Master of text pipes is flushing your streams~
+[15:44:21] <Moonlightning> Twisting your writes, blocking your reads~
+[15:44:37] <Moonlightning> Starvèd by me, you can't do a thing~
+[15:44:47] <Moonlightning> C'nect to my socket; I'll hear you ring~
+[16:21:25] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Quit: Leaving)
+[16:21:36] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[16:32:51] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[16:41:51] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[16:42:55] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:49:46] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[16:54:40] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[16:59:44] <roflin> master, master
+[16:59:47] <roflin> *shreds*
+[17:00:35] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[17:06:29] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[17:09:40] *** Joins: Crimson_Tail (Bluepon@Pony-krl4a1.cg80.k4gu.0151.2601.IP)
+[17:17:11] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "updates are bad enough, bad updates are even worse, brb restarting")
+[17:17:56] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[17:24:09] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[17:33:00] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[17:35:25] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[17:40:20] *** Joins: zeta_ (Bluepon@Pony-mfh7oq.md.comcast.net)
+[17:43:25] *** Quits: Crimson_Tail (Bluepon@Pony-krl4a1.cg80.k4gu.0151.2601.IP) (Ping timeout: 121 seconds)
+[17:43:55] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:44:50] *** zeta_ is now known as Crimson_Tail
+[17:49:39] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[17:50:01] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[18:08:56] *** Quits: Colgate (rabbit@brushie.horse) (Quit: Luna IRC 1.3. Praise the goddess of the night.)
+[18:09:41] *** Joins: Colgate (rabbit@brushie.horse)
+[18:21:01] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[18:52:34] *** Unixkitty is now known as Awaykitty
+[19:06:08] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Quit: Saliendo)
+[20:29:04] <johnsey> http://www.telegraph.co.uk/news/worldnews/australiaandthepacific/australia/11890275/Facebook-unfriending-can-constitute-workplace-bullying-Australian-tribunal-finds.html
+[20:29:05] <PinkiePieBot> [ Facebook 'unfriending' can constitute workplace bullying, Australian tribunal finds - Telegraph ]
+[20:31:21] <Colgate> wat
+[20:33:37] <Moonlightning> …
+[20:33:50] <Moonlightning> So, what, you can't ever unfriend anyone?
+[20:35:08] <Colgate> "Ms Roberts listed other claims of unfair treatment by Mrs Bird, who was accused of failing to say hello in the morning"
+[20:35:32] <Colgate> guess I am bullying a lot of people that I walk by at work since I don't say hellow
+[20:35:35] <Colgate> hello*
+[20:35:46] <Colgate> or "being unfair" I should say
+[20:48:18] <Moonlightning> yes, everyone needs to be a perfect goddamn social butterfly.
+[20:48:41] <Moonlightning> Let's jail all the ones who aren't and create a society of people who pretend to be happy.
+[20:49:03] <Moonlightning> Pretend like they're okay living with a permanent mask on
+[20:50:51] <Rylee> I'm fairly sure that you're reading into it in the most unreasonable way possible
+[20:51:00] <Rylee> but i mean you can have fun with that
+[20:51:55] <Moonlightning> No, this is ridiculous.
+[20:52:08] <Colgate> probably, but "unfriending" someone on facebook should not be part of the complaint, and definitely not validated
+[20:52:12] <Moonlightning> ^
+[20:52:26] <Moonlightning> And not saying hello in the mornings
+[20:52:29] <Moonlightning> give me a goddamn break
+[20:52:31] <Colgate> there might be other valid things in there, apparently they were giving out fliers to everyone but that person, sure ok, whatever
+[20:54:18] <Rylee> if you read it in the way that someone not looking for a newscorp spin would, you'd potentially think that the article is potentially talking around what most people would call "doing your best to exclude someone"
+[20:55:16] <Rylee> man my laptop charger is 20 miles away
+[20:55:18] <Rylee> please kill me
+[20:56:17] <Moonlightning> http://music.monstercat.com/track/manslaughter-vip-mix-2
+[20:56:19] <PinkiePieBot> [ Manslaughter (VIP Mix) | Monstercat ]
+[21:20:38] *** Init3-away is now known as init3
+[21:28:26] <AppleDash> I'm doing a big hack right now
+[21:28:43] <AppleDash> I'm going to make a script that lets me open irc:// URLs from firefox in weechat using the FIFO
+[21:28:44] <Colgate> uh oh
+[21:28:50] <AppleDash> :D
+[21:46:24] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:58:27] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:00:30] *** Joins: MistVeil (AndChat3408@Pony-n9r.6so.254.189.IP)
+[22:00:55] *** Parts: MistVeil (AndChat3408@Pony-n9r.6so.254.189.IP) ("Leaving")
+[22:06:02] *** Joins: MistVeil (AndChat3408@Pony-n9r.6so.254.189.IP)
+[22:09:01] *** Parts: MistVeil (AndChat3408@Pony-n9r.6so.254.189.IP) ("Leaving")
+[23:00:33] *** init3 is now known as Init3-away
+[23:08:47] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "be back later, talk to everypony later")
+[23:09:27] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[23:21:13] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[23:21:26] *** Init3-away is now known as init3
+[23:21:31] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[23:25:47] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[23:30:13] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[23:34:07] *** zz_CyberJacob is now known as CyberJacob
+[23:52:04] *** Joins: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP)
+[23:52:09] *** init3 is now known as Init3-away

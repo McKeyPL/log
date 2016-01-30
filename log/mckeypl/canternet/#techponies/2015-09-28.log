@@ -1,0 +1,460 @@
+[00:02:11] *** init3 is now known as Init3-away
+[00:04:10] <Cosmic|sleep> is anyone here good at photoshop?
+[00:06:16] *** Init3-away is now known as init3
+[00:07:29] <Rylee> friendly reminder https://i.imgur.com/eeq6han.png
+[00:07:35] <mniip> no but I can make a terrible attempt!
+[00:07:54] <Moonlightning> An X.509 certificate's fingerprint covers the entire certificate, right? Subject, issuer, timestamps, and all?
+[00:09:24] <mniip> Rylee, that was a good one
+[00:09:25] <Colgate> the entire cert in DER format
+[00:12:52] <Moonlightning> Rylee: Dat signature doe
+[00:13:00] <Colgate> oh, derp, I read that question wrong
+[00:13:03] <Colgate> you mean the x509 thing
+[00:13:07] <Colgate> that's just the public key
+[00:13:13] <mniip> so
+[00:13:23] <mniip> anyone here using x64 hexchat on windoze
+[00:13:32] <Moonlightning> > To any NSA and FBI agents reading my email: please consider whether defending the US consitution against all enemies, foreign or domestic, requires you to follow Snowden's example.
+[00:13:41] <Moonlightning> Colgate: I mean whatever gnutls|weechat shows 6_9
+[00:13:57] <Colgate> that's probably the former
+[00:14:13] <Moonlightning> The entire cert?
+[00:14:21] <Colgate> probably
+[00:19:42] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:24:15] *** mniip is now known as \m
+[00:28:16] *** \m is now known as mniip
+[00:28:22] <Moonlightning> Holy shit
+[00:29:05] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[00:29:11] <Moonlightning> AnthroChat's certificates are all timestamped from either 2005 or 2010
+[00:29:20] <Moonlightning> and expired in 2010, or will expire in 2022
+[00:29:51] <Moonlightning> They're also all signed with MD5 (except for snowleopard, which is SHA1)
+[00:30:04] <Moonlightning> which…doesn't change much because self-signed, but still
+[00:30:36] <Moonlightning> These people need Let's Encrypt :P
+[00:30:43] <Colgate> really doesn't matter what you self-sign with
+[00:30:56] <Moonlightning> But, I mean, come on.
+[00:31:12] <Colgate> you either trust the cert because you have a copy of the hash of the cert, or you don't
+[00:31:13] <mniip> self-signed != insecure
+[00:31:26] <Moonlightning> I know, mniip, and I'm all for the decentralized model
+[00:32:32] <mniip> interesting
+[00:33:37] <ShivalWolf> ahh the differnce between security and trust
+[00:33:51] <ShivalWolf> which is why certificates are a monopoly buisness modle
+[00:34:05] * mniip randomly checks the keybase graph between him and Moonlightning
+[00:34:23] <ShivalWolf> one day i will play around with keybase
+[00:34:56] <Moonlightning> What, visual graph?
+[00:35:03] <mniip> I tried to make a visual graph
+[00:35:07] <mniip> the data is too big
+[00:35:34] <mniip> one day I accidentally a botnet that crawls through keybase and records all tracking relations
+[00:36:05] <mniip> I've been processing that graph for 2 months now
+[00:36:19] *** init3 is now known as Init3-away
+[00:36:48] <ShivalWolf> back in my day we just trusted everyone damn it. *COUGH* SS7 *COUGH*
+[00:37:07] <mniip> http://i.imgur.com/PQ0zboh.png
+[00:37:26] <mniip> anyway, I have a tool like
+[00:37:40] <mniip> $ ./check blackl mniip
+[00:37:40] <mniip> blackl -> ariscop -> chris -> a2 -> jt -> ialexryan -> dwbond -> triclops200 -> mniip
+[00:37:53] <Moonlightning> o3o
+[00:37:56] <Moonlightning> Is that actually a thing? o3o
+[00:38:16] <mniip> I have 2 major questions
+[00:38:27] <mniip> why does it come through chris
+[00:38:41] <mniip> how did it happen that chris and triclops200 are related
+[00:38:43] <Moonlightning> I don't know any of these ponies, except for ariscop XD
+[00:38:58] <mniip> well chris is one of the creators of keybase
+[00:39:05] <Moonlightning> o.o
+[00:39:13] <Moonlightning> …also, what? I didn't sign any of these keys O.o
+[00:39:21] <mniip> you only signed ariscop's
+[00:39:26] <Moonlightning> I haven't published /any/ signatures o.O
+[00:39:27] <mniip> and ariscop tracks chris
+[00:39:34] <mniip> and chris tracks a2
+[00:39:35] <mniip> etc
+[00:39:54] <Colgate> what is this keybase? :P
+[00:39:57] <mniip> you've published 2 singatures
+[00:39:58] <Moonlightning> I tracked ariscop, but I didn't sign…
+[00:40:16] * Phase appears
+[00:40:20] <mniip> Colgate, a social network without posts, only followers
+[00:40:21] <Colgate> oh, nm, I remember this thing
+[00:40:32] <Phase> the pgp thing
+[00:40:45] <Phase> that doesn't have a keyserver and thus is unusable for email
+[00:40:59] <mniip> er?
+[00:41:43] <Colgate> I didn't find it useful because I don't use social media stuff
+[00:41:46] <Moonlightning> Er, what?
+[00:42:00] <Moonlightning> Why are you doing anything with keys that you don't have permanent copies of?
+[00:42:15] <Moonlightning> If you /need/ a keyserver to be able to encrypt to people you know, you're doing ti wrong
+[00:42:38] <Colgate> a keyserver to query on first send
+[00:42:45] <Phase> well the keybase tool doesn't have any way to pull keys into your local store
+[00:42:46] <Moonlightning> …oh! I have a domain now! o3o
+[00:42:59] <Moonlightning> Colgate: yes, and after that, save the key
+[00:43:13] <Phase> it's the getting the key into clients bit that's trouble
+[00:43:20] <Phase> of course you'd save it
+[00:44:30] <mniip> so uh
+[00:44:35] <mniip> anyone into algorithms
+[00:45:01] <mniip> I need an efficient digraph transitivity reduction algorithm
+[00:45:18] <mniip> preferably as low as the nowadays matrix multiplication complexity is
+[00:57:30] <Moonlightning> ;blackl.net.                    IN      TXT
+[00:57:30] <Moonlightning> blackl.net.             21599   IN      TXT     "keybase-site-verification=SYTcBGIshBP0_-zMdbPEd6u-ZfxPTMppFQMmYvb3q-I"
+[00:57:37] <Moonlightning> What's that number there?
+[00:58:24] <mniip> seconds until self-destruction
+[01:00:43] <Phase> Moonlightning, 21599
+[01:00:45] <Phase> :3
+[01:00:55] <AppleDash> Phase: 21600
+[01:00:56] <Moonlightning> What does it mean, though?
+[01:01:04] <Phase> TTL
+[01:01:12] * Moonlightning frowns.
+[01:01:16] <Moonlightning> But I set the TTL on that to one week!
+[01:01:48] <Moonlightning> 21599 is…six minutes, minus one second. :|
+[01:02:05] <Moonlightning> Er, six hours
+[01:02:08] <Moonlightning> Still
+[01:02:25] <Phase> and when did you last update it?
+[01:03:09] <Moonlightning> Just now.
+[01:03:22] <Moonlightning> I /added/ it just now.
+[01:09:50] *** Init3-away is now known as init3
+[01:10:59] *** Quits: Obaskyr (Tachy@Pony-7gk5bd.range86-191.btcentralplus.com) (Ping timeout: 121 seconds)
+[01:12:26] *** Joins: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP)
+[01:16:20] *** Quits: CrassyPaddles (test@Pony-ph1.enl.137.198.IP) (Ping timeout: 121 seconds)
+[01:19:53] *** Seoson is now known as Sour_Sweet
+[01:20:23] <AppleDash> Accidentally went to outube.com without the Y (would not recommend opening)
+[01:20:26] <AppleDash> Got this http://dash.sh/PZzaQNm
+[01:20:33] <AppleDash> Seems legit, aside from the fact I'm on Linux
+[01:20:59] *** Joins: RekttothePecs (test@Pony-ph1.enl.137.198.IP)
+[01:29:45] *** Quits: RekttothePecs (test@Pony-ph1.enl.137.198.IP) (Quit: Leaving)
+[01:29:59] *** Joins: CrassyPaddles (test@Pony-ph1.enl.137.198.IP)
+[01:39:53] *** init3 is now known as Init3-away
+[01:51:18] <Moonlightning> Hayyyy.
+[01:51:20] <Moonlightning> -rw------- 1 root bind 1777 Sep 27 23:40 Kblackl.net.+010+36293.private
+[01:57:02] *** Init3-away is now known as init3
+[02:02:20] *** Quits: Shutter (tips@why.did.you.even.rope.me.into.this) (cadance.canternet.org daring.canternet.org)
+[02:03:20] *** Quits: AutoLapsus (Lapsus@Totally.Is.A.Network.Service) (cadance.canternet.org cloudchaser.canternet.org)
+[02:03:20] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (cadance.canternet.org cloudchaser.canternet.org)
+[02:03:36] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[02:03:36] *** Joins: AutoLapsus (Lapsus@Totally.Is.A.Network.Service)
+[02:03:36] *** cloudchaser.canternet.org sets mode: +o AutoLapsus
+[02:03:37] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[02:04:06] *** Joins: Shutter (tips@why.did.you.even.rope.me.into.this)
+[02:10:32] *** Joins: Student-Gladiolus (uid110916@Pony-qjfks9.brockwell.irccloud.com)
+[02:11:31] *** Student-Gladiolus is now known as Gladiolus-3G
+[02:18:12] *** Quits: CrassyPaddles (test@Pony-ph1.enl.137.198.IP) (Ping timeout: 121 seconds)
+[02:29:27] *** init3 is now known as Init3-away
+[02:30:48] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[02:56:32] * DJ-C0L7[CSS] sighs
+[02:56:45] * Gladiolus-3G licks
+[02:56:52] * DJ-C0L7[CSS] squeaks
+[02:56:59] <Gladiolus-3G> owo
+[02:58:25] *** Joins: Asoka_White (Asoka@Pony-bn8bc7.net-htp.de)
+[03:01:05] * DJ-C0L7[CSS] noses
+[03:01:37] *** Quits: Asoka (Asoka@Pony-5kvs1v.net-htp.de) (Ping timeout: 121 seconds)
+[03:09:40] <DJ-C0L7[CSS]> this sucks, my jeep either A> has a partially blown head gasket, or B> i have a cracked cylinder head
+[03:14:00] *** Quits: Gladiolus-3G (uid110916@Pony-qjfks9.brockwell.irccloud.com) (Quit: )
+[03:37:23] *** Quits: seatsea (seatsea@Pony-h2k8ms.oak0.80rs.04f8.2a01.IP) (Ping timeout: 121 seconds)
+[03:39:06] *** Joins: seatsea (seatsea@Pony-umqblk.org)
+[03:40:57] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[03:45:33] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[04:02:21] *** Init3-away is now known as init3
+[04:16:59] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[04:43:20] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[04:43:36] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[04:48:54] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[04:53:16] *** Quits: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se) (Quit: Leaving.)
+[04:57:43] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[05:20:56] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Quit: network testing)
+[05:27:37] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[05:32:15] *** Joins: CrassyPaddles (test@Pony-gg1.enl.137.198.IP)
+[05:39:06] *** Quits: CrassyPaddles (test@Pony-gg1.enl.137.198.IP) (Ping timeout: 121 seconds)
+[05:39:57] *** init3 is now known as Init3-away
+[05:40:04] *** Joins: CrassyPaddles (test@Pony-gg1.enl.137.198.IP)
+[05:47:58] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[06:03:35] *** Cosmic|sleep is now known as Cosmic
+[06:05:30] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Ping timeout: 121 seconds)
+[06:26:50] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[07:15:22] *** Joins: AshKetchup (silvea12@Pony-f4qadf.bigpond.net.au)
+[07:30:28] *** mniip is now known as \m
+[07:31:25] *** Quits: AshKetchup (silvea12@Pony-f4qadf.bigpond.net.au) (Quit: kill -9 self)
+[07:32:10] *** Quits: CrassyPaddles (test@Pony-gg1.enl.137.198.IP) (Ping timeout: 121 seconds)
+[07:41:58] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[08:17:07] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[08:30:03] *** Starburn is now known as Flowheart
+[08:34:42] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[08:35:54] *** Joins: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[08:38:50] *** Quits: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[08:42:37] *** Quits: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Connection closed)
+[08:42:53] *** Joins: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[08:42:55] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[08:47:00] <Moonlightning> Okay, so…according to this pone, modern crypto is basically just all broken.
+[08:47:14] <Phase> broken how?
+[08:47:53] <Moonlightning> Well, first of all, AES is vulnerable to some kind of timing attack involving its tables, making it so that an attacker with a stolen encrypted blob can easily derive the key
+[08:54:58] <Compu> part 2 https://youtu.be/65SAO2ZBHK0
+[08:54:58] <PinkiePieBot> [ Lunar Eclipse Part 2 - 1 views - 18m 44s long - 0 likes - 0.00% ]
+[08:55:11] <Compu> video of the eclipse, part 1 https://youtu.be/UrlE4RYBrjE
+[08:55:12] <PinkiePieBot> [ Lunar Eclipse Part 1 - 9 views - 3m 18s long - 0 likes - 0.00% ]
+[08:55:38] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[08:57:32] <Phase> Moonlightning, ???
+[08:57:52] <Moonlightning> Yeah, I dunno either.
+[08:58:03] <Moonlightning> Don't wanan deal with it right now.
+[08:58:09] <Moonlightning> Post relevant stuff here; I'll read it later.
+[08:58:11] <Phase> you can't do timing attacks without some active decryption mechanism
+[08:58:19] <Moonlightning> Also later I'll ask more about it
+[08:58:20] <Gigabit> You already started. Finish it :p
+[08:58:41] * Phase is wondering which pone is that batty
+[08:58:53] <Colgate> Moonlightning: proof of concept or gtfo, is what I say on that :P
+[09:03:53] *** Gigabit is now known as Snoarin
+[09:06:52] <Compu> part 3 https://youtu.be/Be8ycQQi3zY
+[09:06:52] <PinkiePieBot> [ Lunar Eclipse Part 3 - 0 views - 5m 4s long - 0 likes - 0.00% ]
+[09:08:02] *** zz_CyberJacob is now known as CyberJacob
+[09:10:36] <Compu> part 4 https://youtu.be/995YtJVXwVA
+[09:10:37] <PinkiePieBot> [ Lunar Eclipse Part 4 - 1 views - 1m 44s long - 0 likes - 0.00% ]
+[09:14:43] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:19:59] <Compu> part 5 https://youtu.be/OgGIn24tsMg
+[09:20:00] <PinkiePieBot> [ Lunar Eclipse Part 5 - 1 views - 26s long - 0 likes - 0.00% ]
+[09:28:02] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[09:40:50] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[09:41:42] *** Flowheart is now known as Starburn
+[09:58:28] *** CyberJacob is now known as zz_CyberJacob
+[10:00:15] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (Quit: broken things)
+[10:17:57] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[10:20:48] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[10:21:52] *** Init3-away is now known as init3
+[10:22:31] <Stik> hmm does anyone use cloudflare for dns?
+[10:22:35] <Stik> they have a free service
+[10:22:44] <Stik> but it seems to jsut forget everything from time to time
+[10:23:02] <Stik> can't tell if that's something i'm missing in the T&Cs for the free one or something
+[10:23:28] <Stik> also, alternatively, what free dns services are there? i used to use xname.org but they seem to have got rubbihs
+[10:23:44] <Compu> Stik: i use freenom
+[10:24:13] <Stik> would you recommend it?
+[10:24:35] <Compu> works fine for me
+[10:24:40] <Compu> doesnt forget things
+[10:24:45] <Stik> useful feature!
+[10:24:48] <Stik> will give it a go
+[10:24:56] <Compu> and u can get .ml domains for free
+[10:25:10] <Stik> where is .ml?
+[10:25:30] <Compu> http://www.compu.ml/
+[10:25:32] <PinkiePieBot> [ Compu's Website ]
+[10:25:41] <Compu> Stik: what do u mean where?
+[10:25:51] <Stik> what country is .ml?
+[10:25:56] <Stik> malaysia?
+[10:26:02] <Compu> uh
+[10:26:12] <Compu> why does it have to be a country?
+[10:26:27] <Stik> mali apparently
+[10:26:28] <Moonlightning> Eh, there are a lot of ccTLDs
+[10:28:07] <Compu> Stik: freenom can do subdomains and such too
+[10:28:13] <Compu> http://compubot.compu.ml/
+[10:28:14] <PinkiePieBot> [ CompuBot by ask-compu ]
+[10:29:10] <Compu> Stik: but if ur ok with paying for domains i would probably recommend google's domain service, i forget what its called
+[10:29:46] <Stik> don't mind paying a little bit for it
+[10:30:10] <Compu> Stik: domains r like a few dollars a year
+[10:32:52] <Compu> .search google domains
+[10:32:55] <PinkiePieBot> Compu: https://domains.google.com/ (g), - (b), (extremely long link) (d)
+[10:33:02] <Compu> Stik: there ya go ^
+[10:33:27] <Stik> that's for an actual domain, i just want dns
+[10:33:34] <Stik> https://cloud.google.com/dns
+[10:33:35] <PinkiePieBot> [ Cloud DNS - Low-latency DNS serving with RESTful API — Google Cloud Platform ]
+[10:33:39] <Stik> looks like they do it
+[10:33:45] <Compu> well there ya go
+[10:33:53] <Stik> $0.40/month seems ok, i can probably afford that :)
+[10:34:36] <Compu> Stik: $4.80 a year then
+[10:43:41] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[11:01:19] *** Joins: thatdguy (~WebChat@Pony-pkbcdj.fbx.proxad.net)
+[11:05:12] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[11:11:50] *** Joins: Phase4 (Phase4@Pony-g2vv9n.internode.on.net)
+[11:12:23] *** Quits: Phase (Phase4@Pony-d9rtg7.internode.on.net) (Ping timeout: 121 seconds)
+[11:12:34] *** Phase4 is now known as Phase
+[11:20:29] *** Quits: thatdguy (~WebChat@Pony-pkbcdj.fbx.proxad.net) (Quit: Page closed)
+[12:05:43] *** \m is now known as mniip
+[12:25:54] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[12:35:29] *** mniip is now known as \m
+[13:08:52] <RainbowHacks> o/
+[13:16:47] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[13:21:59] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[14:01:44] <Stik> http://pastebin.com/7HBHbsLP
+[14:01:44] <PinkiePieBot> [ [JavaScript] _.he = function dub() { var a; wRe[a = ++xRe] = dub; Zm((zRe = th - Pastebin.com ]
+[14:01:55] <Stik> sometimes this fails with the error "ReferenceError: dub is not defined"
+[14:02:14] <Stik> i'm rubbish at javascript, but i can't see anything wrong with it
+[14:03:05] <Stik> it's a snippet from a much larger file, and those two are the only references to the three characters "dub" in the entire thing
+[14:03:46] *** Starburn is now known as CardboardBox
+[14:03:52] <Stik> so pretty certain line3 is where the error happens
+[14:03:57] <Phase> minified code
+[14:03:58] <Phase> why
+[14:04:05] <Stik> error in production
+[14:05:01] <Phase> do you know where in the snippet it fails?
+[14:05:34] <Phase> and production only? this doesn't happen on the unminified code?
+[14:06:35] <Stik> sadly not
+[14:06:43] <Stik> it only happens for some people, and only some of the time too
+[14:06:59] <Phase> wRe[a = ++xRe] = dub; this just looks really odd
+[14:07:07] <Stik> i think it's stack tracing
+[14:07:21] <Stik> every function does the same at the start and end
+[14:07:36] <Stik> wRe i guess is the stack
+[14:07:58] <Phase> so it's going through some kind of compiler
+[14:08:07] <Stik> yeah it's compiled from java into javascript
+[14:08:34] <Phase> ah
+[14:08:42] <Stik> that's the only reference to that function by name ("dub") in the entire generated code, as far as i have been able to find
+[14:08:55] <Stik> so i think it's almost certain to be line 3 in that snippet that's causing the issue
+[14:09:23] <Stik> unfortunately there's no js stacktrace, since something else seems to swallow the exception and isn't logging the details anywhere
+[14:09:48] <Stik> i just don't see how "dub" can be undefined at that point, since it's inside itself
+[14:10:17] <Stik> so far the sample of people is only 4, but 2 of them have been able to repeat the error (intermittantly), 2 haven't
+[14:10:44] <Phase> _ = {}
+[14:10:45] <Phase> _.he = function dub() {
+[14:10:45] <Phase>     var a = dub;
+[14:10:45] <Phase> };
+[14:10:46] <Stik> the 2 that haven't are on 64 bit chrome, the two that have are on 32bit
+[14:11:12] <Phase> that errors in node.js
+[14:11:16] <Stik> oh really?
+[14:11:21] <Stik> i shall have a poke
+[14:11:29] <Stik> the same pattern is literally on every other function tho
+[14:11:30] <Stik> and they all work
+[14:11:44] <Phase> if i call dub directly...
+[14:11:49] <Phase> _.he() works
+[14:12:20] <Phase> Stik, this a thing for work?
+[14:13:50] *** Parts: RainbowHacks (rainbow@Pony-m1cetk.ponix.space) ("Leaving")
+[14:14:47] <Phase> Stik, have you been able to reproduce it in firefox or ie?
+[14:15:12] <Phase> v8 bug isn't sounding unreasonable
+[14:15:15] *** Joins: RainbowHacks (rainbow@Pony-m1cetk.ponix.space)
+[14:17:25] <Stik> no, only in chrome, although i don't think people ar eusing firefox or ie much, if at all
+[14:17:28] <Stik> yeah it's my work
+[14:19:06] <Phase> i'll fire up a vm and see if i can reproduce it in 32bit chrome
+[14:19:08] <Phase> windows i assume?
+[14:19:42] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[14:19:54] <Stik> i'm not sure about attributing this to a bug in chrome, chrome must be used for literally 100s of millions of sessions a day
+[14:20:04] <Stik> feels like a cop-out :)
+[14:20:09] <Stik> yeah windows
+[14:24:34] *** Joins: thatdguy (WebChat@Pony-pkbcdj.fbx.proxad.net)
+[14:24:49] <Phase> Stik, is use strict set?
+[14:25:25] * Phase can't see any reason this would error
+[14:34:32] <Phase> Stik, "Note that NFEs[Named Function Expressions] have frequently been a source of bugs for JavaScript implementations. IE8 and earlier, for instance, handle NFEs completely incorrectly, creating two different functions at two different times." http://stackoverflow.com/a/22173438/2272842
+[14:38:20] <Stik> good find
+[14:39:11] <Stik> suspect this compiler is aware of that tho (i hope), it creates lots of different versions of the javascript, one for each web browser it considers different enough to warrant it
+[14:39:21] <Phase> if at all possiblem, its best if the compiler doesn't depend on NFE's
+[14:39:31] <Stik> so there's a version specifically for IE7 and IE8 that's meant to work around its shortcomings
+[14:39:45] <Phase> odd design
+[14:39:49] <Stik> it's quite neat
+[14:39:57] <Phase> open source thing or private tool?
+[14:39:58] <Stik> means the code isn't full of conditionals for different browsers
+[14:40:07] <Stik> open source, it's one of google's projects, GWT
+[14:40:15] <Stik> is quite old now
+[14:40:38] <Stik> also, theoretically, if one browser has specific optimisations it can make them just for that one permutation
+[14:41:22] <Stik> there's a little bootstrap js file that works out which main file to load, then that main file is cached forever, so should be immediate to run the second time
+[14:41:49] <Stik> if the code changes the bootstrap js requests a new file to replace the cached one
+[14:41:52] <Phase> Ahhhhh
+[14:42:04] <Phase> do you know which file is being loaded by 32bit chrome?
+[14:42:37] <Stik> should be able to find out with some digging
+[14:42:57] <Phase> i'd check if that's the same as 64bit chrome
+[14:43:35] <Phase> internal thing or public? if its public i'd recommend getting some testing service so you don't need to reproduce every env locally
+[14:44:16] <Phase> yeah, GWT Java to JavaScript compiler
+[14:44:22] * Phase will have to look into this at some point
+[14:44:29] <Stik> it's pretty good
+[14:44:30] <Stik> when it works!
+[14:45:03] <Stik> looks like 64 and 32 bit versions are considered the same
+[14:45:17] <Stik> writing in java is a lot more pleasant than javascript (at least i think so)
+[14:45:30] <Stik> nice modern IDEs with all the modern features you expect
+[14:46:03] *** init3 is now known as Init3-away
+[14:46:43] <Stik> rather than pissing around with glorified text editors
+[14:47:51] * Phase complains about java
+[15:13:38] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[15:19:19] <Stik> f(){..}; f((other, code, here)); 
+[15:19:22] <Stik> why is that valid?
+[15:19:31] <Stik> i assume (a,b,c) returns c
+[15:27:10] *** Quits: thatdguy (WebChat@Pony-pkbcdj.fbx.proxad.net) (Ping timeout: 121 seconds)
+[15:43:45] * HoneyDrops hisses at Java and JS.
+[15:48:13] *** Quits: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP) (Connection closed)
+[16:02:07] <Stik> java is awesome
+[16:02:09] <Stik> js, less so :|
+[16:02:23] <Stik> sadly there's no alternatives to that one
+[16:06:55] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[16:10:14] <HoneyDrops> JS is the only answer to the wrong question.
+[16:12:30] <Compu> Stik: i like python
+[16:26:14] <Stik> cool
+[16:33:21] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[16:36:04] *** Quits: e (bro@the.derptown.express) (Quit: 07,01—14I07,01-15n07,01-15v07,01-00i07,01-00s07,01-15i07,01-15o07,01-14n07,01— 3.3 (November '11))
+[16:38:44] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Quit: )
+[16:45:34] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:50:39] *** Joins: e (Im@the.derptown.express)
+[16:50:51] *** e is now known as Scootaloo
+[16:51:20] *** Scootaloo is now known as Pony_16351
+[16:51:28] *** Pony_16351 is now known as e
+[16:55:13] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:27:26] *** Joins: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net)
+[17:28:40] *** Init3-away is now known as init3
+[17:39:35] *** Snoarin is now known as Gigabit
+[17:41:14] *** Dusk is now known as MorningSong
+[17:56:21] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[17:59:37] *** init3 is now known as Init3-away
+[18:45:25] <Colgate> Stik: we use HE here, works well :P
+[18:48:15] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[19:00:15] <Moonlightning> …hmmmmmm…
+[19:00:28] <Moonlightning> Shouldn't the only permission you need on a symlink be read?
+[19:00:38] <Moonlightning> Because you're really just reading the symlink to see where it points
+[19:01:01] *** Quits: e (Im@the.derptown.express) (Quit: 07,01—14I07,01-15n07,01-15v07,01-00i07,01-00s07,01-15i07,01-15o07,01-14n07,01— 3.3 (November '11))
+[19:08:17] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[19:14:37] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:32:23] <Moonlightning> Why doesn't Wikipedia use 300 when redirecting to disambiguation pages?
+[19:38:32] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[19:38:42] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[19:41:20] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[19:45:44] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:12:37] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[20:14:28] *** Init3-away is now known as init3
+[20:25:20] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[21:12:15] *** Joins: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se)
+[21:23:25] <Moonlightning> HoneyDrops: I hear /Them's Fightin' Herds/ has *nix support as a stretch goal
+[21:26:29] *** CardboardBox is now known as Starburn
+[21:31:52] *** Quits: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se) (Connection closed)
+[21:33:48] *** Joins: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se)
+[21:47:08] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "transmission sent, virus spread, raise the engines, start the dead")
+[21:56:13] *** Quits: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se) (Connection closed)
+[21:58:34] *** Joins: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se)
+[22:02:48] *** Sour_Sweet is now known as Seoson
+[22:14:06] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[22:14:13] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[22:16:25] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[22:17:25] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[22:17:37] *** Quits: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se) (Ping timeout: 121 seconds)
+[22:22:19] *** Joins: JockeTF (jocke@Pony-tv0hu1.cust.telenor.se)
+[22:53:20] *** Quits: JockeTF (jocke@Pony-tv0hu1.cust.telenor.se) (Ping timeout: 121 seconds)
+[22:58:31] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Quit: Leaving)
+[22:58:43] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[23:00:51] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[23:01:16] *** Joins: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP)
+[23:01:59] *** Seoson is now known as Sour_Sweet
+[23:05:54] *** Joins: Midnight_Tinker_Mobile (uid102824@Pony-tjmceb.tooting.irccloud.com)
+[23:24:19] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[23:25:43] *** Joins: nlaq (Nelson@Pony-a6le82.tn.comcast.net)
+[23:32:58] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Quit: Leaving)
+[23:33:07] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[23:35:52] <Sour_Sweet> Come on Let's Encrypt ... The majority of my certs expire in about two months ...
+[23:36:02] *** Joins: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se)
+[23:40:17] *** Quits: Phase (Phase4@Pony-g2vv9n.internode.on.net) (Ping timeout: 121 seconds)
+[23:40:37] *** Joins: CrassyPaddles (test@Pony-kr1.enl.137.198.IP)
+[23:41:48] <CrassyPaddles> anybody here good at mechanics?
+[23:43:27] <DJ-C0L7[EIT]> what do ya' need?
+[23:43:53] * DJ-C0L7[EIT] is mechanic
+[23:43:54] <CrassyPaddles> okay, friction force is the product of the normal force and some coefficient of friction, right?
+[23:44:03] * DJ-C0L7[EIT] nods
+[23:44:16] <CrassyPaddles> f=uN basically
+[23:44:24] <DJ-C0L7[EIT]> generally weight and gravity for your coefficient
+[23:44:37] * DJ-C0L7[EIT] nods
+[23:45:14] <CrassyPaddles> For an object that undergoes no vertical movement, calling that the y axis, the normal force on that object does not change throughout the process
+[23:45:30] * DJ-C0L7[EIT] nods
+[23:45:37] <CrassyPaddles> so say I'm an athlete that's split stepping to the side
+[23:46:12] <CrassyPaddles> I've noticed that when I do so on a slippery surface with my whole flat of my foot, I slip
+[23:46:39] * DJ-C0L7[EIT] nods
+[23:46:43] <CrassyPaddles> not as much frictional force pushing me sideways, calling that the x axis
+[23:47:10] <DJ-C0L7[EIT]> you're losing tractive force?
+[23:47:17] <CrassyPaddles> BUT when I point my foot so that my weight rests on the balls of my feet, my foot doesn't slip, and I can push a lot harder laterally without slippage.
+[23:47:27] * DJ-C0L7[EIT] nods
+[23:47:46] <DJ-C0L7[EIT]> adjusting your angle to compensate by putting more surface area forward creating a larger contact patch
+[23:47:48] <CrassyPaddles> I think I've just answered my question
+[23:47:59] * DJ-C0L7[EIT] nods
+[23:48:23] <CrassyPaddles> DJ-C0L7[EIT], wait no. I would have less surface area in contact with the floor
+[23:48:45] <CrassyPaddles> by pointing my feet and shifting my weight forward, the heel and back of my foot lifts OFF the ground
+[23:48:55] * DJ-C0L7[EIT] nods
+[23:49:08] <CrassyPaddles> whereas a flat foot, ALL of the bottom of my feet rests on the ground
+[23:49:27] <CrassyPaddles> In both cases, my weight and thus the normal force remains the same
+[23:49:36] <DJ-C0L7[EIT]> but in doing so you are flattening your foor in the direction of travel, so you are shifting from a long skinny contact patch, to a stubby wide patch
+[23:49:42] <DJ-C0L7[EIT]> foot*
+[23:49:53] <DJ-C0L7[EIT]> true
+[23:50:03] <DJ-C0L7[EIT]> F=MA right
+[23:50:13] <CrassyPaddles> DJ-C0L7[EIT], If you're saying that both cases, the area in contact are equal, I disagree
+[23:50:30] <CrassyPaddles> With a pointed foot, the area is much smaller than with a flat foot.
+[23:50:39] * DJ-C0L7[EIT] nods
+[23:50:57] <CrassyPaddles> a third or a quarter of the area of that when the foot is in full contact.
+[23:51:11] * DJ-C0L7[EIT] nods
+[23:52:13] <CrassyPaddles> the normal force remains the same, but the pressure on my foot doesn't. It's much greater with a pointed foot.
+[23:54:03] <CrassyPaddles> Since with a pointed foot, I generate so much more lateral frictional force, I thought that frictional force didn't have to do with the normal force on the object, but its normal pressure. I see now that's not necessary to explain my observations.
+[23:54:23] <CrassyPaddles> f=uN
+[23:54:56] <CrassyPaddles> so for two objects with the same normal force on them, one can experience much greater friction if the u term is much greater.
+[23:56:02] <CrassyPaddles> and it seems like u varies based on how much surface area is in contact 
+[23:57:10] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Quit: Leaving)
+[23:57:20] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[23:59:56] * DJ-C0L7[EIT] nods

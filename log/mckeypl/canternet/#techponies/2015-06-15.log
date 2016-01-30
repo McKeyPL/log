@@ -1,0 +1,446 @@
+[00:06:42] *** Joins: Xero (Xero@Pony-evpc8c.res.bhn.net)
+[00:15:51] *** Joins: cyborg_ar (cyborgar@Pony-i82.3bh.49.190.IP)
+[00:18:58] *** Quits: Xero (Xero@Pony-evpc8c.res.bhn.net) (Connection closed)
+[00:22:38] *** Joins: Xero (Xero@Pony-evpc8c.res.bhn.net)
+[00:36:51] <Starthunder> Anypony have a copy of Valve's package signing key?
+[00:37:17] <Starthunder> They don't distribute the package for Steam over TLS :I
+[00:40:05] *** GigaWork is now known as GamerArtemis
+[00:41:27] <Colgate> /etc/apt/trusted.gpg.d/steam.gpg
+[00:41:28] <Colgate> --------------------------------
+[00:41:29] <Colgate> pub   2048R/B05498B7 2012-12-07
+[00:41:30] <Colgate>       Key fingerprint = BA18 16EF 8E75 005F CF5E  27A1 F24A EA9F B054 98B7
+[00:41:31] <Colgate> uid                  Valve Corporation <linux@steampowered.com>
+[00:41:32] <Colgate> sub   2048R/C081CFD1 2012-12-07
+[00:43:28] *** Quits: Xero (Xero@Pony-evpc8c.res.bhn.net) (Connection closed)
+[00:43:37] <Starthunder> When'd you get that key, Colgate?
+[00:43:47] <Colgate> apt-key
+[00:43:54] <Starthunder> When, though?
+[00:44:15] <Colgate> whenever I installed steam forever ago
+[00:44:31] <Starthunder> Thanks.
+[00:48:48] <GamerArtemis> was able to snag 3 80mm case fans ftrom Radio Shack for 8 bucks
+[00:49:07] <GamerArtemis> The guy had them on clearance and I offered him 8 for em all. he said yus 
+[01:02:20] *** CyberJacob is now known as zz_CyberJacob
+[01:05:04] *** Quits: Nelly (Neutral@tor.sasl.Nelly) (The TLS connection was non-properly terminated.)
+[01:06:00] *** Joins: Nelly (Neutral@Anonlight.Starsarebeautiful)
+[01:08:52] *** Quits: cyborg_ar (cyborgar@Pony-i82.3bh.49.190.IP) (Ping timeout: 121 seconds)
+[01:24:12] *** init3 is now known as Init3-away
+[01:49:58] <Starthunder> …um…wat?
+[01:50:01] *** Init3-away is now known as init3
+[01:50:03] <Starthunder> > Steam needs to install these packages:
+[01:50:08] <Starthunder> > *three packages that are already installed*
+[01:50:09] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[01:50:23] <Starthunder> according to this script it dumped in /tmp, it doesn't even /check…/ :|
+[01:50:37] <Starthunder> No, I'm not giving you my password. Those packages are installed! Just RUN!
+[01:56:50] <Colgate> are they the 32 bit versions?
+[01:57:38] <Starthunder> …oh. No, they are not.
+[01:58:14] <Starthunder> Why does that matter, though?
+[02:01:07] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[02:30:03] *** Joins: Asoka_White (Asoka@Pony-o4i24n.net-htp.de)
+[02:33:15] *** Quits: Asoka (Asoka@Pony-nuddjm.net-htp.de) (Ping timeout: 121 seconds)
+[02:37:03] <Colgate> because steam is 32 bit
+[02:37:10] <Colgate> so you need 32 bit libraries
+[02:41:47] <Starthunder> …oh. Duh.
+[02:50:35] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[02:52:09] *** Joins: Sombra (Iceman@Darkhorse21)
+[03:24:07] <ShivalPonyWolf> anyone here running virtualbox and coudl tell me what the default natting ip range is?
+[03:24:12] *** Joins: cyborg_ar (cyborgar@Pony-0fi.kku.49.190.IP)
+[03:25:08] <cyborg_ar> GamerArtemis: :)
+[03:25:33] <cyborg_ar> i love clearance sales, but i hate that i just end up hoarding parts because they are not useful immediatelt
+[03:26:00] <Webster> ShivalPonyWolf: 10.0.2.0/24 I think.
+[03:26:08] <_desu_> ShivalPonyWolf: it should be defined in vbox preferences
+[03:26:30] <ShivalPonyWolf> _desu_: i dont have vbox installed
+[03:26:35] <ShivalPonyWolf> i cant actually check myself
+[03:26:39] <_desu_> But I always use the attach to adapter option.
+[03:26:55] <_desu_> Oh okay. If I wasn't on my phone I'd check for you. :/
+[03:27:05] <ShivalPonyWolf> lol
+[03:27:25] <Webster> I think it increments based on the adapter though.
+[03:27:57] <Colgate> I have vbox, one sec
+[03:28:26] <ShivalPonyWolf> trying to allocate some ip space to a VPN but i want to make sure it doesnt clash with soem defaults 1st
+[03:28:33] <ShivalPonyWolf> covered off everything except virtualbox
+[03:29:32] <Colgate> 10.0.2.0/24, yeah
+[03:29:40] <ShivalPonyWolf> Colgate: thanks
+[03:29:47] *** Parts: Webster (Webster@Pony-io0ebs.md.comcast.net) ("Leaving")
+[03:30:14] <ShivalPonyWolf> http://www.techspot.com/guides/287-default-router-ip-addresses/ - this is useful for some common devices
+[03:30:15] <PinkiePieBot> [ A List of Common Default Router IP Addresses - TechSpot ]
+[03:32:57] <ShivalPonyWolf> the vpn was allocating 10.10.10.0/24 and 192.168.16.0/24
+[03:33:05] <ShivalPonyWolf> getting several clash issues with people
+[03:38:00] *** Joins: MistVeil (AndChat3408@Pony-prm9c8.static.axtel.net)
+[03:50:19] <cyborg_ar> http://i.imgur.com/ZfISSY1.jpg
+[03:50:22] <cyborg_ar> god hahahahhaaa
+[03:53:17] <ShivalPonyWolf> cyborg_ar: LOL
+[04:04:10] *** Joins: AquaBrandish (aqua@Pony-prm9c8.static.axtel.net)
+[04:04:15] *** Quits: MistVeil (AndChat3408@Pony-prm9c8.static.axtel.net) (Quit: Bye)
+[04:04:17] *** AquaBrandish is now known as MistVeil
+[04:38:40] *** GamerArtemis is now known as Gigabit
+[04:49:18] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[04:52:16] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[05:12:50] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[05:13:12] *** Quits: cyborg_ar (cyborgar@Pony-0fi.kku.49.190.IP) (Ping timeout: 121 seconds)
+[05:13:43] *** Nelly is now known as Cathie
+[05:15:19] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[05:19:59] *** Cathie is now known as Catherine
+[05:23:00] *** init3 is now known as Init3-away
+[05:29:04] *** MistVeil is now known as Mist|Gaming
+[05:32:08] *** Joins: cyborg_ar (cyborgar@Pony-lla.450.25.181.IP)
+[05:38:20] *** Init3-away is now known as init3
+[05:38:37] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[05:41:03] *** Joins: init3 (Jason@init3.Is.Not.A.Clever.Poni)
+[05:53:38] <Starthunder> > list of common default router IPs
+[05:53:47] <Starthunder> just look at the local routing table?
+[05:56:23] *** Quits: Crimson_Tail (Bluepon@Pony-er9tkc.s0tm.sdub.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[05:58:00] <AppleDash> lol
+[06:02:09] *** RedHelper is now known as Creeps|AFK
+[06:03:21] <Starthunder> Or, wait...
+[06:03:29] <Starthunder> Does that only work if you use DHCP or similar?
+[06:03:50] <Starthunder> Does a host have any way of knowing the router's IP otherwise?
+[06:05:51] <AppleDash> Well
+[06:05:56] <AppleDash> That's actually a very good question o.o
+[06:06:46] <AppleDash> Kinda!
+[06:06:47] <AppleDash> Starthunder: http://thebackroomtech.com/2010/08/22/determine-ip-address-from-a-mac-address/
+[06:06:48] <PinkiePieBot> [ Determine IP Address From a MAC Address ]
+[06:08:27] <AppleDash> Pinging the broadcast address also seems like a good way to discover things on the network in gneral
+[06:08:30] <AppleDash> general*
+[06:47:25] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[07:01:52] <Colgate> erm, pinging the broadcast address should do nothing
+[07:02:00] <Colgate> smurf attacks yo
+[07:09:08] *** Catherine is now known as Nelly
+[07:09:22] *** Nelly is now known as Nully
+[07:12:13] * ShivalPonyWolf giggles at twitter
+[07:12:14] <ShivalPonyWolf> Secure sudo
+[07:12:14] <ShivalPonyWolf> #include <unistd.h>
+[07:12:15] <ShivalPonyWolf> #include <stdio.h>
+[07:12:15] <ShivalPonyWolf> int main (int argc, char** argv) {
+[07:12:16] <ShivalPonyWolf>     setuid(0);
+[07:12:19] <ShivalPonyWolf>     setgid(0);
+[07:12:21] <ShivalPonyWolf>     system(argv[1]);
+[07:12:24] <ShivalPonyWolf> }
+[07:15:24] *** Quits: Mist|Gaming (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[07:16:32] <AppleDash> Colgate: Well it does plenty
+[07:16:33] <AppleDash> ShivalPonyWolf: lol
+[07:16:50] <AppleDash> I've actually written a program somewhat like that before
+[07:16:56] <AppleDash> because I needed to setuid a bash script
+[07:17:34] <ShivalPonyWolf> yay for setuid wrappers
+[07:18:25] <Colgate> AppleDash: nothing *should* respond to icmp ping on broadcast
+[07:18:39] <AppleDash> It doesn't need to :P
+[07:19:15] <Colgate> erm, maybe I'm missing your goal here?
+[07:19:39] <AppleDash> Colgate: see link
+[07:19:40] * AppleDash pings Colgate's broadcast address
+[07:19:59] <Colgate> or you know, just look at arp tables?
+[07:20:03] <AppleDash> yes
+[07:20:07] <AppleDash> the point is to fill up the arp table
+[07:20:26] <Colgate> oh sure, arp spoofing
+[07:20:31] <AppleDash> fuck you
+[07:20:35] <AppleDash> Read the link >.<
+[07:20:39] <Colgate> ...what?
+[07:21:01] <AppleDash> Basically, you ping the broadcast address on your network from any Windows machine and then check out the ARP table afterwards.
+[07:21:01] <AppleDash> If you subnet is 192.168.1.X with a mask of 255.255.255.0, then you would ping 192.168.1.255. When you ping, you will get a Request Timed Out all four times, but don’t worry.
+[07:21:16] <AppleDash> Next, type in the following command
+[07:21:16] <AppleDash>     arp –a
+[07:21:16] <AppleDash> You will now get a list of all the connected devices on your network along with their physical addresses! Pretty nifty trick.
+[07:21:38] <Colgate> I don't see how this is related?
+[07:21:44] <AppleDash> ...
+[07:21:52] <AppleDash> What are we even talking about :P
+[07:21:58] <Colgate> plenty of broadcasts are already going around with arp
+[07:22:05] <Colgate> the ping does nothing
+[07:22:09] <AppleDash> Well
+[07:22:11] <AppleDash> I did arp -a
+[07:22:17] <AppleDash> pinged the broadcast address
+[07:22:20] <AppleDash> then did arp -a again
+[07:22:26] <AppleDash> there were more entries the 3nd time
+[07:22:30] <Colgate> maybe this is a windows idiocy?
+[07:22:35] <AppleDash> I'm on Linux
+[07:23:09] <Colgate> you are literally sending a packet to the broadcast, which is promptly dropped by every other system on the network
+[07:23:21] <AppleDash> I have no idea
+[07:23:27] <AppleDash> I don't know anything about networking remember
+[07:24:25] <ShivalPonyWolf> i think the point is that while it doesnt respond to the icmp ping it still responds to the systems underlying arp query to identifys itself as online. but its only on your local segment
+[07:25:12] <ShivalPonyWolf> but you could do that with any type of lookup for an ip
+[07:25:17] <ShivalPonyWolf> it doesnt have to be a braodvast
+[07:25:19] <ShivalPonyWolf> broadcast
+[07:30:51] <OlaHughson> mrew
+[07:38:48] *** Joins: Sombra (Iceman@Darkhorse21)
+[07:40:18] <Starthunder> AppleDash: yeah, but what if you don't know the network?
+[07:40:35] <AppleDash> If you don't know what you're connected to, then you have bigger issues
+[08:00:32] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[08:02:59] *** Joins: Neutral (Neutral@Anonlight.Starsarebeautiful)
+[08:05:08] *** Quits: Nully (Neutral@Anonlight.Starsarebeautiful) (Ping timeout: 121 seconds)
+[08:05:15] *** zz_CyberJacob is now known as CyberJacob
+[08:18:40] *** Quits: init3 (Jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[08:24:10] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[08:27:36] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:53:28] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[09:00:29] *** Neptune is now known as Neptune|sleep
+[09:22:12] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:29:28] *** CyberJacob is now known as zz_CyberJacob
+[10:16:33] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[10:17:15] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[10:21:14] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Rain called on account of pony.)
+[10:22:04] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[10:22:26] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[10:30:22] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[10:43:03] *** Quits: Sol (Sol@Pony-nc8b4c.res.rr.com) (Quit: Leaving)
+[10:48:46] *** Quits: cyborg_ar (cyborgar@Pony-lla.450.25.181.IP) (Client exited)
+[11:14:13] *** Quits: Q0 (Q0@literallyshit.net) (Ping timeout: 121 seconds)
+[11:16:59] *** Joins: Q0 (Q0@literallyshit.net)
+[11:21:29] *** Q0 is now known as Q0|Away
+[11:23:45] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[11:35:55] *** init3 is now known as Init3-away
+[11:43:49] *** Awaykitty is now known as Unixkitty
+[12:05:03] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[12:35:04] *** Joins: fiyahsparkle|work (fiyahspark@irc.fiyahsparkle.com)
+[13:06:02] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (Connection closed)
+[13:06:11] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[13:11:31] *** Joins: Fallfeathers (Fallfeather@Pony-88rk5f.bigpond.net.au)
+[15:01:44] *** Neptune|sleep is now known as Neptune
+[15:10:09] *** Joins: sleumasPhone (uid91753@my.little.karaoke)
+[15:26:22] *** Joins: DataByteBrony (DataByte@Pony-720arn.5jsm.i2gu.000d.2601.IP)
+[15:36:03] *** Joins: Crimson_Tail (Bluepon@Pony-ufv960.s0tm.sdub.0151.2601.IP)
+[15:47:19] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[15:49:38] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[15:52:09] *** Creeps|AFK is now known as RedHelper
+[15:56:51] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:05:15] *** Joins: zeta_ (Bluepon@Pony-mfh7oq.md.comcast.net)
+[16:08:19] *** Quits: Crimson_Tail (Bluepon@Pony-ufv960.s0tm.sdub.0151.2601.IP) (Ping timeout: 121 seconds)
+[16:15:00] *** Joins: Asoka (Asoka@Pony-00473f.net-htp.de)
+[16:17:36] *** Quits: Asoka_White (Asoka@Pony-o4i24n.net-htp.de) (Ping timeout: 121 seconds)
+[16:33:55] *** Joins: Asoka_White (Asoka@Pony-3q4dfn.net-htp.de)
+[16:36:39] *** Quits: Asoka (Asoka@Pony-00473f.net-htp.de) (Ping timeout: 121 seconds)
+[16:39:07] *** Joins: Asoka (Asoka@Pony-anjomp.net-htp.de)
+[16:40:51] *** Quits: Asoka_White (Asoka@Pony-3q4dfn.net-htp.de) (Ping timeout: 121 seconds)
+[16:42:21] *** Joins: Asoka_White (Asoka@Pony-svjsgr.net-htp.de)
+[16:44:40] *** Quits: Asoka (Asoka@Pony-anjomp.net-htp.de) (Ping timeout: 121 seconds)
+[16:45:21] *** Joins: Asoka (Asoka@Pony-8l7qv2.net-htp.de)
+[16:47:11] *** Quits: Asoka_White (Asoka@Pony-svjsgr.net-htp.de) (Ping timeout: 121 seconds)
+[16:47:36] *** Joins: Asoka_White (Asoka@Pony-ql2fa5.net-htp.de)
+[16:47:56] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Connection closed)
+[16:49:14] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:49:30] *** Quits: Asoka (Asoka@Pony-8l7qv2.net-htp.de) (Ping timeout: 121 seconds)
+[16:49:49] *** Joins: Asoka (Asoka@Pony-3m4blc.net-htp.de)
+[16:51:50] *** Quits: Asoka_White (Asoka@Pony-ql2fa5.net-htp.de) (Ping timeout: 121 seconds)
+[16:54:20] *** Joins: Asoka_White (Asoka@Pony-1fttsh.net-htp.de)
+[16:55:32] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[16:56:12] *** Quits: Asoka (Asoka@Pony-3m4blc.net-htp.de) (Ping timeout: 121 seconds)
+[17:01:56] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[17:02:59] *** Joins: Asoka (Asoka@Pony-gs8vik.net-htp.de)
+[17:05:43] *** Quits: Asoka_White (Asoka@Pony-1fttsh.net-htp.de) (Ping timeout: 121 seconds)
+[17:13:17] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[17:13:39] *** Joins: Asoka_White (Asoka@Pony-raetpi.net-htp.de)
+[17:14:44] *** Quits: Asoka (Asoka@Pony-gs8vik.net-htp.de) (Ping timeout: 121 seconds)
+[17:15:12] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:17:49] *** Quits: Asoka_White (Asoka@Pony-raetpi.net-htp.de) (Ping timeout: 121 seconds)
+[17:21:41] *** Joins: Asoka (Asoka@Pony-jojlvo.net-htp.de)
+[17:25:53] *** Quits: Asoka (Asoka@Pony-jojlvo.net-htp.de) (Ping timeout: 121 seconds)
+[17:26:33] *** Joins: Asoka (Asoka@Pony-87ha8a.net-htp.de)
+[17:30:56] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[17:34:08] *** Quits: Asoka (Asoka@Pony-87ha8a.net-htp.de) (Quit: Ex-Chat)
+[17:34:20] *** Joins: Asoka (Asoka@Pony-87ha8a.net-htp.de)
+[17:36:24] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[17:37:10] *** Quits: Asoka (Asoka@Pony-87ha8a.net-htp.de) (Quit: Ex-Chat)
+[17:37:37] *** Joins: Asoka (Asoka@Pony-87ha8a.net-htp.de)
+[17:39:14] *** Joins: Asoka_White (Asoka@Pony-14og0u.net-htp.de)
+[17:41:49] *** Quits: Asoka (Asoka@Pony-87ha8a.net-htp.de) (Ping timeout: 121 seconds)
+[17:51:33] *** Joins: cyborg_ar (cyborgar@Pony-r1v964.neunet.com.ar)
+[17:56:14] *** Neptune is now known as Naptune
+[18:01:21] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[18:06:34] *** Quits: cyborg_ar (cyborgar@Pony-r1v964.neunet.com.ar) (Ping timeout: 121 seconds)
+[18:09:06] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[18:15:01] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[18:24:41] *** Gigabit is now known as GigaWork
+[18:24:59] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Rain called on account of pony.)
+[18:31:57] *** Neutral is now known as SableFeline
+[18:35:24] *** Joins: cyborg_ar (cyborgar@Pony-r1v964.neunet.com.ar)
+[18:54:42] *** Unixkitty is now known as Awaykitty
+[19:03:13] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Connection closed)
+[19:10:19] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[19:12:34] *** Quits: Fallfeathers (Fallfeather@Pony-88rk5f.bigpond.net.au) (Connection closed)
+[19:15:25] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Connection closed)
+[19:15:53] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[19:16:54] *** Quits: cyborg_ar (cyborgar@Pony-r1v964.neunet.com.ar) (Ping timeout: 121 seconds)
+[19:19:11] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[19:30:20] <DataByteBrony> brought my copy of TSSSF to MLP-MSP.. played a few games in the lobby one morning.. and this happened: https://dl.dropboxusercontent.com/u/110667610/Pony/mlpmsp15/IMG_5996_s.JPG
+[19:30:54] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[19:33:48] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Connection closed)
+[19:37:48] *** zz_CyberJacob is now known as CyberJacob
+[19:45:22] *** Joins: Sol (Sol@Pony-nc8b4c.res.rr.com)
+[19:45:44] *** Dusk is now known as Ded
+[19:50:18] *** Ded is now known as Dusk
+[19:51:20] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[19:55:34] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[19:56:18] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[19:58:56] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[20:09:44] *** GigaWork is now known as worthless
+[20:10:28] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[20:11:20] *** CyberJacob is now known as zz_CyberJacob
+[20:11:44] *** zz_CyberJacob is now known as CyberJacob
+[20:21:13] *** CyberJacob is now known as zz_CyberJacob
+[20:21:21] *** Quits: Rainb (rainb@Pony-cn5.akh.50.181.IP) (Ping timeout: 121 seconds)
+[20:23:36] <Twilightlicious> Here i was certain Backwards Compatability was a technical impossibility.
+[20:24:33] *** SableFeline is now known as Catherine
+[20:25:50] <Starthunder> Depends on what exactly you need.
+[20:26:00] <Starthunder> backwards compatability abounds.
+[20:41:24] *** Joins: Rainb (rainb@Pony-cn5.akh.50.181.IP)
+[20:48:59] *** Init3-away is now known as init3
+[20:49:50] *** Catherine is now known as Nelly
+[21:17:47] *** Naptune is now known as Neptune
+[21:21:22] *** Quits: Sellyme (quassel@Pony-mte81t.0880.gi54.19f0.2001.IP) (Quit: No Ping reply in 180 seconds.)
+[21:22:25] *** Joins: Sellyme (quassel@Pony-e4b4nn.0880.gi54.19f0.2001.IP)
+[21:30:57] <Twilightlicious> Refering to the Xbox One announcement
+[21:31:01] <Twilightlicious> that it will soon play 360 games
+[21:31:48] <Twilightlicious> Xbox 360 is 3Ghz Tricore PowerPC
+[21:32:06] <Twilightlicious> Xbox One is 2Ghz Octocore x86
+[21:32:11] <Twilightlicious> Xbox One is 2Ghz Octocore x86
+[21:32:18] <Twilightlicious> didn't mean to send twice :P
+[21:32:44] <Twilightlicious> They said developers only need to approve their games for the system
+[21:32:50] <Twilightlicious> but in my mind, you'd need to do a lot more than that.
+[21:33:13] <Rylee> they probably have an emulator or a jit rewriter
+[21:33:27] <Twilightlicious> Well of course emulation is required :P
+[21:33:41] <Twilightlicious> But to Emulate 3Ghz PowerPC on 2Ghz x86
+[21:33:46] <Twilightlicious> A concept i'm not grasping :P
+[21:34:00] <Colgate> GHz isn't everything
+[21:34:10] <Twilightlicious> Of course not
+[21:34:10] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[21:34:22] <Twilightlicious> but throw in Emulation of a different Arch type
+[21:37:10] <Twilightlicious> Unless developers are optimizing and recompiling their games, i'm impressed.
+[21:37:45] <Twilightlicious> I do know that all games must be downloaded, the disk data isn't used for anything other than verification of ownership.
+[21:38:38] <Twilightlicious> So it could be some sort of trickery.
+[21:38:52] <Twilightlicious> When they first announced it i was like "Ugh, here comes some sort of Streaming crap"
+[21:39:29] <Colgate> I wouldn't mind streaming in the same way the WoW client does it
+[21:40:01] <Colgate> it downloads as you play, so you can play it before it finishes downloading all the content
+[21:40:57] <Dusk> Twilightlicious: More cores with a more efficient architecture. It can be done.
+[21:41:13] <Twilightlicious> Clearly.
+[21:41:19] <Twilightlicious> Still, impressed.
+[21:41:23] <Dusk> They're the only one with the intimate knowledge of how their machine's parts talk to each other too
+[21:41:32] <Dusk> so making an emulator should have been a cakewalk
+[21:41:44] <Dusk> but nooo
+[21:41:47] <Phase> ppc<->x86 jit would be an off the shelf thing
+[21:41:54] <Phase> gpu emulation would be trickier
+[21:41:57] <Dusk> yea
+[21:42:17] <Phase> unless they're doing some api level nonsense
+[21:42:24] <Dusk> But again, Microsoft is the only company with the actual intimate knowledge of exactly how their hardware worked
+[21:42:37] <Dusk> So I would have thought this would have been a thing sooner
+[21:43:03] <Phase> which people have done, there's some experimental code somewhere for running x86+opengl binaries on arm
+[21:44:01] <Dusk> mhm
+[21:44:36] <Dusk> I'm still wondering how long it'll take for people to figure out how the consoles' APU setup talks to the components
+[21:45:20] <Phase> https://youtu.be/7vWnyDrNQO4 lolnice
+[21:45:20] <PinkiePieBot> [ Starcraft on OpenPandora handheld.. Natively! - 24879 views - 4m long - 99 likes - 98.02% ]
+[21:45:39] <Dusk> Emulation will be simpler, more than likely since it isn't /as/ custom and we're not trying to figure out another architecture and how to make it run on another :p
+[21:46:58] * Colgate ports wine to arm
+[21:47:21] <Phase> Colgate, actually it already has arm support
+[21:47:31] <Phase> infact i think they beat microsoft to 64bit arm
+[21:47:32] <Colgate> oh, well then
+[21:49:00] <Phase> Dusk, actually i think one of the restrictions on the xbox was the inability to map pages as executable
+[21:49:06] <Phase> so a static recompile wouldn't be too hard
+[21:49:26] <Dusk> hm
+[21:50:30] *** Joins: ChaosDragoness (ChaosDrago@Pony-2q64th.hstntx.sbcglobal.net)
+[21:52:50] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[21:52:53] *** Quits: LightningCrash (lightning@Pony-35aoef.ph.cox.net) (Connection closed)
+[21:54:11] <ChaosDragoness> Alright techies, I got a real brainteaser of a computer problem for you. 
+[21:55:26] <ChaosDragoness> Error: DNS probe finished no internet
+[21:55:56] <ChaosDragoness> And here's the tricky part. None of the usual solutions have worked.
+[21:56:56] <Colgate> I don't understand that error message
+[21:58:00] <ChaosDragoness> It's an internet service error. It basically says it can't find a DNS server.
+[21:58:32] <Colgate> well, do a traceroute and see where your connection dies
+[21:59:58] <Dusk> ^
+[22:00:16] <Dusk> You can also flush your DNS and specify your own DNS servers
+[22:02:25] <ChaosDragoness> Just fyi, this isn't my problem, but since he has no internet, I'm being nice and relaying between you and him.
+[22:03:01] <ChaosDragoness> He tried that Dusk, it didn't work.
+[22:03:21] <Dusk> Uh
+[22:03:28] <Dusk> is the adaptor itself broken?
+[22:05:51] <Colgate> ping your gateway, then ping your gateway's gateway :P
+[22:05:53] *** Joins: Caerdwyn (midnight@always.broken.sometimes.patched.never.fixed)
+[22:06:20] * Awaykitty pings Colgate's gateway
+[22:07:25] * Colgate mangles the packet header to spoof the source IP
+[22:07:36] <Colgate> of the return packets
+[22:08:08] *** Quits: Caerdwyn (midnight@always.broken.sometimes.patched.never.fixed) (Quit: ZNC - 1.6.0 - http://znc.in)
+[22:08:38] * Awaykitty flails at her computer and suddenly she's in Colgate's home network
+[22:15:58] <ChaosDragoness> He isn't responding... maybe his phone died.
+[22:16:45] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[22:27:26] <Twilightlicious> Set DNS Manually to 8.8.8.8
+[22:27:29] <Twilightlicious> Problem Solved.
+[22:27:39] * Twilightlicious hides
+[22:28:01] <Colgate> depends on what the issue is, if the DNS they are querying is down, sure
+[22:29:35] <ChaosDragoness> He tried that too Twilightlicious
+[22:29:51] <Twilightlicious> ping 8.8.8.8
+[22:29:56] <Twilightlicious> See if it replies.
+[22:30:17] <Twilightlicious> and not to insult anyones intelegence, but has he tried "reboot all the things!!"
+[22:30:22] <ChaosDragoness> yes
+[22:30:51] <ChaosDragoness> and 8.8.8.8 is googles DNS, and google is up so I'm going to assume that yes it's up.
+[22:32:42] <Twilightlicious> Thats a terrible assumption to make
+[22:33:03] <Twilightlicious> Also, it's not about testing if Google's DNS Service is up, but about if he is able to reach it
+[22:33:16] *** Joins: Stormie (Haze@Pony-ha3.ke3.172.199.IP)
+[22:33:21] <ChaosDragoness> ah
+[22:33:39] <Twilightlicious> Diagnostics :P
+[22:34:38] <Twilightlicious> The section where Xbox One shows you the games you have yet to install isn't functioning
+[22:34:53] <Twilightlicious> i assume because they're enabling backwards compatibility. 
+[22:35:15] <Twilightlicious> could also be because my internet is acting up
+[22:36:38] <ChaosDragoness> only backward compatability with certain multiplayer games unfortunately
+[22:37:02] <ChaosDragoness> Which means most of my xbox 360 library is still out in the cold
+[22:40:59] <ChaosDragoness> Interesting...
+[22:40:59] *** Joins: Hck (Hexie@Twilight.Is.Best.Pony)
+[22:41:08] <ChaosDragoness> So he's able to ping 8.8.8.8
+[22:41:51] <ChaosDragoness> only took 17ms too which is pretty quick
+[22:53:44] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[22:54:20] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[22:56:52] *** Quits: DataByteBrony (DataByte@Pony-720arn.5jsm.i2gu.000d.2601.IP) (Ping timeout: 121 seconds)
+[22:57:47] *** Joins: Caerdwyn (midnight@always.broken.sometimes.patched.never.fixed)
+[22:59:20] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[22:59:50] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[23:02:23] <Twilightlicious> Xbox Live store is down
+[23:02:38] *** Quits: Caerdwyn (midnight@always.broken.sometimes.patched.never.fixed) (Quit: ZNC - 1.6.0 - http://znc.in)
+[23:03:56] *** Quits: MangoBloom (djazz@djazz.se) (Connection closed)
+[23:04:53] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[23:05:31] <Twilightlicious> ChaosDragoness, pretty sure most of the games currently available are single player
+[23:06:02] *** Joins: djazz (djazz@Pony-db5lbv.tbcn.telia.com)
+[23:07:17] <ChaosDragoness> I'm just reporting what they said at E3. "100 xbox 360 multplayer games will be made backwards compatible."
+[23:07:50] <Phase> "but not all of them, you'll have to buy them again"
+[23:07:55] <ChaosDragoness> That's along with the other 15 that microsoft owns the rights too. Like Banjo Kazooie Nts and Bolts
+[23:12:04] <Twilightlicious> Thats not true, Phase :P
+[23:12:46] <Twilightlicious> if you owned them on 360, you own them on Xbox One
+[23:13:46] <Twilightlicious> once they get Xbox Live back up and running, you'll see compatible 360 games appearing in your games list on Xbox One (Assuming you're a preview member)
+[23:14:00] <Twilightlicious> if you're not a preview member, send me a friend request ;)
+[23:15:42] <Twilightlicious> You can have microsoft Call or Text you when Xbox Live is fixed
+[23:15:45] <ChaosDragoness> Not sure what a preview member is.
+[23:15:47] <ChaosDragoness> ....
+[23:15:54] * ChaosDragoness sends a friend request anyway
+[23:16:05] <Twilightlicious> being a Preview Member gives you Beta updates
+[23:16:14] <Twilightlicious> you test features before they go live to the masses
+[23:16:38] <Twilightlicious> backwards compatibility is available to preview members today, and not to the masses until around October.
+[23:19:31] <ChaosDragoness> ah
+[23:19:48] <ChaosDragoness> Wonder when the list of compatible games will be up.
+[23:20:21] <ChaosDragoness> I'm also wondering if it will only be games that you own digitally on the xbox 360
+[23:22:31] *** djazz is now known as MangoBloom
+[23:22:51] <Twilightlicious> it's up
+[23:23:04] <Twilightlicious> and disks will work, However, you won't be able to play from them
+[23:23:19] <Twilightlicious> Better said, inserting the disk will allow you to Download the game
+[23:23:28] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[23:23:34] <ChaosDragoness> ah
+[23:23:37] <Twilightlicious> So games you own on disk Will allow you to download them.
+[23:23:47] <Twilightlicious> Can't install or play from them directly.
+[23:24:12] <Twilightlicious> Here is the page that should answer most of your questions http://www.xbox.com/en-US/xbox-one/backward-compatibility
+[23:24:13] <PinkiePieBot> [ Xbox One Backward Compatibility | Xbox ]
+[23:24:59] <Twilightlicious> The current list of games is tiny, and only exists for testing purposes :P
+[23:25:20] <Twilightlicious> But i do own 7 of the games currently playable
+[23:25:41] <Twilightlicious> Though i may have lost my copy of Viva Pinata :P
+[23:26:55] <ChaosDragoness> ho-ly crap that is one old game
+[23:27:41] <Twilightlicious> The backwards compatibility allows for the Xbox One version of Fallout 4 to come with a download code for Fallout 3, free.
+[23:28:47] <ChaosDragoness> sweet
+[23:30:11] <ChaosDragoness> Can't wait for the full list.
+[23:34:01] <Twilightlicious> Halo Wars, Halo 3, Borderlands, ODST, Fable 2, Fable 3, Shadowrun, Alan Wake, And Halo Reach, are a few coming soon.
+[23:34:11] <tiwake> never really played any of the fallout games
+[23:34:23] <tiwake> also, screw the xbox
+[23:34:33] <tiwake> and playstation
+[23:35:27] *** Joins: Sombra (Iceman@Darkhorse21)
+[23:36:46] *** Joins: Asoka (Asoka@Pony-e31icc.net-htp.de)
+[23:39:32] *** Quits: Asoka_White (Asoka@Pony-14og0u.net-htp.de) (Ping timeout: 121 seconds)
+[23:41:14] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[23:41:29] *** Quits: Nelly (Neutral@Anonlight.Starsarebeautiful) (Ping timeout: 121 seconds)
+[23:41:55] *** Quits: ChaosDragoness (ChaosDrago@Pony-2q64th.hstntx.sbcglobal.net) (Quit: The three knights saw a mighty quarry. The dragon saw breakfast, lunch, and dinner.)
+[23:43:38] *** init3 is now known as Init3-away
+[23:44:34] *** Joins: LightningCrash (lightning@Pony-35aoef.ph.cox.net)
+[23:49:03] <Colgate> https://blog.lastpass.com/2015/06/lastpass-security-notice.html/ for those that use lastpass
+[23:49:05] <PinkiePieBot> [ LastPass Security Notice | The LastPass Blog ]
+[23:49:19] <Colgate> basically, they got password hashes and emails
+[23:49:26] <Colgate> but not the encrypted blobs
+[23:55:00] <Twilightlicious> another year without an MLP Game
+[23:57:34] <Hck> <img src="sadfrog.png" />
+[23:57:49] <Twilightlicious> Maybe Nintendo Tomorrow.
+[23:57:49] <Hck> There are fangames...

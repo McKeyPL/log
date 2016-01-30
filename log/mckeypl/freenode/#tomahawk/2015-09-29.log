@@ -1,0 +1,206 @@
+[00:35:22] <morsik> muesli: btw, Tomahawk has some problem with tracks endings on Google Music
+[00:35:58] <morsik> looks like it doesn't always request for last minute stream url or something like that (?!)
+[00:36:50] <morsik> well… this actually looks like problem with GMusic anyway. I have similar problem on official Google Music app on Android while 3G loose :<
+[00:56:10] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Read error: Connection reset by peer)
+[00:56:30] <domme> theli_ua: import UrlType from 'tomahawk/url-type'; :-D
+[00:56:47] <theli_ua> huh
+[00:56:51] <domme> or something :P
+[00:57:17] <theli_ua> domme: so far tidal is the only 0.9 api resolver broken on desktop iirc
+[00:57:32] <theli_ua> because of that tomahawkurltype/tomahawk.urltype thing
+[00:57:55] <domme> hehe, yeah, fix it however.. and i'll merge ;-)
+[01:01:09] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[01:28:01] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[01:30:50] <toma-cat> JIRA issue https://bugs.tomahawk-player.org/browse/TWK-2133 issue commented by theli "Eh, this is resolved, my fix for this was merged.  if resolver adds User-Agent header to TOmahawk..."
+[01:30:51] <tomabee> [ [TWK-2133] Add ability to override User Agent from resolver | bugs.tomahawk-player.org |  ]
+[01:39:31] <toma-cat> JIRA issue https://bugs.tomahawk-player.org/browse/TWK-2133 issue resolved by muesli
+[01:39:32] <tomabee> [ [TWK-2133] Add ability to override User Agent from resolver | bugs.tomahawk-player.org |  ]
+[02:08:38] *** Quits: lorenzh (~lorenz@4z2.de) (Ping timeout: 252 seconds)
+[02:10:20] *** Joins: lorenzh (~lorenz@4z2.de)
+[02:33:09] *** Quits: TheOneRing (~quassel@HSI-KBW-134-3-252-64.hsi14.kabel-badenwuerttemberg.de) (Quit: No Ping reply in 180 seconds.)
+[02:34:23] *** Joins: TheOneRing (~quassel@HSI-KBW-134-3-252-64.hsi14.kabel-badenwuerttemberg.de)
+[03:02:13] <toma-cat> JIRA issue https://bugs.tomahawk-player.org/browse/TWK-2123 issue commented by theli "Addressed this in this PR:
+[03:02:13] <toma-cat> https://github.com/tomahawk-player/tomahawk/pull/331"
+[03:02:14] <tomabee> [ [TWK-2123] Tomahawk wont show all albums from musicbrainz | bugs.tomahawk-player.org |  ]
+[03:02:15] <tomabee> [ Page not found · GitHub | github.com |  ]
+[03:07:55] <theli_ua> muesli: want me to comment on github or talk about that pr here?
+[03:08:07] <muesli> either way is fine for me
+[03:08:12] <muesli> probably easier in here
+[03:08:28] <theli_ua> ok, so this artist http://musicbrainz.org/artist/b1570544-93ab-4b2b-8398-131735394202
+[03:08:30] <tomabee> [ Crystal Castles | musicbrainz.org |  ]
+[03:08:42] <theli_ua> muesli: look at their 3 "Album" releases
+[03:08:47] <theli_ua> they the same exact title
+[03:08:55] <theli_ua> yet they are totally different
+[03:09:10] <theli_ua> the grey-font thing in () is their "disambiguation"
+[03:09:21] <theli_ua> which is only available on 2nd and 3rd
+[03:09:41] <theli_ua> and this is actually the "title" services like spotify, amazon, etc list them
+[03:10:02] <theli_ua> so. without my change .. I'll get a single album "Crystal Castle" listed by tomahawk on artist page
+[03:10:27] <theli_ua> with the change I will also get "II" and "III" both of which are correctly resolved for me from numerous services
+[03:10:43] <muesli> hmmm... sounds like a real edge case. two things pop in my mind
+[03:10:54] <muesli> aren't the spotify (&co) tags wrong then?
+[03:11:08] <muesli> shouldn't it be rather title += " " + disambiguation
+[03:11:10] <muesli> ?
+[03:11:39] <theli_ua> It can be, yeah. Its just whenever I looked they all list just the "disambiguation" part
+[03:11:42] <muesli> using just the disambiguation might work in this very case - and this case only
+[03:11:51] <muesli> got more examples for album disambs?
+[03:16:16] <theli_ua> I'll see if I can find any
+[03:18:35] <theli_ua> and btw it would also be nice to be able to select specific editions inside a release group in tomahawk as well
+[03:20:01] <theli_ua> muesli: musicbrainz.org/artist/6fe07aa5-fec0-4eca-a456-f29bff451b04
+[03:20:26] <muesli> good example indeed :)
+[03:21:10] <theli_ua> muesli: funny enough that is linked from musicbrainz docs (thats how I found it) https://musicbrainz.org/doc/Disambiguation_Comment
+[03:21:11] <tomabee> [ Disambiguation Comment | musicbrainz.org |  ]
+[03:22:04] <theli_ua> muesli: with the change I get "The Green Album" ... I dont know from where ... but also "Green Album" from musicbrainz
+[03:23:38] <theli_ua> Spotify lists it as "Weezer (Green Album)"
+[03:24:07] <theli_ua> same for amazon
+[03:24:36] <muesli> yeah from a logical pov title += " (" + disamb + ")" sounds like the most reasonable
+[03:24:48] <theli_ua> same for rhapsody
+[03:25:20] <theli_ua> muesli: downside of that would be http://musicbrainz.org/ws/2/release?query=artist:%22Crystal%20Castles%22%20AND%20release:%22Crystal%20Castle%20%28II%29%22
+[03:26:46] <theli_ua> hm, though http://musicbrainz.org/ws/2/release?query=artist:%22Weezer%22%20AND%20release:%22Green%20Album%22 doesn't work either 
+[03:27:04] <muesli> should probably store the found mbid along with the album object instead
+[03:27:14] <muesli> or a serviceId
+[03:27:19] <muesli> so we can query the album by that
+[03:28:43] <theli_ua> heh, that sounds like a much more complex change :D
+[03:29:49] <muesli> heh, but a sensible one ;-)
+[03:29:53] <muesli> we planned that anyway
+[03:34:13] <domme> http://blog.jquery.com/2015/07/13/jquery-3-0-and-jquery-compat-3-0-alpha-versions-released/
+[03:34:15] <tomabee> [ jQuery 3.0 and jQuery Compat 3.0 Alpha Versions Released | blog.jquery.com |  ]
+[03:34:20] <domme> "jQuery.Deferred is now Promises/A+ compatible" ... oh yes :D
+[05:08:48] *** Quits: Fohlen (~Fohlen@v22015072923726622.yourvserver.net) (Ping timeout: 264 seconds)
+[05:46:28] *** Quits: mgue1 (~mgue@x590fb685.dyn.telefonica.de) (Read error: Connection reset by peer)
+[05:46:58] *** Joins: mgue1 (~mgue@f048091146.adsl.alicedsl.de)
+[09:16:42] *** Joins: hrtcrw (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370)
+[10:34:09] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[11:03:51] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[12:29:13] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[13:10:34] *** Joins: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[13:10:34] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Disconnected by services)
+[13:16:47] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[13:18:24] *** Quits: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Ping timeout: 264 seconds)
+[14:33:46] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Ping timeout: 260 seconds)
+[14:50:24] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[15:14:42] *** Joins: arthurlutz (~arthur@mar44-4-88-161-154-132.fbx.proxad.net)
+[15:15:18] <arthurlutz> hi, I'm trying to use the deezer resolver but I can only activate it, not configure it (premium account credentials), any idea where to look ? 
+[15:15:40] <arthurlutz> using tomahawk 0.8.99 from ubuntu ppa
+[15:15:48] <arthurlutz> and resolvers from github
+[15:28:12] *** Quits: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com) (Remote host closed the connection)
+[15:53:12] *** Quits: domme (~domme@server2.muehlhaeuser.de) (Ping timeout: 264 seconds)
+[15:53:33] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Ping timeout: 250 seconds)
+[16:01:20] *** Joins: domme (~domme@server2.muehlhaeuser.de)
+[16:06:53] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[16:11:33] *** Quits: johu (~johu@gentoo/developer/johu) (Remote host closed the connection)
+[16:11:34] *** Quits: saidinesh5 (~quassel@minad.de) (Remote host closed the connection)
+[16:16:34] *** Joins: saidinesh5 (~quassel@minad.de)
+[16:16:35] *** Joins: johu (~johu@gentoo/developer/johu)
+[16:17:34] *** Quits: johu (~johu@gentoo/developer/johu) (Remote host closed the connection)
+[16:17:35] *** Quits: saidinesh5 (~quassel@minad.de) (Read error: Connection reset by peer)
+[16:19:43] *** Joins: saidinesh5 (~quassel@minad.de)
+[16:19:45] *** Joins: johu (~johu@gentoo/developer/johu)
+[16:20:00] *** Quits: johu (~johu@gentoo/developer/johu) (Remote host closed the connection)
+[16:20:00] *** Quits: saidinesh5 (~quassel@minad.de) (Read error: Connection reset by peer)
+[16:31:09] *** Joins: saidinesh5 (~quassel@minad.de)
+[16:31:11] *** Joins: johu (~johu@gentoo/developer/johu)
+[16:38:22] *** Joins: Fohlen (~Fohlen@v22015072923726622.yourvserver.net)
+[17:09:55] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[17:28:48] <tomabee> @aaron4772 mentioned: Oh yeah just dug out @tomahawk gotta play some Mike Patton first up my fav God Hates A Coward. Saw them first at HQ Adelaide 10+ ago [<no value>]
+[17:32:36] *** Quits: arthurlutz (~arthur@mar44-4-88-161-154-132.fbx.proxad.net) (Remote host closed the connection)
+[17:49:05] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Ping timeout: 240 seconds)
+[17:51:48] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[17:54:02] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Disconnected by services)
+[17:54:02] *** Joins: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[18:07:23] *** Joins: alsuren (~alsuren@host86-186-106-70.range86-186.btcentralplus.com)
+[18:19:21] <morsik> mgue1: and… Queue should contain Album info too :P will this be in 0.9 too?
+[18:50:59] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[18:53:05] <toma-cat> JIRA issue https://bugs.tomahawk-player.org/browse/TWK-2140 issue created by Profpatsch
+[18:53:06] <tomabee> [ [TWK-2140] badbadnotgood artist not found | bugs.tomahawk-player.org |  ]
+[18:57:24] *** mgue1 is now known as mgue
+[19:17:47] <theli_ua> muesli: tbf I would prefer amazon's ASIN for release than mbid :D that way I can easily resolve that via amazon
+[19:18:04] <theli_ua> and amazon's ASIN is one of the release's fields on musicbrainz
+[19:18:08] <muesli> i'd say it heavily depends on the resolver returning the object
+[19:18:21] <muesli> generally speaking tho, mbid is much more universal than the asin
+[19:18:26] <theli_ua> I mean, amazon's ASIN is much more widespread than mbid
+[19:18:34] <muesli> heh, i'd claim the opposite
+[19:18:56] <muesli> but admittedly it's just a feeling, not based on any facts
+[19:19:38] <theli_ua> well, I can for sure say that ISRC is more universal than both
+[19:20:00] *** Quits: alsuren (~alsuren@host86-186-106-70.range86-186.btcentralplus.com) (Quit: alsuren)
+[19:20:26] <theli_ua> like, it is available on mb and you can search, say, spotify by it
+[19:22:46] <theli_ua> Id say we could use all of "ISRC, ASIN, MBID" 
+[19:22:58] <theli_ua> like, have them as additional fields when resolving
+[19:23:06] <theli_ua> that way it would be much easier to match albums
+[19:23:36] <theli_ua> like, if any of them matches =>  this is THE album we're looking for
+[19:23:50] <theli_ua> and we can use either of them to get all of them via mb
+[19:24:18] <theli_ua> and that would be a huge step forward being able to distinguish re-releases, etc
+[19:24:33] <theli_ua> muesli, domme does that make sense?
+[19:25:25] <muesli> imo it should be a simple map.... service-string -> id-string
+[19:25:32] <muesli> so we can store any kind of id
+[19:26:35] <theli_ua> not sure I understand
+[19:31:57] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[19:36:16] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[19:37:13] *** Joins: muldea3 (guest-muld@gateway/web/scrollback.io/x-qmunisnlvmxclevw)
+[19:37:14] <muldea3> babalrdjtgbe
+[19:45:13] *** Joins: alsuren (~alsuren@host86-186-106-70.range86-186.btcentralplus.com)
+[19:49:51] <HorusHorrendus> where are the Go Experts? :) muesli? domme? ;)
+[19:51:15] <HorusHorrendus> If I want a very simple webservice in Go, not public, just internally used, receives data from GitLab Hooks (or maybe some other "hooks"), parses the data and sends then requests to another REST api (e.g. JIRA) ... what would I use?
+[19:52:43] <HorusHorrendus> as most simple Go Webserver/framework
+[19:55:20] <HorusHorrendus> or would I use for such a simple thing a js framework/library? :)
+[19:55:33] <HorusHorrendus> not that I can write a line of Go, neither JS :)
+[20:03:51] <muesli> beehive ;-)
+[20:11:27] <HorusHorrendus> ohh yeah you're right ... that could work
+[20:22:36] <HorusHorrendus> so I would probably do a webbee to receive the json data and unserialize it, create a gitlabbee because that should be the one that makes sense of the received data and then forward it to a jirabee (or leave the gitlabbee in the middle out and forward the result from webbee to jirabee)
+[20:38:10] *** Quits: teo- (~teo@kde/teo) (Ping timeout: 240 seconds)
+[20:50:14] *** Quits: alsuren (~alsuren@host86-186-106-70.range86-186.btcentralplus.com) (Quit: alsuren)
+[20:57:27] *** Joins: teo- (~teo@corkblock.jefferai.org)
+[20:57:27] *** Quits: teo- (~teo@corkblock.jefferai.org) (Changing host)
+[20:57:27] *** Joins: teo- (~teo@kde/teo)
+[21:18:55] *** Joins: bodam2005 (~bodam2005@161.209.206.205)
+[21:50:10] *** Joins: alsuren (~alsuren@host86-186-106-70.range86-186.btcentralplus.com)
+[22:00:42] *** Quits: alsuren (~alsuren@host86-186-106-70.range86-186.btcentralplus.com) (Quit: alsuren)
+[22:05:31] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[22:05:58] *** Quits: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Ping timeout: 246 seconds)
+[22:39:12] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[22:44:10] <theli_ua> HorusHorrendus: was you the one who was helping me to test amazon resolver in .de domain?
+[22:45:47] <HorusHorrendus> theli_ua: yeah
+[22:46:02] <theli_ua> HorusHorrendus: are you building your own tomahawk from master?
+[22:46:08] <HorusHorrendus> yeah
+[22:46:35] <theli_ua> could you please test if this one works for you with latest master? https://www.dropbox.com/s/5gh4t20lukp41em/amazon.tgz?dl=0
+[22:46:39] <tomabee> [ amazon.tgz | www.dropbox.com | https://cf.dropboxstatic.com/static/images/icons128/page_white_compressed.png ]
+[22:48:22] *** Joins: Rasi (~carnager@archlinux/support/rasi)
+[22:50:31] <Rasi> are there already scrobblers for hasket in the works?
+[22:50:53] <Rasi> or maybe it even works with last.fm protocol?
+[22:51:42] <domme> Rasi: you can scrobble to last.fm, yes
+[22:51:44] <HorusHorrendus> Rasi: tomahawk & tomahawk on android already "scrobble" to hatchet
+[22:52:40] <HorusHorrendus> theli_ua: works
+[22:52:49] <theli_ua> HorusHorrendus: just like that, without changes?
+[22:53:15] <HorusHorrendus> theli_ua: yeah ... replaced the whole resolver
+[22:53:19] <HorusHorrendus> deleted the old one ...
+[22:53:20] <theli_ua> nice
+[22:54:17] <Rasi> HorusHorrendus: well yes. i dont use tomahawk tho :)
+[22:55:29] <Rasi> if hatchet has some last.fm compatibility i could modify my scrobbler to use another url and iirc that was planned
+[23:00:48] *** Joins: alsuren (~alsuren@host86-186-106-70.range86-186.btcentralplus.com)
+[23:04:25] *** Quits: alsuren (~alsuren@host86-186-106-70.range86-186.btcentralplus.com) (Client Quit)
+[23:10:20] <jherskowitz> Rasi: yeah, we plan to publish that API so people can write Hatchet-scrobblers
+[23:16:01] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[23:17:49] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Disconnected by services)
+[23:17:49] *** Joins: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[23:18:09] <muesli> technically, they already could using our own json post api
+[23:18:17] <muesli> but yeah, a scrobbler protocol implementation is being planned & discussed
+[23:19:58] <domme> Rasi: oh lol, i did not read your question right ... and didn't understand that you meant hatchet when you wrote hasket :)
+[23:20:30] <Rasi> ah.. yeah :P
+[23:22:23] <HorusHorrendus> so my music apps need to scrobble at the same time to: last.fm, hatchet & listenbrainz ;)
+[23:22:41] <Rasi> listenbrainz? 
+[23:22:43] * Rasi googles
+[23:25:33] <Rasi> hmm, promising
+[23:25:44] <Rasi> and the importer is bloody fast
+[23:25:54] <muesli> HorusHorrendus: a lot better than the situation 2 years ago ;-)
+[23:27:40] <HorusHorrendus> muesli: definitly ... just need to find a way to keep those 3 in sync ;)
+[23:32:30] <Rasi> HorusHorrendus: is listenbrainz lastfm compatible?
+[23:33:23] <HorusHorrendus> Rasi: afaik not yet, but I think they want to be in the future
+[23:33:36] <HorusHorrendus> Rasi: meet alastairp, he can tell you more about the plans :)
+[23:33:41] <Rasi> 100k songs imported in like 4 minutes
+[23:33:44] <Rasi> thats impressive
+[23:35:15] <alastairp> how many pages do you have?
+[23:36:40] <Rasi> ~2100
+[23:37:19] <Rasi> reading the goals page of the project. i'm in love. once this has something like friends and some statistics i am sold
+[23:37:21] <Rasi> :)
+[23:38:12] * Rasi still cant believe last.fm removed the ability to see if a friend has listened to a certain band
+[23:41:23] <theli_ua> can you still see if an enemy listened to it though?
+[23:53:19] *** Quits: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Ping timeout: 256 seconds)
+[23:56:52] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)

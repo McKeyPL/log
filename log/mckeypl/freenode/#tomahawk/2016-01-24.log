@@ -1,0 +1,150 @@
+[00:25:30] *** Quits: jturney (~jon@host86-179-113-236.range86-179.btcentralplus.com) (Ping timeout: 250 seconds)
+[00:28:22] *** Joins: jturney (~jon@host86-179-113-236.range86-179.btcentralplus.com)
+[00:54:55] *** Joins: jturney1 (~jon@host86-179-113-236.range86-179.btcentralplus.com)
+[00:54:56] *** Quits: jturney (~jon@host86-179-113-236.range86-179.btcentralplus.com) (Disconnected by services)
+[02:24:36] *** Quits: jturney1 (~jon@host86-179-113-236.range86-179.btcentralplus.com) (Read error: Connection reset by peer)
+[03:39:52] *** Joins: mickael9 (mickael@jerrycraft.tk)
+[04:58:51] *** Quits: mgue (~mgue@x590fdbe8.dyn.telefonica.de) (Quit: WeeChat 1.3)
+[05:10:05] *** Joins: mgue (~mgue@x55b7ed09.dyn.telefonica.de)
+[10:01:44] *** Joins: soee (~soee@afjg82.neoplus.adsl.tpnet.pl)
+[12:13:26] *** Joins: justin_time (~stefan@p50889B71.dip0.t-ipconnect.de)
+[12:35:34] <justin_time> yofel: Do you have a contact to members of the kubuntu devel team, who maintain the tomahawk package in the ubuntu sources? Could you help me to contact the maintainer?
+[12:37:04] <muesli> [23:22] <yofel> muesli: when you see justin_time again, please point him to https://wiki.ubuntu.com/SponsorshipProcess#Requesting_Sponsorship
+[12:58:32] <justin_time> muesli: ok, thanks.
+[12:59:04] <muesli> justin_time: hopefully with the help yofel this shouldn't be as painful as debian
+[13:03:05] <justin_time> muesli: hmm… my problem is that I have no one who answer my questions there… I try to contact the group, who maintained the old package because they have the permission to update the package directly but I get no response. Some of the documentations are inconsistent. And so it is hard to me to find out what to do. 
+[13:03:55] <muesli> you mean debian or ubuntu now?
+[13:06:06] <justin_time> ubuntu
+[13:07:33] <justin_time> on debian, the rules are stricter than on ubuntu, but there are more people who are willing to help me… ubuntu feels like a "exclusive club"…
+[13:07:59] <muesli> justin_time: what's the name of the old maintainer, do you know?
+[13:09:37] <muesli> lel, why are we in the kde section of ubuntu anyway? :)
+[13:09:50] <muesli> "Kubuntu Developers"
+[13:09:55] <justin_time> exactly
+[13:09:57] <muesli> yofel: is that you? ^
+[13:10:59] <justin_time> nop, it is a group, and I'm unable to contact them. They mailing list is restricted and I can not write them a mail…
+[13:11:36] <muesli> lol
+[13:11:39] <muesli> :-/
+[13:11:41] <muesli> yofel: ^
+[13:14:11] <justin_time> btw: could it be, that I have to subscribe to a mailing list to be able to write a e-mail to the list? On some debian mailinglists, I can write to mailing lists without subscription.
+[13:14:40] <muesli> possible. worth trying it
+[13:16:23] <justin_time> ok, I'll try it.
+[13:35:11] <justin_time> ok, this is interesting: I ask on #kubuntu-devel directly and I get the following response: "<soee> talk to yofel - he did tomahawk packaging once i think. he can also point oher packager to do this maybe (clivejo, sglarck or ovidiu-florin)"
+[13:35:28] <muesli> heh, hence me pointing to him, too ;-)
+[13:40:42] <justin_time> muesli: ok, I was not sure, because yofel's last change on the tomahawk package was Jul 2012 and after this many other people updated the package.
+[14:13:28] *** Parts: justin_time (~stefan@p50889B71.dip0.t-ipconnect.de) ("Ex-Chat")
+[14:20:33] *** Joins: justin_time (~stefan@p50889B71.dip0.t-ipconnect.de)
+[14:21:32] <justin_time> muesli: another topic… the nightly builds: Did you use this code-import function of launchpad: https://code.launchpad.net/+code-imports/+new ?
+[14:22:20] <muesli> justin_time: nah, it's a custom script we wrot
+[14:22:21] <muesli> e
+[14:22:57] <muesli> if they can do this "properly" now, that would be awesome
+[14:24:40] <justin_time> shell I try?
+[14:24:47] <muesli> go ahead :)
+[14:24:58] <justin_time> ok
+[14:26:38] <justin_time> hmm… an error occurred: There is already an existing import for tomahawk with the name of master. ?!
+[14:27:09] <justin_time> maybe because of "https://code.launchpad.net/~tomahawk/tomahawk/master"?
+[14:29:28] <justin_time> Is it ok, to delete the old launchpad tomahawk master branch? 
+[14:39:36] *** Joins: jturney (~jon@host86-179-113-236.range86-179.btcentralplus.com)
+[15:12:35] *** Quits: jamesaxl (~jamesaxl@adsl196-60-25-217-196.adsl196-9.iam.net.ma) (Ping timeout: 245 seconds)
+[15:13:33] *** Joins: jamesaxl (~jamesaxl@adsl196-60-25-217-196.adsl196-9.iam.net.ma)
+[15:16:11] <justin_time> muesli: it does NOT work due to a gpg singed commit :-(
+[15:16:25] <justin_time> https://launchpadlibrarian.net/235081707/tomahawk-tomahawk-git-master.log
+[15:16:43] <justin_time> https://bugs.launchpad.net/bzr-git/+bug/1084403
+[15:24:23] <muesli> wtf
+[15:24:49] <muesli> ridiculous
+[15:32:32] <justin_time> this is Canconical… Bazarr is their own distributed revision control system which is not compatible with existing ones… This is typical for them.
+[15:32:37] *** Parts: justin_time (~stefan@p50889B71.dip0.t-ipconnect.de) ("Ex-Chat")
+[15:32:56] *** Joins: justin_time (~stefan@p50889B71.dip0.t-ipconnect.de)
+[15:36:55] <justin_time> And the best is, Canonical does not work on bazaar any longer…
+[15:41:33] *** Quits: justin_time (~stefan@p50889B71.dip0.t-ipconnect.de) (Quit: Ex-Chat)
+[15:42:50] *** Quits: jturney (~jon@host86-179-113-236.range86-179.btcentralplus.com) (Read error: Connection reset by peer)
+[16:41:34] *** Joins: TheOneRing_ (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de)
+[16:41:35] *** Quits: TheOneRing_ (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de) (Read error: Connection reset by peer)
+[17:03:43] *** Joins: dawnson (~quassel@ec2-52-29-161-219.eu-central-1.compute.amazonaws.com)
+[17:06:30] <dawnson> i cant get my google mussic account show up in either the linux (archlinux, just built the git version) or windows (windows 10)
+[17:06:33] <dawnson> any ideas?
+[17:07:16] <dawnson> i use a OTP so i created an app specific password
+[17:07:33] <dawnson> i also played a few songs in the official client already
+[17:11:13] <dawnson> https://gist.github.com/anonymous/8306716b8da8daf6f8d2 this is the terminal output
+[17:29:40] <muesli> hey dawnson
+[17:30:02] <muesli> dawnson: google changed their auth mechanism, which means we'll have to release a 0.9 first
+[17:30:02] <dawnson> o/
+[17:30:07] <dawnson> ah i see
+[17:30:16] <dawnson> and the git versien wont work right now as well?
+[17:30:25] <muesli> git should be fine-ish
+[17:30:38] <dawnson> hm then i will try again with the git version
+[17:30:41] <muesli> you'll also have to get the new resolver then, tho
+[17:30:46] <muesli> (which won't be compatible with 0.8)
+[17:30:50] <muesli> dawnson: :)
+[17:30:50] <dawnson> hm how would i do that? :D
+[17:31:05] <muesli> on arch i might be as easy as: yaourt -S tomahawk-git
+[17:31:32] <muesli> and you can find nightlies of the resolvers here: http://teom.org/axes/nightly/
+[17:31:42] <muesli> (or the sources for them on github)
+[17:33:28] <dawnson> ok, i will try that, thanks :)
+[17:36:47] <dawnson> unfortunately building it from git takes a while on an 1.3GHz i5 xD
+[17:37:05] <muesli> haha. i did it on a raspberry pi before ;-)
+[17:37:08] <dawnson> :D
+[17:37:41] <dawnson> http://www.intel.com/content/dam/www/public/us/en/images/product/nuc-kit-d34010wyb-10500194-2x1.jpg.rendition.cq5dam.webintel.310.155.jpg i am running on this one
+[17:42:56] <muesli> media pc? :)
+[17:46:37] <dawnson> no, its a "NUC"
+[17:46:41] <dawnson> just a really small PC
+[17:46:52] <dawnson> i5 , SSD intel chipset with intel grpahics
+[17:47:03] <dawnson> EFI :)
+[17:47:17] <muesli> next unit of computing ... interesting
+[17:47:18] <dawnson> so modern hardware ina tiny box
+[17:47:42] <dawnson> its an older model though i think you can get ones with an 2.8GHz i5 now
+[17:47:50] <dawnson> it is also great as a media PC yes
+[17:48:02] <dawnson> but i use it as my linux desktop machine :D
+[17:49:46] <muesli> nice, those look rather interesting actually
+[17:49:49] <muesli> a bit like a grown up raspi
+[17:49:54] <muesli> or a nano-mac-mini
+[17:50:01] <dawnson> yepp :)
+[17:50:17] <dawnson> we got 2 actually, this one for me and a newer one as our plex media server
+[17:50:39] <dawnson> which is more powerfull so it can transcode multiple HD streams in real time
+[17:59:27] <dawnson> whee it is working
+[17:59:58] <dawnson> but i guess it will never support the google music special features where it recommends me music etc?
+[18:00:23] <dawnson> or charts inside a genre
+[18:02:01] <dawnson> whats also strange is that inside the player i can see the cover but not in the notification etc
+[18:05:13] <dawnson> hm ok that seems to work now
+[18:06:06] <xhochy> https://www.irccloud.com/pastebin/b6kjXbHF/
+[18:06:20] <xhochy> dommex: muesli: do you know what's missing here?
+[18:10:27] <dommex> xhochy: wat. No. Never seen
+[18:13:10] <xhochy> meh, will retry with GCC
+[18:13:52] <dommex> clang works just fine
+[18:14:31] <dommex> But you need to compile boost and lucenepp with clang and c++11 too. Or what other compiler are you trying?
+[18:14:39] <dommex> xhochy: ^
+[18:15:09] <xhochy> dommex: meh, I compiled boost and lucenepp with gcc
+[18:15:18] <xhochy> but that should not be related to a header issue
+[18:15:37] <xhochy> (yes, I was trying clang)
+[18:15:40] <dommex> Right
+[18:16:37] <dommex> No clue about that issue. Seems like a standard issue, like a missing devel package
+[18:16:53] <xhochy> I'm on Gentoo, there are just devel packages :P
+[18:17:02] <dommex> :p
+[18:17:05] <xhochy> GCC works fine. So weird Clang issue.
+[18:18:31] <dommex> Linking (lib)tomahawk will fail if you dont link boost and lucenepp against libstdc++
+[18:18:50] <dommex> Just saying :p
+[18:19:25] <xhochy> I'm now using GCC all the way, so nothing should go wrong.
+[18:20:46] <dommex> Okies
+[18:21:27] <dommex> xhochy: planning on starting to hack again on tomahawk? :p
+[18:24:08] <xhochy> dommex: I'd love to, but I'm still struggling to find the time
+[18:24:52] <dommex> Hehe ;/
+[19:09:07] *** Quits: lorenzh (~lorenz@4z2.de) (Quit: WeeChat 1.4)
+[19:11:10] *** Joins: lorenzh (~lorenz@4z2.de)
+[19:23:12] *** Quits: lorenzh (~lorenz@4z2.de) (Quit: WeeChat 1.4)
+[19:25:00] *** Joins: lorenzh (~lorenz@4z2.de)
+[20:01:04] <muesli> theli_ua: ah, meh. your latest commit introduced a crash
+[20:01:19] <muesli> left/right->resolvedBy() may return null
+[20:02:31] <theli_ua> muesli: let me guess, resolved not by resolver?
+[20:02:39] <theli_ua> ah, yeah :D
+[20:03:39] <muesli> e.g. or when the resolver has been removed
+[20:04:37] <theli_ua> I blame the reviewer
+[20:05:17] <muesli> haha
+[20:05:24] <muesli> yeah, i'm guilty of this indeed
+[20:05:38] <theli_ua> I'm obviously less familliar with the code :P
+[20:05:38] <muesli> see https://github.com/tomahawk-player/tomahawk/issues/410
+[20:05:46] <muesli> theli_ua: not accusing you of anything ;-)
+[20:06:07] <theli_ua> not too hard to fix
+[20:06:28] <theli_ua> would be worse if I introduced some memory/stack corruption :D
+[20:24:46] *** Quits: jamesaxl (~jamesaxl@adsl196-60-25-217-196.adsl196-9.iam.net.ma) (Quit: Leaving)
+[21:50:01] <dommex> well, it would be easier if we were passing around sharedpointers of resolvers
+[21:50:06] <dommex> but not too bad either
+[23:18:45] *** Quits: soee (~soee@afjg82.neoplus.adsl.tpnet.pl) (Ping timeout: 265 seconds)

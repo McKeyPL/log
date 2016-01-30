@@ -1,0 +1,683 @@
+[00:01:00] *** mniip is now known as \m
+[00:07:05] *** \m is now known as mniip
+[00:11:42] *** Quits: Melanosuchus (quassel@Pony-jmmque.as13285.net) (Connection closed)
+[00:15:54] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[00:20:21] *** Joins: Webster (Webster@Pony-4eid99.fios.verizon.net)
+[00:26:47] <mniip> so uh
+[00:26:57] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:27:01] <mniip> I need to write a server
+[00:27:08] <mniip> what should I use
+[00:27:42] <mniip> posix socket api from C? is that even used nowadays?
+[00:28:09] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:28:20] <mniip> I'm rather reluctant to use something like twisted or node.jshit for performance reasons though
+[00:46:06] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[00:53:14] *** Joins: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net)
+[00:56:04] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[01:02:48] <Webster> mniip: Yeah, it's used. I use it at work.
+[01:03:13] <Webster> I'd say use whatever language you're most comfortable with unless you know you're really going to need maximum performance out of it.
+[01:03:40] <mniip> I am comfortable with C
+[01:03:45] <mniip> however
+[01:04:12] <mniip> it's also rather tedious to code something like this
+[01:05:00] <Webster> Use C++ and wrap it in a class? Or be lazy and use Boost.
+[01:05:40] <mniip> no fuck boost
+[01:05:51] <mniip> C++ seems appealing but
+[01:05:52] <mniip> ugh
+[01:05:57] <Webster> Hah, I know how that is.
+[01:06:29] <Webster> I've basically went from using mostly C to C++ at work, which started because someone else was using C++. The whole objects thing is quite nice. :P
+[01:06:56] <mniip> nah
+[01:06:58] <mniip> fuck C++
+[01:07:29] <mniip> I don't wanna mix read/write with fstreams
+[01:07:47] <johnsey> in the end, it's all just fancy wrappers around syscalls, so i'd use what you're most comfortable with
+[01:13:32] <Webster> Sounds like you should just use C then.
+[01:14:03] <Webster> Just make sure to always check your array bounds.
+[01:15:26] *** GigaWork is now known as Gigabit
+[01:16:57] <mniip> arrays pfft
+[01:32:12] *** Phase4 is now known as Phase
+[01:33:15] *** Quits: Eventide (uid61788@Tips.Fedora) (Connection closed)
+[01:39:24] * Phase *complains about programming languages*
+[01:39:45] <Phase> C++ has stronger typing, but because there's a "class" keyword everyone uses it like its java
+[01:40:04] <Phase> it can be a very expressive language, never used like that though
+[01:42:09] <Compu> https://www.reddit.com/r/CrappyDesign/comments/3x80ld/lets_make_it_as_difficult_as_possible_for_people/
+[01:43:14] <Phase> nu electric co, incorperated 85ad
+[01:45:41] <Phase> mniip, and fuck boost
+[01:45:46] <Phase> overcomplicated piece of crap
+[01:53:09] *** Quits: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net) (Ping timeout: 121 seconds)
+[02:00:18] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:05:04] <Phase> someone needs to teach java that not everything makes sense as a class
+[02:10:04] <HoneyDrops> Java's whole point is conceptual overhead.
+[02:14:26] *** Joins: Asoka_White (Asoka@Pony-e1pj0q.net-htp.de)
+[02:16:48] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:17:38] *** Quits: Asoka (Asoka@Pony-6bg07g.net-htp.de) (Ping timeout: 121 seconds)
+[02:18:50] <Moonlightning> Phase: Rust \o/
+[02:19:53] <Phase> Moonlightning, still yet to play with rust
+[02:20:34] <Moonlightning> Lapsus: nand cat \o/
+[02:21:02] <Moonlightning> though I agree with mniip that it /would/ make more sense for the input to come /from/ the direction of travel
+[02:21:32] <Phase> what are we talking about?
+[02:21:55] <Moonlightning> [14:37:32] <~Lapsus> Moonlightning: http://imgkk.com/i/7ws9.png
+[02:21:55] <Moonlightning> [14:37:35] <~Lapsus> nand cat :3
+[02:22:03] <Moonlightning> Phase: you really should play with Rust
+[02:26:45] <Moonlightning> …in hindsight, that actually sounds pretty weird
+[02:27:09] * Phase contracts tetnus
+[02:28:13] <Kinsley> I think I have a copy of Rust I want nothing to do with.
+[02:28:25] * HoneyDrops squeaks.  She got her DTaP booster week before last, her foreleg was sore for over a week.
+[02:28:50] <Phase> just to be clear, we're talking about https://www.rust-lang.org/
+[02:28:51] <PinkiePieBot> [ The Rust Programming Language ]
+[02:28:59] <Phase> not the videogame or oxygen-rich form of iron
+[02:29:12] <Kinsley> Oh, I'm talking about the game.
+[02:29:21] <Kinsley> But, hey, offer's still there.
+[02:29:29] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[02:30:55] <Phase> HoneyDrops, 'DTaP booster'?
+[02:31:33] <Phase> never heard that name before
+[02:32:05] <Moonlightning> sounds legit
+[02:33:15] <HoneyDrops> https://en.wikipedia.org/wiki/DPT_vaccine
+[02:33:16] <PinkiePieBot> [ DPT vaccine - Wikipedia, the free encyclopedia ]
+[02:48:36] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:49:10] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[02:55:19] <Moonlightning> http://www.smbc-comics.com/index.php?id=3422
+[02:55:19] <PinkiePieBot> [ Saturday Morning Breakfast Cereal ]
+[03:13:30] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[03:24:11] <Gigabit> Bah, sound wasn't working after resuming session in Arch
+[03:29:42] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[03:40:11] <Phase> Gigabit, mic port?
+[03:40:54] <Gigabit> I rebooted and checked settings again. Master volume was muted even with the slider at 100%
+[03:41:02] <Phase> huh
+[03:45:11] <JustAberrant> :)
+[03:45:23] <JustAberrant> possible the ordering of your sound cards changed if you are directly using alsa
+[03:50:34] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:56:35] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[04:02:27] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[04:31:41] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[04:35:08] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[04:49:39] *** Joins: Eventide (uid61788@Tips.Fedora)
+[04:50:48] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[04:56:15] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[05:09:00] <Sellyme> anyone have suggestions for a cheap domain registrar?
+[05:09:35] <Kinsley> Sellyme: Namecheap
+[05:10:58] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[05:11:01] <Colgate> ^
+[05:11:08] <Colgate> gandi is also good
+[05:11:21] <Colgate> those are the two primary ones I use
+[05:15:02] <Sellyme> okay, will stick to Namecheap. Was using them in the past but wanted to make sure they were still good
+[05:15:19] <Sellyme> now I just need to track down the owner of selly.me and tell him to stop renewing it...
+[05:16:16] <Colgate> namecheap has good prices and a good stance on internet issues
+[05:16:40] <Colgate> and their panel lets you do many things, and if you aren't happy with those things, you can use your own NS :P
+[05:17:03] <ShivalWolf> or move the domain to zoneedit for the NS
+[05:18:31] *** Eventide is now known as Eventide|Sleepies
+[05:18:47] <ShivalWolf> their interface is useable plus API for updates
+[05:19:55] <Kinsley> If you choose Godaddy, though, I will ban you.
+[05:20:06] <Kinsley> And petition for your ban from the network.
+[05:20:19] <ShivalWolf> lol
+[05:20:24] <Moonlightning> godaddy: not even once
+[05:21:03] <Colgate> godaddy is awful
+[05:26:19] *** Joins: TSparkle3395 (TSparkle339@Owner.ARBronyRadio.com)
+[05:26:37] *** Quits: Datalink (Datalink@Datalink) (Connection closed)
+[05:40:57] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[05:44:36] * JustAberrant places a very small piece of electrical tape on Colgate 
+[05:45:12] *** Gigabit is now known as Snoarin
+[05:46:32] <Sellyme> yeah I'm not dumb enough to go with GoDaddy
+[05:47:06] <ShivalWolf> you dont have to be dumb to go with them. some people just dont know better
+[05:54:13] <Moonlightning> ^
+[05:55:26] <AppleDash> v
+[05:55:47] <Colgate> <
+[05:55:54] <Webster> ;
+[06:01:00] <Moonlightning> ;
+[06:02:26] <AppleDash> >
+[06:03:49] <Colgate> !
+[06:12:09] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (Ping timeout: 241 seconds)
+[06:23:50] *** WuBzY_Sleepin is now known as WuBzY
+[06:25:04] *** Joins: Datalink (Datalink@Datalink)
+[06:39:28] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (The TLS connection was non-properly terminated.)
+[06:40:12] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[07:04:56] *** Quits: Webster (Webster@Pony-4eid99.fios.verizon.net) (Quit: Leaving)
+[07:16:53] *** Quits: Colgate (rabbit@brushie.horse) (Ping timeout: 121 seconds)
+[07:32:39] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[07:41:40] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[07:43:22] <Kinsley> Quick question: what's the nick registration expiry time when a user sets vacation? 
+[07:43:49] <Moonlightning> Three times the normal.
+[07:43:58] <Moonlightning> So 90 days on Canternet.
+[07:44:23] <Moonlightning> …actually, I think the factor is configurable, too.
+[07:44:52] <Kinsley> Which returns us to my question. What's the time here? 
+[07:45:34] <Moonlightning> 90 days.
+[07:48:01] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[07:54:28] <Moonlightning> https://www.blackl.net/captcha-$n.png for $n in 1...4
+[07:54:35] <Moonlightning> Is it just me, or are these things fuckkin' impossible? :V
+[07:55:01] <Moonlightning> I swear I have successfully completed exactly ONE of them in my life.
+[07:55:03] <AppleDash> They are.
+[07:55:06] <AppleDash> They always are.
+[07:55:13] <AppleDash> That's the intention
+[07:55:19] <AppleDash> They give you ultrahard ones on tor and things
+[07:55:27] <Moonlightning> s/ultrahard/impossible/
+[07:55:32] <Moonlightning> So why not deny access altogether?
+[07:55:40] <AppleDash> It usually takes me about 10 tries
+[07:55:44] <AppleDash> you'll get it eventually
+[07:56:03] <Moonlightning> No, I meant LITERALLY impossible.
+[07:56:17] <AppleDash> They are not impossible
+[07:59:40] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:02:02] *** Joins: Colgate (rabbit@brushie.horse)
+[08:02:52] *** Quits: Colgate (rabbit@brushie.horse) (Quit: Luna IRC 1.3. Praise the goddess of the night.)
+[08:03:22] <Moonlightning> 1...12 :I
+[08:03:27] *** Joins: Colgate (rabbit@brushie.horse)
+[08:04:46] <Moonlightning> Am I DOING them wrong?
+[08:05:43] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (Ping timeout: 121 seconds)
+[08:06:48] <Moonlightning> Like, are those the wrong answers?
+[08:09:57] *** Joins: Melanosuchus (quassel@Pony-0pqejd.as13285.net)
+[08:17:53] *** Joins: Phase (Phase4@Pony-72i3r3.internode.on.net)
+[08:21:35] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[08:34:16] *** Joins: Sombra (Iceman@Darkhorse21)
+[08:44:13] *** Quits: WuBzY (androirc@Pony-k9rueo.rev.dnainternet.fi) (Connection closed)
+[08:45:33] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (RecvQ exceeded)
+[08:46:44] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[08:48:33] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (Killed (Colgate (<AppleDash> You should just kill me; <AppleDash> so people can see how much of an abuser you are!)))
+[08:49:30] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[08:50:10] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[08:50:58] <Moonlightning> …okay, I'm convinced that these are literally impossible, and this whole thing is just to fuck with Tor users.
+[08:51:50] <Colgate> what?
+[08:51:59] <Colgate> are you talking about the impossible cloudflare captchas?
+[08:52:16] <Colgate> cause there are some, that when I see them, I immediately just close the tab
+[08:52:20] <Colgate> cause it isn't possible
+[08:52:33] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[08:53:27] <Moonlightning> https://www.blackl.net/4b95fd15.png
+[08:53:32] <Moonlightning> look at this shit
+[08:54:28] <Colgate> oh that
+[08:54:37] <Colgate> yeah... when that happens, that's annoying
+[08:54:55] <Colgate> I've also had it so the server embeds a youtube video as the captcha
+[08:55:00] <Colgate> now idea how that happened
+[08:55:03] <Colgate> no*
+[08:55:31] <aji>      #techponies | <Colgate> now idea how that happened
+[08:55:34] <aji>  #rust-internals | <ubsan> in the compiler
+[08:55:36] <aji>      #techponies | <Colgate> no*
+[08:55:38] <aji>  #rust-internals | <mmcc> ah. no idea here. very new still.
+[08:56:00] <Colgate> dem merged buffers
+[08:56:09] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[08:56:50] <AppleDash> lol
+[08:57:34] <Moonlightning> Okay, I'm calling bullshit.
+[08:57:41] <Moonlightning> There is NO WAY this could have been ANYTHING ELSE.
+[08:57:48] <AppleDash> screenshot
+[08:57:50] <Moonlightning> I CAN READ THE DAMN THING.
+[08:57:54] <Moonlightning> yeah, inbound
+[08:58:30] <Colgate> inb4 it is the impossible cloudflare captcha
+[08:58:36] <Moonlightning> ./captcha-2-1.png
+[08:58:43] <Colgate> uh
+[08:58:48] <Colgate> clickable link pls
+[08:58:56] * Moonlightning groans.
+[08:59:03] <Moonlightning> https://www.blackl.net/captcha-2-1.png
+[08:59:11] <Colgate> oh yeah
+[08:59:15] <Colgate> those are the impossible ones
+[08:59:19] <Moonlightning> I'm going to get as good at typing 'https://www.blackl.net/' as I am my passwords.
+[08:59:22] <Colgate> I've never gotten one of those correct
+[08:59:25] <Moonlightning> It's bullshit!
+[08:59:31] <Moonlightning> There is LITERALLY NOTHING ELSE IT COULD HAVE BEEN.
+[08:59:35] <Colgate> pretty sure they are literally impossible
+[08:59:38] <Moonlightning> They're just returning failure for all of those.
+[08:59:50] <Moonlightning> There's, there's no other explanation.
+[09:00:02] <Moonlightning> The validation for those is `{ false }`.
+[09:00:05] <Colgate> but yeah, when I see those, I don't even try
+[09:00:11] <Colgate> since it won't work
+[09:00:23] <AppleDash> Moonlightning: could've started with ttn
+[09:00:25] <AppleDash> rrn*
+[09:00:35] <Colgate> wait a few minutes, try to get a tor node that isn't heavily blacklisted
+[09:00:47] <Colgate> with one of the easier captchas
+[09:00:47] <AppleDash> the r in the second one that says rhr could have been a t or an I or something
+[09:00:52] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[09:01:07] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[09:01:29] <Moonlightning> Colgate: I've clicked on /New Tor Circuit for this Site/ like at least two dozen times
+[09:01:45] <Colgate> :(
+[09:02:05] <Moonlightning> The Web is fucked now.
+[09:02:07] <Colgate> fuck that site then? :P
+[09:02:10] <Moonlightning> It's not free anymore.
+[09:02:21] <Moonlightning> because FUCKING EVERYTHING USES CLOUDFLARE, AND CLOUDFLARE DENIES ACCESS TO TOR USERS
+[09:02:39] <Colgate> yes, I despise cloudflare as well
+[09:02:39] <Moonlightning> HOW THE FUCK ARE YOU SUPPOSED TO GET ACCESS TO INFORMATION IF YOUR GOVERNMENT CENSORS SHIT
+[09:02:58] <Colgate> there's still *.onion :P
+[09:03:10] <Colgate> or *.i2p
+[09:03:12] <Colgate> or freenet
+[09:03:36] <Moonlightning> If these websites had onion. support, do you think I would be banging my head against cloudflare right now?
+[09:03:38] <AppleDash> I have gotten them correct before
+[09:03:46] <AppleDash> Idea: Don't access it over tor
+[09:03:50] * Colgate praises AppleDash, for they are a guard
+[09:03:53] <Colgate> er god*
+[09:04:04] <Colgate> god of captchas
+[09:04:15] <Moonlightning> If these websites had TLS support, do you think I would be banging my head against cloudflare right now? :V
+[09:04:26] <Moonlightning> CAN I GET ONE FUCKING SMIDGEN OF ANONYMITY HERE
+[09:04:32] <Colgate> yes, because cloudflare mitms lots of tls connections
+[09:04:33] <Colgate> :P
+[09:04:47] <Moonlightning> …
+[09:04:56] <Moonlightning> I should start a blog
+[09:06:27] <AppleDash> no
+[09:06:29] <AppleDash> no you should not
+[09:06:32] <Colgate> cloudflare has their own CA I believe, can untrust it if you wish
+[09:06:54] <AppleDash> No, they use comodo
+[09:07:02] <Moonlightning> can I get a dane in here
+[09:07:04] <Colgate> then untrust comodo :P
+[09:07:13] <Moonlightning> lots of stuff uses comodo though @.@
+[09:07:24] <Colgate> do you trust cloudflare?
+[09:08:34] <Moonlightning> I guess I trust comodo, since the major browsers|OSes seem to…?
+[09:08:46] <Moonlightning> [00:07:02] < Moonlightning> can I get a dane in here
+[09:08:57] <Colgate> you could probably distrust their specific intermediate cert
+[09:09:02] <Colgate> until they get a new one of course
+[09:09:08] <Moonlightning> speaking of, can I get a guide on how to dane
+[09:09:16] <Moonlightning> server-side, I mean
+[09:10:19] <Colgate> huh
+[09:10:30] <Colgate> now that I look at cloudflare's intermediate CA cert
+[09:10:47] <Colgate> what does "Object Identifier (1 2 840 10045 4 3 3)" mean for a signature algorithm
+[09:11:05] <Moonlightning> something to do with IANA, I'm sure
+[09:11:58] <Colgate> sha384ECDSA
+[09:11:59] <Colgate> ok
+[09:12:02] <Colgate> https://msdn.microsoft.com/en-us/library/ff635603.aspx
+[09:12:08] <PinkiePieBot> [ [MS-GPNAP]: Hash Algorithm OID ]
+[09:13:30] <Moonlightning> Y'know, just like `blackl.net.   7   3  10    AwEAAdKK...`
+[09:13:36] <Moonlightning> seriously, why the hell can't they use names for that
+[09:15:47] *** Quits: Melanosuchus (quassel@Pony-0pqejd.as13285.net) (Connection closed)
+[09:20:58] <roflin> well have you asked the dev if he would add your changes?
+[09:22:20] <Moonlightning> Forgive me for answering a question with a question, but why the /hell/ are you assuming the developer is male?
+[09:24:06] *** Joins: Xefir (xefir@Pony-ci7.430.142.83.IP)
+[09:27:06] <AppleDash> There is nothing wrong with that
+[09:27:54] <Moonlightning> It doesn't reinforce the standard that you must be male to be in tech?
+[09:27:56] <Moonlightning> Not one iota?
+[09:28:30] <AppleDash> Nope
+[09:28:53] <AppleDash> If the developer isn't male and it's known, you can correct them
+[09:28:55] <AppleDash> Very simple
+[09:29:35] * Colgate grumbles about gender pronounds'
+[09:29:37] <Moonlightning> You don't think that if a non-male singlehoofedly created a very useful project, and then hung around this very channel while half a dozen people discussed the project referring to them with /he/ and such…you don't think that would be /at all/ discouraging?
+[09:29:38] <Colgate> too complicated
+[09:29:55] <AppleDash> I don't think it would be, no
+[09:29:57] <Moonlightning> Y'know, on top of EVERYTHING ELSE they might have already gone through
+[09:30:01] <Colgate> I just use they/them everywhere, and if people get angry at me for it(and they have), I tell themt o shove it
+[09:30:13] <AppleDash> If it was, then they should probably rethink what bothers them
+[09:30:51] <Moonlightning> You don't think misgendering is a valid source of offense?
+[09:31:00] <Moonlightning> being misgendered *, rather
+[09:31:14] <AppleDash> If it's unknown and not determinable and wasn't done intentionally, then no, I do not think it is valid to be offended
+[09:31:23] <Moonlightning> > not determinable
+[09:31:27] <Moonlightning> it is very easily determinable
+[09:31:34] <AppleDash> Oh?
+[09:31:44] <AppleDash> Determine my gender. Pretend you don't know it. Nobody else here does either
+[09:31:52] <AppleDash> You have 5 minutes
+[09:33:14] <Moonlightning> It is very easy to determine the authors of a well-known project *
+[09:33:18] <Moonlightning> http://lmgtfy.com/?q=berkeley+internet+name+daemon+authors
+[09:33:18] <PinkiePieBot> [ Let me google that for you ]
+[09:33:20] <Moonlightning> Q.E.D.
+[09:33:44] <roflin> ow whelp, I kinda started a discussion by repeating history on a ssh session I thought died.
+[09:34:13] <Moonlightning> The fuck are you on about now
+[09:35:04] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:35:45] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[09:36:08] <roflin> well i said this December 16 at 13:22:39. just now my internet died. i tried to kill my ssh session with <return> ~ . failed. and appearantly pressed up prior to that. So I reposted it.
+[09:36:36] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:38:56] <mniip> [11:28:42] <Moonlightning> You don't think misgendering is a valid source of offense?
+[09:39:05] <mniip> offence is such a stupid concept
+[09:39:07] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[09:40:27] <mniip> you can be offended by anything if you choose to
+[09:40:57] <mniip> the only winning move is not to play
+[09:41:03] <Moonlightning> Yeah, but there are standards, too
+[09:41:19] <Moonlightning> whole sets of things which people have agreed that it's understandable to be offended by
+[09:41:41] <mniip> such as
+[09:44:25] <Moonlightning> Touché.
+[09:44:29] <Moonlightning> Can we get back to DANE, please?
+[09:46:14] *** Joins: WuBzY (androirc@Pony-jk6ata.rev.dnainternet.fi)
+[09:46:29] *** Quits: WuBzY (androirc@Pony-jk6ata.rev.dnainternet.fi) (Quit: WuBzYs 0ut)
+[09:47:23] *** Joins: WuBzY (yaaic@Pony-jk6ata.rev.dnainternet.fi)
+[09:52:49] <mniip> so wait, every time I use select, I have to walk over all FDs I've selected?
+[09:53:13] <AppleDash> yes
+[09:54:20] <Moonlightning> don't use select()
+[09:54:25] <Moonlightning> use threads and queues instead
+[09:54:27] <Moonlightning> \o/
+[09:54:29] <AppleDash> um
+[09:54:34] <AppleDash> You're joking, right?
+[10:06:35] <mniip> hmm
+[10:06:51] <mniip> I'm not sure if I want to maintain a separate queue of FDs for writing
+[10:07:07] <Moonlightning> Oh, goodie! Somepony who disagrees!
+[10:07:10] <mniip> or to walk through the whole list whenever I have something to say
+[10:07:15] <Moonlightning> Okay, what's wrong with the thread-and-queue model?
+[10:07:27] <mniip> Moonlightning, edge cases
+[10:07:38] <AppleDash> Inefficient, easy for people to DoS you
+[10:08:14] <Moonlightning> …what? And what?
+[10:08:28] <mniip> Moonlightning, when a socket is closed, your read end will report an error
+[10:08:37] <mniip> and you have to kill the write thread
+[10:08:51] <mniip> what if the write thread reports an error at the same time?
+[10:09:19] <mniip> when I did this in python I had to introduce 1 mutex and 4 semaphores
+[10:15:38] <Moonlightning> Mmmm…
+[10:28:19] <AppleDash> I thoght you were saying a new thread for each client
+[10:29:35] <Moonlightning> [unrelated] Can I CNAME these things, or do I have to repeat TLSA records for each port I listen for IRC on? <.<
+[10:29:54] *** Quits: Quindo (Quindo@Pony-8qt.17k.198.99.IP) (Connection closed)
+[10:33:59] <Moonlightning> Ugh, there's going to be a ton of repeated stuff anyway
+[10:39:21] <Moonlightning> they really need to update the zonefile syntax highlighting
+[10:39:27] <Moonlightning> these red splotches are really ugly :(
+[10:46:01] <Moonlightning> I need a way to programmatically edit zonefiles.
+[10:47:49] *** Quits: Eventide|Sleepies (uid61788@Tips.Fedora) (Quit: Connection closed for inactivity)
+[10:59:16] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[11:01:17] <Moonlightning> …okay, what have I done wrong?
+[11:07:42] *** Joins: Asoka (Asoka@Pony-n3hlqj.net-htp.de)
+[11:09:57] *** Quits: Asoka_White (Asoka@Pony-e1pj0q.net-htp.de) (Ping timeout: 121 seconds)
+[11:16:41] <Moonlightning> >> https://danetools.com/dane?host=irc.blackl.net.&service=other&port=6697&protocol=tcp
+[11:16:47] <Moonlightning> what do you mean, /no TLSA present/
+[11:16:56] <Moonlightning> it's right there :I
+[11:23:55] <Moonlightning> gnutls-cli with --dane is fine with it, but doesn't say anything about DANE, even with -VV
+[11:29:57] <Moonlightning> Fuck it, I'm going to bed.
+[11:30:21] <Moonlightning> relevant records: https://gist.github.com/BlacklightShining/942361973b43ebbb4655
+[11:30:21] <PinkiePieBot> [ db.blacklnet · GitHub ]
+[11:30:25] <Moonlightning> Somepony take a look while I'm sleeping XP
+[11:35:57] <Compu> im loving this hexchat spotify script
+[11:45:00] <mniip> Moonlightning, wait
+[11:45:14] <mniip> you know keyboardfire/doorknob?
+[12:04:58] *** Joins: CompuDesktop (compu@snuggly.filly)
+[12:22:49] <AppleDash> mniip: What makes you think that?
+[12:23:23] <mniip> I accidentally randomwalked some of his github
+[12:30:37] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[12:34:06] <johnsey> mniip: can recommend libev over select
+[12:35:59] <mniip> kek
+[12:36:02] <mniip> my university is on fire
+[12:36:36] <johnsey> well, it's xmas
+[12:36:39] <johnsey> almost
+[12:36:40] <mniip> the server room caught fire
+[12:36:51] <mniip> http://cs629205.vk.me/v629205813/22104/xv5Ye-Pnvy8.jpg
+[12:42:25] <Moonlightning> mniip: not really
+[12:43:04] <Moonlightning> There was this long thread in the Rust channel, and I contributed a little to their esoteric language
+[12:43:27] <Moonlightning> But I wouldn't say I know them
+[12:43:29] <Moonlightning> Why?
+[12:45:05] <mniip> I've known him a long time ago
+[12:46:21] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[12:54:06] *** Quits: CompuDesktop (compu@snuggly.filly) (Quit: Leaving)
+[12:54:22] *** Joins: CompuDesktop (compu@snuggly.filly)
+[13:06:12] *** Joins: Xefir_ (xefir@Pony-ci7.430.142.83.IP)
+[13:08:08] *** Quits: Xefir (xefir@Pony-ci7.430.142.83.IP) (Ping timeout: 121 seconds)
+[13:11:38] *** Quits: Xefir_ (xefir@Pony-ci7.430.142.83.IP) (Connection closed)
+[13:12:03] *** Joins: Xefir (xefir@Pony-ci7.430.142.83.IP)
+[13:16:12] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (The TLS connection was non-properly terminated.)
+[13:21:58] *** Quits: WuBzY (yaaic@Pony-jk6ata.rev.dnainternet.fi) (Quit: )
+[13:29:09] <mniip> https://bpaste.net/raw/e021e336d407
+[13:29:13] <mniip> what am I doing wrong
+[13:31:55] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[13:39:07] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[13:50:10] *** Joins: Topkasa (IDontCare@Pony-8juhcf.no.shawcable.net)
+[13:51:46] *** Quits: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net) (Ping timeout: 121 seconds)
+[13:53:50] *** Snoarin is now known as GigaWork
+[14:36:02] *** Quits: Phase (Phase4@Pony-72i3r3.internode.on.net) (Connection closed)
+[15:00:55] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[15:15:59] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:19:51] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[15:59:08] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[16:00:50] *** Joins: Quindo (Quindo@Pony-8qt.17k.198.99.IP)
+[16:02:11] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[16:03:15] *** Quits: TSparkle3395 (TSparkle339@Owner.ARBronyRadio.com) (Quit: Leaving)
+[16:08:08] *** Joins: zeta_ (Zeta@Pony-o1dnii.cg80.k4gu.0151.2601.IP)
+[16:08:52] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Killed (NickServ (GHOST command used by zeta_)))
+[16:08:52] *** zeta_ is now known as Crimson_Tail
+[16:13:13] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[16:27:32] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[16:33:38] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:44:36] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[16:47:48] *** Quits: Lapsus (Lapsus@i-forget.ca) (Quit: )
+[17:09:19] *** Quits: Dusk (Dusk@dusky.horse) (Quit: Sorry, but sometimes people need a break. I'm gonna focus on life for a day or so, cya on the other side!)
+[17:21:08] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:30:36] <Quindo> O.o There were 58827 failed login attempts since the last successful login.
+[17:30:36] <Quindo> Last login: Thu Dec 17 12:41:46 2015 from 
+[17:41:37] *** Joins: Pocketguns2 (Pocketguns2@Digging.a.Hole)
+[17:41:45] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[18:03:53] *** Joins: Eventide|Sleepies (uid61788@Tips.Fedora)
+[18:09:39] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[18:12:16] *** Eventide|Sleepies is now known as Eventide
+[18:20:07] *** Joins: trapz (tr4pz@Pony-l2l.2dv.248.50.IP)
+[18:35:36] *** Joins: Melanosuchus (quassel@Pony-asba80.as13285.net)
+[18:37:11] *** Quits: Xefir (xefir@Pony-ci7.430.142.83.IP) (Ping timeout: 121 seconds)
+[19:21:00] <AppleDash> Quindo: Welcome to SSH on port 22
+[19:21:15] <Quindo> XD
+[19:21:36] <Quindo> I guess the initial blacklists had not been done yet cause it was a fresh server.
+[19:22:53] <Unixkitty> fail2ban and custom port ftw
+[19:25:15] <AppleDash> I don't see the point of fail2ban
+[19:25:24] <AppleDash> If you have password logins on there is a problem
+[19:25:44] <Unixkitty> Also passwordless login
+[19:42:22] *** Parts: Gumball (GumballCras@0.to.pony.10secondsflat) ("WeeChat 1.3")
+[19:44:36] *** Joins: Phase (Phase4@Pony-72i3r3.internode.on.net)
+[19:46:13] <Caerdwyn> Going to pose a question to any network savvy people: Why, when you use your own domain name (that resolves to a computer in your home), can you not connect to said machine, but outside the LAN, you can?
+[19:46:52] <Caerdwyn> i.e.: I use my domain on my phone to connect home for weechat when I am not on my wifi, but when I am, my domain still resolves to my IP address, but times out when I try to connect, making me change it to my computer's LAN IP/hostname
+[19:49:06] <AppleDash> You don't have hairpin NAT correctly configured
+[19:49:22] <Caerdwyn> It's dd-wrt, if that helps
+[19:49:37] <AppleDash> That had hairpin working out of the box for me
+[19:49:42] <Caerdwyn> In this case, it's just a bunch of ports all forwarded from my domain to my pc
+[19:50:32] <AppleDash> Honestly, I would probably personally just use an internal hostname to access my internal services
+[19:50:50] *** Pocketguns2 is now known as Pocky
+[19:51:03] <Caerdwyn> I do, but what I don't get is why I can ping my domain name, it resolves to my IP address correctly, but I can't connect to anything using it
+[19:51:15] <AppleDash> I told you why
+[19:51:27] <AppleDash> Your router isn't configured to route those packets properly
+[19:51:30] <Caerdwyn> AppleDash: is hairpin part of dd-wrt?
+[19:51:45] <AppleDash> It's a part of anything that you can set firewall rules on
+[19:52:07] <AppleDash> And there's a reason for it not to be working - connections like you describe would appear to be coming from your router's IP, not the actual originating LAN IP
+[19:52:51] <Caerdwyn> Basically, I want my phone to connect to my machine with my domain name always, that way when I am not on wifi, I don't have to keep changing the connection settings each time I leave my house. It's a pain in the ass
+[19:53:54] <AppleDash> Unfortunately nobody on Google seems to know how to make it work
+[19:53:58] <Caerdwyn> Funny
+[19:54:02] <Caerdwyn> I'm already digging through that
+[19:54:03] <AppleDash> I know how to make it work on a Mikrotik router but that's not much use
+[19:54:10] <Caerdwyn> http://i.imgur.com/hRQlu.gif
+[19:54:11] <Caerdwyn> ooops
+[19:54:21] <Caerdwyn> http://hax.at/text/41
+[19:54:22] <Caerdwyn> that
+[19:54:24] <PinkiePieBot> [ hax.at - ]
+[19:54:44] <AppleDash> That looks to be from 2011
+[20:00:27] <Caerdwyn> It's old
+[20:00:29] <Caerdwyn> but that worked
+[20:00:40] <Caerdwyn> Telnet'd into the router, issued the command, and bam, it works.
+[20:01:13] <Caerdwyn> According to dd-wrt forums, it's turned off on purpose for "security reasons". Go figure.
+[20:01:28] <Sour_Sweet> Yes and it's reasonable
+[20:02:25] <AppleDash> ^
+[20:02:41] <Sour_Sweet> https://en.wikipedia.org/wiki/DNS_rebinding
+[20:02:42] <PinkiePieBot> [ DNS rebinding - Wikipedia, the free encyclopedia ]
+[20:02:45] <Sour_Sweet> for example
+[20:12:57] <Caerdwyn> test
+[20:13:00] <Caerdwyn> ok, so that wasnt fun
+[20:13:12] <Caerdwyn> just locked myself out of the internet for a while by adding an invalid iptables rule
+[20:13:14] <Caerdwyn> :|
+[20:13:32] <AppleDash> If it's invalid you shouldn't b able to add it
+[20:14:28] <Caerdwyn> iptables -t nat -I POSTROUTING -o br0 -s 192.168.144.0/24 -d 192.168.144.0/24 -j MASQUERADE <-- this, in coordination with the dnsmasq rule of "address=/domain.name./192.168.1.5/ just locked all my traffic to local network and oblitered dns resolution
+[20:14:50] <Caerdwyn> had to lookup how to drop iptables rules >_<
+[20:17:08] <Caerdwyn> 1    ACCEPT     gre  --  192.168.1.0/24       anywhere            
+[20:17:08] <Caerdwyn> 2    ACCEPT     tcp  --  192.168.1.0/24       anywhere            tcp dpt:1723 
+[20:17:13] <Caerdwyn> apparently iptables didn't like this
+[20:24:37] <Caerdwyn> ok, so discovered, it wasnt iptables that did that
+[20:24:58] <Caerdwyn> the dnsmasq rule did... apparently that somehow conflicted and broke things, force-restarted the router the moment i clicked apply
+[20:25:01] <Caerdwyn> wtf dd-wrt
+[20:37:09] <mniip> does this look like a sane miniature select-driven server? https://gist.github.com/mniip/5696e283a82ec1abe20d
+[20:37:10] <PinkiePieBot> [ server.c · GitHub ]
+[20:46:28] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[20:47:13] <AppleDash> Sure
+[20:53:18] <Colgate> Sour_Sweet: using TLS defeats that attack :V
+[20:53:38] <Quindo> I love alt selection in notpade++ ;3
+[20:54:01] <Moonlightning> mniip: binding to unspecified gets you v4 /and/ v6 on some systems, IIRC
+[20:54:13] <mniip> right
+[20:54:51] <Moonlightning> What kind of dumbass router doesn't do hairpins correctly ;p
+[20:56:26] <Moonlightning> Caerdwyn: This is why my netbox is just a Linux box.
+[20:56:29] <AppleDash> Moonlightning: Any, by default
+[20:56:38] <Moonlightning> AppleDash: Not mine.
+[20:56:45] <AppleDash> Unless it's a consumer router configured to do so out of the box
+[20:56:50] <Moonlightning> I just tried it. Works fine. No special shit required.
+[20:56:55] <AppleDash> Um
+[20:56:58] <AppleDash> Yeah, no
+[20:57:24] <AppleDash> If you are just using a Linux machine, there is no way whatsoever it "just works" without you having added a rule to do so.
+[20:57:30] <AppleDash> Anyways, I'm going to sleep, bye
+[20:57:38] <Moonlightning> Well, it does.
+[20:57:57] <Moonlightning> ssh-keyscan on the global IP returns the same as for the site-local IP
+[20:58:22] <Moonlightning> And a straight ssh works (in that it prompts me with a fingerprint, and then I just kill it)
+[20:58:45] <Moonlightning> Pretty sure there's quite a bit of back-and-forth using TCP before that prompt can happen
+[21:00:24] <Moonlightning> From my cursory reading of that article, DNS rebinding is not at all mitigated by intentionally breaking hairpin routing
+[21:01:00] <Moonlightning> Hosts behind NAT can still communicate with other hosts behind NAT, and with the attacker (who is presumably not behind NAT, or has appropriate DNAT routing configured)
+[21:02:08] <Moonlightning> The article also has no mention of breaking hairpin
+[21:02:36] <Colgate> Moonlightning: it doesn't prevent it, no
+[21:09:34] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[21:10:39] *** Quits: Finnfinn (Finnfinn@finn.isher) (Ping timeout: 121 seconds)
+[21:13:43] *** Joins: Finnfinn (Finnfinn@finn.isher)
+[21:19:51] *** Joins: Divide|TechSupport (NA@Pony-vf5hfh.cable.rogers.com)
+[21:20:36] <Divide|TechSupport> Does anyone else have a hatred of 'all-in-one' desktops?  You know the sort - motherboard, video card, monitor, everything in a tight package, usually with a touchscreen?
+[21:21:28] <Divide|TechSupport> Form factor's great, execution's sound, but all I can think about are those old COMPAQ E-machines and Apple iMacs.
+[21:23:46] <Moonlightning> I've personally never opened one up to mess with it, but I can understand hating them. They're probably packed tight as a laptop in there.
+[21:23:49] <Moonlightning> Or close to it.
+[21:24:28] <Divide|TechSupport> Tighter, even.  Though if you want a really great display of hardware packing, open up an old Gamecube sometime.
+[21:25:31] <Divide|TechSupport> Mind, I use a pretty decent thin client for work.  It doesn't include a monitor, but it's not bad for a foot-by-foot-by-1" box.
+[21:26:11] <Divide|TechSupport> Mostly I get annoyed by the whole all-in-one thing because, really, the whole 'no user serviceable parts' thing should really not be a function of a desktop PC.
+[21:29:33] <Crimson_Tail> Something breaks? oh well, you can't fix it
+[21:36:53] <Moonlightning> Yeah.
+[21:49:53] <Sour_Sweet> Moonlightning: Not allowing hairpin routing prevents you from breaking the browser's CORS
+[21:50:37] <Sour_Sweet> Which is similar to dns rebinding attacks, not quite the same.
+[21:51:22] <Colgate> still defeated by tls!
+[21:51:22] <Moonlightning> CORS?
+[21:51:30] <Colgate> cross-origin something something
+[21:51:38] <Moonlightning> Rejection Scheme? XP
+[21:51:50] <Sour_Sweet> Yeah, but which home router uses proper TLS?
+[21:52:23] <Colgate> home router? what are we doing here?
+[21:52:45] <Moonlightning> Sour_Sweet: if you have a website, you should ALWAYS have proper TLS. There is no excuse.
+[21:53:03] <Moonlightning> I take it we're now talking about netbox configuration websites.
+[21:53:18] <Colgate> why would the router have things that point to external domains on it?
+[21:53:29] <Colgate> in the config page? that's asinine :P
+[21:54:48] <Moonlightning> …I think some do, actually. For firmware updates. :/
+[21:56:37] <Sour_Sweet> My router doesn't support TLS for internal configuration access iirc ^^ It does for external access though.
+[21:58:54] <Sour_Sweet> Also that conversation gave me an awesome idea for new attack vectors. I need find my old crappy routers again.
+[21:59:55] <Gladiolus> All in ones seem obsolete these days to me, Divide|TechSupport 
+[22:00:02] <Gladiolus> You can just get a laptop. Same deal, less clunky.
+[22:00:15] <Gladiolus> They originally existed because LCDs blew and CRTs aren’t exactly portable.
+[22:00:53] <Gladiolus> AIOs are just a weird middle ground between a laptop and a desktop and destroy them all. Yet I still want a 5K iMac.
+[22:01:25] <Gladiolus> It’s one of those “I want it, but I will not pay for it.” Mostly because of a lack of GPU oomph.
+[22:01:36] <Gladiolus> I also want an apple watch and an ipad pro but won’t pay a cent for either.
+[22:01:48] <AppleDash> Get a normal 5k monitor
+[22:02:05] <Gladiolus> Do 5K monitors actually exist? 4K certainly does that I know.
+[22:02:14] <AppleDash> They do
+[22:02:19] <Gladiolus> Neat.
+[22:02:25] <Gladiolus> Well when I have All The Money I will.
+[22:02:25] <AppleDash> IIRC 8k has ben developed
+[22:02:30] <AppleDash> been*
+[22:02:41] <Gladiolus> Yeah but can HDMI even /do/ 8K right now?
+[22:02:48] <Gladiolus> Or displayport or whatever.
+[22:03:22] <AppleDash> Not at 60 FPS
+[22:03:37] <Gladiolus> ww
+[22:03:38] <Gladiolus> eww
+[22:03:46] *** Quits: Phase (Phase4@Pony-72i3r3.internode.on.net) (Quit: Leaving)
+[22:03:50] <Gladiolus> Also wikipedia states that HDMI2 can’t do more than 4k at all
+[22:04:16] <Sour_Sweet> For 8k they use weird 2x HDMI / DisplayPort solutions
+[22:04:25] <Gladiolus> Displayport can do 8k at 60.
+[22:04:26] *** Joins: Phase (Phase4@Pony-72i3r3.internode.on.net)
+[22:04:32] <Gladiolus> WEll, 57
+[22:04:49] <Gladiolus> no wait I’m reading this wrong lol, yes it can do 8k at 60
+[22:05:47] <Gladiolus> I like how my Macbooks thunderbolt ports double as minidisplayport. I can, and have, had 4 external monitors lol.
+[22:05:56] <Sour_Sweet> Maybe it was just at a higher refresh rate, I dunno, but I've seen both 2x HDMI and DisplayPort setups on trade fairs
+[22:06:20] <Gladiolus> You would neex 2x hdmi and maybe older displayport requires 2.
+[22:06:50] <Sour_Sweet> On prototypes that is. I'm not sure about acutal of the line models.
+[22:07:07] <Sour_Sweet> It's been some time 6_9
+[22:07:15] <Gladiolus> Displayport is limited to 3 meters apparently, did not know that.
+[22:07:29] <Colgate> DP is a pretty high freq signal
+[22:07:35] <Colgate> makes sense
+[22:08:05] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (Ping timeout: 241 seconds)
+[22:17:03] *** Joins: Phase4 (Phase4@Pony-72i3r3.internode.on.net)
+[22:17:34] *** Quits: Phase4 (Phase4@Pony-72i3r3.internode.on.net) (Quit: Leaving)
+[22:19:50] *** Quits: Phase (Phase4@Pony-72i3r3.internode.on.net) (Ping timeout: 121 seconds)
+[22:20:17] <Divide|TechSupport> Ugh.  Come 2050, we'll still be supporting XP.
+[22:20:54] *** Joins: Starthunder (blackl@property.of.lightningcrash)
+[22:21:05] <GeekBrony> Heh, just purchased the Raspberry Pi Zero with some Bitcoin
+[22:21:17] <GeekBrony> Didn't know they accepted it
+[22:21:18] <GeekBrony> >.>
+[22:21:36] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Ping timeout: 121 seconds)
+[22:23:02] <Divide|TechSupport> Eh, if you're going to dump your bitcoins onto something, might as well be cheap hardware.
+[22:26:23] *** Quits: Starthunder (blackl@property.of.lightningcrash) (Ping timeout: 121 seconds)
+[22:33:35] <Sour_Sweet> Arrgh. 4K on smartphones, why? WHY? NO!
+[22:40:52] <Gladiolus> because innovation is dead
+[22:40:56] <Gladiolus> just increase the numbers
+[22:41:24] <GeekBrony> but can it run Minesweeper?
+[22:41:27] <Sour_Sweet> Because that went well with digital cameras 6_9
+[22:42:03] <Sour_Sweet> My 6 year old digi cam still makes better pictures than almost any phone ;-)
+[22:42:44] <GeekBrony> I bought a DSLR because I like using external lens
+[22:43:06] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[22:43:58] <Unixkitty> Not sure if this is a dumb question, but is there any software for Windows that could follow a process/program and show what it's doing?
+[22:44:10] <Unixkitty> Google doesn't seem to be very helpful for some reason
+[22:45:36] <Sour_Sweet> Depends on what exactly you're looking for. There sure is one for almost any usecase
+[22:45:48] <Sour_Sweet> Because on first glance that sounds like a debugger :D
+[22:46:11] <Unixkitty> Not really, more of a way to see if a program does anything malicious
+[22:47:03] <Moonlightning> GeekBrony: Cool!
+[22:47:13] <Sour_Sweet> System explorer let's you see spawned processes and network connections (though not meant for your task)
+[22:47:51] <Sour_Sweet> I can't remember the name of the tools that let's you monitor registry and file system access
+[22:48:22] <Sour_Sweet> But in any case if the malware if halfway well written you won't be able to find much this way
+[22:48:34] <Unixkitty> Of course not
+[22:49:14] <Unixkitty> Registry and filesystem access log however would be helpful
+[22:49:56] <Sour_Sweet> Not tested. https://technet.microsoft.com/en-us/sysinternals/processmonitor.aspx
+[22:49:58] <PinkiePieBot> [ Process Monitor ]
+[22:50:17] <Sour_Sweet> I had a better one but I can't remember it's name
+[22:50:29] <Unixkitty> Oh, well procmon and it's brother explorer I do know
+[22:50:37] <Moonlightning> its *
+[22:52:39] <Unixkitty> Procmon could do, although it's filtering makes you wish for better sometimes
+[22:55:39] *** Joins: Phase (Phase4@Pony-72i3r3.internode.on.net)
+[22:58:45] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[23:06:19] <mniip> procmon?
+[23:06:21] <mniip> is that a pokemon
+[23:06:44] <Moonlightning> xD
+[23:06:50] <Sour_Sweet> Probably
+[23:08:06] <mniip> time to figure out libpq
+[23:11:55] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[23:15:17] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:17:38] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[23:19:13] <Sour_Sweet> Looks like I've scored a bug bounty on a government website - yay
+[23:19:37] <Moonlightning> :o
+[23:19:41] <Moonlightning> What? :o
+[23:31:38] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[23:31:50] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[23:31:51] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[23:44:04] <Quindo> grats
+[23:44:28] <Quindo> In other news a data leak has gotten the political world all up in a tizzy.
+[23:45:15] * Moonlightning puts his minimal-effort cap on.
+[23:45:26] <Moonlightning> What is it /now?/
+[23:45:46] <Quindo> DNC has blocked bernie's campaign from all of their data.
+[23:45:56] <Colgate> what is DNC?
+[23:46:00] *** Joins: Sombra (Iceman@Darkhorse21)
+[23:46:07] <Kinsley> Democratic National Committee
+[23:46:08] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[23:46:29] <Kinsley> I.e. the Democratic party's operating body.
+[23:48:01] <Quindo> evidently they had a bug and campaigns could access each others data.
+[23:48:41] <Moonlightning> And they blamed the Sanders campaign for it?
+[23:48:41] <Quindo> Someone from the bernie camp evidently ran some queries,
+[23:48:50] <Moonlightning> Ugh they're stupid
+[23:48:54] <Moonlightning> What does this mean for Bernie?
+[23:49:00] <Quindo> That person is claiming he was checking how much of their data was exposed.
+[23:49:09] <Quindo> he has been fired from the bernie camp
+[23:49:30] <Moonlightning> And the Bernie camp has been banned from the Democrats?
+[23:49:43] <Quindo> no, from access their databases that the DNC ran for them
+[23:50:08] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[23:50:17] <Quindo> I would be perfectly fine if they had nuked everyones access to the system until they fixed this.
+[23:50:24] <Colgate> "She added, "That is just like if you walked into someone's home when the door was unlocked and took things that don't belong to you in order to use them for your own benefit. That's inappropriate. Unacceptable.""
+[23:50:27] <Colgate> this quote is wrong
+[23:50:31] <Quindo> But evidently this is not the first time this has happened.
+[23:50:51] <Colgate> it is more akin to walking into someone's home, making a copy of all their books, and then walking out
+[23:50:56] <Moonlightning> ^
+[23:51:10] <Quindo> No, its like if I opened my mailbox and there was a bunch of opened letters in them...
+[23:51:25] <Moonlightning> No, that's a MitM, Quindo.
+[23:51:32] <Moonlightning> This case (AFAIK) is of information being /served./
+[23:51:38] <Divide|TechSupport> I would parse it more like if you were looking at the government's dossier on yourself.
+[23:51:42] <Colgate> they asked for info, and they got it :P
+[23:51:46] <Moonlightning> ^
+[23:51:50] <Quindo> so, if a "Select * from Mystuff" returned both mine and your stuff?
+[23:52:05] <Quindo> that is really what it comes down to.
+[23:52:48] <Quindo> If if was as simple as them asking for their own stuff, and they instead got everyones, that is in no way their fault...
+[23:52:48] <mniip> help
+[23:53:02] <mniip> what do I name a function called 'log'
+[23:53:18] <mniip> I can't use 'log' because of libm
+[23:53:19] <Quindo> log(Type of log)?
+[23:53:29] <Divide|TechSupport> mniip: What does it /do/?
+[23:53:33] <mniip> it... logs
+[23:53:45] <Quindo> log_mniip?
+[23:53:54] <Divide|TechSupport> Call it 'Stardate'.
+[23:54:04] <mniip> nah
+[23:54:11] <mniip> I need some variation of the word log I guess
+[23:54:21] <Divide|TechSupport> Oh, fine, be that way.  'Backlog'.
+[23:54:44] <Moonlightning> add_log_entry()?
+[23:54:52] <Kinsley> mniip: Write To File, or wtf()
+[23:54:58] <Moonlightning> …wait, don't you have namespaces?
+[23:55:00] <Moonlightning> …lol
+[23:55:13] <mniip> backlog is irrelevant
+[23:55:41] <Colgate> unfortunately, I doubt any article is going to be technical enough on this to make an informed decision(the DNC thing)
+[23:55:46] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Connection closed)
+[23:55:53] <Divide|TechSupport> Eh.  Journal?  Diary?  Arrr?
+[23:55:53] <Colgate> every news article is going to dumb it down and spin it their own way, cause politics
+[23:55:53] <mniip> Moonlightning, C
+[23:56:07] *** Joins: Webster (Webster@Pony-4eid99.fios.verizon.net)
+[23:56:39] <Kinsley> Colgate: welcome to public discourse in the 21st century. Where everyone has constant access to smartphones and the internet, but don't understand how any of it works.
+[23:57:02] <Sombra> What do you mean intertubes
+[23:58:28] <mniip> alright, log_append it is
+[23:58:42] <Kinsley> mniip: aw, come on, my idea is pretty good.
+[23:58:52] <Colgate> best I can tell, this guy that did it was being white hat and determining the scope of the vulnerability before reporting it
+[23:58:57] <Colgate> this is pretty typical
+[23:59:25] <mniip> wait what
+[23:59:28] <mniip> what happened
+[23:59:44] <Quindo> That is what I hope the situation was...
+[23:59:51] <mniip> Colgate:

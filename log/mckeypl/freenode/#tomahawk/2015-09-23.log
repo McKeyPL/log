@@ -1,0 +1,343 @@
+[00:07:30] *** Quits: duncaen (~duncaen@2a00-5300-0-2-0-0-0-9.ipv6ptr.net) (Ping timeout: 252 seconds)
+[00:08:23] *** Joins: duncaen (~duncaen@2a00-5300-0-2-0-0-0-9.ipv6ptr.net)
+[00:13:28] *** Quits: duncaen (~duncaen@2a00-5300-0-2-0-0-0-9.ipv6ptr.net) (Ping timeout: 252 seconds)
+[00:14:53] *** Joins: duncaen (~duncaen@2a00-5300-0-2-0-0-0-9.ipv6ptr.net)
+[00:28:28] <jherskowitz> theli_ua: I thought we played RTMP streams
+[00:28:44] <jherskowitz> we did that for an Rdio hacky resolver years ago I thought
+[00:28:46] <jherskowitz> ?
+[00:29:01] <theli_ua> you do, but there are issues
+[00:29:25] <theli_ua> basically there are 3 components to rtmp streams - host, app, playpath
+[00:30:00] <theli_ua> ffmpeg and vlc through transition  ... use a single URL for rtmp streams and ffmpeg tries naively split components using '/' ... so host/app/path
+[00:30:14] <theli_ua> the thing is - app has '/' in it for rhapsody
+[00:33:48] <theli_ua> jherskowitz: does what I said make sense to you?
+[00:34:46] <jherskowitz> theli_ua: heh, not really.  I mean I’m sure it makes sense… just not to me. :)
+[00:35:04] <theli_ua> :(
+[00:35:51] <jherskowitz> ffmpeg is ultimately what will handle it?
+[00:37:32] <theli_ua> yeah, ffmpeg/libav is libvlc's decoding backend
+[00:39:10] *** Quits: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com) (Quit: alsuren)
+[00:42:28] <jherskowitz> theli_ua: so what do you think the fix is?
+[00:43:15] <theli_ua> more flexibility for resolver in specifying rtmp stream parameters
+[00:44:09] <theli_ua> though I kinda prefer to figure out how did I make http rhapsody streams work for me yesterday
+[00:52:55] <jherskowitz> theli_ua: heh, you had it working and then lost it?
+[00:58:53] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[01:01:28] <theli_ua> I had it working yesterday on my home laptop
+[01:01:40] <theli_ua> but I'm not sure what was the 'trigger' to make it work
+[01:02:18] <theli_ua> I'll do some more playing with android app and tomahawk resolver when time permits to track down what made them work
+[01:02:43] *** Joins: rievic2 (guest-riev@gateway/web/scrollback.io/x-ghhgwllbvmfbksco)
+[01:02:44] <rievic2> Can someone send me the Link To The Rhapsody Resolver?
+[01:02:47] <rievic2> Even if it is still in beta.
+[01:03:08] <rievic2> I would want to see how it is going to work.
+[01:17:06] <domme> jherskowitz: theli_ua: isnt beatsmusic rtmp too?
+[01:18:24] <domme> i think xhochy sent some patches to vlc, libav/ffmpeg and librtmp or something :D
+[01:31:28] <theli_ua> domme: maybe, I dunno
+[01:31:46] <domme> i think i added rtmp handling code just for that to hatchet :P
+[01:32:00] <theli_ua> domme: I'm not saying that rtmp doesn't work, just doesn't work if rtmp "app" string contains slash
+[01:32:22] <theli_ua> because ffmpeg uses slash to split app from playpath in the url
+[01:33:35] <domme> theli_ua: oh uh mhh.. https://github.com/tomahawk-player/tomahawk-resolvers/blob/master/beatsmusic/content/contents/code/beatsmusic.js#L205
+[01:33:36] <tomabee> [ tomahawk-resolvers/beatsmusic.js at master · tomahawk-player/tomahawk-resolvers · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[01:34:05] <theli_ua> domme: ?
+[01:34:17] <domme> do you concatenate the parts of the rtmp url by slist too?
+[01:36:16] <theli_ua> no, why would I? that has nothing to do with the problem I'm talking about
+[01:38:29] <domme> theli_ua: well either i'm too late to the party or you're really withholding with anything concrete.. maybe just be a little more concrete then i can maybe follow and be of any actual help :P
+[01:38:54] <theli_ua> i was just explaining this to jherskowitz 
+[01:39:22] <theli_ua> there are 3 things to the rtmp stream usually - host, "app" and "playpath"
+[01:39:50] <theli_ua> if ffmpeg is provided a single url it just uses "/" character to get those from the url
+[01:40:07] <theli_ua> so it just does   host, app, path = url.split('/')
+[01:40:21] <theli_ua> but if app has "/" in it then this just doesn't work
+[01:40:34] <theli_ua> and you need to specify app as additional parameter
+[01:41:06] <theli_ua> through rtmp_app parameter
+[01:42:15] <domme> rtmp://host[:port]/[app]?slist=[playpath]
+[01:42:19] <domme> in that format it breaks?
+[01:42:29] <theli_ua> slist?= is not part of rtmp
+[01:42:44] <theli_ua> its totally specific to that beatsmusic or cdn they use
+[01:42:44] <domme> theli_ua: but it's supported by ffmpeg
+[01:42:49] <domme> theli_ua: https://ffmpeg.org/pipermail/ffmpeg-cvslog/2014-May/077176.html
+[01:42:50] <tomabee> [ [FFmpeg-cvslog] rtmpproto: Support alternative slist parameter in	rtmp URLs | ffmpeg.org |  ]
+[01:43:14] <domme> https://ffmpeg.org/pipermail/ffmpeg-cvslog/2014-May/077177.html
+[01:43:15] <tomabee> [ [FFmpeg-cvslog] Merge commit	'7ce3bd9614717e545af8fb8455032c807e389b78' | ffmpeg.org |  ]
+[01:43:56] <domme> as i said xhochy upstreamed that to *all the libs* because it was not possible to pass through additional arguments through vlc easily iirc
+[01:44:42] <theli_ua> oh it was accepted, this should work, yeah
+[01:45:04] <theli_ua> "because it was not possible to pass through additional arguments through vlc easily iirc"  yeah , pretty much the problem I was trying to explain
+[01:47:50] <domme> theli_ua: hehe, then i got you right from the beginning on :P
+[01:47:59] <domme> just 23:36:16 < theli_ua> no, why would I? that has nothing to do with the problem I'm talking about
+[01:48:03] <domme> irritated me :P
+[01:48:19] <toma-cat> Added new crash-report for version 1.0.1 (Android)
+[01:48:22] <toma-cat> Added new crash-report for version 1.0.1 (Android)
+[01:49:25] <domme> theli_ua: let me know how it goes :)
+[01:49:42] <theli_ua> that slist= thing is usually a part of playpath on some cdns
+[01:49:43] <theli_ua> so
+[01:49:57] <domme> eh meh
+[01:51:01] <theli_ua> doesn't work
+[01:51:36] <theli_ua> i can easily stream with rtmpdump, no success with vlc/ffmpeg
+[01:52:01] <theli_ua> though it might be that my ffmpeg is old
+[01:54:01] <theli_ua> also, looking at that code you linked domme, looks like its stripping all other query params from the url, and I have & and ? as parts of the playpath
+[01:54:03] <theli_ua> so
+[01:54:29] <domme> theli_ua: then ... you know what you have to do *sigh*
+[01:54:41] <theli_ua> yeah, forget about it 
+[01:54:46] <domme> hahaha
+[01:55:00] <domme> xhochy: how about another round of patching libav, ffmpeg and librtmp?
+[01:55:21] <theli_ua> its really easier to do that with just tomahawk frankly
+[01:58:08] <theli_ua> like, have a custom url scheme something like tomartmp://proto=rtmpe&app=a4376%2fv3  where it would just call libvlc_media_set_option to set those on a stream
+[02:00:51] <theli_ua> MrMaffen: rtmp streams do not work in tomahawk on android, do they?
+[02:01:16] <MrMaffen> theli_ua: they do
+[02:01:37] <theli_ua> oh, really? o_O  what do you use to play them there?
+[02:01:47] <MrMaffen> libvlc
+[02:02:13] <theli_ua> oh, didn't realise android version uses libvlc as well
+[02:02:50] <MrMaffen> yea it does :) plays flac and ogg and all that good stuff
+[02:26:57] <theli_ua> rievic2: its not even in beta atm, tomahawk does not support rtmp urls rhapsody uses and there is no ETA on that
+[02:31:59] <theli_ua> eh, I take that back
+[02:32:10] <theli_ua> I just played rhapsody rtmp stream in vlc
+[02:32:20] <theli_ua> I need more coffeine and vacation
+[02:32:33] <theli_ua> and to figure out where to buy a house
+[02:33:00] <theli_ua> hey jherskowitz can you borrow me 50k$? I swear I'll give them back to you in may
+[02:34:28] <jherskowitz> theli_ua: sure
+[02:34:39] <theli_ua> o_O
+[02:34:46] <jherskowitz> Heh
+[02:35:36] *** Quits: jturney (~jon@host86-160-189-124.range86-160.btcentralplus.com) (Read error: Connection reset by peer)
+[02:36:17] <jherskowitz> theli_ua: can I borrow $100k first?
+[02:37:01] <theli_ua> eh, I don't have that much in cash
+[02:37:15] <theli_ua> and If I did I'd spend that on mortgage downpayment :(
+[02:37:26] <theli_ua> estate prices here in seattle grow like crazy
+[02:37:37] <theli_ua> so we're looking into buying a house
+[02:39:27] <jherskowitz> theli_ua: yeah, so tough to squirrel away enough for a down payment in an expensive city
+[02:39:55] <theli_ua> heh, especially considering we only moved to US less than 2 years ago
+[03:46:29] *** Joins: mgue (~mgue@x590fbf2c.dyn.telefonica.de)
+[03:47:34] *** Quits: mgue2 (~mgue@x590f76bb.dyn.telefonica.de) (Ping timeout: 272 seconds)
+[04:47:04] *** Quits: rodgort (~rodgort@2607:5300:100:200::160d) (K-Lined)
+[04:50:41] *** Quits: wmp (~wmp@sored/admin/wmp) (Read error: Connection reset by peer)
+[04:54:00] *** Joins: rodgort (~rodgort@105.ip-167-114-152.net)
+[05:29:32] <lfranchi> yeah, talking ab out an expensive city...
+[05:29:32] <lfranchi> heh
+[05:53:44] *** Joins: mgue1 (~mgue@f052178224.adsl.alicedsl.de)
+[05:56:41] *** Quits: mgue (~mgue@x590fbf2c.dyn.telefonica.de) (Ping timeout: 256 seconds)
+[06:22:39] <theli_ua> lfranchi: well, SF would be more expensive I imagine but we're getting there :(
+[06:51:00] <theli_ua> domme: here we go https://github.com/tomahawk-player/tomahawk-resolvers/pull/91
+[06:51:01] <tomabee> [ Rhapsody resolver  by theli-ua · Pull Request #91 · tomahawk-player/tomahawk-resolvers · GitHub | github.com | https://avatars2.githubusercontent.com/u/1242604?v=3&s=400 ]
+[06:51:05] <theli_ua> jherskowitz: can you  test it?
+[06:54:00] <lfranchi> yeah SF is depressingly expensive, especially to own
+[06:55:27] <theli_ua> 1/2kk+ is getting common here as well unfortunately, especially if it has view of lake/bay/mountains
+[06:59:33] <lfranchi> yeah i don;t even look
+[07:01:19] <theli_ua> MrMaffen: are you going to bundle any resolvers whenever you release a new play store version?
+[07:03:31] <theli_ua> lfranchi: but rent isn't too unexpensive either, is it?
+[07:13:00] *** Quits: domme (~domme@server2.muehlhaeuser.de) (Ping timeout: 264 seconds)
+[07:16:02] *** Joins: domme (~domme@server2.muehlhaeuser.de)
+[07:48:34] *** Joins: hrtcrw (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370)
+[08:12:30] *** Joins: wmp (~wmp@auburn.sored.pl)
+[08:12:34] *** wmp is now known as Guest5451
+[08:13:54] *** Guest5451 is now known as wiuempe
+[08:14:04] *** Quits: wiuempe (~wmp@auburn.sored.pl) (Changing host)
+[08:14:04] *** Joins: wiuempe (~wmp@sored/admin/wmp)
+[08:18:24] <lfranchi> theli_ua: not unexpensive
+[08:18:34] <lfranchi> only the highest rent in the country
+[09:06:48] <wiuempe> how cah i create playlist from google music?
+[09:12:27] <wiuempe> and how to upgrade google music?
+[09:23:13] *** Quits: michiwend (~quassel@michiwend.com) (Quit: No Ping reply in 180 seconds.)
+[09:26:35] *** Joins: jturney (~jon@86.160.189.124)
+[09:29:25] *** Parts: rievic2 (guest-riev@gateway/web/scrollback.io/x-ghhgwllbvmfbksco) ()
+[09:29:25] *** Parts: amosig (guest-amos@gateway/web/scrollback.io/x-esfvnvxrfmvvvunv) ()
+[09:29:25] *** Parts: sweato4 (guest-swea@gateway/web/scrollback.io/x-sjubvxhlrnwexnle) ()
+[09:29:25] *** Parts: dissit (guest-diss@gateway/web/scrollback.io/x-dyrrlreyatcnacvh) ()
+[09:29:25] *** Parts: tutest2 (guest-tute@gateway/web/scrollback.io/x-twshdcmlyuvhamun) ()
+[09:51:30] *** Joins: michiwend (~quassel@michiwend.com)
+[09:52:00] *** Joins: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com)
+[10:10:26] *** Quits: jturney (~jon@86.160.189.124) (Disconnected by services)
+[10:10:26] *** Joins: jturney1 (~jon@host86-160-189-124.range86-160.btcentralplus.com)
+[10:33:32] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[10:34:23] *** Joins: jturney (~jon@host86-160-189-124.range86-160.btcentralplus.com)
+[10:37:00] *** Quits: jturney1 (~jon@host86-160-189-124.range86-160.btcentralplus.com) (Ping timeout: 264 seconds)
+[10:43:03] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:12:39] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[12:09:08] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[12:09:21] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[12:25:16] <domme> theli_ua: what was the secret trick to make it work now?
+[12:46:43] *** Joins: meaning (~meaning@108.61.123.68)
+[12:55:21] *** Quits: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com) (Quit: alsuren)
+[13:09:18] *** Joins: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com)
+[13:17:23] *** Joins: svetter_ (~svetter@2001:8e0:2003:fe00:c0ce:2d92:46a6:8784)
+[13:30:43] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Ping timeout: 244 seconds)
+[13:32:46] *** Quits: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com) (Quit: alsuren)
+[13:33:08] *** Joins: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com)
+[13:33:32] *** Quits: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com) (Client Quit)
+[13:39:40] *** Quits: meaning (~meaning@108.61.123.68) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[13:43:05] *** Joins: meaning (~meaning@180.154-65-87.adsl-dyn.isp.belgacom.be)
+[13:44:45] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[14:07:41] *** Quits: meaning (~meaning@180.154-65-87.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[14:21:42] *** Quits: TheOneRing (~quassel@HSI-KBW-134-3-252-64.hsi14.kabel-badenwuerttemberg.de) (Ping timeout: 255 seconds)
+[14:23:57] *** Joins: TheOneRing (~quassel@HSI-KBW-134-3-252-64.hsi14.kabel-badenwuerttemberg.de)
+[14:56:53] *** Quits: svetter_ (~svetter@2001:8e0:2003:fe00:c0ce:2d92:46a6:8784) (Read error: Connection reset by peer)
+[14:58:53] *** Joins: svetter__ (~svetter@83.150.41.198)
+[15:22:55] *** Quits: svetter__ (~svetter@83.150.41.198) (Quit: Leaving...)
+[15:33:52] *** Joins: meaning (~meaning@180.154-65-87.adsl-dyn.isp.belgacom.be)
+[16:02:45] *** Quits: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com) (Remote host closed the connection)
+[16:17:06] *** Joins: gordie (5386497a@gateway/web/freenode/ip.83.134.73.122)
+[16:21:09] *** Quits: hrtcrw (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370) (Ping timeout: 256 seconds)
+[16:32:08] *** Quits: gordie (5386497a@gateway/web/freenode/ip.83.134.73.122) (Quit: Page closed)
+[16:44:07] *** Quits: meaning (~meaning@180.154-65-87.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[17:01:25] *** Quits: jturney (~jon@host86-160-189-124.range86-160.btcentralplus.com) (Ping timeout: 240 seconds)
+[17:37:50] *** Joins: hrtcrw (~hrtcrw@HSI-KBW-046-005-002-244.hsi8.kabel-badenwuerttemberg.de)
+[17:39:47] <jherskowitz> theli_ua: hmm.. how do I download files that are in a PR?
+[17:40:47] *** Joins: gordie (5386497a@gateway/web/freenode/ip.83.134.73.122)
+[17:41:28] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[17:44:09] <jherskowitz> eh, I’ll just download the whole repo
+[17:45:09] *** Quits: gordie (5386497a@gateway/web/freenode/ip.83.134.73.122) (Ping timeout: 246 seconds)
+[17:47:40] <jherskowitz> theli_ua: I see this...
+[17:47:45] <jherskowitz> https://www.irccloud.com/pastebin/DsFXqZit/
+[17:47:47] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[17:47:54] <jherskowitz> but nothing resolves in the app
+[17:50:22] <jherskowitz> theli_ua: oh wait… now I see results
+[17:51:40] * jherskowitz updating master after seeing 201 error
+[17:54:23] <jherskowitz> theli_ua: works after update :)
+[17:58:10] *** h4ndy is now known as H4ndy
+[18:10:51] <jherskowitz> theli_ua: can you use this icon instead? https://www.dropbox.com/s/es61ynfj773xd25/rhapsody.png?dl=0
+[18:10:54] <tomabee> [ rhapsody.png | www.dropbox.com | https://photos-2.dropbox.com/t/2/AAATtiRZX9cIgRVJ2qV9OiD7qSLW8nD6BgLDQsUL1xW2gQ/12/986425/png/1024x768/2/_/0/4/rhapsody.png/CLmaPCABIAIgAyAHKAEoAigDKAc/es61ynfj773xd25/AACW-NXXSbiBjjN7JnIhJ9rOa/rhapsody.png ]
+[18:13:58] <jherskowitz> meh, looks bad in the player… https://www.dropbox.com/s/p96nwaahu9v6gqf/Screenshot%202015-09-23%2012.13.48.png?dl=0
+[18:14:00] <tomabee> [ Screenshot 2015-09-23 12.13.48.png | www.dropbox.com | https://photos-4.dropbox.com/t/2/AAAvLmaUOxowEods1PMHEhBsqfRmi4v36Nrhnqri2gAieg/12/986425/png/1024x768/2/_/0/4/Screenshot%202015-09-23%2012.13.48.png/CLmaPCABIAIgAyAHKAEoAigDKAc/p96nwaahu9v6gqf/AAB9afhPMX-hd09z5zyxFG44a/Screenshot%202015-09-23%2012.13.48.png ]
+[18:14:08] <jherskowitz> I’ll work on it
+[18:19:43] <jherskowitz> theli_ua: here you go https://www.dropbox.com/s/xiin7ytnbmj50uv/logo.png?dl=0
+[18:19:45] <tomabee> [ logo.png | www.dropbox.com | https://photos-1.dropbox.com/t/2/AAAdH0LC8WayGu2kmxf2js0X5vxkkiGuoMH9OCpyHjB6HQ/12/986425/png/1024x768/2/_/0/4/logo.png/CLmaPCABIAIgAyAHKAEoAigDKAc/xiin7ytnbmj50uv/AAD8u7rKIJcjJh8j1hYRfg5aa/logo.png ]
+[18:20:18] <jherskowitz> still not great in the play controls, but better
+[18:26:36] <theli_ua> I dunno, the one I used is the official icon
+[18:37:36] <theli_ua> domme: inserting "mp4:" after the "app" part
+[18:44:59] <domme> lol wut.
+[18:45:41] <theli_ua> I dunno, after that either vlc or ffmpeg split url correctly 
+[18:45:48] <domme> kk
+[18:47:00] <theli_ua> domme: I still have my rhapsody_mobile branch where I get http urls ... though as I now know android suports rtmp as well I'm less motivated to work on it
+[18:47:29] <theli_ua> also, the one in PR parses out all of needed api keys, etc out of web app's js files, while in mobile one they are hardcoded
+[18:48:53] *** Joins: meaning (~meaning@180.154-65-87.adsl-dyn.isp.belgacom.be)
+[18:49:14] <MrMaffen> theli_ua: yes I currently bundle resolvers with every apk I build
+[18:49:46] <MrMaffen> in the long-term domme and I want to replace synchrotron with a better sync manager (maybe relaxe) wiht proper versioning support
+[18:50:08] <MrMaffen> as soon as we have that I will obviously no longer bundle resolvers with the apk
+[18:53:37] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[19:06:43] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[19:22:57] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[19:26:44] *** Quits: meaning (~meaning@180.154-65-87.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[19:29:23] *** Joins: meaning (~meaning@180.154-65-87.adsl-dyn.isp.belgacom.be)
+[19:46:36] <jherskowitz> theli_ua: so is that one (I got it from their style guide)… that app icon is specifically mentioned for use with “mobile apps” but they use this flat icon everywhere else
+[19:48:14] <jherskowitz> theli_ua: http://www.rhapsody.com/marketing/images/RhapsodyStyleGuide2012.pdf
+[19:51:07] <theli_ua> MrMaffen: is there any ETA on new release? I'm interested in bundling rhapsody, amazon and my small bandcamp resolvers on android
+[19:51:43] <theli_ua> amazon one is kinda .. tricky .. I guess .. I want it upstream but I don't want to post a pr or be mentioned anywhere related to it
+[19:54:38] *** Quits: meaning (~meaning@180.154-65-87.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[19:57:49] <theli_ua> jherskowitz: I dunno, looks pretty bad to me http://i.imgur.com/J8OMxSM.png
+[19:58:24] <jherskowitz> theli_ua: I did mine as transparent png
+[19:58:27] <jherskowitz> so no white box
+[19:58:51] <theli_ua> well thats the one I got from your link
+[19:59:24] <jherskowitz> weird
+[20:00:01] <jherskowitz> https://usercontent.irccloud-cdn.com/file/8JbSYyjq/logo.png
+[20:00:32] <jherskowitz> it’s transparent on osx
+[20:00:40] <jherskowitz> maybe something screwy with the file
+[20:00:53] <theli_ua> wait no, I got log.png link extracted by tomabee
+[20:01:06] <jherskowitz> theli_ua: I don’t have religion on it… I just think their “app icon” looks like it was made in 2009… which it was. :)
+[20:01:16] <jherskowitz> I just looked at what they were using on Twitter, FB, etc.
+[20:02:20] <theli_ua> still looks pretty shitty imo http://i.imgur.com/gqbITbQ.png
+[20:03:22] <theli_ua> imo this looks a bit better http://i.imgur.com/1FO1AIp.png 
+[20:03:34] <theli_ua> domme: opinions on last 2 image links?
+[20:04:31] <domme> theli_ua: just the icon?
+[20:04:35] <theli_ua> yes
+[20:04:50] <theli_ua> jason prefers transparent one, I prefer solid one
+[20:05:18] <theli_ua> I think transparent one looks fine in track view but blends with background in now playing view
+[20:05:21] <jherskowitz> theli_ua: also look at it inline
+[20:05:36] <jherskowitz> theli_ua: yours is fine
+[20:05:36] <domme> theli_ua: and i dont care :D
+[20:05:43] <jherskowitz> I’ll just change mine locally :)
+[20:06:08] <theli_ua> jherskowitz: file muesli a jira issue to not only allow user to set priorities for resolvers but also a user set icons :D
+[20:08:01] <theli_ua> jherskowitz: btw, I took a look at mixcloud ... while technically its possible but I don't thinnk it'll work good with tomahawk's philosophy
+[20:21:04] <MrMaffen> theli_ua: if the legality of those resolvers is questionable then we shouldn't bundle them with tomahawk-android
+[20:21:43] <theli_ua> MrMaffen: legality is exactly the same as legality of bundled, say, gmusic resolver
+[20:21:52] <MrMaffen> no eta for a new release sry. but I can guarantee you that I want a a new release just as much as you do
+[20:23:25] <MrMaffen> theli_ua: hm ok. yea then we might want to bundle it. maybe not with the next release but with the one after that
+[20:23:36] <MrMaffen> did you already get it to work through manually installing it as an axe?
+[20:24:19] <theli_ua> MrMaffen: I mean, nor gmusic nor tidal endorse listening to their streams from 3rd party apps, I'd say rhapsody is the same in that regards
+[20:24:44] <theli_ua> as long as we wont allow saving of those streams ...
+[20:25:27] <theli_ua> I'd say almost all of the resolvers (with the exception of spotify which has an official API) are in the grey area
+[20:25:46] <theli_ua> which is kinda sad tbh
+[20:29:14] *** Joins: moru (~moru@d86-32-133-69.cust.tele2.at)
+[20:29:14] *** Quits: moru (~moru@d86-32-133-69.cust.tele2.at) (Client Quit)
+[20:29:48] <MrMaffen> theli_ua: soundcloud rdio deezer officialfm jamendo all have official APIs
+[20:30:00] <MrMaffen> all media server resolvers are also not in the grey area
+[20:30:20] <theli_ua> yeah, i was more talking about commercial streaming services
+[20:30:53] <MrMaffen> yep but rdio deezer and spotify are fine. even beatsmusic had an official api
+[20:31:05] <theli_ua> had
+[20:31:25] <theli_ua> and I didn't know that deezer and rdio have official api
+[20:32:06] <theli_ua> but still, you do bundle gmusic and tidal :)
+[20:34:01] <MrMaffen> theli_ua: yea maybe we should go the aggressive route and just bundle them and see if anyone complains about it
+[20:34:39] <theli_ua> that'd be cool but honestly I'd be more cautious since its pretty easy to have your play store dev account locked forever afaik
+[20:35:11] <theli_ua> if anything I wouldn't bundle anything at all except for ampache and friends and have an online repo with resolvers available from within app
+[20:35:51] <MrMaffen> theli_ua: guess that wouldn't make a difference as far as google is concerned
+[20:36:04] <theli_ua> maybe :(
+[20:36:14] <MrMaffen> you'd just avoid the automatic check 
+[20:36:24] <MrMaffen> we'll see
+[20:36:32] <MrMaffen> first we'll have to release before we get banned :D
+[20:44:22] *** Joins: meaning (~meaning@180.154-65-87.adsl-dyn.isp.belgacom.be)
+[21:02:17] *** Quits: meaning (~meaning@180.154-65-87.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[21:06:29] <toma-cat> JIRA issue https://bugs.tomahawk-player.org/browse/TWK-2139 issue created by jherskowitz
+[21:06:29] <tomabee> [ [TWK-2139] <unknown> artist in Collection | bugs.tomahawk-player.org |  ]
+[21:16:46] *** Joins: meaning (~meaning@180.154-65-87.adsl-dyn.isp.belgacom.be)
+[21:18:47] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[21:52:39] *** Joins: svetter_ (~svetter@2001:8e0:2003:fe00:f0fa:5777:4fc2:b879)
+[22:02:57] *** Joins: soee (~soee@aatu15.neoplus.adsl.tpnet.pl)
+[22:06:14] *** Quits: hrtcrw (~hrtcrw@HSI-KBW-046-005-002-244.hsi8.kabel-badenwuerttemberg.de) (Ping timeout: 246 seconds)
+[22:38:20] <alastairp> hi all. please try and import to listenbrainz again!
+[22:38:23] <alastairp> it’s a lot faster now
+[22:39:11] *** Quits: meaning (~meaning@180.154-65-87.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[22:48:31] <domme> alastairp: :)
+[22:48:49] <alastairp> wow, that was a fun 2 days of optimisations
+[22:49:00] <domme> hehehe :)
+[22:54:42] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Ping timeout: 255 seconds)
+[22:55:24] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[22:58:49] *** H4ndy is now known as h4ndy
+[23:06:54] <lfranchi> :)
+[23:09:35] <jherskowitz> alastairp: bookmarklet not doing anything for me
+[23:09:49] <lfranchi> alastairp: interesting you don't use the API
+[23:12:31] <alastairp> jherskowitz: oops. are you on your /library page?  don’t tell me it’s broken again…
+[23:13:03] <alastairp> lfranchi: for now it’s a way that we can crowd source accessing the data, and not give last.fm a way to lock us  out
+[23:13:21] <lfranchi> i see... last.fm isn't happy with you folks I guess>
+[23:13:24] <lfranchi> jherskowitz: fwiw worked for me
+[23:13:32] <alastairp> future plans are to import the downloadable archives (from the old lastfm), and probably some api interface too
+[23:13:54] <alastairp> the api gives more data, too (second resolution - the website only minute, and mbids)
+[23:14:00] <alastairp> we’ve not heard anything from them 
+[23:14:40] <jherskowitz> alastairp: oh, maybe wrong page
+[23:15:06] <jherskowitz> I was on /overview
+[23:15:09] <jherskowitz> ok, now working
+[23:17:17] <alastairp> we were getting about 1200 messages/second
+[23:17:48] *** Quits: svetter_ (~svetter@2001:8e0:2003:fe00:f0fa:5777:4fc2:b879) (Quit: Leaving...)
+[23:19:44] <alastairp> 11 million submissions
+[23:20:35] <alastairp> ~3 million unique songs
+[23:21:32] <jherskowitz> alastairp: fwiw, I hung on this page https://www.dropbox.com/s/2vt9074l6ss3ivc/Screenshot%202015-09-23%2017.21.12.png?dl=0
+[23:21:35] <tomabee> [ Screenshot 2015-09-23 17.21.12.png | www.dropbox.com | https://photos-5.dropbox.com/t/2/AAA0Rpfx_8rnMOu88rCMb2Ff2kZFOJqUicSsTi4RBc3ssw/12/986425/png/1024x768/2/_/0/4/Screenshot%202015-09-23%2017.21.12.png/CLmaPCABIAIgAyAHKAEoAigDKAc/2vt9074l6ss3ivc/AADZuHTHMpg0dMCSRfTOa_9ba/Screenshot%202015-09-23%2017.21.12.png ]
+[23:21:44] <jherskowitz> I think that happened last try too
+[23:22:49] <alastairp> yeah. I thought I had fixed this, but it looks like there’s still a probem somewhere :(
+[23:22:57] <alastairp> I’ve not had these problems
+[23:23:06] <alastairp> not sure if it’s because I have too few pages
+[23:23:19] <alastairp> or people have odd scrobble data
+[23:23:41] <alastairp> (this is about the point where we admit that the api would be a better choice)
+[23:24:36] <alastairp> do you have any errors in the developer console?
+[23:24:57] <alastairp> if you run it again, does it stop on the same page?
+[23:25:37] <jherskowitz> alastairp: Failed to load resource: the server responded with a status of 500 (INTERNAL SERVER ERROR)
+[23:25:45] <alastairp> ooooo
+[23:26:03] * alastairp looks at logs
+[23:32:32] <lfranchi> yeah mine hung
+[23:32:47] <lfranchi> on 3054 of 3335 pages
+[23:33:26] <lfranchi> can also report some 500s
+[23:33:36] <alastairp> hung is such a harsh word :)
+[23:33:55] <alastairp> yeah, I found the 500 error. I was catching the psycopg2 exception, not the wrapped sqlalchemy one :(
+[23:34:02] <lfranchi> hung is harsh? :P
+[23:34:05] <lfranchi> i was being gentle ;)
+[23:34:14] <alastairp> “it’s a piece of crap stop trying"
+[23:34:27] <lfranchi> <3
+[23:34:44] <lfranchi> but fo realz last.fm needs to live on
+[23:34:53] <alastairp> so, I added a bunch of fixes, but it still stops working
+[23:35:03] <alastairp> I’m going to have to add some debug values
+[23:35:35] <lfranchi> should i try to restart?
+[23:44:45] <alastairp> one sec
+[23:46:42] <alastairp> OK. can you run it again
+[23:46:56] <lfranchi> trying
+[23:47:04] <alastairp> when it stops, inspect element on the popup, there’s a hidden span with some debug info
+[23:47:40] <lfranchi> k
+[23:51:14] <alastairp> I should have fixed the 500s, too
+[23:53:58] <lfranchi> dispatched 2472, reportedScrobbles 2472, enqueueReport 2472, getPage 2471, number4xx 0, number5xx 0, page 4942
+[23:55:30] <alastairp> wait. page looks funny
+[23:55:37] <alastairp> what page did it stop on?
+[23:57:09] <lfranchi>  Sending page 2471 of 3335 to ListenBrainz
+[23:58:30] <alastairp> right
+[23:59:20] <alastairp> so it sent that 2471, went to send the next one. for some reason incremented the page counter by… something
+[23:59:40] <alastairp> 4942 is 2x 2471, wich is suspicious

@@ -1,0 +1,78 @@
+[00:27:24] *** Joins: Korak (~Korak@r75-110-9-234.gvllcmtc01.gnvlnc.ab.dh.suddenlink.net)
+[01:15:01] *** Quits: SusieQ (~SusieQ@2601:40d:8100:f8f:d978:e020:9bb1:f198) (Remote host closed the connection)
+[01:41:49] *** Quits: Korak (~Korak@r75-110-9-234.gvllcmtc01.gnvlnc.ab.dh.suddenlink.net) (Ping timeout: 245 seconds)
+[02:11:37] *** Joins: dimits (~dimits@dsl-hkibrasgw4-50dfd7-150.dhcp.inet.fi)
+[02:12:32] *** Quits: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com) (Read error: Connection reset by peer)
+[02:13:07] <dimits> guys i've been scratching my head with this for a while: are my playlists supposed to scan sources again every time i reboot the windows client?
+[02:13:09] <dimits> :oo
+[02:14:44] <theli_ua> yes
+[02:16:22] <dimits> that's pretty inconvenient, isnt it :/
+[02:16:58] <dimits> 100+ song playlist with youtube+soundcloud+spotify takes forever
+[02:17:22] <theli_ua> I know, it is
+[02:17:39] <theli_ua> thats why I never close it
+[02:17:46] <dimits> :P
+[02:18:32] <theli_ua> I guess it should cache results or smth
+[02:19:06] <dimits> yeah would make sense
+[02:19:14] <theli_ua> a lot of open question though then .. like what if there wasn't a song on some service when you first resolved and now there is , etc
+[02:20:15] <dimits> well could be resolved by keeping the cache until a new scan finds something?
+[02:20:41] <theli_ua> I guess
+[02:32:24] <HorusHorrendus> it could resolve in the background
+[02:33:08] <theli_ua> I guess
+[02:33:19] <HorusHorrendus> "cache" (how do you find out if it is still valid ... not so easy maybe ;) ) it and if you find sth better (could be related to resolver ordering, which is also somewhere on my wishlist) exchange the result
+[03:22:09] *** Quits: dimits (~dimits@dsl-hkibrasgw4-50dfd7-150.dhcp.inet.fi) (Read error: Connection reset by peer)
+[03:59:23] <muesli> HorusHorrendus: it kinda does, doesn't it?
+[04:03:22] <HorusHorrendus> muesli: not really because when I start tomahawk all results are not resolved
+[04:03:52] <HorusHorrendus> but yeah I think it does replace results with results from "better" resolver
+[04:11:12] <muesli> what's your definition of "in the background" then?
+[04:17:41] <HorusHorrendus> muesli: well I meant that in regard to caching results
+[04:17:49] <HorusHorrendus> cache them, but still re-resolve them
+[04:18:25] <HorusHorrendus> not cache them and never really check them again (at least as long as they work)
+[04:18:30] <HorusHorrendus> and not not cache them ;)
+[04:26:18] <HorusHorrendus> soo late already ... time to get some sleep ;)
+[04:27:44] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[05:22:09] *** Quits: r_rios (~Hitleap@hyadesinc/pub/oa) (Quit: Konversation terminated!)
+[05:29:29] *** Quits: mgue2 (~mgue@f048056230.adsl.alicedsl.de) (Read error: Connection reset by peer)
+[05:30:28] *** Joins: mgue2 (~mgue@f050044041.adsl.alicedsl.de)
+[08:04:30] *** Quits: jamesaxl (~jamesaxl@41.140.218.82) (Remote host closed the connection)
+[09:39:00] *** Joins: github-tomahawk (~github-to@192.30.252.46)
+[09:39:00] <github-tomahawk> [13tomahawk] 15muesli pushed 1 new commit to 06master: 02http://git.io/vR081
+[09:39:00] <github-tomahawk> 13tomahawk/06master 14de78768 15Christian Muehlhaeuser: Delay AudioControls repaint until we've updated all elements. Looks smoother.
+[09:39:00] *** Parts: github-tomahawk (~github-to@192.30.252.46) ()
+[09:43:02] *** Joins: jamesaxl (~jamesaxl@41.140.218.82)
+[10:44:59] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[11:17:26] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[11:58:05] *** Joins: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com)
+[13:04:54] *** Joins: Mourke (51ab4b73@gateway/web/freenode/ip.81.171.75.115)
+[13:05:28] <Mourke> Was wondering if I get get some help using the hatchet API
+[13:09:42] *** Quits: Mourke (51ab4b73@gateway/web/freenode/ip.81.171.75.115) (Ping timeout: 252 seconds)
+[13:13:04] *** Joins: knicklux (~knicklux@2a03:2260:a:b:3e07:54ff:fe4e:255)
+[13:48:53] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[13:54:13] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[13:54:15] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Client Quit)
+[14:19:13] *** Joins: r_rios (~Hitleap@187.114.168.55)
+[14:23:08] *** Joins: soee_ (~soee@acch83.neoplus.adsl.tpnet.pl)
+[14:26:35] *** Quits: soee (~soee@afdi242.neoplus.adsl.tpnet.pl) (Ping timeout: 260 seconds)
+[14:33:35] *** Quits: jamesaxl (~jamesaxl@41.140.218.82) (Ping timeout: 260 seconds)
+[14:47:10] *** Joins: jamesaxl (~jamesaxl@41.140.218.82)
+[15:42:20] *** Joins: moru (~moru@80-110-115-13.cgn.dynamic.surfer.at)
+[15:42:33] *** Quits: moru (~moru@80-110-115-13.cgn.dynamic.surfer.at) (Client Quit)
+[15:50:56] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[16:39:35] *** Quits: jamesaxl (~jamesaxl@41.140.218.82) (Ping timeout: 260 seconds)
+[16:48:05] *** Joins: jamesaxl (~jamesaxl@41.140.218.82)
+[16:57:37] *** Quits: r_rios (~Hitleap@187.114.168.55) (Quit: Konversation terminated!)
+[17:39:47] *** Quits: RJ2 (sid1@pdpc/supporter/professional/rj2) (Ping timeout: 264 seconds)
+[17:40:29] *** Joins: RJ2 (sid1@pdpc/supporter/professional/rj2)
+[18:10:35] *** Quits: RJ2 (sid1@pdpc/supporter/professional/rj2) (Read error: Connection reset by peer)
+[18:11:46] *** Joins: RJ2 (sid1@pdpc/supporter/professional/rj2)
+[18:12:02] *** Quits: knicklux (~knicklux@2a03:2260:a:b:3e07:54ff:fe4e:255) (Remote host closed the connection)
+[18:12:11] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[21:03:52] *** Quits: michiwend (~quassel@2a01:488:66:1000:5c33:87b0:0:1) (Quit: No Ping reply in 180 seconds.)
+[21:06:07] *** Joins: michiwend (~quassel@michiwend.com)
+[22:24:02] *** Quits: jamesaxl (~jamesaxl@41.140.218.82) (Remote host closed the connection)
+[22:25:54] *** Joins: jamesaxl (~jamesaxl@41.140.218.82)
+[22:27:11] *** Quits: jamesaxl (~jamesaxl@41.140.218.82) (Remote host closed the connection)
+[22:29:38] *** Joins: jamesaxl (~jamesaxl@41.140.218.82)
+[23:38:52] *** Joins: jamesaxl_ (~jamesaxl@adsl196-182-110-217-196.adsl196-12.iam.net.ma)
+[23:42:20] *** Quits: jamesaxl (~jamesaxl@41.140.218.82) (Ping timeout: 246 seconds)
+[23:44:12] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[23:53:33] *** Quits: jamesaxl_ (~jamesaxl@adsl196-182-110-217-196.adsl196-12.iam.net.ma) (Read error: Connection reset by peer)

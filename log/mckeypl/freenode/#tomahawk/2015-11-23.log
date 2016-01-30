@@ -1,0 +1,56 @@
+[00:32:35] *** Quits: jamesaxl (~jamesaxl@41.248.148.215) (Ping timeout: 240 seconds)
+[00:52:57] *** Parts: modeno1 (~modeno1@gateway/web/scrollback.io/x-qpqyerrnlgkdqlrg) ()
+[02:02:34] *** Quits: znf (~ibm86@unu.card-sharing.eu) (Remote host closed the connection)
+[02:09:32] *** Joins: arkhi (~fabien@180.167.3.61)
+[02:23:17] <lfranchi> jherskowitz: ah :(
+[02:27:12] *** Joins: znf (~ibm86@unu.card-sharing.eu)
+[03:11:27] *** Quits: arkhi (~fabien@180.167.3.61) (Ping timeout: 252 seconds)
+[03:17:34] *** Joins: arkhi (~fabien@180.167.3.61)
+[03:33:21] *** Quits: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[05:01:45] *** sampsyo_ is now known as sampsyo
+[05:35:43] *** Joins: mgue1 (~mgue@x5ce2e2e3.dyn.telefonica.de)
+[05:39:05] *** Quits: mgue (~mgue@x5ce38fb9.dyn.telefonica.de) (Ping timeout: 276 seconds)
+[06:45:42] *** Quits: soee (~soee@aguj251.neoplus.adsl.tpnet.pl) (Ping timeout: 255 seconds)
+[10:47:52] *** Joins: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222)
+[11:02:45] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:42:54] *** Quits: arkhi (~fabien@180.167.3.61) (Remote host closed the connection)
+[12:24:54] *** Joins: HorusHorrendus (~horrendus@chello084114158062.1.15.vie.surfer.at)
+[13:56:23] *** Quits: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222) (Quit: Page closed)
+[14:30:00] *** Joins: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com)
+[17:28:11] *** Quits: HorusHorrendus (~horrendus@chello084114158062.1.15.vie.surfer.at) (Quit: Leaving.)
+[17:40:31] *** Quits: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com) (Disconnected by services)
+[17:40:31] *** Joins: jturney1 (~jon@host86-141-129-50.range86-141.btcentralplus.com)
+[18:12:00] <theli_ua> SolarAquarion: chinese/japanese symbols seem to work just fine for me: http://i.imgur.com/czXoMm3.png
+[18:14:00] <SolarAquarion> theli_ua: maybe it's the font
+[18:17:39] <theli_ua> dunno, what system are you on?
+[19:02:22] *** Joins: domme_ (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de)
+[19:04:28] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[19:05:20] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[19:12:04] *** Joins: modeno1 (modeno1@gateway/web/scrollback.io/x-xwdqzopushiclpuf)
+[19:12:05] <modeno1> Guys, I'm still having some issues setting up the project on ubuntu on Qt.
+[19:12:20] <modeno1> it outputs this error on cmake: By not providing "FindQt5Svg.cmake" in CMAKE_MODULE_PATH this project has
+[19:12:21] <modeno1>   asked CMake to find a package configuration file provided by "Qt5Svg", but
+[19:12:22] <modeno1>   CMake did not find one.
+[19:17:42] <domme_> modeno1: you need to figure out what package you need.. it's probably something with qt5 and svg in its name, try apt-cache search qt5 | grep  -i svg and see if anything reasonable pops up
+[19:30:43] <modeno1> domme2: Ok, that on disappeared and now it's the same style of error but it mentions Qt5UiTools
+[19:39:08] <modeno1> I've tried using the command you mention but replacing grep -i svg with grep -i ui, and the only package that seems relevant I already have installed
+[19:40:15] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Remote host closed the connection)
+[19:51:25] *** Joins: othalf (guest-otha@gateway/web/scrollback.io/x-imimloagutlzoqsr)
+[19:51:26] <othalf> Why there is no tests here? -.-
+[19:51:53] *** Parts: othalf (guest-otha@gateway/web/scrollback.io/x-imimloagutlzoqsr) ()
+[19:59:25] *** Joins: jamesaxl (~jamesaxl@41.249.117.162)
+[20:05:28] *** Parts: modeno1 (modeno1@gateway/web/scrollback.io/x-xwdqzopushiclpuf) ()
+[20:21:05] *** Joins: apb1963 (~apb@174-134-224-109.res.bhn.net)
+[20:22:50] *** Quits: apb__ (~apb@174-134-224-109.res.bhn.net) (Ping timeout: 240 seconds)
+[23:27:20] <domme_> theli_ua: https://github.com/tomahawk-player/tomahawk-resolvers/pull/95
+[23:27:21] <tomabee> [ [netease]Fix invalid m1 server to m5 by andreybavt · Pull Request #95 · tomahawk-player/tomahawk-resolvers · GitHub | github.com | https://avatars0.githubusercontent.com/u/7889985?v=3&s=400 ]
+[23:27:54] <theli_ua> domme_: oh that change is also part of my longstanding pr for netease
+[23:28:02] <domme_> woops :C
+[23:29:48] *** Joins: github-tomahawk (~github-to@192.30.252.42)
+[23:29:48] <github-tomahawk> [13tomahawk-resolvers] 15dschmidt pushed 7 new commits to 06master: 02http://git.io/vBqrx
+[23:29:48] <github-tomahawk> 13tomahawk-resolvers/06master 147821269 15Anton Romanov: [netease]Return empty result when nothing found.Set 320kb quality if not set by user
+[23:29:48] <github-tomahawk> 13tomahawk-resolvers/06master 14c618e5c 15Anton Romanov: [netease]style changes
+[23:29:48] <github-tomahawk> 13tomahawk-resolvers/06master 140ff279f 15Anton Romanov: [netease]try getting link to lower quality if requested was not found. cleanup
+[23:29:48] *** Parts: github-tomahawk (~github-to@192.30.252.42) ()
+[23:29:54] <theli_ua> ty :)
+[23:47:15] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)

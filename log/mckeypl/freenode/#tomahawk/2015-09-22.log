@@ -1,0 +1,318 @@
+[00:45:12] <theli_ua> Failed to do POST request
+[00:45:20] <theli_ua> Status Code was: 201
+[00:45:22] <theli_ua> идфызруьн
+[00:45:26] <theli_ua> blasphemy
+[00:45:33] <theli_ua> 201 is not 'failed'
+[00:47:19] <domme> hehe
+[00:52:51] <theli_ua> hm, I cant even test this rhapsody resolver at work as rtmp streams wont work for me here
+[00:55:12] *** H4ndy is now known as h4ndy
+[00:56:53] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[01:29:18] <jherskowitz> theli_ua: need me to test something?
+[01:31:02] <theli_ua> nah, thanks
+[01:31:10] <theli_ua> but, do you have a rhapsody account?
+[01:32:18] <jherskowitz> theli_ua: yeah
+[01:32:29] <theli_ua> interesting
+[01:32:36] <theli_ua> is there a streaming service you don't have account on?
+[01:32:42] <jherskowitz> heh, not really
+[01:32:58] <theli_ua> I bet you dont have account on that chinese netease one
+[01:32:59] <theli_ua> !
+[01:33:08] <jherskowitz> ha
+[01:33:13] <jherskowitz> you are right about hat
+[01:33:14] <jherskowitz> that
+[01:33:31] <theli_ua> though resolver for that service does not require authentication
+[01:33:50] <theli_ua> and I'm afraid if people start using it it might get shut down
+[01:35:12] <jherskowitz> theli_ua: yeah, might happen - but resolvers sort of always come & go
+[01:35:28] <jherskowitz> Ex.fm, Grooveshark, etc
+[01:37:53] <theli_ua> well, grooveshark was kinda 'pay to use' , was it?
+[01:38:13] <theli_ua> this netease one has a good library, 320kbp streams and doesn't even require authentication
+[01:38:36] <jherskowitz> yeah, the grooveshark one was only for their subscription tier
+[02:15:34] *** Quits: tgurr (~tgurr@exherbo/developer/tgurr) (Ping timeout: 252 seconds)
+[02:31:30] <theli_ua> jherskowitz: http://www.loc.gov/jukebox/recordings/browse  what do you thihnk
+[02:31:32] <tomabee> [ National Jukebox LOC.gov | www.loc.gov |  ]
+[02:37:43] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[03:00:44] <theli_ua> eh, if anyone would help me with encoding rtmpdump -n "rhapsodyev-562.fcod.llnwd.net" -a "a4376/v1" -y "mp4:s/2/6/5/0/4/1034040562.m4a?e=111111111111&h=zzzzzzzzzzzzf"  into an url format libvlc (and tomahawk) would accept I'd appreciate that
+[03:03:28] <theli_ua> well, I guess this is it, I can get rhapsody rtmp streams  but there is no way to play them back through tomahawk :-/
+[03:15:47] <jherskowitz> theli_ua: library of Congress stuff would be cool
+[03:17:07] <jherskowitz> theli_ua: same for https://archive.org/details/audio
+[03:17:10] <tomabee> [ Download & Streaming | archive.org | http:///images/person2.png ]
+[03:22:28] *** Parts: a7medo778 (uid92302@gateway/web/irccloud.com/x-amdszibynjxdgtxg) ()
+[03:33:24] <theli_ua> muesli: opinion on allowing resolvers to libvlc_media_add_option ?  or just some  some way to specify rtmp_app for rtmp urls
+[04:09:56] *** Quits: jturney (~jon@host86-160-189-124.range86-160.btcentralplus.com) (Read error: Connection reset by peer)
+[04:42:41] *** Joins: johu_ (~johu@gentoo/developer/johu)
+[04:42:53] *** Quits: johu (~johu@gentoo/developer/johu) (Ping timeout: 240 seconds)
+[04:56:31] *** Joins: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com)
+[05:07:04] *** Joins: mgue2 (~mgue@x590f76bb.dyn.telefonica.de)
+[05:10:10] *** Quits: mgue1 (~mgue@x590fbc73.dyn.telefonica.de) (Ping timeout: 250 seconds)
+[06:28:47] <theli_ua> muesli, domme in any case, if you have some ideas on how to provide better support for rtmp stream ... please tell   
+[08:04:00] *** Joins: jstrcrws (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370)
+[08:47:08] *** Joins: hrtcrw (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370)
+[08:48:37] *** Quits: jstrcrws (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370) (Ping timeout: 252 seconds)
+[08:55:27] *** Joins: github-tomahawk (~github-to@192.30.252.46)
+[08:55:27] <github-tomahawk> [13tomahawk] 15muesli pushed 1 new commit to 06master: 02http://git.io/vnuIa
+[08:55:27] <github-tomahawk> 13tomahawk/06master 14f2f85c2 15Tomahawk CI: Automatic merge of Transifex translations
+[08:55:27] *** Parts: github-tomahawk (~github-to@192.30.252.46) ()
+[08:56:37] *** Joins: github-tomahawk (~github-to@192.30.252.34)
+[08:56:37] <github-tomahawk> [13tomahawk] 15muesli pushed 1 new commit to 06stable-0.8: 02http://git.io/vnuIF
+[08:56:37] <github-tomahawk> 13tomahawk/06stable-0.8 14704c406 15Tomahawk CI: Automatic merge of Transifex translations
+[08:56:37] *** Parts: github-tomahawk (~github-to@192.30.252.34) ()
+[09:41:26] *** Quits: lasconic (sid4376@gateway/web/irccloud.com/x-ggnfhxtuqhjswqxu) (K-Lined)
+[09:41:26] *** Quits: theli_ua (uid54353@gateway/web/irccloud.com/x-pzmvhuvbkbytadxj) (K-Lined)
+[09:41:26] *** Quits: hugo______ (sid6079@gateway/web/irccloud.com/x-myghggysvetvgrcs) (K-Lined)
+[09:41:26] *** Quits: RJ2 (sid1@pdpc/supporter/professional/rj2) (K-Lined)
+[09:41:26] *** Quits: alastairp (sid1249@gateway/web/irccloud.com/x-iscwrvvfodxgpbnz) (K-Lined)
+[09:41:26] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-jpbrmtoqzlxliurc) (K-Lined)
+[09:41:26] *** Quits: hatstand (sid2952@gateway/web/irccloud.com/x-rucsaaraqmckxzzg) (K-Lined)
+[09:41:26] *** Quits: jherskowitz (sid84@gateway/web/irccloud.com/x-fyynfolwuyqggtze) (K-Lined)
+[09:41:26] *** Quits: thomasbonte (sid4377@gateway/web/irccloud.com/x-ymkyggybrcujzoid) (K-Lined)
+[09:41:26] *** Quits: jefferai (sid1300@kde/mitchell) (K-Lined)
+[09:41:26] *** Quits: xhochy (sid11301@gateway/web/irccloud.com/x-rycpfmshfwdtfwpd) (K-Lined)
+[09:41:26] *** Quits: jancborchardt (sid4173@gateway/web/irccloud.com/x-ooqbceloekotgstj) (K-Lined)
+[09:41:26] *** Quits: dukedave (sid666@gateway/web/irccloud.com/x-qfkbisjeidmilhni) (K-Lined)
+[09:41:26] *** Quits: Eliz (Eliz@spy/botters.Eliz) (K-Lined)
+[09:41:27] *** Quits: Techman (sid11863@gateway/web/irccloud.com/x-onltqibgpxdtqahn) (K-Lined)
+[09:41:27] *** Quits: ben-xo (sid227@gateway/web/irccloud.com/x-nwabcwscbbkqhimk) (K-Lined)
+[09:41:34] *** Quits: L42y (sid10623@gateway/web/irccloud.com/x-zpqbdvbukobawbwf) (K-Lined)
+[09:44:02] *** Joins: L42y (sid10623@gateway/web/irccloud.com/x-qqcqjcllglwptsyg)
+[10:11:54] *** Joins: alastairp (sid1249@gateway/web/irccloud.com/x-rapjgbculpvaxvkg)
+[10:56:19] *** Quits: rodgort (~rodgort@105.ip-167-114-152.net) (Ping timeout: 240 seconds)
+[10:56:42] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[10:58:37] *** Joins: ben-xo (sid227@gateway/web/irccloud.com/x-fzetlrdqgvkvpcoq)
+[11:00:33] *** Joins: rodgort (~rodgort@105.ip-167-114-152.net)
+[11:02:06] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:41:14] *** Joins: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com)
+[11:47:55] *** Joins: xhochy (sid11301@gateway/web/irccloud.com/x-kksrlgcnpxeffffw)
+[11:48:46] *** Joins: theli_ua (uid54353@gateway/web/irccloud.com/x-hltbxrgbxokbczjq)
+[11:48:51] *** Joins: thomasbonte (sid4377@gateway/web/irccloud.com/x-jxqocizmclfmalfq)
+[11:48:52] *** Joins: jancborchardt (sid4173@gateway/web/irccloud.com/x-jdsrsecrliewuhiz)
+[11:49:43] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-yfdikgyqwdhjmjbs)
+[11:50:14] *** Joins: RJ2 (sid1@pdpc/supporter/professional/rj2)
+[11:50:56] *** Joins: hugo______ (sid6079@gateway/web/irccloud.com/x-zehnncrmjrosalth)
+[11:52:08] *** Joins: jherskowitz (sid84@gateway/web/irccloud.com/x-hkvytilqhgxghxad)
+[11:52:13] *** Joins: hatstand (sid2952@gateway/web/irccloud.com/x-vowirkeaqzcsinnb)
+[11:52:27] *** Joins: Techman (sid11863@gateway/web/irccloud.com/x-tfhxpxsszhbaacka)
+[11:53:27] *** Joins: lasconic (sid4376@gateway/web/irccloud.com/x-lifbifzmglwhhmrw)
+[11:56:18] *** Joins: jefferai (sid1300@kde/mitchell)
+[11:56:25] *** Joins: Eliz (Eliz@spy/botters.Eliz)
+[11:58:54] *** Joins: dukedave (sid666@gateway/web/irccloud.com/x-uawrlpjncjknykwn)
+[12:03:34] <HorusHorrendus> alastairp: you wanted to send me a mail ;)
+[12:24:32] *** Joins: github-tomahawk (~github-to@192.30.252.46)
+[12:24:32] <github-tomahawk> [13tomahawk] 15dschmidt pushed 2 new commits to 06master: 02http://git.io/vnzfv
+[12:24:32] <github-tomahawk> 13tomahawk/06master 1409c4c7c 15Anton Romanov: Consider 201 http status as a success
+[12:24:32] <github-tomahawk> 13tomahawk/06master 145079758 15Dominik Schmidt: Merge pull request #329 from theli-ua/201...
+[12:24:32] *** Parts: github-tomahawk (~github-to@192.30.252.46) ()
+[12:30:11] <alastairp> I did. thanks for the reminder
+[12:31:40] <alastairp> HorusHorrendus: do you have an area that you're interested in?
+[12:31:53] <alastairp> signal processing, machine learning, database curation, ...?
+[12:43:02] <HorusHorrendus> alastairp: no idea ... as I said probably not to low-level :)
+[12:43:48] <HorusHorrendus> and I did write acousticbrainz because at that time listenbrainz wasn't out yet ... so if you have any idea there ;)
+[12:43:48] <alastairp> ok, so I guess you'd be looking at something like data curation 
+[12:44:22] <alastairp> listenbrainz isn't really affiliated with the university, so not sure if that would impact the choice
+[12:45:22] <alastairp> 2 things we're looking at currently in AB: 1) given 100 submissions of the same mbid, are they actually the same audio? if the same song is submitted with 2 mbids, can you work out that they're the same thing?
+[12:45:50] <HorusHorrendus> alastairp: no that has no impact as to my supervisors I will anyways pitch it as an opensourceproject
+[12:46:23] <alastairp> 2) start looking at the audio data and metadata that we have and look into see if we can start building machine learning models to guess aspects of the music
+[12:46:25] <HorusHorrendus> about ab: well I'm also recently interested (or already since a long time) in structure of songs ... but also happy with other stuff as long as it's interesting and fits the scope :)
+[12:46:45] <alastairp> we're already doing this with genre a bit, though we don't really have anything good yet
+[12:46:59] <alastairp> one thing to know about AB is that we don't have that resolution of time-level data
+[12:47:16] <alastairp> most of the features are a mean + standard deviation over the whole duration of the track
+[12:48:45] <HorusHorrendus> ahh ok ... time-level data probably can give more info
+[12:51:31] <HorusHorrendus> alastairp: 1 seems interesting, but not sure if enough work ... 2 seems hard, but doable ... although my machine learning skills aren't the best ;)
+[12:52:40] <alastairp> We're not sure about 1 either. One thing we want to do is collect some audio and make our own changes to it (different encoders, formats, bitrates, etc) and see how much the data from the extractor changes
+[12:53:02] <alastairp> this would give us an indication of the threshold of how much a value can change
+[12:53:15] <alastairp> then we have 2.5 million tracks that need to be optimally compared with each other
+[12:58:39] *** Joins: jturney (~jon@host86-160-189-124.range86-160.btcentralplus.com)
+[12:59:31] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Read error: Connection reset by peer)
+[13:01:01] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[13:11:30] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Read error: Connection reset by peer)
+[13:11:48] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[13:22:07] *** Joins: dissit (guest-diss@gateway/web/scrollback.io/x-dyrrlreyatcnacvh)
+[13:22:08] <dissit> Is this software always scrobbling even when youre offline?
+[13:24:32] <muesli> yeah
+[13:24:39] <muesli> those scrobbles will get cached
+[13:38:38] *** Joins: tutest2 (guest-tute@gateway/web/scrollback.io/x-twshdcmlyuvhamun)
+[13:38:38] <tutest2> Hi Did the Rhapsody One Get set Up?
+[13:42:48] *** Quits: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com) (Quit: alsuren)
+[13:52:10] <tutest2> theli-ua2 Did you try using librtmp?
+[14:24:11] *** Quits: Marikos (~fox@pool-108-24-149-221.cmdnnj.fios.verizon.net) (Read error: Connection reset by peer)
+[14:33:41] <feepk> Here are the talk recordings from last weekend's VDD! https://goo.gl/Fg1vci
+[14:33:41] <tomabee> [ VideoLAN Dev Days 2015 Recordings | www.youtube.com | https://yt3.ggpht.com/-0z35tJ3awpE/AAAAAAAAAAI/AAAAAAAAAAA/nPLrlFcl51M/s100-c-k-no/photo.jpg ]
+[15:41:05] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[15:50:45] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[16:00:17] <TheOneRing> muesli: there is no possebility to directly get a qicon? QPixmap::fromImage( map[ "cover" ].value< QImage >() ) ^^
+[16:01:28] <muesli> TheOneRing: for what exactly?
+[16:02:24] <muesli> ah, covers i guess?
+[16:02:36] <TheOneRing> yes
+[16:02:41] <muesli> in which case, nah. the qicon would only make sense if we'd provide multiple sizes and or icon states in there
+[16:02:48] <muesli> imo
+[16:04:11] <TheOneRing> ok, I changed the icon handlingin snorenotify to qicon^^ and the local file cache for the icon uses the kacheKey, now for every notification needing a local file a new one is written to the qtempdir, but this shouldnt be a problem
+[16:04:30] <TheOneRing> and it should still be faster than the old code
+[16:10:12] <muesli> ok cool
+[16:10:29] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Ping timeout: 256 seconds)
+[16:12:23] *** Quits: rodgort (~rodgort@105.ip-167-114-152.net) (Ping timeout: 240 seconds)
+[16:16:49] *** Joins: rodgort (~rodgort@2607:5300:100:200::160d)
+[16:22:59] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[16:24:06] <TheOneRing> or is there a cover_file_name ^^
+[16:24:20] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Read error: Connection reset by peer)
+[16:25:52] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[16:26:58] <TheOneRing> bbl
+[16:27:45] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[17:27:17] *** Joins: amosig (guest-amos@gateway/web/scrollback.io/x-esfvnvxrfmvvvunv)
+[17:27:18] <amosig> @muesli2 around? (this is lfranchi via web ;)
+[17:45:14] <muesli> amosig: i am
+[17:45:31] <muesli> about to head out for ~2h tho
+[17:45:34] <muesli> amosig: sup?
+[17:51:49] <theli_ua> tutest2: yeah rtmp streams from rhapsody work just fine with librtmp/rtmpdump 
+[17:52:06] *** h4ndy is now known as H4ndy
+[17:52:13] <amosig> fighting 10.9+ code signing :-/
+[17:52:24] <amosig> for tomahawk i notice we use a different codesign script
+[17:53:02] <amosig> is that on github somewhere? :)
+[17:53:35] * lfranchi is back
+[17:55:10] <domme> lfranchi: not sure, but certainly we can share ;-)
+[17:55:20] <lfranchi> that would be useful :)
+[17:58:57] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[18:02:09] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[18:02:57] <theli_ua> tutest2: its just ffmpeg problem , not even with playing but parsing the url ... its easily solvable though, tomahawk just need to give resolvers more control over passing rtmp parameters to libvlc/ffmpeg
+[18:04:26] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[18:04:56] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[18:05:03] <theli_ua> ⇐ You were banned from wilhelm.freenode.net: You are banned from this server- (Clearing #iob) bots aren't welcome (2015/9/22 07.41)
+[18:05:06] <theli_ua> :-.
+[18:05:08] <theli_ua> :-/
+[18:05:18] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[18:06:09] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[18:09:31] <theli_ua> tutest2: but it doesn't really anymore, cause I figured a way to get http streams from rhapsody, I just need to clean up resolver code now and the I'll post it
+[18:20:56] <theli_ua> jherskowitz: since you have a lot of streaming services accounts ... are there any services you have account on which we don't have a resolver yet?
+[18:21:24] <theli_ua> jherskowitz: assuming we "have" resolvers for amazon and rhapsody
+[18:22:36] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[18:23:01] * theli_ua thinks he scared everyone away from the channel :(
+[18:28:12] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[18:28:19] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[18:50:41] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[19:05:47] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Remote host closed the connection)
+[19:11:10] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[19:13:25] *** Joins: moru (~moru@2a02:8388:1700:1780:227:10ff:fe88:9b60)
+[19:18:19] *** Joins: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com)
+[20:20:25] <toma-cat> Added new crash-report for version 1.0.1 (Android)
+[20:23:32] <jherskowitz> theli_ua: thinking
+[20:25:52] <jherskowitz> theli_ua: people have asked for a mixcloud resolver - but I don’t think those works since they are “sets” (I think)
+[20:26:09] <jherskowitz> also I can get access to xbox music (Groove) if we want it it
+[20:26:25] <jherskowitz> but no one has ever asked for that :)
+[20:26:31] *** Joins: wmp (~wmp@sored/admin/wmp)
+[20:26:38] <wmp> hello
+[20:26:50] <jherskowitz> wmp: hello
+[20:26:52] <wmp> i add google music to tomahawk but i dont know hwo to find them
+[20:27:34] <jherskowitz> wmp: if you don’t see it show up in the sidebar, then try these… https://tomahawk.uservoice.com/knowledgebase/articles/432626-why-can-t-i-log-in-with-my-google-account
+[20:27:36] <tomabee> [ Why can't I log in with my Google account? – Feedback Loop | tomahawk.uservoice.com |  ]
+[20:29:34] <wmp> jherskowitz: i using 2 way authorization and in tomahawk i have special password to application
+[20:29:46] <wmp> from browser i can play music
+[20:29:53] <jherskowitz> wmp: what OS are you on?
+[20:30:01] <jherskowitz> there is a bug with OS X at the moment
+[20:30:02] <wmp> kubuntu 15.04
+[20:30:40] <wmp> jherskowitz: i haven;t premium in google music, this is good?
+[20:30:46] <jherskowitz> and you don’t see Google Music in your sidebar after you login using your app-specific password?
+[20:31:02] <jherskowitz> you don’t need premium to access stuff you have in your Google Music locker
+[20:31:14] <wmp> jherskowitz: after restart tomahawk i have google music ;)
+[20:31:21] <jherskowitz> ah, heh
+[20:31:22] <jherskowitz> cool
+[20:32:08] <wmp> jherskowitz: how can i swithc to another view to navigate?
+[20:32:19] <wmp> becouse cloud collections aren;t supported
+[20:32:54] <jherskowitz> “songs” tab
+[20:33:20] <jherskowitz> oh, sorry… I think “artists” tab
+[20:33:22] <wmp> jherskowitz: i have this message on songs and album tabs
+[20:33:33] <wmp> ok, only artists works?
+[20:33:38] <jherskowitz> for now, yeah
+[20:34:37] <wmp> jherskowitz: tomahawk can upload music to google music?
+[20:34:47] <jherskowitz> wmp: sorry, no
+[20:35:33] <wmp> jherskowitz: do you know ahy other method to upload music to google with application password? I wan't using my password to google account in work computer
+[20:35:51] <jherskowitz> wmp: you can do it from the browser can’t you?
+[20:36:06] <wmp> i can log only with master password
+[20:36:11] <wmp> or i dont knwo how to
+[20:37:04] <jherskowitz> maybe the google music uploader? https://support.google.com/googleplay/answer/1075570?hl=en&ref_topic=6230985&vid=1-635785437929071861-731605772
+[20:37:04] <tomabee> [ Add your music with Google Play Music Manager | support.google.com | http:////lh4.ggpht.com/3N-UHwywwzPosQiFkGXp-KlsFfueFby2PzYRp061Ae2iB6lKzTMSGR-fqYVHmp7lR0c=w500 ]
+[20:37:05] <jherskowitz> dunno
+[20:38:05] <wmp> jherskowitz: ok, thanks for all ;) How can i donate tomahawk?
+[20:38:40] <jherskowitz> wmp: :) https://flattr.com/thing/169312
+[20:38:41] <tomabee> [ Flattr.com | flattr.com | https://flattr.com/thing/image/1/6/9/3/1/2/huge.png ]
+[20:39:04] <wmp> ;)
+[20:39:33] <muesli> wmp: <3
+[20:39:46] <muesli> you can also directly donate if you wanna avoid flattr
+[20:40:05] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[20:42:08] <wmp> muesli: flattr? could you describe, this isn;t my primaty language and i can;t found this world
+[20:42:23] <wmp> ahhh, flattr is service ;)
+[20:42:31] <muesli> flattr is a website where you can donate to various opensource projects
+[20:42:35] <muesli> but you need an account there first
+[20:42:37] <wmp> we accept bitcoin?
+[20:42:49] <muesli> not sure if flattr accepts bitcoin i'm afraid
+[20:42:56] <muesli> but if you prefer it that way, i'm sure we can set it up :)
+[20:43:06] <wmp> yes, i prefer this way ;)
+[20:43:26] <wmp> if you havent bitcoin client, i suggest use electrum
+[20:43:35] <muesli> i'll set it up then, finally i got an excuse ;-)
+[20:44:30] <wmp> ;)
+[20:44:51] <wmp> so i waiting for bitcoin address, now short afk
+[20:45:53] <jherskowitz> muesli: what are going to set up? https://bitpay.com/docs/donations ?
+[20:45:54] <tomabee> [ BitPay Documentation | bitpay.com | http:///images/social/bitpay-avatar-1200.c17070b1.jpg ]
+[20:46:12] <wmp> jherskowitz, muesli: to using spotify i need premium account?
+[20:46:22] <jherskowitz> wmp: yeah
+[20:46:32] <jherskowitz> a restriction of their API
+[20:48:16] <wmp> jherskowitz: if anybody want to donate by bitcoin, is possible that he has bitcoin client and dont need bitpay to change USD or EUR or PLN to bitcoin and send to you
+[20:51:17] <wmp> jherskowitz: is possible to send music to google music by api from tomahawk in new version?
+[20:51:40] <jherskowitz> no, sorry
+[20:51:58] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[20:52:00] <wmp> :/
+[20:52:05] <muesli> wmp: not a request out of this world, but no plans for it yet, sorry
+[20:52:29] <wmp> muesli: so api allow this?
+[20:53:27] <muesli> i think so. it's not really an official api to begin with tho
+[20:53:50] <wmp> ok, i understand
+[21:14:18] *** Quits: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com) (Quit: alsuren)
+[21:23:08] *** Joins: sweato4 (guest-swea@gateway/web/scrollback.io/x-sjubvxhlrnwexnle)
+[21:23:08] <sweato4> hey
+[21:24:11] <sweato4> they suck ass
+[21:44:27] <HorusHorrendus> alastairp: sorry for not really catching up ... I'm at work and we got busy then ...
+[21:44:48] <HorusHorrendus> if you have those 2 projects ... well I'm up for both if they help you guys ;)
+[21:47:10] *** Quits: moru (~moru@2a02:8388:1700:1780:227:10ff:fe88:9b60) (Remote host closed the connection)
+[21:48:33] <HorusHorrendus> I think No. 2 would sound more like there could also be stuff in it for the accompanying thesis
+[21:53:21] *** Joins: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com)
+[21:59:42] *** H4ndy is now known as h4ndy
+[22:14:46] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[22:19:54] <wmp> muesli: jherskowitz: can i using google music playlists?
+[22:20:49] <domme> sweato4: yeah, with passion
+[22:24:51] <jherskowitz> wmp: not currently. Syncing playlists between/across multiple services is a messy problem
+[22:25:37] <wmp> jherskowitz: is possible to aclereate works on this problem with my donation? :)
+[22:26:20] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[22:30:01] <jherskowitz> wmp: lots to do, not enough time in the day. Are you a developer? :)
+[22:30:29] <wmp> jherskowitz: i'm linux admin ;) I know bash and perl. Can i be developers?
+[22:30:31] <wmp> :)
+[22:31:26] <theli_ua> you can be a janitor and be a developer
+[22:31:35] <theli_ua> noone will stop you from making a change and posting a pull request
+[22:32:26] <wmp> theli_ua: i dont know js and C++ and i havent time to learn its
+[22:33:15] <theli_ua> so, where you asking how can you help with just perl and shell scripting knowledge?
+[22:33:15] *** Quits: hrtcrw (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370) (Ping timeout: 252 seconds)
+[22:33:30] <theli_ua> *were
+[22:34:00] <wmp> theli_ua: maybe we need admin
+[22:36:30] <theli_ua> I dunno
+[22:47:31] *** Quits: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com) (Quit: alsuren)
+[22:50:52] <domme> wmp: hehe, we're pretty much covered in that regard i guess :)
+[22:51:22] <wmp> ;)
+[22:51:52] <domme> wmp: if you look for junior jobs ... may i come back to you for some quite mechanical changes to our js files soon? :)
+[22:52:10] <domme> you don't need to understand js for it, it's just changing a bit of syntax here and there :D
+[22:52:25] <wmp> domme: i can write for you perl script for this
+[22:52:29] <domme> haha
+[22:52:52] <domme> wmp: (i actually even thought that but didnt dare to speak it out :D)
+[22:53:18] <wmp> ;)
+[22:56:32] <rotzbouw> alastairp: I couldn't get transmit 50% so far.. stuck at 20% again
+[22:56:52] <alastairp> yeah, I saw some of your submits in the log
+[22:56:59] <alastairp> we had a bit of downtime this evening
+[22:57:08] <alastairp> I have a patch I want to release, but it requires a bit more work
+[22:57:46] <alastairp> maybe I’ll release as-is since the changes are better than what’s out there now
+[22:57:56] <alastairp> and just add the other stuff separately
+[22:58:41] <wmp> ok, goodnight
+[22:58:45] <alastairp> I think http://tickets.musicbrainz.org/browse/LB-40 is a partial cause
+[22:58:46] <tomabee> [ [#LB-40] Do not create so many outstanding requests | tickets.musicbrainz.org |  ]
+[22:58:52] <alastairp> I want to get to that tomorrow
+[23:03:40] <alastairp> OK, I just merged some stuff into master. I won’t release it now because I’m going to bed and I don’t want to stay up and make sure it works
+[23:03:46] <alastairp> but I’ll do that first thing tomorrow :)
+[23:07:05] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) (Ping timeout: 240 seconds)
+[23:10:49] *** Joins: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com)
+[23:12:36] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[23:14:58] <rotzbouw> alastairp: no worries :)
+[23:17:55] <alastairp> Thanks for keep us on our feet! 
+[23:18:08] <theli_ua> oh ffs, I don't know how did I get http streams working from rhapsody for me yesterday ... now I can't get them to work and tomahawk/libvlc won't let me use rtmp streams >_<
+[23:59:51] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) ()

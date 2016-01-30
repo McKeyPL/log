@@ -1,0 +1,372 @@
+[00:04:56] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[00:10:09] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Connection closed)
+[00:37:31] *** Joins: nscoots (FreyGrimrod@Pony-3rit87.sub-70-192-8.myvzw.com)
+[01:00:57] *** Joins: Sombra (Iceman@Darkhorse21)
+[01:24:58] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[01:30:30] *** Pony_83098 is now known as zz_Pony_83098
+[01:34:23] <Seoson> This is a joke, right? http://www.ghacks.net/2015/11/08/mozilla-plans-to-remove-support-for-heavyweight-themes-in-firefox/ -.-
+[01:37:33] <Googie> They've been moving away in general from giving extensions/themes as much in depth control as they have had
+[01:38:08] <Googie> I think they might be planning to eventually move away from chrome (Confusing name... Firefox's GUI system)
+[01:38:22] <Googie> Right now the whole API is based on chrome
+[01:38:58] <HoneyDrops> So they are taking away what makes FF great
+[01:40:28] <Googie> Well, I think they have to replace that component at some point, it's holding them back. It wouldn't be an issue if they had a plan to replace properly with the replacement having an equally powerful extension system though :/
+[01:41:20] * Googie doesn't want to lose Pentadactyl :(
+[01:41:27] <Eclipse> Googie: PENTADACTYL
+[01:41:29] <Eclipse> :D :D :D :D :D 
+[01:41:43] <Eclipse> rip in peace xul
+[01:41:50] <HoneyDrops> Pentadactyl should be the default UI
+[01:42:33] <Googie> No, no it shouldn't :P It needs to be an option though
+[01:42:52] <Eclipse> I really hope they don't utterly slay pentadactyl
+[01:42:56] <Eclipse> vimium is just sad
+[01:42:59] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[01:43:57] <HoneyDrops> I would also accept the rednering engine just providing an API to let you wrap it in whatever gui you want
+[01:45:25] <HoneyDrops> Sadly webkit's API is somewhat lacking, last I checked.
+[01:45:48] <HoneyDrops> I loved luakit, but the inability to do things like noscript and uMatrix/RequestPolicy was a dealbreaker.
+[01:48:05] <Seoson> You could build that of Chromeium though
+[01:48:57] <Seoson> I've not looked into webkit's api, but it's commonly used inside apps as well, so one would guess it works fine
+[01:49:49] <HoneyDrops> It doesn't have as many hooks for internal stuff.  It is easy to wrap it in stuff, but you're fairly limited on controlling its internal behavior.
+[01:50:39] <HoneyDrops> My understanding is it's getting better, but still behind what FF allows.
+[01:52:04] <Seoson> I personally use firefox only because of the addons. I'm shifting more and more things to Chrome already. Mozilla is on a very bad course that started with the rapid release bullshit
+[01:53:20] <HoneyDrops> I guess ideally complete and fine-grained control over resource requests and script permissions would be /default/ functionality.  However, NoScript and uMatrix work well at the moment.
+[01:54:34] <Seoson> No thank you you can keep FF Hello and the new sync. I prefered the old one where I could host my own server.
+[01:55:16] <HoneyDrops> I don't even know what those are XD
+[01:56:42] <Seoson> Sync as in syncing your history, passwords, bookmarks, settings, addons (never actually worked). FF Hello is a VoIP/Video chat thing
+[01:56:50] *** Joins: GigabitPony (Gigabit@Bazinga)
+[01:57:00] *** Quits: Pony_44086 (jaderain@Pony-msb.7oq.1.52.IP) (Quit: WeeChat 1.4-dev)
+[01:57:02] *** Joins: jaderain (jaderain@Pony-247idc.jkaufman.me)
+[01:57:12] <Colgate> don't forget pocket :P
+[01:58:55] <Seoson> App Tabs never really worked for me (all though the idea is great). I had to make them functional with - guess what - addons
+[01:59:05] *** Pony_696 is now known as Deathpony
+[01:59:21] <Deathpony> Did I get a good heatsink? CM RR-VTPS-28PK-R1 Vortex Plus CPU Cooler
+[02:01:26] <Lapsus> That's a heatsink alright
+[02:02:20] <Lapsus> I'm guessing you're not planning to massively overclock whatever you're strapping it to, so it should be just fine
+[02:02:40] *** Joins: Asoka_White (Asoka@Pony-5fv7hb.net-htp.de)
+[02:02:50] <Lapsus> you'll also probably need to replace that fan in a couple years
+[02:05:52] *** Quits: Asoka (Asoka@Pony-a5dj6m.net-htp.de) (Ping timeout: 121 seconds)
+[02:06:35] <Lapsus> well, a couple months to a couple years I guess
+[02:06:44] <Lapsus> depends on the fan
+[02:07:02] * Seoson prefers huge fans with a minimal rpm setting
+[02:07:46] <Lapsus> Agreed, but there's nothing really wrong with his choice having a 92mm fan instead of something larger
+[02:08:09] <Lapsus> Deathpony: for reference, larger fans = lower pitched noise
+[02:08:31] <Lapsus> also you tend to need less rpm for larger fans to get the same airflow
+[02:08:46] * Lapsus prefers passive cooling, but that's not always possible
+[02:09:04] <Lapsus> Speaking of fans, I need some 40mm ones D:
+[02:11:16] <Lapsus> I'd love to get noctua ones, but I don't know if I can justify $20 for one 40mm fan
+[02:12:33] <Deathpony> so I found a new PSU. EVGA SuperNOVA 750 watt
+[02:13:53] <Lapsus> Deathpony: Are you buying one part at a time?
+[02:14:53] <Lapsus> also, supernova 750 or 750 g2
+[02:15:05] <Lapsus> either way, it has good reviews? :v
+[02:15:14] <Deathpony> all at once
+[02:15:20] <Deathpony> yeah
+[02:15:22] <Deathpony> 4 star
+[02:15:37] <Lapsus> http://www.jonnyguru.com/modules.php?name=NDReviews&op=Story&reid=380
+[02:16:05] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[02:16:16] <Lapsus> if you haven't bought it yet, maybe look at coolers with larger fans, just because they'd be quieter
+[02:16:29] <Lapsus> but then again that doesn't matter to some people
+[02:16:30] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[02:16:32] * Lapsus shrugs
+[02:16:35] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Connection closed)
+[02:16:40] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[02:16:49] * Lapsus holds on to Mike_Coltfield
+[02:20:35] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[02:29:47] *** GigabitPony is now known as Gigabit
+[02:30:01] <Seoson> I nerver saw the reason behind flooding IRC servers or channels. It's only a minor annoyance for users, unless you have quite potent resources, it's not like users are going to switch networks anytime soon and blackmailing works way better with online shops :P
+[02:31:30] <Seoson> No influence + financial gain = waste of time
+[02:32:27] *** Joins: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner)
+[02:32:27] *** AutoLapsus sets mode: +v PinkiePieBot
+[02:33:56] <Compu> i have my olympia splendid electric typewriter back
+[02:41:11] <Colgate> Seoson: people are dumb
+[02:47:10] *** Joins: Sombra (Iceman@Darkhorse21)
+[02:51:48] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[03:01:50] *** Seoson is now known as Seoson|BNC
+[03:02:11] <Compu> we also got 4 LED bulbs and 3 packs of LED string christmas lights
+[03:06:21] <Moonlightning> https://www.blackl.net/using-mhfd-with-gnutls-cli.mp4
+[03:06:22] <Moonlightning> :3c
+[03:26:20] <Colgate> did that really need a video? -.-
+[03:31:02] <Moonlightning> As opposed to what?
+[03:32:30] <Deathpony> what does PCI-Express Connector 4 x 6+2 pin mean?
+[03:32:52] <Deathpony> that it has 4 spots to hook up 4 different 6+2 connectors?
+[03:38:19] <Webster> Maybe.
+[05:01:26] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[05:19:10] *** eyeburn is now known as Starburn
+[05:22:56] <Deathpony> I think the WLAN card on my old desktop is dying
+[05:49:08] *** Starburn is now known as Sthadron
+[05:58:03] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[05:59:13] *** Gigabit is now known as worthless
+[06:09:49] <Compu> ((bluh, how do i get these keycaps off of my typewriter, they need to all be cleaned))
+[06:32:36] *** RedHelper is now known as Creeps|AFK
+[06:36:47] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[07:43:29] <Lapsus> Deathpony: It means that the powersupply has cables for pcie 8 pin power, but you can also detach two of the pins if the card only needs 6 pin power
+[07:44:26] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:45:00] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[08:02:18] *** Quits: Crimson_Tail (Bluepon@Pony-8ddqcj.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[08:05:29] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:13:30] *** Sthadron is now known as Starburn
+[08:24:25] *** Eventide is now known as Eventide|Sleepies
+[08:41:05] <Moonlightning> Seoson|BNC: …what about Unicode characters?
+[08:41:11] <Moonlightning> I should probably test with those
+[08:53:20] *** zz_Pony_83098 is now known as CyberJacob
+[09:02:33] *** Quits: Deathpony (IceChat9@Pony-q2h.j1d.51.50.IP) (Ping timeout: 121 seconds)
+[09:04:33] *** Joins: Deathpony (IceChat9@Pony-q2h.j1d.51.50.IP)
+[09:05:02] *** Deathpony is now known as Pony_8957
+[09:27:10] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[09:30:06] *** CyberJacob is now known as zz_CyberJacob
+[09:33:45] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[09:41:03] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:43:08] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[09:43:10] <Moonlightning> …
+[09:43:12] * Moonlightning facehoofs…
+[09:43:21] <Kyoro> beep
+[09:43:25] <Moonlightning> okay, so what's up with this dhparam thing?
+[09:43:29] *** Joins: ColtonDRG (coltondrg@Pony-6fvngb.0k2n.a1t0.00b8.2602.IP)
+[09:43:33] <Moonlightning> apparently nginx uses a 1024-bit one by default
+[09:43:44] <Moonlightning> it's random, though, not a common one, right? right?… D:
+[09:43:46] *** Quits: ColtonDRG (coltondrg@Pony-6fvngb.0k2n.a1t0.00b8.2602.IP) (Quit: Rebooting things.)
+[09:45:17] <Moonlightning> …oh, gods, it does
+[09:45:34] <Moonlightning> fuck me, all of that HTTP traffic was vulnerable D:
+[09:46:59] <Moonlightning> WHY, NGINX, WHY?
+[09:48:29] <Moonlightning> …I need to run this test on my other servers, too…
+[09:52:39] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[10:01:53] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[10:05:45] <Googie> Moonlightning: Legacy clients only supoort 1024, and 1024 was thought secure for a long time.
+[10:06:22] <Moonlightning> Fuck legacy clients.
+[10:06:30] <Moonlightning> Legacy clients just hold us back!
+[10:06:49] <Moonlightning> anyway, anypony know how to effectively redirect one port to another with iptables or something
+[10:07:16] <Moonlightning> This service is being silly and not taking a /port/ argument, so I basically need to run my IRCd on 443 for a bit
+[10:14:14] <johnsey> iptables -t nat -A PREROUTING -p tcp --dport $port -j REDIRECT --to-port $newport
+[10:16:07] <Moonlightning> Nope…I still get connection-refuseds trying to connect to $newport
+[10:16:14] <Moonlightning> err, trying to connect to $port *
+[10:22:25] <Moonlightning> …never mind. It works from outside, but gives me connection-refused if I try to connect to the public IP from the server itself.
+[10:22:26] <Moonlightning> Odd…
+[10:22:47] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[10:29:23] <Moonlightning> ssllabs seems to be stuck on /checking deprecated cipher suites/
+[10:41:30] <Moonlightning> https://www.ssllabs.com/ssltest/analyze.html?d=irc.blackl.net
+[10:41:31] <PinkiePieBot> [ SSL Server Test: irc.blackl.net (Powered by Qualys SSL Labs) ]
+[10:41:33] <Moonlightning> :|
+[10:41:47] <Moonlightning> This is horrible. Where the fuck are the options for all this shit.
+[10:45:55] <Moonlightning> Oh. Looks like I can set a priority string.
+[10:45:59] <Moonlightning> So…that's good…I guess?
+[10:48:06] <Googie> Priority strings are how you control what Ciphers to use
+[10:48:17] <Moonlightning> Right.
+[10:48:21] <Moonlightning> But what about the REST of this stuff
+[10:49:54] <Googie> IIRC all of that is controlled through the priority string
+[10:52:36] <Moonlightning> …really? Huh.
+[10:56:32] <Moonlightning> …why does Mozilla recommend using things like `+ECDHE-RSA` in gnutls priority strings? Doesn't that enable instances of ECDHE-RSA with weak key lengths?
+[11:00:36] * Googie can't see that anywhere...
+[11:01:44] <Moonlightning> >> https://wiki.mozilla.org/Security/Server_Side_TLS#GnuTLS_ciphersuite
+[11:01:46] <PinkiePieBot> [ Security/Server Side TLS - MozillaWiki ]
+[11:02:05] <Moonlightning> You missed the fragment, PinkiePieBot~
+[11:07:18] <Googie> It looks like GnuTLS will only add those if they're also in the "NORMAL" category
+[11:08:51] <Moonlightning> I don't want NORMAL, though; I want SECURE256 >XP
+[11:09:40] <Moonlightning> holy shit why does it take so fuckkin' long to run against Insp
+[11:10:14] <Moonlightning> it must've been like fifteen minutes already
+[11:11:31] <Googie> You're running that Qualys thing ? It's trying to read HTTPS headers
+[11:12:24] <Moonlightning> Insp hasn't complained about it yet!
+[11:16:56] <Moonlightning> …um.
+[11:22:06] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[11:22:54] <Moonlightning> …what the hell. SSL 3 is still on.
+[11:23:07] <Moonlightning> …that, or gnutls-cli is completely ignoring my priority string
+[11:23:55] <Moonlightning> (…WAAAAAAAAAUUUUUUUUUUUUUUUUUUUUU I'VE BEEN DOING SRV WRONG THIS ENTIRE TIME)
+[11:23:58] <Moonlightning> (WHY DID NOPONY TELL ME)
+[11:29:51] <Moonlightning> (I didn't even realize that it made no sense, either)
+[11:30:35] <Moonlightning> (I must've bragged about the explicit-lack-of-support-for-http-not-over-tls record to a dozen people, too…)
+[11:33:03] <Moonlightning> fuck it, I'm updating Insp
+[11:39:59] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[11:49:28] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Connection closed)
+[11:49:29] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[11:56:25] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[11:56:30] <Moonlightning> …I don't need to /reload/ the gnutls module for the priority change to take effect, do I?
+[12:08:41] <Unixkitty> Going through the default apache config, one of the example lines: "#ErrorDocument 500 "The server made a boo boo.""
+[12:08:49] <Unixkitty> Best error ever.
+[12:10:25] * Moonlightning perches a Dooplis plushie on Unixkitty's head.
+[12:11:55] * Moonlightning Doopliss *, /fuck/; I /just/ looked the spelling up
+[12:16:16] <Moonlightning> AUGH
+[12:16:23] <Moonlightning> WHY IS THIS PRIORITY STRING BEING IGNORED
+[12:30:20] <Googie> Moonlightning: What version of InspIRCd are you running ?
+[12:30:39] <Moonlightning> Googie: the latest, 2.0.20
+[12:31:03] <Googie> You probably need to /rehash -ssl
+[12:32:07] <Moonlightning> I did that (and `/rehash ssl`, and `/rehash`, and /`/reloadmodule m_ssl_gnutls.so`/ :V )
+[12:37:12] <Moonlightning> …hmmm…I just changed the hashing algorithm to sha256 and that's not happening either >.>
+[12:39:21] <Moonlightning> rehashing normally still loads and unloads modules to match what's in the config file I'm editing, though, so that's not it
+[12:59:26] *** Joins: Cyan_Spark (Cyan_Spark@incidental.unicorn.Cyan_Spark)
+[13:11:50] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[13:11:56] <Moonlightning> (…HAY!)
+[13:12:15] <Moonlightning> (Linux isn't randomizing port numbers for NAT! >:C )
+[13:28:27] *** Quits: Cyan_Spark (Cyan_Spark@incidental.unicorn.Cyan_Spark) (Quit: Sparks only last so long)
+[14:04:01] *** Joins: Cyan_Spark (Cyan_Spark@incidental.unicorn.Cyan_Spark)
+[14:26:38] *** Joins: Wubz (Wubz@Pony-578ji8.dhcp.inet.fi)
+[14:30:50] *** Quits: derpy (derp@muffins) (Ping timeout: 121 seconds)
+[14:31:51] *** Quits: Fallfeathers (Fallfeather@Pony-jij466.bigpond.net.au) (Connection closed)
+[14:41:00] *** Seoson|BNC is now known as Seoson
+[14:45:06] *** Joins: catnickfl (catnickfl@catnickfl.bronytv.net)
+[14:45:51] <catnickfl> So, Fallout 4 keeps crashing on me... and by crashing I mean my entire computer. Everything freezes up. Anyone have any idea as to the cause?
+[14:46:04] <catnickfl> I've done about 45 minutes of googling with no luck
+[14:47:27] *** Quits: Wubz (Wubz@Pony-578ji8.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[14:49:27] <Seoson> You're on the lastest drivers for your graphics cards?
+[14:49:36] <catnickfl> Updated yesterday
+[14:49:57] <catnickfl> (Which also have been occastionally phafing up as well)
+[14:50:14] <Seoson> Yeah nvidia released them yesterday, so if you're running a nvidia card you're fine
+[14:50:33] <Seoson> The problem is without any error message it could be a huge number of things
+[14:50:35] <Moonlightning> Update again. Maybe the release was yesterday /after/ you checked.
+[14:50:58] <Seoson> 358.91
+[14:51:11] <catnickfl> Those are the drivers
+[14:51:16] <Seoson> ... is the current version ;-)
+[14:51:20] <catnickfl> And they keep crashing
+[14:51:23] <catnickfl> Or... somehting
+[14:51:51] <catnickfl> Because occationally the screen flickers and a message pops up on the task bar saying it stoped working and was successfully recovered
+[14:52:04] <Seoson> Is that the only recent game you're running?
+[14:52:19] <catnickfl> Yeah
+[14:52:33] <Seoson> From phrase I'm taking it's freezing, so no bluescreen or restart?
+[14:54:52] <Seoson> I'd try running the game in windowed mode. Maybe that will reveal something. I personally didn't start F4 yet
+[14:56:12] * Seoson looks at the config file "fDefault1stPersonFOV=80". "Nope! You're not going to stay that way!"
+[14:56:53] <roflin> change it to 150 and have a good laugh :+
+[14:57:48] *** Joins: Wubz (Wubz@Pony-578ji8.dhcp.inet.fi)
+[14:58:13] <catnickfl> Just randomly crashes
+[14:58:20] <catnickfl> Just like now, everything frozen
+[14:58:30] <catnickfl> Had to hard restart
+[14:59:50] <Seoson> Tried in windowed mode?
+[15:00:41] <catnickfl> No, my entire computer just crashed
+[15:00:42] <Seoson> Also changeing the options in the launcher could help
+[15:00:52] <catnickfl> And its the second time it happened in 24 hours
+[15:00:57] <catnickfl> Not in game, just randomly crashed
+[15:02:52] <Moonlightning> …hmmmmmm.
+[15:02:53] <Seoson> Any overlay software running? (xfire, overwolf, teamspeak, fraps) Disable that to see if it makes any difference. Also other apps that hook into the game (DS4 pad emulation)
+[15:02:56] <Moonlightning> Check your RAM?
+[15:02:57] <Moonlightning> Maybe?
+[15:03:14] <catnickfl> How do I check my Ram?
+[15:03:26] <Moonlightning> memtest?
+[15:03:42] *** Quits: Wubz (Wubz@Pony-578ji8.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[15:03:56] <Seoson> I doubt it's a hardware failure. Give it a try anyway ^^
+[15:04:58] <catnickfl> I litterally have no idea what a memtest is
+[15:05:02] <Moonlightning> Maybe just run it for like five minutes.
+[15:05:32] <Moonlightning> Doesn't memtest come on, like, EVERY *nix install medium, except really, REALLY stripped-down ones and OS X?
+[15:06:13] <catnickfl> I've never had to do one, so telling me what it is doesn't actually help x.x
+[15:07:33] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[15:08:40] <Moonlightning> Grab a livedisk of your favorite *nix, boot to it, select the memtest option?
+[15:09:48] <catnickfl> ?
+[15:09:52] <catnickfl> I... don't use linix?
+[15:11:09] * Moonlightning is pretty sure that FreeBSD livedisk he got also had a memtest. Hence why he said *nix, not Linux.
+[15:11:17] * Moonlightning boops Dashie for confirmation.
+[15:15:38] *** Joins: DataByte (DataByte@Pony-3pfj33.g424.9euc.0247.2601.IP)
+[15:16:22] <DataByte> live chat support: Estimated wait time is 0 hours 1 minutes 23 seconds
+[15:16:40] <DataByte> because you can apparently estimate how long someone will talk down to the second
+[15:17:26] <Moonlightning> Always nice to have that extra bit of precision, without the accuracy for it. c:
+[15:18:25] <DataByte> it's a % of error they throw on top to make you feel they're running quick, apparently
+[15:18:34] <DataByte> was picked up much quicker than that
+[15:19:45] <DataByte> most live distros have a memtest.. not all make it easy to access, though
+[15:20:37] <DataByte> ubuntu started booting straight to the live os instead of giving you the menu
+[15:20:46] <DataByte> (unless that's just the one i have)
+[15:22:31] *** Joins: Wubz (Wubz@Pony-578ji8.dhcp.inet.fi)
+[15:24:35] <catnickfl> Ok... it has nothing to do with ram... unless ram can crash drivers
+[15:24:55] <catnickfl> I ran fo4 in windowed mode... apperently its been crashing during the loading screens
+[15:27:16] <Wubz> http://imgur.com/eKYV7Jt I guess that I cant run fallout 4 on this ;D
+[15:27:16] <PinkiePieBot> [ Imgur: The most awesome images on the Internet ]
+[15:27:29] <catnickfl> Defiently not :p
+[15:27:41] <Wubz> you sure ? :D
+[15:27:51] <catnickfl> So, how do I fix my driver?
+[15:29:07] <catnickfl> Just download it from their site like I had to do yesterday?
+[15:29:43] <Wubz> who are u askin from?
+[15:30:01] <catnickfl> Clearly everyone :/
+[15:30:10] <catnickfl> Else I would have pinged people
+[15:30:59] <Wubz> well I dunno what driver you are talkin about
+[15:31:20] <catnickfl> My nvidia driver
+[15:31:47] <Wubz> what nvidia gpu u have?
+[15:32:01] <catnickfl> GTX 880m Does it matter?
+[15:32:50] <Wubz> nope I was just checkin that u didnt have somethin like 8800gt in there ;D
+[15:33:01] <catnickfl> Ppph
+[15:33:54] <catnickfl> So, what do I do?
+[15:34:14] <Wubz> well u can check that u have the latest drivers
+[15:34:23] <catnickfl> Already have Wubz
+[15:34:37] <Wubz> what os u have?
+[15:34:43] <catnickfl> 8.1
+[15:35:46] <Wubz> well I dont know that much about computers but I know somethin
+[15:36:05] <Wubz> so I dunno if im able to help u
+[15:36:15] <catnickfl> Moonlightning 
+[15:39:29] <Wubz> http://help.bethesda.net/app/answers/detail/a_id/31648/~/what-do-i-do-if-fallout-4-is-crashing-on-pc%3F this could help
+[15:39:30] <PinkiePieBot> [ What do I do if Fallout 4 is crashing on PC? ]
+[15:42:55] <catnickfl> Its not the game, its the divers
+[15:43:47] <Wubz> ok
+[15:56:47] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[16:02:40] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:38:05] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (A TLS packet with unexpected length was received.)
+[16:38:15] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[16:38:54] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[16:39:36] *** Quits: eyeburn (eyeburn@secret.den.of.flaming.evil) (A TLS packet with unexpected length was received.)
+[16:39:37] *** Eventide|Sleepies is now known as Eventide
+[16:39:44] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[16:39:56] *** Quits: eyeburn (eyeburn@secret.den.of.flaming.evil) (A TLS packet with unexpected length was received.)
+[16:40:04] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[16:41:55] *** Quits: eyeburn (eyeburn@secret.den.of.flaming.evil) (A TLS packet with unexpected length was received.)
+[16:44:02] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[16:44:28] *** Quits: eyeburn (eyeburn@secret.den.of.flaming.evil) (Connection closed)
+[16:47:40] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[16:54:02] *** worthless is now known as GigaWork
+[17:35:48] <AppleDash> catnickfl: Are you certain it's not RAM-related
+[17:43:17] *** Joins: Crimson_Tail (Bluepon@Pony-cpmbat.cg80.k4gu.0151.2601.IP)
+[17:48:25] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[17:58:46] *** Quits: Cyan_Spark (Cyan_Spark@incidental.unicorn.Cyan_Spark) (Quit: Sparks only last so long)
+[18:03:37] *** Quits: Wubz (Wubz@Pony-578ji8.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[18:18:50] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[18:40:08] *** Joins: Wubz (Wubz@Pony-578ji8.dhcp.inet.fi)
+[18:51:46] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[19:02:16] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[19:13:25] <DJ-C0L7[CSS]> howdy
+[19:50:43] <Moonlightning> catnickfl
+[19:51:40] *** Joins: Asoka (Asoka@Pony-4o4663.net-htp.de)
+[19:53:36] *** Quits: Asoka_White (Asoka@Pony-5fv7hb.net-htp.de) (Ping timeout: 121 seconds)
+[19:55:56] <catnickfl> AppleDash, I am sure
+[19:56:12] <catnickfl> Because after downgrading my drivers to a earlier verson, it ran perfectly
+[19:58:02] <Ola> https://dl.dropboxusercontent.com/u/14556313/SAM_5844.jpg
+[20:08:17] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[20:13:35] *** zz_CyberJacob is now known as CyberJacob
+[20:15:59] *** Quits: Wubz (Wubz@Pony-578ji8.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[20:17:25] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:04:29] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[21:05:08] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[21:08:34] *** Quits: Pony_8957 (IceChat9@Pony-q2h.j1d.51.50.IP) (Ping timeout: 121 seconds)
+[21:10:34] *** Joins: Deathpony (IceChat9@Pony-q2h.j1d.51.50.IP)
+[21:11:03] *** Deathpony is now known as Pony_53966
+[21:33:26] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[21:43:49] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "g2g switchin' comps ,back in a bit")
+[21:50:48] *** Quits: Eventide (uid61788@Tips.Fedora) (Quit: )
+[22:24:28] *** Creeps|AFK is now known as RedHelper
+[22:33:44] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Ping timeout: 121 seconds)
+[22:37:52] *** Joins: Eventide (uid61788@Tips.Fedora)
+[22:38:50] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:40:16] <Shival|Away> s/7
+[22:40:20] <Shival|Away> oops
+[22:43:31] *** Pony_53966 is now known as Deathpony
+[22:43:42] <Deathpony> yay got approved for paypal credit
+[22:43:45] <Deathpony> $1k line
+[22:44:13] <Moonlightning> ewwwww nonono
+[22:44:16] <Moonlightning> don't use paypal
+[22:44:47] <Deathpony> I have to
+[22:44:49] <Deathpony> ebay
+[22:44:56] <Moonlightning> don't ebay then
+[22:45:33] <Deathpony> ebay is awesome
+[22:45:40] <Deathpony> I buy lots of stuff from there
+[22:46:50] <Moonlightning> …aren't they the /same company/ as paypal, actually?
+[22:48:12] <Deathpony> not anymore
+[22:48:29] <Moonlightning> Mmm.
+[22:51:05] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[22:59:34] <Shival|Away> whats tir interest rate?
+[23:06:51] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Ping timeout: 121 seconds)
+[23:10:20] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[23:13:16] <Moonlightning> FINALLY, TEESH
+[23:13:20] <Moonlightning> YEESH *
+[23:32:21] <Moonlightning> YAY~
+[23:32:28] <Moonlightning> Let's Encrypt approved the rest of my hostnames, too :D
+[23:34:51] * Googie can't imagine Paypal's interest rates being cheap.
+[23:35:32] <Colgate> running a balance on any sort of short term crdit is a bad idea anyways
+[23:35:36] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[23:37:52] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[23:40:07] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[23:44:05] <Compu> we put up our LED christmas lights :D http://imgur.com/gallery/M2wZkz1
+[23:44:05] <PinkiePieBot> [ LED Christmas lights - Imgur ]
+[23:48:39] <DJ-C0L7[EIT]> i think i might go this route https://thexjguys.wordpress.com/2012/12/20/cowl-snorkel/
+[23:48:46] <DJ-C0L7[EIT]> wrong window
+[23:50:22] <johnsey> i read cow snorkel
+[23:51:26] <DJ-C0L7[EIT]> the windshield is a high pressure area on jeep wranglers, CJs, and Cherokees
+[23:52:38] <DJ-C0L7[EIT]> pseudo ram-air effect with a slightly pressurized airbox
+[23:57:13] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[23:57:50] *** Joins: Sombra (Iceman@Darkhorse21)

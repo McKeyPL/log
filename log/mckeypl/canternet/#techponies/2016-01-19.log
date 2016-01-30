@@ -1,0 +1,308 @@
+[00:03:16] *** Quits: Melanosuchus (quassel@Pony-dg6g06.as13285.net) (Connection closed)
+[00:30:11] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:44:02] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[00:45:36] <Lapsus> http://i.imgur.com/F4Nb92U.jpg
+[00:45:40] <Lapsus> what the fuck is this thing?
+[00:46:06] <tiwake> bah
+[00:46:08] <tiwake> thats annoying
+[00:46:50] <tiwake> I talk about making a 1920x1080 high speed camera and this guy is going on and on about how difficult it would be and that I shouldent even try
+[00:47:25] <DJ-C0L7[EIT]> those who claim its impossible are closed minded and dull witted
+[00:47:41] <tiwake> "dude, chill, its on my list of things to do in my 3 lifetimes worth of stuff"
+[00:48:39] <tiwake> I'd have to look at how a computer is designed more closely to see if its reasonable to do it the way I want to
+[00:49:09] <tiwake> taking a video stream from the PCIe buss and just dumping it into the main system memory of a modern computer
+[00:49:46] <AppleDash> Lapsus: It's future proof via hot-swappable sensors
+[00:50:01] <tiwake> I'm not sure where the data path would be or where the bottle neck would be
+[00:50:15] <Lapsus> you're future proof via hot swappable sensors
+[00:50:20] <tiwake> other than "the system memory is fast enough, and the PCIe is fast enough"
+[00:50:31] <AppleDash> rude
+[00:51:36] <tiwake> I know CMOS sensors change state really quickly
+[00:52:12] <tiwake> even thermal sensors, as they are basically CMOS sensors
+[00:52:18] <Lapsus> tiwake: presumably there's some kind of asic for dumping from a sensor to memory banks really fast
+[00:52:58] <tiwake> Lapsus: it would be really handy to have the rest of the computer right there though
+[00:53:08] <Lapsus> you'd want some sort of fpga solution to dump from the sensor into a pile of ram, and then later convert from that to something a computer can read
+[00:53:23] <Lapsus> how high-speed do you intend the camera to be
+[00:53:32] <tiwake> Lapsus: people would love to have a PCIe card that turns their computer into a high speed imaging system
+[00:53:33] *** Pony_9689 is now known as Dude
+[00:53:50] <tiwake> say 1000 frames/second
+[00:54:03] *** Dude is now known as Pony_49471
+[00:54:10] <Lapsus> tiwake: you need to set a goal and then figure out how to reach it, not work backwards from "I want it to connect to this"
+[00:54:58] <Lapsus> I don't know what a reasonable colour depth is
+[00:55:27] <Lapsus> 24-bit I guess?
+[00:55:46] <tiwake> Lapsus: I'm just saying it would cut out a lot of cost, just need to see how the buss connects with the main system memory to see if its possible
+[00:56:17] <tiwake> or rather, it could
+[00:56:50] <tiwake> it hasent been much past the stage of "a product like this would be nice, and nobody makes one" :P
+[00:58:00] <Lapsus> well, 8.3MB-ish per frame at 1kfps is 8.3GBps which is 66.4Gbps
+[00:58:09] <Lapsus> is pcie fast enough to handle it?
+[00:58:41] <Lapsus> you'll still need a lot of on-card or on-camera memory to dump to and then slowly stream out to the host pc
+[00:58:49] <Lapsus> that's a lot of data to try to process
+[00:59:14] <DJ-C0L7[EIT]> you might try checking out PCI-X
+[00:59:27] <Colgate> 16 lane pci-e 3.0 is 15.75 GB/s
+[00:59:51] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[01:00:08] <Lapsus> okay so that's reasonably possible with some fast-ass code to dump it to ssd or ram
+[01:01:07] * AppleDash dumps Colgate's RAM
+[01:01:09] <Colgate> probably ram, getting mass storage to 16 GB/s would be tough
+[01:01:23] <Colgate> :O but I need my ram!
+[01:01:29] <Lapsus> tiwake: I think the main problem is going to be the length of the signal path
+[01:02:05] <AppleDash> Just solder the camera directly to the motherboard
+[01:02:12] <Lapsus> though if you do the processing and conversion to 16x lvds and then have basically a pcie extension cable, it might work
+[01:03:19] <Lapsus> If you used a b/w sensor instead you could up the resolution, framerate, or colour depth instead of using colour
+[01:03:41] <AppleDash> b&w is boring though
+[01:07:41] <HoneyDrops> If you're looking for 1000f/s I would say use black and white only.  If you want colors use filters and combine, that is what lab insturments do.
+[01:08:32] <HoneyDrops> Plus it means you can do imaging outside of visual wavelengths with the right filters.
+[01:10:15] <HoneyDrops> If you really want color, use splitters and multiple CCDs
+[01:12:03] <DJ-C0L7[EIT]> PCIe and PCIx operate at almost the same speeds, the difference is that PCIe is serial, PCIx is parallel
+[01:12:14] <HoneyDrops> Really the idea of trying to marry that sort of high-end instrumentation to general purpose hardware is kinda wonky.  Could it be done?  Sure, but it would be limited compared to what specialized hardware could do.
+[01:12:18] <DJ-C0L7[EIT]> wrong window
+[01:13:11] *** Joins: corkfuse (corkfuse@corkfuse)
+[01:18:20] <tiwake> HoneyDrops: specialized is expensive though
+[01:19:14] <tiwake> one of the main goals is to have it work well and be cheap. Would you buy such a camera if it was cheap enough?
+[01:19:52] <HoneyDrops> Unfortunately, once you start talking about high-end optics and CCDs, you have a large portion of the cost.  
+[01:20:06] <tiwake> optics are indeed expensive... lol
+[01:20:34] <HoneyDrops> Plus most things you are recording at 1000f/s… are not he sort of thing you want really close to your computer.  
+[01:20:57] <tiwake> but whoever buys such a camera would buy whatever optics they want for their use case
+[01:20:59] <HoneyDrops> So then you move the CCD's away, and then you have the latency of a long cable.
+[01:21:30] <HoneyDrops> So you put special processing hardware near the CCD, and you have a camera :x
+[01:21:54] <tiwake> why would donno, say 100 frames of latency matter?
+[01:22:17] <tiwake> or more
+[01:22:22] <HoneyDrops> Triggering?
+[01:23:12] <HoneyDrops> 100 frames is 1/10th of a second most of what you are likely going to film is maybe that long?  Likely far less
+[01:24:44] <tiwake> the old high speed film cameras had 10 seconds of video in a loop, start recording and hit the stop button when you got what you needed for later review
+[01:26:16] <tiwake> depending on your use case, you could get a motherboard that supports a lot more than 10 seconds of video... heh
+[01:32:09] *** Joins: Asoka_White (Asoka@Pony-e0i83g.net-htp.de)
+[01:35:06] *** Quits: Asoka (Asoka@Pony-vv0u0o.net-htp.de) (Ping timeout: 121 seconds)
+[01:36:17] <HoneyDrops> What is the max length you can pull a PCIx/e connection?  Plus the cable for that would be pricey, given you'd need precision on conductor length to keep timings right.
+[01:41:15] <AppleDash> like a foot or less for PCIe I believe
+[01:41:33] <AppleDash> with a normal unshielded ribbon
+[01:41:37] <AppleDash> no idea about something specially made
+[01:41:51] <tiwake> no shielding is extremely stupid
+[01:41:52] <HoneyDrops> I don't really want my PC 1' from an explosion, I dunno about you >_<
+[01:41:52] <tiwake> lol
+[01:41:58] <AppleDash> lol
+[01:42:33] <HoneyDrops> Sure the camera won't be on top of it, but still, I'd rather risk a 10k camera rather an a 5k one + a whole PC.
+[01:43:21] <tiwake> if the camera is going to be sold for $5k might as well not even try
+[01:45:16] <HoneyDrops> I don't think you're going to cobble together a suitable CCD and the minimal supporting hardware for much less, certainly not in a small-run fab sort of scenario.
+[01:46:40] <tiwake> better not have to make a special sensor
+[01:46:41] <HoneyDrops> Not without serious quality sacrifices, if you want full 1080p res in full color.
+[01:46:44] *** Joins: Sombra (Iceman@Darkhorse21)
+[01:47:07] <wolfyshy> I really am curious what you need 1080p full-colour 1000fps video for
+[01:47:17] <tiwake> most cameras are slow because of slow processing power, not because the sensor is slow
+[01:47:32] <wolfyshy> the nexus 6P phone by huawei can do 200fps at 1080p, depending on what you want, maybe that might be close enough
+[01:47:46] <tiwake> nop
+[01:47:51] <HoneyDrops> I can think of uses, but all of them are where dropping 25k on a camera would be done without blinking.
+[01:52:04] <tiwake> wolfyshy: what, you don't have experimental rocketry listed as one of your hobbies?
+[01:54:11] *** Pony_49471 is now known as Dude
+[01:54:41] *** Dude is now known as Pony_82457
+[02:14:25] *** Joins: djazz` (djazz@Pony-s73dok.tbcn.telia.com)
+[02:16:13] *** Quits: djazz (djazz@djazz.se) (Ping timeout: 121 seconds)
+[02:26:03] *** Joins: Asoka (Asoka@Pony-krbnm0.net-htp.de)
+[02:27:54] * DJ-C0L7[EIT] makes disgruntled pony noises
+[02:28:41] <DJ-C0L7[EIT]> frakking ignition switch on my 4x4 melted in the OFF position, i cant start the engine, i cant do anything, so i had to call home, and have my dad bring me a new switch which i had to order from the parts counter at the local autozone, and its listed as a DIY part, so they wont deliver
+[02:28:55] <DJ-C0L7[EIT]> oh, and did i mention its a 6degree windchill tonight
+[02:29:14] *** Quits: Asoka_White (Asoka@Pony-e0i83g.net-htp.de) (Ping timeout: 121 seconds)
+[02:29:29] * HoneyDrops hotwires DJ-C0L7[EIT]'s transport.
+[02:34:24] *** Gigabit is now known as GigaGamer
+[02:54:49] *** Pony_82457 is now known as Dude
+[02:55:19] *** Dude is now known as Pony_97268
+[03:26:52] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:55:28] *** Pony_97268 is now known as Dude
+[03:55:57] *** Dude is now known as Pony_11806
+[04:19:32] <DJ-C0L7[EIT]> combination problems, steering column was stuck and the ignition switch was going bad
+[04:31:57] *** Sour_Sweet is now known as Sour_Sweet|BNC
+[04:56:05] *** Pony_11806 is now known as Dude
+[04:56:35] *** Dude is now known as Pony_57006
+[05:06:29] *** Eventide is now known as Eventide|Sleepies
+[05:25:56] * DJ-C0L7[EIT] shivvers and grumbles
+[05:26:28] <DJ-C0L7[EIT]> its damn cold outside and my wings are cold, my hooves are numb, and i cant seem to warm up, BUT i fixed my 4x4
+[05:38:43] *** GigaGamer is now known as Gigabit
+[05:56:43] *** Pony_57006 is now known as Dude
+[05:57:13] *** Dude is now known as Pony_16912
+[05:57:40] *** WuBzYMightGetSleep is now known as WuBzY
+[05:58:56] *** djazz` is now known as djazz
+[06:18:37] *** RedHelper is now known as Creeps|AFK
+[06:31:05] *** Quits: Webster (Webster@Pony-2f4.s7s.15.108.IP) (Quit: Leaving)
+[06:36:44] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[06:49:26] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[06:56:50] *** Quits: WuBzY (androirc@Pony-4naup7.rev.dnainternet.fi) (Quit: AndroIRC - Android IRC Client ( http://www.androirc.com ))
+[06:57:21] *** Pony_16912 is now known as Dude
+[06:57:51] *** Dude is now known as Pony_68419
+[07:00:19] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[07:00:48] *** MisterSkids is now known as Pony_99964
+[07:01:37] *** Pony_99964 is now known as Skids
+[07:22:22] *** Quits: Skids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:22:54] *** Joins: Skids (ejd@Pony-fej07d.res.rr.com)
+[07:27:38] *** Quits: Skids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:35:50] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[07:48:16] *** Joins: djazz` (djazz@Pony-s73dok.tbcn.telia.com)
+[07:50:14] *** Quits: djazz (djazz@djazz.se) (Ping timeout: 121 seconds)
+[07:58:00] *** Pony_68419 is now known as Dude
+[07:58:30] *** Dude is now known as Pony_28675
+[08:06:06] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[08:09:06] *** Joins: Sombra (Iceman@Darkhorse21)
+[08:13:31] *** Joins: Melanosuchus (quassel@Pony-1geh7k.as13285.net)
+[08:33:55] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[08:35:29] *** Joins: Phase (Phase4@Pony-4ihpe2.internode.on.net)
+[08:48:15] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[08:58:38] *** Pony_28675 is now known as Dude
+[08:59:08] *** Dude is now known as Pony_38743
+[09:08:06] *** Gigabit is now known as GigaTravel
+[09:13:04] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:14:32] *** djazz` is now known as djazz
+[09:17:22] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[09:22:58] *** Quits: Melanosuchus (quassel@Pony-1geh7k.as13285.net) (Connection closed)
+[09:37:30] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[09:42:24] *** Quits: corkfuse (corkfuse@corkfuse) (Quit: Bye)
+[09:59:17] *** Pony_38743 is now known as Dude
+[09:59:47] *** Dude is now known as Pony_51957
+[10:00:19] *** Quits: saneki (saneki@Pony-tni.g4k.31.96.IP) (Quit: bye)
+[10:07:30] *** Joins: saneki (saneki@Pony-torblo.zylongaming.com)
+[10:20:53] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[10:21:32] *** Joins: WuBzY (androirc@Pony-4naup7.rev.dnainternet.fi)
+[10:26:35] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[10:30:50] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Ping timeout: 121 seconds)
+[10:34:35] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[10:39:14] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[10:41:13] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:43:07] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[10:43:13] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[10:52:39] *** Joins: Skids (ejd@Pony-fej07d.res.rr.com)
+[10:59:56] *** Pony_51957 is now known as Dude
+[11:00:26] *** Dude is now known as Pony_81671
+[11:00:27] *** Quits: Skids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[11:02:21] *** Eventide|Sleepies is now known as Eventie
+[11:02:27] *** Eventie is now known as Eventide
+[11:08:10] *** Quits: WuBzY (androirc@Pony-4naup7.rev.dnainternet.fi) (Connection closed)
+[11:12:07] *** Joins: Asoka_White (Asoka@Pony-p5js2g.net-htp.de)
+[11:14:45] *** Quits: Asoka (Asoka@Pony-krbnm0.net-htp.de) (Ping timeout: 121 seconds)
+[11:28:53] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[11:30:33] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[11:53:21] *** Joins: WuBzY (androirc@Pony-4naup7.rev.dnainternet.fi)
+[12:00:34] *** Pony_81671 is now known as Dude
+[12:01:04] *** Dude is now known as Pony_10220
+[12:03:57] *** Joins: corkfuse (corkfuse@corkfuse)
+[12:12:49] *** Joins: Skids (ejd@Pony-fej07d.res.rr.com)
+[12:25:32] *** Quits: Skids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[13:01:12] *** Pony_10220 is now known as Dude
+[13:01:42] *** Dude is now known as Pony_48420
+[13:45:00] *** Quits: Fallfeathers (Fallfeather@Pony-thli0t.bigpond.net.au) (Connection closed)
+[13:47:30] *** Quits: WuBzY (androirc@Pony-4naup7.rev.dnainternet.fi) (Quit: AndroIRC - Android IRC Client ( http://www.androirc.com ))
+[14:01:50] *** Pony_48420 is now known as Dude
+[14:02:20] *** Dude is now known as Pony_95657
+[15:02:29] *** Pony_95657 is now known as Dude
+[15:03:00] *** Dude is now known as Pony_67271
+[15:49:40] *** Joins: Skids (ejd@Pony-fej07d.res.rr.com)
+[16:03:08] *** Pony_67271 is now known as Dude
+[16:03:38] *** Dude is now known as Pony_45084
+[16:12:11] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:29:01] <Stik> need to get height of a <div>, but somewhere up the hierarchy another div is marked display:none, which means its height is 0
+[16:29:27] <Stik> the display:none is part of a style that's been added with !important, that seems to take precendence over a local element style attribute
+[16:30:02] <Stik> anyone got ideas?
+[16:30:26] * Stik hates web dev
+[16:44:13] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:59:02] *** Joins: Crimson_Tail (Zeta@Pony-0j9n9u.cg80.k4gu.0151.2601.IP)
+[17:03:46] *** Pony_45084 is now known as Dude
+[17:04:16] *** Dude is now known as Pony_18989
+[17:16:06] *** Joins: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl)
+[17:16:12] *** Double is now known as Pony_92911
+[17:16:51] *** Pony_92911 is now known as Double
+[17:30:20] *** Quits: corkfuse (corkfuse@corkfuse) (Quit: Sleeping)
+[17:35:35] <DataByte> Stik: i really don't think there is any way to override a child element's parent's display setting
+[17:36:16] <DataByte> if you can't edit the css to fix it, you can add "display: block !important" (or whatever display style you need) as an element style
+[17:36:31] <DataByte> element overrides class/id formatting
+[17:44:46] *** Quits: djazz (djazz@djazz.se) (Ping timeout: 121 seconds)
+[17:45:03] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[17:45:32] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:46:55] <mniip> mmhmm
+[17:49:00] <Stik> it doesn't seem to tho DataByte 
+[17:49:20] <Stik> e.style.display = "block !important"; seems to have no effect on this
+[17:49:39] <Stik> chrome's inspector thing shows it as coming from the stylesheet still
+[17:50:03] <Stik> i find that if i use style.cssText i can do it, but it's a lot more hassle
+[17:50:10] <Stik> since there's already stuff in there
+[17:50:17] <DataByte> Is this a page I can play with from here?
+[17:50:23] <Stik> afraid not
+[17:50:32] <Stik> part of a big spa in my company
+[17:50:46] <Stik> been trying to fix it all day
+[17:50:55] <DataByte> First thing I'm thinking of is put that js into a delay - after page load, perhaps
+[17:51:23] <Stik> it's basically working but it's horrific the way it does it, since it goes up the tree taking cssText out, putting its own in there, measuring it, then putting it all back again
+[17:51:51] <Stik> the dom at that point is about 50 elements deep tho, and all this triggers layout operations in the browser i assume, takes about 400ms to do it
+[17:52:07] <Stik> fortunately you don't see any of it, but there's a definite stutter
+[17:52:38] <Stik> mm it's not a page load problem, it's a tabbed layout and this is an element that loads on a hidden tab
+[17:53:03] <Stik> then when you come to look at it everything's messed up because half the layout calculations have worked on the assumption that the majority of the elements are 0 size!
+[17:53:46] <DataByte> sounds like it needs to be re-designed, not patched, heh
+[17:54:02] <DataByte> should never rely on javascript to make content available
+[17:54:05] <Stik> yeah mybe :(
+[17:54:30] <Stik> well, this is an app rather than a webpage, so relying on js is pretty much a given :)
+[17:56:38] <DataByte> an application with a web interface, then?
+[17:56:59] <Stik> yeah basically
+[17:57:04] <Stik> single-page-app they call the
+[17:57:05] <Stik> them
+[17:57:26] <Stik> so the only thing it downloads is a stub html file and a 10mb js file :)
+[17:57:54] <Stik> then it just runs from there, trying to be like an old school desktop application and generally making a mess of it
+[18:00:59] <DataByte> heh
+[18:01:29] <DataByte> HTML 1.1 is a horrible interface, if you want to run a windowed application xD
+[18:01:52] <DataByte> so much code to make it look right.. and very prone to browser display discrepancies 
+[18:04:25] *** Pony_18989 is now known as Dude
+[18:04:54] *** Dude is now known as Pony_28256
+[18:05:09] *** Joins: Asoka (Asoka@Pony-4j7lae.net-htp.de)
+[18:07:03] *** Quits: Asoka_White (Asoka@Pony-p5js2g.net-htp.de) (Ping timeout: 121 seconds)
+[18:20:06] <DataByte> hehehe.. 
+[18:20:29] <DataByte> trying to view a website, they have an overlay popup to try to prevent you from browsing without registering
+[18:20:33] <DataByte> can't close the popup
+[18:20:50] <DataByte> chrome -> inspect element -> display:none
+[18:20:54] <DataByte> >:D
+[18:23:23] <mniip> I just press del
+[18:23:33] <DataByte> that, too, lol
+[18:31:54] <Stik> the ones that apply a visual effect to blur everything out amuse me too
+[18:31:59] <Stik> you can adopt the same approach there usually
+[18:36:30] *** Joins: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[18:41:18] *** Joins: NewFoal4534 (NewFoal4534@Pony-plqk11.cableonline.com.mx)
+[18:41:22] <NewFoal4534> http://i.imgur.com/qIwmGeV.png
+[18:43:19] *** Parts: NewFoal4534 (NewFoal4534@Pony-plqk11.cableonline.com.mx) ()
+[18:51:25] <DataByte> - Enters, Leaves a link, Leaves
+[19:05:02] *** Pony_28256 is now known as Dude
+[19:05:32] *** Dude is now known as Pony_83562
+[19:08:06] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:46:03] *** Joins: WuBzY (wubzy@Pony-dfd71u.dhcp.inet.fi)
+[19:48:25] *** Quits: WuBzY (wubzy@Pony-dfd71u.dhcp.inet.fi) (Quit: Leaving)
+[19:50:48] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[19:59:25] *** Joins: WuBzY (wubzy@Pony-dfd71u.dhcp.inet.fi)
+[20:00:43] *** Quits: Phase (Phase4@Pony-4ihpe2.internode.on.net) (Ping timeout: 121 seconds)
+[20:04:20] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[20:05:40] *** Pony_83562 is now known as Dude
+[20:06:10] *** Dude is now known as Pony_31808
+[20:29:07] *** Quits: Sour_Sweet|BNC (Seoson@pony.kab-s.de) (Quit: CVE-2016-0728)
+[20:39:26] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[20:45:19] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[20:46:32] *** Seoson is now known as Sour_Sweet
+[20:46:45] <Sour_Sweet> That ruined my server uptime :P
+[20:50:32] <Sour_Sweet> Also you might want to do the same: https://threatpost.com/serious-linux-kernel-vulnerability-patched/115923/
+[20:51:34] *** Quits: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[21:06:19] *** Pony_31808 is now known as Dude
+[21:06:49] *** Dude is now known as Pony_30663
+[21:07:25] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[21:21:54] *** Quits: WuBzY (wubzy@Pony-dfd71u.dhcp.inet.fi) (Quit: Leaving)
+[21:24:55] *** Quits: CompuDesktop (compu@snuggly.filly) (A TLS packet with unexpected length was received.)
+[21:29:23] *** Joins: CompuDesktop (compu@snuggly.filly)
+[21:37:08] *** Joins: eabe (eabe@Pony-l2l.2dv.248.50.IP)
+[21:58:03] *** Quits: init3 (quassel@Democratic.Ponies.Republic.of.Glimmer) (Quit: No Ping reply in 180 seconds.)
+[22:00:44] *** Joins: init3 (quassel@Democratic.Ponies.Republic.of.Glimmer)
+[22:00:53] <HoneyDrops> https://community.rapid7.com/community/infosec/blog/2016/01/15/r7-2015-26-advantech-eki-ssh-authentication-bypass
+[22:00:54] <PinkiePieBot> [ Information Security: R7-2015-26: Advantech EKI... | Rapid7 Community ]
+[22:00:55] <HoneyDrops> XD
+[22:01:09] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[22:06:57] *** Pony_30663 is now known as Dude
+[22:07:27] *** Dude is now known as Pony_92944
+[22:07:38] <Colgate> terrible
+[22:23:25] *** Joins: WuBzY (androirc@Pony-4naup7.rev.dnainternet.fi)
+[22:24:13] <mniip> terrible indeed
+[22:24:25] <mniip> what is
+[22:31:16] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:58:51] *** Joins: Melanosuchus (quassel@Pony-1geh7k.as13285.net)
+[23:02:22] *** Quits: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl) (Quit: Nettalk6 - www.ntalk.de)
+[23:07:36] *** Pony_92944 is now known as Dude
+[23:08:06] *** Dude is now known as Pony_70309
+[23:12:50] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[23:32:43] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Quit: Leaving.)
+[23:38:50] *** Joins: nite (nite@Pony-0n4nqh.ca.comcast.net)
+[23:39:57] <nite> Squeak. :o
+[23:45:34] *** Joins: Fallfeathers (Fallfeather@Pony-thli0t.bigpond.net.au)
+[23:55:56] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)

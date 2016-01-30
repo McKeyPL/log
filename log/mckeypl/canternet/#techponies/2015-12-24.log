@@ -1,0 +1,339 @@
+[00:04:25] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Connection closed)
+[00:07:00] *** Quits: Melanosuchus (quassel@Pony-vj1146.as13285.net) (Connection closed)
+[00:15:28] *** Joins: Webster (Webster@Pony-4eid99.fios.verizon.net)
+[00:33:08] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[00:37:11] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 121 seconds)
+[00:39:03] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[00:42:37] *** Joins: Windsheer (starfire@Pony-hd1.q3r.238.104.IP)
+[00:43:28] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:43:39] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[00:44:41] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:47:42] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 121 seconds)
+[00:50:43] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:53:37] *** Quits: Webster (Webster@Pony-4eid99.fios.verizon.net) (Quit: Leaving)
+[01:02:34] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[01:06:37] * Windsheer waves to the channel
+[01:07:46] *** CyberJacob is now known as zz_CyberJacob
+[01:32:14] *** Quits: Aww (aww@Pony-9dvp5j.sh) (Ping timeout: 121 seconds)
+[01:33:06] *** Quits: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner) (Ping timeout: 121 seconds)
+[01:33:49] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Ping timeout: 121 seconds)
+[01:33:50] *** Quits: Kinsley (JKinsley@Bow.To.Your.Princess) (Ping timeout: 121 seconds)
+[01:34:38] *** Joins: Kinsley (JKinsley@Bow.To.Your.Princess)
+[01:34:38] *** AutoLapsus sets mode: +o Kinsley
+[01:41:52] *** Joins: Webster (Webster@Pony-4eid99.fios.verizon.net)
+[01:46:41] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[01:53:14] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[02:01:15] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[02:04:28] *** Quits: firestream (vinylderpy@Pony-mgr.5s9.50.70.IP) (Ping timeout: 121 seconds)
+[02:12:48] *** Joins: Asoka (Asoka@Pony-em89er.net-htp.de)
+[02:15:59] *** Quits: Asoka_White (Asoka@Pony-rh57qu.net-htp.de) (Ping timeout: 121 seconds)
+[02:16:02] *** Joins: Sombra (Iceman@Darkhorse21)
+[02:39:52] *** Joins: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner)
+[02:39:52] *** AutoLapsus sets mode: +v PinkiePieBot
+[02:42:23] <AppleDash> JustAberrant8: I guess the way I see it is that like
+[02:42:29] <AppleDash> Exceptions should NEVER happen in normal condition
+[02:42:37] <AppleDash> By design I mean, I'm not saying they don't
+[02:42:46] <AppleDash> They should be designed to not happen during normal operation
+[02:43:05] <AppleDash> So I shouldn't have to plan for them if they are designed as such
+[03:05:38] *** Sour_Sweet is now known as Seoson|BNC
+[03:19:30] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[03:23:06] <wolfyshy> http://uk.pcmag.com/linux-reviews-and/73951/news/exploit-logs-you-into-linux-systems-after-hitting
+[03:23:08] <PinkiePieBot> [ Linux - Reviews and Price Comparisons from PC Magazine: Exploit Logs You Into Linux Systems After Hitting Backspace 28 Times ]
+[03:23:59] <Windsheer> incorrect headline
+[03:24:03] <Windsheer> it doesn't log you into linux
+[03:24:08] <Windsheer> it logs you into the grub pre-ipl environment.
+[03:25:08] <wolfyshy> it gives you a full grub shell
+[03:25:16] <wolfyshy> you can do a *lot* with a full grub shell
+[03:25:17] <HoneyDrops> From which you can boot into single-user mode, but honestly if they have physical access they are going to get that one way or another.
+[03:25:40] <Windsheer> eeyup.
+[03:25:46] <Windsheer> ipl from external media, mount the root fs...
+[03:26:00] <HoneyDrops> An encrypted rootfs would still be protected, as they wouldn't have the passkey.
+[03:27:12] <HoneyDrops> Not to say it's not a serious flaw, but it's only allowing access that can be gained though similarly easy means, and can be mitigated at other stages.
+[03:27:28] <Windsheer> indeed.
+[03:32:06] <HoneyDrops> Aside from my own personal systems, I can probably count on one hoof the number of passworded grub instances I've encountered >_>
+[03:32:15] <Windsheer> i've seen it on servers
+[03:32:31] <Windsheer> that being said, if you really need that sort of security, you should be running xts-400 or something else not-linux
+[03:34:29] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[03:34:35] <Windsheer> (MCP? iseries?)
+[03:40:27] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (Ping timeout: 121 seconds)
+[03:41:38] *** Joins: Jouva (jouva@Pony-535ork.fios.verizon.net)
+[03:48:14] *** Joins: non (Iceman@Pony-iehpab.mn.charter.com)
+[03:48:47] *** Quits: Sombra (Iceman@Darkhorse21) (Ping timeout: 121 seconds)
+[03:49:12] *** non is now known as Sombra
+[04:03:35] <JustAberrant8> AppleDash: meh, semantics, in practice exceptions are treated as things that may very well happen but arn't what the thing you are calling is supposed to do
+[04:03:47] <JustAberrant8> non-checked exceptions are what toy describe
+[04:04:06] <JustAberrant8> and are not required to be checked because if they happen, in most cases you are screwed anyway 
+[04:04:39] <JustAberrant8> but can be if you want to make something more bullet proof (the software I work on has to catch all exceptions and gracefully handle them)
+[04:20:18] <Moonlightning> So I'm playing /Papers, Please/
+[04:20:30] <HoneyDrops> Just exit w/ non-zero status, and output to stderr.
+[04:20:31] <Moonlightning> I've gotten two /invalid gender/ citations so far.
+[04:24:05] <HoneyDrops> Multiplayer in FFT:WotL is so abusable... but also a great way to make some JP w/o level gains :D
+[04:24:15] <JustAberrant8> HoneyDrops: have to gracefully handle it..
+[04:24:47] * HoneyDrops handles everything gracefully~
+[04:24:50] <JustAberrant8> so if a section of code throws an unexpected error (like a null pointer) it need to rollback whatever it was doing and try to re-do it/etc
+[04:25:05] <JustAberrant8> it's a whole layered failure model
+[04:25:40] <JustAberrant8> everything is encapsulated into atomic actions, which are grouped by work sets, which are grouped into modules, which run on nodes, etc
+[04:25:55] <JustAberrant8> and it basically fails down until it can succeed
+[04:26:21] <JustAberrant8> simply killing the entire module because someone missed a null pointer isn't really acceptable
+[04:26:48] *** Quits: Webster (Webster@Pony-4eid99.fios.verizon.net) (Quit: Leaving)
+[04:27:56] <JustAberrant8> it's actually a nicely complicated but pretty effective systems, and there's various degraded modes where it'll decide that it can't do something, and basically disable that functionality (and everything that depends on it) while keeping everything else going
+[04:28:48] <JustAberrant8> one of the few perks of doing software in this industry, stability and operational capability trump pretty much everything else
+[04:30:10] <JustAberrant8> no one cares if it's ugly, as long as you can blow up half the system and it keep right on trucking
+[04:31:10] <HoneyDrops> Does it at least complain loudly?  So it isn't possible to miss there is something wrong that needs to be fixed?
+[04:31:29] <JustAberrant8> of course
+[05:02:23] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[05:05:39] *** Joins: meep (mniip@Pony-o9q.v2g.219.178.IP)
+[05:08:56] *** Joins: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net)
+[05:11:22] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[05:12:01] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[05:23:33] *** GigaTown is now known as Vega
+[05:29:11] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[05:33:30] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[05:43:55] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[05:53:09] *** Vega is now known as Snoarin
+[06:30:19] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:32:55] *** Quits: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net) (Quit: Leaving)
+[06:35:32] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[07:11:01] <AppleDash> Moonlightning: feel free to re-submit your pull request if it is still necessary
+[07:12:15] <Moonlightning> Which one?
+[07:12:23] <AppleDash> The one I just closed
+[07:12:26] <AppleDash> Should've emailed yo
+[07:12:26] <AppleDash> u
+[07:18:56] *** Joins: Phase (Phase4@Pony-kjg7c5.internode.on.net)
+[07:21:01] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[07:21:11] *** Eventide is now known as Eventide|Sleepies
+[07:59:25] *** Joins: Crimson_Tail (Zeta@Pony-lo2ca7.cg80.k4gu.0151.2601.IP)
+[08:05:54] *** Joins: Asoka_White (Asoka@Pony-sd2g7h.net-htp.de)
+[08:08:33] *** Quits: Asoka (Asoka@Pony-em89er.net-htp.de) (Ping timeout: 121 seconds)
+[08:12:34] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:12:57] <tiwake> Colgate: is saints row good?
+[08:13:36] <Colgate> I haven't played it
+[08:19:51] *** Quits: Quindo (Quindo@Pony-8qt.17k.198.99.IP) (Ping timeout: 121 seconds)
+[08:20:05] <tiwake> alright
+[08:20:09] <tiwake> I'll give it a shot
+[08:30:07] *** Joins: Melanosuchus (quassel@Pony-vj1146.as13285.net)
+[08:37:39] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[08:41:56] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:57:41] <Dashie> tiwake, its SO GOOD OH MAN
+[08:57:44] <Dashie> it's like
+[08:57:49] <Dashie> GTA but on drugs 
+[08:57:55] <Dashie> really weird drugs
+[08:58:03] <Dashie> that you got from the homeless guy behind k-mart
+[09:01:44] <tiwake> Dashie: I'm noticing its kind of over the top
+[09:01:47] <tiwake> like, a lot
+[09:01:49] <tiwake> lol
+[09:01:56] <tiwake> and thats just the intro
+[09:01:56] <Dashie> yes
+[09:01:59] <Dashie> very much so
+[09:02:03] <Dashie> the whole series is like that
+[09:02:18] * DJ-C0L7[EIT] randompounceglomps Dashie
+[09:02:22] <Dashie> the awesome factor peaks at 3 but 4 is decent
+[09:02:23] <tiwake> is there storyline I'm missing by jumping in on the 4th one?
+[09:02:25] <Dashie> OHGODWAT
+[09:02:28] <Dashie> tiwake, yes
+[09:02:33] <Dashie> a lot
+[09:02:36] <tiwake> then what is it?
+[09:02:40] <Dashie> you dont have to play 1 but you should play 2, and 3 is a neccesity
+[09:02:46] <tiwake> wont happen
+[09:02:51] <tiwake> well, unless they port it to linux
+[09:02:56] <tiwake> but that likely wont happen
+[09:03:01] <DJ-C0L7[EIT]> gta?
+[09:03:45] <DJ-C0L7[EIT]> you could always deploy a virtual box with windows just for playing games that wont work nativly in linux
+[09:03:55] <Dashie> tl;dr you're taken in by a gang, you become the gang leader, you get asploded, you wake up in prison, rebuild the gang, you become the biggest gang, then you become a fucking media franchise....and then you get asploded, rebuild the gang, rape all the other gangs in the new city into submission, and then you become president. and thats the start of 4
+[09:04:02] <tiwake> virtual machine gaming?
+[09:04:27] <Dashie> yeah. GFX card passthrough is decent these days
+[09:04:42] <tiwake> I thought nvidia blocked that in their drivers
+[09:04:46] <DJ-C0L7[EIT]> ^ Dashie beat me to it
+[09:04:51] <Dashie> iunno
+[09:04:55] <Dashie> i dont use it
+[09:05:08] <Dashie> i have a windows rig for gaming and audio engineering that's disconnected from the net
+[09:05:14] <Dashie> and a UNIX laptop for real stuff
+[09:05:16] <Dashie> like IRC
+[09:05:18] <Dashie> x3
+[09:05:22] <tiwake> <3
+[09:05:30] <tiwake> but neh
+[09:05:31] * Dashie doesnt let Linux anywhere near her hardware
+[09:05:35] <Dashie> BSD for life yo
+[09:05:45] <tiwake> to have a copy of windows only for computer games is not a reason for me
+[09:05:49] <DJ-C0L7[EIT]> i have a laptop sitting on a shelf at the house that runs openBSD actually
+[09:06:00] <Dashie> DJ-C0L7[EIT], <3
+[09:06:08] <DJ-C0L7[EIT]> xP
+[09:06:20] <Dashie> tiwake, i use windows for audio work as well
+[09:06:29] <Dashie> kind of a neccesity for me. not exacttly fond of it though
+[09:06:33] <Dashie> hence why it's airgapped
+[09:06:45] <DJ-C0L7[EIT]> i tried to install FreeBSD but the installer kept fritzing out and throwing codes about no supported propritarry hardware or somthing like that, but OpenBSD runs fine on it
+[09:06:57] * tiwake goes back to playing saints row 4
+[09:06:57] <Dashie> if i nee dto bring it online (to download a game) i use a separate line for the purpose
+[09:06:58] <Dashie> DJ-C0L7[EIT], wut
+[09:07:08] * DJ-C0L7[EIT] shrugs
+[09:07:14] <DJ-C0L7[EIT]> my guess is i had a bad iso image
+[09:07:18] <Dashie> probably
+[09:07:25] *** Joins: CrassyPaddles (test@Pony-6v8n3b.ga.comcast.net)
+[09:07:34] <tiwake> hmm
+[09:07:43] <tiwake> cure cancer or world hunger
+[09:08:07] <tiwake> what difference does it make?
+[09:09:47] <tiwake> screw it
+[09:10:00] <tiwake> people go hungry because they dont work, lets cure cancer
+[09:11:12] <DJ-C0L7[EIT]> i'm thinking about boobytrapping my old 4x4 since apparently someone keeps trying to steal parts off of it >.<
+[09:11:20] <DJ-C0L7[EIT]> wrong window
+[09:12:47] *** zz_CyberJacob is now known as CyberJacob
+[09:13:29] <CrassyPaddles> tiwake, we have the ability to dramatically raise the lowest standards of life for all humans. But sure, let's not do that so we can focus on enriching the uber wealthy.
+[09:16:34] <tiwake> the average person in USA spends less than 10% on food, cancer though? thats a much more difficult process to figure out. Cancer isnt picky about who it hops onto
+[09:22:55] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[09:22:58] <CrassyPaddles> tiwake, US hunger and world hunger are COMPLETELY different in terms of magnitude
+[09:23:05] <CrassyPaddles> people don't starve to death in the US
+[09:23:23] <CrassyPaddles> World hunger isn't a technological issue like cancer is
+[09:25:22] *** Joins: Crimson_Tail (Zeta@Pony-rhk35r.cg80.k4gu.0151.2601.IP)
+[09:26:54] <CrassyPaddles> anyone here read the latest IDW comic arc?
+[09:28:57] <tiwake> enh
+[09:29:24] <tiwake> world hunger is from their respective country being turds, cant fix that
+[09:30:23] <tiwake> the only reason why cancer is a technical issue is because nobody knows what those technicalities are
+[09:30:33] <tiwake> because proteins are so complicated
+[09:32:12] <CrassyPaddles> solving cancer would still have to clear that political/bureacratic hurdle as well, tiwake 
+[09:32:41] <CrassyPaddles> at least with world hunger, you've got more than enough food to feed the world. Solving each individual case of hunger is trivial
+[09:32:53] <tiwake> yeah, when that happens their respective countries become turds
+[09:33:29] <tiwake> the problem is you cant really, unless the government allows it
+[09:34:04] *** CyberJacob is now known as zz_CyberJacob
+[09:34:13] <tiwake> a lot of government wont let that happen, because they have all the guns
+[09:34:31] <tiwake> <3 USA for allowing us to have guns (so far)
+[09:36:26] <CrassyPaddles> My point is, with cancer, you can't even solve an individual case, or it's exceedingly difficult to, so let's not even think about a global solution yet. With hunger, the individual cases are easy, it's the global case that's hard.
+[09:52:43] <tiwake> oh gosh, I think I like this game
+[09:52:44] <tiwake> lol
+[10:07:16] *** Joins: Asoka (Asoka@Pony-qipij5.net-htp.de)
+[10:09:14] *** Quits: Asoka_White (Asoka@Pony-sd2g7h.net-htp.de) (Ping timeout: 121 seconds)
+[10:15:29] *** Quits: WuBzY_Asleep (yaaic@Pony-jr8elt.rev.dnainternet.fi) (Quit: )
+[10:17:50] *** Quits: Eventide|Sleepies (uid61788@Tips.Fedora) (Quit: Connection closed for inactivity)
+[10:38:55] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[10:47:53] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[10:48:21] <Moonlightning> [SPOILER ALERT: /Papers, Please/, after day 18] https://www.blackl.net/i-can-afford-it.png :D
+[11:02:46] <Moonlightning> …what!
+[11:02:50] *** Quits: Asoka (Asoka@Pony-qipij5.net-htp.de) (Ping timeout: 121 seconds)
+[11:02:55] <Moonlightning> Apparently my pay's being docked because I have unofficial things hanging on the wall.
+[11:03:09] <DJ-C0L7[EIT]> wtf
+[11:03:19] <Moonlightning> If there's a way to not have a poster in the way without putting it on the wall, I haven't found it :V
+[11:06:01] <Moonlightning> Also, that guy is a heartless bastard.
+[11:06:29] <Moonlightning> Look at this thing! Look at it! https://www.blackl.net/best-drawing.png
+[11:06:37] <Moonlightning> It stays on the wall. Fuck you.
+[11:07:50] <Moonlightning> If anything doesn't deserve to be on the wall, it's your bullshit official ““awards”” for /sufficience/
+[11:10:26] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[11:11:11] *** Kyoro is now known as Pocky
+[11:17:05] <Moonlightning> Holy shit, the game is /serious/ about this!
+[11:17:21] <Moonlightning> 20-credit fine for unofficial wall hangings
+[11:18:33] <Moonlightning> …oh, I guess I can leave everything on the country
+[11:18:37] <Moonlightning> counter *
+[11:19:02] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[11:22:43] <Moonlightning> …this guy's trying to bribe me to //deny// him entry
+[11:23:17] <Moonlightning> There's an easy and free way to do that—and it actually works, too!
+[11:23:26] <Moonlightning> Just pretend you don't know what a passport is.
+[11:23:41] *** Joins: Asoka (Asoka@Pony-285ihf.net-htp.de)
+[11:24:17] <Moonlightning> Sorry, dude, your docs check out. *approves*
+[11:24:45] <Moonlightning> …or, yeah, leave the way you came in. That works too. xD
+[11:28:41] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[11:31:16] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[11:35:07] *** Quits: meep (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 121 seconds)
+[11:47:03] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[12:14:29] <Moonlightning> >> https://github.com/AppleDash/burpyhooves/pull/9#event-499969025
+[12:14:30] <PinkiePieBot> [ Clean up linebuffer.py a little by BlacklightShining · Pull Request #9 · AppleDash/burpyhooves · GitHub ]
+[12:14:32] <Moonlightning> …yeah, okay, whatever
+[12:16:16] *** Joins: meep (mniip@Pony-o9q.v2g.219.178.IP)
+[12:20:18] *** Quits: meep (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 121 seconds)
+[12:27:20] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[12:39:14] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[13:06:40] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[13:10:21] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[13:16:46] *** Seoson|BNC is now known as Sour_Sweet
+[13:24:22] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[13:29:30] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[13:36:28] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 121 seconds)
+[14:04:46] *** Joins: Pocketguns2 (Pocketguns2@Digging.a.Hole)
+[14:08:00] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[14:10:03] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[14:11:05] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[14:13:31] *** Quits: Pocketguns2 (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[14:38:29] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[14:44:03] *** Joins: WuBzY (yaaic@Pony-17md7a.rev.dnainternet.fi)
+[14:49:20] *** Quits: WuBzY (yaaic@Pony-17md7a.rev.dnainternet.fi) (Connection closed)
+[14:51:26] *** Joins: WuBzY (yaaic@Pony-17md7a.rev.dnainternet.fi)
+[14:51:47] *** \m is now known as meep
+[14:59:11] *** Kyoro is now known as Pocky
+[15:06:06] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[15:27:19] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[15:27:54] *** Quits: roflin (dennis@Pony-aend1d.es) (Quit: WeeChat 1.3)
+[15:29:29] *** Joins: roflin (dennis@Pony-aend1d.es)
+[15:40:30] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[15:43:44] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[15:49:52] *** Quits: CrassyPaddles (test@Pony-6v8n3b.ga.comcast.net) (Ping timeout: 121 seconds)
+[15:55:49] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[15:58:13] *** Joins: Quindo (Quindo@Pony-8qt.17k.198.99.IP)
+[16:01:45] *** Quits: WuBzY (yaaic@Pony-17md7a.rev.dnainternet.fi) (Quit: )
+[16:17:47] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:56:12] *** Snoarin is now known as GigaWork
+[17:03:34] *** Joins: Eventide|Sleepies (uid61788@Tips.Fedora)
+[17:05:47] *** Eventide|Sleepies is now known as Eventide
+[17:11:14] *** Joins: Crimson_Tail (Zeta@Pony-uju7eu.cg80.k4gu.0151.2601.IP)
+[17:22:19] *** Sour_Sweet is now known as Sour_Sweet|Mobile
+[17:49:50] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[18:03:56] <tiwake> http://medicalxpress.com/news/2015-12-liver-generated-hormone-sweet-tooth.html
+[18:03:57] <PinkiePieBot> [ Study identifies liver-generated hormone that regulates 'sweet tooth' ]
+[18:19:06] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:20:17] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[18:42:30] *** Joins: CrassyPaddles (test@Pony-6v8n3b.ga.comcast.net)
+[18:49:30] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[19:02:22] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:23:00] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[19:24:05] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[19:24:15] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[19:38:32] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[19:42:14] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:52:21] *** Quits: CrassyPaddles (test@Pony-6v8n3b.ga.comcast.net) (Ping timeout: 121 seconds)
+[20:06:54] *** Joins: Pocketguns2 (Pocketguns2@Digging.a.Hole)
+[20:09:09] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[20:22:54] <Lapsus> Moonlightning: did you get minecraft yet
+[20:22:54] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[20:34:43] <Kinsley> I won't pretend to speak for him, but I'm 99% sure the answer's yes.
+[20:39:08] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[20:42:49] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[20:43:53] <Moonlightning> Lapsus, Kinsley: no, actually!
+[20:44:20] <Kinsley> Then what the hell have you been on about for the past week?
+[20:44:39] * Lapsus swats Moonlightning
+[20:44:47] <Lapsus> get it so we can play, fucker!
+[20:44:57] <Moonlightning> Kinsley: the demo!
+[20:45:13] <Moonlightning> I call them hundred-minute challenges. :D
+[20:45:29] * Kinsley swats Moonlightning too
+[20:46:35] * Moonlightning moans.
+[20:47:12] <Kinsley> ._.
+[20:50:54] *** Pocketguns2 is now known as Kyoro
+[20:53:52] <Lapsus> Moonlightning: I am setting up another mc server like, right now
+[20:53:53] <Lapsus> :p
+[21:06:50] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Connection closed)
+[21:16:28] *** Joins: WuBzY (yaaic@Pony-jon7q8.rev.dnainternet.fi)
+[21:19:14] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[21:32:18] <Moonlightning> > This is caramel.unknown_domain (Linux x86_64 4.0.5-gentoo) 12:23:03
+[21:32:26] <Moonlightning> No it's not. It's 12:32. :P
+[21:34:27] <Lapsus> http://i.imgur.com/g2wtOG8.jpg
+[21:37:18] *** Quits: WuBzY (yaaic@Pony-jon7q8.rev.dnainternet.fi) (Ping timeout: 121 seconds)
+[21:38:16] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[21:38:48] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Connection closed)
+[21:43:17] <Moonlightning> XD
+[21:44:51] <HoneyDrops> There is a time and place for wiresless, input devices are not one of them.  However, I suppose I could see a wireless mouse that uses an induction coil to charge and a charging mouse pad coming back.
+[21:44:52] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[21:46:21] <Moonlightning> Now, see
+[21:46:39] <Moonlightning> That's the one time I'll accept contact-based charging|powering.
+[21:46:51] <Moonlightning> Because when are you going to have a mouse not on the desk?
+[21:55:23] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[22:04:21] <Sour_Sweet|Mobile> Moonlightning is the entire and only reason demos are not a thing anymore. He abuses them way too much. Buy the fucking game already. Give M$ all your $$$
+[22:05:04] *** Sour_Sweet|Mobile is now known as Sour_Sweet
+[22:33:25] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:46:30] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[23:18:22] <Compu> any snow yet in gta online?
+[23:19:37] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[23:21:07] *** Joins: CrassyPaddles (test@Pony-6v8n3b.ga.comcast.net)
+[23:22:40] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[23:23:27] *** Quits: Melanosuchus (quassel@Pony-vj1146.as13285.net) (Connection closed)
+[23:25:09] *** Quits: CrassyPaddles (test@Pony-6v8n3b.ga.comcast.net) (Ping timeout: 121 seconds)
+[23:35:06] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:42:04] *** Joins: CrassyPaddles (test@Pony-6v8n3b.ga.comcast.net)
+[23:43:52] <Phase> someone needs to hurry up and figure out efficient far field power transfer
+[23:45:18] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[23:45:47] <Phase> and room temperature superconductors, those would be really nice
+[23:46:16] *** Quits: CrassyPaddles (test@Pony-6v8n3b.ga.comcast.net) (Ping timeout: 121 seconds)

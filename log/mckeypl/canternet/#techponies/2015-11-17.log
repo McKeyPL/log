@@ -1,0 +1,423 @@
+[00:03:38] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[00:04:34] *** Quits: Hadjii (jircii@Pony-vqg.mu8.73.38.IP) (Quit: jIRCii - http://www.oldschoolirc.com)
+[00:11:41] <Sakura> OK, WTF I was forwarded to a link after typing in a Twitter link
+[00:12:04] <Sakura> "Important Cookie Notice" thingy
+[00:13:22] <Sakura> Does anyone know why I was being forwarded to a help-with-bills.com link?
+[00:13:31] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:13:40] <Colgate> check for typos
+[00:14:39] <Sakura> It was correct, I believe
+[00:15:01] <Sakura> I dunno if my ISP is fucking with me or not.
+[00:17:33] <Sakura> Yeah, I may have typo'd after all. :/
+[00:18:21] <Sakura> I typed the typo on another tab & it doesn't show the same URL I got so...
+[00:43:34] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:49:27] *** GigaWork is now known as Gigabit
+[01:02:11] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[01:20:06] <Sour_Sweet> For a second I thought my postfix didn't use IPv6 for some weird reason. Turns out the tool I used for testing is a buggy mess
+[01:26:13] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[01:33:22] *** Joins: Vulpor (embmwlphsfp@Pony-vj9n19.229-net.sccoast.net)
+[01:35:23] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[01:36:01] *** Quits: Vulpor (embmwlphsfp@Pony-vj9n19.229-net.sccoast.net) (Quit: lightIRC.com Flash IRC Client)
+[01:38:19] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[01:47:48] <Gigabit> Does anypony know if Google hangouts can send SMS without data usage? Because the internet says yay and neigh. And it is really annoying to leave my data on all the time, it drains battery a lot faster
+[01:50:37] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[01:54:33] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[02:12:34] <Divide> Is there no such option in the App settings on Android?
+[02:12:54] <Gigabit> What do you mean?
+[02:13:19] <Gigabit> In hangouts I don't see an option at all
+[02:25:03] <Compu> Gigabit: ok so it depends on if u mean sending text messages through ur phone's normal text messaging or through google voice texting
+[02:25:17] <Compu> google voice texting all has to go through internet
+[02:25:44] <Compu> but ur carrier's text messaging goes through normal text messaging, hangouts just acts as ur sms client
+[02:26:39] <Compu> to have hangouts handle ur carrier's messaging u have to set hangouts the default sms app
+[02:28:21] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[02:29:34] <Gigabit> I know this, I have done that. But there is not a way to tell it to text, it always uses hangouts SMS which needs cell data on or wifi
+[02:29:44] *** Mike_Coltfield is now known as Larscis
+[02:30:03] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[02:43:00] *** Joins: Asoka_White (Asoka@Pony-qp4aaa.net-htp.de)
+[02:45:59] *** Quits: Asoka (Asoka@Pony-2r3s31.net-htp.de) (Ping timeout: 121 seconds)
+[02:47:13] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[02:54:00] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[03:00:30] <Sour_Sweet> Thanks to LE this is now part of my crontab :P " sudo -u ircclient screen -S weechat -p 0 -X stuff '/relay sslcertkey\n' " Yay dirty solutions for self created problems
+[03:07:36] <Moonlightning> You're using a browser-trusted certificate for your weechat relay now? :P
+[03:07:55] <Moonlightning> …actually, I suppose that's fair, given that the relay clients don't all have very good non-browser-trusted-cert handling
+[03:08:01] <Sour_Sweet> I always did. Why not? I'm accessing it from I browser after all
+[03:08:37] <Moonlightning> /browser-trusted/ isn't literal.
+[03:08:39] <Sour_Sweet> my*
+[03:11:17] <Sour_Sweet> Wait the letsencrypt-auto thing doesn't know the renew param?! How is this going to work?!
+[03:11:30] <Sour_Sweet> Their documentation is a piece of crap
+[03:11:46] <Moonlightning> It is. :/
+[03:12:06] <Moonlightning> Where's Schism?
+[03:12:18] <Moonlightning> I think they were also complaining about the LE client and stuff. You should work with them to make a better one. :p
+[03:16:46] <Sour_Sweet>  --renew-by-default (which I already used) works
+[03:17:05] <Sour_Sweet> It will not create a new cert if the domains are identical
+[03:17:26] <Sour_Sweet> I wasted one try to see if that works :P
+[03:19:27] <Sour_Sweet> The cert transparency logs are going to be unreadable by any humand being with the frequency of updates
+[03:34:25] <Sour_Sweet> When you renew it creates a new private key -.- bye bye key pinning
+[03:34:44] <Moonlightning> yeah, I want more control over the CSRs.
+[03:35:04] <Moonlightning> 4096-bit keys, pick which of them becomes the common name
+[03:35:25] <Sour_Sweet> Common name is always the first domain
+[03:35:40] <Sour_Sweet> I use that trick for labeling certs
+[03:35:53] <Moonlightning> I know.
+[03:36:13] <Sour_Sweet> (Since weechat, apache and postfix/dovecot use different certs on my setup)
+[03:36:19] <Moonlightning> But I'm generating a different cert for each server+service pair, and it makes more sense to me to have the CN be the server's name, not the service name
+[03:36:47] <Moonlightning> But if I did it naively, I would be replacing the cert, because they would all be put under /etc/letsencrypt/archive/sugar-belle.blackl.net
+[03:37:19] <Moonlightning> So I end up symlinking that directory (and its `live` counterpart) to /etc/letsencrypt/archive/irc.blackl.net, etc, and /then/ requesting a new cert
+[03:37:21] <Moonlightning> which is annoying
+[03:37:33] <Moonlightning> should just be a --common-name option
+[03:38:13] * JustAberrant places Moonlightning 
+[03:38:38] * Moonlightning is…placed?
+[03:40:51] <Moonlightning> …except, I don't think I've actually been able to successfully /get/ a cert like that
+[03:40:56] <Moonlightning> the -auto script has hung on me
+[03:42:03] <Sour_Sweet> You could always use a pseudo valid common name and add the actual domains as SANs
+[03:42:06] *** RedHelper is now known as RedHelper|Sick|Sleep
+[03:42:42] * Colgate thinks it is funny that you are doing all these silly things to just get certs you want
+[03:42:54] <Sour_Sweet> Yes it's silly
+[03:43:24] <Sour_Sweet> And I want freaking key pinning and while they state that it's possbile with LE their client doesn't support it
+[03:43:46] <Sour_Sweet> Yay it's possible in theory but not implemented in the reference implementation
+[03:43:46] <Moonlightning> I wonder how hard it would be to just do it all by hoof.
+[03:44:34] <Colgate> look into what the LE client actually does
+[03:44:58] <Colgate> I imagine it is open source... right? :P
+[03:45:05] <Colgate> would be really silly if it wasn't
+[03:45:07] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (A TLS packet with unexpected length was received.)
+[03:45:08] <Moonlightning> I'm sure it is.
+[03:45:16] <Sour_Sweet> I'm using a reverse proxy so the stupid thing doesn't need to run on my web server ports and I don't need to run the apache2 module
+[03:45:59] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[03:46:06] <Colgate> we were wondering if it was worth using LE for canternet's certs
+[03:46:41] <Colgate> some silly ideas we had was having the website use LE, and then the website would host a copy of a self-signed cert that the irc servers used, lol
+[03:47:10] <Sour_Sweet> Maybe I can get it to run as an unprivileged user that way as well. Colgate: Unless Inspircd supports graceful restarts don't even think about it
+[03:47:32] <Sour_Sweet> And I highly doubt it does
+[03:47:32] <Colgate> inspircd can rehash ssl certs without restarting
+[03:47:45] <Sour_Sweet> Oh, that's actually quite nice
+[03:47:53] <Colgate> and probably private keys as well? never tried that one though
+[03:48:05] <Sour_Sweet> Yeah drop root and things
+[03:48:23] <Colgate> that was another option
+[03:48:33] <Colgate> we would have LE run and replace inspircd's certs and such
+[03:48:50] <Colgate> then have a local client connect and oper up to run a /rehash -ssl command
+[03:49:18] <Colgate> either that or add a signal handler for sigusr1 or something for /rehash -ssl
+[03:49:28] <Colgate> that would have to be a core change however
+[03:49:43] <Moonlightning> > inspircd can rehash ssl certs without restarting
+[03:49:57] <Moonlightning> Well, sort of. You have to reload the TLS module, though, which kills everypony connected using it.
+[03:50:14] <Sour_Sweet> Can't you inject that simply through screen?
+[03:50:23] <Colgate> Moonlightning: that's a personal problem, works for us :P
+[03:50:47] <Colgate> inject what through screen?
+[03:50:48] <Moonlightning> Colgate: well, it doesn't work for me, so…
+[03:50:57] <Sour_Sweet> The rehash command
+[03:50:57] <Colgate> the rehash command?
+[03:51:00] <Sour_Sweet> Yes
+[03:51:06] <Colgate> inspircd server doesn't have a local term
+[03:51:14] <Sour_Sweet> Oh :D
+[03:51:29] <Sour_Sweet> I should maybe try it some time ^^
+[03:51:32] <Moonlightning> pgrep inspircd | xargs kill -HUP
+[03:51:56] <Colgate> Moonlightning: that doesn't rehash ssl config stuff, only the config files
+[03:52:10] <Moonlightning> …right, you can't do that with a signal x.x
+[03:52:25] <Colgate> that's what I mentioned before with the core change to make a signal do that
+[03:53:27] <Colgate> I should try changing the private key though
+[03:53:35] <Colgate> I don't think it will cause an issue, but it is untested by me
+[03:54:15] <Sour_Sweet> I'm personally fine with ssl certs on canternet as they are. Adding the fingerprint manually in weechat isn't exactly nice, but to be very honest random windows clients are more of an issue. I don't know wherever or not they like selfsigned/CAcert certs
+[03:55:01] <Colgate> that's the downside of LE certs for irc, they aren't long lasting, so fingerprints are useless
+[03:55:28] <Sour_Sweet> You cannot run different certs for different ports?
+[03:55:32] <Moonlightning> two months -> fingerprints are useless?
+[03:55:42] <Colgate> I don't think inspircd supports that, no
+[03:55:48] <Colgate> not without multiple daemons
+[03:55:51] <Moonlightning> What about the TLS-profile thing?
+[03:56:00] <Colgate> TLS-profile?
+[03:56:06] <Moonlightning> <sslprofile>?
+[03:56:12] <Moonlightning> it's not documented >.>
+[03:56:25] <Colgate> that might be why I don't know about it :P
+[03:56:46] <Moonlightning> yeah, I only know about it 'cos I was poking around in the m_ssl_* sources
+[03:56:49] <Colgate> same with this /modenotice command, lol
+[03:56:58] <Colgate> learned about that a few days ago
+[03:57:10] <Moonlightning> /modenotice?
+[03:57:21] <Colgate> sends a notice to all users with a specified user mode
+[03:57:30] <Colgate> most useful with +o
+[03:58:02] <Colgate> it is inspircd core in 2.0, 2.2 it is modular
+[03:58:12] <Moonlightning> Oh, hmm
+[03:58:14] <Colgate> that's the only reason I know about it XD
+[03:58:18] <Moonlightning> well, there's also—
+[03:58:33] <Moonlightning> wait…there isn't an /infoserv send-to-all-opers-now importance, is there
+[03:58:39] <Moonlightning> just a send-to-opers-on-/oper one
+[03:58:46] <Colgate> uh, dunno
+[03:59:02] <Colgate> nope
+[04:05:41] <Colgate> how do you even get in on LE certs?
+[04:05:50] <Colgate> I don't see a way to sign up or get on a waiting list
+[04:06:05] <Moonlightning> There's a Google Form thing
+[04:06:17] <Moonlightning> I'm pretty sure it's linked in one of the blog posts or something
+[04:06:23] <Sour_Sweet> https://docs.google.com/forms/d/15Ucm4A20y2rf9gySCTXD6yoLG6Tba7AwYgglV7CKHmM/viewform?edit_requested=true
+[04:06:24] <PinkiePieBot> [ Let's Encrypt Beta Participation Request ]
+[04:06:27] <Moonlightning> Bingo.
+[04:06:32] <Sour_Sweet> Ugly links are ugly
+[04:06:58] <Sour_Sweet> It's in the support forum on the beta thread
+[04:07:03] <Moonlightning> Note that they mean /hostname/, not /domain/
+[04:07:09] <Colgate> "If you would like certificates for subdomains, you must include each subdomain separately."
+[04:07:13] <Colgate> :V
+[04:07:13] <Moonlightning> Yeah.
+[04:07:18] <Moonlightning> Yeah.
+[04:07:29] <Sour_Sweet> Yes. And silly me had to forget exactly one
+[04:07:37] <Colgate> that's a tiny field for like, 40 hostnames
+[04:07:51] <Moonlightning> what's the charlimit?
+[04:07:51] <Sour_Sweet> So I'm using LE now for everything except for one hostname
+[04:08:17] <Sour_Sweet> I did enter 33 names I believe
+[04:08:22] <Colgate> I think I'm just gonna wait until it goes to public beta, which is supposedly in december
+[04:08:23] <Sour_Sweet> It works ;-)
+[04:08:36] <Colgate> hopefully they will have a better system by then
+[04:08:45] <Colgate> cause a google forms doc is pretty terrible
+[04:09:02] <Moonlightning> Well, the charlimit is at least 685
+[04:09:16] <Sour_Sweet> You won't need a whitelist entry after the closed beta
+[04:09:35] <Sour_Sweet> It still bugs me that they don't just whitelist all subdomains
+[04:09:43] <Colgate> I'll just wait, I'll be gone this weekend anyways :P
+[04:09:59] <Colgate> and then weekend after that is thanksgiving weekend, will be gone again...
+[04:10:17] <Sour_Sweet> Also the ratelimits are stupid
+[04:10:22] <Colgate> and the public beta starts on december 3rd!
+[04:10:29] <Colgate> so that is like, right after that
+[04:11:02] * Moonlightning puts up a Colgate cardboard cutout holding a sign with a large number 410 on it.
+[04:11:17] <Colgate> 410?
+[04:11:48] *** Quits: derpy (derp@muffins) (Ping timeout: 121 seconds)
+[04:11:59] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (Ping timeout: 121 seconds)
+[04:12:12] <Colgate> although, LE does remind me that I need to stop being lazy and move my webserver off of apache and onto a better httpd
+[04:12:30] <Colgate> eh, later!
+[04:12:31] <Moonlightning> as in Gone
+[04:14:59] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[04:15:12] <Sour_Sweet> I hope "apachectl graceful" works :P I'll find out in about 2 months
+[04:16:03] <Sour_Sweet> Anyhoof I'm going to bed. Cya!
+[04:16:09] *** Sour_Sweet is now known as Seoson|BNC
+[04:16:58] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[04:20:05] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[04:24:05] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[04:36:26] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (Ping timeout: 121 seconds)
+[04:43:26] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[04:54:37] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[04:57:53] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[05:02:19] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (A TLS packet with unexpected length was received.)
+[05:02:48] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[06:03:16] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (Ping timeout: 121 seconds)
+[06:03:23] *** Q0 is now known as VisiCalc
+[06:03:51] *** Quits: Crimson_Tail (Bluepon@Pony-t8b0mf.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[06:04:37] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[06:11:17] *** Gigabit is now known as Snoarin
+[06:30:16] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[06:31:29] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[06:48:07] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[06:54:08] <Moonlightning> Hmmmm, this is weird
+[06:54:57] <Moonlightning> I don't have a dedicated modem; I've just been using my ISP's combo box, in bridge mode
+[06:57:16] <Moonlightning> before, I was able to access its configuration website by adding an address on a /24 to my router (which also automatically added a route for that /24)
+[06:57:45] <Moonlightning> and I'm assuming NAT would've also been done for that (because the condition in iptables is just --out-interface=eth0)
+[06:58:09] <Moonlightning> After the power outage yesterday, I added the address (and route) back, but it's not working anymore.
+[06:58:21] <Moonlightning> I can't ping the combo box from the router or from a client
+[07:00:53] * Moonlightning `tcpdump`s.
+[07:01:27] <Moonlightning> hmm, the NAT's wonky.
+[07:01:49] <Moonlightning> Packets bound for that /24 are getting rewritten to use my global v4 address, not the address /on/ that /24
+[07:02:03] <Moonlightning> I don't know if that's how it was last time, but I have a feeling it's not :P
+[07:08:08] <Moonlightning> I don't understand. There's a route for this /24, with a good source IP, and no other routes that overlap it (besides the default route)…shouldn't packets originating from the router use that source IP, and packets from clients bound for that network get NATted to use that source IP?
+[07:08:49] *** Joins: Laps_ (Lapsus@Pony-5m46mf.cable.rogers.com)
+[07:09:03] <Laps_> well then, thanks rogers
+[07:09:38] *** Quits: Lapsus (Lapsus@i-forget.ca) (Ping timeout: 121 seconds)
+[07:09:49] *** Laps_ is now known as Lapsus
+[07:09:51] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[07:16:22] *** Quits: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner) (Ping timeout: 121 seconds)
+[07:16:52] *** Joins: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner)
+[07:16:52] *** AutoLapsus sets mode: +v PinkiePieBot
+[07:17:37] <Moonlightning> …okay, the NAT is REALLY wonky.
+[07:18:25] <Moonlightning> I tried to ping explicitly from the address on the /24, and it got mangled to be from the global address (according to tcpdump)
+[07:30:23] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[07:30:38] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[07:45:29] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[08:00:44] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[08:08:55] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[08:38:05] *** Quits: firestream (vinylderpy@Pony-o1ef0a.dsl.bell.ca) (Ping timeout: 121 seconds)
+[08:44:01] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:44:38] *** Joins: Phase (Phase4@Pony-f34100.internode.on.net)
+[08:46:14] *** zz_CyberJacob is now known as CyberJacob
+[08:51:35] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Connection closed)
+[08:52:35] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[08:57:20] <Moonlightning> What the HELL was that
+[08:58:37] *** VisiCalc is now known as Q0
+[08:58:40] <Phase> * Moonlightning has quit (Connection closed)
+[09:03:42] <Moonlightning> hmmm
+[09:04:34] <Moonlightning> Okay, so I passed `scope link` when I did the `ip addr add`. It made sense, 'cos those addresses are really only valid between the router and the combo box.
+[09:04:45] <Moonlightning> Removing and readding with `scope global` made it work, apparently
+[09:04:48] <Moonlightning> What gives?
+[09:06:37] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[09:30:21] *** Eventide is now known as Eventide|Sleepies
+[09:33:09] *** CyberJacob is now known as zz_CyberJacob
+[09:39:33] <Compu> Googie: sorry i didnt see ur message earlier, there is a way, see the button to the left of the text input box that says SMS with a blue background? u tap that and then there should be another SMS with a dark background, thats ur carrier SMS
+[09:41:09] *** Joins: Jouva_ (jouva@Pony-535ork.fios.verizon.net)
+[09:42:17] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (Ping timeout: 121 seconds)
+[09:58:20] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[10:02:05] <Googie> Compu: Wrong person.
+[10:03:01] <Compu> Googie: oh sorry, where did Gigabit go?
+[10:03:27] <Compu> PinkiePieBot: tell Gigabit sorry i didnt see ur message earlier, there is a way, see the button to the left of the text input box that says SMS with a blue background? u tap that and then there should be another SMS with a dark background, thats ur carrier SMS
+[10:03:27] <PinkiePieBot> Compu: I'll pass that on when Gigabit is around.
+[10:19:19] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:26:53] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[10:32:52] *** Quits: Red_M (potato@Pony-4pa04c.red-m.net) (A TLS packet with unexpected length was received.)
+[10:34:40] *** Joins: Red_M (potato@Pony-4pa04c.red-m.net)
+[11:00:54] *** Quits: floogulinc (floogulinc@Pony-opvprb.floogul.net) (A TLS packet with unexpected length was received.)
+[11:01:03] *** Joins: floogulinc (floogulinc@Pony-opvprb.floogul.net)
+[11:03:57] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[11:13:08] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Connection closed)
+[11:22:01] *** Jouva_ is now known as Jouva
+[11:43:06] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[11:47:05] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[11:47:25] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[12:14:52] <Moonlightning> I need an atomic rsync
+[12:15:29] <Moonlightning> well, a more-atomic rsync than what I have
+[12:15:37] <Moonlightning> upload all the differences between the directory tree on the target and the one on the source, then apply the differences all at once.
+[12:16:03] <Moonlightning> what if my house explodes /while/ I'm updating an offsite backup
+[12:17:24] <Moonlightning> which is going to be most of the time, probably
+[12:25:55] <johnsey> Moonlightning: easy, rsync to a lvm volume and take a snapshot before the rsync, then delete if afterwards
+[12:28:05] *** Seoson|BNC is now known as Sour_Sweet
+[12:47:48] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[13:18:00] *** Joins: Crimson_Tail (Bluepon@Pony-1rfnh1.cg80.k4gu.0151.2601.IP)
+[13:24:46] <Sour_Sweet> Shocking news: The Paris terrorists used encrpytion to communicate wtih each other! Does that mean our carefully constructed surveillance system doesn't work? Oh well we still have all those regular folks. Reading their private e-mails is better than porn I guess.
+[13:28:45] <johnsey> nah, the conclusion that is drawn is a different one. just use moar surveillance!
+[13:28:48] <johnsey> http://news.slashdot.org/story/15/11/16/2336228/uk-pm-wants-to-speed-up-controversial-internet-bill-after-paris-attacks
+[13:32:17] <Sour_Sweet> And ban encryption! Who needs it anyway. It's not like you have anything to hide, do you?
+[13:33:39] <Sour_Sweet> (Because legal bans will totally work for people planting bombs, killing humans and committing suicide)
+[13:40:21] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[13:55:14] *** Snoarin is now known as GigaWork
+[14:02:08] *** Quits: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au) (Connection closed)
+[14:10:55] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[14:24:46] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[14:38:16] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:42:27] *** Quits: Lapsus (Lapsus@i-forget.ca) (Connection closed)
+[14:42:35] *** Quits: miggyb (miggyb@horsetornado.co.uk) (Ping timeout: 121 seconds)
+[14:42:38] *** Joins: Lapsus (Lapsus@Pony-5m46mf.cable.rogers.com)
+[14:42:38] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[14:43:12] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (Quit: No Ping reply in 180 seconds.)
+[14:44:41] *** Quits: Red_M (potato@Pony-4pa04c.red-m.net) (Ping timeout: 121 seconds)
+[14:45:43] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[14:45:49] *** Joins: Red_M (potato@Pony-4pa04c.red-m.net)
+[14:45:50] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[14:49:39] *** Joins: miggyb (miggyb@Pony-ko7510.compute.amazonaws.com)
+[15:07:19] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:12:43] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[15:43:35] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Connection closed)
+[15:43:43] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[15:56:47] *** Joins: Schism|Alt (NA@Pony-vf5hfh.cable.rogers.com)
+[15:58:12] *** Quits: Divide (NA@Pony-5qm.9uh.235.99.IP) (Ping timeout: 121 seconds)
+[16:23:56] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:32:30] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[16:41:17] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[16:43:34] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[16:50:01] *** Larscis is now known as Mike_Coltfield
+[16:50:26] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:16:21] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:46:54] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Ping timeout: 121 seconds)
+[17:52:29] <Colgate> outlawing encryption, wonderful
+[17:53:41] <Colgate> hmm it doesn't mention VPNs... can tor be considered a VPN network?
+[17:53:48] <Colgate> it kind of is right?
+[17:59:05] <Colgate> oh hmm, apparently that would outlaw tor nodes in the UK too, hmm
+[17:59:23] <Colgate> but not exit nodes
+[17:59:35] <Colgate> only relays, interesting
+[18:00:26] * HoneyDrops expects it to pass, expects it to utterly fail to do anything it supposedly is supposed to do.  Banning things that are easy for, well everyone, to make tends to not work.  There is absolutely no viable way to restrict access to strong encryption, nor enforce such a ban.  That leaves aside how idiotic the goal itself is.
+[18:01:41] <Colgate> open source even if it does work somehow, and encryption is somehow banned
+[18:02:04] <Colgate> things will just move to stenography
+[18:02:23] <Colgate> good luck finding that aes encrypted message hidden in all those vine videos
+[18:11:57] <HoneyDrops> I suspect that it will quickly be discovered it's a bad idea.  I can envision the financial or political fallout when one of those keys gets leaked or just cracked...  What worries me is that how many groups will be archiving whatever they can before the inevitable.  How much damage will years of everyone's comminications being released do?
+[18:16:52] <johnsey> you should not mistake the goal for what it really is. it's not for catching terrorists. it's a nightmare for the secret service that the general public can do things they can't keep track of
+[18:20:57] <HoneyDrops> Well yes, the internet is a panopticon w/o encryption.  Which is what they really want.
+[18:21:40] <Colgate> without encryption, you would be able to listen to every conversation in the world at once from your chair
+[18:22:08] <Colgate> I don't see how they could do that, what about financial transactions?
+[18:22:15] <Colgate> wouldn't the banks fight this?
+[18:22:26] <Sour_Sweet> No
+[18:22:35] <johnsey> it's not about having no encryption
+[18:22:49] <johnsey> it's about being able to decrypt everything at will
+[18:22:57] <Colgate> which is the same thing?
+[18:23:01] <johnsey> nope
+[18:23:03] <Sour_Sweet> At least the bank I've been working for is more than cooperative
+[18:23:28] <Colgate> if someone else that isn't the intended recepient can decrypt my things, it isn't encrypted imo
+[18:23:29] <HoneyDrops> As is I wish there were better measured to inhibit the monitoring even who's taking to who.  The entire idea of a third party being able to discern who's taking with who (even if the contents are secure) is broken in my eyes.
+[18:23:39] <johnsey> if only a "trusted entity" aka the government can decrypt.everything, it is safe
+[18:23:49] <johnsey> you are safe against criminals
+[18:23:55] <Colgate> I don't feel any safer
+[18:23:58] <Colgate> :(
+[18:24:02] <johnsey> but why would you want to protect against the government?
+[18:24:09] <HoneyDrops> Yes, they will devise the magic number what can only be uttered by the pure of heart. XD
+[18:24:31] <Colgate> what happens when said key is leaked?
+[18:24:38] <johnsey> pssh do you have anything to hide from tbe government? :P
+[18:24:52] <johnsey> it won't be because everything will be certified!
+[18:25:05] <HoneyDrops> Because, so far, until we have our AI overlords, the government is make up of people: the same weak, scared, and petty ones that comprise the masses.
+[18:25:25] <Sour_Sweet> As far as I know the NSA is monitoring swift messages. Those are used for any international bank to bank money trasnfer
+[18:25:27] <Colgate> inb4 this system only works on standard http ports
+[18:25:30] <johnsey> and obviously, government security is much higher than your personal security, hence keys are safer with them than with you
+[18:25:45] <johnsey> ;)
+[18:26:47] <Sour_Sweet> That being said swift messages are encrypted. Doesn't seem to stop them though
+[18:27:15] <johnsey> of course not, there is an agreement to share the data
+[18:27:23] <Colgate> can I go back to being oblivious
+[18:27:27] <Colgate> that was a nice time
+[18:29:18] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[18:33:26] <johnsey> Sour_Sweet:https://en.m.wikipedia.org/wiki/Terrorist_Finance_Tracking_Program
+[18:33:27] <PinkiePieBot> [ Terrorist Finance Tracking Program - Wikipedia, the free encyclopedia ]
+[18:36:32] <HoneyDrops> Too bad we don't have a reliable and easily accessible, recordless, financial system.
+[18:37:33] <HoneyDrops> (recordless in the sense that no one but the parties involved in the transaction know the details, including the very existence of the transaction itself)
+[18:37:33] <Sour_Sweet> johnsey: Yeah the thing is some of the data is end-to-end encrypted. I know that because we needed to exchange keys with foreign banks from time to time.
+[18:38:44] <Sour_Sweet> And since authorities had only very limited access to our systems I don't know if they're able to decrypt every message
+[18:40:38] <Sour_Sweet> It's entirely possible though that the whole SWIFT PKI is compromised, but from what I've read the NSA targeted certain banks directly which wouldn't make sense then.
+[18:41:59] <Sour_Sweet> I'm almost certain U.S. banks share their data with the government, but I don't believe we did to some same degree
+[18:42:04] *** Joins: Sin (Sin@is.hustlin.everyday)
+[18:42:12] <HoneyDrops> Still, you can be compelled to divulge information.  The problem with banks is they necessarily have data on the transaction to give.  Need a way to seal that vulnerability.  I could envision a system where each transaction is appended to a customers record by the bank, and the record is encrypted such that only the customer can decrypt it.  Sadly that still leaves real-time monitoring, but
+[18:42:14] <HoneyDrops> would make after-the-fact data accessible only with the consent and knowledge of the customer.
+[18:42:36] <johnsey> it's simple. the NSA requests the data, the NSA gets the data.
+[18:43:26] *** Eventide|Sleepies is now known as Eventide
+[18:44:26] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (Ping timeout: 241 seconds)
+[18:44:58] <Sour_Sweet> Transactions are scanned for suspicious activities (by banks directly). Encrypting transaction metadata would be illegal or result in no transaction going through
+[18:45:01] <Colgate> HoneyDrops: I'm not sure that kind of thing is possible to make(recordless transaction system), certainly not possible with cryptocurrencies
+[18:46:26] <HoneyDrops> Yeah, cryptocurrencies don't solve the problem.  Cash still is the best option, but even then they have nastyness like physical trace and serial numbers.  Also cash requires physical proximity.
+[18:48:04] <Sour_Sweet> One example: We needed to check transactions against OFAC matches: https://sdnsearch.ofac.treas.gov/Details.aspx?id=376
+[18:48:04] <PinkiePieBot> [ Sanctions List Search ]
+[18:48:10] <HoneyDrops> This is about the only time I'd laud it as a currency, but gold or silver at least mostly deal with two of those.  No silly numbers, metal is metal.  And you can process them in ways they will destroy physical trace.
+[18:48:57] <Sour_Sweet> Oh you have no idea.
+[18:49:12] <Sour_Sweet> Try to sell larger amounts of gold without the ingot serial number
+[18:49:22] <Sour_Sweet> Good luck with that
+[18:49:28] <HoneyDrops> Well yes, we've managed to buck this up too.
+[18:49:33] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[18:50:23] <HoneyDrops> Still, just as we need a communications system that makes it impossible to detect who is communicating with who (as well as the contents) we need a transaction system that is unmonitorable.
+[18:51:47] <Sour_Sweet> Onion routing for everything :P
+[19:33:44] <AppleDash> Stik: I seem to remember you knowing things about OpenGL
+[19:47:08] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[19:58:04] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:09:07] *** Quits: Phase (Phase4@Pony-f34100.internode.on.net) (Ping timeout: 121 seconds)
+[20:16:44] *** Quits: Crimson_Tail (Bluepon@Pony-1rfnh1.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[20:20:26] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[20:26:01] *** Joins: Asoka (Asoka@Pony-3s2ggn.net-htp.de)
+[20:27:54] *** Quits: Asoka_White (Asoka@Pony-qp4aaa.net-htp.de) (Ping timeout: 121 seconds)
+[20:30:04] *** Joins: Crimson_Tail (Bluepon@Pony-ecresi.cg80.k4gu.0151.2601.IP)
+[20:34:00] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[20:42:44] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[20:42:44] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[20:45:15] *** Schism|Alt is now known as Divide|TechSupport
+[20:47:04] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[20:53:19] *** eyeburn is now known as Starburn
+[20:57:40] *** RedHelper|Sick|Sleep is now known as RedHelper|Sick
+[21:38:40] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "switchin' boxes, back in a bit")
+[21:43:00] *** GigaWork is now known as Gigabit
+[21:47:59] *** Gigabit is now known as Gigaway
+[21:55:42] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[22:01:23] *** Joins: Colgate_ (rabbit@brushie.horse)
+[22:01:32] *** Quits: Colgate (rabbit@brushie.horse) (Ping timeout: 121 seconds)
+[22:03:47] *** Colgate_ is now known as Colgate
+[22:05:22] *** RedHelper|Sick is now known as RedHelper|Sick|brb
+[22:44:20] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:50:52] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Connection closed)
+[22:53:11] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:54:39] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[22:56:11] <Moonlightning> johnsey: I don't control the remote machine, though.
+[23:28:05] * Moonlightning boops Googie
+[23:38:58] *** Lapsus sets mode: -b *!*@Pony-jps.dp7.251.43.IP
+[23:39:01] *** Lapsus sets mode: -b *!brokenwings@Pony-jps.dp7.251.43.IP
+[23:44:22] <Sour_Sweet> So my webmailer serves now X-Frame-Options: sameorigin, sameorigin, because some application needs to mess with headers -.-
+[23:44:56] *** Gigaway is now known as Gigabit
+[23:45:50] <Moonlightning> BIIIIIIIIIND
+[23:46:01] <Moonlightning> why you no have option to use RFC 1912 zone serial numbers??
+[23:46:11] <Moonlightning> there is /no good way/ to…RRRRRRRGH
+[23:46:31] <Sour_Sweet> Is that the date-time thing?
+[23:46:44] <Moonlightning> yeah
+[23:46:47] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Ping timeout: 121 seconds)
+[23:46:59] <Moonlightning> well, date-index
+[23:47:38] <Sour_Sweet> But you're supposed to update the serial number whenever you change the zonefile, not when bind reloads 6_9
+[23:47:55] <Moonlightning> yeah, but if you use `bind`s DNSSEC maintenance thing…
+[23:47:56] * Moonlightning sighs.
+[23:48:15] <Moonlightning> I guess I have to roll my own.
+[23:53:03] * Moonlightning groans loudly
+[23:53:14] <Moonlightning> Why is everything I have…FLAWED.
+[23:53:23] <Moonlightning> It all just, like, ALMOST WORKS, but not QUITE the way I want. :/
+[23:55:42] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Connection closed)

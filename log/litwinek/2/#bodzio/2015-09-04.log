@@ -1,0 +1,566 @@
+[00:00:26] <przemoc> http://asmodean.reverse.net/  ten gosc?
+[00:00:28] <Solve> Tak
+[00:00:29] <Tokido> 7Title: asmodean's reverse engineering page - news and updates
+[00:00:37] <Solve> faster than Tokido
+[00:00:43] <Solve> Tokido, go fuck yourself
+[00:00:43] *** Solve was kicked by przemoc (nie przeklinamy)
+[00:00:43] *** Joins: Solve (~Solve@doushio.doushio)
+[00:00:43] *** ChanServ sets mode: +o Solve
+[00:01:25] *** Joins: taku (~pi@1c3781d3.1413884c.adsl.inetia.pl)
+[00:01:25] *** ChanServ sets mode: +v taku
+[00:01:31] <Solve> przemoc, weź mi powiedz jedną rzecz, bo już się pogubiłem
+[00:01:40] <przemoc> z czym?
+[00:01:50] <Solve> Mam tablicę struktur. W strukturze jedno pole to tablica znaków
+[00:02:12] <Solve> Dostaję się do niej przez tablica[indeks].znaki
+[00:02:31] <Solve> Dostaję wskaźnik na pierwszy element znaków, prawda?
+[00:02:42] <Solve> Mówię o C
+[00:04:19] <przemoc> dostajesz wskaznik na pierwszy element tablicy znakow 'znaki', ktora jest osadzona wewnatrz struktury
+[00:04:24] <Solve> Tak
+[00:04:27] <Solve> I teraz
+[00:04:39] <Solve> Dlaczego, kurwa, memcpy mi zasrywa pamięć?
+[00:04:40] *** Solve was kicked by przemoc (nie przeklinamy)
+[00:04:40] *** Joins: Solve (~Solve@doushio.doushio)
+[00:04:40] *** ChanServ sets mode: +o Solve
+[00:05:42] <przemoc> rzuc wywloanie, jakie robisz i jaki dokladnie masz problem
+[00:06:06] *** Quits: Thebassa (~Thebassa@aaaa.aaaa) (Read error: Connection reset by peer)
+[00:06:09] <przemoc> i proponuje przejsc na priv, bo mocno offtopujemy
+[00:06:19] <Solve> Spoko, wszyscy śpią
+[00:06:33] <przemoc> Tokido czuwa
+[00:06:41] <Solve> Struktura jest wyzerowana memsetem, próbuję kopiować tablicę znaków
+[00:06:51] *** Joins: Thebassa (~Thebassa@aaaa.aaaa)
+[00:06:51] *** ChanServ sets mode: +h Thebassa
+[00:07:42] <przemoc> nie mow mi, co robisz, tylko pokaz, bo nigdy nie dojdziemy, w czym jest problem
+[00:07:55] <Solve> strcpy(entries[i].fileName, file.name);
+[00:08:03] <Solve> To robię
+[00:08:57] <przemoc> i masz pewnosc, ze file.name ma \0 na koncu i ze strlen(file.name) < sizeof(entries[i].fileName)
+[00:09:00] <przemoc> ?
+[00:09:41] <Solve> Tak. Nawet jeśli nie ma na końcu NULL, memcpy nadal dałby sobie radę, bo zeruję całą strukturę
+[00:10:18] <przemoc> ale kopiujesz przeciez z file.name, a file.name tez memsetujesz?
+[00:10:27] <Solve> Nie
+[00:10:42] <przemoc> strcpy(dst, src), moze o tym zapomniales ;)
+[00:11:10] <Solve> Nie no, kopiuję w dobrą stronę :P
+[00:11:28] <Solve> fileName ma długość 23 znaków
+[00:11:39] <Solve> I jest to ustawione na sztywno
+[00:12:17] <przemoc> BTW nie NULL, bo NULL to do wskaznikow jest, a tu mowa o NUL co najwyzej, ale to juz jest passe termin i mowi sie o null byte po prostu lub \0
+[00:12:30] <przemoc> no musi byc na sztywno, skoro to tablica osadzona w strukturze
+[00:12:36] <Solve> Jeśli zmienię na char* fileName, a potem zrobię malloca, działa idealnie
+[00:12:45] <przemoc> a jaki rozmiar ma file.name?
+[00:12:55] <przemoc> daj asserta, czy zawsze jest < 23
+[00:13:21] *** Joins: Demokracja (~Thebassa@371cd19e.76b3cfb.pg.gda.pl)
+[00:13:22] <Solve> Zawsze testowałem na plikach, których nazwy były < 18
+[00:13:42] <przemoc> daj asserta
+[00:14:37] <przemoc> strlen(file.name) < sizeof(entries[i].fileName)
+[00:14:38] <Solve> sek.
+[00:14:42] <Solve> wiem, wiem :D
+[00:16:45] <Solve> nope
+[00:16:50] <Solve> assert nie płacze
+[00:17:21] *** Quits: Thebassa (~Thebassa@aaaa.aaaa) (Ping timeout: 360 seconds)
+[00:17:34] <Solve> przemoc, wiesz co xD
+[00:17:38] <Solve> >*
+[00:17:39] *** Joins: Thebassa (~Thebassa@aaaa.aaaa)
+[00:17:39] *** ChanServ sets mode: +h Thebassa
+[00:18:02] *** Quits: Thebassa (~Thebassa@aaaa.aaaa) (Read error: Connection reset by peer)
+[00:18:34] *** Joins: Thebassa (~Thebassa@aaaa.aaaa)
+[00:18:34] *** ChanServ sets mode: +h Thebassa
+[00:19:16] <Solve> Nope
+[00:19:26] <Solve> Jednak muszę się przespać
+[00:19:30] <przemoc> nie wiem co, bo nie wiem, co dokladnie jeszcze tam robisz, by moc cos wiecej napisac
+[00:21:31] *** Quits: Thebassa (~Thebassa@aaaa.aaaa) (Read error: Connection reset by peer)
+[00:22:02] *** Joins: Thebassa (~Thebassa@aaaa.aaaa)
+[00:22:02] *** ChanServ sets mode: +h Thebassa
+[00:22:09] *** Quits: Demokracja (~Thebassa@371cd19e.76b3cfb.pg.gda.pl) (Ping timeout: 360 seconds)
+[00:22:18] <przemoc> Thebassa taki niezdecydowany dzisiaj
+[00:22:24] <Solve> Strasznie
+[00:26:16] <przemoc> z takich generycznych debugowspomagaczy to polecam:  -fsanitize=address  i/lub  valgrind (oczywiscie)
+[00:27:40] <Solve> "Shadow memory range interleaves with an existing memory mapping. ASan cannot proceed correctly. ABORTING"
+[00:27:41] <Solve> :D
+[00:28:37] <przemoc> czym budujesz?
+[00:29:02] <Solve> gcc, ale sam popieprzyłem, bo puściłem z przez valgrinda
+[00:29:07] <Solve> a zbudowałem z asanem
+[00:30:08] <Solve> Ale zauważ, przemoc, że z mallociem nie ma problemów
+[00:31:11] <przemoc> nie ma albo sa ukryte
+[00:31:39] <Solve> valgrind nic nie wyrzyguje, jeśli z korzystam z malloc
+[00:32:39] <przemoc> no ale nie odpalaj ASana badz valgrinda z wersja dzialajaca, tylko niedzialajaca... :P
+[00:32:49] <Solve> Nie odpalam
+[00:33:29] *** Judysz is now known as chinczykiNAkanale
+[00:35:14] <przemoc> a i przy ASanie warto miec ASAN_OPTIONS=exitcode=0 by abortowal a nie exitowal, bo wtedy wygodnie z gdb jest
+[00:36:07] <przemoc> tylko jezeli ten assert jest spelniony, a mazesz po swojej pamieci, to on moze tego nie wykryc
+[00:36:57] <przemoc> dziwna sprawa.  nie masz jakiegos rownoleglego dostepu do tych struktur, ze moze jedne watki nadpisuja innym?
+[00:37:06] <Solve> Wszystko w jednym wątku
+[00:37:47] <Thebassa> bo może
+[00:38:12] <przemoc> a mozesz wkleic na jakas paste jak wyglada caly ten struct?
+[00:39:07] <Solve> http://pastebin.com/raw.php?i=00R58Dna
+[00:40:22] <przemoc> daj nameLength za fileName, bedzie mial lepsze wyrownanie do kopiowania
+[00:40:47] <Solve> #pragma pack(push, 1)
+[00:40:47] <Solve> #pragma pack(pop)
+[00:41:08] <Solve> Nie lubię wyrównań
+[00:42:24] <przemoc> zamien te kolejnosc i powiedz, jak Ci wtedy chodzi
+[00:42:36] <Solve> Tak samo
+[00:42:44] <Solve> już przetestowałem :P
+[00:43:20] <przemoc> na czym polega dokladnie to mazanie?  co czym jest nadpisane?
+[00:43:54] <Solve> W strukturze jest ok
+[00:44:10] <Solve> Za to nadpisuje mi zmienną, którą stworzyłem w pętli
+[00:44:58] *** Quits: AtoMan (dmf@164642ae.1654620b.dynamic.chello.pl) (Ping timeout: 360 seconds)
+[00:45:10] <Solve> http://pastebin.com/raw.php?i=PAt9d47y
+[00:45:24] *** Quits: Thebassa (~Thebassa@aaaa.aaaa) (Ping timeout: 360 seconds)
+[00:46:49] <przemoc> a cala petelka?
+[00:47:03] <przemoc> i co Ci tu jest nadpisywane?
+[00:47:17] <Solve> fileSize
+[00:48:14] <przemoc> a entries[i].length pozostaje dobre?
+[00:48:49] <Solve> Tak
+[00:49:02] <Solve> Jutro sprawdzę, jak zachowa się czysty dirent
+[00:49:11] <Solve> Może tinydir coś pieprzy
+[00:49:36] <przemoc> ale tu masz int32_t fileSize, a rozumiem, ze to fragment petli, wiec poza nia oczywiscie nie jest ustawiony
+[00:49:45] <Solve> Oczywiście
+[00:50:09] <przemoc> wiec w ktorym momencie uznajesz, ze Ci sie nadpisal
+[00:50:37] <Solve> Zawsze przy ostatnim pliku
+[00:51:39] <przemoc> a w ktorym dokladnie momencie, po strcpy?  bo pisales, ze w .length jest jeszcze dobrze
+[00:52:03] <Solve> valgrind mówi mi, że już po strcpy jest do dupy
+[00:52:32] <przemoc> a assert nic nie pluje?
+[00:53:23] <Solve> E-e
+[00:53:34] <Solve> Ale jutro będę kontynouwał debugowanie
+[00:53:37] <Solve> A teraz spadam
+[00:53:41] <przemoc> daj tam strncpy(..., ..., sizeof(entries[i].fileName))
+[00:53:42] <Solve> Dzięki za pomoc
+[00:53:47] <Solve> hmm
+[00:53:52] <przemoc> no nie pomoglem niestety
+[00:54:49] <przemoc> no bo nie ma powodu, przynajmniej z tego co mi pokazales, by cos sie tam tak bardzo je... klopotalo
+[00:54:59] <Solve> strncpy nic nie zmienia
+[00:55:01] <Solve> :<
+[00:55:24] <przemoc> albo cos przede mna ukrywasz ablo jakies podstawowe funkcje nawalaja
+[00:55:40] <przemoc> memcpy() tez nic nie zmienial?
+[00:55:49] <Solve> Nie
+[00:55:56] <Solve> bswapa przed Tobą ukrywam :D
+[00:56:04] <przemoc> moze to ten dysk ma rootkita jednak :>
+[00:56:21] <przemoc> gcc na windows, tak?
+[00:56:38] <Solve> gcc na linuksie
+[00:56:41] <Solve> eeeeee
+[00:56:42] <Solve> eeeee
+[00:56:46] <Solve> printf krzaczy
+[00:56:48] <Solve> wtf
+[00:57:18] <Solve> printf("Offset: %u\t\tLength: %u\t\tNL: %u\t\tName: %s\n", entries[i].offset, entries[i].length, entries[i].nameLength, entries[i].fileName);
+[00:57:23] <przemoc> bo moze ten ostatni file to juz jest zly i po prostu jedziesz out of bound
+[00:57:36] <Solve> testowałem i na innym dysku
+[00:57:49] <Solve> na innym kompie również
+[00:58:21] <przemoc> co krzaczy, fileName?
+[00:58:46] <Solve> Zaraz sprawdzę
+[00:58:54] <przemoc> a wyprintfuj wczesniej file.name.
+[00:59:50] <przemoc> bo to mocno wyglada na to, jakby ten file juz byl zwalony, a reszta byla tego konsekwencja
+[00:59:56] <Solve> file.name ok
+[01:00:28] <Solve> Dobra, jutro potestuję :D
+[01:00:29] *** Quits: Solve (~Solve@doushio.doushio) (Quit: )
+[01:01:14] *** Quits: chinczykiNAkanale (~judusz.to@3fd056b1.18377e3c.netia.com.pl) (Quit: Jeszcze tu wrócę!)
+[01:11:10] <przemoc> tornado|BNC: nowy special OPM-a:  http://www.mediafire.com/download/056m0s4j213c881/OPM_Young_Jump_Special_2.rar
+[01:11:11] <Tokido> 7Title: OPM_Young_Jump_Special_2
+[03:53:32] *** Quits: taku (~pi@1c3781d3.1413884c.adsl.inetia.pl) (Ping timeout: 360 seconds)
+[04:05:11] *** Joins: taku (~pi@189efabc.3231975e.adsl.inetia.pl)
+[04:05:11] *** ChanServ sets mode: +v taku
+[04:32:16] *** Quits: taku (~pi@189efabc.3231975e.adsl.inetia.pl) (Ping timeout: 360 seconds)
+[04:44:00] *** Joins: taku (~pi@2b2c869d.1c2d962f.adsl.inetia.pl)
+[04:44:00] *** ChanServ sets mode: +v taku
+[05:58:31] *** Quits: xandros (~SoYouKnow@kono.sekainiwa.himitsuga.aru) (Quit: 12—14I12-15n12-15v12-00i12-00s12-15i12-15o12-14n12— 3.3 (November '11))
+[07:18:34] *** Joins: Solve (~Solve@3856dc6.f8171.netia.com.pl)
+[07:18:34] *** ChanServ sets mode: +o Solve
+[09:32:47] *** Quits: Solve (~Solve@doushio.doushio) (Quit: )
+[09:46:10] *** Quits: kimek (~iyu@zjem.cie) (Ping timeout: 360 seconds)
+[09:56:42] *** Joins: Putin (~Putin@12a06a62.297f4433.centertel.pl)
+[09:56:57] <Putin> o\
+[10:06:11] *** Joins: Yenot (~yenot@1959841d.cc59707.adsl.tpnet.pl)
+[10:07:18] <Yenot> nihao
+[10:22:10] *** Joins: Solve (~Solve@3856dc6.f8171.netia.com.pl)
+[10:22:10] *** ChanServ sets mode: +o Solve
+[10:22:46] *** Joins: Thebassa (~Thebassa@aaaa.aaaa)
+[10:22:46] *** ChanServ sets mode: +h Thebassa
+[10:22:53] <Solve> Cześć, Thebassa
+[10:22:57] <Solve> Dzisiaj nie w pracy?
+[10:32:32] *** Joins: AtoMan (dmf@164642ae.1654620b.dynamic.chello.pl)
+[10:36:47] <Thebassa> praca później
+[11:07:10] *** Quits: Thebassa (~Thebassa@aaaa.aaaa) (Ping timeout: 360 seconds)
+[11:38:59] *** Joins: Takto (~kvirc@164642ae.20846cb9.adsl.tpnet.pl)
+[11:39:05] <Takto> o/
+[11:39:20] <Solve> \o
+[11:41:50] <Putin> Takto na emigracji?
+[11:42:09] <Takto> trzeba wspomagać ludzi w niedoli :D
+[11:43:33] <Takto> a tak serio... praca :)
+[11:44:07] <Solve> purraca
+[11:44:44] *** Putin is now known as djbeast
+[11:48:52] <djbeast> gdzie pracujesz?
+[11:49:13] <Takto> przy dorabianiu kluczy w chorzowie :)
+[11:49:42] <Solve> Yaaay
+[11:49:44] <Takto> http://edorabianiekluczy.pl/
+[11:49:45] <Tokido> 7Title: Dorabianie kluczy na całą Polskę
+[11:49:47] <Solve> fajna praca
+[11:49:49] <Takto> autoreklama :D
+[11:50:03] <Solve> Takto: z jakiego stopu?
+[11:50:11] <Takto> stal
+[11:50:14] <Solve> szlachetna?
+[11:50:29] <Solve> Czy CrV?
+[11:50:37] <Takto> aż tak głeboko nie wchodziłem w temat :)
+[11:50:40] <djbeast> konstrukcyjna xD
+[11:50:54] <Solve> Takto
+[11:51:01] <Solve> zamówię u Ciebie klucze z 316L
+[11:51:42] <djbeast> to zamawiam 17 i 19, bo mi sie polamaly
+[11:54:39] <Takto> musiałbym się od hurtowników dowiedzieć 
+[11:54:51] <Solve> "działającą zgodnie s prawem"
+[11:55:54] <Takto> ja jej nie robiłem, tylko ją przejeliśmy :D
+[11:56:13] <Takto> trzeba by tam od podstaw zacząć się bawić :D
+[11:56:40] <Solve> i ten joomlowski favicon
+[12:21:22] <Takto> https://scontent-ams3-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/11223634_993986833957758_8824964297643343347_n.jpg?oh=11a0e9a2ce4d5a720bcfd259f0e58232&oe=5681A1E3 i tak Bes zawstydził djbeasta :D
+[12:24:48] *** Joins: SON (webchat@1a9e3c85.164642ae.330f146.23fa4838X)
+[12:42:02] *** Joins: KiziMizi (webchat@2f31aeca.2b2c869d.internetdsl.tpnet.pl)
+[12:42:08] <KiziMizi> yo
+[12:48:39] <Solve> BESAME
+[12:48:45] <Solve> BESAME MUCHO
+[12:49:43] <KiziMizi> The Rising of the Shield Hero - ktoś? coś czytał?
+[12:49:50] <Solve> ya
+[12:49:54] <Solve> kurwa
+[12:49:55] *** Solve was kicked by przemoc (nie przeklinamy)
+[12:49:55] <KiziMizi> widzę, że cena na depository nawet sensowna
+[12:49:55] *** Joins: Solve (~Solve@doushio.doushio)
+[12:49:55] *** ChanServ sets mode: +o Solve
+[12:49:56] <Solve> ja*
+[12:49:57] <Solve> xD
+[12:50:48] <KiziMizi> daje radę? Jak w miarę, to może bym sobie zamówił
+[12:50:59] <KiziMizi> chociaż nie wiem, co to za wydawnictwo to one peace books
+[12:51:05] <Solve> IMO słabe
+[12:52:00] <KiziMizi> mówisz? To może lepiej przepić te 40 zł :D
+[12:52:25] <Solve> yup,
+[12:53:16] <KiziMizi> dalej czekam na jakąś promocję z  hataraku, bo kierdole kupowanie za 65 zł
+[13:24:36] <Takto> http://i.imgur.com/cBAXKZ9.jpg?1 xD
+[13:54:41] *** Joins: bigdo (~bigdo@16190e58.1c25dec6.1f06bfc3.38050f2dX)
+[13:54:41] *** ChanServ sets mode: +v bigdo
+[13:54:45] <bigdo> hi
+[14:12:54] *** Joins: Kirito97 (webchat@18251e65.2308fbe7.adsl.tpnet.pl)
+[14:26:33] *** Quits: KiziMizi (webchat@2f31aeca.2b2c869d.internetdsl.tpnet.pl) (Quit: Page closed)
+[14:57:30] *** Joins: atm (dmf@164642ae.1654620b.dynamic.chello.pl)
+[15:00:34] *** Quits: AtoMan (dmf@164642ae.1654620b.dynamic.chello.pl) (Ping timeout: 360 seconds)
+[15:01:02] <Takto> "Brak polskich napisów przekreśla korzystanie z tej apki już lepiej wejść w przeglądarkę ps4 i na animezone.pl można oglądać bez reklam w trakcie filmu po za tym ma się dużo większy wybór i często też w lepszej jakości"
+[15:01:04] <Tokido> 7Title: AnimeZone.pl - Twoja strefa anime online pl!
+[15:01:17] <Takto> a wszyscy tak psioczą na anime onlajn :)
+[15:01:46] <Takto> a okazuje się, że lepszy niekiedy obraz niż z crunchyrolla :)
+[15:22:09] <atm> > lepszy
+[15:22:31] <atm> pewnie i tak polskie suby przerabiane z horribli albo z tych co przerabializ horribli
+[15:23:04] *** Joins: djbeast|2 (~djbeast@3974cd3.2e099bf0.elwico.pl)
+[15:23:07] <Takto> w większości tak :)
+[15:23:59] <Takto> ale z tą jakością to trochę wątpię, by była lepsza niż z karczyrolady :D
+[15:25:22] <djbeast|2> o/
+[15:25:40] <Takto> \o/
+[15:32:29] *** Quits: Kirito97 (webchat@18251e65.2308fbe7.adsl.tpnet.pl) (Quit: Page closed)
+[15:54:39] <Solve> http://animesub.info/forum/viewtopic.php?pid=450561#p450561
+[15:54:39] <Tokido> 7Title: [Maszyniści][Hardek] Kara no Kyoukai: Mirai Fukuin [Zakończone] (Strona 1) / Maszyniści / Forum AnimeSub.info
+[15:54:42] <Solve> xDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+[15:58:51] *** Quits: Solve (~Solve@doushio.doushio) (Quit: )
+[16:10:46] <atm> > Film posiada dwie wersje napisów. Z notkami i bez nich. Wybieramy je w hardku.
+[16:11:01] <atm> czy oni się z amebą na głowy pozamieniali
+[16:12:31] *** Joins: Mammoth (webchat@3d7ab5b6.a34b1a3.dynamic.chello.pl)
+[16:13:57] <Mammoth> Dobry :E
+[16:14:00] <Mammoth> !okusama06
+[16:25:55] *** Joins: reddd (reddd@4fb88e4.20846cb9.adsl.tpnet.pl)
+[16:25:55] *** ChanServ sets mode: +v reddd
+[16:26:50] *** Quits: Mammoth (webchat@3d7ab5b6.a34b1a3.dynamic.chello.pl) (Quit: Page closed)
+[16:29:04] *** Joins: xandros (~SoYouKnow@76b3cfb.1b415a10.dynamic.chello.pl)
+[16:29:25] *** ChanServ sets mode: +v xandros
+[16:35:02] *** Quits: SON (webchat@1a9e3c85.164642ae.330f146.23fa4838X) (Quit: Page closed)
+[16:42:23] *** Joins: FAiM (~faim@141bd0a1.a9a2d23.adsl.inetia.pl)
+[16:42:27] *** ChanServ sets mode: +o FAiM
+[16:42:58] <FAiM> yo
+[16:43:56] <xandros> hi
+[16:47:43] *** Quits: djbeast (~Putin@mameshiba.mameshiba) (Ping timeout: 360 seconds)
+[16:48:36] *** Joins: kimek (~iyu@zjem.cie)
+[16:51:39] <FAiM> ansi, niby strona dla tlumaczy z angielskiego
+[16:51:52] <FAiM> a czesto maja problemy ze zrozumieniem tekstu angielskiego xD
+[17:01:53] <djbeast|2> !nihao
+[17:01:56] *** Quits: djbeast|2 (~djbeast@3974cd3.2e099bf0.elwico.pl) (Quit: KVIrc 4.2.0 Equilibrium http://www.kvirc.net/)
+[17:45:27] <_paranoid>  elo
+[17:45:28] <_paranoid> sucze
+[17:46:14] *** Joins: Judysz (~judusz.to@3fd056b1.18377e3c.netia.com.pl)
+[17:46:14] *** ChanServ sets mode: +v Judysz
+[17:46:18] <Judysz> hej
+[17:54:22] *** Joins: Besamir (~animenimk@nyanpasu.pasu)
+[17:54:22] *** ChanServ sets mode: +oa Besamir Besamir
+[17:54:34] <Besamir> yo
+[18:03:17] <Judysz> jou
+[18:03:38] *** Joins: Thebassa (~Thebassa@aaaa.aaaa)
+[18:03:38] *** ChanServ sets mode: +h Thebassa
+[18:11:09] *** Joins: Solve (~Solve@1dad8cc8.f8171.25a4ad7.1f5b825bX)
+[18:11:10] *** ChanServ sets mode: +o Solve
+[18:24:08] *** Joins: pacyfikator (~bogusz_cz@159b2242.1df4f87e.adsl.tpnet.pl)
+[18:31:59] *** Quits: Solve (~Solve@doushio.doushio) (Quit: )
+[18:37:17] <pacyfikator> o/
+[18:42:56] <xandros> \p
+[19:05:49] <bigdo> http://goboiano.com/list/3343-relive-the-entire-your-lie-in-april-anime-through-this-cosplay-set
+[19:05:51] <Tokido> 7Title: GoBoiano - Relive the Entire Your Lie in April Anime Through This Cosplay Set
+[19:31:18] <FAiM> re
+[19:40:54] <FAiM> i co bodzio
+[19:40:58] <FAiM> byles na hitmanie?
+[19:41:15] <FAiM> podobno o wiele gorszy od poprzedniego
+[19:48:26] <FAiM> och, odrzucili referendum dudy
+[19:48:30] <FAiM> w koncu cos dobrego ;p
+[19:53:27] <pacyfikator> nie bylem, ale tez slyszalem, ze gorszy
+[19:54:10] <Besamir> gdzie tam u bodzia kino? xD
+[19:54:23] <Besamir> musialby rowerem do szczecina ciagnac xD
+[19:54:33] <FAiM> przydomowe ;p
+[19:55:44] <pacyfikator> w sumie brat wyciagnal ze szkoly rzutnik za 20k, ktory lezal 2 lata, bo niby zepsuty, wiec kino mam w domu xD
+[19:56:31] <FAiM> pewnie lamy nikt nie wymienil xD
+[19:56:39] <pacyfikator> dokladnie
+[19:57:26] <pacyfikator> tylko droga byla lampa, prawie 700zl
+[19:58:16] <FAiM> w porownaniu do projektora ;p
+[19:58:21] <FAiM> na uczelni
+[19:58:30] <FAiM> tez co 2 projektor
+[19:58:45] <FAiM> na ostatnich silach dzialal ;p
+[19:58:51] <pacyfikator> w porownaniu do tego, ze ja kupil xD
+[19:59:04] <pacyfikator> ano tak bywa xD
+[19:59:22] <FAiM> a chyba w kazdym bylo info, zeby filtr przeczyscic ;p
+[19:59:31] <FAiM> ale who cares
+[19:59:39] <FAiM> a pozniej migotania, dziwne kolory
+[20:22:31] <FAiM> hubi1 sie obrazil
+[20:22:33] <FAiM> czy co?
+[20:22:47] <Besamir> moze aero mu ukradli?
+[20:23:00] <FAiM> ze juz wylaczyli?
+[20:23:37] <Besamir> albo zgubil po pijaku karte xD
+[20:25:11] <Judysz> "prond" ukradli
+[20:26:03] <Thebassa> znalazł fajniejszych kolegów
+[20:27:28] <Judysz> ale jedno jest pewne
+[20:27:32] <Judysz> będzie oglądał mecz
+[20:27:34] <Judysz> :D
+[20:27:46] <FAiM> och, nie wiedzialem, ze AKIBA'S TRIP wyszlo na pc
+[20:28:44] <Judysz> !kier
+[20:28:45] <Tokido> [10:52pm] <KieR> robotic notes bylo niezle
+[20:36:23] <Judysz> zaczyna sie
+[20:36:43] <FAiM> who cares? ;p
+[20:36:56] <Judysz> polowa kraju, tak mysle
+[20:36:57] <Judysz> :D
+[20:37:22] <Judysz> to nie byle jaki mecz
+[20:37:28] <Judysz> tylko z NIEMCAMI
+[20:38:00] <FAiM> z niemcami, to tylko respektuje mecz na karabiny ;p
+[20:38:23] <Judysz> kto wie
+[20:38:27] <Judysz> moze bedziesz mial okazje
+[20:39:04] <FAiM> jeszcze nie mam swojego AK ;p
+[20:39:23] <Judysz> dlatego tak sledzisz polityke :P
+[20:39:47] *** Quits: bigdo (~bigdo@16190e58.1c25dec6.1f06bfc3.38050f2dX) (Quit: )
+[20:58:31] <FAiM> i co? juz 5:0?
+[21:01:30] <FAiM> geez, nie mam miejsca na c na neptunie
+[21:01:48] <FAiM> w ogole co tam jest, ze ponad 700GB zajmuje
+[21:02:24] <przemoc> biblioteki internet explorera
+[21:04:14] <przemoc> kurde, uruchamiam chrome po wlaczeniu kompa, a tu komunikat: Program Google Chrome przestal dzialac.  no jak mogl przestac dzialac, jak jeszcze nie zaczal, ciemnote mi wciskaja...
+[21:04:40] <FAiM> moze w tle ci sie wlacza ;p
+[21:04:42] <przemoc> no nie startuje mi, jeszcze takiej akcji nie miale
+[21:04:58] <FAiM> czytales 188 rozdzial PS?
+[21:05:22] <przemoc> nie wiem, bez MU Ci nie odpowiem, a do tego potrzebuje chrome'a
+[21:05:37] <FAiM> jak zmieniaja majtki
+[21:05:48] <przemoc> a, mis, tak
+[21:06:02] <FAiM> niezlego nura jej w dupe zrobil xD
+[21:06:37] <FAiM> http://bato.to/read/_/342001/prison-school_ch188_by_utopia/9
+[21:06:37] <Tokido> 7Title: Prison School - ch 188 Page 9 | Batoto!
+[21:06:42] <FAiM> dolny lewy panel
+[21:07:02] <FAiM> scena ze wspomnien risy ;p
+[21:09:05] <przemoc> to jakis wycleanowany ten chapter, ja widzialem w duzo gorszej wersji, tak ze ostatnio strona zajela mi dobra minute, nim doszedlem, co tam bylo pokazane...
+[21:10:05] <FAiM> http://bato.to/read/_/342001/prison-school_ch188_by_utopia/19
+[21:10:06] <Tokido> 7Title: Prison School - ch 188 Page 19 | Batoto!
+[21:10:14] <FAiM> jak sie czyta gowniane speed scany ;p
+[21:10:25] <przemoc> to nie byl speed scan wlasnie
+[21:10:46] <przemoc> a moze, na bato.to chyba bylo
+[21:10:47] <Tokido> 7Title: Batoto - Read Comics Online!
+[21:10:59] *** Quits: Takto (~kvirc@164642ae.20846cb9.adsl.tpnet.pl) (Quit: KVIrc 4.2.0 Equilibrium http://www.kvirc.net/)
+[21:11:13] *** Joins: djbeast (~djbeast@mameshiba.mameshiba)
+[21:11:19] <FAiM> no tam jest od Yo Manga sprzed 6 dni
+[21:11:28] <FAiM> i Utopia sprzed 2 dni ;p
+[21:11:34] <przemoc> w kazdym razie to tylko "typowe" kiyoshiowe blyskawiczne zdjecie bielizny
+[21:11:56] <przemoc> utopia tez juz wydala?  jakos umknelo mi, bo pewnie podbilem licznik na MU po przeczytaniu od yo
+[21:12:33] <FAiM> ten musi musi miec workowate nogi
+[21:12:41] <FAiM> bo jakby byly nogawki
+[21:12:46] <FAiM> to raczej by tego nie zrobili ;p
+[21:13:32] <przemoc> czemu ten chrome mi nie startuje
+[21:14:03] <FAiM> moze profil sie skierdolil?
+[21:14:46] <przemoc> nie mial kiedy, niech go szlag, tam jakies flagi -safe byly czy cos, nie?
+[21:15:11] <przemoc> musze firefoksa jakiegos odpalic i pogoogle'ach
+[21:15:17] <przemoc> s/h$//
+[21:16:49] <przemoc> to moze byc comodo, zaraz dodam do wyjatkow
+[21:17:06] <przemoc> a nie, HIPS i tak juz mam wylaczony
+[21:18:50] <djbeast> o/ konbanwatakushi
+[21:19:38] <przemoc> o/ gdzie-mameshiba-15-yo
+[21:21:51] <Judysz> oh
+[21:22:14] <FAiM> jak polacy wygraja ;p
+[21:23:01] <FAiM> gol?
+[21:23:04] <Judysz> 2:1
+[21:23:05] <Judysz> tak
+[21:23:10] <FAiM> slychac za oknem ;p
+[21:23:13] <Judysz> odrabiaja straty
+[21:23:22] <przemoc> ja pierdziele, z wylaczonym HIPS nie dzialalo, ale po wlaczeniu i dodaniu katalogu google'a do wyjatkow w wykrywaniu shell code injection, pomoglo
+[21:23:45] <djbeast> xandros, zmienił mi się sensei :)
+[21:24:04] <djbeast> kahori pojechała na dojcze
+[21:24:20] <przemoc> https://code.google.com/p/chromium/issues/detail?id=527327
+[21:24:21] <Tokido> 7Title: Issue 527327 - chromium - Chrome has stopped working - An open-source project to help move the web forward. - Google Project Hosting
+[21:24:28] <djbeast> teraz shinji-sensei prowdzi moją grupę
+[21:24:34] <przemoc> > If you disable HIPS it won't disable HIPS code injection scan so you have to go to settings and disable code injection/execution or add Chrome exe/folder to excluded.
+[21:24:43] <przemoc> ...
+[21:26:08] <FAiM> biodra se blokujesz?
+[21:27:33] <przemoc> no nie, zakladki tez pogubil, restore nic nie przywrocil...
+[21:28:43] <Judysz> firefox tez kiedys gubil jak glupi
+[21:28:47] <FAiM> mi ostatnio taki myk zrobil ff
+[21:28:49] <Judysz> byle blad i padaly
+[21:28:57] <Judysz> a teraz jak zle go nie wylacze
+[21:28:59] <Judysz> to zawsze sa
+[21:29:04] <FAiM> ale na szczescie wrzucil stary profil na pulpit ;p
+[21:29:11] <Judysz> ale lepiej co jakis czas zrobic kopie
+[21:29:31] <djbeast> a ja korzystam z opery 12 i wszystko działa :P
+[21:29:52] <Judysz> opera tez fajna, ale jakos sie nie przekonalem
+[21:29:59] <Judysz> tylko ff i chrome
+[21:30:05] <FAiM> chrome
+[21:30:15] <FAiM> i ff do sciagania filmikow z yt xD
+[21:30:26] <djbeast> wolę starszą wersję, bo nowa jest łopatologiczna i nieco okrojona z opcji
+[21:30:27] <przemoc> zapomnialem, ze przeciez Session Buddy (polecam) trzyma swoja kopie ostatniej sesji ;)
+[21:31:00] <Judysz> ajjjjj
+[21:31:03] <Judysz> moglo byc 2:@
+[21:31:06] <Judysz> 2:2*
+[21:31:11] <FAiM> ale nie jest ;p
+[21:31:14] <przemoc> niestety
+[21:31:25] <Judysz> walnal na pale
+[21:31:27] <FAiM> na czym to leci?
+[21:31:27] <Judysz> zamiast technicznie
+[21:31:28] <przemoc> jeszcze kilka minut meczu jest, moze cos ugraja
+[21:31:30] <Judysz> polsat
+[21:31:32] <Judysz> nosz
+[21:31:34] <Judysz> znowu szansa
+[21:31:54] <FAiM> bo sie zastanawiam jakie jest opoznienie na sat wzgledem dvb-t ;p
+[21:31:54] <Judysz> dopiero 1 polowa
+[21:32:02] <Judysz> juz koniec
+[21:32:06] <Judysz> przerwa
+[21:32:39] <FAiM> raz jak ogladalem
+[21:32:43] <FAiM> to byla spora roznica
+[21:32:56] <FAiM> to mialem spoilery za okna xD
+[21:33:23] <Judysz> u mnie wzgledem kablowki jest kilka sekund
+[21:34:18] *** Quits: Besamir (~animenimk@nyanpasu.pasu) (Quit: )
+[21:34:55] <przemoc> a session buddy wielokrotnie mnie ratowal od nadmiernej liczby zakladek, bo ja tak czasem otwieram rozne arty, posty, etc. na pozniej, ale musze miec nastroj by to czytac...  az w koncu stwierdzam, ze zapisuje to jako sesja w SB na kiedys, a dalej kontynuuje z bez starych zakladek ;)
+[21:35:14] <przemoc> w sumie kwestia mentalna, bo rzadko potem wracam do tych zapisanych sesji, ale pare razy sie zdarzylo
+[21:35:20] <FAiM> chyba kart ;p
+[21:36:50] <przemoc> jakos nie lubie tlumaczenia "karty", zakladki jest duzo bardziej naturalne i wizualnie zgodne z rzeczywistoscia
+[21:37:48] <FAiM> ale zakladki juz maja swoje znaczenie ;p
+[21:38:34] <przemoc> tak naprawde mowa o roznych zakladkach i obie w jezyku polskim funcjonuja jako zakladki
+[21:38:40] <przemoc> wiec nie jest to bledne tlumaczenie
+[21:39:31] <przemoc> ale rozumiem Twoj problem
+[21:40:43] <przemoc> nowa gargantie wreszcie zaliczylem.  troche rozmemlana, ale ujdzie.
+[21:41:28] <FAiM> a ja nadal nie ;p
+[21:41:59] <przemoc> glupim, bo liczylem na cos ciekawszego
+[21:42:07] <Judysz> boziu
+[21:42:19] <Judysz> znowu kamijan i problem z czcionkami
+[21:42:26] <Judysz> co z nim nie tak? :D
+[21:42:51] <FAiM> z fotami - fixed
+[21:45:01] <Judysz> ja rozumiem, ze cos sie moze nie podobac
+[21:45:10] <Judysz> ale on musi wszystkich nawracac? :D
+[21:45:25] <Judysz> "zmien to, bo mi sie nie podoba"
+[21:45:33] <FAiM> pewnie znowu cos na stronie DameDesuYo wyczytal
+[21:46:24] <FAiM> bo chyba te gowniana grupe uznaje za wyrocznie
+[21:47:51] <Judysz> dobra, druga polowa
+[21:50:50] <djbeast> czego?
+[21:52:04] <FAiM> szydelkowania na czas ;p
+[21:56:01] <djbeast> myślałem, że niepełnosprawni w pracy znów latają za piłką
+[21:59:15] <Judysz> slupek
+[21:59:18] <Judysz> szwabow
+[21:59:25] <Judysz> ale fart
+[22:02:02] <Judysz> kur
+[22:02:08] <Judysz> ale niefart
+[22:04:37] <atm> https://www.facebook.com/AnimeEdenPL/posts/738435509616344
+[22:04:38] <Tokido> 7Title: Anime Eden - 20% zniżki dla 20 osób na XX rocznicę... | Facebook
+[22:05:15] <Judysz> maja gest
+[22:05:17] <Judysz> :D
+[22:05:42] <FAiM> ano
+[22:06:03] <FAiM> nadal sporo zarobia ;p
+[22:08:16] *** Joins: Takto (~kvirc@18377e3c.13919cb5.interpc.pl)
+[22:08:25] <Takto> o\
+[22:09:05] <Takto> djbeast: niech pan sprawdzi, czy napisy do mameshiby nie gniją w piwnicy :D
+[22:10:01] <FAiM> ze niby polacy wygraja?
+[22:12:40] <Judysz> remis bylby dobry
+[22:13:16] <FAiM> ale za remis nie ma odcinka ;p
+[22:13:42] <Judysz> no to ludzie beda cierpiec
+[22:13:47] <Judysz> bo na wygrana sie nie zanosi
+[22:20:21] <djbeast> Takto: mameshiba kisi ogóry
+[22:22:15] *** Quits: xandros (~SoYouKnow@kono.sekainiwa.himitsuga.aru) (Read error: Connection reset by peer)
+[22:23:06] *** Joins: xandros (~SoYouKnow@76b3cfb.1b415a10.dynamic.chello.pl)
+[22:23:25] *** ChanServ sets mode: +v xandros
+[22:24:37] <Judysz> 3:1
+[22:24:39] <Judysz> koniec epkow
+[22:25:00] <FAiM> heh
+[22:25:40] <Judysz> ale kurde, tak dobrze graja
+[22:29:21] <Takto> djbeast: myślałem, że ta woń na dworze to od mameshiby xD
+[22:29:36] <djbeast> a tak spokój
+[22:29:43] <djbeast> coś yebie jak cholera
+[22:35:55] <Judysz> kuniec
+[22:37:01] <przemoc> Thebassa: dopiero w biezacym odcinku illyi cos sie zaczelo dziac i to calkiem ladnie zanimowali.  tylko po hype'ie jakie to ma byc lepsze od 2wei, poprzednie 6 epow w ogole mnie nie przekonalo poki co, a ten jeden to troche za malo, ale moze nadrobia, zobaczymy.
+[22:41:09] <przemoc> a, to ma tez miec tylko 10 epow...
+[22:42:16] <Thebassa> a nie wiem
+[22:42:21] <Thebassa> jestem do tyłu dość mocno
+[22:44:33] <FAiM> ciekawe, czy foodorgasm dostanie 2 sezon
+[22:45:30] <FAiM> http://img-9gag-fun.9cache.com/photo/aLBzO8V_460sv.mp4
+[22:45:40] <FAiM> to z najnowszego msg?
+[22:45:50] <Thebassa> potwór
+[22:45:51] <Thebassa> tak
+[22:46:00] <Thebassa> ja swojego pieska przejechałem koniem
+[22:46:02] <Thebassa> ;_;
+[22:46:24] <FAiM> a kon juz dostal zaopatrzeniem?
+[22:46:47] <Thebassa> nie
+[22:47:12] <FAiM> to jak sie starasz ;p
+[22:49:12] *** Joins: roobalek (~roobalek@fbb8a3c.16190e58.c69.petrotel.pl)
+[22:49:24] <roobalek> bry ;D
+[22:50:14] <Thebassa> normalnie
+[22:51:45] <Thebassa> myślałem, że to skonczę w weekend
+[22:51:51] <Thebassa> a tu tydzień już mija
+[22:51:52] <Thebassa> well shit
+[22:52:59] <djbeast> shit happened
+[22:54:05] <FAiM> a jest juz tam jakis plot?
+[22:54:31] <Thebassa> już nawet skonczyłem główną fabułe chyba
+[22:54:50] <Thebassa> główny zły pokonany
+[22:54:54] <Thebassa> znaczy
+[22:54:56] <FAiM> aha
+[22:54:58] <Thebassa> drugi główny zły
+[22:55:02] <FAiM> zagraj w swoje urodziny
+[22:55:06] <Thebassa> nie ten co umrze za 100 lat dopiero
+[22:55:09] <FAiM> albo w dzien ktory tam ustawiles
+[22:55:26] <Thebassa> impreze mi zrobią w grze?
+[22:55:29] *** Joins: Invi (~Invi@1c25dec6.35474391.rev.vline.pl)
+[22:55:47] <Thebassa> ogólnie custscenek jest O WIELE mniej niż w mgs4
+[22:55:51] <Thebassa> co mnie bardzo cieszy
+[22:56:21] <Invi> yo
+[22:57:00] <Thebassa> tylko wnerwiają mnie rzeczy typu
+[22:57:02] <FAiM> nie lubisz cutescenek?
+[22:57:15] <Thebassa> nie możesz ukonczyć misji bo nie wynalazłeś jeszcze przedmiotu x
+[22:57:23] <Thebassa> lubię
+[22:57:29] <Thebassa> ale gdybyś zagrał w mgs4
+[22:57:37] <Thebassa> to byś widział, dlaczego mnie to cieszy
+[22:57:55] <FAiM> 90% gry to cutescenki?
+[22:58:06] <Thebassa> pretty much 
+[22:58:15] <Thebassa> wszysko przedłużone jest niesamowicie
+[22:59:02] *** Parts: pacyfikator (~bogusz_cz@159b2242.1df4f87e.adsl.tpnet.pl) ()
+[22:59:48] <Thebassa> dzieciak wlazł na jakąś wieżę
+[22:59:56] <Thebassa> i nie mam jak go ściągnąć 
+[23:00:06] <Thebassa> bo nie mam fultonów dla dzieci 
+[23:00:23] <FAiM> snajperka?
+[23:00:24] <djbeast> zastrzel go
+[23:00:32] <djbeast> sam spadnie
+[23:03:22] <Thebassa> zwalam go z niej co chwila
+[23:03:44] <Thebassa> ale to najwidoczniej nie jest dobry sposób
+[23:03:52] <Thebassa> bo wywala mi misja failed
+[23:03:56] <FAiM> metalowa ta wieza?
+[23:04:10] <Thebassa> jeszcze ten miler ma do mnie żal 
+[23:04:16] <Thebassa> że pozwalam dziecku umrzeć 
+[23:04:20] <Thebassa> fag
+[23:04:27] <Thebassa> z cegieł
+[23:04:29] <Thebassa> duh
+[23:04:47] <FAiM> mialbys pieska
+[23:04:55] <FAiM> to by byla inna rozmowa ;p
+[23:06:46] *** Joins: Guest125146 (dmf@164642ae.1654620b.dynamic.chello.pl)
+[23:07:57] <Thebassa> >Pick up the kid, and slowly walk off the edge. After enough tries he should survive the fall.
+[23:07:59] <Thebassa> vg radzi
+[23:08:43] <FAiM> heh
+[23:08:53] <FAiM> zrzuc go na konia ;p
+[23:09:34] *** Quits: atm (dmf@164642ae.1654620b.dynamic.chello.pl) (Ping timeout: 360 seconds)
+[23:10:00] <Thebassa> myślałem nad tym
+[23:10:08] <Thebassa> w sumie równie dobrze moge zobaczyć
+[23:10:35] *** Joins: atm (dmf@164642ae.1654620b.dynamic.chello.pl)
+[23:14:22] *** Quits: Guest125146 (dmf@164642ae.1654620b.dynamic.chello.pl) (Ping timeout: 360 seconds)
+[23:26:25] <FAiM> i co
+[23:26:36] <FAiM> kon zamortyzowal upadek?
+[23:34:30] <Thebassa> nie
+[23:34:42] <FAiM> glupi kon ;p
+[23:50:30] <FAiM> a nie mozesz mu tego balona podlaczyc?
+[23:59:54] <Thebassa> no właśnie nie

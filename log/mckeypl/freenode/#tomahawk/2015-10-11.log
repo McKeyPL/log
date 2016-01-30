@@ -1,0 +1,165 @@
+[00:01:30] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[00:01:30] <github-tomahawk> [13tomahawk] 15dschmidt pushed 1 new commit to 06master: 02http://git.io/vCZds
+[00:01:30] <github-tomahawk> 13tomahawk/06master 147319730 15Dominik Schmidt: Fix weird OSX target names
+[00:01:30] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[00:02:53] <domme> muesli: can you try that?
+[00:02:56] <domme> ^
+[00:15:17] <muesli> sure
+[00:20:58] <domme> :)
+[00:53:05] *** Quits: soee_ (~soee@aftr114.neoplus.adsl.tpnet.pl) (Ping timeout: 268 seconds)
+[01:06:35] <domme> muesli: any success/failure with the latest commit?
+[01:07:29] *** Joins: github-tomahawk (~github-to@192.30.252.34)
+[01:07:29] <github-tomahawk> [13tomahawk] 15dschmidt merged 06master into 06tools: 02http://git.io/vCZhm
+[01:07:29] *** Parts: github-tomahawk (~github-to@192.30.252.34) ()
+[01:07:49] <domme> muesli: if you still want to test the tools branch, it's also updated to that ^
+[01:08:01] <muesli> domme: a few more minutes i'm afraid
+[01:08:18] <domme> muesli: okies
+[01:16:50] <muesli> domme: ok, master seems unbroken except for tools. back to tools now
+[01:16:58] <domme> muesli: :-)
+[01:17:11] <domme> i have zee hopes
+[01:27:13] * domme really doesnt want to stop your new qt5 efforts on osx ;-)
+[01:27:28] <domme> or even wants to support them ;-)
+[01:28:05] <domme> lfranchi: ping me, when you have time to play around with your weird attica issue. i might (or might not) have a fix for that
+[01:29:52] <lfranchi> domme: around but not really
+[01:29:53] <lfranchi> :)
+[01:30:21] <domme> lfranchi: haha ok. maybe tomorrow night?
+[01:30:57] <domme> my time.. basically this time or a bit earlier? :)
+[01:36:16] <lfranchi> if you leave instructions i can give it a shot :)
+[01:36:20] <lfranchi> mom is visiting so not around a ton this weekend
+[01:54:51] <muesli> domme: https://paste.kde.org/pfj6cpbwe
+[01:54:51] <tomabee_> [ KDE Paste | paste.kde.org |  ]
+[02:14:33] <theli_ua> MrMaffen: does new play store release include external resolvers support?
+[02:18:21] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[02:27:42] *** Joins: bluu (~pi@cpc69721-haye18-2-0-cust154.17-4.cable.virginm.net)
+[03:20:54] *** Quits: bluu (~pi@cpc69721-haye18-2-0-cust154.17-4.cable.virginm.net) (Quit: leaving)
+[03:24:16] <HorusHorrendus> ahh Berlin ... such a wonderfull city ... for food, drinking & party at least ;)
+[04:35:59] *** Quits: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de) (Quit: Leaving.)
+[05:33:48] *** Joins: mgue1 (~mgue@f048057136.adsl.alicedsl.de)
+[05:36:44] *** Quits: mgue (~mgue@x590f625c.dyn.telefonica.de) (Ping timeout: 265 seconds)
+[08:55:46] *** Joins: github-tomahawk (~github-to@192.30.252.45)
+[08:55:46] <github-tomahawk> [13tomahawk] 15muesli pushed 1 new commit to 06master: 02http://git.io/vCnXT
+[08:55:46] <github-tomahawk> 13tomahawk/06master 1461c0b66 15Tomahawk CI: Automatic merge of Transifex translations
+[08:55:46] *** Parts: github-tomahawk (~github-to@192.30.252.45) ()
+[09:49:22] <domme> muesli odd
+[09:58:54] <muesli> yeah, was a clean build tho
+[11:03:48] <domme> muesli master or tools branch?
+[11:04:22] <domme> just to be sure
+[11:28:31] *** Joins: Fohlen (~Fohlen@v22015072923726622.yourvserver.net)
+[11:44:46] *** Joins: soee_ (~soee@aftr114.neoplus.adsl.tpnet.pl)
+[11:57:01] *** Quits: soee_ (~soee@aftr114.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[11:57:58] *** Joins: soee (~soee@aftr114.neoplus.adsl.tpnet.pl)
+[11:58:39] *** Quits: soee (~soee@aftr114.neoplus.adsl.tpnet.pl) (Client Quit)
+[11:58:57] *** Joins: soee (~soee@aftr114.neoplus.adsl.tpnet.pl)
+[12:44:16] <alastairp> we want to put toma.hk web embed on listenbrainz. who can help us with a few quetions?
+[13:22:21] <muesli> alastairp: shoot
+[13:22:44] <alastairp> —> #metabrainz, where we have more people working on this, if you don’t mind
+[14:02:11] *** Joins: arkhi (~fabien@116.233.59.150)
+[14:24:37] *** Joins: soee_ (~soee@agva215.neoplus.adsl.tpnet.pl)
+[14:25:30] *** Quits: soee (~soee@aftr114.neoplus.adsl.tpnet.pl) (Ping timeout: 265 seconds)
+[14:25:38] *** Quits: arkhi (~fabien@116.233.59.150) (Quit: Leaving.)
+[14:25:54] *** Joins: arkhi (~fabien@116.233.59.150)
+[14:26:28] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[14:31:22] *** Joins: justin_time (~stefan@p50889F42.dip0.t-ipconnect.de)
+[14:32:28] <justin_time> Hey! It's done! First Qt5 build on Ubuntu 15.10 successful!!
+[14:40:36] <MrMaffen> theli_ua: yes it does
+[14:40:43] <MrMaffen> justin_time: nice :)
+[14:43:28] <justin_time> Next step: I'll implement a nightly build system for the qt5 builds and extend the support to Ubuntu 15.04. After testing I'll publish the qt5 builds into the official PPA.
+[14:58:12] <arkhi> justin_time: You make my eyes shine.
+[14:59:45] <MrMaffen> awesome!
+[15:10:17] <tomabee_> @yanatone mentioned: idk why anyone would use itunes on purpose when there are much simpler &amp; cleaner programs like @tomahawk to play music [<no value>]
+[15:19:19] *** Quits: justin_time (~stefan@p50889F42.dip0.t-ipconnect.de) (Quit: Ex-Chat)
+[15:30:56] <domme> muesli: the build error still happened on the tools branch?
+[15:35:36] *** Quits: arkhi (~fabien@116.233.59.150) (Quit: Leaving.)
+[15:54:56] <jherskowitz> moin
+[15:57:34] *** Joins: bluu (~pi@cpc69721-haye18-2-0-cust154.17-4.cable.virginm.net)
+[16:41:11] *** Joins: arkhi (~fabien@116.233.59.150)
+[17:04:37] <domme> moin jherskowitz 
+[17:10:14] *** Quits: arkhi (~fabien@116.233.59.150) (Quit: Leaving.)
+[18:16:23] <tomabee_> @ArcoMul mentioned: @tomahawk @hatchet Awesome! [<no value>]
+[18:16:58] *** Joins: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de)
+[18:17:12] <cloakable> Ooo, QT5 tomahawk?
+[18:17:23] <cloakable> What does that bring vs. qt4?
+[18:17:43] <domme> hey cloakable 
+[18:18:02] <cloakable> hey domme
+[18:18:33] <domme> nothing for now, it's just for not missing the boat
+[18:18:59] <domme> and also new bug fixes are mostly only applied to qt5, e.g. ssl support seems to be broken on win10 with qt4
+[18:19:01] <cloakable> Aha
+[18:19:22] <domme> but when we completely finished the migration it will also allow for better handling of hidpi, animations, ...
+[18:19:24] <cloakable> Are Hatchet playlists planned for the desktop app? :D
+[18:20:02] <domme> cloakable: like syncing down? totally
+[18:20:08] <domme> we just havent gotten round to it
+[18:20:12] <cloakable> Yaaaay
+[18:20:21] <domme> cloakable: so.. that means you're using hatchet? :)
+[18:20:55] <cloakable> domme: I've got it logged in on Android, desktop, and laptop :)
+[18:21:14] <domme> :)
+[18:21:55] <domme> cloakable: but are you also using the website? 
+[18:22:22] <cloakable> domme: A little, bit I prefer the apps honestly
+[18:22:37] <domme> hehe okies
+[18:22:51] <domme> cloakable: any feedback tho? what can we improve?
+[18:24:53] <cloakable> Hmm, it seems pretty slick at the moment. Maybe a 'Your Libraries' feature so any clients a user has logged into Hatchet makes their local music available through the web interface?
+[18:25:52] <domme> that's not exactly easy and might also be problematic according to law
+[18:26:12] <domme> but who knows.. would be a great feature to have otherwise tho, indeed
+[18:26:14] <cloakable> Aha
+[18:27:04] <cloakable> Also: I'd like to see the Hatchet plugin allow Tomahawk instances to contact each other, if they can't already
+[18:28:43] <cloakable> But that's more of a 'functionality enabled by the website' than the interface itself
+[18:29:39] <cloakable> Oh, Tomahawk isn't working with KDE Telepathy anymore
+[18:32:16] <domme> cloakable: mhh
+[18:32:20] <domme> cloakable: in qt5, nope
+[18:32:25] <domme> that part hasnt been ported
+[18:32:32] <domme> anyone volunteers? :P
+[18:33:05] <cloakable> It's not working in QT4 either :P
+[18:34:04] <domme> hehe 
+[18:34:04] <cloakable> Happened around the time KDE Telepathy switched to using Hangouts instead of GTalk
+[18:34:10] <domme> uh oh
+[18:34:19] <domme> needs to be looked at, noone reported it so far
+[18:34:34] <domme> (at least not that i know of)
+[18:35:04] <cloakable> Maybe nobody is using the KDE integration xD
+[18:35:15] <domme> hehe
+[18:35:18] <domme> i'm not
+[18:35:48] <cloakable> I'm not because it doesn't work, but I would otherwise xD
+[18:37:10] <domme> hehe
+[18:38:39] <cloakable> I'd also use Tomahawk more on my Android, but it's sadly not the smooth experience with Google Play that the main app is. Thankfully it still scrobbles up to Hatchet. xD
+[18:40:05] <domme> cloakable: what version are you using?
+[18:40:07] <domme> MrMaffen: ^
+[18:41:05] <cloakable> domme, MrMaffen: 0.90_armv7a on an HTC Sensation
+[18:41:22] <domme> cloakable: i mean is that from app store or nightly builds from the website?
+[18:41:29] <cloakable> App
+[18:41:45] <domme> i think MrMaffen pushed a big update recently
+[18:42:07] <cloakable> He did, it got Google Play working again, among other things
+[18:42:54] <domme> :-)
+[18:43:09] <domme> i see, you#re better informed than i am :-)
+[18:43:37] <cloakable> Thinking of getting a OnePlus Two, thinking LTE & better processor might make the app work more smoothly
+[18:45:22] <cloakable> 4G has rolled out in Bristol on GiffGaff finally :D
+[18:56:29] <cloakable> Hmm, anyone know how well the OnePlus One and Tomahawk play together?
+[19:11:37] *** Joins: justin_time (~stefan@2a02:908:f35d:4b00:85ac:7731:8559:5417)
+[19:14:41] <domme> MrMaffen: ^ ;-)
+[19:42:43] <jherskowitz> cloakable: that's my setup
+[19:43:04] <cloakable> jherskowitz: review? :)
+[19:45:20] <jherskowitz> cloakable: no complaints 😀
+[19:46:13] <cloakable> woot
+[19:46:32] *** Quits: justin_time (~stefan@2a02:908:f35d:4b00:85ac:7731:8559:5417) (Remote host closed the connection)
+[20:13:55] <MrMaffen> cloakable: for now I want to focus on making the app stable and mostly bug-free. after that I'll release and right after that I'll tackle performance optimizations. but I'm afraid that even after that the htc sensation might not provide the best performance when using tomahawk :/
+[20:14:18] <MrMaffen> cloakable: the oneplus two will ofc be more than enough
+[20:14:47] <cloakable> And the oneplus one?
+[20:15:06] <cloakable> Took a look at the two, and it's not doing LTE in the UK again
+[20:15:59] <MrMaffen> cloakable: also more than enough
+[20:16:09] <cloakable> Awesome
+[20:16:22] <cloakable> That will likely be my next phone :D
+[20:16:40] <MrMaffen> nice :)
+[20:26:32] *** Joins: modeno1 (modeno1@gateway/web/scrollback.io/x-opfvvugbgqkrkayn)
+[20:26:32] <modeno1> muesli2: when you mentioned ci a few days ago, were you talking about continuous integration? or another concept that I didn't quite catch?
+[21:26:41] <muesli> modeno1: continuous integration, yeah
+[21:26:46] <muesli> domme: yeah, tools branch
+[21:31:21] <domme> muesli: hmm :\
+[21:32:21] <modeno1> thanks for the clarification :)
+[21:46:30] *** Quits: soee_ (~soee@agva215.neoplus.adsl.tpnet.pl) (Remote host closed the connection)
+[21:46:47] *** Joins: soee (~soee@agva215.neoplus.adsl.tpnet.pl)
+[21:48:00] *** Parts: modeno1 (modeno1@gateway/web/scrollback.io/x-opfvvugbgqkrkayn) ()
+[21:49:21] *** Quits: apb1963 (~apb@174-135-20-37.res.bhn.net) (Remote host closed the connection)
+[22:05:55] *** Quits: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de) (Ping timeout: 268 seconds)
+[22:07:13] *** Joins: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de)
+[22:25:49] *** Joins: danimo_ (~daniel@kde/danimo)
+[22:26:11] *** Quits: danimo (~daniel@kde/danimo) (Ping timeout: 250 seconds)
+[22:29:24] *** danimo_ is now known as danimo
+[23:06:46] *** znf is now known as Teralon
+[23:06:51] *** Teralon is now known as znf

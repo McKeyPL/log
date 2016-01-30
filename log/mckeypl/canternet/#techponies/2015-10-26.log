@@ -1,0 +1,219 @@
+[00:13:54] <init3> So I have weird tech quandary for y'all. If I tilt my laptop in such a way it will mute the audio. Does this in windows and linux. It isn't so much as irritating as it is amusing but it is also a design flaw of some sort because it does this on two different laptops of the same model. 
+[00:15:01] <JustAberrant> speaker wires probably came unsoldered
+[00:15:14] <init3> No, it is a software mute
+[00:15:25] <init3> Also does it headphones or speakers
+[00:15:27] <JustAberrant> well then that's just weird ;p
+[00:15:32] <init3> aye
+[00:16:41] <init3> it has those weird type of audio buttons where you don't actually press them, just touch them. I assume the mute button is somehow being [TRIGGERED] but it is fucking weird. 
+[00:17:21] <init3> and there is a row of these but the vol up or vol down or others are never popped. 
+[00:17:43] * JustAberrant shruggles
+[00:17:47] <init3> Rite?
+[00:17:54] <JustAberrant> run xev, do the tilt, see if it picks up a keypress
+[00:17:55] <init3> I so wonder what it is though. 
+[00:18:05] <JustAberrant> assuming those touch buttons generate keypresses that is
+[00:18:21] <init3> it is pretty random but I can try. I think I did once and it does. 
+[00:18:40] <init3> Actually, I know it does because there is an LED under the buttons and I'll see the mute one light up. 
+[00:19:27] <init3> wait
+[00:19:49] <init3> maybe it isn't tilt so much as ESD of some kind?
+[00:20:10] <HoneyDrops> I would assume the headphone jack has a contact to check if something is plugged in, for some reason it's loose enough that tilting the laptop makes it think something is plugged in
+[00:20:28] <init3> It'll do this when headphones connected the whole time
+[00:20:40] <Gigabit> That reminds me, I need to contact logitech
+[00:20:41] <HoneyDrops> might be breaking/remaking the connection
+[00:21:24] <init3> I don't think so because plugging headphones does not generate the same behvior. 
+[00:21:34] <init3> Also, this is across two laptops of the same model. 
+[00:21:36] <HoneyDrops> but first check keypresses, as the headphone jack mute shouldn't generate a keypress
+[00:22:05] <init3> It is so hard to reproduce 
+[00:22:15] <init3> It does rarely do it. 
+[00:22:31] <JustAberrant> try shaking it violently
+[00:22:36] <init3> lol
+[00:22:49] <init3> If it had a SSD I probably would. 
+[00:23:13] <HoneyDrops> if you can verify it's a keypress, should be trivial to just disable or remap it
+[00:23:17] <init3> So bizzare
+[00:24:04] <init3> I mean, it isn't as annoying as not having a mute button would be. I'm just curious as to the cause.
+[00:24:36] <init3> Well, not the actual mute button over the ketboard. 
+[00:25:13] <init3> I'm going to have to rub my feet across the carpet with socks and see if maybe that does it. I'm really thinking ESD now. 
+[00:25:53] <init3> But then again the frame is plastic
+[00:25:55] <init3> hmm
+[00:26:00] <JustAberrant> sounds like a plan.. be sure to unplug the laptop so it's not grounded and try to find an exposed metal part ;p
+[00:26:24] *** Joins: CrassyPaddles (test@Pony-fm9.enl.137.198.IP)
+[00:26:28] <JustAberrant> top of the hard drive or a pin on your ram chips is best bet ;)
+[00:28:57] <init3> Hue
+[00:39:42] *** CyberJacob is now known as zz_CyberJacob
+[00:41:31] *** Quits: Phase (Phase4@Pony-0qth2h.internode.on.net) (Ping timeout: 121 seconds)
+[00:44:48] *** Quits: CrassyPaddles (test@Pony-fm9.enl.137.198.IP) (Ping timeout: 121 seconds)
+[01:40:24] *** Quits: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se) (Quit: Leaving.)
+[01:42:47] *** Joins: CrassyPaddles (test@Pony-n7a.enl.137.198.IP)
+[02:26:28] *** Joins: Asoka_White (Asoka@Pony-9jgubm.net-htp.de)
+[02:29:40] *** Quits: Asoka (Asoka@Pony-p281i0.net-htp.de) (Ping timeout: 121 seconds)
+[02:52:32] *** Flowheart is now known as Starburn
+[02:56:56] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[03:03:15] *** Seoson is now known as Seoson|BNC
+[03:40:43] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[04:17:10] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[04:54:07] *** Gigabit is now known as Soarin
+[04:58:53] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Connection closed)
+[05:08:49] *** Quits: Obaskyr (Tachy@Pony-1eooao.range86-157.btcentralplus.com) (Ping timeout: 121 seconds)
+[05:13:39] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[05:22:17] *** Joins: TachyonicBow (Tachy@Pony-0nd708.range86-175.btcentralplus.com)
+[05:25:42] *** Soarin is now known as Snoarin
+[05:27:26] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[05:27:28] *** Joins: Fallfeathers (Fallfeather@Pony-0pt6g2.bigpond.net.au)
+[05:29:30] *** TachyonicBow is now known as Obaskyr
+[05:35:15] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[05:53:00] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[06:44:39] *** RedHelper is now known as Creeps|AFK
+[06:49:45] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[06:58:53] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[07:24:26] *** Quits: CrassyPaddles (test@Pony-n7a.enl.137.198.IP) (Quit: Leaving)
+[07:26:02] *** Quits: Crimson_Tail (Bluepon@Pony-uvr19f.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[07:58:01] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[08:06:10] *** Quits: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP) (Ping timeout: 121 seconds)
+[08:14:06] *** Joins: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP)
+[08:17:12] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[08:25:23] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[08:52:37] *** zz_CyberJacob is now known as CyberJacob
+[09:26:00] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[09:32:43] *** CyberJacob is now known as zz_CyberJacob
+[09:33:05] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Connection closed)
+[09:33:27] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[09:36:31] *** Awaykitty is now known as Unixkitty
+[09:43:15] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Quit: Leaving)
+[09:44:19] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[09:49:00] <Compu> https://youtu.be/_HEkTYDHz64
+[09:49:01] <PinkiePieBot> [ Light of Your Cutie Mark -- Synthesia HD - 4474 views - 2m 58s long - 386 likes - 99.74% ]
+[09:53:20] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Connection closed)
+[09:55:15] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[10:05:13] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[11:09:51] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Connection closed)
+[11:18:47] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[11:25:12] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[11:41:14] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Quit: Leaving)
+[11:45:38] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[11:47:19] *** Unixkitty is now known as Awaykitty
+[11:49:59] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Connection closed)
+[11:52:28] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[12:09:13] *** Joins: Asoka (Asoka@Pony-sv4q2m.net-htp.de)
+[12:10:24] *** Quits: Asoka_White (Asoka@Pony-9jgubm.net-htp.de) (Ping timeout: 121 seconds)
+[12:12:30] *** Joins: Asoka_White (Asoka@Pony-6q8jpl.net-htp.de)
+[12:13:21] *** Quits: Asoka (Asoka@Pony-sv4q2m.net-htp.de) (Ping timeout: 121 seconds)
+[12:32:07] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[12:42:55] *** Joins: Finwe^ (vhalkola@Pony-oi2dre.org.aalto.fi)
+[12:52:08] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (Quit: Server going down for maintenance.)
+[12:52:21] *** Seoson|BNC is now known as Seoson
+[12:52:27] *** Finwe^ is now known as Finwe
+[12:54:17] *** Joins: Wubz (androirc@Pony-9m24ff.bb.dnainternet.fi)
+[12:54:45] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Connection closed)
+[12:57:18] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[13:05:46] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Connection closed)
+[13:15:49] *** Joins: Asoka (Asoka@Pony-hmv3eb.net-htp.de)
+[13:18:02] *** Quits: Asoka_White (Asoka@Pony-6q8jpl.net-htp.de) (Ping timeout: 121 seconds)
+[13:37:09] *** Awaykitty is now known as Unixkitty
+[13:38:57] <johnsey> https://youtu.be/6OYfioDIzrc
+[13:38:57] <PinkiePieBot> [ Force Flops? Chewbacca arrested in Ukraine after campaigning for Darth Vader - 28204 views - 1m 19s long - 734 likes - 95.95% ]
+[13:39:58] *** Joins: DataByte (DataByte@Pony-ao1o67.g424.9euc.0247.2601.IP)
+[13:57:29] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[14:19:35] *** Joins: Asoka_White (Asoka@Pony-q1agsl.net-htp.de)
+[14:20:25] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Connection closed)
+[14:21:39] *** Quits: Asoka (Asoka@Pony-hmv3eb.net-htp.de) (Ping timeout: 121 seconds)
+[14:23:35] *** Quits: Fallfeathers (Fallfeather@Pony-0pt6g2.bigpond.net.au) (Connection closed)
+[14:42:50] *** Snoarin is now known as Vega
+[15:21:37] *** Quits: Wubz (androirc@Pony-9m24ff.bb.dnainternet.fi) (Connection closed)
+[15:58:19] *** Vega is now known as GigaWork
+[16:20:24] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[16:22:49] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[16:30:57] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[16:32:22] *** Quits: DataByte (DataByte@Pony-ao1o67.g424.9euc.0247.2601.IP) (Ping timeout: 121 seconds)
+[16:33:44] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[16:33:45] *** Joins: Sin (Sin@is.hustlin.everyday)
+[16:35:11] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[16:42:03] *** locodash11[lagout] is now known as locodashie11
+[16:52:40] *** Joins: Crimson_Tail (Bluepon@Pony-grvggt.cg80.k4gu.0151.2601.IP)
+[17:02:25] *** Joins: DataByte (DataByte@Pony-ao1o67.g424.9euc.0247.2601.IP)
+[17:53:36] *** Unixkitty is now known as Awaykitty
+[17:59:32] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[18:46:30] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[19:19:07] *** Joins: CrassyPaddles (test@Pony-out.enl.137.198.IP)
+[19:31:36] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[19:51:46] <init3> https://scontent-ord1-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/12118934_573176266167264_7279674107601166080_n.png?oh=1ce366921794a2d73857187022576528&oe=56C02916
+[19:52:04] <init3> I wish I had style like that
+[20:16:33] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[20:40:58] *** Joins: Finwe^ (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[20:49:09] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "switchin' boxes, be back shortly")
+[20:50:45] *** zz_CyberJacob is now known as CyberJacob
+[21:00:22] *** Quits: Compu (compu@snuggly.filly) (A TLS packet with unexpected length was received.)
+[21:26:52] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[21:38:43] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[21:58:33] <Sakura> I'm working on a TOS & Privacy Policy for my IRC Server. I've decided to go forth with a plan to focus on community-based chats as an alternative to Facebook & Twitter for my local area & especially my friends IRL and even ones I met online.
+[22:01:24] <Sakura> Any advice & suggestions? I think I got it handled but I can always take advice to keep it a simple and short as possible.
+[22:03:37] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Ping timeout: 121 seconds)
+[22:04:37] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[22:17:43] *** Quits: CrassyPaddles (test@Pony-out.enl.137.198.IP) (Quit: Leaving)
+[22:24:40] <Moonlightning> Sakura: KISS
+[22:25:04] <Moonlightning> don't do stupid and off-putting things
+[22:25:17] <Lapsus> "Don't be a dick"
+[22:25:25] <Lapsus> :p
+[22:25:38] <Moonlightning> why the hell do you need a privacy policy
+[22:25:38] <Seoson> Poor dicks.
+[22:25:45] <Moonlightning> that's a redflag for me
+[22:26:29] <Moonlightning> It's IRC. Anyone can see anything posted to public channels; only those invited to +i channels can see what's posted to them; only the two participants can see what goes on in PM.
+[22:26:52] <Moonlightning> Clients are responsible for securing their links to the network; you are responsible for securing the network and its links
+[22:27:25] <Moonlightning> The former of that means that if one person in a +i channel isn't using TLS or is using TLS badly, it's on them, not you
+[22:27:41] <Moonlightning> but if the servers don't use TLS or use bad TLS with each other, that's on you
+[22:27:51] <Moonlightning> you don't need a privacy policy.
+[22:30:06] <ShivalWolf> you dont have any rights here. shut up and dont be a dick"
+[22:30:31] <ShivalWolf> the number of srupid people who claim bans and ignores voilate their 1st amedment rights is crazy
+[22:30:57] *** Joins: Compu (compu@snuggly.filly)
+[22:32:44] <ShivalWolf> ive had a complaint once where they said that a person put them on ignore and it voilated their rights and demanded admins ban them
+[22:33:32] <Sakura> Yeah, we may have the First Amendment but we also have the right to run our chats how we see fit.
+[22:34:12] <Sakura> We could kick or ban someone for no reason & it would be legal.
+[22:34:17] <ShivalWolf> yep
+[22:34:39] <ShivalWolf> but you always get the nutters who will clsim otherwise
+[22:35:22] <ShivalWolf> claim
+[22:38:34] *** Quits: firestream (vinylderpy@Pony-8t4kl3.dsl.bell.ca) (Ping timeout: 121 seconds)
+[22:41:31] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:45:55] <Moonlightning> ShivalWolf: shouldn't hold up in court anyway, though
+[22:50:36] <JustAberrant> my understanding of American law is that it's similar to Canadian in that you're protected against violations of your freedom of speech from the government
+[22:50:53] <JustAberrant> corporations and individuals are under no obligation to provide you a forum
+[22:52:16] <Moonlightning> Yeah.
+[22:53:24] <Sakura> There are probably government regulations over corporations though.
+[22:53:32] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-7n8o4k.tmodns.net)))
+[22:53:34] *** Divide|TechSupport is now known as Divide
+[22:54:08] *** Joins: DJ-C0L7[EIT]_ (IceChat77@DJ-C0L7.EIT.LLC)
+[22:54:20] *** DJ-C0L7[EIT]_ is now known as DJ-C0L7[EIT]
+[22:56:50] <Sakura> Regulations are for good reason most of the time anyway. Civil Rights and Equal Pay & all.
+[22:59:11] <Moonlightning> Freedom of speech doesn't mean you get to pay women less. That doesn't make any sense.
+[22:59:15] <Moonlightning> They're completely unrelated.
+[23:00:49] * JustAberrant nods
+[23:00:58] <JustAberrant> in general, I feel like Canadian law is more balanced
+[23:01:11] <JustAberrant> `merican law (and honestly opinions in general) are much more binary
+[23:01:55] <JustAberrant> we don't have true freedom of speech (though ironically due to various political things, I feel like we have more practically speaking..)
+[23:02:43] <JustAberrant> the right to express yourself is weighed by the rights of others to not be hassled by hate groups/etc, and it's more of a middle ground
+[23:03:02] <JustAberrant> vice the US where you can have an open air clan meeting
+[23:03:33] <JustAberrant> same as things like gun control (everyones favourite topic)
+[23:03:57] <JustAberrant> you can own guns, as a collector, for hunting, for recreation, etc
+[23:04:39] <JustAberrant> but their are limitations
+[23:04:50] <JustAberrant> and honestly I'm kinda ok where they draw the line on that one
+[23:06:30] <wolfyshy> straw poll for the pones here, silly question I know..
+[23:06:31] <JustAberrant> it doesn't solve all (or even a lot) of the problems with guns, it's still easy enough to get them
+[23:06:44] <wolfyshy> is there ever an instance where someone might change the country code of their phone number without changing the rest of the number?
+[23:06:46] <JustAberrant> but it solves some of them, raises the barrier to entry, etc
+[23:07:09] <JustAberrant> wolfyshy: theoretically, sure
+[23:07:23] <JustAberrant> wolfyshy: you could move and by random chance or request get the same number
+[23:07:24] <Seoson> wolfyshy: In case they typed in the incorrect country code for example
+[23:07:35] <wolfyshy> Seoson: numbers are verified before being saved
+[23:07:46] <wolfyshy> so incorrect isn't a thing
+[23:07:58] <wolfyshy> JustAberrant: hm, I suppose.
+[23:08:00] <wolfyshy> good enough for me
+[23:08:07] <Seoson> Than I don't think so
+[23:08:42] <Seoson> The risk of that happening is ultra low due to region codes
+[23:08:54] <Seoson> Even with vanity numbers
+[23:11:49] *** Creeps|AFK is now known as RedHelper
+[23:21:43] <Lapsus> incorrect is always a thing
+[23:29:37] * JustAberrant has Lapsus placed in the ocean
+[23:45:04] *** Quits: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP) (Ping timeout: 121 seconds)
+[23:45:33] *** Joins: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP)
+[23:51:23] *** Quits: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP) (Ping timeout: 121 seconds)
+[23:51:46] *** Joins: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP)
+[23:55:37] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[23:56:28] *** Quits: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP) (Ping timeout: 121 seconds)
+[23:57:48] *** Joins: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP)

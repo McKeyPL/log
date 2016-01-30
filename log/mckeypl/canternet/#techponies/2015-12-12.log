@@ -1,0 +1,732 @@
+[00:00:16] <JustAberrant> GigaWork: calculators for arch?
+[00:06:13] *** Quits: WuBzY (WuBzY_sLeEp@Pony-r1uspc.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[00:08:37] <GigaWork> yes
+[00:12:59] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[00:19:56] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:21:43] *** Joins: Webster (Webster@Pony-4eid99.fios.verizon.net)
+[00:30:59] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:32:26] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[00:33:03] <Compu> mniip: phone battery?
+[00:33:21] <mniip> laptop
+[00:33:24] <Compu> oh
+[00:33:32] <Compu> yeah might be bad battery
+[00:34:02] * JustAberrant calulates mniip's arch
+[00:34:17] <JustAberrant> also could be the charger ;p
+[00:34:36] <mniip> sorry I use gentoo
+[00:35:52] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[00:36:02] <JustAberrant> excellent ;p
+[00:44:35] <Moonlightning> GigaWork: bc?
+[00:45:33] <JustAberrant> bc: because you should have to think about data types when using a calculator
+[00:45:37] <mniip> well how awesome
+[00:45:41] <mniip> notify-send isn't working
+[00:45:56] <JustAberrant> or..
+[00:46:14] <JustAberrant> bc: cause you should need to specify that you'd like decimal points..
+[00:49:17] <mniip> bc is great
+[00:54:33] <HoneyDrops> I like orpie
+[00:54:43] * JustAberrant uses it frequently for quick stuff, but I find it's weirdness with scale and such annoying
+[01:16:48] *** mniip is now known as \m
+[01:30:09] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:40:51] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[01:50:36] <Moonlightning> JustAberrant: well, it's nice to be able to have arbitrary-magnitude integers :P
+[01:50:57] <Moonlightning> #techponies, how is `dd` with sparse images?
+[01:51:44] <Moonlightning> I'm thinking of reparitioning this flash drive. Ubuntu on one, TAILS on another, and maybe an encrypted data partition
+[01:53:13] <JustAberrant> well, dd is just a binary copy, it shouldn't care at all
+[01:53:32] <JustAberrant> whether you can transplant a partition and it still work is out of dd's hands
+[01:54:10] <Moonlightning> …actually, if I pack the OS partitions, it wouldn't need to be sparse
+[01:56:46] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (The TLS connection was non-properly terminated.)
+[01:59:37] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[02:13:39] *** Joins: nscoots (FreyGrimrod@Pony-fik8f6.sub-70-192-20.myvzw.com)
+[02:35:13] *** Joins: Asoka (Asoka@Pony-lpifhv.net-htp.de)
+[02:37:18] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[02:38:17] *** Quits: Asoka_White (Asoka@Pony-45prkc.net-htp.de) (Ping timeout: 121 seconds)
+[02:42:30] *** \m is now known as mniip
+[02:53:18] *** Joins: TuxRug (TuxRug@TuxRug)
+[02:57:14] *** Joins: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net)
+[02:58:47] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[03:11:22] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[03:12:55] *** Quits: Valiant (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[03:17:12] *** Joins: LinkM (WebChat@Pony-2llgbp.ct.charter.com)
+[03:17:31] *** Parts: LinkM (WebChat@Pony-2llgbp.ct.charter.com) ("")
+[03:19:28] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[03:31:02] <mniip> http://i.imgur.com/VSN5ykv.gif
+[03:39:06] <Moonlightning> You named a computer after yourself?
+[03:39:21] <Moonlightning> But what happens when you decommission it? :P
+[03:44:20] <mniip> it *is* me though :)
+[03:44:44] <Ola> lol
+[03:44:49] <Ola> my main machine is Leviathan
+[03:44:51] <Ola> because,. well
+[03:44:55] <Ola> >phenom II x6
+[03:44:57] <Ola> >usb 3.0
+[03:45:02] <Ola> >sata3
+[03:45:17] <mniip> $ pidof mniip
+[03:45:17] <mniip> 12831
+[03:47:58] <Moonlightning> wat
+[03:48:12] <mniip> beep boop
+[03:48:49] <Moonlightning> >> http://www.ted.com/talks/harald_haas_a_breakthrough_new_kind_of_wireless_internet
+[03:48:50] <PinkiePieBot> [ Harald Haas: Forget Wi-Fi. Meet the new Li-Fi Internet | TED Talk | TED.com ]
+[03:48:51] <Moonlightning> This scares me.
+[03:49:15] <Moonlightning> Okay, great, you can /receive/, at good speeds, using an off-the-shelf solar panel.
+[03:49:18] <Moonlightning> But what about SENDING?
+[03:49:29] * Moonlightning grumbles loudly about asymmetric uplinks.
+[03:49:54] <mniip> lifi sucks
+[03:50:07] <mniip> it's like...
+[03:50:13] <mniip> it's like quantum computing
+[03:50:24] <mniip> everyone believes it's magical omnipotent technology
+[03:50:26] <mniip> it's not
+[03:52:20] <Moonlightning> well, that doesn't mean it stinks
+[03:52:48] <Moonlightning> seems like a pretty solid proof-of-concept there
+[03:53:32] <Moonlightning> I was watching stuff about quantum computers yesterday though
+[03:53:49] <Moonlightning> They /are/ going to be crypto-breakingly good at prime factorization, yeah?
+[03:54:06] <JustAberrant> meh, it's like any other technology
+[03:54:18] <JustAberrant> people talk about it like it's going to drop in from the heavens suddenly one day
+[03:54:37] <JustAberrant> by the time quantum computing approaches anything useful, everything else will have evolved with it
+[03:54:57] <Moonlightning> They do /exist/, though, don't they?
+[03:55:10] <JustAberrant> debatable
+[03:55:48] <JustAberrant> there's one _extremely_ limited computer that can't really do anything practical and they arn't even sure if it's _actually_ a quantum computer
+[03:56:00] <Moonlightning> define /practical/
+[03:56:19] <Moonlightning> …actually, possibly regardless of that…
+[03:56:32] <Moonlightning> At some point, the governments are going to look into using them to break crypto.
+[03:56:34] <mniip> [05:51:57] <Moonlightning> They /are/ going to be crypto-breakingly good at prime factorization, yeah?
+[03:56:34] <JustAberrant> anything besides prove it might have technically done a thing 
+[03:56:41] <mniip> so far we've factored a 5-digit number
+[03:56:50] <Moonlightning> So at some point, //ahead of that//, we need to look into securing against it.
+[03:56:59] <Moonlightning> mniip: Great. Perfect time to start, then.
+[03:57:03] <JustAberrant> Moonlightning: already been done
+[03:57:13] <Moonlightning> JustAberrant: explain?
+[03:57:16] <Moonlightning> …oh.
+[03:57:18] <mniip> there is a quantum-secure encryption algorithm
+[03:57:21] <Moonlightning> Elliptic curves?
+[03:57:26] <mniip> no
+[03:57:30] <JustAberrant> Moonlightning: https://en.wikipedia.org/wiki/Quantum_cryptography
+[03:57:30] <PinkiePieBot> [ Quantum cryptography - Wikipedia, the free encyclopedia ]
+[03:57:35] <mniip> that
+[03:58:00] <JustAberrant> theory is _way_ ahead of practical implementation in this field
+[03:58:30] <JustAberrant> and a usable quantum computer is so far out at this point that pretty much nothing will be the same by the time it gets here
+[03:58:49] <mniip> you need a fancy medium for quantum encryption though
+[03:58:55] <Moonlightning> … ^
+[03:59:01] <Moonlightning> So…if we're trying to stay ahead… :V
+[03:59:10] <JustAberrant> right, which they'll have figured out long before it's needed
+[03:59:16] <mniip> not really
+[03:59:35] <mniip> unless they figure out how to make perfectly vacuum tubes out of chemicals that don't evaporate
+[03:59:50] *** Joins: Datalink (Datalink@Datalink)
+[03:59:52] <mniip> actually there still would be free electrons
+[03:59:59] <JustAberrant> or figure out <some other thing we can't even conceive of because so far in the future> 
+[04:00:36] <mniip> JustAberrant, how about a society where encryption is not needed
+[04:00:38] <Ola> http://i.imgur.com/3F1yuCv.jpg
+[04:01:06] <JustAberrant> mniip: just as possible as society dying before we get there
+[04:01:19] <Moonlightning> mniip: you still need to guard against those outside the society, though
+[04:01:29] <Moonlightning> since we're talking about far-future stuff :p
+[04:01:39] <JustAberrant> point is, we're still at the people taping cardboard wings to their arms and trying to fly stage, and you're talking about picking out fabric for the seats in the concord
+[04:01:40] <mniip> ayy
+[04:02:24] <JustAberrant> worrying about the effect of quantum computing at this point in time is (mostly) wasted energy, because it's going to exist in an entirely different world
+[04:02:24] <Moonlightning> …ohmai. There's something called BQSM…
+[04:02:59] <JustAberrant> very least it's not gonna drop out of the sky one day and all our stuff will be haxored by the government
+[04:03:01] <Googie> Speaking of which, "OpenAI" (not the source forge project) recently promised a billion dollars for ML research.
+[04:03:07] <Moonlightning> Ola: what'm I looking at here?
+[04:03:22] <JustAberrant> hell, by that point it's _very_ likely encryption will be illegal for private citizens
+[04:03:38] <Moonlightning> …what? I'm being researched now?
+[04:03:49] <Moonlightning> JustAberrant, stop being so pessmistic >:(
+[04:03:50] <Googie> Machine Learning.
+[04:03:50] <JustAberrant> we're heading in that direction, and we'll probably get there long before quantum computers
+[04:03:58] <mniip> missile launching
+[04:04:10] <Googie> (Basically AI, but AI has a bunch of connotations which confuse people)
+[04:04:11] <Moonlightning> we can stillll stoooop iiiiit
+[04:04:21] <JustAberrant> Moonlightning: pff, good luck ;p
+[04:05:31] <Googie> The concept of an artificial intelligence beyond our own has pretty profound implications, and there's a lot of speculation that it's relatively soon (within the grand scheme of things)
+[04:05:45] <Moonlightning> > relatively
+[04:05:48] <Moonlightning> > in the grand scheme of things
+[04:05:56] <Moonlightning> no. Just specify an order of magnitude.
+[04:06:37] <Googie> The average estimate within the community is around 2060 to 2070 apparently.
+[04:06:56] <Moonlightning> Wow.
+[04:07:05] <Moonlightning> So we're going to JUST miss it.
+[04:07:12] <Ola> Moonlightning: BlackBerry 7920.
+[04:07:20] <Moonlightning> Ola: …okay…?
+[04:08:44] <Googie> https://openai.com/blog/introducing-openai/
+[04:08:44] <PinkiePieBot> [ OpenAI ]
+[04:09:14] <Googie> That's a hell of a lot of funding for CompSci research.
+[04:16:45] *** Sour_Sweet is now known as Sour_Sweet|BNC
+[04:17:27] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[04:18:56] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[04:19:10] <tiwake> meh
+[04:19:19] <tiwake> in the end, computers are dumb
+[04:20:09] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[04:20:28] <mniip> that's only temporary
+[04:21:12] <Googie> And a lot of the things that they've traditionally been bad at are improving at a rapid rate. Computer Vision for example.
+[04:21:22] <tiwake> vision?
+[04:21:25] <tiwake> like cameras?
+[04:21:30] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[04:21:33] <Googie> Object recognition is something that has been a running joke about how crap computers are at it.
+[04:21:34] <mniip> like thing recognition
+[04:21:47] <mniip> yes, object, that word
+[04:21:48] <tiwake> oh, duck typing
+[04:21:51] * Moonlightning picks up Googie and gallops away!
+[04:21:51] <tiwake> :P
+[04:22:15] <HoneyDrops> I look forward to computers overtaking humans, means we can speed up improvement.
+[04:22:23] <tiwake> meh
+[04:22:28] <Googie> Except that now, they're rapidly starting to get to the point where it works pretty well in a lot of cases.
+[04:22:44] <Googie> (Which is kind of scary. Facial recognition and tracking for example)
+[04:23:02] <HoneyDrops> We can have intelligences that don't have to carry the evolutionary baggage meat bags are stuck with.
+[04:23:06] <Googie> It used to be hard to sort through hours and hours of video, because you'd need to pay a person to do it manually...
+[04:23:35] <tiwake> that and the video was analog
+[04:24:19] <Moonlightning> I'm for pushing forward. New technology is /always/ a double-edged sword.
+[04:24:22] <HoneyDrops> JustAberrant: banning encryption won't work, seriously that's like trying to ban addition or geometry.  You /can/ but the effectiveness will be so pitiful that it doesn't matter.
+[04:24:32] <Moonlightning> see also: the encryption debate
+[04:24:33] <Googie> Same for pushing forward. It's not really like we have a choice anyway :P
+[04:25:03] <Googie> You can't go backward. You can either stick your head in the sand, and try to ignore everything, or you try to push forward :P
+[04:25:19] <JustAberrant> HoneyDrops: what do you mean?
+[04:25:45] <JustAberrant> sure, people can still mix up their own encryption in their bathtub, but if it's illegal it defeats most of the reason to use it
+[04:26:09] <Googie> Yeah, if properly enforced, it would actually be capable of doing a lot of damage :/
+[04:26:23] <tiwake> ..?
+[04:26:26] <Googie> Sure, you might not be able to decrypt the message, but it doesn't matter if you just throw anyone who uses it in jail :/
+[04:26:31] <tiwake> Googie: what is "it"?
+[04:26:32] <JustAberrant> exactly
+[04:26:38] <Moonlightning> Well, yes it does
+[04:26:45] <Googie> tiwake: Talking about banning encryption.
+[04:26:50] <tiwake> oh
+[04:26:58] <Moonlightning> Well, okay, it depends on the case.
+[04:27:05] <Moonlightning> On the one hoof, I'll be rotting in prison.
+[04:27:10] <JustAberrant> there may be some rare cases where getting a message out securely is worth going to prison/being executed/whatever
+[04:27:13] <JustAberrant> but it's probably rare
+[04:27:14] <HoneyDrops> But how does one practically detect it?  Given the abilityto hide what amounts to random data in noise
+[04:27:19] <Moonlightning> On the other hoof, I wish you luck in your endeavor to “throw [ISIS] in jail”
+[04:27:37] <Googie> Oh indeed, but I'm only talking about "perfect" enforcement.
+[04:27:51] <Moonlightning> HoneyDrops: noise, or background radiation?
+[04:27:59] <JustAberrant> HoneyDrops: through the suspicious activity surrounding it
+[04:28:07] <tiwake> is making up your own communication protocol considered encryption?
+[04:28:08] <Moonlightning> Because they can tell you to stop your phone from spouting nonsense.
+[04:28:12] <tiwake> I mean come on
+[04:28:29] <JustAberrant> in a world where encryption is illegal, even well hidden encryption is gonna stand out
+[04:28:32] <Moonlightning> tiwake: probably not, as long as the content is readable :P
+[04:28:40] <Googie> tiwake: It's a reasonable suspicion, which is all that is needed.
+[04:28:59] <tiwake> its probably only considered encryption if the NSA cant read it in a few microseconds
+[04:29:02] <Moonlightning> Then again, maybe it is. The government is, in general, illiterate.
+[04:29:08] <JustAberrant> not saying a ban would be 100% effective, but it would still be very effective
+[04:29:15] <Googie> If you went all grand dictator, assuming you weren't going to be completely deposed, you could get a 95% effective ban, yeah.
+[04:29:42] <Googie> You don't necessarily need to prove that encryption was used, just suspect someone of it, and arrest them.
+[04:29:51] <JustAberrant> it would relegate encryption to a very small group of skilled and determined types who had a really good reason to use it
+[04:30:14] <Googie> And then you'd end up with those people sticking out even more.
+[04:30:14] <tiwake> inb4 clothes manufactured with wireless microphones
+[04:30:18] <mniip> the supersecret techponies club
+[04:30:21] <Googie> Right now if I use TLS... well, so do many other people.
+[04:31:09] <JustAberrant> indeed, a bazillion privacy nutters using tor to read articles about trains is a major asset to tor's effectiveness ;p
+[04:31:22] <tiwake> Googie: what might stop such a thing would be processors not getting any faster
+[04:31:27] * Moonlightning clears throat at JustAberrant.
+[04:31:31] <Googie> Er... not really ?
+[04:31:36] <Moonlightning> Hello. I'm one of your ““privacy nutters””.
+[04:31:41] <Googie> Or wait, you mean artificial intelligence ?
+[04:31:44] <tiwake> yeah
+[04:31:44] <Moonlightning> You're welcome. :V
+[04:32:02] <JustAberrant> Moonlightning: and I'm gonna go ahead and assume a) you use tor and b) you don't _actually_ have much to hide ;p
+[04:32:20] <Moonlightning> JustAberrant: Clarify on B, please
+[04:32:21] <Googie> We've not really seen any signs of them hitting a limit in multithreaded performance, and a lot of ML research is done on GPUs these days.
+[04:32:34] <HoneyDrops> Tor-like behavior should be default for most all communications
+[04:32:35] <Moonlightning> I have plenty to hide that could basically destroy my life if people knew
+[04:32:36] <Googie> It parallelizes really well.
+[04:32:36] <mniip> [06:26:16] <tiwake> is making up your own communication protocol considered encryption?
+[04:32:39] <mniip> come up with a number, and raise 7 to the power of that modulo 17
+[04:32:58] <Moonlightning> Well, now you're inventing an /encryption/ protocol
+[04:33:18] <JustAberrant> Moonlightning: well now that's just depressing, but is there likelihood of them finding out if you sent everything as plain text over the internet?
+[04:33:33] <tiwake> Googie: well sure, but the point is that software will have to be developed with a much smaller box in mind, rather then how open ended it is right now
+[04:33:43] <Moonlightning> JustAberrant: No, but I don't trust the government to keep my secrets.
+[04:33:52] <HoneyDrops> The fact a 3rd party can even tell semi-reliably who is communicating with who is a failing of our comm tech.
+[04:33:53] <Moonlightning> And well I shouldn't. They seem to be very bad at keeping secrets.
+[04:34:05] <Moonlightning> see: Snowden leaks, leaks in general
+[04:34:14] <Googie> There's still an awful lot of headroom for faster computers in a small space.
+[04:34:49] <mniip> Moonlightning, you go do that
+[04:34:55] <HoneyDrops> As far as I'm concerned, private communication is 1st amendment:  free speech and free association
+[04:35:12] <Moonlightning> mniip: go do what? <.<
+[04:35:15] <tiwake> Googie: small space isnt the issue, its power requirements, but yeah, there is still a lot of electronic optimizations to be had
+[04:35:27] <mniip> [06:30:48] <mniip> come up with a number, and raise 7 to the power of that modulo 17
+[04:35:29] <Googie> The limits are mostly around computation that can't be parallelized.
+[04:35:44] <tiwake> Googie: the only other thing I can think of is when the big solar EMP happens
+[04:35:54] <Moonlightning> HoneyDrops: well, not inherently…it's possible to strictly allow free speech and free association, on the condition that the government know about it
+[04:36:09] <Googie> But also... ML is actually only really slow for the actual learning part. Once it's trained, it's much faster.
+[04:36:09] <JustAberrant> Moonlightning: I'd honestly be far more worried about something like the patreon thing
+[04:36:38] <Moonlightning> HoneyDrops: though I could see (with my hopeful self) the Supreme Court ruling that the government would always be biased in that regard, and so to /truly/ have free speech+association, you need to be able to keep it private
+[04:36:39] <JustAberrant> i.e. some private site I deal with and which had info I didn't want out getting popped and posted
+[04:36:39] <Googie> And depending on your viewpoint, we only need /one/ Strong AI :P
+[04:36:56] <tiwake> Moonlightning: HAM radio :3
+[04:37:08] <JustAberrant> not allowed to use encryption on ham afaik
+[04:37:14] <Moonlightning> …
+[04:37:17] <Moonlightning> seriously?!
+[04:37:19] <tiwake> JustAberrant: by the government
+[04:37:21] <Googie> My worry with banning encryption really isn't that encryption itself will be impossible, it'll just mean that there'll always be grounds to arrest anyone that uses it if they're detected.
+[04:37:22] <JustAberrant> last I checked
+[04:37:25] <Googie> That's the biggest problem in my eyes.
+[04:37:33] <tiwake> but yeah, HAM radio is no encryption
+[04:37:37] * HoneyDrops agrees with Googie.
+[04:37:41] <tiwake> donno about other countries
+[04:37:43] <Moonlightning> Googie: well, yes; who said otherwise?
+[04:38:04] <Moonlightning> That's the problem with banning encryption. Is that it's banned. With everything that entails.
+[04:38:06] <JustAberrant> I should clarify I don't think encryption should be banned and I find the gradual erosion of privacy terrifying
+[04:38:15] <Googie> I guess I just feel like the argument of /if/ encryption could be banned is kinda besides the point.
+[04:38:22] <JustAberrant> just that I think it's going to happen at some point
+[04:38:27] <Moonlightning> Oh, yeah, that's completely irrelevant
+[04:38:33] <HoneyDrops> The problem is the idea of banning is a problem, the actual banning is very much a Sisyphean endeavor.
+[04:39:09] <JustAberrant> HoneyDrops: 100% banning is, but this is an area that can be banned to great effectiveness as already talked about
+[04:39:24] <JustAberrant> it's not like banning alcohol where everyone can make it and use it without getting hassled
+[04:39:36] <tiwake> lets ban houses with doors, because doors keep other people who need homes out of a perfectly good home
+[04:40:05] <HoneyDrops> Encryption is probably harder to ban than alcohol.
+[04:40:10] <Moonlightning> more like, let's ban metalworking, because it can be used to make strongboxes and hide illegal things inside
+[04:40:14] <JustAberrant> I.. disagree entirely
+[04:40:33] <Moonlightning> Well, /inherently/, yes.
+[04:40:36] <JustAberrant> if the govt decides to ban encryption, even if it's not a total ban, the culling of widespread use would be highly desired 
+[04:40:44] <Moonlightning> In practice, most encrypted data is transmitted over the Internet.
+[04:40:50] <mniip> how does one prove that random data is encrypted though
+[04:40:58] <Moonlightning> Just ban random data.
+[04:41:03] <Googie> mniip: WHY ARE YOU SENDING RANDOM DATA YOU CRIMINAL
+[04:41:05] <Moonlightning> ^
+[04:41:09] <Moonlightning> If you have data, you need to show a structure to it.
+[04:41:20] <HoneyDrops> Seeing RNGs around the world!
+[04:41:22] <mniip> encrypt a message within structures?
+[04:41:32] <Moonlightning> Now you're getting into steganography.
+[04:41:32] <JustAberrant> doing steno right is hard
+[04:41:32] <HoneyDrops> seeding*
+[04:41:41] <tiwake> how did this conversation pop up anyway?
+[04:41:41] <Moonlightning> Which would become viable out of necessity.
+[04:41:46] * Moonlightning scrolls up.
+[04:42:04] <JustAberrant> and again, lets grant it.. lets say 5% of current encryption users find some way to keep using encryption
+[04:42:05] <Moonlightning> Something about quantum computers?
+[04:42:17] <JustAberrant> a 95% drop in the use of encryption is still pretty damn effective for a ban
+[04:42:17] <Moonlightning> And I was all “WE NEED TO SECURE CRYPTO AGAINST QCOMPS”
+[04:42:22] <Moonlightning> and someone started talking about AI
+[04:42:29] <Moonlightning> and then it got into general far-future stuff
+[04:42:40] <Googie> mniip: Well, sure, but then how did you do that ? Did you write your own method of obfuscation, or did you rely on someone else's "off the shelf" implementation ?
+[04:42:40] <tiwake> ah right
+[04:42:53] <JustAberrant> amd tjat
+[04:43:00] <JustAberrant> * and that's the other aspect of it
+[04:43:05] <Moonlightning> I feel like they'd have a good usecase against me, though
+[04:43:07] <mniip> Googie, well, consider a list of items
+[04:43:07] <tiwake> well
+[04:43:12] <JustAberrant> if you ban encryption, the tools to do the encryption are going to also be illegal
+[04:43:20] <mniip> you can encode an integer from 0 to n! within that
+[04:43:22] <JustAberrant> which means you won't just be able to go download TAILS or whatever
+[04:43:24] <mniip> just by reordering the items
+[04:43:32] <tiwake> Moonlightning: solar EMP will happen first I think
+[04:43:35] <JustAberrant> you'll have to find the tool in some obscure section of the web
+[04:43:36] <Googie> Yeah, but... you still have to do that all yourself, or write a program to do it.
+[04:43:40] <mniip> right
+[04:43:43] <Moonlightning> “Nice video projects you've got there…but why is the //entire rest// of your filesystem timestamped from a couple weeks after you bought this machine?”
+[04:43:47] <JustAberrant> and how do you search for that section without giving away your intention
+[04:43:48] <tiwake> Moonlightning: and a lot of people will be screwed
+[04:43:59] <Googie> The majority of people wouldn't be able to.
+[04:44:47] <JustAberrant> Moonlightning: thought experiment, lets say I give you a fresh computer, wiped hard drive, and an internet connection
+[04:44:51] <mniip> any non-algebraic data structure is subject to steganography
+[04:44:55] <HoneyDrops> Low-power, short broadcast wireless mesh networks!  We'll build our own internet, with blackjack and hookers!
+[04:45:10] <Moonlightning> HoneyDrops: they'll just ban consumer transmitters.
+[04:45:13] <Moonlightning> You'll need a license.
+[04:45:22] <JustAberrant> Moonlightning: how do you get encryption going on it keeping in mind all your google search terms can be seen by the government?
+[04:45:23] <Googie> Yeah, stenography + encryption could likely be pretty damn close to 100% undetectable thinking about it.
+[04:45:24] <Moonlightning> And for that, you'll need to be a large corporation, basically.
+[04:45:32] <Googie> Including if the method is known.
+[04:45:36] <mniip> and thinking about it
+[04:45:38] <Moonlightning> JustAberrant: I'd have to be able to implement it myself.
+[04:45:40] <mniip> everything we use is nonalgebraic
+[04:45:50] <Moonlightning> That, or get together with a group and implement it together.
+[04:46:01] <JustAberrant> right, which again, we
+[04:46:09] <JustAberrant> * we're into a very small group of people capable of that
+[04:46:26] <Moonlightning> Huh?
+[04:46:31] <JustAberrant> not to mention "hmm, we see you've been reading a lot of books on crypto"
+[04:46:47] <Googie> There's work on perfect stenography in theory, it could be assembled into "Off the shelf software"
+[04:47:11] <mniip> hmm
+[04:47:15] <Moonlightning> JustAberrant: well, I wouldn't do that :P
+[04:47:26] <JustAberrant> sure but you'd have to know of it.. you'd be better off sneakernetting things around on thumbdrives
+[04:47:28] * Googie doesn't really know enough of the field to really make any statements, but is actually changing his tune... suspecting that yeah, 100% perfect Off The Shelf encryption/stenography is probably possible.
+[04:48:10] <tiwake> JustAberrant: or "why are you, a mathematician, meeting up with this other person who has been known to associate with..."
+[04:48:17] <mniip> trying to come up with some common format that allows for a lot of stenography
+[04:48:37] <mniip> well actually
+[04:48:39] <mniip> filesystem images
+[04:48:56] <tiwake> mniip: fav.ico?
+[04:48:57] <Googie> Images can have pixel values manipulated in a method which looks like noise from a camera sensor.
+[04:49:04] <mniip> tiwake, hm?
+[04:49:06] <Moonlightning> Ooh ooh ooh!
+[04:49:16] <mniip> Googie, not 100%
+[04:49:24] <Moonlightning> …oh, never mind
+[04:49:33] <Moonlightning> If you do that, you start having robustness issues
+[04:49:36] <Googie> Yeah...
+[04:49:37] <mniip> you can store a lot in the unused parts as long as it looks like legit disk usage
+[04:49:52] <mniip> but again not close enough to 100%
+[04:49:59] <mniip> what I mean by perfect steganography is like
+[04:50:01] <tiwake> mniip: whatever that stupid image is that all web browsers request for any given web page... lol I think its called fav.ico
+[04:50:01] <Moonlightning> If your picture is resampled…whoops, there goes your critical message
+[04:50:05] <mniip> reordering sections of a png
+[04:50:20] <Googie> I know what you mean, just trying to get my head into thinking about how it would be done.
+[04:50:29] <Moonlightning> mniip: same thing
+[04:50:30] <mniip> think about isomorphisms
+[04:50:36] <Moonlightning> they'll start requiring sections to be in-order
+[04:50:37] <mniip> you need decoding to be an injective function
+[04:50:40] <mniip> but encoding not
+[04:50:40] <Moonlightning> that, or in an approved order
+[04:50:41] <Googie> Similar to OTP's "perfect cryptography"
+[04:50:54] <Googie> One time pad, not the OTP protocol
+[04:51:07] <Googie> Oh wait, that's OTR.
+[04:51:25] <Googie> My brain is all over the place today, I should probably take a break.
+[04:51:28] <Moonlightning> OTP: did you mean TOTP?
+[04:51:29] <mniip> off the protocol
+[04:51:36] <Moonlightning> off the presses
+[04:51:37] <Googie> Moonlightning: One Time Pad.
+[04:51:41] <Moonlightning> I know.
+[04:51:50] <Moonlightning> But also One-Time Password
+[04:52:09] <Moonlightning> of which the only variant I know is the Time-based One-Time Password
+[04:52:18] <mniip> > One true pairing, anime and manga fan terminology
+[04:52:22] <mniip> looking good wikipedia
+[04:52:40] <Moonlightning> FlashLight OFP
+[04:52:45] <tiwake> OTP ship
+[04:52:46] <Moonlightning> a Princess and a Guard: not even once.
+[04:52:47] <Googie> TOTP isn't One Time Pad.
+[04:53:41] <Moonlightning> I didn't say it was?
+[04:53:55] <Googie> Oh right.
+[04:54:14] <Googie> Bah, I'm going to go AFK before I say too many stupid thinks :P
+[04:54:15] * Moonlightning takes a break to break Googie. :P
+[04:54:16] <Googie> *things.
+[04:54:26] <Moonlightning> And before you think too many stupid says!
+[04:54:38] <tiwake> thought police are lurking
+[04:55:19] <mniip> you can also use time-based steganography
+[04:55:45] <Moonlightning> They can just start doing the Tor thing.
+[04:56:10] <Moonlightning> Holding packets at each hop for a very short time, in order to erase any timing information.
+[04:56:17] <mniip> nah
+[04:56:37] <Moonlightning> …on the order of minutes? Well, that's very slow. :p
+[04:56:48] <mniip> that's not what I mean
+[04:57:08] <mniip> I mean imagine I encoded my message in parity of my channel message timestamps
+[04:57:24] <tiwake> mniip: you mean https://www.youtube.com/watch?v=AOhp1L9enr4
+[04:57:25] <PinkiePieBot> [ Popeye - I'm Mean - Robin Williams Shelley Duvall - 168485 views - 1m 41s long - 362 likes - 96.53% ]
+[04:57:52] <Moonlightning> mniip: huh?
+[04:59:10] <mniip> Moonlightning, my irc client would delay the message by up to a second
+[04:59:21] <mniip> so that it yields a correct combination of odd-even-odd-even etc
+[04:59:35] <Moonlightning> That sounds very inefficient.
+[04:59:51] <Moonlightning> In that you'd have to post a lot of messages in order to get a very short one.
+[05:00:23] <mniip> optionally could xor it with the thue-morse
+[05:00:34] <mniip> to normalize the amount of odd and even timestamps
+[05:01:29] <Moonlightning> Well, then they'll just start xoring timestamp sequences against that sequence :P
+[05:03:29] <mniip> take an offset into the sequence
+[05:05:28] <tiwake> its already too late, they know everything
+[05:05:37] <GigaWork> why is usb so slooooow
+[05:05:45] <tiwake> (this conversation)
+[05:05:55] <Moonlightning> dammit
+[05:06:06] <Moonlightning> why did we start talking about it in an open channel? :V
+[05:06:16] <Moonlightning> on a completely unrelated note
+[05:06:17] <tiwake> because ponies
+[05:06:32] <Moonlightning> it has recently started to bug me a little that disk encryption offers literally no forward secrecy
+[05:06:49] <mniip> tiwake, it is possible but I won't disclose the methods because of the aforementioned thing :)
+[05:07:20] <tiwake> mniip: I think a solar EMP will happen before it becomes too much of an issue
+[05:07:34] <tiwake> (which I'm secretly cheering for)
+[05:07:45] <Moonlightning> Won't EMPs not actually affect small devices like phones and home computers? :p
+[05:08:10] * mniip buys a steel dome
+[05:08:31] <Moonlightning> https://worldbuilding.stackexchange.com/a/30213/2173
+[05:08:33] <PinkiePieBot> [ science based - How would an earthlike planet be affected by continual EMPs? - Worldbuilding Stack Exchange ]
+[05:08:54] <Moonlightning> er, whoops, hang on
+[05:08:57] <GigaWork> ugh, my sound bar is shot, only one speaker works now
+[05:09:04] <tiwake> Moonlightning: it will burn out all infrastructure, pretty much.. power lines across the globe with random spots burnt in half, motors...
+[05:09:07] <Moonlightning> delete the last component (**/2173) from the link
+[05:09:10] <tiwake> anything with a long wire
+[05:09:10] <Moonlightning> it's a kind of tracking thing
+[05:09:22] <Moonlightning> infrastructure, yes
+[05:09:32] <Moonlightning> but individual devices won't be affected
+[05:09:48] <Moonlightning> So use Honey's idea. Mesh network of short-range transmitters.
+[05:10:12] <tiwake> Moonlightning: nobody will have power
+[05:10:13] <tiwake> lol
+[05:10:28] <Moonlightning> Well, hopefully we'll have gone solar by then
+[05:10:47] <tiwake> won't solar panels get burnt out too?
+[05:11:07] <Moonlightning> Small- and mid-sized ones?
+[05:11:12] <tiwake> maybe not from a solar flair
+[05:11:24] <Moonlightning> solar flair. x3
+[05:11:31] <tiwake> much style
+[05:11:37] <Moonlightning> Celestia be /stylin'/
+[05:13:59] <tiwake> the other main EMP source would be a nuke I suppose... donno of anything else that would be a big enough EMP
+[05:14:14] <tiwake> microwave oven, but those are not really big enough... heh
+[05:17:39] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Commodus is cute and a good person. Remind him of that. Ethera, snuggle him.)
+[05:22:08] <Colgate> random thing on the encryption: if encryption is banned in the US, and someone from outside of the US just sends you tons of random data, how could you prove that you weren't using encryption?
+[05:23:05] <Colgate> if you couldn't... that means someone could get anyone arrested for using encryption anytime
+[05:23:19] <mniip> I have an idea
+[05:23:26] <mniip> what if we offload computers to the cloud
+[05:23:32] <Colgate> and if they could, that then means that you could use encryption by feigning ignorance
+[05:23:55] <mniip> like a government based remote desktop cloud
+[05:24:34] <mniip> but widespreadly used that actual hardware is impossible to come by
+[05:24:52] <mniip> but so*
+[05:25:35] <tiwake> all information is stored elsewhere
+[05:26:01] <tiwake> the magical cloud
+[05:26:04] <mniip> yes
+[05:30:44] <HoneyDrops> You're not going to be able to deny general access to any device capable of performing cryptography.
+[05:33:32] <HoneyDrops> I mean you'd literally have to take away everyone's gameboys, washing machines, pocket calculators... etc.  Even pitiful µC can be repurposed easily enough.  It might be slow, but it is still possible.  Hell, barring that you can manually do the calculations as a last resort.  Short of banning knowledge of mathematics you can't stop people from being able to use crypto.
+[05:34:36] <mniip> >Short of banning knowledge of mathematics you can't stop people from being able to use crypto.
+[05:34:45] <JustAberrant> ..as has been said a bunch of times, you don't have to..
+[05:34:53] <mniip> implying that's not what is already happening
+[05:35:52] <JustAberrant> without easily accessible encryption software, easily accessible knowledge on encryption, and the ability to freely send encrypted stuff around, whether you theoretically could do encryption doesn't matter because almost no one will
+[05:37:06] <JustAberrant> yes, people _could_ write their own encryption software and _could_ somehow sneak the results around without getting caught, but it'll be extremely hard and few will have reason to do it
+[05:38:07] <Colgate> eh, when people's banks constantly get hacked, the encryption ban will get lifted
+[05:38:34] <HoneyDrops> Heh, for some really strange allies... media cartel's will still want DRM... which is basically badly and mis-applied crypto.  That could be leveraged XD
+[05:39:18] <JustAberrant> I dunno, I think the future of DRM is in hardware, where the average guy can't really mess with
+[05:39:47] <Colgate> TPM chips!
+[05:40:04] <tiwake> Colgate: that has been discussed already, only large corperations can use encryption
+[05:40:36] <JustAberrant> just like the current debate, it doesn't have to be 100% effective, if they make something that requires custom hardware to defeat, even if it's well understood custom hardware, it's gonna put it out of reach for the vast majority
+[05:40:39] * GigaWork replaces all Colgate's home computer's OS's with windows vista without the option to update o3o
+[05:40:48] <tiwake> (such as the government owned banks)
+[05:40:56] <Colgate> oh, so then... all the small online businesses just get fucked since they can't encrypt customer details
+[05:41:08] <JustAberrant> nah
+[05:41:12] *** GigaWork is now known as Snoarin
+[05:41:13] <JustAberrant> they just mandate backdoored encryption
+[05:41:36] <JustAberrant> less secure and there will be breaches, but not enough to matter
+[05:41:45] <tiwake> yeah, for say, a small local bank, they either close or wade through all the extra paperwork to actually be legal
+[05:43:48] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[05:46:01] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[05:53:07] <HoneyDrops> I do wish they would give up on DRM, as much fun as it is to break it.
+[05:53:23] <JustAberrant> meh
+[05:53:38] <JustAberrant> I doubt they're actually trying
+[05:53:49] <JustAberrant> they just need to give the impression they're trying
+[05:54:02] <Colgate> then they can invoke the DMCA!
+[05:54:12] <JustAberrant> people like to talk about how "stupid" they are, rolling out DRM scheme after DRM scheme to see it broken
+[05:54:39] <tiwake> ultimate DRM will be achieved when all information will be stored on the cloud, instead of locally
+[05:55:14] <JustAberrant> but yeah, there's no way they don't know their DRM schemes will fail, it's all about creating "locks" to be broken so they can invoke DMCA
+[05:55:21] <HoneyDrops> tiwake: how so? at some point something is local.
+[05:55:47] <tiwake> HoneyDrops: sure, but how are you going to store it? no need for consumer hard drives
+[05:56:03] <tiwake> only short term memory is needed
+[05:56:09] <HoneyDrops> As for games or software where there is actual functionality... I have plenty of media already to last me multiple lifetimes
+[05:56:54] <tiwake> you can play games over the internet
+[05:56:55] <Colgate> JustAberrant: sure they do, DRM by math is faulty
+[05:56:56] <JustAberrant> level of effort.. while it'll always be technically possible to "record the output" .. as the means to do so become less common, piracy will go down (if they even care about piracy)
+[05:58:07] <JustAberrant> same as the hardware level DRM stuff
+[05:58:10] <HoneyDrops> Exactly Colgate, DRM is doomed to failure by its intrinsic methodology.
+[05:58:45] <JustAberrant> HoneyDrops: right, but it doesn't matter, DRM is just a tool for legal wrangling, it has nothing to do with actually stopping piracy
+[05:58:50] <JustAberrant> at least not in a direct sense imo
+[05:58:55] <Colgate> I agree with that
+[05:59:04] <Colgate> what JustAberrant said, it is just a legal construct
+[05:59:04] <HoneyDrops> tiwake: easy, legacy hardware or scrap chips out of devices XD
+[05:59:32] <HoneyDrops> 1GB chips from a few dozen dead/depreciated devices adds up.
+[05:59:58] <JustAberrant> the tiny percentage of consumers able and willing to do that won't really matter ;p
+[06:00:03] <Colgate> tiwake: hey, that is sold around here!
+[06:00:07] <HoneyDrops> If we really got to such a place that local digital storage was actually scarce.
+[06:00:08] <Colgate> oh, wrong channel
+[06:00:13] <tiwake> HoneyDrops: not saying you couldent, but from a client-server, government-peon perspective, it won't be necessary
+[06:00:34] <tiwake> Colgate: I'll drink to that
+[06:00:40] <tiwake> Colgate: shot?
+[06:00:57] <Colgate> uh... I have a glass of rum on the rocks
+[06:01:08] <Colgate> so... maybe a few sips instead? XD
+[06:01:08] <tiwake> how much have you had so far?
+[06:01:13] <Colgate> half a glass
+[06:01:16] <tiwake> lol
+[06:01:21] <tiwake> got a ways to go then
+[06:01:23] <Colgate> rock glass
+[06:01:26] <tiwake> I havent had anything yet
+[06:01:37] <HoneyDrops> But yeah, I would be perfectly content to play my NES/SNES/PS1 games until I expire.
+[06:02:11] *** Quits: TuxRug (TuxRug@TuxRug) (Connection closed)
+[06:02:28] * JustAberrant actually worried by how much media I seem to consume
+[06:02:32] * tiwake looks at shot glass...
+[06:02:32] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[06:02:35] <JustAberrant> like, huge file server full of videos.. 
+[06:02:36] <HoneyDrops> Add in making ROM patches, and I have two more lifetimes of entertainment :3
+[06:02:44] <JustAberrant> and I've seen _and am bored with_ most of it
+[06:02:48] * tiwake sees dead fly in the bottom of it caked with sugar goop
+[06:02:57] * tiwake grabs other shot glass
+[06:02:58] <HoneyDrops> I don't watch much of anything... I'm still like 11 ep behind on ponies >_>
+[06:03:09] <JustAberrant> hehe, I'm the same there
+[06:03:12] <Colgate> lol
+[06:03:17] <JustAberrant> I still haven't seen the last half of season 5
+[06:03:28] <Colgate> I haven't watched ponies since S3 besides a few random episodes
+[06:03:31] <JustAberrant> but I do watch a lot of other stuff
+[06:03:45] * JustAberrant really misses the season 2 days :(
+[06:04:07] <JustAberrant> everything after has been entirely meh with the occasional gem here and there :(
+[06:04:26] <Colgate> I did enjoy Colgate episode, because reasons
+[06:04:36] <JustAberrant> hehe, which one was tha
+[06:04:38] <JustAberrant> * that
+[06:04:52] <Colgate> uh, the one with Colgate?
+[06:04:54] <Colgate> XD
+[06:05:13] <tiwake> oh, mending fences
+[06:05:15] * JustAberrant actually doesn't even have half the episodes from season 5 cause someone cough* stopped updating their mirror and I'm too lazy to find a new source ;p
+[06:05:29] <tiwake> isnt mending fences season 4?
+[06:05:53] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:05:58] <Colgate> was it? I don't know
+[06:06:01] * JustAberrant actually liked the 100th episode thing.. like it was cheesy as hell but I was smiling through like the whole thing
+[06:06:02] <Colgate> I liked it though
+[06:06:06] <JustAberrant> just seeing derpy again was awesome
+[06:06:21] <HoneyDrops> Oh, that reminds me, I wanted to play Pony Fantasy 6... because well it looked like a decent rom-mod.
+[06:07:02] * DJ-C0L7[CSS] has twitchyness
+[06:07:21] * JustAberrant brings DJ-C0L7[CSS] modification
+[06:10:17] <DJ-C0L7[CSS]> i had to do a complete from-scratch reimage of win7pro on this desktop
+[06:10:21] <Snoarin> I got yelled at( not yelled yelled but talked to) for twitching. Ain't my fault alcohol and my meds don't mix
+[06:10:50] <DJ-C0L7[CSS]> thank god for linux live distros @_@
+[06:11:28] <tiwake> heh
+[06:11:29] <tiwake> yeah
+[06:11:49] <tiwake> people don't understand how much windows breaks, and how they are fixed
+[06:14:32] <Colgate> by praying
+[06:15:00] <DJ-C0L7[CSS]> forensic linux distros o_o
+[06:15:04] <Snoarin> Hey, this is science we are talking about. Not religion.
+[06:15:21] <JustAberrant> frequent backups ;p
+[06:15:26] <tiwake> Snoarin: lets all take a moment to bow to the government
+[06:15:50] <DJ-C0L7[CSS]> volume shadow copy ;)
+[06:16:18] <DJ-C0L7[CSS]> offsite exported backups
+[06:17:42] * JustAberrant has a good separation between data and os, anything I care about is on my file server, desktop and other machines can easily be rebuilt if required, so I really only worry about backup up the fs
+[06:18:48] <Snoarin> Hey now, if I wanted to bow to someone I would to a martial arts instructor, not a bunch of clowns
+[06:19:11] <tiwake> s/clowns/government officials/
+[06:19:23] * JustAberrant wishes he had a practical way to remotely sync 20TB or so of data over the internet :(
+[06:26:29] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[06:27:48] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "rebooting, hopefully this clean install doesnt bork like before")
+[06:39:25] <tiwake> Colgate: whatcha doing?
+[06:39:31] <Colgate> IRCing
+[06:39:33] <Colgate> Drinking
+[06:39:38] <Colgate> Typical friday
+[06:39:41] <tiwake> IRCing while drinking is good.
+[06:40:11] <tiwake> IRCing
+[06:42:29] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[06:47:22] <tiwake> Colgate: RPing? or just IRC generalness?
+[06:47:37] <tiwake> or do you mean server stuff?
+[06:47:44] <Colgate> just chatting
+[06:48:05] <Moonlightning> So how 'bout that forward secrecy for disk encryption?
+[06:48:58] <Colgate> how does that work?
+[06:49:11] <Moonlightning> Iunno. Got any ideas?
+[06:49:13] <Colgate> I mean, I guess swap does that already
+[06:49:19] <Colgate> by generating a new key on each boot
+[06:49:25] <Moonlightning> Swap does, yes.
+[06:49:25] <Colgate> if you encrypt swap
+[06:49:33] <Moonlightning> But I mean for longterm storage.
+[06:49:38] <Colgate> but you can't really have PFS if you plan on decrypting it later?
+[06:49:57] <Colgate> mutual exlusive there :P
+[06:50:11] <Moonlightning> So, not /perfect/, but //some//thing.
+[06:50:55] <Moonlightning> Maybe you could have multiple symmetric keys actually used to encrypt data, and kinda keep them rolling?
+[06:51:11] <Moonlightning> It'd be really expensive to just up and decide to reencrypt the entire volume periodically
+[06:52:00] <Colgate> what's the point?
+[06:52:11] <tiwake> a ball pen
+[06:52:17] <Moonlightning> Preventing recovery of data that was deleted long ago.
+[06:52:28] <Colgate> `shred` does this
+[06:52:35] <Moonlightning> Not for SSDs.
+[06:53:08] <Colgate> so
+[06:53:15] <Colgate> in this hypothetical scenario
+[06:53:25] <Colgate> attacker has the encryption key
+[06:53:44] *** eyeburn is now known as Starburn
+[06:53:50] <Colgate> copies the whole drive, including sectors the ssd has marked as invalid
+[06:54:11] <Colgate> and then decrypts it?
+[06:54:28] <Moonlightning> Well, ^2 is something you should always assume that an attacker can do
+[06:54:36] <Moonlightning> so…yes
+[06:55:30] <Colgate> I don't see how using random keys is going to help
+[06:55:55] <Colgate> the data will still be encrypted using some old key, that we are assuming they have access to
+[06:56:53] <Moonlightning> Well, keys are small and thus more likely to end up actually erased than the entirety of a large file, yeah?
+[06:58:43] <Colgate> I feel like constantly reencrypting your hdd is a bit inefficient :P
+[06:58:49] <Colgate> especially on consumer SSDs
+[06:59:00] <Colgate> which aren't rated for that many write cycles
+[07:00:21] <Moonlightning> Mmm
+[07:00:49] <tiwake> single platter hard drive if you want long lasting
+[07:01:07] <Colgate> SLC SSDs last a long time :P
+[07:01:17] <Moonlightning> Okay, so what's the deal with TRIM + FDE?
+[07:02:50] <Colgate> erm, what about it?
+[07:20:22] <tiwake> I'mma read fanfiction
+[07:24:36] <tiwake> now in bed
+[07:36:04] <Moonlightning> I've never really understood why it would be bad to have TRIM on
+[07:36:38] <Moonlightning> You lose the background random data, okay
+[07:36:43] <Moonlightning> So…what does that let an attacker do?
+[07:36:53] <Moonlightning> Determine roughly how much of the disk is in use?
+[07:42:04] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:43:30] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a Dream. <3)
+[07:54:35] *** Quits: Webster (Webster@Pony-4eid99.fios.verizon.net) (Quit: Leaving)
+[07:58:11] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[08:05:22] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[08:19:42] *** Joins: Starthunder (blackl@property.of.lightningcrash)
+[08:22:23] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Ping timeout: 121 seconds)
+[08:25:55] <Starthunder> …nuuuuuu, mai @! :c
+[08:27:15] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[08:32:00] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[08:32:52] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[08:39:06] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:43:25] *** Eventide is now known as Eventide|Sleepies
+[09:03:39] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[09:08:42] <tiwake> https://www.youtube.com/watch?v=NkRdWnYu1DQ
+[09:08:43] <PinkiePieBot> [ Wrecking Crew Orchestra / EL SQUAD Code 17.2 | STAGE - Dance Videos - 1965483 views - 4m 33s long - 15005 likes - 98.8% ]
+[09:43:34] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[09:56:21] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[10:24:17] *** Joins: Melanosuchus (quassel@Pony-v0kagn.as13285.net)
+[10:36:53] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[10:39:32] *** Joins: WuBzY (WuBzY@Pony-96m1hq.dhcp.inet.fi)
+[10:39:38] *** zz_CyberJacob is now known as CyberJacob
+[10:43:13] *** Quits: Topkasa (IDontCare@Pony-828.mcl.67.70.IP) (Connection closed)
+[10:43:17] *** Joins: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net)
+[10:48:05] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[10:53:06] *** CyberJacob is now known as zz_CyberJacob
+[10:53:53] <Divide> Hah.  In the exception that proves the rule of Betteridge's Law of Headlines, the Guardian's website was corrupted by a group which appended the ever-nasty 'Angler' exploit kit to an article reading, "Cybercrime: is it out of control?"
+[10:55:25] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Quit: )
+[10:57:15] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[10:58:35] <Divide> Also, Lindsey Graham and Rupert Murdoch can die in a fire.  The pair are attempting to strongarm tech developers into creating backdoors and security holes for the benefit of the US government - holes such that the NSA, amongst others, will be able to gain access.  Their claim is that this will somehow make the Internet more secure.
+[10:59:45] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[11:04:36] <Starthunder> what
+[11:04:38] <Starthunder> what.
+[11:04:51] <Starthunder> …you know what…no. I'm not going to even get into this. It's a waste of energy. :V
+[11:06:15] *** djazz is now known as MangoBloom
+[11:10:38] <Divide> Starthunder: perhaps for the best.
+[11:12:58] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[11:26:50] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[11:31:11] <WuBzY> http://i.imgur.com/eeRIZwD.jpg so much gaming potential :D
+[11:35:25] <tiwake> such pixels
+[11:40:13] <Divide> A true gaming machine for the ages.
+[11:57:32] <AppleDash> You know it's old if it's an AMD dual core
+[12:32:43] <WuBzY> but thats fastest amd athlon x2 for am2 socket
+[12:32:59] <WuBzY> but its still slow :D
+[13:01:44] *** Sour_Sweet|BNC is now known as Sour_Sweet
+[13:29:28] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[14:25:41] *** Quits: nscoots (FreyGrimrod@Pony-fik8f6.sub-70-192-20.myvzw.com) (Ping timeout: 121 seconds)
+[15:02:01] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[15:06:18] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[15:40:12] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:57:34] *** Quits: Fallfeathers (Fallfeather@Pony-8980p6.bigpond.net.au) (Connection closed)
+[16:09:24] <DJ-C0L7[EIT]> i was very close on my estimation of my speaker impedance on my home-built test apparatus, instead of 6 ohms its 5.5
+[16:31:52] *** Snoarin is now known as GigaWork
+[16:46:32] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:47:06] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:52:58] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:13:29] *** Eventide|Sleepies is now known as Eventide
+[17:21:51] <Sour_Sweet> Did we talk about Firefox OS recently? Bye. http://arstechnica.com/gadgets/2015/12/firefox-os-smartphones-are-dead/
+[17:21:52] <PinkiePieBot> [ Firefox OS smartphones are dead | Ars Technica ]
+[17:23:14] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[17:46:08] <tiwake> Sour_Sweet: I think because of the firestick
+[17:46:17] <tiwake> it was mentioned
+[17:47:18] <tiwake> AppleDash: my first computer build was an AMD athlong XP 2400+
+[17:47:29] <tiwake> *athlon
+[17:47:57] <tiwake> I forget what videocard I had in it :-/
+[17:53:06] <JustAberrant> AMD Sempron something!
+[18:00:30] <JustAberrant> also I'm not a fan of either of these series, but I got a good laugh out of this: http://imgur.com/gallery/ezxGYwo  ;p
+[18:00:30] <PinkiePieBot> [ Winter is coming - Imgur ]
+[18:02:57] <mniip> hmm, can someone highlight me?
+[18:03:10] <JustAberrant> mniip: maybe :(
+[18:32:25] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[19:07:09] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[19:09:23] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[20:37:21] <HoneyDrops> Oooo Xiangqi for my PSP!  Will go well with my Shogi game :D
+[21:03:57] *** Quits: Sakura (Sakura@is.a.very.derpy.pony) (A TLS packet with unexpected length was received.)
+[21:03:57] *** Quits: catnickfl (catnickfl@catnickfl.bronytv.net) (A TLS packet with unexpected length was received.)
+[21:03:57] *** Quits: GeekBrony (GB@bronydom.net) (A TLS packet with unexpected length was received.)
+[21:03:57] *** Quits: Dusk (Dusk@dusky.horse) (A TLS packet with unexpected length was received.)
+[21:03:57] *** Quits: sleumas2000 (sleumas2000@my.little.karaoke) (A TLS packet with unexpected length was received.)
+[21:06:26] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (Ping timeout: 121 seconds)
+[21:07:06] *** Joins: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net)
+[21:08:25] *** Quits: PeakVolu1e (k9ldt@Pony-tqvh62.fios.verizon.net) (Ping timeout: 121 seconds)
+[21:08:37] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[21:19:20] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[21:26:22] *** Joins: Dusk (Dusk@dusky.horse)
+[21:26:27] *** Joins: Sakura (Sakura@Pony-fkc.i75.99.192.IP)
+[21:27:05] *** Joins: sleumas2000 (sleumas2000@my.little.karaoke)
+[21:27:16] *** Joins: GeekBrony (GB@bronydom.net)
+[21:27:25] *** Sakura is now known as Pony_10992
+[21:31:38] *** Joins: Sin (Sin@is.hustlin.everyday)
+[21:35:26] *** Joins: catnickfl (catnickfl@catnickfl.bronytv.net)
+[21:42:40] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[21:58:37] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[22:00:14] *** Joins: Sin (Sin@is.hustlin.everyday)
+[22:05:10] *** Joins: Webster (Webster@Pony-4eid99.fios.verizon.net)
+[22:11:32] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[22:15:05] *** Quits: Pony_10992 (Sakura@Pony-fkc.i75.99.192.IP) (Quit: Dusk is tinkering with me. Will reboot later.)
+[22:15:05] *** Quits: GeekBrony (GB@bronydom.net) (Quit: I should be back later.)
+[22:15:05] *** Quits: catnickfl (catnickfl@catnickfl.bronytv.net) (Error in the push function.)
+[22:15:05] *** Quits: Dusk (Dusk@dusky.horse) (Quit: Sorry, but sometimes people need a break. I'm gonna focus on life for a day or so, cya on the other side!)
+[22:15:05] *** Quits: sleumas2000 (sleumas2000@my.little.karaoke) (Quit: Dance with Death! Fight the good Fight! Or alternatively, stay at home and do nothing instead. Either's fine by me!)
+[22:17:27] *** Joins: Dusk (Dusk@dusky.horse)
+[22:17:32] *** Joins: Sakura (Sakura@Pony-fkc.i75.99.192.IP)
+[22:18:30] *** Sakura is now known as Pony_51348
+[22:18:35] *** Joins: GeekBrony (GB@bronydom.net)
+[22:19:54] *** Joins: catnickfl (catnickfl@catnickfl.bronytv.net)
+[22:26:30] *** Joins: Crimson_Tail (Zeta@Pony-0oc9o4.cg80.k4gu.0151.2601.IP)
+[22:28:57] *** Joins: sleumas2000 (sleumas2000@my.little.karaoke)
+[22:47:39] *** Joins: Sombra (Iceman@Darkhorse21)
+[22:48:14] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[22:48:55] *** Quits: WuBzY (WuBzY@Pony-96m1hq.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[22:53:42] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[23:10:05] *** Joins: Sin (Sin@is.hustlin.everyday)
+[23:40:33] *** Dusk is now known as Dawn
+[23:43:26] *** Joins: WuBzY (WuBzY@Pony-96m1hq.dhcp.inet.fi)
+[23:50:21] *** Dawn is now known as Dusk
+[23:54:57] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)

@@ -1,0 +1,56 @@
+[01:07:56] <jherskowitz> theli_ua: good news, I got Google Music working on my machine were it wasn’t working
+[01:08:04] <jherskowitz> where can I get the latest Amz?
+[01:08:59] <jherskowitz> oh wait.. maybe I didn't
+[01:09:03] <jherskowitz> I see the collection
+[01:10:36] <jherskowitz> https://www.irccloud.com/pastebin/63dubVoG/
+[01:11:44] <jherskowitz> dommex: (when you are sober) ^
+[01:53:56] *** Quits: Mamarok (myriam@amarok/team/mamarok) (Remote host closed the connection)
+[01:53:56] *** Quits: pinak (pinakahuja@gateway/shell/kde/x-fiigaoyztxiuernp) (Remote host closed the connection)
+[02:06:50] *** Quits: jturney (~jon@host217-43-11-230.range217-43.btcentralplus.com) (Read error: Connection reset by peer)
+[02:57:46] *** Joins: github-tomahawk (~github-to@192.30.252.46)
+[02:57:47] <github-tomahawk> [13tomahawk] 15jherskowitz pushed 1 new commit to 06master: 02http://git.io/vE0UU
+[02:57:47] <github-tomahawk> 13tomahawk/06master 148fbd3b9 15Jason Herskowitz: Clean up nav icons in mac toolbar
+[02:57:47] *** Parts: github-tomahawk (~github-to@192.30.252.46) ()
+[02:59:26] <jherskowitz> also with YT… I still suspect an SSL issue :/
+[02:59:28] <jherskowitz> https://www.irccloud.com/pastebin/j0LokzG1/
+[03:00:02] <jherskowitz> that’s after a clean Qt 5.5.1_2 install
+[03:25:26] <jherskowitz> yeah, brew Qt5 formula has “no-openssl” flag
+[03:25:31] <jherskowitz> muesli: ^
+[03:37:01] *** Joins: pinak (pinakahuja@gateway/shell/kde/x-okoinyyluwjdcssx)
+[03:42:53] *** Joins: Mamarok (myriam@amarok/team/mamarok)
+[03:43:08] <jherskowitz> https://www.irccloud.com/pastebin/F7xTMTg1/
+[03:43:24] <jherskowitz> those fixes aren’t in 5.5.1 it seems
+[04:25:19] <jherskowitz> huh… I broke it again somehow playing with Qt5 and openSSL. Now Google Music no longer showing up in sidebar.
+[05:09:02] *** Joins: mgue (~mgue@x590f2cd1.dyn.telefonica.de)
+[05:12:38] *** Quits: mgue2 (~mgue@x590f1f91.dyn.telefonica.de) (Ping timeout: 272 seconds)
+[06:47:21] <theli_ua> jherskowitz: amz should be under the same link if you have logs, its pending on dommex to somehow push it
+[07:14:16] *** Joins: soee_ (~soee@afdh96.neoplus.adsl.tpnet.pl)
+[07:15:35] *** Quits: soee (~soee@aguk148.neoplus.adsl.tpnet.pl) (Ping timeout: 240 seconds)
+[08:26:25] *** Joins: Vezquex_ (~Vezquex@c-98-232-29-163.hsd1.wa.comcast.net)
+[08:30:11] *** Quits: Vezquex (~Vezquex@c-98-232-29-163.hsd1.wa.comcast.net) (Ping timeout: 264 seconds)
+[10:10:12] *** Joins: ssam2 (~ssam2@cpc7-asht7-2-0-cust170.10-1.cable.virginm.net)
+[12:58:12] *** Joins: Canseco (~quassel@150.30.79.188.dynamic.jazztel.es)
+[13:22:12] *** Joins: jturney (~jon@host217-43-11-230.range217-43.btcentralplus.com)
+[13:47:46] *** Quits: Vezquex_ (~Vezquex@c-98-232-29-163.hsd1.wa.comcast.net) (Ping timeout: 250 seconds)
+[13:54:10] *** Quits: Canseco (~quassel@150.30.79.188.dynamic.jazztel.es) (Remote host closed the connection)
+[16:16:50] *** Joins: gordie (3eebf587@gateway/web/freenode/ip.62.235.245.135)
+[16:17:20] <gordie> hi guys !  Merry Christmas (almost!)
+[17:02:39] *** Quits: gordie (3eebf587@gateway/web/freenode/ip.62.235.245.135) (Ping timeout: 252 seconds)
+[17:10:25] *** Joins: jamesaxl (~jamesaxl@41.140.218.127)
+[17:42:56] *** Joins: mehdix (~mehdix@x590d5d07.dyn.telefonica.de)
+[18:21:33] *** Quits: ssam2 (~ssam2@cpc7-asht7-2-0-cust170.10-1.cable.virginm.net) (Quit: Leaving)
+[18:34:57] *** Quits: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr) (Ping timeout: 255 seconds)
+[18:38:48] *** Joins: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr)
+[19:59:56] *** Joins: jamesaxl_ (~jamesaxl@41.248.145.39)
+[20:03:08] *** Quits: jamesaxl (~jamesaxl@41.140.218.127) (Ping timeout: 255 seconds)
+[20:32:35] *** Quits: jamesaxl_ (~jamesaxl@41.248.145.39) (Ping timeout: 240 seconds)
+[20:33:30] *** Quits: mehdix (~mehdix@x590d5d07.dyn.telefonica.de) (Ping timeout: 272 seconds)
+[20:37:23] *** Joins: jamesaxl_ (~jamesaxl@41.248.145.39)
+[21:25:24] <muesli> merry xmas, everyone
+[21:28:30] <theli_ua> speaking of qtwebkit, seeing as its deprecated and you plan to stop supporting qt4 ... do you plan to deprecate qtwebkit as well?
+[21:29:06] <muesli> theli_ua: yeah, domme has some plans there
+[21:29:12] *** Quits: soee_ (~soee@afdh96.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[21:30:20] <theli_ua> also, not-so-fun fact - qtwebkit (qt4) compiled with gcc5 makes skype crash on start o_O
+[21:32:56] *** Joins: mehdix (~mehdix@x590d5d07.dyn.telefonica.de)
+[21:53:23] *** Quits: jamesaxl_ (~jamesaxl@41.248.145.39) (Ping timeout: 255 seconds)
+[21:55:15] *** Joins: jamesaxl_ (~jamesaxl@41.248.145.39)

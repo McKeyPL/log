@@ -1,0 +1,406 @@
+[00:09:40] * JustAberrant decreases Moonlightning's turnip ration to 3 turnips a day
+[00:22:32] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[00:34:03] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[00:35:59] <Lapsus> Moonlightning: If you don't fuck things up, how are you supposed to learn anything?
+[00:37:01] <Moonlightning> I don't think that really applies here.
+[00:37:50] <Phase> context?
+[00:40:16] <Moonlightning> Given a path to a symlink, get the absolute, canonical path to the symlink's target, aaaaaaand, I just realized I don't actually need to do that.
+[00:40:49] <Moonlightning> Because what I /actually/ want is the timestamps|filetype of the target, and stat() follows symlinks by default, so yeah
+[00:41:42] <Phase> Moonlightning, target = symlink.target_name; if target[0] == '/': target, else dirname(symlink)+target
+[00:42:04] <Phase> i'm not sure if there's a function that does that for you
+[00:42:56] <Moonlightning> Phase: /usr/local/bin/greadlink -> ../Cellar/coreutils/8.24/bin/greadlink
+[00:43:17] <Phase> yeah, that'll give you /usr/local/bin/../Cellar/coreutils/8.24/bin/greadlink
+[00:43:23] <Phase> which is an absolute path
+[00:43:23] <Moonlightning> Which is not canonical. :P
+[00:43:29] <Phase> Ohh, canonical
+[00:43:34] <Moonlightning> Yes, canonical.
+[00:43:52] <Moonlightning> There could be some funky business if /usr/local is also a symlink or something
+[00:43:57] <Phase> is there a function for canonizing paths?
+[00:43:57] <Moonlightning> so you can't just take out the bin/../
+[00:44:03] <Moonlightning> There /should/ be.
+[00:44:10] <Moonlightning> That's why I was looking at what GNU readlink does.
+[00:44:23] <Moonlightning> 'cos it's got an -f flag that makes it do exactly what I want.
+[00:47:25] <wolfyshy> Moonlightning: https://bpaste.net/show/f4cb333a62ad
+[00:47:27] <PinkiePieBot> [ show at bpaste ]
+[00:47:29] <wolfyshy> you want os.path.realpath
+[00:48:19] <Phase> Moonlightning, there a reason you need canonical paths?
+[00:48:51] <Moonlightning> Phase: …I don't think so, actually
+[00:48:55] <Moonlightning> but like I said, the whole thing is moot
+[00:49:02] * wolfyshy knew her deep knowledge of os.path would pay off some day \o/
+[00:49:10] <Moonlightning> :D
+[00:49:33] <Phase> Moonlightning, i mean why did you think you needed it :P
+[00:50:04] <Moonlightning> …didn't think about it too much, I guess?
+[00:50:22] <Moonlightning> I mean, not trying to canonicalize the path at all would've left it meaning The Right File™, yeah?
+[00:50:57] <Phase> yeah
+[00:51:13] <Moonlightning> So no, it didn't have to be canonical.
+[00:52:10] *** CyberJacob is now known as zz_CyberJacob
+[00:53:48] *** Init3-away is now known as init3
+[01:07:02] *** Sour_Sweet is now known as Seoson|BNC
+[01:20:23] *** Quits: sleumas2000_ (uid91753@Pony-5dnslh.ealing.irccloud.com) (Quit: Connection closed for inactivity)
+[01:22:30] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Connection closed)
+[01:29:48] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[01:31:17] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[01:42:17] <HoneyDrops> Shutter, johnsey: to me the VW thing just highlights why it is unacceptable to have closed firmware on devices.  There is no possible way what they were doing could be hidden if everyone had full source access.  There should be no blackboxes anywhere in computing (nor in physical devices, but fortunately the capacity to try to hide/obscure the physical is non-trivial and generally easily
+[01:42:19] <HoneyDrops> defeated).
+[01:47:53] *** Quits: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Connection closed)
+[01:48:25] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[01:50:51] <JustAberrant> HoneyDrops: oh please.. it only got noticed because someone looked
+[01:51:52] <JustAberrant> HoneyDrops: source or no source it probably wouldn't have mattered
+[01:54:11] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:54:49] <HoneyDrops> One would hope that the EPA would check the firmware for compliance, though that is part of a broader issue of the failure of self-checking compliance.
+[01:55:33] <JustAberrant> people build scams around the situation.. if they knew the code was going to be audited, they would have scammed them some other way
+[01:55:42] <JustAberrant> and besides, you can audit a binary
+[01:55:55] <JustAberrant> hell something like this, having the source probably wouldn't make a huge difference
+[01:56:05] <JustAberrant> it may have actually been written in straight assembly
+[02:00:32] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[02:16:53] *** Joins: CrassyPaddles (test@Pony-e6d.enl.137.198.IP)
+[02:17:32] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[02:18:18] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[02:18:33] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[02:28:57] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:30:18] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (Server shutdown)
+[02:30:18] *** Quits: Gigabit (Gigabit@the.girly.colt) (Server shutdown)
+[02:30:18] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Server shutdown)
+[02:30:18] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Server shutdown)
+[02:30:18] *** Quits: Colgate (rabbit@brushie.horse) (Server shutdown)
+[02:30:21] *** Quits: RainbowHacks (rainbow@Pony-m1cetk.ponix.space) (Server shutdown)
+[02:30:21] *** Quits: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile) (Server shutdown)
+[02:30:21] *** Quits: mniip (mniip@Pony-o9q.v2g.219.178.IP) (Server shutdown)
+[02:30:21] *** Quits: Darki (DK@Pony-92fd75.vs.webtropia.com) (Server shutdown)
+[02:30:21] *** Quits: Red_M (potato@Pony-4pa04c.red-m.net) (Server shutdown)
+[02:30:21] *** Quits: HoneyDrops (Honey@sweeter.than.honey) (Server shutdown)
+[02:30:21] *** Quits: Finwe (vhalkola@Pony-oi2dre.org.aalto.fi) (Server shutdown)
+[02:30:21] *** Quits: wolfyshy (woof@fluttering.shyly.through.the.forest) (Server shutdown)
+[02:30:21] *** Quits: Bigcheese (bigcheese@Pony-7fkiot.otakukingdom.com) (Server shutdown)
+[02:30:21] *** Quits: klaxa (klaxa@Pony-1kuq6f.eu) (Server shutdown)
+[02:30:21] *** Quits: JustAberrant (JustAberran@Pony-ffr.0tv.116.50.IP) (Server shutdown)
+[02:30:21] *** Quits: zz_CyberJacob (CyberJacob@Pony-8adl2m.bluesapphiremedia.co.uk) (Server shutdown)
+[02:30:22] *** Quits: AutoLapsus (Lapsus@Totally.Is.A.Network.Service) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Shutter (tips@why.did.you.even.rope.me.into.this) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: GeekBrony (GB@bronydom.net) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: dekeccho (dekeccho@dekeccho.Is.Not.A.Clever.Poni) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: meteor (meteor@Pony-6i9.jlf.236.104.IP) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Obaskyr (Tachy@Pony-pltgud.range109-146.btcentralplus.com) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: derpy (derp@muffins) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Eventide (uid61788@Tips.Fedora) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: floogulinc (floogulinc@Pony-opvprb.floogul.net) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Stik (drakon@Pony-ql55m5.cable.virginm.net) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: misiek200m (miskof@mysterious.chocolate.muffin) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Gumball (GumballCras@0.to.pony.10secondsflat) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Fusl (Fusl@1.0.0.127.in-addr.arpa.li) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Kinsley (JKinsley@Bow.To.Your.Princess) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Home (Finnfinn@finn.isher) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Rylee (rylai@libgryphon.so) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Datguy (Datguy@lord.of.nreboot.c0m) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Cameron_D (cameron@192.241.210.101) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Datalink (Datalink@Datalink) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: miggyb (miggyb@horsetornado.co.uk) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: losaned (losaned@Pony-num3km.exetel.com.au) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Cosmic (Neptune@Planet.Neptune) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: SilverEagle (SilverEagle@SilverEagle.is.best.pony) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: sleumas2000 (sleumas2000@my.little.karaoke) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Eivel (Eivel@Keep.Calm.and.Pony.On) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: ButterBean (Dragony@Pony-458.d8k.20.198.IP) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: Sakura (Sakura@is.a.very.derpy.pony) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (discord.canternet.org chrysalis.canternet.org)
+[02:30:22] *** Joins: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP)
+[02:30:24] *** Joins: Darki (DK@Pony-92fd75.vs.webtropia.com)
+[02:30:24] *** Joins: Red_M (potato@Pony-4pa04c.red-m.net)
+[02:30:26] *** Joins: Finwe (vhalkola@Pony-oi2dre.org.aalto.fi)
+[02:30:42] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[02:30:42] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[02:30:42] *** Joins: GeekBrony (GB@bronydom.net)
+[02:30:42] *** Joins: Datalink (Datalink@Datalink)
+[02:30:42] *** Joins: miggyb (miggyb@horsetornado.co.uk)
+[02:30:42] *** Joins: Starburn (eyeburn@secret.den.of.flaming.evil)
+[02:30:42] *** Joins: Cameron_D (cameron@192.241.210.101)
+[02:30:42] *** Joins: AutoLapsus (Lapsus@Totally.Is.A.Network.Service)
+[02:30:42] *** Joins: sleumas2000 (sleumas2000@my.little.karaoke)
+[02:30:42] *** Joins: Eventide (uid61788@Tips.Fedora)
+[02:30:42] *** Joins: Cosmic (Neptune@Planet.Neptune)
+[02:30:42] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[02:30:42] *** Joins: Shutter (tips@why.did.you.even.rope.me.into.this)
+[02:30:42] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[02:30:42] *** Joins: Eivel (Eivel@Keep.Calm.and.Pony.On)
+[02:30:42] *** Joins: CyberJacc (CyberJacob@Pony-8adl2m.bluesapphiremedia.co.uk)
+[02:30:42] *** Joins: Sakura (Sakura@is.a.very.derpy.pony)
+[02:30:42] *** Joins: dekeccho (dekeccho@dekeccho.Is.Not.A.Clever.Poni)
+[02:30:42] *** Joins: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se)
+[02:30:42] *** Joins: Jouva (jouva@Pony-535ork.fios.verizon.net)
+[02:30:42] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[02:30:42] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[02:30:42] *** Joins: Datguy (Datguy@lord.of.nreboot.c0m)
+[02:30:42] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[02:30:42] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[02:30:42] *** Joins: Kinsley (JKinsley@Bow.To.Your.Princess)
+[02:30:42] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[02:30:42] *** Joins: SilverEagle (SilverEagle@SilverEagle.is.best.pony)
+[02:30:42] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[02:30:42] *** Joins: Obaskyr (Tachy@Pony-pltgud.range109-146.btcentralplus.com)
+[02:30:42] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[02:30:42] *** Joins: Stik (drakon@Pony-ql55m5.cable.virginm.net)
+[02:30:42] *** Joins: derpy (derp@muffins)
+[02:30:42] *** Joins: Home (Finnfinn@finn.isher)
+[02:30:42] *** Joins: meteor (meteor@Pony-6i9.jlf.236.104.IP)
+[02:30:42] *** Joins: RainbowHax (rainbow@Pony-m1cetk.ponix.space)
+[02:30:42] *** Joins: losaned (losaned@Pony-num3km.exetel.com.au)
+[02:30:42] *** Joins: misiek200m (miskof@mysterious.chocolate.muffin)
+[02:30:42] *** cadance.canternet.org sets mode: +oo AutoLapsus Kinsley
+[02:30:42] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[02:30:42] *** Joins: floogulinc (floogulinc@Pony-opvprb.floogul.net)
+[02:30:42] *** Joins: Rylee (rylai@libgryphon.so)
+[02:30:42] *** Joins: Gumball (GumballCras@0.to.pony.10secondsflat)
+[02:30:42] *** Joins: ButterBean (Dragony@Pony-458.d8k.20.198.IP)
+[02:30:46] *** Joins: HoneyDrops (Honey@sweeter.than.honey)
+[02:30:46] *** Joins: klaxa_ (klaxa@Pony-1kuq6f.eu)
+[02:30:46] *** Joins: JustAberrant_ (JustAberran@Pony-lq4qe0.com)
+[02:30:48] *** Joins: mniip (mniip@Pony-o9q.v2g.219.178.IP)
+[02:30:50] *** klaxa_ is now known as klaxa
+[02:30:51] *** Joins: GigabitPony (Gigabit@the.girly.colt)
+[02:30:51] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[02:30:51] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[02:30:56] *** CyberJacc is now known as CyberJacob
+[02:31:14] *** Bigcheese is now known as Pony_43068
+[02:31:26] *** CyberJacob is now known as Pony_66432
+[02:31:38] *** Joins: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP)
+[02:31:51] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[02:32:15] *** Joins: Colgate (rabbit@brushie.horse)
+[02:44:33] *** Quits: ShivalWolf (ShivalWolf@BigMac.is.a.Coltcuddler.org) (Ping timeout: 121 seconds)
+[02:46:06] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[02:48:49] *** Quits: CrassyPaddles (test@Pony-e6d.enl.137.198.IP) (Ping timeout: 121 seconds)
+[02:50:03] *** Joins: Asoka_White (Asoka@Pony-lben4i.net-htp.de)
+[02:53:15] *** Quits: Asoka (Asoka@Pony-ofue0n.net-htp.de) (Ping timeout: 121 seconds)
+[03:02:34] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:36:08] *** PeakVolu1e is now known as PeakVolume
+[03:40:33] *** Dusk|DnD is now known as DUsk
+[03:40:36] *** DUsk is now known as Dusk
+[04:13:26] *** Joins: ShivalWolf (ShivalWolf@BigMac.is.a.Coltcuddler.org)
+[04:34:12] <ShivalWolf> LOL - https://pbs.twimg.com/media/CQgwU33U8AAFwfW.png:large
+[04:36:18] *** Joins: Fillyfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP)
+[04:37:06] <Moonlightning> O.o
+[04:37:15] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[04:37:25] * Moonlightning doofs ShivalWolf with a balled-up red flag.
+[04:38:07] *** Quits: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP) (Ping timeout: 121 seconds)
+[04:42:46] *** Joins: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP)
+[04:44:50] *** Quits: Fillyfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP) (Ping timeout: 121 seconds)
+[05:25:34] *** init3 is now known as Init3-away
+[05:27:42] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[06:01:35] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "long week, longer weekend.... no rest for the wicked it seems, 'night everypony, longer week ahead")
+[06:06:10] *** Quits: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Quit:  HydraIRC -> http://www.hydrairc.com <- Organize your IRC)
+[06:24:53] *** Joins: wolfyshy (woof@fluttering.shyly.through.the.forest)
+[06:25:27] <wolfyshy> GigabitPony: what model raspi?
+[06:25:42] <wolfyshy> sorry to be late, but I have a sudden need for an ARMv7 EVB
+[06:26:42] <GigabitPony> Model B
+[06:27:56] <wolfyshy> what's in the kit?  still 25$ shipped?
+[06:29:24] <Moonlightning> EVB?
+[06:29:36] <wolfyshy> shorthand for 'evaluation board'
+[06:29:47] <wolfyshy> basically a raspi or raspi-like thing
+[06:30:45] <wolfyshy> for another example, http://www.keil.com/boards/
+[06:30:45] <PinkiePieBot> [ Keil Evaluation Boards for ARM, 8051, and C166 ]
+[06:31:56] <wolfyshy> hm, the original model B is v6.. let me see what the board I have is and whether I actually need a v6 or v7
+[06:32:57] <GigabitPony> Ya its the 512mb Model B
+[06:33:02] <GigabitPony> Sorry got busy
+[06:33:08] <wolfyshy> it's ok
+[06:33:11] <GigabitPony> And it is the kit sold by canakit
+[06:33:56] <GigabitPony> https://www.amazon.com/gp/aw/d/B008XVAVAW/ref=mp_s_a_1_1?qid=1444019503&amp;sr=8-1&amp;pi=SL75_QL70&amp;keywords=CanaKit
+[06:34:43] <GigabitPony> This kit, clear case, 8gb card, power cord, HDMI cord,Ethernet cord
+[06:35:02] <wolfyshy> mmm, ok, lemme talk it over with the other girl involved with this project
+[06:35:21] <GigabitPony> But it didn't come with the WiFi dongle
+[06:35:25] <wolfyshy> don't need one
+[06:35:37] <wolfyshy> I have two usbs + I have plenty of switches
+[06:35:40] <GigabitPony> I have one that can go with it bug I couldn't get it to work in Linux
+[06:36:01] <GigabitPony> And ya, 25 because I need a fuel pump and tank
+[06:49:23] *** Joins: CrassyPaddles (test@Pony-e6d.enl.137.198.IP)
+[06:50:38] <Moonlightning> Oh look, a CrassyPaddles
+[06:52:21] *** Eventide is now known as Eventide|Sleepies
+[06:53:42] *** Quits: CrassyPaddles (test@Pony-e6d.enl.137.198.IP) (Ping timeout: 121 seconds)
+[06:53:48] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[06:58:37] *** Quits: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP) (Quit: My people need me!)
+[07:05:43] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:11:40] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[07:11:55] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[07:17:53] *** mniip is now known as \m
+[07:35:24] *** GigabitPony is now known as Gigabit
+[07:40:38] *** Quits: Crimson_Tail (Bluepon@Pony-kkiser.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[08:30:06] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[08:31:35] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:32:21] *** locodash11[lagout] is now known as locodashie11
+[08:45:19] *** Gigabit is now known as Snoarin
+[08:55:26] *** Joins: Phase (Phase4@Pony-g2vv9n.internode.on.net)
+[09:07:52] *** Pony_43068 is now known as Bigcheese
+[09:24:45] *** Init3-away is now known as init3
+[09:37:24] *** Pony_66432 is now known as zz_Pony_66432
+[10:19:27] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[10:45:24] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Ping timeout: 121 seconds)
+[11:05:02] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[11:05:46] *** Quits: Finwe (vhalkola@Pony-oi2dre.org.aalto.fi) (Ping timeout: 121 seconds)
+[11:05:54] *** Joins: Finwe (vhalkola@Pony-oi2dre.org.aalto.fi)
+[11:34:46] *** Quits: Fusl (Fusl@1.0.0.127.in-addr.arpa.li) (Quit: Contact: http://hallowe.lt/)
+[11:46:04] *** init3 is now known as Init3-away
+[12:06:05] *** Joins: RazorSharpFang (chatzilla@sharpest.of.all.fangs)
+[13:41:12] *** RainbowHax is now known as RainbowHacks
+[13:51:01] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[14:10:16] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[14:15:15] *** Quits: Phase (Phase4@Pony-g2vv9n.internode.on.net) (Quit: Leaving)
+[14:43:36] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[14:44:30] *** Seoson|BNC is now known as Sour_Sweet
+[14:52:37] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Connection closed)
+[14:54:24] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[15:10:09] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:16:39] *** Quits: losaned (losaned@Pony-num3km.exetel.com.au) (Quit: Leaving)
+[16:00:19] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[16:19:13] *** Init3-away is now known as init3
+[16:19:58] *** Eventide|Sleepies is now known as Eventide
+[16:33:36] *** Awaykitty is now known as Unixkitty
+[16:40:42] <Sour_Sweet> Reading an article about a linux server botnet. It's followed by a few tipps, because the servers were compromised using SSH brute force. One of the tipps: "Change your SSH port!". So I'm bruteforcing a SSH daemon, do I really care if I need to check 65535 ports first? (Probably less). Another tipp: "Deactivate your root login!" No, people, no just use freaking PublicKeyAuth already. If
+[16:40:44] <Sour_Sweet> don't know about you, but when I SSH into my server I need root 90% of the time (I wouldn't use SSH if I didn't). Just using sudoers adds little entropy, does not work with targeted attacks and creates entire new attack vectors.
+[16:42:36] <roflin> no it's not about targeted attacks, if you are targeted you are in deep trouble, but it just how to stop the random scriptkiddies that want to get access.
+[16:43:45] <roflin> targeted attacks are too costly just to add your computer to a botnet. they just go for low hanging fruit.
+[16:43:49] <Sour_Sweet> PublicKeyAut prevents brute forcing, no need to change port, root can stay active. And there still is fail2ban.
+[16:44:04] <nnnn20430> i just use keys for all logins
+[16:44:16] <Sour_Sweet> security by obscurity is no security
+[16:44:35] <Sour_Sweet> It delays things if anything
+[16:45:35] *** Joins: Crimson_Tail (Bluepon@Pony-vrjqf6.cg80.k4gu.0151.2601.IP)
+[16:47:52] *** Joins: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se)
+[16:59:13] *** init3 is now known as Init3-away
+[17:06:21] <RazorSharpFang> Sour_Sweet: Why does PublicKeyAuth prevent brute force?
+[17:08:24] <Sour_Sweet> Good luck brute forcing my key ;-) That being said you need to set PermitRootLogin to without-password. Otherwise this is pointless
+[17:09:11] <Sour_Sweet> Or use PublicKeyAuth with all users in which case you need to set PasswordAuthentication to no
+[17:10:16] <Sour_Sweet> The later one is obviously better but comes with the risk of locking yourself out (Keep a backup key somewhere safe or use your host's rescue system)
+[17:11:30] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:11:58] <RazorSharpFang> I mean, I don't even know what PublicKeyAuth is. What is it, and why can't it be brute forced? How is it different to a password?
+[17:13:21] <Sour_Sweet> It's like SSL. You have to keys: A public key and a private key. The public (in theory) can be posted publicly - it has no direct value. However it can verify that you have signed a message with your private key
+[17:13:44] <RazorSharpFang> And the private key, you keep private.
+[17:14:10] <Sour_Sweet> Yes. The private key - if generated correctly - is so complex that any brute forece attack with today's hardware is pointless
+[17:14:33] <RazorSharpFang> What kind of ball-park are we talking with time?
+[17:14:37] <RazorSharpFang> 10 years?
+[17:14:52] <RazorSharpFang> 100 years?
+[17:14:52] <Sour_Sweet> More like thousands of years with a super computer :P
+[17:15:06] <Sour_Sweet> Probably even a few magnitudes beyond that
+[17:18:50] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[17:23:17] <Sour_Sweet> We are talking about quadrillion of years with desktop computer hardware. If we don't have another breakthrough in cryptography it's basically impossible. IF those keys are ever going to be considred weak in our lifetime you'll hear about it however, because all things secure on the internet rely on it.
+[17:24:59] <RainbowHacks> Honestly, you really shouldn't be providing root access via ssh
+[17:25:03] *** Home is now known as Finnfinn
+[17:25:14] <RainbowHacks> not when other authentication mechanisms exist that you can use once you're logged in with a normal user
+[17:25:23] <RainbowHacks> (ie sudo, the wheel group, etc)
+[17:25:34] * RainbowHacks totally just used ie incorrectly.
+[17:26:22] *** \m is now known as mniip
+[17:26:39] <RainbowHacks> and let's be real here
+[17:27:30] <RainbowHacks> the real concern with any login (as long as you're not entirely stupid) isn't that it'll be brute forced. It's an exploit (either remote or local) or a targetted attack that compromises, say, your local machine to gain your key or passwords.
+[17:28:14] <RainbowHacks> i see lots of people who go I SET UP AN SSH KEY IM SAFE and a week later they're owned by some skiddie, because they didn't harden their box and didn't apply timely updates
+[17:29:00] <RazorSharpFang> Where would you typically keep your key? (I'm assuming it's a file)
+[17:29:34] <RainbowHacks> either on a volume using FDE, or a separate device (also using FDE) like a USB key you keep on your person at all times.
+[17:29:38] <Sour_Sweet> It's encrpyted with a Passphrase somewhere in my ordinary folder structre
+[17:30:04] <Sour_Sweet> (That being said my harddrive is encrpyted as well)
+[17:32:51] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[17:33:49] <Sour_Sweet> Brute forcing is a real thread. I have for example one server trying on various services to login since about 6 months. Without Fail2ban in this time of timespan it could probably bruteforce even more decent passwords
+[17:34:37] <Sour_Sweet> notice: decent - not strong
+[17:41:49] *** mniip is now known as \m
+[17:54:28] <Moonlightning> I just log in as myself and sudo if I need to.
+[17:54:36] <johnsey> RainbowHacks: what exactly is the security gain of using sudo over root login with key authentication (or similarly secure authentication method)?
+[17:55:06] <Moonlightning> I like my prompt and things. Don't wanna give that up for a root shell.
+[17:55:35] <Moonlightning> I keep the timeout set to 15m, which should be fine 'cos it was the default on Debian and Ubuntu, right?
+[17:56:15] <RazorSharpFang> Why not just su as root ?
+[17:56:16] <Colgate> johnsey: I guess it requires a 2nd local exploit to gain root? or a bruteforcing of a 2nd password
+[17:56:47] <Colgate> but that's just for root acess, they can potentially get plenty from a regular user account :P
+[17:58:39] <johnsey> Colgate: this assumes that the authentication method used for the root login can be considered not bruteforceable.
+[17:59:44] <RazorSharpFang> I assume that PrivateKeyAuth is unbruteforceable if done right.
+[18:00:56] <RazorSharpFang> Sleep time for me, cya
+[18:01:03] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Quit: Zzzzz)
+[18:01:27] <Moonlightning> Well, it's still bruteforcable
+[18:01:38] <Moonlightning> Just many orders of magnitude harder.
+[18:01:51] <Moonlightning> There are wayyyyyyyy more possibilities.
+[18:02:53] <johnsey> the point is that it's not bruteforceable in feasible time, which is sufficiently secure. there is no 100% in security, you can only make the attack hard enough to make it too hard for an attacker to do in feasible time with a given amount of resources
+[18:04:52] <Colgate> I don't have remote loot login enabled because it just isn't needed for me, I try my best to keep everything I need to do as a regular user
+[18:05:34] <johnsey> it only keeps you from shooting yourself in the foot to a certain degree but it does not increase security 
+[18:05:49] *** Quits: RainbowHacks (rainbow@Pony-m1cetk.ponix.space) (Quit: Whoops.)
+[18:06:58] <johnsey> sudo + secure authentication is equally secure against attacks against your SSH login as a root login with secure authentication
+[18:07:04] <johnsey> not more, not less
+[18:08:58] *** Joins: RainbowHacks (rainbow@Pony-m1cetk.ponix.space)
+[18:16:15] <Googie> It could help in some really odd edgecases. (Private key stolen with password, but password to sudo unknown). But really 99.99% of the time, with a secured system, I don't really think it improves security personally
+[18:16:32] <Googie> In a corporate network sudo could be useful for auditing
+[18:20:15] <Googie> Securing SSH beyond key auth only has always kinda seemed like a bit of cargo culting to me. Changing the port might help slow down any issues in the event of a major exploit being found I guess
+[18:20:35] <Googie> s/found/developed
+[18:23:12] *** Unixkitty is now known as Awaykitty
+[18:27:56] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[18:45:57] * JustAberrant_ changes port numbers just to avoid all the automated attacks
+[18:47:43] * Moonlightning configures rsh on JustAberrant_'s box.
+[18:47:50] <JustAberrant_> :>
+[18:47:57] <JustAberrant_> we used to use rsh at work :D
+[18:48:03] <JustAberrant_> .rlogin .. so secure :D
+[18:50:16] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:54:47] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[18:58:10] *** \m is now known as mniip
+[19:04:36] *** Gladiolus is now known as Student-Gladiolus
+[19:18:28] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[19:31:39] *** Joins: Fusl (Fusl@148.163.189.28)
+[19:49:19] *** zz_Pony_66432 is now known as CyberJacob
+[19:50:29] *** Quits: Student-Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[19:58:51] *** CyberJacob is now known as zz_CyberJacob
+[20:11:13] <Sour_Sweet> Mr. Brushie Horse Colgate, are you here?
+[20:15:06] *** Joins: Student-Gladiolus (uid110916@Pony-qjfks9.brockwell.irccloud.com)
+[20:17:28] <Sour_Sweet> I've sent you a PM ;-)
+[20:18:20] <Student-Gladiolus> Colgy is work pone I do believe.
+[20:20:07] <Sour_Sweet> We'll see. He's detached from screen for some time. In this case I need him personally sadly.
+[20:23:24] * Student-Gladiolus hugs Sour_Sweet
+[20:27:25] <mniip> Colgate, by the way how is that atheme-inspircd issue going?
+[20:27:57] <Colgate> Merged upstream
+[20:28:19] <Rylee> lol are you dealing with atheme
+[20:28:23] <Rylee> have "fun"
+[20:28:58] <mniip> Rylee, you can (could) use atheme to break insp pretty bad
+[20:29:05] <Rylee> amusing
+[20:29:36] <mniip> like regaining a ~ nickname
+[20:34:27] <Sour_Sweet> That was a phishing issue really. My client was able to differentiate the two nicks.
+[20:38:16] <mniip> Sour_Sweet, but your client's internal nicklist gets severily corrupted
+[20:39:15] <mniip> because it's impossible to tell 'owner' having status '~' from '~impersonator' having status '', in the 353 numeric
+[20:42:36] <Sour_Sweet> At least on the UI it looked like there was no issue at all. I had both nicks in the list (one at the bottom, one on top) and the messages had a different color
+[20:42:49] <Sour_Sweet> s
+[20:47:30] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[20:49:28] *** Joins: Sin (Sin@is.hustlin.everyday)
+[20:51:24] <mniip> Sour_Sweet, have you tried cycling whilst I was that way
+[20:51:51] <Sour_Sweet> No. I was sorf of busy ;-)
+[20:52:05] <Sour_Sweet> BUT I don't use the nicklist anyway
+[20:52:32] <mniip> on the contrary, I don't use inline statuses!
+[20:54:42] <mniip> there are very few cases when my interpretation of a person's message would depend on their channel statu
+[20:54:43] <mniip> s
+[20:56:31] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[20:56:52] <Sour_Sweet> Yeah it could cause trouble with inexperienced channel ops. As I said a phishing issue. As long as the IRC server/atheme doesn't mess things up the impact is small thankfully
+[20:59:30] <mniip> inexperienced eh
+[21:14:02] *** Quits: Student-Gladiolus (uid110916@Pony-qjfks9.brockwell.irccloud.com) (Quit: )
+[21:43:40] *** mniip is now known as \m
+[21:43:45] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[21:47:39] *** Quits: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se) (Quit: Leaving.)
+[21:50:34] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[21:56:57] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[22:00:53] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[22:09:18] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[22:12:19] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[22:17:47] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[22:22:27] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:30:24] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:35:03] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[22:41:39] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[23:03:37] <Moonlightning> >> http://www.doctorswithoutborders.org/article/afghanistan-msf-demands-explanations-after-deadly-airstrikes-hit-hospital-kunduz
+[23:03:38] <PinkiePieBot> [ Afghanistan: MSF Demands Explanations After Deadly Airstrikes Hit Hospital in Kunduz | MSF USA ]
+[23:12:06] <Sakura> Mew
+[23:15:17] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[23:17:42] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:26:15] <Moonlightning> https://imgur.com/QAM0p68
+[23:26:16] <PinkiePieBot> [ On the office toilets - Imgur ]
+[23:41:14] *** Joins: sleumas2000_ (uid91753@Pony-5dnslh.ealing.irccloud.com)
+[23:41:53] *** Init3-away is now known as init3
+[23:42:15] <JustAberrant_> Moonlightning: important question for you.. if you were to be held prisoner in equestria, assuming your choice doesn't influence the likelyhood of escape, whom would you rather be your jailer?
+[23:56:16] <Compu> i love fluttershy's archery outfit from friendship games

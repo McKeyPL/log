@@ -1,0 +1,263 @@
+[00:00:54] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[00:06:21] *** Mist|brbWC is now known as MistVeil
+[00:10:31] *** Quits: thatdguy (~WebChat@Pony-2bi.l9h.160.37.IP) (Quit: Page closed)
+[00:11:30] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[00:12:07] *** zz_CyberJacob is now known as CyberJacob
+[00:18:46] <Sour_Sweet> O.K. decision is made. My .de domains will be registered with my server hosting company. They are way cheaper than any other international company, not THE cheapest local company, but I know their service is O.K. . Everything else moves to namecheap.
+[00:20:30] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Quit: Saliendo)
+[00:22:01] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:22:23] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[00:23:33] <Sour_Sweet> Rylee: I've been looking for alternatives to my classic fingerprint based key pinning when switching to Let's Encrypt. I have tools already in place that can verify DNSSEC secured entries and together with TLSA that would have been an option. My current provider doesn't offer DNSSEC either, so I don't loose much.
+[00:30:18] <DJ-C0L7[EIT]> howdy
+[00:31:30] <johnsey> Sour_Sweet: can recommend inwx for .de domains
+[00:34:43] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[00:35:20] <Sour_Sweet> O_o They are more expensive than Hetzner (Not that under 5,-€ is much in any case).  Their feature list is impressive. I'll take a closer look. Thank you ;-)
+[00:37:13] <johnsey> DNSSEC may require a manual inquiry, dunno if that changed yet, but they supported it semi-officially last time I checked
+[00:37:14] <Sour_Sweet> johnsey: Oh. btw. Is it intentional that you have to have a nickname grouped with nickserv to be able to use !mail (e.g. being logged in as a different nick is not enough)? That hit me quite unexpected when I've used it last time.
+[00:37:59] <Sour_Sweet> Also the error message was not necessarily helpful in that case ^^
+[00:38:07] *** init3 is now known as Init3-away
+[00:39:02] <johnsey> yeah, it's intentional
+[00:40:46] <johnsey> makes spam require a bit more effort than most are willing to muster :)
+[00:42:54] <Sour_Sweet> Btw. the cheapest source for .de domains I could find appears to be https://www.do.de/ . I don't like their payment policy for new customers, but I guess for long term bulk registration they're fine. With 1,99€/y they are incredibly cheap
+[00:42:56] <PinkiePieBot> [ Domain Check & Webhosting für alle guenstig zu kaufen ]
+[00:53:01] <johnsey> if it's a matter of a few EUR/year, i tend to favor a reliable, professional service over a cheap, shady one. less worries about them losing my data or allowing takeovers by fax or some crap. not to mention a bunch of extra features the slightly more expensive service may offer
+[00:54:46] <johnsey> if you don't care about all that, might as well go with godaddy hah
+[00:55:39] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:57:35] *** Init3-away is now known as init3
+[00:59:21] <Colgate> haha
+[01:03:30] *** Joins: CrassyPaddles (test@Pony-in0.enl.137.198.IP)
+[01:06:09] <Sour_Sweet> Why is FAX even a thing anymore -.-
+[01:07:33] <Colgate> because it is considered secure enough to transfer medical information
+[01:07:58] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Ping timeout: 121 seconds)
+[01:12:16] <Sour_Sweet> What exactly is secure about an unencrypted message send over a protocol that allows address spoofing, is often handled over the internet and decreases documents to a quality where you cannot spot any fakes reliably? (No I don't assume you think FAX is secure :P)
+[01:14:35] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[01:16:43] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[01:16:50] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[01:22:05] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:26:05] *** CyberJacob is now known as zz_CyberJacob
+[01:36:53] <Colgate> I absolutely do not think faxes are secure, lol
+[01:37:16] <Colgate> but it is good enough for medical data :V
+[01:40:36] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[01:40:43] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[01:44:59] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[01:49:23] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:19:56] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:52:55] * JustAberrant committed so many egregious security mistakes when I bought my house
+[02:53:08] <JustAberrant> like, you just hit a point where you don't care
+[02:53:21] <JustAberrant> email you a scanned void check.. sure why the hell not :>
+[02:54:13] <JustAberrant> and yeah, it's funny how organizations still treat the fax as some secure method of transfer even though it's pretty much the least secure and just about everyone actually knows that
+[02:54:30] <JustAberrant> even non-technical people are like.. "it just goes over the phone lines right"
+[02:54:34] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[02:55:25] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[02:55:39] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[02:56:28] *** Joins: Asoka (Asoka@Pony-hchu7m.net-htp.de)
+[02:59:38] *** Quits: Asoka_White (Asoka@Pony-fsel45.net-htp.de) (Ping timeout: 121 seconds)
+[03:12:02] <Colgate> pots lines are so easy to tap into
+[03:12:04] *** Joins: RekttothePecs (test@Pony-in0.enl.137.198.IP)
+[03:12:14] *** Quits: CrassyPaddles (test@Pony-in0.enl.137.198.IP) (Connection closed)
+[03:21:51] <Compu> i wonder what the fastest AGP graphics card was
+[03:30:31] *** Joins: tiwork (WebChat@Pony-rhbl0e.wa.charter.com)
+[03:30:43] * tiwork pokes Colgate 
+[03:30:49] <Colgate> hi
+[03:30:55] <tiwork> hi :3
+[03:31:25] <tiwork> finishing up today, getting ready to go to a thing, but I dont want to get there too early
+[03:31:41] <tiwork> ...and my laptop is still not functioning yet
+[03:31:44] <tiwork> lol
+[03:32:47] <tiwork> sooo
+[03:32:57] <tiwork> I thought I'd swing by for ~5min and say hi
+[03:34:29] <Colgate> lol
+[03:35:19] *** Cosmic is now known as Cosmic|sleep
+[03:36:08] *** Quits: RekttothePecs (test@Pony-in0.enl.137.198.IP) (Ping timeout: 121 seconds)
+[03:37:39] <tiwork> a guy dropped off a drawing for me to make parts out of
+[03:37:45] <tiwork> its pretty simple, as far as parts go
+[03:38:25] <tiwork> he messed the drawing up a fair amount, and I had to redrill half of them
+[03:38:50] <tiwork> the only reason why not all of them is cause half way though I had a hunch that something was wrong
+[03:39:26] *** Joins: RekttothePecs (test@Pony-in0.enl.137.198.IP)
+[03:39:31] *** Quits: RekttothePecs (test@Pony-in0.enl.137.198.IP) (Connection closed)
+[03:39:40] <tiwork> ...life of the machinist
+[03:39:47] <Colgate> lol
+[03:41:11] <tiwork> alright, time to take off
+[03:41:16] <tiwork> TTFN poners
+[03:41:29] *** Quits: tiwork (WebChat@Pony-rhbl0e.wa.charter.com) (Quit: Page closed)
+[03:43:18] *** Joins: CrassyPaddles (test@Pony-in0.enl.137.198.IP)
+[03:48:52] *** Alphagamer774 is now known as Alpha774[streaming
+[03:49:19] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[04:15:28] *** Snoarin is now known as Gigabit
+[04:33:19] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 121 seconds)
+[04:35:02] *** Alpha774[streaming is now known as alpha[GW2
+[04:35:15] *** alpha[GW2 is now known as Alpha[GW2-Streaming]
+[04:35:26] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[05:14:43] *** Quits: zeta_ (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[05:15:51] *** Joins: Pony_87172 (Bluepon@Pony-la4t1a.cg80.k4gu.0151.2601.IP)
+[05:16:07] *** Quits: Colgate (rabbit@brushie.horse) (Ping timeout: 121 seconds)
+[05:16:33] *** Pony_87172 is now known as Crimson_Tail
+[05:27:19] *** Joins: Colgate (rabbit@brushie.horse)
+[05:42:23] *** Gigabit is now known as Snoarin
+[05:42:31] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[05:55:29] <Compu> https://github.com/ajalt/fuckitpy
+[05:55:29] <PinkiePieBot> [ ajalt/fuckitpy · GitHub ]
+[05:56:37] *** init3 is now known as Init3-away
+[06:10:42] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[06:24:18] <Q0> I just got two drives from work
+[06:24:21] <Q0> let's see how fucked they are
+[06:24:27] <Q0> Seagates so already the prospect looks dim
+[06:24:48] <Q0> one winner, no spin up
+[06:27:43] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:28:35] *** ButterBean is now known as ShadowPony
+[06:28:42] *** ShadowPony is now known as group
+[06:28:53] *** group is now known as ButterBean
+[06:30:45] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[06:30:50] <Q0> second drive looks to have locked up disk management
+[06:31:14] <Q0> which means i have about 4 or 5 busted Seagate drives that are over 1tb. Never change Seagate.
+[06:32:38] <Moonlightning> ;-;
+[06:32:55] <Moonlightning> You could have joined #SharingIsCaring !
+[06:33:19] <Moonlightning> If only they hadn't busted.
+[06:33:37] <Q0> it may be my interface but it's probably the drive
+[06:38:10] <Moonlightning> Hmm. You said no, right?
+[06:46:12] <Q0> seems so
+[06:56:12] <Q0> also my hotswap bay on my pc won't stay closed cheap chinese pos
+[06:56:55] <Q0> luckily I have two nice ones from a old P3 Server I decoed
+[07:14:45] *** Joins: RekttothePecs (test@Pony-in0.enl.137.198.IP)
+[07:14:45] *** Quits: CrassyPaddles (test@Pony-in0.enl.137.198.IP) (Connection closed)
+[07:15:58] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:44:12] <Googie> https://www.reddit.com/r/talesfromtechsupport/comments/3om6vo/choose_the_program_you_would_like_to_open_this/
+[07:44:14] <PinkiePieBot> [ "Choose the program you would like to open this file: java.exe" or, "How I managed to set all executable files to open in Internet Explorer." : talesfromtechsupport ]
+[07:44:19] <Googie> I... I didn't know that was possible.
+[07:52:17] <HoneyDrops> XD
+[07:52:29] <Colgate> Googie: and that is why I have this saved on my webserver: https://minuette.net/WinXP_EXE_Fix.reg
+[07:57:50] <HoneyDrops> I didn't even know it was possible to do that... also that it effects nearly every way to run an exe o_O
+[07:58:47] * HoneyDrops will leave aside the matter that file extensions are a terrible way to handle file types/associations, at least as far as any shell should be concerned.
+[07:58:55] <Moonlightning> ^!!!
+[07:59:08] <Moonlightning> They can be used to provide a hint, but should not be considered authoritative.
+[08:01:25] <Colgate> some malware likes to mess with it :(
+[08:05:41] <HoneyDrops> I dunno if xdg-open even works on this system... nothing do uses it.
+[08:09:21] <HoneyDrops> s/do/I do/
+[08:14:30] <Moonlightning> …where does the 307 in TOPICLEN=307 come from? >.>
+[08:19:35] <Colgate> the config file
+[08:20:11] <Moonlightning> :|
+[08:21:57] <Moonlightning> Is it something like `512 - (":!@ ".len() + max_nickuserhost_len + "TOPIC ".len() + max_channel_len + " :".len() + "\r\n".len())` though?
+[08:23:44] <tiwake> hehe
+[08:24:11] <tiwake> in pillars of eternity, I named my canters script "pony should pony pony"
+[08:25:12] <Moonlightning> :?
+[08:26:46] <Colgate> https://github.com/Canternet/inspircd/blob/master/docs/conf/inspircd.conf.example#L780
+[08:26:47] <PinkiePieBot> [ inspircd/inspircd.conf.example at master · Canternet/inspircd · GitHub ]
+[08:27:59] <Colgate> it is just, "307"
+[08:30:00] <Moonlightning> yes, but why 307?
+[08:30:09] <Moonlightning> It's not a round number like 300 or 384
+[08:30:16] <Moonlightning> is it just arbitrary, or is there a reason for it?
+[08:31:54] *** zz_CyberJacob is now known as CyberJacob
+[08:40:33] *** Eventide is now known as Eventide|Sleepies
+[08:45:58] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:52:51] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "if at first you dont succeed, get a bigger hammer")
+[08:54:19] *** Quits: RekttothePecs (test@Pony-in0.enl.137.198.IP) (Ping timeout: 121 seconds)
+[09:08:13] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:30:05] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[09:33:20] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[09:46:06] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[09:52:39] *** CyberJacob is now known as zz_CyberJacob
+[09:55:43] *** Joins: MorningSong (Dusk@dusky.horse)
+[09:57:17] *** Quits: Dusk (Dusk@dusky.horse) (Ping timeout: 121 seconds)
+[09:57:17] *** MorningSong is now known as Dusk
+[09:57:30] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Killed (NickServ (GHOST command used by Legion_Red!LegionRed@Pony-i58i8p.res.rr.com)))
+[10:07:54] *** Joins: Phase (Phase4@Pony-pocs54.internode.on.net)
+[10:26:47] *** Quits: Crimson_Tail (Bluepon@Pony-la4t1a.cg80.k4gu.0151.2601.IP) (Ping timeout: 121 seconds)
+[10:33:54] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[10:34:36] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[10:35:18] *** Quits: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile) (Ping timeout: 121 seconds)
+[10:35:25] *** Quits: Snoarin (Gigabit@Bazinga) (Ping timeout: 121 seconds)
+[10:36:19] *** Joins: GigabitPony (Gigabit@Bazinga)
+[10:36:19] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[10:36:49] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[10:38:19] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[10:44:24] *** Joins: Ruthalas_ (Ruthalas@Pony-nlt.b4h.171.67.IP)
+[10:47:21] *** Quits: Ruthalasleep (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Ping timeout: 121 seconds)
+[10:55:18] *** Quits: Phase (Phase4@Pony-pocs54.internode.on.net) (Ping timeout: 121 seconds)
+[10:55:39] *** Awaykitty is now known as Unixkitty
+[11:02:02] *** Joins: Phase (Phase4@Pony-ntnccm.internode.on.net)
+[11:06:22] *** Joins: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au)
+[11:24:53] *** Quits: Phase (Phase4@Pony-ntnccm.internode.on.net) (Ping timeout: 121 seconds)
+[11:25:50] *** Joins: Phase (Phase4@Pony-ntnccm.internode.on.net)
+[11:32:41] *** Quits: Ruthalas_ (Ruthalas@Pony-nlt.b4h.171.67.IP) (Connection closed)
+[11:33:03] *** Joins: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[11:37:08] *** Quits: Alpha[GW2-Streaming] (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Quit:  HydraIRC -> http://www.hydrairc.com <- Chicks dig it)
+[11:48:36] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[11:56:58] *** Joins: thatdguy (WebChat@Pony-dn7.gku.160.37.IP)
+[12:00:31] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[12:02:52] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[12:04:10] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[12:21:15] *** Quits: thatdguy (WebChat@Pony-dn7.gku.160.37.IP) (Ping timeout: 121 seconds)
+[12:31:30] *** Quits: stevestreza (Steve@Pony-2pu89d.g2b4.t1b7.3c00.2600.IP) (Ping timeout: 121 seconds)
+[12:32:30] *** Quits: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP) (Quit: No Ping reply in 180 seconds.)
+[12:32:53] *** Joins: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP)
+[12:33:28] *** Joins: stevestreza (Steve@Pony-2pu89d.g2b4.t1b7.3c00.2600.IP)
+[12:46:10] *** djazz is now known as MangoBloom
+[13:36:41] *** Unixkitty is now known as Awaykitty
+[13:59:19] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[14:07:16] *** Awaykitty is now known as Unixkitty
+[14:39:33] *** Joins: TachyonicBow (Tachy@Pony-1eooao.range86-157.btcentralplus.com)
+[14:40:07] *** Quits: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au) (Connection closed)
+[14:46:47] *** Joins: thatdguy (WebChat@Pony-223.h2b.163.37.IP)
+[15:22:32] *** Init3-away is now known as init3
+[15:52:34] *** Eventide|Sleepies is now known as Eventide
+[16:13:55] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:39:46] *** GigabitPony is now known as Gigabit
+[17:09:55] *** TachyonicBow is now known as Obaskyr
+[17:25:13] <tiwake> Moonlightning: http://www.phoronix.com/scan.php?page=news_item&px=SUSE-Linux-Btrfs-Rollbacks
+[17:25:14] <PinkiePieBot> [ How SUSE Linux Makes Use Of Btrfs Rollbacks - Phoronix ]
+[17:25:32] <tiwake> looks like SUSE uses BTRFS on its server edition too
+[17:43:28] <Compu> http://i.imgur.com/Pmqr1Er.png
+[17:44:15] <tiwake> I was just reading a bit about this https://upload.wikimedia.org/wikipedia/commons/a/ad/Curta_-_National_Museum_of_Computing.jpg
+[17:44:29] <tiwake> <3 Curta
+[17:46:45] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[17:52:03] <DataByte> hahaha, Compu, i would totally have done that years ago if i had the parts xD
+[17:53:00] <Compu> DataByte: airflow would be shit and it would eat dust like a vacuum cleaner
+[17:53:46] <DataByte> exhaust out the top and back, and yes - without a filter it'd get dusty xD
+[17:54:10] <Compu> it'd be clogged with dust within a day
+[18:22:44] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:31:39] *** Cosmic|sleep is now known as Cosmic
+[18:41:18] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[18:41:42] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[18:41:48] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Quit: )
+[18:45:23] *** Joins: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se)
+[18:53:00] *** Unixkitty is now known as Awaykitty
+[18:58:05] *** Joins: Valiant (uid110916@Pony-qjfks9.brockwell.irccloud.com)
+[19:23:39] *** Quits: Rylee (rylai@Pony-71u6pe.so) (Ping timeout: 121 seconds)
+[19:26:14] <init3> why did I dream about ipv6? I dreamed I broke my ipv4 stack and just decided to see how long I could go without fixing it. 
+[19:26:20] *** Joins: Rylee (rylai@Pony-71u6pe.so)
+[19:44:19] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[20:03:46] *** init3 is now known as Init3-away
+[20:11:07] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:20:42] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[20:35:23] *** Quits: Rylee (rylai@Pony-71u6pe.so) (Ping timeout: 121 seconds)
+[20:36:11] *** Joins: Rylee (rylai@Pony-71u6pe.so)
+[20:38:12] *** Quits: Rylee (rylai@Pony-71u6pe.so) (Connection closed)
+[20:38:56] *** Joins: Rylee (rylai@Pony-71u6pe.so)
+[20:40:00] *** Quits: Valiant (uid110916@the.truth.is.out.there) (Quit: )
+[20:45:23] *** Init3-away is now known as init3
+[20:59:26] *** Joins: MistVeil (AndChat3408@Pony-b4g.bpr.95.200.IP)
+[20:59:38] *** Parts: MistVeil (AndChat3408@Pony-b4g.bpr.95.200.IP) ("Leaving")
+[21:01:29] *** Joins: Valiant (uid110916@Pony-qjfks9.brockwell.irccloud.com)
+[21:07:14] *** Quits: thatdguy (WebChat@Pony-223.h2b.163.37.IP) (Ping timeout: 121 seconds)
+[21:08:05] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[21:15:23] *** init3 is now known as Init3-away
+[21:37:15] <Moonlightning> tiwake: hmmmmm.
+[21:37:24] <Moonlightning> Sounds like I may well have to switch, then.
+[21:39:26] *** Quits: Valiant (uid110916@the.truth.is.out.there) (Quit: )
+[22:17:10] * Moonlightning frowns.
+[22:17:20] <Moonlightning> I have a zsh that's taking up oddly large chunks of CPU time
+[22:17:34] <Moonlightning> It's running in ttys013, which doesn't seem to exist.
+[22:17:41] <Moonlightning> I can't find it, anyway…
+[22:18:26] <Moonlightning> It's not any of the GUI terminals I have open
+[22:18:32] <Moonlightning> It's not any of the terminals I have in tmux
+[22:18:52] <Moonlightning> and yes, I checked the terminal that was attached to tmux
+[22:19:04] <Moonlightning> It's the only thing running in that terminal.
+[22:20:12] <Moonlightning> Started about a week ago.
+[22:23:13] <Moonlightning> `w` doesn't say anything about ttys013
+[22:44:10] *** Double_Diamond is now known as LightningCrash
+[22:59:10] *** Init3-away is now known as init3
+[23:09:55] *** Joins: firestream (vinylderpy@Pony-npl40m.dsl.bell.ca)
+[23:15:41] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[23:27:08] *** Joins: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au)
+[23:27:14] *** Quits: Phase (Phase4@Pony-ntnccm.internode.on.net) (Ping timeout: 121 seconds)
+[23:56:09] *** zz_CyberJacob is now known as CyberJacob
+[23:58:23] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)

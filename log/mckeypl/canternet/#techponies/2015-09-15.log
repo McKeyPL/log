@@ -1,0 +1,329 @@
+[00:11:46] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[00:23:54] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[01:15:55] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:22:21] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:31:04] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "i'll be back later, talk to everypony later")
+[01:41:46] *** init3 is now known as Init3-away
+[01:44:16] *** Init3-away is now known as init3
+[01:50:32] *** Joins: Student-Gladi (uid110916@Pony-qjfks9.brockwell.irccloud.com)
+[01:51:21] *** Student-Gladi is now known as Gladiolus
+[02:24:54] *** Quits: Gladiolus (uid110916@Pony-qjfks9.brockwell.irccloud.com) (Quit: )
+[02:45:42] *** Joins: Asoka_White (Asoka@Pony-et36jo.net-htp.de)
+[02:46:59] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[02:47:24] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[02:48:54] *** Quits: Asoka (Asoka@Pony-utbe81.net-htp.de) (Ping timeout: 121 seconds)
+[03:01:32] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[03:01:41] *** Quits: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile) (Ping timeout: 121 seconds)
+[03:01:53] *** Quits: GigaTown (Gigabit@the.girly.colt) (Ping timeout: 121 seconds)
+[03:01:57] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[03:02:56] *** Joins: GigabitPony (Gigabit@the.girly.colt)
+[03:02:56] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[03:02:57] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[03:03:56] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[03:05:05] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[03:05:33] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[03:05:38] <CompuDesktop> how old is this? "Apache/1.3.42 (Unix) PHP/4.4.9 mod_log_bytes/1.2 mod_bwlimited/1.4 mod_auth_passthrough/1.8 FrontPage/5.0.2.2635 mod_ssl/2.8.31 OpenSSL/0.9.7a"
+[03:07:18] <init3> CompuDesktop: Really old
+[03:07:37] <CompuDesktop> init3: its from this http://toastytech.com/
+[03:07:38] <PinkiePieBot> [ Nathan's Toasty Technology Page ]
+[03:07:52] <init3> But apache 1.3 was on a lts thing. Not sure if it stil is.
+[03:08:03] <init3> hue
+[03:08:47] <init3> I think that openssl is post heartbleed though. 
+[03:09:14] <init3> Oh, no that's before HB was a thing. 
+[03:10:13] <init3> Yeah, 1.3 was one of those things they did backports for
+[03:10:57] <CompuDesktop> init3: i wonder who is still running this webpage
+[03:11:03] <init3> But not any longer. 2.2 is  considered legacy. httpd does not update all that often besides security fixes as you might imagine. 
+[03:11:23] <init3> I mean, I wonder if it hosts other things. 
+[03:11:37] <init3> Well, let's see /where/ the server is. 
+[03:12:22] <init3> HAHA i thought I recognized that netblock
+[03:12:29] <init3> It's where I used to work. 
+[03:12:31] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:13:58] <CompuDesktop> init3: eh?
+[03:14:19] <init3> NetRange:       64.91.224.0 - 64.91.255.255
+[03:14:21] <init3> CIDR:           64.91.224.0/19
+[03:14:21] <CompuDesktop> it seems to actually be running on Unix
+[03:14:22] <init3> NetName:        LIQUIDWEB
+[03:14:43] <CompuDesktop> init3: did they have any Unix servers where u worked?
+[03:14:47] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[03:15:06] <init3> I mean, we were mostly a dedicated server provider. 
+[03:15:19] <init3> So could be anything, but in this case. 
+[03:15:44] <init3> I bet I could tell you where that server is within 15 feet. 
+[03:16:22] <init3> [jason@jason-lt:~]$host 64.91.245.1
+[03:16:24] <init3> 1.245.91.64.in-addr.arpa domain name pointer sharedspace.liquidweb.com.
+[03:16:46] <init3> Just look at that hostname. That tells you something. 
+[03:17:05] <init3> Because that company has well over 100 shared servers now.
+[03:17:15] <init3> Well it did in 2010
+[03:17:38] <CompuDesktop> init3: oh so theyre just hosting it for someone else?
+[03:17:51] <init3> So this is probably one of their oldest shared servers. 
+[03:18:23] <init3> If it was somone else's, it wouldn't have a X.liquidweb.com PTR
+[03:19:19] <init3> I mean, it could be a different server, but that .1 is the closest IP with a PTR
+[03:20:44] <init3> Upgrading clients from Apache 1.3 to 2.x would break a lot of shit (something like static HTML not so much) so we'd offer users a free upgrade. 
+[03:21:06] <init3> And by that I mean migration to another server. 
+[03:21:24] <CompuDesktop> mmmm
+[03:21:29] <init3> But if they did not want or did not respond we just left them be. 
+[03:22:06] <CompuDesktop> so some guy is paying for a server that just seems to run this super old website and is not being updated much?
+[03:22:25] <init3> My bet is it is a shared server. 
+[03:22:42] <init3> That yeah, probably never gets touched. 
+[03:23:34] <CompuDesktop> i wonder why its still being run
+[03:23:36] <init3> If I didn't lose my old phone I could make a few calls and get you specs on the server. 
+[03:23:47] <init3> Because someone is still paying for it of course. 
+[03:24:21] <HoneyDrops> I remember that site.  Ah, when web design was at its peak~
+[03:24:47] <init3> If the hardware ever dies they'll move them to something newer but when I left we had Cent 5 (newest at the time) boxen running legacy apache for customers that need it. 
+[03:25:15] <init3> Telling some people to update their code is just impossible. 
+[03:26:02] <CompuDesktop> init3: pfft http://toastytech.com/evil/052698borgman_600x388.jpg
+[03:26:18] <init3> Haha
+[03:26:42] <init3> Yeah, so plenty of people at LW want to shut down that very server I'm sure. 
+[03:26:45] <CompuDesktop> init3: and this http://toastytech.com/evil/uf980801.gif
+[03:26:56] <CompuDesktop> init3: LW?
+[03:27:04] <init3> But our hands are kind of tied. LiquidWeb, the ISP.
+[03:27:37] <init3> I remember userfriendly!
+[03:28:33] <CompuDesktop> init3: oh this is good too http://toastytech.com/evil/ieerrors.html
+[03:28:33] <PinkiePieBot> [ New Internet Explorer Errors ]
+[03:29:05] <init3> This is so 1990s it's amazing. 
+[03:30:37] <CompuDesktop> its awesome
+[03:30:45] *** Joins: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net)
+[03:33:23] <CompuDesktop> Crimson_Tail: http://toastytech.com/evil/ieerrors.html
+[03:33:23] <PinkiePieBot> [ New Internet Explorer Errors ]
+[03:38:15] *** Joins: MistVeil (AndChat3408@Pony-38d.05d.210.187.IP)
+[03:57:40] <CompuDesktop> init3: pffffft http://toastytech.com/evil/errwindows.html
+[03:57:41] <PinkiePieBot> [ Wacky Windows Errors ]
+[04:03:55] *** Quits: MistVeil (AndChat3408@Pony-38d.05d.210.187.IP) (Quit: Bye)
+[04:35:56] <Crimson_Tail> Wat
+[04:52:50] *** init3 is now known as Init3-away
+[05:03:57] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[05:05:06] <CompuDesktop> :D http://speedof.me/show.php?img=150914130044-105636.png
+[05:09:35] *** Flowheart is now known as Starburn
+[05:11:22] <HoneyDrops> http://www.wired.com/2015/09/jeb-bush-stop-demonizing-nsa/  :I
+[05:11:22] <PinkiePieBot> [ Jeb Bush Asks That You Stop 'Demonizing' the NSA, Please | WIRED ]
+[05:17:40] <Starthunder> We'll stop demonizing the NSA when you stop demonizing Satan.
+[05:24:22] <Googie> And Let'sEncrypt just issued their first Cert
+[05:27:26] <HoneyDrops> :)
+[05:37:13] <Starthunder> o3o !
+[05:37:17] <Starthunder> o3o !!
+[05:42:23] *** Init3-away is now known as init3
+[05:43:37] *** Eventide is now known as Eventide|Sleepies
+[06:15:36] *** init3 is now known as Init3-away
+[06:34:26] *** Quits: MangoBloom (djazz@djazz.se) (Quit: znc closed :/)
+[07:05:09] *** GigabitPony is now known as Soarin
+[07:05:10] *** Soarin is now known as Vega
+[07:29:23] *** Vega is now known as GigaZzz
+[07:50:53] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:24:47] *** Joins: JockeTF (jocke@Pony-iqmf0q.priv.bahnhof.se)
+[09:07:59] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[09:10:07] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[09:45:11] *** Init3-away is now known as init3
+[09:48:06] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[10:20:40] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[10:28:06] *** Joins: Phase (Phase4@Pony-b9grq3.internode.on.net)
+[11:03:47] *** init3 is now known as Init3-away
+[11:19:25] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Quit: Leaving)
+[11:19:39] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[11:31:32] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[11:34:02] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[11:36:56] *** Init3-away is now known as init3
+[12:38:17] *** init3 is now known as Init3-away
+[12:48:55] *** Init3-away is now known as init3
+[12:51:46] *** Quits: RainbowHacks (rainbow@Pony-m1cetk.ponix.space) (Ping timeout: 121 seconds)
+[12:55:13] *** Joins: RainbowHacks (rainbow@Pony-m1cetk.ponix.space)
+[12:56:44] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[13:02:46] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[13:25:53] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:07:04] *** Eventide|Sleepies is now known as Eventide
+[14:08:21] *** Awaykitty is now known as Unixkitty
+[14:11:26] *** Quits: JockeTF (jocke@Pony-iqmf0q.priv.bahnhof.se) (Quit: Leaving.)
+[14:12:57] *** Joins: JockeTF (jocke@Pony-iqmf0q.priv.bahnhof.se)
+[14:26:38] *** Quits: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP) (Connection closed)
+[14:39:01] *** init3 is now known as Init3-away
+[14:41:23] *** Init3-away is now known as init3
+[14:42:42] <init3> >tfw you fix your car with a q-tip and feel like a 1337 h4x0r. 
+[14:44:37] *** Quits: AutoLapsus (Lapsus@Totally.Is.A.Network.Service) (cloudchaser.canternet.org services.canternet.org)
+[14:44:48] *** Joins: AutoLapsus (Lapsus@Totally.Is.A.Network.Service)
+[14:44:48] *** services.canternet.org sets mode: +o AutoLapsus
+[14:44:48] *** AutoLapsus sets mode: +qoo Lapsus Lapsus Kinsley
+[15:24:05] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Quit: )
+[16:20:24] <WorkingData> init3: a q-tip? to fix your car? what did you do?
+[16:20:52] <init3> It was idling rough
+[16:21:26] <init3> and has been ofr like a year and I haven't been bothered enough to look into it really.
+[16:21:43] <init3> But I had a eureka moment in bed at 5am.
+[16:22:06] <init3> So I wiped off the Mass Airflow Sensor (the one right after the air filter) with a q tip and she purrs again. 
+[16:24:54] <init3> Part of the reason is my dad got a new twin turbo Cadillac and said he thought my car was faster and I doubted. It certainly wasn't when it was running rough, but I concede he is correct. Small car with an old, 4L V8 > New large car with a twin trubo large V6.
+[16:32:50] <WorkingData> heh ;)
+[16:33:07] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Connection closed)
+[16:33:36] <init3> But his car is a lot nicer
+[16:33:42] <init3> And runs linux.
+[16:33:44] <init3> lol
+[16:33:49] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:34:05] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[16:48:22] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[16:53:47] <WorkingData> i would be jealous of a linux car, lol
+[16:54:10] <tiwake> it runs linux on the main computer for the car?
+[17:02:33] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:04:57] <WorkingData> reminds me of: http://lowendmac.com/lite/02/0304.html
+[17:04:57] <PinkiePieBot> [ If Cars Were Like Operating Systems ]
+[17:07:57] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[17:10:40] <DJ-C0L7[EIT]> firefox keeps crashing upon start
+[17:10:53] <WorkingData> nuke it?
+[17:10:54] <WorkingData> xD
+[17:13:07] <DJ-C0L7[EIT]> click firefox, "an error has occured"
+[17:13:16] <DJ-C0L7[EIT]> reload "oops, something broke"
+[17:13:20] <DJ-C0L7[EIT]> O_o..... dafuq
+[17:14:16] <DJ-C0L7[EIT]> >.< apparently it was a crappy script on a page it was trying to load, i killed the plugin container process, firefox loaded fine and threw an error that a page was having problems
+[17:15:25] *** init3 is now known as Init3-away
+[17:19:55] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:21:51] <johnsey> plugin container process? that's still a thing?
+[17:22:46] <DJ-C0L7[EIT]> apparently
+[17:22:54] <DJ-C0L7[EIT]> i thought they had done away with that with the recent update
+[17:31:27] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:31:41] <johnsey> i don't see it but i removed flash almost a year ago, too
+[17:35:50] *** GigaZzz is now known as Vega
+[17:38:11] *** Joins: thatdguy (WebChat@Pony-pkbcdj.fbx.proxad.net)
+[17:39:08] *** Joins: Crimson_Tail (Bluepon@Pony-tedogm.cg80.k4gu.0151.2601.IP)
+[17:40:20] <WorkingData> http://i.imgur.com/kRhZs5d.png
+[17:40:20] <WorkingData> xD
+[17:41:38] <MistVeil> Math is win
+[17:41:50] <MistVeil> ...Except in calculus tests.
+[17:45:23] *** Vega is now known as VegaTown
+[17:47:02] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (Connection closed)
+[18:19:13] *** Joins: Pony|86092 (Pony86092@Pony-0jg.eib.142.94.IP)
+[18:20:26] <Pony|86092> u, hi
+[18:38:06] *** Unixkitty is now known as Awaykitty
+[18:41:42] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[18:43:42] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[19:04:31] *** djazz is now known as MangoBloom
+[19:06:47] <johnsey> http://superuser.com/questions/957907/unable-to-install-fonts-on-windows-10
+[19:06:48] <PinkiePieBot> [ Unable to install fonts on Windows 10 - Super User ]
+[19:06:54] <johnsey> lol
+[19:07:30] <Colgate> wat
+[19:08:00] <Blackjack> xD
+[19:08:02] <Blackjack> That is the best
+[19:10:40] *** Joins: Sol (Sol@Pony-nc8b4c.res.rr.com)
+[20:01:10] *** Init3-away is now known as init3
+[20:05:01] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[20:08:50] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:13:33] *** Lapsus is now known as Pony|35441
+[20:18:51] *** Pony|35441 is now known as Lapsus
+[20:29:37] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Quit: Saliendo)
+[20:32:37] * Starthunder boops init3
+[20:37:09] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:49:46] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:57:22] <init3> hai
+[20:57:28] <Pony|86092> hi
+[20:58:52] <init3> tiwake: It runs linux on the infotainment. Sadly I am guessing the ECU is still proprietary, but if the Chrysler hack is any indication there is no air gap there so....
+[20:59:59] <init3> KEEEEEEK: https://twitter.com/vincereestviver/status/643859029341667329
+[21:00:00] <PinkiePieBot> [ odette on Twitter: "@SwiftOnSecurity i'm scared http://t.co/NxEjojvCxN" ]
+[21:00:30] * init3 leverages full-spectrum cyber all over the chat.
+[21:01:30] <init3> Oh, it does include the instrument cluster though. tiwake so it'd have to be hooked up to all the sensors. Maybe the ECU is linux.
+[21:02:01] <init3> It's like a fucking 777 where instead of dials the whole instrument cluster is an LCD. 
+[21:02:50] <Starthunder> init3: I was gonna host backups for you, wasn't I
+[21:03:25] <init3> You had offered, but I have determined I have nothing worthy of an off-site backup. 
+[21:03:26] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[21:03:34] <Starthunder> Aww.
+[21:03:44] <init3> Much appreciated though. 
+[21:16:43] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Quit: )
+[21:27:52] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "back after a while everypony")
+[21:42:18] *** Quits: Pony|86092 (Pony86092@Pony-0jg.eib.142.94.IP) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[21:57:28] *** Quits: Phase (Phase4@Pony-b9grq3.internode.on.net) (Ping timeout: 121 seconds)
+[22:03:44] *** init3 is now known as Init3-away
+[22:06:57] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[22:07:06] *** Quits: JockeTF (jocke@Pony-iqmf0q.priv.bahnhof.se) (Quit: Leaving.)
+[22:09:36] <Starthunder> Hmm, okay
+[22:10:58] <Starthunder> How can I let a user manipulate their files, but not do much else?
+[22:11:19] <Starthunder> In particular, they shouldn't be able to establish connections (beyond the ones necessary for ssh|rsync|etc)
+[22:14:16] <wolfyshy> if they have to establish any, they can establish all, unless you use pf
+[22:14:21] <wolfyshy> or your OS' equivalent
+[22:15:40] <Starthunder> iptables, huh?
+[22:17:51] <wolfyshy> lol, yes
+[22:18:09] <wolfyshy> pf and iptables both can do user-level filtering
+[22:18:14] <wolfyshy> but I dunno how to do it on either one
+[22:18:17] <wolfyshy> only that it is possible
+[22:18:38] <wolfyshy> when I ran a Enterprise Network, I paid someone else to care about pf for me
+[22:18:58] <wolfyshy> now that I run pf at home, it doesn't matter, it's a home box with a single purpose: to be my router and to disallow any remote connections that I don't want
+[22:19:50] *** thatdguy is now known as thatdguy|sleep
+[22:20:12] <Starthunder> Well, okay.
+[22:28:28] <Starthunder> Relatedly…is it possible to get rsync to keep a cache of checksums, to speed things up if data is frequently copied from one host to another, and never changed on the latter host?
+[22:28:36] <Starthunder> in archival contexts and the like
+[22:37:56] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:47:40] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[23:01:45] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:11:23] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[23:17:27] <tiwake> Init3-away: interesting... I'm curious if there is an open source thing for the computer that actually runs the car
+[23:17:48] <Starthunder> …the buck?
+[23:17:57] <Starthunder> weechat isn't resolving {irc,chat}.freenode.net
+[23:18:00] <Starthunder> but `host` gets it just fine
+[23:34:01] *** Joins: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP)
+[23:35:21] <Starthunder> groan
+[23:35:33] <Starthunder> Seems it can't do /any/ of the Freenode hostnames
+[23:37:04] <wolfyshy> can it do it without TLS?
+[23:37:17] <wolfyshy> I know weechat uses gnutls, and I know gnutls uses dane, and I know dane is broken right now
+[23:37:22] <Starthunder> It's not /resolving./
+[23:37:49] <Starthunder> dane is broken?
+[23:38:09] <wolfyshy> on .net
+[23:38:11] <wolfyshy> I think
+[23:38:20] <wolfyshy> I thought I read about that yesterday or this morning
+[23:38:34] <Starthunder> Well…it should resolve at least, yeah?
+[23:38:52] <wolfyshy> if it's using DANE, it won't resolve, because DNSSEC for that domain is down
+[23:39:03] <wolfyshy> that is handled the same as any other name resolution error
+[23:39:11] <wolfyshy> hence: try without ssl
+[23:39:27] <wolfyshy> maybe /server new so your sasl stuff won't be leaked
+[23:39:34] <Starthunder> By reporting to the user /name not found/ and then /nodename nor servname provided, or not known/? :|
+[23:39:51] <wolfyshy> name not found, yes
+[23:40:01] <Starthunder> As opposed to, I dunno, /no DNSSEC record found/? >.>
+[23:40:03] *** Joins: Casey223 (Casey223@Pony-11n0t7.mn.comcast.net)
+[23:40:11] <wolfyshy> it doesn't distinguish those, as I said
+[23:40:20] <wolfyshy> I don't know if freenode /does/ dane
+[23:40:28] <wolfyshy> I'm just saying that is a possible cause
+[23:40:33] <wolfyshy> and that's a way to rule it out
+[23:41:38] <Starthunder> Well, `gnutls-cli irc.freenode.net -p 6697` works fine
+[23:41:53] <wolfyshy> hmm
+[23:41:57] <wolfyshy> interesting
+[23:42:14] <Starthunder> Are you on Freenode?
+[23:42:29] <Starthunder> It's been disconnecting me with /Excess flood/ a lot lately
+[23:45:50] <wolfyshy> idle: 01 hours 31 minutes 02 seconds, signon at: Sun, 30 Aug 2015 13:58:10
+[23:45:55] <wolfyshy> ^ me on freenode
+[23:46:04] <Starthunder> Which server?
+[23:46:12] <wolfyshy> leguin
+[23:46:23] <Dusk> I'm on card still
+[23:46:26] <Dusk> lol
+[23:47:10] <Starthunder> Nope.
+[23:47:12] <wolfyshy> Starthunder: there was a guy on #gentoo-kde.. oh god I hope it wasn't you, I don't think it was though, he was connecting from .de
+[23:47:16] <Starthunder> What's going on here?
+[23:47:23] <wolfyshy> Starthunder: he cycled with "Excess flood" every 2 minutes for TWELVE HOURS
+[23:47:28] <Starthunder> No; I haven't been in #gentoo-kde
+[23:47:40] <Starthunder> I did run overnight a couple times I think though… X.X
+[23:47:47] <Starthunder> I'm gonna clear my autojoin and see if that helps
+[23:47:56] <wolfyshy> it was like oh god guy please fix your crap
+[23:48:09] <wolfyshy> over 3500 join/quits
+[23:48:37] <Starthunder> ban to Freenode/##fix_your_connection ?
+[23:50:33] <wolfyshy> I don't have op yet
+[23:50:35] <wolfyshy> lol
+[23:50:50] <Starthunder> Okay, I'm back on…for now.
+[23:50:51] *** zz_CyberJacob is now known as CyberJacob
+[23:51:02] <Dusk> I'm connected now
+[23:51:05] <Starthunder> …dear Luna. weechat sends one /join per channel?
+[23:51:12] <wolfyshy> I didn't see the hotbar light up so I guess we don't share channels
+[23:51:21] <wolfyshy> Starthunder: yes, because some servers don't support ,
+[23:51:26] <Starthunder> ##fingerprints,##fingerprints-meta,#python,#swift-lang,#tox,#tox-dev,#btrfs right now
+[23:51:30] <Dusk> wolfyshy: Nope I just connected back :p
+[23:51:35] <Starthunder> …
+[23:51:37] <Starthunder> You're kidding.
+[23:51:40] <Starthunder> It's in the original RFC!!
+[23:51:44] <Starthunder> How do you NOT SUPPORT THAT?
+[23:51:48] <wolfyshy> Starthunder: :D
+[23:51:55] <wolfyshy> idr which one it was
+[23:52:21] <wolfyshy> oh I gave up on #python
+[23:52:50] <wolfyshy> there was more trolling going on there than #defuckus
+[23:53:09] <Starthunder> Is /excess flood/ also used for /sendq exceeded/?
+[23:53:20] <wolfyshy> no, they are different
+[23:53:34] <Starthunder> …then why'd I get disconnected that one time? I hadn't said anything in hours…
+[23:53:45] <Starthunder> And it suddenly disconnected me, excess flood
+[23:53:54] <wolfyshy> sendq exceeded means you have sent X bytes that the server has not yet processed, and it is kicking you
+[23:54:10] <wolfyshy> excess flood means you have sent X lines in Y seconds, and the server admin has configured that to be a flood, and it is kicking you
+[23:54:10] <Starthunder> …wait, I thought it was the other way around.
+[23:54:30] <Starthunder> server's send queue, not client's
+[23:55:02] <Starthunder> There are X bytes that the server hasn't yet sent, and it's killing you
+[23:55:03] <wolfyshy> maybe it is
+[23:55:11] <wolfyshy> I always got sendq and recvq confused
+[23:55:15] <wolfyshy> I think you might be right, actually.
+[23:55:29] * Starthunder googles for ircd-seven source, just to be sure/.
+[23:59:14] *** Quits: Casey223 (Casey223@Pony-11n0t7.mn.comcast.net) (Quit: Goodnight, Luna.)
+[23:59:55] <Starthunder> meh, I dunno

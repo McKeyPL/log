@@ -1,0 +1,235 @@
+[00:02:19] *** Joins: dimatter (5b64a064@gateway/web/freenode/ip.91.100.160.100)
+[00:09:22] <dimatter> hello! Does tomahawk have any api?
+[00:11:00] <dimatter> also, is VKontakte plug-in deprecated?
+[00:18:42] <jherskowitz> dimatter: like this? https://github.com/tomahawk-player/tomahawk/wiki/Remote-Control
+[00:22:18] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[00:22:18] <github-tomahawk> [13tomahawk] 15dschmidt pushed 2 new commits to 06master: 02https://github.com/tomahawk-player/tomahawk/compare/53de4319b644...eab1ccee74e6
+[00:22:18] <github-tomahawk> 13tomahawk/06master 141025e77 15Dominik Schmidt: Process events while parsing potentially very long script responses
+[00:22:18] <github-tomahawk> 13tomahawk/06master 14eab1cce 15Dominik Schmidt: Fix #381: Show scrollbars for biography as needed
+[00:22:18] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[00:22:53] <dommex> dimatter: it certainly has "any api" ... it just depends on what you understand as api :)
+[00:22:57] <dommex> what do you wanna do?
+[00:23:33] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[00:23:33] <github-tomahawk> [13tomahawk] 15dschmidt 04force-pushed 06things from 1498f2622 to 1400e797f: 02https://github.com/tomahawk-player/tomahawk/commits/things
+[00:23:33] <github-tomahawk> 13tomahawk/06things 143056f3c 15Dominik Schmidt: Port stuff
+[00:23:33] <github-tomahawk> 13tomahawk/06things 149e5ab50 15Dominik Schmidt: What is this?!
+[00:23:33] <github-tomahawk> 13tomahawk/06things 14f3147eb 15Dominik Schmidt: Fix download all assert/crash
+[00:23:33] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[00:48:55] <dimatter> @dommex: ultimately, write a decent UI : -)
+[00:49:12] <dommex> dimatter: hehe
+[00:49:42] <dommex> dimatter: like.. a web page? a desktop app? like a remote control over the network?
+[00:50:12] <dimatter> all of the above and 1 pretty package
+[00:50:18] <dimatter> in 1 pretty package*
+[00:50:22] <dommex> okay
+[00:50:25] <dommex> yes, there's an api
+[00:50:28] <dommex> but
+[00:50:48] <dommex> it's rather limited. i'm afraid it will need some work to do anything fancy
+[00:51:04] <dommex> (more than next/prev/play/pause)
+[00:51:12] <dommex> (and showing the current track)
+[00:51:37] <dimatter> thought so : -)
+[00:51:48] <dommex> dimatter: know some c++/qt?
+[00:52:16] <dimatter> nah
+[00:52:57] <dimatter> hipster.js ;)
+[00:53:05] <dommex> mh okay
+[00:53:24] <dommex> dimatter: what platform are you on? can you compile tomahawk yourself?
+[00:53:32] <dimatter> yeah
+[00:54:06] <dommex> okay, that's good. i can possibly add easier stuff for you in a branch 
+[00:54:40] <dommex> they just might not be production ready from the start.. you could play around and if you get anything done, i can try to finish it then
+[00:59:03] <dimatter> I will poke around... see what's what. 
+[00:59:31] <dimatter> what about the VK plug-in?
+[01:00:02] <dimatter> when I installed it, in the spot where the configuration button should be it only says REMOVE
+[01:00:46] <dimatter> and when I hardcoded the credentials, the log complained about javascript
+[01:01:06] <dimatter> I'm guessing it is not up to date?
+[01:03:11] <dommex> dimatter: likely yeah
+[01:04:13] <dommex> dimatter: i dont know anything about the VK plugin. i changed a lot around in the javascript api in master over the last year.. 
+[01:04:31] <dommex> dunno if it has a proper config dialog or not
+[01:04:35] <dommex> can probably be fixed ;-)
+[01:12:50] <dimatter> @dommex, so I fork tomahawk-resolvers?
+[01:13:08] <dommex> dimatter: good idea yeah
+[01:14:16] <dimatter> examples up-to-date?
+[01:17:14] <dimatter> @theli_ua: any info on VK resolver? 
+[01:17:56] <dommex> dimatter: lemme check
+[01:18:10] <dommex> gmusic and amazon resolvers are up to date for sure
+[01:19:29] <dommex> dimatter: looking good afaict
+[01:19:42] <dommex> MrMaffen does a great job at keeping them up to date
+[01:22:10] *** Quits: jturney (~jon@host86-141-131-231.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[01:52:40] <dimatter> @dommex var promise = new Promise(function (resolve, reject) {
+[01:52:54] <dommex> yeah?
+[01:53:03] <dommex> you might need RSVP.Promise
+[01:53:07] <dimatter> no such thing as Promise in the new api
+[01:53:43] <dimatter> and RSVP is a global?
+[01:53:47] <dommex> yeah
+[01:56:00] <dimatter> Can't find variable: RSVP" "undefined
+[01:56:59] <dommex> huh
+[01:57:08] <dommex> dimatter: are you sure you are on master?
+[01:57:12] <dommex> of tomahawk
+[01:57:35] <dimatter> stable version
+[01:58:25] <dommex> dimatter: yeah, you certainly want to use master at this point
+[01:58:48] <dimatter> master as in compile it myself?
+[02:01:19] <dommex> dimatter: yep
+[02:01:26] <dommex> master as in current development version
+[02:01:43] <dommex> or the osx nightly build if you're on that platform
+[02:16:18] *** Quits: dimatter (5b64a064@gateway/web/freenode/ip.91.100.160.100) (Ping timeout: 252 seconds)
+[03:15:24] *** Joins: github-tomahawk (~github-to@192.30.252.42)
+[03:15:24] <github-tomahawk> [13tomahawk] 15dschmidt pushed 2 new commits to 06master: 02https://github.com/tomahawk-player/tomahawk/compare/eab1ccee74e6...ddf030037eb2
+[03:15:24] <github-tomahawk> 13tomahawk/06master 145d950bd 15Dominik Schmidt: Add colum mapping to PlayableProxyModel
+[03:15:24] <github-tomahawk> 13tomahawk/06master 14ddf0300 15Dominik Schmidt: Fix artist colum not being rearrangable
+[03:15:24] *** Parts: github-tomahawk (~github-to@192.30.252.42) ()
+[03:19:23] *** Joins: github-tomahawk (~github-to@192.30.252.45)
+[03:19:23] <github-tomahawk> [13tomahawk] 15dschmidt pushed 1 new commit to 06master: 02https://github.com/tomahawk-player/tomahawk/commit/9ebe155313aebec92d3a75742a19da639c3d8dba
+[03:19:23] <github-tomahawk> 13tomahawk/06master 149ebe155 15Dominik Schmidt: Clean up PlayableProxyModel::columnCount
+[03:19:23] *** Parts: github-tomahawk (~github-to@192.30.252.45) ()
+[03:58:35] *** Joins: github-tomahawk (~github-to@192.30.252.45)
+[03:58:35] <github-tomahawk> [13tomahawk] 15dschmidt 04force-pushed 06things from 1400e797f to 14ddea456: 02https://github.com/tomahawk-player/tomahawk/commits/things
+[03:58:35] <github-tomahawk> 13tomahawk/06things 14923e756 15Dominik Schmidt: Port stuff
+[03:58:35] <github-tomahawk> 13tomahawk/06things 14ecb25e3 15Dominik Schmidt: What is this?!
+[03:58:35] <github-tomahawk> 13tomahawk/06things 144e0d7d7 15Dominik Schmidt: Fix download all assert/crash
+[03:58:35] *** Parts: github-tomahawk (~github-to@192.30.252.45) ()
+[04:56:05] *** Joins: github-tomahawk (~github-to@192.30.252.46)
+[04:56:05] <github-tomahawk> [13tomahawk] 15dschmidt pushed 1 new commit to 06master: 02https://github.com/tomahawk-player/tomahawk/commit/53b27d0ea1b80c802feb60cc31b7c571bd9ff63b
+[04:56:05] <github-tomahawk> 13tomahawk/06master 1453b27d0 15Dominik Schmidt: Fix isDown state in ImageButton
+[04:56:05] *** Parts: github-tomahawk (~github-to@192.30.252.46) ()
+[05:07:53] *** Quits: mgue1 (~mgue@f048127094.adsl.alicedsl.de) (Read error: Connection reset by peer)
+[05:07:57] *** Joins: mgue2 (~mgue@f049092172.adsl.alicedsl.de)
+[05:49:56] *** Joins: fungal (~fungal@5.2.64.10)
+[05:55:00] *** Quits: fungal (~fungal@5.2.64.10) (Ping timeout: 272 seconds)
+[05:59:54] <theli_ua> dommex: just in case he asks again, VK.com resolver is fine, latest version is in PR, the main problem - occasionally it asks for captcha and stops working because of that for some time, unfortunately tomahawk doesn't have an API for that
+[06:00:12] <dommex> theli_ua: for what exactly?
+[06:00:16] <dommex> showing the captcha?
+[06:00:29] <theli_ua> and getting back the users input
+[06:00:49] <theli_ua> sorry, was under my house at that time
+[06:00:57] <theli_ua> did some cabling work through the crawlspace
+[06:01:22] <dommex> hehe cool
+[06:01:30] <dommex> no worries, i'll let him know when he shows up again
+[06:02:11] <theli_ua> I highly regret getting only one set of knee pads and lending them to my friend who was helping me
+[06:04:14] <theli_ua> also, ofc importing playlists (the only link dropping functionality for vk.com) is ofc broken :)
+[06:05:21] <theli_ua> dommex: sorry, I totally forgot, did you merge your linkurl fixes to master?
+[06:05:38] <dommex> nope :\
+[06:05:43] <dommex> not completely sure about it yet
+[06:06:43] <theli_ua> kk, no worries
+[06:07:12] <theli_ua> though it might make vk.com resolver broken just because it references that undefined capability
+[06:07:55] <dommex> ah yeah
+[06:07:57] <dommex> possible
+[06:15:46] *** Joins: github-tomahawk (~github-to@192.30.252.40)
+[06:15:46] <github-tomahawk> [13tomahawk] 15dschmidt pushed 1 new commit to 06things: 02https://github.com/tomahawk-player/tomahawk/commit/5a36bef4c9fa8fa0a792eeea5d69a745bcc3eebc
+[06:15:46] <github-tomahawk> 13tomahawk/06things 145a36bef 15Dominik Schmidt: Workaround preview widget flicker in column view
+[06:15:46] *** Parts: github-tomahawk (~github-to@192.30.252.40) ()
+[08:44:29] *** Joins: pribly (guest-prib@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[08:44:30] <pribly> Tomahawk 
+[10:39:33] *** Joins: mikkle (~michael@x4d03e3fc.dyn.telefonica.de)
+[10:39:46] <mikkle> Is the forum registration broken?
+[10:39:53] <mikkle> keeps saying that it thinks I'm a spammer
+[10:40:16] <mikkle> I just wanted to add to the discussion of search/filter by genre, which would be an awesome feature to have
+[11:01:49] <muesli> dommex: https://github.com/tomahawk-player/tomahawk/compare/53de4319b644...eab1ccee74e6
+[11:01:54] <muesli> dommex: seriously, no
+[11:05:10] *** Joins: github-tomahawk (~github-to@192.30.252.46)
+[11:05:11] <github-tomahawk> [13tomahawk] 15muesli pushed 2 new commits to 06master: 02https://github.com/tomahawk-player/tomahawk/compare/53b27d0ea1b8...c93302c56341
+[11:05:11] <github-tomahawk> 13tomahawk/06master 141192c66 15Christian Muehlhaeuser: Too much whitespace in debug output.
+[11:05:11] <github-tomahawk> 13tomahawk/06master 14c93302c 15Christian Muehlhaeuser: Revert "Process events while parsing potentially very long script responses"...
+[11:05:11] *** Parts: github-tomahawk (~github-to@192.30.252.46) ()
+[11:21:17] <muesli> https://github.com/tomahawk-player/tomahawk/commit/5d950bd1399cce2a9e43feda476e955f4917ad57
+[11:21:22] <muesli> dommex: why is this needed, what is it fixing?
+[11:45:10] *** Parts: pribly (guest-prib@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[13:12:17] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[13:26:08] *** Parts: mikkle (~michael@x4d03e3fc.dyn.telefonica.de) ("Konversation terminated!")
+[13:31:04] *** the_phil0s0ph is now known as salomonderossi
+[13:34:13] *** salomonderossi is now known as the_phil0s0ph
+[15:30:31] <dommex> muesli: the setColumHidden calls .. i accidentally added underneath :)
+[15:34:13] *** Joins: knicklux (~knicklux@openvpn-cl-200-137.scc.kit.edu)
+[15:36:43] <dommex> muesli: wtf? Of course its not nice to processEvents ... but it makes script collections and resolvers behave so much nicer. It's all pretty much in flux, we can fix it more nicely when i'm done with the whole refactor.
+[15:41:45] <muesli> dommex: it's not only not nice, it introduces a lot of hidden bugs before and we've been dealing with that before
+[15:42:01] <muesli> -before
+[15:42:57] <dommex> muesli: like what?
+[15:44:05] <muesli> like infinite loops, weird timing fuckups wrt signals / slots (e.g. them not arriving in order anymore)
+[15:44:49] <muesli> you should have extremely good reasons calling processEvents manually. this isn't one of them
+[15:45:39] <dommex> what do you want me to do? invoke the method over and over again with qmetamethod::invoke?
+[15:46:33] <muesli> no, the real solution is putting all the loading logic in a thread. and messaging the gui with results
+[15:47:52] <dommex> muesli: that's not what qt recommends to do in this case :P
+[15:49:28] <muesli> i'm not sure i've seen them recommend anything reasonable
+[15:55:29] <dommex> muesli: okay, can you give me a few details about how that works?
+[15:55:34] <dommex> or rather how one does that
+[15:56:36] <dommex> also.. from when is your impression that processEvents() causes bugs? i havent seen any proof anyway
+[15:56:39] <muesli> similar to the dbcmds
+[15:56:46] <muesli> we've been there
+[15:56:59] <muesli> in tomahawk
+[15:58:08] <dommex> will see, maybe it's easily doable with qfuture
+[15:58:17] <dommex> qtconcurrentrun that is
+[15:58:31] <dommex> muesli or any more objections to that?
+[16:01:19] *** Joins: WillisMan (~Thunderbi@88.96.238.246)
+[16:01:33] <muesli> well, we'd probably first have to switch to qwebengine anyway
+[16:01:37] <muesli> i don't think we can do this with webkit
+[16:02:25] <dommex> muesli: ehm, have you actually looked what i did or did you just saw red when you saw processEvents?
+[16:02:35] <dommex> *have seen
+[16:03:03] <dommex> muesli: it's in the "callback" of webkit. at that point it's just a function processing qvariantmap/list
+[16:03:11] <dommex> no webkit involved
+[16:03:22] <muesli> that's not what i meant
+[16:03:41] <muesli> i'm talking about moving all this loading stuff into a separate thread
+[16:03:53] <muesli> and i don't think you can call webkit from outside the gui thread
+[16:04:24] <dommex> no you cant
+[16:04:42] <dommex> of course it would be nice if we could all this outside of the gui thread which we cant
+[16:04:58] <muesli> yeah, but before that it's not worth doing either way
+[16:05:06] <dommex> it fucking is
+[16:05:41] <dommex> if you had not just reverted my commit but actually tried it you would have noticed how much it improved the experience with even a small scriptcollection
+[16:06:47] <muesli> not at the expense of then debugging weird bugs for 2 months afterwards
+[16:07:52] <dommex> i dont argue for processEvents, just doing SOMETHING about processing the results
+[16:09:24] <dommex> muesli: so ... anything wrong with qfuture?
+[16:09:39] *** Joins: jturney (~jon@host86-141-131-231.range86-141.btcentralplus.com)
+[16:09:40] <muesli> not sure how it'd help us there
+[16:10:24] <dommex> muesli: just like processEvents does. the problem is NOT webkit. the problem is looking up all the artists, albums (and whatnot) and creating the results AFTER webkit has finished
+[16:10:45] <dommex> if i start that processing stuff in a qtconcurrent run it should not block the gui thread anymore
+[16:20:24] *** Joins: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222)
+[16:21:35] <muesli> yeah, could help
+[16:22:01] <dommex> muesli: ok. will try that then.
+[16:52:15] *** Quits: WillisMan (~Thunderbi@88.96.238.246) (Quit: WillisMan)
+[17:04:10] *** Quits: knicklux (~knicklux@openvpn-cl-200-137.scc.kit.edu) (Remote host closed the connection)
+[18:18:18] <theli_ua> dommex: I dont know if gmusic does any collection except that on start, I have that problem as well
+[18:23:02] *** Joins: sythe (uid20450@facade/leader)
+[18:23:35] *** Joins: knicklux (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3)
+[18:38:10] *** Quits: michiwend (~quassel@michiwend.com) (Remote host closed the connection)
+[18:41:27] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[18:50:15] *** Joins: michiwend (~quassel@michiwend.com)
+[18:59:44] *** Joins: jamesaxl (~jamesaxl@41.248.188.17)
+[20:40:22] *** Joins: volous (guest-volo@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[20:40:23] <volous> anyone know how to get spotify working with tomahawk>
+[20:40:35] <volous> I added it and logged in in the configure tomahawk menu but i dont see my spotify music
+[20:40:47] <volous> google play music worked however
+[20:40:48] <muesli> volous: did you try searching for it?
+[20:41:01] <muesli> volous: spotify doesn't provide a collection / locker like google music does
+[20:41:23] <muesli> so don't expect a sidebar item
+[20:41:32] <volous> ah
+[20:41:40] <volous> is there a way to import my spotify playlists?
+[20:43:53] <volous> sah i see
+[20:43:58] <volous> I just drag and drop
+[20:43:59] <volous> thats cool!
+[20:49:44] <volous> Also, do I need to be in the g+ community for the tomahawk app to get access to the android beta?
+[20:50:48] *** Quits: sythe (uid20450@facade/leader) (Quit: Connection closed for inactivity)
+[20:54:02] *** Quits: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222) (Quit: Page closed)
+[21:07:25] *** Parts: volous (guest-volo@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[21:42:20] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[21:47:46] *** Joins: github-tomahawk (~github-to@192.30.252.34)
+[21:47:46] <github-tomahawk> [13tomahawk] 15dschmidt created 06scriptollection-unblock (+1 new commit): 02https://github.com/tomahawk-player/tomahawk/commit/27924c81fd7a
+[21:47:46] <github-tomahawk> 13tomahawk/06scriptollection-unblock 1427924c8 15Dominik Schmidt: Don't use processEvents and still don't block ui for loading a script collection
+[21:47:46] *** Parts: github-tomahawk (~github-to@192.30.252.34) ()
+[21:50:35] <dommex> muesli: better? ^ ...
+[21:52:04] <muesli> certainly
+[21:52:18] <dommex> i'm just not sure if that could possibly crash
+[21:52:30] <dommex> because of the emit t->foo()
+[21:52:57] <muesli> t being in another thread?
+[21:53:15] <dommex> well .. QtConcurrent run spawns a new thread, so yeah
+[21:53:25] <muesli> then yeah
+[21:53:29] <muesli> in theory
+[21:53:39] <dommex> yeah exactly, i dunno
+[21:53:51] <muesli> you can emit a signal from the stuff inside the thread
+[21:53:57] <muesli> and let qt do it's queueing
+[21:54:50] <dommex> then i probably need a qfuturewatcher
+[21:54:57] <dommex> all my sighs
+[21:55:35] <dommex> and then i'm not even sure if using qtconcurrent run is even shorter than using a qthread subclass .. the only benefit of qtconcurrent is then, that it automatically uses a threadpool
+[21:56:00] <muesli> yeah :-/
+[21:56:54] <dommex> looks like this with qthread:
+[21:57:04] <dommex> https://www.irccloud.com/pastebin/ugNfCwnJ/
+[21:57:08] <dommex> was actually my first approach
+[21:58:02] <dommex> muesli: ^ :|
+[21:58:51] <muesli> yeah, looks familiar
+[22:11:44] <dommex> muesli: still around?
+[22:51:03] *** Quits: knicklux (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3) (Read error: Connection reset by peer)
+[23:48:10] *** Quits: jamesaxl (~jamesaxl@41.248.188.17) (Ping timeout: 265 seconds)

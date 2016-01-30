@@ -1,0 +1,842 @@
+[00:05:36] <Gigaway> https://www.kickstarter.com/projects/2029950924/holovect-volumetric-display-real-3d-projections
+[00:05:37] <PinkiePieBot> [ Holovect Volumetric Display (real 3D projections) by Jaime Ruiz-Avila —Kickstarter ]
+[00:17:45] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Connection closed)
+[00:28:06] <init3> https://twitter.com/sidspyker/status/673434431009370113
+[00:28:07] <PinkiePieBot> [ SID 6.7 on Twitter: ""We collected this Hard Drive"THAT'S POWER SUPPLY https://t.co/XHZckt5M9A" ]
+[00:36:12] *** Joins: Fallfeathers (Fallfeather@Pony-8980p6.bigpond.net.au)
+[00:44:44] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[01:17:27] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[01:46:20] <Sour_Sweet> "browser.newtab.url;about:blank" WHY DO YOU DISPLAY FUCKING TILES FIREFOX? God that browser makes me angry lately
+[01:48:32] <Sour_Sweet> Oh I see now I need to set "browser.newtabpage.enabled;false" as well, because overwriting the URL is not enough -.- Get your crap together Mozilla
+[01:49:44] <mniip> huh
+[01:49:54] <mniip> one can't add operclasses from os?
+[01:53:01] <Googie> Services is separate from the IRCd, and most IRCds have opers statically defined in their configs, without anyway to manipulate them via the Server To Server linking protocol.
+[01:53:57] <Phase> Sour_Sweet, https://bugzilla.mozilla.org/show_bug.cgi?id=1178837 it was removed intentionally due to crapware abuse
+[01:53:59] <Googie> Or, ah, you're only talking about "services oper"
+[01:54:00] <PinkiePieBot> [ 1178837 – browser.newtab.url broken in Nightly ]
+[01:54:08] <Phase> Sour_Sweet, there's also a little gear icon you can click to turn off tiles
+[01:54:09] <mniip> yes
+[01:54:28] <mniip> well it would seem you can assign a class to a user using /os soper
+[01:54:31] <mniip> but not create a new class
+[01:54:44] <Phase> iirc browser.newtabpage.enabled is the setting the gear thing changes anyway
+[01:55:23] * Sour_Sweet prefers not to use some weird UI when about:config is faster
+[01:55:42] <Sour_Sweet> Removing a feature because it's abused is a bad idea.
+[01:56:31] <Sour_Sweet> I had custom URLs in this field in the past, so I guess bye bye to those as well
+[01:57:09] <Googie> I think Anope2 allows you to.
+[01:58:59] <Googie> Or not.
+[01:59:02] * Googie isn't sure.
+[01:59:26] <Sour_Sweet> They really want people to switch to Chrome(ium). Continue removing every little feature that made FF useful ...
+[01:59:39] <Phase> Sour_Sweet, https://addons.mozilla.org/en-US/firefox/addon/new-tab-override/
+[01:59:40] <PinkiePieBot> [ New Tab Override (browser.newtab.url replacement) :: Add-ons for Firefox ]
+[01:59:58] <mniip> fun stuff http://i.imgur.com/L6oxAWG.png
+[02:00:09] <Sour_Sweet> Hey idea: AddOns/Extensions get abused as well. Remove those!
+[02:00:35] <Sour_Sweet> I don't want to use an addon for a very basic browser feature.
+[02:00:43] <Phase> Sour_Sweet, the issue was crapware would change a bunch of preferences that persist after its removed
+[02:01:21] <Sour_Sweet> Solution: Don't install crapware
+[02:01:34] <Sour_Sweet> US solution: Install more crapware
+[02:01:50] <Sour_Sweet> Mozilla solution: Remove feature for the rest of the world
+[02:02:38] <Phase> they preserved the feature in a way which solves the problem, if you remove the addon its change goes away
+[02:02:39] <Sour_Sweet> The browser's home page get's changed frequently as well, are we going to remove that now as well?
+[02:02:58] <Phase> thats an open bug, they're not sure
+[02:03:37] <Phase> https://bugzilla.mozilla.org/show_bug.cgi?id=1118285 the full newtab.url buf
+[02:03:39] <Phase> bug'
+[02:03:42] <PinkiePieBot> [ 1118285 – The browser.newtab.url preference is abused and should be removed ]
+[02:04:04] <Phase> and the homepage bug https://bugzilla.mozilla.org/show_bug.cgi?id=1051082
+[02:04:07] <PinkiePieBot> [ 1051082 – Store homepage configuration outside of prefs ]
+[02:04:20] <mniip> many sites abuse windows and tabs for ads
+[02:04:23] <mniip> let's remove thos
+[02:04:53] <Phase> *you can still override the newtab page*
+[02:04:58] <Phase> it just has to be tied to an addon now
+[02:05:24] <Phase> the idea is to prevent crapware persistence
+[02:06:02] <Phase> the feature was not *removed*, just *moved*
+[02:06:34] <Sour_Sweet> It's not like any decent anti adware tool remove those lines anyway
+[02:06:51] <Sour_Sweet> s*
+[02:09:33] <Sour_Sweet> It's fucking unbelievable that something like that goes through. Let's ficus on more Hello I guess
+[02:09:56] <Colgate> I don't really follow?
+[02:10:04] <Colgate> my about:blank is... blank
+[02:10:08] <Colgate> isn't that what you want?
+[02:10:29] <Sour_Sweet> It is. But I set my browser.newtab.url to about:blank
+[02:10:39] <Sour_Sweet> Which is now ignored
+[02:10:56] <Sour_Sweet> Because browser.newtab.url has been removed
+[02:11:02] <Colgate> works for me?
+[02:11:11] <Phase> what version are you on?
+[02:11:18] <Sour_Sweet> FF 42.0
+[02:11:19] <Colgate> 37.4
+[02:11:22] <Colgate> 38*
+[02:11:25] <Sour_Sweet> *g*
+[02:11:37] <Phase> ESR release?
+[02:11:49] <Phase> looks like it was removed in 41
+[02:12:49] <Sour_Sweet> I'd say your release is ancient, but only god knows that from only the numbers with the rapid release non sense :P
+[02:13:05] <Googie> Apparently it's from May
+[02:13:43] <Colgate> /shrug, it is whatever debian packages
+[02:13:45] <Colgate> :P
+[02:13:49] <Sour_Sweet> (I was sarcastic and not actually serious)
+[02:14:26] <Sour_Sweet> Even though Debian packages can be quite ancient from time to time
+[02:15:03] <mniip> ugh the noise http://i.imgur.com/FOhebfz.png
+[02:15:10] * JustAberrant applies persistence to Colgate 
+[02:15:48] <Colgate> ban Chanserv
+[02:15:53] <Googie> Colgate: sid or jessie ?
+[02:15:58] <Colgate> jessie
+[02:16:14] <Colgate> running bleeding edge is too much work now :P
+[02:16:42] <Googie> http://mozilla.debian.net/
+[02:16:42] <PinkiePieBot> [ Debian Mozilla team APT archive ]
+[02:18:07] <mniip> Colgate, chanserv is op
+[02:18:09] <Sour_Sweet> Please someone fork Firefox and lead it back to it's old glory ;-)
+[02:18:17] <mniip> [04:16:23] * ChanServ #services :Cannot kick or deop a network service
+[02:19:57] <Googie> There's Pale Moon, but honestly, from reading into that, I don't really think it's got much of a chance.
+[02:20:54] <Googie> The developer doesn't have the manpower/desire to include some of the good features that Firefox is getting. (e10s will be the big one)
+[02:21:29] <JustAberrant> which is depressing :(
+[02:21:43] * JustAberrant fell in love with palemoon, but yeah, I feel like it hasn't really got the momentum to keep going
+[02:21:57] <Googie> It's not just manpower though, from what I was reading, the developer didn't really care at all for e10s
+[02:22:07] *** Gigaway is now known as Gigabit
+[02:22:22] <Googie> Less "I don't have the time/manpower" and more "I don't see the point"
+[02:22:34] <JustAberrant> which is fair, I'm kinda 50/50 on it
+[02:22:37] <Colgate> what is an e10?
+[02:22:40] <JustAberrant> it solves a problem that shouldn't exist
+[02:22:52] <Googie> Colgate: Each tab in its own process.
+[02:22:54] <JustAberrant> Colgate: basically breaking more stuff out into processes
+[02:22:59] <Colgate> ah
+[02:23:36] <Googie> For me though... I mean, Chrome always performs way /way/ better than Firefox. I still use Firefox, but it's really really terrible with large numbers of tabs :/
+[02:23:48] * Phase hopes its process per context instead of process per tab
+[02:23:58] <Phase> cause like if i've got 5 youtube windows open
+[02:24:05] <Phase> why can't that be one process
+[02:24:10] * Googie usually ends up killing the process rather than waiting for it to finish cleaning up after every tab when he tries to close them.
+[02:24:18] <Sour_Sweet> And the moment an addons crashes FF is doomed
+[02:24:38] <Phase> addons don't tend to take firefox down
+[02:24:53] <Colgate> I should clean my tabs
+[02:24:55] <Phase> they'll slow it but i can't say i've ever seen an actual crash
+[02:24:57] <Colgate> 129 atm ha
+[02:24:58] <JustAberrant> I find firefox itself just gets.. weird.. after awhile
+[02:25:04] <Googie> I've had to wait 5+ minutes for 300 tabs to close.
+[02:25:09] <Googie> Chrome handles that situation instantly.
+[02:25:09] <JustAberrant> palemoon seems solid though
+[02:25:37] * JustAberrant might someday just say fuck it and start using chrome.. but.. I dunno, I just don't trust it
+[02:25:45] <Sour_Sweet> My FF window turning white every now and then with Flash enabled tells me a different story.
+[02:25:52] <Googie> Yeah, I probably shouldn't have 300+ tabs, but the browser shouldn't dictate my workflow to me, especially when another one shows that it's perfectly viable.
+[02:26:06] <Sour_Sweet> Which is why Flash is disabled by default for me (And because security)
+[02:26:25] <Googie> I'm always really tempted to switch to Chromium. I'm hanging on to Firefox for e10s though.
+[02:26:38] <Googie> That and Pentadatcyl/Vimperator.
+[02:27:02] <Sour_Sweet> There are 2 things that keep me: KeePass integration and developer tools
+[02:27:17] <Sour_Sweet> But I already use Chrome for a lot of tasks now
+[02:27:43] <Sour_Sweet> Because it outperforms FF everywhere
+[02:27:47] <init3> I get crap HTML5 video support in FF. 
+[02:28:02] <Googie> The sad part is that I still see a number of people in denial about Firefox. I've seen a lot of people talking about how it's far better performing and has a better architecture than Chrome :/
+[02:28:10] <init3> Like a second long video freeze every minute or two in 1080p
+[02:28:35] <Googie> Honestly... Chrome is better. I'm not switching to it, but please accept that and then get to work on beating it :P
+[02:28:41] <Sour_Sweet> HTML5 video on YT sometimes plainly doesn't work in FF due to connection issues, while it still runs fine in Chrome
+[02:28:42] <Gladiolus> I use edge and safari >......>
+[02:28:55] <Phase> shun the non-believer
+[02:29:00] <JustAberrant> Googie: I know what you mean :(
+[02:29:19] <JustAberrant> Googie: being a firefox user at this point is being on a burning ship, which is sad
+[02:29:20] <Phase> Sour_Sweet, i've been getting that
+[02:29:23] <Phase> not a clue what it is
+[02:29:32] <Sour_Sweet> /mode +b #techponies Corey@the.truth.is.out.there :D
+[02:29:35] <JustAberrant> it's like systemd, I know some day I'm gonna be using it, but fuck if I'm not gonna hold out till the very damn end
+[02:29:44] * Phase doesn't like chrome
+[02:30:01] <Colgate> I might end up using chromium, never chrome though
+[02:30:03] <mniip> Sour_Sweet, that's an invalid
+[02:30:09] <Sour_Sweet> I know
+[02:30:17] <Sour_Sweet> wrong parameter order
+[02:30:20] <Colgate> and with google's shady tactics, I'm really hesitant to do anything with chromium either
+[02:30:20] * Phase much prefers firefox's interface and encrypted sync
+[02:30:26] <mniip> and wrong banmask
+[02:30:38] <Colgate> automatically installing and running a binary blob on first run? wtf?
+[02:30:43] <Googie> Yeah, I prefer a lot of Firefox, but I think that Chrome is better technically and performance wise these days :/
+[02:31:05] <Sour_Sweet> I added #techponies after the fact and was to lazy to edit the host
+[02:31:06] <Googie> I'm really /really/ hoping that e10s will help save Firefox.
+[02:31:08] <Phase> outside of memory usage yeah
+[02:31:19] <Phase> though i still find things like scrolling to be a little slugish in chrome
+[02:31:19] <Sour_Sweet> And I don't at all check any of my inputs
+[02:31:32] <Googie> I've found it more sluggish on Firefox with a few tabs open.
+[02:31:49] <Phase> even with e10s enabled firefox always just felt faster
+[02:32:17] <Googie> I think Firefox probably performs better individually with "smaller workloads" but it handles large numbers of tabs poorly.
+[02:32:18] <Phase> i mean if you've got a js or plugin heavy page in one tab (I'M LOOKING AT YOU TWITCH) the whole thing performs likecrap
+[02:32:24] <Googie> Yeah.
+[02:32:43] <Googie> Whereas we'll finally be getting away from that, and hopefully give Firefox time to shine.
+[02:32:44] <Phase> massively out of date flash isn't helping
+[02:32:47] <Phase> shumway hurry up pls
+[02:33:37] <Googie> Also... memory usage in the browser these days... I kind of don't care :P
+[02:33:55] <init3> http://www.theregister.co.uk/2015/12/04/sysadmins_100000_revenge_after_sudden_sacking/?mt=1449451866598
+[02:33:56] <Phase> when its at chromes levels i do
+[02:33:56] <PinkiePieBot> [ Sysadmin's £100,000 revenge after sudden sacking • The Register ]
+[02:34:00] <Googie> The only time I've ever run out of memory on my desktop, I accidentally had a 20GB packet capture loaded in Wireshark :P
+[02:34:38] <JustAberrant> oh god
+[02:34:50] <Googie> (At least in recent years)
+[02:35:03] * JustAberrant gets flashbacks of trying to analyze a window of high rate (~120hz) data on a machine with 2G of ram
+[02:35:12] <Googie> (I'm still surprised that there's machines being sold with 4GB of ram)
+[02:35:20] <Googie> (8GB seems like a minimum these days)
+[02:35:23] <JustAberrant> watching that damn loading bar and the mem usage in top at the same..
+[02:35:44] <Sour_Sweet> You just need some weird program with a memory leak. Running out of RAM gets so easy
+[02:36:01] <JustAberrant> like minecraft with mods :>
+[02:36:15] <Sour_Sweet> And because everyone has got plenty by now devs don't optimize anymore
+[02:36:18] <JustAberrant> 12G of ram and I still have to keep an eye on it ;p
+[02:36:21] <Googie> Hehehe, well, I've got 32GB in my desktop. Even with memory leaks, most programs run quite a while :P
+[02:36:22] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[02:36:32] <Gladiolus> I have 16 o3o.
+[02:36:36] <Googie> My "Server" though...
+[02:36:45] <Googie> (Well, the Microserver I've got sitting behind me)
+[02:36:51] <Googie> Bloody Sonarr
+[02:37:14] <Sour_Sweet> When I read the new system requirements for the newest bullshit game (e.g. cod) I get sick
+[02:37:32] <Sour_Sweet> Like you neeed 8 GiB of RAM: WHY?
+[02:37:43] <Googie> Sour_Sweet: IIRC the game is 32bit :V
+[02:37:54] <Googie> "Recommended Specs" have always been BS
+[02:38:18] <Phase> 24GB in my laptop
+[02:38:22] <Phase> get on ma level
+[02:38:29] <Sour_Sweet> http://www.game-debate.com/games/index.php?g_id=20292&game=Call%20of%20Duty:%20Advanced%20Warfare
+[02:38:32] <PinkiePieBot> [ Call of Duty: Advanced Warfare System Requirements | Can I Run Call of Duty: Advanced Warfare PC requirements ]
+[02:38:40] <Sour_Sweet> Minimum for AW is 6
+[02:38:41] <Phase> is it really 32bit?
+[02:39:03] <Sour_Sweet> So it's x64
+[02:39:12] <Phase> i'd hope so
+[02:39:17] <Sour_Sweet> Unless there are some really weird things going on
+[02:39:22] <Phase> 32bit on windows leaves you with 2GB address space Max
+[02:39:31] <Phase> and games do use more than that
+[02:40:06] <Googie> I might be remembering wrong.
+[02:40:17] <Sour_Sweet> Considering CoD still runs in the bloody Quake 3 engine ....
+[02:40:29] <Sour_Sweet> ... and looks awful
+[02:40:34] <Googie> I do remember that Ghosts had a similar stupidly high ram requirement, but people measured it and found it never really exceeded 2GB
+[02:40:50] <Sour_Sweet> Which is true for AW as well iirc
+[02:41:01] <Phase> well for 32bit it literally can't
+[02:41:06] <Sour_Sweet> It will prevent you from starting it though
+[02:41:22] <Phase> ghosts was released for the last gen consoles right?
+[02:41:36] <Sour_Sweet> Don't get started on console specs :D
+[02:41:57] <Googie> That's basically what it is. The consoles have 8GB, so obviously the PC it runs on must have 8GB
+[02:42:15] <Sour_Sweet> But the old one's didn't
+[02:42:16] <Googie> (Despite the fact that the consoles use that 8GB as shared VRAM alongside regular usage)
+[02:42:23] <Sour_Sweet> Also console RAM is shared
+[02:42:43] <Sour_Sweet> between GPU and CPU, so that doesn't work at all
+[02:42:45] * Phase likes how 64bit linux opens the entire lower 4GB to 32bit code
+[02:43:09] <Googie> And yeah, (well, technically you could get it to use > 4GB on 32bit, but not with a client version of Windows)
+[02:43:32] <Sour_Sweet> Iirc you actually can
+[02:43:51] <Googie> Yeah, but fat chance getting people to append boot options that were disabled because drivers suck :P
+[02:44:10] <Googie> (A lot of drivers crash when PAE is enabled)
+[02:44:15] <Sour_Sweet> YAY
+[02:44:35] *** Joins: Asoka (Asoka@Pony-nbk9q2.net-htp.de)
+[02:44:36] <Phase> yeah, it was off by default and enforced off on 7+
+[02:44:48] <Phase> so naturally laptops are sold with 6GB ram and 32bit windows
+[02:44:55] <Phase> because of course they are
+[02:44:57] <Sour_Sweet> I was reading about enableing it, but never actually did
+[02:45:09] <Googie> Honestly, my memory is shaky with the COD series and their BS ram requirements. I just remember that they were "requiring" 8GB and not needing anywhere near that much.
+[02:45:10] <Phase> i don't believe you can enable it under 7
+[02:45:20] <Sour_Sweet> Even my XP installation was 64bit
+[02:45:30] <Sour_Sweet> (At least in the later years)
+[02:45:44] <Googie> Apparently you can get PAE on 7
+[02:46:20] <Googie> It's taken so stupidly long to get 64bit by default :/
+[02:46:44] <Googie> I remember wondering /WHY/ 7 was even being sold for 32bit systems.
+[02:46:55] <Phase> compatibility
+[02:47:06] <Sour_Sweet> Oh all those bad memories ... 64bit on XP was a challenge sometimes
+[02:47:13] <Phase> there's stuff that doesn't work under wow64 for real stupid reasons
+[02:47:42] <Googie> They still shouldn't have allowed OEMs to install it by default without a good reason :/
+[02:47:45] *** Quits: Asoka_White (Asoka@Pony-8nj4v9.net-htp.de) (Ping timeout: 121 seconds)
+[02:47:53] <Sour_Sweet> Starting with the fact that under wow64 you'll actually find 32bit libs :D
+[02:48:01] <Phase> msde2000 for example, which a lot of commercial stuff needs, depends on an internal windows api which exposes the 64bit structs to 32bit programs
+[02:48:13] * Googie still sees the occasional person with a 32 bit computer because it was sold that way, despite the hardware being more than capable.
+[02:48:15] <Phase> Sour_Sweet, and under system32 is the 64bit libs
+[02:48:18] <Phase> *rage*
+[02:48:28] <Phase> it's an utterly stupid set of reasoning to
+[02:48:29] <Sour_Sweet> Yep because screw logic
+[02:48:41] <Phase> and then they like virtualize it to undo all the moving they just did
+[02:48:49] <Sour_Sweet> The reason was compatibility
+[02:48:56] <Phase> virtualizing some paths to avoid virtualizing others for reasons
+[02:48:59] * Phase stops here
+[02:49:12] <Googie> To be fair, compatibility on Windows tends to be insanely good compared to anything else around.
+[02:49:20] <Phase> the msde thing is stupid too, LPC ports are intended for drivers and not a public supported api
+[02:49:24] <Sour_Sweet> Well except for Linux
+[02:49:27] <Phase> so naturally microsoft uses them in their own products
+[02:49:34] <Googie> Nope. Linux binary compatibility sucks :/
+[02:49:35] <Phase> then breaks their own api breaking their own products
+[02:49:38] <Googie> I mean, the kernel ABI is stable
+[02:49:41] <Googie> But userland...
+[02:49:45] <Phase> kernel ABI is wonderfully stable
+[02:50:03] <Sour_Sweet> I still run really old stuff on my Debian Jessie setup
+[02:50:34] <Sour_Sweet> And it works just fine. Yes userland stuff is a problem
+[02:50:45] <Googie> I've had to see so much pain to run certain stuff because it was compiled against libraries that since broke their ABI.
+[02:51:09] <Sour_Sweet> But I personally tend to have more problem with forward compatibility
+[02:51:11] <Googie> Steam's Linux version bundles its completely own set of libraries now to avoid all the pain.
+[02:51:34] <Phase> ^ and even a libc i think?
+[02:51:41] <Sour_Sweet> I've run into really stupid glibc issues in the past
+[02:51:56] <Blackjack> JustAberrant: http://i.imgur.com/UBgwRHJ.webm
+[02:52:01] <Blackjack> I found where the spiders come from :(
+[02:52:26] <JustAberrant> :)
+[02:52:29] <Sour_Sweet> Because Debian's version were outdated, even though the programs wouldn't actually need the newer versions
+[02:52:51] <Phase> and you can't have two versions installed concurrently
+[02:52:53] <Phase> of anything
+[02:53:02] <Phase> unless you're on nix os or some shit
+[02:53:16] <Sour_Sweet> And running a mixed sources setup is a REALLY BAD idea.
+[02:53:26] <mniip> Phase, or gentoo
+[02:53:28] <Googie> Admittedly Windows has its own set of problems, but generally speaking, you can still just run random binaries from '95 and they'll still work... kinda.
+[02:53:40] <Sour_Sweet> I tried, it appeared to work and I failed
+[02:53:51] <Phase> even if they don't work they actually do have infrastructure for fixing them
+[02:53:54] <Sour_Sweet> Googie: Unless they're from MS
+[02:54:12] <mniip> windows 3.1 programs actually work in windows vista
+[02:54:16] <Phase> the compatibility stuff is actually quite capable
+[02:54:32] <Phase> of course the end users ability to use it is very limited but its there
+[02:56:30] <Googie> But yeah, Linux: Kernel ABI is rock stable. Userland... less so :P
+[02:56:43] <Sour_Sweet> Windows is a broken product. There really is no real change apart from the UI and minor things
+[02:57:06] <Googie> Eh, I'd disagree, there's been major overhauls to huge parts of Windows.
+[02:57:13] <HoneyDrops> Binary compat should always be a low priority.
+[02:57:21] <Sour_Sweet> The only actual changes are artificial
+[02:57:28] <Phase> HoneyDrops, i REALLY disagree
+[02:57:41] <JustAberrant> yeah, I mean yes it's open source and you can always re-compile/adapt
+[02:57:45] <Googie> Well, the major overhaul to Window's rendering systems, and audio systems was introduced with Vista.
+[02:57:54] <JustAberrant> but binary compatibility does make things a lot more practical
+[02:57:56] <Googie> A completely new system for drivers.
+[02:58:01] <HoneyDrops> Phase: Consider I am of the view that source dist should be the default.
+[02:58:14] <Googie> There's actually tons of stuff that's been changed at the kernel level since XP.
+[02:58:18] <Googie> Vista was /huge/
+[02:59:00] <Sour_Sweet> And we still have the same issues since 2000
+[02:59:04] <Phase> HoneyDrops, even in that situation you may want to run a particular version of something, that's mutually incompatible with some other version
+[02:59:18] <Phase> todays solution is containers
+[02:59:24] <Sour_Sweet> Admin - user seperation still doesn't work correctly
+[02:59:33] <Phase> and i *HATE* that virtualizing an entire userspace is the solution the lack of an ABI
+[02:59:50] <Sour_Sweet> The change in the driver system lead to numerous issues
+[03:00:06] <Googie> Well duh, OEMs are /terrible/ :V
+[03:00:06] <Phase> at least the kernel ABI is stable enough to support concurrent containers from arbitrary distros
+[03:00:34] <Phase> Sour_Sweet, i actually kinda like UAC
+[03:00:39] <Phase> its implementation anyway
+[03:00:46] * Phase would prefer something like that over sudo
+[03:01:12] <Sour_Sweet> Yay ask me seven times if I want to delete a file inside a windows dir and deny access anyway
+[03:01:18] <JustAberrant> it's funny, I actually feel like windows kinda surpassed linux in terms of fine grained control
+[03:01:20] <Googie> And Window's user/admin separation is fairly strong. It's just undermined at times.
+[03:01:28] <Sour_Sweet> That's UAC in a nutshell
+[03:01:30] <JustAberrant> I mean linux has ACLs and such, but no one uses them
+[03:01:31] <Phase> Sour_Sweet, that's explorer being a derp, that i also think is crap
+[03:01:44] <Phase> UAC itself is about 'integrity levels' and is a really neat thing
+[03:01:51] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[03:02:06] <JustAberrant> most people still use the good ole user/group/world permissions, which are pretty limited in comparison
+[03:02:06] <Googie> Yeah, explorer and the UI is crap. Doesn't change the technical internals.
+[03:02:11] <Phase> you really need proper acl's to make that work though and linux lacks them
+[03:02:17] <HoneyDrops> If you really want to run some specific lib w/ a program - built it statically.
+[03:02:17] <Phase> unless you have the richacl's patches or something
+[03:02:19] <Googie> They can even be completely replaced if needed, (just nobody really has a good replacement)
+[03:02:31] <Sour_Sweet> Running a UACed process is still not the same as running anything from the Administrator account
+[03:02:47] <JustAberrant> HoneyDrops: in the actual real world, you don't always have the source and never will...
+[03:02:50] <Sour_Sweet> Don't get me started on file system permissions
+[03:03:00] <Phase> HoneyDrops, that's not only a terrible solution but breaks nss
+[03:03:05] <Googie> I need to grab the book on Windows Internals. This is meant to be my field :P
+[03:03:24] <JustAberrant> Googie: just read raymond chen's blog and call it good ;p
+[03:03:44] <Phase> so your blobs have a completely different view of users, groups, and hosts if you happen to have users in ldap for example
+[03:03:53] <Phase> or use anything other than dns for name resolution
+[03:04:05] <Googie> Yeah, but I'm slowly heading more and more towards security. I've always had to deal with a lot of Window's internals that I really /really/ need to study up on.
+[03:04:28] <Sour_Sweet> Oh: Bash is somewhat intuitive when you get the concept, PowerShell is not
+[03:04:29] <Googie> Windows Access Tokens for example.
+[03:04:36] * JustAberrant managed to avoid windows for most of his career, though I do sometimes have to brush up against it
+[03:04:43] <Phase> Windows has some really cool security stuff that they only ever use to limit a users actions
+[03:05:03] <Phase> all the integrity stuff for example is turned of for critical network services such as windows media player sharing
+[03:05:04] <DJ-C0L7[CSS]> now if only they could use that for good instead of evil
+[03:05:06] <Googie> Again though, PowerShell is... a shell. The discussion here is really kernel and core level.
+[03:05:11] <Phase> which includes such trivial code as media transcoders
+[03:05:16] <JustAberrant> it's scary how complicated it becomes when you get into enterprise-y stuff
+[03:05:20] <Phase> stupid system level integrity media player crap
+[03:05:23] <Googie> I think Linux's userland in practice is /way/ nicer to use as a power user.
+[03:05:41] <Googie> But I also think it's kinda stupid not to look at, and learn from Windows, and understand that yeah, it is actually improving.
+[03:05:46] <JustAberrant> I mean the same is true with anything, but it's like an entirely different set of vocabulary and I only know like 1/10th of it..
+[03:05:46] <Phase> Googie, powershell is a strongly typed shell
+[03:06:04] <Googie> Yeah, I know, but what I mean is, it's kinda off topic (at least in my eyes)
+[03:06:12] <Phase> bizzare piece of work itis
+[03:06:28] <Phase> Sour_Sweet, though i have complaints about bash as well
+[03:06:30] <Sour_Sweet> Well the good windows kernel doesn't help me if the rest of it is a piece of crap
+[03:06:32] * Phase has complaints about a lot of things
+[03:06:34] * JustAberrant feels like the windows user experience is going backwards, regardless of what the internals are doing anyway ;p
+[03:06:36] <Googie> Bash sucks for scripting.
+[03:06:38] <Sour_Sweet> Phase: So do I
+[03:06:38] *** Quits: Crimson_Tail (Bluepon@batpones.are.for.snuggles) (Connection closed)
+[03:06:51] <Googie> It's just... in a good position to do it :P
+[03:06:52] <JustAberrant> Googie: that I'll agree with you on.. I hate bash scripting so very much..
+[03:06:55] * Phase wishes variables were expanded AFTER tokenizing
+[03:07:13] * Phase likes tcl
+[03:07:32] <JustAberrant> bash scripting is painfully arcane, limited, ugly, unreliable, etc.. if I'm doing anything besides executing a few commands in a loop or something I'll break out something else :D
+[03:07:59] <Phase> in conclusion
+[03:07:59] <Googie> Powershell is something that when used to, could actually be fairly nice to script in I think.
+[03:08:01] <Phase> computers suck
+[03:08:04] <Googie> ^
+[03:08:09] * JustAberrant nods
+[03:08:29] <Googie> We just learn to put up with, and eventually love them!
+[03:08:32] <Phase> Googie, eh, in practice i've found myself working around its object-instead-of-text 'feature' more often than using it
+[03:08:35] <Googie> Woo Stockholm syndrome.
+[03:08:39] <Googie> Ah.
+[03:08:47] <Googie> I've never really touched Powershell.
+[03:08:53] <Phase> i've used it for a few things
+[03:09:03] <JustAberrant> hehe, the path to computer bliss is to get to the point where you mostly care about the end result ;p
+[03:09:04] <Phase> it's a MASSIVE improvement over searching through gui's for a setting
+[03:09:18] <Phase> update-help; get-command *thing*; help *thing you found*
+[03:09:21] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[03:09:27] <Googie> Yeah, it's really nice to see Microsoft finally caring about the CLI.
+[03:09:32] <Phase> Some-Command | Get-Members
+[03:09:40] <Phase> or $obj | Get-Members
+[03:09:43] <Sour_Sweet> But man
+[03:09:59] <Sour_Sweet> So much easier :D
+[03:10:07] <Phase> the strong typing is really fucking weird, but it does work
+[03:10:09] <Googie> Well, man is aliased by default in Powershell :P
+[03:10:16] <Googie> IIRC
+[03:10:21] <Phase> Googie, yeah but you need to run update-help before its useful
+[03:11:05] <Phase> Get-Help is aliased to help and man, you can also do Get-Help -examples to get, well, examples
+[03:11:08] <Phase> which more man pages need
+[03:11:22] <Sour_Sweet> ^+1
+[03:11:44] <Googie> It was funny, messing about with 4.3BSD a few weeks back, I was blown away by just how much better the man pages were.
+[03:11:57] <Googie> It's hard to say exactly how... but it just felt like they were better written.
+[03:12:17] <Phase> Googie, if you've ever got a copy of windows doing weird shit (say, not auto-attaching a storage spaces volume), just poke at whatevers broke in powershell
+[03:12:24] <Phase> you'll save TONNS of time over using the gui
+[03:12:41] <Phase> especially since some critical stuff they don't expose
+[03:13:03] <Phase> such as that storage spaces volume thing which was breaking the domain controller vm THANK YOU VERY MUCH MICROSOFT FOR ISMANUALATTACH
+[03:13:08] <Sour_Sweet> This command counts your startmenu items in Windows 10. "get-startapps | measure" As to how one would figure that command out I have no idea.
+[03:13:40] <Sour_Sweet> It just doesn't seems to be logical (imho)
+[03:13:56] <Googie> Well, to be fair, it's not like Linux's typical commands are particularly logical either. I mean, df ? dd ? wc ?
+[03:14:01] <Phase> ^
+[03:14:06] <Googie> They're short and easy to remember... once you know them.
+[03:14:15] <Phase> 'tee' is nice once you know about it
+[03:14:34] <Sour_Sweet> Well those are executables
+[03:14:40] <Googie> I mean, WTF is a "grep" ? Shouldn't it be a "filter" ?
+[03:14:46] <Googie> Yeah, I know the actual reasoning
+[03:14:50] <Googie> But for a newbie...
+[03:14:59] <Sour_Sweet> You can find them in the filesystem, there is a man page for all of them
+[03:15:06] <Phase> i actually have no idea how to grep in powershell
+[03:15:28] <Sour_Sweet> If I had no internet access I could probably figure out what all of them do in little time
+[03:15:29] <Phase> there's Filter-Object but that's often not what i want
+[03:15:31] <Googie> Yeah... I think that's largely because, as you said Strongly Typed, not Stringly Typed :P
+[03:15:54] <Googie> It's the same for Powershell though. There's decent documentation in the shell, and online.
+[03:16:04] <Phase> it's very commercial documentation
+[03:16:19] <Sour_Sweet> The thing is: I wouldn't even know where to start
+[03:16:19] <Phase> written because of policy, not out of care
+[03:16:34] <Googie> But neither would a lot of people starting with Linux.
+[03:16:41] <JustAberrant> random: anyone else go into a fit of rage when the man page for some command references the info pages
+[03:16:46] <Googie> It just looks easy because we're all used to it.
+[03:16:47] <Sour_Sweet> get-startapps is not a binary
+[03:16:55] <Phase> it's a 'cmdlet'
+[03:17:01] <Phase> little .net module loaded by powershell
+[03:17:06] <Sour_Sweet> Whatever that is :D
+[03:17:10] <Phase> powershell is also a .net language btw
+[03:17:31] <JustAberrant> like.. screw your dinosaur pages, face it guys, info died along with glade and all the other failed things the gnu crowd seems to insist on beating like a dead horse.. which at this point is just a pink stain where the horse used to be
+[03:17:35] <Phase> being able to instance .net types and com objects is nice, wish linux had a com-alike
+[03:17:36] <JustAberrant> *froths a bit*
+[03:17:53] <Phase> info != man
+[03:18:01] <JustAberrant> s/glade/guile/
+[03:18:10] <Phase> was that the script thing
+[03:18:21] <Phase> yeah, scheme based language
+[03:18:24] <JustAberrant> yeah
+[03:18:43] <JustAberrant> they've been beating that pink stain for like 20 years.. 
+[03:18:50] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[03:19:21] <Googie> Sour_Sweet: I just kinda feel like a lot of your argument revolves around "It's not *nix"
+[03:19:28] <Googie> And "I already know *nix"
+[03:19:51] <JustAberrant> Googie: hehe, at this point that's my primary reason for avoiding windows, but at least I admit it ;p
+[03:20:23] <Phase> i've been making a point of learning windows so my hate is justified and not out of ignorance
+[03:20:34] <Googie> Good Phase.
+[03:20:37] <Sour_Sweet> Well spending most of my time on Windows and actually not being an Linux expert ....
+[03:20:37] * Googie gives Phase a cookie
+[03:20:39] * JustAberrant just likes to make assumptions and parrot stuff from the internet
+[03:20:43] * Phase *nom*
+[03:20:49] <Googie> (Honestly, more people need to do that :P)
+[03:21:09] <Googie> (In general I mean, not necessarily learning Windows)
+[03:21:30] <Googie> Too easy to hate something that's new and different :P
+[03:21:36] <Googie> Well, "new" :P
+[03:21:43] * JustAberrant accepts that the windows enterprise stack works and probably has pros and cons like linux, but I accept I know little about it and really don't want to ;p
+[03:21:55] <JustAberrant> but I'll still contend that the user experience is becoming shit
+[03:22:13] <Phase> it's kinda odd how there's *nix'ish, windows, and... that's it really
+[03:22:14] <JustAberrant> or at least very much not how I want my user experience to be
+[03:22:22] <Phase> osx is a bsd kernel with a funny userspace
+[03:22:38] <JustAberrant> yeah but osx still has a fairly unique user experience
+[03:22:50] <JustAberrant> even though "it's just unix with stuff on top"
+[03:23:21] <Sour_Sweet> I don't do much indepth in Linux. Sure: I know how to write bash scripts, I compile software, I'm running a bunch of servers on Linux for ages. I'm probably more than an average desktop user, but it's not like I don't do the exact same on Windows
+[03:23:29] <JustAberrant> and yeah @ above, I know info != man
+[03:23:32] <Phase> everything except windows is a unix++ with stuff ontop
+[03:23:41] <HoneyDrops> I used MS Windows enough to know I don't like it.
+[03:23:42] <JustAberrant> but at this point no one consults the info pages, time to port that info over to man 
+[03:23:54] <Googie> Windows is the oddball because right down to the kernel it's completely different.
+[03:24:05] <Phase> i've been using info for a few things, mostly gnu stuff
+[03:24:11] <Sour_Sweet> However on Windows: I need an UI for everything. On Linux: I never use an UI for anything
+[03:24:32] <Googie> All sorts of design decisions that look weird from a Unix perspective.
+[03:24:33] <Phase> the online docs are built from the texinfo sources anyway, so might as well use info
+[03:24:44] <Phase> Googie, mostly from vms as i understand it
+[03:24:55] <Phase> they had a few vms guys on the original dev team
+[03:25:12] <JustAberrant> that's probably what I find most frustrating when I end up on a windows machine, but that's probably years of preferring the cli
+[03:25:13] <Googie> One of the things in *nix that I always find weird is the huge reliance on fork, as opposed to just direct process creation for example.
+[03:25:20] <JustAberrant> I do a lot of shell one-liners 
+[03:25:37] <JustAberrant> and a lot of wildcard matching type stuff
+[03:25:57] <Phase> that's actually something thats not nix-ish, vms
+[03:25:57] <HoneyDrops> If nothing else the fact the MS Windows doesn't consider the user its absolute master is enough for me to wish to have nothing to do with it.  My computer is my tool, thus my will be done - no exceptions.
+[03:25:59] <Googie> And of course the traditional lack of threads being that processes were generally designed to be single threaded, but with multiple processes.
+[03:26:29] <JustAberrant> for F in ./data-dec06*/results/cpu/prof1-*-bleh.dat; do ./some_processing $F; done  <-- just the ability to do that kinda stuff is sorely missed in windows
+[03:26:32] <Googie> I'll admit I don't know anything about VMS
+[03:26:42] <Googie> I probably should.
+[03:26:44] <JustAberrant> although admittedly powershell might let you do that.. I've actually never used powershell
+[03:26:53] <Phase> also fun how OpenVMS is a very closed product
+[03:27:06] <Phase> you can purchase the source
+[03:27:08] <Sour_Sweet> Linux is an inconsistent mess sometimes, but don't get me started on Windows. I wouldn't even know if the proper way to append a parameter is using a "-" or "/"
+[03:27:17] <Sour_Sweet> Because both are frequently used
+[03:27:24] <Phase> Sour_Sweet, some accept both
+[03:27:42] <JustAberrant> windows winds hands down in office type stuff though imo
+[03:27:46] <Phase> more fun is glob expressions, which are handled by the application, not the shell
+[03:27:55] <HoneyDrops> I would no be opposed to MS windows so much it was GPLed and we could strip out the junk and malfeatures.  You might be able to polish it into something worth using.
+[03:27:56] <Googie> I find it hilarious that /home on *nix basically just exists because the original UNIX machine ran out of HDD space on the drive that /usr was mounted on.
+[03:27:57] *** Joins: Crimson_Tail (Bluepon@batpones.are.for.snuggles)
+[03:28:03] <Phase> infact the entire command line (sans variable substitution) is handled by the application
+[03:28:18] <JustAberrant> you can much easier drag stuff from one thing into another and most windows programs will turn it into something useful
+[03:28:23] <Phase> argv[] is lies, application is handed a string instead of an array
+[03:28:23] <JustAberrant> linux really lacks that
+[03:28:25] <Googie> HoneyDrops: Honestly, I'm opposed to it as well, but that doesn't mean that it's not worth understanding and learning from.
+[03:28:25] <HoneyDrops> Googie: it was a happy accident though, keeping config/user files away from binaries is a good thing.
+[03:28:45] <HoneyDrops> I /wish/ MS Windows took that page from teh *nix book.
+[03:28:56] <Googie> No, I mean, originally, /usr was what /home is today
+[03:29:05] <HoneyDrops> Ah
+[03:29:12] <Sour_Sweet> HoneyDrops: Actually they do
+[03:29:16] <JustAberrant> hehe, the linux file structure is such a mess now..
+[03:29:21] <Sour_Sweet> %appdata%
+[03:29:32] <Sour_Sweet> But that doesn't mean people use it
+[03:29:34] <JustAberrant> but the windows structure is incomprehensible
+[03:29:55] <Googie> Then it was basically cargo culting that led to /usr being used for stuff that isn't the /user's files/
+[03:30:01] <Sour_Sweet> More confusing is that I have paths in my file system on Windows under my user account I cannot access
+[03:30:02] <Phase> JustAberrant, it's not *THAT* bad if you treat windows itself as a monolithic thing under \Windows
+[03:30:05] <Googie> (When more installations started using UNIX)
+[03:30:14] <JustAberrant> oh... it's in  c:\system\currentsystem\actualsystem\libdata\datalib\32bit\windows64\all_users\you\my documents
+[03:30:17] <HoneyDrops> Sour_Sweet: I don't hold MS responsible for every bad thing about MS Windows, application devs are just as much to blame.
+[03:30:49] <JustAberrant> saw what you want, in /home is pretty damn simple ;p
+[03:30:59] <HoneyDrops> Which is why MS needs to eventually say fuck it and break legacy support.
+[03:31:01] <JustAberrant> trying to figure out where the actual fuck windows stores your files is kinda stupidly hard
+[03:31:10] <Googie> Yeah, but I mean, /usr is a really odd name for globally installed system files :P
+[03:31:15] <Phase> JustAberrant, window's ain't too different there, C:\Users\%USERNAME%
+[03:31:29] <HoneyDrops> If you're using an idiotically programed application from 15 years ago - find a better tool.
+[03:31:35] <Googie> http://lists.busybox.net/pipermail/busybox/2010-December/074114.html
+[03:31:36] <PinkiePieBot> [ Understanding the bin, sbin, usr/bin , usr/sbin split ]
+[03:31:38] <Phase> or C:\Documents and Settings\%USERNAME% for xp and earlier
+[03:31:42] <mniip> if I recall correctly /usr is for systems that didn't fit on one harddrive
+[03:31:52] <JustAberrant> obviously I'm exaggerating a bit, but the all users stuff and the library stuff does make things confusing
+[03:32:00] <HoneyDrops> Or fix it, which is why all software should use source-based dist.
+[03:32:04] <Phase> that's windows explorer trying to help you
+[03:32:10] <Sour_Sweet> Oh  C:\Documents and Settings\ is a nice case. On Win10 it's there, but blocked
+[03:32:19] <Sour_Sweet> As to why this is I dunno
+[03:32:20] <Phase> it's a symlink on vista and up
+[03:32:25] <Phase> or junction
+[03:32:28] <Phase> i forget which
+[03:32:38] <Sour_Sweet> Well at least I can't use
+[03:32:39] <mniip> I would ask "windows has symlinks?" but I already knew that
+[03:32:45] <Phase> more fun is the folders that aren't folders like that printer one that never works right
+[03:33:04] <Phase> ntfs has this fun feature where you can do that
+[03:33:06] <mniip> con, lpt1, com1
+[03:33:08] <Sour_Sweet> It just throws me a permission denied error message
+[03:33:10] <DJ-C0L7[CSS]> wtf, how can winamp cause complete system destabilization and the failure to install any drivers?
+[03:33:17] <Sour_Sweet> Unlike other symlinks I use
+[03:33:42] <Phase> Sour_Sweet, it might be one of those special snowflake folders
+[03:33:50] <Sour_Sweet> (e.g. my downloads or steam downloads folder, both are mapped to D)
+[03:33:54] <Phase> what are they called again...
+[03:34:19] <Phase> its the same thing EFS uses
+[03:34:29] <JustAberrant> HoneyDrops: yes yes, we know, in an impossible fantasy universe with no proprietary software that would be fine, but we have to live in the actual world..
+[03:35:04] <Phase> ok i forget its name
+[03:35:06] <JustAberrant> either way, there's too much stuff to "fix" individually, you need consensus, which you'll never get
+[03:35:13] <Phase> but there's this thing where you can create a file or folder type thing
+[03:35:26] <JustAberrant> which is probably why the linux file system is still such a mess despite that we _could_ fix it
+[03:35:28] <Phase> but it's not physically a file or folder, it's handed by an installable driver
+[03:35:33] <JustAberrant> .. if only we could all agree on how to fix it :D
+[03:35:48] <Phase> it's used for EFS and mounting wim images
+[03:35:55] <Phase> possibly for compressed files also
+[03:35:59] <Phase> and symlinks
+[03:36:13] <JustAberrant> Phase: sounds like a linux file socket ;p
+[03:36:30] <Phase> 'file socket'?
+[03:36:37] <Sour_Sweet> Also I love how Windows can lock you out if a fullscreen application crashes
+[03:36:42] <Phase> and if you mean unix socket no, they look like normal files/folders
+[03:36:52] <JustAberrant> well, "IPC socket"
+[03:36:54] <Phase> they're just handed to a driver that isn't a filesystem which can do whatever it pleases
+[03:36:59] <JustAberrant> but I call `em file sockets ;p
+[03:37:06] <Phase> Reparse point, thats the one
+[03:37:16] <Phase> https://en.wikipedia.org/wiki/NTFS_reparse_point
+[03:37:17] <PinkiePieBot> [ NTFS reparse point - Wikipedia, the free encyclopedia ]
+[03:37:20] <Phase> i think...
+[03:38:25] <Compu> i would be happy in a linux only world
+[03:38:36] <Sour_Sweet> Also localized folder names are a bloody mess
+[03:38:51] <Sour_Sweet> Just use the freaking english names ....
+[03:39:25] <Sour_Sweet> (And don't go the Linux cryptic way either)
+[03:40:09] <Compu> we'll just name them all 00005
+[03:40:22] <Compu> :D
+[03:40:35] <Sour_Sweet> (Cuz only our holy Linux gods still remember the logic behind folder names and bins)
+[03:40:53] <Googie> Also, another topic, but woo. It looks like Thunderbolt 3 is finally getting decent support for external GPU docks.
+[03:41:03] <Sour_Sweet> I mean umount instead of unmount c'mon
+[03:41:16] <Compu> Sour_Sweet: they could always just pick random 5 digit numbers for all folder names
+[03:41:38] <Phase> anyone here know what a wim is?
+[03:41:43] <Compu> mwahahahahahaha
+[03:41:46] <Phase> anyone else here' that is
+[03:41:50] * Phase has had to use them
+[03:41:57] <Googie> A Windows Image.
+[03:42:01] <Compu> u will never find foler 67819 in the folder tree!
+[03:42:06] * Googie hasn't had to deal with them much.
+[03:42:08] <Phase> so do you want to know how mounting a wim works
+[03:42:21] <Phase> cause you can mount them sort of, for editing or otherwise accessing them
+[03:42:35] <Compu> and we'll make sure the thing u want to find is always the deepest in the tree!
+[03:43:25] <Phase> so i'm going to say it anyway
+[03:43:32] <Compu> Phase: sprinkle spices all over the computer room and pray to the gods?
+[03:43:50] <Phase> so step one is to load a driver
+[03:43:53] <Phase> wimflt or something
+[03:44:12] <Phase> then it walks the files/folders in the wim, creating reparse points for every file/folder in the image
+[03:44:21] <Sour_Sweet> Anyway enough said for today: Have a good night!
+[03:44:37] <Phase> so its kinda like a tree of empty files with extended attributes
+[03:44:37] <Compu> is the driver hidden on a floppy disk deep in ur attic by a microsoft employee?
+[03:44:56] <Phase> whenever you read it's intercepted by wimflt and it extracts from the wim on demand
+[03:45:06] <Phase> whenever you write... i have no idea, something happens and it records the write
+[03:45:07] *** Sour_Sweet is now known as Seoson|BNC
+[03:45:23] <Phase> wimflt intercepts all io in that folder tree and does something
+[03:45:34] <Phase> then unmounting it'll either merge your changes or just delete the tree
+[03:45:43] <Phase> instead of like, having a filesystem driver
+[03:45:52] <DJ-C0L7[CSS]> wtf windows.... O_O why is winamp set as default for opening .exe extencions?
+[03:46:02] <Phase> i think windows has problems with filesystem drivers that don't have a backing volume
+[03:46:07] <Compu> DJ-C0L7[CSS]: virus?
+[03:46:18] <DJ-C0L7[CSS]> registry corruption
+[03:46:21] <Phase> DJ-C0L7[CSS], ctl+shift+escape?
+[03:46:24] <Compu> by a virus?
+[03:46:30] <DJ-C0L7[CSS]> no, faulty ATI drivers
+[03:46:38] <Compu> ah
+[03:46:41] <Compu> so a virus
+[03:46:44] <DJ-C0L7[CSS]> lol
+[03:46:53] <DJ-C0L7[CSS]> lazy programmers
+[03:46:56] <Phase> the transactional filesystem is kinda neat
+[03:46:59] <Phase> not sure if anyone uses it
+[03:47:06] <Compu> im gonna be that one user who thinks everything is a virus
+[03:47:07] <Phase> kernel transactions are an interesting idea
+[03:47:22] <Phase> don't think anyone USES them but they're there
+[03:47:25] <Compu> i changed my wallpaper? OMG VIRUS
+[03:47:40] <Phase> wow, the coffee is doing weird things to me
+[03:47:45] * Phase should shut up
+[03:48:19] <DJ-C0L7[CSS]> i had to remove avast because the update ate my registry hive backups but didnt get my exported backups
+[03:48:50] <Compu> i accidentally hit the alt key and the file menu came up? OMG I HAVE A VIRUS MY COMPUTER IS GONNA DIE
+[03:49:13] <DJ-C0L7[CSS]> .....
+[03:49:22] <DJ-C0L7[CSS]> u done?
+[03:49:27] <Compu> nya
+[03:49:32] <Compu> *flops*
+[03:49:39] * DJ-C0L7[CSS] boops Compu's nose
+[03:49:49] <Compu> *goes cross eyed*
+[03:50:01] <DJ-C0L7[CSS]> i fixed the registry and recovered the damaged system files
+[03:50:30] <DJ-C0L7[CSS]> from windows xp professional
+[04:00:19] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[04:10:25] *** Joins: Sombra (Iceman@Darkhorse21)
+[04:17:10] <Phase> Googie, one thing i'll never understand is the lack of security on services
+[04:17:20] <Phase> they're all System equivalent with System level integrity
+[04:17:26] <Phase> might as well be drivers in terms of security
+[04:17:41] <Phase> except of course for sql server
+[04:18:47] <Phase> Googie, this is windows, just to be clear
+[04:19:10] <Googie> A bunch of stuff runs under Local Service, rather than Local System, but yeah...
+[04:19:24] <Phase> fairly sure Local Service can elevate to System
+[04:19:40] <Googie> You're thinking Local System I think.
+[04:20:14] <Googie> https://msdn.microsoft.com/en-us/library/windows/desktop/ms684188%28v=vs.85%29.aspx
+[04:20:17] <PinkiePieBot> [ LocalService Account (Windows) ]
+[04:20:43] <Googie> (Compared to LocalSystem): https://msdn.microsoft.com/en-us/library/windows/desktop/ms684188%28v=vs.85%29.aspx
+[04:20:44] <PinkiePieBot> [ LocalService Account (Windows) ]
+[04:21:14] <Compu> Googie: u posted the same link twice
+[04:21:15] <Googie> Er, https://msdn.microsoft.com/en-us/library/windows/desktop/ms684190(v=vs.85).aspx
+[04:21:17] <PinkiePieBot> [ LocalSystem Account (Windows) ]
+[04:21:29] * Phase forgets how you elevate
+[04:21:50] <Googie> Far more runs under LocalSystem than should though.
+[04:22:24] <Phase> what i find strange is where windows has a clear advantage in acl's it doesn't take it
+[04:22:44] <Phase> windows media player sharing for example could very easily have zero permissions, but be granted a read entry for shared folders
+[04:23:47] <Phase> there's even this concept of service accounts, where services are automatically assigned, well, accounts
+[04:23:57] <Phase> and you can use those accounts in acl entries
+[04:24:00] <Compu> Phase: Plex is better
+[04:24:20] <Phase> Compu, i'm listing stuff built in to windows
+[04:24:24] <Compu> k
+[04:24:39] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[04:24:42] <Phase> Googie, windows search runs as system iirc?
+[04:25:24] <Googie> Yes
+[04:25:26] * Phase should probably stop now
+[04:25:30] * Phase could go on for hours
+[04:25:54] <Phase> windows search loads user installed code for parsing files, so there's a way to elevate right there
+[04:26:13] <Phase> and parses everything in every users folders
+[04:26:31] <Googie> I don't think it's /quite/ that easy.
+[04:26:34] <Phase> possibly including things like the browser cache so there's a remote attack vector
+[04:27:03] <Phase> my point still stands that something what should be in the users context is in the system context
+[04:27:24] <Googie> Yeah, it really should there.
+[04:27:29] <Phase> but of course there's no bugs in microsoft software
+[04:27:38] <Googie> Far too much under Local System.
+[04:28:12] <Phase> and the ease of exposing security problems is insane
+[04:28:21] <Phase> task scheduler uses LocalSystem by default iirc
+[04:29:02] <Phase> 'at' used to be a trivial user->system elevation, but you could stull overwrite something scheduled by an admin if they forget to set permissions
+[04:29:19] <Phase> or an application if the same
+[04:29:28] * Phase stops now
+[04:29:43] <Googie> To be fair, it's not like Cron doesn't run as root on *nix.
+[04:29:56] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[04:30:05] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[04:31:47] <Googie> The task scheduler seems to have a really terrible history of vulns though.
+[04:32:29] <Phase> Googie, you need root permissions to add cron jobs, and on linux wherever you create a file, umask defaults to disallowing global writes
+[04:32:54] <Phase> which is the one thing i don't know how to do with rich acl's
+[04:33:17] <Googie> You don't need root to add cron jobs, only cron jobs running as root.
+[04:33:18] <Phase> a totally reasonable thing for an admin to do is create C:\scripts for maintinance things, like scheduled tass
+[04:34:00] <Phase> if you do that though 'Authorized Users' (group for all users with a valid login) gets full control of the scripts dir
+[04:34:03] <Phase> and all files within
+[04:34:56] * Phase wants the ability to set permissions for a tree on a single folder, instead of per-file, but doesn't know how to work around the triviality of that security hole
+[05:01:38] *** Gigabit is now known as Snoarin
+[05:10:48] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[05:13:51] *** mniip is now known as \m
+[05:18:39] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[05:32:54] <HoneyDrops> How is making a multi-episode, ARPG a "remake" of FF7?
+[05:33:46] <Kinsley> If they tell the same story, technically it is.
+[05:34:09] <Kinsley> As opposed to a remaster, merely up-ressing textures and porting the engine, for instance.
+[05:36:48] <HoneyDrops> I'd make it sprite based, FF7 in a FF6-SNES style and vastly expanding the plot and side quests to fill in the rest of the world and backstories would be awesome.
+[05:37:21] <HoneyDrops> Imagine how much content would fit on a modern disk :D
+[05:40:14] <HoneyDrops> And more materia... not that that mechanic needs more to be broken as hell.
+[05:52:07] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "brb gotta restart")
+[06:09:06] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[06:14:18] <Lapsus> http://imgur.com/gallery/KZquOZM
+[06:14:18] <PinkiePieBot> [ Efficiency at its finest - GIF on Imgur ]
+[06:24:37] *** Quits: Obaskyr (Tachy@Pony-005pm7.range86-175.btcentralplus.com) (Ping timeout: 121 seconds)
+[07:08:12] *** Eventide is now known as Eventide|Sleepies
+[07:38:33] *** Quits: Crimson_Tail (Bluepon@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[07:43:47] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:56:01] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[08:38:19] *** Joins: Melanosuchus (quassel@Pony-3l9f0k.as13285.net)
+[08:42:12] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[08:45:05] *** Joins: Sin (Sin@is.hustlin.everyday)
+[09:06:00] *** zz_CyberJacob is now known as CyberJacob
+[09:06:55] *** Joins: WuBzY (androirc@Pony-2nhbq2.rev.dnainternet.fi)
+[09:09:35] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[09:09:44] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[09:20:32] *** Quits: Melanosuchus (quassel@Pony-3l9f0k.as13285.net) (Connection closed)
+[09:22:03] *** Joins: Xefir (xefir@Pony-ci7.430.142.83.IP)
+[09:22:14] *** Quits: Xefir (xefir@Pony-ci7.430.142.83.IP) (Connection closed)
+[09:22:36] *** Joins: Xefir (xefir@Pony-ci7.430.142.83.IP)
+[09:41:57] *** Joins: Colgate_ (rabbit@brushie.horse)
+[09:42:17] *** Quits: Colgate (rabbit@brushie.horse) (Ping timeout: 121 seconds)
+[09:42:50] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:43:11] *** Joins: locodashie11 (locodash11@Pony-or2a5i.sub-97-43-193.myvzw.com)
+[09:43:17] *** Colgate_ is now known as Colgate
+[09:44:40] *** Quits: WuBzY (androirc@Pony-2nhbq2.rev.dnainternet.fi) (Connection closed)
+[09:48:28] *** Joins: WuBzY (androirc@Pony-2nhbq2.rev.dnainternet.fi)
+[09:48:35] *** Quits: WuBzY (androirc@Pony-2nhbq2.rev.dnainternet.fi) (Connection closed)
+[09:50:29] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Connection closed)
+[09:53:31] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (A TLS packet with unexpected length was received.)
+[09:55:26] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:55:58] *** CyberJacob is now known as zz_CyberJacob
+[10:10:41] *** Joins: locodashie11 (locodash11@Pony-or2a5i.sub-97-43-193.myvzw.com)
+[10:22:41] *** Joins: WuBzY (androirc@Pony-2nhbq2.rev.dnainternet.fi)
+[10:22:47] *** Quits: WuBzY (androirc@Pony-2nhbq2.rev.dnainternet.fi) (Connection closed)
+[11:04:34] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Connection closed)
+[11:04:44] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[11:05:44] *** Joins: locodash11[server] (locodash11@Pony-osmcfg.co.comcast.net)
+[11:06:07] *** Joins: wesley (wesley@Pony-gjrimk.lb.shawcable.net)
+[11:06:58] *** Quits: oddly (wesley@Pony-gjrimk.lb.shawcable.net) (Ping timeout: 121 seconds)
+[11:13:19] *** \m is now known as mniip
+[11:29:06] *** mniip is now known as \m
+[11:30:09] *** Joins: Phase (Phase4@Pony-q2igmo.internode.on.net)
+[11:40:20] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[11:49:12] *** \m is now known as mniip
+[11:53:20] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[12:07:23] *** mniip is now known as \m
+[12:13:40] *** Snoarin is now known as GigaWork
+[12:43:13] *** Eventide|Sleepies is now known as Eventide
+[12:52:40] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:00:30] *** Quits: Fallfeathers (Fallfeather@Pony-8980p6.bigpond.net.au) (Connection closed)
+[14:06:11] *** Seoson|BNC is now known as Sour_Sweet
+[14:06:46] <Sour_Sweet> Inkscape command line, so helpful. God I wish all programs would offer something like that.
+[14:24:48] *** Joins: WuBzY (androirc@Pony-2nhbq2.rev.dnainternet.fi)
+[14:39:56] *** Joins: WuBzY_AwAy (androirc@Pony-55p6ip.rev.dnainternet.fi)
+[14:43:33] *** Quits: WuBzY (androirc@Pony-2nhbq2.rev.dnainternet.fi) (Ping timeout: 121 seconds)
+[14:54:28] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:06:22] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[15:17:23] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[15:21:46] *** Quits: WuBzY_AwAy (androirc@Pony-55p6ip.rev.dnainternet.fi) (Ping timeout: 121 seconds)
+[15:24:11] *** Quits: Quindo (Quindo@Pony-8qt.17k.198.99.IP) (Connection closed)
+[15:31:13] *** Joins: Quindo (Quindo@Pony-8qt.17k.198.99.IP)
+[16:00:44] *** Quits: Datalink_ (Datalink@Datalink) (Connection closed)
+[16:11:14] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:28:38] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[16:30:36] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[16:31:12] *** \m is now known as mniip
+[16:40:25] <DataByte> i love spam, hahahaha
+[16:40:32] <DataByte> -- We have place a Block on your card, due to failure to comply with our recent safety precaution
+[16:40:40] <DataByte> -- We demand you visit any discover card outlet near your home within the next 24hours to verify identity and unblock your card.
+[16:40:49] <DataByte> -- Alternatively, you can use the online verification system by following the verify button below.
+[16:40:56] <DataByte> -- Note: Failure to adhere to this warning shall lead to deactivation of your discover card.
+[16:41:06] <DataByte> -- Why you received this email.
+[16:41:07] <DataByte>  We requests verification whenever an ID or Card is blocked. Your ID or Card cannot be used until you verify it.
+[16:41:58] <DataByte> Received: from [45.34.93.237] (45.34.93.237) by TBURGMAIL.tburg.k12.ny.us
+[16:42:04] <DataByte> From: Discover Card <marketing@alliedmetals.com>
+[16:43:37] <DataByte> button links to "datamation-inc.com / plugins / redir.php"
+[16:43:57] <DataByte> redirect php, by the look of it, but to where, i wonder? >:D
+[16:56:40] <DataByte> no.. not a redirect
+[16:57:07] <DataByte> the form validation is as amateurish as the spam itself
+[16:57:43] <DataByte> moreso, in fact, heh
+[17:00:09] <DataByte> i can't find anything malicious.. this is so amusing. I'm gonna click it and have a look xD
+[17:01:19] <DataByte> ok, it is a redirect - i forgot i programed my grabber to follow those, lol
+[17:02:18] <DataByte> someone hacked a "church of williamsburg" website and added their 'discovercard identity authentication' page in there 
+[17:02:20] <DataByte> hehe
+[17:12:42] <GigaWork> Hacked a church near me? Cool
+[17:18:40] <DataByte> on an unrelated note.. traffic analysis shows that my website was somehow added to someone's ad campaign or traffic generator for about a week
+[17:18:41] <DataByte> weird
+[17:35:32] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[17:37:10] *** Joins: Crimson_Tail (Bluepon@batpones.are.for.snuggles)
+[17:38:38] *** Joins: WuBzY (androirc@Pony-fv2mok.rev.dnainternet.fi)
+[18:04:02] *** Joins: Xefir_ (xefir@Pony-ci7.430.142.83.IP)
+[18:06:47] *** Quits: Xefir (xefir@Pony-ci7.430.142.83.IP) (Ping timeout: 121 seconds)
+[18:08:04] *** Quits: Xefir_ (xefir@Pony-ci7.430.142.83.IP) (Ping timeout: 121 seconds)
+[18:09:25] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[18:10:13] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[18:31:27] *** Quits: Crimson_Tail (Bluepon@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[18:31:37] *** Joins: Crimson_Tail (Bluepon@batpones.are.for.snuggles)
+[18:37:59] *** GeekBrony is now known as GeekBruh
+[18:48:13] *** Quits: kripnik (kripnik@Pony-l2l.2dv.248.50.IP) (Quit: Leaving)
+[18:55:43] *** Joins: Xefir (xefir@Pony-6pt77h.1fe2.7gl6.e080.2a00.IP)
+[19:01:53] *** Joins: Melanosuchus (quassel@Pony-ob406h.as13285.net)
+[19:02:44] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:15:42] *** Quits: WuBzY (androirc@Pony-fv2mok.rev.dnainternet.fi) (Quit: Go any more of dem WuBz?)
+[19:17:40] *** Joins: WuBzY (W@Pony-7d8e0l.dhcp.inet.fi)
+[19:52:03] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[20:18:49] *** eyeburn is now known as Starburn
+[20:19:26] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: Hug the pone to your left.)
+[20:20:52] *** Quits: WuBzY (W@Pony-7d8e0l.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[20:25:00] *** Joins: WuBzY (WuBzY@Pony-cfi03k.dhcp.inet.fi)
+[20:31:48] *** GeekBruh is now known as GeekBrownie
+[20:32:52] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:34:09] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:36:14] *** GeekBrownie is now known as GeekBrony
+[20:40:55] *** Quits: tiwake (Octavia@Pony-8vii98.or.charter.com) (Ping timeout: 121 seconds)
+[20:59:54] *** Quits: Phase (Phase4@Pony-q2igmo.internode.on.net) (Ping timeout: 121 seconds)
+[21:00:50] *** Joins: Asoka_White (Asoka@Pony-pkd014.net-htp.de)
+[21:03:51] *** Quits: Asoka (Asoka@Pony-nbk9q2.net-htp.de) (Ping timeout: 121 seconds)
+[21:09:11] *** zz_CyberJacob is now known as CyberJacob
+[21:13:02] *** Joins: Asoka (Asoka@Pony-vmnea7.net-htp.de)
+[21:15:23] *** Quits: Asoka_White (Asoka@Pony-pkd014.net-htp.de) (Ping timeout: 121 seconds)
+[21:15:38] *** Joins: Asoka_White (Asoka@Pony-0qgb4n.net-htp.de)
+[21:18:24] *** Quits: Asoka (Asoka@Pony-vmnea7.net-htp.de) (Ping timeout: 121 seconds)
+[21:26:10] *** Joins: Asoka (Asoka@Pony-nf9ea2.net-htp.de)
+[21:29:04] *** Quits: Asoka_White (Asoka@Pony-0qgb4n.net-htp.de) (Ping timeout: 121 seconds)
+[21:31:49] *** Joins: Asoka_White (Asoka@Pony-1a539k.net-htp.de)
+[21:34:34] *** Quits: Asoka (Asoka@Pony-nf9ea2.net-htp.de) (Ping timeout: 121 seconds)
+[21:36:36] *** Quits: WuBzY (WuBzY@Pony-cfi03k.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[21:40:12] *** GigaWork is now known as Gigabit
+[21:53:35] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:02:18] *** Joins: WuBzY (androirc@Pony-fv2mok.rev.dnainternet.fi)
+[22:04:29] *** Joins: Datalink (Datalink@Datalink)
+[22:09:45] *** Joins: Webster (Webster@Pony-4eid99.fios.verizon.net)
+[22:12:34] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[22:17:54] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:19:03] *** Joins: Asoka (Asoka@Pony-n78f6v.net-htp.de)
+[22:21:39] *** Quits: Asoka_White (Asoka@Pony-1a539k.net-htp.de) (Ping timeout: 121 seconds)
+[22:21:50] *** Joins: Asoka_White (Asoka@Pony-muugvh.net-htp.de)
+[22:23:17] *** Quits: Asoka (Asoka@Pony-n78f6v.net-htp.de) (Ping timeout: 121 seconds)
+[22:27:32] *** Joins: Asoka (Asoka@Pony-ceb5fc.net-htp.de)
+[22:27:50] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[22:28:43] *** Quits: WuBzY (androirc@Pony-fv2mok.rev.dnainternet.fi) (Quit: Go any more of dem WuBz?)
+[22:29:41] *** Quits: Asoka_White (Asoka@Pony-muugvh.net-htp.de) (Ping timeout: 121 seconds)
+[22:31:01] *** Joins: Asoka_White (Asoka@Pony-v7hooh.net-htp.de)
+[22:32:43] *** Quits: Asoka (Asoka@Pony-ceb5fc.net-htp.de) (Ping timeout: 121 seconds)
+[22:36:56] *** Joins: WuBzY (androirc@Pony-fv2mok.rev.dnainternet.fi)
+[22:38:42] *** Joins: Asoka (Asoka@Pony-lhm90i.net-htp.de)
+[22:41:14] *** Quits: Asoka_White (Asoka@Pony-v7hooh.net-htp.de) (Ping timeout: 121 seconds)
+[22:41:25] *** Joins: Asoka_White (Asoka@Pony-insvqf.net-htp.de)
+[22:41:55] *** Joins: Guest98 (textual@Pony-jl625g.wireless.stolaf.edu)
+[22:43:15] *** Quits: Asoka (Asoka@Pony-lhm90i.net-htp.de) (Ping timeout: 121 seconds)
+[22:47:25] *** Quits: Guest98 (textual@Pony-jl625g.wireless.stolaf.edu) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[22:56:28] *** Quits: thatdguy (~WebChat@Pony-qf6a42.abo.wanadoo.fr) (Ping timeout: 121 seconds)
+[23:00:52] *** Joins: Asoka (Asoka@Pony-kdiqnb.net-htp.de)
+[23:02:38] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[23:03:17] *** Quits: Asoka_White (Asoka@Pony-insvqf.net-htp.de) (Ping timeout: 121 seconds)
+[23:03:24] *** Quits: Melanosuchus (quassel@Pony-ob406h.as13285.net) (Ping timeout: 121 seconds)
+[23:03:47] *** Joins: Asoka_White (Asoka@Pony-jf4evm.net-htp.de)
+[23:05:00] *** Quits: Asoka (Asoka@Pony-kdiqnb.net-htp.de) (Ping timeout: 121 seconds)
+[23:05:05] *** Joins: Melanosuchus (quassel@Pony-0o0grt.as13285.net)
+[23:11:16] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:13:23] *** Joins: Guest98 (textual@Pony-jl625g.wireless.stolaf.edu)
+[23:21:01] *** Quits: Guest98 (textual@Pony-jl625g.wireless.stolaf.edu) (Ping timeout: 121 seconds)
+[23:21:01] *** Joins: tomasz (t0masz@Pony-l2l.2dv.248.50.IP)
+[23:21:10] *** Joins: Guest98 (textual@Pony-jl625g.wireless.stolaf.edu)
+[23:21:46] *** Quits: Guest98 (textual@Pony-jl625g.wireless.stolaf.edu) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[23:23:44] *** Quits: Xefir (xefir@Pony-6pt77h.1fe2.7gl6.e080.2a00.IP) (Ping timeout: 121 seconds)
+[23:47:54] *** Joins: Fallfeathers (Fallfeather@Pony-8980p6.bigpond.net.au)
+[23:50:05] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[23:56:44] *** WuBzY is now known as WuBzY_zleepy
+[23:57:41] *** Joins: Asoka (Asoka@Pony-so586g.net-htp.de)
+[23:58:10] *** Blackjack is now known as AppleDash

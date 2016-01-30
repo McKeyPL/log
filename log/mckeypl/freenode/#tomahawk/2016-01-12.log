@@ -1,0 +1,203 @@
+[00:00:29] *** Quits: jturney (~jon@86.141.131.231) (Read error: Connection reset by peer)
+[00:42:37] *** Joins: sische (guest-sisc@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[00:42:37] <sische> how can i install tomahawk on my kali linux
+[00:43:08] <muesli> sische: don't know about kali, but you'll probably have to compile it yourself
+[01:04:54] *** Quits: jamesaxl_ (~jamesaxl@41.140.221.27) (Ping timeout: 250 seconds)
+[04:20:07] *** Parts: sische (guest-sisc@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[05:15:00] *** Joins: mgue1 (~mgue@x590f34a6.dyn.telefonica.de)
+[05:17:55] *** Quits: mgue (~mgue@x590f5a9c.dyn.telefonica.de) (Ping timeout: 240 seconds)
+[06:08:24] *** Joins: jayt (~jayt@50.125.139.228)
+[06:10:42] <jayt> Hi all.  A new user here for the program.  Very impressed as it connected right away to Google Music account.  Able to combine youtube, other music very soon after that.  I saw the headless option in the code.  I also tried out the simple remote control code example on github.  Is the json API up to a level where I could write a remote control that would allow me to select which music to play on Google Music?
+[06:16:49] <muesli> jayt: hey there
+[06:16:58] <muesli> jayt: not quite, it's mostly basic controls so far
+[06:16:58] <jayt> hi!
+[06:20:23] <muesli> since you can interconnect tomahawks and share your libraries, the headless option is mostly for that
+[06:20:41] <muesli> but yeah, bringing the api to a level where you can write a remote control like that, would be nice
+[06:21:04] <jayt> I had the crazy idea of running it full mode on wandboard embedded target by exporting X11 session over ssh... I have full Ubuntu there.
+[06:25:28] <jayt> I'm going down for the night.  Looking forward to hearing your thoughts about how hard it would be to create the full API for remote control operation.  I would be willing to help if it doesn't totally break the architecture and it is relatively straightforward.  I am a C++ programmer.
+[06:31:38] *** Quits: jayt (~jayt@50.125.139.228) (Ping timeout: 250 seconds)
+[06:37:29] *** Joins: soee (~soee@afde54.neoplus.adsl.tpnet.pl)
+[06:48:40] *** Quits: soee (~soee@afde54.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[06:49:18] *** Joins: pinheiro_ (~pinheiro@bl18-204-238.dsl.telepac.pt)
+[06:49:27] *** Joins: soee (~soee@afde54.neoplus.adsl.tpnet.pl)
+[06:52:42] *** Quits: pinheiro (~pinheiro@bl18-204-238.dsl.telepac.pt) (Ping timeout: 272 seconds)
+[07:15:52] *** Joins: soee_ (~soee@afde54.neoplus.adsl.tpnet.pl)
+[07:17:19] *** Quits: soee_ (~soee@afde54.neoplus.adsl.tpnet.pl) (Client Quit)
+[07:19:10] *** Quits: soee (~soee@afde54.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[07:19:50] *** Joins: soee (~soee@afde54.neoplus.adsl.tpnet.pl)
+[07:33:55] *** Quits: soee (~soee@afde54.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[07:34:43] *** Joins: soee (~soee@afde54.neoplus.adsl.tpnet.pl)
+[07:34:46] *** Quits: soee (~soee@afde54.neoplus.adsl.tpnet.pl) (Client Quit)
+[07:35:24] *** Joins: soee (~soee@afde54.neoplus.adsl.tpnet.pl)
+[09:36:04] *** Joins: ssam2 (~ssam2@212.91.253.218)
+[09:39:17] *** Joins: knicklux (~knicklux@openvpn-cl-200-18.scc.kit.edu)
+[10:13:25] *** Joins: soee_ (~soee@agva152.neoplus.adsl.tpnet.pl)
+[10:14:14] *** Quits: soee (~soee@afde54.neoplus.adsl.tpnet.pl) (Ping timeout: 246 seconds)
+[10:45:37] *** Quits: knicklux (~knicklux@openvpn-cl-200-18.scc.kit.edu) (Remote host closed the connection)
+[11:05:45] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[12:41:29] *** Quits: soee_ (~soee@agva152.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[12:43:38] *** Joins: soee (~soee@agva152.neoplus.adsl.tpnet.pl)
+[12:52:15] *** Quits: soee (~soee@agva152.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[12:53:26] *** Joins: soee (~soee@agva152.neoplus.adsl.tpnet.pl)
+[12:53:30] *** Quits: soee (~soee@agva152.neoplus.adsl.tpnet.pl) (Client Quit)
+[12:54:08] *** Joins: soee (~soee@agva152.neoplus.adsl.tpnet.pl)
+[12:57:27] *** Joins: soee_ (~soee@afic177.neoplus.adsl.tpnet.pl)
+[12:59:19] *** Quits: soee (~soee@agva152.neoplus.adsl.tpnet.pl) (Ping timeout: 245 seconds)
+[13:05:50] *** Quits: Satyricon (~satyricon@static-ip-69-64-50-156.inaddr.ip-pool.com) (Remote host closed the connection)
+[13:34:54] <dommex> making the api more powerful would be very nice ;-)
+[13:35:51] *** Joins: soee (~soee@afic177.neoplus.adsl.tpnet.pl)
+[14:53:28] *** Joins: knicklux (~knicklux@openvpn-cl-200-18.scc.kit.edu)
+[15:15:38] *** Joins: jayt (~jayt@50.125.139.228)
+[15:17:25] <jayt> so if you can connect a whole bunch of tomahawk instances running as headless, how do you select music to play on those instances?  Just trying to understand the original intent of the headless option.
+[15:20:25] <muesli> jayt: you're not remotely controlling them, you can use them to centralize your music collection
+[15:20:29] <muesli> e.g. run it on your nas
+[15:20:42] <muesli> and let your tomahawk on your notebook / at work connect to it and stream your music collection
+[15:22:23] <jayt> oh, ok.  So it represents a music source that a fully non-headless running instance of tomahaw can play music from.
+[15:23:57] <muesli> correct
+[15:24:12] <muesli> the control api is separate from that
+[15:29:35] *** Quits: jayt (~jayt@50.125.139.228) (Ping timeout: 246 seconds)
+[15:38:58] *** Joins: jturney (~jon@host86-141-131-231.range86-141.btcentralplus.com)
+[15:44:17] *** Quits: knicklux (~knicklux@openvpn-cl-200-18.scc.kit.edu) (Ping timeout: 265 seconds)
+[15:45:47] <dommex> Hey jayt
+[15:46:12] <dommex> Ah narf
+[15:46:17] <dommex> Missed again
+[15:46:54] <dommex> muesli: if you see him again, say hi from me :D
+[15:53:20] *** Joins: knicklux (~knicklux@openvpn-cl-200-18.scc.kit.edu)
+[15:57:38] *** Quits: Karbowiak (~Karbowiak@ip908.alb335.cust.comxnet.dk) (Ping timeout: 256 seconds)
+[15:58:27] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[16:10:36] *** Joins: gordie (538648a9@gateway/web/freenode/ip.83.134.72.169)
+[16:14:54] <gordie> i'm testing the mac nighlty..
+[16:17:03] <dommex> gordie cool
+[16:17:12] <dommex> Hows it going so far?
+[16:26:39] *** Joins: Satyricon (~satyricon@static-ip-69-64-50-156.inaddr.ip-pool.com)
+[16:28:44] *** Quits: knicklux (~knicklux@openvpn-cl-200-18.scc.kit.edu) (Ping timeout: 246 seconds)
+[16:30:53] <gordie> can't see much changes, but if I well understood, it's mostly under the hood... :) sorry it's horrible to say that ! :)
+[16:31:04] <gordie> anyway, it .. works.  No problems for the moment.
+[16:43:00] <dommex> gordie: that's seriously the best thing you can say. There are months of work on internal stuff in that build
+[16:43:27] <dommex> the change from qt4 to qt5, from phonon to libvlc directly
+[16:43:38] <gordie> :> btw I see that I have a resolver that wasn't activated before (ZV.fm)
+[16:43:45] <gordie> I had installed before but never saw it working
+[16:43:49] <dommex> hehe
+[16:44:09] <dommex> you have an open PR still, no?
+[16:44:19] <gordie> PR ?
+[16:44:26] <dommex> Its probably broken by now
+[16:44:30] <dommex> Pull request
+[16:44:43] <gordie> subsonic settings do not disappear when clicking OK after having opened them
+[16:44:50] <gordie> and subsonic resolver seems not to work
+[16:45:23] <dommex> Yeah a few resolvers need porting probably :C
+[16:45:37] <dommex> And urllookup is completely broken
+[16:46:41] <dommex> gordie: any chance you have a bit of time to lend us a hand fixing resolvers?
+[16:49:37] <gordie> not sure yet, but maybe in a few days.  I'll tell you - but not sure I'm able to help you there !
+[16:50:05] <dommex> Its easy
+[16:50:27] <dommex> It just needs a bit of time to make sure everything is working as expected
+[16:50:29] <dommex> :-)
+[16:51:17] <gordie> ok then
+[16:51:29] <gordie> (i'm quoting the "fargo" tv show here :))
+[16:52:17] <dommex> :-)
+[17:03:22] *** Quits: soee_ (~soee@afic177.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[17:03:27] *** Quits: soee (~soee@afic177.neoplus.adsl.tpnet.pl) (Remote host closed the connection)
+[17:03:47] *** Quits: dridri` (~dridri@2a01:e35:8a72:9010:225:90ff:fe1e:3c78) (Quit: Coyote finally caught me)
+[17:04:27] *** Joins: soee (~soee@afic177.neoplus.adsl.tpnet.pl)
+[17:04:54] *** Quits: soee (~soee@afic177.neoplus.adsl.tpnet.pl) (Client Quit)
+[17:05:29] *** Joins: soee (~soee@afic177.neoplus.adsl.tpnet.pl)
+[17:05:46] *** Joins: soee_ (~soee@afic177.neoplus.adsl.tpnet.pl)
+[17:43:08] *** Joins: Karbowiak (~Karbowiak@ip908.alb335.cust.comxnet.dk)
+[18:04:25] *** Quits: gordie (538648a9@gateway/web/freenode/ip.83.134.72.169) (Quit: Page closed)
+[18:24:11] *** Quits: ssam2 (~ssam2@212.91.253.218) (Quit: Leaving)
+[19:17:24] <dommex> theli_ua: what was the resolver that you wanted to use the url lookup from?
+[19:17:35] <theli_ua> dommex: oh, theres a bunch
+[19:17:47] <theli_ua> dommex: but jherskowitz's concern was broken tidal resolver
+[19:17:48] <dommex> gimme an example that works well :-)
+[19:18:04] <theli_ua> dommex: tidal
+[19:18:10] <dommex> hehe ok
+[19:18:44] <theli_ua> iirc the only other one is vkontakte resolver but that is used only by me and its in pr anyway
+[19:19:01] <theli_ua> I don't remember any other master resolvers broken by that
+[19:19:34] <theli_ua> I was thinking about adding ability to process amazon links as well though
+[19:24:41] <jherskowitz> dommex: URLlookup is for drag/drop support, yeah?
+[19:24:51] <jherskowitz> and for Android?
+[19:24:51] <dommex> jherskowitz: exactly
+[19:25:00] <dommex> jherskowitz: for android?
+[19:25:18] <dommex> theli_ua: that would be really cool
+[19:25:31] <jherskowitz> dommex: MrMaffen does a lookup on some URLs so that Tomahawk can be the default handler for certain links (e.g. Spotify)
+[19:25:47] <theli_ua> it works a bit differently on android though
+[19:26:00] <theli_ua> eh, rather, implemented a bit differently
+[19:26:37] <dommex> yep
+[19:26:59] <dommex> because the app can't be loaded all the time
+[19:27:15] <dommex> and android just uses some regexps to determine whether an app can open the link
+[19:27:32] <theli_ua> argghgg, stupid DHL won't allow me to both waive signature and update shipping address >_<
+[19:28:02] <theli_ua> I blame dommex 
+[19:28:19] <dommex> who else?
+[19:28:27] <theli_ua> just dommex 
+[19:29:31] <theli_ua> oh, also, jherskowitz , take a look at peculiar soliciting related to tomahawk I got through reddit http://paste.ee/p/HSM4E
+[19:30:06] <jherskowitz> heh
+[19:30:10] * jherskowitz checking it out
+[19:30:38] <theli_ua> btw, does tomahawk desktop/android handle results' "preview=true" field? if yes, how exactly?
+[19:31:58] <jherskowitz> dommex: ^
+[19:32:15] <dommex> theli_ua: it lowers its priority
+[19:32:35] <dommex> i.e. it will always be the last result that is chosen for a query
+[19:33:28] <jherskowitz> theli_ua: heh, the first thing I did made it crash
+[19:48:49] <theli_ua> dommex: nice, cause I plan to support previews from amazon for tracks not available to you to play (have prime but songs not in prime and not purchased) and also support previews from tidal and rhapsody (for when you have an account but no active subscription)
+[19:49:27] <dommex> awesome
+[19:58:55] <jherskowitz> theli_ua: we can also have the ability to do purchases and download management if Amazon wants ;)
+[19:59:06] *** Joins: jamesaxl (~jamesaxl@105.155.124.127)
+[19:59:36] <theli_ua> I would ask amazon about taht
+[20:00:57] <theli_ua> I mean, Ideally tomahawk would have in contact with amazon and gotten the blob in the same way it works for, say, blackberry amazon music player
+[20:01:09] <theli_ua> but I don't think thats very realistic :(
+[20:03:27] <jherskowitz> heh
+[20:07:44] <theli_ua> I just hope that our resolver would not get cease and desist note
+[20:37:25] *** Quits: Karbowiak (~Karbowiak@ip908.alb335.cust.comxnet.dk) (Ping timeout: 260 seconds)
+[20:46:05] <theli_ua> yet another free album on google play https://play.google.com/store/music/album/Various_Artists_21_Classic_Rock_Favorites?id=Bdydebrdwvsc57nxolxnibxborq  some rock classics this time
+[20:46:24] <theli_ua> I think I already got like 10 of those free ones on play store
+[20:50:20] *** Joins: Karbowiak (~Karbowiak@87.73.106.164)
+[20:57:15] *** Joins: jamesaxl_ (~jamesaxl@105.157.107.92)
+[21:00:48] *** Quits: jamesaxl (~jamesaxl@105.155.124.127) (Ping timeout: 256 seconds)
+[21:06:02] <dommex> theli_ua: does tidal urllookup work without being logged in?
+[21:15:44] *** Joins: jamesaxl (~jamesaxl@41.248.200.188)
+[21:15:55] <theli_ua> dommex: I'm pretty sure it doesn
+[21:15:55] <theli_ua> t
+[21:19:29] *** Quits: jamesaxl_ (~jamesaxl@105.157.107.92) (Ping timeout: 276 seconds)
+[21:21:27] <dommex> theli_ua: cool thanks. can you give me any tidal link that's supposed to be "lookup-able"?
+[21:22:11] <theli_ua> but, how will you able to test it
+[21:22:19] <dommex> theli_ua: guess what i'm working on :P
+[21:22:26] <dommex> ah
+[21:22:31] <dommex> sorry, misread what you said earlier
+[21:22:33] <theli_ua> yeah, I said it doesn't
+[21:22:39] <dommex> it only works when logged in? laaame
+[21:23:21] <dommex> theli_ua: any other resolver that works without being logged in?
+[21:23:24] <theli_ua> http://listen.tidal.com/artist/17231  http://listen.tidal.com/album/52423077 
+[21:23:38] <theli_ua> dommex: none that I know of
+[21:23:44] <theli_ua> dommex: tomahk-metadata?
+[21:23:50] <dommex> possibly
+[21:23:53] <dommex> but toma.hk is down
+[21:23:56] <theli_ua> oh
+[21:23:56] <theli_ua> wait
+[21:24:01] <theli_ua> spotify-metadata
+[21:25:08] <dommex> i'll go with soundcloud ;D
+[21:25:13] <theli_ua> :(
+[21:25:30] <theli_ua> I'd prefer spotify, thats prety much the only metadata handler I used in the past
+[21:25:42] <theli_ua> like, to open an album that doesn't exist in musicbrainz
+[21:39:08] *** Joins: McKey (~McK@irc.antyklay.pl)
+[21:39:10] *** Server sets mode: +gnt 
+[21:40:46] *** Joins: kurros (~wade@rubicon.ezri.org)
+[21:43:24] <theli_ua> heh, I'm always surprised when I get a resolve from amazon's prime but not from premium resolver (tidal in this case)
+[21:53:05] *** Joins: jamesaxl_ (~jamesaxl@105.159.52.109)
+[21:56:32] *** Quits: jamesaxl (~jamesaxl@41.248.200.188) (Ping timeout: 276 seconds)
+[23:21:07] <dommex> theli_ua: you're lucky that you didnt volunteered for the lookupurl refactor :P
+[23:23:23] <dommex> *volunteer
+[23:29:49] <theli_ua> :)
+[23:36:12] *** Joins: jamesaxl (~jamesaxl@41.140.35.156)
+[23:39:53] *** Quits: jamesaxl_ (~jamesaxl@105.159.52.109) (Ping timeout: 276 seconds)
+[23:40:12] *** Joins: jamesaxl_ (~jamesaxl@41.140.18.154)
+[23:42:55] *** Quits: jamesaxl (~jamesaxl@41.140.35.156) (Ping timeout: 240 seconds)
+[23:46:58] *** Joins: jamesaxl (~jamesaxl@adsl196-42-109-206-196.adsl196-4.iam.net.ma)
+[23:49:55] *** Quits: jamesaxl_ (~jamesaxl@41.140.18.154) (Ping timeout: 240 seconds)
+[23:58:15] <dommex> theli_ua: around?
+[23:58:15] *** Quits: jamesaxl (~jamesaxl@adsl196-42-109-206-196.adsl196-4.iam.net.ma) (Ping timeout: 265 seconds)
+[23:58:23] <theli_ua> yeah
+[23:58:31] <theli_ua> wrapped around my chair
+[23:58:35] <dommex> hehehe
+[23:58:54] <dommex> theli_ua: do you know anything about how tomahawk handles result sources? i.e. resolvers vs. collection etc?
+[23:59:25] <theli_ua> no, not much
+[23:59:26] <theli_ua> why
+[23:59:52] <dommex> because i'm wondering if my approach for lookup url is flawed
+[23:59:59] <dommex> or how to best do it

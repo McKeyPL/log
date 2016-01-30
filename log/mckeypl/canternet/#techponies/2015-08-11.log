@@ -1,0 +1,428 @@
+[00:03:16] <HoneyDrops|Half> DJ-C0L7[EIT]: dunno, I can boot it in VBox.  It's a BIOS update disk, but I don't have a cd drive handy
+[00:03:26] <DJ-C0L7[EIT]> hmm
+[00:03:57] <DJ-C0L7[EIT]> possibly the kind of files on the disk?
+[00:04:12] <HoneyDrops|Half> I
+[00:04:27] <DJ-C0L7[EIT]> and you cant tell the comp to boot via usb removable?
+[00:04:33] <HoneyDrops|Half> I'm going to see if I can just have grub boot it rather than try to make a usb drive.
+[00:04:36] *** Quits: Phase (Phase4@Pony-5ah3ft.internode.on.net) (Ping timeout: 121 seconds)
+[00:04:45] <DJ-C0L7[EIT]> or will it not boot that kind of disk usb?
+[00:05:01] *** Creeps|AFK is now known as RedHelper
+[00:05:27] <HoneyDrops|Half> The laptop will boot off usb, but I can't seem to make a bootable USB from the iso, for some reason.  I suspect for the same I can't seem to access anything when I mount it.
+[00:06:08] *** Quits: quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (Quit: )
+[00:07:24] <DJ-C0L7[EIT]> hmm
+[00:07:39] <DJ-C0L7[EIT]> try booting into a *nix distro?
+[00:11:23] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[00:12:34] * HoneyDrops|Half is running linux.  mount -o loop doesn't error, the mount shows up in mount's listing, and it unmounts w/o error, but there is /nothing/ in the mountpoint.
+[00:12:50] <RainbowHacks> o.0
+[00:12:51] <DJ-C0L7[EIT]> hmm
+[00:12:53] <DJ-C0L7[EIT]> strange
+[00:31:02] * HoneyDrops|Half leaps from her tub, and runs naked down the hall shouting "Eureka!"  This is far less head turning as she is a pony.  It's all hidden in [BOOT]/Bootable_HardDisk.img  Have to extract it with 7z...
+[00:38:28] <DJ-C0L7[EIT]> ahha
+[00:38:41] <DJ-C0L7[EIT]> interesting
+[00:39:45] <RainbowHacks> o.0
+[00:40:08] * RainbowHacks turns head anyway because she is a lezzybean
+[00:45:24] *** Joins: Asoka_White (Asoka@Pony-f5f6ka.net-htp.de)
+[00:48:17] *** Quits: Asoka (Asoka@Pony-9a08or.net-htp.de) (Ping timeout: 121 seconds)
+[00:50:51] *** Joins: Asoka (Asoka@Pony-rpfqcr.net-htp.de)
+[00:52:28] <Vega> Hey, how can I check to make sure a job in crontab sucessfully ran?
+[00:53:18] *** Quits: Asoka_White (Asoka@Pony-f5f6ka.net-htp.de) (Ping timeout: 121 seconds)
+[00:58:55] <Colgate|Bronycon> have it mail something to you?
+[01:03:57] *** zz_CyberJacob is now known as CyberJacob
+[01:06:50] <JustAberrant> have whatever it's doing write to a log?
+[01:18:27] <Vega> I got it working, but the application I am having it run is being goofy..
+[01:19:47] <JustAberrant> probably subtle difference in environment :(
+[01:19:54] <JustAberrant> (assuming it works fine when you just run it yourself)
+[01:20:14] <Vega> I dunno, I ran the tool manually twice, it did not detect the changes the first time, and now it did x.x
+[01:20:16] * DJ-C0L7[EIT] considers upping injector size on his 4x4 again
+[01:20:34] *** Joins: Sombra (Iceman@Darkhorse21)
+[01:20:36] * JustAberrant subscribes DJ-C0L7[EIT] to a potato magazine :)
+[01:28:02] <DJ-C0L7[EIT]> lol
+[01:35:07] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:37:29] *** CyberJacob is now known as zz_CyberJacob
+[01:42:11] *** init3 is now known as Init3-away
+[01:44:42] *** Quits: sleumas2000 (uid91753@my.little.karaoke) (Quit: )
+[01:44:53] *** Joins: sleumas2000 (uid91753@my.little.karaoke)
+[01:45:56] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:51:58] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:58:39] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:11:25] *** Init3-away is now known as init3
+[02:16:11] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[02:33:05] * Schism boils some pierogi, then tops them with some spicy garlic pasta sauce.
+[02:33:18] <Schism> Ah, apologies, wrong chan.
+[02:37:50] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[02:38:08] <Midnight_Tinker> Schism, never a wrong channel for pierogi
+[02:42:31] <DJ-C0L7[EIT]> bak
+[02:44:23] *** Joins: Asoka_White (Asoka@Pony-rk3ogu.net-htp.de)
+[02:44:41] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[02:47:32] *** Quits: Asoka (Asoka@Pony-rpfqcr.net-htp.de) (Ping timeout: 121 seconds)
+[02:52:59] <Schism> This is true.
+[02:54:23] *** RedHelper is now known as RedHelper[NLR]
+[03:02:30] <DJ-C0L7[EIT]> i had to get a little "old school" to find a vacuum leak
+[03:02:35] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:23:18] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[03:31:56] <Moonlightning> Buck
+[03:32:01] <Moonlightning> I was gonna do something with a tree
+[03:32:04] <Moonlightning> but I've forgotten
+[03:32:19] <DJ-C0L7[EIT]> always fun
+[03:33:11] * HoneyDrops|Half relented and just burned a damn CD-R.
+[03:34:02] <DJ-C0L7[EIT]> usb attached cd rom?
+[03:34:07] <HoneyDrops|Half> Yeah
+[03:34:19] <HoneyDrops|Half> I had one, wasn't sure I had any CD-R's
+[03:34:28] * DJ-C0L7[EIT] nods
+[03:34:34] * HoneyDrops|Half also has a USB floppy drive.
+[03:34:45] <DJ-C0L7[EIT]> xD those are always useful
+[03:35:46] <HoneyDrops|Half> The most useful is my USB to IDE&SATA adapter, best way to pull stuff off a yanked drive.
+[03:38:39] * Moonlightning only recently got one of those.
+[03:53:06] <Moonlightning> Anyway. How can I make the IPv6 addresses in my dhcpd.conf dynamic?
+[04:02:18] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[04:03:02] <DJ-C0L7[EIT]> i've not had much time to tinker with ipv6 myself
+[04:08:37] <Moonlightning> It's more of a dhcpd question than an IPv6 question.
+[04:09:26] <DJ-C0L7[EIT]> i have a dhcpd setup on my *nix laptop
+[04:09:44] <DJ-C0L7[EIT]> but i have it configured with just a handfull of ipv4 addresses to delve out
+[04:10:14] *** RedHelper[NLR] is now known as RedHelper
+[04:10:31] <Moonlightning> I feel like I need a sort of static template configuration file, with placeholders
+[04:10:43] <Moonlightning> And a script that takes that template and fills it in
+[04:10:58] * DJ-C0L7[EIT] nods
+[04:11:14] <Moonlightning> And I'm not quite sure how that could work
+[04:11:32] <DJ-C0L7[EIT]> i'm thinking a .sh script
+[04:11:55] <Moonlightning> I'm thinking a Python script. Python's stdlib has a module for working with IP addresses and networks.
+[04:12:07] <DJ-C0L7[EIT]> hmm, that'd be much better
+[04:12:10] <Moonlightning> :p
+[04:12:41] <DJ-C0L7[EIT]> and i know python can call other functions such as a .sh script or other system procedures
+[04:14:14] *** Quits: sleumas2000 (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[04:15:06] <Moonlightning> How do I placeholders, though? 6_9
+[04:16:07] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[04:16:10] <Moonlightning> I feel like I'd need to define things in terms of the operations that can be done on the Python objects
+[04:16:24] <Moonlightning> But of course I don't wanna eval() anything
+[04:17:56] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[04:50:16] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[05:07:23] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[05:47:07] *** ThunderStorm is now known as LightningCrash
+[05:51:47] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[06:07:32] *** Joins: GumballCrash (GumballCras@0.to.pony.10secondsflat)
+[06:12:19] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[06:13:09] *** Joins: Sombra (Iceman@Darkhorse21)
+[06:53:03] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "g2g")
+[07:05:05] *** init3 is now known as Init3-away
+[07:05:14] *** RedHelper is now known as Creeps|AFK
+[07:07:16] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[07:17:27] *** Init3-away is now known as init3
+[07:17:29] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[07:21:27] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[07:38:30] *** Colgate|Bronycon is now known as Colgate
+[07:40:10] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[07:41:34] *** Joins: ColtonDRG (coltondrg@Pony-cfge30.hlrn.qwest.net)
+[08:01:58] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[08:57:44] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[09:19:04] *** Quits: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net) (Quit: I am gone now)
+[09:20:07] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[09:31:02] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[09:32:31] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[09:49:46] *** init3 is now known as Init3-away
+[09:50:00] *** Vega is now known as GigaZzz
+[10:06:33] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[10:20:36] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[10:47:38] *** Joins: keystroke (keystroke@Pony-ff8k5p.res.rr.com)
+[10:47:48] <sleumas2000> https://www.kickstarter.com/projects/1570995455/wubs
+[10:47:49] <PinkiePieBot> [ Wubs by Carbonesque — Kickstarter ]
+[10:47:53] <sleumas2000> ^ these look cool
+[11:09:21] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[11:18:05] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[11:32:11] <DJ-C0L7[CSS]> i learned somthing tonight
+[11:33:13] <DJ-C0L7[CSS]> verify the resistance of a coil wire before you install it to prevent issues of "weak fire" or "no fire" due to a coil wire that has too much impedance >.<
+[11:33:44] <Lapsus> Most people would consider a fire to be a problem ;p
+[11:34:22] <DJ-C0L7[CSS]> lol
+[11:36:09] <Lapsus> While I'm at it, http://i.imgur.com/VQ6X6Cj.jpg Another photo of my printer because why not
+[11:36:09] <Lapsus> lol
+[11:41:04] <DJ-C0L7[CSS]> i'm gonna lay down
+[11:50:57] *** Quits: keystroke (keystroke@Pony-ff8k5p.res.rr.com) (Quit: Leaving)
+[12:00:34] *** Quits: floogulinc (floogulinc@Pony-opvprb.floogul.net) (A TLS packet with unexpected length was received.)
+[12:03:25] *** Joins: floogulinc (floogulinc@Pony-opvprb.floogul.net)
+[12:05:12] *** Quits: floogulinc (floogulinc@Pony-opvprb.floogul.net) (A TLS packet with unexpected length was received.)
+[12:05:36] *** Joins: floogulinc (floogulinc@Pony-opvprb.floogul.net)
+[12:15:46] *** Joins: Phase (Phase4@Pony-5ah3ft.internode.on.net)
+[12:27:08] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[12:34:14] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[12:49:39] *** Joins: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile)
+[12:49:44] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (Connection closed)
+[12:53:28] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[12:54:12] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[12:54:48] *** Quits: Dusk (Dusk@dusky.horse) (Quit: Thanks for the memories, even if they weren't so good.)
+[12:55:03] *** Joins: Dusk (Dusk@dusky.horse)
+[13:49:52] *** Quits: endoriazel (coprah@endoriazel) (Ping timeout: 121 seconds)
+[13:49:59] *** Joins: endoriazel (coprah@Pony-81pjdu.de)
+[13:58:05] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[14:18:49] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:35:43] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[14:38:37] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[15:08:02] *** Joins: sniperfox1 (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[15:09:46] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (Ping timeout: 121 seconds)
+[15:17:20] *** Joins: quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[15:18:50] *** Quits: AutoLapsus (Lapsus@Totally.Is.A.Network.Service) (cadance.canternet.org cloudchaser.canternet.org)
+[15:19:18] *** Quits: derpy (derp@muffins) (Ping timeout: 121 seconds)
+[15:19:20] *** Quits: Shutter (tips@sudoku.prevention.hotline) (cadance.canternet.org daring.canternet.org)
+[15:19:20] *** Quits: wolfyshy (woof@fluttering.shyly.through.the.forest) (cadance.canternet.org daring.canternet.org)
+[15:19:23] *** Joins: AutoLapsus (Lapsus@Totally.Is.A.Network.Service)
+[15:19:23] *** services.canternet.org sets mode: +o AutoLapsus
+[15:19:53] *** quindo is now known as Pony_80012
+[15:19:58] *** Quits: sniperfox1 (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (Ping timeout: 121 seconds)
+[15:20:05] *** Quits: Dusk (Dusk@dusky.horse) (Ping timeout: 121 seconds)
+[15:20:17] *** Joins: wolfyshy (woof@fluttering.shyly.through.the.forest)
+[15:20:17] *** Joins: Shutter (tips@sudoku.prevention.hotline)
+[15:20:32] *** Quits: GeekBrony (GB@bronydom.net) (Ping timeout: 121 seconds)
+[15:20:48] *** Joins: GeekBrony (GB@bronydom.net)
+[15:20:50] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (Connection closed)
+[15:20:56] *** Joins: sniperfox1 (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[15:22:39] *** Joins: Dusk (Dusk@dusky.horse)
+[15:23:58] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[15:29:20] *** Quits: Shutter (tips@sudoku.prevention.hotline) (cadance.canternet.org daring.canternet.org)
+[15:29:20] *** Quits: wolfyshy (woof@fluttering.shyly.through.the.forest) (cadance.canternet.org daring.canternet.org)
+[15:30:07] *** Joins: sniperfox2 (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[15:30:22] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (Ping timeout: 121 seconds)
+[15:30:32] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Connection closed)
+[15:31:05] *** Joins: Starthunder (blackl@property.of.lightningcrash)
+[15:31:11] *** Quits: GeekBrony (GB@bronydom.net) (Ping timeout: 121 seconds)
+[15:31:30] *** Quits: Dusk (Dusk@dusky.horse) (Ping timeout: 121 seconds)
+[15:31:45] *** Quits: frackster (sid20128@Pony-rk5kfp.tooting.irccloud.com) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: Neptune (Neptune@Planet.Neptune) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: ShivalWolf (ShivalWolf@BigMac.is.a.Coltcuddler.org) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: DataByteBrony (DataByte@Pony-vu7vk7.g424.9euc.0247.2601.IP) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: roflincopter (dennis@Pony-aend1d.es) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: Q0 (Q0@literallyshit.net) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: Apple_Bloom (sid52418@the.canon.pony) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: seatsea (seatsea@Pony-h2k8ms.oak0.80rs.04f8.2a01.IP) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: Seoson (Seoson@pony.kab-s.de) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: RainbowHacks (rainbow@Pony-m1cetk.ponix.space) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: johnsey (johnsey@into.the.nethers) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: One-Trick (Octavia@hyenaspots.com) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: stevestreza (Steve@Pony-2pu89d.g2b4.t1b7.3c00.2600.IP) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: JoneZ (JoneZ@lugburz) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: Sellyme (quassel@Pony-a07utk.vxnd.net) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: HoneyDrops|Half (Honey@sweeter.than.honey) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: floogulinc (floogulinc@Pony-opvprb.floogul.net) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: endoriazel (coprah@endoriazel) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: reiuiji (reiuiji@nuclear.raven) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: Phase (Phase4@Pony-5ah3ft.internode.on.net) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: Compu (compu@snuggly.filly) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: Cameron_D (cameron@cam.mylittle.horse) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.never.fixed) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: Datalink (Datalink@Datalink) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: aji (alex@ajitek.net) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: Lapsus (Lapsus@i-forget.ca) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: Lorix_ (Lorix_@flutter.shy.yay) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: Aww (aww@Pony-i71810.us) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net) (cadance.canternet.org discord.canternet.org)
+[15:31:45] *** Quits: Red_M (potato@Pony-4pa04c.red-m.net) (cadance.canternet.org discord.canternet.org)
+[15:31:51] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (Ping timeout: 121 seconds)
+[15:31:52] *** Quits: sniperfox1 (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (Ping timeout: 121 seconds)
+[15:32:16] *** Joins: wolfyshy (woof@fluttering.shyly.through.the.forest)
+[15:32:16] *** Joins: Shutter (tips@sudoku.prevention.hotline)
+[15:32:42] *** Joins: Aww (aww@Pony-i71810.us)
+[15:32:42] *** Joins: frackster (sid20128@Pony-rk5kfp.tooting.irccloud.com)
+[15:32:42] *** Joins: Lorix_ (Lorix_@flutter.shy.yay)
+[15:32:42] *** Joins: One-Trick (Octavia@hyenaspots.com)
+[15:32:42] *** Joins: Cameron_D (cameron@cam.mylittle.horse)
+[15:32:42] *** Joins: johnsey (johnsey@into.the.nethers)
+[15:32:42] *** Joins: seatsea (seatsea@Pony-h2k8ms.oak0.80rs.04f8.2a01.IP)
+[15:32:42] *** Joins: JoneZ (JoneZ@lugburz)
+[15:32:42] *** Joins: Neptune (Neptune@Planet.Neptune)
+[15:32:42] *** Joins: Red_M (potato@Pony-4pa04c.red-m.net)
+[15:32:42] *** Joins: aji (alex@ajitek.net)
+[15:32:42] *** Joins: HoneyDrops|Half (Honey@sweeter.than.honey)
+[15:32:42] *** Joins: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com)
+[15:32:42] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[15:32:42] *** Joins: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net)
+[15:32:42] *** Joins: Apple_Bloom (sid52418@the.canon.pony)
+[15:32:42] *** Joins: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net)
+[15:32:42] *** Joins: stevestreza (Steve@Pony-2pu89d.g2b4.t1b7.3c00.2600.IP)
+[15:32:42] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[15:32:42] *** Joins: DataByteBrony (DataByte@Pony-vu7vk7.g424.9euc.0247.2601.IP)
+[15:32:42] *** Joins: Q0 (Q0@literallyshit.net)
+[15:32:42] *** Joins: RainbowHacks (rainbow@Pony-m1cetk.ponix.space)
+[15:32:42] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[15:32:42] *** Joins: reiuiji (reiuiji@nuclear.raven)
+[15:32:42] *** Joins: Compu (compu@snuggly.filly)
+[15:32:42] *** Joins: ShivalWolf (ShivalWolf@BigMac.is.a.Coltcuddler.org)
+[15:32:42] *** Joins: Sellyme (quassel@Pony-a07utk.vxnd.net)
+[15:32:42] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[15:32:42] *** Joins: roflincopter (dennis@Pony-aend1d.es)
+[15:32:42] *** Joins: Phase (Phase4@Pony-5ah3ft.internode.on.net)
+[15:32:42] *** Joins: Datalink (Datalink@Datalink)
+[15:32:42] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.never.fixed)
+[15:32:42] *** Joins: floogulinc (floogulinc@Pony-opvprb.floogul.net)
+[15:32:42] *** Joins: endoriazel (coprah@endoriazel)
+[15:32:42] *** discord.canternet.org sets mode: +oqo aji Lapsus Lapsus
+[15:37:14] *** Joins: Dusk (Dusk@dusky.horse)
+[15:38:04] *** Joins: GeekBrony (GB@bronydom.net)
+[15:40:02] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[15:43:14] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[15:52:11] *** Pony_80012 is now known as Quindo
+[16:08:43] <Googie> Hahaha, Oracle put up a blog post saying that Reverse Engineering their software for security reasons is illegal, and people should stop doing it
+[16:14:30] <Shutter> But. But. It's really not illegal a lot of places.
+[16:15:04] <Shutter> Also it's not like the crimilans who look for security problems aren't ... criminals ... which don't care about the law ...
+[16:15:25] * Shutter faceplants against Googie
+[16:16:20] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:16:22] <Googie> Hehehe
+[16:16:45] <Googie> https://web.archive.org/web/20150811052336/https://blogs.oracle.com/maryanndavidson/entry/no_you_really_can_t
+[16:16:54] * johnsey reverse engineers Shutter 
+[16:16:54] <Googie> (It got pulled about 30 minutes ago)
+[16:17:20] * Shutter reveals all his secrets to johnsey
+[16:17:45] * johnsey overflows
+[16:18:57] <Googie> I like how at one point it's like "Trust us, we're FIPS-140 certified"
+[16:19:19] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:20:09] * Shutter places a "In God we trust" banner on Googie
+[16:23:25] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:28:45] * Googie gives Shutter an "Oracle Certified Secure" sticker, and then gives johnsey one too!
+[16:29:21] * Shutter finds bleach, figuring that'll solve the issue with the sticker
+[16:29:26] * Googie suggests ingestion, followed by desolving via stomach acid
+[16:29:35] <Googie> *dissolving
+[16:30:11] * johnsey puts the sticker on a windows 10 laptop
+[16:51:16] *** Quits: Datalink (Datalink@Datalink) (Connection closed)
+[16:56:06] *** Init3-away is now known as init3
+[16:56:44] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:12:13] *** Quits: sniperfox2 (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (Quit: reboot)
+[17:17:50] * Schism unravels the story of the Eight-Headed Dragon, Orochi.
+[17:17:53] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[17:18:13] <Schism> Oh dear.  Oracle are a bunch of jerks, but I hadn't realized they'd gone to that extent.
+[17:18:39] <Schism> Also, tsk, tsk.  This is the internet.  Nothing disappears.
+[17:20:23] <Schism> Reading that blog post.  "Our safes might be able to be opened with a twist of the knob and a thump in the right place, but that won't matter if you've already hired security guards."
+[17:28:02] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:32:10] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:33:32] *** Joins: Gumball_Crash (GumballCras@Pony-svbp6u.nh.comcast.net)
+[17:36:32] *** Quits: GumballCrash (GumballCras@0.to.pony.10secondsflat) (Ping timeout: 121 seconds)
+[17:37:02] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:46:20] <AppleDash> 688914432 bytes (689MB) copied, 0.482127s, 1.4GB/s
+[17:46:34] <AppleDash> I somehow fail to believe this, considering it's a USB 2.0 flash drive
+[17:46:48] <AppleDash> `sync` completed in like 30s though...
+[17:46:54] <AppleDash> I still don't believe it
+[17:47:17] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Connection closed)
+[17:51:57] * HoneyDrops|Half looks over the post.  Yeah, that sounds exactly like Oracle.
+[17:55:24] *** init3 is now known as Init3-away
+[17:56:36] *** Joins: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net)
+[18:10:37] *** Quits: GigaZzz (Gigabit@the.girly.colt) (Quit: Canternet Public Bouncer!)
+[18:12:40] *** Joins: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net)
+[18:17:23] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:23:27] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "resetting connection")
+[18:24:04] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[18:25:06] *** Init3-away is now known as init3
+[18:38:51] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[18:47:26] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[18:57:43] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:57:55] *** Quits: sleumas2k (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[19:07:01] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[19:07:31] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[19:16:34] <init3> AppleDash: I think some versions of rsync pretend they 'copied' data that it skipped because it was the same. 
+[19:16:38] <init3> I think
+[19:18:09] <AppleDash> This isn't rsync
+[19:18:10] <AppleDash> this is dd
+[19:18:16] <init3> Oh
+[19:18:26] <init3> dd is lying
+[19:18:29] <init3> lol
+[19:19:43] <Compu> ooh the first part of season 5 is on netflix!
+[19:19:56] <init3> Why does Chromium have to be so damned fast and compatible? FF has so many issues playing media and being leggy for me but is like everything I want so I end up installing a bunch of chromium extentions to make it more like firefox
+[19:20:20] <init3> Yar. It is how I "tested" my networking to my TV was working. 
+[19:23:34] <johnsey> AppleDash: 689 MB in 30 seconds is still within the specifications of USB2.0
+[19:23:59] <init3> Yeah but not 1.4GB/s
+[19:24:13] <johnsey> that's just the speed of transfering it to the cache
+[19:24:22] <init3> ohhhh
+[19:24:27] <init3> Makes sense
+[19:24:31] <johnsey> which is why the sync takes 30s
+[19:24:37] <init3> RIght
+[19:26:23] <johnsey> you can dd with conv=sync
+[19:26:26] <init3> I need to compile a bunch of Chromium extensions and call it "I'm foxy" or some shit that makes it just like firefox. Stupid shit I miss, like "vriw background image"
+[19:26:27] <johnsey> to avoid it
+[19:33:03] <seatsea> https://www.mozilla.org/en-US/firefox/40.0/releasenotes/ --> "Improved scrolling, graphics, and video playback performance with off main thread compositing (GNU/Linux only)" Ooooooo
+[19:33:03] <PinkiePieBot> [ Firefox — Notes (40.0) — Mozilla ]
+[19:44:17] <init3> hmm
+[19:45:00] <init3> I have nightly though and it doesn't seem any better. We'll see. 
+[19:45:08] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[19:46:05] <init3> Part of it is the fact FF uses gstreamer and sucks ass with MSE, which youtube now uses extensivley. 
+[19:46:38] <init3> But that doe ssound promising
+[19:47:48] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:50:10] <init3> I do hate how Mozilla does their version numbering. Seems like this might qualify as a major release but you can't tell because to them /everything/ is a major release. 
+[19:52:14] <init3> My biggest problem is I can't get FF to properly play youtube videos with HTML5 in anything but 360 or 720. I didn't mind before when I had 10Mbit internet but now that I have 100mbit I'd like to watch 1080. 
+[19:53:47] <init3> #firstworldproblems
+[19:56:42] <HoneyDrops|Half> Anypony have advice on uMatrix vs RequestPolicy?  I'm considering migrating over to uMatrix, as I like the option to control requests by type, however requestpolicy allows fro filtering based on requester (eg: Domain A requests from B and C, and B also requests from C.  ReqPol lets me allow A to call C, but still block B)  Does anyone know if uMatrix can do this and I'm just missing it?
+[19:57:48] *** eyeburn is now known as Starburn
+[20:05:54] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:17:39] <Starthunder> …
+[20:17:46] <Starthunder> Déjà vu
+[20:18:03] <Starthunder> HoneyDrops, weren't you asking abotu uMatrix|ReqPol just last night?
+[20:21:55] <HoneyDrops|Half> Yes, though not in here?
+[20:22:09] <Starthunder> Where?
+[20:29:39] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[20:39:32] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[20:44:39] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[20:52:09] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[20:52:34] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[21:09:14] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (Quit: reboot)
+[21:16:11] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[21:26:09] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[21:30:18] *** Joins: Pony_80012 (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[21:31:03] *** Quits: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[21:41:19] *** Quits: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net) (Quit: Leaving.)
+[21:44:20] *** sleumas2k is now known as sillyboi2000
+[21:47:55] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "gotta head to work, back in a few")
+[21:56:20] *** sillyboi2000 is now known as sleumaBA2000
+[21:56:25] *** sleumaBA2000 is now known as sleumaBS2000
+[22:07:22] *** sleumaBS2000 is now known as sleumas2000
+[22:29:00] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:31:52] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[22:35:49] <RainbowHacks> o.o
+[22:35:51] <RainbowHacks> o/
+[22:38:47] <DJ-C0L7[EIT]> howdy
+[22:39:04] <RainbowHacks> hiya
+[22:41:49] <RainbowHacks> oi DJ-C0L7[EIT] 
+[22:41:52] <RainbowHacks> question
+[22:43:56] * RainbowHacks pokes DJ-C0L7[EIT] 
+[22:43:58] <RainbowHacks> In the face.
+[22:44:00] <RainbowHacks> With a stick
+[22:55:05] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[22:57:50] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[23:02:00] <ShivalWolf> kali 2.0 is available 
+[23:06:08] *** Joins: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile)
+[23:07:54] * HoneyDrops|Half checks out kali.org > Javascript is required. Please enable javascript before you are allowed to see this page.   :I
+[23:09:20] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[23:10:16] <RainbowHacks> SkiddieLinux 2.0
+[23:10:45] <HoneyDrops|Half> I already have most of those tools on my laptop >_>
+[23:10:56] <HoneyDrops|Half> Well at least the ones I ever have occasion to use.
+[23:13:58] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[23:14:45] <RainbowHacks> HoneyDrops|Half, :p
+[23:14:59] <RainbowHacks> nothing wrong with pentest tools if you know what they are and why you're using them 9and how they work)
+[23:16:01] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Quit: Leaving)
+[23:16:12] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[23:17:21] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[23:23:41] *** Joins: GigabitPony (Gigabit@the.girly.colt)
+[23:23:46] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Quit: Leaving)
+[23:24:02] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[23:24:02] *** GigabitPony is now known as Vega
+[23:27:06] <Schism> That was fun.  CTBLocker infection on a Windows XP box, exacerbated by fifty other pieces of malware and a bunch of junk from Limewire.
+[23:28:44] <ShivalWolf> yay for people running unsupported unpatchable OS's
+[23:29:23] <RainbowHacks> oh fun
+[23:29:33] <RainbowHacks> Schism, did you save samples for me? <3
+[23:32:51] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[23:38:43] <Schism> What, and get my hands dirty with it?
+[23:40:58] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[23:45:12] *** Joins: sleumas2000 (uid91753@my.little.karaoke)
+[23:45:22] <RainbowHacks> Schism, :<
+[23:51:11] <ShivalWolf> @send9
+[23:51:11] <ShivalWolf> [+] Building exploit string…
+[23:51:12] <ShivalWolf> [+] Executing shellcode…
+[23:51:12] <ShivalWolf> [!] Exploit failed due to EULA violation
+[23:51:12] <ShivalWolf> #oraclefanfic
+[23:52:48] *** Joins: Fillyfeathers (Fallfeather@Pony-i146kn.dsl-w.verizon.net)
+[23:52:48] *** Joins: Fallfeathers (Fallfeather@Pony-i146kn.dsl-w.verizon.net)
+[23:52:50] *** Quits: Fillyfeathers (Fallfeather@Pony-i146kn.dsl-w.verizon.net) (Quit: Leaving)
+[23:53:11] *** Quits: Pony_80012 (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[23:53:17] *** Joins: Pony_80012 (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[23:53:51] *** Creeps|AFK is now known as RedHelper
+[23:59:03] *** Joins: firestream (firestream@Pony-8oqp7s.dsl.bell.ca)
+[23:59:11] <init3> RainbowHacks: That's what VMs are for. When I got bored at my first job the manager and I would have a race to get malware on unpatched sp0 winXP machines. 
+[23:59:29] *** firestream is now known as Pony_72921
+[23:59:48] <init3> Well as in either the most detections or making the OS unbootable or unusable was treated as a KO
+[23:59:49] *** Pony_72921 is now known as FireStreamMobile
+[23:59:54] <FireStreamMobile> lol

@@ -1,0 +1,331 @@
+[00:00:07] <dommex> okay, a bit more context:
+[00:01:14] <dommex> i implemented "link parser" plugins. they even work by now.. just when a song is provided by such a plugin, it has no connection to a resolver or collection (which kinda makes sense) ... but that now means there's no source icon or nice source text
+[00:02:32] <dommex> now i'm wondering what's the correct approach how to handle this
+[00:03:07] <dommex> the plugin is supposed to have a connection to the scriptaccount ... so i could use the icon and name of the scriptaccount.. does that make sense?
+[00:04:02] * theli_ua is confused
+[00:04:12] <theli_ua> I dont really get what you are talking about
+[00:04:13] <dommex> so am i :-D
+[00:04:43] <dommex> ah ok. i see. the linkparser thing sets a result hint on the query
+[00:04:52] <theli_ua> how there could be a result from a plugin if a plugin is not a resolver or connection
+[00:04:57] <dommex> which is no proper result with a connection to a resolver or an account
+[00:06:46] <dommex> theli_ua: jherskowitz: before i broke everything :P, how did it look when a song was dropped to a playlist? did the playlist entry have a proper source icon / name? or did it always look a bit quirky?
+[00:07:44] <dommex> oh.. i have an old dropped track that behaves the same as the new one.. i think i can just commit this and optimize ... later
+[00:08:33] <theli_ua> it wasn't looking like its from any resolver
+[00:08:40] <theli_ua> just as an unresolved track
+[00:08:44] <dommex> yeah ok
+[00:08:50] <dommex> that's shit. but at least no regression
+[00:08:52] <theli_ua> well, iirc
+[00:09:00] <dommex> yeah, it'S what i'm seeing now
+[00:09:13] <theli_ua> I was mosttly "dropping" playlists ... and those resulted in ... well ... playlists 
+[00:09:39] <theli_ua> not different to any other playlists
+[00:13:19] <dommex> okies, cool
+[00:16:48] *** Joins: github-tomahawk (~github-to@192.30.252.40)
+[00:16:48] <github-tomahawk> [13tomahawk] 15dschmidt created 06linkparsers (+1 new commit): 02https://github.com/tomahawk-player/tomahawk/commit/ea9aa9b52fed
+[00:16:48] <github-tomahawk> 13tomahawk/06linkparsers 14ea9aa9b 15Dominik Schmidt: Fix url lookup by adding LinkParser plugins
+[00:16:48] *** Parts: github-tomahawk (~github-to@192.30.252.40) ()
+[00:21:11] *** Quits: soee (~soee@afic177.neoplus.adsl.tpnet.pl) (Ping timeout: 264 seconds)
+[00:21:30] *** Quits: soee_ (~soee@afic177.neoplus.adsl.tpnet.pl) (Ping timeout: 272 seconds)
+[00:25:13] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[00:25:13] <github-tomahawk> [13tomahawk] 15dschmidt 04force-pushed 06linkparsers from 14ea9aa9b to 14e0b58d0: 02https://github.com/tomahawk-player/tomahawk/commits/linkparsers
+[00:25:13] <github-tomahawk> 13tomahawk/06linkparsers 14e0b58d0 15Dominik Schmidt: Fix url lookup by adding LinkParser plugins
+[00:25:13] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[00:26:04] <dommex> theli_ua: wanna give this a spin? ^
+[00:26:34] <dommex> you will have to do a superduperovercomplicated fix to any resolver you wanna test tho
+[00:26:39] <theli_ua> :(
+[00:26:52] <dommex> -        Tomahawk.reportCapabilities(TomahawkResolverCapability.UrlLookup);
+[00:26:58] <dommex> +        Tomahawk.PluginManager.registerPlugin('linkParser', this);
+[00:27:17] <theli_ua> I'm not qualified for that kind of stuff
+[00:27:40] <dommex> yeah, i was afraid it was way beyond your js skills
+[00:31:04] <dommex> theli_ua: are you going to try it?
+[00:31:09] <theli_ua> yeah
+[00:31:14] <dommex> great, thanks
+[00:31:15] <theli_ua> give me a minute
+[00:31:29] <dommex> sure, just wanted to know whether you were going to or not. no rush :)
+[00:32:45] <theli_ua> I'm compiling tomahawk
+[00:32:48] <theli_ua> it takes a while
+[00:32:51] <dommex> yeah, i know
+[00:33:03] <dommex> especially when *someone* has changed externalresolver.h
+[00:37:47] <theli_ua> so, I dropped the link http://listen.tidal.com/playlist/53daf5f3-b0b7-401c-b455-149146d44fd2 and nothing happened
+[00:38:58] <theli_ua> and it won't allow me to drop artist or album links from tidal either
+[00:39:44] <theli_ua> dommex: 
+[00:40:00] <dommex> meh
+[00:40:14] <dommex> is the above a track link?
+[00:40:33] <theli_ua> playlist
+[00:40:39] <theli_ua> I don't have track links
+[00:40:57] <dommex> ah ok :|
+[00:47:14] <theli_ua> dommex: why not just use spotify-metadata resolver? o_O
+[00:47:32] <dommex> mhhh.. ah, yeah
+[00:47:35] <dommex> let me see
+[00:48:05] <theli_ua> it doesn't require account
+[00:48:27] <theli_ua> just drag https://play.spotify.com/artist/0oSGxfWSnnOXhD2fKuz2Gy 
+[00:49:21] <theli_ua> https://play.spotify.com/album/2w1YJXWMIco6EBf0CovvVN for album and https://play.spotify.com/track/0Fao855T3klV3REFRFHRF3 for track
+[00:50:05] <dommex> yeah, i just ... need to port it ...
+[00:54:00] <theli_ua> also, there quite a few PRs for tomahawk and resolvers, some more than 4 years old
+[00:54:25] <theli_ua> those should either accepted or rejected at this point imo
+[00:54:27] <muesli> theli_ua: non finished ones tho
+[00:55:15] <theli_ua> there are also a bunch of finished ones nor accpted nor rejected :P
+[00:55:36] <theli_ua> https://github.com/tomahawk-player/tomahawk/pull/258  there was no reply, nothing
+[00:56:14] <muesli> theli_ua: will is/was part of the irc channel. github isn't the only way to communicate ;-)
+[00:56:18] <theli_ua> this should just be rejected https://github.com/tomahawk-player/tomahawk/pull/298 if not acceptable
+[00:56:46] <theli_ua> muesli: I haven't seen him in a while, and wheres the audit trail????!!!
+[00:57:01] <muesli> the audit trail for 5 lines of code?
+[00:57:05] <dommex> theli_ua: is the track link blackstar by david bowie? :P
+[00:57:15] <theli_ua> dommex: I think so
+[00:57:21] <dommex> so that works :P
+[00:57:33] <theli_ua> muesli: if there was some communication on the state of that change. 
+[00:57:39] <dommex> theli_ua: where can i drop artist and album links at all?
+[00:58:41] <theli_ua> dommex: I think that area where the currently playin track is displayed? muesli should know
+[00:58:59] <dommex> or jherskowitz 
+[00:59:04] <muesli> anywhere i would assume
+[01:00:23] <theli_ua> dommex: might also try playlist https://play.spotify.com/user/spotify/playlist/7MQd3rOe8kuP2KDjtuiynJ
+[01:00:38] <theli_ua> I usually dropped/saved those into my playlist list
+[01:00:39] <theli_ua> iirc
+[01:03:53] <dommex> where do you drop it then?
+[01:03:59] <dommex> onto the create row?
+[01:04:16] <theli_ua> I think just somewhere where the other ones where?
+[01:04:31] <dommex> ah
+[01:04:33] <theli_ua> the result was created playlist, yes
+[01:04:33] <dommex> crashed
+[01:04:37] <theli_ua> nice
+[01:04:46] <theli_ua> my guess would be you dropped it correctly
+[01:04:49] <theli_ua> :D
+[01:04:51] <dommex> yep
+[01:06:50] <dommex> wat
+[01:06:57] <dommex> https://www.irccloud.com/pastebin/RAWH1tZu/
+[01:08:02] <theli_ua> it went inside spotify resolver
+[01:08:09] <theli_ua> not spotify-metadata it seems
+[01:08:09] <dommex> yeah
+[01:08:17] <theli_ua> disable it?
+[01:08:20] <muesli> dommex: seen this one before btw
+[01:08:33] <dommex> muesli: really? :|
+[01:08:45] <jherskowitz> dommex: URL lookup should be independent of source imo
+[01:09:17] <jherskowitz> First it looks it up and populates metadata.  Then resolves. 
+[01:09:26] <dommex> jherskowitz: maybe, but the result hint makes it look ... non nice. anyway.. that's for later, i didnt break anything ;-)
+[01:09:57] <dommex> yeah, maybe if a result returns the same url as a result hint ... we could match it up ... or something
+[01:10:05] <muesli> dommex: yeah, last couple days in the crash reports
+[01:10:42] <theli_ua> jherskowitz: sometimes having result hints when importing playlist was the only way for me to listen exactly to what I wanted to
+[01:10:54] <theli_ua> also, shouldn't you all be sleeping by now >_<
+[01:11:03] <dommex> theli_ua: it's only 1am?!
+[01:11:15] <dommex> that's when muesli and i used to start working ;-)
+[01:12:25] <theli_ua> :-/
+[01:15:44] <theli_ua> hm, doesn't look like resolver's weight is being accounted for
+[01:16:29] <theli_ua> i have 2 resolvers, one having weight 76, another one 91 and 76 one is being preffered without any apparent reason
+[01:18:55] <dommex> muesli: any idea how spotifyparser.cpp relates to spotify metadata js?
+[01:21:51] <muesli> theli_ua: define preferred
+[01:21:56] <muesli> theli_ua: preferred when and for what
+[01:22:12] <muesli> dommex: no idea
+[01:22:33] <theli_ua> muesli: used as a top-level result, aka the one played by default
+[01:22:57] <muesli> theli_ua: weight defines the order in which resolvers are executed
+[01:23:18] <muesli> since we changed it to always retrieve results from all resolvers, weight has become meaningless
+[01:23:22] <theli_ua> uh, whats the point of that?
+[01:23:25] <theli_ua> alright
+[01:23:53] <theli_ua> so how would one make results from one resolver be preffered from another one?
+[01:23:54] <muesli> it used to be, that we only ran through the pipeline until we found _one_ result
+[01:24:20] <muesli> theli_ua: by returning correct metadata. then only the score decides the sorting
+[01:24:45] <theli_ua> but metadata is the same
+[01:24:56] <muesli> then we could still rely on weight i guess
+[01:25:16] <dommex> muesli: btw, what has happened to the dropjob-menu thing mzanetti (iirc) did back in the day?
+[01:25:25] <muesli> kicked it
+[01:25:30] <theli_ua> I would be fine with weight being "tie-braker"
+[01:25:57] <theli_ua> I'll see if I can implement that
+[01:26:07] <theli_ua> that would be fine with you muesli dommex ?
+[01:26:34] <muesli> theli_ua: yeah, definitely
+[02:11:03] <dommex> wtf, i could reproduce it all the time
+[02:11:13] <dommex> (the spotify crash ... but now i cant at all)
+[02:26:53] *** Joins: jayt (~jayt@50.125.139.228)
+[02:35:58] <dommex> hey jayt 
+[02:38:55] <jayt> hi
+[02:39:17] <dommex> jayt: i read you wanted to work on the remote control api? :)
+[02:41:25] <jayt> Yes, it would be great if the remote control could select which music one wanted to play, not just starting/stopping playback.  Trying to get a feel for whether the architecture would support that easily.
+[02:41:37] *** Quits: jturney (~jon@host86-141-131-231.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[02:42:55] <dommex> jayt: it shouldnt be tooooooo hard
+[02:43:49] <dommex> especially if you start with just the local database
+[02:46:45] <jayt> sure. is there a general api for supporting the various resolvers? are there multiple different types of resolvers? is there a resolver used just for local storage?
+[02:47:01] <dommex> yes, yes and yes
+[02:47:03] <dommex> :-)
+[02:47:30] <jayt> that's good
+[02:48:25] <dommex> well, the third yes is a "kinda"
+[02:48:51] <jayt> when I used the program I saw that one resolver for Google music, created an icon on the side and allowed lots of interaction.  whereas the youtube resolver behaved very differently from user perspective.  No icon.  I thought it was broken at first.
+[02:49:03] <dommex> there is Resolver which is the baseclass for everything... then there are different implementations of that api: e.g. database resolver (which is for local but also for remote tomahawk collections), there are javascript resolvers and external (stdio) resolvers
+[02:49:34] <dommex> icon on the side? in the sidebar? you mean the collection?
+[02:49:45] <dommex> the thing is ... there is no such thing as a youtube collection
+[02:51:07] <jayt> yes.  I came into this cold just the other day.  I guess collection is the term.
+[02:52:25] <jayt> so a resolver for a collection ultimately derives from this same base class?
+[02:54:59] <dommex> jayt: i juggled things around a bit lately. a collection is a resolver as well, yes
+[02:55:25] <dommex> most importantly any resolver has a bit of metadata (like a name, icon, etc) and a resolve method
+[02:56:00] <dommex> the collection adds artists(), artistAlbums() and albumTracks() methods for the artists view, albums() for the album view and tracks() for the flat view
+[02:57:21] <jayt> cool.  I can't wait to learn more about the code base.  Do you have a recommendation on where I should start? Are there any architecture docs? Is the project confifigured for doxy?
+[02:57:44] <dommex> jayt: unfortunately we don't have really meaningful docs :(
+[02:57:53] <jayt> I understand
+[02:57:57] <dommex> unsexy, i know
+[02:58:03] <jayt> very common
+[02:58:28] <dommex> but you can always ask about anything here
+[02:58:38] <dommex> muesli and i will do our best to help with any questions
+[02:59:27] <dommex> jayt: mhh.. depends on what you want to achieve specifically
+[02:59:31] *** Joins: github-tomahawk (~github-to@192.30.252.45)
+[02:59:31] <github-tomahawk> [13tomahawk] 15dschmidt 04force-pushed 06linkparsers from 14e0b58d0 to 149c258ef: 02https://github.com/tomahawk-player/tomahawk/commits/linkparsers
+[02:59:31] <github-tomahawk> 13tomahawk/06linkparsers 1447e09fb 15Dominik Schmidt: Fix url lookup by adding LinkParser plugins
+[02:59:31] <github-tomahawk> 13tomahawk/06linkparsers 149c258ef 15Dominik Schmidt: Workaround crash from SpotifyParser
+[02:59:31] *** Parts: github-tomahawk (~github-to@192.30.252.45) ()
+[02:59:38] <jayt> I built the source code the other day at the command line and installed it.  I then used the cmake -G generators to create an eclipse .project.  Was able to build there as well.  It didn't seem to run but it may have been because I already had the daemon running  before I tried to run it within eclipse single stepping environment.
+[03:00:00] <dommex> never tried to run it from eclipse :)
+[03:00:06] <dommex> what platform are you on?
+[03:00:36] <jayt> I was ecstatic that it built and at least began to start!  What is your method of development with IDE, etc?
+[03:00:55] <jayt> Linux Mint
+[03:01:04] <dommex> depending on my mood, i use kdevelopr or qtcreator
+[03:01:08] <dommex> or often simply kate
+[03:01:22] <dommex> shouldnt matter really
+[03:01:34] <dommex> but yeah, you can run only one instance of tomahawk at a time
+[03:01:45] <dommex> so if there was one running already, it makes sense that you couldnt launch another one
+[03:02:36] <jayt> ok.  I work well in eclipse.  So you just make at the command line and run from the directory with simple text editor?
+[03:03:17] <dommex> yup
+[03:03:34] <dommex> i have this command line habit. but nothing should stop you from working with eclipse if you're used to that
+[03:04:24] <dommex> i just can't help you with cmake generating eclipse files, as i never tried to do that
+[03:05:42] <jayt> No prob.  Like I said, I was impressed that it was able to generate the working eclipse project files that actually worked...  I'll probably just start looking at the codebase and generate a list of questions for you.  I hope it doesn't get too daunting for you to field lots of stupid questions.
+[03:07:05] <dommex> jayt: nah, it will just make me feel bad for not having written documentation.
+[03:07:12] <jayt> :)
+[03:07:38] <dommex> jayt: i know tomahawk is a huge beast, feel free to shoot any question you have, no matter how stupid it may seem
+[03:07:48] <jayt> what is your role in the project? are you currently one of the lead developers?
+[03:08:23] <dommex> at least i'm the most active one currently :-)
+[03:09:01] <jayt> what is your real name?
+[03:09:22] <dommex> jayt: i'm dschmidt on github if that's what you wanna know
+[03:10:25] <dommex> and Dominik Schmidt in the source file headers ;-)
+[03:10:47] <jayt> ok.  Is this the best way to contact you? I'm new to IRC.  Can I send a personal note or should I just blast to the overall group?
+[03:11:20] <dommex> jayt: irc is usually your best bet to contact me
+[03:11:33] <dommex> feel free to ask anything here, chances are that other people are able to answer
+[03:11:40] <muesli> jayt: yeah, never hesitate to ask questions in here :)
+[03:11:56] <jayt> what areas of the code have you been working on since the 0.8.4 release?
+[03:12:26] <dommex> uhm, hard to say. a lot
+[03:12:53] <jayt> OK, I'll be in touch.  Gotta go now.
+[03:13:09] <dommex> alright, hope to see you soon :)
+[03:13:16] <dommex> jayt: ah one more thing!
+[03:13:27] <jayt> yes?
+[03:13:38] <dommex> jayt: feel free to highlight me (write my name), if you  have any question
+[03:13:49] <dommex> then i get a notification and it's less likely that i miss it
+[03:13:49] <jayt> ok
+[03:14:01] <dommex> alright, bye :)
+[03:14:08] <jayt> so write dommex in the body of the message
+[03:14:14] <dommex> exactly like that :)
+[03:14:21] <jayt> ok, will do.
+[03:14:34] <dommex> in irc it's common to write "dommex: bla bla bla"
+[03:14:48] <dommex> but do as you like as long as it contains my name, i will get a notification
+[03:15:46] <dommex> theli_ua: i dont see how dropping a playlist via scriptresolver could have ever worked (lately) -_-
+[03:28:33] *** Joins: github-tomahawk (~github-to@192.30.252.46)
+[03:28:33] <github-tomahawk> [13tomahawk] 15dschmidt 04force-pushed 06linkparsers from 149c258ef to 148ddc270: 02https://github.com/tomahawk-player/tomahawk/commits/linkparsers
+[03:28:33] <github-tomahawk> 13tomahawk/06linkparsers 148ddc270 15Dominik Schmidt: Workaround crash from SpotifyParser
+[03:28:33] *** Parts: github-tomahawk (~github-to@192.30.252.46) ()
+[03:32:35] <dommex> meh, that spotify crash is really odd
+[03:32:51] <dommex> also the code involved is a mess :(
+[04:07:23] <theli_ua> dommex: well, honestly I don't know when it stopped at working
+[04:08:30] <dommex> Ok. I will look more.tomorrow 
+[05:09:50] *** Quits: jayt (~jayt@50.125.139.228) (Quit: Leaving)
+[05:11:00] *** Joins: jayt (~holoirc@mobile-166-176-186-216.mycingular.net)
+[05:14:09] *** Joins: mgue2 (~mgue@x590f0735.dyn.telefonica.de)
+[05:17:10] *** Quits: mgue1 (~mgue@x590f34a6.dyn.telefonica.de) (Ping timeout: 260 seconds)
+[05:18:06] *** Joins: jayt_ (~jayt@50.125.139.228)
+[05:22:10] *** Quits: jayt (~holoirc@mobile-166-176-186-216.mycingular.net) (Remote host closed the connection)
+[05:25:38] *** Quits: Karbowiak (~Karbowiak@87.73.106.164) (Ping timeout: 255 seconds)
+[05:31:28] *** Joins: jayt (~holoirc@mobile-166-176-186-216.mycingular.net)
+[05:34:11] <jayt> Test, ignore
+[05:35:46] *** Quits: jayt_ (~jayt@50.125.139.228) (Quit: Leaving)
+[05:39:02] *** Quits: jayt (~holoirc@mobile-166-176-186-216.mycingular.net) (Read error: Connection reset by peer)
+[05:39:16] *** Joins: jayt (~holoirc@50.125.139.228)
+[06:02:39] *** Joins: jayt2 (~holoirc@mobile-166-176-186-216.mycingular.net)
+[06:04:48] *** Quits: jayt (~holoirc@50.125.139.228) (Ping timeout: 256 seconds)
+[06:08:24] *** Joins: soee (~soee@afic177.neoplus.adsl.tpnet.pl)
+[06:30:18] *** Quits: soee (~soee@afic177.neoplus.adsl.tpnet.pl) (Ping timeout: 256 seconds)
+[07:03:18] *** Joins: Karbowiak| (~Karbowiak@87.73.106.164)
+[07:33:27] *** Joins: soee (~soee@afic177.neoplus.adsl.tpnet.pl)
+[08:47:19] *** Joins: soee_ (~soee@afol125.neoplus.adsl.tpnet.pl)
+[08:49:46] *** Quits: soee (~soee@afic177.neoplus.adsl.tpnet.pl) (Ping timeout: 276 seconds)
+[09:26:38] *** Joins: ssam2 (~ssam2@212.91.253.218)
+[09:33:05] *** Quits: ssam2 (~ssam2@212.91.253.218) (Remote host closed the connection)
+[09:33:23] *** Joins: ssam2 (~ssam2@212.91.253.218)
+[09:42:58] *** Joins: Kalendium (~davidgasq@87.Red-81-33-169.dynamicIP.rima-tde.net)
+[09:42:58] *** Quits: Kalendium (~davidgasq@87.Red-81-33-169.dynamicIP.rima-tde.net) (Changing host)
+[09:42:58] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[09:54:59] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Quit: Leaving)
+[11:26:14] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[12:07:17] *** Joins: soee (~soee@bin110.neoplus.adsl.tpnet.pl)
+[12:08:58] *** Quits: soee_ (~soee@afol125.neoplus.adsl.tpnet.pl) (Ping timeout: 260 seconds)
+[13:23:40] *** Quits: soee (~soee@bin110.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[13:24:31] *** Joins: soee (~soee@bin110.neoplus.adsl.tpnet.pl)
+[13:33:52] *** Joins: soee_ (~soee@bin110.neoplus.adsl.tpnet.pl)
+[13:34:03] *** Joins: vintho (guest-vint@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[13:34:04] <vintho> pp
+[13:34:15] *** Quits: soee (~soee@bin110.neoplus.adsl.tpnet.pl) (Ping timeout: 240 seconds)
+[13:38:39] *** Parts: vintho (guest-vint@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[14:53:14] *** Quits: ssam2 (~ssam2@212.91.253.218) (Ping timeout: 260 seconds)
+[14:59:29] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[14:59:37] *** Joins: ssam2 (~ssam2@212.91.253.218)
+[15:16:34] *** Quits: jayt2 (~holoirc@mobile-166-176-186-216.mycingular.net) (Read error: Connection reset by peer)
+[15:16:39] *** Joins: jayt (~holoirc@50.125.139.228)
+[15:22:13] *** Joins: jturney (~jon@host86-141-131-231.range86-141.btcentralplus.com)
+[15:30:31] *** Quits: jayt (~holoirc@50.125.139.228) (Read error: Connection reset by peer)
+[15:30:36] *** Joins: jayt2 (~holoirc@50.125.139.228)
+[15:42:51] *** Joins: jayt (~holoirc@mobile-166-176-186-216.mycingular.net)
+[15:42:56] *** Joins: Marikos (~fox@pool-108-24-149-221.cmdnnj.fios.verizon.net)
+[15:46:59] *** Quits: jayt2 (~holoirc@50.125.139.228) (Ping timeout: 264 seconds)
+[17:40:23] *** Quits: jayt (~holoirc@mobile-166-176-186-216.mycingular.net) (Ping timeout: 246 seconds)
+[18:13:10] *** Joins: jayt (~holoirc@mobile-166-176-186-216.mycingular.net)
+[18:18:01] *** Quits: ExecSlim (~ExecSlim@159.203.5.37) (Read error: Connection reset by peer)
+[18:32:23] *** Joins: michelsedgh (~michel@chello080109097014.14.15.vie.surfer.at)
+[18:41:13] *** Quits: ssam2 (~ssam2@212.91.253.218) (Quit: Leaving)
+[18:44:32] *** Joins: knicklux (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3)
+[18:44:44] *** Quits: knicklux (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3) (Remote host closed the connection)
+[18:45:26] *** Joins: knicklux (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3)
+[18:47:01] <theli_ua> DOMMEX!!!!
+[18:49:29] *** the_phil0s0ph is now known as the_phil0s0ph_bo
+[18:49:38] *** the_phil0s0ph_bo is now known as the_phil_bot
+[18:49:49] <michelsedgh> hey is the latest version for ubuntu 0.7?!
+[18:50:10] <theli_ua> latest should be 0.8.3 though nightlies would be better
+[18:50:38] <michelsedgh> hm i added the ppa but no update :c
+[18:52:42] <michelsedgh> any help would be apperciated :) great app :)
+[18:53:52] <theli_ua> I don't use ppa, dommex or muesli might help
+[18:54:26] <michelsedgh> theli_ua: any way to update it would be great!
+[18:55:04] <dommex> No idea. I dont use ubuntu
+[18:55:13] <theli_ua> this is the nightlies ppa https://launchpad.net/~tomahawk/+archive/ubuntu/nightly
+[18:55:34] <theli_ua> tomahawk 11 weeks ago  is the last build
+[19:02:32] *** the_phil_bot is now known as salomonderossi
+[19:06:26] <michelsedgh> the installation from ubuntu installer says dependency problems, i will try installing with command line later. i have to go now . ty 
+[19:07:03] *** Quits: michelsedgh (~michel@chello080109097014.14.15.vie.surfer.at) (Quit: Konversation terminated!)
+[19:08:31] *** Quits: theli_ua (uid54353@gateway/web/irccloud.com/x-qaedpygkinihewzm) (K-Lined)
+[19:08:31] *** Quits: L42y (sid10623@gateway/web/irccloud.com/x-ncvqtezrdgiiatci) (K-Lined)
+[19:08:31] *** Quits: RJ2 (sid1@pdpc/supporter/professional/rj2) (K-Lined)
+[19:08:31] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-kycfcsggchvnrcrm) (K-Lined)
+[19:08:33] *** Quits: xhochy (sid11301@gateway/web/irccloud.com/x-kzewnxuczbxgcfda) (K-Lined)
+[19:08:34] *** Quits: dommex (sid4285@gateway/web/irccloud.com/x-zqgonajecdlhhjvw) (K-Lined)
+[19:08:35] *** Quits: jherskowitz (sid84@gateway/web/irccloud.com/x-sibpoynxarppmiwq) (K-Lined)
+[19:08:35] *** Quits: hatstand (sid2952@gateway/web/irccloud.com/x-poygnisctmgyluyd) (K-Lined)
+[19:08:35] *** Quits: alastairp (sid1249@gateway/web/irccloud.com/x-cynmrhmghrafaugy) (K-Lined)
+[19:08:36] *** Quits: ben-xo_ (sid227@gateway/web/irccloud.com/x-qyjgnckwklcmphdy) (K-Lined)
+[19:08:36] *** Quits: jefferai (sid1300@kde/mitchell) (K-Lined)
+[19:08:39] *** Quits: lasconic (sid4376@gateway/web/irccloud.com/x-gewngkknnrciufnu) (K-Lined)
+[19:08:40] *** Quits: thomasbonte (sid4377@gateway/web/irccloud.com/x-xadsohjvpjxprtme) (K-Lined)
+[19:08:40] *** Quits: hugo______ (sid6079@gateway/web/irccloud.com/x-xnzzsdcmgcpimxzi) (K-Lined)
+[19:10:05] *** Joins: theli_ua (uid54353@gateway/web/irccloud.com/x-xmufhmvidnjsiekr)
+[19:10:23] *** Joins: jamesaxl (~jamesaxl@105.159.47.16)
+[19:16:24] *** Joins: lasconic (sid4376@gateway/web/irccloud.com/x-yktdeaqwpbquwvdv)
+[19:17:41] *** Joins: thomasbonte (sid4377@gateway/web/irccloud.com/x-jaiocxtyydgnqvkg)
+[19:17:45] *** Joins: L42y (sid10623@gateway/web/irccloud.com/x-vmnhoaxcxmagmoou)
+[19:18:31] *** Joins: hugo______ (sid6079@gateway/web/irccloud.com/x-yqyxvoqmncchmkde)
+[19:18:48] *** Joins: ben-xo_ (sid227@gateway/web/irccloud.com/x-qczbttioqpuicejb)
+[19:19:02] *** Joins: hatstand (sid2952@gateway/web/irccloud.com/x-ppaglimmzzafxvuo)
+[19:19:46] *** Joins: RJ2 (sid1@pdpc/supporter/professional/rj2)
+[19:19:52] *** salomonderossi is now known as the_phil0s0ph
+[19:20:45] *** Joins: jherskowitz (sid84@gateway/web/irccloud.com/x-jexyvzarhagvetyp)
+[19:20:57] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-fetqezvwetxebwzn)
+[19:21:15] *** Joins: alastairp (sid1249@gateway/web/irccloud.com/x-mmoqnfzxuoceyyqb)
+[19:21:58] *** Joins: xhochy (sid11301@gateway/web/irccloud.com/x-aqkfjxeonrlixcbx)
+[19:22:01] *** Joins: dommex (sid4285@gateway/web/irccloud.com/x-jfbnqufhnvljcszh)
+[19:23:47] *** Joins: jefferai (jefferai@kde/mitchell)
+[19:27:00] *** Karbowiak| is now known as Karbowiak
+[20:05:46] *** Quits: knicklux (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3) (Quit: Leaving)
+[21:05:18] *** Joins: hrtcrw (~hrtcrw@2a02:8071:268d:7500:2d9c:1abf:c2d4:8370)
+[23:11:49] *** Quits: jayt (~holoirc@mobile-166-176-186-216.mycingular.net) (Ping timeout: 245 seconds)
+[23:29:18] *** Quits: afics (~afics@unaffiliated/-x-/x-5730914) (Quit: Quit.)
+[23:30:22] *** Quits: soee_ (~soee@bin110.neoplus.adsl.tpnet.pl) (Ping timeout: 250 seconds)
+[23:38:10] *** Joins: afics (~afics@unaffiliated/-x-/x-5730914)
+[23:40:16] *** Joins: jayt (~holoirc@mobile-166-176-186-216.mycingular.net)
+[23:42:46] *** Quits: afics (~afics@unaffiliated/-x-/x-5730914) (Ping timeout: 256 seconds)
+[23:44:44] *** Joins: afics (~afics@unaffiliated/-x-/x-5730914)

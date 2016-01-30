@@ -1,0 +1,219 @@
+[00:23:39] *** Quits: svetter_ (~svetter@2001:8e0:2003:fe00:991a:fda8:682f:3681) (Ping timeout: 240 seconds)
+[01:01:25] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Ping timeout: 240 seconds)
+[01:01:41] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[01:25:05] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Read error: Connection reset by peer)
+[01:27:42] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[01:55:17] *** Quits: jancborchardt (sid4173@gateway/web/irccloud.com/x-jdsrsecrliewuhiz) (Ping timeout: 240 seconds)
+[01:55:17] *** Quits: theli_ua (uid54353@gateway/web/irccloud.com/x-hltbxrgbxokbczjq) (Ping timeout: 240 seconds)
+[01:55:41] *** Joins: jancborchardt (sid4173@gateway/web/irccloud.com/x-srbhyifumkwlnzzh)
+[01:55:41] *** Joins: theli_ua (uid54353@gateway/web/irccloud.com/x-uzbfvplaanlihaum)
+[01:56:54] *** Quits: xhochy (sid11301@gateway/web/irccloud.com/x-kksrlgcnpxeffffw) (Ping timeout: 240 seconds)
+[01:57:52] *** Joins: xhochy (sid11301@gateway/web/irccloud.com/x-eagzqnkkdohtntsb)
+[05:52:06] *** Joins: mgue (~mgue@x590f6980.dyn.telefonica.de)
+[05:54:53] *** Quits: mgue2 (~mgue@x590f7c2b.dyn.telefonica.de) (Ping timeout: 252 seconds)
+[07:55:36] *** Joins: soee (~soee@aftv236.neoplus.adsl.tpnet.pl)
+[09:19:30] *** Joins: wmp (~wmp@auburn.sored.pl)
+[09:19:38] *** wmp is now known as Guest59283
+[09:20:13] *** Quits: mohn (~mo@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[09:20:13] *** Quits: johnyb (~jb@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[09:21:06] *** Guest59283 is now known as wiuempe
+[09:21:14] *** Quits: wiuempe (~wmp@auburn.sored.pl) (Changing host)
+[09:21:14] *** Joins: wiuempe (~wmp@sored/admin/wmp)
+[09:25:59] *** Joins: johnyb (~jb@limu.coffee.liberejo.de)
+[09:25:59] *** Joins: mohn (~mo@limu.coffee.liberejo.de)
+[09:42:57] *** Joins: soee_ (~soee@abde72.neoplus.adsl.tpnet.pl)
+[09:46:37] *** Quits: soee (~soee@aftv236.neoplus.adsl.tpnet.pl) (Ping timeout: 252 seconds)
+[11:02:45] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:29:13] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[12:08:47] *** Quits: johnyb (~jb@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[12:08:47] *** Quits: mohn (~mo@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[12:32:57] *** Joins: mohn (~mo@limu.coffee.liberejo.de)
+[12:32:58] *** Joins: johnyb (~jb@limu.coffee.liberejo.de)
+[12:44:13] *** Quits: soee_ (~soee@abde72.neoplus.adsl.tpnet.pl) (Read error: Connection reset by peer)
+[12:44:38] *** Joins: soee (~soee@abde72.neoplus.adsl.tpnet.pl)
+[13:40:53] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[15:47:33] *** Quits: PT_Dreamer (PT_Dreamer@2a01:7e00::f03c:91ff:fe6e:4287) (Quit: ZNC - http://znc.in)
+[17:43:35] *** h4ndy is now known as H4ndy
+[17:46:45] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[17:53:21] <toma-cat> Added new crash-report for version 0.4.0 (Windows)
+[17:58:23] <toma-cat> Added new crash-report for version 0.4.0 (Windows)
+[18:01:37] <muesli> 0.4? lol
+[18:20:56] <theli_ua> muesli: can you disable those crash reports messages completely?
+[18:21:21] <theli_ua> at least until 0.9 is released I guess
+[18:21:43] <theli_ua> domme: do 0.8 support promises? in general
+[18:23:06] <theli_ua> *does
+[18:27:26] *** Joins: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com)
+[18:34:46] <domme> no
+[18:34:53] <theli_ua> :(
+[18:35:10] <theli_ua> domme: and I guess we wouldn't want to migrate youtube to 0.9 api yet?
+[18:37:42] <domme> we can in a branch
+[18:44:07] <domme> theli_ua: just oorrt it to es6 directly
+[18:44:19] <theli_ua> oorrt
+[18:44:26] <theli_ua> right, thats what I should do
+[18:44:45] <theli_ua> youtube is big and messy, I actually wanted to fully rewrite it some day
+[18:45:01] <domme> or make those work forvstarters
+[18:45:16] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Remote host closed the connection)
+[18:45:25] <theli_ua> wat
+[18:45:37] <domme> my ssd died on mw just getting a new one -_-
+[18:45:44] <theli_ua> mw
+[18:45:48] <theli_ua> morrowind? :D
+[18:45:54] <theli_ua> most wanted?
+[18:46:47] <theli_ua> domme: btw, did you have a chance to test amazon?
+[18:48:50] <theli_ua> oh, I guess, not with the dead ssd
+[18:49:29] <domme> me
+[18:49:37] <theli_ua> yeah, I figured :P
+[18:50:22] <domme> make those work.. i mean... tomahawk doesnt know how to invoke the new resolvers yet
+[18:50:43] <domme> alrhough it might be easy to hack into the compiler
+[18:51:17] <theli_ua> do you think es6 is really worth the efforts required?
+[18:54:57] <domme> yup
+[18:55:09] <domme> were changing everything anyway ...
+[18:55:20] <domme> we need a new synchrotron anyway
+[18:55:48] <domme> nows the time to break everything
+[19:01:58] <domme> should be something like Tomahawk.resolver.instance = rnew (require('main').default)(); to make it work in tomahawk
+[19:02:03] <domme> theli_ua: 
+[19:25:12] *** Quits: soee (~soee@abde72.neoplus.adsl.tpnet.pl) (Read error: Connection reset by peer)
+[19:25:36] *** Joins: soee (~soee@abde72.neoplus.adsl.tpnet.pl)
+[19:25:48] *** Quits: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com) (Quit: alsuren)
+[19:41:16] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[19:42:05] <theli_ua> domme: I'll probably step back from tomahawk for couple of days to catch up on a daytime job
+[19:43:08] <domme> theli_ua: alright ill try to get the new resolvers and synchrotron up and running till then
+[19:43:23] <theli_ua> what is synchrotron anyway?
+[19:43:32] <theli_ua> I mean how is it implemented
+[19:44:12] <domme> dont ask
+[19:44:24] <domme> ill just install another instance
+[19:45:05] <theli_ua> it really should just have "give the latest version of resolver but with apiVersion not higher than X" option
+[19:46:02] *** Joins: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com)
+[19:49:01] <theli_ua> I know, its easy for me to say
+[19:52:09] <theli_ua> also, whoever asked for netease resolver - thank you, so far the best "free" resolver
+[19:56:06] <muesli> theli_ua: a bunch php script
+[19:56:08] <muesli> s
+[19:56:17] <theli_ua> uh oh
+[19:56:38] <theli_ua> speaking of php, is that what powers hatchet as well?
+[19:56:57] <muesli> nah :)
+[19:57:01] <theli_ua> ah, ok
+[19:57:12] <muesli> ember on the frontend, go on the backend
+[19:57:15] <theli_ua> muesli: still .... about those "crash report added" spam messages?
+[19:58:39] <muesli> not really harmful or that spammy, are they?
+[19:58:50] <theli_ua> occasionally they are spammy
+[19:58:59] <theli_ua> like that one night where it filled several pages of my backlog
+[19:59:19] <theli_ua> but also ... does it bring ANY value nowdays?
+[20:00:22] <muesli> no, you're right about that. just 50 other more important things to do on my list ;-)
+[20:00:40] <theli_ua> I'm fine as long as its on the list I guess
+[20:01:03] <theli_ua> I dunno what do you use for a bot so not sure how much time needed to disable that
+[20:11:21] <theli_ua> domme: btw that collection implementation probably needs some work for compilation albums where each track has different artists
+[20:11:51] *** Quits: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com) (Quit: alsuren)
+[20:12:16] *** Joins: outhre4 (guest-outh@gateway/web/scrollback.io/x-povlpyaexijwvozk)
+[20:12:17] <outhre4> Hello, could I use Tomahawk for Tidal ?
+[20:13:26] <muesli> outhre4: theli_ua is working on a tidal resolver, yes
+[20:13:53] <theli_ua> wait, it is working on android and should work on tomahawk master
+[20:14:14] <theli_ua> I mean, tidal never was working on 0.8 releases, but it should just work on nightly
+[20:14:36] <outhre4> how to use it? i could find plugin for Tidal
+[20:14:52] <outhre4> ok, i have 0.8.4 prom PPA
+[20:15:16] <muesli> outhre4: wouldn't work on that release yet, sorry. upcoming 0.9 will support it tho
+[20:15:36] <theli_ua> muesli: do you have linux nightlies ?
+[20:16:05] <outhre4> i see nightly only for android
+[20:16:14] <muesli> https://launchpad.net/~tomahawk/+archive/ubuntu/nightly
+[20:16:15] <tomabee> [ Tomahawk Player Nightly | launchpad.net | http:///@@/package-source ]
+[20:16:46] <outhre4> ok thx :)
+[20:19:50] <theli_ua> domme: I plan to add levenshtein distance implementation to my bandcamp resolver, is that fine or do you think I should put that into tomahawk.js?
+[20:21:19] <muesli> theli_ua: probably Query::howSimilar might be used there
+[20:21:30] <theli_ua> muesli: thats not exposed to js is it?
+[20:22:47] <muesli> not yet anyway
+[20:24:51] <outhre4> hm I use PPA with nightly but still don't have plugin for Tidal 
+[20:25:07] <outhre4> now I have 0.8.99
+[20:25:43] <theli_ua> you need to download/clone https://github.com/tomahawk-player/tomahawk-resolvers  and then from plugin window "import" tidal/content/contents/code/tidal.js
+[20:25:44] <tomabee> [ tomahawk-player/tomahawk-resolvers · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[20:26:04] <jherskowitz> outhre4: theli_ua there is an .axe too http://teom.org/axes/nightly/tidal-0.0.6.axe
+[20:26:16] <jherskowitz> should be able to just download/use that
+[20:26:26] <theli_ua> jherskowitz: as those built automatically?
+[20:26:30] <outhre4> oh, ok so I must install this plugin manually :)?
+[20:26:43] <jherskowitz> theli_ua: yeah, think so
+[20:26:46] <jherskowitz> teo-: ?
+[20:26:53] <jherskowitz> outhre4: yeah, install manually (either way you get it)
+[20:29:17] <theli_ua> jherskowitz: did you update to latest nightly?
+[20:29:38] <theli_ua> jherskowitz: because it totally changed api, so I wonder what resolvers became broken for you
+[20:30:56] <domme> theli_ua: will be back later
+[20:31:35] <jherskowitz> theli_ua: I’m no master
+[20:31:40] <jherskowitz> s/no/on
+[20:32:49] <jherskowitz> theli_ua: but I haven’t been using Tidal
+[20:33:38] <jherskowitz> theli_ua: guess not
+[20:33:40] <jherskowitz> Fri Sep 25 2015 - 14:33:20 [0]: JAVASCRIPT: "/Users/jherskowitz/Library/Application Support/Tomahawk/manualresolvers/tidal/content/contents/code/tidal.js:50" "undefined is not an object (evaluating 'Tomahawk.UrlType.Track')" "" 
+[20:34:04] <theli_ua> bah
+[20:34:40] <outhre4> http://teom.org/axes/nightly/tidal-0.0.6.axe - this plugin provide tidal support but i see only one fav album :)
+[20:35:24] <theli_ua> outhre4: I don't think it has any collection support at all
+[20:35:47] <outhre4> ;]
+[20:36:12] <outhre4> ok, i will w8 for non beta plugin ;P
+[20:36:22] <theli_ua> its not beta
+[20:36:34] <theli_ua> I mean, there are no plans to add collection support 
+[20:36:49] <outhre4> oh
+[20:37:16] <theli_ua> tho tomahawk 0.9 is in development yes
+[20:37:23] <theli_ua> so things break occasionally 
+[20:41:38] <outhre4> ok, i back to stable for now :)
+[20:43:32] <theli_ua> this is kinda ugly ... there is TomahawkUrlType ... now there is also Tomahawk.UrlType ... /?? MrMaffen is that intended?
+[20:44:46] <theli_ua> jherskowitz: any other resolvers broke for you?
+[20:44:53] <jherskowitz> gmusic
+[20:45:05] <theli_ua> jherskowitz: use gmusic from resolvers master
+[20:47:49] <theli_ua> jherskowitz: amazon should break as well I believe , so https://www.dropbox.com/s/5gh4t20lukp41em/amazon.tgz?dl=0
+[20:47:52] <tomabee> [ amazon.tgz | www.dropbox.com | https://cf.dropboxstatic.com/static/images/icons128/page_white_compressed.png ]
+[20:48:27] *** Joins: ysiak (ysiak@gateway/web/scrollback.io/x-iidzapedrswnuvyn)
+[20:48:28] <ysiak> ;]
+[20:48:43] <ysiak> outhre4 change name to ysiak ;
+[20:48:50] <ysiak> ;)
+[20:48:59] *** Quits: wiuempe (~wmp@sored/admin/wmp) (Excess Flood)
+[20:49:15] *** Joins: wmp (~wmp@auburn.sored.pl)
+[20:49:23] *** wmp is now known as Guest36842
+[20:49:28] <jherskowitz> theli_ua: gmusic master fails on tomahawk master for me
+[20:49:36] <jherskowitz> https://www.irccloud.com/pastebin/WpdmaEGP/
+[20:49:37] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[20:49:39] <theli_ua> jherskowitz: wat, >_< works for me
+[20:49:54] <theli_ua> hm, thats not very helpfull
+[20:50:24] <jherskowitz> btw, it also logs google password in plain text
+[20:50:39] <theli_ua> thats pretty bad
+[20:51:05] <theli_ua> on the other hand tomahawk stores all passwords in plaintext anyway
+[20:52:23] <jherskowitz> amazon works
+[20:52:30] <theli_ua> jherskowitz: wait wat
+[20:52:37] <theli_ua> the one you had or the one I linked you?
+[20:52:43] <jherskowitz> one you just sent
+[20:52:48] <theli_ua> oh, ok
+[20:53:22] <theli_ua> jherskowitz: can you post me extract from the log where it logs the password? just replace password with ****** or something
+[20:53:23] <jherskowitz> ah, with flat tracklist view
+[20:53:24] <jherskowitz> nice
+[20:53:39] <theli_ua> I just want to see what line is logging that and remove it
+[20:54:04] <theli_ua> jherskowitz: actually its now the same for all ... resolver just feeds a list of tracks from collection and internal collection implementation handles everything from there
+[20:55:09] <jherskowitz> https://www.irccloud.com/pastebin/uEkrraHn/
+[20:55:11] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[20:55:23] <jherskowitz> one sec
+[20:55:33] <theli_ua> jherskowitz: thanks, brb, will remove that logging
+[20:55:48] <jherskowitz> https://www.irccloud.com/pastebin/ZiIGTVjD/
+[20:55:49] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[20:56:05] <theli_ua> this is kinda weird, why it works for me
+[20:56:18] <jherskowitz> SSL issue on OS X?
+[20:56:30] <theli_ua> oh
+[20:56:39] <theli_ua> wait, was it working for you before today?
+[20:59:49] <jherskowitz> theli_ua: no, it hasn’t worked for me for a while…
+[20:59:53] <jherskowitz> master: never logs in
+[21:00:04] <jherskowitz> nighltly: logs in, but errors on stream
+[21:00:17] <theli_ua> ah, ok, I was mostly wondering what did nightly break, not what it not fixed :)
+[21:02:07] <jherskowitz> lfranchi: congrats https://zulip.org/
+[21:02:08] <tomabee> [ Zulip | zulip.org | http://images/features.png ]
+[21:02:14] <jherskowitz> open-sourced
+[21:07:37] *** Joins: moru (~moru@d86-32-133-69.cust.tele2.at)
+[21:11:03] <lfranchi> jherskowitz: thanks :)
+[21:11:04] <lfranchi> exciting day
+[21:34:27] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[21:34:27] <github-tomahawk> [13tomahawk] 15dschmidt pushed 2 new commits to 06master: 02http://git.io/vnAfn
+[21:34:27] <github-tomahawk> 13tomahawk/06master 1431539e8 15Anton Romanov: [tomahawk.js]Remove some excessive logging
+[21:34:27] <github-tomahawk> 13tomahawk/06master 14bfe30fd 15Dominik Schmidt: Merge pull request #330 from theli-ua/api...
+[21:34:27] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[21:34:41] <domme> theli_ua: i like how your stepping back from tomahawk looks
+[21:34:58] *** Joins: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com)
+[21:40:08] <theli_ua> :(
+[21:41:19] *** Quits: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com) (Quit: alsuren)
+[21:42:27] *** Joins: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com)
+[21:45:00] *** Quits: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com) (Client Quit)
+[21:55:31] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[22:58:49] *** H4ndy is now known as h4ndy
+[23:11:20] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[23:26:56] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[23:33:19] *** Quits: soee (~soee@abde72.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[23:33:47] *** Joins: soee (~soee@abde72.neoplus.adsl.tpnet.pl)

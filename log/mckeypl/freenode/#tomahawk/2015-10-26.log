@@ -1,0 +1,355 @@
+[00:10:27] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[00:35:19] *** Joins: sythe (uid20450@facade/leader)
+[00:43:29] *** Quits: soee (~soee@afom147.neoplus.adsl.tpnet.pl) (Ping timeout: 256 seconds)
+[00:57:06] <MrMaffen> domme: my second name is consistency :D so np
+[00:57:08] <MrMaffen> I can't help it
+[01:26:41] *** Quits: jturney1 (~jon@host86-141-129-230.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[03:25:15] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Remote host closed the connection)
+[03:25:30] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[04:36:50] *** Joins: thathe (guest-that@gateway/web/scrollback.io/x-dobuarklhggxypem)
+[04:36:50] <thathe> Hey, I don't see much about it and I would like t get some definitive answer. Does this support iPods/iDevices? If not, I was reading the developer documentation for plugins. As far as i can see, there is only the streaming api. Or would I have to modfiy the source code of tomahawk myself, etc?
+[04:46:44] <theli_ua> yeah, there is no specific support for external devices
+[04:47:07] <theli_ua> and I believe there are no plans for something like that atm
+[04:47:54] <thathe> Darn, yea I really like this program over others.  Yuck c++ integration with ios and ipod...
+[04:50:51] *** Parts: thathe (guest-that@gateway/web/scrollback.io/x-dobuarklhggxypem) ()
+[07:06:08] <tomabee_> @juanscv92 mentioned: @tomahawk the app is not working for me in Windows 10. Enabling any resolver or plug-in crashes it. [<no value>]
+[07:44:53] *** Joins: mikkle (~michael@x4d03cbc7.dyn.telefonica.de)
+[07:45:16] *** Quits: mikkle (~michael@x4d03cbc7.dyn.telefonica.de) (Client Quit)
+[08:00:19] <xhochy> domme: I can take a look again later but I was absent so long that I'm not sure if I understand fully our changes :P
+[08:28:20] <xhochy> Can anyone tell want went wrong here on installing vlc via tomahawk's homebrewqt5?
+[08:28:27] <xhochy> https://www.irccloud.com/pastebin/IhIP5PtM/
+[08:28:28] <tomabee_> [ Pastebin | www.irccloud.com |  ]
+[09:10:12] *** Joins: soee (~soee@afom147.neoplus.adsl.tpnet.pl)
+[09:29:00] *** Joins: soee_ (~soee@afil86.neoplus.adsl.tpnet.pl)
+[09:33:06] *** Quits: soee (~soee@afom147.neoplus.adsl.tpnet.pl) (Ping timeout: 255 seconds)
+[10:22:43] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[10:24:50] *** Quits: sythe (uid20450@facade/leader) (Quit: Connection closed for inactivity)
+[10:35:43] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Ping timeout: 252 seconds)
+[10:41:05] *** Joins: bencevans (uid22936@gateway/web/irccloud.com/x-wlxdpknaazjnlimj)
+[10:59:17] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:56:28] <domme> xhochy: hehe :)
+[12:16:11] *** Joins: soee (~soee@bmh186.neoplus.adsl.tpnet.pl)
+[12:18:11] *** Quits: soee_ (~soee@afil86.neoplus.adsl.tpnet.pl) (Ping timeout: 264 seconds)
+[12:35:47] *** Joins: jturney (~jon@host86-141-129-230.range86-141.btcentralplus.com)
+[12:43:38] *** Quits: bencevans (uid22936@gateway/web/irccloud.com/x-wlxdpknaazjnlimj) (Quit: Connection closed for inactivity)
+[12:56:14] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[13:35:36] <muesli> xhochy: which osx version are you on?
+[13:35:44] <muesli> xhochy: also, since when are you on a mac? :D
+[13:36:35] <xhochy> muesli: 10.10
+[13:38:42] <xhochy> muesli: I have no idea how this mac works
+[13:39:06] <muesli> heh
+[13:39:10] <xhochy> until now `brew install` just worked :D
+[13:39:15] <muesli> so, vlc is known to be a bit problematic on anything >10.8 iirc
+[13:39:34] <muesli> in this case tho, you seem to be missing xcode or xcode's command line tools
+[13:39:45] <muesli> also, "brew doctor" might be your friend
+[13:41:54] <domme> xhochy: feepk is your man
+[13:42:11] <domme> xhochy: btw updated the PR with information on how to actually test it
+[13:42:21] <xhochy> seems like I'm missing some Xcode stuff
+[13:42:53] <xhochy> domme: worst thing is that probably a lot of that formula is from me. I was better at wrtiting brew formula when I didn't have a mac
+[13:42:54] <domme> xhochy: and linked the changes in tomahawk itself.. would be relevant if you plan to keep tomahawk-node working
+[13:43:03] <domme> xhochy: hehe
+[13:46:54] <muesli> xhochy: also check if /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk actually exists
+[13:46:59] <muesli> or if it is in /Developer/....
+[13:49:33] <tomabee_> @Borlafdev mentioned: @tomahawk, the multi-source (and multi-platform) music player written in #cpp https://t.co/IdBm50IQeo [<no value>]
+[14:26:05] *** Quits: znf (~ibm86@unu.card-sharing.eu) (Remote host closed the connection)
+[14:44:58] *** Joins: znf (~ibm86@unu.card-sharing.eu)
+[14:54:50] *** Joins: jturney1 (~jon@host86-141-129-230.range86-141.btcentralplus.com)
+[14:54:50] *** Quits: jturney (~jon@host86-141-129-230.range86-141.btcentralplus.com) (Disconnected by services)
+[15:12:12] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[15:59:35] <HorusHorrendus> anyone knows about a problem with KDSingleApplicationGuard
+[16:00:26] <HorusHorrendus> https://paste.kde.org/petwmgrxx
+[16:00:27] <tomabee_> [ KDE Paste | paste.kde.org |  ]
+[16:20:15] *** Joins: knicklux (~knicklux@2a03:2260:a:a:1723:d8c:4528:fb8b)
+[16:21:43] *** Joins: sythe (uid20450@facade/leader)
+[16:57:03] *** Quits: knicklux (~knicklux@2a03:2260:a:a:1723:d8c:4528:fb8b) (Ping timeout: 252 seconds)
+[17:01:26] *** Joins: justin_time (~stefan@2a02:908:f35d:4b00:4197:1879:7594:937)
+[17:03:32] <justin_time> muesli: sorry for the delay. Everything is ready since a few days, but I'm unable to activate the source recipe of the staging ppa. Could you please take a look if you are able to start the build process?
+[17:03:37] <justin_time> https://code.launchpad.net/~tomahawk/+recipe/tomahawk-release
+[17:03:38] <tomabee_> [ tomahawk-release : Recipes : Code : “Tomahawk” team | code.launchpad.net | http:///@@/build-failed ]
+[17:04:26] <muesli> justin_time: you mean "request builds" ?
+[17:04:41] <justin_time> muesli: exactly
+[17:05:09] <muesli> justin_time: staging?
+[17:05:34] <muesli> justin_time: or regular build?
+[17:06:32] *** Joins: knicklux (~knicklux@185.66.194.10)
+[17:06:36] <justin_time> You create the packages for staging, I'm going to test them and afterwards you are copy them to the official PPA.
+[17:06:45] <muesli> cool, as usual then
+[17:06:58] <muesli> build has been queued
+[17:07:50] <justin_time> ah ok… it looks like that I'd created the recipe but I'm unable to request new builds now… This is security :/
+[17:08:59] <justin_time> muesli: shell I update the official nightly PPA to create Qt5 builds for Ubuntu 15.10?
+[17:09:30] <justin_time> I've tested them successfully on my own nightly ppa.
+[17:17:00] <HorusHorrendus> justin_time: as you're building on wily
+[17:17:10] <HorusHorrendus> ever encountered this error: https://paste.kde.org/petwmgrxx
+[17:17:11] <tomabee_> [ KDE Paste | paste.kde.org |  ]
+[17:18:20] <muesli> HorusHorrendus: sorry, forgot to reply: nope, haven't seen this yet. might be a lack of shmem support?
+[17:18:30] <justin_time> HorusHorrendus: Which PPA and OS are you using? 
+[17:18:38] <HorusHorrendus> muesli: you've seen that before. ... in december ...
+[17:18:42] <HorusHorrendus> from some other user ;)
+[17:18:52] <HorusHorrendus> but seems like the problem went away just magically ;)
+[17:18:54] <muesli> uhm ok
+[17:19:10] <muesli> don't remember irc conversations from a year ago, sorry :D
+[17:19:11] <HorusHorrendus> justin_time: kubuntu 15.10 (upgraded from 15.04), no ppa
+[17:19:23] <HorusHorrendus> muesli: yeah of course not ... was just searching for it ;)
+[17:19:37] <justin_time> No PPA? You mean tomahawk 0.7 from the ubuntu sources?
+[17:19:37] <HorusHorrendus> so someone had this problem before, but no idea why ;)
+[17:19:43] <HorusHorrendus> justin_time: no self compiled
+[17:20:18] <justin_time> stable or 0.8.99+?
+[17:20:51] <HorusHorrendus> justin_time: master
+[17:21:02] <HorusHorrendus> justin_time: well let's try a clean rebuild
+[17:21:35] <muesli> justin_time: amd64 seems to have built already :)
+[17:22:19] <justin_time> muesli: ok, I'll test them.
+[17:22:48] <HorusHorrendus> justin_time: which OS do you use?
+[17:23:27] <justin_time> Ubuntu GNOME 15.10 - tomahawk master Qt5 build by using my PPA https://launchpad.net/~justin-time/+archive/ubuntu/tomahawk-nightly
+[17:23:35] <tomabee_> [ Tomahawk Nightly | launchpad.net | http:///@@/package-source ]
+[17:24:06] <HorusHorrendus> justin_time: any problem with Qt4 apps?
+[17:24:45] <justin_time> HorusHorrendus: not tested yet…
+[17:25:11] <HorusHorrendus> justin_time: could you maybe install speedcrunch (a nice calculator) and see if it works
+[17:25:28] <HorusHorrendus> I seem to have problems with input widgets in qt4 apps on Kubuntu 15.10
+[17:25:45] <justin_time> speedcrunch works.
+[17:26:43] <justin_time> HorusHorrendus: Maybe your upgrade from 15.04 to 15.10 failed?
+[17:27:10] <HorusHorrendus> justin_time: not sure what failed :(
+[17:32:25] <justin_time> muesli: tomahawk 0.8.4 works! Please copy "tomahawk 0.8.4-0ubuntu5~ppa14~ubuntu15.10.1" and "libechonest 2.3.1-0~wily1~ppa1" into the official PPA. (by using "Copy existing binaries")
+[17:41:32] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Quit: Leaving)
+[17:45:42] <muesli> justin_time: ok, now i'm looking for that button again :D
+[17:45:45] <muesli> or link, rather
+[17:46:30] <justin_time> muesli: if you have a question about launchpad and PPA, feel free to ask me ;-)
+[17:46:45] <muesli> justin_time: ok, where's the darn "copy" link again? :D
+[17:47:10] <justin_time> You start here: https://launchpad.net/~tomahawk/+archive/ubuntu/staging
+[17:47:12] <tomabee_> [ Tomahawk Player (Staging) | launchpad.net | http:///@@/package-source ]
+[17:47:21] <justin_time> then go to "View Package details"
+[17:47:43] <justin_time> on the next page there is "Copy packages" on the top right corner.
+[17:47:48] <muesli> aha! :)
+[17:48:41] <muesli> done :)
+[17:48:42] <muesli> thanks :)
+[17:48:58] <justin_time> no problem :)
+[17:49:38] <justin_time> Shell I clean clean up the ppa? (Remove very old packages of unsupportet old ubuntu versions)
+[17:51:23] <jherskowitz> justin_time: muesli: is this ^ why some people are still getting 0.7 from the PPA?
+[17:51:31] <muesli> jherskowitz: yeah
+[17:51:48] <muesli> jherskowitz: well, technically they're getting it from the official ubuntu repos then... which still offers 0.7 :-/
+[17:51:59] <jherskowitz> will this work for Xbuntu too?
+[17:52:02] <muesli> jherskowitz: yeah
+[17:52:04] <justin_time> no 0.7 are in the official ubuntu sources! Not in the PPA.
+[17:52:04] <muesli> *buntu
+[17:52:07] <jherskowitz> cool
+[17:52:18] <muesli> also, mint iirc
+[17:52:24] <jherskowitz> ah, how do we get them to update the official sources?
+[17:52:58] <muesli> we probably have to annoy them more
+[17:53:21] <justin_time> hmm... this is very hard. The master way is to put them into the debian sources, but there is the problem with libechonest.
+[17:53:25] <muesli> justin_time: any contacts you got so we can try and push those packages into official ubuntu?
+[17:53:29] <muesli> yeah :-/
+[17:54:23] <justin_time> No sorry, but what about the guys who pushed 0.7 into the sources??
+[17:55:39] <justin_time> The "Kubuntu Developers" are the maintainer… of tomahawk 0.7...
+[17:56:48] <justin_time> muesli: maybe you could try to ask them by using this mailing list? https://lists.ubuntu.com/mailman/listinfo/kubuntu-devel
+[17:56:49] <tomabee_> [ kubuntu-devel Info Page | lists.ubuntu.com |  ]
+[18:15:04] <muesli> yofel: ^ that was you, no?
+[18:17:08] <yofel> uh yeah, I guess it's on the todo list for xenial. But I'm not sure when I'll get to even update the PPA...
+[18:17:50] <yofel> you might want to write a script that pings me twice a week or so
+[18:19:12] <yofel> oh ok, you guys go the PPA updated, great
+[18:20:33] <justin_time> yofel: yes, the nightly PPA works, the stable PPA are updated and the Qt5 builds are in the test stage.
+[18:26:11] <justin_time> muesli: I've wrote the maintainer of libechonest an email through the debian bugtracker...
+[18:36:58] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Remote host closed the connection)
+[18:42:49] <HorusHorrendus> fuuuuck ;)
+[18:42:59] <HorusHorrendus> shit ...
+[18:43:05] <HorusHorrendus> how stupid is this ;)
+[18:43:29] <HorusHorrendus> OK you wanna know what the problem (ok atm it segfaults, but the previous error is gone) with Tomahawk and my whole Desktop was?
+[18:43:32] <HorusHorrendus> fucking Java ...
+[18:43:55] <HorusHorrendus> I tried to open a Qt5 app that I wrote for work and realized some more "shmget errors"
+[18:44:44] <HorusHorrendus> googled them and read sth about Java ... wondered because I thought I have no Java App open and realized: PyCharm is open ... closed it and the Tomahawk Error is gone, Speedcrunch works again, no more shmget errors
+[19:08:58] <theli_ua> I bet if you dig enough you'll find out all of world's problems are caused by java
+[19:13:35] <HorusHorrendus> theli_ua: or by OpenJDK which still is not really on par sometimes with Oracle JDK
+[19:13:44] <HorusHorrendus> cause Oracle JDK 8 works, while OpenJDK 7 doesnt
+[19:15:21] <HorusHorrendus> pfff and now I have lucene++ problems
+[19:15:28] <HorusHorrendus> deleted .local/share/Tomahawk
+[19:15:45] <HorusHorrendus> and now
+[19:15:45] <HorusHorrendus> 19:12:16 [1]: Opening Lucene directory: "/home/horrendus/.local/share/Tomahawk/tomahawk.lucene"  
+[19:15:45] <HorusHorrendus> Segmentation fault (core dumped)
+[19:16:08] <HorusHorrendus> or better now
+[19:16:08] <HorusHorrendus> 19:15:57 [1]: Opening Lucene directory: "/home/horrendus/.local/share/Tomahawk/tomahawk.lucene"  
+[19:16:08] <HorusHorrendus> *** Error in `./tomahawk': free(): invalid pointer: 0x0000000001c318e8 *** 
+[19:16:08] <HorusHorrendus> Aborted (core dumped)
+[19:16:37] <HorusHorrendus> ohh now I have finally a valid bt
+[19:16:51] <HorusHorrendus> https://paste.kde.org/pkbabzlrn
+[19:16:51] <tomabee_> [ KDE Paste | paste.kde.org |  ]
+[19:17:13] <HorusHorrendus> hmm related to boost
+[19:17:58] <HorusHorrendus> why does it use 1.55 ... weird
+[19:19:09] <theli_ua> is this master?
+[19:20:29] <theli_ua> can you also do bt full?
+[19:25:53] *** mgue1 is now known as mgue
+[19:37:48] *** Quits: knicklux (~knicklux@185.66.194.10) (Remote host closed the connection)
+[19:48:18] <HorusHorrendus> theli_ua: one moment
+[19:49:36] <HorusHorrendus> I think I wanted to rebuild lucene++ with boost 1.58 because it might have had some version conflicts before
+[20:11:31] <HorusHorrendus> ok now everything works again ;)
+[20:12:25] <theli_ua> https://twitter.com/nolanlawson/status/578948854411878400   wow, I'm now a promise expert :(
+[20:12:25] <tomabee_> [ "E.g. if you know the difference between these four snippets, you are a Promise expert. I'd wager most JS devs don't. http | twitter.com | https://pbs.twimg.com/media/CAjW6kLUYAAvKvG.png:large ]
+[20:12:34] <theli_ua> but I hate js and I don't even use it
+[20:13:02] <theli_ua> I blame domme
+[20:15:38] <HorusHorrendus> theli_ua: thats a good one to blame ;)
+[20:15:53] <theli_ua> I'm not sure about that
+[20:16:17] <theli_ua> I'd rather learn something I can use at my job
+[20:16:32] * theli_ua works mostly on high-speed packet processing software written in C
+[20:17:23] <HorusHorrendus> theli_ua sound interesting
+[20:17:36] <HorusHorrendus> I work on Computer Vision (Stereo Vision) for work ;)
+[20:17:49] <theli_ua> sounds interesting :P
+[20:17:49] <domme> theli_ua: i know the differences :p
+[20:18:06] <HorusHorrendus> (and seems like nowadays I'm also working a very very bit as a paid Python/Django dev)
+[20:18:50] <theli_ua> well, I also do bash, zsh, java, python, perl as well, yeah ... I mean you probably don't want to write some launch/maintenance/monitoring/etc scripts in C
+[20:18:58] <theli_ua> I mean, for living
+[20:19:32] <HorusHorrendus> waah perl
+[20:19:38] <HorusHorrendus> thankfully never have to use that
+[20:19:47] <theli_ua> yeah, mostly replaced with python by now
+[20:19:48] <domme> first and last are almost the same.. only first binds the context
+[20:20:03] <domme> especially relevant when calling class methods
+[20:20:55] <domme> first and last only resolve when the promise doSomething returns resolves
+[20:21:05] <domme> second immediately resolves
+[20:21:05] <HorusHorrendus> domme: teo-: https://github.com/muesli/beehive/issues/10 <- still remember which jira go lib you meant?
+[20:21:06] <tomabee_> [ Jira Bee · Issue #10 · muesli/beehive · GitHub | github.com | https://avatars2.githubusercontent.com/u/146378?v=3&s=400 ]
+[20:21:29] <HorusHorrendus> (wrong channel, I know, but you're not in #beehive :) )
+[20:22:01] <domme> i third doSomething() is used to create a function that will be called once the promise resolves
+[20:22:08] <domme> theli_ua: 
+[20:23:42] <HorusHorrendus> anyone knows how to sync my playlists from hatchet -> tomahawk?
+[20:24:16] <HorusHorrendus> Desktop Tomahawk
+[20:24:45] <theli_ua> well, first you need to code that HorusHorrendus 
+[20:25:18] <theli_ua> and while you're at it implement support for syncing hatchet->desktop loved tracks as well :)
+[20:26:40] <HorusHorrendus> theli_ua: ahh 3 way merge between last.fm <-> Tomahawk <-> hatchet
+[20:27:02] <theli_ua> well, you can leave last.fm out of equation for start
+[20:27:25] <HorusHorrendus> well you're right, I think nowadays they are already on hatchet
+[20:27:42] <HorusHorrendus> but first they came from last.fm
+[20:29:00] <HorusHorrendus> wow YouTube on Hatchet is awesome ;)
+[20:30:57] <HorusHorrendus> well not gonna implement that today :) gonna go and play a bit, see ya later
+[20:31:38] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[20:39:02] <theli_ua> uh, MrMaffen seems like you broke js collection in tomahawk.js :(
+[20:39:07] <theli_ua> on desktop
+[20:42:20] <theli_ua> MrMaffen: you uncommented https://github.com/tomahawk-player/tomahawk/blob/master/data/js/tomahawk.js#L1282  , but m is not defined, there is no migrator
+[20:42:23] <tomabee_> [ tomahawk/tomahawk.js at master · tomahawk-player/tomahawk · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[20:45:19] <domme> hehe
+[20:45:42] <theli_ua> yeah, just commenting that m.execute out fixes it for me
+[20:46:34] <theli_ua> domme: you asked to bug you with revieweing new resolvers
+[20:47:13] <domme> thats right
+[20:47:24] <domme> but but but
+[20:47:37] <domme> i did the es6 stuff!!
+[20:47:41] <domme> ;)
+[20:48:01] <theli_ua> you should think about customers!
+[20:48:13] <theli_ua> customers dont care about that 
+[20:48:17] <theli_ua> :P
+[20:49:16] <theli_ua> bah, just made tomahawk freeze :(
+[20:49:29] <domme> i care about developers developers developers
+[20:50:15] *** Quits: soee (~soee@bmh186.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[20:51:13] *** Joins: soee (~soee@bmh186.neoplus.adsl.tpnet.pl)
+[20:52:42] *** Quits: soee (~soee@bmh186.neoplus.adsl.tpnet.pl) (Client Quit)
+[20:53:29] *** Joins: soee (~soee@bmh186.neoplus.adsl.tpnet.pl)
+[20:54:06] <theli_ua> well, what you should care about depends on who you want to attract I guess :)
+[20:55:43] <justin_time> muesli: Is there a roadmap for tomahawk 0.9? I ask myself if I should prepare tomahawk 0.8.4 for debian or prepare all needed Qt5 packages and try to push tomahawk 0.9 after the release.
+[20:57:11] <theli_ua> justin_time: https://bugs.tomahawk-player.org/browse/TWK/fixforversion/11530
+[20:57:11] <tomabee_> [ Tomahawk: 0.9.0 | bugs.tomahawk-player.org |  ]
+[20:57:30] <theli_ua>  247 Issues 
+[20:57:39] <theli_ua> 16 of 247 issues have been resolved
+[20:59:09] <justin_time> theli_ua: ok thanks. I think pushing 0.8.4 into debian is work enough, for now...
+[20:59:38] <theli_ua> well, everyone might just start working 24/7 on 0.9 tomorrow and we'll see release next week
+[20:59:41] <theli_ua> you never know :D
+[21:09:39] *** Quits: soee (~soee@bmh186.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[21:10:00] *** Joins: soee (~soee@bmh186.neoplus.adsl.tpnet.pl)
+[21:35:53] <MrMaffen> theli_ua: oh hmm... did you remove the migrator code from tomahawk.collection?
+[21:36:39] <morsik> ehh… why Tomahawk cannot into such basic thing like Queue? :(
+[21:36:59] <morsik> I'm selecting album, right-click, "Add to Queue", and different trakcs are Queued from Google Music
+[21:36:59] <MrMaffen> morsik: there is a queue
+[21:37:38] <MrMaffen> morsik: hm. can you please file a bug report here https://bugs.tomahawk-player.org/browse/TWK ?
+[21:37:38] <tomabee_> [ Tomahawk Bugs | bugs.tomahawk-player.org |  ]
+[21:38:26] <morsik> MrMaffen: it even don't queue different album. It just queued some "random" tracks. "random" in quote, cause those are always the same everytime I click "Add to Queue"
+[21:38:30] <morsik> and from different albums…
+[21:38:44] <morsik> will fill report after going back to home
+[21:44:14] <MrMaffen> morsik: ok ty
+[21:45:39] <MrMaffen> theli_ua: hm it seems like you removed the migrator. why did you do that?
+[21:48:46] <theli_ua> MrMaffen: because it wasn't functional
+[21:49:13] <theli_ua> same as to why I completely changed how sql calls work 
+[21:49:15] <MrMaffen> theli_ua: huh? I tested it
+[21:49:21] <MrMaffen> what :D
+[21:49:29] <theli_ua> MrMaffen: might've worked on android for you
+[21:49:41] <theli_ua> and that sql part was just wrong i recall
+[21:49:41] <MrMaffen> theli_ua: I thouroughly tested the whole thing on chrome and android
+[21:50:04] <theli_ua> MrMaffen: do you have the log of this channel?
+[21:50:09] *** Parts: theli_ua (uid54353@gateway/web/irccloud.com/x-cpthdufqemijlfwo) ()
+[21:50:14] <MrMaffen> theli_ua: everything worked  without any problem whatsoever
+[21:50:27] *** Joins: theli_ua (uid54353@gateway/web/irccloud.com/x-cpthdufqemijlfwo)
+[21:50:33] <MrMaffen> theli_ua: everything worked  without any problem whatsoever
+[21:50:54] <theli_ua> I was explaining why sql stuff is wrong here
+[21:51:32] <theli_ua> let me find it
+[21:52:01] <MrMaffen> ok
+[21:53:24] <theli_ua> MrMaffen: 
+[21:53:32] <theli_ua> https://www.irccloud.com/pastebin/2JnGc2Sj/
+[21:53:33] <tomabee_> [ Pastebin | www.irccloud.com |  ]
+[21:56:24] <MrMaffen> theli_ua: ah ok I see
+[21:56:34] <MrMaffen> guess I got lucky with android and chrome then
+[21:56:39] <MrMaffen> worked without a hitch there
+[21:56:52] <theli_ua> yeah, as I said - it might work in certain conditions
+[21:56:55] <MrMaffen> theli_ua: and why was the migrator not working for you?
+[21:57:46] <theli_ua> as i recall it was something similar, and causing invalid state exceptions for websql, I also found a website/blog where that migrator supposedly originated and later it stated that yeah, it was indeed not always working
+[21:59:07] <theli_ua> I certainly wanted to have some kind of migrator, the one in that implementation was just not working for me on multiple systems
+[21:59:32] <theli_ua> I think it *sometimes* did work, but far less than in 100% of the tests
+[21:59:38] <MrMaffen> hmpf well I also tested that thouroughly iirc
+[22:00:08] <MrMaffen> guess my testing procedures are flawed af :D
+[22:00:33] <theli_ua> well, you didn't test it inside tomahawk desktop, right?
+[22:00:48] <theli_ua> shouldn't be too different from testing in chrome though
+[22:02:11] <MrMaffen> theli_ua: that's what I thought. I didn't test it in tomahawk desktop for obvious reasons
+[22:02:18] <MrMaffen> I tested it in chrome
+[22:02:22] <theli_ua> MrMaffen: http://blog.maxaller.name/2010/03/html5-web-sql-database-intro-to-versioning-and-migrations/  see update/comment
+[22:02:23] <tomabee_> [ HTML5 Web SQL Database – Intro to Versioning and Migrations « occasionally useful | blog.maxaller.name |  ]
+[22:02:53] <theli_ua> the one which was in tomahawk.js was the original one, and even that blog states that it wasn't working on safari/webkit at least
+[22:03:21] <theli_ua> I dont remember if I tried latest one from github
+[22:04:01] <theli_ua> I *think* I did but still run into some issues and didn't investigate much, postponing migration implementation until at least basic functionality works
+[22:05:41] *** Joins: github-tomahawk (~github-to@192.30.252.42)
+[22:05:42] <github-tomahawk> [13tomahawk] 15mrmaffen pushed 1 new commit to 06master: 02http://git.io/vWiKj
+[22:05:42] <github-tomahawk> 13tomahawk/06master 142bb787b 15Enno Gottschalk: Remove dead js collection migrator code in tomahawk.js
+[22:05:42] *** Parts: github-tomahawk (~github-to@192.30.252.42) ()
+[22:06:11] <theli_ua> you also have same in android, but you said that collection code is not used on android anyway
+[22:06:15] <domme> MrMaffen: i guess i can remove that from the woah branch too then? :P
+[22:06:49] <MrMaffen> domme: yup
+[22:07:17] <MrMaffen> theli_ua: yea we'll just postpone the migration feature until it's needed
+[22:07:18] <domme> MrMaffen: btw i did update the PR with a bit more information
+[22:07:21] *** Joins: github-tomahawk (~github-to@192.30.252.34)
+[22:07:21] <github-tomahawk> [13tomahawk-resolvers] 15dschmidt pushed 1 new commit to 06woah: 02http://git.io/vWi6r
+[22:07:21] <github-tomahawk> 13tomahawk-resolvers/06woah 14a00085d 15Dominik Schmidt: Remove dead migrator code
+[22:07:21] *** Parts: github-tomahawk (~github-to@192.30.252.34) ()
+[22:07:37] <domme> and added a link to a recent tomahawkcc build
+[22:08:02] <theli_ua> domme: can tomahawkcc just be a part of tomahawk?
+[22:09:26] <theli_ua> eh, I mean, "How hard is the task of making that a part of tomahawk"
+[22:09:41] <domme> theli_ua: pretty impossible
+[22:09:42] <domme> for linux
+[22:09:48] <theli_ua> oh
+[22:09:51] <theli_ua> but why
+[22:10:07] <theli_ua> I mean, ideally tomahawk would just compile them on load
+[22:10:08] <domme> because it's a separate thing, it depends on nodejs
+[22:10:14] <domme> ah yeah, no
+[22:10:23] <domme> we would need to ship nodejs for that
+[22:10:25] <theli_ua> well, we can make tomahawk depend on nodejs!
+[22:10:38] <domme> how about no?
+[22:10:59] <domme> i recently tried to upgrade gitlab
+[22:11:09] <theli_ua> https://s3.amazonaws.com/static.carthrottle.com/workspace/uploads/comments/how-about-yes-54dc833335db5.jpg
+[22:11:10] <domme> i only needed ruby, a nodejs environment, a go compiler
+[22:11:18] <domme> i REALLY enjoyed it
+[22:11:39] <theli_ua> I dunno
+[22:11:56] <theli_ua> you just do emerge gitlab and you're all set
+[22:12:34] <domme> whatever. i dont want to go down that road
+[22:13:07] <theli_ua> anyhow, is there a way not to use node?
+[22:13:13] <domme> no
+[22:13:29] <domme> unless you want to rewrite babeljs in cpp
+[22:13:32] *** Quits: soee (~soee@bmh186.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[22:13:49] <domme> (pro tip: you dont want to)
+[22:13:54] *** Joins: soee (~soee@bmh186.neoplus.adsl.tpnet.pl)
+[22:17:01] <theli_ua> bah, netease resolver stopped working
+[22:18:01] <theli_ua> domme: is https://babeljs.io/docs/usage/browser/  unusable?
+[22:18:02] <tomabee_> [ Browser · Babel | babeljs.io |  ]
+[22:18:54] <domme> well, that would enable us to use es6 
+[22:19:06] <domme> but it doesnt help with all the other issues i'm trying to solve
+[22:19:46] <domme> like poor multifile support with attica.. like outdated tomahawk.js
+[22:23:47] <domme> even if it was not that, we would then need to ship babel.js
+[22:23:54] <domme> which would replace one issue with another
+[22:24:41] <domme> "was this feature in babel already in the version we ship with tomahawk 0.9? yes, no, maybe? wasn't there this bug in babel xyz in tomahawk 0.10?" 
+[22:35:35] *** Quits: justin_time (~stefan@2a02:908:f35d:4b00:4197:1879:7594:937) (Quit: Verlassend)
+[22:51:58] <tomabee_> @yurrriq mentioned: I'm very interested in (helping create) a @tomahawk app for iOS.
+[23:04:44] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[23:06:03] <tomabee_> @pansenmann mentioned: @yurrriq @tomahawk @jherskowitz Would love to chat, why don't you come to #tomahawk on Freenode? :) [<no value>]
+[23:39:09] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[23:50:19] <tomabee_> @yurrriq mentioned: @pansenmann @tomahawk @jherskowitz 👍 I'm about to eat a (very late) lunch at my desk and will sign on shortly. [<no value>]
+[23:50:28] *** Joins: galbie (~galbie@bduser-216-97.wlan.csufresno.edu)
+[23:51:50] *** Quits: galbie (~galbie@bduser-216-97.wlan.csufresno.edu) (Client Quit)
+[23:58:32] *** Joins: yurrriq (~yurrriq@174-20-89-200.mpls.qwest.net)
+[23:58:49] <yurrriq> Hey, this is @yurrriq from Twitter re: iOS app.

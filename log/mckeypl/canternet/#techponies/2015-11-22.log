@@ -1,0 +1,249 @@
+[00:01:54] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[00:10:44] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[00:14:43] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[00:14:52] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[00:15:20] *** zz_CyberJacob is now known as CyberJacob
+[00:17:14] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[00:34:43] <wolfyshy> Princess_AppleDash: help
+[00:34:52] <wolfyshy> Princess_AppleDash: I need an ASP construct in Python 3
+[00:35:06] <wolfyshy> I think I should just seppuku now and get it over with
+[00:35:25] <wolfyshy> the second I start saying "Classic ASP does what I want", that's the time to give up, go home, and never touch a computer again :/
+[00:35:27] *** GigaTown is now known as Gigabit
+[00:38:50] <wolfyshy> .... Python 3.4 added this functionality
+[00:39:14] <wolfyshy> I am now bewildered that "google on error resume next in python" actually returned something, AND excited that I'm not the only insane person in the world!
+[00:39:23] <wolfyshy> with suppress(ImportError)
+[00:40:08] * Moonlightning frowns.
+[00:40:09] <Moonlightning> What?
+[00:40:19] <Moonlightning> `suppress` isn't a builtin on my system (3.5)
+[00:40:26] <Moonlightning> and…what are you trying to do, eat all exceptions?
+[00:40:54] <Princess_AppleDash> wolfyshy: lol
+[00:40:56] <Princess_AppleDash> Nice
+[00:41:04] <Princess_AppleDash> On Error Resume Next is great
+[00:41:26] <Moonlightning> If you want the PHP|VisualBasic-like try-to-keep-going-no-matter-what-error-happens rather than the sane fail-fast behavior, check out fuckit.py
+[00:49:53] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[00:50:58] <wolfyshy> Moonlightning: I almost did use fuckit.py
+[00:51:58] <Sour_Sweet> Moonlightning: My php scripts useally do function() or die() :P
+[00:53:09] <wolfyshy> Moonlightning: from contextlib import suppress
+[00:55:06] <Moonlightning> wolfyshy: why ;-;
+[00:59:56] * Moonlightning prods Phase.
+[01:00:14] <Moonlightning> [15:54:55] < Moonlightning> Is there a way to get nginx to use the contents of a file to determine what kind of file it is (like `file` does), and serve Content-Type|Content-Encoding|etc headers accordingly?
+[01:00:14] <Moonlightning> [15:57:21] < vandemar> Moonlightning: not standard.  use proper file extensions so you don't have to worry about it.
+[01:00:15] <Phase> i don wana go to school
+[01:00:20] <Moonlightning> ““proper file extensions””
+[01:00:23] <Moonlightning> what the fuck is this bullshit
+[01:00:43] <wolfyshy> Moonlightning: it means 'what matches the mime type'
+[01:01:05] <Moonlightning> But why the fuck would you assume a file is of a certain type because of its NAME
+[01:01:09] <Moonlightning> names are arbitrary!
+[01:01:11] <Phase> it tends to be done by extension
+[01:01:20] <Phase> names should be arbitrary
+[01:01:22] <Moonlightning> :|
+[01:01:36] <Phase> there're not, but they should be
+[01:01:37] <wolfyshy> http://www.iana.org/assignments/media-types/media-types.xhtml
+[01:01:37] <PinkiePieBot> [ Media Types ]
+[01:01:46] <wolfyshy> extensions are registered with the IANA
+[01:01:54] <wolfyshy> nobody /cares/, but they are supposed to be
+[01:01:56] <Phase> huh, did not know that
+[01:02:12] <Sour_Sweet> ^+1
+[01:10:31] <Moonlightning> Phase: …has someone /really/ not already done this?
+[01:13:41] <Phase> no idea
+[01:15:18] <Moonlightning> I'm not finding anything x.x
+[01:21:43] <Phase> Moonlightning, use the perl or lua module + libmagic
+[01:32:54] *** PeakVolu1e is now known as PeakVolume
+[02:02:27] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[02:07:21] *** Joins: Asoka_White (Asoka@Pony-5nit9v.net-htp.de)
+[02:08:31] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[02:09:58] *** Quits: Asoka (Asoka@Pony-o1j8la.net-htp.de) (Ping timeout: 121 seconds)
+[02:14:35] *** Joins: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au)
+[02:14:51] *** Quits: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au) (Quit: My people need me!)
+[02:22:38] <Gladiolus> http://i.imgur.com/dmrFO2F.jpg
+[02:48:04] <Moonlightning> Phase: why one of those modules, rather than just C?
+[02:48:43] <Phase> Moonlightning, avoids messing around with out of tree modules
+[02:48:55] <Moonlightning> o.o ?
+[02:49:00] <Phase> no real difference really
+[02:54:08] *** Joins: Pony_87224 (Quindo@Pony-8qt.17k.198.99.IP)
+[02:59:59] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[03:20:39] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[03:33:25] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[03:34:26] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[03:46:28] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:48:42] <wolfyshy> ain't that some shit
+[03:49:40] <wolfyshy> opened http://www.aboutads.info/choices/ in Firefox with µblock - "113 companies were not checked; one company is targeting your browser for interest-based ads"
+[03:49:41] <PinkiePieBot> [ Opt Out From Online Behavioral Advertising By Participating Companies (BETA) ]
+[03:49:41] *** Sour_Sweet is now known as Seoson|BNC
+[03:50:07] <wolfyshy> opened same page in Chrome with µblock - 90 companies are targeting it for interest-based ads
+[03:50:11] <wolfyshy> hmm!
+[03:50:21] <wolfyshy> this is why I only use chrome for testing purposes.
+[03:50:48] *** CyberJacob is now known as zz_CyberJacob
+[03:50:51] <Moonlightning> o.o ?
+[03:58:51] <wolfyshy> chrome is actively a security disaster
+[03:59:15] <wolfyshy> excuse me
+[03:59:17] <wolfyshy> privacy disaster
+[03:59:42] <wolfyshy> not security.  internally it is written well enough that there aren't too many holes
+[04:00:05] <Moonlightning> >.<
+[04:00:38] <wolfyshy> I'm most impressed with Chrome's ability to not only apparently ignore µblock, but actually ignore /etc/hosts too
+[04:01:25] <Moonlightning> …
+[04:01:28] <Moonlightning> seriously?
+[04:01:53] <wolfyshy> well I use http://someonewhocares.org/hosts/
+[04:01:54] <PinkiePieBot> [ Using a Hosts File To Make The Internet Not Suck (as much) ]
+[04:02:49] <wolfyshy> hah
+[04:03:36] <wolfyshy> it checks DNS first
+[04:05:18] <wolfyshy> that's interesting, it seems to check hosts first on windows
+[04:09:07] <Stimpy> Nyu
+[04:12:45] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[04:14:21] * Moonlightning wants to know what's wrong with his ANAME idea. >.>
+[04:15:44] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[04:28:04] *** Gigabit is now known as Snoarin
+[04:31:59] * JustAberrant carefully Moonlightning 
+[04:34:38] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[04:54:46] <Stimpy> So, Straight Talk(or any Tracfone cell service providers), Verizon or T-Mobile?
+[04:54:57] <Stimpy> I need opinions
+[04:56:15] <Moonlightning> What country?
+[04:56:29] <Moonlightning> or, really…got Ting?
+[05:00:48] <Kinsley> Project Fi
+[05:01:00] <Kinsley> Because fuck Verizon.
+[05:01:27] <Kinsley> And Fi uses T-Mobile and Sprint for its mobile network.
+[05:03:09] <Stimpy> Fi?
+[05:03:30] <Kinsley> Google's wireless service?
+[05:03:43] <Stimpy> Is it prepaid?
+[05:07:10] <Kinsley> Pretty sure it is, yeah.
+[05:10:01] <Stimpy> And the SIM Card, is that free or does that cost extra?
+[05:10:15] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[05:11:10] <Kinsley> It's free, yes, but you need to have a Nexus 6, 5X or 6P.
+[05:11:24] <Kinsley> That's honestly the only downside is lack of device selection.
+[05:13:10] <Stimpy> Then I probably can't afford it. :/
+[05:24:37] <JustAberrant> device selection :)
+[05:27:36] <Gladiolus> SET BLASTER= A220 I5 D1 P330
+[05:27:52] * Gladiolus plays sum doom
+[05:38:45] <Stimpy> I just demo'd my stepfather's new Verizon prepaid phone. I want it now. :D
+[06:00:53] *** Joins: Muffin_Spectacles (dsrsuwmwdbc@Pony-14vpoi.cable.rcn.com)
+[06:29:11] *** Eventide is now known as Eventide|Sleepies
+[06:49:47] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[06:52:46] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[06:56:33] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[06:57:58] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[07:19:07] <Moonlightning> http://existentialcomics.com/comic/51
+[07:19:08] <PinkiePieBot> [ Philosophy Tech Support - Existential Comics ]
+[07:19:21] <Moonlightning> Who was it that introduced me to Existential Comics? x3
+[07:27:33] *** Joins: Phase4 (Phase4@Pony-mh3bcb.internode.on.net)
+[07:28:13] *** Quits: Phase (Phase4@Pony-f34100.internode.on.net) (Ping timeout: 121 seconds)
+[07:35:05] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[07:53:52] *** Pony_48423 is now known as Deathpony
+[07:53:58] *** Joins: lablayers (uid55894@Pony-r51rb6.ealing.irccloud.com)
+[07:56:38] *** Quits: Pony_87224 (Quindo@Pony-8qt.17k.198.99.IP) (Ping timeout: 121 seconds)
+[07:58:13] <tiwake> did freenode have a netsplit?
+[07:59:12] <tiwake> I guess it kind of always is
+[08:02:28] <tiwake> card.freenode.net
+[08:03:39] *** Quits: Crimson_Tail (Bluepon@Pony-fs9546.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[08:05:20] <tiwake> looks like card is having issues
+[08:18:09] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[08:19:04] <tiwake> Colgate: oh BTW canternet and ponychat are in hexchat's IRC server list
+[08:19:22] <tiwake> in their latest stable build
+[08:20:47] *** Quits: tiwake (Octavia@Pony-8vii98.or.charter.com) (Quit: ZNC - http://znc.in)
+[08:21:23] *** Joins: tiwake (Octavia@Pony-8vii98.or.charter.com)
+[08:32:40] <Kinsley> Neat
+[08:49:09] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[08:52:05] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:53:50] <Moonlightning> Awesome!! :D
+[09:04:06] <Gladiolus> They have been for a while for me- but the address is wrong
+[09:04:19] <Gladiolus> you have to reset it for it to work properly since it attaches a port that doesnt' work for me
+[09:11:36] *** zz_CyberJacob is now known as CyberJacob
+[09:16:31] <Moonlightning> …wat?
+[09:31:17] <Gladiolus> Hexchat! Try and connect to canternet using the default settings from the list, and it won't. For me anyway.
+[09:31:30] <Gladiolus> Because it has a port attached to the address. Remove that, and it connects on the default fine.
+[09:40:36] *** Parts: Muffin_Spectacles (dsrsuwmwdbc@Pony-14vpoi.cable.rcn.com) ()
+[09:42:31] <Colgate> tiwake: it is? Wonder who did the pull for canternet
+[09:42:50] <Gladiolus> It's been there for months at least, was there in june.
+[09:43:21] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[09:55:07] <Moonlightning> Ohhh.
+[09:55:09] <Moonlightning> What's the port?
+[10:09:11] *** Joins: Asoka (Asoka@Pony-5nit9v.net-htp.de)
+[10:09:16] *** Quits: Asoka (Asoka@Pony-5nit9v.net-htp.de) (Connection closed)
+[10:13:24] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:18:30] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[10:42:09] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[10:42:36] <Gladiolus> Using a piece of paper to act as a damper for a vibrating CD drive. I am a genius.
+[10:47:39] *** Quits: Phase4 (Phase4@Pony-mh3bcb.internode.on.net) (Ping timeout: 121 seconds)
+[11:30:00] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[11:49:21] *** Quits: Deathpony (IceChat9@Pony-1su.fmr.54.50.IP) (Ping timeout: 121 seconds)
+[11:51:20] *** Joins: Deathpony (IceChat9@Pony-1su.fmr.54.50.IP)
+[11:51:50] *** Deathpony is now known as Pony_14478
+[12:01:33] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[12:29:59] *** Quits: Creeps|AFK (RedHelper@The.Pony.That.Makes.You.Smile) (Ping timeout: 121 seconds)
+[12:29:59] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[12:30:19] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[12:31:10] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[12:31:40] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[12:31:40] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[12:33:21] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[12:35:16] <Lapsus> https://www.jitbit.com/alexblog/249-now-thats-what-i-call-a-hacker/
+[12:52:27] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[12:57:39] *** Snoarin is now known as GigaWork
+[12:59:08] *** Joins: Phase (Phase4@Pony-mh3bcb.internode.on.net)
+[13:05:18] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Connection closed)
+[13:05:31] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[13:07:46] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[13:27:33] *** Quits: Phase (Phase4@Pony-mh3bcb.internode.on.net) (Quit: Leaving)
+[13:57:33] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[14:06:07] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[14:28:15] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[15:57:34] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[16:01:30] *** Eventide|Sleepies is now known as Eventide
+[16:21:10] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[17:02:45] <Divide|TechSupport> Customer.  Customer, we did not break your computer.
+[17:10:58] <DJ-C0L7[EIT]> sounds like some of the calls i've gotten when i was working tech support
+[17:18:51] <Moonlightning> nWhat the hell
+[17:19:04] <Moonlightning> idlerpg pitted me against Jouva //four times in a row//
+[17:19:45] <Moonlightning> Colgate, if I write a //not broken// idlerpg, will you use it instead of the current thing?
+[17:24:24] <Lapsus> I'll give you a dollar if you make it so I win every battle I'm in
+[17:26:58] <tiwake> Colgate: yeah, its been there for a while probably, but I only recently noticed it. Donno who pushed it up.. by default it tries to connect via SSL
+[17:32:38] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Connection closed)
+[17:33:17] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[17:44:19] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[17:44:28] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[17:46:06] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[17:50:16] <Moonlightning> Lapsus: those SCRIPTS xD
+[18:01:31] *** Joins: Pony_87224 (Quindo@Pony-8qt.17k.198.99.IP)
+[18:05:46] *** Joins: Crimson_Tail (Bluepon@Pony-0pd4tb.cg80.k4gu.0151.2601.IP)
+[18:10:31] *** Quits: Pony_14478 (IceChat9@Pony-1su.fmr.54.50.IP) (Ping timeout: 121 seconds)
+[18:12:32] *** Joins: Deathpony (IceChat9@Pony-3q8.amt.54.50.IP)
+[18:13:01] *** Deathpony is now known as Pony_19340
+[18:37:51] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[19:01:12] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[19:24:54] *** Joins: Phase (Phase4@Pony-mh3bcb.internode.on.net)
+[19:33:15] *** Quits: Pony_19340 (IceChat9@Pony-3q8.amt.54.50.IP) (Ping timeout: 121 seconds)
+[19:35:07] *** Joins: Garophel (garophel@Pony-l364qj.ip-149-202-42.eu)
+[19:35:15] *** Joins: Deathpony (IceChat9@Pony-7a6.j2c.54.50.IP)
+[19:35:44] *** Deathpony is now known as Pony_20619
+[19:41:08] *** Seoson|BNC is now known as Sour_Sweet
+[19:42:54] *** Joins: Melanosuchus (quassel@Pony-iob3e2.as13285.net)
+[19:52:39] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[20:07:36] *** Joins: MistVeil (AndChat3408@Pony-hahd0r.static.axtel.net)
+[20:34:49] *** Quits: Phase (Phase4@Pony-mh3bcb.internode.on.net) (Ping timeout: 121 seconds)
+[21:04:06] *** Joins: WuBzY (androirc@Pony-uk8cbo.rev.dnainternet.fi)
+[21:17:05] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[21:20:09] *** GigaWork is now known as Gigabit
+[21:21:48] *** Joins: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au)
+[21:23:07] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "be back after a while")
+[21:45:15] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:03:56] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[22:11:22] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[22:26:31] <tiwake> https://wiki.archlinux.org/index.php/Bcache
+[22:26:33] <PinkiePieBot> [ Bcache - ArchWiki ]
+[22:28:05] <tiwake> any of you guys use it before?
+[22:28:45] *** Quits: Pony_20619 (IceChat9@Pony-7a6.j2c.54.50.IP) (Ping timeout: 121 seconds)
+[22:30:16] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[22:30:44] *** Joins: Deathpony (IceChat9@Pony-1g2.slo.54.50.IP)
+[22:31:13] *** Deathpony is now known as Pony_11150
+[22:31:52] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[22:48:35] *** Quits: MistVeil (AndChat3408@Pony-hahd0r.static.axtel.net) (Quit: Bye)
+[23:05:50] *** Quits: Pony_87224 (Quindo@Pony-8qt.17k.198.99.IP) (Ping timeout: 121 seconds)
+[23:35:04] *** CyberJacob is now known as zz_CyberJacob
+[23:40:28] *** Quits: Pony_11150 (IceChat9@Pony-1g2.slo.54.50.IP) (Connection closed)
+[23:43:22] *** Joins: Deathpony (IceChat9@Pony-6qe.aok.51.50.IP)
+[23:43:52] *** Deathpony is now known as Pony_19951
+[23:50:08] <Sour_Sweet> Finally I got that WeeChat relay working behind a reverse proxy
+[23:50:56] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[23:52:02] *** Gigabit is now known as Gigaway
+[23:53:30] *** Quits: Pony_19951 (IceChat9@Pony-6qe.aok.51.50.IP) (Ping timeout: 121 seconds)
+[23:55:30] *** Joins: Deathpony (IceChat9@Pony-hv4.flm.51.50.IP)
+[23:56:00] *** Deathpony is now known as Pony_30112

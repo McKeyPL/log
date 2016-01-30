@@ -1,0 +1,127 @@
+[00:02:44] <theli_ua> dommex: I'm pretty sure something is wrong
+[00:02:52] <dommex> cool
+[00:02:54] <dommex> about what? :P
+[00:03:07] <dommex> worked around it
+[00:03:17] <dommex> linked mkspecs and plugins dir to /usr/local :P
+[00:03:23] <theli_ua> dommex: you are welcome!
+[00:24:17] *** Quits: Karbowiak (~Karbowiak@ip979.alb335.cust.comxnet.dk) (Read error: Connection reset by peer)
+[00:26:04] *** Joins: Karbowiak (~Karbowiak@ip979.alb335.cust.comxnet.dk)
+[00:29:28] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[00:42:34] *** Quits: sampsyo (~sampsyo@jasmine.cs.washington.edu) (Ping timeout: 256 seconds)
+[00:46:17] <muesli> dommex: sounds weird
+[00:46:35] <dommex> muesli kinda solved it
+[00:46:50] <muesli> heh. i wouldn't call it solving ;)
+[00:46:51] <muesli> but yeah
+[00:47:41] <dommex> well.. it's a keg-only formula
+[00:48:05] <dommex> either i mess with CMAKE_PREFIX_PATH or i link it and make sure mkspecs and plugins are found
+[00:50:22] <muesli> did you try a simple: export PATH=/usr/local/Cellar/qt5/.../bin:$PATH ?
+[00:50:40] <dommex> ah, to make cmake find qmake
+[00:50:44] <dommex> nope
+[00:50:44] <muesli> yeah
+[00:50:48] <dommex> but would have been worth a try
+[00:50:48] <muesli> i think that would have solved it, too
+[00:50:58] <dommex> yeah, very well possible
+[00:50:59] <muesli> (without brew linking or ln)
+[00:51:14] <dommex> ah, avoiding the link is a good point
+[01:04:27] *** Quits: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com) (Read error: Connection reset by peer)
+[01:06:15] *** Joins: sampsyo (~sampsyo@jasmine.cs.washington.edu)
+[01:10:52] <dommex> Dec  7 15:45:16 74-80-249-47.ic2net.net iconutil[83441] <Error>: ImageIO: _CGImageDestinationCreateWithWriter capacity parameter (12) is too large for this file format (max is 10)
+[01:10:52] <dommex> /Users/admin/sources/tomahawk/build/src/tomahawk/tomahawkSources.iconset:error: Failed to generate ICNS.
+[01:10:52] <dommex> make[2]: *** [src/tomahawk/tomahawkSources.icns] Error 1
+[01:10:56] <dommex> wat?
+[01:12:57] *** Quits: TheOneRing (~quassel@amarok/developer/TheOneRing) (Read error: No route to host)
+[01:15:07] *** Joins: TheOneRing (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de)
+[01:15:07] *** Quits: TheOneRing (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de) (Changing host)
+[01:15:07] *** Joins: TheOneRing (~quassel@amarok/developer/TheOneRing)
+[01:32:30] *** Quits: dukedave (sid666@gateway/web/irccloud.com/x-zozygrubbprkkawr) (Read error: Connection reset by peer)
+[01:32:30] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-fjpzuukkogtczbss) (Remote host closed the connection)
+[01:32:30] *** Quits: alastairp (sid1249@gateway/web/irccloud.com/x-kyeewpgzfesolgnm) (Remote host closed the connection)
+[01:32:31] *** Quits: jefferai (sid1300@kde/mitchell) (Remote host closed the connection)
+[01:32:31] *** Quits: hatstand (sid2952@gateway/web/irccloud.com/x-onoiklvdznbzmvwl) (Remote host closed the connection)
+[01:36:13] *** Joins: dukedave (sid666@gateway/web/irccloud.com/x-sfjnavebifnyhuiv)
+[01:38:26] <muesli> dommex: wat indeed
+[01:38:54] *** Joins: alastairp (sid1249@gateway/web/irccloud.com/x-egjmgppdrbwugxpl)
+[01:41:04] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-eoyzpuxsiusvrsut)
+[01:42:43] *** Joins: jefferai (sid1300@kde/mitchell)
+[01:45:57] *** Joins: hatstand (sid2952@gateway/web/irccloud.com/x-zhqiydfxmpeqtban)
+[01:50:58] * dommex puts a big cereal logo on the sky
+[01:51:07] <dommex> muesli: need your helpz
+[01:51:18] <muesli> sup?
+[01:51:20] <dommex> https://www.irccloud.com/pastebin/eXA6iiVj/
+[01:51:24] <dommex> any idea on that?
+[01:52:02] <muesli> sounds like it's using a too old sdk
+[01:52:44] <dommex> ah yeah
+[01:52:48] <muesli> i think this particular feature came with 10.10
+[01:52:52] <dommex> yep
+[01:52:54] <muesli> but you should be able to use the 10.11 sdk just fine
+[01:52:54] <dommex> just checked
+[01:52:57] <dommex> https://developer.apple.com/library/mac//documentation/Cocoa/Reference/ApplicationKit/Classes/NSWindow_Class/index.html#//apple_ref/occ/instp/NSWindow/titleVisibility
+[01:53:02] <dommex> ah ok
+[01:53:07] <dommex> how would i get that tho?
+[01:53:22] <muesli> as long as you build on 10.9 or set the min sdk ver to 10.9, it should run on 10.9+
+[01:53:38] <muesli> from developer.apple.com
+[01:56:22] *** Quits: jamesaxl (~jamesaxl@41.249.87.253) (Remote host closed the connection)
+[01:58:25] <dommex> muesli: i'm logged in but clueless what file i am looking for
+[02:00:11] <muesli> sounds like you need to download it with xcode now
+[02:00:32] <dommex> guess what xcode doesnt work on 10.9 anymore ;-)
+[02:00:44] <muesli> .....
+[02:01:20] <muesli> dommex: In XCode select Project -> Target -> Build setting ->Architecture -> Base SDK and select OS X SDKs
+[02:01:22] <muesli> try that maybe
+[02:01:39] <muesli> er
+[02:01:44] <muesli> no, that's not what i meant
+[02:01:51] <muesli> but in the preferences there's downloads
+[02:01:54] <muesli> check that
+[02:04:35] *** Quits: eater (~eater@eoc.io) (Ping timeout: 246 seconds)
+[02:08:03] *** Joins: eater (~eater@2001:982:2402:1:2fe0:7e83:7d85:d823)
+[02:20:21] <dommex> Verifying xcode
+[02:20:22] <dommex> sigh
+[02:54:12] *** Joins: inette1 (~inette1@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[02:54:12] <inette1> Can anyone explain this chat for me?
+[02:54:13] <inette1> Is this only for dev or for any use?
+[02:56:37] <muesli> inette1: anyone can use it
+[04:08:26] *** Parts: inette1 (~inette1@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[05:26:32] *** Joins: mgue1 (~mgue@x590ef814.dyn.telefonica.de)
+[05:29:20] *** Quits: mgue (~mgue@x5ce44599.dyn.telefonica.de) (Ping timeout: 246 seconds)
+[06:59:46] *** Joins: Guest63 (~textual@3c-15-c2-e3-52-34.wlan.lsu.edu)
+[07:18:26] *** Quits: Guest63 (~textual@3c-15-c2-e3-52-34.wlan.lsu.edu) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[07:46:17] *** Joins: Guest63 (~textual@ip174-64-9-3.br.br.cox.net)
+[10:23:27] *** Joins: gioura (guest-giou@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[10:23:27] <gioura> links broken
+[10:23:27] <gioura> wheres the android app?
+[10:28:29] *** Parts: gioura (guest-giou@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[11:01:28] *** Joins: knicklux (~knicklux@176.2.64.223)
+[11:06:24] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:15:34] *** Quits: knicklux (~knicklux@176.2.64.223) (Remote host closed the connection)
+[11:44:37] *** Quits: Guest63 (~textual@ip174-64-9-3.br.br.cox.net) (Remote host closed the connection)
+[12:15:34] *** Joins: jamesaxl (~jamesaxl@41.249.87.253)
+[12:22:38] *** Quits: jamesaxl (~jamesaxl@41.249.87.253) (Ping timeout: 272 seconds)
+[12:31:25] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[14:16:57] *** Joins: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com)
+[14:31:55] <dommex> muesli ping
+[15:22:23] *** Joins: jamesaxl (~jamesaxl@41.249.87.253)
+[15:57:51] *** Joins: knicklux (~knicklux@openvpn-cl-200-80.scc.kit.edu)
+[16:02:46] *** Quits: eater (~eater@2001:982:2402:1:2fe0:7e83:7d85:d823) (Ping timeout: 240 seconds)
+[16:03:33] *** Joins: eater (~eater@2001:982:2402:1:2fe0:7e83:7d85:d823)
+[16:14:32] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[16:14:39] *** Quits: knicklux (~knicklux@openvpn-cl-200-80.scc.kit.edu) (Quit: Leaving)
+[16:39:55] *** Joins: knicklux_ (~knicklux@2a03:2260:a:b:3e07:54ff:fe4e:255)
+[17:57:46] *** Quits: knicklux_ (~knicklux@2a03:2260:a:b:3e07:54ff:fe4e:255) (Ping timeout: 240 seconds)
+[20:19:31] <dommex> 10:57:23 [1]: void AudioControls::onControlStateChanged() 
+[20:19:31] <dommex> 10:57:23 [0]: QObject::connect: Cannot connect QShortcut::activated() to (null)::setFocus()
+[20:26:01] *** Joins: knicklux_ (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3)
+[20:48:26] *** Quits: soee (~soee@u28n61.nowanet.pl) (Ping timeout: 256 seconds)
+[20:49:30] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[20:50:38] *** Quits: eater (~eater@2001:982:2402:1:2fe0:7e83:7d85:d823) (Remote host closed the connection)
+[20:50:52] *** Joins: eater (~eater@2001:982:2402:1:2fe0:7e83:7d85:d823)
+[21:06:03] *** Quits: eater (~eater@2001:982:2402:1:2fe0:7e83:7d85:d823) (Ping timeout: 250 seconds)
+[21:07:02] *** Joins: eater (~eater@2001:982:2402:1:2fe0:7e83:7d85:d823)
+[21:18:10] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Remote host closed the connection)
+[21:21:42] <theli_ua> one does not simply connect to null dommex
+[21:21:57] <dommex> exactly
+[21:32:25] *** Quits: knicklux_ (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3) (Quit: Leaving)
+[22:05:05] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Remote host closed the connection)
+[22:08:26] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[22:15:33] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[22:15:57] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Client Quit)
+[22:34:44] *** Joins: jamesaxl_ (~jamesaxl@41.140.206.52)
+[22:38:22] *** Quits: jamesaxl (~jamesaxl@41.249.87.253) (Ping timeout: 256 seconds)

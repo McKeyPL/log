@@ -1,0 +1,100 @@
+[04:58:48] *** Quits: mgue (~mgue@x55b7ed09.dyn.telefonica.de) (Quit: WeeChat 1.3)
+[05:10:00] *** Joins: mgue (~mgue@f048191176.adsl.alicedsl.de)
+[05:59:32] *** Quits: mgue (~mgue@f048191176.adsl.alicedsl.de) (Read error: Connection reset by peer)
+[06:00:04] *** Joins: mgue (~mgue@x5ce2f88c.dyn.telefonica.de)
+[08:59:10] *** Quits: jackfagner (~jackfagne@n173p011.netcamp.se) (Quit: Lämnar)
+[10:34:58] *** Joins: knicklux (~knicklux@2a00:1398:200:202:76da:38ff:fe1f:4763)
+[10:41:13] *** Quits: knicklux (~knicklux@2a00:1398:200:202:76da:38ff:fe1f:4763) (Remote host closed the connection)
+[11:10:56] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:29:45] *** Joins: knicklux (~knicklux@2a00:1398:200:202:76da:38ff:fe1f:4763)
+[11:56:32] *** Joins: knicklux_ (~knicklux@2a00:1398:200:202:76da:38ff:fe1f:4763)
+[11:56:33] *** Joins: knicklux__ (~knicklux@2a00:1398:200:202:76da:38ff:fe1f:4763)
+[11:56:38] *** Quits: knicklux_ (~knicklux@2a00:1398:200:202:76da:38ff:fe1f:4763) (Remote host closed the connection)
+[11:57:11] *** Quits: knicklux (~knicklux@2a00:1398:200:202:76da:38ff:fe1f:4763) (Ping timeout: 264 seconds)
+[12:01:16] *** Quits: knicklux__ (~knicklux@2a00:1398:200:202:76da:38ff:fe1f:4763) (Client Quit)
+[12:33:14] *** Joins: HorusHorrendus (~horrendus@e247-182.eduroam.tuwien.ac.at)
+[13:09:14] *** Quits: 64MAAUVAO (scrollback@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) (Remote host closed the connection)
+[13:19:15] *** Quits: rotzbouw (~thierry@HSI-KBW-046-005-083-083.hsi8.kabel-badenwuerttemberg.de) (Ping timeout: 245 seconds)
+[15:06:02] *** Quits: HorusHorrendus (~horrendus@e247-182.eduroam.tuwien.ac.at) (Remote host closed the connection)
+[15:14:52] *** Joins: jturney (~jon@host86-179-113-236.range86-179.btcentralplus.com)
+[15:20:29] <jherskowitz> theli_ua: does the YT resolver support drag/drop of YT playlists?
+[15:38:40] <dommex> jherskowitz: right now dragndrop is b0rked anyway :C
+[15:38:53] <dommex> i got a PR fixing it, but it's still wip
+[15:38:58] <dommex> jturney: ping
+[15:39:49] <jturney> dommex: pong
+[15:41:07] <dommex> jturney: i'm reinstalling our windows crash reports right now and i'm seeing mangled symbol names, any ideas what could be up?
+[15:41:16] <jturney> mangled?
+[15:41:36] <dommex> jturney: 10  libtomahawk.dll!_ZN8Tomahawk10JSResolverC2ERK7QStringS3_RK11QStringList + 0x461
+[15:41:41] <dommex> something like this
+[15:42:02] <jturney> hmmm
+[15:42:18] <jturney> and you think that should be unmangled?
+[15:42:34] <dommex> yeah, i dont see line numbers or filename either
+[15:43:21] <dommex> hold on
+[15:43:31] <jturney> does the .sym file have the symbol data in it?
+[15:43:38] <jturney> for that symbol
+[15:46:11] <dommex> jturney nope.. mhh.. wondering if maybe the dump-syms tool needs updating after the update to gcc5
+[15:46:29] <jturney> possibly
+[15:47:39] <jturney> hmm... I'm trying to think what would be doing the unmangling
+[15:49:17] <dommex> jturney: huuuuh. do you think ... maybe it could be a runtime thing in dump_syms? depending on the native binutils or something like that?
+[15:49:35] <jturney> I don't think so
+[15:49:45] <jturney> It gets all the data from the dwarf sections
+[15:50:05] <dommex> jturney: because on my home machine it works, but the files generated on our server (running suse enterprise linux) seem to be b0rked
+[15:50:14] <jturney> or should do
+[15:50:21] <jturney> the .sym files are borked?
+[15:50:31] <dommex> i mean, yeah.. they lack the interesting data :)
+[15:50:47] <jturney> are you sure you are using the right dump_syms?
+[15:51:17] <dommex> pretty much, at least i'm using the same revision. i packaged it in a distribution package
+[15:51:45] <jturney> but a different gcc?
+[15:51:45] <dommex> but yeah, let me update everything once more and see if there's some inconsistency somewhere
+[15:55:54] <dommex> jturney: uh oh. probably my bad. ran the deployment script several times on the same build dir .. and probably overrode the proper dumps with dumps of stripped binaries
+[15:56:06] <jturney> yeah, that makes sense
+[15:56:13] <dommex> sorry for the noise
+[15:56:26] <dommex> fixing deployment scripts is so annoying and time consuming :C
+[15:56:33] <jturney> if the binary is stripped, the .sym will just contain information about the exports, because that's all the information it can get
+[15:56:41] <dommex> yup
+[15:56:54] <jturney> np
+[16:03:46] *** Joins: github-tomahawk (~github-to@192.30.252.40)
+[16:03:46] <github-tomahawk> [13tomahawk] 15dschmidt pushed 2 new commits to 06master: 02https://git.io/vzima
+[16:03:46] <github-tomahawk> 13tomahawk/06master 147fd306c 15Dominik Schmidt: Don't use processEvents and still don't block ui for loading a script collection
+[16:03:46] <github-tomahawk> 13tomahawk/06master 141710813 15Dominik Schmidt: Correct indentation in NSIS.template.in
+[16:03:46] *** Parts: github-tomahawk (~github-to@192.30.252.40) ()
+[16:16:37] <dommex> oh, didnt intend to push the former commit.. but should be fine for now
+[16:20:48] <theli_ua> jherskowitz: I have no idea. In any case dropping URLs is not working in current master
+[16:21:21] <jherskowitz> dommex: theli_ua huhâ€¦ I could have sworn dropping was working for me.
+[16:22:19] <theli_ua> 6:38 AM <dommex> jherskowitz: right now dragndrop is b0rked anyway :C
+[16:22:34] <jherskowitz> yeah, thought it was working for me
+[16:22:38] <jherskowitz> maybe enot
+[16:22:47] <theli_ua> It was, then it got broken
+[16:23:07] <dommex> and it's all my fault :P
+[16:26:57] <jherskowitz> heh, ok
+[16:27:14] <jherskowitz> broken in 0.8.4 and master?
+[16:27:16] <jherskowitz> or just master?
+[16:38:03] *** Joins: rotzbouw (~thierry@HSI-KBW-046-005-083-083.hsi8.kabel-badenwuerttemberg.de)
+[16:58:49] *** Joins: opeorn1 (~opeorn1@52.11.63.83)
+[16:58:50] <opeorn1> hello?
+[16:59:07] <muesli> hello
+[16:59:33] <opeorn1> how this works?
+[16:59:51] <muesli> this is a chat room
+[17:00:32] *** Parts: opeorn1 (~opeorn1@52.11.63.83) ()
+[17:00:37] <muesli> oh lol
+[17:07:47] <dommex> jherskowitz: master
+[17:46:53] *** Quits: michiwend (~quassel@michiwend.com) (Remote host closed the connection)
+[17:49:21] *** Joins: michiwend (~quassel@michiwend.com)
+[19:31:35] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Remote host closed the connection)
+[19:51:22] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[20:00:45] *** Joins: bencevans (uid22936@gateway/web/irccloud.com/x-nkccpllzskdegxwl)
+[20:33:43] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[21:04:57] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[21:15:38] *** Quits: lfranchi (~quassel@kde/lfranchi) (Ping timeout: 250 seconds)
+[21:20:14] *** Joins: lfranchi (~quassel@lfranchi.xen.prgmr.com)
+[21:20:14] *** Quits: lfranchi (~quassel@lfranchi.xen.prgmr.com) (Changing host)
+[21:20:14] *** Joins: lfranchi (~quassel@kde/lfranchi)
+[21:20:14] *** ChanServ sets mode: +o lfranchi
+[22:03:10] *** Joins: jamesaxl (~jamesaxl@adsl196-210-20-217-196.adsl196-9.iam.net.ma)
+[22:08:26] *** Quits: jamesaxl (~jamesaxl@adsl196-210-20-217-196.adsl196-9.iam.net.ma) (Ping timeout: 250 seconds)
+[22:10:59] *** Joins: jamesaxl (~jamesaxl@adsl196-210-20-217-196.adsl196-9.iam.net.ma)
+[22:20:46] *** Quits: bencevans (uid22936@gateway/web/irccloud.com/x-nkccpllzskdegxwl) (Quit: Connection closed for inactivity)
+[22:26:21] *** Quits: jamesaxl (~jamesaxl@adsl196-210-20-217-196.adsl196-9.iam.net.ma) (Remote host closed the connection)
+[23:56:50] *** Quits: soee (~soee@u28n61.nowanet.pl) (Remote host closed the connection)
+[23:58:29] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[23:59:34] *** Quits: grindhold (~quassel@c035.cyan.servdiscount-customer.com) (Read error: Connection reset by peer)

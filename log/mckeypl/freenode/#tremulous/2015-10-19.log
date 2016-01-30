@@ -1,0 +1,121 @@
+[01:06:58] *** Quits: Undeference (~msk@2001:470:1f07:1427:d045:c338:7412:ce84) (Ping timeout: 240 seconds)
+[01:21:30] *** Joins: Undeference (~msk@2001:470:1f07:1427:4d42:3d93:aa16:aeaf)
+[01:35:22] <scv>  
+[01:59:52] *** Joins: amorris (~amorris@14-202-76-73.static.tpgi.com.au)
+[01:59:59] <amorris> Hello. I have made a map using NetRadiant (Just a test one) to use in Tremulous but it exports as map file. How do I change the .map file to .bsp I am using Mac so I need a compiler compatible with Mac
+[02:37:40] *** Quits: amorris (~amorris@14-202-76-73.static.tpgi.com.au) (Quit: amorris)
+[02:39:07] *** Quits: dGr8LookinSparky (~dGr8Looki@unaffiliated/dgr8lookinsparky) (Ping timeout: 265 seconds)
+[02:51:57] *** Joins: dGr8LookinSparky (~dGr8Looki@unaffiliated/dgr8lookinsparky)
+[03:11:26] *** Quits: dGr8LookinSparky (~dGr8Looki@unaffiliated/dgr8lookinsparky) (Ping timeout: 240 seconds)
+[03:16:19] *** Joins: amorris (~amorris@14-202-76-73.static.tpgi.com.au)
+[03:17:08] <amorris> I have a map built for Tremulous and it is in .bsp format but I don’t know which folder to put the file in so I can open it up on Tremulous. Can anyone help me?
+[03:17:24] <`Ishq> In your fs_homepath
+[03:17:33] <`Ishq> Create a maps/ directory
+[03:17:40] <`Ishq> PUt your .bsp in there
+[03:17:49] <`Ishq> Put your assets in your fs_homepath too
+[03:17:58] <amorris> I am using mac
+[03:18:01] <`Ishq> Thn start tremulous and start the map with /devmap <namename>
+[03:18:13] <`Ishq> fs_homepath = ~/Library/Application Support/Tremulous
+[03:18:50] <amorris> What do I put in assets
+[03:20:06] <`Ishq> Assets = your textures/models/skyboxes
+[03:20:45] <`Ishq> You can alternatively make a pk3
+[03:21:00] <amorris> When I try and open it, it says Can’t find map maps/tutorial.bsp
+[03:23:54] <amorris> Ok I fixed that problem now it loads but doesnt join the game and says “
+[03:24:10] <amorris> “RE_LoadWorldMap: maps/tutorial.bsp not found”
+[03:24:51] *** Joins: dGr8LookinSparky (~dGr8Looki@unaffiliated/dgr8lookinsparky)
+[03:26:14] <`Ishq> That means the file doesn't exist.
+[03:26:24] <`Ishq> Start trem
+[03:26:28] <`Ishq> and type fs_basepath
+[03:26:34] <`Ishq> And then put your tutoral.bsp here
+[03:26:36] <`Ishq> *there
+[03:26:45] <`Ishq> I mean
+[03:26:49] <`Ishq> fs_homepath in console
+[03:27:01] <`Ishq> That will print out the location of fs_homepath for you
+[03:35:59] *** Quits: Undeference (~msk@2001:470:1f07:1427:4d42:3d93:aa16:aeaf) (Ping timeout: 240 seconds)
+[03:36:33] <amorris> still says “RE_LoadWorldMap: maps/tutorial.bsp not found”
+[03:39:43] <amorris> Aha i found the problem. I had sv_pure set to 1
+[03:39:49] <amorris> Thanks for your help
+[03:39:51] *** Quits: amorris (~amorris@14-202-76-73.static.tpgi.com.au) (Quit: amorris)
+[03:50:56] *** Joins: Undeference (~msk@2001:470:1f07:1427:d045:c338:7412:ce84)
+[06:04:00] *** Quits: Stannum (~Robotroni@82-197-195-74.dsl.cambrium.nl) ()
+[06:10:27] *** Quits: StalKermit (~StalKermi@unaffiliated/stalkermit) (Read error: Connection reset by peer)
+[06:21:19] *** Quits: Who-[Soup] (~soup@p57A51FC0.dip0.t-ipconnect.de) (Ping timeout: 250 seconds)
+[06:25:30] *** Joins: Who-[Soup] (~soup@p57A51703.dip0.t-ipconnect.de)
+[06:27:33] *** Joins: adammorris (~amorris@14-202-76-73.static.tpgi.com.au)
+[06:27:38] <adammorris> Hi I have have a map that is in the .bsp file format but I have accidentally deleted the .map file that I need to edit it. Is there a way I can convert the .bsp to .map on mac?
+[06:28:51] <`Ishq> It is possible but the results aren't pretty.
+[06:29:25] <adammorris> So i have to remake it?
+[06:29:37] <`Ishq> Well you can see how it looks when you convert it.
+[06:29:46] <`Ishq> And if it sucks, you'll have to remake it unfortunately.
+[06:29:47] <adammorris> Ok
+[06:29:53] <`Ishq> Alternatively, you can try to undelete your map file.
+[06:30:10] <adammorris> It’s only a box so it wasn’t hard to make
+[06:30:12] <`Ishq> There are some undelete utilities available for free. Not sure about mac but I've used them for WIndows and Linux before.
+[06:30:22] <dibblego> adammorris: I have told you to use git.
+[06:30:35] <`Ishq> For the record
+[06:30:47] <`Ishq> q3map2 -convert -format map path/to/bsp, I believe.
+[07:08:58] *** Quits: Ingar (~ingar@94-224-85-244.access.telenet.be) (Ping timeout: 240 seconds)
+[07:10:49] *** Joins: Ingar (~ingar@94-224-85-244.access.telenet.be)
+[07:13:27] *** Quits: adammorris (~amorris@14-202-76-73.static.tpgi.com.au) (Quit: adammorris)
+[07:25:34] *** Joins: ZdrytchX (~zdrytchx@27-33-98-203.static.tpgi.com.au)
+[08:53:46] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[09:08:51] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Quit: Leaving)
+[09:12:27] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[09:29:42] *** Joins: McKey (~McK@irc.antyklay.pl)
+[09:29:43] *** Server sets mode: +Ccnt 
+[09:46:22] *** Joins: amorris (~amorris@14-202-76-73.static.tpgi.com.au)
+[09:47:39] <amorris> I would like to import textures into NetRadiant to use for a Tremulous map but I don’t know how to. I am using NetRadiant on a Mac so which folder do I put the textures into?
+[09:58:35] *** Quits: amorris (~amorris@14-202-76-73.static.tpgi.com.au) (Quit: amorris)
+[10:18:07] *** Joins: amorris (~amorris@14-202-76-73.static.tpgi.com.au)
+[10:19:13] <amorris> Hi I am using NetRadiant for Mac to map a Tremulous map but I have found that it doesn’t have all of the common textures (e.g. trigger, caulk, etc.). I have the file for all of the textures but have no idea where to put it. Can anyone help me?
+[10:21:00] <amorris> Wait no need to answer. I have soent an hour trying to solve it and I just did a simple file move and it solved it….
+[10:21:06] *** Quits: amorris (~amorris@14-202-76-73.static.tpgi.com.au) (Client Quit)
+[10:21:19] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Ping timeout: 260 seconds)
+[10:31:57] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[12:29:32] *** Quits: Undeference (~msk@2001:470:1f07:1427:d045:c338:7412:ce84) (Quit: Leaving.)
+[12:31:40] *** Quits: illwieckz (~illwieckz@unvanquished/developer/illwieckz) (Quit: Ça va couper chérie…)
+[12:47:53] *** Joins: DeathSkull (~DS@cpe-184-59-135-174.neo.res.rr.com)
+[13:30:50] *** Quits: DeathSkull (~DS@cpe-184-59-135-174.neo.res.rr.com) (Ping timeout: 240 seconds)
+[13:35:59] *** Quits: Forty-3 (~kvirc@pool-71-191-219-16.washdc.fios.verizon.net) (Ping timeout: 240 seconds)
+[13:51:38] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Quit: Leaving)
+[14:34:26] *** Joins: illwieckz (~illwieckz@AToulon-256-1-158-212.w83-113.abo.wanadoo.fr)
+[14:34:26] *** Quits: illwieckz (~illwieckz@AToulon-256-1-158-212.w83-113.abo.wanadoo.fr) (Changing host)
+[14:34:26] *** Joins: illwieckz (~illwieckz@unvanquished/developer/illwieckz)
+[14:34:27] *** Quits: illwieckz (~illwieckz@unvanquished/developer/illwieckz) (Read error: Connection reset by peer)
+[14:36:24] *** Joins: illwieckz (~illwieckz@unvanquished/developer/illwieckz)
+[14:36:50] *** Quits: illwieckz (~illwieckz@unvanquished/developer/illwieckz) (Remote host closed the connection)
+[14:38:27] *** Joins: illwieckz (~illwieckz@unvanquished/developer/illwieckz)
+[14:38:56] *** Quits: illwieckz (~illwieckz@unvanquished/developer/illwieckz) (Remote host closed the connection)
+[14:39:03] *** Joins: illwieckz (~illwieckz@AToulon-256-1-158-212.w83-113.abo.wanadoo.fr)
+[14:39:03] *** Quits: illwieckz (~illwieckz@AToulon-256-1-158-212.w83-113.abo.wanadoo.fr) (Changing host)
+[14:39:03] *** Joins: illwieckz (~illwieckz@unvanquished/developer/illwieckz)
+[15:41:49] *** Joins: Stannum (~Robotroni@82-197-195-74.dsl.cambrium.nl)
+[16:23:04] *** Joins: StalKermit (~StalKermi@unaffiliated/stalkermit)
+[17:08:30] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[17:53:23] *** Quits: ZdrytchX (~zdrytchx@27-33-98-203.static.tpgi.com.au) (Quit: 404 IIRC, IRC NOT FOUND)
+[18:27:41] *** Joins: kyberkits (gynter@kits.ee)
+[18:28:27] *** gynter is now known as Guest49618
+[18:28:45] *** kyberkits is now known as gynter
+[18:29:00] *** Quits: Viech (~Viech@unvanquished/developer/viech) (Ping timeout: 264 seconds)
+[18:29:01] *** Quits: Timbo (~tma@tremulous/developer/timbo) (Ping timeout: 264 seconds)
+[18:29:01] *** Quits: Guest49618 (gynter@kits.ee) (Ping timeout: 264 seconds)
+[18:29:36] *** Quits: Pevel (pevel@unvanquished/developer/pevel) (Ping timeout: 264 seconds)
+[18:29:37] *** Quits: Rezyn (~Rezyn@pool-100-14-84-147.phlapa.fios.verizon.net) (Ping timeout: 264 seconds)
+[18:30:19] *** Joins: Timbo (~tma@cpc5-sgyl28-2-0-cust125.sgyl.cable.virginm.net)
+[18:34:40] *** Joins: DeathSkull (~DS@cpe-184-59-135-174.neo.res.rr.com)
+[18:35:37] *** Joins: Viech (~Viech@v220120913958924899.yourvserver.net)
+[18:35:37] *** Quits: Viech (~Viech@v220120913958924899.yourvserver.net) (Changing host)
+[18:35:37] *** Joins: Viech (~Viech@unvanquished/developer/viech)
+[18:37:12] *** Quits: DeathSkull (~DS@cpe-184-59-135-174.neo.res.rr.com) (Changing host)
+[18:37:12] *** Joins: DeathSkull (~DS@unaffiliated/deathskull)
+[18:42:05] *** Joins: Pevel (pevel@unvanquished/developer/pevel)
+[18:42:19] *** Joins: Rezyn (~Rezyn@pool-100-14-84-147.phlapa.fios.verizon.net)
+[20:05:13] *** Quits: illwieckz (~illwieckz@unvanquished/developer/illwieckz) (Quit: Ça va couper chérie…)
+[20:36:33] *** Joins: shhx (~shhx@80.64.134.37.dynamic.jazztel.es)
+[21:15:02] *** Joins: illwieckz (~illwieckz@unvanquished/developer/illwieckz)
+[22:16:02] *** Quits: shhx (~shhx@80.64.134.37.dynamic.jazztel.es) (Ping timeout: 265 seconds)
+[22:28:37] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Quit: Leaving)
+[23:07:02] *** Joins: shhx (~shhx@80.64.134.37.dynamic.jazztel.es)
+[23:25:34] *** Joins: Norfenstein (~Norfenste@tremulous/developer/Norfenstein)
+[23:25:34] *** ChanServ sets mode: +o Norfenstein
+[23:39:57] *** Joins: Undeference (~msk@2001:470:1f07:1427:209e:cf7:2f28:ac26)

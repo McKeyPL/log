@@ -1,0 +1,709 @@
+[00:01:01] <Sour_Sweet> Reconfiguring all DNS records by hand is a pain. God I wish I had zonefile dumps -.-
+[00:06:52] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Connection closed)
+[00:28:34] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:40:17] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[00:53:38] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[00:57:38] *** CyberJacob is now known as zz_CyberJacob
+[01:17:46] *** Joins: Valiant (uid110916@Pony-qjfks9.brockwell.irccloud.com)
+[01:43:54] *** init3 is now known as Init3-away
+[01:47:10] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[01:50:57] *** Quits: Lapsus (Lapsus@i-forget.ca) (Connection closed)
+[02:19:11] *** Joins: CrassyPaddles (test@Pony-7s4.enl.137.198.IP)
+[02:55:09] *** Joins: Asoka_White (Asoka@Pony-la06gg.net-htp.de)
+[02:58:21] *** Quits: Asoka (Asoka@Pony-hchu7m.net-htp.de) (Ping timeout: 121 seconds)
+[03:02:50] <tiwake> Moonlightning: yeah, I've read that BTRFS is easier on the processor requirements
+[03:03:02] <tiwake> wait
+[03:03:04] <Moonlightning> Huh?
+[03:03:07] *** Sour_Sweet is now known as Seoson|BNC
+[03:03:08] <tiwake> ZSH, not ZFS
+[03:03:27] <Moonlightning> :?
+[03:07:21] <tiwake> Moonlightning: but yeah, I think BTRFS is ready if you use a newer kernel
+[03:08:30] <Moonlightning> tiwake: yeah…I'm just a little wary about using it for a /backup volume/.
+[03:08:34] <Googie> Depends on what you are trying to do. Some parts are better tested than others
+[03:08:39] <tiwake> enh
+[03:09:11] <tiwake> Googie: and yeah, should have said "certain parts" or maybe "the parts that most people would use"
+[03:10:22] <tiwake> same thing could be said about ZFS too though
+[03:10:24] <Moonlightning> Well, basically the only thing I'll be using is snapshots
+[03:10:24] <tiwake> there are probably certain parts of ZFS that you don't want to use XD
+[03:10:24] <tiwake> because of stability
+[03:10:24] <Googie> Well, I consider the filesystem's RAID5/6 support something commonly used
+[03:10:35] <tiwake> yeah
+[03:10:50] <tiwake> RAID support in BTRFS has been around for a while
+[03:11:13] <Googie> But 5/6 (technically not RAID, but same idea) is officially unstable
+[03:14:25] *** Quits: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se) (Quit: Leaving.)
+[03:45:30] *** Joins: derpy (derp@muffins)
+[03:46:07] *** Quits: Valiant (uid110916@Pony-qjfks9.brockwell.irccloud.com) (Quit: Connection closed for inactivity)
+[03:48:02] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:52:55] *** Quits: aji (alex@ajitek.net) (Connection closed)
+[03:53:43] *** Joins: aji (alex@ajitek.net)
+[03:53:43] *** AutoLapsus sets mode: +o aji
+[03:59:13] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[04:17:29] <Moonlightning> Yeah, I'm not gonna be using RAID
+[04:17:34] <Moonlightning> well, beyond JBOD
+[05:10:27] *** Joins: MistVeil (AndChat3408@Pony-prm9c8.static.axtel.net)
+[05:18:16] <SilverEagle> hi techpones
+[05:38:26] <Moonlightning> Hai SilverEagle
+[05:38:35] <SilverEagle> hey :)
+[05:38:37] <SilverEagle> what's up?
+[05:38:49] <Moonlightning> Not much. x3
+[05:38:51] <Moonlightning> How're you?
+[05:39:22] <SilverEagle> I'm alright
+[05:39:30] <SilverEagle> beating myself up for procrastinating on stuff so much
+[05:39:36] <SilverEagle> and now scrambling to get crap done
+[05:39:45] <SilverEagle> out of a sheer fear that I'll get nothing done ever
+[05:39:49] <Moonlightning> x.x
+[05:41:23] <SilverEagle> you?
+[05:41:25] <SilverEagle> =)
+[05:45:31] <Moonlightning> Like I said, not much. Was playing Battleblock Theater.
+[05:45:45] <Moonlightning> Currently trying to set up Steam on my secondary laptop
+[05:46:03] <SilverEagle> heh no you asked me how I am
+[05:46:07] <SilverEagle> so I was asking how you are
+[05:46:20] <SilverEagle> but I see
+[05:46:28] <SilverEagle> Steam's easy to set up though :3
+[05:46:51] <Moonlightning> Slightly annoying on Linux though
+[05:46:56] <Dusk> heya eggie
+[05:47:01] <SilverEagle> duskie <3
+[05:47:02] <Dusk> Moonlightning: how's that upload going?
+[05:47:08] <Dusk> eggie~ <3
+[05:47:42] <Moonlightning> Dusk: ~2.8/6.2 GiB
+[05:47:50] <Dusk> \o/
+[05:47:58] <Dusk> only a few days to go :p
+[05:48:01] <SilverEagle> whatcha uploading lol
+[05:48:05] <Moonlightning> There's going to be some more in the days to come
+[05:48:14] <Dusk> he's uploading a backup to my home server
+[05:48:17] <Moonlightning> because I'm right now rebuilding a ton of packages because Steam
+[05:48:21] <Dusk> ah
+[05:48:35] <Dusk> SilverEagle: 80KB/s
+[05:48:41] <Dusk> it's fantastic
+[05:48:53] <Moonlightning> More like 20 KiB/s, according to rsync
+[05:49:07] <Dusk> ah
+[05:49:09] <Moonlightning> I have no idea how I'm going to manage doing the backups from my primary laptop
+[05:49:18] <Dusk> I suppose I am doing other stuff
+[05:49:23] <Dusk> /shrug
+[05:49:36] <Moonlightning> I guess I can just let the initial be inconsistent :P
+[05:49:37] <SilverEagle> ohh like crashplan?
+[05:49:41] <SilverEagle> offsite backups?
+[05:49:53] <Moonlightning> No, not like crashplan. :P
+[05:49:55] <SilverEagle> I've never used the "back up to a friend" feature
+[05:50:30] <Dusk> it's an offsite backup because he's a friend and I happen to have a spare drive for him feature :p
+[05:50:35] <Moonlightning> ^
+[05:50:37] <SilverEagle> lol
+[05:50:43] <SilverEagle> crashplan is free for that though
+[05:50:47] <SilverEagle> but okay okay
+[05:51:11] <Moonlightning> This is also free, and it doesn't involve installing software.
+[05:53:40] <Colgate> what is crashplan?
+[05:54:01] <Dusk> a backup program for facilitating offsite backups to online or other PCs
+[05:54:05] <Colgate> I thought you meant it as having a crash plan, but this sounds like something else
+[05:54:16] <SilverEagle> no Crashplan is a piece of software, highly recommended one actually
+[05:54:35] <SilverEagle> that automates encrypted and compressed backups to local drives, other local remote computers, computers of friends, or to their paid backup service
+[05:54:37] <Dusk> https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CB4QFjAAahUKEwiL2KuPysPIAhUEz4AKHVZ6DK4&url=http%3A%2F%2Fwww.code42.com%2Fcrashplan%2F&usg=AFQjCNFyqPla84nM7Xmta8cfOmlgLkmQiA&sig2=86d69tGpQsLstTHeB9Hgwg
+[05:54:41] <Dusk> oh ugh
+[05:54:43] <SilverEagle> it's damn nifty and holy crap dusk
+[05:54:48] <Dusk> sorry
+[05:54:48] <SilverEagle> you googled that URL
+[05:54:52] <Dusk> I did
+[05:54:54] <SilverEagle> so hard
+[05:54:55] <Dusk> and it like
+[05:55:01] <Dusk> didn't give me any room to breathe :p
+[05:55:16] <SilverEagle> (disclaimer: I don't work for Crashplan and they don't pay me, I pay them, it's just the shiznit)
+[05:55:40] <Moonlightning> This is DIY offsite backups :P
+[05:55:45] <Dusk> SilverEagle: I lost my 3TB with all of my stuff :(
+[05:56:04] <SilverEagle> yeah I went hunting for a solid backup service that automated stuff after I lost a 4TB drive
+[05:56:08] <SilverEagle> that was a painful loss
+[05:56:09] <Colgate> 448bit encryption, uh, that's a bit odd
+[05:56:13] <Dusk> The drive's controller is dead
+[05:56:19] <Dusk> I need to see if I can find another
+[05:56:25] <SilverEagle> Colgate 448 bits oughtta be enough for anyone~
+[05:56:38] <Colgate> I'm still looking for a cipher
+[05:56:44] <Colgate> :P
+[05:57:29] <Colgate> 448 bits of what?
+[05:58:08] <SilverEagle> Blowfish
+[05:58:21] <Colgate> got a link to where it says that?
+[05:58:33] <Colgate> also which version of blowfish?
+[05:58:34] <SilverEagle> https://www.grc.com/sn/sn-230.htm
+[05:58:35] <PinkiePieBot> [ Security Now! Transcript of Episode #230 ]
+[05:58:41] <Moonlightning> uh
+[05:58:43] <SilverEagle> when they discuss Crashplan
+[05:58:44] <Moonlightning> that's…not official.
+[05:58:49] <Googie> That... that guy is uhhh...
+[05:58:50] <Colgate> I want it from their site
+[05:58:50] <SilverEagle> kid you not
+[05:58:55] <SilverEagle> that's linked FROM THE CRASHPLAN SITE
+[05:59:02] <SilverEagle> for people curious about more info about the cipher used
+[05:59:05] <Moonlightning> Then why is the domain grc.com.? :V
+[05:59:13] <SilverEagle> because that's how links work Moonlightning 
+[05:59:15] <SilverEagle> links can go anywhere
+[05:59:16] <Moonlightning> That's hella sketch.
+[05:59:18] <SilverEagle> the web is a magical place.
+[05:59:22] <Googie> The guy behind that podcast is basically a fraud as well.
+[05:59:28] <SilverEagle> Leo Laporte?!
+[05:59:28] <Moonlightning> O.o
+[05:59:30] <Moonlightning> really?
+[05:59:38] <SilverEagle> how the hell is Leo Laporte a fraud?
+[05:59:43] <Googie> Steve Gibson
+[06:00:04] <SilverEagle> man Security Now has been on point with a lot of recent issues
+[06:00:07] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[06:00:12] <SilverEagle> I don't get the vibe that this guy is a fraud but okay >.>
+[06:00:30] <Colgate> also, blowfish 1 has flaws
+[06:01:07] <Colgate> and as far as I can tell, they don't mention twofish or threefish anywhere in there
+[06:01:26] <SilverEagle> well all that info can go blowfish me because I don't encrypt my backups <3
+[06:01:48] <SilverEagle> ain't nothin on there I'm hiding
+[06:01:59] <Colgate> if I was backing up to a system I don't control, I would definitely encrypt
+[06:02:12] <Moonlightning> Nothing in your backups that you would hide from the world?
+[06:02:21] <Moonlightning> I have /lots/ of things in my backups I would hide from the world.
+[06:02:25] <SilverEagle> heh
+[06:02:26] <Moonlightning> What in my backups WOULDN'T I hide from the world?
+[06:02:29] <SilverEagle> I mean
+[06:02:31] <Moonlightning> Let's see…uhhhh…apps.
+[06:02:40] <SilverEagle> all the stuff I would hide, I only back up via local redundancy
+[06:02:42] <Moonlightning> You can have the publically-available bundles and binaries.
+[06:02:55] <Moonlightning> You need offsite backups though XP
+[06:03:03] <Moonlightning> what if your house burns down D:
+[06:03:07] <SilverEagle> Google Drive
+[06:03:09] <SilverEagle> :P
+[06:03:17] <SilverEagle> security schmecurity
+[06:03:18] <Moonlightning> yeah I wouldn't trust Google with this shit
+[06:03:27] <Moonlightning> more like, privacy shmivacy
+[06:03:30] <SilverEagle> if Google betrays me
+[06:03:37] <SilverEagle> then my whole online life is gonna come crumbling down anyway
+[06:03:41] <SilverEagle> so screw it, let's go out with a bang
+[06:03:47] <Moonlightning> and that in itself is indicative of much larger problems
+[06:04:14] <SilverEagle> all anyone's gonna find out is how cripplingly boring of a life I lead online for someone who's an IT person
+[06:04:20] <Moonlightning> I spend much of my time on IRC, anyway, which is not exactly easy to seize control of
+[06:04:31] <Moonlightning> speaking of. Colgate, can you disable password resets for my account?
+[06:04:52] <SilverEagle> well that and my evil pony media empi--I mean pony media harmless site
+[06:04:55] <Colgate> I don't think that's possible in atheme
+[06:05:07] <Compu> bluh
+[06:05:10] <Compu> spotify
+[06:05:13] <Compu> y u do dis
+[06:05:47] <Compu> i reset it 2 days ago and redownloaded all my playlists so they would go onto my sd card
+[06:05:50] *** Quits: MistVeil (AndChat3408@Pony-prm9c8.static.axtel.net) (Quit: Bye)
+[06:05:56] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[06:06:12] <Moonlightning> That is an insanely roundabout way to transfer data from one disk to another. -.-
+[06:06:18] <Compu> but i rebooted it today and it started ignoring the sd card and started trying to download to internal storage again
+[06:07:10] <Compu> now im trying a complete reinstall and i made sure to manually delete any trace of spotify from both my internal storage and my sd card
+[06:07:38] * Moonlightning doesn't like using external storage as an extension of internal storage.
+[06:07:54] <SilverEagle> Spotify is total crap when it comes to storing its music locally...the number of times it has "invalidated" my local storage and forced a full redownload is TOO MANY
+[06:08:31] <Compu> Moonlightning: yes well i have a larger sd card than my internal storage
+[06:09:02] <Compu> luckily i saved a list of my playlists i want downloaded into a text file in my dropboc
+[06:09:07] <Compu> dropbox*
+[06:10:15] <Compu> SilverEagle: i need it stored locally cuz otherwise i dont get my music when im not on wifi
+[06:10:24] <SilverEagle> no no I understand that completely
+[06:10:27] <SilverEagle> I do the same
+[06:10:34] <SilverEagle> I'm saying Spotify is really bad at handling it properly
+[06:10:36] *** Quits: Dusk (Dusk@dusky.horse) (Quit: Some people can't leave well enough alone...I'll be on Skype if people need me.)
+[06:10:46] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[06:11:39] <Compu> SilverEagle: i would switch to google play music but i have a ton of playlists with tons of songs on spotify and i dont know of an easy way to tranfer them over
+[06:11:49] <SilverEagle> yea me neither
+[06:11:53] <SilverEagle> I'd be fine with GPM too
+[06:11:59] <SilverEagle> I'm on android phones anyhow
+[06:12:05] <SilverEagle> and that ties more cleanly with local files too
+[06:12:09] <Compu> yes
+[06:12:18] <Compu> it also has a manual setting for where to store music
+[06:13:00] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[06:13:52] <SilverEagle> surprised there isn't a migrator
+[06:14:02] <SilverEagle> I know gplay makes a migrator for your local itunes/whatever to GPM
+[06:14:41] <Compu> yeah but itunes is a lot easier to get playlists out of
+[06:14:51] <Googie> SilverEagle: He's a lot of talk, but his actual work is... well, he spent an awful lot of time overhyping it when it's pretty worthless in most cases or has severe issues.
+[06:15:10] <Googie> Though admittedly most of that is fairly old now.
+[06:15:52] <SilverEagle> hmm well ok then
+[06:16:19] <Googie> Spent a lot of time peddling fud back in the early 2000s.
+[06:16:24] <Compu> SilverEagle: spotify loves to encrypt everything they possibly can, the only way to access spotify playlists would be through the spotify api which im sure spotify wont let google use
+[06:16:36] *** Joins: Bill_Beck (wsqlpvsnexk@Pony-cqdgqv.va.charter.com)
+[06:16:40] <Moonlightning> > spotify loves to encrypt everything they possibly can
+[06:16:42] <Moonlightning> This is a good thing.
+[06:17:08] <Moonlightning> In fact, Apple recommends that apps encrypt all traffic that could /possibly/ contain user-generated data.
+[06:17:40] *** Joins: Dusk (dusk@Pony-qppoca.dusky.horse)
+[06:18:20] <SilverEagle> Spotify's not doing it for you
+[06:18:28] <Compu> Moonlightning: yes but spotify also encrypts everything it downloads so u can only use it with the app
+[06:18:30] <SilverEagle> they're doing it so you can't harvest your music, keep it locally and cancel their service
+[06:18:46] <Moonlightning> Even if it couldn't, more legitimate encrypted traffic means it's less likely an attacker will be able to get anything private, and it destroys the argument that only criminals encrypt.
+[06:18:48] <Compu> Moonlightning: anyways it seems to be using the sd card again, we'll see if it stays
+[06:18:52] <Moonlightning> …oh, you mean DRM. :P
+[06:19:08] <SilverEagle> even if there was some way for Spotify to allow exporting just the artists/track names off playlists, and Google then matching those against its own DB, that would be helpful
+[06:19:51] <SilverEagle> so....upon research there's a way to do step 1 of this
+[06:20:03] <Compu> SilverEagle: there is, the spotify API, but again i doubt spotify would let google use it because they dont want people switching over
+[06:20:20] <Moonlightning> vendor lockin, yay
+[06:20:25] <SilverEagle> https://github.com/watsonbox/exportify
+[06:20:26] <PinkiePieBot> [ watsonbox/exportify · GitHub ]
+[06:20:32] <Compu> SilverEagle: im sure if there was a way to transfer playlists spotify would lose a ton of business because of their crappy service
+[06:20:42] <SilverEagle> nah most people value their convenience
+[06:20:49] <SilverEagle> and don't go looking this kind of stuff up
+[06:21:19] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[06:21:28] <Compu> honestly google play music is infinitely better (and they have better free trials too)
+[06:21:46] *** Quits: Bill_Beck (wsqlpvsnexk@Pony-cqdgqv.va.charter.com) (Quit: lightIRC.com Flash IRC Client)
+[06:21:55] <Compu> google play music has had 90 day free trials before
+[06:22:27] <SilverEagle> OOH OOH
+[06:22:27] <SilverEagle> https://github.com/rckclmbr/pyportify
+[06:22:28] <PinkiePieBot> [ rckclmbr/pyportify · GitHub ]
+[06:22:30] <SilverEagle> FOUND A THING
+[06:22:40] <SilverEagle> a python script to do exactly this
+[06:22:50] <SilverEagle> port from spotify to goog music
+[06:22:51] <Compu> SilverEagle: ok but how do u export to google play?
+[06:23:08] <SilverEagle> lookie at my link
+[06:23:15] <SilverEagle> it's both sides of the process
+[06:23:20] <SilverEagle> *does it*
+[06:24:10] <Compu> SilverEagle: i found one suggestion that says to have a delay for the spotify auto start because it takes a little while to mount the sd card on boot and spotify sometimes does its sd card check before the card is mounted
+[06:25:33] <Compu> SilverEagle: that thing looks like a good way to get banned from both services
+[06:26:04] <Googie> Also, hooking up to dn42.net seems like a cool side project to do at some point.
+[06:26:14] <Moonlightning> dn42.net.?
+[06:26:34] <SilverEagle> lol Compu I think that's overly paranoid
+[06:26:37] <SilverEagle> it's a local script that runs
+[06:26:45] <SilverEagle> plus if Spotify bans me for trying to leave
+[06:26:48] <Googie> Moonlightning: Basically a "virtual internet" connected by tunnels over the real internet.
+[06:26:49] <SilverEagle> I'm only leaving harder <3
+[06:27:00] <Compu> SilverEagle: and if GPM bans u too?
+[06:27:14] <SilverEagle> for trying to pay them money?
+[06:27:16] <Googie> So you can learn BGP, and basically do anything you could do on the real internet, except without any of the formalities.
+[06:27:20] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:28:02] <SilverEagle> in both of these company's cases the best business practice would be to look the other way and let the transfer happen, because you're not undoing DRM itself
+[06:28:05] <Googie> It operates its own private DNS root, Address allocation/whois.
+[06:28:08] <SilverEagle> you're just exporting data and importing
+[06:28:19] <SilverEagle> you're not breaking actual copyright law
+[06:28:20] <Compu> SilverEagle: by the way my main Starred playlist contains 411 songs
+[06:28:51] <Moonlightning> Googie: oooooooh. :D
+[06:29:02] <Moonlightning> That does sound like a cool side project.
+[06:29:07] <Moonlightning> I should do that sometime.
+[06:29:29] <Moonlightning> Virtual Internet. How exactly's that work?
+[06:29:32] <SilverEagle> I'ma do it and let you know if I get banned from literally everything
+[06:29:55] <Moonlightning> Including Equestria Daily?
+[06:30:29] <SilverEagle> ha ha
+[06:30:31] <SilverEagle> hee hee
+[06:30:35] <Compu> SilverEagle: u know u dont have to break copyright law for them to try and ban u? u wann talk about copyright law then look at all the false DMCAs that r rampant everywhere
+[06:30:39] <Googie> Basically a bunch of Layer 2 or Layer 3 tunnels between participating hosts.
+[06:30:57] <SilverEagle> Compu: I don't even right now
+[06:31:01] <SilverEagle> I'm doing it, be paranoid if you want
+[06:31:09] <SilverEagle> but you'll just be paranoid on a service you hate :P
+[06:31:55] <Googie> It's in the 172.22.0.0/16 and 172.20.0.0/16 private address space, the actual internet you'd still use as per normal.
+[06:32:35] <Compu> SilverEagle: they r apparently bringing chromecast support to spotify by the way, but the made a goof (apparently on purpose), they added the support to the app before the firmware update was properly released for the chromecast
+[06:32:48] <Compu> so now they app sees the chromecast but wont connect to it
+[06:33:18] <Moonlightning> Googie: wait what?
+[06:33:37] <Moonlightning> How do you simulate the middle of the Internet using jsut two /16s ._.
+[06:33:57] <Googie> It's a much smaller internet :P
+[06:34:03] <Colgate> Moonlightning: I found it on their website, it is just a tiny blurb though: http://support.code42.com/CrashPlan/Latest/Configuring/Archive_Encryption_Key_Security#External_Resources
+[06:34:03] <PinkiePieBot> [ Archive Encryption Key Security - Code42 Support ]
+[06:34:20] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Connection closed)
+[06:34:40] *** djazz is now known as MangoBloom
+[06:34:44] <Googie> It's not a replacement for the internet or any of that, it's a completely separate hobbyist network, using all the same technologies.
+[06:35:05] <Googie> Except that peering is done over tunnels because you probably can't afford a direct fibre optic link to your nearest peer :P
+[06:36:04] <Compu> SilverEagle: also i have an issue, i apparently cant unlink my twitter account from the spotify app so the app will only share to my personal account and not my pony account
+[06:36:16] <SilverEagle> yea that's even dumber!
+[06:36:19] <SilverEagle> man ditch that thin
+[06:36:22] <SilverEagle> g*
+[06:36:43] <Compu> apparently u can unlink on the desktop app
+[06:37:08] <Compu> but the 32 bit version of the app for linux is no longer being updated, they decided to go 64 bit only for linux
+[06:38:03] <Googie> To be fair, there's no real reason to use 32 bit desktop Linux these days.
+[06:38:28] <Compu> Googie: there is if ur using it ON a 32 bit computer
+[06:38:44] <Googie> What CPU model are you using ?
+[06:39:02] <Googie> There's only a couple of models made since 2004 that aren't 64 bit compatible.
+[06:39:08] <Dusk> a p3 obvs
+[06:39:41] <Compu> Googie: im using a core 2 duo and im not gonna reinstall linux just so im on 64 bit
+[06:39:51] <Googie> Well, that does have 64 bit support.
+[06:40:01] <Dusk> indeed
+[06:41:09] <Compu> i know
+[06:41:11] <SilverEagle> duskie you're back~
+[06:41:29] <Compu> but im not gonna reinstall my entire OS just so i can use a different twitter account on spotify
+[06:41:57] *** Quits: CrassyPaddles (test@Pony-7s4.enl.137.198.IP) (Ping timeout: 121 seconds)
+[06:42:16] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[06:42:37] <Compu> SilverEagle: anyways now i gotta redownload 5.6 GB of playlists from spotify
+[06:42:46] <SilverEagle> geeze
+[06:43:14] <Googie> Moonlightning: Thoughts ?
+[06:43:20] <Compu> yeah thats why i want it on my SD card
+[06:43:30] <Compu> 32 GB internal storage 64 GB sd card
+[06:44:14] *** Joins: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net)
+[06:44:38] <Compu> SilverEagle: when im done i have a screenshot to show u, its a bug spotify does constantly when downloading playlists
+[06:45:23] <Moonlightning> Compu: can't you just switch a bunch of packages?
+[06:45:26] <Compu> it's had this bug since as far back as i can remember having spotify on an android phone
+[06:45:41] <Compu> Moonlightning: switch a bunch of packages?
+[06:45:50] <Moonlightning> Compu: yeah, from the 32- to the 64-bit versions.
+[06:45:55] <Moonlightning> Including the Linux package.
+[06:45:57] <Compu> i dont think so
+[06:45:59] <Googie> Generally speaking I don't think most distros have a supported upgrade path like that.
+[06:46:07] <Compu> and im not gonna fuck with it like hat
+[06:46:20] <Moonlightning> seems to me it should be very simple :B
+[06:46:46] <Compu> Moonlightning: im sure some people think that about sky diving
+[06:49:09] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[06:50:26] <Moonlightning> Compu: what distro?
+[06:50:40] <Compu> ubuntu
+[07:06:48] *** Quits: Dusk (dusk@dusky.horse) (Quit: WeeChat 1.1.1)
+[07:08:36] *** Joins: CrassyPaddles (test@Pony-7s4.enl.137.198.IP)
+[07:10:05] *** Joins: Dusk (dusk@Pony-qppoca.dusky.horse)
+[07:12:00] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[07:14:12] *** Quits: CrassyPaddles (test@Pony-7s4.enl.137.198.IP) (Ping timeout: 121 seconds)
+[07:16:44] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[07:19:32] *** Eventide is now known as Eventide|Sleepies
+[07:32:13] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[07:33:16] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[07:40:21] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (The TLS connection was non-properly terminated.)
+[07:41:15] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[07:42:15] <Compu> SilverEagle: heres that screenshot i mentioned, it does this constantly while downloading playlists http://imgur.com/RqtR08k
+[07:42:15] <PinkiePieBot> [ Imgur: The most awesome images on the Internet ]
+[07:53:48] <Compu> https://youtu.be/iDk5mlas_fg :D flat earthers!
+[07:53:48] <PinkiePieBot> [ The Globe was an Inside Job - Part 1 - 6188 views - 14m 53s long - 768 likes - 99.1% ]
+[07:55:04] *** Quits: firestream (vinylderpy@Pony-npl40m.dsl.bell.ca) (Connection closed)
+[07:58:21] *** Joins: firestream (vinylderpy@Pony-npl40m.dsl.bell.ca)
+[08:01:53] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[08:07:17] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[08:07:21] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[08:09:29] *** Joins: Jouva_ (jouva@Pony-535ork.fios.verizon.net)
+[08:09:59] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (Ping timeout: 121 seconds)
+[08:11:21] *** Quits: firestream (vinylderpy@Pony-npl40m.dsl.bell.ca) (Connection closed)
+[08:13:13] *** Joins: CrassyPaddles (test@Pony-7s4.enl.137.198.IP)
+[08:18:50] *** Quits: Dusk (dusk@dusky.horse) (A TLS packet with unexpected length was received.)
+[08:21:11] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[08:22:47] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[08:22:52] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:23:15] *** Joins: Dusk (dusk@Pony-qppoca.dusky.horse)
+[08:32:48] *** zz_CyberJacob is now known as CyberJacob
+[08:36:53] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[08:37:23] *** RedHelper is now known as RedHelper|AFK
+[08:39:17] *** locodash11[lagout] is now known as locodashie11
+[08:41:27] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[08:47:20] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[08:55:03] *** HoneyDrops is now known as {
+[08:55:18] *** { is now known as HoneyDrops
+[09:01:19] *** Joins: Phase (Phase4@Pony-ntnccm.internode.on.net)
+[09:01:25] *** CyberJacob is now known as zz_CyberJacob
+[09:46:15] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:57:00] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[10:07:07] <Moonlightning> On a *nix system, running untrusted code in a dedicated account doesn't pose a security risk, right?
+[10:07:29] <aji> it does
+[10:07:52] <aji> things like /etc/passwd are readable by anybody
+[10:08:20] * Moonlightning stares blankly.
+[10:08:59] <aji> while it's safer for the code to be run with a dedicated account,
+[10:09:10] <aji> there is still sensitive data they could access
+[10:10:03] <aji> as a very simple example,
+[10:10:09] <aji> the code could cause a DOS by filling up your disk with junk data
+[10:10:49] <Phase> apparmor, selinux, or containers
+[10:10:50] <aji> they can run commands like ps to see what other software you're running
+[10:11:07] <aji> they can connect to things listening only on 127.0.0.1
+[10:11:10] <aji> etc
+[10:11:10] <Moonlightning> Y'know, I was looking into getting into selinux!
+[10:11:20] <Phase> oh cool, proc entries have selinux labels
+[10:11:22] <Moonlightning> Ooh, yeah, that one's bad
+[10:11:33] <Phase> selinux can solve that too!
+[10:11:48] <aji> idk about selinux, i haven't used it, it sounds like a good solution
+[10:12:05] <Moonlightning> IIRC like three ponies in here told me not to use it though
+[10:12:08] <aji> another solution is to segment the code off in its own machine entirely, VMs are pretty cheap
+[10:12:09] <Phase> it's perfect for this sort of confinement
+[10:12:11] <Phase> but
+[10:12:17] <Phase> i wouldn't know how to do it
+[10:12:26] <Phase> writing selinux policy is a dark art few have mastered
+[10:12:35] <Moonlightning> ._.
+[10:12:43] <aji> chroots are decent sandboxes too, but there's still some risks
+[10:12:58] <Moonlightning> that doesn't solve the ps or the ::1 thing
+[10:13:03] <aji> right
+[10:13:19] <aji> it's better to assume that they're going to have complete control over the entire machine, and then plan for that case
+[10:13:20] <Phase> Moonlightning, what distro are you running?
+[10:13:24] <Moonlightning> Gentoo.
+[10:13:58] <aji> this is, of course, if you're running absolutely untrusted code, like people entering code on a website to be run, or build bots, or PaaS like heroku
+[10:14:19] <aji> if it's something like an install script, well, that's different
+[10:14:35] <Moonlightning> It's something I can't fetch over TLS or get a signature for
+[10:14:38] <Moonlightning> so, yes, untrusted
+[10:14:40] <Phase> it depends on how worried you are about kernel exploits
+[10:14:53] <Moonlightning> I'm rather unworried abotu kernel exploits.
+[10:14:57] <Phase> but that affects pretty much everything really
+[10:15:11] <aji> i've heard of a few hypervisor exploits too
+[10:15:14] <aji> NOTHING IS SAFE
+[10:15:25] <Phase> containers dont help you there, selinux does *something* by its nature of default denial but it depends on the exploit
+[10:15:33] <AppleDash> Moonlightning: What is it?
+[10:15:37] <Moonlightning> Steam.
+[10:15:55] <AppleDash> ...
+[10:15:58] <Moonlightning> I can't trust it! I have no assurance it hasn't been tampered with in transit!
+[10:16:18] <AppleDash> Get it from your OS's package manager
+[10:16:33] <Phase> the validate local files thing gets its signatures via https
+[10:16:57] <Moonlightning> Phase: yes, but the thing I run at first isn't validated at all.
+[10:17:00] <Moonlightning> It could be anything.
+[10:17:06] <Moonlightning> It's /probably/ legit Steam, but it /could/ be anything.
+[10:17:27] <AppleDash> https://steamcdn-a.akamaihd.net/client/installer/steam.deb
+[10:17:30] <AppleDash> Looks https to me
+[10:17:45] <Moonlightning> Did you not see where I said I was running Gentoo
+[10:17:51] <AppleDash> You can extract that.
+[10:18:04] <AppleDash> And did you not see where I said to use your OS's package manager?
+[10:18:36] <Moonlightning> > kde-misc/steamcompanion net-im/bitlbee-steam sci-libs/freesteam x11-plugins/pidgin-opensteamworks
+[10:18:44] <Moonlightning> No Steam client here.
+[10:20:06] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:20:19] <Moonlightning> AppleDash: …what the hell are you talking about
+[10:20:27] <Moonlightning> That redirects to something on repo.steampowered.com.
+[10:20:30] <Moonlightning> which doesn't support TLS at all
+[10:20:42] <Moonlightning> you sent me back to square one :V
+[10:20:51] <Moonlightning> there's a public key on that site, but, uh
+[10:20:54] <aji> yoloswag it
+[10:20:57] <Moonlightning> //I can't fetch it over TLS//
+[10:21:07] <aji> run the code, c wot hapn
+[10:21:14] <AppleDash> Moonlightning: repo. supports TLS.
+[10:21:15] <Moonlightning> aji: I was going to. Hence my asking about whether running untrusted code in a dedicated account is safe. :P
+[10:21:16] <AppleDash> Just fine
+[10:21:30] <Moonlightning> AppleDash: repo. is not a valid TLD
+[10:21:31] <AppleDash> https://repo.steampowered.com/steam/archive/precise/steam_latest.tar.gz
+[10:21:42] <AppleDash> You know exactly what the fuck I'm talking about
+[10:22:01] <Moonlightning> Well, my connections to it are timing out
+[10:22:20] <AppleDash> You're being MITMed, put on your tinfoil hat and get in your bunker
+[10:22:22] <AppleDash> please
+[10:22:49] <Moonlightning> AppleDash: no; clearly I should assume everything is absolutely fine, download the thing not over TLS, do zero verification, and run it as root.
+[10:22:59] <AppleDash> Seems fine to me
+[10:23:46] <Moonlightning> In seriousness…you can repo.steampowered.com. over HTTPS? O.o
+[10:24:24] <AppleDash> Yes
+[10:24:45] <AppleDash> It has an invalid certificate that's valid for the same CDN steam uses for everything else
+[10:25:29] <Moonlightning> really? I got a cert with generic-looking Akamai hostnames
+[10:25:44] <Moonlightning> > a248.e.akamai.net, *.akamaihd.net, *.akamaihd-staging.net, *.akamaized.net, *.akamaized-staging.net
+[10:25:47] <AppleDash> Yes
+[10:25:50] <AppleDash> That's the same CDN.
+[10:26:14] <aji> e621.e.akami.net
+[10:26:21] <AppleDash> lol
+[10:26:24] <Moonlightning> xD
+[10:29:59] <Moonlightning> Okay, so besides things like filling up disks and finding out what usernames exist, and assuming I'm not running anything on localhost and assuming that's secure
+[10:30:15] <Moonlightning> Is there any real harm untrusted code could do if executed under a dedicated account?
+[10:30:30] <aji> well,
+[10:30:33] <aji> PROBABLY not
+[10:30:38] <Moonlightning> (filling up a disk isn't real harm here—annoying, sure, but I just have to reboot from something else and delete its shit)
+[10:30:41] <Phase> define harmful
+[10:30:42] <aji> but accounts aren't guaranteed to be isolated like that
+[10:30:52] <Moonlightning> they what? o.O
+[10:30:53] <Phase> and disk quota solves that
+[10:30:56] <aji> so there's possibly something an attacker has thought of that we haven't
+[10:30:56] <Moonlightning> yeah
+[10:31:04] <Moonlightning> uh
+[10:31:17] <aji> like,
+[10:31:24] <aji> accounts weren't designed with that sort of isolation in mind
+[10:31:37] <Phase> ps output for example, if you put a password on the command line
+[10:31:41] <aji> they're good for that, but it's not what they're designed for,
+[10:31:48] <aji> so you can't rely on it
+[10:31:51] <Phase> /tmp, /run, /etc
+[10:32:01] <Phase> anything with global read that probably shouldn't have global read
+[10:32:09] <Moonlightning> yeah I don't put passwords on command lines
+[10:32:52] <Phase> MLS is cool
+[10:33:00] <Phase> can do some really powerful isolation with that
+[10:33:22] <Moonlightning> MLS?
+[10:33:31] <Phase> multi-level security
+[10:33:40] <Phase> part of an selinux label
+[10:33:49] <Moonlightning> :?
+[10:35:02] <Phase> Moonlightning, https://wiki.gentoo.org/wiki/SELinux/Labels
+[10:35:03] <PinkiePieBot> [ SELinux/Labels - Gentoo Wiki ]
+[10:35:43] <Phase> Moonlightning, MLS boils down to 'No read up, no write down'
+[10:35:58] <Phase> if your running at S5, you can't fead from S6, and can't Write to S4
+[10:36:34] <Phase> intended for confidentiality, you could run all your programs and services at S1 and higher, then untrusted code as S0 
+[10:37:22] <Phase> then not only could it not communicate with anything outside its context, those processes can't be made to write into its context
+[10:41:07] <Moonlightning> wait, what?
+[10:48:38] <JustAberrant> *cough* it's a wonder selinux isn't used more often *cough*
+[10:48:55] <aji> selinux was made by the nsa, just a warning
+[10:48:58] <Phase> multi-level security isn't used often
+[10:49:05] <Phase> aji, its been public for a good 15 years now
+[10:49:10] <aji> no but phase
+[10:49:12] <aji> nsa
+[10:49:19] <Phase> oh right
+[10:49:58] <aji> anyway time for bed, goodnight!
+[10:50:10] * aji wiggles fingers spookily "the nsa is watching your security contexts"
+[10:50:14] <Phase> Moonlightning, if i say S5 is top secret, and S4 is secret, something running as top secret (and thus with access to top secret data) cannot write anywhere labeled as secret (S4)
+[10:50:55] <Phase> a process can run as a range of levels, and be trusted to pass between levels
+[10:51:32] <JustAberrant> seriously though.. always seemed silly to me, makes more sense to partition the data entirely than have levels *shrugs*
+[10:51:39] <JustAberrant> but then I don't really know much about selinux
+[10:51:42] <JustAberrant> just the very basics
+[10:52:07] <JustAberrant> because one "top secret" process may not necessarily need access to the data from some other "top secret" process
+[10:53:04] <Phase> its applied in addition to type enforcing, and multi-catagory security
+[10:54:56] <JustAberrant> either way, we live in a world where it's easier and cheap enough to put things on physically separate boxes or at least separate vm instances
+[10:56:08] <JustAberrant> anyway, I'm bed
+[10:56:15] <Moonlightning> Ahaaaa.
+[10:56:18] <Moonlightning> That makes sense.
+[10:56:25] <Phase> night ja
+[10:56:36] <Moonlightning> A top-secret process can't accidentally write into a just-plain-secret location
+[10:56:47] <Phase> or lower, yeah
+[10:56:59] <Phase> either accidentally or be instructed to in any way
+[10:57:06] <Phase> assuming kernel correctness
+[10:57:24] <Moonlightning> yeah, the fact that the NSA wrote it is kinda off-putting
+[10:57:45] <Moonlightning> but…if they use it…they know that backdoors make things less secure…so they wouldn't be so stupid as to backdoor their own thing…would they? @.@
+[10:57:49] <Phase> it's upstream linux code
+[10:58:19] <Phase> one of several mainlined lsm modules
+[10:58:23] <Moonlightning> oh, one reason not to use it is that so many things have no idea about it
+[10:58:33] <Moonlightning> LSM?
+[10:58:40] <Phase> tbh apparmor would be easier for a one off thing
+[10:58:46] <Phase> Linux Security Module
+[10:59:03] <Phase> people can't agree on how security should work, so linus said "make it a module", so they did
+[11:04:15] <Moonlightning> … xD
+[11:22:22] *** Joins: firestream (vinylderpy@Pony-npl40m.dsl.bell.ca)
+[11:27:21] *** Quits: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Quit:  HydraIRC -> http://www.hydrairc.com <- Would you like to know more?)
+[11:41:01] *** Jouva_ is now known as Jouva
+[12:11:46] *** Eventide|Sleepies is now known as Eventide
+[12:15:15] * Googie feels like QubesOS is what Moonlightning is looking for :V
+[12:22:37] <Phase> "The Qubes Windows Tools are proprietary but we distribute the binaries for free with current Qubes OS releases." :(
+[12:22:56] <Googie> Really :/
+[12:24:35] <Googie> Though the comment was pretty much spot on I guess. Why're you using Windows if you're so worried about closed source binaries ? Still though...
+[12:25:31] <Phase> i want that sort of windows intergration but dont want qubes :(
+[12:45:28] *** Quits: CrassyPaddles (test@Pony-7s4.enl.137.198.IP) (Quit: Leaving)
+[13:04:19] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "gotta fly")
+[13:04:37] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[13:13:02] *** Quits: Seoson|BNC (Seoson@pony.kab-s.de) (Quit: Leaving)
+[14:00:25] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[14:01:43] *** Quits: Seoson (Seoson@pony.kab-s.de) (Quit: Leaving)
+[14:02:48] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[14:04:28] *** Seoson is now known as Sour_Sweet
+[14:59:04] *** Init3-away is now known as init3
+[15:02:58] *** Quits: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au) (Connection closed)
+[15:29:45] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[15:30:02] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Quit: )
+[15:30:36] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[15:44:24] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:46:30] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[16:01:48] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:06:56] *** Quits: Phase (Phase4@Pony-ntnccm.internode.on.net) (Ping timeout: 121 seconds)
+[17:13:27] *** Joins: Phase (Phase4@Pony-3hinq4.internode.on.net)
+[17:38:32] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[17:45:33] <quindo> The worst thing to do to a programmer is to mess with their clipboard.
+[17:46:57] *** Joins: Crimson_Tail (Bluepon@Pony-7tipdd.cg80.k4gu.0151.2601.IP)
+[17:48:52] <wolfyshy> that feel lol
+[17:50:00] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[17:50:00] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[17:58:03] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[18:01:57] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[18:58:14] <init3> http://8ch.net/b/src/1444886970413.webm
+[19:23:01] *** Joins: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se)
+[19:58:01] *** init3 is now known as Init3-away
+[20:06:26] *** Init3-away is now known as init3
+[20:32:13] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[20:40:57] *** zz_CyberJacob is now known as CyberJacob
+[20:49:27] <Sakura> Guys, 10-Gig Internet is a thing.
+[20:50:59] <Sakura> http://www.chattanoogan.com/2015/10/15/310477/Chattanooga-Implements-Worlds-First.aspx
+[20:51:00] <PinkiePieBot> [ Chattanooga Implements World’s First Community-Wide 10 Gigabit Internet Service - Chattanoogan.com ]
+[20:51:01] <wolfyshy> 40gigE is a thing too
+[20:54:02] <coppercore> 10Gig internet
+[20:54:03] <coppercore> WAT
+[20:54:36] <SilverEagle> friggin what
+[20:54:42] <SilverEagle> I couldn't even do anything with that!
+[20:54:53] <SilverEagle> I just got cat6a cables, so I guess the *cables* could
+[20:55:42] <coppercore> 10GBase-T will work over normal 6a at around 50m or so i think
+[20:55:58] <SilverEagle> well yes but
+[20:56:02] * Moonlightning groans loudly.
+[20:56:07] <SilverEagle> my modem, its router, my NIC
+[20:56:10] <Colgate> I don't have a router with 10g ports :P
+[20:56:15] <Moonlightning> I'm still sitting over here with 10M-tier!
+[20:56:17] <wolfyshy> my modem is docsis3, so that's uh
+[20:56:22] <wolfyshy> I think 400Mbit
+[20:56:25] <Moonlightning> I'd be in heaven if I had 100M, both ways
+[20:56:29] <wolfyshy> my entire network is gigE
+[20:56:33] <SilverEagle> here we get 300 down, 20 up
+[20:56:36] <Moonlightning> MiB, not SI Mb
+[20:56:44] <wolfyshy> I only get 100 down.
+[20:57:15] <Moonlightning> I get like 15 SI Mb down and 1 up
+[20:57:16] <wolfyshy> when I move, I'll be getting 250 down
+[20:57:42] <Sakura> Where are you moving?
+[20:57:55] <wolfyshy> central US
+[20:57:59] <Sakura> Ah
+[20:59:33] <Sakura> What I would give to move back to Tennessee to get that sweet, sweet 10 gig. *squee*
+[21:00:06] <SilverEagle> but...Tennessee
+[21:00:22] *** Joins: thatdguy (WebChat@Pony-pkbcdj.fbx.proxad.net)
+[21:00:23] <SilverEagle> they should rename the state TenGigEssee
+[21:00:43] <johnsey> http://tech.slashdot.org/story/15/10/15/1422256/microsoft-now-uses-windows-10s-start-menu-to-display-ads
+[21:00:46] <johnsey> haha
+[21:01:10] <Sakura> What?
+[21:01:16] <Sakura> WHAT?!
+[21:01:17] <Dusk> I don't see ads in mine :o
+[21:01:46] <SilverEagle> oh no >.>
+[21:02:32] <Dusk> Yea that isn't a thing in my install on my tablet, laptop or desktop
+[21:02:53] <SilverEagle> well like the article says, apparently it's only in an early-adopter build
+[21:02:59] <Dusk> I'm an insider :p
+[21:03:23] <Dusk> on the fast track too so I should be on that build
+[21:03:25] <Sakura> Hell no, Microsoft! You ain't putting ads in my mofo start menu! :@
+[21:03:29] <Colgate> reminds me of ubuntu
+[21:03:32] <Colgate> ;)
+[21:03:36] <Dusk> lol
+[21:03:45] <SilverEagle> shit tell me Ubuntu's not doing that too
+[21:03:50] <Dusk> I defo haven't noticed that in ubuntu gnome
+[21:03:50] <Moonlightning> well, you'll be happy to know that I'll be dumping Ubuntu
+[21:03:53] <Moonlightning> at some point
+[21:04:15] <Sakura> And I'm an insider as well but I only have the build on a VM.
+[21:04:16] <Moonlightning> gonna have to borrow my neighbor's TV again or something
+[21:04:27] <Dusk> Sakura: why? 
+[21:04:29] <Colgate> Sakura: ubuntu has been doing it for years :P
+[21:04:40] <Dusk> Colgate: in unity I assume
+[21:04:41] <Colgate> gah
+[21:04:44] <Colgate> SilverEagle:*
+[21:04:49] <Colgate> the default WM, yeah
+[21:04:51] <Dusk> Ah
+[21:04:55] <Dusk> I've not used unity
+[21:04:59] <Dusk> so it matters not
+[21:05:01] <Colgate> the search pops up amazon.com results
+[21:05:02] <SilverEagle> oh you mean "Suggested Apps", not actual in-menu ads
+[21:05:11] <SilverEagle> bleh =/
+[21:05:16] <Dusk> Anyone who uses unity should probably find a better wm
+[21:05:22] <Sakura> Debian, guys.
+[21:05:27] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[21:05:30] <Dusk> Sakura: why?
+[21:05:42] <SilverEagle> Debian is the giant upon whose shoulders Ubuntu stands
+[21:05:50] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[21:05:51] <Sakura> Yes
+[21:05:57] <Dusk> Yes and Ubuntu is a mite bit more convenient 
+[21:06:05] <Sakura> Ubuntu=Debian with steroiw
+[21:06:12] <Sakura> Steroids*
+[21:06:19] <SilverEagle> I admit ads or otherwise I'd still use Ubuntu as a desktop env
+[21:06:26] <SilverEagle> since it takes some of the "pain-in-the-ass-ness" out of Linux
+[21:06:41] <Colgate> sure, I just wouldn't use unity as a WM
+[21:06:49] <Dusk> It doesn't have ads if you install Gnome or another sane WM
+[21:06:52] <Dusk> j/s
+[21:06:53] <coppercore> ^
+[21:06:59] <SilverEagle> whatever happened to that one gorgeous WM
+[21:07:02] <SilverEagle> Enlightenment or something
+[21:07:09] <SilverEagle> the one that was really pretty
+[21:07:51] <Colgate> pretty is relative ;)
+[21:07:51] <Dusk> https://www.enlightenment.org/
+[21:07:52] <PinkiePieBot> [ Enlightenment Main ]
+[21:07:57] <Dusk> SilverEagle: this?
+[21:09:19] <SilverEagle> I suppose so
+[21:09:29] <SilverEagle> that's not nearly as pretty as I remember
+[21:09:33] <Dusk> I guess it's neat
+[21:09:40] <Dusk> but I would still use gnome 3 over that
+[21:09:54] <SilverEagle> there was one that had the same glassiness as ~2010 OSX
+[21:09:58] <SilverEagle> and was quite pretty
+[21:10:09] <Dusk> hm
+[21:11:42] <SilverEagle> I think it actually was just a heavily customized Enlightenment
+[21:11:51] <Dusk> Mmm
+[21:12:08] <Dusk> you could probably get cinnamon to look that way if you wanted, or plasma
+[21:12:30] <SilverEagle> YEP CINNAMON
+[21:12:31] <SilverEagle> that's the one
+[21:12:34] <Dusk> Ah
+[21:12:47] <Dusk> Cinnamon is the one I fall back to if I can't get gnome working on my system
+[21:12:54] <SilverEagle> http://cinnamon-spices.linuxmint.com/uploads/themes/QTSH-QTWB-BTFL.png
+[21:13:02] <SilverEagle> I think that's darn pretty =)
+[21:13:15] <Dusk> mhm
+[21:13:19] <SilverEagle> just a subtle alpha-transparent thing, but with all the padding set right, something Linux seems to have insane amounts of difficulty with
+[21:13:21] <Dusk> I looks nice :)
+[21:13:34] <Dusk> I prefer the android theme for cinnamon
+[21:13:37] <SilverEagle> lots of Linux UIs can't do padding to save their lives
+[21:13:42] <Dusk> it's pretty neat
+[21:16:21] <SilverEagle> I bet I could run Ubuntu on my TV
+[21:16:24] <SilverEagle> and nobody would notice
+[21:16:32] <Dusk> hah
+[21:16:33] <SilverEagle> it would still do Plex and Chrome
+[21:16:40] <Dusk> Plex <3
+[21:16:44] <SilverEagle> my TV's attached computer I mean, an Intel NUC
+[21:16:54] <SilverEagle> hell I could almost get away with ChromeOS
+[21:17:10] <Dusk> What would stop chromos?
+[21:17:24] <SilverEagle> Steam
+[21:17:31] <Dusk> oh
+[21:17:36] <SilverEagle> so if SteamOS and ChromeOS had a baby
+[21:17:39] <SilverEagle> I'd use that on my TV
+[21:17:52] <Dusk> Fair enough
+[21:47:08] *** Joins: CrassyPaddles (test@Pony-lgs.enl.137.198.IP)
+[21:48:41] <CrassyPaddles> any of you guys good with signal processing?
+[21:49:40] <Compu> SilverEagle: android tv?
+[21:52:21] <CrassyPaddles> sensors
+[21:56:30] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[21:56:32] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[22:03:41] <Dusk> Compu: AndoridTV doesn't do steam either
+[22:04:06] <Compu> eh
+[22:11:28] *** Quits: CrassyPaddles (test@Pony-lgs.enl.137.198.IP) (Ping timeout: 121 seconds)
+[23:12:45] *** Joins: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au)
+[23:15:36] *** Quits: Phase (Phase4@Pony-3hinq4.internode.on.net) (Ping timeout: 121 seconds)
+[23:15:55] *** RedHelper|AFK is now known as RedHelper
+[23:47:59] <wolfyshy> http://arstechnica.com/security/2015/10/university-of-cambridge-study-finds-87-of-android-devices-are-insecure/ every day I get closer and closer to buying an iPhone.
+[23:47:59] <PinkiePieBot> [ University of Cambridge study finds 87% of Android devices are insecure | Ars Technica ]
+[23:49:52] <HoneyDrops> iPhone is probably no better
+[23:50:29] <johnsey> you can drop the "probably"
+[23:50:35] <johnsey> http://www.cvedetails.com/vulnerability-list.php?vendor_id=49&product_id=15556&version_id=0&page=1&hasexp=0&opdos=0&opec=0&opov=0&opcsrf=0&opgpriv=0&opsqli=0&opxss=0&opdirt=0&opmemc=0&ophttprs=0&opbyp=0&opfileinc=0&opginf=0&cvssscoremin=0&cvssscoremax=0&year=0&month=0&cweid=0&order=1&trc=698&sha=1efc6556e916c71709f3dc8581fc744a48152068
+[23:50:36] <PinkiePieBot> [ Apple Iphone Os : List of security vulnerabilities ]
+[23:51:16] <HoneyDrops> Also every cell phone is insecure because of the GSM module being closed.  What little research there is points to tons of bugs/vulns in the RTOS running on them.  We'll leave aside the fact that GSM is early-90's security model.
+[23:53:00] <Moonlightning> wolfyshy, HoneyDrops: we need that free phone thing :I
+[23:55:14] <quindo> Or just have a phone that you have powered off with no battery that you only use for emergancy calls...
+[23:55:25] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[23:55:42] <Sour_Sweet> The solution: Switch back to analog phones!
+[23:56:18] <Sour_Sweet> If you want to call somebody ask the operator to connect you.
+[23:59:48] *** Quits: coppercore (coppercore@Pony-kr5t8h.coppercore.net) (A TLS packet with unexpected length was received.)

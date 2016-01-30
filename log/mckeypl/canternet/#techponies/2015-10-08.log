@@ -1,0 +1,635 @@
+[00:00:04] <Sour_Sweet> I was probably wrong with Comodo and the other is GoDaddy
+[00:00:13] <Colgate> then it also caps your grade if you decide to support SSL3, which is entirely a TLS client issue, the client should reject SSL3 if it has better
+[00:00:32] <Sour_Sweet> All those shady CAs >.>
+[00:00:45] <Compu> hehe good pony https://derpicdn.net/img/view/2015/1/4/799029.png
+[00:00:48] <Colgate> but SSL3 is still resistant to passive mitm, so it is better than nothing
+[00:05:34] *** Joins: nscoots (FreyGrimrod@Pony-acjuli.sub-70-192-42.myvzw.com)
+[00:05:45] <nscoots> http://thehackernews.com/2014/08/how-to-weaponize-your-cat-to-hack-your_9.html
+[00:05:46] <PinkiePieBot> [ How to Weaponize your Cat to Hack Neighbours’ Wi-Fi Passwords ]
+[00:06:51] <Colgate> Can I get a certificate for multiple domain names?
+[00:06:52] <Colgate> Yes, the same certificate can apply to several different names using the Subject Alternative Name (SAN) mechanism. The Let's Encrypt client automatically requests certificates for multiple names when requested to do so. The resulting certificates will be accepted by browsers for any of the domain names listed in them.
+[00:07:22] <Sour_Sweet> Yep pointed that out earlier today as well ^^
+[00:07:23] <Colgate> I guess you could copy the cert somewhere for the other servers to download and use?
+[00:07:37] <nscoots> go go war kitteh
+[00:07:41] <Colgate> then again, cert pinning is useless with the 3 month thing
+[00:07:58] <Sour_Sweet> But you don't need cert pinning if the cert is valid in theory
+[00:08:03] <Lapsus> nscoots: I like the idea, but getting a collar on a cat is easier said than done :v
+[00:08:07] <Colgate> wait what
+[00:08:07] <Sour_Sweet> Even though it makes things more secure
+[00:08:21] <Colgate> why is the lets encrypt client binding to port 443? o.O
+[00:08:23] <nscoots> true lapsus
+[00:08:36] <Colgate> Why does the Let’s Encrypt client require root privileges?
+[00:08:37] <Colgate> The Let’s Encrypt client is essentially an operating system component. Generically, it requires root privileges to bind to port 44
+[00:08:38] <Colgate> ...
+[00:08:40] <Compu> Lapsus: not that difficult for my cat
+[00:08:40] <Colgate> 443*
+[00:08:41] <Sour_Sweet> There are alternatives I believe
+[00:08:59] <nscoots> I'm partial to the notion of war pidgeons
+[00:09:09] <Sour_Sweet> You can use an apache2 module or place a file
+[00:09:29] <Colgate> this FAQ sucks
+[00:09:33] <Colgate> -.-
+[00:09:39] <Sour_Sweet> I'd not want a root process to bind to port 443 *derp*
+[00:10:09] <Colgate> correction: their whole website is pretty bad
+[00:10:17] <Colgate> it is missing lots of answers
+[00:10:21] <Colgate> :P
+[00:10:44] <Sour_Sweet> All my daemon drop root for a good reason. Yeah for a project sponsored by a browser vendor it is
+[00:11:09] <Sour_Sweet> daemons*
+[00:12:16] <Sour_Sweet> There is a community sort of forums thing that provides more infos inside the threads
+[00:13:07] <Sour_Sweet> That's where I got the alternative auth methods from. I guess one could look at the github for such things as well.
+[00:13:49] <Colgate> yes, that is a lot of searching through boring stuff for important things
+[00:14:04] <Colgate> most of it is just garbage talk about web servers
+[00:14:05] <Sour_Sweet> Eeeyup
+[00:21:15] *** Joins: sleumas2000_ (uid91753@Pony-5dnslh.ealing.irccloud.com)
+[00:24:50] <Sour_Sweet> The fact that StartCom still defaults to SHA1 bugs me -.-
+[00:26:43] <Colgate> they shouldn't be issuing sha1 certs at all ha
+[00:28:29] *** Init3-away is now known as init3
+[00:32:06] <Sour_Sweet> Also my WeeChat build doesn't support SHA256 yet (Debian is old), that got me unprepared when you changed certs ^^
+[00:32:15] *** Quits: nscoots (FreyGrimrod@Pony-acjuli.sub-70-192-42.myvzw.com) (Ping timeout: 121 seconds)
+[00:33:22] *** Joins: nscoots (FreyGrimrod@Pony-dpg.afa.222.209.IP)
+[00:33:24] <Colgate> hmm, I thought I announced both hashes
+[00:33:36] <Colgate> sha1 and sha256
+[00:33:49] <Colgate> or maybe I only did that for the previous update
+[00:34:04] <Sour_Sweet> You did but I dind't copy the other when when quit and changed the config
+[00:34:24] <Colgate> ah
+[00:34:29] <Sour_Sweet> Because I just assumed WeeChat would handle SHA256 just fine
+[00:34:37] <Colgate> what version weechat?
+[00:34:56] <Sour_Sweet> 1.0.1
+[00:36:41] <Colgate> ah, not ancient, but old
+[00:37:03] <Sour_Sweet> According to GitHub support was added with 1.2
+[00:39:31] *** Joins: Shamon (WebChat@Pony-7ps.mvb.8.94.IP)
+[00:39:35] *** Parts: Shamon (WebChat@Pony-7ps.mvb.8.94.IP) ("")
+[00:39:57] <Rylee> <Colgate> The Let’s Encrypt client is essentially an operating system component. Generically, it requires root privileges to bind to port 44
+[00:40:02] <Rylee> cap_net_admin, authbind, ... ... .. .. . .
+[00:43:13] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:48:22] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[00:48:44] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:49:57] <Compu> https://www.facebook.com/Vox/videos/443470695840538/
+[00:50:00] <PinkiePieBot> [ Vox - President Obama's furious reaction to another mass... | Facebook ]
+[00:55:41] * HoneyDrops thinks there surely must be a non-facebook way to get to the video.
+[00:56:21] <nscoots> boo facebook
+[00:57:42] *** Joins: Fillyfeathers (Fallfeather@Pony-rgsvql.bigpond.net.au)
+[00:58:06] *** Quits: Fallfeathers (Fallfeather@Pony-rlcauk.bigpond.net.au) (Ping timeout: 121 seconds)
+[00:59:12] *** zz_CyberJacob is now known as CyberJacob
+[01:10:21] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Ping timeout: 121 seconds)
+[01:11:54] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (Ping timeout: 121 seconds)
+[01:23:59] *** CyberJacob is now known as zz_CyberJacob
+[01:25:26] *** Quits: Fillyfeathers (Fallfeather@Pony-rgsvql.bigpond.net.au) (Quit: My people need me!)
+[01:29:18] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[01:37:04] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[01:44:17] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[01:50:19] <Phase> <Rylee> cap_net_admin, authbind, < can't set caps on a python script, could use authbind or socket-activation 
+[01:52:59] <Rylee> you can set caps on a python interpreter 
+[01:53:32] <Rylee> which is non-trivially fucko
+[01:53:34] <Rylee> but yes
+[01:53:42] *** Quits: eyeburn (eyeburn@secret.den.of.flaming.evil) (Ping timeout: 121 seconds)
+[01:58:54] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[02:25:04] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Ping timeout: 121 seconds)
+[02:28:44] <Phase> Rylee, which grants every python script that cap :P
+[02:29:13] <Rylee> Phase: indeed
+[02:40:24] *** Quits: sleumas2000_ (uid91753@Pony-5dnslh.ealing.irccloud.com) (Quit: Connection closed for inactivity)
+[02:40:33] *** Gigaway is now known as Gigabit
+[02:46:33] *** Joins: Asoka_White (Asoka@Pony-gpnlii.net-htp.de)
+[02:49:31] *** Quits: Asoka (Asoka@Pony-u43i4s.net-htp.de) (Ping timeout: 121 seconds)
+[02:55:13] <Compu> new chapter! http://www.fimfiction.net/story/268471/ponyexe
+[02:55:13] <PinkiePieBot> [ pony.exe by Blue Blaze {COMET} - 9 chapters - 7537 views - [Adventure][Human] - 24472 words - Likes: 1107 - Dislikes: 41 - 96.43% ]
+[02:58:05] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[02:58:13] *** locodashie11 is now known as Pony_55481
+[02:58:58] *** Pony_55481 is now known as locodashie11
+[03:17:10] <Compu> http://datacent.com/hard_drive_sounds.php such a wonderful symphony of death
+[03:17:11] <PinkiePieBot> [ Failing hard drive sounds - Datacent.com - Datacent ]
+[03:25:08] <Moonlightning> ugh
+[03:25:25] <Moonlightning> Where are the extra characters at the end of `ls -l`-style permission things documented?
+[03:25:41] <Moonlightning> like + (is it +?) for ACLs, . for SELinux context
+[03:26:53] <JustAberrant> ls is pretty old and very gnu, so probably in the info page
+[03:27:08] <Sakura> Well, apparently not only is my laptop's IP Address connectable on IRC, but now my actual IP is too...
+[03:28:08] <Sakura> I was aiming for a LAN-only IRC server. Not a public one.
+[03:28:21] <Sakura> Looks like I have to password it just in case.
+[03:29:02] <Moonlightning> Where in the info page @.@
+[03:29:06] * Moonlightning never learned info
+[03:29:16] <Moonlightning> doesn't seem to be in the bit on symbolic modes
+[03:30:04] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Quit: )
+[03:35:52] *** Gigabit is now known as Gigaway
+[03:47:16] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:52:22] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[03:52:24] *** Parts: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) ("Leaving")
+[03:52:29] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[03:52:41] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[04:04:45] *** Eventide is now known as King_Sombra
+[04:04:48] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[04:05:22] *** King_Sombra is now known as Eventide
+[04:26:30] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[04:26:47] *** Eventide is now known as Midwatch
+[04:28:59] *** Midwatch is now known as Nilak
+[04:58:21] *** Gigaway is now known as Gigabit
+[05:02:45] *** init3 is now known as Init3-away
+[05:09:56] <ShivalWolf> https://lh3.googleusercontent.com/-m776v9moaxs/VhSRX8_LlPI/AAAAAAAAX_I/J3ic2R20aOA/s0/15%2B-%2B1
+[05:14:45] *** Gigabit is now known as Snoarin
+[05:45:35] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[05:45:36] *** Quits: quin (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[05:48:12] *** Joins: quin (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[05:49:50] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[05:49:56] *** Init3-away is now known as init3
+[05:54:55] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[05:55:09] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "bbiab")
+[06:07:47] *** Nilak is now known as Eventide
+[06:43:07] *** Cosmic|sleep is now known as Cosmic
+[06:46:35] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[06:48:39] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:53:21] *** Eventide is now known as Eventide|Sleepies
+[06:55:18] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[06:56:53] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[06:57:13] *** locodash11[lagout] is now known as locodashie11
+[07:05:26] *** Princess_Cadance is now known as Princess_Cadance|AFK
+[07:22:33] *** Alphagamer774 is now known as Alpha774[GW2]
+[07:51:42] *** Ruthalas is now known as Ruthalasleep
+[08:38:38] *** zz_CyberJacob is now known as CyberJacob
+[08:49:06] *** Quits: Alpha774[GW2] (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Quit:  I love my HydraIRC -> http://www.hydrairc.com <-)
+[08:57:40] <Moonlightning> Can I make `ps` only show information about foreground processes?
+[08:59:06] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[08:59:42] <wolfyshy> ps auxw | grep 'S+' works here, but idk if that's portable
+[09:00:17] <Moonlightning> Most `ps` stuff seems to not be portable 6_9
+[09:00:22] <Moonlightning> was hoping there'd be a flag for it though
+[09:01:18] <wolfyshy> nope, but the manpage DOES say '+' is shown when the process is running in the foreground
+[09:01:24] <wolfyshy> and this is standard to BSD, Solaris, and Linux
+[09:02:06] <Moonlightning> Hmm.
+[09:02:17] <Moonlightning> Guess I need more flags for pgrep XP
+[09:03:04] <Moonlightning> Up until earlier this week, I just had this alias which did this silly `ps | grep` thing with a written-out list of columns
+[09:03:17] <Moonlightning> then I deleted it 'cos I decided I should actually learn `ps`
+[09:15:46] <Moonlightning> hmmm…
+[09:16:01] <Moonlightning> Things that define things need to learn to recognize made-up words
+[09:16:08] *** Joins: sleumas2000_ (uid91753@Pony-5dnslh.ealing.irccloud.com)
+[09:16:27] <Moonlightning> Starting with words that are just existing words combined with additional prefixes|suffixes.
+[09:16:34] <HoneyDrops> Does anyone know of anything that doesn't just block web tracking, but actively tries to poison the systems with forged data?
+[09:16:53] <Moonlightning> ++HoneyDrops
+[09:17:00] <Moonlightning> I've thought about that a few times :p
+[09:17:29] <Moonlightning> Maybe see also: TAILS et al
+[09:17:46] <Moonlightning> They do things like inaccurate User-Agent headers, for anonymity
+[09:17:54] <Moonlightning> advertise as being one of the more common agents
+[09:20:26] <Moonlightning> Unrelatedly, years should be aggressively one-indexed, starting from the year 11111 :P
+[09:20:33] <HoneyDrops> It just seems like the next logical step.
+[09:21:22] <Moonlightning> That way, things like /the first century/ refer to 111..200—wait. Buck.
+[09:28:04] <HoneyDrops> I mean, if the goal is to stop people from advertising, it takes more than blocking them.  You have to active destroy any and all potential benefit to it.  Remove the motive, and they stop doing it.  Obviously though that is a non-trivial problem, or I assume we'd have done so already and the ad industry would have ceased to be.
+[09:29:42] <Moonlightning> Mmm.
+[09:31:14] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[09:32:09] <Gladiolus> i fixed the pentium 3
+[09:32:10] <Gladiolus> o3o
+[09:32:22] <Moonlightning> You fixed a CPU? :o
+[09:32:55] <Gladiolus> a board and cpu, turned out the jumpers were set incorrectly and an obscure bios option had to then be turned on for it to boot
+[09:32:55] <wolfyshy> the ad industry isn't the problem, their bullshit tracking is.
+[09:33:02] <wolfyshy> just putting that out there
+[09:33:03] <Gladiolus> i am so happy i wanted this specific computer for so long
+[09:33:10] <wolfyshy> Gladiolus: oh hey
+[09:33:15] <Moonlightning> Gladiolus :?
+[09:33:19] <wolfyshy> Gladiolus: you finally got the p3? :D
+[09:33:21] <Gladiolus> yus
+[09:33:26] <Gladiolus> 1400  Mhz Tualatin! o3o
+[09:33:39] <JustAberrant> :)
+[09:33:48] <Gladiolus> The peak of 1990s computing technology, I thought it was dead then I repaired it.
+[09:33:53] <Gladiolus> I am a very happy hobbyist
+[09:33:55] <Finwe> I have some extra computers with dual-core Pentium D processor.
+[09:33:57] <Moonlightning> xD
+[09:34:00] *** CyberJacob is now known as zz_CyberJacob
+[09:34:10] <Gladiolus> bonus: got a 733 mhz powermac too so i can OS9 and Win98
+[09:34:11] <Moonlightning> wolfyshy: you've been following that project?
+[09:34:13] <Gladiolus> ALL DA OLDPUTER
+[09:34:46] <Gladiolus> too bad the 1ghz dual powermac was broke (bad pus)
+[09:34:48] <Gladiolus> psu
+[09:34:55] <Gladiolus> naturally it doesn’t take standard atx, /naturally/
+[09:35:50] <HoneyDrops> wolfyshy: I consider ads themselves a blight.  Tracking is just a particularly harmful strain.
+[09:36:34] <wolfyshy> HoneyDrops: I don't
+[09:37:14] <wolfyshy> consider ads on derpibooru or e621, those are artists advertising their own work so they can get more commissions, it isn't like some big corp
+[09:37:35] <Moonlightning> The stuff you disable Adblock for :p
+[09:37:45] * Moonlightning has Derpibooru and Fimfiction whitelisted
+[09:38:04] <wolfyshy> Moonlightning: see, I think that if ad networks in general stopped doing that STUPID flash/animation bogus crap
+[09:38:06] <wolfyshy> and the tracking crap
+[09:38:15] <wolfyshy> if we went back to pure text ads with links
+[09:38:21] <wolfyshy> you know, like it was back in the mid 90s
+[09:38:21] <HoneyDrops> ads are a deliberate attempt to manipulate other's behavior for the sole intent of profit.  It amounts to psychological warfare.
+[09:38:52] <wolfyshy> HoneyDrops: "for the sole intent of profit" -> considering there are open source projects doing advertising, uh, no.
+[09:39:03] <wolfyshy> it's about recognition and driving traffic, too.
+[09:39:15] * Moonlightning advertises #miau-dev on IRC using pure text that is not even quite a link.
+[09:39:29] <wolfyshy> Gladiolus: I got a G5 tower since the last time we talked
+[09:39:32] <Moonlightning> > Derpibooru ads by individual artists
+[09:39:32] <wolfyshy> Gladiolus: and a G3 iBook
+[09:39:35] <Moonlightning> > psychological warfare
+[09:39:39] <wolfyshy> ^
+[09:39:40] <Moonlightning> uhhh…damn ._.
+[09:39:48] <Gladiolus> ooo neat
+[09:39:59] <Gladiolus> I have a g3 ibook too, it’s my brothers project- bad backlight.
+[09:40:07] <Gladiolus> What is a G5 good for these days?
+[09:40:20] <wolfyshy> I use it as my primary desktop since my core2 bit the dust lol
+[09:40:25] <wolfyshy> it runs firefox 38 ESR
+[09:40:29] <wolfyshy> it has 4 GB RAM
+[09:40:32] <Gladiolus> I can’t think of much it would be good at that a later intel could do, and it can’t really do classic.
+[09:40:33] <Gladiolus> ooo
+[09:40:41] <wolfyshy> I mean it's a 64-bit dual-CPU system
+[09:40:45] <wolfyshy> it's about the same power as my core2
+[09:40:51] <wolfyshy> just 5 years older ;)
+[09:41:00] <Gladiolus> Seems to be an odd spot for historical purposes though since for “old” a hobbyist would want something that can run classic well or straight OS9
+[09:41:09] <wolfyshy> Gladiolus: it runs Classic fine
+[09:41:16] <HoneyDrops> I always block ads.  Though generally by blocking 3rd party resource requests by default.
+[09:41:17] <Gladiolus> and of course it’s getting older by the year so actually using it becomes less of a thing.
+[09:41:23] <Gladiolus> I suppose! 
+[09:41:40] <wolfyshy> ehh, actually using it never becomes less of a thing for me
+[09:41:48] <Gladiolus> I dunno I’m just weird though, my obession is the 90s.
+[09:41:52] <wolfyshy> I have my Pentium 100 over there that I play DOS games on for instance
+[09:41:57] <wolfyshy> I lufs it
+[09:41:57] <Gladiolus> thus why this tualatin excites the hell out of me
+[09:42:08] <Gladiolus> I keep my dads pentium 2 around for that
+[09:42:10] <Gladiolus> awe64 owo
+[09:42:53] <Gladiolus> I find it neat that win98 works fine on 1024 mb systems because of the 640k upper memory- so it’s really just 1023
+[09:43:00] <Gladiolus> anything over 1025 and it’ll crash as heck
+[09:43:04] <wolfyshy> lol yep
+[09:43:16] <Moonlightning> HoneyDrops: I dunno. Sure, Big Advertising is Probably Bad and all that, but I really don't see the harm in pony artists putting little long-delay four-frame ads out on pony sites.
+[09:43:20] <Gladiolus> Therefore I can have a gig in here and be just fine, The Upper Limit.
+[09:43:30] <Moonlightning> And I /really/ can't see the jump from there to psychological warfare ._.
+[09:43:35] <Gladiolus> I have run 98 on 2 gig systems, just gotta mess with windows.cfg of something, i forgot.
+[09:43:44] <wolfyshy> Gladiolus: any reason you stopped coming by the other chan btw? :3  it's ok, just wondering
+[09:43:46] <wolfyshy> ah yeah system.ini
+[09:43:47] <HoneyDrops> The other bonus I found was that most news sites comments also don't load for me.  Which is always a nice bonus.  Bad as yt comments, at least when I still visited yt rather than just using youtube-dl.
+[09:43:47] <Gladiolus> Anything that can get that much ram in it though.
+[09:43:48] <wolfyshy> I think
+[09:43:52] <Gladiolus> I keep forgetting about it!
+[09:44:04] <Gladiolus> I’m a one network man and I legit forgot what network it’s on
+[09:44:14] <wolfyshy> that's okay, hehe
+[09:44:14] <Moonlightning> wolfyshy: why you vaguely mention private channel ;-;
+[09:44:20] <Moonlightning> Now I'm all curious.
+[09:44:30] <Gladiolus> also bonus, I got a 1600x1200 CRT along with this stuff too so that’s nice
+[09:44:35] <wolfyshy> Moonlightning: it's a channel for old tech enthusiasts :p
+[09:44:55] <HoneyDrops> Moonlightning: I would maybe accept "ads" that are first party hosted, manually screened by the owner, and are static text-only.
+[09:45:22] <wolfyshy> I mean art ads by necessity need to be at least still-frame image
+[09:45:27] <Gladiolus> I have an old TV tuner in here so I can PS2 when I 90s pc too lel
+[09:45:36] <HoneyDrops> If they want ad rotation, it should be done server-side only (absolutely no client-side scripts) and no tracking what-so-ever.
+[09:45:38] <wolfyshy> Gladiolus: I use the TV tuner in my PII for the SNES
+[09:45:39] <wolfyshy> :D
+[09:45:47] <Gladiolus> BEOS supports it out of the box, interestingly.
+[09:45:51] <Gladiolus> Useless for anything else.
+[09:46:44] *** Joins: Phase (Phase4@Pony-pm0kpp.internode.on.net)
+[09:46:46] <HoneyDrops> I would accept a global count of how many times a specific ad has been shown, however nothing more specific.
+[09:46:47] <Gladiolus> I installed it once and was like “Thank god Stebe killed this"
+[09:47:11] * JustAberrant agrees @ locally served ads, but the problem was it's pretty hard for your average website owner to arrange with a company regarding advertisements
+[09:47:12] <Gladiolus> wolfyshy, interested in the parts from a 1ghz dual MDD powermac g4?
+[09:47:23] <JustAberrant> plus the whole issue of counting impressions
+[09:47:43] <Gladiolus> As far as I know everything but the PSU works. Naturally I can’t confirm that.
+[09:48:11] <JustAberrant> ad networks suck, but they did solve that problem
+[09:48:58] <wolfyshy> HoneyDrops: https://developers.google.com/analytics/devguides/collection/protocol/v1/
+[09:48:59] <PinkiePieBot> [ Measurement Protocol Overview  |  Analytics Measurement Protocol  |  Google Developers ]
+[09:49:00] <wolfyshy> HoneyDrops: have fun :D
+[09:49:11] <wolfyshy> server-side google analytics.
+[09:49:15] <wolfyshy> ruby, python, php SDKs available.
+[09:49:24] <wolfyshy> because people run blockers too much.
+[09:49:33] <Moonlightning> HoneyDrops: definitely no clientside anything, 'cept image rendering
+[09:49:36] <wolfyshy> you will never know who uses this, you will never know what is safe and what isn't.
+[09:49:43] <wolfyshy> \o/
+[09:49:44] <Moonlightning> I really don't see the harm in simple animations like on Derpi though
+[09:49:51] <HoneyDrops> Figure out how to feed them bad data?
+[09:49:51] <wolfyshy> Gladiolus: hmmmm
+[09:50:09] <Moonlightning> HoneyDrops: you said manually-screened :P
+[09:50:13] <Moonlightning> 'sides, you can do that with text.
+[09:50:13] <Gladiolus> I wouldn’t charge much, shipping and half of whatever the going ebay price is.
+[09:50:18] <Moonlightning> %%30%30
+[09:50:24] <wolfyshy> lawl
+[09:50:28] <wolfyshy> %%30%30
+[09:50:57] <HoneyDrops> Moonlightning: I was saying w/ regards to wolfyshy's link.  Figure out how to poison the reports it's making.
+[09:51:02] <wolfyshy> Gladiolus: I'll consider it
+[09:51:23] <Moonlightning> Oh.
+[09:51:32] <wolfyshy> I already bought Snoari_'s rpi and the G5 this month
+[09:51:36] <wolfyshy> need to settle my spending a bit
+[09:51:37] <wolfyshy> lol
+[09:51:38] <HoneyDrops> But yes, we clearly need a larger solution to fixing the issue of analytics.
+[09:52:11] <Gladiolus> lol a network just refused my connection
+[09:52:17] <Gladiolus> because only paying irccloud users allowed
+[09:52:43] * Gladiolus grumps on wolfyshy’s head
+[09:52:45] <Moonlightning> Gladiolus: one horrible tech thing at a time, please
+[09:53:04] <Moonlightning> wolfyshy: replace vowels; it's easier to read :0
+[09:53:06] <Moonlightning> :3 *
+[09:53:11] <Moonlightning> Snoar_n
+[09:53:17] <wolfyshy> lol okay
+[09:53:20] <HoneyDrops> Shame that we ended up with http as the basis for the web, gopher was so much nicer.  I still think a sort of mountable ro system would have been better.
+[09:53:42] <wolfyshy> HoneyDrops: I was going to run a gopher server for my retrotech community
+[09:53:53] <wolfyshy> HoneyDrops: there are NO gopher daemons that run on modern linux or even COMPILE
+[09:54:03] <wolfyshy> there is one python one, last modified in 2008, but it needs 2.4
+[09:54:10] <wolfyshy> the oldest version in portage is 2.6 and it's masked..
+[09:54:29] <HoneyDrops> :(
+[09:54:51] <HoneyDrops> I still think it would be neat to be able to mount a website and be able to use normal tools on it.
+[09:55:00] <wolfyshy> I had a legit reason too; a lot of us have win3.1 or classic mac os computers, and gopher: is easier on the browsers they come with
+[09:55:08] <wolfyshy> that way I could offer "modern" browsers over gopher:
+[09:55:29] <HoneyDrops> Add in a versioning system, so you can view a website exactly as it was at any point in time.  Would make it better for citations.
+[09:56:06] <Phase> wolfyshy, must be one somewhere, gentoo served their site over gopher last april
+[09:56:50] <wolfyshy> Phase: they used the python one
+[09:56:53] <Phase> ah
+[09:57:01] <wolfyshy> Phase: I'm sure someone emerged python2.4 in a chroot for the one off :P
+[09:57:15] <Phase> why not go full retro? run old linux in a vm
+[09:57:22] <Moonlightning> Somepony educate me about gopher. o.o
+[09:57:41] <wolfyshy> Moonlightning: have you ever used ftp in firefox?
+[09:57:52] <Moonlightning> Maybe once or twice, years in the past.
+[09:57:58] <wolfyshy> Moonlightning: it's like that, but it supports search and serving info/images in dir listings.
+[09:58:09] <Moonlightning> oh, is it like what it does for file:?
+[09:58:19] <HoneyDrops> https://en.wikipedia.org/wiki/Gopher_(protocol)
+[09:58:20] <PinkiePieBot> [ Gopher (protocol) - Wikipedia, the free encyclopedia ]
+[09:58:30] * Moonlightning uses Firefox for file:///tmp , /sometimes/
+[10:01:32] * HoneyDrops only ends up in file:// inadvertently.
+[10:01:48] <Moonlightning> Don't you mean file:/// ?
+[10:01:59] <HoneyDrops> Yeah
+[10:02:00] <Moonlightning> …that's really silly.
+[10:02:04] <Moonlightning> Why is there a host portion?
+[10:02:08] <HoneyDrops> "Gopher is designed to function and to appear much like a mountable read-only global network file system" *swoons at the thought*
+[10:02:10] <Moonlightning> It's only ever `//`…right?
+[10:02:14] <Moonlightning> o3o
+[10:02:27] <wolfyshy> now I wonder if I could do file://powermac/Users/wolfy/
+[10:02:28] <Moonlightning> That would be amazing. ;-;
+[10:02:43] <Moonlightning> wolfyshy: how would it request the thing?
+[10:02:50] <wolfyshy> Moonlightning: idunno, NFS maybe?
+[10:03:00] <Moonlightning> no, that's nfs://powermac/Users/wolfy/
+[10:03:27] <HoneyDrops> Imagine being able to use tools like find or grep on the web!  Back up whole sites with cp -r!  diff webpages! <3
+[10:03:28] <Moonlightning> You need a /protocol/, but as soon as you have that, you have something else to put in the scheme portion.
+[10:04:12] <Moonlightning> HoneyDrops: imagine if people actually wrote HTML, so that individual webpages (and their diffs, by extension) would be actually readable. :P
+[10:04:19] <wolfyshy> oh wait
+[10:04:26] <wolfyshy> I remember why it uses that now
+[10:04:27] <Moonlightning> Have you /seen/ the state of most HTML documents today?
+[10:04:29] * Moonlightning shudders.
+[10:04:30] <wolfyshy> file://C|/windows
+[10:04:49] <wolfyshy> that's why
+[10:04:54] * Moonlightning frowns.
+[10:05:06] <Moonlightning> Wouldn't that just be file:///C/windows ?
+[10:05:10] <wolfyshy> why that way?  dunno, ask Marc Andressen(sp)
+[10:05:17] <HoneyDrops> Moonlightning: unfortunately, I try not to look directly at it for my sanity and happiness.
+[10:05:20] <wolfyshy> that's how NCSA Mosaic did it
+[10:05:26] <Moonlightning> wat?
+[10:05:28] <wolfyshy> and everyone kind of just copied that.
+[10:05:31] <Moonlightning> HoneyDrops: yeah ;-;
+[10:05:39] <wolfyshy> mosaic did file://C|/Windows
+[10:05:46] <wolfyshy> and the other browsers copied it
+[10:05:49] <Moonlightning> wolfyshy: what's NCSA Mosaic :P
+[10:06:00] <wolfyshy> Gladiolus: retromergency, Moonlightning has never heard of Mosaic!
+[10:06:14] <HoneyDrops> https://en.wikipedia.org/wiki/Mosaic_(web_browser)
+[10:06:15] <PinkiePieBot> [ Mosaic (web browser) - Wikipedia, the free encyclopedia ]
+[10:06:27] <Moonlightning> http://www.mosaicproject.org/ \o/
+[10:06:28] <Gladiolus> neither have i until now o3o
+[10:06:28] <PinkiePieBot> [ Home :: The Mosaic Project ]
+[10:06:34] <Gladiolus> although i remember it vaguely
+[10:06:46] <Moonlightning> Okay, how about this.
+[10:06:52] <Moonlightning> Make the host portion optional. :P
+[10:06:55] <Moonlightning> …or, better idea
+[10:06:58] <HoneyDrops> Basically it's who's to blame for the crappy model of web browsers we have today.
+[10:07:04] <Moonlightning> file:C|/windows
+[10:07:11] <Moonlightning> file:/home/blackl
+[10:07:33] <wolfyshy> "crappy model"
+[10:07:36] <Moonlightning> And keep the other stuff as backwards compatability
+[10:07:37] <wolfyshy> you mean because it had forms?
+[10:07:44] <Moonlightning> after all, /// is the same as /
+[10:07:47] <wolfyshy> I mean, gopher had a form standard too, and it implemented it, it's just no other client did
+[10:08:01] <wolfyshy> so it didn't see much server implementation
+[10:11:21] <HoneyDrops> I still have mixed feelings about tabs, not that mosaic is to blame for that.  I wonder if there is a way to run ff in a "daemon" mode like urxvtd and let the window manager manage windows.
+[10:12:14] <Moonlightning> Let which windows manager manage windows?
+[10:12:35] <HoneyDrops> Whichever one you're running.
+[10:13:28] <wolfyshy> HoneyDrops: you know you can disable tabs in ff and use windows instead right?
+[10:13:30] <Moonlightning> …but…isn't that already the case…?
+[10:13:36] <Moonlightning> ew.
+[10:13:43] * Moonlightning is reminded of IE<9
+[10:13:49] <wolfyshy> Moonlightning: IE7 had tabs
+[10:13:55] * Moonlightning is reminded of IE <7 *
+[10:14:06] <wolfyshy> Moonlightning: jwz (of netscape fame) used to hack Safari's binary on OS X to disable tabs entirely and remove the option from the menus
+[10:14:07] <HoneyDrops> wolfyshy: how well does ff share memory then?
+[10:14:09] <wolfyshy> because he hated tabs so much
+[10:14:17] <Moonlightning> HoneyDrops: it doesn't?
+[10:14:26] <Moonlightning> I launch Firefox, it allocates a quarter gig -.-
+[10:14:31] <wolfyshy> HoneyDrops: tabs vs windows doesn't make a difference
+[10:14:31] <Moonlightning> whatever it's doing, it's total shite.
+[10:14:34] <wolfyshy> HoneyDrops: this isn't chrome
+[10:14:38] <wolfyshy> HoneyDrops: it's per-domain in gecko
+[10:14:51] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:14:56] <Moonlightning> Firefox doesn't /share/ memory
+[10:14:58] <Moonlightning> it //hogs// it.
+[10:15:02] <HoneyDrops> The point is tabs are the hack to deal with the absolutely-worthless window management of Win9x.
+[10:15:18] <wolfyshy> HoneyDrops: tabs were conceived on solaris and first implemented on irix
+[10:15:30] * Moonlightning finds tabs invaluable for browsing.
+[10:15:40] <wolfyshy> HoneyDrops: and tabs didn't show up in gecko until Netscape 6.0, which was released when XP was already extant
+[10:15:42] <Moonlightning> I can keep multiple bits of history open at once!
+[10:15:44] <wolfyshy> or was it win2k
+[10:15:50] <Moonlightning> Search for something, open results in tabs
+[10:15:54] <Moonlightning> close tab if it's not what I wanted
+[10:16:02] <HoneyDrops> I'll have to try disabling tabs, see how it runs.  I was expecting that would run each as it's own proc, sharing nothing.
+[10:16:18] <HoneyDrops> Moonlightning: I have 73 tabs up now, I would rather have 73 windows.
+[10:16:33] <Moonlightning> HoneyDrops: so…use super-n instead of super-t?
+[10:16:43] * Moonlightning can't imagine having 73 browser windows @.@
+[10:16:46] <Moonlightning> but whatever, mang
+[10:16:49] <HoneyDrops> Then moving between them is the same as moving between any other windows.
+[10:16:50] * Phase likes tabs
+[10:16:56] <Moonlightning> HoneyDrops: make up your mind :p
+[10:17:06] <Moonlightning> You want windows, but you hate having to navigate between windows?
+[10:17:54] <HoneyDrops> No, no. I don't see a need for firefox to handle window management in a special case when I have a tool who's entire purpose is to manage windows.
+[10:18:19] <Moonlightning> Clearly, the need is there 'cos you've got 73 things to be managed. :P
+[10:18:32] <HoneyDrops> dwm would handle it easily.
+[10:18:37] <Gladiolus> jesus god this tualatin is fast
+[10:18:48] <Gladiolus> dx9 install normally takes like 10 minutes, it did it in one
+[10:50:53] <HoneyDrops> http://www.omgubuntu.co.uk/2012/04/why-tabs-must-die  < more or less sums up why tabs are bad from a UI perspective.
+[10:50:54] <PinkiePieBot> [ Why Tabs Must Die - OMG! Ubuntu! ]
+[10:51:27] <Gladiolus> i like tabs
+[10:53:47] <HoneyDrops> The actual tab widget is fine, and in some cases very useful, but tabs should be handled by the window manager, not the application.
+[10:57:03] <Gladiolus> The only version of Windows I have never had a legit retail copy of (excluding server versions) is XP.
+[10:57:20] <Gladiolus> And some minor versions, but I’ve had all the others. HOW TRIVIAL AND ODD
+[10:58:17] <wolfyshy> I got msdn universal in 2003
+[10:58:21] <wolfyshy> and again in 2009
+[10:58:30] <wolfyshy> and now have bizspark
+[10:58:39] <wolfyshy> lawl
+[10:58:44] <Gladiolus> I had MSDNAA once and printed out all my keys
+[10:58:57] <Gladiolus> they expired but for like 4 years I was rolling high on infinite windows 7 keys
+[10:59:13] <Gladiolus> I also continue to get server keys despite being in the arts program? weird school, weird.
+[10:59:37] <Gladiolus> (I went to tech school and then dropped out because computers as a career made me literally suicidal)
+[10:59:54] <Gladiolus> Never acted on it but booooy howdy that was not a good time
+[11:00:27] <HoneyDrops> WM-level tabs (in dwm): https://i.imgur.com/DPsYBp6.png
+[11:00:56] <Gladiolus> man osx 10.11 is much nicer to use than 10.10 was
+[11:01:30] <JustAberrant> I shouldn't joke but, hated java that much? :(
+[11:01:51] <JustAberrant> kidding aside, computers as a career is kinda depressing, I often wish I'd gone into a trade
+[11:01:55] <Gladiolus> o4o
+[11:02:13] <Gladiolus> It actually was a bit of the programming stuff yeah, I cannot brain that way it just isn’t happening.
+[11:02:26] <tiwake> HoneyDrops: oh, you are saying that, in the example of a web browser, that it should be a new window and the OS should deal with multi-instances of the program in a sane organized way
+[11:02:30] <Gladiolus> IT was also the fact that I do enjoy computers, but I /really/ need to be able to just stop and cool off after a few hours.
+[11:02:39] <Gladiolus> 8 hour days with nothing but computer? Burned out /fast/
+[11:03:08] * JustAberrant can get that :)
+[11:03:26] <Moonlightning> …I have never owned a legitimate copy of Windows. :o
+[11:03:43] <JustAberrant> good to decide you don't want to do something early enough though, I mean most people takes them 5 years into their career to figure that shit out
+[11:04:10] <HoneyDrops> tiwake: yes
+[11:04:12] <Moonlightning> I sort of inherited this one pirated copy of Windows that I didn't know about at the time
+[11:04:16] * JustAberrant owns a legit xp (pre sp1) copy from an old job
+[11:04:17] <Moonlightning> still need to destroy that
+[11:04:21] <Gladiolus> o3o
+[11:04:24] <Moonlightning> I have no use for a Windows install disc anymore
+[11:04:38] <Gladiolus> I have a retail copy of 98SE that I legit use thanks to hobbyism lol
+[11:04:46] <JustAberrant> :>
+[11:05:01] * JustAberrant has a legit copy of win7 too.. I still keep a windows vm for a handful of things
+[11:05:28] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[11:05:58] <tiwake> HoneyDrops: its not as bad if you include 50+ different tabs in firefox
+[11:06:09] <tiwake> HoneyDrops: where you have tab groups
+[11:06:24] <JustAberrant> specifically: my gps updater, visio, and photoshop ;p
+[11:06:28] <tiwake> such a thing would not be very sane for the operating system to organize 
+[11:06:55] <Moonlightning> On a related note…how do you really destroy a CD? >.>
+[11:07:06] <Moonlightning> preferably including sharpied label and stuff
+[11:07:11] <JustAberrant> shred it
+[11:07:13] <tiwake> Moonlightning: microwave?
+[11:07:32] <Moonlightning> Don't have one.
+[11:07:38] <Moonlightning> Or a disc shredder
+[11:07:53] <JustAberrant> also random: we actually have a disc shredder at work.. it's awesome
+[11:07:59] <Gladiolus> pee on it and mail it to Ballmer
+[11:08:07] <Moonlightning> wat XD
+[11:08:13] <Moonlightning> That would be worse :p
+[11:08:15] <JustAberrant> they don't actually let us use it any more.. but back when they did you had to sign a waiver and wear a full face shield and ear protection
+[11:08:23] <Moonlightning> I'd have the legal team after me for /two/ reasons @.@
+[11:08:36] <Gladiolus> pfff mail it with an alias silly
+[11:08:57] <Moonlightning> JustAberrant: I take it it was more than one of those consumer shredders that does discs
+[11:09:11] <Moonlightning> What was it, like a heavy-duty thing that would do entire spindles of discs at once?
+[11:09:23] <JustAberrant> pretty much, yeah
+[11:09:27] <JustAberrant> it had like a hopper
+[11:09:33] <JustAberrant> and dust came out the other end
+[11:09:52] <JustAberrant> (which you'd probably die if you breathed)
+[11:09:55] <wolfyshy> I like my job in programming but I've always loved programming so I guess I'm just lucky :3
+[11:10:03] <wolfyshy> I think people should be free to do what they really like though
+[11:10:22] * JustAberrant likes the programming aspect of his job, but there's a huge tonne of parts I don't like
+[11:10:56] <tiwake> s/I/he/
+[11:11:06] <Moonlightning> A hopper?
+[11:11:20] <Moonlightning> wolfyshy: join the club… :P
+[11:11:33] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[11:11:37] <wolfyshy> CD dust
+[11:11:39] <wolfyshy> don't breathe this!
+[11:11:41] <JustAberrant> Moonlightning: the same company that makes it makes a bigger version (which we also have), which as a marketting stunt they shred a torpedo casing
+[11:11:46] <tiwake> will it blend!
+[11:11:54] * Moonlightning blends the shredder :o
+[11:11:57] <JustAberrant> (they have a bigger version still that'll shred a car..)
+[11:12:01] <Moonlightning> :o
+[11:12:12] <Moonlightning> wolfyshy: We'll probably have to get fullscale automation before that can happen though @.@
+[11:12:15] <tiwake> https://www.youtube.com/watch?v=vZhWd6nvcWc
+[11:12:15] <PinkiePieBot> [ Will It Blend? - Grand Theft Auto IV - 2594770 views - 1m 22s long - 9277 likes - 80.97% ]
+[11:12:21] <JustAberrant> it basically uses a series of slow moving cams and just slowly chews anything into oblivion
+[11:12:43] * Moonlightning tosses in a copy of Oblivion.
+[11:13:22] <tiwake> I love the will it blend series
+[11:13:26] <tiwake> ha
+[11:13:27] *** Joins: Datalink (Datalink@Datalink)
+[11:13:35] <tiwake> its why I got one of those blenders
+[11:13:39] <tiwake> <3
+[11:13:44] <Moonlightning> I don't suppose I could burn it or anything
+[11:13:51] <tiwake> sure you could
+[11:13:57] <tiwake> its mostly just plastic
+[11:14:01] <tiwake> cheap plastic
+[11:14:01] <HoneyDrops> Thermite~
+[11:14:02] <Moonlightning> But that would be dangerous. :P
+[11:14:06] <tiwake> the kind that burns really well
+[11:14:09] <tiwake> pff
+[11:14:25] <Moonlightning> Okay, how would I burn it? I don't have a fireplace or anything XP
+[11:14:30] <JustAberrant> but back to the work hate: the constant uphill battle to do things properly, the bureaucracy on both our and and the customers end, the increasing amount of BS we do in the name of metrics, the growing legacy cruft that we're not allowed to fix, etc ;p
+[11:14:32] <HoneyDrops> Just do it outside, and avoid the smoke
+[11:14:32] <Moonlightning> …wait, seriously, no fumes or anything? O.o
+[11:14:36] <Moonlightning> pff
+[11:14:46] <tiwake> only in the state of califorina, if you ask the surgeon general
+[11:14:59] <Moonlightning> JustAberrant: so basically just general corporate bullshit woe
+[11:15:07] <JustAberrant> pretty much, yeah
+[11:15:20] *** Quits: AutoLapsus (Lapsus@Totally.Is.A.Network.Service) (chrysalis.canternet.org cloudchaser.canternet.org)
+[11:15:20] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (chrysalis.canternet.org cloudchaser.canternet.org)
+[11:15:20] <JustAberrant> that's basically any medium to large software company
+[11:15:36] <Moonlightning> There goes Cloudchaser.
+[11:15:37] <JustAberrant> and it's depressing ;p
+[11:15:38] <HoneyDrops> coffee can w/ some accelerant would make quick work of an optical disk
+[11:15:46] <Moonlightning> HoneyDrops: what?
+[11:16:07] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[11:16:07] *** Joins: AutoLapsus (Lapsus@Totally.Is.A.Network.Service)
+[11:16:07] *** cloudchaser.canternet.org sets mode: +o AutoLapsus
+[11:16:11] <JustAberrant> kidding aside, put it in a few garbage bags and smash it a few times with a hammer
+[11:16:24] <JustAberrant> if anyone's keen enough to put it back together again, you've got bigger problems in your life
+[11:16:29] <Moonlightning> I can't see that doing much to an optical disc.
+[11:16:34] <Moonlightning> A spinning hard drive, definitely
+[11:16:43] <tiwake> get a pocket knife and play tictactoe with a friend on it
+[11:16:57] <JustAberrant> if it shatters it a few times it's gonna be really damn hard to get anything off it
+[11:16:57] <Moonlightning> hmmmm…can you like split the layers apart?
+[11:17:02] <Moonlightning> Or is that nontrivial?
+[11:17:19] <JustAberrant> you can use powerful electric current to literally evaporate the data off it
+[11:17:20] <tiwake> the stuff on a CD or DVD is just on one side
+[11:17:21] <HoneyDrops> set can on pavement, put disk in, douse in lighter fluid (or kerosene, alcohol. brake fluid) and ignite and stand back.
+[11:17:53] <JustAberrant> .. argue with cops for an hour.. make permanent enemy with neighbors.. etc
+[11:17:57] <Moonlightning> ^
+[11:17:58] <Moonlightning> @.@
+[11:18:02] <HoneyDrops> oh, if you have a microwave you don't care about, just oput the disk in for a pretty light show
+[11:18:18] <Moonlightning> I don't though :(
+[11:18:18] <JustAberrant> https://www.youtube.com/watch?v=TlCCpCB-Gr4  <-- found the video ;p
+[11:18:18] <PinkiePieBot> [ Erase CD with HV + DVD - 118275 views - 3m 46s long - 1449 likes - 97.44% ]
+[11:18:20] *** Joins: SakuraNakatani (Sakura@Pony-fkc.i75.99.192.IP)
+[11:18:27] *** Quits: jaderain (jaderain@jaderain.is.best.pony) (Ping timeout: 121 seconds)
+[11:18:29] *** Quits: Rylee (rylai@Pony-71u6pe.so) (Ping timeout: 121 seconds)
+[11:18:36] <tiwake> HoneyDrops: that was suggested... but the microwave will survive
+[11:18:51] <tiwake> anyway, I must sleep.
+[11:18:55] *** Quits: sleumas2000 (sleumas2000@my.little.karaoke) (Ping timeout: 121 seconds)
+[11:19:02] *** Quits: Sakura (Sakura@is.a.very.derpy.pony) (Ping timeout: 121 seconds)
+[11:19:06] <JustAberrant> also that guy sounds like he's taken a few jolts to the cranium
+[11:19:35] *** Joins: Rylee (rylai@Pony-71u6pe.so)
+[11:19:36] *** Joins: sleumas2000 (sleumas2000@my.little.karaoke)
+[11:20:25] *** Joins: jaderain (jaderain@jaderain.is.best.pony)
+[11:21:10] *** SakuraNakatani is now known as Sakura
+[11:21:39] *** Sakura is now known as Pony_12162
+[11:25:33] *** Eventide|Sleepies is now known as Eventide
+[11:31:15] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[11:40:24] *** Quits: sleumas2000_ (uid91753@Pony-5dnslh.ealing.irccloud.com) (Quit: Connection closed for inactivity)
+[12:12:36] *** Quits: nscoots (FreyGrimrod@Pony-dpg.afa.222.209.IP) (Connection closed)
+[12:15:29] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[12:16:13] *** Joins: nscoots (FreyGrimrod@Pony-dpg.afa.222.209.IP)
+[12:31:32] *** Quits: quin (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[12:31:44] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[12:36:02] * DJ-C0L7[EIT] wonders how freaked out the neighbors would be if he brought home an M35A2D-E6
+[12:38:05] * DJ-C0L7[EIT] snickers to himself and wonders how freaked out the guys at work would be if he showed up for work in either an M35A2D or M923
+[13:18:21] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-llapi5.tmodns.net)))
+[13:19:01] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[13:27:37] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[13:39:15] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[14:21:47] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:26:26] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 121 seconds)
+[14:31:22] *** Joins: nscoots1 (FreyGrimrod@Pony-dpg.afa.222.209.IP)
+[14:33:15] *** Quits: nscoots (FreyGrimrod@Pony-dpg.afa.222.209.IP) (Ping timeout: 121 seconds)
+[14:35:29] *** Quits: nscoots1 (FreyGrimrod@Pony-dpg.afa.222.209.IP) (Ping timeout: 121 seconds)
+[15:19:52] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[15:34:55] *** Joins: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se)
+[16:13:08] *** Joins: Crimson_Tail (Bluepon@Pony-lu3f0n.cg80.k4gu.0151.2601.IP)
+[16:34:22] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[16:42:53] *** Joins: zeta_ (Bluepon@Pony-mfh7oq.md.comcast.net)
+[16:44:42] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[16:44:56] *** Quits: Crimson_Tail (Bluepon@Pony-lu3f0n.cg80.k4gu.0151.2601.IP) (Killed (NickServ (GHOST command used by zeta_!Bluepon@Pony-mfh7oq.md.comcast.net)))
+[16:44:58] *** zeta_ is now known as Crimson_Tail
+[17:08:51] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[17:57:21] <johnsey> hmm DDR3 is pretty cheap at the moment
+[17:59:10] <MistVeil> Yus
+[18:03:51] <MistVeil> Low capacity SSDs are also pretty cheap right now
+[18:04:58] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[18:33:48] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:34:32] *** Snoarin is now known as Soarin
+[18:37:30] *** Pony_12162 is now known as Sakura
+[18:44:44] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:00:54] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[19:01:13] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[19:48:26] *** zz_CyberJacob is now known as CyberJacob
+[20:31:35] <DataByte> some rebellious, juvenile part of me is extremely amused that one of the menus for the software we pay thousands of dollars a year to use.. is named 'FAP'
+[20:38:43] <Soarin> damn, cant see the option to change ubuntu desktop size. OS is in virtualbox
+[20:39:17] <Soarin> err, resolution, sorry bad day
+[20:48:07] <DataByte> it's under 'monitors'
+[20:48:19] <DataByte> something like that
+[20:49:10] <Soarin> I know where its at, I just cannot see the buttons due to it being super small size. and I forgot holding Alt(control what ever one) while left click and dragging the window, will make it so you can put part of the window off scree
+[20:49:13] <Soarin> :P
+[20:57:25] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Ping timeout: 121 seconds)
+[20:58:36] *** CyberJacob is now known as zz_CyberJacob
+[20:59:44] <johnsey> Soarin: install virtual box guest additions and resize the VM window
+[21:00:06] <Soarin> I did install the guest additions I thought x.x
+[21:00:25] <johnsey> did you restart X afterwards?
+[21:00:39] <Soarin> Think so
+[21:00:44] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Quit: Saliendo)
+[21:10:34] *** Quits: Phase (Phase4@Pony-pm0kpp.internode.on.net) (Ping timeout: 121 seconds)
+[21:30:08] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:33:30] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[21:47:52] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:22:58] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[22:30:28] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:53:04] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[23:08:09] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[23:25:22] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[23:30:37] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[23:38:23] *** Joins: nscoots (FreyGrimrod@Pony-dpg.afa.222.209.IP)
+[23:40:13] *** Quits: nscoots (FreyGrimrod@Pony-dpg.afa.222.209.IP) (Quit: Leaving.)
+[23:43:59] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[23:56:27] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[23:56:38] *** locodashie11 is now known as Pony_55365
+[23:58:05] *** Pony_55365 is now known as locodashie11

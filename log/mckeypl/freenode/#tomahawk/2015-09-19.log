@@ -1,0 +1,86 @@
+[00:16:26] *** Quits: soee (~soee@agwy27.neoplus.adsl.tpnet.pl) (Ping timeout: 246 seconds)
+[00:23:58] *** Joins: McKey (~McK@ipv6.antyklay.pl)
+[00:23:59] *** Server sets mode: +gnt 
+[00:33:57] <theli_ua> SolarAquarion: well, what features are you interested in exactly?
+[00:34:22] <theli_ua> I'm not even sure what the features are as site is in chinese and app wont work for me and I'm lazy to root my phone and install exposed
+[00:37:38] <SolarAquarion> theli_ua: it seems that there are playlist stuff and what not seemingly  
+[00:37:58] <theli_ua> yeah, playlists are possible, someone would just need to implement it
+[00:38:03] <SolarAquarion> that can be done later
+[00:38:17] <SolarAquarion> much later when you feel less lazy?
+[00:38:21] <theli_ua> sure, I'm just not interested in those enough to do that myself
+[00:38:27] <SolarAquarion> ok
+[01:13:44] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[02:01:29] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Quit: Leaving)
+[02:48:14] <theli_ua> with all those "free" resolvers, like netease, amazon prime, youtube, soundcloud, etc ... I feel like there is no even need for pay-to-use ones for me anymore
+[02:56:28] *** Quits: jturney (~jon@host86-160-189-124.range86-160.btcentralplus.com) (Read error: Connection reset by peer)
+[03:58:48] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[03:58:48] <github-tomahawk> [13tomahawk-resolvers] 15dschmidt pushed 4 new commits to 06master: 02http://git.io/vnOzq
+[03:58:48] <github-tomahawk> 13tomahawk-resolvers/06master 14eab3a3f 15Anton Romanov: Add Netease resolver
+[03:58:48] <github-tomahawk> 13tomahawk-resolvers/06master 146afcf6a 15Anton Romanov: [netease]add stream quality selection
+[03:58:48] <github-tomahawk> 13tomahawk-resolvers/06master 14cef0753 15Anton Romanov: [netease]Fix url replace
+[03:58:48] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[04:03:04] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) ()
+[04:05:07] <theli_ua> domme: thanks
+[04:08:47] *** Quits: Fohlen (~Fohlen@v22015072923726622.yourvserver.net) (Ping timeout: 244 seconds)
+[04:10:53] *** Joins: Fohlen (~Fohlen@v22015072923726622.yourvserver.net)
+[04:12:29] <domme> theli_ua: sure :)
+[05:09:33] *** Quits: mgue (~mgue@f049029238.adsl.alicedsl.de) (Read error: Connection reset by peer)
+[05:10:30] *** Joins: mgue (~mgue@x5ce44015.dyn.telefonica.de)
+[05:25:50] <theli_ua> BTW, SolarAquarion , have you tried that resolver on master?
+[05:40:45] *** Quits: sythe (uid20450@facade/leader) ()
+[06:08:15] <theli_ua> domme: jherskowitz , so, about bandcamp ... it would be pretty trivial to make a resolver .... 
+[06:08:25] <theli_ua> doesn't even need any keys or anything https://bandcamp.com/api/mobile/15/tralbum_details?band_id=61575547&tralbum_id=3815043826&tralbum_type=a
+[07:03:21] *** Quits: rodgort (~rodgort@105.ip-167-114-152.net) (Quit: Leaving)
+[07:22:30] *** Joins: rodgort (~rodgort@105.ip-167-114-152.net)
+[08:12:24] *** Quits: ugly_cat_ (~quassel@c-76-104-204-149.hsd1.wa.comcast.net) (Ping timeout: 264 seconds)
+[08:12:56] *** Joins: ugly_cat (~quassel@c-76-104-204-149.hsd1.wa.comcast.net)
+[08:53:34] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[10:52:15] *** Joins: apb1963 (~apb@174-135-20-37.res.bhn.net)
+[10:54:25] <domme> theli_ua: ping
+[10:55:30] <domme> theli_ua: i would like to work on tooling a bit this weekend e.g. i think we badly need a testsuite for resolvers.. wanna lend a hand?
+[10:55:51] <domme> (in addition to es6 maybe even es7 syntax)
+[11:06:08] *** Joins: soee (~soee@agwa15.neoplus.adsl.tpnet.pl)
+[11:07:15] <domme> i think xhochy has done quite a bit for testing but i dont know its state
+[11:07:22] <domme> and i need to setup ci
+[11:18:16] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[11:59:30] <domme> xhochy: gave a close look to node-tomahawkjs now... not sure if i will use that or start from scratch, but theres a lot of valuable information in there. cheers mate :)
+[12:04:22] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) (Remote host closed the connection)
+[12:08:27] *** Joins: jturney (~jon@host86-160-189-124.range86-160.btcentralplus.com)
+[12:22:16] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[12:32:52] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[12:50:46] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Quit: Leaving)
+[13:08:52] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[13:32:32] *** Quits: soee (~soee@agwa15.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[13:34:52] *** Joins: soee (~soee@agwa15.neoplus.adsl.tpnet.pl)
+[13:44:25] <jherskowitz> theli_ua: oh?
+[13:44:35] <jherskowitz> nice
+[14:54:18] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[15:38:21] <jherskowitz> pubparisporn: can someone remind me the answer to adding a network drive to scanner path?
+[16:50:16] *** Joins: youlde4 (guest-youl@gateway/web/scrollback.io/x-lcdjdpnwhgkxtsar)
+[16:50:16] <youlde4> i need help writing a resolver
+[16:50:17] <youlde4> anyone here?
+[16:50:27] <youlde4> i'm willing to write a couple resolvers actually
+[16:51:38] <youlde4> i keep gettings TypeError: 'undefined' is not a function (evaluating 'Tomahawk.get(url, settings)')" "undefined"
+[18:08:21] <muesli> youlde4: hey
+[18:08:31] <muesli> youlde4: theli_ua, domme and MrMaffen should be able to help you there :)
+[18:08:36] <muesli> youlde4: which tomahawk version do you run?
+[18:09:01] <youlde4> 0.8.4 on linux
+[18:09:54] <youlde4> it seems to be loading my resolver before loading the Tomahawk stuff
+[18:11:12] *** Quits: tilal6991 (~tilal6991@unaffiliated/tilal6991) (Ping timeout: 264 seconds)
+[18:24:47] *** Joins: tilal6991 (~tilal6991@2001:41d0:8:bd7b::1)
+[18:24:47] *** Quits: tilal6991 (~tilal6991@2001:41d0:8:bd7b::1) (Changing host)
+[18:24:47] *** Joins: tilal6991 (~tilal6991@unaffiliated/tilal6991)
+[19:01:38] *** Quits: a7medo778 (uid92302@gateway/web/irccloud.com/x-kqjbinnplycydejf) (Quit: Connection closed for inactivity)
+[20:03:07] *** Quits: mohn (~mo@limu.coffee.liberejo.de) (Ping timeout: 256 seconds)
+[20:03:41] *** Quits: johnyb (~jb@limu.coffee.liberejo.de) (Ping timeout: 256 seconds)
+[20:11:33] <theli_ua> domme: sorry, my weekends a pretty packed usually, for these I have shopping, kids classes, friends housewarming party, birthday party, looking at houses on sale, etc
+[20:12:12] <theli_ua> youlde4: could you paste your resolver somewhere on paste.ee or something?
+[20:12:48] <theli_ua> jherskowitz: I posted a simple bandcamp resolver PR
+[22:49:51] *** Joins: mohn (~mo@limu.coffee.liberejo.de)
+[22:49:51] *** Joins: johnyb (~jb@limu.coffee.liberejo.de)
+[23:20:46] <domme> theli_ua: alright, too bad then
+[23:20:55] <domme> youlde4: hey
+[23:21:23] <domme> youlde4: my internet access is very limited this weekend
+[23:21:31] <domme> and so is mrmaffen's
+[23:22:54] <domme> youlde4 i'm happy to work on that with you on tuesday
+[23:41:03] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) ()

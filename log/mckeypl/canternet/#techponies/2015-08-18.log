@@ -1,0 +1,710 @@
+[00:26:29] <Seoson> I just realized that the launch of Let's Encrypt was delayed, so sad ...
+[00:26:41] <Colgate> nuuu
+[00:27:14] <Colgate> november 16th, bleh
+[00:27:45] <Moonlightning> :c
+[00:35:35] <HoneyDrops|Half> Aww
+[00:36:53] <HoneyDrops|Half> We need better routing tech, encryption is good, but its far to easy to monitor who is taking to who, encryption only protects what is being said, not preventing 3rd parties from knowing A and B are communicating.
+[00:38:11] <Seoson> Onion routing for everyone :O
+[00:47:19] <DJ-C0L7[EIT]> xP
+[00:49:19] <Moonlightning> We also need to get ponies with non-usage-capped uplinks to start exchanging completely meaningless data over TLS. Tons and tons of it.
+[00:52:48] *** GigaWork is now known as Gigabit
+[00:53:17] <Colgate> encrypting everything helps with that
+[00:53:23] <Colgate> just... everything
+[00:53:47] * Moonlightning goes overboard sometimes.
+[00:55:33] <wolfyshy> I have uncapped internet but I don't see how that helps
+[00:56:51] <Moonlightning> Well, obviously, if you have usage caps, sending and receiving useless garbage would be a waste of your precious quota :p
+[00:57:06] <wolfyshy> I mean, what garbage am I supposed to send, and to whom?
+[00:57:18] <Moonlightning> Anything! Anyone!
+[00:57:32] <wolfyshy> also, since this channel isn't +Z (or whatever inspircd uses for ssl-only chan I think it's +Z), the confidentiality of this plan is ruined.
+[00:57:46] <Moonlightning> Pipe from /dev/zero or /dev/urandom or /dev/national-anthem or whatever you like.
+[00:58:06] <Moonlightning> Not over IRC—over something else.
+[00:59:04] <Moonlightning> The layer-seven protocol is very, very simple. Any data at all is valid, and is ignored. Both sides send arbitrary data to each other continuously, as allowed by other things.
+[00:59:14] <Moonlightning> If you're gaming or something, you'll wanna throttle it.
+[00:59:16] <wolfyshy> GOD SAVE OUR GRACIOUS QUEEN, LONG LIVE OUR NOBLE QUEEN
+[00:59:22] <Moonlightning> xD
+[00:59:41] <Moonlightning> It's intended to run on top of something that provides good security, like TLS or SSH.
+[00:59:51] <Moonlightning> The idea is to just generate more encrypted traffic.
+[00:59:54] <wolfyshy> most of my games are LAN with family or guests so :P
+[00:59:58] <wolfyshy> I don't really need to throttle
+[01:00:20] <Moonlightning> In the hopes that the NSA, GHCQ, etc will have trouble keeping up with all the extra useless shit.
+[01:00:22] <wolfyshy> Moonlightning: in that case, why not just ssh to people's computers and cat /usr/share/dict/wordlist on repeat or something
+[01:00:25] <Seoson> Luckly I don't have any data caps ;-)
+[01:00:39] <Moonlightning> wolfyshy: Bam, there you go. Implementation.
+[01:01:36] <Colgate> wolfyshy: it is +z for ssl only channels on inspircd
+[01:01:55] <wolfyshy> aha
+[01:01:59] <wolfyshy> I was close
+[01:02:12] <Moonlightning> You're probably thikning of umode Z, for indicating that a user is connected over TLS.
+[01:02:32] <wolfyshy> isn't that ratbox-derivatives only?  I'm not +Z and I'm using TLS...
+[01:03:10] <wolfyshy> indeed, I'm +Z on freenode and another network that's running charybdis, but I'm not +Z on here, my testnet running insp22, or chatspike
+[01:03:16] <HoneyDrops|Half> Well really the smart thing would be to keep continual data streams and inject actual data a la steganography when you do want to actually communicate.
+[01:03:39] <wolfyshy> HoneyDrops|Half: use ANSI bold control codes for the words in the dictionary that you want to use? :P
+[01:04:00] <Colgate> inspircd doesn't have a umode for TLS
+[01:04:08] <Moonlightning> HoneyDrops|Half: indeed, it would need refining after a while in case they've caught on.
+[01:04:24] <Seoson> I thought about writing an app for me that would just google randome terms to mess up their analysis of me
+[01:04:26] <Colgate> also, there are a whole 3 channels that are +z here, and 1 of those is an ircop only channel :P
+[01:04:51] <Moonlightning> four *
+[01:05:02] <wolfyshy> Seoson: turn off web history first
+[01:05:12] <wolfyshy> Seoson: otherwise you will get VERY strange results when you do look stuff up
+[01:05:17] <Colgate> as of 3 minutes ago, there were 3
+[01:05:18] *** Quits: Stik (drakon@Pony-ql55m5.cable.virginm.net) (Ping timeout: 121 seconds)
+[01:05:18] <Colgate> :P
+[01:05:22] <Seoson> Already done
+[01:13:28] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[01:15:05] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[01:15:10] *** Quits: firestream (firestream@Pony-8oqp7s.dsl.bell.ca) (Quit: )
+[01:18:40] *** Joins: Stik (drakon@Pony-ql55m5.cable.virginm.net)
+[01:20:22] *** Joins: Beatzebub (beatzebub@Pony-64rlqg.bchsia.telus.net)
+[01:21:33] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[01:21:40] *** Stik is now known as Pony_61679
+[01:34:16] *** Quits: sleumas2000 (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[01:40:08] * RainbowHacks derps
+[01:40:23] <DJ-C0L7[EIT]> howdy RainbowHacks
+[01:40:34] <RainbowHacks> ohai
+[01:43:33] *** Quits: Cepheid (Cepheid@the.crazy.cat.pony) (Ping timeout: 121 seconds)
+[01:54:16] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[01:57:51] *** Joins: Cepheid (Cepheid@the.crazy.cat.pony)
+[02:06:15] <Moonlightning> So…is part of the IPv6 allocations that one entity gives to another normally used for the downstream router to communicate with the upstream one?
+[02:07:05] <Moonlightning> Say an ISP assigns a customer 2001:db8:d189:d00::/56
+[02:07:33] <Moonlightning> Does the customer's router normally assign a /64 to its upstream-facing interface from that same /56?
+[02:11:31] *** locodash11[lagout] is now known as locodash11[server]
+[02:17:56] <Webster> I can't imagine it assigning a subnet to its WAN side at all, just a single IP for itself.
+[02:18:45] <Webster> Though with IPv6, since your LAN is all publicly addressed, the router probably doesn't even need a public IP.
+[02:18:58] <Moonlightning> You need an IP on that interface, though, don't you?
+[02:19:36] <Webster> Ethernet MAC, yes. Not necessarily an IP though, unless it is itself accessing the Internet.
+[02:19:39] <Moonlightning> I mean, /I/ thought you didn't, but…
+[02:19:57] <Webster> So if your router is doing DNS caching or being a time server, then yeah, it needs an IP.
+[02:20:27] <Webster> Or if for some reason the router is doing NATv6.
+[02:20:33] <Moonlightning> I thought it could just have an address from its subnet on its LAN side, and no address on its WAN side—it would route packets upstream properly, of course, and the provider would route all packets bound for its subnet (including packets for it) to it.
+[02:20:54] <Moonlightning> Freenode/##networking insisted that the WAN side did in fact need its own address (and subnet by extension)
+[02:21:06] <Moonlightning> And that it should be different from that of the LAN side.
+[02:21:50] <Webster> Don't see why it's required. At most it'd need an IP address from the assignment. No idea why you'd assign an entire subnet to it.
+[02:22:42] <Moonlightning> Huh.
+[02:22:49] <Moonlightning> Well, what typically happens?
+[02:23:21] * Moonlightning doesn't know what's typical, because the previous router hid the details from them, and the current router is a Linux box with a lot of manual config stuffs.
+[02:23:55] <Webster> For IPv4, it just gets the one public IP address from the modem that's on the subnet the ISP chose for the block of customers you're part of, then the router would do NAT.
+[02:24:13] <Moonlightning> Yeah.
+[02:27:50] <Webster> With IPv6, you don't have to do NAT, so unless your router is itself making outgoing connections, it can just forward stuff to the LAN without needing an IP for an outgoing connection.
+[02:28:31] * HoneyDrops|Half will probably keep using NAT even with IPv6.
+[02:28:34] <Moonlightning> Mine will need a global address.
+[02:28:57] <Moonlightning> But…am I right? Can it just use its address from the LAN, without having any address on the WAN side?
+[02:30:37] <Webster> If you get a /56 you can just assign the router another IP from it. Due to routing, you probably want to assign the IP on the WAN interface in addition to the LAN interface.
+[02:30:59] <DJ-C0L7[EIT]> Moonlightning are you using the router as your gateway, or are you doing brp?
+[02:34:11] *** Quits: Phase (Phase4@Pony-l23b6v.internode.on.net) (Quit: Leaving)
+[02:35:38] *** Joins: Phase (Phase4@Pony-l23b6v.internode.on.net)
+[02:40:08] * HoneyDrops|Half is just out of outrage, only has some disgust reserves left.  https://www.revealnews.org/article/chicago-and-los-angeles-have-used-dirt-box-surveillance-for-a-decade/
+[02:40:10] <PinkiePieBot> [ Chicago and Los Angeles have used ‘dirt box’ surveillance for a decade | Reveal ]
+[02:43:13] <Moonlightning> Webster: What?
+[02:43:19] <Moonlightning> DJ-C0L7[EIT]: Yeah, it's the gateway. (What's BRP?)
+[02:44:18] <Webster> Moonlightning: So you have some subnet assigned by your ISP. The same subnet is on both sides of the router. Router only assigns addresses on LAN side, and reserves one for itself for use on the WAN side if it needs one.
+[02:45:18] <Moonlightning> Webster: thought you weren't supposed to assign the same subnet to multiple interfaces, or subnets bigger than /64 to anything.
+[02:45:51] <Webster> It depends entirely on your routing.
+[02:45:58] <Webster> I've not heard the /64 thing.
+[02:46:30] <Moonlightning> Lots of things will refuse to play with non-/64s, too. :|
+[02:46:55] <Moonlightning> In particular, isc-dhcp-server refuses to `subnet6 temporary` for anything bigger than a /64
+[02:46:58] <Webster> What I learned was you get a /48 or smaller subnet from your ISP and you can divvy it up how you want. The standard was a /48, though ISPs generally give out /64s these days.
+[02:47:13] <Moonlightning> Ewwwww! No, give them more than a /64!
+[02:47:14] <Webster> AFAIK a /64 is required for auto-address generation.
+[02:47:25] <Moonlightning> /56es are reasonable.
+[02:47:40] <Moonlightning> A /60 is the /minimum/ for a customer assignment, I'd say.
+[02:48:22] <Webster> So it might be that if you're using auto-addressing or privacy addresses you need a /64.
+[02:48:38] <Webster> Although I don't know why that'd be a /requirement/.
+[02:48:55] <Moonlightning> For privacy addresses, the larger the subnet, the better!
+[02:49:36] <Moonlightning> I wanted to divide my /48 into two /49s; the lower for permanent addresses that I assign, the upper for privacy addresses
+[02:49:47] <Moonlightning> A whole nother 15 bits for clients to set randomly!
+[02:49:54] <Moonlightning> But isc-dhcp-server said no.
+[02:50:11] <ButterBean> has any one used Microsoft Visual before
+[02:50:20] <Webster> MS Visual Studio?
+[02:50:26] <ButterBean> eys
+[02:50:30] <Webster> Yeah.
+[02:51:09] <ButterBean> well im mamking an exicudable and i need help addning an "Check For Update" type deal to an already existing project
+[02:51:13] <Webster> Moonlightning: I mean, if you can only assign a /64, might as well just use that for the LAN and give the router an IP from that on the LAN side and a different IP from another /64 or whatever on the WAN side.
+[02:51:16] <Moonlightning> Ideally, I could have reserved the lowest /112 for permanent addresses, and used the entire rest of the /48 for random addresses
+[02:51:50] <Moonlightning> But two /49s would be preferable to two /64s, and having no idea what to do with the whole other /50 :|
+[02:51:55] <Moonlightning> all the other /50s *
+[02:52:15] <Webster> ButterBean: Check for update as in, the program you're making checks for updates, or some Visual Studio function?
+[02:52:35] <ButterBean> Webster the program 
+[02:52:47] <Moonlightning> Webster: /should/ I assign an IP|subnet to the WAN site?
+[02:52:48] <Moonlightning> side *
+[02:53:27] <Webster> Moonlightning: Shouldn't matter. I'd say don't, if you don't have to (you might need an IP at least if the router does DNS caching/time serving/etc)
+[02:54:22] <ButterBean> Webster http://www.codeproject.com/Articles/19623/Adding-automatic-updates-to-your-program-Part
+[02:54:24] <PinkiePieBot> [ Adding automatic updates to your program - Part 1 - CodeProject ]
+[02:54:27] <Webster> ButterBean: That's a complicated thing. You'd have to have to either use an existing library or implement your own where you connect to port 80, identify as HTTP 1.0, do a get...
+[02:54:47] <DJ-C0L7[EIT]> sorry i was semi-afk, BRP is Border Routing Protocol, generally a router behind a router
+[02:54:47] <Moonlightning> Webster: I dunno…I feel like the router shouldn't need an address on /both/ sides.
+[02:55:43] <Moonlightning> …meh, never mind.
+[02:55:48] <Moonlightning> I'll just go with the double /64 thing
+[02:55:50] <Webster> ButterBean: Okay, that's newer functionality than I've used in VS.
+[02:56:03] <Moonlightning> Is there a convention for what to set the middle bits to?
+[02:56:31] <Webster> Middle bits as in between the prefix and the /64? Zeroes usually.
+[02:57:23] <Moonlightning> For which side? >.>
+[02:57:32] <Webster> That way you can just use 1234:5678:9ABC::<64>
+[02:57:41] <ButterBean> Webster i just dont know how to add it to an existing project 
+[02:57:43] <Webster> Side?
+[02:58:29] <Moonlightning> Interface?
+[02:58:33] <Moonlightning> Assuming one WAN and one LAN interface.
+[02:58:45] <Webster> Moonlightning: ... both?
+[02:58:52] <Webster> Wherever you have IPs.
+[02:58:58] *** Joins: Asoka (Asoka@Pony-g8m2up.net-htp.de)
+[02:59:29] <Webster> ButterBean: If you're using their library then follow their instructions.
+[03:00:01] <Moonlightning> Webster: I thought you weren't supposed to do that, though?
+[03:00:05] <Moonlightning> Something about routing tables.
+[03:00:13] <Webster> Moonlightning: Weren't supposed to do what?
+[03:00:30] <ButterBean> Webster im new to this 
+[03:00:33] <Moonlightning> If the same subnet is on multiple interfaces, which interface will a packet bound for that subnet be forwarded on?
+[03:00:51] <Webster> The router routes it.
+[03:01:14] <Webster> If it receives an IP destined for a LAN machine, it forwards it to the interface the LAN machine is on.
+[03:02:09] *** Quits: Asoka_White (Asoka@Pony-r1a64b.net-htp.de) (Ping timeout: 121 seconds)
+[03:02:22] <Webster> The router builds up an ARP table to know which interface each IP address is on.
+[03:02:38] <Moonlightning> What if the IP address isn't in the ARP cache?
+[03:03:12] <Webster> It asks.
+[03:03:48] <Moonlightning> Asks who?
+[03:04:02] <Lapsus> The network?
+[03:04:02] <Webster> If it doesn't get a response it either broadcasts it to all interfaces (never seen that done except in hubs) or just drops it.
+[03:04:07] <Webster> Broadcasts to the subnet.
+[03:04:17] <Moonlightning> But the subnet is on multiple interfaces.
+[03:04:28] <Webster> Generally the router will have its internal routes set to only use the LAN side for that.
+[03:04:44] <Webster> The WAN side would be just an IP (or IPs) assigned to the router, not the entire /64 of the LAN.
+[03:04:59] <Moonlightning> That would make a lot more sense. :I
+[03:05:27] <Webster> Of course you can do a separate subnet for the WAN side, too.
+[03:05:33] <Moonlightning> …wait a sec… o3o
+[03:05:39] <Webster> But you don't need to.
+[03:05:40] <Moonlightning> nah, that's a waste of a subnet
+[03:05:43] <Moonlightning> What if :o
+[03:06:10] <Moonlightning> What if I assigned a //128// from the LAN-side subnet, to the WAN side?
+[03:06:22] <Moonlightning> Can I do that? Is that a good idae? <.<
+[03:06:42] *** Joins: LightningCrash (lightning@Pony-bal.gi8.129.65.IP)
+[03:07:09] <Webster> You don't have to assign a subnet to put an IP on an interface.
+[03:07:34] <Moonlightning> Isn't there always a prefixlen associated, though?
+[03:07:53] <Webster> A /128 would be a single IP, and I don't think you can even do that, as a /subnet/ needs to have a broadcast address, too.
+[03:08:24] <Moonlightning> Isn't that what ff00::/12 is for :I
+[03:08:32] <Moonlightning> …wait…dammit. x.x
+[03:08:53] <Moonlightning> v6 still has in-subnet special addresses. And I guess it kinda makes sense…
+[03:08:56] <ButterBean> Webster this stuff is a bit hard for me to understand you think you can take a look at it and fix some errors i have made 
+[03:09:40] <Webster> ButterBean: I could, but unless it's really basic I don't really have the time.
+[03:09:59] <Moonlightning> >> https://www.iana.org/assignments/ipv6-anycast-addresses/ipv6-anycast-addresses.xhtml
+[03:09:59] <PinkiePieBot> [ Internet Protocol Version 6 (IPv6) Anycast Addresses ]
+[03:10:21] <Moonlightning> All this means that the smallest viable subnet is the /120
+[03:11:13] <ButterBean> Webster i think its simple ill PM you the link if thats fine with you
+[03:12:13] <Webster> OK.
+[03:13:28] <ButterBean> Webster i sent you the think
+[03:15:29] *** Joins: nscoots (FreyGrimrod@Pony-km06mt.sub-70-192-20.myvzw.com)
+[03:15:37] <Webster> Okay, be back later, got things to do.
+[03:21:29] *** Quits: Phase (Phase4@Pony-l23b6v.internode.on.net) (Quit: Leaving)
+[03:22:44] *** Joins: Phase (Phase4@Pony-l23b6v.internode.on.net)
+[03:23:13] <Moonlightning> Webster: I assigned just an IP to the WAN interface (no prefixlen), and it assigned that /128.
+[03:34:35] <HoneyDrops|Half> https://i.imgur.com/on5bDze.jpg (warning large image)  Everypony agrees I should consider the lower left to be the pip and the arrow points to the first pin?
+[03:39:34] *** Quits: Fallfeathers (Fallfeather@Pony-i146kn.dsl-w.verizon.net) (Ping timeout: 121 seconds)
+[03:42:39] <JustAberrant> I DON'T AGREE WITH ANYTHING!
+[03:43:59] <HoneyDrops|Half> :I
+[03:44:20] <HoneyDrops|Half> Now I need to track down which of those pins are UART ;_;
+[03:45:16] <HoneyDrops|Half> 3, 5, 12, 35, 66, 68, 112, 113, 125, or 129 could be TX, or it might not be enabled at all! 
+[03:48:38] *** Quits: nscoots (FreyGrimrod@Pony-km06mt.sub-70-192-20.myvzw.com) (Quit: Leaving.)
+[03:55:33] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[04:07:14] <Moonlightning> > 2001:4860:4860::8888 via fe80::b4c8:63ff:fe46:1be8 dev wlp2s0  src 2001:db8:b745:0:c65f:9874:e2ca:26ef  metric 0 
+[04:07:16] <Moonlightning> Wat.
+[04:10:15] <Cepheid> HoneyDrops|Half:  What're you doing?
+[04:10:32] <Moonlightning> …oh
+[04:10:36] <Moonlightning> …wait…
+[04:10:44] <Moonlightning> Okay, yeah, what's up with that?
+[04:10:51] <HoneyDrops|Half> Cepheid: I am trying to find a UART for this tablet so I can watch u-boot.
+[04:11:08] <Cepheid> Ah.
+[04:11:24] <Cepheid> Anyways, yeah, I would imagine that's pin 1.  Give me a few minutes.
+[04:13:05] <Cepheid> The reason I'd argue it is the fact that there's a dimple on the package itself used for orientation just above it.
+[04:14:19] <Cepheid> Anyways..
+[04:15:15] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Connection closed)
+[04:15:54] <HoneyDrops|Half> Yeah, I agree.  Also, CPUs do not like when you short random pins together XD
+[04:15:58] <Cepheid> Ah for crying out loud..
+[04:16:08] <Cepheid> I can't find the datasheet on the RK3126.
+[04:16:24] <HoneyDrops|Half> I have one, look for RK2926, they are pin compat
+[04:17:54] <HoneyDrops|Half> I'm going to mess more later, my hoof is only so steady this late.
+[04:19:15] <Webster> Well, if it's a super cheap tablet it's probably an unused pin. Else it might be shared with a JTAG port.
+[04:21:15] <HoneyDrops|Half> This is a 50$ proscan someone gave me for doing some stuff.  Test pads are annoyingly on the other side, but labeled (nothing that screams UART/Serial though)
+[04:21:22] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Connection closed)
+[04:21:42] <HoneyDrops|Half> Well I think normally it's 100$, but I notices local market has it for 50% off.
+[04:28:23] <Cepheid> Specifically, which GPIO pins do you need?
+[04:28:27] <Cepheid> Anyways...
+[04:28:32] <Cepheid> That arrow is in fact pointing to pin 1.
+[04:28:39] <Cepheid> I just confirmed with a datasheet I found.
+[04:29:47] <HoneyDrops|Half> Ok, I'm looking for Any/all UART TX & RX pins
+[04:30:29] <Cepheid> http://www.ic-lib.com/u_file/member/65/15_05_28/e1e53cb904.pdf Here's the PDF I found, in fact.
+[04:30:36] <Cepheid> Mind you, the link is SLOW.
+[04:33:11] <HoneyDrops|Half> wget doesn't care
+[04:35:38] *** Quits: Sellyme (quassel@Pony-a07utk.vxnd.net) (Quit: No Ping reply in 180 seconds.)
+[04:36:51] *** Joins: Sellyme (quassel@Pony-c0hjoq.0880.gi54.19f0.2001.IP)
+[04:55:21] *** Joins: Fallfeathers (Fallfeather@Pony-i146kn.dsl-w.verizon.net)
+[04:57:51] *** Quits: Fallfeathers (Fallfeather@Pony-i146kn.dsl-w.verizon.net) (Connection closed)
+[05:02:52] <Moonlightning> In Wi-Fi, are layer-two packets usually sent directly from one station to another, or are they always relayed by the AP?
+[05:04:16] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[05:06:34] <Colgate> the latter
+[05:15:48] <One-Trick> kinda diggin i3
+[05:16:15] <Moonlightning> But at the third layer, the AP isn't counted as a hop.
+[05:19:24] <Gigabit> Lol wow.. My cousin destroyed his Samsung galaxy tab 3
+[05:20:12] <Colgate> Moonlightning: the AP is layer 1
+[05:21:06] <Rylee> ur layer 1 Colgate 
+[05:21:07] <Rylee> ok
+[05:21:59] <HoneyDrops|Half> testpads on reverse side, in case I'm a derp and am missing UART.  I am pretty sure I have CIF, display, and flash.
+[05:22:02] <HoneyDrops|Half> https://imgur.com/JCzq9YK,dbeZ1Fw,ma4jb5X
+[05:22:03] <PinkiePieBot> [ Imgur ]
+[05:22:35] <Moonlightning> Ohh. o.o
+[05:22:51] <Gigabit> I lied, its a galaxy tab 2
+[05:25:39] <One-Trick> hmm, just need to figure out things like steam complaining now heh
+[05:26:42] <Gigabit> Guess its cheap to fix only 40 bucks
+[05:37:36] * JustAberrant sneaks into Colgate 
+[05:37:45] <Colgate> o.O
+[05:53:06] <One-Trick> thats just the image i need before bed
+[06:13:07] <Colgate> this is a pretty good scam: https://www.kickstarter.com/projects/1275963200/sunport-plug-into-solar-power-no-panels-required
+[06:13:09] <PinkiePieBot> [ SunPort – Demand Solar. Anywhere. Instantly. by Paul Droege — Kickstarter ]
+[06:23:49] <init3> The way they word it is scammy and it is completely unnecessary because you can just buy renewable energy credits based on your electric bill.
+[06:24:14] <init3> But I wouldn't call it a scam per se. Just very poorly worded
+[06:24:25] <init3> Intentionally I'm sure
+[06:29:50] *** Quits: Lapsus (Lapsus@i-forget.ca) (Connection closed)
+[06:38:02] *** RedHelper is now known as Creeps|AFK
+[06:38:52] <Moonlightning> I don't suppose CSS has a thing sort of like shells' {foo,bar,baz} thing?
+[06:39:19] <aji> Moonlightning: CSS works best if you can modify the document to work with it
+[06:39:22] <aji> otherwise, no, i don't think it does.
+[06:39:39] <Moonlightning> Yeah, but this is better than adding class="" to /every/ /single/ /table/ /cell/, geez
+[06:39:40] <aji> the way i'd handle that case is with a single class and then adding that class to foo bar baz individually
+[06:39:48] <aji> ah
+[06:39:52] <Moonlightning> that would get VERY annoying
+[06:39:54] <aji> if you're doing like
+[06:40:06] <aji> .bla .other > thing > .complicated {foo,bar,baz}
+[06:40:08] <aji> you can do
+[06:40:10] <Moonlightning> I'm looking for like a `table > * > tr > {td, th}`
+[06:40:16] <aji> .bla .other > thing > .complicated foo,
+[06:40:18] <aji> .bla .other > thing > .complicated bar
+[06:40:20] <Moonlightning> And a `{td, th}:nth-child()`
+[06:40:21] <aji> .bla .other > thing > .complicated baz { ...
+[06:40:31] <aji> which is only slightly worse imo
+[06:40:53] <Moonlightning> Okay, well…is there a way to specify multiple nth-child()s then?
+[06:41:05] <Moonlightning> Because right now I have a `td:nth-child(2), td:nth-child(3), td:nth-child(4), td:nth-child(5)` >.>
+[06:41:09] <aji> don't think so :(
+[06:41:13] <Moonlightning> And that doesn't cover `th`es
+[06:41:15] <Moonlightning> dear Luna :(
+[06:41:24] <aji> i really think you should just suck it up and use class="" :(
+[06:41:52] <Moonlightning> Nonono
+[06:42:02] <Moonlightning> Doing this would be better than writing class="" every time I make a new cell
+[06:42:24] <Moonlightning> Thanks though
+[06:42:32] <aji> yeah CSS is stupid limited like that
+[06:42:41] <aji> but you really have to be ready to put class="" everywhere to make it nice
+[06:42:42] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Connection closed)
+[06:42:58] <aji> div, span, and class, that's the way of the css lmao
+[06:43:03] <aji> isn't that right wolfyshy 
+[06:43:17] <Moonlightning> …/oh!/
+[06:43:27] <Moonlightning> I can say `tr > *:nth-child()` :D
+[06:43:35] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:43:35] <aji> that works!
+[06:43:36] <Moonlightning> I love vim
+[06:43:39] <aji> one hack that *might* work,
+[06:43:51] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Connection closed)
+[06:43:51] <aji> put the css on a class, like .myclass,
+[06:43:57] <aji> and then put a <span> around the segment of 4 columns
+[06:44:11] <aji> well, make the selector .myclass > td
+[06:44:18] <aji> .myclass > td, .myclass > th
+[06:44:29] * Moonlightning :,.9s/td:/tr > */g
+[06:44:34] <aji> lmao
+[06:44:44] <Moonlightning> BAM
+[06:44:53] <Moonlightning> Really good editors <3
+[06:45:01] <aji> you know about visual line select mode right?
+[06:45:11] <Moonlightning> that'd've been better, actually
+[06:45:17] <Moonlightning> …holy shit, that's gonna be so useful
+[06:45:25] <Moonlightning> I've been counting lines too much, haven't I :p
+[06:45:26] <Finwe> o3o
+[06:45:48] <Finwe> Somepony actually uses the ellipsis symbol instead of writing "...".
+[06:45:51] <Finwe> :0
+[06:45:57] * Finwe snuggles a Moonlightning.
+[06:46:06] * Moonlightning giggles and snuggles Finwe.
+[06:46:09] <Moonlightning> I do indeed. :3
+[06:46:14] <Moonlightning> I also use curvedquotes. :3
+[06:46:26] <Moonlightning> curved quotes * (/that/ one isn't a compound word, even for me)
+[06:46:36] * AppleDash protests this.
+[06:46:57] <AppleDash> It breaks badly written terminal emulators :(
+[06:47:03] <AppleDash> IRC wasn't made for unicode!
+[06:47:39] <Moonlightning> Your terminals should be written better >.>
+[06:47:44] <Moonlightning> …wait a sec…
+[06:47:47] <Moonlightning> can you nest selectors? o3o
+[06:48:29] <One-Trick> Hirc does unicode just fine
+[06:48:32] <One-Trick> -h
+[06:48:38] <Moonlightning> .foo { * > .bar { /* matches only bars within foos */ } * > .baz { /* matches only bazzes within foos */ } }
+[06:48:44] <Moonlightning> /* does it work like that? o3o */
+[06:49:03] <AppleDash> I think you can do that with something like SASS!
+[06:49:26] <AppleDash> yes
+[06:49:33] <AppleDash> one of the primary features of SASS is indeed nesting
+[06:50:25] <HoneyDrops|Half> Xcompose is wonderful <Multi_key>... -> …
+[06:50:47] <Moonlightning> I want something like `screen`s compose thing for tmux
+[06:51:25] <Googie> IRC wasn't made for ASCII!
+[06:51:28] <AppleDash> Moonlightning, do you keep a "..." symbol around in a text file and copy and paste it into weechat?
+[06:51:36] <AppleDash> You're kinda right Googie
+[06:51:40] <Googie> Yeah
+[06:51:53] <Googie> I can't remember the exact codepage.
+[06:52:09] * HoneyDrops|Half hugs Googie.
+[06:52:24] <Moonlightning> AppleDash: no, I don't
+[06:52:30] <Moonlightning> remember, my daily driver runs OS X
+[06:52:35] <Finwe> Some keyboards actually have the Compose key.
+[06:52:41] <Moonlightning> option-semicolon -> ellipses
+[06:52:42] <Finwe> Sun keyboard at least.
+[06:53:01] <AppleDash> I feel like it was something that catered to people like Shutter, Googie, because IRC was developed by a lot of them :(
+[06:53:18] <aji> compose .  .  .
+[06:53:35] <aji> is ellipsis on linucks
+[06:53:53] <Googie> {} == []
+[06:54:11] * Googie hugs HoneyDrops|Half back
+[06:54:43] * HoneyDrops|Half uses right-alt as compose.  I don't really need a second alt key (well 3rd, I already have Escape :p)
+[06:54:50] <AppleDash> That's not a charset, that's a... rules for determining what is lowercase and upper :P
+[06:54:51] <Moonlightning> You mean, `compose-(dot, dot, dot)`
+[06:55:21] <Moonlightning> disambiguation :3
+[06:55:47] <AppleDash> Googie, I was going for things like ÅåÆæØø
+[06:56:09] <Googie> Honestly that's one of the problems with IRC that still hasn't (really) been solved.
+[06:56:22] <Googie> There's no standard codepage or character encoding for IRC.
+[06:56:27] <Moonlightning> compose-(shift-a, o)
+[06:56:36] <AppleDash> yes
+[06:56:39] <Moonlightning> compose-shift(a, e)
+[06:56:49] <Moonlightning> compose(shift-o, slash)
+[06:56:52] <AppleDash> So I take avantage of that and get mad at people who don't use ASKII
+[06:57:03] <Moonlightning> s/\(/-(/
+[06:57:34] <AppleDash> slash-k-l-i-n-e-m-o-o-n-l-i-g-h-t-n-i-n-g
+[06:59:01] <Moonlightning> how do you have enough fingers to press that? 6_9
+[06:59:21] <Moonlightning> Unless you meant `'/kline moonlightning'`
+[06:59:25] <Moonlightning> which expands to a completely different thing
+[07:00:03] <Moonlightning> slash, k, l, i, n, e, space, m, o, o, n, l, i, g, h, t, n, i, n, g
+[07:00:19] <Moonlightning> And then the text would just sit there because you forgot the trailing `return`
+[07:00:54] <HoneyDrops|Half> ^M
+[07:01:09] <Moonlightning> control-m
+[07:02:11] * Phase thinks utf8 should just be made standard for irc
+[07:02:26] <Phase> i mean what other encoding would you use?
+[07:02:39] <AppleDash> ASCII
+[07:03:06] <Phase> utf8 is a superset, plus there's more languages than english
+[07:03:08] <AppleDash> Moonlightning: Who says I'm just using my fingers!
+[07:03:23] <AppleDash> I have definitely involved my tongue in complex key combos before that I just haven't been able to reach
+[07:04:25] <aji> Googie: Phase: "we'll just leave it to the clients, problem solved!" -punting in action
+[07:04:29] <Phase> quite fortunate ascii was 7 bit
+[07:04:32] <aji> tho tbf utf-8 didn't really exist when irc was standardized
+[07:04:32] <Phase> aji, XD
+[07:04:35] <Moonlightning> there, I'm happy enough with this now
+[07:04:58] <aji> (more like "punting inaction" HUR!)
+[07:05:14] <Phase> ASCII is de-facto standard far as i can tell, but because utf8 is a superset that's what clients tend to use, and it 'just works'
+[07:05:27] <Phase> to irc servers it's just more bytes to throw around
+[07:05:35] <aji> ight
+[07:05:37] <AppleDash> yeah
+[07:05:37] <aji> right*
+[07:05:49] <AppleDash> Wait wait wait
+[07:05:50] <AppleDash> wt
+[07:05:51] <AppleDash> f
+[07:05:54] <AppleDash> aji is alive
+[07:06:12] <Phase> though i have seen one bug in elemental over utf-8
+[07:06:17] <Moonlightning> Yeah, they were helping me with CSS earlier
+[07:06:19] <Moonlightning> didn't you see?
+[07:06:37] <Moonlightning> Speaking of. I think I'm happy enough with this right now to show it to ponies
+[07:06:41] <Moonlightning> << http://69.90.132.107/sharing-is-caring.html
+[07:07:07] <Moonlightning> yes, I totally stole the formatting from what GitHub uses for Gists when the filenames end in .md
+[07:07:28] <AppleDash> no I totally saw
+[07:07:46] <AppleDash> Moonlightning: So... you mean... Markdown parsed to HTML?
+[07:07:47] <AppleDash> lol
+[07:07:57] <AppleDash> And and 
+[07:07:58] <AppleDash> wait
+[07:08:05] <AppleDash> that's actually still gonna be a thing?
+[07:08:11] <Moonlightning> #SharingIsCaring
+[07:08:24] <Moonlightning> Silverspeed has finally replaced Blossomforth for active duty
+[07:08:37] <Moonlightning> This connection is via Silverspeed
+[07:08:42] <Moonlightning> so I can actually host backups now
+[07:10:18] <Moonlightning> I actually didn't mean for the table dividers to be borders around each cell like that
+[07:10:39] <Moonlightning> But it looks kinda cool. I might keep it.
+[07:12:34] <AppleDash> It does the job
+[07:15:10] *** Joins: Princess-QRS (SRQ@the.truth.is.out.there)
+[07:16:29] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[07:17:15] <Moonlightning> …oh, I put the border on the cells, not the table
+[07:19:56] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[07:23:17] *** Quits: Beatzebub (beatzebub@Pony-64rlqg.bchsia.telus.net) (Client exited)
+[07:23:53] *** Gigabit is now known as GigaShower
+[07:35:44] *** GigaShower is now known as Gigabit
+[07:36:34] <Googie> I've been idly working on a Unicode nicks module for InspIRCd to replace the existing one (which is utter crap and unmaintainable). There's an annoying number of issues with supporting Unicode nicknames related to visually spoofing someone :/
+[07:37:06] * Googie basically is just leaving it up to server operators to define a white list of Unicode characters.
+[07:37:52] <Googie> Casemapping also is a pain in the ass, especially for interop with services/basically anything else
+[07:38:34] <wolfyshy> icu (the library) has a thing that can "visually" compare character, let me try and remember the name
+[07:38:46] <Moonlightning> Oh, really? That's cool!
+[07:39:36] <wolfyshy> uspoof http://userguide.icu-project.org/strings/utf-8
+[07:39:37] <PinkiePieBot> [ UTF-8 - ICU User Guide ]
+[07:39:48] <wolfyshy> uspoof_checkUTF8, uspoof_areConfusableUTF8
+[07:40:20] <One-Trick> how would you kick a user using all unicode chars?
+[07:40:57] <Googie> Exactly. Stuff like that makes it a pain. Especially if they're using non-printable characters.
+[07:41:12] <Moonlightning> No, no. You can't have unprintables in nicks.
+[07:41:17] <wolfyshy> so disallow non-printable characters
+[07:41:27] <Googie> It gets a bit more tricky than that
+[07:41:49] <One-Trick> thats how i kept a lot of people messaging me in WoW back in the day. my character name started with a É
+[07:41:53] <Phase> don't the unicode guys provide that data?
+[07:41:54] <Googie> What's the difference between unprintable and ancient hieroglyphics ?
+[07:42:22] <Googie> (Hence why I'm just doing a whitelist of allowed unicode characters defined in the configs)
+[07:43:19] <Googie> uSpoof is interesting though. That might be very useful.
+[07:44:15] <Phase> i'm fairly sure this stuff is already stored somewhere
+[07:44:34] <Googie> Yeah, libICU comes with a database that has all that sort of data.
+[07:44:37] <Phase> whether a character is printable or not is at least
+[07:44:57] <Phase> as in the unicode consortium provides it
+[07:44:58] <Googie> The thing is though, if a character is printable is different from "is a character printable in any sane font" :V
+[07:45:06] <Googie> That too, but then you have to parse a lot of it.
+[07:45:10] <Phase> i know it doesn't *solve* the problem, it does the bulk of it
+[07:45:15] <Phase> but it does'
+[07:45:34] <Googie> Kinda. It tells you the script that it's a part of.
+[07:46:09] <Googie> (be right back)
+[07:49:22] *** Joins: Vulpor (upstmhpmgqr@Pony-7ids9j.67-212-39-net.sccoast.net)
+[07:50:15] <Vulpor> Hey everyone
+[07:50:23] <Vulpor> First time in here
+[07:50:33] <Moonlightning> Hiya, Vulpor!
+[07:51:10] <Googie> My current plan basically allows the configs to specify allowed languages, and it automatically handles allowing the right characters for that language
+[07:51:13] <Vulpor> Does anyone know if this rumor about windows 10 is true
+[07:51:46] <Vulpor> It can detect and remove "pirated" software?
+[07:52:15] <Gigabit> I believe so
+[07:52:23] <Moonlightning> :?
+[07:52:26] <Moonlightning> Citation needed.
+[07:52:53] <Gigabit> They can block pirated software or something.
+[07:53:25] <Googie> Citation needed indeed :V
+[07:53:37] <Vulpor> So, thats it for Piratebay and the like then eh?
+[07:53:46] <Googie> No
+[07:53:59] <Vulpor> If it can detect torrent software
+[07:54:05] <Vulpor> and remove it
+[07:54:08] <Googie> If it did happen, it would be unofficially patched out :V
+[07:54:17] <Googie> Also, torrenting software is legal
+[07:54:22] <Googie> They'd be sued
+[07:54:52] <Vulpor> I forgot there are unofficial patches
+[07:55:16] <Vulpor> all I saw was the internet collectively flip out
+[07:55:28] <Moonlightning> I flipped out because privacy holes
+[07:55:33] <Moonlightning> massive gaping privacy holes
+[07:55:55] <Gigabit> http://www.zdnet.com/article/will-microsoft-block-windows-10-users-from-playing-counterfeit-games/
+[07:55:56] <PinkiePieBot> [ Will Microsoft block Windows 10 users from playing counterfeit games? | ZDNet ]
+[07:55:59] <Moonlightning> if privacy were a sheet in each OS, Windows 10's would be in little smoldering shreds
+[07:56:13] <Googie> A lot of drama about Windows 10 is hyperbola and unfounded, but there are core issues
+[07:56:27] <One-Trick> http://www.kitguru.net/gaming/operating-systems/matthew-wilson/windows-10-can-seek-out-pirated-software/
+[07:56:31] <PinkiePieBot> [ Windows 10 can seek out pirated software | KitGuru ]
+[07:57:12] <Vulpor> Also I am running 7 so yeah
+[07:57:37] <Vulpor> I look at all Windows OS launches as betas or alphas
+[07:57:45] <Googie> https://www.reddit.com/r/Windows10/comments/3h5wwg/windows_10_disabling_pirated_software_not_so_fast/
+[07:57:45] <PinkiePieBot> [ Windows 10 disabling pirated software? Not so fast. : Windows10 ]
+[07:58:19] <Vulpor> I will wait up to two years before buying a new laptop and mandatory OS upgrade
+[07:58:55] <Vulpor> heck I have had Tosha here since 2010
+[07:58:58] <Moonlightning> LOL
+[07:59:03] <Moonlightning> Windwos 10 has a subreddit?
+[07:59:05] <Moonlightning> Wau.
+[07:59:20] <Googie> Everything does :V
+[07:59:20] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "night everypony")
+[07:59:30] <Vulpor> I dont do PC gaming or anything close to it
+[07:59:32] <One-Trick> theres a subreddit for everything
+[07:59:51] <Vulpor> As long as Win 10 can run firefox I am good
+[08:00:01] <Googie> But it sounds like just licensing/ToS talk than something that is actually happening right now
+[08:00:17] <Vulpor> I dont even download "media" anymore
+[08:00:35] <Vulpor> So many anime sites just have embeded players
+[08:00:53] <Vulpor> and audiobooks hit youtube day one now
+[08:01:18] <Vulpor> NOT that I encourage piracy you see
+[08:01:51] <Vulpor> I just dont see the need in paying eighty bucks for a 12 episode anime
+[08:02:02] <Vulpor> tweleve^
+[08:05:00] *** Quits: Vulpor (upstmhpmgqr@Pony-7ids9j.67-212-39-net.sccoast.net) (Quit: lightIRC.com Flash IRC Client)
+[08:06:22] <Moonlightning> …wait…
+[08:06:27] <Moonlightning> Margins can overlap??
+[08:06:31] <Moonlightning> Dammit, WordPress
+[08:06:37] <Moonlightning> WordPress has been teaching me LIES
+[08:07:43] <Gigabit> Is it bad I want a apple watch/android watch
+[08:09:03] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[08:09:11] <Moonlightning> (Aha! I want the border-collapse attribute.)
+[08:09:58] <Googie> I kinda want a Pebble. Not sure though
+[08:10:13] * Moonlightning wants a smartwatch.
+[08:10:43] <Moonlightning> It's really messed up that when you google CSS things, the /official documentation/ isn't anywhere on the frontpage :/
+[08:10:56] <Moonlightning> I keep finding myself appending `site:w3.org` just to get it
+[08:12:01] <Googie> All the "popular" stuff is like that :/
+[08:13:22] <Moonlightning> Googie: …you weren't referring to my comment on search result rankings, were you? :|
+[08:14:20] <Googie> I was. w3schools, cplusplus.com...
+[08:14:30] <Moonlightning> :|
+[08:15:05] <Moonlightning> Python's results are good
+[08:16:35] <wolfyshy> that is simply because docs.python.org has a high pagerank
+[08:16:51] <wolfyshy> because it is well written
+[08:17:01] <roflincopter> i would strongly recommend using cppreference instead of cplusplus and the MDN (mozzilaa developer netowrk) instead of w3 
+[08:17:06] <wolfyshy> the w3 css standards are not well written (they are vague)
+[08:17:10] <wolfyshy> YES ^
+[08:17:19] <wolfyshy> MDN is flawless
+[08:17:24] <Moonlightning> Really?
+[08:17:26] <wolfyshy> it even shows versions of browsers
+[08:17:28] <Moonlightning> I always feel uneasy about unofficial docs
+[08:17:49] <wolfyshy> https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav
+[08:17:50] <PinkiePieBot> [ <nav> - HTML (HyperText Markup Language) | MDN ]
+[08:17:56] <wolfyshy> it's heavily cited
+[08:18:04] <Googie> Yeah. Though w3schools and w3 are different people
+[08:18:05] <wolfyshy> with links to the relevant w3 pages if you want
+[08:18:09] *** Quits: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net) (Quit: I am gone now)
+[08:18:25] <Googie> It's just a pain that when you search, the crappy sites tend to come up first :/
+[08:18:39] <wolfyshy> duckduckgo makes it easy :3
+[08:19:02] <wolfyshy> https://ddg.gg/ -> "!mdn border-collapse" => https://developer.mozilla.org/en-US/docs/Web/CSS/border-collapse
+[08:19:03] <PinkiePieBot> [ border-collapse - CSS | MDN ]
+[08:19:28] <Googie> I need to try switching again, but DDG's regular search results are pretty bad compared to Google's in my experience
+[08:25:04] <HoneyDrops|Half> ddg is all about the !syntax
+[08:25:25] *** roflincopter is now known as roflin
+[08:26:29] <HoneyDrops|Half> That + pentadactyl?  t!<site> <terms> is the only way to search.
+[08:29:33] <wolfyshy> truth ^
+[08:30:06] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[08:33:41] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[08:34:00] <DJ-C0L7[CSS]> howdy wolfyshy
+[08:34:14] <wolfyshy> hi there
+[08:52:35] *** Joins: Seraph_Pony (quassel@Pony-97m.de5.40.50.IP)
+[09:10:19] <Colgate> I find ddg's results to be better than google's most of the time o.O
+[09:10:51] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[09:14:56] *** zz_CyberJacob is now known as CyberJacob
+[09:30:18] *** Quits: Princess-QRS (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[09:34:34] *** CyberJacob is now known as zz_CyberJacob
+[09:36:00] <HoneyDrops|Half> google is better if I am doing a very specific search (eg: a long quoted error message/log entry)
+[09:52:03] <Moonlightning> This, for sure ^
+[09:52:15] <Moonlightning> Okay, I need sleep, but a question for you pones to answer while I'm gone
+[09:52:38] <Moonlightning> Every time there's a section thing in an HTML document, and you jump to a section, and it has a header
+[09:52:54] <Moonlightning> It looks…squished. There's way not enough whitespace at the top.
+[09:53:08] <Moonlightning> Especially in proportion to the side margins, and what the top and bottom margins /normally/ are.
+[09:53:53] <Moonlightning> So…is there a way to make it so that when a user jumps to a section in a document, the top margin is completely on-screen?
+[10:00:26] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[10:01:03] <wolfyshy> I believe what you want is padding
+[10:01:07] <wolfyshy> padding-top: 1em
+[10:01:30] <wolfyshy> also I'm pretty much fucked now :/
+[10:01:55] <wolfyshy> my day job is forcing a hasty switch from postgresql to mysql for some reason or another that they didn't even tell me, and the last time I used MySQL was 9 years ago
+[10:02:06] <wolfyshy> I need to read noob tutorials
+[10:19:51] *** Cosmic is now known as Cosmic|sleep
+[10:22:47] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[10:23:11] *** Quits: Seraph_Pony (quassel@Pony-97m.de5.40.50.IP) (A TLS packet with unexpected length was received.)
+[10:31:04] *** Pony_61679 is now known as Stik
+[10:48:23] *** Quits: PinkiePieInsane (PinkiePieIn@Pony-3gs.50s.63.62.IP) (Connection closed)
+[10:48:54] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[10:49:05] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[10:51:31] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[11:14:56] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[11:28:08] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[11:43:28] *** init3_1 is now known as init3
+[12:18:06] *** Cepheid is now known as Cephy-ZZZzzz
+[13:42:29] *** init3 is now known as Init3-away
+[13:50:49] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Quit: ChatZilla 0.9.92 [Firefox 39.0.3/20150806001005])
+[14:01:23] *** Quits: CompuDesktop (quassel@snuggly.filly) (Connection closed)
+[14:05:08] *** Joins: CompuDesktop (quassel@snuggly.filly)
+[14:05:17] *** Quits: Compu (compu@snuggly.filly) (Ping timeout: 121 seconds)
+[14:06:52] *** Joins: Compu (compu@snuggly.filly)
+[14:16:07] *** Quits: Pony_2046 (coppercore@Pony-kr5t8h.coppercore.net) (Ping timeout: 121 seconds)
+[14:18:51] *** Quits: CompuDesktop (quassel@snuggly.filly) (Connection closed)
+[14:18:58] *** Joins: CompuDesktop (quassel@snuggly.filly)
+[14:22:39] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[14:51:33] *** Quits: eyeburn (eyeburn@secret.den.of.flaming.evil) (Ping timeout: 121 seconds)
+[14:53:28] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Quit: Rebooting things.)
+[14:53:29] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[14:53:35] *** Joins: ColtonDRG (coltondrg@Pony-bfmpqi.25i8.s7uc.00ae.2602.IP)
+[15:45:13] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:03:41] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:11:52] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:23:20] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:34:25] <frackster> Oh Disney... http://i.imgur.com/08V80lP.jpg
+[16:54:49] *** Cephy-ZZZzzz is now known as Cepheid
+[17:15:13] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:19:27] <Sukasa> morning
+[17:20:27] <Googie> Morning
+[17:25:16] <Sukasa> how goes/
+[17:27:39] <Googie> So so. It's 1:30 AM, so I'm off to bed :P
+[17:28:12] <Sukasa> ah, heh
+[17:28:17] <Sukasa> have a good one then :P
+[17:30:04] *** ThunderStorm is now known as LightningCrash
+[17:30:06] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[17:35:40] <RainbowHacks> morning \o/
+[17:36:44] <Sukasa> mornin' Rainbow
+[17:37:55] *** Joins: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net)
+[17:39:46] <RainbowHacks> hiya Sukasa :3
+[17:39:51] <RainbowHacks> almost afternoon here x3
+[17:44:32] <Sukasa> heh
+[17:44:34] <Sukasa> 8:44 here
+[17:44:57] <Sukasa> screwing around with openGL right now
+[17:45:43] * Cepheid touches one of Sukasa's uniform variables and fiddles with it.
+[17:49:46] <Sukasa> that's my projection matrix :(
+[17:50:13] * Sukasa distorts horrifically
+[17:51:13] <RainbowHacks> D:
+[17:53:04] <Moonlightning> wolfyshy: but paddings can't overlap
+[17:53:41] <Moonlightning> If I changed what's currently margin to padding everywhere, all the things would be too far apart.
+[17:54:18] <Moonlightning> I just need a way to set an anchor at the top of the margin or something.
+[18:00:03] *** Init3-away is now known as init3
+[18:00:17] <RainbowHacks> where's wolfyshy? o.o
+[18:02:21] *** Quits: RainbowHacks (rainbow@Pony-m1cetk.ponix.space) (A TLS packet with unexpected length was received.)
+[18:02:29] <Moonlightning> presumably poking at those databases x.x
+[18:02:39] <Moonlightning> good luck, wolfy!
+[18:11:31] *** Cepheid is now known as Cephy-ZZZzzz
+[18:17:46] *** Joins: RainbowHacks (rainbow@Pony-m1cetk.ponix.space)
+[18:21:07] *** init3 is now known as Init3-away
+[18:32:55] *** Joins: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net)
+[18:46:06] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[19:00:02] *** Init3-away is now known as init3
+[19:19:36] *** Joins: Seraph_Pony (quassel@Pony-97m.de5.40.50.IP)
+[19:20:49] *** init3 is now known as Init3-away
+[19:30:03] *** Init3-away is now known as init3
+[19:33:07] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[19:35:43] *** zz_CyberJacob is now known as CyberJacob
+[20:43:05] <Moonlightning> Odd behaviour is odd.
+[20:43:08] <Moonlightning> behavior *
+[20:43:33] <Moonlightning> So I got a `body > section > blockquote > p > i` here
+[20:43:55] <Moonlightning> And I have the inspector open, fiddling with the spacing
+[20:44:25] <Moonlightning> Now…<p>s have a vertical margin of 16px.
+[20:44:54] <Moonlightning> And I was fiddling with the padding of the <blockquote>, trying to make it space right internally with the <p>
+[20:45:11] <Moonlightning> The vertical padding there wsa originally 10px.
+[20:45:24] <Moonlightning> And I turned it down…down…down…
+[20:45:48] <Moonlightning> Even at 1px, there was too much space
+[20:46:14] <Moonlightning> But then I turned it down to 0px, and suddenly there was no space at all between the <p> border and the <blockquote> border.
+[20:47:04] <Moonlightning> When the <blockquote> padding was nonzero, the <p> would always be laid out so that its margin wouldn't intersect with the <blockquote>s padding
+[20:47:54] <Moonlightning> But as soon as I changed the <blockquote>s padding to zero, that constraint disappeared.
+[20:56:44] *** Cosmic|sleep is now known as Cosmic
+[21:03:23] *** Joins: PinkieShy (pinkie@Pony-u4ne5h.162-221-109-net.sccoast.net)
+[21:04:57] <PinkieShy> What is some good alts to avast free? It don't got to be free as well. I just looking for something just as good or better.. I'm thinking trend micro as my ISP offers it free of charge for the maxium protection suite
+[21:16:09] <Midnight_Tinker> I just use MSE but I also don't have dangerous browsing habits or use my PC as my main, YMMV
+[21:19:28] <PinkieShy> Midnight_tinker I got an alert once from avast while on yahoo mail it told me it blocked an ad which contained a Trojan horse
+[21:19:52] <PinkieShy> I'm guessing that was malvertising
+[21:20:00] <Midnight_Tinker> I have adblock
+[21:20:10] <PinkieShy> Same.
+[21:20:30] <PinkieShy> Nowadays I can't stand ad crazy webpages..
+[21:20:55] <PinkieShy> YouTube tries to get me to watch 30 second ads alot without it...
+[21:22:05] <PinkieShy> Midnight_tinker earlier this year I got infected by ads by digital more add-on. I uninstall it but it came right back and I didn't even agree for it to be installed in first place.
+[21:22:17] *** Joins: sleumas2k (sleumas2000@my.little.karaoke)
+[21:23:16] <HoneyDrops|Half> FF w/ NoScript, PrivacyBadger, RequestPolicy / uMatrix, uBlock Origin, HTTPS Everywhere.  Seeing an ad is a rarity for me.
+[21:23:22] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Quit: I have a bad case of real life to attend to.)
+[21:23:58] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:26:08] *** Quits: Compu (compu@snuggly.filly) (Quit: No Ping reply in 120 seconds.)
+[21:27:02] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Quit: No Ping reply in 180 seconds.)
+[21:28:14] *** Joins: ColtonDRG (coltondrg@Pony-bfmpqi.25i8.s7uc.00ae.2602.IP)
+[21:28:19] *** Joins: Compu (compu@snuggly.filly)
+[21:29:44] <PinkieShy> Honeydrops|half I saw what you did there. lol
+[21:30:42] *** sleumas2k is now known as sleumas2000
+[21:33:45] *** Quits: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net) (Quit: Leaving.)
+[21:35:35] *** Quits: sleumas2000 (sleumas2000@my.little.karaoke) (Quit: Dance with Death! Fight the good Fight! Or alternatively, stay at home and do nothing instead. Either's fine by me!)
+[21:35:47] *** Joins: sleumas2000 (sleumas2000@my.little.karaoke)
+[21:47:20] *** Quits: Phase (Phase4@Pony-l23b6v.internode.on.net) (Ping timeout: 121 seconds)
+[21:48:13] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "back in a few, 73s")
+[22:07:11] *** Joins: Lapsus (Lapsus@Pony-5m46mf.cable.rogers.com)
+[22:07:12] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[22:08:47] *** init3 is now known as Init3-away
+[22:17:48] *** Quits: PinkieShy (pinkie@Pony-u4ne5h.162-221-109-net.sccoast.net) (Ping timeout: 121 seconds)
+[22:19:43] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:23:02] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:23:56] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[22:30:24] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[22:30:29] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:34:51] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[22:41:05] <Gigabit> um.. what is the command in kubuntu to open terminal? I cannot click the task bar or anything else but active windows
+[22:42:01] <Gigabit> can't even shutdown my pc to restart it, without a hard shutdown, unless I can do it via terminal
+[22:43:35] <Moonlightning> Resorts.
+[22:43:44] <Moonlightning> The absolute last resort is the hardware reset.
+[22:43:52] <Gigabit> Nevermind got iiiit
+[22:43:54] <Moonlightning> Before that, try doing a firmware-level reset
+[22:44:01] <Moonlightning> Before that, in Linux, try the magic sysreq thing
+[22:44:04] <HoneyDrops|Half> ctrl+alt+f2 to switch to a tty?
+[22:44:06] <Gigabit> forgot that cntrl alt del, brings up a menu
+[22:44:13] <Moonlightning> Ah, good.
+[22:44:25] <Moonlightning> That's one of the first things to try.
+[22:44:33] <Moonlightning> Also try SSHing to get a terminal.
+[22:44:55] <Seoson> Also Shift+Alt+T at least in GNOME if I recall correctly
+[22:46:27] <Seoson> Or mabe Ctrl + Alt + T .... Oh dear I should use Linux desktops more often ^^
+[22:46:39] <Moonlightning> meta-control-t sounds right.
+[22:47:49] <Gigabit> HoneyDrops|Half,  XD
+[22:48:01] <Gigabit> I pressed that and got to the screen and could not get back
+[22:56:25] <HoneyDrops|Half> ctrl+alt+f7 (normally) to get back to X
+[22:58:03] <HoneyDrops|Half> the exact F# depends on how many agetty in inittab you have set
+[23:11:18] *** Joins: LUNA_Hercegponi (mutcshpxejo@Pony-65kako.pppoe.omsknet.ru)
+[23:11:32] <LUNA_Hercegponi> hello
+[23:14:34] *** Joins: Pony_92368 (IceChat77@Pony-q680dj.tmodns.net)
+[23:14:44] *** Pony_92368 is now known as DJ-C0L7[EIT]
+[23:14:58] <One-Trick> alt+f2 work?
+[23:15:13] <One-Trick> most of the time plasma fails, i just use that
+[23:16:17] <LUNA_Hercegponi> jrfe
+[23:16:19] <LUNA_Hercegponi> okay
+[23:25:06] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[23:49:53] *** Parts: LUNA_Hercegponi (mutcshpxejo@Pony-65kako.pppoe.omsknet.ru) ()
+[23:50:19] *** Creeps|AFK is now known as RedHelper
+[23:51:18] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)

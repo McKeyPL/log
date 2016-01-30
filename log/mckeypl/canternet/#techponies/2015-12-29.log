@@ -1,0 +1,969 @@
+[00:01:04] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Connection closed)
+[00:01:05] <HoneyDrops> Web browsers were designed to be document viewers, not application platforms, trying to shoehorn applications into a document viewer is like programming games in Excel... you can do it, but there are so many better options.
+[00:02:12] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[00:02:20] <RazorSharpFang> For small applications, it works though. A lot of people don't like downloading and installing software from the web. Others though... "Safe Installer.exe? Yes plz"
+[00:03:44] <RazorSharpFang> But that said, I don't understand why web-applications need AJAX.
+[00:04:43] <HoneyDrops> The solution is a package manager.
+[00:05:03] <Quindo> but which package manager!  oh!  Safe_package_manager.exe!  that should work.
+[00:06:30] <HoneyDrops> At some point the user must decide what software they will trust.  There is no escaping that fact.
+[00:07:41] <HoneyDrops> I'm not inclined to trust any random executable binary or shell script than I am some js from some random website.
+[00:07:53] <HoneyDrops> more then*
+[00:07:56] <HoneyDrops> than*
+[00:08:06] <HoneyDrops> dumb phone
+[00:09:38] <HoneyDrops> (and that is one reason I use no script)
+[00:11:07] *** Quits: Melanosuchus (quassel@Pony-vj1146.as13285.net) (Connection closed)
+[00:11:38] <RazorSharpFang> Some people (especially semi-computer-literate people) prefer web-applications for smaller stuff, such as games. I think they may take comfort in knowing that it's all sandboxed in the browser (except for flash, but that's a whole another story).
+[00:12:52] * Moonlightning (is playing Minecraft, if anypony wants to try their hoof at a hundred-minute challenge)
+[00:14:58] <RazorSharpFang> That, and there's a lot of convenicence in clicking on a link, and playing right then and there. No installation, or any of that guff involved. That, and users may not be able to install software.
+[00:15:36] <RazorSharpFang> Or run unauthorized software for that matter, especially in schools/uni and the like
+[00:16:08] <HoneyDrops> In theory it's sandboxed, or you assume that nothing harmful can be done entirely within the sandbox.
+[00:16:31] <HoneyDrops> web tracking works entirely within the sandbox
+[00:17:17] <RazorSharpFang> I'm still not sure how web tracking works.
+[00:17:36] <RazorSharpFang> Cookies, right? Or something else?
+[00:17:53] <HoneyDrops> there are several ways
+[00:18:09] <HoneyDrops> cookies are the most straightforward
+[00:19:48] <RazorSharpFang> Oh hey, the ubuntu server VM is ready
+[00:19:53] <RazorSharpFang> Now, I can test the firewall rules.
+[00:20:37] *** CyberJacob is now known as zz_CyberJacob
+[00:21:23] <RazorSharpFang> Is wget a good indicator of whether a web-browser would work? Or should I use an actual web browser.
+[00:21:38] <RazorSharpFang> Does firefox even work on CLI?
+[00:22:21] <HoneyDrops> ping should world, if you just want to check that it can't contact a host
+[00:22:29] <Quindo> when a single ` takes you 20 minutes to debug...
+[00:30:21] * Moonlightning patpats Quindo.
+[00:30:55] * Quindo rages and rips off shirt.
+[00:31:12] <HoneyDrops> http://uk.reuters.com/article/us-usa-voters-breach-idUKKBN0UB1E020151228
+[00:31:14] <PinkiePieBot> [ Database of 191 million U.S. voters exposed on Internet: researcher | Reuters ]
+[00:33:02] <Quindo> hazza!  >.>
+[00:44:02] <RazorSharpFang> Gotta figure out how to make a white-list in windows firewall...
+[00:44:16] <RazorSharpFang> I don't just want to block all HTTP, but all HTTP-but-X
+[00:44:30] * JustAberrant shivers violently
+[00:45:03] <RazorSharpFang> JustAberrant: Something wrong?
+[00:45:11] <JustAberrant> all if -but-X is just a specific host, that (should) be easy
+[00:45:14] <JustAberrant> *and if
+[00:45:38] <JustAberrant> anything more elaborate and you need to run a filtering proxy or similar
+[00:45:49] <RazorSharpFang> well, I want to block all but *.twitch.tv
+[00:46:16] <JustAberrant> mm, that may be tricky because I imagine they have several different hosts
+[00:46:49] * JustAberrant shruggles
+[00:47:07] <RazorSharpFang> twitch.tv resolves to {192.16.71.165, 192.16.71.176, 192.16.71.180, ... }
+[00:47:56] <JustAberrant> right, but possible subdomains might resolve elsewhere
+[00:48:05] <RazorSharpFang> True.
+[00:48:07] <JustAberrant> either way, can always try and see what happens
+[00:48:24] <RazorSharpFang> I'm new to windows firewalling, I'm just guessing at the moment
+[00:49:00] <RazorSharpFang> Maybe I'll just say "screw it" and block port 80 outbound
+[00:49:24] *** Joins: Fallfeathers (Fallfeather@Pony-gl6.epd.162.101.IP)
+[01:01:28] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[01:02:12] <Compu> well
+[01:02:32] <Compu> i found out why Osram RGBW Lightify bulbs seem to be out of stock everywhere
+[01:02:41] <Compu> they havent been released yet
+[01:02:53] <Compu> they will be released in february
+[01:05:45] <Divide|Tech> Sometimes, system restore actually fixes things...
+[01:06:04] <Divide|Tech> As rare as that case may be, I have to give a sigh of relief when it's actually the fix.
+[01:06:51] <HoneyDrops> If I were to ever run MS Windows again, it will only be in a VM, and I will be liberal with my snapshots.
+[01:07:19] <Divide|Tech> I can't argue with that.
+[01:07:28] <Phase> HoneyDrops, windows containers~
+[01:07:55] <Phase> real glad they did that, + docker gives you a nice interface
+[01:08:40] <Kinsley> When I rebuild my computer, I might do that.
+[01:08:43] <Divide|Tech> This particular problem: after upgrading to a new modem, the customer noticed that their laptop could no longer connect to the internet.  BOTH network devices were off, showing no connectivity - both wifi and ethernet.  After performing preliminary troubleshooting, I finally deduced that it was a malformed update which caused the issues, and threw the customer into a system restore.
+[01:08:58] <Kinsley> But I also need to get like, 4 more TB of storage.
+[01:09:12] <Phase> and you can in theory socket activate the whole setup
+[01:09:25] <Phase> so windows only exists while stuff is running
+[01:09:41] <Kinsley> I do remember a combination of driver and Windows updates killed XCOM: EW for me.
+[01:09:54] <Kinsley> System restore to an earlier state fixed it.
+[01:14:17] <RazorSharpFang> I've found that Virtual Windows has issues with D3D support, especially for older titles, that use DX6 and below
+[01:15:16] <Phase> Virtual Windows as in windows in a vm?
+[01:15:20] <RazorSharpFang> Yeah
+[01:15:28] <Phase> most completely lack a d3d driver
+[01:15:44] <RazorSharpFang> Well, D3D(7/8/9) work fine
+[01:15:45] <Phase> hyper-v and vmware workstation are the only i'm aware of
+[01:16:00] <RazorSharpFang> I use VirtualBox, and run quite a few games on it
+[01:16:20] <RazorSharpFang> Currently playing OFF on it, which is an RPGM title
+[01:17:37] <RazorSharpFang> Anyway, I'm off, cyas
+[01:17:47] <DJ-C0L7[EIT]> 'night razor
+[01:27:46] *** zz_CyberJacob is now known as CyberJacob
+[01:29:56] *** Joins: Webster (Webster@Pony-benl74.fios.verizon.net)
+[01:30:46] *** Quits: WuBzY (yaaic@Pony-t0fpfc.rev.dnainternet.fi) (Ping timeout: 121 seconds)
+[01:31:23] *** Joins: WuBzY (yaaic@Pony-5368om.rev.dnainternet.fi)
+[01:53:15] *** CyberJacob is now known as zz_CyberJacob
+[01:53:46] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:58:25] *** Sour_Sweet|BNC is now known as Sour_Sweet
+[02:13:56] *** Joins: Asoka_White (Asoka@Pony-987bj6.net-htp.de)
+[02:16:18] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:17:09] *** Quits: Asoka (Asoka@Pony-8meoqm.net-htp.de) (Ping timeout: 121 seconds)
+[02:19:48] *** Joins: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP)
+[02:20:45] *** Quits: RazorSharpFang (mnsbrekkdup@sharpest.of.all.fangs) (Connection closed)
+[02:29:15] <HoneyDrops> http://hackaday.com/2015/12/28/32c3-towards-trustworthy-x86-laptops/
+[02:29:51] <HoneyDrops> Would be wonderful to have systems that can be verified trustworthy, though I have to wonder why bother with x86 specifically.
+[02:32:24] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[02:32:31] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[02:51:29] *** WuBzY is now known as WuBzYIsTired
+[03:06:32] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[03:18:12] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[03:48:05] * Phase might consider using operator<< for assembling streams
+[03:48:17] * Phase specifically disagrees with its use as a printf replacement
+[03:48:37] * JustAberrant removes Phase 's opinion
+[03:48:40] <Phase> D:
+[03:48:54] *** Joins: Valiant (Corey@the.truth.is.out.there)
+[03:48:55] <Phase> delete JustAberrant;
+[03:51:08] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[03:53:48] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[04:05:21] *** JustAberrant was kicked by Kinsley (deleted; bot has significant network lag, see manual for instructions)
+[04:05:59] <Moonlightning> drop(Phase);
+[04:06:25] <Kinsley> Phase is already at the lowest level of channel access and cannot be dropped
+[04:06:34] <Phase> xD
+[04:09:10] <HoneyDrops> printf is a wonderful thing
+[04:13:38] <Phase> i would accept cout << printf("%d%s\n", foo, bar)
+[04:14:05] <Phase> because that implies std::string out << printf("%d%s\n", foo, bar)
+[04:14:29] <Phase> which imo is nicer than printf vs sprintf
+[04:16:29] *** Joins: Red_M (potato@Pony-4pa04c.red-m.net)
+[04:26:44] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[04:27:03] * JustAberrant looks around
+[04:27:18] * JustAberrant can't find this manual :(
+[04:28:00] <JustAberrant> also, :)
+[04:29:18] *** Joins: GigabitPony (Gigabit@Bazinga)
+[04:39:31] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[04:47:28] *** Quits: Red_M (potato@Pony-4pa04c.red-m.net) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[04:49:18] <tiwake> I'm really dumb and cant figure it out/understand why/whatever
+[04:49:22] <tiwake> http://tiwake.com/snapshot38.png
+[04:49:50] <tiwake> same error message for every single youtube video
+[04:49:58] <JustAberrant> hmm
+[04:50:02] <JustAberrant> try clearing cache and all that?
+[04:50:07] <tiwake> did that
+[04:50:21] <JustAberrant> is it the flash player or html5?
+[04:50:29] <tiwake> I don't have flash installed
+[04:50:50] <JustAberrant> hmm
+[04:51:06] <JustAberrant> https://www.youtube.com/html5  <-- check this?
+[04:51:07] <PinkiePieBot> [ YouTube ]
+[04:51:35] <tiwake> checkboxes are all checked off
+[04:51:50] <tiwake> huh, weird
+[04:51:52] <JustAberrant> well that's probably not good then
+[04:52:04] <tiwake> it magically started working
+[04:52:21] <JustAberrant> hah, well then
+[04:52:43] <tiwake> I tried playing an embedded youtube video on indigogo and it worked
+[04:53:24] <tiwake> so I opened that video up on the youtube website and it worked, then I refreshed that youtube video that was in the screen shot
+[04:53:27] <tiwake> and it worked
+[04:53:37] * tiwake facehoofs
+[05:09:04] <GigabitPony> anyone know if unlocking a htc desire 625 is easy? Want one for straight tlk, not cricket
+[05:09:49] <Moonlightning> tiwake, why you no TLS?
+[05:12:49] <GigabitPony> I mean I unlocked my vivid easy enough but I also put a new os on it. Does just unlocking a phone make it able to be used on other networks?
+[05:14:33] <tiwake> Moonlightning: what is TLS?
+[05:14:48] <Moonlightning> …what!
+[05:14:59] <Moonlightning> C'mon, tiwake. I expected better from you. ;p
+[05:15:06] * JustAberrant continues allowing Moonlightning 
+[05:15:11] <JustAberrant> also SSL forever
+[05:15:33] <Moonlightning> TLS is probably the most common crypto protocol in existence
+[05:15:44] <Moonlightning> It's the S in HTTPS
+[05:15:53] <tiwake> oh
+[05:15:58] <tiwake> TLS what?
+[05:15:58] <Moonlightning> And you need to go start supporting it, now
+[05:16:08] * Moonlightning pushes tiwake at his webserver config
+[05:16:19] <Moonlightning> You can get free certificates from Let's Encrypt
+[05:16:48] * JustAberrant should look into this letencrypt stuff :(
+[05:16:54] <tiwake> meh
+[05:17:06] <Moonlightning> :C
+[05:17:31] <tiwake> I'll probably do it correctly when I get a server upgrade
+[05:18:02] <tiwake> and set up email at the same time
+[05:18:12] <Moonlightning> Doing it incorrectly is marginally better tha not doing it at all!
+[05:18:35] <tiwake> its not incorrect
+[05:19:29] <tiwake> but yeah, there is a lot of stuff I'd like to do to my server
+[05:57:39] <GigabitPony> So.. Tiger Direct is going out of business?
+[06:13:06] <JustAberrant> doesn't surprise me, they went to shit years ago
+[06:13:49] <Kinsley> Not a lot of competition in the PC components retailers any more.
+[06:14:21] <JustAberrant> I dunno, here in Canada there's kinda 3 big ones
+[06:14:25] <JustAberrant> tiger direct used to be 4
+[06:14:45] <JustAberrant> newegg, ncix, canadadirect
+[06:15:30] <GigabitPony> TD has a new owner, 50% storewide, up to 50, and only 9 cpus..
+[06:15:37] <GigabitPony> stock is so limited
+[06:15:50] <GigabitPony> no returns
+[06:15:59] *** Joins: RazorSharpFang (mnsbrekkdup@Pony-fc7ur3.iinet.net.au)
+[06:17:00] *** GigabitPony is now known as RainbowBlitz
+[06:32:05] <JustAberrant> http://i.imgur.com/Dkq9iuP.gifv  :)
+[06:37:22] *** Eventide is now known as Eventide|Sleepies
+[06:42:05] <RazorSharpFang> Fluff
+[06:46:41] <RazorSharpFang> Does anyone here know how to use Windows Firewall rules?
+[06:47:19] <RazorSharpFang> I want to enable a specific set of domains, while keeping all others blocked.
+[06:47:53] <RazorSharpFang> I've currently got all port 80 outbound traffic blocked, which is close to what I want.
+[06:48:13] <Phase> RazorSharpFang, don't think you can filter by domain
+[06:49:10] <RazorSharpFang> I'm prepared to filter by what the nslookup says the domain's address is.
+[06:49:22] <RazorSharpFang> I haven't seen them change, they've pretty much always been that
+[06:50:01] <Phase> well you can use the ui from compmgmt.msc, or open powershell and run get-command *Firewall* to set it up from there
+[06:50:47] <RazorSharpFang> Well, I meant how to get a none-by-X type thing going. I've already set up a custom rule to block port 80 traffic, but I can't get it to allow from some.
+[06:56:33] <RazorSharpFang> What happens if your rules conflict?
+[06:58:55] <ShivalWolf> that sounds liek soemthing your better off using a proxy for. dont have a default gateway out and require a proxy and have a whitelist on the proxy
+[06:59:35] <Phase> RazorSharpFang, not a clue
+[06:59:38] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "talk to everypony later")
+[06:59:47] <Phase> and yeah, a proxy would work better
+[06:59:59] <RazorSharpFang> But I'd have to have ANOTHER virtual machine for that
+[07:04:50] <RazorSharpFang> And I'm lazy
+[07:05:48] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[07:06:37] <HoneyDrops> Sounds like a job for iptables
+[07:06:49] <JustAberrant> as a proxy?
+[07:06:54] <JustAberrant> sounds like a job for squid ;p
+[07:07:32] <HoneyDrops> squid works, but I was thinking for the firewall
+[07:08:00] <JustAberrant> he clearly said he was using windows, last I checked there wasn't an iptables port yet
+[07:08:39] <JustAberrant> if I was doing it though I'd probably have a linux or bsd vm acting as my router/gateway and possible filtering proxy
+[07:09:07] <HoneyDrops> Windows Guest on a Windows Host?  *runs screaming*
+[07:09:09] <JustAberrant> and set up a virtual network so that the windows vm can only talk to it
+[07:09:45] <Phase> HoneyDrops, i'm running that at work RIGHT NOW!
+[07:09:46] <JustAberrant> and I'd use shorewall because screw messing with iptables directly, life is too short for that shit ;p
+[07:09:58] * HoneyDrops uses shorewall too >_>
+[07:10:03] <JustAberrant> :>
+[07:11:33] * ShivalWolf has to screw with iptables directly. ive not yet found a firewall manager app that handles custom source natting rules
+[07:12:09] * Moonlightning has yet to use an iptables wrapper
+[07:12:39] <JustAberrant> we just have a big ol` iptables script at work because yeah, we do some pretty funky stuff and it's easier to go direct
+[07:12:39] <Moonlightning> except for fail2ban
+[07:12:56] <HoneyDrops> Shorewall might?  It's really just some scripts that wrap around iptables.  No UI, just edit come config files that are parsed to generate the iptables commands.
+[07:13:04] <JustAberrant> but for stuff at home where I'm basically saying "let this from here go there", shorewall is beautiful ;p
+[07:13:41] <ShivalWolf> at home i have ip range 1-20 go out a specific external ip. 21-30 out a 2nd specific external ip and continued on for each of my housemates
+[07:13:47] <ShivalWolf> i have a /29 routed to home
+[07:13:50] <Phase> hyper-v isn't too bad but if you're doing anything slightly outside microsofts vision of virtualized infrastructure be prepared for problems
+[07:14:04] <ShivalWolf> so each housemate gets their own external ip but its not routed directly to their machiens but source natted
+[07:14:40] <Phase> ShivalWolf, why not have dhcp hand them out directly?
+[07:15:05] <ShivalWolf> Phase: no way in hell would i want windows boxes with publicly accessable IP's
+[07:15:13] <ShivalWolf> also tehres not enough public ips for all the clients
+[07:15:21] <Moonlightning> ShivalWolf: ewwwwww
+[07:15:30] <Phase> by mac address :P not for arbitrary clients
+[07:15:35] <Moonlightning> why you have block-sized-ish ranges that aren't actual blocks
+[07:15:49] * Moonlightning reorganizes ShivalWolf's LAN into neat little blocks
+[07:16:00] <ShivalWolf> dhcp handles the ip allocations but iptables has to handle the source natting
+[07:16:19] <JustAberrant> my network is relatively simple but still not dead simple ;p
+[07:16:40] <ShivalWolf> i used to ipsec my lan
+[07:16:50] <ShivalWolf> convolutedly evil
+[07:17:45] * JustAberrant kinda wants to play around with ipsec
+[07:17:55] <JustAberrant> I only vaguely know the basics
+[07:18:05] <ShivalWolf> its got its uses
+[07:18:06] <JustAberrant> I wonder what kind of performance hit there would be
+[07:18:28] <ShivalWolf> i used to use it to tunnel ipv6 to home
+[07:18:35] * Phase wonders if dhcp can hand out multiple addresses to a client
+[07:18:40] <Moonlightning> why do we even need IPSec?
+[07:18:43] <ShivalWolf> Phase: last i looked no
+[07:18:48] <Moonlightning> I mean, we have IP, and we have TLS
+[07:18:52] <ShivalWolf> i tried
+[07:19:05] <Moonlightning> what usecases are there for IPSec that aren't already covered
+[07:19:25] <JustAberrant> Moonlightning: the obvious? software that doesn't and won't support TLS?
+[07:19:30] <Phase> Moonlightning, securing things without code changes, authentication without encryption
+[07:19:46] <Phase> it's more of an enterprise thing really
+[07:19:56] <Moonlightning> I see.
+[07:20:00] <ShivalWolf> yeah ipsec is really enterprise mainly now
+[07:20:21] <Phase> stuff like running unencrypted but authenticated traffic so it can be audited by a firewall
+[07:20:22] <JustAberrant> might be nice for NFS depending on how much of a pain it is ;p
+[07:20:39] <Moonlightning> TLS can do that, though, can't it?
+[07:20:45] <Moonlightning> Just negotiate a null cipher
+[07:20:49] <Phase> don't know, and that needs code changes
+[07:20:56] <Phase> ipsec works with litterally everything
+[07:21:17] * JustAberrant still annoyed that NFS lacks a middle ground between "tell me who you are and I'll take your word for it" and "full on kerberos based system"
+[07:21:41] <ShivalWolf> JustAberrant: yeah nfs is weird like that
+[07:21:45] <ShivalWolf> but it does have very low overhead
+[07:21:55] <Phase> ^ JustAberrant
+[07:22:04] <Phase> nfs would be such an application for ipsec
+[07:22:43] <JustAberrant> I wonder if it's more pain to make nfs secure directly or just wrap it up in ipsec ;p
+[07:23:42] <Phase> inter-site vpn is another nice use
+[07:23:52] <Moonlightning> openvpn ftw
+[07:24:01] <Phase> granted this sorta stuff will only really work on ipv6
+[07:24:21] * Moonlightning wants native v6 ;-;
+[07:24:25] <Phase> behind a nat you need l2tp, at which point openvpn is probably easier unless you need to support windows clients
+[07:48:14] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[07:54:28] *** Quits: Webster (Webster@Pony-benl74.fios.verizon.net) (Quit: Leaving)
+[07:57:30] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[07:58:32] *** Joins: Sin (Sin@is.hustlin.everyday)
+[08:02:21] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[08:05:10] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[08:18:45] <RazorSharpFang> I need to support windows clients, because my only clients are windows clients.
+[08:20:43] *** Joins: Melanosuchus (quassel@Pony-vj1146.as13285.net)
+[08:23:25] <Moonlightning> so Ford is running Dragonball ads
+[08:23:33] <Moonlightning> how do y'all feel about that
+[08:23:54] <RainbowBlitz> I like ford more now
+[08:23:57] <tiwake> like I do about any other ads
+[08:24:01] <Dashie> So....OpenVPN *has* a windows client, just saying o.o
+[08:24:12] * Dashie interjects intio convo that happened when she was sleeping
+[08:25:30] <RainbowBlitz> Would be cool if Ford made a mustang but with Dragonball graphics
+[08:25:46] <tiwake> custom full-body paint job
+[08:26:15] <tiwake> they use special solvent based printers, and stick it to the car
+[08:26:20] <Googie> All the "Private VPN" companies these days just seem to ship openvpn clients with a customized UI :P
+[08:43:42] *** RainbowBlitz is now known as Anthro_Butterscotch
+[08:50:19] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:52:08] <Moonlightning> These 2016 ads
+[08:52:15] <Moonlightning> I thought it was anohter 2012 thing at first
+[08:52:27] <Moonlightning> like the movie, and like the more-believed-than-usual the-end-is-near thing
+[08:52:31] <tiwake> what are ads?
+[08:52:48] <Moonlightning> the things you get when you use the YouTube Android app :P
+[08:54:07] * JustAberrant dabs a bit of solvent behind Moonlightning's left ear
+[09:04:49] *** Anthro_Butterscotch is now known as Soarin
+[09:05:34] *** Joins: Phase (Phase4@Pony-johrv1.internode.on.net)
+[09:10:36] *** Joins: Phase4 (Phase4@Pony-johrv1.internode.on.net)
+[09:11:22] *** Quits: Phase (Phase4@Pony-johrv1.internode.on.net) (Ping timeout: 121 seconds)
+[09:13:12] <tiwake> I havent had the chance to use android
+[09:13:33] <tiwake> well sorta I suppose
+[09:13:54] <Moonlightning> :P
+[09:14:00] <Moonlightning> I was very disappointed.
+[09:14:16] <Moonlightning> It seems to pride itself on customizability, and it uses Linux
+[09:14:27] <Moonlightning> so, naturally, I thought it would ship as a usable Linux system
+[09:14:33] <Moonlightning> I was very disappointed when it didn't
+[09:14:47] <tiwake> I've had an android capable cellphone for a few weeks now... the first thing I did was multi-rom boot with sailfishOS
+[09:15:37] <tiwake> havent really had a chance to really use either OS though
+[09:16:04] <tiwake> first 5 minutes with iOS was a lot more painful than the first 5 minutes with android XD
+[09:16:32] <tiwake> 5 minutes is my entire life time experience with iOS BTW
+[09:16:48] <RazorSharpFang> Couldn't stand it?
+[09:16:56] <tiwake> and will probably stay that way for the rest of my life
+[09:17:03] <Moonlightning> I like iOS better, in general
+[09:17:11] <Moonlightning> the UI is just so much better to me
+[09:17:11] <tiwake> its a horrible UI though
+[09:17:16] <Moonlightning> … :P
+[09:17:25] <Moonlightning> The permissions, too
+[09:17:39] <Moonlightning> Android requires you to accept an app's permissions to install it
+[09:17:52] <Moonlightning> iOS lets you install the app, btu deny its permissions
+[09:18:04] <tiwake> the only way you can do simple things like close programs is to look up the gestures online
+[09:18:17] <tiwake> that pretty much defines a bad UI
+[09:18:26] <JustAberrant> yeah that annoys me @ permissions
+[09:18:38] <Moonlightning> Android does the same thing, on certain devices
+[09:18:45] <Moonlightning> I have a Nexus, which has virtual buttons, so okay
+[09:19:00] <Moonlightning> But my friend got an old smartphone…to get the list of apps, you hold down the home button
+[09:19:05] <tiwake> donno, I have a nexus 5 running android 6
+[09:19:11] <Moonlightning> how is that better than iOS' double-press-the-home-button
+[09:19:26] <tiwake> its probably not
+[09:19:27] <tiwake> lol
+[09:19:36] <Moonlightning> also: even with the virtual buttons, you have to either mess around with it, or look it up
+[09:19:44] <Moonlightning> like, how are you supposed to know what the square means
+[09:19:54] <tiwake> android is customizable on the vendor side from what I've read about it
+[09:20:06] <Moonlightning> That doesn't mean shit.
+[09:20:17] <tiwake> well
+[09:20:22] <Moonlightning> Whopdee fuckkin' do
+[09:20:24] <tiwake> sure, I suppose
+[09:20:35] <Moonlightning> it's all about user customizability
+[09:20:50] *** Quits: RazorSharpFang (mnsbrekkdup@sharpest.of.all.fangs) (Ping timeout: 121 seconds)
+[09:20:52] <Moonlightning> as HoneyDrops says so frequently, stuff should be at the sole discretion of the user
+[09:21:07] <tiwake> when there are three obvious buttons, what shape they are does not really matter
+[09:21:30] <tiwake> like the top right or left corner of every window of any given desktop operating system
+[09:22:02] <Moonlightning> Touché.
+[09:22:03] <tiwake> not saying thats a good UI design either
+[09:22:20] <Moonlightning> I mean, personally, I'm okay with having to fuck around with stuff
+[09:22:24] <Moonlightning> that's what I'm gonna do, anyway
+[09:22:30] <tiwake> but its a pretty universal UI design
+[09:22:32] <tiwake> right
+[09:23:23] <tiwake> I just should have to learn to swirl my finger around counter-clockwise and say "take me to narnia" to get it to switch between open programs
+[09:23:24] <JustAberrant> android is definitely it's own thing that takes a bit to get used ti
+[09:23:42] <JustAberrant> * to
+[09:24:11] <JustAberrant> and imo the default programs are stupidly unintuitive, especially stuff like contacts/making phone calls :(
+[09:24:21] <tiwake> Moonlightning: do you have a nexus 5?
+[09:24:49] <JustAberrant> also not a fan of the whole not explicitly closing programs thing and everything just running in the background until it needs the resources
+[09:25:03] <tiwake> yeah
+[09:25:10] <Googie> Moonlightning: A lot of what is good about Android from a power user's perspective is basically that you have a lot more control than iOS.
+[09:25:19] <tiwake> switch to the terminal to actually close the program
+[09:25:21] <tiwake> lol
+[09:25:48] <JustAberrant> well, you can also manually kill programs with android in dev move
+[09:25:50] <JustAberrant> * mode
+[09:25:53] <Googie> Once rooted especially, you basically do have access to a basic GNU userland if you really want.
+[09:25:53] <JustAberrant> but it's not the norm
+[09:26:09] *** Quits: Melanosuchus (quassel@Pony-vj1146.as13285.net) (Connection closed)
+[09:26:18] <tiwake> I still need to figure out how to make the text smaller
+[09:26:20] <Googie> Also stuff like F-Droid exists, which is a FOSS package manager for Android.
+[09:26:25] <Moonlightning> Googie: yeah, except rooting breaks OTA updates, kind of.
+[09:26:55] <Googie> I've not really needed to root yet. Most of what I've wanted doesn't need root these days.
+[09:26:58] <Moonlightning> at least iOS is upfront about its hard abstractions
+[09:27:04] <Moonlightning> there we go, that's my beef with Android
+[09:27:10] <Moonlightning> it /pretends/ to be super open and customizable
+[09:27:21] <Moonlightning> but if you actually want to get into that, it bends you over and fucks you
+[09:27:26] <tiwake> yeah
+[09:27:30] <Googie> Kinda, but it's still a lot better than iOS.
+[09:27:33] <Moonlightning> iOS is like…nah man. my way or the highway.
+[09:27:39] <Moonlightning> you want the filesystem? HAHAHA no.
+[09:27:47] <Moonlightning> use the abstractions or gtfo
+[09:28:06] <JustAberrant> I've had no problems in that regard, but I have a nexus 5 and a carrier that doesn't tend to mess with stuff
+[09:28:14] <Googie> ^
+[09:28:14] <Moonlightning> Android is like…sure, you can mess with the filesystem if you want, but first you have to do a factory reset, and then you won't be able to install updates afterwards
+[09:28:16] <Googie> Nexus 5 as well.
+[09:28:33] <tiwake> you should try out SailfishOS if you have a nexus 5
+[09:28:35] <Moonlightning> Nexus 5, Play Store edition
+[09:28:40] <Googie> Access to the filesystem is perfectly fine without root.
+[09:28:48] <JustAberrant> isn't sailfish proprietary in parts
+[09:28:56] <tiwake> sure
+[09:29:00] <Googie> No reset required.
+[09:29:01] <Moonlightning> Except that half the shit is mounted readonly, and you can't remount it readwrite without *ahem*
+[09:29:24] <Googie> Well, yeah, if you're modifying the system itself, you certainly need root.
+[09:29:25] <JustAberrant> in fairness though, probably for a reason
+[09:29:48] <Moonlightning> You shouldn't have to fucking //explot security flaws// to get root, though
+[09:29:51] <Googie> Even the reason for the factory reset to get access to root is actually for a good reason.
+[09:29:52] <Moonlightning> that's fuckkin' ridiculous
+[09:29:56] <Moonlightning> it also means that shit's insecure :V
+[09:29:58] <Googie> You're not though.
+[09:30:17] <Moonlightning> AFAIK that's what it is :I
+[09:30:20] <Googie> The bootloader can have secure booting disabled easily, /but/ if you do so, it'll wipe all the user data.
+[09:30:24] <Moonlightning> reggardless, it's a HOOP
+[09:30:26] <Googie> For security purposes.
+[09:30:37] <Moonlightning> a HOOP you have to JUMP THROUGH to gain control over the device
+[09:30:45] <Moonlightning> HoneyDrops, little help here? :P
+[09:30:51] <Googie> It's actually honestly decent policy from a security perspective.
+[09:31:09] <Moonlightning> I have no issue with secure boot.
+[09:31:17] <JustAberrant> meh, given the scope of the device, seems a reasonable hoop
+[09:31:22] <Moonlightning> My issue is that the OS that is booted securely doesn't let you sudo.
+[09:31:26] <JustAberrant> and as Googie said, it's not completely arbitrary
+[09:31:26] <Moonlightning> That's insane.
+[09:31:28] <Googie> If someone gets access to your phone, they can't just flash their own code to bypass the lock screen, and gain access to your stuff.
+[09:31:32] <Googie> Moonlightning: It does
+[09:31:42] <Moonlightning> Really? How?
+[09:31:45] <Googie> You can renable secure boot once you've made your modifications
+[09:32:11] <Googie> (Well, not really "secure boot", but more of a "I won't let you flash the system partition anymore")
+[09:32:11] <Moonlightning> I believe my mane points stand :V
+[09:32:24] <tiwake> lol
+[09:32:27] <Googie> Honestly... I don't really think so.
+[09:32:39] <Googie> If you want to be able to flash code at any time to the device, you can.
+[09:32:59] <Googie> If you just want to gain access to root securely, configure it that way and then set it back to being secure.
+[09:33:00] <Moonlightning> 1. It advertises itself as customizable and such, but makes you jump through hoops to get actual control
+[09:33:33] <Googie> Well, if it allowed you to flash custom software at any time, it'd be trivial to take someone's device for just a few minutes and flash a nice little backdoor onto it.
+[09:34:00] <Moonlightning> you can do that with desktops, too
+[09:34:04] <Moonlightning> it's called an evil-maid attack
+[09:34:15] <JustAberrant> yeah, but it's a far greater risk with phones
+[09:34:15] <Googie> Yeah, but generally speaking, you don't bring desktops with you everywhere you go.
+[09:34:47] <Moonlightning> lots of people travel with laptops
+[09:34:55] <Moonlightning> also, my threat model includes nationstates
+[09:35:00] <Moonlightning> so, ahem
+[09:35:35] <HoneyDrops> (is sleeping, but...) who leaves their phone unattended in an insecure place?
+[09:35:50] <JustAberrant> the vast majority of the population at some point? ;p
+[09:36:12] <JustAberrant> phones are a major security vs convenience argument
+[09:36:38] <JustAberrant> people take them out and use them for very short periods of time
+[09:36:51] <JustAberrant> and don't want to enter a huge secure password every time they do so
+[09:37:10] <Moonlightning> fingerprint auth plox
+[09:37:12] <Googie> The thing is, you can still flash software onto the device whenever you want, they don't lock you out of that.
+[09:37:21] *** Phase4 is now known as Phase
+[09:37:25] <Googie> Also, fingerprint authentication is terrible :V
+[09:37:26] <Moonlightning> Lightning was surprised at my password :p
+[09:37:35] <HoneyDrops> I would never leave my phone (or any device, or hell even regular mundane things) unattended in a public place.
+[09:37:37] <Moonlightning> He was like, “…that's your password?”
+[09:37:38] <Googie> You just have to turn a setting off first.
+[09:37:44] <Moonlightning> I was like…“yeah…gotta be secure, yo”
+[09:37:47] <JustAberrant> HoneyDrops: yeah, but your not the vast majority of people
+[09:37:52] <Moonlightning> Why's fingerprint auth terrible :<
+[09:38:12] <Phase> easy to forge fingerprints
+[09:38:18] <Googie> http://www.theguardian.com/technology/2014/dec/30/hacker-fakes-german-ministers-fingerprints-using-photos-of-her-hands
+[09:38:18] <JustAberrant> Moonlightning: cause you can't revoke auth, not easily ;p
+[09:38:18] <PinkiePieBot> [ Hacker fakes German minister's fingerprints using photos of her hands | Technology | The Guardian ]
+[09:38:20] <Googie> CCC last year.
+[09:38:21] <Phase> turns out people touch things with their fingers
+[09:38:29] <Phase> and leave their prints everywhere
+[09:38:43] <Moonlightning> I thought that was a solved problem. :/
+[09:39:04] <Phase> touching things?
+[09:39:11] <Phase> yes but not leaving fingerprints isn't
+[09:39:25] <Googie> Those aren't hand-fetish photographs, those are just regular press photos, and they were /still/ able to extract the fingerprints from them.
+[09:39:31] * tiwake rolls over for Moonlightning to do a "finger print testing"
+[09:39:45] <Phase> and yeah, can't revoke your own fingerprint
+[09:39:45] <Googie> So... if you're getting photos taken of you, there you go :P
+[09:39:49] <Googie> Don't even need to touch stuff now.
+[09:39:50] <Moonlightning> like, what's used for authentication is more than what you could get from a picture or dusting
+[09:40:15] <JustAberrant> it seems to be the opposite ;p
+[09:40:25] <Googie> Moonlightning: There was a nice big talk at CCC last year about just how you /could/ get the quality needed for authentication just from photos.
+[09:40:39] <JustAberrant> they have to account for shit on the lense, changes due to whatever, etc
+[09:40:56] <Phase> biometrics work to confirm the identity of the person right infront of you
+[09:41:03] <Phase> they're not a password
+[09:41:07] <Googie> The got the prints of the German defence minister just from her PR photos.
+[09:41:24] <Moonlightning> so how do I authenticate securely but conveniently :<
+[09:41:32] <tiwake> eye scan?
+[09:41:34] <JustAberrant> Moonlightning: you don't, not yet anyway ;p
+[09:41:40] <Phase> Moonlightning, when you figure it out i'd love to know
+[09:41:54] <Moonlightning> tiwake: are you sure you can't just like take a picture of someone's face and use that :P
+[09:42:01] <JustAberrant> Moonlightning: you either do like HoneyDrops probably does and type a 30 digit alphanumeric password in every time you want to check something
+[09:42:01] <tiwake> pretty sure
+[09:42:11] <JustAberrant> Moonlightning: or use a shitty lockscreen pin/swipe thing like everyone else ;p
+[09:42:20] <Phase> eye scans would be more expensive to forge, but i'm sure it could be done
+[09:42:32] <tiwake> an eye scan notices where blood vessels in your eye are, and maps that
+[09:42:45] <Phase> you'd need to scan their eye of course but it only has to happen once before it's useless
+[09:42:57] <Googie> Not to mention that the biggest issue with all this is that if its stolen, it can /never/ be revoked.
+[09:43:04] <Googie> *it's
+[09:43:09] * Moonlightning whines loudly ;-;
+[09:43:10] <JustAberrant> that's kinda the problem with any biometric, it can't be revoked
+[09:43:34] <JustAberrant> so someone gas station gets popped that used bio auth for whatever and bam, you're compromised forever
+[09:43:46] <tiwake> well, like any given system, it can be broken
+[09:43:57] <tiwake> it would be a lot more difficult to break an eye scan
+[09:44:10] <Phase> someone lifts prints off the fuel thing at a gas station and you're compromised forever
+[09:44:15] <Googie> If you /need/ secure authentication that's always with you at the moment, probably your best bet is to just implant a 2FA token :V
+[09:44:28] <Phase> you use someone elses glass and they lift the fingerprint, compromised forever
+[09:44:40] <Googie> At least then it can be replaced.
+[09:44:42] <Moonlightning> Googie: …that actually sounds kind of like a good idea.
+[09:45:00] <Moonlightning> flesh that out some?
+[09:45:12] <JustAberrant> then all the various scanner in a briefcase attacks come out ;p
+[09:45:16] <Googie> There's already people with USB flash drives implanted in their fingers.
+[09:45:26] * Phase isn't sure the problem is bad enough to require mass implanting of rfid chips
+[09:45:28] <tiwake> Googie: eww
+[09:45:38] <HoneyDrops> I actually have no lock on my phone, but it never leaves my side (and has no info on it, aside from vaguely names contacts and my call history, and one ssh key that /is/ passworded).
+[09:45:42] <JustAberrant> also the problem with implants is it's hard to upgrade ;p
+[09:45:50] <Phase> painful to upgrade'
+[09:45:53] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[09:46:06] <Phase> and given the state of the us health system
+[09:46:08] <Googie> Easier than switching your fingerprints or retina scans though :P
+[09:46:56] <JustAberrant> HoneyDrops: the "no info" part of it is the security vs convenience failing
+[09:47:04] <Phase> so for now we're stuck with human memory as a secure element
+[09:47:04] <Googie> It's the only solution IMO for "biometric" authentication though.
+[09:47:08] <Moonlightning> Googie: when you say /2FA token/…
+[09:47:14] <JustAberrant> having access to email / bunch of other important stuff all the time is kinda the point for most people
+[09:47:32] <Googie> Doesn't have to be a 2FA token as such, what I mean is basically just anything that can do private/public key crypto for authentication purposes.
+[09:47:33] <JustAberrant> most people will choose that even knowing the security implications
+[09:47:34] <HoneyDrops> JustAberrant: that is what ssh is for
+[09:47:45] <Phase> 2FA tokens work but need to be combined with a secret to prevent compromise via theft theft
+[09:47:49] <JustAberrant> ssh doesn't do push notifications ;p
+[09:47:51] <Phase> >theft theft
+[09:48:09] <Googie> Yeah, which doesn't work if they are physically a part of your body.
+[09:48:33] <Googie> Anyone in that position could rubber hose any password authentication out of you anyway :V
+[09:48:46] <Phase> someone brushes an rfid reader by your hand...
+[09:48:47] <HoneyDrops> JustAberrant: I don't want push notifications.  If someone needs me /now/ they can call me, else they wait until I have time to check and respond.
+[09:49:06] <Moonlightning> Phase: that's not how those things work
+[09:49:18] <HoneyDrops> And if you call and I am busy, or don't feel like talking, well that is what "mute ring" is for.
+[09:49:19] <Moonlightning> They have to be challenge-response, not static-secret (i.e. password)
+[09:49:24] <JustAberrant> HoneyDrops: sure, but most people want push notifications
+[09:49:33] <Phase> i'm sure the only reason we haven't heard of people stealing via the contactless credit card thing is credit fraud is so bad anyway
+[09:50:00] <Moonlightning> Someone brushes an RFID reader against your hand…they get a signed one-time secret. Yay?
+[09:50:04] <Googie> Moonlightning: Well, hypothetically they can basically just relay the challenge from whatever they are authenticating to, and brush against you at just the right time...
+[09:50:04] <Moonlightning> er
+[09:50:07] <Moonlightning> a signed nonce *
+[09:50:12] <Phase> Moonlightning, they can authenticate against at least one service
+[09:50:20] <Moonlightning> Googie: needs more crypto
+[09:50:49] <Moonlightning> use TLS between client and server :P
+[09:50:55] <Phase> it's more than possible for someone to take your phone and brush it past wherever the implant is
+[09:51:21] <Phase> unless you want it in your hand with a connectivity check or something
+[09:51:33] * Phase isn't confident that would work
+[09:51:38] <Googie> https://en.wikipedia.org/wiki/Relay_attack
+[09:51:39] <PinkiePieBot> [ Relay attack - Wikipedia, the free encyclopedia ]
+[09:51:40] <Phase> depends on what your defending against
+[09:51:46] <Phase> ^ Googie that's the thing you could do
+[09:52:13] <tiwake> Phase: I think at that point a good 1911 is part of the security protocol
+[09:52:21] <Moonlightning> 1911?
+[09:52:23] <Phase> 1911
+[09:52:27] <Phase> ?
+[09:52:30] <Phase> shift key why
+[09:52:30] <Googie> Gun.
+[09:52:32] <tiwake> .45 pistol
+[09:52:40] <Phase> you wouldn't notice
+[09:52:42] <Googie> But honestly, that.
+[09:52:50] <tiwake> its the hallmark of pistol design
+[09:52:53] <Googie> I wouldn't shoot someone just because they bumped into me.
+[09:52:56] <tiwake> one of the best
+[09:53:00] <Googie> I'm not sure about how it is over in the US though.
+[09:53:03] <Phase> https://youtu.be/1kkOKvPrdZ4
+[09:53:04] <PinkiePieBot> [ Defcon 21 - Social Engineering: The Gentleman Thief - 108336 views - 41m 56s long - 680 likes - 97.84% ]
+[09:53:34] <Googie> Depending on the range, it would certainly be far easier than pickpocketing.
+[09:53:36] <Moonlightning> Googie, PinkiePieBot: like I said, TLS.
+[09:53:43] <Moonlightning> this is a solved problem.
+[09:53:55] <Googie> Moonlightning, yes and no.
+[09:53:59] <Phase> if people feel there's profit in pickpocketing and unlocking phones they'll do it
+[09:54:02] <Googie> How does TLS apply to signing into your phone for example ?
+[09:54:20] <Moonlightning> Your phone is a TLS server; your implant is a client…
+[09:54:28] <tiwake> alright, I'm going to bed
+[09:54:30] <Googie> With a relay attack, the attacker doesn't even need to decrypt the encrypted communications
+[09:54:45] <Moonlightning> But they're useless to the attacker.
+[09:54:49] <Googie> Your RFID device and phone communicate securely, and you're just extending the range
+[09:54:54] <Googie> Yeah, but think of the end result ?
+[09:55:04] <Googie> What happens after you've authenticated to your phone without knowing ?
+[09:55:16] <Phase> careful assuming how useful something is to an attacker
+[09:55:19] <Googie> The phone unlocks itself.
+[09:55:27] <Moonlightning> …oh, grrr.
+[09:55:39] <Phase> timing information for example used to be considered useless to attackers
+[09:55:53] <Moonlightning> …okay! So it just has to always be voluntary.
+[09:55:57] <Googie> The attacker doesn't need to actually know was communicated to cause it to unlock, just the end result.
+[09:56:11] <Googie> Yeah, though that starts to get harder with implanted RFID :P
+[09:58:00] <Googie> Though you could always have a physical socket, (such as with the implanted USB flash drives) as opposed to RFID.
+[09:58:12] <Moonlightning> there goes your convenience though
+[09:58:23] <Phase> exactly
+[09:58:28] <Moonlightning> and then it's more intrusive
+[09:58:30] <Phase> so really it depends on what you're defending against
+[09:58:44] <Googie> It's not too bad, sticking your finger in a socket to authenticate seems pretty easy still.
+[09:59:07] <Phase> if you assume your attackers can't use your fingerprint, apples thumprint home button is brilliant
+[09:59:29] <Moonlightning> Phase: if you're gonna do that, security becomes trivial.
+[09:59:40] <Phase> that it does
+[09:59:42] <Moonlightning> Just assume attackers can't use your passwords.
+[09:59:55] <Googie> It's not really /that/ much more annoying than finger print auth.
+[09:59:57] <Phase> that's kinda what a password is, has to be secret
+[10:00:52] <Moonlightning> I wouldn't want liek a visible socket in my finger though
+[10:00:59] *** WuBzYIsTired is now known as WuBzY
+[10:01:16] <JustAberrant> what about some kind of light thing through the skin ;p
+[10:01:30] <JustAberrant> that would be kinda nifty ;p
+[10:01:33] <Moonlightning> relay attack
+[10:01:41] <JustAberrant> make it very directional
+[10:01:48] <Moonlightning> Googie?
+[10:02:03] <Googie> Could communicate via slight changes in voltage through your skin.
+[10:02:05] <JustAberrant> and only activated when you are pressing on the "reader"
+[10:02:19] <Moonlightning> Ooh, I like that ^2
+[10:02:38] <Moonlightning> Are we sure those couldn't be detected without actual contact, though?
+[10:02:52] <Moonlightning> Like, what if you had a very very very very sensitive magnetic field detector thingy
+[10:02:54] <Phase> JustAberrant, watch the video i linked
+[10:03:08] <JustAberrant> maybe tommorow, I've got to bed ;p
+[10:03:14] <Googie> It'd have to be very very sensitive I imagine.
+[10:03:30] <Googie> Sensitive enough that TBH, I suspect you'd have issues with basically any solution :P
+[10:03:53] <Moonlightning> Hmm?
+[10:04:13] <Googie> Though I don't know enough about electrical engineering to really state for sure about that side of things, I'm only guesstimating.
+[10:04:33] <Moonlightning> Okay.
+[10:04:56] <Moonlightning> So do we post this to InfoSec.SE or Biology.SE?
+[10:07:38] * Googie ideally searched for "Capacitive low bandwidth communication": http://www.winlab.rutgers.edu/~gruteser/papers/sigring.pdf
+[10:07:38] <Moonlightning> …or…EE.SE? :p
+[10:11:27] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:15:09] <Googie> In any case, I still think Android is way more customizable than iOS, to a degree that makes sense :P
+[10:16:45] * Googie is using an open source IRC client deployed using a FOSS package manager. On iOS, FOSS basically can't exist, at least not in the general sense. Is it really FOSS if you can't compile the software yourself ?
+[10:16:51] * Moonlightning just builds bedrock jails around all the attackers!
+[10:17:15] <Moonlightning> Well, is it really their fault if the platform doesn't support that?
+[10:17:55] <Moonlightning> We need, like, ways to prove that a given binary is a faithful compilation of given source code
+[10:18:03] <Googie> No, but that's kinda my point.
+[10:18:14] <Moonlightning> …I guess nobody does that, in favor of just compiling it themselves
+[10:18:41] <Googie> On iOS you /have/ to use the app store, which costs $100 a year, just to be able to deploy iOS apps
+[10:18:53] <Googie> Android you can just build and install your own APKs
+[10:19:13] <Googie> (Also, you can do that, it just takes a bit of work to get reproducible builds. Debian does it)
+[10:19:37] <Phase> i thought they were still working on reproducible builds
+[10:19:51] <Moonlightning> Right, but I'm saying, you shouldn't /need/ reproducible builds
+[10:19:59] <Moonlightning> just, like, document the build process or something
+[10:20:03] <Moonlightning> somehow
+[10:20:24] <Googie> I think it works on Debian, kinda, but you can't apply it to the whole distro
+[10:20:55] <Googie> https://reproducible.debian.net/reproducible.html
+[10:20:57] <PinkiePieBot> [ Overview of various statistics about reproducible builds ]
+[10:22:28] <Googie> Moonlightning: But you can't do that on iOS, because you can't compile your own code to run on it without going through the whole app store process
+[10:22:48] <Googie> It's why FOSS and power user tools in general are way better on Android
+[10:23:05] <Moonlightning> yeah, you couldn't even pull the downloaded app to check it against anything, because hard abstractions
+[10:24:34] * Moonlightning throws noteblocks at tiwake
+[10:24:46] *** Quits: Valiant (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[10:25:24] <Googie> Honestly, even know Android is a lot more closed than you'd hope, it's still the place for power users on mobile these days, at least compared to iOS.
+[10:25:50] <Googie> Also, have you bought Minceraft yet, or are you still replaying the demo ?
+[10:26:03] <Moonlightning> Minceraft :D
+[10:26:15] <Moonlightning> that actually sounds potentially very interesting
+[10:26:22] <Moonlightning> flesh that out o3o
+[10:26:33] <Googie> Old easter egg
+[10:26:48] <Googie> There was something like a 1/100000 chance of the title screen saying Minceraft
+[10:27:11] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[10:27:21] <Moonlightning> Oh XD
+[10:28:40] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[10:43:35] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[10:44:24] *** Soarin is now known as Snoarin
+[10:48:28] *** Quits: Phase (Phase4@Pony-johrv1.internode.on.net) (Quit: Leaving)
+[10:50:00] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Connection closed)
+[10:50:30] *** Joins: Phase (Phase4@Pony-johrv1.internode.on.net)
+[11:02:10] <Colgate> ok, reading through all that, why are you even using RFID? use NFC
+[11:02:28] <Colgate> range is extremely minimal, someone would have to be within a foot of you
+[11:03:33] <Moonlightning> Really?
+[11:03:56] <Moonlightning> I thought they were the same thing, just one lightly different frequencies
+[11:03:59] <Colgate> yeah? the chip is powered by induction
+[11:04:13] <Moonlightning> OHHHHHHHHHH
+[11:04:20] <Moonlightning> so THAT'S how they work
+[11:04:28] *** Quits: WuBzY (yaaic@Pony-5368om.rev.dnainternet.fi) (Quit: )
+[11:04:41] <Moonlightning> and they can just do arbitrary stuff, too
+[11:04:44] *** Joins: WuBzY (wubzy@Pony-kcl4eg.dhcp.inet.fi)
+[11:05:06] <Colgate> you can power a cpu to sign something, that's how tap/pay credit cards work
+[11:05:10] <Colgate> iirc
+[11:10:50] <Stik> yup
+[11:13:10] * Googie kinda wasn't really focusing too much on the actual technology, and more on the theoretical side of things. NFC does make more sense though.
+[11:15:39] *** zz_CyberJacob is now known as CyberJacob
+[11:50:37] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[11:54:40] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Ping timeout: 121 seconds)
+[12:51:52] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[12:55:55] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Ping timeout: 121 seconds)
+[13:42:25] *** Sour_Sweet is now known as Sour_Sweet|Mobile
+[13:52:41] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[13:56:43] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Ping timeout: 121 seconds)
+[14:02:04] *** Quits: CompuDesktop (compu@snuggly.filly) (Ping timeout: 121 seconds)
+[14:02:21] <johnsey> http://cdn.c3voc.de/s1_native_hd.webm
+[14:10:38] <Moonlightning> > Length: unspecified [video/webm]
+[14:10:42] <Moonlightning> You're kidding.
+[14:10:45] <Moonlightning> You're kidding, right?
+[14:10:49] <Moonlightning> What the fuck is wrong with this server.
+[14:15:24] *** Joins: CompuDesktop (compu@snuggly.filly)
+[14:17:22] <johnsey> Moonlightning: it's a stream
+[14:17:41] <Moonlightning> …what?
+[14:21:46] *** CyberJacob is now known as zz_CyberJacob
+[14:26:25] *** Quits: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP) (Ping timeout: 121 seconds)
+[14:28:24] *** Joins: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP)
+[14:38:24] *** Quits: JustAberrant (JustAberran@Pony-lq4qe0.com) (Ping timeout: 121 seconds)
+[14:39:45] <Googie> Moonlightning: That's live from the congress right now :P
+[14:46:37] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[14:50:06] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[14:53:43] *** Joins: Xefir (xefir@Pony-9a05v6.1fe2.7gl6.e080.2a00.IP)
+[14:56:33] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[14:57:45] *** Quits: Xefir (xefir@Pony-9a05v6.1fe2.7gl6.e080.2a00.IP) (Ping timeout: 121 seconds)
+[15:04:18] <Sour_Sweet|Mobile> I need a CSS optimizer :P My stylesheets work, but they are ugly
+[15:08:49] <Moonlightning> /optimizer/, or /prettifier?/
+[15:12:37] <Sour_Sweet|Mobile> More ike an actual optimizer. I set for example every single margin and padding (top left right bottom) itself instead of using a single line to do that
+[15:12:48] <Sour_Sweet|Mobile> Which also make them somewhat ugly :P
+[15:17:54] <Stik> it'll get cached so shouldn't matter
+[15:18:11] <Stik> i mean it won't affect load times
+[15:18:21] <Stik> maintainability might be a concern though
+[15:19:30] <Sour_Sweet|Mobile> It actually improves readability, but I dunno
+[15:19:36] <Sour_Sweet|Mobile> Should change it anyway
+[15:26:34] <Moonlightning> Readability, at the expense of maintainability?
+[15:31:40] *** Quits: Fallfeathers (Fallfeather@Pony-gl6.epd.162.101.IP) (Connection closed)
+[15:41:48] <Sour_Sweet|Mobile> I should really be more careful with the asterisk on the shell. I almost did something really stupid. Omitting -r saved me
+[15:54:24] *** Joins: Xefir (xefir@Pony-qa6var.rev.sfr.net)
+[15:58:26] *** Quits: Xefir (xefir@Pony-qa6var.rev.sfr.net) (Ping timeout: 121 seconds)
+[16:06:08] <WorkingData> rm *
+[16:08:13] <WorkingData> cd /home/Sour_Sweet/ && rm -rf *
+[16:55:13] *** Joins: Xefir (xefir@Pony-jsskh1.1fe2.7gl6.e080.2a00.IP)
+[17:00:17] *** Quits: Xefir (xefir@Pony-jsskh1.1fe2.7gl6.e080.2a00.IP) (Ping timeout: 121 seconds)
+[17:02:29] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:03:25] *** Eventide|Sleepies is now known as Eventide
+[17:04:02] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[17:11:53] *** Joins: Xefir (xefir@Pony-6nlctp.1fe2.7gl6.e080.2a00.IP)
+[17:20:40] <WorkingData> i find it somewhat amusing when i manage to accidentally fill up my linux drive.. programs just randomly quit working correctly
+[17:20:44] <WorkingData> but it still works
+[17:20:51] <WorkingData> it really does try xD
+[17:28:43] <Kinsley> Linux gives zero shits about hardware trying to fail on it.
+[17:48:30] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:49:52] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[18:02:23] *** Snoarin is now known as Gigabit
+[18:04:20] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (Connection closed)
+[18:17:21] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[18:43:54] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[18:52:10] *** Quits: Obaskyr (Tachy@Pony-ncl8bs.range109-146.btcentralplus.com) (Ping timeout: 121 seconds)
+[18:53:45] *** Gigabit is now known as Gigatown
+[18:54:57] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:07:47] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[19:08:20] *** zz_CyberJacob is now known as CyberJacob
+[19:18:40] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:22:49] *** CyberJacob is now known as zz_CyberJacob
+[19:27:08] *** zz_CyberJacob is now known as CyberJacob
+[19:28:08] *** Sour_Sweet|Mobile is now known as Sour_Sweet
+[19:34:10] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[19:40:24] *** Gigatown is now known as Gigabit
+[19:42:47] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[19:47:18] <HoneyDrops> OoOoOOOo https://media.ccc.de/v/32c3-7139-a_free_and_open_source_verilog-to-bitstream_flow_for_ice40_fpgas#video
+[19:47:22] <PinkiePieBot> [ C3TV - A Free and Open Source Verilog-to-Bitstream Flow for iCE40 FPGAs ]
+[19:53:09] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[20:06:55] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:11:16] <Phase> awww, only like 3k logic cells
+[20:11:31] *** Gigabit is now known as GigaTown
+[20:11:31] <Phase> 7k'
+[20:32:36] *** Quits: WuBzY (wubzy@Pony-kcl4eg.dhcp.inet.fi) (Quit: Leaving)
+[20:40:45] *** Quits: Phase (Phase4@Pony-johrv1.internode.on.net) (Connection closed)
+[20:52:44] *** Joins: TachyonicBow (Tachy@Pony-n7i664.range86-191.btcentralplus.com)
+[20:57:43] *** TachyonicBow is now known as Obaskyr
+[20:57:46] *** Quits: Xefir (xefir@Pony-6nlctp.1fe2.7gl6.e080.2a00.IP) (Quit: Bye!)
+[21:19:27] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:21:48] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[21:31:48] *** CyberJacob is now known as zz_CyberJacob
+[21:40:43] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[21:52:55] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[22:02:50] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[22:03:30] <Moonlightning> Does anypony know a good, free, generic-sounding mail provider?
+[22:04:13] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[22:04:22] <Moonlightning> In case I want like an address with a domain the masses won't think twice about, but without the big companies' data-collection crap
+[22:07:58] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (The TLS connection was non-properly terminated.)
+[22:18:38] <Compu> :D installing windows 95 in virtualbox
+[22:24:11] <Moonlightning> >  yest 08 (1)   [inbox] Evan from FFTF — We?re having a serious emergency
+[22:24:31] <Moonlightning> Apparently Google has been recognizing their emails as spam
+[22:26:42] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[22:27:19] <Moonlightning> Apparently also they're going to try to make a thing that pushes notifications to all their subscribers whenever something big happens
+[22:27:48] <Moonlightning> That's great and all…but do they have an IRC channel? I mean, I know /I/ would just sit in there, and I get pinged by `/notice`s, sooooo…
+[22:27:52] <Moonlightning> That's something they could do right now.
+[22:29:21] <Quindo> That moment when the flag all your code was built around gets removed from the project...
+[22:39:43] <JustAberrant> hehe, what project?
+[22:42:58] *** Joins: Valiant (Corey@the.truth.is.out.there)
+[22:43:12] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[22:43:19] <Quindo> an internal one.  A 'state' the data could be in was removed.  So the flag representing that state was removed.  So I need to go through all my code and remove the references to that state, EG, if gates that required it false/true.
+[22:43:23] *** Valiant is now known as Gladiolus
+[22:45:42] <JustAberrant> lovely ;
+[22:45:43] <JustAberrant> * ;p
+[22:47:33] <JustAberrant> though assuming for work, sounds like a serious lack of design/coordination if stuff like that's happening.. ;p
+[22:47:48] <JustAberrant> very agile-esq :>
+[22:48:14] * mniip shamelessly advertises https://github.com/mniip/znc-snomask
+[22:48:15] <PinkiePieBot> [ mniip/znc-snomask · GitHub ]
+[22:48:53] <JustAberrant> hmm, nifty but why?
+[22:49:07] <JustAberrant> are server notices really that annoying? ;p
+[22:49:26] <mniip> sometimes you want to receive all of them on one client, but that's too much for another client to handle
+[22:49:42] <JustAberrant> fair `nuff I suppose
+[22:49:51] <mniip> consider SNO_CCONN
+[22:52:46] <Quindo> JustAberrant yeah, it is designers verbalizing everything and no design docs.  So I have to reverse engineer the system out of the design.  That is what tends to happen in this rapid development world...
+[22:54:26] <Quindo> That also means that I am just setting it to always false, and removing the instances where it is expected to be true rather then dropping it from the database scema...
+[22:54:57] <Quindo> cause I do not want to go back through all my helper classes and change their queries.
+[22:55:06] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:55:07] <Compu> woo now installing microsoft plus for windows 95
+[23:01:54] <Moonlightning> hmm, vim is defaulting to latin1 instead of utf8 on my other laptop
+[23:02:26] <Moonlightning> holy shit
+[23:02:33] <Quindo> XD
+[23:02:34] <Moonlightning> My inbox is full of organizations begging for money @.@
+[23:02:51] <Quindo> FtfF?
+[23:03:04] <Moonlightning> FFTF, represent.us., Sanders 2016… :P
+[23:03:20] <Crimson_Tail> Why are you even subscribing to those
+[23:03:40] <Quindo> I just unsubbed from CrowdRise...
+[23:04:44] <Quindo> Dollar Shave Club has suddenly started emailing me as well.
+[23:05:02] <mniip> Moonlightning, fast fourier transform on floats?
+[23:05:11] <Moonlightning> Crimson_Tail: because, unlike most people, I care about the freedom of the Internet :I
+[23:05:30] <Moonlightning> and about there being actual representation of the people
+[23:05:32] <Sour_Sweet> Moonlightning: That's why people donate to the EFF and call it a day ;-)
+[23:05:47] <Sour_Sweet> I personally support a German counter part
+[23:05:55] <JustAberrant> hehe, pretty much that ;p
+[23:05:59] <Moonlightning> Sour_Sweet: yes, but it's not a one-time thing
+[23:06:16] * JustAberrant doesn't agree with everything the EFF says or does or thinks, but they are at least doing some good ;p
+[23:06:24] <Moonlightning> There must have been literally two dozen Internet-breaking bills that tried to happen since I started payign attention
+[23:06:42] <Moonlightning> The polititians JUST DON'T STOP
+[23:06:49] <Sour_Sweet> two dozens? Ahh than we had a quiet year 6_9
+[23:06:54] <JustAberrant> that's why they'll win
+[23:06:55] <Quindo> Then they passed one in a budget bill. /flip table
+[23:06:56] <Crimson_Tail> They never stop
+[23:07:10] <HoneyDrops> CISA (or whatever) sneaked though in the budget bill :(
+[23:07:40] <JustAberrant> they can just keep trying over and over again until they succeed through either luck or the apathy of others
+[23:07:57] <Crimson_Tail> They will keep on trying
+[23:08:24] <Crimson_Tail> Just like how that trans-pacific thing had failed before
+[23:08:25] <Quindo> I personally wished that the budget bill was not used to sneak stuff in with... I know a bunch of people who were happy about the Fed Pot thing in the budget bill... But it should not have been in the budget bill to begin with!
+[23:08:32] <Crimson_Tail> They try again
+[23:08:38] <HoneyDrops> Crimson_Tail: which is why we need to restructure things such that what they want simply isn't possible.  Then they pass a stupid bill, but they still can't get what they want.
+[23:08:54] * Moonlightning groans loudly.
+[23:09:11] <Moonlightning> I don't want to live on this planet anymore…
+[23:09:16] <HoneyDrops> I wish there was a rule that limited the scope of bills, eg: a budget bill must only be directly related to the budget.
+[23:09:26] <JustAberrant> HoneyDrops: that doesn't work in a world where most people don't share your opinions ;p
+[23:09:40] <Crimson_Tail> And then a riot happens
+[23:09:55] <HoneyDrops> A bill must have some central there, and all portions should be directly, or at least very closely related.
+[23:10:00] <Moonlightning> ^
+[23:10:01] <HoneyDrops> s/there/theme/
+[23:10:05] <Moonlightning> in short: no riders allowed
+[23:10:12] <HoneyDrops> Basically
+[23:10:20] <JustAberrant> well that at least I agree with
+[23:10:43] <HoneyDrops> Yes, it makes passing some things harder, as you can't tie enough carrots onto it.
+[23:11:03] <Crimson_Tail> Most of the time
+[23:11:14] <Crimson_Tail> They don't allow public opinion into that
+[23:11:20] <Crimson_Tail> They just try to pass it in
+[23:11:34] <Moonlightning> > They don't allow public opinion
+[23:11:37] <Moonlightning> what do we pay them for
+[23:11:55] <Crimson_Tail> Bullshit things
+[23:11:56] <Quindo> we don't
+[23:12:17] <Quindo> That is the heart of the problem, we do not pay our pols.
+[23:13:34] <Crimson_Tail> Also it wasn't entirely the government that tried to take down net neutrality
+[23:14:02] <Crimson_Tail> The monopolitic cable companies we don't like were behind that
+[23:14:41] <Quindo> We would need to make it illegal for polititions to become lobbysts if we want the pols to do their job. 
+[23:14:54] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[23:14:57] <HoneyDrops> Pay shouldn't enter into their decisions, as money doesn't make right any more than might does.
+[23:16:15] <HoneyDrops> You need to collect data, creat and test predictive models and properly study policies using a fact and science based framework.
+[23:16:35] <Crimson_Tail> Oh yeah
+[23:16:47] <Crimson_Tail> Two feminazis /tried/ to mess with the entire internet
+[23:17:45] <Crimson_Tail> Isn't there anything more important than the internet in general? Like how women are treated in the middle east? Come on.
+[23:19:23] <Moonlightning> The Internet is very, //very// important, Crimson_Tail.
+[23:19:43] <Crimson_Tail> Yeah, but one does not simply mess with it
+[23:19:43] <DJ-C0L7[EIT]> xP we're finally getting a comp and access to the cameras out here in the guard shack at work
+[23:19:47] <Moonlightning> Currently, it provides for essentially arbitrary free communication.
+[23:19:54] <Moonlightning> That must not be taken away.
+[23:19:56] <Shutter> The local power company started the fireworks early this year xD https://www.youtube.com/watch?v=8HSMZsRbJy0
+[23:19:57] <PinkiePieBot> [ VID 20151229 211846 - 2 views - 12s long - 0 likes - 0.00% ]
+[23:20:06] <Crimson_Tail> When I meant when they tried to mess with the internet
+[23:20:16] <Crimson_Tail> Censorship
+[23:20:21] <Crimson_Tail> Fuck that.
+[23:20:28] <Moonlightning> Indeed.
+[23:20:34] <JustAberrant> HoneyDrops: the problem there is the majority doesn't share your views, such an approach would probably produce an answer you don't want ;p
+[23:20:34] <Moonlightning> HoneyDrops: are you involved with represent.us.?
+[23:20:39] <Crimson_Tail> You're too squeamish about some things on the internet
+[23:20:51] <Crimson_Tail> Ignore it
+[23:21:02] <Sour_Sweet> The internet is way too powerful to remain in our hands. They'll eventually find a way to screw with it
+[23:21:11] <JustAberrant> HoneyDrops: the majority probably do prefer safety over privacy, inspiring quotes aside
+[23:21:52] <Crimson_Tail> Also when I meant on what's more important than trying to mess with the internet.
+[23:21:53] <HoneyDrops> And they are wrong, and will end up paying for it down the line.
+[23:21:55] *** Joins: Melanosuchus (quassel@Pony-vj1146.as13285.net)
+[23:21:58] <Sour_Sweet> Terrorists use encryption: Ban encrpytion! You have nothing to hide, do you?
+[23:21:59] <JustAberrant> HoneyDrops: such a study would probably conclude that clipper-chip v2 does make sense it it can be implemented to reasonably mitigate widescale exploitation
+[23:22:09] <Crimson_Tail> Big deal
+[23:22:14] <Crimson_Tail> We use encryption
+[23:22:20] <Moonlightning> HoneyDrops: …we'll ALL end up paying for it…
+[23:22:45] <JustAberrant> that's the problem with the "they'll see in the end damnit!" argument
+[23:22:47] <Crimson_Tail> If there's no encryption, then what's the point of online payments?
+[23:23:09] <Sour_Sweet> As long as they don't mess with peoples facebook accounts they'll get it through eventually
+[23:23:20] <JustAberrant> Sour_Sweet: pretty much that
+[23:23:24] <Sour_Sweet> The average human doesn't care
+[23:23:29] * Quindo things it would be funny if facebook just vanished one day...
+[23:23:41] <mniip> quite
+[23:23:42] <HoneyDrops> I'm not worried, honestly I see only two eventual outcomes... either we get out act together and start making the right choices or or species will create it's own end.  I really don't care either way what happens, it will fix itself.
+[23:23:51] <JustAberrant> it's not even an unreasonable viewpoint, which is kind of the problem that I think Moonlightning, HoneyDrops, and similar can't and will never see ;p
+[23:24:09] <Sour_Sweet> And as much as I hate how much power companies like Google and Facebook have: As it is now they sometimes really protect us
+[23:24:10] <Moonlightning> JustAberrant: justify plox
+[23:24:26] <Moonlightning> Sour_Sweet: “protect us” as in…?
+[23:24:47] <Sour_Sweet> Google spents a lot of money to ensure the internet remains mostly as it is
+[23:25:00] <Sour_Sweet> Because it is in their interest
+[23:25:03] <Moonlightning> Mmm.
+[23:25:08] <JustAberrant> Moonlightning: your viewpoints are all based on the idea that privacy is inherently some really important thing
+[23:25:17] <JustAberrant> Moonlightning: and that people who don't think so are "wrong"
+[23:25:36] <Moonlightning> JustAberrant: it may not be, //inherently//
+[23:25:45] <Moonlightning> JustAberrant: But in today's global society, it is critical.
+[23:25:50] <Quindo> I saw an insteresting post... Democrocy works because of the ability to break the law.
+[23:25:53] <Moonlightning> See: all the backwards countries that murder people for being gay.
+[23:25:57] <JustAberrant> Moonlightning: in your opinion
+[23:26:05] <Moonlightning> JustAberrant: I have justification.
+[23:26:07] <JustAberrant> Moonlightning: which was my point ;p
+[23:26:15] <Crimson_Tail> I wonder how much Google spent..
+[23:26:32] <Crimson_Tail> Possibly millions, it is quite a big company
+[23:26:42] <Moonlightning> JustAberrant: If you can't openly be gay (on pain of torture and eventual death), and you can't hide it (for lack of privacy), what's left?
+[23:26:49] <Sour_Sweet> The average user doesn't realize that toogether with privacy democrazy falls.
+[23:27:09] <JustAberrant> Moonlightning: that only impacts the minority 
+[23:27:15] <HoneyDrops> without*
+[23:27:16] <Crimson_Tail> So what about privacy in general?
+[23:27:19] <Sour_Sweet> together*
+[23:27:31] <JustAberrant> Moonlightning: if you legitimately don't have anything to hide, which most people don't, privacy is not important
+[23:27:36] <Crimson_Tail> The gov't needs to stop trying to peep on us
+[23:27:39] <JustAberrant> Moonlightning: at least not to the individual
+[23:27:52] <Moonlightning> JustAberrant: but basically all of us legitimately have things to hide.
+[23:28:05] <JustAberrant> Moonlightning: from our friends, bosses, etc
+[23:28:15] <JustAberrant> Moonlightning: not usually from the government or law enforcement
+[23:28:19] <Moonlightning> JustAberrant: from society at large.
+[23:28:28] <Moonlightning> Which includes nationstates. :V
+[23:28:32] <JustAberrant> Moonlightning: I disagree, you might, I might, but many people don't
+[23:29:03] <Moonlightning> JustAberrant: /lots/ of people are into weird shit.
+[23:29:37] <JustAberrant> Moonlightning: sure, but if it's not illegal people tend to be less concerned with the government knowing about it
+[23:29:47] <Sour_Sweet> Just to give you an idea: http://www.theverge.com/2013/6/4/4394234/google-eight-biggest-record-lobbying-washington
+[23:29:47] <PinkiePieBot> [ Google's lobbying budget is eighth largest in US, surpassing even Lockheed Martin | The Verge ]
+[23:29:51] <Moonlightning> JustAberrant: in many places, being gay IS illegal…
+[23:29:55] <Sour_Sweet> That article is ooooold though
+[23:30:06] <JustAberrant> Moonlightning: sure, but if you don't live in one of those places..
+[23:30:11] <Moonlightning> JustAberrant: which also proves that we can't trust governments to be reasonable
+[23:30:17] <Moonlightning> JustAberrant: thus, we must be able to hide things from them
+[23:30:19] <johnsey> sometimes, the realization that you had something to hide comes when it bites you in the ass much later
+[23:30:21] <Moonlightning> thus, privacy
+[23:30:23] <HoneyDrops> The problem is what is legal now, might not be later. 
+[23:30:29] <Moonlightning> ^
+[23:30:32] <Crimson_Tail> Due to the fact that some religious people are butthurt over a supreme court ruling that gay marriage is legalized entirely in the US is laughable.
+[23:30:43] <JustAberrant> sure, but most people worry about now not later
+[23:30:48] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[23:31:04] <HoneyDrops> JustAberrant and they are the doom of us all.
+[23:31:20] <Moonlightning> JustAberrant: besides, we should not HAVE to trust governments.
+[23:31:25] <JustAberrant> my point is, trying to argue from the standpoint that privacy is assumed really important to people who don't view it that way, then saying "you'll see in the end", is a poor approach
+[23:31:27] <HoneyDrops> You have to worry about later, later is what really matters.
+[23:31:43] <HoneyDrops> now means jack shit 99.999% of the time
+[23:32:37] <mniip> Crimson_Tail, being gay is legal =/= gay marriage is legal
+[23:32:43] <mniip> there's a big leap inbetween
+[23:32:56] <Crimson_Tail> >being gay being illegal
+[23:33:19] <Crimson_Tail> What the hell is their problem?
+[23:33:31] <Gladiolus> hate of difference
+[23:33:32] <Quindo> Then compare it to pot instead
+[23:33:44] <HoneyDrops> I'm not worried about tomorrow, I'm worried about 10, 100, 1000 years from now.
+[23:33:51] <mniip> I don't know a country where pot marriage is legal
+[23:34:06] <Quindo> If no one was using pot, safe to assume that it would never had been legalized.
+[23:34:17] <HoneyDrops> tomorrow is going to be mostly the same level of suck as today, with some random variance/noise.
+[23:34:26] <Crimson_Tail> If it's just the hatred for the sexuality, that's just bullshit.
+[23:34:51] <JustAberrant> meh, most people are just looking to get through the day/week/year/etc
+[23:35:06] <Kinsley> JustAberrant: some people don't get that opportunity.
+[23:35:26] <HoneyDrops> JustAberrant: yesp and I could go on as to how economics has trapped people into that, but that is another topic.
+[23:35:40] <JustAberrant> either way, I'm not arguing that privacy isn't important, just that it's not unreasonable for others to not view it as the top priority in their lives
+[23:35:41] <Kinsley> It's important to protect everyone's rights all the time, or else it becomes easier and easier to say, "Oh, but we allowed it that one time, once more isn't going to hurt."
+[23:35:57] <HoneyDrops> No human, anywhere, for any reason should worry about getting thugh the day, or even year.
+[23:36:19] <JustAberrant> well yes, and no one should ever die, etc..
+[23:36:48] <mniip> disagree
+[23:37:01] <HoneyDrops> No one should be in an existential struggle over food or shelter or access to medical care.
+[23:37:05] <mniip> death is an essential component of development of the humanity as a whole
+[23:37:05] <Gladiolus> yis
+[23:37:09] * Gladiolus hugs HoneyDrops 
+[23:37:14] <Crimson_Tail> People die
+[23:37:21] <JustAberrant> HoneyDrops: I'm not even talking about the poor, I'm talking about the middle class
+[23:37:23] <Crimson_Tail> There are many causes
+[23:37:28] <Crimson_Tail> Not like anyone is immortal
+[23:37:41] <HoneyDrops> JustAberrant: you mean poor-lite ;)
+[23:37:50] <JustAberrant> not even that
+[23:38:09] <JustAberrant> I'm reasonable well off financially, job, house, car, etc.. but I still have more than enough stuff to worry about
+[23:38:21] <HoneyDrops> Death will exist, but the fact is a lot of it could be deferred.
+[23:38:22] <Moonlightning> mniip: you're kidding, right?
+[23:38:41] <mniip> no?
+[23:39:01] <Gladiolus> https://www.youtube.com/watch?v=4iiv-6fMKyY
+[23:39:01] <PinkiePieBot> [ Randy Newman - Political Science - 76290 views - 2m 2s long - 472 likes - 98.33% ]
+[23:39:03] <HoneyDrops> But I think it will be mostly moot once we just ditch the frail meatbags.
+[23:39:09] <mniip> it is biologically required
+[23:39:30] <Gladiolus> Death is an important part of a temporal beings existance, we would be pretty lost without it.
+[23:39:37] <Crimson_Tail> One person dies every couple seconds around the world
+[23:39:41] <Gladiolus> We start, we end.
+[23:39:52] <mniip> everything that has a beginning, has an end
+[23:39:54] <Gladiolus> I just wish all had access to a death on their own terms.
+[23:40:08] <Gladiolus> Be that in an exciting ring of fire, or surrounded by loved ones quietly.
+[23:40:35] <Gladiolus> Canada's supreme court ruled that terminal patients assisted suicide is a human right, it was a good judgement.
+[23:40:36] <HoneyDrops> No certainty of death would change things, but to consider it essential puts the current human expeirence on a pedestal.
+[23:41:25] <HoneyDrops> Humans are, at best, just another stepping stone to something better.  The alternatuve is to be a dead end.
+[23:41:54] <Moonlightning> we ain't good yet
+[23:41:56] <Moonlightning> not in this state
+[23:42:53] <Gladiolus> We still rely a lot on generational shifts to progress us, without death we would stagnate pretty hard. 
+[23:42:56] * Gladiolus stares at the boomers
+[23:45:50] <HoneyDrops> mniip: heat death of the universe will eventually come, so yes, things will end, but it's just a question of how soon.
+[23:46:16] <mniip> not neccessarily
+[23:47:20] <mniip> we might exploit closed timelike curves to send entropy into the past
+[23:47:35] <HoneyDrops> I think it would be fun to watch the last stars nova, and the lingering white dwarfs cool slowly to the ambient temp.  There is a peacefulness in that.
+[23:51:26] *** Sour_Sweet is now known as Seoson
+[23:54:02] *** Joins: Sombra (Iceman@Darkhorse21)

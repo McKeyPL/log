@@ -1,0 +1,142 @@
+[00:00:34] *** Quits: xali (~smuxi@2a02:8108:9c40:413c:e23f:49ff:fe49:94be) (Ping timeout: 252 seconds)
+[00:33:32] *** Quits: Ingar (~ingar@94-224-85-244.access.telenet.be) (Quit: stuff)
+[00:42:32] *** Joins: Ingar (~ingar@94-224-85-244.access.telenet.be)
+[00:44:12] *** ChanServ sets mode: +o Ingar
+[01:46:25] *** jkent_ is now known as jkent
+[02:01:07] *** Joins: WillisTF (~Willis@243.sub-70-194-138.myvzw.com)
+[02:36:14] *** Quits: Norfenstein (~Norfenste@tremulous/developer/Norfenstein) (Ping timeout: 244 seconds)
+[02:50:59] *** Joins: Norfenstein (~Norfenste@tremulous/developer/Norfenstein)
+[02:50:59] *** ChanServ sets mode: +o Norfenstein
+[03:08:20] *** Quits: Shadow` (~BOOYEA@s55976a81.adsl.online.nl) ()
+[03:27:54] *** Quits: Norfenstein (~Norfenste@tremulous/developer/Norfenstein) (Ping timeout: 244 seconds)
+[03:33:30] *** Joins: dibblego (~dibblego@haskell/developer/dibblego)
+[03:33:50] <dibblego> which OS is best to install a tremulous server? I just noticed that ubuntu no longer has it in the repositories
+[03:40:29] *** Joins: Norfenstein (~Norfenste@tremulous/developer/Norfenstein)
+[03:40:29] *** ChanServ sets mode: +o Norfenstein
+[03:45:16] <DASPRiD> dibblego, since you don't have to count on updates, just get the installer here: http://tremulous.net/files/
+[03:46:07] <dibblego> ah ok, just run the installer on any ol linux?
+[03:46:10] <DASPRiD> yep
+[03:46:38] <dibblego> do these installers include a server, or just client?
+[03:47:09] <DASPRiD> both iirc
+[03:47:15] <dibblego> oh ok awesome thanks
+[03:53:19] <jkent> dibblego: be warned, there is a bug with the 1.1 binaries if you run them under 64 bit linux, but this isn't a problem with gpp
+[03:53:43] <dibblego> ok
+[04:00:40] *** Parts: Dan39 (~dan@unaffiliated/dan39) ("WeeChat 1.3")
+[04:56:18] *** Quits: StalKermit (~StalKermi@unaffiliated/stalkermit) (Read error: Connection reset by peer)
+[04:59:08] <dibblego> why is the gpp installer so much smaller than 1.1?
+[04:59:21] <dibblego> $ du -hs tremulous-*
+[04:59:21] <dibblego> 102M    tremulous-1.1.0-installer.x86.run
+[04:59:21] <dibblego> 6.6M    tremulous-gpp1-installer.run
+[04:59:26] <jkent> because it doesn't include the 1.1 assets
+[04:59:47] <jkent> you need both for a complete set of assets
+[05:00:15] <dibblego> oh right
+[05:00:27] <dibblego> is there a README or similar for this setup?
+[05:01:03] <jkent> um, not sure
+[05:01:16] <dibblego> is it more than run 1.1 installer, then gpp installer?
+[05:01:39] <jkent> nope
+[05:01:50] <jkent> thats all you need to do
+[05:01:50] <dibblego> ok, will fire away, thanks
+[05:07:53] <dibblego> oh needs to be 32-bit linux
+[05:09:18] <jkent> you can install 32-bit compat libraries
+[05:10:32] <jkent> if ubuntu, i think its ia32-libs, but i might be wrong, i don't use ubuntu
+[05:10:40] <dibblego> oh yeah cheers
+[05:15:29] <dibblego> there is a ubuntu 32-bit version, so  will try that — my goal is to have a virtualbox with a tremulous server installed, then clients on different OSes
+[05:37:11] *** Quits: Stannum (~Robotroni@82-197-195-74.dsl.cambrium.nl) ()
+[05:52:12] *** Quits: dibblego (~dibblego@haskell/developer/dibblego) (Ping timeout: 265 seconds)
+[05:53:51] *** Joins: dibblego (~dibblego@haskell/developer/dibblego)
+[06:03:51] *** Quits: Norfenstein (~Norfenste@tremulous/developer/Norfenstein) (Remote host closed the connection)
+[06:09:37] *** Joins: Undeference (~msk@2001:470:1f07:1427:6479:178f:f00c:3dc7)
+[06:17:28] *** Quits: Who-[Soup] (~soup@p57A50638.dip0.t-ipconnect.de) (Ping timeout: 268 seconds)
+[06:21:04] *** Joins: Who-[Soup] (~soup@p57A50DEA.dip0.t-ipconnect.de)
+[08:43:27] <dibblego> does anyone have a tremded start/stop script they can share?
+[08:44:11] <Undeference> dibblego: http://betaserv.tk/t/newrun-8a432c1.tar.bz2
+[08:44:39] <dibblego> great thanks
+[09:18:30] <dibblego> trying to figure out how to change the UDP port from 30720, google is not helping, any tips?
+[09:19:22] <Undeference> using newrun or starting directly?
+[09:20:49] <Undeference> (if the former, set 'PORT=whatever' in your configuration file. if the latter, '+set net_port whatever' on the command line)
+[09:20:56] <dibblego> oh yeah cheers
+[09:34:49] <dibblego> can I put "set net_port whatever" in server.cfg? or do you mean that is the configuration file?
+[09:36:44] <Undeference> 'set net_port whatever' in server.cfg will work
+[09:37:05] <dibblego> ok, so maybe I have something set wrong
+[09:37:20] <dibblego> /usr/local/bin/tremded +set dedicated 1 +set fs_basepath /home/tremded/.tremulous/base +exec server.cfg +set net_ip localhost
+[09:37:24] <dibblego> this is my process
+[09:37:39] <dibblego> the path to server.cfg is /home/tremded/.tremulous/base/server.cfg is this right?
+[09:39:01] <dibblego> I ask because I have set net_port but it seems to stay at 30720
+[09:39:31] <Undeference> pretty sure fs_basepath should not include the gamename (i.e., remove /base from the end of fs_basepath)
+[09:39:46] <dibblego> ok
+[09:42:26] <dibblego> hmm I am still doing something wrong
+[09:42:29] <dibblego> https://gist.githubusercontent.com/anonymous/cc0999d5ebdd300df363/raw/4c49cba6e755b4aff3b74846b5fc9b6565176c23/tremded
+[09:44:16] <Undeference> what output do you get from the server?
+[09:45:13] <dibblego> I haven't set up a client yet
+[09:46:10] <Undeference> are you running with newrun? try running the server directly and seeing what output it tells you, specifically near "execing server.cfg"
+[09:47:20] <dibblego> I'm not, I found some otherscript at the same time
+[09:47:51] <Undeference> ah. and i'm probably confusing the different fs_* cvars wrt the thing about basepath. lemme check
+[09:48:44] <dibblego> thanks heaps for your help
+[09:50:01] <dibblego> I can run the process and see output
+[09:50:52] <Undeference> i think typically your fs_basepath would be /usr/local/share/tremulous or wherever your data is installed
+[09:51:13] <dibblego> yeah I think I just figured it out
+[09:52:17] <dibblego> it is also looking in /usr/local/games/tremulous/base
+[09:52:42] <dibblego> hmm, changing that server.cfg and it is still on 30720
+[09:53:56] <Undeference> paste tremded output?
+[09:56:15] <dibblego> https://gist.githubusercontent.com/anonymous/23513a8b7be707729ad9/raw/7cffb89085f64dead2afcc660466f91c44c727b6/tremded.out
+[09:57:24] <Undeference> a couple things. it's not a good idea to run as root. it's also a good idea to use a newer client
+[09:57:46] <dibblego> oh yeah, that was an accident
+[09:57:53] <dibblego> what do you mean newer client?
+[09:58:15] <Undeference> apparently the exec happens after net_port is set, so you may have to do a net_restart after exec, and the old server doesn't support it
+[09:58:25] <Undeference> oops, server, sorry. tired
+[09:58:47] <dibblego> I thought I install the gpp over the top of 1.1
+[09:58:58] <dibblego> let me sort that first
+[09:59:26] <Undeference> yeah. in that case, use the gpp tremded
+[10:00:15] <dibblego> ok, yeah I had it installed, just not running — I will fiddle the scripts
+[10:05:07] <dibblego> Couldn't load default.cfg
+[10:05:14] <dibblego> what goes in that file?
+[10:08:34] <dibblego> I think I've cracked that stuff
+[10:08:37] <Undeference> that's in the data-*.pk3 file and it looks like it's just default binds, but it's a fatal error for it not to be present
+[10:08:38] <dibblego> I am now missing maps
+[10:08:59] <Undeference> missing maps as in they are not found or as in you need more?
+[10:09:15] <dibblego> I don't have any
+[10:09:20] <dibblego> Can't find map maps/niveus.bsp
+[10:10:04] <Undeference> "/usr/local/games/tremulous/base/map-niveus-1.1.0.pk3 (134 files)", so you broke things again?
+[10:12:02] <dibblego> ok fixed that
+[10:13:03] <dibblego> https://gist.githubusercontent.com/anonymous/6c07dcceace80f517900/raw/eb33528ea6d6f22c38d64114f610bbb1a9e98cbf/tremded.out
+[10:13:38] <dibblego> I'm guessing those maps are for 1.1 ?
+[10:14:38] <Undeference> the problem is 'File "vm/game.qvm" found in "/home/tremded/.tremulous/base/vms-1.1.0.pk3"' it needs to find vms-gpp.pk3
+[10:14:57] <dibblego> ok, where might I download these?
+[10:15:19] <Undeference> you should already have them if you installed gpp
+[10:15:43] <dibblego> ok, so to be clear, I need both vm/game.qvm as well as vms-gpp.pk3?
+[10:16:02] <Undeference> vm/game.qvm is in vms-gpp.pk3
+[10:17:01] <dibblego> ok, shall I remove vms-1.1.0.pk3?
+[10:17:49] <Undeference> you shouldn't need to
+[10:17:59] <dibblego> ok, I think I have the server up
+[10:18:38] <dibblego> it does appear to be the case, yay
+[10:23:22] *** Joins: xali (~smuxi@2a02:8108:9c40:413c:e23f:49ff:fe49:94be)
+[10:34:05] *** Quits: Undeference (~msk@2001:470:1f07:1427:6479:178f:f00c:3dc7) (Quit: Leaving.)
+[10:37:58] <dibblego> does a tremulous gpp client work against 1.1 server?
+[10:44:50] *** Joins: jackforward (~jack@p200300700D32717559596103F2C6F28D.dip0.t-ipconnect.de)
+[11:03:22] <Ingar> dibblego: no
+[11:03:55] <dibblego> ok thanks, I think I had the idea of 1.1 and gpp a bit confused, got it now I think
+[11:32:29] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[11:42:50] <dibblego> to install a client on osx, do I download tremulous-gpp1.dmg here https://i.imgur.com/kVWiOp8.png or do I need 1.1 first somehow?
+[11:43:48] <Ingar> every release I've seen so far needs you to install 1.1 first, and the replace the binaries and install some additional files with gpp
+[11:44:12] <Ingar> personally, I did not test the OS X release though
+[11:44:37] <dibblego> ok, there doesn't seem to be a download for 1.1 on osx
+[11:52:43] <dibblego> what do most people use? linux client?
+[13:01:47] *** Joins: StalKermit (~StalKermi@unaffiliated/stalkermit)
+[13:43:57] *** Quits: StalKermit (~StalKermi@unaffiliated/stalkermit) (Read error: Connection reset by peer)
+[13:49:00] *** Joins: StalKermit (~StalKermi@unaffiliated/stalkermit)
+[14:36:54] *** Joins: Stannum (~Robotroni@82-197-195-74.dsl.cambrium.nl)
+[15:08:57] *** Quits: Ingar (~ingar@94-224-85-244.access.telenet.be) (Ping timeout: 250 seconds)
+[15:09:50] *** Joins: Norfenstein (~Norfenste@tremulous/developer/Norfenstein)
+[15:09:50] *** ChanServ sets mode: +o Norfenstein
+[15:10:52] *** Joins: Ingar (~ingar@94-224-85-244.access.telenet.be)
+[18:14:43] *** Quits: xali (~smuxi@2a02:8108:9c40:413c:e23f:49ff:fe49:94be) (Remote host closed the connection)
+[20:13:08] *** Joins: Undeference (~msk@2001:470:1f07:1427:14ef:929e:181b:c4ed)
+[21:09:12] *** Quits: Ingar (~ingar@94-224-85-244.access.telenet.be) (Remote host closed the connection)
+[21:18:33] *** Joins: Ingar (~ingar@94-224-85-244.access.telenet.be)
+[21:46:39] *** Quits: jackforward (~jack@p200300700D32717559596103F2C6F28D.dip0.t-ipconnect.de) (Ping timeout: 240 seconds)
+[21:59:58] *** Joins: jackforward (~jack@p200300700D32714E59596103F2C6F28D.dip0.t-ipconnect.de)
+[22:23:43] *** Quits: dibblego (~dibblego@haskell/developer/dibblego) (Ping timeout: 256 seconds)
+[22:26:06] *** Joins: dibblego (~dibblego@haskell/developer/dibblego)
+[22:28:50] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Quit: Leaving)
+[23:47:43] *** Quits: jackforward (~jack@p200300700D32714E59596103F2C6F28D.dip0.t-ipconnect.de) (Quit: Ex-Chat)
+[23:52:58] *** Pevel__ is now known as Pevel

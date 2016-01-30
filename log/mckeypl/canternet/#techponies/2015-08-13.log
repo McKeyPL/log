@@ -1,0 +1,528 @@
+[00:04:24] *** Gladiolus is now known as Flash_Sentry
+[00:05:01] *** Quits: DataByte (DataByte@Pony-rpkqmq.g424.9euc.0247.2601.IP) (Ping timeout: 121 seconds)
+[00:08:29] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[00:13:10] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:17:22] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[00:24:20] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[00:26:19] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[00:29:15] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[00:29:17] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[00:31:10] *** Creeps|AFK is now known as RedHelper
+[00:48:01] *** init3 is now known as Init3-away
+[00:52:58] <Starthunder> Finwe: don't foo as root
+[00:53:36] <Starthunder> It just gives you an error if you're not root.
+[01:06:20] *** Init3-away is now known as init3
+[01:15:06] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:15:54] * HoneyDrops|Half cheers.  She does have a DB13W3 to DE-15 (VGA) adapter.
+[01:18:35] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:19:48] *** GigaFishing is now known as Vega
+[01:20:19] <Vega> Didn't catch a damn thing
+[01:22:57] * HoneyDrops|Half hugs Vega.
+[01:23:49] * Vega huggles
+[01:23:56] <Vega> Did loose a bobber XD
+[01:35:54] * HoneyDrops|Half needs more little bags to keep tech organized in her backpack.
+[01:43:32] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[01:47:46] <Lapsus> Free laptop! time to nuke it from orbit and install a fresh os
+[01:48:03] <HoneyDrops|Half> ooo
+[01:48:11] <Starthunder> It's not possible for multiple interfaces to have the same v6 address, is it.
+[01:48:17] <Starthunder> Even if they're on the same machine.
+[01:48:57] <Colgate> why wouldn't it be?
+[01:49:37] * Starthunder longblinks.
+[01:49:38] <Colgate> # ip addr add ::1 dev eth[01]
+[01:50:05] <Colgate> both devices now have the ip address of ::1
+[01:50:27] <Starthunder> Uh. Okay. Any caveats?
+[01:51:25] <Colgate> only if layer 2 matters to you
+[01:51:48] <Colgate> since now both are advertising that they have that ip address to arp requests
+[01:51:53] <Starthunder> No, I don't think.
+[01:52:16] <Starthunder> One interface is Ethernet; the other is Wi-Fi
+[01:53:28] <Starthunder> Wait…does this mean I can assign the same address to /clients/ with multiple interfaces? o3o
+[01:54:02] <Colgate> you can assign any IP you want to an interface :P
+[01:54:25] <Starthunder> Yes, but without Weird Things™ or Bad Things™ happening. :p
+[01:54:52] <wolfyshy> Starthunder: what you want is a "bridge"
+[01:55:24] <wolfyshy> Starthunder: I have "bridged" the ethernet and wifi ports on my FreeBSD router, so it is 10.0.0.1 on both interfaces
+[01:55:34] <wolfyshy> you can do the same in linux
+[01:55:42] <wolfyshy> I think the command is 'brctl' and you may need a package
+[01:56:10] <Starthunder> :?
+[01:56:19] <Colgate> what is your end goal here anyways?
+[01:56:21] <Starthunder> What do you gain from doing that over simply assigning the same address multiple times?
+[01:56:26] <wolfyshy> net-misc/bridge-utils on gentoo, bridgeutils on debian
+[01:56:44] <Colgate> a single mac address for layer 2
+[01:56:49] <Colgate> and a single itnerface to work with
+[01:56:52] <wolfyshy> well it is an IP address conflict to have multiple MACs with the same IP
+[01:56:58] <wolfyshy> yes that is correct ^
+[01:57:06] <Starthunder> Uh…none, really, besides not having multiple different addresses for multiple different machines (besides the temporary ones)
+[01:57:14] <Compu> this song is stuck in my head http://www.youtube.com/watch?v=xQJi6_-PjHo
+[01:57:14] <PinkiePieBot> [ The Association - Never My Love - 815345 views - 3m 19s long - 2809 likes - 98.29% ]
+[01:58:12] <Starthunder> I don't suppose there's any DHCP options to get clients to bridge automatically
+[01:58:33] <wolfyshy> no, you would set the client to bridge and ask for a DHCP lease off the bridge interface
+[01:58:38] <wolfyshy> which would automatically assign the IP to the bridge
+[01:58:54] <wolfyshy> I'm buried in work or I would set up an example on debian to show
+[01:59:04] <Starthunder> Grr.
+[01:59:16] <wolfyshy> DHCP's scope is interface-level, not computer-level
+[01:59:32] <wolfyshy> it would not make sense for DHCP to tell a computer to bridge interfaces, because that changes the interface itself
+[02:00:23] <wolfyshy> consider a multihomed computer connected to two different networks; if both have DHCP, both are going to set the interfaces differently
+[02:00:34] <Starthunder> Mmmm.
+[02:00:42] <wolfyshy> welcome to enterprise networking ;)
+[02:00:55] <Starthunder> What about just leaving the conflicts? >.>
+[02:01:23] <wolfyshy> it's a crapshoot based on {insert a bunch of acronyms here including ARP} which interface gets the packet.
+[02:01:29] <wolfyshy> it won't work
+[02:01:34] <Starthunder> :<
+[02:01:59] <wolfyshy> bridging is pretty fun though, esp with eth+wifi
+[02:02:10] <wolfyshy> I can just plug in an ethernet cord into my laptop and get gigE, then unplug and nothing drops
+[02:02:15] <wolfyshy> :D
+[02:02:19] <Starthunder> Ooooh.
+[02:02:24] <Starthunder> Want.
+[02:08:06] <Starthunder> Okay, so…if I bridge two interfaces…
+[02:10:36] *** Quits: quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[02:11:02] *** Joins: quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[02:15:14] *** Quits: quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[02:15:31] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[02:21:37] *** Joins: quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[02:29:52] *** init3 is now known as Init3-away
+[02:38:48] <Starthunder> …wait a sec, I'm not sure this'll work
+[02:39:30] <Starthunder> For v4, I need NAT, so eth0 will have a global address and eth1|wlan0 will share a private address
+[02:39:37] <Starthunder> But for v6, I'd want all of them to have a single address
+[02:39:53] <Starthunder> Can I…bridge a bridge? Does that work? >.>
+[02:40:34] <wolfyshy> http://weather.weatherbug.com/weather-news/weather-reports.html?story=17105 that's fun...
+[02:40:38] <PinkiePieBot> [ USA weather and forecast information on WeatherBug.com ]
+[02:41:58] *** Joins: Asoka_White (Asoka@Pony-3cmu5g.net-htp.de)
+[02:43:29] <Webster> Why not just bridge all three on a separate bridge?
+[02:44:16] *** Joins: Sombra (Iceman@Darkhorse21)
+[02:45:03] <Starthunder> Webster: because I want eth0 to have a global v4 address, but eth1 and wlan0 to share a private one
+[02:45:06] *** Quits: Fallfeathers (Fallfeather@Pony-i146kn.dsl-w.verizon.net) (Ping timeout: 121 seconds)
+[02:45:13] *** Quits: Asoka (Asoka@Pony-lcepel.net-htp.de) (Ping timeout: 121 seconds)
+[02:45:32] <Webster> I thought you set the IP on the bridge.
+[02:45:42] <Starthunder> Exactly.
+[02:45:59] *** Quits: quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[02:46:02] <Starthunder> I mean…you can't set multiple v4 addresses on one interface, can you?
+[02:46:20] <Webster> So IPv4 on the two-IF bridge, IPv6 on the three-IF bridge.
+[02:46:38] <Starthunder> But you can't bridge the same interface to multiple bridges, can you?
+[02:47:07] <Webster> I thought you could. I might be wrong.
+[02:48:47] <wolfyshy> 2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+[02:48:49] <wolfyshy>     inet XXX.YY.ZZZ.223/26 brd XXX.YY.ZZZ.255 scope global eth0    inet XXX.YY.ZZZ.224/26 scope global secondary eth0    inet XXX.YY.ZZZ.225/26 scope global secondary eth0    inet XXX.YY.ZZZ.221/26 scope global secondary eth0
+[02:48:59] <wolfyshy> my VPS has 4 IPv4 addresses on eth0
+[02:49:11] <wolfyshy> (I run a lot of different communities on it, and some of them need SSL)
+[02:49:17] <Starthunder> Well!
+[02:49:19] <wolfyshy> (don't mention SNI, android doesn't support it)
+[02:49:24] <Starthunder> Guess I'll bridge all three
+[02:49:43] <wolfyshy> Starthunder: but, wait
+[02:49:50] <wolfyshy> Starthunder: they have to be on the same subnet
+[02:49:55] <wolfyshy> Starthunder: you can't mix public and private
+[02:50:00] <Starthunder> Oh. :I
+[02:50:02] <wolfyshy> Starthunder: you need two bridges
+[02:50:23] <Starthunder> wolfyshy: …can you put the same interface on multiple bridges, though?
+[02:50:58] <Colgate> wait, android doesn't support SNI?
+[02:51:04] <Colgate> o.O
+[02:51:05] <wolfyshy> Colgate: only 5.x does
+[02:51:15] <wolfyshy> Colgate: and that is unfortunately a very small portion of the market :/
+[02:51:26] <Colgate> that's... insane that SNI support was added that late
+[02:51:28] <wolfyshy> I think it may have been added in a late 4.x (maybe 4.3 or 4.4)?
+[02:51:48] <wolfyshy> I know 2.x, 3.x, and 4.0 don't have it
+[02:55:44] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[02:58:23] <wolfyshy> Starthunder: no on linux, yes on freebsd
+[02:58:35] <Starthunder> :(
+[02:58:43] *** Quits: Flash_Sentry (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[03:02:13] <Starthunder> Don't tell me I just have to have multiple addresses for this box. >.<
+[03:03:34] <JustAberrant> :)
+[03:04:55] * Starthunder slaps JustAberrant around a bit with a /52
+[03:05:01] *** CyberJacob is now known as zz_CyberJacob
+[03:06:00] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[03:31:31] *** Vega is now known as Gigaway
+[03:35:43] <One-Trick> is the only draw to kali that its all neatly packaged? im not seeing anything new and exciting
+[03:39:18] <HoneyDrops|Half> Mostly, I guess if you don't want to roll your own live-cd, you can use it.
+[03:39:48] <HoneyDrops|Half> I think it also includes some kernel patches, but nothing stops you from doing that yourself too.
+[03:39:53] <One-Trick> yea
+[03:40:14] <One-Trick> it uses their repo and its maintained meticulously, or so its stated
+[03:40:54] <One-Trick> other than that, its not bringing anything spectacular. most security-minded users already use a lot of this
+[03:41:15] <HoneyDrops|Half> Yeah, if you already know what you're doing... there is no real reason to use it.
+[03:42:35] <One-Trick> well, guess i can delete this vm. gnome is enough to drive me away
+[03:42:48] * HoneyDrops|Half noddles.
+[03:43:07] <JustAberrant> Starthunder: meep :(
+[03:43:40] <JustAberrant> also most pen testing livecd's are silly imo :(
+[03:43:54] <One-Trick> ive never actually used one
+[03:44:11] <One-Trick> was interested to see what all these freenode kiddies are yapping about
+[03:44:33] <JustAberrant> easy to roll your own livecd distro.. and I've never heard of anyone actually using a livecd in a pentest anyway (the few infosec types I know bring laptops..)
+[03:45:07] <One-Trick> hah yes
+[03:45:18] <One-Trick> if someone boots up on a thumbdrive, theyre leaving
+[03:46:19] <Starthunder> Wha?
+[03:46:33] <One-Trick> well, that was a huge waste of time xD
+[03:47:29] * JustAberrant prepares for Starthunder the FINAL EXAM!
+[03:48:11] <JustAberrant> scenario: your childhood sweetheart.. whome you've loved since grade school, is finally showing an interest in you
+[03:48:26] <JustAberrant> he/she/it is coming over for dinner tonight
+[03:49:21] <JustAberrant> you thought you had thought of everything, but unfortunately while you were out buying condoms and vodka, a rogue team of stone masons, plumbers, and a general contractor snuck into your house and replace your bed with a large ornate mall fountain
+[03:49:36] <JustAberrant> and you don't notice until she's already there
+[03:49:40] <Starthunder> …wat XD
+[03:49:55] <JustAberrant> you've got dinner cooking on the stove.. it'll be done in 30 minutes, but you have to stir it every 10 or it'll burn
+[03:49:56] <JustAberrant> what do?
+[03:49:58] <One-Trick> saves me time from finding a real mall fountain to have sex in
+[03:50:14] <Starthunder> oh, you forgot the generic pronouns the second time
+[03:50:19] <JustAberrant> One-Trick: good textbook answer
+[03:50:33] <JustAberrant> Starthunder: :(
+[03:51:04] * One-Trick is married, doesnt have sex anymore. moot points.
+[03:51:04] <HoneyDrops|Half> A live CD can be handy to provide a ro env if you are concerned about an infected system.
+[03:51:40] <JustAberrant> that's more of a forensics thing
+[03:51:42] <One-Trick> HoneyDrops|Half: well, this is pen testing, not antimal/viral
+[03:51:52] <JustAberrant> which makes sense.. live cd, image disk, etc..
+[03:51:59] <JustAberrant> but yeah, what One-Trick said
+[03:52:00] <HoneyDrops|Half> Kali does have forensics stuff too.
+[03:52:17] <JustAberrant> still, you don't need much of a livecd to image a drive
+[03:52:22] <HoneyDrops|Half> Yeah
+[03:53:35] *** Quits: GumballCrash (GumballCras@0.to.pony.10secondsflat) (Connection closed)
+[03:55:14] *** Joins: GumballCrash (GumballCras@0.to.pony.10secondsflat)
+[03:55:54] * JustAberrant removes the socks from his feet
+[03:56:09] <One-Trick> ive just never seen the need to have one and was wondering what the appeal was instead of, say, just downloading what programs that are already available
+[03:57:07] <JustAberrant> well, you usually don't want to change the target environment, but as said, I think it's more typical to use a dedicated machine vs a target machine
+[03:57:23] * JustAberrant doesn't know too many infosec people though, and not my field either
+[03:57:32] <HoneyDrops|Half> I think vs just using a standard distro and adding the tools yourself.
+[03:58:02] * Starthunder smacks JustAberrant around a bit with a pair of stinky socks.
+[03:58:33] <One-Trick> yea, i mean, i have a lot of these apps already. nmap, wireshark, etc.. on a typical ubuntu install
+[03:58:53] <HoneyDrops|Half> Who doesn't have nmap? XD
+[03:59:13] <One-Trick> if im probing away at stuff and know even the smallest iota of what im actually doing, id know to already have all of this
+[03:59:34] <One-Trick> ahwell, im answering my own question 
+[04:02:25] * HoneyDrops|Half rolls about.
+[04:03:11] *** Quits: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net) (Quit: I am gone now)
+[04:03:15] *** Gigaway is now known as Gigabit
+[04:04:16] *** Init3-away is now known as init3
+[04:09:45] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[04:10:13] <HoneyDrops|Half> What really confuses me is the SDR stuff, sure you can use it for pentesting, but you're going to need some at least slightly non-standard hardware.
+[04:10:41] *** Joins: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net)
+[04:13:00] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[04:22:35] <One-Trick> its a gimmick. its just fabricated hype and flashy wallpapers
+[04:33:50] * Phase uses nmap/wireshark for reasons completely unrelated to pentesting
+[04:35:43] <One-Trick> its great for configuring networks in general
+[04:39:00] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[04:40:19] <frackster> inb4 Phase is nsa
+[04:40:46] <JustAberrant> wireshark is probably used way more for non-nefarious purposes imo
+[04:40:58] * JustAberrant uses it a lot.. written several of my own dissectors
+[04:41:10] <Phase> wireshark is by its nature a completely passive tool
+[04:41:35] <JustAberrant> I do a lot of talking to subsystems, and wireshark is invaluable for that
+[04:42:22] <JustAberrant> also proper hardware taps are kinda awesome
+[04:43:12] * HoneyDrops|Half has a 10/100 passive tap.
+[04:44:04] <JustAberrant> one I use at work is quite expensive, but it's nice
+[04:44:06] <JustAberrant> made by blackbox
+[04:44:36] <HoneyDrops|Half> Also have a hub I modded to run off USB/ battery power.  Prof HW is expensive.
+[04:44:54] <Starthunder> Whoa.
+[04:46:00] <JustAberrant> supports gigabit, does aggregating, has like a gig of buffer, etc
+[04:46:31] <HoneyDrops|Half> Yeah, I can only do 10/100, though for RE that is sufficient.
+[04:46:33] <JustAberrant> I made my own once with an old patch panel :>
+[04:46:37] <JustAberrant> but it didn't work very well :(
+[04:47:30] *** locodash11[lagout] is now known as locodashie11
+[04:48:35] * JustAberrant decides he should bed
+[04:53:33] <HoneyDrops|Half> Though I tend to do most RE via VM, and just use wireshark on the host machine.
+[04:58:29] <ShivalWolf> LOL - https://github.com/tylertreat/Comcast
+[04:58:30] <PinkiePieBot> [ tylertreat/comcast · GitHub ]
+[05:01:13] * Starthunder https://www.youtube.com/watch?v=9zSHz7Thvbc
+[05:01:13] <PinkiePieBot> [ Rainbow Dash - (laughing) - 546434 views - 5s long - 2086 likes - 94.01% ]
+[05:01:34] * HoneyDrops|Half snickers.
+[05:03:35] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[05:32:37] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[05:43:54] *** RedHelper is now known as Creeps|AFK
+[05:47:29] *** Quits: firestream (firestream@Pony-8oqp7s.dsl.bell.ca) (Quit: )
+[05:48:21] *** Joins: Sombra (Iceman@Darkhorse21)
+[05:48:36] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "back in a few")
+[05:52:16] *** ButterBean is now known as KingSombra
+[05:52:17] <Googie> There's a bunch of little stuff in Kali that's a little bit more of a pain to put together since it's generally not packaged. If you need something quick, it's a lot easier to hit the ground running than customizing a proper distro.
+[05:53:04] * HoneyDrops|Half hugs Googie.
+[05:53:15] <Googie> That's basically my view anyway.
+[05:53:58] *** KingSombra is now known as ShadowPony
+[05:54:07] *** ShadowPony is now known as ButterBean
+[05:54:35] <HoneyDrops|Half> I can see if someone wants to dabble (esp if they are not already running Linux), but any professional is not likely to find use in it.
+[05:55:27] <HoneyDrops|Half> Now whether it's a good thing to let someone near some of those tools w/o a good understanding of *nix is another matter.
+[06:09:48] <Googie> It is funny though seeing a lot of people thinking they are "hackers" because they know how to boot Kali and use metasploit.
+[06:10:48] <Googie> The scary part though is that there's probably far too many networks where that's all the skill they need :V
+[06:11:11] <HoneyDrops|Half> Yeah, that is one good thing... Kali exists to immediately identify someone who doesn't know what they are doing.
+[06:11:43] <Googie> Well, I wouldn't /quite/ say that, but it's more the fact that they boast about it that does :V
+[06:11:59] * HoneyDrops|Half snickers and nods.
+[06:13:31] * HoneyDrops|Half shudders, recalling people actually running Backtrack as their day-to-day OS.  Sure you /can/ but no one who actually knows anything would.
+[06:13:34] <Googie> There's a place for every tool and all that. Laptop drive crashes and that sort of stuff.
+[06:13:38] <Googie> Hahaha, yeah.
+[06:13:45] <Googie> That's always hilarious to read.
+[06:23:27] * frackster hacks Googie
+[06:23:48] * Googie splits in half and becomes two Googies.
+[06:25:05] <Starthunder> :o
+[06:25:15] * Starthunder sandwiches between the two Googies. o3o
+[06:25:44] <frackster> also  Googie https://www.irccloud.com/pastebin/VHkTaFzo/
+[06:25:44] <PinkiePieBot> [ Pastebin | IRCCloud ]
+[06:26:20] <frackster> I like the budlight digital security officer quote
+[06:30:06] <frackster> but it probably makes sense that, you know, budlight would have morons working for them
+[06:31:04] <Googie> I'm pretty sure, judging by the writing style in that paste, that it was written by "America's finest news source"
+[06:32:16] <frackster> haha I forgot where I got it from, but some formatting was lost in the copy and paste
+[06:32:34] <frackster> that was in a article about people that will be up and comers in the security field
+[06:32:43] <frackster> and that example in particular made me lol
+[06:33:40] <wolfyshy> Googie: it specifically says Clickhole there, which is a sister site to The Onion
+[06:33:58] <Googie> I was right!
+[06:34:41] <frackster> lol
+[06:34:46] <HoneyDrops|Half> "IRCCloud pastebins require JavaScript to be displayed. "  :I
+[06:34:55] * HoneyDrops|Half baps IRCCloud.
+[06:34:57] <frackster> clickhole isn't a real news source wolfyshy?
+[06:35:12] <wolfyshy> n...no
+[06:35:17] <frackster> oh :/
+[06:35:26] <frackster> it was listed on news.google.com
+[06:36:56] <wolfyshy> "journalism!" http://www.clickhole.com/blogpost/i-dont-let-my-kids-watch-winnie-pooh-because-i-don-2842
+[06:36:56] <PinkiePieBot> [ I Don’t Let My Kids Watch Winnie The Pooh Because... | ClickHole ]
+[06:39:33] <Googie> Also, why are people using IRCCloud for pasting non-IRC messages these days :/
+[06:39:52] * Googie would prefer it if he could just stop at saying "Why are people using IRCCloud", but :(
+[06:45:29] <frackster> Googie: the pstebin is built in to the client
+[06:46:38] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:47:48] <Starthunder> Because copying a swath of text, opening a new HTTP-client tab, navigating to a pastebin, and pasting it all is a real pain in the plot.
+[06:49:32] <HoneyDrops|Half> Almost every pastebin service can be used via a script. 1. combine with xsel, 2. ???, 3. profit.
+[06:49:50] <Googie> Sorry, ignore me. I have a dislike of IRCCloud. It's technically competent, but I dislike seeing a proprietary service "on the cloud" take over :/
+[06:50:47] * HoneyDrops|Half hugs Googie.
+[06:51:40] <Googie> The problem is that for a lot of people, I know it's currently their best option.
+[06:51:59] <HoneyDrops|Half> While on rants of doing things weird with IRC:  Quassel confounds me.
+[06:52:27] <Googie> I like the idea behind Quassel, but not the implementation.
+[06:53:41] <One-Trick> best use of a directory on my server: http://hyenaspots.com/bin/
+[06:56:15] <Googie> This is a test service: Data may be deleted anytime. Kittens will die if you abuse this service.
+[06:56:24] <Googie> Please take it down before someone abuses it :(
+[06:56:27] <Googie> Think of the kittens!
+[06:56:36] <One-Trick> hah
+[06:56:51] <One-Trick> all the sad mews
+[06:57:21] * One-Trick goes zzz.
+[07:09:00] *** init3 is now known as pile_of_debris
+[07:09:26] <Colgate> HoneyDrops|Half: requires javascript, without a valid reason!
+[07:09:54] <Colgate> zerobin makes sense
+[07:10:10] <Colgate> since without javascript, it would be pointless :P
+[07:11:48] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[07:12:40] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[07:14:03] *** pile_of_debris is now known as init3
+[07:16:40] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[07:18:44] * HoneyDrops|Half nods to Colgate.
+[07:20:00] <HoneyDrops|Half> I will at least grant that IRCCloud did offer to show the raw form, which is better than many sites that just flat out fail and don't offer any sort of fallback.
+[07:20:16] <ShivalWolf> ahhh reveal security flaw/write soemthign that shows it off and lose an internship - https://www.boston.com/news/nation/2015/08/12/harvard-student-loses-facebook-internship-after-pointing-out-privacy-flaws/zASZFdUjn6PoliUiR9kVHJ/story.html?s_campaign=bcom:socialflow:twitter&utm_source=twitterfeed&utm_medium=twitter
+[07:20:17] <PinkiePieBot> [ Harvard student loses Facebook internship after pointing out privacy flaws - Nation - Boston.com ]
+[07:20:24] <ShivalWolf> hmm should have shortned the crap from that 
+[07:22:47] <Googie> Because simply letting information be leaked and hoping that it gets fixed /always/ works, and nobody has ever needed to write a PoC to get a company to acknowledge a problem.
+[07:25:09] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:26:02] *** Joins: firestream (firestream@Pony-8oqp7s.dsl.bell.ca)
+[07:26:16] <HoneyDrops|Half> Facebook is a privacy flaw.
+[07:26:57] <firestream> got to love dealing with tier 2  tech support
+[07:40:29] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[07:40:57] <DJ-C0L7[EIT]> quick random question, does anypony know the general resistance of a turn signal bulb in circuit?
+[07:41:54] <Starthunder> You need a #carponies or something. xD
+[07:42:05] <Starthunder> I don't think the scope of /tech/ here quite covers all the stuffs you do
+[07:56:08] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[07:57:20] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[08:00:58] *** Neptune is now known as Neptune|sleep
+[08:03:33] *** djazz is now known as MangoBloom
+[08:20:06] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[08:22:37] <DJ-C0L7[EIT]> lol
+[08:23:34] <DJ-C0L7[EIT]> i think i may have found what i'm looking for though http://www.the12volt.com/relays/relaydiagram57.html
+[08:23:35] <PinkiePieBot> [ How to Wire Relays - Wigwag Flashing Lights - Positive Input/Positive Output ]
+[08:23:51] <Gigabit> I don't think the light bulbs have a very high resistance. 12v but I think most fuses are 20-30 amps depending on the vehicle, for the taillights.
+[08:25:17] <DJ-C0L7[EIT]> i use a 20amp for my flasher circuits for the lighting in the rear and side windows of my truck (though i am also powering a 20watt xenon strobe controller also)
+[08:33:22] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[08:47:15] <init3> Does the fact I had to google the manual for a CLOCK RADIO say more about the poor design of the thing or does it mean I am too old?
+[08:49:09] *** zz_CyberJacob is now known as CyberJacob
+[08:50:35] <DJ-C0L7[EIT]> i'd lead it to poor design
+[08:52:24] <init3> Good. To set an alarm, if you press one button too many it sets a "nap" mode which is basically a countdown timer, which is turned off by a nap button which you do not need to hit to start nap mode. ANd this mutton must be held for 7 seconds
+[08:52:34] <init3> That's fucking counter-intuitive. 
+[08:54:10] <DJ-C0L7[EIT]> O_o
+[08:54:13] <DJ-C0L7[EIT]> dafuq
+[08:54:35] <init3> yeah
+[08:57:38] <wolfyshy> mutton?
+[08:57:40] <wolfyshy> tasty!
+[09:04:38] *** Joins: McKey (Kordus@Pony-3agfts.antyklay.pl)
+[09:04:38] -discord.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[09:04:42] *** Server sets mode: +AHJPTnt 10:300 30
+[09:06:18] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (Ping timeout: 121 seconds)
+[09:06:20] *** Quits: coppercore (coppercore@Pony-kr5t8h.coppercore.net) (Ping timeout: 121 seconds)
+[09:06:37] *** Joins: coppercore (coppercore@Pony-kr5t8h.coppercore.net)
+[09:06:37] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[09:07:06] *** coppercore is now known as Pony_2046
+[09:18:34] *** Quits: CompuDesktop (quassel@snuggly.filly) (Connection closed)
+[09:24:09] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[09:27:05] *** Quits: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net) (Quit: I am gone now)
+[09:32:09] *** Joins: McKey (Kordus@Pony-1k27j6.antyklay.pl)
+[09:32:09] -derpy.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[09:32:20] *** Server sets mode: +AHJPTnt 10:300 30
+[09:40:16] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:43:18] *** Gigabit is now known as GigaZzz
+[09:48:28] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[09:50:58] *** CyberJacob is now known as zz_CyberJacob
+[09:51:37] *** Quits: enginemaniac (flail@flail.flail.flail) (Ping timeout: 121 seconds)
+[09:54:50] *** Joins: enginemaniac (flail@flail.flail.flail)
+[10:06:26] *** Joins: CompuDesktop (quassel@snuggly.filly)
+[10:24:30] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[10:24:30] *** Joins: S2K (sleumie@Pony-e04nim.cable.virginm.net)
+[10:25:52] <DJ-C0L7[EIT]> well i know what i'm going to be doing tomorrow
+[10:41:05] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[10:52:29] *** init3 is now known as Init3-away
+[11:12:57] *** Joins: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile)
+[11:14:34] *** Joins: Asoka (Asoka@Pony-n65f7b.net-htp.de)
+[11:16:55] *** Quits: Asoka_White (Asoka@Pony-3cmu5g.net-htp.de) (Ping timeout: 121 seconds)
+[11:19:13] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[11:22:29] *** Joins: Asoka_White (Asoka@Pony-0e93mo.net-htp.de)
+[11:24:57] *** Quits: Asoka (Asoka@Pony-n65f7b.net-htp.de) (Ping timeout: 121 seconds)
+[11:34:14] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[11:39:18] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[11:41:39] <DJ-C0L7[EIT]> apparently i also over-estimated the amount of impedance a pair of incondescent bulbs represent in a turn signal assy
+[11:41:46] <DJ-C0L7[EIT]> ~6ohms
+[11:44:00] <Stik> the pedant in me feels obliged to tell you that's resistance ;)
+[11:44:24] * DJ-C0L7[EIT] nods
+[11:44:26] <DJ-C0L7[EIT]> lol
+[11:45:02] <DJ-C0L7[EIT]> i was tinkering with 50 ohms, then with 15 ohms, i guess i should have done 6 to get it to trip the relay lol
+[11:48:19] *** Init3-away is now known as init3
+[11:49:01] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[12:00:30] *** Joins: Phase (Phase4@Pony-l23b6v.internode.on.net)
+[12:18:21] *** init3 is now known as Init3-away
+[12:25:52] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[12:40:31] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[12:57:54] *** Quits: Cepheid (Cepheid@the.crazy.cat.pony) (Ping timeout: 121 seconds)
+[13:00:25] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "i'll bbl ttyl")
+[13:11:35] *** Joins: Cepheid (Cepheid@the.crazy.cat.pony)
+[13:25:46] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[13:29:26] *** Init3-away is now known as init3
+[13:40:11] *** Quits: S2K (sleumie@Pony-e04nim.cable.virginm.net) (Ping timeout: 121 seconds)
+[13:40:23] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[13:59:26] *** init3 is now known as Init3-away
+[14:06:06] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[14:08:18] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[14:17:15] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[14:22:26] *** Joins: JockeTF (pidgin@Pony-mjg.sl1.132.194.IP)
+[14:22:31] *** Init3-away is now known as init3
+[14:36:10] *** Joins: DataByte (DataByte@Pony-ac2dd8.g424.9euc.0247.2601.IP)
+[14:42:01] *** Joins: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile)
+[14:43:57] *** Quits: JockeTF (pidgin@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[14:49:13] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[14:52:31] *** init3 is now known as Init3-away
+[15:34:17] *** Init3-away is now known as init3
+[15:54:32] *** Joins: Gumball_Crash (GumballCras@Pony-svbp6u.nh.comcast.net)
+[15:58:15] *** Quits: GumballCrash (GumballCras@0.to.pony.10secondsflat) (Ping timeout: 121 seconds)
+[16:05:04] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[16:07:07] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[16:11:14] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:12:14] *** Joins: Asoka (Asoka@Pony-j3813g.net-htp.de)
+[16:13:11] *** GigaZzz is now known as GigaCity
+[16:14:31] *** Quits: Asoka_White (Asoka@Pony-0e93mo.net-htp.de) (Ping timeout: 121 seconds)
+[16:14:48] *** LightningCrash is now known as Cloud_Kicker
+[16:14:54] *** Cloud_Kicker is now known as Double_Diamond
+[16:15:09] *** Joins: LightningCrash (lightning@Pony-r7u.pqo.129.65.IP)
+[16:15:50] *** Joins: Asoka_White (Asoka@Pony-0914uu.net-htp.de)
+[16:16:32] *** Quits: Asoka (Asoka@Pony-j3813g.net-htp.de) (Ping timeout: 121 seconds)
+[16:19:04] *** init3 is now known as Init3-away
+[16:23:56] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:28:13] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:53:04] <Starthunder> Can't apps add to the top of the keyboard in Android now?
+[17:01:13] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[17:03:47] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Connection closed)
+[17:04:28] *** Joins: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile)
+[17:07:27] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[17:12:42] *** Joins: S2K (sleumie@Pony-e04nim.cable.virginm.net)
+[17:12:43] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[17:13:42] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:16:03] * Starthunder makes wolfyshy hold the mutton for seven seconds.
+[17:22:20] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:36:51] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:38:49] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[17:39:56] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:48:13] *** Init3-away is now known as init3
+[17:49:16] <DataByte> *reading new webcomic recently found*
+[17:49:22] <DataByte> *suddenly... PONY!*
+[17:49:23] <DataByte> http://www.vgcats.com/comics/?strip_id=304
+[17:49:23] <PinkiePieBot> [ VG Cats - Updated with slave labour ]
+[17:49:24] <DataByte> hehe
+[17:50:11] <Starthunder> LOL
+[17:50:12] <DataByte> hahaha, then a 20% cooler... hahaha
+[17:50:14] <Starthunder> Zero Punctuation XD
+[17:51:41] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:54:12] <DataByte> then a princess celestia and derpy painted figurines... pony invasion!
+[17:54:13] <DataByte> hahaha
+[17:59:52] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[18:13:55] *** Dusk is now known as Dusk|Sleep
+[18:14:17] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:40:40] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[18:47:44] *** Joins: Fallfeathers (Fallfeather@Pony-i146kn.dsl-w.verizon.net)
+[18:50:41] *** init3 is now known as Init3-away
+[19:05:20] *** Init3-away is now known as init3
+[19:18:36] <Colgate> why does windows measure deleting files in bytes/second instead of files/second?
+[19:19:13] <johnsey> maybe it looks faster?
+[19:19:43] <Colgate> but bytes/second is useless information when deleting files(unless doing a secure delete, which this is not)
+[19:20:44] <johnsey> also, this is one of the rare times where I have faster internet at a camp site than at home
+[19:20:52] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[19:20:56] <johnsey> 15 MB/s both directions
+[19:21:08] <HoneyDrops|Half> Have fun johnsey!  *wishes she was there*
+[19:21:32] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[19:23:04] <johnsey> thanks :) streams are up by the way
+[19:23:51] <HoneyDrops|Half> ooo
+[19:25:05] <frackster> what streams johnsey?
+[19:25:28] <HoneyDrops|Half> CCCamp
+[19:25:47] <frackster> link?
+[19:28:23] <HoneyDrops|Half> https://streaming.media.ccc.de/ ?
+[19:31:11] * HoneyDrops|Half will likely just catch the recordings later.
+[19:31:38] <Starthunder> Colgate: that doesn't even make any sense
+[19:31:59] <Starthunder> Does it count deleting one 56-meg file in one second as 56 MiB/s of deletion?
+[19:32:38] <Colgate> probably
+[19:33:30] <johnsey> Colgate: it's probably so that i can make the user feel like it's doing anything at all while deleting large files heh
+[19:33:46] <HoneyDrops|Half> Do any MS Windows' progress bars make sense?
+[19:34:25] <johnsey> since they tend to wrap around, no
+[19:36:13] *** init3 is now known as Init3-away
+[19:43:03] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[19:43:31] <johnsey> http://i.imgur.com/BXJfA4x.jpg
+[19:44:21] *** Init3-away is now known as init3
+[19:53:31] *** Joins: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net)
+[19:57:29] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[19:58:04] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[20:02:46] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[20:15:59] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:18:53] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[20:20:18] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[20:20:48] *** Quits: Creeps|AFK (RedHelper@The.Pony.That.Makes.You.Smile) (Ping timeout: 121 seconds)
+[20:22:55] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[20:23:25] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[20:23:34] *** zz_CyberJacob is now known as CyberJacob
+[20:23:55] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[20:23:59] *** Quits: GigaCity (Gigabit@the.girly.colt) (Ping timeout: 121 seconds)
+[20:24:25] *** Joins: GigabitPony (Gigabit@the.girly.colt)
+[20:39:32] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[20:44:08] <Gladiolus> http://arstechnica.co.uk/gadgets/2015/08/samsung-unveils-2-5-inch-16tb-ssd-the-worlds-largest-hard-drive/
+[20:44:09] <PinkiePieBot> [ Samsung unveils 2.5-inch 16TB SSD: The world’s largest hard drive | Ars Technica UK ]
+[20:46:41] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Quit: Leaving)
+[20:46:57] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[20:53:46] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[20:55:59] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[21:04:33] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Quit: Leaving)
+[21:04:41] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[21:06:02] *** CyberJacob is now known as zz_CyberJacob
+[21:06:10] <init3> Damnit. I need to somehow re-learn Windows server and exchange by monday. 
+[21:06:43] <init3> Fucking licensing makes that shit even more difficult 
+[21:11:11] *** Quits: Lapsus (Lapsus@i-forget.ca) (Ping timeout: 121 seconds)
+[21:12:35] *** Quits: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net) (Quit: Leaving.)
+[21:16:08] *** locodash11[lagout] is now known as locodashie11
+[21:16:29] *** GigabitPony is now known as Vega
+[21:16:45] <Vega> So.. I guess ff hates youtube?
+[21:17:37] <Vega> oh a script got busy
+[21:36:17] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[21:37:59] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Quit: Leaving)
+[21:38:19] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[21:38:36] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Quit: Leaving)
+[21:40:14] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[21:41:09] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[22:05:40] *** Joins: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net)
+[22:06:04] <One-Trick> difficulty of converting a full physical media to lvm2 (full as in no unpartitioned space)?
+[22:25:41] <One-Trick> nevermind, managed to handle that
+[22:40:30] <Vega> this looks like fun  https://www.tanga.com/deals/8182bfcb4219/striker-2-4ghz-4-5ch-camera-rc-spy-drone
+[22:40:31] <PinkiePieBot> [ Striker 2.4GHz 4.5CH Camera RC Spy Drone - Tanga ]
+[22:44:40] <One-Trick> that ones fairly durable, too
+[22:46:50] <One-Trick> a lot of people hate it though: http://www.amazon.com/Striker-2-4GHz-4-5CH-Spy-Drone/dp/B00X6FMZTU
+[22:46:52] <PinkiePieBot> [ Amazon.com: Striker 2.4GHz 4.5CH RC Spy Drone: Toys & Games ]
+[22:50:09] <Vega> damn
+[22:51:53] <One-Trick> yeah :/
+[22:52:23] <Vega> would be fun to have a little quad drone
+[22:52:33] <One-Trick> id love to have a drone but i cant seem to find that great middle-ground where its not $500 and does what i want
+[23:02:58] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[23:07:44] <Vega> I don't have the money for one at all, I just think it would be cool
+[23:09:40] <One-Trick> maybe one day
+[23:10:09] <Vega> yeah XD
+[23:12:15] <Vega> holy shit my laptop is hitting 67c
+[23:13:31] <Gladiolus> http://toyland.gizmodo.com/this-is-how-fast-you-can-reload-nerfs-new-70-mph-rival-1723855203
+[23:13:31] <PinkiePieBot> [ This Is How Fast You Can Reload Nerf's New 70 MPH Rival Blasters ]
+[23:14:04] *** Vega is now known as GigaWork
+[23:14:55] *** Joins: Sombra (Iceman@Darkhorse21)
+[23:29:45] *** Double_Diamond is now known as LightningCrash
+[23:33:18] <One-Trick> wow. all my yes.
+[23:35:25] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[23:43:17] *** Gumball_Crash is now known as GumballCrash
+[23:54:55] *** Quits: GumballCrash (GumballCras@0.to.pony.10secondsflat) (Connection closed)
+[23:55:55] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Quit: )
+[23:56:38] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[23:56:40] *** Quits: S2K (sleumie@Pony-e04nim.cable.virginm.net) (Ping timeout: 121 seconds)

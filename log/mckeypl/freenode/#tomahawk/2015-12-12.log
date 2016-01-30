@@ -1,0 +1,106 @@
+[00:05:22] <muesli> xhochy: the bottleneck for what exactly?
+[00:05:40] <muesli> xhochy: i think i never voiced any disappointment about a fuzzy-matching speedup? ;-)
+[00:20:51] <muesli> theli_ua: which cpu is that? :D
+[00:22:47] <theli_ua> Some i7
+[00:51:47] <theli_ua> eh, scratch that
+[00:51:54] <theli_ua> muesli: Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz
+[00:52:47] <theli_ua> it takes like half an hour without sorting
+[00:52:59] <theli_ua> this is not normal
+[00:53:30] <theli_ua> (happens when I search "queen" with tidal's resolver active as that one will return 9999 search results)
+[00:54:46] *** Quits: jamesaxl_ (~jamesaxl@41.249.123.74) (Ping timeout: 240 seconds)
+[02:02:35] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Ping timeout: 264 seconds)
+[02:07:07] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[02:07:42] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Remote host closed the connection)
+[02:14:12] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[02:14:41] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Remote host closed the connection)
+[02:15:37] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[02:21:19] *** Parts: modeno1 (modeno1@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[04:40:31] *** Quits: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com) (Read error: Connection reset by peer)
+[05:22:40] *** Joins: mgue2 (~mgue@f049093043.adsl.alicedsl.de)
+[05:25:26] *** Quits: mgue1 (~mgue@f052183033.adsl.alicedsl.de) (Ping timeout: 240 seconds)
+[09:45:25] *** Joins: jamesaxl_ (~jamesaxl@41.249.123.74)
+[10:20:56] *** Joins: knicklux (~knicklux@2a03:2260:a:b:3e07:54ff:fe4e:255)
+[10:37:33] *** Joins: HorusHorrendus (~horrendus@92.60.12.100)
+[11:09:28] *** Quits: jamesaxl_ (~jamesaxl@41.249.123.74) (Ping timeout: 256 seconds)
+[11:10:37] *** Joins: joepie91- (~joepie91@199.241.31.225)
+[11:10:43] *** Joins: HorusHorrendus1 (~horrendus@92.60.12.100)
+[11:10:56] *** Quits: HorusHorrendus (~horrendus@92.60.12.100) (Ping timeout: 240 seconds)
+[11:10:57] *** Quits: mgue2 (~mgue@f049093043.adsl.alicedsl.de) (Ping timeout: 240 seconds)
+[11:10:57] *** Quits: knicklux (~knicklux@2a03:2260:a:b:3e07:54ff:fe4e:255) (Ping timeout: 240 seconds)
+[11:10:58] *** Quits: joepie91_ (~joepie91@199.241.31.225) (Ping timeout: 240 seconds)
+[11:11:32] *** Joins: mgue (~mgue@f049093043.adsl.alicedsl.de)
+[11:20:52] *** Joins: knicklux (~knicklux@2a03:2260:a:b:3e07:54ff:fe4e:255)
+[12:20:06] *** Quits: knicklux (~knicklux@2a03:2260:a:b:3e07:54ff:fe4e:255) (Quit: Leaving)
+[12:20:19] *** Joins: knicklux (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3)
+[13:11:58] *** Joins: modeno1 (modeno1@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[13:11:59] <modeno1> justin-time: ii  libechonest-dev                2.3.0-0~trusty1~ppa1 i386                 Qt library for The Echo Nest platform - development files
+[13:43:38] *** Parts: modeno1 (modeno1@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[14:01:35] *** Joins: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com)
+[15:33:54] *** Joins: modeno1 (modeno1@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[15:33:55] <modeno1> which makes me assume it is correctly installed
+[15:41:00] *** Joins: justin_time (~stefan@2a02:908:f358:6f00:fdd0:7b29:a17f:294)
+[15:52:58] <modeno1> I installed qt creator 3.5.1 which apparently is based on qt 5.5.1. Some installations have complained about not being able to find qt5, which is weird
+[15:55:36] *** Quits: HorusHorrendus1 (~horrendus@92.60.12.100) (Quit: Leaving.)
+[16:03:52] <modeno1> dommex: any idea of how to solve this? cmake is complaining about quazip, libattica and libechonest, all of which I've installed already
+[16:24:20] *** Joins: jamesaxl (~jamesaxl@41.249.123.74)
+[16:29:25] <justin_time> modeno1: Do you using the correct libraries which are build against Qt5 and NOT against Qt4?
+[16:31:34] *** Quits: soee_ (~soee@bmx244.neoplus.adsl.tpnet.pl) (Read error: Connection reset by peer)
+[16:31:50] *** Joins: soee (~soee@bmx244.neoplus.adsl.tpnet.pl)
+[16:32:55] <justin_time> The debian package of libquazip-qt5-dev (available since Ubuntu 15.04) is broken because it uses an incorrect suffix... and libechonest (Qt5) is introduced in Ubuntu 16.04
+[16:41:29] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[16:46:26] *** Joins: soee_ (~soee@aftv75.neoplus.adsl.tpnet.pl)
+[16:49:24] <dommex> modeno1: ill be home in aboit 3h, can help you then
+[16:50:35] *** Quits: soee (~soee@bmx244.neoplus.adsl.tpnet.pl) (Ping timeout: 264 seconds)
+[16:50:41] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Ping timeout: 250 seconds)
+[16:58:20] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[16:59:40] <modeno1> so since I'm using 14.04 I won't be able to use libechonest  for Qt5?
+[17:00:28] <dommex> xhochy: i would really fancy getting rid of lucenepp. Right now i cant compile tomahawk with clang without also compiling lucenepp with clang for which i would need to compile boost with clang too
+[17:00:32] <dommex> :p
+[17:22:31] *** Parts: modeno1 (modeno1@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[17:40:52] *** Joins: mehdix (~mehdix@x4db24df5.dyn.telefonica.de)
+[18:36:02] *** Quits: pinak (pinakahuja@gateway/shell/kde/x-uawnxdanokwkftpi) (Ping timeout: 264 seconds)
+[18:36:02] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-bkavzttczybrhfma) (Ping timeout: 264 seconds)
+[18:36:02] *** Quits: eater (~eater@2001:982:2402:1:2fe0:7e83:7d85:d823) (Ping timeout: 264 seconds)
+[18:36:02] *** Quits: RJ2 (sid1@pdpc/supporter/professional/rj2) (Ping timeout: 264 seconds)
+[18:36:02] *** Quits: rodgort (~rodgort@2607:5300:100:200::160d) (Ping timeout: 264 seconds)
+[18:36:02] *** Quits: justin_time (~stefan@2a02:908:f358:6f00:fdd0:7b29:a17f:294) (Ping timeout: 264 seconds)
+[18:36:02] *** Quits: johnyb (~jb@limu.coffee.liberejo.de) (Ping timeout: 264 seconds)
+[18:36:02] *** Quits: theli_ua (uid54353@gateway/web/irccloud.com/x-zywmfydianshkcio) (Ping timeout: 264 seconds)
+[18:36:02] *** Quits: hatstand (sid2952@gateway/web/irccloud.com/x-vooxcrjffrcdlkmy) (Ping timeout: 264 seconds)
+[18:36:02] *** Quits: michiwend (~quassel@michiwend.com) (Ping timeout: 264 seconds)
+[18:36:02] *** Quits: L42y (sid10623@gateway/web/irccloud.com/x-pcwviatzscgaegwm) (Ping timeout: 264 seconds)
+[18:36:02] *** Quits: danimo (~daniel@kde/danimo) (Ping timeout: 264 seconds)
+[18:36:02] *** Quits: leonhandreke (~quassel@2001:41d0:8:bd82::1) (Ping timeout: 264 seconds)
+[18:36:11] *** Quits: mohn (~mo@limu.coffee.liberejo.de) (Ping timeout: 264 seconds)
+[18:36:11] *** Quits: dridri (~dridri@2a01:e35:8a72:9010:225:90ff:fe1e:3c78) (Ping timeout: 264 seconds)
+[18:36:11] *** Quits: the_phil0s0ph (~quassel@2a03:8180:1001:b2:13::12c) (Ping timeout: 264 seconds)
+[18:36:47] *** Quits: Mamarok (myriam@amarok/team/mamarok) (Ping timeout: 264 seconds)
+[18:45:59] *** Joins: McKey (~McK@irc.antyklay.pl)
+[18:46:00] *** Server sets mode: +gnt 
+[18:51:13] *** Joins: hatstand (sid2952@gateway/web/irccloud.com/x-oiovdizfxjxhxomj)
+[18:51:28] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-qaqhwluevgmhxlza)
+[19:08:46] *** Joins: jamesaxl_ (~jamesaxl@105.154.159.176)
+[19:10:46] *** Quits: jamesaxl (~jamesaxl@41.249.123.74) (Ping timeout: 240 seconds)
+[19:35:10] *** danimo_ is now known as danimo
+[19:55:18] *** Joins: modeno1 (modeno1@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[19:55:19] <modeno1> i don't understad why during cmake of libechonest it doesn't find qt5 but finds qt4
+[20:12:24] *** Joins: wought (guest-woug@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[20:12:24] <wought> hi
+[20:12:54] <wought> any of you guys know how to configure Tomahawk for NOT automatically launching at every sign in?
+[20:13:21] <wought> I'm using Xubuntu 14.04
+[20:18:12] <wought> *to NOT automatically
+[20:33:26] *** Parts: wought (guest-woug@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[20:39:40] *** Quits: knicklux (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3) (Remote host closed the connection)
+[20:56:12] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[20:58:56] <modeno1> justin-time:
+[20:58:58] <modeno1> dommex:
+[20:59:31] <modeno1> Ok, I ditched my ubuntu 14.04 vm and booted up a 15.04 and I finally managed to build tomahawk
+[20:59:33] <modeno1> thanks :)
+[21:06:51] <dommex> modeno1: haha
+[21:07:07] <dommex> modeno1: that was "easy"
+[21:16:34] *** Joins: soee (~soee@acfv213.neoplus.adsl.tpnet.pl)
+[21:17:46] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Ping timeout: 240 seconds)
+[21:17:48] *** Parts: modeno1 (modeno1@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[21:18:36] *** Quits: soee_ (~soee@aftv75.neoplus.adsl.tpnet.pl) (Ping timeout: 272 seconds)
+[21:19:45] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[23:11:26] *** Joins: hrtcrw (~hrtcrw@2a02:8071:268d:7500:2d9c:1abf:c2d4:8370)

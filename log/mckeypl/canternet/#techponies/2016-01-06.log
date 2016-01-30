@@ -1,0 +1,740 @@
+[00:02:00] <Quindo> well, I did not want to just dump 500 predefined records into the database which would not have been hard.
+[00:02:38] <Quindo> I wanted it to all be random content, and generating it takes a long time.
+[00:04:21] <RazorSharpFang> Hmm.
+[00:05:19] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-qok3gg.tmodns.net)))
+[00:05:35] <Quindo> I did find out what was causing it though
+[00:05:59] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[00:06:08] <Quindo> capping the memory cause it is not releasing the texture memory doing the generation of the test records.
+[00:14:14] <Quindo> hazza!  there we go
+[00:14:30] *** Joins: WuBzY (androirc@Pony-4s7v1e.rev.dnainternet.fi)
+[00:17:38] <RazorSharpFang> I love progress
+[00:18:03] <Quindo> SUCCESS!
+[00:25:07] *** Joins: Webster (Webster@Pony-benl74.fios.verizon.net)
+[00:28:39] <Lapsus> https://www.kickstarter.com/projects/1523379957/oculus-rift-step-into-the-game/posts/1458224?ref=backer_project_update
+[00:28:40] <PinkiePieBot> [ Oculus Rift: Step Into the Game by Oculus — Kickstarter ]
+[00:28:42] <Lapsus> fuck that's cool
+[00:28:54] <Lapsus> hey JustAberrant, you're getting a free cv1?
+[00:28:58] <Lapsus> Googie: ^
+[00:29:02] <Lapsus> maybe?
+[00:29:17] *** Quits: Asoka_White (Asoka@Pony-5oiveo.net-htp.de) (Ping timeout: 121 seconds)
+[00:29:38] <Lapsus> envious as fuck of everyone that backed that now
+[00:31:39] <Lapsus> "This offer is only available in the following countries where Oculus Rift is shipping: United States, United Kingdom, Australia, Belgium, Canada, Denmark, Finland, France, Germany, Iceland, Ireland, Italy, Japan, Netherlands, New Zealand, Norway, Poland, Spain, Sweden, and Taiwan."
+[00:31:45] *** Quits: Melanosuchus (quassel@Pony-u8gntg.as13285.net) (Connection closed)
+[00:37:17] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Ping timeout: 121 seconds)
+[00:37:44] <Googie> Lapsus: I didn't have enough money for the Kickstarter at the time :(
+[00:37:59] <Lapsus> aw :c
+[00:39:12] <Lapsus> still super-cool of them to do
+[00:40:18] <Lapsus> I'm way overly excited about both the rift and the vive
+[00:40:52] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[00:41:02] <Lapsus> the camera on the vive seems like you could do some really interesting stuff with it, mainly that it's tracked as accurately as the rest of the headset
+[00:41:06] <Kinsley> I do want to see VR and AR go very mainstream.
+[00:41:44] <Kinsley> But the necessity of high-res screens at very high refresh rates means we need huge leaps in GPU power quickly and cheaply.
+[00:41:50] <Lapsus> inferring depth from parallax stuff and whatnot for mapping and scanning
+[00:42:19] *** WuBzY is now known as WuBzYIsSoTired
+[00:42:37] <Lapsus> apparently the recommended config for the rift cv1 is a 970 and a reasonable quadcore processor
+[00:42:50] <Googie> Kinsley: The other option is pulling back on scene complexity
+[00:43:05] <Googie> Yeah.
+[00:43:31] <Lapsus> eye tracking and foveated rendering would also reduce gpu load
+[00:43:35] <Googie> As odd as it might sound, you don't need photorealism in VR
+[00:43:43] <Lapsus> but are currently expensive for other reasons :v
+[00:44:11] <Phase> non-photorealism would be preferable imo
+[00:44:29] <Phase> both for lower gpu load and the fact that i'm not sticking a screen on my face to see what i could see by going outside
+[00:44:45] <Lapsus> I do want to do a stereoscopic head-controlled pan-tilt camera setup at some point
+[00:44:50] <Lapsus> that would be fun
+[00:45:44] <Googie> 2006 level graphics would be fine really
+[00:46:02] <Lapsus> get it working on a desk with webcams, then move more towards an fpv rig with it on a multicopter or something
+[00:46:03] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[00:46:40] <Googie> GearVR pulls off some pretty neat stuff on mobile phones also
+[00:50:24] <Kinsley> Googie: but GearVR is more like, pre-rendered stuff. Crafted experiences that are more railroaded, if you will.
+[00:50:53] <Googie> There's some non-prerendered stuff as well though
+[00:55:30] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[01:03:13] *** Quits: reiuiji (reiuiji@Pony-pgksa9.ma.comcast.net) (Connection closed)
+[01:14:32] *** Joins: Sombra (Iceman@Darkhorse21)
+[01:17:09] *** Joins: Asoka (Asoka@Pony-p57vvp.net-htp.de)
+[01:19:07] <Quindo> huh... I got a code problem... :/
+[01:21:03] <RazorSharpFang> Are you dividing by 0? I don't recommend that, but I do that a lot.
+[01:21:52] <Quindo> no, I am prepping data for upload before I start uploading.
+[01:22:44] <Quindo> But turns out my test load, 1 parent, 500 kids, each carrying 2 things, takes too much memory to hold while prepping.
+[01:22:58] *** Quits: Asoka (Asoka@Pony-p57vvp.net-htp.de) (Ping timeout: 121 seconds)
+[01:23:07] <RazorSharpFang> Must you hold it in memory all at once?
+[01:23:41] <Quindo> No, but now I need to rewrite the code to be able to submit the request and then jump back to where it was in the order.
+[01:24:00] <Quindo> which I can do...
+[01:24:13] <Quindo> But figuring out how to do it is the fun part.
+[01:27:51] <Quindo> I think I just need to change to a self calling function that is actually able to yeild when it hits a child cap.
+[01:28:14] <Quindo> rather then letting foreach to all my heavy lifting
+[01:29:20] <RazorSharpFang> I've never used a foreach construct.
+[01:29:31] <Quindo> probably a good thing...
+[01:39:49] <Quindo> though, actually I may have a fix.
+[01:39:59] <Quindo> that will not involve rewriting the whole thing...
+[01:40:02] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[01:42:03] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[01:43:46] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[01:44:54] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Ping timeout: 121 seconds)
+[01:47:00] *** Joins: corkfuse (corkfuse@corkfuse)
+[01:47:05] *** Quits: Feld0 (Feld0@Pony-ocvf46.wireless.ubc.ca) (Client exited)
+[01:53:11] <One-Trick> anyone use owncloud and decide that theyd rather have broken glass rubbed in their eyes instead? if so, what else would you use?
+[01:54:39] <One-Trick> if it was just me, i would use my vpn and just scp but i need to make it simple for my hubby to send his schoolwork to/from
+[01:58:21] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[01:59:31] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[02:02:52] <Moonlightning> ugh
+[02:12:02] <Quindo> time to see if my hack works.
+[02:15:53] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[02:21:15] <MisterSkids> https://www.indiegogo.com/projects/skids-in-motion-raising-money-for-equipment/x/3647934#/
+[02:22:15] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed) (Ping timeout: 121 seconds)
+[02:22:25] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Quit: Leaving.)
+[02:22:43] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[02:32:52] <Quindo> RazorSharpFang So, want an update?
+[02:33:00] <RazorSharpFang> Sure
+[02:33:34] <Quindo> I fiddled with it so that it is now only dealing with children in batches of 40.
+[02:33:45] <Quindo> Running a test of it now
+[02:35:12] <Quindo> I think it got past the first batch of 40 and is now working on the second batch of 40 out of 500...
+[02:35:22] <Quindo> taking about 30 seconds per.
+[02:36:11] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed) (Ping timeout: 121 seconds)
+[02:36:12] <Quindo> But Memory, cpu, and disk are stable so that is a good sign.
+[02:38:52] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[02:41:00] *** Quits: corkfuse (corkfuse@corkfuse) (Quit: Sleeping)
+[02:42:46] <RazorSharpFang> Hurray for more progress
+[02:50:48] <Quindo> It is still working its way through the test set!
+[02:55:27] <Sour_Sweet> One-Trick: I use OwnCloud. It's a pain sometimes (especially updating) and the performance is not exactly great. Some of that can be fixed (sendfile), but if you just want simple file sharing I'd go for a simple WebDAV + HTTPS + optionally FTP(E)S
+[02:56:47] <Sour_Sweet> I sadly need CardDAV and CalDAV though as well as a proper sharing API.
+[03:03:16] * Moonlightning rolled his own file-sending system.
+[03:03:26] <Moonlightning> For those without SSH, I mean.
+[03:03:28] * mniip rolled his own haskell
+[03:03:55] <Colgate> Moonlightning: it wouldn't surprise me if you rolled your own libc
+[03:04:02] <mniip> https://gist.github.com/mniip/884ad5fc6e37dbb53f15
+[03:04:03] <PinkiePieBot> [ int.c · GitHub ]
+[03:04:05] <RazorSharpFang> One day, I'll learn to roll my own software.
+[03:04:12] <RazorSharpFang> In the meantime, I'm using Java
+[03:05:14] <RazorSharpFang> I'm always irked at how long and wordy java code is.
+[03:05:23] <RazorSharpFang> BufferedWriter output = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+[03:05:27] <RazorSharpFang> I mean, just look at that.
+[03:05:54] <Sour_Sweet> RazorSharpFang: Solution: Screw Java
+[03:06:06] <RazorSharpFang> Java's the only language I know well enough right now.
+[03:06:31] <Sour_Sweet> God I hate Java. It's like nothing in written in Java is actually done properly :D
+[03:06:34] <mniip> now to make this ANSI-compliant
+[03:06:52] <RazorSharpFang> I'm learning C++ this semester, so hopefully I'm learn to do stuff the C++ way.
+[03:07:23] <Moonlightning> Colgate: nah
+[03:07:30] <Moonlightning> I'm just suspicious of owncloud.
+[03:07:36] <Moonlightning> Isn't it like closedsource or something?
+[03:07:48] <RazorSharpFang> Sour_Sweet: A lot of my problems stem from not knowing how to use the libraries of C/C++ or the libraries of the OS natively, like WinSocket.
+[03:07:59] <RazorSharpFang> But I've been taught java, so I know how to use that.
+[03:08:09] * HoneyDrops just uses ssh and sshfs.  For the rare case I have to serve a file otherwise, I'll fire up nginx.
+[03:08:09] <Sour_Sweet> Strange thing is I like Mono/.NET which is somewhat similar to Java.
+[03:08:31] <RazorSharpFang> Similar? It's almost one-to-one. :^)
+[03:08:47] <RazorSharpFang> Maybe you just dislike java on principal.
+[03:08:55] * Moonlightning keeps nginx running. Has quite a bit of stuff that's served to the general public.
+[03:08:58] <Sour_Sweet> HoneyDrops: Firewalls are a thing. Doing it over clean SSH is not always possible
+[03:09:39] <Sour_Sweet> Nor do I want to SSH into/onto my server from an unsafe machine
+[03:09:41] <Moonlightning> Sour_Sweet: tunnel SSH over TLS, bind to port 443
+[03:09:54] <Moonlightning> Oh, that, definitely
+[03:09:59] <RazorSharpFang> Sour_Sweet: Anything interesting would probably require either a wrapper library, or using an OS's libraries which would lock me into that operating system.
+[03:10:00] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed) (Ping timeout: 121 seconds)
+[03:10:20] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[03:10:33] <Sour_Sweet> Port 443 is used an all my IPs (discounting IPv6 which is not always deployed)
+[03:11:11] <Sour_Sweet> I could use a HTTPS tunnel, but nah ...
+[03:11:53] <Moonlightning> mniip: what game used that?
+[03:12:01] <mniip> Moonlightning, ?
+[03:12:04] <Moonlightning> I mean, you say /dirty pony game/, I think /Banned from Equestria/
+[03:12:14] <Moonlightning> RC88's eight-bit rendition of the opening
+[03:12:14] <mniip> I say?
+[03:12:21] <HoneyDrops> Why would I be on a network dumb enough to block port 22 outgoing?  (not that I use port 22)
+[03:12:22] <One-Trick> Sour_Sweet: my hubby isnt very tech-savvy. owncloud offers him something hes familar with- 'click file, move to folder' :)
+[03:12:23] <Moonlightning> generic you
+[03:12:25] <Sour_Sweet> OwnCloud works just fine from anything higher than XP (Due to HSTS and SHA256, LE's cert restrictions for .mil domains)
+[03:12:27] <Moonlightning> ^:HoneyDrops
+[03:12:31] <mniip> Moonlightning, yes, that's exactly what it is
+[03:12:42] <Colgate> Moonlightning: owncloud is AGPL licensed
+[03:13:10] <Moonlightning> Sour_Sweet: HSTS isn't breaking
+[03:13:29] <mniip> har har har
+[03:13:43] <Moonlightning> Sour_Sweet: mil.? O.o
+[03:13:48] * HoneyDrops hooves One-Trick her crop, "Train him?"
+[03:13:48] <Sour_Sweet> No you just can't access my cloud without SSL
+[03:14:02] <Moonlightning> Sour_Sweet: I hope you're requiring something a bit newer than SSL :P
+[03:14:03] <Sour_Sweet> Which is not entirely HSTS's fault
+[03:14:11] <Moonlightning> mniip: wait, /Banned from Equestria/ used that?
+[03:14:16] <mniip> yes
+[03:14:20] <Moonlightning> Huh. o.o
+[03:14:41] <Sour_Sweet> Moonlightning: We say SSL an actuall mean TLS 1.1 and 1.2. Deal with it
+[03:14:48] <Sour_Sweet> actually*
+[03:15:05] *** Joins: Asoka (Asoka@Pony-ea9hf4.net-htp.de)
+[03:15:10] <Moonlightning> Sour_Sweet: how 'bout you say what you mean :P
+[03:15:33] <Sour_Sweet> Almost /everyone/ still says SSL. I don't care
+[03:16:03] <Moonlightning> #techponies, how many of you use /SSL/ to refer to both TLS and SSL?
+[03:16:22] <RazorSharpFang> I don't know what SSL or TLS means
+[03:16:30] <Sour_Sweet> I useally only use TLS when talking about the protocol or StartTLS
+[03:17:36] <Moonlightning> starttls is stupid
+[03:17:40] <Colgate> I use the terms interchangeably
+[03:17:48] <Colgate> what's stupid about it?
+[03:17:54] <HoneyDrops> I don't generally refer to either.
+[03:17:55] <Sour_Sweet> It's actually great
+[03:18:15] <Moonlightning> Just listen for TLS or $application_protocol on the same port
+[03:18:22] <Moonlightning> They're not likely to me ambiguous :V
+[03:18:26] <Colgate> starttls is great because then you don't need different ports for TLS/non-TLS
+[03:18:29] <Moonlightning> s/ or / and /
+[03:18:51] <Sour_Sweet> Well starttls just does that
+[03:19:00] <Sour_Sweet> Except for it waits for the command
+[03:19:02] <Moonlightning> Noooo…starttls requires that you indicate it.
+[03:19:15] <Moonlightning> Rather than just either initiating a TLS handshake, or…not doing so.
+[03:19:25] <Sour_Sweet> Yeah which will avoid confusion
+[03:19:44] <Sour_Sweet> And also makes implementation easier
+[03:20:00] <Moonlightning> You know what would make implementations easier?
+[03:20:31] <Moonlightning> connect(...); if (config.tls) { tls_handshake(...); } do_application_stuff(...);
+[03:22:12] <Moonlightning> (Dammit…it hasn't even been twenty-four hours, and the Stack icons are broken again)
+[03:23:06] <Sour_Sweet> StartTLS allows me to use my (secure) mail server ports for something else. I like it ;-)
+[03:23:21] <Moonlightning> Ew.
+[03:23:21] <Sour_Sweet> (Those are useally not firewalled off)
+[03:23:42] <Sour_Sweet> And yes I don't give a fuck about well known ports
+[03:23:51] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed) (Ping timeout: 121 seconds)
+[03:23:51] <HoneyDrops> How about we stop blocking useful outgoing ports?
+[03:24:08] <Moonlightning> ^
+[03:24:12] <Sour_Sweet> Tell that to hotspot providers and corps.
+[03:24:21] * RazorSharpFang blocks port 80 and port 8080 outbound
+[03:24:26] <HoneyDrops> It's one thing to block incoming, but outgoing is stupid.
+[03:24:54] <Sour_Sweet> Both is sort of stupid if you ask me
+[03:25:03] * Moonlightning doesn't notice for a long time, because he uses TLS for HTTP, and Tor for all the sites that don't support that.
+[03:25:22] <RazorSharpFang> Moonlightning: Is not supporting TLS a liabiity?
+[03:25:28] <HoneyDrops> Well, depends on who's firewall.  ISPs should block nothing, ever.
+[03:25:37] <Moonlightning> RazorSharpFang: well, if you care about privacy, yes…
+[03:25:46] <Moonlightning> (whose *)
+[03:26:07] <Sour_Sweet> Useally NAT prevents damage anyways and if your system has exposed weaknesses without a firewall than you have a number of different problems
+[03:26:24] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[03:26:38] <Sour_Sweet> Everything that does IPv6 should hoefully have a sane config by now
+[03:26:51] <Sour_Sweet> hopefully*
+[03:27:30] <RazorSharpFang> Moonlightning: Well, I meant for like a personal website.
+[03:27:49] <Sour_Sweet> Except for fail2ban rules and rate limits for a few UDP things my server doesn't have any firewall rules enabled
+[03:27:49] <RazorSharpFang> Sour_Sweet: My ISP doesn't support IPv6 at all.
+[03:27:52] <HoneyDrops> Also the solution to dumb networks, if "not using them" isn't an option is VPN and just run it though a non-blocked port.
+[03:27:54] <Moonlightning> Ewwwwwwww ^2
+[03:28:11] <Colgate> speaking of ipv6, having a problem on DNS lookups on a box I have
+[03:28:22] <Moonlightning> I've found a network on which my VPN doesn't work :/
+[03:28:31] <Colgate> an upstream firewall intercepts all of my AAAA lookups and returns NXDOMAIN
+[03:28:45] <Colgate> which obviously causes issues
+[03:28:45] <Moonlightning> Colgate: dnssec!
+[03:29:02] <Colgate> dnssec isn't supported enough for that to be a viable solution
+[03:29:12] <Moonlightning> >:(
+[03:29:19] * Moonlightning supports dnssec!
+[03:29:22] <RazorSharpFang> If it's not viable, is it also infeasible?
+[03:29:28] <Sour_Sweet> RazorSharpFang: And I can get really good bandwidths with IPv6 only ISPs (Carrier grade NAT aka DS Lite)
+[03:29:37] <Moonlightning> speaking of…are you supposed to redo nsec3 chains less frequently than once an hour? <.<
+[03:29:43] <Colgate> the box in question doesn't even have ipv6
+[03:29:54] <Colgate> so the AAAA record lookups don't help anyways
+[03:30:10] <RazorSharpFang> Sour_Sweet: I'm sitting here with 3mbps down, and 0.5mbps up
+[03:30:20] <Sour_Sweet> I can't get any DNS requests through from this network without using TCP -.-
+[03:30:37] <Moonlightning> On another unrelated note, can you de-ess with like ffmpeg or something?
+[03:30:40] <Moonlightning> this is pretty horrible
+[03:30:44] <RazorSharpFang> I didn't realize NSLookups could be done through TCP
+[03:30:47] <Colgate> there isn't any good way that I've found to block outgoing(or incoming) AAAA lookups :(
+[03:31:24] <Moonlightning> RazorSharpFang: clients are supposed to try with UDP, and then try with TCP if that fails somehow or if it gets truncated (maybe only if they need more than what they got?)
+[03:31:34] <Moonlightning> RazorSharpFang: do you read the standards?
+[03:31:39] <Colgate> I found that bind9 has an option for not resolving AAAA on incoming ipv4, but that requires a recompile
+[03:32:07] <RazorSharpFang> Moonlightning: I can't possibly, I've got too much to read anyway. Financial documents seem to be just as hard as computer techncal documents
+[03:32:24] <RazorSharpFang> Accounting is difficult
+[03:32:48] <HoneyDrops> Asymmetrical connections are a blight.
+[03:33:04] <Sour_Sweet> Moonlightning: I actually didn't knew TCP is a default fallback until quite recently. I knew about DNS requests via TCP though.
+[03:33:19] <Sour_Sweet> The issue I have here made me aware
+[03:33:27] <Sour_Sweet> (Again not my network)
+[03:33:53] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed) (Ping timeout: 121 seconds)
+[03:34:05] <Moonlightning> Colgate: /ew/
+[03:34:36] <Colgate> Moonlightning: I don't know of any other way
+[03:34:43] <Moonlightning> :/
+[03:35:08] <Moonlightning> relatedly, why does dig not do signature chasing by default, requiring a compile-time flag?
+[03:35:09] <Sour_Sweet> I assume they did that to prevent amplified DDoS (which is dumb). I should really check if I can spoof IP adresses over this network
+[03:35:17] <Colgate> unless there is a way for iptables to filter based on arbitrary hex at an unknown offset in the packet?
+[03:35:56] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[03:36:12] *** Quits: Asoka (Asoka@Pony-ea9hf4.net-htp.de) (Ping timeout: 121 seconds)
+[03:38:40] <mniip> woohoo
+[03:38:47] <mniip> currying code is actually readable now
+[03:39:56] * HoneyDrops 's ears perk upon hearing "curry."  She rummages around in her bag for a bowl and some rice.
+[03:40:24] <RazorSharpFang> Rice is too bland for me.
+[03:41:05] <HoneyDrops> What types have you had?
+[03:41:19] <RazorSharpFang> Store brand white rice. That's about it.
+[03:41:26] <RazorSharpFang> I buy it in bulk.
+[03:43:27] <RazorSharpFang> I like to flavour the rice with either salt, or some seaweed flavouring.
+[03:43:58] <HoneyDrops> There's your problem.  Try some "new crop" Koshihikari
+[03:44:03] <mniip> does this seem readable https://bpaste.net/show/272627709c5e
+[03:44:04] <PinkiePieBot> [ show at bpaste ]
+[03:44:12] <RazorSharpFang> I haven't even heard of that.
+[03:44:17] <HoneyDrops> You can get like 20kilo bags of it too.
+[03:44:35] <HoneyDrops> Koshihikari is a variety of rice.
+[03:45:27] <HoneyDrops>  Akitakomachi is good too, bit more of a "nutty" flavor.
+[03:45:30] <RazorSharpFang> I haven't heard of that in Perth.
+[03:46:24] <HoneyDrops> Go to a proper Asian grocery store (Japanese or Korean over Chinese or SE-asian), check the rice section.
+[03:46:43] <RazorSharpFang> I've never seen an asian grocery store.
+[03:47:58] <HoneyDrops> Also don't overcook it, you need to wash it, let it drain, then soak for ~30-60 min in a 1:1.1 rice to water ratio, then bring to a boil over med-high heat, turn down to med-low and simmer for ~7-8 minutes.
+[03:48:22] <HoneyDrops> The let sit, also lidded for 15-20 minutes before fluffing.
+[03:49:32] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[03:49:41] <HoneyDrops> Should be a very, very light fluff.  Otherwise it will break up the grains and make it mushy :(
+[03:50:17] * HoneyDrops wants to make some rice now…
+[03:51:15] <RazorSharpFang> Hmm, seems like a lot of effort. Will this rice taste different to store-brand white rice?
+[03:52:27] <HoneyDrops> I dunno what your "white rice" is, but if it's like here in the US, and the parboiled stuff… yeah it will have a flavor.
+[03:52:45] * Moonlightning was brought up on rice.
+[03:52:49] <HoneyDrops> Is it called "converted" rice?
+[03:53:37] <RazorSharpFang> It's just called "white long grain rice"
+[03:55:09] <HoneyDrops> Ok, look for medium grain ones.
+[03:55:46] <RazorSharpFang> I'll take a look when I get the chance. I'm off to sleep now, so cyas.
+[03:55:57] <HoneyDrops> Shorts tend to be very sticky, but are also good for some applications.  mochigome is ground to make mochi which is delightful.
+[03:57:28] <HoneyDrops> https://blogs.microsoft.com/blog/2016/01/05/automakers-choose-microsoft-as-connected-car-partner/  What could go wrong?  Open a word document and your breaks go~
+[03:57:29] <PinkiePieBot> [ Automakers choose Microsoft as connected car partner - The Official Microsoft Blog ]
+[03:58:38] * Sour_Sweet smells bluescreens on dashboards
+[04:02:54] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed) (Ping timeout: 121 seconds)
+[04:03:00] <RazorSharpFang> Especially if it's W10
+[04:03:25] <HoneyDrops> I just have to ask, "Why?"
+[04:05:30] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[04:05:35] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Quit: Zzzzz)
+[04:05:53] <Sour_Sweet> !0 is surprisingly stable. It asking you to enter your live credentials when driving to fast for uploading records is more likely :P
+[04:06:04] <Sour_Sweet> 10*
+[04:06:24] <Sour_Sweet> also too*
+[04:08:54] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[04:09:41] <Sour_Sweet> I'm just waiting for the day I go out and TV screens in shop windows change accroding to my Amazon buyers profile. Greetings to George Orwell
+[04:10:56] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed) (Ping timeout: 121 seconds)
+[04:12:24] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[04:12:43] <Sour_Sweet> The really scary thing is though that by that point and time I'll probably call it usefull because of how much regular ads annoy me.
+[04:18:28] <HoneyDrops> I would rather get random ads than targeted ones, if for no other reason that I object to the entire systems of monitoring the populace to better target manipulations.
+[04:21:39] <Sour_Sweet> I don't like the idea of tracking either, but I can see the value of targeted ads for the user. Sad thing is that the ad serving industry won't realize this until it's too late. Good old times when ads actually contained some information
+[04:22:44] <HoneyDrops> As far as I'm concerned, the entire ad industry could burst into flames tomorrow and nothing of value would be lost.
+[04:23:15] <Sour_Sweet> Well we'd loose an awful lot of "free" content on the internet.
+[04:25:27] <HoneyDrops> Acceptable loss, stuff that is really important will find another way.
+[04:26:49] *** Eventide is now known as Eventide|Sleepies
+[04:39:54] *** GigaWork is now known as worthless
+[04:56:54] *** Joins: Asoka (Asoka@Pony-ikndpd.net-htp.de)
+[05:00:20] *** Sour_Sweet is now known as Sour_Sweet|BNC
+[05:02:22] *** Joins: corkfuse (corkfuse@corkfuse)
+[05:03:56] *** Quits: corkfuse (corkfuse@corkfuse) (Quit: Sleeping)
+[05:24:19] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[05:47:16] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[05:56:45] *** Quits: Webster (Webster@Pony-benl74.fios.verizon.net) (Ping timeout: 121 seconds)
+[06:13:25] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[06:38:32] *** worthless is now known as Vega
+[07:06:56] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (A TLS packet with unexpected length was received.)
+[07:09:43] *** Joins: Valiant (Corey@the.truth.is.out.there)
+[07:11:31] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[07:22:43] *** Quits: Valiant (Corey@the.truth.is.out.there) (Quit: Leaving)
+[07:27:48] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[07:28:11] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[07:30:39] <Compu> HoneyDrops: without ads everything would cost money, would u enjoy paying a subscription fee for everything like youtube and stuff?
+[07:30:56] <Compu> not everyone has that kind of money
+[07:31:20] <Compu> but then again for all i know u could be one of those people who think anyone who isnt rich can go die
+[07:31:50] <HoneyDrops> I could live in a world without youtube.  As a replacement, I would say a strong p2p network to share media files in a decentralized manner.
+[07:33:17] *** Vega is now known as Snoarin
+[07:33:48] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[07:40:41] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[07:41:21] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[07:42:44] <Moka> 9
+[07:45:04] <HoneyDrops> As for the second half, clearly you've missed my rants XD
+[07:46:32] <HoneyDrops> Hint: I support universal healthcare, basic income, and identify loosely as a social anarchist.
+[07:50:51] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[07:51:41] <Gladiolus> I believe strongly and personal and political freedom, but not economic freedom at the "I can have a billion dollars in liquid capital if I dang well want" level.
+[07:52:32] <Gladiolus> Basically do what you want but don't be a greedy jerk lord hoarding money because it's rude.
+[07:53:40] <JustAberrant> I believe in capitalism kept in check with strong regulation and a moderate amount of socialism ;p
+[07:53:43] <HoneyDrops> I honestly don't care who has material wealth, and I'm not all that concerned with the distribution of it.  Though I do favor a more equitable sharing.  My main concern is that material wealth can be and is used to allow individuals in exert a greater degree of influence over society.
+[07:55:17] <HoneyDrops> So, if they cannot be decoupled, it follows that the only way to equalize the capacity to influence society between all persons is to equalize the material wealth.  It's not a goal unto itself, just what seems to be the least indirect manner.
+[07:56:05] <Compu> meh
+[07:56:13] <Compu> i already gave up on humanity
+[07:56:52] <HoneyDrops> I would like to see humanity at a point where capitalism doesn't work, it works now for all the wrong reasons.
+[07:57:26] <JustAberrant> meh, never happen for so many reasons
+[07:57:53] <HoneyDrops> We'll I'm equally happy for another species to take over the reigns of science and culture, or even machines could do it too. 
+[07:58:09] * JustAberrant largely doesn't care what happens after he dies
+[07:58:55] <HoneyDrops> I think the value of the collective discoveries and the cultural artifacts is the only true value of humanity, as long as those live on in some way, I'll put things in the "win" column.
+[07:59:10] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[07:59:24] <Gladiolus> We managed to not blow ourselves up so far so that's a point.
+[07:59:31] <JustAberrant> most of those discovers are driven by wealth
+[07:59:41] <JustAberrant> looking at the history of china is actually very interesting in that regard
+[07:59:55] <JustAberrant> a _lot_ of stuff showed up in china early on but was never put to serious use
+[08:00:14] <JustAberrant> largely because up until recently china was totally about pigeonholing
+[08:00:33] <HoneyDrops> van Goth would be a good counter example, commercial failure, but amazing art.
+[08:00:35] <JustAberrant> if your parents were farmers you were a farmer and your kid would be a farmer, didn't matter what you did
+[08:00:58] <JustAberrant> so there was no incentive to really innovate
+[08:01:30] <JustAberrant> in our society if you discover something novel, you try to make a fortune with it
+[08:01:46] <JustAberrant> in early chinese society there was no reason to 
+[08:01:57] <HoneyDrops> I would argue there is a larger cultural problem, there is an innate joy of discovery and creation - we just manage to beat it out of our children far too often.
+[08:02:37] <JustAberrant> sure, but things take more than just discovering them, a lot of time there's hard and unpleasant work
+[08:02:39] <Compu> HoneyDrops: i would happily transfer to a robot body if the body was a pony
+[08:03:09] <JustAberrant> also there's no incentive to share or to try to find other uses not of a direct interest to you
+[08:03:14] <JustAberrant> best example: gun powder
+[08:03:22] <HoneyDrops> Work, sure?  But it doesn't have to be unpleasant.
+[08:03:25] <JustAberrant> the Chinese discovered it and did nothing with it
+[08:03:38] <JustAberrant> it made it over to `merica and they went apeshit
+[08:03:49] <JustAberrant> because you could find a way to use it and make a fortune
+[08:04:13] <JustAberrant> and stuff like mining isn't fun, few people are going to go work a mine for the heck of it
+[08:05:02] <JustAberrant> s/`merica/every other society driven by wealth ;p
+[08:05:23] <HoneyDrops> Compu: I'd like a shiny metal body, but quite honestly the physical form is meaningless to me.  I'd probably go with a sphere, as it has the ideal surface area to volume ratio, and allows for sensors to be arranged omnidirectionally.
+[08:06:33] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[08:07:02] <Compu> HoneyDrops: i still wanna be able to have pleasurable things like sex
+[08:07:58] <HoneyDrops> Imagine watching mountains rise up from the sea, only to be ground to dust by the wind and rain, watch the Earth's seas boil away and the rock turn to slag as the sun expands into a rad giant.  Drift along the void between stars, visiting countless worlds... eventually watching the last of the stars go out.  Would be an amazing show.
+[08:08:09] <HoneyDrops> red*
+[08:08:12] <Compu> meh
+[08:08:16] <Compu> i prefer sex
+[08:08:31] <Compu> and god knows i would get all the D as pony
+[08:09:14] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[08:12:06] <HoneyDrops> To each their own, I'd be content to watch the universe tick away eternity, or at least until heat death or proton decay intervenes XD
+[08:13:57] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:14:18] <Compu> HoneyDrops: yeah but what would u do in the meantime?
+[08:14:27] *** Quits: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP) (Ping timeout: 121 seconds)
+[08:16:27] *** Joins: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP)
+[08:16:48] <HoneyDrops> Think mostly, work on mathematics, working out proofs for things, probably developing new branches.  Physics and chemistry still have a ton to work out, would need some interface to manipulate external objects, but plenty of experiments to try to verify theory.
+[08:24:05] <HoneyDrops> Also plenty of art, one could read, write, sing, draw, maybe laser etch images in asteroids :)
+[08:37:50] <AppleDash> Apparently my laptop has a month of uptime
+[08:38:07] <AppleDash> I wonder how long I can keep it up
+[08:38:09] <Compu> huh
+[08:38:17] <Compu> port 4000 is open on my lightify hub
+[08:38:21] <Compu> wonder what thats for
+[08:38:44] <tiwake> http://scribblepwn3.deviantart.com/art/Pone-in-the-shell-579403231
+[08:38:44] <PinkiePieBot> [ DeviantArt Pone in the shell by Scribblepwn3 - Fan Art > Traditional Art > Paintings > Movies & TV - photo uploaded on Monday December 21, 2015 at 04:30:33 PM - 492 views - 108 favs ]
+[08:40:21] <Compu> any ideas?
+[08:40:39] *** Quits: Asoka (Asoka@Pony-ikndpd.net-htp.de) (Ping timeout: 121 seconds)
+[08:44:12] <AppleDash> tiwake: I like it, I've seen another similar image
+[08:44:57] <tiwake> AppleDash: its a guy I play minecraft with... heh... well, more like a moderator of the minecraft server I play on
+[08:45:38] *** Joins: Phase (Phase4@Pony-slr419.internode.on.net)
+[08:45:58] *** Joins: Asoka (Asoka@Pony-3c6ebc.net-htp.de)
+[08:46:04] <JustAberrant> Compu: I would assume zwave/zigbee/one of those?
+[08:46:29] <HoneyDrops> I managed to break a year uptime on my old thinkpad.
+[08:46:36] <Compu> JustAberrant: yeah its a zigbee<->wifi hub thing
+[08:47:08] <Compu> ran a full local portscan and it seems 4000 is the ONLY open port
+[08:47:59] <HoneyDrops> netcat/telnet and see how it responds :3
+[08:48:23] <Compu> will in a sec
+[08:51:30] <CompuDesktop> HoneyDrops: no real response
+[08:51:39] <CompuDesktop> just blank
+[08:51:45] <CompuDesktop> doesnt refuse connection tho
+[09:02:33] *** Joins: Melanosuchus (quassel@Pony-i2n7br.as13285.net)
+[09:07:32] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[09:16:39] <Moonlightning> https://i.imgur.com/cK4Jdgs.png
+[09:17:57] *** Quits: Asoka (Asoka@Pony-3c6ebc.net-htp.de) (Connection closed)
+[09:20:04] *** Joins: Asoka (Asoka@Pony-3c6ebc.net-htp.de)
+[09:21:46] *** Joins: djazz` (djazz@Pony-s73dok.tbcn.telia.com)
+[09:23:32] *** Quits: djazz (djazz@djazz.se) (Ping timeout: 121 seconds)
+[09:23:45] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[09:33:42] *** Joins: Sombra (Iceman@Darkhorse21)
+[09:36:39] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[09:40:22] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:45:52] <CompuDesktop> is there any way i can make time.sleep take in times less than 1 second?
+[09:47:40] *** Quits: djazz` (djazz@Pony-s73dok.tbcn.telia.com) (Ping timeout: 121 seconds)
+[09:50:35] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[09:58:27] *** WuBzYIsSoTired is now known as WuBzY
+[10:05:15] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[10:16:25] *** Quits: Asoka (Asoka@Pony-3c6ebc.net-htp.de) (Ping timeout: 121 seconds)
+[10:27:18] *** Joins: djazz` (djazz@Pony-s73dok.tbcn.telia.com)
+[10:27:38] *** Quits: djazz (djazz@djazz.se) (Ping timeout: 121 seconds)
+[10:32:32] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[11:00:24] *** Eventide|Sleepies is now known as Eventide
+[11:04:45] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[11:10:28] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: Connection closed for inactivity)
+[11:14:10] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[11:26:41] *** Quits: djazz` (djazz@Pony-s73dok.tbcn.telia.com) (Ping timeout: 121 seconds)
+[11:26:44] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[12:23:44] *** Joins: Asoka (Asoka@Pony-s5lu6i.net-htp.de)
+[12:59:07] *** Divide is now known as Divide|TechSupport
+[13:39:32] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[13:55:56] *** Quits: CompuDesktop (compu@snuggly.filly) (Quit: Leaving)
+[14:02:48] *** Joins: CompuDesktop (compu@snuggly.filly)
+[14:05:46] <CompuDesktop> should i upgrade these packages in ubuntu? "grub-common grub-pc grub-pc-bin grub2-common" sudo apt-get upgrade says they have updates available but ubuntu's software updater says everything is up to date
+[14:16:50] <AppleDash> CompuDesktop: 1) Ever considered using a float re: your earlir question
+[14:16:55] <AppleDash> And 2) Don't see why not
+[14:17:43] <CompuDesktop> AppleDash: im worried that updating those will fuck up my computer, why isnt the software updater showing those updates?
+[14:17:45] *** Quits: Asoka (Asoka@Pony-s5lu6i.net-htp.de) (Connection closed)
+[14:17:56] <AppleDash> Because it's broken? I dunno!
+[14:18:08] <CompuDesktop> but ur sure its ok to update them?
+[14:18:50] <CompuDesktop>   Installed: 2.02~beta2-9ubuntu1.6  Candidate: 2.02~beta2-9ubuntu1.7
+[14:19:06] <CompuDesktop> apt-cache policy gives that for grub-common ^
+[14:20:28] <AppleDash> I have never in my life had a system break by updating GRUB
+[14:20:33] <AppleDash> That is all I can say
+[14:20:57] <CompuDesktop> alright i'll do it
+[14:22:40] <CompuDesktop> alright reboot time, brb
+[14:22:47] *** Quits: CompuDesktop (compu@snuggly.filly) (Quit: Leaving)
+[14:25:57] *** Joins: CompuDesktop (compu@snuggly.filly)
+[14:26:07] <CompuDesktop> alright it works fine
+[14:26:30] <CompuDesktop> even rebooted a little quicker
+[14:29:43] <CompuDesktop> AppleDash: thanks
+[14:30:10] *** Quits: Fallfeathers (Fallfeather@Pony-859c69.bigpond.net.au) (Connection closed)
+[14:47:59] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed) (Quit: Be back after I fix my router.)
+[14:49:10] <CompuDesktop> hey AppleDash u know any good icon sets for hexchat? i dont like the user list icons because just colored dots r too vague but i also don want just symbols there
+[15:03:13] *** Joins: Crimson_Tail (Zeta@Pony-pre674.cg80.k4gu.0151.2601.IP)
+[15:39:52] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:40:15] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[15:44:57] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[15:50:14] *** Sour_Sweet|BNC is now known as Sour_Sweet
+[15:52:31] <Divide|TechSupport> Modem plugged halfway into powerbar, which was plugged halfway into extension cord, which was plugged halfway into wall.  And they wonder why connectivity's so wonky...
+[15:57:39] <Sour_Sweet> I encountered a smart spam mail today. Some mail servers accept e-mails for all users on their domain to prevent leaking whether the mailbox actually exists. This e-mail was DKIM signed and mailed from a subdmain like <msgid>.domain.tld. So whenever the spam filter or mail client tries to verify the DKIM signature it reveals that it routes the message to a mailbox rather than throwing it
+[15:57:41] <Sour_Sweet> away.
+[16:08:16] *** Joins: Lorix_ (Lorix_@flutter.shy.yay)
+[16:13:20] <Quindo> huh, interesting
+[16:13:56] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:16:05] <Sour_Sweet> Also: FF will also support webkit prefixes in future versions because browser specific stuff turned out to be a great idea last time ...
+[16:16:37] <Quindo> eeeyup...
+[16:17:57] <HoneyDrops> Only way to make pulling that crap unviable is to make sure no web browser has more than 10-15% of the market.  Sadly FF/webkit/whatever-MS-is-doing is not enough diversity.
+[16:18:47] <HoneyDrops> Same problem we have with CPU architectures, OSes, etc.
+[16:19:01] <Sour_Sweet> Websites I write/design work in any modern browser. I don't see any problem there
+[16:19:58] <Sour_Sweet> The only browser that still cause problems are various /old/ IE versions that nobody should care about
+[16:20:48] <Sour_Sweet> causes*
+[16:24:34] *** Parts: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) ()
+[16:24:47] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:25:02] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[16:37:07] <Quindo> http://prntscr.com/9msr8d  The profiler is going nuts.
+[16:37:35] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[16:42:08] <Divide|TechSupport> Sour_Sweet, you mean you don't support Internet Explorer 4 and Netscape Navigator?
+[16:42:20] <Quindo> XD
+[16:45:31] <Sour_Sweet> Divide|TechSupport: No. I don't even care about 8 anymore :D
+[16:45:36] <Quindo> So, good news is my desktop is able to get through the test load, however my phone is still crashing when it attempts to do it.
+[16:46:09] <Sour_Sweet> People won't be able to access secure webites with it by the end of next year anyway.
+[16:46:52] * Quindo loves seeing it suddenly go from 60fps to 0.00001 fps...
+[17:05:58] *** Quits: WuBzY (androirc@Pony-4s7v1e.rev.dnainternet.fi) (Quit: AndroIRC - Android IRC Client ( http://www.androirc.com ))
+[17:06:16] *** Joins: WuBzY (wubzy@Pony-h38qgl.dhcp.inet.fi)
+[17:10:08] <Divide|TechSupport> Hum.  I love when older devices get confused at mixed-mode encryption.  "OMG two choices do I want WPA or WPA2 I KNOW I'LL PICK BOTH OF THEM AT ONCE"
+[17:15:16] <CompuDesktop> o3o the best way to access the internet http://screencloud.net/v/47k0
+[17:15:20] <PinkiePieBot> [ Screenshot at 11:14:54 | ScreenCloud ]
+[17:16:44] <mniip> is that
+[17:16:45] <mniip> IE4
+[17:17:00] <mniip> also jeez
+[17:17:08] <mniip> google does have a good backward compat
+[17:21:31] <Sour_Sweet> But only for certain services
+[17:21:35] <Quindo> Why not Lynx?
+[17:23:47] *** Joins: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl)
+[17:23:52] *** Double is now known as Pony_57557
+[17:24:32] *** Pony_57557 is now known as Double
+[17:33:16] *** Quits: WuBzY (wubzy@Pony-h38qgl.dhcp.inet.fi) (Ping timeout: 121 seconds)
+[17:34:03] <Obaskyr> Any of you folks know the best way to repair a 0x000007B? I've tried intalling C++ visual and all that crap, even replaced the .dll's but nothing. Help me #tech(support)ponies, you're (one of) my only hope.
+[17:40:06] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[17:48:44] *** Quits: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl) (Ping timeout: 121 seconds)
+[17:49:07] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:50:31] <Divide|TechSupport> Hmmm.
+[17:50:57] <Divide|TechSupport> What program is experiencing that error?
+[17:51:32] *** Joins: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl)
+[17:51:36] *** Double is now known as Pony_48814
+[17:51:49] <Divide|TechSupport> Obaskyr: I suggest running 'sfc /scannow' in an administrative command prompt.
+[17:53:06] <Obaskyr> Quite a few programs, actually. Arma 3 notably, and a couple of other random programs
+[17:53:13] <Obaskyr> running the scan now
+[17:54:12] <Divide|TechSupport> Did you uninstall the C++ kit before reinstalling it?
+[17:54:29] <Obaskyr> "Windows Resource protection could not perform the requested operation"
+[17:54:51] <Obaskyr> no, it didnt install, said I already had a newer version...
+[17:55:03] <Divide|TechSupport> Obaskyr: Oh, ew... are you in safemode?
+[17:55:22] <Divide|TechSupport> And try uninstalling the C++ package, /then/ reinstalling the distribution.
+[17:55:27] <Obaskyr> that's from the command prompt on my recovery media, so I dunno
+[17:55:33] <Divide|TechSupport> Oh, that explains why.
+[17:55:47] <Obaskyr> It's the Administrator console doe
+[17:55:53] *** Joins: WuBzY (wubzy@Pony-h38qgl.dhcp.inet.fi)
+[17:56:09] <Divide|TechSupport> Yeah, but if you're there in your recovery media, then that explains why sfc fails.  You'll want to start Windows normally or in safe mode, not boot from that.
+[17:56:25] <Divide|TechSupport> /Then/ run sfc /scannow in an administrative command prompt.
+[17:56:49] <Obaskyr> I know I can just reset my PC, but I've dozens of programs that I really dont want to have to reinstall...
+[17:59:32] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[18:00:25] <Obaskyr> running the scan now
+[18:03:39] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[18:06:14] <Obaskyr> Divide|TechSupport: It says it found corrupt files and repaired them.
+[18:06:15] <Obaskyr> :D
+[18:07:42] *** Pony_48814 is now known as Double
+[18:08:40] <Obaskyr> Still gives the error...
+[18:12:35] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[18:16:23] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[18:18:02] <Divide|TechSupport> Hrmmf.
+[18:18:20] <Divide|TechSupport> Have you uninstalled C++, then?
+[18:19:04] <Divide|TechSupport> Well, the Visual C++ redistributable, that is.  Also, fnargh but I hate intermittent issues, they're a real pain to fix for good.
+[18:19:58] <Obaskyr> WHere can it be uninstalled?
+[18:20:37] <Divide|TechSupport> You on Windows 8 or 10?
+[18:20:50] <Obaskyr> 10 Pro
+[18:22:43] <Divide|TechSupport> Should just be in Programs and Features.
+[18:22:53] <Divide|TechSupport> So Windows-X for the Power User menu, and find it there.
+[18:23:05] <Divide|TechSupport> Now, lengthy process, this - different games require different redists.
+[18:26:33] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[18:27:27] <Obaskyr> Any way to get to it without a winkey? 60% keyboard :P
+[18:27:53] <Obaskyr> oh nevermind
+[18:28:10] <Obaskyr> Okay yeah there's a lot
+[18:29:30] <Divide|TechSupport> Yeah, unfortunately so...
+[18:29:49] <Divide|TechSupport> Pretty much every program uses its own version of the Redist.  You might have to check on ARMA's site to see which this one uses.
+[18:37:30] <CompuDesktop> mniip: actually it was ie5
+[18:37:43] <CompuDesktop> mniip: by the way, want some windows 95 midi files?
+[18:37:52] <mniip> hmm?
+[18:38:08] <CompuDesktop> everyone enjoys CANYON.MID
+[18:39:42] <CompuDesktop> mniip: https://www.dropbox.com/sh/z3vc5diakml8jba/AADBYlGDx1OC8GFVoSAhEO2fa?dl=0
+[18:39:46] <PinkiePieBot> [ Dropbox - 95mid ]
+[18:40:24] <mniip> let's see
+[18:40:45] <CompuDesktop> .rmi is just a special kind of midi file
+[18:40:58] <CompuDesktop> if ur vlc will play normal midi files it'll do .rmi ones too
+[18:41:47] <mniip> I don't use VLC
+[18:42:18] <CompuDesktop> oh
+[18:42:22] <CompuDesktop> what do u use?
+[18:43:21] <mniip> timidity
+[18:43:47] <Compu> mniip: well that may or may not work with .rmi files, i have no idea
+[18:44:12] <mniip> Beethoven's Fur Elise.rmi: RIFF (little-endian) data, MIDI
+[18:44:13] <mniip> shrug
+[18:44:24] <Compu> ?
+[18:44:31] <mniip> works fine
+[18:44:34] <Compu> k
+[18:44:36] <mniip> I don't see why wouldn't it
+[18:44:56] <Compu> well canyon.mid sounds cool, give it a listen
+[18:45:21] <Compu> how do u even use timidity?
+[18:45:30] <Compu> i thought it was only a backend thing
+[18:46:03] <mniip> it also features a front-end...
+[18:47:17] <Compu> whats the front end look like?
+[18:53:12] <Lapsus> looks like I need to get my hands on like, $1k
+[18:53:44] <johnsey> is that the price for the rift?
+[18:53:53] <Lapsus> fortunately, reviews for the rift and vive will be out before I can afford to go vr :v
+[18:54:00] <Lapsus> $599 usd
+[18:54:11] <johnsey> whaaat 699 EUR here
+[18:54:35] <johnsey> ah
+[18:54:38] *** Joins: Finnfinn (Finnfinn@finn.isher)
+[18:54:41] <johnsey> customs i think
+[18:54:42] <Lapsus> the canadian dollar is doing poorly and customs fees are going to be a bitch, so it'll be expensive here
+[18:55:22] <johnsey> 42 EUR shipping? are they nuts?
+[18:56:31] <Lapsus> oh I forgot about shipping
+[18:56:37] <Lapsus> $1200cad then
+[18:56:37] <Lapsus> :p
+[18:57:24] <Lapsus> 844cad for the rift, plus 110cad customs fees
+[18:57:28] <Lapsus> plus shipping
+[18:57:49] <Lapsus> plus whatever "fuck you" fees get added on
+[18:58:08] <johnsey> the "it's cool and everybody wants one" tax
+[18:58:35] <johnsey> inb4 they announce a limited supply to drive sales up even more
+[18:59:19] <Lapsus> IIRC they're not planning on that, fortunately
+[19:00:01] <Lapsus> they've apparently been building stock in all the countries they're selling in, and once they run out of stock, later preorders will ship later
+[19:02:01] <Lapsus> I still love that the random dude with the "599 USD" shitpost totally called it :v
+[19:02:58] <johnsey> I did expect 500+
+[19:04:03] <johnsey> and usually, I'm used to getting the same pricetag in EUR as in USD, fuck all conversion rates, but they made it even more expensive than that here
+[19:10:44] <Divide|TechSupport> The artist 'Virt' did a remake of Canyon.mid.  It's great stuff.
+[19:11:08] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[19:14:35] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[19:37:35] *** Quits: CompuDesktop (compu@snuggly.filly) (A TLS packet with unexpected length was received.)
+[19:40:16] *** Joins: CompuDesktop (compu@snuggly.filly)
+[19:58:16] <Quindo> Has anyone set up Insights 2.0 domain for facebook?
+[19:58:39] <Quindo> I have a question about the reporting panel.
+[19:59:22] <Quindo> There does not seem to be a way for me to export stats from it, but I do not know if that is only because currently there are no stats.
+[20:14:41] *** Quits: WuBzY (wubzy@Pony-h38qgl.dhcp.inet.fi) (A TLS packet with unexpected length was received.)
+[20:20:24] *** Quits: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP) (Ping timeout: 121 seconds)
+[20:22:24] *** Joins: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP)
+[20:31:21] <HoneyDrops> http://arstechnica.com/tech-policy/2016/01/the-big-bang-theory-sued-for-using-soft-kitty-lyrics-in-hit-tv-show/  I'm torn, on one hoof, I am always happy to see the media on the receiving end of this stuff.  On the other, a poem from the 1930's really should have been public domain already.
+[20:31:22] <PinkiePieBot> [ The Big Bang Theory sued for using “soft kitty” lyrics in hit TV show | Ars Technica ]
+[20:40:29] *** Joins: WuBzY (androirc@Pony-4s7v1e.rev.dnainternet.fi)
+[20:50:18] <Moonlightning> Compu: some stuff has ads AND costs money. See: cable TV
+[20:53:23] <Moonlightning> Anypony remember that time like an American official or something, got detained at an American port of entry until they handed over their passwords?
+[20:53:38] <Moonlightning> I can't find the news article on it now
+[21:01:24] <HoneyDrops> Cable TV is truly a horrible deal.
+[21:01:26] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[21:01:52] <Obaskyr> Mate who even watches TV anymore
+[21:02:29] * HoneyDrops actually does leave it on in the background sometimes.  I watch a few shows, but I'll just torrent them if timing doesn't line up.
+[21:02:56] <Obaskyr> It's streams and torrents for me.
+[21:06:02] * Moonlightning went legal several years back
+[21:06:43] <Moonlightning> Netflix never has anything I want to watch, but if I'm bored enough to get on it, I can usually convince myself to go back to my project stack instead
+[21:08:25] <HoneyDrops> I don't watch enough to justify netflix, I would consider it if the service was DRM-less and made it easy to make local copies for offline viewing.
+[21:13:08] <HoneyDrops> What I would like is the ability to purchase the perpetual right to view a work on whatever device(s) I want, at whatever time I choose.  Sadly the closest is buying a DVD.  I don't way to pay a subscription, I want a one time fee.  I pay $X and I am forever able to watch $Y, and I don't have to worry about servers somewhere going away, or a company no longer existing or offering a
+[21:13:10] <HoneyDrops> "service" or a specific device dying and I am no longer able to.
+[21:36:56] <Kinsley> HoneyDrops: I have a Blu-ray drive in my tower for that express purpose.
+[21:51:34] * JustAberrant prefers having a local copy as well, but netflix is cheap enough and has enough content to be worth it for me
+[21:51:49] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[21:52:38] <JustAberrant> anything I really like I'll usually go out and.. acquire.. a local copy, but it does fill a need for generic background content
+[21:53:46] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[21:54:37] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:05:35] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[22:07:04] *** Quits: Phase (Phase4@Pony-slr419.internode.on.net) (Ping timeout: 121 seconds)
+[22:21:54] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[22:24:25] *** Joins: Crimson_Tail (Zeta@Pony-mfh7oq.md.comcast.net)
+[22:38:27] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Quit: Leaving.)
+[22:49:00] *** Joins: AndroUser2 (androirc@Pony-h38qgl.dhcp.inet.fi)
+[22:51:23] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[22:52:01] *** Quits: AndroUser2 (androirc@Pony-h38qgl.dhcp.inet.fi) (Connection closed)
+[22:52:39] *** Joins: AndroUser2 (androirc@Pony-s4orkj.rev.dnainternet.fi)
+[22:52:46] *** Quits: WuBzY (androirc@Pony-4s7v1e.rev.dnainternet.fi) (Ping timeout: 121 seconds)
+[22:52:56] *** AndroUser2 is now known as WuBzY
+[22:54:32] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[22:55:49] *** Joins: Double2 (double@Pony-40o5q9.adsl-surfen.hetnet.nl)
+[22:56:45] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:58:40] *** Quits: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl) (Ping timeout: 121 seconds)
+[23:01:12] <Moonlightning> …I want data pins on “dangerous” ports (Thunderbolt… >.> ) to be physically disconnected by default.
+[23:01:18] <Moonlightning> So you could charge stuff, but…
+[23:01:27] <Moonlightning> > Authenticate to enable communication with this device.
+[23:05:56] <Lapsus> so build a thunderbolt condom
+[23:05:57] <HoneyDrops> Make a prophylactic adapter?  It just passes though the power pins.
+[23:06:02] <Lapsus> usb condoms exist
+[23:06:06] <Lapsus> how hard can it be
+[23:07:08] <ShivalWolf> you cant just pass through power pins. because the data pins at differnt resistance levels dermin the max current
+[23:07:40] <ShivalWolf> if you dont properly handle the data pins you get 100ma
+[23:08:08] <HoneyDrops> So add some passives?
+[23:08:26] <DJ-C0L7[CSS]> some chargers short the data pins together
+[23:08:39] <ShivalWolf> which is also a terrible idea
+[23:09:03] <DJ-C0L7[CSS]> the best charger i have outputs ~4amps and has i believe a 30k resistor between the data pins
+[23:09:07] <ShivalWolf> some usb controllers spit the dummy if you just short them
+[23:09:32] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[23:09:50] <ShivalWolf> theres aa number of pages that give you the values needed depending what your aiming for
+[23:10:23] <ShivalWolf> though none of them help if somone just wants to be destructive and uses thd usb killer 
+[23:11:28] <HoneyDrops> I think Moonlightning is more concerned with a charger trying to pull data or exploit the devices rather than just overcurrent it.
+[23:16:37] *** Quits: Double2 (double@Pony-40o5q9.adsl-surfen.hetnet.nl) (Quit: Nettalk6 - www.ntalk.de)
+[23:17:30] <Moonlightning> HoneyDrops: but someone could unplug it :P
+[23:17:53] <Moonlightning> not that I leave my laptop out in public unattended…but it might help if the NSA broke into my house, I guess?
+[23:17:57] <Moonlightning> lessen the attack surface
+[23:19:14] <Quindo> Is there a legal definition of web/data scraping?
+[23:22:22] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[23:22:54] <HoneyDrops> I don't think there is any universally agreed upon definition, much less a statue that defines it.
+[23:24:10] <HoneyDrops> Why?
+[23:26:59] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[23:27:41] <Quindo> Just looking at graph all day today.
+[23:29:07] <Quindo> Our clients want to be able to know how many shares their photos have gotten, but to get that information we would need to query each url of the images seperatly.
+[23:29:23] <HoneyDrops> As long as the script isn't hammering their servers with a inhuman level of requests/traffic, it shouldn't matter.
+[23:29:56] <ShivalWolf> isnt that type of thing tracking urls are for
+[23:31:06] <Quindo> What I am currently planning is that our server will set up a que, and it will process a photo once, then move on to the next, limiting the amount of calls per hour.
+[23:31:51] <Quindo> ShivalWolf That gives you inbound traffic information, it does not give you the number of people that reshare the url inside facebook.
+[23:32:38] <ShivalWolf> wouldnt the referer url update on a reshare?
+[23:33:22] <Quindo> no.  How would it if the url is not being called during the reshare process?
+[23:33:31] *** Joins: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de)
+[23:34:07] <ShivalWolf> hmm yeah i guess it would rely on somoen it wqs shared to clicking it
+[23:34:33] <ShivalWolf> but thats a point to. isnt actuaal views a better stat then shares?
+[23:34:45] <Quindo> Tell that to a marketing department.
+[23:34:53] <ShivalWolf> oh marketing
+[23:35:08] <Quindo> That is a business who think facebook impressions is an important stat.
+[23:35:15] <ShivalWolf> lol
+[23:35:16] <Quindo> want to know what FI is?
+[23:35:51] <Quindo> number of shares * Facebook impression rate(200)
+[23:36:14] <ShivalWolf> yeah i remeber seeing something liek that
+[23:38:15] <ShivalWolf> marketing loves their social media
+[23:39:32] <ShivalWolf> hmmm nomatter what you query woont it only show puhlic shares anyway
+[23:40:35] <Quindo> nope.  It shares 'Only Me' shares
+[23:40:46] <Quindo> You can not view any related detail though
+[23:40:54] <ShivalWolf> ahhh
+[23:41:10] <Quindo> It only gives you "This Url" has number shares.
+[23:41:16] <ShivalWolf> lol
+[23:41:32] <ShivalWolf> probably the beat yohr gojng to get
+[23:41:46] <ShivalWolf> even if iys still a stupid statistix
+[23:41:47] <Quindo> you aslso have the last time facebook crawled the URL.
+[23:42:04] <Quindo> Comment count seems broken atm.
+[23:42:14] * HoneyDrops downloads the image, puts it on imgur and shares that link (direct to the png/jpg only).
+[23:42:28] <ShivalWolf> i used to have a managnent report 
+[23:42:46] <ShivalWolf> 2 of the key metrics could only ever be 100%
+[23:43:10] <Quindo> Yep, HoneyDrops that gets missed.  But it is impossible to gather those.
+[23:43:11] <ShivalWolf> and they refused to listen how and why thr metric was pointless
+[23:43:47] <Quindo> Shound have made it so that metric always reported back random values
+[23:43:56] <ShivalWolf> lol
+[23:44:17] <mniip> moo
+[23:45:21] <Phase> would probably have improved their
+[23:45:29] <Phase> descision making ENTER KEY Y U THERE
+[23:46:18] <mniip> why couldn
+[23:46:18] <mniip> t they place it further from '
+[23:47:02] <Quindo> you could sY THE Sme thing BOUT THE key
+[23:47:15] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[23:47:48] <mniip> well I don't have much issues with that
+[23:48:11] * HoneyDrops has the key left of A mapped to escape.
+[23:49:12] <Quindo> at one point I had mapped " " to " ,(return)".  It through someone for a loop when they used my computer once XD
+[23:49:42] <mniip> wat
+[23:50:14] <Phase> HoneyDrops, caps lock? you can remap modifier keys?
+[23:50:39] <mniip> everything is possible with xkb
+[23:50:41] <HoneyDrops> Phase: it just sends a scancode like anything else.
+[23:50:53] <Phase> neat
+[23:51:15] <Quindo> I hate wireless mice that send the scancode "j"
+[23:52:50] <mniip> http://www.bash.org/?949560
+[23:52:54] <PinkiePieBot> [ QDB: Quote #949560 ]
+[23:52:55] <HoneyDrops> Phase: my ~/.Xmodmap http://pastie.org/10674798
+[23:52:56] <PinkiePieBot> [ #10674798 - Pastie ]
+[23:53:19] <Phase> i might have to do that
+[23:53:26] <Phase> caps lock is so rarely useful
+[23:54:12] <Quindo> yeah... Barcodes and magstrip readers are just fancy keyboards...
+[23:54:30] <Phase> they're also very bad at it
+[23:54:41] <Phase> stupid barcode reader what sends /r/n and screws over firefox
+[23:54:54] <Phase> configurable at least
+[23:55:46] <HoneyDrops> You can also add keycode 94 = Caps_Lock
+[23:55:47] <HoneyDrops> add lock = Caps_Lock
+[23:55:47] *** WuBzY is now known as WuBzYIsSleepin
+[23:55:58] <HoneyDrops> to map the escape key to caps lock
+[23:56:51] <Phase> not sure what i'd use it for but now i know you can remap it
+[23:57:07] <HoneyDrops> (you might have to change the numbers, but pretty sure those are the same for all of my qwerty keyboards, xev will let you know what number to use)
+[23:57:44] <HoneyDrops> The print screen -> menu is because of the strange choice in the X230 keyboard layout.
+[23:58:48] <Phase> so i have a second "| \" key for silly reasons
+[23:58:51] <Phase> NEVER used it
+[23:58:59] *** Quits: Melanosuchus (quassel@Pony-i2n7br.as13285.net) (Connection closed)
+[23:59:03] <Phase> apparently it's actually a "<>" key
+[23:59:30] <Quindo> hehe, reminds me of the person who was playing with a zqsd layout in counter strike...
+[23:59:31] <Phase> i'd make it a menu key but that's something i need on windows more than linux
+[23:59:49] <Phase> Quindo, that's... a very specific layout
+[23:59:57] <mniip> Quindo, the controls have got to be configurable

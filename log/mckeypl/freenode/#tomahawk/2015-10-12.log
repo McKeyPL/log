@@ -1,0 +1,68 @@
+[00:24:24] *** Quits: soee (~soee@agva215.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[00:26:06] *** Joins: emilsedgh_ (~emilsedgh@kde/developer/esedgh)
+[00:26:28] <emilsedgh_> Arent there any Debian packages available for Tomahawk?
+[00:30:43] <jherskowitz> emilsedgh_: unfortunately no one has stepped up to help package for debian https://tomahawk.uservoice.com/forums/224204-feature-requests/suggestions/6705009-package-tomahawk-for-debian
+[00:30:44] <tomabee_> [ package Tomahawk for Debian – Feedback Loop | tomahawk.uservoice.com | https://s3.amazonaws.com/uploads.uservoice.com/logo/design_setting/206930/original/tomahawk-logo-white.png?1411147227 ]
+[00:31:14] <emilsedgh_> ah, i see
+[00:32:10] <emilsedgh_> there are so many dependencies.
+[00:32:23] <emilsedgh_> and I have phonon-qt4 installed from packages, phonon-qt5 installed from sources
+[00:32:33] <emilsedgh_> but its not finding it
+[00:33:13] <emilsedgh_> and it would've been nice if the cmake log said what part of boost it requires.
+[00:39:44] <jherskowitz> emilsedgh_: this may be out of date, but… http://wiki.tomahawk-player.org/index.php/Building_on_Debian
+[00:39:45] <tomabee_> [ Building on Debian | wiki.tomahawk-player.org |  ]
+[00:43:25] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[00:46:14] <emilsedgh_> yeah i know how to build it, its just that the number of requirements has grown
+[01:18:41] <liori> emilsedgh_: ~3 months ago i managed to rebuild ubuntu packages on sid using not much more than `apt-get build-dep` and `apt-get source -b`, wasn't that difficult… except for few trivial problems with ubuntu packaging
+[01:19:10] <emilsedgh_> you are absolutely right.
+[01:19:51] <emilsedgh_> most deps are already on debian
+[01:20:58] <liori> stuff like german weekday acronym in debian/changelog breaking dch
+[01:21:26] <liori> (that one was fun. not easy to spot Thr instead of Thu (-:)
+[01:24:01] <liori> dockerfile that builds it: https://gist.github.com/liori/f1ead43276e898e8aa04; a bit messy and might be a little out of date
+[01:24:03] <tomabee_> [ Page not found · GitHub | gist.github.com |  ]
+[01:24:41] <liori> (you'll probably want to substitute the base image with some generic debian one)
+[01:29:09] *** Quits: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de) (Quit: Leaving.)
+[01:43:57] <muesli> emilsedgh_: actually our deps haven't changed in recent months
+[01:43:59] *** Quits: pprkut (hwiesinger@slackbuilds.org) (Ping timeout: 240 seconds)
+[01:44:55] *** Joins: pprkut (hwiesinger@slackbuilds.org)
+[03:19:56] <domme> emilsedgh_: also if you are building with qt5 use master
+[03:20:14] <domme> no need for phonon-qt5 whatnot
+[05:32:12] *** Joins: mgue2 (~mgue@f048094019.adsl.alicedsl.de)
+[05:35:12] *** Quits: mgue1 (~mgue@f048057136.adsl.alicedsl.de) (Ping timeout: 255 seconds)
+[09:18:29] *** Joins: ssam2 (~ssam2@212.91.253.218)
+[09:41:41] *** mgue2 is now known as mgue
+[10:13:29] *** Joins: svetter_ (~svetter@2001:8e0:2003:fe00:e9ed:cc48:15f5:582b)
+[11:45:03] *** Parts: svetter_ (~svetter@2001:8e0:2003:fe00:e9ed:cc48:15f5:582b) ("Leaving...")
+[11:57:29] *** Joins: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de)
+[13:32:21] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[14:01:56] *** Quits: bluu (~pi@cpc69721-haye18-2-0-cust154.17-4.cable.virginm.net) (Remote host closed the connection)
+[15:01:36] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[15:17:39] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Quit: alsuren)
+[15:54:58] *** Joins: arkhi (~fabien@116.233.59.150)
+[15:55:55] *** Quits: arkhi (~fabien@116.233.59.150) (Client Quit)
+[15:56:10] *** Joins: arkhi (~fabien@116.233.59.150)
+[16:33:09] *** Quits: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de) (Quit: Leaving.)
+[17:30:37] *** Joins: justin_time (~stefan@2a02:908:f35d:4b00:9999:9d3d:fc9c:494b)
+[17:31:17] <justin_time> muesli: Hey, do you remember the "master plan" for the debian packages?
+[17:32:13] <justin_time> It's done! Crash reporter support for the new qt5 builds!
+[17:32:22] <justin_time> https://launchpadlibrarian.net/221012295/buildlog_ubuntu-wily-amd64.tomahawk-player_0.8.99-0~wily1~ppa3_BUILDING.txt.gz
+[17:32:54] <justin_time> (Where is only one problem� how to upload the symbols to your server�)
+[17:59:58] *** Quits: arkhi (~fabien@116.233.59.150) (Quit: Leaving.)
+[18:10:18] *** Joins: alsuren (~alsuren@host217-42-199-38.range217-42.btcentralplus.com)
+[18:22:37] *** Quits: ssam2 (~ssam2@212.91.253.218) (Quit: Leaving)
+[18:29:55] *** Joins: modeno1 (c1882185@gateway/web/freenode/ip.193.136.33.133)
+[18:49:09] <modeno1> is scrollback down for everyone?
+[18:51:55] <muesli> justin_time: woohoo
+[18:56:55] <jherskowitz> modeno1: yeah, looks like it http://scrollback.io/
+[18:57:56] <tomabee_> [ 504 Gateway Time-out | scrollback.io |  ]
+[19:03:13] <justin_time> muesli: is there a possibility to test the crash reporter? (to provoke a crash)
+[19:05:17] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[19:05:58] <justin_time> domme: is there a possibility to modify the crashreporter to send the symbols (tomahawk.sym) within the crash-report? (You know, it's impossible to upload the symbols while building the package)
+[19:40:44] *** Quits: alsuren (~alsuren@host217-42-199-38.range217-42.btcentralplus.com) (Quit: alsuren)
+[19:56:53] *** Quits: justin_time (~stefan@2a02:908:f35d:4b00:9999:9d3d:fc9c:494b) (Ping timeout: 252 seconds)
+[19:57:39] *** Quits: modeno1 (c1882185@gateway/web/freenode/ip.193.136.33.133) (Ping timeout: 246 seconds)
+[21:18:29] *** Joins: justin_time (~stefan@2a02:908:f35d:4b00:9999:9d3d:fc9c:494b)
+[22:03:44] *** Joins: alsuren (~alsuren@host217-42-199-38.range217-42.btcentralplus.com)
+[22:04:51] *** Quits: justin_time (~stefan@2a02:908:f35d:4b00:9999:9d3d:fc9c:494b) (Quit: Verlassend)
+[22:09:39] *** Quits: alsuren (~alsuren@host217-42-199-38.range217-42.btcentralplus.com) (Quit: alsuren)
+[23:10:40] <muesli> in case of fire: https://github.com/qw3rtman/git-fire
+[23:10:46] <tomabee_> [ qw3rtman/git-fire · GitHub | github.com | https://avatars2.githubusercontent.com/u/1139621?v=3&s=400 ]

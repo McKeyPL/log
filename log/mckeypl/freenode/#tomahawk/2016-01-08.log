@@ -1,0 +1,505 @@
+[00:01:56] <TheOneRing> dommex:  3 [0]: QMetaObject::invokeMethod: No such method TomahawkApp::onWsError(lastfm::ws::Error)
+[00:02:15] <dommex> TheOneRing: great :) 
+[00:02:22] <dommex> i didnt change anything about that recently
+[00:02:28] <TheOneRing> ^^
+[00:02:30] <dommex> TheOneRing: why do you tell me? :P
+[00:02:46] <TheOneRing> because your the only one responding?
+[00:02:52] <dommex> lol
+[00:02:58] <dommex> TheOneRing: file a bug and i'll look into it soonish
+[00:03:00] * theli_ua just merged master, got tidal broken
+[00:03:14] <dommex> theli_ua: likely
+[00:03:22] <theli_ua> Q.Q
+[00:03:38] <dommex> what is broken? just streaming?
+[00:03:40] <theli_ua> gmusic collection appeared though
+[00:03:51] <theli_ua> dommex: I'm looking into it, not resolving
+[00:04:13] <dommex> you know --show-inspector=tidal right?
+[00:04:15] <theli_ua> also, gmusic not streaming
+[00:04:18] <dommex> and console.log *g*
+[00:05:22] <theli_ua> also multiple undefined error logs from all the places (multiple resolvers)
+[00:05:28] <theli_ua> why did I do this >_<
+[00:05:32] <theli_ua> amazon still works though
+[00:06:28] <theli_ua> dommex: I do know we have inspector
+[00:06:55] <dommex> yeah, i need to fix ... things
+[00:09:28] <theli_ua> undefined when evaluating Tomahawk.reportCapabilities(TomahawkResolverCapability.UrlLookup)
+[00:10:14] <theli_ua> dunno why gmusic stopped working
+[00:14:56] <theli_ua> MrMaffen: wouldn't that line make tidal broken on android as well? https://github.com/tomahawk-player/tomahawk-resolvers/blob/master/tidal/content/contents/code/tidal.js#L92
+[00:15:12] <theli_ua> I dont think TomahawkResolverCapability.UrlLookup is defined anywhere now
+[00:37:31] <dommex> theli_ua: commented on your bug report
+[00:37:36] <dommex> theli_ua: it's not a thing anymore
+[00:37:47] <theli_ua> yeah, i saw it
+[00:38:01] <theli_ua> and I have it in my other resolvers :(
+[00:38:08] <theli_ua> like, vk.com
+[00:41:25] <dommex> maaaaaaaaaaaybe .... i just planned to implement it -_-
+[00:42:31] <dommex> i never used it, so that might explain why i forgot about it
+[00:47:59] <theli_ua> oh
+[00:48:28] <theli_ua> so, tomahawk desktop doesn't support dropping track/playlist/album/artist links?
+[00:48:50] <dommex> atm not, no -_-
+[00:48:51] <dommex> sorry :(
+[00:49:03] <dommex> but ... it's rather easy to add
+[00:49:21] <dommex> either i can guide you through implementing it ... or can try to do it early next week
+[00:50:47] <theli_ua> oh I'm not in a rush, I might poke it later 
+[00:51:47] <dommex> at least i'm optimistic that i will actually get to writing code soon again ... :)
+[00:52:06] <theli_ua> :)
+[00:52:07] <dommex> not like in the last months when i always had to do shittiest deployment tasks :P
+[01:02:53] *** Joins: github-tomahawk (~github-to@192.30.252.42)
+[01:02:53] <github-tomahawk> [13tomahawk] 15dschmidt pushed 10 new commits to 06master: 02http://git.io/vuXlU
+[01:02:53] <github-tomahawk> 13tomahawk/06master 14e746b4c 15Hannah von Reth: Remove dead code
+[01:02:53] <github-tomahawk> 13tomahawk/06master 14c577073 15Hannah von Reth: Hacked together an album art preview for the thumb bar and alt+tab
+[01:02:53] <github-tomahawk> 13tomahawk/06master 14f3021e4 15Hannah von Reth: Change preview look and update less often.
+[01:02:53] *** Parts: github-tomahawk (~github-to@192.30.252.42) ()
+[01:16:51] *** Quits: mehdix (~mehdix@x590d609e.dyn.telefonica.de) (Ping timeout: 260 seconds)
+[02:05:19] *** Parts: upprel1 (guest-uppr@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[04:31:55] *** Quits: Karbowiak (~Karbowiak@ip908.alb335.cust.comxnet.dk) (Ping timeout: 260 seconds)
+[05:19:40] *** Joins: mgue (~mgue@x5ce1fac1.dyn.telefonica.de)
+[05:22:39] *** Quits: mgue2 (~mgue@f049025223.adsl.alicedsl.de) (Ping timeout: 245 seconds)
+[05:29:15] *** Joins: Karbowiak (~Karbowiak@ip908.alb335.cust.comxnet.dk)
+[05:39:37] *** Quits: jturney (~jon@host217-43-11-225.range217-43.btcentralplus.com) (Read error: Connection reset by peer)
+[07:30:28] *** Joins: soee (~soee@afoi74.neoplus.adsl.tpnet.pl)
+[07:40:30] *** Quits: soee (~soee@afoi74.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[07:41:16] *** Joins: soee (~soee@afoi74.neoplus.adsl.tpnet.pl)
+[09:23:55] *** Joins: soee_ (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[09:25:26] *** Quits: soee (~soee@afoi74.neoplus.adsl.tpnet.pl) (Ping timeout: 240 seconds)
+[10:39:40] *** Quits: soee_ (~soee@aguj83.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[10:40:06] *** Joins: soee (~soee@31.63.137.83)
+[11:05:01] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[12:19:15] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[12:24:29] *** Quits: mgue (~mgue@x5ce1fac1.dyn.telefonica.de) (Quit: WeeChat 1.2)
+[13:23:18] *** Joins: mgue (~mgue@x5ce1fac1.dyn.telefonica.de)
+[13:46:46] <jherskowitz> dommex: theli_ua weird… latest nightly + latest gmusic doesn’t stream on this laptop (but does on the other one I was using yesterday)
+[13:47:30] <dommex> doesnt really make sense.. i need to stuff it all into 09 synchrotron
+[13:47:54] <jherskowitz> dommex: also latest tomahawk nightly failed to send crash report
+[13:48:46] <dommex> jherskowitz: when?
+[13:48:51] <jherskowitz> just now
+[13:49:05] <dommex> that is ... weird
+[13:49:08] <dommex> hold on
+[13:49:56] <dommex> jherskowitz: cant confirm :\
+[13:50:46] <dommex> sec
+[13:50:47] <jherskowitz> hmm… sending log
+[13:50:48] <jherskowitz> bbiab
+[13:57:07] *** Joins: knicklux (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3)
+[13:57:30] <dommex> jherskowitz: possibly network flakiness? or not really the latest nightly?
+[13:57:40] <dommex> started the crash reporter from the build dir and it worked just fine 
+[14:19:01] <jherskowitz> dommex: certainly possible.  Will try again in a bit. 
+[14:19:56] <dommex> jherskowitz: file me a ticket and i'll implement a resend button when i find the time
+[14:46:31] *** Joins: jturney (~jon@host217-43-11-225.range217-43.btcentralplus.com)
+[14:50:36] *** Quits: soee (~soee@31.63.137.83) (Quit: Konversation terminated!)
+[14:51:53] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[14:54:16] *** Joins: github-tomahawk (~github-to@192.30.252.42)
+[14:54:17] <github-tomahawk> [13libcrashreporter-qt] 15dschmidt pushed 1 new commit to 06master: 02http://git.io/vuDo1
+[14:54:17] <github-tomahawk> 13libcrashreporter-qt/06master 147358619 15Dominik Schmidt: Streamline comment post variable with socorro and name it Comments
+[14:54:17] *** Parts: github-tomahawk (~github-to@192.30.252.42) ()
+[15:17:31] <jherskowitz> dommex: theli_ua: so I’m running the same nightly + same resolvers on two different MacBooks (both running 10.11.2). gmusic streams on the Macbook Pro but fails on Macbook Air.  How is that possible?
+[15:18:20] <dommex> jherskowitz: dunno. are you sure you got it from current tomahawk-resolvers master both times?
+[15:18:32] <dommex> jherskowitz: or was it once installed via synchrotron maybe?
+[15:18:38] <dommex> dunno if we have it there
+[15:18:42] <jherskowitz> no, reinstalled both from master
+[15:18:46] <dommex> mhmhhh :\
+[15:18:59] <jherskowitz> unless I’ve got it installed multiple times maybe
+[15:20:30] <dommex> jherskowitz: yeah, hard to tell from afar.. 
+[15:20:32] <jherskowitz> huh… the gmusic on the Pro (that works) is 0.6.3
+[15:20:42] <jherskowitz> the one that doesn’t work (Air) is 0.6.4
+[15:20:56] <dommex> that's fishy to say the least
+[15:21:05] <jherskowitz> yeah
+[15:21:09] <dommex> i mean if they were installed from the same source they should at least be the same version
+[15:21:30] <dommex> wat
+[15:21:35] <dommex> in master it's 0.6.3
+[15:21:45] <dommex> no clue where that 0.6.4 is from
+[15:22:20] <jherskowitz> the one I just reinstalled from master is (now) 0.6.4
+[15:22:32] <dommex> ah nope
+[15:22:38] <dommex> sorry, my master was outdated
+[15:22:44] <dommex> interesting
+[15:22:50] <jherskowitz> and that doesn’t work
+[15:22:51] <jherskowitz> now
+[15:23:02] <jherskowitz> so something broke between 0.6.3 and 0.6.4
+[15:23:04] <dommex> that would also explain why amazon branch worked and master did not
+[15:23:09] <jherskowitz> right
+[15:23:12] <dommex> MrMaffen must haven broken it in the meantime :P
+[15:23:23] <dommex> jherskowitz: okay, i will look into this
+[15:23:25] <jherskowitz> glad I figured it out though… was driving me crazy
+[15:24:25] <dommex> jherskowitz: yeah thanks
+[15:24:50] <dommex> jherskowitz: what's broken exactly? just the streaming?
+[15:26:00] <jherskowitz> dommex: y
+[15:27:46] <jherskowitz> yeah, went back to 0.6.3 and works again
+[15:28:05] <dommex> jherskowitz: cant be bad
+[15:28:08] <dommex> there arent much changes
+[15:28:22] <dommex> *many even
+[15:28:38] *** Quits: jturney (~jon@host217-43-11-225.range217-43.btcentralplus.com) (Ping timeout: 255 seconds)
+[15:41:02] <dommex> MrMaffen: https://github.com/tomahawk-player/tomahawk-resolvers/commit/d40f6315b30d9622a042c936dde56f38d2de5fa9#diff-d25c3861df4af42178170b72afdc9d00L670
+[15:42:32] <dommex> MrMaffen: http://cdn.meme.am/instances2/500x/3716644.jpg
+[15:47:15] <dommex> jherskowitz: btw streaming is only broken in collection
+[15:47:20] <dommex> jherskowitz: and.. resolving is broken :-D
+[15:49:02] *** Joins: github-tomahawk (~github-to@192.30.252.42)
+[15:49:02] <github-tomahawk> [13tomahawk-resolvers] 15dschmidt pushed 3 new commits to 06master: 02http://git.io/vuDN3
+[15:49:02] <github-tomahawk> 13tomahawk-resolvers/06master 14b22aedb 15Dominik Schmidt: GMusic: Fix resolving
+[15:49:02] <github-tomahawk> 13tomahawk-resolvers/06master 14d3c1017 15Dominik Schmidt: GMusic: Fix streaming from collection
+[15:49:02] <github-tomahawk> 13tomahawk-resolvers/06master 14db47c5f 15Dominik Schmidt: GMusic: Bump version to 0.6.5
+[15:49:02] *** Parts: github-tomahawk (~github-to@192.30.252.42) ()
+[15:49:05] <dommex> jherskowitz: MrMaffen: ^ there
+[15:51:58] *** Joins: jturney (~jon@host86-141-131-231.range86-141.btcentralplus.com)
+[15:56:16] <dommex> MrMaffen: c.f. https://github.com/tomahawk-player/tomahawk/blob/master/data/js/tomahawk.js#L1796
+[16:17:37] <jherskowitz> dommex: theli_ua ok, I have a new one for you
+[16:17:49] <jherskowitz> Amazon locker tracks work - Prime Tracks resolve but don’t play
+[16:26:56] <dommex> Ok
+[16:27:08] <theli_ua> jherskowitz: gmusic doesn't work for me as well
+[16:27:20] <jherskowitz> theli_ua: pull
+[16:27:21] <dommex> theli_ua: its fixed
+[16:27:50] <theli_ua> It's 7am, I'm still half asleep
+[17:18:58] *** Quits: lfranchi (~quassel@kde/lfranchi) (Quit: No Ping reply in 180 seconds.)
+[17:19:15] *** Joins: lfranchi (~quassel@kde/lfranchi)
+[17:19:16] *** ChanServ sets mode: +o lfranchi
+[17:32:27] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Read error: Connection reset by peer)
+[17:32:40] *** Joins: ssam2 (~ssam2@82.70.136.246)
+[17:35:41] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[17:36:54] <theli_ua> jherskowitz: do prime tracks from the locker work?
+[17:37:18] <jherskowitz> theli_ua: I don’t think I have any prime tracks in my locker
+[17:37:27] * jherskowitz didn’t know that was possible
+[17:38:01] <theli_ua> Go to any prime album on amzn.com and press.add to library 
+[17:38:39] <theli_ua> Resolver checks for.library changes every 15m or so
+[17:39:38] <jherskowitz> theli_ua: k
+[17:46:27] <jherskowitz> anyone know where xhocy
+[17:46:47] <jherskowitz> anyone know where xhochy’s remote control api is documented?
+[17:47:00] *** Joins: ountow (guest-ount@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[17:47:01] <ountow> Im on 10.6.8 :(
+[17:48:06] <xhochy> jherskowitz: https://github.com/xhochy/pulaski is probably is best you can get
+[17:48:36] <xhochy> i.e. https://github.com/xhochy/pulaski/blob/master/lib/pulaski.js
+[17:50:30] <jherskowitz> xhochy: how about if you just want to get the now playing info?
+[17:51:40] <xhochy> jherskowitz:  http://localhost:60210/api/1.5/playback/currenttrack should work
+[17:51:49] <jherskowitz> ah, that’s it
+[17:51:51] <jherskowitz> thanks!
+[18:08:23] *** Parts: ountow (guest-ount@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[18:14:10] <lfranchi> cool the amazon resolver... resolves
+[18:22:31] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[18:22:55] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[18:23:06] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[18:23:50] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[18:27:45] *** Quits: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de) (Ping timeout: 255 seconds)
+[18:27:59] <theli_ua> lfranchi: surprising, isn't it?
+[18:28:04] <theli_ua> jherskowitz: so, does it work?
+[18:28:13] <lfranchi> well, surprising since i nver used amazon music before
+[18:28:17] <lfranchi> but i guess it comes as a part of amazon prime
+[18:28:49] <theli_ua> lfranchi: thats exactly my thinking - prime music is a resolver for tomahawk is much more usefull than standalone
+[18:28:55] <theli_ua> *as a
+[18:29:01] <lfranchi> eah
+[18:29:03] <lfranchi> free music!
+[18:29:15] <theli_ua> free-if-you-use-prime yeah :D
+[18:29:22] *** Joins: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de)
+[18:29:23] <lfranchi> yeah free as in i am already paying for it
+[18:29:39] <theli_ua> though I do know people who use amzn music exclusively
+[18:29:54] <theli_ua> ie listening to prime music and just buying favorite bands if they are not on prime
+[18:30:11] <jherskowitz> theli_ua: no
+[18:30:15] <jherskowitz> shows up in collection
+[18:30:17] <jherskowitz> won’t play
+[18:30:27] <lfranchi> too addicted to 2-day shipping :)
+[18:31:06] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[18:31:23] <theli_ua> jherskowitz: anything in the log? it does work for me
+[18:31:30] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[18:32:26] <theli_ua> let me pull in master changes though
+[18:33:43] <jherskowitz> https://www.irccloud.com/pastebin/D8ExgWaI/
+[18:34:01] <jherskowitz> theli_ua: "QObject::connect: Cannot connect (null)::stateChanged(QNetworkSession::State) to QNetworkReplyHttpImpl::_q_networkSessionStateChanged(QNetworkSession::State)"
+[18:34:49] <theli_ua> jherskowitz: can you try that stream url with vlc?
+[18:35:14] <theli_ua> the https://d4s1nbwjhj7ub.cloudfront.net/etc/etc one
+[18:35:39] <theli_ua> that looks like some tomahawk error, not resolver's
+[18:36:04] <theli_ua> also, lfranchi I'm assuming actually playing streams works for you, right?
+[18:37:17] <jherskowitz> https://www.dropbox.com/s/20mgxskf5q353vm/Screenshot%202016-01-08%2012.37.13.png?dl=0
+[18:37:57] <jherskowitz> theli_ua: ^
+[18:40:04] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[18:40:27] *** Joins: soee (~soee@31.63.137.83)
+[18:40:40] *** Quits: soee (~soee@31.63.137.83) (Client Quit)
+[18:40:50] <theli_ua> so yeah, it is a tomahawk problem it seems
+[18:41:24] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[18:42:19] <theli_ua> happy intergalactic david bowie day  btw
+[18:46:23] <dommex> theli_ua: whats the issue?
+[18:46:54] <theli_ua> sec, we are debugging it
+[18:47:01] <dommex> okies
+[18:47:04] <dommex> Thanks
+[18:47:15] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[18:47:37] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[18:51:24] <jherskowitz> theli_ua: dommex: do we know how to handle and m3u8?
+[18:51:48] <theli_ua> jherskowitz: thats an HLS stream, and didn't you say it was working for you previously?
+[18:52:00] <jherskowitz> not sure
+[18:52:05] <jherskowitz> my locker tracks were working
+[18:52:11] <theli_ua> it certainly does work for me
+[18:52:19] <jherskowitz> oh?
+[18:52:27] <theli_ua> iirc you tried amazon's "you may have missed" playlist and it was working for you
+[18:52:37] <jherskowitz> yeah, true
+[18:52:52] <jherskowitz> but those may have been in my locker?
+[18:53:12] <theli_ua> I dunno
+[18:53:20] <theli_ua> anyhow, I don't see any errors in the log you pasted
+[18:53:29] <theli_ua> is there anything else after the part you pasted?
+[18:53:44] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[18:54:07] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[18:54:56] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[18:55:19] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[18:55:50] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[18:56:08] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[18:56:26] *** Quits: teo- (~teo@kde/teo) (Ping timeout: 240 seconds)
+[18:56:53] *** Joins: teo- (~teo@corkblock.jefferai.org)
+[18:56:53] *** Quits: teo- (~teo@corkblock.jefferai.org) (Changing host)
+[18:56:54] *** Joins: teo- (~teo@kde/teo)
+[18:57:17] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[18:57:39] *** Joins: soee (~soee@31.63.137.83)
+[18:59:28] *** Quits: knicklux (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3) (Quit: Leaving)
+[18:59:33] <theli_ua> jherskowitz: ?
+[18:59:37] *** Joins: knicklux (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3)
+[19:02:59] <jherskowitz> https://www.irccloud.com/pastebin/WvYNuN0Q/
+[19:03:02] <jherskowitz> theli_ua: ^
+[19:03:50] <theli_ua> jherskowitz: that part was before the one you pasted, I wonder what happened after
+[19:03:54] <jherskowitz> https://www.irccloud.com/pastebin/UNMLNJpQ/
+[19:03:55] *** Quits: soee (~soee@31.63.137.83) (Quit: Konversation terminated!)
+[19:04:18] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:04:37] <theli_ua> jherskowitz: and after that? :)
+[19:05:37] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[19:05:54] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:06:00] <theli_ua> sorry, I just don't see where it fails
+[19:06:15] <jherskowitz> https://www.irccloud.com/pastebin/BaJN4eia/
+[19:06:39] <theli_ua> this is so weird
+[19:06:48] <theli_ua> there is nothing in the log >_<
+[19:06:56] <jherskowitz> huh
+[19:07:19] <theli_ua> I mean, now errors, nothing
+[19:07:28] <jherskowitz> it’s not the “can’t connect” message?
+[19:07:31] <jherskowitz> Fri Jan 8 2016 - 12:46:06 [0]: QObject::connect: Cannot connect (null)::stateChanged(QNetworkSession::State) to QNetworkReplyHtt
+[19:07:42] <theli_ua> wait, do you have vlc-log.txt from tomahawk?
+[19:08:23] <jherskowitz> I have just vlc-log.txt
+[19:08:27] <jherskowitz> from VLC
+[19:08:33] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[19:08:57] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:09:24] <theli_ua> dommex: so, you were asking whats the issue
+[19:09:41] <theli_ua> dommex: I have no idea, see that "Cannot connect" error from jherskowitz 
+[19:10:06] <theli_ua> dommex: he can play same resolver-provided links in VLC just fine
+[19:10:49] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[19:11:06] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:13:41] <jherskowitz> dommex: specifically...
+[19:13:43] <jherskowitz> QObject::connect: Cannot connect (null)::stateChanged(QNetworkSession::State) to QNetworkReplyHttpImpl::_q_networkSessionStateChanged(QNetworkSession::State)
+[19:14:06] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[19:14:30] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:14:31] *** Joins: endich (guest-endi@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[19:14:32] <endich> application looks very good!
+[19:14:42] <jherskowitz> endich: thanks
+[19:15:11] <endich> just a question, is it a known bug that the album view isn't working properly?
+[19:16:56] <theli_ua> jherskowitz, dommex  the difference between purchases and prime hls streams is: with purchases resolver gives https mp3 link, that is handled by tomahawk itself, passing mp3 data to vlc. Now with prime's HLS stream - we get https link to m3u, that m3u is being downloaded by tomahawk itself, but it contains other https links to stream chunks which are handled
+[19:16:56] <theli_ua> by VLC itself.
+[19:17:04] <theli_ua> so it does sound like osx's ssl isseus
+[19:17:11] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[19:17:29] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:17:55] <theli_ua> endich: broken in a what way?
+[19:18:54] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[19:19:18] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:20:12] <endich> theli-ua: well. I can play all my track fine when selecting a artist and then a track or just select a track from the big track list. But when i choose a album, dubbel click on it, then i only see the track "grayed out" and get a error "sorry couldn't find the number 'xxx' from 'xxx' "
+[19:21:05] <theli_ua> do the track names in album view match track names in your files?
+[19:21:14] <endich> yes!
+[19:21:30] <endich> also a lot of album covers are missing, never had that with banshee / xnoise / itunes before
+[19:21:38] <endich> but that's not a big deal for me
+[19:21:53] <theli_ua> weird. what version are you using anyway?
+[19:22:07] <endich> 0.8 
+[19:22:17] <endich> 0.8.4 *
+[19:22:23] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[19:22:45] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:22:48] <theli_ua> oh, well. That is pretty old. I would suggest trying nightly or building yourself. There should be 0.9 release somewhere in the future
+[19:22:59] <endich> oh lol
+[19:23:19] <endich> arch repo is running behind i think
+[19:24:04] <endich> got this https://aur.archlinux.org/packages/tomahawk/ , should get the git one i think
+[19:24:22] <dommex> Git version ++
+[19:24:35] <endich> :)
+[19:24:43] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[19:24:50] <jherskowitz> endich: you sure your ID3 tags are good?
+[19:25:02] <endich> 1000%
+[19:25:05] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:25:11] <jherskowitz> k
+[19:25:35] <jherskowitz> so, album view of your collection works a bit different than most expect
+[19:25:38] <endich> my library is so clean that it almost did work in every music programm, sometimes just a few songs which weren't ordered by the alubms
+[19:25:56] <jherskowitz> it actually looks up the album tracklist first, then tries to resolve to your available sources
+[19:26:12] <jherskowitz> so you will often see tracks listed (grayed out) that you don’t have in your library
+[19:26:14] <endich> i'm now rebuilidng from the git
+[19:27:02] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[19:27:06] <endich> is this a irc chat btw?
+[19:27:12] <theli_ua> yes
+[19:27:23] <endich> which channel?
+[19:27:25] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:27:30] <theli_ua> jherskowitz: in any case I'm pretty sure those tracks worked for you previously. I also have no idea why they wouldn't work inside tomahawk while they do in vlc
+[19:27:35] <theli_ua> ircs://chat.freenode.net:6697/%23tomahawk
+[19:27:52] *** Joins: jancoow (~jancoow@i226247.upc-i.chello.nl)
+[19:28:04] <jancoow> i'm endich
+[19:28:07] <jancoow> jancoow = endich
+[19:28:34] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[19:28:48] *** Parts: endich (guest-endi@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[19:28:58] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:30:05] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[19:30:28] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:30:40] <jancoow> rebuilding takes a while
+[19:33:03] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[19:33:26] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:34:55] <jherskowitz> theli_ua: I always suspect SSL/securetransport on OS X, but then again… gmusic works now
+[19:35:02] <jherskowitz> so maybe not
+[19:35:36] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[19:35:59] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:36:30] <jancoow> mm... maybe i get what you mean. So you are saying, the album playlists aren't fetched from your music library, but are the songs which are "supposed to be" on the album?
+[19:37:15] <jherskowitz> jancoow: yeah, exactly
+[19:37:39] <jancoow> oke wait, have a look on this:
+[19:38:04] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[19:38:23] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:38:59] <jancoow> https://jancokock.me/f/2ec45
+[19:39:23] <jancoow> files are there, but still grayed out (and can't play them)
+[19:39:36] <jherskowitz> ah
+[19:40:03] <jherskowitz> it’s the “various artists” that is the problem - we have work to do wrt to compilations
+[19:40:45] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[19:41:08] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:42:02] <jancoow> ah, that explains!
+[19:42:24] <jancoow> 80% of my collection are compilations so that could be the reason
+[19:43:30] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[19:43:47] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:44:53] *** Quits: soee (~soee@aguj83.neoplus.adsl.tpnet.pl) (Client Quit)
+[19:45:10] *** Joins: soee (~soee@aguj83.neoplus.adsl.tpnet.pl)
+[19:45:44] <jherskowitz> yeah
+[19:45:58] <jancoow> just a question; why not fetch is like any other music player on id3 tags?
+[19:45:59] <jherskowitz> my recommendation is to use the tracklist and sort by artist
+[19:46:32] <jherskowitz> we plan on adding a feature to let you choose where to get album info for
+[19:46:34] <jherskowitz> from
+[19:46:54] <jherskowitz> but given we streaming from so many sources, we do a lot of things differently :)
+[19:47:06] <theli_ua> jherskowitz: with gmusic ssl is handled by tomahawk itself, with prime's hls streams it is handled by libvlc used by tomahawk
+[19:47:16] <jherskowitz> theli_ua: ah, interesting
+[19:47:27] <jherskowitz> but it plays in VLC
+[19:47:48] <theli_ua> https://www.irccloud.com/pastebin/isxk7Dxc/
+[19:47:55] <theli_ua> ^
+[19:48:03] <theli_ua> jherskowitz: I know, thats the weird part :-/
+[19:48:16] <jancoow> yeah never seen a application that could stream from so much platforms
+[19:48:22] <jherskowitz> maybe something about our libvlc I guess?
+[19:48:25] <jherskowitz> dommex: ^
+[19:48:56] <jancoow> for my main pc i could choose my owncloud server, google play music or just local samba stream ;p
+[19:49:09] <jherskowitz> jancoow: yeah, that’s the goal - be able to plugin to basically any source
+[19:50:05] <dommex> Dunno what to say
+[19:50:18] <dommex> Dunno what to say
+[19:50:27] <jherskowitz> but you said it twice
+[19:50:28] <jherskowitz> :P
+[19:50:32] <jancoow> lol
+[19:50:38] <dommex> irccloud oddness
+[19:50:46] <jancoow> i saw that there already was support for custom plugins?
+[19:50:50] <dommex> And.. i'm drunk :p
+[19:51:12] <dommex> jancoow: depends..what is a custom plugin to you?
+[19:51:17] * jherskowitz slaps  around a bit with a large lagena
+[19:51:22] * jherskowitz slaps dommex around a bit with a large brook trout
+[19:51:57] <jancoow> yeah i mean that you can create your plugins yourself
+[19:52:10] <theli_ua> jancoow: sure, you can
+[19:52:30] <theli_ua> jancoow: you can see https://github.com/tomahawk-player/tomahawk-resolvers  for examples of them
+[19:52:50] <jherskowitz> feepk: any ideas why SSL handling in our libvlc would fail?
+[19:53:00] <jancoow> cool, thanks. I'm working on a custom music streamer server and this would be a good frontend client :)
+[19:53:08] <jherskowitz> jancoow: cool
+[19:53:14] <feepk> jherskowitz: crash or fail?
+[19:53:24] <theli_ua> jherskowitz: I still wonder does your vlc-log.txt produced by tomahawk contains something interesting
+[19:53:43] <jherskowitz> feepk: seems to just not connect
+[19:53:56] <jherskowitz> https://www.irccloud.com/pastebin/isxk7Dxc/
+[19:53:58] <jherskowitz> feepk: ^
+[19:54:33] <dommex> jancoow: totally possible yeah
+[19:54:36] <jherskowitz> works in VLC app
+[19:54:57] <jherskowitz> and my be OS X specific
+[19:55:25] <jherskowitz>  s/my/may
+[19:56:18] <feepk> jherskowitz: sorry, no log, no bug
+[19:56:29] <theli_ua> jherskowitz: do you have vlc-log.txt ?
+[19:56:35] <jherskowitz> theli_ua: yeah
+[19:56:47] <feepk> jherskowitz: and is it a self-signed certificate or not?
+[19:56:50] <theli_ua> please upload
+[19:56:55] <theli_ua> feepk: it is not
+[19:56:58] <feepk> jherskowitz: and what's the used libvlc version?
+[19:57:12] *** Quits: ssam2 (~ssam2@82.70.136.246) (Quit: Leaving)
+[19:57:39] <jherskowitz> theli_ua: http://pastebin.com/braVkLdR
+[19:58:36] <jherskowitz> theli_ua: vlc-2.2.1
+[19:58:38] <theli_ua> feepk: jherskowitz  see line 2579
+[19:58:47] <jherskowitz> oops, feepk: vlc-2.2.1
+[20:00:10] <feepk> theli_ua, jherskowitz: connection or server error as it is a time-out
+[20:00:31] <jherskowitz> https://www.irccloud.com/pastebin/Epz90b7t/
+[20:00:39] <theli_ua> feepk: thats what it looks like, but it consistently fails for him in tomahawk and always works in standalone vlc
+[20:01:11] <feepk> theli_ua: that's weird indeed
+[20:01:22] <feepk> theli_ua: but HLS support in libvlc 2.2 is shaky at best
+[20:03:17] <theli_ua> it also consistently works for me everywhere :D
+[20:07:38] <theli_ua> jherskowitz: i wonder is your tomahawk linked to the same libvlc as the standalone vlc is using?
+[20:08:35] <jherskowitz> theli_ua: this is on nightly, not self-compiled
+[20:08:36] *** Quits: teo- (~teo@kde/teo) (Ping timeout: 250 seconds)
+[20:08:44] <jherskowitz> maybe I should try self-compiled?
+[20:08:48] <theli_ua> jherskowitz: aand vlc is from?
+[20:08:53] <jherskowitz> dmg
+[20:08:59] <theli_ua> so
+[20:09:07] <theli_ua> these are 2 different libvlc's then
+[20:09:12] <jherskowitz> yeah
+[20:09:38] <theli_ua> and since this is not working in nightly we need to get dommex sober and fix it
+[20:09:44] <jherskowitz> heh
+[20:09:54] <theli_ua> jherskowitz: self compiled is worth testing I think
+[20:11:23] <jherskowitz> theli_ua: works on self-compiled
+[20:12:09] <jherskowitz> feepk: fyi ^. I blame dommex. :)
+[20:12:10] <jancoow> jherskowitz: it looks like when i click on a forward/backward button there are 2 pages skipped
+[20:12:18] <dommex> I dont follow :p
+[20:12:48] <muesli> jancoow: indeed
+[20:12:59] <jherskowitz> dommex: libvlc we package is somehow different from the one I built
+[20:14:44] <dommex> Its the official build
+[20:15:08] <jherskowitz> dommex: dunno, I installed from official too
+[20:15:22] <jherskowitz> but I, fwiw, I did “brew link —force livvlc"
+[20:15:24] <jherskowitz> libvlc
+[20:18:03] <feepk> I'd also blame dommex. sounds like a good idea :p
+[20:18:59] <jherskowitz> heh
+[20:19:04] * jherskowitz slaps domme around a bit with a large oilfish
+[20:23:20] <jancoow> is it a known bug that biogarfy is empty?
+[20:23:37] <jancoow> biography *
+[20:23:53] <jherskowitz> jancoow: hmm… not for me
+[20:23:58] <jherskowitz> what artist?
+[20:24:00] *** Joins: teo- (~teo@corkblock.jefferai.org)
+[20:24:00] *** Quits: teo- (~teo@corkblock.jefferai.org) (Changing host)
+[20:24:01] *** Joins: teo- (~teo@kde/teo)
+[20:24:05] <jancoow> all
+[20:24:26] <jancoow> well, tested avril lavigne, selena gomez, demi lovato and ariande grande
+[20:25:03] <jherskowitz> jancoow: hmm… something fishy https://www.dropbox.com/s/javouq724egnhb2/Screenshot%202016-01-08%2014.24.58.png?dl=0
+[20:25:29] <jancoow> :/
+[20:25:44] <jherskowitz> got liblastfm installed?
+[20:26:16] <jancoow> https://jancokock.me/f/41f2b
+[20:28:01] <jancoow> i got liblastfm-qt5
+[20:30:56] <jancoow> All the bugs i'm telling is just to make te application better; i really like it and never have seen a music player which FINALLY connect al the media sources togheter
+[20:31:06] <dommex> jancoow: sorry no biography gor shitty artists :p
+[20:31:21] <jancoow> dommex: don't blame avril lavigne!
+[20:31:34] <jancoow> the rest which i mention where shitty yeah ;p
+[20:31:36] <dommex> Nah shes the best of them ;)
+[20:31:52] <jancoow> i just clicked some "simular artists" underneath it
+[20:32:30] <dommex> jokes.aside, feedback is appreciated
+[20:32:59] <dommex> But indeed bios should be working
+[20:33:08] <jherskowitz> jancoow: sorry… I’m on OS X.  I’ll need dommex to sober up or muesli to appear to look at it. :)
+[20:34:16] <jancoow> i will try switching from liblastfm-qt5 to liblastfm
+[20:34:18] <dommex> yeah bad timing. Im at my gf's place, hard to devug things here
+[20:35:03] <jancoow> mm.. actually tomahawk needs the qt5 version :/
+[20:35:09] <dommex> Sunday evening will be a.better time to debug
+[20:38:26] <jancoow> hehe
+[20:39:18] <jancoow> gf needs some focus to
+[20:41:25] <theli_ua> oh crap, dommex do i now have write access to the repo?
+[20:42:53] <muesli> theli_ua: which one?
+[20:43:44] <theli_ua> tomahawk
+[20:43:58] <theli_ua> I also wonder how would one check it without pushing anything
+[20:48:55] <theli_ua> muesli: opinion on https://github.com/tomahawk-player/tomahawk/pull/388 ?
+[20:52:32] <theli_ua> muesli: I don't have them, what a relief!
+[20:53:07] <muesli> theli_ua: sorry, not sure i'm following right now
+[20:53:12] <muesli> how would one check what exactly?
+[20:53:14] <jancoow> mm.. thats kinda the same "problem" as i have. Some of my artists are "afrojack Feat. Snoop Dogg" for example. Would be nice if this could be split up for some reason
+[20:53:30] <theli_ua> muesli: nvm about that, lol
+[20:53:59] *** Quits: knicklux (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3) (Ping timeout: 255 seconds)
+[20:54:10] <muesli> theli_ua: i guess you tested those regexps?
+[20:54:17] <muesli> should maybe write some tests for this kind of stuff
+[20:55:09] <theli_ua> muesli: do we have test for any track naming matching functionality?
+[20:55:30] <muesli> theli_ua: not yet, but it would be a good idea imo :)
+[20:55:39] <theli_ua> heh
+[20:55:53] <muesli> TestQuery.h exists already ;-)
+[20:59:45] *** Quits: pinheiro (~pinheiro@2001:8a0:f884:a101:92b1:1cff:fe77:db0d) (Ping timeout: 260 seconds)
+[21:00:01] <theli_ua> muesli: actually that regex is not exactly correct, lemme fix it
+[21:00:15] *** Joins: pinheiro (~pinheiro@bl18-204-238.dsl.telepac.pt)
+[21:01:04] <muesli> see, just mentioning tests works wonders already ;-)
+[21:05:13] *** Joins: mehdix (~mehdix@x590ce570.dyn.telefonica.de)
+[21:07:09] *** Joins: knicklux (~knicklux@2a02:8071:2d8d:e000:f456:1d99:c482:d8ed)
+[21:10:05] <theli_ua> muesli: well, I fixed them
+[21:12:12] <theli_ua> also, I would need to understand the scoring to write a test for that
+[21:13:25] *** Joins: jamesaxl (~jamesaxl@105.159.33.24)
+[21:22:38] <jherskowitz> theli_ua: jancoow: yeah, I had an old ticket that suggesting ignoring anything inside parentheses and anything including “feat.” or “featuring” in the artist name. :)
+[21:28:38] *** Quits: knicklux (~knicklux@2a02:8071:2d8d:e000:f456:1d99:c482:d8ed) (Ping timeout: 255 seconds)
+[21:40:45] *** Joins: knicklux (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3)
+[21:48:37] *** Quits: knicklux (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3) (Quit: Leaving)
+[22:57:47] *** Quits: mehdix (~mehdix@x590ce570.dyn.telefonica.de) (Ping timeout: 264 seconds)
+[23:31:33] <jancoow> jherskowitz: and is it pass through?
+[23:32:49] <jherskowitz> jancoow: we never did it 
+[23:35:30] *** Quits: jamesaxl (~jamesaxl@105.159.33.24) (Ping timeout: 260 seconds)
+[23:42:34] <jancoow> jherskowitz: why not? i'm sure it will improve matching the songs
+[23:45:04] <jherskowitz> jancoow: lots of other stuff to do :) 
+[23:45:19] <jancoow> also noticed that some of my songs are not matched because there is (Feat. Patrick Stump & Travis Barker) for example in the name
+[23:45:34] <jancoow> ah oke :)
+[23:46:30] <jancoow> would like to help but i'm not that good at c++

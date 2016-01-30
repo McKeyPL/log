@@ -1,0 +1,84 @@
+[00:00:24] *** Joins: plance (guest-plan@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[00:00:25] <plance> What way should I label my tags
+[00:00:44] <plance> More importantly, where should I put my featured artists; in the track tag or the artist tag?
+[00:07:27] *** Parts: plance (guest-plan@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[00:34:02] *** Quits: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de) (Ping timeout: 255 seconds)
+[00:36:24] *** Quits: jamesaxl (~jamesaxl@105.154.140.145) (Ping timeout: 245 seconds)
+[01:01:32] *** Joins: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de)
+[01:57:48] *** Quits: jturney1 (~jon@host217-43-11-225.range217-43.btcentralplus.com) (Read error: Connection reset by peer)
+[03:20:42] *** Quits: bencevans (uid22936@gateway/web/irccloud.com/x-ynfkvmnytslpragm) (Quit: Connection closed for inactivity)
+[05:24:38] *** Joins: mgue2 (~mgue@x590f20c7.dyn.telefonica.de)
+[05:25:10] *** Quits: mgue1 (~mgue@x5ce1ee17.dyn.telefonica.de) (Ping timeout: 250 seconds)
+[09:54:08] *** Quits: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de) (Ping timeout: 272 seconds)
+[10:10:56] *** Joins: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de)
+[10:15:22] *** Quits: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de) (Ping timeout: 265 seconds)
+[10:45:26] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[10:49:26] *** Joins: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de)
+[10:55:32] *** Quits: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de) (Ping timeout: 276 seconds)
+[13:03:19] *** Joins: jturney (~jon@host217-43-11-225.range217-43.btcentralplus.com)
+[13:47:25] *** Joins: blueyed (~daniel@hahler.de)
+[14:49:02] *** Joins: duckpuppy (~patrickai@66.6.147.81)
+[15:08:23] *** Quits: blueyed (~daniel@hahler.de) (Quit: WeeChat 1.3-dev)
+[15:17:06] *** Quits: duckpuppy (~patrickai@66.6.147.81) (Ping timeout: 250 seconds)
+[15:21:00] *** Joins: duckpuppy (~patrickai@66.6.147.81)
+[15:30:10] *** Joins: blueyed (~daniel@hahler.de)
+[15:48:01] *** Joins: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de)
+[15:53:53] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Ping timeout: 276 seconds)
+[15:54:53] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[15:59:39] *** Joins: ssam2_ (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[15:59:57] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Read error: Connection reset by peer)
+[17:52:11] *** Quits: duckpuppy (~patrickai@66.6.147.81) (Ping timeout: 276 seconds)
+[19:06:36] *** Quits: ssam2_ (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[19:12:44] *** Joins: duckpuppy (~patrickai@66.6.147.81)
+[19:14:28] *** Joins: twelth1 (guest-twel@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[19:14:28] <twelth1> Hey where do I make feature recommendations and ideas that should be added?
+[19:15:50] <muesli> twelth1: hey
+[19:16:04] <muesli> twelth1: https://github.com/tomahawk-player/tomahawk/issues
+[19:16:58] <theli_ua> oh
+[19:17:00] <theli_ua> we have issues
+[19:27:43] <jherskowitz> muesli: twelth1 actually most feature requests are here: https://tomahawk.uservoice.com/forums/224204-feature-requests
+[19:29:53] <dommex> jturney: is this your most current branch? https://github.com/jon-turney/google-breakpad/tree/pecoff-dwarf-on-git-20151007
+[19:30:41] <jturney> um
+[19:30:56] <jturney> https://github.com/jon-turney/google-breakpad/commits/pecoff-dwarf-on-git-20151115 seems to be later
+[19:31:45] <dommex> github being weird
+[19:31:53] <dommex> on https://github.com/jon-turney/google-breakpad/tree/pecoff-dwarf-on-git-20151115 it shows latest commit was in october 
+[19:32:10] <dommex> ah
+[19:32:13] <dommex> commited vs pushed
+[19:32:21] <jturney> yeah, I think so
+[19:32:42] <jturney> I think I got distracted in the middle of doing that
+[19:32:55] <jturney> I was going to update cygwin and msys2 packages but didn't get around to it
+[19:33:23] <jturney> I think some of the mingw-specific patches aren't needed anymore with the latest mingw64
+[19:37:00] *** Parts: twelth1 (guest-twel@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[19:42:16] *** Quits: duckpuppy (~patrickai@66.6.147.81) (Ping timeout: 256 seconds)
+[19:44:07] <dommex> oh great
+[19:44:11] <dommex> jturney: know which?
+[19:44:17] <dommex> or you mean in breakpad?
+[19:44:50] <jturney> no, I mean that some of the extra patches I have may be redundant
+[19:45:35] <jturney> I don't know which of the top of my head.  I'd have to check.
+[20:33:27] <theli_ua> should resolver issues be filed under tomahawk-resolvers or in the main repo?
+[20:51:48] *** Joins: jamesaxl (~jamesaxl@41.140.177.80)
+[20:52:46] <jherskowitz> theli_ua: I would think in tomahawk-resolvers
+[20:52:51] <jherskowitz> dommex: ^
+[20:53:11] <dommex> theli_ua: depends on the error :-)
+[20:53:50] <dommex> if you can tell where the problem is, file it in the appropriate repo
+[20:53:56] <dommex> if not, just file it anywhere
+[20:56:39] *** Joins: duckpuppy (~patrickai@66.6.147.81)
+[20:59:29] <theli_ua> i can definitely tell, google broke our youtube resolver again
+[20:59:39] <theli_ua> for videos with encrypted signatures
+[21:03:59] *** Joins: bencevans (uid22936@gateway/web/irccloud.com/x-usxccrrnfiftzfqz)
+[21:07:39] <muesli> theli_ua: enabled the issues for this repo, too
+[21:40:20] *** Quits: duckpuppy (~patrickai@66.6.147.81) (Ping timeout: 246 seconds)
+[22:02:13] <theli_ua> muesli: thanks
+[22:02:22] * theli_ua is trying to come up with pr instead of reporting issue though
+[22:37:53] <jherskowitz> theli_ua: endless game of cat and mouse?
+[22:38:33] <theli_ua> tbh I'm not sure if they changed something or if I didnot do a good job of porting youtube-dl's code
+[22:42:15] <theli_ua> oh and dommex I hope you'll have time to take a look at that one youtube pr I posted
+[22:42:21] <theli_ua> or MrMaffen 
+[22:47:34] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[22:47:34] <github-tomahawk> [13libcrashreporter-qt] 15dschmidt pushed 1 new commit to 06master: 02http://git.io/vuCi4
+[22:47:34] <github-tomahawk> 13libcrashreporter-qt/06master 14e14cbcc 15Dominik Schmidt: Display crash id after upload
+[22:47:34] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[22:49:38] *** Joins: github-tomahawk (~github-to@192.30.252.34)
+[22:49:38] <github-tomahawk> [13tomahawk] 15dschmidt pushed 1 new commit to 06master: 02http://git.io/vuCPf
+[22:49:38] <github-tomahawk> 13tomahawk/06master 14d2dc01e 15Dominik Schmidt: Update libcrashreporter to show crash id after upload
+[22:49:38] *** Parts: github-tomahawk (~github-to@192.30.252.34) ()

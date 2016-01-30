@@ -1,0 +1,1344 @@
+[00:00:17] <Compu> Moonlightning: if u have ever installed an app from ubuntu software center instead of using apt-get u would know what we're talking about
+[00:00:18] <Phase> and there are issues with the gksu thing
+[00:00:40] <Moonlightning> Compu: I know about gk-sudo
+[00:00:54] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:01:15] <Compu> Moonlightning: u open software center and click install to install an app and it will pop up a password dialog
+[00:01:26] <Moonlightning> Compu: I know about gk-sudo
+[00:01:29] <Compu> k
+[00:02:08] <Compu> anyways i gotta eat foods so brb
+[00:03:22] *** Quits: Melanosuchus (quassel@Pony-qa87sa.as13285.net) (Connection closed)
+[00:08:26] <HoneyDrops> Compu: that is fine as a default behavior, but user is the ultimate authority and should always be able to change it.
+[00:08:56] * JustAberrant shakes head
+[00:09:20] <JustAberrant> the vendor is the ultimate authority, the user should feel privileged at the opportunity to participate in the experience :(
+[00:09:41] <HoneyDrops> Yeah, fuck that entire idea.
+[00:09:51] <HoneyDrops> The vendor can take that product and shove it.
+[00:10:04] <JustAberrant> hehe, but people like their apple products ;p
+[00:10:16] *** Joins: Datalink (Datalink@Datalink)
+[00:10:41] <HoneyDrops> Yeah and they are too dumb to know they are being abused.  Doesn't make it right.
+[00:11:05] <Moonlightning> HoneyDrops: 's why I want a proper Linux phone
+[00:11:15] <JustAberrant> uh huh ;p
+[00:11:15] <HoneyDrops> Well to be fair, more accurately they are ignorant.  It isn't the user's fault.
+[00:11:22] <JustAberrant> I don't think they are either
+[00:11:34] <JustAberrant> they just don't share your particular set of priorities or interests
+[00:11:45] <JustAberrant> they arn't being "abused", they are being given exactly what they want
+[00:11:52] <JustAberrant> a guided experience that works
+[00:12:04] <HoneyDrops> For a very narrow definition of "works"
+[00:12:14] <JustAberrant> for the definition of works that they care about
+[00:12:27] <JustAberrant> which again, while it differs entirely from yours, is still what they want
+[00:12:32] <JustAberrant> and not what they "think" they want
+[00:12:36] <JustAberrant> what they actually, legitimately, want
+[00:12:38] <HoneyDrops> For most I think they don't even conceive that it would work ways other than how it does.
+[00:13:35] <HoneyDrops> Which is the result of a lack of understanding of the tech and imagination.
+[00:14:10] <JustAberrant> sure, but not only do people not care about the kind of control you talk about, they specifically don't want it
+[00:14:18] <JustAberrant> and again, I don't see that as invalid
+[00:14:32] <Moonlightning> I want, like, Gentoo, but with a package-manger app-store with a lot of actually good stuff, and like well-designed built-in stuff for things like phoning
+[00:14:34] * Phase is in JustAberrant's side here
+[00:14:40] <Phase> ^ Moonlightning
+[00:14:44] <HoneyDrops> I watch people manually scan files for keywords because they don't know that computers can search things for you.  I've seen people type the same stuff in over and over because they don't know of copy & paste.
+[00:14:55] <Phase> you can have easy to use and freedom
+[00:15:12] <Moonlightning> Ubuntu kinda does this well!
+[00:15:20] <Phase> ubuntu is terrible
+[00:15:24] <Moonlightning> No, listen,
+[00:15:30] <Phase> as someone who maintains a ubuntu install for someone not tech savy
+[00:15:33] <Phase> don't use ubuntu
+[00:15:33] <Moonlightning> There's the GUI “Software Center”, and the somewhat-limiting preference pane for repository selection
+[00:15:42] <Moonlightning> But you can ignore all that and use apt-get and /etc
+[00:15:48] <Moonlightning> That's what I want!
+[00:16:04] <Moonlightning> …actually, GUI|CLI duality in /everything/ would be nice
+[00:16:06] <JustAberrant> HoneyDrops: right, because it hasn't been made intuitive enough for them
+[00:16:22] <JustAberrant> and people don't want choice in their app permission set any more than I want precise control over the ignition timing in my engine
+[00:16:37] <JustAberrant> they want people to make the decisions for them and tlel them it's secure like I want my car to just work
+[00:16:43] <HoneyDrops> You have to meet tools half-way.  You can't drive a nail without swinging a hammer.
+[00:16:43] <Moonlightning> phone +1-202-867-5309
+[00:16:56] <JustAberrant> * tell
+[00:17:01] * Phase would love to see mixed cli/gui setups
+[00:17:15] <JustAberrant> ever worked with CAD? ;p
+[00:17:21] <Phase> once
+[00:17:25] <JustAberrant> it's pretty much that
+[00:17:33] <HoneyDrops> Always make cli tool, and just put a GUI wrapper around it.
+[00:17:46] * Phase wants a shortcut that grabs the corner of a window for resizing
+[00:18:18] <JustAberrant> either way, point is people have different priorities in life
+[00:18:30] <JustAberrant> most see computers as a tool to accomplish the things they _actually_ care about
+[00:18:31] <HoneyDrops> The upside there is you can have multiple UI wrappers, so the interface can focus on different use cases.
+[00:18:40] <JustAberrant> the computer is important to them, but in the sense that they want it to work
+[00:18:47] *** Joins: Webster (Webster@Pony-benl74.fios.verizon.net)
+[00:18:53] <Moonlightning> …like…cars.
+[00:18:55] <JustAberrant> and usually in the simplest and most direct way possible
+[00:18:58] <JustAberrant> exactly
+[00:19:07] <Moonlightning> Okay, yeah, that's legit.
+[00:19:11] <Moonlightning> BUT
+[00:19:14] <JustAberrant> wanting everyone to be a computer nerd is as bad as wanting everyone to be a gear head
+[00:19:16] <Moonlightning> it doesn't mean that the rest of us should be limited :V
+[00:19:53] <JustAberrant> no, but that's what happens, just as cars are gradually being more locked down and less tunable for the benefit of most users and detriment of the gear heads, same is and will keep happening for computers
+[00:20:15] <JustAberrant> there's never going to be some great renaissance where everyone suddenly actually cares how their computers work and wants total control
+[00:20:17] <Moonlightning> :/
+[00:20:27] <JustAberrant> that's always going to be a small group of users who are going to be largely ignored
+[00:20:32] <HoneyDrops> I'm not saying a user needs to be able to code a kernel and a display manager, no more than I expect a driver to be able to design and machine a precision engine, but a driver should have a basic grasp of a 4-cycle engine and the principles of a transmission.
+[00:21:02] <JustAberrant> why?
+[00:21:21] <Moonlightning> HoneyDrops: like the kind you could get from an agif?
+[00:21:22] <JustAberrant> if you turn the key and it starts, press the gas and it does, etc.. why would you think that's necessary?
+[00:21:27] * Moonlightning saw one on Imgur a few weeks back
+[00:21:49] <HoneyDrops> Knowing how a car (or any device) works tells you it's limits, and it better helps you predict it's behavior.
+[00:21:59] <JustAberrant> but you don't need to know either to use it
+[00:22:04] * Moonlightning (steals HoneyDrops' apostrophes)
+[00:22:27] <HoneyDrops> You will be a more proficient user with the additional knowledge.
+[00:22:29] <JustAberrant> all you need to know is it gets you to work until either the red light telling you something is wrong lights up, it makes a really loud noise, or the gas guage gets low
+[00:22:34] <JustAberrant> HoneyDrops: but you don't need to be
+[00:22:36] <Googie> It can also lead to a false sense of understanding.
+[00:22:57] <HoneyDrops> Until something goes wrong.
+[00:23:00] * Googie has seen many many people, who because they are above average at using Windows, seem to think that they /know/ computers
+[00:23:06] <JustAberrant> HoneyDrops: at which point you call a mechanic
+[00:23:19] <HoneyDrops> Who can take advantage of your ignorance…
+[00:23:25] <JustAberrant> right, but even if they do
+[00:23:28] <JustAberrant> even if you get ripped off
+[00:23:31] * DJ-C0L7[EIT] is a mechanic
+[00:23:44] <JustAberrant> it's still probably cheaper in most ways than the time spent developing the proficiency not to be ripped off
+[00:24:00] <JustAberrant> in terms of investment of time and the value of that time
+[00:24:05] <HoneyDrops> You need to know enough about the tech that surrounds you to know what it can do, and what it cannot do.  You should be able to know when someone is pulling BS on you.
+[00:24:25] <JustAberrant> HoneyDrops: see, I'd argue that while it's a would be nice, it's not necessary
+[00:24:42] <JustAberrant> you can get by without knowing anything about cars
+[00:24:54] <JustAberrant> drive it till it breaks, then pay someone to fix it, repeat
+[00:25:06] <HoneyDrops> Otherwise you will be damned to just listening to whatever others tell you and you are not equipped with either the requisite knowledge or reasoning skills.
+[00:25:19] <JustAberrant> HoneyDrops: right, but you can still get by just fine that way
+[00:25:38] <JustAberrant> and this extends to just about everything
+[00:25:43] <HoneyDrops> Yes, but you know what's better?  Identifying an issue /before/ failure and addressing it.
+[00:26:07] * Moonlightning mumbles about pure-electric cars.
+[00:26:14] <JustAberrant> not arguing it's not a good thing to have the knowledge, just arguing that you don't need it to live a reasonably happy life
+[00:26:26] <Stik> they'll find new and exciting ways to break :)
+[00:26:28] <JustAberrant> and that deciding to just leave it in the hands of others is a valid choice
+[00:26:30] <HoneyDrops> You can afford to, yes, but how much is collectively pissed away just to coddle ignorance?
+[00:27:09] <JustAberrant> honestly in terms of the value in the time spent learning something you don't care about, I don't think much
+[00:27:17] <HoneyDrops> How much less work would we make for ourselves if we just paid for that ounce of prevention to save the pound?
+[00:27:37] <JustAberrant> I don't think the scales are balanced that way, especially when it comes to cars
+[00:28:15] <JustAberrant> you need a fair bit of car knowledge to really be able to say more than "I think it's the wheel bearings"
+[00:28:18] <Stik> and computery stuff! you must have all encountered the elderly family member who hasn't a clue :)
+[00:29:00] <JustAberrant> right, getting grandma to where she can navigate her facebook is worth while, teaching her about TCP/IP isn't ;p
+[00:29:17] <JustAberrant> anything more complicated than "it didn't do the thing when I clicked it" probably isn't worth her time
+[00:29:47] <JustAberrant> even if she didn't have grandchildren to bug it's probably worth it to have geek squad come in and rip her off as long as it gets her up and running again
+[00:30:40] <JustAberrant> and again I don't feel that's ignorance or abuse or anything
+[00:30:49] <JustAberrant> I think it's a valid decision based on priorities and interests
+[00:31:47] <HoneyDrops> The problem is ignorance is only going to be more costly, as the complexity of our artifacts increases, the losses of failing to learn about them is only going to grow.  Then danger of people wielding tools they do not adequately understand becomes a graver risk.
+[00:31:48] <Stik> agreed
+[00:32:13] <Stik> hmm i disagree HoneyDrops 
+[00:32:23] <JustAberrant> I don't really agree with that either
+[00:32:27] <Stik> if anything the increasing complexity makes it even less important to learn about things
+[00:32:42] <Stik> or less feasible rather
+[00:32:50] <JustAberrant> I think the opposite really, tools are becoming more complex to a point where they need to be simpler to actually use because you won't really be able to understand it significantly
+[00:32:58] <JustAberrant> which is already happening
+[00:33:23] <Stik> at some point you have to choose to put your trust in someone else to have worked out how to make a thing do it's stuff
+[00:33:36] <JustAberrant> people won't need or want to understand the inner workings, they'll have to understand the high level mechanics which will have to just work
+[00:33:38] <Stik> so you can focus on your own things
+[00:34:03] <JustAberrant> .. a.. another rational pony.. I.. never thought I'd see the day.. :D
+[00:34:08] <JustAberrant> *cough* ;p
+[00:34:16] <Stik> haha
+[00:34:22] <Stik> sorry to dissappoint, but i'm no pony ;)
+[00:34:28] <JustAberrant> aw :(
+[00:34:29] * Stik is a mighty dragon!
+[00:34:45] <Stik> you know what would solve all this, would be living forever
+[00:34:52] <Stik> then we would have all the time in the world to learn stuff
+[00:34:57] <Stik> i'd love to know how things work more
+[00:35:06] <JustAberrant> or all have time to stop caring about basically everything :>
+[00:35:15] <Stik> yeah that too
+[00:35:22] <Stik> winning the lottery would free up 90% of my time!
+[00:35:38] <Stik> and also give me the freedom to stop worrying about breaking things by tinkering :)
+[00:35:54] <JustAberrant> hehe, much as I hate to admit it, would probably be the worst thing to happen to me
+[00:36:03] <JustAberrant> I'm _way_ to content to sit around and do nothing
+[00:36:15] <Stik> i'd love to do my own work on cars for instance, but i'm too afraid of losing time in there, and ending up with a large immobile and expensive object in my driveway :(
+[00:36:19] <JustAberrant> I can tell myself I'd involve myself more with my own projects..
+[00:36:34] <Stik> haha, maybe, i'd go into it with good intentions..
+[00:36:35] <JustAberrant> but I'd probably just browse the net all day
+[00:36:45] <JustAberrant> and then like 50 years would go by and I'd be like.. "well fuck"
+[00:36:46] <HoneyDrops> why would that be bad?
+[00:37:09] <Stik> hmm that is actually not a bad question
+[00:37:15] <Stik> what *is* wrong with just doing that?
+[00:37:31] <JustAberrant> weird as it sounds, I think because it makes time go by to quickly
+[00:37:34] <Stik> i think my fear would be the "after 50 years" thing and realising i'd achieved nothing, then spending my final few years being really depressed :)
+[00:37:52] *** Joins: Fallfeathers (Fallfeather@Pony-859c69.bigpond.net.au)
+[00:37:58] <JustAberrant> when I take a week off work and it whizzes by, I feel like I've somehow been robbed of time
+[00:38:00] *** Quits: DataByte (DataByte@Pony-37gb6l.g424.9euc.0247.2601.IP) (Ping timeout: 121 seconds)
+[00:38:10] <Stik> i know exactly how that feels!
+[00:38:18] <Colgate> don't we have this same argument in here every other week?
+[00:38:28] <Stik> on the friday before my week off i'm all "i'm going to get so much stuff done" and then nothing actually happens :(
+[00:38:28] <JustAberrant> Colgate: probably, we were due I think ;p
+[00:38:32] <Stik> heh
+[00:38:42] <HoneyDrops> One sec, reminds me of someone from Catch-22
+[00:39:01] <JustAberrant> I'm just finishing up my vacation now, and this time was actually productive because I had stuff that had to be done
+[00:39:10] <JustAberrant> but take that away and I'd just "waste" time
+[00:39:23] <Stik> i guess it isn't entirely wasted if you have some fun
+[00:39:43] <JustAberrant> maybe, though I think my brain goes into some weird like half power mode ;p
+[00:39:46] <Stik> occasionally it's nice to have a day off and literally do nothing
+[00:39:55] <Stik> but i think too much of that is a bad thing
+[00:40:02] <JustAberrant> sure, here and there, but too much of that wouldn't be good
+[00:40:26] <Stik> i had a nice one last year where i went off to the local hills and just wandered for the day without any real aim
+[00:40:32] <Stik> it was one of the best days of last year
+[00:41:24] <Stik> wasn't even a "i'm going to get to the top of that hill and look at the view", just meandering along looking at the flowers and suchlike
+[00:41:43] <JustAberrant> hippy ;p
+[00:41:52] <Stik> hehe, i think i would have enjoyed that era
+[00:42:00] <Stik> anyhow, i should get to bed
+[00:42:05] <Stik> peace out, ponies :P
+[00:42:11] <JustAberrant> nite ;p
+[00:45:11] *** Quits: Phase (Phase4@Pony-kk0nqh.internode.on.net) (A TLS packet with unexpected length was received.)
+[00:46:09] *** Joins: Phase (Phase4@Pony-kk0nqh.internode.on.net)
+[00:47:23] <HoneyDrops> In Catch-22 there is a character (forget the name, been 15 years) who finds that time seems to progress more slowly when he's unhappy, thus he attempts to be unhappy to make his life longer.
+[00:47:56] * JustAberrant nods.. priorities :>
+[00:49:20] <mniip> the amount of memorized events describes how fast time progresses
+[00:50:46] * HoneyDrops fully accepts that her momentary stay on a little mote of dust really impacts just about nothing.  Any pressure or urgency is self-imposed.
+[01:02:51] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:17:49] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[01:21:21] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[01:23:09] *** Joins: umursamaz (o1o2o3@Pony-skp.dhj.193.130.IP)
+[01:27:47] *** Joins: corkfuse (corkfuse@corkfuse)
+[01:33:21] <Moonlightning> HoneyDrops: what about self-preservation?
+[01:34:02] *** Parts: umursamaz (o1o2o3@Pony-skp.dhj.193.130.IP) ()
+[01:34:45] <HoneyDrops> That isn't mandatory.
+[01:35:50] <Compu> ooooh the ambiance blackout themes look awesome in ubuntu
+[01:36:10] <Moonlightning> HoneyDrops: But it's clearly something you're concerned with.
+[01:37:55] <HoneyDrops> Yes, but I chose it as a priority?  There is no absolute rule that demands that I must be, or must try to be.
+[01:40:04] *** Joins: Valiant (Corey@the.truth.is.out.there)
+[01:42:19] *** Quits: Phase (Phase4@Pony-kk0nqh.internode.on.net) (Connection closed)
+[01:42:40] <CompuDesktop> i picked the blackout pink theme
+[01:42:46] <CompuDesktop> it is pink
+[01:43:05] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[01:43:38] *** Joins: Phase (Phase4@Pony-kk0nqh.internode.on.net)
+[01:43:43] <HoneyDrops> I think I'm still using the default gtk theme.
+[01:44:21] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Connection closed)
+[01:46:02] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[01:46:49] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[01:47:59] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[01:48:50] * JustAberrant went through the default set of themes and picked the one that was least appalling :>
+[01:49:02] * JustAberrant hates gtk with much of his heart and soul :(
+[01:50:23] <Googie> http://danluu.com/cpu-bugs/
+[01:50:24] <PinkiePieBot> [ We saw some really bad Intel CPU bugs in 2015, and we should expect to see more in the future ]
+[01:50:24] * HoneyDrops doesn't care for gtk or qt.
+[01:50:42] * HoneyDrops likes ncurses.
+[01:52:17] <HoneyDrops> "And they’ll often wait until an inconvenient time to start the attack, such as Christmas, or one of the big online shopping days." :D
+[01:54:47] <HoneyDrops> I think that's exactly the right time.
+[01:57:59] <CompuDesktop> look at my new theme http://screencloud.net/v/o76G
+[01:58:03] <PinkiePieBot> [ Screenshot at 19:57:19 | ScreenCloud ]
+[01:58:38] <Phase> my god those player controls
+[01:58:46] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Quit: Directive 0000021103: Environment conflicts with Directive 0000020430, Solution: Vacating area to resolve.)
+[01:59:09] <Compu> Phase: ?
+[01:59:11] * HoneyDrops refrains from comment.
+[01:59:26] <Compu> what?
+[01:59:36] <Compu> i like the pink
+[01:59:40] <Phase> Compu, you have mopidy, totem, spotify, rhythmbox, vlc, banshee, and chementine open all at once
+[01:59:48] <Compu> Phase: no i dont
+[02:00:03] <Compu> it keeps those in the soundmenu even when theyre closed
+[02:00:09] <Compu> u can click them to open them
+[02:00:10] <HoneyDrops> I want to know who thought it was needed to shove controls for all of those there, running or not.
+[02:00:14] <Phase> that's silly
+[02:00:47] <HoneyDrops> The pink is fine, I like pink too.
+[02:00:56] <Compu> i usually use banshee for my non spotify media stuff
+[02:01:05] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[02:01:18] <Compu> i dont like clementine's "everything is a playlist" interface
+[02:01:38] <Compu> also i like being able to have an album art wall
+[02:02:00] * HoneyDrops uses mpv from the shell for everything >_>
+[02:02:29] <Compu> HoneyDrops: its the ambiance blackout pink theme, its from the ambiance blackout colors package
+[02:02:37] <Compu> its in noobslab's themes ppa
+[02:03:09] <Compu> HoneyDrops: banshee has an equalizer so i can have all da bass
+[02:03:12] <Moonlightning> https://xkcd.com/903/ (`title=` text)
+[02:03:12] <PinkiePieBot> [ xkcd: Extended Mind ]
+[02:03:19] <Moonlightning> I wanna write a thing to do this.
+[02:03:25] <HoneyDrops> I think the overlap of what we're running is just Firefox XD
+[02:04:05] <Compu> tho i have to bring the gain down or else it will have all kinds of audio clipping that makes it sound horrible
+[02:04:12] <Moonlightning> HoneyDrops: what're your preferred shell and IRC client?
+[02:04:20] <Compu> but i can still make the floor vibrate :D
+[02:04:43] <Compu> i use the default ubuntu shell with green text and black background
+[02:04:48] <Compu> er
+[02:04:50] <HoneyDrops> bash and weechat
+[02:04:51] <Compu> i might be confused
+[02:05:00] <Moonlightning> Compu: …is that…Google Apps? Running /locally?/
+[02:05:00] <Compu> shell=terminal?
+[02:05:03] <Moonlightning> HoneyDrops: weechat :D
+[02:05:10] <Moonlightning> Compu: no, shell == shell
+[02:05:17] <Compu> google apps?
+[02:05:27] <Moonlightning> The thing above Chrome in your dock.
+[02:05:31] <Compu> ah
+[02:05:39] <Compu> thats built into google chrome, its the chrome launcher
+[02:05:49] <Moonlightning> Chrome…/launcher?/
+[02:05:59] <Moonlightning> Since when does Chrome have a launcher, and since when do browsers need launchers? :/
+[02:06:03] <Compu> yeah 1 sec lemme get a screenshot
+[02:06:08] <Compu> chrome apps, thats why
+[02:07:07] <CompuDesktop> Moonlightning: http://screencloud.net/v/tn85
+[02:07:11] <PinkiePieBot> [ Screenshot at 20:06:40 | ScreenCloud ]
+[02:08:03] <Compu> u can add any of those to the normal linux app menus as well
+[02:08:47] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[02:08:59] <Compu> and u can have the shortcut ones (the ones that arent native chrome apps but rather glorified website links) open in their own windows with the proper app icon in the ubuntu launcher/whatever taskbar thing u use
+[02:09:20] <Compu> the native chrome apps like google keep always launch in their own window
+[02:10:29] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[02:11:47] *** Joins: Sin (Sin@is.hustlin.everyday)
+[02:12:27] <HoneyDrops> https://i.imgur.com/gjzubQH.png old image, but hasn't changed in years.
+[02:13:57] <Moonlightning> What're F1..F8 and MUD? :o
+[02:14:09] <Moonlightning> …holy shit what
+[02:14:23] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[02:14:24] <Moonlightning> I thought xkcd's random button was giving me the same few comics over and over again
+[02:14:46] <Moonlightning> so I started generating random IDs with Python
+[02:14:51] <Moonlightning> and the first eight or so were comics I'd seen today
+[02:15:09] <HoneyDrops> Moonlightning: the tags, they are bound to Mod4+[shift/control]+F1-F12
+[02:15:29] <Moonlightning> mod4? >.>
+[02:15:35] <HoneyDrops> I can rename them, hence the IRC, IM, MUD
+[02:15:46] <HoneyDrops> The super/flag/windows key?
+[02:16:17] <HoneyDrops> Every binding of my WM uses Mod4+[other mods]+some key.
+[02:17:35] <HoneyDrops> That top bar is normally hidden, if I have a terminal open, it's full screen w/o any border.  If multiple windows are displayed each get a 1px border to show focus.
+[02:17:36] <CompuDesktop> HoneyDrops: do u use vlc?
+[02:17:42] <HoneyDrops> I use mpv
+[02:17:51] <JustAberrant> mplayer for life
+[02:18:00] <CompuDesktop> i like vlc
+[02:18:07] <HoneyDrops> mpv is mplayer + mplayer2, more or less
+[02:18:08] <CompuDesktop> also my theme changes vlc as well
+[02:18:14] <CompuDesktop> changes banshee too
+[02:18:16] <CompuDesktop> cuz gtk
+[02:18:23] <JustAberrant> yeah, never really looked into mpv
+[02:18:48] <HoneyDrops> mpv have an overlay, though I always just use keybindings.  There isn't really anything to "theme"
+[02:19:01] <HoneyDrops> s/have/has/
+[02:19:24] <CompuDesktop> one thing tho, u have to edit ubuntu software center's theme file cuz it likes to keep its light background for some dumb reason
+[02:19:30] <JustAberrant> yeah, and mplayer doesn't even have that, best it has is the OSD, which is just white text :>
+[02:19:37] <JustAberrant> never really liked vlc
+[02:19:43] <CompuDesktop> JustAberrant: why?
+[02:19:57] <JustAberrant> I mean I'll use it on windows or to play a DVD with menus, but I really don't like it
+[02:20:19] <CompuDesktop> theres always xbmc tho its now called kodi media center
+[02:20:23] <JustAberrant> CompuDesktop: I find it's significantly slower for things like seeking, mplayer has really smooth seeking
+[02:20:53] <JustAberrant> plus for a long time it really didn't handle multiple monitors well
+[02:21:10] <CompuDesktop> the current "stable" version of kodi is kinda broken since for some reason it doesnt like the version of libtag in ubuntu 14.04
+[02:21:15] <JustAberrant> you'd full screen it and the controls would end up maximized (though not scaled) and disjointed on one screen and the video on another
+[02:22:07] <CompuDesktop> ah
+[02:22:22] <CompuDesktop> i dont have anything powerful enough for multiple monitors so not an issue for me
+[02:22:46] <JustAberrant> I'm not normally a minimalist, but I like mplayer because it does exactly what it's supposed to do
+[02:22:48] <CompuDesktop> anyways heres what that media player menu thingy looks like when something is actually playing http://screencloud.net/v/du90
+[02:22:52] <PinkiePieBot> [ Screenshot at 20:21:48 | ScreenCloud ]
+[02:23:22] <JustAberrant> CompuDesktop: bleh, yeah, I hate that style for media players
+[02:23:32] <CompuDesktop> why?
+[02:23:48] <JustAberrant> I've never liked all the album art/library stuff
+[02:23:57] <CompuDesktop> oh
+[02:24:07] <CompuDesktop> i like having and album art wall
+[02:24:12] <CompuDesktop> but u might like clementine
+[02:24:29] <CompuDesktop> i dont like it cuz everything has to be a playlist in it and it has no album art wall
+[02:24:39] <JustAberrant> I generally just use mplayer -shuffle
+[02:25:09] <CompuDesktop> i like seeing all the album art that i make sure is in every file i can get album art for
+[02:25:33] <CompuDesktop> i use puddletag to make sure all my music file tags r set properly
+[02:25:38] <JustAberrant> whatever you're into I guess
+[02:25:58] <JustAberrant> most of the time I just have music on in the background
+[02:26:08] <CompuDesktop> then i let banshee import and organize everything into folders by artist/album/song
+[02:27:17] <CompuDesktop> well damn
+[02:27:30] <CompuDesktop> i gotta change my theme back cuz skype for linux is fucking stupid
+[02:28:15] *** Creeps|AFK is now known as RedHelepr
+[02:29:01] <CompuDesktop> or maybe not
+[02:29:12] <CompuDesktop> might be able to just have skype use a different theme on its own
+[02:31:09] *** Valiant is now known as Bathiolus
+[02:35:23] <HoneyDrops> skype uses qt iirc
+[02:35:34] * HoneyDrops hisses at skype.
+[02:36:48] <CompuDesktop> HoneyDrops: no it uses gtk but nevermind, i just needed to restart skype, now its fien
+[02:36:50] <CompuDesktop> fine*
+[02:37:51] <CompuDesktop> still looks a bit off but at least i can read the text now
+[02:38:34] <CompuDesktop> skype just breaks whenever u try to change the theme
+[02:39:17] <CompuDesktop> im happy i dont have to get rid of my beautiful dark theme with pink highlights
+[02:40:06] <CompuDesktop> only issue is the link color is still the same blue and that looks really bad with the dark background but i'll live with it
+[02:43:12] *** Joins: Asoka (Asoka@Pony-913dkm.net-htp.de)
+[02:46:23] *** Quits: Asoka_White (Asoka@Pony-a92t9n.net-htp.de) (Ping timeout: 121 seconds)
+[02:51:23] <Compu> so when trying ubuntu from the live dvd where does it save the files u download to the home folder
+[02:52:15] <mniip> in the memory iirc
+[02:52:18] <HoneyDrops> ^
+[02:52:28] <mniip> it's an overlayfs of a squashfs over a tmpfs
+[02:52:36] <HoneyDrops> ^
+[02:52:37] <mniip> iirc
+[02:52:41] <HoneyDrops> It is
+[02:54:10] <Moonlightning> /wat./
+[02:54:12] <Moonlightning> > iTunes can’t verify the identity of the server “applesguschi000001.blob.core.windows.net”.
+[02:56:49] <Compu> mniip: so it takes up RAM? i never noticed it taking up RAM when i checked the system manager thingy (the ubuntu equivalent of windows task manager)
+[02:57:30] <Compu> Moonlightning: maybe expired certificate?
+[02:57:31] <mniip> it's in the cache section of the RAM
+[02:57:41] <Compu> cache section?
+[02:58:04] <HoneyDrops> Open a terminal, run the command free
+[02:58:06] <mniip> http://i.imgur.com/jCX8r2p.png
+[02:58:25] <Compu> i figured that either the ram usage would have gone up or there would be less total ram or something
+[02:58:26] <mniip> the green part is the ram used by programs, blue - various buffers, yellow - filesystem caches
+[02:59:03] <mniip> see how the indicator says 2997MB used, thought that's just the size of the green part
+[02:59:09] <Compu> k
+[02:59:34] <Compu> so the total ram and the used ram wouldnt change in the system manager program?
+[02:59:41] <mniip> yes
+[02:59:46] <Compu> i see
+[02:59:57] <mniip> one of the reasons why it isn't counted is that normally, when the system is low on ram, the caches are flushed to disk
+[02:59:59] <HoneyDrops> Normally cache is consider "freeable"
+[03:00:00] <mniip> freeing up the ram
+[03:00:13] <Moonlightning> Compu: yes, but why is an /Apple/ product trying to //anything// with windows.net.?
+[03:00:36] <Compu> Moonlightning: but if its normally flushed to disk then what does the live dvd do in that case?
+[03:00:36] <mniip> that isn't the case for tmpfs however, because tmpfs has no storage backend
+[03:00:40] <Compu> Moonlightning: no idea
+[03:01:00] <Moonlightning> You can't read either of the lines printed by `free`
+[03:01:27] <HoneyDrops> Since it can't purge the cache to disk, the OOM killer will come out to play.
+[03:01:31] <Moonlightning> because the first one counts file cache as used, and the second one counts shared memory (e.g. /dev/shm!) as free
+[03:01:47] <Compu> OOM killer?
+[03:02:00] <HoneyDrops> out-of-memory killer
+[03:02:11] <Compu> so it just starts deleting files?
+[03:02:13] <HoneyDrops> It will kill processes to free up memory.
+[03:02:24] * Moonlightning puts on a sheet and stalks around Compu. “OOM! OOOOOOM! OOOOOOOOOOOOOOOOM!”
+[03:02:24] <Compu> oh
+[03:02:41] <Compu> *pounces on Moonlightning and snuggles*
+[03:02:57] <Moonlightning> Ack! Get off me! I am the OOM!
+[03:03:06] <mniip> yeah no
+[03:03:08] <Compu> i am the snuggly robot pone!
+[03:03:09] <mniip> it can't delete files
+[03:03:16] <Compu> ah
+[03:03:30] <Compu> so it would force close firefox and stuff
+[03:03:41] <Moonlightning> It would SIGKILL Firefox.
+[03:03:58] <Moonlightning> no chance for a clean exit or anything, just DED
+[03:04:00] <Compu> wouldnt it risk sigkilling unity or something?
+[03:04:26] <Compu> or even worse, x
+[03:04:42] <Moonlightning> It prefers to kill processes using a lot of memory, and those deemed unimportant based on some in-kernel structures.
+[03:04:47] <HoneyDrops> ^
+[03:04:53] <Compu> ah
+[03:04:59] <mniip> I had this happen to me recently
+[03:05:05] <Moonlightning> init, for example, has a very high /avoid oomkilling this/ value.
+[03:05:07] <Moonlightning> :P
+[03:05:09] <mniip> Jan  2 22:19:08 mniip kernel: [5788535.439424] cat invoked oom-killer: gfp_mask=0xd0, order=0, oom_score_adj=-1000
+[03:05:21] <Moonlightning> If you're root, you can change those values.
+[03:05:22] <Compu> mniip: what did it kill?
+[03:05:27] <mniip> apache has eaten 48GB of RAM
+[03:05:31] <mniip> but no it had to kill lwresd
+[03:05:32] <Compu> pfft
+[03:05:33] <Compu> wat
+[03:05:38] <Compu> why
+[03:05:39] <Moonlightning> …seriously?
+[03:05:46] <mniip> yes
+[03:05:48] <Compu> wtf was apache doing?
+[03:05:55] <Compu> also u have 48 GB of RAM?
+[03:06:07] <Moonlightning> 64, probably
+[03:06:10] <Compu> and what is lwresd?
+[03:06:12] <HoneyDrops> Generally it will kill younger processes over older ones, iirc.
+[03:06:18] <Moonlightning> That, too ^
+[03:06:24] <Moonlightning> lwresd? No idea, but it sounds important!
+[03:06:28] <mniip> Jan  2 22:19:12 mniip kernel: [5788535.466170] Out of memory: Kill process 2786 (lwresd) score 0 or sacrifice child
+[03:06:28] <mniip> Jan  2 22:19:12 mniip kernel: [5788535.466916] Killed process 2786 (lwresd) total-vm:672112kB, anon-rss:0kB, file-rss:0kB
+[03:06:29] <Moonlightning> It sounds like one of those low-pid kernel things.
+[03:06:40] <Moonlightning> …huh, guess not
+[03:06:48] <JustAberrant> just make a swap area on your ram disk.. problem solved! *runs*
+[03:06:50] <Compu> mniip: what is lwresd?
+[03:07:01] <mniip> ightweight resolver daemon
+[03:07:05] <mniip> +l
+[03:07:06] <Moonlightning> Oh.
+[03:07:09] <Compu> oh whats it do
+[03:07:18] <Moonlightning> It's a lightweight DNS resolver.
+[03:07:23] <Compu> oh
+[03:07:30] <Compu> so it killed ur internet access
+[03:07:34] <mniip> nah
+[03:07:38] <Compu> nah?
+[03:07:42] <Moonlightning> …no; it killed his ability to DNS :P
+[03:07:45] *** Quits: ShivalWolf (ShivalWolf@BigMac.is.a.Coltcuddler.org) (A TLS packet with unexpected length was received.)
+[03:07:46] <Moonlightning> assuming there was no fallback DNS server
+[03:07:49] <HoneyDrops> You can poke around in /proc/$PID/* to protect specific processes or mark them as "kill this first"
+[03:07:54] <Moonlightning> ^
+[03:07:54] <Compu> well yeah i know but DNS is used for most things
+[03:07:56] *** Joins: ShivalWolf (ShivalWolf@2400:d400:9:7375:abcd::2)
+[03:07:57] <mniip> only applications using bind9's resolver library
+[03:08:14] <mniip> [05:05:55] <Compu> also u have 48 GB of RAM?
+[03:08:15] <Compu> which applications r those?
+[03:08:19] <mniip> 16GB with 32GB of swap
+[03:08:22] <HoneyDrops>  /proc is incredibly useful
+[03:08:25] <Compu> ah
+[03:08:33] <Compu> my desktop has 4 GB of RAM
+[03:08:51] <mniip> even my laptop has 6GB
+[03:08:59] <Compu> my desktop is not new
+[03:09:10] <Compu> its from the windows vista era
+[03:09:22] <Moonlightning> My laptop has eight gigs.
+[03:09:29] <Compu> my laptop has 3 GB
+[03:09:30] <Moonlightning> It's from 2009 and came with two.
+[03:09:41] <Moonlightning> I have a rackserver that also has eight gigs?
+[03:09:42] <mniip> yeah mine came with 4GB
+[03:09:44] <Compu> its from 2007 and came with 2
+[03:09:44] <Moonlightning> My other laptop has four.
+[03:09:47] <Colgate> my laptop from 2005 has 2 GB memory :P
+[03:09:48] <mniip> I added 2
+[03:09:55] <Compu> i could upgrade it if i had money
+[03:10:10] <Compu> i dunno how much it supports, its a dell inspiron 1420
+[03:10:17] <Moonlightning> I can apparently get away with Minecraft on four gigs of RAM and no swap!
+[03:10:21] <Moonlightning> 'long as nothing else is running
+[03:10:29] <mniip> pfeh
+[03:10:43] <mniip> I've been running a minecraft server on 1G of ram some time ago
+[03:10:45] * Moonlightning hasn't tried running his usual stuff next to Minecraft. Shit uses Java; gotta run it under a livedisk, yo
+[03:11:35] <Compu> i could run minecraft on my desktop if it had a better GPU
+[03:11:57] <Compu> i can already run it on my laptop on low settings with nothing else open
+[03:12:28] <Compu> but my desktop has intel business class graphics from like 2009
+[03:12:37] <Compu> so only 389 MB of graphics RAM
+[03:13:03] <Compu> basically the most it can do is some video playing
+[03:13:46] <Compu> and its not good at that with the screen resolution at 1080x1920
+[03:14:19] <Compu> i get a bit of screen tearing at 720p on youtube and at 1080p the video stutters every few seconds
+[03:14:39] <Compu> by screen tearing i mean it only tears the video, not the whole screen
+[03:15:17] <Compu> http://www.compu.m/desktop.html
+[03:15:42] <Colgate> .m? that's a new tld :P
+[03:15:45] <Compu> oops
+[03:15:47] <Compu> typo
+[03:15:51] <wolfyshy> mniip: it managed to kill X for me.
+[03:15:51] <Compu> http://www.compu.ml/desktop.html
+[03:15:53] <PinkiePieBot> [ HardInfo (0.5.1) System Report ]
+[03:15:55] <wolfyshy> that was really fun
+[03:15:56] <Compu> there
+[03:16:12] <mniip> wolfyshy, that's why I have 2x swap
+[03:16:17] <wolfyshy> *huge python script running in konsole*
+[03:16:26] <wolfyshy> *Out of memory: Kill process X*
+[03:16:34] <mniip> so that before everything dies, I can notice the lag
+[03:16:35] <Compu> pfft
+[03:16:36] <wolfyshy> mniip: I have no swap \o/
+[03:16:46] <wolfyshy> after 20 years of dealing with swap lag
+[03:16:47] <wolfyshy> I decided
+[03:16:57] <wolfyshy> it's better to lose data than sit for 45 minutes waiting for everything to unstick
+[03:17:05] <wolfyshy> I save frequently so I lose less than 45 minutes of work
+[03:17:05] <Compu> i have swap the same size as my RAM
+[03:17:20] <wolfyshy> it is literally cheaper (in time and money) for me to lose work and have it kill vim or X than it is for me to use swap :/
+[03:17:33] <Colgate> swap is useful for hibernation!
+[03:17:41] <Compu> but i dont do much intensive stuff on my computers so i dont deal with lag much
+[03:17:43] <wolfyshy> this computer hasn't even been rebooted in 60 days
+[03:18:00] <Compu> most intensive thing i do on my desktop is watching the bronystate ustream
+[03:18:05] <wolfyshy> and I have sleep/hibernate compiled out of the kernel because it's a waste for me
+[03:18:08] <ShivalWolf> LOL - http://www.cybersquirrel1.com/
+[03:18:09] <PinkiePieBot> [ CyberSquirel1.com ]
+[03:18:51] <Colgate> ShivalWolf: what is this?
+[03:19:01] <HoneyDrops> I never use suspend2disk
+[03:19:13] * HoneyDrops doesn't use swap on any system with over 128MB of RAM.
+[03:19:28] <Compu> i just leave my computers on
+[03:19:29] * HoneyDrops has systems with <=128MB of RAM.
+[03:19:53] <Compu> HoneyDrops: use Lubuntu
+[03:20:23] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[03:20:26] <Colgate> lowest I have is 128MB
+[03:20:37] <HoneyDrops> XD I'm running OpenEmbedded or Angstrom on those.
+[03:20:39] <ShivalWolf> Colgate: attacks on national infastructure. most are caused by squirrels
+[03:20:40] <Colgate> and that's some random VPS that I use only for the ipv4 address
+[03:20:45] <Compu> lowest i have is 512 MB if i count my PS3
+[03:20:53] <Colgate> it makes for a decent socks proxy!
+[03:21:07] <Colgate> oh, if we're going that route, I have an atari 2600
+[03:21:23] <Colgate> how much memory do those even have...
+[03:21:30] <Colgate> 128 bytes
+[03:21:32] <Colgate> rippin
+[03:21:46] <Compu> if i dont count my ps3 lowest i have is 3 GB which is both my phone and my laptop
+[03:22:26] *** Joins: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[03:22:48] <HoneyDrops> n900 has 256M, and has swap.  Only exception that I know of.
+[03:23:03] <HoneyDrops> But I've not tried to slim down Maemo
+[03:24:45] *** Quits: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[03:32:05] * HoneyDrops cackles.  In a MC mod license, "You May: ... Make a Review/Spotlight of the Mod"  Oh wait, your serious, let me laugh ever harder.
+[03:32:15] <HoneyDrops> even*
+[03:32:49] <JustAberrant> pff, if recent events are an indication, not actually that funny ;p
+[03:33:36] <JustAberrant> they may not have a legal leg to stand on, but doesn't really matter if youtube says fuck it and takes down a video cause the mod author complains
+[03:34:00] <HoneyDrops> Hint: DMCA is a broken as fuck law.
+[03:34:38] <JustAberrant> you can host the video elsewhere, but most people doing spotlights/reviews/etc are looking to make money, and having youtube give you a copyright strike is kinda a big deal in that case
+[03:34:44] <JustAberrant> see: the MaS/RDP guys
+[03:34:45] <HoneyDrops> In like every possible way.  It is as if you took all of the idiotic ideas regarding copyright and bundled them together.
+[03:39:22] <Compu> hey whats the best way to clean a rubber button sheet from a remote control?
+[03:39:49] *** Quits: Bathiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[03:40:17] * HoneyDrops likes 97% isopropanol.
+[03:40:51] <Compu> HoneyDrops: will that remove the button labels?
+[03:41:21] * JustAberrant prevers 93% rubbing alcohol
+[03:41:24] <JustAberrant> * prefers
+[03:41:33] * AppleDash makes JustAberrant drink 101% vodka
+[03:41:34] <HoneyDrops> Depends on the labeling?
+[03:42:37] <JustAberrant> AppleDash: :(
+[03:42:42] <HoneyDrops> 199proof ethanol is good too, but more expensive.  I also keep acetone, methanol, and methyl ethyl ketone around too.
+[03:42:43] <AppleDash> :D
+[03:42:58] <AppleDash> It's 1l
+[03:43:03] <AppleDash> but it's in a 500ml bottle
+[03:43:41] <HoneyDrops> Never have too many solvents.
+[03:43:56] * JustAberrant has very few solvents :(
+[03:44:16] * AppleDash gives JustAberrant more solvents :>
+[03:45:13] * JustAberrant has a bottle of some kind of abs solvent adhesive, no idea what it is but it works :>
+[03:45:26] <JustAberrant> I would best describe it as smelling really bad and being yellow
+[03:45:51] <Compu> HoneyDrops: i dont know what kind of labeling it has, its a ps3 blu ray remote
+[03:45:53] <JustAberrant> I assume it's a mixture of many things
+[03:45:58] <AppleDash> JustAberrant: That describes many things :(
+[03:46:17] <HoneyDrops> I keep the stuff around to clean up brushes, remove perm marker marks, and clean up epoxy resins when fiberglassing.
+[03:46:19] *** RedHelepr is now known as RedHelper
+[03:46:41] <HoneyDrops> Also cleaning up flux residue.
+[03:47:01] <JustAberrant> kidding aside I do have the usuals
+[03:47:11] <JustAberrant> acetone, rubbing alcohol, etc..
+[03:47:31] <JustAberrant> mineral spirits..
+[03:48:30] <HoneyDrops> I really want some benzene, but I'm already probably on some watchlists.
+[03:51:46] * HoneyDrops would like a proper chem lab setup at some point.
+[03:55:01] * HoneyDrops smiles.  This is a beauty: https://cdn.hackaday.io/images/1017641452378584753.jpg
+[03:55:28] <Lapsus> c
+[03:55:34] <HoneyDrops> It doesn't work, but that's secondary.
+[03:55:37] <mniip> oh dear
+[03:55:39] <AppleDash> Amazing
+[03:55:41] <AppleDash> lol
+[03:55:43] <mniip> what in the living fuck
+[03:56:03] <Compu> HoneyDrops: what is it
+[03:56:17] <mniip> looks like a binary -> 7 segment decoder
+[03:56:37] <HoneyDrops> It's a BCD to 7-Seg decoder, aka a 7447
+[03:56:46] <Compu> whats it for
+[03:56:53] <mniip> for decoding binary
+[03:56:55] <HoneyDrops> ^
+[03:57:07] <Compu> cant that be done in software?
+[03:57:15] <HoneyDrops> http://hackaday.com/2016/01/11/learning-and-failing-at-digitial-electronics/
+[03:57:26] <mniip> Compu, ...
+[03:57:33] <JustAberrant> random: I don't have much interest in electronic music, but I saw an actual analog synth the other day (euro-something) and I fucking want one ;p
+[03:57:45] <Compu> y u gotta decode binary to a 7 segment display
+[03:58:35] <HoneyDrops> You could do it in software, in the same sense you can swat flies with ICBMs.
+[03:58:37] <JustAberrant> also neat @ pic
+[03:58:50] <Compu> ICBMs?
+[03:59:05] <HoneyDrops> intercontinental ballistic missiles
+[03:59:07] <JustAberrant> you can also do it with a tiny discrete IC, but I get the appeal of doing it for the hell of it
+[03:59:15] <Compu> nya
+[03:59:30] <mniip> Compu, "software" requires a processing unit that would interpret your code
+[03:59:31] * JustAberrant kinda wants to make his own NIC some day.. that sounds good and masochistic
+[03:59:41] <mniip> this design is clearly too small for such a processing unit
+[03:59:49] <AppleDash> JustAberrant: and write a driver for it
+[03:59:58] <Compu> *points to raspberry pi* u sure its too small?
+[04:00:01] <mniip> a windows driver MAHAHA
+[04:00:07] <JustAberrant> oh god
+[04:00:12] <Lapsus> Compu: sometimes software is overkill
+[04:00:21] <mniip> Compu, raspberry pi is huge
+[04:00:26] <Compu> is nawt
+[04:00:28] <Lapsus> that reminds me, I need to install quartus again so I can fpga more
+[04:00:29] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[04:00:41] <HoneyDrops> A Pi is massively complex bit of hardware
+[04:00:42] <JustAberrant> though it would be kinda awesome to have this like huge box next to my computer and just be like.. "yeah, that's my 10 base T network interface"
+[04:00:44] <Compu> but if u must u can go with an intel compute stick or some such
+[04:00:45] <mniip> you can fit a bcd to 7seg encoder on a 1 sq mm of silicon
+[04:00:51] <JustAberrant> 'so it can do 10 mbit?' 
+[04:00:56] <JustAberrant> "well.. _theoretically_ ..."
+[04:01:08] <JustAberrant> hard mode: no transistors, only relays
+[04:01:08] <HoneyDrops> mniip: you could probably fit dozens XD
+[04:01:13] <AppleDash> JustAberrant: That would be hilarious, yes
+[04:01:19] <mniip> well yes
+[04:01:20] <AppleDash> I want to do that too tbh
+[04:01:25] <AppleDash> JustAberrant: let's do it together :P
+[04:01:29] <mniip> you can fit a sha256 core on that much space
+[04:01:30] <JustAberrant> hehe
+[04:01:44] <Lapsus> relay computers are the sex
+[04:01:44] <Compu> u could fit it with a nixie tube instead o3o
+[04:01:44] <Lapsus> https://www.youtube.com/watch?v=n3wPBcmSb2U
+[04:01:47] <PinkiePieBot> [ Harry Porter's Relay Computer - 134547 views - 2m 2s long - 401 likes - 99.26% ]
+[04:01:50] <JustAberrant> Lapsus: so much agree
+[04:02:01] <JustAberrant> Lapsus: I like the one a guy build around his entire office in glass display cases
+[04:02:03] <HoneyDrops> Compu: the point is the logic can be wired up.  Even that whole circuit is just a TTL 7447 chip for any actual project.
+[04:02:14] <Lapsus> JustAberrant: the one I linked :v
+[04:02:25] <JustAberrant> he's like.. "and now I'm going to multiple 4 by 3.. "  *clackclackclackclack.. this is gonna take awhile..
+[04:02:39] <Lapsus> I want to make one just for the sounds
+[04:02:46] <JustAberrant> hehe, yes, this one!
+[04:02:52] <Compu> i wish i had a raspberry pi, i could wire it up to control my lightify hub
+[04:03:09] <mniip> Compu, you clearly have no understanding how integrated devices work
+[04:03:09] * JustAberrant has 6 rasp pi's and a rasp zero :(
+[04:03:23] <HoneyDrops> The point is to test one's knowledge of circuit design and boolean logic.
+[04:04:02] * HoneyDrops loved making a little 4-bit CPU in undergrad, even if it was just in a circuit simulator.
+[04:04:19] <AppleDash> The sound is amazing
+[04:04:20] * Lapsus made one in minecraft D:
+[04:04:30] <mniip> that reminds me
+[04:04:32] * Googie has also made an 8-bit CPU in a simulator!
+[04:04:35] <mniip> I still haven't designed my own CPU
+[04:04:36] <Lapsus> I want to recreate it in an fpga just to see it run at some speed
+[04:04:39] <mniip> nor my own OS
+[04:04:54] <Googie> At some point, the OS is going to be coursework for me :P
+[04:05:05] <mniip> I have an idea for an os though
+[04:05:19] * JustAberrant has not done these things either :(
+[04:05:37] <Lapsus> Googie: if you had better internet over there I'd ask you to skype me your classes lol
+[04:05:40] <mniip> a kernel powered by a graph reduction machine
+[04:05:49] <Googie> Lapsus: Well, I actually have good internet now :P
+[04:06:02] <Googie> Living on campus at last.
+[04:06:29] <Lapsus> !
+[04:07:54] * HoneyDrops huggles Googie.
+[04:08:53] <HoneyDrops> I love the layers of components-gates-logical units-ALUs-CPUs-instruction codes-Assembly-C
+[04:09:15] <HoneyDrops> best part of my CS electives.
+[04:09:58] <HoneyDrops> worst part was java :S
+[04:16:16] <JustAberrant> I can imagine, I mean that's a useful real world skill so you want to avoid that as much as possible in university ;p
+[04:17:27] <Phase> i think i've only met one weirdo that enjoyed java
+[04:17:44] <JustAberrant> pff, I didn't enjoy java in school either, or even when I first started coding professionally
+[04:17:47] <Moka> hey fuck you Phase that weirdo is my boyfriend
+[04:17:48] <HoneyDrops> First CS course was Scheme, which was odd, but fun.
+[04:18:02] <mniip> zozzle
+[04:18:06] <JustAberrant> I only learned to appreciate it when I finally clued in to _why_ it was so popular
+[04:18:07] <mniip> >actually enjoying java
+[04:18:11] <AppleDash> I have never enjoyed java
+[04:18:17] <JustAberrant> and after seeing metric shitloads of crappy c++ projects 
+[04:18:25] <HoneyDrops> Then Java, and the third (and last I took) was transistors to C.
+[04:18:41] * HoneyDrops doesn't like C++ either.
+[04:18:57] <JustAberrant> HoneyDrops: right, and of all those, java is probably the one most likely for someone to pay you to do ;p
+[04:19:14] <JustAberrant> I can appreciate c but it doesn't scale imo
+[04:19:37] <JustAberrant> the larger the project gets, unless you're really careful, the more of a clusterfuck it becomes
+[04:19:47] <HoneyDrops> JustAberrant: all of my CS courses were electives, I took them for no other reason than I liked it.  Then again, I majored in physics because I liked it XD
+[04:19:49] <Phase> Moka, :P
+[04:20:11] <JustAberrant> HoneyDrops: fair enough
+[04:20:28] * Phase just finds java to be such a dull language
+[04:20:36] <Phase> it's a very thin layer over the jvm
+[04:20:42] <HoneyDrops> So technically I can go from Maxwell's equations to C.
+[04:20:59] <JustAberrant> Phase: hehe, it is a dull language, it's a business language ;p
+[04:21:37] <JustAberrant> Phase: it's geared at writing important but often dull systems needed to make businesses work ;p
+[04:21:45] <HoneyDrops> I just found it to be clunky and verbose.
+[04:22:05] <Phase> ^
+[04:22:14] <JustAberrant> it is, but that's part of what makes it work
+[04:22:19] <HoneyDrops> I was spending more time just adding the required fluff than the actual functionality.
+[04:22:25] <Phase> you don't have a lot of tools, and maybe that's for the best given its target market
+[04:22:39] <JustAberrant> and I know we've had this discussion before, but it's definitely a language that's best written with an IDE
+[04:22:58] <HoneyDrops> yeah, and I've already said: I don't like IDEs ;)
+[04:23:16] <HoneyDrops> We should bring back LISP machines.
+[04:23:17] <AppleDash> Me neither :(
+[04:23:43] <JustAberrant> the fluff serves a purpose, but it does necessitate a tool to deal with it for you
+[04:23:57] <Phase> the fluff i've seen is mostly noise
+[04:24:11] <JustAberrant> it trades verbosity and boilerplate code for consistency and flexibility when you need it without having to resort to hacks
+[04:24:15] <Phase> manually specifying what in other languages would be implicit, default arguments, traits, so on
+[04:24:34] <HoneyDrops> Though to be fair, even the most advanced tasks were well below the complexity that OO would even begin to pay off.
+[04:24:45] <JustAberrant> right, but no serious java coder specifies them manually, they hit ctrl+ag and have it all generated for them
+[04:24:57] <HoneyDrops> I did code a fun little checkers game w/ an AI that could reliably beat me.
+[04:24:59] <Phase> again it's such a thin abstraction, and for some reason they were against syntactic sugar
+[04:25:07] <Phase> except for +
+[04:25:10] <Phase> it gets to be special
+[04:25:18] <JustAberrant> right, but I agree with that
+[04:25:28] <JustAberrant> perl is the extreme other example and best case for why more syntax is bad
+[04:25:30] <AppleDash> pfft, who uses +
+[04:25:37] <AppleDash> stringBuilder.append() all the way
+[04:25:42] <JustAberrant> java has such a small set of language mechanics it's easy to follow any code
+[04:25:48] <AppleDash> Fun fact: + with strings is compiled to a StringBuilder and calls to .append()
+[04:25:49] <HoneyDrops> Perl is fun, but not intended for anything past a short little tool.
+[04:26:08] <JustAberrant> you don't need to know a bunch of weird shortcuts and arcane syntax that saves 10 seconds of typing but adds a half an hour of reading to the next dev
+[04:26:13] <HoneyDrops> I use perl when sh + awk/sed gets to be too much.
+[04:26:52] <Phase> AppleDash, yeah, it's magical syntax sugar which they're adamant is bad, but string gets to be special in so many ways
+[04:27:06] <AppleDash> I wish they made == special for that too :P
+[04:27:07] * JustAberrant does the same.. I write a lot of perl scripts, but I'd never use it for anything serious or that I wasn't going to actually throw away
+[04:27:10] <Phase> AppleDash, ikr
+[04:27:49] <JustAberrant> well string literals are also kinda syntactic sugar ;p
+[04:27:53] <Phase> i wish they supported macros
+[04:28:02] <Phase> JustAberrant, oh you have no idea
+[04:28:04] <JustAberrant> oh god
+[04:28:07] <Phase> ever heard of javacard
+[04:28:07] <JustAberrant> macros are the devil
+[04:28:19] <Phase> not text replacing macros, hygenic macros
+[04:28:32] <JustAberrant> ok, but still, bad word ;p
+[04:28:35] <Phase> http://sweetjs.org/ this thing
+[04:28:35] <PinkiePieBot> [ sweet.js ]
+[04:28:39] <JustAberrant> macros are why we can't have nice things
+[04:28:52] <JustAberrant> also javascript makes me want to cry blood
+[04:28:59] <Phase> or template classes instead of generics
+[04:29:03] <Phase> as well as even
+[04:30:06] <Phase> and support for imperitive functions would be nice
+[04:30:19] <Phase> you can do static functions on a static class, and then a static import of that class
+[04:30:34] <Phase> which is ugly as fuck but about the only way to not have a 'this' in your scope
+[04:31:09] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[04:31:36] <Phase> we have had this conversation before
+[04:33:42] <Phase> AppleDash, but that's an artifact of how thin the abstraction is imo
+[04:34:06] <Phase> operators only work on primitives (except + with string which isn't actually +)
+[04:34:18] <Phase> with references being one of the primitives
+[04:34:47] <Phase> wonder if they do autoboxing yet
+[04:34:57] <Phase> also autoboxing being a thing we need is a horrible stupid piece of crap
+[04:36:22] <AppleDash> I think Java 8 does that
+[04:36:41] <AppleDash> I switched from 7 to 8 and got a ton of "Unnecessary boxing" warnings in a large codebase
+[04:36:44] <Phase> that primitives are exposed to the language is a huge flaw imo
+[04:37:39] <Phase> but again thin abstraction, so things like javacard can work
+[04:38:13] <Phase> JustAberrant, javacard only supports primitives, so no string. and no macro for assmebling 'strings', so you have to use byte arrays
+[04:40:53] * HoneyDrops hugs char*
+[04:41:13] <Phase> i really like how python 3 handles strings
+[04:41:25] <HoneyDrops> I didn't like the lack of pointers in Java.
+[04:46:05] *** Joins: Sombra (Iceman@Darkhorse21)
+[04:46:17] <Phase> literal pointers wouldn't make sense
+[04:46:28] <Phase> references or other container alias would be nice
+[04:46:58] <Phase> but that would ultimately have to be added as a new class and sugar
+[04:47:24] <JustAberrant> ?
+[04:47:31] <JustAberrant> java is pretty much all references
+[04:47:44] <JustAberrant> I can't really think of a legitimate reason to need a pointer in java
+[04:47:51] <Phase> JustAberrant, no way to do out parameters
+[04:48:03] <Phase> unless you pass some kind of mutable object
+[04:48:13] <JustAberrant> could use an AtomicReference ;p
+[04:48:16] <JustAberrant> or similar
+[04:48:24] <HoneyDrops> Pointer arithmetic
+[04:48:27] <Phase> so they were added as a new class :P
+[04:48:38] <JustAberrant> HoneyDrops: doesn't make sense in java
+[04:48:50] <HoneyDrops> I know :(
+[04:48:59] <Phase> ah
+[04:49:30] <Phase> would be iterators i guess
+[04:49:31] <JustAberrant> either way, out parameters are bad imo anyway
+[04:49:35] <Phase> with an exception as the exit condition
+[04:50:00] <JustAberrant> rather return a result object
+[04:50:22] <Phase> JustAberrant, it depends on what you're doing
+[04:50:25] <JustAberrant> I use them in c++ but only because of the annoying overhead of creating a new class in c++
+[04:50:26] <AppleDash> I like a success boolean and an out param that's null if success is false
+[04:50:55] * Phase doesn't remember how truthiness works on references
+[04:51:06] <JustAberrant> Phase: I like the idea of parameters being instructions to the method, return value being the results ;p
+[04:51:14] <JustAberrant> technically "put the results here" is an instruction
+[04:51:18] <JustAberrant> but it doesn't feel in that spirit
+[04:51:44] <Phase> if you have multiple results for a function then you need some unpacking boilerplate
+[04:51:54] <Phase> along with the extra type to do the packing
+[04:52:00] <Phase> no tuples
+[04:52:01] <JustAberrant> right, but in java that's trivial
+[04:52:16] <Phase> it's very noisy
+[04:52:34] <JustAberrant> right but that comes back to verbosity vs comprehensibility
+[04:52:52] <JustAberrant> it's verbose (though the IDE can do 90% of the work), but anyone can follow and understand it
+[04:53:03] <Phase> there's no verbosity/comprehensibility dichotomy
+[04:53:16] <Phase> you can have both
+[04:53:16] <HoneyDrops> As opposed to C++ that is verbose and incomprehensible~
+[04:53:25] <Phase> or lack both
+[04:53:26] <JustAberrant> out parameters add ambiguity
+[04:53:57] <JustAberrant> how many times do you have to look up "does this return a new x or update the x I just gave it"
+[04:54:57] <AppleDash> a lot
+[04:55:17] <Phase> JustAberrant, you call functions without looking up what they do?
+[04:55:18] <AppleDash> You could totally have out params
+[04:55:31] <Phase> and ideally out params have an explicit syntax
+[04:55:39] <Phase> & being the convention in c
+[04:55:44] <AppleDash> class Out<T> { private T t; public T get() { return t; } public void set(T t) { this.t = t; } }
+[04:55:56] <AppleDash> public void OutParamFunc(Out<SomeClass> out)
+[04:56:03] <AppleDash> { out.set(something); }
+[04:56:13] <AppleDash> you probably want a constructor
+[04:56:16] <AppleDash> you get the idea though
+[04:56:30] <Phase> you still need to unpack
+[04:56:34] <AppleDash> yeah, I know
+[04:56:40] <AppleDash> but I'm just saying you can hack it in :LP
+[04:56:41] <AppleDash> :P
+[04:56:54] <Phase> you're just using a generic instead of a new type, but it's still the same thing
+[04:58:11] <JustAberrant> Phase: java methods tend to be verbose enough and consistent enough that yeah, occasionally
+[04:58:42] <Phase> JustAberrant, thats gonna cause you problems
+[04:59:05] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[04:59:06] <JustAberrant> obviously you need to know what the class does, but because java only has one way of passing things in, you don't need to look up which particular method each method you use is using
+[04:59:47] <Phase> and while you may know it doesn't mutate your reference, it may mutate the object
+[04:59:58] <JustAberrant> it might, but that's very non-typical
+[05:00:01] <AppleDash> But see, public Object stuff(Object obj) { } could do many things
+[05:00:07] <AppleDash> - Modify and return new
+[05:00:15] <AppleDash> - Don't modify and return modified
+[05:00:21] <AppleDash> - Don't modify and return new *
+[05:00:23] <JustAberrant> unless the method is clearly intended to do that, in which case it usually indicates that in the name
+[05:00:26] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Connection closed)
+[05:00:28] <AppleDash> - Modify and return old
+[05:00:36] <AppleDash> - Don't do anything and just return what you passed without changing it
+[05:00:54] <AppleDash> Where modify is doing like obj.setSomething(blah)
+[05:01:41] <Phase> and why is string final
+[05:01:46] <Phase> WHY WOULD YOU
+[05:01:48] <Phase> *SALT*
+[05:02:10] <Phase> i mean, i know why
+[05:02:13] <JustAberrant> :>
+[05:02:15] <Phase> but it's such an awful reason
+[05:03:00] * Phase wanted to overload string equality in an irc bot
+[05:03:13] * Phase found that every avenue for doing so was carefully and knowingly blocked
+[05:03:33] <Phase> because string is such a special snowflake
+[05:03:52] <AppleDash> Java agent
+[05:04:00] <AppleDash> when String.class is loaded, transform String#equals
+[05:04:01] <AppleDash> lol
+[05:05:56] <Phase> string is built so it can be defined within the vm, string.class is just a reference implementation
+[05:06:29] <Phase> so the class is marked as final and you can't alias to it in any other way
+[05:06:43] <Phase> do you want some other way to store strings? some extra methods?
+[05:06:56] <Phase> overload equality for a particular systems idea of case sensitivity?
+[05:07:00] <Phase> no, no we can't have that
+[05:07:08] <Phase> god forbid part of java be expressed within java
+[05:07:41] * JustAberrant watches Phase froth ;p
+[05:07:51] <Phase> I AM LITTERALLY ANGRY YOU HAVE NO IEA
+[05:07:53] <Phase> DEA
+[05:07:54] <Phase> IDEA
+[05:07:55] <Phase> AGHSOGHFEOHT$GDR
+[05:07:58] * Phase will stop now
+[05:08:27] * Webster offers bourbon?
+[05:09:12] <Phase> stupid fucking language and enforced consistency except for all the things that aren't
+[05:09:47] <JustAberrant> in fairness I'd have been fine with having to do someString.append() ;p
+[05:10:12] <Phase> if they're going to be against syntactic sugar they damn well should have done that
+[05:11:54] <Phase> JustAberrant, i can't handle verbose code
+[05:11:59] <Phase> there's just too much to keep track of
+[05:12:09] <Phase> takes so damn long to work through it
+[05:13:44] <Phase> doesn't help that i have litterally nothing to do right now
+[05:15:06] <Phase> HoneyDrops, http://sweetjs.org/ i'd be interested to know what you think of this
+[05:15:07] <PinkiePieBot> [ sweet.js ]
+[05:15:48] <mniip> >sjs
+[05:15:57] <mniip> shit javascript says
+[05:16:06] <Phase> but now more concisely!
+[05:18:18] <HoneyDrops> No good comes from JS.
+[05:20:17] <HoneyDrops> I will congratulate the site for not entirely breaking with scripting and all 3rd party requests blocked.
+[05:21:25] <HoneyDrops> I would have to see how readable the output code is.  Web languages should, above all else, strive for complete transparency.
+[05:23:11] <Phase> depends on the macro
+[05:24:11] <Phase> HoneyDrops, are source maps good enough? at some scales you kinda need to minify
+[05:24:24] <Phase> rather not doing so is unadvisable
+[05:24:49] <Sombra> So today
+[05:24:50] <HoneyDrops> If something is running clientside, the client should have complete control over it's execution and the ability to easily inspect its operation, at least as easily as the intrinsic complexity of the task allows for.
+[05:24:51] <Sombra> I got a box thing.
+[05:24:55] <Sombra> And I plugged it into my steam link
+[05:24:59] <HoneyDrops> its*
+[05:26:43] <HoneyDrops> In general, clientside scripting should be used minimally, when there is no other option.
+[05:30:29] <JustAberrant> pff, moar scripts obfuscating not just the script itself, but the content on the page ;p
+[05:31:00] <HoneyDrops> Yeah, that.  Stop that!
+[05:31:05] <JustAberrant> actually directly serving up content is passe, it's gotta be pulled via ajax and built up dynamically
+[05:31:22] <HoneyDrops> -_-
+[05:33:26] * HoneyDrops wants static HTML to come back.
+[05:34:16] <HoneyDrops> If hosting images, should just be the direct file.  Video should be a direct URI to the stream or file.
+[05:34:16] <JustAberrant> I wouldn't hold my breath ;p
+[05:34:41] <HoneyDrops> So you can mpv URI and /done/
+[05:35:23] <JustAberrant> right, which is a detriment to the content producer normally
+[05:35:44] <JustAberrant> they don't go out of their way to prevent it (usually) because it doesn't represent a big chunk of the audience, but they certainly arn't going to make it easier
+[05:36:27] <JustAberrant> they want you viewing the video on their site surrounded by ads in their player which probably also jams more ads in there, not to mention all the various tracking 
+[05:37:46] <HoneyDrops> I still say we write tools to poison web tracking, blocking is not enough.
+[05:38:41] <JustAberrant> meh, I'm sure people are trying
+[05:38:45] <HoneyDrops> :3
+[05:38:56] <JustAberrant> probably not very effectively though
+[05:39:02] <HoneyDrops> Sadly :(
+[05:39:19] *** GigaBookworm is now known as Gigabit
+[05:43:23] *** Quits: Sombra (Iceman@Darkhorse21) (Connection closed)
+[06:00:23] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[06:00:39] *** Quits: Webster (Webster@Pony-benl74.fios.verizon.net) (Quit: Leaving)
+[06:03:24] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[06:03:40] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[06:16:54] *** Gigabit is now known as Vega
+[06:18:01] *** WuBzYIsNotGonnaGetEnoughSleep is now known as WuBzY
+[06:25:06] <Moonlightning> uh
+[06:25:37] <Moonlightning> So I wanna make a thing that makes a chain of Wikipedia articles, a la https://xkcd.com/903/ titletext
+[06:25:37] <PinkiePieBot> [ xkcd: Extended Mind ]
+[06:26:21] <Moonlightning> I'm currently looking at the MediaWiki API stuff…
+[06:26:43] <HoneyDrops> Trying to prove that empirically?
+[06:26:49] <JustAberrant> download a copy of wikipedia for local indexing ;p
+[06:26:52] <Moonlightning> Nah, just for fun.
+[06:27:05] <Moonlightning> The JSON it returns is…uhh…more than I need?
+[06:27:29] <Moonlightning> Like, the actual article text is buried in half a dozen layers of containers
+[06:27:41] <mniip> whoa
+[06:27:45] <JustAberrant> if that works for you then fine ;p
+[06:27:46] <mniip> that was a ride
+[06:27:53] <mniip> I went from adolf hitler to philosophy
+[06:27:58] <Moonlightning> XD
+[06:28:02] *** Joins: Cloudie (~WebChat@Pony-2ab.fvp.231.60.IP)
+[06:28:29] <HoneyDrops> I think today's xkcd would be neat.
+[06:28:45] <Moonlightning> I think the thing is, eventually you get to a country, then a group of countries, then a language, then /Communication/, then a static chain to /Philosophy/ :p
+[06:28:48] <mniip> http://i.imgur.com/R72bpRs.png
+[06:29:24] <Moonlightning> Yeah, like that.
+[06:29:30] <Moonlightning> Most of that chain seems really common.
+[06:29:40] <Moonlightning> Starting with /Government/
+[06:29:48] <HoneyDrops> Well philosophy is basically the root of human knowledge, so it makes sense.
+[06:30:15] <Moonlightning> It's interesting how the /first/ intrawiki link not in parentheses or italics does that, though :p
+[06:31:07] <Moonlightning> Anyway, can I just fetch the actual article with an HTTP request and then use an HTML parser to get at `#mw-content-text` >.>
+[06:31:57] <HoneyDrops> I wonder how long to takes to loop back to philosophy
+[06:32:09] *** Quits: Cloudie (~WebChat@Pony-2ab.fvp.231.60.IP) (Quit: Page closed)
+[06:32:11] <Moonlightning> inb4 ~3 articles
+[06:32:20] <Moonlightning> I can cache articles and use If-Modified-Since: that way, too
+[06:34:10] <HoneyDrops> Philosophy -> Reality -> Existence -> Ontology -> Philosophy, So yes 3 before you loop back.
+[06:35:02] <HoneyDrops> I wonder where the second link always goes :3
+[06:35:28] <HoneyDrops> And lets extend it to the Nth link (or last if N > the number of links in the article)!
+[06:36:21] <Moonlightning> Open an issue once I have something. :p
+[06:36:31] <Moonlightning> Or, do you wanna work on it with me? I think I'm gonna do it in Python. >3>
+[06:36:31] <HoneyDrops> I would have to imagine there are closed loops somewhere, it seems unlikely that there would be /none/.
+[06:36:51] * HoneyDrops leaves Moonlightning to the snakes.
+[06:38:44] *** GeekBrony is now known as GeekBrony[away]
+[06:46:04] *** Quits: roflin (dennis@Pony-aend1d.es) (Ping timeout: 121 seconds)
+[06:49:41] <Moonlightning> …oh! Looks like the API has a way to fetch just a specific section from an article.
+[06:50:07] <Moonlightning> That would be better; I guess I'll just use that.
+[06:56:15] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[06:58:09] <HoneyDrops> :D I remember this https://i.imgur.com/h7dy7ZU.gif
+[06:58:17] * HoneyDrops is cleaning up her browser tabs.
+[06:59:26] <Colgate> lol
+[06:59:32] <Colgate> damn glider!
+[07:03:10] <HoneyDrops> I have tabs I know I have not actually used in over a year.
+[07:08:05] <Moonlightning> your browser has an uptime of over a year? ._.
+[07:15:09] *** Eventide is now known as Eventide|Sleepies
+[07:18:20] <HoneyDrops> Heavens no, tabs persist between sessions :p
+[07:18:44] * Vega closes Moonlightning's browser.
+[07:19:23] <mniip> dat spleeing https://github.com/mniip/gms/commit/4389a52c2bdb95dd9309e3ecac31ea25aacd3456#diff-b58c710299795ab2dac10c5cbe5232cbL872
+[07:19:24] <PinkiePieBot> [ Fix spelling in some memo messages · mniip/gms@4389a52 · GitHub ]
+[07:19:33] * Moonlightning splees at mniip
+[07:42:52] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:48:10] *** RedHelper is now known as Creeps|AFK
+[07:49:09] <Moonlightning> …what the fuck?
+[07:49:23] <Moonlightning> I tried to run `lsof` on a single file, and my music started skipping
+[07:49:33] <Moonlightning> killed it, music was fine
+[07:49:38] <Moonlightning> tried again…skipping
+[07:49:44] <Moonlightning> Minor skipping, but still, WTF?
+[07:50:31] <AppleDash> Moonlightning: Your CPU is probably being capped and the encoder is shitting out.
+[07:50:58] <Moonlightning> …why is `lsof` taking so many resources and so much time to run for ONE FILE?
+[07:50:58] <AppleDash> slash decoder
+[07:51:38] <AppleDash> No idea!
+[07:53:07] <tiwake> how would you trouble shoot something like that?
+[07:54:18] <mniip> omg
+[07:54:22] <mniip> pls stahp http://i.imgur.com/a0szxB0.png
+[07:54:32] <Moonlightning> uhh…strace, I guess?
+[07:55:56] <Moonlightning> mniip: …hmm?
+[07:56:19] <mniip> cold
+[07:56:23] <Moonlightning> Oh.
+[07:56:32] <Moonlightning> yeah, that's pretty cold o.o
+[07:56:45] <Moonlightning> …what?! Why the fuck does this pgrep list EVERY SINGLE PROCESS if I pass -P but not the positional argument?
+[07:57:46] <Moonlightning> > -P ppidlist: Match only processes whose parent process ID is specified.
+[07:57:49] <Moonlightning> You LIAR!
+[07:57:58] <Moonlightning> I should file a bug report.
+[07:58:15] <Moonlightning> Good, this is from Homebrew; I can ACTUALLY file a bug report and get listened to.
+[08:01:24] <Moonlightning> …
+[08:01:39] <Moonlightning> someone already submitted it
+[08:01:41] <Moonlightning> in 2004
+[08:02:00] <Moonlightning> there's one followup, from 2014, by a different user, confirming the bug
+[08:02:55] <tiwake> mniip: is that C or F?
+[08:03:55] <tiwake> mniip: where I used to live it would get down to -30 or so for about a week or two per year
+[08:03:56] <Moonlightning> tiwake: Celsius. It says, by the first one.
+[08:05:20] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:07:09] <mniip> C
+[08:07:59] <tiwake> at about -30 it does not matter if its C or F :P
+[08:09:18] <mniip> that's at -40 :P
+[08:10:48] <tiwake> close enough to know its freaking cold
+[08:11:32] <tiwake> but yeah, seems you are right :P
+[08:12:37] * HoneyDrops wishes we'd all use Kelvin.
+[08:13:01] <HoneyDrops> absolute temperature scales are so much nicer
+[08:14:55] <Moonlightning> > [A] system with a negative temperature is hotter than any system with a positive temperature in the sense that if a negative-temperature system and a positive-temperature system come in contact, heat will flow from the negative- to the positive-temperature system.[9]
+[08:14:58] <Moonlightning> Wat.
+[08:17:27] <HoneyDrops> Negative temps are a quirk of systems with limited state space.
+[08:17:43] * JustAberrant places Moonlightning on a hot plate
+[08:18:19] <HoneyDrops> It makes perfect sense if you think of it from a entropy/statistical mechanics perspective.
+[08:18:31] * Moonlightning hovers above the plate instead.
+[08:18:58] * tiwake crawls under Moonlightning and curls up on the plate
+[08:19:43] <JustAberrant> this did not go as I had planned
+[08:21:45] <HoneyDrops> Moonlightning: "Systems with a positive temperature will increase in entropy as one adds energy to the system. Systems with a negative temperature will decrease in entropy as one adds energy to the system."
+[08:23:50] <HoneyDrops> You have to stop thinking of temperature in a purely classical sense and consider what goes on in systems with limited degrees of freedom and how adding energy can lower rather than raise the number of possible states.
+[08:24:41] <tiwake> http://softiron.co.uk/order/ should I put in my company name there? or should I make one up?
+[08:24:45] *** Joins: Lunia (ellen@ChumPony.Enterprises)
+[08:25:07] <Moonlightning> HoneyDrops: my eyes glazeth over
+[08:25:19] <tiwake> trying to figure out how much one would cost
+[08:25:24] <Moonlightning> I think it's too late for that
+[08:25:28] <HoneyDrops> Well clearly you didn't pay attention in thermodynamics or stat mech.
+[08:25:30] <Moonlightning> for me and physics, I mean
+[08:25:36] <Moonlightning> clearly. :>
+[08:25:45] <HoneyDrops> https://en.wikipedia.org/wiki/Grand_canonical_ensemble start here
+[08:25:47] <PinkiePieBot> [ Grand canonical ensemble - Wikipedia, the free encyclopedia ]
+[08:27:36] <HoneyDrops> Basically temperature as we think of it classically is much like classical newtonian - it is a rather good approximation under a limited set of conditions (that just so happen to encompass the vast majority of human experience)
+[08:29:02] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[08:29:05] <HoneyDrops> If one starts at the equations this stuff falls out beautifully :D
+[08:29:16] * HoneyDrops <3's physics.
+[08:29:37] <tiwake> sounds too much like chemistry to be physics
+[08:30:02] <HoneyDrops> Thermo is very closely related to chem.
+[08:30:25] <HoneyDrops> Really chemistry is just a specific case of applies thermo and Quantum Mech.
+[08:30:41] <HoneyDrops> Chemical bonds are nothing but QM.
+[08:31:11] <mniip> git is nothing but a marked digraph
+[08:31:56] <HoneyDrops> You can go back to Maxwell Equations, and time dependent Schrodinger equation and derive the waveforms for electrons and work out interatomic bonds.
+[08:33:56] * HoneyDrops invokes the best XKCD ever: https://xkcd.com/435/
+[08:33:57] <PinkiePieBot> [ xkcd: Purity ]
+[08:34:04] <mniip> you can examine the revision trees and trace diff objects and work out why your branches won't fast-forward
+[08:35:54] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[08:35:59] <HoneyDrops> https://upload.wikimedia.org/math/9/8/2/982d527d66c31874b0db94f603e3be2f.png  :D
+[08:38:17] <HoneyDrops> Diff Eq, linear algebra, state spaces, eigenvalues and eigenvectors!  These are some of my favorite things~
+[08:38:31] <tiwake> I love the smell of garlic
+[08:39:52] <tiwake> I have a ziploc bag full of garlic sitting between my keyboard and computer screens
+[08:40:15] <mniip> HoneyDrops, I wish I knew what that capital psi meant or the squared nabla
+[08:40:21] <tiwake> and have a salt shaker full of garlic in my car
+[08:42:34] <HoneyDrops> mniip psi is the waveform
+[08:43:30] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[08:43:33] <HoneyDrops> Del^2 is the Laplacian
+[08:43:42] <HoneyDrops> https://en.wikipedia.org/wiki/Laplace_operator
+[08:43:43] <PinkiePieBot> [ Laplace operator - Wikipedia, the free encyclopedia ]
+[08:45:06] <HoneyDrops> https://en.wikipedia.org/wiki/Wave_function (Psi)
+[08:45:07] <PinkiePieBot> [ Wave function - Wikipedia, the free encyclopedia ]
+[08:46:23] <HoneyDrops> Hilbert spaces~  Been too long since I was playing around with this stuff :(
+[08:47:11] <tiwake> one of these days I'll get around to building another rocket engine
+[08:47:15] <HoneyDrops> https://en.wikipedia.org/wiki/Hilbert_space (for the lazy)
+[08:47:16] <PinkiePieBot> [ Hilbert space - Wikipedia, the free encyclopedia ]
+[08:48:27] <mniip> HoneyDrops, this is all chinese to me :P
+[08:48:42] <HoneyDrops> Aww :(
+[08:49:29] <HoneyDrops> You took multivariable calc, right?  Linear algebra?  Diff Eq?  (ideally non-liner, partial diff eq)
+[08:49:49] <mniip> I mean I can comprehend hilbert spaces
+[08:50:32] <mniip> HoneyDrops, I have some general knowledge of multivariable calc
+[08:50:36] <mniip> but no, I haven't done PDEs
+[08:51:16] <HoneyDrops> PDEs are fun, and if you look deep enough the basis for like all of physics >_>
+[08:51:26] <mniip> well not counting the obvious r''=-r
+[08:51:41] <mniip> wait that's not PDE
+[08:51:53] <mniip> that's vector at best
+[08:52:37] <HoneyDrops> QM, EM, even classical mech is PDE if you use Lagrangian mechanics
+[08:53:03] <tiwake> website requiring flash to view any content
+[08:53:16] <mniip> HoneyDrops, chiiineeese
+[08:53:21] <mniip> :P
+[08:53:24] * HoneyDrops hisses at Adobe Flash.
+[08:53:59] <tiwake> https://www.youtube.com/watch?v=N93H0Iv2gDI
+[08:53:59] <PinkiePieBot> [ Hybrid Rocket Motor 03 06 2015 high mol weight polyethylene oil (UHMW) - 31 views - 23s long - 1 likes - 100.0% ]
+[08:54:33] <tiwake> they are not getting enough thrust
+[08:54:38] <HoneyDrops> mniip: CS major?  Then you likely focused on discrete math
+[08:54:58] <mniip> I'm still at the first year of uni
+[08:56:05] <HoneyDrops> ah
+[08:56:12] <tiwake> you can see in that video that the flame is not uniform, one of the causes is from not enough stuff burning
+[08:57:00] <mniip> tiwake, how much specific impulse?
+[08:58:03] <tiwake> no idea, its not my engine
+[08:58:34] <tiwake> I have some 3" spare UHMW at the shop though
+[08:58:54] <tiwake> which is about the right size for the kind of hybrid rocket engine I want to build
+[08:59:26] <tiwake> http://tiwake.com/rocket.pdf
+[09:00:27] <mniip> I wonder if it's possible to make a km/s-grade liquid propellant engine at home
+[09:00:49] <tiwake> ..?
+[09:00:55] <tiwake> what is km/s grade?
+[09:01:38] <mniip> exhaust velocity of multiple km/s
+[09:01:51] <mniip> that is, specific impulse of hundreds of seconds
+[09:02:05] <tiwake> oh
+[09:02:21] <tiwake> exhaust velocity is always greater than sound at sea level
+[09:02:32] <tiwake> much greater
+[09:03:14] <tiwake> its what makes a rocket engine so efficient
+[09:04:39] <mniip> well, at mach-3 the mass ratio requred to reach LEO is something about 1000
+[09:05:33] <mniip> I doubt that the engine can provide quite enough thrust for that
+[09:05:35] <tiwake> erm, rocket velocity and exhaust velocity have little to do with eachother
+[09:05:52] <mniip> I mean mach-3 exhaust velocity
+[09:06:08] <tiwake> how is that related to low earth orbit?
+[09:06:25] <mniip> LEO velocity is 7.8 km/s
+[09:06:37] <mniip> if you plug that into the tsiolkovski equation
+[09:06:42] <tiwake> just reread your thing
+[09:06:57] <tiwake> yeah
+[09:07:19] <mniip> m0/m1 = exp(delta v/exhaust v)
+[09:08:08] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[09:08:45] <tiwake> one of these days, I'll get around to building a rocket out of the rocket engine(s) I'll build :P
+[09:09:14] <mniip> I wanted to build a rocket once :o
+[09:09:36] <mniip> that's why I know about all of this stuff in first place :P
+[09:09:47] <tiwake> heh
+[09:10:08] <tiwake> built a couple solid fuel engines... one of them blew up
+[09:10:52] *** Quits: corkfuse (corkfuse@corkfuse) (Ping timeout: 121 seconds)
+[09:11:03] <tiwake> it was because the nozzle I made was graphite, and the radius in the throat was not big enough
+[09:11:11] <mniip> if one could build an engine with ~3km/s exhaust velocity and under 30kg
+[09:11:22] <mniip> that'd be great
+[09:12:11] *** Quits: Datalink (Datalink@Datalink) (Quit: Datalink offline)
+[09:14:41] <tiwake> hmm, maybe
+[09:15:02] <tiwake> mach 8-9
+[09:15:42] <tiwake> though I think most of the time exhaust velocity is about half that
+[09:16:40] <mniip> you need, what, 10 km/s to reach the moon
+[09:17:28] <tiwake> even with the really good stuff like wax and liquid oxygen, or your standard HTPD solid fuel
+[09:17:41] <tiwake> erm, assuming I remember that correctly
+[09:18:22] <mniip> exp(10/3) = 28
+[09:18:59] <mniip> not that bad
+[09:19:40] <tiwake> mniip: http://tinyurl.com/yz6ng63
+[09:19:41] <PinkiePieBot> [ Robot Check ]
+[09:20:00] <tiwake> I have the 7th edition
+[09:20:05] <tiwake> much love
+[09:24:58] <tiwake> mniip: a friend of mine said he would give me $1000 if I could build a (small) rocket and shoot down his RC airplane wing
+[09:25:06] <tiwake> :3
+[09:25:26] <tiwake> or just hit it
+[09:26:50] <tiwake> I don't see why it wouldent be too difficult... there are open source video tracking libraries in existence
+[09:40:28] <tiwake> maybe I'll make a hybrid rocket engine with an aerospike nozzle
+[09:43:41] <tiwake> oh hey
+[09:43:42] <tiwake> https://www.youtube.com/watch?v=P5JxXka50Gw
+[09:43:43] <PinkiePieBot> [ How Hard Can It Be? Episode 02 - Homemade Rocket - 2491372 views - 45m 10s long - 8409 likes - 91.83% ]
+[09:44:24] *** Quits: Lunia (ellen@ChumPony.Enterprises) (Connection closed)
+[09:45:01] <mniip> I wonder how hard would it be to arrange that your rocket doesn't pierce any satellite
+[09:45:26] <mniip> I mean, NASA publishes precise location of the ISS, but that's about it
+[09:45:51] <tiwake> china shot down one of their own satellites a while ago
+[09:48:02] <mniip> well that's their own
+[09:49:12] <johnsey> I suggest installing a bottle rocket on a 'copter!
+[09:50:17] <johnsey> or did he specifically ask for a SAM?
+[09:50:59] <tiwake> surface to air
+[09:53:08] *** Joins: Sombra (Iceman@Darkhorse21)
+[09:53:17] <johnsey> try not to down any civil airtraffic
+[09:53:26] <tiwake> neh
+[09:55:47] *** Vega is now known as Snoarin
+[09:58:44] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Quit: Leaving.)
+[10:08:05] *** Joins: roflin (dennis@Pony-aend1d.es)
+[10:49:20] *** Quits: Fallfeathers (Fallfeather@Pony-859c69.bigpond.net.au) (Connection closed)
+[10:50:33] *** Joins: Fallfeathers (Fallfeather@Pony-859c69.bigpond.net.au)
+[10:50:51] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (Connection closed)
+[10:51:52] *** Joins: Jouva (jouva@Pony-535ork.fios.verizon.net)
+[10:54:39] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[10:56:38] *** Quits: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP) (Ping timeout: 121 seconds)
+[10:58:37] *** Joins: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP)
+[11:27:56] <Moonlightning> hmmm
+[11:28:32] <Moonlightning> Should I worry about Wikipedia sending me ridiculous amounts of data and taking up all my RAM?
+[11:32:34] *** Quits: WuBzY (androirc@Pony-fpcn3v.bb.dnainternet.fi) (Quit: AndroIRC - Android IRC Client ( http://www.androirc.com ))
+[11:33:16] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[11:36:45] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[11:50:40] *** Joins: corkfuse (corkfuse@corkfuse)
+[11:52:35] *** Joins: WuBzY (androirc@Pony-s4orkj.rev.dnainternet.fi)
+[11:55:39] <Googie> I just realized I must have fallen asleep with a VGA cable in my bed last night. Huh
+[11:57:21] <Moonlightning> Ouch. I've heard they can get pretty attached…
+[12:02:37] <mniip> shall I tell you a story of how I've fallen asleep with a laptop on my arm and woke up to a 2nd degree burn
+[12:03:33] <Googie> Youch.
+[12:03:52] <Moonlightning> ._.
+[12:04:18] <Moonlightning> So it's true what the warnings say…
+[12:05:36] <mniip> when I woke up I had a blister about 1cm in diameter. interestingly it didn't hurt much (I didn't wake up because of pain)
+[12:05:38] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[12:05:49] <mniip> I still have the scar from that thing
+[12:06:17] <Moonlightning> o.o
+[12:13:40] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[12:18:10] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[12:32:14] *** Finnfinn is now known as FinnSHOWER
+[12:50:35] *** Quits: corkfuse (corkfuse@corkfuse) (Ping timeout: 121 seconds)
+[12:53:59] <johnsey> https://code.google.com/p/google-security-research/issues/detail?id=693
+[12:54:00] <PinkiePieBot> [ Issue 693 - google-security-research - TrendMicro node.js HTTP server listening on localhost can execute commands - Google Security Research - Google Project Hosting ]
+[12:59:13] *** FinnSHOWER is now known as Finnfinn
+[13:00:45] <Moonlightning> Yeah, I relinked that earlier.
+[13:06:23] <mniip> that feel when your apartment is literally siberia and CPU sensors read 22C
+[13:29:10] <djazz> my cpu sensors usually read around 25C, with room temp of about 20 #aircooling
+[13:29:28] <djazz> on idle :P
+[13:37:42] *** Joins: Lunia (ellen@ChumPony.Enterprises)
+[13:43:01] *** Joins: DataByte (DataByte@Pony-q0g.a79.50.107.IP)
+[13:46:31] <mniip> pfft idle
+[13:47:04] <mniip> also lmao
+[13:47:12] <mniip> that one credentials leak bug I discovered
+[13:47:24] <mniip> apparently I overlooked something else in there
+[13:47:29] *** Quits: WuBzY (androirc@Pony-s4orkj.rev.dnainternet.fi) (Quit: AndroIRC - Android IRC Client ( http://www.androirc.com ))
+[13:47:45] *** Joins: WuBzY (wubzy@Pony-ca6o0s.dhcp.inet.fi)
+[13:48:24] <mniip> I've decloudflared the httpd
+[13:48:50] <mniip> once again just because the error page contained too much data
+[13:48:52] *** Quits: WuBzY (wubzy@Pony-ca6o0s.dhcp.inet.fi) (Quit: Leaving)
+[13:59:13] *** nnnn20430 is now known as icy20430
+[14:01:02] *** icy20430 is now known as nnnn20430
+[14:10:13] *** Quits: DataByte (DataByte@Pony-q0g.a79.50.107.IP) (Ping timeout: 121 seconds)
+[14:13:26] *** Joins: DataByte (DataByte@Pony-q0g.a79.50.107.IP)
+[14:14:06] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[14:19:58] *** GeekBrony[away] is now known as GeekBrony
+[14:21:18] *** Quits: Fallfeathers (Fallfeather@Pony-859c69.bigpond.net.au) (Connection closed)
+[14:24:53] *** Quits: Compu (compu@snuggly.filly) (Ping timeout: 121 seconds)
+[14:39:01] *** Caerdwyn is now known as Cae
+[14:42:45] *** Quits: Lunia (ellen@ChumPony.Enterprises) (Ping timeout: 121 seconds)
+[14:43:40] *** Joins: Lunia (ellen@ChumPony.Enterprises)
+[14:44:51] *** Quits: DataByte (DataByte@Pony-q0g.a79.50.107.IP) (Ping timeout: 121 seconds)
+[14:46:42] *** Joins: corkfuse (corkfuse@corkfuse)
+[14:49:19] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[15:06:28] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:11:54] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[15:16:37] *** Joins: Compu (compu@snuggly.filly)
+[15:19:40] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[15:21:42] *** Joins: Sin (Sin@is.hustlin.everyday)
+[15:24:42] *** Quits: Lunia (ellen@ChumPony.Enterprises) (Ping timeout: 121 seconds)
+[15:25:26] *** Joins: Lunia (ellen@ChumPony.Enterprises)
+[15:33:16] *** Joins: DataByte (DataByte@Pony-m6osal.g424.9euc.0247.2601.IP)
+[15:37:30] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[15:39:31] *** Quits: Lunia (ellen@ChumPony.Enterprises) (Connection closed)
+[15:41:52] *** Joins: Lunia (ellen@ChumPony.Enterprises)
+[15:49:26] *** Quits: Lunia (ellen@ChumPony.Enterprises) (Ping timeout: 121 seconds)
+[15:52:24] *** Quits: cyzon (cyzon@moms.spaghetti) (Ping timeout: 121 seconds)
+[16:00:52] *** Joins: cyzon (cyzon@Pony-td62ve.cyzon.cyzon.us)
+[16:08:46] *** Joins: Crimson_Tail (Zeta@Pony-3k51hm.cg80.k4gu.0151.2601.IP)
+[16:13:16] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[16:13:50] *** Quits: corkfuse (corkfuse@corkfuse) (Quit: Sleeping)
+[16:23:02] *** Eventide|Sleepies is now known as Eventide
+[16:31:40] <Quindo> Is there a good way to LAN remote desktop a Mac from a windows environment?
+[16:35:32] <Quindo> I am using teamviewer now but it is laggy
+[16:42:21] <wolfyshy> Quindo: Vine server on Mac + RealVNC Free on Windows
+[16:42:35] <wolfyshy> or do you want the other way?
+[16:57:40] <mniip> zozzle
+[16:57:48] <mniip> I've discovered a secret freenode server :o
+[17:04:43] <Quindo> I will probably dive into that when I am not under deadlines.
+[17:12:50] <wolfyshy> well vine is just download and run, realvnc you point it at the ip/hostname of the mac and it's done
+[17:12:59] <wolfyshy> but yeah, there are some advanced things they can do.  password auth for one
+[17:18:56] *** Joins: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl)
+[17:19:00] *** Double is now known as Pony_93812
+[17:20:01] *** Pony_93812 is now known as Double
+[17:22:18] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:30:45] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[17:39:14] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[18:04:15] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[18:22:03] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[18:32:16] *** Quits: Asoka (Asoka@Pony-913dkm.net-htp.de) (Connection closed)
+[18:35:13] *** Joins: Asoka (Asoka@Pony-913dkm.net-htp.de)
+[18:47:22] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[19:06:07] *** Joins: Melanosuchus (quassel@Pony-3vu8qf.as13285.net)
+[19:08:41] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[19:34:36] *** Quits: Obaskyr (Tachy@Pony-vumkm3.range31-50.btcentralplus.com) (Ping timeout: 121 seconds)
+[19:40:42] *** Joins: Lorix_ (Lorix_@flutter.shy.yay)
+[19:49:09] *** Joins: WuBzY (wubzy@Pony-orbhup.dhcp.inet.fi)
+[19:52:15] *** Quits: Phase (Phase4@Pony-kk0nqh.internode.on.net) (Ping timeout: 121 seconds)
+[20:00:03] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[20:02:04] *** Joins: Lunia (ellen@ChumPony.Enterprises)
+[20:02:41] *** Joins: TachyonicBow (Tachy@Pony-fh3bep.range31-48.btcentralplus.com)
+[20:05:58] *** TachyonicBow is now known as Obaskyr
+[20:17:21] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[20:20:53] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[20:25:49] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[20:38:20] *** Quits: Lunia (ellen@ChumPony.Enterprises) (Ping timeout: 121 seconds)
+[20:44:16] <Sakura> I should have made my Windows 10 Insider VM HDD file into a split group of files. :/
+[20:50:44] *** Joins: Lunia (ellen@ChumPony.Enterprises)
+[20:52:16] * mniip randompokes Fusl
+[20:53:36] <Moonlightning> wolfyshy: Password auth? /Advanced?/
+[20:53:50] <Moonlightning> The 80s called; they want their security standards back
+[20:55:38] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[20:57:51] <wolfyshy> Moonlightning: password auth is a real pain in the plot to configure in any VNC system
+[20:57:59] <wolfyshy> Moonlightning: yes, it is an advanced topic
+[20:58:06] <wolfyshy> namely because there are three competing standards
+[20:58:19] <wolfyshy> plain text, MD5, and "VLC+TLS"
+[20:58:29] <wolfyshy> also it's a protocol from the 80s
+[20:58:50] <Moonlightning> MD5? How's /that/ work??
+[20:58:53] <Moonlightning> s/.$//
+[21:00:04] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[21:01:03] <Sour_Sweet> Linux is such a mess sometimes ... The action my notebook should perform on crtical battery life is broken. I guess it's trying a suspend even though the power manager GUI says hibernate, which I cannot change for whatever reason (Ubuntu GNOME). So I change it via dconf to shutdown which is ignored. Both suspend and hibernate work if I perform them maunally (suspend via GUI, hibernate via
+[21:01:05] <Sour_Sweet> terminal). I don't even know where to start looking for a solution now 6_9
+[21:01:34] <mniip> Sour_Sweet, ooh I had that happen
+[21:01:57] <mniip> it is probably related to privilege management
+[21:02:07] <mniip> but I honestly have no idea how I fixed it
+[21:02:14] *** Quits: WuBzY (wubzy@Pony-orbhup.dhcp.inet.fi) (A TLS packet with unexpected length was received.)
+[21:03:31] <Sour_Sweet> Well it's doing something. It starts what I guess is supposed to be a suspend and than just resumes. After 1 second or 2 it tries that again and is stuck in a loop until I either provide power or hard reset
+[21:04:06] *** Quits: Asoka (Asoka@Pony-913dkm.net-htp.de) (Connection closed)
+[21:04:35] <mniip> Sour_Sweet, wait
+[21:04:39] <mniip> it does freeze everything
+[21:04:48] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[21:04:55] <mniip> but then the screen blinks and it unfreezes eerything
+[21:04:56] <mniip> right?
+[21:05:02] <Sour_Sweet> No
+[21:05:15] <Sour_Sweet> It just tries to suspend and starts again in a loop
+[21:05:27] <Sour_Sweet> The notebook is fully useable (in theory)
+[21:05:32] *** Joins: Asoka (Asoka@Pony-913dkm.net-htp.de)
+[21:05:58] <Sour_Sweet> And not only in theory when I plug in the power cord it just works than
+[21:06:21] <mniip> Sour_Sweet, you mean after successfully hibernating it goes back to BIOS/EFI and boots back up?
+[21:07:43] <Sour_Sweet> No suspending as in standby. It doesn't go to the EFI / BIOS screen for that (It would for hibernate, that's why I think even if the GUI says hibernate it acutally does a suspend)
+[21:08:27] *** Quits: Sellyme (quassel@Pony-bphb4u.of.saltspork.com) (Quit: No Ping reply in 180 seconds.)
+[21:09:28] *** Joins: Sellyme (quassel@Pony-lq694o.of.saltspork.com)
+[21:09:33] <Sour_Sweet> hibernate looks different when I do it manually via terminal. The notebook will appear to be frozen and shutdown. After what looks like a normal boot with hdd crypto setup it resumes the session as it is supposed to be
+[21:10:34] <mniip> hmm
+[21:10:57] <mniip> /var/log/pm-suspend.log
+[21:12:38] <Sour_Sweet> Also again a suspend done via GUI (GNOME extensions required) works just fine. Screen turns off and the machine is in standby
+[21:13:11] <Sour_Sweet> It resumes right where it left off without going trough the normal boot process
+[21:13:23] <Sour_Sweet> Only the god damn critical power action fails
+[21:15:07] <DJ-C0L7[CSS]> i'm considering drilling/taping my intake manifold on my jeep for water-injection
+[21:15:52] <DJ-C0L7[CSS]> BUT i dont think i want to pull the intake off again, disassemble everything, replace the intake/exhaust gasket, and torque everything down again and take 3 weeks of checking the bolts every day before i drive it after starting the engine
+[21:16:03] <mniip> Sour_Sweet, /var/log/pm-suspend.log
+[21:16:09] <mniip> mgiht be of assistance
+[21:19:30] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[21:21:28] <Sour_Sweet> Have looked into that already
+[21:23:17] <Sour_Sweet> It doesn't show anything wrong really, nor does it look all attempts as it appears
+[21:23:24] <Sour_Sweet> log*
+[21:24:34] <Sour_Sweet> It would be suficcient if I could the action at least to something reasonable (e.g. poweroff) but it just ignores what I've told it via dconf
+[21:24:50] <Sour_Sweet> .... set ....
+[21:25:28] <Sour_Sweet> And the GUI - where it stores what it does - doesn't let me change it
+[21:26:21] <Sour_Sweet> wherever*
+[21:26:47] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[21:39:09] *** Joins: McKey (Kordus@Pony-1k27j6.antyklay.pl)
+[21:39:09] -derpy.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[21:39:24] *** Server sets mode: +AHJPTnt 10:300 30
+[21:45:07] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[21:47:48] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "be back in a bit, switchin' boxes")
+[21:49:33] <mniip> tfw you can't cross-post because the sets of people intersect
+[21:59:35] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[22:07:23] <HoneyDrops> If you were not using a DE, I could possibly help.  I only work with /etc/acpi… DE's do their own weird things.
+[22:12:27] *** Joins: Fallfeathers (Fallfeather@Pony-859c69.bigpond.net.au)
+[22:14:37] <Sour_Sweet> People suggest using 3rd party tools that effectively do something before that triggers, but that's a rather dumb way to handle a problem if you ask me. I'll need to somehow figure out what it does there ...
+[22:15:07] <Sour_Sweet> It looks like it might not actually be GNOME that causes the problem
+[22:31:30] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:32:15] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[22:38:56] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Quit: Leaving.)
+[22:47:55] <Sour_Sweet> So upower is running and has a config file that tells it to hinerbate. Maybe it causes the problem
+[22:49:16] <mniip> damn
+[22:49:19] <mniip> https://www.youtube.com/watch?v=G-k2-8TRxGs
+[22:49:19] <PinkiePieBot> [ Foozogz As Pickle Befriends Omnivore - Forever Dreaming - 110297 views - 4m 11s long - 712 likes - 99.58% ]
+[22:49:22] <mniip> this is some good shit
+[22:53:11] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[22:56:13] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[22:58:03] *** Quits: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl) (Quit: Nettalk6 - www.ntalk.de)
+[23:02:57] *** Quits: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP) (Ping timeout: 121 seconds)
+[23:03:05] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[23:04:57] *** Joins: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP)
+[23:07:55] * DJ-C0L7[EIT] considers learning how to run heavy machinery and getting a part time job as a heavy equipment operator for trackhoes, dozers, and backhoes
+[23:08:40] <CompuDesktop> muh beautiful cars http://imgur.com/gallery/NdWa3
+[23:08:40] <PinkiePieBot> [ Muh GT6 Cars - Album on Imgur ]
+[23:10:58] <wolfyshy> CompuDesktop: my gods the ZR1
+[23:11:07] <Compu> hehehehe
+[23:11:12] <Compu> o3o
+[23:11:25] <Compu> thats green chrome :D
+[23:15:28] <Stik> i love how there's all these awesome cars... and a prius in the middle
+[23:15:48] <Stik> very much want a stingray
+[23:15:50] <Compu> Stik: yus, pink prius is best prius
+[23:16:24] <Stik> only ever seen one over here but it looked and sounded soooo goood
+[23:16:46] <Compu> i love my corvette stingray
+[23:16:55] <Stik> also they only make left hand drive ones, which is a bit awkward in the uk :)
+[23:17:06] <Compu> i love the taillights, i love all the smart stuff, i love the dashboard
+[23:17:11] <Compu> i love the sound
+[23:17:28] <Compu> could probably pay to have it converted
+[23:17:42] <Stik> not sure how they'd do it cleanly
+[23:17:51] <Stik> presume the engine bay is arranged one way around
+[23:17:57] <Stik> anyhow i could live with it :)
+[23:18:03] <Stik> for that i'd put up with it!
+[23:18:22] <Compu> u pay enough and they can do it
+[23:18:52] <Stik> guess you can get anything done if you have enough cash to throw at the problem :P
+[23:19:10] <Stik> do tesla still make the roadster?
+[23:19:15] <Stik> that must be pretty old now
+[23:25:18] <Compu> dunno
+[23:25:26] <Compu> but the model s is awesome
+[23:25:32] <Stik> yeah, that's pretty nice
+[23:25:59] <Stik> not really got the infrastructure for them over here yet
+[23:26:04] <Stik> only in the big cities
+[23:28:24] <Compu> Stik: the model s currently has a range of 200 miles iirc
+[23:28:45] <Stik> mm, the uk isn't *that* small, contrary to popular usa belief ;)
+[23:29:13] <Compu> mhmm
+[23:29:19] <Stik> i guess it would be okay for commuting but it's such a practical car it'd be great to be able to use it for everything
+[23:29:29] <Compu> yep
+[23:29:30] <Stik> you'd have to have a second car as well
+[23:29:47] <Compu> and at a super charging station it'll go from no charge to full charge in 30 minutes
+[23:29:59] <Stik> there's a few of them in the cities
+[23:30:09] <Compu> on normal AC power it takes like 6 hours iirc
+[23:30:14] <Stik> london and birmingham definitely have a couple, not sure where else
+[23:30:23] <Compu> but u can get a faster charging station installed
+[23:30:38] <Stik> maybe one day :)
+[23:31:25] <Stik> what do you think of the i8?
+[23:31:37] <Stik> i think i'd have one of those over a model s at the moment
+[23:31:46] <Stik> model s seems too grown up
+[23:31:56] <Compu> i would prefer a model s
+[23:37:26] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[23:43:59] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[23:49:33] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[23:54:19] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[23:54:53] *** Joins: Valiant (Corey@the.truth.is.out.there)
+[23:55:27] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[23:57:15] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)

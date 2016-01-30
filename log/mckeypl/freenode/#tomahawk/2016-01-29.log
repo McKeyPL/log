@@ -1,0 +1,120 @@
+[00:00:46] *** Quits: soee_ (~soee@adkz219.neoplus.adsl.tpnet.pl) (Ping timeout: 240 seconds)
+[00:07:30] <dommex> jherskowitz: do you know a song that resolves to last.fm?
+[00:07:58] <theli_ua> I dont think they exist
+[00:08:26] <theli_ua> dommex: try your luck with these http://www.last.fm/music/+free-music-downloads
+[00:12:02] *** Quits: jturney (~jon@host86-179-113-236.range86-179.btcentralplus.com) (Ping timeout: 272 seconds)
+[00:13:48] <dommex> theli_ua: yeah, looks dead: https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=3ded6e3f4bfc780abecea04808abdd70&format=json&autocorrect=1&artist=Death+Grips&track=Get+Got
+[00:14:20] <dommex> https://github.com/tomahawk-player/tomahawk-resolvers/blob/master/lastfm/content/contents/code/lastfm.js#L113
+[00:14:33] <dommex> although that track should be available according to the list you just posted
+[00:14:35] *** Joins: jturney (~jon@host86-179-113-236.range86-179.btcentralplus.com)
+[00:20:50] *** Joins: github-tomahawk (~github-to@192.30.252.45)
+[00:20:50] <github-tomahawk> [13tomahawk-resolvers] 15dschmidt pushed 1 new commit to 06master: 02https://git.io/vzFcs
+[00:20:50] <github-tomahawk> 13tomahawk-resolvers/06master 147c7ad71 15Dominik Schmidt: [last.fm] Update to 0.9 syntax and make it noop as last.fm api does not serve freedownload urls anymore
+[00:20:50] *** Parts: github-tomahawk (~github-to@192.30.252.45) ()
+[00:22:10] *** Joins: github-tomahawk (~github-to@192.30.252.40)
+[00:22:10] <github-tomahawk> [13tomahawk-synchrotron] 15dschmidt pushed 1 new commit to 06v09: 02https://git.io/vzFcg
+[00:22:10] <github-tomahawk> 13tomahawk-synchrotron/06v09 1460f379f 15Dominik Schmidt: Update lastfm
+[00:22:10] *** Parts: github-tomahawk (~github-to@192.30.252.40) ()
+[00:33:51] <dommex> pubparisporn: any resolvers (except the seed warning in gmusic) give you any error/warnings in the sidebar?
+[00:36:25] <theli_ua> meh, netease blocked their servers to outside world
+[00:37:08] <dommex> hehe
+[00:37:14] <dommex> theli_ua: anything i can do for you? :P
+[00:37:34] <dommex> won't get to HLS on windows before sunday :P
+[00:37:42] <dommex> anything else? #maketomahawkgreatagain
+[00:37:53] <theli_ua> eh I dont care about windows tbh 
+[00:37:55] <theli_ua> :D
+[00:37:57] <theli_ua> fix lookupUrl ?
+[00:38:06] <theli_ua> review my PRs?
+[00:38:31] <theli_ua> do something about various artists?
+[00:38:33] <dommex> looking what needs to be reviewed...
+[00:38:45] <theli_ua> make resolver's metadata matter?
+[00:38:55] <theli_ua> make rearranging results possible?
+[00:39:36] <theli_ua> I think I can always find something
+[00:40:35] <dommex> that's the problem if you fix all the small issues.. people want you to fix the bigger ones :P
+[00:42:19] <theli_ua> I was talking about resolver prs , lol
+[00:42:24] <theli_ua> I think I have something there
+[00:42:32] <theli_ua> I didnt even remember about that disambiguation one
+[00:45:46] <dommex> theli_ua: what was the deal with the bandcamp simple resolver again? it has poor sound quality but works without an api key?
+[00:46:06] <theli_ua> it works without the key, provides 128kbps streams
+[00:46:20] <dommex> theli_ua: does it work on current master?
+[00:46:39] <theli_ua> I'm pretty sure, but let me recheck
+[00:48:27] <theli_ua> dommex: it does as far as resolver foes
+[00:48:28] <theli_ua> goes
+[00:48:37] <dommex> okies
+[00:48:38] <theli_ua> I mean, tomahawk rejects its' urls,lol
+[00:48:40] <dommex> no warnings?
+[00:48:44] <dommex> oh lol -_-
+[00:48:51] <theli_ua> because they are 302 redirects I guess
+[00:49:12] <theli_ua> so either tomahawk needs to be fixed or resolver needs to say "checked: true"
+[00:52:50] <dommex> ah uh eh
+[00:57:08] <theli_ua> and I have no idea why tomahawk started rejecting bandcamp results , used to work just fine, and urls work perfectly fine outside of tomahawk as well
+[00:58:33] *** Joins: github-tomahawk (~github-to@192.30.252.46)
+[00:58:33] <github-tomahawk> [13tomahawk] 15dschmidt pushed 2 new commits to 06master: 02https://git.io/vzFB1
+[00:58:33] <github-tomahawk> 13tomahawk/06master 14e3877bf 15Anton Romanov: Improve track matching with non-alphanum character differences
+[00:58:33] <github-tomahawk> 13tomahawk/06master 14759bfbe 15Dominik Schmidt: Merge pull request #388 from theli-ua/nonalphanum...
+[00:58:33] *** Parts: github-tomahawk (~github-to@192.30.252.46) ()
+[01:01:45] <dommex> theli_ua: mh ;/
+[01:01:59] <theli_ua> wat
+[01:03:14] <dommex> about " and I have no idea why tomahawk started rejecting bandcamp results , used to work just fine, and urls work perfectly fine outside of tomahawk as well"
+[01:03:20] <dommex> anyway.. had a shitty day, good night
+[01:03:41] <theli_ua> gnight!
+[01:18:08] *** Quits: jturney (~jon@host86-179-113-236.range86-179.btcentralplus.com) (Ping timeout: 250 seconds)
+[02:27:51] *** sythe is now known as sythe-afk
+[03:43:30] *** Joins: github-tomahawk (~github-to@192.30.252.34)
+[03:43:30] <github-tomahawk> [13tomahawk-resolvers] 15dschmidt pushed 5 new commits to 06master: 02https://git.io/vzFyN
+[03:43:30] <github-tomahawk> 13tomahawk-resolvers/06master 143f317e8 15Anton Romanov: Add simple bandcamp resolver resolving to 128kb streams
+[03:43:30] <github-tomahawk> 13tomahawk-resolvers/06master 14c0a20fa 15Anton Romanov: [bandcampm]Cleanup
+[03:43:30] <github-tomahawk> 13tomahawk-resolvers/06master 145b99816 15Anton Romanov: [bandcampmobile]Sort results by artist similarity
+[03:43:30] *** Parts: github-tomahawk (~github-to@192.30.252.34) ()
+[03:44:11] <theli_ua> Dommex you are supposed to be sleeping
+[03:44:44] <dommex> I know, but i cant
+[04:15:53] <theli_ua> dommex: you should, just listen to something relaxing
+[04:58:35] *** Quits: mgue1 (~mgue@x5ce20b3c.dyn.telefonica.de) (Quit: WeeChat 1.3)
+[05:09:50] *** Joins: mgue (~mgue@x5ce20b3c.dyn.telefonica.de)
+[05:55:47] *** Joins: mgue1 (~mgue@x5ce2f253.dyn.telefonica.de)
+[05:58:50] *** Quits: mgue (~mgue@x5ce20b3c.dyn.telefonica.de) (Ping timeout: 265 seconds)
+[07:10:51] *** Quits: sythe-afk (uid20450@facade/leader) (Quit: Connection closed for inactivity)
+[08:10:08] *** Joins: soee_ (~soee@adkz219.neoplus.adsl.tpnet.pl)
+[10:37:09] *** Joins: ssam2 (~ssam2@ip-188-118-20-209.reverse.destiny.be)
+[11:56:39] <soee_> did someone packaged latest t for ubuntu xenial ?
+[12:35:01] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[12:48:06] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Ping timeout: 240 seconds)
+[12:48:59] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[13:15:49] <dommex> soee_: i dont know, but yofel might
+[13:16:00] <dommex> soee_: is "latest" development version for you?
+[13:16:28] *** Joins: jturney (~jon@host86-179-113-236.range86-179.btcentralplus.com)
+[13:35:44] <dommex> MrMaffen: do you still use reportCapabilities for anything?
+[13:46:23] <soee_> dommex: stable, also i don't see Xenial on your version list of Ubuntu (ppa)
+[13:46:45] <dommex> soee_: ah, no clue about ubuntu. yofel ^ 
+[13:47:31] <yofel> Stefan Ahlers is trying to update it, still have to reply to the mail he sent to me
+[13:48:20] <muesli> yofel: soee_: that's justin-time in here btw
+[13:48:22] <dommex> ah yeah, his name is justin-time here, he's our german translator too
+[13:48:41] <dommex> zomfg muesli so fast
+[13:49:01] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[13:49:08] <soee_> oki :) looking forward for Xenial builds
+[14:48:06] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Ping timeout: 250 seconds)
+[14:56:39] <jherskowitz> moin
+[14:59:18] <dommex> moin j
+[15:01:27] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[15:08:45] *** Joins: knicklux (~knicklux@2a03:2260:a:b:3e07:54ff:fe4e:255)
+[15:21:02] <jherskowitz> hey dommex 
+[15:21:10] <dommex> yo
+[15:30:18] <jherskowitz> muesli: you see that the qt5 scrolling issues only seem to happen on search results page (for me at least)?
+[16:01:03] <MrMaffen> dommex: nope https://github.com/tomahawk-player/tomahawk-android/blob/06c7c789c1fb9c1fe21b859cadf2d64e555013d1/app/src/main/java/org/tomahawk/libtomahawk/resolver/ScriptInterface.java#L94-L94
+[16:30:22] *** Quits: knicklux (~knicklux@2a03:2260:a:b:3e07:54ff:fe4e:255) (Remote host closed the connection)
+[16:36:01] <dommex> Kk
+[16:37:24] *** Joins: knicklux (~knicklux@2a03:2260:a:b:3e07:54ff:fe4e:255)
+[17:07:15] *** Joins: soee (~soee@acfx227.neoplus.adsl.tpnet.pl)
+[17:10:55] *** Quits: soee_ (~soee@adkz219.neoplus.adsl.tpnet.pl) (Ping timeout: 240 seconds)
+[17:45:45] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Remote host closed the connection)
+[18:13:09] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Remote host closed the connection)
+[18:24:49] *** Quits: ssam2 (~ssam2@ip-188-118-20-209.reverse.destiny.be) (Quit: Leaving)
+[18:37:57] *** Joins: cloakable (~cloakable@cpc87169-aztw31-2-0-cust145.18-1.cable.virginm.net)
+[19:01:49] *** Quits: knicklux (~knicklux@2a03:2260:a:b:3e07:54ff:fe4e:255) (Remote host closed the connection)
+[19:53:54] <jherskowitz> dommex: did you not push Tidal to synchrotron 0.9?
+[20:15:15] <theli_ua> its broken anyway
+[20:15:26] <theli_ua> I mean, its better be pushed once its fixed
+[20:15:58] <theli_ua> we could just disable temporarily link-dropping part I guess
+[20:24:15] <jherskowitz> theli_ua: ah
+[21:38:28] <dommex> theli_ua: yes please
+[23:18:44] *** Quits: soee (~soee@acfx227.neoplus.adsl.tpnet.pl) (Ping timeout: 276 seconds)

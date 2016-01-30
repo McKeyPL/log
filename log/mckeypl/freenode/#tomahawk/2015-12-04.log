@@ -1,0 +1,336 @@
+[00:00:15] <ciss> and my c++ reading skills apparently aren't even sufficient enough to figure out where the actual weight comparison happens :/
+[00:00:20] <ciss> well. worth a try.
+[00:01:34] <dommex> ciss: maybe in pipeline, maybe in query
+[00:01:42] <dommex> Git grep weight
+[00:02:31] <ciss> used github's search so far
+[00:07:35] <ciss> dommex: btw, do you still have a backup of your jira db/instance? otherwise one might be able to pull/parse the issue data from google's cache
+[00:07:42] *** Quits: Karbowiak (~Karbowiak@ip979.alb335.cust.comxnet.dk) (Ping timeout: 250 seconds)
+[00:10:09] <dommex> Yes the data is there. Just the table metadata is corrupted
+[00:12:41] <ciss> btw, apparently the wiki got imported by jherskowitz about a day ago
+[00:13:29] <dommex> ciss: i know :-)
+[00:13:37] *** Quits: domme (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de) (Quit: Konversation terminated!)
+[00:14:15] <ciss> theli_ua: ^
+[00:14:26] <theli_ua> yeah, I saw
+[00:14:54] <ciss> just mentioning it because "and yeah, jira is dead as well as wiki, etc"
+[00:16:35] <theli_ua> thanks, I meant I saw your message that it got imported, not that I saw the wiki :)
+[00:16:52] <ciss> :)
+[00:18:55] <ciss> anyway, thanks for taking the time, guys. i'll go on fiddling around with tomahawk for a bit. and i'll try to keep an eye out in case something pops up that i may be able to contribute to.
+[00:34:14] <theli_ua> tidal resolver behaves weirdly for me
+[00:34:30] <theli_ua> looks like it wont ever resolve if query has album in it
+[00:37:21] <theli_ua> yup
+[00:40:28] <dommex> ciss: any bug reports or PRs on github are welcome :-)
+[00:40:40] <theli_ua> yeah
+[00:40:46] <theli_ua> dommex: do my prs :D
+[00:40:53] <ciss> :D
+[00:41:16] <ciss> btw, you guys sure have a lot of branches ...
+[00:41:21] <dommex> theli_ua: i'm currently setting up a mac env
+[00:41:30] <dommex> ciss: yup, most of them are merged
+[00:41:42] <dommex> but there's also a bunch of things going on right now (yay)
+[00:41:44] <ciss> ever considered using branch namespaces?
+[00:41:53] <dommex> never heard of it
+[00:41:56] <ciss> like feature/xyz ?
+[00:42:04] <dommex> oh well
+[00:42:15] <ciss> "successful branching model" and stuff
+[00:42:26] <dommex> github just lacks this nice "remove source branch" button that gitlab e.g. has
+[00:42:43] <dommex> we should be more actively removing outdated branches
+[00:42:59] <dommex> otherwise ... handling a handful of branches ... should be doable without
+[00:43:07] <dommex> not that i object.. it's just hard to remember
+[00:43:34] <dommex> i often don't know if i will push a branch or just push to master... often things evolve over time when i'm working on it
+[00:43:35] <ciss> there are actually tools for that, git-flow e.g.
+[00:43:46] <dommex> and not being able to change source branches on github .... 
+[00:44:14] <ciss> uhm - can't you do that in the repo settings?
+[00:44:35] <ciss> even the api allows it (although it's a bit fragile for new repos)
+[00:44:38] *** Joins: github-tomahawk (~github-to@192.30.252.45)
+[00:44:38] <github-tomahawk> [13tomahawk-resolvers] 15dschmidt pushed 2 new commits to 06master: 02http://git.io/vRnQE
+[00:44:38] <github-tomahawk> 13tomahawk-resolvers/06master 14ca39d9f 15Anton Romanov: [tidal]remove album from search query when resolving because it messes up tidals search
+[00:44:38] <github-tomahawk> 13tomahawk-resolvers/06master 14fcbc1c1 15Dominik Schmidt: Merge pull request #98 from theli-ua/tidal...
+[00:44:38] *** Parts: github-tomahawk (~github-to@192.30.252.45) ()
+[00:44:47] <ciss> \o/
+[00:45:22] <ciss> oh, you mean for merge requests?
+[00:47:24] *** Joins: github-tomahawk (~github-to@192.30.252.46)
+[00:47:24] <github-tomahawk> [13tomahawk-resolvers] 15dschmidt pushed 2 new commits to 06master: 02http://git.io/vRn73
+[00:47:24] <github-tomahawk> 13tomahawk-resolvers/06master 149832ede 15Andrey: player resolver doesn't return anything when searching with unencoded artist name and track...
+[00:47:24] <github-tomahawk> 13tomahawk-resolvers/06master 14125682e 15Dominik Schmidt: Merge pull request #97 from andreybavt/encode-pleer-url...
+[00:47:24] *** Parts: github-tomahawk (~github-to@192.30.252.46) ()
+[00:47:40] <dommex> ciss: yep, exactly
+[00:47:51] <dommex> theli_ua: taaadaaa :P
+[00:48:11] <theli_ua> dommex: aand, what about amazon? :D
+[00:48:23] <ciss> hey, don't take the hand :D
+[00:48:25] <dommex> gotta go :P
+[00:48:57] <dommex> will merge, when the other resolver stuff is merged
+[00:49:06] <dommex> but first want to have a working osx build again
+[00:49:14] <theli_ua> yeah, thats what I figured
+[00:49:22] <theli_ua> but that'll require changes to other resolvers I submitted as well iirc, no?
+[00:49:39] <ciss> well, it's great to see that tomahawk is still alive and well ... and *popular* :D
+[00:50:44] <dommex> theli_ua: yeah ;/
+[00:50:50] <dommex> luckily not tooo much
+[00:51:09] <dommex> it just needs to be done, it's nothing like the changes in the earlier cycles of 0.9 resolver api changes
+[00:51:47] <theli_ua> do you plan to get rid of js collection before 0.9 ?
+[00:52:04] <dommex> you mean resolver.collection: {...}?
+[00:52:24] <theli_ua> well, there are plans to move that into the native code iirc
+[00:52:32] <theli_ua> just not sure if before or after 0.9
+[00:54:56] <dommex> ah that
+[00:55:01] <dommex> implementation detail :-)
+[00:55:07] <dommex> i thought we were just talking about apis
+[00:55:25] <dommex> tbh i don't care for the implementation at this point, i just want to get all the apis straight and stable
+[00:55:37] <theli_ua> heh
+[00:56:53] <dommex> theli_ua: in fact, in my branch it should be *kinda* straight forward to implement that in c++
+[00:57:16] <dommex> because scriptcollections are actual `Tomahawk::Resolver`s now
+[00:57:25] <dommex> (all collections are)
+[00:59:22] <dommex> you would need to override the resolve(query) method
+[00:59:39] <dommex> the only "issue" is to know when to use the native fuzzy-indexed-collection... and when not
+[01:11:58] <dommex> feepk: heeey
+[01:32:56] *** Quits: ciss (~Adium@f052235043.adsl.alicedsl.de) (Quit: Leaving.)
+[02:16:20] *** Joins: Karbowiak (~Karbowiak@ip979.alb335.cust.comxnet.dk)
+[02:35:13] <SolarAquarion> lfranchi, but for example a bot that does last.fm stuff
+[02:35:28] <SolarAquarion> it doesn't say what i'm currently playing on tomahawk
+[03:24:36] *** Joins: r_rios (~Hitleap@191.250.68.34)
+[04:08:33] *** Quits: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com) (Read error: Connection reset by peer)
+[04:37:05] *** Quits: r_rios (~Hitleap@191.250.68.34) (Quit: Konversation terminated!)
+[05:31:07] *** Joins: mgue2 (~mgue@f048056230.adsl.alicedsl.de)
+[05:34:00] *** Quits: mgue1 (~mgue@x590f817d.dyn.telefonica.de) (Ping timeout: 250 seconds)
+[06:04:47] <lfranchi> SolarAquarion:  i dont quite understand
+[06:04:54] <lfranchi> i see my currently playing track on last.fm
+[06:04:57] <lfranchi> that i am playing in tomahawk
+[06:22:31] <SolarAquarion> lfranchi, i'm only getting this (SolarAquarion) RyoumaNagare is listening to "Dance the Pain Away ((Eelke Kleijn Remix) [Radio Edit]) (feat. John Legend)" by Benny Benassi from the album Dance the Pain Away (Eelke Kleijn Remix Radio Edit) [playcount: 1] http://is.gd/cxPU1D (electronic, House, techno, dance).
+[06:28:22] <lfranchi> SolarAquarion: i don't understand what is not working for you
+[06:29:43] <SolarAquarion> lfranchi: it should be saying a different song.  It's not
+[06:31:41] <lfranchi> the song that it is currently showing: did you play it recently? 
+[07:54:13] *** Joins: vistra (guest-vist@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[07:54:14] <vistra> whazzup ma niggas
+[07:54:18] <vistra> what iz dizz?
+[07:55:16] *** Parts: vistra (guest-vist@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[08:10:19] *** Joins: knicklux (~knicklux@openvpn-cl-200-166.scc.kit.edu)
+[08:44:06] *** Joins: soee (~soee@abdc53.neoplus.adsl.tpnet.pl)
+[08:44:51] *** Quits: soee_ (~soee@afdd49.neoplus.adsl.tpnet.pl) (Ping timeout: 260 seconds)
+[09:04:36] <feepk> dommex: yop
+[09:34:24] *** Joins: soee_ (~soee@afik140.neoplus.adsl.tpnet.pl)
+[09:34:47] *** Quits: soee (~soee@abdc53.neoplus.adsl.tpnet.pl) (Ping timeout: 260 seconds)
+[09:39:54] *** Quits: knicklux (~knicklux@openvpn-cl-200-166.scc.kit.edu) (Ping timeout: 260 seconds)
+[10:16:51] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[11:04:19] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:10:11] *** Joins: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com)
+[11:13:29] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Ping timeout: 245 seconds)
+[11:25:27] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:57:06] *** Quits: cloakable (~cloakable@cpc87169-aztw31-2-0-cust145.18-1.cable.virginm.net) (Ping timeout: 240 seconds)
+[11:59:17] *** Joins: cloakable (~cloakable@cpc87169-aztw31-2-0-cust145.18-1.cable.virginm.net)
+[12:13:43] *** Joins: ciss (~Adium@f052230181.adsl.alicedsl.de)
+[12:27:08] <ciss> hi, i'm seeing traces of a very minimal web frontend in data/www - where/how is this used? does docker automatically run a web server at a specific port?
+[12:53:51] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-qrhzblpdwcqupznd) ()
+[12:54:12] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-sevsznrtanreedhr)
+[13:14:06] <ciss> does tomahawk support limiting a search term to a specific property, e.g. artist:"the artist name"?
+[13:51:52] *** Joins: r_rios (~Hitleap@hyadesinc/pub/oa)
+[13:59:29] *** Quits: ciss (~Adium@f052230181.adsl.alicedsl.de) (Quit: Leaving.)
+[14:08:33] <dommex> feepk:  :)
+[14:08:51] <dommex> feepk: about to build vlc on mavericks. any gotchas i should already be aware of? ;-)
+[14:09:17] <dommex> feepk: also.. i guess you recommend vlc 2.2 for shipping with tomahawk?
+[14:09:57] <feepk> dommex: it should "just work" ;)
+[14:09:58] <feepk> dommex: and for now, yes
+[14:10:09] <dommex> feepk: okies, good :)
+[14:10:16] <feepk> dommex: even though we start to deploy 3.0 on the Apple TV and iOS really soon
+[14:10:21] <dommex> cool
+[14:14:18] <feepk> dommex: I'll be on a plane for some of the afternoon, but feel free to ping me anytime ;)
+[14:14:35] <feepk> dommex: so you are maintaining both win32 and OS X now?
+[14:14:48] <feepk> dommex: what happened to mueslix?
+[14:14:54] <dommex> feepk: taking a bit of load off mueli's shoulders :)
+[14:15:31] <dommex> it all started with: qt 5.5.1 bumped it's webkit version, which bumped its webm version ... which doesnt work on 10.7 anymore
+[14:15:38] <dommex> and muesli's mac mini couldnt be updated to that
+[14:16:03] <feepk> Oh crap, yep, this is how it starts
+[14:16:27] <dommex> then he tried to get another one from a friend, said "osx, please update yourself to 10.9" ... osx went and updated itself to 10.11
+[14:16:33] <feepk> dommex: FYI, we broke compilation permanently for 3.0 on 10.7. Execution on 10.7 will still work
+[14:16:42] <dommex> ah :)
+[14:16:49] <feepk> Yeah, that's not a problem
+[14:16:59] <feepk> Using 10.11 full time for 6 months now
+[14:17:20] <dommex> well, everything needs to be compiled using the right sdks... 
+[14:17:36] <dommex> and we cant use brew anymore
+[14:18:04] <feepk> dommex: no, SDKs are not too much the problem. Just take care of the min macosx version compiler flag
+[14:18:11] <feepk> dommex: huh, why?
+[14:18:41] <feepk> dommex: any chance for a win32 iTunes scrobbler for hatchet as well as an import of last.fm data?
+[14:18:47] <dommex> because it won't set the right sdks for all tools.. not? i thought if i wanted to compile for - say 10.7 - i needed to set the sdk version to 10.7
+[14:18:56] <feepk> No
+[14:19:07] <feepk> You take the latest SDK
+[14:19:20] <feepk> And set the min version to the deployment target you want
+[14:19:20] <dommex> interesting
+[14:19:38] <feepk> That's the theory at least
+[14:19:43] <dommex> hehehehehehe
+[14:19:46] <feepk> And should work for your use-case
+[14:19:56] <feepk> As we do some magic in VLC
+[14:20:08] <dommex> yeah, anyway: brew prebuilt binaries are downloaded for the platform we're currently on
+[14:20:23] <feepk> Ok
+[14:20:26] <dommex> yeah not saying vlc is the problem here, rather a gazillion of other deps
+[14:20:52] <feepk> Maybe it is time to do a contrib system similar to that within VLC?
+[14:21:05] <dommex> maybe you want me to run away screamingly?
+[14:21:18] <feepk> Always
+[14:21:22] <dommex> :)
+[14:21:23] <feepk> How is that even a question?
+[14:21:54] <dommex> yeah dunno.. it might be an option, but also very time intensive.. for the time being we rented a 10.9 mac :P
+[14:21:59] <dommex> which i'm setting up right now
+[14:22:01] <feepk> I'm just preparing reasons for you guys to attend FOSDEM again
+[14:22:08] <dommex> will try to
+[14:22:09] <feepk> Rented?
+[14:22:20] <dommex> yup
+[14:23:29] <feepk> Wasn't even aware this was possible
+[14:23:48] <dommex> macincloud.com
+[14:23:55] <dommex> https://www.irccloud.com/pastebin/hzMEiRsi/
+[14:24:10] <dommex> any idea on that? brew says xz and lzma are installed
+[14:25:27] <feepk> Incorrect PATH or invalid version
+[14:25:39] <feepk> Did you bootstrap and make in extras/tools?
+[14:26:14] <dommex> feepk: https://github.com/tomahawk-player/homebrew-tomahawkqt5/blob/master/vlc.rb#L67
+[14:27:23] <dommex> i'm not sure of all the stuff in there ... looks like a lot of people patched it over time
+[14:28:02] <dommex> instead of debugging it, i might as well just start from scratch
+[14:28:12] <feepk> No way :D
+[14:28:14] <feepk> See OSXCompile on our wiki
+[14:28:18] <feepk> Gtg
+[14:28:30] <dommex> okies, have a safe flight
+[14:38:25] <r_rios> Hello. I'm trying to use libcrashreporter-qt in my project, but, when I try to build it, I get this error message: CMake Error at thirdparty/libcrashreporter-qt/src/libcrashreporter-gui/CMakeLists.txt:5 (qt_wrap_ui): qt_wrap_ui called with incorrect number of arguments
+[14:41:22] <r_rios> The line is this: qt_wrap_ui( crashreporter_UI_HEADERS ${crashreporter_UI} ). Accordng to the CMake documentation, this is qt_wrap_ui's signature: qt_wrap_ui(resultingLibraryName HeadersDestName SourcesDestName SourceLists ...)
+[14:41:56] <r_rios> Should I add some kind of definition in my toplevel CMakeLists.txt?
+[14:45:33] *** Joins: ciss (~Adium@f052230181.adsl.alicedsl.de)
+[15:00:43] <dommex> r_rios: hey!
+[15:00:48] <dommex> uhm :)
+[15:00:55] <dommex> what qt version are you using?
+[15:06:48] <r_rios> dommex: 5.5
+[15:06:56] <r_rios> 5.5.1, to be exact
+[15:07:04] <dommex> okay, cool
+[15:07:06] <dommex> 4 or 5 was all i wanted to know
+[15:07:14] <r_rios> On Windows, compiled with MSVC
+[15:09:00] <r_rios> All I did so far was to create a 3rdparty subdir in my project, then add libcrashreporter-qt as a submodule inside it
+[15:09:20] <dommex> in tomahawk we have this code: 
+[15:09:23] <dommex> https://www.irccloud.com/pastebin/JNxkmMvR/
+[15:09:42] <r_rios> Ah, right
+[15:09:54] <dommex> by now it might be time to switch the default
+[15:10:23] <r_rios> There is a qt_wrap_ui command, though: https://cmake.org/cmake/help/v3.3/command/qt_wrap_ui.html
+[15:10:30] <dommex> yeah for qt3/4
+[15:10:40] <r_rios> Oh, okay
+[15:13:36] <jherskowitz> dommex: the xz lzma errors I've never been able to get past. Rotzbouw too. Let us know if you sort it out.
+[15:13:59] <dommex> jherskowitz: sure, i'm starting with a clean formula now
+[15:16:04] <jherskowitz> dommex: also the formula in our tap needs an if statement for newest OSX 
+[15:16:30] <dommex> according to feepk it doesnt need them at all :)
+[15:16:32] <r_rios> dommex: It worked, but now I have more than 80 compilation errors: https://paste.kde.org/psm2rigaf/1lebdr
+[15:17:23] * dommex shrugs
+[15:17:51] <r_rios> :(
+[15:17:55] <r_rios> I'll see what I can do
+[15:18:02] <r_rios> Thanks for the help, though
+[15:18:41] <dommex> r_rios: yeah, i havent seen that one... :\ maybe something with automoc/autouic? 
+[15:18:57] <dommex> do (nt) you use that?
+[15:19:53] <r_rios> Did I do it right?: https://paste.kde.org/pchcbcpz7/msccbg
+[15:20:06] <r_rios> I think I use automoc, let me check that
+[15:21:54] <r_rios> Yep: set(CMAKE_AUTOMOC ON)
+[15:24:10] <dommex> mhhh
+[15:24:21] <dommex> r_rios: is your project open source?
+[15:24:22] <dommex> can i check it out?
+[15:34:58] <r_rios> Sorry, it isn't
+[15:37:04] <r_rios> dommex: But, really, all I did was adding the add_subdirectory(thirdparty) command inside my main CMakeLists.txt and create a CMakeLists.txt inside of thridparty containing a single line: add_subdirectory(libcrashreporter-qt)
+[15:39:04] *** Quits: morsik (morsik@darkserver.it) (Ping timeout: 244 seconds)
+[15:42:19] <dommex> yeah
+[15:42:32] <dommex> i dont know havent seen it :/
+[15:42:40] <dommex> it works in several projects
+[15:43:07] <dommex> no clue if it's related to msvc or anything else in your project
+[15:44:54] <r_rios> brb
+[15:47:07] *** Joins: morsik (morsik@darkserver.it)
+[16:22:48] *** Joins: soee (~soee@afdi242.neoplus.adsl.tpnet.pl)
+[16:24:35] *** Quits: soee_ (~soee@afik140.neoplus.adsl.tpnet.pl) (Ping timeout: 246 seconds)
+[16:46:09] <r_rios> dommex: I just saw that most of the problems are about the ui of crashreporter. Something like this: 'progressBar' : is not a member of 'Ui::CrashReporter'
+[16:46:51] <dommex> yes
+[16:46:53] <dommex> i know
+[16:46:54] <dommex> so?
+[16:47:14] <r_rios> Oh
+[16:47:16] <r_rios> OH
+[16:47:29] <dommex> that's why i was asking for automoc/autouic...
+[16:47:30] <r_rios> I just found out why this is happening
+[16:47:35] <dommex> cool
+[16:47:36] <dommex> do tell
+[16:47:49] <r_rios> My project happens to also have a file called crashreporter.ui
+[16:48:28] <dommex> ouch
+[16:48:33] <r_rios> So, CMake confused the two generated headers and got the one from my project instead of the one from libcrashreporter-qt
+[16:48:47] <dommex> glad it's not my fault :)
+[16:48:57] <r_rios> I just realized that when I saw some strings from my own project inside the generated header
+[16:49:07] <r_rios> I'm glad as well
+[16:51:12] <dommex> let me know how it goes in general
+[16:51:54] <r_rios> Sure
+[16:56:45] <r_rios> Yep, that was it. Renamed the ui file from my project and it compiled
+[16:57:10] <r_rios> Thanks a lot for the help
+[17:06:03] <ciss> evil
+[17:07:54] <dommex> r_rios: np, as i said.. just let me know if it works out in the end. very curious as i don't know anyone using it with msvc
+[17:08:18] <dommex> jturney patched the shipped breakpad to be compatible with mingw, i doubt he broke anything.. but who knows :)
+[17:08:22] <dommex> interesting to have confirmation
+[17:08:43] <dommex> r_rios: also i'm open to any changes that prevent people from having to fork it
+[17:09:04] <jturney> I always break stuff
+[17:09:05] <dommex> if you have anything else you need, talk to me here or send a PR and we'll certainly find a solution
+[17:09:05] <jturney> :)
+[17:14:39] <r_rios> Sure. If this works for me, it will be a godsend. StackWalker doesn't seem to work quite well with Qt and plain breakpad seems too painful to set up
+[17:16:43] <r_rios> One thing, though. Does this library have the same license as Tomahawk?
+[17:16:59] <r_rios> (That is, GPL)
+[17:22:47] *** Quits: klaas (klaas@simply.kla.as) (Remote host closed the connection)
+[17:27:08] *** Joins: klaas (klaas@simply.kla.as)
+[17:33:07] <jturney> the breakpad code itself is MIT licensed
+[17:33:22] <jturney> not sure about the stuff that domme wrote
+[17:33:32] <jturney> (I think)
+[17:44:16] <muesli> ciss: hey
+[17:44:48] <muesli> ciss: the web frontend is used for the playdar js api
+[17:49:42] <ciss> muesli: thanks. reading up on it now.
+[17:50:04] <muesli> http://www.playdarjs.org/
+[17:57:16] <ciss> nice. thanks again.
+[17:58:27] <ciss> ah, the port is hardcoded to 60210. alright.
+[17:59:26] <ciss> (at least for now, according to the TODO)
+[18:06:16] <ciss> btw, it seems that playdar hasn't seen any development since 2010. am i right to assume that playdar will be replaced by another api in the (far) future?
+[18:07:04] *** Joins: knicklux (~knicklux@185.66.194.12)
+[18:24:07] <ciss> ... uhm. nevermind. https://groups.google.com/forum/embed/#!topic/playdar/nD8elxAXIak
+[19:13:38] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[19:22:10] <dommex> r_rios: well, we can certainly talk about relicensing to LGPL if that's enough for you
+[19:23:05] <dommex> making it bsd/mit ... i wouldnt fancy it, but.... let'S see
+[19:24:24] <r_rios> dommex: If I can compile it as a shared library instead of a submodule, that will certainly be enough
+[19:25:15] <r_rios> Let's see if it'll work for me first, though. I'm still looking into Tomahawk's source code to see how it works
+[19:25:35] <dommex> we can also make the submodule create a shared lib 
+[19:25:39] <dommex> (optionally)
+[19:25:51] <dommex> r_rios: yeah, make it work, then we'll solve licensing issues
+[19:28:23] *** Quits: knicklux (~knicklux@185.66.194.12) (Ping timeout: 260 seconds)
+[19:36:26] <dommex> https://www.irccloud.com/pastebin/oeyk4PD4/
+[19:36:41] <dommex> feepk: ^ any idea? worked outside of brew
+[19:36:43] <dommex> muesli ^
+[19:44:02] *** Joins: knicklux (~knicklux@2a02:8071:2d8d:e000:f456:1d99:c482:d8ed)
+[19:48:49] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[20:04:13] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[20:12:23] <dommex> next try, this time with ./compile:
+[20:12:28] <dommex> https://www.irccloud.com/pastebin/W0Yiek3B/
+[20:20:55] *** Joins: knicklux_ (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3)
+[20:21:47] *** Quits: knicklux (~knicklux@2a02:8071:2d8d:e000:f456:1d99:c482:d8ed) (Ping timeout: 264 seconds)
+[20:27:58] <feepk> dommex: you are mixing 2 different c++ standard libraries so linking fails
+[20:28:16] <dommex> feepk: thought so, but any idea how that happened?
+[20:28:40] <r_rios> dommex: After I linked crashreporter-handler to my application: LINK : fatal error LNK1104: cannot open file 'mingwex.lib'
+[20:29:21] <dommex> feepk: https://paste.kde.org/p3samymfw/cyabtt
+[20:29:31] <r_rios> (Which is to be expected, since I'm not using MinGW)
+[20:29:55] <feepk> dommex: your contrib libraries are based on our binary package maybe(
+[20:29:57] <feepk> ?
+[20:30:15] <dommex> feepk: eh yep. do they only work with latest osx?
+[20:30:24] <dommex> in other words, no make prebuilt for me?
+[20:30:55] <feepk> dommex: well, are you using homebrew for the other libraries?
+[20:31:03] <feepk> dommex: this won't fly I fear
+[20:31:08] <dommex> for a bunch yeah :{
+[20:31:18] <feepk> Not good
+[20:31:27] * dommex cries
+[20:31:34] <feepk> Use our binary contrib package
+[20:31:43] <feepk> And make sure homebrew is not used
+[20:31:51] <feepk> So you don't have a mix of both
+[20:31:56] <dommex> wondering why it worked outside of brew
+[20:32:08] <dommex> but yeah, probably easiest to just use yours
+[20:32:25] <feepk> Yes, so I have the pain, not you ;)
+[20:38:34] *** Quits: knicklux_ (~knicklux@2a03:2260:a:b:efcf:5070:eec6:7ed3) (Remote host closed the connection)
+[21:05:04] *** Quits: ciss (~Adium@f052230181.adsl.alicedsl.de) (Quit: Leaving.)
+[21:11:39] *** Joins: Hitleap (~Hitleap@187.114.168.55)
+[21:13:41] *** Quits: r_rios (~Hitleap@hyadesinc/pub/oa) (Ping timeout: 246 seconds)
+[21:44:28] *** Hitleap is now known as r_rios
+[21:44:40] *** Quits: r_rios (~Hitleap@187.114.168.55) (Changing host)
+[21:44:40] *** Joins: r_rios (~Hitleap@hyadesinc/pub/oa)
+[21:53:10] <r_rios> dommex: If I understood it correctly, I should create a separate crash reporter application, instance the CrashReporter class and, then, from the main application, use CrashReporter::Handler to set it up?
+[22:25:10] <dommex> r_rios: i dont remember in detail, tbh.. you can look at what tomahawk does
+[22:25:23] <dommex> but i think you need to create your own crash reporter application yeah
+[22:25:23] <dommex> see src/crashreporter/
+[22:32:54] *** Joins: SusieQ (~SusieQ@2601:40d:8100:f8f:d978:e020:9bb1:f198)
+[23:13:15] <theli_ua> dommex or MrMaffen could you pls bump minor version of tidal? I forgot to do that in yesterday's pr
+[23:14:24] <dommex> Not right now
+[23:14:29] <dommex> tomorrow
+[23:14:46] <theli_ua> sure
+[23:32:08] *** Joins: ciss (~Adium@f052230181.adsl.alicedsl.de)
+[23:42:48] *** Parts: ciss (~Adium@f052230181.adsl.alicedsl.de) ()
+[23:49:43] *** Joins: jamesaxl (~jamesaxl@41.140.218.82)

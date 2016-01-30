@@ -1,0 +1,153 @@
+[00:12:48] <theli_ua> hm, took tomahawk 10 minutes to process search results for "queen" , thats with sorting commented out :-/
+[00:13:08] <theli_ua> having hard time seeing what the bottleneck is :-/
+[00:34:50] <theli_ua> oh, found it, now only takes 3 seconds
+[00:38:44] <theli_ua> doesn't look like its a correct fix though
+[01:04:30] *** Quits: jturney (~jon@host217-43-11-230.range217-43.btcentralplus.com) (Read error: Connection reset by peer)
+[01:07:32] *** Joins: github-tomahawk (~github-to@192.30.252.45)
+[01:07:33] <github-tomahawk> [13tomahawk] 15dschmidt pushed 1 new commit to 06master: 02http://git.io/v0yJp
+[01:07:33] <github-tomahawk> 13tomahawk/06master 14ea55329 15Dominik Schmidt: Add url click handler to push buttons in resolver configs
+[01:07:33] *** Parts: github-tomahawk (~github-to@192.30.252.45) ()
+[01:25:47] *** Joins: github-tomahawk (~github-to@192.30.252.46)
+[01:25:48] <github-tomahawk> [13tomahawk] 15dschmidt pushed 1 new commit to 06master: 02http://git.io/v0yIb
+[01:25:48] <github-tomahawk> 13tomahawk/06master 140546507 15Dominik Schmidt: No more Mr. Nice Guy, No more Mr. Cleaaaheean ... except today
+[01:25:48] *** Parts: github-tomahawk (~github-to@192.30.252.46) ()
+[01:27:08] <theli_ua> wat
+[01:28:03] <theli_ua> dommex: how is that commit message makes any sense >_<
+[01:30:49] <dommex> theli_ua: MrMaffen complained he couldnt compile with qt4  anymore after the commit before
+[01:31:07] <dommex> and i decided to be a nice guy and do one last qt4 fix :P
+[01:31:26] <dommex> a half hearted one, but anyway :P
+[01:31:55] <theli_ua> I see
+[01:34:02] <dommex> oh and it was an alice cooper quote :P
+[01:34:11] <theli_ua> I see
+[02:04:57] <theli_ua> jherskowitz: how long does it take your tomahawk on a mac to display results for "queen" with tidal enabled? (assuming you have tidal subscription)
+[02:05:09] <theli_ua> tho I guess you don't :-
+[02:05:12] <theli_ua> :-/
+[02:12:09] *** Quits: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr) (Quit: ZNC - http://znc.sourceforge.net)
+[02:25:56] *** Quits: dommex (sid4285@gateway/web/irccloud.com/x-xdaebutrnywamqga) (Ping timeout: 256 seconds)
+[02:28:09] *** Joins: dommex (sid4285@gateway/web/irccloud.com/x-lvepgstynctngczx)
+[02:46:08] <jherskowitz> theli_ua: let me see
+[02:48:18] <jherskowitz> theli_ua: yes
+[02:49:07] <theli_ua> Yes you don't?
+[02:52:55] <jherskowitz> theli_ua: yes, it takes forever
+[02:53:16] <theli_ua> Alright
+[02:53:52] <theli_ua> It takes less than minute now in my version, working to improve
+[02:55:52] <jherskowitz> theli_ua: nice
+[02:56:25] <theli_ua> Tidal just returns 9999 results
+[02:56:51] <theli_ua> And complexity of adding results seem to grow exponentially in master
+[03:13:35] <dommex> noticed that too
+[03:13:42] <dommex> the performance is horrible
+[03:13:45] <dommex> and blocking the ui
+[03:15:26] <dommex> i wish the day had 48h ;/
+[04:20:25] *** Quits: jefferai (sid1300@kde/mitchell) (Ping timeout: 250 seconds)
+[04:20:55] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-emoiiiydkhifugsk) (Ping timeout: 240 seconds)
+[04:23:54] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-abwrblnpwjpeeqcj)
+[04:26:56] *** Joins: jefferai (sid1300@kde/mitchell)
+[04:27:53] *** Joins: Vezquex (~Vezquex@c-98-232-29-163.hsd1.wa.comcast.net)
+[05:17:08] *** Joins: mgue2 (~mgue@f049120212.adsl.alicedsl.de)
+[05:19:55] *** Quits: mgue1 (~mgue@x590fd62c.dyn.telefonica.de) (Ping timeout: 240 seconds)
+[08:20:06] *** Quits: lfranchi (~quassel@kde/lfranchi) (Remote host closed the connection)
+[08:34:48] *** Joins: justin_time (~stefan@2a02:908:f358:6f00:a0bf:3af:a7d6:c025)
+[08:36:51] <justin_time> muesli: dommex: Hey, I got an answer of a debian mentors. Could you help me to check all the points he list on this bug report: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=807763
+[09:25:50] *** Quits: jamesaxl_ (~jamesaxl@41.248.139.74) (Ping timeout: 256 seconds)
+[09:53:55] *** Quits: jefferai (sid1300@kde/mitchell) (Ping timeout: 260 seconds)
+[09:54:44] *** Quits: justin_time (~stefan@2a02:908:f358:6f00:a0bf:3af:a7d6:c025) (Ping timeout: 255 seconds)
+[09:57:35] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-abwrblnpwjpeeqcj) (Ping timeout: 240 seconds)
+[09:58:22] *** Joins: jefferai (jefferai@kde/mitchell)
+[09:59:44] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-thdxwikbaofgbkwb)
+[10:00:35] *** Quits: alastairp (sid1249@gateway/web/irccloud.com/x-kaglyxksiwzvjcpf) (Ping timeout: 250 seconds)
+[10:03:12] *** Quits: jefferai (jefferai@kde/mitchell) (Ping timeout: 272 seconds)
+[10:06:25] *** Joins: justin_time (~stefan@2a02:908:f358:6f00:7917:304d:b601:8746)
+[10:10:30] *** Joins: alastairp (sid1249@gateway/web/irccloud.com/x-wzvdfelcybvjbeiy)
+[10:16:05] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-thdxwikbaofgbkwb) (Ping timeout: 260 seconds)
+[10:19:55] *** Quits: alastairp (sid1249@gateway/web/irccloud.com/x-wzvdfelcybvjbeiy) (Ping timeout: 240 seconds)
+[10:23:46] *** Quits: hatstand (sid2952@gateway/web/irccloud.com/x-tikbxhruwbxnbijn) (Ping timeout: 240 seconds)
+[10:29:58] *** Joins: mehdix (~mehdix@77.176.207.158)
+[10:39:09] *** Joins: alastairp (sid1249@gateway/web/irccloud.com/x-swiyvkhiitzscmoj)
+[10:39:22] *** Joins: jefferai (jefferai@kde/mitchell)
+[10:39:38] *** Joins: medena (guest-mede@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[10:39:39] <medena> Yo guys!
+[10:39:42] <medena> What is this?
+[10:41:17] *** Parts: medena (guest-mede@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[10:42:28] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-xhvymeufgsemkrza)
+[10:44:13] *** Joins: hatstand (sid2952@gateway/web/irccloud.com/x-lzakdsvldloffnpi)
+[10:45:03] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[10:59:03] *** Quits: soee_ (~soee@agvl250.neoplus.adsl.tpnet.pl) (Read error: Connection reset by peer)
+[10:59:27] *** Joins: soee (~soee@agvl250.neoplus.adsl.tpnet.pl)
+[11:01:05] <dommex> justin_time: thats a bunch of work
+[11:01:22] <justin_time> dommex: oh yes :-(
+[11:01:28] <dommex> I can help, just dunni when yet
+[11:05:46] <justin_time> ok, np. I have only one deadline:  February 18th 2016 (This is the debian import freeze for ubuntu 16.04 LTS)
+[11:10:26] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:17:04] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[11:19:53] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:55:52] *** Joins: soee_ (~soee@afjj150.neoplus.adsl.tpnet.pl)
+[11:59:50] *** Quits: soee (~soee@agvl250.neoplus.adsl.tpnet.pl) (Ping timeout: 255 seconds)
+[12:33:15] *** Quits: justin_time (~stefan@2a02:908:f358:6f00:7917:304d:b601:8746) (Remote host closed the connection)
+[12:42:35] *** Quits: jefferai (jefferai@kde/mitchell) (Ping timeout: 240 seconds)
+[12:47:26] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-xhvymeufgsemkrza) (Ping timeout: 240 seconds)
+[12:59:41] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Ping timeout: 255 seconds)
+[13:08:15] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-ndrkpjuluktbgjbj)
+[13:13:37] *** Quits: alastairp (sid1249@gateway/web/irccloud.com/x-swiyvkhiitzscmoj) (Read error: Connection reset by peer)
+[13:13:41] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[13:18:58] *** Quits: hatstand (sid2952@gateway/web/irccloud.com/x-lzakdsvldloffnpi) (Read error: Connection reset by peer)
+[13:19:26] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-ndrkpjuluktbgjbj) (Ping timeout: 240 seconds)
+[13:22:33] *** Joins: alastairp (sid1249@gateway/web/irccloud.com/x-odzotdkjngbuvusu)
+[13:24:12] *** Joins: jturney (~jon@host217-43-11-230.range217-43.btcentralplus.com)
+[13:26:46] *** Quits: alastairp (sid1249@gateway/web/irccloud.com/x-odzotdkjngbuvusu) (Ping timeout: 240 seconds)
+[13:28:02] *** Joins: hatstand (sid2952@gateway/web/irccloud.com/x-tmidfnmxddoiovxd)
+[13:30:02] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-ixhkmaugutoeunry)
+[13:30:30] *** Joins: jefferai (sid1300@kde/mitchell)
+[13:34:02] *** Quits: jturney (~jon@host217-43-11-230.range217-43.btcentralplus.com) (Ping timeout: 256 seconds)
+[13:34:30] *** Joins: jturney (~jon@host217-43-11-230.range217-43.btcentralplus.com)
+[13:37:36] *** Joins: alastairp (sid1249@gateway/web/irccloud.com/x-zktsntcslwglpeuy)
+[13:50:12] *** Joins: jturney1 (~jon@host217-43-11-230.range217-43.btcentralplus.com)
+[13:50:12] *** Quits: jturney (~jon@host217-43-11-230.range217-43.btcentralplus.com) (Disconnected by services)
+[14:04:25] *** Quits: alastairp (sid1249@gateway/web/irccloud.com/x-zktsntcslwglpeuy) ()
+[14:04:31] *** Quits: jefferai (sid1300@kde/mitchell) ()
+[14:04:36] *** Joins: alastairp (sid1249@gateway/web/irccloud.com/x-cynmrhmghrafaugy)
+[14:06:41] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-ixhkmaugutoeunry) ()
+[14:06:48] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-swkhpqvfhpzuvorv)
+[14:08:07] *** Joins: jefferai (sid1300@kde/mitchell)
+[14:08:15] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Ping timeout: 260 seconds)
+[14:09:42] *** Quits: hatstand (sid2952@gateway/web/irccloud.com/x-tmidfnmxddoiovxd) ()
+[14:09:53] *** Joins: hatstand (sid2952@gateway/web/irccloud.com/x-poygnisctmgyluyd)
+[14:47:29] *** Joins: jturney (~jon@host217-43-11-230.range217-43.btcentralplus.com)
+[14:49:13] *** Quits: jturney1 (~jon@host217-43-11-230.range217-43.btcentralplus.com) (Ping timeout: 265 seconds)
+[14:51:45] *** Joins: jturney1 (~jon@host217-43-11-230.range217-43.btcentralplus.com)
+[14:51:45] *** Quits: jturney (~jon@host217-43-11-230.range217-43.btcentralplus.com) (Disconnected by services)
+[15:12:20] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[15:50:33] *** Joins: Kalendium (~davidgasq@37.130.151.18.radiocable.net)
+[15:50:33] *** Quits: Kalendium (~davidgasq@37.130.151.18.radiocable.net) (Changing host)
+[15:50:33] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[16:02:55] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Ping timeout: 240 seconds)
+[16:17:35] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[16:26:29] *** Joins: jturney (~jon@host217-43-11-230.range217-43.btcentralplus.com)
+[16:26:52] *** Quits: jturney1 (~jon@host217-43-11-230.range217-43.btcentralplus.com) (Ping timeout: 256 seconds)
+[16:45:26] *** Joins: lfranchi (~quassel@lfranchi.xen.prgmr.com)
+[16:45:26] *** Quits: lfranchi (~quassel@lfranchi.xen.prgmr.com) (Changing host)
+[16:45:26] *** Joins: lfranchi (~quassel@kde/lfranchi)
+[16:45:27] *** ChanServ sets mode: +o lfranchi
+[16:59:39] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Remote host closed the connection)
+[17:12:46] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[17:19:08] *** Joins: jturney1 (~jon@host217-43-11-230.range217-43.btcentralplus.com)
+[17:19:08] *** Quits: jturney (~jon@host217-43-11-230.range217-43.btcentralplus.com) (Disconnected by services)
+[17:57:18] *** Joins: justin_time (~stefan@p50889496.dip0.t-ipconnect.de)
+[17:59:59] *** Quits: justin_time (~stefan@p50889496.dip0.t-ipconnect.de) (Client Quit)
+[18:12:44] *** Joins: justin_time (~stefan@p50889496.dip0.t-ipconnect.de)
+[18:12:50] *** Quits: jturney1 (~jon@host217-43-11-230.range217-43.btcentralplus.com) (Ping timeout: 246 seconds)
+[18:15:46] *** Joins: jturney (~jon@host217-43-11-230.range217-43.btcentralplus.com)
+[18:30:52] *** Joins: jturney1 (~jon@host217-43-11-230.range217-43.btcentralplus.com)
+[18:30:52] *** Quits: jturney (~jon@host217-43-11-230.range217-43.btcentralplus.com) (Disconnected by services)
+[18:51:10] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Remote host closed the connection)
+[18:53:38] *** Quits: jturney1 (~jon@host217-43-11-230.range217-43.btcentralplus.com) (Ping timeout: 256 seconds)
+[18:56:05] *** Joins: jturney (~jon@host217-43-11-230.range217-43.btcentralplus.com)
+[19:17:09] *** Quits: mehdix (~mehdix@77.176.207.158) (Quit: mehdix)
+[19:25:36] *** Quits: jturney (~jon@host217-43-11-230.range217-43.btcentralplus.com) (Ping timeout: 272 seconds)
+[19:27:07] *** Joins: jturney (~jon@host217-43-11-230.range217-43.btcentralplus.com)
+[20:09:46] <justin_time> dommex: have you some time to talk about the third-party files? Maybe we could bargain with the debian developers to reduce the workload… I know it's hard to change things that are working…
+[20:10:52] <dommex> Currently at a party
+[20:13:34] <dommex> justin_time: can we talk tomorrow?
+[20:15:14] <justin_time> dommex: ok, but tomorrow I have time only till 15:00h.
+[20:21:56] *** Quits: justin_time (~stefan@p50889496.dip0.t-ipconnect.de) (Quit: Ex-Chat)
+[20:29:33] <dommex> K
+[21:45:55] *** Joins: jamesaxl (~jamesaxl@105.159.36.11)

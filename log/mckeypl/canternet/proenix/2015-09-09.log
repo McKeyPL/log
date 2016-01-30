@@ -1,0 +1,162 @@
+[16:30:17] <McKey> Priv
+[16:30:23] <Proenix> o
+[16:30:25] <Proenix> ślicznie :D
+[16:30:29] <Proenix> Laski powieadasz?
+[16:30:33] <McKey> Ta
+[16:30:40] <McKey> bo pracuje w ZG a kutas nawet nie powiedział
+[16:31:00] <Proenix> https://www.facebook.com/jan.l.wnek?fref=ts
+[16:31:11] <Proenix> O tego chodzi nie?
+[16:31:12] <McKey> thx
+[16:31:35] <McKey> o tego co miał być na MLK ale ty byłeś a on nie xD
+[16:31:58] <Proenix> Przeciez on tez byl
+[16:32:43] <McKey> ofcialnie
+[16:32:52] <McKey> ale wtegy gdy ja przyjechałem to jego nie był
+[16:32:54] <McKey> o
+[16:33:04] <Proenix> No to możliwe :P
+[16:33:20] <Proenix> Dobra, wracam konfigurowac.
+[16:33:31] <Proenix> mailserver i znc
+[16:45:09] <McKey> ile trwa konfigurować ZNC...
+[16:49:37] <Proenix> nic
+[16:49:44] <Proenix> kurna, mysql sie zjebal
+[16:49:47] <Proenix> wtf
+[16:51:28] <McKey> mysql czy moriadb?
+[16:52:54] <Proenix> mysql
+[16:53:09] <Proenix> Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock'
+[16:53:12] <Proenix> hurdur, bo tag
+[16:54:01] <Proenix> A mialem miec malo roboty dzisiaj...
+[16:54:28] <McKey> A uruchomiłeś?
+[16:54:35] <Proenix> ...
+[16:54:42] <Proenix> masz mnie za idiote? :P
+[16:54:46] <McKey> Nie
+[16:54:52] <McKey> ale ja też raz tak miałem :P
+[16:55:07] <Proenix> Przy uruchamianiu sie sypczy
+[16:56:12] <Proenix> Ale gunwo
+[16:56:44] <McKey> Masz jakieś bazy?
+[16:56:59] <Proenix> Sep 09 16:56:31 www2 /etc/init.d/mysql[2067]: error: 'Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)'
+[16:56:59] <Proenix> Sep 09 16:56:31 www2 /etc/init.d/mysql[2067]: Check that mysqld is running and that the socket: '/var/run/mysqld/mysqld.sock' exists!
+[16:56:59] <Proenix> Sep 09 16:56:31 www2 /etc/init.d/mysql[2067]:
+[16:56:59] <Proenix> Sep 09 16:56:31 www2 mysql[1327]: Starting MySQL database server: mysqld . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . failed!
+[16:57:00] <Proenix> Sep 09 16:56:31 www2 systemd[1]: mysql.service: control process exited, code=exited status=1
+[16:57:02] <Proenix> Sep 09 16:56:31 www2 systemd[1]: Failed to start LSB: Start and stop the mysql database server daemon.
+[16:57:04] <Proenix> -- Subject: Unit mysql.service has failed
+[16:57:06] <Proenix> -- Defined-By: systemd
+[16:57:08] <Proenix> -- Support: http://lists.freedesktop.org/mailman/listinfo/systemd-devel
+[16:57:10] <Proenix> --
+[16:57:12] <Proenix> -- Unit mysql.service has failed.
+[16:57:16] <Proenix> --
+[16:57:18] <Proenix> -- The result is failed.
+[16:57:20] <Proenix> Sep 09 16:56:31 www2 systemd[1]: Unit mysql.service entered failed state.
+[16:57:22] <Proenix> Sep 09 16:56:31 www2 sudo[1313]: pam_unix(sudo:session): session closed for user root
+[16:57:24] <Proenix> Sep 09 16:56:42 www2 sudo[2095]: proenix : TTY=pts/0 ; PWD=/home/proenix ; USER=root ; COMMAND=/bin/journalctl -xn
+[16:57:27] <Proenix> Sep 09 16:56:42 www2 sudo[2095]: pam_unix(sudo:session): session opened for user root by proenix(uid=0)
+[16:57:29] <Proenix> juz nie mam...
+[16:57:31] <Proenix> Mam backup na kompie i starym servie jeszcze
+[16:57:41] <McKey> no to masz odpowiedź :P
+[16:57:51] <McKey> purge i install
+[16:57:57] <Proenix> Huh
+[16:57:59] <Proenix> Problem 
+[16:58:04] <Proenix> Już to zrobiłem :P
+[16:58:14] <Proenix> I dalej to samo.
+[16:58:48] <Proenix> Nie chce mi sie wszystkiego na nowo stawiac.
+[16:58:54] <Proenix> Chociaz pewnie bym to machnal w 3h
+[16:59:14] <McKey> Bazy masz surowe czy do importu?
+[16:59:28] <Proenix> zdumpowane
+[16:59:36] <Proenix> czyli .sql
+[16:59:42] <McKey> eh...
+[17:00:01] <McKey> A zassaj z serwera surowe )/var/lib/mysql/database podajrze)
+[17:00:31] <Proenix> Znaczy wiesz...
+[17:00:33] <Proenix> to dzialalo
+[17:00:39] <McKey> e...
+[17:00:43] <Proenix> Zjebalem probojac cos doinstalowac :v
+[17:00:47] <Proenix> z atrybutem --force
+[17:00:48] <Proenix> :v
+[17:00:56] <McKey> "co za debil" ?
+[17:00:59] <Proenix> Sie doinstalowalo xD
+[17:01:13] <McKey> A co próbowałeś?
+[17:02:05] <Proenix> A wlasciwie wywalilo bledem po drodze, wiec nie do konca sie zainstalowalo
+[17:02:05] <Proenix> Hur...
+[17:02:05] <Proenix> No nic... robiem backup i stawiam od zera
+[17:02:17] <Proenix> http://vestacp.com/
+[17:02:31] <Proenix> nauczka na przyszlosc, testuj na srodowisku testowym...
+[17:02:40] <Proenix> Tak jak to robiles zawsze.
+[17:02:42] <Proenix> :|
+[17:02:54] <Proenix> bedzie dobrze mowili.
+[17:04:49] <McKey> webmin
+[17:04:59] <McKey> cPanel lub ewentualnie plesk
+[17:05:08] <Proenix> ;_;
+[17:05:19] <Proenix> A mialo byc tak pieknie.
+[17:07:11] <McKey> w zasadzie na chuja ci to?
+[17:07:26] <Proenix> bo jestem leniwy i mialo samo postawic mailserver ;/
+[17:07:27] <McKey> masz zamiar opychać ludzią hosting?
+[17:07:35] <McKey> no to iRedMaila postaw
+[17:07:47] <Proenix> ostatnie moje przygody z iredmailem skonczyly sie zle
+[17:07:53] <Proenix> bo cos zjebalem :v
+[17:07:57] <Proenix> Hur...
+[17:08:04] <Proenix> No dobra, i tak bede stawial calosc od nowa
+[17:08:15] <McKey> postaw centosa i spróbuj go zjebać...
+[17:08:46] <Proenix> Is that a challange?
+[17:09:01] <McKey> powiedziałbym Slackware 
+[17:09:04] <McKey> ale nie masz
+[17:09:13] <McKey> a Centosa ciężko i wiem to z doświadczenia :P
+[17:09:14] <Proenix> Nie ma niestety
+[17:09:21] <Proenix> Ja bym dal rade :/
+[17:09:48] <Proenix> no to co...
+[17:09:52] <Proenix> kasu kasu
+[17:09:55] <Proenix> :|
+[17:09:59] <McKey> rm -rf /
+[17:10:13] <McKey> Powiem ci że jak masz możwilość to kiedyś tak zrób :P
+[17:10:19] <Proenix> slabo dziala
+[17:10:21] <Proenix> robilem
+[17:10:24] <Proenix> zaraz zrobie :P
+[17:11:17] <Proenix> proenix@www2:/home/www_proenix$ ls
+[17:11:17] <Proenix> -bash: /bin/ls: No such file or directory
+[17:11:17] <Proenix> proenix@www2:/home/www_proenix$
+[17:11:18] <Proenix> :)
+[17:11:30] <McKey> tag
+[17:11:43] <Proenix> hurdur
+[17:11:48] <Proenix> shutdown nawet nie dziala :)
+[17:11:54] <McKey> bo go nie ma
+[17:11:56] <Proenix> ;D
+[17:12:05] <Proenix> no to teraz mozna wywalic server do kosza
+[17:12:06] <McKey> musisz binarnie
+[17:12:14] <Proenix> xD
+[17:12:17] <Proenix> Ale ngnix dalej stoi
+[17:13:04] <McKey> RAM
+[17:13:13] <Proenix> wiem
+[17:13:16] <Proenix> hurdur
+[17:13:26] <Proenix> ramnode pokazuje uzycie 0/500 xD
+[17:13:33] <Proenix> chyba nie moga sprawdzic
+[17:17:13] <Proenix> hurrr
+[17:17:20] <Proenix> gdzie sie tu reinstaluje server
+[17:17:31] <McKey> dunno
+[17:18:26] <Proenix> aaa tu
+[17:18:26] <Proenix> ok
+[19:32:37] <Proenix> Uh.
+[19:32:38] <Proenix> Finito.
+[19:40:29] <McKey> i działa
+[19:40:41] <Proenix> Da...
+[19:40:50] <Proenix> Ale udalo mi sie zczaic przy okazji co bylo grane :/
+[19:41:03] <Proenix> I w sumie zjebalem na poczatku robiac purge mysqla
+[19:41:16] <Proenix> bo wystarczylo skasowac socketa ktory sie przywiesil
+[19:42:10] <McKey> xDDDDDDDDDDDddddddddddddd
+[19:42:14] <Proenix> ;_;
+[19:42:18] <Proenix> pewnie by ruszylo
+[19:42:43] <Proenix> Ale!
+[19:42:51] <Proenix> Są plusy tego, ze zrobilem wszystko od zera.
+[19:42:57] <Proenix> Sprawdzilem sobie rescure plan :/
+[21:46:40] <Proenix> znc stoi
+[21:46:49] <McKey> yay
+[21:46:51] <Proenix> najdluzej z wszystkiego trwala kompilacja :P
+[21:48:29] <McKey> lel
+[21:48:36] <McKey> A jaki system?
+[21:48:40] <Proenix> debian 8
+[21:48:46] <McKey> to po co kompilować?
+[21:48:57] <Proenix> bo moge
+[21:49:02] <Proenix> bo w paczce moglo byc stare
+[21:49:51] <McKey> jak byś powiedział że chcesz ukryć usługi to ci prędzej uwierzyłbym :P
+[21:50:07] <Proenix> :P
+[21:50:20] <Proenix> hmm 300MB ramu wpierdala calosc
+[21:50:22] <McKey> to cię zaprosze na #kopyttv
+[21:50:34] <McKey> bo tam teraz chyba będzie więcej akckji
+[21:50:48] <Proenix> mam sobie dodac do kanalow? :P
+[21:51:05] <McKey> jak chcesz

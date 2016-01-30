@@ -1,0 +1,262 @@
+[00:02:50] <theli_ua> domme_: MrMaffen cause somewhere in process of changing tomahawk.js it stopped calling testConfig for 0.9 resolvers
+[00:03:20] <theli_ua> easy to fix but I just want to make sure I'll fix it in the right place, so I wanna know what was it supposed to be in < 0.9
+[00:04:19] <MrMaffen> theli_ua: it's always testConfig for 0.9 resolvers
+[00:04:27] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[00:04:29] <theli_ua> I know
+[00:04:30] <MrMaffen> theli_ua: before that it was configTest and _testConfig
+[00:04:43] <theli_ua> aha
+[00:04:45] <theli_ua> mmkay
+[00:04:54] <theli_ua> "before" === < 0.9 ?
+[00:04:56] <MrMaffen> I think _testConfig was something that was only used in that one tidal resolver
+[00:05:24] <theli_ua> also, MrMaffen if you are indeed going to review amazon resolver please redownload it, I fixed some minor bugs
+[00:06:26] <MrMaffen> theli_ua: yes "before" == < 0.9
+[00:06:29] <MrMaffen> theli_ua: ok
+[00:06:34] <theli_ua> thanks
+[00:06:41] <MrMaffen> could take a while though. I got loads of other stuff I wanna do first
+[00:06:42] <MrMaffen> :/
+[00:06:56] <theli_ua> sure, I can bug domme in the meanwhile
+[00:07:02] <theli_ua> or domme_  rather
+[00:07:43] <MrMaffen> theli_ua: btw, saw your comment on those PRs ... why can't you just put a simple white version of those icons as iconWhite.png s in the images folder? Oo
+[00:07:56] <theli_ua> because I would need to create them
+[00:08:11] <MrMaffen> the background can be anything from a 1x1 to a 600x600 image
+[00:09:04] <MrMaffen> well yea ... otherwise someone else has to create them :D
+[00:09:19] <theli_ua> well, if the one intends to use those resolvers on android
+[00:09:21] <MrMaffen> and I know that someone :D
+[00:09:24] <theli_ua> as desktop doesn't use them
+[00:09:31] <theli_ua> and I dont use android version
+[00:09:35] <MrMaffen> ...
+[00:09:49] <theli_ua> I mean, I just dont listen to music from my phone in general
+[00:09:59] <theli_ua> at has nothing to do with tomahawk on android specifically :)
+[00:10:00] <MrMaffen> desktop will use them in the long run
+[00:10:22] <MrMaffen> nvm I'll create them -.-
+[00:10:32] <theli_ua> -_-
+[00:10:38] <theli_ua> but why would you bother
+[00:10:49] <theli_ua> noone except me will most probably use those resolvers anyway
+[00:13:12] <MrMaffen> consistency ... the goal is to have only 0.9 resolvers in tomahawk-resolvers that work well with desktop _and_ android
+[00:35:37] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[00:38:32] <theli_ua> MrMaffen: why not just push them ? o_O
+[01:51:56] *** Quits: domme_ (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de) (Ping timeout: 272 seconds)
+[03:17:19] <theli_ua> muesli any eta on getting back jira? 
+[03:44:58] *** Quits: jturney1 (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[04:56:39] *** Quits: Marikos (~fox@pool-108-24-149-221.cmdnnj.fios.verizon.net) (Ping timeout: 240 seconds)
+[05:07:53] *** Joins: mgue2 (~mgue@78.49.88.120)
+[05:10:58] *** Quits: mgue1 (~mgue@x590f8c4a.dyn.telefonica.de) (Ping timeout: 244 seconds)
+[08:11:25] *** Joins: meaning (~meaning@ip-80-113-15-100.ip.prioritytelecom.net)
+[09:57:38] *** Joins: alsuren (~alsuren@host86-162-78-190.range86-162.btcentralplus.com)
+[10:04:38] *** Quits: alsuren (~alsuren@host86-162-78-190.range86-162.btcentralplus.com) (Quit: alsuren)
+[10:30:16] *** Joins: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[10:45:39] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:01:32] *** Quits: meaning (~meaning@ip-80-113-15-100.ip.prioritytelecom.net) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[11:16:08] *** Joins: lod__ (~lod@212.185.27.114)
+[11:37:43] *** Joins: domme_ (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de)
+[11:37:57] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Ping timeout: 244 seconds)
+[11:51:14] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:56:57] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[12:02:40] *** Joins: Mineo (~mineo@2001:638:904:ffca:30e4:7a94:149e:8e7d)
+[12:03:44] <Mineo> hey guys, just wondering if you're aware that your bug tracker just shows the standard tomahawk front page, not the actual bug tracker?
+[12:35:24] <jherskowitz> Mineo: yeah, we are in the middle of migrating everything to a new server
+[14:17:53] *** total1ty_ is now known as upsmensch
+[14:22:57] *** upsmensch is now known as total1ty_
+[14:53:30] <Mineo> ah
+[14:53:43] *** Parts: lod__ (~lod@212.185.27.114) ("Leaving")
+[14:54:29] <Mineo> maybe put up a message about that somewhere? the twitter stream on the website mentions that the site is back, but it really isn't
+[15:03:18] *** Joins: dridri (~dridri@2a01:e35:8a72:9010:225:90ff:fe1e:3c78)
+[15:05:14] <TheOneRing> muesli: domme_ any feedback to the new version? https://github.com/tomahawk-player/tomahawk/pull/337 its only possible to replace both previews. 
+[15:05:16] <tomabee> [ [Proof of Concept] Album art as Windows window preview by TheOneRing · Pull Request #337 · tomahawk-player/tomahawk · GitHub | github.com | https://avatars0.githubusercontent.com/u/200626?v=3&s=400 ]
+[15:07:50] *** Quits: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Ping timeout: 240 seconds)
+[15:14:16] *** Joins: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[15:30:40] <domme_> TheOneRing: i personally don't mind, not sure i would like it, but i'm also no windows user
+[15:30:57] <domme_> code looks better than the old one, so i'm +1 probably
+[15:31:20] <TheOneRing> ok now I would need some imput for the style
+[15:31:30] <TheOneRing> ping your designer ^^
+[15:32:38] <domme_> jherskowitz: muesli: i think if anyone you're in contact with him
+[15:34:01] <jherskowitz> TheOneRing: domme_ got a screenshot?
+[15:34:15] <TheOneRing> have a look on the pr
+[16:19:14] *** Joins: knicklux (~knicklux@2a03:2260:a:a:1723:d8c:4528:fb8b)
+[16:40:36] *** Joins: itutho1 (guest-itut@gateway/web/scrollback.io/x-kpjwwqffjluobyqc)
+[16:40:37] <itutho1> m
+[16:41:29] *** Parts: itutho1 (guest-itut@gateway/web/scrollback.io/x-kpjwwqffjluobyqc) ()
+[17:03:45] *** Joins: knicklux_ (~knicklux@2a03:2260:a:a:1723:d8c:4528:fb8b)
+[17:08:57] *** Quits: knicklux_ (~knicklux@2a03:2260:a:a:1723:d8c:4528:fb8b) (Quit: Leaving)
+[17:39:40] <jherskowitz> TheOneRing: I don’t think you need “Tomahawk” in the metadata since the icon is already in the window https://www.dropbox.com/s/946dzjhbpljphrj/Screenshot%202015-11-10%2011.39.17.png?dl=0
+[17:39:42] <tomabee> [ Screenshot 2015-11-10 11.39.17.png | www.dropbox.com | https://photos-1.dropbox.com/t/2/AAB6XiN3SEqDACqI_ZRyJHmBNKKmWSihcQiCllAgrkQgSQ/12/986425/png/1024x768/2/_/0/4/Screenshot%202015-11-10%2011.39.17.png/CLmaPCABIAIgBygBKAIoBCgH/946dzjhbpljphrj/AABPRyZxiVMteZbRFTIodQPKa/Screenshot%202015-11-10%2011.39.17.png ]
+[17:39:59] <jherskowitz> Can you do track/artist as an overlay on the art so they art can be bigger?
+[17:40:05] <jherskowitz> is it possible?
+[17:42:34] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Ping timeout: 272 seconds)
+[17:46:22] <TheOneRing> yes
+[17:46:37] <TheOneRing> I draw the image with a qpainter
+[17:46:43] <TheOneRing> so everything is possibl
+[17:46:45] <TheOneRing> e
+[17:46:53] <TheOneRing> I just reused the window title
+[17:48:22] <TheOneRing> its just a quick draft do demonstrate what might be possible 
+[17:55:16] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[18:12:40] *** Joins: sythe (uid20450@facade/leader)
+[18:13:23] <theli_ua> MrMaffen: can you take a look at https://github.com/tomahawk-player/tomahawk/pull/338 pls?
+[18:13:24] <tomabee> [ Fix testConfig on 0.9 by theli-ua · Pull Request #338 · tomahawk-player/tomahawk · GitHub | github.com | https://avatars2.githubusercontent.com/u/1242604?v=3&s=400 ]
+[18:22:19] *** Joins: soee (~soee@acfu89.neoplus.adsl.tpnet.pl)
+[18:23:29] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[18:32:13] *** Quits: knicklux (~knicklux@2a03:2260:a:a:1723:d8c:4528:fb8b) (Remote host closed the connection)
+[18:51:03] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[18:54:49] *** Quits: soee (~soee@acfu89.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[18:55:47] *** Joins: soee (~soee@acfu89.neoplus.adsl.tpnet.pl)
+[19:09:06] *** Quits: soee (~soee@acfu89.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[19:09:59] *** Joins: soee (~soee@acfu89.neoplus.adsl.tpnet.pl)
+[19:34:51] <MrMaffen> theli_ua: I think it's best to simply change the call in tomahawk-desktop to testConfig
+[19:36:30] <MrMaffen> domme_: ^ ?
+[19:41:45] <theli_ua> MrMaffen: thats what i waas trying to figure out yesterday but still not sure what its supposed to be fpr pre 0.9
+[19:43:16] <MrMaffen> theli_ua: it was named configTest, but I don't think that was even supported by tomahawk-desktop
+[20:11:35] <theli_ua> well, why did tomahawk call _testConfig then >_<
+[20:32:12] *** Joins: alsuren (~alsuren@host86-162-78-190.range86-162.btcentralplus.com)
+[20:34:11] *** Quits: alsuren (~alsuren@host86-162-78-190.range86-162.btcentralplus.com) (Client Quit)
+[20:42:43] *** Joins: alsuren (~alsuren@host86-162-78-190.range86-162.btcentralplus.com)
+[20:43:37] <MrMaffen> theli_ua: that's what it was called when we had that inbetween Tomahawk.Resolver.Promise thingy
+[20:43:58] <MrMaffen> theli_ua: which was only extended by the Tidal resolver
+[20:44:08] <MrMaffen> theli_ua: you can safely disregard _testConfig
+[20:44:09] <theli_ua> which you changed?
+[20:44:31] <MrMaffen> theli_ua: I changed it to testConfig yes
+[20:45:04] <theli_ua> so, if you say this wasn't even supported by 0.8 ... then I should remove references to it from non-Promies API as well
+[20:46:31] <MrMaffen> theli_ua: well it wasn't supported by tomahawk desktop. but there are  <0.9 resolvers that do have a configTest-function
+[20:47:27] <theli_ua> alright
+[20:47:34] <MrMaffen> in other words: I only used that configTest-function in tomahawk-android
+[20:48:50] <theli_ua> so testConfig for <0.8 and configTest for >= 0.9 it is then
+[20:50:35] <theli_ua> MrMaffen: wait, so why, would you want it to be called directly?
+[20:51:22] <MrMaffen> theli_ua: the other way around
+[20:51:40] <MrMaffen> testConfig for >=0.9
+[20:51:48] <MrMaffen> and configTest for <0.9
+[20:54:00] *** Quits: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Ping timeout: 246 seconds)
+[20:54:04] *** Joins: jturney1 (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[20:57:12] <theli_ua> MrMaffen: you sure you want to remove current wrappers for testConfig ?
+[20:59:14] <MrMaffen> theli_ua: no I'm not, because I don't know the magic that is being done in tomahawk-desktop :D
+[20:59:25] <theli_ua> >_<
+[20:59:29] <MrMaffen> all I can say is that we only have to support testConfig
+[20:59:36] <MrMaffen> domme_ has to comment first ...
+[21:00:42] <theli_ua> I mean, if we want to keep backwards compatibility it doesn't matter what we make tomahawk call, either way we'll have wrapper in tomahawk.js
+[21:01:11] <theli_ua> and the wrapper was done so that resolver could just throw an error or something
+[21:02:52] <MrMaffen> theli_ua: yea true. the only downside might be some redundant compat code
+[21:03:01] <MrMaffen> but I guess that's not a problem
+[21:03:10] <MrMaffen> considering the amount of compat code we already have :D
+[21:03:22] <theli_ua> we could just drop pre 0.9 compat
+[21:03:38] <theli_ua> everything would be much cleaner
+[21:04:58] <MrMaffen> yep that's the plan
+[21:05:05] <MrMaffen> 0.9 should be that kind of release
+[21:05:41] <MrMaffen> we also plan on getting rid of synchrotron and instead have a solid resolver distribution system with version management
+[21:06:17] <theli_ua> MrMaffen: btw, could you explain the logic behind artistDisambiguation in collection implementation? also, how does it handle compilations/multiple artists on a release
+[21:07:55] <MrMaffen> theli_ua: artistDisambiguation is a concept that I copied from how things are handled on hatchet. it's not being used right now as you probably know. it's just a string that is being used for multiple different artists with the same name
+[21:08:36] <MrMaffen> theli_ua: compilations should in theory be done through using the albumArtist properly. but as you probably also know, that's just a stub implementation for now
+[21:08:55] <theli_ua> well, its just that current 0.9 collection on desktop have no way to view releases with multiple artists on them (apart from track view ofc)
+[21:08:59] <MrMaffen> I did all that just to have the proper concepts in place when we address those issues in future releases
+[21:09:58] <domme_> MrMaffen: i dont remember the details
+[21:10:02] <MrMaffen> theli_ua: yea that obviously has to be changed
+[21:10:27] <domme_> i just remember is i did a lousy hack with testConfig
+[21:10:29] <MrMaffen> domme_: do you think it's safe to only support the testConfig-function?
+[21:10:34] <domme_> yeah
+[21:10:37] <domme_> if it works
+[21:10:55] <domme_> there was no support before 0.9 anyway
+[21:10:59] <MrMaffen> yea
+[21:11:06] <theli_ua> domme_: but there are resolvers using it
+[21:11:29] <theli_ua> well, only 2 are
+[21:11:37] <theli_ua> beatsmusic and grooveshark (which is obsolete)
+[21:12:13] <domme_> well.. i did a lousy hack: i changed testConfig to configTest (i used what MrMaffen wasnt using on android) because it had a slightly different semantic
+[21:12:21] <domme_> maybe just that it returned a promise
+[21:12:26] <theli_ua> yes
+[21:12:28] <domme_> and _adapter_foo wasnt a thing at that point
+[21:12:43] <domme_> anyway:
+[21:12:52] <domme_> in 0.8 there was no support for whatever
+[21:12:53] <domme_> nada
+[21:12:59] <domme_> so only nightlies might break
+[21:13:06] <domme_> which is a natural risk of using nightlies
+[21:13:07] <domme_> :P
+[21:16:50] <theli_ua> I'm not qualified to do this change, I'll just discard my PR
+[21:18:03] <MrMaffen> domme_: I guess that's all that has to change, right? https://github.com/tomahawk-player/tomahawk/blob/bfe30fd983a387e4c632ca02fb0f5acac1897816/src/libtomahawk/accounts/ResolverAccount.cpp#L527
+[21:18:08] <tomabee> [ tomahawk/ResolverAccount.cpp at bfe30fd983a387e4c632ca02fb0f5acac1897816 · tomahawk-player/tomahawk · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[21:19:32] <theli_ua> and all the wrappers 
+[21:19:39] <theli_ua> and add default implementation for testConfig
+[21:20:03] <theli_ua> aand do we really not need wrappers? (ie what if resovler throws when testing config)
+[21:21:15] <domme_> throwing should be handled as a rejected promise
+[21:21:20] <domme_> MrMaffen: oh, i see
+[21:21:39] <domme_> the _adapter_ logic is in the legacy resolver code
+[21:22:25] <domme_> thus the _adapter_testConfig is not automatically called
+[21:22:29] <domme_> puh
+[21:22:34] <theli_ua> yes
+[21:22:36] <domme_> gimme a bit, i'll think about it
+[21:22:51] <theli_ua> thats why there is no _adapter_testConfig
+[21:23:16] <theli_ua> eh, in my branch anyway
+[21:23:35] <domme_> yes yes
+[21:23:49] <domme_> ah
+[21:24:09] <domme_> so.. this calls _testConfig which is in the baseclass, which in turn calls testConfig on the subclass
+[21:24:21] <theli_ua> eh
+[21:24:24] <theli_ua> yes
+[21:24:32] <domme_> this kinda makes sense
+[21:24:50] <domme_> so https://github.com/tomahawk-player/tomahawk/blob/bfe30fd983a387e4c632ca02fb0f5acac1897816/src/libtomahawk/accounts/ResolverAccount.cpp#L527 is actually right
+[21:24:51] <tomabee> [ tomahawk/ResolverAccount.cpp at bfe30fd983a387e4c632ca02fb0f5acac1897816 · tomahawk-player/tomahawk · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[21:24:57] <theli_ua> well, the wrapper is still outdated since it doesn't check if resolver even returned Success
+[21:25:06] <theli_ua> ie if resolver returns Error it'll report success
+[21:25:07] <theli_ua> :D
+[21:25:32] <domme_> no
+[21:25:37] <theli_ua> yes
+[21:25:39] <domme_> no
+[21:26:00] <theli_ua> :-/
+[21:26:09] <domme_> success is returned when the promise resolves
+[21:26:18] <theli_ua> https://github.com/tomahawk-player/tomahawk-resolvers/blob/master/gmusic/content/contents/code/gmusic.js#L554
+[21:26:20] <tomabee> [ tomahawk-resolvers/gmusic.js at master · tomahawk-player/tomahawk-resolvers · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[21:26:29] <theli_ua> thats the thing - the promise will be resolved
+[21:26:39] <theli_ua> ohwait
+[21:26:41] <domme_> ah, you mean literally return
+[21:26:42] <theli_ua> eh
+[21:26:59] <theli_ua> domme_: well, thats how new-age resolvers behave
+[21:27:09] <theli_ua> they can return all kinds of errors 
+[21:27:09] <domme_> we were talking about different things
+[21:27:11] <theli_ua> just return
+[21:27:28] <domme_> yes, it should take the return of testConfig into account
+[21:27:37] <theli_ua> yes, thats what I was talking about
+[21:27:38] <domme_> i just did not implement it, because tomahawk does not handle it yet
+[21:27:49] <domme_> i was talking about throwing errors
+[21:27:54] <theli_ua> I know
+[21:28:02] <theli_ua> but I said return error not throw error
+[21:28:04] <theli_ua> :P
+[21:28:51] <theli_ua> domme_: I'm confused, if tomahawk doesn't handle it , how does it differentiate if test failed or succeed?
+[21:30:26] <domme_> just by resolving or rejecting the promise
+[21:31:49] <domme_> MrMaffen: so are you doing it in android with promises?
+[21:35:21] <domme_> theli_ua: ah
+[21:35:29] <domme_> i think the idea was ... just throw the error :P
+[21:36:05] <domme_> but we can also add a convenience wrapper that throws errorneous return values
+[21:59:27] *** Quits: alsuren (~alsuren@host86-162-78-190.range86-162.btcentralplus.com) (Quit: alsuren)
+[22:01:07] *** Joins: alsuren (~alsuren@host86-162-78-190.range86-162.btcentralplus.com)
+[22:54:47] *** Quits: alsuren (~alsuren@host86-162-78-190.range86-162.btcentralplus.com) (Quit: alsuren)
+[23:00:01] <lfranchi> btw OS X qt4 build is broken -- known?
+[23:00:05] <lfranchi> QMacToolbar is qt5 only
+[23:00:22] <domme_> lfranchi: we dont mean to support qt4 anymore
+[23:00:26] <domme_> if we do it's by accident
+[23:00:34] <lfranchi> ah k
+[23:00:47] <lfranchi> does qt5 on mac look usable e.g. the settings dialog? :)
+[23:00:49] <domme_> and i dont feel like removing ifdefs before all qt5 issues are ruled out
+[23:01:01] <domme_> lfranchi: i think jherskowitz is on qt5 on mac
+[23:01:07] <domme_> you'd have to ask him :-)
+[23:01:10] <domme_> or muesli
+[23:10:10] *** Joins: alsuren (~alsuren@host86-162-78-190.range86-162.btcentralplus.com)
+[23:11:08] <muesli> lfranchi: yeah, 5.5.1 is fine
+[23:11:20] <lfranchi> cool
+[23:13:52] <jherskowitz> lfranchi: https://www.dropbox.com/s/zs7ez7lq8kqv385/Screenshot%202015-11-10%2017.13.47.png?dl=0
+[23:13:54] <tomabee> [ Screenshot 2015-11-10 17.13.47.png | www.dropbox.com | https://photos-5.dropbox.com/t/2/AACCL8VNDrXx37yHHCUPB_ao4EEQ-xhxTSTcJBLHznbS3A/12/986425/png/1024x768/2/_/0/4/Screenshot%202015-11-10%2017.13.47.png/CLmaPCABIAIgBygBKAIoBCgH/zs7ez7lq8kqv385/AACoatqMXkh2dLoo0xOaqfaDa/Screenshot%202015-11-10%2017.13.47.png ]
+[23:14:12] <jherskowitz> we lost the friends button in the header
+[23:14:22] <jherskowitz> but otherwise works fine
+[23:14:52] <theli_ua> there was a friends button? o_O
+[23:14:59] <theli_ua> jherskowitz: does the search work?
+[23:15:10] <jherskowitz> yeah, it does now
+[23:16:24] <theli_ua> cool
+[23:16:42] <theli_ua> is there a roadmap to 0.9?
+[23:16:49] <theli_ua> i mean what needs to be done
+[23:17:20] <domme_> fix up osx
+[23:17:32] <theli_ua> is it tracked anywhere
+[23:37:56] *** Quits: alsuren (~alsuren@host86-162-78-190.range86-162.btcentralplus.com) (Quit: alsuren)
+[23:38:44] *** Joins: alsuren (~alsuren@host86-162-78-190.range86-162.btcentralplus.com)
+[23:40:47] *** Quits: alsuren (~alsuren@host86-162-78-190.range86-162.btcentralplus.com) (Client Quit)
+[23:42:09] *** Joins: alsuren (~alsuren@host86-162-78-190.range86-162.btcentralplus.com)
+[23:47:06] <jherskowitz> theli_ua: on the bug tracker which is m.i.a.  :/
+[23:47:14] <theli_ua> yup
+[23:47:41] <theli_ua> jherskowitz: is db for it at least safe?
+[23:47:54] <theli_ua> or is everything completely gone ....
+[23:49:33] <jherskowitz> theli_ua: good question
+[23:49:41] <jherskowitz> I know muesli was trying to recover it
+[23:49:45] <jherskowitz> don’t know the current state
+[23:51:21] *** Quits: alsuren (~alsuren@host86-162-78-190.range86-162.btcentralplus.com) (Quit: alsuren)

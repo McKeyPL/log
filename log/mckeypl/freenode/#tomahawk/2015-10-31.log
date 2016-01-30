@@ -1,0 +1,113 @@
+[00:46:21] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[01:23:43] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[03:03:16] *** Joins: klaas_ (klaas@simply.kla.as)
+[03:05:50] *** Quits: klaas (klaas@simply.kla.as) (Ping timeout: 260 seconds)
+[03:15:14] *** Quits: jturney (~jon@host86-141-129-230.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[03:24:38] *** klaas_ is now known as klaas
+[03:30:51] *** Quits: mohn (~mo@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[03:31:17] *** Quits: johnyb (~jb@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[04:09:30] *** Joins: dridri (~dridri@2a01:e35:8a72:9010:225:90ff:fe1e:3c78)
+[04:19:34] <theli_ua> MrMaffen: you're commenting on the original code of youtube resolver, I'm not up for fully refactoring it, its kinda messy
+[05:45:12] *** Joins: johnyb (~jb@limu.coffee.liberejo.de)
+[05:45:12] *** Joins: mohn (~mo@limu.coffee.liberejo.de)
+[09:45:22] *** Joins: github-tomahawk (~github-to@192.30.252.45)
+[09:45:22] <github-tomahawk> [13tomahawk] 15muesli pushed 1 new commit to 06master: 02http://git.io/vlGfV
+[09:45:22] <github-tomahawk> 13tomahawk/06master 1495e937c 15Tomahawk CI: Automatic merge of Transifex translations
+[09:45:22] *** Parts: github-tomahawk (~github-to@192.30.252.45) ()
+[10:15:12] *** Joins: soee_ (~soee@aavy217.neoplus.adsl.tpnet.pl)
+[12:05:25] *** Joins: jturney (~jon@host86-141-129-230.range86-141.btcentralplus.com)
+[12:29:56] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[14:54:03] <MrMaffen> theli_ua: ah ok. thought you wanted to refactor the whole thing. my bad
+[14:57:57] <jherskowitz> moin
+[15:00:22] <MrMaffen> moin moin
+[15:00:34] <jherskowitz> damn, I still can’t get VLC to build
+[15:06:20] <jherskowitz> muesli: fyi, the wiki is down
+[15:07:52] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[15:09:45] <MrMaffen> theli_ua: why did you add the hasPreferredQuality function? it doesn't seem to be used
+[15:14:11] <jherskowitz> muesli: ok, some new errors with the vlc in our tap
+[15:14:19] <jherskowitz> after untapping/retapping
+[15:14:20] <jherskowitz> http://pastebin.com/8N7hWpim
+[15:14:21] <tomabee_> [ ==> Checking out branch master  Adding libintl directly to the environment:  and | pastebin.com | http://pastebin.com/i/fb2.jpg ]
+[15:17:21] <jherskowitz> our formula is missing 10.11 if statement, but seems other stuff is broken too
+[15:19:47] <jherskowitz> I guess it’s an issue in:
+[15:19:50] <jherskowitz> https://www.irccloud.com/pastebin/WpZcYLOc/
+[15:19:51] <tomabee_> [ Pastebin | www.irccloud.com |  ]
+[15:20:12] <jherskowitz> domme: any ideas?
+[16:39:23] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[16:41:25] *** Joins: soee (~soee@blj180.neoplus.adsl.tpnet.pl)
+[16:45:09] *** Quits: soee_ (~soee@aavy217.neoplus.adsl.tpnet.pl) (Ping timeout: 250 seconds)
+[17:16:17] <theli_ua> MrMaffen: I did not add it. It was there
+[17:22:45] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[17:32:03] *** Quits: tomahawk-ci (~PircBotx@server1.muehlhaeuser.de) (Remote host closed the connection)
+[17:32:33] <muesli> jherskowitz: checking right now
+[17:32:48] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[17:33:05] <jherskowitz> muesli: cool - I’m battling Xcode update right now
+[17:33:12] <muesli> jherskowitz: 7.1?
+[17:33:16] <jherskowitz> y
+[17:33:19] <muesli> jherskowitz: it fucked up my machine badly :(
+[17:33:24] <jherskowitz> oh really?
+[17:33:26] <muesli> still in a limbo between 7.0 and 7.1
+[17:33:34] *** Joins: toma-cat (~toma-cat@server1.muehlhaeuser.de)
+[17:33:49] <jherskowitz> it won’t even install via app store
+[17:34:02] <jherskowitz> downloading directly from developer site now
+[17:34:10] <muesli> heh
+[17:34:13] <muesli> yeah, same situation for me
+[17:34:32] <jherskowitz> I had to uninstall 7.0 to free up enough room to try and download 7.1
+[17:34:35] <jherskowitz> so now I have nothing
+[17:34:42] <muesli> lol
+[17:34:43] <muesli> it's like we have cloned systems
+[17:34:48] <jherskowitz> heh
+[17:34:59] <muesli> we kinda do
+[17:34:59] <muesli> mac air, 128gb?
+[17:35:00] <muesli> right?
+[17:35:06] <jherskowitz> yeah
+[17:35:06] <theli_ua> MrMaffen: yeah, I wanted to refactor it at one point , but it was just ... too messy, and you are against removing the search part :)
+[17:35:44] <jherskowitz> muesli: actually 256gb
+[17:35:58] <muesli> jherskowitz: see, it's twice as bad for me ;-)
+[17:37:39] <jherskowitz> I’ve been battling this vlc thing for days
+[17:40:06] *** Quits: hugo______ (sid6079@gateway/web/irccloud.com/x-cjvjbadsvndbcdsn) (Ping timeout: 240 seconds)
+[17:40:26] *** Quits: kurros (wade@2604:180::f84a:f836) (Ping timeout: 240 seconds)
+[17:40:46] *** Quits: dridri (~dridri@2a01:e35:8a72:9010:225:90ff:fe1e:3c78) (Ping timeout: 240 seconds)
+[17:40:46] *** Quits: hatstand (sid2952@gateway/web/irccloud.com/x-pnplsgapdphqwhxm) (Ping timeout: 240 seconds)
+[17:40:48] *** Joins: kurros (wade@2604:180::f84a:f836)
+[17:40:55] *** Joins: dridri (~dridri@2a01:e35:8a72:9010:225:90ff:fe1e:3c78)
+[17:43:22] *** Joins: hugo______ (sid6079@gateway/web/irccloud.com/x-wgqsfdbjjgjqmcci)
+[17:43:37] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[17:47:28] *** Joins: hatstand (sid2952@gateway/web/irccloud.com/x-ggascqzslbbalwrq)
+[17:48:50] <jherskowitz> muesli: there’s the issue "The item “Xcode” can’t be copied because there isn’t enough free space."
+[17:51:26] *** Quits: toma-cat (~toma-cat@server1.muehlhaeuser.de) (Remote host closed the connection)
+[17:53:05] <muesli> ok, server will be down for a bit :-/ seems the hard disks are dying badly
+[17:53:10] <muesli> trying to rescue / recover
+[17:53:33] <jherskowitz> k
+[17:58:56] <muesli> ok, this is looking pretty bad :-/
+[18:02:10] <muesli> one disk dead, the other dying
+[18:02:12] <muesli> wtf
+[18:05:13] <jherskowitz> muesli: at hetnzner?
+[18:05:18] <muesli> yeah
+[18:05:46] <jherskowitz> wtf, it seems we’ve had a lot of of hardware issues there
+[18:11:55] <muesli> hm. this is looking pretty bleak
+[18:13:37] <jherskowitz> muesli: shouldn’t they give us new hardware if it fails?
+[18:14:03] <muesli> jherskowitz: sure, but that doesn't bring back any data
+[18:14:31] <jherskowitz> ooof
+[18:16:22] <muesli> ooof indeed
+[18:17:28] *** Joins: toma-cat (~toma-cat@server1.muehlhaeuser.de)
+[18:52:38] *** Joins: meaning (~meaning@host-95-182-213-101.dynamic.voo.be)
+[19:00:12] <jherskowitz> muesli: fwiw, to get tomahawk to build with Xcode 7.1 I had to brew install libnettle
+[19:00:13] <jherskowitz> first
+[19:00:35] <jherskowitz> actually it built without it, but crashed on open until I installed it
+[19:59:41] <muesli> interesting
+[20:02:43] <jherskowitz> muesli: yeah, I added it to the wiki - even though I have no idea what it is
+[20:02:46] <jherskowitz> heh
+[20:03:26] <jherskowitz> muesli: btw, is it possible to add a second line to nstoolbar?
+[20:03:34] * jherskowitz is doing research
+[20:07:00] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[20:08:27] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[20:14:58] <muesli> jherskowitz: not really, no
+[20:14:59] <muesli> you can fake it
+[20:15:11] <muesli> but it's a bit problematic
+[20:18:37] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[20:25:46] *** Quits: meaning (~meaning@host-95-182-213-101.dynamic.voo.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[20:41:22] <muesli> jherskowitz: what's your idea?
+[20:42:23] <jherskowitz> muesli: I just wanted to get the back/forward icons down a line
+[22:11:57] *** Quits: domme (~domme@server2.muehlhaeuser.de) (Remote host closed the connection)
+[23:31:26] *** Quits: soee (~soee@blj180.neoplus.adsl.tpnet.pl) (Ping timeout: 272 seconds)

@@ -1,0 +1,131 @@
+[00:00:10] <zopieux> I guess it's because it only runs DbCollection (local) queries because all resolvers are still loading
+[00:00:26] <zopieux> but my resolver should be loaded right away
+[00:03:02] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) ()
+[00:09:15] *** Quits: hatstand (sid2952@gateway/web/irccloud.com/x-vowirkeaqzcsinnb) (Remote host closed the connection)
+[00:09:16] *** Quits: jefferai (sid1300@kde/mitchell) (Remote host closed the connection)
+[00:09:16] *** Quits: lasconic (sid4376@gateway/web/irccloud.com/x-lifbifzmglwhhmrw) (Remote host closed the connection)
+[00:09:17] *** Quits: jherskowitz (sid84@gateway/web/irccloud.com/x-hkvytilqhgxghxad) (Remote host closed the connection)
+[00:20:25] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Disconnected by services)
+[00:20:26] *** Joins: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[00:22:34] *** Quits: hugo______ (sid6079@gateway/web/irccloud.com/x-zehnncrmjrosalth) (Remote host closed the connection)
+[00:22:34] *** Quits: Eliz (Eliz@spy/botters.Eliz) (Remote host closed the connection)
+[00:22:35] *** Quits: dukedave (sid666@gateway/web/irccloud.com/x-vycprsthexawvrzu) (Remote host closed the connection)
+[00:22:35] *** Quits: Techman (sid11863@gateway/web/irccloud.com/x-tfhxpxsszhbaacka) (Remote host closed the connection)
+[00:22:35] *** Quits: ben-xo (sid227@gateway/web/irccloud.com/x-fzetlrdqgvkvpcoq) (Remote host closed the connection)
+[00:22:35] *** Quits: L42y (sid10623@gateway/web/irccloud.com/x-qqcqjcllglwptsyg) (Remote host closed the connection)
+[00:23:34] *** Joins: jherskowitz (sid84@gateway/web/irccloud.com/x-lquoduhejzfqlydn)
+[00:25:48] *** Joins: hatstand (sid2952@gateway/web/irccloud.com/x-pnplsgapdphqwhxm)
+[00:28:08] *** Joins: lasconic (sid4376@gateway/web/irccloud.com/x-wimwazpsxhjethjn)
+[00:28:12] *** Joins: jefferai (sid1300@kde/mitchell)
+[00:49:54] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[00:50:42] *** Quits: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Ping timeout: 260 seconds)
+[00:53:24] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[01:15:13] *** Joins: ben-xo (sid227@gateway/web/irccloud.com/x-thychfpulllsvuxr)
+[01:16:53] *** Joins: dukedave (sid666@gateway/web/irccloud.com/x-ifnlovstdglahoaq)
+[01:21:09] *** Joins: hugo______ (sid6079@gateway/web/irccloud.com/x-zascldbqmeqptkzo)
+[01:23:32] *** Joins: L42y (sid10623@gateway/web/irccloud.com/x-saqjdveqpsmytcub)
+[01:25:11] *** Joins: Techman (sid11863@gateway/web/irccloud.com/x-nbtpidddqnhwwfib)
+[01:25:51] *** Quits: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de) (Quit: Leaving.)
+[01:34:43] *** Joins: Stalin (~Stalin@jachin.hartnell.edu)
+[01:35:01] *** Stalin is now known as Guest32979
+[01:35:35] *** Quits: Guest32979 (~Stalin@jachin.hartnell.edu) (Client Quit)
+[01:47:34] *** Joins: Eliz (sid49379@spy/botters.Eliz)
+[02:58:38] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Read error: Connection reset by peer)
+[03:52:47] *** Quits: bodam2005 (~bodam2005@161.209.206.203) (Remote host closed the connection)
+[04:09:27] *** Quits: lfranchi (~quassel@kde/lfranchi) (Quit: No Ping reply in 180 seconds.)
+[04:09:45] *** Joins: lfranchi (~quassel@kde/lfranchi)
+[04:09:45] *** ChanServ sets mode: +o lfranchi
+[04:41:20] *** Quits: lfranchi (~quassel@kde/lfranchi) (Quit: No Ping reply in 180 seconds.)
+[04:53:15] *** Joins: lfranchi (~quassel@kde/lfranchi)
+[04:53:15] *** ChanServ sets mode: +o lfranchi
+[05:37:30] *** Quits: mgue (~mgue@x590ef611.dyn.telefonica.de) (Read error: Connection reset by peer)
+[05:38:01] *** Joins: mgue (~mgue@f049057063.adsl.alicedsl.de)
+[06:24:33] *** Joins: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com)
+[08:41:04] *** Quits: Fohlen (~Fohlen@v22015072923726622.yourvserver.net) (Ping timeout: 272 seconds)
+[09:10:37] *** Joins: ssam2 (~ssam2@212.91.253.218)
+[11:19:13] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[11:42:24] <zopieux> MrMaffen: one of the NPEs I got is when clicking on <unknown> artist in local collection view
+[11:43:58] <zopieux> my best guess was to ignore the click if the passed in Artist is null but it makes the thumbnail non clickable, which is inconsistent
+[12:23:44] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Quit: alsuren)
+[12:42:19] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[13:39:44] *** Quits: TheOneRing (~quassel@amarok/developer/TheOneRing) (Remote host closed the connection)
+[13:40:23] *** Joins: TheOneRing (~quassel@HSI-KBW-134-3-252-64.hsi14.kabel-badenwuerttemberg.de)
+[13:41:20] *** Joins: HorusHorrendus (~horrendus@178.19.210.162)
+[13:47:57] *** Quits: TheOneRing (~quassel@HSI-KBW-134-3-252-64.hsi14.kabel-badenwuerttemberg.de) (Changing host)
+[13:47:57] *** Joins: TheOneRing (~quassel@amarok/developer/TheOneRing)
+[13:53:02] <MrMaffen> zopieux: fixed
+[13:53:28] <zopieux> I was about to submit a PR :(
+[13:53:44] *** Joins: Fohlen (~Fohlen@v22015072923726622.yourvserver.net)
+[13:53:47] <zopieux> (unrelated) https://github.com/tomahawk-player/tomahawk-android/pull/9
+[13:54:16] <zopieux> the relevant PR: https://github.com/tomahawk-player/tomahawk-android/compare/tomahawk-player:master...Zopieux:fix-unknown-npe?expand=1
+[13:54:23] <zopieux> well, not a PR.
+[13:58:02] <MrMaffen> zopieux: ty
+[13:58:22] <MrMaffen> well simply not handling the click-event would not have been an option ... like you said ^^
+[14:10:06] <zopieux> haha that was a quick merge
+[14:14:48] <toma-cat> Added new crash-report for version 1.0.1 (Android)
+[14:39:45] <MrMaffen> :)
+[15:06:31] *** Quits: jancborchardt (sid4173@gateway/web/irccloud.com/x-srbhyifumkwlnzzh) (Quit: Connection closed for inactivity)
+[16:23:51] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[16:31:03] *** Joins: bencevans (~bencevans@unaffiliated/bencevans)
+[16:49:58] *** Quits: muesli (~muesli@amarok/developer/muesli) (Excess Flood)
+[16:50:22] *** Joins: mueslix (~muesli@server1.muehlhaeuser.de)
+[16:51:23] *** mueslix is now known as muesli
+[17:45:21] *** Parts: wmp (~wmp@sored/admin/wmp) ("Konversation terminated!")
+[17:49:46] *** Quits: ssam2 (~ssam2@212.91.253.218) (Remote host closed the connection)
+[17:56:35] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Ping timeout: 264 seconds)
+[18:16:18] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[18:41:06] *** Quits: HorusHorrendus (~horrendus@178.19.210.162) (Quit: Leaving.)
+[19:40:35] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[19:58:31] *** Joins: soee (~soee@afcw71.neoplus.adsl.tpnet.pl)
+[20:14:52] <domme> is there any known issue with spotify in master?
+[20:15:04] <domme> jherskowitz: muesli: ^
+[20:43:53] <rotzbouw> alastairp: last.fm import into listenbrainz no longer possible?
+[20:45:11] <alastairp> whoops, that's not good
+[20:45:17] <alastairp> what happens?
+[20:45:34] *** Quits: soee (~soee@afcw71.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[20:47:11] *** Joins: soee (~soee@afcw71.neoplus.adsl.tpnet.pl)
+[20:47:45] <rotzbouw> cross-origin thingie
+[20:48:13] <jherskowitz> rotzbouw: alastairp worked for my last night
+[20:48:21] <jherskowitz> domme: not known to me
+[20:48:30] <alastairp> lastfm changes their page to kick us off ;)
+[20:48:40] <alastairp> becomes a daily game of cat and mouse
+[20:49:16] <rotzbouw> ah, okay
+[20:49:26] <rotzbouw> i'll keep trying then :) or do I need to update my bookmarklet_
+[20:51:01] <alastairp> ah, no. I don't know if that's the actual case
+[20:56:35] <domme> jherskowitz: ok
+[21:00:01] <jherskowitz> alastairp: they do?
+[21:06:47] <alastairp> jherskowitz: nah, I was just speculating
+[21:24:26] *** Quits: soee (~soee@afcw71.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[21:24:50] *** Joins: soee (~soee@afcw71.neoplus.adsl.tpnet.pl)
+[21:56:26] <jherskowitz> domme: know anything about this? https://www.dropbox.com/s/64v1p8ykyk00m4v/Screenshot%202015-10-07%2015.56.18.png?dl=0
+[21:57:07] <jherskowitz> ah, it’s spotify
+[22:03:24] *** Joins: jamesaxl (~kvirc@41.249.16.189)
+[22:08:39] *** Quits: jamesaxl (~kvirc@41.249.16.189) (Ping timeout: 246 seconds)
+[22:10:06] *** Joins: jamesaxl|2 (~kvirc@105.158.219.195)
+[22:10:45] *** jamesaxl|2 is now known as jamesaxl
+[22:14:36] *** Joins: jamesaxl|2 (~kvirc@41.248.173.172)
+[22:15:27] *** Joins: jamesaxl|3 (~kvirc@105.154.120.171)
+[22:16:42] *** Quits: jamesaxl (~kvirc@105.158.219.195) (Ping timeout: 246 seconds)
+[22:18:48] *** Quits: jamesaxl|2 (~kvirc@41.248.173.172) (Ping timeout: 246 seconds)
+[22:28:10] *** jamesaxl|3 is now known as jamesaxl
+[22:37:23] <theli_ua> Pandora Acquires TicketFly for $450M
+[22:44:00] *** Quits: jamesaxl (~kvirc@105.154.120.171) (Ping timeout: 246 seconds)
+[22:44:03] <domme> jherskowitz: eeks
+[22:44:09] <domme> nope
+[22:44:58] <theli_ua> I blame windows
+[22:51:44] <jherskowitz> domme: theli_ua yeah, I think it’s the known spotify on 64bit windows crash
+[22:52:13] <theli_ua> and you cant disable spotify :(
+[22:52:30] <theli_ua> I mean, even if don't have it enabled spotify process will be spawned anyway
+[22:58:05] *** Quits: soee (~soee@afcw71.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[22:58:33] *** Joins: soee (~soee@afcw71.neoplus.adsl.tpnet.pl)
+[22:58:49] *** Joins: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de)
+[22:59:00] *** Quits: soee (~soee@afcw71.neoplus.adsl.tpnet.pl) (Client Quit)
+[22:59:17] *** Joins: soee (~soee@afcw71.neoplus.adsl.tpnet.pl)
+[22:59:27] *** Quits: soee (~soee@afcw71.neoplus.adsl.tpnet.pl) (Client Quit)
+[23:01:00] *** Joins: soee (~soee@afcw71.neoplus.adsl.tpnet.pl)
+[23:01:25] *** Quits: soee (~soee@afcw71.neoplus.adsl.tpnet.pl) (Remote host closed the connection)
+[23:02:28] *** Joins: soee (~soee@afcw71.neoplus.adsl.tpnet.pl)
+[23:04:25] *** Quits: soee (~soee@afcw71.neoplus.adsl.tpnet.pl) (Client Quit)
+[23:04:47] *** Joins: soee (~soee@afcw71.neoplus.adsl.tpnet.pl)
+[23:10:02] *** Quits: soee (~soee@afcw71.neoplus.adsl.tpnet.pl) (Ping timeout: 260 seconds)
+[23:57:31] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) ()

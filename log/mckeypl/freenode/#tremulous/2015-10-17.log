@@ -1,0 +1,190 @@
+[00:33:23] *** Joins: StalKhermitCrab (~StalKermi@unaffiliated/stalkermit)
+[00:36:35] *** Quits: StalKermit (~StalKermi@unaffiliated/stalkermit) (Ping timeout: 244 seconds)
+[02:19:04] *** Quits: shhx (~shhx@83.230.236.85) (Read error: Connection reset by peer)
+[02:50:06] *** Quits: dibblego (~dibblego@haskell/developer/dibblego) (Ping timeout: 240 seconds)
+[02:52:27] *** Joins: dibblego (~dibblego@haskell/developer/dibblego)
+[03:03:13] *** Joins: ZdrytchX (~zdrytchx@27-33-98-203.static.tpgi.com.au)
+[04:45:00] *** Quits: ZdrytchX (~zdrytchx@27-33-98-203.static.tpgi.com.au) (Read error: Connection reset by peer)
+[06:01:10] <dibblego> where is the source hosted?
+[06:01:29] <kharnov> the source for what
+[06:01:32] <kharnov> tremulous?
+[06:01:45] <kharnov> https://github.com/darklegion/tremulous
+[06:02:06] <dibblego> yeah cheers
+[06:02:10] <kharnov> there was an SVN repository but i don't think that's active anymore
+[06:02:42] <kharnov> what're you looking to do with the source?
+[06:04:04] <dibblego> just finding what variables to set, also just curious
+[06:04:23] <kharnov> ah
+[06:05:17] *** Quits: Stannum (~Robotroni@82-197-195-74.dsl.cambrium.nl) ()
+[06:06:10] <kharnov> you're a haskell coder, going off your IRC handle?
+[06:06:27] <dibblego> for work mostly, but I use a lot of different languages
+[06:06:31] <kharnov> neat
+[06:07:39] <kharnov> how'd you find out about tremulous
+[06:07:50] <kharnov> have you already been playing it?
+[06:09:27] <dibblego> been playing for years, found it under linux games one day when I was setting up a game machine for my childrebn
+[06:09:37] <dibblego> we had a 5 year break until recently
+[06:09:56] <kharnov> oh neat
+[06:10:00] <kharnov> what name did you play under
+[06:10:04] <kharnov> (in the past)
+[06:10:38] <dibblego> the boys play on the internet servers, we have one on our LAN, I don't play on the internet ones
+[06:11:03] <dibblego> amorris and poo LOL are the boys
+[06:11:45] <kharnov> lol
+[06:11:50] <kharnov> what's yours
+[06:12:40] <dibblego> dad
+[06:13:14] <kharnov> i don't think i ever saw you in-game
+[06:13:17] <kharnov> where did you mostly play?
+[06:13:55] <kharnov> back in the day, i started on 1.1 around 2007 and mostly played on the EBSF server, and then dretch storm
+[06:14:04] <kharnov> then once GPP was released i played solely on US Main
+[06:14:21] <dibblego> yeah I don't play outside the LAN really
+[06:14:26] <kharnov> oh, that would make sense
+[06:14:51] <kharnov> after US Main (and thus vanilla GPP) died off, i moved onto unvanquished with some other players
+[06:14:56] <kharnov> i don't suppose you've heard of it?
+[06:17:29] <dibblego> yeah just reading that page now
+[06:17:37] <dibblego> for server variables
+[06:17:47] <kharnov> what page
+[06:17:52] <dibblego> the boys know where all the servers are
+[06:18:03] <dibblego> http://forums.unvanquished.net/viewtopic.php?f=4&t=1129
+[06:18:03] <kharnov> unvanquished isn't a server, it's a separate project :P
+[06:18:07] <dibblego> ah ok
+[06:18:12] <dibblego> is it a fork?
+[06:18:21] <kharnov> yes
+[06:18:22] <kharnov> https://www.unvanquished.net/
+[06:18:32] <kharnov> started a while ago
+[06:19:00] <kharnov> you might be interested in our code, the engine's in the process of being rewritten from C to C++
+[06:19:02] <kharnov> https://github.com/Unvanquished/Unvanquished
+[06:19:28] <kharnov> you can also ask us things on #unvanquished-dev which would probably be a better place for questions about unvanquished than this channel :P
+[06:19:39] *** Quits: Who-[Soup] (~soup@p57A50790.dip0.t-ipconnect.de) (Ping timeout: 240 seconds)
+[06:19:40] <kharnov> this one doesn't see much activity
+[06:19:52] *** Quits: StalKhermitCrab (~StalKermi@unaffiliated/stalkermit) (Read error: Connection reset by peer)
+[06:23:51] *** Joins: Who-[Soup] (~soup@p57A5005F.dip0.t-ipconnect.de)
+[06:24:16] <dibblego> ok thanks
+[06:25:41] <kharnov> yes
+[06:44:08] *** cron1 is now known as cron
+[06:44:15] *** Quits: cron (~cron@c-68-53-95-132.hsd1.tn.comcast.net) (Changing host)
+[06:44:15] *** Joins: cron (~cron@unaffiliated/cron)
+[07:05:01] <dibblego> do you know much about setting admin.dat for a server/
+[07:05:45] <kharnov> that's beyond me, but `Ishq would probably know
+[07:32:26] *** Joins: dGr8LookinSparky (~dGr8Looki@unaffiliated/dgr8lookinsparky)
+[08:59:04] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[10:19:01] *** Joins: jackforward (~jack@p200300700D3271B2106AC27A90DA27A3.dip0.t-ipconnect.de)
+[12:20:22] *** Joins: ZdrytchX (~zdrytchx@27-33-98-203.static.tpgi.com.au)
+[12:28:26] <dibblego> why don't all the variables work, such as g_humanCredits, but g_humanRepeaterBuildPoints does work?
+[13:51:39] *** Joins: irgendwer4711 (~irgendwer@reactos/tester/irgendwer4711)
+[13:51:56] <irgendwer4711> hi, I cant get Trem running on x64.
+[13:52:33] <irgendwer4711> I got errors with loading UI files in console
+[13:58:20] <irgendwer4711> Timbo: could you help?
+[13:58:28] <irgendwer4711> oh forgotten: on Linux
+[14:26:12] <Ingar> weird
+[14:26:31] <Ingar> but probably more a version conflict issue than an x64 issue
+[14:26:40] <irgendwer4711> I think not.
+[14:27:42] <irgendwer4711> someone suggested this: ./tremulous.x86 +set fs_basepath /usr/local/games/tremulous
+[14:27:45] <Ingar> you're running trem on reactos ?
+[14:27:54] <irgendwer4711> no, on Linux
+[14:27:58] <Ingar> k ;)
+[14:28:04] <irgendwer4711> why
+[14:28:16] <Ingar> your cloak
+[14:28:19] <irgendwer4711> yes
+[14:28:35] <Ingar> things aside
+[14:28:39] <Ingar> that's the 32bit binary
+[14:29:04] <Ingar> what are you running exactly ?
+[14:29:12] <irgendwer4711> Ubuntu 15.04
+[14:29:29] <Ingar> is it the tremulous from the ubuntu repo?
+[14:29:39] <irgendwer4711> no, there arent any
+[14:29:43] <Ingar> k
+[14:29:59] <irgendwer4711> I saw it for 12 but not for 15
+[14:30:18] <Ingar> the ubuntu package always was a bit iffy
+[14:30:49] <Ingar> so, what package are you running? 1.1? gpp?
+[14:30:56] <Ingar> from the trem website or somewhere else ?
+[14:31:04] <irgendwer4711> 1.1 from HP
+[14:31:43] <irgendwer4711> the error comes inside the game
+[14:34:17] <Ingar> doesn't seem like I have "recent" 1.1 binaries around
+[14:35:05] <irgendwer4711> ok
+[14:35:56] <Ingar> you can try compiling but no guarantees
+[14:36:22] <irgendwer4711> oh
+[14:36:29] <Ingar> I did found a tjw src http://ingar.satgnu.net/files/tremulous/tremulous-755.tar.bz2
+[14:36:48] <Ingar> it's 1.1.0 with some essential patches
+[14:36:54] <irgendwer4711> no other idea?
+[14:37:07] <Ingar> I haven't run 1.1 in ages
+[14:37:30] <Ingar> I found some stuff on my website but it's mostly gpp
+[14:38:01] <irgendwer4711> a trick to confire basepath
+[14:38:36] <Ingar> the trick with the basepath was necessary because the ubuntu package moved the files around
+[14:38:36] <irgendwer4711> configre
+[14:38:42] <irgendwer4711> ah
+[14:38:49] <Ingar> trying to force a "standard" install
+[14:38:58] <irgendwer4711> how?
+[14:39:05] <Ingar> data in /usr/share and all that
+[14:39:21] <Ingar> I just use /opt/games/tremulous with everything in it
+[14:39:50] <irgendwer4711> with the trem installer?
+[14:40:05] <Ingar> originally yes, but I have a zip
+[14:40:14] <Ingar> http://ingar.satgnu.net/files/tremulous/tremulous-1.1.0.zip
+[14:40:28] <Ingar> (this is jsut the original 1.1.0 release in zip without installer)
+[14:41:28] <irgendwer4711> I used strace, Trem was searching in my home for the files
+[14:41:51] *** Quits: Forty-3 (~kvirc@pool-71-191-219-16.washdc.fios.verizon.net) (Ping timeout: 244 seconds)
+[14:42:59] <Ingar> irgendwer4711: it searches ~/.tremulous for your personal files
+[14:43:12] <Ingar> it's quake3
+[14:43:12] <irgendwer4711> and the UI files
+[14:43:29] <Ingar> it searches home first and the installation location next
+[14:43:37] <Ingar> you might have to cd to the install dir though
+[14:44:24] <irgendwer4711> no, its not searching other than my home
+[14:44:55] <Ingar> in the startup log it should say what zip files it found
+[14:46:50] <irgendwer4711> FS_Startup?
+[14:48:04] <Ingar> mm apparently it doesnt list the actual files
+[14:48:18] <Ingar> tried to install 1.1.0 but it wont load a map
+[14:48:32] <Ingar> the binary I used is too new for the release
+[14:48:59] <Ingar> let me try buildling tjw
+[14:49:46] <irgendwer4711> its loading pk3 files from /usr/local/games/tremulous
+[14:51:39] <Ingar> I can't even compile it any more
+[14:52:32] <irgendwer4711> ohoh
+[14:55:52] <Ingar> src is too old
+[14:56:02] <Ingar> I'm getting errors that were fixed a long time ago :)
+[14:56:12] <Ingar> 1.1.0 had issues with 64-bit anyway
+[14:56:27] <irgendwer4711> but some people ran it
+[14:58:09] <irgendwer4711> how to use installeer to remove Trem?
+[15:09:32] *** Quits: illwieckz (~illwieckz@unvanquished/developer/illwieckz) (Quit: Ça va couper chérie…)
+[15:15:34] <Ingar> erm no idea
+[15:15:37] <Ingar> delete stuff ?
+[15:16:43] <irgendwer4711> I have manifest.xml
+[15:20:06] <irgendwer4711> got it
+[15:21:00] <irgendwer4711> I restarted the installer. now what should I change this time?
+[15:51:41] *** Joins: StalKermit (~StalKermi@unaffiliated/stalkermit)
+[16:25:14] <irgendwer4711> Ingar: I could compile it
+[16:25:25] <irgendwer4711> but make install is not working
+[16:25:38] <Ingar> yeah don't use make install
+[16:25:44] <Ingar> just copy binaries
+[16:26:03] <irgendwer4711> to where?
+[16:26:20] <Ingar> you compiled the tjw src ?
+[16:26:57] <irgendwer4711> no, I used git
+[16:47:51] *** Joins: illwieckz (~illwieckz@unvanquished/developer/illwieckz)
+[16:49:15] *** irgendwer4711 is now known as iw4711-afk
+[16:57:21] <iw4711-afk> https://bugs.archlinux.org/task/26749
+[17:11:36] *** Joins: Stannum (~Robotroni@82-197-195-74.dsl.cambrium.nl)
+[17:41:35] *** iw4711-afk is now known as irgendwer4711
+[18:02:17] *** Quits: illwieckz (~illwieckz@unvanquished/developer/illwieckz) (Ping timeout: 246 seconds)
+[18:14:18] *** Joins: illwieckz (~illwieckz@unvanquished/developer/illwieckz)
+[19:38:43] *** Quits: illwieckz (~illwieckz@unvanquished/developer/illwieckz) (Quit: Ça va couper chérie…)
+[20:29:31] *** Joins: Forty-3 (~kvirc@pool-71-191-219-16.washdc.fios.verizon.net)
+[21:15:59] *** Quits: ZdrytchX (~zdrytchx@27-33-98-203.static.tpgi.com.au) (Read error: Connection reset by peer)
+[21:19:21] <irgendwer4711> Ingar: I tried your zip, some problem.
+[21:19:56] <irgendwer4711> and btw, I got the same problem with wine and the win32 installer
+[22:12:39] <irgendwer4711> working, I found this https://github.com/jkent/tremulous-backport/tree/binaries
+[22:13:11] <jkent> hey thats me
+[22:13:14] <jkent> haha
+[22:15:24] <irgendwer4711> wtf, you were asleep?
+[22:16:42] <jkent> tghy
+[22:16:42] <jkent> upjbn
+[22:16:42] <jkent> hyp
+[22:16:48] <jkent> .. sorry
+[22:16:53] <jkent> yes
+[22:17:13] <irgendwer4711> :-(
+[22:21:46] <jkent> i actually forgot i had those binaries there, its been a long time
+[22:23:31] <irgendwer4711> ok
+[22:23:56] <irgendwer4711> someone should put an updated archive on tremulous site
+[22:41:29] <irgendwer4711> bye
+[22:44:24] *** Parts: irgendwer4711 (~irgendwer@reactos/tester/irgendwer4711) ()
+[22:57:59] *** Quits: jackforward (~jack@p200300700D3271B2106AC27A90DA27A3.dip0.t-ipconnect.de) (Ping timeout: 240 seconds)
+[23:03:30] *** Joins: illwieckz (~illwieckz@AToulon-256-1-158-212.w83-113.abo.wanadoo.fr)
+[23:03:32] *** Quits: illwieckz (~illwieckz@AToulon-256-1-158-212.w83-113.abo.wanadoo.fr) (Changing host)
+[23:03:32] *** Joins: illwieckz (~illwieckz@unvanquished/developer/illwieckz)
+[23:11:17] *** Joins: jackforward (~jack@p200300700D3271C8106AC27A90DA27A3.dip0.t-ipconnect.de)
+[23:17:26] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Quit: Leaving)
+[23:23:43] *** Quits: jackforward (~jack@p200300700D3271C8106AC27A90DA27A3.dip0.t-ipconnect.de) (Quit: Ex-Chat)
+[23:58:00] *** `Ishq is now known as Ishq[USC]

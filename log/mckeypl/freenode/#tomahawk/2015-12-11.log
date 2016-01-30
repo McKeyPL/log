@@ -1,0 +1,118 @@
+[00:26:25] *** Quits: jamesaxl (~jamesaxl@41.248.109.45) (Quit: Leaving)
+[03:21:06] *** Joins: github-tomahawk (~github-to@192.30.252.42)
+[03:21:06] <github-tomahawk> [13tomahawk] 15mrmaffen pushed 1 new commit to 06master: 02http://git.io/v0TIB
+[03:21:06] <github-tomahawk> 13tomahawk/06master 145a34bae 15Enno Gottschalk: Added stub Tomahawk.Collection.revision() function in tomahawk.js
+[03:21:06] *** Parts: github-tomahawk (~github-to@192.30.252.42) ()
+[03:21:19] *** Joins: github-tomahawk (~github-to@192.30.252.34)
+[03:21:19] <github-tomahawk> [13tomahawk-resolvers] 15mrmaffen pushed 4 new commits to 06master: 02http://git.io/v0TIg
+[03:21:19] <github-tomahawk> 13tomahawk-resolvers/06master 14e987a6b 15Enno Gottschalk: [ampache] Handle collection revisions. Use "add" instead of "updated". Bumped to 0.4.1
+[03:21:19] <github-tomahawk> 13tomahawk-resolvers/06master 143e2cdbc 15Enno Gottschalk: [beets] Handle collection revisions. Remove "useAuth" checkbox. Bumped to 0.6.1
+[03:21:19] <github-tomahawk> 13tomahawk-resolvers/06master 14d40f631 15Enno Gottschalk: [gmusic] Handle collection revisions. Bump to 0.6.4
+[03:21:19] *** Parts: github-tomahawk (~github-to@192.30.252.34) ()
+[04:53:26] *** Quits: r_rios (~Hitleap@hyadesinc/pub/oa) (Ping timeout: 240 seconds)
+[04:57:22] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Ping timeout: 272 seconds)
+[04:59:51] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[05:23:14] *** Joins: mgue1 (~mgue@f052183033.adsl.alicedsl.de)
+[05:26:10] *** Quits: mgue (~mgue@x5ce2f038.dyn.telefonica.de) (Ping timeout: 256 seconds)
+[06:16:59] <theli_ua> eh, that stub wont work
+[06:52:00] *** Joins: pratut (guest-prat@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[06:52:00] <pratut> is anyone online right now?
+[06:52:00] <pratut> hi guys
+[06:53:19] <theli_ua> they are all probably sleeping as most devs are from eu
+[07:18:08] *** Parts: pratut (guest-prat@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[09:51:58] *** Joins: edemes (guest-edem@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[09:51:59] <edemes> Hi
+[09:52:00] <edemes> Is there any way to have album covers from Hard drive not online ?!
+[10:21:18] *** Parts: edemes (guest-edem@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[11:05:45] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[12:44:18] *** Joins: Kalendium (~davidgasq@37.130.151.18.radiocable.net)
+[12:44:18] *** Quits: Kalendium (~davidgasq@37.130.151.18.radiocable.net) (Changing host)
+[12:44:18] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[12:44:51] <Kalendium> Hi there, why do I need a premium spotify account to add it to tomahawk?
+[12:45:33] <Kalendium> I could not be like the web inferface?
+[12:55:56] <HorusHorrendus> Kalendium: yes you need a premium account
+[12:56:07] <HorusHorrendus> only premium account allows streaming in 3rd party apps
+[12:58:44] <Kalendium> And it couldnt be done throught the web interface?
+[13:06:29] <Kalendium> HorusHorrendus: Or even having spotify on the background
+[13:07:21] <HorusHorrendus> Kalendium: no that would be not very much integrated
+[13:07:28] <HorusHorrendus> just pay for spotify if you like it
+[13:07:38] <HorusHorrendus> otherwise you can still use spotifys own app or the web interface
+[13:07:51] <HorusHorrendus> and listen to advertisments :)
+[13:15:15] <Kalendium> I wanted to merme my libraries
+[13:15:38] <Kalendium> s/merme/merge
+[13:24:41] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[13:55:38] *** Quits: soee_ (~soee@agwr188.neoplus.adsl.tpnet.pl) (Read error: Connection reset by peer)
+[13:55:52] *** Joins: soee (~soee@agwr188.neoplus.adsl.tpnet.pl)
+[14:39:21] *** Joins: r_rios (~Hitleap@186.214.186.158)
+[14:44:11] *** Quits: r_rios (~Hitleap@186.214.186.158) (Changing host)
+[14:44:11] *** Joins: r_rios (~Hitleap@hyadesinc/pub/oa)
+[14:54:17] <r_rios> dommex: Thanks for the help on libcrashreporter-qt. Just FYI: it seems I made it work with my program, but, for now at least, I decided to stick with StackWalker, since I just need the backtrace, not a full dump file.
+[14:54:28] <r_rios> So, the library works seems to work normally with MSVC; the only change necessary for me was in this line: https://github.com/dschmidt/libcrashreporter-qt/blob/master/src/libcrashreporter-handler/CMakeLists.txt#L21
+[14:55:16] <r_rios> I needed to make it if(WIN32 AND NOT MSVC), since MSVC was having some trouble with unicode
+[14:55:46] <r_rios> I figured you might like to know that, so there it is
+[14:55:55] <r_rios> Anyway, thanks again for the help
+[14:57:18] *** Joins: knicklux (~knicklux@2a03:2260:a:b:3e07:54ff:fe4e:255)
+[14:59:16] *** Joins: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com)
+[15:02:36] <TheOneRing> r_rios: also define -D_UNICODE
+[15:02:46] <TheOneRing> msvc has no problems with unicode 
+[15:06:00] *** Quits: r_rios (~Hitleap@hyadesinc/pub/oa) (Ping timeout: 272 seconds)
+[15:13:36] *** Joins: r_rios (~Hitleap@hyadesinc/pub/oa)
+[15:15:45] <dommex> ah awesome
+[15:15:54] <dommex> Good gux r_rios
+[15:16:40] <r_rios> :)
+[17:18:37] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Quit: Leaving)
+[18:14:45] *** Joins: justin_time (~stefan@2a02:908:f358:6f00:ac45:ced7:8841:e196)
+[18:16:45] <justin_time> Hey! Good news for debian and ubuntu users. libechonest2.3 is in the repositories and libjreen is waiting for publishing. And so all dependences for tomahawk are satisfied!
+[18:16:54] <theli_ua> cutior1, rotzbouw , theres another bandcamp resolver in the repo which doesn't require keys and uses different api
+[18:17:17] <theli_ua> eh, well, he left
+[18:26:42] *** Joins: modeno1 (modeno1@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[18:26:42] <modeno1> dommex: cmake isn't recognizing my installation of libechonest, any tips?
+[18:27:01] <dommex> modeno1: where did you install?
+[18:46:18] *** Joins: soee_ (~soee@bmx244.neoplus.adsl.tpnet.pl)
+[18:50:19] *** Quits: soee (~soee@agwr188.neoplus.adsl.tpnet.pl) (Ping timeout: 250 seconds)
+[19:09:39] <modeno1> Where the make install command does by default. /usr/local/lib/libechonest and /usr/local/include/echonest
+[19:22:17] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[19:28:34] <dommex> Mhhhh
+[19:29:29] <modeno1> I tried looking for a modifiable path using cmake-gui but I couldn't find anything
+[19:30:44] <dommex> I thought cmake looks automatically on usr local
+[19:30:48] <dommex> In
+[19:32:26] <modeno1> i tried both building from the repository and installing with apt-get
+[19:36:27] <justin_time> modeno1: Which OS are you using? Ubuntu or debian? In debian sid there is libechonest2.3.1-0.3 soon. Tomahawk is working with this package.
+[19:36:29] <dommex> not at home right now, so a bit hard to help
+[19:36:53] <modeno1> justin-time: ubuntu 14.04
+[19:37:00] <modeno1> dommex: no problem
+[19:37:45] <justin_time> Ok, libechonest of the ubuntu packages is too old. Aren't you using the tomahawk ppa?
+[19:39:05] <modeno1> I have no idea what that is, can you clarify please?
+[19:40:05] <justin_time> Oh ok: You can simply install tomahawk into ubuntu 14.04 by using a PPA. A Personal Package Archive.
+[19:40:05] <justin_time> https://launchpad.net/~tomahawk/+archive/ubuntu/ppa
+[19:40:52] <justin_time> http://askubuntu.com/questions/4983/what-are-ppas-and-how-do-i-use-them/40351#40351
+[19:41:23] <modeno1> oh but i want to build it on my own, try some changes in the source code. Does ppa allow for that?
+[19:43:18] <justin_time> Yes, you only need to install the package libechonest-dev of this ppa, this should work.
+[19:44:08] <modeno1> ok I'll try that, will come back with the results :)
+[20:10:55] *** Quits: r_rios (~Hitleap@hyadesinc/pub/oa) (Quit: Konversation terminated!)
+[20:12:49] <modeno1> justin-time: so should I add the ppa and install tomahawk from the software center?
+[20:18:46] *** Quits: justin_time (~stefan@2a02:908:f358:6f00:ac45:ced7:8841:e196) (Ping timeout: 240 seconds)
+[20:23:02] *** Joins: justin_time (~stefan@2a02:908:f358:6f00:ac45:ced7:8841:e196)
+[20:32:35] <theli_ua> :( tomahawk froze again 
+[20:33:03] <theli_ua> interesting, inside levenshtein calc
+[20:34:48] <theli_ua> too bad I dont have tomahawk compiled in debug mode
+[20:42:11] *** Quits: knicklux (~knicklux@2a03:2260:a:b:3e07:54ff:fe4e:255) (Remote host closed the connection)
+[20:45:47] *** Joins: jamesaxl (~jamesaxl@105.154.156.7)
+[20:55:02] <theli_ua> hm, maybe its just too slow
+[21:19:56] <theli_ua> yeah, its just terribly slow 
+[21:24:49] <theli_ua> takes like an hour to insert 9999 results from search
+[21:47:58] *** Parts: modeno1 (modeno1@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[21:51:55] *** Joins: modeno1 (modeno1@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[21:51:55] <modeno1> justin-time: it didn't work, I'm not sure if I'm doing it right...
+[22:15:48] <justin_time> modeno1: Do you have add the PPA to your source lists, update your sources and install libechonest-dev?
+[22:16:25] <justin_time> could you please open a terminal and run "dpkg --list libechonest-dev" and post the output.
+[22:24:10] <theli_ua> mmm, tomahawk window still explodes vertically for me sometimes :(
+[23:07:49] *** Joins: jamesaxl_ (~jamesaxl@160.176.225.15)
+[23:09:53] *** Quits: jamesaxl (~jamesaxl@105.154.156.7) (Ping timeout: 250 seconds)
+[23:13:47] *** Quits: jamesaxl_ (~jamesaxl@160.176.225.15) (Ping timeout: 250 seconds)
+[23:26:45] *** Joins: jamesaxl_ (~jamesaxl@41.249.123.74)
+[23:31:55] <xhochy> theli_ua: bah, I should continue work on my tomahawk-libfuzzymatch branch, speeds up levenshtein calc by ~10x :P
+[23:32:25] <theli_ua> xhochy I'm not sure thats the bottleneck though
+[23:32:38] <xhochy> at least it was for on my old laptop
+[23:32:57] <xhochy> but muesli disagreed as he had a much more powerful CPU
+[23:48:35] *** Quits: justin_time (~stefan@2a02:908:f358:6f00:ac45:ced7:8841:e196) (Quit: Verlassend)

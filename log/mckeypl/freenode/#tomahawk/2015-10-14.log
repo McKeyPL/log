@@ -1,0 +1,297 @@
+[01:00:02] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[01:48:54] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Ping timeout: 246 seconds)
+[01:48:57] *** Joins: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[01:53:36] *** Quits: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[03:33:46] *** Joins: github-tomahawk (~github-to@192.30.252.40)
+[03:33:47] <github-tomahawk> [13tomahawk] 15mrmaffen pushed 1 new commit to 06master: 02http://git.io/vCadG
+[03:33:47] <github-tomahawk> 13tomahawk/06master 14cb0fa7d 15Enno Gottschalk: Hardcode simultaneous query limit to 24
+[03:33:47] *** Parts: github-tomahawk (~github-to@192.30.252.40) ()
+[03:39:13] <MrMaffen> theli_ua: please have a look at this PR and see if you have any concerns https://github.com/tomahawk-player/tomahawk/pull/333
+[03:39:15] <tomabee_> [ Merge tomahawk.js from tomahawk-android + some fixes by mrmaffen ¬∑ Pull Request #333 ¬∑ tomahawk-player/tomahawk ¬∑ GitHub | github.com | https://avatars0.githubusercontent.com/u/1526877?v=3&s=400 ]
+[03:41:40] <theli_ua> MrMaffen: whats wrong with global promise?
+[03:41:57] <theli_ua> I mean, why do you insist on using RSVP.Promise as opposed to just Promise
+[03:43:37] <MrMaffen> theli_ua: we always include rsvp as the promise lib by default. if you use Promise you'll obviously get the native promise lib, which can be incompatible.
+[03:44:02] <MrMaffen> in some android webviews it doesn't seem to be present at all
+[03:44:23] <MrMaffen> while in others you'll have less features than what rsvp provides
+[03:44:51] <theli_ua> so why not just  window.Promise = window.RSVP.Promise;
+[03:46:01] <MrMaffen> theli_ua: sounds like bad practice to override the native promise lib object
+[03:47:01] <theli_ua> I mean, I have no idea is there a native promise on desktop or android, and do resolvers rely on window.Promise being RSVP.promise
+[03:48:11] <MrMaffen> theli_ua: resolvers should also always use RSVP.Promise
+[03:49:35] <MrMaffen> theli_ua: I think those 5 additional chars are worth it. that way everybody knows exactly which of the promise implementations their dealing with. developers might wanna use some features like finally or something that are specific to RSVP.Promise
+[03:49:45] <MrMaffen> they're*
+[03:51:51] <theli_ua> btw Tomahawl.UrlType vs TomahawkUrlType thing is not updated on desktop
+[03:52:11] <theli_ua> I think thats even breaking tidal on desktop atm
+[03:52:43] <MrMaffen> theli_ua: it should only break lookupUrl in tidal
+[03:52:45] <MrMaffen> I'll fix that now
+[03:54:41] <theli_ua> MrMaffen: also, I guess you've noticed that there are a bunch of hacks to make APIs compatible atm ... I guess those should better be integrated into core than left in JS code ... its just that desktop is not getting much attention lately
+[03:54:50] *** Joins: github-tomahawk (~github-to@192.30.252.34)
+[03:54:50] <github-tomahawk> [13tomahawk-resolvers] 15mrmaffen pushed 1 new commit to 06master: 02http://git.io/vCaAt
+[03:54:50] <github-tomahawk> 13tomahawk-resolvers/06master 1489a57e0 15Enno Gottschalk: [tidal] Use Tomahawk.UrlType instead of deprecated TomahawkUrlType in canParseUrl-function
+[03:54:50] *** Parts: github-tomahawk (~github-to@192.30.252.34) ()
+[03:55:53] <MrMaffen> theli_ua: yea I've noticed :/. I'm just happy that 0.9 resolvers are working in tomahawk-desktop right now :)
+[03:56:02] <theli_ua> like that enforced customProtocolHandler, .... search adapter which searches through collections, etc
+[03:56:19] <MrMaffen> domme said that he'll be spending some time in the near future to fix some stuff in tomahawk-desktop
+[03:56:27] <theli_ua> yeah, that was the primary reason for merging that for now , to make things at least work
+[03:56:58] <MrMaffen> yup :)
+[03:57:20] <theli_ua> also, that js collection implementation doesn't really work with compilations as of now
+[03:59:05] <MrMaffen> theli_ua: yea we just need to have a proper plan for all tomahawk projects wrt compilations first. there's also some issues with compilations in the local collection that I've noticed lately
+[03:59:24] <MrMaffen> we'll see. for the time being we'll just push that under the rug :P
+[04:00:25] <MrMaffen> I need to get some sleep. cya tomorrow
+[04:00:41] <theli_ua> cya
+[05:29:58] *** Joins: mgue2 (~mgue@f049031153.adsl.alicedsl.de)
+[05:33:02] *** Quits: mgue1 (~mgue@f048094217.adsl.alicedsl.de) (Ping timeout: 260 seconds)
+[09:08:06] *** Joins: ssam2 (~ssam2@212.91.253.218)
+[09:26:46] *** Joins: alsuren (~alsuren@host217-42-199-38.range217-42.btcentralplus.com)
+[10:09:41] *** Joins: github-tomahawk (~github-to@192.30.252.42)
+[10:09:41] <github-tomahawk> [13tomahawk] 15dschmidt pushed 8 new commits to 06master: 02http://git.io/vCVxI
+[10:09:42] <github-tomahawk> 13tomahawk/06master 14ee8c687 15Enno Gottschalk: Merge changes in tomahawk.js from tomahawk-player/tomahawk-android
+[10:09:42] <github-tomahawk> 13tomahawk/06master 14f89439a 15Enno Gottschalk: Some style fixes in tomahawk.js
+[10:09:42] <github-tomahawk> 13tomahawk/06master 14f8516f2 15Enno Gottschalk: Fix bug in tomahawk.js#Tomahawk.ajax if dataType != "json"
+[10:09:42] *** Parts: github-tomahawk (~github-to@192.30.252.42) ()
+[10:53:16] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[10:58:19] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[11:12:16] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[11:18:38] *** Quits: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr) (Excess Flood)
+[11:20:42] *** Joins: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr)
+[11:27:11] *** Quits: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr) (Changing host)
+[11:27:11] *** Joins: mirsal (~mirsal@videolan/developer/Mirsal)
+[12:20:11] <TheOneRing> domme: tomahawk_add_app_icon you might want to use ecm :P
+[12:20:41] <domme> it used to be part of kdelibs foo iirc
+[12:20:45] <TheOneRing> your macro from kde4 is not compatible to the png2ico exe we currently use
+[12:20:54] <domme> oh god why :P
+[12:21:04] <TheOneRing> because you are using the kde4 macro
+[12:22:16] <domme> PR welcome
+[12:22:24] <domme> as long as the new png2ico crosscompiles fine
+[12:22:38] <domme> i mean
+[12:22:45] <domme> if it runs on linux to create the ico
+[12:23:00] <TheOneRing> is adding a dep to ecm ok?
+[12:23:09] <domme> yes
+[12:23:43] <TheOneRing> ok
+[12:23:50] <domme> (at least at it works cross (lin->win) and on osx)
+[12:24:35] <TheOneRing> it should but thats what your ci is for :P
+[12:28:27] *** Joins: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222)
+[12:28:31] <gordie> https://bugs.tomahawk-player.org/ is unavailable
+[12:28:32] <tomabee_> [ 503 Service Unavailable | bugs.tomahawk-player.org |  ]
+[12:39:45] *** Quits: alsuren (~alsuren@host217-42-199-38.range217-42.btcentralplus.com) (Quit: alsuren)
+[12:41:13] <TheOneRing> gnarf # The given icons, whose names must match the pattern::
+[12:41:13] <TheOneRing> #
+[12:41:13] <TheOneRing> #   <size>-<other_text>.png
+[12:41:41] <TheOneRing> and tomahawk has tomahawk-icon-16x16
+[12:47:31] *** total1ty__ is now known as total1ty_
+[12:48:56] *** Joins: alsuren (~alsuren@host217-42-199-38.range217-42.btcentralplus.com)
+[12:58:46] *** Quits: alsuren (~alsuren@host217-42-199-38.range217-42.btcentralplus.com) (Quit: alsuren)
+[13:08:36] *** the_phil0s0ph_ is now known as the_phil0s0ph
+[13:14:03] *** Joins: alsuren (~alsuren@host217-42-199-38.range217-42.btcentralplus.com)
+[13:27:54] <tomabee_> @drsounds mentioned: Can @aurousapp fork or join @tomahawk core and make it the best legal music player ever instead of getting risk of lawsuit? [<no value>]
+[13:33:06] *** Quits: ssam2 (~ssam2@212.91.253.218) (Ping timeout: 246 seconds)
+[13:37:54] <HorusHorrendus> there need to be links when tomabee_ posts from twitter to IRC ;)
+[13:59:15] *** Quits: alsuren (~alsuren@host217-42-199-38.range217-42.btcentralplus.com) (Quit: alsuren)
+[14:06:20] *** Joins: alsuren (~alsuren@host217-42-199-38.range217-42.btcentralplus.com)
+[14:20:40] *** Quits: alsuren (~alsuren@host217-42-199-38.range217-42.btcentralplus.com) (Quit: alsuren)
+[14:23:52] *** Joins: alsuren (~alsuren@host217-42-199-38.range217-42.btcentralplus.com)
+[14:34:30] *** Quits: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222) (Quit: Page closed)
+[15:10:45] *** Joins: ssam2 (~ssam2@212.91.253.218)
+[15:32:44] *** Joins: justin_time (~stefan@2a02:908:f35d:4b00:c0ab:7e1c:703:f1bc)
+[15:42:49] <justin_time> Hey, does anybody know where "tomahawk_crash_reporter" has to be located on the system? I've packaged it into "/usr/lib/tomahawk/libexec/tomahawk_crash_reporter" but tomahawk is unable to find itÖ
+[16:13:55] *** michiwend is now known as splashiwend
+[16:14:42] *** splashiwend is now known as michiwend
+[16:25:51] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[16:45:42] *** Quits: soee (~soee@u28n61.nowanet.pl) (Ping timeout: 255 seconds)
+[17:03:10] *** Quits: alsuren (~alsuren@host217-42-199-38.range217-42.btcentralplus.com) (Quit: alsuren)
+[17:20:30] <jherskowitz> domme: ^
+[17:23:28] <domme> justin_time: if tomahawk installed it there it should find it
+[17:23:44] <domme> thing is, without symbols is pretty useless tho
+[17:38:09] <justin_time> domme: no, it looks like, it does not work.
+[17:38:16] <justin_time> This is the PPA: https://launchpad.net/~justin-time/+archive/ubuntu/test/+packages
+[17:38:19] <tomabee_> [ Packages in ‚ÄúTest ‚Äì Tomahawk Debug for ubuntu packages‚Äù | launchpad.net | http:///@@/yes ]
+[17:38:59] <justin_time> the package tomahawk-player contains a deb-package called "tomahawk-player-breakpadsymbols". This package contains the symbols.
+[17:40:33] <justin_time> this is the output (ok it does not work on my system, but it works in a virtualbox...: https://gist.github.com/justin-time/7ade2ee818414d8c20ea
+[17:40:36] <tomabee_> [ Qt5 Tomahawk and Ubuntu 15.04 ¬∑ GitHub | gist.github.com | https://avatars3.githubusercontent.com/u/9631683?v=3&s=400 ]
+[17:57:53] *** Quits: ssam2 (~ssam2@212.91.253.218) (Remote host closed the connection)
+[18:12:51] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Quit: Leaving)
+[18:37:36] *** Quits: klaas (klaas@simply.kla.as) (Ping timeout: 264 seconds)
+[18:39:22] *** Joins: klaas (klaas@simply.kla.as)
+[18:40:01] *** Quits: teo- (~teo@kde/teo) (Ping timeout: 264 seconds)
+[18:40:01] *** Quits: glaxx (~quassel@v2.glaxx.net) (Ping timeout: 264 seconds)
+[18:50:13] *** Quits: znf (~ibm86@unu.card-sharing.eu) (*.net *.split)
+[18:50:14] *** Quits: liori (~liori@unaffiliated/liori) (*.net *.split)
+[18:50:14] *** Quits: blueyed (~daniel@hahler.de) (*.net *.split)
+[18:50:15] *** Quits: scrollback (scrollback@gateway/web/scrollback.io/x-ghuvxlzwsicnmiuv) (*.net *.split)
+[18:50:16] *** Quits: justin_time (~stefan@2a02:908:f35d:4b00:c0ab:7e1c:703:f1bc) (*.net *.split)
+[18:50:17] *** Quits: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de) (*.net *.split)
+[18:50:18] *** Quits: PT_Dreamer_ (~PT_Dreame@aviationct.com) (*.net *.split)
+[18:50:20] *** Quits: pprkut (hwiesinger@slackbuilds.org) (*.net *.split)
+[18:50:20] *** Quits: muesli (~muesli@server1.muehlhaeuser.de) (*.net *.split)
+[18:50:23] *** Quits: grindhold (~quassel@c035.cyan.servdiscount-customer.com) (*.net *.split)
+[18:50:23] *** Quits: solues1 (~solues1@gateway/web/scrollback.io/x-hzmaugxedncnggux) (*.net *.split)
+[18:50:23] *** Quits: thomasbonte (sid4377@gateway/web/irccloud.com/x-mzkdnwcsgvstwsrt) (*.net *.split)
+[18:50:24] *** Quits: alastairp (sid1249@gateway/web/irccloud.com/x-rapjgbculpvaxvkg) (*.net *.split)
+[18:50:24] *** Quits: leonhandreke_ (~quassel@roubaix.ndreke.de) (*.net *.split)
+[18:50:26] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (*.net *.split)
+[18:50:27] *** Quits: Fohlen (~Fohlen@v22015072923726622.yourvserver.net) (*.net *.split)
+[18:50:27] *** Quits: lasconic (sid4376@gateway/web/irccloud.com/x-wujpnuwoirebzzuw) (*.net *.split)
+[18:50:28] *** Quits: ExecSlim (~Hexagon@unaffiliated/execslim) (*.net *.split)
+[18:50:28] *** Quits: hugo______ (sid6079@gateway/web/irccloud.com/x-zascldbqmeqptkzo) (*.net *.split)
+[18:50:28] *** Quits: dukedave (sid666@gateway/web/irccloud.com/x-ifnlovstdglahoaq) (*.net *.split)
+[18:50:28] *** Quits: ben-xo (sid227@gateway/web/irccloud.com/x-thychfpulllsvuxr) (*.net *.split)
+[18:50:30] *** Quits: tilal6991 (~tilal6991@unaffiliated/tilal6991) (*.net *.split)
+[18:50:30] *** Quits: morsik (morsik@darkserver.it) (*.net *.split)
+[18:50:33] *** Quits: jefferai (sid1300@kde/mitchell) (*.net *.split)
+[18:50:34] *** Quits: xhochy (sid11301@gateway/web/irccloud.com/x-eagzqnkkdohtntsb) (*.net *.split)
+[18:50:34] *** Quits: RJ2 (sid1@pdpc/supporter/professional/rj2) (*.net *.split)
+[18:50:36] *** Quits: SolarAquarion (SolarAquar@unaffiliated/solaraquarion) (*.net *.split)
+[18:50:37] *** Quits: Tycale_ (~Tycale@tycale.be) (*.net *.split)
+[18:50:37] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-ndonxxykgqmkywpo) (*.net *.split)
+[18:50:38] *** Quits: zopieux (zopieux@jerrycraft.tk) (*.net *.split)
+[18:50:41] *** Quits: zizzfizzix (~quassel@kde/pl/kuba-serafinowski) (*.net *.split)
+[18:50:42] *** Quits: TheOneRing (~quassel@amarok/developer/TheOneRing) (*.net *.split)
+[18:50:44] *** Quits: mirsal (~mirsal@videolan/developer/Mirsal) (*.net *.split)
+[18:50:45] *** Quits: danimo (~daniel@kde/danimo) (*.net *.split)
+[18:50:46] *** Quits: lfranchi (~quassel@kde/lfranchi) (*.net *.split)
+[18:50:46] *** Quits: Eliz (sid49379@spy/botters.Eliz) (*.net *.split)
+[18:50:46] *** Quits: L42y (sid10623@gateway/web/irccloud.com/x-saqjdveqpsmytcub) (*.net *.split)
+[18:50:46] *** Quits: jherskowitz (sid84@gateway/web/irccloud.com/x-lquoduhejzfqlydn) (*.net *.split)
+[18:50:47] *** Quits: yofel (~quassel@ubuntu/member/yofel) (*.net *.split)
+[18:50:47] *** Quits: mohn (~mo@limu.coffee.liberejo.de) (*.net *.split)
+[18:50:47] *** Quits: johnyb (~jb@limu.coffee.liberejo.de) (*.net *.split)
+[18:50:48] *** Quits: Mamarok (myriam@amarok/team/mamarok) (*.net *.split)
+[18:50:48] *** Quits: michiwend (~quassel@michiwend.com) (*.net *.split)
+[18:50:48] *** Quits: pinak (pinakahuja@gateway/shell/kde/x-pyqispvqzssaisso) (*.net *.split)
+[18:50:50] *** Quits: Techman (sid11863@gateway/web/irccloud.com/x-nicqtityomcoxmmx) (*.net *.split)
+[18:50:51] *** Quits: hatstand (sid2952@gateway/web/irccloud.com/x-pnplsgapdphqwhxm) (*.net *.split)
+[18:50:51] *** Quits: MrMaffen (~MrMaffen@server1.muehlhaeuser.de) (*.net *.split)
+[18:50:51] *** Quits: joepie91_ (~joepie91@199.241.31.225) (*.net *.split)
+[18:50:52] *** Quits: kurros (wade@2604:180::f84a:f836) (*.net *.split)
+[18:50:53] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (*.net *.split)
+[18:50:54] *** Quits: confact (~root@178.62.209.105) (*.net *.split)
+[18:50:55] *** Quits: daniel2 (daniel@unaffiliated/danielshafer) (*.net *.split)
+[18:50:55] *** Quits: Satyricon (~satyricon@93.186.169.21) (*.net *.split)
+[18:50:58] *** Quits: waaaaargh (~quassel@twilight.weltraumpflege.org) (*.net *.split)
+[18:51:00] *** Quits: the_phil0s0ph (~quassel@2a03:8180:1001:b2:13::12c) (*.net *.split)
+[18:51:01] *** Quits: xdarklight (~freenode@unaffiliated/xdarklight) (*.net *.split)
+[18:51:02] *** Quits: kfunk_ (~krf@kde/kfunk) (*.net *.split)
+[18:51:02] *** Quits: arved (~arved@inek.arved.priv.at) (*.net *.split)
+[18:51:02] *** Quits: saidinesh5 (~quassel@minad.de) (*.net *.split)
+[18:51:03] *** Quits: theli_ua (uid54353@gateway/web/irccloud.com/x-uzbfvplaanlihaum) (*.net *.split)
+[18:51:03] *** Quits: duncaen (~duncaen@2a00-5300-0-2-0-0-0-9.ipv6ptr.net) (*.net *.split)
+[18:51:03] *** Quits: cloakable (~cloakable@cpc2-aztw27-2-0-cust437.18-1.cable.virginm.net) (*.net *.split)
+[18:51:04] *** Quits: mgue2 (~mgue@f049031153.adsl.alicedsl.de) (*.net *.split)
+[18:51:08] *** Quits: inversechi_ (~inversech@178.62.62.155) (*.net *.split)
+[18:51:09] *** Quits: afics (~afics@unaffiliated/-x-/x-5730914) (*.net *.split)
+[18:51:09] *** Quits: ugly_cat (~quassel@c-76-104-204-149.hsd1.wa.comcast.net) (*.net *.split)
+[18:51:10] *** Quits: muldea3 (guest-tred@gateway/web/scrollback.io/x-phckydijvlsvivcr) (*.net *.split)
+[18:51:10] *** Quits: lorenzh (~lorenz@4z2.de) (*.net *.split)
+[18:51:10] *** Quits: ovedes51 (~ovedes5@gateway/web/scrollback.io/x-qgtwxxqpltncobnb) (*.net *.split)
+[18:51:11] *** Quits: sampsyo (~sampsyo@jasmine.cs.washington.edu) (*.net *.split)
+[18:51:12] *** Quits: rodgort (~rodgort@105.ip-167-114-152.net) (*.net *.split)
+[19:07:44] *** Joins: McKey (~McK@irc.antyklay.pl)
+[19:07:45] *** Server sets mode: +gnt 
+[19:11:40] *** Joins: tomabee_ (~beehive@conflagration.hatchet.is)
+[19:11:40] *** Joins: feepk (~feepk@videolan/developer/feepk)
+[19:11:40] *** Joins: domme (~domme@server2.muehlhaeuser.de)
+[19:11:40] *** Joins: johu (~johu@gentoo/developer/johu)
+[19:11:40] *** Joins: klaas (klaas@simply.kla.as)
+[19:11:40] *** Joins: teo- (~teo@kde/teo)
+[19:11:40] *** Joins: glaxx (~glaxx@v2.glaxx.net)
+[19:11:40] *** Joins: michiwend (~quassel@michiwend.com)
+[19:11:40] *** Joins: justin_time (~stefan@2a02:908:f35d:4b00:c0ab:7e1c:703:f1bc)
+[19:11:40] *** Joins: mirsal (~mirsal@videolan/developer/Mirsal)
+[19:11:40] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[19:11:40] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[19:11:40] *** Joins: mgue2 (~mgue@f049031153.adsl.alicedsl.de)
+[19:11:40] *** Joins: SolarAquarion (SolarAquar@unaffiliated/solaraquarion)
+[19:11:40] *** Joins: ExecSlim (~Hexagon@unaffiliated/execslim)
+[19:11:40] *** Joins: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de)
+[19:11:40] *** Joins: rodgort (~rodgort@105.ip-167-114-152.net)
+[19:11:40] *** Joins: pprkut (hwiesinger@slackbuilds.org)
+[19:11:40] *** Joins: danimo (~daniel@kde/danimo)
+[19:11:40] *** Joins: Fohlen (~Fohlen@v22015072923726622.yourvserver.net)
+[19:11:40] *** Joins: lasconic (sid4376@gateway/web/irccloud.com/x-wujpnuwoirebzzuw)
+[19:11:40] *** Joins: confact (~root@178.62.209.105)
+[19:11:40] *** Joins: muesli (~muesli@server1.muehlhaeuser.de)
+[19:11:40] *** Joins: inversechi_ (~inversech@178.62.62.155)
+[19:11:40] *** Joins: Tycale_ (~Tycale@tycale.be)
+[19:11:40] *** Joins: the_phil0s0ph (~quassel@2a03:8180:1001:b2:13::12c)
+[19:11:40] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-ndonxxykgqmkywpo)
+[19:11:40] *** Joins: PT_Dreamer_ (~PT_Dreame@aviationct.com)
+[19:11:40] *** Joins: zizzfizzix (~quassel@kde/pl/kuba-serafinowski)
+[19:11:40] *** Joins: Techman (sid11863@gateway/web/irccloud.com/x-nicqtityomcoxmmx)
+[19:11:40] *** Joins: TheOneRing (~quassel@amarok/developer/TheOneRing)
+[19:11:40] *** Joins: lfranchi (~quassel@kde/lfranchi)
+[19:11:40] *** Joins: Eliz (sid49379@spy/botters.Eliz)
+[19:11:40] *** Joins: L42y (sid10623@gateway/web/irccloud.com/x-saqjdveqpsmytcub)
+[19:11:40] *** Joins: hugo______ (sid6079@gateway/web/irccloud.com/x-zascldbqmeqptkzo)
+[19:11:40] *** Joins: dukedave (sid666@gateway/web/irccloud.com/x-ifnlovstdglahoaq)
+[19:11:40] *** Joins: ben-xo (sid227@gateway/web/irccloud.com/x-thychfpulllsvuxr)
+[19:11:40] *** Joins: jefferai (sid1300@kde/mitchell)
+[19:11:40] *** Joins: hatstand (sid2952@gateway/web/irccloud.com/x-pnplsgapdphqwhxm)
+[19:11:40] *** Joins: jherskowitz (sid84@gateway/web/irccloud.com/x-lquoduhejzfqlydn)
+[19:11:40] *** Joins: xdarklight (~freenode@unaffiliated/xdarklight)
+[19:11:40] *** Joins: leonhandreke_ (~quassel@roubaix.ndreke.de)
+[19:11:40] *** Joins: alastairp (sid1249@gateway/web/irccloud.com/x-rapjgbculpvaxvkg)
+[19:11:40] *** Joins: thomasbonte (sid4377@gateway/web/irccloud.com/x-mzkdnwcsgvstwsrt)
+[19:11:40] *** Joins: solues1 (~solues1@gateway/web/scrollback.io/x-hzmaugxedncnggux)
+[19:11:40] *** Joins: grindhold (~quassel@c035.cyan.servdiscount-customer.com)
+[19:11:40] *** weber.freenode.net sets mode: +o lfranchi   
+[19:11:40] *** Joins: MrMaffen (~MrMaffen@server1.muehlhaeuser.de)
+[19:11:40] *** Joins: afics (~afics@unaffiliated/-x-/x-5730914)
+[19:11:40] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[19:11:40] *** Joins: zopieux (zopieux@jerrycraft.tk)
+[19:11:40] *** Joins: daniel2 (daniel@unaffiliated/danielshafer)
+[19:11:40] *** Joins: kfunk_ (~krf@kde/kfunk)
+[19:11:40] *** Joins: ugly_cat (~quassel@c-76-104-204-149.hsd1.wa.comcast.net)
+[19:11:40] *** Joins: mohn (~mo@limu.coffee.liberejo.de)
+[19:11:40] *** Joins: johnyb (~jb@limu.coffee.liberejo.de)
+[19:11:40] *** Joins: joepie91_ (~joepie91@199.241.31.225)
+[19:11:40] *** Joins: muldea3 (guest-tred@gateway/web/scrollback.io/x-phckydijvlsvivcr)
+[19:11:40] *** Joins: arved (~arved@inek.arved.priv.at)
+[19:11:40] *** Joins: saidinesh5 (~quassel@minad.de)
+[19:11:40] *** Joins: lorenzh (~lorenz@4z2.de)
+[19:11:40] *** Joins: morsik (morsik@darkserver.it)
+[19:11:40] *** Joins: Mamarok (myriam@amarok/team/mamarok)
+[19:11:40] *** Joins: tilal6991 (~tilal6991@unaffiliated/tilal6991)
+[19:11:40] *** Joins: pinak (pinakahuja@gateway/shell/kde/x-pyqispvqzssaisso)
+[19:11:40] *** Joins: ovedes51 (~ovedes5@gateway/web/scrollback.io/x-qgtwxxqpltncobnb)
+[19:11:40] *** Joins: Satyricon (~satyricon@93.186.169.21)
+[19:11:40] *** Joins: xhochy (sid11301@gateway/web/irccloud.com/x-eagzqnkkdohtntsb)
+[19:11:40] *** Joins: theli_ua (uid54353@gateway/web/irccloud.com/x-uzbfvplaanlihaum)
+[19:11:40] *** Joins: duncaen (~duncaen@2a00-5300-0-2-0-0-0-9.ipv6ptr.net)
+[19:11:40] *** Joins: RJ2 (sid1@pdpc/supporter/professional/rj2)
+[19:11:40] *** Joins: waaaaargh (~quassel@twilight.weltraumpflege.org)
+[19:11:40] *** Joins: kurros (wade@2604:180::f84a:f836)
+[19:11:40] *** Joins: sampsyo (~sampsyo@jasmine.cs.washington.edu)
+[19:11:40] *** Joins: cloakable (~cloakable@cpc2-aztw27-2-0-cust437.18-1.cable.virginm.net)
+[20:17:03] *** Quits: justin_time (~stefan@2a02:908:f35d:4b00:c0ab:7e1c:703:f1bc) (Ping timeout: 256 seconds)
+[20:43:07] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[20:56:10] *** Quits: soee (~soee@u28n61.nowanet.pl) (Remote host closed the connection)
+[20:56:27] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[21:21:34] *** Joins: justin_time (~stefan@2a02:908:f35d:4b00:293b:4a28:36ab:b486)
+[21:25:29] <justin_time> domme: Is is possible to upload a symbol multiple times? My idea is that the symbol file will be uploaded while installing tomahawk-player-breakpadsymbols through a postinstall-script.
+[21:55:41] <jturney> upload where?
+[21:57:17] <jturney> a better workflow would be to upload the symbols when the package is built
+[22:00:25] <justin_time> jturney: this is impossible because the build system (http://launchpad.net PPA) is sandboxed without internet connection.
+[22:00:26] <tomabee_> [ Launchpad | launchpad.net |  ]
+[22:00:44] <jturney> oh yes
+[22:01:58] <jturney> I think I understand your question now
+[22:04:04] <jturney> I guess it's probably benign to upload the same symbols for the same build-id twice, but I can't guess if it's permitted or not...
+[22:14:04] <domme> justin_time: mhmhmh... is there a way to be notified of new builds?
+[22:14:24] <jturney> I would think you could do it via the launchpad api
+[22:15:05] <justin_time> I do not knowÖ
+[22:16:30] <justin_time> The only way to export the symbols is to pack them into a extra debian package (Mozilla uses the same way). My idea is now that after installing this special package on a local system, the post script will upload them to the server. This package has to be extra installed.
+[22:17:09] <jturney> that could be confusing to random person who installs the package :D
+[22:17:34] <justin_time> yes, could beÖ
+[22:49:42] <justin_time> no sorry, I found nothing about a notification service on launchpad or another way to export breakpad symbolsÖ
+[23:01:05] *** Joins: gordie (3eebd6cb@gateway/web/freenode/ip.62.235.214.203)
+[23:07:46] <domme> justin_time: too bad
+[23:07:55] <justin_time> domme: I think, for stable builds there is the best way to upload the symbols manually. (Beginning with Tomahawk 0.9) But this would not be practicable for daily builds. Daily builds are building daily if there is a change in the tomahawk master repository. Maybe my postinstall script idea could be useful for the daily builds? If someone uses a daily build, he should not be confused by installing the breakpad package.
+[23:08:02] <jturney> hmm. I guess it should be possible to write  a cronjob to use apt to see if a new package version  is avialble
+[23:08:07] <jturney> from the paa
+[23:08:09] <jturney> *ppa
+[23:10:43] <justin_time> or I create a package conflict between tomahawk and tomahawk-breakpadsymbols. And so nobody can install the symbols while using tomahawkÖ In this case, we need a extra maschine which updates the package list everyday, upgrade the breakpad-package and upload the symbols to the serversÖ 
+[23:33:55] *** Quits: gordie (3eebd6cb@gateway/web/freenode/ip.62.235.214.203) (Quit: Page closed)
+[23:35:07] <HorusHorrendus> nooo
+[23:35:20] <HorusHorrendus> I don't want to register at derstandard.at just to upvote the tomahawk comment
+[23:35:31] <HorusHorrendus> derstandard.at/2000023846974/Aurous-Popcorn-Time-fuer-Musik-enttaeuscht
+[23:43:09] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[23:50:02] *** Quits: justin_time (~stefan@2a02:908:f35d:4b00:293b:4a28:36ab:b486) (Quit: Verlassend)
+[23:59:08] *** Joins: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com)

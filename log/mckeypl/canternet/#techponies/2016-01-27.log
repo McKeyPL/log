@@ -1,0 +1,775 @@
+[00:02:30] *** Quits: Melanosuchus (quassel@Pony-n63njj.as13285.net) (Connection closed)
+[00:13:17] *** Creeps|AFK is now known as RedHelper
+[00:24:35] *** Quits: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net) (Ping timeout: 121 seconds)
+[00:24:38] *** Gigabit is now known as GigaWork
+[00:26:44] *** Joins: Asoka_White (Asoka@Pony-cdmtem.net-htp.de)
+[00:29:56] *** Quits: Asoka (Asoka@Pony-rr2jjd.net-htp.de) (Ping timeout: 121 seconds)
+[00:40:16] *** Quits: Not-Renny (AndChat7084@Pony-8m0c00.rths.94pq.0681.2601.IP) (Ping timeout: 121 seconds)
+[00:57:04] *** Pony_55968 is now known as Dude
+[00:57:09] <Moonlightning> what the hell
+[00:57:34] *** Dude is now known as Pony_84954
+[00:57:38] <Moonlightning> This rsync dropped from 70 MiB/s to 3
+[00:57:50] <Moonlightning> When did that happen?!
+[00:57:52] <Moonlightning> also, why?
+[00:57:55] *** Joins: Not-Renny (AndChat7084@Pony-96hv78.ut.comcast.net)
+[01:01:26] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[01:03:31] *** Joins: Sombra (Iceman@Darkhorse21)
+[01:03:41] <JustAberrant> ... ponies? :)
+[01:04:13] <AppleDash> Moonlightning: lots of small files
+[01:04:17] <AppleDash> JustAberrant: Ponies :>
+[01:05:17] <Moonlightning> No, one large file.
+[01:05:24] <Moonlightning> Over USB 3.
+[01:05:56] <AppleDash> The write cache filled up
+[01:06:10] *** Joins: Webster (Webster@Pony-sac5g1.fios.verizon.net)
+[01:08:17] <Moonlightning> What
+[01:08:40] <Moonlightning> But it was going at like 70 MiB/s for half an hour or so before
+[01:14:28] <Phase> how much are you moving
+[01:14:39] <Moonlightning> ~256 GiB
+[01:14:48] <Moonlightning> It's an image of another disk.
+[01:15:31] <Moonlightning> And it's apparently going to take another 14 hours at this rate, as opposed to one or two. :I
+[01:19:33] *** GigaWork is now known as Gigabit
+[01:23:21] *** Joins: Renny (AndChat7084@Pony-v20cks.sfl4.k0vg.100e.2600.IP)
+[01:25:59] *** Quits: Not-Renny (AndChat7084@Pony-96hv78.ut.comcast.net) (Ping timeout: 121 seconds)
+[01:29:49] <Moonlightning> Augh!
+[01:29:56] <Moonlightning> So apparently none of that happened at all.
+[01:30:20] <Moonlightning> sitting here with a 93-gig partial file
+[01:30:33] <DJ-C0L7[EIT]> i know the feeling
+[01:30:44] <Phase> on the plus side, rsync is restartable
+[01:31:02] <DJ-C0L7[EIT]> i tried to download a linux distro, i got ~75 megs of a 4.5gig iso, "transfer cancelled by remote host"
+[01:31:07] <Moonlightning> Let's try this again.
+[01:31:18] <Moonlightning> Yeah. You just have to remember --no-whole-file :V
+[01:31:57] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[01:38:35] *** Joins: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net)
+[01:39:42] * JustAberrant collects Moonlightning's thoughts
+[01:42:59] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[01:57:19] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:57:42] *** Pony_84954 is now known as Dude
+[01:58:12] *** Dude is now known as Pony_9563
+[02:05:41] *** Joins: Not-Renny (AndChat7084@Pony-96hv78.ut.comcast.net)
+[02:06:07] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:08:06] *** Joins: DataByteBrony (DataByte@Pony-1di.les.152.174.IP)
+[02:08:15] *** Quits: Renny (AndChat7084@Pony-v20cks.sfl4.k0vg.100e.2600.IP) (Ping timeout: 121 seconds)
+[02:08:35] <Moonlightning> > Transport endpoint not connected.
+[02:08:38] <Moonlightning> What >:(
+[02:21:29] <Moonlightning> Okay, so this keeps fucking up after a few minutes into the copy.
+[02:23:06] <Moonlightning> ECONNABORTED, and FUSE stuff says /Transport endpoint not connected/
+[02:26:11] <Moonlightning> I don't get how so many changes could just ALL get lost.
+[02:26:41] <Moonlightning> I `watch ls`, and see the size going from zero to several gibibytes...then it dies, I remount it, and there's just nothing.
+[02:26:58] <Moonlightning> Where are those gibibytes going? No cache is that big...
+[02:27:07] <Moonlightning> Not on this system, anyway
+[02:27:14] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[02:27:23] <Moonlightning> There's gotta be SOMEthing there to pick up from
+[02:39:00] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[02:42:39] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[02:58:20] *** Pony_9563 is now known as Dude
+[02:58:50] *** Dude is now known as Pony_23660
+[03:00:49] *** Joins: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com)
+[03:02:52] <Moonlightning> Ugh!
+[03:02:59] <Moonlightning> How is that happening?!
+[03:10:05] <LordShadowWing> Moonlightning, How is what happening?
+[03:10:23] <Moonlightning> I'm trying to copy a file onto an external disk. Simple enough, right?
+[03:10:35] <LordShadowWing> What is your operating system
+[03:11:07] * LordShadowWing is a computer/network technician
+[03:12:53] *** Quits: DataByteBrony (DataByte@Pony-1di.les.152.174.IP) (Ping timeout: 121 seconds)
+[03:13:03] <LordShadowWing> Moonlightning, What Operating system do you run and what Interface type is the drive connected?
+[03:14:06] <JustAberrant> Moonlightning: it's probably getting lost somewhere in the maze of nonsense you no-doubt have ;p
+[03:14:13] <Moonlightning> Gentoo and USB 3. It's one of those wallet-sized disks, 'bout 960 GiB.
+[03:14:18] <Moonlightning> JustAberrant: it's just rsync; come on.
+[03:14:27] *** Joins: Sombra (Iceman@Darkhorse21)
+[03:15:19] <Moonlightning> The destination filesystem is exfat (for compatability...), supported by sys-fs/fuse-exfat, which I'm blaming for my woes :P
+[03:15:21] <JustAberrant> Moonlightning: hehe, sure, but is it a hidden volume containing squashfs containing a dm-crypted file system which is all a ruse anyway cause the _actual_ data is.. 
+[03:15:22] <JustAberrant> ;p
+[03:15:45] <JustAberrant> and also yeah, fuse* is usually to blame in any kind of "wtf is wrong with my files" situation :>
+[03:16:05] <LordShadowWing> Moonlightning, have you tried DDing the file after manuallr mounting the drive via the terminal
+[03:16:29] <Moonlightning> Nope. I wiped the disk earlier, slapped a GPT on it. One partition spanning the whole disk (minus a few mebibytes because alignment and stuff).
+[03:16:44] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (A TLS packet with unexpected length was received.)
+[03:16:55] <Moonlightning> `dd`, no. `pv | tee`, yes. I say close enough.
+[03:17:09] * Moonlightning mumbles about `dd` and partial blocks.
+[03:17:46] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[03:18:46] <Moonlightning> JustAberrant: don't worry; the file I'm copying is an image of another disk with convoluted security schemes
+[03:18:50] <Moonlightning> a.k.a. FileVault.
+[03:18:58] * Moonlightning grumbles about Apple and vendor lockin.
+[03:19:10] <JustAberrant> big words from someone using exfat ;p
+[03:19:32] * JustAberrant takes a toke
+[03:19:36] <Colgate> isn't exfat proprietary?
+[03:19:36] <JustAberrant> free your data maaaannnn
+[03:19:43] <Moonlightning> It's that, or get someone else to install FUSE stuff on /their/ machine.
+[03:19:54] <Moonlightning> In order to make OS X support ext.
+[03:19:59] * Colgate puts fat32 on Moonlightning
+[03:20:11] <Moonlightning> fat32 doesn't do large files.
+[03:20:35] <JustAberrant> always ntfs :>
+[03:20:47] <Colgate> I probably would use ntfs for this, ha
+[03:20:59] <JustAberrant> ehe
+[03:20:59] <Colgate> ntfs-3g is good enough for external stuff
+[03:21:06] <Moonlightning> yay FUSE!
+[03:21:07] <Moonlightning> :V
+[03:21:14] <JustAberrant> at this point just strap a rasp pi to the thing and have it serve the files on nfs and smb ;p
+[03:21:20] <JustAberrant> and store it with a proper file system like xfs :>
+[03:22:06] <Phase> JustAberrant, it's called mtp
+[03:22:13] <Phase> wonky but works
+[03:22:20] <JustAberrant> oh god
+[03:22:25] <JustAberrant> I.. I have horrible memories of that
+[03:22:35] <Phase> modern gnome seems to handle it ok
+[03:22:37] <Moonlightning> Well, the idea is just to give Lightning the disk, and have him mount it, unlock the image, dump the HFS filesystem on it back onto the disk via gpg, and give it back to me.
+[03:22:47] <Phase> GTA V sets its priority and makes everything else lag why even
+[03:23:02] <JustAberrant> Phase: well yes, but that's like saying "sure, works great if you jam this here chainsaw up your urethra!!
+[03:23:08] *** Quits: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com) (Quit: Leaving)
+[03:23:29] <Phase> JustAberrant, but is it better or worse than fat32 (no >4GB) or exfat (PATENTS AHOY)
+[03:23:54] <Phase> plus you kinda need it on android type things to avoid unmounting the filesystem which is even more ugly imo
+[03:24:13] * JustAberrant nods :(
+[03:24:23] * JustAberrant wants to get an nfs client on his phone
+[03:24:44] <JustAberrant> would be super-mega-convenient :>
+[03:25:01] <JustAberrant> these things exist, I've just been too lazy 
+[03:25:27] <Moonlightning> My workaround is to periodically kill rsync and unremount the volume
+[03:25:47] <Moonlightning> It can't /possibly/ lose more than was copied during each mount this way, right? :V
+[03:28:05] <JustAberrant> depends on how frequently it syncs? ;p
+[03:28:12] <JustAberrant> _if_ it syncs
+[03:28:32] <JustAberrant> this all sounds very bad
+[03:28:41] <Moonlightning> It HAS to sync on unmount, right?
+[03:30:07] * JustAberrant does not know these things
+[03:30:22] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Connection closed)
+[03:30:58] <Moonlightning> Anyway, I tried `rsync`ing the whole file at once and invoking `sync` periodically
+[03:31:00] <Moonlightning> that didn't help
+[03:31:10] *** Joins: Fallfeathers (Fallfeather@Pony-jgm75g.bigpond.net.au)
+[03:31:53] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[03:33:50] *** Joins: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com)
+[03:39:59] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[03:44:33] *** Joins: Renny (AndChat7084@Pony-5rlrnj.sfl4.k0vg.100e.2600.IP)
+[03:46:16] *** Quits: Not-Renny (AndChat7084@Pony-96hv78.ut.comcast.net) (Ping timeout: 121 seconds)
+[03:58:58] *** Pony_23660 is now known as Dude
+[03:59:28] *** Dude is now known as Pony_58587
+[04:07:16] *** Joins: Not-Renny (AndChat7084@Pony-96hv78.ut.comcast.net)
+[04:09:56] *** Joins: HyperDash (HyperDash@Pony-pveddk.wa.comcast.net)
+[04:10:39] *** Quits: Renny (AndChat7084@Pony-5rlrnj.sfl4.k0vg.100e.2600.IP) (Ping timeout: 121 seconds)
+[04:13:32] *** Quits: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com) (Quit: Leaving)
+[04:13:50] *** Quits: Not-Renny (AndChat7084@Pony-96hv78.ut.comcast.net) (Ping timeout: 121 seconds)
+[04:28:13] * JustAberrant wrote a python script to generate a tic tag toe game as a series of if statements covering every possible permutation
+[04:28:25] <JustAberrant> I.. feel like my life may be falling apart..
+[04:28:35] <JustAberrant> the end result is ~300M of QB code
+[04:28:50] <JustAberrant> http://justaberrant.com/tic_sample.txt  :>
+[04:31:04] <JustAberrant> * tic tac toe
+[04:38:19] <HyperDash> wow
+[04:38:41] <HyperDash> did you enter that into your script manually?
+[04:38:59] <JustAberrant> hell no ;p
+[04:39:05] <HyperDash> ah, ok
+[04:39:16] <JustAberrant> the script that generates that is like 60 lines long
+[04:39:25] <HyperDash> because I was going to say, your life really is falling apart
+[04:39:26] <JustAberrant> no idea why I did any of these things, but whatever :>
+[04:39:57] <HyperDash> well, practice, I guess? 
+[04:41:41] <JustAberrant> hehe, nah .. it came up on another channel where there's this guy who uses qb for god knows what reason (apparently it lives on as qb64)
+[04:42:03] <Phase> QBasic?
+[04:42:13] <JustAberrant> I wanted to mess around with it (I played with qb way back in the day) and some how this just happened ;p
+[04:42:19] <JustAberrant> Phase: aye
+[04:42:46] <Phase> i'm fairly sure it had functions, so you don't need to map the entire possiblity space
+[04:43:10] <JustAberrant> well yes, you could do a sane implementation with the features qb gives you
+[04:43:29] <JustAberrant> but where's the fun in that
+[04:43:44] <Phase> so this wasn't a limit of the environment, just checking
+[04:45:25] <JustAberrant> nah, qb actually does have all the bits you need to generally write sorta-ok code
+[04:45:29] <JustAberrant> but it's still ghastly :>
+[04:45:34] * HyperDash is considering getting a Bachelor of Science in Computer Science in Real-Time Interactive Simulation or in Computer Science in Game Design
+[04:46:24] <JustAberrant> not overly familiar with either, but the first one sounds more employable ;p
+[04:48:29] <HyperDash> RTIS basically means physics engines/rendering engines, whereas the latter focuses more on generalized CS while keeping game design as the major goal
+[04:51:09] * JustAberrant shruggles, whatever you do just get an idea of what jobs are out there in the geographic area you plan on working in 
+[04:55:43] <HyperDash> I'm in Seattle area, lots of software and game design
+[04:56:05] <HyperDash> I'm leaning towards RTIS
+[04:59:36] *** Pony_58587 is now known as Dude
+[05:00:06] *** Dude is now known as Pony_64322
+[05:09:09] *** Joins: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[05:14:25] *** HyperDash is now known as Miss_Spell
+[05:16:14] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "be back later")
+[05:16:52] *** Miss_Spell is now known as HyperDash
+[05:26:35] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[05:29:05] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (A TLS packet with unexpected length was received.)
+[05:30:01] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[05:32:56] <Googie> I don't think I've really seen too many "Game design" degrees which honestly have anywhere near the depth to compare with traditional CS.
+[05:33:58] <Googie> I don't know anyone who's gone into CS and said "I wish I'd done game design instead". They just do it in their spare time.
+[05:34:15] <Phase> it's a specialization
+[05:37:50] <Googie> Yeah, but it's a specialization often targeted poorly, and the quality of education tends not to be up to par. (With some exceptions)
+[05:38:42] *** Quits: Webster (Webster@Pony-sac5g1.fios.verizon.net) (Quit: Leaving)
+[05:40:09] <Googie> HyperDash: Just be very careful. Chances are you won't get employed in the games industry, (and if you do, the burnout rate is really high.) A good CS degree, even if it doesn't focus on games design at all, is probably better and more flexable than a mediocre game-design or "Simulation" one.
+[05:42:31] <Googie> The high supply of people wanting to get involved in the games industry leads to less than desirable working conditions and pay a lot of the time.
+[05:44:00] <Googie> (Also, everything I've heard says Portfolio > Education in that field, so that's also important to keep in mind)
+[06:00:14] *** Pony_64322 is now known as Dude
+[06:00:44] *** Dude is now known as Pony_60780
+[06:01:03] *** Joins: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP)
+[06:06:32] *** RedHelper is now known as Creeps|AFK
+[06:11:01] *** Quits: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[06:13:52] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[06:15:28] <HyperDash> Googie, addressing all of those issues, the school that offers those degrees (at least the one I'm considering) is a practical education more than a theoretical one (LOTS of portfolio work), and the placement rate is 97%. However, I will keep that in mind, thanks :D
+[07:00:52] *** Pony_60780 is now known as Dude
+[07:01:22] *** Dude is now known as Pony_54027
+[07:02:32] *** Quits: init3 (quassel@Democratic.Ponies.Republic.of.Glimmer) (Ping timeout: 121 seconds)
+[07:03:25] *** Joins: init3 (quassel@Democratic.Ponies.Republic.of.Glimmer)
+[07:10:06] *** Quits: WuBzY (WuBzY@Pony-vjs5q3.dhcp.inet.fi) (Quit: WeeChat 1.4)
+[07:20:02] *** Quits: endoriazel (coprah@endoriazel) (Ping timeout: 121 seconds)
+[07:23:37] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Connection closed)
+[07:25:06] *** Joins: endoriazel (coprah@Pony-81pjdu.de)
+[07:26:46] *** Gigabit is now known as Snoarin
+[07:28:11] *** Joins: WuBzY (yaaic@Pony-2gcdh8.rev.dnainternet.fi)
+[07:31:40] *** Quits: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP) (Ping timeout: 121 seconds)
+[07:33:57] *** Joins: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP)
+[07:43:09] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[07:47:54] *** Quits: WuBzY (yaaic@Pony-2gcdh8.rev.dnainternet.fi) (Quit: Yaaic - Yet another Android IRC client - http://www.yaaic.org)
+[07:49:40] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[07:51:02] *** HyperDash is now known as HyperSleep
+[07:59:21] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[08:01:30] *** Pony_54027 is now known as Dude
+[08:02:00] *** Dude is now known as Pony_29100
+[08:03:31] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[08:04:12] *** HyperSleep is now known as HyperSleeping
+[08:04:21] *** HyperSleeping is now known as HyperSleep
+[08:08:05] *** Quits: HyperSleep (HyperDash@Pony-pveddk.wa.comcast.net) (Quit: Ping timeout: 1234567654321234567543212345676543234567654323456765432345677865432345661234567654321234567543212345676543234567654323456765432345677865432345661234567654321234567543212345676543234567654323456765432345677865432345661234567654321234567)
+[08:09:36] *** Joins: Phase (Phase4@Pony-4ihpe2.internode.on.net)
+[08:23:50] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[08:27:27] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[08:34:00] *** Joins: Sombra (Iceman@Darkhorse21)
+[08:35:27] *** Joins: Sin (Sin@is.hustlin.everyday)
+[08:43:36] *** Joins: Melanosuchus (quassel@Pony-2budrt.as13285.net)
+[08:49:58] *** Quits: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP) (Ping timeout: 121 seconds)
+[08:56:49] *** Joins: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP)
+[08:56:55] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[09:00:56] *** Quits: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP) (Ping timeout: 121 seconds)
+[09:02:09] *** Pony_29100 is now known as Dude
+[09:02:39] *** Dude is now known as Pony_51462
+[09:02:41] *** Joins: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[09:10:33] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[09:12:39] *** Quits: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[09:15:00] *** Joins: Not-Renny (AndChat7084@Pony-l2hr08.huni.81d3.100e.2600.IP)
+[09:19:52] *** Quits: Melanosuchus (quassel@Pony-2budrt.as13285.net) (Connection closed)
+[09:34:21] *** Quits: QuillSwirl (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[09:47:58] *** Joins: Renny (AndChat7084@Pony-96hv78.ut.comcast.net)
+[09:51:22] *** Quits: Not-Renny (AndChat7084@Pony-l2hr08.huni.81d3.100e.2600.IP) (Ping timeout: 121 seconds)
+[10:02:47] *** Pony_51462 is now known as Dude
+[10:03:17] *** Dude is now known as Pony_92950
+[10:13:44] *** Joins: WuBzY (yaaic@Pony-2gcdh8.rev.dnainternet.fi)
+[10:26:27] *** Quits: Fallfeathers (Fallfeather@Pony-jgm75g.bigpond.net.au) (Quit: 2015 was like the middle movie in a trilogy that ends on a cliffhanger.)
+[10:40:27] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:40:35] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[10:46:56] *** Quits: Deathpony (IceChat9@Pony-k7e.chp.54.50.IP) (Ping timeout: 121 seconds)
+[10:47:02] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[10:48:55] *** Joins: Deathpony (IceChat9@Pony-k7e.chp.54.50.IP)
+[10:49:45] *** Joins: QuillSwirl (ejd@Pony-fej07d.res.rr.com)
+[10:53:47] *** Quits: QuillSwirl (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[10:56:00] <Stik> https://jsfiddle.net/tL58193r/1/
+[10:56:02] <PinkiePieBot> [ Edit fiddle - JSFiddle ]
+[10:56:06] <Stik> what am i doing wrong?
+[10:59:22] *** Joins: Not-Renny (AndChat7084@Pony-aoj3b6.huni.81d3.100e.2600.IP)
+[11:02:03] *** Quits: Renny (AndChat7084@Pony-96hv78.ut.comcast.net) (Ping timeout: 121 seconds)
+[11:03:25] *** Pony_92950 is now known as Dude
+[11:03:55] *** Dude is now known as Pony_26766
+[11:06:48] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[11:08:52] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[11:18:02] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Quit: )
+[11:36:37] *** Joins: Renny (AndChat7084@Pony-96hv78.ut.comcast.net)
+[11:39:46] *** Quits: Not-Renny (AndChat7084@Pony-aoj3b6.huni.81d3.100e.2600.IP) (Ping timeout: 121 seconds)
+[11:47:20] *** Joins: Not-Renny (AndChat7084@Pony-ehn31a.huni.81d3.100e.2600.IP)
+[11:50:48] *** Quits: Renny (AndChat7084@Pony-96hv78.ut.comcast.net) (Ping timeout: 121 seconds)
+[11:53:05] *** Quits: Phase (Phase4@Pony-4ihpe2.internode.on.net) (Connection closed)
+[11:54:31] *** Joins: Phase (Phase4@Pony-4ihpe2.internode.on.net)
+[11:55:30] *** Quits: Unixkitty (uni@the.unicorn.cat) (Quit: The rains weep over his hall, with no one there to hear.)
+[11:56:22] *** Joins: Unixkitty (uni@Pony-bbkp1e.com)
+[12:04:03] *** Pony_26766 is now known as Dude
+[12:04:33] *** Dude is now known as Pony_98632
+[12:12:48] *** Joins: Renny (AndChat7084@Pony-96hv78.ut.comcast.net)
+[12:15:46] *** Quits: Not-Renny (AndChat7084@Pony-ehn31a.huni.81d3.100e.2600.IP) (Ping timeout: 121 seconds)
+[12:36:30] *** Joins: Not-Renny (AndChat7084@Pony-bjo3ug.huni.81d3.100e.2600.IP)
+[12:39:07] *** Quits: Renny (AndChat7084@Pony-96hv78.ut.comcast.net) (Ping timeout: 121 seconds)
+[12:49:21] *** Joins: Renny (AndChat7084@Pony-96hv78.ut.comcast.net)
+[12:51:46] *** Quits: Not-Renny (AndChat7084@Pony-bjo3ug.huni.81d3.100e.2600.IP) (Ping timeout: 121 seconds)
+[13:04:41] *** Pony_98632 is now known as Dude
+[13:05:11] *** Dude is now known as Pony_79983
+[13:13:06] *** Divide is now known as Divide|Tech|Sick
+[13:13:34] *** Joins: Not-Renny (AndChat7084@Pony-9p7rub.huni.81d3.100e.2600.IP)
+[13:15:40] *** Quits: Renny (AndChat7084@Pony-96hv78.ut.comcast.net) (Ping timeout: 121 seconds)
+[13:25:12] *** Joins: Renny (AndChat7084@Pony-96hv78.ut.comcast.net)
+[13:27:46] *** Quits: Not-Renny (AndChat7084@Pony-9p7rub.huni.81d3.100e.2600.IP) (Ping timeout: 121 seconds)
+[13:41:48] *** Joins: Not-Renny (AndChat7084@Pony-8g1stv.huni.81d3.100e.2600.IP)
+[13:45:27] *** Quits: Renny (AndChat7084@Pony-96hv78.ut.comcast.net) (Ping timeout: 121 seconds)
+[13:48:24] *** Joins: Renny (AndChat7084@Pony-96hv78.ut.comcast.net)
+[13:51:10] *** Quits: Not-Renny (AndChat7084@Pony-8g1stv.huni.81d3.100e.2600.IP) (Ping timeout: 121 seconds)
+[14:05:19] *** Pony_79983 is now known as Dude
+[14:05:49] *** Dude is now known as Pony_42115
+[14:27:49] *** Quits: WuBzY (yaaic@Pony-2gcdh8.rev.dnainternet.fi) (Quit: Yaaic - Yet another Android IRC client - http://www.yaaic.org)
+[14:28:46] *** Joins: WuBzY (WuBzY@Pony-vjs5q3.dhcp.inet.fi)
+[14:32:09] *** Quits: WuBzY (WuBzY@Pony-vjs5q3.dhcp.inet.fi) (Quit: WeeChat 1.4)
+[14:34:48] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[14:41:18] *** Joins: WuBzY (WuBzY@Pony-vjs5q3.dhcp.inet.fi)
+[14:46:56] *** Joins: Not-Renny (AndChat7084@Pony-n9alb0.huni.81d3.100e.2600.IP)
+[14:49:07] *** Quits: Renny (AndChat7084@Pony-96hv78.ut.comcast.net) (Ping timeout: 121 seconds)
+[14:52:49] *** Joins: DataByte (DataByte@Pony-d3c.bgn.198.64.IP)
+[15:05:58] *** Pony_42115 is now known as Dude
+[15:06:28] *** Dude is now known as Pony_19
+[15:12:48] *** Joins: Renny (AndChat7084@Pony-96hv78.ut.comcast.net)
+[15:15:46] *** Quits: Not-Renny (AndChat7084@Pony-n9alb0.huni.81d3.100e.2600.IP) (Ping timeout: 121 seconds)
+[15:17:48] *** Quits: WuBzY (WuBzY@Pony-vjs5q3.dhcp.inet.fi) (Quit: WeeChat 1.4)
+[15:20:03] *** Joins: WuBzY (WuBzY@Pony-0tqb98.dhcp.inet.fi)
+[15:27:54] *** Joins: Not-Renny (AndChat7084@Pony-vbc8tr.huni.81d3.100e.2600.IP)
+[15:31:03] *** Quits: Renny (AndChat7084@Pony-96hv78.ut.comcast.net) (Ping timeout: 121 seconds)
+[15:42:19] *** Quits: WuBzY (WuBzY@Pony-0tqb98.dhcp.inet.fi) (Quit: WeeChat 1.4)
+[15:47:13] *** Joins: WuBzY (yaaic@Pony-0tqb98.dhcp.inet.fi)
+[15:48:28] *** Joins: Renny (AndChat7084@Pony-96hv78.ut.comcast.net)
+[15:50:35] *** Quits: WuBzY (yaaic@Pony-0tqb98.dhcp.inet.fi) (Quit: Yaaic - Yet another Android IRC client - http://www.yaaic.org)
+[15:51:43] *** Joins: WuBzY (WuBzY@Pony-aokdhl.rev.dnainternet.fi)
+[15:51:46] *** Quits: Not-Renny (AndChat7084@Pony-vbc8tr.huni.81d3.100e.2600.IP) (Ping timeout: 121 seconds)
+[15:52:28] *** Joins: Not-Renny (AndChat7084@Pony-nj6l0p.sub-70-208-8.myvzw.com)
+[15:54:36] *** Quits: Renny (AndChat7084@Pony-96hv78.ut.comcast.net) (Ping timeout: 121 seconds)
+[16:01:43] *** Quits: WuBzY (WuBzY@Pony-aokdhl.rev.dnainternet.fi) (Ping timeout: 121 seconds)
+[16:06:36] *** Pony_19 is now known as Dude
+[16:07:06] *** Dude is now known as Pony_38424
+[16:14:38] *** Joins: WuBzY (WuBzY@Pony-8dc8e3.rev.dnainternet.fi)
+[16:20:00] *** Joins: Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP)
+[16:20:00] *** Quits: Not-Renny (AndChat7084@Pony-nj6l0p.sub-70-208-8.myvzw.com) (Connection closed)
+[16:20:16] *** Quits: WuBzY (WuBzY@Pony-8dc8e3.rev.dnainternet.fi) (Quit: WeeChat 1.4)
+[16:27:41] <Moonlightning> `stat` doesn't have an option to use lstat() instead of stat() and avoid readlink()ing, huh
+[16:28:09] <Moonlightning> So there's no way to use `stat` on a symlink without triggering a potential atime update
+[16:35:43] *** Snoarin is now known as Gigabit
+[16:46:35] *** Joins: WuBzY (WuBzY@Pony-0tqb98.dhcp.inet.fi)
+[16:52:44] *** Joins: QuillSwirl (ejd@Pony-fej07d.res.rr.com)
+[16:56:04] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[17:07:14] *** Pony_38424 is now known as Dude
+[17:07:44] *** Dude is now known as Pony_16969
+[17:19:15] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Connection closed)
+[17:19:42] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[17:21:18] *** Quits: Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP) (Ping timeout: 121 seconds)
+[17:21:46] *** Quits: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com) (Ping timeout: 121 seconds)
+[17:22:37] *** Quits: Apple_Bloom (sid52418@the.canon.pony) (Ping timeout: 121 seconds)
+[17:22:39] *** Quits: Q0 (Q0@literallyshit.net) (Ping timeout: 121 seconds)
+[17:22:45] *** Quits: endoriazel (coprah@endoriazel) (Ping timeout: 121 seconds)
+[17:23:16] *** Quits: cyzon (cyzon@moms.spaghetti) (Ping timeout: 121 seconds)
+[17:23:22] *** Joins: _desu_ (sid73031@Pony-ec6eib.irccloud.com)
+[17:23:37] *** Geeky is now known as GeekBrony
+[17:23:41] *** Quits: init3 (quassel@Democratic.Ponies.Republic.of.Glimmer) (Ping timeout: 121 seconds)
+[17:24:58] *** Joins: Apple_Bloom (sid52418@the.canon.pony)
+[17:25:01] *** Joins: endoriazel (coprah@Pony-81pjdu.de)
+[17:25:03] *** Joins: cyzon (cyzon@Pony-fql0fd.j6jn.vjuh.0180.2604.IP)
+[17:25:37] *** Joins: init3 (quassel@Democratic.Ponies.Republic.of.Glimmer)
+[17:25:55] *** Joins: Q0 (Q0@Pony-0m7faa.vtfe.qoe9.0601.2601.IP)
+[17:27:45] <johnsey> I don't know what the one responsible for designing the "new" Lenovo keyboards has been smoking but it must have been good
+[17:40:14] *** Joins: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP)
+[17:45:11] *** Quits: firestream (vinylderpy@Pony-2scvn8.dsl.bell.ca) (Quit: )
+[17:48:34] *** Quits: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP) (Ping timeout: 121 seconds)
+[17:50:13] *** Joins: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl)
+[17:50:20] *** Double is now known as Pony_92964
+[17:51:12] *** Joins: HyperDash (HyperDash@Pony-pveddk.wa.comcast.net)
+[17:51:49] *** Joins: DataByteBrony (DataByte@Pony-o6jvvb.g424.9euc.0247.2601.IP)
+[17:52:23] *** Joins: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP)
+[17:53:06] *** Quits: DataByte (DataByte@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[18:07:53] *** Pony_16969 is now known as Dude
+[18:08:23] *** Dude is now known as Pony_88041
+[18:10:26] *** Quits: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP) (Ping timeout: 121 seconds)
+[18:14:23] *** Pony_92964 is now known as Double
+[18:14:56] *** Quits: WuBzY (WuBzY@Pony-0tqb98.dhcp.inet.fi) (Quit: WeeChat 1.4)
+[18:19:32] * HoneyDrops belatedly agrees with johnsey.
+[18:31:11] <johnsey> HoneyDrops: I recently revived my x60 and it made me remember all the things i'm missing these days. sane form factor, separate audio ports, LEDs, no touchpad, hardware audio buttons, traditional IBM keyboard...
+[18:32:11] <Moonlightning> `alot` is writing `Message-ID`s @caramel o.o;
+[18:33:59] * HoneyDrops misses her R50.  Sure it was the budget model, but it was still my favorite laptop.  Not that my current X230 isn't nice.
+[18:34:25] * HoneyDrops whines as she isn't a size queen and everyone is making laptops too big.
+[18:35:02] * Moonlightning frowns...
+[18:35:10] <Moonlightning> What did laptops have before trackpads? I can't remember ._.
+[18:35:53] <HoneyDrops> Umm, trackpoints, speedballs, or just didn't have a pointing device?
+[18:36:26] <HoneyDrops> There was a time you didn't need to poke at your computer like a caveman to operate it.
+[18:47:55] <johnsey> trackpoint and buttons
+[18:48:19] <johnsey> the thinkpads did, anyway
+[18:48:33] <johnsey> http://www.notebookcheck.net/fileadmin/_processed_/csm_thinkpad_x60s_tastatur_02_9eaef633d6.jpg
+[18:48:51] <HoneyDrops> My R50 didn't even have a touchpad, just the trackpoint
+[18:49:10] <johnsey> oh and a sane del/insert key block
+[18:49:15] * HoneyDrops purrs and grabbyhooves at johnsey's x60.
+[19:02:13] *** Joins: Melanosuchus (quassel@Pony-mno6v6.as13285.net)
+[19:04:23] *** Joins: WuBzY (WuBzY@Pony-0tqb98.dhcp.inet.fi)
+[19:08:31] *** Pony_88041 is now known as Dude
+[19:09:01] *** Dude is now known as Pony_31626
+[19:14:47] *** Joins: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP)
+[19:20:42] *** Quits: WuBzY (WuBzY@Pony-0tqb98.dhcp.inet.fi) (Quit: WeeChat 1.4)
+[19:20:55] *** Quits: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP) (Ping timeout: 121 seconds)
+[19:22:28] *** Joins: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP)
+[19:32:29] *** Quits: HyperDash (HyperDash@Pony-pveddk.wa.comcast.net) (Quit: Ping timeout: infinite seconds)
+[19:45:53] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Quit: Leaving.)
+[19:46:21] *** Quits: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP) (Ping timeout: 121 seconds)
+[19:48:49] *** Joins: HyperDash (HyperDash@Pony-pveddk.wa.comcast.net)
+[19:50:36] *** Joins: WuBzY (WuBzY@Pony-0tqb98.dhcp.inet.fi)
+[19:53:00] <HyperDash> I've not built a PC before, and I purchased a used SSD for a $15 reduction. the original owner claimed it had windows 10 on it. is it possible to boot from this drive and do a fresh install from the already installed windows? or will I most likely have to purchase it anyway?
+[19:58:48] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[19:58:55] <Moonlightning> Did they sell or give you an actual copy of Windows--i.e., a license key?
+[20:00:00] <Moonlightning> Because merely /having/ a copy doesn't mean you /own/ a copy.
+[20:00:39] <Colgate> not legally, and windows will probably detect a major hardware change and demand to be reactivated
+[20:00:43] <Moonlightning> You may be able to use it, but if you wanna do things properly and legally, you need a license key.
+[20:00:57] <Moonlightning> Oh, is that how that works?
+[20:01:15] <Colgate> that's how it worked in win7 at least
+[20:01:18] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[20:04:18] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[20:07:04] <HyperDash> probably more so with win10
+[20:07:51] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[20:08:08] *** Kyoro is now known as Pocky
+[20:08:37] <Moonlightning> <hat material="tin foil"> Windows 10 will just turn on the webcam and compare your physical features with those stored on Microsoft servers, retrieved without any confidentiality!
+[20:09:09] *** Pony_31626 is now known as Dude
+[20:09:39] *** Dude is now known as Pony_21783
+[20:15:42] <Gladiolus> X-Files mentioned that subtly- Fox has  taped over webcam on his little laptop.
+[20:15:44] <Gladiolus> God it was good.
+[20:16:16] <Colgate> I put tape over my laptop webcams :P
+[20:17:20] * Gladiolus abducts Colgate
+[20:19:15] <Moonlightning> Seriously?
+[20:19:39] * Gladiolus abducts Moonlightning too.
+[20:19:55] <Moonlightning> My mother does that, along with taping numerous notes and papers with serial numbers and I dunno what
+[20:20:09] <Moonlightning> I thought she was just being a terrible user about it
+[20:20:10] <HoneyDrops> I keep a little flap taped over the webcam.  My wife's laptop actually came with a physical shutter.
+[20:20:26] * Shutter blinks
+[20:20:37] * Moonlightning closes Shutter.
+[20:20:42] * Shutter is closed
+[20:21:29] * Moonlightning scrubs Shutter's key from RAM to prevent warmboot attacks.
+[20:21:36] <Shutter> I don't care much for physically blocking the camera myself. If people have that kind of access to my computer I have bigger worries anyway.
+[20:21:47] <Shutter> Besides, a blue light is lit so pretty easy to catch.
+[20:21:56] <Moonlightning> Yeah.
+[20:23:05] <Moonlightning> (Ideally, schematics would be open and we could verify that the camera power is wired /through/ the indicator light, making it impossible to turn the camera on without the light, but whatever.)
+[20:23:29] <Gladiolus> My macbooks camera is uncovered w/e
+[20:23:35] <Gladiolus> the NSA can go ahead and watch me shitpost
+[20:24:02] <Colgate> Shutter: I don't trust those lights :V
+[20:24:22] <Colgate> macbooks had a light too, someone found a way around it -.-
+[20:24:23] <Gladiolus> Colgate really is some sort of IT mulder.
+[20:24:33] <Gladiolus> Perhaps a new Lone Gunmen?
+[20:24:36] <Shutter> Don't really care if it's done in the driver or the hardware tbh. Not very likely someone with unauthorized access would unload the driver and reload a new signed driver to activate the camera.
+[20:24:38] <Gladiolus> THE LONE GUNMARE
+[20:24:44] <Shutter> And again, if they do I have larger issues anyway :P
+[20:25:08] <Colgate> either way, covering it with electrical tape isn't a big deal, easy to remove/reapply if I need it
+[20:25:16] <HoneyDrops> ^
+[20:25:26] <Moonlightning> ...you too, HoneyDrops?
+[20:25:29] <Sour_Sweet> Keep all your cameras uncovered. How else am I supposed to watch your cute butts? :P
+[20:25:29] <Colgate> doesn't leave residue
+[20:25:47] <Colgate> my camera on my desktop is usually facing the back of my desk :P
+[20:26:08] <HoneyDrops> I also never use the webcam, really if I ever took my laptop apart, I'd just disconnect it.
+[20:26:13] * Sour_Sweet just doesn't have a webcam - problem solved.
+[20:26:29] <Colgate> I needed a webcam to take some silly online test
+[20:26:36] <Moonlightning> O.o
+[20:26:47] <wolfyshy> Sour_Sweet@nsa.gov ~$ watch_cam HoneyDrops
+[20:26:49] <Moonlightning> Mandated by your job?
+[20:26:54] <wolfyshy> <Sour_Sweet> Dammit!  Closed again!
+[20:27:18] <Colgate> no, the LFCS
+[20:27:22] <HoneyDrops> I'm on mobile now, laptop is actually got the lid down XD
+[20:27:39] <Shutter> HoneyDrops: Do you cover the front camera on your phone, too? ^^
+[20:27:51] <Moonlightning> And the back camera! Or they could see your house!
+[20:28:08] <Colgate> I had to take the test inside a windows VM, because the test for linux, doesn't work on a default debian install, zzz
+[20:28:22] <Shutter> Moonlightning: House? http://www.buckit-list.com/wp-content/uploads/2013/11/crushhouse.jpgkcd.com
+[20:28:46] <HoneyDrops> back has a physicall shutter, does the n900 have a front one?  I think my screen protector covers that
+[20:29:28] <Shutter> N900 still? "After all these years?" comes to mind
+[20:29:38] <Sour_Sweet> Also why do phones have a front facing cam anyway? Nobody ever does video calls on a phone :P
+[20:29:47] <Moonlightning> Shutter: http://music.monstercat.com/track/concert-crush-2
+[20:29:48] <Colgate> selfies :P
+[20:29:49] <PinkiePieBot> [ Concert Crush | Monstercat ]
+[20:29:57] * HoneyDrops hugs her n900.  I love this thing!
+[20:30:00] <Moonlightning> Really? No one?
+[20:30:07] <Shutter> And yes there is. It's super low resolution though
+[20:30:29] <Sour_Sweet> Fuck selfies.  If you have to take one you might as well use your hq cam
+[20:30:42] <Shutter> HoneyDrops: I feel ya, though. I really wish the N950 was a production model.
+[20:30:43] <Shutter> Oh well
+[20:30:51] <HoneyDrops> n900 does what I need: make and receive calls and ssh
+[20:30:55] <Shutter> Just Nokia being Nokia before they became Microsoft I guess ...
+[20:31:13] <Sour_Sweet> Spent those bucks on extra battery life, NFC, Bluetooth LE, storage or something useful
+[20:31:41] <wolfyshy> I've done video conferencing on my phone, but only because my desktop doesn't have a camera
+[20:32:00] <Sour_Sweet> You can use your phone as a webcam
+[20:32:08] <Sour_Sweet> I did several times in the past
+[20:32:33] <Sour_Sweet> (Becuz you know who needs a dedicated webcam)
+[20:33:17] <Sour_Sweet> Well unless you're using an Apple. I'm almost sure Apple wouldn't allow Apps like that
+[20:33:24] <wolfyshy> I don't think linux V4L supports it
+[20:34:54] <Sour_Sweet> I've never tested that, but why shouldn't you be able to use a video stream as a video input device? Especially on Linux
+[20:36:13] <Sour_Sweet> (Those android apps essentially publish a HLS stream than can be grabbed with other software)
+[20:36:31] <Moonlightning> O.o .
+[20:36:48] <Moonlightning> How many of them implement it badly, such that someone else could grab the stream?
+[20:37:26] <Sour_Sweet> It's on a LAN and you have to have the app open. The risk is not that large
+[20:37:39] <Sour_Sweet> Also iirc mine let me set a username and password
+[20:46:10] <Sour_Sweet> Unrelated: My bank is trying to push me to use a TAN solution that only uses one device, but 2 apps to authorize payments - no thanks.
+[20:48:04] *** Quits: HyperDash (HyperDash@Pony-pveddk.wa.comcast.net) (Quit: Ping timeout: infinite seconds)
+[20:48:55] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[20:49:47] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[20:51:06] <Colgate> a TAN solution?
+[20:52:23] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[20:53:26] <Shutter> Two apps and a device? Wat
+[20:54:43] <Shutter> I thought SSID, PIN, and one-time-token was the normal way for banks' websites, and SSID, PIN and an SMS sent to the phone number for apps …
+[21:00:00] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[21:00:11] *** Joins: HyperDash (HyperDash@Pony-pveddk.wa.comcast.net)
+[21:05:12] *** Joins: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP)
+[21:08:39] <Sour_Sweet> Colgate: Essentially two factor authentication for online banking
+[21:09:37] <Colgate> why does it have a different name than 2fa then if is 2fa? :P
+[21:09:48] *** Pony_21783 is now known as Dude
+[21:09:52] <Sour_Sweet> Because it works differently
+[21:10:17] *** Dude is now known as Pony_84119
+[21:10:25] <Sour_Sweet> And also was probably a thing before classic 2FA was popular
+[21:12:13] <Colgate> this cable tv thing is funny
+[21:12:26] <Sour_Sweet> The classic way invloved you entering a number from a sheet when promted(TAN/iTAN). Nowadays you either get an SMS (mTAN), use a TAN generator together with your debit card (chipTAN) or have some sort of fancy QR code (photoTAN/fotoTAN)
+[21:12:34] <Colgate> cable tv companiess are angry the FCC is breaking their monopoly on set-top boxes
+[21:13:05] <Colgate> this is a quote from the cable tv companies: "Innovation and competition should drive the creative marketplace..."
+[21:13:17] <Colgate> you have a monopoly, what competition?
+[21:13:31] <Colgate> and you have a monopoly because your signal data is proprietary
+[21:13:41] <Colgate> so nobody else can build a set-top box for your signal
+[21:14:09] <Sour_Sweet> The more modern forms of TANs (transaction authorization number) make you verify the data on a 2nd device before allowing the payment to be done (Info is send via SMS or signed and encoded in the "QR" code for example).
+[21:14:53] <Colgate> none of my online banks have ever used any sort of 2fa :P
+[21:15:08] <Sour_Sweet> You live in the wrong country :P
+[21:17:45] <Sour_Sweet> But because that's apperently inconvenient to some consumers they now rely on the device to properly seperate the data of 2 apps on a smartphone, which breaks the point of 2fa. You could just execute a root exploit and gain all application's data that way (Not too difficult on Android)
+[21:19:38] <Colgate> yes, that isn't really 2fa
+[21:20:00] <Colgate> also, if I had to have 2 devices to do any sort of online banking, I would find that really obnoxious
+[21:20:29] <Stik> most banks in the uk require something like that
+[21:20:42] <Stik> a little widget or a phone app to be able to log into the online services, for instance
+[21:21:16] <Stik> the widgets often require you to insert a chip+pin card, presume they do some magic with that
+[21:21:36] <Sour_Sweet> It effectively renders any attacks on onlinebaking useless if done correctly
+[21:21:41] <Colgate> but, where do you insert said chip+pin?
+[21:21:55] <Colgate> my phone can't do that, nor can anything on my desktop :P
+[21:22:08] <Sour_Sweet> Into a TAN generator for example (Looks like a calculator)
+[21:22:10] <Stik> https://supportcentre.natwest.com/euf/rightnow/optimized/1452138974/themes/natwest/npc/cr_card_reader_large.gif
+[21:22:14] <Stik> there's an example
+[21:22:17] <Sour_Sweet> My bank just uses an app
+[21:22:25] <Stik> it's big enough to slot a card into
+[21:22:40] <Stik> the site offers a code you combine with your card and pin, then it gives a response
+[21:22:52] <Colgate> Sour_Sweet: so, I have to buy this thing?
+[21:22:58] <Colgate> I've seen those in Canada :P
+[21:23:08] <Stik> nah, the bank provides it
+[21:23:15] <Stik> they're pretty cheap bits of hardware i imagine
+[21:23:30] <Stik> they've had no qualms about sending me a new one when i lost them anyhow :)
+[21:23:47] <Sour_Sweet> Here they cost like 5 bucks. But you can use the QR code methode with your phone or TAN via SMS which is free
+[21:24:16] <Sour_Sweet> chipTAN (Using your debit card) is the most secure way though
+[21:24:30] <Stik> yeah
+[21:24:39] <Stik> it's be the norm in the uk for many years now
+[21:24:53] <Stik> i think i got mine shortly after moving to this town, so i guess over a decade :s
+[21:25:14] <Stik> everyone kicked up a fuss about it when they first started issuing them because they are a bit of a hassle
+[21:25:21] <Stik> but with time it's become routine i guess
+[21:25:49] <Stik> mine only requires it to do big transactions now, small stuff you can do with just your standard login details
+[21:26:30] <Sour_Sweet> U.S. folks have to many problem that are not a thing here. Onlinebanking fraud targeting consumers really is a minor issue these days. Also I don't know of a single TAX return fraud in Germany and identity theft is much less of an issue.
+[21:27:25] <Stik> i've heard it said that the US is a bit behind europe when it comes to this sort of thing
+[21:27:29] <Stik> dunno how true it is
+[21:27:40] <Stik> liek someone said they didn't really implement chip+pin until recently
+[21:27:57] <Stik> i can't imagine having to sign for things anymore
+[21:28:29] <Stik> although i do remember as a kid trying to buy things in winter and your fingers would be so bloody cold you coulnd't write properly
+[21:29:02] <Sour_Sweet> I still sign a lot when paying with my debit or credit card.
+[21:29:53] <Sour_Sweet> I have a good credit score and not using the PIN method is cheaper for the retailer.
+[21:30:26] <Stik> huh, didn't know that
+[21:30:41] <Stik> signing just seems harder work somehow
+[21:30:52] <Stik> pressing 4 buttons is much easier :)
+[21:30:56] <Sour_Sweet> I don't know about the U.K. At least that's true for Germany
+[21:31:24] <Colgate> Sour_Sweet: we still use mag-stripe for most things :P
+[21:31:27] <Sour_Sweet> (Source: Having worked more than 2 years for a bank in Germany)
+[21:31:30] <Colgate> er Stik*
+[21:31:41] <Colgate> which of course, has no security
+[21:32:39] <Colgate> most places don't have chip readers in the US
+[21:32:46] <Colgate> because most credit cards don't have chips
+[21:32:50] <Stik> perhaps there is some truth to what i heard then
+[21:32:50] <Colgate> catch 22 :P
+[21:32:57] <Stik> do you know why it's so far behind?
+[21:33:07] <Colgate> because consumers don't care
+[21:33:44] <Colgate> the cost of rolling chips out everywhere is more expensive than the losses from fraud it would prevent
+[21:33:50] <Sour_Sweet> They don't here either.
+[21:33:56] <HoneyDrops> and the companies don't end up eating enough losses to bother
+[21:33:58] <Colgate> so business sense says, don't roll out chips
+[21:34:00] <Sour_Sweet> But it got popular anyway
+[21:34:30] <HoneyDrops> US companies won't do it unless forced by regulation, or until it get's too expensive not to.
+[21:34:37] <Sour_Sweet> Either bank intern regulations or law required them at some point here. I'm not 100% sure
+[21:34:55] <Colgate> I don't see any reason to really regulate it, if it is cheaper to just use magstripe, whatever? doesn't harm me
+[21:34:55] <Stik> hmm, in the US do credit card companies get held liable for fraudulant activity?
+[21:34:58] <Stik> in the uk they do
+[21:35:03] <Colgate> if someone does fraud, I'm not liable for paying
+[21:35:07] <Stik> that probably encourages them to take this stuff seriously
+[21:35:18] <Colgate> the credit card company is liable, yes
+[21:35:25] <HoneyDrops> They are so wildly profitable they just eat the losses.
+[21:35:29] <Colgate> ^
+[21:35:34] <Stik> fair enough
+[21:35:47] <Sour_Sweet> If you ever travel to Europe make sure you have a chiped card. You'll end up in trouble otherwise
+[21:36:01] <Sour_Sweet> A lot of places don't accept stripe only cards anymore
+[21:36:09] <Colgate> if they forced chips, less people would use their cards(switching to another card) and they would have less profits
+[21:36:38] <Sour_Sweet> Why? Chips cost almost nothing (NOTHING for the consumer here)
+[21:36:48] <Colgate> because stores don't have chipp readers
+[21:37:12] <Colgate> and if a company forced chips, then they can't buy things there
+[21:37:18] *** Quits: Phase (Phase4@Pony-4ihpe2.internode.on.net) (Ping timeout: 121 seconds)
+[21:37:22] <Colgate> that's a lost transaction for that credit card company
+[21:37:36] <HoneyDrops> Again, the only way it would happen here is regulation, and they are the ones paying for campaigns so they won't get regulated.
+[21:37:46] *** Quits: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP) (Ping timeout: 121 seconds)
+[21:38:12] <Stik> i wonder how they encouraged adoption here?
+[21:38:15] <HoneyDrops> Capitalism doesn't seek out "best", it favors, "most profitable" all other consequences be damned
+[21:38:22] <Colgate> if they're fine eating the cost of fraud, I really don't care
+[21:38:53] <Colgate> although, I do have 2 cards with chips on them, out of my... 6 cards?
+[21:38:58] <Sour_Sweet> But in the end it is you who pays for fraud
+[21:38:59] <Stik> 6!
+[21:39:03] <Stik> why so many?
+[21:39:09] <Stik> i have 2:P
+[21:39:15] * Sour_Sweet only has one credit card and one debit card
+[21:39:19] <Stik> likewise
+[21:39:24] <HoneyDrops> Different places only take some cards
+[21:39:30] <Colgate> 3 debit cards for 3 different accounts
+[21:39:33] <Stik> did have a 3rd debit card until recently, since we had a joint account for a mortgage
+[21:39:36] <Stik> but that's gone :D
+[21:39:37] <Colgate> 2 credit cards
+[21:39:38] <HoneyDrops> the store cards that give better bonses, debit and credit...
+[21:39:41] <Colgate> and 1 work credit card
+[21:40:10] <Sour_Sweet> Here all just accept EC (debit cards) and all major credit cards (VISA/Master Card)
+[21:40:10] <Stik> sounds much more complicated over there
+[21:40:11] <Colgate> I don't normally carry all of them with me :P
+[21:40:28] <Stik> what Sour_Sweet said, there's literally no reason to have anything other than those two
+[21:40:30] <Sour_Sweet> You could run in trouble with American Express eventually
+[21:40:41] <Colgate> oh yeah, cards have different rewards things based on what you purchase with it
+[21:40:44] <Stik> yeah many places either don't take that or charge an extra fee
+[21:40:56] <Colgate> one card gives 3% at restaurants for example(3% cash back)
+[21:41:00] <Stik> ah right
+[21:41:09] <Colgate> whereas this other one gives 1.5% everywhere no matter what
+[21:41:17] <Stik> i had one of those for a bit, but it was so limited that it turned out to be a bit useless :(
+[21:41:30] <Sour_Sweet> Card bonuses are not as huge here either.
+[21:41:45] <Stik> it was "you get 5% on everything back!*****" with about twenty paragraphs of tiny text at the end listing all the exceptions
+[21:41:54] <Sour_Sweet> My credit card has none :P
+[21:42:06] <Stik> and what it actually boiled down to was "you get %5 on everything as long as it's this one brand of caviar from this single shop in the middle of london"
+[21:42:15] <Stik> (i am exagerrating)
+[21:43:51] <Colgate> I would never use a credit card without a bonus, no reason not to
+[21:44:09] <Colgate> I might as well get 2% back on everything for no extra cost
+[21:44:12] <Stik> i just use it to offset about £3k for a month :)
+[21:44:44] <Colgate> the APR of the card doesn't matter, since I always pay on time and in full
+[21:44:45] <Stik> also the fraud protection thing is a lot better on credit than debit here
+[21:44:58] <Colgate> fraud protection on credit is better here as wel
+[21:44:59] <Sour_Sweet> Some places just don't accept other payment methods. Especially online
+[21:45:13] *** Quits: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl) (Quit: Nettalk6 - www.ntalk.de)
+[21:45:22] <Stik> hmm i don't find that, if anything debit is often easier, many sites have a fee for credit cards ime
+[21:45:26] <Sour_Sweet> Online stores are almost the only reason I even have a credit card.
+[21:45:48] <Sour_Sweet> (e.g. Google Play Store)
+[21:46:25] <Colgate> there's never a fee for credit in the US(pretty sure the credit card companies have contracts that mandate that)
+[21:46:41] <Stik> that's neat, wish the same was true here!
+[21:46:54] <Colgate> well, instead of the consumer paying the fee, it is the business
+[21:47:00] <Colgate> it is just rolled into the price
+[21:47:11] <Stik> ah right
+[21:47:25] <Colgate> so paying by cash is the same price as credit to the consumer
+[21:47:33] <Sour_Sweet> A lot of places don't even accept credit cards here
+[21:47:35] <Colgate> but the business gets more money
+[21:47:45] <Colgate> I usually pay in cash to small stores
+[21:47:51] <Stik> sneaky
+[21:47:51] <Colgate> but big stores I use credit
+[21:48:04] <Colgate> since I like to support small business that way :P
+[21:48:11] <Colgate> it isn't much, but it helps
+[21:48:18] <Stik> seems fair
+[21:48:23] <Stik> i cba with cash
+[21:48:28] <Stik> rarely ever have any
+[21:48:34] <Colgate> also, small businesses tend to have a minimum purchase of 5$ or so for credit
+[21:48:46] <Stik> also in the last couple of years things have started moving towards contactless cards, which is even better :)
+[21:48:46] <Colgate> I try to carry ~50$ on me all the time, for emergencies
+[21:48:58] <Stik> you just wave your wallet over a scanner and it takes a small amount of money off it
+[21:49:10] <Stik> feels very futuristic
+[21:49:19] <Colgate> wouldn't work for me, since RFID blocking wallet ha
+[21:49:20] <Stik> also a very easy way to gets your friends to buy you a beer ;)
+[21:49:35] <Stik> heh
+[21:49:44] <Colgate> also blocks NFC :P
+[21:50:01] <Stik> i have a few nfc cards now, so that'd be irritating
+[21:50:15] <Stik> the metro system in london's been using them for ages now, very efficient systems
+[21:50:30] <Colgate> I have an enhanced driver's license, which is basically a passport and a driver's license in the same card
+[21:50:39] <Colgate> so, I definitely don't want that info leaking
+[21:50:49] <Stik> that's interesting, is that suitable for international travel?
+[21:50:52] <HoneyDrops> Technically those "transaction minimums" are not permitted by CC company contracts, but it's not enforced heavily.
+[21:51:11] <Colgate> it is valid for land/sea travel to US/Mexico/Canada and a few other close countries
+[21:51:11] <HoneyDrops> Gas stations often have different cash/credit prices.
+[21:51:15] <Stik> i've got one of the EU "electronic passports" but it's still in a printed book
+[21:51:22] <Stik> just has an nfc coil stuck in it somewhere
+[21:51:32] <Colgate> HoneyDrops: I think the gas companies are big enough that they negotiated their way out of it
+[21:51:40] <Stik> you have to go stand in a weird machine that takes pictures of you
+[21:51:47] <HoneyDrops> Likely
+[21:52:04] <Colgate> modern US passports have those nfc chips as well
+[21:52:15] <Colgate> also, my bus card does as well
+[21:52:24] <Colgate> though it ran out of money a very long time ago :P
+[21:52:30] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[21:52:34] <Stik> heh
+[21:52:51] <Colgate> I should probably put 10$ on it again, so I can bus if I need to
+[21:53:05] <Stik> buses are possibly the worst form of transport ever
+[21:53:13] <Stik> went on one last year some time and it was The Worst 
+[21:53:18] <Stik> at least over here
+[21:53:26] <Colgate> that's all the public transit around me
+[21:53:36] <Stik> slow, noisy, smelly, bumpy
+[21:53:37] <Colgate> ok, there's a train too if I want to go to seattle
+[21:53:38] <Stik> expensive!
+[21:53:44] <Colgate> but that's it
+[21:53:50] <Stik> trains are tolerable in the uk, at least they go at a reasonable speed
+[21:54:00] <Stik> if you tried to get a bus anywhere you'd be old before you got there!
+[21:54:06] <Colgate> not sure how much that train costs though heh
+[21:54:18] <Stik> they're a ripoff here :|
+[21:54:29] <Sour_Sweet> My former employer used RFID for building access control and also (on a different card) for canteen billing
+[21:54:42] <Stik> there was an article doing the rounds today in fact about a guy who found it cheaper to fly to berlin and back than it was to get a train between two major cities
+[21:54:46] <Stik> which is ridiculous
+[21:55:06] <Colgate> they recently put in some toll lane things around here, not sure how they work but they are wireless
+[21:55:28] <Colgate> not sure how they work, but they link to an account and bill you somehow
+[21:56:01] <Colgate> they have 2 modes as well, carpool and normal fee mode
+[21:56:01] <Stik> i've been on a few toll roads like that in ireland
+[21:56:06] <Colgate> where carpool mode means you don't get tolled
+[21:56:19] <Stik> those were operated by cameras, and required you to remember to log in and pay your fee
+[21:56:23] <Stik> which is a bit rubbish imo
+[21:56:39] <Colgate> they mail you a bill if you don't have the device installed, with an extra mailing fee
+[21:56:39] <Stik> i wonder how it tells if you're in a carpool or not?
+[21:56:46] <Colgate> it has a toggle
+[21:56:51] <Stik> what stops you lying?
+[21:57:05] <Colgate> presumably they check carpools every once in a while
+[21:57:10] <Stik> do you have to take a selfie with your passengers :)
+[21:57:11] <Colgate> they have cameras as well
+[21:58:00] <Colgate> wouldn't need to constantly check them either, just the first time a car registers as a carpool when entering the toll lane
+[21:58:22] <Colgate> I don't normally drive on that road, but from what I've heard, the whole toll lane thing has been a flop
+[21:58:30] <Stik> here it is
+[21:58:33] <Stik> http://www.seloc.org/articles/guides/exige-s-v6-product-news-analysis/
+[21:58:35] <Colgate> the toll lanes are usually empty, and the regular lanes are jammed
+[21:58:35] <PinkiePieBot> [ Exige S (V6) Product News analysis | SELOC ]
+[21:58:38] <Stik> nope that's not it
+[21:58:41] <Stik> http://metro.co.uk/2016/01/27/a-teen-flew-from-sheffield-to-essex-via-berlin-because-it-was-cheaper-than-the-train-5647510/
+[21:58:44] <Stik> that's it
+[21:59:00] <Stik> those places are very close together, yet somehow it was cheaper to go to another country first
+[21:59:06] <Colgate> since nobody knows how they work, since nobody understands how the toll lanes work, so they don't use them(or they are too expensive)
+[21:59:06] <Stik> this is why public transport in the uk sucks
+[21:59:20] <Stik> also he's possibly the silliest looking person i have seen in a long time
+[21:59:23] *** Joins: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP)
+[21:59:40] <Colgate> it costs like, 15-20$ at times to go down the entire stretch of road, one way
+[21:59:47] <Colgate> which is... a lot
+[22:00:32] <Stik> that is pretty steep
+[22:00:51] <Stik> can you get like a yearly season ticket thing where it's cheaper if you commute?
+[22:01:01] <Colgate> afaik, no
+[22:01:14] <Colgate> also, sometimes the carpool requirement is 2 people, other times it is 3 people
+[22:01:20] <Colgate> it changes based on time of day
+[22:01:34] <Colgate> just to add to the confusion I guess
+[22:02:31] <Stik> sounds pretty complex
+[22:04:08] <Colgate> yeah, which is why nobody uses them :P
+[22:10:26] *** Pony_84119 is now known as Dude
+[22:10:56] *** Dude is now known as Pony_48520
+[22:20:24] *** Quits: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP) (Ping timeout: 121 seconds)
+[22:24:18] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:26:02] *** Quits: HyperDash (HyperDash@Pony-pveddk.wa.comcast.net) (Quit: Ping timeout: infinite seconds)
+[22:32:49] *** Joins: Not-Renny (AndChat7084@Pony-d2b1vs.rths.94pq.0681.2601.IP)
+[22:37:32] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[22:41:17] *** Divide|Tech|Sick is now known as Divide
+[22:54:07] *** Quits: WuBzY (WuBzY@Pony-0tqb98.dhcp.inet.fi) (Connection closed)
+[22:54:25] *** Joins: WuBzY (WuBzY@Pony-0tqb98.dhcp.inet.fi)
+[23:09:37] <Moonlightning> Stik: sounds about right
+[23:09:59] <Moonlightning> Lightning and I were checking out flights to London a few months ago
+[23:10:31] <Moonlightning> there was a flight from San Francisco to London, and one from San Francisco to the capital of...Denmark, I think?
+[23:11:00] <Moonlightning> The latter one was several hundred dollars cheaper, and had a layover in...guess what city. :P
+[23:11:04] *** Pony_48520 is now known as Dude
+[23:11:34] *** Dude is now known as Pony_81317
+[23:14:14] <Colgate> ahahha, this article
+[23:14:24] <Colgate> it claims that cloud computing is what VR tech needs
+[23:14:27] <Colgate> yeah no
+[23:14:36] <Colgate> the latency of that just won't work
+[23:15:07] <Colgate> trying to use a VR headset with 50ms lag? good luck with that
+[23:15:10] <Googie> But, but, /The Cloud/!
+[23:16:16] <Googie> Reminds me of all the Xbone PR crap that was saying that cloud computing would make the console faster
+[23:16:49] <Colgate> game streaming for an action game is incredibly hard
+[23:17:10] <Colgate> you could stream some games fine, but anything that needs quick reactions isn't going to do well
+[23:17:15] <Moonlightning> Who's gonna wanna pay a subscription fee for games?
+[23:18:58] <Googie> https://googleblog.blogspot.com/2016/01/alphago-machine-learning-game-go.html
+[23:18:59] <PinkiePieBot> [ Official Google Blog: AlphaGo: using machine learning to master the ancient game of Go ]
+[23:19:07] <Googie> Also, that, that is pretty big.
+[23:19:25] <Colgate> oh? is a computer doing well at go now?
+[23:20:03] <Googie> They've beaten some pros, and are challenging one of the best players in the world
+[23:20:07] <Colgate> I was never good at go heh
+[23:21:55] <Colgate> oh wow, beat a professional 5-0
+[23:22:20] <Colgate> go is like, the big board game for a computer to beat too
+[23:22:44] <Googie> Yeah
+[23:23:26] <Colgate> c'mon world champ, make us humans proud and beat the machine!
+[23:23:32] <Colgate> >.>
+[23:24:01] *** Quits: Deathpony (IceChat9@Pony-k7e.chp.54.50.IP) (Ping timeout: 121 seconds)
+[23:26:00] *** Joins: Deathpony (IceChat9@Pony-k7e.chp.54.50.IP)
+[23:28:31] <Moonlightning> https://xkcd.com/1002/
+[23:28:32] <PinkiePieBot> [ xkcd: Game AIs ]
+[23:28:50] <Moonlightning> Calvinball XD
+[23:29:39] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[23:29:56] *** Gigabit is now known as gigaway
+[23:31:35] <Phase> Moonlightning, alt text xD
+[23:31:38] <Phase> forgot about that one
+[23:32:48] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:34:37] *** Quits: ShivalWolf (ShivalWolf@2400:d400:9:7375:abcd::2) (A TLS packet with unexpected length was received.)
+[23:34:50] *** Joins: ShivalWolf (ShivalWolf@BigMac.is.a.Coltcuddler.org)
+[23:36:02] <Phase> neural networks are such a strange thing
+[23:36:37] <Phase> "what if we generate a random algorithm that happens to work correctly on a subset of cases"
+[23:56:46] <Moonlightning> Hmmmm...are there any proper free-space-wiping utilities?
+[23:57:28] <Moonlightning> Sure, you can write and write and write to a file until you get ENOSPC, but that can miss a lot
+[23:58:20] <Moonlightning> If you know the on-disk filesystem format, though, you can unmount it and overwrite /every/ little byte that isn't being used

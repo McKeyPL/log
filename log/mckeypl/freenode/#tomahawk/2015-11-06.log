@@ -1,0 +1,203 @@
+[00:20:12] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Quit: alsuren)
+[00:37:36] *** kurros_ is now known as kurros
+[00:52:54] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[01:04:29] <theli_ua> whoa
+[01:05:00] <theli_ua> m2.music.126.net resolves to 1.1.1.1 to me
+[01:05:15] <theli_ua> instead of what it is supposed to be, had to put proper IP in the hosts so that netease would still work
+[01:06:14] <theli_ua> its like ... reverse great china firewall
+[01:08:54] <muesli> lel
+[01:12:23] <theli_ua> (netease is some chinese streaming service so I guess that is a way to limit it to china only)
+[01:12:35] <theli_ua> shouldn't stop you from merging my resolver for it anyway!
+[01:12:46] <theli_ua> I mean, fwiw there are might be tomahawk users in china
+[01:18:14] <domme_> does it need the hostname? or can you query it via the ip directly maybe?
+[01:18:16] <domme_> theli_ua: ^
+[01:18:22] <theli_ua> it does
+[01:18:28] <domme_> ok, too bad
+[01:18:35] <theli_ua> well, I mean
+[01:18:35] <theli_ua> you can add 
+[01:18:42] <theli_ua> 'Host' header to your result and it'll work
+[01:18:44] <domme_> i know what you'Re going to say
+[01:18:49] <domme_> oh
+[01:19:22] <domme_> anyway.. nini
+[01:19:27] <theli_ua> its just I dont have a way to find out what it resolves to in china from within resolver
+[01:19:38] <theli_ua> night
+[01:20:27] <theli_ua> I mean, at home I'll just add another entry to my dnsmasq config making it resolve that qname via specific chinese dns server
+[01:23:30] *** Quits: domme_ (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de) (Ping timeout: 240 seconds)
+[01:24:31] <theli_ua> eh, why only at home, did that at work as well
+[01:24:44] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[02:11:44] *** Joins: austut (guest-aust@gateway/web/scrollback.io/x-nbgrnpahfurtknay)
+[02:11:44] <austut> a
+[02:15:14] <theli_ua> b
+[02:24:53] *** Parts: austut (guest-aust@gateway/web/scrollback.io/x-nbgrnpahfurtknay) ()
+[02:54:06] <jherskowitz> theli_ua: meh… 2 el capitan machines - the other one works with amazon/gmusic, this one doesn't
+[02:54:22] <jherskowitz> I may just need to totally wipe this machine and start fresh
+[02:54:59] <theli_ua> lol
+[02:55:16] <theli_ua> I might look into it again if/when I upgrade to el captain
+[02:57:02] *** Joins: lasona (guest-laso@gateway/web/scrollback.io/x-wksctlfdkretcjjl)
+[02:57:04] <lasona> Hello? Does Tomahawk support podcasts?
+[02:57:15] <jherskowitz> lasona: no, sorry
+[02:57:25] <lasona> TY
+[02:58:00] *** Parts: lasona (guest-laso@gateway/web/scrollback.io/x-wksctlfdkretcjjl) ()
+[03:29:57] *** Joins: github-tomahawk (~github-to@192.30.252.40)
+[03:29:58] <github-tomahawk> [13tomahawk-resolvers] 15mrmaffen pushed 25 new commits to 06master: 02http://git.io/v8LrJ
+[03:29:58] <github-tomahawk> 13tomahawk-resolvers/06master 1415b4e51 15Anton Romanov: Refactor youtube resolver a bit and parse out Track - Artist out of google's generated description for first result in search query when resolving
+[03:29:58] <github-tomahawk> 13tomahawk-resolvers/06master 140a7d817 15Anton Romanov: Add current decryption function from js player
+[03:29:58] <github-tomahawk> 13tomahawk-resolvers/06master 149daf6c8 15Anton Romanov: [youtube]Extract signature deobfuscation code automatically
+[03:29:58] *** Parts: github-tomahawk (~github-to@192.30.252.40) ()
+[03:47:57] *** Quits: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[03:50:32] *** Joins: mathus13 (mathus13@gateway/web/scrollback.io/x-jjszdmbuiqpmddjc)
+[03:50:33] <mathus13> just reinstalled after a few weeks, and not it locks on load. Think I need to blow out my profile. Where is that stored?
+[03:51:09] <mathus13> in linux
+[03:54:04] <lfranchi> mathus13: rm -rf ~/.local/share/Tomahawk ~/.local/config/Tomahawk
+[03:54:05] <lfranchi> IIRC
+[03:54:10] <lfranchi> it's been a few years so I can't exactly remember :)
+[03:55:04] <mathus13> Bingo, thanks
+[04:12:36] *** Joins: yurrriq (~yurrriq@71-220-15-70.mpls.qwest.net)
+[04:14:56] *** Quits: yurrriq (~yurrriq@71-220-15-70.mpls.qwest.net) (Remote host closed the connection)
+[04:17:46] *** Parts: mathus13 (mathus13@gateway/web/scrollback.io/x-jjszdmbuiqpmddjc) ()
+[04:42:10] *** Joins: soee_ (~soee@aftt79.neoplus.adsl.tpnet.pl)
+[04:45:57] *** Quits: soee (~soee@afje97.neoplus.adsl.tpnet.pl) (Ping timeout: 246 seconds)
+[05:06:07] *** Joins: kinize (guest-kini@gateway/web/scrollback.io/x-yowpajhvepqqdrcd)
+[05:06:08] <kinize> Hello, im having trouble with tomahawk
+[05:09:52] *** Parts: kinize (guest-kini@gateway/web/scrollback.io/x-yowpajhvepqqdrcd) ()
+[05:10:01] <kurros> ask away and maybe someone can help
+[05:12:16] *** Joins: mgue1 (~mgue@f049061121.adsl.alicedsl.de)
+[05:15:18] *** Quits: mgue (~mgue@f049089142.adsl.alicedsl.de) (Ping timeout: 244 seconds)
+[06:27:25] <theli_ua> muesli: can we completely move to progress instead of time on desktop?
+[06:28:04] <theli_ua> wrt libvlc https://github.com/tomahawk-player/tomahawk/pull/294  that one still left time information in ... but it still doesn't always work
+[06:28:05] <tomabee> [ Fallback to position-based progress and seeking if current time is unavailable by theli-ua · Pull Request #294 · tomahawk-player/tomahawk · GitHub | github.com | https://avatars2.githubusercontent.com/u/1242604?v=3&s=400 ]
+[07:16:03] <theli_ua> jherskowitz: no that your ssl issues are no more - care to try updated youtube? (merged and updated by MrMaffen )
+[07:21:30] <theli_ua> jherskowitz: if you will - make sure to go to resolver's config and set desired bitrate to at least 128
+[07:52:38] *** Joins: klaas (klaas@simply.kla.as)
+[08:16:26] *** Joins: apb__ (~apb@174-134-224-109.res.bhn.net)
+[08:16:32] *** Quits: apb_ (~apb@174-134-224-109.res.bhn.net) (Ping timeout: 250 seconds)
+[09:13:30] *** Joins: rotzbouw (~tgoeckel@port-92-198-71-3.static.qsc.de)
+[09:13:59] *** Quits: rotzbouw (~tgoeckel@port-92-198-71-3.static.qsc.de) (Client Quit)
+[09:15:07] *** Joins: rotzbouw (~tgoeckel@port-92-198-71-3.static.qsc.de)
+[09:15:19] <rotzbouw> moinsen
+[09:22:28] <rotzbouw> getting strange asserts during startup since latest commits: https://paste.kde.org/pktvcf19a
+[09:22:28] <tomabee> [ KDE Paste | paste.kde.org |  ]
+[09:25:20] *** Quits: rotzbouw (~tgoeckel@port-92-198-71-3.static.qsc.de) (Quit: Konversation terminated!)
+[09:25:44] *** Joins: rotzbouw (~tgoeckel@port-92-198-71-3.static.qsc.de)
+[09:39:17] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[10:49:00] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:18:14] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[11:36:04] <feepk> muesli: ping
+[12:41:55] *** Joins: domme_ (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de)
+[13:33:22] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[13:35:08] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Ping timeout: 265 seconds)
+[13:36:57] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[13:45:38] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[13:48:00] *** Joins: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[14:39:13] *** Joins: mathus13 (mathus13@gateway/web/scrollback.io/x-gsnhfmvrtnjgamyz)
+[14:39:13] <mathus13> JAVASCRIPT: "/home/sbarratt/.local/share/Tomahawk/atticaresolvers/gmusic/contents/code/gmusic.js" "TypeError: 'undefined' is not a function (evaluating 'resolver.resolve( 'baddbdc2-47f8-43d1-b595-5b44acf4bc6a', 'Scarlet Room', '', 'Hello to Hyde' )')" 1 "undefined"
+[14:39:14] <mathus13> Running into some issues with the gmusic resolver I'm hoping someone can help with:
+[14:40:14] <mathus13> Is this stating that tomahawk can't find the resolve method in the resolver? it that eval found a method call within the resolve that doesn't exist? 
+[14:50:39] <domme_> MrMaffen: ^
+[14:50:53] <domme_> mathus13: unfortunately i don't know anything about the gmusic resolver.. 
+[14:50:58] <domme_> what version of tomahawk are you on tho?
+[15:06:13] <mathus13> 0.7.0
+[15:14:13] *** Joins: github-tomahawk (~github-to@192.30.252.46)
+[15:14:13] <github-tomahawk> [13tomahawk-resolvers] 15mrmaffen pushed 1 new commit to 06master: 02http://git.io/v8Y6G
+[15:14:13] <github-tomahawk> 13tomahawk-resolvers/06master 14a467702 15Enno Gottschalk: [youtube] Reworked config.ui. Default bitrate set to 192kbps.
+[15:14:13] *** Parts: github-tomahawk (~github-to@192.30.252.46) ()
+[15:14:37] <MrMaffen> mathus13: 0.7.0 is not compatible with gmusic. you should upgrade to 0.8.4
+[15:14:42] <jherskowitz> moin
+[15:14:53] <jherskowitz> theli_ua: cool, will try it
+[15:15:06] <jherskowitz> theli_ua: MrMaffen do you know if a new axe was built?
+[15:15:21] <MrMaffen> jherskowitz: I'll do that for you
+[15:15:27] <jherskowitz> cool
+[15:15:53] <MrMaffen> jherskowitz: 
+[15:15:53] <MrMaffen> https://drive.google.com/file/d/0B0OEIHngt2GhbWQzbk1vZlJOcjA/view?usp=sharing
+[15:15:54] <tomabee> [ youtube-0.9.20.axe | drive.google.com |  ]
+[15:18:34] <jherskowitz> pubparisporn: for what it’s worth, I added “depends_on ‘xz’” into our VLC formula and I get past the XZ/LZMA error, but hit a new error here; https://paste.kde.org/puhc6hxwm
+[15:18:34] <tomabee> [ KDE Paste | paste.kde.org |  ]
+[15:20:27] <rotzbouw> jherskowitz: wait, you installed (brew install xz) and that error was gone?
+[15:20:51] <jherskowitz> rotzbouw: I uninstalled/reinstalled/relinked xz
+[15:21:01] <rotzbouw> ugh
+[15:21:10] <jherskowitz> then in our formula I added a line “depends_on ‘xz’"
+[15:21:17] <jherskowitz> which I have no idea if that even makes sense
+[15:21:19] <jherskowitz> I’m guessing
+[15:21:32] <jherskowitz> but it seems I get further
+[15:21:42] <jherskowitz> ffmpeg still failing to build
+[15:22:06] <jherskowitz> rotzbouw: I obviously also had to add an if statement for 10.11 SDK
+[15:22:10] <jherskowitz> in our formula
+[15:22:55] <rotzbouw> heh, yeah
+[15:23:23] <rotzbouw> someone should invest a day or so in re-doing that vlc formula.. it seems way to complicated :)
+[15:23:37] <rotzbouw> also, we don't actually disable this videotoolbox thing? weird error.
+[15:23:48] <jherskowitz> MrMaffen: theli_ua I added new axe, default was at 96k - I changed and saved but get config error https://www.dropbox.com/s/t9rf65tw5ummiyi/Screenshot%202015-11-06%2009.23.26.png?dl=0
+[15:23:57] <tomabee> [ Screenshot 2015-11-06 09.23.26.png | www.dropbox.com | https://photos-6.dropbox.com/t/2/AAA0K-AkcYpcHMpoJKX0HnUb8BjR-6NT1aJ8aXSU6MADWQ/12/986425/png/1024x768/2/_/0/4/Screenshot%202015-11-06%2009.23.26.png/CLmaPCABIAIgBygBKAIoBw/t9rf65tw5ummiyi/AAAu8S5D4pbf8SjCP9dQrQ6-a/Screenshot%202015-11-06%2009.23.26.png ]
+[15:24:42] <jherskowitz> 2nd time worked (fwiw, I get the same with Amazon)
+[15:24:56] <MrMaffen> jherskowitz: that's a bug in tomahawk right now...
+[15:24:56] <jherskowitz> also progress bar seems to be more of a buffer bar than song progress?
+[15:25:15] <MrMaffen> jherskowitz: yep also known
+[15:25:18] <jherskowitz> ok
+[15:25:23] <jherskowitz> otherwise working
+[15:25:25] <MrMaffen> cool
+[15:30:20] <jherskowitz> I get some really bad rendering issues with Qt5 on El Capitan (scrolling artist pages). Just me?
+[15:46:18] *** Joins: knerre1 (guest-kner@gateway/web/scrollback.io/x-wujizaccexlnevxg)
+[15:46:18] <knerre1> how to install the nice version on kubuntu?
+[15:47:01] <mathus13> @mrmaffen2 updated to 0.8.4, now im getting
+[15:47:02] <mathus13>     JAVASCRIPT: "/home/sbarratt/.local/share/Tomahawk/atticaresolvers/gmusic/contents/code/gmusic.js:1" "TypeError: 'undefined' is not a function (evaluating 'Tomahawk.resolver.instance.saveUserConfig()')" "undefined" 
+[15:47:03] <mathus13> any thoughts?
+[15:47:16] <jherskowitz> theli_ua: MrMaffen interestingly, now I can’t login to Spotify on desktop
+[15:47:57] *** Parts: knerre1 (guest-kner@gateway/web/scrollback.io/x-wujizaccexlnevxg) ()
+[15:50:57] <jherskowitz> rotzbouw: working for you?
+[16:14:37] *** Parts: mathus13 (mathus13@gateway/web/scrollback.io/x-gsnhfmvrtnjgamyz) ()
+[16:16:31] <rotzbouw> jherskowitz: what are you referring to?
+[16:17:05] <jherskowitz> rotzbouw: Spotify on master
+[16:17:28] <rotzbouw> Don't use spotify (never have), sorry
+[16:57:49] *** Quits: rotzbouw (~tgoeckel@port-92-198-71-3.static.qsc.de) (Quit: Konversation terminated!)
+[17:06:10] <theli_ua> jherskowitz: sorry, never used spotify
+[17:09:26] *** Joins: oveler (guest-ovel@gateway/web/scrollback.io/x-egudnxftaxgjypue)
+[17:09:26] <oveler> Help
+[17:10:16] *** Parts: oveler (guest-ovel@gateway/web/scrollback.io/x-egudnxftaxgjypue) ()
+[18:00:47] <MrMaffen> jherskowitz: pretty sure those that it's not related to installing the youtube resolver
+[18:01:07] <MrMaffen> jherskowitz: you mean you don't see the wrench icon right? so you can't configure the spotify resolver?
+[18:01:24] <MrMaffen> because I see that bug at least once per day
+[18:21:15] <theli_ua> MrMaffen: btw, did you see that new crossplatform mobile framework from google?
+[18:21:24] <theli_ua> crossplatform = ios+android
+[18:57:29] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[18:58:09] <jherskowitz> MrMaffen: nah, not the wrench issue - just getting a response in config that I can’t login to spotify
+[18:59:01] <jherskowitz> theli_ua: like Tamarin?
+[18:59:06] <jherskowitz> Xamarin
+[18:59:16] <theli_ua> kinda
+[18:59:22] <theli_ua> but dart, instead of c#
+[18:59:42] <theli_ua> and it doesn't use native widgets
+[19:00:01] <theli_ua> http://flutter.io/faq/
+[19:00:02] <tomabee> [ Flutter FAQ | flutter.io |  ]
+[19:00:05] *** Quits: domme_ (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de) (Ping timeout: 260 seconds)
+[19:08:30] *** cloakable_ is now known as cloakable
+[19:19:06] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[19:24:42] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[19:25:01] <MrMaffen> theli_ua: it wouldn't make much sense to ditch the current code and start from scratch. even if flutter is flawless (which it most likely isn't)
+[19:28:38] <theli_ua> MrMaffen: oh I wasn't suggesting rewrite
+[19:29:34] <theli_ua> I wonder how well would 'dart:js' work for resolvers
+[19:30:06] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Quit: alsuren)
+[19:30:49] <theli_ua> its still in something like alpha
+[19:30:57] <theli_ua> would be worth playing with it if we only started
+[19:31:11] <theli_ua> or maybe for iOS ... and see how well it works
+[19:31:24] <theli_ua> then if it really kicks off, code base could be unified
+[19:31:32] <theli_ua> but thats just dreaming obviously :)
+[19:32:41] <theli_ua> flutter.io doesn't have any iOS instructions yet
+[19:45:34] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[19:51:18] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Quit: alsuren)
+[19:53:27] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[20:00:39] *** Joins: Karbowiak (~Karbowiak@ip979.alb335.cust.comxnet.dk)
+[20:01:57] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[20:28:52] *** Joins: hrtcrw (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370)
+[20:41:39] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Quit: alsuren)
+[21:18:52] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[21:20:36] *** Joins: echars (guest-echa@gateway/web/scrollback.io/x-axvnhqhvatxcktmv)
+[21:20:36] <echars> siema
+[21:26:11] *** Parts: echars (guest-echa@gateway/web/scrollback.io/x-axvnhqhvatxcktmv) ()
+[21:57:51] <muesli> jherskowitz: yeah, have them too
+[21:58:31] <muesli> (page scrolling issues with qt5)
+[21:58:48] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Quit: alsuren)
+[22:07:28] <jherskowitz> muesli: ah, k
+[23:13:36] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[23:16:02] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Client Quit)
+[23:17:54] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[23:19:24] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Client Quit)
+[23:21:38] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[23:25:44] *** Quits: hrtcrw (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370) (Ping timeout: 252 seconds)

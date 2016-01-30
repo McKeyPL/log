@@ -1,0 +1,691 @@
+[00:00:14] <mniip> https://i.4cdn.org/g/1452731019159.jpg
+[00:03:52] *** Joins: NyanCat (NyanCat@Pony-u7ltkj.nb.bellaliant.net)
+[00:07:44] <Moonlightning> wolfyshy: how is 6 insecure?
+[00:11:32] *** Divide|Tech is now known as Divide
+[00:12:50] <Colgate> the netflix thing is funny, they can't possibly know whether I went through a VPN or not
+[00:15:18] *** Quits: Melanosuchus (quassel@Pony-jip8m0.as13285.net) (Connection closed)
+[00:15:52] <NyanCat> Colgate, sure they can 
+[00:16:00] <Colgate> how?
+[00:16:34] <NyanCat> Well, the IP address, of course
+[00:16:43] <Phase> the usual trick is to try connect to a vpn/proxy on the ip your connecting from
+[00:16:48] <NyanCat> I'm sure that netflix is determining if the iP belongs to a residental assignment or a hosting company
+[00:16:51] <NyanCat> and if it is a proxy 
+[00:16:59] <Colgate> Phase: that's why you secure it
+[00:17:01] <NyanCat> *able to determine
+[00:17:02] <NyanCat> sorry
+[00:17:26] <Colgate> NyanCat: and you don't think that's going to become a thing? residential IP VPNs as a service
+[00:17:37] <NyanCat> It already is a thing
+[00:17:41] <Phase> Colgate, doesn't matter if it's secure or not, if they can syn/ack on common ports that's good enough
+[00:17:47] <NyanCat> There's an ISP in I think sweden that does it
+[00:17:50] <Colgate> Phase: change the port, done
+[00:17:53] <Phase> it's not hard to work around that
+[00:17:55] <NyanCat> bahnhof
+[00:18:23] *** Creeps|AFK is now known as RedHelper
+[00:18:42] <Colgate> although if they banned me from using it because I run a personal VPN on my own IP, I'd complain
+[00:18:42] <Googie> If Netflix tried, they certainly could catch a large number of VPNs really easily
+[00:18:45] <Phase> Colgate, they can't know in all cases though yeah
+[00:19:00] <Googie> Not 100% effective, but 95% is probably good enough
+[00:20:04] <johnsey> might be more the false positives they're worried about
+[00:20:09] <Phase> you can make it costly on vpn hosts
+[00:20:09] *** NyanCat is now known as Duck
+[00:20:19] *** Duck is now known as NyanCat
+[00:20:32] *** Quits: DataByte (DataByte@Pony-vgeu1g.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[00:20:34] <johnsey> people might just switch to other streaming services if they get problems using netflix
+[00:20:42] <Googie> Nah, I don't think so. False positives could easily be minimized a fair bit.
+[00:20:43] <Colgate> depends on the ISP, I know a trick with mine to grab a new IP if I need to
+[00:20:58] <Colgate> I'm sure the companies selling VPNs could do that too
+[00:21:03] <Googie> I suspect they're just playing it up because they know it's in their interest not to have regional restrictions
+[00:21:11] <johnsey> Googie: the thing is, you want to minimize the number of customers that gets banned incorrectly becuase they might just run away
+[00:21:43] <JustAberrant> http://www.ponylang.org/ ?
+[00:21:43] <PinkiePieBot> [ Pony - High Performance Actor Programming ]
+[00:21:52] <johnsey> it's not like they're the only streaming service in town
+[00:21:56] <Googie> Yeah, but I'm saying that 99% of commerical VPNs at the moment could be caught with something that has a fairly minimal false positive rate
+[00:22:15] <Phase> johnsey, "might just switch to other streaming services" thing is every streaming service has a different set of shows
+[00:22:19] <johnsey> i have a feeling they also want the customers behind VPNs ;)
+[00:22:30] <Colgate> then those VPN services go down temporarily, then they find other methods that get around it, cat and mouse game that netflix can't win :P
+[00:22:31] <Googie> Two people logged in at once from the same IP when they live at other corners of the globe ? Okay, might be family visiting. 5 people consistently at all hours...
+[00:22:34] <Phase> because exclusively licensed shows and all that bullshit
+[00:22:51] <johnsey> it's just the license holders who really care
+[00:22:53] <Googie> Netflix knows where you live via the payment details you provide
+[00:23:02] <Googie> Basically, that yeah
+[00:23:04] <Colgate> I think by "other streaming service" they mean p2p ;)
+[00:23:25] <johnsey> so all they're doing is "best effort" to keep those at bay
+[00:23:28] <Googie> They /could/ easily cause a lot of issues to commercial VPN providers, but they won't
+[00:23:31] <Phase> that works too
+[00:24:11] <Phase> there's a provider here called presto that is slurping up every license it can now that netflix is offically here
+[00:24:59] <Googie> It's hilarious that they realized that they couldn't directly beat Netflix, so they started advertising that they were a great companion to Netflix :V
+[00:25:43] <Colgate> do they have much choice with netflix's size?
+[00:26:02] <Colgate> netflix could probably pay double what this company is paying for those licenses and drive em under
+[00:28:57] <Googie> IIRC I think Presto is supported by Telstra or Foxtel something, so they locally have pretty strong backing
+[00:29:10] <wolfyshy> wooftel!
+[00:29:20] <Phase> telstra and optus have their own services don't they?
+[00:29:33] <Googie> Yeah, apparently it's Foxtel that owns it
+[00:29:34] <Phase> i know they sell movies and music under some kind of terms
+[00:29:46] <Googie> So they already have /all/ the contracts with media companies here
+[00:29:51] <Phase> and they're really convinced people want that from them
+[00:29:58] <Phase> Googie, true
+[00:30:08] * Googie pat pats wolfyshy again. He doesn't want Foxtel. Foxtel is bad.
+[00:30:29] <wolfyshy> what about wooftel!
+[00:30:33] * wolfyshy wags tail
+[00:30:37] * wolfyshy starts her own ISP
+[00:30:50] <Phase> wolfyshy, i'd subscribe to wooftel
+[00:30:57] <Googie> wolfyshy: Foxtel is a Satellite/Cable TV company. They don't do internet
+[00:31:03] <HoneyDrops> Hopefully the whole idea of region-based licensing goes away.  I am glad netflix is working to kill it off.
+[00:31:10] <Phase> ^ HoneyDrops
+[00:31:18] <Moonlightning> wolfyshy: an ISP run by competent people? Yes please :D
+[00:31:20] <HoneyDrops> That said, I am more interested in a download service for media.
+[00:31:20] <Phase> then next on the chopping block is exclusive licensing
+[00:31:22] * Googie would too, albeit he suspects that coverage may be limited
+[00:31:24] <Moonlightning> and sane *
+[00:32:23] <Phase> if people didn't pirate game of thrones it'd be nowhere near as popular as it is
+[00:32:33] <HoneyDrops> I would rather pay say, 5$ for a movie or 10$ for a 24-26ep season and have a DRM-less file for me to watch as many times as I like on whatever device and no reliance on any company keeping some service alive.
+[00:32:59] <HoneyDrops> I'm willing to negotiate on pricing, but not the rest of it.
+[00:33:04] <Phase> i'd be happy to buy blu-rays if they weren't $50 each
+[00:33:12] <Phase> and you could actually, you know, WATCH them
+[00:33:27] * Phase used a licensed player once, unsuccessfully
+[00:33:53] <Phase> it spent 2 hours updating itself before declaring that the video card was unsupported
+[00:34:12] <HoneyDrops> Same with games, I'll buy a game, but that's all.  Paying for DLC is stupid and so are subscription fees.
+[00:34:41] <Phase> DLC used to be called expansion packs and were a significant glob of content
+[00:34:46] <HoneyDrops> If they want to charge to pay for server fine, but I then want to option to host things myself (actually regardless, I want to be able to host servers myself)
+[00:35:02] <Googie> There's still some games that do DLC well, just a lot less.
+[00:35:37] <Phase> generally don't have an issue with dlc
+[00:35:52] <HoneyDrops> I think a better model is to let the community create content: modding games should be ubiquitous.
+[00:35:57] <Googie> Same, as long as it seems like it took actual effort to make, and doesn't detract from the base game
+[00:36:55] <HoneyDrops> A full expansion is fine, say 50% of the cost of the game to add new content and mechanics that is ~50%+ of the original game.
+[00:38:19] <HoneyDrops> Also, while less specific to games, EULAs need to go.
+[00:39:03] <HoneyDrops> Usage of a program should not be something the vendor has a say in, aside from setting limits for support agreements.
+[00:41:56] <Moonlightning> So…for SSH keys…prefer ED25519, then RSA, right?
+[00:45:19] <Ola> http://i.imgur.com/aZKaHmx.jpg
+[00:46:28] * JustAberrant pictures HoneyDrops in the near future filling out a request form to adjust her screen resolution from the required standard 
+[00:49:52] * HoneyDrops would totally just hack it.
+[00:50:02] <HoneyDrops> I have absolutely zero qualms about breaking DRM.
+[00:50:40] <Moonlightning> …uhh
+[00:50:48] <Moonlightning> Are ed25519 keys /supposed/ to be that short?
+[00:50:49] <HoneyDrops> Hell, if I had more time, I would break DRM on things I don't even want, just because it should be broken.
+[00:51:03] <Moonlightning> I mean, I know they're shorter than rsa keys, but this is REALLY REALLY short O.o
+[00:51:28] <JustAberrant> nothing to hack, it's all in the cloud, real computers have long since stopped being made, and the older ones can't connect to internet 2.0
+[00:52:05] <JustAberrant> no storage or real processing power, just enough to run the global auth and drm monitoring stuff and of course the remote access stuff
+[00:52:10] <HoneyDrops> I will build my own internet, a mesh network made of old routers and radio gear I and others build ourselves.
+[00:52:41] <JustAberrant> but how will you avoid the RF triangulation drones, some kind of point to point system? :(
+[00:53:08] <JustAberrant> and all the cameras would surely notice you running cables everywhere :(
+[00:53:21] <Moonlightning> That's a dystopia now.
+[00:53:29] <Moonlightning> It's /illegal/ to create your own networks?
+[00:53:53] <JustAberrant> also better hurry up and complete your mandatory twitter posting  or they'll drag you off to the acid mines again :(
+[00:54:09] <Moonlightning> That's not /near/future, either.
+[00:54:11] <Phase> Moonlightning, ecdsa has much greater complexity in fewer bits than rsa
+[00:54:15] <JustAberrant> Monochrome: `terrists could use those networks!
+[00:54:20] <JustAberrant> * Moonlightning 
+[00:54:24] <HoneyDrops> Wires can be buried, though it does make intercontinental networks harder :(
+[00:54:44] <JustAberrant> HoneyDrops: sure, but that tends to be a fairly noticeable activity ;p
+[00:54:57] <HoneyDrops> Local communication is useful, but pales into the idea of a global communication network.
+[00:55:04] <HoneyDrops> to*
+[00:55:11] * JustAberrant suddenly curious how hard it would be to make a mini tunnel boring machine.. just big enough to run conduit :>
+[00:56:49] <Moonlightning> Phase: yeah, but this is literally 68 bytes of base64.
+[00:56:53] <Moonlightning> /Wat./
+[00:57:13] <HoneyDrops> VLF would work too, lower freq would be harder to triangulate.
+[00:57:18] <Phase> 512bit key?
+[00:57:27] <Phase> sounds about right
+[00:57:33] <HoneyDrops> but the antennas would need to be larger
+[00:58:38] <Moonlightning> Phase: 408-bit key (assuming I'm right about the base64)
+[01:03:44] <Phase> Moonlightning, still it's something on the scale of rsa gives you 128 bits of complexity for a 4096bit key, ecdsa is closer to 4 to 1 or 2 to 1
+[01:03:51] <Phase> i forget the details
+[01:04:07] <Phase> it's far more implementation sensitive though, hence the plethora of standards
+[01:04:12] <Moonlightning> Ahh.
+[01:04:23] <Phase> because the best thing to do with something implementation sensitive is to have many implementations i guess
+[01:04:40] <Moonlightning> Well, given that there's no option to choose the key length, I'm just gonna assume the devs know what they're doing :P
+[01:05:25] <Phase> i believe it's also quantum safe, there's no know algorithm that breaks ecdsa, unlike rsa which can in theory be rapidly factored with enough qbits
+[01:06:23] <Moonlightning> :D !
+[01:06:42] <Phase> no ones actually BUILT enough qbits yet but it's a little closer than i'm comfortable with
+[01:06:49] <Moonlightning> Yeah.
+[01:07:08] * Moonlightning is currently switching all his stuff over to ed25519
+[01:07:13] <Moonlightning> Well, all the SSH stuff.
+[01:07:25] <Moonlightning> And, well, I'll leave rsa enabled on my server server
+[01:11:29] * Phase thinks someone's managed to factor 15 into 3 and 5 under experimental conditions
+[01:12:18] <Colgate> it isn't close yet, but that's when we want to switch, before it does become close
+[01:12:57] <Phase> i douno, it feels like we're one breakthrough away from rsa factoring
+[01:13:18] <Phase> commercial quantum computers are decades out, but that's not a problem for many groups
+[01:13:28] <Phase> lab conditions are good enough
+[01:13:39] <Moonlightning> Hmm…how do I verify one host key using another, if I don't have shell access?
+[01:13:48] <Moonlightning> If I /can/ get a shell, I can just log in and `cat` the key
+[01:14:19] <Moonlightning> But if I /can't/, all I have to go on is the keys I'm presented with, which is before authentication, right?
+[01:38:57] *** Sour_Sweet|BNC is now known as Sour_Sweet
+[01:50:41] <JustAberrant> also holy hell @ ffmpeg thing :>
+[01:51:21] <Googie> ffmpeg thing ?
+[01:52:05] * Googie looks
+[01:52:30] <HoneyDrops> Yeah saw that, thanks Apple >_>
+[01:52:45] * JustAberrant read a (shitty) description of it and figured usual "yeah you can do x if you have local access and blah blah blah usual over-reaction"
+[01:52:53] <JustAberrant> but re-reading the announcement, yeah, pretty serious :>
+[01:53:17] <JustAberrant> basically trick _something_ into looking at a file such that ffmpeg gets called and bam..
+[01:54:51] <Moonlightning> o.e
+[01:54:58] <Moonlightning> What?
+[01:55:24] <HoneyDrops> Moonlightning: https://bugs.archlinux.org/task/47738
+[01:55:25] <PinkiePieBot> [ FS#47738 : [ffmpeg] rebuild without network support until the vulnerability is fixed ]
+[01:55:30] <Sour_Sweet> My server uses ffmpeg to dynamically convert media streams from only somewhat trusted users O_o
+[01:56:02] <Googie> Even saying that thumbnail generation is enough...
+[01:57:32] <mniip> [03:11:29] * Phase thinks someone's managed to factor 15 into 3 and 5 under experimental conditions
+[01:57:41] <mniip> I think they factored a 5-digit number
+[01:58:47] <Phase> see Colgate? rapidly development
+[01:58:57] <Phase> within the next 5 years they might factor a 10 digit number
+[01:59:16] <Phase> rapid'
+[01:59:55] * Googie keeps thinking that he really needs... wants to learn how quantum algorithms work.
+[02:00:24] <Moonlightning> AUGH
+[02:00:26] <Googie> QC simulators exist.
+[02:00:28] <Moonlightning> MY ZONEFILE! /AGAIN!/
+[02:01:15] <Moonlightning> I really need to redo my servers…gentoo and btrfs…
+[02:01:16] <Phase> xD
+[02:01:19] <Phase> what's happening Moonlightning?
+[02:01:26] <Moonlightning> bind shat all over my zonefile
+[02:01:41] <Moonlightning> I had it all organized and neat and pretty
+[02:02:26] <mniip> Googie, do they
+[02:02:38] <Moonlightning> It used to do it repeatedly because I had it doing automatic dnssec signing
+[02:02:49] <Moonlightning> then I moved that to a cronjob, and it stopped
+[02:03:39] <Googie> Google's online playground thingy: http://www.quantumplayground.net, and a full listing here: https://quantiki.org/wiki/list-qc-simulators
+[02:03:41] <PinkiePieBot> [ List of QC simulators | Quantiki ]
+[02:04:18] <mniip> Googie, what no
+[02:04:26] <mniip> that's not how quantum computing works...
+[02:04:44] * Moonlightning whimpers…
+[02:04:50] <Moonlightning> Now I have to rewrite the whole thing, again…
+[02:04:59] <Moonlightning> ;-;
+[02:05:14] <Sour_Sweet> There is that weird thing called backups xD
+[02:05:35] <Moonlightning> I know.
+[02:05:48] <Sour_Sweet> I keep at least 10 (one per week) of all important files on a backup server ;-)
+[02:07:45] <Googie> You can simulate quantum computers. It's just exponentially slower as you add more qubits. (From my understanding anyway)
+[02:08:01] <mniip> Googie, I'm no good at QM but pretty sure nondeterministic turing machine is not how QM works
+[02:09:43] * HoneyDrops knows QM, but doesn't know enough about how computation is built off it.
+[02:12:03] <Googie> Everything I'm seeing is pointing towards it being possible, but I'm trying to find a direct source.
+[02:13:09] <mniip> undeterministic turing machines are pretty easy to achieve
+[02:20:05] *** Snoarin is now known as Gigabit
+[02:25:57] *** Quits: SilverEagle (SilverEagle@SilverEagle.is.best.pony) (Ping timeout: 121 seconds)
+[02:26:10] *** Joins: SilverEagle (SilverEagle@SilverEagle.is.best.pony)
+[02:26:55] <Googie> Bah, trying to research everything quickly. You might be right, but it also seems that there's definitely useful simulators in existence.
+[02:27:06] *** Quits: NyanCat (NyanCat@Pony-u7ltkj.nb.bellaliant.net) (Quit: (316): I AM BEING ACCOSTED BY A HUMMING BIRD. I AM IN MILD DISTRESS)
+[02:28:58] *** Joins: corkfuse (corkfuse@corkfuse)
+[02:29:11] <Phase> i'm lead to believe they exist, don't see any reason you can't simulate a qbit
+[02:29:48] <Phase> won't be fast but should exist
+[02:31:36] <HoneyDrops> The QM math isn't that fancy, so a simulation would be possible, but yes it would be slow.
+[02:32:19] *** Joins: Asoka_White (Asoka@Pony-obihhb.net-htp.de)
+[02:32:27] <Googie> Yeah, which is why most of them are highly limited in terms of the number of qubits. Exponential growth.
+[02:35:31] *** Quits: Asoka (Asoka@Pony-jb9efp.net-htp.de) (Ping timeout: 121 seconds)
+[02:35:59] <Googie> s/most/all
+[02:45:57] *** Quits: Q0 (Q0@literallyshit.net) (Ping timeout: 121 seconds)
+[02:48:37] *** Joins: Q0 (Q0@Pony-0m7faa.vtfe.qoe9.0601.2601.IP)
+[02:50:18] *** Quits: corkfuse (corkfuse@corkfuse) (Ping timeout: 121 seconds)
+[02:53:55] *** Joins: zeta__ (Zeta@batpones.are.for.snuggles)
+[02:55:59] <Moonlightning> There. Yeesh.
+[02:56:19] * Moonlightning leaves a copy in /var/backups now, owned by root and unwritable.
+[02:56:31] * Moonlightning …sets the user-immutable flag, for good measure.
+[02:56:40] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Ping timeout: 121 seconds)
+[03:13:25] <Moonlightning> Ugh. I feel like I'm still missing something.
+[03:24:11] *** Eventide is now known as Eventide|Sleepies
+[03:24:17] <Compu> http://i.imgur.com/ZmnvOtG.jpg?1
+[03:25:12] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[03:31:14] *** Joins: Fillyfeathers (Fallfeather@Pony-r6j3re.bigpond.net.au)
+[03:32:40] *** Quits: Fallfeathers (Fallfeather@Pony-859c69.bigpond.net.au) (Ping timeout: 121 seconds)
+[03:38:27] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (Connection closed)
+[03:41:25] *** Joins: Jouva (jouva@Pony-535ork.fios.verizon.net)
+[03:44:28] *** Sour_Sweet is now known as Sour_Sweet|BNC
+[03:48:18] *** Joins: DataByte (DataByte@Pony-pbt.dup.50.107.IP)
+[03:49:18] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: Bathiolus of terror)
+[04:07:01] <Moonlightning> Compu: heh
+[04:07:15] <Moonlightning> …y'know…I feel like I'm good as far as the ssh roaming bug goes
+[04:07:52] <Compu> my oc now has a snail as a pet
+[04:07:53] <Compu> yes
+[04:09:36] <Moonlightning> None of my sshds support roaming, so in order to exploit it, an attacker would have to interrupt an connection being used by /scp/, and time it so that the next byte of the file being transferred was an '\r' or an '\n', yeah?
+[04:11:06] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[04:11:22] <DataByte> or be a witch
+[04:11:26] <DataByte> http://motherboard.vice.com/en_uk/read/we-talked-to-a-witch-who-casts-viruses-out-of-computers-with-magic
+[04:11:27] <DataByte> ;)
+[04:11:27] <PinkiePieBot> [ We Talked to a Witch Who Casts Viruses Out of Computers With Magic | Motherboard ]
+[04:15:40] <Moonlightning> Oh, those must be the ““viruses”” like when your mouse is dirty and the pointer seems erratic.
+[04:16:03] *** Quits: Fillyfeathers (Fallfeather@Pony-r6j3re.bigpond.net.au) (Quit: 2015 was like the middle movie in a trilogy that ends on a cliffhanger.)
+[04:16:05] <Moonlightning> Because, I mean…malicious code is //malicious code.// Unless whatever you're doing actually modifies system storage, it ain't gonna do shit.
+[04:16:09] <Gigabit> Ora "backdoor Trojan"
+[04:16:36] <Moonlightning> If the trojan's already in the system, no.
+[04:16:56] * Gigabit bonks Moonlightning 
+[04:17:04] <Moonlightning> Though I'll concede that these rituals may have an effect of causing the user to be more wary, potentially preventing /new/ trojans from being accepted
+[04:17:12] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[04:17:13] <Moonlightning> but it won't do anything for existing infections. :P
+[04:17:17] <Phase> let the witch have their fun
+[04:18:58] <Moonlightning> BURN THE WITCH!
+[04:19:07] <Moonlightning> …'s instructions to a CD to save them for later
+[04:21:56] <Moonlightning> Also, since when does Wicca have /reverends?/
+[04:22:09] <Moonlightning> That sounds like such a Christian thing
+[04:30:00] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[04:32:40] *** Joins: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[04:33:16] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[04:33:38] *** Quits: DataByte (DataByte@Pony-pbt.dup.50.107.IP) (Ping timeout: 121 seconds)
+[04:34:47] <Moonlightning> [random] [unrelated] I feel so weird when I'm addressed vocally by name
+[04:35:05] <Moonlightning> Like when someone replies to me in a stream or voicechat by saying /Blacklight Shining/ or /Moonlightning/
+[04:35:17] <Moonlightning> I've actually never said either of those out loud, I don't think. Ever.
+[04:35:22] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[04:35:34] <mniip> Moonlightning, literally pfft
+[04:35:42] <aji> yeah when somebody first called me "aji" out loud it was weird
+[04:35:54] <aji> but i've gotten used to it now because i had a few afk friends who knew me by that name
+[04:35:57] <Moonlightning> It's /still/ weird for me. It's still rare.
+[04:36:01] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Ping timeout: 121 seconds)
+[04:36:10] <mniip> aji, was it ey-jay-eye?
+[04:37:16] * Moonlightning has been pronouncing it ahh-jhee in his head
+[04:37:21] * Phase has been internally pronouncing it as aj
+[04:37:32] <Moonlightning> As what?
+[04:37:36] <Lapsus> a. j. or aj
+[04:37:37] <Phase> a jay
+[04:37:38] <mniip> Phase++
+[04:37:48] <mniip> well
+[04:37:51] <Phase> aji, how would you pronounce it?
+[04:37:53] <mniip> more like ay-jee
+[04:38:27] * HoneyDrops reads it ah-gee.
+[04:39:07] <Moonlightning> Yeah, like that. Soft G.
+[04:39:21] <Moonlightning> Stress on the first syllable.
+[04:39:45] * mniip puts :^) face on
+[04:39:48] <mniip> it's pronounced ayi
+[04:40:01] <aji> @ everybody,
+[04:40:13] <aji> "ay jay eye" is how it's intended since it's initials,
+[04:40:24] <mniip> indeed +o everybody
+[04:40:29] <aji> but everybody says "ah jee" or "eh jee"
+[04:40:41] <Phase> "ay jay eye" is kinda awkward
+[04:40:44] <aji> yeah
+[04:40:47] <Moonlightning> Yeah
+[04:40:52] <mniip> "edgy"
+[04:41:04] <aji> and "ah jee" lends itself so well to pronunciation, based on the letters
+[04:41:15] <aji> i secretly wonder if people think i'm eastern
+[04:41:40] * Phase thought you were partially eastern
+[04:42:01] <aji> nope, born and raised american from european-descended family
+[04:42:02] <Phase> like a generation or two ago some eastern was mixed in
+[04:42:17] * HoneyDrops only goes by HoneyDrops here, and the few voiced instances have been just "Honey"
+[04:42:26] <Moonlightning> Honey. x3
+[04:42:33] * HoneyDrops squeaks.
+[04:42:40] <aji> HoneyDrops: did they know your name at the time or not :^)
+[04:42:51] <Moonlightning> Mine's pretty obvious. :P
+[04:42:53] <HoneyDrops> HoneyDrops?  Yeah
+[04:42:53] <Moonlightning> Moonlightning
+[04:43:05] <Moonlightning> stress on the /moon/
+[04:45:03] <mniip> moolightning
+[04:45:09] <Moonlightning> :(
+[04:45:20] <Moonlightning> A lot of ponies miss the middle N the first time
+[04:45:58] <Moonlightning> So…I've said this once, and I guess I can use it more
+[04:46:08] <mniip> I heard so many mistypings and mispronunciations of my name...
+[04:46:24] <Moonlightning> Moonlightning. There're three Ns; count them.
+[04:46:45] <Moonlightning> …or…was it /Moonlightning, with three Ns (count them)/?
+[04:46:47] <Moonlightning> Derp.
+[04:46:59] <Moonlightning> How's yours pronounced? :o
+[04:47:30] <Moonlightning> I've been pronouncing it /m-niihp/
+[04:47:39] <Moonlightning> With like a short I sound, but dragged out
+[04:47:56] <mniip> yeah but no pause between m and n
+[04:49:31] <Lapsus> mn-ip
+[04:49:45] <Phase> minip
+[04:49:46] <Moonlightning> One sound? @.@
+[04:49:50] <mniip> yes
+[04:49:57] <Moonlightning> I can't pronounce that. D:
+[04:50:16] * Phase would pronounce it with the m essentially silent
+[04:50:29] <Lapsus> like ip man but mn and not man and in reverse order
+[04:50:50] <mniip> someone called me mini-IP at some point
+[04:51:18] <mniip> in the freenode skyping session that was
+[04:54:34] <JustAberrant> most people don't realize it, but the second r in my name is silent :(
+[04:54:55] <Phase> just abe rant?
+[04:55:00] <JustAberrant> it's actually pronounced JustAberant 
+[04:55:13] * JustAberrant nods
+[04:55:14] * Moonlightning doesn't roll the R or anything
+[04:55:36] <Phase> i tend to pronounce double r as an elongated r
+[04:55:51] <Lapsus> just ab ber rant
+[04:55:59] *** Quits: Webster (Webster@Pony-benl74.fios.verizon.net) (Quit: Leaving)
+[04:56:10] <Lapsus> AutoLapsus, down
+[04:56:10] *** AutoLapsus sets mode: -qo Lapsus Lapsus
+[04:56:25] * JustAberrant needs to come up with a better nick .. there's already an aberrant out there.. somewhere :(
+[04:56:29] <mniip> justaberRANT
+[04:56:43] <JustAberrant> :(
+[04:56:49] <Phase> justabeiberrant
+[04:56:50] <Moonlightning> apparently there's another pronounciation
+[04:56:58] * Phase regrets nothing
+[04:56:59] <Lapsus> JustAberrant: tnarrebatsuJ?
+[04:57:00] <Moonlightning> aberrant |ˈabərənt əˈberənt|
+[04:57:21] <JustAberrant> Lapsus: doesn't exactly roll off the tongue :>
+[04:57:33] * JustAberrant legitimately been considering creating an actual proper "professional" page
+[04:57:35] <mniip> bats
+[04:57:40] <Lapsus> t'nar eh batsu jay
+[04:57:42] <Lapsus> :v
+[04:57:53] <Moonlightning> It's not bad!
+[04:57:58] <JustAberrant> like not full on professional, but that kinda pseudo "I'm still a fun geek but here's a small selection of things I actually don't mind you looking at"
+[04:57:58] <Moonlightning> Not bad at all!
+[04:58:01] <mniip> make sure you don't meet any russian people
+[04:58:32] <Lapsus> cyka blyat?
+[04:58:39] <Moonlightning> what even does that mean
+[04:58:45] <JustAberrant> which I'd have to of course carefully distance from the tonnes of shit that would probably get me fired :D
+[04:58:54] <mniip> Lapsus, there's an unambiguous way to interpret "ebatsu"
+[04:59:03] <JustAberrant> also I can totally imagine this...
+[04:59:17] <mniip> by the way, I recently came across http://www.catb.org/esr/faqs/hacker-howto.html
+[04:59:18] <PinkiePieBot> [ How To Become A Hacker ]
+[04:59:23] <mniip> I wish I'd seen this earlier
+[04:59:43] <JustAberrant> "well, I wrote this one thing.. it's a sub/pub message bus for small scale SOA aimed at simplicity" 
+[04:59:49] <JustAberrant> 'sounds neat, what's it called'
+[04:59:53] <JustAberrant> "uh.. Derpy.."
+[04:59:56] <JustAberrant> 'GET OUT!'
+[05:00:57] <Phase> 'you should have named it rainbow dash'
+[05:01:13] <JustAberrant> hehe
+[05:02:09] <mniip> sounds like a name of a shell than anything else
+[05:02:59] <Moonlightning> That one works really well for a C**N thing
+[05:03:21] <Moonlightning> Simple Small-Scale Subpub Bus
+[05:03:32] <Moonlightning> S**4 B
+[05:03:49] <Phase> mniip, 90s kids were seeing this instead https://archive.org/details/HACKERIII
+[05:03:50] <PinkiePieBot> [ HACKER III Top Secret : Unimex : Free Download & Streaming : Internet Archive ]
+[05:04:24] <Phase> there's an irc bot on that cd
+[05:04:50] <Phase> broken af on modern linux, working theory it was developed on an old mac
+[05:06:18] <JustAberrant> :>
+[05:06:19] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[05:42:22] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Connection closed)
+[05:43:24] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[05:43:42] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Connection closed)
+[05:44:49] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[05:44:50] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[05:49:36] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Ping timeout: 121 seconds)
+[05:49:46] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[05:50:09] *** Joins: Sombra (Iceman@Darkhorse21)
+[05:55:21] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[06:02:37] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Quit: Leaving.)
+[06:03:46] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Quit: )
+[06:04:05] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[06:07:08] *** Joins: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[06:09:02] *** Quits: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[06:18:54] *** Joins: corkfuse (corkfuse@corkfuse)
+[06:23:09] *** WuBzYIsSleepin is now known as Wy
+[06:23:23] *** Wy is now known as WuBzY
+[06:24:25] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Connection closed)
+[06:25:18] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:30:06] *** Quits: WuBzY (androirc@Pony-72v8l2.rev.dnainternet.fi) (Quit: AndroIRC - Android IRC Client ( http://www.androirc.com ))
+[06:36:29] *** Quits: djazz (djazz@djazz.se) (Ping timeout: 121 seconds)
+[06:36:36] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[06:37:17] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Connection closed)
+[06:38:35] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:42:19] *** Quits: djazz (djazz@djazz.se) (Ping timeout: 121 seconds)
+[06:43:50] *** Gigabit is now known as Snoarin
+[06:45:57] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[06:48:38] *** Joins: djazz` (djazz@Pony-s73dok.tbcn.telia.com)
+[06:50:53] *** Quits: djazz (djazz@djazz.se) (Ping timeout: 121 seconds)
+[06:51:30] *** Joins: DJ-C0L7[CSS]_ (IceChat77@DJ-C0L7.EIT.LLC)
+[06:52:04] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[06:53:02] *** djazz` is now known as djazz
+[06:54:33] *** DJ-C0L7[CSS]_ is now known as DJ-C0L7[CSS]
+[06:54:44] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "checking TCP/IP back in a few")
+[07:03:58] *** Quits: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP) (Ping timeout: 121 seconds)
+[07:04:19] *** Joins: DJ-C0L7[CSS]_ (IceChat77@DJ-C0L7.EIT.LLC)
+[07:04:52] *** DJ-C0L7[CSS]_ is now known as DJ-C0L7[CSS]
+[07:05:04] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Connection closed)
+[07:05:16] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[07:05:18] *** Quits: corkfuse (corkfuse@corkfuse) (Ping timeout: 121 seconds)
+[07:05:57] *** Joins: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP)
+[07:11:55] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[07:34:08] <HoneyDrops> "You wouldn't really die of anything, in the traditional sense. You would just stop being biology and start being physics."  http://what-if.xkcd.com/
+[07:34:08] <PinkiePieBot> [ Sunbeam ]
+[07:34:12] <HoneyDrops> XD
+[07:41:05] <Phase> true for a lot of what-if scenarios tbh
+[07:42:28] <HoneyDrops> Yeah, I liked the one before this.
+[07:45:14] <HoneyDrops> An all-electron moon (which would promptly be a black hole) was neat to see how Gen Rel and E&M interact in extreme cases.
+[07:45:39] <Phase>  <- problems ->
+[07:46:30] <HoneyDrops> :D
+[07:50:44] *** Quits: Pony_97211 (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:18:22] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[08:25:59] *** RedHelper is now known as Creeps|AFK
+[08:42:43] *** Joins: Melanosuchus (quassel@Pony-m8im8d.as13285.net)
+[08:45:23] *** Quits: zeta__ (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[08:49:53] *** Joins: corkfuse (corkfuse@corkfuse)
+[09:01:32] <tiwake> how do you get to the terminal when x seems to be exploding and all you can see is the mouse cursor
+[09:02:08] <tiwake> and <ctrl><alt><f1-f6> don't do anything
+[09:03:27] <tiwake> the grub menu does not show up, so I cant get to it from there
+[09:04:30] <mniip> try unrawing the keyboard
+[09:04:48] <tiwake> what
+[09:05:13] <mniip> Alt+PrtScr+R
+[09:05:21] <mniip> and then Ctrl+Alt+F1-F6
+[09:07:00] <tiwake> mniip: nothing
+[09:08:44] <tiwake> mniip: I havent gotten to the login screen
+[09:08:58] <tiwake> or rather, it should be at about the login screen
+[09:09:12] <mniip> hmm how do you know your kernel isn't dead
+[09:09:18] <tiwake> but all that shows up is the mouse cursor
+[09:09:29] <tiwake> cause its an nvidia 970 video card... heh
+[09:09:40] <tiwake> drivers are most likely flipping out
+[09:09:47] <tiwake> and its a fresh install
+[09:11:19] <tiwake> it could be a dead kernel from a fresh install I suppose
+[09:11:32] <tiwake> but really I think its a video driver issue
+[09:15:07] <tiwake> oh right shift will bring up grub supposedly... I'll try that
+[09:18:53] *** Quits: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP) (Quit: Relax, its only ONES and ZEROS!)
+[09:20:36] *** Quits: Melanosuchus (quassel@Pony-m8im8d.as13285.net) (Connection closed)
+[09:22:29] <tiwake> I got a login screen now
+[09:24:47] <tiwake> until I reboot
+[09:24:50] <tiwake> meh
+[09:24:53] <tiwake> I don't like nvidia
+[09:26:10] <Phase> nouveau~
+[09:26:13] <Phase> unless you need performance
+[09:29:05] <tiwake> nouveau does not work with the 960 and higher video cards
+[09:29:10] <Phase> awww
+[09:29:15] <tiwake> because of driver signage
+[09:29:35] <Phase> and they still haven't released the blob for nouveau have they
+[09:29:43] <tiwake> correct
+[09:29:55] <tiwake> though they said they would, quite a while ago now
+[09:30:05] <Phase> they say a lot of things
+[09:30:14] <Phase> actually they say fuck all but what they do say is often lies
+[09:30:31] <tiwake> at least AMD does stuff... heh
+[09:30:38] *** Joins: WuBzY (androirc@Pony-72v8l2.rev.dnainternet.fi)
+[09:34:05] <tiwake> Phase: xorg.0.log is current x logs and xorg.1.log is from the previous boot?
+[09:34:38] <Phase> i think the number is the display number
+[09:34:51] <Phase> might depend on the distro
+[09:35:33] <tiwake> oh right
+[09:35:39] <tiwake> I do have three screens...
+[09:35:50] <tiwake> ubuntu 15.10
+[09:35:58] <tiwake> which one is from the previous boot?
+[09:36:19] <tiwake> maybe xorg.0.log.old
+[09:37:30] <Phase> from the previous run of xorg yeah
+[09:37:42] <Phase> you run an x server per display?
+[09:38:34] <tiwake> uh, not that I know of
+[09:38:36] <tiwake> lol
+[09:39:18] <tiwake> I'll give it credit, it did try really hard to load the nvidia driver first it seems
+[09:41:33] <tiwake> lets try a thing
+[09:53:30] <tiwake> that didnt work
+[09:53:37] <tiwake> lets try a slightly different thing
+[09:53:55] <tiwake> then one other thing, after that I ragequit
+[09:55:16] *** Joins: Sombra (Iceman@Darkhorse21)
+[09:55:43] <tiwake> woo, second thing seems to be working?
+[10:01:21] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[10:19:07] <Colgate> wait, you can
+[10:19:18] <Colgate> 't write your own drivers cause of DRM for nvidia cards?
+[10:21:19] <mniip> Colgate, what's the network policy on vhosts?
+[10:21:33] <Colgate> https://canternet.org/support
+[10:21:35] <Colgate> on the bottom
+[10:21:36] <PinkiePieBot> [ Canternet IRC Network - Support ]
+[10:23:20] <mniip> Colgate, could you set one on me?
+[10:23:43] <Colgate> /msg hostserv request stuff.here
+[10:23:53] <mniip> meh
+[10:24:12] <mniip> that requires that I come up with something
+[10:25:40] <Colgate> there's also the ones in /hostserv offerlist :P
+[10:26:52] <mniip> I wonder if /hs take can sweep non-dns characters in the host, and whether insp will like it
+[10:27:26] <mniip> Colgate: thank
+[10:27:29] <Colgate> it can take any non-dns characters that are allowed in nickserv account names at the least
+[10:27:43] <mniip> yeah
+[10:27:51] <mniip> []\|^
+[10:28:16] <mniip> does it collate your account name? if no then also ~
+[10:29:45] <Colgate> uh, would be hard to get ~ into your nickserv account name I think
+[10:30:02] <mniip> oh right
+[10:30:09] <mniip> you keep the $interp thing
+[10:30:18] <mniip> so yeah
+[10:37:31] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:41:25] *** Joins: Phase (Phase4@Pony-kk0nqh.internode.on.net)
+[10:44:21] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[10:48:25] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[11:06:17] *** Quits: WuBzY (androirc@Pony-72v8l2.rev.dnainternet.fi) (Quit: AndroIRC - Android IRC Client ( http://www.androirc.com ))
+[11:25:15] *** Joins: WuBzY (androirc@Pony-72v8l2.rev.dnainternet.fi)
+[12:11:59] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[12:17:06] *** Joins: Pony_97211 (ejd@Pony-fej07d.res.rr.com)
+[12:20:56] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[12:23:07] *** Quits: corkfuse (corkfuse@corkfuse) (Quit: Sleeping)
+[12:24:09] *** Quits: Pony_97211 (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[12:56:20] *** Quits: Asoka_White (Asoka@Pony-obihhb.net-htp.de) (Connection closed)
+[13:06:35] *** Divide is now known as Divide|TechSupport
+[13:23:10] *** Joins: Fallfeathers (Fallfeather@Pony-r6j3re.bigpond.net.au)
+[13:38:04] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[13:38:51] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[13:39:27] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[13:41:27] *** Joins: Asoka (Asoka@Pony-obihhb.net-htp.de)
+[13:41:27] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[13:45:28] *** Sour_Sweet|BNC is now known as Sour_Sweet
+[13:49:56] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[13:50:08] *** Joins: corkfuse (corkfuse@corkfuse)
+[13:56:53] *** Joins: DataByte (DataByte@Pony-fso.te0.152.174.IP)
+[14:23:25] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[14:23:55] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[14:28:04] *** Quits: Asoka (Asoka@Pony-obihhb.net-htp.de) (Ping timeout: 121 seconds)
+[14:28:36] *** Joins: Asoka (Asoka@Pony-obihhb.net-htp.de)
+[14:34:35] *** Quits: Asoka (Asoka@Pony-obihhb.net-htp.de) (Ping timeout: 121 seconds)
+[14:35:20] *** Joins: Pony_97211 (ejd@Pony-fej07d.res.rr.com)
+[14:42:16] <Sour_Sweet> Reading the Netflix announcement that they're going to push harder on enforcing region locks I'm wondering if they're actually going to lock my account :P
+[14:47:47] *** Joins: Asoka (Asoka@Pony-obihhb.net-htp.de)
+[14:52:03] *** Pony_97211 is now known as MisterSkids
+[14:56:19] *** Quits: DataByte (DataByte@Pony-fso.te0.152.174.IP) (Ping timeout: 121 seconds)
+[14:57:17] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Quit: Leaving.)
+[15:10:17] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[15:11:12] *** Quits: Fallfeathers (Fallfeather@Pony-r6j3re.bigpond.net.au) (Connection closed)
+[15:13:44] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Quit: Leaving.)
+[15:29:23] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[15:32:37] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[15:34:49] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[15:47:44] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[15:52:21] *** Quits: WuBzY (androirc@Pony-72v8l2.rev.dnainternet.fi) (Quit: AndroIRC - Android IRC Client ( http://www.androirc.com ))
+[16:00:20] *** Eventide|Sleepies is now known as Eventide
+[16:07:56] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Connection closed)
+[16:08:50] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[16:36:46] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[16:37:02] *** Joins: Divide|FFXIV (NA@Pony-vf5hfh.cable.rogers.com)
+[16:38:18] *** Quits: Divide|TechSupport (NA@Pony-vf5hfh.cable.rogers.com) (Ping timeout: 121 seconds)
+[16:38:55] *** Joins: djazz` (djazz@Pony-s73dok.tbcn.telia.com)
+[16:39:02] *** Quits: djazz (djazz@djazz.se) (Ping timeout: 121 seconds)
+[16:41:37] *** djazz` is now known as djazz
+[16:53:17] <Stik> do any of you do web app development?
+[16:53:29] <Stik> i've got performance problems tha ti can't track down
+[16:53:50] <Stik> been looking at chrome's timeline stuff but it's got odd gaps
+[17:25:19] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[17:29:48] *** Divide|FFXIV is now known as Divide|Tech
+[17:38:24] *** Joins: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl)
+[17:38:28] *** Double is now known as Pony_54198
+[17:40:12] *** Pony_54198 is now known as Double
+[17:46:16] *** Quits: Darki (DK@Pony-92fd75.vs.webtropia.com) (Ping timeout: 121 seconds)
+[17:53:07] *** Quits: Asoka (Asoka@Pony-obihhb.net-htp.de) (Connection closed)
+[17:55:05] *** Joins: Asoka (Asoka@Pony-obihhb.net-htp.de)
+[17:55:24] *** Joins: Crimson_Tail (Zeta@Pony-su4oaf.cg80.k4gu.0151.2601.IP)
+[17:55:57] *** Quits: Asoka (Asoka@Pony-obihhb.net-htp.de) (Connection closed)
+[17:57:32] *** Joins: Asoka (Asoka@Pony-obihhb.net-htp.de)
+[17:59:46] <Quindo> http://www.twitch.tv/citystream
+[17:59:48] <PinkiePieBot> [ Twitch ]
+[18:00:54] *** Joins: Darki (DK@Pony-92fd75.vs.webtropia.com)
+[18:02:03] *** Quits: Asoka (Asoka@Pony-obihhb.net-htp.de) (Connection closed)
+[18:02:19] *** Joins: Asoka (Asoka@Pony-obihhb.net-htp.de)
+[18:04:43] *** Joins: Datalink (Datalink@Datalink)
+[18:38:12] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[18:39:21] *** Joins: Melanosuchus (quassel@Pony-1odv20.as13285.net)
+[19:02:46] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Quit: Leaving.)
+[19:02:56] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[19:17:49] *** Quits: corkfuse (corkfuse@corkfuse) (Quit: Sleeping)
+[19:27:51] *** Joins: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP)
+[19:35:18] <Compu> well apparently apple may be buying time warner cable
+[19:46:02] *** Joins: DataByte (DataByte@Pony-8fo.77t.152.174.IP)
+[19:46:49] <Gladiolus> pls no
+[19:46:55] <Gladiolus> not because i don't want apple specifically to have it
+[19:46:59] <Gladiolus> but because mergers are bad
+[19:48:44] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: I either come back in tears of joy or sadness.)
+[19:51:54] *** Quits: DataByte (DataByte@Pony-8fo.77t.152.174.IP) (Ping timeout: 121 seconds)
+[20:00:48] *** Quits: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl) (Connection closed)
+[20:07:46] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[20:13:27] *** Snoarin is now known as GigaWork
+[20:28:42] *** Divide|Tech is now known as Divide
+[21:06:26] *** Joins: Asoka_White (Asoka@Pony-k9g7c1.net-htp.de)
+[21:08:03] *** Quits: Asoka (Asoka@Pony-obihhb.net-htp.de) (Ping timeout: 121 seconds)
+[21:13:31] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[21:31:42] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[21:43:20] *** Creeps|AFK is now known as RedHelper
+[22:02:07] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[22:11:40] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[22:44:44] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[23:06:38] <HoneyDrops> I think the only good news is that general relativity limits the amounts of suck that can exist in one place, so Apple + TWC will just implode completely into a singularity.
+[23:07:03] <JustAberrant> man, TWC is like the village bicycle at this point, everyone gets a ride..
+[23:08:12] <JustAberrant> either way, I forsee only good things with apple indirectly getting into the telecom stuff, cause you know, why not.. 
+[23:14:59] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[23:17:24] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[23:23:27] *** Joins: Fallfeathers (Fallfeather@Pony-thli0t.bigpond.net.au)
+[23:33:25] <HoneyDrops> I see it ending badly
+[23:34:19] <HoneyDrops> I don't think phone companies should ever be making the phones.
+[23:34:49] <Phase> does TWC do phones?
+[23:35:00] <Phase> fairly sure they don't have a mobile network
+[23:35:46] <HoneyDrops> I dunno what they do, I have Comcast.  I despise them, but there are no better choices.
+[23:36:17] <Phase> monopolies!
+[23:37:37] <HoneyDrops> I argue the owners of the physical infrastructure shouldn't be the one's handling the services on the lines/fibers. 
+[23:38:02] <Phase> i'm not sure why internet isn't using a system similar to power or water
+[23:38:34] <Phase> you buy from the supplier and there's a network tarrif for the distribution provider
+[23:39:14] <HoneyDrops> Because the right people have enough cash and know who to suck off to keep the systems in place that make them more money?
+[23:39:55] <HoneyDrops> I think phone and internet should be treated like power & water.
+[23:43:14] <CompuDesktop> what would be the easiest way to have ubuntu run a python script when a popup notification shows
+[23:43:29] <JustAberrant> mm
+[23:43:46] <JustAberrant> write a script (preferably not in python) that grabs the screen every second with import -window root
+[23:44:19] <JustAberrant> then calls some tool to do a fuzzy image search for the popup window
+[23:44:28] <JustAberrant> and if it finds it, runs your python script
+[23:44:30] <Phase> should be able to search by window class
+[23:45:04] <JustAberrant> or just scan through ram looking for some kind of key
+[23:45:27] <HoneyDrops> Can you just not have whatever is doing the popup notice trigger the script instead?
+[23:45:28] <CompuDesktop> JustAberrant: ubuntu has its notification system thingy, not popup windows
+[23:45:56] <CompuDesktop> ubuntu uses notify osd
+[23:45:57] <HoneyDrops> You should be able to access that via some dbus.
+[23:46:00] <JustAberrant> HoneyDrops: meh, sounds complicated :(
+[23:46:09] <CompuDesktop> https://wiki.ubuntu.com/NotifyOSD
+[23:46:13] <PinkiePieBot> [ NotifyOSD - Ubuntu Wiki ]
+[23:46:14] <JustAberrant> CompuDesktop: right, and would you say the result of this is some kind of window
+[23:46:23] <HoneyDrops> JustAberrant: compared to scanning live system memory? XD
+[23:46:28] <JustAberrant> CompuDesktop: which might pop somewhere on the screen such that you can see it?
+[23:46:38] <JustAberrant> CompuDesktop: like right UP in front..
+[23:47:00] <CompuDesktop> JustAberrant: pretty sure its not a window, its in front of everything including system menus
+[23:47:17] <JustAberrant> CompuDesktop: what exactly do you think it is?
+[23:47:53] <CompuDesktop> i dont really know
+[23:47:58] <JustAberrant> CompuDesktop: unless it's directly talking to the hardware to draw on top of X it's probably a window ;p
+[23:48:01] <CompuDesktop> i know its called notify-osd
+[23:48:10] <HoneyDrops> CompuDesktop: you should be able to access the signal that is being sent to the notification daemon
+[23:48:29] <Quindo> Anyone manage Enterprise deployments of IOS apps and have issues with the new version of Xcode?
+[23:48:41] <CompuDesktop> hmm
+[23:48:41] <Phase> oh yeah, dbus-monitor
+[23:48:45] <CompuDesktop> maybe this will be easier
+[23:48:50] <Phase> could probably match against its output
+[23:49:02] <CompuDesktop> is there a way i can run the script when hexchat gets a notification?
+[23:49:10] * JustAberrant likes that we throw out the most obvious and direct answer and go for a middle ground :>
+[23:49:43] <HoneyDrops> hexchat get or throws?
+[23:49:46] <HoneyDrops> gets*
+[23:49:48] <JustAberrant> CompuDesktop: an IRC notification or it's own?
+[23:49:58] <JustAberrant> CompuDesktop: either way it's got a scripting interface so I have to assume so
+[23:50:03] <CompuDesktop> HoneyDrops: when someone pings me or sends me a pm
+[23:50:06] <JustAberrant> CompuDesktop: if it's not just an option somewhere
+[23:50:12] <JustAberrant> yeah you can definitely do that
+[23:50:18] <JustAberrant> at least I really hope you can..
+[23:50:21] <CompuDesktop> ok........how?
+[23:50:43] <JustAberrant> write a script?
+[23:50:45] <HoneyDrops> Like every irc client can do it, except ii.
+[23:50:55] * JustAberrant doesn't know the specifics, google it ;p
+[23:51:03] <HoneyDrops> but ii could still use external scripts, trivially.
+[23:51:08] <CompuDesktop> i have the script i want to run already written JustAberrant 
+[23:51:21] <JustAberrant> CompuDesktop: I meant a plugin script for hexchat
+[23:51:43] <CompuDesktop> oh
+[23:51:46] <CompuDesktop> uh
+[23:51:47] <JustAberrant> you could either adapt it to be a script for hexchat, or probably easier to just write a small script to call yours
+[23:51:56] <CompuDesktop> >.>
+[23:52:03] <CompuDesktop> i never written for hexchat before
+[23:52:25] <HoneyDrops> https://hexchat.readthedocs.org/en/latest/script_python.html
+[23:52:27] <PinkiePieBot> [ HexChat Python Interface — HexChat 2.10.0 documentation ]
+[23:52:37] <CompuDesktop> ok 1 more thing about python
+[23:53:29] <HoneyDrops> Surely you can hook to the ping event.
+[23:53:37] <CompuDesktop> if i import a .py file from another directory and that .py file tries to import another .py file, which directory would it import from? the original directory or the one the .py file is in?
+[23:54:04] * JustAberrant wrote a script for irssi that replaces "hate* java"  with "love* ponies" :>
+[23:54:11] <JustAberrant> unrelated but just feel like mentioning this :>
+[23:55:20] <HoneyDrops> Java, I hate.
+[23:55:47] <CompuDesktop> no answer to my question?
+[23:56:07] <JustAberrant> python has no answers, only lies :(
+[23:56:34] *** Quits: Phase (Phase4@Pony-kk0nqh.internode.on.net) (Quit: Leaving)
+[23:56:44] <HoneyDrops> Umm, I would guess first it should look for ./foo.py, then check some set of paths?
+[23:57:07] <JustAberrant> http://pastebin.com/gAEMJVtH :>
+[23:57:07] <PinkiePieBot> [ #!/usr/bin/perl use warnings; use strict; use Irssi; sub privmsg_event - Pastebin.com ]
+[23:57:08] *** Joins: Phase (Phase4@Pony-2qs0vh.internode.on.net)
+[23:57:23] <HoneyDrops> But I dunno really how python's import works.
+[23:57:56] * HoneyDrops can hack just enough python to make tweaks to existing scripts.
+[23:58:07] <JustAberrant> even for a tiny script its good and hackish, wuvily perl :>
+[23:58:20] * JustAberrant is forcing himself to learn python but I really, really, really don't like it
+[23:59:23] *** Obaskyr is now known as Obaskyr_cakedayburd
+[23:59:47] *** Quits: Phase (Phase4@Pony-2qs0vh.internode.on.net) (Quit: Leaving)

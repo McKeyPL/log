@@ -1,0 +1,728 @@
+[00:02:54] *** Quits: Melanosuchus (quassel@Pony-vbpd5g.as13285.net) (Connection closed)
+[00:27:39] <Compu> linkle
+[00:36:48] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[00:37:49] *** Quits: lablayers (uid55894@Pony-r51rb6.ealing.irccloud.com) (Quit: Connection closed for inactivity)
+[00:40:01] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[00:55:13] <Princess_AppleDash> Moonlightning: Who cares if your PC comes with a bundled rogue CA?
+[00:55:18] <Princess_AppleDash> You're gonna install Linux out of the box anyways
+[00:55:23] <Princess_AppleDash> So why does it matter to you?
+[00:57:44] <JustAberrant> pretty much that
+[00:57:58] <JustAberrant> I'd worry about any company that gets their Dell machines and just puts them on the network
+[00:58:09] <JustAberrant> everywhere I've ever worked they have their own image they push down
+[00:58:19] <JustAberrant> windows or otherwise
+[01:08:54] <johnsey> http://wogcc.state.wy.us/SundryPassWord.cfm
+[01:09:02] <PinkiePieBot> [ Sundry Filing Page ]
+[01:10:21] <johnsey> "RECOMMEND YOU DO NOT USE SPECIAL CHARACTERS IN THE DATA YOU ARE SUBMITTING! Such as ~,`,!,@,#,$,%,^,&,*,+,=,?,'," as they are interpreted by SQL and may cause you errors!"
+[01:14:40] *** Joins: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au)
+[01:16:45] <Princess_AppleDash> lol
+[01:16:47] <Princess_AppleDash> Nice.
+[01:17:49] * Princess_AppleDash calls Sour_Sweet
+[01:18:33] <Sour_Sweet> ?
+[01:19:23] <Sour_Sweet> johnsey: lol
+[01:19:33] <Princess_AppleDash> That
+[01:19:40] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[01:20:42] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[01:33:30] *** Joins: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net)
+[01:33:35] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[01:34:38] *** Valiant is now known as Gladiolus
+[01:34:51] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[01:35:22] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[01:37:29] <Moonlightning> Princess_AppleDash: it's not the certs I'm worried about
+[01:37:45] <Moonlightning> It's the firmware, fucking with my Gentoo installation.
+[01:39:11] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[01:41:32] <Princess_AppleDash> Gentoo doesn't really... support that
+[01:42:27] <Moonlightning> You don't need OS support to fuck with shit from firmware
+[01:42:53] <Princess_AppleDash> Fairly certain Windows interfaces with the firmware somehow...
+[01:54:57] <JustAberrant> that'd have to be some pretty damn advanced firmware to do anything meaningful
+[02:03:15] <Princess_AppleDash> Yeah
+[02:08:31] <Kinsley> johnsey: obviously make your password "password123'); DROP TABLE Sundries;--"
+[02:15:58] <Gladiolus> Isn't firmware just like, the interface between the driver and the hardware? Wouldn't most OSes only interact with it super indirectly?
+[02:23:43] *** Joins: Asoka_White (Asoka@Pony-png9f6.net-htp.de)
+[02:26:54] *** Quits: Asoka (Asoka@Pony-ben4o8.net-htp.de) (Ping timeout: 121 seconds)
+[02:43:44] <HoneyDrops> Firmware is the code that runs on the ancillary processors.  Some is almost entirely self-contained (eg: drives), and only interact with the rest of the system though a limited interface (though it might be possible to load new firmware).  Others might run on the peripheral, but are loaded by the main system and the interface affords deeper interactions (eg: wireless NICs).
+[02:48:27] <Gladiolus> Oh that makes sense to me now. I always wondered just what that the hell it /did/ and why some things had it and some didn't.
+[02:48:54] <Gladiolus> Or I mean some didn't have easily user-changeable or w/e, fart
+[03:00:56] <Ola> MEW.
+[03:01:03] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:01:52] <Sour_Sweet> JustAberrant: No you don't. Actually there was a case recently of a PC manufactorer that install software with every windows installation (even from clean medias)
+[03:02:17] <Sour_Sweet> I'll see if I can find the article again
+[03:04:30] <Sour_Sweet> There we go: German article. I will look for a english source now: http://www.golem.de/news/security-lenovos-sanktioniertes-rootkit-1508-115717.html
+[03:04:32] <PinkiePieBot> [ Security: Lenovos sanktioniertes Rootkit - Golem.de ]
+[03:05:21] <Sour_Sweet> English source of the article: https://news.ycombinator.com/item?id=10039306 There must be something better though
+[03:05:23] <PinkiePieBot> [ Lenovo announces laptops using new mobile Xeon processors | Hacker News ]
+[03:05:42] *** Quits: Gladiolus (Corey@Pony-ipvgi3.ed.shawcable.net) (Quit: Leaving)
+[03:05:50] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[03:06:57] <Sour_Sweet> http://www.zdnet.com/article/lenovo-rootkit-ensured-its-software-could-not-be-deleted/ (Unread by me, covers the topic)
+[03:06:58] <PinkiePieBot> [ Lenovo used shady 'rootkit' tactic to quietly reinstall unwanted software | ZDNet ]
+[03:09:15] <Sour_Sweet> Also manufacturer* installs* ;-)
+[03:10:59] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[03:12:53] <JustAberrant> for windows, sure
+[03:13:02] <JustAberrant> but coming up with something that would work on linux, especially gentoo
+[03:13:07] <JustAberrant> so many possible configurations
+[03:13:41] <Sour_Sweet> And all use the same bootloader?
+[03:13:56] * JustAberrant uses extlinux as a boot loader
+[03:14:19] <Sour_Sweet> That's where I'd put my rootkit ;-) UEFI also makes a good target
+[03:14:23] <JustAberrant> not to mention my install is basically  md raid -> dm-crypt -> lvm -> ext4
+[03:14:57] <JustAberrant> to sort that out at the firmware level would be insane
+[03:15:28] <Sour_Sweet> True. It just shows though that it's entirely possible
+[03:16:01] <Sour_Sweet> Also targeted attacks are a thing and not everybodys setup is that complex
+[03:17:17] <Sour_Sweet> I don't even want to think about what a decent UEFI rootkit could do.
+[03:18:48] <HoneyDrops> That is why code signing is a good thing, but the use must be the sole authority on what keys are trusted.
+[03:20:44] <HoneyDrops> s/use/user/
+[03:21:04] <Sour_Sweet> Yeah only that code signing doesn't help in the case of an UEFI rootkit (with a decent exploit to get it installed in the first place).
+[03:22:45] <JustAberrant> sure, it's entirely possible to target my specific system
+[03:22:58] <JustAberrant> but making a generic firmware that would do it and everyone elses would be really hard
+[03:23:10] <JustAberrant> doing one that would target the default ubuntu install, yeah, possible
+[03:23:31] <Sour_Sweet> Also let's be honest here: The only reason Microsoft supports Secure Boot is DRM ;-)
+[03:23:35] <HoneyDrops> verification systems with hardware-only interlocks for modification.
+[03:26:16] <HoneyDrops> User can wipe it immediately, set keys as they like, and then install their UEFI firmware, then bootloader/OS.  The verification system should be easy enough to implement in hardware.  If you don't trust the silicon, then you need to address that elsewhere.
+[03:27:44] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[03:28:20] *** Joins: TuxRug (TuxRug@TuxRug)
+[03:40:20] <Phase> Secure boot: UEFI -Verifies-> Bootloader
+[03:40:32] <Phase> Bootloader -does not verify-> UEFI
+[03:41:10] <Phase> so it's useless for DRM unless you have strong security in the UEFI implementation and boot chain
+[03:41:41] <Phase> and for any real security since there's an api for writing new firmware images and i garuentee you that's broken as fuck
+[03:42:36] <Sour_Sweet> Phase: Tell that to the guys buying restricted tablets with Windows RT
+[03:43:09] <Phase> i'm not convinced people buy those
+[03:43:42] <Sour_Sweet> They do. It's only supposed to prevent users from installing their own OS - which is a form of DRM
+[03:43:43] <Phase> and they probably return it
+[03:44:26] <Phase> unless all they want is office
+[03:45:01] <Sour_Sweet> I hope they do, but is that likely? Also restricted Secure Boot(no option to import your own keys) is a thing even for more standard desktop mainboards.
+[03:45:40] <Sour_Sweet> That's the reason why some Linux bootloaders are signed by Microsoft
+[03:47:20] <Phase> to be clear by 'DRM' i mean in the form of distributing media
+[03:47:34] <Phase> Secureboot in part is there to enforce the 'protected media path'
+[03:48:03] <Phase> or possibly purely for that
+[03:48:17] <Phase> not in locking down a device though yes that's a thing also
+[03:49:07] <Sour_Sweet> Yeah, but that's a very tiny definition. DRM also covers software restrictions on devices imho
+[03:49:17] <Sour_Sweet> Example: Apple
+[03:49:29] <Phase> you have 'runtime uefi services', which is a table of function pointers you call from your kernel at runtime, straight from the firmware with no validation
+[03:49:58] <Phase> so all the fancy patch guard microsoft has is useless since the routinely jump into unverified code
+[03:50:05] <Sour_Sweet> Not allowing you to install your own software protects Apple's distribution channel
+[03:50:07] <Phase> user-editable unverified code
+[03:50:39] <Sour_Sweet> Phase: Secure Boot is only supposed to cover the bootloader
+[03:51:02] <Sour_Sweet> Everything from there on is a different story.
+[03:51:03] <Phase> which loads and verifies the kernel
+[03:51:10] <Sour_Sweet> Hopefully, yes
+[03:51:40] <Sour_Sweet> and access to UEFI from the userlevel should be restricted by the OS
+[03:52:35] <Sour_Sweet> It's a chain down. There is no (or little) protection from messing with the chain the other way around
+[03:53:18] <Phase> that's my point though, nothing actually verifies the bios contents and that is user editable
+[03:53:41] <Sour_Sweet> The bios is supposed to protect itself
+[03:53:56] <Sour_Sweet> You can only install signed updates for example
+[03:54:20] <Sour_Sweet> And useally an API would not allow you to inject code
+[03:54:52] <Sour_Sweet> Even though that the security of the UEFI implementation is questionable
+[03:55:37] <Phase> which relies on the correctness of UEFI implementations, and nothing is stopping you from simply modifying the flash given the correct hardware
+[03:55:58] <Phase> in theory something like a TPM could but i'm always skeptical of the security they can provide
+[03:56:18] <Sour_Sweet> And thanks to how similar they are (since a lot of chip makers copied the reference implementation) a single exploit can easily screw with a huge number of devices
+[03:56:19] <Phase> the idea of putting a computer in someones hands that they can't mess with
+[03:57:23] <Sour_Sweet> Phase: Heh. Physical access never counts. Hacker rules: If someone had physical access to your computer it's not your computer anymore.
+[03:57:58] <JustAberrant> off-topic: https://www.youtube.com/watch?v=-JVqRy0sWWY#t=137  <-- I know crazy flashlights have been a thing for awhile.. but damn..)
+[03:57:59] <PinkiePieBot> 1000W LED Flashlight - Worlds Brightest (90,000 Lumens) - 1031904 views - 5m 31s long - 7030 likes - 98.79%
+[03:58:01] <Phase> that's exactly what a TPM is supposed to change
+[03:58:22] <Sour_Sweet> If I can get physical access to your computer no security module whatsoever can protect you
+[03:58:33] <Sour_Sweet> I might just install a bug on your keyboard.
+[03:58:42] <Sour_Sweet> TMP's can never change that
+[03:58:45] <JustAberrant> on-topic: for those kinda applications I'd go more for tamper evident
+[03:59:02] <JustAberrant> or surveillance
+[03:59:05] <Sour_Sweet> Exactly.
+[03:59:22] <JustAberrant> (which is kinda exactly what they do)
+[04:00:06] <Sour_Sweet> If I can get physical access to your computer - with enough time - there is nothing you can do to prevent me from messing with it.
+[04:00:26] <Phase> Sour_Sweet, TPM's are to remotely verify someone hasn't tampered with a machine provided to them, i think it's used in some cooperates but part of the idea was to implement DRM
+[04:00:49] <Phase> they would remotely verify your machine hasn't been tampered with before allowing a player to download keys and that sort of thing
+[04:01:03] <Phase> in this setup the user is the enemy, not the owner
+[04:01:48] <Sour_Sweet> If I go through the pain of looking for UEFI exploits I might as well take a closer look at the TPM
+[04:02:52] <Sour_Sweet> I haven't seen TPMs in action yet. Even we (financial industry) didn't use them
+[04:03:04] <Phase> they're not common
+[04:03:07] <Sour_Sweet> Apart from the Windows BitLocker requirement thing that is
+[04:03:27] <Phase> my machine has one by mistake, never felt the need to use it
+[04:03:34] <Phase> not even sure what i'd use it for
+[04:03:42] <Sour_Sweet> by mistake?
+[04:03:47] <Phase> key storage maybe? gnome-keyring isn't set up to use it
+[04:04:06] <HoneyDrops> The problem with TPM (and why it's "bad" in many ways) is you can't (and shouldn't) secure a system against the user.
+[04:04:09] <Phase> Sour_Sweet, it was an option with this laptop, i didn't order one but got one anyway
+[04:04:41] <Phase> HoneyDrops, yet microsoft, apple, telecoms, and most media companies in the US are trying to do exactly that
+[04:04:59] <Sour_Sweet> And they'll fail eventually
+[04:05:09] <Phase> heck, modern game consoles are built in part around that
+[04:05:14] <HoneyDrops> Phase: and fuck them for even trying or entertaining the idea that it is every acceptable
+[04:05:16] <Phase> which is why cheaters are rampant on console ports
+[04:05:18] <Sour_Sweet> No iOS version unbroken yet
+[04:05:30] <Phase> they have no anti-cheat because they trust the users consoles
+[04:05:49] <Sour_Sweet> Yeah consoles are cheat free. I suggest looking up "lag switch"
+[04:05:55] <HoneyDrops> Cheating is not a technological problem and there will never be a successful technological solution.
+[04:06:15] <Phase> validating client output is though
+[04:06:41] <Phase> you can't solve everything but "spawn object" is not a valid comand in gta online freemode
+[04:06:47] <Phase> yet it blindly accepts it from clients
+[04:06:59] <Phase> that's a single conditional they can't be bothered to add
+[04:07:19] <Sour_Sweet> GTA:O is a failure by design
+[04:07:25] <HoneyDrops> Well yes, you can make it harder (or at least non-trivial) to cheat, but the only real solution boils down to: play with people you trust.
+[04:07:27] * Phase is a bit butthurt over gta:o cheaters blowing up a cargo bob
+[04:07:32] <Phase> cost me entire minutes they did!
+[04:07:53] <Sour_Sweet> I have like 600 hours of GTA:O
+[04:08:13] <Sour_Sweet> Most of the sessions have multiple cheaters
+[04:08:40] <Phase> HoneyDrops, you can make it not fun
+[04:08:41] <Sour_Sweet> I don't even count how often UFOs have dropped on me, I was exploded or crashed
+[04:09:01] <Sour_Sweet> (by crash I mean actueal crash to desktop)
+[04:09:40] <Sour_Sweet> Not hardware protection can solve bad software design
+[04:10:11] <Phase> HoneyDrops, and again, that you can spawn objects in gta:o, control crits in source games, and so on is a technical failing.
+[04:10:27] <Phase> there's an absolute lack of attempt to prevent it
+[04:10:28] <HoneyDrops> Phase: I think making it non-trivial makes it more fun.  I love poking around memory segments or running things in a debugger to mess with things.
+[04:10:47] <Sour_Sweet> Modifying the packets works on "next gen"  as well.
+[04:11:02] <Phase> ^ yeah, but it's less common
+[04:11:13] <Phase> the problem cheaters are "hey i found this cool program that lets me fuck with people"
+[04:11:20] <Phase> not the ones with the skill to engineer that program
+[04:11:35] <HoneyDrops> But I play singleplayer, to me I just like to mess with a system after I'm finished with the game "as designed" after that I like to see what neat things I can do with a game.
+[04:12:08] <HoneyDrops> Or just RE the game mechanics
+[04:12:18] <Sour_Sweet> It wouldn't uncommon when changing the DNS server would still work. Sadly they figured that out before the new consoles launched
+[04:12:59] <Sour_Sweet> And frankly GTA:O got a time bonus here. How long will the protection last?
+[04:13:20] <Phase> which you can still work around but the 12 year old xxxl33tg4mrxxx is the guy i'm worried about, not HoneyDrops who would be capable of iptables
+[04:13:22] <Sour_Sweet> And are actually motivated and skilled people even working on breaking it?
+[04:14:00] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[04:14:22] <Sour_Sweet> Most people I know with basic (sfotware) engineering knowledge don't touch a console
+[04:14:26] <Phase> Sour_Sweet, you do everything server side, protections could be added/modified at runtime, they last until they're noticed
+[04:14:27] <Sour_Sweet> (Just like me)
+[04:14:58] <HoneyDrops> I actually prefer console games, but that is because of the types of games I like.
+[04:15:17] <Sour_Sweet> That's where the failure by design comes in: There is no server in p2p bullshit
+[04:16:09] <Moonlightning> Hmmmm.
+[04:16:18] <Sour_Sweet> We had a SA-MP (GTA:SA MP MOD) server running and wrote an anticheat that had detection for almost every commonly used cheat
+[04:16:22] <Phase> private servers would be nice too
+[04:16:41] <Phase> HoneyDrops, ^
+[04:16:44] <Moonlightning> For P2P, couldn't you have each peer validate the actions of others and drop peers that did impossible things?
+[04:16:54] <Phase> cheats can be stopped :P
+[04:16:58] <Moonlightning> Maybe get a network-consensus thing going?
+[04:17:09] <HoneyDrops> Well yes, every game with MP should have a private server option.
+[04:17:09] <Phase> Moonlightning, that's something i've had running around in my head for years
+[04:17:21] <Phase> never been in a position to act on it
+[04:17:23] <Sour_Sweet> Moonlightning: Failure by design doesn't allow smart idea
+[04:17:26] <Sour_Sweet> s
+[04:17:58] <Sour_Sweet> Also even vote kick is broken in GTA:O
+[04:18:11] <Phase> there are some potentially harder problems, lag switches for example
+[04:18:24] <Sour_Sweet> I'm quite certain at this point that even the one being voted against needs to vote for his kick
+[04:18:30] <Phase> just lag straight through walls, stopping that means pathfinding between every change in a characters position
+[04:19:24] <Phase> depending on the game you could offload some of that to clients, get the server involved when a client flags something and validate there
+[04:19:28] <LegionRed> Sour, it requires a 75% majority to kick someone from a game in GTA.
+[04:19:44] <LegionRed> Which will never happen in a lobby with 10 people. 
+[04:19:47] <Sour_Sweet> Which will never happen :D
+[04:20:05] <Sour_Sweet> Too late ... (I was being sarcastic btw)
+[04:20:59] <Sour_Sweet> Considering there isn't even a popup / notification for votekicks
+[04:21:26] * Phase wasn't actually aware there were votekicks
+[04:21:57] <LegionRed> You'll be notified if someone voted to kick you. But everyone else is none the wiser. 
+[04:22:20] <LegionRed> And just someone... not who voted to kick you.
+[04:22:24] <Sour_Sweet> Oh and reports are also nice: A cheater can just reset them and there is no option to report someone using cheats (only bugs/exploits)
+[04:23:01] <LegionRed> Rockstar doesn't know how to do online games. This is pretty much their first real one. 
+[04:23:25] <Sour_Sweet> I mean hey you can even blow people up with singleplayer only weapons. The action is logged by SC and still you don't get a ban or at least a kick
+[04:23:55] * Phase was about to ask if cheaters had total control over vote kicks
+[04:24:00] <Phase> they have control of everything else
+[04:24:17] <Sour_Sweet> They don't need votekicks. They can just crash you
+[04:24:23] <Sour_Sweet> That's way easier
+[04:24:27] <Phase> true
+[04:24:33] <Sour_Sweet> Since votekicks never go through anyway
+[04:24:50] <LegionRed> Because online, is exactly the same as singleplayer. All of the scripts and everything that is GTA exists in both. IF you can do it in single player. You can do it online.
+[04:24:59] <LegionRed> Mods, cheats, exploits. Everything.
+[04:25:30] <Sour_Sweet> That wouldn't matter with a server that sanity checks your actions
+[04:25:31] <LegionRed> Theres only very sparce checks and preventatives to keep you from doing whatever you want. 
+[04:25:35] <Sour_Sweet> But nope ...
+[04:25:45] * Phase hasn't seen evidence of any check
+[04:25:48] <Phase> you can even just spawn in money
+[04:25:57] <Sour_Sweet> Phase: In certain limits
+[04:26:05] <Phase> which i'm considering doing because my god heist crews
+[04:26:05] <Sour_Sweet> You cannot modify your account balance
+[04:26:14] <Phase> you'll get people leaving litterally seconds before the mission finishes
+[04:26:27] <Sour_Sweet> You will get banned eventually if you over do it
+[04:26:28] <Phase> Sour_Sweet, but you can spawn in money bags
+[04:26:39] <LegionRed> You can only spawn in objects which exist on all clients. Or modify server based files without doing the actions in game required to affect them... thats is.
+[04:26:40] <LegionRed> it*
+[04:26:57] <LegionRed> Thats really the only limits. 
+[04:27:24] <LegionRed> Theres also ways around getting banned for money modding.
+[04:27:36] <Sour_Sweet> The storage server also sanity checks sell prices. You can modify them, but that will get you banned
+[04:28:36] <LegionRed> Only because so so so many of the glitches involved selling cars.
+[04:28:53] <LegionRed> They just keep putting plugs in the holes of a leaky boat.
+[04:29:04] <Lapsus> Rockstar flags the account for a ban if you pick up certain spawned money pickups that don't normally occur in gta:o
+[04:29:15] <Sour_Sweet> Yeah it's a lost cause :P
+[04:29:29] <Moonlightning> …is pathfinding between…
+[04:29:31] <Lapsus> also flags on some hidden weapon skins to try to combat unlock-everything
+[04:29:32] <Moonlightning> is it really that expensive?
+[04:29:42] <Sour_Sweet> Lapsus: They don't. I've pickedup millions of dollars (not willingly)
+[04:29:54] <LegionRed> It's not a lost cause... exactly... They could fix it. But it would require building the shell of a new hull around the old... 
+[04:30:13] <Lapsus> Sour_Sweet: They apparently review it to see if you were asking for it now, but I was banned for having it dropped on me
+[04:30:14] <Sour_Sweet> Because people think it's a good idea to shoot with money bags miniguns
+[04:30:51] <Phase> Moonlightning, i don't know
+[04:30:53] <Lapsus> someone also did the thing where they blow up everyone except you and credit the kills to you to frame you for their bs
+[04:31:01] <Sour_Sweet> Lapsus: O_o First case I know of. I have about 6kk from cheating folks so far
+[04:31:03] <Phase> Moonlightning, but when you're working at WoW scales it probably is
+[04:31:06] <LegionRed> They should fire the normal money stacks instead of bags.
+[04:31:16] <Sour_Sweet> Lapsus: fakekill
+[04:31:21] <Lapsus> yeah
+[04:31:47] <Lapsus> regardless, I got a month's ban because that's apparently what they do for a first offence
+[04:31:53] <Phase> my brother got the game soon as it came out for pc and immediately got some stupid amount of money from his friends
+[04:31:54] <Lapsus> I can't take anymore chances
+[04:32:02] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[04:32:05] <Phase> was banned recently but kept everything except the money
+[04:32:25] <Sour_Sweet> I don't use any cheats and didn't get an ban ;-)
+[04:32:28] <Sour_Sweet> a*
+[04:32:43] <LegionRed> I tend toward only playing in private matches.
+[04:34:14] <Lapsus> ^
+[04:35:55] <Sour_Sweet> I don't :D http://socialclub.rockstargames.com/member/seoson
+[04:36:08] <Sour_Sweet> Murdering people is way too much fun
+[04:39:43] <LegionRed> http://socialclub.rockstargames.com/member/draconisequus
+[04:41:38] <Sour_Sweet> Ohhh "This memberis not sharing game stats"
+[04:42:34] <LegionRed> Really?
+[04:42:36] <LegionRed> Huh...
+[04:42:38] <LegionRed> Thats weird.
+[04:43:24] <LegionRed> Try it now.
+[04:43:51] <LegionRed> My stats page was open, but my profile page wasnt...
+[04:44:56] <Sour_Sweet> Car sales 40kk - legit - not :P
+[04:45:27] <Moonlightning> 40m
+[04:45:33] <Sour_Sweet> kk = m
+[04:45:34] <Moonlightning> no one says /thousand thousand/, come on 9.9
+[04:45:38] <LegionRed> You can call foul if you want too. I know better. Because I sold each and every one of those cars.
+[04:45:41] <Moonlightning> That's not how you units :V
+[04:46:13] <LegionRed> Cars exported count toward cars sold, as well. 
+[04:46:15] <Sour_Sweet> I started with MMORPGs. KK is cmmon there
+[04:46:19] <LegionRed> Cars exported: 357
+[04:46:48] <LegionRed> Thats a little over 4 million right there.
+[04:46:51] <Sour_Sweet> LegionRed: I don't doubt you didn't sell the cars, but there origin is not legit nor is their value
+[04:47:08] <LegionRed> The rest comes from selling a car every 48 minutes, on a timer. Over all 1600 hours I've played the game.
+[04:48:08] <LegionRed> Ever since the current gen came out. I've sold nothing by modified cars, as well. Which for quite a while I was selling the Dubsta2, which sold for 23,250 each. 
+[04:48:34] <LegionRed> I've been selling the 18,495 blue sandking since they patched that spawn. 
+[04:50:26] <Sour_Sweet> I knwo a cheater's profile when I see it
+[04:52:03] <Sour_Sweet> You skills are all maxed. Doing that for strength is a pain (but doable). Keeping them is not. You'll loose progress over time. All bars filled to the end is unlikely. Not to mention how many cars you must have sold to get 40kk legit
+[04:52:36] <LegionRed> You don't lose strength...
+[04:52:44] <Lapsus> yes you do
+[04:52:45] <LegionRed> You don't lose anything but mental status.
+[04:52:51] <LegionRed> You don't, not on ps4.
+[04:53:04] <Lapsus> they all go down very slowly now if you don't use them :v
+[04:53:21] <LegionRed> Then I use them... I punch people for amusement.
+[04:53:27] <LegionRed> I run, I shoot, I drive, and fly.
+[04:53:33] <Lapsus> yep :3
+[04:53:39] <Lapsus> mine are all full also
+[04:53:54] <Sour_Sweet> Look at my profile. Don't you think I'd have used them all the time?
+[04:54:06] <Sour_Sweet> Apart from that the car sales are what puts me off
+[04:54:08] <LegionRed> And, Sour. I call you un-enterprising. You've no idea how to maximize the money from selling cars if you don't think my stats are doable.
+[04:54:17] <Lapsus> cba to sign in
+[04:54:42] * Googie is annoyed that Rockstar put out a Cease and Desist against the projects that were working to actually improve GTA Online :/
+[04:54:51] <LegionRed> I've also sold off a few cars worth a lot of money from my collection. That counts as money 'made'. 
+[04:56:20] <LegionRed> 42 mill is not a lot of money from car sales when people who glitch money have made over 100 from it. Perhaps you should go find an actual car dup'ers stats and compare them.
+[04:56:36] <LegionRed> GTA has been out a very long time. I've been on it since the second day of GTA:O.
+[04:56:49] <LegionRed> 42 mill isn't a lot over 2 years of selling cars.
+[04:56:55] <Googie> Well, actually not even legal action, just sending up PIs to the developer's door.
+[04:58:14] <LegionRed> Oh, I was wrong... I have over 2000 hours in GTA:O.
+[04:58:21] <LegionRed> So... lets see.
+[05:00:22] <LegionRed> Thats around enough time to sell 2,600 cars. 
+[05:00:33] <LegionRed> For my 2080 hours of play.
+[05:01:02] <LegionRed> Course, I wasn't perfect. As these stats are... but you can add in the export cars and sold cars which I spent money on to make up for that.
+[05:01:34] <Moonlightning> Googie: doesn't that count as harassment or something? O.o
+[05:01:47] <LegionRed> If each car was only worth $1000 thats 26,00,000
+[05:02:02] <LegionRed> 2,600,000*
+[05:02:58] <LegionRed> I always sold 9k ballers on old gen, and almost since launch of the next gen I was selling cars worth more than 15k. 
+[05:04:45] <LegionRed> I could honestly have more money than this from selling cars. If they'd not have patched the 23k dubsta spawning up in the hills. 
+[05:05:16] <Kinsley> Moonlightning: it could. Depends on the local laws, how the PIs behaved.
+[05:05:50] <Sour_Sweet> The 357 cars you've exported make only a tiny fraction of the money you've earned with that. So tiny that you can ignore them
+[05:06:05] <Sour_Sweet> 40kk/2000
+[05:06:09] <LegionRed> Each of those is a 12k car.
+[05:06:17] <Sour_Sweet> = 20k/h
+[05:06:22] <LegionRed> I only take in the most expencive one.
+[05:06:34] <LegionRed> F620.
+[05:07:04] <LegionRed> Thats 4.2 mill.
+[05:07:09] <Sour_Sweet> The most expensive car is not the F620, but the Felon GT with about 9k unmodded
+[05:07:14] <LegionRed> ...
+[05:07:21] <LegionRed> You can't export the Felon.
+[05:07:36] <Sour_Sweet> Which makes sense because the limit is 100k
+[05:07:40] <LegionRed> http://gta.wikia.com/wiki/Simeon_Car_Export_Requests
+[05:07:41] <PinkiePieBot> [ Simeon Car Export Requests - GTA Wiki, the Grand Theft Auto Wiki - GTA IV, San Andreas, Vice City, cars, vehicles, cheats and more - Wikia ]
+[05:07:43] <LegionRed> Wrong. 
+[05:07:45] <Sour_Sweet> Not talking about exports
+[05:07:46] <LegionRed> Theres no limit.
+[05:07:49] <LegionRed> Theres a list.
+[05:07:59] <Sour_Sweet> The number is so low it doesn't matter
+[05:08:14] <LegionRed> 4.2 is 10% of my total car income.
+[05:08:23] <LegionRed> Thats not low.
+[05:08:42] <LegionRed> Thats like me calling you Sour_Swee 
+[05:08:46] <LegionRed> Thats 90% of your name.
+[05:09:02] <LegionRed> We'll just ignore that last 10% from now on.
+[05:09:03] <Sour_Sweet> in terms of 43.4kk it is :P
+[05:09:33] <LegionRed> Then it's not ignorable.
+[05:10:28] <LegionRed> Oh, I forgot about somethign else that counts toward car sales... The high priority simeon export vehicles that don't really spawn anymore.
+[05:10:37] <LegionRed> Those count as well, and are worth even more.
+[05:11:02] <Sour_Sweet> Doesn't matter anyway because my argument is that while it would be possible to earn that much money with cars (20k/h) it doesn't make sense considering the average playtime of both heits and missions.
+[05:11:22] <Sour_Sweet> So it's most likely the sales were made with duped cars
+[05:11:24] *** Gigaway is now known as Gigabit
+[05:11:42] <Sour_Sweet> heists*
+[05:12:09] <Sour_Sweet> A duped car gives you about 150k/sale
+[05:13:03] <Sour_Sweet> about 200 sold duped cars sounds much more realistic.
+[05:13:03] <LegionRed> If I had duped cars. I'd not have only 43 mill in car sales.
+[05:13:21] <LegionRed> I'd have well over 100 like everyone ese.
+[05:13:26] <LegionRed> else.*
+[05:13:33] <Sour_Sweet> The people I know did it don't
+[05:13:41] <LegionRed> As it stands, only about 5 mill of my total income is not fully legit money.
+[05:13:48] <Sour_Sweet> Because why? You don't need that much money anyway
+[05:14:12] <LegionRed> I don't. But I am very good with my money.
+[05:14:28] <Sour_Sweet> I have almost every item in the game, even I don't need any more money
+[05:14:46] <Sour_Sweet> And I have well below 70kk
+[05:14:48] <LegionRed> Same, which is why I have so much. I've continued to make it even tho I don't need it.
+[05:15:27] <LegionRed> Perhaps I should show you something. 
+[05:15:28] <LegionRed> https://www.youtube.com/watch?v=wZoxgAmhXjo
+[05:15:28] <PinkiePieBot> How to spawn the Blue/Yellow custom Sandkings at the LSC in Blane County near Sandy Shores. - 44 views - 2m 42s long - 2 likes - 100.0%
+[05:15:37] <LegionRed> This... I've been doing this for a very very long time...
+[05:15:51] <LegionRed> And each of those is worth 18,495. 
+[05:16:48] <LegionRed> Those, and the cars I've sold from my collection, plus the gold/chrome dubsta2. Pretty much make up the entirety of my car sales. 
+[05:17:26] <LegionRed> That are not accounted for by exports and the high priority vehicles. This is how you maximize money from selling cars. 
+[05:17:31] <LegionRed> Stock them.
+[05:21:02] <LegionRed> https://www.youtube.com/watch?v=doRi-PU0_dQ
+[05:21:03] <PinkiePieBot> Dubsta Ballerina - 30 views - 27s long - 2 likes - 100.0%
+[05:21:20] <LegionRed> And, one of the expensive ones doing something silly.
+[05:26:58] <LegionRed> I wish it told me how many cars I've sold...
+[05:43:16] *** Joins: Gladiolus (Corey@Pony-ipvgi3.ed.shawcable.net)
+[06:02:35] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[06:12:19] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[06:45:27] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[06:51:33] *** djazz is now known as MangoBloom
+[06:52:40] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[06:55:25] *** Eventide is now known as Eventide|Sleepies
+[06:59:47] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[07:04:58] *** Quits: TuxRug (TuxRug@TuxRug) (Connection closed)
+[07:09:40] *** Joins: Skids (ejd@Pony-fej07d.res.rr.com)
+[07:12:34] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:22:08] *** Quits: Skids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:35:47] *** RedHelper is now known as Creeps|AFK
+[07:57:18] <tiwake> https://dl.dropboxusercontent.com/u/532297/ha/TCP-joke.jpg
+[07:58:22] <HoneyDrops> :D
+[07:59:38] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[08:28:34] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[08:30:37] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[08:33:41] <Moonlightning> tiwake XD
+[08:33:43] <Moonlightning> I've seen it, but x3
+[08:34:36] <tiwake> Moonlightning: how much latency do you think having a RAID array on a 10G network would add as apposed to having it local?
+[08:35:16] <tiwake> I don't think it would add much
+[08:35:20] <Moonlightning> A pure-Ethernet LAN not spanning more than a building or maybe two?
+[08:35:30] <tiwake> yeah
+[08:35:34] <Moonlightning> I mean, if you're actually asking, I'm not the right pony
+[08:35:40] <Moonlightning> But I can't imagine that it would be noticable.
+[08:35:58] <Moonlightning> …well, wait, /noticable…/
+[08:36:06] <tiwake> I don't think it would really be noticeable
+[08:36:13] <Moonlightning> Yeah, I dunno. Ask the channel?
+[08:36:21] <tiwake> you are the channel
+[08:36:58] <tiwake> other than through benchmarking, I don't think it would be
+[08:37:13] <tiwake> esp. if a RAM disk is used for a cache
+[08:37:37] <tiwake> ping time to my router is ~0.35ms
+[08:37:55] <tiwake> I saw some numbers for a SATA SSD having about 1ms latency
+[08:39:18] <tiwake> also, I wouldent call my current set of routing equipment great... its alright, just not great
+[08:41:57] <tiwake> if using a RAM disk as a cache, or a PCIe SSD, I think latency added would not be noticeable outside of benchmarking
+[08:43:33] <tiwake> aji: any idea?
+[08:43:42] <tiwake> or anyone else
+[08:43:47] <aji> i'm awake
+[08:43:50] <aji> hi
+[08:44:09] <tiwake> lol
+[08:44:11] <tiwake> hi :3
+[08:44:49] <tiwake> aji: read backlog starting 15min ago
+[08:45:11] <tiwake> well, 10min
+[08:45:22] <tiwake> 11 now? w/e
+[08:46:34] *** zz_CyberJacob is now known as CyberJacob
+[08:46:53] <aji> i have no idea
+[08:46:56] <aji> hardware is not my thing
+[08:47:05] <tiwake> who should I ask?
+[08:47:08] <tiwake> lol
+[08:47:09] <aji> if you have a software question (and then only from a theory standpoint) then i'm yer guy
+[08:47:13] <aji> no idea
+[08:47:16] <aji> maybe colgate idk
+[08:47:21] <tiwake> you fail
+[08:47:25] <aji> :(
+[08:47:25] <tiwake> lol
+[08:47:36] * tiwake hugs aji with all the love
+[08:47:41] * aji hugs
+[08:48:07] <Princess_AppleDash> i<3aji
+[08:48:21] *** Joins: Melanosuchus (quassel@Pony-vbpd5g.as13285.net)
+[08:48:34] *** Quits: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Quit:  HydraIRC -> http://www.hydrairc.com <- IRC with a difference)
+[08:52:26] <tiwake> aji: I really think it might add maybe 0.5ms (or less) more latency to a SATA drive shared over the network, for a hard drive thats not noticeable, for a SSD it would be kinda noticeable... I should do a test or something
+[08:52:57] <tiwake> make a RAM disk, hook up a sata SSD, and a SATA hard drive and compare added latencies
+[08:53:03] <aji> yeah tbh testing is a good approach to this kind of thing
+[08:53:08] <aji> get some graphs and stuff
+[08:53:14] <tiwake> also kinda expensive
+[08:53:21] <tiwake> I need government money
+[08:53:30] <tiwake> research grant
+[08:54:45] <tiwake> I don't really have the right networking stuff at the moment to test that
+[08:55:58] <tiwake> http://serverfault.com/questions/643386/what-is-the-real-world-speed-stream-latency-of-usb3-and-usb2-over-sata
+[08:55:58] <PinkiePieBot> [ benchmark - What is the real-world speed (stream, latency) of USB3 and USB2 over SATA? - Server Fault ]
+[08:59:13] *** Quits: Gladiolus (Corey@Pony-ipvgi3.ed.shawcable.net) (Quit: Leaving)
+[09:02:17] *** Joins: Phase (Phase4@Pony-mh3bcb.internode.on.net)
+[09:07:02] <tiwake> http://blog.richardelling.com/2012/03/iops-and-latency-are-not-related-hdd.html
+[09:07:03] <PinkiePieBot> [ Ramblings from Richard's Ranch: IOPS and latency are not related - HDD performance explored ]
+[09:07:19] <tiwake> I'm going to bed
+[09:11:11] *** Quits: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au) (Quit: My people need me!)
+[09:11:42] *** Quits: Melanosuchus (quassel@Pony-vbpd5g.as13285.net) (Quit: Bye!)
+[09:11:56] *** Joins: Melanosuchus (quassel@Pony-vbpd5g.as13285.net)
+[09:20:57] *** Quits: Melanosuchus (quassel@Pony-vbpd5g.as13285.net) (Connection closed)
+[09:28:00] *** Joins: Sombra (Iceman@Darkhorse21)
+[09:28:27] *** Quits: Crimson_Tail (Bluepon@Pony-rjj947.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[09:28:51] *** CyberJacob is now known as zz_CyberJacob
+[09:37:17] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[09:50:08] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Connection closed)
+[09:54:15] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[09:56:05] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[10:11:20] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[10:11:51] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:34:49] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[10:38:55] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[10:46:27] <Phase> https://twitter.com/Viss/status/668991304634753024
+[10:46:28] <PinkiePieBot> [ Dan Tentler on Twitter: "so eh, I guess dell doesn't like wildcard certs. this is from 'https://t.co/QHKDd2bF9s'. https://t.co/d2Gxck7Mvz" ]
+[11:36:35] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[11:45:09] *** Quits: thatdguy (WebChat@Pony-70t9ea.abo.wanadoo.fr) (Quit: Page closed)
+[11:59:46] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[12:03:25] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[12:52:35] <Sour_Sweet> Turns out Dell really screwed up. Not only Dell branded devices come with the eDellRoot cert, but also devices from Dell owned brands (e.g. Alienware)
+[13:50:19] <Compu> Sour_Sweet: why is that a screw up?
+[13:50:49] *** Quits: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Ping timeout: 121 seconds)
+[13:51:58] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[13:52:13] <Sour_Sweet> Shipping devices with the same root CA that includes the private key and is able to sign everything for every other device sounds like a horrible idea (e.g. MITM)
+[13:52:37] <Compu> k
+[14:09:09] <Moonlightning> …
+[14:09:16] <Moonlightning> They SHIPPED THE PRIVATE KEY?
+[14:09:19] <Moonlightning> On the devices!
+[14:09:28] <Moonlightning> They GAVE THE PRIVATE KEY TO EVERYONE?
+[14:09:35] <Moonlightning> holy fucking SHIT!
+[14:22:25] <Sour_Sweet> The key flagged unexportable in the cert store. As if that would stop anyone.
+[14:22:46] <Sour_Sweet> ... Is ...
+[14:25:24] <Sour_Sweet> Also we had someone here using FF tab grouping. Say goodbye to that feature. Mozilla decided to remove it.
+[14:32:50] *** Quits: Compu (compu@snuggly.filly) (A TLS packet with unexpected length was received.)
+[14:39:06] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[14:39:57] *** Eventide|Sleepies is now known as Eventide
+[14:45:23] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[15:05:43] *** Joins: Compu (compu@snuggly.filly)
+[15:10:42] <Compu> whats with stealth keyboards, how do u even
+[15:20:19] <Moonlightning> I spend way too much time fucking around with comments
+[15:25:16] <Moonlightning> https://gist.github.com/BlacklightShining/80814d04268022c83e7c/revisions
+[15:25:17] <PinkiePieBot> [ Revisions · base64-encode-capacity-comment.rs · GitHub ]
+[15:25:24] <Moonlightning> Revision timestamp offsets not to scale.
+[15:25:27] <Moonlightning> I spent eighteen minutes on this.
+[15:41:27] *** Joins: thatdguy (WebChat@Pony-pkbcdj.fbx.proxad.net)
+[15:54:07] <WorkingData> hahahaah http://imgur.com/gallery/xPALHUp
+[15:54:07] <PinkiePieBot> [ My Boss is a 60+ year old man and this is his desktop - Imgur ]
+[15:54:14] <WorkingData> was not expecting that, hahaha
+[15:55:21] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[15:59:50] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[16:05:16] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:05:42] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[16:41:03] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:48:33] <tiwake> Sour_Sweet: tab grouping is gone?
+[16:48:46] <Sour_Sweet> Will be gone.
+[16:48:53] <tiwake> since when
+[16:49:03] <tiwake> its my favorite feature of firefox
+[16:49:42] <Sour_Sweet> https://bugzilla.mozilla.org/show_bug.cgi?id=1222550
+[16:49:46] <PinkiePieBot> [ 1222550 – Product plan: remove tab groups (panorama) ]
+[16:51:37] <tiwake> if it gets turned into an addon, thats fine
+[16:53:00] <Sour_Sweet> It's dumb. Remove hello instead :P
+[16:53:22] <tiwake> that
+[16:59:16] <johnsey> well, i'm guessing that the majority of tab group users simply didn't have usage statistics submission enabled
+[17:01:07] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:03:41] <tiwake> johnsey: hmm, I'm not seeing that option
+[17:05:11] <tiwake> is it "enable firefox health report"?
+[17:07:10] <johnsey> no, it's toolkit.telemetry.enabled, which is enabled by default on nightly, dev and beta builds but i can understand why you might not want to have this enabled for privacy reasons 
+[17:08:24] <johnsey> https://support.mozilla.org/en-US/kb/share-telemetry-data-mozilla-help-improve-firefox?redirectlocale=en-US&redirectslug=send-performance-data-improve-firefox
+[17:08:25] <PinkiePieBot> [ Share telemetry data with Mozilla to help improve Firefox | Firefox Help ]
+[17:09:00] <johnsey> the UI option does not seem to be shown for normal builds but the about:config option exists
+[17:09:56] <tiwake> huh, its disabled
+[17:10:14] <johnsey> yeah. you might wanna read up on the data it sends before enabling it though
+[17:10:37] <tiwake> does not matter now, they are already set to take away my favorite feature
+[17:11:59] <johnsey> you can still protest and hope they'll change their mind
+[17:12:46] <johnsey> they are saying that they are removing it because nobody is using it. if enough people prove them wrong, there might still be a reconsideration
+[17:12:55] <johnsey> just saying
+[17:14:50] <tiwake> https://bernardopires.com/2014/03/rails-vs-django-an-in-depth-technical-comparison/
+[17:14:53] <PinkiePieBot> [ Rails vs Django: an in-depth technical comparison ]
+[17:15:56] *** Joins: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com)
+[17:18:49] <LordShadowWing> Hello Everyone, I am having an issue with my Trisquel install, I can read from, but not write to 1.44 MB floppy disks
+[17:19:04] <LordShadowWing> if anyone knows anything
+[17:22:20] <johnsey> that is a terribly unspecific error description
+[17:22:35] <johnsey> please try again
+[17:23:23] <tiwake> add more ponies
+[17:24:02] <LordShadowWing> johnsey, there is no error message
+[17:25:02] <johnsey> did you rule out all hardware issues?
+[17:25:31] <tiwake> check kernel logs?
+[17:25:46] <tiwake> or any other logs
+[17:26:19] <LordShadowWing> johnsey, The floppies work in winblows
+[17:27:15] <johnsey> dd something to it then, verify if successful and check dmesg 
+[17:28:15] <tiwake> <3 dd
+[17:30:49] <LordShadowWing> johnsey, dd works flawlessly, wrote urandom
+[17:31:53] <johnsey> sync, remove disk, reinsert, check if data was actually stored
+[17:32:00] <LordShadowWing> sync
+[17:32:08] <johnsey> yes, sync is the important bit
+[17:33:25] <LordShadowWing> johnsey, Successful write
+[17:34:04] <johnsey> apparently writing floppies works after all. how were you trying it before?
+[17:35:17] <LordShadowWing> Was just trying to copy a file
+[17:35:40] <johnsey> did you umount the volume after doing that?
+[17:35:45] <LordShadowWing> yes
+[17:36:10] <johnsey> and the file was missing when you remounted it?
+[17:36:30] <LordShadowWing> IT wouldn't even write the file
+[17:37:04] <johnsey> did you try to copy it using cp?
+[17:37:18] <LordShadowWing> Gnome File Manager
+[17:37:35] <johnsey> try doing it with cp and see if it works
+[17:43:14] <LordShadowWing> Permission denied
+[17:44:55] <tiwake> lolfail
+[17:45:17] <LordShadowWing> Apparently root ownd the fat16 partition
+[17:51:34] <Moonlightning> And this file manager was hiding that error from you?
+[17:51:36] <Moonlightning> Can it!
+[17:51:44] <Moonlightning> …sack * it, rather
+[17:53:32] <LordShadowWing> I'm not doing EVERYTHING via terminal
+[17:53:59] <LordShadowWing> I have been Using GNU/Linux For years
+[17:54:50] <LordShadowWing> This is just my first time trying to copy files to floppy for a friend with an old computer that only had a floppy drive
+[17:55:11] <Moonlightning> > 2015
+[17:55:17] <Moonlightning> > only storage is floppy drive
+[17:55:21] <Moonlightning> what the actual fuck O.o
+[17:55:48] <johnsey> Moonlightning: what does it matter whether it's harddisk, floppy or tape drive? :P
+[17:55:58] <Moonlightning> LordShadowWing: also, any SANE file manager will TELL YOU when permission was denied, rather than //silently eating the error//
+[17:56:12] <Moonlightning> I mean…come on.
+[17:56:15] <LordShadowWing> He is happy with his Windows 3.11 System on his computer with a 210MB hdd 24MB ram and 33MHZ 80486sx cpu
+[17:56:18] <johnsey> the important lesson is that if something fails in the UI, try it with the command line :)
+[17:56:22] <Moonlightning> > Windows
+[17:56:24] <Moonlightning> EWWWWWWWWWWWWWWWWWW
+[17:57:03] * johnsey sends Moonlightning back to the future
+[17:57:06] * LordShadowWing Dual boots Win10 and Trisquel (Win 10 is for college purposes only)
+[17:57:18] <Moonlightning> Good :V
+[17:57:39] * LordShadowWing is an FSF member
+[17:58:51] *** Joins: Crimson_Tail (Bluepon@Pony-r6366f.cg80.k4gu.0151.2601.IP)
+[18:02:30] <Stik> someone is still using win3.1?
+[18:02:38] <Stik> how does he find anything that works on it still
+[18:02:45] <Stik> i mean can you even get a web browser for it
+[18:02:52] <Stik> or doesn't he care for the internet
+[18:09:02] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[18:11:15] <LordShadowWing> Stik, that guy does not use the internet
+[18:13:54] <LordShadowWing> Stik, he also uses the software that he bought fot it many years ago, including the version of Word for windows 3.11
+[18:18:50] <Stik> i'm nto sure what i'd do with a computer that didn't have the internet
+[18:18:54] <Stik> it seems a bit pointless :)
+[18:19:34] <johnsey> use cases differ
+[18:19:38] <Stik> as an entertainment device at least. am aware that functional systems are probably still using 20 year old software here and there
+[18:21:12] <LordShadowWing> I figured out the problem, My USB Floppy drive is detected as sdb instead of fd0
+[18:21:20] <johnsey> I am fairly certain that there is still the odd DOS program out there, performing a very specific job since forever, that even require user interaction
+[18:21:52] <Stik> think you're right
+[18:26:39] <Moonlightning> …so, wait, what's fd0?
+[18:27:07] <JockeTF> Moonlightning: Floppy. :)
+[18:27:09] <Moonlightning> also: Microsoft Word existed on Windows 3.1? ._.
+[18:27:17] <Moonlightning> JockeTF: no, on Shadow's system specifically
+[18:27:22] <JockeTF> Ah.
+[18:28:22] <HoneyDrops> Yeah, I have a copy of MS Office for Win 3.11 somewhere.
+[18:32:51] <HoneyDrops> I know a lot of industrial controller hardware that the only software to interact with it needs 3.11, or 95 if you're lucky.  Those systems just need to run that one program, should you need to change say pump settings or load new patterns onto your vertical lathe.
+[18:34:03] <Moonlightning> Airgapped, I take it
+[18:37:57] <HoneyDrops> I doubt most even have networking hardware, plus rarely even booted unless there is a specific need.
+[18:39:24] <HoneyDrops> Well, I know of some telemetry cases where they are connected.  But that would be over leased lines or via Radio serial links.  They are not just on the open internet.
+[18:40:01] <Moonlightning> > leased lines
+[18:40:05] <Moonlightning> Those aren't secure ;p
+[18:40:51] <HoneyDrops> Well you can tap those and know what water pumps are running at the various stations around your county.
+[18:40:56] <Moonlightning> No physical line is secure, unless /maybe/ it's contained wholly within a building controlled by yourself
+[18:41:12] <Moonlightning> And also fuck with the water pumps running at various stations around the country!
+[18:41:56] <WorkingData> our POTS provider has an issue that we've notified them on, and never fixed... we have 3 lines at our demark that aren't ours
+[18:41:59] <HoneyDrops> Those systems don't have the ability to control anything.  They are hooked to sensors.
+[18:42:03] <WorkingData> 2 of those with DSL service, lol
+[18:42:07] *** Quits: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com) (Quit: Leaving)
+[18:42:10] <Moonlightning> …well, I mean, obviously, if you have two boxes with a 1m Ethernet cable and you're sitting right in front of them, you're good
+[18:42:16] <Moonlightning> but other than that…just use TLS, seriously
+[18:42:28] <Moonlightning> SSH or TLS or /something/
+[18:42:40] <WorkingData> heh
+[18:42:54] <HoneyDrops> Pretty sure these are using some weird RS232, as they must be all copper lines.
+[18:43:03] *** Joins: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com)
+[18:43:20] <Moonlightning> Nice thing about abstraction. Presentation layer doesn't know and doesn't care about the physical layer. :3
+[18:43:53] <HoneyDrops> At least I know they are converting to radio links because the phone companies are tearing out copper in so many places.
+[18:44:04] <WorkingData> not just in networking, but programming.. abstraction is great :)
+[18:46:32] <Moonlightning> In tech in general.
+[18:47:31] <johnsey> http://neinuclearnotes.blogspot.de/2009/03/what-to-do-with-your-windows-95.html
+[18:47:32] <PinkiePieBot> [ NEI Nuclear Notes: What To Do with Your Windows 95 Licenses ]
+[19:06:25] *** Joins: Melanosuchus (quassel@Pony-597dho.as13285.net)
+[19:07:40] <Colgate> Sour_Sweet: yeah... just disabled dell's cert at work
+[19:32:31] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:39:34] <LordShadowWing> Anyone here want to rty to decode an image file format? http://b.1339.cf/sqmangg.zip PSF extension
+[19:40:01] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[19:42:41] <Stik> irfanview can open them
+[19:50:20] <HoneyDrops> johnsey: most nuke plants the control systems are coils, physical switches and relays.  Most indicators are still incandescent lights and analog dials.  There are some computerized systems that have been added, but (at least in the US) nuke plants are basically built on 60's hardware.  (source: having visited an actual control room several times and having spent a childhood around the
+[19:50:21] <HoneyDrops> schematics for the control and coolant systems.)  Relatedly: nuke plants are way less cool when you realize they are still just big water boilers.
+[19:51:49] <Stik> that's like saying a smartphone is just a big calculator
+[19:52:24] <HoneyDrops> Like seriously, we only generate power 3 ways: naturally moving fluid turns the wheel (wind & hydro), photovoltaic (solar), and boiling water to spin the wheel.
+[19:52:47] <Sour_Sweet> But it is Stik :D
+[19:52:54] <HoneyDrops> ^ As is every other computer.
+[19:53:07] <HoneyDrops> They are just really, really fast adding machines.
+[19:53:33] <Stik> i don't think it does it justice
+[19:53:50] <Stik> you're just a bag of chemicals sloshing around, but on a macro scale you're a lot more than that
+[19:54:20] <Sour_Sweet> But it slowly developed to that state
+[19:54:58] *** Quits: Melanosuchus (quassel@Pony-597dho.as13285.net) (Quit: No Ping reply in 180 seconds.)
+[19:55:02] <Stik> the statement is true but not really complete
+[19:55:03] <Sour_Sweet> I still know (never used though) cardboard based machines
+[19:56:06] *** Joins: Melanosuchus (quassel@Pony-597dho.as13285.net)
+[19:56:14] <Sour_Sweet> And they did essentially what a modern computer does minus UI
+[19:56:27] <Stik> what do you mean?
+[19:56:51] <Stik> like a papercraft analytical engine?
+[19:57:10] <Stik> that sounds enourmously hard to build out of something squidgy like cardboard
+[19:57:35] <Sour_Sweet> I'll try to find an example. I'm in mobile though
+[19:57:43] <Stik> hmm has anyone made a hydraulic computer
+[19:57:49] <Stik> that would be cool to watch i bet
+[19:57:52] <Sour_Sweet> On*
+[19:58:09] <Stik> in fact some old automatic transmissions used to be entirely hydraulic, dind't they
+[19:58:32] <Stik> had a really complicated labyrithine oil "thing" that ran it
+[19:58:55] <Stik> http://s.hswstatic.com/gif/automatic-transmission-brain.jpg
+[19:59:15] <Sour_Sweet> http://datentraeger-museum.de/Media/Shop/lochkarte_01.jpg
+[19:59:30] <Stik> oh right, that's not quite correct though is it
+[19:59:45] <Stik> that's just data written on cardboard, the actual machine that interprets it isn't cardboard
+[20:00:03] <Sour_Sweet> Oft cause it's not xD
+[20:00:29] <Sour_Sweet> How is that supposed to work
+[20:01:16] <Sour_Sweet> Even fully mechanical simple calendars are complex as hell
+[20:01:34] <Stik> http://www.transmissioncenter.net/76999-05K.jpg
+[20:01:38] <Stik> who on earth designed these things
+[20:02:08] *** Quits: Melanosuchus (quassel@Pony-597dho.as13285.net) (Quit: No Ping reply in 180 seconds.)
+[20:03:48] <Sour_Sweet> There are mechanical calculators though, but their usefulness has limits :P
+[20:03:58] *** Joins: Melanosuchus (quassel@Pony-597dho.as13285.net)
+[20:07:33] *** Quits: Melanosuchus (quassel@Pony-597dho.as13285.net) (Quit: No Ping reply in 180 seconds.)
+[20:09:05] *** Joins: Melanosuchus (quassel@Pony-597dho.as13285.net)
+[20:09:09] *** Quits: Quindo (Quindo@Pony-8qt.17k.198.99.IP) (Connection closed)
+[20:12:43] *** Quits: Melanosuchus (quassel@Pony-597dho.as13285.net) (Quit: No Ping reply in 180 seconds.)
+[20:15:06] *** Joins: Melanosuchus (quassel@Pony-597dho.as13285.net)
+[20:18:38] *** Quits: Melanosuchus (quassel@Pony-597dho.as13285.net) (Quit: No Ping reply in 180 seconds.)
+[20:19:43] *** Joins: Melanosuchus (quassel@Pony-597dho.as13285.net)
+[20:23:50] *** Princess_AppleDash is now known as AppleDash
+[20:24:51] *** Quits: Melanosuchus (quassel@Pony-597dho.as13285.net) (Quit: No Ping reply in 180 seconds.)
+[20:25:16] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:26:51] *** Joins: Melanosuchus (quassel@Pony-597dho.as13285.net)
+[20:30:14] *** Quits: Melanosuchus (quassel@Pony-597dho.as13285.net) (Quit: No Ping reply in 180 seconds.)
+[20:31:06] *** Quits: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com) (Quit: Leaving)
+[20:34:16] *** Joins: Melanosuchus (quassel@Pony-597dho.as13285.net)
+[20:57:03] *** Joins: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com)
+[20:59:26] *** Joins: WuBzY (WuBzY@Pony-v63sva.dhcp.inet.fi)
+[21:08:50] *** Quits: WuBzY (WuBzY@Pony-v63sva.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[21:13:44] <LordShadowWing> Anyone want a random collection of WAV files from 1998? for the interested http://b.1339.cf/lzrqdel.zip
+[21:14:13] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[21:15:15] *** Quits: Phase (Phase4@Pony-mh3bcb.internode.on.net) (Ping timeout: 121 seconds)
+[21:29:02] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[21:32:58] *** Quits: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com) (Quit: Leaving)
+[21:40:57] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: 2SPOOPY4ME)
+[21:42:49] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Quit: Leaving.)
+[21:43:24] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:43:35] *** Joins: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[21:44:57] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[21:45:51] *** Quits: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[22:03:09] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:16:35] *** Joins: Pony_87224 (Quindo@Pony-8qt.17k.198.99.IP)
+[22:17:20] *** Gigabit is now known as Gigaway
+[22:22:39] <Sour_Sweet> I should rename my phone to Rarity when updating Android 6.0 (Marshmallow) ;-)
+[22:30:23] <AppleDash> lol
+[22:30:56] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:31:46] *** Joins: Asoka (Asoka@Pony-m80d65.net-htp.de)
+[22:31:51] *** Joins: Datalink (Datalink@Datalink)
+[22:34:03] *** Quits: Datalink_ (Datalink@Datalink) (Ping timeout: 121 seconds)
+[22:34:39] *** Quits: Asoka_White (Asoka@Pony-png9f6.net-htp.de) (Ping timeout: 121 seconds)
+[22:35:38] <tiwake> Sour_Sweet: what is it right now?
+[22:39:12] <Sour_Sweet> I'm currently running Android 5.1.1 (Lollipop), my device name is very generic "kab-mobile" (kab being the first letters of each my first, middle and last name). PinkiePie would work better atm I guess :P
+[22:40:59] <tiwake> I'm trying to decide if I want to get somebody to buy a jolla cellphone for me and mail it to me, or if I want to get a google nexus 5 and put sailfishOS on it
+[22:47:11] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Connection closed)
+[22:47:31] *** Joins: Asoka_White (Asoka@Pony-b9bqhp.net-htp.de)
+[22:49:27] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:49:42] *** Quits: Asoka (Asoka@Pony-m80d65.net-htp.de) (Ping timeout: 121 seconds)
+[23:30:56] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[23:47:36] <AppleDash> WTF is a DevOps?
+[23:53:22] <JustAberrant> besides a buzzword?
+[23:53:41] <JustAberrant> honestly it's like cloud, it has a specific meaning, but it's come to mean a great many things depending on context
+[23:54:01] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[23:54:23] <JustAberrant> but the (imo) gist is it's about taking a more software development approach to system administration 
+[23:54:43] <JustAberrant> and kinda trying to blend everything together
+[23:55:05] <Phase> DevOps is where you have one guy do both the jobs
+[23:55:24] <JustAberrant> at it's best you get different functional areas working together better
+[23:55:41] <JustAberrant> at its worst, you get people doing stuff they arn't qualified to do and making a mess
+[23:55:43] * Phase would have thought communication to be the way you achieve that
+[23:56:16] <AppleDash> I see
+[23:56:31] <JustAberrant> well, in some ways yes, but I do agree that having things like IT and QA and even financial/contracts as completely separate does add overhead and make that harder
+[23:57:06] <JustAberrant> DevOps tends to push tools that integrate everything together under one tool stack
+[23:57:22] <JustAberrant> everyone uses the same issue tracker, configuration management, document management, etc
+[23:58:03] <JustAberrant> and you try to build things like "dashboards" (trendy++) that automatically pull useful information rather than having someone from dev talking to someone from qa
+[23:59:07] <JustAberrant> but really ultimately what it's trying to "fix" is the silo problem

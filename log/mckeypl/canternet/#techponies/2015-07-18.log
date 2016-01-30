@@ -1,0 +1,225 @@
+[00:21:06] *** Joins: LightningCrash (lightning@Pony-2ev2c5.ph.cox.net)
+[00:23:27] *** GigaTown is now known as Gigabit
+[00:35:29] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[00:35:58] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[00:37:20] *** Joins: Sombra (Iceman@Darkhorse21)
+[00:41:54] <Minccino> I'm really confused on what \r does
+[00:42:48] <Seoson> https://en.wikipedia.org/wiki/Carriage_return
+[00:42:49] <PinkiePieBot> [ Carriage return - Wikipedia, the free encyclopedia ]
+[00:43:16] <Minccino> Is it an ms word thing?
+[00:43:27] <Seoson> No.
+[00:43:58] <Seoson> It's a general computer thing. It's on all OSs I think
+[00:44:51] <Seoson> Imagine it as the "printer head" returning to the start of the line once a line in the document is finished
+[00:45:42] <Seoson> In a console application to enter a new line you would have to print \r\n
+[00:46:17] <Seoson> \r resets the cursor position and \n "scrolls" one line down.
+[00:46:51] <Minccino> So \r does the thing where it last new lined/
+[00:46:53] <Minccino> *?
+[00:47:27] <Seoson> I don't understand what you mean by that
+[00:48:16] <Minccino> Like say Hello \r\tWorld
+[00:48:47] <Minccino> Then it wouldn't be Hello   World
+[00:49:28] <Minccino> It would do nothing because \r just pulled \t's ass back to near o
+[00:56:48] <Seoson> Actually that should output "Hello \tWorld"
+[00:57:50] <Seoson> More interesting is 'Hello \rWorld' which would output 'World"
+[00:59:19] <Seoson> You can test that in a terminal if you are on linux with echo -e "STRING"
+[01:00:05] *** Joins: Fallfeathers (Fallfeather@Pony-n0hema.bigpond.net.au)
+[01:01:01] <Minccino> Dos is the same
+[01:04:03] * Seoson flutters "DOS"
+[01:23:43] *** Quits: cyborg_ar (cyborgar@Pony-1eg.e6k.25.181.IP) (Ping timeout: 121 seconds)
+[01:38:57] *** Joins: Sol_ (Sol@Pony-nc8b4c.res.rr.com)
+[01:40:42] *** Quits: Sol (Sol@Pony-nc8b4c.res.rr.com) (Ping timeout: 121 seconds)
+[01:43:50] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[01:48:42] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[01:49:37] *** Quits: Sol_ (Sol@Pony-nc8b4c.res.rr.com) (Quit: Leaving)
+[01:55:33] *** Minccino is now known as Xbox
+[01:55:38] <Gigabit> Okay.. my debian vm is missing wine and paint tool sai for some reason..
+[02:08:41] *** Quits: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net) (Quit: Leaving.)
+[02:09:51] *** Joins: Sol (Sol@Pony-nc8b4c.res.rr.com)
+[02:18:54] *** Quits: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[02:19:01] *** Joins: quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[02:22:55] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:29:34] *** Xbox is now known as PSX
+[02:33:15] *** PSX is now known as Xbox
+[02:39:28] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:40:11] *** Joins: cyborg_ar (cyborgar@Pony-1cp.hs5.49.190.IP)
+[02:40:31] *** init3 is now known as Init3-away
+[02:53:30] *** Joins: firestream (firestream@Pony-nfqcr8.dsl.bell.ca)
+[02:59:06] <frackster> https://www.youtube.com/watch?v=I8FmfEQ60VY
+[02:59:06] <PinkiePieBot> [ azunta-listen(walang takot) - 281 views - 5m 54s long - 1 likes - 50.0% ]
+[03:28:24] *** Joins: RazorSharpFang (chatzilla@sharpest.of.all.fangs)
+[03:28:44] <RazorSharpFang> I'm getting pings upwards of 3000ms, and I don't know what to do about it.
+[03:29:03] <RazorSharpFang> I've tried power-cycling my modem, but that hasn't changed anything.
+[03:29:28] <ShivalWolf> probably at your isps side which means you can do precicly dick
+[03:30:05] <RazorSharpFang> There's a 1ms ping between me and my router, but it jumps to 3000 at the next hop.
+[03:30:35] <RazorSharpFang> I can't play League like this. : /
+[03:32:10] <RazorSharpFang> It's a good thing IRC is built to accommodate large pings, else I wouldn't be able to chat at all.
+[03:32:33] <RazorSharpFang> Also, I'm getting a bunch of packet loss. >.> Classic Aussie Internet.
+[03:32:46] <Seoson> Oh dear firefox. Now it's blocking HTML5 videos when served as mixed content -.-
+[03:32:59] *** Quits: cyborg_ar (cyborgar@Pony-1cp.hs5.49.190.IP) (Client exited)
+[03:37:27] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Ping timeout: 121 seconds)
+[03:41:15] *** Joins: RazorSharpFang (chatzilla@sharpest.of.all.fangs)
+[03:41:27] <RazorSharpFang> Hmm, quite laggy.
+[03:45:19] <RazorSharpFang> http://www.pingtest.net/result/127121956.png - Oh yeah. Check out that connection.
+[03:46:59] <ShivalWolf> you checked your isps status page see if theres any faults in your area
+[03:47:03] *** Joins: Sombra (Iceman@Darkhorse21)
+[03:48:02] <Seoson> lol packet loss 90%
+[03:48:41] <RazorSharpFang> I know right? XD
+[03:54:50] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[04:36:59] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[04:40:04] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Ping timeout: 121 seconds)
+[04:41:17] *** Joins: RazorSharpFang (chatzilla@Pony-d6701r.iinet.net.au)
+[04:41:29] <RazorSharpFang> My internet loves me today.
+[04:41:34] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[04:42:27] * Moonlightning boops RazorSharpFang with http://music.monstercat.com/track/razor-sharp-2
+[04:42:28] <PinkiePieBot> [ Razor Sharp | Monstercat ]
+[04:43:05] <RazorSharpFang> Hang on, it's loading.
+[04:43:08] <RazorSharpFang> Thanks, PinkiePieBot 
+[04:43:08] <PinkiePieBot> No problemo!
+[04:46:37] <RazorSharpFang> Moonlightning: It didn't load. : (
+[04:46:47] <RazorSharpFang> My connection timed out.
+[04:47:50] <Moonlightning> :(
+[04:51:49] <One-Trick> anyone happen to use cacerts in conjunction with python requests along with auth-digest?
+[04:55:05] <RazorSharpFang> Didn't load again. >.>
+[04:55:05] <RazorSharpFang> Report Abbot for sucky internet.
+[04:55:13] <firestream> Welp i need to get a new mouse mine just died well my left clicker did
+[04:55:22] <firestream> any  one i should get 
+[04:55:54] <One-Trick> i use a wired microsoft sidewinder with a 2g weight, but i dont think you can get those any more
+[04:55:57] <RazorSharpFang> Would there be any webservers running compatible with HTTP/1.0 but not HTTP/1.1 ?
+[05:00:00] * Moonlightning …longblinks.
+[05:00:03] <Moonlightning> I just realized
+[05:00:26] <Moonlightning> Homestuck's ~ATH could be rewritten to be more similar to Mozilla's Rust
+[05:00:44] <Moonlightning> that would work /perfectly/, because of Rust's concepts of lifetimes
+[05:01:01] <Moonlightning> it would also make ~ATH even more frustrating to use :p
+[05:04:19] <Moonlightning> the syntax is really weird though
+[05:04:38] <Moonlightning> I feel like `~ath`, `execute`, and `die` should be /keywords/
+[05:05:26] <Moonlightning> `die` could be dropped in favor of just using scopes, killing things as they go out of scope (like Rust)
+[05:28:59] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[05:38:52] *** Joins: cyborg_ar (cyborgar@Pony-1eg.e6k.25.181.IP)
+[06:13:43] *** Joins: TuxRug (TuxRug@TuxRug)
+[06:13:44] *** Init3-away is now known as init3
+[06:18:09] *** Quits: Sol (Sol@Pony-nc8b4c.res.rr.com) (Quit: Leaving)
+[06:43:51] *** Quits: Lapsus (Lapsus@i-forget.ca) (Connection closed)
+[06:43:55] *** Joins: Lapsus (Lapsus@Pony-5m46mf.cable.rogers.com)
+[06:44:24] *** Lapsus is now known as Pony_95924
+[06:47:16] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[07:08:05] *** Quits: jimm (Nintendo3DS@Pony-eeqc0u.res.rr.com) (Ping timeout: 121 seconds)
+[07:11:50] *** Quits: Kiyiko (Kiyiko@Pony-c9ma3u.dsl.netins.net) (Ping timeout: 121 seconds)
+[07:13:18] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[07:13:34] *** Joins: Kiyiko (Kiyiko@Pony-c9ma3u.dsl.netins.net)
+[07:14:47] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[07:29:58] *** Gigabit is now known as gigazzz
+[07:31:45] *** Xbox is now known as Xbox|Lunch
+[07:35:36] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Quit: sleep)
+[07:37:23] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[07:38:51] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[07:40:50] *** Quits: reiuiji (reiuiji@nuclear.raven) (A TLS packet with unexpected length was received.)
+[07:44:26] *** Joins: Sombra (Iceman@Darkhorse21)
+[07:45:47] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[07:46:32] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:52:12] *** Xbox|Lunch is now known as Xbox
+[07:55:35] *** Quits: Crimson_Tail (Bluepon@Pony-3jmkb3.s0tm.sdub.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[08:13:08] *** Ruthalas_ is now known as Ruthalasleep
+[08:21:29] *** Xbox is now known as Xbox|Sad
+[08:38:36] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[08:57:15] *** zz_CyberJacob is now known as CyberJacob
+[08:58:16] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: "Bug." -- My goldfish on sleep)
+[09:22:46] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[09:35:03] *** Quits: TuxRug (TuxRug@TuxRug) (Quit: WeeChat 1.1.1)
+[09:42:32] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[09:49:20] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[09:51:48] <RazorSharpFang> So varags.h has been deprecated in favour of stdarg.h . Can anypony provide insight as to why this is so?
+[10:00:42] <Googie> varargs.h was never a part of the standard library.
+[10:03:32] *** init3 is now known as Init3-away
+[10:14:56] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[10:18:09] <RazorSharpFang> Oh. Thanks, Googie. I'm off to sleep now. Cyas
+[10:18:29] <RazorSharpFang> (I know it's 4 in the afternoon, but meh)
+[10:18:43] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Quit: Zzzzz)
+[10:20:09] *** RedHelper is now known as Creeps|AFK
+[10:35:22] *** Awaykitty is now known as Unixkitty
+[10:51:18] *** CyberJacob is now known as zz_CyberJacob
+[10:51:33] *** zz_CyberJacob is now known as CyberJacob
+[10:53:20] *** CyberJacob is now known as zz_CyberJacob
+[11:12:14] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[11:18:01] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Ping timeout: 121 seconds)
+[11:42:29] *** zz_CyberJacob is now known as CyberJacob
+[12:01:48] *** Unixkitty is now known as Awaykitty
+[12:44:07] *** Quits: Fallfeathers (Fallfeather@Pony-n0hema.bigpond.net.au) (Connection closed)
+[12:44:57] *** Joins: Fallfeathers (Fallfeather@Pony-n0hema.bigpond.net.au)
+[13:05:26] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[13:15:53] *** Quits: nscoots (FreyGrimrod@Pony-tf89hv.sub-70-192-8.myvzw.com) (Ping timeout: 121 seconds)
+[13:29:50] *** CyberJacob is now known as zz_CyberJacob
+[14:30:08] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[14:42:55] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Quit: Leaving)
+[14:43:15] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[15:20:23] *** Dusk is now known as Navi
+[15:20:39] *** Navi is now known as Night
+[15:20:46] *** Night is now known as Nadine
+[15:21:02] *** Nadine is now known as Acacia
+[15:27:49] *** Init3-away is now known as init3
+[16:08:43] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:08:47] *** Joins: LightningCrash (lightning@Pony-2ev2c5.ph.cox.net)
+[16:18:35] *** Quits: Fallfeathers (Fallfeather@Pony-n0hema.bigpond.net.au) (Connection closed)
+[16:19:57] *** Joins: Crimson_Tail (Bluepon@Pony-cm3qi2.s0tm.sdub.0151.2601.IP)
+[16:34:34] *** Xbox|Sad is now known as Adelaide
+[16:35:22] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:41:16] *** Quits: Ruthalasleep (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Connection closed)
+[17:01:55] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[17:02:30] *** Joins: Webster (Webster@Pony-j8c8pt.dyn.optonline.net)
+[17:08:04] <tiwake> does IPv6 introduce slightly more packet overhead than IPv4?
+[17:08:43] *** init3 is now known as Init3-away
+[17:08:52] <tiwake> I would think so, but donno
+[17:17:57] <Webster> Yeah.
+[17:18:39] <Webster> But it's simpler and supposedly routing is be more efficient.
+[17:18:40] <Webster> -be
+[17:19:18] <Webster> https://en.wikipedia.org/wiki/IPv4#Header https://en.wikipedia.org/wiki/IPv6_packet#Fixed_header
+[17:19:19] <PinkiePieBot> [ IPv6 packet - Wikipedia, the free encyclopedia ]
+[17:38:23] *** Quits: cyborg_ar (cyborgar@Pony-1eg.e6k.25.181.IP) (Ping timeout: 121 seconds)
+[17:40:13] *** Quits: Webster (Webster@Pony-j8c8pt.dyn.optonline.net) (Quit: Leaving)
+[18:14:47] *** gigazzz is now known as Gigabit
+[18:21:09] *** Init3-away is now known as init3
+[18:26:07] *** Joins: cyborg_ar (cyborgar@Pony-1eg.e6k.25.181.IP)
+[18:29:11] *** Acacia is now known as Dusk
+[18:45:43] *** Quits: Asoka_White (Asoka@Pony-4ojihj.net-htp.de) (Ping timeout: 121 seconds)
+[18:51:13] *** Joins: Asoka (Asoka@Pony-4ojihj.net-htp.de)
+[19:37:02] *** init3 is now known as Init3-away
+[19:46:40] *** Joins: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net)
+[19:47:32] *** Init3-away is now known as init3
+[20:07:57] *** init3 is now known as Init3-away
+[20:28:03] *** Init3-away is now known as init3
+[20:49:09] *** init3 is now known as Init3-away
+[20:56:26] <Moonlightning> tiwake: well, v6 gets rid of the layer-three checksum
+[21:23:58] *** zz_CyberJacob is now known as CyberJacob
+[21:30:50] *** CyberJacob is now known as zz_CyberJacob
+[21:31:22] *** zz_CyberJacob is now known as CyberJacob
+[21:48:18] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[21:51:31] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[21:54:21] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[22:06:37] *** Joins: Sol (Sol@Pony-nc8b4c.res.rr.com)
+[22:13:18] *** Init3-away is now known as init3
+[22:19:59] <sleumas2000> has anyone here ever used AppGameKit?
+[22:23:26] *** Joins: Kulebyaka (dddimbcspvb@Pony-94g.pmt.241.92.IP)
+[22:24:57] *** Quits: Kulebyaka (dddimbcspvb@Pony-94g.pmt.241.92.IP) (Quit: lightIRC.com Flash IRC Client)
+[22:31:06] *** Joins: LightningCrash (lightning@Pony-2ev2c5.ph.cox.net)
+[22:45:57] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:52:20] <Moonlightning> >> https://codegolf.stackexchange.com/questions/53124
+[22:52:21] <PinkiePieBot> [ code golf - The Colors in Our Stars - Programming Puzzles & Code Golf Stack Exchange ]
+[23:01:33] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[23:02:08] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[23:02:21] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:17:02] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[23:22:37] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[23:23:28] *** Creeps|AFK is now known as RedHelper[NLR]
+[23:27:29] *** Joins: reiuiji (reiuiji@Pony-6vp0lq.ma.comcast.net)
+[23:35:37] *** Joins: Sombra (Iceman@Darkhorse21)
+[23:38:32] *** Joins: nscoots (FreyGrimrod@Pony-qmq8of.sub-70-192-9.myvzw.com)
+[23:39:42] <Sombra> Would anyone notice a difference in performance between a WD blue and a WD green harddrive?
+[23:42:15] <MistVeil> Technically, the green one would have a lower performance. The green WD line has lower RPM, but a higher lifetime
+[23:42:30] <MistVeil> Not to mention it consumes less energy (main reason why it's called 'green')
+[23:43:08] <Sombra> What about the difference between a blue and a velociraptor?
+[23:50:54] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[23:51:14] <Gigabit> The raptor is 10k rpm isn't it?
+[23:53:31] <Sombra> yYes
+[23:54:41] <Gigabit> Ya, raptor has faster read write times so preforms better
+[23:55:12] <Gigabit> They also tend to have the longer warranty to
+[23:55:39] <Gigabit> I have a 500gb WD blue and it is going strong 5 years now
+[23:57:23] <Gigabit> If you are needing a drive for just data storage I would go the green. For everyday use go blue. If you want extreme speed go raptor and everything else get a ssd
+[23:57:30] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)

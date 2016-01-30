@@ -1,0 +1,228 @@
+[00:05:04] *** Quits: soee (~soee@agve248.neoplus.adsl.tpnet.pl) (Ping timeout: 250 seconds)
+[00:27:43] *** Quits: dridri (~dridri@2a01:e35:8a72:9010:225:90ff:fe1e:3c78) (Ping timeout: 250 seconds)
+[00:30:32] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[01:09:25] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[03:03:04] *** Joins: zhoeon (~fc@128.90.114.254)
+[03:04:47] <zhoeon> I do not understand something - on ubuntu 15.10 using the a PPA I pull 0.8.4, and what I get on my machine shows up as 0.7.0 in the "About". What it pulled is the following ...  http://ppa.launchpad.net/tomahawk/ppa/ubuntu/ wily/main tomahawk amd64 0.8.4-0ubuntu5~ppa14~ubuntu15.10.1 [8,085 kB]
+[03:04:48] <tomabee> [ Index of /tomahawk/ppa/ubuntu | ppa.launchpad.net |  ]
+[03:05:53] <zhoeon> I'm not usually not on Ubuntu but I cannot find the reason. I would prefer not to compile it.
+[03:30:10] *** Quits: zhoeon (~fc@128.90.114.254) (Quit: leaving)
+[03:41:36] *** Quits: ben-xo (sid227@gateway/web/irccloud.com/x-ajisiqcunzktdlqo) (Remote host closed the connection)
+[03:41:36] *** Quits: L42y (sid10623@gateway/web/irccloud.com/x-saqjdveqpsmytcub) (Remote host closed the connection)
+[03:41:37] *** Quits: dukedave (sid666@gateway/web/irccloud.com/x-cgqghdnfpcjlrxsv) (Remote host closed the connection)
+[03:41:37] *** Quits: hugo______ (sid6079@gateway/web/irccloud.com/x-wgqsfdbjjgjqmcci) (Remote host closed the connection)
+[04:30:23] *** Joins: jturney_ (~jturney@host86-141-128-203.range86-141.btcentralplus.com)
+[04:35:14] *** Quits: jturney_ (~jturney@host86-141-128-203.range86-141.btcentralplus.com) (Quit: Leaving)
+[04:37:19] *** Joins: jturney_ (~jturney@host86-141-128-203.range86-141.btcentralplus.com)
+[04:55:14] *** Quits: jturney_ (~jturney@host86-141-128-203.range86-141.btcentralplus.com) (Quit: Leaving)
+[04:55:48] *** Joins: jturney_ (~jturney@host86-141-128-203.range86-141.btcentralplus.com)
+[04:59:49] *** Quits: jturney_ (~jturney@host86-141-128-203.range86-141.btcentralplus.com) (Client Quit)
+[05:00:29] *** Quits: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[05:09:40] *** Joins: mgue (~mgue@x590f49e1.dyn.telefonica.de)
+[05:12:47] *** Quits: mgue2 (~mgue@f049091223.adsl.alicedsl.de) (Ping timeout: 264 seconds)
+[08:21:15] *** Joins: disint (guest-disi@gateway/web/scrollback.io/x-qozylxhjnajjqyxt)
+[08:21:16] <disint> Hey all--is the bug tracker working? When I go to https://bugs.tomahawk-player.org/ I just see what looks like the tomahawk homepage.
+[08:21:20] <tomabee> [ TOMAHAWK | bugs.tomahawk-player.org | http://assets/images/pages/contact/map_bck.jpg ]
+[08:22:45] <disint> Also, the link to the issue tracker on the github page appears to be broken :-/
+[09:14:06] <theli_ua> indeed, it used to be there muesli 
+[09:14:20] <theli_ua> they had some issues with the website
+[09:14:36] <theli_ua> I guess these are repercussions
+[09:34:56] *** Parts: disint (guest-disi@gateway/web/scrollback.io/x-qozylxhjnajjqyxt) ()
+[10:04:32] *** Joins: soee (~soee@agve248.neoplus.adsl.tpnet.pl)
+[10:14:15] *** Quits: Satyricon (~satyricon@93.186.169.21) (Ping timeout: 260 seconds)
+[10:50:13] <muesli> the bug tracker is still moving
+[10:50:16] <muesli> thee's no github issue tracker
+[11:26:03] *** Joins: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com)
+[11:52:06] *** Quits: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com) (Quit: alsuren)
+[11:59:01] *** Joins: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com)
+[12:24:14] *** Quits: soee (~soee@agve248.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[12:25:04] *** Joins: soee (~soee@agve248.neoplus.adsl.tpnet.pl)
+[12:29:51] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[12:42:08] *** Quits: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com) (Quit: alsuren)
+[12:44:18] *** Joins: soee_ (~soee@afcm66.neoplus.adsl.tpnet.pl)
+[12:48:11] *** Quits: soee (~soee@agve248.neoplus.adsl.tpnet.pl) (Ping timeout: 264 seconds)
+[12:57:08] *** Joins: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com)
+[12:57:31] *** Joins: rotzbouw (~thierry@2a02:8071:184:ae01:219:66ff:fe7a:7380)
+[12:57:45] <rotzbouw> moinsen
+[12:58:14] <rotzbouw> have been getting this assert since a couple of commits ago: https://paste.kde.org/pxftsb5fu
+[12:58:14] <tomabee> [ KDE Paste | paste.kde.org |  ]
+[13:02:16] *** Quits: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com) (Quit: alsuren)
+[13:02:53] *** Joins: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com)
+[13:07:04] *** Joins: ben-xo (sid227@gateway/web/irccloud.com/x-kjhejqdlfkpkbxje)
+[13:09:30] *** Joins: dukedave (sid666@gateway/web/irccloud.com/x-vpqqcxxqxruxpmfo)
+[13:12:05] *** Quits: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com) (Quit: alsuren)
+[13:18:10] *** Joins: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com)
+[13:32:45] *** Joins: hugo______ (sid6079@gateway/web/irccloud.com/x-brbgotchkwebmvrw)
+[13:36:39] *** Joins: L42y (sid10623@gateway/web/irccloud.com/x-dhuexsnxfevzwlnj)
+[13:53:38] *** Joins: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[13:56:18] <total1ty_> [muesli] rotzbouw: apparently caused by the last two commits
+[14:02:49] *** Quits: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com) (Quit: alsuren)
+[14:07:53] *** Joins: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com)
+[14:08:02] *** Joins: jturney_ (~jturney@host86-141-128-203.range86-141.btcentralplus.com)
+[14:11:38] *** Quits: 17SADUNZO (scrollback@gateway/web/scrollback.io/x-bfpxywocazdxnkmg) (Remote host closed the connection)
+[14:13:01] *** Joins: scrollback (scrollback@gateway/web/scrollback.io/x-oqhbkfjhjfohweir)
+[14:37:26] *** Quits: jturney_ (~jturney@host86-141-128-203.range86-141.btcentralplus.com) (Quit: Leaving)
+[14:56:42] *** Quits: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com) (Quit: alsuren)
+[15:04:08] *** Joins: soee (~soee@afje183.neoplus.adsl.tpnet.pl)
+[15:04:10] *** Joins: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com)
+[15:05:46] *** Quits: soee_ (~soee@afcm66.neoplus.adsl.tpnet.pl) (Ping timeout: 240 seconds)
+[15:38:24] *** Quits: Karbowiak (~Karbowiak@ip979.alb335.cust.comxnet.dk) (Quit: ZNC 1.7.x-git-453-46f937a - http://znc.in)
+[15:46:29] *** Joins: Karbowiak (~Karbowiak@ip979.alb335.cust.comxnet.dk)
+[16:33:01] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[16:54:19] *** Quits: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com) (Quit: alsuren)
+[16:56:42] *** Joins: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com)
+[17:53:40] *** Quits: kfunk (~krf@kde/kfunk) (Ping timeout: 250 seconds)
+[17:57:04] *** Joins: kfunk (~krf@kde/kfunk)
+[18:02:48] <muesli> lfranchi: libechonest fails to find qt5 unless i specify -DBUILD_WITH_QT4=OFF
+[18:11:11] *** Joins: soee_ (~soee@afcn14.neoplus.adsl.tpnet.pl)
+[18:13:43] *** Quits: soee (~soee@afje183.neoplus.adsl.tpnet.pl) (Ping timeout: 265 seconds)
+[18:28:14] <rotzbouw> total1ty_: so it's a known issue? is there a workaround?
+[18:36:29] <theli_ua> rotzbouw: yeah, I got the same with last to commits
+[18:36:41] <theli_ua> rotzbouw: workaround is to revert them :D
+[18:36:47] <theli_ua> *two
+[18:37:11] <theli_ua> *two commits
+[18:37:16] <theli_ua> *still to revert
+[18:58:35] *** Joins: domme_ (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de)
+[19:19:33] *** Quits: apb__ (~apb@174-134-224-109.res.bhn.net) (Read error: Connection reset by peer)
+[19:33:57] *** Joins: fougge1 (guest-foug@gateway/web/scrollback.io/x-avrgfpdicxaaynqa)
+[19:33:58] <fougge1> Ah k
+[19:40:51] <muesli> domme_ hey
+[19:41:04] <muesli> domme_ the last two commits make websocketpp assert for rotzbouw & theli_ua 
+[19:41:45] <muesli> not sure what all those cmake flags do. but something somewhere doesn't like something ;-)
+[19:55:37] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[20:19:14] <domme_> muesli: wat where?
+[20:19:16] <domme_> :)
+[20:19:36] <muesli> domme_ i don't know really
+[20:20:44] <muesli> theli_ua: have you tracked it down to -fvisibility=hidden?
+[20:21:06] <theli_ua> No
+[20:21:36] <theli_ua> I tried reverting that line alone and it didn't help
+[20:21:43] <muesli> hm ok
+[20:23:51] *** Quits: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com) (Quit: alsuren)
+[20:28:12] <muesli> domme_: ok, so all the info we get: something in the last two commits makes websocketpp crash on accessing an empty qlist
+[20:28:24] <muesli> (and eventually within qsslsignature iirc)
+[20:33:25] <domme_> muesli: last two commits the ecm and the get rid of warnings commits?
+[20:33:35] <muesli> yeah
+[20:33:45] <domme_> what platform? any?
+[20:33:59] <muesli> rotzbouw: theli_ua: which platforms are you on?
+[20:34:10] <muesli> domme_: theli_ua is gentoo afaik
+[20:36:23] <domme_> wat, i don't see anything that should influence websocketpp
+[20:36:28] <theli_ua> Yeah
+[20:36:34] <theli_ua> Sorry, afk, driving
+[20:36:42] <domme_> dont crash :P
+[20:38:39] <domme_> bt?
+[20:38:46] <domme_> theli_ua: rotzbouw
+[20:41:30] <theli_ua> I did provide couple here
+[20:41:35] <domme_> i was not here
+[20:41:44] <theli_ua> muesli:  can you pls link them
+[20:42:51] <muesli> domme_ https://www.irccloud.com/pastebin/XXW60BoP/
+[20:42:53] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[20:43:09] <muesli> eh wrong
+[20:43:10] <muesli> mom
+[20:43:58] <muesli> domme_ https://www.irccloud.com/pastebin/6pkrj6aZ/
+[20:43:59] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[20:47:22] <domme_> when does the crash happen?
+[20:50:07] <muesli> on startup
+[20:50:14] <muesli> when websocket connects to hatchet
+[20:50:17] <domme_> and you cant reproduce?
+[20:50:27] <muesli> i can't no
+[20:50:38] <muesli> but a few people reported it
+[20:50:42] <domme_> ok
+[20:50:45] <domme_> will see if i can
+[20:51:04] <muesli> rotzbouw: are you on qt4 or 5?
+[20:51:20] <jherskowitz> re
+[20:56:35] <jherskowitz> muesli: I added the website URL to the About Tomahawk dialog… does this “website” arg look reasonable? 
+[20:56:38] <jherskowitz> https://www.irccloud.com/pastebin/egxUmB3Q/
+[20:56:39] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[20:57:45] <muesli> jherskowitz: a) make it https://
+[20:57:51] <muesli> b) this won't turn it into a link, i guess
+[20:58:03] <jherskowitz> no, not a link
+[20:58:04] <muesli> c) move the <br> outside of the argument (website param)
+[20:58:45] <jherskowitz> muesli: const QString website( tr( "https://tomahawk-player.org" ) );<br/>
+[20:58:45] <jherskowitz> ?
+[20:59:05] <muesli> jherskowitz: nah, i meant move it into desc
+[20:59:20] <muesli> actually there already is a <br/> right after %1
+[20:59:38] <muesli> (%1 gets replaced with the content of website)
+[21:01:48] <jherskowitz> hmm..
+[21:02:58] <jherskowitz> not really sure what I’m doing…. looks good with the <br> in the string - when I remove it things get out of order
+[21:03:22] <muesli> jherskowitz: just remove it from website
+[21:03:31] <muesli> and below in desc: .... %1<br/><br/>
+[21:03:35] <muesli> (add one extra br)
+[21:07:15] <jherskowitz> muesli: hmm… then the “thanks to” disappears. https://www.dropbox.com/s/5utppqrafm4oxq5/Screenshot%202015-11-08%2015.06.55.png?dl=0
+[21:07:19] <tomabee> [ Screenshot 2015-11-08 15.06.55.png | www.dropbox.com | https://photos-5.dropbox.com/t/2/AABPK3o_1IXB-1ftLChfMfYN-dEr--Y_whxP6u1nUUCspA/12/986425/png/1024x768/2/_/0/4/Screenshot%202015-11-08%2015.06.55.png/CLmaPCABIAIgBygBKAIoBCgH/5utppqrafm4oxq5/AAA1EPnUrm42I3MseLaPQN6ka/Screenshot%202015-11-08%2015.06.55.png ]
+[21:07:25] <jherskowitz> https://www.irccloud.com/pastebin/YxvdxdQf/
+[21:07:26] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[21:24:19] <muesli> jherskowitz: ah, you actually just added the .arg( website )
+[21:24:26] <muesli> without integrating a new placeholder in the desc
+[21:25:50] <muesli> you could actually do it without a placeholder and just directly integrate the url in desc
+[21:25:57] <muesli> since it's non-translateable
+[21:28:08] <muesli> e.g. "https://.....<br/>%1<br/>....."
+[21:40:23] <domme_> meh, wtf
+[21:40:28] <domme_> how is this possible?
+[21:45:04] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[21:45:04] <github-tomahawk> [13tomahawk] 15dschmidt pushed 1 new commit to 06master: 02http://git.io/v80U4
+[21:45:04] <github-tomahawk> 13tomahawk/06master 146c8581f 15Dominik Schmidt: Fix websocketpp crash o.O
+[21:45:04] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[21:45:15] <domme_> TheOneRing: your change was a breaking one ... why did you change that in the first place?
+[21:45:37] <domme_> especially if you even make it "non windows" only..
+[21:45:55] <domme_> muesli: theli_ua: rotzbouw: please confirm it's fixed
+[21:45:58] <domme_> -muesli
+[21:46:34] <muesli> domme_ he actually mentioned that's a boo boo as we shouldn't add that as a definition
+[21:46:46] <muesli> i guess he does have a point there, but yeah
+[21:47:03] <domme_> yeah it might be neccessary to add it as c and cxxflags
+[21:47:34] <muesli> i'm not entirely sure sure how it can make such a difference either way
+[21:47:48] <muesli> i would have expected it to make the build fail if anything
+[21:47:53] <domme_> yeah
+[21:48:01] <domme_> dunno, it seems fishy
+[21:48:16] <domme_> but i want to get rid of websocketpp anyway
+[21:48:24] <domme_> it's a bit of a pain all the time
+[21:48:41] <domme_> muesli: btw how's the build mac? 
+[21:48:57] <muesli> ah, i guess you've missed my messages
+[21:49:04] <muesli> qt 5.5.1 is broken on 10.7 :-/
+[21:49:15] <domme_> "yay"
+[21:49:18] <domme_> what's broken again?
+[21:49:27] <domme_> oh
+[21:49:30] <muesli> undefined method __builtinfoobar
+[21:52:05] <muesli> according to qt bug tracker we might work around it by compiling our own clang and switching to that
+[21:55:14] <domme_> "yay"
+[21:55:19] <domme_> we've been there before
+[21:55:25] <domme_> on 10.6
+[21:59:20] *** Joins: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com)
+[22:01:18] <domme_> muesli: qt on mac is so frustrating
+[22:02:44] *** Quits: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com) (Client Quit)
+[22:02:55] <domme_> muesli: could you fixup the deploy script for the snore-update PR on your machine maybe?
+[22:03:05] <domme_> should be a nobrainer, i just can't test it
+[22:04:30] *** Joins: github-tomahawk (~github-to@192.30.252.46)
+[22:04:30] <github-tomahawk> [13tomahawk] 15dschmidt pushed 1 new commit to 06master: 02http://git.io/v80Ly
+[22:04:30] <github-tomahawk> 13tomahawk/06master 1407752fe 15Dominik Schmidt: Proper fix for websocketpp crash
+[22:04:30] *** Parts: github-tomahawk (~github-to@192.30.252.46) ()
+[22:07:36] <muesli> domme_: sure. what needs be done actually?
+[22:07:41] <muesli> bbiab
+[22:08:15] *** Joins: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com)
+[22:09:21] <domme_> muesli: a few qml files need to be added
+[22:10:35] <domme_> muesli: basically this in the mac scripts: https://github.com/TheOneRing/tomahawk/commit/186d98b2630478582b4c91518808849ada9f447f#diff-bca4391a8b99d2a5745b4da17de4b1a0R368
+[22:10:36] <tomabee> [ Update shipped dependencies in NSIS · TheOneRing/tomahawk@186d98b · GitHub | github.com | https://avatars1.githubusercontent.com/u/448487?v=3&s=200 ]
+[22:13:00] <theli_ua> domme_: do you think you can make ecm optional?
+[22:15:11] <domme_> why would i?
+[22:15:29] <domme_> in fact there might be a few things that would be nice to use
+[22:17:02] <theli_ua> It pulls in qt5 as dep on my system. For now I'm just catching my fork to remove ecm
+[22:17:11] <theli_ua> Patching
+[22:17:31] <domme_> qt5 will soon be mandatory anyway
+[22:21:29] * theli_ua will stick with an older version when that happens for a while probably
+[22:21:42] <domme_> do whatever you like :P
+[22:22:13] <theli_ua> thats wat I'm doin for a while anyway, patchin in features not accepted upstream :)
+[22:25:41] <TheOneRing> ok I thought it could be needed to set the cxx flag
+[22:25:54] <TheOneRing> but why did you get a crash?
+[22:26:05] <TheOneRing> did you understand the cause?
+[22:26:18] <domme_> i dont have the slightest clue
+[22:32:36] <TheOneRing> ^^
+[23:13:08] <theli_ua> I wonder, what hand do Germans wear wedding ring on?
+[23:13:27] *** Joins: alsuren_ (~alsuren@host86-162-78-190.range86-162.btcentralplus.com)
+[23:13:29] <domme_> dunno :P
+[23:14:46] *** Quits: alsuren (~alsuren@host217-42-243-203.range217-42.btcentralplus.com) (Ping timeout: 250 seconds)
+[23:14:46] *** alsuren_ is now known as alsuren
+[23:18:55] *** Joins: meaning (~meaning@ip-80-113-15-100.ip.prioritytelecom.net)
+[23:20:24] *** Joins: github-tomahawk (~github-to@192.30.252.40)
+[23:20:24] <github-tomahawk> [13tomahawk] 15jherskowitz pushed 1 new commit to 06master: 02http://git.io/v800M
+[23:20:24] <github-tomahawk> 13tomahawk/06master 14d4c3f24 15Jason Herskowitz: Add website to About Tomahawk diaog
+[23:20:24] *** Parts: github-tomahawk (~github-to@192.30.252.40) ()
+[23:50:55] *** Quits: meaning (~meaning@ip-80-113-15-100.ip.prioritytelecom.net) (Quit: My Mac has gone to sleep. ZZZzzz…)

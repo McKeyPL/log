@@ -1,0 +1,397 @@
+[00:06:09] <domme> hey yurrriq :)
+[00:06:18] <domme> nice to meet you, this is @pansenmann writing :)
+[00:06:30] *** Quits: soee (~soee@bmh186.neoplus.adsl.tpnet.pl) (Ping timeout: 240 seconds)
+[00:06:51] <yurrriq> Cheers!
+[00:07:14] <yurrriq> Are you a Tomahawk dev?
+[00:07:26] <domme> yurrriq: you could say that :)
+[00:08:19] <yurrriq> Cool! I’ve been casually following the project for quite a while now and I love it. So thanks for your hard work
+[00:08:28] <domme> sure :)
+[00:08:40] <domme> yurrriq: so for ios the bad news is ... there is no one else working on anything
+[00:08:50] <domme> the good news is, noone will stop you from anything :)
+[00:08:58] <yurrriq> Are there any particular roadblocks or just lack of manpower?
+[00:09:05] <domme> lack of manpower
+[00:09:21] <yurrriq> Ah, I see.
+[00:09:38] <domme> so if you want to start anything, it's more than welcome
+[00:09:42] <yurrriq> Well, I love over-extending myself, so I’m happy to start taking on the iOS app.
+[00:10:08] <yurrriq> What’s the status of the Android app, as in alpha, beta, battle-tested, etc?
+[00:10:09] <domme> do you know anything about the internals of tomahawk yet?
+[00:10:15] <domme> it's public beta
+[00:10:20] <yurrriq> Cool
+[00:10:22] <domme> you can probably learn a lot from it
+[00:10:25] <yurrriq> re: internals, conceptually only
+[00:10:27] <domme> MrMaffen is your man here
+[00:10:30] <yurrriq> it’s in c++, right?
+[00:10:35] *** Joins: quenne (guest-quen@gateway/web/scrollback.io/x-czxyfvhlsnjmqqty)
+[00:10:36] <quenne> yurrriq any of your projects live? 
+[00:10:36] <domme> yes
+[00:10:57] <domme> it's written in c++, but we prefer our resolvers in javascript
+[00:11:03] <yurrriq> My iOS stuff has only been client work and it’s all pretty stale/abandoned at this point
+[00:11:24] <domme> so we can share the code between desktop and mobile (and hatchet) ... and we dont need to recompile the application to ship updated resolvers
+[00:11:27] <domme> if apis change etc
+[00:11:30] <yurrriq> I’m working on an updated Frontend Masters iOS app, univesal in Swift.
+[00:11:51] <quenne> cheers 
+[00:12:03] <yurrriq> I work there full time now.
+[00:12:23] <domme> so the most basic thing to do, to get a tomahawk app is ... to create a javascript runtime to execute resolvers in :)
+[00:12:31] <yurrriq> After I pay my iOS dues, though, I’m gonna rearchitect the backend in Lisp Flavoured Erlang :)
+[00:12:53] <yurrriq> Core Javascript for iOS should do nicely, yeah?
+[00:13:03] <domme> i have no clue :-)
+[00:13:25] <quenne> ye Core JS will do 
+[00:13:25] <yurrriq> Cool. I’m experienced in Node, ClojureScript, etc, so that part shouldn’t be too tricky.
+[00:13:35] <yurrriq> quenne: cool!
+[00:13:45] <domme> yurrriq: sounds like a good fit
+[00:13:59] <domme> yurrriq: bonus points for having worked with promises yet
+[00:14:17] <domme> our new apis are all promise based 
+[00:14:20] <yurrriq> I’m all about it.
+[00:15:10] <yurrriq> Have you got a link for some example resolver code?
+[00:15:43] <domme> yurrriq: wanna see the brand new not yet finished proposal of mine or something that actually works in tomahawk master these days? ;-)
+[00:15:59] <domme> (you can also go for "both" :D)
+[00:16:15] <yurrriq> re: Android app as reference. I’ve done some Android work and speak fairly fluent Java, so it should indeed be useful wrt iOS
+[00:16:27] <yurrriq> domme: definitely both
+[00:16:57] <domme> yurrriq: fairly basic example https://github.com/tomahawk-player/tomahawk-resolvers/pull/90
+[00:16:57] <tomabee_> [ Add simple bandcamp resolver resolving to 128kb streams by theli-ua · Pull Request #90 · tomahawk-player/tomahawk-resolvers · GitHub | github.com | https://avatars2.githubusercontent.com/u/1242604?v=3&s=400 ]
+[00:17:19] <yurrriq> does that work in master or is it the future?
+[00:17:23] <domme> master
+[00:17:35] <yurrriq> cool
+[00:17:45] <domme> thinking about it, i think MrMaffen created a documented example resolver
+[00:17:50] <domme> now need to remember where he put it
+[00:18:06] <MrMaffen> yurrriq: feel free to ping me if you have questions
+[00:18:15] <yurrriq> MrMaffen: thanks!
+[00:18:18] <domme> https://github.com/tomahawk-player/tomahawk-resolvers/blob/master/examples/javascript/content/contents/code/example.js
+[00:18:19] <tomabee_> [ tomahawk-resolvers/example.js at master · tomahawk-player/tomahawk-resolvers · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[00:18:21] <domme> here
+[00:18:33] <yurrriq> domme: ha, just found myself
+[00:18:54] <domme> this is the bright future: https://github.com/tomahawk-player/tomahawk-resolvers/pull/92
+[00:18:54] <tomabee_> [ [WIP] Party like it's 2015 by dschmidt · Pull Request #92 · tomahawk-player/tomahawk-resolvers · GitHub | github.com | https://avatars3.githubusercontent.com/u/448487?v=3&s=400 ]
+[00:19:07] *** Parts: quenne (guest-quen@gateway/web/scrollback.io/x-czxyfvhlsnjmqqty) ()
+[00:19:51] <domme> mostly relevant: https://github.com/tomahawk-player/tomahawk-resolvers/blob/woah/soundcloud/content/contents/code/soundcloud.js
+[00:19:52] <tomabee_> [ tomahawk-resolvers/soundcloud.js at woah · tomahawk-player/tomahawk-resolvers · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[00:20:00] <domme> it'
+[00:20:32] <domme> it's a kinda straight forward port of the old soundcloud resolver, just to basic es6 class syntax and importing all dependencies (instead of relying on globals)
+[00:20:43] <yurrriq> +1 for that
+[00:21:21] <domme> but we can do a lot more now. for example using await, which will be a huge win for this extremely async kind of code
+[00:21:43] <yurrriq> right
+[00:22:00] <yurrriq> looks straight-forward enough..
+[00:22:10] <yurrriq> I guess my question is where to start on iOS.
+[00:22:39] <yurrriq> Would there be any benefit to going for a cross-platform solution, e.g. using React Native?
+[00:23:20] <yurrriq> Also, I don’t have any mental model of the general architecture of a Tomahawk client :/
+[00:23:29] <domme> okay, we can help with that :-)
+[00:23:51] * yurrriq digging through Android repo now
+[00:24:02] <domme> having written basically 3-4 tomahawk envs by now.. we know a few catches :)
+[00:24:35] <domme> so there are two core components i'd say.. those which gave (and still give) me the biggest pains on hatchet
+[00:24:44] <domme> the pipeline and the audioengine
+[00:25:00] <domme> the pipeline is what orchestrates the resolvers 
+[00:25:10] <domme> it takes care of looking for results for queries
+[00:25:19] <domme> (through resolvers)
+[00:25:34] <domme> and then the audio-engine which plays those results
+[00:27:09] <domme> regarding the cross-platform solution... dunno, mrmaffen is in strong favor of a native solution for android
+[00:28:27] * yurrriq taking notes
+[00:28:54] <yurrriq> re: native solution. I feel that.
+[00:29:07] <domme> i can almost promise you that you'll be rewriting those components over and over again till they work completely satisfactory :-D
+[00:29:12] <yurrriq> any opposition to Swift?
+[00:29:38] <yurrriq> ^ for iOS
+[00:29:47] <domme> yurrriq: i heard a term the other day... sec
+[00:30:40] <domme> "freedom of responsibility"
+[00:31:09] <domme> who is responsible for code, choses which tools (s)he wants to use :)
+[00:31:43] <domme> even if you went with html, your choice :)
+[00:31:46] <yurrriq> I like that.
+[00:32:48] <yurrriq> Are there screenshots of the Android app anywhere? I have neither a device nor the ADK at the moment.
+[00:33:26] <domme> MrMaffen: ^
+[00:35:09] <yurrriq> The Google Play link doesn’t work for me: https://play.google.com/store/apps/details?id=org.tomahawk.tomahawk_android&ah=…
+[00:35:11] <tomabee_> [ Not Found | play.google.com |  ]
+[00:35:46] <theli_ua> it does for me, I suppose if you get accepted to beta you'll be able to see the entry
+[00:36:06] <theli_ua> there are apk downloads, you can just try it in emulator I suppose
+[00:36:13] <yurrriq> ah. I clicked sign up or whatever. Probably haven’t been approved just yet.
+[00:36:16] <theli_ua> eh, no adk, ok
+[00:36:30] <yurrriq> I can install ADK. Will need to for work eventually anyway.
+[00:37:26] * yurrriq brew cask install android-studio
+[00:37:46] <theli_ua> bah. osx
+[00:37:52] <yurrriq> ha
+[00:37:52] <theli_ua> why do people use it :(
+[00:37:56] <domme> haha
+[00:38:00] <yurrriq> I get paid to write for iOS
+[00:38:02] <domme> why do people use windows?
+[00:38:09] <yurrriq> Debian for life
+[00:38:09] <domme> why do i have to maintain the windows version? :)
+[00:42:04] <yurrriq> should I try to link libtomahawk in the iOS project?
+[00:42:11] <domme> doutbful
+[00:42:17] <yurrriq> ha
+[00:42:17] <domme> doubtful
+[00:43:15] <yurrriq> what’s the status of the current ios repo?
+[00:44:26] <domme> yurrriq: i think someone commited a frame to start working with it
+[00:44:29] <domme> nothing more
+[00:44:37] <yurrriq> looks like an empty Core Data model and a bunch of standard utilities, AFNetworking, SDWebImage
+[00:44:39] <domme> yurrriq: use it or start from scratch whatever you like
+[00:44:54] <yurrriq> cool
+[00:51:22] <yurrriq> I forked and created an orphan branch: https://github.com/yurrriq/tomahawk-ios
+[00:51:23] <tomabee_> [ yurrriq/tomahawk-ios · GitHub | github.com | https://avatars3.githubusercontent.com/u/1866448?v=3&s=400 ]
+[00:51:37] <domme> :)
+[00:51:51] <domme> yurrriq: i expect a working app by tomorrow morning
+[00:52:08] <yurrriq> I’m thinking for the first task, I want to get resolvers working and tested
+[00:52:20] <domme> nice
+[00:52:20] <yurrriq> domme: so does my boss ;)
+[00:52:26] <domme> haha
+[00:52:37] <yurrriq> I think Halloween is my real “deadline"
+[00:52:52] <domme> i can explain to you how we invoke scripts
+[00:52:59] <yurrriq> into it
+[00:53:00] <domme> and what you need to implement for that to work
+[00:53:11] <domme> it's a bit complex, but also very powerful
+[00:56:48] <domme> so basically to bridge c++(or whatever you are using) calls to javascript, you need an id that you can use to map the result back to its caller
+[00:57:50] <domme> so in the beginning we had executeJS("search(someId, searchText);") that had the downside of always having to deal with that in resolver code, which is very ugly
+[00:58:22] <domme> (you always had to remember passing that back to Tomahawk.addTrackResults() .. *shrug* and global callback function *shrug* *shrug* *shrug*)
+[00:58:55] <domme> what we have now:
+[01:00:11] <domme> each javascript object that needs to be called functions on, registers itself with tomahawk.. then tomahawk can do PluginManager.invoke(someId, objectId, "search", { searchText: "whatever" }) e.g.
+[01:01:29] <domme> this will find the right object, and invoke object.search({searchText: "whatever"}) and when the promise search returns resolves, the pluginmanager will automatically return the results with the corresponding id to tomahawk
+[01:03:09] <domme> yurrriq: i guess you can look at the implementation in android for that
+[01:03:20] <yurrriq> hmm
+[01:03:26] <domme> the implementation on desktop has lots more cruft afaict
+[01:03:34] <yurrriq> Yeah, I’ll have to dig in a little deeper.
+[01:03:49] <yurrriq> JSContext looks promising in Swift land.
+[01:03:57] <yurrriq> I’ve not used JavascriptCore yet.
+[01:04:04] <domme> i mean, i can tell you all about it ... but it's hard to find a start somewhere :)
+[01:04:06] <yurrriq> I’m glad for this excuse to :)
+[01:04:07] <yurrriq> http://nshipster.com/javascriptcore/
+[01:04:08] <tomabee_> [ JavaScriptCore | nshipster.com | http://nshipster.com/touch-icon-ipad-retina.png ]
+[01:04:16] <domme> it was a 80 commit PR implementing that on desktop :)
+[01:04:20] <yurrriq> yikes
+[01:04:35] <domme> it also contained javascript info plugins and what not
+[01:05:54] <domme> https://github.com/tomahawk-player/tomahawk/blob/master/src/libtomahawk/resolvers/ScriptObject.h
+[01:05:55] <tomabee_> [ tomahawk/ScriptObject.h at master · tomahawk-player/tomahawk · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[01:06:12] <yurrriq> So I’ve the ADK installed and I’m trying to run the Android version in a simulator now
+[01:06:29] <MrMaffen> yurrriq: be sure to use an x86 platform image
+[01:06:39] <domme> https://github.com/tomahawk-player/tomahawk/blob/master/src/libtomahawk/resolvers/ScriptLinkGeneratorPlugin.cpp
+[01:06:40] <tomabee_> [ tomahawk/ScriptLinkGeneratorPlugin.cpp at master · tomahawk-player/tomahawk · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[01:06:41] <MrMaffen> and then install the x86 nightly ofc
+[01:06:54] <yurrriq> MrMaffen: noted
+[01:07:16] <domme> those are the most basic examples of how to use the scriptobjects 
+[01:08:05] <domme> scriptObject()->invoke() returns a Tomahawk::ScriptJob which is pretty similar to a promise
+[01:08:10] <domme> (just without the cool chaining stuff)
+[01:08:18] <MrMaffen> yurrriq: I think the best way to start would be to design a playback view and try to get tomahawk to play a local file (preferably with libvlc)
+[01:08:29] <MrMaffen> domme: js stuff comes later imo
+[01:08:49] <domme> 23:52:08 < yurrriq> I'm thinking for the first task, I want to get resolvers working and tested
+[01:09:08] <MrMaffen> hm ok
+[01:09:26] <domme> yurrriq: i'm sorry this is complex :)
+[01:09:28] <MrMaffen> but resolvers only makes sense when there's a way to play songs, no? 
+[01:09:28] <yurrriq> I mean, Apple provides some great APIs for playing/streaming audio
+[01:09:39] <yurrriq> that part is not so tricky/foreign to me
+[01:09:49] <yurrriq> I figured I’d focus on the new stuff first.
+[01:09:49] <MrMaffen> ah ok
+[01:09:51] <domme> MrMaffen: and displaying playlists makes only sense if you can resolve them ;-)
+[01:09:55] <theli_ua> well, I think we use libvlc to be consistent
+[01:09:58] <yurrriq> Can’t hurt to have a basic audio player set up first
+[01:10:05] <yurrriq> I’ll look into libvlc
+[01:10:10] <theli_ua> like, I highly doubt you'll be able to stream rtmp with apple's apis
+[01:10:13] <jherskowitz> re
+[01:10:14] <MrMaffen> domme: you wouldn't want to display playlists at first. you'd just want to list all local files and play them
+[01:10:14] <domme> MrMaffen: and playing tracks makes only sense if there are results 
+[01:10:26] <MrMaffen> local only ... that's what I'm suggesting
+[01:10:48] <yurrriq> theli_ua: quite right
+[01:11:12] <jherskowitz> hey yurrriq 
+[01:11:27] <jherskowitz> fwiw, there is just a placeholder repo on github https://github.com/tomahawk-player/tomahawk-ios
+[01:11:27] <tomabee_> [ tomahawk-player/tomahawk-ios · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[01:11:40] * jherskowitz goes to read backlog
+[01:11:51] <domme> i dont know where to start.. i think on hatchet we started with displaying data... and resolving and playback came later
+[01:12:10] <yurrriq> jherskowitz: I saw that. Where’s it at? looks pretty empty upon first glance at the repo
+[01:12:28] <jherskowitz> yurrriq: that’s all there is :/
+[01:12:31] <MrMaffen> yurrriq: when it comes to architectural concepts. how the different components should fit together... please ping me if you want to talk about that.
+[01:12:41] <domme> or me
+[01:12:43] <domme> or muesli :)
+[01:12:47] <MrMaffen> yep
+[01:13:18] <yurrriq> Will do!
+[01:13:25] <jherskowitz> yurrriq: although we do have some designs
+[01:13:31] <jherskowitz> one sec
+[01:13:32] <yurrriq> good
+[01:13:48] <yurrriq> I’m more of a backend guy
+[01:13:57] <domme> oh yes, totally forgot about that :)
+[01:13:57] <jherskowitz> ah, k
+[01:14:39] <domme> yurrriq: what timezone are you in btw?
+[01:14:40] <yurrriq> I’m happy to implement designs, but I’m no good at creating them :)
+[01:14:56] <yurrriq> domme: CDT
+[01:15:08] <MrMaffen> I think generally speaking the Android app should give you a good feel of how you might wanna design things
+[01:15:19] <yurrriq> MrMaffen: +1
+[01:15:22] <MrMaffen> it has some rough edges, but all in all it works quite nicely
+[01:16:09] <jherskowitz> yurrriq: this is what we have from a while ago - some of the concepts evolved a bit during android dev, but it’s worth looking at https://www.dropbox.com/sh/qr85gerljuxkzj4/AAChQRApsSG6g9btC509iqica?dl=0
+[01:16:12] <tomabee_> [ Dropbox | www.dropbox.com | https://cf.dropboxstatic.com/static/images/icons128/folder_dropbox.png ]
+[01:16:20] <yurrriq> http://git.videolan.org/vlc-bindings/VLCKit.git = 404..
+[01:16:20] <tomabee_> [ 404 Not Found | git.videolan.org |  ]
+[01:17:02] <domme> yurrriq: ah ok :)
+[01:17:22] <yurrriq> domme: I keep very odd hours, though..
+[01:17:42] <yurrriq> jherskowitz: thanks for the PSDs
+[01:17:49] <jherskowitz> np
+[01:17:50] <domme> yurrriq: you might fit into the team then ;-)
+[01:18:24] <jherskowitz> heh, I generally am asleep before everyone else - and they are all 6 hours ahead of me :)
+[01:18:33] <domme> hahahaha
+[01:18:35] <yurrriq> Anyone know where I can find the fabled VLCKit online?
+[01:18:45] <feepk> yurrriq: hey there, we moved it :)
+[01:18:50] <feepk> yurrriq: it's on code.videolan.org now
+[01:18:52] <domme> jherskowitz: although it has gotten better for me at least, i try to get up at noon these days
+[01:18:58] <domme> hehehe
+[01:19:05] <jherskowitz> noon, pfft
+[01:19:06] <domme> yurrriq meet feepk
+[01:19:17] <feepk> yurrriq: make sure to checkout videolan/VLCKit and not some fork ;)
+[01:19:27] <domme> jherskowitz: yeah, for that i try to not go to bed after 5am ;D
+[01:19:47] <domme> yurrriq: mr osx in vlc
+[01:19:56] <yurrriq> Lately I’ve been getting up sometime between 10am and 4pm and going to bed between 5am and 10am haha
+[01:20:23] <yurrriq> feepk: great, thank you! I found a bad link on a VLC wiki somewhere.
+[01:20:47] <feepk> yurrriq: let me know where and it will disappear :)
+[01:21:02] <feepk> yurrriq: seeing the wiki, I really need to update the compilation HOWTO for VLCKit
+[01:21:22] <feepk> yurrriq: if all you care about it iOS, it is simple (and long) at the same time these days
+[01:21:27] <yurrriq> feepk: https://wiki.videolan.org/Libvlc/#VLCKit_for_Cocoa_.28iOS.2FMacOS.29
+[01:21:27] <tomabee_> [ VideoLAN Wiki |  |  ]
+[01:21:59] <feepk> yurrriq: just execute ./buildMobileVLCKit.sh and wait for ~90min and 8GB of intermediate build files
+[01:22:07] <domme> haha
+[01:22:11] <yurrriq> feepk: ohhh boyyy
+[01:22:14] <feepk> I wish I was kidding
+[01:22:34] <domme> holy cow :)
+[01:22:43] <jherskowitz> feepk: any issues with compiling on El Capitan?
+[01:22:51] <feepk> then, in Examples_iOS, there is a simple sample project
+[01:22:56] <jherskowitz> haven’t tried since I never got it working on Mavericks
+[01:23:03] <feepk> which shows to how to do a 25MB movie player
+[01:23:04] <yurrriq> jherskowitz: I’ll let you know. I’m on El Capitan
+[01:23:15] <feepk> jherskowitz: none, I'm on 10.11 since June
+[01:23:27] <jherskowitz> ok, I’ll give it a shot
+[01:23:28] <jherskowitz> thx
+[01:24:03] <feepk> jherskowitz: make sure to have Xcode 7 on 10.11 though. Xcode 6.4 won't really reliably do it
+[01:24:20] <yurrriq> feepk: I’m using 7.1. is that alright?
+[01:24:40] * yurrriq time ./buildMobileVLCKit.sh # here we go
+[01:24:54] <domme> i see you're in good hands, i shall get some sleep now :)
+[01:24:56] <feepk> yurrriq, domme: the main issue with VLCKit is that we are compiling it for 5 architectures, so that's 30 external libraries + plus vlc
+[01:25:11] <feepk> yurrriq: yep, that's alright
+[01:25:17] <yurrriq> domme: Thanks for all your help!
+[01:25:24] <feepk> I should do the same as domme actually
+[01:25:33] <feepk> yurrriq: feel free to ping me ;)
+[01:25:38] <yurrriq> Sounds good. I should get back to work anyway.
+[01:25:41] <yurrriq> This is too exciting.
+[01:25:54] <domme> yurrriq: if you need anything, just ping me here or in query.. will respond tomorrow morning
+[01:25:55] <yurrriq> I let the build script do it’s thing while I work
+[01:26:43] <yurrriq> feepk, domme: sounds good. I’ll try to hang out here. I’m not much an IRC user normally, but this little session has been very informative.
+[01:27:09] <feepk> yurrriq: cool! I'm in the same time zone as domme btw.
+[01:27:25] <yurrriq> how far off are we?
+[01:27:35] <domme> yurrriq: it's 1:30am here :)
+[01:27:42] <domme> same goes for MrMaffen btw
+[01:27:44] <domme> and muesli
+[01:27:49] <yurrriq> good thing I keep odd hours then
+[01:27:50] <domme> lots of crazy germans here ;-)
+[01:28:02] <yurrriq> haha
+[01:28:30] <yurrriq> sounds like jherskowitz and I are in the same timezone, -6 from y’all
+[01:28:43] <jherskowitz> yurrriq: I’m EDT actually
+[01:28:46] <yurrriq> mm
+[01:29:05] <jherskowitz> I forgot I think this is the week in between our timezone changes
+[01:29:23] <domme> hehehe.. yeah, we just had our times changed to winter time this weekend
+[01:29:57] <yurrriq> well no promises on my time availability/commitment, but I’m pretty excited about the prospect of Tomahawk for iOS 
+[01:30:07] <yurrriq> which bodes well for it
+[01:30:24] <domme> we all wish we had more time :)
+[01:30:53] <domme> and it quickly gets more work than one expects at first, but much appreciated if you try to get anything done :)
+[01:30:56] <yurrriq> right? I think my strong desire to use the app myself will be a good driving force
+[01:31:04] <domme> that's how oss works
+[01:31:08] <domme> scratch your own itch
+[01:31:09] <jherskowitz> feepk: any pointers for this sdk error? http://pastebin.com/0QLjareN
+[01:31:10] <tomabee_> [ jfm:build jherskowitz$ brew install --HEAD vlc  ==> Installing vlc from tomahawk | pastebin.com | http://pastebin.com/i/fb2.jpg ]
+[01:31:45] <feepk> jherskowitz: if this is Xcode 7, you don't have a 10.10 SDK anymore
+[01:31:50] <feepk> jherskowitz: so you need to use 10.11
+[01:32:26] <jherskowitz> ok, I need to figure out how to do that :/
+[01:32:30] <domme> anyway.. i'm off :)
+[01:32:33] <domme> nini
+[01:32:33] <yurrriq> oops, do I need to install vlc before building vlckit?
+[01:32:37] <yurrriq> domme: goodnight
+[01:32:40] <feepk> s/10.10/10.11 should be enough
+[01:32:49] <MrMaffen> domme: nini
+[01:32:58] <feepk> yurrriq: no, this is what the script is doing for you, including all the build system and external libraries we need
+[01:33:02] <yurrriq> cool
+[01:33:10] * feepk is off, too, good luck!
+[01:34:12] <yurrriq> Thanks, everyone. I’m excited to see where this goes. I’ve gotta get back to work here too, but I leave the chat open. I’ll report back on my progress. For reference I’m gonna work on the developer branch at https://github.com/yurrriq/tomahawk-ios
+[01:34:13] <tomabee_> [ yurrriq/tomahawk-ios · GitHub | github.com | https://avatars3.githubusercontent.com/u/1866448?v=3&s=400 ]
+[01:34:19] <MrMaffen> feepk: good night! :)
+[01:34:28] <yurrriq> jherskowitz: I’m gonna start from scratch in Swift.
+[01:34:52] <yurrriq> feepk: night!
+[01:36:03] <jherskowitz> yurrriq: cool
+[01:39:22] <jherskowitz> feepk: know anything about "xz and lzma client not found!”?
+[01:39:27] <jherskowitz> oh, he’s gone
+[01:39:31] * jherskowitz off to google
+[01:45:57] <jherskowitz> I think that’s the same error rotzbouw always hits
+[01:48:00] <tomabee_> @yurrriq mentioned: @pansenmann @tomahawk @jherskowitz Shout out to the IRC crew. I'm excited to start coding. https://t.co/HSahVJeqD8 [<no value>]
+[01:49:38] *** Quits: yurrriq (~yurrriq@174-20-89-200.mpls.qwest.net) (Quit: yurrriq)
+[01:51:06] <jherskowitz> muesli: have you come across that?
+[01:53:38] *** Joins: yurrriq (~yurrriq@174-20-89-200.mpls.qwest.net)
+[01:57:52] *** Quits: jturney1 (~jon@host86-141-129-230.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[02:16:57] <yurrriq> … and my fan is going nuts compiling VLCKit
+[02:23:28] <yurrriq> Getting this error on OS X. Any tips to fix it? Tomahawk::InfoSystem::LastFmInfoPlugin::onAuthenticated() "Got error in Last.fm authentication job: Authentication Failed - You do not have permissions to access the service" 
+[02:24:07] <yurrriq> Username and password are correct and I get “Success” in the Last.fm settings
+[02:24:19] <yurrriq> ^ Tomahawk 0.8.4
+[02:42:33] <jherskowitz> yurrriq: heard some reports of that, as far as we can tell it’s an issue with last.fm’s api
+[02:43:03] <yurrriq> ah ok
+[04:58:17] *** Quits: yurrriq (~yurrriq@174-20-89-200.mpls.qwest.net) (Quit: yurrriq)
+[05:23:42] *** Joins: mgue1 (~mgue@f049089030.adsl.alicedsl.de)
+[05:27:11] *** Quits: mgue (~mgue@x590f0cfb.dyn.telefonica.de) (Ping timeout: 264 seconds)
+[06:43:03] *** Joins: mehdix (~mehdix@x590caa50.dyn.telefonica.de)
+[07:35:46] *** Joins: Guest78532 (~gary@h108.21.117.75.dynamic.ip.windstream.net)
+[07:58:22] *** Quits: mehdix (~mehdix@x590caa50.dyn.telefonica.de) (Quit: mehdix)
+[08:23:28] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[08:27:32] *** Parts: Guest78532 (~gary@h108.21.117.75.dynamic.ip.windstream.net) ()
+[08:56:19] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: Textual IRC Client: www.textualapp.com)
+[09:01:16] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[09:20:38] <domme> moin
+[09:36:03] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[09:43:31] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[10:54:10] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[10:54:11] <morsik> I'm not sure about future in Tomahawk. Will next Tomahawk display album name in Queue list? Or I should fill issue? :P
+[10:55:09] <morsik> MrMaffen: as you wanted: https://bugs.tomahawk-player.org/browse/TWK-2145
+[10:55:09] <tomabee_> [ [TWK-2145] "Add Queue" adds wrong songs | bugs.tomahawk-player.org |  ]
+[11:34:30] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[11:34:30] <github-tomahawk> [13tomahawk] 15dschmidt pushed 1 new commit to 06woah: 02http://git.io/vW1RR
+[11:34:30] <github-tomahawk> 13tomahawk/06woah 14ec0a0c4 15Dominik Schmidt: Move moar stuff over to es6 foo
+[11:34:30] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[12:10:56] *** Joins: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222)
+[12:11:09] <gordie> Hi guys !  Any chance to see a new release of THK soon ?
+[12:12:54] <domme> hey gordie :)
+[12:13:02] <gordie> Hi domme ! How are u ?
+[12:13:06] <domme> i'm fine thanks :)
+[12:13:18] <domme> i'm afraid the next tomahawk release is not too close
+[12:13:28] <domme> we still have issues on osx which noone has had the chance to fix
+[12:13:29] <domme> muesli: ^
+[12:13:43] <gordie> :/ no one ? why for ?
+[12:16:33] <domme> gordie: busy with other things :(
+[12:16:34] <domme> sorry
+[12:16:53] <gordie> :,/
+[12:28:15] <muesli> domme: define not too close?
+[12:28:30] <domme> dunno :)
+[12:28:40] <domme> depends on when you get to it ;-)
+[12:28:42] <muesli> i don't plan to put any new features in before 0.9 actually 
+[12:28:48] * domme neither
+[12:28:54] <domme> i would like to release it asap :)
+[12:32:55] <domme> muesli: what do you expect when can you finish osx snarfu?
+[12:33:04] <muesli> i'm working on it
+[12:33:11] <domme> cool
+[12:33:16] <domme> muesli: how's it going? ;-)
+[12:33:29] <muesli> it's pretty annoying
+[12:34:10] <domme> what a surprise! :D
+[12:40:59] *** Joins: afics (~afics@unaffiliated/-x-/x-5730914)
+[13:12:16] <gordie> Hey muesli, so you're working on it ?  I was wondering : why is there no more (or just a few) commits on Github ?
+[13:16:20] <domme> gordie: muesli tends to work on things for weeks without any sign of life ;-)
+[13:18:52] <gordie> okay !
+[13:29:17] *** Quits: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222) (Quit: Page closed)
+[13:32:09] *** Joins: github-tomahawk (~github-to@192.30.252.34)
+[13:32:09] <github-tomahawk> [13tomahawk] 15dschmidt pushed 1 new commit to 06master: 02http://git.io/vW1A7
+[13:32:09] <github-tomahawk> 13tomahawk/06master 14866d9b6 15Dominik Schmidt: Be more explicit about which getStreamUrl function to call
+[13:32:09] *** Parts: github-tomahawk (~github-to@192.30.252.34) ()
+[14:04:03] *** Joins: jturney (~jon@host86-141-129-230.range86-141.btcentralplus.com)
+[14:18:36] <jherskowitz> muesli: have you been able to compile VLC on El Capitan?  I get the same "xz and lzma client not found” as rotzbouw.
+[14:18:53] <jherskowitz> I’ve force uninstalled xz and reinstalled
+[14:18:57] <jherskowitz> but no luck
+[14:23:14] *** Joins: HorusHorrendus (~horrendus@2001:629:3200:95:452a:7f29:f13e:263)
+[14:27:05] <jherskowitz> muesli: domme: Locally I also added an if statement for OS X 10.11 in our VLC -Head formula… I *think* I did it right. http://pastebin.com/FGpNYVsJ
+[14:27:05] <tomabee_> [ require 'formula'    class Vlc < Formula    # This is a HEAD only formula. the V | pastebin.com | http://pastebin.com/i/fb2.jpg ]
+[14:37:05] <domme> jherskowitz: at least it looks like :)
+[15:00:29] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[15:08:33] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[15:35:17] <jherskowitz> domme: so how do I push an update to a formula?
+[15:50:50] <tomabee_> @jherskowitz mentioned: @maxwillens You can join at https://t.co/z2Z4WMbLdi. Works best with @tomahawk but upcoming API will let others read/write to it directly. [<no value>]
+[16:03:26] <MrMaffen> morsik: thanks
+[16:51:28] <theli_ua> jherskowitz: that short link to hatchet.is is actually longer than full version
+[16:53:23] <jherskowitz> theli_ua: heh, that's Twitter for you
+[17:05:24] *** Quits: HorusHorrendus (~horrendus@2001:629:3200:95:452a:7f29:f13e:263) (Quit: Leaving.)
+[17:13:21] <tomabee_> @hartley mentioned: @tomahawk @mueslix @jherskowitz Woohoo. Thanks. Installed &amp; running great. [<no value>]
+[17:25:04] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[17:29:50] *** Joins: jturney1 (~jon@host86-141-129-230.range86-141.btcentralplus.com)
+[17:29:50] *** Quits: jturney (~jon@host86-141-129-230.range86-141.btcentralplus.com) (Disconnected by services)
+[19:30:52] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[19:33:09] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Remote host closed the connection)

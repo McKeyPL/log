@@ -1,0 +1,286 @@
+[00:02:53] <Divide|TechSupport> Hmm.  RTFM is one thing, but that's the first customer I've had who's ever mistook the WPS button for a power button.
+[00:02:59] <Divide|TechSupport> mistaken*
+[00:03:18] <Moonlightning> well, it's often unlabeled and the only button on the front of the thing
+[00:03:22] <Moonlightning> what's anyone supposed to think
+[00:03:55] <Moonlightning> If it has two curved arrows tip-to-tail on it, it looks like a restart button :B
+[00:03:57] <Moonlightning> :V *
+[00:04:30] <Divide|TechSupport> There is that, I suppose.
+[00:04:43] <Moonlightning> another reason to use a *nix box as your netbox: no WPS.
+[00:04:47] <Divide|TechSupport> And when you push it on our modems, it glows red like the eye of Sauron!
+[00:04:49] <Moonlightning> You can properly have no WPS.
+[00:04:59] <Moonlightning> Red? Bad color for that…
+[00:06:49] <Divide|TechSupport> Just a little, yes.
+[00:07:01] <Divide|TechSupport> You see a red light on your modem, you start to panic a little bit.
+[00:27:22] *** zz_CyberJacob is now known as CyberJacob
+[00:27:44] <AppleDash> What's wrong with WPS?
+[00:28:38] <Colgate> a lot
+[00:29:07] <AppleDash> Not if you disable using PINs
+[00:29:12] <Colgate> unless it was fixed in newer revisions of WPS, it can be cracked in seconds
+[00:29:20] <AppleDash> More like hours
+[00:29:26] <AppleDash> And nothing around here has that enabled
+[00:29:32] <Moonlightning> All this bullshit has just put me off WPS in general.
+[00:29:33] <Colgate> short period of time, how about that :P
+[00:29:36] <AppleDash> they have WPS but no PIN stuff enabled
+[00:29:45] <Moonlightning> I'll stick with WPA2-PSK[?], thanks
+[00:30:05] <Moonlightning> If I want different authentication tokens for different users, I'll set up RADIUS
+[00:30:13] <AppleDash> Err
+[00:30:21] <AppleDash> You're still using WPA2-PSK if you're using WPS
+[00:30:22] <AppleDash> lol
+[00:31:22] <Moonlightning> Your PIN is 'Unadvisability Endostoma Abortiveness Distracter'. Have fun.
+[00:32:04] <AppleDash> Yeah, no
+[00:32:37] <Moonlightning> Well, if I gave you a PIN like 1363, it might be guessed by an attacker before you've used it. :V
+[00:32:39] <Moonlightning> So no.
+[00:33:36] * AppleDash shrugs
+[00:33:48] <AppleDash> my WLAN password has always been and will always be pazzw0rd
+[00:33:54] <AppleDash> nobody's cracked it yet
+[00:34:03] <Moonlightning> How do you know that?
+[00:34:13] <Moonlightning> That's probably way up there in the password lists.
+[00:34:19] <AppleDash> Connected clients.
+[00:34:23] <AppleDash> And logs of wlan connections
+[00:34:28] <Moonlightning> y'know, next to Pa55w0rd and p@sswrd
+[00:34:48] <Moonlightning> what, TCP connections via your network?
+[00:34:55] <AppleDash> ...
+[00:34:56] <AppleDash> no
+[00:35:11] <AppleDash> Logs of when somebody clicks on "Wireless Networks", presses mine, enters the password, and clicks "Connect"
+[00:35:39] <Moonlightning> …oh, /WLAN/, not /WAN/
+[00:35:45] <Moonlightning> see, that's the problem with these acronyms -.-
+[00:37:40] <Divide|TechSupport> Not only do I have a strong password on both network and router, I also have my internet access MAC-delimited.
+[00:38:43] <Divide|TechSupport> I did, however, have a customer earlier whose network name was 'redwine' and whose password was 'redwine1'.  They were wondering why their network had such extensive upstream usage.  I WONDER WHY.
+[00:40:13] <Moonlightning> …okay, what
+[00:40:48] <Moonlightning> …
+[00:40:49] <Moonlightning> …right.
+[00:40:51] <Moonlightning> I'm a derp
+[00:41:16] <AppleDash> People are using the #PorteOuverte hashtag right now to offer and find a safe place to stay in Paris
+[00:41:27] <AppleDash> Sadly, 99% of the tweets are people tweeting exactly that statement ^
+[00:56:39] <Moonlightning> No way to match the /middle/ of an address in iptables, huh
+[00:57:07] <Moonlightning> 'd like to reject packets to the outside world from SLAAC addresses while I figure out why clients are still giving themselves SLAAC addresses
+[00:57:20] <Moonlightning> so I can still IPv6 without fear of exposing MAC addresses
+[01:00:48] <Colgate> "fear of exposing MAC addresses"
+[01:01:06] <Colgate> what's wrong with that?
+[01:05:05] <Moonlightning> It associates my specific devices with my online activities.
+[01:06:06] <Moonlightning> Sure, you can go bother the ISP for records of which customer had which address at what time to see if it was me, but that's nontrivial.
+[01:08:56] <Moonlightning> Anyway, are you any good with DHCPv6?
+[01:13:18] <Colgate> /shrug, that's what tor is for
+[01:13:19] <Compu> why am i banned from tpad?
+[01:14:44] <nscoots> but CMU...
+[01:15:22] <nscoots> http://www.engadget.com/2015/11/12/tor-accuses-carnegie-mellon-aiding-fbi/
+[01:15:23] <PinkiePieBot> [ Carnegie Mellon may have ratted out Tor users to the FBI ]
+[01:15:35] * nscoots TUT TUTS "SHAAAME CMU!!!"
+[01:16:35] <AppleDash> o.o
+[01:17:47] <AppleDash> I am, for reasons unknown to me, on CMU's pony club's mailing list
+[01:17:50] <AppleDash> I don't question it
+[01:19:24] <Moonlightning> Colgate: it's also what temporary addresses are for
+[01:37:53] *** Joins: Asoka (Asoka@Pony-gf87ro.net-htp.de)
+[01:40:30] *** Quits: Asoka_White (Asoka@Pony-efo49s.net-htp.de) (Ping timeout: 121 seconds)
+[01:52:39] *** Quits: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se) (Quit: Leaving.)
+[01:59:53] *** CyberJacob is now known as zz_CyberJacob
+[02:31:24] *** Joins: Asoka_White (Asoka@Pony-40nrug.net-htp.de)
+[02:34:35] *** Quits: Asoka (Asoka@Pony-gf87ro.net-htp.de) (Ping timeout: 121 seconds)
+[02:35:10] *** Joins: Phase (Phase4@Pony-k80aip.internode.on.net)
+[03:04:03] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:04:46] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[03:05:50] *** Quits: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner) (Ping timeout: 121 seconds)
+[03:06:26] *** Quits: Kinsley (JKinsley@Bow.To.Your.Princess) (Ping timeout: 121 seconds)
+[03:09:30] *** Joins: Kinsley (JKinsley@Bow.To.Your.Princess)
+[03:09:30] *** AutoLapsus sets mode: +o Kinsley
+[03:10:06] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[03:10:09] <Deathpony> I almost thought that I ruined my mobo
+[03:12:14] <JustAberrant> but then you didn't actually think that? ;p
+[03:12:23] <Deathpony> but then I remembered that it was inside the wrapping
+[03:12:28] <Deathpony> and since it was in the packaging it'll be fine
+[03:13:16] <JustAberrant> I see :(
+[03:13:25] <Deathpony> the plasticy thing it comes in
+[03:14:13] <JustAberrant> there are limits to what polyethylene terephthalate can do :(
+[03:15:05] <JustAberrant> will protect against mild ESD, but not lightening strikes or even a low powered arc welder :(
+[03:15:20] <Deathpony> if it was ESD
+[03:15:22] <Deathpony> it was mild
+[03:15:23] *** GigaCity is now known as Gigabit
+[03:15:48] <JustAberrant> kidding aside, you have to try pretty hard to actually do damage via ESD these days
+[03:15:49] <Deathpony> besides there's marks on the the plastic from the bottom of it
+[03:16:27] <JustAberrant> unless you rub your feet on a carpet and specifically touch a contact, you're probably fine
+[03:17:16] <Deathpony> a contact would be?
+[03:17:32] <Moonlightning> The gold things where it connects to other stuff?
+[03:17:37] <Deathpony> ah
+[03:17:41] <Moonlightning> Y'know…contacts?
+[03:18:24] * JustAberrant applies a mildly powered arc welder to Moonlightning 
+[03:18:49] * JustAberrant then inspects for sign of spidering 
+[03:20:03] * Moonlightning puts a creepy, spidering tune inside of JustAberrant instead.
+[03:20:12] <Gigabit> Fallout 4 looks fun. Friend got it for xbone
+[03:20:44] <JustAberrant> Fallout 4 makes me wish I had a gaming rig or current gen console
+[03:21:37] <Deathpony> yeah all it was a contact poked my finger
+[03:21:38] * JustAberrant played the shit outa Fallout 3 :(
+[03:22:39] <Seoson> When you finally figured out what monkey designed the menu keybindings it's fun indeed
+[03:23:36] *** Quits: Phase (Phase4@Pony-k80aip.internode.on.net) (Quit: Leaving)
+[03:23:52] *** Joins: Phase (Phase4@Pony-k80aip.internode.on.net)
+[03:30:46] *** Seoson is now known as Seoson|BNC
+[03:31:06] *** Quits: ivi (ivi@free.tibet) (Quit: Lost terminal)
+[03:31:36] <HoneyDrops> I should play some Fallout
+[03:32:51] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 121 seconds)
+[03:34:22] <Deathpony> for ram I went with 2x8gb G.SKILL Ares 1333mhz DDR3
+[03:36:04] *** RedHelper is now known as RedFlame
+[03:36:10] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[03:38:20] *** RedFlame is now known as RedHelper
+[03:39:46] *** Joins: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner)
+[03:39:46] *** AutoLapsus sets mode: +v PinkiePieBot
+[03:51:25] <Colgate> fallout 1 is gud
+[03:51:29] <Colgate> :D
+[03:54:50] <HoneyDrops> :D
+[03:55:55] *** Joins: ivi (ivi@free.tibet)
+[03:58:26] * Moonlightning CHGHOST blackl malloc.tibet
+[03:58:58] <Colgate> wat
+[03:59:20] * Moonlightning points at the most recent join.
+[03:59:49] <Colgate> username password oper do?
+[04:00:40] <Moonlightning> IRCv3 /chghost, not oper /chghost
+[04:07:25] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[04:13:09] <Deathpony> my motherboard says it's for 6gb/s HDD's and my HDD is a 3gb/s
+[04:13:14] <Deathpony> will it still work?
+[04:13:42] * Moonlightning would expect it to work either way, just be limited by the slower speed.
+[04:13:59] <Deathpony> I got it for $23 lol
+[04:14:05] <Deathpony> 1TB WD
+[04:14:49] <Moonlightning> I feel like faster motherboard+slower device should definitely work, though
+[04:14:52] <Moonlightning> Dunno for sure
+[04:15:28] <Colgate> Deathpony: should be fine
+[04:15:36] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[04:15:39] <Colgate> no HDD is going to run at 3 gb/s transfer speed anyways
+[04:16:58] <Phase> ~350MB/s, some SSD's can do that
+[04:17:05] <Phase> no spinning disk i'm aware of though
+[04:17:26] <Colgate> ssd yeah, I meant spinning disks
+[04:17:46] <Phase> they seem to be capping out around ~150MB/s, i'm not quite sure why
+[04:17:53] <Phase> sequential read
+[04:18:12] <Deathpony> what cables do I need to hook it up?
+[04:18:20] <Deathpony> it's a SATA
+[04:18:30] <Phase> the SATA cable :P
+[04:18:32] <Phase> and power
+[04:19:17] <Colgate> afaik, all sata cables are identical
+[04:20:09] <Phase> Deathpony, the 3gb/s and 6gb/s isn't an issue, the drive and motherboard will decide on the highest they can both support
+[04:23:59] <Deathpony> yeah
+[04:24:40] <Deathpony> pretty sure my PSU comes with SATA cables
+[04:24:55] <Deathpony> because my motherboard will do a Raid 10
+[04:25:07] <Deathpony> which I eventually will do
+[04:29:21] <Colgate> wat
+[04:29:32] <Colgate> psu comes with... sata power cables?
+[04:29:35] <Colgate> which is different
+[04:29:44] <Colgate> and raid has nothing to do with this? o.O
+[04:30:15] <Phase> sata drives have the newer powerconnector thing
+[04:37:01] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[04:41:54] <Deathpony> yeah
+[04:48:41] <Deathpony> http://www.newegg.com/Product/Product.aspx?Item=N82E16817438028&nm_mc=TEMC-RMA-Approvel&cm_mmc=TEMC-RMA-Approvel-_-Content-_-text-_-
+[04:48:43] <PinkiePieBot> [ EVGA 110-B2-0750-VR 80 PLUS Bronze 750 W 5 yr Warranty Semi-Modular NVIDIA SLI Ready and Crossfire Support Continuous Power Supply - Newegg.com ]
+[04:52:28] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[04:56:50] *** Joins: Asoka (Asoka@Pony-dt8d0t.net-htp.de)
+[04:59:19] *** Quits: Asoka_White (Asoka@Pony-40nrug.net-htp.de) (Ping timeout: 121 seconds)
+[05:20:47] *** Joins: Asoka_White (Asoka@Pony-2kja8b.net-htp.de)
+[05:23:22] *** Quits: Asoka (Asoka@Pony-dt8d0t.net-htp.de) (Ping timeout: 121 seconds)
+[05:30:36] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[06:37:52] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[07:06:23] *** Gigabit is now known as Snoarin
+[07:07:26] *** Joins: CrassyPaddles (test@Pony-81h.enl.137.198.IP)
+[07:15:54] *** Quits: CrassyPaddles (test@Pony-81h.enl.137.198.IP) (Connection closed)
+[07:16:11] *** Joins: CrassyPaddles (test@Pony-81h.enl.137.198.IP)
+[07:31:44] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[07:35:49] *** Joins: Phase4 (Phase4@Pony-k80aip.internode.on.net)
+[07:37:29] *** Quits: Phase (Phase4@Pony-k80aip.internode.on.net) (Ping timeout: 121 seconds)
+[07:44:36] <Compu> https://youtu.be/tXrRxqIjIPg
+[07:44:36] <PinkiePieBot> [ PWPG: D&D Play Undertale #1: HELLOOO, NURSE! (& Goatmom) - 1897 views - 21m 1s long - 212 likes - 99.07% ]
+[08:16:18] <tiwake> http://www.eweek.com/servers/applied-micro-unveils-next-gen-arm-server-soc.html
+[08:16:20] <PinkiePieBot> [ Applied Micro Unveils Next-Gen ARM Server SoC ]
+[08:18:31] *** Quits: Crimson_Tail (Bluepon@Pony-ak3ril.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[08:24:14] *** Quits: QuillSwirl (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:32:54] *** Quits: thatdguy (WebChat@Pony-lvub59.abo.wanadoo.fr) (Ping timeout: 121 seconds)
+[08:34:27] *** Joins: Asoka (Asoka@Pony-as1fe0.net-htp.de)
+[08:37:11] *** Quits: Asoka_White (Asoka@Pony-2kja8b.net-htp.de) (Ping timeout: 121 seconds)
+[09:12:46] *** Eventide is now known as Eventide|Sleepies
+[09:15:42] *** Quits: Deathpony (IceChat9@Pony-q2h.j1d.51.50.IP) (Connection closed)
+[09:25:59] <Compu> http://i.imgur.com/rgeCar5.jpg
+[09:26:40] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[09:47:36] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[09:48:56] *** Quits: Phase4 (Phase4@Pony-k80aip.internode.on.net) (Quit: Leaving)
+[09:54:21] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[10:06:15] *** Quits: nscoots (FreyGrimrod@Pony-3h6a1d.sub-70-192-15.myvzw.com) (Quit: Leaving.)
+[10:11:39] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:14:19] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[10:28:04] *** RedHelper is now known as Creeps|AFK
+[10:34:14] *** Kyoro is now known as Pocky
+[10:34:38] *** zz_CyberJacob is now known as CyberJacob
+[11:50:56] *** Joins: Asoka_White (Asoka@Pony-j1lgc0.net-htp.de)
+[11:52:54] *** Joins: QuillSwirl (ejd@Pony-fej07d.res.rr.com)
+[11:53:29] *** Quits: Asoka (Asoka@Pony-as1fe0.net-htp.de) (Ping timeout: 121 seconds)
+[12:01:01] *** Quits: QuillSwirl (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[12:48:54] *** Joins: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se)
+[12:56:20] *** Joins: thatdguy (~WebChat@Pony-ff6ltf.abo.wanadoo.fr)
+[13:16:57] *** Seoson|BNC is now known as Seoson
+[13:32:13] *** Quits: Datalink_ (Datalink@Datalink) (Connection closed)
+[13:32:22] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[13:44:28] *** Snoarin is now known as GigaWork
+[13:53:17] *** Parts: ivi (ivi@free.tibet) ()
+[14:31:37] *** Quits: GeekBrony (GB@bronydom.net) (A TLS packet with unexpected length was received.)
+[14:31:37] *** Quits: Dusk (Dusk@dusky.horse) (A TLS packet with unexpected length was received.)
+[14:31:37] *** Quits: catnickfl (catnickfl@catnickfl.bronytv.net) (A TLS packet with unexpected length was received.)
+[14:31:37] *** Quits: Sakura (Sakura@is.a.very.derpy.pony) (A TLS packet with unexpected length was received.)
+[14:31:37] *** Quits: sleumas2000 (sleumas2000@my.little.karaoke) (A TLS packet with unexpected length was received.)
+[14:47:07] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[14:59:41] *** Joins: Sakura (Sakura@Pony-fkc.i75.99.192.IP)
+[15:00:50] *** Joins: GeekBrony (GB@bronydom.net)
+[15:01:20] *** Joins: Dusk (Dusk@dusky.horse)
+[15:02:21] *** Joins: catnickfl (catnickfl@catnickfl.bronytv.net)
+[15:03:18] *** Joins: sleumas2000 (sleumas2000@my.little.karaoke)
+[15:10:31] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[15:17:41] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[15:19:30] *** Quits: GigaWork (Gigabit@Bazinga) (Ping timeout: 121 seconds)
+[15:20:24] *** Joins: GigabitPony (Gigabit@Bazinga)
+[15:20:58] *** Quits: Creeps|AFK (RedHelper@The.Pony.That.Makes.You.Smile) (Ping timeout: 121 seconds)
+[15:21:54] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[15:22:54] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[15:30:27] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-phg.g40.56.172.IP)))
+[15:31:05] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[16:01:37] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-ska.6j9.56.172.IP)))
+[16:02:00] *** Joins: QuillSwirl (ejd@Pony-fej07d.res.rr.com)
+[16:02:15] *** Joins: DJ-C0L7[EIT]_ (IceChat77@DJ-C0L7.EIT.LLC)
+[16:05:54] *** DJ-C0L7[EIT]_ is now known as DJ-C0L7[EIT]
+[16:28:01] *** GigabitPony is now known as GigaWork
+[17:05:34] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[17:23:14] *** Eventide|Sleepies is now known as Eventide
+[17:28:29] *** Joins: Tahlorz (rattle@Pony-04f8is.ph.cox.net)
+[17:43:09] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:49:31] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:56:23] *** Joins: Crimson_Tail (Bluepon@Pony-vntl7r.cg80.k4gu.0151.2601.IP)
+[18:01:05] *** CyberJacob is now known as zz_CyberJacob
+[18:03:09] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Connection closed)
+[18:11:04] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[19:04:18] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[19:07:05] *** Joins: Sin (Sin@is.hustlin.everyday)
+[19:34:03] *** Quits: Tahlorz (rattle@Pony-04f8is.ph.cox.net) (Quit: )
+[19:48:12] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[19:58:17] *** Divide|TechSupport is now known as Divide
+[20:01:22] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[20:12:26] *** Quits: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se) (Quit: Leaving.)
+[20:31:42] *** Quits: floogulinc (floogulinc@Pony-opvprb.floogul.net) (A TLS packet with unexpected length was received.)
+[20:34:32] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:35:50] *** Joins: floogulinc (floogulinc@Pony-opvprb.floogul.net)
+[20:37:22] *** Joins: NewFoal7345 (NewFoal7345@Pony-4jb.pmv.252.187.IP)
+[20:37:25] *** Quits: floogulinc (floogulinc@Pony-opvprb.floogul.net) (A TLS packet with unexpected length was received.)
+[20:37:31] *** Joins: floogulinc (floogulinc@Pony-opvprb.floogul.net)
+[20:38:56] <NewFoal7345> http://i.imgur.com/cLzPY0R.png
+[20:40:26] *** Quits: NewFoal7345 (NewFoal7345@Pony-4jb.pmv.252.187.IP) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[20:43:45] *** Quits: floogulinc (floogulinc@Pony-opvprb.floogul.net) (A TLS packet with unexpected length was received.)
+[20:43:57] *** Joins: floogulinc (floogulinc@Pony-opvprb.floogul.net)
+[20:44:08] *** Joins: Phase (Phase4@Pony-f34100.internode.on.net)
+[20:49:03] *** Joins: init31 (Jason@Pony-j6sb74.mi.comcast.net)
+[20:49:23] *** Parts: init31 (Jason@Pony-j6sb74.mi.comcast.net) ()
+[21:28:57] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[21:30:30] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Quit: Gone. Likely conscripted by the Lunar guard. Tell my family I love them!)
+[21:34:10] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "be back in a bit")
+[21:58:27] *** Quits: CrassyPaddles (test@Pony-81h.enl.137.198.IP) (Quit: Leaving)
+[22:00:27] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[22:49:07] *** Quits: Phase (Phase4@Pony-f34100.internode.on.net) (Ping timeout: 121 seconds)
+[23:07:59] *** Joins: CrassyPaddles (test@Pony-81h.enl.137.198.IP)
+[23:12:20] *** Divide is now known as Divide|TechSupport
+[23:22:10] <Divide|TechSupport> HATE.
+[23:22:35] <Divide|TechSupport> If you have a ChromeCast or an Apple TV or a laptop or a TOASTER attached to your TV, that does not make it a smart TV.  Stop telling me you have an LG Smart TV when it's NOT.
+[23:23:44] <JustAberrant> heh
+[23:26:16] <JustAberrant> that doesn't sound.. terribly unreasonable
+[23:26:25] * JustAberrant shrugs
+[23:35:30] *** Joins: Bill_Beck (gfrbgcisekg@Pony-cqdgqv.va.charter.com)
+[23:41:11] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[23:41:14] *** Quits: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Connection closed)
+[23:44:52] *** Parts: Bill_Beck (gfrbgcisekg@Pony-cqdgqv.va.charter.com) ()

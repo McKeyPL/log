@@ -1,0 +1,959 @@
+[00:02:44] *** Joins: MistVeil (AndChat3408@Pony-lelp7v.static.axtel.net)
+[00:03:35] <Seoson> FAIL it serves json as html ...
+[00:04:54] <mniip> wooooooow
+[00:04:56] <mniip> $394
+[00:07:34] <mniip> woohoo, bailed out at $389
+[00:11:33] <mniip> come on bitfinex
+[00:11:34] <mniip> just
+[00:11:35] <mniip> do it
+[00:13:04] <Colgate> pump n dump? :P
+[00:13:25] <mniip> eeeyup
+[00:14:12] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[00:22:06] *** Quits: init3 (quassel@init3.Is.Not.A.Clever.Poni) (Quit: No Ping reply in 180 seconds.)
+[00:22:16] *** Quits: Q0 (Q0@literallyshit.net) (Ping timeout: 121 seconds)
+[00:25:11] *** Joins: init3 (quassel@init3.Is.Not.A.Clever.Poni)
+[00:26:37] *** Joins: Q0 (Q0@Pony-0m7faa.vtfe.qoe9.0601.2601.IP)
+[00:32:02] *** Joins: Fallfeathers (Fallfeather@Pony-vandmf.bigpond.net.au)
+[00:38:10] *** Quits: MistVeil (AndChat3408@Pony-lelp7v.static.axtel.net) (Quit: Bye)
+[00:41:58] *** GigaTown is now known as Vega
+[00:43:33] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:48:45] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[00:56:59] *** Quits: Seoson (Seoson@pony.kab-s.de) (Ping timeout: 121 seconds)
+[01:04:33] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[01:06:32] <Seoson> OMFG I fucking did it. The stupid network bridge finally works. That took me what? 3 days?
+[01:24:39] *** Joins: zeta_ (Bluepon@Pony-mfh7oq.md.comcast.net)
+[01:27:21] *** Quits: Crimson_Tail (Bluepon@Pony-36mhlg.cg80.k4gu.0151.2601.IP) (Ping timeout: 121 seconds)
+[01:31:50] *** CyberJacob is now known as zz_CyberJacob
+[01:47:11] *** Joins: CrassyPaddles (test@Pony-sng.enl.137.198.IP)
+[01:54:23] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[02:02:05] *** mniip is now known as \m
+[02:14:14] *** Joins: Asoka_White (Asoka@Pony-df0cmv.net-htp.de)
+[02:14:25] *** Joins: derpy (derp@muffins)
+[02:17:23] *** Quits: Asoka (Asoka@Pony-isu1p5.net-htp.de) (Ping timeout: 121 seconds)
+[02:20:25] *** Quits: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se) (Ping timeout: 121 seconds)
+[02:32:02] *** Joins: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se)
+[02:36:16] <Seoson> Yay everything works now as expected. My VM has it's dedicated IP and is connected both ways ;-)
+[02:40:33] *** \m is now known as mniip
+[02:40:34] <mniip> guys
+[02:40:36] <mniip> it's happening
+[02:41:06] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[02:45:24] <Seoson> What exaclty?
+[02:52:34] <mniip> well btc just went from $380 to $430
+[02:52:58] <mniip> I was sure it was going to drop off right now
+[02:53:07] <mniip> but given the picture I have no idea what's going on
+[02:53:16] * mniip blames the chinese
+[03:05:15] <Moonlightning> That's why you should always express it as an integer number of satoshi. xP
+[03:10:19] <mniip> aww yiss
+[03:10:20] <mniip> blaze it
+[03:10:22] <mniip> http://i.imgur.com/x9UTdgA.png
+[03:12:02] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:13:26] *** Seoson is now known as Seoson|BNC
+[03:32:34] <Moonlightning> Okay, so there's a dnssec-dsfromkey
+[03:32:54] <Moonlightning> …you know, I don't think I ever generated a keysigning key. >.>
+[03:50:24] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[03:58:54] <Moonlightning> Is inline-signing the option I want? :o
+[03:59:22] <Moonlightning> I found a guide where they enabled inline-signing and then noted that bind didn't write to the original zonefile at all
+[04:00:34] <Moonlightning> …grrrrrrrrr. I really want automatic date-based serial numbers.
+[04:00:44] <Moonlightning> If inline-signing does what I think it does, that'll just be the missing piece.
+[04:05:22] <Moonlightning> I should submit a pull request.
+[04:14:57] <Moonlightning> YAY~
+[04:15:00] <Moonlightning> I got accepted to LE…
+[04:15:04] <Moonlightning> …aaaaand, I can't really do anything.
+[04:15:12] * Moonlightning resubmits, with /all!/ the names.
+[04:16:16] <Moonlightning> Two server names, two service names.
+[04:16:21] <Moonlightning> Should I include the zone itself?
+[04:16:26] <Moonlightning> I don't really use that for anything…
+[04:16:44] <Moonlightning> It has no data records; only meta records.
+[04:16:54] <Moonlightning> Just SOA and NS records.
+[04:17:11] <Moonlightning> …oh, except for that one TXT record for keybase which I should probably remove and just leave under the _keybase label
+[04:19:51] <Moonlightning> Wellll…I may as well replace my webserver's certificate.
+[04:19:57] <Moonlightning> Why not.
+[04:22:03] <jaderain> :333
+[04:22:09] <jaderain> yay for doing all the things!!
+[04:24:15] <Moonlightning> I wish they would automate this…given that my domain was already approved, why not just add those extra subdomains?
+[04:33:33] <Phase> subdomains may be delegated
+[04:34:22] <Phase> though given you control the delegation...
+[04:34:22] <Moonlightning> …
+[04:34:27] <Googie> To be fair, though they can, one of their methods of proof... yeah
+[04:34:37] <Moonlightning> What the fuck
+[04:34:39] <Googie> If you control the delegation, you already have all the tools needed to pretend to be them.
+[04:35:04] <Moonlightning> I ran their script with --help, and it did a bunch of things with my package manager, using cached sudo authorization! D:<
+[04:35:37] <wolfyshy> Moonlightning: 
+[04:35:44] <Moonlightning> Phase: …huh?
+[04:35:49] <Moonlightning> wolfyshy:
+[04:35:51] <wolfyshy> Defaults timestamp_timeout=0
+[04:35:55] <wolfyshy> put this in visudo
+[04:36:03] <Moonlightning> but that's really, /really/ annoying
+[04:36:05] <wolfyshy> it removes the ability for sudo credentials to be cached
+[04:36:10] <wolfyshy> I have it one every box I own
+[04:36:29] * Moonlightning has it set to 15m :I
+[04:36:35] <wolfyshy> because I don't trust anyone
+[04:36:37] <wolfyshy> even myself :)
+[04:36:46] <Phase> Moonlightning, typically domain.tld has no more permissions over sub.domain.tld than example.com would, in browsers at least, so LE doing the same doesn't seem unreasonable
+[04:37:15] <Moonlightning> Phase: you can't delegate subdomains with a centralized certificate model, though.
+[04:37:18] <Caerdwyn> wolfyshy: %sudo ALL=(ALL:ALL) NOPASSWD: ALL
+[04:37:20] <Caerdwyn> :P
+[04:37:37] <Moonlightning> You have to get a CA to issue you a cert with an exhaustive list of the names you want (perhaps using wildcards)
+[04:37:39] <Phase> Moonlightning, you could but no one implements that extension
+[04:37:50] <Moonlightning> …so, effectively, you can't.
+[04:38:01] <Phase> yeah
+[04:38:06] <Phase> which annoys me greatly
+[04:39:27] * Phase hopes they do dnssec based pinning
+[04:39:52] *** Quits: mniip (mniip@Pony-o9q.v2g.219.178.IP) (Killed (Colgate (Don't do that.)))
+[04:40:04] *** Joins: mniip (mniip@Pony-o9q.v2g.219.178.IP)
+[04:40:21] <Phase> someone said once that the dns roots dont want that, since they become liable, but for domain validation level certs they're already able to be whoever they danm well please
+[04:44:31] <Moonlightning> mniip ._.
+[04:47:22] *** Joins: Sombra (Iceman@Darkhorse21)
+[05:03:57] <Phase> mniip, has china started bitcoining again?
+[05:04:19] <Phase> mr satoshi's wild ride begins again
+[05:05:18] <mniip> yes
+[05:05:32] <mniip> the shit that happened in past 10 hours
+[05:07:39] <Phase> mniip, what was the cliff at 4? closing time somewhere?
+[05:08:05] <mniip> ?
+[05:08:13] <mniip> at 4?
+[05:08:50] <Phase> the blie bars represent a range right? at 4 it instantly went to the lower end
+[05:08:55] <Phase> blue'
+[05:09:04] * Phase is not a trader
+[05:09:45] <mniip> oh you're talking about some screenshot of mine
+[05:10:35] <Moonlightning> YAY~ bind didn't make my zonefile all messy! :D
+[05:10:45] <Phase> <mniip> aww yiss
+[05:10:45] <Phase> <mniip> blaze it
+[05:10:46] <Phase> <mniip> http://i.imgur.com/x9UTdgA.png
+[05:11:52] <mniip> ah
+[05:12:05] <mniip> someone was actively wiping out liquidity
+[05:12:10] <mniip> and then they stopped
+[05:18:25] <Moonlightning> Hmmmmmm.
+[05:18:50] <Moonlightning> does nginx actually check file types? >.>
+[05:19:08] <Moonlightning> I don't append '.txt' to everything that's text/plain… :V
+[05:19:32] <Moonlightning> and I don't want everything served as application/octet-stream just because of its extension -.-
+[05:19:43] <Moonlightning> their *
+[05:22:41] <Phase> you could probably make nginx use libmagic
+[05:22:47] * Phase wouldn't imagine its the default
+[05:23:06] * Moonlightning wants this. :V
+[05:23:31] <Moonlightning> Content-Type should be considered a hint and /only/ a hint.
+[05:23:35] <Moonlightning> Here, check this type first.
+[05:23:49] <Moonlightning> If it doesn't match, clients should continue checking other types as normal.
+[05:24:20] <Phase> Content-Type does change client behaviour
+[05:25:17] <wolfyshy> Moonlightning: in any sane httpd (read: apache, lighty, cherokee) it uses system mime type specifiers if available
+[05:25:32] <wolfyshy> Moonlightning: and any sane distro (gentoo, debian, suse, bsd) will ship a very very long list by default
+[05:26:25] <Moonlightning> okay, this aside, WHERE IS THE DOCUMENTATION FOR SITE CONFIGURATIONS -.-
+[05:26:34] <Moonlightning> I'm getting intros and examples. I want //documentation.//
+[05:27:17] <Phase> arg, nginx changed their site
+[05:27:24] *** RedHelper is now known as RedHelper_
+[05:27:45] <Moonlightning> oh, I found it
+[05:27:49] <Moonlightning> it's on the org. site, I guess
+[05:27:52] <Moonlightning> which doesn't support TLS
+[05:27:53] <Moonlightning> yay
+[05:37:56] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[05:41:54] <Sakura> Anyone here own a Roku? I was curious about something.
+[05:46:48] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[05:51:16] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "switchin' comps bbs")
+[05:52:24] *** Divide is now known as Divide|Streaming
+[06:00:39] *** mniip is now known as \m
+[06:00:43] <Moonlightning> How do you try_files with just one file >.>
+[06:00:50] <Moonlightning> Is that just a `rewrite`?
+[06:01:07] <Moonlightning> And does `rewrite` take the things that start with @?
+[06:10:01] <Moonlightning> Should I make a new system user for my Flask app, or just run it under www-data? x.x
+[06:12:37] *** Quits: zeta_ (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[06:16:27] <wolfyshy> Moonlightning: I think that's really your call.  using a separate user you can sandbox it better, but it may not be worth the hassle and maintenance
+[06:16:32] <wolfyshy> depends on what else sits on that server
+[06:16:55] <Moonlightning> It's just my personal server.
+[06:17:55] <Moonlightning> It runs an IRC network, a couple private VPNs, an HTTP server I use mostly for linking random files, and a DNS server
+[06:18:12] <Moonlightning> the third being down currently because I'm configuring nginx
+[06:21:29] <ButterBean> is any one here good with mysql?
+[06:22:09] * Moonlightning balances a postgres and an sqlite on ButterBean's head.
+[06:22:43] <ButterBean> -_-
+[06:23:05] <Moonlightning> :3c
+[06:23:27] <ButterBean> does that indicate that you are good with MySQL?
+[06:25:55] <ButterBean> Moonlightning
+[06:26:12] <wolfyshy> it indicates Moonlightning likes PostgreSQL better than MySQL I think
+[06:26:15] <Moonlightning> ^
+[06:26:31] * Phase makes anti-mysql noises
+[06:26:33] * Moonlightning patpats wolfyshy and gives her a wolftreat.
+[06:26:43] * wolfyshy nibbles ^.^
+[06:26:47] <wolfyshy> woof :3
+[06:26:50] <Moonlightning> :3
+[06:26:51] * Phase will probably go set up a mariadb instance soon
+[06:27:00] <ButterBean> whelp i am trying to get my request system to work
+[06:27:13] <ButterBean> the dedicated server is borkem up into VMs
+[06:27:23] <ButterBean> the sql data base is hosted localy on a VM
+[06:27:32] * Moonlightning is using sqlite for his simple little webapp. Hasn't ever done anything with those big SQL servers that have their own account systems and everything. @.@
+[06:27:52] <Moonlightning> Is that…most of them? Like, postgres too?
+[06:29:02] <ButterBean> its only one server
+[06:29:08] <ButterBean> the radio server with uses RadioDJ
+[06:30:36] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:31:54] *** Divide|Streaming is now known as Divide
+[06:32:28] <Moonlightning> https://gist.github.com/anonymous/3cd4b90757d45ad05c14
+[06:32:29] <PinkiePieBot> [ sites-available--main · GitHub ]
+[06:32:30] <Moonlightning> Am I doing it right
+[06:32:58] <wolfyshy> did I show you pones my MySQL thesis?
+[06:33:02] <Moonlightning> No :o
+[06:33:15] <wolfyshy> do you remember when my work was going to convert pgsql->mysql and I had to write a well-cited thesis
+[06:33:20] <wolfyshy> https://gist.github.com/wolfyshy/3b7508f785fbdab0963f
+[06:33:21] <PinkiePieBot> [ MySQL Considered Harmful · GitHub ]
+[06:34:17] <ButterBean> Moonlightning we get it you dont like MySQL
+[06:35:01] <Moonlightning> ButterBean: sorry, what did I say against mysql besides that one balancing trick?
+[06:35:10] <Moonlightning> And agreeing with wolfy?
+[06:35:47] <Moonlightning> wolfyshy: manglement trying to migrate to mysql? x.x
+[06:35:57] <wolfyshy> Moonlightning: yes, but that thesis squashed it all
+[06:36:10] <wolfyshy> Moonlightning: the guy that was spearheading the move got SO BUTTHURT AT ME for proving his pet solution was bad...
+[06:36:24] <wolfyshy> but it's ok because my boss gave me a promotion for all the money I saved us
+[06:36:28] <wolfyshy> :)
+[06:36:42] <Moonlightning> :D
+[06:37:00] <Moonlightning> Nice. ^^
+[06:37:12] <wolfyshy> that autoincrement thing really was the death nail
+[06:37:19] <Moonlightning> yeah, that's horrible.
+[06:37:27] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[06:38:14] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[06:39:48] <ButterBean> Moonlightning this is what i am trying to do https://www.mane-frame.com/requests/
+[06:39:49] <PinkiePieBot> [ ManeFrameRadio - Demo ]
+[06:41:03] <Moonlightning> Uhm, okay
+[06:41:20] <Moonlightning> Did you do the things in the how-to-install section there|what's not working?
+[06:42:53] <ButterBean> i am still trying to get the script to talk to the server
+[06:43:42] <Moonlightning> The demo script you linked isn't communicating with the server?
+[06:44:04] <ButterBean> yea
+[06:44:36] <ButterBean> http://puu.sh/l9Y9I/73f4c24d97.jpg
+[06:45:29] <Moonlightning> Oh—the script needs to be able to communicate with a /MySQL/ server, and that isn't happening?
+[06:45:44] <ButterBean> yes
+[06:46:40] <Moonlightning> Uh, okay. What kind of error is it getting?
+[06:46:58] <ButterBean> hold up should it still work even tho its hosted localy
+[06:50:21] <Moonlightning> I'm just doing generic troubleshooting, by the way. You might be better served by the RadioDJ or MySQL channels.
+[06:51:42] <Phase> wolfyshy, why were they pushing for a move away from postgres?
+[06:52:18] <Moonlightning> Because manglement, of course
+[06:52:23] <Moonlightning> that's what they do
+[06:52:28] <ButterBean> Moonlightning what are the chanals again
+[06:52:45] <Moonlightning> Haven't the foggiest!
+[06:52:49] <wolfyshy> Phase: "postgres is slow"
+[06:52:54] <Phase> wat
+[06:52:56] <wolfyshy> Phase: that was their argument
+[06:52:59] <wolfyshy> the entire argument
+[06:53:03] * Phase moved away from mysql because it was slow
+[06:53:05] <wolfyshy> "postgres is slow"
+[06:53:07] <Phase> crapy trivial query planner
+[06:53:07] <wolfyshy> ^^^^^^^^^
+[06:53:15] <Moonlightning> There's a good chance that Freenode/#mysql exists (that or Freenode/##mysql ), and maybe Freenode/#radiodj
+[06:53:18] <wolfyshy> mysql always performs worse than pgsql in my tests, even with this app
+[06:53:33] *** Quits: Skids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[06:54:03] <wolfyshy> doesn't seem freenode has a channel for radiodj per ALIS, but #mysql does exist there on irc.freenode.net
+[06:55:03] <Phase> plus there's some really clever people on #postgresql
+[06:55:22] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[06:59:28] <Phase> wolfyshy, mysql's only real advantage is connections are quicker
+[06:59:46] <Phase> so if you're using php and really don't want pgbouncer
+[07:00:22] <wolfyshy> Phase: this is a long-running Python app
+[07:00:33] <wolfyshy> it has a connection pool made at startup
+[07:00:37] <wolfyshy> it basically never needs to make new ones
+[07:00:38] <Phase> yeah, no gains there
+[07:05:06] *** Vega is now known as snoarin
+[07:06:15] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:19:55] <Googie> MySQL... the thing that always sticks with me is that in the default configuration it had basically no transaction or ACID support... and it could just lose data if it was shut down incorrectly.
+[07:20:07] <Googie> That got fixed a while back when InnoDB became the default
+[07:20:21] <Googie> But it just sticks with me. Kinda reminds me of MongoDB, but to a less serious degree.
+[07:22:07] <Phase> Googie, it also had no constraints
+[07:22:34] <Phase> UNIQUE and NOT NULL might have been enforced, but relational constraints weren't
+[07:23:10] <Moonlightning> Relational constraints?
+[07:27:45] <Moonlightning> dammit
+[07:27:52] <Moonlightning> the configuration doesn't…
+[07:28:09] <DJ-C0L7[EIT]> the last experience with MySQL/MsSQL was an implementation of snort on a network based ids rollout
+[07:28:20] <DJ-C0L7[EIT]> for me*
+[07:29:01] <Moonlightning> why must all zones be in a view if any view exists
+[07:29:05] <Moonlightning> why do you do this, bind
+[07:30:32] * Moonlightning groans loudly.
+[07:31:17] <Phase> Moonlightning, no foreign keys
+[07:31:23] <Phase> it also parses and discards CHECK constraints
+[07:32:02] <Phase> and attempting to implement them with triggers can (will?) cause corruption across a cluster
+[07:32:12] <Phase> with the default configuration anyway
+[07:32:51] <Phase> i think kickstarter suffered from one of those mysql ecentricities
+[07:33:23] <Sakura> Anyone have Roku?
+[07:39:28] <Moonlightning> Seoson|BNC: well, it's servfailing now
+[07:39:32] <Moonlightning> so…that's better, I guess…
+[07:47:14] *** Eventide is now known as Eventide|Sleepies
+[07:51:21] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[08:09:26] <Moonlightning> There, that's better
+[08:09:32] <Moonlightning> no more complaining about out-of-zone data
+[08:12:38] <Moonlightning> Now, how do I make it stop dumping walls of 'automatic empty zone' >.>
+[08:13:02] *** zz_CyberJacob is now known as CyberJacob
+[08:18:24] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[08:22:55] *** Joins: Sombra (Iceman@Darkhorse21)
+[08:30:22] * Moonlightning wonders if RainbowHacks is any good with bind
+[08:31:29] <RainbowHacks> to an extent
+[08:31:31] <RainbowHacks> whassup
+[08:31:47] <Moonlightning> every time I reload, it spams the logs with 'automatic empty zone' lines D:
+[08:33:32] <RainbowHacks> o.o
+[08:44:08] <Moonlightning> It's starting to bug me. ):
+[08:54:21] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[09:01:43] <Moonlightning> Well. Anypony got a server-side OpenSSL cipher list they really like?
+[09:02:05] <Colgate> I really like the NULL cipher
+[09:02:09] <Colgate> very cpu efficient
+[09:15:52] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[09:20:09] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:23:07] <wolfyshy> Moonlightning: https://wiki.mozilla.org/Security/Server_Side_TLS#Modern_compatibility
+[09:23:09] <PinkiePieBot> [ Security/Server Side TLS - MozillaWiki ]
+[09:23:24] <wolfyshy> don't guess or roll your own
+[09:23:27] <wolfyshy> trust the MozWiki™
+[09:23:43] * Moonlightning nods.
+[09:23:45] <Moonlightning> Thanks, wolfyshy
+[09:23:50] <wolfyshy> my ex-mozilla-dev-ness has NOTHING to do with my recommendation
+[09:23:55] <wolfyshy> np Moonlightning :3
+[09:25:43] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[09:29:46] <wolfyshy> Moonlightning: and once you have read and understood that, cheat https://mozilla.github.io/server-side-tls/ssl-config-generator/
+[09:29:46] <PinkiePieBot> [ Generate Mozilla Security Recommended Web Server Configuration Files ]
+[09:30:22] <Moonlightning> wolfyshy: I take it that wiki page is not in fact editable by the general public, despite the absence of a protected icon
+[09:30:42] <DJ-C0L7[EIT]> anypony tinker with integrated circuits?
+[09:31:09] <wolfyshy> Moonlightning: hover over 'view source'
+[09:31:20] <wolfyshy> This page is protected.  You can view its source.
+[09:33:07] <wolfyshy> they do accept PRs, though: https://github.com/mozilla/server-side-tls/blob/gh-pages/Server_Side_TLS.mediawiki
+[09:33:09] <PinkiePieBot> [ server-side-tls/Server_Side_TLS.mediawiki at gh-pages · mozilla/server-side-tls · GitHub ]
+[09:34:05] * Moonlightning saw the revision history.
+[09:34:17] <Moonlightning> Last modified in August. Should be fine. c:
+[09:42:49] *** Kyoro is now known as Pocky
+[09:43:11] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:46:08] *** CyberJacob is now known as zz_CyberJacob
+[09:46:58] *** Quits: Cameron_D (cameron@192.241.210.101) (A TLS packet with unexpected length was received.)
+[09:47:35] *** Joins: Cameron_D (cameron@Pony-v0m.4h7.241.192.IP)
+[10:04:15] <Moonlightning> I should submit an April Foal's RFC to include /path/to in the Linux standard hierarchy
+[10:06:03] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[10:17:46] *** Quits: CrassyPaddles (test@Pony-sng.enl.137.198.IP) (Ping timeout: 121 seconds)
+[10:18:21] *** RedHelper_ is now known as Creeps|AFK
+[10:23:00] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:28:01] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[10:35:04] <Moonlightning> wolfyshy: why no session tickets?
+[11:14:56] <Moonlightning> I'm getting nginx to return 404s, 403s, and 500s
+[11:15:02] <Moonlightning> But it's returning them /over TLS!/ :D
+[11:15:16] <Moonlightning> With a browser-trusted certificate!
+[11:15:17] <Moonlightning> :
+[11:15:18] <Moonlightning> :D *
+[11:18:33] <Moonlightning> I can /really use this/ as an imagebin now! :D
+[11:18:46] <Moonlightning> next step: libmagic thing or whatever >.>
+[11:28:41] <Moonlightning> TIL you should never use `ldd` on an untrusted binary o.o
+[11:28:55] <Moonlightning> ponypage says to use `objdump -p` instead
+[11:29:12] <Moonlightning> 'cos using `ldd` might result in arbitrary code execution
+[11:36:06] <DJ-C0L7[EIT]> anypony here versed in ohms law?
+[11:36:27] <Moonlightning> I'd like nginx to return 403 for dotfiles that exist and 404 for those that don't, actually
+[11:36:46] <Moonlightning> though I guess returning one of them all the time makes more sense for security reasons
+[11:36:55] <Moonlightning> it's less…aesthetically pleasing? Iunno.
+[11:37:15] <Moonlightning> what are you gonna do with the knowledge that there's a /var/www/.foo.swp on the system :p
+[11:39:38] *** Kyoro is now known as Pocky
+[11:42:07] <Moonlightning> Is it bad that the indentation in rendered templates bothers me?
+[11:42:23] <Moonlightning> I'm looking for a way to get Jinja to remove one layer of indentation… >.>
+[11:42:56] <Moonlightning> I guess that's why the examples don't add indentation layers inside of Jinja blocks.
+[11:43:01] <Moonlightning> But then it looks bad in the source!
+[11:43:17] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[11:49:38] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[11:57:28] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[11:57:48] *** Joins: CrassyPaddles (test@Pony-ul7.enl.137.198.IP)
+[12:04:28] *** Quits: CrassyPaddles (test@Pony-ul7.enl.137.198.IP) (Ping timeout: 121 seconds)
+[12:06:52] <Moonlightning> o3o !!!!
+[12:07:01] <Moonlightning> I think I did it o.o
+[12:07:06] <Moonlightning> I didn't think I'd be able to, but…
+[12:07:11] <Moonlightning> aw man. x3;
+[12:07:22] <Pocky> Yay?
+[12:07:28] <Moonlightning> Okay, I'm gonna stop fucking with this now.
+[12:09:31] * Moonlightning cuddles a Pocky. :D
+[12:09:45] * Pocky squeaks
+[12:09:59] * Moonlightning grins.
+[12:10:28] <Pocky> 5 days to go :D
+[12:10:46] <Phase> memory usage for empty databases
+[12:10:48] <Phase> mssql: ~500MB
+[12:10:48] <Phase> mariadb: 3.6GB
+[12:10:48] <Phase> postgresql: 3MB
+[12:10:59] <Phase> on windows 10, default settings
+[12:11:15] <Moonlightning> > Windows 10
+[12:11:20] <Moonlightning> Your statistics are invalid.
+[12:11:53] <Moonlightning> Is it okay to use locals() for passing to jinja template-rendering things >.>
+[12:12:11] <Moonlightning> I mean, as opposed to going `render_template(foo=foo, bar=bar, baz=baz, quux=quux, ...)`
+[12:12:20] <Moonlightning> Just `render_template(**locals())`
+[12:14:56] *** Eventide|Sleepies is now known as Eventide
+[12:15:22] <Phase> i like how ~3GB of the mariadb memory was innodb cache, when the default storage engine isn't innodb
+[12:15:29] <Moonlightning> wat
+[12:15:41] <Phase> don't quote me on that
+[12:15:44] * Phase would need to check
+[12:17:52] <Phase> apparently innodb is being used, my bad
+[12:37:22] <Stik> are you running an experiment Phase ?
+[12:40:50] *** Seoson|BNC is now known as Seoson
+[12:40:55] <Seoson> Hello ;-)
+[12:44:04] <Seoson> Moonlightning: Did you solve that server fail problem? I coudn't exactly figure out from the backlog what you meant. (skim reading)
+[12:45:41] <Moonlightning> I fucked around with bind some trying to completely disable bind./chaosnet
+[12:45:48] <Moonlightning> chaosnet/bind. *
+[12:46:03] <Moonlightning> one of the two *
+[12:46:19] <Moonlightning> I got it to where it would return SERVFAIL for anything chaosnet
+[12:46:26] <Moonlightning> which is better than returning the version, I guess :P
+[12:46:39] <Seoson> Oh, nice. What did you use?
+[12:46:44] <Moonlightning> DNS has been relegated down in my project stack for the moment, though.
+[12:47:03] <Moonlightning> becauuuuuse, www.blackl.net. is now browser-trusted and I'm working on my webapp! :D
+[12:47:13] <Seoson> LE?
+[12:49:12] <Moonlightning> Mhm!
+[12:49:25] <Moonlightning> certificate isn't how I wanted it, but I'm taking it for now.
+[12:49:46] <Moonlightning> …wau, bots
+[12:49:56] <Moonlightning> 125.33.92.204 - - [05/Nov/2015:10:48:46 +0000] "GET http://azenv.net/sex-drugs-porn/youtube.com/ HTTP/1.1" 400 681 "-" "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)"
+[12:49:56] <PinkiePieBot> [ AZ Environment variables 1.04 ]
+[12:50:05] <Moonlightning> …errrr, I didn't think that through
+[12:50:11] <Moonlightning> [unchecked link] [probably dangerous link]
+[12:53:29] <Seoson> Sex drugs and PORN. And it's youtube, so it a trustworthy source! *clicks*
+[12:59:30] <Moonlightning> I don't suppose you know anything about nginx+uwsgi+flask?
+[12:59:37] <Moonlightning> I've hit a snag
+[12:59:43] <Moonlightning> also I don't really know what I'm doing
+[13:04:35] * Seoson is an apache2 child
+[13:05:34] <AppleDash> Moonlightning: I know about it
+[13:05:55] <AppleDash> Also, that's not a dangerous link, it's an AZEnv script, AKA a proxy judge, that dumps HTTP headers
+[13:06:05] <AppleDash> That bot was trying to determine if your httpd was a good proxy or not
+[13:09:46] <Moonlightning> That's completely invalid though
+[13:09:58] <Moonlightning> /var/www/http: doesn't exist :P
+[13:10:22] <Moonlightning> woulda made more sense if it'd tried CONNECT instead of GET
+[13:10:40] <AppleDash> No
+[13:10:53] <Moonlightning> you can't GET with a scheme and a host
+[13:10:57] <AppleDash> Yes you can.
+[13:11:02] <Moonlightning> really? O.o
+[13:11:03] <AppleDash> That's how HTTP proxy servers work.
+[13:11:15] <AppleDash> You send a GET with the URL you wish to proxy plus any headers you wish to send
+[13:11:24] <AppleDash> and it returns the headers and content that the remote URL returnms
+[13:11:27] <Moonlightning> …but only if the httpd is configured for that.
+[13:11:27] <AppleDash> returns*
+[13:11:30] <AppleDash> Sure
+[13:11:32] <Moonlightning> In which case, why not just use CONNECT?
+[13:11:39] <Moonlightning> that's what it's /for/, yeah?
+[13:11:43] <AppleDash> No
+[13:11:56] <AppleDash> CONNECT is for tunneling non-HTTP (urually HTTPS) traffic through an HTTP proxy
+[13:12:06] <Seoson> Not every proxy support connect
+[13:12:09] <AppleDash> most HTTP proxies either disallow CONNECT or only allow it on port 443
+[13:12:11] <Seoson> supports*
+[13:12:19] <Moonlightning> so is this GET with full URI sanctioned by a standard?
+[13:12:48] <Seoson> Yeah asked myself as well why it would use such a weird query/path string
+[13:13:13] <AppleDash> Either way, Moonlightning, what do you need help with?
+[13:14:39] <Moonlightning> I'm trying to ““deploy”” a ““webapp””
+[13:15:02] <Moonlightning> i.e. make requests under a certain directory call code in this Python script I wrote
+[13:15:29] <AppleDash> OK?
+[13:15:31] <Moonlightning> which involves nginx config that I haven't sorted out yet
+[13:16:10] <AppleDash> I can give you what I use for derpy.me
+[13:16:38] <AppleDash> Which is, for an unknown reason, deployed with uWSGI
+[13:16:49] *** Quits: Fallfeathers (Fallfeather@Pony-vandmf.bigpond.net.au) (Connection closed)
+[13:18:11] <Moonlightning> Uh, sure, I guess?
+[13:18:37] <Moonlightning> Right now I'm just looking for a way to unconditionally redirect to a @thing
+[13:19:08] <Moonlightning> Right now I have `location /foo { try_files @foo =404; }` which is hacky and I'm not sure if it even works
+[13:19:20] <AppleDash> Moonlightning: https://gist.github.com/AppleDash/e7e8ff515c6902da552f
+[13:19:21] <PinkiePieBot> [ derpyurls.init.conf · GitHub ]
+[13:19:24] <AppleDash> everything you will need to know
+[13:19:45] <Moonlightning> Oh, I got that bit
+[13:19:58] <Moonlightning> I didn't configure nginx right though
+[13:20:04] <AppleDash> There's 2 files
+[13:20:04] <AppleDash> :P
+[13:20:30] <Moonlightning> oh duh
+[13:21:51] <Moonlightning> yeah see
+[13:22:02] <AppleDash> Using the @thing is the recommended way
+[13:22:02] <Moonlightning> You're doing the `try_files $uri @foo;` thing
+[13:22:11] <Moonlightning> I don't want it to try the literal file first :P
+[13:22:11] <AppleDash> Although I don't have an =404 because Flask will pass a 404
+[13:22:17] <AppleDash> Then remove $uri
+[13:22:22] <AppleDash> And just try_files @whatever
+[13:22:26] <Moonlightning> You can't try_files with just one argument; I tried that
+[13:22:31] <AppleDash> Oh
+[13:22:42] <AppleDash> Then just try_files @whatever =404 seems like the best option
+[13:22:42] <Moonlightning> yeah
+[13:22:46] <Moonlightning> … :P
+[13:23:51] <AppleDash> What if you don't use an @thing at all
+[13:24:00] <AppleDash> and just put the contents of the @block into location / { }
+[13:24:16] <Moonlightning> …I guess I could try that, for dbugging
+[13:25:00] <AppleDash> I'm surprised you haven't yet said "sockets are for /run not /tmp"
+[13:25:10] <Moonlightning> They are?
+[13:25:21] <Moonlightning> mine's in /var/lib 'cos I didn't want to deal with permissions and stuff in /run
+[13:25:35] <Moonlightning> …oh, wait, /run isn't world-writable-sticky! o.o
+[13:25:50] <Moonlightning> okay, I'll move the socket there later
+[13:25:57] <AppleDash> :P
+[13:26:21] <AppleDash> Mine's in /tmp because I'm the only one with access to this server, and any remote holes would be via the www-data user which would obviously be able to access that socket
+[13:27:14] <Moonlightning> Well, I'm getting a different 404 page >XD
+[13:27:20] <AppleDash> :D
+[13:27:28] <Moonlightning> …oh! This one must be from Flask.
+[13:27:30] <AppleDash> Does it look like https://derpy.me/static/404
+[13:27:43] <Moonlightning> it looks really plain
+[13:27:46] <Moonlightning> more plain than nginx's
+[13:27:50] <AppleDash> Then it probably does look like that
+[13:27:55] <Moonlightning> yes, exactly like that
+[13:27:57] <AppleDash> If so, it's from Flask
+[13:28:08] <AppleDash> Well, now any bugs are in the Flask app and not your nginx comf!
+[13:28:10] <AppleDash> conf*
+[13:28:11] <Moonlightning> todo, later: make flask return nginx error pages
+[13:28:14] <AppleDash> lol
+[13:28:22] <Moonlightning> Well, there's a massive hack in the nginx conf now :p
+[13:28:38] <Moonlightning> my document root is going to be used as an imagebin and stuff, so
+[13:28:52] * Moonlightning …sets /var/www +t
+[13:29:03] <DJ-C0L7[EIT]> speaking of hacks, looks like i get to cut up a wiring harness when i get home to repair a massive problem caused by the FACTORY in my '88 cherokee
+[13:29:14] <Moonlightning> 6_9
+[13:29:37] <Moonlightning> Yeah, and uwsgi is keeping a running log of accesses
+[13:30:00] <Moonlightning> …this is completely backwards >XD
+[13:30:08] <Moonlightning> anything under /file is handled directly by nginx
+[13:30:13] <Moonlightning> anything else gets passed to the app
+[13:30:31] <Seoson> Sadly nginx is that optimal in shared setups. Since it doesn't know the concept of .htaccess files I would need to give each user access to the server config, which I don't want to do.
+[13:30:42] <Seoson> isn't* derp
+[13:30:48] <Moonlightning> this ain't really shared
+[13:31:01] <Seoson> In my case it is
+[13:31:15] <Moonlightning> Okay, so there's one route in my app
+[13:31:29] <Moonlightning> @app.route('/file/<path:file_path>', methods=['GET', 'POST'])
+[13:31:54] <Moonlightning> …wait, lemme just disable the `location /file {}`. For debugging.
+[13:32:52] <Moonlightning> Closer! Got a 500 from Flask :D
+[13:33:15] <AppleDash> lol
+[13:35:26] <Moonlightning> Okay, uh
+[13:35:51] <Moonlightning> oh, I think I know whu
+[13:35:56] <Moonlightning> why *
+[13:36:10] <Moonlightning> > render_template('file/authentication.html')
+[13:36:18] <Moonlightning> that's not how you do that, Past Moonlightning
+[13:37:02] <AppleDash> Is it not?
+[13:37:05] <Seoson> So wait you let python deliver your "static" content? Why not do a static subdomain and gain additional performance?
+[13:37:21] <Moonlightning> > static subdomain
+[13:37:22] <Moonlightning> ew.
+[13:37:23] <AppleDash> Seoson: because Moonlightning is me from 2 years ago
+[13:37:27] <AppleDash> he doesn't believe in the modern web
+[13:37:46] <Moonlightning> If you're going to do that, it should be static.www
+[13:37:56] <Moonlightning> and…no I don't want to do that :P
+[13:38:06] <Moonlightning> No, I'm not routing static content through Python. That's silly.
+[13:38:11] <Moonlightning> This is just temporary, for science.
+[13:38:13] <Moonlightning> I mean debugging.
+[13:38:15] <AppleDash> Nobody sane uses www. anymore
+[13:38:29] <Moonlightning> This domain handles multiple protocols.
+[13:38:30] <AppleDash> It's just unnecessary URL lengthening
+[13:38:33] <AppleDash> So does mine
+[13:38:47] <AppleDash> Have you heard of a revolutionary new networking technology
+[13:38:48] <Moonlightning> So either @ does everything, or it does nothing.
+[13:38:51] <Moonlightning> I prefer the latter.
+[13:38:52] <AppleDash> I think it's called "ports" or something
+[13:39:05] <Moonlightning> Convince me, later.
+[13:39:10] <AppleDash> will do
+[13:39:35] <Seoson> There is nothing revolutionary about ports. Actually it's quite a dumb concept
+[13:40:00] <Moonlightning> iiiis iiiit becauuuuuse…this is a bytes?
+[13:40:13] <Moonlightning> fuck it
+[13:40:19] * Moonlightning changes all the bytes back to `str`s
+[13:40:59] <AppleDash> Seoson: But Moonlightning was implying that to serve multiple protocols from the same machine he needed multiple subdomains
+[13:41:07] <AppleDash> So I figured that he had not been introduced to this concept
+[13:41:31] <Moonlightning> That's not what I meant.
+[13:41:59] <Moonlightning> It's just that blackl.net. is ambiguous.
+[13:42:03] <Moonlightning> Really ambiguous.
+[13:42:23] <Moonlightning> I have server subdomains and service subdomains; those are clear
+[13:42:28] <Moonlightning> sugar-belle is a specific server
+[13:42:31] * Seoson does create useless subdomains for different protocols himself, because he might move things to a different host at some point.
+[13:42:33] <Moonlightning> irc means /any server that does IRC/
+[13:42:39] <Moonlightning> what does @ mean?
+[13:42:42] <Moonlightning> what do you want?
+[13:42:55] <Moonlightning> How should it resolve?
+[13:42:58] <AppleDash> Yes, but
+[13:43:03] <AppleDash> I connect to port 80 for HTTP
+[13:43:06] <AppleDash> 443 for HTTPS
+[13:43:08] <Moonlightning> Before that, AppleDash!
+[13:43:11] <Seoson> Also I hope SRV RRs get more common at some point
+[13:43:12] <AppleDash> 6667 or 6697 for IRC or IRCS
+[13:43:12] <Moonlightning> DNS doesn't know what your port is!
+[13:43:17] <AppleDash> DNS doesn't need to know
+[13:43:23] <Moonlightning> How should @ resolve?
+[13:43:29] <DJ-C0L7[EIT]> g2g, talk to everypony later :3
+[13:43:31] <Moonlightning> Not all servers do all protocols.
+[13:43:31] <AppleDash> It should resolve to the IP address I chose
+[13:43:34] <AppleDash> See you, DJ-C0L7[EIT]
+[13:43:40] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "be back after a while everypony")
+[13:43:47] <Moonlightning> You know what I mean.
+[13:44:15] <Moonlightning> Like I said. sugar-belle is a specific server; irc is any server that does IRC; what is @?
+[13:44:19] <AppleDash> I just think it's dumb to type irc.dash.sh and www.dash.sh when I know that dash.sh points to the server that hosts both of those things
+[13:44:31] <AppleDash> @ is what you know it to be.
+[13:44:40] <AppleDash> What if I name my server irc?
+[13:44:41] <Moonlightning> So every server that does every protocol on the domain?
+[13:44:46] <AppleDash> Or I invent the sugar-belle protocol?
+[13:45:18] <Moonlightning> I'm maintaining the namespace so as to avoid collisions.
+[13:45:24] <Moonlightning> ^3
+[13:45:48] <AppleDash> That's not something that will ever happen with my personal domains
+[13:46:00] <Moonlightning> What?
+[13:46:26] * Moonlightning drops out of this thread until AppleDash answers the question /what should @ be?/
+[13:46:33] <AppleDash> ANYTHING
+[13:46:35] <AppleDash> Anything you want
+[13:46:40] <AppleDash> It is user-defined
+[13:46:49] <AppleDash> It could be my ircd or it could be the moon
+[13:46:51] <AppleDash> it doesn't matter
+[13:47:50] <Moonlightning> Well, if it's anything, then you can't use it as you're advocating.
+[13:48:07] <Moonlightning> You can't connect to @:6697 because the relevant host might not run an IRCd.
+[13:48:12] <Moonlightning> You should use irc:6697 instead.
+[13:48:34] <AppleDash> I'm alright
+[13:48:39] <AppleDash> I know that my domain points to my VPS
+[13:48:43] <AppleDash> which runs an IRC daemon
+[13:48:53] <Moonlightning> YES! :D
+[13:48:58] <Moonlightning> VISIBLE PROGRESS~
+[13:49:00] <AppleDash> So I can connect to my domain, which I know points to my VPS, which I know runs an ircd, to get to that ircd.
+[13:49:07] <Moonlightning> HTTP/1.1 200, rendered template
+[13:49:10] <AppleDash> Yay
+[13:49:12] <AppleDash> Finally
+[13:49:19] <Moonlightning> shit, what was the password I set on this thing
+[13:49:33] <Moonlightning> I've lost that terminal now lol
+[13:49:37] <AppleDash> Moonlightning: you should make the thing open source
+[13:49:45] <Moonlightning> I will, once it's not terrible.
+[13:50:27] <Moonlightning> https://www.blackl.net/file/foo.txt
+[13:50:28] <PinkiePieBot> [ MHFD ]
+[13:51:21] <Moonlightning> mmm, submitting the form results in another 500
+[13:53:42] <AppleDash> username and password to download a file
+[13:53:44] <AppleDash> that's one way
+[13:54:07] <AppleDash> What are you using for a database?
+[13:54:11] <Moonlightning> sqlite3
+[13:54:20] <AppleDash> I guess it works
+[13:54:26] <Moonlightning> and .$file.shadow files everywhere >XP
+[13:54:34] <Moonlightning> which are actuallysqlite3 databases
+[13:54:52] <Moonlightning> I need this uwsgi thing to give me tracebacks x.x
+[13:55:15] <AppleDash> Why don't you use the development server?
+[13:55:31] <AppleDash> if __name__ == "__main__": app.run(debug=True)
+[13:55:34] <AppleDash> python2 app.py
+[13:56:01] <Moonlightning> They've put me off of that :P
+[13:56:08] <AppleDash> How come?
+[13:58:02] <Moonlightning> UGH
+[13:58:03] <Moonlightning> unrelated, but
+[13:58:13] <Moonlightning> I feel so much pressure to use `str`s
+[13:58:20] <Moonlightning> but…these are file paths! they're not guaranteed to be valid Unicode!
+[13:59:11] <Seoson> Wait since when does Firefox view-source:http://domain.tld ?
+[14:01:41] <Seoson> Changelog says since 42.0 -.-
+[14:02:10] <Seoson> They should rename Firefox to Chrome Lite already
+[14:03:25] <Seoson> Please tell me I can turn that off somehow
+[14:04:28] <Seoson> About:config view_source.tab thanks -.-
+[14:06:41] <AppleDash> Why would you want to turn that off?
+[14:06:50] <AppleDash> The view source window was soooo inconvenient to me
+[14:06:57] <AppleDash> I loved when I saw they added a tab
+[14:08:23] <Seoson> exhibit a) Line numbers
+[14:09:07] <Seoson> Wait something is buggy
+[14:09:14] <AppleDash> What's wrong with the line numbers
+[14:09:37] <Seoson> When it was on default there were no line numbers, now there are. What?
+[14:09:48] <AppleDash> lol
+[14:10:00] <Seoson> But apart from that tab pollution
+[14:10:43] <AppleDash> Moonlightning: MHFD?
+[14:10:54] <AppleDash> Moonlightning's Horrible File Datastore
+[14:10:54] <Moonlightning> Moonlightning's HTTP File Distributor
+[14:10:58] <Moonlightning> :I
+[14:10:59] <AppleDash> Close enough :P
+[14:11:11] <Moonlightning> remember, this is for non-tech-ponies
+[14:11:16] <Seoson> Smartfox. It did view-source:view-source:http://domain.tld the first time
+[14:11:18] <Moonlightning> else I would just encrypt it to them or something
+[14:11:32] <Moonlightning> give them SSH access
+[14:11:34] <Moonlightning> a better way
+[14:11:52] <Seoson> That's why there were no line numbers nor syntax highlighting
+[14:12:04] <AppleDash> lol
+[14:12:17] <Moonlightning> Lite?
+[14:12:20] <Moonlightning> it's not exactly light
+[14:12:24] <AppleDash> Moonlightning: you're not complying with some arbitrary spec I just made up
+[14:12:27] <Moonlightning> it's got tons of memory leaks
+[14:12:34] <AppleDash> you're serving an html page at .txt files
+[14:12:46] <Moonlightning> It's /file/$filename
+[14:12:53] <AppleDash> Also, I've never seen Firefox use more than 1.5GB of RAM when running for over a month with 200 tabs
+[14:12:54] <AppleDash> so yeah
+[14:12:57] <Moonlightning> I'm not only going to serve files whose names end in HTML
+[14:13:01] <Moonlightning> Really?
+[14:13:05] <AppleDash> Really
+[14:13:07] <Moonlightning> Mine's using like 2.5 gigs RIGHT NOW
+[14:13:11] <Moonlightning> Watch.
+[14:13:13] * Moonlightning checks.
+[14:13:25] <Moonlightning> 2.16
+[14:13:26] <Moonlightning> Closanuff.
+[14:13:31] <AppleDash> Mine's using like 1.4
+[14:13:41] <AppleDash> with similar usage except it's been open for a couple days and not a month
+[14:13:52] <Moonlightning> Less than a week. Since the 31st.
+[14:14:15] <Moonlightning> besides, that's ridiculous
+[14:14:26] <Moonlightning> if I were to close ALL THE WINDOWS, right now, it would only drop to maybe like…2
+[14:14:40] <AppleDash> All I can say is YMMV
+[14:14:40] <Moonlightning> complete and utter bullshit
+[14:14:52] * Moonlightning fucks AppleDash's odometer.
+[14:15:03] <AppleDash> um
+[14:15:05] <AppleDash> Not sure if hot
+[14:15:24] <Seoson> I don't want to have 200 tabs in one browser :P
+[14:16:10] <Seoson> I don't use that tab organizing thing either
+[14:17:01] <AppleDash> I do
+[14:17:08] <Seoson> Also Chrome rellay likes to nom all the RAM. But as long as performance is O.K. I don't care. I have plenty
+[14:19:49] <Seoson> The hotkey for it is mapped to capslock, that doesn't work on my system anyway ^^
+[14:20:07] <Seoson> Derp it's not
+[14:20:18] <Moonlightning> I don't have plenty of RAM.
+[14:20:21] <Moonlightning> I only have eight gigs
+[14:20:25] <Seoson> I always confuse German key labels :P
+[14:20:33] <Moonlightning> and I'd like to use it for actual things, dammit
+[14:20:43] <Moonlightning> not just sitting around, allocated but unreachable
+[14:21:33] <Seoson> I have 12 GiB. 2 being allocated to a RAM disk most of the time.
+[14:23:16] <Seoson> I don't see any reason to install more than 16 on a regular computer without any specific use case.
+[14:24:25] <Seoson> Most programs using soo much are just badly optimized (e.g. games like CoD and Batman Arkam Night)
+[14:24:41] <Seoson> There are exceptions for video editing and 3d rendering
+[14:25:03] <Moonlightning> >.>
+[14:25:11] <Dawn> I regularly use 12 GB of ram
+[14:25:17] <Dawn> without video rendering
+[14:25:43] <AppleDash> I have managed 33GB with what I consider light usage
+[14:25:52] * Moonlightning thinks Dawn is hotter than Dusk
+[14:26:03] <Dawn> :o
+[14:29:22] <AppleDash> excuse me
+[14:30:51] <Moonlightning> I must be sleepdrunk o.o;
+[14:31:03] <Moonlightning> I actually wouldn't feel so bad about posting the Python script behind this, right now
+[14:31:10] <AppleDash> do ity
+[14:31:12] <AppleDash> do it*
+[14:33:33] <Moonlightning> https://gist.github.com/BlacklightShining/4cccd988eff222ad88bf
+[14:33:34] <PinkiePieBot> [ mhfd.py · GitHub ]
+[14:34:19] <Moonlightning> hay, this way, y'all can give me feedback, yeah? :D
+[14:35:20] <Moonlightning> maybe give me a clue or three, since I'm missing a lot of them
+[14:36:16] <Moonlightning> ugh, sqlite3.connect() wants a str, too
+[14:36:20] <Moonlightning> goddamit
+[14:36:42] <Moonlightning> //file paths are arbitrary bytestrings; they are not guaranteed to be valid unicode!//
+[14:38:50] <AppleDash> On some platforms they are/
+[14:38:51] <AppleDash> .
+[14:39:53] <Moonlightning> Which means they're not always. :P
+[14:40:03] <Moonlightning> have you nothing to say, AppleDash?
+[14:40:07] <AppleDash> Not much
+[14:40:13] <Moonlightning> Or are you compiling a list of where I went wrong so you can bash me with it all at once?
+[14:40:22] <AppleDash> It's too early :P
+[14:40:30] <AppleDash> Although I'd just use BCrypt for passwords
+[14:40:32] <AppleDash> it's the standard
+[14:40:50] <Moonlightning> I thought pbkdf2 was better than bcrypt
+[14:42:26] <Moonlightning> what do you mean syntax error
+[14:42:51] <Moonlightning> lines 82..85, apparently my SQL has a syntax error
+[14:44:34] <Moonlightning> …oh, whitespace
+[14:44:34] * Moonlightning facehoofs
+[14:45:50] <Moonlightning> o3o !
+[14:46:04] <Moonlightning> It took a couple seconds before returning 502 this time!
+[14:46:07] <Moonlightning> VISIBLE PROGRESS~
+[14:46:13] <Moonlightning> That means it actually hashed a password!
+[14:55:29] <Moonlightning> almost there
+[14:55:37] <Moonlightning> It's just choking on an enum it doesn't have a copy of
+[15:06:40] <Moonlightning> YAY~
+[15:06:42] <Moonlightning> No more crashing!
+[15:09:10] <Moonlightning> …aaaaand, 404.
+[15:09:21] <Moonlightning> Flask 404.
+[15:11:32] <Moonlightning> oh, okay, I probably just did the send_from_directory() wrong
+[15:12:25] <Moonlightning> YAY~! :D
+[15:12:27] <Moonlightning> It works! :D
+[15:12:39] <Moonlightning> holy SHIT wow
+[15:12:58] <AppleDash> ?
+[15:15:33] <Stik> heh braindump much
+[15:17:44] <Moonlightning> Indeed
+[15:20:10] <WorkingData> http://www.thepennyhoarder.com/free-taco-bell-breakfast/
+[15:20:10] <PinkiePieBot> [ Free Taco Bell Breakfast, Anyone? Get Yours on Nov. 5 ]
+[15:20:11] <WorkingData> :D
+[15:21:40] <Moonlightning> So OPTIONS is handled correctly, but HEAD returns 405
+[15:21:48] <Moonlightning> presumably that's from the abort(405) in my Flask code
+[15:21:53] <Moonlightning> so I need to sort out how to fix that
+[15:27:59] *** Joins: Crimson_Tail (Bluepon@Pony-gsl900.cg80.k4gu.0151.2601.IP)
+[15:30:20] *** snoarin is now known as Gigabit
+[15:34:25] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:42:36] *** Quits: endoriazel (coprah@endoriazel) (Ping timeout: 121 seconds)
+[15:43:24] *** Gigabit is now known as Soarin
+[15:43:34] *** Quits: Seoson (Seoson@pony.kab-s.de) (Ping timeout: 121 seconds)
+[15:44:45] *** Quits: Sellyme (quassel@Pony-lq694o.of.saltspork.com) (discord.canternet.org derpy.canternet.org)
+[15:44:45] *** Quits: Shutter (tips@why.did.you.even.rope.me.into.this) (discord.canternet.org derpy.canternet.org)
+[15:44:45] *** Quits: Duck (sid3009@Pony-4r56u0.ealing.irccloud.com) (discord.canternet.org derpy.canternet.org)
+[15:44:45] *** Quits: Crimson_Tail (Bluepon@Pony-gsl900.cg80.k4gu.0151.2601.IP) (discord.canternet.org derpy.canternet.org)
+[15:44:45] *** Quits: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP) (discord.canternet.org derpy.canternet.org)
+[15:44:45] *** Quits: Q0 (Q0@literallyshit.net) (discord.canternet.org derpy.canternet.org)
+[15:44:45] *** Quits: cyzon (cyzon@moms.spaghetti) (discord.canternet.org derpy.canternet.org)
+[15:44:45] *** Quits: init3 (quassel@init3.Is.Not.A.Clever.Poni) (discord.canternet.org derpy.canternet.org)
+[15:44:45] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (discord.canternet.org derpy.canternet.org)
+[15:44:45] *** Quits: Apple_Bloom (sid52418@the.canon.pony) (discord.canternet.org derpy.canternet.org)
+[15:44:45] *** Quits: Datguy (Datguy@lord.of.nreboot.c0m) (discord.canternet.org derpy.canternet.org)
+[15:44:45] *** Quits: Shival|Away (ShivalWolf@2400:d400:9:7375:abcd::2) (discord.canternet.org derpy.canternet.org)
+[15:44:45] *** Quits: roflin (dennis@Pony-aend1d.es) (discord.canternet.org derpy.canternet.org)
+[15:44:45] *** Quits: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com) (discord.canternet.org derpy.canternet.org)
+[15:44:45] *** Quits: johnsey (johnsey@into.the.nethers) (discord.canternet.org derpy.canternet.org)
+[15:44:45] *** Quits: One-Trick (Octavia@hyenaspots.com) (discord.canternet.org derpy.canternet.org)
+[15:46:45] *** Joins: johnsey (johnsey@into.the.nethers)
+[15:46:45] *** Joins: One-Trick (Octavia@hyenaspots.com)
+[15:46:45] *** Joins: cyzon (cyzon@moms.spaghetti)
+[15:46:45] *** Joins: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP)
+[15:46:45] *** Joins: Duck (sid3009@Pony-4r56u0.ealing.irccloud.com)
+[15:46:45] *** Joins: Apple_Bloom (sid52418@the.canon.pony)
+[15:46:45] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[15:46:45] *** Joins: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com)
+[15:46:45] *** Joins: init3 (quassel@init3.Is.Not.A.Clever.Poni)
+[15:46:45] *** Joins: Shival|Away (ShivalWolf@2400:d400:9:7375:abcd::2)
+[15:46:45] *** Joins: Q0 (Q0@literallyshit.net)
+[15:46:45] *** Joins: Datguy (Datguy@lord.of.nreboot.c0m)
+[15:46:45] *** Joins: Sellyme (quassel@Pony-lq694o.of.saltspork.com)
+[15:46:45] *** Joins: Shutter (tips@why.did.you.even.rope.me.into.this)
+[15:46:45] *** Joins: roflin (dennis@Pony-aend1d.es)
+[15:46:45] *** Joins: Crimson_Tail (Bluepon@Pony-gsl900.cg80.k4gu.0151.2601.IP)
+[15:46:46] *** Joins: endoriazel (coprah@Pony-81pjdu.de)
+[15:47:40] <Moonlightning> netsplit~!
+[15:48:01] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[15:48:22] <Caerdwyn> \o/
+[15:48:27] <Caerdwyn> i survived :D
+[15:49:23] <Seoson> Yeah irc: reading data on socket: error -54 Error in the pull function.
+[15:49:51] <Seoson> (using IPv6 on derpy.canternet.org)
+[15:54:58] <Moonlightning> …now to sort out the nginx config!
+[15:55:03] <Moonlightning> XP
+[16:18:53] <WorkingData> http://imgur.com/gallery/dI8xnCj  -- hehehe
+[16:18:53] <PinkiePieBot> [ The future is now. - GIF on Imgur ]
+[16:25:43] <Pocky> boop
+[16:29:46] <Moonlightning> counterboop
+[16:30:03] * Moonlightning wanders around looking for ponies to show off his new webapp to
+[16:30:08] * Moonlightning ““webapp””
+[16:32:28] <Seoson> What does it do? The file download thing?
+[16:32:39] <Moonlightning> yes x3
+[16:32:43] * Seoson likes to break webapps
+[16:32:48] <Moonlightning> Good
+[16:35:00] <Moonlightning> https://www.blackl.net/file/it-works-holy-shit.png
+[16:35:04] <Moonlightning> seoson, 'Seoson likes to break webapps'
+[16:35:11] <Moonlightning> have at it; tell me what you find
+[16:36:00] <Moonlightning> I know that when you enter an empty username, it…well…it goes `No such user <code></code> for this file` :P
+[16:36:53] <Seoson> Attributes without quotes are deprecated
+[16:37:33] <Seoson> Whats the actual username/password?
+[16:38:04] <Moonlightning> That is an actual username+password.
+[16:38:33] <Seoson> test onchange=alert('XSS') as username = xss
+[16:38:46] <Moonlightning> Ohhhh, nooo, come on. :(
+[16:38:54] <Moonlightning> I didn't use JavaScript; how can there be an XSS…?!
+[16:39:04] <Moonlightning> …
+[16:39:06] <Moonlightning> oh.
+[16:39:07] <Moonlightning> …wait…
+[16:39:17] <Seoson> "Attributes without quotes are deprecated"
+[16:39:34] <Seoson> That's like html 101 xD
+[16:40:16] <Seoson> (Remember Chrome has an XSS filter, so use FF)
+[16:40:17] <Moonlightning> I thought it was a new thing… >.>
+[16:40:27] <Moonlightning> HTML5 docs used it
+[16:42:47] <Moonlightning> …does adding quotes fix it?
+[16:43:38] <Seoson> If " is escaped, yes
+[16:43:41] <Seoson> http://www.w3schools.com/html/html_attributes.asp
+[16:43:41] <PinkiePieBot> [ HTML Attributes ]
+[16:44:41] <Moonlightning> Hmm
+[16:45:26] <Seoson> Didn't you say "username" and "password" is correct?
+[16:45:36] *** Joins: thatdguy (~WebChat@Pony-pkbcdj.fbx.proxad.net)
+[16:45:43] <Seoson> Oh you meant what you wrote *g*
+[16:46:04] <Seoson> silly me
+[16:46:40] <Moonlightning> Yeah. :P
+[16:47:15] <Seoson> You should attach a parameter to prevent caching. In some weird situations the browser might cache the HTML file and fails to display the jpg
+[16:47:57] <Seoson> A no-cache header would do as well I guess (not checked yet if present)
+[16:49:06] <Moonlightning> Really, it could do that?
+[16:49:23] <Moonlightning> I mean, I just serve a file in response to the POST
+[16:49:33] <Moonlightning> there's no key to check against a cache…?
+[16:50:00] <Seoson> There are no XSRF checks. As long as it's only a login it doesn't matter, but anything like an upload or admin panel would need checks
+[16:50:11] <Moonlightning> XSRF?
+[16:50:18] <Moonlightning> No uploads here
+[16:50:23] <Moonlightning> that will be a separate thing
+[16:50:59] <Seoson> Cross-Site-Request-Forgery
+[16:51:38] <Moonlightning> :?
+[16:52:35] <Seoson> The idea is I can silently make POST requests on my site targeting https://www.blackl.net/fileadmin with the POST data job=delete, file=example.jpg, when you're logged in via cookie
+[16:53:12] <Seoson> The browser will send the request as soon as you visit a page I created and the file is gone
+[16:53:19] <Moonlightning> > logged in via cookie
+[16:53:24] <Moonlightning> No cookies though!
+[16:53:33] <Moonlightning> you POST, you get the file, that's it
+[16:53:39] <Seoson> Yeah that's why I said in it current state it doesn't matter
+[16:54:00] <Seoson> Only relevant for uploads and control panels
+[16:54:30] <Seoson> (Basically anything that can make persistent changes)
+[16:57:45] <Seoson> A HSTS header would also be helpful ;-) (It doesn't allow http by default which is nice)
+[16:58:17] <Moonlightning> That's all webserver config.
+[16:58:22] <Seoson> Yep
+[16:58:23] <Moonlightning> And there SHOULD be an HSTS header
+[16:58:42] <Seoson> Silly me it is
+[16:58:46] <Moonlightning> dig _http._tcp.www.blackl.net. SRV
+[16:59:11] <Seoson> (It's hidden because I stripped a few headers in my dev env)
+[16:59:32] <Seoson> When debugging my own application I prefer not to see them all the time.
+[16:59:38] <Moonlightning> Mmm.
+[17:00:18] <Moonlightning> How's the XSS?
+[17:00:34] <Moonlightning> …also, how does that count as XSS? Don't you have to type it into the field by hoof?
+[17:01:09] <Seoson> Nope
+[17:01:19] <Seoson> I can do it silently via POST
+[17:01:32] <Seoson> Sorry I need to go for a few minutes
+[17:01:38] <Moonlightning> Okay.
+[17:01:40] <Moonlightning> Thanks for your help! x3
+[17:01:46] *** Seoson is now known as Seoson|Away
+[17:04:33] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:31:31] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Connection closed)
+[17:32:31] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[17:55:36] *** Seoson|Away is now known as Seoson
+[17:56:43] <Seoson> Moonlightning: Anything counts as XSS as long as the user does not need to do something that's unreasoably complex. I can prevent the fact that you need to type to fire the onchange event with clickjacking
+[17:57:18] <Seoson> Well circumvent not prevent
+[18:01:06] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[18:06:59] *** sleumas2000 is now known as sleumas2000|I_haz_suffix
+[18:07:05] *** sleumas2000|I_haz_suffix is now known as sleumas2000
+[18:18:03] <WorkingData> took me about 6 hours of overtime and 4 or 5 phone calls to get the program for the vacuum system.. I'm suddenly the subject of a full-page story in the employee newsletter that makes me sound like an ingenious hacker who works for fun, not money
+[18:18:03] <WorkingData> heh
+[18:20:57] <AppleDash> Anyone have any experience with nginx rate limit module?
+[18:25:31] <AppleDash> I
+[18:25:41] <AppleDash> I'm trying to ratelimit a { } to 1 request/s/IP
+[18:25:48] <AppleDash> For some reason it's just not working at all
+[18:26:03] <AppleDash> My thing looks just like all of the examples
+[18:26:26] <AppleDash> I can happily send 100 requests/s and get HTTP 200 responses all day
+[18:47:31] <Shutter> This is pure gold.
+[18:47:32] <Shutter> http://www.huffingtonpost.com/entry/ben-carson-pyramids-grain-storage_563a7d2fe4b0307f2cabdf3e
+[18:47:33] <PinkiePieBot> [ Ben Carson's Strange Theory About The Egyptian Pyramids ]
+[18:47:46] <Shutter> '"My own personal theory is that Joseph built the pyramids to store grain," Carson said, referring to the Old Testament. "Now all the archeologists think that they were made for the pharaohs’ graves. But, you know, [something to store that grain] would have to be something awfully big, if you stop and think about it."'
+[19:06:29] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:17:35] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[19:45:37] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:08:04] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:09:33] *** zz_CyberJacob is now known as CyberJacob
+[20:14:52] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Quit: Leaving)
+[20:34:58] *** Joins: Sombra (Iceman@Darkhorse21)
+[20:57:59] <Seoson> Would someone with a IPv6 connection be so kind to help me out for a second?
+[21:05:31] <AppleDash> Maybe
+[21:05:34] <AppleDash> What do you need?
+[21:06:05] <Seoson> Please be so kind to ssh to 2a01:4f8:150:5407::3 an tell me the host's fingerprint
+[21:06:38] <AppleDash> no
+[21:06:41] <AppleDash> my v6 is down
+[21:06:44] <AppleDash> for some reason
+[21:06:45] <AppleDash> sorry :P
+[21:06:53] <Seoson> No problem xD
+[21:07:07] <AppleDash> Moonlightning: do the thing
+[21:07:32] <Seoson>  I want to make sure routing works correctly, but I'm behind a IPv4 only connection atm and cannot test from the server itself (that would be dumb)
+[21:09:16] <Seoson> If erverything works the fingerprint is 92:26:c4:81:a3:ed:34:a0:14:d9:0b:7e:9c:8d:18:0f if I screwed up it's c1:9b:4e:51:5e:74:42:0d:f4:f9:97:9d:67:f4:e9:db
+[21:13:04] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[21:22:46] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:28:25] *** Creeps|AFK is now known as RedHelper
+[21:39:41] <Colgate> ECDSA key fingerprint is 92:26:c4:81:a3:ed:34:a0:14:d9:0b:7e:9c:8d:18:0f.
+[21:42:19] <johnsey> still trusting those NSA curves?
+[21:42:56] <Seoson> Colgate: Thank you ;-)
+[21:45:25] <Seoson> It's only the fingerprint, not the key exchange
+[21:47:03] <Seoson> Apart from that while I'm not a fan of anything funded by the U.S. government I imagine greater weaknesses will be public probably by the time they are exploitable with reasonable effort.
+[21:51:39] <johnsey> not sure I'm getting what you're saying
+[21:52:26] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[21:53:27] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:11:00] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[22:38:00] *** Joins: nscoots (FreyGrimrod@Pony-qkm1o9.adsl.inet-telecom.org)
+[23:21:14] <Moonlightning> …I don't suppose there's a way to forbid JavaScript on the page, given that I'm not using it?
+[23:21:20] <Moonlightning> Or on the site?
+[23:21:42] <Moonlightning> Or should I just learn proper XSS-avoiding things instead.
+[23:21:54] <Seoson> The later xD
+[23:22:38] <Seoson> You can set a frame options header
+[23:22:49] <Seoson> That will at least prevent clickjacking
+[23:24:39] <Seoson> Also there is https://en.wikipedia.org/wiki/Content_Security_Policy which can highly restrict JS
+[23:24:39] <PinkiePieBot> [ Content Security Policy - Wikipedia, the free encyclopedia ]
+[23:27:15] <Seoson> Here is a better overview: http://content-security-policy.com/
+[23:27:15] <PinkiePieBot> [ Content Security Policy Reference & Examples ]
+[23:27:55] <JustAberrant> policy :(
+[23:30:31] <johnsey> Moonlightning: put up a disclaimer that says the page is optimized for text based browsers and best viewed in lynx 2.8
+[23:33:41] <Moonlightning> > content-security-policy.com.
+[23:33:43] <Moonlightning> sounds legit
+[23:33:48] * Moonlightning uses Wikipedia.
+[23:34:16] <Seoson> Wikipedia doesn't have everything
+[23:34:24] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[23:34:59] <Seoson> The site also links the source from w3c
+[23:35:12] <Seoson> You can read the specs if you want
+[23:35:43] <Moonlightning> > covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.
+[23:35:44] <Moonlightning> yes o3o
+[23:35:53] <Moonlightning> CSS and images; that's it.
+[23:36:04] <Moonlightning> dun need any of the rest of that :D
+[23:36:13] <Seoson> CSS can contain javascript
+[23:36:31] <Seoson> Just for the records
+[23:36:39] <Colgate> isn't CSS turing complete?
+[23:37:05] <Seoson> Preventing XSS is easy with the right framework. Just honor one simple rule: Never trust user input and always escape it.
+[23:44:25] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[23:46:55] *** Quits: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile) (Ping timeout: 121 seconds)
+[23:47:12] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Connection closed)
+[23:47:48] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[23:48:33] <Moonlightning> oh gods oh gods oh gods
+[23:48:42] <Moonlightning> https://security.stackexchange.com/questions/104576
+[23:48:44] <PinkiePieBot> [ tls - My college is forcing me to install their SSL certificate. How to protect my privacy? - Information Security Stack Exchange ]
+[23:49:24] *** Quits: Crimson_Tail (Bluepon@Pony-gsl900.cg80.k4gu.0151.2601.IP) (Connection closed)
+[23:50:46] <Colgate> a VPN would be the way to go if possible
+[23:52:36] <Seoson> " all such devices share the same CA certificate and hence the same private key. " Oh bloody god
+[23:52:43] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[23:53:31] <Seoson> At least if they don't block VPNs. I would never import their root cert ....
+[23:54:53] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[23:56:02] <Moonlightning> Never ever ever dear Luna
+[23:56:09] <Moonlightning> VPNs are probably against their ToS
+[23:56:22] * Moonlightning just upvoted like every answer on the thing
+[23:56:25] <Moonlightning> handing out reputation like
+[23:56:31] <Seoson> Like I'd care. I used a proxy when I was in school too
+[23:56:41] *** Joins: Crimson_Tail (Bluepon@Pony-gsl900.cg80.k4gu.0151.2601.IP)
+[23:56:52] <Moonlightning> VPN might not even work, if they're intercepting /all/ TLS handshakes
+[23:56:57] <Moonlightning> just don't use the network
+[23:56:58] <Moonlightning> just don't even
+[23:57:00] <Moonlightning> just don't
+[23:57:15] <Moonlightning> don't just don't just don't
+[23:57:35] <Colgate> ipsec vpn!
+[23:57:49] <Moonlightning> in fact
+[23:57:53] <Moonlightning> leave.
+[23:58:02] <Colgate> or you could tunnel ssh over tls
+[23:58:08] <Moonlightning> geezus fuck pick a different institution to give your money to
+[23:58:19] <Colgate> sure, it would be mitmed, but they would just see an ssh handshack and encrypted data
+[23:59:14] <Seoson> I doubt it checks all encrypted traffic - only https
+[23:59:29] <Seoson> Did not look at the specs for that device though
+[23:59:43] <Moonlightning> you mean by port?
+[23:59:51] <Colgate> if they wanted to really lock down things, they would block other outgoing ports
+[23:59:59] <Moonlightning> btu that breaks some website >.>

@@ -1,0 +1,163 @@
+[00:20:35] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Quit: alsuren)
+[00:21:47] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[00:59:25] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Quit: alsuren)
+[01:11:27] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Disconnected by services)
+[01:11:27] *** Joins: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[02:08:48] *** Quits: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Ping timeout: 264 seconds)
+[02:09:38] *** Quits: soee (~soee@bit21.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[02:10:56] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[02:18:08] *** Joins: soee (~soee@bit21.neoplus.adsl.tpnet.pl)
+[02:18:38] *** Quits: soee (~soee@bit21.neoplus.adsl.tpnet.pl) (Read error: Connection reset by peer)
+[02:20:36] *** Joins: soee (~soee@bit21.neoplus.adsl.tpnet.pl)
+[02:20:51] *** Quits: soee (~soee@bit21.neoplus.adsl.tpnet.pl) (Remote host closed the connection)
+[02:24:41] *** Joins: soee (~soee@bit21.neoplus.adsl.tpnet.pl)
+[02:25:23] *** Quits: soee (~soee@bit21.neoplus.adsl.tpnet.pl) (Client Quit)
+[02:25:40] *** Joins: soee (~soee@bit21.neoplus.adsl.tpnet.pl)
+[02:26:07] *** Quits: soee (~soee@bit21.neoplus.adsl.tpnet.pl) (Client Quit)
+[02:40:19] *** Quits: ugly_cat (~quassel@c-76-104-204-149.hsd1.wa.comcast.net) (Ping timeout: 240 seconds)
+[02:40:57] *** Joins: ugly_cat (~quassel@c-76-104-204-149.hsd1.wa.comcast.net)
+[03:15:42] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Read error: Connection reset by peer)
+[03:31:04] *** Quits: SolarAquarion (SolarAquar@unaffiliated/solaraquarion) (Ping timeout: 246 seconds)
+[03:31:24] *** Quits: h4ndy (H4ndy@ipv6.gemini.panicbnc.net) (Ping timeout: 264 seconds)
+[03:31:38] *** Quits: the_phil0s0ph (~quassel@2a03:8180:1001:b2:13::12c) (Quit: No Ping reply in 180 seconds.)
+[03:32:14] *** Joins: the_phil0s0ph (~quassel@2a03:8180:1001:b2:13::12c)
+[03:32:33] *** Joins: h4ndy (H4ndy@ipv6.gemini.panicbnc.net)
+[03:32:46] *** Quits: PT_Dreamer (PT_Dreamer@2a01:7e00::f03c:91ff:fe6e:4287) (Ping timeout: 240 seconds)
+[03:35:04] *** Joins: PT_Dreamer (PT_Dreamer@2a01:7e00::f03c:91ff:fe6e:4287)
+[03:35:18] *** Joins: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7)
+[03:35:18] *** Quits: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7) (Changing host)
+[03:35:18] *** Joins: SolarAquarion (SolarAquar@unaffiliated/solaraquarion)
+[05:41:05] *** Joins: mgue1 (~mgue@f048090091.adsl.alicedsl.de)
+[05:44:35] *** Quits: mgue (~mgue@x590f622b.dyn.telefonica.de) (Ping timeout: 264 seconds)
+[08:00:33] *** Joins: basive6 (guest-basi@gateway/web/scrollback.io/x-crejouvqsuetxsbh)
+[08:00:33] <basive6> how do i uninstall
+[09:26:52] *** h4ndy is now known as H4ndy
+[09:53:40] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[11:25:45] *** Joins: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de)
+[11:42:08] *** Joins: soee (~soee@bit21.neoplus.adsl.tpnet.pl)
+[11:49:56] <rotzbouw> moinsen
+[11:50:11] <rotzbouw> hm, is anyone still using nodejs for development of resolvers?
+[11:50:40] <rotzbouw> am a bit stuck with the vibe3 resolver (has an undefined somewhere...)
+[12:03:28] <lorenzh> Oh is that the one I wrote?
+[12:04:10] <lorenzh> Yeah looks like it
+[12:04:42] <rotzbouw> lorenzh: yup
+[12:04:48] <lorenzh> Right and you fixed it :)
+[12:04:58] <rotzbouw> yeah, but there are still issues, apparently, heh
+[12:05:13] <rotzbouw> however, I can't debug it because that DOMParser thingie is an unknown reference according to node
+[12:05:24] <lorenzh> to be honest I haven't used tomahawk in a while because iPad
+[12:05:35] <rotzbouw> so something must've changed with node
+[12:05:51] <lorenzh> ah, there was a polyfill for that somewhere
+[12:06:23] <lorenzh> Hmm it's in the resolver, crap.
+[12:08:13] <lorenzh> Maybe node has DOMParser now?
+[12:09:44] <lorenzh> Add a if (window.DOMParser !== undefined) block maybe?
+[12:10:00] <rotzbouw> the error is thrown on line 60
+[12:10:17] <rotzbouw> I don't think I can add that block there?
+[12:10:50] *** Joins: soee_ (~soee@bmv165.neoplus.adsl.tpnet.pl)
+[12:11:34] <lorenzh> I mean around the polyfill
+[12:12:01] *** Quits: soee (~soee@bit21.neoplus.adsl.tpnet.pl) (Ping timeout: 252 seconds)
+[12:12:06] <lorenzh> 25-60, the whole thing
+[12:12:18] <rotzbouw> oh, okay
+[12:14:25] <rotzbouw> thanks lorenzh
+[12:15:01] <lorenzh> \o/
+[12:15:13] <lorenzh> maybe we can even remove the polyfill if it's no longer necessary?
+[12:18:14] <rotzbouw> Maybe it's just not necessary in node
+[12:18:30] <lorenzh> probably
+[12:18:33] <rotzbouw> I'll try it out once I've fixed the bug
+[12:18:36] <lorenzh> anyway, glad it works now
+[12:18:43] <lorenzh> (apart from the bug, hehe)
+[12:29:58] *** Quits: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de) (Quit: Leaving.)
+[12:35:25] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[12:53:18] <rotzbouw> does var TomahawkJS = require("tomahawkjs"); refer to https://github.com/tomahawk-player/tomahawk/blob/31539e87d7b726af8cc51cd9924d4d9e62aa05a2/data/js/tomahawk.js ?
+[12:53:21] <tomabee> [ tomahawk/tomahawk.js at 31539e87d7b726af8cc51cd9924d4d9e62aa05a2 · tomahawk-player/tomahawk · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[12:55:02] <rotzbouw> if not, where do I find the dep mentioned at https://github.com/tomahawk-player/tomahawk-resolvers/blob/master/package.json#L30 ?
+[12:55:02] <tomabee> [ tomahawk-resolvers/package.json at master · tomahawk-player/tomahawk-resolvers · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[12:58:41] <rotzbouw> is it this one https://www.npmjs.com/package/tomahawkjs, xhochy? :)
+[12:58:42] <tomabee> [ tomahawkjs, | www.npmjs.com | https://www.npmjs.com/static/images/touch-icons/open-graph.png ]
+[12:59:14] <rotzbouw> if so: is the tomahawk.js at https://github.com/xhochy/node-tomahawkjs/tree/master/lib an exact copy of some old tomahawk version?
+[12:59:15] <tomabee> [ node-tomahawkjs/lib at master · xhochy/node-tomahawkjs · GitHub | github.com | https://avatars1.githubusercontent.com/u/70274?v=3&s=400 ]
+[12:59:35] <rotzbouw> I'm asking because the removediacritics function (amongst others, I'm sure) is missing
+[13:05:38] <rotzbouw> lorenzh: unfortunately, now that I've finally gotten to the line DOMParser is actually used in the resolver, node complains about it not being defined
+[13:06:14] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[13:06:42] <rotzbouw> also, the !== undefined doesn't make much sense around the polyfill, does it? hmm
+[13:06:49] <lorenzh> Meh, maybe you need to explicitly define it before passing it?
+[13:06:54] <lorenzh> I don't know
+[13:07:00] <rotzbouw> if it's not undefined, define it again?
+[13:07:01] <lorenzh> Never used node
+[13:07:18] <lorenzh> Eh, that is inverted, yeah
+[13:07:27] <lorenzh> Should be ===
+[13:07:30] <rotzbouw> heh,  yeah
+[13:08:05] <rotzbouw> but that crashes again at line 60, at the end of the polyfill
+[13:08:28] <rotzbouw> so I'm guessing there's something fishy in that polyfill block, or deprecated or sth else
+[13:09:45] <lorenzh> yeah
+[13:09:48] <lorenzh> it's weird
+[13:09:57] <lorenzh> maybe there is an updated version in the gist I took it from?
+[13:10:49] <rotzbouw> unfortunately not
+[13:24:53] <rotzbouw> lorenzh: you contributed to the 4shared resolver and used DOMParser in there, too. however, you didn't include a polyfill. how does it work there?
+[13:25:20] <lorenzh> no idea
+[13:26:04] <lorenzh> maybe the polyfill isn't required?
+[13:26:43] <rotzbouw> a 'new DOMParser()' object is used in tomahawk.js itself, too, so I guess it isn't yeah.
+[13:51:30] *** Quits: Fohlen (~Fohlen@v22015072923726622.yourvserver.net) (Ping timeout: 260 seconds)
+[13:54:50] <rotzbouw> meh, I don't understand this node nonsense :\
+[13:55:40] <rotzbouw> there's this xmldom module that I could be using but I have no idea how I would do that in the context of resolver
+[13:56:40] <rotzbouw> also, the package.json doesn't pull the most recent tomahawkjs module
+[13:57:15] <rotzbouw> I would volunteer updating all of that stuff but I need some starting points.. maybe xhochy can give me a hand sometime ;)
+[14:15:13] *** H4ndy is now known as h4ndy
+[14:40:01] *** h4ndy is now known as H4ndy
+[14:45:46] <jherskowitz> domme should be able to help you out I think
+[14:49:30] *** H4ndy is now known as h4ndy
+[14:55:56] *** h4ndy is now known as H4ndy
+[14:58:53] <domme> rotzbouw: can i come back to you later? just got up
+[15:00:54] <rotzbouw> domme: yeah, sure
+[16:21:50] *** Joins: Fohlen (~Fohlen@v22015072923726622.yourvserver.net)
+[16:34:04] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Disconnected by services)
+[16:34:04] *** Joins: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[16:49:15] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Remote host closed the connection)
+[16:49:22] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[17:04:39] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Remote host closed the connection)
+[17:10:07] *** Parts: H4ndy (H4ndy@ipv6.gemini.panicbnc.net) ()
+[17:10:09] <tomabee> @Allanitomwesh mentioned: @tomahawk can i scrobble my local collection to last fm on this player? [<no value>]
+[17:25:30] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[17:34:15] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Remote host closed the connection)
+[17:40:47] <lorenzh> rotzbouw: xhochy is AWOL
+[17:41:17] <lorenzh> Hasn't been in this channel for months
+[17:41:58] <lorenzh> Sitting next to me while I'm miracasting my phone onto his TV 📺
+[17:42:23] <lorenzh> (with irc on my phone)
+[18:10:10] *** Joins: gordie (53864777@gateway/web/freenode/ip.83.134.71.119)
+[18:20:50] *** Quits: gordie (53864777@gateway/web/freenode/ip.83.134.71.119) (Quit: Page closed)
+[18:49:24] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) (Remote host closed the connection)
+[19:31:28] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[19:32:06] *** Quits: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Ping timeout: 250 seconds)
+[19:32:14] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[19:38:30] *** Joins: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de)
+[19:46:17] <rotzbouw> domme: re
+[19:53:28] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Read error: Connection reset by peer)
+[19:54:15] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[20:11:01] *** Joins: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[20:11:01] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Disconnected by services)
+[20:25:57] *** Quits: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de) (Ping timeout: 250 seconds)
+[20:35:15] *** Quits: soee_ (~soee@bmv165.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[20:39:04] *** Joins: soee (~soee@bmv165.neoplus.adsl.tpnet.pl)
+[20:48:47] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) (Remote host closed the connection)
+[21:17:33] *** Quits: jstrcrws (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370) (Ping timeout: 256 seconds)
+[21:18:18] *** Quits: soee (~soee@bmv165.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[21:27:21] *** Joins: soee (~soee@bmv165.neoplus.adsl.tpnet.pl)
+[21:27:40] *** Joins: zizzfizzix_ (~quassel@kde/pl/kuba-serafinowski)
+[21:28:24] *** Joins: total1ty__ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de)
+[21:28:32] *** Joins: teo-- (~teo@corkblock.jefferai.org)
+[21:28:32] *** Quits: teo-- (~teo@corkblock.jefferai.org) (Changing host)
+[21:28:32] *** Joins: teo-- (~teo@kde/teo)
+[21:29:10] *** Joins: kfunk_ (~krf@kde/kfunk)
+[21:30:41] *** Quits: daniel2 (daniel@unaffiliated/danielshafer) (Remote host closed the connection)
+[21:30:41] *** Quits: teo- (~teo@kde/teo) (Ping timeout: 260 seconds)
+[21:30:41] *** Quits: zopieux (zopieux@jerrycraft.tk) (Ping timeout: 260 seconds)
+[21:30:42] *** Quits: kfunk (~krf@kde/kfunk) (Ping timeout: 260 seconds)
+[21:30:42] *** Quits: zizzfizzix (~quassel@kde/pl/kuba-serafinowski) (Ping timeout: 260 seconds)
+[21:31:33] *** Joins: daniel2 (daniel@server1.ircdriven.net)
+[21:31:56] *** daniel2 is now known as Guest24915
+[21:32:04] *** Joins: zopieux (zopieux@jerrycraft.tk)
+[21:32:23] *** Quits: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de) (Ping timeout: 240 seconds)
+[22:09:55] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[22:45:32] *** Joins: moru (~moru@d86-32-133-69.cust.tele2.at)
+[22:50:15] *** Quits: moru (~moru@d86-32-133-69.cust.tele2.at) (Client Quit)
+[23:16:28] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[23:25:00] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Quit: alsuren)

@@ -1,0 +1,99 @@
+[00:00:07] <theli_ua> MrMaffen is against doing that
+[00:00:17] <domme> i know, in the long run RSVP should be imported
+[00:00:43] <domme> but there's no point in changing all the resolvers now and then again for es6 classes 
+[00:01:29] <theli_ua> I'm confused
+[00:01:44] <theli_ua> either make it global in tomahawk.js or tell me I should update all resolvers pls
+[00:01:45] <theli_ua> :D
+[00:02:59] <domme> theli_ua: okay, so.. what i want very soon: es6 class syntax and modules.. then you would do import Promise from 'rsvp'; at the top of your resolver
+[00:03:20] <domme> but it's not a thing yet, need to finish the compiler / the tomahawk end of things :P
+[00:03:27] <theli_ua> thats not helping
+[00:03:30] <theli_ua> >_<
+[00:03:39] <theli_ua> doesn't give me an answer what to do :P
+[00:03:50] <domme> because i said it earlier twice
+[00:03:56] <domme> 21:59:52 < domme> theli_ua: you can make it global again for the time being
+[00:04:03] <domme> 22:00:16 < domme> i know, in the long run RSVP should be imported
+[00:04:03] <theli_ua> well, I dont want to make it global myself
+[00:04:06] <domme> 22:00:43 < domme> but there's no point in changing all the resolvers now and then again for es6 classes
+[00:04:10] <theli_ua> cause enno will kill me
+[00:04:19] <domme> hehe. 
+[00:04:26] <domme> i can take care of it, just not tonight
+[00:04:39] <domme> just bug me about it whenever you feel like (i will regret this) 
+[00:04:58] <theli_ua> also
+[00:05:01] <MrMaffen> theli_ua: make it global :D
+[00:05:03] <theli_ua> what about amazon
+[00:05:09] <MrMaffen> I guess nothing will break
+[00:05:11] <theli_ua> MrMaffen: oh, ok
+[00:05:39] <domme> MrMaffen: :)
+[00:05:44] <theli_ua> domme: I have a lot of things to bug you about anyway ... amazon, bandcamp, youtube, etc resolver PRs
+[00:05:45] <MrMaffen> it's just bad practice imo. but nothing I'm thinking too strong about
+[00:05:57] <domme> MrMaffen: you are completely right
+[00:06:05] <theli_ua> MrMaffen: I'll add a comment that we want that removed once we get es6 and stuff
+[00:06:14] <MrMaffen> cool :)
+[00:08:47] <domme> MrMaffen: the issue is basically that i started with es6-promise which is a subset of RSVP, a pure polyfill for the es6 promise. then i suddenly noticed that it's limited and i wanted to use some fancier features of rsvp (that are not part of the standard) ... so i replaced es6-promise with RSVP ... now wat do? break all the resolvers by not using the polyfill (in hindsight might have been the wiser choice) or install polyfill which adds features on
+[00:13:14] <domme> WOAH
+[00:13:27] <domme> i think after my system upgrade today ... kate learned about es6 module syntax
+[00:13:52] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[00:21:01] <MrMaffen> domme: yea I know what you mean ^^. we just have to go for one solution and stick to it
+[00:22:29] <domme> MrMaffen: yup. import Promise from 'rsvp'; ... or import RSVP from 'rsvp'; const { Promise } = RSVP; or something ;-)
+[00:26:46] *** Quits: soee (~soee@afjj177.neoplus.adsl.tpnet.pl) (Ping timeout: 244 seconds)
+[00:58:00] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[00:58:56] <theli_ua> sigh, how do I even find what part of resolver has errors if there are no error messages >_<
+[00:59:34] <domme> theli_ua: RSVP.on('error', ...) or whatever
+[00:59:37] <domme> google for it :P
+[00:59:46] <theli_ua> it is defined in tomahawk.js
+[01:00:34] <domme> maybe it's wrong? :P
+[01:00:38] <domme> it changed at some point
+[01:00:49] <domme> from on to configure or the other way round
+[01:00:57] <domme> maybe the one we have in tomahawk.js is wrong
+[01:02:04] <theli_ua> from what I see we have the correct one
+[01:03:05] <domme> k
+[01:03:12] <domme> do we have a current build of rsvp as well?
+[01:05:57] <theli_ua> that I have no idea about :)
+[01:07:22] <domme> grab a new build, put it into tomahawk and see if git diffs ;-)
+[01:07:26] <domme> and if the behavior changes
+[01:09:25] <theli_ua> - * @version   3.0.17
+[01:09:25] <theli_ua> + * @version   3.1.0
+[01:12:14] <domme> theli_ua: and do errors get printed out now?
+[01:12:25] <theli_ua> nope
+[01:12:46] <domme> what are you looking at btw? tomahawk console output or the webkit inspector?
+[01:12:48] <theli_ua> though I did find where my error is, but its unrelated to new rsvp 
+[01:12:52] <theli_ua> domme: both
+[01:12:55] <domme> hum
+[01:12:56] <domme> odd
+[01:13:44] <theli_ua> AND that wasnt an error
+[01:13:48] <theli_ua> :P
+[01:13:56] <theli_ua> its completely my fault
+[01:14:25] <theli_ua> ohwait, maybe its not
+[01:14:33] <theli_ua> I am lost in that resolver's code
+[01:14:35] <theli_ua> completely
+[01:14:40] <theli_ua> :(
+[02:55:00] *** Joins: sythe (uid20450@facade/leader)
+[03:14:50] <theli_ua> bah, my vlc here does not support webm/opus 
+[05:27:16] *** Joins: mgue1 (~mgue@x590f7a27.dyn.telefonica.de)
+[05:29:59] *** Quits: mgue (~mgue@f049056125.adsl.alicedsl.de) (Ping timeout: 240 seconds)
+[06:00:24] *** Quits: teo- (~teo@kde/teo) (Ping timeout: 255 seconds)
+[06:03:08] *** Joins: teo- (~teo@corkblock.jefferai.org)
+[06:03:09] *** Quits: teo- (~teo@corkblock.jefferai.org) (Changing host)
+[06:03:09] *** Joins: teo- (~teo@kde/teo)
+[06:30:13] *** Joins: arkhi (~fabien@116.233.136.170)
+[08:54:34] *** Joins: github-tomahawk (~github-to@192.30.252.46)
+[08:54:34] <github-tomahawk> [13tomahawk] 15muesli pushed 1 new commit to 06master: 02http://git.io/vC5Da
+[08:54:34] <github-tomahawk> 13tomahawk/06master 1460a3a13 15Tomahawk CI: Automatic merge of Transifex translations
+[08:54:34] *** Parts: github-tomahawk (~github-to@192.30.252.46) ()
+[10:51:25] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[11:10:30] *** Joins: soee (~soee@afol69.neoplus.adsl.tpnet.pl)
+[13:14:12] *** Joins: Canseco (~quassel@250.185.77.188.dynamic.jazztel.es)
+[13:44:37] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[14:05:26] *** Quits: Canseco (~quassel@250.185.77.188.dynamic.jazztel.es) (Remote host closed the connection)
+[14:16:24] *** Joins: knicklux (~knicklux@2a03:2260:a:a:3e07:54ff:fe4e:255)
+[14:40:43] *** Quits: knicklux (~knicklux@2a03:2260:a:a:3e07:54ff:fe4e:255) (Ping timeout: 256 seconds)
+[15:11:16] *** Joins: knicklux (~knicklux@2a03:2260:a:a:1723:d8c:4528:fb8b)
+[18:14:48] *** Quits: sythe (uid20450@facade/leader) (Quit: Connection closed for inactivity)
+[19:01:30] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[19:11:23] *** Quits: arkhi (~fabien@116.233.136.170) (Quit: Leaving.)
+[20:54:25] *** Quits: knicklux (~knicklux@2a03:2260:a:a:1723:d8c:4528:fb8b) (Remote host closed the connection)
+[21:00:26] *** Joins: lejmer (~lejmer@178.62.123.93)
+[22:44:18] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[23:56:36] *** Joins: luxifer (~Stalin@jachin.hartnell.edu)
+[23:57:29] <luxifer> hello all. I'm new to the chat and interested in contributing!
+[23:59:06] <luxifer> I had my eyes on the keyboard shortcuts, as noted in the general todos.

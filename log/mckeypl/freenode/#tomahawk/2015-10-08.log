@@ -1,0 +1,200 @@
+[01:19:31] <jherskowitz> theli_ua: yeah, it’s been a nasty bug for a long time. :/
+[01:35:11] *** Joins: spairs2 (guest-spai@gateway/web/scrollback.io/x-ajdvxmqtdjfifkei)
+[01:35:12] <spairs2> uhh
+[01:36:53] *** Quits: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de) (Quit: Leaving.)
+[01:46:34] <spairs2> it will hurt his feelings
+[02:25:59] *** Quits: znf (~ibm86@unu.card-sharing.eu) (Ping timeout: 264 seconds)
+[02:33:49] *** Joins: znf (~ibm86@unu.card-sharing.eu)
+[03:27:07] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[03:40:16] *** Quits: bencevans (~bencevans@unaffiliated/bencevans) (Remote host closed the connection)
+[06:03:27] *** Quits: liori (~liori@unaffiliated/liori) (Ping timeout: 268 seconds)
+[06:03:35] *** Joins: liori (~liori@unaffiliated/liori)
+[07:58:27] *** Joins: soee (~soee@afcz166.neoplus.adsl.tpnet.pl)
+[08:34:33] *** Quits: Techman (sid11863@gateway/web/irccloud.com/x-nbtpidddqnhwwfib) (Ping timeout: 268 seconds)
+[08:41:03] *** Joins: Techman (sid11863@gateway/web/irccloud.com/x-nicqtityomcoxmmx)
+[09:09:31] *** Joins: ssam2 (~ssam2@212.91.253.218)
+[11:46:08] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[11:55:17] *** Joins: WillisMan (~Thunderbi@88.96.238.246)
+[12:07:06] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Disconnected by services)
+[12:07:06] *** Joins: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[13:01:23] *** Joins: HorusHorrendus (~horrendus@178.19.210.162)
+[13:14:51] *** Quits: WillisMan (~Thunderbi@88.96.238.246) (Quit: WillisMan)
+[13:59:51] *** Quits: HorusHorrendus (~horrendus@178.19.210.162) (Quit: Leaving.)
+[14:12:10] *** Joins: HorusHorrendus (~horrendus@178.19.210.162)
+[14:19:54] *** Quits: HorusHorrendus (~horrendus@178.19.210.162) (Quit: Leaving.)
+[15:23:04] *** Joins: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de)
+[15:37:47] <toma-cat> Added new crash-report for version 0.1 (Android)
+[16:09:07] *** Quits: soee (~soee@afcz166.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[16:14:14] *** Joins: soee (~soee@afcz166.neoplus.adsl.tpnet.pl)
+[16:27:30] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[16:28:39] *** Quits: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Ping timeout: 240 seconds)
+[16:33:27] *** Quits: soee (~soee@afcz166.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[16:36:26] *** Joins: soee (~soee@afcz166.neoplus.adsl.tpnet.pl)
+[16:36:47] *** Quits: soee (~soee@afcz166.neoplus.adsl.tpnet.pl) (Client Quit)
+[16:37:03] *** Joins: soee (~soee@afcz166.neoplus.adsl.tpnet.pl)
+[16:37:44] *** Quits: soee (~soee@afcz166.neoplus.adsl.tpnet.pl) (Client Quit)
+[16:38:07] *** Joins: soee (~soee@afcz166.neoplus.adsl.tpnet.pl)
+[17:21:17] *** Joins: tomabee (~beehive@conflagration.hatchet.is)
+[17:26:58] *** Joins: jamesaxl|2 (~kvirc@adsl196-110-107-217-196.adsl196-12.iam.net.ma)
+[17:29:03] *** jamesaxl|2 is now known as jamesaxl_box
+[17:35:08] <tomabee> @angriestchair mentioned: @tomahawk Any plans on accepting plays from foobar? Or making Tomahawk as customizable? Also, any ETA on importing last.fm stuff? Thanks :D [<no value>]
+[17:51:52] *** Joins: WillisMan (~Thunderbi@88.96.238.246)
+[17:56:41] *** Quits: WillisMan (~Thunderbi@88.96.238.246) (Client Quit)
+[18:08:18] *** Quits: ssam2 (~ssam2@212.91.253.218) (Quit: Leaving)
+[18:57:40] <alastairp> HorusHorrendus: hi
+[18:58:04] <jherskowitz> lfranchi: sorry for asking again, but don’t remember… you got Qt5 Tomahawk compiling on OS X without SSL errors?
+[18:58:12] <lfranchi> hmmm
+[18:58:17] <lfranchi> yeah i never had openssl errors in the first place :-;/
+[18:58:20] <lfranchi> i had other weird issues
+[18:58:27] <alastairp> hmm. related to that tweet, what do we need to do to make listenbrainz and tomahawak and hatchet play nice?
+[18:58:30] <lfranchi> which i put up that odd PR to fix (which we may not want to merge)
+[18:58:56] *** Quits: jamesaxl_box (~kvirc@adsl196-110-107-217-196.adsl196-12.iam.net.ma) (Remote host closed the connection)
+[18:59:07] <HorusHorrendus> hi alastairp
+[18:59:30] <alastairp> HorusHorrendus: we have just made a list of recommended projects for the new batch of masters students
+[18:59:42] <HorusHorrendus> cool
+[19:00:09] <alastairp> I’m just trying to work out how I can share part of this presentation to you
+[19:00:16] <HorusHorrendus> alastairp: listenbrainz, hatchet & last.fm (as long as it still lives)
+[19:00:32] <HorusHorrendus> 3-way merging of listening data sounds like fun or? ;)
+[19:00:47] <alastairp> yeah :(
+[19:01:01] <alastairp> one of our plans was to have some sort of firehose feed
+[19:01:09] <alastairp> that could feed between instances of our servers
+[19:01:50] <alastairp> can I share a google doc to your email? or do you have a different address?
+[19:02:27] <HorusHorrendus> alastairp: google doc? yeah I think you can
+[19:02:47] <HorusHorrendus> it will automatically then use my gmail adress or so
+[19:02:55] <alastairp> oh, actually. https://docs.google.com/a/upf.edu/presentation/d/1SviBhcXOVeNe8tTS64Pv97gvmx_wHSHj1XX5bZA5k3E/edit?usp=sharing
+[19:02:55] <tomabee> [ Google Accounts | docs.google.com |  ]
+[19:03:10] <HorusHorrendus> ok requested access
+[19:03:12] <alastairp> I can just do shared url. it should be public
+[19:03:34] <HorusHorrendus> no it says you need to request access
+[19:03:38] <alastairp> ah. it was limited to just our organisation
+[19:03:43] <alastairp> I made it public 
+[19:03:50] <alastairp> last 4-5 pages
+[19:04:28] <HorusHorrendus> ok will read it tomorrow or later today
+[19:04:46] <alastairp> cool
+[19:05:20] <alastairp> I just wasn’t sure about your timeframe. It’s been a while since I spoke to my supervisor about it. 
+[19:05:50] <alastairp> I’ll try and chat with him again tomorrow. I guess our biggest unknown is how much time is needed on our side for the mentor part
+[19:06:01] <alastairp> (and it’s likely that it’ll be me)
+[19:06:39] <tomabee> @angriestchair mentioned: @tomahawk Awesome, thank you :D [<no value>]
+[19:07:30] <alastairp> oh. that user has already tweeted at us (listenbrainz)
+[19:08:55] <alastairp> you know what would be cool? if a hatchet listening api happened to be compatible with listenbrainz :)
+[19:31:30] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[19:52:52] <muesli> lfranchi: ever encountered qt5/include/QtCore/qsystemdetection.h:191:12: fatal error: 'TargetConditionals.h' file not found
+[19:52:52] <muesli> ?
+[19:55:52] *** Quits: znf (~ibm86@unu.card-sharing.eu) (Remote host closed the connection)
+[19:58:37] *** Joins: znf (~ibm86@unu.card-sharing.eu)
+[20:01:49] <lfranchi> hmm nope
+[20:02:01] <muesli> sigh :(
+[20:02:27] <muesli> my xcode must be fucked... AGAIN
+[20:02:45] <muesli> gl.h not found either
+[20:09:21] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Quit: alsuren)
+[20:12:37] <muesli> Xcode failed to download
+[20:12:38] <muesli> Use the Purchases page to try again.
+[20:12:41] <muesli> grrrrrrrrr
+[20:17:08] *** Quits: soee (~soee@afcz166.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[20:17:58] *** Joins: soee (~soee@afcz166.neoplus.adsl.tpnet.pl)
+[20:18:03] <muesli> gaaah. wtf
+[20:18:10] <muesli> el capitan update deleted my /usr/local.qt4
+[20:39:51] <lfranchi> lol wat
+[20:49:23] <muesli> and changed perms on /usr/local
+[20:49:27] <muesli> gah
+[20:49:31] <muesli> no way i can update xcode
+[20:49:33] <muesli> it just fails
+[20:49:37] <muesli> not giving me any specific error
+[21:21:55] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[21:25:57] <muesli> uninstalled xcode... still fails installing
+[21:26:01] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Client Quit)
+[21:26:05] <muesli> just shoot me
+[21:27:35] * theli_ua shoots
+[21:27:47] <muesli> oh look: /SystemMigration/History/Migration-EE0D286F-78EA-4A4F-8A76-2E64E1CA788F/QuarantineRoot/usr/local.qt4/
+[21:28:28] * theli_ua just realized he can buy a gun now
+[21:28:37] <muesli> just 3.4GB of data osx hides from me
+[21:29:23] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[21:29:37] <muesli> the fuck
+[21:29:39] <muesli> mv: rename /Library/SystemMigration/History/Migration-EE0D286F-78EA-4A4F-8A76-2E64E1CA788F/QuarantineRoot/usr/local.qt4 to ./local.qt4: Operation not permitted
+[21:30:50] <theli_ua> ha!
+[21:30:53] * theli_ua shoots osx
+[21:31:53] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Client Quit)
+[21:32:07] <muesli> ... i can't write to /usr anymore... not even as root
+[21:32:13] * theli_ua shoots apple
+[21:32:31] <theli_ua> muesli: just lemme know if my gun violnce is not wanted here
+[21:33:20] <jturney> for your convenience and security, our computer has only one button, and we press that for you before it leaves the factory...
+[21:34:27] <muesli> rebooting
+[21:38:10] <muesli> http://www.infoworld.com/article/2988096/mac-os-x/sorry-unix-fans-os-x-el-capitan-kills-root.html
+[21:38:11] <tomabee> [ Sorry, Unix fans: OS X El Capitan kills root | www.infoworld.com | http://images.techhive.com/images/article/2014/11/shutterstock_222370435-100531240-primary.idge.jpg ]
+[21:42:45] <muesli> absolut facepalm
+[21:44:37] <muesli> theli_ua: agreed btw, we shouldn't ever start resolvers unless they're actually enabled. currently returning metadata is the reason for that
+[21:44:49] <muesli> theli_ua: that said, i never understood how a client-process can kill the parent
+[21:44:59] <theli_ua> heh, took me a moment to realise what you're reffering to
+[21:45:06] <muesli> heh, sorry
+[21:45:11] * theli_ua has attention span of a starfish
+[22:58:45] <muesli>  Failed to find "gl.h" in
+[22:58:46] <muesli>   "/System/Library/Frameworks/OpenGL.framework/Headers;/System/Library/Frameworks/AGL.framework/Headers".
+[23:10:44] <muesli> domme: tomahawk on osx seems to complain about lack of x11extras
+[23:10:45] <muesli> wtf
+[23:13:32] <jherskowitz> muesli: hmm… I don’t get those
+[23:13:54] <muesli> yeah pretty sure my osx install is pretty fucked
+[23:14:03] <muesli> the el capitan update seems to do weird things
+[23:23:51] <muesli> domme: there we go again
+[23:23:52] <muesli> In file included from /Users/muesli/Sources/tomahawk/master/src/libtomahawk-playdarapi/PlaydarApi.cpp:19:
+[23:23:52] <muesli>       'QxtHttpServerConnector'?
+[23:24:03] <muesli> eh
+[23:24:27] <muesli> domme: https://paste.kde.org/pyx1wk9e6
+[23:24:27] <tomabee> [ KDE Paste | paste.kde.org |  ]
+[23:24:54] <domme> muesli: i may need to silence the find package on x11 extras
+[23:24:59] <domme> it's certainly not required
+[23:25:08] <muesli> well, should only try to look for it on linux, no?
+[23:25:23] <domme> well it should just not complain about it
+[23:25:46] <muesli> why look for it in the first place on a non-x11 platform?
+[23:25:47] <domme> on linux is a bad bet e.g. 
+[23:25:55] <domme> because linux is not the only x11 platform
+[23:26:13] <domme> it's a better idea to "duck type" these things
+[23:26:23] <muesli> in reality it is ;-)
+[23:26:25] <muesli> anyway
+[23:26:28] <muesli> it's just a warning
+[23:26:33] <muesli> the real error is much more confusing
+[23:26:46] <domme> yeah, let me try to look at it.. internet is just very shitty right now
+[23:26:47] <domme> hold on
+[23:27:23] <domme> muesli: this is not with VERBOSE=1 is it?
+[23:27:29] <domme> i'd like to see the invocation of the compiler
+[23:27:36] <muesli> sec
+[23:28:02] <muesli> domme: https://paste.kde.org/pmuttryca
+[23:28:02] <tomabee> [ KDE Paste | paste.kde.org |  ]
+[23:40:30] <domme> muesli: OH
+[23:42:04] <domme> muesli: it's declaration is wrapped in #ifndef QT_NO_OPENSSL
+[23:42:19] <domme> muesli: is your qt build still without qtssl maybe?
+[23:42:30] <domme> or at least somehow QT_NO_OPENSSL sneaked in 
+[23:42:34] <muesli> probably, even tho that change didn't help jherskowitz either
+[23:43:06] <domme> does he have the same error?
+[23:43:11] <muesli> yeah
+[23:43:24] <muesli> can try my own qt build
+[23:44:07] <domme> muesli: is that with ssl?
+[23:44:18] <muesli> i mean building my own with ssl
+[23:44:18] <domme> or still going to do your own build? ;-)
+[23:44:25] <domme> not sure how to parse that sence.. jah
+[23:44:27] <domme> ah
+[23:44:29] <HorusHorrendus> alastairp: no stress ... I have sort of another "proposal" in a completly different area (my current work) in my pipeline and am still undecided what I want to do ... and how much I like your proposals
+[23:44:32] <domme> will take a while then, eh?
+[23:44:56] <theli_ua> I suddenly realised we are doing wrong with our youtube resolver. we should just use the audio-only format of the videos ... most of the recent ones have it
+[23:45:05] <HorusHorrendus> although the biggest part about doing my BacThesis for work would be the motivation factor of my "Boss"
+[23:45:13] <muesli> theli_ua: that's new
+[23:45:17] <muesli> :)
+[23:45:24] <theli_ua> muesli: nah, its pretty old, like, years
+[23:45:50] <domme> muesli: wont be ready earlier than in a few hours?
+[23:46:01] <HorusHorrendus> so if I do a acousticbrainz thesis you would have to keep me motivated alastairp
+[23:46:20] <theli_ua> anyhow, nowdays format list looks like this usually:  https://www.irccloud.com/pastebin/eDdHirXO/
+[23:46:21] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[23:46:55] <theli_ua> and youtube is nowdays my biggest supply for classical pieces resolutions
+[23:47:00] <muesli> domme: probably not
+[23:47:09] <domme> muesli: then i'm going to bed now ;-)
+[23:47:26] <muesli> i don't quite get why they disabled it in the first place :-/
+[23:47:31] <domme> muesli: we'll make some progress tomorrow, i'm sure
+[23:47:39] <theli_ua> domme: did you have a chance to look at all em resolver PRs ? :)
+[23:47:47] <domme> theli_ua: not yet, sorry
+[23:48:06] <domme> theli_ua: busy with lots of stuff that shouldnt break
+[23:48:08] * theli_ua figured, thats just a ping ;)
+[23:48:10] *** Quits: soee (~soee@afcz166.neoplus.adsl.tpnet.pl) (Ping timeout: 240 seconds)
+[23:48:25] <muesli> i wonder if "-securetransport" implicitly disabled openssl, too
+[23:48:37] <domme> what is that?
+[23:50:00] <theli_ua> domme: do you mind if I rewrite youtube to use promises? I mean, there will still be older version for 0.8.x .... its just that all the new goodness will work on 0.9 only
+[23:52:40] <muesli> domme: osx's openssl replacement
+[23:53:46] <domme> o.o

@@ -1,0 +1,403 @@
+[00:00:55] <DJ-C0L7[EIT]> why do components manufactured as replacement components not meet OEM spec even though they are listed as "OEM SPEC"
+[00:02:34] <DJ-C0L7[EIT]> o_o
+[00:02:51] <DJ-C0L7[EIT]> resistance is wrong, add resistors, component is faulty, have to replace component that i just replaced
+[00:03:04] * DJ-C0L7[EIT] facehooves and groans
+[00:09:26] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[00:09:34] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[00:25:48] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[00:33:58] *** Quits: Midnight_Tinker (nurd@Pony-5qttkj.dc.cox.net) (Connection closed)
+[00:41:28] *** Joins: nurd (nurd@Pony-5qttkj.dc.cox.net)
+[00:42:06] *** nurd is now known as Midnight_Tinker_
+[00:45:34] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[01:02:03] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[01:02:53] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[01:04:02] *** Joins: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[01:06:36] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Ping timeout: 121 seconds)
+[01:22:47] <Phase> <Uakh@ponychat> http://i.imgur.com/3yzUHJy.gifv
+[01:28:19] <Moonlightning> How do I get an authoritative answer from `dig`?
+[01:28:41] <Moonlightning> Tried using +aaonly, but I'm still getting responses from Google, which is…not authoritative for this domain (and doesn't pretend to be)
+[01:28:55] <Sour_Sweet> you could specify the NS with @
+[01:29:56] <Phase> +trace will resolve from a root
+[01:33:40] <Moonlightning> …+trace it is, I guess. Thanks.
+[02:06:41] *** Quits: tiwake (Octavia@Pony-njonl3.wa.charter.com) (Ping timeout: 121 seconds)
+[02:10:56] <Moonlightning> Hack: https://gist.github.com/BlacklightShining/61bac94c293ac893e816
+[02:10:57] <PinkiePieBot> [ dns-next-serial.sh · GitHub ]
+[02:11:11] <Moonlightning> What do y'all think :P
+[02:16:08] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[02:16:37] *** locodashie11 is now known as Pony_39187
+[02:19:21] *** Joins: Asoka_White (Asoka@Pony-5dec3e.net-htp.de)
+[02:22:32] *** Quits: Asoka (Asoka@Pony-3s2ggn.net-htp.de) (Ping timeout: 121 seconds)
+[02:42:47] <Sour_Sweet> O_o You're aware that you can just use YYYYMMDDhhmm ?
+[02:44:37] <Moonlightning> …no you can't…that overflows a 32-bit integer for anything after the year 99
+[02:44:52] <Moonlightning> …anything after the year 42, actually
+[02:44:59] *** Divide|TechSupport is now known as Divide
+[02:45:54] *** RedHelper|Sick|brb is now known as RedHelper|Sick
+[02:48:47] *** Joins: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au)
+[02:53:30] <Sour_Sweet> I'm relatively sure I've seen that already. In any case serial numbers don't even need represent a date. They are not verified
+[02:54:20] *** Quits: Duck (sid3009@Pony-4r56u0.ealing.irccloud.com) (Quit: Goodbye!)
+[02:54:58] <Moonlightning> They don't; they're just indices; but RFC 1912 recommends using YYYYMMDDnn.
+[02:57:30] *** Midnight_Tinker_ is now known as Midnight_Tinker
+[02:59:43] <Sour_Sweet> bind9 does indeed not allow that. I'm trying to find the document. Maybe it was using YYMMDDmmhh. That would make sense
+[03:00:06] <Moonlightning> Not really, because Y2K :P
+[03:00:32] <Sour_Sweet> Well you're safe for the next 85 years
+[03:00:46] <Moonlightning> On the contrary; you're only safe until the end of 2042.
+[03:01:06] <Moonlightning> 1 << 32 == 4294967296
+[03:01:28] *** Joins: TuxRug (TuxRug@TuxRug)
+[03:01:31] <Moonlightning> So when 2043 rolls around and your next serial number is 4301010000…
+[03:02:07] <Sour_Sweet> Ah yes unsigned int. The bind doc I was reading just said 10 digit number
+[03:02:24] <Moonlightning> Well, RFC 1035 says 32-bit unsigned integer. :P
+[03:02:27] <Sour_Sweet> Which is incorrect
+[03:02:37] <Moonlightning> DNS is a binary protocol >.>
+[03:02:57] <Moonlightning> If you really wanted to have it entirely time-based, you could use YYYYMMDDHH, I guess, but then you can only update it once per hour
+[03:02:59] <Sour_Sweet> (Was referecning to the doc I was reading)
+[03:03:15] <Moonlightning> I'm just gonna stick with YYYYMMDDnn.
+[03:03:25] <Moonlightning> If I update more than a hundred times in one day, I'll just increment the day anyway
+[03:03:35] <Moonlightning> And then bump the serial the next day
+[03:04:02] <Moonlightning> That's unlikely; updating the zone more than /several hundred/ times in one day is even less likely.
+[03:04:21] <Sour_Sweet> Or one could just start at 0 and we have no problems at all :P
+[03:06:05] <Sour_Sweet> Using a uint32 is not exactly reasoanble these days.
+[03:06:44] <Gigabit> Wow my hspa download rate is terrible
+[03:11:16] <Sour_Sweet> If I'd need to do frequent updates I'd probably just end up using my good old friend unix timestamps. They're safe for a reasonable time frame and easy to use.
+[03:11:47] <Sour_Sweet> 100 updates per day at max doesn't sound reasonable to me.
+[03:16:23] <Sour_Sweet> In any case even if you provide invalid serial numbers the damage is limited by your SOA's expire time.
+[03:20:37] *** Quits: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au) (Connection closed)
+[03:21:27] *** Joins: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au)
+[03:23:18] *** Sour_Sweet is now known as Seoson|BNC
+[03:24:36] *** Quits: Colgate (rabbit@brushie.horse) (Ping timeout: 121 seconds)
+[03:30:44] *** Joins: Colgate (rabbit@brushie.horse)
+[03:38:14] *** Quits: Colgate (rabbit@brushie.horse) (Ping timeout: 121 seconds)
+[03:46:03] *** Gigabit is now known as Snoarin
+[03:59:26] *** Joins: Pony_27461 (rabbit@brushie.horse)
+[04:06:07] *** Pony_27461 is now known as Colgate|Atomic
+[04:45:24] <One-Trick> worst mistake of the evening- forgetting to exclude libreoffice from upgrade.
+[04:58:36] <DJ-C0L7[EIT]> anypony have experience with A/V?
+[05:04:52] <DJ-C0L7[EIT]> mainly input switching
+[05:12:13] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[05:12:30] <DJ-C0L7[EIT]> nvm i think i found what i was needing
+[05:30:21] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "back in a bit, talk to everypony later")
+[05:53:03] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[05:53:27] *** Joins: Darkfair (IceChat9@Pony-qhgsb5.6cqr.0dfe.0306.2602.IP)
+[05:58:37] *** Joins: Sin (Sin@is.hustlin.everyday)
+[06:00:12] *** Quits: Colgate|Atomic (rabbit@brushie.horse) (Ping timeout: 121 seconds)
+[06:02:41] *** Joins: Pony_12109 (rabbit@Pony-shm.tj4.56.172.IP)
+[06:05:58] *** Quits: TuxRug (TuxRug@TuxRug) (Connection closed)
+[06:09:02] *** Quits: Pony_12109 (rabbit@Pony-shm.tj4.56.172.IP) (Ping timeout: 121 seconds)
+[06:09:19] *** Joins: Pony_12476 (rabbit@Pony-a1h.tj4.56.172.IP)
+[06:14:40] *** Quits: Pony_12476 (rabbit@Pony-a1h.tj4.56.172.IP) (Quit: AtomicIRC: The nuclear option.)
+[06:17:18] <Moonlightning> wat
+[06:18:07] *** Joins: Colgate|Atomic (rabbit@brushie.horse)
+[06:19:16] *** Quits: Colgate|Atomic (rabbit@brushie.horse) (A TLS packet with unexpected length was received.)
+[06:20:26] *** Joins: Pony_72723 (rabbit@Pony-a1h.tj4.56.172.IP)
+[06:21:58] <Compu> i wonder if its possible to convert an old CRT all in one macintosh to LCD
+[06:22:35] *** Joins: Pony_47293 (rabbit@Pony-shm.tj4.56.172.IP)
+[06:24:42] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:25:22] *** Quits: Pony_72723 (rabbit@Pony-a1h.tj4.56.172.IP) (Ping timeout: 121 seconds)
+[06:27:10] <Moonlightning> these priorities, wut
+[06:27:36] <Moonlightning> > low | medium | high | urgent | emergency | critical
+[06:35:18] <Moonlightning> the hell?
+[06:35:28] <Moonlightning> Why does namecheap have a separate account database for their ticket system -.-
+[06:35:36] <Moonlightning> and why do they EMAIL YOU YOUR PASSWORD
+[06:36:15] <Pony_47293> They do? 
+[06:37:40] <AppleDash> Compu: Yes, I've done it
+[06:37:48] <AppleDash> With both an eMac and an iMac
+[06:38:02] <Compu> AppleDash: too new, im talking about things like the color classic
+[06:38:16] <AppleDash> I dunno if they output the right video
+[06:38:20] <AppleDash> signal
+[06:38:46] <Compu> some of them would be too difficult since they have the analog board and PSU all on the same board
+[06:39:01] <Compu> but i think there were some models with separate PSUs
+[06:46:15] *** Quits: quindo (Quindo@Pony-8qt.17k.198.99.IP) (Ping timeout: 121 seconds)
+[06:46:20] <One-Trick> firefox 42 and dactyl. sillysilly.
+[06:47:46] * HoneyDrops approves of One-Trick's browser setup.
+[06:52:38] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[06:58:06] <Moonlightning> Pony_47293: they just emailed me my password, yes -.-
+[07:01:27] <Pony_47293> Hmm, I thought they were better than that 
+[07:07:02] <Moonlightning> :/
+[07:07:14] <Moonlightning> On an unrelated note, I need a selection-management system in alot.
+[07:09:58] * HoneyDrops gives Moonlightning an alot. https://i.imgur.com/jlUEjEi.jpg
+[07:10:39] <Moonlightning> That's what it's named for! :D
+[07:15:34] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[07:17:48] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[07:20:28] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[07:20:40] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[07:21:11] *** Quits: Crimson_Tail (Bluepon@Pony-ecresi.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[07:29:51] *** Quits: Pony_47293 (rabbit@Pony-shm.tj4.56.172.IP) (A TLS packet with unexpected length was received.)
+[07:31:11] *** Joins: Pony_29228 (rabbit@Pony-shm.tj4.56.172.IP)
+[07:41:29] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[07:54:59] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:05:05] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[08:25:12] *** RedHelper|Sick is now known as Creeps|AFK
+[08:25:35] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[08:26:33] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[08:32:29] *** Joins: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se)
+[08:51:20] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[08:53:05] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Connection closed)
+[08:53:31] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[08:58:32] *** zz_CyberJacob is now known as CyberJacob
+[09:08:14] *** Joins: WorkingData (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[09:11:10] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[09:13:07] *** Quits: Pony_29228 (rabbit@Pony-shm.tj4.56.172.IP) (Ping timeout: 121 seconds)
+[09:13:18] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[09:15:07] *** Eventide is now known as Eventide|Sleepies
+[09:26:59] *** Joins: Phase (Phase4@Pony-f34100.internode.on.net)
+[09:29:07] <Moonlightning> what the hell…the connections to my server are dying.
+[09:30:26] <HoneyDrops> echo "email" | openssl enc -e -aes-256-cbc -a -A -salt -k "$YOURKEY" :D
+[09:37:23] <Googie> https://github.com/docker/dockercraft
+[09:37:24] <PinkiePieBot> [ docker/dockercraft · GitHub ]
+[09:37:30] * Googie falls over
+[09:38:27] <AppleDash> lol
+[09:40:13] * Moonlightning beans Googie with a large pearl, hard enough to knock him over.
+[09:40:51] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[09:47:03] <HoneyDrops> Googie: what? o_O
+[09:47:41] <Googie> I... I have no idea.
+[09:47:45] <Googie> It just popped up.
+[09:49:43] * Gladiolus hugs Googie 
+[09:49:44] <Gladiolus> o3o
+[09:54:47] <Moonlightning> What are you o3o ing at?
+[09:54:52] <Moonlightning> Are you o3oing at the pearl?
+[09:55:07] <Moonlightning> You'd /better/ not be o3oing at the Docker thing, unless it's because someone's dropping Docker or something. :B
+[09:55:09] <Moonlightning> :V *
+[09:55:44] <Gladiolus> o3o
+[09:55:46] <Gladiolus> o3o3o3oo3o3
+[09:58:05] * Moonlightning beans Gladiolus with another large pearl.
+[09:58:18] * Gladiolus o3o
+[09:58:24] * Moonlightning concludes that Gladiolus is very excited about large pearls, and beans him with another one. *
+[09:58:36] * Gladiolus o3o
+[10:00:02] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Connection closed)
+[10:16:26] *** Quits: Pony_39187 (locodash11@Pony-osmcfg.co.comcast.net) (Ping timeout: 121 seconds)
+[10:55:50] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[11:19:28] *** Quits: Phase (Phase4@Pony-f34100.internode.on.net) (Ping timeout: 121 seconds)
+[11:26:38] *** Quits: Divide (NA@Pony-vf5hfh.cable.rogers.com) (Connection closed)
+[11:26:44] *** Joins: Divide (NA@Pony-vf5hfh.cable.rogers.com)
+[12:03:54] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[12:05:36] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Ping timeout: 121 seconds)
+[12:06:38] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[12:08:11] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[13:04:25] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[13:57:45] *** Quits: Darkfair (IceChat9@Pony-qhgsb5.6cqr.0dfe.0306.2602.IP) (Ping timeout: 121 seconds)
+[14:23:18] *** Quits: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au) (Connection closed)
+[14:41:28] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[15:00:43] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[15:14:24] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[15:15:42] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[15:31:21] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[15:35:35] *** Quits: Snoarin (Gigabit@Bazinga) (Quit: Canternet Public Bouncer!)
+[15:35:35] *** Quits: Creeps|AFK (RedHelper@The.Pony.That.Makes.You.Smile) (Quit: Canternet Public Bouncer!)
+[15:39:43] *** Joins: GigabitPony (Gigabit@Bazinga)
+[15:39:43] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[15:40:13] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[15:58:39] *** Parts: Lorix_- (Lorix_@Pony-ahk.n7v.237.192.IP) ()
+[16:08:11] *** Joins: Lorix_ (Lorix_@flutter.shy.yay)
+[16:13:50] *** GigabitPony is now known as RainbowBlitz
+[16:17:06] *** Joins: quindo (Quindo@Pony-8qt.17k.198.99.IP)
+[16:31:43] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[16:33:37] *** RainbowBlitz is now known as Gigaway
+[16:41:44] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[16:44:22] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[16:45:18] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:50:53] *** Joins: Crimson_Tail (Bluepon@Pony-9nloru.cg80.k4gu.0151.2601.IP)
+[17:09:59] *** Joins: Colgate (rabbit@brushie.horse)
+[17:43:08] *** Eventide|Sleepies is now known as Eventide
+[17:50:14] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:56:10] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:02:25] *** Parts: Dashie (rainbow@bat.pone.hacker.horse) ("Leaving")
+[18:34:51] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "fixing graphics problems.... horrendous graphics problems..... back in a few")
+[18:40:04] <johnsey> http://developers.slashdot.org/story/15/11/18/1629212/microsoft-open-sources-visual-studio-code
+[18:40:13] <johnsey> so what's the temperature in hell these days anyway?
+[18:59:54] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[19:13:15] <HoneyDrops> A bit misleading, they put the code to "Visual Studio Code" (some in-browser thing) not Visual Studio, proper, under MIT.
+[19:14:01] <HoneyDrops> https://en.wikipedia.org/wiki/Visual_Studio_Code
+[19:14:02] <PinkiePieBot> [ Visual Studio Code - Wikipedia, the free encyclopedia ]
+[19:23:19] <wolfyshy> HoneyDrops: it isn't an "in browser thing", that is the code editor they provide for users of OS X and Linux
+[19:23:29] <wolfyshy> it uses chromium webpart, the same thing spotify uses
+[19:23:39] <wolfyshy> it's garbage, but it's not a bait-and-switch, it's legitimately the code editor
+[19:24:41] <Gigaway> johnsey, it is currently 61f
+[19:24:46] <Gigaway> in hell
+[19:25:02] <Gigaway> https://www.google.com/search?q=hell+michigan+temperature&oq=hell+michigan+te%2C&gs_l=serp.3.0.0i22i30l3.2275.3248.0.4777.4.4.0.0.0.0.387.757.0j1j1j1.3.0....0...1c.1.64.serp..1.3.756.8c-qUEYMLYw
+[19:25:07] <wolfyshy> ... lol, rely on the pone in michigan for that info
+[19:25:25] <Gigaway> Damn right :P
+[19:25:46] <Gigaway> and paradise is 54
+[19:25:48] <Gigaway> https://www.google.com/search?q=paradise+michigan+temperature&oq=paradise+michigan+temperature&gs_l=serp.3...59540.60927.0.61096.8.8.0.0.0.0.314.937.0j1j2j1.4.0....0...1c.1.64.serp..7.1.187.Uvp3AnrgsrI
+[19:25:58] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[19:26:56] <Gigaway> and Christmas is 56
+[19:26:57] <Gigaway> https://www.google.com/search?q=christmas+michigan+temperature&oq=christmas+michigan+temperature&gs_l=serp.3..30i10.65874.67789.0.67916.9.9.0.0.0.0.306.930.0j4j0j1.5.0....0...1c.1.64.serp..7.2.312.UFlHjcWXSYU
+[19:29:05] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:31:40] <wolfyshy> > I can't decide between Quartz or Carbon
+[19:31:56] <wolfyshy> > my s/o, my mum, and me all look at each other and break out in laughter
+[19:32:03] <wolfyshy> google named the Nexus 5X colours after Apple technologies
+[19:32:04] <Gigaway> Michigan, the only place where you can go to Hell, Paradise and Christmas without leaving the state.
+[19:37:00] <HoneyDrops> wolfyshy: https://en.wikipedia.org/wiki/Blink_(web_engine)  Close enough to a browser, it's still abusing something designed to display documents. Either use a standard toolkit (tk,gtk,qt), or use Xlib directly, or best of all: curses.
+[19:37:01] <PinkiePieBot> [ Blink (web engine) - Wikipedia, the free encyclopedia ]
+[19:40:11] <HoneyDrops> Though, if they have any sanity, ripping off the UI section leaving the logic parts shouldn't be too hard.  You're however still stuck with TypeScript/JS :/
+[19:51:21] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:56:21] <wolfyshy> HoneyDrops: TypeScript is okay-ish for what it is, though I don't really like any JS derivative
+[19:56:47] <wolfyshy> HoneyDrops: xlib is terrible and curses is worse.  I want the entire TUI thing to die off already so we can get to things like qt5 that have native scaling for DPIs and accessibility
+[19:56:52] <wolfyshy> gtk3 pukes hard on accessibility
+[19:57:07] <wolfyshy> it can't do screen readers, it crashes if you try to use a dbus-compliant magnifier
+[19:57:38] <HoneyDrops> ssh (or mosh) is still the best remote access option
+[19:57:47] <wolfyshy> xpra is \o/
+[20:01:51] <HoneyDrops> Xlib has native scaling :D
+[20:02:30] <HoneyDrops> Xlib was built around vectors, it was /designed/ to support any resolution (ok, maybe not so much with fonts, but that is solved now).
+[20:04:33] <HoneyDrops> And pure-xlib forwarding is actually quite nice.  However, every tookit it seems decided to not use it and just plasters bitmaps everywhere.  Which is why remote access sucks.  Every single remote GUI system will suck until we completely abandon trying to shove images over the network and focus on vector based UIs.
+[20:08:03] <HoneyDrops> I would imagine for accessibility a CLI would be best, just a simple text stream to read.
+[20:11:11] <HoneyDrops> For a VI user, you don't really need a "UI" in the typical sense.  You just want a single, well defined input (keyboard) and a single well defined output (stdout).  I play (and do some volunteer support) for a MUD and we have a fair number of VI users.  Accessibility for a lot of toolkits is sad, the GUI MUD clients pretty much are only usable because of special support for readers.
+[20:15:07] *** Joins: siege (s1ege@Pony-0qa.2dv.248.50.IP)
+[20:18:18] <johnsey> even MS realized that remote desktop isn't always what you want and is now adding ssh :)
+[20:25:34] <HoneyDrops> http://www.wired.com/2015/11/i-turned-off-javascript-for-a-whole-week-and-it-was-glorious/
+[20:25:34] <PinkiePieBot> [ I Turned Off JavaScript for a Whole Week and It Was Glorious | WIRED ]
+[20:27:31] <HoneyDrops> ssh is just so much more usable.  I don't even want to think what using VNC or remote desktop is like on a mobile.  ssh works just fine, and mosh even handles when connections are spotty.
+[20:39:41] *** Joins: Phase (Phase4@Pony-f34100.internode.on.net)
+[20:57:27] *** Quits: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se) (Quit: Leaving.)
+[21:24:17] *** Gigaway is now known as Gigabit
+[21:30:09] <AppleDash> Does anyone here know anything about Java bytecode injection?
+[21:31:33] <Moonlightning> I know about Java serialized-object injection.
+[21:31:37] <AppleDash> No.
+[21:31:39] <Moonlightning> Does that help?
+[21:31:44] <Gigabit> You need an injection o3o
+[21:31:44] <AppleDash> It does not
+[21:32:03] <AppleDash> I need someone to tell me how to inject bytecode in the MIDDLE of a method, using whatever framework there is
+[21:32:11] <AppleDash> because I've only seen injection at the start and at the end
+[21:32:15] <AppleDash> But I need injection in the middle
+[21:32:40] <Moonlightning> Find a method called in the middle of your target method, and inject at the beginning of that.
+[21:32:43] <Moonlightning> :3
+[21:32:51] <AppleDash> lol
+[21:33:01] <AppleDash> But I need local vars from the outer method :(
+[21:42:43] <HoneyDrops> Doesn't Java decompile well enough?  Just decom -> patch -> rebuild?
+[21:42:57] <HoneyDrops> Or better, just patch the source.
+[21:44:18] <Ola> http://olatheskunk.pl/lspci.txt
+[21:44:20] <Ola> ;3
+[21:44:59] *** Quits: Fusl (Fusl@148.163.189.28) (Quit: Contact: http://hallowe.lt/)
+[21:45:31] <AppleDash> HoneyDrops: No
+[21:45:35] <AppleDash> Obfuscated code
+[21:46:40] <AppleDash> Also, I want my thing to be usable without much effort, and I want it to be usable acorss versions of the software I'm injecting into
+[21:46:44] <AppleDash> across*
+[21:47:16] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[21:47:19] <AppleDash> That is definitely possible, because methods and classes across versions always obfuscate to the same obfuscated names
+[21:50:51] *** Joins: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au)
+[21:50:52] <HoneyDrops> Well you have to RE the method you want to inject to, right?  Just inject the whole method, modified as you need at the beginning, then a return to skip the original method's code.
+[21:51:15] <AppleDash> That's kinda gross
+[21:51:19] <AppleDash> The whole method is like 50 lines
+[21:51:27] *** Quits: Phase (Phase4@Pony-f34100.internode.on.net) (Ping timeout: 121 seconds)
+[21:51:28] <HoneyDrops> Java is gross
+[21:51:32] <AppleDash> lol
+[21:52:36] <AppleDash> I've also got methods that I want to remove instructions from
+[21:52:49] <AppleDash> Like I have a 50 line method with if (someCondition) { doSomethingUndesirable(); } in the middle
+[21:52:57] <AppleDash> And I want to remove the doSomethingUndesirable() call
+[21:53:33] <Moonlightning> > Maximizing Tor Browser can allow websites to determine your monitor size, which can be used to track you. We recommend that you leave Tor Browser windows in their original default size.
+[21:53:35] * Moonlightning …facehoofs.
+[21:53:41] <Moonlightning> I /completely forgot/ about that
+[21:53:41] <AppleDash> lol
+[21:53:53] <Moonlightning> They should flag that message up when you resize a window at all
+[21:54:05] <Moonlightning> because I've been stretching them to fill the height of the screen :/
+[21:56:23] *** Quits: Datalink (Datalink@Datalink) (Connection closed)
+[21:56:32] *** Joins: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile)
+[21:56:32] *** Joins: WildSoft_ (WildSoft@Pony-9tei06.bredband.comhem.se)
+[21:56:35] <Moonlightning> There we go. I'm even more generic now.
+[21:56:40] *** Quits: Sellyme (quassel@Pony-lq694o.of.saltspork.com) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: Neptune (Neptune@Pony-q31u28.k23g.gt9a.fcd0.2607.IP) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: ShivalWolf (ShivalWolf@2400:d400:9:7375:abcd::2) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: Crimson_Tail (Bluepon@Pony-9nloru.cg80.k4gu.0151.2601.IP) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: Q0 (Q0@literallyshit.net) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: cyzon (cyzon@moms.spaghetti) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: Seoson|BNC (Seoson@pony.kab-s.de) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: init3 (quassel@init3.Is.Not.A.Clever.Poni) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: Apple_Bloom (sid52418@the.canon.pony) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: Datguy (Datguy@lord.of.nreboot.c0m) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: roflin (dennis@Pony-aend1d.es) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: johnsey (johnsey@into.the.nethers) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: One-Trick (Octavia@hyenaspots.com) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: Sin (Sin@is.hustlin.everyday) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: siege (s1ege@Pony-0qa.2dv.248.50.IP) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: Aww (aww@Pony-ic0abh.online) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: WorkingData (DataByteBro@Pony-d3c.bgn.198.64.IP) (cadance.canternet.org discord.canternet.org)
+[21:56:40] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Connection closed)
+[21:56:43] *** Joins: Datalink (Datalink@Datalink)
+[21:56:46] <Moonlightning> …oh shit
+[21:57:08] <Moonlightning> Fucking hell
+[21:57:18] <Moonlightning> My connections have been dying all day, and now Canternet netsplits
+[21:57:37] *** Joins: siege (s1ege@Pony-0qa.2dv.248.50.IP)
+[21:57:37] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[21:57:37] *** Joins: WorkingData (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[21:57:37] *** Joins: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com)
+[21:57:37] *** Joins: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP)
+[21:57:37] *** Joins: johnsey (johnsey@into.the.nethers)
+[21:57:37] *** Joins: ShivalWolf (ShivalWolf@2400:d400:9:7375:abcd::2)
+[21:57:37] *** Joins: roflin (dennis@Pony-aend1d.es)
+[21:57:37] *** Joins: Apple_Bloom (sid52418@the.canon.pony)
+[21:57:37] *** Joins: Sellyme (quassel@Pony-lq694o.of.saltspork.com)
+[21:57:37] *** Joins: Aww (aww@Pony-ic0abh.online)
+[21:57:37] *** Joins: One-Trick (Octavia@hyenaspots.com)
+[21:57:37] *** Joins: Crimson_Tail (Bluepon@Pony-9nloru.cg80.k4gu.0151.2601.IP)
+[21:57:37] *** Joins: cyzon (cyzon@moms.spaghetti)
+[21:57:37] *** Joins: init3 (quassel@init3.Is.Not.A.Clever.Poni)
+[21:57:37] *** Joins: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[21:57:37] *** Joins: Seoson|BNC (Seoson@pony.kab-s.de)
+[21:57:37] *** Joins: Datguy (Datguy@lord.of.nreboot.c0m)
+[21:57:37] *** Joins: Neptune (Neptune@Pony-q31u28.k23g.gt9a.fcd0.2607.IP)
+[21:57:37] *** Joins: Sin (Sin@is.hustlin.everyday)
+[21:57:37] *** Joins: Q0 (Q0@literallyshit.net)
+[21:58:50] *** Quits: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se) (Ping timeout: 121 seconds)
+[21:58:50] *** WildSoft_ is now known as WildSoft
+[21:59:06] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[21:59:58] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[22:03:04] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[22:56:21] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[23:07:55] <wolfyshy> Ola: yay, FireWire :D
+[23:08:28] <Ola> ;3
+[23:08:39] <wolfyshy> HoneyDrops: as someone who uses VNC over 3G pretty much every day now: it's not that bad, if you have a decent server (x11vnc does compression and server-side tweaks to make it very, very fast)
+[23:11:26] <HoneyDrops> I really would rather not use VNC on a 800x480 screen >_<
+[23:16:59] <wolfyshy> my phone is 1920x1080 and my laptop is 1280x720
+[23:17:06] <wolfyshy> so it actually works decently
+[23:17:22] <johnsey> hm now i've been putting off buying a new phone after my n900 died for almost 2 years and the alternatives don't seem much better
+[23:17:33] <wolfyshy> but I prefer to use my tablet tethered to my phone since the screen is much more usable for such things
+[23:17:39] * HoneyDrops is sticking with her n900 for as long as possible.
+[23:17:54] <Moonlightning> Whoa
+[23:17:55] * HoneyDrops has accepted she will probably have to build her next one herself.
+[23:17:55] <Moonlightning> what the hell
+[23:18:30] <Moonlightning> TorBrowser's Firefox process has been absolutely FLOODING my logs with this shit
+[23:18:33] <HoneyDrops> From my perspective mobiles have only been getting worse.
+[23:19:04] <wolfyshy> is the n900 even /usable/ any more?  256 MB RAM wasn't enough when it was launched, for what it did
+[23:19:25] <AppleDash> Why does this always happen to me
+[23:19:39] <wolfyshy> and maemo is an awful experience
+[23:19:41] <HoneyDrops> It does everything I've wanted it to do, and more really.
+[23:19:42] <AppleDash> I'm getting an error whose only occurance on Google is in the source code of the thing erroring
+[23:19:54] <HoneyDrops> wolfyshy: maemo is 1000x better than iOS or Android
+[23:19:58] <AppleDash> I'm doing stuff with Javassist and I'm suddenly getting "Could not allocate library name"
+[23:20:01] <johnsey> i've kinda resigned myself to not doing much more than browsing the web and using irc and jabber on my phone ever since i had to use an android phone
+[23:20:27] <HoneyDrops> I will sooner roll my own custom Linux-based OS than use Android or iOS.
+[23:21:05] <wolfyshy> HoneyDrops: having used all of them, iOS is more polished, and Android is easier to customise.  maemo is just this odd outlier that has poor software and poorer customisability
+[23:21:08] <johnsey> sailfish os? not perfect either but still better than android
+[23:21:10] <wolfyshy> what does it offer you in your use case?
+[23:21:16] <HoneyDrops> I don't really use mine for much more than calls, ssh (which covers 90% of what I want to do).
+[23:21:34] <wolfyshy> vssh for iOS, juice for android
+[23:22:21] <HoneyDrops> Maemo is debian, I have nearly full control.  I have custom bash scripts for automating tasks for my n900.
+[23:22:50] <Moonlightning> AppleDash: you're not alone…that's happened to me a few times :P
+[23:22:51] <wolfyshy> any reason you couldn't do it from busybox in andrroid?
+[23:22:54] <HoneyDrops> I want a real, general-purpose OS, that uses normal libs.
+[23:22:57] <wolfyshy> android*
+[23:23:18] <HoneyDrops> I can just build any X program I want, and run the exact same version on my n900 or my laptop.
+[23:23:33] <Moonlightning> …screen size though
+[23:23:57] <wolfyshy> android has an X server, if you really want it, but I recommend something like xpra
+[23:24:02] <wolfyshy> wayyyyy over running an X client on a phone
+[23:24:30] <HoneyDrops> I have one android tablet, it was hell until I rooted it (which took way more effort than it every should) got ad blocking set up (ads are a pox on the world), and basically gutted it.
+[23:25:27] <HoneyDrops> I can work with busybox, and do on some devices.  But I basically don't want anything from Android, I end up ripping out most of it and trying to build my own mostly-sane/normal Linux.
+[23:25:41] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[23:27:08] <wolfyshy> bionic is a very good libc, in fairness
+[23:27:24] <wolfyshy> I guess you probably hate on the musl crowd too :(
+[23:27:26] <Moonlightning> HoneyDrops, teach me your ways ;-;
+[23:27:32] <HoneyDrops> Ultimately, I want to be the one who decides how my device operates.  What does or does not run on any device I own is up to my /sole/ discretion.  Maemo comes a lot close to that OOB.  
+[23:27:59] <HoneyDrops> I don't mine alternate libc, sane software should work with any libc.
+[23:28:23] <wolfyshy> I agree with this highly
+[23:28:37] <wolfyshy> it is stupid that most GNU software does not because it is tied to the GNU libc and will fail in ./configure
+[23:28:48] <wolfyshy> on systems that use alternative libcs
+[23:30:36] <HoneyDrops> Still, there is nothing I want from Android.  I want open, user-replacible kernels, bootloaders, firmware, etc.
+[23:33:20] <johnsey> looking at the recent efforts to lock down firmwares of everything with a radio, i have a feeling the chances for that dream don't look good, sadly
+[23:35:00] <johnsey> the upcoming blackberry looks neat, hardware-wise, but it'll be locked down like hell
+[23:35:22] <johnsey> one of the few devices still coming out with a hardware keyboard
+[23:35:42] <HoneyDrops> Yeah, I love the HW keyboard.
+[23:37:17] *** Seoson|BNC is now known as Seoson
+[23:37:43] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[23:57:25] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)

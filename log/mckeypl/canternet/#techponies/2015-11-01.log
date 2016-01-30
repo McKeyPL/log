@@ -1,0 +1,660 @@
+[00:01:16] *** Quits: Hadjii (jircii@Pony-vqg.mu8.73.38.IP) (Quit: jIRCii - http://www.oldschoolirc.com)
+[00:03:25] <Sour_Creep> Why would somebody use OS X in a VM? Well at least apart from software development.
+[00:03:48] <Caerdwyn> uh, cause i dont have a mac?
+[00:04:02] <Caerdwyn> nor another spare computer to try and "properly" build a hackintosh on?
+[00:06:04] <Sour_Creep> The question is more why would I use OS X if I can get a full Linux :-)
+[00:06:28] <Caerdwyn> just curious to see/use OS X for once in my life
+[00:06:42] <Caerdwyn> never having owned a mac, or been able to get on one and use one, I'd like to experience it once
+[00:11:33] <Caerdwyn> aaaaand tada, here goes the crash on reboot
+[00:11:34] <Caerdwyn> http://i.imgur.com/qfaJFva.png
+[00:11:42] <Caerdwyn> didnt even make it off the installer, and bam. dead.
+[00:12:30] <Caerdwyn> Ghostiolus: any ideas?
+[00:13:44] <Ghostiolus> I have no idea honestly.
+[00:13:52] <Ghostiolus> Hackintosh, even in a VM, is a clusterfuck.
+[00:13:59] <Ghostiolus> It takes hours of work and a lot of reading.
+[00:14:05] <Ghostiolus> Make sure you’re following the guide well.
+[00:14:10] <Caerdwyn> ..yeah, i've been at this for like..a week now
+[00:14:36] <Caerdwyn> I just this morning, got it to finally boot up with a newer version of Chimera and iBoot.. it installs, everything boots, but it only crashes on shutdown
+[00:14:43] <Moonlightning> init d
+[00:14:44] <Moonlightning> >:O
+[00:14:54] <Ghostiolus> Well, that seems like… just something to deal with?
+[00:14:55] <Caerdwyn> and no amount of googling that kext or its dependency has gotten me any closer to /what/ is broken
+[00:15:03] <Ghostiolus> Like if the system works and it just crashes on shutdown, oh well?
+[00:15:07] <Ghostiolus> Shutting it down anyway.
+[00:15:49] <Caerdwyn> well, thats the thing... when its crashing on shutdown, when I force reboot the vm, it will reboot with systemShutdownCause 3, which I guess is the VM equivalent of "aborted", and it keeps running fsck constantly, and sometimes, if I reboot it enough times, will completely freeze when it hits the desktop
+[00:15:57] <Caerdwyn> or the cursor becomes the spinning beachball of death and does nothing.
+[00:16:10] <Caerdwyn> so it seems its losing data on shutdown or something, or at least corrupting it on some level
+[00:16:46] <Ghostiolus> I have no idea, I’ve never had done much 10.6 VM because it ends up s low as shit even when ti works.
+[00:16:58] <Ghostiolus> Try clearing the caches I guess, v0v.
+[00:17:47] <Caerdwyn> how do you do that?
+[00:17:57] <Caerdwyn> ..ive never touched os x in my life, so you're talking french to me right now >_<
+[00:18:21] <Caerdwyn> that screenshot was literally it shutting down from a fresh OS install... I havent even booted it back up yet
+[00:18:38] <Caerdwyn> gonna change the acceleration settings, maybe take away a few cores from it or something and see if that helps, i dont even know anymore
+[00:18:43] <Ghostiolus> I don’t have the command on hand you’ll have to look it up.
+[00:19:03] <Ghostiolus> Make sure you’re sticking to the guide at all points.
+[00:19:19] <Caerdwyn> i am
+[00:19:34] <Ghostiolus> -f -x -v generally boots it for me in safe mode, those switches i remeber
+[00:20:09] <Caerdwyn> discard cache, safe mode, and verbose... got it
+[00:20:48] <Ghostiolus> if it manages to boot with those, try just -f
+[00:21:08] <init7> Do --spooky-boot
+[00:21:15] <Caerdwyn> hurr hurr :P
+[00:21:39] <Caerdwyn> busy shutting down the other 11 vms i had running
+[00:21:42] <Caerdwyn> running out of ram lol
+[00:27:40] <Ghostiolus> if you want to just experiment with osx itself, pearpc can do up to 10.4
+[00:32:22] <Caerdwyn> I have multibeast running in the vm now, its updating and installing some kexts that are apparently missing from the system, one of them is nullcpupowermanagement.kext or something that is apparently required for Core*-whatever cpus, especially if being used in a VM
+[00:32:28] <Caerdwyn> lemme see if this does anything
+[00:34:04] *** zz_CyberJacob is now known as CyberJacob
+[00:34:51] <Ghostiolus> i wonder if 10.6 woudl work on a haswell native
+[00:34:57] <Ghostiolus> man that would be hilariously fast
+[00:35:12] <Ghostiolus> doubt it though, hackintosh compatibility seems to go a year either direction of the OSes release
+[00:36:27] <Caerdwyn> yeah, i wish
+[00:37:29] <Caerdwyn> im wondering if its just 10.6 thats giving this many issues
+[00:37:33] <Ghostiolus> I wanna install 10.6 on my 2013 retina macbook but that ain’t happening at all lol
+[00:37:36] <Ghostiolus> it’s possible
+[00:37:39] <Caerdwyn> most new guides for hackintoshes are on 10.10 now
+[00:37:53] <Caerdwyn> whoop, narrowed it down to one error now http://i.imgur.com/1gphFsB.png
+[00:37:57] <Caerdwyn> AppleSMC
+[00:38:11] <Caerdwyn> now if someone can tell me what /that/ thing does, maybe i can get somewhere lol
+[00:38:48] <Ghostiolus> AppleSMC probably refers to the SMC chip on macs that does a lot of basic stuff like temperature management.
+[00:39:12] <Ghostiolus> I have no idea how to approach that from a hackintosh, I believe the DSDT is supposed to emulate it.
+[00:39:16] <Moonlightning> replace the SMC stuff with a dummy that returns success on everything sane and does nothing.
+[00:39:21] <Moonlightning> I mean, you don't need it…this is a VM! XP
+[00:39:23] <Caerdwyn> well, i installed FakeSMC and EasyDSDT already
+[00:39:29] <Ghostiolus> no idea then
+[00:39:33] <Moonlightning> temperature control et al are handled at a lower layer
+[00:39:34] <Caerdwyn> yeah, thats what lost me too
+[00:40:09] <Moonlightning> Hey, AppleDash
+[00:40:20] <Moonlightning> search the entire v4 address space. You like doing that, right?
+[00:40:49] <Moonlightning> See if you can get the Twitch Installs Arch box. Root password is 'kappa'.
+[00:41:54] <howlingwolfy> curl da.gd/ip from the box, get public IP (but last I looked this was being done in a VM so inbound connections are likely impossible)
+[00:42:19] <Moonlightning> or just `ifconfig`; it's shorter
+[00:42:22] <Moonlightning> …oh, wait.
+[00:42:28] <Webster> Even if it's not it's probably behind a router blocking it.
+[00:46:33] <Caerdwyn> Moonlightning: what would happen if I deleted AppleSMC.kext from the machine...
+[00:46:45] <Ghostiolus> rename it and see what happens
+[00:46:52] <Ghostiolus> call it applesmc.fart
+[00:47:00] <Ghostiolus> and then remember to boot with cleared cashes
+[00:47:02] <Ghostiolus> caches
+[00:47:03] <Caerdwyn> assuming a big kernel panic?
+[00:47:04] <Ghostiolus> cashews
+[00:47:32] * Moonlightning stuffs Ghostiolus with cashews.
+[00:47:58] <Ghostiolus> o3o
+[00:48:01] <Ghostiolus> that’s my fetish
+[00:48:06] <Ghostiolus> except I do the stuffing
+[00:48:07] <Ghostiolus> o4o
+[00:48:34] <Caerdwyn> o.o
+[00:49:11] <Caerdwyn> so yeah, that did nothing
+[00:49:26] <Caerdwyn> just hangs on library kext not found
+[00:50:32] <howlingwolfy> Caerdwyn: applesmc.kext is required to boot OS X and the chip also functions as the hardware lock that shows OS X whether it is a legit Apple machine or not
+[00:50:43] <howlingwolfy> Caerdwyn: don't use FakeSMC on virtualbox, instead do something much more illegal but much simpler:
+[00:50:48] <howlingwolfy> VBoxManage setextradata "Your VM Name" VBoxInternal2/SmcDeviceKey "ourhardworkbythesewordsguardedpleasedontsteal(c)AppleComputerInc"
+[00:50:49] <Caerdwyn> ?
+[00:51:06] <Caerdwyn> lol..seriously?
+[00:51:09] <howlingwolfy> you.
+[00:51:11] <howlingwolfy> yes*
+[00:51:13] <howlingwolfy> yes.  seriously.
+[00:51:22] <Caerdwyn> omg, I just have to try this now
+[00:51:42] * Moonlightning blinks.
+[00:51:51] <Moonlightning> Is that last string actually checked for…?
+[00:52:04] <Caerdwyn> ive /heard/ of that long string before
+[00:52:07] <Caerdwyn> i always thought it was a joke...
+[00:52:27] <howlingwolfy> Moonlightning: yes.  it is.
+[00:52:58] <Caerdwyn> alright, its set, lemme fire it back up
+[00:53:16] <howlingwolfy> Moonlightning: it's an ascii representation of the key the SMC has onboard (it is read out in hex, bytes, big endian)
+[00:53:48] <Ghostiolus> wait what
+[00:53:57] <Ghostiolus> does that even actually work, howlingwolfy? I’ve never heard of that before.
+[00:54:17] <howlingwolfy> Ghostiolus: yes.
+[00:54:19] <Ghostiolus> also lol at that string, I guess since it could be anything they had a bit of fun with it
+[00:54:32] <Caerdwyn> howlingwolfy: nope, still kernel panic on shutdown with com.apple.driver.AppleSMC and org.netkas.FakeSMC as the two culprits
+[00:54:33] <Ghostiolus> since it’s not like 99.9% of users can even fake that
+[00:54:56] <howlingwolfy> Caerdwyn: remove FakeSMC
+[00:54:57] <Caerdwyn> assuming I should find a way to remove FakeSMC and try again?
+[00:55:00] <Caerdwyn> ok
+[00:55:00] <howlingwolfy> Caerdwyn: it's interfering
+[00:55:00] <Moonlightning> there's also a com.apple.Dont_Steal_Mac_OS_X kext
+[00:55:05] <howlingwolfy> DSMOS
+[00:55:08] <Caerdwyn> omg
+[00:55:13] <Ghostiolus> That’s what DSMOS is!??!
+[00:55:14] <Caerdwyn> so that's what "Waiting on DSMOS..."
+[00:55:15] * Ghostiolus gasp
+[00:55:18] <Caerdwyn> DSMOS has arrived
+[00:55:20] <Caerdwyn> xD
+[00:55:20] <howlingwolfy> yes
+[00:55:23] <howlingwolfy> that is what it is
+[00:55:30] <Ghostiolus> I had no idea I just thought of DSMOS as like
+[00:55:31] <Caerdwyn> can that be removed too? XD
+[00:55:33] <Ghostiolus> some abstract apple go
+[00:55:35] <Ghostiolus> dgod
+[00:55:39] <howlingwolfy> I used to be uh, involved with this stuff >.>
+[00:55:50] <Ghostiolus> woah an apple engineer
+[00:55:50] <e> woah
+[00:55:51] <Ghostiolus> HEY
+[00:55:56] <Moonlightning> o.o ?
+[00:55:56] <Ghostiolus> WHAT’S WITH THE PENTALOBE SCREWS EH
+[00:55:59] * Ghostiolus shakes howlingwolfy
+[00:56:03] <howlingwolfy> no, not an apple engineer, lmao
+[00:56:06] <Caerdwyn> howlingwolfy: can I delete that DSMOS kext too? lol
+[00:56:10] * Ghostiolus shakes anyway
+[00:56:16] <Moonlightning> Caerdwyn: DSMOS has departed?
+[00:56:18] <howlingwolfy> I was part of the JaS team around 10.4.8
+[00:56:22] <Ghostiolus> o
+[00:56:24] <howlingwolfy> actually, even 10.4.6, but that was like
+[00:56:25] <Ghostiolus> Oh hey, howlingwolfy.
+[00:56:29] <howlingwolfy> very very very buggy
+[00:56:36] <Moonlightning> JaS?
+[00:56:39] <Ghostiolus> Pentium 3, no SSE2- is that at all possible, even if stupid, to run OSX?
+[00:56:52] <Ghostiolus> IT’s a fuckin’ fast PIII and I would love to just for sillies.
+[00:56:57] <howlingwolfy> Ghostiolus: the pentalobe screws are for 'protection' (read: to prevent you from taking it apart and fixing it yourself)
+[00:57:03] <howlingwolfy> ah
+[00:57:17] <howlingwolfy> 10.4 might do with legacy_kernel, but you won't be able to do much with it
+[00:57:18] <Ghostiolus> well i bought my own screwdrivers and did indeed fix ‘it’ myself.
+[00:57:31] <Ghostiolus> ‘it’ happened to be the keyboard backlight cable pinned under the board
+[00:57:32] <howlingwolfy> OS X was entirely built with -msse2
+[00:57:34] <Ghostiolus> i was so happy to fix that :)
+[00:57:58] <howlingwolfy> notable apps that will SIGILL on your pentium 3 will be safari, quicktime, finder, xcode, and mail
+[00:58:02] <Ghostiolus> now I dust it out ever few months.
+[00:58:05] <howlingwolfy> however, address book and iCal work
+[00:58:09] <HoneyDrops> Yeah, it's annoying to have to get special drivers, but I picked up a cheap set that had most all of the "special" bits.
+[00:58:11] <Ghostiolus> so basically I could tehcnically make it owrk, but it’s pointless?
+[00:58:28] <howlingwolfy> Ghostiolus: you'll be lucky to get it to open anything at all without recompiling Finder.
+[00:58:38] <Ghostiolus> also I got the OSX 10.6 installer to run just fine on my 2013 retina but I can’t run the OS at all ugh.
+[00:58:39] <howlingwolfy> I don't think I have *ANY* of my old JaS stuff
+[00:58:41] <Ghostiolus> I really want to ;_;
+[00:58:43] <Moonlightning> You can theoretically run anything on any turing-compatible(-but-with-finite-resources) box
+[00:58:52] <Moonlightning> that doesn't mean it will be easy, or fast
+[00:58:58] <Caerdwyn> howlingwolfy: I can't find FakeSMC.kext in System/Library/Extensions
+[00:59:00] <Caerdwyn> wtf.
+[00:59:08] <Ghostiolus> it’s in extra
+[00:59:09] <Ghostiolus> i believe
+[00:59:10] <Caerdwyn> there's not even anything in there that has "fake" in it
+[00:59:12] <howlingwolfy> Ghostiolus: it is probably in /Extra/Extensions
+[00:59:13] <Caerdwyn> oh
+[00:59:15] <howlingwolfy> er
+[00:59:16] <howlingwolfy> Caerdwyn: 
+[00:59:21] <Moonlightning> /Extra? O.o
+[00:59:32] <Caerdwyn> yep, it is
+[00:59:37] <Caerdwyn> found it, lemme murderize it
+[00:59:41] <howlingwolfy> Moonlightning: Chameleon and derivatives 'inject' any extensions in /Extra into OS X without being signed
+[00:59:56] <Moonlightning> ah.
+[01:00:01] <howlingwolfy> Moonlightning: basically it's the stuff you have to have in earlyboot to make OS X run on non-Apple (and non-Intel) machines
+[01:00:07] <Caerdwyn> should I bother killing off IntelCPUMonitor.kext too since this is a VM, or will it matter?
+[01:00:14] <howlingwolfy> Caerdwyn: NOOOOOO
+[01:00:18] <howlingwolfy> you need to leave that alone
+[01:00:33] <Moonlightning> “NOOOOOO,” she howled
+[01:00:35] <howlingwolfy> you also will require nullcpupowermanagement if you have >1 core
+[01:00:41] <howlingwolfy> xD
+[01:00:43] * howlingwolfy howls!
+[01:00:56] * Moonlightning takes up the howl!
+[01:01:06] <Caerdwyn> howlingwolfy: http://i.imgur.com/nIahhap.png
+[01:01:22] *** Quits: JackG (JackG@JackG.Is.Not.A.Clever.Poni) (Quit: Bye for now)
+[01:01:25] <Caerdwyn> nullcpupowermanagement.kext is there, i managed to install that with multibeast before it crashed :|
+[01:01:26] <howlingwolfy> evoreboot might be doing it too
+[01:01:31] <Caerdwyn> what /is/ that?
+[01:01:55] <howlingwolfy> next generation OpenHaltRestart.kext
+[01:02:02] <howlingwolfy> it's for machines that don't have EFI
+[01:02:06] <howlingwolfy> virtualbox has EFI
+[01:02:17] <Moonlightning> evoreboot?
+[01:02:18] <howlingwolfy> you uh, are using the virtualbox EFI right?
+[01:02:20] <Moonlightning> soudnds kinky
+[01:02:21] <Caerdwyn> >This Kext Enable Shutdown and Reboot in Non DSDT & Non UEFI Computers
+[01:02:22] <Caerdwyn> o.o
+[01:02:36] <Caerdwyn> and no, the VB EFI is disabled in favor of Chimera bootloader being installed on the disk
+[01:02:51] <Caerdwyn> the VB EFI doesnt boot the machine at all, just dies and puts me at the UEFI shell that is built into the VM
+[01:02:53] <Moonlightning> heh, a cat kimera
+[01:03:00] <Moonlightning> cat chimera *
+[01:03:08] *** CyberJacob is now known as zz_CyberJacob
+[01:03:21] <howlingwolfy> Caerdwyn: ergh.
+[01:03:42] <howlingwolfy> from that uefi shell, fs0:\system\library\coreservices\boot.efi -f -v
+[01:03:43] <howlingwolfy> done
+[01:03:48] * Ghostiolus o3os
+[01:03:53] <Ghostiolus> Caerdwyn, aren’t you lucky.
+[01:04:02] <Ghostiolus> There just happens to be a hackintosh dev here.
+[01:04:12] <Moonlightning> ewwwwwwwww
+[01:04:16] <Caerdwyn> yeah, thank god..
+[01:04:16] <Moonlightning> backslashes as path separators
+[01:04:25] <Moonlightning> whose fucking idea was that
+[01:04:53] <Caerdwyn> yours, Moonlightning 
+[01:04:55] <Caerdwyn> orc
+[01:04:57] <Caerdwyn> ofc*
+[01:05:26] <Moonlightning> no, //you're/ an orc
+[01:05:28] <howlingwolfy> UEFI is derived from Itanium which is dervied from ARC which is derived from 1980s DEC firmware
+[01:05:35] <howlingwolfy> so if you want to blame anyone for \
+[01:05:40] <howlingwolfy> you can blame DEC, ca 1983
+[01:05:42] *** Joins: JackG (JackG@JackG.Is.Not.A.Clever.Poni)
+[01:05:45] <Moonlightning> :/
+[01:05:52] <howlingwolfy> though I think they did it to be compatible with DOS and CP/M
+[01:05:56] <Moonlightning> wouldn't it have been better to—
+[01:05:57] <Moonlightning> …
+[01:06:02] <Moonlightning> why…WHY?
+[01:06:10] <Moonlightning> why even have a new thing besides BIOS, then?
+[01:06:18] <Moonlightning> if you're going to keep all the old cruft?
+[01:06:28] <Moonlightning> if you're going to keep ancient compatabilities?
+[01:08:16] <howlingwolfy> Moonlightning: well, I mean, UEFI uses FAT32 just because every OS ever (including BSD, OS X, etc) can read it.
+[01:08:29] <howlingwolfy> it's not a good FS, it doesn't even have permissions or anything
+[01:08:37] <howlingwolfy> and sure, there are extXfs drivers for UEFI, and NTFS, and HFS+
+[01:09:05] <Moonlightning> …we need a new baselevel Fs
+[01:09:24] <Moonlightning> simple but /modern/
+[01:09:32] <Moonlightning> FAT's been around too long
+[01:09:36] <Moonlightning> it's gotten FAT >:(
+[01:11:01] <Caerdwyn> ext4 or gtfo.
+[01:12:07] <Ghostiolus> o3o fat
+[01:12:28] <Ghostiolus> Fat32 is a horrible OS but it works with everything and, well, it’s not like you store much on the UEFI partition.
+[01:12:32] <Ghostiolus> i mean horrible fs
+[01:14:01] <Ghostiolus> I think it might be because, like, what else are you going to use for a universal partition? EXT4? complex. NTFS? Proprietory.
+[01:15:00] <howlingwolfy> the other "universal" FS I can think of may be HPFS, that's also proprietary.. and it sucks.. but NT, Linux, BSD can all read it, lol
+[01:15:03] <howlingwolfy> OS/2 o.o
+[01:18:11] <HoneyDrops> ext2?
+[01:18:38] <Ghostiolus> windows aint’ gonna like any of the EXTs
+[01:18:43] <HoneyDrops> Well fuck them.
+[01:18:47] <Ghostiolus> just use fat32 it’s not like the UEFI partition matters much
+[01:18:52] <Ghostiolus> yes fuck 90% of the market agreed
+[01:19:11] <Ghostiolus> hell use fat12
+[01:19:36] <Ghostiolus> fat1
+[01:20:21] <Ghostiolus> exfat with a bizzare mirrored fat32 parition for compatability
+[01:24:00] <Caerdwyn> http://osxdaily.com/2010/03/19/anti-piracy-message-in-mac-os-x-kernel-extension/
+[01:24:01] <PinkiePieBot> [ Anti-Piracy Message in Mac OS X Kernel Extension | OSXDaily ]
+[01:24:07] <Caerdwyn> ..I swear, if this is actually a thing...
+[01:27:34] <Ghostiolus> lel
+[01:27:36] <JackG> http://www.folklore.org/StoryView.py?story=Stolen_From_Apple.txt
+[01:27:37] <PinkiePieBot> [ Folklore.org: Stolen From Apple ]
+[01:29:30] <Ghostiolus> that owns
+[01:35:11] <Moonlightning> bwahaha
+[01:35:21] <Moonlightning> apparently Turkey tried to block Twitter by DNS-blacklisting it
+[01:35:40] <Moonlightning> they're not even dropping outbound DNS requests for it or inbound DNS replies
+[01:35:48] <Moonlightning> so all everyone had to do was switch DNS servers
+[01:35:54] <Moonlightning> idiots
+[01:36:56] *** Quits: JackG (JackG@JackG.Is.Not.A.Clever.Poni) (Quit: Bye for now)
+[01:37:22] <Moonlightning> people be all spraypainting 8.8.8.8 and 8.8.4.4 all over
+[01:41:05] <Caerdwyn> 8.8.8.8 is best dns
+[01:41:16] <Caerdwyn> or 75.75.74.74...comcast's dns lol
+[01:43:59] <Moonlightning> ew no
+[01:44:40] <Moonlightning> …heh…in v6, you could set only the ::d125 bits in the host portion
+[01:51:03] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[01:51:29] <Ghostiolus> turkeys ruling party is very much balding old men that have no idea what the fuck
+[01:51:44] <Ghostiolus> Erdogan is a criminal and of the same mindset as Assad.
+[01:52:03] <Ghostiolus> I.E respect my power at any and all times or any force I use against you is justififed because /I/ rule.
+[01:52:58] <Ghostiolus> I have power, and therefore I am justified in anything to defend that power because I have it. Circular reasoning that leads to crimes agaisnt humanity.
+[01:53:26] <HoneyDrops> the idea of the social contract hasn't spread everywhere yet.
+[01:53:47] <Ghostiolus> also kill assad
+[02:09:53] <Vega> wow libre office in 10.. buggy
+[02:14:00] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[02:20:33] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[02:22:31] *** Joins: Asoka_White (Asoka@Pony-0gee2d.net-htp.de)
+[02:25:44] *** Quits: Asoka (Asoka@Pony-95an3a.net-htp.de) (Ping timeout: 121 seconds)
+[02:36:52] <Moonlightning> [13:18:46] < wolfyshy> PF with ALTQ is pretty snazzy for that
+[02:36:56] <Moonlightning> Is that just a BSD thing?
+[02:37:22] <Moonlightning> 'cos my netbox runs Ubuntu
+[03:13:19] * Moonlightning blinkblinks.
+[03:13:26] <Moonlightning> oh, `tc` is part of iproute2
+[03:20:42] <Moonlightning> Hmm…is there a way to see the QoS hints on IP packets being routed through this machine?
+[03:20:59] * Moonlightning is poking through the tcpdump ponypage, doesn't see 'QoS' anywhere…
+[03:55:05] <howlingwolfy> yes it just a BSD thing
+[03:58:25] <Moonlightning> I found a thing though :D
+[03:58:48] <Moonlightning> I think I just want to replace pfifo_fast with hfsc on the upstream-facing interface
+[04:02:47] * tiwake pokes Moonlightning
+[04:02:55] <tiwake> loveingly
+[04:03:51] * Moonlightning counterpokes tiwake
+[04:04:03] * tiwake snuggles into the poke
+[04:07:37] *** Quits: Crimson_Tail (Bluepon@Pony-a06tn3.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[04:16:10] *** Quits: Ghostiolus (uid110916@the.truth.is.out.there) (Quit: Connection closed for inactivity)
+[04:38:48] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[05:02:08] <Moonlightning> HoneyDrops: …if the Web was one big distribtued filesystem, we could /symlink/ to other documents. D:
+[05:10:29] <HoneyDrops> http://git.busybox.net/busybox/commit/?id=accd9eeb719916da974584b33b1aeced5f3bb346
+[05:10:29] <PinkiePieBot> [ busybox - BusyBox: The Swiss Army Knife of Embedded Linux ]
+[05:12:20] <HoneyDrops> Moonlightning: that was kinda the core idea behind a hyperlink.  Though you can link to things w/in the context of a document.
+[05:13:03] <Phase> denys be mad
+[05:15:54] <Phase> HoneyDrops, is there more context to that or?
+[05:16:19] <HoneyDrops> Phase: not that I know of.
+[05:16:19] *** Eventide is now known as Eventide|Sleepies
+[05:17:15] <HoneyDrops> The thought of systemd on an embedded system makes me want to cower under a blankie.
+[05:19:46] <Moonlightning> HoneyDrops: no, but like…symlink a path to another document.
+[05:19:57] <Moonlightning> Not link to a document /within/ another document.
+[05:20:10] * Moonlightning still wants his webserver to redirect on finding a symlink. >.>
+[05:20:28] <HoneyDrops> Yeah, so multiple URIs could point to the same location.
+[05:43:11] *** Quits: xinae (xinae@Pony-0qa.2dv.248.50.IP) (Connection closed)
+[05:58:00] <Vega> Am I the only one that wants to be able to tell a computer what to do by using thoughts only? 
+[06:02:02] <Moonlightning> No.
+[06:02:04] <Moonlightning> Here.
+[06:02:08] * Moonlightning tosses Vega a balled-up red flag.
+[06:04:13] * Vega smells the rag, passes out. Moonlightning really needs to warn pones of chloroform rags
+[06:05:06] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:09:22] <Moonlightning> ._.;;
+[06:09:28] <Moonlightning> That's not what I meant to do at all! D:
+[06:10:17] <Vega> To late, you done did it dirt cheap 
+[06:14:59] *** Joins: xinae (xinae@Pony-0qa.2dv.248.50.IP)
+[06:20:05] <SilverEagle> happy nightmare night techpones
+[06:20:07] <SilverEagle> or whatever's left of it
+[06:21:24] <Moonlightning> An hour and a half!
+[06:21:45] <Moonlightning> Plenty of time for sloppy seconds.
+[06:21:50] <Moonlightning> …I mean
+[06:22:35] * Kinsley would like to be Moonlightning's sloppy seconds.
+[06:22:38] <Kinsley> I mean...
+[06:22:43] <Kinsley> :3c
+[06:23:11] * Vega grabs popcorn
+[06:24:31] <Sakura> Nyu SilverEagle
+[06:24:45] <SilverEagle> nyah
+[06:24:58] <Moonlightning> ohmai. >3>
+[06:25:11] <Sakura> It's a good, decent Samhain.
+[06:26:14] <Sakura> I dressed up as Doctor Who at Best Buy after trick or treating for free comics.
+[06:27:44] *** Vega is now known as Snoarin
+[06:30:16] *** Quits: xinae (xinae@Pony-0qa.2dv.248.50.IP) (Connection closed)
+[06:31:01] *** Joins: xinae (xinae@Pony-0qa.2dv.248.50.IP)
+[06:53:59] *** Quits: xinae (xinae@Pony-0qa.2dv.248.50.IP) (Connection closed)
+[07:01:49] *** Quits: Fallfeathers (Fallfeather@Pony-vandmf.bigpond.net.au) (Connection closed)
+[07:01:58] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[07:03:48] <Sakura> Welcome to the past.
+[07:04:52] <Sakura> Whatever you did already before never happened & it was a dream.
+[07:19:04] *** Eventide|Sleepies is now known as Eventide
+[07:20:00] *** Joins: Fallfeathers (Fallfeather@Pony-vandmf.bigpond.net.au)
+[07:22:05] <e> !seen Eywind
+[07:23:02] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[07:23:24] <SilverEagle> I'm not in 1:00b yet
+[07:23:29] <SilverEagle> but I can't wait to time travel
+[07:24:35] *** Joins: xinae (xinae@Pony-0qa.2dv.248.50.IP)
+[07:29:38] *** Quits: xinae (xinae@Pony-0qa.2dv.248.50.IP) (Ping timeout: 121 seconds)
+[07:30:30] <howlingwolfy> You know what the best part is HoneyDrops 
+[07:30:35] <howlingwolfy> Denys is a Red Hat employee
+[07:30:51] <howlingwolfy> He is employed to work on BusyBox for Red Hat, that is his job
+[07:31:00] <howlingwolfy> It really says something when RH people don't even want system d
+[07:31:07] <Moonlightning> o.o ?
+[07:31:11] *** howlingwolfy is now known as wolfyshy[mobile]
+[07:31:58] <e> but I can't wait to time travel
+[07:32:25] <wolfyshy[mobile]> Moonlightning: system d is a RH project
+[07:33:40] <Moonlightning> I've heard
+[07:33:46] <Moonlightning> so…why'd it happen if they don't want it? o.o
+[07:34:05] <wolfyshy[mobile]> They as a company do
+[07:34:18] <wolfyshy[mobile]> It seems certain people among their ranks are seeing just how bad it really is
+[07:34:26] <wolfyshy[mobile]> Anyway I'm a sleepy woof
+[07:34:32] <wolfyshy[mobile]> Nightmare night party went way too late
+[07:40:14] <e> Whatever you did already before never happened & it was a dream.
+[07:42:02] * Moonlightning steals e's &
+[07:42:07] <Moonlightning> nini, wolfy! x3
+[07:42:43] *** Joins: Cyan_Spark (Cyan_Spark@incidental.unicorn.Cyan_Spark)
+[07:42:45] <wolfyshy[mobile]> Night :3
+[07:43:09] <AppleDash> When did the clocks go back?
+[07:43:15] <AppleDash> For EST
+[07:45:06] <Moonlightning> I believe America repeats 01..02?
+[07:45:11] <Moonlightning> local time.
+[07:46:19] <AppleDash> So it hasn't happened yet
+[07:49:51] <e> It seems certain people among their ranks are seeing just how bad it really is
+[07:54:48] <Moonlightning> is there a chance it'll die in a fire?
+[07:54:50] * Moonlightning looks up, hopeful.
+[07:55:34] *** Joins: xinae (xinae@Pony-0qa.2dv.248.50.IP)
+[07:56:53] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Connection closed)
+[07:58:39] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[08:01:09] *** Quits: xinae (xinae@Pony-0qa.2dv.248.50.IP) (Connection closed)
+[08:05:15] <wolfyshy[mobile]> Okay so I was doing a little late night reading before bed
+[08:05:30] <wolfyshy[mobile]> Firefox crashed on my phone and my laptop when the time changed
+[08:05:40] <wolfyshy[mobile]> Some pony remind me tomorrow to file a bug with moz
+[08:05:43] * wolfyshy[mobile] sleep
+[08:16:07] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[08:28:59] *** Joins: xinae (xinae@Pony-0qa.2dv.248.50.IP)
+[08:41:51] *** Quits: Cyan_Spark (Cyan_Spark@incidental.unicorn.Cyan_Spark) (Connection closed)
+[08:43:21] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "exhausted pony needs sleep.... and cuddles.... 'night everypony")
+[08:47:20] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[09:04:18] *** Eventide is now known as Eventide|Sleepies
+[09:13:31] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[09:47:31] *** zz_CyberJacob is now known as CyberJacob
+[09:55:54] <Moonlightning> What all do I need to do to reliably invert the colors in an HTML document?
+[09:56:08] <Moonlightning> I want the background black and the text and stuff white.
+[09:56:24] <Moonlightning> (and yes, I'm the author of this document)
+[09:59:41] *** Quits: e (memes@the.derptown.express) (Quit: 07—14I07-15n07-15v07-00i07-00s07-15i07-15o07-14n07— 3.3 (November '11))
+[10:05:30] <Moonlightning> I mean…okay, `body { background-color: #000; color: #ccc; }` makes the…background…black, and all the text -white- really light gray
+[10:05:39] <Moonlightning> But…buttons and text fields are still white on black
+[10:05:44] <Moonlightning> …still black on white *
+[10:06:31] *** Quits: roflin (dennis@Pony-aend1d.es) (Quit: WeeChat 1.3)
+[10:07:52] *** Joins: roflin (dennis@Pony-aend1d.es)
+[10:15:39] <Moonlightning> I suppose I could go `input, button { background-color: inherit; color: inherit; }` but specifying things exhaustively like that is…ew…
+[10:50:33] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[10:52:32] <AppleDash> Moonlightning: There is a * CSS selector
+[10:52:45] <AppleDash> * { background-color: #000; color: #ccc; }
+[10:54:20] <Moonlightning> ah
+[10:54:23] <Moonlightning> Thanks.
+[11:05:10] *** Joins: Crimson_Tail (Bluepon@Pony-df0qv8.cg80.k4gu.0151.2601.IP)
+[11:05:38] <Moonlightning> ugh
+[11:06:02] <Moonlightning> why do I need to layer <div>s between the <form> and the <input>s?!
+[11:06:24] <Moonlightning> that just makes it so that I have to add like a `class` or something for the <div>s so that I can fix the margins :/
+[11:07:23] <Moonlightning> <p>s *, not <div>s
+[11:10:47] <Moonlightning> actually, margins need to be fixed anyway, for all <p>s
+[11:10:49] <Moonlightning> so nvm
+[11:10:54] <Moonlightning> YAY~ it's coming together
+[11:11:04] * Moonlightning is totes not ripping off style lines from Derpibooru. Nope…
+[11:11:26] <AppleDash> What are you making?
+[11:12:40] <Moonlightning> did I mention the thing that lets you download a file with a GET, returning pure HTML+CSS, and a POST—no JavaScript or cookies?
+[11:13:44] <AppleDash> No
+[11:16:11] <Moonlightning> well, that's what I'm making
+[11:16:16] <AppleDash> Why?
+[11:16:24] <Moonlightning> so I can send ponies files easily
+[11:16:27] <AppleDash> I think the thing you're looking for is called nginx
+[11:16:37] <Moonlightning> without letting anypony download the file
+[11:16:48] <AppleDash> What
+[11:17:02] <Moonlightning> so I can send a specific pony a file, without letting anypony with the path download it
+[11:17:14] <AppleDash> You better not be using PHP
+[11:17:23] <Moonlightning> …
+[11:17:26] <Moonlightning> I just said
+[11:17:29] <Moonlightning> HTML and CSS
+[11:17:38] <Moonlightning> No JavaScript, no cookies, and CERTIANLY NO PHP
+[11:17:49] <Moonlightning> …oh, serverside. No, no PHP. Never any PHP.
+[11:17:58] <AppleDash> You need server-side code to do what you're doing.
+[11:18:11] <Moonlightning> Python. Flask seems to be what I want.
+[11:18:24] <AppleDash> have fun
+[11:41:51] <Dividenstein> Caerdwyn and Moonlightning, 4.2.2.1 and 4.2.2.2, Verizon's DNS servers, are also respectable.  (re: the Turkey/Twitter thing.)
+[11:41:57] *** Dividenstein is now known as Divide
+[11:42:16] <Moonlightning> > Verizon
+[11:42:36] <Divide> True.
+[11:42:52] <Divide> I should perhaps state that they're /Level3's/ servers.
+[11:43:53] <Moonlightning> O.o ?
+[11:46:33] <Divide> Level3 Communications are, at their core, the provider of a number of services for communication suppliers in the US and Canada, such as DNS.
+[11:47:05] <Moonlightning> They're one of the center-of-the-internet organizations.
+[11:47:09] <Divide> Level3 most notably handles Verizon, which uses 4.2.2.1/4.2.2.2 as their DNS servers... yupyup.
+[11:47:28] <Moonlightning> So it's properly Level3, and Level3 is not Verizon or a Verizon subsidiary or anything.
+[11:47:39] <Moonlightning> It's just that Verizon tells their customers to use Level3's DNS servers.
+[11:48:08] * Divide nodnods.
+[11:49:21] <Divide> 4.2.2.x (1 through 6), really, are Level3's servers.  Which makes it all the more appropriate that Google's are 8.8.8.8 and 8.8.4.4.
+[11:50:47] <johnsey> should also keep in mind that you can always run your own resolver
+[11:51:42] <Divide> Well, of course.  If you're able to access your modem's information, the DNS resolver provided through DHCP usually works just fine.
+[11:52:47] <Divide> And unlike Google's more public servers, Level3 does offer their DNS servers to ISPs at a price, which means that they discourage folks from connecting to it otherwise.
+[11:56:42] <johnsey> if they really cared though, they'd block traffic to it from outside their network
+[12:09:33] <Divide> True.
+[13:07:08] <Sour_Creep> Sometimes I'd really like to know why you folks hate PHP so much :P
+[13:13:28] <Phase> Sour_Creep, http://phpsadness.com/ http://eev.ee/blog/2012/04/09/php-a-fractal-of-bad-design/
+[13:13:29] <PinkiePieBot> [ PHP: a fractal of bad design / fuzzy notepad ]
+[13:15:11] <johnsey> ^
+[13:15:56] <Phase> Sour_Creep, those issues and more just make it painful to work with
+[13:16:19] <Phase> really i'd prefer C++ to PHP for any larger project
+[13:16:24] <Phase> better debuggers for C++
+[13:17:55] <Sour_Creep> Most of those things have any impact really.
+[13:18:07] <Sour_Creep> don't
+[13:18:28] <Phase> read the second one as well
+[13:20:42] <Sour_Creep> Some things about PHP are weird and bad, I agree, but a lot is fixed in more recent version even though they can be confusing (e.g. mysql_real_escape_string)
+[13:21:20] * Phase was about to mention real_escape_string
+[13:22:09] <Sour_Creep> But you shouldn't really use it anyway. Use prepared statements
+[13:22:12] <Phase> Sour_Creep, my understanding is there was a bug/security problem where mysql_escape_string didn't consider the current character set, so a second function was added
+[13:22:42] <Sour_Creep> Correct
+[13:23:21] <Sour_Creep> the lack of proper UTF-8 support is something I would agree is a flaw
+[13:23:27] <Phase> i would call that nasty, nust just confusing
+[13:23:32] <Phase> not just'
+[13:24:55] <Phase> the error/exception duality
+[13:25:31] <Sour_Creep> The error message thing mentioned on one site is absolutely correct the way it is. It mentions where the compiler/parser encounters the error. A dev should now himself what it means and where to look for it.
+[13:25:47] <Sour_Creep> know*
+[13:25:54] <Phase> Sour_Creep, you say they don't affect much yet i've hit a chunk of them in practice
+[13:26:31] <Phase> the empty() and instanceof ones are just being worked out now, finally
+[13:26:41] <Phase> they're making a proper parser and ast
+[13:27:31] <Sour_Creep> I never used empty() and don't see any reason why anyone should use it
+[13:29:20] <Phase> that mindset is the other half of eevee's argument
+[13:32:52] <Phase> it's the "memorize a thousand strange exceptions and surprising behaviors" bit i have most trouble with
+[13:32:55] <Phase> my god the io lag
+[13:32:58] <Phase> moving so many files
+[13:33:27] <Phase> off to bed soon also
+[13:33:44] <Sour_Creep> There are complaints in the doc that make no sense at all. Like PHP doesn't support threading. Why shoudl it support threading O_o?
+[13:33:58] <Sour_Creep> Phase: Good night ^^
+[13:34:33] <Phase> Sour_Creep, whenever i'm writing php the vast majority of the time is spent checking exactly what a function returns, especially stuff like strpos where 0 == false == string either at the start or not found
+[13:35:02] <Sour_Creep> use ===
+[13:35:32] <Phase> since false coerces to 0 because of course it does, and number has priority in conversion
+[13:35:33] <Phase> coercion
+[13:36:04] <Phase> Sour_Creep,  yes use ===, but i need to know if its returning 0 or false, or true, or 1, or something else entierly
+[13:36:42] <Sour_Creep> if($var === false) ?!
+[13:37:03] <Sour_Creep> If I recall correctly that should be false for 0
+[13:38:11] <Sour_Creep> I don't use == at all unless there is a need for it
+[13:38:13] <Phase> that is false for 0, but i 'm talking about return values
+[13:40:04] <Sour_Creep> You need to do different things based the return value anyway. So an if statement solves it, doesn't it?
+[13:40:51] <Phase> you're missing the point, iirc strpos returns false for not found, 0 for the start of the string
+[13:41:33] <Sour_Creep> And where is the problem? It's not like 0 and false are exaclty the same
+[13:41:38] <Phase> so if(strpos($x, $y) == false) {...};
+[13:42:00] <Sour_Creep> don't use ==, problem solved
+[13:42:01] <Phase> see how easy the == vs === mistake is to make? i just made it, but that's not my point
+[13:42:09] * Phase was trying to type ===
+[13:42:39] <Phase> whats the one that returns -1 on failure...
+[13:42:45] <Phase> it's been quite some time since i wrote php
+[13:44:53] <Phase> Sour_Creep, read the eevee thing, scroll down to 'Parts of PHP are practically designed to produce buggy code'
+[13:44:57] * Phase is off to bed now
+[13:46:19] <Phase> Sour_Creep, "For a more type-safe ==, we have ===. For a more type-safe <, we have� nothing." so now you need boilerplate around every < and >
+[13:46:37] <Phase> actually sleepign now
+[13:46:38] <Phase> gnithg
+[13:46:39] <johnsey> another good example: intval() will return 0 if used on a string that doesn't contain a number and 1 if erroneously used on an object
+[13:46:48] <Phase> ^^^^^^
+[13:48:34] <Sour_Creep> Why on earth would anyone use intval() anyway?
+[13:48:38] <Phase> Sour_Creep, and the behaviour in most of these cases isn't "error" or "throw an exception" or "print a warning", it's "silently do the wrong thing", which is why my head is burried in documentation whenever doing php, trying to avoid those issues later when they're much harder to use
+[13:48:41] <Phase> there you go again
+[13:49:05] <Phase> Sour_Creep, if you wanted to convert something to an integer
+[13:49:13] <Phase> intval("12") === 12
+[13:49:13] <Sour_Creep> You don't need to?
+[13:50:00] <Phase> https://github.com/search?l=PHP&q=intval&type=Code&utf8=%E2%9C%93
+[13:50:02] <PinkiePieBot> [ Search · intval · GitHub ]
+[13:50:07] <Sour_Creep> I've encountered intval only in applications that have security issue so far.
+[13:50:14] <johnsey> IMHO a language having functions where you wonder why on earth someone would use them is seriously flawed
+[13:50:14] <Phase> apparently people use it to round
+[13:51:04] <Phase> Sour_Creep, and is this magical whitelist of safe functions stored anywhere useful? http://php.net/manual/en/function.intval.php certainly doesn't say to avoid it
+[13:51:04] <PinkiePieBot> [ PHP: intval - Manual ]
+[13:51:49] <Sour_Creep> This is stupid. Use a proper function. The only valueable use of intval is in mixed string where you only need the int part and have to check it anyway (e.g. userinput)
+[13:51:50] <Phase> aNYWAY
+[13:51:51] <Phase> BED
+[13:52:08] <Phase> Sour_Creep, USE A PROPER FUNCTION!?!? LIKE WHAT?
+[13:52:13] <Phase> is intval() not proper?
+[13:52:31] <Phase> you have a string, you want number, yet can't use intval()?
+[13:52:40] <Sour_Creep> Also it mentions in the manual not to use it on objects and it will throw a warning
+[13:52:57] <Phase> but intval(false) is totally fine
+[13:53:04] <Sour_Creep> Phase: It is, but only for very limited usecases
+[13:53:33] <Sour_Creep> People not knowing what they're doing will produce buggy code in any language
+[13:54:14] <Phase> and that makes everything in PHP ok?
+[13:54:22] <Phase> == is fine because you're not supposed to use it? why is it even there then
+[13:54:33] *** Eventide|Sleepies is now known as Eventide
+[13:54:47] <Sour_Creep> Because weak type checking is fine in most cases?
+[13:55:00] <Sour_Creep> Because it makes sense to have 2 operators?
+[13:55:19] <Phase> BED
+[13:55:20] <Phase> GNIGHT
+[13:55:28] * Phase goes afk
+[14:37:36] *** Quits: Fallfeathers (Fallfeather@Pony-vandmf.bigpond.net.au) (Quit: My people need me!)
+[14:54:03] *** Snoarin is now known as GigaWork
+[14:58:12] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[15:19:02] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[16:03:52] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:10:31] *** CyberJacob is now known as zz_CyberJacob
+[16:19:08] *** Sour_Creep is now known as Seoson
+[16:20:32] *** Quits: Seoson (Seoson@pony.kab-s.de) (Quit: Leaving)
+[16:31:10] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:34:05] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[16:36:46] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[16:39:21] <Seoson> This server is so frustrating. New problems with every restart ...
+[16:40:57] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:53:26] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:59:02] <Seoson> At least installing the new kernel worked. Still don't know why the RAID1 keeps getting out of sync
+[17:07:57] *** Divide is now known as Divide|TechSupport
+[17:19:38] *** Starzie is now known as Starburn
+[17:23:31] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[17:35:13] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[17:37:34] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[17:49:07] *** Quits: Seoson (Seoson@pony.kab-s.de) (Ping timeout: 121 seconds)
+[17:57:23] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[18:13:38] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (Quit: restarting)
+[18:24:42] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[18:29:01] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[18:31:06] *** Joins: JackG (JackG@JackG.Is.Not.A.Clever.Poni)
+[18:31:33] *** aji is now known as DST-FAIRY
+[18:31:40] <DST-FAIRY> it's that time of year again folks
+[18:31:45] <DST-FAIRY> DONT FORGET TO SET YOUR CLOCKS BACK!
+[18:33:21] *** Quits: Seoson (Seoson@pony.kab-s.de) (Ping timeout: 121 seconds)
+[18:39:49] *** Finwe is now known as DinkyBot_
+[18:40:42] *** DinkyBot_ is now known as Finwe
+[18:44:06] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[18:45:08] *** Quits: JackG (JackG@JackG.Is.Not.A.Clever.Poni) (Quit: I shouldn't be on IRC anyway.)
+[18:51:02] <johnsey> http://git.busybox.net/busybox/commit/?id=accd9eeb719916da974584b33b1aeced5f3bb346
+[18:51:02] <PinkiePieBot> [ busybox - BusyBox: The Swiss Army Knife of Embedded Linux ]
+[18:51:04] <roflin> But I already did it a week ago :+
+[18:51:16] <roflin> #DSTisweird
+[19:02:56] <Compu> https://derpiboo.ru/984826
+[19:02:57] <PinkiePieBot> [ Safe cute fluttershy hnnng lip_bite scare-master screencap shyabetes spoiler:s05e21 ]
+[19:16:56] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[20:12:42] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Quit: Leaving)
+[20:26:44] *** Joins: Thorinair (Mibbit@Pony-6tl6sh.dsl.iskon.hr)
+[20:50:31] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[20:57:49] <Moonlightning> DST-FAIRY: Ummmm…all of my clocks were automatically adjusted?
+[20:58:55] * Moonlightning buries johnsey under a pile of GNU-coreutils-related tarballs.
+[20:59:49] *** Finwe is now known as DinkyBot_
+[21:00:48] <Moonlightning> Phase: your AFK nick sound be PhAFKse :O
+[21:00:55] *** DinkyBot_ is now known as Finwe
+[21:00:58] <Moonlightning> s/sound/should/
+[21:06:56] <Phase> https://bugs.php.net/bug.php?id=45647 "there is no bug here"
+[21:06:57] <PinkiePieBot> [ PHP :: Bug #45647 :: strtotime() returning 1999-11-30 for 00-00-00 00:00:00 ]
+[21:08:27] *** DST-FAIRY is now known as aji
+[21:26:19] <Seoson> Actually depending on the featureset of the function this is not a bug.
+[21:27:23] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[21:27:43] <Seoson> The retruned value makes sense and the behaviour can solve certain problems
+[21:34:40] * Phase isn't sure
+[21:34:58] <Phase> either way it's a beautifully confusing sentence
+[21:53:24] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[21:56:03] <Moonlightning> > 00-00-00 means 2000-00-00, which is 1999-12-00, which is 1999-11-30
+[21:56:12] <Moonlightning> The first leg makes sense.
+[21:56:23] <Moonlightning> The last leg also makes sense, assuming I'm not derping and November actually has more than 29 days.
+[21:56:35] <Moonlightning> But why the hell does 2000-00-00—oh.
+[21:56:39] <Moonlightning> no zero month or day
+[22:10:57] <Phase> it's not *unreasonable* but most other libraries would return some sort of error
+[22:11:32] <Moonlightning> Yeah
+[22:11:40] <Moonlightning> nah, that's ambiguously invalid for me
+[22:12:11] <Moonlightning> If you had a Date 2000-01-01, and you said go to the previous month, /then/ it would make sense to go to 1999-12
+[22:12:32] <Moonlightning> But that's not the kind of thing that should be done during parsing.
+[22:15:01] <Moonlightning> Anyway…in CSS, how do I center a <form>
+[22:15:28] <Phase> http://www.w3.org/Style/Examples/007/center.en.html
+[22:15:29] <PinkiePieBot> [ CSS: centering things ]
+[22:15:31] <Moonlightning> s/$/in the page, without doing tables or making it effectively text or some weird shit like that/
+[22:16:03] <Phase> add a center class or something, apply that to the <form>?
+[22:16:06] <Moonlightning> and without setting the width
+[22:16:16] <Moonlightning> I don't know the width.
+[22:16:22] <Moonlightning> And I don't want to calculate it and hardcode it
+[22:16:30] <Moonlightning> because then if I change the thing, it'll break
+[22:20:55] <Webster> Try the margin: 0 auto 0 auto; thing?
+[22:21:08] <Webster> May also have to display:block or whatever.
+[22:21:19] <Moonlightning> Doesn't `display: block;` just…make it a block
+[22:21:22] <Moonlightning> which…it already is?
+[22:21:59] <Moonlightning> It didn't have any visible effect, anyway
+[22:23:26] *** Quits: Thorinair (Mibbit@Pony-6tl6sh.dsl.iskon.hr) (Quit: http://www.mibbit.com ajax IRC Client)
+[22:23:46] *** Joins: Thorinair (Mibbit@Pony-6tl6sh.dsl.iskon.hr)
+[22:27:17] <HoneyDrops> I would say any decent date parser should throw and error on Day or month == 0.
+[22:27:24] <HoneyDrops> s/and/an/
+[22:39:39] <Moonlightning> Damn…what the hell font is my browser using for `monospace`
+[22:46:13] <Moonlightning> …hmmmm…should I be wrapping lines of HTML? o.o
+[22:50:14] <Seoson> <Moonlightning>	nah, that's ambiguously invalid for me: The function allows strings that other libs woudn't even support (e.g. next Thursday), so they already went for a non strict approach.
+[22:51:15] <Moonlightning> Seoson: the GNU getdate() does that too
+[22:51:41] <Webster> Moonlightning: I wouldn't suggest wrapping HTML unless it's an absurdly long line for some reason.
+[22:51:43] <Moonlightning> YEt…
+[22:51:46] <Moonlightning> caramel:~ blackl% date -d 2000-00-00
+[22:51:46] <Moonlightning> date: invalid date '2000-00-00'
+[22:51:56] <Seoson> Also strictly speaking if it was a lib written by me any two digit year would cause an error
+[22:52:37] <Seoson> Because fuck 2 digit years ;-) We don't need another y2k
+[22:52:40] <Moonlightning> Webster: how long is absurdly long?
+[22:52:55] <Moonlightning> Seoson: next one would be 2k1h
+[22:52:57] <Moonlightning> or whatever
+[22:53:22] <Webster> More than two screen widths
+[22:55:07] <Moonlightning> So 362 columns?
+[22:55:08] <Moonlightning> xP
+[22:57:41] <Seoson> To continue a little further (I'm sorry if it's annoying) what does your prefered lib say about 24:00:00, because this is an edge case as well. Strictly technically speaking it should throw an error here as well.
+[22:59:26] <Phase> Moonlightning, 2080', i believe that tends to be the cutoff for two digit years being 19** or 20**
+[22:59:35] <Phase> though it depends on the system, on windows its configurable
+[22:59:37] <HoneyDrops> I would say 24:00:00 should error as well.
+[23:00:51] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[23:00:58] <Moonlightning> 24:00 is recognized as midnight of the next day though
+[23:01:22] <Moonlightning> …aw, `date` doesn't like it
+[23:01:24] <Moonlightning> welp
+[23:48:22] *** Joins: Fallfeathers (Fallfeather@Pony-vandmf.bigpond.net.au)
+[23:57:10] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[23:59:31] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)

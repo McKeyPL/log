@@ -1,0 +1,312 @@
+[00:00:24] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Ping timeout: 121 seconds)
+[00:06:18] *** Joins: Phase4 (Phase4@Pony-pt370v.internode.on.net)
+[00:07:50] *** Quits: Phase (Phase4@Pony-eaplo9.internode.on.net) (Ping timeout: 121 seconds)
+[00:11:37] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[00:12:04] *** Quits: Gigabit (Gigabit@the.girly.colt) (Ping timeout: 121 seconds)
+[00:12:15] *** Quits: RedHelper[NLR] (RedHelper@The.Pony.That.Makes.You.Smile) (Ping timeout: 121 seconds)
+[00:12:37] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[00:22:18] *** Joins: GigabitPony (Gigabit@the.girly.colt)
+[00:22:26] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[00:22:48] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[00:23:18] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[00:27:13] *** Quits: GigabitPony (Gigabit@the.girly.colt) (Ping timeout: 121 seconds)
+[00:27:49] *** Joins: GigabitPony (Gigabit@the.girly.colt)
+[00:27:50] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[00:29:49] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[00:33:38] *** Quits: cyborg_ar (cyborgar@Pony-1eg.e6k.25.181.IP) (Ping timeout: 121 seconds)
+[00:38:31] *** Quits: Sombra (Iceman@Darkhorse21) (Ping timeout: 121 seconds)
+[00:43:12] *** Joins: Sombra (Iceman@Darkhorse21)
+[01:00:03] <Adelaide> I'm confused what can a class do
+[01:00:47] <Moonlightning> Adelaide: /class/ has at least two common and conflicting definitions. What context are you in?
+[01:02:27] <Adelaide> The thing in python
+[01:02:34] <Adelaide> What is self etc
+[01:03:30] <Moonlightning> The identifier `self` isn't special in Python. It's not a keyword. The only thing dictating that it be called `self` is convention (and PEP 0008)
+[01:03:53] <Moonlightning> When a method is called on an object, Python passes the object as the first argument.
+[01:04:40] <Adelaide> Oh if weirdClass(Lol) is called
+[01:05:00] <Adelaide> Then self.wut = "hmmm"
+[01:05:10] <Adelaide> To Lol.wut
+[01:05:13] <Adelaide> Right?
+[01:05:50] *** Joins: Fallfeathers (Fallfeather@Pony-n0hema.bigpond.net.au)
+[01:07:57] <Moonlightning> if you call object_.method() and method() was defined as `def method(self):`, then `object_` becomes `self`.
+[01:08:37] *** Joins: cyborg_ar (cyborgar@Pony-7va.1pq.49.190.IP)
+[01:10:01] <Adelaide> Don't follow
+[01:21:07] <Moonlightning> Adelaide: https://gist.github.com/BlacklightShining/b02bf7d3776947369351
+[01:21:08] <PinkiePieBot> [ gist:b02bf7d3776947369351 ]
+[01:35:18] *** Starburn is now known as eyeburn
+[01:40:38] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[01:47:47] <One-Trick> Adelaide: http://pythontips.com/2013/08/07/the-self-variable-in-python-explained/
+[01:52:42] *** Joins: LightningCrash (lightning@Pony-2ev2c5.ph.cox.net)
+[01:56:20] <Moonlightning> > So lets start [sic] by making a class involving the `self` variable.
+[01:56:42] <Moonlightning> Most classes do… :P
+[01:58:03] <Moonlightning> I take issue with this article.
+[01:58:22] *** eyeburn is now known as Starburn
+[01:58:24] <Moonlightning> > The first argument of every class method, including __init__, is always a reference to the current instance of the class.
+[01:58:31] <Moonlightning> /instance/ method *, not /class/ method
+[01:58:46] <Moonlightning> `@classmethod`s take a reference to the /class/ as their first argument :P
+[01:59:43] <Moonlightning> > Now we can access the property bankrupt by typing: `x.bankrupt`
+[01:59:44] <Moonlightning> > The above command [sic] is same as [sic]: `Restaurant().bankrupt`
+[01:59:52] <One-Trick> well, self also deals with scopes
+[02:00:19] <Moonlightning> …no, it's not. The latter will always make a new Restaurant instance (which will be discarded almost immediately, as it wasn't bound to anything)
+[02:00:37] <One-Trick> im not referring to their examples
+[02:01:37] <Moonlightning> One-Trick: `self` deals with scopes?
+[02:02:05] <One-Trick> self refers to the current scope of the class
+[02:02:21] <Moonlightning> The current instance, yeah.
+[02:02:37] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[02:02:47] <One-Trick> class, instance, etc..
+[02:05:28] *** Quits: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net) (Quit: Leaving.)
+[02:08:42] *** CyberJacob is now known as zz_CyberJacob
+[02:10:30] *** MistVeil is now known as Mist|Gaming
+[02:16:53] *** Joins: Sombra (Iceman@Darkhorse21)
+[02:21:27] *** Joins: Asoka_White (Asoka@Pony-gda87d.net-htp.de)
+[02:24:36] *** Quits: Asoka (Asoka@Pony-4ojihj.net-htp.de) (Ping timeout: 121 seconds)
+[02:42:00] <Sombra> Why did the 980 replace the 780 when the 780 has better stats?
+[03:32:46] *** GigabitPony is now known as GigaShower
+[03:41:47] *** Quits: Sombra (Iceman@Darkhorse21) (Ping timeout: 121 seconds)
+[03:59:42] *** GigaShower is now known as Gigabit
+[04:02:07] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[04:07:24] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[04:15:44] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[04:19:12] * init3 just moved and has no internet connection.
+[04:19:28] <init3> "linksys" (open) to the rescue!
+[04:26:13] <Seoson> Oh I smell jailbreaks for windows 10. Goodbye unremovable apps
+[04:28:52] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[04:32:28] * Googie can't imagine that a jailbreak for Windows 10 would be particularly hard :V
+[04:33:15] <Googie> From the perspective of just running standard apps, as opposed to Metro, since the former aren't sandboxed.
+[04:33:36] *** Joins: Sombra (Iceman@Darkhorse21)
+[04:33:39] <Gigabit> Which apps can't you remove?
+[04:34:58] <Googie> Sombra: The 980 is a different architecture, so the specs can't be compared directly. It's like how the P4 could get up to 4Ghz, but a 2ghz Core 2 Duo would beat it in performance easily.
+[04:39:42] <One-Trick> i installed windows 10 into a vm. not quite sure of my opinion yet
+[04:40:05] <One-Trick> im just glad i can remove stuff from the start menu to make it just a list
+[04:40:44] <Seoson> Gigabit: Mail, Calendar, Groove (MS Music Service), OneDrive, Store, Some TV thing, Photo*, Contacts, OneNote, xBox, Maps*, Voice recorder*, Weather, Alarm & Clock*, Camera, Calc*
+[04:41:07] *** Joins: Fillyfeathers (Fallfeather@Pony-30er8f.bigpond.net.au)
+[04:41:09] <Seoson> * = I don't mind those
+[04:42:19] *** Quits: Fallfeathers (Fallfeather@Pony-n0hema.bigpond.net.au) (Ping timeout: 121 seconds)
+[04:44:00] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Ping timeout: 121 seconds)
+[04:44:48] <Seoson> Also Cortana requires you to use a MS account for your system login - that's not going to happen on my end :P
+[04:46:06] *** Joins: LightningCrash (lightning@Pony-2ev2c5.ph.cox.net)
+[04:47:54] <Gigabit> So not really to bad then but some are uneeded
+[04:48:02] <Gigabit> Does pro have all those apps?
+[04:48:12] <Seoson> Using Pro here
+[04:48:56] <Seoson> Version 10.0.10240 (RTM Build)
+[04:49:50] <Seoson> Oh and wait until Candy Crush comes preinstalled with the final version :D
+[04:52:36] * Moonlightning boops JustAberrant.
+[04:52:44] <JustAberrant> :)
+[04:53:02] <Moonlightning> Installing Gentoo \o/
+[04:55:33] <One-Trick> glad i just use windows to dj and play a couple games
+[04:57:04] <Gigabit> I have candy crush x.x
+[04:57:27] <Gigabit> I get game offers so much 
+[04:57:47] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[04:58:49] <Seoson> In my mind that's all bloatware. I want a clean windows. I'm removing what I can and set up a few group policies.
+[04:59:30] * Googie really wishes that he could get away from using Windows so much :(
+[04:59:41] <Googie> Dual booting is such a pain.
+[05:00:12] * Googie has been following GPU passthrough closely, but it's still not really ready yet :(
+[05:02:26] <Seoson> Yeah I love my Linux. Sadly - as a gamer - I don't have a choice.
+[05:11:34] <One-Trick> give it some time. someone will strip it down
+[05:13:24] *** Joins: LightningCrash (lightning@Pony-2ev2c5.ph.cox.net)
+[05:14:03] <Googie> There's a few problems
+[05:14:15] <Googie> It fundamentally works, but A) Nvidia has purposely been breaking it
+[05:14:39] <Googie> And B) IO to the VM (specifically video output) is problematic
+[05:14:55] <Googie> Since the GPU outputs to a physical output...
+[05:15:23] <Googie> There is an API to capture the display with fairly low latency on Nvidia GPUs, but it's NDA'd
+[05:16:27] <Googie> (And the library's ABI is specifically designed to be hard to reverse engineer)
+[05:29:40] <One-Trick> i meant all the bloat with win10, apologies
+[05:29:44] <One-Trick> i wasnt specific
+[05:30:00] <One-Trick> unless you werent refering to my randomness, then carry on
+[05:31:18] *** Gigabit is now known as worthless
+[05:59:08] *** Quits: cyborg_ar (cyborgar@Pony-7va.1pq.49.190.IP) (Ping timeout: 121 seconds)
+[06:02:56] <Seoson> ups i accidentally deleted a partition table ^^
+[06:03:30] *** Quits: Sol (Sol@Pony-nc8b4c.res.rr.com) (Quit: Leaving)
+[06:12:41] *** Joins: cyborg_ar (cyborgar@Pony-1eg.e6k.25.181.IP)
+[06:13:12] <Seoson> Good bless testdisk :P
+[06:16:52] <DJ-C0L7[CSS]> xP
+[06:25:28] *** Quits: Mist|Gaming (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[06:26:30] *** Joins: MistVeil (AndChat3408@Pony-prm9c8.static.axtel.net)
+[06:56:07] *** Quits: Asoka_White (Asoka@Pony-gda87d.net-htp.de) (Ping timeout: 121 seconds)
+[06:59:50] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[07:00:19] *** Joins: Asoka (Asoka@Pony-gda87d.net-htp.de)
+[07:09:39] *** Quits: Crimson_Tail (Bluepon@Pony-cm3qi2.s0tm.sdub.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[07:27:45] *** Quits: MistVeil (AndChat3408@Pony-prm9c8.static.axtel.net) (Quit: Bye)
+[07:28:34] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[07:29:58] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[07:32:35] <Googie> https://github.com/avinassh/rockstar :V
+[07:32:36] <PinkiePieBot> [ avinassh/rockstar · GitHub ]
+[07:56:50] *** Quits: reiuiji (reiuiji@nuclear.raven) (Quit: leaving)
+[08:01:43] *** Joins: reiuiji (reiuiji@Pony-6vp0lq.ma.comcast.net)
+[08:08:02] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Ping timeout: 121 seconds)
+[08:24:05] *** Quits: cyborg_ar (cyborgar@Pony-1eg.e6k.25.181.IP) (Ping timeout: 121 seconds)
+[08:31:11] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[08:45:33] <worthless> does anyone know if the playstation eye  works as a usb webcam for pc?
+[08:45:42] <worthless> I can get it for 5 bucks brand new
+[09:40:57] *** worthless is now known as Gigabit
+[09:54:56] <Seoson> Gigabit: In theory it does, but you need a special driver and for some reason the quality sucks. Got one here and cannot recommend it.
+[09:55:30] <Gigabit> damn.. maybe I will just the wireless receiver then I found for xbox 360 controllers
+[09:55:42] * Gigabit is in a really jittery, need to do something mood
+[09:55:55] <Gigabit> https://www.dropbox.com/s/7l7kn0iml1qxezd/IMG_20150719_035219.jpg?dl=0 anyone know what the white junk is all over my board?
+[09:56:10] <Gigabit> its from my sabernent external hdd enclosure
+[10:01:21] <One-Trick> grease
+[10:02:42] <Gigabit> hmm.. could that pover time cause the board to fail?
+[10:02:47] <Gigabit> because it dont work no more
+[10:03:07] <Gigabit> about to desolder the usb port and solder directly a usb cord
+[10:03:11] <One-Trick> its used to keep it from developing oxidase
+[10:03:24] <One-Trick> just clean it off with rubbing alcohol
+[10:03:40] <Gigabit> but would it cause the board to fail?
+[10:03:42] <One-Trick> err, not oxidase, thats an enzyme
+[10:03:45] <One-Trick> no
+[10:03:48] <One-Trick> its intentional
+[10:04:00] <Gigabit> okay then, so something else has caused this thing to not work
+[10:04:50] <One-Trick> broken joint, bad caps, burned resistors, ...
+[10:04:59] <Seoson> Controllers fail from time to time. Have 2 broken ones myself here somewhere. Both HHDs that came with them still work fine.
+[10:06:03] <Gigabit> I need to get an external enclosure working, could I somehow use a good board from an interal hdd and make it into an external one?
+[10:06:15] <Seoson> No
+[10:06:33] <Seoson> Internal HDDs don't have that sort of board
+[10:07:16] <Gigabit> damn.. need something to work x.x
+[10:07:35] <Gigabit> ufgh my solder gun sucks ass.. takes forever to heat up
+[10:07:50] <Seoson> If you just need the data you can just plug it in via internal SATA.
+[10:08:19] <Gigabit> ya, I want something on the outside of my pc so I can  do it on the fly
+[10:09:43] <Seoson> That I guess you would need to buy a new enclosure. These things are cheap. Also there are HDD "docks" if you work with unenclosed HDDs on a regular basis.
+[10:09:46] <Seoson> Than*
+[10:11:19] <Gigabit> no income, thats why I was hoping  for a "hack"
+[10:11:26] <One-Trick> i got a cable that has a small controller built into the connector. just plug it into usb3 and into the drive and it works. only bad thing is the hdd is just exposed to everything
+[10:12:30] <Seoson> Oh from those SSD conversion kits? Got one as well. Only have my doubts that it would work with a 3,5" HDD
+[10:13:56] <Gigabit> just resoldered 2 connections that looked flimsy
+[10:14:57] <One-Trick> got a meter? id check the caps and resistor packs
+[10:15:45] <Gigabit> um I could go snag one, one moment, the caps all look fine to be honest
+[10:18:19] <Gigabit> okay got it
+[10:19:30] <Gigabit> .
+[10:19:52] <One-Trick> just go over all the normal culprits
+[10:20:04] <One-Trick> check the ribbon cable too if yer patient
+[10:20:57] <Gigabit> what should I put it on?
+[10:24:03] <Gigabit> also, indicator led is not lit
+[10:24:07] <One-Trick> 200 ohm resistence should show a short well enough
+[10:26:45] <Gigabit> got 7.5 off one cap and 3.025 pff the other
+[10:26:56] <One-Trick> theyre working then
+[10:28:03] <Gigabit> I do know the usb port is really loose when I plug in a cord
+[10:28:13] <Gigabit> the third cap is giving me 8.45
+[10:33:42] <Gigabit> okay odd.. since I resoldered those connectons the led is working >.>
+[10:34:10] <Gigabit> welp I may have fixed this
+[10:41:51] <ShivalWolf> https://twitter.com/_youhadonejob/status/614795172375887872/video/1
+[10:41:52] <PinkiePieBot> [ You had one job on Twitter: "And you thought you was having a bad day. http://t.co/GlTO8uqitg" ]
+[10:52:43] <Gigabit> well ill be a son of a bitch..
+[10:52:50] <Gigabit> I fixed something via soldering!!!
+[10:56:59] <One-Trick> yay!
+[10:57:23] <Gigabit> the power port was loose too >.>
+[10:58:05] * One-Trick installed this. works neatly. http://hyenaspots.com/bin/
+[11:04:21] <Googie> I keep thinking I really need to setup some stuff like that. I don't actually run any personal web services. Don't even really have a HTTP server setup.
+[11:06:57] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (A TLS packet with unexpected length was received.)
+[11:08:50] *** Joins: ColtonDRG (coltondrg@Pony-vict35.p5am.t6e1.0047.2602.IP)
+[11:44:07] *** zz_CyberJacob is now known as CyberJacob
+[11:55:36] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[11:56:09] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[11:56:11] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[12:01:59] <Gigabit> replaced a screen on an older ipod, gave it powwer and seent he screen light up but now nothing
+[12:03:29] *** Quits: Datalink (Datalink@Datalink) (Connection closed)
+[12:15:07] <Gigabit> Yep, logic board is shot.
+[12:16:37] <Gigabit> Meh, its 10 years old anyways
+[12:25:37] *** Quits: Q0 (Q0@literallyshit.net) (Ping timeout: 121 seconds)
+[12:32:15] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[12:37:45] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[12:37:48] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[12:42:57] *** Quits: init3_1 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[13:21:53] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[14:46:54] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[14:49:18] *** Quits: nscoots (FreyGrimrod@Pony-qmq8of.sub-70-192-9.myvzw.com) (Ping timeout: 121 seconds)
+[15:10:11] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[15:22:03] *** Quits: Pony_95924 (Lapsus@Pony-5m46mf.cable.rogers.com) (Quit: )
+[15:27:07] *** CyberJacob is now known as zz_CyberJacob
+[15:37:05] *** Adelaide is now known as Cydie
+[15:39:22] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[16:34:38] *** Quits: Fillyfeathers (Fallfeather@Pony-30er8f.bigpond.net.au) (Connection closed)
+[16:36:19] *** Joins: cyborg_ar (cyborgar@Pony-1eg.e6k.25.181.IP)
+[16:39:28] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:57:06] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Killed (NickServ (GHOST command used by Cydie!Cydie@the.little.cloud.colt)))
+[16:57:07] *** Cydie is now known as Monochrome
+[16:57:40] *** Joins: Monochrof (Sentoki@the.little.cloud.colt)
+[16:57:58] *** Joins: Crimson_Tail (Bluepon@Pony-jfgcse.s0tm.sdub.0151.2601.IP)
+[17:20:36] <cyborg_ar> http://i.imgur.com/5flmIpp.png
+[17:26:38] *** Dusk is now known as Otakon
+[17:26:58] <DJ-C0L7[EIT]> howdy
+[17:28:31] <Monochrome> The /003, /001 etc are never covered in python document
+[17:28:48] <Monochrome> So I am the first who knows this
+[17:37:08] <AppleDash> No you aren't
+[17:38:00] *** Otakon is now known as Dusk
+[17:50:58] <cyborg_ar> lol
+[17:54:42] <cyborg_ar> Monochrome: what are you talking about?
+[18:21:49] *** Joins: LightningCrash (lightning@Pony-2ev2c5.ph.cox.net)
+[18:41:11] *** Monochrome is now known as Mono|Sleep
+[19:14:45] *** Quits: Cae (caepone@always.broken.sometimes.patched.never.fixed) (Quit: Cya~)
+[19:20:17] *** Quits: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net) (Quit: *poof*)
+[19:20:33] *** Joins: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net)
+[19:30:06] <Gigabit> think an ipod classis screen could be used for other then an Ipod?
+[19:36:43] <JustAberrant> there's no reason to assume it couldn't, assuming you can access the connector it should just be standard.. but this is apple.. so I'm gonna say no ;p
+[19:37:45] <Gigabit> I have 2 dead ipods here, one has a good screen, the other has a cracked screen. Both had shit logic boards, the HDD's still work
+[19:53:40] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[20:24:57] *** Joins: Sombra (Iceman@Darkhorse21)
+[20:45:21] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[21:07:05] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[21:12:46] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:19:59] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[21:23:05] *** Quits: MangoBloom (djazz@djazz.se) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: dekeccho (dekeccho@dekeccho.Is.Not.A.Clever.Poni) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: zz_CyberJacob (CyberJacob@Pony-8adl2m.bluesapphiremedia.co.uk) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: JustAberrant (JustAberran@Pony-ffr.0tv.116.50.IP) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: Stik (drakon@Pony-ql55m5.cable.virginm.net) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: reiuiji (reiuiji@nuclear.raven) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: Gigabit (Gigabit@the.girly.colt) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: Double_Diamond (lightning@property.of.moonlightning) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: Colgate (rabbit@brushie.horse) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: OlaHughson (ola@Pony-k5v.64a.226.188.IP) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: Eivel (Eivel@Keep.Calm.and.Pony.On) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: mkr (mkr@Pony-iinahj.radioyay.net) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:05] *** Quits: klaxa (klaxa@Pony-1kuq6f.eu) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:23:22] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[21:23:22] *** Joins: Eivel (Eivel@Keep.Calm.and.Pony.On)
+[21:23:22] *** Joins: JustAberrant (JustAberran@Pony-ffr.0tv.116.50.IP)
+[21:23:22] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[21:23:22] *** Joins: mkr (mkr@Pony-iinahj.radioyay.net)
+[21:23:22] *** Joins: Starburn (eyeburn@secret.den.of.flaming.evil)
+[21:23:22] *** Joins: dekeccho (dekeccho@dekeccho.Is.Not.A.Clever.Poni)
+[21:23:22] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[21:23:22] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[21:23:22] *** Joins: Colgate (rabbit@brushie.horse)
+[21:23:22] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[21:23:22] *** Joins: Gigabit (Gigabit@the.girly.colt)
+[21:23:22] *** Joins: reiuiji (reiuiji@nuclear.raven)
+[21:23:22] *** Joins: OlaHughson (ola@Pony-k5v.64a.226.188.IP)
+[21:23:22] *** Joins: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner)
+[21:23:22] *** Joins: zz_CyberJacob (CyberJacob@Pony-8adl2m.bluesapphiremedia.co.uk)
+[21:23:22] *** Joins: MangoBloom (djazz@djazz.se)
+[21:23:22] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[21:23:22] *** Joins: Stik (drakon@Pony-ql55m5.cable.virginm.net)
+[21:23:22] *** Joins: klaxa (klaxa@Pony-1kuq6f.eu)
+[21:23:22] *** Joins: Double_Diamond (lightning@property.of.moonlightning)
+[21:23:22] *** chrysalis.canternet.org sets mode: +v PinkiePieBot
+[21:25:16] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (Quit: No Ping reply in 180 seconds.)
+[21:29:09] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[21:37:25] *** Gigabit is now known as Gigawork
+[21:41:29] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[21:54:39] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[22:05:04] *** Quits: firestream (firestream@Pony-nfqcr8.dsl.bell.ca) (Quit: )
+[22:16:17] <cyborg_ar> https://www.youtube.com/watch?v=DADwMfH2y1c
+[22:16:17] <PinkiePieBot> [ Do You Want to Build a Snowman made in japan - 40871 views - 42s long - 482 likes - 93.96% ]
+[22:26:22] *** Quits: Crimson_Tail (Bluepon@Pony-jfgcse.s0tm.sdub.0151.2601.IP) (Quit: reboot)
+[22:37:59] *** Joins: Crimson_Tail (Bluepon@Pony-8ttg6k.s0tm.sdub.0151.2601.IP)
+[22:59:27] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Quit: Saliendo)
+[23:10:50] *** Quits: Crimson_Tail (Bluepon@Pony-8ttg6k.s0tm.sdub.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[23:12:14] *** Joins: Crimson_Tail (Bluepon@Pony-8ttg6k.s0tm.sdub.0151.2601.IP)
+[23:12:20] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[23:29:04] *** Quits: Crimson_Tail (Bluepon@Pony-8ttg6k.s0tm.sdub.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[23:30:09] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[23:37:42] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[23:38:21] *** Joins: Crimson_Tail (Bluepon@Pony-qci7c8.s0tm.sdub.0151.2601.IP)
+[23:48:11] *** Joins: Sombra (Iceman@Darkhorse21)
+[23:51:20] *** Quits: cyborg_ar (cyborgar@Pony-1eg.e6k.25.181.IP) (Ping timeout: 121 seconds)
+[23:55:04] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.never.fixed)
+[23:56:28] *** Caerdwyn is now known as Cae

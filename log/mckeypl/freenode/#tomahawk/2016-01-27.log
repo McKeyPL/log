@@ -1,0 +1,192 @@
+[00:02:24] <jherskowitz> dommex: in master I didn't see them 
+[00:02:39] <jherskowitz> Not sure about nightly 
+[00:07:57] <dommex> Try please
+[00:21:30] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[01:16:28] *** Quits: jturney (~jon@host86-179-113-236.range86-179.btcentralplus.com) (Read error: Connection reset by peer)
+[01:29:55] *** Quits: TheOneRing (~quassel@amarok/developer/TheOneRing) (Ping timeout: 240 seconds)
+[01:31:10] *** Joins: TheOneRing (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de)
+[01:31:10] *** Quits: TheOneRing (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de) (Changing host)
+[01:31:10] *** Joins: TheOneRing (~quassel@amarok/developer/TheOneRing)
+[01:46:21] <jherskowitz> dommex: TheOneRing: I didn’t have snorenotify installed. Tried by got this http://pastebin.com/hmYSc5rp
+[01:49:05] <dommex> jherskowitz: odd, need to look
+[01:49:09] <jherskowitz> (it was installed in brew install `brew deps tomahawk`)
+[01:49:14] <jherskowitz> s/was/wasn't
+[01:49:22] <jherskowitz> and not listed on wiki
+[02:01:29] <jherskowitz> dommex: TheOneRing works on nightly
+[02:01:31] <jherskowitz> https://www.dropbox.com/s/dptf83kmzr96fcp/Screenshot%202016-01-26%2020.01.07.png?dl=0
+[02:02:17] <jherskowitz> and a crash report for you dommex 
+[02:02:20] <jherskowitz> sent
+[02:02:36] <dommex> Hehe
+[02:02:51] <jherskowitz> my normal… crash on quit
+[02:06:17] <dommex> jherskowitz: actually ... it looks similar but isnt the same apparently
+[04:58:41] *** Quits: mgue1 (~mgue@f050047083.adsl.alicedsl.de) (Quit: WeeChat 1.3)
+[05:09:53] *** Joins: mgue (~mgue@f050047083.adsl.alicedsl.de)
+[05:16:08] *** Joins: tadhg (~tadhg@209-6-208-227.c3-0.smr-ubr2.sbo-smr.ma.cable.rcn.com)
+[05:16:15] <tadhg> Hi
+[05:23:21] <muesli> hey
+[05:27:31] <tadhg> I'm trying to compile Tomahawk on mint
+[05:28:00] <tadhg> and I'm not much familiar with development for desktops, especially on Linux
+[05:28:21] <tadhg> I'm following the instructions here
+[05:28:22] <tadhg> https://github.com/tomahawk-player/tomahawk/wiki/Ubuntu---Build-Instructions
+[05:28:42] <tadhg> and I get
+[05:28:43] <tadhg> $ cmake ..
+[05:28:43] <tadhg> CMake Error at CMakeLists.txt:14 (find_package):
+[05:28:43] <tadhg>   Could not find a package configuration file provided by "ECM" (requested
+[05:28:45] <tadhg>   version 1.7.0) with any of the following names:
+[05:28:47] <tadhg>     ECMConfig.cmake
+[05:28:49] <tadhg>     ecm-config.cmake
+[05:28:51] <tadhg>   Add the installation prefix of "ECM" to CMAKE_PREFIX_PATH or set "ECM_DIR"
+[05:28:53] <tadhg>   to a directory containing one of the above files.  If "ECM" provides a
+[05:28:55] <tadhg>   separate development package or SDK, be sure it has been installed.
+[05:30:26] <tadhg> dpkg-query tells me I have ecm 1.03-1
+[05:31:25] <tadhg> so that makes sense... but I can't find where to get a newer version
+[05:48:55] *** Quits: tadhg (~tadhg@209-6-208-227.c3-0.smr-ubr2.sbo-smr.ma.cable.rcn.com) (Quit: Leaving)
+[05:57:54] *** Joins: mgue1 (~mgue@x590fcf73.dyn.telefonica.de)
+[06:00:56] *** Quits: mgue (~mgue@f050047083.adsl.alicedsl.de) (Ping timeout: 240 seconds)
+[08:04:43] *** Quits: rotzbouw (~thierry@HSI-KBW-046-005-083-083.hsi8.kabel-badenwuerttemberg.de) (Quit: Lost terminal)
+[10:33:42] *** Joins: ssam2 (~ssam2@ip-188-118-20-209.reverse.destiny.be)
+[10:55:54] <TheOneRing> thanks jherskowitz
+[11:26:02] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[12:23:08] *** Quits: tilal6991 (~tilal6991@unaffiliated/tilal6991) (Ping timeout: 244 seconds)
+[12:23:25] *** Joins: tilal6991 (~tilal6991@2001:41d0:8:bd7b::1)
+[12:23:25] *** Quits: tilal6991 (~tilal6991@2001:41d0:8:bd7b::1) (Changing host)
+[12:23:25] *** Joins: tilal6991 (~tilal6991@unaffiliated/tilal6991)
+[12:24:06] <dommex> TheOneRing: *built in
+[13:12:36] *** Quits: ssam2 (~ssam2@ip-188-118-20-209.reverse.destiny.be) (Ping timeout: 245 seconds)
+[13:35:33] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Remote host closed the connection)
+[14:22:18] *** Joins: jturney (~jon@host86-179-113-236.range86-179.btcentralplus.com)
+[14:59:58] <jherskowitz> moin
+[15:00:28] <jherskowitz> dommex: any ideas why brew install snorenotify throws make errors?
+[15:04:26] <dommex> jherskowitz: nope will need to investigate later
+[15:04:31] <jherskowitz> ok
+[15:04:34] <jherskowitz> no rush
+[15:04:37] <jherskowitz> just curious
+[15:14:09] *** Joins: ssam2 (~ssam2@ip-188-118-20-209.reverse.destiny.be)
+[15:34:48] *** Joins: eyal_ (~eyal@p4FC8C422.dip0.t-ipconnect.de)
+[15:34:57] <eyal_> Hey guys
+[15:35:20] <eyal_> I just got tomahawk and am using the google play music plugin, but I have a problem with it
+[15:36:04] <eyal_> It skips a song after playing only part of it, so if I'm playing an album for example, I only listen to half of any song before it skips to the next
+[15:36:16] <eyal_> weird stuff... anyone familiar with this behavior?
+[15:38:32] <muesli> jherskowitz: ^
+[15:38:35] <muesli> jherskowitz: seen that?
+[15:38:44] <muesli> eyal_: which platform are you on?
+[15:39:49] <eyal_> Xubuntu 14.04
+[15:39:52] <eyal_> 64bit
+[15:40:05] <jherskowitz> muesli: eyal_ : hmm… not seen that myself
+[15:40:56] <eyal_> Anyway to debug these kind of stuff?
+[15:46:33] <muesli> eyal_: which phonon backend do you use?
+[15:46:45] <muesli> eyal_: check which phonon-backend-* packages are installed
+[15:47:07] <eyal_> sec
+[15:47:41] <eyal_> ii  libphonon4:amd64                                      4:4.7.80-0ubuntu1~ubuntu14.04                       amd64        multimedia framework from KDE - core library
+[15:47:41] <eyal_> ii  phonon:amd64                                          4:4.7.80-0ubuntu1~ubuntu14.04                       amd64        multimedia framework from KDE - metapackage
+[15:47:41] <eyal_> ii  phonon-backend-gstreamer:amd64                        4:4.7.80-0ubuntu2~ubuntu14.04                       amd64        Phonon GStreamer 1.0.x backend
+[15:47:41] <eyal_> ii  phonon-backend-gstreamer-common:amd64                 4:4.7.80-0ubuntu2~ubuntu14.04                       amd64        Phonon GStreamer 1.0.x backend icons
+[15:47:44] <eyal_> ii  phonon-backend-gstreamer1.0                           4:4.7.80-0ubuntu2~ubuntu14.04                       all          transitional package
+[15:47:47] <eyal_> ii  phonon-backend-vlc:amd64                              0.7.80-0ubuntu2                                     amd64        Phonon VLC backend
+[15:47:54] <muesli> ah
+[15:48:00] <muesli> keep the -vlc and reove all others
+[15:48:12] <muesli> they're outdated & broken
+[15:48:20] <muesli> that might or might not be related
+[15:48:25] <muesli> we'll see :)
+[15:49:04] <eyal_> I'll try. What installed them though, wouldn't it break anything?
+[15:49:25] <muesli> no, you can only ever use one of the phonon backends
+[15:49:39] <muesli> vlc is by far the sanest choice, as it's the only maintained backend i currently know of
+[15:50:36] <eyal_> Ok I'm testing it now
+[15:52:11] <dommex> sampsyo: ping
+[15:54:35] <eyal_> I just played a song all the way through, so far so good !
+[15:54:54] <muesli> sounds promising
+[16:04:08] <eyal_> Well, third or fourth song now so I'd risk saying it fixed the problem. Much obliged
+[16:05:09] <muesli> glad it was that easy
+[16:27:43] <dommex> MrMaffen: fml
+[16:28:03] <MrMaffen> dommex: ? :/
+[16:28:04] <dommex> MrMaffen: new URL(..).toString() is b0rked in qtwebkit
+[16:28:15] <muesli> dommex: wtf
+[16:28:19] <MrMaffen> Oo
+[16:28:34] <dommex> browser and probably android webview: new URL("http://localhost:337").toString() -> "http://localhost:337/"
+[16:28:51] <dommex> qtwebkit: -> "[object URL]"
+[16:29:15] <MrMaffen> yup
+[16:29:26] <MrMaffen> yup wrt android webview
+[16:31:48] <dommex> MrMaffen: also it doesnt seem to be supported in IE at all: https://developer.mozilla.org/de/docs/Web/API/URL/URL#Browser_compatibility
+[16:31:56] <dommex> (not even the new URL() ctor)
+[16:32:50] <MrMaffen> dommex: hmpf -.- I hate web dev
+[16:33:32] <dommex> MrMaffen: can you check if new URL("http://localhost:337").href works?
+[16:33:48] <dommex> should be the same as toString()
+[16:34:08] <dommex> and as it doesnt work in qtwebkit ... i can duck type the environment to fix ...
+[16:35:09] <MrMaffen> dommex: testing ...
+[16:36:04] <dommex> MrMaffen: nvm
+[16:36:13] <dommex> i will use URL.prototype.hasOwnProperty('toString')
+[16:37:11] <MrMaffen> dommex: yup works
+[16:37:16] <MrMaffen> dommex: heh ok
+[16:39:04] <MrMaffen> dommex: I think the only purpose new URL(..).toString() has is that I wanted to extract the port in a clever way
+[16:39:12] <dommex> i know
+[16:39:13] <MrMaffen> dommex: so you could also go ahead and just do that manually
+[16:39:20] <dommex> i know
+[16:39:25] <MrMaffen> ok 
+[16:39:26] <dommex> i just want to make beets work right now
+[16:39:40] *** Joins: soee (~soee@accb192.neoplus.adsl.tpnet.pl)
+[16:42:53] *** Quits: eyal_ (~eyal@p4FC8C422.dip0.t-ipconnect.de) (Quit: Leaving)
+[16:49:23] *** Joins: github-tomahawk (~github-to@192.30.252.42)
+[16:49:23] <github-tomahawk> [13tomahawk-resolvers] 15dschmidt pushed 1 new commit to 06master: 02https://git.io/vz98h
+[16:49:23] <github-tomahawk> 13tomahawk-resolvers/06master 143c6e4f9 15Dominik Schmidt: [beets] Fix URL.toString() not being present on desktop
+[16:49:23] *** Parts: github-tomahawk (~github-to@192.30.252.42) ()
+[17:13:28] <MrMaffen> dommex: uhm but now config.server is not being set at all with qtwebkit
+[17:14:16] <MrMaffen> dommex: oh sry nvm
+[17:14:20] <dommex> MrMaffen: it doesnt need to
+[17:14:22] <dommex> hehe
+[17:15:55] <MrMaffen> dommex: this might be an alternative https://gist.github.com/jlong/2428561
+[17:17:55] *** Quits: soee (~soee@accb192.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[17:19:30] *** Joins: soee (~soee@accb192.neoplus.adsl.tpnet.pl)
+[17:22:41] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Quit: No Ping reply in 90 seconds.)
+[17:23:24] *** Quits: johnyb (~jb@limu.coffee.liberejo.de) (Remote host closed the connection)
+[17:23:31] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[17:24:01] *** Quits: muesli (~muesli@server3.muehlhaeuser.de) (Ping timeout: 265 seconds)
+[17:25:20] *** Quits: danimo (~daniel@kde/danimo) (Quit: No Ping reply in 180 seconds.)
+[17:25:37] *** Joins: johnyb (~jb@limu.coffee.liberejo.de)
+[17:25:54] *** Joins: muesli (~muesli@server3.muehlhaeuser.de)
+[17:26:15] <dommex> yeah, we use it somewhere else afaict
+[17:26:21] <dommex> afaik
+[17:27:39] *** Joins: danimo (~daniel@2a01:4f8:130:24a6:1::104)
+[17:27:39] *** Quits: danimo (~daniel@2a01:4f8:130:24a6:1::104) (Changing host)
+[17:27:39] *** Joins: danimo (~daniel@kde/danimo)
+[17:32:17] *** Joins: github-tomahawk (~github-to@192.30.252.45)
+[17:32:17] <github-tomahawk> [13tomahawk] 15dschmidt pushed 1 new commit to 06master: 02https://git.io/vz9Vu
+[17:32:17] <github-tomahawk> 13tomahawk/06master 14d50c167 15Dominik Schmidt: Fix crash in parseResultVariantList for broken track data
+[17:32:17] *** Parts: github-tomahawk (~github-to@192.30.252.45) ()
+[17:32:30] <dommex> teo-: ^
+[17:33:02] <dommex> to be precise it was an assert not a crash and it would have been handlet fine in a release build
+[17:39:50] <teo-> my fault for living on the edge
+[17:40:31] <dommex> wow, handlet
+[17:40:33] <dommex> such typo
+[18:03:56] *** Joins: github-tomahawk (~github-to@192.30.252.34)
+[18:03:56] <github-tomahawk> [13tomahawk] 15dschmidt pushed 1 new commit to 06master: 02https://git.io/vz9Xj
+[18:03:56] <github-tomahawk> 13tomahawk/06master 14771b2f5 15Dominik Schmidt: Add resolve default implementation in Tomahawk.Resolver
+[18:03:56] *** Parts: github-tomahawk (~github-to@192.30.252.34) ()
+[18:09:23] <MrMaffen> teo-: you're such a maniac ... it's always balls to the wall with you :P
+[18:17:23] <teo-> MrMaffen: I got more where that came from
+[18:17:26] <teo-> dommex: http://pastebin.com/KPbPwbJz
+[18:23:47] *** Quits: ssam2 (~ssam2@ip-188-118-20-209.reverse.destiny.be) (Quit: Leaving)
+[18:28:17] <muesli> teo-: actually known / reported on github
+[18:28:30] <muesli> theli_ua: do you wanna fix that quickly or shall i give it a go?
+[18:28:51] <muesli> essentially just needs checking for resolvedBy() being 0
+[18:28:53] <teo-> muesli: ack
+[18:29:38] <theli_ua>  I can do that in a few. Once I get to the office muesli 
+[18:29:45] <theli_ua> Currently afk
+[18:29:46] <muesli> <3
+[18:37:18] <dommex> muesli: you mean being nullptr, no? ;-)
+[18:37:36] <muesli> of course, of course ;-)
+[18:47:32] <teo-> yep, let's forget 0 ever happened
+[18:48:25] <teo-> muesli: now the most retarded shit in C++ is =0; for pure virtual, how about fixing that
+[18:59:13] <theli_ua> muesli: sorry, have some work stuff that needs to be done, can do later in the day
+[19:11:09] *** Quits: soee (~soee@accb192.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[19:14:00] *** Joins: soee (~soee@accb192.neoplus.adsl.tpnet.pl)
+[19:39:54] *** Quits: soee (~soee@accb192.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[20:13:36] *** Joins: soee (~soee@accb192.neoplus.adsl.tpnet.pl)
+[20:34:25] *** Joins: knicklux (~knicklux@2a03:2260:a:b:3e07:54ff:fe4e:255)
+[21:07:04] *** Joins: soee_ (~soee@aguj48.neoplus.adsl.tpnet.pl)
+[21:11:30] *** Quits: soee (~soee@accb192.neoplus.adsl.tpnet.pl) (Ping timeout: 260 seconds)
+[21:14:38] *** Quits: knicklux (~knicklux@2a03:2260:a:b:3e07:54ff:fe4e:255) (Quit: Leaving)
+[21:16:01] *** Quits: lfranchi (~quassel@kde/lfranchi) (Ping timeout: 265 seconds)
+[23:07:07] *** Quits: soee_ (~soee@aguj48.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[23:07:53] *** Joins: soee (~soee@aguj48.neoplus.adsl.tpnet.pl)
+[23:36:08] *** Quits: soee (~soee@aguj48.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[23:58:23] <dommex> jherskowitz: oh, if you're promoting the new builds... you should mention that one needs the resolvers from tomahawk-resolvers master

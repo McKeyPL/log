@@ -1,0 +1,83 @@
+[00:00:58] <theli_ua> or maybe we just have an empty user agent :-/
+[00:05:25] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) (Remote host closed the connection)
+[00:17:48] *** Quits: soee (~soee@agvv30.neoplus.adsl.tpnet.pl) (Ping timeout: 264 seconds)
+[00:19:41] <TheOneRing> I just had 3 users in my channel 
+[00:19:46] <TheOneRing> confusing
+[00:40:09] <theli_ua> yeah, must be user agent. I can play youtube video with mplayer, vlc, download it with curl, wget ... but it just fails in tomahawk >_<
+[01:50:01] <muesli> theli_ua: must be new
+[01:50:55] <theli_ua> Well, tbh I always was wondering why YouTube resolver was bad 
+[01:51:01] <theli_ua> Wrt results
+[01:51:37] <theli_ua> I dunno, I'll investigate more to see what's the root cause of getting forbidden video links
+[02:01:00] *** Quits: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com) (Ping timeout: 264 seconds)
+[02:24:40] *** Quits: jturney (~jon@host86-179-113-234.range86-179.btcentralplus.com) (Read error: Connection reset by peer)
+[03:12:40] *** Joins: thisfred (~thisfred@66.193.100.238)
+[03:14:59] *** Joins: thisfred1 (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com)
+[03:17:14] *** Quits: thisfred (~thisfred@66.193.100.238) (Ping timeout: 250 seconds)
+[03:35:59] <theli_ua> hm, might be just that it fails to extract url correctly
+[03:42:48] <muesli> got an example?
+[03:46:04] *** Quits: thisfred1 (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com) (Ping timeout: 246 seconds)
+[04:06:13] *** Quits: wilder_ (~quassel@kde/developer/wilder) (Read error: Connection reset by peer)
+[04:08:03] *** Joins: thisfred1 (~thisfred@71-214-95-117.ptld.qwest.net)
+[04:11:33] *** Joins: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com)
+[04:13:01] *** Quits: thisfred1 (~thisfred@71-214-95-117.ptld.qwest.net) (Ping timeout: 246 seconds)
+[04:17:49] *** Quits: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com) (Ping timeout: 252 seconds)
+[04:58:36] <theli_ua> muesli: sure
+[04:59:12] <theli_ua> muesli: https://www.youtube.com/watch?v=L9qYTqAriQ0
+[04:59:13] <tomabee> [ Suite No. 3: Impromptu | www.youtube.com | https://i.ytimg.com/vi/L9qYTqAriQ0/hqdefault.jpg ]
+[05:27:42] <theli_ua> muesli: wel, it gets the url but that one will just give you 403, youtube-dl extracts perfectly working url though
+[05:43:49] *** Joins: mgue2 (~mgue@x5ce389a9.dyn.telefonica.de)
+[05:46:41] *** Quits: mgue1 (~mgue@f048191176.adsl.alicedsl.de) (Ping timeout: 246 seconds)
+[08:06:53] *** Quits: akaseki (~hakase@unaffiliated/akaseki) (Remote host closed the connection)
+[09:07:16] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[09:30:48] *** Joins: meaning (~meaning@192.177-201-80.adsl-dyn.isp.belgacom.be)
+[09:54:24] *** Joins: soee (~soee@agww228.neoplus.adsl.tpnet.pl)
+[10:10:42] *** Joins: stonedsabbath (stonedsabb@gateway/web/scrollback.io/x-kuenpidbcpsfdcoo)
+[10:10:43] <stonedsabbath> Any updates on Hatchet?
+[11:59:47] *** Quits: alexandernst (~quassel@amsn/developer/alexandernst) (Ping timeout: 246 seconds)
+[12:03:54] *** Joins: alexandernst (~quassel@2001:41d0:2:3a31::)
+[12:03:54] *** Quits: alexandernst (~quassel@2001:41d0:2:3a31::) (Changing host)
+[12:03:54] *** Joins: alexandernst (~quassel@amsn/developer/alexandernst)
+[13:03:52] *** Joins: jturney (~jon@host86-179-113-234.range86-179.btcentralplus.com)
+[13:16:03] *** Quits: meaning (~meaning@192.177-201-80.adsl-dyn.isp.belgacom.be) (Quit: Textual IRC Client: www.textualapp.com)
+[14:10:32] *** Quits: inversechi (~inversech@178.62.62.155) (Read error: Connection reset by peer)
+[14:14:10] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) ()
+[14:17:46] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[15:51:19] *** Quits: soee (~soee@agww228.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[15:51:46] *** Joins: soee (~soee@agww228.neoplus.adsl.tpnet.pl)
+[16:08:17] *** Joins: sythe_ (uid20450@facade/leader)
+[16:09:44] *** Joins: total1ty__ (~quassel@ipbcc184bc.dynamic.kabel-deutschland.de)
+[16:11:11] *** Quits: sythe (uid20450@facade/leader) (Ping timeout: 240 seconds)
+[16:11:13] *** Quits: total1ty_ (~quassel@ipbcc184bc.dynamic.kabel-deutschland.de) (Ping timeout: 240 seconds)
+[16:14:36] *** sythe_ is now known as sythe
+[16:41:50] *** Joins: grindhold_ (~quassel@c035.cyan.servdiscount-customer.com)
+[16:56:49] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[17:55:00] *** Joins: bencevans (uid22936@gateway/web/irccloud.com/x-rngreiqxkohgpzji)
+[18:57:00] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[19:25:24] *** Joins: HorusHorrendus1 (~horrendus@80.110.135.155)
+[19:27:17] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Ping timeout: 244 seconds)
+[19:28:49] *** Joins: flople (guest-flop@gateway/web/scrollback.io/x-clluswginqrdllxi)
+[19:28:50] <flople> any body live out there?
+[19:41:05] *** Quits: SolarAquarion (SolarAquar@unaffiliated/solaraquarion) (Ping timeout: 246 seconds)
+[19:44:07] *** Joins: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7)
+[19:44:07] *** Quits: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7) (Changing host)
+[19:44:07] *** Joins: SolarAquarion (SolarAquar@unaffiliated/solaraquarion)
+[20:31:42] <muesli> flople: sure
+[20:51:24] *** Quits: soee (~soee@agww228.neoplus.adsl.tpnet.pl) (Read error: Connection reset by peer)
+[20:51:56] *** Joins: soee (~soee@agww228.neoplus.adsl.tpnet.pl)
+[21:00:18] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[21:11:09] *** Quits: mohn (~mo@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[21:11:18] *** Joins: mohn (~mo@limu.coffee.liberejo.de)
+[21:26:29] *** Quits: soee (~soee@agww228.neoplus.adsl.tpnet.pl) (Read error: Connection reset by peer)
+[21:26:33] *** Joins: soee_ (~soee@agww228.neoplus.adsl.tpnet.pl)
+[21:40:58] *** Joins: soee (~soee@agww228.neoplus.adsl.tpnet.pl)
+[21:41:37] *** Quits: soee_ (~soee@agww228.neoplus.adsl.tpnet.pl) (Read error: Connection reset by peer)
+[21:51:34] *** Quits: soee (~soee@agww228.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[21:54:31] *** Joins: soee (~soee@agww228.neoplus.adsl.tpnet.pl)
+[22:15:23] *** Quits: soee (~soee@agww228.neoplus.adsl.tpnet.pl) (Read error: Connection reset by peer)
+[22:15:25] *** Joins: soee_ (~soee@agww228.neoplus.adsl.tpnet.pl)
+[22:28:55] *** Quits: soee_ (~soee@agww228.neoplus.adsl.tpnet.pl) (Ping timeout: 260 seconds)
+[22:36:33] *** Quits: bencevans (uid22936@gateway/web/irccloud.com/x-rngreiqxkohgpzji) (Quit: Connection closed for inactivity)
+[22:37:21] *** Joins: soee (~soee@agww228.neoplus.adsl.tpnet.pl)
+[23:27:08] *** Joins: soee_ (~soee@agww228.neoplus.adsl.tpnet.pl)
+[23:27:10] *** Quits: soee (~soee@agww228.neoplus.adsl.tpnet.pl) (Read error: Connection reset by peer)
+[23:32:54] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) ()

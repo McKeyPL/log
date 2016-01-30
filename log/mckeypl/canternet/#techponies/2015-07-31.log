@@ -1,0 +1,1171 @@
+[00:01:25] <Gladiolus> yeah lol
+[00:02:05] <init3> Nobody puts money into sound cards anymore and people will buy this shit eh?
+[00:03:39] <init3> Drop even $40 on a sound card instead of integrated and you'll have a greater difference than probably most anything else assuming you have at least mediocre headphones or speakers.  
+[00:04:47] <Colgate> sound cards do have a valid use, audio isolation and what not
+[00:04:50] <init3> I scored a Creative X-Fi from a curb computer once. Probably one of the better (and longer lasting) finds I've made. Too bad my main computer is a laptop but I have speakers plugged into my server just because of that thing. 
+[00:04:58] <Gladiolus> you lucky fucker
+[00:05:06] <init3> Yeah
+[00:05:13] <Gladiolus> I have a Sound Blaster Z, came with a really nice microphone.
+[00:05:14] *** Quits: Filthy_Rich (Iceman@Darkhorse21) (Quit: quit)
+[00:05:24] <Colgate> I don't have good enough speakers to warrant having a good sound card XD
+[00:05:44] <Gladiolus> I've got ~5.1~. I always buy a soundcard though because I'm spergy about having EAX on older games.
+[00:05:50] <Gladiolus> It's stupid but well, not the stupidist!
+[00:06:23] <init3> Not a $350 cat 6 (err I mean cat 7 huehuehue) cable
+[00:06:32] <Gladiolus> cat 12
+[00:06:35] <Gladiolus> 21 cats
+[00:06:38] <init3> Haha
+[00:06:59] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[00:09:17] <Gigaway> Question, I am about to download amd graphics driver, and there are two choices
+[00:09:24] <Gigaway> AMD Catalyst� 15.7 Proprietary Ubuntu 14.04 x86_64 Video Driver for Graphics Accelerators
+[00:09:25] <Gigaway> or
+[00:09:52] <Gigaway> AMD Catalyst� 15.7 Proprietary Ubuntu 14.04 x86_64 Minimal Video Driver for Graphics Accelerators (Non-X Support)
+[00:10:02] <Gigaway> The second one is 24mb larger, why?
+[00:10:10] <init3> Uhh
+[00:10:21] <init3> Non-X support. wat.
+[00:10:33] <init3> Oh wait, maybe that means it has wayland support too?
+[00:10:40] <Gladiolus> doesn't have support for a thing, is larger
+[00:10:41] <Gladiolus> wat
+[00:10:54] <Gladiolus> also doesn't linux heavily use that x thing
+[00:10:55] <Gigaway> I dunno, the first one is 55mb, the second is 79
+[00:11:00] <wolfyshy> svgalib?
+[00:11:01] <init3> I think it means it has support for shit other than X. 
+[00:11:07] <Gladiolus> oooo
+[00:11:13] <init3> As well
+[00:11:14] <Gigaway> so.. which should I do?
+[00:11:20] <init3> I'd grab the first. 
+[00:11:40] <init3> Pretty sure Ubuntu is still using X11
+[00:11:52] <Gigaway> dropbox from the software center is taking forever to install.. its applying changes for like 5 minutes now
+[00:11:57] <init3> Gigaway: Do this in the command line and post the result:    ps faux |grep X
+[00:12:25] <Gigaway> root      1116  3.9  0.8 384908 105928 tty7    Ssl+ 16:18   4:28  \_ /usr/bin/X -core :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+[00:12:25] <Gigaway> soarin   17502  0.0  0.0  15948  2160 pts/0    S+   18:12   0:00                  \_ grep --color=auto X
+[00:12:31] * Gladiolus eats Gigaway's changes
+[00:12:35] <init3> Yeah, you are running X
+[00:12:37] <Gladiolus> also you aren't away!
+[00:12:58] <init3> Is true
+[00:12:59] <Gigaway> I am half here, trying to configure the system, but like I just said, dropbox is taking for ever to install
+[00:13:12] <AppleDash> Gigaway: Why are you manually installing graphics drivers?
+[00:13:12] <Gladiolus> o3o
+[00:13:14] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[00:13:22] <AppleDash> You don't generally do that under Linux unless you want to break everything
+[00:13:23] <init3> Probably installing fglrx 
+[00:13:44] <AppleDash> fglrx has a tendancy to not work with new xorg versions for a long time
+[00:13:48] <Gigaway> okay.. how can I tell if the latest driver is installed?
+[00:13:58] <AppleDash> Can you see things on your display?
+[00:14:22] <init3> I dunno, I disagree. If you are planning on playing any games under Linux you want the fglrx driver. 
+[00:14:33] <AppleDash> Disagree with what?
+[00:14:43] <AppleDash> Disagree with a hard fact that you can't disagree with?
+[00:14:48] <init3> To not install a graphics driver. 
+[00:14:54] <AppleDash> I never said not to install anything
+[00:15:00] <AppleDash> I said you do not want to /manually/ install it
+[00:15:09] <wolfyshy> doesn
+[00:15:09] <AppleDash> You want to use the distribution-provided package
+[00:15:16] <wolfyshy> doesn't ubuntu have a driver fetch utility?
+[00:15:17] <init3> He isn't
+[00:15:27] <AppleDash> And I'm trying to get him to
+[00:16:08] <init3> Oh wait, maybe I misunderstood. Are you downloading that off the AMD website Gigaway?
+[00:16:14] <Gigaway> yes
+[00:16:18] <init3> I thought you were saying to stick to the radeon driver. 
+[00:16:22] <init3> Yeh, don't do that. 
+[00:16:49] <Gigaway> okay, how I can I stop the software center from installing dropbox? It is hung up at  90%
+[00:16:55] <init3> I am not sure but it's probably apt-get install fglrx or apt-get install catalyst
+[00:17:12] <init3> The GUI one?
+[00:17:16] <Gigaway> ya
+[00:17:36] <init3> What is it called?
+[00:17:45] <Gigaway> dropbox
+[00:17:54] <init3> Just "software center"?
+[00:18:06] <Gigaway> Ubuntu sofware center
+[00:18:30] <init3> I mean, there is probably a gui process manager somewhere in the menu to kill the process. 
+[00:18:42] <wolfyshy> I think it's called muon
+[00:18:43] <Caerdwyn> init3: htop
+[00:18:52] <Gigaway> Ah it finally installed after 20 minutes
+[00:18:52] <init3> htop is cli
+[00:18:59] <init3> ...kinda
+[00:19:00] <Caerdwyn> its very functional though
+[00:19:06] <init3> I know. I love it. 
+[00:19:10] <Caerdwyn> <3
+[00:19:20] <init3> THat's part of the first batch of things I install. 
+[00:19:29] <Caerdwyn> lol same here
+[00:19:30] <init3> Usually htop and vim and the first things. 
+[00:19:33] <Colgate> ncurses is basically a gui
+[00:19:43] <init3> <init3> ...kinda
+[00:19:46] <init3> ;p
+[00:20:02] <Colgate> not that I'm complaining, I use a lot of ncurses stuff XD
+[00:20:03] <Caerdwyn> wolfyshy: you mean the Proprietary Drivers dialog thing you open from the system settings menu?
+[00:20:29] <Colgate> cfdisk, weechat, htop, probably more that I don't remember off the top of my head
+[00:20:35] <init3> Yeah, that's where you can go Gigaway to get the propretart graphics driver I think. 
+[00:20:48] <Caerdwyn> Colgate you're drunk, go home
+[00:20:58] <Colgate> I'm at work :(
+[00:21:02] <Gigaway> fucking hell.. dropbox cannot create a folder inside the mounted drive for some reason
+[00:21:02] <Caerdwyn> exactly
+[00:21:10] <Gigaway> Ugh.. always something
+[00:21:27] <init3> You get a particular error?
+[00:21:38] <Caerdwyn> its dropbox, what'd you expect :P
+[00:21:43] <Caerdwyn> it to work? xD
+[00:21:53] <Colgate> Caerdwyn: my boss wanted me to test w10, but I'm pretty sure it isn't hipaa compliant, so I don't think it will work >.<
+[00:22:03] <init3> Actually, put the output of the command "mount" on a pastebin if you don't mind. 
+[00:22:24] <init3> Then I need to go to da sto. 
+[00:22:27] <Caerdwyn> Colgate: I just updated my laptop to w10pro this morning with kmspico installed...omg I love it
+[00:22:35] <Gigaway> I expected DB to work since it did on my laptop
+[00:22:39] <Caerdwyn> I'm not even a major windoze fan anymore and I like this..
+[00:22:48] <Gigaway> says there is already a folder at that location now
+[00:22:55] <init3> It looks like Plasma5 to me. 
+[00:23:01] <Caerdwyn> installed Classic Shell, Chrome, Skype, Steam, and PuTTY. I'm set for life <3
+[00:23:02] <Caerdwyn> lol
+[00:23:25] *** MistVeil is now known as Mist|Desktop
+[00:23:33] <init3> I mean, you could remove the folder then try to sync again. 
+[00:23:38] <init3> No harm in that. 
+[00:23:54] *** Quits: Phase (Phase4@Pony-ada193.internode.on.net) (Ping timeout: 121 seconds)
+[00:23:54] <Caerdwyn> just delete your dropbox account. tada, problem solved
+[00:23:59] <Caerdwyn> (jk of course)
+[00:24:53] <init3> I've seen parts of that dropbox. There is a lot of stuff in there. Quite a lot. 
+[00:25:00] *** Joins: MistVeil (AndChat3408@Pony-hahd0r.static.axtel.net)
+[00:25:20] <Gigaway> okay so I made a link from my mounted drive and placed it in my home folder, deleted the dropbox folder in home and renamed the link to dropbox, and it seems to be fine
+[00:26:04] <Gigaway> nvm it isnt.. fuck
+[00:30:45] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[00:31:06] <AppleDash> http://i.imgur.com/9eCvxho.jpg
+[00:31:08] <AppleDash> HARDWARE
+[00:31:13] <AppleDash> This tower is about my worst idea ever
+[00:31:16] <AppleDash> but it was worth it
+[00:31:45] <Gladiolus> jesus christ
+[00:31:52] <AppleDash> xD
+[00:31:59] <init3> haha
+[00:32:46] <init3> Gigaway: If you want we can try to get some sort of remote screen sharing goin on once I get back from Meijer.
+[00:33:06] <Gigaway> might, because this is being annoying now
+[00:33:38] <Gigaway> I may have got the dropbox to work, I shut down the syncing yet again, and redid the link and now it synced the files but did not download any
+[00:33:42] <Gigaway> so I think it worked
+[00:33:47] <init3> Maybe look up software that will make that easy for the both of us while I'm gone. Now that I'm in Sterling Heights Meijer is literally 5 minutes away so I'll be back in like 30. 
+[00:34:14] <init3> You probably want to get the right GPU driver next. 
+[00:34:37] <init3> I think you can get it from the propretary drivers section of the control panel but you might have to install a package. 
+[00:34:57] <init3> In any case I'm fucking hungry so I'll brb. 
+[00:35:03] *** init3 is now known as Init3-away
+[00:47:17] *** Quits: MistVeil (AndChat3408@Pony-hahd0r.static.axtel.net) (Quit: Bye)
+[00:53:01] *** Quits: Mist|Desktop (aqua@Pony-hahd0r.static.axtel.net) (Quit: Saliendo)
+[00:54:45] *** Joins: Fallfeathers (Fallfeather@Pony-8cihja.bigpond.net.au)
+[01:07:23] *** Dusk is now known as DUsk
+[01:07:26] *** DUsk is now known as Dusk
+[01:10:48] <Moonlightning> Doesn't X509 ban wildcards for TLDs?
+[01:11:17] <Moonlightning> And also ban more than one wildcard in a single alternate CN?
+[01:12:07] <Moonlightning> Browsers don't check against the CN anymore? Really? :/
+[01:12:18] * JustAberrant covers Moonlightning's face in a thin layer of wallpaper paste, waits for it to mostly dry, then has a very large and impatient woman try to wash it off with a rough face cloth :(
+[01:13:22] <Moonlightning> Init3-away: generally, unless the language doesn't support operator overloading (Java >.> ), the syntax is the same for arrays and dictionaries.
+[01:14:58] <Moonlightning> Gigaway: just use latest version of ext (ext4 right now) for your mane filesystem. IIRC, btrfs still has a couple things you probably don't wanna deal with as a newcomer to Linux. :p
+[01:15:23] <Gigaway> is this the latest openssh client?  http://mirror.team-cymru.org/pub/OpenBSD/OpenSSH/portable/openssh-6.9p1.tar.gz
+[01:18:23] <Moonlightning> Gladiolus: bash: command not found: SUDO
+[01:19:00] <Moonlightning> Colgate: why's it not recommended to not have a partition table?
+[01:19:53] <Colgate> Moonlightning: for your boot drive? :P
+[01:23:47] <Moonlightning> Colgate: in general
+[01:23:58] <Moonlightning> </late>
+[01:24:18] <Gigaway> Sorry for being annoying..
+[01:24:22] <Gigaway> https://www.dropbox.com/s/nzcnvxdqkp2h1uy/Screenshot%20from%202015-07-30%2019%3A22%3A17.png?dl=0  any idea?
+[01:24:30] *** Init3-away is now known as init3
+[01:24:47] <Moonlightning> Oi, shoosh. That's what this channel is /for./
+[01:25:13] <Gigaway> yeah but it makes me feel stupid asking for help..
+[01:25:53] <Moonlightning> Everypony's gotta start somewhere.
+[01:25:56] <init3> You are trying something new. 
+[01:25:58] <Moonlightning> ^
+[01:26:13] <Moonlightning> New and unfamiliar.
+[01:26:17] <init3> Anyway. Do you have the multilib repo enabled? Look in /etc/apt/sources.list.
+[01:26:27] <init3> Make sure it is uncommented. 
+[01:26:35] <Moonlightning> You are helping to break the vicious cycle of /everyone uses Windows so all the software is for Windows so everyone uses Windows so .../
+[01:26:37] <Moonlightning> Be proud.
+[01:27:15] <init3> Oh wait, that's libgl? You probably want to get your video card driver setup properly Gigaway
+[01:28:19] <init3> Actually, I see from that screenshot you were installing an ssh server? If you'd like, I can SSH in and we can share a screen session so you can see what I'm doing. I can annotate it a bit in PM too.
+[01:28:28] <Gigaway> multilib repo is not sintalled
+[01:28:52] <Gigaway> I was trying to install openssh-client ya, so I can remote into my pi
+[01:29:07] <Moonlightning> Sounds like it was already installed (go figure)
+[01:29:14] <Colgate> Moonlightning: interestingly enough, the x.509 standard specifically mentions that wildcards are not defined by the standard
+[01:29:28] <Moonlightning> Gigaway: in general, being able to read manual pages is a useful skill. We'll get to that later, though.
+[01:29:44] *** Gigaway is now known as Gigabit
+[01:30:00] <Colgate> Moonlightning: https://tools.ietf.org/html/rfc5280#page-38
+[01:30:02] <PinkiePieBot> [ RFC 5280 - Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile ]
+[01:30:55] <Moonlightning> Colgate: I swear I saw a standard somewhere placing those restrictions
+[01:31:21] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[01:31:26] <Colgate> maybe, but it wasn't in x.509's
+[01:31:50] <Colgate> it might be a de facto standard?
+[01:32:03] <Moonlightning> No, it was definitely an official-looking standard document
+[01:32:33] <Colgate> I should try it out when I get home, see which browsers are ok with it
+[01:36:46] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[01:41:24] *** CyberJacob is now known as zz_CyberJacob
+[01:41:56] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Quit: )
+[01:42:37] *** Quits: Rylee (rylai@Pony-71u6pe.so) (Ping timeout: 121 seconds)
+[01:44:11] *** Joins: Rylee (rylai@Pony-71u6pe.so)
+[01:49:06] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:50:22] *** Joins: Nintendo4DS (Nintendo3DS@Pony-eeqc0u.res.rr.com)
+[01:53:46] *** Quits: jimm (Nintendo3DS@Pony-eeqc0u.res.rr.com) (Ping timeout: 121 seconds)
+[02:07:59] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[02:08:25] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[02:12:29] *** Joins: Filthy_Rich (Iceman@Darkhorse21)
+[02:16:56] *** Joins: Asoka (Asoka@Pony-91io76.net-htp.de)
+[02:20:06] *** Quits: Asoka_White (Asoka@Pony-oc5809.net-htp.de) (Ping timeout: 121 seconds)
+[02:26:18] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[02:51:58] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:55:37] *** Quits: Pony_12557 (IceChat9@Pony-i760bk.stlsmo.sbcglobal.net) (Ping timeout: 121 seconds)
+[03:06:09] *** Finnfinn is now known as FinnSLEEP
+[03:17:55] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[03:24:14] *** Joins: Sol (Sol@Pony-nc8b4c.res.rr.com)
+[03:27:36] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[03:28:46] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:31:58] <Gigabit> TECHPONES Need halp
+[03:31:58] <Gigabit> >>> /mnt/media/Google\Drive/Pictures is not working as a valid path
+[03:32:30] <AppleDash> You need a space in there
+[03:32:36] <AppleDash> after the \
+[03:32:53] <Gigabit> i tried that too
+[03:33:10] * AppleDash shrugs
+[03:33:12] <Caerdwyn> Gigabit: what program needs that path?
+[03:33:19] <Colgate> `stat /mnt/media/Google\ Drive/Pictures`
+[03:33:40] <Gigabit> init3 is helping me bind my pictures folder to a mounted drive, and setting it in fstab
+[03:33:45] <Caerdwyn> oh
+[03:33:50] <Caerdwyn> its a canonical path, remove the \
+[03:33:55] <Caerdwyn> samba does that stupid shit
+[03:34:01] <Gigabit> tried, it didn't work
+[03:34:04] <Caerdwyn> it takes the file path as is, so you dont have to escape the \
+[03:34:06] <Caerdwyn> oh
+[03:34:32] <init3> I think I got it
+[03:34:37] <Caerdwyn> weird that you have a /media folder in /mnt
+[03:34:44] <Caerdwyn> usually its just /mnt or just /media/user/
+[03:34:46] <init3> My doing
+[03:34:51] <Gigabit> Its a secondary drive
+[03:35:03] <init3> Just the way I usually do it
+[03:35:08] <Gigabit> media is actually a partition on sdb
+[03:35:27] <init3> yep
+[03:35:47] <Gigabit> That worked init3, thanks mang
+[03:35:55] <Gigabit> I owe you snusnu and beer
+[03:35:56] <init3>  /mnt/media/Google\040Drive/Pictures /home/soarin/Pictures none bind is how we had to do it
+[03:36:01] <init3> ;)
+[03:36:13] <init3> Google tells all
+[03:36:14] <Colgate> this is why we don't use spaces in file names :(
+[03:36:22] <init3> Truf
+[03:36:38] <Gigabit> Well this is a windows partition orginally and I had my pics being backed up daily to drive
+[03:36:46] <Gigabit> hence the google drive/pictures
+[03:37:05] <Caerdwyn> hmm..
+[03:37:21] <init3> And I'd never used a space in fstab personally before so I was curious. 
+[03:37:22] <Caerdwyn> what about Pictures/ ?
+[03:37:41] <Caerdwyn> init3: you cant have spaces i dont think..i ran into this same issue before, mounting a drive..
+[03:38:06] <Caerdwyn> the mountpoint was /media/cae/My Book/, which wound up being /My \Book/ and that didnt work either
+[03:38:08] <Gigabit> Now to get samba share back working
+[03:38:16] <init3> Yeah you just need the proper escape which apparently is /040
+[03:38:18] <Caerdwyn> wound up having to rename all my mount points to non-spaced folders like MyBook
+[03:38:21] <init3> err \040
+[03:38:38] <init3> That fstab line I posted earlier is working
+[03:38:47] <Caerdwyn> Gigabit: samba is easy. :P
+[03:38:56] <init3> On the cli you can just do a single backslash escape
+[03:39:06] <Caerdwyn> hmm..
+[03:39:40] <init3> so mount --bind  /mnt/drive/My\ Book/ My_book
+[03:39:48] <init3> Or whatever
+[03:39:56] <init3> but \040 is for fstab
+[03:40:04] <Gigabit> init3, I got my network share up already XD
+[03:40:30] <init3> Sweet. Samba can be a pain but I think Ubuntu in particular has a great gui for it. 
+[03:40:47] <Gigabit> now.. I need to figure out why my address is not bringing up my place holder page..
+[03:40:51] <Gigabit> because it should be
+[03:41:07] <init3> What do you mean?
+[03:41:11] *** Quits: Filthy_Rich (Iceman@Darkhorse21) (Quit: quit)
+[03:41:19] <Gigabit> giga.tempestswift.net
+[03:41:25] <init3> ahh
+[03:41:29] <Gigabit> it should bring up a page I created and show my share
+[03:41:41] <Gigabit> but it cannot connect for some reason
+[03:41:43] <init3> on the web browser 
+[03:41:45] <init3> ?
+[03:41:51] <Gigabit> yeah, aka my pi
+[03:41:57] <init3> There's yer probelm
+[03:42:06] <init3> It's getting your external IP
+[03:42:11] <Gigabit> it worked all this time before XD
+[03:46:41] <Colgate> init3: oh that makes sense \040 is 32 in octal
+[03:46:54] <Colgate> and 32 is a space
+[03:47:10] <init3> Oh, makes sense
+[03:47:46] <Colgate> good to know that I can use octal escapes in fstab, in case I ever need to mount something with a BEL cahracter or something in the name XD
+[03:58:13] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[04:09:35] <AppleDash> Colgate, lol
+[04:10:35] <Gladiolus> lol windows 10 apparently includes "We will access, disclose and preserve personal data, including your content (such as the content of your emails, other private communications or files in private folders)"
+[04:10:40] <Gladiolus> Little far there microsoft, little far.
+[04:11:03] <Gladiolus> Also lol @ "private" folders, kinda not "private" if it's being disclosed is it.
+[04:11:14] <Gladiolus> Man when even someone as chill as me takes issue with that you dun goofed.
+[04:12:41] <Colgate> Gladiolus: yeah, that statement makes it so we can't even use it at work if we wanted to, that would be a breach of hipaa
+[04:13:00] <Gladiolus> welp microsoft just self-defeated
+[04:13:13] <Gladiolus> No government, corporation, or private individual with secure data will want it.
+[04:13:24] <Gladiolus> Like geez, all the other stuff? I shrug at it.
+[04:13:27] <Colgate> such a shame too, it was looking like the best version of windows yet >.>
+[04:13:27] <Gladiolus> This though, too far.
+[04:13:36] <Gladiolus> I know right, I like it. 
+[04:13:38] <Colgate> inb4 win95
+[04:14:05] <Gladiolus> I did like win95 yes
+[04:17:30] *** Quits: Asoka (Asoka@Pony-91io76.net-htp.de) (Ping timeout: 121 seconds)
+[04:17:36] <wolfyshy> you know I was talking to one of my friends IRL about this just now
+[04:17:40] <wolfyshy> reading the log aloud, lol
+[04:17:53] <Gladiolus> Probably edit it to be limited to Onedrive soon but damn that's like.
+[04:17:56] <wolfyshy> and she said "you know, did anyone check win8's EULA?  win7's?  is this REALLY the first time they've said it?"
+[04:18:04] <Gladiolus> I have never cared abour privacy before.
+[04:18:28] <Gladiolus> It's the first time they were ever this direct and bold, it looks like they just copy-pasted the Onedrive policy into the universal policy.
+[04:18:34] <Gigabit> damnit.. forgot my private key passphrase//
+[04:18:35] <Gladiolus> I'm the absolute lack of thought here lol.
+[04:18:42] *** Joins: Asoka (Asoka@Pony-91io76.net-htp.de)
+[04:18:57] <Gladiolus> I can understand that- if I choose to store data on onedrive, of course Microsoft would see it. 
+[04:19:05] <Gladiolus> I know that, I don't care, it's cool.
+[04:19:12] <Gladiolus> But /all/ the data anywhere, local or not, lol.
+[04:20:21] <Colgate> wolfyshy: I read w7's EULA this morning, and this stuff was never mentioned
+[04:20:33] <wolfyshy> huh.
+[04:20:35] <wolfyshy> interesting
+[04:20:40] <Gigabit> fuck fuck fuckity
+[04:20:53] <Colgate> the only thing they collected was hardware data and IP info for activation purposes
+[04:21:01] <Colgate> according to the EULA of w7
+[04:21:04] <Gladiolus> It was pointed out to me by another user that this is how the Onedrive EULA states it so, again, MSFT just copy pasted without thought lol.
+[04:23:55] <Gigabit> So I fucked up big time
+[04:24:37] <Gigabit> I forgot my passphrase. Could I take out my Pis SD card, and read the contents of the card, edit the files for the keypairs and delete requiring keypairs?
+[04:24:50] <Gigabit> because as it stands I cannot SSH into my pi
+[04:26:23] <Googie> Yeah, that'll work fine.
+[04:26:56] <Gladiolus> I sent a bunch of tweets at microsoft, we'll see what they say.
+[04:27:14] <Gigabit> good cause I need to generate a new keypair now..
+[04:30:08] *** Gladiolus is now known as Valiant
+[04:31:16] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[04:33:17] <Colgate> Valiant: you actually think they respond? :P
+[04:33:39] <Gigabit> gah.. my helper left :s
+[04:33:59] <Valiant> IF they don't to me, they will to someone.
+[04:34:09] <Valiant> 'cause lol the first CIO that sees that is gonna shit.
+[04:36:20] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[04:37:15] *** Joins: Darkfair (IceChat9@Pony-i760bk.stlsmo.sbcglobal.net)
+[04:37:40] *** Darkfair is now known as Pony_66732
+[04:41:20] <Gigabit> okay so I made the key
+[04:41:42] <Gigabit> now what I am finding says to do cat id_rsa.pub >> authorized_keys
+[04:41:51] <Gigabit> I did that, and it returned a new line
+[04:42:40] <init3> THat's good
+[04:43:10] <init3> Assuming you were in the /home/user/.ssh directory when you ran that. 
+[04:43:15] <Gigabit> derp I ran it in the backup location lol
+[04:43:21] <Gigabit> so the file is in ~/
+[04:43:30] <init3> Yep.
+[04:44:11] <Gigabit> so on my pi, I just need that file correct?
+[04:44:23] <Gigabit> or also the id_rsa.pub too in the folder?
+[04:44:41] *** Quits: mkr (mkr@Pony-iinahj.radioyay.net) (Ping timeout: 121 seconds)
+[04:44:55] *** Joins: mkr (mkr@Pony-iinahj.radioyay.net)
+[04:46:20] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[04:46:49] <init3> Just the line in that file on a newline I think
+[04:50:16] <Gigabit> ugh.. permission denied..
+[04:50:23] <Gigabit> Wait.. I forgot to check permissions on the file
+[04:51:37] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[04:56:18] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[05:00:30] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[05:06:33] * RainbowHacks returns
+[05:06:45] * RainbowHacks pokes init3
+[05:06:48] <RainbowHacks> In the face.
+[05:06:51] <RainbowHacks> With a stick.
+[05:07:05] <init3> Again?
+[05:07:17] <init3> I need to get one of those fencing masks. 
+[05:07:40] <RainbowHacks> Yes again
+[05:07:46] <RainbowHacks> How'd the thing go?
+[05:07:55] * RainbowHacks is hoping SOMEONE is happy today
+[05:07:59] <init3> Eh. Not sure. 
+[05:08:13] <RainbowHacks> Well, I hope it went well and you get the jerb
+[05:08:43] <init3> Yeah, I dunno but whatevs. Had a decent day anyhow. 
+[05:08:46] * RainbowHacks found out today that her proposition to make all the things better was trashed in the stakeholder's meeting, and that her vacation to canada was completely thrown out.
+[05:09:00] <RainbowHacks> So, I got doublefucked today.
+[05:09:09] <RainbowHacks> Didn't even have the decency to take me to dinner or use lube
+[05:09:37] <init3> :(
+[05:09:56] <init3> Gigabit is about to learn how to single a box
+[05:10:28] <init3> But that was for the con and friends you were talking about yesterday eh?
+[05:12:12] <Valiant> stakeholders meeting?
+[05:12:25] <Valiant> RainbowHacks is some sort of illuminati with a real life and personal success?
+[05:13:03] <RainbowHacks> heh
+[05:13:07] <RainbowHacks> No, no
+[05:13:37] <RainbowHacks> I'm just a hacker with a day job, who submitted an idea to make our product better, whole company almost qwas behind it, got shot down when the stakeholders went over it
+[05:13:47] <DJ-C0L7[CSS]> back
+[05:13:54] <Valiant> BUT BUT BUT
+[05:13:57] <Valiant> OUR BUTTOM LINE
+[05:14:05] <Valiant> MAXIMIZING SHAREHOLDER PROFIT!!!11
+[05:14:25] <DJ-C0L7[CSS]> resealed the timing case on my cherokee... and i think i bled and busted my knuckles more resealing the timing case than i did replacing the friggin chain the first time @_@
+[05:14:56] <Valiant> car nerds are the original computer nerds, just so happens that you need more physical fitness to do 
+[05:15:02] <RainbowHacks> Valiant, stakeholder, not shareholder
+[05:15:04] <RainbowHacks> private company
+[05:15:13] <RainbowHacks> tl;dr the CEO, and two vice presidents.
+[05:15:26] <Valiant> I'm sure the thought-process was still the same.
+[05:15:33] <RainbowHacks> and this would have actually resulted in us stealing a huge part of the market from our primary competitor
+[05:15:34] <Valiant> Simply adjust to MAXIMIZING MY OWN PROFIT, I WANT A NEW YACHT.
+[05:15:35] <RainbowHacks> :/
+[05:15:45] <Valiant> Hubris?
+[05:15:49] <RainbowHacks> Actually, no. It wasn't monetary based, it was just "naw."
+[05:15:52] <Valiant> Wasn't my idea, I'm a genius, therefore it was bad.
+[05:15:59] <RainbowHacks> um, kkinda!
+[05:16:04] <Dusk> RainbowHacks: I've seen that
+[05:16:06] <Dusk> it's great
+[05:16:06] <RainbowHacks> That honestly seems to be the thought process
+[05:16:21] <Moonlightning> :|
+[05:16:22] <RainbowHacks> but the CEO was on my side so i have no idea why he flipped
+[05:16:24] <Moonlightning> holy fucking shit.
+[05:16:32] <Moonlightning> fuckkin' corporate culture
+[05:16:32] <Dusk> Moonlightning: I finally got arch to work
+[05:16:36] <Moonlightning> fuck this shit I'm out
+[05:16:38] <RainbowHacks> o.0
+[05:16:41] <Valiant> owo
+[05:16:50] <Moonlightning> <late>
+[05:16:54] <RainbowHacks> Moonlightning, welcome to how i felt today, heh
+[05:16:55] <Valiant> <early>
+[05:16:55] <Moonlightning> Gigabit: protip: just put paths in quotes
+[05:17:04] <Moonlightning> foo "/mnt/media/Google Drive"
+[05:17:13] <Gigabit> Tried
+[05:17:55] <RainbowHacks> on top of that clusterfuck, im going to miss out on bronycan as well as copious amounts of hanging out and doing stuff with my sort-of fuckbuddy.
+[05:18:02] <RainbowHacks> So, day is basically utterly ruined
+[05:18:07] <Valiant> aww
+[05:18:10] * Valiant hugs RainbowHacks 
+[05:18:16] * RainbowHacks hugs back
+[05:18:33] <RainbowHacks> it's been almost 2 years since I've gotten any. i am SO fucking pissed off.
+[05:19:34] <Valiant> owo
+[05:21:20] <JustAberrant> devils advocate, sometimes there's long term stuff in play that leads to those kinda "wtf" decisions from higher up
+[05:21:22] <RainbowHacks> .___.
+[05:21:23] <init3> I'm sorry to hear that RainbowHacks
+[05:21:31] <JustAberrant> least I've seen that in my industry a lot
+[05:22:19] <Valiant> "Let's do thing." "No." ~thing has been in secret development for 7 years~
+[05:22:26] <Gigabit> This is what happens when you foget shit
+[05:22:29] <Gigabit> https://www.dropbox.com/s/6z5pwhesb60x0r3/IMG_20150730_231252.jpg?dl=0
+[05:22:30] <Moonlightning> Valiant: did you not notice me going on about that earlier?
+[05:22:33] <Valiant> Nope.
+[05:23:10] <Phase> Gigabit, dat screen on your bed
+[05:23:11] <RainbowHacks> Valiant, Thing actually isn't in secret development. 
+[05:23:23] <Valiant> I know I was just sayin'
+[05:23:30] <RainbowHacks> Company is oddly small for one with as much of the market as we have, honetly. meaning i know almost everyone in it
+[05:23:42] <RainbowHacks> (i talk with the CEO sometimes about audio engineering. he's not a bad guy)
+[05:24:27] * JustAberrant hude bureaucratic company that feels like one process wise, but local culture is very small-business-y
+[05:24:33] <JustAberrant> * huge
+[05:25:08] * JustAberrant definitely seen good ideas shot down and then figured out why like 3 years later when some internal R&D thing comes out
+[05:25:31] <RainbowHacks> On the bright side
+[05:25:38] <JustAberrant> plus there's always the possibility of shady backroom deals
+[05:25:40] <RainbowHacks> I made a new friend today who is basically me except in europe
+[05:25:48] <RainbowHacks> and I get paid in 4 hours
+[05:25:51] <Moonlightning> That's cool!
+[05:25:56] <Moonlightning> Bring them here? o3o
+[05:25:57] <init3> Hell yeah
+[05:26:15] <RainbowHacks> Moonlightning, was actually kind of creepy when we realized how similar we were, both in personality and likes as well as physically o.o
+[05:26:30] <RainbowHacks> and she's actually why I showed up on this network yesterday
+[05:26:35] <Colgate> it is your long lost clone that got separated from you in the test tude
+[05:26:37] <Colgate> tube*
+[05:27:03] <RainbowHacks> (i say made a new friend today because we sorta kinda talked before and then today we realized we're basically obligatory best friends thanks to the universe's RNG forgetting to poke at the entropy pool)
+[05:27:29] <Valiant> I get paid in when I find a new job :I
+[05:27:51] <Valiant> I gotta get off my ass and start applying again, so many places ignoring me set me in a rut.
+[05:28:03] <init3> I know that feeling so bad
+[05:28:04] * RainbowHacks makes a decent amount of money, thankfully. But it doesn't make up for the fact that almost a thousand bucks went into this vacation and now its all gone
+[05:28:23] <RainbowHacks> Valiant, where in the world are you, and are you vaguely decent with unix?
+[05:28:27] <Gigabit> i know right? XD
+[05:28:37] <Gigabit> fucking 32" tv carried 200 feet x.x
+[05:29:36] <Gigabit> over bad floors and dogs and stuff
+[05:29:55] * RainbowHacks boops various noses
+[05:30:04] * Moonlightning nosewiggles, counterboops RainbowHacks.
+[05:30:08] <Valiant> Edmonton, lol no.
+[05:30:10] * RainbowHacks squeaks!
+[05:30:19] <RainbowHacks> Valiant, where in the hell is that? o.o
+[05:30:29] <Valiant> I use Windows and OSX, and while I'm quite proficient with them- I am a user, not an administrator.
+[05:30:33] <Valiant> Alberta, Canada.
+[05:30:35] <RainbowHacks> ah
+[05:30:51] <RainbowHacks> yeah we're not importing canadians right now. I know, I tried to import my friend :c
+[05:31:00] <Valiant> I do enjoy messing with computers but I could never do it as a career, I actually went to tech school.
+[05:31:07] * RainbowHacks never went to school
+[05:31:12] <RainbowHacks> i just like tinkering!
+[05:31:17] <Valiant> it was the worst year of my life and the only time I ever had suicidal thoughts. I dropped out and got better tho.
+[05:31:23] <RainbowHacks> D:
+[05:31:26] <RainbowHacks> Oh those suck
+[05:31:32] <Moonlightning> Damn. >.<
+[05:31:35] <RainbowHacks> I had some of those every day for the past 3 and a half weeks :<
+[05:31:40] * RainbowHacks hugs Valiant 
+[05:31:44] * Moonlightning hugs Valiant and RainbowHacks!
+[05:31:48] * RainbowHacks is hugged!
+[05:31:52] <Valiant> I didn't think Uni would take me, and I was faced with the realization that what I thought would be my career wouldn't work so I got the sads.
+[05:31:56] <Valiant> Uni did take me though! :)
+[05:31:57] <Colgate> RainbowHacks: what kind of experience :O
+[05:32:00] <RainbowHacks> Moonlightning, don't worry about me o.o 
+[05:32:01] * Valiant hugs Moonlightning and RainbowHacks.
+[05:32:05] <Valiant> It's okay though really, just history.
+[05:32:12] <RainbowHacks> I'm doing somewhat better, even after the sads from today
+[05:32:20] * Moonlightning nods.
+[05:32:32] <RainbowHacks> cuz i managed to pick a 5 pin lock (albeit a shitty lock) my first try with two paperclips the other night
+[05:32:37] <RainbowHacks> and that makes me feel really good
+[05:32:48] <RainbowHacks> because like.....normal people can't do that
+[05:32:51] <RainbowHacks> x3
+[05:33:06] * RainbowHacks is somewhat useful a little bit, and that makes her enjoy living
+[05:33:12] <RainbowHacks> Colgate, PM?
+[05:33:31] <Gigabit> how can I echo the OS info in cli?
+[05:33:32] * JustAberrant picked the "lock" on the panel for my alarm system with two paperclips in (literally) about 10 seconds
+[05:33:39] <JustAberrant> pretty sure it's like a 2 pin lock or something
+[05:34:14] <JustAberrant> I literally just stuck the make shift rake in there, wiggled it a bit, and the thing opened
+[05:34:15] <RainbowHacks> JustAberrant, i practiced all day yesterday and finally managed to gwet down to 4.82 seconds c:
+[05:34:55] <JustAberrant> I wasn't even gonna bother too.. like.. I was just gonna drill it.. but then I was like.. "may as well try.."
+[05:35:56] <RainbowHacks> :3
+[05:39:05] <Moonlightning> Gigabit: what do you mean by /OS info/?
+[05:39:38] <Moonlightning> /etc/issue usually has a template with the current release version hardcoded in it
+[05:40:03] <Valiant> awww gigabits version doesn't report os info
+[05:40:07] <Gigabit> Valiant on phone. Pc offline
+[05:40:15] <Valiant> oh someone do me, see if it still reports 8.1 or says 10
+[05:40:17] <Gigabit> I am setting static info on pc
+[05:40:19] <Valiant> oh coo'
+[05:40:36] <Valiant> nope says windows 8, huh
+[05:40:43] * Googie is running "IRC CLIENT 1.0" :V
+[05:41:06] <Googie> At least as far as I can remember, that's what I have CTCP Version set to.
+[05:41:09] * Valiant boops Googie o3o
+[05:41:48] * Googie also used to have one that implied that changelings don't need a client to interface with IRC :P Magic!
+[05:42:22] <Gigabit> Damn.. Now my pc is offline
+[05:42:26] <Valiant> H I V E MIND
+[05:49:16] <init3> I'm trying to help Gigabit but I think I keep fucking him over. 
+[05:50:03] <Gigabit> info as in OS version and what have you sorry lagged out
+[05:50:34] *** Quits: Pony_66732 (IceChat9@Pony-i760bk.stlsmo.sbcglobal.net) (Ping timeout: 121 seconds)
+[05:51:03] <RainbowHacks> Gigabit, whatcha need? o.o
+[05:52:14] <Gigabit> wanted to echo the os info on my pi, via cli as I am sshed in
+[05:52:55] <Moonlightning> Gigabit: try /etc/issue
+[05:53:35] <Moonlightning> Or /etc/lsb-release or /etc/os-release
+[05:53:52] <Moonlightning> One of those should have techie-readable version info
+[05:54:01] <Moonlightning> OS version *
+[05:55:24] <JustAberrant> uname -a  ?
+[05:55:39] <JustAberrant> will give you kernal info
+[05:55:52] <RainbowHacks> uname -a iusually only tells you the kernel you're running. if you're ot using a distro-tagged kernel, its useless for that o.o
+[05:56:29] <JustAberrant> other than that, pretty distro specific ;p
+[05:56:30] <Gigabit> will in a minute, setting static Ip
+[05:57:14] <Sukasa> 'ello
+[06:02:55] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[06:03:04] <Gigabit> welp, now my pi is not able to get online or something idk cause its not on the network  according to my phone lol
+[06:03:13] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[06:03:25] <Gigabit> but the link light shows it is connected
+[06:03:58] <init3> I hate to say it but I hope you didn't put that TV away. 
+[06:04:35] <init3> Well, firstly did you reset the pi?
+[06:04:49] <init3> Sometimes service networking restart just fucks everything
+[06:04:51] <Gigabit> can I do it with the memory card instead?
+[06:05:03] <init3> I just mean reboot it is all
+[06:05:11] <init3> But probably yeah
+[06:05:12] <Gigabit> ooh so unplug it?
+[06:05:18] <init3> yeah
+[06:05:35] <Moonlightning> Wat
+[06:05:50] <Moonlightning> is that /really/ the canonical way to shut down a Raspberry Pi? :|
+[06:06:03] <init3> If you have no other option I think .
+[06:06:09] <init3> I don't believe there is a power button
+[06:06:13] <init3> apparently on newer debian systems you aren't supposed to do service networking restart but service networking stop;service networking start. 
+[06:06:22] <init3> Don't make fun of us RainbowHacks. 
+[06:06:34] <init3> Debian is still gud. 
+[06:06:41] <Moonlightning> Isn't that usually what `service $name restart` NORMALLY does, if there isn't a mechanism to make it exec itself or something?
+[06:06:42] <Gigabit> HOLY FUCK ME RUNNIN pi is online
+[06:06:58] <init3> You would think
+[06:07:01] <Gigabit> and I am in
+[06:07:03] * Moonlightning grabs onto Gigabit while he's running, and fucks him.
+[06:07:14] <init3> And I see big mac
+[06:07:16] *** Quits: Sol (Sol@Pony-nc8b4c.res.rr.com) (Quit: Leaving)
+[06:07:37] <RainbowHacks> init3, lolno
+[06:07:48] <RainbowHacks> I mean if you're going to use Linux at all it should be Slack
+[06:08:00] <RainbowHacks> and if you really have a boner for debian, Devuan is the way to go
+[06:08:01] <init3> On my debian server if I do service networking restart and not actually start and stop it will fuck it all. 
+[06:08:35] * RainbowHacks runs service netif restart, FreeBSD's network stack restarts and gets back to kicking ass again
+[06:08:39] <init3> I don't really in particular, but it's fun to poke the BSD people. 
+[06:08:45] <Gigabit> You see bitman init3 ?
+[06:08:49] <Gigabit> bigmac even
+[06:08:51] * RainbowHacks pokes init3 
+[06:08:52] <init3> Yep
+[06:08:56] <Gigabit> YUUUUS
+[06:08:58] <Gigabit> It works!
+[06:09:05] <init3> Muhahah
+[06:09:12] <init3> We did eet
+[06:09:17] <Gigabit> Makes me happier then a tornader in a trailer park I tell ya what
+[06:09:55] <init3> Hahaha
+[06:10:14] <init3> I'mma go smoke some cancer to celebrate. 
+[06:10:25] <Valiant> the feeling of making a computer work owns
+[06:10:54] <init3> THis is a 2 for 1 too. Gigabit got his Ubuntu install and his Pi working tonight. 
+[06:10:57] <Valiant> yus
+[06:11:05] * Valiant eats Gigabit's Pi.
+[06:11:35] <Gigabit> I can't believe how fucked up everything go
+[06:11:36] <Gigabit> got8
+[06:11:43] <Gigabit> and now to clean my room. be back in 30
+[06:11:47] *** Gigabit is now known as Gigaway
+[06:18:41] * init3 finally looks up Devuan "Debian without systemd".
+[06:19:10] <init3> For someone with an IRC handle names after init I don't  get what you people hate about systemd
+[06:19:26] <init3> I think you are an init racist RainbowHacks.
+[06:20:10] <RainbowHacks> Despite only having owned a computer for 4 years  and being 22, I'm what one would consider an old-school unix hacker as far as philosophy goes
+[06:20:14] * Valiant wants the systemd
+[06:20:22] <init3> Me too
+[06:20:25] <Valiant> lel
+[06:20:26] <RainbowHacks> each program should do one thing, and do it very well.
+[06:20:41] <Valiant> I'm 23 and have a strange obession with late 90s and 80s computing.
+[06:20:48] <Valiant> Like, 1995-2000 and 1980-1990
+[06:21:11] <RainbowHacks> also im kind of anal about people confusing hacking and cracking >.>
+[06:21:14] <init3> I think that outlook is one that just fails to embrace computing evolution. 
+[06:21:20] <RainbowHacks> hacking is a mindset .w.
+[06:21:23] <Valiant> 1990-1995 is a weird spot because it's, like, bad at both. Computers that are slow towards they end, but not compatabile with stuff towards the start.
+[06:21:30] <init3> We all know that in here. 
+[06:22:15] <init3> Systemd is a little bit of a learning curve but there is a reason practically every distro is swithing to it. 
+[06:22:35] <JustAberrant> I wouldn't mind systemd if it was contained
+[06:22:47] <init3> I can't wait to ditch xorg for wayland when that starts being mainstream. 
+[06:23:01] <RainbowHacks> systemd is malware
+[06:23:06] <JustAberrant> and honestly, I accept that systemd is part of the whole "linux going mainstream" thing.. which is probably good for everyone and all.. but not why I got into linux 
+[06:23:06] <init3> But in fairness xorg is kind of a POS
+[06:23:18] <init3> and sysvinit is good
+[06:23:23] <RainbowHacks> init3, agreed. Xorg is just... no. 90's tech.
+[06:23:42] <JustAberrant> for linux to go mainstream it has to basically turn it's back on most of the stuff that made it cool to begin with
+[06:23:43] <RainbowHacks> also sysvinit is kinda shit too. it needed a replacement but both upstar and systemd are terrible
+[06:24:00] <init3> fucking upstart
+[06:24:06] <JustAberrant> because the masses don't like a billion choices .. they want a cohesive working system
+[06:24:24] <JustAberrant> which means you need stuff like systemd and gnome to basically try to do as much as possible so it all works together
+[06:24:47] <init3> I don''t know if that's really the reason systemd does so much. 
+[06:24:48] <JustAberrant> but it sucks for people who want to mix and match bits or tweak with stuff
+[06:25:13] <JustAberrant> especially because everything is becoming tightly coupled
+[06:25:20] * Valiant hacks JustAberrant's gibson/
+[06:25:35] <JustAberrant> it's pretty hard to run _just_ one thing from gnome, kde, etc without running a billion services in the background and having a shit tonne of dependencies
+[06:25:46] <init3> True
+[06:25:55] <RainbowHacks> JustAberrant, FreeBSD is one single cohesive operating system. if that's what you want, don't use Linux o.o
+[06:25:59] <JustAberrant> because they are turning from a collection of useful programs to a big blob o` stuff
+[06:26:03] <JustAberrant> designed to be used as is
+[06:26:17] <init3> But libraries are kinda how shit gets done nowadays. 
+[06:26:18] <RainbowHacks> Linux has always been a clusterfuck of pieces from different puzzles glued together with krazy glue, thats's its STRENGTH
+[06:26:31] <JustAberrant> RainbowHacks: I explicitly said it's what I didn't want ;p
+[06:26:35] * RainbowHacks nodnods emphatically
+[06:26:36] <JustAberrant> just that this is what the masses want
+[06:26:41] <RainbowHacks> I know :P
+[06:26:57] <JustAberrant> and as said, it has to lose that strength to gain mass appeal.. which I guess is what everyone wants :(
+[06:27:19] <init3> I think it is still distro dependant. 
+[06:27:20] <RainbowHacks> nu
+[06:27:23] <RainbowHacks> >:I
+[06:27:36] <JustAberrant> to some extent, but distros are at the mercy of upstream software
+[06:27:41] <init3> And just systemd isn't going to make that go away, even if there is a general push in that direction.
+[06:27:47] <JustAberrant> sure gentoo (which is what I use) makes it easy to mix and match
+[06:27:53] <JustAberrant> but gnome for instance makes it hard
+[06:28:12] <RainbowHacks> Gentoo, as much as I htate to say it, is one of the last sane distros
+[06:28:32] <JustAberrant> as more stuff gains dependencies on systemd, it's going to become more and more of a pain to keep using openrc
+[06:28:44] <init3> Well I don't think you can lop full DEs into the same bucket as distro philosophies. 
+[06:28:53] <JustAberrant> and unfortunately another part of the whole "mass appeal" movement is standardization
+[06:29:18] <JustAberrant> the days where it was reasonable to run "non-standard" stuff.. or that there was even "standard' stuff are over
+[06:29:25] <RainbowHacks> JustAberrant, the worst part is that people always forget there are other unices besides Linux
+[06:29:27] <JustAberrant> now it's going to be like.. "those weird guys who refuse to use systemd"
+[06:29:29] <init3> We need /some/ standardization. 
+[06:29:32] <RainbowHacks> if something requires SystemD it cant be ported anymore
+[06:29:40] <JustAberrant> indeed
+[06:29:49] <init3> Fair enough. 
+[06:29:50] <JustAberrant> systemd is gonna make bsd even worse on desktop ;p
+[06:30:03] <RainbowHacks> which means the BSDs, Solaris, etc lose out on a LOT
+[06:30:13] <JustAberrant> init3: we had _some_ .. but now we're getting into windows and mac levels ;p
+[06:30:27] <init3> Nowhere near
+[06:30:39] <init3> But I can see your arguments. 
+[06:30:43] <JustAberrant> and the _real_ problem is that userspace software is now dictating system level choices
+[06:30:51] <JustAberrant> you have to use systemd because.. GIMP depends on it
+[06:30:59] <init3> GIMP does?
+[06:31:03] <JustAberrant> indirectly
+[06:31:08] <JustAberrant> in the way it's packaged on some distros
+[06:31:08] <init3> You gotta be shitting me
+[06:31:14] <JustAberrant> a fucking graphics editing tool is mandating your choice of init system
+[06:31:15] <init3> ffs
+[06:31:24] <JustAberrant> and as systemd spiders more and more, we're gonna see more of that
+[06:31:30] <init3> Ok, that should not be at all.
+[06:31:32] <RainbowHacks> \systemd is malware
+[06:31:40] <JustAberrant> indeed
+[06:31:45] <RainbowHacks> it's replicating insanely fast
+[06:31:45] <RainbowHacks> :c
+[06:31:48] <init3> But you can't blame systemd itself. That's a problem with upstream
+[06:32:12] <JustAberrant> systemd also killed off a lot of debian stuff.. I'm no fan of debian.. but seeing their projects die because "can't work with systemd" is just sad
+[06:32:33] <JustAberrant> init3: sure, but systemd isn't helping by making itself one gigantic blob
+[06:32:42] <JustAberrant> and not really providing easy ways to just use pieces of it
+[06:32:47] <init3> Fair enough. 
+[06:33:32] <RainbowHacks> if it was JUST an init system
+[06:33:34] <JustAberrant> I just don't like seeing stuff become hard to replace
+[06:33:37] <RainbowHacks> I'd actually approve somewhat
+[06:33:45] <JustAberrant> it should be trivial to swap out any component
+[06:33:45] <RainbowHacks> but its taken over everything
+[06:33:52] <JustAberrant> indeed
+[06:34:10] <Gigaway> init3, ca you go to that address again for me?
+[06:34:16] <Gigaway> I cannot reach it locally
+[06:34:17] <JustAberrant> it's jamming it's tendrils into everything
+[06:34:19] <init3> So it sounds like it is less about the software and more about the philosophy 
+[06:34:29] <init3> sec
+[06:34:30] <JustAberrant> init3: well yes, that's well established ;p
+[06:34:39] <JustAberrant> init3: and as said, I actually think systemd has some good ideas
+[06:34:54] <init3> I seem to be able to reach it Gigaway.
+[06:34:55] <JustAberrant> init3: if it was just an init system and it was easy to use it or an alternative.. I'd probably use it
+[06:35:07] <Gigaway> okay, so it is just a loopback thing or something on my end
+[06:35:47] <init3> I seriously didn't know why people hated it so much though. So I get it now. 
+[06:35:48] <JustAberrant> init3: instead of something that's aiming to be a core integral part of linux in general regardless of distro that you basically have to use in order to have a modern system
+[06:36:11] <init3> And I get the Windows comparison in that case
+[06:36:26] <JustAberrant> there are also some technical issues and project issues
+[06:36:34] <JustAberrant> the dev team in general is very narrow minded imo
+[06:36:46] <JustAberrant> if it's not something they care about, they brush off issues
+[06:37:02] <JustAberrant> which isn't something you want in something that many won't have a choice in using
+[06:37:02] <RainbowHacks> JustAberrant is nailing the nail on the nail
+[06:37:14] <JustAberrant> logging is the classic example
+[06:37:22] <JustAberrant> to put it midly, systemd logging is a clusterfuck imo
+[06:37:23] <Gigaway> sudo shutdown -r 0
+[06:37:24] <RainbowHacks> "BINARY LOGS R BEST IDEA HURR"
+[06:37:24] <Gigaway> ...
+[06:37:36] <JustAberrant> and there is a pretty good post somewhere that illustrates their dev philosophy
+[06:37:38] <RainbowHacks> also, holy shit it's cold in here
+[06:37:46] * RainbowHacks goes to turn off the airconditioning
+[06:37:49] <JustAberrant> bug> logs can get corrupt resulting in loss of data
+[06:37:53] <JustAberrant> them> meh, just reboot
+[06:38:04] <JustAberrant> (paraphrased) ;p
+[06:38:10] <RainbowHacks> News flash: It's a very bad idea to set your AC to 60 degrees, and then wear a t-shirt and short shorts
+[06:38:38] <RainbowHacks> (granted these shorts DO make my butt look fantastic >.>  )
+[06:38:49] <Gigaway> god I love ssds
+[06:39:18] <JustAberrant> init3: I'd also be a bit more accepting of systemd as a big blog if they had well defined/documented interfaces
+[06:39:39] <init3> systemd documentation is a clusterfuck
+[06:39:54] <JustAberrant> init3: but they kinda treat the whole thing as "their" blob.. the idea that someone would interface with internal components or have different implementations of various pieces is just not accepted
+[06:40:03] <init3> I'm sure it will get better in time but you are rigt to say there is no excuse
+[06:40:21] <init3> Yeah
+[06:40:35] <JustAberrant> _aaanndd_ finally on a technical level... unit files make sense but they arn't directly intuitive
+[06:40:44] <JustAberrant> like.. you have to _know_ exactly what goes in them
+[06:40:45] <init3> True
+[06:40:53] <JustAberrant> whereas shell scripts are very straight forward
+[06:41:00] <init3> unit files are not nearly as handy
+[06:41:49] <JustAberrant> also, found it: https://bugs.freedesktop.org/show_bug.cgi?id=64116  :>
+[06:41:52] <PinkiePieBot> [ Bug 64116 – How does one fix journal corruptions? ]
+[06:42:15] <JustAberrant> "The only way to deal with journal corruptions, currently, is to ignore them: when a corruption is detected, journald will rename the file to <something>.journal~, and journalctl will try to do its best reading it. Actually fixing journal corruptions is a hard job, and it seems unlikely that it will be implemented in the near future."
+[06:42:37] <JustAberrant> I wouldn't mind the response if they then basically dismissed it as not a bug
+[06:43:11] <Moonlightning> Gigaway: that's `now`
+[06:43:11] <Gigaway> any ideas anyone?
+[06:43:12] <Gigaway> http://pastebin.com/Cb7MdF6b
+[06:43:13] <PinkiePieBot> [ steam issue - Pastebin.com ]
+[06:43:13] <Moonlightning> sudo shutdown -r now
+[06:43:22] *** Gigaway is now known as Gigabit
+[06:43:41] <JustAberrant> although months later after there was a bit of a blowout over the thing Lennart came on and put a more diplomatic and reasonable sounding explanation
+[06:43:54] <JustAberrant> but they conversations that went on before that really showed the devs attitude 
+[06:45:33] <JustAberrant> also I should bed
+[06:46:22] * JustAberrant will be the last holdout :>
+[06:46:26] <JustAberrant> well.. probably not honestly
+[06:46:35] <JustAberrant> I'm not overly (or at all really) involved in open source any more
+[06:46:47] <JustAberrant> I'm basically a user at this point 
+[06:47:07] <JustAberrant> right now I'm holding on to my gentoo/openrc setup with openbox+xfce_other bits DE
+[06:47:37] <JustAberrant> but when it inevitably gets to be too much of a pain, and gentoo switches to systemd, I'll probably follow :(
+[06:48:06] <JustAberrant> I'll never use grub though!
+[06:48:24] <Gigabit> cool so I found a wireless adapter for my PI I could use
+[06:49:07] * JustAberrant was a long time lilo hold out
+[06:49:14] <JustAberrant> eventually I learned to accept grub into my life
+[06:49:17] <JustAberrant> then it went to shit with grub2
+[06:49:22] <JustAberrant> and then I discovered EXTLINUX :>
+[06:49:40] <JustAberrant> grub2 is, imo, incomprehensible
+[06:50:18] <JustAberrant> hint: when you're no longer configuring something, but configuring the set of scripts and binaries that generates the _actual_ configuration, it's time to take 3 weeks off, collect yourself, and re-think things
+[06:50:43] <JustAberrant> alright, really bed.. nite
+[06:51:11] * JustAberrant tosses a handful of plastic spiders at RainbowHacks and init3 on the way out
+[06:51:43] <RainbowHacks> o.o
+[06:52:39] <init3> Haha night
+[06:55:43] <Gigabit> So.. I have a question.. is there a way to control the volume on my pc with a tv remote?
+[06:59:32] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[06:59:37] <Webster> Yep.
+[07:03:26] <Webster> IR receiver and software to use it.
+[07:08:19] <Gigabit> Hmm.. I need to find one
+[07:22:41] <init3> Or, if you can find one somewhere there are actual remote-like remote controls for computers. I have a RF one. 
+[07:23:12] <init3> An ATI remote Wonder. Windows hates it but Linux runs with it like nothing. 
+[07:23:21] <init3> Super old but who cares?
+[07:24:55] <Webster> Yeah, better if you're not trying to reuse an existing remote you use for something else.
+[07:25:50] <Gigabit> this is going to be fun, need to move my steam folder from home to my hdd
+[07:35:06] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[07:55:51] <Gigabit> Nasty some bitch ewww!
+[07:56:04] <Gigabit> Ear wig fell off the ceiling info my keyboard..
+[07:56:13] <Gigabit> I won't touch if now..
+[07:56:46] <Gigabit> I accidentally pushed on it..fuck me.. Someone halp
+[07:56:54] <init3> Haha
+[07:57:01] * Gigabit whines
+[07:57:11] * init3 laughs harder
+[07:57:20] <Gigabit> Ain't funny. I hate bugs :(
+[07:57:35] <init3> Me too. 
+[07:57:46] <init3> Well, I do love spiders
+[07:57:59] <init3> They are baws. Mostly because I hate insects. 
+[07:58:49] * Gigabit took the can of air spray upside down and coated her keyboard..
+[07:58:59] <Gigabit> Ugh.. Won't touch this fill its gone
+[08:01:45] <Gigabit> Ugh.. I just broke my a key because if popped out and I smashed the big bug missed..
+[08:02:30] <init3> I know I'm an asshole for finding that funny. 
+[08:02:32] <init3> But I do
+[08:02:55] <Gigabit> I will burn this keyboard before using if again
+[08:03:48] <init3> Just use some damn lysol or some shit
+[08:04:01] <init3> Or Alcohol 
+[08:04:26] <Gigabit> I am going to in plug it and pour rubbing alcohol in it
+[08:05:48] <init3> Don't pour
+[08:05:59] <init3> Put it on a damn rag lol
+[08:06:05] <Gigabit> Brb getting lighter to make flamethrower
+[08:06:12] <init3> haha
+[08:06:15] *** Joins: Asoka_White (Asoka@Pony-jtaaau.net-htp.de)
+[08:06:17] <init3> Take a video then. 
+[08:07:18] *** RedHelper is now known as Creeps|AFK
+[08:08:33] *** Quits: Asoka (Asoka@Pony-91io76.net-htp.de) (Ping timeout: 121 seconds)
+[08:09:38] <Gigabit> I burnt something. I can smell ig
+[08:09:50] <Gigabit> Well time to puf my ps2 keyboard together
+[08:18:55] <init3> Because you killed your normal one or is that the one?
+[08:19:47] <init3> If a bug fell under my keys I'd just take care of it real quick with "The quick brown fox jumped over the lazy dog"
+[08:19:50] <init3> Problem solved
+[08:23:25] <Gigabit> I smashed my finger on it once.. That's how I found it :(
+[08:31:17] <Moonlightning> init3: you forgot the function row, the number row, and the tab, toggle, modifier, backspace, and return keys.
+[08:31:20] <init3> Earwigs don't hurt like you think they would though. 
+[08:31:29] <init3> True
+[08:31:29] <Moonlightning> Luna forbid you have a keyboard with more than that.
+[08:31:50] <Moonlightning> The arrow keys, the jumping block, the number pad, the sysreq trio
+[08:32:33] <Moonlightning> Really, you're better off turning the thing upsidedown and pressing it against your desk
+[08:33:03] <init3> Well the keyboard on my laptop really can't get anything under the keys with how they are set up. 
+[08:33:19] <init3> Except tiny tiny crumbs :|
+[08:44:33] <Gigabit> Well this other keyboard doesn't work..
+[08:47:09] <Gigabit> I out it together wrong I bef
+[09:04:44] <Gigabit> Got the fucker out
+[09:06:22] <init3> Just now?
+[09:06:31] <init3> Damn that thig was entrenched. 
+[09:07:37] <Gigabit> Ya
+[09:14:58] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[09:37:59] *** Quits: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net) (Quit: I am gone now)
+[10:00:49] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[10:05:53] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[10:16:57] <Gigabit> Odd.. When I remote to my desktop, it seems to act up after like 20 seconds and freezes the connection on my end
+[10:19:09] *** Joins: star_moon (starry@the.little.cloud.colt)
+[10:19:28] <star_moon> Does anyone here connect a simple irc bot in python here?
+[10:19:31] *** zz_CyberJacob is now known as CyberJacob
+[10:19:57] <star_moon> Just wanted how they figure how to connect to Canternet
+[10:20:06] <Valiant> Bit late star_moon, this channel gets pretty dead around now.
+[10:20:37] <star_moon> I just wanted to figure how they bypass the ping
+[10:21:03] <Valiant> Must automate it somehow, look into the source for Bucket maybe.
+[10:21:09] <Valiant> I wouldn't know, I don't program.
+[10:23:02] <Googie> They don't bypass the ping, they reply to it.
+[10:24:25] <star_moon> Valiant: Bucket is written in python?
+[10:24:37] <Valiant> maybe
+[10:24:43] <Valiant> i have no idea man lol
+[10:24:47] <Valiant> Googie appears to.
+[10:24:49] * Valiant vanishes
+[10:24:58] <Gigabit> I say look into the code for pinkipy bot
+[10:25:04] <Gigabit> It is Python based
+[10:25:39] <star_moon> Googie: s.send("PONG :pingis\r\n") doesn't work
+[10:25:50] <star_moon> Pinkipy uses sockets right?
+[10:26:07] <Gigabit> I think so. Can't tell ya because I am not a programmer
+[10:26:17] <Gigabit> But I have a not that is based off it
+[10:26:21] <Gigabit> Bot
+[10:27:21] <Gigabit> I should tell my bot to connect.. I keep forgetting to
+[10:42:54] <Gigabit> Fuck I feel like a bug is on me x.x
+[10:46:42] *** Joins: Phase (Phase4@Pony-ada193.internode.on.net)
+[10:49:37] *** Quits: Valiant (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[10:52:00] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[11:53:28] *** Quits: star_moon (starry@the.little.cloud.colt) (Connection closed)
+[11:53:31] *** FinnSLEEP is now known as Finnfinn
+[12:12:34] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[13:01:34] *** CyberJacob is now known as zz_CyberJacob
+[13:01:50] *** zz_CyberJacob is now known as CyberJacob
+[13:02:25] *** CyberJacob is now known as zz_CyberJacob
+[13:31:48] *** zz_CyberJacob is now known as CyberJacob
+[13:33:15] *** CyberJacob is now known as zz_CyberJacob
+[13:34:13] *** zz_CyberJacob is now known as CyberJacob
+[13:39:09] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[13:45:53] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[13:51:13] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[14:08:22] *** CyberJacob is now known as zz_CyberJacob
+[14:26:53] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:00:33] *** Quits: Fusl (Fusl@1.0.0.127.in-addr.arpa.li) (Ping timeout: 121 seconds)
+[15:05:00] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[15:05:30] *** Fusl is now known as Pony_78196
+[15:16:26] *** Joins: starry (Starry@Pony-ef4.u8m.190.180.IP)
+[15:26:20] *** Quits: Shutter (tips@Shutter.Shutter.Shutter) (cadance.canternet.org daring.canternet.org)
+[15:26:20] *** Quits: wolfyshy (woof@fluttering.shyly.through.the.forest) (cadance.canternet.org daring.canternet.org)
+[15:27:23] *** Joins: wolfyshy (woof@fluttering.shyly.through.the.forest)
+[15:27:23] *** Joins: Shutter (tips@Shutter.Shutter.Shutter)
+[16:08:10] <Moonlightning> Monochrome: you have to PONG with the exact text that the server PINGed you with.
+[16:09:39] <starry> Hm?
+[16:09:40] <wolfyshy> technically, only during registration on most ircds.
+[16:09:55] <starry> i have a code of the bot
+[16:10:10] <Moonlightning> Doesn't the RFC mandate ^4, though?
+[16:10:37] <Colgate> should just make your bot reply to all PINGs with the text you were PINGed with
+[16:10:44] <wolfyshy> http://tools.ietf.org/html/rfc1459#section-4.6.2
+[16:10:45] <PinkiePieBot> [ RFC 1459 - Internet Relay Chat Protocol ]
+[16:10:46] <wolfyshy> no.
+[16:10:48] <starry> http://pastebin.com/mrXM8KDY
+[16:10:49] <PinkiePieBot> [ [Python] import socket irc = socket.socket() host = "irc.ponychat.horse" port = 66 - Pastebin.com ]
+[16:10:54] <wolfyshy> the rfc does NOT specify this
+[16:11:01] <wolfyshy> and any daemon that requires that is violating the spec
+[16:11:02] <starry> feel free to edit
+[16:11:09] <wolfyshy> that said, it is used on registration as a form of captcha
+[16:11:14] <starry> and what are the changes
+[16:11:31] <wolfyshy> so people just generally do it all the time to make it simpler
+[16:11:32] <Colgate> wolfyshy: it isn't in violation of the spec
+[16:11:41] <Colgate> <Daemon>
+[16:11:43] <Moonlightning> > Any client which receives a PING message must respond to <server1> (server which sent the PING message out) as quickly as possible with an appropriate PONG message to indicate it is still there and alive.
+[16:11:51] <Colgate> in this case, the parameter is gibberish, but still valid
+[16:11:53] <starry> Try imagining that the code is from Canternet
+[16:12:07] <Moonlightning> If the syntax is really `PING <server>`, then you must PONG the /server/ that pinged you
+[16:12:13] <Moonlightning> i.e. `PONG <server>`, with the same server
+[16:12:14] <wolfyshy> Moonlightning: that is correct
+[16:12:38] <wolfyshy> Moonlightning: but the server sends PING nick
+[16:12:38] <starry> so PONG :irc.canternet.org?
+[16:12:45] <wolfyshy> Moonlightning: responding with PONG nick wouldn't make sense :)
+[16:12:59] <starry> or /pong :irc.canternet.org
+[16:13:09] <wolfyshy> starry: again, during registration, the syntax is different; nobody conforms to the rfc anyway so you might as well just send back what you received
+[16:13:29] <Colgate> ...
+[16:13:33] <Colgate> it is conforming to RFC
+[16:13:39] <Moonlightning> wolfyshy: I thought we just established the syntax was `PING <server>`.
+[16:14:03] <wolfyshy> PING tolsun.oulu.fi             ; server sending a PING message to another server to indicate it is still alive.
+[16:14:05] <wolfyshy> PING WiZ                        ; PING message being sent to nick WiZ
+[16:14:10] <Moonlightning> If you receive 'PING :Q0.[2)+/8uiA', the server is ':Q0.[2)+/8uiA', and you should send back 'PONG :Q0.[2)+/8uiA'
+[16:14:12] <Colgate> the server name is gibberish, but the client has no way of knowing what a valid server is
+[16:14:15] <wolfyshy> the syntax is PING :destination of ping
+[16:14:26] <wolfyshy> the syntax of PONG is PONG :server that sent you the ping
+[16:14:42] <wolfyshy> the CORRECT way to do this is to use the hostmask that sent you the PING
+[16:14:46] <Colgate> in Moonlightning's example "Q0.[2)+/8uiA" is te server name
+[16:14:58] <starry> so always that name?
+[16:15:07] <Moonlightning> starry: just send back whatever you get.
+[16:15:14] <Moonlightning> Replace the 'PING' with 'PONG' and send it back.
+[16:15:29] <Moonlightning> That's how pings work in other contexts, too. You send back what you get.
+[16:15:36] <wolfyshy> i.e., it would look like     :wolfe.freenode.net PING wolfyshy
+[16:15:36] <wolfyshy> and my reply would be    :wolfyshy!woof@fluttering.shyly.through.the.forest PONG :wolfe.freenode.net
+[16:15:46] <Moonlightning> wolfyshy: as a client, you never prefix your nickuserhost.
+[16:15:49] <Moonlightning> Never ever.
+[16:15:57] <Moonlightning> That's the server's job.
+[16:16:16] <wolfyshy> Moonlightning: that's the reply the server would see, is what I meant
+[16:16:18] <wolfyshy> Moonlightning: I realise that
+[16:16:20] <starry> What's the code example?
+[16:16:21] <Moonlightning> Insp doesn't prefix pings, either.
+[16:16:37] <starry> Hexchat has a raw thing
+[16:16:43] <Moonlightning> starry: depends on what your code looks like. It sounds an awful lot like you're trying ot get us to do the work for you. :|
+[16:16:54] <Moonlightning> …wait, you're scripting for hexchat? I thought you were writing your own client.
+[16:16:59] <starry> No
+[16:17:13] <Moonlightning> No, what? I asked two questions there.
+[16:17:52] <starry> I mean where does PONG go? Before NICK, after USER etc
+[16:18:59] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[16:19:10] <Moonlightning> Whenever you receive a PING. This can be at any time once the layer-seven connection is established.
+[16:19:23] <Moonlightning> i.e. once you're connected to the server.
+[16:19:56] <Moonlightning> I mean, obviously the server can't ping you on an IRC level if you're not connected.
+[16:20:04] <Moonlightning> But other than that, whenever you're PINGed, PONG.
+[16:20:12] <wolfyshy> Moonlightning: again, strict compliance will require you to send NICK, then USER, then any other commands - unless you're using IRCv3 CAP, in which case CAP LS must be the first command
+[16:20:27] <Moonlightning> wolfyshy: wait, really?
+[16:21:17] <wolfyshy> http://tools.ietf.org/html/rfc1459#section-4.1
+[16:21:19] <PinkiePieBot> [ RFC 1459 - Internet Relay Chat Protocol ]
+[16:21:38] <wolfyshy> you CAN send it in any order, but the recommended order is NICK then USER
+[16:22:37] <Moonlightning> Where's it say you have to register before ponging or doing anything else, though?
+[16:26:42] *** Quits: starry (Starry@Pony-ef4.u8m.190.180.IP) (Ping timeout: 121 seconds)
+[16:30:56] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[16:32:05] <AppleDash> Looks like starry forgot to send PONG
+[16:32:35] <Moonlightning> > To prevent/discourage fake KILLs from being generated to hide the identify of the KILLer, the comment also shows a 'kill-path' which is updated by each server it passes through, each prepending its name to the path.
+[16:33:11] <AppleDash> OK?
+[16:33:30] <Moonlightning> But…it doesn't specify a format for the comment :I
+[16:33:41] <AppleDash> OK
+[16:34:13] <Moonlightning> …wait, I guess that doesn't matter, as long as the servers are consistent with each other.
+[16:35:34] <wolfyshy> 09:34 -- woof.testnet: *** Notice -- Received KILL message for Test!testbot@localhost. From NickServ Path: woof.testnet!services.testnet!NickServ!NickServ (GHOST command used by wolfyshy)
+[16:35:53] <wolfyshy> anyone's guess why NickServ shows up twice
+[16:36:12] <wolfyshy> that's charybdis 3.5.0 fwiw; my insp testbox is down
+[16:49:15] *** Joins: ShadowPony (Dragony@Pony-br5.u0j.172.216.IP)
+[16:49:25] <ShadowPony> can some one help with with some IRC issues
+[16:49:29] <ShadowPony> what does this mean
+[16:49:30] <ShadowPony> http://puu.sh/jkaI9/dc6e146158.png
+[16:51:00] <Moonlightning> > Connection failed (unable to get local issuer certificate)
+[16:51:12] <ShadowPony> and what does that mean
+[16:53:30] <Moonlightning> Your client is refusing to establish the connection because…uhh…
+[16:53:44] <ShadowPony> _-_ is there a way to fix that?
+[16:54:03] <Moonlightning> “Unable to get local issuer certificate”? That sounds to me like you don't have the root certificate in the certificate chain the server gave you.
+[16:54:21] <Moonlightning> Which (assuming you're not being MitMed) probably means you just need to install a copy.
+[16:54:43] <MistVeil> I think that happens when you've set up "something"  in the server configuration
+[16:55:03] <ShadowPony> um....funny thing thats canternet 
+[16:55:21] <ShadowPony> http://puu.sh/jkb2i/2969f12d29.png
+[16:55:55] *** Quits: Fallfeathers (Fallfeather@Pony-8cihja.bigpond.net.au) (Connection closed)
+[16:56:01] <wolfyshy> what version of hexchat?  did you use the portable or non-portable installer?
+[16:56:05] <wolfyshy> what version of Windows?
+[16:56:33] <MistVeil> Try ticking "Accept invalid SSL certificates"
+[16:56:39] <Moonlightning> No, don't do that. ^
+[16:56:46] <MistVeil> Oh?
+[16:56:50] <ShadowPony> o.o
+[16:56:54] <ShadowPony> it worked
+[16:57:01] <MistVeil> Hmm...
+[16:57:02] <Moonlightning> I very much recommend not doing that. :|
+[16:57:10] <MistVeil> But it's probably a security risk if you do, right
+[16:57:25] <Moonlightning> I mean, yes, your client will then not validate certificates, which means you won't get that class of errors.
+[16:58:08] <MistVeil> Stupid question: is your PC date set to today's date?
+[16:58:10] <Moonlightning> But getting those errors is a GOOD thing. It means that if someone is trying to intercept your communications with Canternet (e.g. to impersonate you or steal your password or something), your client will refuse to play along with the attacker.
+[16:58:19] <MistVeil> I know certificates and different dates never blend well
+[16:58:46] <Colgate> MistVeil: it is probably because we use cacert as a CA, and that isn't trusted by many default OS installs
+[16:58:54] <wolfyshy> per hexchat's documentation, it's not possible to add custom certificates to hexchat
+[16:58:56] <Moonlightning> This is because certificates have /not valid before/ and /not valid after/ fields. If your clock is significantly off (on the order of months and years), it might say that the certificate isn't valid yet or has expired.
+[16:59:09] <Moonlightning> wolfyshy: does it use an OS-level rootcert store?
+[16:59:12] <wolfyshy> unless you set system-wide openssl vars like SSL_CERT_PATH which could break other software
+[16:59:20] <wolfyshy> Moonlightning: nope, it has its own, built-in, statically linked, openssl
+[16:59:20] <Moonlightning> wolfyshy: why would that break other things? :/
+[16:59:37] <wolfyshy> Moonlightning: any /other/ applications that use openssl wouldn't have their own stores anymore; it'd be overridden
+[16:59:40] <Moonlightning> wolfyshy: does openssl have a hardcoded cert store or something?
+[16:59:40] <MistVeil> Colgate: Oh, then you'll have to tick that option always in the case of Canternet
+[16:59:44] <Moonlightning> wolfyshy: meh.
+[17:00:03] <wolfyshy> Moonlightning: on windows it varies wildly depending on how it was built
+[17:00:04] <Moonlightning> MistVeil: /or/ you could just install the CACert root cert, and not be vulnerable to attackers :/
+[17:00:24] <wolfyshy> Moonlightning: even if I could check, I wouldn't know or have any guarantees that I built it the same way the HexChat devs did
+[17:00:26] <Colgate> Moonlightning: those attackers, cacert could then potentially attack you, /shrug
+[17:00:48] <wolfyshy> I *might* be able to use something like pstools or w/e the name is on windows to see what dirs it's trying to open
+[17:00:50] <wolfyshy> but effort
+[17:00:50] <Moonlightning> Colgate: wut.
+[17:00:51] <MistVeil> It depends on who you trust more, then?
+[17:00:59] <MistVeil> Canternet or CACert?
+[17:01:07] <Moonlightning> Uh, no.
+[17:01:28] <Colgate> Moonlightning: if you add cacert's root cert, then they could issue a cert for any domain and stuff would trust it
+[17:01:31] <Moonlightning> By checking /accept invalid certs/, you're trusting EVERYONE who says they're Canternet and presents a cert.
+[17:01:39] <Moonlightning> Regardless of whether the certificate even SAYS Canternet on it.
+[17:02:06] <Colgate> so by doing that, you are putting ultimate trust in cacert to issue correct certificates
+[17:02:07] <Moonlightning> Because a certificate not having a common name of /irc.canternet.org/ is a certificate validity error. And you told HexChat to /ignore/ those errors.
+[17:02:08] <wolfyshy> I can't believe hexchat has no way to set a ca certificate for each network
+[17:02:18] <wolfyshy> I should submit a PR
+[17:02:22] <wolfyshy> but again, effort
+[17:02:34] * Colgate thinks letsencrypt should come out sooner
+[17:02:37] <Moonlightning> ^
+[17:02:49] <MistVeil> ^ Seems more like a HexChat issue, who doesn't support the best option to solve the whole cert issue here
+[17:02:55] <wolfyshy> Colgate: then we have to hope hexchat gets a new enough openssl store that has letsencrypt's roots
+[17:02:56] <Moonlightning> Exactly, MistVeil.
+[17:03:07] <Colgate> wolfyshy: not worse than the current situation, /shrug
+[17:03:13] * MistVeil should probably start using SSL for IRC
+[17:03:35] <Colgate> when is that? october?
+[17:03:43] <wolfyshy> september
+[17:04:14] <Colgate> september 14th, alright
+[17:04:50] <Moonlightning> ShadowPony: you are ““done here””, but be warned that, with your configuration, anyone who has the power to intercept packets between you and Canternet (this mostly means your ISP, and any providers, governments, etc between you and the relevant Canternet server) can pretend to be Canternet, and your client will blindly believe them.
+[17:05:23] <wolfyshy> governments etc lol, that's the paranoid version; a much more likely attack is a "free wifi hotspot"
+[17:05:24] <Moonlightning> (Anyone who has physical access to the outside of your house could probably accomplish this, too, by splicing wiring or something.)
+[17:05:58] <Moonlightning> Yes, this is why people tell you to be wary of free Internet access.
+[17:05:58] <wolfyshy> anyone who is wire splicing is probably after more important stuff than ponies and wolfies talking about open source software and how great Pinkie's last party was :P
+[17:06:13] <MistVeil> If it helps, the latter issue can be solved with a shotgun...lol
+[17:06:22] <MistVeil> But you'd end up with a bigger issue
+[17:06:23] <wolfyshy> ... bahahaha
+[17:06:32] <Moonlightning> If you notice. I know /I/ don't spend all day looking outside for attackers.
+[17:06:42] <MistVeil> I do!
+[17:06:46] <Moonlightning> Really, if your configuration is secure (yours isn't!), you don't have to worry about that kind of thing.
+[17:06:50] <MistVeil> It's fun staring at random bypassers!
+[17:06:57] <wolfyshy> Moonlightning: well
+[17:07:13] <Moonlightning> I'd be fine with taking my laptop to a free hotspot. I'd notice if anyone tried to impersonate a server I talk to.
+[17:07:41] <Moonlightning> All my clients would issue warnings and refuse to play ball with them.
+[17:09:13] <wolfyshy> 16:47:57   canternet  -- | daring.canternet.org: *** You are connected using SSL cipher "RSA-AES-128-CBC-SHA1"
+[17:09:15] <wolfyshy> 18:45:01        test  -- | inspircd.local: *** You are connected using SSL cipher "AES128-GCM-SHA256"
+[17:09:23] <wolfyshy> it would be nice if canternet upgraded the cipher suites available
+[17:09:53] <wolfyshy> sha1 isn't great, AES128-CBC isn't that great
+[17:09:58] <wolfyshy> but it's good enough for now
+[17:10:18] <wolfyshy> sha1's days are quite numbered
+[17:10:22] <Moonlightning> -!- cadance.canternet.org: *** You are connected using SSL cipher "RSA-AES-256-CBC-SHA256" and your SSL fingerprint is ffc8eb897ddc8e5fa44cbf31ec41c350fd1cdb0dbe851267bcc6e58c1fd8c05c
+[17:10:47] <wolfyshy> Moonlightning: hrm, how did you manage to get that?  does inspircd have a thing for that?
+[17:11:02] <wolfyshy> I've not used inspircd very heavily in a number of years (1.1 era)
+[17:11:07] <Moonlightning> I dunno
+[17:11:22] <Moonlightning> I have my gnutls priorities set to SECURE256:+SECURE192:+SECURE128:-VERS-TLS-ALL:+VERS-TLS1.2:+VERS-TLS1.1:%LATEST_RECORD_VERSION
+[17:11:37] <Moonlightning> gotta prevent dem downgrade attacks, yo
+[17:11:37] <wolfyshy> I don't see any weechat settings for that
+[17:11:49] <Moonlightning> irc.server.*.ssl_priorities
+[17:12:35] <wolfyshy> oh cool, relay.network.ssl_priorities is a thing too
+[17:12:39] <wolfyshy> now I can secure my phone
+[17:12:41] <wolfyshy> thanks Moonlightning
+[17:12:54] <Moonlightning> Mhmm.
+[17:14:11] <Moonlightning> I think these options should all go s/ssl/tls/g
+[17:14:44] <wolfyshy> TLS 1.0 is just SSL 3.1 ;P
+[17:14:47] * Moonlightning changes the priority string for relay.network.ssl_priorities
+[17:15:39] <Moonlightning> So what's SSL 3.0? TLS 1.-1?
+[17:16:27] <wolfyshy> In The Beginning, SSL 1.0 was developed and tossed away by netscape and sun.  then SSL 2.0 was made, and they went public with it.  there were weaknesses, and it was 56-bit only, so they made SSL 3.0 with 128-bit
+[17:16:38] <wolfyshy> and better handshake/negotiation
+[17:16:41] <MistVeil> I just left the window on background for 5 mins
+[17:16:44] <MistVeil> So much text up there
+[17:16:45] <Moonlightning> Yay, it actually works!
+[17:17:01] <Moonlightning> MistVeil: you leave us alone for five minutes, and this is what you come back to. :p
+[17:17:09] <MistVeil> tl;dr
+[17:17:19] <wolfyshy> then SSL 3.1 was being designed, but they felt the name "Secure Socket Layer" was bad because it had nothing to do with unix sockets, it was just security for the transport layer
+[17:17:23] <MistVeil> 2 lines, it was too long :o
+[17:17:26] <wolfyshy> so they renamed it TLS - Transport Layer Security
+[17:17:41] * MistVeil is being lazy because sysadmin day and nothing's on fire
+[17:17:47] <wolfyshy> </history lesson nobody cares about>
+[17:18:07] <wolfyshy> I'm an old wolfy .}_{.  (<-- wrinkles in my face)
+[17:18:55] <ShadowPony> sorry i am back
+[17:19:20] <wolfyshy> look what you did ShadowPony
+[17:19:30] <wolfyshy> you made the old wolf go on a rant about the history of SSL!
+[17:19:32] <wolfyshy> :P
+[17:19:54] <ShadowPony> and
+[17:20:15] <wolfyshy> Moonlightning: day-um, now I get AES256-GCM-SHA384 to my test server
+[17:20:20] <ShadowPony> Moonlightning what do i do 
+[17:20:21] <wolfyshy> Moonlightning: this is epic
+[17:21:10] <Moonlightning> wolfyshy: I guess the gnutls priority of 'NORMAL' has some of the things with smaller numbers before some of the things with bigger numbers. :I
+[17:22:32] <wolfyshy> Moonlightning: if I had to venture a guess, it's because TLS v1.2 handshakes can break some older servers, so it's going for compatibility
+[17:22:51] <wolfyshy> Moonlightning: I can get away with setting this to ricer mode simply because the only IRC networks I'm on are small ones like this that care about security
+[17:22:54] <Moonlightning> wolfyshy: mmmm.
+[17:23:12] <wolfyshy> not sure if, say, efnet or undernet would really care about updating to tlsv1.2
+[17:23:16] <Moonlightning> ShadowPony: you either get a better client, get a better OS, or see if you can install CACert's root cert so that HexChat will use it.
+[17:23:39] <Moonlightning> I should start removing those 'SECURE' things with the lower numbers, hmm.
+[17:24:15] <ShadowPony> Moonlightning: Windows 10 so no...clent HexChat 
+[17:24:47] <Moonlightning> ShadowPony: Windows 10 < Windows 7, because massive gaping privacy holes
+[17:24:51] <wolfyshy> Moonlightning: 192 is still part of NSA-B
+[17:24:57] <Moonlightning> I said /better/, not /newer/
+[17:25:03] <wolfyshy> wolfyshy: if it's good enough for TOPSECRET in the US government, I think it's good enough for IRC
+[17:25:06] <wolfyshy> er
+[17:25:07] <wolfyshy> Moonlightning: *
+[17:25:17] <Moonlightning> wolfyshy: why you talking to yourself? o.O
+[17:25:25] <wolfyshy> I dunno
+[17:25:33] <Moonlightning> wolfyshy: yes, but, look! I can make the numbers go /even bigger!/
+[17:25:36] <wolfyshy> normally when I hit 'tab' on a blank link it goes to the last person who highlights me
+[17:25:39] <wolfyshy> line*
+[17:25:50] <wolfyshy> lol
+[17:25:56] <Moonlightning> Why have these things with the smaller numbers allowed, if everything works when they're banned?
+[17:26:32] <Moonlightning> True story: I actually considered switching all my SSH keys to 16384 bits
+[17:26:33] <wolfyshy> https://www.nsa.gov/ia/programs/suiteb_cryptography/
+[17:26:33] <PinkiePieBot> [ NSA Suite B Cryptography - NSA/CSS ]
+[17:26:50] <wolfyshy> it's fun to note they recommend ECDSA only for government operations, yet tell the public "nah, AES is great!"
+[17:27:22] <Moonlightning> but sometimes you need symmetric?
+[17:27:49] <ShadowPony> alright then how do i fix this then
+[17:27:50] <ShadowPony> CACert's root cert 
+[17:27:52] <ShadowPony> opps
+[17:28:14] <Moonlightning> symmetric is great for volume encryption, because decryption implies verification (right?)
+[17:29:07] <Moonlightning> I've been assuming so. Because it unlocks successfully, the volume hasn't been tampered with in a major way—and if individual, non-critical blocks /have/ been tampered with, I'll get IO errors instead of planted data.
+[17:29:47] <Moonlightning> Not sure. #techponies, did we establish that it's not possible for ShadowPony to install the rootcert?
+[17:30:39] <wolfyshy> not without advanced level hax, since hexchat doesn't expose an option for it
+[17:34:23] <MistVeil> Will leave this here, in case fellow techies want to cringe. Badly.
+[17:34:39] <MistVeil> http://imgur.com/a/dRlR3
+[17:34:41] <PinkiePieBot> [ These people have no idea - Album on Imgur ]
+[17:34:56] <MistVeil> (Found on r/sysadminhumor)
+[17:35:46] *** Quits: ShadowPony (Dragony@Pony-br5.u0j.172.216.IP) (Connection closed)
+[17:36:45] *** Joins: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net)
+[17:37:05] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[17:37:33] *** Joins: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net)
+[17:39:16] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[17:42:34] *** Joins: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net)
+[17:46:58] <Colgate> wolfyshy: uh, you do realize that ecdsa and aes fill 2 completely different roles right?
+[17:49:14] <Moonlightning> I mean, AES is THE symmetric cipher, yeah?
+[17:49:19] <Moonlightning> Are there even any other major ones?
+[17:50:46] <Colgate> also, sha1-hmac authentication is plenty secure
+[17:50:56] <Colgate> sure, blowfish is another popular one
+[17:51:05] <Moonlightning> Ahh, Blowfish is symmetric?
+[17:51:12] <Colgate> there's a third one that had some traction, name escapes me atm though
+[17:51:25] <Colgate> basically the top 3 at the NIST challenge for what became AES
+[17:53:16] <Colgate> hell, md5-hmac is secure too
+[18:02:05] *** zz_CyberJacob is now known as CyberJacob
+[18:06:17] <wolfyshy> twofish and serpent and rijndael
+[18:06:43] <wolfyshy> were the AES finalists
+[18:14:02] <wolfyshy> rijndael is what became AES; serpent is vaguely more secure (and vaguely less vulnerable to XSL) but slower
+[18:14:08] <wolfyshy> this isn't always a bad thing
+[18:14:16] <wolfyshy> it really depends on what you're doing
+[18:15:03] <Caerdwyn> wolfyshy: pm
+[18:15:05] <Rylee> MistVeil: I just couldn't stop saying "no! no! NO!!!!!!!"
+[18:15:07] <Rylee> why
+[18:17:01] <Moonlightning> XSL?
+[18:17:49] <Colgate> Moonlightning: https://en.wikipedia.org/wiki/XSL_attack
+[18:17:50] <PinkiePieBot> [ XSL attack - Wikipedia, the free encyclopedia ]
+[18:23:56] *** Joins: AquaBrandish (AndChat3408@Pony-hahd0r.static.axtel.net)
+[18:24:03] *** AquaBrandish is now known as Mist|Phone
+[18:30:37] <Caerdwyn> http://i.imgur.com/a6jDQAK.gifv ahaha xD
+[18:40:56] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:50:52] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:01:46] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[19:13:05] *** Quits: Mist|Phone (AndChat3408@Pony-hahd0r.static.axtel.net) (Quit: Bye)
+[19:53:59] *** Quits: Asoka_White (Asoka@Pony-jtaaau.net-htp.de) (Connection closed)
+[20:00:33] *** Joins: RazorSharpFang (chatzilla@sharpest.of.all.fangs)
+[20:04:11] *** init3 is now known as Init3-away
+[20:14:25] *** Init3-away is now known as init3
+[20:18:42] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[20:28:56] *** Quits: Datguy (Datguy@lord.of.nreboot.c0m) (Quit: Cya.)
+[20:51:11] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[20:55:14] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:13:09] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[21:32:43] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:32:56] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Ping timeout: 121 seconds)
+[21:33:15] *** CyberJacob is now known as zz_CyberJacob
+[21:37:24] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[21:40:00] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[22:14:20] <init3> Gladiolus: I don't suppose you ever heard anything from Microsoft about the W10 EULA did you?
+[22:30:55] <Moonlightning> I want a way to force the suggestions to appear at the top of the keyboard, regardless of what the app says. :I
+[22:31:05] <Moonlightning> They're so useful and it annoys me when they're not present
+[22:31:41] *** init3 is now known as Init3-away
+[22:31:48] <Moonlightning> I wonder if the keyboard is open source. Maybe I could fork it.
+[22:31:49] *** Init3-away is now known as init3
+[22:32:33] *** init3 is now known as Init3-away
+[22:32:42] *** Init3-away is now known as init3
+[22:32:45] <Moonlightning> That might also let me make it store learning info locally only, and allow gesture typing in password fields. That'd be amazing.
+[22:35:07] <Moonlightning> I /want/ it to learn; I just don't want it to sync what it learns anywhere. :I
+[22:37:49] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[22:40:40] <Gladiolus> I have not.
+[22:40:56] <Gladiolus> Probably because, like I said earlier, people are focusing about whining about trivial things.
+[22:41:09] <Gladiolus> Gasp, if I turn on Cortana... it hears my voice!!111
+[22:43:43] *** Gladiolus is now known as ProncessKurs
+[22:45:56] *** Creeps|AFK is now known as RedHelper
+[22:46:28] <Moonlightning> So don't fucking turn on Cortana -.-
+[22:48:07] <ProncessKurs> Yeah exactly but people are whining about how it collects data when you use it.
+[22:48:09] <ProncessKurs> Like no shit.
+[22:48:24] <ProncessKurs> So all these trivial complaints are creating a wall of white noise so that the actual rational complaint is unheard.
+[23:13:24] *** Quits: Phase (Phase4@Pony-ada193.internode.on.net) (A TLS packet with unexpected length was received.)
+[23:14:20] *** Joins: Phase (Phase4@Pony-ada193.internode.on.net)
+[23:15:47] *** Quits: Phase (Phase4@Pony-ada193.internode.on.net) (Quit: Leaving)
+[23:16:42] <RazorSharpFang> Seems we need to change the filter.
+[23:16:46] *** Joins: Phase (Phase4@Pony-ada193.internode.on.net)
+[23:17:14] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[23:25:42] <Sukasa> man, kind of surprising how fast stuff can arrive from China
+[23:25:49] <Sukasa> I think I only ordered this one part on Saturday
+[23:30:19] *** Quits: Phase (Phase4@Pony-ada193.internode.on.net) (Quit: Leaving)
+[23:30:53] *** Joins: Phase (Phase4@Pony-ada193.internode.on.net)
+[23:41:42] *** zz_CyberJacob is now known as CyberJacob
+[23:49:51] *** init3 is now known as Init3-away
+[23:51:43] *** Init3-away is now known as init3
+[23:53:38] *** Quits: Phase (Phase4@Pony-ada193.internode.on.net) (Quit: Leaving)
+[23:54:01] *** Joins: Phase (Phase4@Pony-ada193.internode.on.net)
+[23:58:55] *** Joins: Filthy_Rich (Iceman@Darkhorse21)

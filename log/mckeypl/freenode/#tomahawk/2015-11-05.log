@@ -1,0 +1,186 @@
+[00:24:13] *** Quits: domme_ (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de) (Ping timeout: 252 seconds)
+[00:52:24] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[01:16:57] *** Quits: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[01:18:34] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[02:46:47] *** Joins: olocke (guest-oloc@gateway/web/scrollback.io/x-sedbkmnezggazxzx)
+[02:46:47] <olocke> does any one know how to install in linux
+[02:48:45] *** Parts: olocke (guest-oloc@gateway/web/scrollback.io/x-sedbkmnezggazxzx) ()
+[04:40:17] *** Parts: zaphar_ps (~zaphar@blender/coder/Zaphar-ps) ()
+[04:47:11] *** Joins: pralut (guest-pral@gateway/web/scrollback.io/x-ispjdsmzntdjlukp)
+[04:47:11] <pralut> pralut
+[04:47:14] <pralut> what do people think of this?
+[04:47:49] <theli_ua> of what
+[04:48:41] <pralut> tomahawk
+[04:49:04] <theli_ua> tomahawk is nice
+[04:49:22] <theli_ua> I use it for last like 6 months and pretty happy with it
+[04:49:38] <pralut> are you on windows or mac?
+[04:50:11] <theli_ua> I am on linux
+[04:50:13] <theli_ua> for the most part
+[04:50:16] <pralut> ahhh ok
+[04:52:57] *** Parts: pralut (guest-pral@gateway/web/scrollback.io/x-ispjdsmzntdjlukp) ()
+[05:01:19] <muesli> random appearances... :)
+[05:06:32] <theli_ua> there are some things I'd really like to be improved in tomahawk
+[05:06:37] <theli_ua> but other than that I'm happy muesli 
+[05:06:53] <muesli> theli_ua: shoot, like what?
+[05:07:38] <theli_ua> well, controlled catalog radio (favorites in particular) but I have that in my fork anyway
+[05:07:51] <theli_ua> other than that , biggest issue is metadata handling
+[05:08:09] <theli_ua> ie - no support for compilations, no support for variations of releases
+[05:08:34] <theli_ua> like, my library on amazon often has multiple versions of same release - [clean], [deluxe], [explicit], etc
+[05:08:36] <muesli> the latter should be fixed for 0.9 indeed
+[05:08:52] <muesli> that is for album metadata
+[05:08:59] <theli_ua> they are even usually listed on musicbrainz
+[05:09:10] <theli_ua> its just that tomahawk just picks one "canonical" one
+[05:09:56] <theli_ua> I'd also appreciate caching of tracks (aka keep user defined... something like 1g of downloaded , most recently listened to tracks)
+[05:10:21] <theli_ua> but that is just "nice to have", if that would reaaly be a must have for me I could probably just implement that
+[05:12:58] *** Joins: mgue2 (~mgue@f049089142.adsl.alicedsl.de)
+[05:15:57] *** Quits: mgue1 (~mgue@f049088129.adsl.alicedsl.de) (Ping timeout: 268 seconds)
+[06:18:50] <theli_ua> also, need moar ways to discover music
+[06:18:58] <theli_ua> that is planned for hatchet I suppose
+[06:26:22] <muesli> yeah, some fun things we can do with hatchet's data
+[08:36:15] *** Joins: domme_ (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de)
+[09:19:13] *** Joins: meaning (~meaning@182.149-242-81.adsl-dyn.isp.belgacom.be)
+[10:21:41] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[11:04:09] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:11:16] *** Joins: alsuren (~alsuren@109.157.183.130)
+[11:46:59] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Ping timeout: 264 seconds)
+[11:55:05] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[13:11:46] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Read error: Connection reset by peer)
+[13:12:54] *** Quits: meaning (~meaning@182.149-242-81.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[13:13:28] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[13:24:29] *** Quits: alsuren (~alsuren@109.157.183.130) (Quit: alsuren)
+[13:35:13] *** Joins: meaning (~meaning@182.149-242-81.adsl-dyn.isp.belgacom.be)
+[13:47:29] <tomabee> @arya_rohit07 mentioned: @tomahawk I think the web url on Twitter profile is not right. "ttt" [<no value>]
+[13:50:30] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Ping timeout: 260 seconds)
+[13:54:39] *** Quits: meaning (~meaning@182.149-242-81.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[13:58:24] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[14:00:15] *** Joins: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[14:02:10] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[14:09:10] *** Joins: meaning (~meaning@182.149-242-81.adsl-dyn.isp.belgacom.be)
+[14:48:12] <TheOneRing> regarding my notifications integration, sometime the notifications are emitted 3 tracks later and 3 notifications at a time
+[14:48:28] <TheOneRing> and sometimes tomahawk emits up to 3 notifications at a time for the same track
+[14:48:42] <TheOneRing> and the bug is in tomahawk and not in snoe
+[14:49:03] <TheOneRing> snore
+[14:51:24] <domme_> oh w00t
+[14:51:33] <domme_> never noticed anything like that
+[14:52:35] <MrMaffen> theli_ua: query
+[14:54:25] *** Joins: the_phil0s0ph_ (~quassel@2a03:8180:1001:b2:13::12c)
+[14:54:41] *** Quits: the_phil0s0ph (~quassel@2a03:8180:1001:b2:13::12c) (Ping timeout: 252 seconds)
+[14:55:29] *** the_phil0s0ph_ is now known as the_phil0s0ph
+[15:03:16] *** Joins: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222)
+[15:06:28] <gordie> hi guys
+[15:07:12] <domme_> hey gordie
+[15:07:38] <gordie> how are u all ?
+[15:07:51] <domme_> doin fine here
+[15:23:23] *** Quits: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222) (Quit: Page closed)
+[15:42:04] *** Quits: muesli (~muesli@static.75.102.4.46.clients.your-server.de) (Ping timeout: 244 seconds)
+[15:43:37] *** Quits: tomabee (~beehive@conflagration.hatchet.is) (Ping timeout: 244 seconds)
+[15:43:37] *** Quits: saidinesh5 (~quassel@minad.de) (Ping timeout: 244 seconds)
+[15:43:55] *** Joins: tomabee (~beehive@conflagration.hatchet.is)
+[15:44:15] *** Joins: saidinesh5 (~quassel@minad.de)
+[15:45:35] *** Joins: muesli (~muesli@static.75.102.4.46.clients.your-server.de)
+[16:55:06] *** Joins: github-tomahawk (~github-to@192.30.252.45)
+[16:55:06] <github-tomahawk> [13libcrashreporter-qt] 15dschmidt pushed 1 new commit to 06master: 02http://git.io/v8UvH
+[16:55:06] <github-tomahawk> 13libcrashreporter-qt/06master 140dc4a71 15Dominik Schmidt: Don't link automatically against qtmain
+[16:55:06] *** Parts: github-tomahawk (~github-to@192.30.252.45) ()
+[17:13:39] *** Joins: github-tomahawk (~github-to@192.30.252.45)
+[17:13:39] <github-tomahawk> [13tomahawk] 15dschmidt pushed 3 new commits to 06master: 02http://git.io/v8U3K
+[17:13:39] <github-tomahawk> 13tomahawk/06master 14549193b 15Hannah von Reth: Use ECMAddAppIcon instead of the copy of the kde4 macro.
+[17:13:39] <github-tomahawk> 13tomahawk/06master 14b0fac41 15Dominik Schmidt: Get rid of warnings
+[17:13:39] <github-tomahawk> 13tomahawk/06master 14f680e7f 15Dominik Schmidt: Merge pull request #334 from TheOneRing/ecm...
+[17:13:39] *** Parts: github-tomahawk (~github-to@192.30.252.45) ()
+[17:26:52] <jherskowitz> muesli: noticed that bios often get cutoff at the bottom.  Can I fix that in QtDesigner?
+[17:30:53] *** mgue2 is now known as mgue
+[17:53:12] *** Quits: kurros (wade@2604:180::f84a:f836) (Ping timeout: 268 seconds)
+[17:53:17] *** Quits: kfunk (~krf@kde/kfunk) (Ping timeout: 268 seconds)
+[17:53:17] *** Quits: blueyed (~daniel@hahler.de) (Ping timeout: 268 seconds)
+[17:56:14] *** Quits: liori (~liori@unaffiliated/liori) (Ping timeout: 268 seconds)
+[17:56:14] *** Quits: eater (~eater@eoc.io) (Ping timeout: 268 seconds)
+[17:58:21] *** Joins: McKeyPL (~McK@irc.antyklay.pl)
+[17:58:21] *** Server sets mode: +gnt 
+[17:58:40] <theli_ua> hacks on hacks
+[17:59:16] <domme_> theli_ua: it's called software engineering for a reason
+[18:04:52] *** Quits: kurros (wade@2604:180::f84a:f836) (*.net *.split)
+[18:04:52] *** Quits: McKey (~McK@irc.antyklay.pl) (*.net *.split)
+[18:04:52] *** Quits: liori (~liori@unaffiliated/liori) (*.net *.split)
+[18:04:52] *** Quits: kfunk (~krf@kde/kfunk) (*.net *.split)
+[18:04:53] *** Quits: blueyed (~daniel@hahler.de) (*.net *.split)
+[18:04:53] *** Quits: eater (~eater@eoc.io) (*.net *.split)
+[18:04:53] *** McKeyPL is now known as McKey
+[18:06:22] *** Joins: blueyed (~daniel@hahler.de)
+[18:13:29] *** eaterof is now known as eater
+[18:23:25] *** liori_ is now known as liori
+[18:28:30] *** Quits: kfunk_ (~krf@kde/kfunk) (Ping timeout: 240 seconds)
+[18:29:53] *** Joins: kfunk (~krf@kde/kfunk)
+[18:33:18] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Quit: alsuren)
+[19:03:05] <jherskowitz> domme_: any idea what is going on here in Spotify resolver?
+[19:03:10] <jherskowitz> https://www.irccloud.com/pastebin/SxN4TyYj/
+[19:03:11] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[19:07:31] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[19:25:28] <domme_> jherskowitz: kinda
+[19:25:50] <domme_> ah yes
+[19:26:00] <domme_> jherskowitz: is this a stable tomahawk with spotify axe?
+[19:33:25] <jherskowitz> domme: I think stable with standard spotify plugin
+[19:33:32] <domme_> that would be an issue :\
+[19:33:38] <domme_> also would surprise me
+[19:33:48] <domme_> as you see the error is from manualresolvers folder
+[19:36:26] <domme_> MrMaffen: ^
+[19:45:47] *** Quits: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de) (Read error: Connection reset by peer)
+[19:46:55] *** Joins: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de)
+[20:11:27] <jherskowitz> domme_: ah, k
+[20:22:17] *** Joins: soee (~soee@afje97.neoplus.adsl.tpnet.pl)
+[20:25:01] <theli_ua> yeah, mrmaffen moved all resolvers to explicitly use rsvp.promise iirc
+[20:30:12] *** Joins: luxifer_ (~Stalin@jachin.hartnell.edu)
+[20:34:49] <jherskowitz> domme_: do you remember the fix for this compile error?
+[20:34:49] *** Joins: apb_ (~apb@174-134-224-109.res.bhn.net)
+[20:34:53] <jherskowitz> https://www.irccloud.com/pastebin/mfMom4hC/
+[20:34:54] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[20:35:16] <jherskowitz> it’s tools?
+[20:35:18] <jherskowitz> dtools
+[20:36:45] *** Quits: apb1963 (~apb@174-134-224-109.res.bhn.net) (Ping timeout: 265 seconds)
+[20:38:10] <jherskowitz> DBUILD_TOOLS=OFF ah, I think that’s it
+[20:54:10] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[21:13:28] <domme_> jherskowitz: yeah
+[21:22:46] <jherskowitz> domme_: I don’t suppose you know anything about this error in VLC?
+[21:22:47] <jherskowitz> ../../contrib/src/ffmpeg/rules.mak:168: *** xz and lzma client not found!
+[21:23:10] <theli_ua> do you have xz installed?
+[21:23:24] <theli_ua> and lzma
+[21:23:58] <jherskowitz> theli_ua: yeah
+[21:24:03] <jherskowitz> xz anyway
+[21:24:29] <jherskowitz> lzma is part of xz
+[21:24:36] <theli_ua> I think I had some similar issues on osx, something was not right with PATH
+[21:24:48] <domme_> jherskowitz: no dunno
+[21:33:00] <jherskowitz> theli_ua: interesting
+[21:33:07] <jherskowitz> if you can remember I’ll buy you a beer
+[21:33:08] <jherskowitz> :)
+[21:33:34] <theli_ua> well, my libvlc compilation adventure was pretty painfull from what I recall
+[21:33:47] <theli_ua> I also didn't (and still don't) have xcode so it was also special
+[21:34:23] <theli_ua> I don't have any "follow this steps" howto on how I did it :(
+[21:34:48] <theli_ua> somehow I thought you already had libvlc compiled on captain jherskowitz 
+[21:39:25] <jherskowitz> theli_ua: I have an old vlc build
+[21:39:33] <jherskowitz> from Yosemite
+[21:39:36] <jherskowitz> or Mavericks
+[21:39:36] *** Quits: luxifer_ (~Stalin@jachin.hartnell.edu) (Quit: leaving)
+[21:43:05] <theli_ua> I think when building libvlc I interrupted it, did some manuall things and then resumed it
+[21:43:12] <theli_ua> ie doing some manual hacks
+[21:43:25] <theli_ua> instead of automating and fixing :)
+[22:25:18] <theli_ua> MrMaffen: btw, since you did some reviewing of my CRs, did you take a look at netease?
+[22:41:55] *** Quits: klaas (klaas@simply.kla.as) (Remote host closed the connection)
+[23:09:20] *** Quits: SolarAquarion (SolarAquar@unaffiliated/solaraquarion) (Ping timeout: 240 seconds)
+[23:09:48] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[23:18:34] <jherskowitz> theli_ua: eh, ok
+[23:19:15] <jherskowitz> I asked in #videolan a few days ago but no luck
+[23:25:37] <jherskowitz> I’ve got one last idea before I give up
+[23:32:19] <jherskowitz> well, that didn’t work
+[23:32:32] * jherskowitz gives up on ever building VLC again
+[23:36:14] <jherskowitz> theli_ua: fwiw, I just built qt5 version on this El Capitan machine (with old VLC) and Google Music is working (and so is Amazon)
+[23:36:22] <jherskowitz> don’t know why they are working now and weren’t before
+[23:36:33] <jherskowitz> I did reinstall openSSL (and force link it)
+[23:36:36] <jherskowitz> that maybe was it
+[23:40:36] *** Joins: SolarAquarion (SolarAquar@the.feds.nullrouted.us)
+[23:40:48] *** Quits: SolarAquarion (SolarAquar@the.feds.nullrouted.us) (Changing host)
+[23:40:48] *** Joins: SolarAquarion (SolarAquar@unaffiliated/solaraquarion)
+[23:40:50] <theli_ua> nice
+[23:41:03] <theli_ua> jherskowitz: then you might be interested in youtube resolver
+[23:41:18] <theli_ua> I'd wait until MrMaffen merges cleaned up version though
+[23:49:44] *** Quits: hatstand (sid2952@gateway/web/irccloud.com/x-ggascqzslbbalwrq) (Read error: Connection reset by peer)
+[23:50:02] *** Joins: hatstand (sid2952@gateway/web/irccloud.com/x-omncpgfyeqdqcmkh)

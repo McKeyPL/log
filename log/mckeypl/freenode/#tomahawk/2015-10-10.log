@@ -1,0 +1,279 @@
+[00:00:25] <domme> cheers!
+[00:10:35] *** Joins: soee_ (~soee@afcw74.neoplus.adsl.tpnet.pl)
+[00:14:55] *** Quits: soee (~soee@aftv207.neoplus.adsl.tpnet.pl) (Ping timeout: 268 seconds)
+[00:33:29] <jturney> you should rewrite it in haskell for :reasons:
+[00:35:18] <jturney> I always remember some IRC blowhard saying we should rewrite cygwin in haskell to avoid the 2GB memory limit...
+[00:35:19] <jturney> :S
+[00:35:59] *** Quits: soee_ (~soee@afcw74.neoplus.adsl.tpnet.pl) (Ping timeout: 240 seconds)
+[00:52:33] *** Joins: bluu (~pi@cpc69721-haye18-2-0-cust154.17-4.cable.virginm.net)
+[01:00:19] *** Quits: bluu (~pi@cpc69721-haye18-2-0-cust154.17-4.cable.virginm.net) (Quit: leaving)
+[01:03:52] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[01:32:33] <zopieux> https://github.com/tomahawk-player/tomahawk-android/commit/5ea1fea2bcc59f30872116e8c555a35a4e4e9d89
+[01:32:35] <zopieux> eheheh
+[01:32:36] <tomabee> [ Automatic merge of Transifex translations · tomahawk-player/tomahawk-android@5ea1fea · GitHub | github.com | https://1.gravatar.com/avatar/c53e4708b3f890990d215eb856c50b8b?d=https%3A%2F%2Fassets-cdn.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png&r=x&s=200 ]
+[01:33:02] <zopieux> wtf. that's a huge ass message for a simple link
+[01:33:07] <zopieux> TOO MANY BOTS
+[01:59:59] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[02:08:58] <jherskowitz> muesli: got to 97% and failed
+[02:10:29] <jherskowitz> https://paste.kde.org/pqibvqyjd
+[02:10:29] <tomabee> [ KDE Paste | paste.kde.org |  ]
+[02:35:30] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) ()
+[04:13:48] *** Quits: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de) (Quit: Leaving.)
+[06:04:59] *** Quits: SolarAquarion (SolarAquar@unaffiliated/solaraquarion) (Ping timeout: 240 seconds)
+[11:27:57] *** Joins: soee (~soee@afcw74.neoplus.adsl.tpnet.pl)
+[11:39:59] *** Quits: znf (~ibm86@unu.card-sharing.eu) (Remote host closed the connection)
+[11:41:58] *** Joins: znf (~ibm86@unu.card-sharing.eu)
+[12:09:36] <domme> jherskowitz: -DBUILD_TOOLS=OFF
+[12:22:24] <domme> jherskowitz: will fix lqter
+[12:25:27] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[12:49:52] *** Joins: justin_time (~stefan@p5088AD11.dip0.t-ipconnect.de)
+[12:52:39] <justin_time> Hey guys! Today I'm working on the Qt5 Port for Ubuntu 15.04 and 15.10. But there is one problem… your CMake file FindQuaZip does not work on Ubuntu/Debian. The Qt5 suffix ix -qt5 and not 5… Could someone help me to patch this?
+[12:53:16] <justin_time> This is the debian package for libquazip-qt5-dev: http://packages.ubuntu.com/wily/amd64/libquazip-qt5-dev/filelist
+[12:53:16] <tomabee> [ Ubuntu – File list of package libquazip-qt5-dev/wily/amd64 | packages.ubuntu.com |  ]
+[13:26:51] <jherskowitz> muesli: domme ^
+[14:03:22] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[14:05:53] <toma-cat> Added new crash-report for version 1.0.1 (Android)
+[14:06:44] *** Joins: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[14:06:44] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Disconnected by services)
+[14:14:21] <toma-cat> JIRA issue https://bugs.tomahawk-player.org/browse/TWK-2141 issue created by justin-time
+[14:14:21] <tomabee> [ [TWK-2141] Unable to build tomahawk Qt5 for ubuntu – Tomahawk does not find libquazip-qt5-dev | bugs.tomahawk-player.org |  ]
+[14:15:57] <justin_time> Hmm… it looks like no one can help me directly, and so I've opened a bug report. I'll be back later this day. Bye.
+[14:16:15] *** Quits: justin_time (~stefan@p5088AD11.dip0.t-ipconnect.de) (Quit: Ex-Chat)
+[14:27:33] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Quit: alsuren)
+[14:39:57] <domme> jherskowitz: i upstreamed a patch to quazip do its 5 not -qt5
+[14:40:05] <domme> so
+[14:40:24] <domme> if debian does nonupstreampatches. not my fault
+[15:06:59] <muesli> domme: should still find a solution together
+[15:09:41] <domme> sure
+[15:11:37] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[15:12:33] *** Quits: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Ping timeout: 255 seconds)
+[15:25:53] <jherskowitz> Got it to build :)
+[15:27:36] <muesli> nice
+[15:56:16] <tomabee> @Profpatsch mentioned: wtf @tomahawk 4.3G ./.local/share/Tomahawk [<no value>]
+[15:58:17] <tomabee> @Profpatsch mentioned: @tomahawk 4.3G Oct  8 14:17 Tomahawk.log
+[16:00:18] <tomabee> @Profpatsch mentioned: @tomahawk “$XDG_CACHE_HOME defines the base directory relative to which user specific non-essential data files should be stored.” [<no value>]
+[16:02:19] <tomabee> @pcmaster88 mentioned: @Profpatsch @tomahawk that's what she said [<no value>]
+[16:02:19] <tomabee> @Profpatsch mentioned: Everytime I try @tomahawk something like that happens. Not that I don’t *like* the software. It always ends like that and I go back to mpv … [<no value>]
+[16:08:08] <muesli> lol @profpatsch
+[16:08:12] <muesli> know him, will respond personally
+[16:08:39] *** Joins: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[16:08:39] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Disconnected by services)
+[16:15:23] <tomabee> @Profpatsch mentioned: @pcmaster88 @tomahawk Shh, Lucifer, no tears, only dreams now. [<no value>]
+[16:18:11] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[16:25:31] *** Quits: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Ping timeout: 265 seconds)
+[16:27:18] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[16:34:27] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Ping timeout: 246 seconds)
+[16:35:38] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[16:43:01] *** Joins: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7)
+[16:43:01] *** Quits: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7) (Changing host)
+[16:43:01] *** Joins: SolarAquarion (SolarAquar@unaffiliated/solaraquarion)
+[16:48:39] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[16:56:57] *** Joins: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[16:56:57] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Disconnected by services)
+[16:58:45] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Quit: alsuren)
+[17:02:27] *** Quits: SolarAquarion (SolarAquar@unaffiliated/solaraquarion) (Ping timeout: 246 seconds)
+[17:30:40] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[17:32:26] *** Quits: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Ping timeout: 240 seconds)
+[17:43:14] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[18:01:50] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Disconnected by services)
+[18:01:50] *** Joins: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[18:20:03] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[18:31:12] <tomabee> @drsounds mentioned: I would like to see @aurousapp to integrate playdar mechanism so it could work like @tomahawk because Tomahawk is great but html5 rocks [<no value>]
+[19:02:06] *** Joins: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7)
+[19:02:06] *** Quits: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7) (Changing host)
+[19:02:06] *** Joins: SolarAquarion (SolarAquar@unaffiliated/solaraquarion)
+[19:02:53] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[19:37:16] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[19:37:32] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Client Quit)
+[19:43:50] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[19:46:29] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[19:49:14] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Client Quit)
+[20:19:28] *** Joins: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de)
+[20:31:57] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[20:53:43] <domme> muesli: jherskowitz: ping
+[20:53:54] <muesli> domme: pong
+[20:54:18] <domme> lfranchi: ^ too
+[20:54:29] <muesli> domme: sup?
+[20:54:47] <domme> is there a chance i can play around with a cmake on a system that breaks with the taglib and attica include oddnesses?
+[20:55:28] <muesli> domme: it doesn't do that for me
+[20:55:37] <muesli> i've pushed the only fix i needed
+[20:55:46] <domme> interesting
+[20:56:30] <muesli> i think jherskowitz had it also building fine now
+[20:56:44] <muesli> and lfranchi mentioned that it's weird for him and we probably shouldn't merge that pr
+[20:58:02] <domme> muesli: so it's just the tools for you now?
+[20:58:16] <muesli> yeah
+[21:01:29] <domme> muesli: actually .... before i touch any cmake ... 
+[21:01:45] <domme> muesli: https://github.com/tomahawk-player/tomahawk/pull/325 <-- is this good to merge?
+[21:01:48] <tomabee> [ Branding and download manager updates by dschmidt · Pull Request #325 · tomahawk-player/tomahawk · GitHub | github.com | https://avatars3.githubusercontent.com/u/448487?v=3&s=400 ]
+[21:03:27] *** Quits: Fohlen (~Fohlen@v22015072923726622.yourvserver.net) (Ping timeout: 252 seconds)
+[21:03:56] <muesli> domme: i don't know about a bunch of the nsis changes, really
+[21:04:00] <muesli> domme: you checked them i guess?
+[21:04:30] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Quit: alsuren)
+[21:04:31] <domme> muesli: "muesste" :-)
+[21:07:31] *** Joins: Fohlen (~Fohlen@v22015072923726622.yourvserver.net)
+[21:07:36] <domme> muesli: let me know if the rest is fine
+[21:08:39] <muesli> looks fine i think
+[21:08:46] <muesli> concentrated on the dlm changes
+[21:10:47] <domme> muesli: yup, those were the hardest for me to judge :-)
+[21:10:58] <domme> thanks. if something breaks, we can still fix :-)
+[21:11:13] <domme> muesli: wanna click merge? ;-)
+[21:11:51] <muesli> AAAAAAH
+[21:12:00] <muesli> well, yeah. what's the worst that could happen
+[21:12:30] *** Joins: github-tomahawk (~github-to@192.30.252.45)
+[21:12:30] <github-tomahawk> [13tomahawk] 15muesli pushed 1 new commit to 06master: 02http://git.io/vCZBm
+[21:12:30] <github-tomahawk> 13tomahawk/06master 14ed5b4b2 15Christian Muehlhaeuser: Merge pull request #325 from tomahawk-player/branding...
+[21:12:30] *** Parts: github-tomahawk (~github-to@192.30.252.45) ()
+[21:12:44] <muesli> let's see if this compiles ;)
+[21:12:49] <muesli> should also check the next windows nightly a bit
+[21:13:59] <domme> muesli: yep :-)
+[21:14:33] *** Quits: Fohlen (~Fohlen@v22015072923726622.yourvserver.net) (Ping timeout: 265 seconds)
+[21:15:36] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[21:17:14] *** Quits: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Ping timeout: 272 seconds)
+[21:19:16] *** Joins: justin_time (~stefan@p5088A65A.dip0.t-ipconnect.de)
+[21:20:31] <domme> hey justin_time 
+[21:20:41] <justin_time> hey domme
+[21:21:26] <domme> justin_time: you had issues with qt5 quazip?
+[21:21:37] <justin_time> yes
+[21:22:09] <domme> justin_time: i upstreamed a patch to quazip that makes 5 the default prefix. do you have a different patch in debian/ubuntu/whatever?
+[21:22:14] <domme> *suffix
+[21:23:23] <justin_time> I use the official libquazip package from ubuntu 15.10 and this comes from debian. This package uses -qt5 as suffix…
+[21:24:37] <domme> justin_time: http://sourceforge.net/p/quazip/patches/25/
+[21:24:38] <tomabee> [ QuaZIP / Patches / #25 Make devel packages coinstallable too | sourceforge.net |  ]
+[21:25:06] <domme> http://sourceforge.net/p/quazip/patches/22/
+[21:25:06] <tomabee> [ QuaZIP / Patches / #22 Make quazip coinstallable for Qt5 and Qt4 | sourceforge.net |  ]
+[21:25:21] <domme> justin_time: so the proper solution is probably to adopt the upstream patch...
+[21:25:39] <domme> otherwise you should probably patch tomahawk downstream too
+[21:27:30] <justin_time> Hmm… ok. It looks like I've to patch libquazip on my own. Ok, I'll try it. (But I really dislike it… Why is the debian package so special :-/ )
+[21:27:40] <domme> justin_time: file a bug? :-)
+[21:27:46] <domme> tell them about the upstream patch? :)
+[21:28:21] <domme> justin_time: also it's not toooo hard to patch tomahawk to deal with the different path
+[21:28:41] <domme> and it's unlikely to change often. the code is quite stable actually
+[21:29:50] <justin_time> I think, I would prefer both ways. It takes a lot of time to get this patch into the Debian Sources and then Ubuntu has to adopt them…
+[21:30:55] <justin_time> But, I'm able to patch tomahawk while building a debian package and so you do not need to upstream the patch...
+[21:32:03] <domme> :-)
+[21:32:09] <domme> justin_time: shoot if you need helü
+[21:32:11] <domme> p
+[21:32:40] <justin_time> ok, I need your help :-)
+[21:33:30] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Ping timeout: 240 seconds)
+[21:33:44] <justin_time> Is the file "FindQuaZip.cmake" the correct one? Where I have to change the quazip suffix?
+[21:34:30] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[21:34:39] *** Quits: SolarAquarion (SolarAquar@unaffiliated/solaraquarion) (Ping timeout: 240 seconds)
+[21:34:54] <domme> justin_time: what's the error in the first place?
+[21:35:06] <domme> muesli: can you do me a favor? :-)
+[21:36:24] <muesli> domme: possibly, if it doesn't have to be this very moment
+[21:36:31] <domme> muesli: :-)
+[21:36:41] <domme> muesli: actually it would be preferred ;-)
+[21:36:58] <domme> muesli: anyway.. pushing a possible fix for the tools build error
+[21:37:07] <muesli> sure, can test that
+[21:37:47] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[21:37:47] <github-tomahawk> [13tomahawk] 15dschmidt created 06tools (+1 new commit): 02http://git.io/vCZgL
+[21:37:47] <github-tomahawk> 13tomahawk/06tools 141758a7a 15Dominik Schmidt: Fix tools build on OSX
+[21:37:47] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[21:37:50] <domme> muesli: ^
+[21:38:33] <justin_time> Cmake can not find libquazip while checking all dependences and so the compiler belives that libquazip is not installed.
+[21:38:39] <domme> justin_time: ah ok
+[21:39:21] <domme> justin_time: try -DQUAZIP_LIB_VERSION_SUFFIX="-qt5"
+[21:39:52] <domme> muesli: try with a fresh build dir tho
+[21:40:11] <justin_time> domme: oh ok, I'll try it.
+[21:47:41] <justin_time> Oh, I've another problem… I'm unable to build package for Ubuntu 15.10. The compiler crashes on 71%: https://launchpadlibrarian.net/220867249/buildlog_ubuntu-wily-amd64.tomahawk_0.8.99%2Bgit20151010%2Br401%2B14~ubuntu15.10.1_BUILDING.txt.gz
+[21:48:27] <justin_time> The builds for Ubuntu 14.04 and 15.04 works fine with the same recipe and dependences…
+[21:49:44] <domme> justin_time: might be that lucenepp wasnt built with c+++11 support
+[21:50:21] <justin_time> but why does it works with an older ubuntu?
+[21:54:12] <justin_time> It is crazy, yesterday the building of the Ubuntu 15.04 fails: https://launchpadlibrarian.net/220757705/buildlog_ubuntu-vivid-i386.tomahawk_0.8.99%2Bgit20151009%2Br399%2B14~ubuntu15.04.1_BUILDING.txt.gz
+[21:54:25] <justin_time> But today everything works fine…?!
+[21:58:40] <domme> justin_time: i dont follow
+[21:58:54] <domme> what are you building after all? 0.8 or master?
+[21:59:04] <domme> tomahawk master requires c++11, 0.8 doesnt
+[21:59:18] <justin_time> Those packages are master daily builds.
+[21:59:38] <muesli> justin_time: yesterday it failed once, because of a fuckup of mine
+[21:59:40] <muesli> i fixed that tho
+[22:00:00] <muesli> justin_time: also, hey there :)
+[22:00:09] <muesli> thanks for taking care of things :)
+[22:00:11] <justin_time> muesli: ok ;-) hey, muesli
+[22:01:53] <justin_time> domme: but why failed the tomahawk build for the newest ubuntu, while the packages for the other passes?
+[22:02:58] <domme> justin_time: i dont know. are you trying to build the very same version? which one?
+[22:03:53] <justin_time> those packages are autobuilds… the same sources, the same recipe… only the dependences are different.
+[22:03:59] <domme> ok
+[22:06:05] <justin_time> arr… I'm frustrated… -DQUAZIP_LIB_VERSION_SUFFIX="-qt5" does not work for me :-(  I really do not know why cmake is unable to use libquazip…
+[22:10:39] *** Joins: soee_ (~soee@aftr114.neoplus.adsl.tpnet.pl)
+[22:11:41] *** Joins: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7)
+[22:11:41] *** Quits: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7) (Changing host)
+[22:11:41] *** Joins: SolarAquarion (SolarAquar@unaffiliated/solaraquarion)
+[22:14:31] *** Quits: soee (~soee@afcw74.neoplus.adsl.tpnet.pl) (Ping timeout: 250 seconds)
+[22:15:04] <domme> justin_time: because your libquazip is wrongly patched :-)
+[22:15:09] <domme> justin_time: same error?
+[22:18:24] <justin_time> yes… it looks like the the libquazip in the ubuntu sources is wrongly patched… ok I'll try to build it on my own. (This will take a while :-D)
+[22:19:44] <muesli> you could also patch the suffix in the findquazip.cmake
+[22:19:50] <muesli> if it's one less package to maintain for you
+[22:20:13] <muesli> someone correct me if i'm talking nonsense. cough, domme
+[22:21:24] <justin_time> oh my god… there is a debian patch that enable this wonderful suffix… I really dislike debian packaging xD
+[22:21:47] <justin_time> muesli: sadly, it does not work…?!
+[22:22:00] <muesli> pah :(
+[22:22:10] <muesli> ok, as domme mentioned the other way is the better solution either way
+[22:22:15] <muesli> just potentially more work
+[22:23:27] <muesli> domme: wtf
+[22:23:49] <muesli> domme: https://paste.kde.org/pwlerxqug
+[22:23:49] <tomabee> [ KDE Paste | paste.kde.org |  ]
+[22:24:26] <muesli> clang: error: no such file or directory: '../../../libTomahawk.0.8.99.dylib'
+[22:24:35] <muesli> oh
+[22:24:41] <muesli> our libtomahawk is suddenly uppercased
+[22:24:43] <justin_time> oh sorry… clang is on my local build machine…
+[22:24:47] <muesli> domme: ^
+[22:25:01] <justin_time> the official one does not use clang
+[22:25:10] <justin_time> I'll deactivate it.
+[22:30:23] *** Quits: SolarAquarion (SolarAquar@unaffiliated/solaraquarion) (Read error: Connection reset by peer)
+[22:31:02] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Disconnected by services)
+[22:31:02] *** Joins: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[22:31:51] <justin_time> Ok, a new try without clang. (Background: Weeks ago someone ask me per mail to create tomahawk packages with clang, and so I switch my test ppa to clang. Until yesterday, everything works fine…)
+[22:37:23] <justin_time> Ah, your QuaZIP patches are not published, until today. The last QuaZIP Version is from 2015-01-07 and you submitted the patches in February…
+[22:41:57] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[22:42:45] *** Joins: tomabee_ (~beehive@conflagration.hatchet.is)
+[22:45:25] *** Joins: zizzfizzix (~quassel@kde/pl/kuba-serafinowski)
+[22:45:28] *** Joins: johu_ (~johu@gentoo/developer/johu)
+[22:46:39] <justin_time> muesli: oh ok… clang was the mistake. Everything works fine now. Sorry for the circumstances…
+[22:46:58] *** Joins: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7)
+[22:46:58] *** Quits: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7) (Changing host)
+[22:46:58] *** Joins: SolarAquarion (SolarAquar@unaffiliated/solaraquarion)
+[22:47:35] <justin_time> the Ubuntu 15.10 daily builds (Qt4) work… next step is the stable build.
+[22:47:47] <muesli> cool
+[22:53:33] *** Quits: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Ping timeout: 246 seconds)
+[22:54:39] *** Quits: tomabee (~beehive@conflagration.hatchet.is) (*.net *.split)
+[22:54:40] *** Quits: zizzfizzix_ (~quassel@kde/pl/kuba-serafinowski) (*.net *.split)
+[22:54:40] *** Quits: johu (~johu@gentoo/developer/johu) (*.net *.split)
+[23:00:52] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Disconnected by services)
+[23:00:52] *** Joins: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[23:24:17] <domme> muesli: woops :D
+[23:24:18] <domme> will fix
+[23:31:26] *** Quits: znf (~ibm86@unu.card-sharing.eu) (Ping timeout: 240 seconds)
+[23:35:29] *** Joins: znf (~ibm86@unu.card-sharing.eu)
+[23:36:18] *** Joins: feepk_ (~feepk@storm.l0cal.com)
+[23:36:52] *** Joins: PT_Dreamer_ (~PT_Dreame@aviationct.com)
+[23:37:23] *** Joins: abuiles_ (sid1641@gateway/web/irccloud.com/x-ndonxxykgqmkywpo)
+[23:37:55] *** Joins: the_phil0s0ph_ (~quassel@2a03:8180:1001:b2:13::12c)
+[23:38:06] *** Joins: Tycale_ (~Tycale@tycale.be)
+[23:39:30] *** Joins: inversechi_ (~inversech@178.62.62.155)
+[23:43:02] *** Quits: muesli (~muesli@server1.muehlhaeuser.de) (*.net *.split)
+[23:43:02] *** Quits: lasconic (sid4376@gateway/web/irccloud.com/x-wimwazpsxhjethjn) (*.net *.split)
+[23:43:03] *** Quits: PT_Dreamer (PT_Dreamer@2a01:7e00::f03c:91ff:fe6e:4287) (*.net *.split)
+[23:43:03] *** Quits: the_phil0s0ph (~quassel@2a03:8180:1001:b2:13::12c) (*.net *.split)
+[23:43:03] *** Quits: Tycale (~Tycale@tycale.be) (*.net *.split)
+[23:43:03] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-yfdikgyqwdhjmjbs) (*.net *.split)
+[23:43:03] *** Quits: toma-cat (~toma-cat@server1.muehlhaeuser.de) (*.net *.split)
+[23:43:03] *** Quits: feepk (~feepk@videolan/developer/feepk) (*.net *.split)
+[23:43:04] *** Quits: inversechi (~inversech@178.62.62.155) (*.net *.split)
+[23:43:04] *** Quits: confact (~root@178.62.209.105) (*.net *.split)
+[23:43:15] *** feepk_ is now known as feepk
+[23:43:15] *** Quits: feepk (~feepk@storm.l0cal.com) (Changing host)
+[23:43:15] *** Joins: feepk (~feepk@videolan/developer/feepk)
+[23:43:37] *** Joins: muesli (~muesli@server1.muehlhaeuser.de)
+[23:46:45] *** Quits: znf (~ibm86@unu.card-sharing.eu) (Remote host closed the connection)
+[23:47:24] *** abuiles_ is now known as abuiles
+[23:48:18] *** Quits: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Ping timeout: 240 seconds)
+[23:48:42] *** Joins: znf (~ibm86@unu.card-sharing.eu)
+[23:49:24] *** Joins: confact (~root@178.62.209.105)
+[23:51:20] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[23:53:08] <domme> muesli: is that on osx?
+[23:53:16] <muesli> yeah
+[23:54:30] <domme> muesli: have an idea ;-)
+[23:54:58] *** Joins: lasconic (sid4376@gateway/web/irccloud.com/x-wujpnuwoirebzzuw)
+[23:59:49] *** Quits: justin_time (~stefan@p5088A65A.dip0.t-ipconnect.de) (Ping timeout: 252 seconds)

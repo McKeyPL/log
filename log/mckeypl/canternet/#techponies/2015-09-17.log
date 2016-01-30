@@ -1,0 +1,578 @@
+[00:04:46] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:28:22] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:52:21] *** zz_CyberJacob is now known as CyberJacob
+[01:22:03] *** CyberJacob is now known as zz_CyberJacob
+[01:39:41] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[01:44:07] <Starthunder> ++Colgate for using Tor just to generate traffic on it
+[01:50:03] <Starthunder> Okay, let's see about this registration. >.>
+[02:02:25] <Seoson> So my XSS for Hasbro went full disclosure. https://www.xssposed.org/incidents/85463/ Have fun. Over 34 days since the initial report.
+[02:02:27] <PinkiePieBot> [ equestriagirls.hasbro.com XSS vulnerability - the Cross-Site Scripting Archive - XSSposed.org ]
+[02:06:32] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[02:11:24] <Starthunder> o.e !
+[02:11:32] <Starthunder> They put a park page…! o.e
+[02:14:02] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:16:22] <Starthunder> Yeah I don't like this web panel
+[02:16:35] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[02:16:45] <Starthunder> How bad of an idea is it for me to use my VPS as the authoritative server or whatever for my domain? >3>
+[02:17:28] <Seoson> Operating your own name server is a bad idea
+[02:17:48] <Seoson> You will need at least two servers in 2 different subnets
+[02:18:45] <Seoson> And you should make sure that there is a decent distance between those
+[02:18:59] <Starthunder> At least two authoritative nameservers? I can't just run my own server that's authoritative for my domain, and let other servers be…non-authoritative?
+[02:19:14] <Seoson> Depends on the TLD
+[02:19:29] <Seoson> For .de domains you need a minimum of 2 in different subnets
+[02:19:32] <Starthunder> .net
+[02:20:03] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:20:11] <Seoson> I don't know about .net . However if you cannot meet those you shouldn't do it anyway
+[02:20:38] <Seoson> It's bad practice
+[02:20:48] <Starthunder> Why?
+[02:21:00] <Starthunder> I mean…if the authoritative server's down, doesn't everything else just run on cached records?
+[02:21:07] <Starthunder> Until they expire?
+[02:21:13] <Seoson> Because you create an additional signle point of failure without any meaningful benefit
+[02:21:33] <Seoson> There are hoster that will do DNS free for you
+[02:21:49] <Seoson> Even if you don't like the one that comes with your domain
+[02:22:06] <Starthunder> I see a meaningful benefit—full control over the domain. I can put in whatever records I like; I'm not limited to what some web panel deems valid.
+[02:22:20] <Starthunder> A single point of failure, sure, but isn't the latency on it large enough?
+[02:22:48] <Starthunder> If my server goes down, shouldn't everything be fine for long enough that I can hopefully get it back up before anything actually breaks?
+[02:23:26] <init3> It is not a hard requiement for any of the common TLDs to have two in different subnets. 
+[02:24:07] <Seoson> I don't what this has to do with latency. A good DNS provider will let you do almost anything you want.  Last question depends on the TTL
+[02:24:29] <Seoson> I don't know*
+[02:24:52] <init3> Often times both name servers are on one box with many smaller websites, which is bad practice sure but consider many people run email, web, db and whatnot all on one box anyway. 
+[02:25:06] <Starthunder> Well, because it's not like if all the authoritative servers suddenly stop replying to queries, the entire domain suddenly stops resolving
+[02:25:11] <init3> If the DNS is held up but nothing else is it is pointless. 
+[02:25:29] <Starthunder> Non-authoritative servers will continue to return the previous records for /some/ period of time.
+[02:25:40] <Seoson> Apart from that hosting a nameserver is not necessarily easy. Well init3 what about mail?
+[02:25:59] <Starthunder> I don't have any major services, anyway. :p
+[02:26:01] <Seoson> If they find no MX record they won't bounce I guess
+[02:26:10] <init3> Yeah it will
+[02:26:14] <Starthunder> This box does IRC, VPN, and kind of WWW
+[02:26:25] *** Quits: Crimson_Tail (Bluepon@Pony-1g0r5o.cg80.k4gu.0151.2601.IP) (Ping timeout: 121 seconds)
+[02:26:36] <Starthunder> oh, and SSH, of course
+[02:26:38] <Starthunder> that's about it
+[02:26:38] <Colgate> /shrug, I used to run bind, didn't find it that difficult to run
+[02:26:44] <Colgate> certainly easier than a mail server
+[02:26:54] <init3> It will bounce immediately though in fairness, instead of being queued for resend 
+[02:27:02] <init3> bind is super easy to run
+[02:27:09] <Starthunder> It /is/ running a DNS server, but that's currently set to only reply on loopback and VPN
+[02:27:09] <Colgate> just make sure you don't have recursion on
+[02:27:14] <Colgate> :P
+[02:27:19] <init3> haha
+[02:27:25] <Seoson> Well if you want DNSSEC and things I dunno. Mail always seemed easy to me ^^
+[02:27:48] <Colgate> assuming your tld even supports dnssec :P
+[02:27:55] <Starthunder> .net does, doesn't it? >.>
+[02:27:58] * ShivalWolf ponders the havoc that would be caused if a DNS server had recursion on by default with idiots setting up their own DNS servers
+[02:28:11] <init3> DNS amplification DoS. Look it up.
+[02:28:23] <Phase> ShivalWolf, isn't that exactly the current situation?
+[02:28:32] <Phase> and yeah, DNS ampliifcation
+[02:28:38] <ShivalWolf> Phase: all the big ones have it off by default
+[02:28:47] <ShivalWolf> problem is stupid people reconfigure to turn it on becuase they dont know what they are doing
+[02:28:47] <Seoson> I basically see no reason to use your own nameserver
+[02:29:12] <Colgate> Starthunder: yeah, it should
+[02:29:17] <Seoson> Sure I have a bind running as well. It even has virtual domains, but I wouldn't run it gfor the public
+[02:29:25] <ShivalWolf> though theres alot of stupid vendors with their modem/router devices where they leave recursion on the wan interface
+[02:29:36] <Phase> ShivalWolf, https://youtu.be/q2FxTgd3uTE?t=19m25s
+[02:29:36] <PinkiePieBot> [ Defcon 21 - Evil DoS Attacks and Strong Defenses - 41754 views - 41m 20s long - 380 likes - 98.7% ]
+[02:29:51] <ShivalWolf> Phase: i was at that talk
+[02:30:02] <Phase> :D
+[02:30:16] <init3> I developed a script at where I used to work to search our entire netblock for recursive DNS responses every day and send me an email if any were found. 
+[02:30:28] <init3> By developed I mean, wrote like 3 lines
+[02:30:50] <Phase> with enough marketing, a 3 line script is worth a fortune
+[02:30:50] <Colgate> there's probably an nmap script already made for tha
+[02:30:55] <init3> Almost pulled someone's network cable. 
+[02:31:05] <init3> Because they didn't think it was a big deal
+[02:31:24] <Seoson> Sadly DNS is not the only protcol vulnerable. CoD4's is as well unless you run CoD4X (Like I do)
+[02:31:37] <Seoson> And there are more
+[02:31:39] <Colgate> CoD4?
+[02:31:42] <init3> Pretty sure it was nmap based. Long time ago though. 
+[02:31:43] *** Joins: Crimson_Tail (Bluepon@Pony-1g0r5o.cg80.k4gu.0151.2601.IP)
+[02:31:48] <Seoson> Call of Duty 4 Dedicated Server
+[02:31:54] <Colgate> oh what
+[02:31:56] <Colgate> -.-
+[02:32:00] <Starthunder> Okay, somepony educate me on how this thing with authoritative servers and NS records and stuff works, 'cos I think I've got it wrong.
+[02:32:05] <Colgate> also ntp
+[02:32:11] <Seoson> CoD4X is a fan made mod
+[02:32:16] <Seoson> Oh yeah ntp monlist
+[02:32:24] <Seoson> That was awesome xD
+[02:32:28] <Colgate> probably many many more too
+[02:33:00] <One-Trick> fping, nmap. so fun.
+[02:33:18] <Phase> ShivalWolf, but yeah, reality is it's pretty much happening anyway, even without poor defaults
+[02:33:52] <ShivalWolf> Phase: yeah i know i see it every day on CPE devices
+[02:34:00] <ShivalWolf> its funny how bad some of these things are
+[02:34:03] <Seoson> Thankfully open relays died a painful death ^^
+[02:34:18] <Starthunder> Do `NS` records indicate /authoritative/ nameservers?
+[02:34:24] <Seoson> Yes
+[02:34:35] <Starthunder> Ahhhh.
+[02:34:46] <init3> Starthunder: afaik NS records are the only thing your registrar has to have stored functionally. The registrar has both the IP and the name of the name server. 
+[02:35:21] <init3> So authoritative just means for the domain itself.
+[02:35:32] <Starthunder> I thought authoritative meant…
+[02:35:35] * Starthunder …pauses.
+[02:35:45] <init3> Like registrar level?
+[02:35:54] <Starthunder> Not registrar…more /owner/-level.
+[02:36:33] <Starthunder> This is the /official/ A record for foo.example.com. It's /definitely/ up to date and it's what the owner of example.com put in there.
+[02:36:50] <init3> Oh
+[02:36:57] <init3> nothing like that. 
+[02:37:25] <init3> Unfortunately. DNSSEC is a thing to kind of make that sort of thing a reality but it's a long way out. 
+[02:37:36] <init3> if IPV6 is taking this long....
+[02:37:40] <Starthunder> Well, obviously without the guarantees crypto provides
+[02:37:47] <Starthunder> but, y'know, besides that
+[02:38:04] <Starthunder> Assuming no Mallories.
+[02:39:09] <init3> Mallories? 
+[02:39:27] <Starthunder> Malicious attacker. Like Eve, but active instead of passive.
+[02:39:47] <init3> Ahh
+[02:39:47] <Starthunder> Anyway, what's authoritative mean?
+[02:40:07] <init3> Not caching is the simpliest way I'd say to expmain it. 
+[02:42:39] <Gigabit> shit, VB won't show 64 bit OSes
+[02:42:55] <init3> Hey I'm kind of curious though since I mentioned ipv6. Colgate: by chance is there an easy way you can (if you'd be willing) to pull the percent of connections to canternet that are v6? I /should/ be right now but something in my ipv6 stack is unhappy right now.  
+[02:43:21] <Colgate> ~12%
+[02:43:23] <Starthunder> Not caching?
+[02:43:26] *** Joins: Asoka_White (Asoka@Pony-cgpvns.net-htp.de)
+[02:43:48] <init3> That's not too bad really, though I guess considering ipv6 is pre 2000 it kind of is. 
+[02:43:49] <Starthunder> Isn't that usually the same as what I thought?
+[02:44:05] <init3> Maybe?
+[02:44:21] <init3> I may have misunderstood what you meant. 
+[02:44:33] <Phase> ShivalWolf, expensive to get to defcon?
+[02:44:36] <Colgate> init3: I literally just did /map and used the usercount on derpy
+[02:44:58] <Colgate> since that's the only server with an ipv6 record atm
+[02:45:07] <Starthunder> init3: in short, approved by the rightful owner of the domain
+[02:45:20] <init3> Oh
+[02:45:25] <Starthunder> an authoritative server (from a moral standpoint) is one that always accurately reflects the owner's will
+[02:45:46] <init3> Okay. that makes sense then. 
+[02:45:46] <Starthunder> an authoritative server (from a protocol|infrastructure standpoint) is one designated in NS records for the domain (I guess)
+[02:45:57] <Starthunder> which is why I wanted to run my own
+[02:46:36] *** Quits: Asoka (Asoka@Pony-fm4b1j.net-htp.de) (Ping timeout: 121 seconds)
+[02:48:29] * Seoson is on derpy. *Yay*
+[02:50:19] <ShivalWolf> Phase: work paid
+[02:50:24] <Phase> moce
+[02:50:26] <Phase> nice'
+[02:50:30] <init3> I'm root on derpy. Dun dun daaaa. 
+[02:50:33] *** Quits: tiwake (Octavia@Pony-njonl3.wa.charter.com) (Ping timeout: 121 seconds)
+[02:50:41] <ShivalWolf> but it was about 12000 in total
+[02:50:43] <init3> (except my home server is just named derpy too)
+[02:51:10] <ShivalWolf> buisness class flights. hotel. blackhat, defcon, meal budget
+[02:51:35] <Starthunder> Okay, I'll try a different tack. Is there a way I could have good-practice DNS with all those multiple nameservers, but have them all pull their records from my DNS server?
+[02:52:01] <Phase> dns has a replication mechanism
+[02:52:06] <init3> If they are set to^ that
+[02:52:08] <init3> As slaves
+[02:52:27] <init3> But you are replicating the entire server, not just a zone. 
+[02:52:40] <Starthunder> Hmm?
+[02:52:59] * Phase hasn't actually set up replication
+[02:53:00] <Starthunder> I mean, I don't /run/ multiple DNS servers. So I'd have to get someone with many of them to agree to do that.
+[02:53:20] * Phase would love a service that just runs slave dns servers
+[02:53:36] <Starthunder> I can't do that? D:
+[02:53:37] <init3> Well what I mean is you aren't just replicating yourdomain.com. DNS replication means replicating all zones on that server.
+[02:53:43] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[02:54:07] <Starthunder> Err…well, the only zone that I own is blackl.net.
+[02:54:43] <Phase> init3, iirc, it broadcasts an INFORM to all slaves, who then initiate a zone transfer. i'd be surprised if this couldn't be configured per-zeone
+[02:54:45] <Phase> zone'
+[02:55:17] <init3> That could be. 
+[02:55:36] <Phase> not a complicated replication mechanism
+[02:55:57] <init3> All my DNS chores were pretty large setups with thousands of zones so that was never really something I thought about. 
+[02:56:33] <init3> I love DNS. 
+[02:56:49] <init3> So easy and yet can be so deep. 
+[02:57:04] <Starthunder> …wait, Phase made it sound like there was no service that did what I'm looking for.
+[02:57:15] <Phase> Starthunder, i've not found one yet
+[02:57:33] <Phase> plus there's so many free dns providers
+[02:57:46] * Phase just used cloudflare and deals with a subdomain for local stuff
+[02:58:31] * DJ-C0L7[CSS] almost made a naughty comment
+[02:59:31] <Phase> email too, haven't found a service that just does store and forward
+[02:59:39] <Phase> everyone wants to manage your everything
+[02:59:43] *** Joins: tiwake (Octavia@Pony-njonl3.wa.charter.com)
+[02:59:57] <Starthunder> Noh! :c
+[03:00:28] <Phase> using google apps now but it's really not intended for that
+[03:00:29] <Starthunder> /I/ want to manage my stuff. I just want someone else to faithfully cache and parrot so I can set NS records pointing at them >.>
+[03:00:53] <Starthunder> C'mon. Copypasting zonefiles from my server to some web panel is gonna get annoying. :<
+[03:01:04] * Phase would love if cloudflare did zone transfers
+[03:02:13] <Starthunder> Am I basically stuck just doing that?
+[03:02:35] <Phase> can set up your own slave on some low power vps
+[03:02:38] <Starthunder> …unless I go the bad-practice way and just have my one little VPS as the only authoritative nameserver?
+[03:03:20] <Colgate> I just HE's dns
+[03:03:40] <Colgate> only problem is no dnssec
+[03:03:42] <Colgate> :(
+[03:04:16] * Starthunder wants DNSSEC. Will not have it initially, but will set it up…eventually…
+[03:04:55] <Phase> >slave support
+[03:05:03] <Phase> Colgate, you can use HE as a slave server?
+[03:05:13] <Colgate> oh, no
+[03:05:17] <Phase> awww
+[03:05:27] <Starthunder> maybe I should put out an advert
+[03:05:28] <Colgate> I just don't want to deal with dns stuff really :P
+[03:05:37] <Starthunder> DNS master looking for willing slaves
+[03:06:50] <Phase> http://www.frankb.us/dns/ apparently it exists
+[03:06:51] <PinkiePieBot> [ Free Secondary DNS ]
+[03:10:49] <Starthunder> o3o ?
+[03:21:06] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[03:21:12] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[03:22:20] <init3> Eyyyy, got my v6 working again. grep to the rescue!
+[03:22:34] <Starthunder> more like `init 6` there
+[03:22:40] <init3> Hue
+[03:23:09] <Starthunder> Phase: so I'd register with one or two of those, and dump all their nameservers in my NS records?
+[03:25:56] *** Ruthalasleeeeep is now known as Ruthalas
+[03:25:57] <init3> So #archlinux told me I'm a bad pone for still using ifconfig. Do many of you use ip for everything instead?
+[03:26:30] * Starthunder still uses ifconfig for querying.
+[03:29:44] *** Quits: ShivalWolf (ShivalWolf@BigMac.is.a.Coltcuddler.org) (Quit: leaving)
+[03:30:28] <Starthunder> ^ Should've just gone with @is.a.coltcuddler.org
+[03:30:42] *** Joins: ShivalWolf (ShivalWolf@2400:d400:9:7375:abcd::2)
+[03:32:29] <Phase> init3, i've changed over to ip
+[03:33:14] <Phase> Starthunder, can do that
+[03:33:43] * Phase has no idea how trustworthy they are, or what problems they could cause if not
+[03:33:55] <init3> I should come up with a better vhost. 
+[03:34:09] <init3> I'll do it later. 
+[03:35:36] <Starthunder> Phase: I mean…namecheap's not gonna do that?
+[03:35:47] <Starthunder> There aren't any big names that do it, are there?
+[03:35:58] * Phase doesn't know of namecheap
+[03:39:10] <HoneyDrops> init3: I still use ifconfig.
+[03:39:51] * JustAberrant does as well
+[03:40:51] <Phase> ip is more capable and somehow on more devices
+[03:41:00] <Phase> android for example tends to have a fully featured ip
+[03:41:07] <Phase> as does openwrt
+[03:44:47] <Starthunder> I really feel like just making my own server the only authoritative nameserver. :I
+[03:45:15] <init3> You can do that, you'l ljust not have replication. 
+[03:48:32] * HoneyDrops still uses iwconfig if it's not WPA, then she uses wpa_supplicant.
+[03:48:37] <Starthunder> Okay, so…I want my server to not do recursion for the public Internet.
+[03:49:27] * Starthunder has allow-recursion and allow-query-cache set to loopback and VPN blocks only
+[03:49:52] <Starthunder> Do I wanna just set allow-query to everyone?
+[03:51:08] <init3> I think so
+[03:52:56] <init3> Just after you set it double check. It can be dicey doing both an authoritative and a recursing NS so you want to double check everything. 
+[03:53:50] <init3> http://openresolver.com/ is super quick and dirty way
+[03:53:51] <PinkiePieBot> [ Open recursive DNS resolver test ]
+[03:56:52] <Starthunder> Authoritative only for my own domain; recursive only for loopback|VPN
+[03:56:57] <Phase> yay, i configured works dns correctly
+[04:04:02] * Starthunder stares at his zonefile.
+[04:04:06] <Starthunder> I feel like I'm missing something…
+[04:04:43] <Starthunder> well, obviously I'm missing the service forwards, but besides that
+[04:05:46] <Starthunder> https://gist.github.com/BlacklightShining/13976f9b4defb4393483
+[04:05:47] <PinkiePieBot> [ db.blacklnet · GitHub ]
+[04:06:22] * Starthunder stares at the SOA bit.
+[04:06:25] <Starthunder> …am I allowed to do that?
+[04:06:36] <Starthunder> …also, are those okay values?
+[04:07:52] <Starthunder> …doesn't the `4w` in the /expire/ field make the `$TTL 4w` redundant?
+[04:10:08] * Starthunder (really wants that ANAME or whatever >:( )
+[04:14:21] <Starthunder> …are SRV records /always/ fully-qualified?
+[04:15:08] <Starthunder> Like, I can't say `_ircs._tcp.irc  IN  SRV`; I have to spell out _ircs._tcp.irc.blackl.net.?
+[04:17:05] <Starthunder> …and I can't abbreviate the target name, either?
+[04:18:03] <Phase> ?
+[04:18:12] <Phase> you shouldn't have to fully qualify them
+[04:19:57] <Starthunder> Good, good.
+[04:20:03] <Starthunder> named-compilezone is okay with it, too
+[04:20:14] <Starthunder> I suppose maybe I shouldn't be using Wikipedia as a reference
+[04:20:50] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[04:24:12] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[04:25:02] <Starthunder> https://gist.github.com/BlacklightShining/13976f9b4defb4393483
+[04:25:03] <PinkiePieBot> [ db.blacklnet · GitHub ]
+[04:25:05] <Starthunder> How's it look? x3
+[04:48:30] * Starthunder prods #techponies
+[05:03:29] *** Joins: Midnight_Tinker_Mobile (uid102824@Pony-tjmceb.tooting.irccloud.com)
+[05:09:29] <Starthunder> (Let's Encrypt seems to use Docket a lot :( )
+[05:19:26] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[05:20:05] * JustAberrant carefully Starthunder :D
+[05:20:20] <Starthunder> JustAberrant: how's my zonefile look? >.>
+[05:20:41] <aji> it should be all CNAME ajitek.net.
+[05:21:04] <Starthunder> No, seriously. I'm new to this stuff. :P
+[05:21:12] <JustAberrant> dat NS entry
+[05:21:21] <JustAberrant> but suppose is fine as has A record later
+[05:23:31] <JustAberrant> aji: wuvily website :)
+[05:23:46] <Starthunder> JustAberrant: is that not how it's usually done? >.>
+[05:23:58] <aji> JustAberrant: ty
+[05:23:58] <JustAberrant> Starthunder: I'd rather not comment :(
+[05:24:06] <aji> i'm thinking of making it even more basic
+[05:24:11] <JustAberrant> hehe
+[05:24:22] * JustAberrant went that route ( justaberrant.com )
+[05:24:27] <aji> less words
+[05:24:32] <aji> haha nice
+[05:25:01] * Starthunder doesn't have a website.
+[05:25:23] <Starthunder> Just a couple random files scattered in /var/www
+[05:25:42] <Starthunder> Hahaha.
+[05:27:15] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[05:30:32] <Starthunder> Hmm. Is there something I can pipe a file through to colorize it as vim would?
+[05:37:20] <aji> https://ajitek.net/ all cleaned up
+[05:37:20] <PinkiePieBot> [ Alex Iadicicco ]
+[05:38:10] <aji> i feel like linking to a search results page like that isn't so hot
+[05:38:34] <aji> teh emails seem to be plain text, hrm
+[05:38:36] <aji> the*
+[05:38:41] <Starthunder> Okay…how do I get Namecheap to transfer control of my domain to my server? >.>
+[05:39:00] <Rylee> NS
+[05:39:29] <Starthunder> Yeah, but…they don't let you arbitrarily modify the zonefile :I
+[05:39:39] <Starthunder> You're restricted to what their web thing does
+[05:39:47] <Starthunder> don't tell me I have to email support -.-
+[05:39:49] <Rylee> what's your point?
+[05:39:50] <Rylee> https://www.namecheap.com/support/knowledgebase/article.aspx/767/10/how-can-i-change-the-nameservers-for-my-domain
+[05:39:54] *** init3 is now known as Init3-away
+[05:40:18] <Starthunder> Oh, I use the /Transfer DNS to Webhost/ to transfer DNS to my private server.
+[05:40:22] <Starthunder> Okay. That makes sense. 9.9
+[05:40:24] <Starthunder> Thanks, though, Rylee.
+[05:40:53] <Starthunder> …wait…now I have a prerequisite paradox.
+[05:41:02] <Starthunder> …oh no wait, no I don't.
+[05:41:33] <Rylee> might want to look into the concept of glue records
+[05:42:19] <Starthunder> Glue records are just the address records for the hostnames used in NS records, right?
+[05:42:46] <Starthunder> …right, but they need to be hosted by the next level down
+[05:42:51] <Rylee> sort of. they're records that the delegating server can return that are on the delegated domain. 
+[05:42:53] <Starthunder> how do I make that happen again? 6_9
+[05:42:58] <Rylee> not a clue w/ namecheap
+[05:43:05] <Gigabit> Hey hey, we don't talk about glue here
+[05:43:23] <Rylee> DNS is made of ponies!
+[05:43:27] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[05:43:33] <Starthunder> …hmm…should I CNAME ns1->sugar-belle?
+[05:44:43] <Starthunder> (relatedly, should I SRV _dns._{tcp,udp}.ns->sugar-belle?)
+[05:45:55] <Starthunder> …AUGH
+[05:46:04] <Starthunder> > We encountered some issues when setting nameservers. The reported problem is: 2011168 Two nameservers are required<br>
+[05:46:13] <Starthunder> (yes, that '<br>' shows up in the rendered page)
+[05:46:34] * Starthunder presses a hoof to his forehead.
+[05:46:45] <Starthunder> Okay…any of you pones run a DNS server or three?
+[05:47:08] <Rylee> mmm
+[05:47:35] <Rylee> you're able to glue the same IP to different records and use them as two, maybe
+[05:47:37] <Rylee> I think I do that
+[05:49:47] <Starthunder> I mean…after I do this, I won't depend on Namecheap for anything except keeping the registration active, yeah?
+[05:49:52] <Starthunder> It'll just be between the .net nameservers and me?
+[05:51:16] <Starthunder> I'm hating some of Namecheap's UX
+[05:51:23] <Starthunder> > We encountered some issues when setting nameservers. The reported problem is: 3031166 Updating nameservers failed. Please try again. 541<br>
+[05:51:41] <Starthunder> This is /probably/ because I tried setting the second one to ns9999, which doesn't exist <.<
+[05:51:45] <Starthunder> but it didn't say, so I can't be sure
+[05:52:20] * Starthunder boops aji.
+[05:52:34] <Rylee> basically
+[05:53:36] <Starthunder> If your two-names-one-IP trick doesn't work, can I do something stupid like assigning a name to the unspecified address and using that as the second nameserver?
+[05:53:44] <Starthunder> or does it check in with both specified nameservers or something? x.x
+[05:54:49] <Rylee> it shuffles between them; yes
+[05:55:46] <Starthunder> Heh. If I had a v6 adderss, I could probably put that on the second name and that'd /have/ to work
+[05:56:37] <Starthunder> > We encountered some issues when setting nameservers. The reported problem is: 3031166 Nameserver 'sugar-belle.blackl.net' could not be registered<br>
+[05:58:36] <Starthunder> …oh…
+[05:58:47] <Starthunder> From somepony else's forum thread…
+[06:00:04] <Starthunder> > It appears that they're not registered as private nameservers. To resolve this issue, you can contact your hosting provider and ask them to register these nameservers at a registry level (or create glue records for them).
+[06:01:33] <Starthunder> …oh.
+[06:01:44] <Starthunder> welp, okay, sugar-belle's IP is now ns1
+[06:07:57] <Starthunder> Oh, what
+[06:08:16] <Starthunder> Okay, so the authoritative nameserver is apparently dns1.registrar-servers.com right now
+[06:08:39] <Starthunder> I added ns1->69.90.132.107 using their register-nameserver thing
+[06:08:46] <Starthunder> and it's sitting there like yes, it was added
+[06:09:13] <Starthunder> but if I run `host`, querying dns1.registrar-servers.com about ns1.blackl.net, it gives me NXDOMAIN.
+[06:09:15] <Starthunder> WTF.
+[06:09:27] <Starthunder> How can you be an authoritative nameserver and not return up-to-date information??
+[06:12:02] <Starthunder> YAY~!
+[06:12:12] <Starthunder> okay, added ns1 and dns1 both pointing to Sugar's IP
+[06:12:24] <Starthunder> and it finally did the transfer, to those two 9.9
+[06:17:38] <Starthunder> So…Sugar should be authoritative for my domain now, yeah?
+[06:17:50] <Starthunder> Because, according to `host`, she's not setting the authoritative flag :<
+[06:24:27] <Starthunder> that seems a configuration error though
+[06:24:42] <Starthunder> I have `type master;` set in the `zone` block
+[06:24:47] <Starthunder> …aaaaand, I didn't reload, did I.
+[06:24:50] <Starthunder> Did I?
+[06:24:57] * Starthunder reloads for good measure.
+[06:26:32] <Starthunder> Nope, still no authoritative flag.
+[06:26:50] <Q0> Starthunder you sacrificed a goat right?
+[06:27:14] <Q0> named demands goat sacrifice
+[06:27:48] <Starthunder> …mmmmm…I actually sacrificed a couple of lambs.
+[06:28:02] <Starthunder> I did collect the blood from their throats in a silver bowl, though, so I should be good, yeah?
+[06:29:08] <Starthunder> Oh, that's odd. Authoritative flag's set for queries about sugar-belle, but not about @
+[06:30:39] <Starthunder> Did I buck up the SOA?
+[06:35:05] * Starthunder prods Q0. “Seriously, any insights?”
+[06:35:35] <Starthunder> I gisted the zonefile; it's at https://gist.github.com/BlacklightShining/13976f9b4defb4393483
+[06:35:36] <PinkiePieBot> [ db.blacklnet · GitHub ]
+[06:36:36] <Q0> Starthunder did you set the configuration to be authoriatative
+[06:36:55] <Starthunder> Q0: as in `zone { type master; ... };`? Yeah.
+[06:38:37] <Q0> well I'm out of ideas then
+[06:38:46] <Q0> sorry, I use MIcrosoft's DNS server
+[06:39:01] <Q0> I've dabbled very little in named
+[06:41:24] <Starthunder> oh wait
+[06:41:38] <Starthunder> the NS record should be pointing to ns1, not sugar-belle, huh
+[06:41:51] <Starthunder> …can…can I CNAME ns1->sugar-belle? >.>
+[06:42:04] *** Gigabit is now known as GigaZzz
+[06:50:13] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[07:13:56] *** Eventide is now known as Eventide|Sleepies
+[07:31:00] *** Ruthalas is now known as ruthalasleep
+[07:39:17] <Starthunder> Remind me to start a nameserver-sharing group.
+[07:40:01] <Starthunder> That has a lot fewer barriers to entry, so it should actually get some ponies, unlike #SharingIsCaring, right? Right?
+[07:40:26] <Starthunder> Anyway, I'm going to sleep now.
+[07:40:39] <Starthunder> Ping me with relevant stuff and I'll check the scrollback when I wake up.
+[07:49:15] *** Quits: Mist|Game (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[08:04:22] *** zz_CyberJacob is now known as CyberJacob
+[08:54:45] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[08:55:33] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[09:23:26] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[09:26:38] *** Quits: Crimson_Tail (Bluepon@Pony-1g0r5o.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[09:38:19] *** CyberJacob is now known as zz_CyberJacob
+[09:41:26] *** thatdguy|sleep is now known as thatdguy
+[09:58:48] *** Quits: Midnight_Tinker_Mobile (uid102824@Pony-tjmceb.tooting.irccloud.com) (Quit: Connection closed for inactivity)
+[10:00:10] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[10:09:36] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[10:12:18] *** Init3-away is now known as init3
+[10:12:39] *** Awaykitty is now known as Unixkitty
+[11:11:31] *** Joins: Phase (Phase4@Pony-u9jbjo.internode.on.net)
+[11:23:58] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[11:25:36] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[11:27:34] *** Quits: init3_1 (jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[11:27:40] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[11:35:16] *** Quits: init3_1 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[11:35:21] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[11:35:47] *** init3_1 is now known as init3
+[11:39:39] <init3> Can someone with ipv6 do me a quick favor? See if 2601:402:8000:2189:6627:37ff:fe1d:729c is accessible via SSH (on 22)? The lack of NAT and my noob level understanding of ipv6 makes me a tad nervous about my firewall.  
+[11:46:00] <Jouva> It's not connecting, but it's not timingout either... until I typed that out
+[11:46:07] <Jouva> Yeah it's not connecting
+[11:46:27] <init3> OK gud. 
+[11:46:33] <Jouva> And just to make sure my ipv6 is working
+[11:46:37] <init3> It should be DROP, not REJECT
+[11:47:04] <Jouva> Yes which means timeout on my end cause it doesn't know you're dropping
+[11:47:22] <Googie> Still waiting for ISPs here to actually start rolling out IPv6 :/
+[11:47:46] <init3> I'm kinda supprised mine does it nativley. 
+[11:48:34] <init3> Still amusingly they only allocate a /64, which is considered the mininum subnet size and sorta smaller than it should be according to the RFC. 
+[11:48:41] <Jouva> This may have been an invalid test
+[11:48:48] <init3> Oh?
+[11:48:53] <Jouva> But I don't have time to look into why
+[11:49:13] <Jouva> I can't connect to a web address that uses ipv6
+[11:49:13] <Googie> One of my IPv6 native VPSs timed out as well.
+[11:49:25] <johnsey> Nmap scan report for 2601:402:8000:2189:6627:37ff:fe1d:729c
+[11:49:27] <johnsey> 22/tcp filtered ssh
+[11:49:32] <Jouva> Oh THERE it goes
+[11:49:33] <Jouva> yeesh
+[11:49:39] <init3> Ok coo
+[11:49:49] <init3> Thanks everyone. 
+[11:50:32] <init3> The lack of NAT is cool but NAT was like easy mode for firewalling.
+[11:53:17] <init3> I kind of want to set something to a silly static V6. There are a few words you can spell with it. Like, BEEF and DEAD. Trying to think of more. 
+[11:55:17] <init3> oh god I found a list. b19:b00b:babe:cafe
+[11:55:22] <Googie> https://en.wikipedia.org/wiki/Hexspeak
+[11:55:23] <PinkiePieBot> [ Hexspeak - Wikipedia, the free encyclopedia ]
+[11:57:05] <init3> "DEFEC8" Hue
+[11:59:46] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[12:07:58] <Phase> init3, https://gist.github.com/ariscop/678af6b136908a9e9a2f
+[12:07:59] <PinkiePieBot> [ egrep -i '^[a-fo]{5}[a-fo]*$' usr_share_dict_words | gist · GitHub ]
+[12:33:35] *** init3 is now known as Init3-away
+[13:18:28] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[13:31:25] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[13:39:43] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (A TLS packet with unexpected length was received.)
+[13:39:54] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[13:54:07] <Blackjack> Init3-away: 2 of my servers have IPv6s ending in ::d1cc and ::c0cc, I've also got ::1337 and ::9001
+[13:54:14] <Blackjack> That's the one thing I like about IPv6 :P
+[13:54:45] <Blackjack> Also, my ISP claims to provide native v6 but I have no idea how to use it.
+[13:55:41] <Blackjack> http://www.cogeco.ca/web/on/en/residential/support/146/463/faq-internet/internet-subscription/technical-questions/how-do-cogeco-ip-addresses-work
+[13:55:42] <PinkiePieBot> [ How do Cogeco IP addresses work? | FAQ | Cogeco Ontario ]
+[13:55:42] <Blackjack> Useless
+[13:56:01] <Blackjack> "Cogeco is currently using IPv6 Protocol to assign IP addresses. This protocol was modelled on and replaces IPv4’s IP address exhaustion." OK, great, but how? My router doesn't have IPv6 connectivity right now.
+[13:59:24] <Blackjack> They also claim they need a 30GB HDD and 1GB of RAM or you will be unable to meet the advertised speeds... I have a machine with 512MB of RAM and a 15GB drive working just fine
+[14:00:41] <Googie> Probably dhcpv6 I'm guessing >
+[14:39:43] *** thatdguy is now known as thatdguy|away
+[14:57:38] <WorkingData> boss: can you send me an email detailing what you did, and how long it took, and __
+[14:57:49] <WorkingData> me: yep. already did. an hour ago.
+[14:57:58] <WorkingData> boss: oh! let me have a look at that..
+[14:58:19] <WorkingData> xD
+[14:59:53] *** Quits: thatdguy|away (WebChat@Pony-pkbcdj.fbx.proxad.net) (Ping timeout: 121 seconds)
+[15:16:33] <Starthunder> Phase: you know you can just use {5,} there, right?
+[15:28:03] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[15:53:09] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Quit: Saliendo)
+[15:55:13] <tiwake> http://www.osnews.com/story/28841/Microsoft_is_downloading_Windows_10_to_your_PC_just_in_case_
+[15:55:14] <PinkiePieBot> [ Microsoft is downloading Windows 10 to your PC 'just in case' ]
+[16:05:50] *** Joins: Boomer (Bewmicorn@Element.of.Destruction)
+[16:06:36] <Boomer> Laptop cable working for all of five seconds before the display tells me it is no longer charging
+[16:27:12] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:33:10] <Seoson> Good day. Just found 5 different XSS exploits on 3 different websites
+[16:54:12] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:01:06] <Googie> https://lists.fedoraproject.org/pipermail/devel/2015-September/214665.html
+[17:01:07] <PinkiePieBot> [ Call for testing: 32-bit AMD CPU owners ]
+[17:01:15] <Googie> AKA, "We can't find anyone"
+[17:03:48] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Quit: )
+[17:04:44] *** Init3-away is now known as init3
+[17:06:51] *** GigaZzz is now known as Gigabit
+[17:09:17] *** Parts: Boomer (Bewmicorn@Element.of.Destruction) ()
+[17:12:59] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[17:15:26] *** Joins: Crimson_Tail (Bluepon@Pony-oiiaj0.cg80.k4gu.0151.2601.IP)
+[17:16:56] <Starthunder> …wow.
+[17:17:02] <Starthunder> I took way too long to figure that out.
+[17:20:32] <Starthunder> …oi!
+[17:21:51] <Starthunder> The seventh field in SOA isn't a negative response TTL; it's a minimum record TTL!
+[17:22:17] <Starthunder> None of you pones that looked at my zonefile caught that <.<
+[17:30:55] <Gigabit> What the hell.. And chat randomly pinging me for no reason
+[17:33:23] <Seoson> You know when you run a Gigabit network with Gigabit capeable hardware and also ping Gigabit while doing so *hides*
+[17:33:25] *** Joins: zeta_ (Bluepon@Pony-oiiaj0.cg80.k4gu.0151.2601.IP)
+[17:35:09] *** init3 is now known as Init3-away
+[17:35:36] *** Quits: Crimson_Tail (Bluepon@Pony-oiiaj0.cg80.k4gu.0151.2601.IP) (Killed (NickServ (GHOST command used by zeta_)))
+[17:35:41] *** zeta_ is now known as Crimson_Tail
+[17:37:19] <tiwake> hide behind a wall of pings
+[17:38:54] *** Unixkitty is now known as Awaykitty
+[17:40:44] <Gigabit> :p
+[17:46:33] <Starthunder> Gigabit, tiwake, Seoson, WorkingData, Blackjack: Any of you run (personal) DNS servers?
+[17:46:52] <Gigabit> Nope.
+[17:47:02] <tiwake> no
+[17:47:15] *** Eventide|Sleepies is now known as Eventide
+[17:47:24] <Seoson> Yes - but I have't looked into it for quite some time and have no plan to do so.
+[17:47:40] <Gigabit> I use opndns family shield for router 2 and Google DNS for router one
+[17:50:00] <WorkingData> I don't personally run anything for dns, but at work we have the windows dns role..
+[17:50:41] *** Quits: firestream_laptop (firestream@Pony-i78.l4s.158.69.IP) (Quit: )
+[17:51:50] <Seoson> Lol if your redirect script contains the parameter "spy" something is wrong.
+[17:52:10] <Starthunder> Who's got a redirect script with a spy= argument? O.o
+[17:53:07] <Seoson> http://redirect.pricespider.com/
+[17:53:17] * Seoson is doing XSS things
+[17:53:33] <Starthunder> Ahh.
+[17:57:37] <Blackjack> Starthunder: Yes
+[17:57:39] <Blackjack> Why do you ask?
+[17:58:21] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:58:40] <Starthunder> Trying to find ponies who'll run slave nameservers for me, in exchange for the same
+[17:58:53] <Blackjack> Oh
+[17:58:57] <Blackjack> Well, my DNS server is kinda
+[17:59:00] <Blackjack> internal
+[17:59:00] <Blackjack> :P
+[17:59:18] <Blackjack> I just figured you had a question about bind9 or something
+[18:01:23] <Starthunder> If I had a question about bind, I would've asked it, instead of asking for ponies who—
+[18:01:25] * Starthunder …pauses.
+[18:01:28] *** Gigabit is now known as GigaTown
+[18:01:32] <Starthunder> Okay, lemme try this again.
+[18:01:59] <Starthunder> #techponies, any of you willing to run slave nameservers for me in exchange for the same?
+[18:02:13] <Seoson> Some more XSS from our Hasbro friends. http://mylittlepony.hasbro.com/de-de/search?q=%22;alert%28%27xss%27%29;//
+[18:03:58] <Seoson> (Since they didn't fix the ones I've reported before I go full disclosure immediately)
+[18:05:05] *** Joins: Midnight_Tinker_Mobile (uid102824@Pony-tjmceb.tooting.irccloud.com)
+[18:10:49] <Seoson> And there is more: mylittlepony.hasbro.com/de-de/leave?new_win=true&url=http://instagram.com/mylittlepony"</><script>alert('XSS');</script>&locale=de-de
+[18:10:51] <PinkiePieBot> [ @mylittlepony • Instagram photos and videos ]
+[18:19:43] <Blackjack> lol
+[18:19:45] <Blackjack> Amazing
+[18:25:23] <Colgate> the only thing I use bind for atm is taking over dns zones to make my job easier on messing with programs XD
+[18:26:26] *** Quits: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP) (Connection closed)
+[18:28:59] * Starthunder thinks fully-qualified names should always have a trailing dot.
+[18:29:03] <Starthunder> Why did we ever stop doing that?
+[18:30:30] <Colgate> because it was annoying to type and implicit
+[18:35:51] <Starthunder> :|
+[18:36:20] <Starthunder> But it saves time and makes things more explicit…
+[18:41:20] *** Joins: MistVeil (AndChat3408@Pony-lelp7v.static.axtel.net)
+[18:42:26] <johnsey> well, you're free to type the final dot
+[18:46:03] <Starthunder> It doesn't always work.
+[18:46:15] <Starthunder> https://tools.ietf.org./html/rfc1912
+[19:04:49] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[19:11:57] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[19:13:33] <Seoson> bloody insecure XSS filters make my life harder than it needs to be -.-
+[19:15:58] <Seoson> it blacklists <script> but < script > is fine :P
+[19:18:35] *** Joins: thatdguy (WebChat@Pony-pkbcdj.fbx.proxad.net)
+[19:26:30] <Starthunder> Should I add SRV records for services that are intended for and available to only a select few, not the general public?
+[19:26:40] <Starthunder> Like SSH and these VPN servers
+[19:27:09] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[19:27:35] <Starthunder> …well, not SSH, 'cos that's host-specific
+[19:29:22] <Starthunder> Apple seems to do that, though—it uses things like _afp._afpovertcp.example.local, which must mean something's got SRV records for that, even though it isn't public
+[19:30:28] <Colgate> not very many services actually support srv records
+[19:31:03] <Starthunder> yes, well I will
+[19:31:27] <Starthunder> (^2 Because of this, we should really have a record type in between CNAME and SRV >.> )
+[20:05:31] <Starthunder> Is having a subdomain with all private nameserver and address records okay?
+[20:08:48] *** Quits: Midnight_Tinker_Mobile (uid102824@Pony-tjmceb.tooting.irccloud.com) (Quit: Connection closed for inactivity)
+[20:22:27] *** Init3-away is now known as init3
+[20:39:03] *** Quits: MistVeil (AndChat3408@Pony-lelp7v.static.axtel.net) (Quit: Bye)
+[20:41:06] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[20:44:45] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[20:44:58] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[20:48:30] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[20:49:12] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[20:49:33] *** zz_CyberJacob is now known as CyberJacob
+[20:50:13] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[20:50:23] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[21:33:34] *** Quits: Aww (aww@Pony-rmtngr.cool) (Ping timeout: 121 seconds)
+[21:34:29] *** Joins: Aww (aww@Pony-rmtngr.cool)
+[21:46:27] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[21:48:12] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[21:56:20] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[21:57:09] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[22:05:12] *** thatdguy is now known as thatdguy|sleep
+[22:24:37] *** Joins: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP)
+[22:40:23] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[22:41:07] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[22:49:50] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[22:49:57] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[22:49:58] *** ColtonDRG-Core is now known as ColtonDRG
+[23:08:25] <Phase> <Starthunder> Phase: you know you can just use {5,} there, right? < yes >_>
+[23:08:42] * Phase kinda knew but couldn't remember and it was quicker to copy paste than check
+[23:08:54] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[23:11:41] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[23:24:50] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[23:25:18] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[23:38:10] *** CyberJacob is now known as zz_CyberJacob
+[23:41:31] *** Quits: CompuDesktop (quassel@snuggly.filly) (Ping timeout: 121 seconds)
+[23:58:50] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)

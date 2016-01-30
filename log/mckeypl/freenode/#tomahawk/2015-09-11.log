@@ -1,0 +1,34 @@
+[22:31:50] *** Joins: McKey (~McK@irc.antyklay.pl)
+[22:31:51] *** Server sets mode: +gnt 
+[22:54:57] * theli_ua hates javascript
+[22:59:08] <theli_ua> muesli: why does 'albums' view in collection is totally different to artists and tracks?
+[22:59:42] <theli_ua> ie both artists and tracks actually represent w/e is in the collectoin, while 'albums' view is basically a list of links to standard albums and artists pages
+[23:02:14] <muesli> theli_ua: yeah that'll change with 0.9
+[23:02:22] <muesli> you'll get to pick the source of the track listing
+[23:02:38] <muesli> which can then default to "My Collection" instead of "MusicBrainz" when coming from the local collection
+[23:02:48] <theli_ua> so whats the eta on you guys starting to work on tomahawk?
+[23:02:50] <theli_ua> :)
+[23:03:48] <theli_ua> muesli: could you explain how is filter supposed to work on collections?
+[23:03:58] <theli_ua> ie when I open track listing from the album from artists view
+[23:04:13] <theli_ua> does filter need to be applied to .. artists? albums? tracks? everything?
+[23:04:19] <muesli> everything
+[23:04:35] <theli_ua> eh
+[23:04:40] <theli_ua> every one, or all combined?
+[23:05:54] <theli_ua> ie applied 
+[23:05:54] <theli_ua> 'artist album track' LIKE filter
+[23:05:54] <theli_ua> or
+[23:05:54] <theli_ua> arist LIKE filter AND album LIKE filter AND track LIKE filter
+[23:08:04] <theli_ua> muesli: ?
+[23:08:32] <muesli> artist.contains(filter) ....
+[23:08:39] <theli_ua> ... yes but
+[23:08:44] <muesli> AND ... AND ...
+[23:08:58] <theli_ua> oh
+[23:09:03] <theli_ua> that doesn'tmake sense
+[23:09:23] <theli_ua> why would all of artist album and track contain the same string o_O
+[23:09:30] <muesli> er sorry
+[23:09:34] <muesli> i'm really really really tired
+[23:09:58] <muesli> WHERE artist.contains(filter) OR album.contains(filter) OR track.contains(filter)
+[23:10:11] <theli_ua> ok, that does make sense
+[23:14:03] *** Quits: alsuren (~alsuren@host109-154-144-195.range109-154.btcentralplus.com) (Quit: alsuren)
+[23:15:17] <theli_ua> I think support for filter in that JS collection for 0.9 support is the only thing I'm missing so far
+[23:46:00] *** Joins: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com)

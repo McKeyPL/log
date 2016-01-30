@@ -1,0 +1,299 @@
+[00:20:04] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Quit: alsuren)
+[00:33:41] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[00:53:46] *** Quits: soee_ (~soee@aftt79.neoplus.adsl.tpnet.pl) (Ping timeout: 240 seconds)
+[01:10:52] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[03:37:03] *** Quits: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[03:54:50] <muesli> jherskowitz: wrt spotify support emails: fetching info won't work right now because spotikea is down
+[03:55:11] <theli_ua> spot ikea
+[03:55:13] <theli_ua> what
+[03:55:50] <jherskowitz> muesli: login too?
+[03:55:57] <muesli> theli_ua: a little daemon extracting playlist info from spotify, even if the tomahawk users don't have spotify themselves
+[03:56:03] <muesli> jherskowitz: spotify login should work fine
+[03:56:12] <muesli> jherskowitz: but i don't think he's complaining about the login not working
+[03:56:22] <jherskowitz> muesli: not for me
+[03:56:25] * theli_ua is still not sure how ikea is involved
+[03:57:15] <muesli> jherskowitz: works fine here
+[03:57:50] <muesli> jherskowitz: what error do you get?
+[03:59:17] <jherskowitz> muesli: huh… works on this machine, but was failing on my other machine today
+[03:59:28] <jherskowitz> said “can’t contact spotify” or something
+[03:59:51] <jherskowitz> but there is something weird between the two… both are el capitan
+[04:00:00] <jherskowitz> this one won’t load Amazon/Gmusic in the sidebar
+[04:00:02] <jherskowitz> the other one will
+[04:00:18] <theli_ua> plot thickens
+[04:00:26] <muesli> heh
+[04:00:35] <muesli> jherskowitz: did you compare / upload logs?
+[04:00:51] <muesli> i'm afraid i wouldn't have much time checking them myself right now, but maybe theli_ua can spot something
+[04:01:05] <muesli> i'd rather bring back the remaining services / server
+[04:01:06] <theli_ua> but
+[04:01:14] <theli_ua> but I never used spotify
+[04:01:15] <jherskowitz> muesli: my guess is that it is something with the dependencies
+[04:01:23] <jherskowitz> I was fighting with openssl
+[04:01:27] <jherskowitz> on both machines
+[04:01:35] <jherskowitz> maybe I got it right on one but not the other
+[04:01:36] <muesli> jherskowitz: oh, is it the one you self-compiled qt on?
+[04:01:45] <jherskowitz> oh
+[04:01:49] <muesli> remove that again
+[04:01:50] <jherskowitz> yeah, that could be
+[04:01:57] <muesli> and reinstall qt from bottle (normal brew install qt5)
+[04:02:09] <jherskowitz> I forgot about that
+[04:02:16] <jherskowitz> will try
+[04:02:20] <muesli> the one you self-built had no secure transport support
+[04:02:22] <theli_ua> wouldn't that break ssl for him?
+[04:02:29] <muesli> theli_ua: the self-built one would
+[04:02:43] <theli_ua> eh, I thought its the other way
+[04:02:44] <theli_ua> lol
+[04:02:58] <jherskowitz> muesli: good memory
+[04:02:58] <muesli> theli_ua: no, without using secure transport from qt, you're basically fucked on osx nowadays
+[04:03:01] * jherskowitz totally forgot
+[04:03:28] <muesli> secure transport enabled did break something else during compilation in tomahawk tho
+[04:03:32] <muesli> but that i've fixed a while ago
+[04:04:22] <theli_ua> hm, somehow I was sure that NOT self compiled one breaks amazon and gmusic for jherskowitz 
+[04:04:55] <jherskowitz> theli_ua: I’m almost positive I wouldn’t have self-compiled Qt5 on the machine that they are working on
+[04:05:06] <jherskowitz> *almost*
+[04:05:10] <jherskowitz> :)
+[04:06:41] <jherskowitz> muesli: I noticed that some of the artist bios get cut off - can I fix that?
+[04:13:32] <muesli> it's because last.fm's api doesn't have a "short version" anymore, i guess
+[04:13:44] <muesli> the question is: what's the real fix there? i can imagine various ones
+[04:13:58] <muesli> a) switch to hatchet api ;-)
+[04:14:06] <muesli> b) calculate our own short version
+[04:14:09] <jherskowitz> do we have a short version?
+[04:14:10] <jherskowitz> heh
+[04:14:15] <muesli> c) fade out the text at the bottom
+[04:14:30] <jherskowitz> d) scroll box?
+[04:15:08] <muesli> yeah, even tho with d) we'd be back at scrollbox-within-scrollbox
+[04:15:08] <jherskowitz> although multiple scrolls would suck
+[04:15:12] <muesli> which didn't feel good
+[04:15:13] <muesli> yeah
+[04:15:33] <muesli> i'm seriously leaning towards a)
+[04:15:37] <muesli> hatchet got what we want
+[04:15:39] <jherskowitz> e) fade text with a link to hatchet to read more
+[04:15:40] <muesli> and the api exposes it
+[04:16:15] <jherskowitz> yeah
+[04:16:17] <jherskowitz> makes sense
+[04:17:03] <muesli> also, eating our own dog-food
+[04:22:26] <jherskowitz> muesli: theli_ua: ok, brew Qt5 - I see it logging into google music but it doesn’t show up in the sidebar
+[04:22:31] <jherskowitz> https://www.irccloud.com/pastebin/meaHztH7/
+[04:22:32] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[04:22:46] <theli_ua> QuotaExceededError what
+[04:23:15] <jherskowitz> I also see it sending resolver queries to Amazon
+[04:23:18] <jherskowitz> but not in sidebar
+[04:23:35] <jherskowitz> theli_ua: I assume that is my storage quote
+[04:23:39] <jherskowitz> over 20k tracks
+[04:24:10] <theli_ua> hm, yeah, looks like something is wrong with quotas set for websql 
+[04:24:34] <theli_ua> but why you only now started getting this error 
+[04:25:04] <jherskowitz> good question
+[04:26:13] <jherskowitz> theli_ua: and this is what I see for Amazon
+[04:26:18] <jherskowitz> https://www.irccloud.com/pastebin/7K0858c6/
+[04:26:18] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[04:26:25] <jherskowitz> but again… only on this machine
+[04:26:33] <jherskowitz> that could be an old amazon version
+[04:26:39] <theli_ua> well
+[04:27:02] <theli_ua> same issue as the other guy reported
+[04:27:02] <theli_ua> mathus13>     JAVASCRIPT: "/home/sbarratt/.local/share/Tomahawk/atticaresolvers/gmusic/contents/code/gmusic.js:1" "TypeError: 'undefined' is not a function (evaluating 'Tomahawk.resolver.instance.saveUserConfig()')" "undefined" 
+[04:27:43] <jherskowitz> huh
+[04:32:51] <theli_ua> looks like your amazon uses old style 0.9 api
+[04:34:24] <theli_ua> I'll need to merge in master and see if anything broke after MrMaffen's android tomahawk.js merges
+[04:34:31] <theli_ua> I don't think I ever updated my build
+[04:39:21] <theli_ua> guess I have to
+[04:39:33] <theli_ua> as it looks like something have changed in tomahawk.js world
+[04:40:20] <jherskowitz> theli_ua: ok, but it’s sending resolve queries, right?
+[04:40:35] <jherskowitz> it wouldn’t do that without logging in, yeah?
+[04:41:19] <theli_ua> jherskowitz: did you set up your login and password?
+[04:41:27] <jherskowitz> yeah
+[04:43:29] <theli_ua> ecm-config.cmake
+[04:43:34] <theli_ua> wth is that
+[04:43:44] <theli_ua> muesli ?
+[04:43:56] <muesli> extra cmake modules
+[04:44:15] <theli_ua> why didn't I need that before and now do :-/
+[04:44:30] <muesli> i think we do require it since qt5
+[04:44:30] <muesli> iirc
+[04:44:35] <muesli> it's pretty standard tho
+[04:45:22] <theli_ua> yeah that would pull qt5 for me
+[04:45:55] <theli_ua> not even BUILD_WITH_QT4 can save me
+[04:46:03] <jherskowitz> huh, I don’t have the scroll page issues on this machine
+[04:46:07] <jherskowitz> wth?
+[04:46:20] <jherskowitz> maybe the self-built Qt5 IS on the other machine?
+[04:47:26] <theli_ua> jherskowitz: anyhow, all those issues sound like the changes did to tomahawk.js , and I don't have time atm to compile qt5, etc :(
+[04:47:41] <muesli> theli_ua: no qt5 package yet?
+[04:47:46] <theli_ua> ?
+[04:47:49] <muesli> theli_ua: oh, you're on that ancient 12.04 lts or something?
+[04:47:50] <jherskowitz> theli_ua: hmm… but both machines are on master
+[04:47:56] <theli_ua> eh, I'm on gentoo
+[04:47:58] <theli_ua> atm
+[04:48:02] <muesli> theli_ua: ah :)
+[04:48:05] <theli_ua> at work I'm on 12.04 . yes
+[04:48:26] <theli_ua> I also really don't want to install qt5
+[04:48:41] <muesli> theli_ua: what's the worry? :)
+[04:49:45] <theli_ua> I just don't want to have multiple qts :(
+[04:52:07] <theli_ua> alright, made it not need ecm for now
+[04:53:03] <theli_ua> tbh it is only used for ecm_add_app_icon ...
+[04:55:18] <muesli> ah right, that's fairly new
+[04:55:59] <theli_ua> nice
+[04:56:11] <theli_ua> it now just segfaults on  me :)
+[04:56:46] <theli_ua> looks like when establishing websockets connection to hatchet
+[04:57:17] <theli_ua> QSslCertificate::QSslCertificate
+[04:58:56] <theli_ua> muesli: any idea what changed there?
+[04:59:21] <muesli> got a backtrace / error?
+[04:59:55] <theli_ua> https://www.irccloud.com/pastebin/Wdznad8Z/
+[04:59:56] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[05:00:18] <theli_ua> not too helpfull , but as i said - happens when it tries to connect to hatchet
+[05:00:32] <muesli> odd
+[05:00:38] <muesli> can restart the ws server
+[05:00:43] <muesli> but that'd be odd as well
+[05:00:51] <theli_ua> well, the version built from my branch works
+[05:00:59] <theli_ua> the one after I merged master - segfaults
+[05:01:01] <theli_ua> weird
+[05:01:20] <muesli> huh, yeah
+[05:01:21] <muesli> odd
+[05:01:32] <muesli> did you try a clean build (tm)?
+[05:02:03] <theli_ua> I think that was a clean build, but lemme recheck
+[05:04:32] <muesli> let me rebuild master myself, too
+[05:04:54] <theli_ua> it might be that the hatchet plugin wasn't recompiled
+[05:05:26] <theli_ua> muesli: yeah, that was it
+[05:05:28] <theli_ua> ohwait
+[05:05:29] <theli_ua> no
+[05:05:32] <theli_ua> segfault :)
+[05:06:03] <muesli> looking at the backlog, rotzbouw might have reported the same this morning
+[05:07:15] <jherskowitz> nini
+[05:07:33] <theli_ua> bah, eastcoasters leave us and go to sleep
+[05:08:25] <theli_ua> muesli: weird thing is I have to versions - one compiled from my fork, one with my fork + master on top ... latter one crashes
+[05:08:53] <theli_ua> not sure if testing clean master would change anything
+[05:09:13] <theli_ua> I see you did some securetransport or something changes
+[05:10:38] *** Joins: mgue2 (~mgue@f049091223.adsl.alicedsl.de)
+[05:12:43] <theli_ua> these are the changes I didn't have in my fork ... doesn't look like anything that could cause that https://www.irccloud.com/pastebin/9jPQ65Gm/
+[05:12:44] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[05:13:35] *** Quits: mgue1 (~mgue@f049061121.adsl.alicedsl.de) (Ping timeout: 260 seconds)
+[05:14:25] <muesli> not at first glance, no :/
+[05:14:33] <muesli> theli_ua: try building with debug symbols enabled
+[05:14:51] <muesli> might give us a better idea of where it's breaking
+[05:16:30] <theli_ua> I wonder if its just me messing with cmakelists
+[05:17:42] <theli_ua> in any case this is stupid to require qt5 when building for qt4
+[05:17:44] <muesli> theli_ua: i'll let you know as soon as my master compiled ;-)
+[05:18:16] <theli_ua> where is domme
+[05:18:22] <theli_ua> I'd like to file a complaint :(
+[05:19:04] <muesli> haha :)
+[05:19:26] <muesli> theli_ua: the extra modules aren't a qt5 thing tho
+[05:19:44] <theli_ua> well, extra modules pull in at least qt5-core nowdays
+[05:19:55] <muesli> huh
+[05:19:57] <muesli> that seems stupid
+[05:20:02] <theli_ua> for me at least
+[05:20:18] <theli_ua> i mean
+[05:20:26] <theli_ua> those extra modules are coming from kde
+[05:21:20] <muesli> https://www.archlinux.org/packages/extra/any/extra-cmake-modules/
+[05:21:24] <muesli> not on arch it seems
+[05:21:25] <tomabee> [ extra-cmake-modules 5.15.0-1 (any) | www.archlinux.org |  ]
+[05:21:30] <theli_ua> https://www.irccloud.com/pastebin/6pkrj6aZ/
+[05:21:31] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[05:22:23] <theli_ua> https://packages.gentoo.org/packages/kde-frameworks/extra-cmake-modules  runtime dependency on qt5-core :-/
+[05:22:26] <muesli> theli_ua: oh what does the log message say?
+[05:22:27] <tomabee> [ kde-frameworks/extra-cmake-modules – Gentoo Packages | packages.gentoo.org |  ]
+[05:22:32] <muesli> it prints out a qfatal after all
+[05:22:43] <theli_ua> 20:22:37 [0]: void WebSocket::connectWs() Connecting 
+[05:22:43] <theli_ua> 20:22:37 [0]: void WebSocket::connectWs() Establishing new connection 
+[05:22:43] <theli_ua> 20:22:37 [0]: ASSERT: "!isEmpty()" in file /usr/include/qt4/QtCore/qlist.h, line 282
+[05:23:11] <muesli> aha
+[05:23:14] <theli_ua> a bit more context https://www.irccloud.com/pastebin/9TUlo5OE/
+[05:23:15] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[05:23:17] <muesli> that's exactly what rotzbouw got, too
+[05:23:34] <theli_ua> well, I can bisect I guess
+[05:23:42] <muesli> theli_ua: that'd be appreciated i guess
+[05:23:47] <muesli> shouldn't take too long
+[05:23:58] <theli_ua> well, each build takes like 5 minutes
+[05:24:52] <muesli> yeah, but in 20 to 30 minutes you're done. might take wild guesses for hours otherwise ;-)
+[05:31:48] <theli_ua> well, the first commit it suggested failed to build
+[05:31:49] <theli_ua> lol
+[05:44:12] <muesli> theli_ua: fwiw, runs fine on osx here
+[05:44:48] <theli_ua> Bisecting: 9 revisions left to test after this (roughly 3 steps)
+[05:45:13] <theli_ua> I'm fairly sure those will be cmake changes
+[05:46:35] <theli_ua> also, some revisions wont compile (or rather link) with undefined references to somthing with qsearchfield
+[05:51:45] <muesli> probably my osx changes yeah
+[06:15:07] <theli_ua> muesli https://www.irccloud.com/pastebin/XXW60BoP/
+[06:15:08] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[06:15:30] <muesli> that's the one?!
+[06:15:33] <muesli> the last one?
+[06:15:42] <muesli> wtf
+[06:15:52] <muesli> TheOneRing ^
+[06:16:08] <theli_ua> well, it removes tomahawk_add_definitions( "-fvisibility=hidden" )
+[06:16:12] <muesli> TheOneRing: that commit causes websocketpp to assert apparently
+[06:16:19] <muesli> ah, interesting
+[06:16:37] <muesli> theli_ua: did you check it with that definition back?
+[06:17:59] <theli_ua> checking
+[06:21:45] <theli_ua> nope
+[06:28:30] <theli_ua> weird, lemme recheck if the one before it actually works
+[06:34:27] <theli_ua> yeah, it doesn't
+[06:34:31] <theli_ua> its not the latest one
+[06:49:38] <theli_ua> well, it works for me with 77e5704a2a32d197f23246cbf7bbbaa90b7e614e
+[07:01:30] <muesli> checking
+[07:02:28] <muesli> theli_ua: and https://github.com/tomahawk-player/tomahawk/commit/b0fac41c27c7829241e7aac7aa85e6c618793fb6 isn't working?
+[07:02:30] <tomabee> [ Get rid of warnings · tomahawk-player/tomahawk@b0fac41 · GitHub | github.com | https://avatars1.githubusercontent.com/u/448487?v=3&s=200 ]
+[07:09:25] <theli_ua> muesli: it does not
+[07:09:45] <muesli> ok, gotta ping domme. i'm not sure about those cmake flags he used there :-/
+[07:11:40] <theli_ua> muesli: actually
+[07:11:50] <theli_ua> I'm not sure I tested that correctly
+[07:12:01] <theli_ua> I just did reset --hard revision
+[07:12:04] <theli_ua> BUT
+[07:12:25] <theli_ua> if I reset to that MrMaffen's commit ... I dont have those ecm requirements, with domme's commit I do
+[07:12:38] <theli_ua> but if I look that diff for domme's commit then those changes are not there
+[07:18:02] <muesli> hm
+[07:18:12] <muesli> do a simple git checkout dommes_revision
+[07:22:25] <theli_ua> jherskowitz: ok, so both amazon and gmusic just work for me with master merged
+[07:22:36] <theli_ua> well, everything merged in except for latest pr
+[07:23:39] <theli_ua> muesli: git log still shows that hannah's change was before domme's
+[07:23:47] <theli_ua> ohwait, it is indeed like that
+[07:23:58] <theli_ua> its just that github shows it weirdly
+[07:24:14] <theli_ua> domme fixed warnings introduced by TheOneRing's change
+[07:24:25] <theli_ua> I blame github for confusing me
+[07:30:08] <muesli> me too in that case
+[07:30:25] <muesli> theli_ua: so the question is, does it work with only hannah's change?
+[08:03:03] <theli_ua> muesli: does gmusic work for you on master?
+[08:59:19] <theli_ua> muesli: also, my bisect resluts said It doesn't work for me with just TheOneRing's commit
+[09:06:39] <theli_ua> intersting I got email from a recruiter who's last name is exactly the same as MrMaffen 
+[09:06:45] <theli_ua> *MrMaffen's
+[09:10:49] <muesli> theli_ua: remind me in a bit and i'll check gmusic again
+[09:11:01] <muesli> theli_ua: mrmaffen's name is pretty popular in germany actually
+[09:11:02] <theli_ua> eh, I'm going to sleep!
+[09:11:03] <theli_ua> so no
+[09:11:11] <muesli> theli_ua: when you're back up then ;-)
+[09:11:37] <theli_ua> I'll probablu forget, I'll let jherskowitz remind you to test gmusic or amazon
+[09:12:03] <muesli> ;D
+[09:56:48] *** Joins: soee_ (~soee@accb201.neoplus.adsl.tpnet.pl)
+[11:18:50] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[11:48:35] <TheOneRing> theli_ua: muesli maybe it needs to be added as cxx flag to
+[11:48:48] <TheOneRing> but setting it as a define is plain wrong
+[11:49:35] <TheOneRing> and adding compiler flags as defines was done multiple times and broke the resource compiler on windows
+[11:50:48] <TheOneRing> and domme only fixed cmake warnings on windows which where unrelated to my changes
+[11:54:26] <muesli> ok, must be something weird tho
+[12:24:47] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[12:34:27] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Quit: alsuren)
+[13:04:22] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[13:06:42] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Client Quit)
+[13:19:58] *** Joins: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[14:12:30] <jherskowitz> moin
+[14:30:48] *** Joins: hrtcrw (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370)
+[14:33:47] *** Quits: hrtcrw (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370) (Client Quit)
+[14:45:15] *** Joins: soee (~soee@agve248.neoplus.adsl.tpnet.pl)
+[14:46:02] *** Quits: soee_ (~soee@accb201.neoplus.adsl.tpnet.pl) (Ping timeout: 265 seconds)
+[15:47:31] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[17:54:16] *** Joins: knicklux (~knicklux@ip5b40a45a.dynamic.kabel-deutschland.de)
+[18:09:26] <theli_ua> muesli: gmusic
+[18:47:50] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[18:54:43] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Quit: alsuren)
+[19:18:10] *** Quits: knicklux (~knicklux@ip5b40a45a.dynamic.kabel-deutschland.de) (Remote host closed the connection)
+[19:46:19] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[20:07:13] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Quit: alsuren)
+[20:08:37] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[20:14:48] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Quit: alsuren)
+[20:25:26] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[20:31:42] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Quit: alsuren)
+[20:33:41] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[20:33:49] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Client Quit)
+[21:29:57] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[21:35:35] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Quit: alsuren)
+[21:38:07] *** Joins: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com)
+[21:47:05] *** Quits: alsuren (~alsuren@host109-157-183-130.range109-157.btcentralplus.com) (Quit: alsuren)
+[22:33:12] *** Quits: thomasbonte (sid4377@gateway/web/irccloud.com/x-iagmbwtkbequeuuy) (Ping timeout: 264 seconds)
+[22:33:37] *** Joins: thomasbonte (sid4377@gateway/web/irccloud.com/x-cjndbhtgqablftbq)
+[22:34:23] *** Quits: johu_ (~johu@gentoo/developer/johu) (Ping timeout: 264 seconds)
+[22:35:33] *** Joins: johu (~johu@gentoo/developer/johu)
+[22:40:24] *** Quits: muesli (~muesli@static.75.102.4.46.clients.your-server.de) (Ping timeout: 264 seconds)
+[22:40:51] *** Joins: muesli (~muesli@46.4.102.75)

@@ -1,0 +1,1432 @@
+[00:02:25] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[00:02:43] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[00:34:18] *** Quits: Skids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[00:35:28] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[00:35:46] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[00:35:48] *** init3 is now known as Init3-away
+[00:42:16] *** Quits: Hickory (Iceman@Darkhorse21) (Quit: quit)
+[00:52:22] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[00:52:47] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[00:54:08] *** Init3-away is now known as init3
+[01:02:07] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[01:03:58] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[01:05:50] <RazorSharpFang> You know, I don't understand Orcale's business model. Where do they make their money from?
+[01:08:07] <Midnight_Tinker> every time you question the oracle, it demands a sacrifice
+[01:08:53] <Midnight_Tinker> also their enterprise software is balls expensive
+[01:12:18] <ShivalWolf> stagefright vulnerbility POC - http://drops.wooyun.org/papers/7557
+[01:13:39] <RazorSharpFang> ShivalWolf: I can't read uhmm... Chinese?
+[01:14:10] <Gladiolus> Pretty sure it's from support contracts, RazorSharpFang.
+[01:14:18] <Gladiolus> VirtualBox might be free, but support isn't.
+[01:14:23] <Gladiolus> etc
+[01:14:28] <ShivalWolf> RazorSharpFang: so use a browser with intergrated auto translate
+[01:14:32] <ShivalWolf> and suddenly its not a problem
+[01:14:40] <HoneyDrops|Half> last I checked Oracle ran on spite and orphan's tears.
+[01:15:08] <HoneyDrops|Half> But yeah, support is crazy expensive.
+[01:15:43] <RazorSharpFang> What does 'support' actually refer to?
+[01:15:54] <RazorSharpFang> Product bugfixes? Updates?
+[01:16:12] <Colgate> ShivalWolf: is there one that doesn't report back to a C&C?
+[01:16:44] <Gladiolus> yes, yes, and also sending a dude to make sure a giant deployment works.
+[01:16:50] <HoneyDrops|Half> Depends on the product.  Can be that they will fix your bugs for you when asked, can be they will help you migrate your old DBs to their software (but never away), etc.
+[01:16:53] <Gladiolus> they also appear to do a looooot of enterprise stuff
+[01:17:28] <HoneyDrops|Half> If you pay for Oracle support, if you want to do it, they will make sure you can.  As long as you keep the money flowing.
+[01:17:55] <RazorSharpFang> You're basically just hiring Oracle then.
+[01:20:14] <Midnight_Tinker> pretty much every large successful (non retail) corporation is a consulting firm on some level
+[01:20:18] <HoneyDrops|Half> If you encounter a bug, or can't figure out how to do something, they will hold your hand though it, and your wallet.
+[01:21:41] <Gladiolus> and your dick for a small extra fee
+[01:24:27] <Midnight_Tinker> my dick cost a late night fee
+[01:34:54] *** Joins: PinkieShy (Michael@Pony-u4ne5h.162-221-109-net.sccoast.net)
+[01:36:16] <PinkieShy> Hi, I am wondering if i install Ubuntu and i know it puts GRUB in the UEFI if i say like 1yr from now decide to like remove ubuntu, so i go into windows and use the disk management tool to remove the partitions for ubuntu would that also remove the GRUB boot loader from showing up in the UEFI Boot menu
+[01:37:14] <Gladiolus> I believe that there's a specific EFI partition that contains boot loaders like that, but that could just be where windows puts it's specific boot-loader.
+[01:37:37] <HoneyDrops|Half> If GRUB is installed to the UEFI partition, it would remain, but you could remove it from there.
+[01:37:52] <PinkieShy> Gladiolus the kind of UEfI on this gateway laptop is limited
+[01:39:10] <PinkieShy> How would i even access the UEFI partition using my windows recovery disc drive it has option to access UEFI firmware settings i click that and it just reboots the machine and takes me right to the UEFI menu stuff like i could access by holding done f2 at boot up
+[01:39:23] <Gladiolus> It's a hidden partition 
+[01:39:55] <Gladiolus> There's a few ways to access it in windows, not sure about linux.
+[01:40:09] <HoneyDrops|Half> You can mount it under Linux like a normal vfat partition.
+[01:40:33] <PinkieShy> Gladiolus If i get it to show up so its not hidden would a reboot make it hidden again?
+[01:40:37] <HoneyDrops|Half> At least on my Thinkpad, I literally use the EFI partition as my /boot
+[01:41:18] <Cepheid> Same, with my laptop.
+[01:41:21] <Gladiolus> No, you would have to hide it again in windows.
+[01:42:35] <PinkieShy> gladiolus how would that be done?
+[01:43:02] <Gladiolus> Google for it, there's a few guides and I don't know it by heart.
+[01:43:44] <Gladiolus> Why do you need to access it? What exactly is the problem? GRUB isn't working?
+[01:44:16] <PinkieShy> No i haven't installed ubuntu yet but i plan on it soon i was just wondering just incase i were to install it and a few months later decide i don't need it no more
+[01:46:28] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[01:46:42] <PinkieShy> I love ubuntu :)
+[01:46:48] <PinkieShy> i tested it on live usb and it works so fast 
+[01:47:13] <Gladiolus> You should be able to remove grub relatively easily.
+[01:47:56] <PinkieShy> ok
+[01:49:21] <Gladiolus> I always couch my computer advice in indefinite articles to distance myself from being responsible for problems :)
+[01:50:45] <Gigabit> I can barely be online, whats the command to list all running processes? So I can killall steamspidhere
+[01:50:56] <Caerdwyn> ps aux
+[01:51:03] <PinkieShy> Gladioslus wanna know something funny.. Microsoft caused a problem on my laptop 2 nights ago xD
+[01:51:06] <Caerdwyn> or pidof steam
+[01:51:14] <Caerdwyn> ps aux | grep "steam"
+[01:51:30] <Gladiolus> lel
+[01:51:36] <PinkieShy> They said my computer was compatible with windows 10.. I got it installed and it wouldn't boot right.. it kept crashing, i used the windows 10 recovery to reset and then still wouldn't work.. 
+[01:51:40] <Caerdwyn> how about just.. killall steam
+[01:51:42] <Caerdwyn> lol
+[01:51:44] <Gladiolus> weird
+[01:51:48] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[01:51:49] <PinkieShy> I contacted acer/intel about it they both told me my computer wasn't compatible.
+[01:51:57] <PinkieShy> So Microsoft was wrong xD
+[01:52:04] <Gladiolus> anything past a core 2 should work
+[01:52:10] <Gladiolus> so i dunno my guess is acer just blows
+[01:52:13] <Gigabit> okay so would it be kill pid then?
+[01:52:17] <Caerdwyn> yes
+[01:52:19] <Gigabit> because steam is acting up and being a sombitch
+[01:52:21] <PinkieShy> I'm on Intel Pentium b960 with intel hd graphics (2nd gen i think?)
+[01:52:33] <Gigabit> I told it to kill and it isnt x.x
+[01:52:42] <Caerdwyn> Gigabit: ps aux | grep "steam" -> then 'kill pidgoeshere'
+[01:52:48] <Caerdwyn> if it doesnt die right away, add sudo
+[01:52:54] <Gladiolus> That should definitely support win10
+[01:52:54] <PinkieShy> those specs would run linux would it?
+[01:52:58] <Gladiolus> acer probably just got lazy
+[01:52:59] <Gladiolus> also yes
+[01:53:12] <Caerdwyn> kill does a SIGTERM by default. do a SIGKILL. 'kill -9 pidofsteam'
+[01:53:37] <PinkieShy> Gladiolus why would Intel live support tell me the graphics card won't support 10? They told me it for 8.1 it only supports Legacy WDDM
+[01:55:02] <Gladiolus> so it's intel being lazy then
+[01:55:19] <Gladiolus> that's odd tho, see in the win10 beta i had to use 8.1 nvidia drivers
+[01:55:23] <Gladiolus> they worked fine, more or less
+[01:55:30] <Gladiolus> so intel's drivers just totally suck
+[01:57:15] <Colgate> Gigabit: use pkill instead of killall
+[01:57:27] <Caerdwyn> ewwwww Colgate gtfo
+[01:57:36] <PinkieShy> Gladiolus the crash ID was like System thread not handled.. then the computer rebooted surprising right this time and then it said out of memory.. but i have 500GB HDD and 4GB DDR3 ram
+[01:57:40] <Colgate> Caerdwyn: killall does fun things on Solaris ;)
+[01:57:46] <Caerdwyn> >solaris
+[01:57:48] <Caerdwyn> you what
+[01:57:55] <Colgate> killall... kills all
+[01:57:59] <Gladiolus> sounds like the gpu driver had an overflow since it uses shared memory
+[01:57:59] <Colgate> including init :(
+[01:58:03] <Caerdwyn> XD wow
+[01:58:10] <PinkieShy> funny thing again umm my recovery drive didn't want to work but playing around i got it to finally and thats where i got where i am now.
+[01:58:17] <init3> Nuu. I want to live
+[01:58:20] * Gladiolus shoots init3 
+[01:58:26] <Colgate> /nick init4
+[01:58:29] <init3> Crai
+[01:58:38] <init3> haha
+[01:58:44] * Caerdwyn kill -9 init
+[01:58:55] <Colgate> invalid syntax
+[01:58:57] <Colgate> :3
+[01:59:13] * Caerdwyn rm -rv /home/Colgate
+[01:59:15] <Caerdwyn> >_>
+[01:59:23] <Caerdwyn> errrr -rfv
+[01:59:31] <Colgate> lol, still wouldn't do much!
+[01:59:36] <Colgate> ok, now that would :P
+[01:59:57] *** Gladiolus is now known as null-init
+[01:59:59] * null-init sits on init3 
+[02:00:26] <Caerdwyn> # rm -rf / --no-preserve-root
+[02:00:28] <Caerdwyn> <_<
+[02:00:32] *** init3 is now known as systemd
+[02:00:36] <systemd> HAHA
+[02:00:36] <Caerdwyn> oh hell no
+[02:00:39] <Caerdwyn> everybody panic
+[02:00:40] <Colgate> lol
+[02:01:09] *** null-init is now known as init3
+[02:01:14] <init3> i have 30 seconds
+[02:01:23] * init3 does lewd things to Colgate's face
+[02:01:27] * init3 is a huge nerd
+[02:01:31] <systemd> NOW YOU ARE ALL POWERLESS
+[02:01:32] * systemd 's giant glob of OS components engulfs null-init.
+[02:01:34] <ShivalWolf> dd if=/dev/urandom of=/dev/kmem bs=1 count=1 seek=$RANDOM
+[02:01:38] *** init3 is now known as Pony_31985
+[02:01:42] <systemd> Kek
+[02:01:44] *** Pony_31985 is now known as Gladiolus
+[02:01:51] <Caerdwyn> dd if=/dev/urandom of=/dev/sda
+[02:01:53] <Caerdwyn> >:]
+[02:01:59] <Gladiolus> http://i.imgur.com/cxt2Epd.jpg
+[02:02:24] *** systemd is now known as init3
+[02:10:48] *** Joins: Hickory (Iceman@Darkhorse21)
+[02:12:41] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[02:12:57] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[02:13:13] * Gladiolus systemd's init3 
+[02:13:43] <init3> wut
+[02:25:06] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[02:25:11] <HoneyDrops|Half> Why not just pgrep?
+[02:25:21] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[02:28:33] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Quit: Saliendo)
+[02:29:14] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Ping timeout: 121 seconds)
+[02:32:33] <Caerdwyn> Why not zoidberg?
+[02:37:42] *** Quits: Hickory (Iceman@Darkhorse21) (Quit: quit)
+[02:39:08] <Gigabit> FUCKING HELL. Sick of ubuntu/steam on ubuntu
+[02:39:09] <Gigabit> and the internet sucks because of the tornado yesterday
+[02:39:48] *** Quits: Q0 (Q0@literallyshit.net) (Ping timeout: 121 seconds)
+[02:41:19] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[02:41:37] *** Joins: Q0 (Q0@Pony-0m7faa.vtfe.qoe9.0601.2601.IP)
+[02:42:43] <frackster> Lapsus: I think you showed a pic of yourself when you linked http://i.imgur.com/thOfoJg.jpg :p
+[02:44:05] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[02:44:21] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[03:00:52] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[03:01:27] <Lapsus> oh lol
+[03:02:04] <Midnight_Tinker> Gigabit: there's a documented solution to that: don't use Ubuntu
+[03:06:21] <Gigabit> thanks for the useful fucking information. +1
+[03:07:59] <Lapsus> lol
+[03:08:51] <Lapsus> Gigabit: http://i.imgur.com/pdZFiYm.gif :3
+[03:09:05] <Lapsus> <3
+[03:16:21] * HoneyDrops|Half adds a little salt to Giga and licky-licks~
+[03:18:40] <Midnight_Tinker> lol Lapsus
+[03:20:47] * DJ-C0L7[EIT] considers installing a pair of aircraft landing lights on the front of his 4x4
+[03:26:06] <Midnight_Tinker> http://www.spectrolab.com/searchlights/products/prod_sx16_ns.html try one of these instead DJ-C0L7[EIT]
+[03:26:07] <PinkiePieBot> [ Illumination Systems Searchlights ]
+[03:27:12] <DJ-C0L7[EIT]> i currently have a pair of 130watt KC "Flamethrowers" on my roof
+[03:35:04] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[03:35:09] <DJ-C0L7[EIT]> on my list of to-do's, Detroit Tru-Trac Locker in the rear with chromo axle shafts front and rear in the housings, AX-15 5spd Manual trans W/Double Overdrive and ratio splitter, making that 5 speed an 11 speed
+[03:35:47] <DJ-C0L7[EIT]> 1st split, 1st direct, 1st overdrive, 2nd direct, 2nd overdrive, 3rd direct, 3rd overdrive, 4th direct, 4th overdrive, 5th direct (overdrive) 5th overdrive (double overdrive)
+[03:38:00] *** Joins: Phase (Phase4@Pony-i0uf2o.internode.on.net)
+[03:42:58] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[03:43:51] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[03:43:55] *** init3 is now known as Init3-away
+[03:47:50] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[03:48:10] *** Cepheid is now known as Cephy-AFK
+[03:48:26] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[03:53:50] *** Quits: Phase (Phase4@Pony-i0uf2o.internode.on.net) (Ping timeout: 121 seconds)
+[03:54:34] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[03:54:57] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[03:59:57] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[04:00:37] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[04:12:15] *** Init3-away is now known as init3
+[04:16:53] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[04:17:22] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[04:19:48] *** Cephy-AFK is now known as Cepheid
+[04:24:14] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[04:24:44] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[04:25:11] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[04:25:19] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[04:26:33] *** Quits: PinkieShy (Michael@Pony-u4ne5h.162-221-109-net.sccoast.net) (Ping timeout: 121 seconds)
+[04:28:28] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[04:30:06] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[04:38:12] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[04:40:29] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[04:40:47] *** Joins: Hickory (Iceman@Darkhorse21)
+[04:43:35] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[04:47:04] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[04:50:43] *** Quits: init3_1 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[04:51:39] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[04:51:57] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[04:56:55] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[05:03:54] *** init3_1 is now known as init3
+[05:05:43] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[05:08:58] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[05:09:36] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[05:10:13] *** Quits: GumballCrash (GumballCras@0.to.pony.10secondsflat) (Connection closed)
+[05:12:16] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[05:14:46] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (Connection closed)
+[05:14:58] *** Joins: Jouva (jouva@Pony-535ork.fios.verizon.net)
+[05:22:16] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[05:22:28] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[05:25:38] <init3> Comcast in a nutshell: http://pastebin.com/Q3RqV0UT
+[05:25:38] <PinkiePieBot> [ Varsha > upon checking, U10c03530 is currently not included in the Comcast Appro - Pastebin.com ]
+[05:27:01] <HoneyDrops|Half> sounds about right
+[05:28:13] <JustAberrant> voltage coming any day now? ;p
+[05:28:41] <Colgate> please wait for the voltage
+[05:29:41] <wolfyshy> please refer the customer to this link
+[05:32:48] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[05:33:06] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[05:36:34] <init3> My friend told me I just gotta believe in the voltage
+[05:36:34] <init3> And it will come
+[05:39:03] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[05:39:20] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[05:39:51] <init3> Hot shit I'm on IPV6?
+[05:40:30] <init3> My neighbor's wireless sucks but at least I'm in the future
+[05:43:43] <JustAberrant> IPv6 protects against address exhaustion by making adoption prohibitive :(
+[05:46:32] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[05:46:45] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[05:46:57] <init3_1> What do you mean JustAberrant?
+[05:47:07] *** init3_1 is now known as init3
+[05:47:21] <init3> I may just have missed some messages. 
+[05:47:59] <init3> Trying an xfinity hotspot instead of "borrowed" wireless now but I think that's even less stable. 
+[05:50:42] <init3> I'm afraid to scratch my leg under my laptop because I might lose signal.
+[05:53:45] *** Quits: Hickory (Iceman@Darkhorse21) (Ping timeout: 121 seconds)
+[05:54:51] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[05:54:53] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[05:56:06] *** init3_1 is now known as init3
+[06:00:28] *** Joins: MistVeil (AndChat3408@Pony-prm9c8.static.axtel.net)
+[06:09:08] <Gigabit> What is the best 250gb SSD I can get for no more then 80?
+[06:10:46] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[06:11:50] <AppleDash> I don't know if you're gonna be able to get a 128GB SSD for that little
+[06:13:05] <HoneyDrops|Half> http://www.newegg.com/Product/Product.aspx?Item=N82E16820148945 ?
+[06:13:10] <PinkiePieBot> [ Crucial BX100 CT250BX100SSD1 2.5" 250GB SATA 6Gbps (SATA III) Micron 16nm MLC NAND Internal Solid State Drive (SSD) - Newegg.com ]
+[06:13:43] <Gigabit> Yeah I see that one, what I am wondering is if anyone knows about the quality x.x
+[06:14:15] <HoneyDrops|Half> Crucial was one of the brands I was looking at when I was looking at SSDs (the other two were samsung and intel)
+[06:14:32] <DJ-C0L7[EIT]> intel has some decent ssds
+[06:14:52] <Gigabit> my current one is intel, but a 40gb
+[06:17:54] <HoneyDrops|Half> I've been pleased with my Samsung 830, still working fine after 3 years.
+[06:20:26] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[06:31:58] <init3> I know Crucial used to be a top notch RAM manufacturer Gigabit. That was like early 2000s though. Not sure if they are still regarded as such. 
+[06:32:21] <Gladiolus> I just buy the cheapest ram available, works for me
+[06:32:34] <Gladiolus> i think right now i have some... ripjaws? it has a weird heatsink
+[06:32:37] <Gladiolus> was the cheapest tho
+[06:32:52] <Gladiolus> G.SKILL YO lol
+[06:32:54] <HoneyDrops|Half> I had narrowed myself to Crucial, Samsung, and Intel when I was looking because those seemed to be the most reliable options, back in 2012.
+[06:33:03] * JustAberrant throws frenchfries into the channel for everyone to play with
+[06:33:06] <Gigabit> yeah
+[06:33:07] <Gladiolus> oh SSDs, Gigabit is getting one?
+[06:33:27] <Gigabit> Yeah my friend is loaning me 80 bucks to get a larger one
+[06:33:27] <Gladiolus> Samsung and Intel are the highest price and best quality, everyone else plays a game of musical chairs.
+[06:33:57] <Gladiolus> of note is that Apple uses samsung nand in their own stuff
+[06:36:22] * JustAberrant narrows eyes.. that's why I use intel..
+[06:36:40] <JustAberrant> (actually that's just a healthy coincidence, but I have been happy with intel for SSDs
+[06:36:46] <JustAberrant> I had a crucial one die on me
+[06:36:55] <Gladiolus> lel
+[06:37:11] <JustAberrant> and some other one.. patriot or something.. made weird noises
+[06:37:20] <HoneyDrops|Half> But Apple uses Intel's cpus ;)
+[06:37:26] <Gladiolus> "heh apple" aside, if they can provide chips on that large a scale it's a good sign. 
+[06:37:33] * HoneyDrops|Half still mourns ppc.
+[06:37:40] <Gladiolus> I have a late-gen powerbook lol
+[06:37:45] <Gladiolus> 15'' 1.67 with the hi-dpi
+[06:37:47] <JustAberrant> well, I'm sure they'll switch to something else soon
+[06:37:55] <JustAberrant> they wouldn't dare use the same architecture for too long
+[06:38:00] <Gladiolus> It's such nice hardware but nothing runs on 10.4 ;_;
+[06:38:02] <HoneyDrops|Half> Hopefully something non-x86.
+[06:38:11] <Gladiolus> but i like x86
+[06:38:15] <Gladiolus> my 90s videogames are x86
+[06:38:41] <HoneyDrops|Half> x86 can stay around, but I hate that desktop computing is dominated by one cpu arch.
+[06:38:56] <HoneyDrops|Half> I want to see 5-10 competing ones with about equal market share.
+[06:39:01] <Gladiolus> not gonna happen
+[06:39:06] <Gladiolus> not now anyway
+[06:39:12] * HoneyDrops|Half can dream.
+[06:39:23] <Gladiolus> you try breaking into the market now and you're gonna get every investor laughing
+[06:39:39] <Gladiolus> "So it's you, and me, vs intels billions of dollars in research and marketting? pffahaha- ever heard of Cyrix?"
+[06:39:45] <JustAberrant> maybe itanium will come back :>
+[06:40:29] <HoneyDrops|Half> I'll fully admit I mostly want multiple cpu arch to make binary software distribution as painful as possible.
+[06:41:03] <JustAberrant> won't happen for exactly that reason
+[06:41:15] <JustAberrant> microsoft will pick one, apple will pick one, the others will die quickly
+[06:41:47] <JustAberrant> hell, even the mainstream distros are getting tired of supporting multiple arches
+[06:42:21] <JustAberrant> and a huge number of upstream projects won't bother making their code portable
+[06:42:25] <HoneyDrops|Half> I need to see if my friend still has his alpha box.
+[06:45:15] *** Quits: MistVeil (AndChat3408@Pony-prm9c8.static.axtel.net) (Quit: Bye)
+[06:46:24] <Gladiolus> I would love multiple cpu /vendors/ but as a consumer ugh just one arch
+[06:46:36] <Gladiolus> Whatever makes intel actually start competing though, man do that.
+[06:46:45] <Gladiolus> shits are gettin' all cozy and goaging.
+[06:46:50] <Gladiolus> gouging
+[06:46:51] <Gladiolus> w/e
+[06:46:54] <Gigabit> does amazon price match?
+[06:47:11] <Gladiolus> Go IBM, release PowerDuo on that 12nm tech they announced.
+[06:47:32] <Gladiolus> So much die space that includes an x86 dynamic recompliler! (is that a thing?)
+[06:49:22] <HoneyDrops|Half> My position is software should be written to be portable and source distribution should be the default (even if not permissively licensed).
+[06:49:35] <Gladiolus> "What do you think of apple?" "I thought the Shuffle was adorable."
+[06:49:37] <Gladiolus> oh Cortana
+[06:49:44] <Gladiolus> I love having fun with stuff lke that.
+[06:49:49] <Googie> That is. JIT compilation is pretty common in emulators, but is still nowhere near as fast as native
+[06:50:07] <Gladiolus> Could it do relatively fast x86 emulation though, like usable?
+[06:50:30] <Gladiolus> Not for games and shiz but for office programs, so that Windows on Theoritical Power Processor could have some sort of backend for it
+[06:50:49] <Gladiolus> That's the only way I see it working is if there's /some/ amount of compatability across the stream.
+[06:51:12] <Gladiolus> Then you can advertise on your native strengths and "you can bring along your old software too if you need it"
+[06:51:57] <Gladiolus> I would be all for buying a RISC processor if it's faster native, and I can still run some of my old x86 stuff.
+[06:52:02] <Gladiolus> Otherwise no lol go away
+[06:52:32] <Phase> Gladiolus, loongson
+[06:52:37] <Googie> It should be possible.
+[06:52:48] <Gladiolus> would it create licencing issues?
+[06:52:58] <Phase> mips64 + some extensions, when combind with qemu patches, achieves ~80% native
+[06:53:06] <Gladiolus> https://en.wikipedia.org/wiki/Loongson#Hardware-assisted_x86_emulation
+[06:53:07] <Gladiolus> woah
+[06:53:07] <PinkiePieBot> [ Loongson - Wikipedia, the free encyclopedia ]
+[06:53:17] <Gladiolus> 80% native, Shit yeah I can live with that.
+[06:53:21] <Phase> my bad, 70%
+[06:53:32] <Phase> still, that's within an order of magnitude
+[06:53:32] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[06:53:50] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[06:54:03] <Gladiolus> Yeah I could live with "Your processor is now cooler running, faster at native apps, and can still run older apps at 70% native."
+[06:54:16] <Gladiolus> 70% native will scale I imagine so 5 years from now it's faster than current native.
+[06:54:27] * Googie wonders the legalities of that also
+[06:54:29] <Gladiolus> why isn't this a thing then
+[06:54:32] <Gigabit> I'm gunna get the mx200 because I also have 40 dollars in amazon credit
+[06:54:50] <Googie> AMD/Intel own some IP on parts of the modern x86 ISA
+[06:55:14] <Gladiolus> I like how AMD licences x86, and then Intel has to licence the AMD64 extensions. Or am I wrong about that?
+[06:55:18] <Gladiolus> I gope I'm right because it's funny.
+[06:55:30] <Gladiolus> IT'S A CIRCLE
+[06:56:19] <HoneyDrops|Half> Can just wait for the patents to expire.  Sure that keeps newer extensions off limits, but a ton of stuff doesn't use them.
+[06:57:29] <Gladiolus> >patents expire
+[06:57:31] <Gladiolus> not these days lol
+[06:57:36] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[06:57:36] <Googie> Ah... apparently they aren't patented, but copyrighted I think ?
+[06:57:41] <Googie> Gladiolus: They still do
+[06:57:45] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[06:57:49] <Googie> Patents expire all the time
+[06:57:57] <Googie> You're thinking of copyright :P
+[06:58:03] <Gladiolus> I probably am.
+[06:58:14] <Gladiolus> For now, anyway. I'm sure there's a lobby trying this as we speak.
+[06:58:23] <Googie> Patents have 15 year expiry time IIRC
+[06:58:25] <HoneyDrops|Half> yeah copyright is the (more) broken one
+[06:58:42] <HoneyDrops|Half> 15, and you can apply for a one-time extension.
+[06:58:44] <Googie> I'd actually argue that patents are more broken sadly :(
+[06:58:53] <Gladiolus> oh god aren't they
+[06:58:56] <Gladiolus> patent trolls lol
+[06:59:08] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[06:59:21] * Gladiolus goes and makes a patent on "Usage of an electronic device to facilite exchange of feline photographs," and then sues facebook.
+[06:59:22] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[06:59:25] <Googie> Copyright prevents a specific instance, Patenting can stop a whole field of innovation
+[06:59:33] <HoneyDrops|Half> Well copyright is broken at a policy/law level, patents are broken mostly in implementation.
+[07:00:05] <HoneyDrops|Half> If we actually had a patent office that did it's job, most of the issues of patents would be fixed.
+[07:00:23] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[07:00:33] *** init3_1 is now known as init3
+[07:00:44] *** Gigabit is now known as Gigaway
+[07:01:11] *** Quits: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile) (Ping timeout: 121 seconds)
+[07:01:15] * Gladiolus patents "establishing fan-based chronological understandings of cartoon media- i.e 'fandoms'," and then sues ALL OF YOU.
+[07:01:30] <Gladiolus> i mean fanons
+[07:01:37] <Phase> can you copyright instruction sets?
+[07:01:51] <Gladiolus> Well it is code, right?
+[07:02:02] <Googie> It's not
+[07:02:12] <Phase> there was a plethora of x86 clones, and i don't think they were attacked legally
+[07:02:34] <HoneyDrops|Half> I don't think you can, you can copyright the spec, but the actual system it describes, no.
+[07:02:39] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[07:02:46] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[07:03:28] <Gladiolus> oh it's far more than code
+[07:03:32] * Gladiolus is a silly layman :I
+[07:04:35] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Killed (NickServ (GHOST command used by init3_1)))
+[07:04:37] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:04:44] *** Quits: init3_1 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[07:04:56] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[07:04:58] <Googie> Supposedly you can copyright APIs these days :V
+[07:05:03] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[07:05:15] <Googie> It looks like patents though, yeah
+[07:05:30] *** init3_1 is now known as init3
+[07:05:31] <Googie> The x86-64 ones are probably the big one
+[07:05:44] <Googie> (And kinda an abuse of a patent too really :/)
+[07:07:08] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[07:11:44] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[07:12:29] <HoneyDrops|Half> Well on the upside, reality isn't obliged to conform to what they want regarding IP.  The downside is the correction process is painful in the meantime >_<
+[07:12:32] <Phase> i would love to see something like loongson hit mainstream, but it has to have multiple vendors
+[07:12:55] <Phase> and no one is interested in producing a cpu someone else can sell
+[07:13:22] <Phase> that x86 has multiple major manufacturers is an accident
+[07:13:48] <Gladiolus> Uh Phase? ARM.
+[07:14:03] <Gladiolus> i mean wait what
+[07:14:10] <Gladiolus> I read that wrong and now i'm confused and exploding
+[07:14:30] <init3> Hey Colgate (or anyone familiar with SSL): If my connection keeps derpin does it make sense to disable encryption for the time being? I dunno if that'll make the connection more forgiving to a few seconds of disconnect. 
+[07:14:31] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[07:14:34] <Phase> ARM is single vendor, they sell the source
+[07:14:54] <init3> I feel like I must be annoying everyone with my join/parts
+[07:15:49] <Gladiolus> Yeah that was my point to what I /thought/ you said. "Nobody wants to produce a CPU for someone else to sell"
+[07:16:05] <Gladiolus> as in nobody wants to just licence
+[07:16:07] <Gladiolus> as in i'm dum
+[07:17:14] <Colgate> init3: no
+[07:17:46] <init3> Okay. I was pretty on the fence as to if that'd work. 
+[07:18:06] <Gigaway> Get on the bouncer init3 :p
+[07:18:19] <init3> Also I use CERTFP and I'd have to dig my external HDD out of a box somewhere to get my irc pass. 
+[07:18:36] <init3> I have like zero idea what that does. 
+[07:22:13] <Googie> CERTFP is great.
+[07:22:25] <init3> Aye
+[07:23:00] <init3> Oh, looks like new registration to the BNC thing is closed as per the topic in #publicBNC.
+[07:23:19] <init3> I read up on it and it might help it seems. 
+[07:24:15] <init3> BUt honestly I'm not too worried about the privacy features it provides and come thursday I'll have a solid connection. 
+[07:24:26] <init3> Or, at least I'd BETTER have a solid connection. 
+[07:24:33] *** Joins: shutterbox (Sweet@Pony-st5g3a.pa.comcast.net)
+[07:24:53] <Googie> It's more for people who don't have a computer running 24/7 to have an IRC client/their own bouncer on
+[07:25:06] <init3> >inb4 "A Clinton Township man broke into the Comcast....."
+[07:26:45] <Googie> I'm waiting for the NBN to finally roll out where I live. 2.5mbit internet is getting more and more painful each year
+[07:27:36] <Gigaway> Googie I know them feels x.x
+[07:29:22] <init3> If Comcast can remove their heads from their asses I am so excite for my connection. 
+[07:30:03] <init3> 75/15. My life will be so grand. 
+[07:30:07] <Cepheid> Googie:  I feel sorry for Australians.
+[07:30:23] <init3> My upload will be twice what my download was. 
+[07:30:35] <Cepheid> Canada is at least starting to progress on the Internet front.
+[07:30:47] <Cepheid> Unlimited data plans, higher speeds.  Still outrageously expensive.
+[07:30:51] <init3> Cepheid: Until the aussies finish that national broadband. 
+[07:30:53] <Gigaway> Wish Michigan would..
+[07:31:08] <Gigaway> Canada always forgets about its Michigan v.v
+[07:31:15] <init3> Wat
+[07:31:25] * HoneyDrops|Half sniffs.  Kernel update time:  01:30:59 up 107 days,  9:47,  5 users,  load average: 0.17, 2.45, 2.92
+[07:31:41] <init3> We ain't Canada's bitch Gigaway!
+[07:31:45] <init3> Don't sell us out.
+[07:31:50] <init3> That is sad HoneyDrops|Half.
+[07:32:23] *** Joins: locodashie11 (locodash11@Pony-drrua9.hfc.comcastbusiness.net)
+[07:32:29] <init3> I've been tempted to steal ksplice but where I was living had such shitty power and I don't have the cash for a battery backup. 
+[07:32:40] <Gigaway> Oh init3 I almost wish I would have put mint or Debian on my desktop onstead
+[07:32:42] <init3> Plus ksplice comes with all kinds of caveats. 
+[07:33:12] <init3> Honestly, now that I think about it I should have told you to do Ubuntu server. 
+[07:33:13] * HoneyDrops|Half returns.
+[07:33:42] <init3> Still easy Ubuntu, but you install just what you want. 
+[07:33:49] * HoneyDrops|Half purrs at: Linux etna 4.1.4-gentoo #1 SMP Tue Aug 4 01:08:10 EDT 2015 x86_64 Intel(R) Core(TM) i5-3320M CPU @ 2.60GHz GenuineIntel GNU/Linux
+[07:33:55] <Cepheid> Michigan is not a part of Canada.
+[07:34:04] <Cepheid> Therefore, we forget about it because it's not a part of us, and we don't care.
+[07:34:05] <init3> BUt you may be a lot happier with another DE. 
+[07:34:21] <init3> Like KDE or XFCE. Not sure. 
+[07:34:21] <Cepheid> We might care if Michigan separated from the US and offered to join Canada, and we accepted.
+[07:34:39] <init3> Would you accept if you were PM Cepheid?
+[07:34:47] <init3> Do you love us enough? 
+[07:34:54] <Cepheid> With concessions.
+[07:35:14] <init3> Well we don't love you anyway. b-b-baka
+[07:35:49] <Cepheid> If I were PM, the only concession I'd ask out of you really is that you go to the border and moon the Americans.
+[07:36:15] <init3> Oh god you may not know how much we hate Ohio already. 
+[07:36:42] <init3> Michigan and Ohio damn near got in a war if you were unaware. 
+[07:36:50] <Cepheid> Heh.
+[07:37:01] <init3> Like, troops were mobilized.
+[07:37:27] <init3> And it was seriously a stray shot away from shit popping off. 
+[07:37:35] <Cepheid> Over what?
+[07:37:41] <init3> Toledo 
+[07:37:54] <init3> Basically, border dispute. 
+[07:38:26] <init3> Ohio got Toledo because the first surveys done were done inaccurately. 
+[07:39:40] <Cepheid> And I gather when it was disputed, they didn't want to do a recount or even do another survey?
+[07:39:46] <Cepheid> And then from there things just escalated?
+[07:39:54] <init3> Oh they did another survey
+[07:40:04] <init3> And the Govenor of Ohio basically ignored it. 
+[07:40:15] <init3> I mean, I'm sure I've got a ton of bias here. 
+[07:40:29] <init3> But that's how I understand it. 
+[07:40:51] <init3> https://en.wikipedia.org/wiki/Toledo_War
+[07:40:52] <PinkiePieBot> [ Toledo War - Wikipedia, the free encyclopedia ]
+[07:43:01] <Cepheid> Sheesh.
+[07:43:12] <init3> The big thing to note about it was at the time Ohio was a state (and thus had voting rights in the House and Senate) and Michigan was still a Territory at the time. 
+[07:43:37] <init3> So many believe we didn't get a fair shake because of that. 
+[07:45:28] <init3> Mostly it's a ongoing rivalry thing nowadays of course. When the University of Michigan or Michigan State plays Ohio State... it's a pretty big deal. 
+[07:46:03] <init3> Those are the kinds of games that can cause riots lol. 
+[07:46:15] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[07:49:22] <init3> But we did get the entire Upper Peninsula out of the deal which economically was more favorable what with it basically being a lumber palace. 
+[07:49:54] <init3> Still doesn't change the fact we were /right/.
+[07:51:13] <Gigaway> So besides Samsung Intel and Crucial.. What other brands are good for ssds? 
+[07:53:32] <Cepheid> *Rustle Rustle*  Mrr?  *Rustle Rustle*  MrrAOooh...  *Rustle Rustle*  <-- Spitfire right now.
+[07:53:53] <init3> I'm not sure but I would probably personally trust Corsair. They make damn good memory. 
+[07:54:21] <init3> Still me preferred memory manufacturer. 
+[07:54:23] <init3> *my
+[07:54:55] <HoneyDrops|Half> In general, ones who make their own chips at the ones you want to go with.
+[07:56:04] <Gigaway> Okay who males there own chips? Sorry I would research but the internet here keeps cutting out
+[07:58:44] <HoneyDrops|Half> Intel, Samsung...
+[07:59:13] <Gigaway> Oh derp, well that makes sense. Sorry HoneyDrops|Half 
+[08:00:15] <HoneyDrops|Half> No worries
+[08:01:59] <Gigaway> Might just do the Samsung 850 120gb instead, so I can save money for other stuff
+[08:11:49] <HoneyDrops|Half> If you're running Ubuntu (or any other distroy), 120GB should be plenty.  Though I admit Steam likely would change that.
+[08:12:00] <HoneyDrops|Half> distro*
+[08:14:42] *** init3 is now known as Init3-away
+[08:15:06] *** Init3-away is now known as init3
+[08:16:47] <Gigaway> Steam is on my hdd
+[08:16:58] <HoneyDrops|Half> Ok
+[08:17:06] <Gigaway> Init3 helped me bind everything so it is not using all my space up
+[08:18:07] <init3> I prefer mind mounts to symlinks so I've passed on my bias.
+[08:19:32] <Gigaway> One thing I do want to do is change the ui around. Don't care for the color/style scheme.
+[08:19:40] *** Quits: shutterbox (Sweet@Pony-st5g3a.pa.comcast.net) (Quit: What word rhymes with orange? Whily you think about it, let me sing you a song! La la la! This is the ride that will neveeeeer end...)
+[08:20:10] <HoneyDrops|Half> Either is fine, I tend to do symlinks myself.
+[08:20:44] <HoneyDrops|Half> Then again, I only very rarely have to resort to that to make things behave.
+[08:21:56] <HoneyDrops|Half> Gigaway, Ubuntu's default DE isn't very configurable, but you don't have to use it.  You can install and use other DEs or just run a WM alone.
+[08:22:23] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[08:24:56] <Gigaway> Are there other de's that are?
+[08:25:24] <Gigaway> I seen this ui I liked a lot before, I cannot remember where but it was awese.
+[08:25:29] <Gigaway> Awesome*
+[08:26:53] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[08:26:57] <JustAberrant> there's like a billion WMs out there, but I'd recommend sticking with something established and with a decent following.. a lot of WMs pop up then stagnate when the sole developer gets bored ;p
+[08:27:33] <HoneyDrops|Half> Well if it works it doesn't matter if dev basically ceases ;)
+[08:28:05] <JustAberrant> sure, though x and surrounding software arn't what you'd call stable
+[08:28:22] <JustAberrant> but yeah, nothing stopping you from using icewm or some other abandoned wm
+[08:28:29] * JustAberrant uses icewm for a long damn time..
+[08:28:31] <init3> Probably not what you are talking about but there is a WM called "awesome".
+[08:28:31] <init3> But I'd recommend KDE,XFCE or Gnome in that order. 
+[08:28:33] <JustAberrant> * used
+[08:28:44] * HoneyDrops|Half uses dwm.
+[08:29:19] <init3> KDE is heavy on system resources but has a shit ton of features. XFCE is super lightweight and has most everything you need and Gnome is kinda in the middle there. 
+[08:29:31] <JustAberrant> or CDE :>
+[08:29:41] <JustAberrant> I hear it's possible to get that running on linux now
+[08:29:44] <JustAberrant> kinda wanna try it
+[08:29:53] * JustAberrant used it a lot.. on solaris 2.something
+[08:30:09] <init3> But those are DesktopEnvronments not WindowManagers which are a part of DEs but not all of it. 
+[08:30:12] <HoneyDrops|Half> My WM journey was window maker (2005), blackbox (2005), fluxbox(2005-2006), fvwm (2006-2009), dwm (2009-).
+[08:30:13] <JustAberrant> along with *violent shuddering* teamware, sccs, and sun studio
+[08:31:02] * JustAberrant windowmaker > fluxbox > kde 3 > openbox > now a weird openbox + xfce mixture
+[08:31:10] <HoneyDrops|Half> wait, err, weap 2005 to 2003. I forgot when I was in undergrad XD
+[08:31:13] <HoneyDrops|Half> swap*
+[08:31:18] <JustAberrant> errr
+[08:31:25] *** Joins: Hickory (Iceman@Darkhorse21)
+[08:31:25] <JustAberrant> icewm between fluxbox and kde 3
+[08:31:42] * JustAberrant stuck with icewm for a long damn time.. several years
+[08:31:50] <HoneyDrops|Half> I never cared for DEs, never saw the point in them.
+[08:32:27] <init3> I can see that
+[08:32:33] <Gigaway> So would KDE on Ubuntu work?
+[08:32:38] <JustAberrant> kde 3 wasn't bad, only thing you really get out of a DE vs a WM is it deals with some configuration for you
+[08:32:40] <init3> Yeah
+[08:32:43] <JustAberrant> and kde 3 did a decent job
+[08:32:47] <HoneyDrops|Half> I've settled on dwm because it does everything I need a wm to do, and I know the codebase well enough I can (and did back in 2009) extent to fit my needs exactly.
+[08:32:53] <Gigaway> Because I really dislike unity or what ever is default x.x
+[08:32:57] <HoneyDrops|Half> extend*
+[08:32:58] <init3> Me too
+[08:33:15] <JustAberrant> I usually like to config everything manually, but kde 3 did have some "just works" appeal going on
+[08:33:29] <Gigaway> So.. Can I use the software manager to install KDE?
+[08:33:36] <JustAberrant> anyway, I'm going to bed
+[08:33:37] <JustAberrant> `nite
+[08:33:39] <HoneyDrops|Half> nini
+[08:33:46] <Gigaway> Or do I need to do something special, and will it mess up all the binds?
+[08:33:53] <JustAberrant> also kde 4 was terrible.. probably better now, but when it first came out if was absolute shit
+[08:33:56] <init3> If you are decided to use KDE you probably want to decide between KDE4 and Plasma5
+[08:34:03] <init3> PLasma is nice
+[08:34:07] <HoneyDrops|Half> Gigaway: you can install it like any other package
+[08:34:16] <init3> But a little unstable still. 
+[08:34:20] <init3> Just a little
+[08:34:26] <Gigaway> Isnt mint and Debian both KDE?
+[08:34:31] <HoneyDrops|Half> You can install multiple DEs at once and swap between them if you really want to.
+[08:34:37] <init3> Ming in cinnamon. 
+[08:34:39] <init3> Mint
+[08:34:50] <HoneyDrops|Half> If you use a login manager it should offer the choice.
+[08:34:52] <init3> And debian doesn't have a default as far as I know. 
+[08:35:01] <HoneyDrops|Half> debian kinda sorta defaults to gnome
+[08:35:20] <init3> Ahh. I've never used Debian on a desktop. 
+[08:35:23] <HoneyDrops|Half> But no one running debian has it install X and that out of the box.
+[08:35:29] <Gigaway> Then which os was it I used that had KDE.. I know I used it before
+[08:35:48] <Hickory> I preffer Xfce
+[08:35:58] <init3> XFCE is nice
+[08:36:11] <Hickory> Nice and simple, no googly windows or shit.,
+[08:36:16] <init3> I used to be 100% for xfce but plasma5 kinda got me hooked. 
+[08:36:40] <init3> Plus this IRC client, which integrates with everything. 
+[08:36:51] <Hickory> Goddamn cinnabun or whatever it's called.
+[08:36:55] <init3> <3 Konversation 
+[08:37:16] <HoneyDrops|Half> weechat and irssi are the two correct irc client options.
+[08:37:33] <HoneyDrops|Half> and you run them in tmux or GNU Screen.
+[08:37:46] <init3> I use weechat normally as well. 
+[08:38:26] <init3> But that's on my server for a mobile proxy. 
+[08:38:26] <init3> And since I don't have internet right now...
+[08:50:30] <HoneyDrops|Half> Gigaway, did you ever use Suse?
+[08:50:49] <Gigaway> Nope
+[08:51:37] <HoneyDrops|Half> Hmm, trying to think of which ones use KDE by default.
+[08:51:42] <Gigaway> Kubuntu, xubuntu,Ubuntu,mint,Debian,raspbian. Those are all I have used
+[08:51:53] <HoneyDrops|Half> Kubuntu uses KDE
+[08:52:36] * HoneyDrops|Half giggles.  My neighbor is going to wake up to a surprise... they left their car windows cracked and it's pouring right now >_>
+[08:52:45] <Gigaway> That explains it then. I used to dual boot windows 7 and Kubuntu
+[08:53:19] * Googie is a fan of the i3 window manager
+[08:53:42] <Gigaway> God I wish I could find a picture of the dakn UI I seen..
+[08:54:32] *** Quits: RainbowHacks (rainbow@Pony-m1cetk.ponix.space) (Ping timeout: 121 seconds)
+[08:54:41] <HoneyDrops|Half> i3 is a good choice, but I like dwm's tiling model.  People tend to prefer one or the other rather strongly.
+[08:55:13] <Googie> I haven't really tried dwm. I maybe should just to get a feel for it at some point.
+[08:55:44] <Gigaway> I guess deep down I want something customizable..but I can't do that yet x.x
+[08:56:08] <HoneyDrops|Half> dwm is a layout-based tiling wm vs a split-pane tiling wm.
+[08:56:48] *** Joins: RainbowHacks (rainbow@Pony-m1cetk.ponix.space)
+[08:57:15] <HoneyDrops|Half> dwm uses an algorithm to determine the layout, i3 the user decides to divide the screen into regions and where clients go into that layout.
+[08:57:23] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[08:58:03] * HoneyDrops|Half squeaks.  That lighting strike was close...
+[08:58:26] <Gigaway> Fucking right it has been. One hit the field yesterday x.x
+[08:58:37] <Gigaway> About as close as the tornado did
+[09:02:30] * Googie 's "Desktop Environment" basically consists of i3, i3status, i3lock, and dmenu
+[09:07:46] <HoneyDrops|Half> dwm + dmenu + some sh scripts
+[09:08:22] <HoneyDrops|Half> oh, and slock
+[09:22:34] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:23:43] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[09:23:55] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[09:26:00] *** Quits: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile) (Ping timeout: 121 seconds)
+[09:26:05] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[09:26:29] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[09:27:59] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[09:29:28] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[09:39:46] <Gigaway> So.. Does anyone else have issues with their mouse being jumpy?
+[09:41:10] *** Joins: Phase (Phase4@Pony-5ah3ft.internode.on.net)
+[09:41:15] <HoneyDrops|Half> I don't, but I so rarely use it.
+[09:50:17] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:51:49] *** Quits: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net) (Quit: I am gone now)
+[09:55:09] <JockeTF> Gigaway: "Laser" or "optical"?
+[09:55:34] <Gigaway> Laser, Logitech g9 to he exact
+[09:56:27] <JockeTF> Remove all the strands of hair on the underside of the mouse and on your desk. :P
+[09:56:33] <JockeTF> Clean very thoroughly.
+[09:56:38] <JockeTF> :P
+[09:57:48] <JockeTF> All the laser mouses I've had jump around when there's hair in the way. I've had some getting stuck right in front of the sensor too.
+[09:58:46] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[10:02:38] <Gigaway> I have cleaned it many times
+[10:05:55] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[10:06:08] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[10:06:10] *** Gigaway is now known as GihaZzz
+[10:06:24] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[10:12:16] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[10:30:16] *** Awaykitty is now known as Unixkitty
+[10:35:22] *** Quits: Hickory (Iceman@Darkhorse21) (Quit: quit)
+[10:37:23] *** Joins: RazorSharpFang (chatzilla@Pony-roer0i.iinet.net.au)
+[10:40:49] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Connection closed)
+[10:41:41] <RazorSharpFang> Why doesn't java have the delete keyword?
+[10:41:47] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[10:49:32] <Stik> because it's garbage-collected, you don't release memory yourself, you let the jvm sort it out
+[10:49:39] <Stik> is much better
+[10:50:12] <Stik> you have to try quite hard to leak memory
+[10:52:52] *** init3 is now known as Init3-away
+[11:00:29] <Seoson> So nice that when I increase the memory allocated to minecraft over a certain amountif the Java gc kicks in the game suddenly drops down to single digit frames for a few moments.
+[11:01:32] <Stik> sounds like you might have some other problems than just the gc
+[11:01:48] <Stik> shouldn't even be noticable with minecraft i wouldn't have thought
+[11:01:58] <Stik> at least not if it's been written properly
+[11:02:11] <Seoson> That's probably the point
+[11:02:18] <Stik> that it isn't?
+[11:02:31] <Seoson> That it isn't written very well
+[11:02:35] <Stik> seems like they've had long enough by now to sort out the bugs like that though
+[11:02:45] <Stik> not like it's not got any money behind it now, afterall :)
+[11:02:51] <Seoson> Oh it's a relatively new thing
+[11:03:20] <Seoson> I cannot tell you which version it introduced but it was above 1.6
+[11:03:31] <Stik> guess they have a new bug
+[11:03:48] <Seoson> I used to give MC ridiculous amounts of RAM
+[11:03:50] <Stik> i haven't played minecraft in a while, had to uninstall it to stop myself spending all day building crap :|
+[11:05:53] <Stik> i can believe that it's not written very well though, someone in here was trying to mod it a few months back and they were saying it still used opengl 1, which is very very old these days
+[11:06:01] <Stik> and not a very good idea
+[11:06:29] <Seoson> Java is a pain. While I like the idea to write a program only once and have it run on every plattform and the highlevel API is awesome, it just performs poorly. Nowadays I prefer .Net/Mono
+[11:06:49] <Stik> yeah .net seems to be doing well these days
+[11:07:14] <Stik> but i would argue that java doesn't perform any worse, badly written programs perform badly ;)
+[11:08:36] <Seoson> Also the Java browser plugin "Applets" need to die a sudden death.
+[11:09:27] <Stik> all plugins do really
+[11:09:32] <Stik> (native ones)
+[11:09:48] <Stik> i think the latest chrome has stopped supporting the java plugin anyhow hasn't it?
+[11:13:59] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[11:29:48] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[11:39:06] *** Cepheid is now known as Cephy-ZZZzzz
+[11:56:46] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[12:39:41] *** Dusk is now known as Acacia
+[12:39:47] *** Acacia is now known as Dusk
+[13:01:32] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[13:11:13] *** Unixkitty is now known as Awaykitty
+[13:12:23] <vi[NLR]> does anypone know of some free software to create furniture from scratch? it should be able to print some plans, handle material-thicknesses in reasonable ways and do a rendered preview of the furniture (or at least export it in a format where i can import it in blender)
+[13:14:56] *** Joins: Fallfeathers (Fallfeather@Pony-2fjh1h.md.comcast.net)
+[13:40:46] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (A TLS packet with unexpected length was received.)
+[13:46:10] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[13:47:17] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[13:51:43] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Quit: ChatZilla 0.9.91.1 [Firefox 39.0/20150630154324])
+[14:04:09] *** Awaykitty is now known as Unixkitty
+[14:17:33] *** Joins: AndroUser (androirc@Pony-ef4.u8m.190.180.IP)
+[14:18:22] <AndroUser> Can anyone teach me how to make commands to a bot I'm doing
+[14:19:45] <Stik> need a bit more info there really
+[14:20:03] <Stik> are you writing it yourself? what language are you using, and what libraries?
+[14:20:04] *** AndroUser is now known as Cydie
+[14:20:14] <Cydie> I'm using python 2
+[14:20:41] <Cydie> And i don't need to learn the socket module (i know how to do it)
+[14:21:06] <Cydie> I just need on how to do a random user roulette
+[14:21:32] <Stik> how far have you got, is it connecting to a server, joining channels etc?
+[14:21:50] <Cydie> Mhm i know how to do joining a channel
+[14:22:09] <Stik> i guess at a high level you'll want to listen to JOIN and PART messages to keep track of who's in the current channel, then you can pick a random one from that lit
+[14:22:12] <Stik> list
+[14:22:21] <Cydie> Also how can you do one of those configuration file thingy
+[14:22:50] <Stik> i'm not really a python developer so i don't know what "the way" is there
+[14:23:02] <Stik> but i'd use a json file as my first attempt
+[14:23:13] <Stik> there might be something more appropriate
+[14:23:24] <Cydie> Are those json things easy to learn?
+[14:23:32] <Stik> yeah json's really really simple
+[14:23:50] *** CyberJacob is now known as zz_CyberJacob
+[14:24:02] <Stik> there's only really three things in it, values, arrays and maps
+[14:24:18] <Stik> is as simple as you can make it really
+[14:24:38] <Cydie> I hope maps is not calculus related (i don't know Lambada)
+[14:24:50] <Stik> not sure what python calls them, dictionaries?
+[14:24:57] <Stik> an associated array
+[14:25:01] <Stik> *associative
+[14:25:18] <Cydie> math is not really related to programming
+[14:25:24] <Stik> so {"a":something, "b": something else, "c": etc}
+[14:25:25] <Cydie> because it's a bot
+[14:25:34] <Cydie> Yes that's dictionary
+[14:27:26] *** Quits: Cydie (androirc@the.little.cloud.colt) (Connection closed)
+[14:50:59] *** zz_CyberJacob is now known as CyberJacob
+[15:04:13] *** Unixkitty is now known as Awaykitty
+[15:12:51] *** Awaykitty is now known as Unixkitty
+[15:14:45] *** Quits: Fallfeathers (Fallfeather@Pony-2fjh1h.md.comcast.net) (Ping timeout: 121 seconds)
+[15:20:58] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:03:21] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:10:12] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[16:13:46] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 121 seconds)
+[16:15:49] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[16:24:46] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[17:09:57] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[17:22:07] <tiwake> http://www.anandtech.com/show/9490/toshiba-and-sandisk-announce-48layer-256gbit-tlc-3d-nand
+[17:22:08] <PinkiePieBot> [ Toshiba and SanDisk Announce 48-layer 256Gbit TLC 3D NAND ]
+[17:22:37] <tiwake> competition yay
+[17:22:58] <tiwake> I'd be more apt to lean towards micron's stuff
+[17:23:45] <tiwake> micron typically has among the best testing processes to make sure products work before shipping them
+[17:25:14] <tiwake> http://www.anandtech.com/show/9470/intel-and-micron-announce-3d-xpoint-nonvolatile-memory-technology-1000x-higher-performance-endurance-than-nand
+[17:25:15] <PinkiePieBot> [ Analyzing Intel-Micron 3D XPoint: The Next Generation Non-Volatile Memory ]
+[17:30:52] <tiwake> now that I'm actually reading this, its kinda badass
+[17:30:53] <tiwake> lol
+[17:31:02] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[18:05:06] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[18:05:33] *** Joins: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net)
+[18:06:18] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[18:13:13] *** Crimson_Tail is now known as Moon_Shadow
+[18:19:38] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[18:27:59] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[18:28:31] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[18:28:37] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[18:42:24] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:42:56] <RainbowHacks> Okay, that name is awesome.
+[18:44:18] <Moonlightning> Mmm?
+[18:56:56] *** Unixkitty is now known as Awaykitty
+[19:01:26] *** CyberJacob is now known as zz_CyberJacob
+[19:06:21] *** zz_CyberJacob is now known as CyberJacob
+[19:12:30] *** Joins: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net)
+[19:44:04] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[19:44:50] <quindo> http://prntscr.com/80syn8
+[19:44:51] <PinkiePieBot> [ Screenshot by Lightshot ]
+[19:47:00] <quindo> unf
+[19:47:00] <HoneyDrops|Half> the line trends downward
+[19:47:18] <quindo> Dat ram usage line.
+[19:47:19] <GihaZzz> okay so I have kde DE installed now
+[19:47:26] <wolfyshy> is that a screenshot of the chinese stock market?
+[19:47:37] <GihaZzz> Ubuntu is set to defaukt, how can default kde?
+[19:47:58] <HoneyDrops|Half> GihaZzz: are you using a login manager, if so, know which one?
+[19:48:19] <GihaZzz> yeah there is one, not sure what
+[19:48:28] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[19:49:33] <GihaZzz> and there is a amd driver update now I guess
+[19:50:38] <GihaZzz> Oh I guess it is LightDM? login?
+[19:52:48] <RainbowHacks> GihaZzz, depends on what you're using. Just edit the config file for your login manager of choice
+[19:53:07] *** GihaZzz is now known as Gigabit
+[19:53:26] <RainbowHacks> for example, I use slim so i edit /usr/local/etc/slim.conf on my freebsd install, and bam :3 it pulls from my .xinitrc file and executes lxde
+[19:53:41] <RainbowHacks> hey init3 :3333
+[19:53:47] <HoneyDrops|Half> https://wiki.ubuntu.com/LightDM  < quick can makes me think this should more or less point you in the right direction.
+[19:53:49] <PinkiePieBot> [ LightDM - Ubuntu Wiki ]
+[19:53:52] <HoneyDrops|Half> s/can/scan/
+[19:54:24] * HoneyDrops|Half just logs into the tty and startx.
+[19:55:04] <RainbowHacks> HoneyDrops|Half, what're you running?
+[19:55:34] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[19:56:00] <HoneyDrops|Half> Various, but primarily Gentoo. (as I consider my laptop my primary system)
+[19:56:22] * RainbowHacks nods
+[19:56:25] * RainbowHacks runs FreeBSD
+[19:56:42] <RainbowHacks> I gave up on Linux a few years ago, though I work in a linux shop now so I have to touch it once in a while
+[19:56:54] <Gigabit> odd.. I went to the directory /usr/local/etc and ran ls -a but nothing shows up in there
+[19:57:01] <RainbowHacks> I used to make fun of gentoo, but y'all are one of the only distros holding out against that awful redhat malware these days.
+[19:57:06] <RainbowHacks> so, kudos.
+[19:57:17] <wolfyshy> :3
+[19:57:25] <RainbowHacks> Gigabit, that's primarily used on FreeBSD for stuff installed from ports :P
+[19:57:31] <wolfyshy> In Real Life I'm heavily involved in the gentoo community
+[19:58:03] <wolfyshy> I was in FreeBSD until kib took over and decided to make it a hostile community for everyone
+[19:58:16] * RainbowHacks doesnt really interact with the community at large
+[19:58:28] <RainbowHacks> i just run the OS because it's stable, and sane.
+[19:58:43] <Gigabit> oh..
+[19:59:00] <RainbowHacks> Gigabit, yeah that directory probably won't show up on a linux box :p
+[19:59:01] <Gigabit> yeah, kde is running a lot smoother
+[19:59:43] <HoneyDrops|Half> RainbowHacks: I use Gentoo, Debian (all of my are still pre-systemd), Slackware, and OpenBSD on personal systems.  Back when I did support for a living, it was Mandrake, Debain, Suse, Fedora, and Ubuntu was just coming out.
+[20:00:30] <RainbowHacks> HoneyDrops|Half, ah :3
+[20:00:42] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[20:00:48] <RainbowHacks> I used slackware at my job until we changed hypervisors and could support FreeBSD
+[20:00:58] <Gigabit> contents of the /usr/share/lightdm/lightdm.conf.d/ folder
+[20:00:59] <Gigabit> soarin@GamerLuna:/usr/share/lightdm/lightdm.conf.d$ ls
+[20:00:59] <Gigabit> 40-kde-plasma.conf           50-guest-wrapper.conf  50-xserver-command.conf
+[20:00:59] <Gigabit> 40-lightdm-kde-greeter.conf  50-ubuntu.conf
+[20:00:59] <Gigabit> 50-greeter-wrapper.conf      50-unity-greeter.conf
+[20:01:06] <HoneyDrops|Half> Oh, I guess I technically have some OE and Angstrom stuff too, but that's a bit different.
+[20:01:11] <RainbowHacks> i've fiddled with most of the distros out there, Slack is definitely the most sane distro IMO
+[20:01:29] <Gigabit> so.. which should I edit to make it so KDE is default? The unity greeter?
+[20:01:40] <RainbowHacks> Not really a fan of OpenBSD. Too many people get lulled into a false sense of security
+[20:01:45] <RainbowHacks> Gigabit, next time, PLEASE pastebin
+[20:01:50] <RainbowHacks> people don
+[20:01:59] <RainbowHacks> people don't like walls of text dumped in irc -.-
+[20:02:06] <Gigabit> sorry, tired and forgot
+[20:02:21] <RainbowHacks> HoneyDrops|Half, wolfyshy, high five for awesome unixy goodness!
+[20:02:50] <wolfyshy> :D
+[20:03:07] * RainbowHacks is currently at work being a linux support drone
+[20:03:17] <RainbowHacks> aiming for ops though. hopefully will get it in the next 6 months.
+[20:03:19] <HoneyDrops|Half> I'm not generally picky about what distro, BSD flavor, or even linux vs BSD.  For the most part knowledge translates between them, with just a few details that vary.
+[20:03:21] <wolfyshy> I agree that OpenBSD gives people a false sense of security
+[20:03:30] * Colgate just uses debian stable pretty much everywhere
+[20:03:34] <Colgate> or centos
+[20:03:34] <wolfyshy> just because the defaults are more secure than Free/Net, it doesn't mean you can just set it and forget it
+[20:03:44] <wolfyshy> it takes effort to keep a system secure no matter what the defaults are
+[20:03:50] <Gigabit> Okay so I found a file, 50-ubuntu.config and it has a lne that says user-session=ubuntu
+[20:03:56] <HoneyDrops|Half> Obviously, security is a process, not a state.
+[20:03:56] <RainbowHacks> I subscribe to the old-school hacker mindset. helping morons with their shitty wordpress sites annoys me (there's no intellectual challenge).
+[20:04:03] <RainbowHacks> HoneyDrops|Half, AFUCKINMEN <3
+[20:04:44] <RainbowHacks> (i mean i get paid very well to help morons, but still. money isn't everything, i'd like something that actually ustilizes my skillset >.< )
+[20:05:11] <wolfyshy> RainbowHacks: meanwhile I'm fixing the firefox and dev-python/* ebuilds on gentoo and on my way to getting a commit bit
+[20:05:14] <wolfyshy> RainbowHacks: I'm so excited ^.^
+[20:05:31] <Gigabit> init3, after I get done working if you are available, may need your knowledge if I cannot figure this out on my own. for now toodles. work to do in here
+[20:05:34] *** Gigabit is now known as Gigawork
+[20:05:43] <RainbowHacks> wolfyshy, awesome :3
+[20:05:46] <HoneyDrops|Half> While I did computer admin/support, and do hobby programming and electronics, my field is actually physics.
+[20:05:52] <RainbowHacks> o:
+[20:06:15] * RainbowHacks wanted to pursue physics at one point
+[20:06:33] <HoneyDrops|Half> Gentoo is oddly enough, the distro I started on.
+[20:06:49] <RainbowHacks> but then real life happened and i never went to college and worked a series of shitty jobs to barely survive and then was homeless and then magically got an amazing job and now i just dont have time to go to school
+[20:06:57] * RainbowHacks nods
+[20:06:59] * HoneyDrops|Half nods.
+[20:08:10] * RainbowHacks really needsa to take some time to learn C
+[20:08:39] <HoneyDrops|Half> Portage, for all it's flaws, still feels like one of the few sane package managers (and yes, I know the joys of Ports).
+[20:08:48] * RainbowHacks really needs to take some time to learn a thousand different things. But the most important right now are C and lockpicking.
+[20:09:37] <RainbowHacks> which reminds me, I need to order a set of lockpicks today after work.
+[20:09:51] <Lapsus> :D
+[20:09:53] <HoneyDrops|Half> I dabble in a bit of C.  C is very easy to pick up, the language is very simple.  The difficulty is you do have to understand how to build any complexity you require.
+[20:10:16] <Lapsus> lockpicking is super fun :3
+[20:10:47] <RainbowHacks> HoneyDrops|Half, I just haven't had the time to sit down and learn
+[20:11:20] <RainbowHacks> which causes me problems because i have a really nasty inferiority complex and i compare myself to my friends who have been computering since the mid 90's, meanwhile I got my first computer in september 2010 >.>
+[20:12:05] <Lapsus> RainbowHacks: I dunno, you're on IRC, you must be doing something right?
+[20:12:09] <RainbowHacks> Lapsus, x3
+[20:12:30] <HoneyDrops|Half> You're on IRC, using FreeBSD, you are doing something right.
+[20:12:32] <RainbowHacks> I'm aware that I'm actually pretty damn good for someone that's only had a computer for just under 5 years.
+[20:12:46] <RainbowHacks> But, I can't help comparing myself an dfeeling like an idiot
+[20:13:35] <RainbowHacks> Granted, now I can remind myself I picked my first lock on my first try with two bended paperclips. (granted, it was a shitty 5 pin lock with all standard pins and i rocked it open instead of SPPing it, but still!)
+[20:13:45] <RainbowHacks> and that makes me feel way less stupid c:
+[20:15:34] * RainbowHacks used one as a tension bar and the other one in the keyway to fiddle the pins c:
+[20:15:46] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[20:17:26] <HoneyDrops|Half> Lock picking is a fun exercise.
+[20:18:40] <RainbowHacks> :3
+[20:18:44] <RainbowHacks> yus
+[20:18:59] <Lapsus> heck yeah paperclip lockpicking. I got in some trouble when I first picked a lock, beacuse it was on a door at school, using paperclips >.>
+[20:19:14] <RainbowHacks> HoneyDrops|Half, do you have any suggestions, for getting started with C? I don't know any languages (at all)
+[20:19:19] <RainbowHacks> Lapsus, x3
+[20:19:33] <Lapsus> do you already have your eye on a pick set, RainbowHacks?
+[20:19:58] <HoneyDrops|Half> RainbowHacks: http://www.amazon.com/The-Programming-Language-Brian-Kernighan/dp/0131103628
+[20:20:00] <PinkiePieBot> [ Amazon.com: The C Programming Language (9780131103627): Brian W. Kernighan, Dennis M. Ritchie: Books ]
+[20:20:08] <Lapsus> I picked up http://www.sparrowslockpicks.com/kick_start_p/s-0.htm on a friend's advice and it's pretty great
+[20:20:09] <PinkiePieBot> [ Kick Start ]
+[20:20:13] <RainbowHacks> o:
+[20:20:20] <RainbowHacks> Lapsus, yup! One of the southord sets
+[20:20:24] <RainbowHacks> probably the 11
+[20:20:27] <Lapsus> I just need to get a top-of-keyway tensioner at some point
+[20:20:42] <RainbowHacks> HoneyDrops|Half, thanks <3
+[20:21:01] * RainbowHacks adds it to her list of stuff to buy
+[20:21:29] <Lapsus> RainbowHacks: http://www.southord.com/Lock-Pick-Tools/Lock-Pick-Set-11-Piece-Metal-Handles.html ?
+[20:21:30] <PinkiePieBot> [ Eleven Piece Lock Pick Set With Metal Handles - MPXS-11 by SouthOrd Lock Picks & Locksmith Supplies ]
+[20:22:05] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[20:22:05] <HoneyDrops|Half> That is basically /the/ book on C.  For general programming, other languages have various options.  Really it depends on what you want to learn.
+[20:23:06] <RainbowHacks> Lapsus, yup!
+[20:23:17] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[20:23:24] <RainbowHacks> HoneyDrops|Half, I assumed as much as soon as I saw "Dennis Ritchie" on it x3
+[20:23:50] * RainbowHacks has obsessively studied the history of UNIX >.>
+[20:24:19] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Killed (NickServ (GHOST command used by init3_1)))
+[20:24:21] *** init3_1 is now known as init3
+[20:24:25] <RainbowHacks> hey init3 :3
+[20:24:38] <init3> Hey. I'm finally on my own connection!
+[20:25:25] <init3> My landlord told me where to dig in my walls to find the mythical coaxal splitter for the apartment. 
+[20:25:32] <RainbowHacks> :D
+[20:25:34] <RainbowHacks> YAY!
+[20:26:55] <init3> omg yes and I have my fileserver and whatnot up too. It's all connected again finally. 
+[20:27:14] <init3> I just need to "test" my netflix now. 
+[20:27:18] <init3> Extensivley
+[20:27:19] <RainbowHacks> :D
+[20:27:20] <Caerdwyn> "test" netflix
+[20:27:23] <Caerdwyn> lel
+[20:27:44] <RainbowHacks> time for ponies.
+[20:27:46] <RainbowHacks> \o/
+[20:27:59] <init3> Probably. Even though they are on my file server. 
+[20:28:23] <wolfyshy> they just got the fifth series :D
+[20:28:25] * RainbowHacks stopped herself from saying that for a second because she's in so many networks, some of which are hostile to cartoon horses
+[20:28:28] <RainbowHacks> and then I was like
+[20:28:28] <RainbowHacks> wait
+[20:28:29] <wolfyshy> I missed a few episodes so I need to catch up
+[20:28:35] <RainbowHacks> This is Cartoon Horse IRC
+[20:28:38] <wolfyshy> lol
+[20:28:45] <RainbowHacks> You people will TOTALLY be okay with ponies
+[20:28:46] <RainbowHacks> x3
+[20:28:54] <init3> Wait a second. My digital cable box has an ethernet port.
+[20:28:56] <wolfyshy> I have to use an entirely separate identity here to make sure it doesn't mix with my real life :/
+[20:28:58] <init3> Why?
+[20:29:04] <wolfyshy> init3: IPTV?
+[20:29:05] <RainbowHacks> wolfyshy, whyfor?
+[20:29:06] <Lapsus> RainbowHacks: Ew, who watches that weird show :p
+[20:29:27] <RainbowHacks> Lapsus, I dunno. Fuckin weirdos. I mean what kind of adult watches a show for little kids?
+[20:29:30] <init3> So what, I could watch digital cable shit on my computer?
+[20:29:34] * RainbowHacks hums opening theme
+[20:29:42] <init3> I give no fucks who knows. 
+[20:29:43] <RainbowHacks> i've become what I hated ;~;
+[20:29:54] <init3> I wear a fucking MLP shirt from time to time. 
+[20:30:01] <init3> fite me
+[20:30:02] * RainbowHacks may have dyed her hair rainbow
+[20:30:15] * RainbowHacks also may have gotten stoned and gotten a cutie mark tattoo....on her hip....
+[20:30:18] <RainbowHacks> >.>
+[20:30:23] <init3> Truf, but that's a bit... WHAAAAA
+[20:30:30] <RainbowHacks> <.<
+[20:30:40] <init3> Being stoned is not enough of an excuse even. 
+[20:30:44] <init3> Just an fyi
+[20:30:48] <init3> YOu totally wanted that
+[20:30:56] * HoneyDrops|Half uses a different nick on canternet vs other places, but it's a hold over from RP.
+[20:31:04] <RainbowHacks> init3, OKAY SO MAYBE I DID D:
+[20:31:39] <init3> I've smoked more than my fair share of weed in my day. The only thing you do when your stoned that you wouldn't normally do is laugh and eat. 
+[20:31:46] <RainbowHacks> >.>
+[20:31:47] <init3> *you're
+[20:32:26] <Gigawork> ugh.. cannot find the caulk gun and the window sill needs it so bad
+[20:32:59] <wolfyshy> I have a lil plushie Fluttershy that I cuddle <3
+[20:33:10] <RainbowHacks> d'aaaw :3
+[20:33:27] <init3> So which one is it RainbowHacks? Do you have an RD cutie mark?
+[20:33:29] <RainbowHacks> oh, if anyone wants to see: http://cloudsdale.ponix.space/~rainbow/RainbowHacks
+[20:33:32] <RainbowHacks> oh, if anyone wants to see: http://cloudsdale.ponix.space/~rainbow/RainbowHacks.jpg
+[20:33:36] <RainbowHacks> init3, yes >.>
+[20:33:53] <Gigawork> I love the hair x.x
+[20:34:02] <wolfyshy> oh god you're so cute!
+[20:34:40] * RainbowHacks blush >w<
+[20:34:58] <RainbowHacks> took that at work a few nights ago >w>
+[20:35:03] <Caerdwyn> http://cloudsdale.ponix.space/~rainbow/beepbeep.png I lol'd
+[20:35:12] <init3> Well maybe not anywhere else, but in here that's badass as fuck.
+[20:35:27] <init3> The tat I mean
+[20:35:40] <RainbowHacks> Caerdwyn, i use that as the banner for my twitter, since i work for a "cloud" host x3
+[20:35:44] <Caerdwyn> XD
+[20:35:52] <RainbowHacks> (yes. my name is rainbow and my job is clouds. come at me bro. x3 )
+[20:35:53] <Caerdwyn> and the "Add a Linode"
+[20:36:05] <wolfyshy> hahahaha
+[20:36:15] <RainbowHacks> Caerdwyn, I was helping someone, just stuck the image there :p
+[20:36:18] <Caerdwyn> lol
+[20:36:29] <Caerdwyn> Gotta dig that Chrysalis terminal background though... :o
+[20:36:47] <RainbowHacks> x3
+[20:37:18] <init3> Haha rainbow@canterlot. This amuses me greatly. 
+[20:37:37] <RainbowHacks> :3
+[20:37:44] * RainbowHacks has taken to naming her gear after pony stuff
+[20:38:10] <init3> I have a few things like that. 
+[20:38:14] <RainbowHacks> so,  the "cloud" server is cloudsdale. My wifi hotspot that travels around is Equestrian Cloud House. Laptop is canterlot.local. The solaris box im testing right now is celestia
+[20:38:29] <RainbowHacks> because solaris. sun. obviously it needs to be named after sunbutt x3
+[20:38:31] <Gigawork> heh, my pi is cloudsdale
+[20:38:42] <RainbowHacks> and ponix = Poni Unix :3
+[20:38:42] <Midnight_Tinker> closest I've got is my iMac's hostname, its Big Mac
+[20:38:48] <init3> Hue
+[20:38:50] <Caerdwyn> my laptop is too simple
+[20:38:53] <Caerdwyn> sh: 1: /etc/hostname: Permission denied
+[20:38:56] <Caerdwyn> ooops
+[20:38:57] <Caerdwyn> what
+[20:39:01] <init3> whomp whomp
+[20:39:03] <Caerdwyn> duskbutt
+[20:39:07] <Caerdwyn> wait, no
+[20:39:10] <Caerdwyn> forgot, thats the vps
+[20:39:17] <Caerdwyn> my laptop is just "inspiron"
+[20:39:19] <Caerdwyn> xD
+[20:39:39] <init3> My home server is derpy, and I used to have a web server called sweetiebot. 
+[20:39:50] <Caerdwyn> i just make the hostname whatever the model of the computer is that way i cant forget what im connecting to
+[20:40:02] <Caerdwyn> desktop is optiplex, laptop is inspiron, server is just NAS
+[20:40:04] <Caerdwyn> xD
+[20:40:11] <init3> I also had a small VM host called dash and the primary VM was tank
+[20:40:32] <init3> It got cuter after S5 ep 5 or whatever
+[20:40:32] <Midnight_Tinker> my server was dollamenu when I had it running because it was just a netbook running Arch
+[20:40:42] <init3> HAHA
+[20:40:43] <Caerdwyn> holla holla get dolla
+[20:40:46] <init3> Perfect
+[20:40:47] <Caerdwyn> get dolla make ya holla
+[20:40:50] <init3> aeiou
+[20:40:54] <Caerdwyn> aeiou
+[20:41:01] <Midnight_Tinker> holla holla get pound
+[20:41:06] <Midnight_Tinker> mon jadden
+[20:41:06] <Caerdwyn> get out
+[20:41:17] <Midnight_Tinker> futbuwl
+[20:41:24] <RainbowHacks> I feel like I need a box called thrackerzod
+[20:41:42] <Midnight_Tinker> IS THIS A REQUEST A NORMAL SERVER WOULD MAKE
+[20:41:49] <Caerdwyn> im waiting for praisehelix or raiseyourdongers
+[20:41:53] * HoneyDrops|Half uses no cohesive naming scheme.
+[20:42:15] * RainbowHacks just made most of her coworkers' IRC clients crash
+[20:42:39] <RainbowHacks> also, I used to use geo stuff for servers, still do for my hypervisors
+[20:42:55] <RainbowHacks> $HypervisorType$Number.$Countrycode.TLD
+[20:43:01] <RainbowHacks> $HypervisorType$Number.$Countrycode.domain.tld
+[20:45:10] * RainbowHacks boops wolfyshy's nose 
+[20:45:19] <HoneyDrops|Half> Current laptop is etna, home server is discord, netbook is sputnik, mobile is twilight.  Former server is momo (peach).
+[20:45:42] <DJ-C0L7[CSS]> nice
+[20:45:58] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[20:48:07] <init3> Hehe at LiquidWeb they let us name our shared servers after whatever theme we wanted. After we ran out of names there would be a company wide vote on the new theme. I'f I was still there I would have bribed people to let the theme be ponies. 
+[20:48:27] <init3> I know Star Trek and Futurama were previous ones. Can't think of the others. 
+[20:48:27] <RainbowHacks> x3
+[20:48:44] <init3> Like there's a fry.liquidweb.com and a bender.liquidweb.com
+[20:49:53] <RainbowHacks> hehe
+[20:50:00] * RainbowHacks tries booping wolfyshy again
+[20:50:01] <init3> picard.liquidweb.com. I do miss that job. 
+[20:50:09] * RainbowHacks also boops init3 and HoneyDrops|Half 
+[20:50:37] *** Ruthalasleepy is now known as Ruthalawork
+[20:50:43] <RainbowHacks> this guy at my old job had a box he used tostore internal stuff for other employees. it was somehting like fuckyouyoufuckingfuckers.com
+[20:50:56] * init3 winds up and turbo-ultra-mega-boop cannons RainbowHacks.
+[20:51:08] <init3> Haha
+[20:51:08] * RainbowHacks squeaks and scrunchfaces!
+[20:51:13] <RainbowHacks> >w<
+[20:51:18] <Caerdwyn> >turbo-ultra-mega-boop
+[20:51:24] * Caerdwyn blinks and backs away from init3 slowly
+[20:52:20] <init3> Caerdwyn: Sssh... No fears, only boops now. 
+[20:52:28] <RainbowHacks> o.o;;
+[20:52:38] * RainbowHacks boops Caerdwyn :3
+[20:52:40] <Caerdwyn> O_O 
+[20:52:44] * Caerdwyn screams and runs away
+[20:54:00] <RainbowHacks> .____.
+[20:56:04] * wolfyshy folds and then unfolds
+[20:56:11] <wolfyshy> booping my nose makes me fold into a wolf companion cube
+[20:56:23] <RainbowHacks> o.o
+[20:56:33] <RainbowHacks> y'all are....weird o.o
+[20:56:40] * RainbowHacks boops wolfyshy again 
+[20:57:39] * wolfyshy folds
+[20:57:48] * RainbowHacks boops wolfyshy again
+[20:57:52] * wolfyshy unfolds
+[20:57:53] <wolfyshy> woof -.-
+[20:58:00] <RainbowHacks> this is fun :3
+[20:58:21] <init3> My netflix actually isn't working tho lol
+[20:58:31] * RainbowHacks boops init3 
+[20:59:10] <RainbowHacks> also
+[20:59:16] <RainbowHacks> wolfyshy, im mad at you now
+[20:59:19] * init3 sends the launch codes to the boop silos in the New Mexico desert.
+[20:59:19] <RainbowHacks> >:I
+[20:59:55] * Gladiolus redirects the boops to Ceasers forces.
+[21:00:01] <Gladiolus> aesers
+[21:02:29] <RainbowHacks> o.o
+[21:02:34] <wolfyshy> why are you mad :(
+[21:02:47] <RainbowHacks> because you made me blush and my coworker asked why my face was red D:L
+[21:02:49] <RainbowHacks> * D:
+[21:03:40] <Gladiolus> pfff
+[21:03:41] <wolfyshy> XD
+[21:03:43] <init3> Ok so why the fuck would Netflix be able to pull down the episode lists and whatnot but say there is no network connection when I try to play something? Fuck this old Blu-ray box. 
+[21:03:49] <Gladiolus> RainbowHacks, you have nice hair and a pretty face.
+[21:03:56] <RainbowHacks> >//<
+[21:03:58] * Gladiolus waits to find out if that's creepy or complimental.
+[21:06:07] <RainbowHacks> Why would it be creepy?
+[21:06:49] <Gladiolus> Because often the only reason men will compliment a woman is "...NOW PLEASE SLEEP WITH ME I NEED IT SO BAD"
+[21:07:06] <RainbowHacks> wat
+[21:07:07] <Gladiolus> I wouldn't be opposed to that though. >.>
+[21:07:20] <RainbowHacks> Gladiolus, lemme know when you grow tits <
+[21:07:21] <RainbowHacks> <3
+[21:07:22] <Gladiolus> Real life conventions are weird okay
+[21:07:24] * Gladiolus cry
+[21:07:28] * HoneyDrops|Half spritzes Gladiolus with a spray bottle.
+[21:07:29] <Gladiolus> but but i have this, like
+[21:07:39] <RainbowHacks> Do you have tits?
+[21:07:46] <RainbowHacks> Cuz, I only sleep with people with tits o.o
+[21:07:51] <RainbowHacks> Specifically wimminz
+[21:07:54] <Gladiolus> okay then no sleeping just sex
+[21:07:58] <Gladiolus> >:)
+[21:08:01] * Gladiolus hisses at HoneyDrops|Half 
+[21:08:03] * RainbowHacks snrk
+[21:08:23] <RainbowHacks> but yeah. I'm a lezzybean. That doesn't mean I can't appreciate a compliment for what it is.
+[21:08:39] * RainbowHacks also just gets flustered whenpeople call her cute
+[21:08:39] * HoneyDrops|Half was just watering Gladiolus, flowers need moisture!
+[21:08:41] <RainbowHacks> not used to it
+[21:08:43] <RainbowHacks> >.<
+[21:09:15] * Gladiolus blink, somebody understands his name!
+[21:09:22] * Gladiolus enjoys the watering. :3
+[21:09:44] <Gladiolus> well, everyone step back i'm gonna bring this around to it's logical conclusion
+[21:09:48] <Gladiolus> RainbowHacks, post tits.
+[21:10:00] <RainbowHacks> Gladiolus, I'm at work. No.
+[21:10:16] <wolfyshy> RainbowHacks: don't post tits -.-
+[21:10:19] <RainbowHacks> Also, no way in hell am I showing them off until I pick up my rainbow swirl barbells >.>
+[21:10:23] <Gladiolus> I'm laughing that the reason is "at work" not "that's creepy"
+[21:10:34] <wolfyshy> your body is beautiful and should be shared when you want to
+[21:10:40] <wolfyshy> not when some creepy dude on the internet wants to -.-
+[21:10:48] * wolfyshy smacks Gladiolus and woofs
+[21:10:49] <Gladiolus> I was joking silly.
+[21:10:53] * wolfyshy then sits next to RainbowHacks ^.^
+[21:10:58] <RainbowHacks> wolfyshy, my body is kinda gross and slightly flabby, and I don't care about these things x3
+[21:11:17] <Midnight_Tinker> RainbowHacks: its beautiful to someone
+[21:11:19] <Gladiolus> Pff I doubt it, I saw that one pic and you looked pretty fine.
+[21:11:26] <RainbowHacks> Midnight_Tinker, nope. 
+[21:11:31] * RainbowHacks is perpetually single
+[21:11:34] <RainbowHacks> foreveralonepone
+[21:11:53] * HoneyDrops|Half is a apiarist (IC), obviously she'd know flowers.  (OOCly I am moderately familiar with flowers and other ornamental and sustenance plants)
+[21:11:58] <Midnight_Tinker> that may be your attitude towards yourself though, confidence is the sexiest attribute someone can have. Believe you'll achieve something, and you often will
+[21:12:23] <Lapsus> HoneyDrops|Half: not an apiarist ooc? :p
+[21:12:40] <Lapsus> I want to keep bees but I also want to not get stung >.>
+[21:12:41] * Gladiolus hugs HoneyDrops|Half :3
+[21:12:43] <RainbowHacks> Midnight_Tinker, oh, I'm confident o.o
+[21:12:46] <RainbowHacks> I'm awesome.
+[21:13:04] * HoneyDrops|Half hugs Gladiolus and purrs softly.
+[21:13:06] <RainbowHacks> and as soon as I start biking to work (which requires purchasing a bike) i'll drop the extra weight and be super sexy again
+[21:13:12] <wolfyshy> :3
+[21:13:19] * Gladiolus pets HoneyDrops|Half 
+[21:13:20] <RainbowHacks> It doesn' change how perpetually single i am xD
+[21:13:29] * HoneyDrops|Half mews.
+[21:13:32] <Gladiolus> I feel this would be a good and also super-creepy time to mention I like larger mares.
+[21:13:33] <Gladiolus> >.>
+[21:13:35] <Midnight_Tinker> there ya go. If a creepy skinny guy like me can get engaged, you can get a date, I believe in you!
+[21:13:46] <RainbowHacks> I don't have very many meatspace friends, and it's hard for me to meet people
+[21:14:03] <RainbowHacks> I'm incredibly outgoing, but I'm also an introvert, one who prefers sitting at home in her hacker cave to going out to clubs
+[21:14:13] <RainbowHacks> i think tomorrow will be my first night out in months
+[21:14:13] <Moonlightning> The Enrichment Center reminds you, once again, that the Wolfy Companion Cube cannot speak.
+[21:14:16] * RainbowHacks is going to a metal show
+[21:14:27] <Moonlightning> In the event that the Wolfy Companion Cube /does/ speak, the Enrichment Center urges you to disregard its advice.
+[21:14:46] <RainbowHacks> Midnight_Tinker, thanks for the vote of confidence <3
+[21:15:21] <Midnight_Tinker> RainbowHacks: no problem, I used to think the same thing. Only takes meeting the right person once to get, if not a lifetime of companionship, at least a few months
+[21:15:44] <wolfyshy> yeah, and if you don't find the right person, there's always more!
+[21:15:48] <wolfyshy> at least until the nuclear holocaust
+[21:15:51] <wolfyshy> then there won't be any more
+[21:15:55] <wolfyshy> :(
+[21:15:58] <Gladiolus> pfff
+[21:16:03] <Gladiolus> they'll all just have two heads
+[21:16:06] <Midnight_Tinker> there will be a few, and those that are left will be THIRSTY
+[21:16:07] <Moonlightning> Well, there will be if at least a male and a female survive
+[21:16:14] <locodash11[server]> until everyone comes out of the vaults
+[21:16:20] <Moonlightning> Relevant: https://worldbuilding.stackexchange.com/questions/21785
+[21:16:21] <PinkiePieBot> [ science based - Repopulating the world from a single couple - what would it really be like? - Worldbuilding Stack Exchange ]
+[21:16:33] <Midnight_Tinker> theyll be like "man I havent seen unmutated tit in years, lemme git on that gurl
+[21:16:36] <wolfyshy> can't you just put a male and female pair in each vault to help repopulate BEFORE they emerge?
+[21:16:43] <init3> Naw, she just needs to go on a journey to meet the voice on the radio. 
+[21:16:43] <Moonlightning> ^
+[21:16:51] <RainbowHacks> Midnight_Tinker, well, the bigger issue is that on the rare occasion I DO get a date
+[21:16:52] <Moonlightning> If this is part of Fallout's plot, I am disappoint :|
+[21:17:00] <RainbowHacks> they usually don't want to see me again after
+[21:17:05] * RainbowHacks is very big on disclosure
+[21:17:20] <Moonlightning> Stupid society. :|
+[21:17:20] <init3> Ahh
+[21:17:24] <Midnight_Tinker> what do you disclose that's so strange?
+[21:17:34] * Moonlightning got lucky.
+[21:17:54] <RainbowHacks> er....what's under the hood, so to speak >.>
+[21:18:01] <Midnight_Tinker> like, mine knows I ERP in pony chats but I didnt tell her first day, I waited til she was in love and stuck with me
+[21:18:24] <Midnight_Tinker> RainbowHacks: that can mean a lot of things
+[21:18:48] <RainbowHacks> .-.;;
+[21:18:51] <locodash11[server]> 2 litre vtech
+[21:19:00] <init3> lol
+[21:19:21] <RainbowHacks> it meeeeans I'm a trap .w.;
+[21:19:23] <init3> I'd end that date. V6 or better pls. 
+[21:19:41] <Midnight_Tinker> ohhhhh yeah I can understand where that would cause problems
+[21:19:49] <Midnight_Tinker> especially depending on where you live
+[21:19:50] <Moonlightning> :?
+[21:19:52] <locodash11[server]> aww
+[21:20:19] <RainbowHacks> it does. a lot.
+[21:20:34] * RainbowHacks is actually bisexual too, though tends to prefer women
+[21:20:50] <RainbowHacks> but...guys, girls, they're both disgusted and don't talk to me again ._.
+[21:20:52] <Midnight_Tinker> like I live in a fairly liberal area where it isn't a huge deal, but I grew up in an area where it would be nearly impossible
+[21:20:54] <init3> Also, wow. You so pretty that's really hard to see. 
+[21:21:07] <init3> Well, impossible really
+[21:21:12] <RainbowHacks> o//o;
+[21:21:38] * Moonlightning is confus.
+[21:21:48] <Lapsus> I've had people like, back away from me in fear upon learning I liked dudes too, I can't imagine the silly reactions a trans person gets.
+[21:22:27] <RainbowHacks> Lapsus, it's.....it's not fun.
+[21:22:56] * Moonlightning offers RainbowHacks hugs? :(
+[21:23:10] * RainbowHacks hugs Moonlightning 
+[21:23:15] <Lapsus> On the other hand, I bet you have a bunch of really awful first date stories :v
+[21:23:17] <RainbowHacks> did NOT expect to tell you poeple this >.<
+[21:23:49] * RainbowHacks flops down
+[21:24:13] <RainbowHacks> Lapsus, I actually don't, but only because I never go on dates anymore
+[21:24:16] <Moonlightning> This net is possibly one of the best places to be open.
+[21:24:38] <Moonlightning> Yay tolerance~
+[21:24:52] * RainbowHacks has noticed
+[21:24:53] <RainbowHacks> <3
+[21:24:54] <Lapsus> heh, imagine having told that to 96 random people in real life instead of on irc. That would be an adventure >.>
+[21:24:59] <init3> Also I know for a fact you aren't alone in that here. Not going to call anyone out though. 
+[21:25:08] * RainbowHacks nods
+[21:25:12] * wolfyshy hugs RainbowHacks
+[21:25:20] <wolfyshy> you're you, that's what is important <3
+[21:25:26] <RainbowHacks> Not your place to. If someone wants to out themselves to me, that's their decision *nod*
+[21:25:32] * RainbowHacks hugs wolfyshy back <3
+[21:25:33] <init3> Aye
+[21:26:06] <RainbowHacks> Y'all are awesome.
+[21:26:11] <RainbowHacks> Thank you n.n
+[21:26:36] <Midnight_Tinker> hey, I whack it to pony roleplays, I can't judge anyone
+[21:26:38] <Moonlightning> Of course! We're just being decent. :P
+[21:26:47] * RainbowHacks giggles
+[21:26:49] <Lapsus> hahaha
+[21:27:17] *** Data is now known as RazorSharpFang
+[21:27:30] *** RazorSharpFang is now known as DataBytw
+[21:27:32] *** DataBytw is now known as DataByte
+[21:27:47] * Moonlightning baps Data. “Byte or word, make up your mind!”
+[21:28:44] *** DataByte is now known as BubbleMuffin
+[21:30:00] *** BubbleMuffin is now known as BubblyData
+[21:31:18] <Lapsus> Augh I have to recompile my printer's firmware again
+[21:31:36] * Lapsus grumbles about safety features
+[21:32:32] * Moonlightning sets the mtimes of everything in the source dirtree to the epoch.
+[21:32:38] <Moonlightning> Recompile ALL the things!
+[21:32:54] * Moonlightning …to now, not to the epoch
+[21:33:19] <Lapsus> It's arduino, it recompiles everything anyways
+[21:35:51] <DJ-C0L7[CSS]> gotta head to work, i'll log back in from the laptop
+[21:36:02] <Gigawork> back finally
+[21:36:03] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[21:36:48] <Rylee> RainbowHacks: being trans is nothing to be ashamed of
+[21:36:52] <Rylee> unfortunately society = shit
+[21:37:17] <RainbowHacks> Rylee, I never said I was ashamed
+[21:37:36] <Rylee> it was intended to be encouragement 
+[21:38:08] <Gigawork> Hey, more trans people to know, cool1 <3
+[21:38:18] <RainbowHacks> just that it's....hard sometimes. that's all.
+[21:38:22] <Rylee> yes
+[21:38:25] * RainbowHacks nods
+[21:38:27] <Rylee> it is, indeed, hard
+[21:38:39] <RainbowHacks> Am I to assume that you're trans as well? o.o
+[21:38:45] <wolfyshy> society is slowly getting a bit better
+[21:38:48] <Rylee> sure
+[21:39:03] <wolfyshy> and I think in time, trans people will have more acceptance
+[21:39:07] <Rylee> i'm not really closeted, but also not really out
+[21:39:12] * RainbowHacks nods
+[21:39:16] <RainbowHacks> I'm kind of the same way
+[21:39:33] <RainbowHacks> I kinda transitioned between jobs, and don't mention it unless it's relevant to a conversation or something
+[21:39:47] <Rylee> wolfyshy: that doesn't make the current state acceptable (it's not, and shit)
+[21:40:00] <Rylee> i'm hoping to have time to get into more of an activist role when I move
+[21:40:04] <Rylee> RainbowHacks: oh, wonderful
+[21:40:23] <wolfyshy> you're moving?
+[21:41:10] <Rylee> wolfyshy: yes, hopefully — I am interviewing with a company in the SFBA, which will hopefully be better than Dallas, TX
+[21:41:33] <wolfyshy> oh, fun
+[21:41:38] <Rylee> yes
+[21:41:47] <wolfyshy> good luck :3
+[21:41:54] <Rylee> thanks much
+[21:42:23] <Midnight_Tinker> I'm actually looking to go the other way, from the DC area to the Austin/San Antonio area... depends on my job and the better half's job
+[21:42:53] * Moonlightning is pan. Only mentions it when relevant, which is never.
+[21:42:58] * RainbowHacks has lived in virginia, pittsburgh, and way upstate NY. ended up coming back to jersey and stumbled into a great job
+[21:43:09] <Midnight_Tinker> where in Virginia Rainbow?
+[21:43:13] <Midnight_Tinker> if you dont mind me asking
+[21:43:50] <RainbowHacks> Vbeach
+[21:44:04] *** Quits: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net) (Quit: Leaving.)
+[21:44:07] <Midnight_Tinker> ugh nasty, I'm sorry
+[21:44:11] <Midnight_Tinker> I'm in NOVA myself
+[21:44:39] <RainbowHacks> heh
+[21:44:43] <RainbowHacks> only was down there for a year
+[21:45:13] <Midnight_Tinker> 364 days more than you need to spend in VB
+[21:45:22] <RainbowHacks> lol
+[21:45:23] <RainbowHacks> yup
+[21:45:37] <RainbowHacks> shitty job for shitty pay with my shitty (then)fiance
+[21:45:41] <RainbowHacks> and his shitty drugs.
+[21:45:53] <Midnight_Tinker> ugh I'm so sorry
+[21:46:00] * RainbowHacks deserved better than that, ended up homeless for a year afterwards though
+[21:46:01] <Rylee> sounds lame
+[21:46:24] <Lapsus> #define Z_PROBE_OFFSET_RANGE_MIN -5
+[21:46:25] <Lapsus> AHA
+[21:46:50] * RainbowHacks shrugs
+[21:46:52] <RainbowHacks> shit happens
+[21:47:38] <Midnight_Tinker> I ended up homeless for a bit before I shipped to the Navy, was the best experience I never wanna have again
+[21:48:14] * RainbowHacks almost joined the marines at 18
+[21:48:50] <Midnight_Tinker> I'm trying to get back in, but got sent home for medical
+[21:50:16] <RainbowHacks> a bunch of my coworkers are navy
+[21:50:22] <RainbowHacks> so was my grandfather
+[21:50:29] <RainbowHacks> he was a piece of shit though.
+[21:50:31] <Rylee> i wonder if i'd get my hormones funded if i joined the navy
+[21:50:50] <RainbowHacks> by navy i mean US Navy btw
+[21:50:50] <Midnight_Tinker> not in the current enlistment environment
+[21:50:54] <Midnight_Tinker> they'd send you home
+[21:51:00] <RainbowHacks> murikuh.
+[21:51:17] <RainbowHacks> yeah, being trans is a discharge if they find out
+[21:51:32] <Rylee> wonderful
+[21:51:42] <Rylee> i'm in no danger of the draft then!
+[21:51:46] <Midnight_Tinker> being "borderline bipolar" in this environment is a discharge
+[21:51:48] <RainbowHacks> Rylee, yup x3w
+[21:53:14] <RainbowHacks> no draft for us~!
+[21:53:35] <Midnight_Tinker> brb in 45 or so
+[21:53:41] <Rylee> hmm
+[21:53:42] <Rylee> wonderful
+[21:53:55] <Rylee> RainbowHacks: I assume you are @RainbowHacks on Twitter
+[21:54:02] <RainbowHacks> yup
+[21:54:08] <RainbowHacks> was about to ask who that was that followed me x3
+[21:54:10] <Rylee> neat
+[21:54:22] * RainbowHacks rants about infosec and death metal
+[21:54:30] <RainbowHacks> and ponies
+[21:54:31] <RainbowHacks> x3
+[21:57:03] <locodash11[server]> I'm in pittsburgh right now, oo
+[21:58:13] <Rylee> neat
+[21:58:23] <RainbowHacks> o:
+[21:58:33] <RainbowHacks> locodash11[server], i lived in oakland for 6 months x3
+[21:58:52] <Rylee> i whine about society being shit and retweet Securitay and EldritchSwift
+[21:59:58] <RainbowHacks> heh
+[22:00:21] <locodash11[server]> fun
+[22:00:24] * RainbowHacks derps, will e at work an extra half hour to let this solaris image finish uploading
+[22:03:10] * RainbowHacks was living in Pittsburgh when she was shown the light of the pone
+[22:03:23] * RainbowHacks was *such* a hater before that
+[22:03:49] <Gladiolus> same
+[22:04:00] <Gladiolus> pone changed me as a person as weird as it is
+[22:04:14] <Gigawork> Ah, so its the xsessions folder and the .dmrc file to set it so kde-plasma is default
+[22:04:29] * RainbowHacks watched her first episode on the way to a convention with a friend. That friend picked the episode. 'Ywas Bridle Gossip. I punched him in the arm when it got to the moral. hard.
+[22:04:36] <RainbowHacks> Gladiolus, Oh, did the same thing to me o.o
+[22:05:02] <RainbowHacks> Some of my friends joke i'm basically this universe's rainbow dash now. I'm not inclined to disagree. I have WAY more self confidence now.
+[22:05:12] <RainbowHacks> and it's awesome.
+[22:05:14] <Gigawork> Oh and my DM is GDM I guess HoneyDrops|Half 
+[22:05:41] <Gigawork> er wait nvm, my mistake
+[22:05:54] <Gladiolus> Pony made me realize that John, you are the monsters! and then I became a much less shitty person
+[22:06:00] <RainbowHacks> heh
+[22:06:09] * RainbowHacks has become a much less judgemental person
+[22:06:15] <Gladiolus> I left a lot of bad internet communities and had the Best School Year 
+[22:06:27] <Gladiolus> I got an A- in comparaitive national studies
+[22:06:31] <Gladiolus> or whatever that class was
+[22:06:34] <Gladiolus> anyway good times
+[22:07:06] <RainbowHacks> x3
+[22:07:18] <Gladiolus> I even used photoshop to make a cover page o3o
+[22:07:22] * RainbowHacks throws on the new Cattle Decapitation album
+[22:07:30] <RainbowHacks> SO. MUCH. <3
+[22:08:45] *** init3 is now known as Init3-away
+[22:09:54] <Gigawork> okay why does steam seem much more responsive in KDE?
+[22:11:50] * RainbowHacks shrugs
+[22:13:26] <Gigawork> Oh I forgot I also used Zorin for a little bit
+[22:16:04] * RainbowHacks herps and derps and randomly boops and noses people!!
+[22:16:15] <RainbowHacks> Nosefest 2015
+[22:16:28] * Gladiolus scrunch
+[22:16:32] <RainbowHacks> :3
+[22:16:40] * Midnight_Tinker is booped and nosed
+[22:16:43] <RainbowHacks> YES. LET THE SCRUNCH FLOW THROUGH YOU!
+[22:16:53] <RainbowHacks> scrunchface is bestface
+[22:22:53] <RainbowHacks> 13 minutes until i can test celestia :3
+[22:25:35] *** Quits: Phase (Phase4@Pony-5ah3ft.internode.on.net) (Ping timeout: 121 seconds)
+[22:26:27] <Gladiolus> test celestia?
+[22:26:29] <Gladiolus> is it a server
+[22:26:31] <Gladiolus> named celestia
+[22:26:34] <Gladiolus> running solar... oh
+[22:26:37] <Gladiolus> you fuckin' genius
+[22:26:41] * RainbowHacks grins
+[22:27:22] <wolfyshy> XD
+[22:28:04] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:30:06] * RainbowHacks shades
+[22:34:20] <Midnight_Tinker> man I hate when I'm trying to not pay attention to customers and they keep needing help
+[22:34:47] <RainbowHacks> x3
+[22:35:26] * RainbowHacks derps and herps
+[22:35:35] <RainbowHacks> man i hope this transferred right
+[22:35:45] <RainbowHacks> nothing like having to do a local install and dd it up via SSH -.-
+[22:39:20] <RainbowHacks> WELP
+[22:39:45] <RainbowHacks> I forgot to enable the serial console before uploading and have no clue how to do that
+[22:41:56] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[22:42:00] <RainbowHacks> and evething is shitting the bed. awesome
+[22:42:06] <RainbowHacks> Dammit celestia, cut the shit >.<
+[22:42:22] <Gladiolus> i'm trying to get os 8 emulation to work on a pentium 2
+[22:42:23] <Gladiolus> under dos
+[22:42:30] <RainbowHacks> o.0
+[22:42:31] <Gladiolus> why? hahah do you think i ask "why"
+[22:42:35] <Gladiolus> i just want to fuggit
+[22:42:59] <Gigawork> Okay, is steam linux not able to change skins?
+[22:43:30] <Gladiolus> steam has skins!?
+[22:43:36] <Gigawork> yes
+[22:48:23] <RainbowHacks> so, Celestia mark I is a failure
+[22:48:34] * RainbowHacks has high hopes for cakebutt II
+[22:49:15] * RainbowHacks forgot to enable the serial console in cakebutt, but we're rolling out graphical console soon so look at all these fucks I don't give \o/
+[22:50:08] <wolfyshy> Gladiolus: which emulator
+[22:50:20] <Gladiolus> fusion 3 and now softmac
+[22:50:27] <Gladiolus> it's a pentium 2 so thew newer ones= lol
+[22:50:32] <Gladiolus> not working though so welp
+[22:50:35] <wolfyshy> not sure if minivmac will do OS 8
+[22:50:41] <wolfyshy> but it is small enough to run on a pentium II
+[22:50:46] <wolfyshy> I should know, I did it :3
+[22:50:54] *** Joins: Hickory (Iceman@Darkhorse21)
+[22:50:58] <Midnight_Tinker> the P2 was the weird form factor one wasnt it? or was that the P3
+[22:51:08] <wolfyshy> P2 was Slot 1
+[22:51:12] <wolfyshy> early P3 was Slot 1 also
+[22:51:33] <Midnight_Tinker> thank you
+[22:51:53] <wolfyshy> http://content.answcdn.com/main/content/img/CDE/_SLT1370.JPG
+[22:51:55] <wolfyshy> http://cdn.cpu-world.com/CPUs/Pentium-II/S_Intel-Pentium%20II%20400%20%28SECC2%20back%29.jpg
+[22:52:08] <wolfyshy> they were so pretty, so awesome, and pretty much the same form factor as the UltraSPARC II/III
+[22:52:22] <Gigawork> Gladiolus, if the FS is similar then go to ~/.steam/skins and put the steam skin in that folder
+[22:52:41] * Gladiolus blink
+[22:52:58] <Gladiolus> wat
+[22:53:04] <Gigawork> For steam skins
+[22:53:14] <Gigawork> assuming you are talking on your mac
+[22:53:35] <Rylee> RainbowHacks: out of curiosity what do you do at linode
+[22:53:48] <RainbowHacks> Rylee, I'm a support drone
+[22:53:50] <Rylee> oh enat
+[22:53:53] <RainbowHacks> currently aiming to get into Ops
+[22:54:22] <RainbowHacks> support is boring. but it pays well.
+[22:54:38] <Rylee> ops is neat
+[22:54:53] <RainbowHacks> im aiming specifically for hardware ops
+[22:54:53] <Rylee> man they are ripping up concrete and bringing down a building about 20 meters behind me
+[22:54:55] <Rylee> this is annoying
+[22:54:57] <RainbowHacks> because thats where i got my start
+[22:55:07] <RainbowHacks> i LOVE datacenter work
+[22:55:13] <RainbowHacks> and we have facilities all over the world so like
+[22:55:16] <Midnight_Tinker> RainbowHacks hey, I'm a support drone too but for a home security company
+[22:55:19] <RainbowHacks> flying to fucking germany and shit
+[22:55:23] <RainbowHacks> to fix stuff
+[22:55:27] <Rylee> lol
+[22:55:33] <Rylee> that does sound neat.
+[22:55:37] <Rylee> also stressful.
+[22:56:13] <Gladiolus> I have a thing for pentium 3s
+[22:56:26] <Gladiolus> The newest and fastest intel that still ran DOS stuff fairly good.
+[22:56:36] <Midnight_Tinker> pentium 3 rule 34 go
+[22:56:41] <Gladiolus> Paired with a first gen AGP card, dual Voodoo 2s, and SB-live :)
+[22:57:14] <Midnight_Tinker> the Pentium 4 was my porn
+[22:57:23] <RainbowHacks> Rylee, yeah it probably would be stressfull
+[22:57:39] <RainbowHacks> but no more stressful than helping dipshit mcdandy with their fucking compromised ubuntu wordpress box
+[22:59:15] <Rylee> lol
+[22:59:28] <Rylee> plz halp someone hacked me
+[22:59:33] <Rylee> >cat /etc/ssh/sshd_config
+[22:59:35] <Midnight_Tinker> hey, I'm pretty sure I just helped Dipshit McDandy
+[22:59:38] <Rylee> "PasswordAuthentication On"
+[22:59:50] <RainbowHacks> Rylee, I use password auth. I've never had a breakin.
+[23:00:06] <RainbowHacks> I use passwords usually around 250 characters, and MFA  :P
+[23:00:10] <Rylee> RainbowHacks: as you say, dipshit mcdandy probably has a 5chr password
+[23:00:13] <Midnight_Tinker> I use password auth but my password is I want to cum inside rainbow dash so no one can brute it lol
+[23:00:15] <RainbowHacks> true x3
+[23:00:25] * RainbowHacks facehoof
+[23:00:35] <Rylee> besides,
+[23:00:37] <RainbowHacks> Once you go rainbow
+[23:00:41] <RainbowHacks> its never the same, bro
+[23:00:43] <Rylee> they're probably running PHP4 with WP1.5
+[23:00:44] <Rylee> or something
+[23:01:15] <RainbowHacks> Rylee, and WORDPRESS TURN WORDPRESS INTO STORE DRUPAL JOOMLA CPANEL STOREFRONT EXTREME BEST STORE WORDPRESS JOOMLA PLUGIN 
+[23:01:32] <Rylee> A+
+[23:01:35] <Rylee> sounds GREAT
+[23:01:36] <Rylee> ship it
+[23:01:40] * RainbowHacks giggles
+[23:02:57] <Midnight_Tinker> be back in an hour, lunch
+[23:03:02] <Rylee> don't hurt yourself
+[23:03:46] <RainbowHacks> back in 45, headed home!
+[23:03:52] <Rylee> have fun
+[23:03:53] <Gigawork> be safe
+[23:04:37] <DJ-C0L7[EIT]> anypony know where i could find EMT sheers?
+[23:07:07] <wolfyshy> I have a voodoo 2
+[23:09:08] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[23:10:07] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[23:10:34] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[23:11:04] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[23:11:54] *** Init3-away is now known as init3
+[23:26:44] <Gigawork> Okay, question could someone maybe help me with this. Ran this command  go get github.com/rakyll/drive, saying the go path does not exist. I am trying to get the "drive" cli program to sync my google drive stuff
+[23:26:58] <Gigawork> following these instructions  http://www.howtogeek.com/196635/an-official-google-drive-for-linux-is-here-sort-of-maybe-this-is-all-well-ever-get/
+[23:26:59] <PinkiePieBot> [ An Official Google Drive for Linux is Here, Sort Of — Maybe This Is All We’ll Ever Get ]
+[23:27:22] *** Quits: Hickory (Iceman@Darkhorse21) (Quit: quit)
+[23:39:07] <Rylee> lol.
+[23:39:12] <Gigawork> ?
+[23:39:16] <Rylee> Gigawork: do you have a $GOPATH?
+[23:39:32] <Gigawork> does it need the $ symbol to work?
+[23:40:26] <Rylee> err
+[23:40:38] <Rylee> ` $ echo $GOPATH`
+[23:41:14] <init3> $ means variable. 
+[23:41:18] <Gigawork> returned a blank line
+[23:42:49] <Rylee> okay
+[23:43:02] <Rylee> do the things under this heading: https://golang.org/doc/code.html#GOPATH
+[23:43:02] <PinkiePieBot> [ How to Write Go Code - The Go Programming Language ]
+[23:43:03] <Gigawork> the project was merged to this guy  https://github.com/odeke-em/drive#installation and I am following what he says but nothing
+[23:43:04] <PinkiePieBot> [ odeke-em/drive · GitHub ]
+[23:43:28] <Rylee> and add the lines beginning with `export` to your bashrc or profile or zshrc or whatever you use
+[23:44:15] <Gigawork> so wait, I need to mkdir and stuff first?
+[23:47:35] <Rylee> yeah, `go get` requires you do have a go environment set up
+[23:58:41] <Gigawork> well I did all of it, and ran the go get -u github/usr/drive command, it is doing something now
+[23:59:14] <Rylee> should be cloning the code and building it

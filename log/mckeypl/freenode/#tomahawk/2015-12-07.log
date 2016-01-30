@@ -1,0 +1,115 @@
+[00:23:52] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[01:14:37] *** Joins: apb1963 (~apb@174-134-224-109.res.bhn.net)
+[03:12:58] *** Quits: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com) (Read error: Connection reset by peer)
+[05:28:00] *** Joins: mgue1 (~mgue@x5ce44599.dyn.telefonica.de)
+[05:31:07] *** Quits: mgue (~mgue@x590faa63.dyn.telefonica.de) (Ping timeout: 260 seconds)
+[06:10:18] *** Joins: scrollback1 (scrollback@gateway/web/scrollback.io/x-kxionspzmlzmkugj)
+[06:37:39] *** Quits: soee (~soee@afnu220.neoplus.adsl.tpnet.pl) (Ping timeout: 245 seconds)
+[09:58:33] *** Quits: RJ2 (sid1@pdpc/supporter/professional/rj2) (Read error: Connection reset by peer)
+[09:59:46] *** Joins: RJ2 (sid1@pdpc/supporter/professional/rj2)
+[10:41:14] *** Joins: HorusHorrendus (~horrendus@e251-024.eduroam.tuwien.ac.at)
+[11:04:34] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:54:26] *** Joins: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com)
+[12:10:05] <dommex> feepk: hey
+[12:10:14] <dommex> feepk: you dont offer any builds with headers, do you? *cough*
+[12:17:33] *** Quits: HorusHorrendus (~horrendus@e251-024.eduroam.tuwien.ac.at) (Quit: Leaving.)
+[12:39:19] <dommex> feepk: if not, can i simply tar up my install dir? will the files in there have their paths fixed up already so they will work on other machines? 
+[12:56:36] *** Joins: knicklux (~knicklux@openvpn-cl-200-188.scc.kit.edu)
+[13:16:56] *** Joins: HorusHorrendus (~horrendus@e251-024.eduroam.tuwien.ac.at)
+[13:46:43] *** Quits: knicklux (~knicklux@openvpn-cl-200-188.scc.kit.edu) (Ping timeout: 260 seconds)
+[13:49:31] *** Quits: HorusHorrendus (~horrendus@e251-024.eduroam.tuwien.ac.at) (Ping timeout: 260 seconds)
+[13:52:46] *** Quits: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com) (Ping timeout: 260 seconds)
+[14:01:37] *** Joins: puteel (~puteel@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[14:01:37] <puteel> Hello guys. Thank for this great app. Exactly what I was looking for years. What should I do to have it running on Debian Jessie.
+[14:04:21] *** Joins: HorusHorrendus (~horrendus@2001:629:3200:95:1816:a89:8bd1:46fd)
+[14:10:02] *** Parts: puteel (~puteel@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[15:23:42] *** Quits: znf (~ibm86@unu.card-sharing.eu) (Ping timeout: 246 seconds)
+[15:23:42] *** Quits: afics (~afics@unaffiliated/-x-/x-5730914) (Ping timeout: 246 seconds)
+[15:23:44] *** Quits: feepk (~feepk@videolan/developer/feepk) (Ping timeout: 246 seconds)
+[15:24:34] *** Joins: feepk (~feepk@videolan/developer/feepk)
+[15:26:00] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-njhhuggqxmqdcftv) (Ping timeout: 245 seconds)
+[15:26:26] *** Joins: znf (~ibm86@unu.card-sharing.eu)
+[15:29:04] *** Joins: afics (~afics@unaffiliated/-x-/x-5730914)
+[15:35:24] *** Quits: RJ2 (sid1@pdpc/supporter/professional/rj2) (Read error: Connection reset by peer)
+[15:38:35] *** Quits: xdarklight (~freenode@unaffiliated/xdarklight) (Ping timeout: 264 seconds)
+[15:40:52] *** Joins: xdarklight (~freenode@unaffiliated/xdarklight)
+[15:44:35] *** Quits: feepk (~feepk@videolan/developer/feepk) (Ping timeout: 264 seconds)
+[15:48:04] *** Joins: feepk (~feepk@videolan/developer/feepk)
+[15:50:11] *** Joins: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com)
+[15:52:25] *** Joins: RJ2 (sid1@pdpc/supporter/professional/rj2)
+[15:56:26] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-fjpzuukkogtczbss)
+[16:26:18] *** Quits: HorusHorrendus (~horrendus@2001:629:3200:95:1816:a89:8bd1:46fd) (Ping timeout: 260 seconds)
+[16:32:34] <feepk> dommex: depends on the linker paths
+[16:33:17] <dommex> feepk: linker paths? maybe that's what i meant with "fixed up"
+[16:34:10] <dommex> i.e. that install-name-tool or however it's called needs to be used to make the libs "independent"
+[16:34:28] <feepk> dommex: otool -L library.dylib
+[16:34:37] <feepk> Yep, that's it
+[16:37:42] <dommex> feepk: okay, so you dont have builds with headers (y u no libvlc.framework? :D) and i need to use install-name-tool myself because it's only run by the build-dmg step not at make install time, right?
+[16:49:36] <feepk> dommex: yes, correct
+[16:49:52] <feepk> That framework is called VLCKit with an objc API
+[16:50:00] <dommex> ah ok :C
+[16:50:12] <dommex> feepk does it contain the normal libvlc?
+[16:50:15] <dommex> feepk: ^
+[16:51:44] <feepk> Yes!
+[16:51:54] <feepk> Well, mind of, but yes
+[16:52:02] <feepk> Might help to inspire you
+[16:52:12] <feepk> Especially the build script
+[16:52:47] <dommex> feepk: sooo.. couldn't i just install vlckit via brew and make tomahawk cmake scripts find libvlc inside that?
+[16:53:37] <dommex> i'm just looking for an easy way to allow people to compile tomahawk on osx
+[16:54:57] <feepk> Need to try once home
+[16:54:59] <feepk> Just arrived in Hamburg
+[16:55:07] <feepk> Bbl
+[16:55:15] <dommex> feepk: alrighty, i'll play around with it some more. thanks already!
+[17:30:32] *** Quits: jamesaxl (~jamesaxl@41.140.157.165) (Read error: Connection reset by peer)
+[19:01:55] *** Quits: RJ2 (sid1@pdpc/supporter/professional/rj2) ()
+[19:02:59] *** Joins: RJ2 (sid1@pdpc/supporter/professional/rj2)
+[19:03:07] *** Joins: modeno1 (modeno1@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[19:03:08] <modeno1> Hey guys, i'm having some trouble with cmake. It's outputing a missing package "qt5uitools" and I don't know how to get it. Can someone help?
+[19:19:36] *** Quits: ben-xo (sid227@gateway/web/irccloud.com/x-meyzxzyvdslpbqva) ()
+[19:19:41] *** Joins: ben-xo_ (sid227@gateway/web/irccloud.com/x-dpevxkndcmseeizt)
+[19:34:01] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[19:41:34] *** Joins: Mourke (5f2c9b31@gateway/web/freenode/ip.95.44.155.49)
+[19:41:39] *** Quits: Mourke (5f2c9b31@gateway/web/freenode/ip.95.44.155.49) (Client Quit)
+[19:52:50] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[19:55:04] *** Parts: modeno1 (modeno1@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[20:04:56] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[20:12:05] *** Joins: infandum (~gw@pool-96-245-4-74.phlapa.fios.verizon.net)
+[20:12:38] <infandum> Using arch linux with tomahawk, I noticed that it's no longer detected with mpris. Is that just me, or is it a known issue?
+[20:19:59] <theli_ua> jherskowitz: btw, the only downside with our current rhapsody resolver is that it will not work for musicfreedom, I just realized that
+[20:25:09] <jherskowitz> theli_ua: oh?
+[20:25:18] <jherskowitz> they track the app, not the stream?
+[20:25:27] <theli_ua> no, but it only works with http streams
+[20:26:09] <theli_ua> so I guess this is also true for rdio
+[20:26:10] <theli_ua> iirc it also uses rtmp streams in our resolver
+[20:27:36] <theli_ua> well, they use a combination of ip ranges and string matching in http stream
+[20:28:46] <theli_ua> so its still might work but I highly doubt that. as all of mobile apps dont use rtmp streams
+[22:13:15] <dommex> infandum: havent heard of that issue
+[22:19:36] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[22:51:31] <infandum> dommex: Hmm, so it should definitely be working with mpris? Then it must be my side.,
+[22:52:26] <theli_ua> 0h, jherskowitz , did you know tidal now also has a store apart from on demand?
+[23:11:23] *** Joins: jamesaxl (~jamesaxl@41.249.87.253)
+[23:14:07] *** Quits: infandum (~gw@pool-96-245-4-74.phlapa.fios.verizon.net) (Quit: WeeChat 1.3)
+[23:21:35] <dommex> nope?
+[23:21:42] <dommex> oh i wasnt asked :P
+[23:21:46] <dommex> anyway, didnt know :P
+[23:23:53] <theli_ua> dommex: !
+[23:24:01] <theli_ua> API changes
+[23:24:05] <theli_ua> and amazon
+[23:24:09] <dommex> api changes?
+[23:24:19] <theli_ua> well, you were doing something
+[23:24:22] <theli_ua> like fixing things
+[23:24:35] <theli_ua> eh, maybe those didn't do any api changes
+[23:24:42] <theli_ua> but rather api implementation changes
+[23:25:02] <dommex> possibly. i'm still trying to setup the new mac os machine we rented
+[23:25:20] <theli_ua> why dommex  and domme_  and wheres domme
+[23:25:24] <dommex> lol
+[23:25:37] <dommex> dommex is my irccloud nickname
+[23:33:11] <dommex> jherskowitz: muesli: lfranchi: should qt5 from brew be found automatically?
+[23:33:28] <dommex> or do i need to set any cmake vars?
+[23:41:36] <jherskowitz> dommex:  cmake -DBUILD_WITH_QT4=OFF -DPC_ECHONEST_VERSION=2.3.0 ..
+[23:50:42] <dommex> jherskowitz: ah, had to link it
+[23:51:19] <dommex> -____-
+[23:51:49] <dommex> https://www.irccloud.com/pastebin/NOlRQis8/
+[23:51:59] <dommex> jherskowitz: ^ know this one?
+[23:52:08] <dommex> or muesli ^?
+[23:55:08] *** mgue1 is now known as mgue

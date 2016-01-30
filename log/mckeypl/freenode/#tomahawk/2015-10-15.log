@@ -1,0 +1,113 @@
+[00:05:58] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[00:29:30] *** Parts: Techman (sid11863@gateway/web/irccloud.com/x-nicqtityomcoxmmx) ("I'm")
+[00:37:31] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[01:39:22] <theli_ua> domme:   are Tomahawk.get/post available in 0.8 ?
+[02:00:45] *** Quits: Fohlen (~Fohlen@v22015072923726622.yourvserver.net) (Ping timeout: 264 seconds)
+[02:02:03] *** Joins: Fohlen (~Fohlen@v22015072923726622.yourvserver.net)
+[02:05:15] *** Quits: grindhold (~quassel@c035.cyan.servdiscount-customer.com) (Ping timeout: 246 seconds)
+[02:15:08] *** Joins: grindhold (~quassel@c035.cyan.servdiscount-customer.com)
+[05:28:32] *** Quits: mgue2 (~mgue@f049031153.adsl.alicedsl.de) (Read error: Connection reset by peer)
+[05:29:34] *** Joins: mgue2 (~mgue@f049063084.adsl.alicedsl.de)
+[06:24:03] <theli_ua> that aurous looks interesting, much more aimed at piracy )than eg tomahawk) though
+[06:52:19] *** Quits: arved (~arved@inek.arved.priv.at) (Read error: Connection reset by peer)
+[06:52:31] *** Joins: arved (~arved@inek.arved.priv.at)
+[07:20:43] *** Joins: KyriosBrastianos (~quassel@ppp141237054194.access.hol.gr)
+[07:55:43] *** Quits: xdarklight (~freenode@unaffiliated/xdarklight) (Ping timeout: 252 seconds)
+[09:08:46] *** Joins: ssam2 (~ssam2@212.91.253.218)
+[09:23:37] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[10:52:16] <TheOneRing> domme: what do you think? https://paste.kde.org/pekkevypr
+[10:52:16] <tomabee_> [ KDE Paste | paste.kde.org |  ]
+[11:00:54] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Ping timeout: 260 seconds)
+[11:08:50] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[11:15:10] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[11:23:45] *** Joins: xdarklight (~freenode@unaffiliated/xdarklight)
+[11:40:53] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[11:41:57] *** Joins: knicklux (~knicklux@2a03:2260:a:a:3e07:54ff:fe4e:255)
+[11:45:37] *** Joins: TheOneRing_ (~quassel@HSI-KBW-078-042-187-013.hsi3.kabel-badenwuerttemberg.de)
+[11:45:42] *** Quits: TheOneRing (~quassel@amarok/developer/TheOneRing) (Ping timeout: 272 seconds)
+[11:46:56] *** TheOneRing_ is now known as TheOneRing
+[11:47:14] *** Quits: TheOneRing (~quassel@HSI-KBW-078-042-187-013.hsi3.kabel-badenwuerttemberg.de) (Changing host)
+[11:47:14] *** Joins: TheOneRing (~quassel@amarok/developer/TheOneRing)
+[12:23:30] <domme> theli_ua: good on first sight
+[12:35:47] <domme> woops
+[12:35:58] <domme> TheOneRing: ^^
+[12:36:14] <domme> i remember i already did the cflags change once
+[12:36:41] <domme> but but rotzbouw complained ;p
+[12:37:23] *** Quits: knicklux (~knicklux@2a03:2260:a:a:3e07:54ff:fe4e:255) (Ping timeout: 256 seconds)
+[13:17:06] <TheOneRing> https://github.com/tomahawk-player/tomahawk/pull/334
+[13:17:07] <tomabee_> [ Use ECMAddAppIcon instead of the copy of the kde4 macro. by TheOneRing · Pull Request #334 · tomahawk-player/tomahawk · GitHub | github.com | https://avatars0.githubusercontent.com/u/200626?v=3&s=400 ]
+[13:45:17] <domme> TheOneRing: what png2ico do i need now?
+[13:52:47] <domme> TheOneRing: and is tomahawk add cflags really a thing?
+[13:53:02] <domme> on phone cant checkceasily
+[13:53:26] <TheOneRing> the png2ico form kdewin or some other
+[13:53:31] <TheOneRing> both work now
+[13:54:15] <TheOneRing> http://www.winterdrache.de/freeware/png2ico/
+[13:54:16] <tomabee_> [ PNG to icon converter (Linux,GNU,Windows,Unix) | www.winterdrache.de |  ]
+[13:54:41] <TheOneRing> the cflags thing is needed, else ecm passes the cflags to windres
+[13:54:46] <TheOneRing> as they are defines
+[13:58:36] <TheOneRing> the only thing is that they need to be cxxflags instead of cflags
+[14:38:16] *** Joins: knicklux (~knicklux@ip-093-010-005-185.cpe.my-wire.de)
+[14:49:33] *** Quits: knicklux (~knicklux@ip-093-010-005-185.cpe.my-wire.de) (Read error: Connection reset by peer)
+[14:50:47] *** Joins: knicklux (~knicklux@ip-093-010-005-185.cpe.my-wire.de)
+[14:51:00] *** Quits: KyriosBrastianos (~quassel@ppp141237054194.access.hol.gr) (Remote host closed the connection)
+[16:07:03] *** Quits: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com) (Remote host closed the connection)
+[16:20:57] *** Quits: RJ2 (sid1@pdpc/supporter/professional/rj2) (Ping timeout: 268 seconds)
+[16:26:12] *** Joins: RJ2 (sid1@pdpc/supporter/professional/rj2)
+[16:51:26] *** Quits: knicklux (~knicklux@ip-093-010-005-185.cpe.my-wire.de) (Ping timeout: 240 seconds)
+[16:54:11] *** Joins: knicklux (~knicklux@ip-093-010-005-185.cpe.my-wire.de)
+[17:13:57] <muesli> MrMaffen: http://forum.tomahawk-player.org/showthread.php?tid=3882
+[17:13:57] <tomabee_> [ Spotify addon doesn't work | forum.tomahawk-player.org |  ]
+[17:19:25] <MrMaffen> hm not sure why that happens
+[17:24:16] <MrMaffen> muesli: can you promote my forum account to admin or moderator or something?
+[17:24:28] <muesli> sure
+[17:26:30] <MrMaffen> ty
+[17:56:35] *** Joins: tomahawk-ci (~PircBotx@server1.muehlhaeuser.de)
+[18:08:32] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Quit: Leaving)
+[18:33:16] *** Quits: ssam2 (~ssam2@212.91.253.218) (Quit: Leaving)
+[18:46:54] <domme> muesli of how much use are the qocoa changes to us? are bazive widgets fixed in qt5.5?
+[18:46:58] <domme> native
+[18:55:29] *** Joins: bodam2005 (~bodam2005@161.209.206.201)
+[18:59:55] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[19:04:24] *** Quits: bodam2005 (~bodam2005@161.209.206.201) (Remote host closed the connection)
+[19:05:46] *** Joins: bodam2005 (~bodam2005@161.209.206.201)
+[19:21:00] *** Quits: znf (~ibm86@unu.card-sharing.eu) (Remote host closed the connection)
+[19:22:02] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[19:23:57] *** Joins: znf (~ibm86@unu.card-sharing.eu)
+[19:23:59] *** Quits: knicklux (~knicklux@ip-093-010-005-185.cpe.my-wire.de) (Ping timeout: 240 seconds)
+[19:39:23] *** Joins: knicklux (~knicklux@ip-093-010-005-185.cpe.my-wire.de)
+[19:40:57] *** Quits: knicklux (~knicklux@ip-093-010-005-185.cpe.my-wire.de) (Remote host closed the connection)
+[19:58:36] *** Quits: TheOneRing (~quassel@amarok/developer/TheOneRing) (Ping timeout: 250 seconds)
+[20:00:43] *** Joins: TheOneRing (~quassel@HSI-KBW-078-042-187-013.hsi3.kabel-badenwuerttemberg.de)
+[20:00:43] *** Quits: TheOneRing (~quassel@HSI-KBW-078-042-187-013.hsi3.kabel-badenwuerttemberg.de) (Changing host)
+[20:00:43] *** Joins: TheOneRing (~quassel@amarok/developer/TheOneRing)
+[20:31:39] *** Quits: Fohlen (~Fohlen@v22015072923726622.yourvserver.net) (Ping timeout: 250 seconds)
+[20:40:18] *** Joins: soee (~soee@aatv80.neoplus.adsl.tpnet.pl)
+[20:41:14] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[21:01:35] *** Joins: knicklux (~knicklux@2a03:2260:a:a:1723:d8c:4528:fb8b)
+[21:04:57] *** Quits: knicklux (~knicklux@2a03:2260:a:a:1723:d8c:4528:fb8b) (Remote host closed the connection)
+[21:13:16] *** Quits: soee (~soee@aatv80.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[21:15:35] *** Joins: soee (~soee@aatv80.neoplus.adsl.tpnet.pl)
+[21:26:50] <domme> muesli: ^
+[21:27:15] <muesli> domme: yeah, pulled them in. fixes the search inputfield finally
+[21:27:30] <muesli> nothing changed for tomahawk in 5.5, as far as i can tell
+[21:28:15] <domme> muesli what about those empty windoews/titlebars?
+[21:28:26] <domme> still appearing for the native widgets?
+[21:28:50] <muesli> domme: that's fixed indeed
+[21:28:54] <muesli> :D
+[21:28:59] <muesli> i totally forgot to expect that
+[21:29:58] <domme> muesli haha neat. that means we dont need to port away all those?
+[21:30:19] <muesli> not for now anyway. the settings still require a major overhaul tho
+[21:30:29] <domme> what about the toolbar? worky?
+[21:31:09] <domme> muesli: so.. unreleasable in this state?
+[21:31:27] <muesli> i have some work in progress. but yeah unreleasable in the current state
+[21:31:30] <domme> what does it still need to get into a releasable state?
+[21:39:33] *** Joins: Fohlen (~Fohlen@v22015072923726622.yourvserver.net)
+[21:49:12] <domme> muesli ^
+[22:07:44] *** Quits: mgue2 (~mgue@f049063084.adsl.alicedsl.de) (Ping timeout: 250 seconds)
+[22:09:07] *** Joins: mgue2 (~mgue@f049063084.adsl.alicedsl.de)
+[22:27:14] *** Quits: grindhold (~quassel@c035.cyan.servdiscount-customer.com) (Read error: Connection reset by peer)
+[22:28:21] *** Joins: grindhold (~quassel@c035.cyan.servdiscount-customer.com)
+[22:42:36] *** Joins: soee_ (~soee@agwk17.neoplus.adsl.tpnet.pl)
+[22:46:35] *** Quits: soee (~soee@aatv80.neoplus.adsl.tpnet.pl) (Ping timeout: 244 seconds)
+[23:48:30] *** Joins: soee (~soee@bmy8.neoplus.adsl.tpnet.pl)
+[23:49:23] *** Quits: soee_ (~soee@agwk17.neoplus.adsl.tpnet.pl) (Ping timeout: 264 seconds)

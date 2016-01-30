@@ -1,0 +1,86 @@
+[17:10:42] <McKey> flags
+[17:10:43] -ChanServ- Insufficient parameters for FLAGS.
+[17:10:43] -ChanServ- Syntax: FLAGS <channel> [target] [flags]
+[17:10:52] <McKey> help flags
+[17:10:52] -ChanServ- ***** ChanServ Help *****
+[17:10:52] -ChanServ- Help for FLAGS:
+[17:10:52] -ChanServ-  
+[17:10:52] -ChanServ- The FLAGS command allows for the granting/removal of channel
+[17:10:52] -ChanServ- privileges on a more specific, non-generalized level. It
+[17:10:52] -ChanServ- supports nicknames, groups and hostmasks as targets.
+[17:10:52] -ChanServ-  
+[17:10:52] -ChanServ- When only the channel argument is given, a listing of
+[17:10:52] -ChanServ- permissions granted to users will be displayed.
+[17:10:52] -ChanServ-  
+[17:10:52] -ChanServ- Syntax: FLAGS <#channel>
+[17:10:52] -ChanServ-  
+[17:10:52] -ChanServ- Otherwise, an access entry is modified. A modification may be
+[17:10:52] -ChanServ- specified by a template name (changes the access to the
+[17:10:52] -ChanServ- template) or a flags change (starts with + or -). See the
+[17:10:52] -ChanServ- TEMPLATE help entry for more information about templates.
+[17:10:52] -ChanServ-  
+[17:10:52] -ChanServ- If you are not a founder, you may only manipulate flags you
+[17:10:52] -ChanServ- have yourself, and may not edit users that have flags you
+[17:10:52] -ChanServ- don't have. For this purpose, +v grants the ability to grant
+[17:10:52] -ChanServ- +V, +h grants the ability to grant +H, +o grants the ability
+[17:10:52] -ChanServ- to grant +O, and +r grants the ability to grant +b.
+[17:10:52] -ChanServ-  
+[17:10:52] -ChanServ- If the LIMITFLAGS option is set for the channel, this is
+[17:10:52] -ChanServ- restricted further, see help for SET LIMITFLAGS.
+[17:10:52] -ChanServ-  
+[17:10:52] -ChanServ-  
+[17:10:52] -ChanServ-  
+[17:10:52] -ChanServ- If you do not have +f you may still remove your own access
+[17:10:52] -ChanServ- with -*.
+[17:10:52] -ChanServ-  
+[17:10:52] -ChanServ- Syntax: FLAGS <#channel> [nickname|hostmask|group template]
+[17:10:52] -ChanServ- Syntax: FLAGS <#channel> [nickname|hostmask|group flag_changes]
+[17:10:52] -ChanServ-  
+[17:10:52] -ChanServ- Permissions:
+[17:10:52] -ChanServ-     +v - Enables use of the voice/devoice commands.
+[17:10:52] -ChanServ-     +V - Enables automatic voice.
+[17:10:52] -ChanServ-     +h - Enables use of the halfop/dehalfop commands.
+[17:10:52] -ChanServ-     +H - Enables automatic halfop.
+[17:10:52] -ChanServ-     +o - Enables use of the op/deop commands.
+[17:10:52] -ChanServ-     +O - Enables automatic op.
+[17:10:52] -ChanServ-     +a - Enables use of the protect/deprotect commands.
+[17:10:52] -ChanServ-     +q - Enables use of the owner/deowner commands.
+[17:10:52] -ChanServ-     +s - Enables use of the set command.
+[17:10:52] -ChanServ-     +i - Enables use of the invite and getkey commands.
+[17:10:52] -ChanServ-     +r - Enables use of the kick, kickban, ban and unban commands.
+[17:10:52] -ChanServ-     +R - Enables use of the recover, sync and clear commands.
+[17:10:52] -ChanServ-     +f - Enables modification of channel access lists.
+[17:10:52] -ChanServ-     +t - Enables use of the topic and topicappend commands.
+[17:10:52] -ChanServ-     +A - Enables viewing of channel access lists.
+[17:10:52] -ChanServ-     +S - Marks the user as a successor.
+[17:10:52] -ChanServ-     +F - Grants full founder access.
+[17:10:52] -ChanServ-     +b - Enables automatic kickban.
+[17:10:52] -ChanServ-     +e - Exempts from +b and enables unbanning self.
+[17:10:52] -ChanServ-  
+[17:10:52] -ChanServ- The special permission +* adds all permissions except +b, +S, and +F.
+[17:10:52] -ChanServ- The special permission -* removes all permissions including +b and +F.
+[17:10:52] -ChanServ-  
+[17:10:52] -ChanServ- Examples:
+[17:10:52] -ChanServ-     /msg ChanServ FLAGS #foo
+[17:10:52] -ChanServ-     /msg ChanServ FLAGS #foo foo!*@bar.com VOP
+[17:10:52] -ChanServ-     /msg ChanServ FLAGS #foo foo!*@bar.com -V+oO
+[17:10:52] -ChanServ-     /msg ChanServ FLAGS #foo foo!*@bar.com -*
+[17:10:52] -ChanServ-     /msg ChanServ FLAGS #foo foo +oOtsi
+[17:10:52] -ChanServ-     /msg ChanServ FLAGS #foo TroubleUser!*@*.troubleisp.net +b
+[17:10:52] -ChanServ-     /msg ChanServ FLAGS #foo !baz +*
+[17:10:52] -ChanServ- ***** End of Help *****
+[17:11:34] <McKey> flags #kopyttv
+[17:11:34] -ChanServ- Entry Nickname/Host          Flags
+[17:11:34] -ChanServ- ----- ---------------------- -----
+[17:11:34] -ChanServ- 1     McKeyPL                +AFORafhioqrstv      (#kopyttv) [modified 22h 53m 38s ago, on Aug 30 12:17:56 2015 -0400]
+[17:11:34] -ChanServ- ----- ---------------------- -----
+[17:11:34] -ChanServ- End of #kopyttv FLAGS listing.
+[17:12:00] <McKey> flags #kopyttv -O McKey
+[17:12:00] -ChanServ- Usage: FLAGS #kopyttv [target] [flags]
+[17:12:10] <McKey> flags #kopyttv McKey -O
+[17:12:10] -ChanServ- Flags -O were set on McKeyPL in #kopyttv.
+[17:12:10] -ChanServ- [@#kopyttv] McKey (McKeyPL) set flags -O on McKeyPL
+[17:13:54] <McKey> flags #kopyttv McKey +V
+[17:13:54] -ChanServ- Flags +V were set on McKeyPL in #kopyttv.
+[17:14:53] <McKey> flags #kopyttv McKey
+[17:14:53] -ChanServ- Flags for McKeyPL in #kopyttv are +AFRVafhioqrstv.

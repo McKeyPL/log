@@ -1,0 +1,416 @@
+[00:08:46] *** Quits: Melanosuchus (quassel@Pony-d0p.fqb.205.213.IP) (Connection closed)
+[00:17:13] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Quit: Leaving.)
+[00:18:04] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[00:31:14] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:49:29] <Sour_Sweet> How much I hate changing highly security sensitive parts of my server configuration ...
+[01:15:31] *** Quindo is now known as Quindo|GoneForTurkeyTime
+[01:17:44] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[01:25:49] *** CyberJacob is now known as zz_CyberJacob
+[01:27:18] <ShivalWolf> does the escape key have a differnt key id over SSH then it does on a native terminal?
+[01:27:50] <Gladiolus> I finally fixed the last niggling problem with my Pentium III retrostation today and I feel so damn good.
+[01:27:56] <Gladiolus> i r compooter gennus
+[01:29:41] <Sour_Sweet> ShivalWolf: It should not, but some SSH clients will not send the ESC key by default
+[01:30:30] <Sour_Sweet> 27 should be correct useally
+[01:30:39] <Sour_Sweet> (Just checked my terminal)
+[01:30:52] <ShivalWolf> Sour_Sweet: thanks
+[01:30:55] <ShivalWolf> 27 is what im using
+[01:31:08] <ShivalWolf> Sour_Sweet: what did you use the check?
+[01:31:39] <HoneyDrops> I would say any ssh client that doesn't sens esc properly is broken.
+[01:31:58] <Sour_Sweet>  python -c "print ord(raw_input('char '))"    Not written by me
+[01:32:09] <Sour_Sweet> I don't python :D
+[01:32:47] <HoneyDrops> Press ^v then ESC and it should print ^[
+[01:33:05] <ShivalWolf> well its certainly sending 27 over
+[01:33:13] <ShivalWolf> i think it might be the code thats screwing up
+[01:33:16] <ShivalWolf> damn curses
+[01:34:02] <HoneyDrops> Oh, you're making a program with ncurses?
+[01:34:29] <ShivalWolf> ahhh now im hitting the built in delay with the escape key
+[01:35:03] <HoneyDrops> Yeah for Alt/Meta
+[01:35:17] <ShivalWolf> at least i already know how to lower that
+[01:38:31] <HoneyDrops> vt standards are fun :)
+[01:41:14] *** Vega is now known as Gigaway
+[01:47:31] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[01:47:52] <ShivalWolf> well yay for things working abit better now
+[01:47:55] <ShivalWolf> dont know why
+[01:48:08] <ShivalWolf> saying the key is 27 instead of using curses.ascii.ESC works
+[01:48:15] <ShivalWolf> silly python and curses 
+[01:48:38] * HoneyDrops only know curses & C.
+[01:56:33] <Sour_Sweet> Just to annoy anypony: That's what the above would look like in PHP :P php -r "echo ord(fgets(STDIN));"
+[01:57:37] * HoneyDrops hisses.
+[01:58:13] <Sour_Sweet> (And this is actually written by me)
+[02:00:08] <Moonlightning> python3 -c "import sys; print([ord(char) for char in sys.stdin.read()]);"  # Sour_Sweet
+[02:00:37] <ShivalWolf> cmd line php is soo wrong
+[02:02:32] <Sour_Sweet> Actually it's quite useful in some cases
+[02:03:23] <Sour_Sweet> I have cronjobs running with PHP that pull their config from a PHP webapp
+[02:03:40] <Sour_Sweet> So I don't need to change the config twice
+[02:08:59] <ShivalWolf> in that case fine
+[02:09:09] <ShivalWolf> but ive seen soem horrible full console applications written in php
+[02:09:20] <ShivalWolf> ones that have no web componant
+[02:09:48] * Sour_Sweet is not riding on php hate train.
+[02:10:19] <Sour_Sweet> For me PHP is just like every other language. I'll use it when suitable
+[02:12:13] <Sour_Sweet> When I'm looking at how the LE client works I'm more than angry - it's written in python. For me this is an example where python for example is not suitable. I'd have prefered it being written in GO
+[02:13:19] <ShivalWolf> yeah there are apropraite uses. using a web lanaguage for console only is not one of those cases
+[02:13:31] <ShivalWolf> GO is too new for alot of thigns that have just been running for ages
+[02:13:34] <ShivalWolf> but its growing
+[02:13:49] <ShivalWolf> needs more libaries to make it more useful and common place
+[02:14:22] <Sour_Sweet> ^Just like any compiled language
+[02:14:55] <ShivalWolf> just a reason that its pickup is not been that fast right now
+[02:15:12] <ShivalWolf> libary exists in perl/python that you can use but not yet in go
+[02:15:20] <ShivalWolf> why write it in go if you have to rewrite the libary to go with it
+[02:15:31] <ShivalWolf> its sorta like the whole python2/3 situation
+[02:15:41] <ShivalWolf> stick to python2 becuase python3 doesnt yet have the libaries ported
+[02:15:42] <Sour_Sweet> I personally don't like python's syntax, which is the reason I never really learned it.
+[02:15:57] <ShivalWolf> its got 1 benifit
+[02:16:03] <ShivalWolf> teaches you to indent your code properly
+[02:16:22] <Sour_Sweet> I do that anyway *g*
+[02:16:35] <ShivalWolf> and by teaches i mean forces
+[02:17:20] <ShivalWolf> i would like it if python had a loop or an if block definer
+[02:17:23] <Sour_Sweet> Reminds that I should really look up what's the better practice now: tabs or 4 spaces.
+[02:17:25] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:17:35] <ShivalWolf> i think thats still personal preference
+[02:17:47] <Sour_Sweet> I still use tabs, but I've got a feeling that changed
+[02:17:54] <ShivalWolf> i use tabs as well
+[02:18:03] <ShivalWolf> python3 hates if you mix them though
+[02:18:39] <ShivalWolf> TabError: inconsistent use of tabs and spaces in indentation
+[02:19:03] <Sour_Sweet> That's stupid, so it's right there to complain, even though my standpoint is that any language should ignore whitespaces
+[02:20:15] <ShivalWolf> i really should look at moving from tab to spaces though
+[02:20:23] <ShivalWolf> if you copy/paste multiple lines in a terminal
+[02:20:27] <ShivalWolf> it assumes spaces not tabs
+[02:21:14] <ShivalWolf> atleast alot of text editors have a handler for tabs
+[02:21:34] <Sour_Sweet> Some html spec recommended spaces as well
+[02:21:43] <ShivalWolf> ewww
+[02:21:56] <Sour_Sweet> But pressing tab feels more natural
+[02:22:05] <Sour_Sweet> (and saves a few bits)
+[02:22:31] <Sour_Sweet> (not that it would really matter due to deflate/gzib)
+[02:23:18] <Sour_Sweet> https://google.github.io/styleguide/htmlcssguide.xml#Indentation
+[02:25:11] <Sour_Sweet> Not that I would really follow it anyway since it recommends this https://google.github.io/styleguide/htmlcssguide.xml#Optional_Tags while I prefer XML valid HTML
+[02:26:52] <ShivalWolf> Sour_Sweet: ive seen in most text editors you have the option for an automatic tab to spaces conversion
+[02:26:57] <ShivalWolf> so you hit tab it auto does 4 spaces
+[02:27:32] * Sour_Sweet will lookup if notepad++ supports that
+[02:27:44] <Moonlightning> Wow, I can't believe that worked
+[02:28:45] <Moonlightning> Sour_Sweet, ShivalWolf: PEP 0008 mandates spaces
+[02:29:13] <Moonlightning> /but then I'd have to press the spacebar X times!/ isn't valid anymore
+[02:29:27] <Moonlightning> Any modern editor worth its salt will let you configure tab to insert X spaces
+[02:29:47] <Sour_Sweet> Yeah, but that's Python
+[02:29:57] * Sour_Sweet doesn't care about Python
+[02:30:04] <Moonlightning> Most should even let you treat spaces as tabs for editing (e.g. `vim`s softtabstop)
+[02:30:12] <ShivalWolf> pythons picky
+[02:30:21] <ShivalWolf> but indenting with tabs or spaces is still genericly done for anything
+[02:30:30] <ShivalWolf> it really just depends what you want
+[02:30:59] * ShivalWolf just switched everything over to 4 spaces
+[02:31:04] <ShivalWolf> yay for the expand command
+[02:31:15] <ShivalWolf> expand -4 input.py > output.py
+[02:31:20] <Moonlightning> Anyway, Rust's type system <3
+[02:31:41] <Moonlightning> Had a function to xor together bytestrings of the same length
+[02:32:21] <Moonlightning> wanted to make it easy to xor one string against the same byte repeatedly (without writing that byte repeatedly into memory, because that's a waste of space and time)
+[02:33:08] <Moonlightning> Take `IntoIterator`s instead of `&[u8]`s, on the condition that the iterator types returned are `ExactSizeIterator`s (for lengthchecking)
+[02:33:11] <Moonlightning> And it works
+[02:34:03] <Moonlightning> pub fn xor_bytes<L, R>(left: L, right: R) -> Option<Vec<u8>> where L: iter::IntoIterator<Item=u8>, R: iter::IntoIterator<Item=u8>, L::IntoIter: iter::ExactSizeIterator, R::IntoIter: iter::ExactSizeIterator
+[02:34:08] <Moonlightning> It's…long XD
+[02:36:48] <Sour_Sweet> Notepad++ allows you to change that, so I guess I could use spaces instead
+[02:37:13] <ShivalWolf> i do think its still personal prefrence
+[02:37:42] <ShivalWolf> but if your working over ssh in a terminal text editor spaces is best
+[02:37:58] <ShivalWolf> i should actually get back to coding
+[02:38:01] <ShivalWolf> isntead of chatting
+[02:38:03] <Sour_Sweet> I try to avoid that though
+[02:38:34] <Sour_Sweet> SSH tends to lag sometimes at my current location
+[02:38:55] <Sour_Sweet> Reuploading the files is easier for edits longer than a few lines
+[02:49:12] <Sour_Sweet> I love C# and .Net/Mono. It's so sad to say that about something coming from MS :P
+[02:49:52] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[02:57:22] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[02:57:24] *** Joins: Asoka (Asoka@Pony-5i859p.net-htp.de)
+[03:00:32] *** Quits: Asoka_White (Asoka@Pony-s6hjdr.net-htp.de) (Ping timeout: 121 seconds)
+[03:04:49] <Googie> Sour_Sweet: Look into Mosh.
+[03:05:51] <HoneyDrops> ^
+[03:06:24] <HoneyDrops> I still generally use ssh, but if on a high-latency or flaky connection Mosh is great.
+[03:14:31] <Sour_Sweet> Installing ....
+[03:32:29] <Sour_Sweet> Got mosh working. Annoying though that it will use cygwin's user directory, since I do have a .ssh folder on my windows profile
+[03:34:41] <Googie> mosh just calls ssh for the initial connection, you can directly pass parameters with --ssh="ssh -something"
+[03:40:34] <Sour_Sweet> I'm aware. I had to setup openssh after all ;-)
+[03:41:09] <Sour_Sweet> Appending my keyfile is no option though, since I don't like to run a big ugly command all the time
+[03:41:30] <Sour_Sweet> I might end up with an NTFS junction point
+[03:41:57] <Sour_Sweet> For now I just use cygwins user directory
+[03:44:30] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Quit: )
+[04:01:57] *** Quits: Sour_Sweet (Seoson@pony.kab-s.de) (Ping timeout: 121 seconds)
+[04:02:13] <Gladiolus> nerds
+[04:02:15] <Gladiolus> NEEEEEEEEEERDS
+[04:04:11] <Googie> If it's through Cygwin/bash, I'd just alias it.
+[04:04:19] <Lapsus> New NAS drives are reporting power-on times of 0 and 0
+[04:04:20] <Lapsus> :D
+[04:06:22] * Moonlightning beans Gladiolus with a huge vim.
+[04:06:27] <Gladiolus> o3o
+[04:09:15] <Phase> http://goo.gl/JDK8Ow
+[04:10:18] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[04:15:14] <Seoson> I should really remember to save the bloody weechat config
+[04:15:27] <Gigaway> so.. 390 vs 970.. they are the same price point, 39o has double the ram.. what get?
+[04:20:10] <Kinsley> Gigaway: what resolution is your monitor? What's your current VRAM usage and do you see that situation changing in the next year or two before you'd get a new card?
+[04:21:02] <Gigaway> My monitor only goes 1080p, Vram usage, I have no clue
+[04:21:28] <Gigaway> I was going to upgrade a little when I got college refund check. Right now I have a used 270 oc
+[04:21:40] <Gigaway> and games like, DBZ Xenoverse, I notice stuttering
+[04:22:21] <Kinsley> A 270... Geforce or Radeon?
+[04:22:34] <Gigaway> Sorry, Radeon 270 OC
+[04:23:10] <Gigaway> I plan on getting an I5 6550 or 6600, mobo,16gb ram and 240gb ssd atleast
+[04:24:20] <Kinsley> The stuttering issue is probably more of a.... symptom of a lackluster card than a hitting a VRAM ceiling.
+[04:24:36] <tiwake> Gigaway: I would get an AMD video card
+[04:24:52] <Kinsley> But if you're going to continue to game at 1080p, I'd say buy whatever card has the better deals going for it.
+[04:25:09] <tiwake> if you ever plan on using linux, AMD is the better choice
+[04:25:39] <tiwake> nvidia drivers for 900 series are balls
+[04:25:39] <Kinsley> Even with its gimped memory setup, the 970 is basically king of 1080p and starts to get iffy at 1440p and 2160p (4k).
+[04:30:37] <tiwake> for linux anyway
+[04:30:39] *** Quits: Lapsus (Lapsus@i-forget.ca) (Connection closed)
+[04:30:41] <tiwake> donno about windows
+[04:31:05] <tiwake> I havent owned windows in a long time
+[04:32:52] <tiwake> also I suspect the AMD video cards will work better with vulkan
+[04:32:56] <Kinsley> I'd say nVidia edges out AMD for Windows drivers, at least in terms of having game drivers on/before release and shit like that. But I haven't had an AMD card in a few years, so I don't know if it's improved since.
+[04:33:47] <tiwake> Kinsley: it wasent long after the nvidia 970 came out when I got one for myself, for linux
+[04:33:58] <tiwake> wish I didnt :-x
+[04:34:23] <tiwake> because of the signed driver thing
+[04:34:24] <Kinsley> I want a 980 Ti.
+[04:35:18] <tiwake> I'd think a R9 fury nano would be cool
+[04:35:42] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[04:35:42] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[04:36:08] <tiwake> monster performance in a tiny package
+[04:36:09] <tiwake> <3
+[04:36:15] <Kinsley> Cool, yes, but the 4GB VRAM limit means it'll hit a fucking wall for 4K, which is a shame given the GPU's other strengths.
+[04:36:37] <tiwake> depends on what you are doing
+[04:37:14] <tiwake> if the 3D textures and stuff are compressed, then it will work with up to something like 125gigs of stuff
+[04:37:40] <tiwake> I don't know of any games using that compression algorithm though, at least yet.
+[04:40:54] <tiwake> GCN 1.2 is really badass
+[04:52:11] <tiwake> I forget what is necessary for the compression though, uh
+[05:02:29] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[05:04:54] *** Seoson is now known as Seoson|BNC
+[05:06:11] <Gigaway> Honestly I would like to game on a larger screen but that doesn't play affect much as long as it is the same resolution.
+[05:09:16] *** Joins: PeakVolu1e (k9ldt@Pony-tqvh62.fios.verizon.net)
+[05:10:38] *** Quits: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net) (Ping timeout: 121 seconds)
+[05:14:09] *** Joins: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au)
+[05:21:07] *** Quits: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au) (Quit: My people need me!)
+[05:22:36] <Moonlightning> Why is fdisk listing this partition's type as 'HPFS/NTFS/exFAT'?
+[05:23:25] <Moonlightning> (Under a DOS partition table)
+[05:25:23] <Kinsley> Probably because fdisk doesn't have the support libraries to properly recognize the actual filesystem.
+[05:31:03] <tiwake> DJ-C0L7[CSS]: poke
+[05:32:13] *** Joins: star_moon (Starry@the.little.cloud.colt)
+[05:36:11] <Moonlightning> You think?
+[05:37:51] <Kinsley> That's my suspicion.
+[05:38:33] <Kinsley> By default, I don't think most Linux disk utilities have the right libraries for NTFS especially unless you have some library that I forget.
+[05:39:50] <ShivalWolf> fdisk doesnt need libaries it doesnt care what a parition is.
+[05:40:00] <ShivalWolf> theres only like 150 types
+[05:40:11] <ShivalWolf> filesystem is differnt from parition table
+[05:40:14] <ShivalWolf> and they dont have to match
+[05:44:30] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "be back in a bit")
+[05:49:07] <wolfyshy> bahahaha
+[05:49:36] <wolfyshy> so my fiancee got a Nexus 6P and I got a Nexus 5X (hers is her hearthswarming present, mine is work-issued)
+[05:49:43] <wolfyshy> we were both talking about phones
+[05:49:54] <wolfyshy> and I started playing Lean On by Major Lazer (the Nexus 5X advert song)
+[05:50:06] <wolfyshy> and my fiancee started playing Tongues by Joywave (the Nexus 6P advert song)
+[05:50:19] <wolfyshy> and then I was like
+[05:50:21] <wolfyshy> "wait"
+[05:50:29] <wolfyshy> and grabs the phones and started twirling them around like the ads
+[05:50:32] <wolfyshy> ^.^
+[05:59:03] <Moonlightning> Oh, thanks!
+[05:59:17] <Moonlightning> I was wondering what the track's name was
+[06:04:59] <Moonlightning> …arg
+[06:07:31] <Moonlightning> wtf
+[06:08:26] <Moonlightning> I think I accidentally pressed the super key or something, and now I have a black screen
+[06:08:33] <Moonlightning> Backlight, but nothing else
+[06:09:17] <Moonlightning> I /think/ meta-control-F1 et al actually do switch terminals (the light on the number-lock key toggles like it normally does), but the screen stays black
+[06:09:43] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[06:11:50] <Moonlightning> …apparently I can still type stuff
+[06:12:17] <Moonlightning> boop
+[06:13:28] <Moonlightning> This's happened to me before…I ended up just rebooting x.x
+[06:16:40] <wolfyshy> Moonlightning: yeah, they're both great songs
+[06:16:56] <wolfyshy> Moonlightning: also, hm.  does super+l or such lock your screen?  that's odd.
+[06:17:10] <Moonlightning> Well, it was from a tty
+[06:17:13] <wolfyshy> Moonlightning: maybe try running x11vnc and then VNCing in from another computer (or phone/tablet) and see what you can see
+[06:17:24] <wolfyshy> oh, tty
+[06:17:28] <Moonlightning> vnc. X.X
+[06:17:30] <wolfyshy> I forgot all the linux tty control codes
+[06:17:40] <Moonlightning> Well, that's something to go on!
+[06:19:45] <Moonlightning> What would effect the screen independently of the selected terminal, though?
+[06:20:06] <Moonlightning> The thing I can think of is screen brightness. But that's up.
+[06:20:59] <wolfyshy> https://tools.google.com/dlpage/gaoptout?hl=en
+[06:21:00] <PinkiePieBot> [ Google Analytics Opt-out Browser Add-on Download Page ]
+[06:21:11] <wolfyshy> an interesting link I stumbled on in my travels, btw
+[06:22:06] * Moonlightning pokes around in /sys/class
+[06:25:34] <Moonlightning> Everything in ./{tty,vc,vtconsole} is character devices
+[06:26:00] <Moonlightning> And ./graphics
+[06:26:07] <Moonlightning> Huh!
+[06:26:18] <Colgate> wolfyshy: I do better, I just block the google-analytics.com domain :P
+[06:26:22] <Moonlightning> Screen just went to sleep, came back up normally
+[06:38:05] *** Gigaway is now known as Gigabit
+[06:54:04] *** star_moon is now known as Pinky
+[07:08:29] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[07:08:34] <Gigabit>  Who was it that was going on about $ before and after the number?
+[07:08:58] <Gigabit> Because damnit..I've been doing it after and the more I think of it the more it makes sense lol
+[07:09:00] <Lapsus> Probably Shutter
+[07:09:14] <Lapsus> He likes to get annoyed at things like that :3
+[07:09:45] <Gigabit> XD
+[07:10:00] <Gigabit> Also, explaining it to people was fun
+[07:14:35] <DJ-C0L7[EIT]> happy thanksgiving everypony
+[07:14:53] <Gigabit> Happy thanksgiving
+[07:19:01] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:23:52] *** Quits: Pinky (Starry@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[07:31:26] * Lapsus grumbles about needing to reflash his printer's firmware to print at higher temperatures
+[07:32:41] <Moonlightning> Gigabit: wut?
+[07:33:03] <Gigabit> $160 vs 160$
+[07:33:35] <Moonlightning> Oh, after instead of before, for monetary values
+[07:33:54] <Gigabit> Ya
+[07:33:54] <Moonlightning> Yeah, it does, in that it's a unit, and it's also read that way
+[07:35:29] <Gigabit> Holy crap..my phone cannot multitask at all. Its downloadijg and updating apps. Keeps stuttering and stuff
+[07:46:07] <Lapsus> aaaaaand printing with this ABS smells kinda awful
+[07:50:05] *** Quits: Quindo|GoneForTurkeyTime (Quindo@Pony-8qt.17k.198.99.IP) (Ping timeout: 121 seconds)
+[07:53:59] *** Gigabit is now known as Snoarin
+[07:54:27] *** Eventide is now known as Eventide|Sleepies
+[08:10:37] *** Quits: Crimson_Tail (Bluepon@Pony-5pgfsn.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[08:17:34] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[08:19:46] *** Joins: Melanosuchus (quassel@Pony-f5d8tn.as13285.net)
+[08:26:40] *** Quits: Asoka (Asoka@Pony-5i859p.net-htp.de) (Ping timeout: 121 seconds)
+[08:29:51] *** Quits: Datalink (Datalink@Datalink) (Connection closed)
+[08:30:10] *** Joins: Datalink (Datalink@Datalink)
+[08:37:14] *** Joins: Kaserek (WebChat@Pony-fei.3hr.230.83.IP)
+[08:37:28] <Kaserek> Enypony is here?
+[08:38:14] <DJ-C0L7[EIT]> howdy
+[08:38:47] <Kaserek> Somebody can help me with programing?
+[08:41:16] *** Quits: Kaserek (WebChat@Pony-fei.3hr.230.83.IP) (Quit: Page closed)
+[08:46:03] <Moonlightning> Not if you leave within a few minutes of asking to ask!
+[08:47:41] <DJ-C0L7[EIT]> indeed
+[08:49:00] <Colgate> hmm, I can't connect to freenode atm
+[08:55:27] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[08:57:09] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[08:58:40] <Webster> Bad server, maybe? On it right now.
+[08:58:50] <Webster> There's been netsplits recently.
+[09:00:45] <Colgate> probably that
+[09:00:53] <Colgate> I tried connecting to a few, all timed out
+[09:01:02] <Colgate> eh, my client will eventually find one that works
+[09:04:31] *** zz_CyberJacob is now known as CyberJacob
+[09:19:50] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[09:21:47] *** Quits: Melanosuchus (quassel@Pony-f5d8tn.as13285.net) (Connection closed)
+[09:22:57] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[09:23:39] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[09:35:05] *** CyberJacob is now known as zz_CyberJacob
+[09:50:39] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[09:52:43] *** Joins: Scholarly-Gladi (uid110916@Pony-qjfks9.brockwell.irccloud.com)
+[09:56:15] *** Scholarly-Gladi is now known as Gladiolus
+[09:58:54] *** Joins: Phase (Phase4@Pony-7c5tb0.internode.on.net)
+[10:09:49] *** Quits: Phase (Phase4@Pony-7c5tb0.internode.on.net) (Quit: Leaving)
+[10:11:11] *** Joins: Phase (Phase4@Pony-7c5tb0.internode.on.net)
+[10:23:11] *** Joins: Asoka (Asoka@Pony-afpgv5.net-htp.de)
+[10:33:55] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[10:37:29] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[10:38:13] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[10:43:03] <Finwe> https://pixelastic.github.io/pokemonorbigdata/
+[10:43:04] <PinkiePieBot> [ Is it Pokemon or Big Data ? ]
+[10:43:22] <Finwe> Test your knowledge of big data technologies and Pokémon.
+[10:51:42] *** djazz is now known as MangoBloom
+[10:58:14] <Googie> Oh cool. A Raspberry Pi model for $5
+[10:58:27] <Googie> That would actually be pretty neat to make a cluster of.
+[10:58:43] <Googie> s/neat/neat and affordable/
+[12:09:42] *** Quits: Phase (Phase4@Pony-7c5tb0.internode.on.net) (Ping timeout: 121 seconds)
+[12:10:06] *** Joins: Phase (Phase4@Pony-7c5tb0.internode.on.net)
+[12:18:14] <ShivalWolf> Googie: with an array of USB keys for storage?
+[12:18:16] <ShivalWolf> or sd cards
+[12:20:26] *** Quits: Datalink (Datalink@Datalink) (Connection closed)
+[12:21:07] *** Joins: Datalink (Datalink@Datalink)
+[12:23:29] <Googie> Yeah. Looking at it though, no Ethernet, which makes it a bit harder to have them communicate.
+[12:24:46] <Googie> Though it looks like there's a Linux kernel module for Ethernet over USB.
+[12:26:46] <johnsey> http://swag.raspberrypi.org/collections/magpi/products/the-magpi-issue-40
+[12:26:46] <PinkiePieBot> [ The MagPi - issue 40 - Raspberry Pi Swag ]
+[12:28:53] <johnsey> back in the days, it was cool to include a cdrom with your magazine, nowadays you can get a whole devboard with your magazine!
+[12:50:09] *** Seoson|BNC is now known as Sour_Sweet
+[12:58:28] <DJ-C0L7[EIT]> nice
+[13:55:20] <Sour_Sweet> Seems like I can't get a ECDHE handshake with canternet using default settings ....
+[13:59:26] <Unixkitty> Dumb synology keeps accepting ssh password even after explicitly telling it not to in the config file
+[14:00:44] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[14:08:01] <johnsey> synology?
+[14:08:29] <Unixkitty> Rackstation
+[14:08:46] <Unixkitty> Or well, diskstation
+[14:09:56] <Sour_Sweet> One would thing they don't mess with OpenSSH
+[14:10:17] <Sour_Sweet> think*
+[14:24:46] <Sour_Sweet> Downside of mosh is I loose local terminal backlog, so I need to redirect any output longer than a few lines into a file.
+[14:32:05] <Unixkitty> Well evidently they do, but apparently editing the standard config file does not seem to affect anything
+[14:37:14] <Sour_Sweet> Looks like they run their own version of OpenSSH. I found a few hilarious articles mentioning restrictions :P
+[14:38:39] <Sour_Sweet> You could compile an ARM version of OpenSSH, but that will probably require some effort to be compatible and you'll loose configuration options from the webpanel
+[15:31:36] *** Sour_Sweet is now known as Sour_Sweet|Mobile
+[15:34:09] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:52:37] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[15:59:25] *** Joins: Asoka_White (Asoka@Pony-6do330.net-htp.de)
+[16:02:10] *** Quits: Asoka (Asoka@Pony-afpgv5.net-htp.de) (Ping timeout: 121 seconds)
+[16:16:38] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:28:57] <JockeTF> Shameless plug: https://www.reddit.com/r/mylittlepony/comments/3ucq5a/fimfarchive_20151125_released_all_stories_on/ :D
+[16:46:02] *** Joins: Crimson_Tail (Bluepon@Pony-c6kd1i.cg80.k4gu.0151.2601.IP)
+[17:01:18] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[17:02:04] <HoneyDrops> Sour_Sweet|Mobile: tmux is your friend
+[17:05:08] <johnsey> or screen
+[17:10:34] <Unixkitty> ^
+[17:13:25] *** Joins: the4thaggie (Android@Pony-14v4nd.tmodns.net)
+[17:14:59] *** the4thaggie is now known as The4thaggie-mobile
+[17:24:33] *** Quits: The4thaggie-mobile (Android@Pony-14v4nd.tmodns.net) (Quit: AndroidIrc Disconnecting)
+[17:26:42] *** Eventide|Sleepies is now known as Eventide
+[18:03:45] *** Joins: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com)
+[18:18:42] *** Quits: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com) (Quit: Leaving)
+[18:22:15] *** Snoarin is now known as GigaWalk
+[18:25:20] *** Joins: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com)
+[18:45:29] *** Sour_Sweet|Mobile is now known as Sour_Sweet
+[18:50:21] *** Joins: Melanosuchus (quassel@Pony-jvimu1.as13285.net)
+[18:59:44] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:13:13] *** GigaWalk is now known as Gigabit
+[19:31:59] *** Joins: Asoka (Asoka@Pony-h0jtj3.net-htp.de)
+[19:33:19] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:34:35] *** Quits: Asoka_White (Asoka@Pony-6do330.net-htp.de) (Ping timeout: 121 seconds)
+[19:37:26] *** Joins: Datalink_ (Datalink@Datalink)
+[19:38:47] *** Joins: Datalink__ (Datalink@Datalink)
+[19:39:42] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[19:42:12] *** Quits: Datalink_ (Datalink@Datalink) (Ping timeout: 121 seconds)
+[19:52:19] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[19:53:56] *** Datalink__ is now known as Datalink
+[20:02:22] *** Gigabit is now known as Gigaway
+[20:05:38] *** Quits: Melanosuchus (quassel@Pony-jvimu1.as13285.net) (Ping timeout: 121 seconds)
+[20:06:03] *** Quits: Datalink (Datalink@Datalink) (Connection closed)
+[20:06:21] *** Joins: Datalink (Datalink@Datalink)
+[20:08:19] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[20:12:41] *** Joins: Melanosuchus (quassel@Pony-jvimu1.as13285.net)
+[20:13:14] *** Joins: Wubz (androirc@Pony-dljdhu.rev.dnainternet.fi)
+[20:15:07] *** Wubz is now known as WuBzY
+[20:34:40] *** Quits: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com) (Quit: Leaving)
+[20:46:05] *** Quits: Phase (Phase4@Pony-7c5tb0.internode.on.net) (Ping timeout: 121 seconds)
+[20:55:17] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:56:24] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:11:51] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:28:51] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:32:52] *** Joins: Dusk (Dusk@dusky.horse)
+[21:36:40] <tiwake> freenode is flipping out
+[21:37:17] * HoneyDrops lifts her hoof off the hose and whistles nonchalantly.
+[21:38:39] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Quit: Leaving.)
+[21:42:40] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[21:54:12] *** Quits: WuBzY (androirc@Pony-dljdhu.rev.dnainternet.fi) (Connection closed)
+[21:57:21] *** Joins: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com)
+[22:01:53] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:07:39] *** Quits: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com) (Quit: Leaving)
+[22:08:14] *** Joins: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com)
+[22:21:05] *** PeakVolu1e is now known as PeakVolume
+[22:21:31] *** PeakVolume is now known as PeakVolu1e
+[22:21:47] *** PeakVolu1e is now known as PeakVolume
+[22:33:21] *** Quits: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com) (Quit: Leaving)
+[22:33:48] *** Joins: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com)
+[22:36:23] *** Quits: Divide|TechSupport (NA@Pony-vf5hfh.cable.rogers.com) (Ping timeout: 121 seconds)
+[22:36:33] *** Joins: Divide (NA@Pony-vf5hfh.cable.rogers.com)
+[22:42:43] *** Quits: Divide (NA@Pony-vf5hfh.cable.rogers.com) (Ping timeout: 121 seconds)
+[22:42:53] *** Joins: Divide (NA@Pony-vf5hfh.cable.rogers.com)
+[22:44:07] *** Joins: nightbot (vinylderpy@Pony-o0c.56l.50.70.IP)
+[22:45:02] *** Quits: firestream (vinylderpy@Pony-boh2us.dsl.bell.ca) (Ping timeout: 121 seconds)
+[22:50:55] *** Quits: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com) (Quit: Leaving)
+[23:03:04] *** Quits: Divide (NA@Pony-vf5hfh.cable.rogers.com) (Ping timeout: 121 seconds)
+[23:03:08] *** Joins: Divide (NA@Pony-vf5hfh.cable.rogers.com)
+[23:07:13] *** Joins: Divide|TechSupport (NA@Pony-vf5hfh.cable.rogers.com)
+[23:09:11] *** Quits: Divide (NA@Pony-vf5hfh.cable.rogers.com) (Ping timeout: 121 seconds)
+[23:13:16] *** Quits: Divide|TechSupport (NA@Pony-vf5hfh.cable.rogers.com) (Ping timeout: 121 seconds)
+[23:22:05] <Phase> well planned
+[23:22:14] <Dusk> ^
+[23:30:59] <Moonlightning> …how do you unit-test unit-testing libraries?
+[23:31:41] <Gigaway> by unit testing the units that unit test libraries
+[23:33:57] <Sour_Sweet> So the Windows magnifier bug that let's my mouse jump all over the place is back, now even with the workaround I used earlier ....
+[23:34:32] <Sour_Sweet> How hard is it to program a decent fucking magnifier?!
+[23:41:20] <Sour_Sweet> The bug is present since Windows 8. Do they even test their crap? I'm so angry about that non sense
+[23:43:12] *** Joins: Divide (NA@Pony-vf5hfh.cable.rogers.com)
+[23:50:40] <Divide> what. the. crud.
+[23:50:46] *** Divide is now known as Divide|TechSupport
+[23:51:09] <Divide|TechSupport> Note to our IT department.  Yes, we have an IT department.  You don't solve an internet routing issue by asking us to REBOOT OUR PERSONAL ROUTER.
+[23:51:21] *** Quits: Apple_Bloom (sid52418@the.canon.pony) (Connection closed)

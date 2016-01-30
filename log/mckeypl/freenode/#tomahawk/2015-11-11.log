@@ -1,0 +1,134 @@
+[00:09:13] *** Joins: dowalf (guest-dowa@gateway/web/scrollback.io/x-foitcryftjfvgieg)
+[00:09:13] <dowalf> ioí
+[00:13:30] <lfranchi> jherskowitz: btw i guess the os x nightlies stilled ages ago, right?
+[00:13:48] <domme_> qt 5.5.1 is broken on 10.7
+[00:14:22] <domme_> and tomahawk was much more broken until recently on qt and osx
+[00:14:33] <domme_> dunno what fixed it.. only mueslis work, or newer qt or whatever
+[00:15:27] <domme_> anyway.. building releases/nightlies is a problem right now
+[00:17:07] *** Parts: dowalf (guest-dowa@gateway/web/scrollback.io/x-foitcryftjfvgieg) ()
+[00:17:44] <domme_> lfranchi: ^
+[00:17:55] <lfranchi> i see
+[00:54:47] <muesli> domme_: new qt plus my fixes, yeah
+[01:00:48] *** Quits: soee (~soee@acfu89.neoplus.adsl.tpnet.pl) (Ping timeout: 264 seconds)
+[01:01:09] <domme_> muesli: and new qt doesnt build on 10.7
+[01:01:19] <domme_> fwiw chrome is ditching 10.7 and even 10.8 support
+[01:01:30] <domme_> btw.. does qt 5.5.0 build on 10.7?
+[01:02:46] <theli_ua> chrome?
+[01:03:03] <domme_> theli_ua: it's a browser made by google
+[01:03:03] <theli_ua> oh, browser
+[01:04:21] <theli_ua> meh, manufacturers, vendors, etc ... everyone dropping support for things just couple of years old :(
+[01:10:18] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[01:13:24] <muesli> domme_: i guess we could switch to 10.9 and make our lives a bit easier, yeah
+[01:13:28] <muesli> if vlc compiles, lol :D
+[01:13:45] * domme_ runs as fast as he can
+[01:18:35] <domme_> muesli: so ... according to danimo owncloud compiles for 10.7 on 10.10
+[01:18:50] <domme_> but we probably cant make that happen with brew :\
+[01:19:04] <danimo> domme_: for brew we also use the 10.10 packages
+[01:19:11] <danimo> domme_: it works... somehow
+[01:19:27] <muesli> the brew bottles are built with different min sdks
+[01:19:29] <theli_ua> just drop osx support, definitely makes lives easier :)
+[01:20:00] <danimo> muesli: yes, but we don't have a lot of brew runtime deps
+[01:20:18] <danimo> neon is the last remaining IIRC, and it's on its way out the window
+[02:02:21] <muesli> domme_: do we still need a special fork of quazip?
+[02:02:29] <muesli> domme_: for the quazip-qt5 prefix?
+[02:13:43] <domme_> it was never a special fork
+[02:13:53] <domme_> just unreleased maybe
+[02:14:09] <domme_> i dont know, i upstreamed it 
+[02:47:55] *** Quits: domme_ (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de) (Ping timeout: 240 seconds)
+[03:09:49] *** Joins: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[03:10:11] *** Quits: jturney1 (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Ping timeout: 240 seconds)
+[03:16:55] *** Quits: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[03:30:26] <jherskowitz> TheOneRing: but that window size (rectangle) is standard size/aspect ratio?
+[03:47:40] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[05:08:24] *** Joins: mgue (~mgue@f049063103.adsl.alicedsl.de)
+[05:10:22] *** Quits: mgue2 (~mgue@78.49.88.120) (Ping timeout: 272 seconds)
+[05:24:55] *** Quits: sythe (uid20450@facade/leader) (Quit: Connection closed for inactivity)
+[07:38:31] <theli_ua> heh, iirc on gentoo you can either build quazip for qt4 or for qt5, not both , so if you have 2 apps one for qt4 one for qt5 and they depend on quazip - you're screwed
+[07:39:02] <theli_ua> jherskowitz: have you heard about new tmo's thing? same as music freedom but for video streaming, no youtube yet though
+[07:59:28] *** Quits: liori (~liori@unaffiliated/liori) (Remote host closed the connection)
+[09:37:15] *** Joins: Satyricon (~satyricon@93.186.169.21)
+[10:25:54] *** Joins: domme_ (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de)
+[10:53:35] *** Joins: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[10:57:20] *** Joins: jamesaxl (~kvirc@41.248.109.203)
+[11:01:42] *** Joins: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222)
+[11:03:53] <TheOneRing> jherskowitz: qt dosn't provide the actual size requested by windows, but I got the best result by providing the availible desktop size, qt then resizes the image to the requested size
+[11:09:59] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[11:21:47] *** Quits: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[11:23:00] *** Joins: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[11:38:25] *** Quits: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Ping timeout: 244 seconds)
+[11:46:20] *** Joins: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[11:55:48] *** Joins: soee (~soee@acfu89.neoplus.adsl.tpnet.pl)
+[12:11:38] *** Joins: soee_ (~soee@agvu213.neoplus.adsl.tpnet.pl)
+[12:15:14] *** Quits: soee (~soee@acfu89.neoplus.adsl.tpnet.pl) (Ping timeout: 240 seconds)
+[12:24:43] <domme_> TheOneRing: clever approach
+[13:32:15] *** Joins: ssam2 (~ssam2@151.237.238.126)
+[13:35:50] *** Quits: ssam2 (~ssam2@151.237.238.126) (Client Quit)
+[14:01:35] *** Joins: liori (~liori@unaffiliated/liori)
+[14:01:49] *** Joins: jturney1 (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[14:01:49] *** Quits: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Disconnected by services)
+[14:11:21] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[14:42:24] *** Quits: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222) (Quit: Page closed)
+[14:43:32] *** Quits: jturney1 (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Ping timeout: 276 seconds)
+[14:44:03] *** Joins: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[14:44:16] *** Joins: knicklux (~knicklux@2a03:2260:a:a:3e07:54ff:fe4e:255)
+[15:08:15] *** Quits: knicklux (~knicklux@2a03:2260:a:a:3e07:54ff:fe4e:255) (*.net *.split)
+[15:15:59] *** Joins: knicklux (~knicklux@2a03:2260:a:a:3e07:54ff:fe4e:255)
+[15:20:56] *** Joins: jturney1 (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[15:20:57] *** Quits: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Disconnected by services)
+[17:03:56] *** Quits: knicklux (~knicklux@2a03:2260:a:a:3e07:54ff:fe4e:255) (Remote host closed the connection)
+[17:12:01] *** Joins: klaas_ (klaas@simply.kla.as)
+[17:14:01] *** Joins: hugo_______ (sid6079@gateway/web/irccloud.com/x-fxzfdycrscolhvwa)
+[17:17:07] *** Quits: hugo______ (sid6079@gateway/web/irccloud.com/x-brbgotchkwebmvrw) (Ping timeout: 240 seconds)
+[17:17:10] *** Quits: SolarAquarion (SolarAquar@unaffiliated/solaraquarion) (Ping timeout: 240 seconds)
+[17:17:10] *** Quits: klaas (klaas@simply.kla.as) (Ping timeout: 240 seconds)
+[17:17:48] *** hugo_______ is now known as hugo______
+[17:18:49] *** Joins: SolarAquarion (SolarAquar@the.feds.nullrouted.us)
+[17:18:49] *** Quits: SolarAquarion (SolarAquar@the.feds.nullrouted.us) (Changing host)
+[17:18:49] *** Joins: SolarAquarion (SolarAquar@unaffiliated/solaraquarion)
+[17:26:27] *** Joins: alsuren (~alsuren@host-212-159-134-35.static.as13285.net)
+[17:43:53] *** Joins: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[17:44:50] *** Quits: jturney1 (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Ping timeout: 240 seconds)
+[17:56:01] *** Parts: Mineo (~mineo@2001:638:904:ffca:30e4:7a94:149e:8e7d) ()
+[18:09:41] *** Quits: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Disconnected by services)
+[18:09:41] *** Joins: jturney1 (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[18:29:01] *** klaas_ is now known as klaas
+[18:29:16] *** Quits: alsuren (~alsuren@host-212-159-134-35.static.as13285.net) (Quit: alsuren)
+[18:30:14] *** Quits: TheOneRing (~quassel@amarok/developer/TheOneRing) (Read error: Connection reset by peer)
+[18:36:51] *** Joins: TheOneRing (~quassel@amarok/developer/TheOneRing)
+[18:42:33] *** Quits: TheOneRing (~quassel@amarok/developer/TheOneRing) (Ping timeout: 255 seconds)
+[18:43:48] *** Joins: TheOneRing (~quassel@HSI-KBW-078-042-187-013.hsi3.kabel-badenwuerttemberg.de)
+[18:43:48] *** Quits: TheOneRing (~quassel@HSI-KBW-078-042-187-013.hsi3.kabel-badenwuerttemberg.de) (Changing host)
+[18:43:48] *** Joins: TheOneRing (~quassel@amarok/developer/TheOneRing)
+[18:48:56] *** Joins: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[18:49:28] *** Quits: jturney1 (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Ping timeout: 250 seconds)
+[18:57:39] *** Joins: knicklux (~knicklux@2a03:2260:a:a:3e07:54ff:fe4e:255)
+[19:15:52] *** Joins: Marikos (~fox@pool-108-24-149-221.cmdnnj.fios.verizon.net)
+[19:16:14] *** Quits: Marikos (~fox@pool-108-24-149-221.cmdnnj.fios.verizon.net) (Client Quit)
+[19:16:35] *** Joins: Marikos (~fox@pool-108-24-149-221.cmdnnj.fios.verizon.net)
+[19:23:27] *** Joins: soee (~soee@afil112.neoplus.adsl.tpnet.pl)
+[19:25:17] *** Quits: soee_ (~soee@agvu213.neoplus.adsl.tpnet.pl) (Ping timeout: 265 seconds)
+[19:31:27] *** Joins: jturney1 (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[19:31:27] *** Quits: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Disconnected by services)
+[20:10:43] *** Quits: kfunk (~krf@kde/kfunk) (Ping timeout: 260 seconds)
+[20:13:23] *** Joins: kfunk (~krf@kde/kfunk)
+[20:35:17] *** Quits: soee (~soee@afil112.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[20:49:29] *** Quits: jturney1 (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Ping timeout: 276 seconds)
+[20:50:24] *** Joins: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[20:58:53] *** Joins: soee (~soee@afil112.neoplus.adsl.tpnet.pl)
+[21:03:42] *** Quits: knicklux (~knicklux@2a03:2260:a:a:3e07:54ff:fe4e:255) (Ping timeout: 252 seconds)
+[21:06:16] *** Joins: knicklux (~knicklux@2a03:2260:a:a:3e07:54ff:fe4e:255)
+[21:27:02] *** Joins: ExecSlim- (~ExecSlim@159.203.5.37)
+[21:36:17] *** Quits: TheOneRing (~quassel@amarok/developer/TheOneRing) (Ping timeout: 276 seconds)
+[21:45:16] *** Quits: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Disconnected by services)
+[21:45:16] *** Joins: jturney1 (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[21:56:21] *** Joins: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[21:57:11] *** Quits: jturney1 (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Ping timeout: 264 seconds)
+[22:15:03] *** Quits: soee (~soee@afil112.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[22:15:12] *** Quits: knicklux (~knicklux@2a03:2260:a:a:3e07:54ff:fe4e:255) (Ping timeout: 252 seconds)
+[22:15:54] *** Joins: soee (~soee@afil112.neoplus.adsl.tpnet.pl)
+[23:03:20] *** Quits: soee (~soee@afil112.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[23:04:40] *** Joins: soee (~soee@afil112.neoplus.adsl.tpnet.pl)
+[23:26:03] *** Quits: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com) (Ping timeout: 255 seconds)
+[23:27:42] *** Joins: jturney (~jon@host86-141-128-203.range86-141.btcentralplus.com)
+[23:28:36] *** Quits: jamesaxl (~kvirc@41.248.109.203) (Ping timeout: 246 seconds)
+[23:48:59] *** Joins: alsuren (~alsuren@host86-162-78-190.range86-162.btcentralplus.com)

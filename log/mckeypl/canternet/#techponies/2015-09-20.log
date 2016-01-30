@@ -1,0 +1,454 @@
+[00:03:02] *** CyberJacob is now known as zz_CyberJacob
+[00:07:36] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:16:10] *** Quits: JockeTF (jocke@Pony-iqmf0q.priv.bahnhof.se) (Quit: Leaving.)
+[00:20:28] <gigaway> why is it that windows print to file (pdf) are almost 4 times larger then Linux print to file?
+[00:22:20] <Moonlightning> 'cos Windows is inefficient.
+[00:22:52] <gigaway> Seriously, look.  http://prntscr.com/8i8y5u
+[00:23:26] <gigaway> days 23 and 24, where print to file from Arch, since day 19, its all from windows
+[00:26:18] *** init3 is now known as Captian_init
+[00:38:07] <JustAberrant> the linux implementation probably doesn't include everything :(
+[00:45:54] <gigaway> file in use, yet I do not see where the file is in use.
+[00:45:58] <gigaway> wtf windows >.<
+[00:47:42] <JustAberrant> :)
+[00:54:07] <HoneyDrops> <3 lsof 
+[00:55:20] <JustAberrant> microsoft has process explorer, which is like lsof except warm and fuzzy
+[00:57:19] <JustAberrant> bsd has.. fstat :(
+[00:58:07] <Moonlightning> why the hell is RC4 stuff in `ssh`s default ciphers???
+[00:58:12] <Moonlightning> holy shit I never even noticed…
+[00:58:26] <JustAberrant> Moonlightning: for you.. seriously
+[00:58:59] <JustAberrant> Moonlightning: if the default ssh config was sane, people like you wouldn't get to read up on what should be disabled and why and what order things should be in, etc
+[00:59:15] <Moonlightning> JustAberrant: educate me. x.x
+[00:59:24] <JustAberrant> Moonlightning: everyone would just say "yeah, the default is pretty much correct" and it would be boring
+[01:00:51] *** Joins: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP)
+[01:01:06] <JustAberrant> https://stribika.github.io/2015/01/04/secure-secure-shell.html  <-- I've read this and thought it was a good guide, but I don't know these things
+[01:01:07] <PinkiePieBot> [ Secure Secure Shell ]
+[01:01:41] *** Joins: Fillyfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP)
+[01:03:21] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:03:22] *** Quits: Fillyfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP) (Quit: My people need me!)
+[01:05:09] <gigaway> And now everytime I try to overwrite a file in my dropbox folder, it saves it as a copy. Something is going weird here
+[01:09:54] <DJ-C0L7[CSS]> i have a client who upgraded to windows 10, and now is unable to log in, it was the microsoft download upgrade not a disk
+[01:10:21] <DJ-C0L7[CSS]> and its the win 8.1/10 black screen of death
+[01:10:37] <Captian_init> Sounds like it'd most likley be the file manager or whatever program is saving to it at fault gigaway.
+[01:11:49] <Captian_init> So what, it just goes to a black screen after you login?
+[01:13:46] <Captian_init> I guess what I am asking is if you mean the login manager is shown?
+[01:14:56] *** Joins: ModusPonens (test@Pony-ro8.enl.137.198.IP)
+[01:15:12] <gigaway> waterfox is what is saving it I assume, or windows explorer. Even after a restart it is doing it
+[01:15:13] <DJ-C0L7[CSS]> no login options, before it was just saying "invalid password"
+[01:15:30] <DJ-C0L7[CSS]> now just black screen with horizontal grey lines in win10
+[01:17:36] * DJ-C0L7[CSS] facehooves
+[01:17:41] <gigaway> wait.. do I need adobe reader dc, in order to view pdf's or can I use another program? I was always under the impression you needed fucking adobe, but this new reader keeps opening in the background
+[01:18:02] <Captian_init> You do not. 
+[01:18:13] <DJ-C0L7[CSS]> someone forced the pc to shut off while it was installing drivers >.< now the fun part is trying to get into system restore from the boot menu... which microsoft in their infinite lack of wisdom disabled
+[01:18:15] <Captian_init> There are many different things than can read (and write) pdf
+[01:18:34] <gigaway> I'll just get cutepdf then, because screw this
+[01:18:50] <Captian_init> Well I'd assume you need a disc for what ails this computer. 
+[01:19:00] <Captian_init> is sfc still a thing in windows 10?
+[01:19:32] <Captian_init> Shit, I'm not even sure if it is still a thing in wondows 7. 
+[01:19:59] <DJ-C0L7[CSS]> it is in win7 pro and better but you still need the disk to access sfc options
+[01:20:36] <Captian_init> Yeah, I think you need a disc
+[01:20:47] <Captian_init> Wait though, MS disabled the boot menu?
+[01:20:58] <DJ-C0L7[CSS]> i gave them the instructions to enable safemode
+[01:21:11] <gigaway> In what, 10? No they just made it harder to access boot menu is all
+[01:21:13] <DJ-C0L7[CSS]> you can access a "recovery window" which gives limited startup options
+[01:22:03] <Captian_init> Well if it is driver level failures I don't see safe mode working, unless you get really lucky on /which/ driver. 
+[01:22:10] <Captian_init> But who knows?
+[01:22:41] <DJ-C0L7[CSS]> safemode should be barebones drivers with minimum processes and drivers to start the system
+[01:23:07] <Captian_init> Microsoft be a foul creature. She swallow finer men whole. 
+[01:23:29] <Captian_init> Right but if they are storage drivers or something similarly fundemental...
+[01:23:49] <DJ-C0L7[CSS]> according to all of the forums i'm finding >.< it appears to be either the southbridge, or the graphics driver
+[01:24:05] <DJ-C0L7[CSS]> but the fact it was showing the login screen but not accepting passwords for the user or admin accounts
+[01:24:10] <DJ-C0L7[CSS]> seems like a failed install
+[01:24:20] <Captian_init> Graphics driver you should be fine... but southbridge.... yeah.
+[01:24:34] <Captian_init> If the OS can't fully read the HDD you are pretty well fucked. 
+[01:24:44] <Captian_init> But yeah, like you said
+[01:24:56] <Captian_init> if a login prompt /was/ appearing that seems less likley.
+[01:25:37] <Captian_init> Then again... "invalid password" kinda seems disk-like. 
+[01:26:02] * Captian_init throws a Debian disc at DJ-C0L7[CSS]. Problem solved.
+[01:26:44] <DJ-C0L7[CSS]> if the user was able to use linux without having an anxiety attack i would have just installed either ubuntu, mint, or vanilla debian
+[01:26:57] <DJ-C0L7[CSS]> if not ubuntu ultimate edition
+[01:28:11] <Captian_init> I know how that works. 
+[01:28:30] <Captian_init> What's ubuntu ultimate anyhow? 
+[01:30:39] <DJ-C0L7[CSS]> ultimateedition.info
+[01:31:20] <DJ-C0L7[CSS]> its an lfs adaptation of ubuntu with all the extra bells and wistles, basicly a complete custom build oob with performance tweaks and pre-loaded addons
+[01:41:25] <Moonlightning> Teach me about GCM and CTR and stuff :(
+[01:43:20] <Moonlightning> …
+[01:43:23] <Moonlightning> I have an /awesome/ idea
+[01:43:49] <Moonlightning> Why don't we sign algorithm advertisements?
+[01:43:58] <Moonlightning> fuckkin prevent downgrade attacks, right there
+[01:52:03] <Captian_init> Ruh oh
+[01:52:12] <Captian_init> What does it mean?
+[01:52:15] <Captian_init> [root@derpy:jason]# 
+[01:52:17] <Captian_init> Message from syslogd@derpy at Sep 19 19:48:44 ...                                                          64,0-1         6%
+[01:52:18] <Captian_init>  kernel:[3640499.108086] systemd[1]: segfault at bf60a788 ip b74d81e6 sp bf81a290 error 4 in libc-2.19.so[b7464000+1a4000]
+[01:52:20] <Captian_init> *** Error in `sudo': free(): corrupted unsorted chunks: 0xb8ac1cb0 ***
+[01:52:21] <Captian_init> Connection to derpy closed.
+[01:52:37] <Captian_init> Can't reconnect to ssh. I'm die
+[01:52:56] <Moonlightning> You…what?
+[01:53:05] <Captian_init> But it's still passing traffic. 
+[01:53:10] <Moonlightning> sudo segfaulted and crashed the system?
+[01:53:22] <Moonlightning> I've never seen sudo segfault
+[01:53:24] <Moonlightning> never ever
+[01:53:29] <Captian_init> Apparently is crashed ssh too. 
+[01:53:49] <Moonlightning> I don't believe it crashed the system
+[01:53:49] <Captian_init> Maybe that stick of RAM I picked at random and removed was not the bad one. 
+[01:53:55] <Moonlightning> …oh, bad RAM
+[01:53:59] <Moonlightning> well, anything could happen :P
+[01:54:06] <Captian_init> It didn't or else I wouldn't be talking to you now. 
+[01:54:12] <Captian_init> derpy is my router
+[01:54:20] <Moonlightning> Oh, you too? :D
+[01:54:26] <Captian_init> Lol yeah
+[01:54:29] <Moonlightning> My netbox is named Silverspeed. She runs Ubuntu.
+[01:54:56] <Captian_init> And the IRC server I'm on is derpy
+[01:55:01] <Captian_init> SO yay for derps
+[01:55:29] <DJ-C0L7[CSS]> semi-afk
+[01:55:29] <Moonlightning> The Derpy in my namespace is basically decommissioned now.
+[01:55:31] <Moonlightning> RIP. :(
+[01:56:11] <Lapsus> Hey horses, is there anyone else that plays assetto corsa in here?
+[01:56:21] <Lapsus> I want to get more people on a track at once
+[01:57:21] *** Joins: CrassyPaddles (test@Pony-ro8.enl.137.198.IP)
+[01:57:44] <Moonlightning> ++CrassyPaddles
+[01:58:08] <Moonlightning> Just…that nick. Have an upvote.
+[01:58:10] <Captian_init> Is is making me super uncomfortable that I can't SSH into my server right now. 
+[01:58:24] <CrassyPaddles> oh you, making me blush
+[01:58:36] <Captian_init> And I can't physically access it for the moment because of where it is. 
+[01:58:41] *** Quits: ModusPonens (test@Pony-ro8.enl.137.198.IP) (Quit: Leaving)
+[01:59:05] <Captian_init> Well, without being super rude
+[01:59:54] <Moonlightning> Heh. Sorry, Captian_init.
+[01:59:59] <Moonlightning> Add a couple of `-v`s and see what you get?
+[02:00:15] <Captian_init> It's connection refused
+[02:00:23] <Moonlightning> oh that's no good
+[02:00:28] <Captian_init> So I'm sure the daemon is ded
+[02:00:38] <Moonlightning> Sounds dead, Jim :(
+[02:00:49] <Captian_init> I'd be conviced the server crashed if not for the fact it is clearly passing traffic. 
+[02:01:09] <Captian_init> Samba appears to be dead too.
+[02:01:09] <Moonlightning> I take it you have no other way of controlling it?
+[02:01:35] <Captian_init> Not right this second.
+[02:02:11] <Captian_init> I will once someone vacates the spot right in front of the cabinet. 
+[02:02:30] <Moonlightning> Yeah…I don't know what to tell you :(
+[02:03:21] <Captian_init> I'm cry because I was pretty sure I was on course to get long ass uptime too. Was at 60ish days not I'm pretty sure imma have to reboot. 
+[02:03:42] <Moonlightning> Oh maybe not
+[02:03:51] <Moonlightning> …wait…/Derpy's/ got bad RAM? ._.
+[02:03:52] <Captian_init> 60 days with bad RAM is something. Gonna have to memtest it probably. 
+[02:03:57] <Captian_init> Hue
+[02:04:06] <Captian_init> derpy is derpin
+[02:05:29] <Moonlightning> *store 0x6a* *load, get 0x95* *dereference* *segfault* I just don't know what went wrong!
+[02:06:28] <Captian_init> Kek
+[02:06:47] <Moonlightning> #techponies, why are downgrade attacks still a thing?
+[02:07:09] <Moonlightning> We could solve them completely by having the server send a /signed/ list of supported algorithms|protocols and the client pick one
+[02:08:04] <Captian_init> Or just tell clients to fuck off if they don't support a secure version. 
+[02:08:10] <Captian_init> Is what I do
+[02:08:27] <Moonlightning> /) Captian_init
+[02:08:38] <Captian_init> (\
+[02:08:51] <Moonlightning> Check out the SRV record for _http._tcp.www.blackl.net :3
+[02:09:05] <Moonlightning> _http._tcp.www.blackl.net. *
+[02:10:45] <Captian_init> uhh
+[02:11:00] <Captian_init> that's intresting
+[02:11:17] <Moonlightning> What? :3
+[02:11:18] <Captian_init> Wait
+[02:11:22] <Captian_init> I did it wrong
+[02:11:48] <Captian_init> fucking SRV records, how do they work
+[02:13:06] <Moonlightning> priority weight port target
+[02:13:26] <Moonlightning> The name is _<service>._<protocol>.<name>
+[02:13:37] <Captian_init> Yeah
+[02:13:46] <Captian_init> I unno, I mist be digging wrong
+[02:13:47] <Moonlightning> protocol is usually either a layer-four protocol or tls for some really really weird reason
+[02:14:00] <Moonlightning> service is usually a layer-seven protocol
+[02:14:42] <Captian_init> I'm getting 
+[02:14:47] <Captian_init> ;; ANSWER SECTION:
+[02:14:49] <Captian_init> _http._tcp.www.blackl.net. 604565 IN    SRV     0 0 0 .
+[02:14:51] <Moonlightning> try all servers in the lowest priority first using a standard algorithm to attempt to get a load proportional to the weight value (higher weight, more load)
+[02:14:56] <Moonlightning> Yep, that's right. :3
+[02:15:05] <Captian_init> oh
+[02:15:23] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[02:15:24] <Moonlightning> TTL is supposed to be 604800, not 604565, but that doesn't matter as much
+[02:16:07] <Captian_init> So what is this SRV record actually doing then?
+[02:17:40] *** Joins: Sin (Sin@is.hustlin.everyday)
+[02:17:51] <Moonlightning> Advertising that HTTP over TCP is explicitly not supported on blackl.net. :3
+[02:18:09] <Captian_init> So umm
+[02:18:10] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[02:18:20] <Captian_init> OH
+[02:18:22] <Moonlightning> :3
+[02:18:23] <Captian_init> OHHH
+[02:18:27] <Captian_init> Nifty
+[02:18:30] <Moonlightning> Clients can fuck off if they don't support TLS. :3
+[02:18:41] <Captian_init> Right
+[02:18:57] <Moonlightning> Makes no sense to support plaintext, but not SSL 3
+[02:19:05] <Moonlightning> The latter is better than the former; it protects against more attacks.
+[02:19:18] <Moonlightning> It's not very strong, but weak is better than cleartext
+[02:19:26] <Captian_init> aye
+[02:19:35] <Moonlightning> So—no http: for you.
+[02:19:41] <Moonlightning> TLS or GTFO.
+[02:19:56] <Captian_init> Like, many of the places I worked we were forced to support plain FTP. It made me cry. 
+[02:20:01] <Moonlightning> GROAN.
+[02:20:19] <Captian_init> Clients wondered how their passwords kept getting comped
+[02:20:25] <Moonlightning> (Plain is unfortunately still supported for irc.blackl.net. but I've deprecated it, and it's going away as soon as my last users switch)
+[02:20:46] <Captian_init> Yeah, but that's IRC.
+[02:20:51] <Captian_init> FTP is well...
+[02:20:56] <Moonlightning> I have about a dozen users :p
+[02:21:01] <Captian_init> A bit more dangerous. 
+[02:21:06] <Moonlightning> I guess it's more critical yeah
+[02:21:17] <Captian_init> Especially since these FTP dirs were for web sites. 
+[02:21:28] <Captian_init> So it was like phishing paradise. 
+[02:21:41] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[02:21:47] <Captian_init> Or just defacement or whatever. 
+[02:22:14] <Captian_init> Basically, free anonymous web hosting sometimes with legit SSL.
+[02:22:24] <Moonlightning> xD
+[02:23:41] <Moonlightning> more like…theif-nymous, am I right
+[02:23:44] * Moonlightning doesn't know Latin :(
+[02:23:50] <Captian_init> Hue
+[02:24:08] <Captian_init> neither do I. You probably could have made up something. 
+[02:24:52] <Moonlightning> I don't wanna butcher though :p
+[02:24:58] * Moonlightning 's mate knows Latin…
+[02:25:47] <Moonlightning> Oh, curious
+[02:25:56] <Moonlightning> Can you do a zone transfer for blackl.net.?
+[02:26:10] <Moonlightning> Just, I mean, get the entire zonefile
+[02:26:22] * Moonlightning isn't quite sure why it's called /transfer/. Bit misleading. Surely there's a better word…
+[02:26:36] <Captian_init> hmm
+[02:27:04] <Captian_init> Seems my connection is being odd
+[02:27:15] <Moonlightning> memory errors :(
+[02:27:19] <Captian_init> I think dnsmasq crashed
+[02:27:23] <Captian_init> Yeah
+[02:27:30] <Moonlightning> get that RAM fixed dude :(
+[02:27:32] <Captian_init> There's no DNS anymore :(
+[02:27:44] <Moonlightning> well, this domain is very recent
+[02:27:46] <Captian_init> Gonna take fucking forever to figure out which stick it is. 
+[02:27:49] <Moonlightning> we're talking days, not weeks
+[02:27:57] <Captian_init> I hate how long memtest takes.
+[02:28:16] <Moonlightning> x.x
+[02:28:22] <Captian_init> brb gonna bounce derpy I think .
+[02:28:29] <Moonlightning> bounce?
+[02:28:38] <Captian_init> reboot
+[02:28:54] <Captian_init> NOC lingo at places I've worked at lease
+[02:28:56] <Moonlightning> Ahh.
+[02:35:22] *** Quits: Captian_init (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[02:40:25] *** Joins: Asoka (Asoka@Pony-od9olv.net-htp.de)
+[02:43:36] *** Quits: Asoka_White (Asoka@Pony-0h6r5c.net-htp.de) (Ping timeout: 121 seconds)
+[03:01:33] *** Quits: CrassyPaddles (test@Pony-ro8.enl.137.198.IP) (A TLS packet with unexpected length was received.)
+[03:02:11] *** Joins: CrassyPaddles (test@Pony-ro8.enl.137.198.IP)
+[03:13:23] *** Joins: Captian_init (jason@init3.Is.Not.A.Clever.Poni)
+[03:18:31] *** Quits: Captian_init (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[03:19:10] *** Joins: Captian_init (jason@init3.Is.Not.A.Clever.Poni)
+[03:40:08] *** Joins: nscoots (FreyGrimrod@Pony-290e3t.sub-70-192-31.myvzw.com)
+[03:42:52] *** Quits: CrassyPaddles (test@Pony-ro8.enl.137.198.IP) (Connection closed)
+[03:43:24] *** Joins: CrassyPaddles (test@Pony-ro8.enl.137.198.IP)
+[03:43:30] <Captian_init> I suppose I really didn't need to have every bit of DDR I had lying around my house in Derpy. Booted OS with all necessary services is 60M worth. Had 2 1G sticks, a 256 and a 512. Derpy passes memtest with the 2 gig sticks so I suppose that'll do derp. That'll do.  
+[03:43:59] *** Quits: Captian_init (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[03:44:06] *** Joins: Captian_init (jason@init3.Is.Not.A.Clever.Poni)
+[03:50:53] <Moonlightning> …isn't it impossible even to mix sizes?
+[03:51:23] <Phase> it's quite possible
+[03:52:32] <Phase> just generally a bad idea, it prevents dual- and tripple-channel
+[03:52:38] <Moonlightning> Hmm?
+[03:52:45] <Phase> plus it's likely a less tested/untested controller feature
+[03:56:50] <DJ-C0L7[CSS]> i'm gonna crash, 'night
+[03:56:59] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "exhausted pony needs sleep.... and cuddles....")
+[03:57:16] <One-Trick> moments you forget which vpn youre on- geoip multiviews attack
+[03:57:52] * One-Trick flails, thought she had a stroke.
+[04:00:26] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[04:21:39] <gigaway> FINALLY
+[04:21:59] <gigaway> The cable is ran, I moved the router from the hallway, god damn it took months but it is done
+[04:22:48] <Moonlightning> Woot!
+[04:22:52] <Moonlightning> Progress!
+[04:24:25] <gigaway> IT wasn't even my cousin who did it, it was me and his son
+[04:26:52] <Moonlightning> At least it's done?
+[04:26:57] <Moonlightning> This was a thing that benefits you, yeah? >.>
+[04:27:09] <Captian_init> Moonlightning: At one point I was running VMs on derpy
+[04:27:13] <gigaway> The wifi has 3/4 bars in the garage now
+[04:27:18] <gigaway> before it had `
+[04:27:19] <gigaway> 1
+[04:27:20] <Captian_init> So I wanted as much RAM as I could cram in it. 
+[04:28:13] <Moonlightning> Ahhh.
+[04:28:18] <Captian_init> The VMs were Dinky, Muffin and Sparkler by the way. 
+[04:28:22] <Moonlightning> Heehee :3
+[04:28:26] <Moonlightning> I don't run much on Silverspeed, because no FDE
+[04:29:52] <Captian_init> FDE as in full disk encryption?
+[04:30:33] <Captian_init> Too much alphabet soup in CS
+[04:30:57] <Moonlightning> You mean AbS?
+[04:31:00] <Captian_init>  /IT/IS
+[04:31:12] <Captian_init> Yes
+[04:31:26] <Moonlightning> TLAs and the like?
+[04:31:48] <Moonlightning> heh :p
+[04:31:53] <Moonlightning> But I see where you're coming from.
+[04:31:54] <Captian_init> Hue
+[04:32:05] <Captian_init> But is that what you meant?
+[04:54:58] *** Quits: Phase (Phase4@Pony-ua3ve9.internode.on.net) (Ping timeout: 121 seconds)
+[04:57:57] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.never.fixed) (Quit: Terminated.)
+[05:00:25] <gigaway> Bqh.. Now the second router is being a ass. Only way the internet is worming is by being a wireless access point but I need it as a router so I can block porn on the router
+[05:03:42] <Moonlightning> What's your setup like, Gigabit?
+[05:05:39] <JustAberrant> block porn.. how cruel :(
+[05:09:17] <Moonlightning> IIRC, it's disrupting critically important Internet usage. Arguably justified.
+[05:11:05] <JustAberrant> :(
+[05:19:17] *** Joins: Phase (Phase4@Pony-d9rtg7.internode.on.net)
+[05:30:18] <gigaway> Oh that's why.. I plugged the cord into LAN one instead of internet >.>
+[05:37:48] <tiwake> lol
+[05:39:09] * Moonlightning replaces Gigabit's netboxes with a Linux box.
+[05:49:20] *** Quits: Lapsus (Lapsus@i-forget.ca) (Ping timeout: 121 seconds)
+[05:49:30] *** Eventide is now known as Eventide|Sleepies
+[05:49:35] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[05:49:35] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[05:50:11] <gigaway>  Not funny! >.<
+[05:50:20] <Moonlightning> D:
+[05:50:26] <Moonlightning> Sorry. >:
+[05:52:00] *** Quits: Phase (Phase4@Pony-d9rtg7.internode.on.net) (A TLS packet with unexpected length was received.)
+[05:52:49] *** Joins: Phase (Phase4@Pony-d9rtg7.internode.on.net)
+[05:53:15] <gigaway> Nah it is funny, I was mad at myself
+[05:53:33] <Moonlightning> Oh. o.o
+[06:02:31] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[06:06:04] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[06:08:23] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[06:11:04] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[07:00:35] *** Captian_init is now known as Init3-away
+[07:05:23] *** Quits: CrassyPaddles (test@Pony-ro8.enl.137.198.IP) (Ping timeout: 121 seconds)
+[07:20:45] *** Joins: CrassyPaddles (test@Pony-ro8.enl.137.198.IP)
+[07:22:15] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[07:25:28] *** \m is now known as mniip
+[07:30:25] *** Quits: CrassyPaddles (test@Pony-ro8.enl.137.198.IP) (Ping timeout: 121 seconds)
+[07:36:26] *** Joins: CrassyPaddles (test@Pony-ro8.enl.137.198.IP)
+[07:41:00] *** Joins: RazorSharpFang (razor@sharpest.of.all.fangs)
+[07:48:43] * RazorSharpFang groans
+[07:49:04] <RazorSharpFang> Nothing like a splitting headache to start the day. >.>
+[07:51:48] <Moonlightning> What's that xkcd comic with the graph of /how much you think you know/ against /how much you know/?
+[07:53:07] <Moonlightning> oh, it wasn't; it was smbc
+[08:30:26] *** Quits: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP) (Ping timeout: 121 seconds)
+[08:33:31] *** Joins: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP)
+[08:33:56] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[09:00:12] *** Quits: Crimson_Tail (Bluepon@Pony-v1s4l5.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[09:32:52] *** Joins: e (bro@the.derptown.express)
+[09:32:57] *** e is now known as Ki
+[09:36:23] *** Ki is now known as e
+[09:49:13] *** gigaway is now known as Gigabit
+[09:52:59] *** Init3-away is now known as Captian_init
+[10:26:27] *** zz_CyberJacob is now known as CyberJacob
+[10:34:45] <RazorSharpFang> Do we have any numerical data types that have indefinite sizes?
+[10:41:33] <RazorSharpFang> Like, something that acts like an integer, but consumes more memory to avoid overflow issues.
+[10:56:33] <RazorSharpFang> I've found that I need integer-like precision, but I want to work with numbers greater than ints, or longs.
+[10:57:26] *** Captian_init is now known as Init3-away
+[10:57:46] <Phase> RazorSharpFang, that's normally called bignum or similar
+[10:57:49] <HoneyDrops> RazorSharpFang: https://en.wikipedia.org/wiki/Arbitrary-precision_arithmetic
+[10:57:50] <PinkiePieBot> [ Arbitrary-precision arithmetic - Wikipedia, the free encyclopedia ]
+[10:58:37] <Phase> there's libraries for it, i'm not sure what languages have it as a builtin
+[10:58:53] <Phase> would recommend something with overloading so you can just use +
+[10:59:02] <HoneyDrops> https://en.wikipedia.org/wiki/List_of_arbitrary-precision_arithmetic_software
+[10:59:03] <PinkiePieBot> [ List of arbitrary-precision arithmetic software - Wikipedia, the free encyclopedia ]
+[10:59:16] <HoneyDrops> Many do, some ok, some that should be avoided.
+[10:59:19] <RazorSharpFang> Phase: Java doesn't even have operator overloading.
+[10:59:30] <Phase> i know :(
+[10:59:42] <Phase> except for string because reasons
+[11:00:03] <Phase> stupid special snowflake of a class
+[11:01:53] <RazorSharpFang> Ooh, C# has it built in.
+[11:01:59] <RazorSharpFang> Tempting...
+[11:02:57] * HoneyDrops points to the "that should be avoided" and coughs.
+[11:03:46] <RazorSharpFang> HoneyDrops: Would you say C# is better or worse than java? 
+[11:04:09] <HoneyDrops> I don't advise touching either, if it can be avoided.
+[11:11:19] <Phase> yeah, they both kinda suck
+[11:24:47] * Phase would probably use java for smaller programs if the vm didn't come with the ask toolbar
+[11:26:32] <RazorSharpFang> The VM comes with the ask toolbar? Can't you say no?
+[11:26:50] <Phase> it asks again next update
+[11:26:54] <Phase> also the updater
+[11:27:03] <RazorSharpFang> But you can say no, right?
+[11:27:06] * Phase wished they did windows builds of openjdk
+[11:27:25] <Phase> RazorSharpFang, the only reason i'd use java is convenience
+[11:27:40] <RazorSharpFang> I do love me some convenience.
+[11:27:42] <Phase> and ask toolbar isn't convenience
+[11:28:31] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[11:30:21] <RazorSharpFang> Phase: But you can say no to it, right? 
+[11:30:54] <Phase> RazorSharpFang, the issue is when i give this program to someone that isn't me
+[11:30:59] <Phase> and they don't remember to click no
+[11:31:02] <RazorSharpFang> XD
+[11:31:10] <RazorSharpFang> Ah yes, that is an issue.
+[11:31:13] <Phase> plus i hate having to click no
+[11:31:37] <Phase> and for a language that already doesn't have much going for it
+[11:31:47] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[11:35:15] *** Parts: nscoots (FreyGrimrod@Pony-290e3t.sub-70-192-31.myvzw.com) ()
+[12:07:38] *** Quits: CrassyPaddles (test@Pony-ro8.enl.137.198.IP) (Ping timeout: 121 seconds)
+[12:32:10] *** CyberJacob is now known as zz_CyberJacob
+[12:36:44] *** Quits: Phase (Phase4@Pony-d9rtg7.internode.on.net) (Quit: Leaving)
+[12:36:57] *** Joins: Phase (Phase4@Pony-d9rtg7.internode.on.net)
+[13:03:55] *** Quits: locodash11[lagout] (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[13:40:18] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[13:52:41] *** Eventide|Sleepies is now known as Eventide
+[14:11:09] *** mniip is now known as \m
+[14:11:26] *** \m is now known as mniip
+[15:07:51] *** Quits: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP) (Connection closed)
+[15:17:11] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[15:17:31] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[15:26:53] <Seoson> "The requested URL was rejected. Your support ID is XXXXXX" Does somebody know which web application firewall that is?
+[15:31:21] *** Quits: RazorSharpFang (razor@sharpest.of.all.fangs) (Quit: Sleepy time)
+[15:36:27] <Seoson> Got it:  BIG-IP ASM Thank you anyway :P
+[15:42:19] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[15:58:19] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:01:58] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[16:06:53] *** Joins: Crimson_Tail (Bluepon@Pony-pms33p.cg80.k4gu.0151.2601.IP)
+[16:23:47] <Seoson> I like silly people that think a web application firewall will protect them from XSS :D Effort to circumtvent it: 10 minutes!
+[16:25:32] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[16:34:44] <Blackjack> Seoson: I know, right
+[16:34:44] <Blackjack> lol
+[16:35:05] <Blackjack> Also, Moonlightning, time for your daily confusion: https://pypi.python.org/pypi/tox
+[16:35:05] <PinkiePieBot> [ tox 2.1.1 : Python Package Index ]
+[16:47:29] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:19:15] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[17:37:30] <Moonlightning> Blackjack: that's not too bad, I guess. The core is usually called toxcore or libtoxcore and frontends are usually some variation, like toxic or utox
+[17:38:36] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[17:38:38] <Moonlightning> Phase, RazorSharpFang [when they come back]: Python's `int` is arbitrary-magnitude (but `float` isn't :c )
+[17:55:51] <Moonlightning> Is it really so bad to use NFS without really caring about its security, if all I'm doing is accessing a LUKS container?
+[18:02:35] <mniip> Moonlightning, how would you imagine arbitrary size float
+[18:02:50] <Moonlightning> arbitrary-precision, even
+[18:03:07] <mniip> predefined size
+[18:03:08] <mniip> ?
+[18:03:20] <Moonlightning> Store two arbitrary-magnitutde integers; one for the whole-number part and one for the fractional part
+[18:03:30] <Moonlightning> So 5.4 becomes (5, 4)
+[18:03:37] <mniip> what about 1/3
+[18:03:38] <Moonlightning> 5.489262647 becomes (5, 489262647)
+[18:03:41] <Moonlightning> …shit.
+[18:03:57] <Moonlightning> you broke my system! >:(
+[18:04:00] <Moonlightning> Thanks M N Iip
+[18:04:17] <mniip> ಠ_ಠ no one's called me /that/ yet
+[18:04:49] <mniip> Moonlightning, usually you go for a predefined size
+[18:04:59] <mniip> you declare what size you want your numbers to be and go with it
+[18:05:06] <mniip> one language allows for post-defined size
+[18:05:35] <mniip> you define arbitrarily sized numbers, do operations on them and so on, but when you decide to output them you have to say how many digits you want computed
+[18:06:33] <mniip> very cool concept
+[18:33:23] <Moonlightning> WOOOOOOO
+[18:33:26] <Moonlightning> /finally/
+[18:33:31] <Moonlightning> now, this shit better work, I swear
+[18:33:39] <Moonlightning> also, my NFS server is probably horridly insecure :(
+[18:33:43] <Moonlightning> I should fix that…
+[18:33:48] <Moonlightning> NFS is so haaaaard though.
+[18:33:49] * Moonlightning flails.
+[18:45:47] * JustAberrant converts the bulk of Moonlightning 's assets to zinc
+[18:46:16] <Gigabit> 1% battery waiting for it to die is annoyingx.x
+[19:28:57] *** Joins: CrassyPaddles (test@Pony-0k0.enl.137.198.IP)
+[19:30:36] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[19:32:21] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[20:58:41] *** Quits: CrassyPaddles (test@Pony-0k0.enl.137.198.IP) (Ping timeout: 121 seconds)
+[21:21:44] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:25:32] *** Joins: CrassyPaddles (test@Pony-0k0.enl.137.198.IP)
+[21:29:34] *** Quits: CrassyPaddles (test@Pony-0k0.enl.137.198.IP) (Ping timeout: 121 seconds)
+[21:42:42] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:45:04] *** Joins: TuxRug (TuxRug@TuxRug)
+[21:55:59] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "back in a bit, talk to everypony then")
+[21:58:16] *** Init3-away is now known as Captian_init
+[22:02:02] *** Captian_init is now known as init3
+[22:03:42] *** Quits: Phase (Phase4@Pony-d9rtg7.internode.on.net) (Ping timeout: 121 seconds)
+[22:23:33] *** Quits: Little_Pip_[server] (locodash11@Taco.eating.Anthro.Batpony) (Connection closed)
+[22:23:38] *** Joins: Little_Pip_[server] (locodash11@Pony-osmcfg.co.comcast.net)
+[22:25:46] *** Joins: CrassyPaddles (test@Pony-0k0.enl.137.198.IP)
+[22:31:37] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[22:34:24] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[22:34:52] *** Joins: init3 (Jason@init3.Is.Not.A.Clever.Poni)
+[22:42:46] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:45:10] *** Joins: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP)
+[22:57:59] *** Quits: TuxRug (TuxRug@TuxRug) (Connection closed)
+[22:59:51] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[23:00:39] *** Joins: Midnight_Tinker_Mobile (uid102824@Pony-tjmceb.tooting.irccloud.com)
+[23:06:32] *** Joins: RekttothePecs (test@Pony-ro8.enl.137.198.IP)
+[23:06:35] *** Quits: CrassyPaddles (test@Pony-0k0.enl.137.198.IP) (Ping timeout: 121 seconds)
+[23:08:29] *** Quits: RekttothePecs (test@Pony-ro8.enl.137.198.IP) (Quit: Leaving)
+[23:08:46] *** Joins: CrassyPaddles (test@Pony-ro8.enl.137.198.IP)
+[23:13:11] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[23:19:43] *** Quits: CrassyPaddles (test@Pony-ro8.enl.137.198.IP) (Ping timeout: 121 seconds)
+[23:23:56] *** Gigabit is now known as gigaway
+[23:37:09] *** Quits: Little_Pip_[server] (locodash11@Pony-osmcfg.co.comcast.net) (Quit: )
+[23:47:55] *** Joins: CrassyPaddles (test@Pony-ro8.enl.137.198.IP)
+[23:48:53] *** Joins: Little_Pip_[server] (locodash11@Pony-osmcfg.co.comcast.net)
+[23:49:19] *** Little_Pip_[server] is now known as Tan-Sama
+[23:51:21] *** Tan-Sama is now known as locodash11[server]

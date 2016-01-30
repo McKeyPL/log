@@ -1,0 +1,605 @@
+[00:10:29] *** CyberJacob is now known as zz_CyberJacob
+[00:11:42] <Compu> Sour_Sweet: i use ubuntu
+[00:12:25] <Sour_Sweet> Gaming will not allow me to move from Windows anytime soon
+[00:13:00] <Sour_Sweet> Even considering the workarounds with Wine the performance impact is huge.
+[00:14:08] *** Quits: Melanosuchus (quassel@Pony-v8fsnm.as13285.net) (Connection closed)
+[00:15:05] <Sour_Sweet> Apart from that Ubuntu (while I have and will probably use it in the future) has a few annoying habbits. I'd prefer to switch to something more independent on the long term.
+[00:30:49] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[01:07:18] <tiwake> silly question, do managed switches handle DHCP stuff?
+[01:07:49] <tiwake> or is a router explicitly defined as DHCP stuff?
+[01:09:36] <Googie> Switches don't touch DHCP. In theory routers don't either.
+[01:09:44] <HoneyDrops> A switch does not handle DHCP, it works on layer 2.  A consumer router common has a DHCP server, but there is not reason a router must do it.
+[01:10:04] <Googie> Though there's often a blurred line between a managed switch and a router these days, depending on the model
+[01:10:21] <tiwake> so if a router does not han... yeah, my question, difference between router and switch
+[01:10:35] <tiwake> erm, managed switch and router
+[01:10:48] <Googie> A switch would really be the wrong place for a DHCP server.
+[01:10:48] <HoneyDrops> A router routs, a switch just passes packets?
+[01:11:16] <Googie> HoneyDrops: Some managed switches are capable of routing, but are sold as switches
+[01:11:35] <tiwake> what defines routing?
+[01:12:52] <HoneyDrops> It decides where to send things (NAT, redirection, etc).  A switch just passes whatever it's given, whereever it's told to go (and does not generally work on an IP-address level)
+[01:13:20] <tiwake> what about a dumb switch?
+[01:14:02] <Googie> Same thing. It just passes what it's given where it needs to go (Ethernet Frames, not IP packets)
+[01:14:26] <tiwake> then why spend the money and get a managed switch?
+[01:15:29] <HoneyDrops> One use case would be port mirroring.
+[01:15:34] <Googie> Because they tend to be a lot more configurable. For example handling VLANs, port mirroring...
+[01:15:57] <tiwake> donno what either of those are :-x
+[01:16:28] <HoneyDrops> port mirroring is for when you want to listen to /everything/ the switch passes
+[01:16:35] <Sour_Sweet> VLANs are used to have multiple isolated networks on one physical network
+[01:17:41] <HoneyDrops> Generally the switch will only send things out where they need to go (as opposed to a hub that just blasts it at everyone).  Port mirroring lets you always send a copy to one port where you have a device to listen/record it all for various reasons.
+[01:17:55] <Googie> And I suppose for the purpose of completeness, we should also mention Hubs
+[01:18:36] <Googie> Which are basically just all the Ethernet wires wired together, connecting all the machines directly
+[01:18:51] <Sour_Sweet> Also some switches do QoS
+[01:20:06] <Googie> Spanning Tree Protocol as well.
+[01:20:35] <Googie> (Without it, you can easily take down a network simply by plugging into two ports into each other)
+[01:21:34] <tiwake> I want to read up on network stuff before I spend a lot of money on some 10G network stuff, make sure I'm getting what I want to get
+[01:22:32] <Googie> How much is a 10G-Base-T switch these days anyway ?
+[01:22:44] <Sour_Sweet> Prosumer/Economy grade switches will also do a lot of things traditionally done by a router. DHCP, Firewall, Port and MAC adress based access control, packet filtering
+[01:24:04] <Sour_Sweet> Generally speaking almost no consumer needs those
+[01:24:05] <Googie> (Switches running ios for example)
+[01:24:20] <tiwake> screw iOS
+[01:24:36] <Sour_Sweet> Switches running iOS?
+[01:24:43] <Googie> Cisco ios
+[01:24:48] <Sour_Sweet> Ahh
+[01:25:00] <tiwake> oh, so different from apple's iOS
+[01:25:03] <tiwake> lol
+[01:25:06] <Sour_Sweet> That confused me for a sec.
+[01:25:33] <Sour_Sweet> Yeah Cisco also does VPN things on some models as far as I'm aware
+[01:25:56] <Googie> Though I'm pretty sure a lot of people still have the same opinion on /cisco/ ios :P
+[01:27:49] <Sour_Sweet> (hehe ask Google. They leaked VPN credentials through a refurbished switch)
+[01:35:57] <Googie> But tiwake, for the purposes of what you're doing, you probably just want to put all the stuff like a DHCP server on the router.
+[01:36:25] <HoneyDrops> I wonder if there is a nice little dual 10G little ARM boards that would make a good linux/bsd-based router. 
+[01:50:05] *** Joins: McKey (Kordus@bronies.info)
+[01:50:06] -discord.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[01:50:06] <Googie> I'm not sure if they'd be fast enough to actually route at 10Gb
+[01:50:16] *** Server sets mode: +AHJPTnt 10:300 30
+[01:50:21] <Sour_Sweet> Well one could combine the task with a homeserver and setup a x64 machine that /also/ does routing
+[01:52:25] <Googie> Honestly, I'd probably (if on a budget) just hook up a regular router. Anything that needs the bandwidth shouldn't need to go through the router on a home network anyway
+[01:53:46] *** Joins: WuBzY (androirc@Pony-dljdhu.rev.dnainternet.fi)
+[01:55:04] *** WuBzY is now known as WuBzY_Azleep
+[02:11:18] * Googie wonders what sort of performance that routing 10GbE requires even on a proper, high powered x86-64 CPU.
+[02:11:30] <Googie> A lot of the dedicated routers use ASICs
+[02:11:33] *** Joins: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au)
+[02:24:43] *** Joins: Asoka (Asoka@Pony-gvte8a.net-htp.de)
+[02:26:19] <Googie> Huh. Interesting. Low volume ASIC production run costs: http://cmp.imag.fr/products/ic/?p=prices
+[02:26:22] <PinkiePieBot> [ CMP - Products :: IC's Manufacturing Prices ]
+[02:27:53] *** Quits: Asoka_White (Asoka@Pony-5vpbci.net-htp.de) (Ping timeout: 121 seconds)
+[02:35:14] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[02:39:43] *** Sour_Sweet is now known as Seoson|BNC
+[02:41:54] *** Quits: aristocratic (snob@Pony-ne5.2rf.228.37.IP) (Quit: )
+[02:43:27] *** Parts: Phase (Phase4@Pony-7c5tb0.internode.on.net) ("Leaving")
+[02:43:32] *** Joins: Phase (Phase4@Pony-7c5tb0.internode.on.net)
+[03:18:36] *** Quits: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au) (Quit: My people need me!)
+[03:35:03] <Moonlightning> Hahahahaha
+[03:35:19] <Moonlightning> http://gizmodo.com/a-1743937091
+[03:35:19] <PinkiePieBot> [ Physicists Create "Urine Black Holes" To Solve the Splashback Problem ]
+[03:35:48] <Moonlightning> Using vantablack to solve splashback xD
+[03:37:08] * One-Trick grumbles about avr toolchain fails.
+[03:37:55] <Moonlightning> Yay, sanity! http://www.thelocal.se/20151127/swedish-court-we-cannot-ban-pirate-bay
+[03:37:56] <PinkiePieBot> [ Swedish court: 'We cannot ban Pirate Bay' - The Local ]
+[03:39:30] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[03:39:44] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:51:21] <Moonlightning> http://www.doctorswithoutborders.org/article/msf-initial-reaction-us-military-investigation-kunduz-attack
+[03:51:22] <PinkiePieBot> [ MSF Initial Reaction to US Military Investigation into Kunduz Attack | MSF USA ]
+[03:51:29] <Moonlightning> Sooooo…
+[03:55:30] <One-Trick> success. now off to compile some atmel for astronomy students
+[04:12:03] <One-Trick> why cant dlink every do qos correctly?
+[04:12:07] <One-Trick> err, ever
+[04:14:38] <Gladiolus> Splashback is a problem1?
+[04:23:01] <Compu> hey anyone else having issues signing in to PSN?
+[04:25:39] <Kinsley> Compu: known issue, PSN is down.
+[04:25:53] <Compu> Kinsley: u know the cause?
+[04:26:06] <Kinsley> Black Friday?
+[04:26:23] <Kinsley> People probably unboxing new gear or signing in to play new games. DDoS of sorts.
+[04:27:10] <Compu> k
+[04:27:14] <Compu> dammit
+[04:27:28] <Compu> i need to sign in so i can watch youtube on my ps3
+[04:28:07] <Compu> hey it just signed in finally
+[04:30:07] <Compu> and now my phone says PSN is on maintenance
+[04:38:58] <Moonlightning> Why do you need the PSN to use YouTube -.-
+[04:40:30] <cyzon> poor design
+[04:41:21] <Compu> Moonlightning: because the youtube app cant see which profile ur using cuz of how apps work on PS3 but it can see what PSN account ur signed into so to sign into youtube u link ur PSN to ur youtube (u can unlink it) so that way each user can sign in individually
+[04:41:55] <Moonlightning> Compu: no local accounts?
+[04:42:12] <Compu> Moonlightning: PS3 has them but apps cant see them
+[04:42:30] <Moonlightning> :/
+[04:42:54] <Compu> Moonlightning: because on PS3 unlike game data app data is saved the same for all local accounts
+[04:43:15] <Moonlightning> …that rather defeats the point of having local accounts.
+[04:43:31] <Compu> it still has individual game data for each account
+[04:43:36] <Compu> so thats the point
+[04:46:33] <Moonlightning> Accounts serve to partition user data and privileges.
+[04:47:06] <Moonlightning> If the PS OS only partitions /some/ user data, it's not really honoring the spirit of accounts.
+[04:48:22] <Compu> Moonlightning: well it is a console
+[04:48:39] <Compu> and it has free multiplayer so i have no complaints
+[04:49:17] <Moonlightning> So? It has local accounts. It uses them to partition game data. Is it really too much to expect it to also partition other app data?
+[04:50:14] <Compu> yes because people like to sign into the netflix app and not have to sign in again every time the switch profiles since the whole house usually uses one netflix account
+[04:53:04] <Compu> Moonlightning: keep in mind people who use consoles dont use them the same way u use a computer
+[04:54:15] <Moonlightning> Netflix is the exception, not the rule. Most services don't intend for multiple people to use the same account.
+[04:54:23] <Moonlightning> Though I can't really argue with ^2
+[04:57:01] <Compu> Moonlightning: name services besides youtube on PS3 where people dont use the same account
+[04:57:08] <Compu> i can name ones where people DO
+[04:57:12] <Compu> amazon video
+[04:57:28] <Compu> and pretty much any other subscription service
+[04:57:31] <Moonlightning> Does that use normal Amazon accounts?
+[04:58:12] <Compu> yes but each account has to have its own amazon prime so people normally just pay for one account to have amazon prime and just use that
+[05:00:38] <Moonlightning> Hmm. 'd make sense for that to be true of paid subscriptions in general.
+[05:02:08] <Compu> and most media services on PS3 r subscription based
+[05:02:29] *** Quits: Phase (Phase4@Pony-7c5tb0.internode.on.net) (Connection closed)
+[05:02:43] <Compu> so it does make sense for apps to all use the same data rather than partition it since YOUTUBE is the actual exception
+[05:02:57] *** Joins: Phase (Phase4@Pony-7c5tb0.internode.on.net)
+[05:05:48] <Moonlightning> Given that apparently PS3 apps are either games or paid subscription services, yes. :P
+[05:06:49] <Compu> PS3 games and apps r treated completely differently by the OS
+[05:30:28] *** Quits: Phase (Phase4@Pony-7c5tb0.internode.on.net) (Quit: Leaving)
+[05:37:48] *** Joins: Phase (Phase4@Pony-7c5tb0.internode.on.net)
+[05:59:15] *** Joins: Asoka_White (Asoka@Pony-s9udmd.net-htp.de)
+[06:02:13] *** Quits: Asoka (Asoka@Pony-gvte8a.net-htp.de) (Ping timeout: 121 seconds)
+[06:02:54] *** worthless is now known as Snoarin
+[06:04:56] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[06:27:04] *** Quits: Asoka_White (Asoka@Pony-s9udmd.net-htp.de) (Ping timeout: 121 seconds)
+[07:06:40] *** Quits: Snoarin (Gigabit@Bazinga) (Ping timeout: 121 seconds)
+[07:07:45] *** Joins: GigabitPony (Gigabit@Bazinga)
+[07:15:50] *** Quits: GigabitPony (Gigabit@Bazinga) (Ping timeout: 121 seconds)
+[07:16:46] *** Joins: GigabitPony (Gigabit@Bazinga)
+[07:23:28] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[07:24:05] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:29:06] <One-Trick> 328p, so fussy. silly micros
+[07:30:12] <Gladiolus> it’s me i’m the windows 98 user in 2015
+[07:30:19] <Gladiolus> but only on a retro machine and offline lel
+[07:36:21] <Moonlightning> So when's Vista go EoL?
+[07:36:33] <Gladiolus> Isn’t it already?
+[07:36:42] <AppleDash> 2020
+[07:36:49] <AppleDash> Sorry, 2017
+[07:37:03] <Gladiolus> woah
+[07:37:10] <Gladiolus> 11 damn years lel
+[07:37:28] <Moonlightning> No; XP just went EoL recently.
+[07:37:42] *** Quits: Crimson_Tail (Bluepon@Pony-k7hdqh.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[07:38:04] <Gladiolus> Well that’s because Vista blew and borked their long term plans
+[07:38:20] * Moonlightning blows Gladiolus :V
+[07:38:47] * Gladiolus is now an N64 cart.
+[07:46:11] *** Joins: Crimson_Tail (Bluepon@Pony-anbp5k.cg80.k4gu.0151.2601.IP)
+[07:54:59] *** Quits: Crimson_Tail (Bluepon@Pony-anbp5k.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[07:58:01] *** Joins: Crimson_Tail (Bluepon@Pony-6dsav3.cg80.k4gu.0151.2601.IP)
+[08:02:44] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[08:04:06] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[08:26:45] *** Eventide is now known as Eventide|Sleepies
+[08:37:10] * Googie suspects that they didn't want Vista support to expire before XP :P
+[08:42:33] <Crimson_Tail> I miss XP.
+[08:43:19] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[08:47:44] * Moonlightning rewrites IRC to use IMAP-style tags.
+[08:48:45] <Moonlightning> < 3d46 PRIVMSG #techponies :Hello, world!
+[08:48:49] <Moonlightning> > 3d46 OK
+[08:49:17] <Moonlightning> < 3d47 NOTICE #techponies :Oh, look, a notice.
+[08:49:29] <Moonlightning> > 3d47 NO :Channel is mode +T
+[08:50:19] <Moonlightning> should've been like this from the beginning…without echo-message, clients that don't know /all/ the numerics have no way of knowing whether a message was accepted
+[08:50:38] * Moonlightning sighs wistfully.
+[08:51:28] <Crimson_Tail> They'd have to get the numerics corrects when writing an IRCd.
+[08:54:54] <Crimson_Tail> https://www.alien.net.au/irc/irc2numerics.html Probably pretty old, but there's the common numerics.
+[08:55:00] <PinkiePieBot> [ IRC/2 Numeric List ]
+[08:55:12] *** Kyoro is now known as Pocky
+[08:58:09] *** WuBzY_Azleep is now known as WuBzY
+[08:58:51] <Googie> Moonlightning knows, it's just that using a numerics list like that (which really isn't standard) isn't the best solution. If rewriting the IRC protocol from scratch, it probably wouldn't be done that way.
+[08:59:52] * Moonlightning always finds himself wishing he could've been around when they were discussing $PROTOCOL so he could have argued loudly for it to be done a /better/ way
+[09:00:43] <Moonlightning> I also think names should've been used instead of numbers, to avoid number allocation issues
+[09:00:57] <Moonlightning> The RPL_* and ERR_* strings used in the RFCs would've done just fine
+[09:01:24] <Moonlightning> We're clearly not worrying that much about bandwidth, because it's a /textual/ protocol, not a /binary/ one ;p
+[09:02:43] *** Quits: WuBzY (androirc@Pony-dljdhu.rev.dnainternet.fi) (Quit: Go any more of dem WuBz?)
+[09:03:52] *** Quits: Crimson_Tail (Bluepon@Pony-6dsav3.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[09:08:47] * Gladiolus spots nerding
+[09:08:53] * Gladiolus takes a deep breath
+[09:08:55] <Gladiolus> NEEEEEEEEEEEEEERDS
+[09:17:07] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[09:18:20] <Moonlightning> Fuck off, Gladiolus. We're talking about the goddamned protocol you're USING RIGHT NOW.
+[09:19:03] <Gladiolus> aww i'm sorry
+[09:19:06] <Gladiolus> i was ust being silly
+[09:24:55] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[09:38:11] *** zz_CyberJacob is now known as CyberJacob
+[09:45:21] *** Quits: Phase (Phase4@Pony-7c5tb0.internode.on.net) (Quit: Leaving)
+[09:55:36] *** Joins: Asoka (Asoka@Pony-13kajm.net-htp.de)
+[09:56:38] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[10:11:46] *** Quits: floogulinc (floogulinc@Pony-opvprb.floogul.net) (A TLS packet with unexpected length was received.)
+[10:11:54] *** Joins: floogulinc (floogulinc@Pony-opvprb.floogul.net)
+[10:13:41] *** Joins: AndroUser2 (androirc@Pony-dljdhu.rev.dnainternet.fi)
+[10:14:08] *** AndroUser2 is now known as WuBzY_AwAy
+[10:26:39] * AppleDash pokes Moonlightning
+[10:27:06] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[10:31:17] * Moonlightning counterpokes AppleDash
+[10:32:32] *** Joins: Melanosuchus (quassel@Pony-ung9uv.as13285.net)
+[10:32:35] <AppleDash> I found your kind of person, Moonlightning 
+[10:32:37] <AppleDash> Note
+[10:32:37] <AppleDash> It’s best practice to create the root pair in a secure environment. Ideally, this should be on a fully encrypted, air gapped computer that is permanently isolated from the Internet. Remove the wireless card and fill the ethernet port with glue.
+[10:33:00] <Moonlightning> I knowwww… x.x
+[10:33:10] <Moonlightning> I tend to just use my Gentoo laptop, though :/
+[10:33:20] <AppleDash> :P
+[10:33:22] <Moonlightning> I mean…I don't have a box I can permanently isolate
+[10:34:56] <AppleDash> Well, isn't that interesting
+[10:35:13] <AppleDash> My terminal appears to have been broken in such a way that it was corrupting my passphrase entries
+[10:35:24] <AppleDash> Result: I can no longer decrypt the key I just generated after resetting my terminal
+[10:39:47] <Moonlightning> whoops
+[10:46:13] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[11:29:56] *** Joins: Phase (Phase4@Pony-jeaii1.internode.on.net)
+[11:40:08] *** WuBzY_AwAy is now known as WuBzY
+[12:08:35] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[12:10:05] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[12:11:12] *** CyberJacob is now known as zz_CyberJacob
+[12:17:11] *** Joins: Asoka_White (Asoka@Pony-teh0a8.net-htp.de)
+[12:19:17] *** Quits: Asoka (Asoka@Pony-13kajm.net-htp.de) (Ping timeout: 121 seconds)
+[12:20:29] *** Quits: Datalink (Datalink@Datalink) (Connection closed)
+[12:20:49] *** Joins: Datalink (Datalink@Datalink)
+[12:23:17] *** Quits: Melanosuchus (quassel@Pony-ung9uv.as13285.net) (Connection closed)
+[12:45:28] *** Joins: Asoka (Asoka@Pony-a379t4.net-htp.de)
+[12:48:20] *** Quits: Asoka_White (Asoka@Pony-teh0a8.net-htp.de) (Ping timeout: 121 seconds)
+[13:03:49] *** Quits: WuBzY (androirc@Pony-dljdhu.rev.dnainternet.fi) (Connection closed)
+[13:13:02] *** GigabitPony is now known as GigaWork
+[13:44:07] *** Joins: Asoka_White (Asoka@Pony-3nmve1.net-htp.de)
+[13:46:54] *** Quits: Asoka (Asoka@Pony-a379t4.net-htp.de) (Ping timeout: 121 seconds)
+[14:14:25] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[14:28:23] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[14:35:27] *** Joins: WuBzY (androirc@Pony-e2f88d.dhcp.inet.fi)
+[14:36:24] *** Joins: AndroUser2 (androirc@Pony-p7dhom.rev.dnainternet.fi)
+[14:36:37] *** Quits: WuBzY (androirc@Pony-e2f88d.dhcp.inet.fi) (Connection closed)
+[14:52:58] *** Quits: AndroUser2 (androirc@Pony-p7dhom.rev.dnainternet.fi) (Quit: Go any more of dem WuBz?)
+[15:10:59] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[15:24:52] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:50:24] *** Joins: Asoka (Asoka@Pony-a8vv4u.net-htp.de)
+[15:53:04] *** Quits: Asoka_White (Asoka@Pony-3nmve1.net-htp.de) (Ping timeout: 121 seconds)
+[16:03:18] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:09:43] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Quit: Leaving.)
+[16:10:04] *** Seoson|BNC is now known as Sour_Sweet
+[16:11:00] *** Joins: nscoots (FreyGrimrod@Pony-fgsej0.sub-70-192-1.myvzw.com)
+[16:13:04] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[16:23:13] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[16:27:57] <Sour_Sweet> So I search for a software that does drive management on Windows, found a tool that does what I need and the site recommends me to download the Fallout 4 full nude mod with a preview picture. That's a brilliant idea to recommend that on software that's often used in cooperate environments
+[16:33:33] <DJ-C0L7[EIT]> always fun
+[16:33:43] <DJ-C0L7[EIT]> windows 8.1 or 10?
+[16:35:24] <Sour_Sweet> 10
+[16:35:59] <DJ-C0L7[EIT]> *nods*
+[16:36:06] <DJ-C0L7[EIT]> microsoft "push" advertisements
+[16:36:15] <Sour_Sweet> Zhh 8.1. I would throw my drive out of the window before installing any Win8 version
+[16:37:00] <Sour_Sweet> (Considering it's an SSD it would probably survive that)
+[16:38:24] <Sour_Sweet> Windows is just silly and internal drive management wouldn't let me delete a partition, so I needed a tool to do that. I was not willing to search for my gParted CD for such a simple task
+[16:38:49] *** Joins: Asoka_White (Asoka@Pony-si8o7h.net-htp.de)
+[16:39:00] <Divide|TechSupport> 8.1's not too terribad, really, now that it's been patched through the roof.  10, however, eats laptops.
+[16:40:16] <Sour_Sweet> If your OS needs a patch for basic functionality to work I don't touch it. I'm using 10 on my notebook as well with no problems so far
+[16:41:37] *** Quits: Asoka (Asoka@Pony-a8vv4u.net-htp.de) (Ping timeout: 121 seconds)
+[16:45:51] *** Joins: Tahlorz (rattle@Pony-04f8is.ph.cox.net)
+[16:59:26] *** Joins: Asoka (Asoka@Pony-3473iv.net-htp.de)
+[17:01:40] *** Quits: Asoka_White (Asoka@Pony-si8o7h.net-htp.de) (Ping timeout: 121 seconds)
+[17:08:24] *** Eventide|Sleepies is now known as Eventide
+[17:32:05] *** Quits: AutoLapsus (Lapsus@Totally.Is.A.Network.Service) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Sin (Sin@is.hustlin.everyday) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: MangoBloom (djazz@djazz.se) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Tahlorz (rattle@Pony-04f8is.ph.cox.net) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: wolfyshy (woof@fluttering.shyly.through.the.forest) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Colgate (rabbit@brushie.horse) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Lapsus (Lapsus@i-forget.ca) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: sleumas2000 (sleumas2000@my.little.karaoke) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: jaderain (jaderain@jaderain.is.best.pony) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Creeps|AFK (RedHelper@The.Pony.That.Makes.You.Smile) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Red_M (potato@Pony-4pa04c.red-m.net) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Shutter (tips@sudoku.prevention.hotline) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: HoneyDrops (Honey@sweeter.than.honey) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: JustAberrant (JustAberran@Pony-lq4qe0.com) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: misiek200m (miskof@mysterious.chocolate.muffin) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Eclipse (rylai@Pony-71u6pe.so) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Lorix_ (Lorix_@flutter.shy.yay) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Unixkitty (uni@the.unicorn.cat) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: klaxa (klaxa@Pony-ail.8pm.0.134.IP) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Ola (ola@Pony-k5v.64a.226.188.IP) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: GeekBrony (GB@bronydom.net) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: meteor (meteor@Pony-6i9.jlf.236.104.IP) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: zz_CyberJacob (CyberJacob@Pony-dom.9o9.247.54.IP) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: nscoots (FreyGrimrod@Pony-fgsej0.sub-70-192-1.myvzw.com) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: derpy (derp@muffins) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: LightningCrash (lightning@property.of.moonlightning) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Dusk (Dusk@dusky.horse) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Stik (drakon@Pony-ql55m5.cable.virginm.net) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: endoriazel (coprah@endoriazel) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: reiuiji (reiuiji@nuclear.raven) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Fusl (Fusl@1.0.0.127.in-addr.arpa.li) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: catnickfl (catnickfl@catnickfl.bronytv.net) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Kinsley (JKinsley@Bow.To.Your.Princess) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Phase (Phase4@Pony-jeaii1.internode.on.net) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Cameron_D (cameron@192.241.210.101) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: GigaWork (Gigabit@Bazinga) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: miggyb (miggyb@horsetornado.co.uk) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: aji (alex@ajitek.net) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: nightbot (vinylderpy@Pony-o0c.56l.50.70.IP) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: enginemaniac (flail@flail.flail.flail) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: SilverEagle (SilverEagle@SilverEagle.is.best.pony) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: lucine (luc1ne@Pony-l2l.2dv.248.50.IP) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Darki (DK@Pony-44f.v38.82.80.IP) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: saneki (saneki@Pony-tni.g4k.31.96.IP) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (discord.canternet.org cadance.canternet.org)
+[17:32:05] *** Quits: Sakura (Sakura@is.a.very.derpy.pony) (discord.canternet.org cadance.canternet.org)
+[17:33:38] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[17:33:38] *** Joins: Sin (Sin@is.hustlin.everyday)
+[17:33:38] *** Joins: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net)
+[17:33:38] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[17:33:38] *** Joins: Creeps|AFK (RedHelper@The.Pony.That.Makes.You.Smile)
+[17:33:38] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[17:33:38] *** Joins: MangoBloom (djazz@djazz.se)
+[17:33:38] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[17:33:38] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[17:33:38] *** Joins: Tahlorz (rattle@Pony-04f8is.ph.cox.net)
+[17:33:38] *** Joins: AutoLapsus (Lapsus@Totally.Is.A.Network.Service)
+[17:33:38] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[17:33:38] *** Joins: Red_M (potato@Pony-4pa04c.red-m.net)
+[17:33:38] *** Joins: Colgate (rabbit@brushie.horse)
+[17:33:38] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[17:33:38] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[17:33:38] *** Joins: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[17:33:38] *** Joins: jaderain (jaderain@jaderain.is.best.pony)
+[17:33:38] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[17:33:38] *** Joins: sleumas2000 (sleumas2000@my.little.karaoke)
+[17:33:38] *** Joins: wolfyshy (woof@fluttering.shyly.through.the.forest)
+[17:33:38] *** chrysalis.canternet.org sets mode: +vvvvvvvvvovvvqovvvvv Sin Sukasa Googie Creeps|AFK Twilightlicious MangoBloom Monochrome Caerdwyn Tahlorz AutoLapsus DJ-C0L7[EIT] Red_M Colgate Lapsus Lapsus Lapsus Moonlightning DataByte jaderain LegionRed
+[17:33:38] *** chrysalis.canternet.org sets mode: +vv sleumas2000 wolfyshy
+[17:33:41] *** Lapsus sets mode: -qo Lapsus Lapsus
+[17:34:01] <Lapsus> partway back
+[17:34:11] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[17:34:11] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[17:34:11] *** Joins: zz_CyberJacob (CyberJacob@Pony-dom.9o9.247.54.IP)
+[17:34:11] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[17:34:11] *** Joins: aji (alex@ajitek.net)
+[17:34:11] *** Joins: Shutter (tips@sudoku.prevention.hotline)
+[17:34:11] *** Joins: HoneyDrops (Honey@sweeter.than.honey)
+[17:34:11] *** Joins: Dusk (Dusk@dusky.horse)
+[17:34:11] *** Joins: Kinsley (JKinsley@Bow.To.Your.Princess)
+[17:34:11] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[17:34:11] *** Joins: Sakura (Sakura@is.a.very.derpy.pony)
+[17:34:11] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[17:34:11] *** Joins: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se)
+[17:34:11] *** Joins: Darki (DK@Pony-44f.v38.82.80.IP)
+[17:34:11] *** Joins: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net)
+[17:34:11] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[17:34:11] *** Joins: Eclipse (rylai@Pony-71u6pe.so)
+[17:34:11] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[17:34:11] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:34:11] *** Joins: GeekBrony (GB@bronydom.net)
+[17:34:11] *** Joins: nightbot (vinylderpy@Pony-o0c.56l.50.70.IP)
+[17:34:11] *** Joins: enginemaniac (flail@flail.flail.flail)
+[17:34:11] *** Joins: derpy (derp@muffins)
+[17:34:11] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[17:34:11] *** Joins: Unixkitty (uni@the.unicorn.cat)
+[17:34:11] *** Joins: reiuiji (reiuiji@nuclear.raven)
+[17:34:11] *** Joins: Stik (drakon@Pony-ql55m5.cable.virginm.net)
+[17:34:11] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[17:34:11] *** Joins: SilverEagle (SilverEagle@SilverEagle.is.best.pony)
+[17:34:11] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[17:34:11] *** Joins: endoriazel (coprah@endoriazel)
+[17:34:11] *** Joins: Ola (ola@Pony-k5v.64a.226.188.IP)
+[17:34:11] *** Joins: miggyb (miggyb@horsetornado.co.uk)
+[17:34:11] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[17:34:11] *** Joins: Cameron_D (cameron@192.241.210.101)
+[17:34:11] *** Joins: klaxa (klaxa@Pony-ail.8pm.0.134.IP)
+[17:34:11] *** Joins: lucine (luc1ne@Pony-l2l.2dv.248.50.IP)
+[17:34:11] *** Joins: GigaWork (Gigabit@Bazinga)
+[17:34:11] *** cadance.canternet.org sets mode: +oo aji Kinsley
+[17:34:11] *** Joins: meteor (meteor@Pony-6i9.jlf.236.104.IP)
+[17:34:11] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[17:34:11] *** Joins: nscoots (FreyGrimrod@Pony-fgsej0.sub-70-192-1.myvzw.com)
+[17:34:11] *** Joins: misiek200m (miskof@mysterious.chocolate.muffin)
+[17:34:11] *** Joins: Lorix_ (Lorix_@flutter.shy.yay)
+[17:34:11] *** Joins: catnickfl (catnickfl@catnickfl.bronytv.net)
+[17:34:11] *** Joins: saneki (saneki@Pony-tni.g4k.31.96.IP)
+[17:34:11] *** Joins: Phase (Phase4@Pony-jeaii1.internode.on.net)
+[17:34:11] *** Joins: Starburn (eyeburn@secret.den.of.flaming.evil)
+[17:34:11] *** Joins: Jouva (jouva@Pony-535ork.fios.verizon.net)
+[17:34:32] *** Quits: derpy (derp@muffins) (Ping timeout: 121 seconds)
+[17:35:02] <Lapsus> There we go
+[17:35:46] <DJ-C0L7[EIT]> netsplit?
+[17:35:59] <Lapsus> just a little
+[17:36:12] <Lapsus> I think we were on the server that split off this time
+[17:36:15] *** Quits: Shutter (tips@sudoku.prevention.hotline) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: HoneyDrops (Honey@sweeter.than.honey) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: JustAberrant (JustAberran@Pony-lq4qe0.com) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: misiek200m (miskof@mysterious.chocolate.muffin) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Eclipse (rylai@Pony-71u6pe.so) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Lorix_ (Lorix_@flutter.shy.yay) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Unixkitty (uni@the.unicorn.cat) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: klaxa (klaxa@Pony-ail.8pm.0.134.IP) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Ola (ola@Pony-k5v.64a.226.188.IP) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: GeekBrony (GB@bronydom.net) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: meteor (meteor@Pony-6i9.jlf.236.104.IP) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: zz_CyberJacob (CyberJacob@Pony-dom.9o9.247.54.IP) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: nscoots (FreyGrimrod@Pony-fgsej0.sub-70-192-1.myvzw.com) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: LightningCrash (lightning@property.of.moonlightning) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Dusk (Dusk@dusky.horse) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Stik (drakon@Pony-ql55m5.cable.virginm.net) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: endoriazel (coprah@endoriazel) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: reiuiji (reiuiji@nuclear.raven) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Fusl (Fusl@1.0.0.127.in-addr.arpa.li) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: catnickfl (catnickfl@catnickfl.bronytv.net) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Kinsley (JKinsley@Bow.To.Your.Princess) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Phase (Phase4@Pony-jeaii1.internode.on.net) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Cameron_D (cameron@192.241.210.101) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: GigaWork (Gigabit@Bazinga) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: miggyb (miggyb@horsetornado.co.uk) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: aji (alex@ajitek.net) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: nightbot (vinylderpy@Pony-o0c.56l.50.70.IP) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: enginemaniac (flail@flail.flail.flail) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: SilverEagle (SilverEagle@SilverEagle.is.best.pony) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: lucine (luc1ne@Pony-l2l.2dv.248.50.IP) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Darki (DK@Pony-44f.v38.82.80.IP) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: saneki (saneki@Pony-tni.g4k.31.96.IP) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (discord.canternet.org cadance.canternet.org)
+[17:36:15] *** Quits: Sakura (Sakura@is.a.very.derpy.pony) (discord.canternet.org cadance.canternet.org)
+[17:36:23] <Lapsus> okay then
+[17:37:00] <LegionRed> Right.
+[17:37:19] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[17:37:19] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[17:37:19] *** Joins: zz_CyberJacob (CyberJacob@Pony-dom.9o9.247.54.IP)
+[17:37:19] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[17:37:19] *** Joins: aji (alex@ajitek.net)
+[17:37:19] *** Joins: Shutter (tips@sudoku.prevention.hotline)
+[17:37:19] *** Joins: HoneyDrops (Honey@sweeter.than.honey)
+[17:37:19] *** Joins: Dusk (Dusk@dusky.horse)
+[17:37:19] *** Joins: Kinsley (JKinsley@Bow.To.Your.Princess)
+[17:37:19] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[17:37:19] *** Joins: Sakura (Sakura@is.a.very.derpy.pony)
+[17:37:19] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[17:37:19] *** Joins: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se)
+[17:37:19] *** Joins: Darki (DK@Pony-44f.v38.82.80.IP)
+[17:37:19] *** Joins: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net)
+[17:37:19] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[17:37:19] *** Joins: Eclipse (rylai@Pony-71u6pe.so)
+[17:37:19] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[17:37:19] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:37:19] *** Joins: GeekBrony (GB@bronydom.net)
+[17:37:19] *** Joins: nightbot (vinylderpy@Pony-o0c.56l.50.70.IP)
+[17:37:19] *** Joins: enginemaniac (flail@flail.flail.flail)
+[17:37:19] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[17:37:19] *** Joins: Unixkitty (uni@the.unicorn.cat)
+[17:37:19] *** Joins: reiuiji (reiuiji@nuclear.raven)
+[17:37:19] *** Joins: Stik (drakon@Pony-ql55m5.cable.virginm.net)
+[17:37:19] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[17:37:19] *** Joins: SilverEagle (SilverEagle@SilverEagle.is.best.pony)
+[17:37:19] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[17:37:19] *** Joins: endoriazel (coprah@endoriazel)
+[17:37:19] *** Joins: Ola (ola@Pony-k5v.64a.226.188.IP)
+[17:37:19] *** Joins: miggyb (miggyb@horsetornado.co.uk)
+[17:37:19] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[17:37:19] *** Joins: Cameron_D (cameron@192.241.210.101)
+[17:37:19] *** Joins: klaxa (klaxa@Pony-ail.8pm.0.134.IP)
+[17:37:19] *** Joins: lucine (luc1ne@Pony-l2l.2dv.248.50.IP)
+[17:37:19] *** Joins: GigaWork (Gigabit@Bazinga)
+[17:37:19] *** Joins: meteor (meteor@Pony-6i9.jlf.236.104.IP)
+[17:37:19] *** cadance.canternet.org sets mode: +oo aji Kinsley
+[17:37:19] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[17:37:19] *** Joins: nscoots (FreyGrimrod@Pony-fgsej0.sub-70-192-1.myvzw.com)
+[17:37:19] *** Joins: misiek200m (miskof@mysterious.chocolate.muffin)
+[17:37:19] *** Joins: Lorix_ (Lorix_@flutter.shy.yay)
+[17:37:19] *** Joins: catnickfl (catnickfl@catnickfl.bronytv.net)
+[17:37:19] *** Joins: saneki (saneki@Pony-tni.g4k.31.96.IP)
+[17:37:19] *** Joins: Phase (Phase4@Pony-jeaii1.internode.on.net)
+[17:37:19] *** Joins: Starburn (eyeburn@secret.den.of.flaming.evil)
+[17:37:19] *** Joins: Jouva (jouva@Pony-535ork.fios.verizon.net)
+[17:59:17] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[18:05:45] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Quit: Leaving.)
+[18:08:17] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[18:08:42] <MangoBloom> ya
+[18:13:09] <Sour_Sweet> Since when does this channel use massive amounts of +v 6_9?
+[18:14:14] * HoneyDrops lost her + hat at some point :(
+[18:14:15] <Sour_Sweet> Also a very convenient timing for netsplits, smells fishy.
+[18:21:22] *** Quits: Tahlorz (rattle@Pony-04f8is.ph.cox.net) (Quit: )
+[18:27:37] *** Quits: nscoots (FreyGrimrod@Pony-fgsej0.sub-70-192-1.myvzw.com) (Connection closed)
+[18:27:39] *** Joins: nscoots (FreyGrimrod@Pony-fgsej0.sub-70-192-1.myvzw.com)
+[18:30:42] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[18:30:53] *** Kinsley sets mode: +vv Sour_Sweet HoneyDrops
+[18:33:58] *** Joins: Crimson_Tail (Bluepon@Pony-r2n2eh.cg80.k4gu.0151.2601.IP)
+[18:37:30] <DJ-C0L7[EIT]> its cold, its raining, and its blowing HARD out of the north
+[18:37:52] <DJ-C0L7[EIT]> so i cant get anything out of my truck because soon as i open the tailgate everything will get soaking freaking wet
+[18:39:39] <Lapsus> Sour_Sweet: I gave +v to everyone that was left after the first split :v
+[18:39:44] <Lapsus> we'll see how long it lasts
+[18:42:29] <init3> Derpy is best server. Get on my level ipv4 plebs. 
+[18:42:48] <init3> :p
+[18:42:57] <tiwake> whatever freenode server I'm connected to, it does not like staying online
+[18:43:49] <tiwake> not connected at the moment, and havent been for... uh
+[18:44:10] <tiwake> 12 hours
+[18:44:30] <init3> There was a notice at 6 that it was getting ddosed
+[18:44:58] <tiwake> not surprising
+[18:45:12] <init3> Why do irc networks get DDoSed so fucking much?
+[18:45:30] <HoneyDrops> Idle hands?
+[18:45:46] <tiwake> there is apple.com to DoS up though
+[18:45:54] <tiwake> or amazon or whatever
+[18:46:32] <init3> Well like most places I have worked don't allow irc servers on their networks because of the ddos risk.
+[18:47:12] <init3> I have been told they are a magnet for that shit.
+[18:47:39] <tiwake> freenode seems to be, I don't think any others
+[18:47:46] <tiwake> or as much for others
+[18:48:07] <init3> Well freenode is giant
+[18:48:14] <tiwake> I havent seen any against quakenet for example
+[18:48:33] <tiwake> is that the one thats bigger than freenode?
+[18:48:57] <init3> Canternet and ponychats have been hit a number of times, but that might just be bring hate
+[18:49:12] <init3> Fucking autocorrect
+[18:49:21] <init3> Brony hate
+[18:49:47] <tiwake> yeah, quakenet is larger than freenode
+[18:50:05] <init3> I didn't realize that
+[18:50:37] <tiwake> there are one or two larger networks than freenode
+[18:50:46] <tiwake> quakenet is larger because its game focused
+[18:50:56] <tiwake> never been channel surfing though
+[18:51:12] <tiwake> freenode and canternet I channel surf :)
+[18:51:29] <init3> Freenode just seems to have most of the cool tech channels.
+[18:51:41] <tiwake> yeah, its more useful by far
+[18:51:49] <tiwake> <3
+[18:54:47] <AppleDash> Lapsus: Where's my +o
+[19:03:53] <Lapsus> oappledash
+[19:12:40] <AppleDash> :(
+[19:13:54] *** Quits: Eventide (uid61788@Tips.Fedora) (Ping timeout: 121 seconds)
+[19:16:20] <Lapsus> OppleDosh
+[19:40:02] *** Quits: Crimson_Tail (Bluepon@Pony-r2n2eh.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[19:40:29] *** Joins: Pony_80871 (Spaghetti@Pony-632c6f.nb.bellaliant.net)
+[19:42:37] *** Pony_80871 is now known as Dustrunner
+[19:47:59] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (The TLS connection was non-properly terminated.)
+[19:51:11] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[20:13:17] * Sour_Sweet is not happy with Lapsus IPv6 discrimination either.
+[20:13:38] <Sour_Sweet> Derpy is best IRC host pony.
+[20:14:42] <Sour_Sweet> Wait since when do I have +v? :P
+[20:15:02] <Sour_Sweet> Ahh I see
+[20:15:14] <DJ-C0L7[EIT]> i figured out my wig-wag circuit O_O now to figure out my push-pull audio amp for my PA
+[20:16:35] <Moonlightning> [09:39:39] <+Lapsus> Sour_Sweet: I gave +v to everyone that was left after the first split :v
+[20:16:35] <Moonlightning> [09:39:44] <+Lapsus> we'll see how long it lasts
+[20:16:59] <Lapsus> ipv6 discrimination? :v
+[20:17:38] *** Kinsley is now known as Kinsley|Glorious
+[20:18:08] <Sour_Sweet> Becuz Derpy's people were the ones not getting +v due to the netsplit
+[20:19:39] <Sour_Sweet> Moonlightning: Yeah but it was given to me after that hehe
+[20:20:06] *** Joins: Eventide (uid61788@Tips.Fedora)
+[20:20:35] <Sour_Sweet> And it didn't see that the first time because there was no notification
+[20:39:06] <Colgate> Sour_Sweet: there was a targetted ddos on cadance, that was the cause of those splits
+[20:41:46] <Sour_Sweet> I already assumed it being a ddos. As I said earlier the timing was way too convenient. That nonsense makes me angry.
+[20:42:13] <Lapsus> ?
+[20:42:39] <Colgate> it's the internet, these tihngs happen
+[20:48:40] * wolfyshy barks quietly, having voice now!
+[20:48:44] <wolfyshy> woof ^.^
+[20:55:00] *** Joins: Crimson_Tail (Bluepon@Pony-hqkdfv.cg80.k4gu.0151.2601.IP)
+[20:56:30] *** GigaWork is now known as Gigabit
+[21:08:31] *** Joins: Melanosuchus (quassel@Pony-ung9uv.as13285.net)
+[21:12:29] *** Gigabit is now known as GigaTown
+[21:17:39] *** Quits: Crimson_Tail (Bluepon@Pony-hqkdfv.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[21:27:23] *** Joins: Crimson_Tail (Bluepon@Pony-mn90im.cg80.k4gu.0151.2601.IP)
+[21:41:08] <Sakura> Damn kiddies attacking the servers because we have a finale. :(
+[21:43:16] *** Joins: Asoka_White (Asoka@Pony-fm54us.net-htp.de)
+[21:45:36] *** Quits: Asoka (Asoka@Pony-3473iv.net-htp.de) (Ping timeout: 121 seconds)
+[21:46:37] <Lapsus> http://imgur.com/gallery/fukAZ
+[21:46:37] <PinkiePieBot> [ full list of winter life hacks - Album on Imgur ]
+[21:50:02] <DJ-C0L7[EIT]> o_o i cant find anything on this IC
+[21:50:59] <DJ-C0L7[EIT]> 04813621AB N3C9R0   03  HS03352
+[22:20:29] *** Quits: Crimson_Tail (Bluepon@Pony-mn90im.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[22:31:54] *** Joins: Crimson_Tail (Bluepon@Pony-bdvq4d.cg80.k4gu.0151.2601.IP)
+[22:55:16] *** Joins: Asoka (Asoka@Pony-nnd32n.net-htp.de)
+[22:57:42] *** Quits: Asoka_White (Asoka@Pony-fm54us.net-htp.de) (Ping timeout: 121 seconds)
+[23:18:07] *** Joins: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au)
+[23:18:19] *** Quits: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au) (Connection closed)

@@ -1,0 +1,700 @@
+[00:04:46] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:06:56] *** Joins: Fallfeathers (Fallfeather@Pony-vandmf.bigpond.net.au)
+[00:10:57] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:11:45] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[00:19:43] *** Gigabit is now known as GigaTown
+[00:20:55] *** CyberJacob is now known as zz_CyberJacob
+[00:41:48] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:42:27] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[00:50:05] *** Joins: Anaxagoras (quaLity@Pony-krd.fql.193.130.IP)
+[00:52:03] *** Quits: Anaxagoras (quaLity@Pony-krd.fql.193.130.IP) (Quit: ��< S O H B E T >�� www.Sohbet.Net <http://www.Sohbet.Net>)
+[00:59:11] *** Quits: Seoson (Seoson@pony.kab-s.de) (Ping timeout: 121 seconds)
+[01:05:14] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[01:17:49] *** Joins: Sombra (Iceman@Darkhorse21)
+[01:25:24] *** GigaTown is now known as Gigabit
+[01:29:07] <Gigabit> since when do laptops have propitiatory connects for opitcal drives?
+[01:33:24] <Gigabit> Also, if you can figure this out, congrats :P  http://c.wrzuta.pl/wi17346/9737987b00219e614fcf47f6
+[01:34:01] <Seoson> Gigabit: I'm quite sure my old Dell did. You could swap the optical drive for a battery. If you meant internal connectors, than I dunno
+[01:34:34] <Gigabit> every laptop I have owned, I could take the optical out and the connectors where sata
+[01:34:37] <Sombra> The idea of optical drives seems so cool.
+[01:34:46] <Moonlightning> laserdiscs :p
+[01:35:14] <Colgate> indeed, my uh, 2nd laptop had a dual battery slot that could be either a battery, cd drive, or floppy drive
+[01:35:15] <Moonlightning> /laserdisc/ sounds so much cooler than /CD/ ..>
+[01:35:22] <Moonlightning> >.> *
+[01:35:30] <Moonlightning> fuckkin' missed opportunity gaise
+[01:36:10] <Moonlightning> And they are. They're discs that are read and written (sometimes) with lasers. What the hell else is a /laserdisc/ gonna be :p
+[01:36:37] <Seoson> Actually thinking about it I don't think the laptop of a friend I took apart had a standard SATA connector for the drive. It was some flatband cable.
+[01:37:11] <Seoson> (which probably is only a different layout for SATA)
+[01:40:08] <Moonlightning> just to fuck with people? 9.9
+[01:40:10] <Divide|TechSupport> What brain donor decided to tell this customer of mine that the IP address for their gateway was 192.168.0.0/23?  I want to end them.
+[01:40:33] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[01:40:47] <Moonlightning> /gateway/ as in…?
+[01:41:02] <Divide|TechSupport> Modem/router.
+[01:41:11] <Divide|TechSupport> Which had an IP address of 192.168.0.1 by default.
+[01:41:36] <Divide|TechSupport> /24, while we're at it.
+[01:41:48] <Moonlightning> Seriously? Wow.
+[01:42:31] <Divide|TechSupport> In what universe is 192.168.0.0 a valid IP?  I mean, come /on./
+[01:42:54] <Colgate> looks like a valid IP to me :P
+[01:43:03] <Moonlightning> Well, it is in v6; it's just reserved
+[01:43:32] * Moonlightning made the mistake of assigning the all-zero-bits-host-portion address to his netbox.
+[01:43:34] <Divide|TechSupport> It's valid, but as Moonlightning said, it's reserved under various different items.
+[01:43:37] <Colgate> I would contest any value between 0-255.255.255.255 is a valid IP ;)
+[01:43:45] <Divide|TechSupport> Hush, you.  :P
+[01:43:50] <Moonlightning> If you do that, you won't notice it unless you try to add another router @.@
+[01:43:55] <Moonlightning> or so I'm told
+[01:43:58] <Moonlightning> that makes sense though
+[01:44:32] <Colgate> I've done some awful things with networking to get more IPs :)
+[01:45:14] <Colgate> I was assigned a /30, so I used the broadcast address as unicast :D
+[01:46:30] <jaderain> Don't forget IPv6!
+[01:47:54] <Colgate> I can't set rdns on my ipv6, makes it a bit limiting :(
+[01:48:17] <Seoson> Using either .0 or .255 can lead to problems, since awful network devices eventually filter .255 at least
+[01:48:52] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:48:53] <jaderain> That sucks :(
+[01:49:07] <Seoson> I had a friend that got an .255 from his host for a VPS and he needed to request a new IP because clients were unable to connect
+[01:49:24] <jaderain> Anyway, just don't use the network and broadcast IPs and just treat them as /32s and add the static routes :D
+[01:50:05] <jaderain> That's what Rylee and I do on our routing VM on ESXi with OVH to avoid losing addresses
+[01:50:18] <Rylee> lol
+[01:50:19] <Moonlightning> It's /easier/ to do RDNS with v6
+[01:50:28] <Moonlightning> you can just delegate the zone for whatever block your customers have to them
+[01:50:36] <Moonlightning> you /should/
+[01:51:01] <Colgate> I should do that, but it is already setup this way
+[01:51:02] <Colgate> >.>
+[01:51:04] <Moonlightning> …okay, maybe not, since a lot of people seem to like managed RDNS
+[01:51:20] <jaderain> I would prefer it honestly
+[01:51:21] <Moonlightning> But you should have a button somewhere easily accessible that does the delegation.
+[01:51:22] <jaderain> but that's just me
+[01:51:23] <Colgate> managed rdns?
+[01:51:35] <Moonlightning> Where someone else does the DNS stuff for you.
+[01:51:37] <Moonlightning> Iunno.
+[01:51:47] <Colgate> eh, running my own dns is inconvenient :P
+[01:51:55] <Moonlightning> I like maintaining zonefiles myself, by hoof.
+[01:52:10] <jaderain> Sure, but you could just as easily pick up Route 53 for pennies on the dollar
+[01:52:18] <Moonlightning> speaking of, /still/ need to find a way to get BIND to quit clobbering my zonefile
+[01:52:21] <jaderain> And just make the NS/SOA entries point there
+[01:52:25] <Moonlightning> wat
+[01:52:26] <Colgate> and I really don't want to handle that stuff, I can do it, I have done, but it's just annoying
+[01:52:27] <jaderain> Moonlightning: What's it doing?
+[01:52:37] <Moonlightning> jaderain: well, I tried to configure DNSSEC… :p
+[01:52:49] <Moonlightning> So every hour or so, it rewrites it and makes it all messy. :(
+[01:52:55] <Moonlightning> with a bunch of DNSSEC stuff
+[01:53:00] * Moonlightning doesn't see why that needs to be written to disk.
+[01:53:13] <Seoson> It's not entirely bad that inexperienced users don't run their own NS. There are quite a few pitfalls
+[01:53:26] <Moonlightning> Ideally, it would /also/ follow the serial-number convention, but that's not as big a deal
+[01:53:40] <Rylee> 18:51:55    Moonlightning │ I like maintaining zonefiles myself, by hoof.
+[01:53:41] <Rylee> how awful
+[01:53:47] <jaderain> Ah, so what I do, is I make the last 2 entries in the file the DNSSEC entries for my zone,
+[01:53:49] <Seoson> I don't run any public NS/DNS server myself. Only for a local network
+[01:53:51] <jaderain> As an example:
+[01:53:53] <jaderain> ; DNSSEC Keys
+[01:53:53] <jaderain> $INCLUDE Kjkaufman.me.+007+09422.key
+[01:53:53] <jaderain> $INCLUDE Kjkaufman.me.+007+23628.key
+[01:53:53] <Rylee> that sounds like pretty much the worst thing ever
+[01:54:09] <Colgate> Seoson: same
+[01:54:11] <jaderain> And then I just have a script that's cron'd daily to resign to discourage zonewalking
+[01:54:21] <Moonlightning> Rylee: I haven't found a web panel thingy that doesn't feel ridiculously limiting.
+[01:54:28] <Rylee> who would ever want to maintain their own bind instance
+[01:54:32] <Moonlightning> I prefer the freedom and syntax highlighting of vim c:
+[01:54:33] <jaderain> Basically, increment the serial, and then do /usr/sbin/dnssec-signzone
+[01:54:40] <jaderain> with the proper arguments
+[01:54:40] <Rylee> why use vim
+[01:54:42] <Rylee> it sucks
+[01:54:42] <jaderain> and that works really well
+[01:54:45] <Rylee> have you tried Atom?
+[01:54:56] <Moonlightning> Oh, you're joking. >.>
+[01:55:03] <Rylee> vim is awful
+[01:55:05] <Rylee> why would you ever use it
+[01:55:14] <Rylee> it's 2015, we can afford to use a real editor now
+[01:55:15] <Moonlightning> jaderain: yeahhhh…see, I set the option to have bind resign automatically.
+[01:55:47] <jaderain> ah, so yeah, you're discovering that rndc and the built in bind utilities are shit
+[01:55:59] <jaderain> i can't help you with that
+[01:56:00] <jaderain> xD
+[01:56:14] <Seoson> I'm currently using Cloudflares NS server and I'm very happy. DNSSEC, an API, TTLs as low as I want (default is 5 min), anycast ...
+[01:56:24] <Moonlightning> jaderain: think I should script it myself? :P
+[01:56:33] <jaderain> https://github.com/akaritakai/linux-configs/blob/master/bind/zonesigner.sh
+[01:56:33] <PinkiePieBot> [ linux-configs/zonesigner.sh at master · akaritakai/linux-configs · GitHub ]
+[01:56:36] <jaderain> That's what I do personally
+[01:56:41] * Moonlightning nods.
+[01:56:44] <Moonlightning> I'll take a look at it later.
+[01:57:16] <Seoson> Their API rate limit is 5000 requests per hour iirc. I could run a DNSBL from that ;-)
+[01:57:24] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[01:58:00] * Moonlightning begins complaining about the lack of ANAME again.
+[01:58:07] <jaderain> but i've had a good experience with Route 53 and Google's Hosted DNS
+[01:58:22] <Seoson> And they're actually reasonable and allow you to download and upload zonefiles
+[01:58:37] <Colgate> I've been using HE for a while, does just about everything I've cared about besides dnssec
+[01:58:42] * Googie likes a lot of vim. Though the core of the editor itself has issues
+[01:58:42] <Moonlightning> Seoson: see…I don't want to have to copypaste the zonefile into a website. :P
+[01:59:00] <Googie> neovim and Emac's Evil Mode are both options though
+[01:59:03] <Seoson> Moonlightning: file upload and API
+[01:59:17] <Moonlightning> Seoson: with more scripts and a cronjob? Messy.
+[01:59:31] <Moonlightning> Updating the file and reloading bind to make a change is nice and clean.
+[02:00:21] * Moonlightning is still looking for somepony to mutually host slave nameservers with, though. x.x
+[02:00:36] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[02:00:44] <Moonlightning> That's the problem, I only have one (permanent) server. You're s'posed to have at least two.
+[02:00:45] <Seoson> I may try to run a public NS in the future, since we consider streaming service bans using a custom DNSBL
+[02:01:04] * Moonlightning has two NS records; ns1 and dns1. Both point to the same IP.
+[02:01:26] <Moonlightning> Mmm, mine isn't a public nameserver.
+[02:01:48] <jaderain> Yeah
+[02:01:54] <jaderain> ANd they're supposed to be on different subnets/servers too
+[02:02:07] <Moonlightning> Well, that goes without saying
+[02:02:10] <Seoson> Moonlightning: There are services that will host the 2nd for you - even free
+[02:02:26] <Seoson> jaderain: It's not enforced though
+[02:02:40] <Moonlightning> Aren't they supposed to be on like different continents or something, too?
+[02:02:48] <Moonlightning> Seoson: Iunno…the ones I checked out seemed pretty sketch.
+[02:02:52] <HoneyDrops> vim's ui-model is ideal, however vimscript is pretty sucky
+[02:02:54] <Moonlightning> 'd rather have somepony from here do it :P
+[02:03:08] * Moonlightning has never gotten into vimscript. It seems pretty daunting. @.@
+[02:03:17] <Rylee> just use atom
+[02:03:20] <Rylee> then you could use Javascript
+[02:03:22] <Rylee> easy language
+[02:03:50] <Moonlightning> function truncate_to_int(num) { return ~~num; }  // best language
+[02:05:14] <Seoson> I'd host it, but as I said I have almost zero experience with bind as of now
+[02:05:25] <HoneyDrops> I'd rather use perl, or even python.
+[02:05:48] <HoneyDrops> LISP is good too, but then you'd just as well use emacs
+[02:06:19] <Moonlightning> in general, what does it matter what editor you use to write in a particular language?
+[02:06:44] <Moonlightning> Seoson: hit me up if ever that changes x3
+[02:06:52] <Rylee> okay this is boring i'm done shitposting https://github.com/skyhighwings/dotfiles/blob/master/vimrc
+[02:06:53] <PinkiePieBot> [ dotfiles/vimrc at master · skyhighwings/dotfiles · GitHub ]
+[02:07:04] <Seoson> You could always use windows notpad and get your editor crashed :D
+[02:07:15] <Moonlightning> Can't. No copies of Windows here.
+[02:07:33] <Moonlightning> …except those two ones that I still have yet to hunt down and destroy
+[02:07:37] <Seoson> There are plenty of bad choices. I like nano, some folks here really don't
+[02:07:48] <Moonlightning> I can't use nano anymore.
+[02:07:53] <Moonlightning> vim has spoiled me to nano
+[02:08:10] <Seoson> It might be the simple fact that the first 'nix editor I used was nano
+[02:09:16] <HoneyDrops> nano is fine, I'll use it in a pinch.
+[02:11:52] <Seoson> If I had to use vim because nano is not installed I think I'd even need to look up how to save a file :P
+[02:14:43] <Duck> yes hi
+[02:14:49] <Duck> if i had to use vim because nano wasn't installed
+[02:14:52] <Duck> i would install nano
+[02:15:03] *** Joins: Asoka (Asoka@Pony-isu1p5.net-htp.de)
+[02:15:08] <Seoson> *g*
+[02:17:21] <HoneyDrops> I used nano for a while, but being able to yank/del more than just one line was pretty compelling to push me to vim.
+[02:17:28] <Googie> HoneyDrops: Hence why neovim is interesting. Having a proper scripting language instead of Vimscript
+[02:17:32] *** Quits: Asoka_White (Asoka@Pony-pael1i.net-htp.de) (Ping timeout: 121 seconds)
+[02:17:52] <Googie> They actually just pushed their first formal "release"
+[02:19:45] <HoneyDrops> I'll take a look, though "Built-in terminal emulator" makes me very worried
+[02:20:23] <Seoson> I had a problem once where I could not use nano for crontab. That was a pain
+[02:21:03] <HoneyDrops> Also XDG is a minus.
+[02:25:27] <HoneyDrops> good to see it dropped gvim, so that's a plus
+[02:32:35] <Seoson> I'm asking a silly (and complicated) question on ServerFault, now I'm answering questions because I feel the need to pay it back. The sillyness of those questions make me feel good and less dumb :D
+[02:35:01] <Googie> HoneyDrops: Out of curiosity, have you ever tried Emacs with Evil Mode ?
+[02:35:34] <HoneyDrops> Briefly, but my lisp isn't up to snuff for serious emacs use.
+[02:35:55] * Googie nods.
+[02:36:14] <Googie> I was thinking your lisp would be better than mine for that :P
+[02:36:25] <Googie> I really need to learn a lisp at some point
+[02:46:18] *** Seoson is now known as Seoson|BNC
+[03:18:49] *** Rylee is now known as Eclipse
+[03:41:38] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[03:45:06] *** Joins: mniip (mniip@Pony-o9q.v2g.219.178.IP)
+[03:45:48] <mniip> interesting
+[03:59:16] *** Joins: Sombra (Iceman@Darkhorse21)
+[04:00:34] <Divide|TechSupport> Oh gods.
+[04:00:50] <Divide|TechSupport> One of my coworkers just got hit by that worst of all situations - a computer which died while they were working on it.
+[04:01:06] <mniip> happens to me regularly
+[04:07:12] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[04:09:54] *** Joins: TuxRug (TuxRug@TuxRug)
+[04:32:28] *** Quits: Crimson_Tail (Bluepon@Pony-36lq20.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[04:37:30] *** Divide|TechSupport is now known as Divide
+[04:48:38] *** Divide is now known as Divide|Blank
+[05:17:20] *** Divide|Blank is now known as Divide
+[05:45:41] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[05:58:42] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[06:03:32] *** Quits: Divide (NA@Pony-vf5hfh.cable.rogers.com) (Connection closed)
+[06:03:38] *** Joins: Divide (NA@Pony-vf5hfh.cable.rogers.com)
+[06:10:00] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:18:50] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[06:19:48] *** Gigabit is now known as Snoarin
+[06:34:07] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[06:49:02] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Quit: Leaving)
+[06:58:07] *** Quits: Divide (NA@Pony-vf5hfh.cable.rogers.com) (Ping timeout: 121 seconds)
+[06:59:59] *** RedHelper is now known as Creeps|AFK
+[07:02:06] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[07:11:04] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[07:14:21] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:25:21] *** Quits: TuxRug (TuxRug@TuxRug) (Connection closed)
+[07:28:34] *** Eventide is now known as Eventide|Sleepies
+[07:30:33] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[07:32:22] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[07:36:59] *** Quits: enginemaniac (flail@flail.flail.flail) (Quit: No Ping reply in 300 seconds.)
+[07:38:42] *** Joins: enginemaniac (flail@flail.flail.flail)
+[08:02:45] *** Ruthalas is now known as Ruthalasleep
+[08:14:12] *** zz_CyberJacob is now known as CyberJacob
+[08:31:46] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[08:41:57] *** Kyoro is now known as Pocky
+[08:55:20] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[08:57:09] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:58:23] *** locodash11[lagout] is now known as locodashie11
+[08:58:45] *** Joins: Sombra (Iceman@Darkhorse21)
+[09:11:24] *** CyberJacob is now known as zz_CyberJacob
+[09:14:24] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "night everypony")
+[09:28:42] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:53:26] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Connection closed)
+[10:14:04] *** Joins: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[10:15:49] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Connection closed)
+[10:16:08] *** Joins: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile)
+[10:17:01] *** Quits: Ruthalasleep (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Ping timeout: 121 seconds)
+[10:17:58] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Connection closed)
+[10:18:11] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[10:20:06] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[10:21:01] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[10:24:32] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[10:25:22] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[10:29:43] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Connection closed)
+[10:30:07] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[10:46:08] <Moonlightning> Hmmmmm…
+[10:46:28] <Moonlightning> Is there way to edit a file that's actively being appended to in vim, so that the new changes show up as they happen? >.>
+[11:13:08] <AppleDash> Moonlightning: no
+[11:18:21] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[11:47:46] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[12:07:58] <johnsey> Moonlightning:  http://bfy.tw/2cSy
+[12:07:59] <PinkiePieBot> [ Let me google that for you ]
+[12:19:50] *** Quits: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Quit:  HydraIRC -> http://www.hydrairc.com <- Chicks dig it)
+[12:27:33] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[12:28:51] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[12:44:47] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[13:00:34] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[13:37:19] <Moonlightning> [#idlerpg 01:06:03] <~IdleRPG> The light of Celestia shines down upon ISky! ISky has found the level 305 Luna's Cluehammer of Doom! ISky's enemies are left with a sudden and intense clarity of mind... even as they relieve them of it.
+[13:56:21] *** Joins: Crimson_Tail (Bluepon@Pony-36mhlg.cg80.k4gu.0151.2601.IP)
+[13:59:03] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[14:43:07] *** Snoarin is now known as Gigabit
+[14:49:30] *** Seoson|BNC is now known as Seoson
+[15:05:46] *** Quits: Fallfeathers (Fallfeather@Pony-vandmf.bigpond.net.au) (Connection closed)
+[15:09:01] *** Quits: mniip (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 121 seconds)
+[15:13:24] *** Quits: roflin (dennis@Pony-aend1d.es) (Ping timeout: 121 seconds)
+[15:14:09] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[15:18:47] <Seoson> Moonlightning: Is you primary NS setup already?
+[15:20:18] <Moonlightning> Seoson: Yeah?
+[15:20:25] <Moonlightning> www.blackl.net.
+[15:20:28] <Moonlightning> …FUCK
+[15:20:32] <Moonlightning> blackl.net. *
+[15:20:41] <Moonlightning> about the one time I DON'T want that subdomain :/
+[15:20:47] <Moonlightning> and I type it out of habit
+[15:20:57] <Seoson> I'm setting up bind right now
+[15:21:00] <Moonlightning> :D
+[15:21:02] <Seoson> ns.kab-s.de
+[15:21:59] <Moonlightning> zone kab-s.de.?
+[15:23:30] <Seoson> The nameserver is listening on ns.kab-s.de (maybe not yet :P)
+[15:23:51] <Seoson> The zonefile is the one of your domain. I don't host anything other on it yet
+[15:24:15] <Seoson> Therefor I need the name of the domain and the hostname of the primary NS
+[15:24:41] * Moonlightning headtilts.
+[15:25:07] <Moonlightning> Wait, I thought I was setting my bind instance up to be a slave for your domain
+[15:26:00] <Seoson> Could work as well, but is that the normal way to transfer zones from 2nd to first?
+[15:26:25] <Seoson> I haWait what
+[15:26:41] <Seoson> Didn't you say you need a secondary?
+[15:26:48] <Moonlightning> I do. I thought it was going to be mutual.
+[15:27:03] <Seoson> I'm still using Cloudflare for the time being
+[15:27:32] <Seoson> Sine it's setup quite nicely with DNSSEC and all
+[15:28:07] <Moonlightning> Fair enough.
+[15:29:18] <Seoson> Master is NS1.BLACKL.NET ?
+[15:29:37] <Moonlightning> sugar-belle.blackl.net.
+[15:30:03] <Seoson> O_o Domaintools told me something different
+[15:30:03] <Moonlightning> ns1 and dns1 only exist due to requirements I got from my registrar
+[15:30:10] <Seoson> Ah
+[15:30:13] <Moonlightning> ns1 is an alias for sugar-belle
+[15:30:23] *** Joins: roflin (dennis@Pony-aend1d.es)
+[15:30:53] <Moonlightning> Things needing to refer to Sugar Belle should refer to sugar-belle :P
+[15:32:54] <Moonlightning> Hmm, bind allows zone transfers to everyone by default
+[15:35:17] <Moonlightning> How's it going?
+[15:35:38] <Seoson> Seems to work check it yourself
+[15:39:56] <Seoson> That was actually way less painful than I imagined it would be
+[15:40:26] <Seoson> Sadly bind doesn't like to use a hostname for the master
+[15:41:30] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[15:43:03] <Moonlightning> No?
+[15:43:12] <Moonlightning> Well, use her IP then
+[15:43:36] <Moonlightning> Uh, looks like it works
+[15:46:12] <Pocky> hey pones
+[15:46:48] <Moonlightning> All the things are there
+[15:46:56] *** Eventide|Sleepies is now known as Eventide
+[15:47:08] <Moonlightning> So…how do I do this
+[15:47:36] <Moonlightning> …oh, another CNAME, just fully-qualified
+[15:47:49] <Moonlightning> When do you ever use PTRs aside from RDNS?
+[15:51:40] <Seoson> I just looked around and it looks like DNS-SD is a thing
+[15:52:07] <Moonlightning> Hmm?
+[15:52:48] <Seoson> https://tools.ietf.org/html/rfc6763
+[15:52:51] <PinkiePieBot> [ RFC 6763 - DNS-Based Service Discovery ]
+[15:56:50] <Seoson> Printers are a common use case and Apple uses it.
+[15:58:23] <Seoson> I always thought they use a broadcast, silly me
+[16:01:08] <Moonlightning> Grrrr
+[16:03:20] <Moonlightning> Who do I talk to to get glue records added x.x
+[16:05:21] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[16:07:51] *** \m is now known as mniip
+[16:21:56] <Seoson> Moonlightning: Your registrar
+[16:22:28] <Seoson> e.g. Namecheap
+[16:26:04] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[16:50:29] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:21:51] <Seoson> My test DNSBL works now as well - yay
+[17:28:42] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:35:03] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:42:39] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:59:29] <Seoson> My uncle managed to break TWO sata cables. I gave him my spares and don't have any left now. How does one manage to break two of those things? -.-
+[18:13:32] <Sakura> Your uncle has a special talent then.
+[18:17:29] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[18:22:11] *** Quits: sniperfox (sniperfox@Pony-qih.5g9.114.167.IP) (Ping timeout: 121 seconds)
+[18:22:47] *** Creeps|AFK is now known as RedHelper
+[18:22:53] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[18:22:57] *** Joins: Skids (ejd@Pony-fej07d.res.rr.com)
+[18:23:04] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[18:27:19] *** Joins: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se)
+[18:29:03] <AppleDash> Seoson: Those things are rated for like 20 insertions
+[18:29:18] <mniip> wat
+[18:31:29] <HoneyDrops> That sounds like a very horrible "that's what she said" :x
+[18:32:11] <mniip> no
+[18:32:24] <mniip> I am genuinely surprised about the expected undurability of sata cables
+[18:32:40] <mniip> I've never seen a sata cable break
+[18:33:40] <AppleDash> mniip: http://www.wdc.com/en/products/resources/drivecompatibility/
+[18:33:41] <PinkiePieBot> [ WD Interface Guide ]
+[18:33:43] <AppleDash> ctrl-f for "cycles"
+[18:37:03] <Seoson> I never broke one either
+[18:43:13] <johnsey> great, the linux decompressor makes sure it doesn't overwrite itself when relocating but it doesn't check that for the location of the dtb -.-
+[18:44:29] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[18:55:23] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[18:57:40] *** Gladiolus is now known as Vinyl-Scratch
+[19:04:07] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[19:24:22] *** Vinyl-Scratch is now known as Gladiolus
+[19:30:48] <mniip> in other news
+[19:30:58] <mniip> I accidentally collected 3 million dogecoin
+[19:31:14] <Gladiolus> cool
+[19:31:17] <mniip> $450 in meme money
+[19:31:21] <Gladiolus> sell them for cosbycoin
+[19:31:33] <Gladiolus> also shit cosbycoin is horrible now i just realized
+[19:31:37] <Gladiolus> i hadn't thought much about it in years
+[19:31:48] <Gladiolus> but since it became a thing the whole 'cosby is a rapist' crap broke
+[19:33:28] <mniip> hmm
+[19:33:50] <mniip> let's check my bitcoin wallet
+[19:34:00] <mniip> only 0.52
+[19:34:14] <mniip> that's $240
+[19:34:20] <mniip> wait what
+[19:34:46] <mniip> that can't be $240
+[19:34:53] <mniip> :O
+[19:35:00] <mniip> BTC/USD is in 400-ies
+[19:36:15] <mniip> I should look more into the current price situation
+[19:46:31] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[19:47:32] <mniip> whooooa
+[19:47:36] <mniip> the chinese are at it again
+[19:48:01] <mniip> I'm seeing some gossip about BTC being pumped until $1500
+[19:48:33] <Seoson> Question for you: Both of my RAID1 drives appear to have errors. Can I fix each of them individually with fsck in rescue mode?
+[19:48:48] <Seoson> (SW RAID)
+[19:50:46] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:54:16] <Seoson> Never mind found my answer ;-)
+[19:55:12] * JustAberrant tosses one sock towards mniip for sock purposes
+[19:56:05] * mniip connects to the sock
+[19:56:37] * JustAberrant re-implements to use asynchronous io
+[19:56:55] * mniip adds more threads to synchronise asyncio
+[19:56:55] <JustAberrant> random: what ever happened to your episode mirror? :(
+[19:57:01] <mniip> I uh
+[19:57:03] <mniip> uhhh
+[19:57:10] <mniip> dropped out of the community for a while
+[19:57:19] <mniip> life issues n shit
+[19:57:27] <JustAberrant> ah, fair enough :(
+[19:57:55] <mniip> I started uni this year, so my free time is approaching zero :v
+[19:58:36] * JustAberrant nods
+[19:58:49] <JustAberrant> that'll happen ;p
+[19:59:09] <mniip> I should restock the mirror sometime
+[19:59:27] <mniip> you got some 1080p H.264ey AACies?
+[20:00:02] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[20:00:22] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[20:00:37] * JustAberrant does not
+[20:00:56] <JustAberrant> I've actually fallen painfully behind .. like 7 episodes behind
+[20:02:55] *** Quits: Seoson (Seoson@pony.kab-s.de) (Quit: Server shutdown ...)
+[20:07:21] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Ping timeout: 121 seconds)
+[20:19:59] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[20:31:46] <Gigabit> USPS.. I hate you. 3 days for a package to travel 200 miles
+[20:32:09] <mniip> sigh
+[20:32:11] <Gigabit> http://prntscr.com/8z1rw3
+[20:32:15] <mniip> cryptsy locked me out of my account
+[20:32:22] <mniip> I wanted to buy $450 worth of btc :(
+[20:35:38] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[20:35:48] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[20:41:32] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[20:42:45] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[20:43:09] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[20:58:40] <Seoson> KVM over IP devices are ridiculously expensive
+[21:16:03] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:32:45] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[21:51:20] <AppleDash> JustAberrant: :<
+[21:54:33] <Moonlightning> mniip: gotta love those services
+[21:54:36] <Moonlightning> name and shame time?
+[21:54:43] <mniip> hmm?
+[21:56:39] <mniip> Moonlightning, hmm?
+[21:57:31] <Moonlightning> [11:32:15] < mniip> cryptsy locked me out of my account
+[21:57:31] <Moonlightning> [11:32:22] < mniip> I wanted to buy $450 worth of btc :(
+[21:59:41] *** Quits: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se) (Quit: Leaving.)
+[22:00:05] <mniip> cryptsy is the exchange name
+[22:00:07] <mniip> but
+[22:00:11] <mniip> everyone already knows they suck
+[22:00:12] <mniip> and
+[22:00:15] <mniip> everyone keeps using it
+[22:00:22] <mniip> because it's the only one with a large enough user base
+[22:01:06] <mniip> look at those fucking sell/buywalls http://i.imgur.com/34rlM91.png
+[22:01:17] <Moonlightning> Seoson: okay, so either I'm doing this wrong, or I need a label immediately under my domain for your nameserver.
+[22:01:40] <Moonlightning> mniip: wat
+[22:04:17] <Seoson> ?! Useally you don't. I serve records using the server now myself on dnsbl.kab-s.de . My domain itself still uses Cloudflare's DNS which is of cause outisde of my domain
+[22:04:45] *** Quits: Compu (compu@snuggly.filly) (Ping timeout: 121 seconds)
+[22:05:21] <Seoson> I would just need to set the NS servers in my registrars control panel and if under the same zone glue records
+[22:05:42] <Moonlightning> This UI is really weird :/
+[22:05:57] <Moonlightning> Uh…okay, I /guess/ this is working.
+[22:05:59] <Seoson> e.g. for the domain kab-s.de I'd use the NS ns.kab-s.de. SInce ns.kab-s.de is in the zone kab-s.de I need to set a glue record
+[22:06:23] <Moonlightning> …oh, that's right, /I/ don't need glue records for /your/ stuff
+[22:06:25] <Moonlightning> derp
+[22:06:47] * Seoson pet pets Moonlightning
+[22:07:07] *** Joins: Compu (compu@snuggly.filly)
+[22:08:25] <Moonlightning> There. :V
+[22:08:31] <Moonlightning> > DNS server change was successful, plus that the changes would take up to 48 hours.
+[22:08:35] <Moonlightning> the English -.-
+[22:09:11] <Seoson> What's you registrar again? :D
+[22:09:25] <mniip> this feels like a "nosmorking in arabic"
+[22:09:37] <mniip> "nosmoking in arabic"*
+[22:09:46] *** Starburn is now known as eyeburn
+[22:10:21] <Moonlightning> Namecheap.
+[22:10:29] <Moonlightning> I think I'm gonna jump ship. They don't do DNSSEC, either.
+[22:10:37] <Seoson> They do
+[22:10:51] <Moonlightning> They don't do AAAA glue records :V
+[22:10:53] <Seoson> You need to ask them via ticket. One of my domains is at NC
+[22:10:57] <Moonlightning> I just tried; it rejected as invalid.
+[22:11:01] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (A TLS packet with unexpected length was received.)
+[22:11:15] <Moonlightning> They have one place to set the lower-level NS records, and another completely different place to add glue records.
+[22:11:17] <Seoson> No open a support ticket and provide them with the DS record
+[22:11:19] <Moonlightning> It's confusing.
+[22:11:19] <mniip> [00:01:39] <Moonlightning> mniip: wat
+[22:11:21] <mniip> Moonlightning, wat?
+[22:11:57] <Moonlightning> I don't remember anymore. 6_9
+[22:12:42] <Seoson> Plus they'll ask some silly questions like what digest, signature algorithm, etc. you're using so prepare for that
+[22:13:01] <Moonlightning> Okay, that's those two stupid records gone.
+[22:13:14] <mniip> Moonlightning, do you know what sell/buywalls are
+[22:13:16] <Moonlightning> I feel like I may have other glue records lingering around that I don't need anymore :I
+[22:13:24] <Moonlightning> mniip: oh, that was it. No, I don't.
+[22:13:43] <Seoson> This domain is at NC and works just fine with DNSSEC: http://dnssec-debugger.verisignlabs.com/brodowski.cc
+[22:13:46] <mniip> Moonlightning, do you know what currency liquidity is?
+[22:13:46] <PinkiePieBot> [ DNSSEC Analyzer - brodowski.cc ]
+[22:14:17] <Moonlightning> mniip: no?
+[22:15:08] <mniip> Moonlightning, hmm
+[22:15:34] <Moonlightning> DS records seem to be the missing piece for me.
+[22:15:38] <Moonlightning> That website seems to agree.
+[22:15:53] <mniip> imagine a free bits/gems exchange market
+[22:16:04] <mniip> there is not a single bits/gems price
+[22:16:25] <mniip> there are just some people wanting to sell and buy gems at different prices
+[22:16:53] <mniip> and whenever someone wants to sell a gem for X bits, and someone else wants to buy a gem for X bits, they annihilate
+[22:16:56] <mniip> a trade occurs
+[22:17:34] <mniip> as such, all sell prices are always above all buy prices
+[22:17:55] <mniip> and the "price" is somewhere inbetween
+[22:18:41] <mniip> for example if no one sells gems for less than 10 bits, and no one wishes to buy gems for more than 9 bits,
+[22:18:48] <mniip> it's fair to say that the price is between 9 and 10
+[22:18:54] <mniip> now the thing is
+[22:19:06] * Moonlightning nods?
+[22:19:09] <mniip> if you start selling gems for 9 bits
+[22:19:32] <mniip> eventually, people who wanna buy gems for 9 bits are going to run out
+[22:19:40] <mniip> and only those who buy for <9 would be left
+[22:20:16] <mniip> if you try to sell a lot of gems, this will eventually happen
+[22:20:29] <mniip> and
+[22:20:50] <mniip> since there is no one to buy gems for 9 bits
+[22:20:55] <mniip> the price is now between 8 and 9
+[22:21:00] <mniip> the price has been shifted!
+[22:21:23] <mniip> it works the other way too, if you buy a lot of gems the price will go up
+[22:21:30] <mniip> now the question is
+[22:21:41] <mniip> exactly how many gems can you buy before the price goes up
+[22:21:48] <mniip> that is what buy walls are
+[22:21:55] <mniip> (and their opposite, sell walls)
+[22:24:28] <mniip> [meanwhile I plopped 0.68 btc on the market]
+[22:24:39] <mniip> Moonlightning, for some real world examples,
+[22:24:55] <mniip> if you were to dump $1m on the usd/eur market
+[22:24:58] <mniip> nothing would happen
+[22:25:30] <mniip> if you were to do that to BTC/USD
+[22:25:40] <mniip> the price will shift by about $20
+[22:25:46] <mniip> hmm no, make that $10
+[22:26:15] <mniip> dumping that on the doge/btc marked would just crash the market
+[22:27:16] <Gigabit> How the hell do you get into windows 8 advance startup, aka safe mode
+[22:27:28] <Moonlightning> Huh. o.o
+[22:27:44] <Moonlightning> Okay, I guess
+[22:29:46] <mniip> Moonlightning, that was your free market 101
+[22:30:32] <mniip> so in that chart, you can see
+[22:30:48] <mniip> that 8.7449 btc are waiting to be sold for dogecoins
+[22:31:23] <mniip> er
+[22:31:31] <mniip> that 8.7449 btc are waiting to be sold for a price of 34
+[22:31:49] <mniip> and that 13.556 btc are waiting to be sold for a price of 38
+[22:31:55] <mniip> and in the second column, you see
+[22:32:09] <mniip> that it takes 29 btc to drag the price from where it is, to 38
+[22:32:28] <mniip> (it's just a sum of preceeding buywalls)
+[22:32:33] <Moonlightning> …you lost me. I need column headers. X.X
+[22:33:15] <mniip> well-uh
+[22:33:16] <mniip> there aren't
+[22:34:42] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Connection closed)
+[22:34:47] <mniip> Moonlightning, https://bitcoinwisdom.com/markets/cryptsy/dogebtc
+[22:34:49] <mniip> on the right
+[22:34:49] <PinkiePieBot> [ Cryptsy DOGE/BTC Charts - BitcoinWisdom ]
+[22:35:20] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[22:35:24] <mniip> the btc/usd chart is more active and interesting though
+[22:35:25] <mniip> https://bitcoinwisdom.com/markets/bitfinex/btcusd
+[22:35:27] <PinkiePieBot> [ Bitfinex BTC/USD Charts - BitcoinWisdom ]
+[22:36:22] <mniip> in the past 15 minutes people have traded $1,800,000 on that exchange
+[22:37:49] *** Joins: Divide (NA@Pony-vf5hfh.cable.rogers.com)
+[22:38:44] <mniip> fuckin cryptsy
+[22:38:50] <mniip> if only they let my buy in at $430
+[22:42:01] <Moonlightning> >:(
+[22:42:17] <mniip> nooooo
+[22:42:20] <Moonlightning> couldn't you do it in two steps?
+[22:42:23] <mniip> 33 sell wall
+[22:42:30] <mniip> Moonlightning, my account was locked
+[22:42:31] <mniip> for inactivity
+[22:42:39] <mniip> because I haven't logged in in >6 months
+[22:43:06] <Moonlightning> DGC -> BTC using some other exchange, then BTC -> conventional currency of your choice with Coinbase or something?
+[22:43:52] * mniip plops 800k doge on 33
+[22:44:17] <mniip> that's what I'm doing right now
+[22:44:21] <mniip> without involving cryptsy
+[22:44:35] <Moonlightning> Yeah. :P
+[22:45:05] <mniip> if you look at https://www.poloniex.com/exchange#btc_doge
+[22:45:05] <PinkiePieBot> [ Poloniex - Bitcoin/Cryptocurrency Exchange ]
+[22:45:16] <mniip> and scroll down and look at the 0.00000033 sell order
+[22:46:31] <mniip> 99% of it is mine
+[22:49:50] *** Gigabit is now known as GigaTown
+[22:51:13] <mniip> :(
+[22:51:15] <mniip> no one buys
+[22:51:21] <Moonlightning> :c
+[22:51:29] <mniip> wow
+[22:51:38] <mniip> it disappeared
+[22:51:47] <mniip> woo!
+[22:51:50] <mniip> sold 2m doge
+[22:54:19] <Moonlightning> Damn XD
+[23:01:41] <mniip> wow
+[23:01:44] <mniip> it's going down
+[23:01:50] <mniip> $414
+[23:02:36] <mniip> someone is pumping
+[23:03:00] <mniip> damn chinese
+[23:03:31] <mniip> :O
+[23:03:47] <mniip> active pump from 405 to 440 in last 10 minutes
+[23:04:22] <Seoson> Moonlightning: "9.9.5-3ubuntu0.5-Ubuntu" You might want to add version "Some text here"; under options
+[23:05:42] <Moonlightning> Seoson: What? What's that from?
+[23:05:56] <Seoson> dig txt chaos version.bind. @sugar-belle.blackl.net
+[23:07:37] <Moonlightning> …wat? Those arguments are out of order.
+[23:08:18] <Seoson> Works fine for me ;-)
+[23:08:52] * mniip wonders what would happen if a .bind tld were to exist
+[23:09:50] <Moonlightning> There's a bid. :o
+[23:09:53] <Seoson> With the current state of newl gTLDs that could actually happen
+[23:09:58] <Moonlightning> yeah :P
+[23:10:15] <Moonlightning> That's really…
+[23:10:19] <Moonlightning> I really don't like it.
+[23:10:35] <Moonlightning> Everything that's using a domain name, but isn't actually a domain name, should be under invalid. :V
+[23:11:04] <Seoson> There were two almost indentical ones. .game and .games maybe? I don't recall exaclty
+[23:11:13] <Moonlightning> What was that other one?
+[23:11:40] <Moonlightning> Docker or something uses fake domain names internally, which is likely to break soon|is breaking now because of a new TLD
+[23:11:46] <Moonlightning> invalid.!! :V
+[23:12:01] <Seoson> or .local
+[23:12:33] <mniip> yeah no
+[23:12:34] <Seoson> or use your own namespace (e.g. somedomain.virtual.company.com)
+[23:12:34] <Moonlightning> local. is for when it's a real name, just local.
+[23:12:40] <mniip> sure icann can't register .local
+[23:12:51] <Moonlightning> It's like 2001:db8::/32
+[23:13:03] <Moonlightning> I mean *facehoof*
+[23:13:23] <Moonlightning> fc00::/7 *
+[23:13:47] <Moonlightning> If it's /not a real domain name/, it goes under invalid.
+[23:13:58] <Moonlightning> If it's not under invalid., it should have real DNS servers backing it up. :V
+[23:14:21] <Moonlightning> I should be able to query about it and get back the same things you expect.
+[23:14:36] <Moonlightning> (or, in the case of local., I should be able to if I managed to get onto the right network)
+[23:16:54] <Seoson> Wasn't there an application for .onion? ^^
+[23:17:44] <Moonlightning> …mmmmmmm.
+[23:18:02] <Moonlightning> Okay, good point. What about onion. and bit. and the like?
+[23:18:21] <Moonlightning> Based on what I just finished saying, they should be under invalid., too. x.x
+[23:18:53] <mniip> oh oh oh 
+[23:18:54] <mniip> .int
+[23:18:59] <Seoson> Technically no, since invalid host names must be invalid
+[23:18:59] <Moonlightning> Would it be possible to set up a system where the network consensus is queried for—
+[23:19:03] <Moonlightning> int.?
+[23:19:15] <mniip> services.int
+[23:19:25] <Moonlightning> services.invalid. -.-
+[23:19:51] <Seoson> .invalid must not resolve to any existing records, but i2p for example does
+[23:20:04] <Seoson> So that would be a violation of the RFC
+[23:20:12] <Moonlightning> Another inconsistency…I think e.g. what I did with my server names is acceptable.
+[23:20:37] <Moonlightning> I used names right under blackl.net. (and blacklnet.org. before that) before it existed
+[23:21:02] <Seoson> Yeah that's now the recommended way for intranets
+[23:26:04] <Moonlightning> So, wait, do I send my registrar a DS record, or do they generate it?
+[23:26:26] <Seoson> You have to send it silly
+[23:26:33] <Seoson> It contains your public key
+[23:26:57] <Moonlightning> Which is accessible by querying :P
+[23:27:08] <Moonlightning> dig blackl.net. DNSKEY
+[23:29:01] <Seoson> That would however defeat the purpose, since being insecure and things
+[23:29:34] <Moonlightning> What assurance do I have that this support-ticket mechanism is secure?
+[23:29:58] <Seoson> SSL and 2FA on any reasonable registrar
+[23:30:09] <Moonlightning> My connection to the website is encrypted with TLS, yes.
+[23:30:23] <Moonlightning> But the ticket could easily just be an email.
+[23:30:44] <Seoson> It's more likely a website in their intranet
+[23:30:56] <Seoson> Or some app connected to a server
+[23:30:58] <Moonlightning> Worse, the server I'm getting could just be a facade.
+[23:31:05] <Moonlightning> And everything else is taking place not over TLS.
+[23:31:20] <Moonlightning> Seoson: It's more likely than not that the DNSKEY record they get from querying is good. ;p
+[23:31:41] <Moonlightning> anyway, in either case, the best thing to do is just to check the resulting DS record once it's in place.
+[23:31:50] <Moonlightning> And set up notifications if ever it changes
+[23:32:23] <Seoson> You have to trust them anyway ^^
+[23:33:26] <Moonlightning> Let's Encrypt should expand to being a registrar, too XP
+[23:33:36] <Seoson> Please don't
+[23:34:00] <Seoson> Registration would be an automatic pain :D
+[23:34:40] <Seoson> And you'd have to renew your domain every 90 days because that's more secure
+[23:34:54] <Seoson> </sarcasm>
+[23:34:57] <Moonlightning> How is it more secure?
+[23:35:05] <Moonlightning> 'sides, you can automate it :P
+[23:35:34] <Seoson> It not more secure, that's the point. I did a rant on LE a few days ago
+[23:36:13] <Colgate> Seoson: wait, what was that about i2p? something uses .i2p now besides i2p?
+[23:36:22] *** zz_CyberJacob is now known as CyberJacob
+[23:36:57] <Seoson> No. We just talked about that could become a thing with some unusual domains (.bind, .onion, .i2p)
+[23:37:13] <Colgate> oh, yeah
+[23:37:19] <Seoson> And could possibly break some things
+[23:37:32] <Colgate> I would think that if someone saw that, they would claim prior use
+[23:37:39] <Colgate> and try to blockade it
+[23:38:09] <Colgate> probably the same with namecoin
+[23:38:15] <Moonlightning> we should submit a request to have bit, onion., and i2p. reserved
+[23:38:18] <Colgate> I don't remember the namecoin tld
+[23:38:34] <Moonlightning> bit. seems rather likely to be made a new TLD
+[23:38:41] <Colgate> indeed
+[23:38:42] <Moonlightning> compared to the others, anyway
+[23:39:14] <Seoson> Actually .bitnet is a reserved name.
+[23:39:21] <Seoson> Use that ;-)
+[23:39:30] <Colgate> it is? what is it reserved for?
+[23:40:18] <Seoson> It was an historical IBM thing marketed as because it’s time - net.
+[23:40:28] <Colgate> "In 1984, a text-based BITNET game called MAD became the first global Multi-User Dungeon (MUD). Players connected from the United States, Europe or Israel to a single server running in France."
+[23:40:30] <Moonlightning> well they can't just up and change it now
+[23:40:30] <Colgate> neat
+[23:40:41] <Seoson> I didn't read the full details. ^^
+[23:40:54] <Colgate> apparently it is still around, kind of
+[23:41:04] <Colgate> "As of 2007, BITNET has essentially ceased operation. However, a successor, BITNET II, which transmits information via the Internet using BITNET protocols, still has some users."
+[23:44:20] <AppleDash> "Thank you for your interest in our beta program! We're excited to let you know that your domains (below) have been whitelisted, and you can now utilize an ACME client to obtain a certificate for them."
+[23:44:22] <AppleDash> woo
+[23:44:25] <AppleDash> re: let's encrypt
+[23:44:41] <Seoson> Old news
+[23:45:01] <AppleDash> Um?
+[23:45:10] <AppleDash> Not for me considering I just got an email 10 seconds ago
+[23:45:11] <Seoson> Enjoy your domain + www subdomain if you didn't apply for every single sub ^^
+[23:46:21] <Moonlightning> yeah, that's really stupid :/
+[23:46:41] <Moonlightning> I'm hoping and assuming that the stable isn't going to be run like that
+[23:46:50] <Seoson> It's not
+[23:47:05] <Seoson> But the beta looks like they don't actually wont people to use it
+[23:47:17] <Seoson> want* derp
+[23:47:39] <Moonlightning> That knda makes sense?
+[23:48:22] <Seoson> I was in the 2nd invite wave. I think about 10.000 invites were send out before I got mine and when I started less than 200 certs were deployed
+[23:48:44] <AppleDash> Wait, how does this work? How does it stop me from issuing certs for whatever domain I want?
+[23:48:49] <Seoson> (That being siad with a 2 day gap I believe)
+[23:48:59] <Seoson> AppleDash: There are auth modules
+[23:49:27] <Seoson> It either uses a server on 80 or 443 on your machine, an apache2 module, or needs to place files in your webroot
+[23:49:59] <Seoson> The later one requires a workaround to work with SANs with different document roots
+[23:50:14] <Seoson> And NEVER use apache2 auto-configuration
+[23:50:26] <Seoson> It's a pain and did only BS for me
+[23:51:02] <AppleDash> s/ auto-configuration//
+[23:51:07] <AppleDash> Fixed
+[23:51:22] <Seoson> Here is the workaround I mentioned (imho the best method) https://community.letsencrypt.org/t/using-the-webroot-domain-verification-method/1445/7
+[23:51:23] <PinkiePieBot> [ Using the webroot domain verification method - Server Configuration - Let's Encrypt Community Support ]
+[23:53:37] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[23:54:05] <mniip> interesting localisation
+[23:54:19] <mniip> http://i.imgur.com/m9D8rCn.png
+[23:54:51] <Seoson> Something cyrillic :P
+[23:55:09] <mniip> (the website was initially russian, but it was translated into a few languages, specifically I'm using the english locale)
+[23:55:19] <AppleDash> lol
+[23:55:26] <AppleDash> BTC-E is really bad about that
+[23:55:36] <mniip> it says "Account balance sum: 7 USD. How was it calculated?"
+[23:56:49] <AppleDash> BTC-E once displayed an exchange rate as "0.0003/Internal Server error" or something like that to me
+[23:56:54] <AppleDash> I had a screenshot, no idea where it is now
+[23:57:11] <mniip> pfft
+[23:57:42] <mniip> bitcoinwisdom just said dogecoin costs 33.5430000000002 satoshi
+[23:57:53] <AppleDash> lol
+[23:58:24] <Seoson> I'd imagine a few of the earlier exchange sites must have had awesome floatingpoint inaccury bugs
+[23:59:06] <mniip> whoop whoop, deposits posted
+[23:59:07] <mniip> http://i.imgur.com/erJQbRK.png
+[23:59:20] <mniip> Seoson, actually no
+[23:59:51] <mniip> it's just that this particular tracking tool
+[23:59:54] <mniip> is written in javascript

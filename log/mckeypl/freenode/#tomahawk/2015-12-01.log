@@ -1,0 +1,100 @@
+[00:36:18] *** Quits: jamesaxl (~jamesaxl@41.249.32.227) (Ping timeout: 260 seconds)
+[02:04:23] <lrvick> So is there no way to use google music on tomahawk without google play services installed?
+[02:04:39] <lrvick> (on android)
+[02:17:05] *** Quits: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[03:30:22] *** Quits: SolarAquarion (SolarAquar@the.feds.nullrouted.us) (Ping timeout: 260 seconds)
+[05:25:36] *** Joins: mgue2 (~mgue@f049125138.adsl.alicedsl.de)
+[05:28:54] *** Quits: mgue1 (~mgue@f049184226.adsl.alicedsl.de) (Ping timeout: 260 seconds)
+[05:47:29] <theli_ua> MrMaffen: it needs play services? o_O
+[06:44:50] *** Quits: soee_ (~soee@bmh252.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[07:21:56] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[07:37:08] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[09:09:42] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[09:12:34] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Client Quit)
+[09:52:20] *** Quits: afics (~afics@unaffiliated/-x-/x-5730914) (Quit: Quit.)
+[09:53:40] *** Joins: afics (~afics@unaffiliated/-x-/x-5730914)
+[11:06:29] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[13:06:49] *** Quits: mgue2 (~mgue@f049125138.adsl.alicedsl.de) (Ping timeout: 245 seconds)
+[13:25:54] *** Joins: moru (~moru@80-110-116-89.cgn.dynamic.surfer.at)
+[13:29:37] *** Joins: TheOneRing_ (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de)
+[13:43:23] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Ping timeout: 264 seconds)
+[13:43:32] *** Quits: TheOneRing (~quassel@amarok/developer/TheOneRing) (Ping timeout: 246 seconds)
+[14:23:52] *** Joins: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com)
+[14:42:29] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[15:03:11] *** Quits: j_ohny_b (~jb@2a01:4f8:130:90a1:0:be:efc0:ffee) (Ping timeout: 264 seconds)
+[15:06:11] *** Quits: modul (~mo@2a01:4f8:130:90a1:0:be:efc0:ffee) (Ping timeout: 264 seconds)
+[15:29:35] *** Joins: mohn (~mo@limu.coffee.liberejo.de)
+[15:29:36] *** Joins: johnyb (~jb@limu.coffee.liberejo.de)
+[15:42:19] <MrMaffen> lrvick: theli_ua: google play services are being used to retrieve the "sj"-token which is necessary for accessing your gmusic tracks. so yes, currently there is no other way.
+[15:42:58] <MrMaffen> though I should probably give the user an option to log into gmusic himself if there are no google play services installed
+[16:12:18] <theli_ua> MrMaffen: indeed
+[16:28:04] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[16:46:44] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[16:57:52] *** Joins: SolarAquarion (SolarAquar@the.feds.nullrouted.us)
+[17:03:23] *** Joins: dommex (sid4285@gateway/web/irccloud.com/x-okezbhrobqnfqtag)
+[17:20:34] *** Quits: ExecSlim (~ExecSlim@159.203.5.37) (Ping timeout: 260 seconds)
+[17:21:16] *** Joins: ExecSlim (~ExecSlim@159.203.5.37)
+[17:23:01] *** Quits: TheOneRing_ (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de) (Remote host closed the connection)
+[17:29:29] *** Joins: TheOneRing (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de)
+[17:42:04] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[17:58:44] *** Joins: knicklux (~knicklux@openvpn-cl-200-210.scc.kit.edu)
+[18:04:19] <lrvick> Yeah I mean a webview could work yeah?
+[18:12:35] *** Joins: TheOneRing_ (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de)
+[18:15:38] *** Quits: TheOneRing (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de) (Ping timeout: 260 seconds)
+[18:26:00] <theli_ua> lrvick: well,it works on desktop without using any play services
+[18:26:24] <theli_ua> I guess it was made that way on android so that the user would not be required to enter his credentials
+[18:53:59] *** Quits: knicklux (~knicklux@openvpn-cl-200-210.scc.kit.edu) (Remote host closed the connection)
+[18:54:30] <jherskowitz> theli_ua: lrvick: yeah, people complained that we didn’t use play services
+[18:54:50] <theli_ua> well, that should be optional
+[18:55:00] <theli_ua> why did you limit your userbase?
+[18:55:17] <jherskowitz> well, it’s very uncommon that people don’t have play services installed
+[18:55:57] <jherskowitz> You need it for a lot
+[18:56:04] <theli_ua> well, say, firetv/kindle fire  has some userbase
+[18:56:23] <jherskowitz> true
+[18:56:35] <theli_ua> AND tomahawk would be the easiest way to use gmusic there
+[18:56:37] <jherskowitz> I don’t know what other changes are needed to get it into Kindle store
+[18:56:57] <jherskowitz> MrMaffen: do you?
+[18:56:59] <jherskowitz> know
+[19:02:43] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[19:05:29] <lrvick> I use tomahawk -because- I want an open alternative as I do not have gapps.
+[19:05:52] <lrvick> Seeing tomahawk end up in fdroid will make me happy. Requiring play services is one of the blockers
+[19:06:26] <lrvick> Using it if available is cool, but you can't be a truly open app and also have a hard requirement for that imo.
+[19:14:54] *** Quits: teo- (~teo@kde/teo) (Ping timeout: 260 seconds)
+[19:16:48] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[19:25:31] *** Joins: teo- (~teo@kde/teo)
+[19:36:35] *** Quits: lorenzh (~lorenz@4z2.de) (Ping timeout: 250 seconds)
+[19:43:20] <jherskowitz> lrvick: understood… we currently have a grand total of 1 android dev, so it’s just a matter of getting to it. :/
+[19:46:23] *** Quits: soee (~soee@u28n61.nowanet.pl) (Read error: Connection reset by peer)
+[19:46:44] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[19:47:23] *** Quits: soee (~soee@u28n61.nowanet.pl) (Read error: Connection reset by peer)
+[19:47:44] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[19:51:26] <MrMaffen> jherskowitz: I don't think we'd have to change anything else
+[19:51:47] <MrMaffen> lrvick: yep... I agree with everything you said. it's on my to-do now :)
+[19:54:22] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[20:21:12] *** Quits: soee (~soee@u28n61.nowanet.pl) (Read error: No route to host)
+[20:21:47] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[20:26:33] *** Quits: soee (~soee@u28n61.nowanet.pl) (Read error: Connection reset by peer)
+[20:26:55] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[20:29:34] *** Quits: TheOneRing_ (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de) (Ping timeout: 260 seconds)
+[20:34:15] *** Joins: TheOneRing (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de)
+[20:54:01] *** Joins: jamesaxl (~jamesaxl@41.249.32.227)
+[20:54:11] *** Quits: soee (~soee@u28n61.nowanet.pl) (Read error: Connection reset by peer)
+[20:54:33] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[21:10:59] *** Quits: soee (~soee@u28n61.nowanet.pl) (Read error: Connection reset by peer)
+[21:11:17] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[21:24:13] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[21:40:20] *** Quits: apb1963_ (~apb@174-134-224-109.res.bhn.net) (Read error: Connection reset by peer)
+[21:40:35] *** Joins: apb1963_ (~apb@174-134-224-109.res.bhn.net)
+[21:43:49] *** Joins: TheOneRing_ (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de)
+[21:44:31] *** Quits: TheOneRing (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de) (Remote host closed the connection)
+[21:44:39] *** TheOneRing_ is now known as TheOneRing
+[21:44:48] *** Quits: TheOneRing (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de) (Changing host)
+[21:44:48] *** Joins: TheOneRing (~quassel@amarok/developer/TheOneRing)
+[22:02:01] *** Quits: Karbowiak (~Karbowiak@ip979.alb335.cust.comxnet.dk) (Remote host closed the connection)
+[22:09:57] *** Joins: Karbowiak (~Karbowiak@ip979.alb335.cust.comxnet.dk)
+[22:19:52] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[22:20:40] *** Joins: sythe (uid20450@facade/leader)
+[22:44:42] *** Quits: moru (~moru@80-110-116-89.cgn.dynamic.surfer.at) (Remote host closed the connection)
+[22:54:59] *** Joins: lorenzh (~lorenz@4z2.de)
+[23:38:04] *** Quits: jamesaxl (~jamesaxl@41.249.32.227) (Ping timeout: 245 seconds)
+[23:39:47] *** Parts: daniel2 (daniel@unaffiliated/danielshafer) ("http://quassel-irc.org - Chat comfortably. Anywhere.")

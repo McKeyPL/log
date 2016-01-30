@@ -1,0 +1,163 @@
+[00:02:36] *** Joins: github-tomahawk (~github-to@192.30.252.42)
+[00:02:36] <github-tomahawk> [13tomahawk] 15dschmidt pushed 5 new commits to 06promisify-all-the-things: 02http://git.io/v4ASP
+[00:02:36] <github-tomahawk> 13tomahawk/06promisify-all-the-things 14e0402b6 15Dominik Schmidt: Expect javascript resolvers to return "tracks" instead of "results"
+[00:02:36] <github-tomahawk> 13tomahawk/06promisify-all-the-things 142bd327d 15Dominik Schmidt: Remove more leftovers from the old collection hack
+[00:02:36] <github-tomahawk> 13tomahawk/06promisify-all-the-things 14fe8ecbb 15Dominik Schmidt: Don't use collectionId from resolvers anymore
+[00:02:36] *** Parts: github-tomahawk (~github-to@192.30.252.42) ()
+[00:10:23] <TheOneRing> jherskowitz: domme_ muesli https://github.com/tomahawk-player/tomahawk/pull/337
+[00:10:24] <tomabee> [ [Proof of Concept] Album art as Windows window preview by TheOneRing · Pull Request #337 · tomahawk-player/tomahawk · GitHub | github.com | https://avatars0.githubusercontent.com/u/200626?v=3&s=400 ]
+[00:10:49] <TheOneRing> the centered by is somehow ugly
+[00:11:08] <TheOneRing> and it might be better to elide instad of the word wrap
+[00:12:13] <TheOneRing> yes better drop  the by ^^
+[00:14:00] *** Joins: github-tomahawk (~github-to@192.30.252.40)
+[00:14:01] <github-tomahawk> [13tomahawk] 15dschmidt 04force-pushed 06promisify-all-the-things from 14c2ea7c8 to 14576c91e: 02http://git.io/v4AOQ
+[00:14:01] <github-tomahawk> 13tomahawk/06promisify-all-the-things 14a589e4f 15Dominik Schmidt: Expect javascript resolvers to return "tracks" instead of "results"
+[00:14:01] <github-tomahawk> 13tomahawk/06promisify-all-the-things 148679713 15Dominik Schmidt: Remove more leftovers from the old collection hack
+[00:14:01] <github-tomahawk> 13tomahawk/06promisify-all-the-things 1488099ea 15Dominik Schmidt: Don't use collectionId from resolvers anymore
+[00:14:01] *** Parts: github-tomahawk (~github-to@192.30.252.40) ()
+[00:15:28] <TheOneRing> hm elide wont work and using multiple draw statements would be horrible comblicated
+[00:21:22] <TheOneRing> I guess the current state looks quite cool
+[00:21:32] <TheOneRing> domme_:  would need to add some branding :P
+[00:22:18] <TheOneRing> so fancy :D
+[00:30:56] <domme_> hehehe
+[00:50:38] *** Joins: github-tomahawk (~github-to@192.30.252.34)
+[00:50:38] <github-tomahawk> [13tomahawk] 15dschmidt pushed 2 new commits to 06promisify-all-the-things: 02http://git.io/v4Axo
+[00:50:38] <github-tomahawk> 13tomahawk/06promisify-all-the-things 14e697303 15Dominik Schmidt: Properly log errors to javascript console
+[00:50:38] <github-tomahawk> 13tomahawk/06promisify-all-the-things 1403935f2 15Dominik Schmidt: Use ordinary wrapper function for testConfig
+[00:50:38] *** Parts: github-tomahawk (~github-to@192.30.252.34) ()
+[01:02:47] *** Joins: soee_ (~soee@afhz148.neoplus.adsl.tpnet.pl)
+[01:03:43] *** Quits: soee (~soee@agwb150.neoplus.adsl.tpnet.pl) (Ping timeout: 265 seconds)
+[01:05:55] <TheOneRing> gnarf why it the close pr button that big xD
+[01:06:03] <domme_> close pr?
+[01:06:34] <TheOneRing> on github
+[01:06:40] <TheOneRing> I closed the pr twice
+[01:16:18] <TheOneRing> muesli: centered
+[01:18:21] <theli_ua> btw, TheOneRing domme has amazon streams working from .de website
+[01:18:35] <theli_ua> TheOneRing: So I guess it is something with your setup :(
+[01:18:48] <TheOneRing> hm did he change the amazon link?
+[01:18:58] <TheOneRing> and domme was probably on linux
+[01:19:08] <TheOneRing> windows and vlc nightly
+[01:19:29] <theli_ua> yeah, so far you're the only tester on windows
+[01:23:19] <TheOneRing> did domme_ modify the script for amazon.de
+[01:23:47] <domme_> oh i did :-D
+[01:23:57] <domme_> the order of domains is wrong
+[01:23:59] <domme_> in init()
+[01:24:11] <domme_> you have to switch .de and .co.uk
+[01:24:33] <TheOneRing> hm can I try your version^^
+[01:24:39] <domme_> no
+[01:24:43] <domme_> it's adjusted for my branch
+[01:46:05] <lfranchi_> man building with qt5 on os x has been such a gigantic pain in the ass
+[01:46:10] <lfranchi_> bunch of manual hacks
+[01:46:42] <danimo>  lfranchi_: which version are you using?
+[01:46:52] <lfranchi_> danimo: version of what/
+[01:46:55] <lfranchi_> *?
+[01:46:56] <danimo> lfranchi_: qt 5
+[01:46:58] <danimo> for mac
+[01:47:06] <lfranchi_> 5.5.1 i think
+[01:47:26] <danimo> and most importantly: have you transitioned to the SecureTransport backend yet?
+[01:47:34] <danimo> but with 5.5.1 probably not
+[01:47:36] <lfranchi_> context needed :)
+[01:47:50] <danimo> lfranchi_: SSL
+[01:48:05] <danimo> lfranchi_: Qt for Mac offers a SecureTransport backend, which no longer relies on OpenSSL
+[01:48:12] <lfranchi_> that's cool
+[01:48:20] <lfranchi_> ssl is not currently my pain point though :)
+[01:48:58] <lfranchi_> now if i could get rid of qca...
+[01:54:28] <lfranchi_> things like liblastfm5/ quazip5/ as include dirs
+[01:54:29] <lfranchi_> ugh
+[02:02:31] <domme_> lfranchi_: hrm?
+[02:02:44] <domme_> danimo: muesli did some secure transport fixes in our codebase iirc
+[02:03:02] <danimo> domme_: did he upstream them?
+[02:03:12] <domme_> in tomahawk?
+[02:03:13] <lfranchi_> domme_: like we include `liblastfm/lastfm.h` or something
+[02:03:19] <domme_> lfranchi_: yes
+[02:03:20] <danimo> domme_: I'm currently working on https://bugreports.qt.io/browse/QTBUG-32898
+[02:03:20] <tomabee> [ [QTBUG-32898] Add a means to get the user ca certificates from the keychain on Mac for use with QSslConfiguration | bugreports.qt.io |  ]
+[02:03:23] <lfranchi_> but liblastfm build against qt5 in my machine installs to include/lastfm/
+[02:03:26] <domme_> lfranchi_: which makes complete sense
+[02:03:33] <domme_> eh
+[02:03:34] <lfranchi_> *built
+[02:03:34] <domme_> wait
+[02:03:37] <danimo> domme_: ah, your native code base
+[02:03:42] <danimo> domme_: not your Qt fork
+[02:03:49] <domme_> if you are building qt5 it should include the liblastfm5/ folder
+[02:03:54] <domme_> *from the
+[02:04:12] <domme_> lfranchi_: ah, it should not
+[02:04:18] <domme_> [02:03] <lfranchi_> but liblastfm build against qt5 in my machine installs to include/lastfm/
+[02:04:20] <lfranchi_> the issue is i don't have a liblastfm5/ folder, lastfm installed to lastfm/
+[02:04:46] <danimo> domme_: btw: klaas was fed up and so we now have all moved our different bits and pieces of patches for Qt into one place.
+[02:04:52] <domme_> lfranchi_: what version are you building?
+[02:05:06] <lfranchi_> git head from lastfm/liblastfm on github iirc
+[02:05:18] <danimo> domme_: (mind that we're still on a 5.4.0 baseline)
+[02:06:06] <domme_> lfranchi_: https://github.com/lastfm/liblastfm/commit/480e2ec663ef867e7892dbbc624737cae176c717
+[02:06:06] <tomabee> [ Add LASTFM_LIB_VERSION_SUFFIX to include dir as well · lastfm/liblastfm@480e2ec · GitHub | github.com | https://avatars1.githubusercontent.com/u/448487?v=3&s=200 ]
+[02:06:29] <domme_> danimo: ehm ok?
+[02:07:17] <lfranchi_> wohoo actually managed to run tomahawk
+[02:07:56] <lfranchi_> step two: get jreen/qca/ssl to work
+[02:08:57] <lfranchi_> yay worked
+[02:09:00] <domme_> ;)
+[02:09:31] <domme_> lfranchi_: if you want to help us get rid of by-now-unneccessary libs ... much appreciated
+[02:09:40] <domme_> there is qtjson, qtwebsockets, ...
+[02:09:44] <lfranchi_> nice
+[02:09:57] <lfranchi_> tbh the os x ui could use a bit of polish ;)
+[02:09:58] <domme_> the crypto stuff might be also unneccessary by now
+[02:10:12] <domme_> lfranchi_: uhm yes. if you want to help with that, even more appreciated
+[02:10:19] <lfranchi_> hehe yeah maybe
+[02:10:30] <lfranchi_> to be honest i was motivated by my inability to stream my home collection @ work
+[02:12:22] <lfranchi_> which now works! but lots of papercuts to work on L:p
+[02:20:03] <domme_> lfranchi_: sure
+[02:36:07] <domme_> nini
+[02:41:30] <lfranchi_> night
+[02:50:03] *** Quits: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[03:06:53] *** Quits: domme_ (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de) (Ping timeout: 252 seconds)
+[03:19:04] *** Quits: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de) (Write error: Broken pipe)
+[03:19:09] *** Joins: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de)
+[05:38:17] *** Joins: mgue2 (~mgue@f049062016.adsl.alicedsl.de)
+[05:41:08] *** Quits: mgue1 (~mgue@x5ce2efd2.dyn.telefonica.de) (Ping timeout: 246 seconds)
+[09:39:51] *** Joins: domme_ (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de)
+[09:39:57] <domme_> moin
+[10:10:56] *** Joins: knicklux (~knicklux@2a02:8071:2d8b:9800:9630:9657:908e:4c0e)
+[10:42:39] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[11:32:54] *** Quits: knicklux (~knicklux@2a02:8071:2d8b:9800:9630:9657:908e:4c0e) (Ping timeout: 252 seconds)
+[12:13:46] *** Joins: knicklux (~knicklux@2a02:8071:2d8b:9800:9630:9657:908e:4c0e)
+[12:31:10] *** Quits: soee_ (~soee@afhz148.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[12:32:06] *** Joins: soee (~soee@afhz148.neoplus.adsl.tpnet.pl)
+[12:54:30] *** Quits: soee (~soee@afhz148.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[12:55:34] *** Joins: soee (~soee@afhz148.neoplus.adsl.tpnet.pl)
+[13:45:54] <muesli> lfranchi_ nice
+[13:57:43] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[14:17:33] *** Joins: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com)
+[14:36:57] *** Quits: knicklux (~knicklux@2a02:8071:2d8b:9800:9630:9657:908e:4c0e) (Ping timeout: 252 seconds)
+[14:54:35] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[15:07:03] *** eaterof is now known as eater
+[15:14:19] *** Joins: knicklux (~knicklux@2a02:8071:2d8b:9800:9630:9657:908e:4c0e)
+[15:22:10] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[15:31:36] *** Quits: knicklux (~knicklux@2a02:8071:2d8b:9800:9630:9657:908e:4c0e) (Ping timeout: 252 seconds)
+[15:43:23] *** Joins: knicklux (~knicklux@2a02:8071:2d8b:9800:9630:9657:908e:4c0e)
+[16:11:18] <domme_> muesli: what is nice? :D
+[16:37:22] *** Joins: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222)
+[16:57:01] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[18:10:36] *** Quits: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com) (Disconnected by services)
+[18:10:36] *** Joins: jturney1 (~jon@host86-141-129-50.range86-141.btcentralplus.com)
+[18:15:20] *** Quits: knicklux (~knicklux@2a02:8071:2d8b:9800:9630:9657:908e:4c0e) (Read error: Connection reset by peer)
+[18:20:24] *** Quits: domme_ (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de) (Ping timeout: 244 seconds)
+[18:28:25] *** Joins: jamesaxl_ (~jamesaxl@41.140.34.19)
+[18:44:46] *** Quits: lasconic (sid4376@gateway/web/irccloud.com/x-rxrxxpdypgqzrnak) (Ping timeout: 240 seconds)
+[18:44:46] *** Quits: RJ2 (sid1@pdpc/supporter/professional/rj2) (Ping timeout: 240 seconds)
+[18:44:47] *** Quits: thomasbonte (sid4377@gateway/web/irccloud.com/x-aoieqbtsctdzfluw) (Ping timeout: 240 seconds)
+[18:44:48] *** Quits: kurros (wade@2604:180::f84a:f836) (Ping timeout: 240 seconds)
+[18:45:26] *** Quits: xdarklight (~freenode@unaffiliated/xdarklight) (Ping timeout: 240 seconds)
+[18:45:46] *** Quits: dridri (~dridri@2a01:e35:8a72:9010:225:90ff:fe1e:3c78) (Ping timeout: 240 seconds)
+[18:45:54] *** Joins: dridri (~dridri@2a01:e35:8a72:9010:225:90ff:fe1e:3c78)
+[18:46:41] *** Joins: thomasbonte (sid4377@gateway/web/irccloud.com/x-xuwcujcbnkdoxjgc)
+[18:48:27] *** Joins: RJ2 (sid1@pdpc/supporter/professional/rj2)
+[18:50:59] *** Joins: xdarklight (~freenode@unaffiliated/xdarklight)
+[18:52:42] *** Joins: lasconic (sid4376@gateway/web/irccloud.com/x-yahyhvwjdistwfle)
+[18:59:09] *** Joins: kurros (wade@2604:180::f84a:f836)
+[19:11:43] *** Quits: jamesaxl_ (~jamesaxl@41.140.34.19) (Quit: Leaving)
+[19:12:12] *** Joins: jamesaxl (~jamesaxl@41.140.34.19)
+[19:25:26] *** Quits: jturney1 (~jon@host86-141-129-50.range86-141.btcentralplus.com) (Quit: Leaving.)
+[19:25:52] *** Joins: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com)
+[19:52:52] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[22:41:26] *** Quits: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222) (Quit: Page closed)
+[23:01:44] *** Joins: soee_ (~soee@bmn66.neoplus.adsl.tpnet.pl)
+[23:05:35] *** Quits: soee (~soee@afhz148.neoplus.adsl.tpnet.pl) (Ping timeout: 240 seconds)

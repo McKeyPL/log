@@ -1,0 +1,293 @@
+[00:06:57] <wolfyshy> there's an entry in the MBR on my windows computer
+[00:07:03] <wolfyshy> 979685376  980606975    921600   450M 27 Hidden NTFS WinRE
+[00:07:09] <wolfyshy> can I delete this without breaking windows?
+[00:12:06] <Phase> thats the recovery partition
+[00:12:14] <Phase> 'yes', but do you need to?
+[00:12:17] <Phase> only 450M
+[00:12:59] <wolfyshy> Phase: it's sandwiched between two other partitions and I'm out of MBR entries
+[00:13:08] <wolfyshy> Phase: I need to delete it to make an extended MBR entry
+[00:13:16] <Phase> ah
+[00:13:25] *** Parts: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) ("Leaving")
+[00:13:29] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[00:14:09] <roflincopter> ah good ol' mbr
+[00:14:26] <wolfyshy> yes I hate it but I can't do much about it
+[00:14:29] <wolfyshy> this install is from like 2010
+[00:14:47] <wolfyshy> I don't want to risk the data doing a gpt conversion
+[00:15:00] <Phase> wuss
+[00:15:09] <roflincopter> i loved the partition juggling i needed to do to get a dual boot windows + ubuntu with seperate windows, data, root, swap and home paritions.
+[00:15:13] <roflincopter> from a laptop with already windows installed
+[00:15:20] <wolfyshy> lol, it's >1T and I don't have a place to put all the data to back it up
+[00:15:27] <Phase> (though gpt conversions are time consuming for windows installs)
+[00:16:36] <Phase> gdisk should do the conversion automatically, its not unsafe
+[00:17:31] <Phase> wolfyshy, how many windows partitions are there? 2 or 3?
+[00:20:04] *** Joins: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au)
+[00:20:26] <wolfyshy> Phase: 4
+[00:20:35] <wolfyshy> Phase: System Reserved, Windows 10, WinRE, Windows 7
+[00:20:41] <wolfyshy> First sector (979687424-1953525167, default 979687424): 1496002560    Sector 1496002560 is already allocated.
+[00:20:43] <wolfyshy> First sector (1496002608-1953525167, default 1496002608): 1496002608  Value out of range
+[00:20:45] <Phase> ah
+[00:20:45] <wolfyshy> First sector (1496004608-1953525167, default 1496004608):
+[00:20:47] <wolfyshy> gah why why why why why
+[00:20:51] <wolfyshy> it's playing games with me
+[00:20:53] <wolfyshy> why
+[00:21:05] <Phase> it should be safe to delete WinRE
+[00:21:12] <Phase> System Reserved is the one i was worried about
+[00:21:27] * Phase has no idea what its for but assumes deleting it will break things
+[00:21:43] <wolfyshy> system reserved has some of the boot loader goodies, I know that isn't safe to delete
+[00:21:49] <wolfyshy> I've just never heard of WinRE before
+[00:27:44] <Lapsus> winre is a hidden recovery partition isn't it? :p
+[00:28:53] <wolfyshy> god I forgot everything, can /boot be an extended partition?
+[00:29:01] <wolfyshy> it's been so long since I used an MBR computer
+[00:29:12] <wolfyshy> I spent most of the 00s using macintosh
+[00:29:17] <wolfyshy> so this is like, the 90s
+[00:33:22] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[00:38:45] <Phase> wolfyshy, extended partition /boot should be fine
+[00:39:00] <Phase> got a livecd/liveusb to boot from just in case?
+[00:43:16] <wolfyshy> yes I'm using the admincd
+[00:43:16] <wolfyshy> http://distfiles.gentoo.org/releases/amd64/autobuilds/current-admincd-amd64/ this
+[00:47:23] <PinkiePieBot> [ Index of /gentoo/releases/amd64/autobuilds/current-admincd-amd64 ]
+[01:22:02] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[01:27:44] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:29:35] *** CyberJacob is now known as zz_CyberJacob
+[01:51:56] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[01:55:56] *** Joins: Asoka_White (Asoka@Pony-43duo3.net-htp.de)
+[01:58:21] *** Quits: Asoka (Asoka@Pony-fqgro4.net-htp.de) (Ping timeout: 121 seconds)
+[02:00:33] *** Joins: Asoka (Asoka@Pony-d67hd9.net-htp.de)
+[02:02:54] *** Quits: Asoka_White (Asoka@Pony-43duo3.net-htp.de) (Ping timeout: 121 seconds)
+[02:04:52] *** Joins: Asoka_White (Asoka@Pony-rvd7nh.net-htp.de)
+[02:05:26] *** Quits: Asoka (Asoka@Pony-d67hd9.net-htp.de) (Ping timeout: 121 seconds)
+[02:08:28] *** Joins: Asoka (Asoka@Pony-2oiqk0.net-htp.de)
+[02:10:22] *** Quits: Asoka_White (Asoka@Pony-rvd7nh.net-htp.de) (Ping timeout: 121 seconds)
+[02:59:21] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (Quit: restarting)
+[03:01:20] *** Sour_Sweet is now known as Seoson|BNC
+[03:06:37] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[03:23:23] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[04:04:27] *** GigaTown is now known as Gigabit
+[04:21:16] *** Joins: Fillyfeathers (Fallfeather@Pony-0pt6g2.bigpond.net.au)
+[04:25:54] *** Quits: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au) (Ping timeout: 121 seconds)
+[05:03:15] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[06:20:27] *** Joins: Asoka_White (Asoka@Pony-3sub5i.net-htp.de)
+[06:22:19] *** Quits: Asoka (Asoka@Pony-2oiqk0.net-htp.de) (Ping timeout: 121 seconds)
+[06:22:31] *** Joins: Asoka (Asoka@Pony-liv22u.net-htp.de)
+[06:24:39] *** Quits: Asoka_White (Asoka@Pony-3sub5i.net-htp.de) (Ping timeout: 121 seconds)
+[06:27:21] *** Quits: Asoka (Asoka@Pony-liv22u.net-htp.de) (Ping timeout: 121 seconds)
+[06:27:36] *** Joins: Asoka (Asoka@Pony-sttfk8.net-htp.de)
+[06:30:33] *** Joins: Asoka_White (Asoka@Pony-lvtcgb.net-htp.de)
+[06:32:52] *** Quits: Asoka (Asoka@Pony-sttfk8.net-htp.de) (Ping timeout: 121 seconds)
+[06:36:01] *** Eventide is now known as Eventide|Sleepies
+[07:03:55] *** Gigabit is now known as Snoarin
+[07:15:48] *** Joins: CrassyPaddles (test@Pony-t2o.enl.137.198.IP)
+[07:37:54] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:49:27] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[07:50:46] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[07:51:46] *** Quits: Crimson_Tail (Bluepon@Pony-pj47un.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[08:06:53] *** Joins: Asoka (Asoka@Pony-t2d17b.net-htp.de)
+[08:09:32] *** Quits: Asoka_White (Asoka@Pony-lvtcgb.net-htp.de) (Ping timeout: 121 seconds)
+[08:15:53] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "system went to sleep")
+[08:22:12] *** zz_CyberJacob is now known as CyberJacob
+[08:42:59] *** RedHelper is now known as Creeps|AFK
+[08:44:31] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[08:44:51] *** Quits: CrassyPaddles (test@Pony-t2o.enl.137.198.IP) (Connection closed)
+[09:11:01] *** Joins: Asoka_White (Asoka@Pony-4d6er5.net-htp.de)
+[09:13:10] *** Quits: Asoka (Asoka@Pony-t2d17b.net-htp.de) (Ping timeout: 121 seconds)
+[09:33:54] *** CyberJacob is now known as zz_CyberJacob
+[10:05:27] *** Joins: Phase (Phase4@Pony-fcsfco.internode.on.net)
+[10:17:36] <Googie> ShivalWolf: Going to be at Ruxcon ?
+[10:18:43] *** Awaykitty is now known as Unixkitty
+[10:19:55] <ShivalWolf> no
+[10:20:19] <ShivalWolf> i didnt have time to plan actually going
+[10:20:25] * Googie nods.
+[10:21:12] <ShivalWolf> it sort of snuck up on the time
+[10:21:16] <ShivalWolf> and by the time i realised it was too late
+[10:22:24] <Googie> I had my tickets booked from way back when they first opened booking for students. I'd been hoping to get accommodation/flights from CySCA. Sadly by the time CySCA was over, most of the places were already booked. I managed to find something though.
+[10:40:06] <ShivalWolf> bugger
+[10:41:46] <ShivalWolf> even though i live in mlb i normaly geta  hotel for the saturday night due to the morning trains sucking
+[11:01:30] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[11:47:19] <Moonlightning> Anypony know where I can get the last three episodes
+[11:47:28] <Moonlightning> All the ones after /Made in Manehattan/, I mean
+[12:03:51] <Stik> i watch them on dailymotion usually
+[12:04:13] <Stik> don't know how long they linger there though
+[12:12:28] <Moonlightning> …oh, this one didn't get taken down from YouTube o.o
+[12:14:58] <Moonlightning> The posts EqD linked to for the second-newest ep were all taken down though
+[12:18:37] <JustAberrant> holy crap, I'm like 7 episodes behind :(
+[12:21:15] <JustAberrant> and ironically netflix only has up to the last one I've seen.. sigh :D
+[12:21:37] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[12:22:46] <JustAberrant> s/ironically/amusingly I guess :D
+[12:22:50] * JustAberrant tired :(
+[12:26:12] *** Joins: wowaname (h@wowana.me)
+[12:31:23] * Moonlightning boops johnsey
+[12:31:29] <Moonlightning> What happened to your server :P
+[12:31:33] <Moonlightning> You're missing the latest episodes
+[12:32:46] <johnsey> Moonlightning: when i checked, they were only available on dailymotion in fairly bad quality for twice the size compared to youtube, so i wanted to find a different source. just didn't have time yet
+[12:33:22] <Moonlightning> x.x
+[12:34:15] <Moonlightning> Well, e19 is on YouTube, apparently
+[12:34:32] <Moonlightning> >> https://www.youtube.com/watch?v=87W_nxH3Z70
+[12:34:33] <PinkiePieBot> [ My Little Pony: FiM — The One Where Pinkie Pie Knows (S05E19) 1080p - 19184 views - 21m 25s long - 342 likes - 98.56% ]
+[12:34:55] <Moonlightning> Grab that, quick, before it gets taken down :p
+[12:39:41] *** Seoson|BNC is now known as Sour_Sweet
+[12:48:27] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[12:52:21] <Moonlightning> Why does Gentoo's gcc have /Fortran/ support enabled by default?
+[12:52:32] <Moonlightning> When the buck am I ever going to need to compile Fortran
+[13:00:55] <Sour_Sweet> My first domain has now DNSSEC enabled
+[13:00:59] <Sour_Sweet> yay
+[13:01:42] <Moonlightning> Yay~!
+[13:01:53] <Moonlightning> Do you do your own DNS? o3o
+[13:03:49] <Sour_Sweet> No. I don't see the point in doing so. I can just use an API and get benefits from anycast
+[13:09:42] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[13:10:56] <Moonlightning> …I'm confused about `free`s accounting again. x.x
+[13:11:21] <Moonlightning> stuff in /run/shm doesn't appear to be accounted for in the ±buffers|cache line?
+[13:11:39] <Moonlightning> It seems to be counted as free, I mean.
+[13:11:48] <Moonlightning> And it's not free, not like file cache is free
+[13:11:58] <Moonlightning> It's properly used. It can't just be /discarded/; things on a filesystem would be lost!
+[13:13:40] <johnsey> I assume you mean /dev/shm? that's a tmpfs and it's swapped out if the memory is needed
+[13:14:09] <Moonlightning> what if there's no swap though :P
+[13:14:17] <Moonlightning> also, wat
+[13:14:21] <Moonlightning> I thought it was a proper ramdisk o.o
+[13:14:39] <johnsey> no it's not
+[13:14:53] <johnsey> tmpfs != ramfs
+[13:15:16] <Moonlightning> So I want ramfs?
+[13:16:12] <johnsey> if you want to prevent swapping, yes
+[13:16:23] <johnsey> well
+[13:16:49] <johnsey> if you disable swapping, the space used by a tmpfs IS subtracted from your free memory
+[13:16:59] <johnsey> (only if actually used)
+[13:17:19] <johnsey> so tmpfs without swap should theoretically behave like a ramfs
+[13:17:20] <Moonlightning> As in /properly/ disable swapping?
+[13:17:28] <johnsey> unless I'm missing details
+[13:17:31] <Moonlightning> i.e. just having no swap devices doesn't count
+[13:17:46] <johnsey> swapoff -a
+[13:18:18] <johnsey> if you have none, of course you don't have swap
+[13:18:49] <Moonlightning> Right, but I have no swap devices, and…
+[13:19:41] <Moonlightning> https://gist.github.com/BlacklightShining/42ce458084cbc83644e1
+[13:19:41] <PinkiePieBot> [ free.out · GitHub ]
+[13:20:35] <johnsey> well, dd some data to your tmpfs?
+[13:20:51] <Moonlightning> I've already got 372 MiB of stuff in there.
+[13:21:02] <Moonlightning> And that's the result.
+[13:23:02] <johnsey> you only have 987 KB of RAM?
+[13:23:20] <Moonlightning> That's in MiB.
+[13:24:39] *** Unixkitty is now known as Awaykitty
+[13:25:38] <Moonlightning> I only have 987 MiB of RAM, yes :P
+[13:25:52] <Moonlightning> This is a headless VPS. It's enough for my purposes.
+[13:27:27] <johnsey> that's what i get from deleting 512 MB of data from /dev/shm, before and after: http://pastebin.com/gzjw0VtJ
+[13:27:27] <PinkiePieBot> [ total used free shared buff/cache available - Pastebin.com ]
+[13:27:36] <johnsey> without swap
+[13:28:43] <Moonlightning> hmmmm
+[13:29:13] <Moonlightning> What provides your `free`?
+[13:29:50] <johnsey>  /proc/meminfo
+[13:30:39] <johnsey> oh you mean..
+[13:31:07] <johnsey> sys-process/procps
+[13:31:25] <Moonlightning> Mine is procps-ng, v3.3.9
+[13:33:42] * johnsey prepends a ~ to Moonlightning's ACCEPT_KEYWORDS
+[13:34:12] <Moonlightning> o.o ?
+[13:35:02] <johnsey> running only stable software is boring ;)
+[13:35:18] <johnsey> oh procps-ng
+[13:35:53] <johnsey> thought you were still talking about gentoo
+[13:36:00] <Sour_Sweet> Other people would say safe :P
+[13:37:24] <Moonlightning> …oh.
+[13:37:28] <Moonlightning> No, this box is Ubuntu.
+[13:38:43] <johnsey> Sour_Sweet: boring people would say that ;)
+[13:39:24] * Sour_Sweet hides all things Debian
+[13:39:40] <johnsey> Moonlightning: in any case, I'd just rely on the content of /proc/meminfo 
+[13:39:47] <Moonlightning> My Gentoo laptop is exhibiting the same behavior though
+[13:40:52] <Moonlightning> johnsey: ugh, but that doesn't give one easy number for how much memory is available! :V
+[13:40:56] <Moonlightning> x.x *
+[13:41:01] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[13:42:14] <Moonlightning> `free` is so very convenient, except for this one thing. :P
+[13:43:15] <Moonlightning> speaking of…I gather that /cached/ is how much /used/ memory is 100% discardable cache
+[13:43:20] <Moonlightning> what about /shared/ and /buffers/
+[13:46:20] <johnsey> man free
+[13:47:02] <johnsey> this also explains the output of your free, too
+[13:48:10] <johnsey> (and I hereby declare today "international redundancy day of redundance" today)
+[13:48:26] <Moonlightning> > free displays the total amount of free and used physical and swap memory in the system, as well as the buffers used by the kernel. The shared memory column represents either the MemShared value (2.4 series kernels) or the Shmem value (2.6 series kernels and later) taken from the /proc/meminfo file. The value is zero if none of the entries is exported by the kernel.
+[13:48:36] <Moonlightning> This explains basically nothing.
+[13:48:51] <Moonlightning> unless I cared to go hunting for documentation on what /those/ labels mean, which I don't
+[13:49:34] <johnsey> see, that's what you get for using stable software
+[13:49:38] <johnsey> my free manpage says:
+[13:49:47] <johnsey>        shared Memory used (mostly) by tmpfs (Shmem in /proc/meminfo, available
+[13:49:50] <johnsey>               on kernels 2.6.32, displayed as zero if not available)
+[13:50:47] <Moonlightning> Hmm. :P
+[13:52:36] <johnsey> though i guess you could argue that it makes things more interesting - imagine, if you had embarked on a journy through linux kernel documentation or even source code now! what is more interesting than that? :)
+[13:54:11] * johnsey adds a mental note to write less extensive documentation to keep users guessing and make life more interesting for them
+[13:56:45] <Moonlightning> why do my rsyncs keep dying >:(
+[13:57:25] <Moonlightning>       14.11K   0%    0.00kB/s    0:00:00
+[13:57:25] <Moonlightning> rsync: writefd_unbuffered failed to write 4 bytes to socket [sender]: Broken pipe (32)
+[13:57:25] <Moonlightning> what the hell
+[13:58:34] <Moonlightning> …oh, filesystem full
+[13:58:38] <Moonlightning> fuckkin' derp
+[14:12:10] *** Awaykitty is now known as Unixkitty
+[14:57:04] <Sour_Sweet> Let's encrypt began their beta program. Anyone more lucky than me? I didn't get an invite yet ;-(
+[14:59:00] *** Joins: CrassyPaddles (test@Pony-t2o.enl.137.198.IP)
+[15:09:44] *** Eventide|Sleepies is now known as Eventide
+[15:12:11] <Compu> https://i.imgur.com/JAkgKHp.jpg >reviewing tech when u dont know what RAM is
+[15:13:06] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:24:27] *** Quits: CrassyPaddles (test@Pony-t2o.enl.137.198.IP) (Ping timeout: 121 seconds)
+[15:31:05] <Compu> https://i.imgur.com/AWAP0.gif
+[15:45:05] *** Quits: locodash11[lagout] (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[15:46:53] *** Unixkitty is now known as Awaykitty
+[15:48:37] *** Joins: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile)
+[15:50:55] *** Snoarin is now known as GigaWork
+[15:51:23] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[15:54:49] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[15:57:23] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[16:24:57] *** Joins: Crimson_Tail (Bluepon@Pony-6n28s1.cg80.k4gu.0151.2601.IP)
+[16:47:49] *** Quits: Fillyfeathers (Fallfeather@Pony-0pt6g2.bigpond.net.au) (Connection closed)
+[17:10:50] *** Joins: Phase4 (Phase4@Pony-fkmviv.internode.on.net)
+[17:13:57] *** Quits: Phase (Phase4@Pony-fcsfco.internode.on.net) (Ping timeout: 121 seconds)
+[17:15:53] *** Joins: ariscop__ (Phase4@Pony-vmucne.internode.on.net)
+[17:18:58] *** Quits: Phase4 (Phase4@Pony-fkmviv.internode.on.net) (Ping timeout: 121 seconds)
+[17:30:54] *** Joins: Phase4 (Phase4@Pony-vor5c8.internode.on.net)
+[17:34:00] *** Quits: ariscop__ (Phase4@Pony-vmucne.internode.on.net) (Ping timeout: 121 seconds)
+[17:45:49] *** Joins: thatdguy (~WebChat@Pony-m45760.abo.wanadoo.fr)
+[18:05:10] *** Quits: DataByteBrony (DataByte@Pony-85fkif.g424.9euc.0247.2601.IP) (Ping timeout: 121 seconds)
+[18:06:28] *** Joins: ariscop__ (Phase4@Pony-k46rdk.internode.on.net)
+[18:09:33] *** Quits: Phase4 (Phase4@Pony-vor5c8.internode.on.net) (Ping timeout: 121 seconds)
+[18:10:57] *** Joins: Phase4 (Phase4@Pony-3h296u.internode.on.net)
+[18:14:05] *** Quits: ariscop__ (Phase4@Pony-k46rdk.internode.on.net) (Ping timeout: 121 seconds)
+[18:19:35] *** Joins: ariscop__ (Phase4@Pony-ai9r3u.internode.on.net)
+[18:21:06] *** Quits: Phase4 (Phase4@Pony-3h296u.internode.on.net) (Ping timeout: 121 seconds)
+[18:32:31] *** Joins: Phase4 (Phase4@Pony-7h56lf.internode.on.net)
+[18:34:29] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[18:35:37] *** Quits: ariscop__ (Phase4@Pony-ai9r3u.internode.on.net) (Ping timeout: 121 seconds)
+[18:37:35] *** Joins: ariscop__ (Phase4@Pony-l08ebc.internode.on.net)
+[18:40:39] *** Quits: Phase4 (Phase4@Pony-7h56lf.internode.on.net) (Ping timeout: 121 seconds)
+[18:41:28] *** Joins: DataByteBrony (DataByte@Pony-54n6er.g424.9euc.0247.2601.IP)
+[18:52:34] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:06:36] *** Joins: Phase4 (Phase4@Pony-3blbd2.internode.on.net)
+[19:09:43] *** Quits: ariscop__ (Phase4@Pony-l08ebc.internode.on.net) (Ping timeout: 121 seconds)
+[19:32:10] *** Joins: ariscop__ (Phase4@Pony-t5m4g0.internode.on.net)
+[19:32:41] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[19:35:16] *** Quits: Phase4 (Phase4@Pony-3blbd2.internode.on.net) (Ping timeout: 121 seconds)
+[19:38:38] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:43:27] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[19:45:11] *** Joins: Phase4 (Phase4@Pony-2mqaf4.internode.on.net)
+[19:48:17] *** Quits: ariscop__ (Phase4@Pony-t5m4g0.internode.on.net) (Ping timeout: 121 seconds)
+[19:52:45] *** Joins: ariscop__ (Phase4@Pony-8richb.internode.on.net)
+[19:55:49] *** Quits: Phase4 (Phase4@Pony-2mqaf4.internode.on.net) (Ping timeout: 121 seconds)
+[20:11:59] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[20:17:46] *** Joins: Phase4 (Phase4@Pony-tpr2uj.internode.on.net)
+[20:20:51] *** Quits: ariscop__ (Phase4@Pony-8richb.internode.on.net) (Ping timeout: 121 seconds)
+[20:38:46] *** Quits: Phase4 (Phase4@Pony-tpr2uj.internode.on.net) (Quit: Leaving)
+[20:39:02] *** Joins: Phase (Phase4@Pony-tpr2uj.internode.on.net)
+[20:43:22] *** Quits: Phase (Phase4@Pony-tpr2uj.internode.on.net) (Ping timeout: 121 seconds)
+[20:44:01] *** Joins: Phase (Phase4@Pony-o116l0.internode.on.net)
+[20:45:52] *** Quits: ColtonDRG (coltondrg@Pony-brenjv.vmmm.u7jq.9880.2605.IP) (Connection closed)
+[20:48:33] *** zz_CyberJacob is now known as CyberJacob
+[20:50:32] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[21:03:03] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: RAGE BAD)
+[21:37:03] *** CyberJacob is now known as zz_CyberJacob
+[21:41:38] *** zz_CyberJacob is now known as CyberJacob
+[21:46:18] <Moonlightning> TIL of CISA
+[21:46:26] <Moonlightning> what the hell is //wrong// with this government?
+[21:46:31] <Moonlightning> They just don't /stop!/
+[21:47:09] <Moonlightning> They just keep pushing bill after bill after bill after bill to try to abolish privacy!
+[21:47:38] <Moonlightning> …at this point, why are they even /listening/ to us? Why HAVEN'T they passed one of the SOPA clones yet?
+[22:14:44] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[22:23:39] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Connection closed)
+[22:29:17] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[22:54:18] *** Quits: Quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[22:54:24] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[23:16:48] *** Joins: Sol (Sol@Pony-nc8b4c.res.rr.com)
+[23:25:49] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "gonna go hang out with some friends, talk to everypony later")
+[23:29:21] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[23:32:01] *** Quits: thatdguy (~WebChat@Pony-m45760.abo.wanadoo.fr) (Quit: Page closed)
+[23:37:23] <Sour_Sweet> Accessing a website with a broken DNSSEC record crashed my firefox 3 times in a row (Probably due to an addon). That's one way of protecting the user I guess
+[23:55:02] *** Quits: Sol (Sol@Pony-nc8b4c.res.rr.com) (Quit: Leaving)

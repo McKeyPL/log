@@ -1,0 +1,813 @@
+[00:01:45] *** Quits: Melanosuchus (quassel@Pony-jvimu1.as13285.net) (Connection closed)
+[00:04:13] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[00:15:10] *** Parts: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) ("Leaving")
+[00:15:13] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[00:15:21] *** Joins: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com)
+[00:37:45] *** Joins: Apple_Bloom (sid52418@the.canon.pony)
+[00:55:06] <Googie> Moonlightning: Same way you compile gcc :P
+[00:57:30] <Moonlightning> Write a trivial unit tester, and use that to test a better unit tester, and use that to test a better tester, until you've tested the desired tester?
+[00:58:14] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[01:07:11] *** Joins: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au)
+[01:07:35] *** Quits: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com) (Quit: Leaving)
+[01:19:53] *** Quits: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au) (Quit: My people need me!)
+[01:25:53] <Moonlightning> “It's no measure of health to be well adjusted to a profoundly sick society.” — Jiddu Krishnamurti [citation needed]
+[01:25:58] <Moonlightning> I'm totally using this though
+[01:29:37] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:10:43] <Sour_Sweet> Continue: DANE will allow you to create your own CA for your domain
+[02:11:16] <Sour_Sweet> And secure mail transport where certs are useally not checked
+[02:11:36] <Moonlightning> That would be /really/ nice.
+[02:11:47] <Sour_Sweet> The later case is already adopted by reasonable mail providers
+[02:12:26] <Googie> Unfortunately DANE library support sucks at the moment.
+[02:13:05] <Divide|TechSupport> gu.  As far as laptops are concerned, Windows 10 is a gigantic bowl of steaming hatred.
+[02:13:09] <Sour_Sweet> Yes. Browser's don't even check DNSSEC yet by deault not even mentioing DANE
+[02:13:11] <Googie> Got DANE support in a few IRC clients waiting on the fact that DANE in GnuTLS currently has a convoluted dependency on openssl in many distros.
+[02:13:34] <Moonlightning> the fuck
+[02:14:19] <Sour_Sweet> It will take a couple of years for DANE to become a widespread thing outside of mail transport sadly.
+[02:15:20] <Sour_Sweet> Even though there is essentially only a big gain for (almost) everyone involved outside of CAs
+[02:15:25] <Googie> https://gitlab.com/gnutls/gnutls/issues/21
+[02:15:27] <PinkiePieBot> [ Drop the unbound dependency in libdane (#21) | Issues | gnutls / Gnutls | GitLab ]
+[02:16:20] <Googie> We could see semi-rapid adoption in the IRC space I expect, at least once those issues are cleared up.
+[02:16:34] <Divide|TechSupport> A joke which has never, ever been made before: I wonder if anyone's created a wrapper for DANE called 'FORTINBRAS'.
+[02:17:11] <Moonlightning> :?
+[02:17:44] * AppleDash pokes JustAberrant
+[02:17:52] * Divide|TechSupport is pulled off the stage with a vaudeville hook.
+[02:19:18] <Divide|TechSupport> ... why no, customer, Windows Defender will not activate when BitDefender, Norton and McAfee are all vying for permissions.
+[02:25:33] *** Joins: Asoka_White (Asoka@Pony-5vpbci.net-htp.de)
+[02:26:02] <Sour_Sweet> Mhh DNSSEC browser support would ruin my Netflix smartdns setup though
+[02:26:14] <Moonlightning> O.o
+[02:27:17] <Sour_Sweet> I might be ending up using a small U.S. VPS one day
+[02:27:53] <Moonlightning> …you could do the analogous thing
+[02:28:10] <Sour_Sweet> Which is?
+[02:28:21] <Moonlightning> install your own DNS key as trusted on your machine, use it to MitM DNS replies for Netflix
+[02:28:45] *** Quits: Asoka (Asoka@Pony-h0jtj3.net-htp.de) (Ping timeout: 121 seconds)
+[02:29:30] <Sour_Sweet> Uhh that sounds like a configuration nightmare, since custom root keys are not supposed to be part of DNSSEC
+[02:29:44] <Colgate> or just... configure it to ignore dnssec for that zone
+[02:30:00] <Sour_Sweet> Would make more sense ;-)
+[02:30:44] <Moonlightning> man…I hope they guard that root key properly. ._.
+[02:31:11] <Colgate> root zone rarely changes
+[02:31:17] <HoneyDrops> I'm sure the CIA and NSA have a copy, should they lose it.
+[02:31:21] <Colgate> so that makes it easier
+[02:31:34] <Moonlightning> …
+[02:31:38] <Moonlightning> well that just breaks everything!
+[02:31:39] <Sour_Sweet> The current situation in which I route traffic through an unknown 3rd party service isn't very optimal anyway, so I will probably end up searching for another solution there
+[02:31:47] <Colgate> also, fucking with the root zone would be extremely noticeable
+[02:32:27] <HoneyDrops> Sour_Sweet: we ban the idiotic practice of treating connections based on physical location differently?
+[02:32:50] <Sour_Sweet> That would be an amzing utopia!
+[02:32:59] <HoneyDrops> Half the point of a global network is it should not matter one bit where you are.
+[02:34:19] <Googie> Moonlightning: You really think they don't have the private keys of some trusted-by-default providers already ?
+[02:34:38] <Googie> There's what, 150 or so trusted root certificates by default :/
+[02:34:39] <Colgate> they have Dell's at the very least!
+[02:34:43] <Moonlightning> Googie: well, yes! Because that breaks the //entire system!//
+[02:35:00] <Colgate> everyone knows the CA system is broken :P
+[02:35:15] <Googie> DANE isn't perfect, but at least it's /less/ broken.
+[02:35:26] <Moonlightning> It's broken in that critical way, though, apparently :/
+[02:35:33] <Moonlightning> So what we NEED is grassroots signing
+[02:35:43] <Moonlightning> WoT, not hierarchical CA-based or DNS-root-based
+[02:36:30] <Sour_Sweet> DNS root based sounds like the most reasonable solution to me. WoT failed to work for PGP for example
+[02:37:35] * Sour_Sweet is currently looking up a few cheap US VPS providers
+[02:37:54] <Colgate> buyvm!
+[02:38:17] <Sour_Sweet> Could also use it for primary DNS.
+[02:38:25] <Googie> Depending on how cheap you are looking, lowendbox.com is decent for finding providers.
+[02:39:24] <Moonlightning> Sour_Sweet: if it can be forged by a government, then it's not reasonable.
+[02:40:28] <Sour_Sweet> I favor tamper evident than pseudo tamper resistant
+[02:40:38] <HoneyDrops> ^
+[02:40:44] <Moonlightning> Well, yes, of course.
+[02:40:52] <Moonlightning> The systems then have to toss up a warning, though. :P
+[02:40:54] <Googie> The problem is that from what we've seen, the WoT model has issues taking off in practice. DANE actually has a /chance/ of taking off.
+[02:41:20] <Googie> The choice isn't between DANE and WoT. It's between DANE and PKI
+[02:41:34] <Googie> (And really it's not a choice /between/, but the point kinda stands)
+[02:41:50] <HoneyDrops> The goal isn't to keep the NSA out, it's to make sure we have a million bells superglued to them so they so much a glace in the direction of something everyone knows.
+[02:42:17] <Moonlightning> I don't want to have to check certificates by hoof every time I load a page, though.
+[02:42:27] <Moonlightning> that would be vulnerable to MitMs of indirect requets, anyway
+[02:42:34] <Googie> The problem is that if you keep working towards "perfect" security, and ignoring everything else, you'll have /no/ security.
+[02:43:36] <Googie> Perfect solution fallacy.
+[02:43:37] <HoneyDrops> The only perfectly secure computer is off, in locked safe, buried under the slab foundation of your house as long as you never leave.
+[02:44:16] <DJ-C0L7[CSS]> physical access is /complete/ access
+[02:44:19] <Sour_Sweet> It's not like any of us can really protect ourselves from targeted gov. attacks. Just make it more difficult is enough for me
+[02:44:25] <Googie> DANE isn't perfect, but it's the only replacement I can see really taking off.
+[03:03:47] <HoneyDrops> "He also pointed out that the main protocol used online, TCP, can maintain a connection for hours or even days at a time,"  heh, pretty sure I regularly have multi-MONTH tcp connections.
+[03:03:54] <HoneyDrops> http://arstechnica.com/tech-policy/2015/11/uk-isp-boss-points-out-massive-technical-flaws-in-investigatory-powers-bill/
+[03:03:54] <PinkiePieBot> [ UK ISP boss points out massive technical flaws in Investigatory Powers Bill | Ars Technica ]
+[03:08:34] <Sour_Sweet> IRC bouncer anyone? :D
+[03:09:14] <Sour_Sweet> Longest IRC session I had was like 7 months
+[03:12:19] *** Joins: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com)
+[03:12:37] <Moonlightning> I don't think I've lasted that long
+[03:12:57] <Moonlightning> also, if it's massive, it's not a flaw anymore, it's a hole :P
+[03:13:04] <Moonlightning> flaws are little
+[03:13:18] <Moonlightning> tech legislation has holes, not flaws
+[03:15:44] <LordShadowWing> Moonlightning, http://notrea.ddns.net/wavs/
+[03:15:45] <PinkiePieBot> [ Index of /wavs ]
+[03:20:08] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[03:28:30] *** Joins: Sombra (Iceman@Darkhorse21)
+[03:29:15] <Sombra> Does anyone run a monitor that is higher than 1920x1080?
+[03:32:55] <Ola> 1920x1200
+[03:33:32] <Ola> Sour_Sweet: i use tmux + weechat
+[03:33:42] <Sombra> What's that one goofy resolution...
+[03:34:10] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[03:34:11] <Sombra> 2560x1440
+[03:34:42] <Googie> 1920x1200 monitors here. 2560x1440 is fairly common among larger monitors.
+[03:35:24] <Sombra> I have a concern.
+[03:36:05] * Phase steals Sombras concern
+[03:36:10] <Sombra> I've used a 1920x1080 monitor in the past (which I've since lost) and combined with my gtx 750ti, I had no problem playing games... but I recently purchased a 2560x1440 monitor, and I'm wondering how much loss of framerate I'll have...
+[03:36:26] <Sour_Sweet> Ola: I use WeeChat as well. Used to have a ZNC instance though ;-)
+[03:36:38] <Googie> Significant. But only if you run the game at that native resolution.
+[03:36:42] * Ola wants a bigger res
+[03:37:00] <Ola> and most games i play are Minecraft and Second Life.
+[03:37:32] <Ola> i tried  Solar 2 yesterday, but it's not a very hard-on-hardware game
+[03:37:37] <Sombra> What's the aspect ratio of 1440p?
+[03:38:08] <Phase> 16:9
+[03:38:22] <Phase> 2560x1440 that is'
+[03:39:25] <Sombra> So I can scale down games to 1920x1080.
+[03:39:57] <Phase> you can set the games resolution and either the gpu or screen will upscale it
+[03:40:28] <Sombra> I sort of intended to get a different graphics card, but I don't know when that will come
+[03:41:01] <Phase> if you run fullscreen', for borderless window you'll have to change your resolution
+[03:41:14] <Moonlightning> Give me your old graphics card and I'll mine dogecoin on it o3o
+[03:41:17] <Phase> stupid inability to scale windows
+[03:41:28] <Sombra> Moonlightning, I'd take 100$ for it
+[03:41:32] <Phase> hopefully gnome on wayland has a shortcut for that
+[03:41:37] <Phase> that'd be sweet
+[03:45:55] * Googie wonders who is paying for Moonlightning's power :P
+[03:46:41] <Moonlightning> Well, dogecoin is profitable, right?
+[03:47:22] * Googie can't imagine so. Especially on an Nvidia card.
+[03:48:05] <Gladiolus> make your own coin, o3o.
+[03:59:38] *** Quits: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com) (Quit: Leaving)
+[04:03:32] <Gigaway> so.. if a sneeze contains 200,000,000 germs.. and handsanitizers kill 99.99% of germs.. 2,000,000 are left alive????
+[04:04:18] <Moonlightning> Mu.
+[04:04:46] <Moonlightning> There are many different kinds of germs, and not all of them bad.
+[04:05:24] <Moonlightning> Excessive use of sterilization—especially early on in life—can weaken your immune system, thus actually hurting your overall health.
+[04:05:32] <Gigaway> thats still 2,000,000 germs, and say even.. .01% are bad..that is 20000
+[04:06:00] <Moonlightning> ^2
+[04:06:31] <Phase> https://xkcd.com/1161/
+[04:06:32] <PinkiePieBot> [ xkcd: Hand Sanitizer ]
+[04:06:38] <Moonlightning> It's actually probably better to use regular soap than the antibacterial stuff, unless you're working in a hospital (or going to visit there or something, I guess)
+[04:06:50] <Gigaway> Phase knew what i was getting at XD
+[04:08:22] <Moonlightning> You need germs in your gut, too.
+[04:08:24] <Moonlightning> Like.
+[04:08:32] <Moonlightning> /Need/, biologically
+[04:08:36] <Moonlightning> https://xkcd.com/1471/
+[04:08:37] <PinkiePieBot> [ xkcd: Gut Fauna ]
+[04:09:30] <Phase> Gigaway, below a certain concentration bacteria will just die out
+[04:09:44] <Phase> or at least be insufficent to cause an infection
+[04:10:13] <Moonlightning> It's the same thing as why you can't get chicken pox twice
+[04:10:24] <Moonlightning> But it can be deadly if you don't get it as a kid or hey vaccinated
+[04:10:42] *** Joins: RazorSharpFang (mnsbrekkdup@Pony-008oik.iinet.net.au)
+[04:10:59] <Phase> i don't think its the same?
+[04:11:09] <Moonlightning> It kind of is!
+[04:11:18] <Moonlightning> Without exposure, you can't build a resistance
+[04:11:19] <HoneyDrops> chicken pox is a virus, it's a bit different
+[04:11:20] <Phase> you can't get chicken pox twice due to an aquired immunity
+[04:11:25] <Phase> ^ HoneyDrops
+[04:11:37] <Moonlightning> My point stands!
+[04:11:57] <Phase> but bacteria below some concentration simply can't sustain itself within the body
+[04:12:10] <RazorSharpFang> I think if the initial population is too low, it requires time for the population to become threatening, DURING which, the body may work to make itself immune/defend itself.
+[04:12:43] <RazorSharpFang> But what do I know? I failed biology. XD
+[04:12:52] * Phase would look it up but has stuff to do
+[04:13:08] <tiwake> Moonlightning: http://images.anandtech.com/doci/9807/18%20-%20A1100%20Platform%20SoftIron%20Overdrive%203000.jpg
+[04:13:47] <tiwake> Moonlightning: sexyness
+[04:13:50] <Moonlightning> RazorSharpFang: Phase confirmed the concentration bit; the rest sounds legit to me
+[04:14:15] <tiwake> look at all those sata ports
+[04:14:17] <Moonlightning> The point is, if you're exposed /suddenly/, you can then become very sick.
+[04:14:40] <RazorSharpFang> Just because something sounds legit doesn't make it so; Clearly, we need to dispatch a team of researchers and spend millions of dollars on this. XD
+[04:14:44] <Moonlightning> So until and unless we eradicate pathogens, best to keep a good immune system.
+[04:14:47] <tiwake> oh, chickenpox? I had it when I was 22
+[04:14:49] * Phase is basing this of a minimal knowledge of bacteria control in food
+[04:15:10] *** Gladiolus is now known as Gladitide
+[04:15:12] <RazorSharpFang> I do like my food without copious amounts of bacteria
+[04:15:30] <Moonlightning> Copious, yes. Any? Get real.
+[04:15:36] <tiwake> viruses and bacteria are so completely different
+[04:15:37] <tiwake> lol
+[04:15:44] <RazorSharpFang> Exactly why I specified, Moonlightning 
+[04:15:45] <Phase> ^
+[04:16:01] <tiwake> different with how they are reproduced, and different with how an immune system fights them
+[04:16:06] <tiwake> size
+[04:16:11] <tiwake> etc etc
+[04:16:14] <RazorSharpFang> Size DOES matter!
+[04:16:16] <Phase> and iirc , yeah, viruses are magnitudes smaller
+[04:16:22] <Phase> that alone changes how they behave
+[04:16:31] <Moonlightning> Well, yeah; they're not full cells
+[04:16:39] <tiwake> Phase: some viruses are rather large
+[04:16:39] <Moonlightning> Just some RNA and a shell
+[04:16:39] <Phase> bacteria is multi-cell, viruses are below a single cell in size
+[04:16:49] <Moonlightning> Generally
+[04:16:52] <Phase> tiwake, exceptions to every rule
+[04:16:52] <RazorSharpFang> I love how moving my mouse around jumps my CPU usage from 2% to 70%...
+[04:16:57] <Moonlightning> Anyway!
+[04:16:58] <tiwake> heh, sure
+[04:17:08] <tiwake> but yeah, I got chickenpox when I was 22
+[04:17:12] <tiwake> it was rather miserable
+[04:17:15] <Moonlightning> The lesson here is don't freak out about germs
+[04:17:21] <tiwake> never went to the doctor
+[04:17:27] <Moonlightning> What ._.
+[04:17:30] <Phase> don't remember having it
+[04:17:45] <Phase> but my dad had it at the age of 40 something, so i've been exposed
+[04:17:48] <tiwake> why bother with a doctor? just going to tell me to do what I was doing already
+[04:17:52] <RazorSharpFang> However, I also believe sanitation and good hygeine may prevent you from spreading pathogens to others, which is good, imo.
+[04:19:10] <tiwake> bacteria are cut-throat... its not healthy to try and get rid of them as other bacteria will become the larger population and you get sick
+[04:19:33] <Moonlightning> Good hygiene, yes.
+[04:19:42] <Moonlightning> Antibacterial soap all the time…no.
+[04:19:49] <Moonlightning> You need a balance.
+[04:20:00] <RazorSharpFang> Antibacterial soap? I just use Homebrand. >: )
+[04:20:13] <RazorSharpFang> (Store-brand cheepo soap)
+[04:20:16] <tiwake> Moonlightning: I've heard of people who have been in the hospital for a long time, and upon leaving the doctor telling em to roll in the dirt
+[04:20:44] <RazorSharpFang> The dirt isn't safe to roll in. 
+[04:20:45] <tiwake> to get a healthy balance of bacteria again
+[04:20:58] <Moonlightning> Really? :o
+[04:21:00] <Moonlightning> Well then
+[04:21:03] <tiwake> yeah
+[04:21:21] <Phase> if your never exposed to it, you never form an immunity to it
+[04:22:04] <RazorSharpFang> That said, make sure not to expose yourself to everything all at once.
+[04:22:10] <tiwake> its because bacteria really depend on a diverse population to keep things healthy
+[04:22:32] <tiwake> cut-throat
+[04:23:50] <tiwake> http://www.anandtech.com/show/9807/arm-on-amd-the-a1100-seattle-silicon-at-supercomputing-15
+[04:23:51] <PinkiePieBot> [ ARM on AMD: The A1100 Seattle Silicon at SuperComputing 15 ]
+[04:24:01] <RazorSharpFang> So, how would you guys rate LLVM Clang vs GCC C++ vs MSVC++ ?
+[04:24:34] <Phase> real nice
+[04:24:49] <Phase> clang > gcc > msvc
+[04:25:29] <RazorSharpFang> Ah, I forgot Borland C++
+[04:25:35] * RazorSharpFang facehooves
+[04:25:54] <tiwake> and intels compiler
+[04:25:59] <tiwake> and AMDs compiler
+[04:26:11] <tiwake> and probably a lot of others
+[04:26:19] * Phase has never used any of those
+[04:26:31] <RazorSharpFang> Intel has a compiler?
+[04:26:38] <Phase> yeah
+[04:26:56] <tiwake> https://software.intel.com/en-us/c-compilers
+[04:26:57] <PinkiePieBot> [ Intel® C++ Compilers | Intel® Developer Zone ]
+[04:27:14] <Moonlightning> …does anyone use it? XD
+[04:27:15] <RazorSharpFang> Huh. Are they any good?
+[04:27:48] <tiwake> Moonlightning: I like to think that microsoft uses it for certain parts of their operating system
+[04:27:51] <tiwake> http://www.agner.org/optimize/blog/read.php?i=49
+[04:28:03] <Phase> oh nice, 8 core amd arm
+[04:28:29] <tiwake> Phase: yeah... been waiting for stuff to be released... looks like it finally was
+[04:28:46] * Phase wants to the the performance-per-watt comparisons now
+[04:29:20] <tiwake> "...they are actually quite pleased that it is now in production, and they are also impressed with the internal metrics they are seeing from it."
+[04:29:20] <Phase> because even a 20% lead would be well worth someone like google switching architectures
+[04:29:37] <tiwake> just recompile the software
+[04:29:46] <tiwake> "just"
+[04:29:47] <tiwake> heh
+[04:29:57] <Phase> they probably can just recompile it
+[04:30:03] *** Gigaway is now known as Gigabit
+[04:30:03] <tiwake> not a problem if its not stupid programming
+[04:30:06] <Phase> for the most part
+[04:30:23] <Phase> facebook too, since hhvm will already be tested on arm
+[04:30:28] <tiwake> yeah
+[04:30:43] <tiwake> facebook has been talking about switching to ARM internally
+[04:30:46] <tiwake> at least a little
+[04:30:50] <tiwake> not sure how serious they are
+[04:30:56] <Phase> any of the biger tech companies that aren't microsoft shops will be eager to switch
+[04:31:04] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[04:31:15] <Phase> IF there's a measurable reduction in cost
+[04:31:18] <tiwake> probably fairly... I know they are switching their servers, or a certain set of servers over to BTRFS
+[04:31:21] <RazorSharpFang> Is this Arm vs X86_64 ?
+[04:31:31] <Phase> RazorSharpFang, http://www.anandtech.com/show/9807/arm-on-amd-the-a1100-seattle-silicon-at-supercomputing-15
+[04:31:31] <PinkiePieBot> [ ARM on AMD: The A1100 Seattle Silicon at SuperComputing 15 ]
+[04:31:37] <Phase> octo-core arm from AMD
+[04:31:56] <RazorSharpFang> Yeah, I've got that tab open, I'm just wondering what they're already using if they're gonna switch to ARM
+[04:32:05] <Phase> the important bit here is we can now get arm chips on the smaller silicon AMD and Intel have access to
+[04:32:13] <tiwake> RazorSharpFang: server magic stuffs
+[04:32:15] <Phase> RazorSharpFang, x86
+[04:32:24] <Phase> or x86_64, same thing really
+[04:32:31] <RazorSharpFang> I thought they were using IA64
+[04:32:54] <Phase> IA64 == Itanium
+[04:32:59] <Phase> no one uses Itanium
+[04:33:25] <tiwake> it also means I can more seriously consider building another server
+[04:33:26] <Gladitide> itanium_graph.bmp
+[04:33:30] <Gladitide> laff.wav
+[04:33:35] <Phase> eyup
+[04:33:42] <RazorSharpFang> No one uses itanium ?
+[04:33:49] <Phase> https://upload.wikimedia.org/wikipedia/commons/8/88/Itanium_Sales_Forecasts_edit.png
+[04:33:51] <Phase> basically no one
+[04:34:15] <Phase> i like there $35 BILLION PER ANUM estimate by 2002
+[04:34:18] <RazorSharpFang> They were really optimistic
+[04:34:26] <Phase> delusional'
+[04:34:32] <RazorSharpFang> Why did it bomb so hard?
+[04:35:05] <Gladitide> no x86 compat
+[04:35:11] <Gladitide> amd64 came out and it had it
+[04:35:19] <Gladitide> so everyone was like lol what does itanium offer
+[04:35:20] <Phase> RazorSharpFang, would you buy a chip that's more expensive, available from only one vendor, and not compatible with any of your exising internal and vendor provided software?
+[04:35:34] <RazorSharpFang> Phase: No way. Oh...
+[04:35:38] <Gladitide> it also requires RDRAM, I think?
+[04:35:44] <Gladitide> or is that just the first gens
+[04:35:45] <Gladitide> no idea
+[04:35:52] <Phase> not a clue
+[04:35:53] <tiwake> ARM has a huge amount of software and dev stuff already built for it
+[04:36:03] <Phase> ARM has momentum and competition
+[04:36:09] <tiwake> so ARM leaking over into the server market is no surprise really
+[04:36:38] <Phase> and even things like msvc are getting arm support now
+[04:36:44] <Phase> windows too
+[04:36:59] <Phase> didn't they drop itanium support from msvc recently?
+[04:37:02] <tiwake> I wouldent mind ARM for desktop builds too, but thats going to be more difficult in general
+[04:37:27] <RazorSharpFang> Wouldn't like... the majority of desktop software not work on ARM?
+[04:37:43] <Phase> windows software? yeah
+[04:37:48] <Phase> pretty much all of it
+[04:38:03] <Phase> don't buy a windows rt tablet
+[04:38:21] <RazorSharpFang> I suppose the Operating System could use an internal emulator but... the speeds would be awful.
+[04:38:32] <tiwake> it wouldent be a problem for me, because I'd get an AMD video card and I can just build all the software (X11, drivers, desktop manager) for ARM and it wouldent be a problem
+[04:39:02] <RazorSharpFang> tiwake: What if you wanted to run proprietary software without available source?
+[04:39:09] <tiwake> then you are screwed
+[04:39:32] <RazorSharpFang> Would an x86 emulator be difficult to write?
+[04:39:34] <tiwake> but I'm not, cause I don't... uh, except for maybe teamspeak
+[04:39:50] <tiwake> teamspeak probably has ARM builds somewhere though
+[04:39:52] <Phase> RazorSharpFang, qemu already exists
+[04:40:00] <Phase> and will do user mode emulation
+[04:40:14] <RazorSharpFang> I swear, everything I think of already xists.
+[04:40:23] <tiwake> pretty much
+[04:40:28] <Phase> you'd be amazed
+[04:40:35] * Phase still manages to find things that don't
+[04:40:42] <Phase> or if they do, aren't useful
+[04:40:51] <tiwake> Phase: if you count build quality... yeah
+[04:41:03] <Phase> it's not even build quality
+[04:41:13] <tiwake> donno
+[04:41:17] <Phase> what would you use for sensor data/metrics?
+[04:41:19] <tiwake> I'm a machinist
+[04:41:21] <Phase> on a small to medium scale
+[04:41:32] <Phase> because everything i find is lolhuge hbase scale-out
+[04:41:33] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[04:41:36] <RazorSharpFang> Could you compile ARM code into x86 code? Is that a thing?
+[04:41:40] <Phase> or very limited
+[04:41:50] <tiwake> so build quality to me means whatever it is not falling apart from a weeks worth of usage :P
+[04:41:58] <Phase> RazorSharpFang, static recompilation, it's *possible* but i'm not aware of tools that do it
+[04:42:24] <Phase> tiwake, it's that the tools i want, where they do exist, exist in such a way that makes them useless
+[04:42:39] <Phase> so i'm using sql by hand mostly for temperature logging
+[04:42:43] * Phase cbf to build an interface
+[04:43:00] <RazorSharpFang> Not even a CLI?
+[04:43:05] <tiwake> RazorSharpFang: how registers and stuff work between ARM and X86, and how different they are, I think it would be rather difficult
+[04:43:12] <Phase> RazorSharpFang, psql
+[04:43:34] <RazorSharpFang> See, I've never done databases, so I'm unfarmiliar with that acronym.
+[04:43:43] <Phase> it's the command line client for postgres
+[04:44:02] <RazorSharpFang> tiwake: I'm also unfamiliar with registers. 
+[04:44:20] <Phase> it's the cpu's lowest level of working memory
+[04:44:39] <Phase> you fetch from memory into registers, instructions operate on and output to them
+[04:44:54] <Phase> generally
+[04:45:01] <Googie> Phase: It's /kinda/ possible to do recompilation in a limited sense. Theoretically impossible to get working 100% though
+[04:45:16] <Phase> i've never seen anyone actually do it though
+[04:45:22] <Googie> With human guidance it can be done.
+[04:45:34] <Phase> or really put effort into tools for it
+[04:45:41] <RazorSharpFang> But it can't be done entirely without human help?
+[04:45:48] <Phase> its mostly jit'ing emulators
+[04:45:51] <tiwake> Googie: as I would imagine it... like trying to translate written language from something like japinese to english
+[04:46:01] <Googie> Phase: I'm talking static recompilation
+[04:46:13] <Phase> yeah, i've never seen tools for it
+[04:46:24] <tiwake> or rather, from english to japinese
+[04:46:29] <Googie> tiwake: It's worse than that even
+[04:46:47] <Phase> http://xkcd.com/1605/
+[04:46:48] <PinkiePieBot> [ xkcd: DNA ]
+[04:46:50] <RazorSharpFang> I imagine the code generated would be VERY slow.
+[04:46:52] <tiwake> its easy to go from japinese to english, but not the other way around
+[04:47:10] * Phase isn't sure why it'd be harder either way
+[04:47:22] <tiwake> maybe between pidgen and japinese
+[04:47:28] <Phase> RazorSharpFang, slow is less of an issue than you think
+[04:47:31] <tiwake> or something
+[04:47:46] <Googie> Static recompiled stuff would be without slowdown
+[04:47:58] <RazorSharpFang> I mean, slow as in unoptimized.
+[04:48:19] <RazorSharpFang> You'd probably not be taking advantage of the CPU you're compiling to very well, I imagine.
+[04:48:22] <Phase> only need something near 1/4 or 1/2 the speed of natively compiled code
+[04:48:43] <Googie> People from the OpenPandora project actually statically translated StarCraft to ARM
+[04:48:55] <Phase> Googie, that was static?
+[04:49:01] <tiwake> http://softiron.co.uk/products/
+[04:49:10] <Phase> i do know one of the pandora guys was doing real cool stuff with qemu user mode
+[04:49:23] <tiwake> blarg
+[04:49:24] <Phase> tranlating api calls for some of the larger libraries so they run in native code
+[04:49:27] <Phase> gl for example
+[04:49:35] <RazorSharpFang> OpenGL?
+[04:49:38] <Googie> It was static
+[04:49:40] <tiwake> that is another "we don't want to sell you one unit at a decent price" thing
+[04:49:43] <Phase> RazorSharpFang, yeah
+[04:49:55] <tiwake> come on, I just want one AMD A1100 system
+[04:50:17] <RazorSharpFang> tiwake: Well, when you're catering to big business, you're NOT catering to single buyers.
+[04:50:30] <Googie> https://boards.openpandora.org/topic/15820-starcraft/
+[04:50:33] <PinkiePieBot> [ Starcraft - Software News - Pyra Handheld Boards ]
+[04:50:54] <RazorSharpFang> So... are they using software rendering then?
+[04:50:56] <Googie> Reversed back into C, and then compiled for ARM in that case
+[04:51:00] <tiwake> RazorSharpFang: I run my own server, I want a server board thats low power with lots of SATA ports
+[04:52:09] <Googie> The markup on those sort of systems is too much for people like you and I tiwake
+[04:52:41] <RazorSharpFang> tiwake: Maybe get it through a third party?
+[04:52:51] <tiwake> Googie: yeah. I just need a board, not support, or software, or much of anything, just the board
+[04:52:54] <Googie> R&D costs, marketing costs...
+[04:53:12] <Googie> support costs. All this costs them even if you don't use it
+[04:53:24] <Googie> A board without a manual at all wouldn't be much use :P
+[04:53:48] *** Sour_Sweet is now known as Seoson|BNC
+[04:53:51] <tiwake> all boards have documentation somewhere
+[04:54:02] <RazorSharpFang> Ah, I really want a raspberi pi. 
+[04:54:23] <tiwake> you cant have a project like that without any documentation, even if such information is internal only
+[04:54:33] <Googie> For low margin items, a much more significant percentage of the cost goes into One-off setup costs
+[04:54:42] <Googie> Like writing said documentation
+[04:54:56] <Googie> Hence they have to charge more to the few consumers they have
+[04:54:57] <Phase> volume dilutes setup costs
+[04:55:16] <RazorSharpFang> I love dilution.
+[04:55:42] <Googie> Your best bet is basically always going to be obtaining used hardware
+[04:55:43] <RazorSharpFang> Except whe it's my shares that are diluted.
+[04:56:03] <Googie> Or more mass market hardware
+[04:56:37] <Phase> EFI and ACPI are architecture-agnostic, windows works on ARM and at one point was on MIPS, PowerPC, and ALPHA
+[04:56:47] * Phase has an alpha
+[04:57:03] <Phase> cool piece of poorly built crap
+[04:57:11] <Googie> I keep eying old SUN hardware
+[04:57:26] <Phase> if you ever get a digital personal workstation, get a scsi drive
+[04:57:33] <Phase> nasty bug on the secondary pci bus breaks ide
+[04:57:39] <Phase> i have no idea how that made it into production
+[04:58:22] <Phase> fans under spec, crappy custom psu
+[04:58:59] <Phase> GPU from a company that no longer makes GPU's
+[04:59:02] <Phase> they make planetariums now
+[04:59:08] <RazorSharpFang> My pentium 4 is unhappy with me running Win7 on it. 
+[04:59:52] <tiwake> I'm kind of hoping supermicro builds a board based on the A1100
+[04:59:59] * Googie is idly reminded of his work experience at Sun. Went through the reboot and fault-clearing settings for a server that (at the time) would have been worth $300,000
+[05:00:00] <tiwake> <3 supermicro
+[05:00:31] <RazorSharpFang> That's a lot of money
+[05:00:56] <Googie> Couldn't even reset the "Error" light without giving the code to Sun and getting the response code back
+[05:01:23] <Googie> (Though obviously that wasn't an issue for me :P)
+[05:01:26] <tiwake> I hate strict control like that
+[05:03:18] <Googie> But to be honest, for a lot of that stuff, the overhead of just setting up decent distribution to /sell/ to an individual would probably cost more than it would ever make.
+[05:04:13] <tiwake> depends
+[05:04:33] <tiwake> on how you optimize work (production) flow
+[05:04:51] <Phase> wonder how the mainframe market is doing these days
+[05:04:57] <Googie> Which there's not a huge point in doing for low volume items, because optimizing production in itself is expensive.
+[05:05:18] <tiwake> it really depends
+[05:05:25] <Phase> i know you can still buy these huge sun sparc based things, used for weather modeling
+[05:05:40] <Phase> but i imagine those nvidia cards are entering that market
+[05:05:47] <tiwake> some shops are more suited to building small quantities, where others are set up to make zillions of the same thing
+[05:06:06] <Googie> Yeah, and nobody does the latter for something that'll sell maybe 10,000 units.
+[05:06:12] <tiwake> how you set up equipment really depends on the volume market
+[05:06:23] <Googie> Over many years
+[05:06:32] <tiwake> if I sold 10,000 of the same thing, I'd love it
+[05:06:47] <tiwake> my shop is more optimized for smaller runs of stuff
+[05:07:01] <tiwake> makes it difficult to switch over to high volume
+[05:07:20] <tiwake> the reverse is true too
+[05:07:57] <tiwake> a high volume shop is more difficult to make a few of a different thing
+[05:08:18] <Googie> The point is, these aren't high volume items compared to stuff that is actually sold to the consumer. There are /huge/ setup costs for production of these things.
+[05:08:23] <Phase> when you hit fully automated levels yeah
+[05:08:36] <tiwake> I've worked in both kinds of machine shops
+[05:08:53] <tiwake> well, larger volume, not ultra all-automated kind of volume
+[05:08:56] <Googie> Not just production setup, but R&D, technical writing. Getting support into place to support the product.
+[05:09:22] <Googie> Phase: Even for smaller stuff though. A small production run of an ASIC is still expensive.
+[05:09:51] <Phase> Googie, yeah, i read about the actual costs at one point, forget the numbers
+[05:09:55] <Googie> Especially if you also have to design that ASIC. And design/document the board. And write firmware.
+[05:10:22] <Phase> which is why the write-once fpga things sell
+[05:10:35] <Googie> IIRC just "template" itself is something like $50,000
+[05:12:23] <Googie> And then they have huge costs per unit if you need a decent one.
+[05:13:59] <RazorSharpFang> So, ARM is low power-consuming typically, when compared to x86 ?
+[05:14:11] <Phase> yeah
+[05:14:19] <Phase> in general x86 just takes too much silicon
+[05:14:30] <RazorSharpFang> So, this translates to lower operating costs for servers.
+[05:14:31] <Googie> ARM has basically always been really strong in the mobile device market.
+[05:14:44] <Phase> intel atom's, despite being a generation or two ahead in silicon tech, are about on par with arm
+[05:15:07] <Googie> Intel have huge advantages in fabrication technology, but they're struggling.
+[05:15:10] <Phase> new amd chip though is on an even playing field
+[05:15:20] <RazorSharpFang> Does that make ARM a better instruction set?
+[05:15:32] <Phase> it has much less instruction set
+[05:15:42] <Googie> No. Just a different instruction set.
+[05:15:43] <Phase> and far less legacy
+[05:16:01] <Phase> yeah, completely different architecture
+[05:16:48] <RazorSharpFang> If it consumes less power for the same performance, does that not make it better?
+[05:17:09] <Phase> it wont perform better at all tasks
+[05:17:20] <Googie> You can't get anywhere near as much performance at the high end
+[05:17:35] <tiwake> Googie: with ARM? why not?
+[05:17:39] <RazorSharpFang> what is a high-end task?
+[05:17:44] <Phase> completely different architecture and instruction set means completely different performance properties
+[05:17:45] <Googie> You can span out to multiple cores/multi-cpu, but then you have to deal with all the multithreading issues.
+[05:18:03] <Phase> modern x64 for example has instructions that implement AES
+[05:18:15] <Phase> it's straight up better at AES than ARM is because of that
+[05:18:16] <Googie> That also. There's stuff that you can do on x86-64 that you just... can't on ARM even.
+[05:18:29] <RazorSharpFang> Just can't ?
+[05:18:33] <Phase> aren't implemented in hardware on arm'
+[05:18:36] * Googie has seen a talk where someone was implementing an instruction tracer using Intel CPU features.
+[05:18:43] <tiwake> has to be compiled for those extra instructions though
+[05:18:50] <Phase> you can, but atop the existing instruction set
+[05:19:05] <Phase> not like a single pipelined instruction
+[05:19:08] <RazorSharpFang> I thought ARM was turing-complete...
+[05:19:19] <Googie> It is, but turing-complete is kind of a misnomer.
+[05:19:27] <RazorSharpFang> How so?
+[05:19:29] <Googie> Or at least, a lot of people don't really understand what it implies
+[05:19:37] <Phase> it does not imply performance
+[05:19:48] <Googie> Nor I/O
+[05:19:49] <Phase> and you have to assume infinite memory
+[05:19:55] <RazorSharpFang> Phase: I know that. I thought it meant that any problem that is solvable can be solved on it.
+[05:20:11] <Googie> It can. But it might not be in a sane way.
+[05:20:19] <RazorSharpFang> Who needs sanity?
+[05:20:24] <tiwake> heh
+[05:20:39] <Googie> The solution to implement an instruction tracer at that level without hardware support is to run a full blown CPU emulator.
+[05:20:41] <tiwake> no one thing can be good with all the things
+[05:20:50] <Googie> (Or modify the binary)
+[05:21:15] <RazorSharpFang> I don't even know what an instruction tracer is. 
+[05:21:27] <Phase> i'd assume arm has debugging infrastructure
+[05:21:36] <Phase> hardware single-step and all that
+[05:22:13] <Googie> Phase: This was for a modified afl-fuzz that didn't need instrumentation.
+[05:22:24] <Phase> ah
+[05:22:36] <Googie> So basically tracking what code has been executed, without modifying the binary
+[05:22:53] <Compu> we got a tree :D http://imgur.com/gallery/YlKYg8r
+[05:22:53] <PinkiePieBot> [ Tree :D - GIF on Imgur ]
+[05:23:30] <tiwake> Compu: already?
+[05:23:33] <RazorSharpFang> The gif makes my computer lag. Pretty though.
+[05:23:45] <Phase> should be an mp4
+[05:23:50] <Googie> https://software.intel.com/en-us/blogs/2013/09/18/processor-tracing
+[05:23:51] <Phase> is at my end
+[05:23:52] <PinkiePieBot> [ Processor Tracing | Intel® Developer Zone ]
+[05:23:55] <Phase> or webm, whatever
+[05:24:34] <Compu> RazorSharpFang: prolly cuz it was taken with my note 4 camera at full resolution
+[05:24:45] <RazorSharpFang> Also, cos I'm using a Pentium 4.
+[05:24:54] <Compu> well hurrdurr
+[05:25:06] <RazorSharpFang> It's running win7
+[05:25:15] <RazorSharpFang> I tried win10, but.... it didn't like it.
+[05:25:18] <Compu> :P
+[05:25:47] <RazorSharpFang> The graphics card is probably more powerful than the CPU.
+[05:26:40] <RazorSharpFang> I got a Nvd GeForce GT 240. Which I assume is good.
+[05:26:46] <Compu> use the graphics card as the CPU
+[05:26:49] <Googie> tiwake: As of yet, I haven't seen any ARM devices that can compete in single threaded performance with high end x86. A lot of modern x86 CPU design has made tradeoffs for performance at the expense of wattage.
+[05:26:56] <RazorSharpFang> Compu: Is that even possible?
+[05:27:06] <Compu> maybe
+[05:27:12] <Googie> So at the moment, if you need single threaded performance, it isn't really a contest.
+[05:27:32] <RazorSharpFang> Googie: I thought a lot of high-end stuff wasn't using single threads.
+[05:27:35] * Googie suspects that to get such single threaded performance, an ARM design would probably lose a lot of its power advantages.
+[05:27:51] <Googie> Yes, but sometimes you can't get away from it.
+[05:28:14] <Googie> https://en.wikipedia.org/wiki/Amdahl's_law
+[05:28:16] <PinkiePieBot> [ Amdahl's law - Wikipedia, the free encyclopedia ]
+[05:28:21] <RazorSharpFang> I'm sure there's a problem out there that just CANNOT have any benefits from multi threading.
+[05:28:26] <Googie> There are plenty.
+[05:29:31] <tiwake> Googie: sure, there are none made, but as far as I know, nobody has really tried to take ARM all the way up to compete with high end x86... most likely because effort to gain ratio being low, but technically I don't see why not
+[05:29:57] <RazorSharpFang> You mean why it couldn't happen?
+[05:30:49] <Phase> <RazorSharpFang> The graphics card is probably more powerful than the CPU. < for some tasks
+[05:31:14] <Phase> and it may sound strange
+[05:31:17] <Phase> but graphics is one of those tasks
+[05:31:32] <RazorSharpFang> I'd probably get better performance using FFmpeg if it could use the grahpics card.
+[05:31:35] <Googie> Yeah, but that's only really speculation.
+[05:31:45] <Googie> In a lot of cases, encoders/decoders already can
+[05:31:51] <Googie> I think FFmpeg has some GPU support
+[05:31:54] <Phase> i think there's some cuda/opencl backends now
+[05:32:25] <Phase> i like how gpu's are becoming big co-processors
+[05:32:29] <Googie> RazorSharpFang: https://en.wikipedia.org/wiki/SIMD
+[05:32:30] <PinkiePieBot> [ SIMD - Wikipedia, the free encyclopedia ]
+[05:33:02] <Googie> Those are GPUs
+[05:33:48] <Googie> (Modern CPUs include /some/ SIMD instructions, but for the most part don't operate that way)
+[05:33:53] <RazorSharpFang> So it is a thing.
+[05:36:01] <RazorSharpFang> If a species is protected, it's illegal to keep and propogate. How does that make sense?
+[05:36:05] <Gladitide> modern cpus have so many damn instruction sets
+[05:36:11] <Gladitide> remember when mmx was new and cool
+[05:36:12] <Gladitide> lel
+[05:36:22] <Googie> If anything it used to be worse.
+[05:36:23] <Phase> remember when 3DNow!
+[05:36:42] <Gladitide> remember half-assed SSE1?
+[05:36:49] <Phase> do modern amd chips still support 3dnow?
+[05:37:05] <Compu> remember when typwriter? :D
+[05:37:05] <Gladitide> I think MMX and 3DNOW were subsumed into SSE2 or something.
+[05:37:21] <Googie> I'm pretty sure they're still supported
+[05:37:24] <Phase> "3dnowprefetch" in /proc/cpu on a FX-8320
+[05:37:27] <tiwake> Compu: the classic mechanical keyboard :3
+[05:37:37] <Googie> Gladitide: SSE2 was another extension along the same lines.
+[05:37:58] <Compu> tiwake: nope, my typewriter has a crap keyboard
+[05:37:58] <Googie> Once you've implementing an instruction set, it's really hard to take it away again for compatibility reasons.
+[05:37:58] <Phase> Gladitide, SSE* is probably a superset of what MMX/3DNow provides anyway
+[05:38:07] <Googie> *implemented
+[05:38:23] <tiwake> Compu: oh, you got an electronic one?
+[05:38:28] <Gladitide> yeah that was waht i meant, kinda
+[05:38:28] <Gladitide> v0v
+[05:38:31] <tiwake> not all-mechanical
+[05:38:45] <Compu> tiwake: yes
+[05:38:48] <Gladitide> i wonder how much silicon the instruction sets take up
+[05:38:53] <Compu> tiwake: 1 sec
+[05:38:56] <Gladitide> like, could you take them out and stuff in more cores? 
+[05:38:58] <Googie> But at least now, all Desktops are x86. Not Alpha or SPARC or Mips or PowerPC or 68k :P
+[05:39:06] <Gladitide> I have a powerbook! o3o
+[05:39:07] <Googie> Much better for compatibility.
+[05:39:13] <tiwake> Compu: I never got to use a fancy electric typewriter
+[05:39:43] <Gladitide> I also have a powermac g4 733. A broken dual 1ghz too, was sad when that turned out to be broke
+[05:40:07] <tiwake> the G4 powerPC processors were pretty fantastic
+[05:40:24] <Phase> would be nice if PowerPC wasn't a single-vendor thing
+[05:40:27] <tiwake> actually all of the power series processors are pretty nice
+[05:40:51] <tiwake> I think the latest is power8 or something
+[05:41:28] <Phase> imagine if there wasn't any competition in x86 chips
+[05:41:38] <tiwake> imagine AMD dieing
+[05:41:42] <Googie> I can :/
+[05:41:48] <Gladitide> please no
+[05:41:50] *** Quits: RazorSharpFang (mnsbrekkdup@sharpest.of.all.fangs) (Connection closed)
+[05:41:51] <Phase> intel selling us 386's still
+[05:41:51] <tiwake> yeah, dark times
+[05:41:53] <Gladitide> someone compet with intel ffs
+[05:42:00] <Gladitide> bring back cyrix
+[05:42:11] <Phase> AMD won't die, but i have heard rumors of a buyout
+[05:42:11] <Gladitide> I actually like intel but I'm not dumb enough to think no-competition is a good thing
+[05:42:33] <Googie> I'd say that Intel needs competition to not get sued, but honestly... they've probably spent enough money *cough*bribing*cough*
+[05:42:52] <Googie> IIRC AMD actually loses any rights to x86 Patents that Intel owns if they get bought.
+[05:43:22] <Phase> wouldn't surprise me
+[05:43:28] *** Joins: RazorSharpFang (~WebChat@Pony-008oik.iinet.net.au)
+[05:43:43] <tiwake> Phase: yeah, AMD won't die, it will either drop out of more markets, get bought out and continue on, get bought out and folded away into oblivion, or what they are doing right now pays off in the long run and they pick up market share
+[05:43:43] <Phase> samsung was the buyer btw, few months ago when i read that
+[05:44:04] <Phase> i reckon it'll pay off
+[05:44:20] <Phase> intel has been far too stubourn
+[05:44:26] <tiwake> its starting to show with their video card driver models with DirectX12/vulkan
+[05:44:55] <Phase> "we can't use arm, someone might compete"
+[05:45:21] <tiwake> NVIDIA hacks around a lot of things to ink performance on, with how well DirectX12 and vulkan are defined is more inline with how AMD develops their drivers
+[05:45:40] <Googie> Both vendors do. They have to :(
+[05:46:06] <tiwake> hopefully not with DirectX12/vulkan
+[05:46:11] <Phase> vulkan is an extension of opencl, and treats the gpu a co-processor
+[05:46:26] *** RazorSharpFang is now known as Pony_69375
+[05:46:31] <Googie> A ton of AAA games are (apparently) released completely broken in terms of Graphics API usage
+[05:46:34] <Phase> about damn time it does too
+[05:46:57] <tiwake> Googie: yeah
+[05:47:19] <Compu> tiwake: http://imgur.com/1Mrwvbl
+[05:47:19] <PinkiePieBot> [ Olympia Splendid Electric Typewriter - Imgur ]
+[05:47:23] <Googie> I mean, ideally, they'd both just stop adding in hacks to their drivers, and get developers to /fix their own damn stuff/, but then the other one would just take the advantage.
+[05:47:46] <Phase> their hacks should be per-application
+[05:47:49] <Phase> not global
+[05:47:53] <tiwake> Googie: is that why AMD made mantel to begin with?
+[05:48:12] <Googie> Phase: They are
+[05:48:20] <Phase> huh
+[05:48:40] <Googie> But it's still a whole heap of wasted work. That's also why "Game Ready" GPU drivers come out.
+[05:48:56] <Googie> And it all adds complexity to an already huge codebase.
+[05:49:24] <tiwake> I really hope Vulkan fixes that
+[05:49:39] <Phase> tiwake, vulkan is about removing most of the API layer, since game engines have had to implement a lot of that state internally already
+[05:49:53] <tiwake> or rather, would get rid of most of such things
+[05:50:10] <Googie> Plus the driver's implementation of OpenGL is broken half the time :/
+[05:50:36] <Phase> ATI cards in laptops have (or at least had) broken OpenGL
+[05:50:45] <Phase> take a guess as to WHY it was broken
+[05:50:57] * Googie found this very interesting: http://richg42.blogspot.com.au/2014/05/the-truth-on-opengl-driver-quality.html
+[05:50:58] <PinkiePieBot> [ Rich Geldreich's Tech Blog: The Truth on OpenGL Driver Quality ]
+[05:55:07] *** Pony_69375 is now known as RazorSharpFang
+[05:55:29] <Phase> tiwake, indirectly by moving a lot of code that would be in the driver to the game engine
+[05:55:51] <HoneyDrops> Intel is about the only HW vendor that can code its way out of a wet, tissue-paper bag.
+[05:56:14] <Phase> tiwake, whats left is some basic platform-level stuff (vblank, fences, yada yada), shaders, and buffer management
+[05:57:22] <Phase> scratch that, it's less the removal of code, and more the removal of state
+[05:58:24] * HoneyDrops won't repeat her dream of 5-10 common CPU arch in severs/desktops/mobile with about equal marketshare.
+[05:58:40] <Googie> HoneyDrops: I have literally had to plug in /two/ keyboards to an Intel Nuc to use it because of Intel's firmware having issues.
+[05:58:42] <HoneyDrops> (aside from that ;) )
+[05:58:46] <Googie> :P
+[05:59:02] <HoneyDrops> Googie: I didn't say they could make it out of a newsprint bad :P
+[05:59:09] <HoneyDrops> s/bad/bag/
+[06:01:21] <Phase> imo firmware would be the next thing what needs purging
+[06:02:46] <Moonlightning> o3o ?
+[06:03:12] <Phase> less buggy firmware
+[06:03:25] <Phase> coreboot based if at all possible
+[06:03:42] <HoneyDrops> Open firmware.  Vendors should just publish full specs/docs on the hardware and we'll write drivers.
+[06:04:35] <tiwake> anyone have a suggestion for a cheap garbage sub $100 tablet?
+[06:06:33] <HoneyDrops> Umm, B&N is selling Nook Tab 4 for 99$?
+[06:06:55] <ShivalWolf> look on DX or ali express. browse by price 
+[06:07:17] <HoneyDrops> iirc that's just a Samsung galaxy Tab4 w/ custom Nook-ifired Android.
+[06:07:24] <ShivalWolf> its all the same cheep knockoff stuff
+[06:40:26] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[07:05:04] *** Gigabit is now known as Snoarin
+[07:11:19] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "sleepy pony is sleepy, 'night everypony")
+[07:12:32] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[07:33:59] <HoneyDrops> Anypony know about e-readers?  (eink displays ONLY)
+[07:46:19] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:04:28] <Gladitide> I have a kindle, I love it.
+[08:04:39] <Gladitide> Actual thanks for the reminder to put more books on o3o.
+[08:05:29] <HoneyDrops> Gladitide: how well does it work with loose epubs/pdfs?
+[08:06:53] <HoneyDrops> I'm looking at the 99$ Nook Glowlight Plus at the moment.  I have zero interest in ebook stores.  The use-case is project Gutenberg ebooks and scientific papers (pfds).
+[08:06:57] <tiwake> HoneyDrops: cant you get an android based e-ink display tablet thing?
+[08:06:59] <Gladitide> That I do not know, I only tried that once.
+[08:07:14] <Gladitide> It worked fairly well then but like, it was just once and long ago.
+[08:07:22] <HoneyDrops> tiwake: I guess, where?
+[08:07:28] <Gladitide> I did use gutenberg books a few times and they worked fine
+[08:07:43] <tiwake> donno, I recall seeing them in passing in the past
+[08:07:45] <Gladitide> It's quite good at scaling, but well- it's a kindle, not a nook.
+[08:08:07] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[08:08:20] <tiwake> http://blog.the-ebook-reader.com/2015/04/20/best-android-e-ink-ebook-readers-android-ereaders-list/
+[08:08:23] <PinkiePieBot> [ Best Android E Ink eBook Readers – Android eReaders List | The eBook Reader Blog ]
+[08:09:23] *** Quits: Crimson_Tail (Bluepon@Pony-c6kd1i.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[08:14:53] <HoneyDrops> Hmm, I'll take a look
+[08:15:10] <tiwake> that was a very quick google search
+[08:17:25] <Lapsus> HoneyDrops: I have a kindle paperwhite and it's pretty good at pdfs and stuff
+[08:17:41] <Lapsus> I tend to just let calibre convert all my ebooks though
+[08:18:20] <tiwake> well, I just bid on a google nexus 5, 32gig version
+[08:19:47] <tiwake> made by LG
+[08:21:51] <HoneyDrops> I ask, because my wife is considering some sort of e-ink display device for travel reading... but all the options seem to kinda suck :/
+[08:22:04] <tiwake> yeah
+[08:22:21] <tiwake> just use a tablet and turn down the brightness
+[08:22:40] <tiwake> and a softer color scheme
+[08:23:02] <tiwake> http://forum.xda-developers.com/google-nexus-5/development/rom-sailfish-os-alpha-t2841266
+[08:23:03] <PinkiePieBot> [ [ROM] [3Oct] [GNU/Linux] (beta) Sailfish OS … | Google Nexus 5 | XDA Forums ]
+[08:23:25] <tiwake> ^^ what I plan on doing to the nexus 5
+[08:27:53] <Moonlightning> Tablet with an OLED display?
+[08:28:08] <Moonlightning> Use dark backgrounds?
+[08:28:14] <Moonlightning> lightgray text on black background
+[08:28:32] <tiwake> octavia colors \o/
+[08:31:38] *** Joins: Melanosuchus (quassel@Pony-pq4p9t.as13285.net)
+[08:34:34] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:38:56] *** zz_CyberJacob is now known as CyberJacob
+[08:47:00] <Gladitide> I dunno HoneyDrops, I am extremely satisfied with my paperwhite.
+[08:47:02] <Gladitide> I have to sleep tho.
+[08:47:06] <Gladitide> so ~vanish~
+[08:47:10] * Gladitide vanishes
+[08:47:12] *** Quits: Gladitide (Corey@the.truth.is.out.there) (Quit: Leaving)
+[08:51:46] *** Joins: Phase (Phase4@Pony-7c5tb0.internode.on.net)
+[08:52:31] * HoneyDrops just wants a eink tablet that does what she wants and doesn't do what she doesn't.  (same standard I hold for anything I own)
+[08:57:41] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[09:22:39] *** Quits: Melanosuchus (quassel@Pony-pq4p9t.as13285.net) (Connection closed)
+[09:30:46] <HoneyDrops> Anypony have an opinion on the Kobo ereaders?  Somehow the kindle and nook both seem to be crappy tablets, running android, and just happen to have an e-ink display (about the only real positive point) :/
+[09:38:16] <Moonlightning> Wow, that was needlessly complex
+[09:38:18] <Moonlightning> https://gist.github.com/BlacklightShining/1c73806c2d46564735c5
+[09:38:19] <PinkiePieBot> [ circular-equals.py · GitHub ]
+[09:38:29] <Moonlightning> Code review on aisle Moon Moon?
+[09:46:07] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:58:37] <Lapsus> HoneyDrops: sounds to me like you're looking at the wrong things, my kindle 3 and paperwhite were/are great e-ink ereaders
+[09:59:16] <Lapsus> the kindle ones are very much not running any sort of android that I know of
+[10:04:58] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[10:05:22] <HoneyDrops> Ideally I want something that has no affilation, or post-sale contact with the vendor... but that is clearly too much to ask.
+[10:06:20] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[10:08:30] <HoneyDrops> Ah, the Paperwhite is running some Linux, seems some confusion with the table and the color ones (which are just android)?
+[10:09:48] <Moonlightning> HoneyDrops: well, of course. Capitalism. They want to keep contact in the hopes that you'll give them more money for something.
+[10:11:34] *** CyberJacob is now known as zz_CyberJacob
+[10:15:53] <RazorSharpFang> tiwake: I've got a Nexus5, and it's great.
+[11:07:28] <HoneyDrops> Anypony here familiar with custom PSP firmwares?  (if need be this can be taken to PMs)
+[11:15:14] <Unixkitty> PSP? Have not heard that word for at least 6 years
+[11:18:26] * Googie only remembers that on older models, you can use a modified battery to tell it to boot off the Memory Stick.
+[11:18:49] <Googie> (For some reason there's a specific battery ID that the firmware is coded to look for as a debugging tool)
+[11:26:10] <HoneyDrops> Heh, I think I have a firmware I want.  Testing now
+[11:28:41] <HoneyDrops> Well FFT plays, I am content.
+[12:31:48] *** Quits: Neptune (Neptune@Pony-q31u28.k23g.gt9a.fcd0.2607.IP) (Ping timeout: 121 seconds)
+[12:35:05] <Googie> tiwake: It turns out they are selling A1100 dev boards
+[12:35:16] <Googie> $3000 a board though
+[12:37:49] *** Joins: Neptune (Neptune@Pony-dce.ejr.223.104.IP)
+[12:54:22] *** Seoson|BNC is now known as Sour_Sweet
+[12:57:33] *** Quits: RazorSharpFang (~WebChat@sharpest.of.all.fangs) (Quit: Zzzzz)
+[13:20:08] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:12:23] *** Quits: Apple_Bloom (sid52418@the.canon.pony) (A TLS packet with unexpected length was received.)
+[14:59:52] *** Joins: Apple_Bloom (sid52418@the.canon.pony)
+[15:48:16] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[17:01:29] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:10:19] *** Joins: Crimson_Tail (Bluepon@Pony-k7hdqh.cg80.k4gu.0151.2601.IP)
+[17:10:51] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:23:01] <tiwake> Googie: yeah, they have been for quite a while
+[17:43:54] *** Joins: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com)
+[17:55:14] *** Snoarin is now known as Gigabit
+[18:15:28] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[18:23:27] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[18:25:17] *** Quits: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com) (Quit: Leaving)
+[18:28:21] <Moonlightning> A…modified battery?
+[18:28:24] <Moonlightning> Ew, haaack
+[18:30:27] *** Joins: Melanosuchus (quassel@Pony-v8fsnm.as13285.net)
+[18:40:32] *** Quits: Melanosuchus (quassel@Pony-v8fsnm.as13285.net) (Ping timeout: 121 seconds)
+[18:41:13] *** Joins: Melanosuchus (quassel@Pony-vfp.fqb.205.213.IP)
+[18:48:14] *** Quits: Melanosuchus (quassel@Pony-vfp.fqb.205.213.IP) (Ping timeout: 121 seconds)
+[18:48:56] *** Joins: Melanosuchus (quassel@Pony-v8fsnm.as13285.net)
+[18:53:52] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[19:00:01] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:10:04] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[19:24:40] <Moonlightning> …
+[19:24:41] <Moonlightning> Gods…
+[19:24:46] <Moonlightning> Okay, so, names…
+[19:25:06] <Moonlightning> My understanding was that asking for a name and taking a single Unicode string would be fine.
+[19:25:10] <Moonlightning> But…apparently that breaks…
+[19:25:12] <Moonlightning> >> http://www.kalzumeus.com/2010/06/17/falsehoods-programmers-believe-about-names/
+[19:25:27] <Moonlightning> (Oh, and allowing them to change it later.)
+[19:26:36] <Moonlightning> 6, 10, 11, 12+13, 18, 36, 40
+[19:26:40] <Moonlightning> What the hell am I going to do
+[19:26:44] <Moonlightning> especially with 40
+[19:30:50] <Moonlightning> …okay, I outright reject #40.
+[19:31:07] <Moonlightning> Give me a string of characters to store and to display as a human-readable identifier for you.
+[19:33:20] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[19:45:34] <Divide|TechSupport> What fun... customer, no, it's not your Smart TV that's having issues, it's your Blu-Ray player, and no, they should not have pushed you to Netflix.
+[19:48:19] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[19:50:48] <Sour_Sweet> So having more than one partition on a flash drive is still a problem .... for windows ...
+[19:52:07] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[19:54:05] <Moonlightning> Yay Windows.
+[19:54:06] <Sour_Sweet> In times when a USB stick as big as a fingernail is larger than the first couple of disks I owned combined, this is ridiculous
+[19:54:44] <Gladiolus> My first HDD was 5 gigs lol.
+[19:55:03] <Gladiolus> My video card has nearly that much memory!
+[19:55:32] <Sour_Sweet> My first was 2 GiB ;-)
+[19:55:46] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[19:55:57] <Gladiolus> I had an IBM 5150 with a 30 meg drive for a bit recently.
+[19:56:17] <Gladiolus> It was funny, operated at floppy disk speeds- it just WHOLY SHIT 30 FLOPPY DISKS ALL AT ONCE? OMG
+[19:56:35] <Moonlightning> More like 21.
+[19:56:54] <Gladiolus> Only took 720k disks o3o
+[19:57:23] <Gladiolus> actually only 360k 5.25s but the drive broke so I had to replace it with a 720k 3.5
+[20:01:13] *** Joins: TachyonicBow (Tachy@Pony-005pm7.range86-175.btcentralplus.com)
+[20:02:43] <Moonlightning> Tachy! x3
+[20:02:45] <Moonlightning> Long time no see~
+[20:03:45] * Gladiolus reverses TachyonicBow to stop the transverse-black energy flux.
+[20:55:17] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[21:06:36] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:15:24] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[21:18:16] *** djazz is now known as MangoBloom
+[21:28:05] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:36:27] <Compu> PFFT XD
+[21:37:17] <Compu> some idiot in a gran turismo 6 lobby is trying to tell people they can make their PS3s into PS4s by using a PS4 game disc and the firmware update option in the PS3
+[21:43:45] <Kinsley> He's probably not far off.
+[21:44:08] <Kinsley> 'Cept for the change in architecture, I can't see much of a difference. They still run at 30 FPS.
+[21:44:54] <Compu> Kinsley: 512 MB of RAM vs 8 GB of RAM iirc
+[21:48:09] <Kinsley> Trust me, I'm well aware that the current generation of consoles are markedly better than the ones they're replacing. But the environment surrounding them would have us believe that a $400 console can perform as good a PC that costs three times as much.
+[21:48:43] <Kinsley> They were obsolete when they released and it's gotten worse since.
+[21:49:14] <Kinsley> That's not to say that a console can't deliver a compelling experience. But...
+[21:49:36] <Kinsley> I don't buy the marketing.
+[21:49:49] <Kinsley> I miss the old days.
+[22:23:06] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[22:33:12] * HoneyDrops prefers consoles mostly for the games themselves.  When it comes to games, the specs of what is driving them is so far down on the list of things I care about.
+[22:34:11] <Moonlightning> I have very few games, but I care more about the resulting observed responsiveness of them than the numbers.
+[22:35:17] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[22:36:06] *** Quits: Eventide (uid61788@Tips.Fedora) (Quit: )
+[22:37:06] *** TachyonicBow is now known as Obaskyr
+[22:42:53] <Kinsley> I've grown up on combined console and PC gaming.
+[22:43:30] <Kinsley> To point that I own every Playstation console but the PS4 and my PC gaming goes back far enough that I still have CDs for games from 1998.
+[22:47:34] * HoneyDrops has a NES, SNES, GC, Wii, WiiU (once I pick it up on sunday), GB, GBC, GBP, GBA, GBA:SP, DS, PS1, PS2, PS3, PSP, PS:Vita.  I still mostly play NES-PS1 era.
+[22:48:16] <HoneyDrops> Oh forgot Gamegear and Sega Genesis in that listing, and Wonderswan Color.
+[23:09:17] *** Joins: Eventide (uid61788@Tips.Fedora)
+[23:10:29] *** zz_CyberJacob is now known as CyberJacob
+[23:19:24] *** Joins: WuBzY (WuBzY@Pony-pdfpl3.dhcp.inet.fi)
+[23:21:14] *** Quits: WuBzY (WuBzY@Pony-pdfpl3.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[23:23:16] *** Joins: WuBzY (WuBzY@Pony-pdfpl3.dhcp.inet.fi)
+[23:31:59] *** Quits: WuBzY (WuBzY@Pony-pdfpl3.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[23:41:15] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[23:46:12] *** Joins: aristocratic (snob@Pony-ne5.2rf.228.37.IP)
+[23:48:43] <Sour_Sweet> Windows and USB sticks. I don't even ask why the Media Creation Tool did with my stick what it did.
+[23:50:21] <HoneyDrops> I try to no think about why Windows.
+[23:50:27] <HoneyDrops> s/no/not/
+[23:57:14] *** Gigabit is now known as worthless
+[23:58:45] <Sour_Sweet> Everday I use Windows as my primary OS it makes me more angry :P

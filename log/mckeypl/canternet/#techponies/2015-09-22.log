@@ -1,0 +1,511 @@
+[00:02:25] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[00:05:10] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[00:16:12] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:26:49] *** Joins: DataByte (DataByte@Pony-1aiol4.sub-70-194-76.myvzw.com)
+[00:30:03] <Seoson> The DTAG - my favorite ISP      NOT - has a bug bounty programm, BUT they exclude CSRF, XSS, Clickjacking, ... well everything except for SQLi and remote code execution bugs. Wow so they exclude everything except for those bugs that I can turn into $$$ in basically every underground forum.
+[00:33:44] *** Quits: DataByte (DataByte@Pony-1aiol4.sub-70-194-76.myvzw.com) (Ping timeout: 121 seconds)
+[00:33:44] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:38:46] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:45:43] *** \m is now known as mniip
+[00:53:22] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[01:04:46] *** init3 is now known as Init3-away
+[01:13:09] *** Joins: Learning-Gladiolus (uid110916@Pony-qjfks9.brockwell.irccloud.com)
+[01:14:56] *** Learning-Gladiolus is now known as Gladiolus
+[01:27:58] *** Init3-away is now known as init3
+[01:31:47] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:35:16] *** mniip is now known as \m
+[01:49:19] *** init3 is now known as TRIGGERED
+[01:50:07] *** Joins: sleumas2000_ (uid91753@Pony-5dnslh.ealing.irccloud.com)
+[01:50:35] *** TRIGGERED is now known as TRIGGERED_TRIGGERED
+[01:51:51] *** GigaTown is now known as Gigabit
+[01:52:51] *** TRIGGERED_TRIGGERED is now known as init3
+[02:02:51] *** Quits: Gladiolus (uid110916@Pony-qjfks9.brockwell.irccloud.com) (Quit: )
+[02:05:22] <Gigabit> Anyone know of software like Visi-pitch but is free?
+[02:06:26] * JustAberrant does not know of software like Visi-pitch but is free
+[02:08:47] <Gigabit> can audacity set specific pitch ranges, and monitor the pitch you are talking in?
+[02:10:12] <JustAberrant> possibly, but I think you'd have more luck hacking that into audour or something
+[02:10:28] <JustAberrant> * ardour
+[02:12:28] * Moonlightning envisions a small commandline utility to listen on a given audio input device and display a frequently-updating list of the loudest pitch ranges.
+[02:12:42] <JustAberrant> what's your use case?
+[02:13:00] <Moonlightning> That can't be too hard to write, right?
+[02:13:02] <Moonlightning> Right/ >.>
+[02:13:08] <Moonlightning> s:/:?:
+[02:18:43] <Gigabit> god.. windows 10 recording sound is so low.. so is the headphone volume
+[02:21:06] <Gigabit> http://prntscr.com/8j15b3  HAHA thats fucking funny..
+[02:21:51] <Phase> i don't remember if edge uses trident
+[02:22:18] <Gigabit> Um.. is there an audio manager besides realtek and windows default, that I can use?
+[02:25:32] *** Joins: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP)
+[02:37:51] *** Joins: Asoka (Asoka@Pony-dj8olq.net-htp.de)
+[02:41:01] *** Quits: Asoka_White (Asoka@Pony-6dg0pt.net-htp.de) (Ping timeout: 121 seconds)
+[02:47:48] <Gigabit> is there anyway to repair/replace headphone connectors? Well I know there is but.. is it worth it?
+[02:49:23] <JustAberrant> sure
+[02:49:47] <Gigabit> My logitech g230 headphones, the ends are both bent and theya re not making good contact in the ports
+[02:49:50] <JustAberrant> you can buy the connectors on sites like mouser and digikey for at most a few bucks
+[02:50:13] <JustAberrant> little soldering, little heatshrink, should be good as new
+[02:50:27] <Gigabit> So its not to bad of a fix then?
+[02:50:39] <JustAberrant> baring anything crazy, shouldn't be
+[02:50:56] <JustAberrant> assuming you can solder
+[02:51:58] <Gigabit> barely
+[02:52:04] <JustAberrant> far as I can tell from photos, the jacks look pretty standard
+[02:54:30] <JustAberrant> those jacks range anywhere from like $3 to like $50 .. depending on how high quality you want ;p
+[02:54:42] <JustAberrant> given that those headphones are like $50 or so.. I'd probably go lower range ;p
+[02:56:06] <JustAberrant> http://www.digikey.ca/product-detail/en/SP-3501/CP-3502-ND/96987
+[02:56:07] <PinkiePieBot> [ SP-3501 CUI Inc. | CP-3502-ND | DigiKey ]
+[02:58:11] <DJ-C0L7[EIT]> are the headphones damaged, or is the jack on the comp busted?
+[02:58:41] <Gigabit> Its the connectors themselves, they are bent pretty good from dogs and me..
+[02:59:04] <DJ-C0L7[EIT]> you can clip the connectors off and attach new connectors, but it'll take a little soldering
+[03:01:05] <Gigabit> I always forget to check connections first, then software -.- and in this case I am positive it is hardware related
+[03:02:57] <JustAberrant> it's not exactly a tricky soldering job, but the wires in headphone cables tend to be thin, and you can easily melt the connector or the wire if you get the temp/timing wrong
+[03:03:03] <JustAberrant> so best to buy a few extra connectors
+[03:04:00] <JustAberrant> also you pretty much need either a "third hand" dealie or another person to hold the wires in place while you solder
+[03:05:03] <Gigabit> Wonder if I can find them on amazon, the ones I did find were rated horribly
+[03:06:16] <Gigabit> wait I did find them
+[03:06:24] <Gigabit> http://www.amazon.com/Black-Plastic-Housing-Headphone-Connector/dp/B00MFRZ2SG/ref=sr_1_2?ie=UTF8&qid=1442883929&sr=8-2&keywords=3.5mm+replacement+jack
+[03:06:26] <PinkiePieBot> [ Amazon.com: 10 Pcs Black Plastic Housing 3.5mm Audio Jack Plug Headphone Connector: Electronics ]
+[03:06:39] <Gigabit> and I can get those with helpinghands for 9 bucks
+[03:06:41] <JustAberrant> hehe, there you go
+[03:07:33] <JustAberrant> although those are shitty helping hands.. you'll want to cover the teeth on those aligator clips with electrical tape or something
+[03:07:50] <JustAberrant> otherwise it'll bite into the insulation
+[03:09:25] <DJ-C0L7[EIT]> i've used pieces of vinyl tube before over the jaws to keep from damaging the insulation on wire on those cheaper helping hands rigs
+[03:09:52] <JustAberrant> hehe, guess that works too :>
+[03:10:10] <DJ-C0L7[EIT]> diy soft-jawed vice ;3
+[03:10:37] <Gigabit> the reviews are shity still x.x
+[03:10:52] <JustAberrant> hehe, well you're getting like 10 connectors for the price of 1.. what did you expect ;p
+[03:13:12] <Gigabit> I like this one I found, lot better reviews but 6.99 ea
+[03:14:02] <JustAberrant> if you don't care what it looks like, you can buy a cheap male to male cable (usually sold as "aux" cables for connecting an mp3 player to a car), cut it in half, and splice it ;p
+[03:14:40] <JustAberrant> probably easier, but will look like absolute shit
+[03:15:44] <Gigabit> I do have a cable here I could do it with to. Man.. this is why I hate cables :s
+[03:16:04] <JustAberrant> http://www.amazon.ca/Silver-Alloy-3-5mm-Cable-Connector/dp/B00E6O5YSE/ref=sr_1_35?ie=UTF8&qid=1442884334&sr=8-35&keywords=3.5mm+stereo+male+connector  <-- these look decent, but only 1 review
+[03:16:06] <PinkiePieBot> [ 2 Pcs Silver Tone Alloy 3.5mm Male Plug Coax Cable Audio Connector: Amazon.ca: Electronics ]
+[03:17:02] <Gigabit> Thats ca not .com :P
+[03:17:14] <JustAberrant> :(
+[03:20:17] <Moonlightning> I've probably asked this before, but…how do you pronounce /etc?
+[03:20:30] * Moonlightning has managed to never say it out loud…pronounces it as /etcet/ in his head.
+[03:22:23] <Gigabit> I wonder if logitech will warranty it?
+[03:22:40] <DJ-C0L7[EIT]> i would think so if they are under warranty
+[03:23:46] <JustAberrant> Moonlightning: I spell it out, but I tend to do that with most acronyms
+[03:24:32] <JustAberrant> Gigabit: if it's damaged from use, I doubt it
+[03:25:07] * Moonlightning also doesn't pronounce the slash between pathname components.
+[03:25:56] * Moonlightning …doesn't pronounce most punctuation, actually. Except dots.
+[03:26:30] * JustAberrant approves
+[03:27:23] <HoneyDrops> I say eht-see
+[03:27:34] <Moonlightning> Oh, that makes a lot of sense.
+[03:28:49] *** Quits: Midnight_Tinker_Mobile (uid102824@Pony-tjmceb.tooting.irccloud.com) (Quit: Connection closed for inactivity)
+[03:30:29] *** Quits: Phase (Phase4@Pony-d9rtg7.internode.on.net) (Quit: Leaving)
+[03:40:31] *** Quits: e (bro@the.derptown.express) (Connection closed)
+[04:00:19] *** Quits: sleumas2000_ (uid91753@Pony-5dnslh.ealing.irccloud.com) (Quit: Connection closed for inactivity)
+[04:07:46] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[04:10:43] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[04:13:16] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[04:29:55] *** Eventide is now known as Eventide|Sleepie
+[04:30:04] *** Eventide|Sleepie is now known as Eventide|Sleepies
+[05:09:07] *** Moonlightning is now known as Starthunder
+[05:25:54] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[05:28:26] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Killed (NickServ (GHOST command used by Legion_Red!LegionRed@Pony-i58i8p.res.rr.com)))
+[05:28:30] *** Joins: Legion_Red (LegionRed@Pony-i58i8p.res.rr.com)
+[05:37:22] *** Quits: Legion_Red (LegionRed@Pony-i58i8p.res.rr.com) (Quit: Worst quit message, ever.)
+[05:37:29] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[05:37:44] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[05:44:11] *** init3 is now known as Init3-away
+[05:57:41] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[05:58:43] <Starthunder> Is it bad that I tend to use the `dash` ponypage as a POSIX shell reference? >.>
+[06:07:56] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[06:12:21] <Starthunder> Relatedly, I'm scripting my snapshot|backup thing, and I want to do it The Right Way™
+[06:12:54] <tiwake> anyone know a good place to grab a torrent of south park?
+[06:13:25] <DJ-C0L7[EIT]> pirate bay?
+[06:13:53] <tiwake> without it having a virus?
+[06:14:00] <Starthunder> In particular, mounting the backup volume takes multiple steps (mount NFS volume, open LUKS container, mount actual backup volume)
+[06:14:27] <Starthunder> And I dunno how to abort at each stage /and/ have a thing to unmount it all, without duplicating code
+[06:20:18] <Starthunder> …maybe I should just not generalize it.
+[06:33:22] <Rylee> abort at each stage?
+[06:34:25] <HoneyDrops> function?
+[06:34:43] <HoneyDrops> step N || cleanup()
+[06:34:52] <Starthunder> yes, but the cleanup varies
+[06:35:11] <Starthunder> for example, if the LUKS container couldn't be opened, we don't want to try to unmount the volume inside that container
+[06:38:16] <Starthunder> Grrrrrr
+[06:38:22] <Starthunder> how do you `flock` indefinitely >:(
+[06:38:34] <Starthunder> I have /multiple/ commands to run
+[06:39:13] <Starthunder> I need a program that blocks waiting for a signal
+[06:39:57] <Starthunder> flock -e /mnt/silverspeed-backup/luks waitfor INT
+[06:40:49] <Starthunder> er, wait
+[06:41:14] <Starthunder> …wait. Buck. x.x
+[06:41:45] <Starthunder> I'd need the PID of that `waitfor` so I could kill it, but `flock` always wants to be the one to fork the process…
+[06:51:09] <Starthunder> …I need the shell to call flock() x.x
+[06:52:19] <Starthunder> zsh has a module for this.
+[06:52:21] <Starthunder> welp…
+[06:52:27] * Starthunder switches the script from POSIX shell to zsh
+[06:58:47] <Phase> Starthunder, only way to get a notification of a process exiting is SIGCHLD, which is only sent to the parent process, or init
+[06:59:02] <Phase> you have to poll /proc otherwise
+[07:00:43] <Starthunder> Hell no.
+[07:00:52] <Starthunder> I'm going with zsh and its zsh/system module, thanks.
+[07:00:59] <Starthunder> shell-level flock
+[07:01:18] <Phase> that works
+[07:01:38] <Starthunder> …the hell? Why is my LUKS container root:root 644?
+[07:01:43] *** Init3-away is now known as init3
+[07:04:32] <Starthunder> > The shell will attempt to lock the file once a second during this period.
+[07:04:34] <Starthunder> …the hell?
+[07:04:52] <Starthunder> what the hell do you think LOCK_NB is f—oh
+[07:05:05] <Starthunder> Well. There should just be a perfect nonblocking option >.>
+[07:05:30] * Phase has heard from several people that posix locking is unusable
+[07:06:35] <Starthunder> what? why? x.x
+[07:07:17] <Phase> http://0pointer.de/blog/projects/locking.html
+[07:07:18] <PinkiePieBot> [ On the Brokenness of File Locking ]
+[07:07:35] <Phase> "POSIX locks are automatically released if a process calls close() on any (!) of its open file descriptors for that file."
+[07:08:04] <Phase> it also relies on lockd being correctly configured, for nfs mounts
+[07:08:21] <Phase> there's also BSD locking
+[07:08:28] <Phase> i have no idea how the two api's interact
+[07:17:32] <Starthunder> maybe I should just open() a different file with O_CREATE|O_EXCL
+[07:18:52] <Phase> that'll work
+[07:20:33] <Starthunder> I'm about ready to give up on automating this
+[07:20:38] <Colgate> if( 0 | 255)
+[07:23:32] <Phase> Starthunder, what are you trying to do?
+[07:24:11] * Phase wonders if it wouldn't be easier to use something other than shell
+[07:24:46] <Starthunder> Shell seems like the best thing, because most of this is invoking external programs :I
+[07:24:51] <Colgate> if( Starthunder.isSmart() ) print "brushie btushie";
+[07:24:55] <Colgate> :D
+[07:25:00] <Colgate> don't mind me
+[07:25:02] <Starthunder> I'm trying to script my backups
+[07:25:08] <Starthunder> -!- Colgate is now known as Drunkgate
+[07:25:11] <Phase> Colgate, btushie
+[07:25:11] <Colgate> yes
+[07:25:13] <Colgate> that
+[07:25:28] * Starthunder throws the if-condition-always-true warning at Colgate
+[07:25:32] <Phase>  tush�ie
+[07:25:32] <Phase>     n.    buttocks, bottom
+[07:25:56] <Colgate> Starthunder: touche!
+[07:26:24] *** Colgate is now known as Drunkgate
+[07:26:31] <Drunkgate> been 13 weeks since I last used this
+[07:26:32] <Starthunder> Phase: my backup volume is a btrfs in a LUKS container on a sparsefile on my netbox.
+[07:26:39] <Phase> you know, i have a terrible idea
+[07:27:04] <Phase> tcl+snit, it's class system has destructors which i believe are called in a sane order
+[07:27:13] <Starthunder> snit?
+[07:27:15] <Phase> though i may be completely wrong
+[07:27:29] <Phase> Starthunder, it's a type system library for tcl, part of tcllib
+[07:27:33] * Phase has been using it for a thing
+[07:27:38] * Starthunder doesn't know Tcl.
+[07:27:51] <Starthunder> I've never forgotten the pronounciation for TclTk though :D
+[07:27:58] <Phase> it's kinda like a more sane shell
+[07:28:04] <Phase> designed to be embedded in tools
+[07:28:14] <Starthunder> oh really?
+[07:28:52] <Phase> Starthunder, https://github.com/Elemental-IRCd/elemental-ircd/tree/master/tests i wrote dis usin it :D
+[07:28:53] <PinkiePieBot> [ elemental-ircd/tests at master · Elemental-IRCd/elemental-ircd · GitHub ]
+[07:30:09] <Phase> note that this is somewhat outside tcl's intended scope, but it seemed easier to write the test library in tcl than embed the interpreter
+[07:32:36] <Starthunder> Does Tcl do easy invocations of externap programs?
+[07:32:41] <Starthunder> 'cos if not, I might as well just use Python
+[07:33:06] <Phase> https://www.tcl.tk/man/tcl8.5/tutorial/Tcl26.html
+[07:33:07] <PinkiePieBot> [ Running other programs from Tcl - exec, open ]
+[07:33:53] <Phase> Starthunder, see: man n exec
+[07:34:51] <Starthunder> hahaha
+[07:35:00] <Starthunder> > PORTABILITY ISSUES
+[07:35:13] <Starthunder> *bout half a page each for Windows (all versions), Windows NT, and Windows 9x*
+[07:35:22] <Phase>        Unix (including Mac OS X)
+[07:35:22] <Starthunder> > - Unix
+[07:35:23] <Phase>               The exec command is fully functional and works as described.
+[07:35:26] <Starthunder> yep
+[07:35:30] <Phase> this is beautiful XD
+[07:35:33] <Starthunder> Yeah. XD
+[07:35:37] <Starthunder> Welll…
+[07:35:45] <Starthunder> better would be no support in the language for Windows :p
+[07:35:59] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[07:36:08] <Phase> but i assume windows support isn't an issue in your btrfs+luks+nfs contraption
+[07:36:10] <Starthunder> Anyway…I dunno about this.
+[07:36:28] <Starthunder> There are no copies of Windows in this household, Phase :p
+[07:36:42] <Starthunder> installed or otherwise
+[07:37:04] <Phase> unfortunately not the case with mine :(
+[07:37:05] <Starthunder> …actually…there //may// still be an old Windows XP disc or two from yeaaaaars back >.>
+[07:37:09] <Phase> siblings want gta v
+[07:37:14] <Starthunder> I should probably dig those up and destroy them
+[07:37:40] <Phase> except my sister who has a mac, for some reason
+[07:37:48] * Starthunder fantasizes about having one of those things that spin optical discs really fast so you can touch them with a needle and rip all the information off
+[07:38:02] <Phase> Starthunder, just take the top off an old cd drive
+[07:38:09] <Starthunder> Heheh :p
+[07:38:25] <Phase> preferrably a 52x, and wear protective gear incase it shatters
+[07:38:32] <Starthunder> indeed
+[07:38:59] * Starthunder wonders what would happen if you shot a disc spinning that fast
+[07:39:11] <Starthunder> It would probably be beautiful :D
+[07:39:19] <Starthunder> shards everywhere
+[07:39:27] <Drunkgate> pewpew
+[07:39:30] <Phase> you seen the mythbusters episode where they did spinning cds?
+[07:39:49] <Drunkgate> those things are dangerous if you spin them too fast
+[07:39:53] <Phase> i imagine most failures would look like those
+[07:39:59] <Starthunder> No, I haven't :(
+[07:40:04] <Phase> you haven't lived
+[07:40:08] <Phase> watch mythbusters
+[07:40:16] <Phase> all of it, right now
+[07:40:22] <Phase> we can continue this when you're done
+[07:40:54] <Starthunder> All I have is Netflix, and it's guaranteed to not be on Netflix.
+[07:41:22] <Phase> Netflix not having mythbusters is alone a reason for me to not pay for netflix
+[07:41:23] <Drunkgate> Starthunder: i2p!
+[07:41:43] <Starthunder> Drunkgate: it'll just get lost in my project stack
+[07:41:49] <Gigabit> Phase I hear ya  XD
+[07:41:51] <Drunkgate> :(
+[07:42:00] <Starthunder> I mean c'mon
+[07:42:10] <Phase> Starthunder, they were doing something about 52x drives killing people, when they didn't manage that they got a router motor and span the disks with that
+[07:42:16] <Phase> 3000rpm sorta speeds
+[07:42:32] <Phase> makes a hell of a noise when it fails
+[07:43:12] <Phase> Gigabit, apparently it's even wrose in aus, all the existing ones (what were utter crap) slurped up a lot of exclusive licenses when they heard netflix was coming
+[07:43:14] <Starthunder> My current project stack is something like /update all the passwords <- clean out rainbow-dash:/var/tmp <- install sup <- set up HSTS on sugar-belle, properly <- automate `caramel`s backups <- secure the SSH servers and clients/
+[07:43:18] <Phase> so it's MORE expensive, and has LESS on it
+[07:43:21] <Starthunder> speaking of which
+[07:43:23] <Starthunder> I really should do that
+[07:44:03] <Starthunder> but no, it's all just going to sit in various tmux windows and taunt me from the statusbar :(
+[07:44:16] <Gigabit> I like Netflix, but hate it at the same time. It sucks ass on low speed internet.
+[07:44:16] <Starthunder> while I slack off on the things I want to do
+[07:44:33] <Starthunder> we need an RFC for streaming things
+[07:44:58] <Phase> Starthunder, interesting thing about tcl, it has string quoting and interpolation rules, but after those the meaning of arguments are up to the procedure that interprets them
+[07:45:38] <Starthunder> < All streaming implementations MUST (RFC 2119 MUST) provide an option for the user to select to cause the stream to download as much as possible as fast as possible until the entire video is buffered
+[07:45:50] <Phase> Starthunder, so exec can implement some shell-like behaviours (< and << redirects for example) with no need to work around the language
+[07:45:52] <Starthunder> best strategy for unreliable networks
+[07:46:09] <Starthunder> huh, cool, I guess
+[07:46:16] * Starthunder is going to stay away from Tcl
+[07:46:28] <Phase> which makes writing up domain-specific things real easy, like the irc tests i linked earlier
+[07:46:29] <Phase> awww
+[07:46:35] * Phase has grown fond of tcl
+[07:48:20] <Phase> Starthunder, means you can do things like exec uname -a, instead of system("uname -a") or exec("uname", "-a")
+[07:48:48] <Starthunder> I tried playing with Tcl a few years back, messing with an implementation of Uno in Tcl for eggdrop
+[07:49:41] <Phase> it's worth knowing imo
+[07:49:42] <Drunkgate> eggdrop is the only experience I have with tcl as well
+[07:49:52] <Phase> not a tool for every job, but worth learning
+[07:49:59] <Phase> other user is expect
+[07:50:13] <Phase> i think gimp has tcl scripting, they added python as well recently
+[07:54:32] <Starthunder> Maybe I should just go with one of the existing btrfs backuppy things
+[07:54:43] * Starthunder really likes doing things her way. Perhaps too much.
+[08:04:00] <Starthunder> This is confusing
+[08:04:00] <Starthunder> why is the sshd option `ChallengeResponseAuthentication` for a weird password thing?
+[08:04:00] <Starthunder> And you want to turn it off?
+[08:04:00] <Starthunder> What if pubkey auth, if not challenge-response?
+[08:04:00] <HoneyDrops> Phase: that is why region-based licensing needs to end.  It shouldn't matter where you happen to be physically located at all on the internet, for anything.
+[08:06:11] <HoneyDrops> Same with console and dvd regioning --  Needs to end.  Same stuff sold everywhere to everyone, for the same price and under the same terms (excepting differences required to comply with taxes and the legitimate differences in cost of shipping).
+[08:09:25] <Starthunder> good luck getting that to happen under capitalism, until represent.us happens everywhere
+[08:09:32] <Starthunder> and until everyone actually cares
+[08:09:47] <Starthunder> shit's broken yo
+[08:10:06] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "be back later")
+[08:18:53] <Drunkgate> lewd
+[08:18:56] <Drunkgate> oh
+[08:19:00] <Drunkgate> wrong buffer
+[08:19:37] <Lapsus> lol'd
+[08:19:55] <tiwake> haha
+[08:20:00] <tiwake> Drunkgate: we love you
+[08:20:47] * Starthunder lewds at Drunkgate
+[08:25:50] *** zz_CyberJacob is now known as CyberJacob
+[08:29:49] *** Gigabit is now known as GigaZzz
+[09:10:19] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:13:55] *** Dusk is now known as MorningSong
+[09:18:47] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[09:32:02] *** CyberJacob is now known as zz_CyberJacob
+[09:49:54] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[10:11:37] *** Awaykitty is now known as Unixkitty
+[10:17:24] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[10:23:48] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:27:36] *** init3 is now known as Init3-away
+[10:43:44] *** MorningSong is now known as Selina
+[10:59:42] *** Eventide|Sleepies is now known as Eventide
+[11:22:22] *** Quits: ShivalWolf (ShivalWolf@2400:d400:9:7375:abcd::2) (Quit: leaving)
+[11:22:47] *** Joins: ShivalWolf (ShivalWolf@2400:d400:9:7375:abcd::2)
+[11:26:15] *** Joins: Phase (Phase4@Pony-d9rtg7.internode.on.net)
+[11:48:44] *** Joins: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[11:50:59] *** Quits: WorkingData (DataByteBro@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[13:31:13] *** Unixkitty is now known as Awaykitty
+[14:03:37] *** Quits: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP) (Connection closed)
+[14:04:28] *** Joins: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP)
+[14:13:35] *** Awaykitty is now known as Unixkitty
+[14:17:09] *** Joins: DataByteBrony (DataByte@Pony-d3c.bgn.198.64.IP)
+[14:26:21] *** Quits: DataByteBrony (DataByte@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[14:32:06] *** Joins: DataByteBrony (DataByte@Pony-j9oidg.g424.9euc.0247.2601.IP)
+[15:26:35] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[15:26:59] <Rylee> phase stop
+[15:27:04] <Rylee> don't write more tcl
+[15:27:07] <Rylee> you'll regret it
+[15:27:45] *** Quits: dekeccho (dekeccho@dekeccho.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[16:01:08] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:08:36] *** Quits: Fallfeathers (Fallfeather@Pony-c1p.7dd.162.101.IP) (Connection closed)
+[16:23:25] *** Quits: Eventide (uid61788@Tips.Fedora) (Ping timeout: 121 seconds)
+[16:25:24] *** Joins: Eventide (uid61788@Tips.Fedora)
+[16:34:53] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[16:42:46] <DataByte> hahahahaha: http://jhonnyrebel.deviantart.com/art/Landing-410885580
+[16:42:48] <PinkiePieBot> [ Landing by JhonnyRebel on DeviantArt ]
+[16:42:52] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:54:23] *** Joins: dekeccho (dekeccho@Pony-6j6.kon.236.151.IP)
+[17:15:13] *** Quits: dekeccho (dekeccho@dekeccho.Is.Not.A.Clever.Poni) (Quit: dekeccho out)
+[17:15:28] *** Joins: dekeccho (dekeccho@Pony-6j6.kon.236.151.IP)
+[17:18:03] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:22:18] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.never.fixed)
+[17:22:30] *** Joins: Datalink (Datalink@Datalink)
+[17:22:51] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[17:23:02] *** Quits: Datalink (Datalink@Datalink) (Quit: Datalink offline)
+[17:27:58] *** Joins: Datalink (Datalink@Datalink)
+[17:33:03] *** Joins: Crimson_Tail (Bluepon@Pony-vhmd2o.cg80.k4gu.0151.2601.IP)
+[18:03:42] *** Joins: zeta_ (Bluepon@Pony-mfh7oq.md.comcast.net)
+[18:04:26] *** Quits: Crimson_Tail (Bluepon@Pony-vhmd2o.cg80.k4gu.0151.2601.IP) (Killed (NickServ (GHOST command used by zeta_!Bluepon@Pony-mfh7oq.md.comcast.net)))
+[18:04:28] *** zeta_ is now known as Crimson_Tail
+[18:09:34] *** Drunkgate is now known as Colgate
+[18:23:28] *** Quits: dekeccho (dekeccho@dekeccho.Is.Not.A.Clever.Poni) (Quit: dekeccho out)
+[18:25:41] *** Joins: dekeccho (dekeccho@Pony-6j6.kon.236.151.IP)
+[18:42:36] *** Unixkitty is now known as Awaykitty
+[19:32:17] *** Init3-away is now known as init3
+[20:07:33] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[20:07:52] <Starthunder> Okay, definitely memory leaks.
+[20:08:03] <Starthunder> I have two blank windows open in Firefox, just the empty new-tab page
+[20:08:10] <Starthunder> And it's taking like 400 megs of memory :I
+[20:08:51] <Starthunder> …what the hell? I just relaunched it and it almost immediately gobbled up 250 megs
+[20:09:05] <Colgate> welcome to modern web browsers
+[20:09:54] <Starthunder> I should file a bug report :V
+[20:10:23] <Starthunder> You're not the only process on this system. Other apps need RAM, too. :V
+[20:10:55] <Colgate> there are exactly 100 people in this channel
+[20:11:00] <Colgate> +bots
+[20:11:45] <Starthunder> Including bots, you mean.
+[20:11:50] <Starthunder> So 100 users
+[20:11:58] <Starthunder> …well. 100 clients.
+[20:12:15] <Colgate> 100 tcp connections!
+[20:13:55] * Gladiolus nibbles on Colgate's connection
+[20:14:16] <HoneyDrops> There is no possible way to make a "good" web browser as long as one's goal is to support the modern web.
+[20:16:14] <Starthunder> Throw everything out and start over? HTTP 4.0, HTML 7?
+[20:18:41] <HoneyDrops> Won't fix the problem.
+[20:20:23] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Quit: Saliendo)
+[20:20:52] <HoneyDrops> The problem is the misguided attempt to effectively turn a document viewer into an platform for application development.  You have to reject the idea of youtube, facebook, google's office thingy, etc. as things that should exist within a web browser to even get to a place where you can hope to "fix" it.
+[20:21:32] <Gladiolus> death to flash
+[20:22:26] <HoneyDrops> Like online video?  There are really only two sane options: provide a URI to a stream and let VLC or mpv handle it.  Or better, just provide a URI to the movie file for download.
+[20:23:05] <HoneyDrops> There is no reason to shove video playback into a HTML/CSS document viewer.
+[20:26:17] <HoneyDrops> Flash is still a symptom of the disease, or maybe more accurately an opportunistic infection.
+[20:26:50] <Gladiolus> "there's no reason to do thing" ~we do thing anyway because convenience~
+[20:26:53] <Gladiolus> computers.txt
+[20:28:12] <HoneyDrops> It would be nice if HTML <next number> abandoned concern with how things are displayed and focused on proper semantic labeling, and leave display up to the client.  We're still paying for that mistake.
+[20:29:56] <HoneyDrops> A website should just be the actual information, and tagged to make it easy for the browser to parse for the context of each bit of information.  What fonts, colors, alignment, size, etc.  should no be the websites concern, rather that is the domain of the user/client.
+[20:33:00] <HoneyDrops> Imagine being able to toggle off a website's menu or side bar or any other element, universally with simple hotkeys?  Imagine being able to pick a unified formatting for everything to use, and it can be applied to everything?  Imagine being able to trivially automate scraping data from any website and not having to worry about having to hack around every little display tweak someone decides
+[20:33:02] <HoneyDrops> they need to do?
+[20:34:23] <HoneyDrops> Also, would be nice, but unrelated to above to have a revision history of every website, ever.  (like you could take any URI and add date=<UNIXTIME> and it would give you the website exactly as it appeared at that time)
+[20:35:00] <Starthunder> People wouldn't like that.
+[20:35:14] <Starthunder> especially with the right-to-be-forgotten shit
+[20:35:19] <HoneyDrops> That last bit would be perfect for actually making meaningful citations.
+[20:36:30] <Starthunder> Personally, I usually don't mind letting websites dictate their style.
+[20:36:38] <Starthunder> Syntax highlighting and all that…
+[20:36:48] <Starthunder> I wouldn't want to have to recreate all that myself.
+[20:37:14] <HoneyDrops> I have sympathy for the right-to-be-forgotten, but I have accepted that is largely a forgone option.  I think efforts are better spent getting humanity to a place where we simply don't care that a prime minister drunkenly shoved his penis into a cooked pig.
+[20:37:59] <HoneyDrops> You read something like that, shrug, "Ok that's odd, but it doesn't impact anything." and move on.
+[20:38:07] <Starthunder> ^
+[20:38:36] <Starthunder> right to be forgotten is similarly a symptom of a different thing
+[20:39:13] <HoneyDrops> Largely the right-to-be-forgotten isn't about the information not still being there, but rather the specific problem of people making a fuss over what other people did/said for no good reason.
+[20:40:08] <HoneyDrops> However, if you make a statement, and it does materially impact your fitness for something, yes it should be taken into account.  You don't have the right to hide something you said/did that is materially relevant.
+[20:40:49] <Starthunder> You can't expect to do /anything/ publically and have everyone forget about it.
+[20:41:05] <Starthunder> NB: the Internet consist largely of public spaces.
+[20:41:25] <HoneyDrops> We just need to get people to be better at learning to correctly identify what matters and ignore the other fluff, as "juicy" as it might be (and really, we just need to move past the idea of gossip)
+[20:41:35] <Starthunder> Yeah.
+[20:41:47] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[20:42:41] <HoneyDrops> Still, while I sympathize with the right-to-be-forgotten, it is a misguided attempt to apply a technical/legal solution to what is really a human behavioural problem.  Bluntly: it doesn't work.
+[20:43:39] <Starthunder> Yeah.
+[20:44:37] <HoneyDrops> Technical problems require technical solutions, legal problems require legal solutions, logistical problems require logistical solutions... trying to mismatch solution domains with the problem's domain just creates more problems, while generally failing to address the original problem in any meaningful way.
+[20:53:38] <HoneyDrops> But anyway, having a reliable and universal time-domain record of websites would be a huge boon to being able to use them meaningfully as citations.
+[20:54:01] <Starthunder> use btrfs for your document filesystems \o/
+[20:54:26] <Starthunder> snapshot on every change
+[20:54:47] <HoneyDrops> Essentially.  I like the idea of turning the web into what is effectively a massive, distributed filesystem.
+[20:56:10] <HoneyDrops> Would make a lot of things easier, like archiving whole sites locally.
+[21:00:15] *** Joins: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se)
+[21:42:26] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[22:14:10] <Compu> so i been wondering, my laptop runs ubuntu 14.04, if i clone my mechanical 120 GB HDD over to a 120 GB SSD will ubuntu know to handle all the TRIM stuff and everything automatically?
+[22:15:11] <Starthunder> Compu: AFAIK, TRIM is filesystem-dependent.
+[22:15:20] <Compu> Starthunder: ext4
+[22:15:24] <Starthunder> And most filesystems have an `ssd` and|or a `discard` mount option.
+[22:15:38] <Starthunder> Compu: for root? What about your other filesystems?
+[22:16:10] <Compu> Starthunder: my boot partition is also my data partition, i did the default ubuntu filesystem install
+[22:16:29] <Starthunder> Compu: what? And it didn't give you a separate /boot? I find that hard to believe
+[22:16:53] <Compu> Starthunder: i did the install back in 12.04
+[22:17:06] <Compu> and have since used the OS upgrade
+[22:17:13] <Starthunder> even if /home|/usr|/var are all on the same partition as /, to my knowledge there's almost always a separate /boot
+[22:17:26] <Compu> maybe there is, i dunno
+[22:17:29] <Compu> 1 sec
+[22:18:51] <Compu> Starthunder: http://screencloud.net/v/f8JF
+[22:18:55] <PinkiePieBot> [ Screenshot at 16:18:27 | ScreenCloud ]
+[22:19:11] <Compu> doesnt look like there is
+[22:22:19] <Starthunder> > Mounted at /var/spool/hylafax/etc
+[22:22:21] <Starthunder> wat.
+[22:22:30] <Starthunder> Better just `mountpoint /boot`
+[22:23:22] <Compu> Starthunder: no idea, thats how the ubuntu 12.04 installer set it up
+[22:23:54] <Compu> Starthunder: so anything i would need to change after cloning to an SSD?
+[22:26:23] <Starthunder> Compu: yeah, update the mount options to be more appropriate to your SSD
+[22:26:32] <Starthunder> If you use FDE, you might /not/ want to enable discard though
+[22:26:41] <Compu> i have no idea how to do that
+[22:27:12] *** Quits: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se) (Quit: Leaving.)
+[22:27:13] <Starthunder> I'm being vague because I'm waiting for a peer review >.>
+[22:27:15] * Starthunder prods #techponies
+[22:29:08] <HoneyDrops> I would advise handling partitioning, mkfs yourself, copy over the data, then install the bootloader.  I wouldn't just dd if=mech of=ssd
+[22:29:45] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:30:11] <Compu> HoneyDrops: why?
+[22:30:36] <Compu> what would happen if i just did that and booted?
+[22:32:31] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Connection closed)
+[22:32:45] <HoneyDrops> You could, and it would work, but I believe that block alignments would be off.
+[22:33:15] <Compu> block alignments?
+[22:33:39] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:36:17] <HoneyDrops> http://www.linux-mag.com/id/8397/
+[22:36:18] <PinkiePieBot> [ Aligning SSD Partitions | Linux Magazine ]
+[22:36:28] <HoneyDrops> https://wiki.debian.org/SSDOptimization#Partitions_and_Alignment
+[22:36:30] <PinkiePieBot> [ SSDOptimization - Debian Wiki ]
+[22:38:06] <Compu> HoneyDrops: so i dont have to worry about block alignments when cloning from an HDD to an HDD?
+[22:41:20] <HoneyDrops> It matters, but less so than on an ssd, because an ssd always erases in blocks, if you don't align them, you will end up erasing extra blocks.
+[22:42:06] *** Joins: MistVeil (AndChat3408@Pony-l36.bpr.95.200.IP)
+[22:42:43] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Connection closed)
+[22:44:12] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[22:46:06] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:48:04] *** Joins: Crimson_Tail (Bluepon@Pony-atmq4r.cg80.k4gu.0151.2601.IP)
+[22:56:13] <Phase> Rylee, I REGRET NOTHING
+[22:58:46] *** Quits: MistVeil (AndChat3408@Pony-l36.bpr.95.200.IP) (Quit: Bye)
+[22:58:58] * Phase writes Rylee.tcl
+[22:59:04] <Rylee> o god why
+[22:59:47] * Starthunder tcls Rylee
+[23:06:09] <Compu> HoneyDrops: k, i was wondering cuz the guy cloning my HDD said he was just gonna use DD
+[23:11:10] <HoneyDrops> If you only have one partition, it's only marginally more work to do a file-level copy rather than block level.  Most of the work is the bootloader.
+[23:18:04] *** init3 is now known as Init3-away
+[23:20:34] *** Joins: e (bro@the.derptown.express)
+[23:20:47] *** e is now known as Kayle
+[23:23:11] <Compu> HoneyDrops: its a windows machine, quite a bit more hassle cuz windows despises u messing with its partitions
+[23:23:47] *** Init3-away is now known as init3
+[23:24:17] <HoneyDrops> Oh, yeah, you're stuck with dd because MS Windows is difficult and petulant.
+[23:24:37] <Compu> yeah
+[23:24:58] <Starthunder> Wait what?
+[23:25:00] <Compu> HoneyDrops: anything i should worry about?
+[23:25:16] <Compu> Starthunder: different computer, my laptop runs ubuntu but my desktop runs windows
+[23:25:49] <Starthunder> …wait, so you're not dualbooting Windows on the machine whose disk is being cloned?
+[23:25:53] <HoneyDrops> You might need to reactivate MS Windows or something, I don't really track what it does/doesn't like, but I recall it likes the fuss if you change hardware.
+[23:25:57] <Compu> Starthunder: no
+[23:26:16] <Starthunder> …what's the problem, then?
+[23:26:21] <Compu> HoneyDrops: i think thats only if u change like more than 5 things
+[23:26:35] <Compu> Starthunder: i was wondering about putting an ssd in my laptop
+[23:27:07] <Compu> i know that an SSD requires TRIM but i didnt know if ubuntu would automatically figure that out
+[23:27:21] <Starthunder> I know the story here…
+[23:27:29] <Starthunder> But why can't you just do the file copy as HoneyDrops recommended?
+[23:27:46] <Compu> because hassle
+[23:28:16] <Compu> and the only guy i know of that has the hardware needed to do this stuff is not at all familiar with anything new
+[23:28:21] <Compu> let me put it this way
+[23:28:51] <Compu> he happily gives people computers with less than 512 MB of RAM and says that its enough
+[23:28:56] <Compu> for full on ubuntu
+[23:29:34] <Compu> he used to just run old, out of date versions of ubuntu but apparently he stopped doing that, he refuses to do anything i suggest like using Lubuntu instead
+[23:30:29] <Compu> since im younger (it also might be that im female as well) i think he dismisses anything i say because he runs a business and thus must know more than i ever could
+[23:31:05] <HoneyDrops> What hardware do you need?  A 7$ SATA-to-USB adapter is all you need, plus a flash drive w/ some sort of bootable linux env.
+[23:31:36] <Starthunder> ^
+[23:31:52] <Compu> yeah but we struggle to afford anything that isnt absolutely necessary
+[23:32:16] <Compu> the only reason i even got a new hard drive was because my old one was starting to age
+[23:32:28] <HoneyDrops> You put the SSD in the system, hook up the old drive via USB, boot off the usb flash drive, partition, mkfs, mount, rsync/cp -a, chroot, grub-install, unmount and reboot
+[23:32:49] <HoneyDrops> It's almost exactly like installing gentoo, minus building a kernel XD
+[23:33:52] <HoneyDrops> If you want to dd, it's the same drive config, but just dd rather than partition/mkfs/mount/copy/chroot/grub
+[23:34:11] <Compu> HoneyDrops: again, im not actually doing the ssd thing, im busy dealing with getting my slowly dying desktop 1 TB HDD cloned 
+[23:34:12] <HoneyDrops> If you have access to a desktop, you can even do it on that, provided you can connect both drives
+[23:35:02] <HoneyDrops> (I actually suggest using another system, as it will be faster to not use USB.)
+[23:36:05] <Compu> cant afford another system
+[23:36:11] <Compu> this other guy can
+[23:36:54] <HoneyDrops> Do you have any access to any computer with two sata ports?  (one can even be in use, any existing drives can be disconnected)
+[23:37:34] <Compu> my desktop has 2, 1 for the optical drive and 1 for the HDD
+[23:37:44] <Compu> its the one that is having it's HDD cloned
+[23:40:39] <HoneyDrops> Ok, make a bootable flash drive, disconnect the optical, hook the new drive up in place of the optical, and clone.
+[23:40:50] <Compu> too late for that
+[23:41:02] <Compu> i sent it off to be cloned on saturday
+[23:41:07] <HoneyDrops> all you need is a 2$ usb flash drive
+[23:41:10] <HoneyDrops> oh :(
+[23:41:26] <Compu> he said it should be done today but i called today and only got an answering machine
+[23:42:38] <HoneyDrops> :/
+[23:43:15] <Compu> i called at around 2:30 and its now nearly 5:45
+[23:47:26] * HoneyDrops wouldn't trust someone else with her drives.  However, many might consider her marginally paranoid.
+[23:47:51] <Compu> i have no choice really, we dont have any money left this month
+[23:48:09] * DJ-C0L7[EIT] understands completely and agrees with HoneyDrops
+[23:51:03] <HoneyDrops> He's doing this for free?  I mean, no service is going to charge less than what a 2GB or less usb flash drive costs.
+[23:53:32] <Compu> yeah he is cuz hes my step grandmother's son
+[23:56:31] <HoneyDrops> If you still had the drive, I would have happily mailed you a flash drive.  I have a bin of about a dozen 512MB-1G ones I got for free.  They are branded with some bank/legal firm logos, and have awful I/O speeds, but make nice give-aways for utility/emergency boot disks.
+[23:56:49] <Compu> mmm

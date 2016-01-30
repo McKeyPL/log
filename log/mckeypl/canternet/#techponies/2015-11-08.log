@@ -1,0 +1,743 @@
+[00:04:52] <johnsey> http://foxglovesecurity.com/2015/11/06/what-do-weblogic-websphere-jboss-jenkins-opennms-and-your-application-have-in-common-this-vulnerability/
+[00:20:42] <Moonlightning> Hahahahahahaha
+[00:20:48] * Moonlightning blacklists Java, along with PHP.
+[00:21:23] <Seoson> But PHP!
+[00:23:58] * Seoson also has the feeling that somepony wrote seriously insecure code and didn't even need PHP to screw up.
+[00:29:22] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-dnrake.tmodns.net)))
+[00:30:00] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[00:35:45] * HoneyDrops hisses at PHP.
+[00:37:28] * Moonlightning stands next to HoneyDrops, hisses with.
+[00:43:01] <johnsey> https://juliareda.eu/2015/11/ancillary-copyright-2-0-the-european-commission-is-preparing-a-frontal-attack-on-the-hyperlink/
+[00:43:04] <PinkiePieBot> [ Julia Reda – Ancillary Copyright 2.0: The European Commission is preparing a frontal attack on the hyperlink ]
+[00:44:31] *** Joins: Fallfeathers (Fallfeather@Pony-9c7.4em.162.101.IP)
+[00:45:36] <HoneyDrops> Now the real question is why the hell those both pinged me o_O
+[00:46:30] <HoneyDrops> Oh, figured it out, ping for an OC of somepony I had on highlight.
+[00:46:54] <Moonlightning> What was this bullshit?
+[00:47:05] <Moonlightning> Content owners charging others to link to their content?
+[00:47:14] <Moonlightning> That's stupid, anyway…the links are free advertising!
+[00:59:08] <Seoson> I should seriously consider moving to another country. EU laws recently were worse than U.S. stuff. That's pretty impressive
+[01:00:03] <Seoson> We should find a small reasonable country and move all the internet to it :P Screw the laws of the rest
+[01:06:49] *** Joins: Sombra (Iceman@Darkhorse21)
+[01:08:14] <Seoson> "<!-- ♥ ♥ ♥ Oh nice, you take a look at the sourcecode. I'm flattered. ♥ ♥ ♥ -->" lol
+[01:09:51] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[01:13:39] <Moonlightning> THis.
+[01:21:48] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[01:38:43] <Moonlightning> QoS is complicated. D:
+[01:47:15] <Seoson> 2 more weeks until my certs start to expire ....
+[01:47:53] <Seoson> Why is every CA a freaking b!tch? -.-
+[01:48:10] <Moonlightning> You didn't apply for the LE beta?
+[01:48:20] * Moonlightning checks for updates on that.
+[01:49:41] <Moonlightning> Still in limited beta…no reply on my request for more hostnames.
+[01:50:23] <Seoson> I did and I have access, but only for a fraction of my domains because fuck people that organize everything in subdomains
+[01:50:51] <Seoson> Want your mail server on mail.domain.tld? NOPE!
+[01:51:04] <Moonlightning> Didn't you submit another request?
+[01:51:18] <Seoson> No because this policy is bullshit
+[01:51:48] <Seoson> Forget one name and I'm screwed. I have MANY subdomains
+[01:51:59] <Moonlightning> Use your zonefile for reference?
+[01:52:11] <Moonlightning> …use a concatenation of your zonefiles for reference?
+[01:52:24] <Seoson> I could but just fuck that policy 6_9
+[01:53:08] <Seoson> That they did that is freaking unreasonable and stupid.
+[01:54:07] <Moonlightning> <Moonlightning> I'm hoping and assuming that the stable isn't going to be run like that
+[01:54:07] <Moonlightning> <Seoson> It's not
+[01:54:31] <Seoson> Huh someone might issue a cert for randomesubdomain.mydomain.tld BUT WHO CARES IF THEY HAVE THE ROOT DOMAIN! It's not like they cannot steal cookies from there :P
+[01:56:34] <Moonlightning> Hmm?
+[01:56:35] <Seoson> Oh and domains not owned by me but hosted on my server use wildcarts.
+[01:57:00] * Moonlightning shrugs. Won't be using wildcards.
+[01:57:13] <Moonlightning> Change the list of hostnames, grab new certificates.
+[01:57:14] <Seoson> Oh spelling ... Ups
+[01:57:36] <Seoson> Also fuck the LE client
+[01:58:01] <Seoson> I'm seriously considering reading into the ACME spec and just write one myself.
+[01:58:15] <Moonlightning> Do it filly!
+[01:58:32] * Seoson is way too lazy. Probably not going to happen.
+[01:59:58] <Seoson> I like how the LE client just completely quits if there is one single minor error in GUI mode.
+[02:00:26] <Seoson> Like it couldn't delete a file I already deleted manually
+[02:01:21] <Seoson> Also I'd still need to figure out a why to restart all services once the certs are renwed
+[02:01:36] <Seoson> Because I'm not going to do that myself every 60 days.
+[02:02:50] <Moonlightning> Make a fake init job?
+[02:02:55] <Seoson> This is probably going to end in me writing some junk code that checks the files checksum for changes running as root because it needs to. And I might do it in PHP just because I can
+[02:02:57] <Moonlightning> And then make all the services depend on it.
+[02:03:30] <Moonlightning> or, depending on your init system, you might be able to just make a new event or whatever
+[02:03:39] <Moonlightning> certificates-renewed
+[02:03:46] <Moonlightning> And have the services reload when that event happens
+[02:03:55] <Seoson> systemd - everyponies favorite :D
+[02:04:09] <Seoson> Reloading is not enough
+[02:04:25] <Moonlightning> s/reload/do whatever's needed/
+[02:04:25] <Seoson> Apache2 and Postfix cannot reload the certs
+[02:04:45] <Seoson> Also I wouldn't want them to because drop root and things
+[02:05:57] <Moonlightning> So you'll have to restart them completely every two months.
+[02:06:10] <Seoson> And now I have 2 weeks to figure this out or switch back to StartSSL
+[02:06:22] <Moonlightning> https://www.youtube.com/watch?v=45I3MQPGAv8
+[02:06:22] <PinkiePieBot> [ [PMV] Assertive Fluttershy -  Boo Hoo (Silva Hound Remix) - 1962224 views - 4m 15s long - 23527 likes - 97.89% ]
+[02:06:47] <Seoson> Moonlightning: I need only every 90 days but than there is no place for errors
+[02:07:20] <Seoson> LE is essentially a nightmare to implement -.-
+[02:07:34] * Moonlightning rolls his eyes.
+[02:07:51] <Moonlightning> It's the same problem you'd have anyway with certificates! It's just more frequent now.
+[02:08:04] <Seoson> And thatÄs the problem
+[02:08:23] <Moonlightning> So you have to do it every two months now instead of every twelve.
+[02:08:26] <Seoson> I don't mind doing this once a year - even if it is a pain
+[02:08:27] <Moonlightning>  <+PinkiePieBot> [ [PMV] Assertive Fluttershy -  Boo Hoo (Silva Hound Re
+[02:08:40] <Moonlightning> dammit. don't post while I'm trying to copypaste. >.>
+[02:09:36] <Seoson> Also now I need to automate it which is more likely to cause errors and security relevant bugs
+[02:10:25] <Seoson> Last thing I want is a privilege escalation due to my dumb SSL management wrapper
+[02:13:59] <Seoson> I'll look now into systemd's inotify
+[02:14:55] <Moonlightning> inotify isn't systemd
+[02:15:37] <Seoson> It was mentioned under systemd's unit system.
+[02:16:20] <Seoson> systemd.path — Path unit configuration
+[02:18:45] <Seoson> I haven't worked with those once. This is going to be interesting
+[02:22:39] <Seoson> Looking at the unit file for openSSH, simple enough
+[02:23:35] <Moonlightning> …wait a second. /var/www shouldn't be owned by www-data, should it.
+[02:25:31] <Seoson> It is on my system
+[02:26:40] <Moonlightning> But if a web process gets compromised, it could write stuff in there which might then be served|executed
+[02:30:51] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-sqp.auh.56.172.IP)))
+[02:31:31] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[02:32:53] <Seoson> If www-data is compromised I'm screwed to a degree than where it doesn't matter anymore
+[02:33:42] <Moonlightning> well, it could just be a code-execution exploit in my file-serving thing or something
+[02:34:05] *** Joins: Asoka_White (Asoka@Pony-398n21.net-htp.de)
+[02:37:17] *** Quits: Asoka (Asoka@Pony-m2fhuv.net-htp.de) (Ping timeout: 121 seconds)
+[02:40:27] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[02:43:12] <Moonlightning> Is it bad that I want symlinks in /var/www for different response codes?
+[02:45:03] <Moonlightning> ln -s 410 /var/www/foo
+[02:46:59] <Moonlightning> ln -s 302:/bar.png /var/www/bar
+[02:51:13] <Moonlightning> And I guess you could just use a leading colon to get the traditional behavior.
+[02:53:46] <Seoson> Looks like I cannot tell systemd to restart other units based on a path unit. Do I really need to wrap that into a silly script?
+[02:54:59] <Moonlightning> got inline scripts? ;p
+[02:56:44] <Seoson> I gues I could tell it to run bash and put it in the argument :P
+[02:56:58] <Moonlightning> Nah, just sh
+[02:57:05] <Lapsus> Does anyone know what the hell is going on with the weird bands on either side of this radio station? http://i.imgur.com/agAxAkR.png
+[02:57:30] <Lapsus> it's surprisingly not an artifact from the sdr or anything
+[02:58:27] <Moonlightning> https://unicornbooty.com/wp-content/uploads/2015/06/ALIENS-guy.jpg
+[03:00:15] <Webster> Lapsus: Radio data probably.
+[03:00:24] <Webster> RDS/RDBS.
+[03:00:43] <Webster> Or possibly traffic data or similar.
+[03:00:55] * Moonlightning blinkblinks at Webster.
+[03:01:18] <Webster> Yeah?
+[03:01:44] <Lapsus> I don't understand
+[03:01:58] <Lapsus> is it just coincidental that it flanks that specific station then?
+[03:02:12] <Webster> It's either part of that station or something taking up the whitespace next to it.
+[03:02:48] <Lapsus> wait, rdbs is what allows some radios to show the song titles and stuff right?
+[03:02:55] <Webster> Yeah.
+[03:02:57] <Lapsus> so it would be station specific
+[03:02:57] <Webster> http://en.wikiaudio.org/images/3/34/RDS_vs_DirectBand_FM-spectrum2.png
+[03:03:10] <Lapsus> but then why is that the only station on the whole band where I can actually see it?
+[03:03:20] <Lapsus> almost all of them do it
+[03:03:33] <Webster> Could be HD radio.
+[03:04:01] <Webster> http://ecee.colorado.edu/~liue/teaching/comm_standards/2011F_HD_Radio/index_files/image009.jpg
+[03:04:18] <Lapsus> ah, that's what it looks like
+[03:04:21] <Webster> Yeah, looks like HD radio.
+[03:04:23] <Lapsus> I've never heard of that before
+[03:04:47] <Seoson> I'm going to bed. See you ponies ;-)
+[03:04:48] <Webster> HD Radio is... pretty useless.
+[03:04:53] <Webster> Goodnight Seoson.
+[03:04:54] <Moonlightning> 'nini, Seoson!
+[03:04:59] *** Seoson is now known as Seoson|BNC
+[03:05:54] *** Joins: CrassyPaddles (test@Pony-s4p.enl.137.198.IP)
+[03:06:43] * Moonlightning prods CrassyPaddles' username with a paddle.
+[03:06:57] <CrassyPaddles> Spike was on point this episode
+[03:08:34] * Moonlightning hides.
+[03:09:47] <Webster> Oh right, I should watch that.
+[03:39:30] <Moonlightning> Hmmmm, this is very odd.
+[03:39:56] <Moonlightning> I'm uploading a random file using scp on my secondary laptop, which has the newer scp that does sliding-window speeds
+[03:40:20] <Moonlightning> And the speed keeps jumping between 128 KB/s and 0 KB/s
+[03:40:27] <Moonlightning> Occassionally flickering to 256 KB/s once.
+[03:41:35] *** Quits: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com) (Connection closed)
+[03:46:05] <Moonlightning> Ugh
+[03:46:22] <Moonlightning> I really want to set up QoS, but HFSC is so /daunting/ >.<
+[03:52:50] *** Quits: jaderain (jaderain@jaderain.is.best.pony) (Quit: WeeChat 1.4-dev)
+[03:57:15] *** Joins: jaderain (jaderain@Pony-2k2tuu.compute-1.amazonaws.com)
+[03:58:46] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[03:59:05] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[04:06:47] *** Eventide is now known as Eventide|Sleepies
+[04:10:37] <Moonlightning> >> https://gist.github.com/eqhmcow/939373
+[04:10:38] <PinkiePieBot> [ HFSC - linux traffic shaping's best kept secret · GitHub ]
+[04:10:41] <Moonlightning> yay
+[04:11:20] <Moonlightning> well…what's the worst that could happen from running a bunch of traffic-shaping commands from a random script. :P
+[04:16:00] *** Quits: jaderain (jaderain@jaderain.is.best.pony) (Quit: WeeChat 1.4-dev)
+[04:18:16] *** Joins: jaderain (jaderain@Pony-2k2tuu.compute-1.amazonaws.com)
+[04:31:03] <Phase> Moonlightning, absolutely nothing
+[04:45:49] * Ola hugs Phase
+[04:46:13] * Phase hugs back
+[04:46:21] <Ola> did yopu try it yet?
+[04:46:32] <Moonlightning> PhasOla :D
+[04:46:45] * Ola is lesbian ;p
+[04:47:01] <Phase> Ola, my pws has been dead for a while, dud psu
+[04:47:05] <Ola> Phase: :(
+[04:47:31] <Phase> haven't put the time in to fix it yet
+[04:47:33] * Ola demands a working mobo tith a cpu and AGP slot.
+[04:48:12] <Phase> i don't think it has a agp slot?
+[04:48:19] <Ola> it'sd unrelated.
+[04:48:25] <Phase> mine has a 64bit pci card for a gpu
+[04:48:29] <Phase> the company who made it is long gone
+[04:48:33] <Ola> Also i had to explain to my dad today why his DVD player with USb port won't play 7820p.
+[04:48:46] <Ola> 720p
+[04:48:54] <Ola> Phase: i have a bunch of cards to test
+[04:49:07] <Ola> Phase: permedia2, riva 128, tnt vanta, voodoo banshee..
+[04:49:23] <Phase> it's some other brand
+[04:49:30] <Ola> oh and also elsa
+[04:49:31] <Phase> they make planetariums now
+[04:49:43] * Ola nods
+[04:49:57] <Phase> gpu market dried up i guess
+[04:50:53] * Eclipse drives up Phase
+[04:51:04] <Eclipse> dries*
+[04:51:25] <Ola> ?me protyects Phase 
+[04:51:32] <Ola> I may be lesbian but he;'s still mine.
+[04:51:44] <Eclipse> Phase is a he?
+[04:51:46] <Eclipse> huh
+[04:51:47] <Eclipse> TIL
+[04:51:49] <Ola> is?
+[04:51:53] <Ola> I thought is
+[04:52:04] * Ola begin executing confused
+[04:52:13] * Phase grabs popcorn
+[04:52:20] * Phase wants to see where this goes
+[04:53:12] * Ola makes Phase a  .are./
+[04:53:15] <Ola> mare
+[04:53:22] <Eclipse> this is perfect
+[04:53:27] <Eclipse> boys are lame
+[04:53:31] <Ola> ^
+[04:57:15] <Moonlightning> :(
+[04:57:26] * Moonlightning slinks away to sulk.
+[05:14:31] *** GigaCity is now known as Gigabit
+[05:16:12] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[05:38:21] <tiwake> for some reason my laptop does not want to load the desktop environment
+[05:39:36] <Dashie> o.o
+[05:39:50] <Dashie> what's wrong with guys :c
+[05:40:27] * Dashie waves to random horses and such o/
+[05:40:39] * Moonlightning pounces Dashie and snuggles tightly!
+[05:41:28] * Dashie squeaks!
+[05:41:31] <Dashie> <3
+[05:41:47] <Compu> http://imgur.com/gallery/BxSqoal
+[05:41:47] <PinkiePieBot> [ How do we hold stuff? - GIF on Imgur ]
+[06:22:29] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:26:24] *** Quits: Crimson_Tail (Bluepon@Pony-su71j3.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[06:44:13] <Dashie> OH GOD D:
+[07:06:56] <Sakura> Nyu
+[07:07:22] <Sakura> Hi
+[07:12:22] *** Joins: User_1165 (xpzeyowmndk@Pony-goe73n.bigpond.net.au)
+[07:12:36] <User_1165> hey nerds
+[07:13:14] *** Parts: User_1165 (xpzeyowmndk@Pony-goe73n.bigpond.net.au) ()
+[07:13:38] <Gigabit> Aww.. I wanted to make a Australia joke in retaliation..
+[07:14:11] <Kinsley> That was quick.
+[07:14:32] <Moonlightning> “G'day, User_1165, you cunt” — Gigabit, probably
+[07:14:50] <Gigabit> Huh?
+[07:16:38] <Moonlightning> Australia joke?
+[07:16:48] <Sakura> I would have asked him if everyone's name was Steve Irwin in Australia.
+[07:17:17] <Gigabit> I was going to call user_1165 crocodile Dundee or something, I dunno
+[07:18:34] <Kinsley> I would've called him a cunt.
+[07:18:50] <Sakura> http://i.imgur.com/4DQR78B.gif
+[07:19:23] <Kinsley> Like, "Oi, cunt, fuck off mate and suck off a 'roo on yer way out, eh?
+[07:19:25] <Kinsley> "
+[07:19:45] <Moonlightning> Sakura XD
+[07:19:57] <Sakura> I would ask if he fucks Wallaby for a living. xD
+[07:19:57] <Moonlightning> ++Kinsley
+[07:20:03] <Moonlightning> There you go, perfect
+[07:20:55] <Kinsley> "Leave us pommy bastards to dick with yer 'net for while and then shag yer Sheila after a coupla Fosters.
+[07:20:57] <Kinsley> "
+[07:21:10] <Kinsley> Fuckin' 'ell, can't quote for shit.
+[07:21:44] <Gigabit> The government stole your other quotation marks
+[07:21:51] <Sakura> Do you think it triggers them when you call Kangaroos Wallabies?
+[07:23:35] *** Joins: Eazy-E (uygbqpqojvn@Pony-goe73n.bigpond.net.au)
+[07:24:51] <Kinsley> Nah, tell 'em you faced down a rattler, and you ain't afraid of no stinkin' "bullshit pissant little garden lizards" or "tiny little glorified house spiders" or "dinky little jellies" like a fuckin' pasty English holiday maker.
+[07:25:02] <Eazy-E> yanks
+[07:25:07] <Kinsley> As an Aussie joins the chat.
+[07:25:19] <Eazy-E> lolass
+[07:25:22] <Kinsley> Fuck off mate, I shagged yer Sheila after a coupla Fosters
+[07:25:35] * Kinsley is technically Candian
+[07:25:37] <Eazy-E> fucklolsupreme10
+[07:25:43] <Kinsley> Er. Canadian*
+[07:25:52] * Kinsley is also drunk and can't type/spell for shit.
+[07:26:29] <Gigabit> Drunk mod, take advantage. Its like, quick mods asleep, post ponies.
+[07:26:35] * Moonlightning feeds Kinsley aphrodisiac-laced chocolates.
+[07:26:43] <Eazy-E> ohholeyes1080
+[07:26:57] <Eazy-E> fuck oh
+[07:27:19] <Eazy-E> fuckin bullshit mate
+[07:27:34] *** Quits: Eazy-E (uygbqpqojvn@Pony-goe73n.bigpond.net.au) (Connection closed)
+[07:27:39] <Moonlightning> We know you're the same user as the one who joinparted earlier, t—
+[07:27:46] * Moonlightning throws his hooves up.
+[07:28:15] <Sakura> Eazy-E: Oy, you Australian cunt. I fed your baby to a pack of dingoes & when it wasn't enough to fill them up, I tossed your girlfriend & your mother in to the pack & let them eat them.
+[07:28:49] <Kinsley> Gigabit: nah, tens time worse. I'll kickban for no reason, assuming I remember the command.
+[07:29:23] <Gigabit> XD
+[07:29:52] <Moonlightning> As long as it's not longterm or permanent, I won't resent you for it :3c
+[07:30:15] <Sakura> He sounds like an 8 year old who just learned some swears & couldn't wait to show us.
+[07:30:41] <Gigabit> Fucking right :p
+[07:30:46] <Moonlightning> crikey, mate
+[07:31:16] <Kinsley> "You outta Bris-baaaane?"
+[07:31:27] <Gigabit> I do wanna visit Australia though. 
+[07:31:43] <Sakura> G'day mates! I just learned how to say fuck, bitch, ass, shit, bullshit! Fuck! I'm going to fuck my new words now!
+[07:32:18] * Kinsley has been on the internet for the equivalent of centuries, has seen pretty much all the shit.
+[07:33:10] <Sakura> It feels like centuries. It feels like a long time since pre-YouTube.
+[07:33:25] <Moonlightning> “You outta Brae-buuuurn?” — Kinsley
+[07:33:49] <Moonlightning> Sakura: you'll be fingering those words later
+[07:33:57] <Moonlightning> …I mean, eating. You'll be eating those words later.
+[07:34:23] <Sakura> Anyone remember when AlbinoBlackSheep was the shit before YouTube came alone?
+[07:34:41] <HoneyDrops> Stop making be feel old ;_;
+[07:34:44] <HoneyDrops> s/be/me/
+[07:35:10] <Kinsley> Shit, I remember having to hunt down bootleg sites to find music videos.
+[07:35:42] * Moonlightning chucks a tape at Kinsley. “THINKFAST!”
+[07:35:42] <Kinsley> Hittin' up Kazaa and Limewire to get songs. Needing to run an AV program because that shit was shady.
+[07:35:48] * HoneyDrops recalls using napster on dialup.
+[07:35:51] <Sakura> I used to use RealPlayer to open videos.
+[07:35:54] <HoneyDrops> Also Kazaa
+[07:36:06] * Kinsley sticks it in her tape deck and rocks out to late 90's grunge
+[07:36:44] <Sakura> Oh, trolling USENET was fun too. Way better than trolls today.
+[07:36:46] * Dashie replaces Kinsley's grunge tape with an early Cattle Decapitation demo.
+[07:36:49] <Kinsley> I rocke 256 Kbps because we were happening.
+[07:36:56] <Moonlightning> …not that kinda tape
+[07:37:35] <Kinsley> But I remember the 14.4 Kbps modem we had.
+[07:38:00] <Kinsley> And I remember my new school trying to let 30 kids share a ISDN link to log onto Neopets.
+[07:39:24] <Sakura> I remember when we had to wait for parents to get off the phone before we could Internet some more.
+[07:39:39] <tiwake> lol neopets
+[07:39:53] <tiwake> I should log into neopets
+[07:40:12] <tiwake> but that requires effort
+[07:40:32] <tiwake> battledome was an interesting thing they added, but did not put much effort into
+[07:41:27] * Moonlightning trots around the channel, distributing gopher clients from a stack balanced across his wings.
+[07:41:31] <Sakura> I don't miss dial-up one bit but using 3G & losing Internet because of each phone call on my smartphone brings back old wounds.
+[07:41:33] <Kinsley> I literally haven't touched Neopets in 10 years.
+[07:41:41] <Sakura> Me either.
+[07:41:59] <Moonlightning> something something NeoRatticus Norvegius
+[07:42:23] <Sakura> A friend turned me onto Neopets once.
+[07:42:34] <Kinsley> I also remember buying a 4G smartphone weeks before 4G rolled out to my area and being super excited when they tested the towers a week early.
+[07:42:48] <Sakura> My monkey's name was MonkeyBush.
+[07:43:34] <tiwake> Kinsley: https://www.kickstarter.com/projects/309114309/infinity-battlescape
+[07:43:35] <PinkiePieBot> [ Infinity: Battlescape by I-Novae Studios — Kickstarter ]
+[07:43:45] <Moonlightning> fuck I can't
+[07:43:52] <tiwake> if you like space shooting games
+[07:43:59] <Moonlightning> Neorattus Norvegicus *, herp derp
+[07:44:04] <tiwake> like freespace2
+[07:44:09] <Moonlightning> got my us and my cus mixed up
+[07:44:18] <Sakura> Interestingly, I named my monkey after Dubya. :D
+[07:44:20] <tiwake> only multi-player, and flank tons of more awesome
+[07:44:22] <Kinsley> Nah, blew all my money on the Them's Fightin' Herds campaign.
+[07:44:29] <Moonlightning> Heh.
+[07:44:33] <Moonlightning> What did you get?
+[07:44:36] * Moonlightning went for the $55 tier.
+[07:44:49] *** Dusk is now known as Dawn
+[07:44:49] <tiwake> Moonlightning: I put in something like $35 I think
+[07:45:03] <Kinsley> Soundtrack tier at $40, but I got an extra copy for friend that I know likes Skullgirls.
+[07:45:49] <Sakura> Ooh, anyone ever run a BBS server?
+[07:45:51] <Moonlightning> Mmm, yeah, I almost went for that ^2
+[07:45:56] <Moonlightning> Sakura: No. Fuck PHP.
+[07:46:07] <tiwake> ^
+[07:46:20] <Kinsley> ^^
+[07:46:24] * Moonlightning flatly refuses to run anything involving PHP on his herd.
+[07:46:28] <Kinsley> Python is where it's at.
+[07:46:31] * Moonlightning is considering doing the same for Java, too.
+[07:46:33] <Moonlightning> ^2
+[07:46:35] <tiwake> or ruby
+[07:46:43] <tiwake> but python has a lot more resources
+[07:46:48] <Moonlightning> Ruby is cool. I never really got into it, but respect
+[07:46:49] <Sakura> And not a modern BBS either, I mean one that you call into with your old computer.
+[07:47:05] <Moonlightning> Sakura: oh, pre-PHP? Yeah, Iunno
+[07:47:12] <tiwake> I havent done much with either... heh
+[07:47:26] <Moonlightning> Gotta be better than the PHP ones, though *shrug*
+[07:47:41] <tiwake> I'm putting $256 into infinity battlescape :-x
+[07:48:02] <Kinsley> That's more than I've ever supported a crowdfunding campaign, ever.
+[07:48:03] <tiwake> because procedurally generated planet bobblehead for in-game cockpit :-x
+[07:48:14] <Sakura> I thought about setting one up in case I have to move to Alabama. That's why I wanted to start an IRC server in case I gotta deal with dial-up.
+[07:48:27] <Kinsley> ... That's actually more than the sum total of ALL my crowdfunding.
+[07:48:29] * Moonlightning spittakes.
+[07:48:50] <tiwake> Kinsley: I tend to pick what I want to support, and go all in :-x
+[07:49:01] * Moonlightning spit-whatever-it-is-you-do-when-you're-drinking-a-thing-and-you-bust-out-laughing *
+[07:49:22] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:50:17] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[07:50:22] <Moonlightning> Sakura: well, you got Canternet
+[07:50:30] * Moonlightning also has a tiny one-server network
+[07:51:24] <Sakura> True. I can still use Canternet. But I wanna keep in touch with IRL friends without Facebook.
+[07:51:49] <Sakura> You got a one-server IRC network?
+[07:52:02] <Kinsley> tiwake: you clearly have more disposable income than I do.
+[07:52:25] <Kinsley> $55 was already pushing it for TFH.
+[07:53:19] <Kinsley> I loved Planetary Annihilation. Total Annihilation is still, 17 years of constant play on, years after adoring Supreme Commander, still my very favorite game.
+[07:53:25] <Sakura> You using your home network to host or do you have another way to have it hosted, Moonlightning?
+[07:53:27] <Kinsley> I pledged at $40.
+[07:53:42] <Moonlightning> Cheap (but good) VPS, Sakura
+[07:53:50] <Kinsley> I still have my original CD of TotalA!
+[07:53:54] <Sakura> Ooh OK.
+[07:54:06] <Kinsley> I'm not fucking kidding. That disc is 17 years old, and I still have it.
+[07:54:21] <Kinsley> I did buy the Gog.com version to get the expansions, but sitll.
+[07:54:57] <Kinsley> $40 is kinda my limit when it comes to crowdfunding.
+[07:58:04] <Moonlightning> Sakura: it also runs a webserver that doesn't do much, either c:
+[07:58:39] <Moonlightning> And two VPN servers (private), and one of the two DNS servers authoritative for my domain
+[07:58:54] <Moonlightning> That's the only thing you'll get out of the DNS server, though. Everything else is private use only
+[07:59:43] * Kinsley SSH's into Moonlighting with a private key. :3c
+[08:04:28] * Moonlightning issues Kinsley a challenge in addition to the public-key authentication. :O
+[08:04:52] <Kinsley> ....
+[08:05:10] * Kinsley sloppy kisses that challenge into submission
+[08:05:23] <Moonlightning> Ohmai. What a response!
+[08:10:19] * Kinsley "social" engineers her way into signing Moonlightning's private key. If ya know what I mean.
+[08:12:08] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:12:32] <Moonlightning> …actually, that isn't that much of a risk. I could just hash my private key and give you the hash to sign.
+[08:15:03] <Kinsley> Booo.
+[08:15:16] <Kinsley> It was a sex joke and you ruined it.
+[08:15:26] <Moonlightning> I know. I'm sorry. I had to. :P
+[08:15:56] <Sakura> I so need to look into finding the right VPS so I can start making my server public.
+[08:16:05] <Kinsley> Chunkhost
+[08:16:07] <Kinsley> Easy.
+[08:16:08] <Moonlightning> ChunkHost.
+[08:16:12] <Moonlightning> Use my referral link, not Kinsley's.
+[08:16:20] <Kinsley> Moonlight isn't a channel mod
+[08:16:21] <Sakura> It's that good?
+[08:16:25] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed) (Quit: ...)
+[08:16:26] <Kinsley> He can't ban you.
+[08:16:29] <Kinsley> I can
+[08:16:31] <Sakura> Cost?
+[08:16:35] <Kinsley> And I'm durnk and petty
+[08:16:37] <Moonlightning> No, it's just that if you sign up using one of our links, we'll get money for it.
+[08:16:41] <Kinsley> $5 for the cheapest tier.
+[08:16:47] <Moonlightning> Sakura: but I'm also in bed with her! So…!
+[08:16:51] <Moonlightning> THE CONSPIRACY DEEPENS
+[08:16:52] <Sakura> A month?
+[08:16:59] <Kinsley> Yeah, a month.
+[08:17:05] <Sakura> Hmmm...
+[08:17:09] <Moonlightning> there is more to this conflict of interest than you think!
+[08:17:11] <Kinsley> But you can get a discount for paying for a full year in advance.
+[08:17:43] <Kinsley> (paying for a year also doubles the RAM and bandwidth allocation)
+[08:18:10] <Moonlightning> No, but in all serious. I've been with CH for like three and a half years now. They've got a /super/ open acceptable-use policy, they're cheap, and they just generally seem cool.
+[08:18:47] <Kinsley> https://chunkhost.com/r/0xdeadbeef
+[08:18:48] <Moonlightning> There is the occassional spot of downtime, but I don't find it too bad
+[08:18:48] <PinkiePieBot> [ SSD VPS Server, Fast Cloud Server, VPS Server, Cloud Hosting From ChunkHost ]
+[08:18:55] <Moonlightning> That's a referral link, by the way :p
+[08:19:02] <Kinsley> And they prorate the downtime.
+[08:19:03] <Sakura> And without a domain name, how would people connect?
+[08:19:05] <Moonlightning> ^
+[08:19:09] <Sakura> IP address?
+[08:19:12] <Moonlightning> ^:Kinsley *
+[08:19:14] <Moonlightning> yeah.
+[08:19:20] <Moonlightning> I did that for literal years :p
+[08:19:26] <Moonlightning> domains are also cheap, though.
+[08:19:43] <Moonlightning> I got blackl.net. for like $12/year, including the thing that hides your name and address from the public database
+[08:19:46] <Kinsley> They have their own domain hosting, so if you buy or already have a domain, you can point it at their servers.
+[08:20:09] <Moonlightning> Or you can do what I do and do your own DNS. It's not /that/ hard. :3
+[08:20:12] <Sakura> What about GoDaddy?
+[08:20:14] <Moonlightning> I mean, if you already know how to configure shit
+[08:20:17] <Moonlightning> EW NO DON'T USE GODADDY
+[08:20:17] * Kinsley hisses
+[08:20:23] <Kinsley> Namecheap
+[08:20:46] <Moonlightning> I got mine from Namecheap. I'm still not sure if I'm going to jump over the DNSSEC thing.
+[08:20:54] <Kinsley> Not only is it cheaper for a domain, they don't waste money supporting dumb ads or shit legislation like SOPA
+[08:21:04] <Moonlightning> Namecheap's UI rather puts me off.
+[08:21:20] <Kinsley> ... I only touch it like, once a year.
+[08:21:41] <Kinsley> So UI is fine as long as I can pay the $10 for the domain and WHOIS mask.
+[08:22:34] <Sakura> I need sleep now
+[08:23:03] <Kinsley> No, stay up forever and buy lots of chucks on my referral link so I get tons of credit
+[08:23:08] <Kinsley> I mean.
+[08:23:20] <Kinsley> Carefully decide on a hosting option.
+[08:23:28] <Kinsley> And go with what works best.
+[08:23:46] <Kinsley> And the best is Chunkhost's highest tier
+[08:23:48] <Moonlightning> My referral link is https://chunkhost.com/r/sugar-belle
+[08:23:48] <PinkiePieBot> [ SSD VPS Server, Fast Cloud Server, VPS Server, Cloud Hosting From ChunkHost ]
+[08:24:07] <Kinsley> Choose mine because it's a funny hex joke!
+[08:24:19] <Moonlightning> Choose mine because it's a canon MLP character!
+[08:25:02] <Kinsley> I thought of mine before MLP was a thing!
+[08:25:19] <Kinsley> Well, Gen 4 but whatever!
+[08:25:32] <Moonlightning> Yours is so overused. deadbeef, seriously? That's so worn out.
+[08:26:04] <Kinsley> Mine is delicious steak. What's yours?
+[08:26:06] <Kinsley> :P
+[08:26:31] <Kinsley> (will withhold that delightful sex you've been dying for)
+[08:26:41] <Moonlightning> Delicious muffins!
+[08:26:50] <Moonlightning> Also snow pies. Who doesn't love snow pies?
+[08:27:13] <Kinsley> .... People who like cream pies?
+[08:27:27] <Moonlightning> (don't play that game…we both know you're the one who needs it more)
+[08:27:49] <Kinsley> (I have a CoC playthrough going, so...)
+[08:27:57] <Kinsley> (And Stills)
+[08:28:22] <Moonlightning> (I have basically the entirety of #StallionStuffers )
+[08:29:09] <Moonlightning> In seriousness, Sakura, sleep on it. Probably shop around, too.
+[08:29:41] <Moonlightning> If you decide to go with ChunkHost, /and/ you decide to use one of our referral links, pick at random.
+[08:32:23] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[08:32:43] <Moonlightning> Okay, this is rather starting to bug me.
+[08:33:07] <Moonlightning> A ton of ponies' nicks are in this one shade of blue-green, when they're supposed to be different colors
+[08:36:33] <Kinsley> Blue green... like cyan blue green?
+[08:40:01] <Moonlightning> https://www.blackl.net/like-this-bluegreen.png
+[08:41:15] <Moonlightning> The shade that Camer_n_D, Cosm_c, D_ck, endoriaz_l, engineman_ac, Finnf_nn, F_nwe, and j_hnsey have.
+[08:41:33] <Moonlightning> I'm sure that at least half of them are not supposed to have that nick color.
+[08:41:55] <Moonlightning> D_shie had it, too, earlier, but it went away. Dunno why.
+[08:42:14] * Moonlightning tried `/color reset`. No dice.
+[08:43:13] <Kinsley> OK, that's not what I would call a blue-green.
+[08:43:20] <Kinsley> Maybe a dusty blue.
+[08:43:42] <Kinsley> Like, sleumas' hostmask join, that's blue-green.
+[08:43:49] <Kinsley> Well, cyan.
+[08:43:57] <Kinsley> But in that spectrum.
+[08:51:08] <Moonlightning> That's not cyan…?
+[08:51:47] *** Quits: Q0 (Q0@literallyshit.net) (Ping timeout: 121 seconds)
+[08:52:24] <Moonlightning> anyway, the point is that the color is wrong! D:
+[08:53:11] <Moonlightning> Lots of ponies are getting that color that shouldn't. And there should be plenty of colors to go around, as you can see from the rest of the nicklist!
+[08:54:37] *** Joins: Q0 (Q0@Pony-0m7faa.vtfe.qoe9.0601.2601.IP)
+[09:09:19] <Kinsley> I'm pretty sure it's bug with how Weechat assigns colors to nicks. Probably based on some kind of hash or something.
+[09:10:46] <Moonlightning> It is hash-based, but this instance has weeks of uptime and it only just cropped up a day or two ago.
+[09:14:16] <Kinsley> Mmm,  I notice that nicks are always assigned the same color.
+[09:14:30] <Kinsley> That is to say, it's not uptime-based for me.
+[09:14:39] <Kinsley> You're always this copper-brown color.
+[09:15:06] <Kinsley> (Pinkie is this bright magenta, which is perfect)
+[09:15:36] <Eclipse> Moonlightning: how many colors do you have in your rotation
+[09:15:54] <Eclipse> weechat.color.chat_nick_colors
+[09:16:06] <Eclipse> if you don't have enough, yes it'll reuse
+[09:16:14] <Eclipse> (also, lol @ D_ck)
+[09:18:56] <Moonlightning> Eclipse: lots :P
+[09:19:07] <Eclipse> less than 96, presumably 
+[09:19:32] <Eclipse> even if it's more, statistically, that distribution can happen just fine 
+[09:19:55] <Moonlightning> 213.
+[09:20:07] <Eclipse> how many of those are actually visually distinct?
+[09:20:31] <Eclipse> because `weechat --colors` has a lot of not very visually distinct colrors
+[09:20:34] <Moonlightning> Plenty. Look at the nicklist.
+[09:20:46] <Moonlightning> That's rather irrelevant, though.
+[09:20:57] <Moonlightning> I KNOW the colorings of some of these nicks.
+[09:21:18] <Moonlightning> Colg_te's is /wrong./ I can search the scrollback and find an instance of his nick with the right color.
+[09:21:26] <Eclipse> hm!
+[09:21:27] <Eclipse> well
+[09:21:57] <Eclipse> did you recently /upgrade, or change irc.look.nick_color_hash ? :P
+[09:22:02] <Eclipse> if not, good luck and have fun!
+[09:22:02] <Moonlightning> No.
+[09:22:06] <Moonlightning> :P
+[09:22:16] * Eclipse notices it's 2:22 in the morning, wanders off and dies
+[09:22:43] <Moonlightning> x.x
+[09:25:39] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[09:39:35] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[09:49:18] *** Kyoro is now known as Pocky
+[09:58:09] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[10:18:40] *** Quits: Q0 (Q0@literallyshit.net) (Ping timeout: 121 seconds)
+[10:21:33] *** Joins: Q0 (Q0@Pony-0m7faa.vtfe.qoe9.0601.2601.IP)
+[10:27:55] *** RedHelper is now known as Creeps|
+[10:28:12] *** Creeps| is now known as Creeps|AFK
+[10:33:30] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[10:40:35] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[10:46:27] *** Joins: Asoka (Asoka@Pony-53en2d.net-htp.de)
+[10:48:34] *** Quits: Asoka_White (Asoka@Pony-398n21.net-htp.de) (Ping timeout: 121 seconds)
+[11:10:18] *** Joins: Asoka_White (Asoka@Pony-4ttm66.net-htp.de)
+[11:12:38] *** Quits: Asoka (Asoka@Pony-53en2d.net-htp.de) (Ping timeout: 121 seconds)
+[11:27:00] *** Quits: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Quit:  HydraIRC -> http://www.hydrairc.com <- *I* use it, so it must be good!)
+[11:27:25] *** Joins: Asoka (Asoka@Pony-fk9upe.net-htp.de)
+[11:30:10] *** Quits: Asoka_White (Asoka@Pony-4ttm66.net-htp.de) (Ping timeout: 121 seconds)
+[11:39:47] *** Joins: Asoka_White (Asoka@Pony-ki9u1m.net-htp.de)
+[11:42:11] *** Quits: Asoka (Asoka@Pony-fk9upe.net-htp.de) (Ping timeout: 121 seconds)
+[11:49:27] <Moonlightning> Am I the only one who thinks this looks weird with the filename centered and the form elements all squished over to the left?
+[11:49:34] <Moonlightning> I want those fields and that button to be centered, too.
+[11:55:16] <Moonlightning> …I could make the fields completely transparent.
+[11:55:27] <Moonlightning> No border, just floating placeholder text, and then whatever you type.
+[11:55:34] <Moonlightning> I kinda like that o3o
+[11:58:10] *** Joins: Asoka (Asoka@Pony-lrgq2s.net-htp.de)
+[11:58:54] * Moonlightning prods Dashie
+[12:00:13] *** Quits: Asoka_White (Asoka@Pony-ki9u1m.net-htp.de) (Ping timeout: 121 seconds)
+[12:00:45] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Quit: Leaving)
+[12:04:13] <AppleDash> Moonlightning: yes, it looks weird
+[12:04:33] <Moonlightning> I wanna go more for centered than left-aligned though
+[12:04:45] <Moonlightning> i.e. make the form centered to match the filename, not vice versa
+[12:04:51] <Moonlightning> though that footer is staying as it is
+[12:05:09] <Dashie> o.o
+[12:05:14] <AppleDash> Dashie: go away
+[12:05:19] <Moonlightning> Dashie: stay here
+[12:05:19] <Dashie> ;-;
+[12:05:25] * Dashie flails!
+[12:05:36] * Moonlightning hugs Dashie tightly under a wing and glares at AppleDash.
+[12:05:37] <AppleDash> Dashie: don't go away but be helpful
+[12:05:46] * AppleDash stabs Moonlightning 42 times
+[12:05:46] <Dashie> it's 0600
+[12:05:50] <AppleDash> with a pineapple
+[12:05:53] <Dashie> i cant be helpful
+[12:05:55] <Dashie> im barely awake
+[12:05:58] <Dashie> :<
+[12:06:02] <Moonlightning> …oh, I know why the invisible-field thing looked weird. I didn't figure out hwo to disable the cursor.
+[12:06:03] <AppleDash> Then go to bed :P
+[12:06:29] <AppleDash> Moonlightning: serious question
+[12:06:31] <Dashie> i can't im at work
+[12:06:46] * Dashie can barely help the people she's being paid to help right now D:
+[12:07:07] <AppleDash> what's the difference of doing "here's the fine: https://whatever, and the username and password are foo and bar" vs doing "here's the file: https://whatever?user=username&password=bar"
+[12:07:13] <AppleDash> s/fine/file/
+[12:08:57] <Moonlightning> AppleDash: that's a good question.
+[12:09:19] <Moonlightning> I have an instinctive aversion to submitting passwords in querystrings.
+[12:09:27] <Moonlightning> I'm not gonna do it until I have it on good authority that it's okay.
+[12:10:05] <Moonlightning> Maybe it's because it feels like submitting them on a commandline?
+[12:10:07] <Moonlightning> I dunno.
+[12:11:50] <AppleDash> I can't think of any solid reasons not to for something that will only be given to one person
+[12:12:13] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[12:46:15] <AppleDash> Moonlightning: I can't just regex it like that though
+[12:46:16] *** Seoson|BNC is now known as Seoson
+[12:46:40] *** Joins: Cyan_Spark (Cyan_Spark@incidental.unicorn.Cyan_Spark)
+[12:46:49] <Moonlightning> why the fuck not
+[12:46:50] <AppleDash> Moonlightning: https://gist.github.com/AppleDash/d224fb3c236d408e6244
+[12:46:51] <PinkiePieBot> [ wave.py · GitHub ]
+[12:46:55] <AppleDash> Figure out why
+[12:46:58] * Cyan_Spark trots in after AppleDash, levitating with him a bucket of popcorn
+[12:47:41] <Moonlightning> you have a string `message`
+[12:47:44] <Moonlightning> why can't you regex it
+[12:49:41] *** Parts: Cyan_Spark (Cyan_Spark@incidental.unicorn.Cyan_Spark) ("Oh, who am I kidding, the only sort I know is a bubblesort... ")
+[12:49:42] <AppleDash> because that doesn't work
+[12:49:59] <AppleDash> if re.match("regex", message): say(what?)
+[12:50:25] <Moonlightning> I dunno, map the shit
+[12:50:44] <AppleDash> I'll just add the regex to the and clauses
+[12:50:55] <Moonlightning> {r'\o': r'o/', r'\o/': r'\o/', r'o/': r'\o'}
+[12:51:04] <Moonlightning> match the shit with a capture, look it up in that
+[12:51:26] <AppleDash> Creating variables is generally bad
+[12:51:57] <Moonlightning> You don't care about code quality. Go do it.
+[12:52:07] <AppleDash> I do
+[12:52:11] <AppleDash> you don't know my reasoning
+[12:52:20] <AppleDash> every variable anywhere in derpy automatically becomes global
+[12:52:26] <AppleDash> you have to be careful about what you name things
+[12:54:14] <Moonlightning> seriously?
+[12:54:18] <Moonlightning> whose fucking idea was that
+[12:54:27] <Moonlightning> …never mind; it doesn't matter. You can just use it inline; you don't need to bind it to anything.
+[12:54:33] <AppleDash> not mine
+[12:54:41] <Seoson> Hi. Wait chuckhost is not exactly cheap :P
+[12:54:49] <Moonlightning> {r'\o': r'o/', r'\o/': r'\o/', r'o/': r'\o'}[match_str]
+[12:55:00] <Moonlightning> It's not? Isn't the lowest tier like $5/month?
+[12:55:52] <Seoson> Yes for a VPS with low specs :P
+[12:55:53] <AppleDash> Everyone knows that almost all VPS hosts are scams above the lowest tier
+[12:56:06] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[12:56:13] <AppleDash> Moonlightning: your regex doesn't work
+[12:56:33] <Moonlightning> don't regex then
+[12:56:39] <Moonlightning> split the fucking string on fucking whitespace
+[12:56:43] <Moonlightning> then do the shit
+[12:57:06] <Seoson> For the price of their highest tier you can get a real dedicated with 4 times the power. :P
+[12:57:49] <Moonlightning> Really? From where?
+[12:58:10] * Moonlightning only uses their lowest tier, so
+[12:58:15] <AppleDash> there, fixed, Moonlightning
+[12:58:21] <Seoson> Look as the usual suspects ... I pay a little more for mine at Hetzner
+[12:58:50] <AppleDash> Moonlightning: #chad if you want to test, otherwise unquiet plox
+[12:58:51] <Seoson> (Which is a German host. Only downside is handling in case of DDoS)
+[13:02:10] <Seoson> Here is a better offer from a German provider for a VPS (the say root, but they mean VPS): https://www.netcup.de/bestellen/produkt.php?produkt=1109 Their human support is horrible, but products are fine apart from that
+[13:02:14] <PinkiePieBot> [ netcup.de - Produktdetails ]
+[13:04:37] <Seoson> Here is the dedicated server I'm using right now: https://www.hetzner.de/us/hosting/produkte_rootserver/ex40
+[13:04:39] <PinkiePieBot> [ Hetzner Online GmbH: Dedicated Root Server EX40 ]
+[13:05:02] * Moonlightning checks out of this thread for the tireds. Will read scrollback after sleep.
+[13:08:10] <AppleDash> For the 36$ ChunkHost gives me an 8GB 2 core VPS for, I have a 32GB RAM 8 core server
+[13:08:14] <AppleDash> Also with 4TB of storage
+[13:13:55] <Seoson> I only have 2TiB (One due to RAID1), but I don't use that much anyway.
+[13:16:18] <AppleDash> I'm not RAIDing because #yolo #swag
+[13:19:16] <Seoson> I prefer not loosing my E-Mails :D
+[13:19:38] <Moonlightning> You prefer tighting your emails?
+[13:19:49] <Moonlightning> s/s.$/?/
+[13:20:16] <Seoson> ?
+[13:20:49] <Moonlightning> You prefer tighting your email?
+[13:24:37] <Seoson> I don't even understand that question
+[13:25:35] <Moonlightning> Well, you said you prefer not loosing it…
+[13:28:53] <Seoson> Where did I put that silly backup script
+[13:29:15] <Moonlightning> clearly, you should have stored it with your mail
+[13:29:50] <Seoson> That would not make any sense, since it does not only backups my mails
+[13:30:08] <Moonlightning> You can back up a thing that backs up thigns
+[13:30:22] <Moonlightning> it doesn't create an infinite recursion thing
+[13:32:11] <Seoson> I can't find it. I might just use rsync. Rewriting this is a pain and I cannot find the guy that got a copy from me
+[13:35:10] <Seoson> Found it ;-)
+[13:50:10] <AppleDash> holy fuck
+[13:50:16] <AppleDash> I found a really weird thing
+[13:50:26] <AppleDash> Not really WEIRD but I never new this
+[13:50:56] <AppleDash> In Ruby, the [] operator works on an integer to get the bit at that position in the number, where some_int[0] is the rightmost bit of the number
+[13:51:04] <AppleDash> s/new/knew/
+[13:59:35] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:01:40] <Seoson> This is actually very usefull
+[14:02:12] *** Quits: Fallfeathers (Fallfeather@Pony-9c7.4em.162.101.IP) (Connection closed)
+[14:02:13] *** Eventide|Sleepies is now known as Eventide
+[14:02:43] <Seoson> Would allow me skip converting ints to bin for my javascript permission management if JS had something like that
+[14:07:01] *** Quits: Fusl (Fusl@1.0.0.127.in-addr.arpa.li) (Ping timeout: 121 seconds)
+[14:07:36] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[14:10:24] *** Joins: Asoka_White (Asoka@Pony-sv744r.net-htp.de)
+[14:12:27] *** Quits: Asoka (Asoka@Pony-lrgq2s.net-htp.de) (Ping timeout: 121 seconds)
+[14:28:35] *** Joins: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com)
+[14:35:06] *** Quits: CrassyPaddles (test@Pony-s4p.enl.137.198.IP) (Ping timeout: 121 seconds)
+[14:41:56] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[14:59:14] *** Joins: Crimson_Tail (Bluepon@Pony-hg0i8u.cg80.k4gu.0151.2601.IP)
+[14:59:35] *** Quits: roflin (dennis@Pony-aend1d.es) (Ping timeout: 121 seconds)
+[15:03:10] *** Quits: Fusl (Fusl@1.0.0.127.in-addr.arpa.li) (Ping timeout: 121 seconds)
+[15:07:08] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[15:07:19] *** Joins: roflin (dennis@Pony-aend1d.es)
+[15:12:55] <AppleDash> Now I remember why I don't use NodEJS
+[15:13:13] <AppleDash> I'm getting an obscure error with an exampke straight out of the book
+[15:13:18] <AppleDash> and there's nothong on Google about it
+[15:37:41] <roflin> what's the obscure error, I've seen some in my time.
+[15:37:58] <AppleDash> https://gist.github.com/AppleDash/678204d17bda0a9207bd
+[15:37:59] <PinkiePieBot> [ code.js · GitHub ]
+[15:38:02] <AppleDash> code + error
+[15:39:28] <AppleDash> (Also, if I disconnect, it's because I plan to reboot my VPS oon)
+[15:39:30] <AppleDash> soon*
+[15:40:59] <AppleDash> Or maybe not... In a month and a half it'll have a year of uptime
+[16:09:12] *** Quits: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net) (Ping timeout: 121 seconds)
+[16:12:12] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:27:19] <tiwake> lol
+[16:33:01] <DJ-C0L7[EIT]> okay, audio is pretty simple actually, output power / #speakers, 40watts @4ohms /2 = 20 watts per speaker/channel, or 80@2ohms /2 = 40 per speaker/channel
+[16:34:51] <DJ-C0L7[EIT]> 4 speakers would be 25% of output power per speaker if the speakers are matched impedance, so 4x8 ohm speakers wired for 4ohms @40watts would be ~10watts per speaker driver
+[16:55:19] *** Joins: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net)
+[17:41:43] *** Joins: CrassyPaddles (test@Pony-ph1.enl.137.198.IP)
+[18:26:46] *** Joins: NewFoal7345 (NewFoal7345@Pony-4jb.pmv.252.187.IP)
+[18:26:55] <NewFoal7345> http://imgur.com/Wr6gJ7f.png
+[18:36:10] *** Joins: Pocketguns2 (Pocketguns2@Digging.a.Hole)
+[18:37:49] *** Quits: Pocketguns2 (Pocketguns2@Digging.a.Hole) (Connection closed)
+[18:38:20] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[18:39:02] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[18:41:11] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Connection closed)
+[18:41:17] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[18:48:11] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[18:57:07] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[19:00:09] <Sakura> Nyu
+[19:32:56] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[19:47:30] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[19:53:00] <Compu> http://mrrepzion.com/post/132776740873/batter-sempai-manakete-nah-i-have-the-option u can flirt with the light switches in fallout 4
+[19:53:02] <PinkiePieBot> [ The Life Of A Reptile ]
+[19:55:37] *** djazz is now known as MangoBloom
+[19:55:51] <Compu> well this exists https://open.spotify.com/album/7EzT8tcMRWMt04V9FCH5fm the mlp cast singing christmas carols
+[19:55:52] <PinkiePieBot> [ My Little Pony: A Pony Kind of Christmas by Various Artists on Spotify ]
+[20:11:53] *** Kyoro is now known as Pocky
+[20:32:45] *** Quits: NewFoal7345 (NewFoal7345@Pony-4jb.pmv.252.187.IP) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[20:42:05] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[20:44:15] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[20:44:29] <tiwake> Compu: oh nice
+[20:51:12] <tiwake> http://phys.org/news/2015-11-tv-silver-bullet-online-rivals.html
+[20:51:13] <PinkiePieBot> [ TV operators seek silver bullet to fight online rivals ]
+[20:54:08] <tiwake> the only experience I have with it is trying to get directTV (or whatever it was) to stream with their buggy browser plugin thing
+[20:54:19] <tiwake> ...which did not work half the time
+[20:57:23] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[21:05:15] *** Quits: Crimson_Tail (Bluepon@Pony-hg0i8u.cg80.k4gu.0151.2601.IP) (Ping timeout: 121 seconds)
+[21:07:36] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[21:15:17] <HoneyDrops> "Executives are also being forced to acknowledge that consumers are gravitating to online services because they offer convenient on-demand viewing, often with little or no advertising." - duh
+[21:15:58] <HoneyDrops> Want my money?  Easy, show me what I want (Hint: no ads), on a schedule I determine.
+[21:16:59] <Kinsley> I find it kinda odd that in the eSports scene, they're trying to make a big deal about landing airtime on ESPN. Like, yeah, cool, you're reaching a pretty wide audience that may not have known about this.
+[21:17:22] <Compu> mmmmmm stewarts glass bottle old fashioned cream soda
+[21:17:30] <Kinsley> But come on. Twitch has been around for a while. Tons of other streaming services, too.
+[21:17:54] <Kinsley> We don't really need the old guard TV networks to get content in people's faces.
+[21:18:14] <johnsey> https://youtu.be/HLQ1XU2JlAc
+[21:18:14] <PinkiePieBot> [ taillights walk by edited - 1112 views - 25s long - 0 likes - 0.00% ]
+[21:18:25] <Kinsley> Though it is perversely amusing to see TV spots for Star Wars: Battlefront when watching college football.
+[21:37:57] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[21:44:50] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "gotta fly")
+[21:46:18] <Sakura> Nyu. My day's done. :)
+[21:46:54] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[21:48:06] <Sakura> Hi
+[21:53:04] *** Joins: sterr (WebChat@Pony-g5v40e.sc.charter.com)
+[21:53:38] <sterr> hello
+[21:53:48] <Sakura> Hi
+[21:59:03] *** Parts: sterr (WebChat@Pony-g5v40e.sc.charter.com) ("")
+[22:06:04] *** Joins: Sombra (Iceman@Darkhorse21)
+[22:14:30] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[22:17:59] *** Quits: CrassyPaddles (test@Pony-ph1.enl.137.198.IP) (Connection closed)
+[22:18:02] *** Joins: RekttothePecs (test@Pony-ph1.enl.137.198.IP)
+[22:25:40] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[22:27:12] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[22:34:22] <Moonlightning> …why should I send Strict-Transport-Security with max-age set to only half a year?
+[22:34:32] <Moonlightning> This makes my clients vulnerable to MitM attacks every half year :I
+[22:36:57] <Moonlightning> Speaking of, what's the range on that?
+[22:37:21] <Moonlightning> …wait, never mind, it's not relative.
+[22:40:56] <roflin> well whenever there is something like a max age in security, it's about "what if you are comprimised and cannot revoke the key anymore", atleast it will revoke itself in maximum of 6 months.
+[22:42:39] <Moonlightning> So…an attacker has the webserver's private key, and I can't revoke it.
+[22:43:00] <Moonlightning> And that makes plaintext better than otherwise-good TLS with a compromised server key?
+[22:43:35] <Moonlightning> s/it's not relative/it's relative, not absolute/
+[22:56:58] *** Joins: Crimson_Tail (Bluepon@Pony-rhlu4n.cg80.k4gu.0151.2601.IP)
+[22:57:52] <Moonlightning> …hmmmmm, okay
+[23:00:06] <Moonlightning> I don't currently have any address records for the root of my zone.
+[23:01:50] <Moonlightning> But if I want to do this right, I need to respond to HTTP requests there with an HSTS header (with includeSubDomains)
+[23:02:08] * Moonlightning struggles with the semantics of @
+[23:02:41] <Moonlightning> Many domains use @ and www more or less interchangably, or have www be an alias for @.
+[23:02:46] <Moonlightning> I don't think that makes sense in my case.
+[23:03:12] <Moonlightning> I run more than one kind of public service, tied to the same domain.
+[23:03:15] *** RekttothePecs is now known as CrassyPaddles
+[23:04:10] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[23:07:27] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[23:07:55] *** locodashie11 is now known as Pony_66550
+[23:10:55] *** Pony_66550 is now known as locodashie11
+[23:26:55] *** Divide is now known as Divide|Support
+[23:38:30] *** Quits: Obaskyr (Tachy@Pony-0nd708.range86-175.btcentralplus.com) (Ping timeout: 121 seconds)
+[23:42:03] <Moonlightning> Grrrr.
+[23:43:56] *** Joins: TachyonicBow (Tachy@Pony-0nd708.range86-175.btcentralplus.com)
+[23:46:30] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[23:51:21] <tiwake> http://techxplore.com/news/2015-11-smartpoles-la-dwellers.html what
+[23:51:21] <PinkiePieBot> [ SmartPoles: LA dwellers will see the light and stay connected ]
+[23:51:38] <tiwake> the internet of things is going city wide now
+[23:51:40] <tiwake> bah
+[23:53:07] <Moonlightning> I don't think cell towers count as IoT devices.
+[23:53:57] <Webster> Yeah, that actually seems reasonable.
+[23:54:15] <tiwake> derp, yeah, after reading it... the title suggested otherwise
+[23:55:13] <Webster> Anyone here have any recommendations for an OBDII scanner?
+[23:59:26] <Moonlightning> Is there an RFC or something with recommendations for zone-root address records? >.>

@@ -1,0 +1,101 @@
+[00:00:59] <theli_ua> MrMaffen: will native request on android follow redirects?
+[00:01:25] <MrMaffen> theli_ua: yes
+[00:01:30] <theli_ua> bad
+[00:01:35] <theli_ua> :(
+[00:02:06] <theli_ua> so say if I request foo > redirect to bar ... I wont have any visibility into cookies set by that redirect, right?
+[00:03:12] <theli_ua> and it doesn't follow redirects no desktop iirc
+[00:07:22] <theli_ua> I wonder what would be the best way to handle this :-/
+[00:09:29] <theli_ua> don't get me wrong, I'm not whining, I'm just trying to figure out the differences and the best way forward consistency across those platforms
+[00:13:41] <MrMaffen> well yea we could introduce another flag "followRedirects" or something, but yea dunno
+[00:31:30] *** Quits: mattsches (~mattsches@dslb-188-096-151-104.188.096.pools.vodafone-ip.de) (Ping timeout: 240 seconds)
+[00:45:59] *** Quits: soee (~soee@agwg66.neoplus.adsl.tpnet.pl) (Ping timeout: 244 seconds)
+[01:17:09] *** Joins: McKey (~McK@irc.antyklay.pl)
+[01:17:11] *** Server sets mode: +gnt 
+[02:17:55] *** Joins: github-tomahawk (~github-to@192.30.252.45)
+[02:17:55] <github-tomahawk> [13tomahawk] 15muesli pushed 1 new commit to 06master: 02http://git.io/v3PnQ
+[02:17:55] <github-tomahawk> 13tomahawk/06master 1482c9f5c 15Tomahawk CI: Automatic merge of Transifex translations
+[02:17:55] *** Parts: github-tomahawk (~github-to@192.30.252.45) ()
+[02:23:21] <tomahawk-ci> Project Tomahawk-MinGW-Master build #4752: STILL FAILING in 5 min 16 sec: http://ci.tomahawk-player.org/job/Tomahawk-MinGW-Master/4752/
+[02:23:21] <tomabee> [ 401 Unauthorized | ci.tomahawk-player.org |  ]
+[02:23:21] <tomahawk-ci> ci: Automatic merge of Transifex translations
+[02:39:42] *** Quits: thisfred1 (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com) (Ping timeout: 255 seconds)
+[03:01:23] <theli_ua> weird, I can find my purchased song in amazon music by song name only
+[03:01:31] <theli_ua> search fails if I add band name o_O
+[03:39:03] *** Quits: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr) (Quit: ZNC - http://znc.sourceforge.net)
+[03:54:38] *** Quits: wilder_ (~quassel@kde/developer/wilder) (Ping timeout: 260 seconds)
+[05:17:51] *** Quits: jturney1 (~jon@host86-179-113-234.range86-179.btcentralplus.com) (Read error: Connection reset by peer)
+[05:52:17] *** Joins: mgue (~mgue@f049024212.adsl.alicedsl.de)
+[05:55:25] *** Quits: mgue2 (~mgue@x5ce3907d.dyn.telefonica.de) (Ping timeout: 252 seconds)
+[06:42:14] *** Quits: rodgort (~rodgort@105.ip-167-114-152.net) (Quit: Leaving)
+[06:57:23] *** Joins: rodgort (~rodgort@105.ip-167-114-152.net)
+[07:46:55] *** Quits: aoseki (~akaseki@unaffiliated/akaseki) (Remote host closed the connection)
+[08:00:34] *** Joins: soee (~soee@agwg66.neoplus.adsl.tpnet.pl)
+[08:08:42] *** Quits: soee (~soee@agwg66.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[08:09:36] *** Joins: soee (~soee@agwg66.neoplus.adsl.tpnet.pl)
+[08:15:32] *** Quits: soee (~soee@agwg66.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[08:15:57] *** Joins: soee (~soee@agwg66.neoplus.adsl.tpnet.pl)
+[08:24:46] *** Joins: kuroseki (~hakase@unaffiliated/akaseki)
+[09:57:35] *** Quits: johnyb (~jb@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[09:59:45] *** Quits: mohn (~mo@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[10:01:56] *** Joins: johnyb (~jb@limu.coffee.liberejo.de)
+[10:01:56] *** Joins: mohn (~mo@limu.coffee.liberejo.de)
+[10:14:16] *** Joins: mattsches (~mattsches@ipservice-092-217-089-122.092.217.pools.vodafone-ip.de)
+[10:15:59] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[10:16:20] *** Quits: mattsches (~mattsches@ipservice-092-217-089-122.092.217.pools.vodafone-ip.de) (Remote host closed the connection)
+[10:19:03] *** Quits: soee (~soee@agwg66.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[10:22:58] *** Joins: soee (~soee@agwg66.neoplus.adsl.tpnet.pl)
+[10:26:31] *** Quits: soee (~soee@agwg66.neoplus.adsl.tpnet.pl) (Client Quit)
+[10:27:20] *** Joins: soee (~soee@agwg66.neoplus.adsl.tpnet.pl)
+[10:28:07] *** Quits: soee (~soee@agwg66.neoplus.adsl.tpnet.pl) (Client Quit)
+[10:29:00] *** Joins: soee (~soee@agwg66.neoplus.adsl.tpnet.pl)
+[11:16:41] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[12:34:09] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[12:40:44] *** Joins: jturney (~jon@host86-179-113-234.range86-179.btcentralplus.com)
+[12:44:28] *** Joins: mattsches (~mattsches@ipservice-092-217-089-122.092.217.pools.vodafone-ip.de)
+[14:11:13] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[14:36:29] *** Joins: soee_ (~soee@acby239.neoplus.adsl.tpnet.pl)
+[14:40:36] *** Quits: soee (~soee@agwg66.neoplus.adsl.tpnet.pl) (Ping timeout: 264 seconds)
+[15:04:49] *** Parts: jwheare (sid2@gateway/web/irccloud.com/x-gmhhcvmnhbetvmqb) ()
+[15:29:10] *** Joins: piezoid (~piezoid@tsv35-1-78-232-144-90.fbx.proxad.net)
+[15:29:56] <piezoid> Hi! Is there a way to install .axe resolvers on the android app ?
+[15:43:49] *** Quits: johnyb (~jb@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[15:43:49] *** Quits: mohn (~mo@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[15:44:14] *** Joins: johnyb (~jb@limu.coffee.liberejo.de)
+[15:44:14] *** Joins: mohn (~mo@limu.coffee.liberejo.de)
+[16:41:11] <jherskowitz> MrMaffen: ^
+[16:41:39] <jherskowitz> piezoid: not easy to do yet, but it’s on the plan
+[16:44:32] <MrMaffen> piezoid: only some resolvers are currently compatible
+[16:44:54] <MrMaffen> piezoid: but you can open .axe files with tomahawk and tomahawk will recognize the file and show an installation dialog
+[16:45:15] <MrMaffen> you can also open http links ending with .axe directly with tomahawk (without downloading the axe file)
+[16:46:49] <piezoid> MrMaffen: Thanks, I'll try that.
+[16:47:09] <MrMaffen> piezoid: you'll need the latest nightly though
+[16:52:31] <piezoid> MrMaffen: The installation seems to work, but I don't see any result from youtube yet
+[16:53:04] <MrMaffen> piezoid: the youtube resolver needs to be made compatible first afaik
+[16:55:02] *** Quits: mattsches (~mattsches@ipservice-092-217-089-122.092.217.pools.vodafone-ip.de) (Ping timeout: 272 seconds)
+[16:56:48] <piezoid> MrMaffen: Ok. Is there any guide about the API changes ?
+[16:57:12] <MrMaffen> piezoid: https://github.com/tomahawk-player/tomahawk-resolvers/blob/master/HACKING.md
+[16:57:13] <tomabee> [ tomahawk-resolvers/HACKING.md at master · tomahawk-player/tomahawk-resolvers · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[16:57:17] <MrMaffen> piezoid: https://github.com/tomahawk-player/tomahawk-resolvers/tree/master/examples/javascript
+[16:57:18] <tomabee> [ tomahawk-resolvers/examples/javascript at master · tomahawk-player/tomahawk-resolvers · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[17:21:09] *** Joins: thisfred1 (~thisfred@66-193-100-238.static.twtelecom.net)
+[17:24:05] *** Joins: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com)
+[17:26:29] *** Joins: moru (~moru@194-166-28-220.adsl.highway.telekom.at)
+[17:26:39] *** Quits: thisfred1 (~thisfred@66-193-100-238.static.twtelecom.net) (Ping timeout: 260 seconds)
+[17:47:22] *** Quits: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com) (Ping timeout: 260 seconds)
+[17:49:45] *** Quits: moru (~moru@194-166-28-220.adsl.highway.telekom.at) (Quit: Leaving.)
+[18:09:50] *** Quits: piezoid (~piezoid@tsv35-1-78-232-144-90.fbx.proxad.net) (Read error: Connection reset by peer)
+[18:25:27] *** Joins: moru (~moru@194-166-28-220.adsl.highway.telekom.at)
+[18:25:57] *** Quits: moru (~moru@194-166-28-220.adsl.highway.telekom.at) (Read error: Connection reset by peer)
+[18:38:36] *** Joins: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com)
+[18:43:04] *** Joins: moru (~moru@194-166-28-220.adsl.highway.telekom.at)
+[19:02:17] *** Quits: moru (~moru@194-166-28-220.adsl.highway.telekom.at) (Ping timeout: 252 seconds)
+[19:23:24] *** h4ndy is now known as H4ndy
+[19:31:19] *** Quits: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com) (Quit: wait what)
+[19:31:36] *** Joins: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com)
+[19:31:57] *** Quits: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com) (Client Quit)
+[19:32:56] *** Joins: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com)
+[19:36:21] *** H4ndy is now known as h4ndy
+[19:53:16] *** h4ndy is now known as H4ndy
+[20:18:30] *** Quits: jck (~quassel@2604:a880:800:10::1b9:5001) (Read error: Connection reset by peer)
+[22:39:08] *** Joins: mattsches (~mattsches@ipservice-092-217-089-122.092.217.pools.vodafone-ip.de)
+[23:31:43] *** H4ndy is now known as h4ndy

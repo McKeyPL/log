@@ -1,0 +1,782 @@
+[00:00:45] *** Joins: RazorSharpFang (wpztoncfyuh@Pony-t6f721.iinet.net.au)
+[00:00:59] <RazorSharpFang> I'm having hardware problems.
+[00:01:15] <RazorSharpFang> I ... can't remove the graphics card.
+[00:01:40] <RazorSharpFang> I feel really stupid right now. It's just not coming out.
+[00:01:51] <RazorSharpFang> I can't see any screws that I haven't unscrewed.
+[00:02:07] <Seoson> There is useally one screw to hold it in it's slot
+[00:02:26] <RazorSharpFang> I undid the screw at the back of the case, the one right next to the DVI/VGA/etc ports.
+[00:02:32] <RazorSharpFang> But that's the only one I could see
+[00:02:40] <Seoson> and a lever to pop it out
+[00:02:45] <RazorSharpFang> There's this tiny black thing that I think is holding it in place.
+[00:02:50] <RazorSharpFang> But I can't reach it.
+[00:02:52] <Colgate> yeah, there's a lever by the port
+[00:02:56] <RazorSharpFang> The heatsink is in the way.
+[00:03:16] <RazorSharpFang> The heatsink of the graphics card, not the CPU.
+[00:03:24] <RazorSharpFang> It's just really big.
+[00:03:55] <Seoson> The lever is located on the not port facing end of the PCIe slot
+[00:04:30] <Seoson> You can reach it from the backplate (not the side where the heatsink is)
+[00:05:02] <RazorSharpFang> Yeah, the heatsink sticks out really far that way.
+[00:05:05] <RazorSharpFang> I can't reach it. ;-;
+[00:05:34] <Seoson> Screw driver?
+[00:05:56] <RazorSharpFang> Only ones I have are magnetized.
+[00:06:04] <RazorSharpFang> Magnets + computer ....
+[00:06:17] <Seoson> Shouldn't matter
+[00:06:18] <RazorSharpFang> Capacitors and transistors are rather frail things.
+[00:06:23] <Colgate> eh, should be fine
+[00:06:32] <Seoson> I use them as well
+[00:06:37] <Colgate> I use my magnetized ones all the time, never had issues
+[00:06:56] <Seoson> You don't need rub them against transistors :P
+[00:07:32] <Seoson> Just make sure everything is powered down and you're/have been grounded.
+[00:08:30] <RazorSharpFang> I ground myself by touching the case, right?
+[00:09:00] <Seoson> We have power outlets with an exposed ground in the EU
+[00:09:53] <RazorSharpFang> I'm not sure how to press this level with the screwdriver. It's not responding.
+[00:10:26] <RazorSharpFang> The left side is stuck (the one with the black lever) with the right side out completely (port-facing side)
+[00:12:09] <Moonlightning> Okay, uh
+[00:12:14] <RazorSharpFang> I'll upload a photo.
+[00:12:16] <Moonlightning> What order should my CSS selectors be in >.>
+[00:12:50] <Seoson> You have to identify what kind lever you have (MB model number or by looking at another PCI slot)
+[00:13:02] <Seoson> You should be able to get it eventually ;-=
+[00:13:09] <Seoson> ;-)*
+[00:14:02] <RazorSharpFang> http://imgur.com/frEYw5P - that should be it. 
+[00:14:06] <PinkiePieBot> [ Imgur: The most awesome images on the Internet ]
+[00:14:18] <Moonlightning> RazorSharpFang: QUICK; does the serial number end in an even or an odd number?
+[00:14:23] <Moonlightning> s/;/,/
+[00:14:37] <RazorSharpFang> Of the graphics card or the Motherboard?
+[00:14:49] <Moonlightning> …okay, bad joke :(
+[00:15:23] <RazorSharpFang> Sorry, spent half an hour so far, my patience is wearing thin. ;-;
+[00:15:39] <Seoson> RazorSharpFang: Motherboard. The lever on the pic is hidden behind that plastic thing O_o
+[00:15:52] <RazorSharpFang> That's the graphics card
+[00:17:01] <RazorSharpFang> It's excessively big.
+[00:17:19] <tiwake> going to install linux on my laptop, debian or fedora?
+[00:17:22] *** Quits: Thorinair (Mibbit@Pony-6tl6sh.dsl.iskon.hr) (Quit: http://www.mibbit.com ajax IRC Client)
+[00:17:32] <RazorSharpFang> Ubuntu. (Gets kicked)
+[00:17:55] <RazorSharpFang> http://imgur.com/VnFkhxT - that's what the entire thing looks like.
+[00:17:56] <Webster> I prefer Debian based things.
+[00:17:57] <PinkiePieBot> [ Imgur: The most awesome images on the Internet ]
+[00:18:09] <tiwake> it used to have debian testing on it
+[00:18:29] <tiwake> either going back to that or trying out fedora for my first time
+[00:18:31] <RazorSharpFang> Ugh, the GCard is so big.
+[00:18:43] <RazorSharpFang> I don't even know what the lever is supposed to look like.
+[00:19:14] <Seoson> http://www.abload.de/img/gigaslotwj21.jpg
+[00:19:26] <Seoson> Is one possible design
+[00:19:48] <HoneyDrops> Unless you have drivers made of rare earth magnets, I wouldn't worry about it.
+[00:20:01] <Seoson> Here is another one http://www.computerbase.de/forum/attachment.php?attachmentid=208002&d=1289245002
+[00:20:13] <Seoson> Those are probably the 2 most common
+[00:21:07] <RazorSharpFang> Mind you, this computer is old. It's got 1.5GB of ram, running a P4.
+[00:21:30] <Seoson> I'm aware. Give me the MB model number and we'll see
+[00:21:32] <Colgate> agp probably
+[00:21:55] <RazorSharpFang> D915GAG
+[00:22:52] <Moonlightning> 915gag!
+[00:23:11] <RazorSharpFang> ? Does that mean something significant?
+[00:24:23] <Seoson> 9gag reference?
+[00:24:35] <Seoson> (It's a horrible website :P)
+[00:26:24] <RazorSharpFang> I can feel a piece of mishapen plastic, but the card's not coming loose no matter how I press it.
+[00:26:35] <Seoson> http://www.tbfcomputing.com/ebaypicture/8.6.12ps100_1143.jpg
+[00:26:40] <RazorSharpFang> (UI can't actually see it)
+[00:27:03] <RazorSharpFang> How do I work that?
+[00:27:40] <Seoson> See that plastic lever on the "down facing" side at the end of the port? I guess by pulling it
+[00:28:56] <Seoson> You might need to push the card back in before it can be unlocked. (Port facing side maybe needs to be put out last)
+[00:29:02] <RazorSharpFang> Ah
+[00:29:10] <Seoson> Got it?
+[00:30:04] <RazorSharpFang> ?! It feels like it's been cut to make room for the graphics card
+[00:30:26] <RazorSharpFang> as in, it's sharp and I just cut myself
+[00:32:38] <init7> Don't give your motherboard the taste for human blood!
+[00:32:39] <RazorSharpFang> Still not coming out
+[00:32:44] *** init7 is now known as init3
+[00:34:11] <RazorSharpFang> I'm pretty sure the lever's been severed to make room for the GPU.
+[00:34:18] <Seoson> There is a sharper image of a similar model. Maybe it a rotating design (meaning the handle goes towards the MB). I never had one of those and it's difficult to tell remotely
+[00:34:38] <RazorSharpFang> This GPU is just stupidly big.
+[00:34:52] <RazorSharpFang> Nvidia GeForce 8500 GT
+[00:35:08] <RazorSharpFang> But it's got GigaByte written on it. : /
+[00:35:22] <Seoson> You can apply some force. Only make sure not to "bend" against the PCI slot.
+[00:35:50] <RazorSharpFang> I can't push any harder, though.
+[00:36:02] <RazorSharpFang> My hands aren't callous, they're too mushy.
+[00:36:15] <Seoson> GigaByte provides the cooler and (maybe) also the chip layout. The actual GPU is by nvidia
+[00:36:51] <RazorSharpFang> Cooler, the cooler is just a giant slab of metal that's in the way.
+[00:37:07] <RazorSharpFang> The GPU is literally covered by this bronze-looking metal slab.
+[00:37:24] <RazorSharpFang> Which is totally in the way.
+[00:38:47] <RazorSharpFang> I'm providing enough force to lift the case, but it's still not budging.
+[00:40:05] <RazorSharpFang> I don't know what to do. ;-;
+[00:41:14] <RazorSharpFang> Are you sure I'd need to press down (towards the motherboard) on that?
+[00:44:27] <RazorSharpFang> IT'S OUT!
+[00:46:08] <RazorSharpFang> http://imgur.com/sSJMsPO - look at that tiny shred of plastic! no wonder it cut me!
+[00:46:08] <PinkiePieBot> [ Imgur: The most awesome images on the Internet ]
+[00:46:14] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[00:47:22] <RazorSharpFang> That's tiny compared to the image you linked earlier.
+[00:47:30] * RazorSharpFang mops up blood
+[00:48:33] <Seoson> Nice. And what did you need to do in the end?
+[00:48:41] <Seoson> Pull/Push?
+[00:49:24] <Seoson> From the looks of it I'd say push down (to the bottom of case)
+[00:49:39] <RazorSharpFang> I think I had to do the opposte. Push up ... ?
+[00:49:52] <RazorSharpFang> When it finally gave, I cut my hand again. >: /
+[00:50:05] <RazorSharpFang> Man, computer science is brutal.
+[00:51:24] <RazorSharpFang> So, if I've got linux (ubuntu) installed on there, will the Graphics card work out of the box, or will I need to resinstall?
+[00:52:17] <RazorSharpFang> "System problem detected" - ah, Ubuntu.
+[00:54:07] *** GigaWork is now known as Gigabit
+[00:54:46] <RazorSharpFang> Looks like this is an NVidia GT215 or something.
+[00:55:20] <RazorSharpFang> Is that better than the Nvidia GeForce 8500 GT?
+[00:55:27] <Seoson> There are built in drivers for some nvidia cards. I dunno if your model is supported, but I'd guess it is.
+[00:56:06] <Seoson> It's newer than the GT215. You'd need to look at benchmark numbers
+[00:56:53] <Seoson> I know that there was some rebranding in the 200's or 300's, but I can't recall the exact details
+[00:57:39] <RazorSharpFang> Well, the one I replaced  (Geforce 8500 GT) has VGA, DVI and 9-pin S-video, whereas the GT215 has VGA, DVI and HDMI. That probably says a bit, imo.
+[00:59:19] <Seoson> http://www.videocardbenchmark.net/compare.php?cmp[]=72&cmp[]=1270
+[00:59:20] <PinkiePieBot> [ PassMark - Video Card Performance Comparison ]
+[00:59:23] <RazorSharpFang> I mean, HDMI is better than 9-pin S-video, right?
+[01:00:23] <RazorSharpFang> Okay, yeah. The replacement one looks better.
+[01:00:35] <RazorSharpFang> Now I wish I had a HDMI-capable monitor.
+[01:00:45] * RazorSharpFang looks at his 1280x1024 ViewSonic monitor.
+[01:00:54] <RazorSharpFang> If only.
+[01:01:43] <Seoson> It's actually surprisingly much better than I thought, but keep in mind that it's not the exact same model you have and the scores are quite low non the less (by today's standard).
+[01:02:12] <Seoson> If your monitor supports DVI than there are cheap adapters
+[01:03:06] <Seoson> (since DVI can carry both digital and analog signals)
+[01:04:17] <Seoson> (depending on the DVI standard of cause)
+[01:08:52] <Seoson> Anyone familiar with bridging an additional IP to an LXC instance? My linux networking utils knowledge is fairly limited and my setup doesn't work at all :D
+[01:09:27] <Moonlightning> LXC?
+[01:09:45] <Seoson> Linux Container
+[01:10:13] <Seoson> It's used in docker for example if you know that
+[01:10:49] <Seoson> My problem however is before evening coming to that point. Restarting my network will put the server offline
+[01:11:06] <Seoson> (on the host machine)
+[01:15:28] <Phase4> they've replaced lxc with libcontainer in docker
+[01:16:11] <Seoson> I wasn't aware :P I don't use docker myself.
+[01:16:36] <RazorSharpFang> Okay, this is weird.
+[01:16:48] <RazorSharpFang> I've got 2 monitors, but I can't move the cursor between them.
+[01:17:50] <Seoson> On windows check the monitor placement
+[01:17:57] <johnsey> Seoson: debian based? set up the bridge in /etc/network/interfaces, assign in container config as lxc.network.link
+[01:19:06] <Seoson> johnsey: Indeed. But putting the changes in /etc/network/interfaces and restarting will cause my server to be unreachable and I'm looking for someone to take a look at the interfaces ;-)
+[01:19:27] <RazorSharpFang> Seoson: This is Ubuntu. The monitors are right next to eachother. When the cursor is on the boundary, I can see it in both monitors.
+[01:19:38] <RazorSharpFang> But I still cannot move it between them.
+[01:20:31] <RazorSharpFang> I'm gonna restart and see if that helps.
+[01:20:38] * RazorSharpFang is clearly a windows guy
+[01:21:23] <johnsey> Seoson: i can take a quick look if you paste it somewhere, need to leave in a moment though
+[01:21:24] <Seoson> Sounds more like a launcher issue. I'd check it's configuration
+[01:21:34] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[01:22:15] <RazorSharpFang> After a restart, it works perfectly.
+[01:22:21] <Seoson> Thank you. I've disabled the lines to start the server. http://pastebin.com/XpK9sgxY
+[01:22:22] <PinkiePieBot> [ ### Hetzner Online AG - installimage # Loopback device: auto lo iface lo inet - Pastebin.com ]
+[01:22:24] <RazorSharpFang> Linux and windows aren't that different. XD
+[01:29:11] *** wolfyshy[mobile] is now known as wolfyshy
+[01:29:29] <johnsey> Seoson: if i recall right, hetzner had some trouble with bridged VMs and multiple MACs showing up but I can't remember what it was exactly and I don't know if it still persists
+[01:30:19] <RazorSharpFang> Weird, I'm getting this weird electrical noise on my mic.
+[01:32:00] <Phase4> Seoson, docker is great for testing things on other versions of linux
+[01:32:08] <johnsey> Seoson: can take a closer look again tomorrow
+[01:32:10] * Phase4 hasn't had much use for it outside of that
+[01:32:39] <Seoson> johnsey: Thank you anway. I'll try to request an assign a dedicated mac for now ;-)
+[01:33:03] <RazorSharpFang> Aha, I fixed it.
+[01:33:53] <RazorSharpFang> Are there any tools you use for monitoring CPU usage in linux?
+[01:35:04] <Gigabit> I think so
+[01:35:15] <HoneyDrops> How detailed?  Tons of options, top for one.
+[01:36:27] <HoneyDrops> htop is a fancier option.
+[01:36:40] <RazorSharpFang> Well, I wanted rather simple, similar to taskmgr in windows.
+[01:36:45] <HoneyDrops> htop
+[01:36:54] <Seoson> This will probably kill my WeeChats network connection - BRB :P
+[01:41:11] *** Quits: Seoson (Seoson@pony.kab-s.de) (Connection closed)
+[01:41:52] <RazorSharpFang> Wow, watching a youtube video on firefox maxes out the core.
+[01:42:30] <RazorSharpFang> I love my pentium 4.
+[01:43:57] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[01:44:57] <Seoson> And it did :D
+[01:45:17] <RazorSharpFang> Amazing prediction skillz.
+[01:45:43] <Seoson> At least I'm getting quick with the resue system ;-)
+[01:45:51] <Seoson> rescue*
+[01:50:19] <RazorSharpFang> Firefox laggy
+[01:57:33] <RazorSharpFang> Lulz, moving my mouse around maxes the CPU cores.
+[01:58:22] <Sakura> Nyu
+[02:00:33] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[02:05:32] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:07:00] *** Phase4 is now known as Phase
+[02:11:56] *** Quits: Seoson (Seoson@pony.kab-s.de) (Ping timeout: 121 seconds)
+[02:14:16] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[02:16:56] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[02:21:22] *** Joins: Asoka (Asoka@Pony-j9dgb7.net-htp.de)
+[02:24:22] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:24:32] *** Quits: Asoka_White (Asoka@Pony-0gee2d.net-htp.de) (Ping timeout: 121 seconds)
+[02:36:09] *** Joins: Laptop (WebChat@Pony-60lhpu.dsl.bell.ca)
+[02:36:30] *** AutoLapsus sets mode: +qo Laptop Laptop
+[02:42:01] *** Quits: RazorSharpFang (wpztoncfyuh@sharpest.of.all.fangs) (Quit: lightIRC.com Flash IRC Client)
+[02:42:46] *** Joins: RazorSharpFang (chatzilla@sharpest.of.all.fangs)
+[02:42:58] <RazorSharpFang> Okay, looks like it's working now.
+[02:43:04] *** Nightfury is now known as ButterBean
+[02:51:10] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[02:55:49] <Seoson> Progress: My server no longer loses it's network, but I can still not connect to the internet on the VM
+[03:13:18] <Moonlightning> wolfyshy: remember to file a bug about Firefox crashing on your laptop and phone during the timechange.
+[03:16:21] *** Joins: Seoson_ (Seoson@pony.kab-s.de)
+[03:16:25] *** Quits: Seoson (Seoson@pony.kab-s.de) (Connection closed)
+[03:17:15] <Moonlightning> > The POST method requests that the server accept the entity enclosed in the request as a new subordinate of the web resource identified by the URI.
+[03:17:19] <Moonlightning> …I feel like I'm abusing it, then.
+[03:20:56] <wolfyshy> Moonlightning: oh shit!
+[03:20:58] <wolfyshy> Moonlightning: thank you
+[03:21:07] <Moonlightning> You're welcome. x3
+[03:21:29] <Moonlightning> I recommend using said phone for reminders, though, rather than an IRC channel ;p
+[03:22:37] <wolfyshy> haha I was so out of it last night
+[03:22:44] <wolfyshy> too much cider >.>
+[03:22:48] <wolfyshy> nightmare night was fun
+[03:23:52] <Moonlightning> :P
+[03:25:01] <RainbowHacks> cider?
+[03:25:03] <RainbowHacks> CIDER?
+[03:25:12] <RainbowHacks> where's the cider, wolfyshy D:
+[03:25:14] <RainbowHacks> WHERE D:
+[03:26:16] * Moonlightning ““accidentally”” spills an entire pitcher of cider all over RainbowHacks.
+[03:29:56] <RainbowHacks> o.o;
+[03:30:26] * RainbowHacks just stares at Moonlightning, sopping wet, her shirt fairly seethrough thanks to all that delicious, now wasted cider :<
+[03:31:50] * Moonlightning frowns. Takes off RainbowHacks' shirt and wrings it out into a mug.
+[03:32:26] <RainbowHacks> ._.
+[03:32:42] * RainbowHacks is now topless. This should probably not take place in this room. >.>;
+[03:33:18] * Moonlightning points out that the channel is unrated. Sips slowly from the mug, without breaking eye contact.
+[03:34:11] * Laptop points out that this channel isn't indeended for rp, despite not explicitly banning it
+[03:34:15] <Laptop> :p
+[03:34:20] *** Quits: Seoson_ (Seoson@pony.kab-s.de) (Ping timeout: 121 seconds)
+[03:34:32] * RainbowHacks isn't entirely sure ponies want to hear explicit descriptions of her tits, however fantastic they may be.
+[03:35:22] <Laptop> Seriously though, somewhat tech related discussion channel, not pornies or rp :p
+[03:35:46] <Laptop> Appledash made #techponiesafterdark for that end of things
+[03:35:49] <RazorSharpFang> Weird nickname thou
+[03:35:56] * Moonlightning mutters about TPAD being corrupt.
+[03:36:24] * Laptop patpats Moonlightning, has nothing to do with the running of that channel, just happens to be in it
+[03:36:47] <Moonlightning> It's either invite-only or corrupt. Either way, you can't reasonably redirect activities there from a public channel. >.>
+[03:37:19] <Laptop> RazorSharpFang: I noticed it wasn't taken, and it's at least a little close to Lapsus  while still showing that I'm not at home or at least not close to my main system :v
+[03:37:27] <Laptop> Moonlightning: I just did, though
+[03:37:57] <Laptop> if it's an invite-only channel, well, that's AppleDash's problem now because I wasn't informed. :p
+[03:38:34] <Laptop> as far as corrupt or not, idgaf
+[03:38:48] <Moonlightning> :I
+[03:38:57] <Laptop> random drama could not interest me less
+[03:39:59] <Moonlightning> it seems to me that the administration of a channel you're effectively advertising for hardly qualifies as /random drama/
+[03:41:04] <Laptop> I just mentioned it as a potential place for it. I could mention other channels on the network too if that would help?
+[03:41:19] <Moonlightning> That would definitely help.
+[03:41:54] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[03:42:03] <Laptop> also, as an aside, I am still happily clueless as to what the heck goes on in most channels, so to me it is currently random drama, and I'd like it to stay that way :3
+[03:42:18] <Laptop> frankly I'm kinda clueless as to what goes on in here sometimes too
+[03:42:54] <RazorSharpFang> Well, previously I cut myself on computer hardware.
+[03:43:03] *** Joins: Pony_2704 (kxlnjskjziw@Pony-cqdgqv.va.charter.com)
+[03:43:30] <Laptop> I think every computer I've built has some of my blood in it somewhere
+[03:43:37] <Compu> RazorSharpFang: let the cute heal ur wound https://derpiboo.ru/984826
+[03:43:38] <PinkiePieBot> [ Safe cute fluttershy hnnng lip_bite scare_master screencap shyabetes spoiler:s05e21 ]
+[03:43:51] *** Quits: Pony_2704 (kxlnjskjziw@Pony-cqdgqv.va.charter.com) (Quit: lightIRC.com Flash IRC Client)
+[03:44:19] <Laptop> Moonlightning: I actually don't really know of too many of the rp channels on the network aside from eqad.
+[03:44:56] <Laptop> either drop some here or pm them if you want me specifically to mention them
+[03:45:09] <Laptop> either way, there's lots of places for rp, and this isn't really one of them.
+[03:45:33] <Compu> i run one
+[03:45:45] <Laptop> And yes I know, it was only a little, but I have to be a butthead about it sometimes or it might end up as a lot of lines of it
+[03:46:12] <Laptop> Compu suggests #Compu
+[03:46:15] <Laptop> :v
+[03:46:20] <Compu> nya
+[03:46:22] <RazorSharpFang> XD
+[03:46:41] <Gigabit> Fuck it. I'm drunk. What's going on?
+[03:47:01] <Compu> Gigabit: dis https://derpiboo.ru/984826
+[03:47:02] <PinkiePieBot> [ Safe cute fluttershy hnnng lip_bite scare_master screencap shyabetes spoiler:s05e21 ]
+[03:47:38] <Laptop> in the interest of fairness after me suggesting an rp channel instead of doing it here, feel free to drop a couple channel names in here, assuming that they won't mind random people
+[03:48:07] <Laptop> then again I assume most of the people in here won't care anyways :v
+[03:48:15] *** Seoson is now known as Seoson|BNC
+[03:48:30] <RazorSharpFang> Random name? Dianka.
+[03:48:32] <Gigabit> Um.. Okay, hi I'm drunk xD
+[03:49:04] <Compu> i dont mind random people, my channel is a public channel and anyone is welcome to join as long as u read the rules and follow them
+[03:50:56] <Moonlightning> ^ i.e. the definition of a public channel
+[03:51:13] <wolfyshy> I've been thinking about starting a channel of my own but haven't done it yet
+[03:51:23] <Gigabit> I before e except after c.
+[03:51:50] <Laptop> okay, back onto the road for me
+[03:52:02] <Colgate> Moonlightning: try /list
+[03:52:03] *** Quits: Laptop (WebChat@i-forget.ca) (Quit: Page closed)
+[03:52:05] <Colgate> :P
+[03:52:21] <Gigabit> Colgate! Let's get drunk together!
+[03:52:30] <Moonlightning> Colgate: not all of those welcome anyone on the sole condition of following the rules, though. >.>
+[03:52:37] <Colgate> eh, not really up to drinking today :P
+[03:52:51] <Colgate> ok? not my problem
+[03:52:51] <Gigabit> Well.. Let's get.. Something today! Woo!!
+[03:53:09] <RazorSharpFang> Gigabit: What time is it over where you are?
+[03:53:23] <Colgate> it isn't like 2/3 of this network is ERP channels anyways :P
+[03:53:35] <Gigabit> Buck it, its 1700 somewhere.
+[03:53:51] <RazorSharpFang> It's any time somewhere
+[03:53:56] <Gigabit> Its before 0500 here
+[03:54:01] <wolfyshy> yay I made a channel \o/
+[03:54:07] <Moonlightning> Colgate: as a network admin, no. But as a channel mod, pointing ponies at e.g. channels from which they will get banned from despite following the rules is rather nonsensical.
+[03:54:10] <Gigabit> 2154
+[03:54:44] <Moonlightning> s/banned from/banned/
+[03:55:13] * Colgate shrugs
+[03:55:37] <Moonlightning> Anyway, I suspect the mod tires of this.
+[03:55:44] <Moonlightning> So…how 'bout that TIAL, eh?
+[03:55:49] <Gigabit> Needs more apple
+[03:57:53] <Moonlightning> …hahaha
+[03:58:09] <Moonlightning> Twitch Makes A Hackintosh
+[03:58:16] <Moonlightning> somepony should do that
+[03:59:10] <Gigabit> I seen twitch installs arch
+[03:59:31] <RazorSharpFang> Moonlightning: That can't be done with just keystrokes tho
+[03:59:59] <RazorSharpFang> And it's gonna be a lot of waiting.
+[04:00:07] <RazorSharpFang> Twitch Plays Undertale would be better, imo.
+[04:00:08] <Moonlightning> RazorSharpFang: no?
+[04:00:18] <Moonlightning> is Undertale a strict RPG?
+[04:00:22] <Moonlightning> I thought it had platforming elements
+[04:00:29] <RazorSharpFang> Na, strict RPG.
+[04:00:38] <wolfyshy> You have Been Issued with the SUM of \u20ac 1,100,000.00
+[04:00:39] <Moonlightning> that could be fun, then!
+[04:00:40] <wolfyshy> apparently
+[04:00:47] <wolfyshy> I have been issues 1.1 million Unicode codepoints
+[04:00:53] <wolfyshy> this is a cool email
+[04:00:56] <RazorSharpFang> Moonlightning: It would also be painful, just like pokemon was.
+[04:01:07] <Moonlightning> RazorSharpFang: of course
+[04:01:08] <Moonlightning> wolfyshy XD
+[04:01:29] *** Quits: Seoson|BNC (Seoson@pony.kab-s.de) (Connection closed)
+[04:05:13] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[04:05:50] <Seoson> Ok, I give up. I have no idea how to fix this ....
+[04:14:39] *** Seoson is now known as Seoson|BNC
+[04:16:10] *** Quits: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net) (Ping timeout: 121 seconds)
+[04:17:53] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[04:20:35] *** Joins: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net)
+[04:20:41] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[04:30:04] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Connection closed)
+[04:44:03] *** Joins: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net)
+[04:45:36] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[04:46:21] *** Eventide is now known as Eventide|Sleepies
+[05:00:54] *** Quits: Phase4 (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[05:07:22] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[05:12:58] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[05:22:05] <Gigabit> Woah.. Why is pinkiepie not telling me I am spamming and called me an asshole
+[05:23:07] <Gigabit> Er pinkiebot
+[05:27:29] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[05:28:10] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[05:33:59] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[05:39:11] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[05:42:35] *** Joins: Ghostiolus (uid110916@Pony-qjfks9.brockwell.irccloud.com)
+[05:44:27] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[06:03:02] <HoneyDrops> http://linux.slashdot.org/story/15/11/02/0125246/botnet-takes-over-twitch-install-and-partially-installs-gentoo
+[06:16:09] <Gigabit> Kinsley: pinkiebot is being meeeeam
+[06:28:36] <Ghostiolus> that’s not this one, it’s the one run by redhelper
+[06:28:39] <Ghostiolus> and he said he’ll fix it
+[06:29:33] *** Quits: Ghostiolus (uid110916@Pony-qjfks9.brockwell.irccloud.com) (Quit: )
+[06:29:50] <Gigabit> Ooh, oops
+[06:32:57] <Kinsley> Yeah, fucker.
+[06:33:08] <Gigabit> Sorry :(
+[06:33:11] <Kinsley> Stop falsely reporting bugs. >:(
+[06:33:18] * Kinsley is kidding
+[06:33:32] * Gigabit whines
+[06:34:02] * HoneyDrops tops Gigabit with some vanilla ice cream.
+[06:34:58] * Kinsley tops Gigabit, too, but with herself and a... toy... from her special... toy box. :3c
+[06:35:27] <wolfyshy> HoneyDrops: I am so happy
+[06:35:33] <wolfyshy> HoneyDrops: that link put a legit smile on my face
+[06:35:43] <wolfyshy> I was going to try and do that but stopped caring
+[06:35:52] <Gigabit> Hot Kinsley >\\\>
+[06:39:02] <HoneyDrops> :D
+[06:45:15] *** Quits: Crimson_Tail (Bluepon@Pony-df0qv8.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[06:59:43] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:14:11] <AppleDash> Guys
+[07:14:14] <AppleDash> I'm scarewd
+[07:14:16] <AppleDash> scared*
+[07:14:42] <AppleDash> I think I may have found the technology that makes web development fun again
+[07:14:49] <AppleDash> Except... that technology is asp.net
+[07:18:19] <Moonlightning> :?
+[07:19:23] <AppleDash> ?
+[07:19:47] <Gigabit> ?!?
+[07:21:38] <AppleDash> Moonlightning: ASP.NET is server-sided C# running on Microsoft IIS
+[07:21:57] <Moonlightning> …
+[07:21:58] <Moonlightning> ewwwwwwwwwwww!
+[07:22:00] <Moonlightning> what!
+[07:22:03] <Moonlightning> that can't be right
+[07:22:10] <AppleDash> How?
+[07:22:17] <Phase> server side clr language'
+[07:22:23] <Phase> you can use other languages, like vb.net
+[07:22:29] <AppleDash> Truth
+[07:22:32] <AppleDash> But most people use C#
+[07:22:35] <Phase> don't actually do that
+[07:22:45] <Phase> unless it's python or something
+[07:22:46] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Connection closed)
+[07:22:55] <AppleDash> I'm just looking at the docs
+[07:23:01] <AppleDash> and like I said, it looks like it makes web dev fun again
+[07:23:25] <Phase> far as i understand asp, you know how you have <?php {php code} ?> ?
+[07:23:29] <Phase> asp is mostly that
+[07:23:34] <AppleDash> No, no
+[07:23:37] <AppleDash> that's classic ASP
+[07:23:42] <AppleDash> That uses VBScript
+[07:23:45] <wolfyshy> that's ASP; ASP.net has actual separation.
+[07:23:45] <AppleDash> ASP.NET is MVC
+[07:23:48] <wolfyshy> no
+[07:23:51] <wolfyshy> it isn't
+[07:23:53] <wolfyshy> ASP.NET MVC is MVC
+[07:23:54] <AppleDash> Yes it is
+[07:23:56] <AppleDash> Yes.
+[07:23:59] <wolfyshy> ASP.NET is just a library framework
+[07:23:59] <AppleDash> That's what I meant
+[07:24:06] <wolfyshy> you can also use ASP.NET WebForms, like classic ASP
+[07:24:10] <wolfyshy> and ASP.NET Functional, which uses F#
+[07:24:13] <wolfyshy> like O'Caml
+[07:24:17] <AppleDash> You're an OCaml
+[07:24:53] <wolfyshy> actually I wrote an audio driver in o'caml once...
+[07:25:03] <wolfyshy> the lowlevel stuff
+[07:25:11] <wolfyshy> it was for the AC'97 chip and I hated it :P
+[07:25:17] <AppleDash> lol
+[07:26:30] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[07:26:56] <Moonlightning> VBScript!
+[07:27:00] <Moonlightning> Ewwwwwwwwww!
+[07:27:08] <Moonlightning> welp gaise
+[07:27:12] <Moonlightning> AppleDash has officially gone insane
+[07:27:14] <wolfyshy> <% Response.Write("Moonlightning hates this") %>
+[07:27:16] <AppleDash> No
+[07:27:19] <AppleDash> I am not using Classic ASP
+[07:27:30] <wolfyshy> .. god I STILL REMEMBER IT?
+[07:27:40] <AppleDash> I am using ASP.NET MVC which is C# and... MVC
+[07:27:44] * Moonlightning surrepticiously hoofs wolfysh
+[07:27:44] <wolfyshy> one of my very first jobs, in 2003, was writing classic ASP for an inventory management system
+[07:27:48] <wolfyshy> running windows 2000
+[07:27:51] * Moonlightning surrepticiously hoofs wolfyshy a bottle of brain bleach *
+[07:27:56] <wolfyshy> back when windows 2000 was the current OS
+[07:28:11] <AppleDash> I did write something called Netburst though
+[07:28:14] <AppleDash> It was an Atheme GUI
+[07:28:17] <AppleDash> It was in classic ASP as a joke
+[07:28:39] <wolfyshy> named after the failure of a microarchitecture?
+[07:28:43] <AppleDash> No
+[07:28:51] <AppleDash> named after what happens when ircds link
+[07:29:01] <wolfyshy> ah
+[07:33:22] *** Joins: Fantasma (Iceman@Darkhorse21)
+[07:34:14] <AppleDash> Moonlightning, wolfyshy: https://gist.github.com/AppleDash/52a08b1f658bf71bce2b
+[07:34:15] <PinkiePieBot> [ user.asp · GitHub ]
+[07:34:17] <AppleDash> I found a snippet
+[07:35:08] *** Fantasma is now known as Sombra
+[07:35:21] <Moonlightning> No.
+[07:35:32] <AppleDash> A really hilarious fact, you can't do Response.Write("%>"), you have to do Response.Write("%" & ">")
+[07:36:39] <AppleDash> Also, `On Error Resume Next` does exactly what it sounds like and is the best language feature ever
+[07:39:49] <Moonlightning> "HTTP/1.1 417 Expectation Failed\nContent-Type: text/plain\nContent-Length: 84\n\nNope, don't have any sane languages. I could give you some ASP if you want, though.\n" — AppleDash, probably
+[07:40:29] <AppleDash> Wat
+[07:49:15] <Moonlightning> [unrelated]
+[07:49:17] <Moonlightning> that was weird
+[07:49:28] <Moonlightning> I had like a phantom window
+[07:49:57] <Moonlightning> And the little preview for that desktop in Mission Control showed it, but if I actually switched to the desktop, I couldn't see it
+[07:50:13] <Moonlightning> it was a really NSFW thing >.>
+[07:51:10] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[07:58:07] *** Gigabit is now known as Snoarin
+[08:09:40] <Lapsus> My SDR can tune again!
+[08:09:56] <Lapsus> gotta love the "let it sit for a while" method of repair
+[08:10:02] <Moonlightning> SDR?
+[08:10:22] <Lapsus> software defined radio
+[08:10:35] <Moonlightning> :?
+[08:11:20] <Lapsus> I have a good old uniden radio scanner, but with the sdr receiver I can more easily find signals, and decode more modulations, and potentially recieve digital modes
+[08:12:05] <Moonlightning> negligent maintenance
+[08:12:12] <Moonlightning> as opposed to e.g. percussive maintenance
+[08:12:17] <Lapsus> I guess
+[08:12:45] <Lapsus> it was like, $20 from dealextreme a couple years ago, so it's okay if it dies, but I'm still happy that it works again
+[08:13:26] <Moonlightning> XD
+[08:22:58] <Googie> Good old DealExtreme.
+[08:23:47] * Moonlightning deals Googie an extreme amount of…
+[08:23:59] * Moonlightning …uhhhhh…
+[08:24:11] <Lapsus> Googie: Drive pooling as an alternative to raid, good idea? yes/no
+[08:24:22] <Moonlightning> drive pooling? Is that like JBOD?
+[08:24:30] <Googie> What implementation ?
+[08:24:47] <Lapsus> I'm not as far as implementation yet, just looking into it
+[08:25:36] <Lapsus> Moonlightning: close to jbod but each individual disk can also be independently used by another computer to get whatever portion of the array it has
+[08:26:05] <Lapsus> works at the file level by just keeping at least 2 copies of everything in the array across however many disks
+[08:26:07] <Moonlightning> Lapsus: wouldn't that mean it would have to be at the file level?
+[08:26:18] <Moonlightning> Ahhh. So like what btrfs does.
+[08:26:21] <Lapsus> so you can add or remove disks at will and they don't all need to be the same size
+[08:26:48] *** zz_CyberJacob is now known as CyberJacob
+[08:27:05] <Googie> Not quite how btrfs does it IIRC.
+[08:27:29] <Lapsus> I'm looking for a linux implementation because a windows server seems like a bad idea
+[08:27:46] <Lapsus> and I'm asking here because I'm a linux derp
+[08:29:02] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:29:16] <Moonlightning> yes, very bad idea :V
+[08:30:12] <Lapsus> The ability to just drop in another drive and hit go and having it just work would be fucking amazing, basically
+[08:30:19] * Googie wishes that btrfs was more stable.
+[08:30:31] * Moonlightning uses btrfs for the root filesystem of his secondary laptop.
+[08:30:35] <Googie> It can do that. Even the ability to remove drives without issues.
+[08:30:37] <Lapsus> as opposed to having to rebuild an entire array, and needing a place to put ALL the data from it in the meantime
+[08:30:45] * Moonlightning is also planning to switch the root filesystem of his backup|netbox to btrfs
+[08:30:51] <Googie> But officially not fully stable for specific forms of RAID.
+[08:33:04] <Lapsus> serious talk, btrfs sounds like it might be able to do what I want, but if something really fucks up I still really don't want to lose data
+[08:33:29] <Lapsus> I lost like 3tb of photos and videos and movies and tv and I don't want it to happen again
+[08:34:12] <Moonlightning> ;-;
+[08:34:39] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[08:34:44] <Lapsus> is btrfs stable enough to depend on like that?
+[08:35:15] <Lapsus> if I'm running a raid6 equivalent array, will it survive two failures and the rebuild from that?
+[08:35:46] <Lapsus> I also really would like the ability to grow/shrink arrays without having to reinitialize the fucker
+[08:41:09] <Googie> It's... difficult to really say. In theory the answer is "Have a backup/RAID is not a backup"
+[08:41:29] <Moonlightning> #SharingIsCaring
+[08:42:20] <Lapsus> well, the primary store would be the raid/unraid on the nas, backup would be a local store of important stuff like the photos and videos, with a possible remote sync to the cloud
+[08:43:25] <Lapsus> I know raid isn't a backup, but I want a fairly fault-tolerant setup for main use and storing backups of the irreplaceable shit like photos from trips
+[08:44:01] <Lapsus> all the tv and movies are replaceable, but it would be nice to store them on a shared space etc
+[08:44:43] <Lapsus> but if I'm building an array to store backups and centralize the 4-5 tb of media, I want it not to go poof without a fight
+[08:45:21] <Moonlightning> name the box Twilight Sparkle
+[08:45:44] <Lapsus> the advantage of a drive pool system being that in addition to the main drives being purchased for the array, we can throw in all few of the random 1 and 2tb drives that are laying around too
+[08:45:54] <Moonlightning> https://www.youtube.com/watch?v=ISwaMSMUPDo
+[08:45:55] <PinkiePieBot> [ Changeling - 536171 views - 3m 31s long - 8036 likes - 98.58% ]
+[08:46:17] <Googie> It's annoying in that there's not really a perfect solution.
+[08:47:04] <Lapsus> well, I know that much, but an unraid like drive pooling seems to be a good flexible option, even if the whole array comes out at half size
+[08:47:49] <Lapsus> it also means I don't need to invest in a raid controller that can handle raid60 or whatever
+[08:48:08] <Colgate> raid 60? how many drives are you running?
+[08:48:22] <Googie> No reason to use a hardware RAID controller these days anyway.
+[08:48:39] <Lapsus> I want to expand a bunch and sometimes I luck out and get good enclosures
+[08:48:50] <Colgate> I would say there are valid reasons for hardware raid
+[08:48:53] <Lapsus> I had to sell off a 24 drive unit a while ago for instance
+[08:51:48] <Googie> A lot rarer than it used to be though.
+[08:52:07] <Googie> Honestly though, I spent a while looking at this a few months ago before building my array
+[08:52:24] <Googie> My eventual conclusion was to use ZFS for now and wait for BTRFS to stabilize.
+[08:53:18] * Googie finds it funny how many people have issues because the drives are fine, but the $600 RAID card died, and all the data is in a proprietary format :V
+[08:53:41] <Colgate> that's a big downside of hardware raid
+[08:54:13] <Lapsus> I plan to go software, I just don't know which software :v
+[08:54:38] <Shival|Away> https://lh3.googleusercontent.com/-XZEyQMdw_9E/VjcWGV7xvTI/AAAAAAAALJM/81rdMmmOWbo/s0/2015-11-01.jpg
+[08:55:17] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[09:00:58] * Phase hasn't seen much value in hardware raid
+[09:02:03] <Googie> The only thing I can imagine is the cache being on a battery backup. That's useful.
+[09:02:11] <Phase> outside of the hardware parity and battery cache, yeah
+[09:02:30] <Phase> hardware parity backend for software raid imo
+[09:03:45] <Shival|Away> ive been tempted to give zfs a try on my next file server rebuild
+[09:19:11] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "night everypony")
+[09:26:15] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:37:53] *** CyberJacob is now known as zz_CyberJacob
+[09:43:22] <Moonlightning> LOL
+[10:11:18] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[11:29:57] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Quit: Leaving)
+[11:33:52] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[11:37:28] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[11:39:30] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[12:23:25] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[12:27:21] *** Joins: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile)
+[12:28:46] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[13:19:11] <Seoson|BNC> My health insurance company has an internet potal to upload a picture. Not only does it allow me to set the mime type of the confirmation PDF, but also has it's filename as a parameter in the URL. Yep directory traversal.
+[13:19:52] *** Seoson|BNC is now known as Seoson
+[13:21:59] <RainbowHacks> Seoson, find anything good?
+[13:23:10] <Seoson> I wouldn't take a closer look. Being a white hat and ethical standards have their downsides ;-)
+[13:24:22] <Seoson> Also (which is of cause not a factor) you need a valid session, therefor you would expose your identity
+[13:25:06] * RainbowHacks nods
+[13:25:13] <RainbowHacks> yeah....ethics suck sometimes >.>
+[13:25:47] <RainbowHacks> I've been dealing with this incredibly homophobic asshat client at work and its taking all of my self control to not utterly ruin his life
+[13:58:31] *** Quits: Fallfeathers (Fallfeather@Pony-vandmf.bigpond.net.au) (Connection closed)
+[14:25:14] *** Eventide|Sleepies is now known as Eventide
+[14:56:08] *** Quits: roflin (dennis@Pony-aend1d.es) (Ping timeout: 121 seconds)
+[15:03:46] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (Quit: reboot)
+[15:05:15] *** Snoarin is now known as Gigabit
+[15:07:25] *** Joins: Thorinair (Mibbit@Pony-sr7aag.dsl.iskon.hr)
+[15:09:35] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[15:10:17] *** Joins: roflin (dennis@Pony-aend1d.es)
+[15:17:14] *** Quits: xinae (xinae@Pony-0qa.2dv.248.50.IP) (Quit: Leaving)
+[15:56:04] <Moonlightning> apparently I don't know how to SELECT -.-
+[16:04:18] <Stik> yeah i think you need to escape that SELECT [-].[-] :P
+[16:12:28] <Moonlightning> oh, no commas
+[16:12:35] <Moonlightning> I was trying to `SELECT (foo, bar, baz) ...`
+[16:12:39] <Moonlightning> err, no parens *
+[16:12:42] <Moonlightning> yes commas, no parens
+[16:17:54] *** Joins: sylurp (sylurp@Pony-0qa.2dv.248.50.IP)
+[16:21:49] <Stik> i don't remember very much sql beyond the basics
+[16:32:05] <Moonlightning> Can I just do an integer comparison on Unix timestamps in Python
+[16:32:11] <Moonlightning> as opposed to converting one to a proper date
+[16:32:23] <Moonlightning> can I just `timestamp < now()` or whatever
+[16:34:33] *** Joins: Crimson_Tail (Bluepon@Pony-nrj3pe.cg80.k4gu.0151.2601.IP)
+[16:40:40] <Moonlightning> …`DELETE ... INDEXED BY ...`? What?
+[16:40:51] <Moonlightning> I thought SQL just used existing indexes where possible…
+[16:40:58] <Moonlightning> what does that do and do I need to use it? x.x
+[16:41:07] <Moonlightning> >> https://www.sqlite.org/lang_delete.html
+[16:41:07] <PinkiePieBot> [ SQLite Query Language: DELETE ]
+[16:48:26] <Stik> dunno why you'd want to specify that
+[16:48:40] <Stik> generally you'd leave it up to the query planner to pick which index it wants to use
+[16:49:01] <Stik> it's not a hint either, it's telling it waht to do, if it's not there it fails outright
+[16:49:07] <Stik> maybe that's the intention?
+[16:49:34] <Stik> if your database changes elsewhere then queries start to fail rather than running ineffeciently
+[16:50:09] <Stik> i don't know much about sqlite
+[16:50:19] <Stik> is that the one that android uses internally?
+[16:50:38] <Moonlightning> Oh, really?
+[16:50:44] <Moonlightning> I dunno about Android
+[16:51:06] <Moonlightning> I'm just using it to store salted, hashed passwords for a thing
+[17:04:58] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[17:14:01] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:19:29] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:23:50] <Divide|TechSupport> I'm starting to think that Avast - or, at least, the most recent versions - should simply be handled as a piece of malware.
+[17:34:51] *** Joins: Asoka_White (Asoka@Pony-33vosg.net-htp.de)
+[17:36:46] *** Quits: Asoka (Asoka@Pony-j9dgb7.net-htp.de) (Ping timeout: 121 seconds)
+[17:39:17] <Seoson> Divide|TechSupport: Any particular reason behind that?
+[17:51:03] *** Joins: Asoka (Asoka@Pony-jcl4dc.net-htp.de)
+[17:53:50] *** Quits: Asoka_White (Asoka@Pony-33vosg.net-htp.de) (Ping timeout: 121 seconds)
+[17:58:20] *** Quits: AutoLapsus (Lapsus@Totally.Is.A.Network.Service) (cadance.canternet.org cloudchaser.canternet.org)
+[17:58:20] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (cadance.canternet.org cloudchaser.canternet.org)
+[17:58:49] *** Quits: GeekBrony (GB@bronydom.net) (Ping timeout: 121 seconds)
+[17:59:48] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[17:59:48] *** Joins: AutoLapsus (Lapsus@Totally.Is.A.Network.Service)
+[17:59:48] *** cloudchaser.canternet.org sets mode: +o AutoLapsus
+[18:00:18] *** Quits: sleumas2000 (sleumas2000@my.little.karaoke) (Ping timeout: 121 seconds)
+[18:00:20] *** Quits: Shutter (tips@sudoku.prevention.hotline) (cadance.canternet.org daring.canternet.org)
+[18:00:29] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[18:01:11] *** Quits: wolfyshy (woof@fluttering.shyly.through.the.forest) (Ping timeout: 121 seconds)
+[18:01:42] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (Ping timeout: 121 seconds)
+[18:02:02] *** Quits: Dusk (Dusk@dusky.horse) (Ping timeout: 121 seconds)
+[18:02:29] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (Ping timeout: 121 seconds)
+[18:03:16] *** Quits: Rylee (rylai@Pony-71u6pe.so) (Ping timeout: 121 seconds)
+[18:05:02] *** Joins: Shutter (tips@sudoku.prevention.hotline)
+[18:06:35] *** Quits: Shutter (tips@sudoku.prevention.hotline) (cadance.canternet.org daring.canternet.org)
+[18:07:46] *** Joins: Shutter (tips@sudoku.prevention.hotline)
+[18:09:35] *** Quits: Shutter (tips@sudoku.prevention.hotline) (cadance.canternet.org daring.canternet.org)
+[18:11:07] *** Joins: sniperfox (sniperfox@Pony-qih.5g9.114.167.IP)
+[18:11:17] *** Joins: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se)
+[18:11:29] *** Joins: Shutter (tips@sudoku.prevention.hotline)
+[18:12:30] *** Quits: Shutter (tips@sudoku.prevention.hotline) (cadance.canternet.org daring.canternet.org)
+[18:13:37] *** Joins: Shutter (tips@sudoku.prevention.hotline)
+[18:17:24] <DataByte> i have a hard drive to wipe... 
+[18:17:31] <DataByte> with linux installed.
+[18:17:44] <DataByte> never done this before, so this ought to be fun!
+[18:18:02] <DataByte> sudo dd if=/dev/urandom of=/dev/sda
+[18:18:09] <DataByte> watch it burn!
+[18:18:15] <DataByte> >:D
+[18:19:18] *** Joins: sleumas2000 (sleumas2000@my.little.karaoke)
+[18:20:00] *** Joins: Rylee (rylai@libgryphon.so)
+[18:20:47] *** Joins: GeekBrony (GB@bronydom.net)
+[18:20:51] <DataByte> (this actually legitimately scares me to run)
+[18:24:17] *** Joins: Dusk (Dusk@dusky.horse)
+[18:24:30] *** Quits: sniperfox (sniperfox@Pony-qih.5g9.114.167.IP) (Ping timeout: 121 seconds)
+[18:42:59] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[18:46:08] *** Quits: Sakura (Sakura@is.a.very.derpy.pony) (Ping timeout: 121 seconds)
+[18:49:36] *** Joins: Sakura (Sakura@Pony-fkc.i75.99.192.IP)
+[18:50:08] *** Sakura is now known as Pony_16991
+[18:52:02] *** Joins: sniperfox (sniperfox@Pony-qih.5g9.114.167.IP)
+[18:53:04] *** Quits: Rylee (rylai@libgryphon.so) (Ping timeout: 121 seconds)
+[18:57:00] *** Joins: Rylee (rylai@libgryphon.so)
+[18:57:19] <Colgate> I'd just use /dev/zero XD
+[18:57:48] *** Joins: Ghostiolus (uid110916@Pony-qjfks9.brockwell.irccloud.com)
+[18:59:25] *** Ghostiolus is now known as Gladiolus
+[19:01:53] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[19:05:26] <DataByte> i'm planning on doing a second pass with zeros
+[19:06:20] <DataByte> from a live image, ofc.. not sure if i may be able to use dd again once the system's gone xD
+[19:07:00] <Gladiolus> I do a 0 wipe when I trade away drives, always makes me feel cool to do and say.
+[19:07:01] <DJ-C0L7[CSS]> DataByte are you using dban? or just rm -rf /* ?
+[19:07:17] <DataByte> sudo dd if=/dev/urandom of=/dev/sda
+[19:07:26] <DJ-C0L7[CSS]> ah
+[19:07:27] <DJ-C0L7[CSS]> nice
+[19:07:36] <Gladiolus> wut that even do, i'm a windows baby
+[19:07:44] <Gladiolus> i'm guesging random binray
+[19:07:50] <Gladiolus> binary wow my typing
+[19:08:04] <DataByte> overwrite entire drive with pseudo-random bits, including partition table
+[19:08:26] <Gladiolus> neat
+[19:08:29] <Gladiolus> rip ur data
+[19:08:30] <DataByte> so a partition editor can't read it now, and i can't load files from a drive, either xD
+[19:08:50] <Gladiolus> Unless you have, like, an electron accelerator.
+[19:11:48] <DataByte> well, with data recovery tools, i could recover anything past the first 3 million blocks right now - it's still running xD
+[19:12:23] <DataByte> 16GB gone, 730 to go!
+[19:14:38] <Gladiolus> i do those overnight
+[19:16:28] <DJ-C0L7[CSS]> i tend to do hilariously bad things when i overwrite a drive
+[19:18:01] <DataByte> like what?
+[19:18:58] *** Quits: Rylee (rylai@libgryphon.so) (Ping timeout: 121 seconds)
+[19:23:12] <DJ-C0L7[CSS]> i'll use dban to format the drive, then fill the drive with random .gif and .jpg images, then format the drive again using dban with a DOD Level 7 wipe
+[19:23:58] <DJ-C0L7[CSS]> any attempt to forensicly recover the drive, you'll end up with a handfull of useless image files
+[19:24:13] <DJ-C0L7[CSS]> afk, building wiring harnesses and installing an aux fuse panel
+[19:24:21] <Gigabit> Just line them up and shoot with a .50 cal FMJ
+[19:24:34] *** Joins: Rylee (rylai@libgryphon.so)
+[19:25:01] <DJ-C0L7[CSS]> i find thermite to be more satisfying if its a drive i dont want to get back into circuilation for..... "reasons"
+[19:31:56] * HoneyDrops just takes the drive apart and scraps the pieces (controller boards can be depopulated for parts, get some rare earth magnets, housing can be recycled and I happen to like the platters as coasters.)
+[19:32:57] <Colgate> that's fine if you don't want to resuse it :P
+[19:33:45] <HoneyDrops> Well yeah, if I'm reusing it then just dd /dev/zero then whatever my new use will surely take care of the rest.
+[19:36:25] *** Quits: Shutter (tips@sudoku.prevention.hotline) (cadance.canternet.org daring.canternet.org)
+[19:39:14] *** Joins: Shutter (tips@why.did.you.even.rope.me.into.this)
+[19:53:42] *** Quits: Rylee (rylai@libgryphon.so) (Ping timeout: 121 seconds)
+[19:55:46] *** Joins: Rylee (rylai@libgryphon.so)
+[20:14:54] *** Quits: Rylee (rylai@libgryphon.so) (Ping timeout: 121 seconds)
+[20:19:13] *** Joins: Asoka_White (Asoka@Pony-jl9o2j.net-htp.de)
+[20:20:10] <DataByte> this is so true: https://xkcd.com/1597/
+[20:20:11] <PinkiePieBot> [ xkcd: Git ]
+[20:20:14] <DataByte> hehehe xD
+[20:21:33] *** Quits: Dusk (Dusk@dusky.horse) (Ping timeout: 121 seconds)
+[20:22:03] *** Quits: Asoka (Asoka@Pony-jcl4dc.net-htp.de) (Ping timeout: 121 seconds)
+[20:32:09] *** Joins: Rylee (rylai@libgryphon.so)
+[20:37:43] *** Joins: Dusk (Dusk@Pony-fkc.i75.99.192.IP)
+[20:48:35] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[20:55:04] *** Quits: Rylee (rylai@libgryphon.so) (Ping timeout: 121 seconds)
+[20:56:34] <Lapsus> http://hackaday.com/2015/11/01/who-said-fortran-is-dead/
+[20:56:45] <Lapsus> does anyone here know fortran?
+[20:58:07] <Midnight_Tinker> I looked at it for a while, but I don't know it well. I probably could pick it up though
+[21:00:05] <DataByte> that would be a neat job
+[21:00:44] *** Joins: Rylee (rylai@libgryphon.so)
+[21:05:44] <Gigabit> woot ordered my fuel tank, saved 33 usd, best discount i have ever got
+[21:06:00] <Gigabit> 115 nomally, got it for 80 with tax
+[21:06:45] *** Quits: Rylee (rylai@libgryphon.so) (Ping timeout: 121 seconds)
+[21:13:51] *** Joins: Sombra (Iceman@Darkhorse21)
+[21:19:59] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:26:29] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[21:29:09] <AppleDash> JustAberrant: http://i.imgur.com/eBHq0qn.gifv :?
+[21:29:12] <AppleDash> :> *
+[21:34:52] <Shutter> "A big problem is a lot of the engineering design materials are no longer in existence."
+[21:34:56] <Shutter> Definitely sounds like NASA
+[21:35:21] <Shutter> Iirc. they threw a lot of archived material away because of the expense of storing it.
+[21:39:39] *** Joins: Rylee (rylai@Pony-71u6pe.so)
+[21:42:13] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[21:42:57] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[21:44:39] *** Quits: Rylee (rylai@Pony-71u6pe.so) (Ping timeout: 121 seconds)
+[21:49:21] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "switchin' boxes, brb")
+[21:52:51] *** Joins: Rylee (rylai@Pony-71u6pe.so)
+[21:57:52] *** Quits: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se) (Quit: Leaving.)
+[21:58:19] *** Quits: Crimson_Tail (Bluepon@Pony-nrj3pe.cg80.k4gu.0151.2601.IP) (Ping timeout: 121 seconds)
+[21:58:24] *** Joins: zeta_ (Bluepon@Pony-ll00a8.cg80.k4gu.0151.2601.IP)
+[21:59:18] *** zeta_ is now known as Crimson_Tail
+[22:01:10] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[22:07:24] *** Quits: Rylee (rylai@Pony-71u6pe.so) (Ping timeout: 121 seconds)
+[22:08:44] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:08:47] *** Joins: Rylee (rylai@Pony-3g9.hkl.99.192.IP)
+[22:09:51] *** Joins: zeta_ (Bluepon@Pony-271pf9.cg80.k4gu.0151.2601.IP)
+[22:11:09] *** Quits: Crimson_Tail (Bluepon@Pony-ll00a8.cg80.k4gu.0151.2601.IP) (Ping timeout: 121 seconds)
+[22:14:44] <Moonlightning> Lapsus: I never learned Fortran
+[22:15:05] <Moonlightning> DataByte: git is one of those things that I know just the very basics of
+[22:15:13] <Moonlightning> and I use the documentation and Google when I need more
+[22:15:21] <Moonlightning> and maybe I'll slowly learn more about it, like I did with vim
+[22:16:09] <DataByte> likewise xD
+[22:17:16] *** Quits: Rylee (rylai@libgryphon.so) (Ping timeout: 121 seconds)
+[22:17:54] <Moonlightning> vim is now my one and only go-to editor
+[22:18:17] <DataByte> i prefer nano, myself
+[22:18:51] <Moonlightning> I can't use nano anymore.
+[22:18:59] <HoneyDrops> nano works, but it so limiting
+[22:19:07] <Moonlightning> I'm always trying to terminate the insert and jump around
+[22:19:23] <Moonlightning> `control-c, shift-l`—wait…dammit!
+[22:19:27] <HoneyDrops> That too >_>
+[22:19:36] *** Quits: GeekBrony (GB@bronydom.net) (Ping timeout: 121 seconds)
+[22:20:04] *** Joins: Rylee (rylai@libgryphon.so)
+[22:20:14] <Moonlightning> ++Rylee
+[22:20:16] <Moonlightning> dat hostname
+[22:20:24] <Moonlightning> though personally I prefer libgriffon
+[22:22:21] <Moonlightning> Stik: yeah, you're right
+[22:22:24] <Moonlightning> I just found the page on it
+[22:22:39] <Moonlightning> > The INDEXED BY phrase forces the SQLite query planner to use a particular named index on a DELETE, SELECT, or UPDATE statement.
+[22:22:56] <Moonlightning> It's just as you said.
+[22:23:45] *** zz_CyberJacob is now known as CyberJacob
+[22:23:47] <Moonlightning> TIL you can /admonish (someone) to (do something)/
+[22:24:26] *** Quits: Rylee (rylai@libgryphon.so) (Ping timeout: 121 seconds)
+[22:29:57] *** Joins: Rylee (rylai@libgryphon.so)
+[22:34:58] *** Quits: Rylee (rylai@libgryphon.so) (Ping timeout: 121 seconds)
+[22:36:02] <AppleDash> Moonlightning: "griffon" just looks wronf
+[22:36:04] <AppleDash> wrong*
+[22:36:12] <AppleDash> like using "there" when you mean "their"
+[22:37:19] <Moonlightning> My dictionary lists both /griffon/ and /gryphon/ as variant spellings of /griffin/ >.>
+[22:37:22] <Dusk> yep
+[22:37:29] <AppleDash> Ugh
+[22:37:30] <Dusk> Which makes your analogy stupid
+[22:37:32] <AppleDash> I know that ti is right
+[22:37:36] <Gigabit> thats cause usa is backwards
+[22:37:36] *** Joins: Rylee (rylai@libgryphon.so)
+[22:37:42] <Moonlightning> I went with /griffon/ because /Griff-on the Brush-off/
+[22:37:55] <AppleDash> There is no analogy. It is what it seems like to me.
+[22:38:00] <Colgate> I like griffon more than gryphon
+[22:38:00] <Moonlightning> now /gryphon/ looks /slightly/ wrong to me.
+[22:38:11] <Moonlightning> [13:36:12] < AppleDash> like using "there" when you mean "their"
+[22:38:15] <Moonlightning> This is a simile, a kind of analogy :P
+[22:38:20] <Dusk> ^^^^^^
+[22:38:23] <Dusk> This
+[22:38:24] <AppleDash> It is wht I personally think.
+[22:38:29] <AppleDash> Not what any fucking one else thinks
+[22:38:30] <AppleDash> JUST ME
+[22:38:31] *** Parts: AppleDash (appled@dusks.adorable.pet.pegasus) ("Leaving")
+[22:38:33] <Moonlightning> https://xkcd.com/762/
+[22:38:34] <PinkiePieBot> [ xkcd: Analogies ]
+[22:38:45] <Moonlightning> Analogies can be opinions…?
+[22:38:46] <Colgate> it doesn't really bother me unless someone is changing them mid paragraph or something
+[22:38:52] <Moonlightning> But your statement is objectively an analogy.
+[22:38:57] <Moonlightning> yeah, consistency is more important
+[22:39:15] <Dusk> Yea
+[22:39:22] <Rylee> gryphon is the only right spelling deal with it
+[22:39:40] <Colgate> griffon is easier to type
+[22:39:42] <Moonlightning> Oxford begs to differ :p
+[22:39:57] <Dusk> plenty of other people beg to differ
+[22:40:07] <Dusk> I'll probably always spell it griffon
+[22:40:12] <Dusk> because I like the look
+[22:40:29] <Moonlightning> yes, but using Oxford puts more weight behind me :3
+[22:40:34] <Dusk> lol
+[22:44:36] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[22:48:26] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[22:48:41] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[22:50:08] <Rylee> lol
+[22:50:08] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[22:50:11] <Rylee> w/e you think
+[22:50:28] <DataByte> hahahaha, - Kernel panic!
+[22:50:44] <DataByte> it's dead! \o/
+[22:51:17] *** Quits: derpy (derp@muffins) (Ping timeout: 121 seconds)
+[22:51:35] *** Joins: GeekBrony (GB@bronydom.net)
+[22:53:41] *** eyeburn is now known as Starburn
+[22:58:09] *** Quits: Thorinair (Mibbit@Pony-sr7aag.dsl.iskon.hr) (Quit: http://www.mibbit.com ajax IRC Client)
+[23:00:05] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[23:00:43] *** Pony_16991 is now known as Sakura
+[23:27:09] *** Joins: wolfyshy (woof@fluttering.shyly.through.the.forest)
+[23:51:54] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)

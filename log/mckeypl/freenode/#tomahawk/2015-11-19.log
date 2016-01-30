@@ -1,0 +1,297 @@
+[00:21:10] *** Quits: jamesaxl (~jamesaxl@41.140.46.109) (Ping timeout: 250 seconds)
+[00:29:21] <domme> TheOneRing: is resolving to collections supposed to work in gmusic?
+[00:29:49] <TheOneRing> domme: did you ping the wrong one?^^
+[00:29:49] <domme> eh
+[00:29:51] <domme> theli_ua: ^
+[00:29:53] <domme> yes
+[00:30:20] <theli_ua> yes
+[00:30:27] <domme> mhmhmh
+[00:30:43] <theli_ua> iirc only gmusic and amazon make use of new js collection
+[00:31:09] <theli_ua> well, js on desktop, its native on android MrMaffen says
+[00:31:15] <domme> yes, i know
+[00:31:19] <domme> i'm talking about desktop
+[00:31:33] <domme> so.. resolving is supposed to work through your hack?
+[00:32:07] <domme> through Tomahawk.collections...
+[00:32:14] <theli_ua> that is how it is working in master
+[00:32:32] <domme> now.. why doesnt it work for me? :P
+[00:32:35] <domme> what did i break? :P
+[00:32:47] <theli_ua> parent resolver class has a resolve wrapper that apart from calling resolve implementation also calls resolve on collections, concats results and returns that
+[00:33:15] <domme> yeah
+[00:34:15] <theli_ua> iirc there was also a hook for when collections are registered to add collection to a list which that resolve wrapper iterates
+[00:34:22] <domme> yep yep
+[00:34:33] <domme> i'm seeing that, and actually it should work, but it doesnt :-)
+[00:34:36] <domme> investigating
+[00:36:27] <theli_ua> well, ideally pipeline should resolve through collections or smth
+[00:37:07] <theli_ua> not sure how much value would investigation on why current implementation doesn't work give you
+[00:53:34] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[00:56:06] <domme> theli_ua: everything right with that implementation, gmusic all access was broken
+[00:56:34] <theli_ua> huh
+[00:57:11] <domme> using undefined variables, just crashed without error
+[00:57:20] <domme> and the promise never resolved nor finished with an error
+[00:57:21] <theli_ua> шр
+[00:57:23] <theli_ua> *oh
+[00:57:42] <theli_ua> eh, what are you doing, it woks perfectly fine for me :(
+[00:58:06] <domme> then you probably don't use all access
+[00:58:11] <domme> or webkit on qt4  behaves differently
+[00:58:27] <theli_ua> I dont use all access anymore
+[00:58:34] <domme> see
+[00:58:38] <domme> only all access is broken
+[01:05:15] <domme> MrMaffen: theli_ua: need your helpz
+[01:05:34] <domme> so now with that fixed ... gmusic returns the same track twice once from all access and once from collection
+[01:05:49] <domme> any idea how to dedupe?
+[01:05:50] <theli_ua> so
+[01:05:55] <theli_ua> why would you want to
+[01:06:01] <MrMaffen> domme: with the same exact id?
+[01:06:06] <theli_ua> s/want to/bother
+[01:06:07] <domme> MrMaffen: unfortunately not
+[01:06:15] <MrMaffen> yea that's what I thought
+[01:06:18] <domme> theli_ua: because the collection result is linked to the collection
+[01:06:21] <MrMaffen> they're two separate results actually
+[01:06:22] <domme> all access track isnt
+[01:06:45] <theli_ua> there is no way for you to know if one is better than the other
+[01:06:48] <domme> yeah but i'd argue that one would want the collection result and be able to jump to the collection
+[01:06:59] <MrMaffen> hm I'd argue the opposite :D
+[01:07:01] <domme> yeah, maybe we can do with a different icon
+[01:07:08] <theli_ua> I'm with mrmaffen on that one
+[01:07:13] <domme> o.O
+[01:07:13] <MrMaffen> shitty track in collection, I want the official all access one
+[01:07:19] <theli_ua> ^
+[01:07:21] <domme> mh
+[01:07:26] <MrMaffen> but both points are valid
+[01:07:28] <domme> yeah, let's do different icon
+[01:07:30] <theli_ua> indeed
+[01:07:31] <domme> at some point
+[01:07:35] <MrMaffen> sometimes you have a specific version in your locker that you want
+[01:07:36] <domme> dont care enough right now
+[01:07:41] <domme> fine? :-D
+[01:07:44] <theli_ua> yes
+[01:07:46] <MrMaffen> yep
+[01:07:52] <theli_ua> its the same for me with amazon
+[01:08:02] <theli_ua> one from collection, one from prime music
+[01:08:10] <domme> theli_ua: MrMaffen: https://www.youtube.com/watch?v=3YmMNpbFjp0
+[01:08:12] <tomabee> [ That was easy | www.youtube.com | https://i.ytimg.com/vi/3YmMNpbFjp0/hqdefault.jpg ]
+[01:08:26] <MrMaffen> :D
+[01:08:50] <domme> theli_ua: MrMaffen: yeah, thinking about it more i agree it's bad to hide one or another result
+[01:09:07] <theli_ua> also, speaking of amazon domme  MrMaffen 
+[01:09:11] <domme> actually a lot of the logic that makes distinguishing them both possible already ... was implemented for hmv
+[01:09:21] * domme coughs
+[01:09:26] <domme> gotta go
+[01:09:47] * MrMaffen runs
+[01:10:11] <theli_ua> that easy button reminds me of that aws iot buttons from amazon
+[01:10:18] * theli_ua wants to play with home automation
+[01:10:26] * theli_ua bought a house
+[01:10:33] <domme> congrats!
+[01:11:16] <theli_ua> well, technically even though all approvals came in the deal is not considered closed yet, signattures should be made this thursady or friday, but thanks
+[01:17:02] *** Joins: github-tomahawk (~github-to@192.30.252.42)
+[01:17:03] <github-tomahawk> [13tomahawk-resolvers] 15dschmidt pushed 2 new commits to 06master: 02http://git.io/v4X3w
+[01:17:03] <github-tomahawk> 13tomahawk-resolvers/06master 14b25fea8 15Dominik Schmidt: [GMusic] Fix all access
+[01:17:03] <github-tomahawk> 13tomahawk-resolvers/06master 141065713 15Dominik Schmidt: [GMusic] Make resolver known to collection to support collection results from resolver and to reuse getStreamUrl in the collection
+[01:17:03] *** Parts: github-tomahawk (~github-to@192.30.252.42) ()
+[01:17:26] <domme> MrMaffen: hehehehe ^ :-)
+[01:17:51] <MrMaffen> domme: he's officially back in business :D
+[01:18:06] <theli_ua> so, are we moving to console.log as opposed to TOmahawk.log ?
+[01:18:25] <MrMaffen> theli_ua: lol
+[01:18:30] <MrMaffen> domme: we aren't :D
+[01:18:54] <domme> did i commit that?
+[01:18:58] <MrMaffen> yup
+[01:19:04] <domme> ah, yeah, by mistake
+[01:19:12] <TheOneRing> btw where can I download the amazon axa? the prime collection sucks but I guess it could be useful :)
+[01:19:40] <domme> MrMaffen: i don't have strong feelings about it, but i want Tomahawk.log to be much better than it is right now
+[01:20:21] <domme> i don't care if we make our runtimes log console.log to the actual application console or if we have a wrapper that logs to javascript console and application console
+[01:20:25] <theli_ua> TheOneRing: I thought you are european
+[01:20:42] <TheOneRing> prime music is avalible since a week
+[01:20:52] <TheOneRing> or two
+[01:21:02] <domme> MrMaffen: back to more interesting things: next commit to tomahawk (which i'm just finishing up) is much more exciting than that
+[01:21:12] <domme> adding the getStreamUrl support to resolvers and collections :)
+[01:21:37] <theli_ua> oh really??? thats cool TheOneRing 
+[01:21:54] <TheOneRing> at least in germany not sure about the rest
+[01:22:01] <theli_ua> domme: MrMaffen I would really love you to test if prime music works for you
+[01:22:14] <theli_ua> well, if you have prime I suppose
+[01:22:17] <domme> will do
+[01:22:19] <domme> i do
+[01:22:32] <TheOneRing> I'll do if you give me the url too the axa :P
+[01:22:48] <theli_ua> TheOneRing: once domme or MrMaffen reviews amazon resolver hopefully domme will push it to repo or something
+[01:22:53] <MrMaffen> I don't have prime
+[01:23:52] <TheOneRing> theli_ua: I don't need the official one :)
+[01:28:08] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[01:28:08] <github-tomahawk> [13tomahawk] 15dschmidt pushed 4 new commits to 06promisify-all-the-things: 02http://git.io/v4XZC
+[01:28:08] <github-tomahawk> 13tomahawk/06promisify-all-the-things 1464f71fe 15Dominik Schmidt: Forward declare ResultProvider in Result
+[01:28:08] <github-tomahawk> 13tomahawk/06promisify-all-the-things 1430789bc 15Dominik Schmidt: Add getStreamUrl translation step in AudioEngine
+[01:28:08] <github-tomahawk> 13tomahawk/06promisify-all-the-things 14dde7db6 15Dominik Schmidt: Use getStreamUrl on ResultProviders instead of awkward custom iodevicefactories
+[01:28:08] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[01:28:35] <domme> MrMaffen: ^ :-D
+[01:29:46] <domme> just look at the amount of horrible code that has gone with that :-D
+[01:30:17] <MrMaffen> nice :)
+[01:30:24] <MrMaffen> glad tomahawk-desktop is finally starting to catch up
+[01:30:30] <domme> ;-)
+[01:52:03] *** Joins: github-tomahawk (~github-to@192.30.252.34)
+[01:52:03] <github-tomahawk> [13tomahawk] 15dschmidt pushed 1 new commit to 06promisify-all-the-things: 02http://git.io/v4X8Z
+[01:52:03] <github-tomahawk> 13tomahawk/06promisify-all-the-things 141b4efa8 15Dominik Schmidt: Bye bye callOnResolver
+[01:52:03] *** Parts: github-tomahawk (~github-to@192.30.252.34) ()
+[01:59:13] *** Quits: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com) (Ping timeout: 250 seconds)
+[02:02:54] *** Joins: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com)
+[02:19:04] *** Quits: duncaen (~duncaen@2a00-5300-0-2-0-0-0-9.ipv6ptr.net) (Ping timeout: 252 seconds)
+[02:26:21] <jherskowitz> theli_ua: congrats on the house
+[02:26:48] <jherskowitz> let me know what sort of home automation setup you do… I want to do it, but want someone to tell me which to get.
+[02:30:04] <jherskowitz> feepk: btw, I’m all set up on TestFlight… just let me know when you have something for me to test. ;)
+[02:48:44] <domme> heheh cool
+[02:49:03] <domme> calling an undefined function on JSResolverHelper doesnt make webkit crash anymore :-D
+[03:23:41] *** Quits: ExecSlim (~ExecSlim@159.203.5.37) (Ping timeout: 250 seconds)
+[03:23:42] *** Quits: blueyed (~daniel@hahler.de) (Ping timeout: 250 seconds)
+[03:23:45] *** Quits: ugly_cat (~quassel@c-76-104-204-149.hsd1.wa.comcast.net) (Ping timeout: 250 seconds)
+[03:23:46] *** Quits: total1ty__ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de) (Ping timeout: 250 seconds)
+[03:23:56] *** Joins: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de)
+[03:24:04] *** Joins: ugly_cat (~quassel@c-76-104-204-149.hsd1.wa.comcast.net)
+[03:24:04] *** Joins: ExecSlim (~ExecSlim@159.203.5.37)
+[03:24:16] *** Joins: blueyed (~daniel@hahler.de)
+[03:40:39] *** Quits: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[03:50:28] <theli_ua> domme: but, but... But now how do we know when the thing we call is undefined, IMO crashing was a perfect visibility into that 😁
+[03:50:40] <domme> hehehe
+[03:50:43] <domme> can tell you:
+[03:51:19] <domme> soon you'll only be calling NativeScriptJobManager.invoke('someMethod', params) which will reject if the method does not exist ;-)
+[04:30:35] *** Joins: arkhi (~fabien@180.167.3.61)
+[04:44:12] <domme> theli_ua: still around?
+[04:44:53] <theli_ua> Somewhat, playing with my son
+[04:45:19] <domme> theli_ua: quick question only: is gmusic resolver going through nativeAsyncRequest on desktop too?
+[04:47:07] <theli_ua> I'm not sure. Depends on if we need that to access setcookie header
+[04:47:23] <domme> yeah we do apparently
+[04:47:45] <domme> but i can't seem to figure out ... where tomahawk on desktop would add that header to the native request result
+[04:48:24] <theli_ua> Native would just have all of them, no?
+[04:48:37] <domme> it does only have Content-Type afaict
+[04:49:29] <domme> theli_ua: https://github.com/tomahawk-player/tomahawk/blob/master/src/libtomahawk/resolvers/JSResolverHelper.cpp#L960
+[04:49:37] <tomabee> [ tomahawk/JSResolverHelper.cpp at master · tomahawk-player/tomahawk · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[04:57:44] <domme> theli_ua: have you ever seen something like... SID=BAD_COOKIE↵LSID=BAD_COOKIE↵ in the response text of gmusic resolver?
+[05:10:49] <domme> meeh, something is horribly b0rked in my branch... :(
+[05:12:37] <domme> need sleep
+[05:12:42] <domme> will finish tomorrow
+[05:12:46] <domme> nini
+[05:14:50] <domme> ( theli_ua if you have any idea how this set-cookie thing used to work ... let me know :C)
+[05:15:51] <theli_ua> I'm not actually sure it is needed on desktop tbh
+[05:15:58] <domme> why?
+[05:16:31] <theli_ua> there were some differences in when native request was needed between android and desktop
+[05:16:46] <domme> i was kinda expecting this ...
+[05:16:51] <theli_ua> I *think* to get that set cookie header it is not needed to do native on desktop, but I might be wrong
+[05:18:46] <theli_ua> domme: looks like it wasn't doing native if it wanted a cookie before android tomahawk.js got merged in https://github.com/tomahawk-player/tomahawk/blob/10fc1adf6e1c21f59cb00ad9d323e23a6bc59988/data/js/tomahawk.js
+[05:18:49] <tomabee> [ tomahawk/tomahawk.js at 10fc1adf6e1c21f59cb00ad9d323e23a6bc59988 · tomahawk-player/tomahawk · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[05:26:12] <domme> theli_ua: uh yes
+[05:26:20] <domme> apparently non-native requests work
+[05:27:19] <domme> so i broke gmusic addiotionally by adding debug output in a then() but forgetting to return the data again
+[05:27:26] <domme> -_-
+[05:27:44] <domme> okay, the good news is, it works again
+[05:28:01] <domme> the bad news is: why is it a native request now?
+[05:29:57] <domme> apparently because the shouldDoNativeRequest implementation is flawed
+[05:40:12] *** Joins: mgue1 (~mgue@x5ce2efd2.dyn.telefonica.de)
+[05:40:13] *** Quits: mgue (~mgue@f052180046.adsl.alicedsl.de) (Read error: Connection reset by peer)
+[05:48:46] <theli_ua> domme: I think this happened when mrmaffen was merging android's tomahawk.js
+[05:50:45] <theli_ua> wait, master shouldn't do a native request, theres something wrong with your branch domme  I guess
+[05:51:00] <domme> yeah
+[05:51:09] <domme> shouldDoNativeRequest() was behaving differently
+[05:51:17] <domme> not sure which one is right tbh
+[05:52:11] <theli_ua> domme: oh, its actually not a cookie
+[05:52:30] <theli_ua> it started using native because we added custom useragent to gmusic
+[05:52:41] <domme> yeah
+[05:52:53] <theli_ua> I dont know why
+[05:53:07] <theli_ua> it also seems to be not needed as it is set to 'tomahawk-gmusic;
+[05:53:22] <theli_ua> it should still work with native though
+[05:53:31] <theli_ua> actually, why does it work for me and not for you
+[05:53:34] <theli_ua> I use gmusic daily
+[05:54:09] <domme> it worked, something's wrong in my branch
+[05:54:16] <domme> or at least something's fishy in general
+[05:54:35] * theli_ua wonders how can domme sleep and type at the same time, miracle
+[05:54:48] <domme> i cant sleep if things are misteriously broken
+[05:54:59] <theli_ua> git reset --hard origin/master 
+[05:55:02] <theli_ua> problem solved
+[05:55:03] <theli_ua> lol
+[05:55:04] <theli_ua> jk
+[05:55:06] <domme> how about no? :P
+[05:55:27] <theli_ua> can github compare branches?
+[05:56:09] * theli_ua looking at pr
+[05:56:26] <domme> hehe, would need to push stuff first
+[05:56:49] <theli_ua> oh, I assumed its there
+[05:57:04] <theli_ua> dunno, maybe you just broke native request
+[05:58:58] <theli_ua> also,just looking at the code ... how does it even work on master
+[05:59:05] <domme> EXACTLY
+[05:59:08] <theli_ua> it is supposed to go to native because of useragent
+[05:59:25] <domme> right now it works again
+[05:59:25] <theli_ua> have you tested does it actually go to native on master?
+[05:59:38] <domme> it does native requests also ... it's all so weird
+[05:59:42] <domme> but i'm also supertired
+[05:59:45] <domme> it's 6am here
+[06:00:11] <theli_ua> well, too late to go to sleep anyway
+[06:00:19] <theli_ua> better luck next night
+[06:01:06] <theli_ua> yeah, if anything it just shouldn't work in master
+[06:20:57] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[06:20:57] <github-tomahawk> [13tomahawk] 15dschmidt pushed 5 new commits to 06promisify-all-the-things: 02http://git.io/v41ns
+[06:20:57] <github-tomahawk> 13tomahawk/06promisify-all-the-things 143db8e91 15Dominik Schmidt: Bye bye syncRequest
+[06:20:57] <github-tomahawk> 13tomahawk/06promisify-all-the-things 1417d71b4 15Dominik Schmidt: Implement Tomahawk.ajax native implementation on behalf of NativeScriptJobs
+[06:20:57] <github-tomahawk> 13tomahawk/06promisify-all-the-things 1429aa954 15Dominik Schmidt: Allow instantaneous returns for nativeScriptJobs
+[06:20:57] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[06:22:10] <domme> theli_ua: ^
+[06:22:55] <theli_ua> I dont get it domme  :(
+[06:23:07] <domme> how it can work at all? :D
+[06:23:10] <domme> theli_ua: ^
+[06:23:48] <theli_ua> to answer this we need to figure out how does it work on master
+[06:23:55] <theli_ua> domme: also, just go to sleep already 
+[06:24:15] <domme> haha
+[06:24:17] <domme> yeah
+[06:24:22] <domme> it definitely does native requests
+[06:24:47] <domme> not sure if all the time.. but there are native requests... superweird
+[06:58:44] *** Quits: domme (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de) (Ping timeout: 276 seconds)
+[07:01:18] <theli_ua> jherskowitz: I'm not sue i want to commit to automate a lot of stuff. Like my friend started playing with this ... doing things like 'turn of the lights in living romm when everyone went sleep',   'voice controlled (via amazon echo) lights ... like "Alexa, turn on kitchen lights"' ... I don't think its that usefull
+[09:19:22] *** Joins: meaning (~meaning@182.149-242-81.adsl-dyn.isp.belgacom.be)
+[09:57:34] *** Quits: meaning (~meaning@182.149-242-81.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[09:59:52] *** Joins: meaning (~meaning@182.149-242-81.adsl-dyn.isp.belgacom.be)
+[10:59:44] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:19:06] *** Quits: arkhi (~fabien@180.167.3.61) (Quit: Leaving.)
+[11:31:29] *** Joins: domme (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de)
+[11:32:54] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[11:33:35] *** Joins: duncaen (~duncaen@2a00-5300-0-2-0-0-0-9.ipv6ptr.net)
+[12:01:07] *** Joins: the_phil0s0ph_ (~quassel@2a03:8180:1001:b2:13::12c)
+[12:01:25] *** Quits: the_phil0s0ph (~quassel@2a03:8180:1001:b2:13::12c) (Write error: Broken pipe)
+[12:01:26] *** Quits: teo- (~teo@kde/teo) (Quit: No Ping reply in 180 seconds.)
+[12:03:12] *** Joins: teo- (~teo@kde/teo)
+[12:23:43] *** Joins: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com)
+[12:41:10] *** the_phil0s0ph_ is now known as the_phil0s0ph
+[12:44:20] <feepk> jherskowitz: done!
+[12:52:47] *** Quits: meaning (~meaning@182.149-242-81.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[12:59:51] *** Quits: domme (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de) (Write error: Broken pipe)
+[13:00:04] *** Joins: domme (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de)
+[13:24:50] *** Quits: TheOneRing (~quassel@amarok/developer/TheOneRing) (Ping timeout: 240 seconds)
+[13:45:20] *** Joins: meaning (~meaning@182.149-242-81.adsl-dyn.isp.belgacom.be)
+[13:45:59] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[14:09:55] *** Joins: TheOneRing (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de)
+[14:09:55] *** Quits: TheOneRing (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de) (Changing host)
+[14:09:55] *** Joins: TheOneRing (~quassel@amarok/developer/TheOneRing)
+[15:00:30] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[15:19:35] *** Quits: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com) (Ping timeout: 250 seconds)
+[15:19:40] *** Joins: jturney1 (~jon@host86-141-129-50.range86-141.btcentralplus.com)
+[15:28:38] *** Quits: meaning (~meaning@182.149-242-81.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[15:38:41] *** Joins: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com)
+[15:39:08] *** Quits: jturney1 (~jon@host86-141-129-50.range86-141.btcentralplus.com) (Ping timeout: 246 seconds)
+[16:22:45] *** Joins: apb__ (~apb@174-134-224-109.res.bhn.net)
+[16:24:58] *** Quits: apb_ (~apb@174-134-224-109.res.bhn.net) (Ping timeout: 260 seconds)
+[16:39:02] *** Quits: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com) (Disconnected by services)
+[16:39:03] *** Joins: jturney1 (~jon@host86-141-129-50.range86-141.btcentralplus.com)
+[17:35:06] *** Joins: jamesaxl (~jamesaxl@41.140.43.71)
+[17:38:26] *** Joins: pinheiro (~pinheiro@2001:8a0:f884:a101:92b1:1cff:fe77:db0d)
+[17:51:42] *** Quits: jturney1 (~jon@host86-141-129-50.range86-141.btcentralplus.com) (Ping timeout: 255 seconds)
+[17:53:21] *** Joins: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com)
+[18:06:27] <theli_ua> heh, tomahawk segfaulted over night
+[18:13:21] *** Quits: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com) (Ping timeout: 250 seconds)
+[18:13:57] *** Joins: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com)
+[18:24:06] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[20:15:26] <TheOneRing> what people on facebook share regarding refugees, I'm not sure if I should unfollow/ignore them or unfriend them...... I've got the horrible feeling that replying to their posts won't do any good
+[21:01:47] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Read error: Connection reset by peer)
+[21:02:20] *** Joins: soee (~soee@agup203.neoplus.adsl.tpnet.pl)
+[21:29:04] <jherskowitz> theli_ua: I’ve been avoiding Facebook for that reason.
+[21:35:43] <theli_ua> Bah, wrong highlight jherskowitz 
+[21:37:07] <jherskowitz> theli_ua: oops
+[21:37:31] <jherskowitz> TheOneRing: I’ve been avoiding Facebook for that reason.
+[21:39:08] <TheOneRing> but ignoring those people isn't the solution, it is what people did so manny times in the past before something horrible happend
+[21:44:39] *** Joins: knicklux (~knicklux@scc-wkit-clx-218-105.scc.kit.edu)
+[22:02:46] *** Quits: knicklux (~knicklux@scc-wkit-clx-218-105.scc.kit.edu) (Ping timeout: 240 seconds)
+[22:32:05] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[22:47:36] <theli_ua> muesli, domme: TheOneRing has tomahawk crash with amazon streams :(   thats on windows though
+[22:49:54] <TheOneRing> might be a vlc bug? or a problem with the urls? 
+[23:29:18] <TheOneRing> jherskowitz: that looks pretty cool, still white background?
+[23:56:27] *** Joins: sythe (uid20450@facade/leader)

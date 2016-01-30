@@ -1,0 +1,110 @@
+[00:19:26] *** Quits: jamesaxl (~jamesaxl@105.158.167.164) (Ping timeout: 240 seconds)
+[01:17:39] *** Quits: jturney (~jon@host86-141-131-231.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[01:18:46] *** Joins: amadde3 (guest-amad@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[01:18:47] <amadde3> anyone active here?
+[01:18:58] <amadde3> Anyone active here?
+[01:19:52] *** Parts: amadde3 (guest-amad@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[02:03:38] <dommex> mh :)
+[02:03:40] <dommex> too slow
+[04:58:58] *** Quits: mgue (~mgue@x5ce2f3bc.dyn.telefonica.de) (Quit: WeeChat 1.3)
+[05:10:11] *** Joins: mgue (~mgue@x5ce30c89.dyn.telefonica.de)
+[05:17:12] *** Quits: SolarAquarion (SolarAquar@the.feds.nullrouted.us) (Ping timeout: 250 seconds)
+[05:42:18] *** Joins: SolarAquarion (SolarAquar@the.feds.nullrouted.us)
+[05:58:15] *** Quits: SolarAquarion (SolarAquar@the.feds.nullrouted.us) (Ping timeout: 240 seconds)
+[06:34:11] *** Joins: SolarAquarion (SolarAquar@the.feds.nullrouted.us)
+[08:28:26] *** Joins: soee_ (~soee@agxb195.neoplus.adsl.tpnet.pl)
+[08:39:25] *** Joins: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de)
+[08:44:13] *** Quits: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de) (Ping timeout: 265 seconds)
+[09:06:29] *** Joins: soee (~soee@aayg143.neoplus.adsl.tpnet.pl)
+[09:10:15] *** Quits: soee_ (~soee@agxb195.neoplus.adsl.tpnet.pl) (Ping timeout: 240 seconds)
+[10:23:10] *** Joins: total1ty_ (~quassel@ipbcc36ea9.dynamic.kabel-deutschland.de)
+[10:40:56] *** Quits: duncaen (~duncaen@2a00-5300-0-2-0-0-0-9.ipv6ptr.net) (Ping timeout: 240 seconds)
+[10:41:57] *** Joins: duncaen (~duncaen@2a00-5300-0-2-0-0-0-9.ipv6ptr.net)
+[11:11:11] *** Quits: TheOneRing (~quassel@amarok/developer/TheOneRing) (Quit: http://quassel-irc.org - Chat comfortably. Anywhere.)
+[11:11:35] *** Joins: TheOneRing (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de)
+[11:11:36] *** Quits: TheOneRing (~quassel@HSI-KBW-091-089-007-056.hsi2.kabelbw.de) (Changing host)
+[11:11:36] *** Joins: TheOneRing (~quassel@amarok/developer/TheOneRing)
+[11:12:18] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:16:06] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Read error: Connection reset by peer)
+[11:18:02] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[11:18:37] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:33:22] *** Joins: gordie (3eeb0763@gateway/web/freenode/ip.62.235.7.99)
+[11:33:38] <gordie> Hi guys, anyone up ?
+[11:42:24] *** Quits: gordie (3eeb0763@gateway/web/freenode/ip.62.235.7.99) (Ping timeout: 252 seconds)
+[11:42:57] *** Joins: gordie (3eeb0763@gateway/web/freenode/ip.62.235.7.99)
+[11:50:43] <muesli> moin gordie
+[11:51:04] <gordie> hi muesli, how are u ?
+[11:52:01] <muesli> quite alright. how about you?
+[11:52:11] <gordie> I was just fantasizing about this idea : you know, on spiff-radio.org (I'm currently reworking on it), there is dynamic stations that have a form the visitor can fill
+[11:52:41] <gordie> and it would generate a dynamic playlist (for BBC, for Last.fm, for Spotify, ....).  Was wondering if it would be one day possible to include this into THK
+[11:53:06] <muesli> got an example how that works?
+[11:54:41] <gordie> Yeah... The basic idea is to recognize variables is urls, eg. https://open.spotify.com/user/%user_id%/playlist/%playlist_id%
+[11:55:04] <gordie> THK could get the %% variables and build form inputs based on that... And then fetch the "feed". 
+[11:55:17] <gordie> It could be coded like resolvers, in javascript
+[11:55:29] <gordie> So people could extend it
+[11:55:45] <gordie> (because some URLs need to be redirected to parse the tracklists, etc)
+[11:55:52] <muesli> w
+[11:55:59] <muesli> so what would it do with those variables?
+[11:56:30] <gordie> allow the user to "fill" them inside THK with form inputs
+[11:56:36] <gordie> live example here on spiff-radio : http://www.spiff-radio.org/station/radionomy-station/
+[11:56:54] <gordie> you can try with, for example, "http://www.radionomy.com/fr/radio/alternativeradio/index" (great station !)
+[11:59:07] <gordie> so THK would be able to receive all kinds of URLs (not only spotify ones)
+[12:00:21] <gordie> you see what I mean ?
+[12:01:28] <gordie> 1/ someone codes an extension for radionomy or another service 2/ user loads a radionomy url :)  
+[12:02:06] <gordie> then drag-drop the url, and it's done... :>
+[12:02:20] <muesli> i don't quite understand it yet, sorry :)
+[12:02:47] <muesli> what exactly do you do with those urls / variables?
+[12:02:59] <gordie> ah ah :) well, as THK allow user to extend it with resolvers, it could allow to extend supported playlist urls too
+[12:03:19] <gordie> to grab playlist from every service possible
+[12:03:58] <gordie> those extensions would just be "bridges" allowing to parse an HTML/XSPF/RSS/JSON... feed and load it as a playlist
+[12:04:05] <muesli> i see
+[12:04:27] <gordie> like spiff-radio is.  I'm still reworking on it, but my presets looks actually like this : https://github.com/gordielachance/xspf-playlists-generator/tree/master/station-presets
+[12:09:21] <gordie> and I guess this could be achieved in JS too
+[12:15:41] <gordie> I still think one of the best thing in THK is this idea of dynamic playlists and that it could be improved a lot :)
+[12:15:55] <muesli> i kinda hate them :D
+[12:16:02] <gordie> Oh yeah ?
+[12:16:29] <muesli> just from a technical pov :)
+[12:17:49] <gordie> ah, that's another thing :)  I LOVE them because I can listen to radio without ads...  And just inside THK, no needs to go to a website everytime
+[12:18:21] <gordie> I listen, mark the tracks as favorites, and never forget them doing so :)
+[12:18:52] <gordie> So, what are u working on actually ?
+[12:28:17] <gordie> will the next release include the "various artists" stuff ?
+[13:47:15] <muesli> a few improvements there, yeah
+[13:51:08] <gordie> cool
+[14:41:21] <dommex> Hey gordie!
+[15:16:54] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Remote host closed the connection)
+[15:22:58] *** Quits: cloakable_ (~cloakable@cpc87169-aztw31-2-0-cust145.18-1.cable.virginm.net) (Ping timeout: 265 seconds)
+[15:26:27] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[15:29:56] *** Joins: jturney (~jon@host86-141-131-231.range86-141.btcentralplus.com)
+[15:44:16] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Read error: Connection reset by peer)
+[15:44:38] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[15:45:47] *** Quits: jturney (~jon@host86-141-131-231.range86-141.btcentralplus.com) (Ping timeout: 264 seconds)
+[16:04:59] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Ping timeout: 264 seconds)
+[16:11:54] *** Quits: gordie (3eeb0763@gateway/web/freenode/ip.62.235.7.99) (Ping timeout: 252 seconds)
+[16:28:30] *** Joins: jturney (~jon@host86-179-113-236.range86-179.btcentralplus.com)
+[18:40:37] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[18:57:55] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[19:06:35] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Remote host closed the connection)
+[19:40:45] *** Joins: justin_time (~stefan@2a02:908:f358:6f00:ec6d:d60a:6765:5cf1)
+[19:54:54] <justin_time> Hey, pushing tomahawk into the debian sources will be very hard. I argued that Clementine also uses company logos but this could lead to an Release Critical Bug against Clementine because of violating the debian free software guideline. :-( It looks like that the package will not be ready until the DebianImportFreeze of ubuntu 16.04. And so I decided to try to update the old tomahawk package on ubuntu directly. But I really 
+[19:54:54] <justin_time> do not know how. It's really frustrating.
+[20:37:40] <muesli> hey justin_time
+[20:38:18] <muesli> justin_time: might be able to get you in touch with yofel
+[20:38:20] <muesli> yofel: ^
+[21:31:40] *** Joins: rotzbouw (~thierry@HSI-KBW-046-005-083-083.hsi8.kabel-badenwuerttemberg.de)
+[22:07:34] <rotzbouw> moin
+[22:08:01] <rotzbouw> so asyncRequest has been deprecated in tomahawk.js?
+[22:08:51] <jherskowitz> dommex: ^
+[22:09:36] <rotzbouw> ...in october, haha
+[22:09:43] <rotzbouw> jherskowitz: it's fine, i'm just very late :)
+[22:09:49] <rotzbouw> need to pull on the resolvers repo!
+[22:09:52] <jherskowitz> heh
+[22:10:12] *** Joins: jamesaxl (~jamesaxl@41.249.143.196)
+[22:10:37] *** Quits: jamesaxl (~jamesaxl@41.249.143.196) (Read error: Connection reset by peer)
+[22:10:43] *** Joins: jamesaxl (~jamesaxl@41.249.143.196)
+[22:10:50] <rotzbouw> excited to see that many commits on those resolvers <3
+[22:30:29] *** Quits: justin_time (~stefan@2a02:908:f358:6f00:ec6d:d60a:6765:5cf1) (Quit: Verlassend)
+[23:03:43] <theli_ua> wat commits
+[23:06:47] *** Quits: soee (~soee@aayg143.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[23:06:59] <rotzbouw> theli_ua: the ones e.g. you did.. months back, unnoticed by me ;)
+[23:08:40] *** Joins: soee (~soee@aayg143.neoplus.adsl.tpnet.pl)
+[23:22:23] <yofel> muesli: when you see justin_time again, please point him to https://wiki.ubuntu.com/SponsorshipProcess#Requesting_Sponsorship

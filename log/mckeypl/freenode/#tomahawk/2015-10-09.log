@@ -1,0 +1,172 @@
+[00:15:46] <jherskowitz> muesli: fwiw...
+[00:15:49] <jherskowitz> https://www.irccloud.com/pastebin/A0ojjimZ/
+[00:15:50] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[00:16:26] <jherskowitz> which is weird b/c I brew updated before (after El Capitan)… I could have sworn
+[00:16:57] <jherskowitz> oh interesting… I do have InstantOn
+[00:17:22] <jherskowitz> do I type exactly that? sudo chown -R $(whoami):admin /usr/local
+[00:17:40] <jherskowitz> or am I supposed to replace “whoami” with my username?
+[00:25:48] <muesli> it'll replace it with your username
+[00:51:02] *** Quits: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de) (Quit: Leaving.)
+[01:17:29] <jherskowitz> cool, thx
+[01:18:06] <theli_ua> $(command) will be replaced with the output of the command in most shells
+[01:24:34] <jherskowitz> theli_ua: thanks
+[01:24:49] <jherskowitz> As hard as I try not to learn stuff, I can’t seem to keep it from happening. :)
+[01:26:45] <jherskowitz> muesli: do you think the Qt5 installer would maybe not have SSL turned off? http://www.qt.io/download-open-source/
+[01:26:46] <tomabee> [ Download Open Source Step 3 | www.qt.io | http://d3hp9ud7yvwzy0.cloudfront.net/wp-content/uploads/2014/06/devices.png ]
+[02:24:37] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Ping timeout: 250 seconds)
+[02:38:51] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[02:44:32] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[05:35:18] *** Quits: mgue (~mgue@f049057063.adsl.alicedsl.de) (Read error: Connection reset by peer)
+[05:36:18] *** Joins: mgue (~mgue@x590f625c.dyn.telefonica.de)
+[07:32:40] <muesli> domme: jherskowitz: yeah, confirmed then
+[07:32:41] <muesli> still the same error with manual qt build
+[07:57:35] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[08:00:12] <domme> muesli can you check the actual value of qt_no_ssl?
+[08:00:43] <domme> or maybe google for that? 
+[08:01:12] <domme> i mean you cant be the only one
+[08:01:23] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) (Client Quit)
+[08:03:35] <muesli> domme: where exactly?
+[08:05:24] <domme> muesli e.g. where qxt uses it.. or in a minimal example .cpp or wherever
+[08:07:52] <muesli> can't find it in the build dir
+[08:08:16] <domme> muesli: cant find what?
+[08:08:34] <muesli> "qt_no_ssl"
+[08:09:37] <domme> ah yeah. just try to use it. it miggt be set in some qt config file or even qtconfig tool .. who knows
+[08:10:04] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[08:15:56] <muesli> hm
+[08:15:57] <muesli> doesn't seem to be set
+[08:16:16] <muesli> domme: ^
+[08:21:02] <muesli> hm, seems to be set in qxtsslserver.h
+[08:21:08] <muesli> #ifdef QT_NO_OPENSSL
+[08:21:09] <muesli> foooobbaar
+[08:21:10] <muesli> #endif
+[08:21:11] <muesli> gets triggered in qxtsslserver.h
+[08:21:12] <muesli> doesn't in PlaydarApi.cpp
+[08:21:18] <muesli> domme: ^
+[08:33:22] <domme> uh oh mh
+[08:34:13] <domme> muesli does it have the qtssl includes too?
+[08:35:45] <muesli> probably not
+[08:35:46] <muesli> neither does qxt by the looks tho
+[08:41:13] <muesli> also, qt binary packages are built without openssl by default now, jherskowitz
+[08:41:24] <domme> huh
+[08:41:35] <domme> why? :/
+[08:42:02] <domme> maybe #qt(-labs) can tell you?
+[08:44:10] <muesli> I cannot use QSslSocket with the Qt I installed from binary packages. What should I do?
+[08:44:11] <muesli> The Qt in the binary packages is built with QT_NO_OPENSSL defined. Rebuilding it is possible. For more information, see http://www.qtcentre.org/threads/19222-Qssl.
+[08:44:12] <tomabee> [ Qssl |  | http://images/smilies/biggrin.png ]
+[08:44:59] *** Joins: soee (~soee@aftv207.neoplus.adsl.tpnet.pl)
+[08:48:41] <muesli> hmmm
+[08:48:55] <muesli> if i remove the ifndef check for QT_NO_OPENSSL it actually seems to build just fine
+[08:49:02] <muesli> i take that back
+[08:50:37] <muesli> ah, probably just in more places of qxt
+[08:50:57] <muesli> ok, getting further
+[08:51:19] <domme> muesli sounds very wrong :D
+[08:53:30] <muesli> gotta be shitting me
+[08:53:36] <muesli> now it fails finding taglib/fileref.h
+[08:54:19] <muesli> how in the what why
+[08:54:49] <muesli> this got to be a joke
+[08:58:43] <muesli> .... /Users/muesli/Sources/tomahawk/master/src/libtomahawk/filemetadata/MusicScanner.h:28:10: fatal error: 'taglib/fileref.h' file not found
+[08:59:49] <domme> hum
+[08:59:58] <muesli> ah, seems only for In file included from /Users/muesli/Sources/tomahawk/master/src/tools/tomahawk-test-musicscan/main.cpp:1:
+[09:00:16] <muesli> domme: ^
+[09:02:38] *** Joins: ssam2 (~ssam2@212.91.253.218)
+[09:04:52] <domme> muesli: ah, just disable tests for now. will fix later
+[09:04:59] <domme> eh. tools
+[09:06:23] <domme> BUILD_TOOLS=OFF or something
+[09:06:29] <muesli> how?
+[09:06:57] <domme> -DBUILD_...
+[09:08:05] <muesli> this really needs be documented somewhere... grrr
+[09:08:58] <domme> you can also see the option if you just launch ccmake :p
+[09:09:42] <muesli> that's a lame excuse for no documentation ;-)
+[09:09:58] <domme> i know ;)
+[09:12:50] <muesli> built and runs, lots of JS errors tho
+[09:13:16] <domme> hehe
+[09:13:28] <domme> it's something
+[09:13:31] <muesli> fonts look weird
+[09:16:29] <muesli> playback crashes
+[09:16:50] <domme> muesli: great ....
+[09:17:24] <muesli> 0   libsystem_platform.dylib      	0x00007fff96b8364f _platform_memmove$VARIANT$Nehalem + 239
+[09:17:24] <muesli> 1   org.qt-project.QtGui          	0x0000000108251c3b QImage::copy(QRect const&) const + 203
+[09:17:24] <muesli> 2   org.qt-project.QtGui          	0x0000000108252578 QImage::detach() + 104
+[09:17:24] <muesli> 3   org.qt-project.QtGui          	0x00000001084425fb QPainter::begin(QPaintDevice*) + 315
+[09:17:25] <muesli> 4   libqcocoa.dylib               	0x000000010acf9c28 QCocoaBackingStore::beginPaint(QRegion const&) + 56
+[09:17:41] <muesli> second time it worked
+[09:17:42] <muesli> ...
+[09:38:22] *** Parts: modeno1 (guest-mode@gateway/web/scrollback.io/x-fpghxcnmvflmfwmf) ()
+[09:38:22] *** Parts: spairs2 (guest-spai@gateway/web/scrollback.io/x-ajdvxmqtdjfifkei) ()
+[12:06:37] *** Joins: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de)
+[12:34:59] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[13:41:12] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Ping timeout: 255 seconds)
+[13:51:51] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[14:52:56] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[15:29:42] *** Quits: soee (~soee@aftv207.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[15:30:55] *** Joins: soee (~soee@aftv207.neoplus.adsl.tpnet.pl)
+[15:31:17] *** Quits: soee (~soee@aftv207.neoplus.adsl.tpnet.pl) (Client Quit)
+[15:32:32] *** Joins: soee (~soee@aftv207.neoplus.adsl.tpnet.pl)
+[15:32:47] *** Quits: soee (~soee@aftv207.neoplus.adsl.tpnet.pl) (Remote host closed the connection)
+[15:35:38] *** Joins: soee (~soee@aftv207.neoplus.adsl.tpnet.pl)
+[16:45:50] *** Quits: soee (~soee@aftv207.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[17:05:58] *** Joins: soee (~soee@aftv207.neoplus.adsl.tpnet.pl)
+[17:27:51] <jherskowitz> muesli: you got it to build?
+[17:27:59] <muesli> yeah
+[17:28:03] <muesli> eventually :)
+[17:28:13] <muesli> probably would have even worked with brew's qt
+[17:28:26] <muesli> will commit something in a second
+[17:28:59] <jherskowitz> cool
+[17:31:06] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Quit: Leaving)
+[17:34:06] *** Quits: soee (~soee@aftv207.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[17:34:28] *** Joins: soee (~soee@aftv207.neoplus.adsl.tpnet.pl)
+[17:37:08] <muesli> jherskowitz: there we go
+[17:37:09] <muesli> try that
+[17:37:10] *** Joins: github-tomahawk (~github-to@192.30.252.34)
+[17:37:10] <github-tomahawk> [13tomahawk] 15muesli pushed 1 new commit to 06master: 02http://git.io/vCmA0
+[17:37:10] <github-tomahawk> 13tomahawk/06master 141c99e2a 15Christian Muehlhaeuser: Unbreak QXT with SecureTransport on OSX.
+[17:37:10] *** Parts: github-tomahawk (~github-to@192.30.252.34) ()
+[17:45:41] <tomahawk-ci> Project Tomahawk-Master build #6277: FAILURE in 8 min 6 sec: http://ci.tomahawk-player.org/job/Tomahawk-Master/6277/
+[17:45:41] <tomabee> [ 401 Unauthorized | ci.tomahawk-player.org |  ]
+[17:45:41] <tomahawk-ci> Christian Muehlhaeuser: Unbreak QXT with SecureTransport on OSX.
+[17:47:55] <tomahawk-ci> Project Tomahawk-MinGW-Master build #4782: FAILURE in 10 min: http://ci.tomahawk-player.org/job/Tomahawk-MinGW-Master/4782/
+[17:47:55] <tomabee> [ 401 Unauthorized | ci.tomahawk-player.org |  ]
+[17:47:56] <tomahawk-ci> Christian Muehlhaeuser: Unbreak QXT with SecureTransport on OSX.
+[17:48:54] <muesli> lol, yeah right
+[17:54:18] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[17:54:18] <github-tomahawk> [13tomahawk] 15muesli pushed 1 new commit to 06master: 02http://git.io/vCYfc
+[17:54:18] <github-tomahawk> 13tomahawk/06master 14de820a7 15Christian Muehlhaeuser: Who needs consistency anyway. Changed to check if QT_NO_OPENSSL is not defined instead.
+[17:54:18] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[18:04:20] *** Quits: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com) (Remote host closed the connection)
+[18:05:39] <tomahawk-ci> Yippie, build fixed!
+[18:05:40] <tomahawk-ci> Project Tomahawk-Master build #6278: FIXED in 11 min: http://ci.tomahawk-player.org/job/Tomahawk-Master/6278/
+[18:05:40] <tomabee> [ 401 Unauthorized | ci.tomahawk-player.org |  ]
+[18:05:40] <tomahawk-ci> Christian Muehlhaeuser: Who needs consistency anyway. Changed to check if QT_NO_OPENSSL is not defined instead.
+[18:06:48] <tomahawk-ci> Yippie, build fixed!
+[18:06:48] <tomahawk-ci> Project Tomahawk-MinGW-Master build #4783: FIXED in 12 min: http://ci.tomahawk-player.org/job/Tomahawk-MinGW-Master/4783/
+[18:06:48] <tomabee> [ 401 Unauthorized | ci.tomahawk-player.org |  ]
+[18:06:49] <tomahawk-ci> Christian Muehlhaeuser: Who needs consistency anyway. Changed to check if QT_NO_OPENSSL is not defined instead.
+[18:09:48] *** Joins: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com)
+[18:15:39] *** Quits: ssam2 (~ssam2@212.91.253.218) (Quit: Leaving)
+[19:26:14] <tomabee> @drsounds mentioned: @tomahawk is an awesome project. I would be glad if you could rewrite the GUI in self containing HTML app (nw.js) instead [<no value>]
+[19:40:46] <lfranchi> i would be glad if you could rewrite your project
+[19:40:51] <lfranchi> KTHXBYE
+[19:43:22] <muesli> lol
+[19:53:14] <HorusHorrendus> lol
+[19:53:31] <HorusHorrendus> maybe someone should show him hatchet if he wants tomahawk in the web
+[19:54:23] <tomabee> @drsounds mentioned: @tomahawk @hatchet For your karma, please switch to another TLD [<no value>]
+[19:55:24] <tomabee> @drsounds mentioned: @tomahawk @hatchet I really consider being part of this project [<no value>]
+[20:01:50] *** Quits: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com) (Remote host closed the connection)
+[20:10:29] <tomabee> @drsounds mentioned: @tomahawk @hatchet Awesome! [<no value>]
+[20:20:34] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[20:32:42] *** Joins: apb__ (~apb@174-135-20-37.res.bhn.net)
+[20:36:30] *** Quits: apb_ (~apb@174-135-20-37.res.bhn.net) (Ping timeout: 272 seconds)
+[21:05:21] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Quit: alsuren)
+[21:29:42] *** Quits: soee (~soee@aftv207.neoplus.adsl.tpnet.pl) (Remote host closed the connection)
+[21:32:27] *** Joins: soee (~soee@aftv207.neoplus.adsl.tpnet.pl)
+[21:45:21] *** Joins: apb1963 (~apb@174-135-20-37.res.bhn.net)
+[21:48:46] *** Quits: apb__ (~apb@174-135-20-37.res.bhn.net) (Ping timeout: 268 seconds)
+[21:50:25] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[22:30:19] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Quit: alsuren)
+[22:56:34] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[23:00:15] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Client Quit)
+[23:58:16] <domme> lfranchi: wtf
+[23:58:20] <domme> tomabee: wtf
+[23:59:21] <domme> muesli: very nice, missed your commits
+[23:59:34] <domme> although horribly annoying, seem to make a lot of sence
+[23:59:37] <domme> *sense even

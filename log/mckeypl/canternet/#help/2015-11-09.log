@@ -1,0 +1,419 @@
+[00:02:12] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[00:03:18] *** Joins: Zuzu (zuzu@is.robo.licious)
+[00:18:37] *** Joins: Toothie (uid63062@Pony-jogq8d.ealing.irccloud.com)
+[00:29:01] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[00:30:20] *** Joins: Zuzu (zuzu@is.robo.licious)
+[00:53:30] *** NexSleep is now known as Nexus
+[01:22:15] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[01:23:31] *** Joins: Zuzu (zuzu@is.robo.licious)
+[01:48:38] *** afkshi is now known as Fluttershi
+[01:49:07] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[01:50:28] *** Joins: Zuzu (zuzu@is.robo.licious)
+[01:58:22] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:12:16] *** Toothie is now known as Toothpaste
+[02:19:45] *** Quits: Toothpaste (uid63062@Pony-jogq8d.ealing.irccloud.com) (Quit: Whoops. Everything just died .3.)
+[02:27:02] *** Gigabit is now known as Soarin
+[02:39:50] *** Joins: LuckyLeaf (LuckyLeaf@wandering.fateweaver)
+[02:41:23] <LuckyLeaf> Hello
+[02:41:57] <Fluttershi> ello
+[02:44:31] <LuckyLeaf> How do I set a owner for a channel? I did it once and I forgot. I tried CHANSERV OWNER but it didn't stick. I'm trying to transfer ownership of a channel
+[02:46:05] <Fluttershi> hm...
+[02:46:56] <Fluttershi> i think you need the flags for that, unless the channel happens to have templates installed, uh...
+[02:48:46] <LuckyLeaf> How do I do that?
+[02:50:07] <Fluttershi> can't remember how to find the details i was trying to find 9_6
+[02:50:21] <Fluttershi> anyone else here to help?
+[03:06:53] *** Creeps|AFK is now known as RedHelper
+[03:08:49] <Seoson> /msg CHANSERV set <channel> founder <user>
+[03:09:39] <Seoson> Be sure you know what you're doing. ;-)
+[03:10:44] <LuckyLeaf> Alright :)
+[03:11:00] <LuckyLeaf> I don't even go to that channel anymore. :P
+[03:12:43] <Seoson> Please keep in mind still that there are owners and founders (Seperate things). From what you've told me this command looks correct. You will lose your channel privileges!
+[03:12:45] <LuckyLeaf> Hm, it didn't accept that command :|
+[03:12:56] <Seoson> Let me see
+[03:13:02] <LuckyLeaf> No worries about that
+[03:14:06] <Seoson> Atheme, nvm - give me a second :P
+[03:16:54] <Seoson> If I'm not mistaken the access list is what you need
+[03:17:13] <Seoson> /MSG ACCESS <channel> SET <user> <flag>
+[03:17:20] <Seoson> *derp*
+[03:17:28] <Seoson> /MSG ChanServ ACCESS <channel> SET <user> <flag>
+[03:17:41] <Seoson> Flag should be +owner
+[03:17:59] <Seoson> Or +founder for everything
+[03:18:10] <LuckyLeaf> Okay
+[03:18:18] <LuckyLeaf> Thanks :)
+[03:18:18] <Seoson> (Which again would make more sense considering what you told me)
+[03:18:43] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[03:18:56] <Seoson> Hope that works. Excuse my confusion with other network services on different networks.
+[03:20:05] *** Joins: Zuzu (zuzu@is.robo.licious)
+[03:24:49] <LuckyLeaf> "Role +owner does not exist."
+[03:24:52] <LuckyLeaf> Hmm
+[03:27:05] <LuckyLeaf> I also tried +o, +a and +q, and it didn't accept it
+[03:27:12] <LuckyLeaf> Did I mess up something?
+[03:30:04] <Googie> Seoson: +owner/+founder doesn't exist. Flags are individual letters.
+[03:30:25] <Googie> +F is foudner
+[03:30:26] <Googie> *founder
+[03:30:59] <Seoson> O_o My documentation is outdated
+[03:31:22] <LuckyLeaf> Ah okay
+[03:31:35] <Googie> Seoson: /cs help flags
+[03:31:51] <Googie> The online documentation is quite good.
+[03:32:19] <Googie> (By online, I mean via the help command)
+[03:32:26] <LuckyLeaf> Ah I see
+[03:32:32] <Seoson> Yeah I prefer documents where ctrl+f works: https://atheme.net/help/7.0/ChanServ.html Much better
+[03:32:42] <LuckyLeaf> I googled it but it seems different servers had different implementations
+[03:33:03] <Seoson> It lists +F there ;-)
+[03:33:34] <Seoson> LuckyLeaf: Both different IRC services (here Atheme) and different versions = perfect confusion
+[03:33:51] <Googie> Plus different modules loaded.
+[03:36:37] * Seoson misses good old Q
+[03:39:46] <LuckyLeaf> How do I get OP in an OP-less unregistered channel?
+[03:40:02] <Googie> The first person to join an empty channel gets op.
+[03:40:29] <Googie> If the channel isn't empty, I can manually op someone.
+[03:40:38] <LuckyLeaf> There is one person along with me, but neither of us have it
+[03:40:55] <Googie> Ask them to leave, and then leave and rejoin is the simplest way
+[03:41:02] <LuckyLeaf> Ah I see
+[03:44:50] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Connection closed)
+[04:14:22] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Ping timeout: 121 seconds)
+[04:26:30] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[04:27:34] *** Joins: Zuzu (zuzu@is.robo.licious)
+[04:32:08] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[04:42:36] *** iamalion is now known as iam[a]lion
+[05:00:24] *** iam[a]lion is now known as iamalion
+[05:23:08] *** Nexus is now known as NexSleep
+[05:30:45] *** Joins: kondra (WebChat@Pony-ddsc9l.res.rr.com)
+[05:30:55] *** Joins: Pony_6 (~WebChat@Pony-u4ne5h.162-221-109-net.sccoast.net)
+[05:31:31] *** Joins: Pony_6_ (WebChat@Pony-g3tqf4.tukw.qwest.net)
+[05:32:09] *** Joins: Pony_8 (WebChat@Pony-pg14ae.bigpond.net.au)
+[05:32:56] <Pony_8> Ohhhgod
+[05:33:03] *** Parts: Pony_8 (WebChat@Pony-pg14ae.bigpond.net.au) ("")
+[05:33:28] *** Quits: kondra (WebChat@Pony-ddsc9l.res.rr.com) (Quit: Page closed)
+[05:34:15] *** Quits: Pony_6_ (WebChat@Pony-g3tqf4.tukw.qwest.net) (Quit: Page closed)
+[05:41:39] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[05:47:22] *** Joins: Pony_0 (WebChat@Pony-s7k.edl.199.128.IP)
+[05:49:03] *** Quits: Pony_0 (WebChat@Pony-s7k.edl.199.128.IP) (Quit: Page closed)
+[06:04:51] *** Quits: Pony_6 (~WebChat@Pony-u4ne5h.162-221-109-net.sccoast.net) (Ping timeout: 121 seconds)
+[06:04:59] *** Eventide is now known as Eventide|Sleepies
+[06:06:25] *** iamalion is now known as iam[a]lion
+[06:59:25] *** Quits: LuckyLeaf (LuckyLeaf@wandering.fateweaver) (Quit: Leaving)
+[07:22:59] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[07:22:59] *** Celestia sets mode: +o Mike_Coltfield
+[07:24:10] *** Soarin is now known as Snoarin
+[07:37:33] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Quit: )
+[07:49:33] *** Quits: Snoarin (Gigabit@Bazinga) (Quit: Canternet Public Bouncer!)
+[08:02:15] *** RedHelper is now known as Creeps|AFK
+[08:16:40] *** ama is now known as ama|sleep
+[09:04:10] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[09:42:44] *** Fluttershi is now known as afkshi
+[12:15:28] *** Joins: mib_oyf08v (Mibbit@Pony-o90.6k0.57.39.IP)
+[12:17:05] *** Quits: mib_oyf08v (Mibbit@Pony-o90.6k0.57.39.IP) (Quit: http://www.mibbit.com ajax IRC Client)
+[14:04:53] *** Joins: Freak (Freak@Freak.Freak.Freak.Freak)
+[14:04:57] *** Parts: Freak (Freak@Freak.Freak.Freak.Freak) ()
+[14:32:30] *** Silverlight is now known as Silverlight|away
+[15:04:27] *** Eventide|Sleepies is now known as Eventide
+[15:06:09] *** Quits: Rainbow14 (chat@Pony-eo4r8l.cable.virginm.net) (Ping timeout: 121 seconds)
+[15:09:51] *** Joins: Rainbow14 (chat@Pony-eo4r8l.cable.virginm.net)
+[15:29:24] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[15:48:50] *** Seoson is now known as Seoson|Away
+[16:34:51] *** ama|sleep is now known as ama|work
+[18:23:28] *** iam[a]lion is now known as iamalion
+[18:26:38] *** Joins: daniwxp11 (WebChat@Pony-ma0nta.dynamicIP.rima-tde.net)
+[19:13:42] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:17:33] *** Unixkitty is now known as Unikitty
+[20:17:43] *** Unikitty is now known as Unixkitty
+[20:21:26] *** Quits: CarlGel (Rika-chan@Pony-m9ushv.nipah.moe) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Duck (sid3009@Pony-4r56u0.ealing.irccloud.com) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Q0 (Q0@literallyshit.net) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Apple_Bloom (sid52418@the.canon.pony) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Datguy (Datguy@lord.of.nreboot.c0m) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Persona (Tilde@Pony-rgrlnu.78km.c1tq.6000.2605.IP) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Fair_Friend (Sober@D.e.A.d.L.i.n.E) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: johnsey (johnsey@into.the.nethers) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: One-Trick (Octavia@hyenaspots.com) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Seoson|Away (Seoson@pony.kab-s.de) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Dashie (rainbow@Pony-m1cetk.ponix.space) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Princess_Pwny (Canternet@Canterlot.Castle) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: RubyPinch (x@Gem.Stealer) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Alex (DZ@0337E9.505EFE.D43CFD.B11AA4) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: P007 (~WebChat@Pony-vghtdo.vc.shawcable.net) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Unixkitty (uni@the.unicorn.cat) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: klaxa (klaxa@Pony-ail.8pm.0.134.IP) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: LightningCrash (lightning@property.of.moonlightning) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Eventide (uid61788@Tips.Fedora) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: iamalion (lion@king.of.da.jungle) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Fusl (Fusl@1.0.0.127.in-addr.arpa.li) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Ashfire (Ashfire@Ashfire.bronytv.net) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Rainbow14 (chat@Pony-eo4r8l.cable.virginm.net) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Colgate (rabbit@brushie.horse) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Lapsus (Lapsus@i-forget.ca) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Creeps|AFK (RedHelper@The.Pony.That.Makes.You.Smile) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Silverlight|away (silverlight@voiceofequestria.com) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Celestia (Celestia@The.Sun.Princess) (cadance.canternet.org cloudchaser.canternet.org)
+[20:21:28] *** Quits: Shutter (tips@sudoku.prevention.hotline) (cadance.canternet.org cloudchaser.canternet.org)
+[20:21:28] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 146 seconds)
+[20:21:28] *** Quits: afkshi (Fluttershi@Hipsterluna.is.my.waifu) (Ping timeout: 149 seconds)
+[20:21:35] *** Quits: daniwxp11 (WebChat@Pony-ma0nta.dynamicIP.rima-tde.net) (Ping timeout: 121 seconds)
+[20:21:36] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Connection closed)
+[20:21:43] *** Joins: Silverlight (silverlight@Pony-1d7k34.res.rr.com)
+[20:21:43] *** Quits: Dawn (Dusk@dusky.horse) (Ping timeout: 121 seconds)
+[20:22:02] *** Joins: nomad (dashite@the.Luna.Diviner)
+[20:22:05] *** Joins: Shutter (tips@sudoku.prevention.hotline)
+[20:22:05] *** Joins: Celestia (Celestia@The.Sun.Princess)
+[20:22:05] *** cloudchaser.canternet.org sets mode: +aoo Shutter Shutter Celestia
+[20:22:15] *** Joins: iamalion (lion@Pony-mug.s02.178.76.IP)
+[20:22:41] *** Joins: Zuzu (zuzu@is.robo.licious)
+[20:22:48] *** Silverlight is now known as Pony_95998
+[20:22:58] *** Joins: Pony_49172 (Mibbit@Pony-pa7.m5o.189.182.IP)
+[20:23:06] <Pony_49172> what happen
+[20:23:09] *** Joins: Dusk (Dusk@Pony-fkc.i75.99.192.IP)
+[20:23:12] <Pony_49172> what happen
+[20:23:21] *** Joins: Colgate (rabbit@brushie.horse)
+[20:23:30] <Pony_49172> when will services come back ?
+[20:23:30] *** Celestia sets mode: +ao Colgate Colgate
+[20:23:30] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (Ping timeout: 121 seconds)
+[20:23:35] <Pony_49172> when will services come back ?
+[20:24:12] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[20:24:12] *** Celestia sets mode: +o Mike_Coltfield
+[20:24:12] *** Joins: Pony_48498 (Lapsus@Pony-5m46mf.cable.rogers.com)
+[20:24:12] *** Pony_49172 is now known as Imraan
+[20:24:15] <iamalion> ovh?
+[20:24:20] *** Parts: Imraan (Mibbit@Beyond.Your.Limits) ()
+[20:24:44] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[20:24:45] <iamalion> just had a few servers go down on another network thanks to ovh :<
+[20:25:28] <Colgate> this wasn't OVH
+[20:25:28] <Colgate> server just went poof
+[20:25:28] <Colgate> looking into it :P
+[20:26:11] *** Joins: Fusl (Fusl@148.163.189.28)
+[20:26:25] *** Fusl is now known as Pony_1922
+[20:27:08] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[20:27:17] <nomad> I can only guess it's a DDOS but that's like always the assumed thing... it's probably a fault in hardware somewhere
+[20:27:52] <iamalion> im shocked Colgate
+[20:28:11] *** Joins: HERO (Mibbit@Ye.Tera.HERO.Idhar.Hai)
+[20:28:28] <HERO> Asalam O Alaikum ALL
+[20:28:39] *** Joins: RubyPinch (x@Gem.Stealer)
+[20:28:39] <iamalion> ohai2u
+[20:28:59] <HERO> am having some problem
+[20:28:59] <iamalion> hey cutie
+[20:29:34] <iamalion> RubyPinch fix it fix it fix it
+[20:29:39] * iamalion flails
+[20:30:00] <HERO> some ddos i think on this server?
+[20:30:15] <Colgate> yeah, looks like it
+[20:30:20] *** Joins: Ashley (Ashfire@Pony-fkc.i75.99.192.IP)
+[20:30:43] <Colgate> bandwidth graph just spikes straight up :P
+[20:30:43] <HERO> am using channel #gschatroom
+[20:30:47] *** Joins: Pony_9 (WebChat@Pony-5kp.cdn.77.176.IP)
+[20:31:31] <nomad> how sad...
+[20:31:31] <nomad> go figure
+[20:31:36] *** Pony_48498 is now known as Lapsus
+[20:31:36] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[20:31:41] <HERO> okz
+[20:31:43] *** Joins: Imraan (Mibbit@Beyond.Your.Limits)
+[20:31:48] <Imraan> what's wrong canternet?
+[20:32:05] <Colgate> ddos
+[20:32:05] <HERO> Imraan:  u bhi aa gaya?
+[20:32:08] <Colgate> /shrug
+[20:32:14] <HERO> had hai
+[20:32:16] <Colgate> nothing to do but wait
+[20:32:19] <Imraan> Colgate ok 
+[20:32:25] *** HERO was kicked by Colgate (English only)
+[20:32:40] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Connection closed)
+[20:32:44] <Pony_9> I can connect from one address, but not from another
+[20:32:45] <Pony_9> Woo
+[20:32:55] *** Joins: HERO (Mibbit@Ye.Tera.HERO.Idhar.Hai)
+[20:33:11] <nomad> savage Colgate
+[20:33:11] <Imraan> i guess it will take time so i should get wait for it 
+[20:33:16] <HERO> opS
+[20:33:16] <HERO> Imraan: there?
+[20:33:18] *** Joins: klaxa (klaxa@Pony-ail.8pm.0.134.IP)
+[20:33:29] <Imraan> HERO what
+[20:33:38] *** Joins: Unixkitty (uni@the.unicorn.cat)
+[20:33:56] <iamalion> ddosing irc networks is so lame. dealing with that on another network. daily ddos. gets old v quickly
+[20:34:00] <HERO> nothin
+[20:34:02] *** Quits: Pony_95998 (silverlight@Pony-1d7k34.res.rr.com) (Ping timeout: 121 seconds)
+[20:34:05] <HERO> Thankss Colgate 
+[20:34:09] <HERO> see yaa
+[20:34:10] <HERO> Take Cares ALL
+[20:34:12] <HERO> Stay Blessed
+[20:34:19] <nomad> laters
+[20:34:22] *** Quits: HERO (Mibbit@Ye.Tera.HERO.Idhar.Hai) (Quit: ALLAH Hafiz)
+[20:34:35] *** Joins: Silverlight (silverlight@Pony-a1f.uaq.74.24.IP)
+[20:34:59] *** Parts: Imraan (Mibbit@Beyond.Your.Limits) ()
+[20:35:14] *** Quits: Pony_9 (WebChat@Pony-5kp.cdn.77.176.IP) (Quit: )
+[20:35:59] *** Quits: nomad (dashite@the.Luna.Diviner) (Connection closed)
+[20:37:54] *** Joins: nomad (dashite@the.Luna.Diviner)
+[20:37:58] *** Quits: iamalion (lion@king.of.da.jungle) (Ping timeout: 121 seconds)
+[20:38:32] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[20:38:32] *** Joins: iamalion (lion@king.of.da.jungle)
+[20:39:16] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[20:39:25] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[20:39:25] *** chrysalis.canternet.org sets mode: +o Googie
+[20:40:06] *** Joins: Eventide (uid61788@Tips.Fedora)
+[20:42:29] *** Joins: Rainbow14 (chat@Pony-ss0.osa.44.82.IP)
+[20:42:29] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (cloudchaser.canternet.org chrysalis.canternet.org)
+[20:42:29] *** Quits: Colgate (rabbit@brushie.horse) (Connection closed)
+[20:43:03] *** Quits: nomad (dashite@the.Luna.Diviner) (Ping timeout: 121 seconds)
+[20:43:03] *** Quits: RubyPinch (x@Gem.Stealer) (Ping timeout: 121 seconds)
+[20:43:03] *** Quits: Unixkitty (uni@the.unicorn.cat) (Ping timeout: 121 seconds)
+[20:43:29] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Connection closed)
+[20:44:31] *** Quits: klaxa (klaxa@Pony-ail.8pm.0.134.IP) (Ping timeout: 121 seconds)
+[20:46:58] *** Joins: Unixkitty (uni@the.unicorn.cat)
+[20:46:58] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[20:46:58] *** Quits: Eventide (uid61788@Tips.Fedora) (Ping timeout: 121 seconds)
+[20:46:58] *** Quits: iamalion (lion@king.of.da.jungle) (Ping timeout: 122 seconds)
+[20:46:58] *** Joins: klaxa (klaxa@Pony-ail.8pm.0.134.IP)
+[20:46:58] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 122 seconds)
+[20:46:58] *** Joins: iamalion (lion@king.of.da.jungle)
+[20:46:58] *** Joins: Princess_Pwny (Canternet@Pony-rdnc4g.princesspwny.com)
+[20:46:58] *** Princess_Pwny is now known as Pony_1559
+[20:46:58] *** Joins: nomad (dashite@the.Luna.Diviner)
+[20:47:00] *** Quits: ama|work (ama@ama.bronytv.net) (Ping timeout: 121 seconds)
+[20:47:10] *** Joins: RubyPinch (x@Pony-a3j.5g7.131.104.IP)
+[20:48:10] *** Quits: Lapsus (Lapsus@i-forget.ca) (Ping timeout: 121 seconds)
+[20:48:10] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Ping timeout: 121 seconds)
+[20:48:10] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Connection closed)
+[20:48:10] *** Quits: Celestia (Celestia@The.Sun.Princess) (cadance.canternet.org cloudchaser.canternet.org)
+[20:48:11] *** Quits: Shutter (tips@sudoku.prevention.hotline) (cadance.canternet.org cloudchaser.canternet.org)
+[20:48:11] *** Quits: Pony_1559 (Canternet@Pony-rdnc4g.princesspwny.com) (cadance.canternet.org cloudchaser.canternet.org)
+[20:48:11] *** Quits: nomad (dashite@the.Luna.Diviner) (cadance.canternet.org cloudchaser.canternet.org)
+[20:48:11] *** Quits: iamalion (lion@king.of.da.jungle) (cadance.canternet.org cloudchaser.canternet.org)
+[20:48:11] *** Quits: Unixkitty (uni@the.unicorn.cat) (cadance.canternet.org cloudchaser.canternet.org)
+[20:48:11] *** Quits: klaxa (klaxa@Pony-ail.8pm.0.134.IP) (cadance.canternet.org cloudchaser.canternet.org)
+[20:48:29] *** Quits: Sakura (Sakura@is.a.very.derpy.pony) (Ping timeout: 122 seconds)
+[20:48:35] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (Ping timeout: 121 seconds)
+[20:50:16] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (Ping timeout: 121 seconds)
+[20:50:23] *** Joins: Shutter (tips@sudoku.prevention.hotline)
+[20:50:23] *** Joins: Celestia (Celestia@The.Sun.Princess)
+[20:50:23] *** Joins: Unixkitty (uni@the.unicorn.cat)
+[20:50:23] *** Joins: Imraan (Mibbit@Beyond.Your.Limits)
+[20:50:23] *** Joins: Pony_1559 (Canternet@Pony-rdnc4g.princesspwny.com)
+[20:50:23] *** Joins: nomad (dashite@the.Luna.Diviner)
+[20:50:23] *** Joins: iamalion (lion@king.of.da.jungle)
+[20:50:23] *** Joins: Zuzu (zuzu@is.robo.licious)
+[20:50:23] *** Joins: klaxa (klaxa@Pony-ail.8pm.0.134.IP)
+[20:50:23] *** cloudchaser.canternet.org sets mode: +aoo Shutter Shutter Celestia
+[20:50:45] *** Joins: Lapsus (Lapsus@Pony-5m46mf.cable.rogers.com)
+[20:50:45] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[20:50:46] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[20:50:46] *** chrysalis.canternet.org sets mode: +o Googie
+[20:50:46] *** Joins: Sakura (Sakura@Pony-fkc.i75.99.192.IP)
+[20:50:49] *** Joins: Finwe (vhalkola@Pony-25l.vcn.233.130.IP)
+[20:51:07] *** Joins: Eventide (uid61788@Tips.Fedora)
+[20:51:10] *** Joins: Minuette (rabbit@brushie.horse)
+[20:51:10] *** Celestia sets mode: +ao Minuette Minuette
+[20:51:11] *** Quits: RubyPinch (x@Gem.Stealer) (Ping timeout: 121 seconds)
+[20:51:19] *** Quits: Rainbow14 (chat@Pony-ss0.osa.44.82.IP) (Ping timeout: 121 seconds)
+[20:51:29] *** Sakura is now known as Pony_36606
+[20:51:50] <Imraan> Welcome Minuette plz fix this out 
+[20:51:55] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (cloudchaser.canternet.org chrysalis.canternet.org)
+[20:52:14] *** Joins: Colgate (rabbit@brushie.horse)
+[20:52:14] *** Quits: Pony_1922 (Fusl@148.163.189.28) (Ping timeout: 121 seconds)
+[20:52:14] *** Celestia sets mode: +ao Colgate Colgate
+[20:52:28] *** Joins: RubyPinch (x@Gem.Stealer)
+[20:52:47] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[20:52:51] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[20:52:51] *** chrysalis.canternet.org sets mode: +o Googie
+[20:53:06] *** Pony_36606 is now known as Sakura
+[20:53:09] *** Joins: Fusl (Fusl@148.163.189.28)
+[20:53:29] *** Quits: wolfyshy (woof@fluttering.shyly.through.the.forest) (Ping timeout: 121 seconds)
+[20:53:35] *** Sakura is now known as Pony_30073
+[20:53:45] *** Pony_30073 is now known as Saku
+[20:54:12] *** Parts: Imraan (Mibbit@Beyond.Your.Limits) ()
+[20:54:18] *** Joins: Compu (compu@snuggly.filly)
+[20:54:27] <Compu> did everything just die?
+[20:54:56] <nomad> Compu: stuff is happening
+[20:54:56] *** Quits: Fusl (Fusl@148.163.189.28) (cloudchaser.canternet.org chrysalis.canternet.org)
+[20:54:56] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (cloudchaser.canternet.org chrysalis.canternet.org)
+[20:55:07] *** Joins: Rainbow14 (chat@Pony-eo4r8l.cable.virginm.net)
+[20:55:12] <Minuette> there's an ongoing ddos, yes
+[20:55:14] <nomad> ^
+[20:55:18] <Compu> nomad: ded is happening
+[20:55:31] <nomad> well theres nothing we can do about it butt wait so :(
+[20:55:57] *** Joins: Fusl (Fusl@148.163.189.28)
+[20:55:57] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[20:55:57] *** chrysalis.canternet.org sets mode: +o Googie
+[20:56:26] <nomad> unless you'd like to donate new servers :D :D 
+[20:56:50] <Compu> sorry, dont have the bandwidth for it
+[20:57:43] *** Parts: Compu (compu@snuggly.filly) ("This channel just got a whole lot less adorable!")
+[20:57:52] <AppleDash> (Fun fact, IRC is very low-bandwidth)
+[20:57:55] *** Quits: Fusl (Fusl@148.163.189.28) (cloudchaser.canternet.org chrysalis.canternet.org)
+[20:57:55] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (cloudchaser.canternet.org chrysalis.canternet.org)
+[21:02:39] *** Joins: johnsey (johnsey@into.the.nethers)
+[21:02:39] *** Joins: One-Trick (Octavia@hyenaspots.com)
+[21:02:39] *** Joins: Persona (Tilde@Pony-rgrlnu.78km.c1tq.6000.2605.IP)
+[21:02:39] *** Joins: Dashie (rainbow@Pony-5bk85g.hacker.horse)
+[21:02:39] *** Joins: CarlGel (Rika-chan@Pony-m9ushv.nipah.moe)
+[21:02:39] *** Joins: Duck (sid3009@Pony-4r56u0.ealing.irccloud.com)
+[21:02:39] *** Joins: Apple_Bloom (sid52418@the.canon.pony)
+[21:02:39] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[21:02:39] *** Joins: Q0 (Q0@literallyshit.net)
+[21:02:39] *** Joins: Datguy (Datguy@lord.of.nreboot.c0m)
+[21:02:39] *** Joins: Seoson|Away (Seoson@pony.kab-s.de)
+[21:02:39] *** Joins: Fair_Friend (Sober@D.e.A.d.L.i.n.E)
+[21:02:39] *** derpy.canternet.org sets mode: +aoo johnsey johnsey One-Trick
+[21:02:51] *** Joins: cool110 (mark@Incidental.Unicorn.cool110)
+[21:04:40] *** Quits: CarlGel (Rika-chan@Pony-m9ushv.nipah.moe) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: Duck (sid3009@Pony-4r56u0.ealing.irccloud.com) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: Q0 (Q0@literallyshit.net) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: Dashie (rainbow@Pony-5bk85g.hacker.horse) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: Apple_Bloom (sid52418@the.canon.pony) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: Datguy (Datguy@lord.of.nreboot.c0m) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: Persona (Tilde@Pony-rgrlnu.78km.c1tq.6000.2605.IP) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: Fair_Friend (Sober@D.e.A.d.L.i.n.E) (cadance.canternet.org derpy.canternet.org)
+[21:04:51] *** Quits: johnsey (johnsey@into.the.nethers) (cadance.canternet.org derpy.canternet.org)
+[21:04:51] *** Quits: One-Trick (Octavia@hyenaspots.com) (cadance.canternet.org derpy.canternet.org)
+[21:04:51] *** Quits: Seoson|Away (Seoson@pony.kab-s.de) (cadance.canternet.org derpy.canternet.org)
+[21:05:35] *** Quits: Colgate (rabbit@brushie.horse) (Connection closed)
+[21:06:15] *** Quits: nomad (dashite@the.Luna.Diviner) (Connection closed)
+[21:07:10] *** Joins: Colgate (rabbit@brushie.horse)
+[21:07:11] *** Celestia sets mode: +ao Colgate Colgate
+[21:07:44] *** Quits: Rainbow14 (chat@Pony-eo4r8l.cable.virginm.net) (Ping timeout: 121 seconds)
+[21:10:33] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (Ping timeout: 121 seconds)
+[21:13:19] *** Joins: Rainbow14 (chat@Pony-eo4r8l.cable.virginm.net)
+[21:13:19] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[21:15:48] *** Quits: Finwe (vhalkola@Pony-25l.vcn.233.130.IP) (Ping timeout: 121 seconds)
+[21:17:29] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[21:18:29] *** Quits: Colgate (rabbit@brushie.horse) (Ping timeout: 121 seconds)
+[21:18:29] *** Joins: Colgate (rabbit@brushie.horse)
+[21:18:29] *** Celestia sets mode: +ao Colgate Colgate
+[21:19:37] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[21:19:37] *** Joins: Persona (Tilde@Pony-rgrlnu.78km.c1tq.6000.2605.IP)
+[21:19:37] *** Joins: CarlGel (Rika-chan@Pony-m9ushv.nipah.moe)
+[21:19:37] *** Joins: johnsey (johnsey@into.the.nethers)
+[21:19:37] *** Joins: Duck (sid3009@Pony-4r56u0.ealing.irccloud.com)
+[21:19:37] *** Joins: Apple_Bloom (sid52418@the.canon.pony)
+[21:19:37] *** Joins: One-Trick (Octavia@hyenaspots.com)
+[21:19:37] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[21:19:37] *** Joins: Dashie (rainbow@Pony-5bk85g.hacker.horse)
+[21:19:37] *** Joins: Datguy (Datguy@lord.of.nreboot.c0m)
+[21:19:37] *** Joins: Q0 (Q0@literallyshit.net)
+[21:19:37] *** Joins: Fair_Friend (Sober@D.e.A.d.L.i.n.E)
+[21:19:37] *** discord.canternet.org sets mode: +aoo johnsey johnsey One-Trick
+[21:21:35] *** Quits: Celestia (Celestia@The.Sun.Princess) (cloudchaser.canternet.org services.canternet.org)
+[21:21:47] *** Joins: Celestia (Celestia@The.Sun.Princess)
+[21:21:47] *** services.canternet.org sets mode: +o Celestia
+[21:21:51] *** Joins: Toothpaste (uid63062@Pony-7k7osr.irccloud.com)
+[21:22:46] *** Joins: Fusl (Fusl@148.163.189.28)
+[21:22:46] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[21:22:46] *** Joins: Monochrome (Sentoki@Pony-8e2sl3.publicBNC.canternet.org)
+[21:22:46] *** Joins: ama|bnc (ama@Pony-6g18v4.publicBNC.canternet.org)
+[21:22:46] *** Joins: RedHelper (RedHelper@Pony-i2iccc.publicBNC.canternet.org)
+[21:22:46] *** chrysalis.canternet.org sets mode: +o Googie
+[21:25:26] *** Joins: Pony_56928 (Fluttershi@Pony-43vgov.publicBNC.canternet.org)
+[21:25:42] *** Joins: nomad (dashite@the.Luna.Diviner)
+[21:26:14] *** Parts: cool110 (mark@Incidental.Unicorn.cool110) ("BIBI SKSK")
+[21:27:51] *** Parts: Minuette (rabbit@brushie.horse) ("Luna IRC 1.3. Praise the goddess of the night.")
+[21:45:05] *** Toothpaste is now known as Toothie|AFK
+[21:55:23] *** Saku is now known as Nyu
+[21:55:28] *** Nyu is now known as Sakura
+[22:12:56] *** Pony_56928 is now known as Fluttershi
+[22:16:28] *** Quits: Zuzu (zuzu@is.robo.licious) (Ping timeout: 121 seconds)
+[22:18:02] *** Quits: nomad (dashite@the.Luna.Diviner) (Ping timeout: 121 seconds)
+[22:47:47] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[23:17:40] *** Joins: nomad (dashite@the.Luna.Diviner)
+[23:31:10] *** Joins: Pony_9 (~WebChat@Pony-8ujf9q.sntcca.sbcglobal.net)
+[23:31:27] *** Pony_9 is now known as T_K
+[23:32:55] *** Quits: nomad (dashite@the.Luna.Diviner) (Connection closed)
+[23:56:29] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)

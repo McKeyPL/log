@@ -1,0 +1,139 @@
+[00:03:39] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[00:06:28] *** Joins: dukedave (sid666@gateway/web/irccloud.com/x-pdwnlykkoyzatrby)
+[00:13:36] *** Joins: alastairp (sid1249@gateway/web/irccloud.com/x-kaglyxksiwzvjcpf)
+[00:15:08] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-bnzvhoxoaanxoeaf)
+[00:17:26] *** Joins: jefferai (sid1300@kde/mitchell)
+[00:17:42] *** Joins: hatstand (sid2952@gateway/web/irccloud.com/x-yznakecosdjmydxg)
+[00:52:28] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[02:46:44] *** Joins: github-tomahawk (~github-to@192.30.252.34)
+[02:46:44] <github-tomahawk> [13tomahawk] 15dschmidt pushed 3 new commits to 06osx-fixes: 02http://git.io/vRxSn
+[02:46:44] <github-tomahawk> 13tomahawk/06osx-fixes 142afc578 15Dominik Schmidt: Fix qt5 plugin lookup path
+[02:46:44] <github-tomahawk> 13tomahawk/06osx-fixes 1492c66d7 15Dominik Schmidt: Fix snorenotify plugin lookup path
+[02:46:44] <github-tomahawk> 13tomahawk/06osx-fixes 1475427a7 15Dominik Schmidt: Fixup libs that were fixed up but aren't correct anymore (because they reference ../lib while we use ../Frameworks/
+[02:46:44] *** Parts: github-tomahawk (~github-to@192.30.252.34) ()
+[02:53:27] *** Quits: Karbowiak (~Karbowiak@ip979.alb335.cust.comxnet.dk) (Quit: ZNC 1.7.x-git-453-46f937a - http://znc.in)
+[02:53:36] *** Joins: Karbowiak (~Karbowiak@ip979.alb335.cust.comxnet.dk)
+[02:54:11] *** Quits: jefferai (sid1300@kde/mitchell) (Ping timeout: 264 seconds)
+[02:58:55] *** Joins: jefferai (sid1300@kde/mitchell)
+[03:11:08] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[04:35:13] *** Quits: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com) (Read error: Connection reset by peer)
+[05:24:55] *** Joins: mgue (~mgue@x5ce2f038.dyn.telefonica.de)
+[05:27:49] *** Quits: mgue2 (~mgue@f053022156.adsl.alicedsl.de) (Ping timeout: 250 seconds)
+[08:47:45] *** Joins: rotzbouw (~tgoeckel@port-83-236-164-90.static.qsc.de)
+[08:47:56] <rotzbouw> moinsen
+[08:48:18] <rotzbouw> letting you know that libechonest has been updated in the official debian repos: https://packages.debian.org/de/sid/libechonest-dev
+[08:48:29] <rotzbouw> hope that's the most recent version ;)
+[09:08:48] *** ugly_cat_ is now known as ugly_cat
+[10:07:27] <rotzbouw> however, forcing version during cmake by setting -DPC_ECHONEST_VERSION=999.9.9 results in "-- Could NOT find Echonest (missing:  ECHONEST_LIBRARIES ECHONEST_INCLUDE_DIR) (found suitable version "999.9.9", minimum required is "2.3.0")"
+[10:10:38] <rotzbouw> fixed it by providing all params like so: -DPC_ECHONEST_VERSION=999.9.9 -DECHONEST_LIBRARIES=/usr/lib/x86_64-linux-gnu/libechonest.so.2.3.1 -DECHONEST_INCLUDE_DIR=/usr/include/echonest
+[10:11:00] <rotzbouw> if I had access to the wiki right now, I'd add the info
+[10:27:58] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[11:01:06] *** Quits: hatstand (sid2952@gateway/web/irccloud.com/x-yznakecosdjmydxg) (Ping timeout: 240 seconds)
+[11:01:06] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-bnzvhoxoaanxoeaf) (Ping timeout: 240 seconds)
+[11:01:36] *** Joins: hatstand (sid2952@gateway/web/irccloud.com/x-vooxcrjffrcdlkmy)
+[11:03:30] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-zcyathtywcjicbfs)
+[11:06:23] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:11:35] *** Quits: glaxx (~glaxx@glaxx.net) (Remote host closed the connection)
+[11:19:26] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-zcyathtywcjicbfs) (Ping timeout: 240 seconds)
+[11:19:46] *** Quits: dukedave (sid666@gateway/web/irccloud.com/x-pdwnlykkoyzatrby) (Ping timeout: 240 seconds)
+[11:20:57] *** Joins: dukedave (sid666@gateway/web/irccloud.com/x-voiesxglacfzgzts)
+[11:20:58] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-bkavzttczybrhfma)
+[11:23:01] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[11:27:21] *** Joins: knicklux (~knicklux@176.6.54.126)
+[11:34:35] *** Joins: glaxx (~glaxx@glaxx.net)
+[11:39:26] *** Joins: r_rios (~Hitleap@186.214.186.158)
+[11:39:26] *** Quits: glaxx (~glaxx@glaxx.net) (Remote host closed the connection)
+[12:06:29] <jherskowitz> rotzbouw: we moved the wiki to github
+[12:06:55] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Ping timeout: 250 seconds)
+[12:19:17] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[12:33:02] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[12:33:03] *** Quits: knicklux (~knicklux@176.6.54.126) (Remote host closed the connection)
+[12:48:25] *** Joins: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com)
+[12:58:52] <rotzbouw> jherskowitz: hey, okay
+[13:02:20] *** Parts: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com) ("PING 1449748941")
+[13:37:47] *** Quits: pinheiro (~pinheiro@2001:8a0:f884:a101:92b1:1cff:fe77:db0d) (Quit: Konversation terminated!)
+[14:00:31] *** Joins: glaxx (~glaxx@glaxx.net)
+[14:10:34] *** Quits: Karbowiak (~Karbowiak@ip979.alb335.cust.comxnet.dk) (Read error: Connection reset by peer)
+[14:13:04] *** Joins: Karbowiak (~Karbowiak@ip979.alb335.cust.comxnet.dk)
+[15:43:04] *** Joins: cutior1 (guest-cuti@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[15:43:05] <cutior1> Hello
+[15:43:15] <cutior1> Has anyone managed to get connected to Bandcamp?
+[15:51:31] <rotzbouw> cutior1: bandcamp are not giving out free api keys anymore..
+[15:52:03] <rotzbouw> the resolvers uses the demo api key...
+[15:52:09] <rotzbouw> *resolver
+[16:00:36] *** Quits: rotzbouw (~tgoeckel@port-83-236-164-90.static.qsc.de) (Quit: Konversation terminated!)
+[16:16:54] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[16:34:38] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[16:50:30] *** Parts: cutior1 (guest-cuti@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[17:07:48] *** Joins: pinheiro (~pinheiro@2001:8a0:f884:a101:92b1:1cff:fe77:db0d)
+[17:08:06] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Ping timeout: 240 seconds)
+[17:24:44] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[17:29:36] *** Joins: modeno1 (modeno1@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[17:29:36] <modeno1> dommex: I'm trying to build tomahawk but I keep having errors on cmake. Merely following the instructions on the wiki is not working for me. 
+[17:29:52] <dommex> modeno1: ok :-)
+[17:29:56] <dommex> what are the errors?
+[17:35:21] <modeno1> i was having some errors about cmake not finding the "ecm" package, but I've fixed that already, I'm currently following the packages cmake says that are missing and installing them one by one
+[17:36:58] <dommex> modeno1: cool
+[17:37:08] <dommex> maybe take notes and let me know which ones you had to install
+[17:37:12] <dommex> i can update the wiki then
+[17:38:19] <modeno1> I keep getting this one error at the top of the log "CMake Warning at CMakeModules/FindSparsehash.cmake:18 (MESSAGE):
+[17:38:20] <modeno1>   You don't have pkg-config and so the google-sparsehash version check does
+[17:38:21] <modeno1>   not work!
+[17:38:22] <modeno1> " even though I have pkg-config installed
+[17:40:07] <dommex> fishy
+[17:40:10] <dommex> what platform?
+[17:43:13] <modeno1> ubuntu
+[17:43:42] <modeno1> 14.04
+[17:46:09] *** Quits: pinheiro (~pinheiro@2001:8a0:f884:a101:92b1:1cff:fe77:db0d) (Quit: Konversation terminated!)
+[17:54:38] *** Joins: knicklux (~knicklux@openvpn-cl-200-150.scc.kit.edu)
+[17:59:38] *** Joins: soee (~soee@95.49.218.3)
+[18:10:47] <modeno1> Plus I've installed libechonest and cmake doesn't recognise it
+[18:11:49] <modeno1> But I did it using apt-get. I assumed there would be no issues, though
+[18:20:11] *** Quits: knicklux (~knicklux@openvpn-cl-200-150.scc.kit.edu) (Read error: Connection reset by peer)
+[18:26:36] <TheOneRing> dommex: muesli whats the state of the preview thing pr?
+[18:26:38] <TheOneRing> :)
+[18:27:00] <dommex> didnt i merge it? no clue :P
+[18:34:04] *** Parts: dukedave (sid666@gateway/web/irccloud.com/x-voiesxglacfzgzts) ()
+[18:40:01] <lfranchi> modeno1: did you also install the -dev package? that includes the headers
+[18:40:07] <lfranchi> i.e. libechonest-dev or whatever it's called on your distro
+[18:41:18] *** Quits: r_rios (~Hitleap@186.214.186.158) (Ping timeout: 256 seconds)
+[18:41:45] <modeno1> lfranchi: yeah, i did
+[18:42:33] <modeno1> i followed the instructions on the wiki first, building libechonest from a git clone, and when that didn't work i tried with aptget
+[18:57:41] *** Joins: hespin (guest-hesp@ec2-52-11-63-83.us-west-2.compute.amazonaws.com)
+[18:57:41] <hespin> In which language Tomahawk UI built in?
+[18:58:45] *** Parts: hespin (guest-hesp@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[19:23:49] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Remote host closed the connection)
+[19:27:42] *** Joins: jamesaxl (~jamesaxl@41.248.179.36)
+[19:56:26] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Ping timeout: 240 seconds)
+[19:59:46] *** Parts: modeno1 (modeno1@ec2-52-11-63-83.us-west-2.compute.amazonaws.com) ()
+[20:46:13] *** Joins: soee_ (~soee@agwr188.neoplus.adsl.tpnet.pl)
+[20:50:20] *** Quits: soee (~soee@95.49.218.3) (Ping timeout: 272 seconds)
+[20:54:53] *** Joins: r_rios (~Hitleap@186.214.186.158)
+[20:59:54] <zopieux> D/PlaybackService: Killtimer checked if I should die, but I survived *cheer*
+[20:59:56] <zopieux> :D
+[21:08:10] *** Quits: r_rios (~Hitleap@186.214.186.158) (Changing host)
+[21:08:10] *** Joins: r_rios (~Hitleap@hyadesinc/pub/oa)
+[21:51:13] <dommex> zopieux: wat?
+[21:54:34] <zopieux> random android debug message from tomahawk
+[22:37:53] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[22:57:15] *** Joins: github-tomahawk (~github-to@192.30.252.40)
+[22:57:15] <github-tomahawk> [13tomahawk] 15dschmidt pushed 3 new commits to 06osx-fixes: 02http://git.io/v0JyZ
+[22:57:15] <github-tomahawk> 13tomahawk/06osx-fixes 1466a2d3c 15Dominik Schmidt: Fix snorenotify paths
+[22:57:15] <github-tomahawk> 13tomahawk/06osx-fixes 140223fd5 15Dominik Schmidt: Ship hatchet account again. why was this disabled?!
+[22:57:15] <github-tomahawk> 13tomahawk/06osx-fixes 14e0fa8a4 15Dominik Schmidt: Fix OSX bundle icon
+[22:57:15] *** Parts: github-tomahawk (~github-to@192.30.252.40) ()
+[22:57:30] *** Joins: github-tomahawk (~github-to@192.30.252.42)
+[22:57:30] <github-tomahawk> [13homebrew-tomahawkqt5] 15dschmidt pushed 3 new commits to 06osx-fixes: 02http://git.io/v0Jyz
+[22:57:30] <github-tomahawk> 13homebrew-tomahawkqt5/06osx-fixes 148c00b2c 15Dominik Schmidt: Use my extracmakemodules fork with icon OUTFILE support
+[22:57:30] <github-tomahawk> 13homebrew-tomahawkqt5/06osx-fixes 1422f4015 15Dominik Schmidt: Update snorerelease to 0.6
+[22:57:30] <github-tomahawk> 13homebrew-tomahawkqt5/06osx-fixes 14a870a37 15Dominik Schmidt: Add websocketpp release
+[22:57:30] *** Parts: github-tomahawk (~github-to@192.30.252.42) ()
+[23:00:40] *** Joins: github-tomahawk (~github-to@192.30.252.45)
+[23:00:40] <github-tomahawk> [13homebrew-tomahawkqt5] 15dschmidt opened pull request #10: various updates (06master...06osx-fixes) 02http://git.io/v0JSE
+[23:00:40] *** Parts: github-tomahawk (~github-to@192.30.252.45) ()
+[23:10:07] *** Joins: github-tomahawk (~github-to@192.30.252.40)
+[23:10:07] <github-tomahawk> [13homebrew-tomahawkqt5] 15dschmidt pushed 1 new commit to 06osx-fixes: 02http://git.io/v0J78
+[23:10:07] <github-tomahawk> 13homebrew-tomahawkqt5/06osx-fixes 14c5bfb4b 15Dominik Schmidt: vlc: don't hardcode version in download url
+[23:10:07] *** Parts: github-tomahawk (~github-to@192.30.252.40) ()
+[23:43:54] *** Quits: jamesaxl (~jamesaxl@41.248.179.36) (Ping timeout: 256 seconds)
+[23:44:35] *** Joins: jamesaxl (~jamesaxl@41.248.109.45)

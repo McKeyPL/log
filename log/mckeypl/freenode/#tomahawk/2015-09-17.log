@@ -1,0 +1,154 @@
+[00:35:00] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[00:40:51] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Quit: Leaving)
+[00:51:19] *** Quits: apb1963 (~apb@174-135-20-37.res.bhn.net) (Ping timeout: 260 seconds)
+[00:58:59] *** Quits: soee (~soee@89.186.28.61) (Quit: Konversation terminated!)
+[01:01:21] *** Joins: sythe (uid20450@facade/leader)
+[02:04:54] <theli_ua> MrMaffen: on android how exactly does it know what resolver to call  getStreamUrl from?
+[02:05:04] <theli_ua> I mean, on desktop it used to be py protocol
+[02:06:04] <theli_ua> Is it just basically "if this url is from this resolver run it through this resolver's getStreamUrl before playing" ?
+[02:11:13] *** Quits: jturney (~jon@host86-160-189-124.range86-160.btcentralplus.com) (Read error: Connection reset by peer)
+[03:59:23] *** Joins: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com)
+[05:12:09] *** Joins: mgue1 (~mgue@x5ce4414b.dyn.telefonica.de)
+[05:15:21] *** Quits: mgue (~mgue@f049030060.adsl.alicedsl.de) (Ping timeout: 256 seconds)
+[07:22:28] *** Quits: sythe (uid20450@facade/leader) (Quit: Connection closed for inactivity)
+[09:02:38] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[09:07:21] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[09:30:46] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Remote host closed the connection)
+[10:47:45] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[11:09:17] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[12:10:15] *** Joins: jturney (~jon@host86-160-189-124.range86-160.btcentralplus.com)
+[12:53:16] <domme> theli_ua: should be
+[13:13:14] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[15:01:46] <jherskowitz> theli_ua: ok, will try
+[15:17:24] <jherskowitz> theli_ua: nope https://paste.kde.org/p8zcxqgyl
+[15:17:25] <tomabee> [ KDE Paste | paste.kde.org |  ]
+[16:44:50] *** Quits: zopieux (zopieux@jerrycraft.tk) (Remote host closed the connection)
+[16:45:26] *** Joins: zopieux (zopieux@jerrycraft.tk)
+[17:25:41] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[17:31:43] <jherskowitz> theli_ua: actually, let me try a restart too
+[17:35:38] <jherskowitz> theli_ua: I see it resolve now, but playback fails
+[17:35:40] <jherskowitz> https://paste.kde.org/pvzzfxmbr
+[17:35:40] <tomabee> [ KDE Paste | paste.kde.org |  ]
+[17:59:45] <jherskowitz> huh, wonder what happened in late August that caused this spike https://www.dropbox.com/s/sygl5tlnfyhsn28/Screenshot%202015-09-17%2011.59.12.png?dl=0
+[17:59:48] <tomabee> [ Screenshot 2015-09-17 11.59.12.png | www.dropbox.com | https://photos-4.dropbox.com/t/2/AAAvfd4grH3dBXAX115FLiivBrKQXzzzgSunhWPspo_r0g/12/986425/png/1024x768/2/_/0/4/Screenshot%202015-09-17%2011.59.12.png/CLmaPCABIAIgAyAHKAEoAigDKAc/sygl5tlnfyhsn28/AACg8m7tH-gfXZkX99fey1wIa/Screenshot%202015-09-17%2011.59.12.png ]
+[18:13:46] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Read error: Connection reset by peer)
+[18:14:45] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[18:19:43] *** Joins: HorusHorrendus (~horrendus@2001:629:3200:95:95c1:f5:9c4c:ef57)
+[18:27:19] *** h4ndy is now known as H4ndy
+[18:36:59] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[18:41:45] <theli_ua> :(
+[18:44:29] *** H4ndy is now known as h4ndy
+[19:01:50] <jherskowitz> theli_ua: were those logs good for anything?
+[19:03:19] <theli_ua> well, good for seeing the change still didn't help on your system :(
+[19:03:35] <theli_ua> I'll try to check on my macbook to reproduce the problem 
+[19:03:41] <theli_ua> might be osx+qt5 or something like that
+[19:21:58] <theli_ua> jherskowitz: yeah, doesn't work for me on osx either
+[19:26:05] <jherskowitz> theli_ua: I can try with the nightly
+[19:26:29] <jherskowitz> if you want me to
+[19:26:56] <theli_ua> hm, doesn't hurt to try I guess
+[19:27:32] <theli_ua> btw, whats the status with master+osx+gmusic? its broken, is it?
+[19:29:35] <jherskowitz> theli_ua: fwiw, this is on the OS X nightly (Qt4) Thu Sep 17 2015 - 13:29:09 [0]: JAVASCRIPT: "/Users/jherskowitz/tomahawk-resolvers/youtube/content/contents/code/youtube.js:0" "TypeError: 'undefined' is not a function" "undefined" 
+[19:29:59] <jherskowitz> theli_ua: yes, SSL issue with streaming gmusic
+[19:30:04] <jherskowitz> been broken a while
+[19:30:45] <theli_ua> i wonder if its the same with youtube then
+[19:31:45] <jherskowitz> theli_ua: well, it’s flipped
+[19:31:53] <jherskowitz> YT doesn’t work on Qt5
+[19:31:56] <jherskowitz> sorry
+[19:32:00] <jherskowitz> scratch theat
+[19:32:09] <jherskowitz> it is broken in different ways
+[19:32:21] <jherskowitz> YT on OSX/Qt5 = resolves, fails to stream
+[19:32:31] <jherskowitz> YT on OSX/Qt4 = TypeError: 'undefined' is not a function" "undefined" 
+[19:32:43] <feepk> VDD15 printable program: http://files.feepk.net/_/P5hQPgG (we will provide a limited number at the hotel)
+[19:32:45] <tomabee> [ vdd2015.pdf | files.feepk.net |  ]
+[19:32:57] <jherskowitz> Goog on OSX/Qt5 = resolves, fails to stream
+[19:33:02] <jherskowitz> so yeah, could be similar issue there
+[19:42:59] *** Quits: SolarAquarion (SolarAquar@unaffiliated/solaraquarion) (Ping timeout: 240 seconds)
+[19:52:10] *** Joins: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7)
+[19:52:10] *** Quits: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7) (Changing host)
+[19:52:10] *** Joins: SolarAquarion (SolarAquar@unaffiliated/solaraquarion)
+[20:23:32] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[20:33:51] <HorusHorrendus> alastairp: yay for launching ListenBrainz :)
+[20:34:05] <alastairp> thanks!
+[20:34:23] <alastairp> although, you’ve just reminded me that I forgot completely about your email
+[20:34:29] <alastairp> I’ll chase that up tomorrow
+[20:34:42] <alastairp> so. endpoint for listenbrainz in tomahawk.. when?
+[20:35:53] <HorusHorrendus> alastairp: hehe no problem
+[20:36:04] <HorusHorrendus> alastairp: soon ... why not  ... if the protocol is the same ...
+[20:36:22] <alastairp> we’re not api compatible yet, but that’s in the list
+[20:38:18] <HorusHorrendus> ahh o
+[20:38:20] <HorusHorrendus> ok
+[20:38:31] <HorusHorrendus> api compatible to original audioscrobbler?
+[20:38:39] <HorusHorrendus> but last.fm no longer api compatible to it?
+[20:40:51] <HorusHorrendus> alastairp: and when can tomahawk throw away echonest and use recommendbrainz ;)
+[20:41:11] <alastairp> we have all the parts, but now someone needs to join them together!
+[20:41:25] <alastairp> currently we’re not compatible with as or with lfm
+[20:41:49] <alastairp> though I’ll take requests for which one you want first
+[20:42:17] <HorusHorrendus> alastairp: ahh OK I thought you based it on AS
+[20:42:21] <HorusHorrendus> alastairp: probably last.fm
+[20:42:23] <theli_ua> wasn't hatchet supposed to have similar to lastfm recomendations ?
+[20:42:41] <theli_ua> also, why through out echonest? its totally different to how lastfm-style recommendations work iirc
+[20:42:48] <alastairp> no, we had no desire to limit ourselves to their api. our endpoint is a lot richer in what people can send to us
+[20:42:55] <alastairp> but backwards compatibility is a good idea
+[20:43:06] <HorusHorrendus> theli_ua: well ... I believe more in alastairp & co then in hatchet :)
+[20:43:30] <alastairp> !!
+[20:43:36] <HorusHorrendus> theli_ua: hatchet can do "last.fm recommendations", I think music/acoustic/listenbrainz wants to do echonest style recommendation
+[20:43:57] <theli_ua> I see
+[20:43:59] <alastairp> for now, listenbrainz is supposed to be more akin to just audioscrobbler, that is, we just keep a copy of the data for now
+[20:44:22] <muesli> theli_ua: yeah we'll have recommendations
+[20:44:26] <HorusHorrendus> And I believe that echonest style stuff is better than what e.g. last.fm could do
+[20:44:28] <alastairp> I don’t think *brainz has any real interest in recommendations yet - we’re doing all we can to keep our heads above the water with all these projects
+[20:44:37] <alastairp> but plenty of data for other people to play with though
+[20:44:53] <alastairp> and who knows, maybe we’ll be feature complete in about 100 years and can try some stuff out :)
+[20:45:01] <HorusHorrendus> muesli: we could help *brainz with writing one for them ;)
+[20:45:32] <HorusHorrendus> hatchet can probably do a "people who listened to this, also listened to this"-recommendation ... which is probably good enough mostly
+[20:45:39] <HorusHorrendus> depends on the data set
+[20:45:40] <alastairp> how can we interoperate with hatchet? is there any overlap or advantage in sharing stuff?
+[20:46:07] <HorusHorrendus> alastairp: talk with muesli & jherskowitz about it :)
+[20:46:36] <HorusHorrendus> alastairp: and overlap ... well hatchet does scrobble what I listen to in Tomahawk
+[20:47:59] <HorusHorrendus> alastairp: bug! bug! :)
+[20:48:07] <HorusHorrendus> but have to check on which side
+[20:48:37] <HorusHorrendus> last.fm side ... wtf
+[20:48:48] <HorusHorrendus> Christoph & Lollo is displayed there as "Christoph"
+[20:48:51] <alastairp> please report to tickets.musicbrainz.org
+[20:49:22] <HorusHorrendus> alastairp: no it is on the last.fm side
+[20:49:42] <alastairp> well. given lastfm’s last 4 weeks, I’m not surprised
+[20:49:53] <alastairp> we’re seeing really interesting differences between their website and api, too
+[20:50:05] <HorusHorrendus> wondering if I can leave the beta or if your import has problems with their beta?
+[20:52:35] <alastairp> only the beta exists now
+[20:52:45] <alastairp> old site isn’t around
+[20:52:52] <alastairp> our import is based on the beta
+[20:53:03] <HorusHorrendus> ahh ok
+[20:55:49] <jherskowitz> HorusHorrendus: we have an open-source collaborative filter written in Go
+[20:56:21] <jherskowitz> https://github.com/muesli/regommend
+[20:56:22] <tomabee> [ muesli/regommend · GitHub | github.com | https://avatars2.githubusercontent.com/u/146378?v=3&s=400 ]
+[20:56:55] <HorusHorrendus> jherskowitz: yeah I know ... but that can be data that listenbrainz can do
+[20:57:16] <HorusHorrendus> but with such a filter/recommendation engine you can't do stuff that echonest can do or acousticbrainz data could do
+[20:59:35] <HorusHorrendus> also of course regommend can be expanded (using hatchet or whatever data) but there are 2 problems: the hatchet dataset is very small (and I don't believe it grows to a point like the last.fm or echonest dataset anytime soon) and the algorithms are simple (ok they can be extended)
+[21:00:36] <HorusHorrendus> alastairp: Sending page 689 of 692 to ListenBrainz <- seems stuck ... 
+[21:00:46] <alastairp> yeah, don’t worry. it’s finished :)
+[21:00:57] <alastairp> we have our update code in the wrong callback
+[21:02:25] <HorusHorrendus> ok ;)
+[21:28:54] <jherskowitz> HorusHorrendus: correct, it doesn’t do what EN does - it does what lfm does
+[21:29:37] <jherskowitz> HorusHorrendus: well, Hatchet can receive data from all Tomahawks
+[21:29:43] <jherskowitz> and on Android from all other music apps
+[21:30:15] <HorusHorrendus> last.fm only based its recommendations on "user a listen to this and user b also listen to this and also to that, so a might like that"
+[21:30:19] <HorusHorrendus> ?
+[21:30:23] <jherskowitz> Tomahawk on Android can just be a scrobbler
+[21:30:36] <HorusHorrendus> jherskowitz: I know ... but how many people will set that :)
+[21:30:38] <jherskowitz> HorusHorrendus: and some user feedback
+[21:30:44] <HorusHorrendus> either they use tomahawk or don't
+[21:30:51] <HorusHorrendus> jherskowitz: plays/skips?
+[21:30:56] <HorusHorrendus> love?
+[21:30:57] <HorusHorrendus> probably
+[21:31:14] <jherskowitz> but generally speaking, Last.fm uses a “you did x, and y did x and z, so you might like z"
+[21:31:41] <jherskowitz> yeah, you can tweak the data that goes in
+[21:32:06] <jherskowitz> don’t count skips, a play from a year ago is worth less than a play from today, etc
+[21:32:54] <jherskowitz> a love from a friend of yours is worth more than a love from someone you don’t know
+[21:33:29] <jherskowitz> I’m sure alastairp has much better insight into it though
+[21:38:34] <alastairp> Hah, I think you explained more in 2 minutes than I would ever think of implementing myself ;)
+[21:38:48] <alastairp> collaborative filtering doesn't interest me that much
+[22:46:15] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[22:47:17] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[23:00:43] *** Quits: HorusHorrendus (~horrendus@2001:629:3200:95:95c1:f5:9c4c:ef57) (Quit: Leaving.)
+[23:47:18] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) ()
+[23:57:21] <theli_ua> ok, ported amazon resolver to new api

@@ -1,0 +1,396 @@
+[00:09:29] *** Quits: Melanosuchus (quassel@Pony-10aeeg.as13285.net) (Connection closed)
+[00:12:04] <HoneyDrops> Colgate: can't you just build mt?
+[00:19:00] <Colgate> I'd have to download gcc and all the dev packages
+[00:19:07] <Colgate> while running off of a livecd
+[00:19:12] <Colgate> didn't really want to do that
+[00:19:34] <Colgate> this ubuntu disk works anyways, so whatever
+[00:20:11] <HoneyDrops> Eww
+[00:23:29] <Colgate> ubuntu 10.04!
+[00:23:39] <Colgate> so old XD
+[00:24:44] <mniip> 03>ubuntu
+[00:24:48] <mniip> 03>2016
+[00:26:18] <HoneyDrops> or ever >_>
+[00:31:09] <nite> Arch is where it's at~
+[00:31:20] <JustAberrant> bleh ;p
+[00:31:25] * JustAberrant still dislikes arch ;p
+[00:31:49] <JustAberrant> it's like gentoo, except without the advantages and somehow more fragile
+[00:31:52] <HoneyDrops> Arch didn't impress me, or make a good first impression.
+[00:32:03] <HoneyDrops> Yeah that :/
+[00:32:13] <nite> I like the minimalist approach, I've never had an issue wit it
+[00:32:25] <nite> It was certainly more tedious to get up and going but since that point it's been great
+[00:32:51] *** Joins: Sombra (Iceman@Darkhorse21)
+[00:32:55] <JustAberrant> meh, gentoo is more tedious, but I'll take it any day ;p
+[00:33:05] <JustAberrant> gentoo takes longer to get up and running, but it's more stable once you get there
+[00:33:16] <nite> I have not tried Gentoo yet :o
+[00:33:17] <JustAberrant> big complaint early on with arch is how often it epically breaks itself
+[00:33:40] <nite> though I have somewhat irresponsibly upgraded Arch and also not broken it >_>
+[00:34:23] <JustAberrant> pacman does very little to protect previous config files or notify you that something has (possibly) broken.. unless you feel like skimming through the entire log every update you don't notice that it nuked your config until you go to use something and it just breaks
+[00:34:42] <JustAberrant> and pacman .. good god how did they pick those flags
+[00:34:50] <nite> Wh o.o
+[00:35:06] <nite> It creates .pacnew config files if the upstream default has changed, it shouldn't touch your own
+[00:35:14] <nite> (but yes I agree, the syntax for it is complete garbage)
+[00:35:23] <JustAberrant> nite: sure.. but chances are your old config doesn't work
+[00:35:29] <JustAberrant> I guess nuke config isn't the right word
+[00:35:35] <nite> Heh, that's more the fault of the developer than Arch tho >>
+[00:36:05] <JustAberrant> gentoo has a nifty system where it flags config files that have changed and is like.. "hey man, you gotta go update these"
+[00:36:20] <JustAberrant> arch might now, it's been awhile, but at the time I tried it, it didn't
+[00:36:20] <nite> if you were going to upgrade the package manually in that case the same thing would happen & the dev should be scolded for not providing backwards compatibility 
+[00:37:29] <JustAberrant> well sure, but world we live in and all ;p
+[00:37:47] <nite> I'll prolly try Gentoo at some point though
+[00:37:54] <Phase> JustAberrant, it shouldn't overwrite anything in /etc
+[00:38:01] <Phase> creates .pacnew files instead
+[00:38:18] <nite> I actually use Windows as my everyday desktop OS, I use Arch for my VPS which serves several things
+[00:38:22] <nite> and CentOS at work
+[00:38:36] * Phase would advise against arch for any server-type workload
+[00:39:04] <JustAberrant> either way, just didn't leave a good impression on me at all.. I tried it for maybe 3 months before going back to gentoo
+[00:39:45] <HoneyDrops> I installed it on a secondary system, first update broke libc.  I fixed it, but as for first impressions :/
+[00:39:55] *** Pony_91235 is now known as Dude
+[00:40:11] <JustAberrant> yeah, my impressions in order were probably...
+[00:40:25] *** Dude is now known as Pony_35422
+[00:40:45] <JustAberrant> "who the fuck designed these options", "this documentation sucks", "my god, another thing broke on an update.."
+[00:41:43] <JustAberrant> and on the last one, there's this whole philosophy of "well you should have read up on all the updates you were about to apply, you'd have found it clearly stated in this forum posting here that this update completely breaks compatibility for x and we should have a fix in place soon[tm]"
+[00:42:15] <JustAberrant> fuck that shit, that's why we use package managers in the first place, so we don't need to micromanage every little library and helper utility
+[00:42:22] <HoneyDrops> Worst breakage I ever had on Gentoo was when Xorg was a thing and I was migrating from xfree86
+[00:42:30] <JustAberrant> hehe
+[00:42:45] <HoneyDrops> And that was becaues I was still pretty new, so no-X actually bothered me
+[00:43:12] <JustAberrant> well, the profile change when gcc bumped versions messed things up a bit for me.. but most recent has been systemd because I wasn't using eudev and had a bunch of random gnome bits that kept trying to pull systemd in
+[00:43:27] <Phase> arch kinda demands constant maintenance
+[00:43:46] <JustAberrant> which is why it sucks ;p
+[00:44:06] <JustAberrant> if a _source based_ distro with pretty much infinite configuration possibilities can manage to be relatively stable, a binary based one's got no excuse ;p
+[00:45:25] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[00:47:00] *** Divide|TechSupport is now known as Divide
+[00:57:19] <Colgate> /random, my boss wants a wireless, outdoor, day/night camera system
+[00:57:27] <Colgate> anyone have any recommendations :V
+[00:57:36] *** GigaWork is now known as Gigabit
+[00:57:40] * JustAberrant does not
+[00:57:48] <Colgate> cause I don't know shit about cameras :P
+[00:58:15] <HoneyDrops> Find one's that don't have a commonly known exploit?
+[00:58:29] <HoneyDrops> ones*
+[00:58:42] <JustAberrant> meh, if it's outdoors who cares ;p
+[00:59:11] <Colgate> I'm pretty sure my boss is crazy
+[00:59:23] <mniip> hahaha
+[00:59:27] <mniip> pfft
+[01:00:02] <Colgate> but they want some battery operated, day/night cameras that constantly record to a central box at a resolution of 720p while lassting at least a week between battery changes per camera
+[01:00:09] <Colgate> I'm pretty sure this isn't happening
+[01:00:30] <Colgate> not without custom rigging some batteries together :P
+[01:00:31] <JustAberrant> hehe
+[01:00:46] * JustAberrant just pictures a small camera and pile of marine batteries
+[01:00:53] <HoneyDrops> Def not if he's expecting self-illuminating cameras
+[01:01:07] <Colgate> yeah, they want night vision, so IR cameras
+[01:32:38] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[01:35:02] <Sakura> [19:29] -SaslServ-: <Unknown user on cadance.canternet.org (via SASL)> failed to login to Sakura.  There has been 1 failed login attempt since your last successful login.
+[01:35:16] <Sakura> Did this happen to anyone else?
+[01:38:08] <Moonlightning> Didn't happen to me.
+[01:40:33] *** Pony_35422 is now known as Dude
+[01:41:03] *** Dude is now known as Pony_75093
+[01:41:20] <Sakura> Makes me wonder if it was directed at me then.
+[01:42:12] <Moonlightning> More likely a mistake. Somepony else uses the nick Sakura and has SASL set up on their client.
+[01:43:31] <Sakura> Must be a Sakura from another network or something coming to this one then.
+[01:44:13] <Moonlightning> Mmm.
+[01:45:41] <Moonlightning> 'long as you have a good password and stuff, you're good. :P
+[01:46:29] * HoneyDrops has a friend on notify who has what must be a dozen ponies using her nick as the default.  *gets spammed to hell whenever she isn't online*
+[01:48:40] * Moonlightning wants an authentication timeout of zero seconds. >.>
+[01:54:38] <wolfyshy> what about people on 3G?  satellite internet?  58K?
+[01:54:50] <wolfyshy> ping times on all of those can be higher than one second
+[01:55:06] <Moonlightning> On my account.
+[01:55:26] <Moonlightning> Because I use SASL.
+[01:55:57] <Moonlightning> But Atheme won't let me set it lower than one second.
+[02:00:57] *** Quits: enginemaniac (flail@flail.flail.flail) (Ping timeout: 121 seconds)
+[02:02:48] *** Gigabit is now known as Soarin
+[02:03:16] *** Joins: enginemaniac (flail@flail.flail.flail)
+[02:05:22] <Moonlightning> …
+[02:05:37] <Moonlightning> [not factchecked] http://www.zdnet.com/article/apple-iphone-ban-california-wants-to-outlaw-encrypted-smartphones-sale/
+[02:05:39] <PinkiePieBot> [ Now California state wants to ban sale of encrypted smartphones | ZDNet ]
+[02:06:00] <JustAberrant> Moonlightning: can do a lot of damage in 1s I guess ;p
+[02:07:01] <JustAberrant> also I assume "unbreakable" encryption and not encryption in general
+[02:07:11] <JustAberrant> which is totally gonna happen I imagine in maybe 5 years
+[02:08:45] <Moonlightning> Article checks out against the thing they linked on California's website. I couldn't retrieve it over TLS, though.
+[02:08:54] <Moonlightning> Which is appropriate, I suppose. :V
+[02:09:22] <Moonlightning> Also, the bill mentions the mandate for things like Activation Lock.
+[02:09:31] <Moonlightning> How the hell is that relevant?
+[02:18:01] <AppleDash> Guys
+[02:18:04] <AppleDash> I need technical advice
+[02:18:14] <AppleDash> Is it sane to vacuum at 2018 in a condo building?
+[02:19:25] <Soarin> Yes
+[02:19:41] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[02:20:41] <JustAberrant> only if it's really loud
+[02:22:12] <AppleDash> lol
+[02:22:22] <AppleDash> It's a 3.5 HP shop vac I bought yesterday
+[02:22:36] <AppleDash> It is fairly loud but it is not high pitched unlike my old one
+[02:23:25] <Moonlightning> Hopefully, this is something that people will care about, because it means they won't be able to buy the new iPhone on launch day in California. :P
+[02:23:46] <JustAberrant> pff
+[02:24:01] <JustAberrant> dream on ;p
+[02:24:10] <JustAberrant> apple will cave, people won't care, etc ;p
+[02:32:47] <Moonlightning> Well, we'll have these glorious few weeks in which Apple won't cave and people will care.
+[02:35:33] <JustAberrant> meh, people will be pissed at apple ;p
+[02:35:51] <JustAberrant> kinda like how everyone was pissed at sony mainly because they couldn't play their games
+[02:36:37] <Moonlightning> Seriously? :\
+[02:37:05] <JustAberrant> it's impossible to overstate how little your average person cares about these kinda things ;p
+[02:39:16] <wolfyshy> kind of like how I got pissed at ebay for forcing me to reset my password due to heartbleed
+[02:39:26] <wolfyshy> I literally reset it to a new one and immediately set it back to my old one
+[02:39:45] <wolfyshy> buck it, each site I use has a different password anyway, I don't want to have to remember any new ones
+[02:40:22] <JustAberrant> ehe, gotta admit, that's starting to be my reaction
+[02:40:29] <JustAberrant> I mean I change the password, but sometimes I wait quite awhile
+[02:40:33] <Moonlightning> wolfyshy: seriously? >:(
+[02:40:38] <JustAberrant> like.. "yeah yeah I'll change that when I get around to it.."
+[02:40:42] <Moonlightning> I mean, don't you have a password manager?
+[02:40:49] <wolfyshy> Moonlightning: NO
+[02:40:53] <wolfyshy> I do not trust any password manager
+[02:40:56] <wolfyshy> they are evil
+[02:41:01] * Moonlightning blinks.
+[02:41:04] <wolfyshy> the only thing that I keep my passwords in, is my wetware
+[02:41:11] *** Pony_75093 is now known as Dude
+[02:41:12] <wolfyshy> as it is the only thing that cannot be attacked
+[02:41:14] <Moonlightning> What about just flatfiles and your shell
+[02:41:31] * JustAberrant generally agrees with that... a password manager seems like a terrible idea
+[02:41:42] *** Dude is now known as Pony_98679
+[02:41:43] <Moonlightning> https://xkcd.com/538
+[02:41:44] <PinkiePieBot> [ xkcd: Security ]
+[02:41:47] * Phase uses firefoxes password thingy
+[02:41:48] <wolfyshy> flatfiles..?
+[02:41:57] * Phase can't remember per-site passwords
+[02:42:07] <JustAberrant> Phase: I do that for stuff I mostly don't care about
+[02:42:16] <Moonlightning> Yeah. I use `pass`, which is basically just a wrapper around gpg and a dotdir.
+[02:42:27] <Moonlightning> You could do the same thing, without the wrapper :P
+[02:42:28] <JustAberrant> honestly there's only a small number of really important passwords, and those I keep in my head and actually change periodically
+[02:43:26] <Phase> and really the only reason i trust firefox is it's open source and client-side encrypted
+[02:43:31] <wolfyshy> Moonlightning: the only people that would actually /kidnap and drug me/ are probably government, and there are rumours milling about that they already have a cluster that can attack and decrypt 4096-bit RSA so they don't even need to drug me.
+[02:43:54] <wolfyshy> most websites don't even use encryption that strong
+[02:44:11] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[02:44:47] <wolfyshy> but the chinese people who are wardriving port 22 with openssh 0days, they could do some pretty significant damage if my passwords were in my ~
+[02:45:15] <wolfyshy> consider the russian malware that was attacking firefox's pdf.js: it was specifically downloading .purple and .ssh for keys and to grep logs for passwords
+[02:45:48] <wolfyshy> wouldn't affect me, though, since I don't talk about passwords over IM and my ssh keys have AES256 passphrase encryption
+[02:46:30] <wolfyshy> if enough people start using pass or whatever, they'll just start grabbing those dirs and cracking gpg
+[02:55:02] *** Starburn is now known as eyeburn
+[02:55:48] *** Joins: Asoka_White (Asoka@Pony-fparrr.net-htp.de)
+[02:56:09] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:59:01] *** Quits: Asoka (Asoka@Pony-15jsim.net-htp.de) (Ping timeout: 121 seconds)
+[03:26:41] <Colgate> cracking 4k RSA? o.O
+[03:26:57] <Colgate> considering 2k RSA is considered pretty secure still, that's a bit uh, surprising
+[03:27:24] <Sakura> Is there a way to move the Ubuntu Unity launcher to the bottom instead of having it to the left?
+[03:28:11] *** Quits: WorkingData (DataByteBro@Pony-d3c.bgn.198.64.IP) (Connection closed)
+[03:28:27] *** Joins: WorkingData (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[03:28:37] <Colgate> Moonlightning: hmm, important question about that article
+[03:28:43] <Colgate> 2 quotes first:
+[03:28:45] <Colgate> "capable of being decrypted and unlocked by its manufacturer or its operating system provider."
+[03:28:54] <Colgate> "Any smartphone that couldn't be decrypted on-demand would subject a seller to a $2,500 fine."
+[03:29:16] <Colgate> so, if I compile my own OS for my phone, and I cannot decrypt it
+[03:29:22] <Colgate> they can fine my phone manufacturer for it?
+[03:29:44] *** Quits: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP) (Ping timeout: 121 seconds)
+[03:30:02] <HoneyDrops> So now selling a turning machine comes with a 2500USD fine~
+[03:32:03] <Moonlightning> HoneyDrops: well, it has to be authorized by the seller
+[03:32:05] *** Joins: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP)
+[03:32:26] <Moonlightning> So you can still sell a phone that can be FDE'd once you've rooted it, if rooting voids the warranty or whatever
+[03:36:31] <Moonlightning> Colgate: well...should we point out stupid stuff like that, or just point out that the spirit of the bill shouldn't stand?
+[03:37:05] <Colgate> hey, I'm all for finding loopholes here :D
+[03:37:23] <Colgate> one of these things will eventually pass, probably on some end of year budget bill
+[03:37:28] <Colgate> /cough
+[03:37:58] * Moonlightning groans loudly.
+[03:41:28] <Colgate> hmm, I wonder if freedom of speech can trump this
+[03:41:40] <Colgate> it is my right to store gibberish on my phone if I want to
+[03:41:51] *** Pony_98679 is now known as Dude
+[03:42:05] <Colgate> can't prove it isn't random data!
+[03:42:20] <HoneyDrops> Well it would be nice to have the courts declare that strong encryption is required to be permitted to ensure that the first amendment can be exercised meaningfully.
+[03:42:21] *** Dude is now known as Pony_23608
+[03:45:13] <Moonlightning> Indeed.
+[03:51:03] <HoneyDrops> At a minimum it should be considered a tool required for freedom of association and speech.
+[04:01:45] *** Quits: Duck (Duck@Pony-e0g.tp5.253.162.IP) (Quit: Leaving)
+[04:29:26] *** Soarin is now known as Snoarin
+[04:33:29] *** Quits: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com) (Connection closed)
+[04:33:35] *** Quits: Apple_Bloom (sid52418@the.canon.pony) (Connection closed)
+[04:34:25] *** Joins: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com)
+[04:34:42] *** Joins: Apple_Bloom (sid52418@the.canon.pony)
+[04:35:01] *** Quits: cyzon (cyzon@moms.spaghetti) (Ping timeout: 121 seconds)
+[04:36:23] *** Joins: cyzon (cyzon@Pony-td62ve.cyzon.cyzon.us)
+[04:39:45] *** Eventide is now known as Eventide|Sleepies
+[04:42:30] *** Pony_23608 is now known as Dude
+[04:43:01] *** Dude is now known as Pony_4312
+[04:45:34] <Moonlightning> ...I want weechat to use the usual nick color in the nicklist for ponies who are away, and maybe just change the background color.
+[04:59:24] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[05:07:28] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[05:29:10] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[05:32:26] *** Joins: Sombra (Iceman@Darkhorse21)
+[05:34:24] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[05:43:01] *** Ruthalasleep is now known as Ruthalas
+[05:43:09] *** Pony_4312 is now known as Dude
+[05:43:39] *** Dude is now known as Pony_56590
+[06:06:45] <CompuDesktop> huh apparently the document viewer that comes preinstalled with ubuntu for reading pdf files also supports cbz files and can generate thumbnails for them in nautilus
+[06:09:53] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[06:26:30] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:41:44] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Ping timeout: 121 seconds)
+[06:43:47] *** Pony_56590 is now known as Dude
+[06:44:17] *** Dude is now known as Pony_76636
+[06:44:53] *** WuBzYThinksThatHesSleeping is now known as WuBzY
+[07:01:43] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[07:16:29] *** Quits: nite (nite@Pony-0n4nqh.ca.comcast.net) (Client exited)
+[07:18:58] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[07:21:55] *** Joins: Sombra (Iceman@Darkhorse21)
+[07:26:03] *** eyeburn is now known as Starburn
+[07:40:31] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[07:44:26] *** Pony_76636 is now known as Dude
+[07:44:56] *** Dude is now known as Pony_45051
+[07:48:16] *** Quits: Pony_62161 (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:48:56] *** Quits: CompuDesktop (compu@snuggly.filly) (Ping timeout: 121 seconds)
+[07:49:33] *** Joins: CompuDesktop (compu@snuggly.filly)
+[07:50:02] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (A TLS packet with unexpected length was received.)
+[07:50:16] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[07:53:18] *** Quits: WuBzY (WuBzY@Pony-46uabd.dhcp.inet.fi) (Quit: WeeChat 1.4)
+[08:13:40] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[08:39:08] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:41:56] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[08:42:38] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[08:44:48] *** Joins: Melanosuchus (quassel@Pony-10aeeg.as13285.net)
+[08:45:04] *** Pony_45051 is now known as Dude
+[08:45:34] *** Dude is now known as Pony_23586
+[08:51:02] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:11:17] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[09:35:34] *** Joins: Phase (Phase4@Pony-4ihpe2.internode.on.net)
+[09:40:28] *** Unixkitty is now known as Unikitty
+[09:40:31] *** Unikitty is now known as Unixkitty
+[09:43:54] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[09:44:21] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[09:44:45] *** Quits: Creeps|AFK (RedHelper@The.Pony.That.Makes.You.Smile) (Ping timeout: 121 seconds)
+[09:44:49] *** Quits: Snoarin (Gigabit@Bazinga) (Ping timeout: 121 seconds)
+[09:45:42] *** Pony_23586 is now known as Dude
+[09:46:02] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[09:46:03] *** Joins: GigabitPony (Gigabit@Bazinga)
+[09:46:10] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[09:46:12] *** Dude is now known as Pony_82735
+[09:47:32] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[09:54:12] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:58:11] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[10:15:00] *** Quits: Quindo (Quindo@Pony-8qt.17k.198.99.IP) (Connection closed)
+[10:31:56] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[10:32:29] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[10:32:42] *** Quits: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile) (Ping timeout: 121 seconds)
+[10:32:54] *** Joins: Pony_62161 (ejd@Pony-fej07d.res.rr.com)
+[10:32:58] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:33:04] *** Quits: GigabitPony (Gigabit@Bazinga) (Ping timeout: 121 seconds)
+[10:36:36] *** Joins: GigabitPony (Gigabit@Bazinga)
+[10:36:36] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[10:36:40] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[10:37:06] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[10:46:20] *** Pony_82735 is now known as Dude
+[10:46:50] *** Dude is now known as Pony_46092
+[10:47:43] *** Quits: Phase (Phase4@Pony-4ihpe2.internode.on.net) (A TLS packet with unexpected length was received.)
+[10:48:39] *** Joins: Phase (Phase4@Pony-4ihpe2.internode.on.net)
+[11:06:42] *** Joins: Sombra (Iceman@Darkhorse21)
+[11:15:54] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[11:30:11] *** Joins: WuBzY (androirc@Pony-reheq0.rev.dnainternet.fi)
+[11:36:36] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[11:37:33] *** Parts: WuBzY (androirc@Pony-reheq0.rev.dnainternet.fi) ("I'll be back.")
+[11:38:27] *** Quits: Pony_62161 (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[11:46:58] *** Pony_46092 is now known as Dude
+[11:47:28] *** Dude is now known as Pony_15699
+[11:50:46] *** Eventide|Sleepies is now known as Eventide
+[11:57:20] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[12:12:35] *** Quits: DataByte (DataByte@Pony-cp97qq.g424.9euc.0247.2601.IP) (Ping timeout: 121 seconds)
+[12:29:28] *** Finnfinn is now known as FinnSHOWER
+[12:43:32] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[12:46:56] *** Quits: Garophel (garophel@Pony-jt2b62.net) (Ping timeout: 121 seconds)
+[12:47:36] *** Pony_15699 is now known as Dude
+[12:47:49] *** FinnSHOWER is now known as Finnfinn
+[12:47:58] *** Joins: Garophel (garophel@Pony-jt2b62.net)
+[12:48:05] *** Dude is now known as Pony_83403
+[12:48:27] *** Garophel is now known as Pony_84461
+[12:50:26] *** Divide is now known as Divide|TechSupport
+[12:51:28] *** Joins: Garophel (garophel@Pony-jt2b62.net)
+[12:51:51] *** Garophel is now known as Pony_98334
+[12:56:07] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[13:07:03] *** Joins: WuBzY (WuBzY@Pony-46uabd.dhcp.inet.fi)
+[13:17:02] *** Joins: WuBzY_ (WuBzY@Pony-g66ilu.dhcp.inet.fi)
+[13:17:15] *** Quits: WuBzY_ (WuBzY@Pony-g66ilu.dhcp.inet.fi) (Quit: WeeChat 1.4)
+[13:18:09] *** Quits: WuBzY (WuBzY@Pony-46uabd.dhcp.inet.fi) (Ping timeout: 121 seconds)
+[13:22:13] *** Joins: WuBzY (WuBzY@Pony-g66ilu.dhcp.inet.fi)
+[13:33:06] *** Quits: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP) (Ping timeout: 121 seconds)
+[13:40:07] <Moonlightning> ...so you're not supposed to use @installed? But then some of the packages that aren't dependencies of anything might not get updated! :c
+[13:40:49] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[13:44:10] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[13:48:13] *** Pony_83403 is now known as Dude
+[13:48:43] *** Dude is now known as Pony_50922
+[13:50:07] *** Quits: Phase (Phase4@Pony-4ihpe2.internode.on.net) (Connection closed)
+[14:01:11] *** Quits: WuBzY (WuBzY@Pony-g66ilu.dhcp.inet.fi) (Quit: WeeChat 1.4)
+[14:09:10] *** GigabitPony is now known as GigaWork
+[14:46:17] *** Joins: WuBzY (WuBzY@Pony-g66ilu.dhcp.inet.fi)
+[14:48:51] *** Pony_50922 is now known as Dude
+[14:49:21] *** Dude is now known as Pony_8230
+[15:09:29] *** Quits: WorkingData (DataByteBro@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[15:13:18] *** Joins: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[15:23:48] *** Pony_84461 is now known as Garophel
+[15:25:42] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[15:46:19] <DataByte> HAHAHAHAHAHA
+[15:46:25] <DataByte> this is awesome: https://www.reddit.com/r/talesfromtechsupport/comments/420oan/companywide_email_30000_employees_autoresponders/
+[15:46:26] <PinkiePieBot> [ Company-wide email + 30,000 employees + auto-responders = ... : talesfromtechsupport ]
+[15:46:31] <DataByte> <snickers>
+[15:49:29] *** Pony_8230 is now known as Dude
+[15:49:38] <DataByte> most relevant comment: "If you're afraid of clowns, you won't make it in IT."
+[15:49:39] <DataByte> xD
+[15:49:59] *** Dude is now known as Pony_8907
+[15:50:30] <johnsey> sane configurations ensure that an out of office reply is only sent once per mail address in a given timeframe (> 1 day)
+[15:52:26] <johnsey> for good reasons :D
+[16:15:27] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[16:25:20] *** Joins: Pony_62161 (ejd@Pony-fej07d.res.rr.com)
+[16:45:49] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:50:08] *** Pony_8907 is now known as Dude
+[16:50:38] *** Dude is now known as Pony_44377
+[16:55:45] *** Pony_62161 is now known as MisterSkids
+[17:10:31] *** Quits: CompuDesktop (compu@snuggly.filly) (Ping timeout: 121 seconds)
+[17:11:30] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:22:04] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (The TLS connection was non-properly terminated.)
+[17:23:34] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[17:47:22] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[17:50:46] *** Pony_44377 is now known as Dude
+[17:51:16] *** Dude is now known as Pony_26646
+[17:54:36] *** Joins: Quindo (Quindo@Pony-8qt.17k.198.99.IP)
+[18:13:10] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Connection closed)
+[18:13:13] *** Joins: Pocketguns2 (Pocketguns2@Digging.a.Hole)
+[18:20:42] *** Pocketguns2 is now known as Pocky
+[18:22:00] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[18:51:24] *** Pony_26646 is now known as Dude
+[18:51:54] *** Dude is now known as Pony_87960
+[19:02:39] *** Joins: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl)
+[19:06:26] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[19:14:50] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[19:37:45] *** Joins: Asoka (Asoka@Pony-uai2fp.net-htp.de)
+[19:37:55] *** Joins: floogulinc (floogulinc@Pony-opvprb.floogul.net)
+[19:40:24] *** Quits: Asoka_White (Asoka@Pony-fparrr.net-htp.de) (Ping timeout: 121 seconds)
+[19:40:50] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[19:47:58] *** Quits: WuBzY (WuBzY@Pony-g66ilu.dhcp.inet.fi) (Quit: WeeChat 1.4)
+[19:48:12] *** Joins: WuBzY (WuBzY@Pony-g66ilu.dhcp.inet.fi)
+[19:52:03] *** Pony_87960 is now known as Dude
+[19:52:33] *** Dude is now known as Pony_13817
+[20:15:19] *** Quits: WuBzY (WuBzY@Pony-g66ilu.dhcp.inet.fi) (Quit: WeeChat 1.4)
+[20:38:14] *** Joins: Asoka_White (Asoka@Pony-bg75dp.net-htp.de)
+[20:40:32] *** Quits: Asoka (Asoka@Pony-uai2fp.net-htp.de) (Ping timeout: 121 seconds)
+[20:52:43] *** Pony_13817 is now known as Dude
+[20:53:13] *** Dude is now known as Pony_4988
+[21:07:57] *** Joins: Webster (Webster@Pony-sac5g1.fios.verizon.net)
+[21:13:34] *** Joins: firestream (vinylderpy@Pony-2scvn8.dsl.bell.ca)
+[21:16:15] *** Joins: WuBzY (wubzy@Pony-g66ilu.dhcp.inet.fi)
+[21:23:36] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[21:25:06] *** Joins: Deathpony (IceChat9@Pony-k7e.chp.54.50.IP)
+[21:34:57] *** Joins: Sombra (Iceman@Darkhorse21)
+[21:40:41] *** Quits: WuBzY (wubzy@Pony-g66ilu.dhcp.inet.fi) (Ping timeout: 121 seconds)
+[21:50:38] *** Joins: WuBzY (androirc@Pony-g66ilu.dhcp.inet.fi)
+[21:52:38] *** Quits: WuBzY (androirc@Pony-g66ilu.dhcp.inet.fi) (Quit: I'll be back.)
+[21:53:22] *** Pony_4988 is now known as Dude
+[21:53:52] *** Dude is now known as Pony_76699
+[21:54:39] *** Joins: WuBzY (WuBzY@Pony-g66ilu.dhcp.inet.fi)
+[21:54:52] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[22:05:58] *** Quits: WuBzY (WuBzY@Pony-g66ilu.dhcp.inet.fi) (Quit: WeeChat 1.4)
+[22:09:21] <Sour_Sweet> Netflix at least now enforces audio lines to the language from which territory you're browsing for some titles -.-
+[22:13:47] *** Joins: WuBzY (WuBzY@Pony-g66ilu.dhcp.inet.fi)
+[22:20:00] <JockeTF> Sour_Sweet: So if there's a dubbed version you're forced to listen to that crap? o_O
+[22:22:23] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[22:29:15] <Sour_Sweet> JockeTF: In this case there is a German version of Dr. House (House, M.D./House). While I go with the English version for most titles anyway this is a case where I prefer the German dub. That used to work just fine which is no longer the case. (Browsing from Germany over a U.S. VPN)
+[22:29:53] <JockeTF> Oh
+[22:54:01] *** Pony_76699 is now known as Dude
+[22:54:32] *** Dude is now known as Pony_96019
+[22:57:21] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[23:00:52] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[23:23:54] *** Joins: Phase (Phase4@Pony-4ihpe2.internode.on.net)
+[23:37:16] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:43:02] *** Quits: Melanosuchus (quassel@Pony-10aeeg.as13285.net) (Connection closed)
+[23:54:40] *** Pony_96019 is now known as Dude
+[23:55:10] *** Dude is now known as Pony_91457
+[23:56:15] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)

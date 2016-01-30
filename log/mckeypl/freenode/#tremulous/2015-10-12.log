@@ -1,0 +1,58 @@
+[00:50:44] *** Quits: taiyo (~taiyo@i-83-67-10-10.freedom2surf.net) (Remote host closed the connection)
+[00:51:36] *** Quits: Volt (~Volt@pool-108-31-26-17.washdc.fios.verizon.net) (Remote host closed the connection)
+[00:51:56] *** Joins: Volt (~Volt@pool-108-31-26-17.washdc.fios.verizon.net)
+[00:58:37] *** Joins: taiyo (~taiyo@i-83-67-10-10.freedom2surf.net)
+[02:46:50] *** Quits: jkent (~jkent@173-22-54-147.client.mchsi.com) (Changing host)
+[02:46:50] *** Joins: jkent (~jkent@unaffiliated/jkent)
+[04:26:14] *** Quits: Norfenstein (~Norfenste@tremulous/developer/Norfenstein) (Remote host closed the connection)
+[05:54:34] *** Quits: StalKermit (~StalKermi@unaffiliated/stalkermit) (Read error: Connection reset by peer)
+[06:17:45] *** Quits: Who-[Soup] (~soup@p57A50DEA.dip0.t-ipconnect.de) (Ping timeout: 252 seconds)
+[06:21:50] *** Joins: Who-[Soup] (~soup@p57A513E9.dip0.t-ipconnect.de)
+[06:30:37] *** Quits: Stannum (~Robotroni@82-197-195-74.dsl.cambrium.nl) ()
+[07:41:27] *** Joins: ZdrytchX (~zdrytchx@27-33-98-203.static.tpgi.com.au)
+[08:55:32] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[10:36:34] *** Joins: jackforward (~jack@p200300700D32714E10837B84F9042485.dip0.t-ipconnect.de)
+[12:27:02] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Quit: Leaving)
+[13:06:19] <dibblego> I downloaded a map from the server, then it disconnected, telling me to set cl_Download 1, which I did in the console, but it still tells me the client is impure — what is the right switch?
+[13:19:55] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[14:17:28] *** Quits: WillisTF (~Willis@243.sub-70-194-138.myvzw.com) ()
+[14:37:42] <cu-kai> dibblego, are you using 1.1 or gpp
+[14:38:29] <dibblego> gpp
+[14:42:52] <cu-kai> what server are you trying to play
+[14:43:03] <dibblego> my own
+[14:43:55] <cu-kai> have you set up the dl server properly
+[14:44:32] <dibblego> I'm not sure what that is. A separate server?
+[14:45:09] <cu-kai> well first off what map are you trying to play
+[14:45:31] <dibblego> trempoline
+[14:46:19] <cu-kai> the dl server is a www server where you store your maps for people to download, direct server download is very slow
+[14:46:57] <dibblego> oh ok
+[14:47:07] <dibblego> do you know a link or keywords to set that up?
+[14:50:24] <cu-kai> its just a webserver with your map .pk3s on
+[14:51:00] <dibblego> is there a way to point clients to it? or do they download them and put them in base?
+[14:51:39] <cu-kai> set your sv_dlurl to your webserver
+[14:51:50] <dibblego> ah ok thanks
+[14:52:14] <cu-kai> e.g. if your website is www.google.com, on your webserver there would be a /base folder in the root directory containing maps
+[14:52:22] <cu-kai> and your sv_dlurl would be www.google.com
+[14:52:38] <dibblego> got it cheers
+[14:52:42] <cu-kai> np
+[15:09:42] *** Joins: Stannum (~Robotroni@82-197-195-74.dsl.cambrium.nl)
+[15:29:19] *** Joins: StalKermit (~StalKermi@unaffiliated/stalkermit)
+[16:43:06] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Quit: Leaving)
+[17:29:20] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[18:24:10] *** Quits: ZdrytchX (~zdrytchx@27-33-98-203.static.tpgi.com.au) (Quit: 404 IIRC, IRC NOT FOUND)
+[18:39:53] *** Joins: Nux (~Nuxular@94.197.120.116.threembb.co.uk)
+[19:23:12] *** ChanServ sets mode: +o Ingar
+[20:44:39] *** Quits: Nux (~Nuxular@94.197.120.116.threembb.co.uk) (Ping timeout: 255 seconds)
+[20:50:30] *** Joins: shhx (~shhx@47.176.132.37.dynamic.jazztel.es)
+[20:50:34] *** Quits: shhx (~shhx@47.176.132.37.dynamic.jazztel.es) (Remote host closed the connection)
+[20:59:42] *** Joins: Nux (~Nuxular@94.197.120.116.threembb.co.uk)
+[21:10:11] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Quit: Leaving)
+[21:10:34] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[21:37:08] *** Joins: Norfenstein (~Norfenste@tremulous/developer/Norfenstein)
+[21:37:08] *** ChanServ sets mode: +o Norfenstein
+[21:54:34] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Quit: Leaving)
+[22:13:29] *** Quits: jackforward (~jack@p200300700D32714E10837B84F9042485.dip0.t-ipconnect.de) (Quit: Ex-Chat)
+[22:44:47] *** Quits: Norfenstein (~Norfenste@tremulous/developer/Norfenstein) (Remote host closed the connection)
+[23:49:28] *** Quits: Undeference (~msk@2001:470:1f07:1427:14ef:929e:181b:c4ed) (Quit: Leaving.)
+[23:52:00] *** Joins: Undeference (~msk@2001:470:1f07:1427:c9ba:3472:18fc:74fd)
+[23:59:06] *** Quits: Undeference (~msk@2001:470:1f07:1427:c9ba:3472:18fc:74fd) (Ping timeout: 246 seconds)

@@ -1,0 +1,166 @@
+[00:49:26] *** Quits: apb1963 (~apb@174-135-20-37.res.bhn.net) (Quit: Konversation terminated!)
+[00:49:42] *** Joins: apb1963 (~apb@174-135-20-37.res.bhn.net)
+[01:31:28] <theli_ua> domme: ping
+[01:31:45] <theli_ua> well, I guess europe sleeps
+[01:36:49] <domme> theli_ua: i don't
+[01:36:58] <theli_ua> well, you should!
+[01:37:05] <domme> totally
+[01:37:15] <domme> but fucking with websockets and localstorage *sigh*
+[01:37:42] <theli_ua> basically wanted to see your opinion on should we start porting all resolvers to new api or should this be postponed until we actually support new api on desktop
+[01:37:54] <theli_ua> cause its like ... part of resolvers are using new api, part is not
+[01:38:05] <theli_ua> er, inconsistent! :D
+[01:38:17] <theli_ua> I say if some of them are incompatible make all of them
+[01:38:32] <theli_ua> s/incompatible/ready for new api/
+[01:38:50] <domme> fine with me
+[01:39:23] <theli_ua> mmkay, I'll probably start changing my resolvers to use same style of API android does
+[01:39:37] <theli_ua> at least I'll be able to use them both on my desktop fork aand android
+[01:41:31] <domme> yup
+[01:53:16] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[02:05:58] <domme> theli_ua: what is params.query?
+[02:06:30] <theli_ua> search query?
+[02:06:40] <domme> so the full search string?
+[02:06:46] <theli_ua> yeah, I suppose so
+[02:06:54] <domme> hm mh mh.. i find that a bit odd
+[02:06:57] <domme> MrMaffen: ^
+[02:07:02] <theli_ua> are you reffering to search method of resolver?
+[02:07:07] <domme> yeah
+[02:07:29] <theli_ua> yeah, its just with the changes to api all parameters are inside a single object, not separate parameters
+[02:07:42] <domme> yes, i know
+[02:08:06] <theli_ua> I think its fine, it is consistent
+[02:08:13] <domme> i just think.. it should be something else.. searchTerm or queryString or something like that
+[02:08:22] <theli_ua> oh, the name
+[02:08:59] <domme> yeah, only that
+[02:10:09] <MrMaffen> I just used the parameter name that has been used before
+[02:11:28] <MrMaffen> afaik it was search( query ){..} before in most cases
+[02:13:59] <domme> i just feel we should come up with something better now that we're changing for once
+[02:14:22] <domme> that's the downside of the new params approach apparently :)
+[02:16:50] <MrMaffen> domme: well if we wanted to we could always have a simple params.query to params.fancyName comp translation in tomahawk.js
+[02:16:58] <MrMaffen> so I wouldn't see it as a big deal
+[02:17:17] <domme> true
+[02:17:28] <MrMaffen> but yea I'm fine with changing the name. I don't care about it that much tbh 
+[02:18:27] *** Quits: danimo (~daniel@kde/danimo) (Ping timeout: 250 seconds)
+[02:19:24] <domme> search({term}) { return $.ajax('fooo.com/?s=' + term) ....; } 
+[02:19:29] <domme> i'd vote for just term 
+[02:20:06] *** Joins: grindhold_ (~quassel@c035.cyan.servdiscount-customer.com)
+[02:21:12] <domme> MrMaffen: theli_ua: http://babeljs.io/repl/#?experimental=false&evaluate=true&loose=false&spec=false&code=function%20search(%7Bterm%7D)%7B%0A%20%20console.log(term)%3B%0A%7D%0A%0A
+[02:21:13] <tomabee> [ Babel · The compiler for writing next generation JavaScript | babeljs.io |  ]
+[02:21:38] *** Quits: waaaaargh (~quassel@twilight.weltraumpflege.org) (Quit: No Ping reply in 180 seconds.)
+[02:21:39] *** Joins: waaaaargh (~quassel@twilight.weltraumpflege.org)
+[02:21:41] *** Quits: grindhold (~quassel@c035.cyan.servdiscount-customer.com) (Quit: No Ping reply in 180 seconds.)
+[02:22:08] *** waaaaargh is now known as Guest21083
+[02:22:32] <theli_ua> I'm ok either way
+[02:22:41] <theli_ua> I have nothing agains 'query' 
+[02:23:36] <MrMaffen> yea I too think both names are appropriate
+[02:23:50] <MrMaffen> only reason against term would be that we would have to change it :D
+[02:25:56] <domme> MrMaffen: query is just ... usually an object with artist, album, track attributes
+[02:26:41] <domme> that's why i find that rather confusing
+[02:30:10] *** Joins: danimo (~daniel@kde/danimo)
+[02:30:35] *** Joins: waaaaargh_ (~quassel@twilight.weltraumpflege.org)
+[02:35:58] *** Quits: theli_ua (uid54353@gateway/web/irccloud.com/x-nbxinldgrtcjbbue) (*.net *.split)
+[02:35:58] *** Quits: xdarklight (~freenode@unaffiliated/xdarklight) (*.net *.split)
+[02:36:00] *** Quits: Guest21083 (~quassel@twilight.weltraumpflege.org) (*.net *.split)
+[02:36:01] *** Quits: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr) (*.net *.split)
+[02:36:01] *** Quits: lasconic (sid4376@gateway/web/irccloud.com/x-kaotueafgpocxolb) (*.net *.split)
+[02:36:15] *** Joins: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr)
+[02:36:24] *** Joins: lasconic_ (sid4376@gateway/web/irccloud.com/x-srmijhhnvwgdjydz)
+[02:38:12] *** Joins: xdarklight (~freenode@unaffiliated/xdarklight)
+[02:41:26] *** lasconic_ is now known as lasconic
+[02:41:45] *** Joins: theli_ua (uid54353@gateway/web/irccloud.com/x-pzmvhuvbkbytadxj)
+[03:11:25] *** Quits: jturney (~jon@host86-160-189-124.range86-160.btcentralplus.com) (Read error: Connection reset by peer)
+[07:13:12] <theli_ua> so, opinions on bandcamp ... should we or should we not have bandcamp resolver using either reverse engineered API their android app uses or just web scraping? also http://bandcamp.com/help/audio_basics#steal
+[07:13:14] <tomabee> [ Bandcamp Help | bandcamp.com |  ]
+[09:31:58] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[09:42:22] *** Quits: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr) (Changing host)
+[09:42:23] *** Joins: mirsal (~mirsal@videolan/developer/Mirsal)
+[10:05:24] *** Joins: altary (uid10972@gateway/web/irccloud.com/x-zdytiaecqaysuiei)
+[10:11:45] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[10:51:56] *** Joins: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com)
+[11:01:31] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:01:37] *** Joins: moru (~moru@81.189.130.58)
+[11:30:42] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[11:47:35] *** Quits: h4ndy (H4ndy@ipv6.gemini.panicbnc.net) (Ping timeout: 256 seconds)
+[11:49:12] *** Quits: SolarAquarion (SolarAquar@unaffiliated/solaraquarion) (Ping timeout: 246 seconds)
+[11:57:35] <domme> theli_ua: we don't have an api key and they are not handing out any more. so we'd need to scrape their page probably ... *sigh*
+[12:02:22] <muesli> isn't there a bandcamp resolver already?
+[12:06:47] *** Quits: altary (uid10972@gateway/web/irccloud.com/x-zdytiaecqaysuiei) (Quit: Connection closed for inactivity)
+[12:21:18] <feepk> The VDD15 schedule is out! http://www.videolan.org/videolan/events/vdd15/index.php#schedule
+[12:21:20] <tomabee> [ VideoLAN Dev Days 2015, September 19 | www.videolan.org | http:////images.videolan.org/images/partners/criteo.png ]
+[12:22:19] *** Quits: moru (~moru@81.189.130.58) (Ping timeout: 260 seconds)
+[12:26:19] *** Joins: Kalendium (~davidgasq@191.pool85-61-15.dynamic.orange.es)
+[12:26:19] *** Quits: Kalendium (~davidgasq@191.pool85-61-15.dynamic.orange.es) (Changing host)
+[12:26:19] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[12:32:01] *** Joins: jturney (~jon@host86-160-189-124.range86-160.btcentralplus.com)
+[13:04:20] <jherskowitz> muesli: domme theli_ua:  rotzbouw made one with his personal key, but I think his key may be dead
+[13:10:30] <jherskowitz> theli_ua: if you have a key we can try it
+[13:15:11] <domme> feepk: noice
+[13:18:43] <tomabee> @kleinfreund mentioned: Hey @tomahawk, is the “can’t find local file” issue (https://t.co/bDitcHQ5AR) supposed to be fixed, yet? [<no value>]
+[13:19:33] *** Joins: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7)
+[13:19:33] *** Quits: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7) (Changing host)
+[13:19:33] *** Joins: SolarAquarion (SolarAquar@unaffiliated/solaraquarion)
+[13:34:08] *** Joins: h4ndy (H4ndy@ipv6.gemini.panicbnc.net)
+[13:50:18] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Quit: Leaving)
+[13:50:37] *** Joins: Kalendium (~davidgasq@191.pool85-61-15.dynamic.orange.es)
+[13:50:37] *** Quits: Kalendium (~davidgasq@191.pool85-61-15.dynamic.orange.es) (Changing host)
+[13:50:37] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[14:10:00] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Quit: Leaving)
+[14:10:52] *** Joins: Kalendium (~davidgasq@191.pool85-61-15.dynamic.orange.es)
+[14:10:52] *** Quits: Kalendium (~davidgasq@191.pool85-61-15.dynamic.orange.es) (Changing host)
+[14:10:52] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[14:11:55] *** Quits: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com) (Quit: alsuren)
+[14:12:30] *** Joins: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com)
+[14:12:40] *** Quits: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com) (Client Quit)
+[14:19:38] * Kalendium hi
+[14:50:23] *** Parts: Kalendium (~davidgasq@unaffiliated/kalendium) ("Leaving")
+[15:18:45] <tomabee> @kleinfreund mentioned: @tomahawk I checked all files with Mp3tag and made sure they had ID3 v2.3. Sometimes it's one file of an album only. [<no value>]
+[15:20:46] <tomabee> @kleinfreund mentioned: @tomahawk Although sometimes it will even display an entirely different tracklist for an album. [<no value>]
+[15:21:05] <muesli> ^ that's got to do with fetching differently tagged tracklists for an album from musicbrainz
+[15:21:14] <muesli> i've got that covered for 0.9
+[15:21:26] * muesli is back to packing his stuff
+[15:22:31] <jherskowitz> muesli: ok
+[15:23:48] *** Joins: mgue (~mgue@f049030060.adsl.alicedsl.de)
+[15:27:35] *** waaaaargh_ is now known as waaaaargh
+[15:44:23] <TheOneRing> domme: I'm unable to build luce++ 
+[15:44:24] <TheOneRing> https://paste.kde.org/pwgrrbzs5
+[15:44:25] <tomabee> [ KDE Paste | paste.kde.org |  ]
+[15:45:05] <domme> TheOneRing: no clue. 
+[15:45:07] <TheOneRing> with boost 1_58  and 59 the same error
+[15:45:23] <domme> TheOneRing: i'm on boost 1.54 with some patch for c++11.. that works ... ... ...
+[15:46:22] <TheOneRing> ^^
+[15:50:01] <TheOneRing> maybe this one didn't work :P https://github.com/luceneplusplus/LucenePlusPlus/commit/1987082cf9278a639d772b4f35a8ae2d34944177
+[15:50:02] <tomabee> [ Fix compilation with Boost 1.58 · luceneplusplus/LucenePlusPlus@1987082 · GitHub | github.com | https://avatars0.githubusercontent.com/u/145881?v=3&s=200 ]
+[15:50:48] *** Quits: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com) (Remote host closed the connection)
+[16:04:46] <TheOneRing> arg I was building a tarball
+[16:18:15] *** Joins: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com)
+[17:32:20] *** Joins: a7medo778 (uid92302@gateway/web/irccloud.com/x-kqjbinnplycydejf)
+[17:35:02] <theli_ua> jherskowitz: domme I know we have one without a key, thus was asking opinion on how ethical would be to scrape or reverse engineer api their mobile app uses
+[17:43:00] *** Quits: saidinesh5 (~quassel@static.49.20.251.148.clients.your-server.de) (Read error: Connection reset by peer)
+[17:43:16] *** Joins: saidinesh5 (~quassel@148.251.20.49)
+[17:53:20] <domme> TheOneRing: yeah :/
+[17:54:10] <jherskowitz> theli_ua: let me reach out to them again and see if we can’t get a real one
+[18:05:14] <TheOneRing> domme: thats the new style for the fallback notification backend http://1drv.ms/1Of8opS
+[18:05:16] <tomabee> [ Access files anywhere. Create docs with free Office Online. | 1drv.ms |  ]
+[18:06:46] <domme> TheOneRing: if my internet connection wwasnt so bad on the train
+[18:09:59] <TheOneRing> ^^
+[18:17:47] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[18:26:04] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[18:27:06] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Client Quit)
+[18:28:01] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[18:58:33] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[19:02:25] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[19:02:25] <github-tomahawk> [13tomahawk-resolvers] 15mrmaffen pushed 1 new commit to 06master: 02http://git.io/vZpzT
+[19:02:25] <github-tomahawk> 13tomahawk-resolvers/06master 14034e706 15Enno Gottschalk: [spotify] Fix resolving. Bumped version to 0.3.1
+[19:02:25] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[19:03:23] *** Joins: meaning (~meaning@180.154-65-87.adsl-dyn.isp.belgacom.be)
+[19:19:32] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Ping timeout: 246 seconds)
+[19:21:42] *** Joins: soee (~soee@89.186.28.61)
+[19:26:48] <feepk> guys, if you join us on Saturday for the VideoLAN Dev Days dinner, please reply to this form _NOW_: http://goo.gl/forms/4yZx5l8bZg
+[19:26:49] <tomabee> [ Saturday dinner selection | goo.gl |  ]
+[19:46:43] *** Quits: meaning (~meaning@180.154-65-87.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[20:50:42] *** Quits: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com) (Quit: alsuren)
+[20:56:06] <theli_ua> jherskowitz: are you here?
+[20:58:36] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[21:04:00] <theli_ua> jherskowitz: anyhow, could you please test this ?  https://raw.githubusercontent.com/theli-ua/tomahawk-resolvers/ec8335a76f8013f67ef0355c61aa4605f15b35a4/youtube/content/contents/code/youtube.js
+[21:20:26] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Ping timeout: 240 seconds)
+[21:36:21] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[21:46:54] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[22:38:37] <toma-cat> Added new crash-report for version 0.76_arm (Android)

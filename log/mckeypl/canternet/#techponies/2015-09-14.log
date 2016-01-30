@@ -1,0 +1,338 @@
+[00:04:41] *** Init3-away is now known as init3
+[00:14:49] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[00:20:47] *** Joins: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP)
+[00:34:41] *** init3 is now known as Init3-away
+[00:59:12] *** Init3-away is now known as init3
+[01:05:35] *** Gigabit is now known as gigawalk
+[01:24:13] *** Joins: reiuiji (reiuiji@Pony-pgksa9.ma.comcast.net)
+[01:29:18] <ShivalWolf> https://thehackernews.com/2015/09/ashley-madison-passwords.html?m=1
+[01:29:19] <PinkiePieBot> [ These Top 30 Ashley Madison Passwords are just as Terrible as You'd Think ]
+[01:50:18] <tiwake> thats funny
+[01:51:20] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[01:58:38] <Phase> football
+[02:03:22] <Rylee> lol thehackernews.com
+[02:03:25] <Rylee> article is amusing
+[02:04:32] <Colgate> shoot, ********* is on there
+[02:04:44] <Phase> crap, they know my password
+[02:04:47] <Phase> uh, i mean
+[02:04:48] <Phase> nothing
+[02:04:56] <Rylee> i don't see hunter2
+[02:06:09] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (A TLS packet with unexpected length was received.)
+[02:14:15] <Starthunder> 696969
+[02:14:16] <Starthunder> wau
+[02:14:25] <Starthunder> 'DEFAULT', really?
+[02:18:17] * JustAberrant shrugs
+[02:18:28] <JustAberrant> large numbers of people use terrible passwords, movie at 11... ;p
+[02:18:55] <Starthunder> But…what kind of //person// would set 'DEFAULT' as a password?
+[02:19:49] <Starthunder> /0?123456(7(8(9)?)?)?/, sure
+[02:19:55] <Starthunder> 'password/, obviously
+[02:20:06] <Starthunder> but…'DEFAULT'?
+[02:20:39] <tiwake> people are so horrible with passwords in general...
+[02:21:09] <Starthunder> No, I mean…it sounds like something a machine would set. <.<
+[02:21:58] <Rylee> Starthunder: DEFAULT is probably a machine-generated thing
+[02:22:56] <Starthunder> Exactly.
+[02:23:23] <tiwake> it could be because the guy was 'setting up' some software and it had DEFAULT for the password by default... after dealing with that software for a while used it with everything else
+[02:23:30] <tiwake> its really that bad
+[02:23:35] <Starthunder> Next question: why would a machine be generating passwords of 'DEFAULT' for AM users?
+[02:23:38] <Starthunder> wat
+[02:23:42] <tiwake> with some people and their passwords
+[02:24:15] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[02:33:16] <Googie> Might be a default value in the database or something, being used for test users or deactivated accounts.
+[02:33:23] * Googie is just guessing off the top of his head.
+[02:34:40] <Starthunder> That's silly. You should delete the password for deactivated accounts.
+[02:34:48] <Starthunder> …actually, you should /delete/, not deactivate, accounts…
+[02:34:53] * Starthunder grumble grumble.
+[02:35:27] <Starthunder> Anyway, I don't reuse passwords for external services anymore, so whatever.
+[02:35:43] <Starthunder> Most of my passwords are four random words.
+[02:36:45] <Starthunder> I told ChunkHost they should be a mail provider.
+[02:37:24] <Starthunder> Because https://www.chunkhost.com/blog/11%2Fpassword_resets_suck
+[02:37:24] <PinkiePieBot> [ Password Resets Suck – ChunkHost ]
+[02:39:07] <JustAberrant> I really wish more organizations would adopt that approach
+[02:39:25] <Starthunder> It's hella simple.
+[02:39:41] <Starthunder> Keep a boolean in your `users` table
+[02:39:53] <Starthunder> allow_password_resets y|n
+[02:40:35] <JustAberrant> or at least an option to make things really arduous (for things where real money is involved)
+[02:40:55] <JustAberrant> like you have to (at your expense) get a lawyer to send an affidavit or something
+[02:41:33] <Starthunder> Okay, an enum, then.
+[02:41:45] <Starthunder> With at least a /never/ option
+[02:41:47] *** gigawalk is now known as Gigabit
+[02:42:03] <JustAberrant> well yes, it's not a technical problem, it's a customer relations problem as said in the article
+[02:42:14] <JustAberrant> because even if they explicitly opt out
+[02:42:27] <JustAberrant> some old grandmother who forgot their password is going to be bad PR 
+[02:42:43] <Starthunder> allow_password_resets with_personal_knowledge|with_service_information|with_affadavit|never
+[02:42:52] <Starthunder> That's just stupid though!
+[02:43:09] <JustAberrant> maybe so
+[02:43:15] <Starthunder> > I told them never to reset my password, then I forgot it, and now they won't reset my password!
+[02:43:22] <Starthunder> > How DARE they!!
+[02:43:30] <JustAberrant> but she'll be on the news crying big crocodile tears
+[02:43:43] <JustAberrant> and that annoying lady from that stupid show will be outside their office with a cellphone..
+[02:43:55] <JustAberrant> "they're not answering.. WHAT DO THEY NOT WANT TO TELL US!"
+[02:44:27] <JustAberrant> logic and PR rarely match up
+[02:45:01] <Starthunder> < It's simple. We allow users to, at registration, request that we unconditionally deny all password-reset requests.
+[02:45:25] <Starthunder> < This option is intended for our security-conscious users, who don't ever lose their passwords.
+[02:45:45] <Starthunder> < The option is disabled by default. We warn users when they select it that, should they lose their password, there will be nothing we can do for them.
+[02:45:50] <JustAberrant> meh, that'll be the quick "response from the company" blurb they give before panning back to the grief stricken family
+[02:46:15] <Starthunder> grief-stricken family
+[02:46:17] <JustAberrant> > she... she kept the families photo album in their.. I guess all those memories are gone now.."
+[02:46:31] <Starthunder> Oh. :|
+[02:46:44] <Starthunder> Okay, fine, how about a documented API thing?
+[02:46:53] <JustAberrant> doesn't matter ;p
+[02:46:54] *** Joins: Asoka (Asoka@Pony-utbe81.net-htp.de)
+[02:46:58] <Starthunder> No, but see
+[02:47:03] <Starthunder> You would have to go /looking/ for it.
+[02:47:09] <Starthunder> It wouldn't be in the form.
+[02:47:14] *** Parts: mkr (mkr@Pony-iinahj.radioyay.net) ()
+[02:47:20] <Starthunder> You would have to craft a POST yourself, and submit it.
+[02:47:56] <JustAberrant> > her grandson found these instructions on a web forum.. he now says he didn't understand the implications..
+[02:47:58] <Starthunder> That takes care of all the grandmas who check boxes and don't read the big red warnings. -.-
+[02:48:10] <Starthunder> fuck this shit I give up
+[02:48:20] <JustAberrant> hehe, that's the only solution when dealing with the public ;p
+[02:48:30] <Starthunder> It's really fuckkin' annoying that a few idiots ruin shit for all of us. :V
+[02:48:31] <JustAberrant> and _probably_ why we have the current status quo
+[02:48:34] <Starthunder> — me, 2015
+[02:49:23] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:50:00] <Starthunder> …one last attempt.
+[02:50:03] *** Quits: Asoka_White (Asoka@Pony-c7snvv.net-htp.de) (Ping timeout: 121 seconds)
+[02:50:10] <Starthunder> No user-facing option.
+[02:50:26] <Starthunder> Instead, you have to email support, asking them to deny password requests.
+[02:50:41] <Starthunder> And a person will reply, detailing to you all the consequences, and making sure you understand, before doing it.
+[02:50:56] <Starthunder> (relevantly, CH doesn't have an option; you have to email them)
+[02:51:13] <Starthunder> (also, if you do it, the password-reset-by-email link will still work)
+[02:51:39] <Starthunder> (which I'm /not/ advocating for (what if the government subpoenas your mail provider?)
+[02:51:40] <Starthunder> )
+[02:53:14] <Colgate> not like email is secure anyways
+[02:53:17] <Starthunder> ^
+[02:53:47] <Colgate> I would be fine with pgp encrypted email resets though
+[02:53:51] <Colgate> /shrug
+[02:54:27] <Starthunder> I would be fine with resets only by request signed with a keypair on file
+[02:55:29] <Colgate> most mail servers will just blindly send to any mail server, with or without tls, and even with tls, not verify the cert in any way
+[02:57:48] <JustAberrant> well, there's also another angle
+[02:58:05] <JustAberrant> by offering something like this, companies are basically saying "our default approach is insecure"
+[02:58:19] <JustAberrant> chunkhost gets away with it by saying they don't do what everyone else does
+[02:58:28] <JustAberrant> but.. that's probably a significant added cost to them
+[02:58:40] <JustAberrant> and it would be far worse for a service not marketed at technical people
+[02:58:43] <JustAberrant> also I have to run :(
+[02:59:48] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[02:59:49] <Starthunder> Please reset my password to $2a$12$27XIHonekEBqc.VrpMfZt.FWUQftMp6MmRlBi7ZSWCLYxJZEgY58C
+[02:59:50] <Starthunder> -----BEGIN PGP SIGNATURE-----
+[02:59:51] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[03:00:06] <Starthunder> JustAberrant, wat
+[03:04:27] *** init3_1 is now known as init3
+[03:13:53] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[03:16:20] <tiwake> playing the Xcom Enemy Unknown for my first time
+[03:39:50] <Googie> Oh Stack Overflow.
+[03:40:07] <Googie> Searching for an answer to a question. SO comes up as the first result.
+[03:40:11] <Googie> Answer: Just Google for it.
+[03:41:00] <Colgate> how do I google it?
+[03:41:44] <Googie> It's great though. All the answers are links to dead resources or just saying to search to what basically leads back to that Stack Overflow question.
+[03:46:36] <Crimson_Tail> and then you get those short questions that don't have well-tailored answers.
+[03:47:31] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:52:24] <Starthunder> Googie: flag it as not an answer. :V
+[03:52:54] <Starthunder> SO is not a forum. If the question is bad, it will be held and closed.
+[03:53:04] <Starthunder> Otherwise, it deserves /answers./
+[03:53:21] <Starthunder> Tellong the asker to google is forum crud, not an answer.
+[03:53:46] <Starthunder> Forum crud does not belong on Stack Exchange; it should be removed.
+[03:56:40] *** init3 is now known as Init3-away
+[04:01:10] *** Dusk|DnD is now known as Dusk
+[04:11:30] <ShivalWolf> this is an interesting read
+[04:11:31] <ShivalWolf> https://samvartaka.github.io/malware/2015/09/13/hackingteam-crypter/
+[04:11:32] <PinkiePieBot> [ The flawed crypto of Hacking Team's 'core-packer' malware crypter - samvartaka ]
+[04:15:57] <Colgate> writing crypto code is hard :(
+[04:32:21] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 121 seconds)
+[04:36:36] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[04:58:36] <ShivalWolf> does if-up.d not get executed anymore in debian 8?
+[04:59:11] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[05:00:30] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[05:00:31] *** Quits: ShivalWolf (ShivalWolf@2400:d400:9:7375:abcd::2) (Quit: leaving)
+[05:00:59] *** Joins: ShivalWolf (ShivalWolf@BigMac.is.a.Coltcuddler.org)
+[05:07:35] *** Gigabit is now known as GigaZzz
+[06:02:07] *** Init3-away is now known as init3
+[06:19:25] *** Joins: Gumball_Crash (GumballCras@Pony-svbp6u.nh.comcast.net)
+[06:22:55] *** Quits: GumballCrash (GumballCras@0.to.pony.10secondsflat) (Ping timeout: 121 seconds)
+[06:31:09] *** Eventide is now known as Eventide|Sleepies
+[06:47:37] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "sleepy pony has to get up at oh-my-god30 in the morning, 'night everypony")
+[06:59:57] *** Quits: Ruthalasleep (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Connection closed)
+[07:20:03] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[07:44:57] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:52:41] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[08:25:25] <Googie> Phase: This'll be interesting
+[08:28:43] <Phase> ?
+[08:30:45] <Googie> Malcolm Turnbull just resigned and asked for a leadership ballot.
+[08:33:59] *** Dusk is now known as Dusk|Sleep
+[08:34:51] <ShivalWolf> Googie: yeah im just gald he isnt communication minister
+[08:34:53] <ShivalWolf> the braindead fuckstick
+[08:35:13] <ShivalWolf> and just think if you with cysca you wont have to get your prize from him
+[08:38:43] <Googie> Tell me about it. I'm going to be in one of the first areas to get FTTN. Woo testing ground :/
+[08:40:23] * Googie still is struggling to figure out what their actual plans for rolling it out will be.
+[08:40:47] <Googie> (Namely, how long am I going to be without internet because the copper needs to be cutover :V)
+[08:40:56] <HoneyDrops> I'll ask here too, for good measure.  I've recently-ish had issues with my laptop locking up, sorta.  I thought it was a total freeze, but I discovered that actually it just isn't responding to any keyboard/mouse input, and I can't ssh in (it doesn't error, just `ssh laptop` and the command hangs indef).  Network /is/ still up and X is still updating the screen.  I know because I watched a
+[08:40:58] <HoneyDrops> tmux sessions over ssh still display input from another system.  Nothing hinky in /var/log/messages, nor dmesg.  I cannot seem to trigger this on demand, but I /think/ it might be related to going on/off ac power.
+[08:41:53] <Starthunder> TIL OS X has a kernel extension to prevent deleting things from Time Machine backups, and a helper program to let you override that.
+[08:42:10] <Starthunder> >> https://apple.stackexchange.com/questions/31679
+[08:42:11] <PinkiePieBot> [ osx - How can I delete a file marked as backup item? - Ask Different ]
+[08:43:14] <Starthunder> HoneyDrops: add `-v`s to the ssh invocation, see what you get?
+[08:43:23] <Starthunder> sounds like an odd little problem
+[08:44:07] <HoneyDrops> next time I will.
+[08:44:54] <HoneyDrops> It's almost as if I can't spawn a process, but there is no reason I can think of that would cause the sort of system load that could cause that.
+[08:48:15] <Seoson> The moment you realize that something as simple as a seedable random number generator in javascript requires an indepth search -.-
+[08:49:53] <Seoson> Finally found one, but the solutions that were proposed on the way to get there ....
+[08:50:16] <Googie> Depending on the quality of random numbers that you need, it's pretty easy just to write up your own generator. (Assuming there's no need for anything cryptographically secure of course)
+[08:50:43] <Googie> https://en.wikipedia.org/wiki/Linear_congruential_generator
+[08:50:44] <PinkiePieBot> [ Linear congruential generator - Wikipedia, the free encyclopedia ]
+[08:50:53] <Colgate> HoneyDrops: presumably the magic sysrq key still works, have you tried turning the keyboard to raw mode and switching to a tty?
+[08:50:57] * Googie has done that for portability before.
+[08:51:51] <HoneyDrops> Colgate: I've tried Ctrl+Alt+F1-3  I'd have to figure out how to input SysRq on this laptop keyboard :x
+[08:52:27] <Colgate> my laptop is awful with the sysrq key as well, stupid function keys :(
+[08:53:47] <HoneyDrops> I can say that ACPI-based keypresses also fail to register.  However the thinklight (fn+space) does work, but I'm pretty sure that is not handled at the OS level.
+[08:54:19] <HoneyDrops> Not being able to ssh in, yet the network still being up is what really confounds me.
+[08:54:45] *** Quits: GigaZzz (Gigabit@the.girly.colt) (Quit: Canternet Public Bouncer!)
+[08:54:49] <Seoson> Problem is: Outputs needs to be chaotic (minimal input change results in drastic change of the output), well distributed between it's boundaries and unpredictable if you only know parts of the seed (goes with chaotic useally). While I could write something like this myself the chance of making a mistake is huge.
+[08:56:10] <Googie> Yeah, an LCG is basically only useful for kinda mostly random numbers :V
+[08:56:29] <johnsey> no printscreen key on that laptop?
+[08:56:54] <HoneyDrops> Colgate: I can't exactly say how long this has been going on for.  I think 1-3 months, however it might not happen for well over a week or two, or like today within a few hours.
+[08:57:01] <Seoson> The goal is to create a cheat safe distributed randome number generator. Looks fine now ...
+[08:57:25] <HoneyDrops> johnsey: me?  X230, I use xmodmap to remap PrtSc to Menu for dmenu to use
+[08:57:54] <HoneyDrops> I /think/ I might have started after going to 4.*.* kernels
+[08:57:57] <Colgate> unreproducible problems are the worst :P
+[08:58:59] <HoneyDrops> Yes they are :I
+[09:00:48] <johnsey> I don't think xmodmap has.an effect on sysrq but i'd have to look it up
+[09:00:54] <HoneyDrops> If it was just mouse/keyboard, I would guess X input drivers are to blame, but that shouldn't impact ssh.
+[09:01:44] <HoneyDrops> Possibly-relatedly, Ihave has issues with my xmodmap changes being undone and the keyboard reverts to the default keymap.  My touchpad also gets re-enabled (I disable it in .xinitrc with synclient)
+[09:02:34] <HoneyDrops> I would imagine sysrq is handled before X gets the scancodes.
+[09:05:29] <johnsey> try disabling swap if you're using it and see if you can reproduce the problem
+[09:07:59] <HoneyDrops> No swap, 16GB ram, and not even usign 20% of that 99% of the time.
+[09:07:59] <johnsey> if the laptop responds to ping but not ssh or other inputs, it can also be that it's swapping hard
+[09:08:29] <johnsey> ah
+[09:10:02] <HoneyDrops> No notable system load either, a mostly idle firefox, few terminals, tmux sessions, few vim instances, maybe one gnumeric document.
+[09:10:07] <Googie> It does sound like something that happens to me when IO is terrible.
+[09:12:55] <Seoson> I've only encountered when a servers RAID died and it could no longer spawn any process.
+[09:13:24] <Seoson> ... something similar ...*
+[09:14:11] *** locodash11[server] is now known as Zone_Sama
+[09:14:58] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[09:15:41] <HoneyDrops> I would almost say it feels like when a system is forkbombed, but X is redrawing the terminal at the full speed.
+[09:18:41] *** Zone_Sama is now known as Pony_14557
+[09:28:36] *** Pony_14557 is now known as Tan-Sama
+[09:28:36] *** init3 is now known as Init3-away
+[09:33:06] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:44:37] *** Init3-away is now known as init3
+[09:47:19] <ShivalWolf> LOL at this door control systems terribleness - https://www.youtube.com/watch?v=-cZ7eDV2n5Y
+[09:47:19] <PinkiePieBot> [ DEF CON 23 - Dennis Maldonado - Are We Really Safe? - Bypassing Access Control Systems - 6062 views - 46m 18s long - 210 likes - 99.53% ]
+[10:08:46] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[10:09:40] *** Joins: Phase (Phase4@Pony-b9grq3.internode.on.net)
+[10:14:39] *** init3 is now known as Init3-away
+[11:05:28] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[11:28:51] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[11:36:03] *** Quits: Phase (Phase4@Pony-b9grq3.internode.on.net) (A TLS packet with unexpected length was received.)
+[11:36:24] *** Joins: Phase (Phase4@Pony-b9grq3.internode.on.net)
+[12:23:50] *** Init3-away is now known as init3
+[12:25:40] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[12:33:48] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[12:53:51] *** init3 is now known as Init3-away
+[13:14:57] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[13:20:19] <AppleDash> JustAberrant: https://www.reddit.com/r/pcmasterrace/comments/3kvrm6/custom_build_vs_alienware/
+[13:20:24] <AppleDash> Figured you would find that helpful
+[13:29:52] *** AppleDash is now known as Blackjack
+[14:06:06] <ShivalWolf> tonight has been a good night
+[14:06:11] <ShivalWolf> no more tony abbott
+[14:27:34] <johnsey> ShivalWolf: now good luck undoing all the damage he has done 
+[14:28:13] <johnsey> I hope he was replaced by someone capable of that
+[14:28:43] <ShivalWolf> johnsey: not really but the thing now is the party wont survive the next election which will be held within the year
+[14:29:31] <johnsey> that sounds like good news
+[14:29:57] <ShivalWolf> theres still time for doing damange
+[14:30:04] <ShivalWolf> but nothings goign to go though while thigns get reshuffled
+[14:30:15] <ShivalWolf> so theres about a month of useless goverment while they reoganise
+[14:30:33] <ShivalWolf> thing is theres a reason the new guy has the nickname turncoat
+[14:30:39] <ShivalWolf> hes abit of a flipflop on things
+[14:30:47] <ShivalWolf> and hes abit of amoron
+[14:30:52] <ShivalWolf> he was the minister of communication
+[14:30:59] <ShivalWolf> and well was kinda hopeless at that
+[14:31:00] <johnsey> i'm not following australian politics closely but the few things that went through the news were quite terrifying
+[14:31:08] <ShivalWolf> but hey better then abbott who elected himself minister for women
+[15:01:18] <Googie> I do wonder if this will hopefully push the Liberal party at least a /little/ towards the center again. Though I'm not exactly optimistic.
+[15:34:12] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[15:41:52] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[15:59:39] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[16:04:26] *** Quits: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP) (Connection closed)
+[16:08:52] *** Tan-Sama is now known as Little_Pip_[server]
+[16:22:13] <Seoson> So I figured out how an Adobe Flash bug works that made me crazy years ago. -.-
+[16:24:36] <Seoson> Flash had some clickjacking issues a few years ago where you could hijack clicks and place them on the flash settings menu to allow camera and mic input without the user knowing what you just did. I knew of the problem but I didn't knew how Adobe fixed it
+[16:25:52] <Seoson> Turns out they go the lazy way and compare the actual rendered frame pixel by pixel that they fetch from the graphics card to check if the dialog is visible
+[16:26:33] <Seoson> Since the dialog is independent of the browser's zoom level that sound like an easy solution, right? WRONG
+[16:27:30] <Seoson> sounds* What they did not take into account is that the text in the dialog is - as well as other text on a website - freaking small.
+[16:27:37] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:28:52] <Seoson> So if somebody with low vision visits a website they use magnifier software - like me for example. Result: You cannot click any button or option and you have no idea why.
+[16:30:00] <Seoson> Of cause they do not display any kind of indicator or error message making it effectively impossible to know for those kind of people what's going on.
+[16:35:02] *** Joins: GigabitPony (Gigabit@the.girly.colt)
+[16:36:20] *** GigabitPony is now known as Terrabyte
+[16:56:17] * Starthunder claps.
+[16:56:22] <Compu> Seoson: that also sounds rather processor intensive
+[16:56:32] <Starthunder> Hooray for Adobe! Best software vendor /ever!/
+[16:57:16] <Compu> good thing html5 is a thing now
+[17:13:24] <Blackjack> What of the legacy flash apps?
+[17:16:00] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[17:18:59] <roflin> pile them up and burn them?
+[17:19:05] <roflin> it's the only way to be sure
+[17:19:35] <Starthunder> ^
+[17:20:41] <Blackjack> People might still need to use them
+[17:20:43] <Blackjack> like SpeedTest
+[17:20:46] <Blackjack> I use SpeedTest a ton
+[17:21:38] <Seoson> Sadly there are a lot of legacy apps
+[17:22:28] <Blackjack> And all the HDML5 speed tests I've tried are horridly inaccurate
+[17:22:37] <Blackjack> saying I have such joyous speeds as 4Mbps
+[17:25:52] *** Terrabyte is now known as GigaTown
+[17:33:34] *** Eventide|Sleepies is now known as Eventide
+[18:16:22] *** Init3-away is now known as init3
+[18:34:34] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[18:55:25] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[18:55:33] *** Gladiolus is now known as Student-Gladi
+[19:02:51] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[19:46:43] *** Quits: Student-Gladi (uid110916@the.truth.is.out.there) (Quit: )
+[20:08:09] *** Joins: Student-Gladi (uid110916@Pony-qjfks9.brockwell.irccloud.com)
+[20:11:35] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[20:28:06] *** Quits: Student-Gladi (uid110916@Pony-qjfks9.brockwell.irccloud.com) (Quit: )
+[20:36:46] *** Joins: AquaBrandish (aqua@Pony-prm9c8.static.axtel.net)
+[20:38:42] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Ping timeout: 121 seconds)
+[20:44:33] *** Dusk|Sleep is now known as Dusk
+[20:47:30] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[20:50:18] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[20:51:36] <Starthunder> Blackjack: here's your speedtest
+[20:51:46] <Starthunder> ping 8.8.8.8  # latency
+[20:53:09] <Starthunder> file=$(mktemp) && ssh $server dd if=/dev/urandom of=$file bs=1M count=16 && scp $server:$file /tmp  # down speed
+[20:53:31] <Starthunder> file=$(mktemp) && dd if=/dev/urandom of=$file bs=1M count=16 && scp $file $server:/tmp  # up speed
+[20:53:42] <Blackjack> no.
+[20:53:52] <Blackjack> Because I can only pull about 10Mbps from my server
+[20:54:01] <Blackjack> But from a local server (which I do not own) I can pull a full 120
+[21:02:03] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[21:07:45] *** Quits: AquaBrandish (aqua@Pony-prm9c8.static.axtel.net) (Connection closed)
+[21:14:57] *** Joins: lablayers (uid55894@Pony-r51rb6.ealing.irccloud.com)
+[21:35:38] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[22:08:35] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[22:13:59] *** zz_CyberJacob is now known as CyberJacob
+[22:17:00] *** CyberJacob is now known as zz_CyberJacob
+[22:17:48] *** Quits: Phase (Phase4@Pony-b9grq3.internode.on.net) (Ping timeout: 121 seconds)
+[22:32:06] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[22:33:01] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:49:38] *** init3 is now known as Init3-away
+[22:52:03] *** Init3-away is now known as init3
+[22:54:44] *** Joins: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP)
+[23:11:17] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[23:22:04] *** init3 is now known as Init3-away
+[23:22:32] *** Joins: Tree-Hugger (User_88371@Pony-1ej7ok.res.rr.com)
+[23:26:04] *** Init3-away is now known as init3
+[23:27:00] <Tree-Hugger> is this a good place for help or nah?
+[23:31:29] <Tree-Hugger> got it nvm
+[23:31:33] *** Parts: Tree-Hugger (User_88371@Pony-1ej7ok.res.rr.com) ("Bye!")
+[23:32:44] <Blackjack> Starthunder: Your command is also flawed
+[23:32:44] <Blackjack> you're running a local mktemp, what happens if that temp file exists on the remote?
+[23:32:54] <Starthunder> Does mktemp even check for that?
+[23:33:23] <Blackjack> No idea
+[23:33:43] <roflin> I thought it was guaranteed to give an unique file
+[23:33:45] <Starthunder> I thought it just generated a random filename and relied on the fact that collisions are pretty dark unlikely
+[23:35:36] <roflin> no mention of unique in the man page :(
+[23:36:13] <roflin> ah but the posix function tmpfile does guarantee an unique temp file
+[23:37:28] *** Quits: lablayers (uid55894@Pony-r51rb6.ealing.irccloud.com) (Quit: Connection closed for inactivity)
+[23:41:47] <Starthunder> Does the POSIX /program/ `mktemp` guarantee a unique file, though?
+[23:42:12] <roflin> yeah dunno, the manpage doesn't mention it, so I wouldn't assume it.
+[23:42:20] <roflin> I just got the 2 confused.
+[23:49:37] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[23:59:42] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)

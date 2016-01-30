@@ -1,0 +1,668 @@
+[00:05:47] *** Joins: cyborg_ar (cyborgar@Pony-sb9.88u.25.181.IP)
+[00:14:10] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:15:41] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[00:25:38] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:29:50] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Quit: Saliendo)
+[00:37:00] *** CyberJacob is now known as zz_CyberJacob
+[00:40:06] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[00:45:50] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Quit: Leaving)
+[00:59:18] *** sleumasPhone is now known as sleepysleumas
+[01:06:43] *** Joins: ShivalPonyWolf (ShivalWolf@BigMac.is.a.Coltcuddler.org)
+[01:16:53] *** Joins: MistVeil (AndChat3408@Pony-ji4.94l.144.201.IP)
+[01:22:03] *** Quits: hawthornbunny (hawthorn@Pony-tk6.bga.28.2.IP) (Ping timeout: 121 seconds)
+[01:28:58] *** Joins: nscoots (FreyGrimrod@Pony-2pr5us.adsl.inet-telecom.org)
+[01:54:48] *** Neptune|sleep is now known as Neptune
+[01:57:36] *** Joins: MobileData (dbb@Pony-mp1.35j.194.70.IP)
+[01:57:48] <MobileData> EHLP
+[01:58:09] <MobileData> mayday
+[01:58:21] <MobileData> I HATE WINDOWS SO MUCH
+[01:58:46] <MobileData> so: i have my laptop set up to dual-boom windows and mint
+[01:59:32] <MobileData> i booted windows to install updates (usually try to every few months), and then to run a pdf generator i wrote in .net
+[01:59:37] <MobileData> so..
+[02:00:11] <MobileData> updates done, reboot, do some work, put machie to sleep, drive home
+[02:00:53] <MobileData> boot back up, move some files from ome dir to another, plug in printer, install drivers for printer, go to print pdf, and the printer freezes
+[02:01:05] <MobileData> try a few more times, same result
+[02:01:15] <MobileData> won't try to print to any system printer
+[02:01:20] <MobileData> reboot machine
+[02:01:54] <MobileData> checkdisk wants to scan my data partition, nope, skip that - do that later
+[02:02:02] <nscoots> cups hates you
+[02:02:33] <MobileData> windows finishes booting, and my data drive is inaccessable
+[02:02:41] <MobileData> weird - reboot again, same thing
+[02:02:52] <MobileData> reboot again, fine, let checkdisk run
+[02:03:27] <MobileData> throws out a bunch of index entry errors, finishes in 20 seconds
+[02:03:32] <MobileData> windows boots
+[02:03:36] <MobileData> drive is there
+[02:03:46] <MobileData> drive is now 500GB free of 500GB
+[02:03:50] <MobileData> NO
+[02:04:11] <MobileData> i had at least 380GB of data on there
+[02:04:20] <MobileData> this can't be happening
+[02:04:39] <MobileData> it's been a few months since my last backup
+[02:04:41] <nscoots> what file system?
+[02:04:53] <nscoots> windows probably doesn't recognize extfs
+[02:05:23] <MobileData> i have thousands of pics, hours of video, unpublished computer programs... all gone
+[02:05:28] <MobileData> scoots: NTFS
+[02:05:40] <MobileData> i shut it down and unplugged it
+[02:05:51] <MobileData> i need to know if there's a way to recover my data
+[02:06:56] <MobileData> all my art books, references, pictures, music, programming, pictures, video recordings... 
+[02:07:00] * MobileData cries
+[02:07:22] <MobileData> everything i've done in the past 4 months, just gone
+[02:07:41] <MobileData> stupid microsoft
+[02:08:03] <MobileData> IT WAS WORKING BEFORE I REBOOTED!
+[02:09:01] <AppleDash> MobileData: Something like ddrescue might help
+[02:09:05] <AppleDash> Don't do anything to the drive
+[02:09:09] <AppleDash> don't write to it especially
+[02:09:27] <MobileData> not even going to boot to it
+[02:09:37] <MobileData> what can i do?
+[02:10:53] <AppleDash> Try something like http://www.cgsecurity.org/wiki/TestDisk
+[02:10:55] <PinkiePieBot> [ TestDisk - Partition Recovery and File Undelete ]
+[02:11:00] <AppleDash> I've used it
+[02:11:33] *** Joins: Asoka (Asoka@Pony-di0a3s.net-htp.de)
+[02:12:25] <MobileData> so, can i boot to mint, run that, and magically get my partition table back?
+[02:13:35] <MobileData> i've never had this happen - i have no idea what to do
+[02:14:04] <AppleDash> There's tons of information about testdisk on the wiki, there's a couple example situations too
+[02:14:44] *** Quits: Asoka_White (Asoka@Pony-9v86g2.net-htp.de) (Ping timeout: 121 seconds)
+[02:15:32] <MobileData> probably going to have to wait until tomorrow, and do it at work... don't have my computer room set p right now...
+[02:16:51] <MobileData> this will be a bit weird tomorrow, too... "hey, i know i said that i finished the project you paid me for, but windows decided to delete it..."
+[02:17:00] <MobileData> rrrg
+[02:17:03] <AppleDash> >.<
+[02:17:10] <AppleDash> Trust me, I know, it's frustrating
+[02:17:40] <MobileData> i am questioning my reasoning for dual-booting windows
+[02:17:56] <MobileData> never had this issue before. but if this is going to happen...
+[02:18:45] <MobileData> i only keep it for the games that i can't play in mint...
+[02:18:59] <johnsey> after long and extensive experiments, I have come to the conclusion that dick typing, while much more complicated, is far superior to duck typing.
+[02:19:21] <MobileData> i have no response to that
+[02:20:14] <AppleDash> johnsey: Explain
+[02:20:50] <johnsey> it cannot be explained, it must be experienced
+[02:21:27] <MobileData> i'm out... have things to do, things to collect, sacrifices to data gods to make, etc
+[02:21:50] <MobileData> i will deal with this when i have a pc with internet at the ready
+[02:21:58] *** Quits: MobileData (dbb@Pony-mp1.35j.194.70.IP) (Quit: Wanders off to investigate wandering)
+[02:36:39] *** Quits: MistVeil (AndChat3408@Pony-ji4.94l.144.201.IP) (Quit: Bye)
+[02:41:21] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[02:47:14] <Cydie|Depressed> Can someone teach me how to configure and run unrealircd
+[02:48:04] <AppleDash> Step 1: Don't use Unreal, it sucks
+[02:48:08] <AppleDash> Even more so than inspircd
+[02:48:48] <AppleDash> I'd personally recommend something like elemental-ircd, or inspircd if you're running under Windows. But that's just me
+[02:49:07] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[02:49:28] <Cydie|Depressed> Is it easy for windows?
+[02:49:48] <Cydie|Depressed> Like it can run at LAN
+[02:50:16] <AppleDash> Sure
+[02:50:22] <AppleDash> No reason it couldn't
+[02:50:26] <Cydie|Depressed> Any ircd can run on LAN?
+[02:51:00] <AppleDash> Yes
+[02:51:35] <AppleDash> Any network server can run on a LAN :P
+[02:53:59] <Cydie|Depressed> I mean I'm making a small server
+[02:54:11] <AppleDash> OK
+[03:04:27] *** Cydie|Depressed is now known as Cydie|DepressedAndPissed
+[03:09:02] *** Joins: MistVeil (AndChat3408@Pony-ji4.94l.144.201.IP)
+[03:13:17] *** Quits: sleepysleumas (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[03:15:42] <frackster> you can recover lost data like mobiledata described if you go to a data rescue place that has a clean room
+[03:15:46] <frackster> at a cost ;p
+[03:15:54] <frackster> all depends how much your data is worth to you
+[03:16:50] *** Quits: MistVeil (AndChat3408@Pony-ji4.94l.144.201.IP) (Quit: Bye)
+[03:17:27] <Colgate> the hdd is still functional, no need for that, just dd the drive and then photorec it
+[03:18:25] <AppleDash> Don't even need to dd it
+[03:18:40] <Colgate> /shrug, I would do it anyways
+[03:18:59] <AppleDash> dd if=/dev/urandom of=/dev/colgat0
+[03:19:29] <Colgate> hmm, my phone doesn't know how to pronounce urandom, it didn't even try
+[03:19:31] <Cydie|DepressedAndPissed> Well I could run any Linux server with cygwin
+[03:19:33] <AppleDash> lol
+[03:28:40] *** Joins: MistVeil (AndChat3408@Pony-ji4.94l.144.201.IP)
+[03:32:51] *** Cydie|DepressedAndPissed is now known as Cydie
+[03:39:21] *** Joins: Sombra (Iceman@Darkhorse21)
+[03:40:30] <Cydie> Also I don't want my hexchat to die
+[03:40:56] <Cydie> Yesterday, it stopped working when I clicked the icon
+[03:41:10] <Cydie> Like nothing comes out
+[03:41:27] <Cydie> If anyone has hexchat here though
+[03:49:45] <MistVeil> I've only used it for about 3 hrs, I'm afraid
+[03:52:57] <Cydie> Is there a client that's nicer than hex
+[03:53:16] <Cydie> Probably stupid avira did thos
+[03:53:25] <Cydie> *this
+[03:53:52] <frackster> woops
+[03:53:53] <frackster> Comcast has received a notification by a copyright owner, or its authorized agent, reporting an alleged infringement of one or more copyrighted works made on or over Comcast's High-Speed Internet service (the 'Service').  The copyright owner has identified the Internet Protocol ('IP') address associated with your Service account at the time as the source of
+[03:53:53] <frackster> the infringing works.  The works identified by the copyright owner in its notification are listed below.  Comcast reminds you that use of the Service (or any part of the Service) in any manner that constitutes an infringement of any copyrighted work is a violation of Comcast's Acceptable Use Policy and may result in the suspension or termination of your
+[03:53:53] <frackster> Service account.
+[03:58:04] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[04:02:50] <Lapsus> nice, frackster
+[04:02:59] <Lapsus> what was it that you got the notice for? :v
+[04:03:34] <frackster> File Name:  Three Stories - J. D. Salinger.pdf
+[04:03:36] <frackster> haha
+[04:04:35] <Lapsus> lol
+[04:32:11] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[04:37:01] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[04:44:33] *** HighSky is now known as Starburn
+[05:04:03] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[05:06:04] *** Quits: MistVeil (AndChat3408@Pony-ji4.94l.144.201.IP) (Quit: Bye)
+[05:11:23] *** Joins: Hush (Lapsus@Pony-m8v.m2p.239.99.IP)
+[05:11:53] *** Hush is now known as Pony_53833
+[05:12:05] *** Quits: Lapsus (Lapsus@i-forget.ca) (Ping timeout: 121 seconds)
+[05:12:58] *** Pony_53833 is now known as Lapsus
+[05:13:00] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[05:30:09] <Starthunder> > Jerome David "J. D." Salinger (/ˈsælɪndʒər/; German /'za:lɪŋɐ/; January 1, 1919 – January 27, 2010) was an American writer who won acclaim early in life. He led a very private life for more than a half-century. He published his final original work in 1965 and gave his last interview in 1980.
+[05:30:21] <Starthunder> So...who holds the rights to this guy's stuff? :/
+[05:30:32] <Starthunder> And why is it still copyrighted, over half a century later?
+[05:30:37] <Starthunder> This shit is ridiculous -.-
+[05:32:50] <Starthunder> > MD5
+[05:32:53] <Starthunder> SSH still uses MD5?? >.<
+[05:38:57] *** Joins: Sombra (Iceman@Darkhorse21)
+[05:46:26] <Googie> Optionally.
+[05:58:11] *** Joins: Q0 (Q0@Pony-83oa5f.6i30.qoe9.0601.2601.IP)
+[06:47:14] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[06:49:52] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[06:51:08] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[07:19:33] *** Quits: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net) (Connection closed)
+[07:19:49] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:22:47] <tiwake> kung fury game http://store.steampowered.com/app/373180/
+[07:22:48] <PinkiePieBot> [ Kung Fury: Street Rage on Steam ]
+[07:24:06] *** Joins: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net)
+[07:25:19] *** Joins: TuxRug (TuxRug@TuxRug)
+[08:20:06] *** RedHelper is now known as Creeps|AFK
+[08:32:54] *** zz_CyberJacob is now known as CyberJacob
+[09:02:54] *** Joins: hawthornbunny (hawthorn@Pony-tk6.bga.28.2.IP)
+[09:05:08] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[09:21:58] <Twilightlicious> Do they make DisplayPort to VGA adapters?
+[09:22:03] <Twilightlicious> >3>
+[09:22:22] <Twilightlicious> My guess is that displayport is Digital so no? :P
+[09:22:24] <Colgate> no
+[09:22:34] <Colgate> it would have to be an active adapter
+[09:22:42] <Twilightlicious> aka, a converter thingy?
+[09:23:06] <Twilightlicious> those are expensive and produce low quality, right? >3>
+[09:23:15] <Twilightlicious> better off just getting another moniter lol
+[09:24:54] <Twilightlicious> switched to a graphics card that has 3 displayports, an HDMI Port, and a DVI Port
+[09:25:56] <Googie> It's likely a DVI-I port, which can be converted to VGA with a passive converter.
+[09:26:07] <Twilightlicious> it is
+[09:26:13] <Twilightlicious> But my first moniter is DVI
+[09:26:27] <Twilightlicious> So my second moniter im trying to connect is out of luck
+[09:26:40] <Twilightlicious> unless displayport to DVI exists
+[09:26:42] <Twilightlicious> thats an idea >3>
+[09:27:23] <Twilightlicious> assuming my moniter supports DVI-D, they make those right?
+[09:27:26] <Twilightlicious> DisplayPort to DVI-D?
+[09:27:40] <Twilightlicious> and then i can use my DVI-I port for my VGA Moniter
+[09:30:38] <Googie> It depends if your graphics card supports DisplayPort++/Dual mode display port.
+[09:31:40] <Twilightlicious> o.o;
+[09:31:47] <Twilightlicious> why wouldn't it, and how would i find out :P
+[09:31:56] <Colgate> I know that passive display port > hdmi exists
+[09:32:04] <Colgate> so I don't see why DP > dvi wouldn't
+[09:33:30] <Googie> Probably listed in the manual, or in the specs list or something.
+[09:34:39] <Googie> Actually, what you could do is just get a passive HDMI->DVI adapter, and plug in your DVI monitor over HDMI, and use the DVI-I port for VGA
+[09:35:58] <Twilightlicious> Wouldn't HDMI to DVI produce low quality?
+[09:36:40] <Colgate> probably not
+[09:37:34] <Googie> It's a passive conversion.
+[09:38:55] <Twilightlicious> it wouldn't only support awkward resolutions?
+[09:38:57] <Twilightlicious> or something? :P
+[09:42:12] <Googie> No, it should be fine.
+[09:44:56] *** Joins: JockeTF (jocke@Pony-vvuota.bredband.comhem.se)
+[09:46:01] <Twilightlicious> i found this, would it be a bad idea? http://www.amazon.com/StarTech-com-DisplayPort-Video-Adapter-Converter/dp/B0017K6BD2
+[09:46:03] <PinkiePieBot> [ Amazon.com: StarTech.com DisplayPort to DVI Video M/F Adapter Converter: Electronics ]
+[09:46:58] <Twilightlicious> i mean't to link the VGA One
+[09:47:24] <Twilightlicious> this http://www.amazon.com/StarTech-com-DisplayPort-Video-Adapter-Converter/dp/B003V4TV8O
+[09:47:26] <PinkiePieBot> [ Amazon.com: StarTech.com DisplayPort to VGA Video Adapter Converter - 1920x1200 - Display Port / DP Adapter M/F: Electronics ]
+[09:47:37] <Gigabit> All the links
+[09:48:00] *** CyberJacob is now known as zz_CyberJacob
+[09:52:55] *** Joins: Phase (Phase4@Pony-rqlgb5.internode.on.net)
+[09:59:23] *** init3 is now known as Init3-away
+[10:07:40] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[10:32:32] *** Awaykitty is now known as Unixkitty
+[11:01:42] *** Quits: TuxRug (TuxRug@TuxRug) (Quit: WeeChat 1.1.1)
+[11:14:19] *** Quits: Crimson_Tail (Bluepon@Pony-uvcqcl.s0tm.sdub.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[11:18:48] *** Quits: cyborg_ar (cyborgar@Pony-sb9.88u.25.181.IP) (Ping timeout: 121 seconds)
+[11:34:29] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[12:04:31] *** Quits: sleumas2k (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[12:12:25] <Googie> Heheheh.
+[12:12:38] <Googie> If you still don't know what recursion is, read this sentence.
+[12:22:42] <Lapsus> https://www.google.ca/search?q=recursion
+[12:22:42] <Lapsus> :D
+[12:26:29] *** Joins: sleepysleumas (uid91753@Pony-pu5auv.charlton.irccloud.com)
+[12:40:28] *** Quits: nscoots (FreyGrimrod@Pony-2pr5us.adsl.inet-telecom.org) (Ping timeout: 121 seconds)
+[12:57:57] *** Quits: Fusl (Fusl@151.236.6.54) (Ping timeout: 121 seconds)
+[13:18:09] *** Neptune is now known as Neptune|sleep
+[13:23:38] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[13:28:03] *** Init3-away is now known as init3
+[13:31:18] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[13:47:03] *** Quits: AutoLapsus (Lapsus@Totally.Is.A.Network.Service) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: johnsey (johnsey@netadmin.canternet.org) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: zz_CyberJacob (CyberJacob@Pony-8adl2m.bluesapphiremedia.co.uk) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Finwe (vhalkola@Pony-25l.vcn.233.130.IP) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Stik (drakon@Pony-ql55m5.cable.virginm.net) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: miggyb (miggyb@horsetornado.co.uk) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: aji (alex@ajitek.net) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: enginemaniac (flail@flail.flail.flail) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Red_M (potato@Pony-afr.ndf.29.23.IP) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: saneki (saneki@Pony-tni.g4k.31.96.IP) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Sin (Sin@is.hustlin.everyday) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: dekeccho (dekeccho@dekeccho.Is.Not.A.Clever.Poni) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: hawthornbunny (hawthorn@Pony-tk6.bga.28.2.IP) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: JustAberrant (JustAberran@Pony-lq4qe0.com) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Gumball_Crash (GumballCras@Pony-svbp6u.nh.comcast.net) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Pony_31067 (SilverEagle@Pony-1nc9bc.busterneece.com) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Kinsley (JKinsley@Bow.To.Your.Princess) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Phase (Phase4@Pony-rqlgb5.internode.on.net) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Caerdwyn (midnight@always.broken.sometimes.patched.never.fixed) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Pony_11148 (Lorix_@Pony-ahk.n7v.237.192.IP) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: OlaHughson (ola@Pony-k5v.64a.226.188.IP) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Lapsus (Lapsus@i-forget.ca) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: stevestreza (Steve@Pony-0945eu.stevestreza.com) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Unixkitty (uni@the.unicorn.cat) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: MangoBloom (djazz@djazz.se) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Cydie (Cydie@the.little.cloud.colt) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Asoka (Asoka@Pony-di0a3s.net-htp.de) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: sniperfox (sniperfox@Pony-htd84a.distributed.denialofservice.org) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: derpy (derp@muffins) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: LightningCrash (lightning@property.of.moonlightning) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: tiwake (Octavia@Pony-njonl3.wa.charter.com) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Dusk (Dusk@dusky.horse) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:03] *** Quits: Kiyiko (Kiyiko@Pony-c9ma3u.dsl.netins.net) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: Compu_ (quassel@snuggly.filly) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: endoriazel (coprah@endoriazel) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: reiuiji (reiuiji@nuclear.raven) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: Fusl (Fusl@1.0.0.127.in-addr.arpa.li) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: Compu (compu@snuggly.filly) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: Datguy (Datguy@Pony-103.0b1.131.104.IP) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: Cameron_D (cameron@cam.mylittle.horse) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: Finnfinn (Finnfinn@finn.isher) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: JockeTF (jocke@Pony-vvuota.bredband.comhem.se) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: Seoson (Seoson@pony.kab-s.de) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: Colgate (rabbit@brushie.horse) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: Starthunder (blackl@property.of.lightningcrash) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: Eivel (Eivel@Keep.Calm.and.Pony.On) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: ButterBean (Dragony@Pony-458.d8k.20.198.IP) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: mkr (mkr@Pony-iinahj.radioyay.net) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: JoneZ (JoneZ@lugburz) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:04] *** Quits: WritingPony (TwoTailedF@Pony-ah6lvr.in-addr.btopenworld.com) (daring.canternet.org cloudchaser.canternet.org)
+[13:47:06] *** Joins: Unixkitty (uni@the.unicorn.cat)
+[13:47:06] *** Joins: Pony_11148 (Lorix_@Pony-ahk.n7v.237.192.IP)
+[13:47:06] *** Joins: hawthornbunny (hawthorn@Pony-tk6.bga.28.2.IP)
+[13:47:06] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[13:47:06] *** Joins: Datguy (Datguy@Pony-103.0b1.131.104.IP)
+[13:47:06] *** Joins: Eivel (Eivel@Keep.Calm.and.Pony.On)
+[13:47:06] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[13:47:06] *** Joins: stevestreza (Steve@Pony-0945eu.stevestreza.com)
+[13:47:06] *** Joins: johnsey (johnsey@netadmin.canternet.org)
+[13:47:06] *** Joins: tiwake (Octavia@Pony-njonl3.wa.charter.com)
+[13:47:06] *** Joins: Starburn (eyeburn@secret.den.of.flaming.evil)
+[13:47:06] *** Joins: Cameron_D (cameron@cam.mylittle.horse)
+[13:47:06] *** Joins: Kiyiko (Kiyiko@Pony-c9ma3u.dsl.netins.net)
+[13:47:06] *** Joins: JoneZ (JoneZ@lugburz)
+[13:47:06] *** Joins: endoriazel (coprah@endoriazel)
+[13:47:06] *** Joins: Pony_31067 (SilverEagle@Pony-1nc9bc.busterneece.com)
+[13:47:06] *** Joins: Cydie (Cydie@the.little.cloud.colt)
+[13:47:06] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[13:47:06] *** Joins: Compu (compu@snuggly.filly)
+[13:47:06] *** Joins: sniperfox (sniperfox@Pony-htd84a.distributed.denialofservice.org)
+[13:47:06] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[13:47:06] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[13:47:06] *** Joins: Asoka (Asoka@Pony-di0a3s.net-htp.de)
+[13:47:06] *** Joins: Sin (Sin@is.hustlin.everyday)
+[13:47:06] *** Joins: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net)
+[13:47:06] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[13:47:06] *** Joins: Finwe (vhalkola@Pony-25l.vcn.233.130.IP)
+[13:47:06] *** Joins: Dusk (Dusk@dusky.horse)
+[13:47:06] *** Joins: derpy (derp@muffins)
+[13:47:06] *** Joins: enginemaniac (flail@flail.flail.flail)
+[13:47:06] *** Joins: Phase (Phase4@Pony-rqlgb5.internode.on.net)
+[13:47:06] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[13:47:06] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[13:47:06] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[13:47:06] *** Joins: Colgate (rabbit@brushie.horse)
+[13:47:06] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[13:47:06] *** Joins: ButterBean (Dragony@Pony-458.d8k.20.198.IP)
+[13:47:06] *** Joins: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner)
+[13:47:06] *** cloudchaser.canternet.org sets mode: +v PinkiePieBot
+[13:47:06] *** Joins: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[13:47:06] *** Joins: Stik (drakon@Pony-ql55m5.cable.virginm.net)
+[13:47:06] *** Joins: dekeccho (dekeccho@dekeccho.Is.Not.A.Clever.Poni)
+[13:47:06] *** Joins: saneki (saneki@Pony-tni.g4k.31.96.IP)
+[13:47:06] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[13:47:06] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[13:47:06] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[13:47:06] *** Joins: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net)
+[13:47:06] *** Joins: JockeTF (jocke@Pony-vvuota.bredband.comhem.se)
+[13:47:06] *** Joins: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se)
+[13:47:06] *** Joins: OlaHughson (ola@Pony-k5v.64a.226.188.IP)
+[13:47:06] *** Joins: Finnfinn (Finnfinn@finn.isher)
+[13:47:06] *** Joins: Red_M (potato@Pony-afr.ndf.29.23.IP)
+[13:47:06] *** Joins: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[13:47:06] *** Joins: aji (alex@ajitek.net)
+[13:47:06] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[13:47:06] *** Joins: Starthunder (blackl@property.of.lightningcrash)
+[13:47:06] *** Joins: Jouva (jouva@Pony-535ork.fios.verizon.net)
+[13:47:06] *** Joins: AutoLapsus (Lapsus@Totally.Is.A.Network.Service)
+[13:47:06] *** Joins: Kinsley (JKinsley@Bow.To.Your.Princess)
+[13:47:06] *** Joins: reiuiji (reiuiji@nuclear.raven)
+[13:47:06] *** Joins: Caerdwyn (midnight@always.broken.sometimes.patched.never.fixed)
+[13:47:06] *** Joins: mkr (mkr@Pony-iinahj.radioyay.net)
+[13:47:06] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[13:47:06] *** Joins: miggyb (miggyb@horsetornado.co.uk)
+[13:47:06] *** Joins: Gumball_Crash (GumballCras@Pony-svbp6u.nh.comcast.net)
+[13:47:06] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[13:47:06] *** Joins: Compu_ (quassel@snuggly.filly)
+[13:47:06] *** Joins: MangoBloom (djazz@djazz.se)
+[13:47:06] *** Joins: zz_CyberJacob (CyberJacob@Pony-8adl2m.bluesapphiremedia.co.uk)
+[13:47:06] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[13:47:06] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[13:47:06] *** Joins: WritingPony (TwoTailedF@Pony-ah6lvr.in-addr.btopenworld.com)
+[13:47:06] *** cloudchaser.canternet.org sets mode: +qoooo Lapsus Lapsus aji AutoLapsus Kinsley
+[13:49:31] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[14:03:05] *** Quits: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[14:03:23] *** Joins: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[14:18:05] *** init3 is now known as Init3-away
+[14:24:18] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:33:17] *** Quits: sleepysleumas (uid91753@Pony-pu5auv.charlton.irccloud.com) (Quit: Connection closed for inactivity)
+[14:46:46] <Lapsus> Ponies! Help! I need to read a rotary encoder board but I can't afford to replace it if I burn out one of the optical sensors
+[14:47:02] <Lapsus> but I don't remember enough stuff to get it working
+[14:57:20] *** Joins: Asoka_White (Asoka@Pony-uqo91u.net-htp.de)
+[14:59:25] *** Quits: Asoka (Asoka@Pony-di0a3s.net-htp.de) (Ping timeout: 121 seconds)
+[15:01:24] *** Joins: Asoka (Asoka@Pony-6carml.net-htp.de)
+[15:01:34] *** Quits: Asoka_White (Asoka@Pony-uqo91u.net-htp.de) (Ping timeout: 121 seconds)
+[15:03:41] *** Joins: Asoka_White (Asoka@Pony-noa0f0.net-htp.de)
+[15:05:47] *** Quits: Asoka (Asoka@Pony-6carml.net-htp.de) (Ping timeout: 121 seconds)
+[15:07:45] *** Quits: Asoka_White (Asoka@Pony-noa0f0.net-htp.de) (Ping timeout: 121 seconds)
+[15:12:07] *** Joins: Fallfeathers (Fallfeather@Pony-88rk5f.bigpond.net.au)
+[15:23:47] *** Joins: Asoka (Asoka@Pony-ltbua1.net-htp.de)
+[15:28:06] *** Quits: Asoka (Asoka@Pony-ltbua1.net-htp.de) (Ping timeout: 121 seconds)
+[15:28:21] *** Joins: Asoka (Asoka@Pony-2ih509.net-htp.de)
+[15:28:31] <Cydie> Asoka
+[15:29:02] *** Cydie is now known as Cydie[NLR]
+[15:30:08] *** Joins: Asoka_White (Asoka@Pony-423f8j.net-htp.de)
+[15:32:47] *** Quits: Asoka (Asoka@Pony-2ih509.net-htp.de) (Ping timeout: 121 seconds)
+[15:34:22] *** Quits: Asoka_White (Asoka@Pony-423f8j.net-htp.de) (Ping timeout: 121 seconds)
+[16:18:36] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[16:21:47] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:44:57] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[17:01:14] *** Cydie[NLR] is now known as Cydie[NLR]|Sleep
+[17:10:54] *** Quits: Fallfeathers (Fallfeather@Pony-88rk5f.bigpond.net.au) (Connection closed)
+[17:18:53] *** Joins: Topsie (Topsie@Topsie.Loves.His.Princess)
+[17:21:26] *** Joins: cyborg_ar (cyborgar@Pony-t2i.f8j.13.186.IP)
+[17:24:07] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[17:25:39] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:26:57] *** Quits: cyborg_ar (cyborgar@Pony-t2i.f8j.13.186.IP) (Ping timeout: 121 seconds)
+[17:27:11] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:27:20] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[17:28:36] *** Joins: ColtonDRG (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:28:48] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[17:30:07] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[17:30:18] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[17:31:39] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:31:50] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[17:32:35] *** Joins: Asoka (Asoka@Pony-qv8jfm.net-htp.de)
+[17:33:03] *** Init3-away is now known as init3
+[17:33:12] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:33:13] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[17:34:36] *** Joins: ColtonDRG (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:34:48] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[17:36:07] *** Joins: ColtonDRG-Core (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:36:18] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[17:37:40] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:37:45] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[17:39:34] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[17:39:34] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:40:36] *** Joins: ColtonDRG (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:40:38] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[17:42:07] *** Joins: ColtonDRG-Core (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:42:14] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[17:43:39] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:43:45] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[17:45:08] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[17:45:11] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:46:36] *** Joins: ColtonDRG (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:46:39] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[17:48:07] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[17:48:13] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[17:49:39] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:49:45] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[17:51:08] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[17:51:11] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:52:36] *** Joins: ColtonDRG (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:52:38] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[17:54:07] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[17:54:13] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[17:55:39] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[17:55:45] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[17:56:31] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[17:56:31] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[17:56:31] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[18:03:04] *** init3 is now known as Init3-away
+[18:07:04] *** Joins: ColtonDRG (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:08:35] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[18:10:08] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:11:36] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[18:11:39] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:13:04] *** Joins: ColtonDRG (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:13:06] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[18:14:35] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[18:14:42] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[18:16:07] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:16:13] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[18:17:36] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[18:17:39] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:19:04] *** Joins: ColtonDRG (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:19:06] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[18:20:21] *** Joins: ColtonDRG-Core (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:20:41] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[18:21:16] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:22:13] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[18:22:48] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:23:26] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[18:23:58] *** Joins: ColtonDRG (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:24:33] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[18:25:29] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[18:25:50] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[18:26:23] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[18:26:58] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:27:01] *** Quits: Gigabit (Gigabit@the.girly.colt) (Ping timeout: 121 seconds)
+[18:27:09] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[18:27:17] *** Quits: Creeps|AFK (RedHelper@The.Pony.That.Makes.You.Smile) (Ping timeout: 121 seconds)
+[18:27:21] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[18:28:30] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[18:28:31] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:29:55] *** Joins: ColtonDRG (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:30:00] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[18:31:05] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[18:31:06] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[18:31:19] *** Joins: GigabitPony (Gigabit@the.girly.colt)
+[18:31:24] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[18:31:32] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[18:32:55] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:33:04] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[18:33:05] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[18:34:27] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[18:34:27] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:35:52] *** Joins: ColtonDRG (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:35:55] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[18:37:20] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[18:37:20] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[18:37:20] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[18:37:32] *** Quits: Unixkitty (uni@the.unicorn.cat) (Connection closed)
+[18:39:06] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[18:47:52] *** Joins: ColtonDRG (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:49:23] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[18:50:55] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[18:52:20] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[18:52:20] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[18:52:20] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[19:02:52] *** Joins: ColtonDRG (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[19:04:23] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[19:05:55] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[19:07:04] *** Joins: Unixkitty (uni@the.unicorn.cat)
+[19:07:25] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[19:07:28] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[19:08:52] *** Joins: ColtonDRG (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[19:08:54] *** Quits: Unixkitty (uni@the.unicorn.cat) (Quit: The stars are going out. The darkness is coming. No one is safe.)
+[19:08:54] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[19:10:23] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[19:10:29] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[19:11:58] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[19:12:01] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[19:12:02] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[19:12:54] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net)
+[19:13:20] *** Joins: Unixkitty (uni@the.unicorn.cat)
+[19:13:24] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[19:13:50] *** Joins: ColtonDRG (coltondrg@Pony-20miov.juhm.3hvc.003f.2602.IP)
+[19:14:54] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[19:15:50] *** Joins: Crimson_Tail (Bluepon@Pony-r5k343.s0tm.sdub.0151.2601.IP)
+[19:16:14] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[19:17:28] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-d39rbb.mpls.qwest.net) (Ping timeout: 121 seconds)
+[19:17:37] *** Unixkitty is now known as Awaykitty
+[19:23:23] *** Joins: Sol (Sol@Pony-nc8b4c.res.rr.com)
+[19:27:49] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[19:29:29] *** Joins: ColtonDRG (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[19:31:00] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[19:32:32] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[19:34:04] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[19:34:06] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[19:35:41] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[19:35:53] *** Joins: ColtonDRG (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[19:37:11] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Ping timeout: 121 seconds)
+[19:37:24] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[19:38:53] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[19:38:59] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Ping timeout: 121 seconds)
+[19:40:25] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[19:40:25] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[19:41:50] *** Joins: ColtonDRG (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[19:41:55] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[19:43:21] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[19:43:27] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Ping timeout: 121 seconds)
+[19:44:21] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[19:44:59] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Ping timeout: 121 seconds)
+[19:45:36] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[19:46:22] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[19:46:54] *** Joins: ColtonDRG (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[19:47:42] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[19:48:15] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[19:48:55] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Ping timeout: 121 seconds)
+[19:49:30] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[19:50:10] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Ping timeout: 121 seconds)
+[19:50:10] *** Init3-away is now known as init3
+[19:51:02] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[19:51:26] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[19:52:10] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:52:27] *** Joins: ColtonDRG (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[19:52:46] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[19:53:58] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[19:54:04] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Ping timeout: 121 seconds)
+[19:55:30] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[19:55:36] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Ping timeout: 121 seconds)
+[19:56:42] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[19:56:59] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[19:57:02] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[19:58:06] *** Joins: ColtonDRG (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[19:58:29] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[19:59:34] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[19:59:34] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[19:59:34] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[20:10:06] *** Joins: ColtonDRG (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[20:11:37] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[20:12:36] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[20:14:09] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[20:14:38] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[20:15:33] *** Joins: ColtonDRG (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[20:15:58] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[20:17:05] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[20:17:10] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Ping timeout: 121 seconds)
+[20:18:36] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[20:18:42] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Ping timeout: 121 seconds)
+[20:20:05] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[20:20:10] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[20:20:11] *** init3 is now known as Init3-away
+[20:21:33] *** Joins: ColtonDRG (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[20:21:36] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[20:23:06] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[20:23:10] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Ping timeout: 121 seconds)
+[20:23:39] *** Joins: cyborg_ar (cyborgar@Pony-df4.99a.158.186.IP)
+[20:24:36] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[20:24:43] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Ping timeout: 121 seconds)
+[20:26:05] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[20:26:08] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[20:27:33] *** Joins: ColtonDRG (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[20:27:37] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[20:29:04] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[20:29:10] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Ping timeout: 121 seconds)
+[20:30:03] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[20:30:42] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Ping timeout: 121 seconds)
+[20:30:45] *** Quits: sleumas2k (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[20:31:19] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[20:31:44] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[20:32:05] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[20:32:37] *** Joins: ColtonDRG (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[20:33:25] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[20:33:58] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[20:34:37] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Ping timeout: 121 seconds)
+[20:35:30] *** Joins: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[20:35:53] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Ping timeout: 121 seconds)
+[20:36:29] *** Joins: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[20:37:09] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[20:37:41] *** Joins: ColtonDRG (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[20:37:43] *** Quits: cyborg_ar (cyborgar@Pony-df4.99a.158.186.IP) (Client exited)
+[20:38:29] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[20:38:59] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[20:38:59] *** Quits: ColtonDRG-Core__ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[20:38:59] *** Quits: ColtonDRG-Core_ (coltondrg@Pony-g4qtfp.mpls.qwest.net) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[20:39:19] *** zz_CyberJacob is now known as CyberJacob
+[20:40:13] *** Quits: JockeTF (jocke@Pony-vvuota.bredband.comhem.se) (Quit: Leaving.)
+[20:49:31] *** Joins: ColtonDRG (coltondrg@Pony-g4qtfp.mpls.qwest.net)
+[20:51:02] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[20:52:29] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[20:52:29] *** Quits: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony) (Z-Lined: Your IP range has been attempting to connect too many times in too short a duration. Wait a while, and you will be able to connect.)
+[20:59:01] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[21:07:12] *** Joins: cyborg_ar (cyborgar@Pony-8l8.k7k.117.181.IP)
+[21:10:24] *** Quits: cyborg_ar (cyborgar@Pony-8l8.k7k.117.181.IP) (Client exited)
+[21:30:39] *** Awaykitty is now known as Unixkitty
+[21:34:20] *** CyberJacob is now known as zz_CyberJacob
+[21:36:01] *** Joins: AquaBrandish (aqua@Pony-hahd0r.static.axtel.net)
+[21:36:10] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Ping timeout: 121 seconds)
+[21:36:20] *** AquaBrandish is now known as MistVeil
+[21:40:34] *** Joins: ColtonDRG (coltondrg@Pony-spe0fu.hlrn.qwest.net)
+[21:41:19] <DataByte> AppleDash, are you on?
+[21:44:03] <AppleDash> DataByte: maybe
+[21:44:30] <DataByte> i can't figure out how to recover my data :(
+[21:45:05] <DataByte> the tutorials i see on testdisk are if the partition gets deleted, not if the table on the partition is
+[21:46:57] <DataByte> after checkdisk did its work, this is one of the only files on the drive anymore: http://pastebin.com/DqrtQmyh
+[21:46:58] <PinkiePieBot> [ Checking file system on D: The type of the file system is NTFS. Volume label i - Pastebin.com ]
+[21:55:24] *** GigabitPony is now known as GigaWork
+[21:59:27] <DataByte> ok, found something, maybe... boot sector and backup boot sector are identical, though...
+[22:03:22] <DataByte> and nothing i can find on the topic so far is opensource or freeware
+[22:05:12] *** Init3-away is now known as init3
+[22:05:32] *** zz_CyberJacob is now known as CyberJacob
+[22:05:37] <DataByte> :'(
+[22:06:35] *** Unixkitty is now known as Awaykitty
+[22:35:14] *** init3 is now known as Init3-away
+[22:40:53] *** Init3-away is now known as init3
+[22:51:08] <Quindo> That awlkward moment when you realize you have been coding to the rythem of Pony music.
+[22:52:19] *** MistVeil is now known as Mist|work
+[22:52:26] *** Quits: Crimson_Tail (Bluepon@Pony-r5k343.s0tm.sdub.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[22:52:45] *** Mist|work is now known as Mist-Work
+[22:52:45] *** Mist-Work is now known as MistWork
+[22:57:46] *** Joins: Crimson_Tail (Bluepon@Pony-vkn6aa.s0tm.sdub.0151.2601.IP)
+[23:10:45] <DataByte> Quindo: awkward? that's the only way i code :P
+[23:25:23] <AppleDash> ^
+[23:31:10] <DataByte> do you know of any other data recovery tools i could use, AppleDash?
+[23:31:42] <AppleDash> I'm afraid not :(
+[23:31:49] <DataByte> :'(
+[23:31:54] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[23:32:28] *** Joins: cyborg_ar (cyborgar@Pony-v8k.nel.25.181.IP)
+[23:43:10] *** Compu_ is now known as CompuDesktop
+[23:45:52] <Compu> DataByte: 1 sec
+[23:50:48] <Compu> DataByte: u could try this http://www.sysresccd.org/Main_Page
+[23:50:49] <PinkiePieBot> [ SystemRescueCd ]
+[23:50:57] <Compu> or this http://ubuntu-rescue-remix.org/
+[23:52:32] <Compu> DataByte: from what u said so far im guessing what u might want is undeletion?

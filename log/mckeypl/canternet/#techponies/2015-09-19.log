@@ -1,0 +1,876 @@
+[00:24:23] *** Joins: McKey (Kordus@Pony-1k27j6.antyklay.pl)
+[00:24:23] -derpy.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[00:24:35] *** Server sets mode: +AHJPTnt 10:300 30
+[00:25:18] <Moonlightning> WHAT REBOOTED SILVERSPEED.
+[00:25:27] <Moonlightning> SILVERSPEED IS A SERVER. SHE IS NOT TO BE REBOOTED WITHOUT MY CONSENT.
+[00:25:35] <Moonlightning> I am so mad right now
+[00:25:53] <Moonlightning> on the bright side, the new Wi-Fi password is now in effect, and I know exactly what still needs automating
+[00:26:03] <mniip> Moonlightning, heya o/
+[00:28:39] <Moonlightning> 1. wlan0 isn't in br0 (though eth1 /is/, as expected)
+[00:28:48] <Moonlightning> 2. the default route is via br0, not eth0
+[00:29:12] <Moonlightning> 3. the NATv4 rule is missing from iptables
+[00:29:30] <Moonlightning> I think I've got #3.
+[00:31:59] <Moonlightning> Installed iptables-persistent; elected to save the current rules; the masquerade one now appears in /etc/iptables/rules.v4
+[00:32:02] <Moonlightning> oh and
+[00:32:36] <Moonlightning> 4. dhcpd doesn't come up unattendedly—there's some discrepancy between the initscript and the `service` config that makes it work if started from the former, but not the latter
+[00:32:43] *** Joins: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP)
+[00:34:12] <Compu> kittay https://www.dropbox.com/s/3ou7lbgvsb8ky3e/20150918_181857.jpg?dl=0
+[00:34:26] *** Joins: sleumas2000_ (uid91753@Pony-5dnslh.ealing.irccloud.com)
+[00:34:36] *** init3 is now known as Init3-away
+[00:39:34] *** Init3-away is now known as init3
+[00:41:15] <DJ-C0L7[EIT]> wb init3
+[00:49:19] <Moonlightning> Oh, I think I see the problem for #4. The `service` script sets the default $CONFIG_FILE /after/ sourcing the /etc/defaults file
+[00:50:08] <Colgate> Moonlightning: you might be interested in looking at `last`
+[00:51:16] <init3> Yes, back from haphazardly hanging out my window because the water spots on it were getting to be too much and I don't have a ladder. 
+[00:51:45] <init3> The upper pane cannot be removed without removing the frame like the windows at my house were. 
+[00:52:03] <Moonlightning> Colgate: don't see anything…
+[00:52:16] <Moonlightning> Just…
+[00:52:21] <Moonlightning> > reboot   system boot  3.13.0-63-generi Fri Sep 18 14:51 - 15:51  (00:59)
+[00:54:47] <Moonlightning> …oh, more than that…/etc/defaults uses $DHCPD_PID; this script uses $CONFIG_FILE
+[00:54:49] * Moonlightning facehoofs
+[00:55:35] <Moonlightning> and it has a hardcoded value for the pidfile
+[01:01:39] <Moonlightning> It didn't quote $CONFIG_FILE, either
+[01:01:42] <Moonlightning> what if there had been spaces in there?!
+[01:01:44] *** Soarin is now known as Gigabit
+[01:09:13] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-j6c.fe4.56.172.IP)))
+[01:09:47] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[01:31:15] *** Quits: Phase4 (Phase4@Pony-ua3ve9.internode.on.net) (Quit: Leaving)
+[01:31:31] *** Joins: Phase (Phase4@Pony-ua3ve9.internode.on.net)
+[01:46:48] <Moonlightning> I think I fixed #4.
+[01:46:51] <Moonlightning> So just #1 and #2 now.
+[01:47:47] <Moonlightning> #2 should be fixed.
+[01:50:08] * JustAberrant drinks cider
+[02:02:04] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[02:02:29] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Killed (NickServ (GHOST command used by init3_1)))
+[02:02:32] *** init3_1 is now known as init3
+[02:11:01] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[02:12:37] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[02:18:25] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Quit: The Nightmares will Collide. And become a Dream. <3)
+[02:24:39] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[02:29:09] *** Quits: Crimson_Tail (Bluepon@Pony-4asbpu.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[02:29:19] *** Joins: Crimson_Tail (Bluepon@Pony-4asbpu.cg80.k4gu.0151.2601.IP)
+[02:35:41] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[02:41:46] *** Joins: Asoka_White (Asoka@Pony-0h6r5c.net-htp.de)
+[02:43:02] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[02:44:58] *** Quits: Asoka (Asoka@Pony-qip969.net-htp.de) (Ping timeout: 121 seconds)
+[02:45:57] *** Quits: MistVeil (AndChat3408@Pony-39l.bpr.95.200.IP) (Quit: Bye)
+[03:00:18] *** Quits: sleumas2000_ (uid91753@Pony-5dnslh.ealing.irccloud.com) (Quit: Connection closed for inactivity)
+[03:00:23] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[03:00:56] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[03:49:18] *** init3_1 is now known as init3
+[04:07:57] *** Joins: quin (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[04:08:39] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[04:09:59] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[04:16:49] *** Eventide is now known as Eventide|Sleepies
+[04:26:55] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[04:27:02] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[04:27:22] <JustAberrant> I present this for your consideration: http://justaberrant.com/images/hoose/octoseeds.jpg :)
+[04:45:19] <Moonlightning> >> RFC 6797 §7.2
+[04:45:22] <Moonlightning> > An HSTS Host MUST NOT include the STS header field in HTTP responses conveyed over non-secure transport.
+[04:45:25] <Moonlightning> Why not?
+[04:46:05] <Colgate> because clients might be dumb and respect it?
+[04:46:19] <Rylee> mine does
+[04:46:24] <Rylee> my nginx does that is
+[04:46:46] <Colgate> I just send it on all connections as well
+[04:46:51] <Colgate> because eh?
+[04:47:02] <Colgate> yes, breaking RFC, sue me
+[04:49:08] <Moonlightning> But…
+[04:49:13] <Moonlightning> Why's that bad? :p
+[04:49:43] <Colgate> I don't see why it would be bad either except for clients potentially being dumb and forcing a conenction to remain insecure?
+[04:50:00] <Moonlightning> But HSTS only forces /secure/ connections, not /insecure/ ones.
+[04:50:01] <Colgate> but then anyone could inject an HSTS header into any unsecured connection and do that to the client
+[04:50:18] <Colgate> I'm assuming that the client implemented HSTS incorrectly here
+[04:50:38] <Moonlightning> As a domain owner and server admin, I can “taint” my domain with HSTS
+[04:51:13] <Colgate> hsts headers are supposed to be ignored over non-tls anyways
+[04:51:40] <Moonlightning> The effect is the same—whoever has the domain after me will have to run a secure webserver that redirects to insecure and serves headers with max-age=0
+[04:51:50] <Moonlightning> meh, never mind
+[04:52:01] <Moonlightning> I'm gonna switch webservers
+[04:52:16] <Moonlightning> What's a good one that does TLS 1.2 and HSTS natively?
+[04:52:24] <Rylee> nginx
+[04:52:26] <Colgate> uh, all the major ones?
+[04:52:34] <Rylee> the answer is always use nginx
+[04:52:47] <Colgate> I like lighttpd :(
+[04:52:52] <Colgate> but I think it is dying
+[04:53:13] <Rylee> https://gist.github.com/skyhighwings/4edacab7c5b4c510504e
+[04:53:14] <PinkiePieBot> [ gist:4edacab7c5b4c510504e · GitHub ]
+[04:53:17] <Rylee> lightty is dying as fuck
+[04:53:38] <Colgate> yeah :(
+[04:53:39] <Moonlightning> lighttpd doesn't do it natively; you have to hack a header in via the configuration
+[04:53:42] <Moonlightning> ditto for nginx
+[04:53:48] <Colgate> oh, you mean hsts
+[04:53:59] <Rylee> i guess?
+[04:54:01] <Colgate> then that would be 0 httpds
+[04:54:03] <Rylee> what's your point
+[04:54:15] <Moonlightning> >:(
+[04:54:22] <Rylee> https://raymii.org/s/tutorials/HTTP_Strict_Transport_Security_for_Apache_NGINX_and_Lighttpd.html
+[04:54:23] <Moonlightning> You're kidding, right?
+[04:54:23] <PinkiePieBot> [ HTTP Strict Transport Security for Apache, NGINX and Lighttpd - Raymii.org ]
+[04:54:24] <Moonlightning> come on
+[04:54:26] <Rylee> literally every major httpd
+[04:54:28] <Rylee> does this
+[04:54:38] <Rylee> like I get what you're coming from
+[04:54:39] <Rylee> but
+[04:54:42] <Rylee> you're not gonna get it
+[04:54:47] <Moonlightning> I can't make this conform to the RFC!
+[04:54:50] <Rylee> uh
+[04:54:51] <Rylee> yes you can?
+[04:54:53] <Moonlightning> fuck this shit. Have unconditional headers.
+[04:55:00] <Rylee> set the header only in your secure vhost
+[04:55:02] <Rylee> obviously
+[04:55:05] <Moonlightning> vhost
+[04:55:07] <Moonlightning> what's a vhost -.-
+[04:55:14] <Rylee> virtual host?
+[04:55:26] <Moonlightning> does lighttpd even have vhosts?
+[04:55:27] <Rylee> the description of serving rules for a given Host
+[04:55:36] <Rylee> I can't imagine it doesn't
+[04:55:56] <Rylee> a host being a domain name, generally --- apps.rylee.me is a vhost for exmaple
+[04:55:57] <Colgate> lighttpd definitely does
+[04:57:56] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[04:59:29] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[05:03:21] <Moonlightning> What does the `preload;` in the HSTS response header mean?
+[05:10:29] <Rylee> something to do with https://hstspreload.appspot.com/ probably
+[05:10:30] <PinkiePieBot> [ HSTS Preload Submission ]
+[05:26:48] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[05:26:55] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[05:37:30] *** CyberJacob is now known as zz_CyberJacob
+[05:51:50] *** Quits: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP) (Connection closed)
+[06:10:13] *** init3_1 is now known as Init3-away
+[06:33:18] *** locodash11[lagout] is now known as locodashie11
+[06:42:12] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[06:56:30] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[06:56:43] *** Joins: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP)
+[06:57:58] *** Quits: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP) (Quit: My people need me!)
+[06:58:46] *** Gigabit is now known as gigazzz
+[07:03:45] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Connection closed)
+[07:08:00] *** Joins: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP)
+[07:08:30] <Fallfeathers> http://puu.sh/kgkn0/973ec021b9.jpg can anyone recommend me a new keyboard.
+[07:10:26] <Colgate> hmm, that one looks very ergonomic though
+[07:11:00] <Fallfeathers> yeah it is pretty nice
+[07:11:09] <Fallfeathers> but unfortunately it's worn out its welcome
+[07:12:25] <Colgate> what are you looking for in a keyboard?
+[07:12:56] <Fallfeathers> mechanical, and raised keys
+[07:17:09] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[07:17:58] <Colgate> I have a daskeyboard4 with cherry blue, it is pretty nice
+[07:18:11] <Colgate> I've also heard good things about the razor series of mechanical keyboards
+[07:24:14] *** Joins: JockeTF (jocke@Pony-iqmf0q.priv.bahnhof.se)
+[07:35:46] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[07:39:36] *** Ruthalaslumber is now known as Ruthalawake
+[07:57:40] <Colgate> I tried to send an email to a mac user once, but they didn't have emacs.
+[08:02:55] <Moonlightning> badum tish
+[08:03:30] <Moonlightning> How do I make GNU `sort` sort based on the first n characters of a file?
+[08:03:38] * Moonlightning (will be wanting to use --stable-sort, yes)
+[08:04:28] *** Init3-away is now known as init3_1
+[08:05:08] <Moonlightning> more context, these files are weechat transcripts
+[08:05:16] <Moonlightning> first 19 characters is the date and time
+[08:05:33] <Moonlightning> I've checked; there /are/ at least a few instances of multiple messages with the same timestamp.
+[08:10:30] <Moonlightning> oh wait there's a `sort --merge`
+[08:10:45] <Moonlightning> I…I wonder how well that'll work.
+[08:10:57] <Moonlightning> I'm scared to try it without knowing I have a good key, though
+[08:13:21] <Colgate> you could just make copies of the files and test it on that :P
+[08:13:56] <Moonlightning> But there's soooo muuuuch of it
+[08:41:27] *** Quits: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP) (Connection closed)
+[08:42:35] *** Quits: init3_1 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[08:42:42] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[08:42:47] *** init3_1 is now known as init3
+[08:46:48] *** Quits: Crimson_Tail (Bluepon@Pony-4asbpu.cg80.k4gu.0151.2601.IP) (Connection closed)
+[08:46:56] *** Joins: Crimson_Tail (Bluepon@Pony-4asbpu.cg80.k4gu.0151.2601.IP)
+[08:49:30] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[08:52:29] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[08:54:25] <Phase> inspircd why u no send * or nickname in cap ls
+[08:54:45] *** Quits: Crimson_Tail (Bluepon@Pony-4asbpu.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[08:55:04] <Colgate> :chrysalis.canternet.org CAP Colgate LS :away-notify extended-join account-notify multi-prefix sasl tls userhost-in-names
+[08:55:06] <Colgate> ?
+[08:55:23] <Phase> Colgate, :discord.canternet.org CAP 787AF1PD2 LS :away-notify extended-join account-notify multi-prefix sasl tls userhost-in-names
+[08:55:34] * Phase will double check in wireshark
+[08:56:12] <Colgate> is that before registration or after?
+[08:56:49] <Colgate> "787AF1PD2" looks like a UID
+[08:57:05] <Moonlightning> ^
+[08:57:08] <Phase> before registration
+[08:57:15] <Moonlightning> if you've not set a nickname yet, what do you expect it to do?
+[08:57:20] <Phase> use *
+[08:57:26] <Colgate> yeah, that's a UID, that's the only thing the ircd can identify you by at that time
+[08:57:53] <Moonlightning> Phase: maybe we should make a CAP for that. We could call it asterisk-nick.
+[08:57:57] <Moonlightning> …oh…wait a second… :p
+[08:58:09] <Colgate> XD
+[08:58:11] <Phase> * is the conventional standin for no account or no nickname
+[08:58:23] <Moonlightning> > conventional
+[08:58:26] <Phase> since it's invalid for both afaik
+[08:58:30] <Colgate> /shrug, nothing in RFC for this anyways
+[08:58:38] <Phase> yeah, names, who, and every other servers CAP uses it
+[08:58:46] <Colgate> would have to see what other IRCds do
+[08:58:58] <Phase> every other ircd i've checked anyway
+[08:59:10] <Colgate> what IRCDs have you checked? out of curiosity
+[08:59:29] <Phase> elemental, and ircd-seven, which are practically the same codebase tbh
+[08:59:39] <Colgate> the big ones would be inspircd, unreal, and chary
+[08:59:49] <Colgate> probably hybrid as well
+[09:01:18] <Phase> my understanding is the second parameter, if present, marks the end of a multi-line req, ls, or ack
+[09:02:51] *** Ruthalawake is now known as Ruthalasleep
+[09:03:24] <Phase> i'll just hack it to work
+[09:03:34] * Phase is checking away-notify tests against canternet
+[09:05:50] <Colgate> I would check unreal, since unreal has a large install base as well, /shrug
+[09:06:20] <Colgate> hard part is finding someone actually running an up to date unreal server :P
+[09:06:32] <Colgate> most of the ones I connect to don't support CAP at all!
+[09:07:24] *** Joins: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP)
+[09:09:00] <Phase> Colgate, imo inspircd is in the wrong, since if multi-line caps ever are a thing it complicates client code 
+[09:09:21] <Colgate> multi-line caps?
+[09:09:28] <Phase> can't do if "*" or my nick, have to do if not a know sub command
+[09:09:32] <Colgate> you mean if a CAP line goes over 512 bytes?
+[09:09:40] <Phase> Colgate, yes, hypothetically
+[09:09:57] * Phase handles that in caps negotiation
+[09:10:01] <Phase> but i don't handle modifiers
+[09:10:08] * Phase is selectively lazy
+[09:10:27] * Colgate checks inspircd master
+[09:10:30] <Phase> Colgate, at the same time, i don't care enough to write a patch
+[09:30:21] *** Quits: Lapsus (Lapsus@i-forget.ca) (Connection closed)
+[09:35:06] <Moonlightning> Auuuuuuugh
+[09:35:14] <Moonlightning> That ran way too fast and had no errors the first time
+[09:35:18] <Moonlightning> okay, what went wrong, what went wrong
+[09:35:42] <Moonlightning> symlinks got made…these file sizes look okay…
+[09:41:39] <Moonlightning> Ahhhhhhh, there we go. Errors while messing arund with files trying to add up their sizes.
+[09:41:41] <Moonlightning> That's more like it :p
+[09:45:20] <init3> Moonlightning: Remember how weird we thought it was that my WAN card was getting a totally different prefix than what dnsmasq was serving up internally? 
+[09:45:40] <init3> Apparently it's /supposed/ to do that. 
+[09:46:16] <init3> And my hack to make all the addresses within the same prefix was just stupid. 
+[10:20:44] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:35:50] *** Joins: RazorSharpFang (rjqycmssgjx@Pony-4m1ia6.iinet.net.au)
+[10:36:02] * RazorSharpFang yawnies
+[10:55:18] *** init3 is now known as Init3-away
+[10:58:40] *** zz_CyberJacob is now known as CyberJacob
+[11:25:15] <RazorSharpFang> Can someone explain why my quad-core Intel i5 processor (2.5GHz) is more than 4 times faster than my Pentium 4 (3 GHz)
+[11:29:18] <Kinsley> 1. Hz aren't a very good measurement of a processor's ability to execute commands. 2. While I don't have exact numbers, the transistors in the i5 are going to vastly outnumber the ones in a P4. All else being equal, more transistors would mean more work could be done.
+[11:30:09] <mniip> nowadays less nanometers -> more speed
+[11:30:19] <mniip> thanks to the speed of light limit
+[11:30:33] <Dusk> Well
+[11:30:52] <Kinsley> 3. Since all else isn't equal, the addition of extra cores and better advances in microarchitecture of the underlying chip means that even for "equal" ratings in Hz, you can have significant improvements in actual execution of tasks.
+[11:30:54] <Dusk> the smaller the manufacturing process means that more transistors are put into the processor meaning it has more speed
+[11:31:24] <Dusk> and better energy efficiency (to a point since heat is still a problem as you get smaller)
+[11:34:56] <Dusk> the smallest p4s are still on the 65nm process
+[11:35:03] <Dusk> which is massive in comparison to modern chips
+[11:35:14] <Dusk> the largest being 180nm back in 2000
+[11:44:12] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[12:12:20] *** Init3-away is now known as init3
+[12:19:53] *** CyberJacob is now known as zz_CyberJacob
+[12:30:10] <RazorSharpFang> Kinsley: If Hz isn't a good measurement of a processor's ability to execute commands, than what is?
+[12:30:37] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Ping timeout: 121 seconds)
+[12:33:01] <RazorSharpFang> Or would I simply have to do a timed test to see which executes faster?
+[12:33:03] *** init3 is now known as Init3-away
+[12:33:05] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[12:33:25] <Dusk> RazorSharpFang: It's instructions per clock.
+[12:33:28] <Dusk> its*
+[12:34:03] <Dusk> Generally the newer the processor it is and the smaller the manufacturing process the more instructions per clock it can handle due to it aving more transistors
+[12:35:42] <RazorSharpFang> Is there a way to find out the instructions per clock of a processor?
+[12:35:57] <Dusk> Not from the numbers on the box no.
+[12:37:07] <RazorSharpFang> Hmm...
+[12:37:13] <Dusk> Your best bet is using the age of a processor to determine it honestly. And you can't compare AMD to Intel either due to them using completely different microarchitectures
+[12:37:59] <Dusk> Each new generation of intel's processors is based on a new microarchitecture that brings new features to the table and keeps older useful ones around
+[12:38:35] <Dusk> The newer microarchitectures themselves can bring about speed increases without actually having a die shrink due to time spent in development
+[12:42:06] <RazorSharpFang> How would I figure out which one of two chips was better if they were made by AMD and Intel respectively? Just run a test and compare?
+[12:43:53] <Dusk> Well AMD is going to have less single core performance regardless. They're known for their multicore application efficiency to boot
+[12:44:07] <Dusk> but yes running a test would be one way
+[12:45:28] <RazorSharpFang> How's a pentium 4 (90nm) compare to today's CPUs?
+[12:45:55] <Dusk> They're slower than the lowest end modern day i3 line by a lot.
+[12:46:16] <Dusk> I could probably get the atom processor in my phone to beat a p4
+[12:46:27] <Dusk> and it's a quad core 2.4GHz
+[12:46:44] <Dusk> (If I had an active cooling solution for it that is)
+[12:47:19] <RazorSharpFang> That explains why it was transcoding SD video so slowly.
+[12:48:56] <Dusk> The P4 was the reason that Intel got their shit together and created the core microarchitecture to boot. NetBurst was bleh and inefficient. I'm not saying that the original core architecture was great but it led to some really good stuff down the line and got Intel where it is today.
+[12:54:09] <RazorSharpFang> How do you think it would compare to some of the Amazon EC2's virtual machines? Would it be worse than a t2-micro?
+[12:55:43] <Dusk> That's comparing a modern day 2-3GHz Xeon to a p4
+[12:55:47] <Dusk> the Xeon is going to win
+[12:56:33] <Dusk> I don't know the exact CPU model that they use for their servers obviously, but I can say core for core a modern day Xeon is going to beat a 90nm p4 any day
+[12:58:32] <RazorSharpFang> Well, maybe I can use this CPU as a minimum testing environment. How many people would have a processor worse than a p4?
+[12:59:01] <Dusk> Do you know what generation your p4 is?
+[12:59:11] <Dusk> like have you verified it's a 90mm chip?
+[12:59:22] <Dusk> 90nm*
+[12:59:34] <RazorSharpFang> Piriform Speccy says o.
+[12:59:38] <RazorSharpFang> *so
+[12:59:42] <Dusk> Oh
+[13:00:23] <RazorSharpFang> Intel Pentium 4 630
+[13:01:17] <Dusk> Well tbh there are still people out there running like p3s and stuff so yea there is always worse, but honestly if you're aiming to make a piece of software run well on a processor utilizing only the ability to go up to SSSE3 then I guess that would work
+[13:01:29] <Dusk> but like...newer processors have better more streamlined instruction sets
+[13:02:00] <Dusk> But yea if you want to use that for a minimum then I guess you'd have near full support for whatever comes afterward
+[13:02:29] <RazorSharpFang> Dusk: I didn't think WinVista or Win7 ran on P3.
+[13:02:44] <Dusk> My parents still use XP
+[13:02:47] <Dusk> :p
+[13:02:52] <Dusk> and so do my grandparents
+[13:02:56] <RazorSharpFang> This machine is an XP machine, actually.
+[13:02:59] <Dusk> Some people don't upgrade until it breaks
+[13:03:14] <RazorSharpFang> I tried running win10 on it, but it misbehaved.
+[13:03:21] <Dusk> My parents have a really old Celeron in their PC and my grandparents are on a p3 machine
+[13:03:31] <Dusk> Misbehaved?
+[13:03:53] <RazorSharpFang> It would freeze up randomly.
+[13:04:03] <Dusk> Oh
+[13:04:10] <Dusk> Does yours have HTT enabled?
+[13:04:19] <RazorSharpFang> HyperThreading?
+[13:04:20] <Dusk> I forget when that was introduced to the p4 line
+[13:04:24] <Dusk> mhm
+[13:04:27] <RazorSharpFang> Yes it does
+[13:04:30] <Dusk> Ah
+[13:04:50] <RazorSharpFang> So now it's a dual-core single-core P4
+[13:05:07] <Dusk> it's a dual-thread single-core p4 :p
+[13:05:33] <Dusk> Hm
+[13:05:39] <Dusk> I'd say it's a decent baseline
+[13:05:59] <Dusk> Go ahead and use it I suppose. At least since you have a HTT enabled CPU you can do stuff with HTT in mind.
+[13:06:11] <Dusk> (That was my main concern with you using it as a testing environment)
+[13:06:22] <RazorSharpFang> It's got 1.5GB of ram, and an NVidia GeForce 8500 GT. How do those match up?
+[13:09:29] <Dusk> well you've got the GPU just about equivalent to the performance of an XBOX 360 in there
+[13:09:42] <Dusk> and enough ram to make it work well enough to hold everything together
+[13:09:47] <Dusk> (in XP)
+[13:10:15] <RazorSharpFang> The machine was donated to me. I'm really appreciating it.
+[13:10:38] <Dusk> Fair enough
+[13:10:47] <Dusk> It'd make a handy little linux box tbh
+[13:11:10] <RazorSharpFang> Linux virtualizes REALLY well.
+[13:11:23] <Dusk> Why virtualize it when you can just run it?
+[13:11:37] <Dusk> Especially on a box that's that low on resources
+[13:11:42] <RazorSharpFang> XP doesn't virtualize 3D acceleration very well.
+[13:12:04] <RazorSharpFang> And last time I tried dual-booting it, it refused to boot at all.
+[13:12:23] <Dusk> How did you try dual booting it?
+[13:12:45] <RazorSharpFang> Install XP, install Ubuntu, select options, and then it worked.
+[13:12:58] <RazorSharpFang> For a week.. Then it failed to boot.
+[13:13:13] <Dusk> Define failed to boot
+[13:13:16] <Dusk> like what was it doing?
+[13:13:42] <RazorSharpFang> Dusk: GRUB kept encounting an error of some sort.
+[13:13:59] <Dusk> No need to ping me :p we're the only two talking at the moment
+[13:14:04] <Dusk> Mmm
+[13:14:31] <Dusk> What version of ubuntu? and were you using 32 or 64 bit?
+[13:14:50] <RazorSharpFang> 32 bit. It's a p4, remember? I don't think it'd support 64-bit
+[13:14:56] <Dusk> (Here's one of the few times that I'd tell someone ever to install the 32 bit)
+[13:15:06] <Dusk> It does support x86_64
+[13:15:17] <Dusk> the models with HTT support 64bit mode
+[13:15:22] <RazorSharpFang> Huh.
+[13:15:26] <RazorSharpFang> The more you know.
+[13:15:29] <Dusk> as well as ssse3
+[13:17:11] <RazorSharpFang> Of course, I assume that just because it supports x86_64 doesn't mean it's necessarily a good idea.
+[13:17:39] <Dusk> There's no point honestly since it only has 1.5 GB of ram
+[13:18:05] * Blackjack virtualizes Dusk on a machine with 256MB of RAM
+[13:18:08] <Dusk> I mean maybe it'd be worth a shot to see if the 64 bit one worked but if it's a grub issue then I'd just say check the installer or try another distro of linux
+[13:19:39] <RazorSharpFang> I think I do need to check to see if my linux builds work in a virtual environment.
+[13:22:07] <Dusk> It's up to you then.
+[13:22:51] <RazorSharpFang> I have tried virtualizing winXP, but VirtualBox's D3D emulation is shaky at best.
+[13:23:11] <Dusk> My suggestion is to take the time to learn linux and stuff. It'd utilize the system better overall in this case. As far as windows development goes XP is going to be the limiting factor because you're going to be on an unsupported OS
+[13:23:35] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[13:24:09] <RazorSharpFang> As much as I'd love to ditch XP support, it's still used. 
+[13:24:42] <Dusk> Mmm but Microsoft itself has ditched XP support
+[13:24:44] <Dusk> so
+[13:25:02] <Dusk> I'm kinda on their side that it's time to let it die.
+[13:26:22] <RazorSharpFang> Well, as you said earlier, people are still using it.
+[13:26:47] <Dusk> Yes but it's mostly people who aren't power users or people who are current anyway
+[13:27:34] <Dusk> Like what software are you trying to give XP support to. Because you need to look at your target audience here.
+[13:27:51] <RazorSharpFang> Game software, so that'd be steam users primarily.
+[13:27:51] <Dusk> If you think the people using your software are going to be on XP then...sure I guess you could support it.
+[13:28:04] <Dusk> Then no
+[13:28:08] <Dusk> you shouldn't support XP
+[13:28:17] <Dusk> as DX support on XP is not a thing anymore
+[13:28:26] <Dusk> and so are GPU drivers
+[13:28:30] <Dusk> All of that is going away.
+[13:29:38] <RazorSharpFang> You really think so?
+[13:29:44] <Dusk> If you're going to focus on game software your minimum should be Linux (Somehere comparable to ubuntu 14.04) and Windows 7
+[13:29:46] <Dusk> Yes
+[13:30:54] <RazorSharpFang> Not even WinVista?
+[13:31:09] <Blackjack> Nobody sane uses Vista
+[13:31:46] <Dusk> If you want to support vista, sure. But most people who play games are going to have updated to 7 or bought it originally with 7
+[13:32:06] <Blackjack> Indeed
+[13:32:14] <RazorSharpFang> Well, my dev machine is 7, so having 7 as a min would be easier.
+[13:32:38] <Dusk> 7 has better driver support and better optimization for like everything than both Vista and XP
+[13:33:10] <RazorSharpFang> Dusk: Do you think my WinXP machine would run Ubuntu alright?
+[13:34:18] <Dusk> Yes. Most definitely. It won't be a magnificent experience above 1080p in the desktop environment, but it's definitely capable of running it.
+[13:34:43] <RazorSharpFang> Well, my monitor is 1280x1024
+[13:35:29] <RazorSharpFang> It's old enough that it's partially dying, it's lost PnP support.
+[13:35:33] <Dusk> Oh
+[13:35:44] <Dusk> Well ubuntu will run at that rez fine
+[13:36:27] <RazorSharpFang> Is 14.04 a good version to run? 
+[13:37:11] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[13:38:16] <Dusk> 14.04 is good as it's an lts
+[13:38:31] <Dusk> but if you want systemd you can go to 15.04
+[13:38:39] <Blackjack> Systemd is good
+[13:38:41] <Dusk> I'm on 15.10 personally
+[13:38:47] <Blackjack> I'm gonna get stabbed for that
+[13:38:50] <Blackjack> But I like it
+[13:39:15] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[13:39:46] <RazorSharpFang> What's SystemMD?
+[13:40:47] <Dusk> https://en.wikipedia.org/wiki/Systemd
+[13:40:48] <Blackjack> It's what it says - A System Daemon. It mabages your services, your logging, your mounts, a bunch of other things
+[13:40:48] <PinkiePieBot> [ systemd - Wikipedia, the free encyclopedia ]
+[13:42:35] <mniip> a monolithic linux userland
+[13:42:38] <mniip> as silly as it sounds
+[13:45:52] <RazorSharpFang> Hmm.
+[13:47:42] <RazorSharpFang> Urgh, my throat is killing me.
+[13:49:32] *** Eventide|Sleepies is now known as Eventide
+[13:53:25] <RazorSharpFang> I really want to make a virtual macOSX machine, but every time I try, it doesn't end up working.
+[13:56:21] <Dusk> OSX is an odd beast >.>
+[13:56:52] <Dusk> I've never gotten it to virtualize even with the proper hardware
+[13:57:51] <RazorSharpFang> This one time I managed to get it to boot and log in, but every time I click on"about this mac" the virtualization layer itself would crash.
+[13:58:24] <Dusk> mmm
+[14:02:02] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:03:09] <Blackjack> RazorSharpFang: Yeah
+[14:03:12] <Blackjack> That's a known thing
+[14:03:18] <Blackjack> Just don't click About This Mac
+[14:03:19] <Blackjack> Simple
+[14:03:43] <RazorSharpFang> Blackjack: But I needed that confirmation. 
+[14:03:51] <Blackjack> I don't think you did
+[14:04:48] <gigazzz> ugh.. Going to have to put a dog dog.. 7 seizures and no money to cover the battery of tests they want to do
+[14:05:37] <RazorSharpFang> Blackjack: I also think I needed to do stuff on there, such as enable developer options, etcc..
+[14:05:54] <Blackjack> I've never had to enable that there o.o
+[14:06:29] <RazorSharpFang> Maybe I'll give it another try.
+[14:15:32] <RazorSharpFang> Okay, I've burned an Ubuntu 14.04 x86 installer disc.
+[14:15:37] <RazorSharpFang> Let's give this a try,
+[14:16:38] *** Quits: RazorSharpFang (rjqycmssgjx@sharpest.of.all.fangs) (Quit: Down for maintainance)
+[14:19:26] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[14:19:31] *** Quits: nscoots (FreyGrimrod@Pony-290e3t.sub-70-192-31.myvzw.com) (Quit: Leaving.)
+[14:19:53] *** Joins: RazorSharpFang (chatzilla@Pony-4m1ia6.iinet.net.au)
+[14:22:56] <RazorSharpFang> Oh poop. I seem to lost my 'copy' of OSX Mavericks.
+[14:27:20] <RazorSharpFang> Ubuntu's working so far.
+[14:33:43] <Dusk> \o/
+[14:35:35] <RazorSharpFang> Working with Apache is going to be quite different from Apprelium Abyss.
+[14:41:18] <RazorSharpFang> Installation complete! \o/
+[14:45:34] <RazorSharpFang> Error: Dependency not satisfiable: libavahi-compat-libdnssd1 >= 0.6.25
+[14:49:39] <RazorSharpFang> I don't get this,
+[14:54:28] <RazorSharpFang> Okay, it's working now. Just had to grab the package off a different repository, because ?Reasons?
+[14:54:53] <DJ-C0L7[EIT]> howdy
+[14:59:05] *** mniip is now known as \m
+[14:59:48] *** Joins: RazorSharpFang_ (chatzilla@Pony-4m1ia6.iinet.net.au)
+[14:59:56] <RazorSharpFang_> Oh yay, random DC
+[15:00:39] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Ping timeout: 121 seconds)
+[15:00:44] *** RazorSharpFang_ is now known as RazorSharpFang
+[15:04:48] *** Quits: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP) (Connection closed)
+[15:11:31] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Quit: Switching Machines...)
+[15:11:52] *** Joins: RazorSharpFang (~WebChat@Pony-4m1ia6.iinet.net.au)
+[15:12:20] <RazorSharpFang> There we go.
+[15:12:25] <RazorSharpFang> Everything's working now.
+[15:15:13] <RazorSharpFang> Hmm.
+[15:15:21] <RainbowHacks> o/
+[15:21:55] <DJ-C0L7[EIT]> any hams on?
+[15:28:14] <RazorSharpFang> There are no hams
+[15:35:05] <DJ-C0L7[EIT]> anypony with experience with co-phased antennas?
+[15:40:35] * JustAberrant does not have experience with co-phased antennas
+[15:40:36] <RazorSharpFang> I don't even know what that means.
+[15:42:37] *** Quits: RazorSharpFang (~WebChat@sharpest.of.all.fangs) (Ping timeout: 121 seconds)
+[15:43:07] *** Joins: RazorSharpFang (~WebChat@Pony-4m1ia6.iinet.net.au)
+[15:43:20] <RazorSharpFang> QWebIRC just failed on me.
+[15:44:45] <Phase> Colgate, seems i was wrong about the format of cap commands
+[15:44:57] <Phase> it's CAP [something] [subcommnd]
+[15:45:19] <Phase> multiline LS is terminated by a * After subcommand
+[15:45:52] * Phase wonders why the second parameter exists at all
+[15:54:43] <RazorSharpFang> I can't seem to install an openssh-server on ubuntu.
+[15:55:03] <RazorSharpFang> openssh-server : Depends: libck-connector0 (>= 0.2.1) but it is not installable
+[15:55:18] <RazorSharpFang> Not installable?! Why?!
+[15:57:05] <DJ-C0L7[EIT]> a co-phase antenna array is running multiple antennas off of a single radio or reciever to increase coverage or area for transmission or reception, its a common ammateur radio trick and used to be a common Citizens Band radio (11Meter) trick for DX (long distance) transmission
+[16:01:28] <DJ-C0L7[EIT]> afk
+[16:03:51] <RazorSharpFang> Can somepony help me resolve this? I have no idea how to proceed.
+[16:05:24] * JustAberrant can not help you resolve this :(
+[16:05:54] <RazorSharpFang> I mean, you'd expect openssh-server to work without issues on a clean install of ubuntu, right?
+[16:07:39] <johnsey> did you run apt-get update?
+[16:07:41] * JustAberrant would
+[16:07:44] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[16:10:06] <RazorSharpFang> johnsey: I did, many times. It never once worked.
+[16:10:13] <RazorSharpFang> I do not know why.
+[16:13:52] <JustAberrant> *whispers* you holding packages man
+[16:14:06] <RazorSharpFang> What does that even mean?
+[16:14:12] <JustAberrant> ( apt-mark showhold )
+[16:14:30] <JustAberrant> I assume that's a thing in ubuntu anyway
+[16:14:46] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[16:14:51] <RazorSharpFang> It didn't do anything. : /
+[16:15:00] <JustAberrant> probably good then
+[16:15:12] <johnsey> RazorSharpFang: can you paste your /etc/apt/sources.list somewhere?
+[16:15:48] <RainbowHacks> RazorSharpFang, obvious problem is obvious. You're using Linux instead of Glorious Superior Mother BSD Unix
+[16:16:02] <RainbowHacks> but in all seriousness: pastebin your sources.list
+[16:16:24] <RainbowHacks> and if you haven't already, make sure you have network connectivity and ran apt-get update >.>
+[16:16:26] <RazorSharpFang> Hang on, I have to figure out how to do that.
+[16:16:54] <RazorSharpFang> I'm /on/ the machine.
+[16:17:05] * RazorSharpFang clearly displays that he's connected.
+[16:17:05] <JustAberrant> but are you sure you're _really_ here :(
+[16:17:46] <JustAberrant> IRC can be misleading :(
+[16:18:03] <RazorSharpFang> http://pastebin.com/tHa1EtNk - There we go.
+[16:18:03] <PinkiePieBot> [ /etc/apt/sources.list - Pastebin.com ]
+[16:18:09] <RazorSharpFang> Thanks, PinkiePieBot 
+[16:18:09] <PinkiePieBot> My pleasure.
+[16:19:30] <RazorSharpFang> E: Some index files failed to download. They have been ignored, or old ones used instead. 
+[16:19:36] <RazorSharpFang> >...>
+[16:20:04] <JustAberrant> well that would be problematic
+[16:20:33] <JustAberrant> err, could be
+[16:22:06] <JustAberrant> http://au.archive.ubuntu.com/ubuntu/ 404's
+[16:22:09] <JustAberrant> at least for me
+[16:22:16] <JustAberrant> possibly part of the issue?
+[16:22:28] <RazorSharpFang> Possibly. I encounter many 404s
+[16:22:53] <JustAberrant> try using a different mirror?
+[16:23:09] *** Joins: MistVeil (AndChat3408@Pony-lelp7v.static.axtel.net)
+[16:23:35] <RazorSharpFang> I don't know how to do that.
+[16:23:49] <JustAberrant> neither do I :(
+[16:24:20] <RazorSharpFang> cannot connect to X server.
+[16:24:38] *** Quits: MistVeil (AndChat3408@Pony-lelp7v.static.axtel.net) (Quit: Bye)
+[16:25:16] <JustAberrant> maybe go through that /etc/apt/sources.list file and remove the au. from everything
+[16:25:26] <JustAberrant> but no idea if that's considered an ok thing to do
+[16:26:04] <JustAberrant> i.e. would ubuntu prefer you using a country specific mirror
+[16:27:34] <JustAberrant> I also presume ubuntu has some click n` drool utility for selecting a mirror
+[16:28:07] <JustAberrant> maybe poke around whatever it has for a control panel and look for something along those lines
+[16:29:22] <JustAberrant> yeah I googled... http://askubuntu.com/a/37825  is probably what you want
+[16:29:23] <PinkiePieBot> [ repository - How can I get apt to use a mirror close to me, or choose a faster mirror? - Ask Ubuntu ]
+[16:30:37] <johnsey> RazorSharpFang: sorry, on the phone
+[16:31:32] <RazorSharpFang> Now I can't apt-get update anymore.
+[16:31:39] <johnsey> you can either do it the way JustAberrant suggested, or replace all occurences of http://au. with http://us. (or similar)
+[16:31:50] <RazorSharpFang> E: Unable to lock the administration directory (/var/lib/dpkg/), is another process using it?
+[16:31:59] <RazorSharpFang> There's nothing.
+[16:31:59] <johnsey> that's ok, don't worry
+[16:32:23] <johnsey> there might be another apt process running in the background, started by the OS, looking for updates
+[16:32:39] <RazorSharpFang> Hmm.
+[16:32:41] <johnsey> wait for it to finish, should be done in a moment
+[16:33:07] <johnsey> RazorSharpFang: did you select a different mirror now?
+[16:33:10] <RazorSharpFang> \o/ Completed this time.
+[16:33:14] <johnsey> ah good
+[16:33:28] <johnsey> try installing openssh-server again
+[16:33:31] <RazorSharpFang> johnsey: Yes. i don't understand why the AU mirror wasn't functioning right.
+[16:33:47] <JustAberrant> probably technical difficulties :(
+[16:34:09] <johnsey> tony abbott rampaging through the data center?
+[16:34:30] <RazorSharpFang> He's not the prime minister anymore, isn't he?
+[16:34:48] <JustAberrant> someone forgot to top up the kerosene for the load balancer :(
+[16:34:59] <johnsey> yes, and he might be pissed about it
+[16:40:23] <RazorSharpFang> Ugh, my throat is pain. >.>
+[16:41:53] <JustAberrant> drink some gravy
+[16:43:50] <RazorSharpFang> JustAberrant: Would that actually work?
+[16:44:10] <JustAberrant> I dunno, I'm not a doctor :(
+[16:44:21] <RazorSharpFang> I failed biology, so I dunno either.
+[16:44:22] <JustAberrant> it sounds plausible though doesn't it?
+[16:44:30] <JustAberrant> I mean, gravy is warm and soothing
+[16:46:03] <johnsey> i can recommend grog
+[16:47:33] <johnsey> rum, hot water, honey, some lemon juice, pinch of nutmeg
+[16:48:36] <RazorSharpFang> Would green tea be good?
+[16:48:49] <JustAberrant> imo green tea is never good :(
+[16:48:53] <JustAberrant> grog sounds good though
+[16:52:38] *** Quits: RazorSharpFang (~WebChat@sharpest.of.all.fangs) (Ping timeout: 121 seconds)
+[16:53:05] *** Joins: RazorSharpFang (~WebChat@Pony-4m1ia6.iinet.net.au)
+[16:53:16] <RazorSharpFang> I think I need a better IRC client.
+[16:54:17] <JustAberrant> mIRC works in wine ;p
+[16:56:40] <RazorSharpFang> libopenal.so - which library would that be?
+[17:01:33] <RazorSharpFang> More importantly, if I HAVE this shared object, why can the application not find it?
+[17:01:42] * RazorSharpFang is confuzled
+[17:08:38] <RazorSharpFang> The scroll-lock key is behaving strange.
+[17:10:11] <johnsey> RazorSharpFang: it's an audio library, which application can't find it and how does it report that?
+[17:11:48] <RazorSharpFang> johnsey: My application. I've resolved it, but I can't find the error message it used to give. Something like "can't find shared object libopen.so"
+[17:12:02] <RazorSharpFang> I resolved it by installing libopenal-dev
+[17:12:14] <johnsey> ah yeah, good
+[17:13:17] <RazorSharpFang> OH WHAT!
+[17:13:34] <RazorSharpFang> It's detecting my /mouse/ as a /gamepad/
+[17:16:16] * RazorSharpFang attempts to debugg....
+[17:19:03] *** Init3-away is now known as init3
+[17:21:55] <RazorSharpFang> ?? Weird. Ubuntu is treating SYSRQ and PRTSC as identical.
+[17:26:29] *** Joins: Tahlorz (rattle@Pony-n6kr4p.ph.cox.net)
+[17:28:35] <Rylee> 09:54:16 <JustAberrant> mIRC works in wine ;p
+[17:28:39] <Rylee> it does
+[17:28:40] <Rylee> but
+[17:28:41] <Rylee> WHY
+[17:28:59] <RazorSharpFang> Rylee: You're reading rather dated posts.
+[17:29:04] <Rylee> what
+[17:29:15] <RazorSharpFang> Wasn't that like... hours ago?
+[17:29:28] <Rylee> yes, irc is an asynchrynous protocol, I can respond to amusingly ridiculous statements anytime appropriate :-P
+[17:29:34] <RazorSharpFang> Like, yesterday.
+[17:29:37] <Rylee> uh
+[17:29:46] <Rylee> no, like, minutes after you joined. like less tahn an hour ago.
+[17:30:05] <RazorSharpFang> It's about midnight over here, so. Yesterday. : D
+[17:30:16] <Rylee> groaaaaaaaan
+[17:30:30] * RazorSharpFang laughs while wheezing and coughing
+[17:30:31] <Rylee> like you're on linux already, you've got so many good clients. weechat, hexchat, uhh.... that's about all
+[17:30:46] <JustAberrant> to get the kind of polished classic IRC experience that just isn't available on linux :(
+[17:30:49] <RazorSharpFang> Don't forget lightIRC.
+[17:31:00] <Rylee> i'm not sure in what world lightirc counts as good
+[17:31:20] <RazorSharpFang> A world that has flash, but without any bugs.
+[17:31:33] <RazorSharpFang> A mysterious world, unknown to all.
+[17:31:35] <Rylee> flash is brain damaged by default
+[17:33:24] <RazorSharpFang> Well, you could always make your own IRC client.
+[17:33:32] <JustAberrant> I mean, there's hexchat which kinda comes close, but while it has some scripting capability, it's not nearly as robust as mIRC :(
+[17:33:46] <RazorSharpFang> Does mIRC not have a nix port?
+[17:34:52] <Rylee> 10:33:32 <JustAberrant> I mean, there's hexchat which kinda comes close, but while it has some scripting capability, it's not nearly as robust as mIRC :(
+[17:34:54] <Rylee> w... what
+[17:35:02] <Rylee> mirc requires you to use some brain damaged homebrew language
+[17:35:08] <JustAberrant> hexchat doesn't even have a built in editor
+[17:35:16] <JustAberrant> nor a real script manager
+[17:35:49] <JustAberrant> plus mIRC has a built in permissions systems for writing remote scripts.. with hexchat you have to implement your own :(
+[17:36:01] <Rylee> what is a 'remote script'
+[17:36:17] <JustAberrant> lets other users trigger commands
+[17:36:26] <Rylee> so what you're saying is
+[17:36:39] <Rylee> because of its ability to do something utterly half-baked and better handled by a dedicated bot
+[17:36:49] <Rylee> and because of its ability to ... do what you already have vim for
+[17:36:56] <Rylee> in a terrible scripting language
+[17:37:00] <Rylee> you ... somehow consider this a good thing?
+[17:37:17] <RazorSharpFang> OpenGL Warning: glFlushVertexArrayRangeNV not found in mesa table
+[17:37:20] <JustAberrant> sure, it's all about integration
+[17:37:21] <RazorSharpFang> What am I doing wrong?
+[17:37:36] <JustAberrant> I mean, yeah there are better ways of doing all those things
+[17:37:45] <JustAberrant> but mIRC provides an integrated environment where you can do all of it
+[17:38:19] <JustAberrant> plus if you implement your "IRC bot" in your client, it lets you connect as one nick without needing to set up znc/etc
+[17:38:22] <RazorSharpFang> Holy poop. So many openGL warnings
+[17:39:09] <JustAberrant> RazorSharpFang: sounds like you don't have 3d accel?
+[17:39:26] <JustAberrant> RazorSharpFang: old vid card, wrong drivers, or trying to use in a vm?
+[17:39:47] <RazorSharpFang> JustAberrant: I AM in a virtual machine. I just turned ON 3D support. NOW it does NOT work.
+[17:39:50] <Blackjack> A remote script is slighty more than that
+[17:40:10] <Blackjack> A remote script is just "anything that contains event handlers"
+[17:40:20] * JustAberrant nods
+[17:40:41] <RazorSharpFang> Why would turning ON 3D support make openGL NOT work?
+[17:40:48] <JustAberrant> and mIRC had a reasonably comprehensible event handing system.. no "hooks" or anything needed
+[17:41:04] <Blackjack> mSL was my first language of any kind
+[17:41:11] <Blackjack> I understood it reasonably well
+[17:41:23] <RazorSharpFang> My first language was English. : D
+[17:41:36] <JustAberrant> RazorSharpFang: this I do not know
+[17:42:30] <JustAberrant> Rylee: ultimately it comes down to whether you succeed because of or in spite of your tool stack.. mIRC fosters success :)
+[17:42:46] <Rylee> it fosters doing everything in an utterly mediocre way
+[17:42:57] <RazorSharpFang> mediocrity is okay.
+[17:42:59] <Rylee> you might want to read up on the unix philosophy of doing one thing well
+[17:43:07] <Blackjack> Rylee: Someone made a demo in mIRC
+[17:43:11] <Blackjack> Try doing that in weechat :P
+[17:43:14] <JustAberrant> Rylee: oh now that's just silly
+[17:43:20] <Rylee> mirc does a lot of things in a mediocre way
+[17:43:40] <Rylee> Blackjack: /shell cacafire
+[17:43:41] <Rylee> :D :D :D 
+[17:43:44] <Blackjack> no
+[17:43:53] <Blackjack> No external programs here :P
+[17:44:10] <Rylee> i mean, you can send arbitrary lines in a new buffer.
+[17:44:19] <Rylee> so you could do anything you can do in a terminal.
+[17:44:34] <Blackjack> Sure
+[17:44:57] <JustAberrant> Rylee: a complete though mediocre solution is better than a amazing solution that doesn't actually solve the problem
+[17:45:05] <JustAberrant> Rylee: because if it doesn't solve the problem, it's not a solution
+[17:45:07] <Blackjack> I can't find footage of this demo :(
+[17:45:17] <Blackjack> I've only seen it actually running in mIRC
+[17:45:19] <Rylee> so tell me what problem you have that mirc is solving through its INNOVATIVE BOT-MAKING APPARATUS
+[17:45:38] <Rylee> (that somehow isn't being served better by a full-featured irc bot)
+[17:45:46] <JustAberrant> I dunno, I use irssi.. just saying, in theory, mIRC is amazing
+[17:46:03] <Rylee> because I guarantee that the actual uses for that
+[17:46:07] <Rylee> are absurdly miniscule
+[17:46:14] <Rylee> to the point of making including it by default silly
+[17:46:23] <Blackjack> ?
+[17:47:34] *** Joins: Crimson_Tail (Bluepon@Pony-v1s4l5.cg80.k4gu.0151.2601.IP)
+[17:50:44] <JustAberrant> Rylee: mIRC scripts allowed significant control over the UI, whereas hexchat does not due in part to the inflexibility of gtk, but in part due to the design of the client.. 
+[17:51:06] <JustAberrant> Rylee: it would be quite difficult for instance in hexchat for a script to make the chat area round
+[17:51:49] <Rylee> i uhh
+[17:51:50] <Rylee> I guess?
+[17:51:53] <HoneyDrops> Why would an irc client have a script editor when you have a perfect decent text editor?
+[17:52:00] <Rylee> I can't imagine ever wanting to make the chat area round
+[17:52:07] <JustAberrant> integration .. we've been through that already!
+[17:52:18] <Rylee> that's amusing
+[17:52:23] <RazorSharpFang> Mathematicians thought of it first.
+[17:52:31] * JustAberrant nods
+[17:53:25] <JustAberrant> I mean, say you use vi to edit an mIRC script
+[17:53:25] <HoneyDrops> Also config should be file-based as that is the only sane option.  I further propose that plain-text is best format.  There is no reason to manage setting though the program itself.
+[17:53:34] <JustAberrant> you're not going to have syntax highlighting out of the box
+[17:53:40] <JustAberrant> and certainly not going to have auto-complete
+[17:54:05] <RazorSharpFang> Are those really necessary?
+[17:54:15] <JustAberrant> nor inline error detection
+[17:54:17] <Rylee> they're helpful
+[17:54:29] <RazorSharpFang> Yeah, but they're not make-or-break.
+[17:54:30] <HoneyDrops> vim will handle, python, perl, ruby, tcl, sh, and lua out of the box.  All of which weechat supports with it's scripting APIs
+[17:54:41] <HoneyDrops> s/it's/its/
+[17:54:43] <Rylee> (hexchat supports those too!)
+[17:54:44] <Rylee> yeah
+[17:54:54] <Rylee> but HoneyDrops omg vim isn't in weechat so it's not integrated
+[17:54:56] <Rylee> !!!!
+[17:54:59] <JustAberrant> sure, but not mIRC script
+[17:55:06] <RazorSharpFang> HoneyDrops: What does s/it's/its/ even mean?
+[17:55:24] <HoneyDrops> Nothing but mIRC uses mIRC's pet language.
+[17:55:39] <JustAberrant> indeed, which is probably why it has an integrated editor
+[17:55:45] <JustAberrant> to provide that which no one else will
+[17:55:53] <HoneyDrops> RazorSharpFang: ed/ex command: substitute/pattern/replacement/
+[17:55:54] <Rylee> i love this presupposition that msl is worth using
+[17:56:21] <Blackjack> JustAberrant: The mIRC script editor is literally just like notepad
+[17:56:29] <Blackjack> there is no completion or highlighting or anything
+[17:56:30] <RazorSharpFang> ah
+[17:56:32] <Blackjack> Sorry to disappoint :(
+[17:56:38] <JustAberrant> bah
+[17:56:44] <Rylee> lol
+[17:56:46] <Rylee> i thought so
+[17:56:53] <Blackjack> I THINK there is a button you can manually press to match unclosed pairs of { } and MAYBE autoindent?
+[17:57:06] <HoneyDrops> an irc client is an irc client, it doesn't need a text editor, syntax highlighter and debugger in it too.  If you want that I have the /perfect/ solution for you: emacs
+[17:57:07] <Rylee> it's been a long time since I've used mirc since I like not being insane
+[17:57:11] <JustAberrant> well, all silliness aside, things like auto-completion and inline errors/warnings are probably why I stopped using vi for serious development like 5 years ago
+[17:57:32] <JustAberrant> you can kinda sorta do those things, but it's not nearly as organic
+[17:57:33] <Rylee> i have code completion, syntax highlighting, and inline errors/warnings in vim
+[17:57:41] <Rylee> it's completely natural and totally integrated into the editor
+[17:58:09] <RazorSharpFang> vi > emacs. 
+[17:58:10] <Blackjack> vim will never be as powerful as I want it to be, sadly
+[17:58:12] <Rylee> if you give a shit to set up some plugins — YouCompleteMe and Syntastic, and perhaps GitGutter too — it's a straight up IDE
+[17:58:15] <JustAberrant> so some say, I've never found this to be the case
+[17:58:28] <Blackjack> I use it for quick edits and things from the command line
+[17:58:53] <Blackjack> The most customization I've done is indent settings, a better theme, line numbers, and maing it so that pressing right arrow at the end of a line moves to the next line
+[17:59:02] <Rylee> arrow keys :-(
+[17:59:28] <Blackjack>  I'm sorry but I won't hurt my workflow just to be a l33t hjkl vim hacker
+[17:59:42] <RazorSharpFang> emacs > vim?
+[17:59:44] <JustAberrant> hehe, years of using vi on a solaris 2.5 box broke my arrow key habit ;p
+[17:59:51] <Rylee> it's worth taking the time to get in the habit of doing it tbh
+[17:59:59] <Rylee> some day i guess
+[18:00:08] <Blackjack> I only use it when I need to do like
+[18:00:10] <Blackjack> 100k
+[18:00:11] <Blackjack> or something
+[18:00:15] *** Crimson_Tail is now known as Moon_Shadow
+[18:00:26] * RazorSharpFang uses edit.com
+[18:00:33] <JustAberrant> :>
+[18:00:43] * Blackjack accuses JustAberrant of being tall :(
+[18:00:58] <RazorSharpFang> tall?
+[18:01:02] <Moonlightning> RazorSharpFang: systemd is a horrible monolithic behemoth of an init replacement. It gobbles up each service of inherent importance to a Linux system one by one in clear and blatant defiance to the Unix philosophy, yet somehow manages to only gain support and adoption by most of the major distros.
+[18:01:14] <Blackjack> .
+[18:02:01] <Blackjack> No
+[18:02:09] <JustAberrant> random statement is random :>
+[18:02:14] <Moonlightning> These relevant things were linked a couple of days ago: https://twitter.com/empiricalerror/status/639200462374367232 | https://twitter.com/kevin_bowen/status/639207876054097920
+[18:02:15] <PinkiePieBot> [ Kevin Bowen on Twitter: "systemd puts up a sign out front announcing new ownership, but nobody can read it cause it's in a binary format.@empiricalerror" ]
+[18:02:19] <JustAberrant> Blackjack: I.. wish I was tall :(
+[18:02:27] <Blackjack> :(
+[18:02:39] <RazorSharpFang> Moonlightning: If it was in such defiance, how did it gain such support?
+[18:03:48] <JustAberrant> because the FOSS community has lost it's mind entirely
+[18:03:52] <JustAberrant> at least that's my theory
+[18:03:57] <Blackjack> lol
+[18:04:04] <Moonlightning> RazorSharpFang: better IRC client? weechat. Learning curve, maybe, but I found it totally worth it.
+[18:04:08] <Blackjack> Me too
+[18:04:14] <Blackjack> I will agree with Moonlightning on that one
+[18:04:18] <JustAberrant> bleh
+[18:04:20] <JustAberrant> irssi forever!
+[18:05:07] <Moonlightning> [08:35:02] < Rylee> mirc requires you to use some brain damaged homebrew language
+[18:05:08] <Moonlightning> This.
+[18:05:19] <Blackjack> It is honestly not that bad
+[18:05:20] <RazorSharpFang> Yet another programming language.
+[18:05:24] <Rylee> irssi, for when you want "weechat but not as good"
+[18:05:30] <Rylee> :-)
+[18:05:36] <JustAberrant> pff
+[18:05:38] * Blackjack bites Rylee
+[18:05:46] * JustAberrant just doesn't like change :>
+[18:05:51] <HoneyDrops> I just fine weechat easier to set up, and I don't care much about my irc client.
+[18:05:58] <JustAberrant> I was a long time bitchx holdout :D
+[18:06:03] <Blackjack> :D
+[18:06:11] *** Joins: razor (razor@Pony-4m1ia6.iinet.net.au)
+[18:06:17] <razor> Oh, there we go.
+[18:06:18] <Moonlightning> JustAberrant: a complete though mediocre solution is better than -an amazing solution that doesn't actually solve the problem- no solution at all
+[18:06:21] <Moonlightning> is basically what you said
+[18:06:32] <Rylee> Moonlightning: zomg but dont forget all of the people who need to run a bot 
+[18:06:34] *** razor is now known as Pony_44396
+[18:06:43] <Pony_44396> oh
+[18:06:49] <Moonlightning> [08:51:53] < HoneyDrops> Why would an irc client have a script editor when you have a perfect decent text editor?
+[18:06:51] <Moonlightning> !!!!
+[18:07:07] <Moonlightning> [08:53:25] < HoneyDrops> Also config should be file-based as that is the only sane option.  I further propose that plain-text is best format.  There is no reason to manage setting though the program itself.
+[18:07:10] <Moonlightning> Thank you. >.>
+[18:07:10] <JustAberrant> Moonlightning: well yes but I was justifying mIRC on linux at the time.. 
+[18:07:18] <Blackjack> mIRC config is file-based!
+[18:07:23] *** Quits: RazorSharpFang (~WebChat@sharpest.of.all.fangs) (Killed (NickServ (GHOST command used by Pony_44396!razor@Pony-4m1ia6.iinet.net.au)))
+[18:07:26] <Blackjack> You can definitely edit whatever.ini to your liking
+[18:07:37] *** Pony_44396 is now known as RazorSharpFang
+[18:07:51] <RazorSharpFang> Haha, it works.
+[18:08:00] <RazorSharpFang> CLI chat is weird though.
+[18:08:04] <Moonlightning> HoneyDrops: I feel like that's maybe a bit hypocritical since emacs is also an everything :>
+[18:08:22] <Blackjack> Rylee: OK I admit, YouCompleteMe looks pretty neat
+[18:08:25] <Blackjack> Gonna install it
+[18:09:05] <RazorSharpFang> I don't know how to navigate between channels. : /
+[18:09:18] <JustAberrant> just feels like you have to jump through more and more hoops to make vi do what things like qt-creator and eclipse do out of the box, and for the most part, do better
+[18:09:20] <Moonlightning> </late>
+[18:09:31] <Moonlightning> RazorSharpFang: like I said. Learning curve. What client?
+[18:09:38] <RazorSharpFang> Weechat.
+[18:09:40] <JustAberrant> it's easier to add vim style commands to eclipse than make vim as usable as eclipse 
+[18:09:41] <HoneyDrops> Moonlightning: I don't use emacs.  Also emacs is just a lisp REPL env.
+[18:09:52] <RazorSharpFang> \
+[18:09:57] <Moonlightning> HoneyDrops: I thought it was supposed to be an editor?
+[18:10:04] <Blackjack> RazorSharpFang: /script install buffers.pl
+[18:10:08] <Blackjack> Make your life 10 times easier
+[18:10:09] <Moonlightning> But then started becoming also all these other things
+[18:10:12] <Rylee> Blackjack: if you think vim isn't powerful enough for you, you just haven't usde it enough :-)
+[18:10:17] <Blackjack> Rylee: I don't
+[18:10:21] <Moonlightning> to the point that Linux + emacs could potentially be a working system
+[18:10:29] <Blackjack> Because quite honestly Sublime Text does all I need
+[18:10:42] * Moonlightning heard that somewhere
+[18:10:44] <JustAberrant> vim does text manipulation within the context of a single file really well, but it's easy to clone that to any other editor
+[18:10:50] *** Moon_Shadow is now known as Astral_Song
+[18:10:51] <Moonlightning> no init or anything…just emacs running on the bare kernel
+[18:11:20] <Rylee> ctrlp.vim makes multifile editing super easy too.
+[18:11:22] <RazorSharpFang> I still don't know
+[18:11:32] <Moonlightning> JustAberrant: wait, the registers are file-specific?
+[18:11:35] <RazorSharpFang> /
+[18:11:36] <Blackjack> And Sublime is better than anything else I've used because it can load a 10GB text file in like 2 minutes with a nice progress bar and be able to scroll through it quickly with no lag
+[18:11:54] <Blackjack> RazorSharpFang: I can tell you how I generally initially set up my weechat to make it more usable
+[18:12:00] <Moonlightning> RazorSharpFang: meta-number by default for buffers 1..9
+[18:12:17] <Moonlightning> RazorSharpFang: for buffers 1..99, `meta-j, number, number`
+[18:12:21] <JustAberrant> sure there's probably a vim script that adds every single feature of every ide, but you have to find and install them all.. I just don't think it's worth it
+[18:12:29] <Moonlightning> Or you can use `/buffer <number>`
+[18:12:40] <Moonlightning> and /buffer can be abbreviated as /b, I think
+[18:12:46] <Rylee> i recommend go.py
+[18:12:52] <Blackjack> Me too
+[18:12:53] <JustAberrant> I use vim as a basic text editor, and it's great when using remotely, but if I'm actually doing real development, I'll use qt-creator or eclipse
+[18:13:05] * Moonlightning is weird, likes meta-j
+[18:13:14] <Blackjack> What JustAberrant said except I tend to use Sublime Text or JetBrains products
+[18:13:26] <JustAberrant> I also use vim for it's diff capabilities, because that's actually still pretty damn good compared to a lot of ides
+[18:13:27] * Moonlightning made a `shift-meta-j, number, number, number` for buffers up to 999
+[18:13:46] <RazorSharpFang> Well, how would I remove the userlist? That's taking up a lot of space.
+[18:13:59] <Blackjack> /bar hide nicklist 
+[18:14:00] <Blackjack> Should do it
+[18:14:11] <RazorSharpFang> Blackjack: Much obliged.
+[18:14:49] <Blackjack> I'd suggest doing something like /set weechat.look.prefix_align_max 10
+[18:14:56] <Blackjack> To make peoples' entire nicks not show up
+[18:15:00] <Blackjack> To save more screen width
+[18:15:26] * Moonlightning prefers automatic resizing of the nick column to be as wide as it needs to be to display all nicks on the scrollbacks (and their highest prefixes) in their entirety.
+[18:15:36] <Moonlightning> I guess using a command for it bothers me because it dirties up the command history
+[18:15:55] <Blackjack> (Also, running /save and /layout store after you change settings is probably a good idea if you enjoy keeping your settings)
+[18:16:15] <Moonlightning> and I have to press uparrow more to get to an actual line
+[18:17:02] * RazorSharpFang shrugs
+[18:17:15] <RazorSharpFang> Still, this is definitely better than qwebirc
+[18:17:23] <RazorSharpFang> And also better than lightIRC
+[18:17:55] <Blackjack> I have some more suggested tweaks if you'd like to make things a bit better looking
+[18:23:33] * RazorSharpFang coughs and wheezes
+[18:23:50] <Blackjack> o.o
+[18:23:58] <RazorSharpFang> I hate flus, yes I do...
+[18:24:07] <RazorSharpFang> Stupid 38.5C fever
+[18:24:35] <Blackjack> :(
+[18:26:31] *** Astral_Song is now known as Crimson_Tail
+[18:28:02] <RazorSharpFang> ...Headache...
+[18:28:14] *** Crimson_Tail is now known as Astral_Song
+[18:29:23] *** Astral_Song is now known as Moon_Shadow
+[18:36:17] <RazorSharpFang> Everything is pain...
+[18:37:43] *** Moon_Shadow is now known as Crimson_Tail
+[18:40:20] *** gigazzz is now known as Gigabit
+[18:47:48] <RazorSharpFang> Just finished watching the episode
+[18:47:59] <RazorSharpFang> Was hard to pay attention with thte throbbing...
+[19:23:47] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:28:54] *** Joins: TuxRug (TuxRug@TuxRug)
+[19:33:03] <Moonlightning> lighttpd is serving a 'strict-transport-security' header instead of 'Strict-Transport-Security' :I
+[19:42:53] <RazorSharpFang> XD
+[19:59:27] *** init3 is now known as Init3-away
+[20:02:47] *** Quits: RazorSharpFang (razor@sharpest.of.all.fangs) (Quit: Owowow)
+[20:35:58] *** Init3-away is now known as init3
+[20:38:42] <Gigabit> love how people expect me to setup stuff when they wont get off their fucking asses and run the cable for router 2, that was bought 3 months ago.. amnd now it HAS to be ran because I have no high spot for router 1
+[20:40:16] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[20:53:10] *** Quits: TuxRug (TuxRug@TuxRug) (Connection closed)
+[20:53:17] *** Joins: TuxRug (TuxRug@TuxRug)
+[20:53:40] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[21:43:10] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:48:46] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "be back later")
+[21:57:41] *** init3 is now known as Init3-away
+[21:58:32] <Moonlightning> …we need a Doctor-like figure for tech
+[21:58:40] <Moonlightning> To explain tech concepts
+[21:59:35] <Moonlightning> “Why does it say /broken pipe/?” “Think of the TCP connection between hosts as a pipe, like a water pipe…” “Is it like that?” “No. But, yes, if it helps you to think of it that way!”
+[22:09:07] *** Init3-away is now known as init3
+[22:15:00] *** zz_CyberJacob is now known as CyberJacob
+[22:17:13] *** Gigabit is now known as gigaway
+[22:22:48] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[22:22:48] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[22:28:04] *** Ruthalasleep is now known as Ruthalas
+[22:34:00] * HoneyDrops just does all dev in vim.  Then again, give me syntax highlighting and the basic general-use text operations vim provides and I'm content.  If a language is so complex that an IDE is required to use it easily, the language is broken.
+[22:35:02] <Compu> HoneyDrops: notepad++ is good for windows computers
+[22:40:33] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[22:40:33] <HoneyDrops> I am fortunate that I am able to avoid having to worry about that.
+[22:41:44] * Moonlightning giggles.
+[22:49:15] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:55:33] <init3> Everything working exactly as you want it on your network/computers kinda blows. I need a project. 
+[22:57:03] * Moonlightning thinks he would be happy with that state.
+[22:57:13] * init3 sshes into his server looking at the contents og /etc for shit to mess with.
+[22:57:23] <Moonlightning> init3: switch something non-critical to btrfs :D
+[22:57:41] <init3> If I was working I'd think I would be okay with it.
+[22:58:36] <init3> I don't really have the spare drives for backups lying around. Every drive in use is over 50%. Maybe I can figure out something. 
+[22:59:11] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[23:05:25] <Moonlightning> :(
+[23:07:05] <init3> Well I do technically have a way todo it it seems, but it'dtake fucking forever. My server has this motherboard with this weird hardware flaw where it drops to USB 1.1. Apparently this happens in windows and linux. 
+[23:07:49] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[23:08:22] <init3> I have a USB hard drive with the empty space (the server has no SATA ports) but that seems like a pain. 
+[23:08:59] <init3> I really wish I had a USB card or a SATA card. 
+[23:09:22] <init3> Or a different motherboard. 
+[23:11:39] <init3> Though it seems I never set up backups on here after I reinstalled debian. Oops. Could format my backup drive btrfs
+[23:12:22] <init3> What do y'all use for automatic backups? I was using backup2l which seems decent. 
+[23:14:33] * Moonlightning uses Time Machine for backups. Has no other regular backups.
+[23:15:00] <Moonlightning> I just converted Caramel's root filesystem to btrfs, though, and I'm looking into setting up a backup system based around btrfs snapshots
+[23:27:24] <JustAberrant> are you happy with these changes? :)
+[23:27:35] <JustAberrant> also is btrfs actually stable now?
+[23:37:41] <Phase> mostly
+[23:41:50] *** Gumball_Crash is now known as GumballCrash
+[23:43:19] *** Quits: TuxRug (TuxRug@TuxRug) (Connection closed)
+[23:51:56] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:55:30] *** Quits: Tahlorz (rattle@Pony-n6kr4p.ph.cox.net) (Quit: )
+[23:59:12] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)

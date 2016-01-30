@@ -1,0 +1,210 @@
+[00:25:58] <theli_ua> domme: any idea why would response.content be empty for me even though in web inspector I clearly see there was content
+[00:26:12] <domme> theli_ua: wat?
+[00:26:38] <theli_ua> eh, nvm
+[00:27:01] <theli_ua> also, could you take a look at dat htmldecode pr ?
+[00:27:20] <domme> theli_ua: oh ouch
+[00:27:30] <theli_ua> why ouch?
+[00:29:13] *** H4ndy is now known as h4ndy
+[00:29:59] <domme> theli_ua: because i let you wait for so long
+[00:30:05] *** Joins: github-tomahawk (~github-to@192.30.252.40)
+[00:30:05] <github-tomahawk> [13tomahawk] 15dschmidt pushed 3 new commits to 06master: 02http://git.io/v3B1U
+[00:30:05] <github-tomahawk> 13tomahawk/06master 1484d27aa 15Anton Romanov: Add htmldecode function
+[00:30:05] <github-tomahawk> 13tomahawk/06master 14d3c748c 15Anton Romanov: Use xss safe version
+[00:30:05] <github-tomahawk> 13tomahawk/06master 14d9fb4b4 15Dominik Schmidt: Merge pull request #311 from theli-ua/htmldecode...
+[00:30:05] *** Parts: github-tomahawk (~github-to@192.30.252.40) ()
+[00:30:12] <theli_ua> also, my amazon resolver just did its own first proper signin from inside tomahawk
+[00:30:28] <domme> theli_ua: neat
+[00:30:45] <theli_ua> domme: oh, I have a ton more important or older PRs still waiting for you anyway :P
+[00:31:07] <theli_ua> I'm mostly waiting for you guys to get back to tomahawk , then start buggin you again
+[00:32:01] <theli_ua> domme: thanks
+[00:35:26] *** Quits: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr) (Ping timeout: 240 seconds)
+[00:38:55] <domme> theli_ua: which one in particular?
+[00:39:33] <theli_ua> well, there's one fixing memory leak in tomahawk
+[00:39:39] <tomahawk-ci> Project Tomahawk-MinGW-Master build #4751: STILL FAILING in 4 min 59 sec: http://ci.tomahawk-player.org/job/Tomahawk-MinGW-Master/4751/
+[00:39:39] <tomabee> [ 401 Unauthorized | ci.tomahawk-player.org |  ]
+[00:39:39] <tomahawk-ci> * theli.ua: Add htmldecode function
+[00:39:40] <tomahawk-ci> * theli.ua: Use xss safe version
+[00:39:49] <theli_ua> theres one which changes radio to be based on favorites
+[00:40:03] <theli_ua> on which makes tomahawk include remix albums, etc
+[00:40:05] <domme> https://github.com/tomahawk-player/tomahawk/pull/315 ?
+[00:40:06] <tomabee> [ Do not allocate zero-sized arrays to stop leaking them. Fix new[]/delete mismatch by theli-ua · Pull Request #315 · tomahawk-player/tomahawk · GitHub | github.com | https://avatars2.githubusercontent.com/u/1242604?v=3&s=400 ]
+[00:40:14] <theli_ua> also couple in resolvers I recall
+[00:41:00] <domme> i suck so much at c++ apparently, that i don't understand why or why it wont fix that issue :P
+[00:42:52] <theli_ua> it always allocates memory even when size is zero
+[00:43:07] <theli_ua> but when deleting it'll only call 'free memory' thingy if the size is more than zero
+[00:43:29] <theli_ua> but in reality zero sized objects still consume memory, so that memory is leaked
+[00:48:09] *** Joins: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr)
+[00:57:43] *** Quits: jturney (~jon@host86-141-131-77.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[01:04:14] <theli_ua> this is infuriating
+[01:04:39] <theli_ua> when I send post from my resolver and when I send the same shit with curl ... totally different results
+[01:13:36] <theli_ua> domme: is tomahawk really forwards User-Agent i set via 'headers' in post/get params?
+[01:18:13] <theli_ua> yeah, It doesn't look like I can enforce useragent inside resolver :-/
+[01:46:07] <domme> theli_ua: ah
+[01:46:13] <domme> theli_ua: makes sense
+[01:46:31] <theli_ua> and my webkitgtk version is too old for amazon, lol
+[01:47:06] <domme> theli_ua: :)
+[01:58:36] *** Quits: soee_ (~soee@bmr124.neoplus.adsl.tpnet.pl) (Ping timeout: 264 seconds)
+[02:12:10] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[02:12:44] <theli_ua> jherskowitz: ping
+[02:13:10] <jherskowitz> Pong
+[02:17:39] <domme> theli_ua: 
+[02:17:41] <domme> ;-)
+[02:33:27] <theli_ua> Sry afk, went out of the building to smoke
+[02:33:51] <theli_ua> jherskowitz: I have working amazon prime music resolver with auth
+[02:34:21] <jherskowitz> theli_ua: nice!
+[02:35:32] <theli_ua> Do you think you can test it for me? I wonder if it just works with recent webkitgtk versions or is it blocked by inability for resolver to override useragent
+[02:36:02] <jherskowitz> theli_ua: sure thing
+[03:05:48] *** Quits: thisfred1 (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com) (Ping timeout: 264 seconds)
+[03:10:10] <theli_ua> yeah, for it to work we need to have a way to specify user-agent from js resolver
+[03:10:12] <theli_ua> :(
+[04:39:18] *** Joins: solaraquarion_ (~SolarAqua@ool-18b84cf6.dyn.optonline.net)
+[05:37:30] *** Quits: solaraquarion_ (~SolarAqua@ool-18b84cf6.dyn.optonline.net) (Quit: Leaving)
+[05:46:47] *** Joins: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com)
+[05:55:04] *** Joins: mgue2 (~mgue@x5ce3907d.dyn.telefonica.de)
+[05:58:28] *** Quits: mgue1 (~mgue@x5ce2fc5e.dyn.telefonica.de) (Ping timeout: 260 seconds)
+[07:31:33] *** Quits: axx_ (~axx_@str75-3-78-193-32-227.fbxo.proxad.net) (Ping timeout: 256 seconds)
+[07:49:47] *** Joins: jturney (~jon@host86-141-131-77.range86-141.btcentralplus.com)
+[07:55:41] *** Joins: soee_ (~soee@bmr124.neoplus.adsl.tpnet.pl)
+[09:00:24] *** Quits: danimo (~daniel@kde/danimo) (Quit: http://quassel-irc.org - Chat comfortably. Anywhere.)
+[09:00:34] *** Joins: danimo (~daniel@kde/danimo)
+[09:21:30] *** Joins: meaning (~meaning@90.55-243-81.adsl-dyn.isp.belgacom.be)
+[10:03:03] *** Joins: WillisMan (~Thunderbi@88.96.238.246)
+[11:06:44] *** Joins: wilder_ (~quassel@160.80.10.178)
+[11:06:44] *** Quits: wilder_ (~quassel@160.80.10.178) (Changing host)
+[11:06:44] *** Joins: wilder_ (~quassel@kde/developer/wilder)
+[11:21:21] *** Quits: alexandernst (~quassel@amsn/developer/alexandernst) (Remote host closed the connection)
+[11:24:45] *** Joins: alexandernst (~quassel@2001:41d0:2:3a31::)
+[11:24:46] *** Quits: alexandernst (~quassel@2001:41d0:2:3a31::) (Changing host)
+[11:24:46] *** Joins: alexandernst (~quassel@amsn/developer/alexandernst)
+[11:24:59] *** Quits: meaning (~meaning@90.55-243-81.adsl-dyn.isp.belgacom.be) (Read error: Connection reset by peer)
+[11:25:29] *** Joins: meaning (~meaning@90.55-243-81.adsl-dyn.isp.belgacom.be)
+[11:33:24] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[11:34:37] *** Joins: alexandernst_ (~quassel@2001:41d0:2:3a31::)
+[11:34:41] *** Quits: alexandernst (~quassel@amsn/developer/alexandernst) (Read error: Connection reset by peer)
+[11:38:37] *** Quits: jturney (~jon@host86-141-131-77.range86-141.btcentralplus.com) (Ping timeout: 256 seconds)
+[11:58:25] *** Quits: alexandernst_ (~quassel@2001:41d0:2:3a31::) (Read error: Connection reset by peer)
+[11:58:36] *** Joins: alexandernst (~quassel@amsn/developer/alexandernst)
+[12:50:05] *** Quits: soee_ (~soee@bmr124.neoplus.adsl.tpnet.pl) (Read error: Connection reset by peer)
+[12:50:19] *** Joins: soee (~soee@bmr124.neoplus.adsl.tpnet.pl)
+[12:52:43] *** Quits: xdarklight (~freenode@unaffiliated/xdarklight) (Ping timeout: 250 seconds)
+[13:08:57] *** Quits: meaning (~meaning@90.55-243-81.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[13:13:01] *** Joins: xdarklight (~freenode@unaffiliated/xdarklight)
+[14:13:27] *** Quits: alexandernst (~quassel@amsn/developer/alexandernst) (Ping timeout: 246 seconds)
+[14:16:10] *** Joins: meaning (~meaning@90.55-243-81.adsl-dyn.isp.belgacom.be)
+[14:25:31] *** Joins: alexandernst (~quassel@2001:41d0:2:3a31::)
+[14:25:31] *** Quits: alexandernst (~quassel@2001:41d0:2:3a31::) (Changing host)
+[14:25:32] *** Joins: alexandernst (~quassel@amsn/developer/alexandernst)
+[14:44:15] *** Quits: alexandernst (~quassel@amsn/developer/alexandernst) (Remote host closed the connection)
+[14:45:28] *** Joins: jturney (~jon@host86-179-113-234.range86-179.btcentralplus.com)
+[14:46:27] *** Quits: meaning (~meaning@90.55-243-81.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[14:46:54] *** Joins: alexandernst (~quassel@amsn/developer/alexandernst)
+[15:01:38] *** Quits: gannea (guest-gann@gateway/web/scrollback.io/x-vqvdgitwytnnuhiw) (Remote host closed the connection)
+[15:01:38] *** Quits: maseel (guest-mase@gateway/web/scrollback.io/x-qsduvagobhczdzhk) (Remote host closed the connection)
+[15:03:21] *** Joins: 77CAAJ7PZ (scrollback@gateway/web/scrollback.io/x-gixmkfcjaiwhkjxb)
+[15:19:35] <jherskowitz> theli_ua: sounds like that would be useful for more than just Amazon (set user-agent in resolver)
+[15:26:56] *** Quits: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com) (Remote host closed the connection)
+[15:39:32] *** Quits: soee (~soee@bmr124.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[15:40:20] *** Joins: soee (~soee@bmr124.neoplus.adsl.tpnet.pl)
+[15:56:23] *** Joins: soee_ (~soee@afof130.neoplus.adsl.tpnet.pl)
+[16:00:25] *** Quits: soee (~soee@bmr124.neoplus.adsl.tpnet.pl) (Ping timeout: 256 seconds)
+[16:27:35] <lfranchi> theli_ua: shouldn't be hard to add on the tomahawk side
+[16:45:11] *** Joins: meaning (~meaning@101.235-247-81.adsl-dyn.isp.belgacom.be)
+[17:05:11] *** Quits: jancborchardt (sid4173@gateway/web/irccloud.com/x-hxseppmpztxjxekd) (Ping timeout: 244 seconds)
+[17:05:42] *** Quits: h4ndy (H4ndy@ipv6.gemini.panicbnc.net) (Ping timeout: 244 seconds)
+[17:07:37] *** Joins: jancborchardt (sid4173@gateway/web/irccloud.com/x-yztttvtrfscnzwqo)
+[17:09:23] *** Quits: meaning (~meaning@101.235-247-81.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[17:10:58] *** Joins: h4ndy (H4ndy@ipv6.gemini.panicbnc.net)
+[17:15:03] *** Quits: alexandernst (~quassel@amsn/developer/alexandernst) (Remote host closed the connection)
+[17:17:19] *** Joins: alexandernst (~quassel@amsn/developer/alexandernst)
+[17:24:08] *** Joins: meaning (~meaning@101.235-247-81.adsl-dyn.isp.belgacom.be)
+[17:25:08] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[17:31:03] *** Joins: bodam2005 (~bodam2005@161.209.206.203)
+[17:44:16] *** Quits: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr) (Excess Flood)
+[17:45:14] *** Joins: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr)
+[17:56:50] *** Quits: xdarklight (~freenode@unaffiliated/xdarklight) (Ping timeout: 244 seconds)
+[17:59:54] *** Joins: thisfred1 (~thisfred@66-193-100-238.static.twtelecom.net)
+[18:01:07] *** Quits: meaning (~meaning@101.235-247-81.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[18:01:34] *** h4ndy is now known as H4ndy
+[18:06:50] *** Joins: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com)
+[18:08:56] *** Quits: thisfred1 (~thisfred@66-193-100-238.static.twtelecom.net) (Ping timeout: 250 seconds)
+[18:16:21] *** Joins: xdarklight (~freenode@unaffiliated/xdarklight)
+[18:28:21] *** Quits: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com) (Quit: wait what)
+[18:28:36] *** Joins: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com)
+[18:34:11] *** Quits: WillisMan (~Thunderbi@88.96.238.246) (Ping timeout: 250 seconds)
+[18:35:00] *** Joins: WillisMan (~Thunderbi@88.96.238.246)
+[18:36:32] *** Joins: soee (~soee@afjj155.neoplus.adsl.tpnet.pl)
+[18:37:30] *** Quits: WillisMan (~Thunderbi@88.96.238.246) (Client Quit)
+[18:37:42] *** Quits: soee_ (~soee@afof130.neoplus.adsl.tpnet.pl) (Ping timeout: 246 seconds)
+[18:43:06] *** Quits: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com) (Quit: wait what)
+[18:46:03] *** Joins: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com)
+[19:08:56] *** lukas1 is now known as sternenseemann
+[19:55:18] *** Quits: bodam2005 (~bodam2005@161.209.206.203) (Ping timeout: 252 seconds)
+[20:27:40] *** Joins: bodam2005 (~bodam2005@161.209.206.203)
+[20:36:47] *** Quits: bodam2005 (~bodam2005@161.209.206.203) (Remote host closed the connection)
+[21:19:18] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Remote host closed the connection)
+[21:53:27] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[22:04:41] <theli_ua> lfranchi: well, its being set in ScriptEngine, which only knows about JSAccount ... which might know about JSResolver ... so its needed to propagate that info from jsresolber up to scriptengine
+[22:04:47] <theli_ua> too many levels of indirection
+[22:12:19] *** Joins: tgurr (~tgurr@exherbo/developer/tgurr)
+[22:18:53] *** Joins: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com)
+[22:40:23] <theli_ua> https://github.com/tomahawk-player/tomahawk/pull/316
+[22:40:23] <tomabee> [ Add ability for resolvers to specify user agent string by theli-ua · Pull Request #316 · tomahawk-player/tomahawk · GitHub | github.com | https://avatars2.githubusercontent.com/u/1242604?v=3&s=400 ]
+[22:41:34] <theli_ua> domme: I guess this one is for you since it relates to resolvers
+[22:45:55] <domme> theli_ua: i don't think i like that, can't you make that part of http requests?
+[22:46:04] <theli_ua> no
+[22:46:08] <domme> why?
+[22:46:50] <theli_ua> because js resolvers are implemented through webkit in a way that they are just "js scripts running on a page" and js does not allow you to set user agent
+[22:47:40] <domme> theli_ua: not completely true: https://github.com/theli-ua/tomahawk/blob/user_agent/src/libtomahawk/resolvers/JSResolverHelper.cpp#L895
+[22:47:42] <tomabee> [ tomahawk/JSResolverHelper.cpp at user_agent · theli-ua/tomahawk · GitHub | github.com | https://avatars2.githubusercontent.com/u/1242604?v=3&s=400 ]
+[22:47:42] <theli_ua> if that would be done through native request then I'll loose cookies I believe
+[22:48:17] <domme> meeeeeeeeeh
+[22:48:18] <domme> :|
+[22:48:24] <theli_ua> ohwait, I know
+[22:48:28] <domme> then you need to implement cookies on that
+[22:48:41] <theli_ua> I remember now - native request won't follow redirects, thats why i wasn't able to use it
+[22:49:44] <theli_ua> domme: whats the big deal with having a per-resplver user agent? if anything, resolver wanting to fully pretend like some particular agent would be the most common use case
+[22:52:05] <domme> theli_ua: then we need to implement request following (with a limit) then
+[22:52:09] <domme> theli_ua: that's crap
+[22:52:15] <theli_ua> ?
+[22:52:22] <theli_ua> could you elaborate?
+[22:52:27] <domme> theli_ua: it's inflexible, if you want something like that ... you need to implement it in a wrapper function per resolver
+[22:52:39] <theli_ua> well, it is per resolver
+[22:52:52] <domme> it badly couples things
+[22:53:12] <domme> right now every resolver has its own webkit instance
+[22:53:18] <domme> maybe it wont in the future
+[22:53:18] <theli_ua> in fact, i want every request to be issued with the same user agent
+[22:53:28] <domme> yes, then add a wrapper function to do that
+[22:54:39] <theli_ua> I'll see if I can do that, next week maybe
+[22:55:36] <domme> i just don't want to add api that i can have a bad timing maintaining in the future
+[22:55:38] <theli_ua> you guys are inconsistent, this is inflexible and you are not ok with that, but you are ok with breaking head of resolvers with head of tomahawk for months :-/  weird
+[22:55:45] <domme> :P
+[22:55:56] <domme> breaking is not inflexible
+[22:56:00] <domme> theli_ua: patches welcome
+[22:58:54] <theli_ua> also, cookies are also inconsistent between android/tomahawk 
+[22:58:57] <theli_ua> :-/
+[22:59:25] <theli_ua> tomahawk-android wont handle Set-Cookie header while tomahawk will
+[22:59:57] <domme> theli_ua: okay, let me elaborate more: when doing Tomahawk.get() (or whatever) and it takes the useragent from the resolver .. it couples two globals together in a very intransparent way
+[23:01:09] <domme> theli_ua: i would be probably ok, if you added a account.ajax() wrapper around Tomahawk.ajax (or whatever that function is) and if only that adds the useragent
+[23:01:50] <domme> ah
+[23:01:54] <domme> that doesnt work... mhh... 
+[23:02:07] <domme> i believe the correct solution is really to do it through native request 
+[23:02:08] <domme> :-\
+[23:02:28] <domme> theli_ua: you can also see if qtwebengine offers more possibilites to intercept requests
+[23:05:40] <theli_ua> I just see it as resolver configuring its environment
+[23:05:56] <domme> yes, and it's bad to magically couple the environment
+[23:06:52] *** Joins: eyedel (guest-eyed@gateway/web/scrollback.io/x-lxvfebudmmhmzhoq)
+[23:06:53] <eyedel> how do i sign into spotify if my spotify account is facebook-linked?
+[23:07:01] <theli_ua> Anyhow, this is the only thing stop 
+[23:07:22] <theli_ua> Stopping amazon resolver from working
+[23:10:48] <domme> theli_ua: i have a very bad feeling about this
+[23:11:10] <domme> eyedel: hey
+[23:12:03] <theli_ua> About this pr ? I'm not forcing it, I'll give alternative per request way a shot
+[23:12:37] <domme> eyedel: do you have some kind of email address that you can use? maybe username@facebook.com?
+[23:12:52] <domme> eyedel: i dont remember how it works, but i know it does somehow
+[23:12:55] <domme> jherskowitz: ^
+[23:13:50] <domme> theli_ua: yeah, much appreciated. if you can't work it out, we'll find another way.. e.g. setting the useragent on the account and then enforcing to use account.ajax() instead of Tomahawk.ajax() 
+[23:15:02] <jherskowitz> eyedel: https://tomahawk.uservoice.com/knowledgebase/articles/454173-if-i-use-facebook-to-login-to-spotify-how-can-i-l
+[23:15:03] <tomabee> [ If I use Facebook to login to Spotify, how can I login in Tomahawk? – Feedback Loop | tomahawk.uservoice.com | https://i.embed.ly/1/image?url=http%3A%2F%2Ff.cl.ly%2Fitems%2F472u1F361l293P273G1g%2FSecurity%2520Settings.png&key=afea23f29e5a4f63bd166897e3dc72df ]
+[23:29:11] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[23:38:13] *** H4ndy is now known as h4ndy
+[23:57:25] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Quit: My Mac has gone to sleep. ZZZzzz…)

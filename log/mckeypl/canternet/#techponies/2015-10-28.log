@@ -1,0 +1,456 @@
+[00:05:53] *** Creeps|AFK is now known as RedHelper
+[00:22:38] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[00:24:48] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[00:31:00] *** Joins: Asoka (Asoka@Pony-pd5s64.net-htp.de)
+[00:49:58] <Fallfeathers> Seoson: is it actually illegal
+[00:50:03] <Fallfeathers> it's just impossible to enforce
+[00:50:23] <Fallfeathers> you could send a letter to, like, ARIN or something maybe
+[00:51:16] <Seoson> O_o I want to see that regulation
+[00:51:37] <Fallfeathers> https://en.wikipedia.org/wiki/Cybersquatting#Legal_resolution
+[00:51:37] <PinkiePieBot> [ Cybersquatting - Wikipedia, the free encyclopedia ]
+[00:52:40] <Seoson> Yeah but that only works with trademarks from the few lines I've read ^^
+[00:52:41] <Colgate> hard to prove
+[00:53:01] <Colgate> how do you know that they aren't hosting something there?
+[00:53:09] <Fallfeathers> well
+[00:53:14] <Fallfeathers> we could always destroy the internet
+[00:53:24] <Seoson> Also it's a U.S. only thing. Which doen't work in this case because DENIC and things ....
+[00:53:28] * Fallfeathers hovers hoof over the big red button
+[00:53:49] <Colgate> you can run many services behind an httpd, tunneling ssh over http is a thing :P
+[00:53:56] <Seoson> Which wouldn't work in my case because DENIC and things ...
+[00:55:18] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[00:55:35] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[00:56:00] <Seoson> My websocket connection is playing silly games with me - sorry for the double post ^^
+[01:02:00] <Seoson> Also my mobile carrier is blocking port 5002 now it seems, so I need to setup a reverse proxy to access my weechat relay or use an SSH tunnel/reconfigure my VPN
+[01:06:43] <HoneyDrops> We could also just abandon the idea of a single, centralized domain system.
+[01:06:53] <ShivalWolf> @EFF: The passage of CISA today by 74-21 shows just how badly Congress misunderstands technology, security, and privacy: https://www.eff.org/deeplinks/2015/10/eff-disappointed-cisa-passes-senate
+[01:06:53] <PinkiePieBot> [ EFF Disappointed as CISA Passes Senate | Electronic Frontier Foundation ]
+[01:09:27] *** CyberJacob is now known as zz_CyberJacob
+[01:10:09] <Seoson> HoneyDrops: Show me a good alternative. Blockchain domains suck and the blockchain itself is a bad idea. .onion domains are based on a key that might be broken or compromised and is useless than (not to mention how ugly they are).
+[01:10:28] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[01:13:01] <Seoson> At least domain root zones are somewhat distributed. The level above that, the ICANN, is the greater problem IMHO
+[01:13:21] <HoneyDrops> Just do like we do now, but have multiple domain systems.  The user decides what service to use, and thus how domains resolve.
+[01:13:55] <HoneyDrops> apony.com will just resolve differently, depending on what DNS service you decide to use.
+[01:14:08] <Seoson> That sounds like a nightmare
+[01:14:21] <Seoson> For both security and useability
+[01:14:38] <HoneyDrops> domain names should just be an alias for an IP
+[01:15:15] <HoneyDrops> The entire point to for human readability, aside from that there is no need for them.
+[01:16:22] <Seoson> If all companies have IPs like 8.8.8.8 and 8.8.4.4 like Google does than sure you don't need DNS :P
+[01:16:56] <Seoson> I even use hostnames for my local network. I never use IPs if I can avoid it somehow
+[01:17:14] <HoneyDrops> QR code the IP, share that?  Having a human manually type in a URI is something to avoid, as much as possible.
+[01:17:48] <HoneyDrops> Users can set their own aliases (which is basically what doing hostnames on a lan does)
+[01:18:18] <Seoson> That doesn't sound like anything I'd prefer over what we use now
+[01:18:42] <Seoson> Managing a remote destination hostname list would be a pain
+[01:18:58] <Seoson> Having them managed by a company would effectively mean DNS again
+[01:20:59] <Seoson> The system we have now isn't nice, but it works quite well at least. With DNSSEC it finally gets somewhat secure.
+[01:25:39] *** Joins: Asoka_White (Asoka@Pony-epesci.net-htp.de)
+[01:25:48] <Moonlightning> > Within our dataset of several million visitors, only one in 2,567 browsers have the same fingerprint as yours.
+[01:26:02] <Moonlightning> Is this a common or rare fingerprint? I can't tell. x.x
+[01:26:29] <Moonlightning> > Within our dataset of several million visitors, only one in 2,006,832 browsers have the same fingerprint as yours.
+[01:26:40] <Moonlightning> …oh, well, pff. /That's/ //really// rare.
+[01:26:55] <Moonlightning> Still…what about the first one? I expected it to be on the order of 1/50 or something ._.
+[01:27:28] <Moonlightning> maybe ~1/200 at the least…nothing in the ten-thousandths though ._.
+[01:28:00] *** Quits: Asoka (Asoka@Pony-pd5s64.net-htp.de) (Ping timeout: 121 seconds)
+[01:28:05] <Seoson> O_o Your browser fingerprint appears to be unique among the 6,020,513 tested so far.
+[01:29:16] <Moonlightning> Yeah, that flashed up for a moment in Firefox beore it went down to ~1/3,000,000 and then ~1/2,000,000
+[01:29:40] <Moonlightning> …so THAT'S why they accept cookies by default!
+[01:29:52] <Moonlightning> I had it set to drop all cookies except those from whitelisted domains…
+[01:30:04] <Seoson> Mine seems to stay that way ....
+[01:31:31] *** Joins: MistVeil (AndChat3408@Pony-8qg.793.152.189.IP)
+[01:32:53] <Moonlightning> Set it to keep cookies by default, and set the keep-from-third-party to from-visited bumped me up to 1/846.
+[01:34:55] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[01:35:16] *** Joins: Static_Breeze (Nocturnal@Nocturnal)
+[01:40:49] *** Joins: Asoka (Asoka@Pony-rpaha7.net-htp.de)
+[01:41:18] *** Seoson is now known as Seoson|BNC
+[01:42:36] *** Quits: Asoka_White (Asoka@Pony-epesci.net-htp.de) (Ping timeout: 121 seconds)
+[02:02:13] <Colgate> Seoson|BNC: could do it the way i2p does it
+[02:02:28] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[02:03:57] <Colgate> has a local address book, which is like your hosts file, then it gets names from a centralized naming place, forgot the specific name of it, and then stores that locally forever, has the problem of updates though I guess, bleh
+[02:06:54] *** Quits: MistVeil (AndChat3408@Pony-8qg.793.152.189.IP) (Quit: Bye)
+[02:17:57] * Divide|TechSupport routes an onion onto a plate of pierogi.
+[02:21:57] <init3> mark
+[02:22:07] *** Quits: Static_Breeze (Nocturnal@Nocturnal) (Quit: ChatZilla 0.9.92 [Firefox 41.0.2/20151014143721])
+[02:22:11] <init3> ^let's see how long wine takes to compile
+[02:22:45] <Divide|TechSupport> "Your browser fingerprint appears to be unique among the 6,020,705 tested so far."  But Java wasn't active.
+[02:23:10] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[02:23:53] <init3> Gotta love compiling custom wine versions knowing they'll take fucking forever with only a shred of hope the 30 line patch will fix everything and wine will love you long time. 
+[02:24:58] *** Joins: Static_Breeze (Nocturnal@Nocturnal)
+[02:26:06] <init3> I am on the cusp of something great but I dunno. With CSMT patches I can get this game to have as good (maybe even better) framerate than windows. Buuuut apparently the game queries the video hardware every once and a while causing a 2-3 second freeze. 
+[02:27:08] <init3> And without the wine-staging patches I can get a varied 30-15fps :( 30 I could handle. drops to 15 or lower I cannot. 
+[02:27:49] <init3> But 100fps + with the patches. Making shit work in wine is like a perpetual cocktease
+[02:28:59] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[02:31:51] <Static_Breeze> Okay I need some serious help here, I downgraded from windows 10 to 8.1 off of a usb install cause I went past the month gap of being able to downgrade through microsoft's crappy idea of ensuring no issues. But when it installed it was missing most of the drivers and is now telling me this when I try to factory reset. http://imgur.com/GbYOKnS
+[02:31:51] <PinkiePieBot> [ Imgur: The most awesome images on the Internet ]
+[02:33:23] <Static_Breeze> I feel like the only real choice I have left here is to pull my rights to the copy of windows 10 and deal with the issues between my graphics card and it irregardless.
+[02:33:59] *** Joins: Asoka_White (Asoka@Pony-qngvrd.net-htp.de)
+[02:35:24] <Divide|TechSupport> You on a desktop or a laptop?
+[02:35:29] <Static_Breeze> Laptop
+[02:35:36] <Divide|TechSupport> What model?
+[02:36:09] <Static_Breeze> Inspiron 3135 Dell.
+[02:36:15] <Static_Breeze> 3000 series.
+[02:36:50] <Divide|TechSupport> Merry Christmas.  http://tinyurl.com/llzdndl
+[02:36:53] <PinkiePieBot> [ Product Support | Dell US ]
+[02:37:11] *** Quits: Asoka (Asoka@Pony-rpaha7.net-htp.de) (Ping timeout: 121 seconds)
+[02:37:15] <Static_Breeze> I've already reinstalled stuff from the support site, but I'm still experiencing BSOD Watchdog Errors.
+[02:39:44] <Static_Breeze> I'll try downloading anything else on there that I may have missed in the process and see if that helps but as far as I know of my issue will still remain.
+[02:40:43] <Divide|TechSupport> Static_Breeze: Install the nVidia GeForce Experience software.
+[02:41:03] <Divide|TechSupport> That /seems/ to be a potential fix in this circumstance.
+[02:41:27] <Static_Breeze> All right, I'll do that once I put all of the files off of support on the comp.
+[02:41:41] * Divide|TechSupport nods.
+[02:48:02] <wolfyshy> wait I thought you had an ATI card Static_Breeze?
+[02:48:43] <Divide|TechSupport> The Inspiron 3135 is NVidia... is it not?
+[02:48:55] <Static_Breeze> AMD
+[02:48:57] <Static_Breeze> Yeah
+[02:49:42] <Static_Breeze> I hadn't opened the nVidia site yet, didn't realize that was a graphics card support.
+[02:51:37] <Static_Breeze> I guess I should be asking what I'm installing the nVidia GeForce Experience Software for then in this case Divide|TechSupport? Is that drivers from a different kind of card?
+[02:52:26] <Divide|TechSupport> Simply because the Dell website might not have updated the drivers properly; this is a superior way to find the right ones.
+[02:53:26] <Static_Breeze> So this is just basically an auto runniong debugger tool Divide|TechSupport? 
+[02:53:32] <Static_Breeze> running*
+[02:53:39] *** Joins: Asoka (Asoka@Pony-ujdbvr.net-htp.de)
+[02:54:19] <wolfyshy> I believe AMD's is the "catalyst control centre" but I'm not too sure
+[02:54:32] <wolfyshy> I only have two ATI/AMD cards and both of them are in Linux machines
+[02:54:59] <Static_Breeze> Catalyst Control Centre yeah, I got that installed just fine I'm still going through issues though.
+[02:55:14] *** Quits: Asoka_White (Asoka@Pony-qngvrd.net-htp.de) (Ping timeout: 121 seconds)
+[02:56:28] <Static_Breeze> Okay I read into what it said on GeForce, it's suppose to install new driver updates and optimize stuff.
+[02:57:54] <Divide|TechSupport> Okay, in the Device Manager, /is/ it an nVidia card?  Or is it an AMD?
+[02:58:51] <Static_Breeze> It's not an nVidia card Divide|TechSupport. It's AMD. >.< 
+[02:59:10] <Static_Breeze> Guessing I need to go on AMD's site then?
+[03:01:58] <Divide|TechSupport> Yeah.  >_O  Sorry.
+[03:02:31] <Static_Breeze> Do you know where to push me towards on AMD? Cause it's a cluster of what the frick.
+[03:03:02] <Static_Breeze> Oh never mind, finally got to a place where a support tab showed up likely find it there.
+[03:03:12] *** Joins: Asoka_White (Asoka@Pony-eu07qa.net-htp.de)
+[03:05:15] *** Quits: Asoka (Asoka@Pony-ujdbvr.net-htp.de) (Ping timeout: 121 seconds)
+[03:05:33] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[03:10:49] *** Joins: Asoka (Asoka@Pony-8vp2qs.net-htp.de)
+[03:11:11] *** Mike_Coltfield is now known as Larscis
+[03:13:17] *** Quits: Asoka_White (Asoka@Pony-eu07qa.net-htp.de) (Ping timeout: 121 seconds)
+[03:15:04] *** Joins: Asoka_White (Asoka@Pony-qml8pp.net-htp.de)
+[03:17:49] *** Quits: Asoka (Asoka@Pony-8vp2qs.net-htp.de) (Ping timeout: 121 seconds)
+[03:18:41] *** Eventide is now known as Eventide|Sleepies
+[03:20:04] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:23:35] *** Joins: Asoka (Asoka@Pony-27tfd3.net-htp.de)
+[03:25:50] *** Quits: Asoka_White (Asoka@Pony-qml8pp.net-htp.de) (Ping timeout: 121 seconds)
+[03:30:32] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[03:40:12] *** Quits: Static_Breeze (Nocturnal@Nocturnal) (Quit: ChatZilla 0.9.92 [Firefox 41.0.2/20151014143721])
+[03:44:00] *** Joins: Asoka_White (Asoka@Pony-q1pa3j.net-htp.de)
+[03:45:15] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[03:46:51] *** Quits: Asoka (Asoka@Pony-27tfd3.net-htp.de) (Ping timeout: 121 seconds)
+[03:48:43] <init3> Wine build complete.
+[03:49:03] <init3> an hour and a half 
+[03:49:15] <init3> Ugh... I hate building things
+[03:49:57] * Gigabit unbuilds it :p
+[03:50:05] <init3> GAAAAA
+[03:50:29] * init3 has a stroke
+[03:50:58] <init3> Now we see if it even works. Yay!
+[04:01:29] <Phase> init3, 32bit only build or?
+[04:03:58] <init3> Oh shit. I'm glad you asked that. It is supposed to be 32 bit but I may have made the winearch 64 and that may be why it isn't working
+[04:05:35] *** Joins: Asoka (Asoka@Pony-l25d7f.net-htp.de)
+[04:06:53] *** Quits: Asoka_White (Asoka@Pony-q1pa3j.net-htp.de) (Ping timeout: 121 seconds)
+[04:07:02] <init3> SHIT I COMPILED THE 64 BIT VERSION!
+[04:07:06] <init3> FUUUUUUUU
+[04:09:50] <Phase> XD
+[04:10:17] <init3> And here I was thinking I was going to sleep tonight
+[04:10:28] <Phase> there isn't a build of wine for your distro?
+[04:10:42] <init3> There is but I need a custom patched version
+[04:10:44] <Phase> https://github.com/wine-compholio/wine-staging/wiki/Installation most of them even have staging
+[04:10:44] <PinkiePieBot> [ Installation · wine-compholio/wine-staging Wiki · GitHub ]
+[04:10:48] <Phase> ah
+[04:13:40] *** Joins: Asoka_White (Asoka@Pony-hp4ucf.net-htp.de)
+[04:14:05] <init3> Oh wait
+[04:14:11] <init3> maybe all that time was not for nought
+[04:15:25] *** Quits: Asoka (Asoka@Pony-l25d7f.net-htp.de) (Ping timeout: 121 seconds)
+[04:20:17] <init3> fuck
+[04:20:29] <init3> I dunno. the compile was fine but it seems to be borked
+[04:23:26] *** Joins: Asoka (Asoka@Pony-4tm3ce.net-htp.de)
+[04:25:45] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[04:25:56] *** Quits: Asoka_White (Asoka@Pony-hp4ucf.net-htp.de) (Ping timeout: 121 seconds)
+[04:47:09] *** Joins: Asoka_White (Asoka@Pony-gd991t.net-htp.de)
+[04:49:29] *** Quits: Asoka (Asoka@Pony-4tm3ce.net-htp.de) (Ping timeout: 121 seconds)
+[05:06:15] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[05:15:29] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[05:19:36] <Gigabit> I thought Firefox had a way go 
+[05:19:40] <Gigabit> To*
+[05:20:42] <Gigabit> Cast webpages from device to device, so like I tell my PC to open a page I opened on my phone first and cast if over to the pc 
+[05:22:55] *** Joins: Asoka (Asoka@Pony-1a2hqk.net-htp.de)
+[05:25:02] *** Quits: Asoka_White (Asoka@Pony-gd991t.net-htp.de) (Ping timeout: 121 seconds)
+[05:25:50] *** Joins: Asoka_White (Asoka@Pony-mn456q.net-htp.de)
+[05:26:41] *** Gigabit is now known as Snoarin
+[05:28:33] *** Quits: Asoka (Asoka@Pony-1a2hqk.net-htp.de) (Ping timeout: 121 seconds)
+[05:36:02] *** Joins: DemonWolf (DemonWolf@Pony-3od.7q3.178.24.IP)
+[05:37:58] <DemonWolf> Hello
+[05:38:10] <Moonlightning> :O
+[05:38:25] <DemonWolf> Nerds Hype :D
+[05:38:26] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a Dream. <3)
+[05:40:42] <Moonlightning> what the actual fuck
+[05:41:01] <Moonlightning> This is the second time this month an Ubuntu SERVER has rebooted on me without my consent. :V
+[05:43:52] <Moonlightning> And //what// is taking so long to reboot :/
+[05:46:45] <Moonlightning> It's been over five minutes. Come /on./
+[05:47:26] <Eventide|Sleepies> Shoulda used Debian
+[05:47:33] <DemonWolf> I use Debian
+[05:47:42] <DemonWolf> all my servers run it
+[05:47:49] <DemonWolf> What hoster you have
+[05:48:34] <Moonlightning> I'm going to be switching to Gentoo.
+[05:48:36] <Moonlightning> So.
+[05:48:47] <DemonWolf> OVH is the best for the prive
+[05:48:49] <DemonWolf> price
+[05:48:55] <Eventide|Sleepies> Eh...
+[05:49:00] <DemonWolf> I pay like 4 dollars for one server
+[05:49:01] <Moonlightning> ChunkHost. I'm inclined to think it's something I did, though.
+[05:49:25] <Moonlightning> Banning of IRC things is a dealbreaker.
+[05:49:25] <DemonWolf> I like ovh been using them for a year and not many issues
+[05:52:15] <Moonlightning> oh, host-side updates. -.-
+[05:52:22] <Moonlightning> I really need a mail client…
+[05:54:25] <Moonlightning> Eventide: I switched from Debian to Ubuntu a couple years back because of the /painfully/ slow release cycle.
+[05:56:23] <Eventide|Sleepies> Painfully stable*
+[06:00:52] <DemonWolf> ubuntu is based on Debian if you did not know
+[06:01:09] <Moonlightning> Yeah, but it has a faster release cycle.
+[06:01:11] <DemonWolf> Thats why its almost all the same commands
+[06:01:26] <DemonWolf> I hate Ubuntu Server
+[06:01:40] <DemonWolf> I like just using Debian  becuase theres a lot less installed
+[06:02:06] <Moonlightning> well, if you have all the same packages, you'll have all the same commands 9.9
+[06:02:11] <DemonWolf> On VPS space maters .  mostly because OVH now has SSD you get less now
+[06:02:12] <Moonlightning> GNU coreutils, in particular…
+[06:02:17] <Moonlightning> also, wat
+[06:03:33] *** RedHelper is now known as Creeps|AFK
+[06:04:11] <jaderain> why not use the ubuntu mini install?
+[06:04:18] <jaderain> which has just the very base core things?
+[06:04:42] <jaderain> http://archive.ubuntu.com/ubuntu/dists/wily/main/installer-amd64/current/images/netboot/mini.iso
+[06:05:32] <jaderain> you'll have to apt-get a few things, but the image will be a lot smaller
+[06:05:57] <jaderain> smaller than the standard debian install almost surely
+[06:07:42] *** Quits: Aww (aww@Pony-ic0abh.online) (Quit: ♕ KEEP CALM AND COOKIE ON)
+[06:07:44] <DemonWolf> ovh vps does not allow custom install
+[06:08:56] <Moonlightning> doesn't /support/, or doesn't /allow?/ >.>
+[06:09:02] <Moonlightning> it's one thing to not provide a button for it
+[06:09:19] <Moonlightning> it's another to ban it in the ToS or actively prevent you from doing so
+[06:09:49] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[06:10:17] <DemonWolf> you cant upload a iso on ovh unless you have a ovh dedicated servers
+[06:11:17] <Moonlightning> You can't do it via the web admin UI, or they don't allow you to?
+[06:11:30] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[06:12:12] <Moonlightning> CH doesn't provide a button to install from an image, but they don't care what you do with your boxen as long as it's legal.
+[06:12:17] <Moonlightning> Installing Gentoo is perfectly legal.
+[06:17:12] *** Quits: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner) (A TLS packet with unexpected length was received.)
+[06:17:12] *** Quits: Kinsley (JKinsley@Bow.To.Your.Princess) (Quit: The Princess Is Out)
+[06:17:23] <Moonlightning> Ahh, and there goes Kinsley
+[06:20:16] *** Joins: Asoka (Asoka@Pony-5i1hug.net-htp.de)
+[06:22:38] *** Quits: Asoka_White (Asoka@Pony-mn456q.net-htp.de) (Ping timeout: 121 seconds)
+[06:23:10] *** Joins: Asoka_White (Asoka@Pony-hn86g8.net-htp.de)
+[06:23:24] <JustAberrant> installing gentoo from a different distro is character building :D
+[06:24:09] <ShivalWolf> ot suicidal
+[06:24:24] <ShivalWolf> http://justhaifei1.blogspot.com.au/2015/10/watch-your-downloads-risk-of-auto.html?m=1
+[06:25:38] *** Quits: Asoka (Asoka@Pony-5i1hug.net-htp.de) (Ping timeout: 121 seconds)
+[06:28:35] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Quit: ZNC 1.7.x-git-219-0d8083e - http://znc.in)
+[06:37:42] *** Quits: Darki (DK@Pony-92fd75.vs.webtropia.com) (Ping timeout: 121 seconds)
+[06:39:32] *** Joins: Darki (DK@Pony-92fd75.vs.webtropia.com)
+[06:39:38] *** Quits: DemonWolf (DemonWolf@Pony-3od.7q3.178.24.IP) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[06:42:28] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[06:49:05] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[06:52:01] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[06:53:20] <Fallfeathers> My Raspberry Pi 2 B arrived yesterday. I've already installed OpenELEC on an mSD and booted from it. Went out to bought a wireless adapter to use with it but apparently OpenELEC only supports a small range of adapters and since the OS is read-only, you can't install new drivers. I'm dumb.
+[06:54:21] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (The TLS connection was non-properly terminated.)
+[06:58:42] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[07:01:51] <JustAberrant> os is read only?
+[07:02:14] <Fallfeathers> yeah
+[07:03:05] <JustAberrant> if its squashfs or something you just need to change the image
+[07:03:33] * Moonlightning throws gourds at JustAberrant.
+[07:03:52] * Moonlightning wearing a shirt reading LIFE
+[07:03:54] <Fallfeathers> Iiii have no idea actually
+[07:04:06] <JustAberrant> Moonlightning: meep
+[07:04:09] <Moonlightning> Well, what makes you think the OS is readonly?
+[07:05:23] <JustAberrant> but yeah, you pretty much need to order a wifi adapter specifically supported
+[07:05:52] <JustAberrant> a tonne of them arn't.. including most you find at a box store
+[07:06:49] <Fallfeathers> Well, 'read only' not by the technical definition
+[07:07:09] <Fallfeathers> as in, it won't support getting new linuxy things.
+[07:07:12] <Fallfeathers> like apt-get.
+[07:08:56] <JustAberrant> just gotta do things the ol' fashioned way
+[07:09:17] <Fallfeathers> http://pngimg.com/upload/hammer_PNG3886.png
+[07:09:20] <Fallfeathers> :D
+[07:09:25] <JustAberrant> or buy a supported adapter ;p
+[07:09:29] <Fallfeathers> I'm not very good at linux.
+[07:09:39] <Fallfeathers> I guess the adapter thing is my first option
+[07:10:51] <JustAberrant> doing this kinda stuff is a good way to learn 
+[07:11:14] *** Joins: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner)
+[07:11:14] *** AutoLapsus sets mode: +v PinkiePieBot
+[07:11:22] <JustAberrant> .. but can be frustrating when you just want it to worl
+[07:11:22] *** Joins: Kinsley (JKinsley@Bow.To.Your.Princess)
+[07:11:22] *** AutoLapsus sets mode: +o Kinsley
+[07:11:30] <JustAberrant> *work
+[07:12:09] * JustAberrant has Kinsley photographed with wet hair
+[07:12:34] <Kinsley> Fuck off, ya pervert. 
+[07:12:55] * Kinsley crushes JustAberrant's camera and detonates an EMP in range of his devices.
+[07:15:45] <JustAberrant> :(
+[07:15:45] <PinkiePieBot> Tough cookies, JustAberrant!
+[07:15:54] <JustAberrant> :)
+[07:16:58] * JustAberrant takes his bag of wet hair and skulks off
+[07:25:33] <Fallfeathers> JustAberrant: this free and open source solution is proving expensive :V
+[07:29:33] <HoneyDrops> If I pick up a Pi2, I am probably going to roll an OpenEmbedded build for it.
+[07:35:01] *** Joins: Asoka (Asoka@Pony-2t3akd.net-htp.de)
+[07:37:15] *** Quits: Asoka_White (Asoka@Pony-hn86g8.net-htp.de) (Ping timeout: 121 seconds)
+[07:37:48] <Moonlightning> johnsey: any idea when you'll have 17 and 18?
+[07:37:51] *** Joins: Asoka_White (Asoka@Pony-otesam.net-htp.de)
+[07:39:15] *** Quits: Asoka (Asoka@Pony-2t3akd.net-htp.de) (Ping timeout: 121 seconds)
+[07:42:07] *** Joins: Asoka (Asoka@Pony-b2tssv.net-htp.de)
+[07:42:55] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[07:44:31] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[07:44:32] *** Quits: Asoka_White (Asoka@Pony-otesam.net-htp.de) (Ping timeout: 121 seconds)
+[07:44:39] *** locodash11[lagout] is now known as locodashie11
+[07:47:18] *** Joins: Asoka_White (Asoka@Pony-4ns2p2.net-htp.de)
+[07:48:48] *** Quits: Asoka (Asoka@Pony-b2tssv.net-htp.de) (Ping timeout: 121 seconds)
+[07:49:23] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[07:54:30] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[07:55:35] *** Quits: Crimson_Tail (Bluepon@Pony-se25br.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[08:00:36] *** Joins: User_725 (stkwnnlycqd@Pony-goe73n.bigpond.net.au)
+[08:00:53] <User_725> hey nerds
+[08:01:06] <aji> who me?
+[08:01:15] <User_725> yes
+[08:01:19] <aji> hello
+[08:01:30] <User_725> ha
+[08:01:50] <User_725> oh yes ah ah yes oh
+[08:02:41] <User_725> hey
+[08:03:16] <User_725> 321 fuck go 123
+[08:06:17] *** Quits: User_725 (stkwnnlycqd@Pony-goe73n.bigpond.net.au) (Quit: lightIRC.com Flash IRC Client)
+[08:15:33] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[08:52:08] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Quit: ZNC 1.7.x-git-219-0d8083e - http://znc.in)
+[08:54:06] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[08:54:46] *** Joins: Asoka (Asoka@Pony-de25eh.net-htp.de)
+[08:57:26] *** Quits: Asoka_White (Asoka@Pony-4ns2p2.net-htp.de) (Ping timeout: 121 seconds)
+[09:06:28] *** Joins: Asoka_White (Asoka@Pony-2ui9ti.net-htp.de)
+[09:09:30] *** Quits: Asoka (Asoka@Pony-de25eh.net-htp.de) (Ping timeout: 121 seconds)
+[09:10:09] *** Joins: Asoka (Asoka@Pony-vr1v4j.net-htp.de)
+[09:11:00] *** Quits: Asoka_White (Asoka@Pony-2ui9ti.net-htp.de) (Ping timeout: 121 seconds)
+[09:22:58] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[09:29:29] *** Joins: Asoka_White (Asoka@Pony-ss4eoj.net-htp.de)
+[09:31:32] *** Quits: Asoka (Asoka@Pony-vr1v4j.net-htp.de) (Ping timeout: 121 seconds)
+[09:33:02] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[09:38:24] *** zz_CyberJacob is now known as CyberJacob
+[09:42:41] *** CyberJacob is now known as zz_CyberJacob
+[09:51:40] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[09:55:30] *** Joins: Asoka (Asoka@Pony-nl8e4s.net-htp.de)
+[09:55:37] *** Quits: Asoka_White (Asoka@Pony-ss4eoj.net-htp.de) (Ping timeout: 121 seconds)
+[09:57:07] *** Larscis is now known as Mike_Coltfield
+[10:07:49] *** Joins: Asoka_White (Asoka@Pony-37ck71.net-htp.de)
+[10:09:02] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[10:09:57] *** Quits: Asoka (Asoka@Pony-nl8e4s.net-htp.de) (Ping timeout: 121 seconds)
+[10:16:06] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[10:38:23] *** Eventide|Sleepies is now known as Eventide
+[10:54:10] *** Joins: Aww (aww@Pony-ic0abh.online)
+[12:12:26] *** Quits: Finwe (vhalkola@Pony-oi2dre.org.aalto.fi) (Quit: Maintenance break over.)
+[12:12:51] *** Finwe^ is now known as Finwe
+[12:30:24] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[12:55:04] *** Seoson|BNC is now known as Seoson
+[13:01:54] <Compu> i got the simpsons sing the blues on cassette tape yesterday
+[13:02:58] <RainbowHacks> o.o
+[13:03:13] <RainbowHacks> does Homer sing Champagne and Reefer?
+[13:03:58] <Compu> RainbowHacks: i dunno
+[13:04:26] <Compu> RainbowHacks: its the album with mr burns singing "look at all those idiots"
+[13:06:15] <RainbowHacks> ah
+[13:21:49] <Seoson> I just received a 100,-€ gift card via physical mail for reporting a security flaw on the website of an online shop. I seriously didn't expect that.
+[13:35:52] <RainbowHacks> o.o
+[13:35:54] <RainbowHacks> well that
+[13:35:57] <RainbowHacks> 's a nice surprise
+[13:47:00] *** Joins: RazorSharpFang (chatzilla@sharpest.of.all.fangs)
+[13:47:16] <RazorSharpFang> Just had the final class of the year.
+[13:47:25] <RazorSharpFang> Exams in two weeks. ;-;
+[13:54:46] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[14:22:31] <Finwe> http://tutorial.ponylang.org/
+[14:22:31] <PinkiePieBot> [ Pony Tutorial ]
+[14:22:33] <Finwe> o3o
+[14:24:24] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:26:39] *** Joins: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[14:38:46] <Seoson> disappointing: The sandbox file is named main.pony instead of mane.pony. A missed opportunity :D
+[14:40:23] <roflincopter> i actually expected an esotheric language... boy was I surprised.
+[14:42:52] *** Quits: Fallfeathers (Fallfeather@Pony-0pt6g2.bigpond.net.au) (Connection closed)
+[15:11:26] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed) (Quit: .)
+[15:26:19] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[15:51:30] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:01:02] <Seoson> Wow. Facebook starts 2G Tuesday for employees to let them try how it feels to accees FB from poor connections. Even though I don't like FB that's actually a nice idea
+[16:03:22] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[16:05:23] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[16:08:47] <Seoson> Also an information leak with HSTS enabled websites: http://arstechnica.com/security/2015/10/unpatched-browser-weaknesses-can-be-exploited-to-track-millions-of-web-users/
+[16:08:48] <PinkiePieBot> [ Unpatched browser weaknesses can be exploited to track millions of Web users | Ars Technica ]
+[16:09:10] <Seoson> Headline is a clickbait really :P
+[16:53:50] *** Divide|TechSupport is now known as Divide
+[16:55:09] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (Ping timeout: 121 seconds)
+[16:55:24] <Colgate> eh, that's a "we might get you once" type of deal, since then they would all be hsts enabled the second time you visit
+[16:56:10] <Seoson> Yep. I pretty sure you could do the same with chached images.
+[16:57:27] <Colgate> probably, not much you can do about it short of either 1. not using js, or 2. making the browser always claim a picture is loaded when it isn't
+[16:59:48] <Seoson> I wrote a PoC a few years ago that looked at the computed stylesheets of links (pseudo class :visited) to determine if a user had visited an URL. That was by far more dangerous.
+[17:00:30] <Seoson> Well dangerous as far as tracking is dangerous
+[17:03:10] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[17:06:00] <Seoson> Timing attacks remain an interesting vector non the less. With fiber getting more common I expect a few flaws poping up in auth modules failing to use slow equal.
+[17:10:40] <Colgate> a slow equal?
+[17:12:05] <Seoson> As in compare each character of an authentication key even if one of the frist characters is already different to prevent timing attacks
+[17:13:02] <Seoson> It has been shown that it works in theory even over regular cables, but that would require an awful lot of attempts
+[17:14:23] <Seoson> Also I don't think it has been reproduced outside of lab like scenarios yet, but I would need to look that up.
+[17:14:48] <Colgate> you mean compare each letter in a hash, even if the first one was not equal?
+[17:15:45] <Seoson> Yes. Not necessarily a hash though. Any non hashed string (API keys) would do it as well.
+[17:16:03] <Seoson> Since hashs have a limited use when salted correctly
+[17:16:26] <Colgate> true, since in this case, you wouldn't know the salt
+[17:16:37] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[17:21:16] <Seoson> (Not to mention the problem of generating hashes with a predictable value. Those kind of timing attacks are useless for any reasonable secure hash^^)
+[17:22:34] <Seoson> hashs* reasonably*
+[17:23:08] <Colgate> it wouldn't be for that, it would be used for determining which hash they used on the backend based on length
+[17:23:33] <Colgate> and if you had a complete hash, you could attempt to crack it I guess
+[17:24:27] <Seoson> Yeah but you cannot get the whole hash unless the user provides the hash himself.
+[17:25:43] <Colgate> if you could compare it letter by letter, it would take (number of valid hash chars)^(length of hash) attempts to recover it
+[17:25:53] <Colgate> /2
+[17:26:49] <Seoson> An attack on an API could look like  if(aaaa == cccc) took 1s  if(caaa == cccc) took 2s, if(ccaa == cccc) took 3s ...
+[17:27:00] <Colgate> I'm thinking of services that send hashes, not ones that send passwords, btw
+[17:27:28] <Colgate> like lastpass
+[17:27:42] <Seoson> Yeah. That's what I've meant by "unless the user provides the hash himself."
+[17:28:41] <Seoson> In which case the hash works more a less like a classic password, except for knowing the real value
+[17:29:24] <Seoson> Also in such a case you wouldn't need to worry about the salt unless it's a shared secret
+[17:30:26] <Seoson> Since the user needs the salt to calculate the hash in the frist place and it must be therefor obtained through some sort of API or static schema
+[17:33:19] <Colgate> yeah
+[17:33:33] <RazorSharpFang> Is there another security hole in web browser? Is IE affected?
+[17:34:05] <Seoson> I don't think IE even supports HSTS
+[17:34:08] <Seoson> :D
+[17:35:14] *** Joins: Crimson_Tail (Bluepon@Pony-hqf48k.cg80.k4gu.0151.2601.IP)
+[17:39:07] <Colgate> it isn't a security issue
+[17:39:28] <Colgate> it is a potential privacy issue, that there really isn't a fix for
+[17:39:41] <RazorSharpFang> eh?
+[17:40:38] <Colgate> it is a timing attack against how long it takes to load pages from domains via js
+[17:40:50] <Colgate> with https, it will take longer
+[17:41:02] <RazorSharpFang> Is that an issue?
+[17:41:09] <Seoson> Not really
+[17:41:19] <Colgate> it could reveal what sites you have visited
+[17:41:30] <RazorSharpFang> Eh? How?
+[17:41:41] <Seoson> Website might guess that you visited bankofamaerica.com due to loading times.
+[17:41:55] <Colgate> by timing how long it takes to load the image file
+[17:42:06] <RazorSharpFang> Why would loading times vary from first visit to second visit?
+[17:42:20] <Seoson> Due to the way HSTS works
+[17:42:25] <Colgate> because using tls adds an extra round of handhsakes
+[17:42:31] <Colgate> and that takes longer
+[17:43:27] <Seoson> HSTS will force your browser to make a secure connection. If you didn't visit that site before your browser will use a plain connection
+[17:44:23] <RazorSharpFang> How can they use loading times to guess whether you've been there before? My loading times vary seemingly randomly due to the (terrible) quality of my connection.
+[17:44:23] <Seoson> Don't worry about it. I'm quite certain the same is possible with cached images for years
+[17:44:52] <Seoson> They can measure it the moment you visit the site.
+[17:44:57] <Seoson> With some other domain
+[17:45:06] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[17:46:02] <RazorSharpFang> How is this done?
+[17:46:34] <Seoson> It's not 100% failsafe, but it's unlikely that your connection varies sooo much in the one second that test takes.
+[17:46:48] <RazorSharpFang> Seoson: I can get pings over one second, so....
+[17:47:16] <Seoson> As long as the connection remain more or less the same for one second it doesn't matter
+[17:47:34] <Seoson> The deltas in time are the important factor, not the actual loading time
+[17:47:54] <RazorSharpFang> I suppose that'll depend on what other people in my region are doing.
+[17:48:18] <RazorSharpFang> Yes, other people in other houses using the internet can adversely affect my internet.
+[17:48:26] * RazorSharpFang yays
+[17:48:40] <Seoson> technically that works using the images onerror attribute
+[17:52:36] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (Quit: Leaving)
+[17:52:51] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[17:59:14] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[18:52:08] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[18:59:03] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[19:14:55] *** Quits: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP) (Connection closed)
+[19:15:06] *** Joins: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP)
+[19:32:51] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:04:10] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Ping timeout: 121 seconds)
+[20:11:16] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Connection closed)
+[20:25:05] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[20:46:46] *** Joins: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se)
+[20:52:26] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:54:25] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[21:26:28] *** Creeps|AFK is now known as RedHelper
+[22:16:00] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[22:38:11] *** Quits: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se) (Quit: Leaving.)
+[23:02:33] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[23:19:07] *** Dusk is now known as Dawn
+[23:49:59] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Ping timeout: 121 seconds)

@@ -1,0 +1,1118 @@
+[00:05:41] <JustAberrant> namespaces in c++ are approximately 6 times more annoying than in other languages
+[00:05:44] <JustAberrant> because of things like enums
+[00:06:28] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[00:08:19] <RazorSharpFang> You know, I still don't understand how processes draw to the screen without a window. Like, the desktop ponies for instance.
+[00:08:52] <JustAberrant> RainbowHacks: how do you think windows are drawn?
+[00:08:56] <JustAberrant> * RazorSharpFang 
+[00:09:05] <RazorSharpFang> System calls.
+[00:09:16] <RazorSharpFang> Lots of system calls.
+[00:09:30] <JustAberrant> not quite, no ;p
+[00:10:43] <HoneyDrops> I don't know how it's done in MS Windows, but X it's not hard.
+[00:11:53] <JustAberrant> RazorSharpFang: it's a whole stack..  monitor < vid card < drivers < xorg < toolkits (sometimes) < window manager < toolkits < applications
+[00:12:53] <Stik> oh i had no intention of doing antyhign c++ Shutter , don't fear :P
+[00:13:36] <RazorSharpFang> JustAberrant: Well, I don't know of any APIs for doing that.
+[00:14:01] <HoneyDrops> Xlib~
+[00:14:20] <RazorSharpFang> What if it's windows?
+[00:14:46] <JustAberrant> you can probably make most toolkits (Qt, gtk) do it, but you might need to go down into the lower level libraries (i.e. xlib)
+[00:14:57] <JustAberrant> RazorSharpFang: then it's a completely different implementation
+[00:16:04] <JustAberrant> either way, you're basically skipping/ignoring the window manager and talking directly to xorg
+[00:16:29] <RazorSharpFang> So, you could just say "draw this X image here"
+[00:16:31] <JustAberrant> you could also probably use xcompositing/etc .. I don't know anything about that though :>
+[00:17:37] *** Quits: Phase (Phase4@Pony-d9rtg7.internode.on.net) (Ping timeout: 121 seconds)
+[00:18:22] <JustAberrant> you have to keep in mind that the window manager can then come along and overwrite it
+[00:18:29] *** quin is now known as Quindo
+[00:18:31] <JustAberrant> or put a window overtop of the root window you draw on
+[00:38:35] <RazorSharpFang> In windows there's an ALWAYS_ON_TOP flag.
+[00:39:23] <RazorSharpFang> Multiple things can have that flag true, so just because you're 'on top' does not mean you may be the top_most thing.
+[00:44:26] <JustAberrant> yeah, xorg has a similar concept with a similar problem
+[00:45:00] *** CyberJacob is now known as zz_CyberJacob
+[00:48:02] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[00:50:37] <RazorSharpFang> I do think that if you're ALWAYS_ON_TOP, AND you're in focus, you're then GUARANTEED to be on top.
+[01:01:13] <RazorSharpFang> (afk)
+[01:10:01] <HoneyDrops> focus and layering are independent in X
+[01:10:20] <HoneyDrops> layering is mostly handled by the WM
+[01:10:48] <HoneyDrops> You can flag vis xprops, but the WM is what enforces it.
+[01:11:00] *** Joins: Asoka_White (Asoka@Pony-8gonk9.net-htp.de)
+[01:13:08] *** Quits: Asoka (Asoka@Pony-e7ncm8.net-htp.de) (Ping timeout: 121 seconds)
+[01:13:29] <HoneyDrops> You can make an unmanged window, and manually raise it.  See: slock, http://git.suckless.org/slock/tree/slock.c and for a simple WM to understand, I suggest dwm.
+[01:13:30] <PinkiePieBot> [ slock - simple X display locker utility ]
+[01:24:11] *** Joins: nscoots (FreyGrimrod@Pony-cunnak.sub-70-192-33.myvzw.com)
+[01:37:32] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:39:11] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:39:26] <Starthunder> RazorSharpFang: they /are/ windows.
+[01:40:09] <Starthunder> Similarly, when you drag a file, the translucent icon you drag is a window (at least in OS X)
+[01:40:21] <Starthunder> They just have transparent backgrounds and no title bar
+[01:40:35] <Starthunder> No borders and stuff
+[01:42:01] *** Joins: DataByteBrony (DataByte@Pony-2gvagd.g424.9euc.0247.2601.IP)
+[02:02:07] *** Gigatown is now known as Gigabit
+[02:05:08] *** Joins: Asoka (Asoka@Pony-dv0nh1.net-htp.de)
+[02:08:19] *** Quits: Asoka_White (Asoka@Pony-8gonk9.net-htp.de) (Ping timeout: 121 seconds)
+[02:30:43] *** init3 is now known as Init3-away
+[02:33:26] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[02:39:58] <Starthunder> > Because of the problematic command line syntax of `tar`, there were the so called `tar wars` in the early 1990s. As a result, the program `pax` (Latin for "peace" in the tar wars) was created and standardized. `pax` however did not gain popularity as its syntax is less risky but also less intuitive than the tar syntax. Another problem may be that `gpax` is more or less unmaintained.
+[02:40:01] <Starthunder> No way. xD
+[02:42:22] *** Init3-away is now known as init3
+[02:45:02] <Starthunder> …I don't get what all the fuss about tar is
+[02:45:15] <Starthunder> I use both GNU tar and BSD tar, and I don't have any problems
+[02:47:00] <Starthunder> I just do things how I normally do. Leading dash for short options (and chain them when possible); space between short option and its argument; leading double dash for long options; equals sign between long option and its argument.
+[02:48:24] <Starthunder> tar -cJf $dest.tar $src
+[02:48:58] <Starthunder> tar -xf $src.tar $dest
+[02:49:06] <Starthunder> tar -xf $src.tar -C $dest .  # or this
+[02:49:35] <Starthunder> s/\.tar/.txz/  # in the first one
+[02:49:54] <Starthunder> I don't use -v, and you don't need to specify -[zjJ] when extracting; it detects them
+[02:51:13] <Starthunder> You can also use -a|--auto-compress with -c in GNU tar
+[02:51:18] <Starthunder> instead of -[zjJ]
+[02:51:37] <Starthunder> tar -tf $src.tar
+[02:52:27] <Starthunder> With things that use -f and one positional argument instead of two, you generally put the -f one first, regardless of whether it's source or destination
+[02:52:33] <Starthunder> Like, uh…
+[02:54:02] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[02:59:16] <Starthunder> …hmm. I can't find anything else that uses -f like that in my shell hitories
+[02:59:19] <Starthunder> histories *
+[03:06:51] *** Quits: GumballCrash (GumballCras@0.to.pony.10secondsflat) (Connection closed)
+[03:09:41] <tiwake> Colgate: I'm not sure what I would install gentoo on... should I take my desktop computer? meh, I dont really want to do that without an AMD card, so I could compile the drivers
+[03:09:52] <tiwake> I suppose could take my laptop
+[03:10:11] <tiwake> and compile gentoo on that
+[03:10:17] <tiwake> but the processor is pretty slow
+[03:44:23] *** Quits: Quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[03:44:28] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[03:47:28] <RazorSharpFang> tiwake: Install it on a virtual machine.
+[03:49:51] <tiwake> ..why?
+[03:51:21] <HoneyDrops> Builds character
+[03:51:54] <RazorSharpFang> ^
+[03:52:13] *** Quits: nscoots (FreyGrimrod@Pony-cunnak.sub-70-192-33.myvzw.com) (Connection closed)
+[03:53:48] *** Joins: nscoots (FreyGrimrod@Pony-cunnak.sub-70-192-33.myvzw.com)
+[03:54:24] *** Quits: enginemaniac (flail@flail.flail.flail) (Ping timeout: 121 seconds)
+[03:54:32] *** Quits: aji (alex@ajitek.net) (Ping timeout: 121 seconds)
+[03:54:35] *** Quits: Cameron_D (cameron@cam.mylittle.horse) (Ping timeout: 121 seconds)
+[03:55:03] <HoneyDrops> Gentoo isn't bad on older hardware, I ran gentoo on a 600MHz P3, it worked well (eventually the power supply died after about 9 years of 24/7 use, plus whatever the previous owner did)
+[03:55:39] *** Joins: enginemaniac (flail@flail.flail.flail)
+[03:56:18] *** Joins: Cameron_D (cameron@Pony-v0m.4h7.241.192.IP)
+[04:03:44] <RazorSharpFang> Okay, I'm going to give MacOSX on VirtualBox another try.
+[04:10:50] <init3> Ok this is super old and I might be the last one seeing it
+[04:10:52] <init3> https://www.youtube.com/watch?v=5Qj8p-PEwbI
+[04:10:52] <PinkiePieBot> [ Ubuntu Causes Girl To Drop Out of College - 304311 views - 2m 48s long - 1008 likes - 22.29% ]
+[04:10:57] <init3> Too much kek
+[04:11:06] <RazorSharpFang> Wat
+[04:11:10] <init3> maximum overkek
+[04:13:17] <RazorSharpFang> Yeah, linux assumes you know what you're doing.
+[04:13:22] <RazorSharpFang> She didn't.
+[04:13:36] <RazorSharpFang> sudo rm / -rf
+[04:13:42] <init3> ^
+[04:14:19] <init3> It's just so silly. 
+[04:14:46] <init3> Can't run "setup.exe" to make the internet work. 
+[04:14:49] <init3> nuuuuu
+[04:17:27] <Starthunder> Gaise
+[04:17:33] <Starthunder> I seriously need a GUI for my Gentoo laptop
+[04:17:46] <Starthunder> My other laptop can't really handle running Battleblock
+[04:17:51] <Gigabit> terminal or nothing :P
+[04:17:52] * RazorSharpFang is unexperienced in this area.
+[04:18:13] <JustAberrant> Starthunder: so why not install one?
+[04:18:31] * init3 approves of Gigabit's Linux curmudgeon sass.
+[04:18:45] <Gigabit> You bet your ass you do :P
+[04:20:24] <Starthunder> JustAberrant: which one though :P
+[04:20:55] <JustAberrant> hehe, up to you I guess
+[04:21:09] *** Joins: aji (alex@ajitek.net)
+[04:21:09] *** AutoLapsus sets mode: +o aji
+[04:21:10] <JustAberrant> personally I'm fond of openbox with xfce's panel
+[04:21:20] <init3> Well, firstly do you want a DE or just a WM?
+[04:21:39] * Starthunder doesn't know X.X
+[04:21:51] <Starthunder> all I have in experience here is Unity[?] on Ubuntu :p
+[04:21:57] <Starthunder> just because it came with the OS
+[04:22:01] <Gigabit> Pack him up with what I have init3 
+[04:22:12] <init3> You made the jump from Ubuntu to Gentoo? That's fucking hardcore.
+[04:22:23] <Starthunder> Well, I wasn't exactly a *nix novice >.>
+[04:22:29] <init3> Oh
+[04:22:31] <Starthunder> Gentoo was the last major one that didn't adopt systemd
+[04:22:36] * HoneyDrops started with Gentoo~
+[04:22:38] * JustAberrant nods :>
+[04:22:47] * Starthunder started with CrunchBang
+[04:22:52] <JustAberrant> if you are trying to avoid systemd, avoid gnome ;p
+[04:22:53] <Starthunder> CrunchBang -> Debian -> Ubuntu -> Gentoo
+[04:23:00] <init3> Cause that'd be like taking a kid off a tricycle and sticking him in a Ferrari. 
+[04:23:00] <HoneyDrops> anyway, go with i3 or dwm
+[04:23:01] <Starthunder> Yeah, see, that's the kind of thing I'm looking for.
+[04:23:04] <Starthunder> Thanks JustAberrant
+[04:23:19] * JustAberrant slackware > gentoo  (with a bunch of stuff inbetween for short periods.. like debian and arch)
+[04:23:36] <init3> Yeah, if you hate systemd for the way it is I'd pretty much avoid KDE or Gnome
+[04:23:47] <JustAberrant> but yeah, started with slack, used that for maybe 3 years, then have used gentoo since (sometime around 2002 2003, shortly after it came out I think
+[04:23:50] <init3> Even though I rather like KDE but that's just me. 
+[04:24:09] <JustAberrant> well, with gnome, it's actually a challange to install it without pulling in systemd
+[04:24:10] <Starthunder> …tiling window manager? >.>
+[04:24:22] <init3> I see
+[04:24:39] <init3> I mean
+[04:25:09] <init3> I hate getting asked questions like this because to me it is like, "What flavor of ice cream should I get?"
+[04:25:13] <HoneyDrops> I started with Gentoo, and have always had at least one Gentoo system (generally primary).  But I also run Debian (still pre-systemd), and Slack.  I've used/supported most common ones.
+[04:25:17] <init3>  Idunno, whatever you like.
+[04:26:11] <Starthunder> I need to switch my servers over x.x
+[04:26:16] <init3> Mandrake was babby init's first linux. 
+[04:26:21] <Starthunder> should probably do that soon, before I stop being able to update
+[04:26:27] * JustAberrant hasn't used slackware in a long damn time (since it came on lettered floppies)... but yeah, gentoo became my go to.. I've got other machines with other distros, and have tried both debian and arch on the desktop (and didn't like either).. but gentoo is definitely my staple
+[04:26:37] * JustAberrant now kinda curious what slackware is even like now
+[04:27:22] <Starthunder> the i3 screenshot on Wikipedia makes it look like just a CLI thing xD
+[04:28:10] <init3> At risk of starting this tired argument again, I understand what people don't like about systemd, but I feel that at some point the lengths required to avoid it are way more annoying than the lengths required to get used to it.  
+[04:28:37] <init3> I might try XFCE Starthunder as a starting point. Can always uninstall it.
+[04:29:11] <init3> THat's a full desktop environment so it'll pretty much be usable as a full workstation once you install it. 
+[04:29:31] <JustAberrant> init3: that in itself is why people hate systemd, but yeah, I accept that at _some point_ it's going to happen, I'm gonna say fuck it and use it.. but I'll be pissed off as hell about it
+[04:29:41] <Starthunder> > so it'll pretty much be usable as a full workstation once you install it.
+[04:29:44] * Starthunder gets angry at init3.
+[04:29:54] <Starthunder> What, you mean it isn't a full usable workstation now?!
+[04:29:57] <init3> Otherwise you are going to need to install each individual thing one by one as you need it. Which I get there are reasons for that
+[04:30:09] <JustAberrant> (an init system shouldn't come with an overwhelming sense of inevitability that it will be the only choice you have if you want a functional system)
+[04:30:20] <init3> I mean, using lynx does not cound as web browsing :p
+[04:30:20] <Starthunder> I should probably mention I intend to run Steam on top of it, and games on top of that
+[04:30:47] <init3> I mean, twm is a perfectly usable GUI
+[04:30:54] <init3> Not saying it isn't
+[04:31:09] * Starthunder will try xfce.
+[04:31:13] <HoneyDrops> If I have to, I will just roll my own distro, but I am confident Gentoo will continue to offer a choice.
+[04:31:21] <init3> BUt you'll need to install each and every tool by hand you don't want to just use xterm for. 
+[04:31:27] <Gigabit> Starthunder,  I have xfce and like it. If that helps :P
+[04:31:59] <init3> I do agree JustAberrant but I think we need to accept the fact that software is abstracting more and more and more. 
+[04:32:21] <init3> Ideally the kernel is al lthat needs to be standard but in practice ir really isn't that way
+[04:32:22] <JustAberrant> I accept nothing *flips over desk*
+[04:32:29] * Starthunder stares at the emerge search results for /xfce/
+[04:32:35] <init3> But I do have a joke for y'all
+[04:32:43] <init3> systemd walks into a bar
+[04:32:48] <init3> shoots bar owner
+[04:32:52] <init3> renames bar to systemd
+[04:33:07] <Starthunder> systemd-bar *
+[04:33:29] <HoneyDrops> I never cared for DEs, always seems pointless to me.
+[04:33:34] <init3> systemd-bar@d.target
+[04:33:55] <Starthunder> HoneyDrops: I might not even be asking this if I didn't want Steam :P
+[04:34:15] <Starthunder> xfce has two of its own sections @.@
+[04:35:06] <HoneyDrops> I would say if you just want steam, go with a WM of your choice.  I think openbox is the currently recommended *box WM, if you want something non-tiling.
+[04:35:13] <init3> If you want minimal I'd recommend openbox
+[04:35:47] <init3> This is what I mean by "what kind of ice cream do I want"
+[04:36:06] *** Joins: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[04:36:07] <init3> Only you know what kind of ice cream is the best to you
+[04:36:10] <Starthunder> Tiling means…what, you're limited to windows sized and arranged in what you can do in like a terminal multiplexer?
+[04:36:31] <Starthunder> init3: yes, but I don't know what I want and I don't really wanna shop around, so I'm asking for suggestions :p
+[04:37:10] <init3> I'm just saying, maybe provide detials on what your goals are. Just the bare mininum to make steam work? Use twm lol. 
+[04:37:42] <init3> tiling means windows cannot be placed freely 
+[04:37:56] <Starthunder> Uh, okay. Something lightweight, I guess, 'cos it's not exactly a powerful machine
+[04:38:03] <Starthunder> Not tiling.
+[04:38:04] <init3> Got ya. 
+[04:38:06] <HoneyDrops> Starthunder: not exactly.  I mean you can set them to make everything full screen, or have them subdivide the screen however you like.  Just windows will not normally overlap other windows.
+[04:38:19] <Starthunder> I guess I liked Unity?
+[04:38:21] *** Quits: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[04:38:28] <init3> You did?
+[04:38:31] * Starthunder is just used to OS X for GUI stuff.
+[04:38:35] <Starthunder> I mean as far as the look and feel.
+[04:38:55] * RazorSharpFang is a windows person
+[04:38:58] <init3> Then I'd come back to XFCE but that is a DE. 
+[04:39:19] <Starthunder> okay, what's the difference between a window manager and a desktop environment? >.>
+[04:39:29] <init3> Size mainly. 
+[04:39:37] <HoneyDrops> A DE includes a WM
+[04:39:39] <init3> A DE contains a WM
+[04:39:47] <Starthunder> ninja'd
+[04:39:52] <init3> kek
+[04:39:57] <RazorSharpFang> lel
+[04:40:08] <init3> A DE will include things like a settings app
+[04:40:18] <init3> Maybe like a volume control app
+[04:40:22] <init3> stuff like that
+[04:40:31] <HoneyDrops> A DE consists of a collection of applications, a WM, generally a bar/menu system (which ofter has a system tray) and has a backend to integrate it all.
+[04:40:39] <Starthunder> Ooooh.
+[04:40:44] <Starthunder> hmm.
+[04:40:58] <HoneyDrops> A WM literally just manages (and possibly decorates) windows.
+[04:41:01] * Starthunder can't really imagine trying to use a GUI without a menu bar.
+[04:41:14] <Starthunder> I guess I want a full DE then?
+[04:41:22] <HoneyDrops> Most come with some sort of a menu system, often a root-menu (right-click the root window)
+[04:41:33] <Starthunder> root window? O.o
+[04:41:38] <init3> Yeah, just not necessarly the menu bar
+[04:41:41] <init3> Liek the desktop
+[04:41:42] <HoneyDrops> ( you might call it the desktop )
+[04:41:54] <init3> now I AM THE NINJA
+[04:42:06] * init3 surekens HoneyDrops
+[04:42:22] <init3> o3o
+[04:42:23] <HoneyDrops> the root window is the X client that is the lowest level, and covers the whole X display.
+[04:42:57] <init3> There are a few full DEs that are light, but imo XFCE is by far the nicest. 
+[04:43:05] <Starthunder> Ohh.
+[04:43:44] <init3> Example: http://lxlinux.com/lxdeobmenu.png
+[04:43:49] <HoneyDrops> Generally a DE comes with a file manager, a text editor, a web browser, some system-settings programs, often a preferred media player, email client, etc
+[04:44:15] <HoneyDrops> Minimal ones will just be a file manager + settings apps
+[04:44:18] <RazorSharpFang> Ooh, VBox 5.0.4 has been released.
+[04:44:27] * RazorSharpFang updates...
+[04:44:31] <init3> If you like OSX I really think XFCE might be the closest lightweight DE to it. Behold: http://cdn3.howtogeek.com/wp-content/uploads/2014/07/xfce-desktop-environment-installed-on-ubuntu-14.04.png
+[04:47:41] <HoneyDrops> dwm: https://i.imgur.com/7r33cNg.png  (normally keep the bar hidden, only shows when Mod4 is held down or when there is an urgent client)
+[04:48:19] <Midnight_Tinker> dwm: http://www7.pcmag.com/media/images/392623-os-x-el-capitan.jpg
+[04:48:24] <Midnight_Tinker> (not mine, I'm just not home)
+[04:49:11] <init3> That one more OSX like?
+[04:49:26] <Midnight_Tinker> just a little
+[04:49:36] <init3> Tbh now that I think about it XFCE isn't all that much like how OSX does the menubar though. 
+[04:49:39] <Midnight_Tinker> and lightweight compared to some small battleships
+[04:49:57] <init3> I mean, it is all relative 
+[04:50:59] <init3> Gnome > KDE > Gnome shell > XFCE > LXDE and so on. SO XFCE is lightweight to me, but not to a LXDE user. 
+[04:51:21] <init3> Which I suppose is another one to look at Starthunder, though I'm not a huge fan. 
+[04:51:59] * init3 wants to be clear he was simply estimating memory footprint, not trying to rank DEs.
+[04:52:05] <Midnight_Tinker> I enjoy LXDE but I only ever install it in a tiny environment
+[04:52:17] <Starthunder> HoneyDrops: what? You just linked Twilight wallp—oh.
+[04:52:26] <init3> Haha
+[04:52:40] <Rylee> horse
+[04:52:43] <HoneyDrops> If I'm on a blank tag, that's it, just the root window w/ that image.
+[04:52:44] <init3> Some WMs are like that
+[04:54:19] <HoneyDrops> If I open something, it's full screen.  Like just one terminal open basically looks like 256color-able tty.
+[04:54:23] <Starthunder> Midnight_Tinker: harde har har :P
+[04:54:47] <init3> http://www.bash.org/?244321
+[04:54:47] <PinkiePieBot> [ QDB: Quote #244321 ]
+[04:55:23] <Starthunder> init3: that looks roughly like OS X
+[04:56:12] <init3> But admittedly it probably doesn't operate like it as far as the top menu looks though. But you can make the dock look almost exactly like an OSX dock. 
+[04:56:30] <init3> I mean, like the top menu becoming the menu for the app in use
+[04:56:37] <RazorSharpFang> I found ElementaryOS to be similiar to MacOSX
+[04:56:54] <Starthunder> :P
+[04:58:07] *** Joins: RazorSharpFang_ (chatzilla@Pony-org797.iinet.net.au)
+[04:58:13] <RazorSharpFang_> Huh
+[05:00:33] <RazorSharpFang_> I wonder if the new version of VBox has better D3D emulation support.
+[05:00:55] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Ping timeout: 121 seconds)
+[05:01:01] *** RazorSharpFang_ is now known as RazorSharpFang
+[05:02:05] <RazorSharpFang> Certainly hope so, D3D support for versions < 9 is awful.
+[05:02:18] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[05:02:57] <RazorSharpFang> But, D3D < 9 itself IS awful.
+[05:04:45] <RazorSharpFang> Okay, we've got D3D8 and D3D9 working, but D3D7 has issues.
+[05:10:22] <RazorSharpFang> What would be the best way for me to change the Apache2 webserver root directory?
+[05:12:53] <Starthunder> So wait…where does Xorg come into all of this?
+[05:16:52] <HoneyDrops> Xorg is the X server
+[05:19:44] <HoneyDrops> Xorg is the display server, all clients (which the WM is one) interface with it to display.  The server also sends events to the clients (though the WM, kinda).
+[05:20:13] *** Joins: GumballCrash (GumballCras@0.to.pony.10secondsflat)
+[05:21:53] <HoneyDrops> You can even run X w/o a window manager, though you run into issues if you have multiple windows as you cannot easily resize, move, or re-stack X clients w/o one.
+[05:23:30] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[05:33:38] *** Gigabit is now known as Soarin
+[05:35:03] <HoneyDrops> X11's network transparency is sadly underused, mostly because most toolkits do things wrong.
+[05:36:07] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "switching machines, back in a bit")
+[05:36:10] <Starthunder> Okay.
+[05:36:13] <Starthunder> Unrelated…wtf?
+[05:36:25] <Starthunder> Okay, so I had net-fs/cifs-utils installed
+[05:36:29] <RazorSharpFang> That's weird... my symbollic link isn't showing up in Apache's directory listing.
+[05:36:34] <Starthunder> Then I depcleaned it 'cos I didn't want it anymore
+[05:36:52] <Starthunder> As far as I knew, it was removed then
+[05:36:54] <Googie> The default configuration of Apache likely doesn't allow symlinks outside of the web directory for security reasons
+[05:37:05] <Starthunder> But I did a depclean with no arguments just now, and a /ton/ of packages showed up slated for removal
+[05:37:10] <Googie> You need to change your Apache configs if you want to change the web root.
+[05:37:11] <Starthunder> including…net-fs/cifs-utils
+[05:37:21] <Phase> Googie, i think the default config disallows symlinks regardless
+[05:37:22] <Googie> (Though I'd recommend Nginx instead. Much nicer configs :V)
+[05:37:43] <RazorSharpFang> Googie: Apache is all I've ever used. : /
+[05:38:00] <RazorSharpFang> Yet, I don't know how to change the server root...
+[05:38:28] <RazorSharpFang> Could I just mount a directory into the current server root?
+[05:38:35] <HoneyDrops> Starthunder: those are all deemed unneeded by portage.
+[05:38:49] <Starthunder> HoneyDrops: but why didn't the earlier depclean get rid of them?
+[05:38:51] <RazorSharpFang> like /media/razor/HardDisk/ into /var/www/html/
+[05:38:59] <Starthunder> I mean, I've only /installed/ things since th—wait, no I haven't
+[05:39:05] <Starthunder> I just updated a bunch of stuff.
+[05:39:18] <Starthunder> …can I `--update --depclean` at the same time? >.>
+[05:40:16] *** init3 is now known as Init3-away
+[05:40:19] <HoneyDrops> I never use depclean in any context aside from `emerge --depclean`
+[05:40:30] <HoneyDrops> (or w/ -p)
+[05:41:06] <Googie> RazorSharpFang: RTFM
+[05:41:08] <HoneyDrops> If I am removing something manually, I always use emerge -C
+[05:41:17] <Googie> Or even just Google. It takes about 15 seconds.
+[05:41:18] <RazorSharpFang> Googie: I'm actually doing that now.
+[05:41:27] <RazorSharpFang> Trying to get better at reading walls of text.
+[05:41:48] <Starthunder> HoneyDrops: I've been using --depclean to uninstall no-longer-wanted packages…
+[05:41:53] <RazorSharpFang> I don't understand why it's 000-default.conf
+[05:41:59] <RazorSharpFang> 000 ? Why 000?
+[05:43:08] <Starthunder> As opposed to 001 or 100?
+[05:43:26] <Starthunder> No real reason, I guess, just proper zero-indexing.
+[05:43:49] <Starthunder> You /could/ add 100 to everything (provided that doesn't make anything go over 999); whatever's reason the config doesn't care
+[05:44:00] <Starthunder> …probably. It's conceivable that 000 is special, but I don't think it likely.
+[05:44:29] <RazorSharpFang> There's something wrong with this line here, but I'm not seeing it.
+[05:44:45] <RazorSharpFang> Mutex file:${APACHE_LOCK_DIR} default
+[05:44:49] <Starthunder> HoneyDrops: doesn't --depclean uninstall dependencies that aren't needed anymore after the given packages are uninstalled?
+[05:45:33] <HoneyDrops> I've never used depclean w/ a specific atom
+[05:46:22] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[05:47:24] <HoneyDrops> I'll emerge -C atom-to-be-removed then emerge --depclean
+[05:51:52] <Starthunder> But what if something depends on it >.<
+[05:51:58] * Starthunder was scared away from --unmerge
+[05:52:36] <Starthunder> I just want a unmerge-this-package-and-all-dependencies-without-breaking-any-dependencies flag :<
+[05:54:26] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[05:54:45] <RazorSharpFang> Great. Now Apache isn't accepting connections.
+[05:54:52] * RazorSharpFang melts somewhat
+[05:54:53] <Starthunder> …oh, never mind, I think.
+[05:55:03] <Starthunder> I was confusing two different packages
+[05:55:29] <HoneyDrops> Starthunder: too bad?  next emerge -uDNv world will install it again?  And don't do something stupid like emerge -C something you can't do w/o?
+[05:56:37] <HoneyDrops> If I am emerge -C'ing something, it is almost always something I explicitly installed.
+[05:57:17] <Starthunder> Unrelatedly…can I set a useflag for just the packages that need it?
+[05:57:23] <Starthunder> I'm not sure I want everything having USE=X
+[05:57:37] <Starthunder> Can I…I dunno, `x11-libs/* X`?
+[05:58:19] <HoneyDrops> Starthunder: /etc/portage/package.use
+[05:58:46] <RazorSharpFang> I don't know what to do...
+[05:59:14] <HoneyDrops> echo 'atom space delineated list of tags using -tag to unset' >> package.use
+[05:59:31] <Starthunder> HoneyDrops: that's a directory here.
+[05:59:45] <Starthunder> I've been creating files with package names for names
+[05:59:56] <HoneyDrops> Oh, you're using the directory method, I just use files
+[06:00:16] <Starthunder> caramel:~ blackl% </etc/portage/package.use/openvpn
+[06:00:17] <Starthunder> net-misc/openvpn down-root
+[06:01:26] <Starthunder> Do the filenames not actually matter? >.>
+[06:01:36] <HoneyDrops> I don't think so
+[06:01:48] <HoneyDrops> But I've always used just a file
+[06:02:21] <HoneyDrops> and I just put comments to tell me why I have any non-obvious entries.
+[06:07:25] <RazorSharpFang> Apache isn't working, but it's not saying that anything is wrong.
+[06:07:34] <RazorSharpFang> Not anything serious, anyway.
+[06:12:02] <RazorSharpFang> [ OK ] - Server fails to start anyway. 
+[06:12:12] *** Quits: Datguy (Datguy@lord.of.nreboot.c0m) (Ping timeout: 121 seconds)
+[06:15:18] *** Joins: Datguy (Datguy@lord.of.nreboot.c0m)
+[06:15:32] <Googie> Check the logs.
+[06:15:34] <RazorSharpFang> What? It starts now? I haven't changed anything! >: /
+[06:18:21] <RazorSharpFang> access to / denied (filesystem path '/media/razor/HardDisk') because search permissions are missing on a component of the path. - This is in spite of me having it declared in a config file.
+[06:18:32] <RazorSharpFang> Unless it was the wrong config file.
+[06:19:07] <Googie> Apache doesn't have permission to actually access that directory.
+[06:19:21] <RazorSharpFang> You mean the process itself?
+[06:19:37] <Googie> The user that apache is running under.
+[06:20:32] <RazorSharpFang> Urrgh
+[06:20:50] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[06:23:31] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:28:10] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[06:30:12] <Starthunder> RazorSharpFang: you know about how POSIX permissions work for directories?
+[06:30:35] <RazorSharpFang> Starthunder: I have a small understanding. 
+[06:32:54] <RazorSharpFang> 666 for r/w access for all users, right?
+[06:33:13] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:33:35] <Compu> RazorSharpFang: no 666 for the devil to be able to burn it in the pits of hell :D
+[06:33:52] <RazorSharpFang> It's not changing.
+[06:34:00] <Compu> k
+[06:34:11] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Connection closed)
+[06:34:17] <Googie> You need to set directories to executable.
+[06:35:00] <RazorSharpFang> drwx------
+[06:35:12] <RazorSharpFang> sudo chmod 777 HardDisk
+[06:35:14] <RazorSharpFang> drwx------
+[06:35:18] <RazorSharpFang> I don't understand
+[06:36:06] <Compu> im surprised christians dont despise linux for having a 666
+[06:37:39] <Starthunder> RazorSharpFang: if you're gonna be doing stuff at the level you are (configuring webservers?), you should probably have a good understanding of the permissions model.
+[06:37:41] *** Joins: Pony_18713 (IceChat77@Pony-6cf0jh.tmodns.net)
+[06:38:07] <RazorSharpFang> Starthunder: The permissions of the folder aren't changing. They're not.
+[06:38:21] *** Pony_18713 is now known as DJ_C0L7[EIT]
+[06:39:02] *** Quits: DJ_C0L7[EIT] (IceChat77@Pony-6cf0jh.tmodns.net) (Connection closed)
+[06:39:17] <Starthunder> RazorSharpFang: probably also best to get said understanding /before/ you do silly things like set a thing world-readwritable :p
+[06:39:32] <RazorSharpFang> This isn't internet facing.
+[06:39:38] <RazorSharpFang> Intranet personal server.
+[06:40:04] <Starthunder> Is it airgapped from anyone that you don't implicitly, 100% trust?
+[06:40:07] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:40:14] <Starthunder> i.e. yourself and probably no one else
+[06:40:24] <RazorSharpFang> Yes.
+[06:40:49] <Starthunder> Well, then, I suppose 777 is not much of a security hole.
+[06:40:52] <RazorSharpFang> But why if I do "sudo chmod 777 HardDisk" why does the folder still have drwx------ ?
+[06:40:58] <Starthunder> Still, it's a Bad Habit™.
+[06:41:09] <Starthunder> You don't get any errors? chmod returns 0?
+[06:41:26] <RazorSharpFang> It's not spitting anything out on the CLI.
+[06:42:41] <Starthunder> Stupid question…are you checking and chmodding the same directory?
+[06:42:50] <RazorSharpFang> I am.
+[06:43:04] <RazorSharpFang> Here, 4 lines:
+[06:43:12] <tiwake> I think I'll just put gentoo on my laptop
+[06:43:22] <Starthunder> tiwake: as opposed to what? :o
+[06:43:30] <tiwake> my desktop I guess
+[06:43:36] <RazorSharpFang> razor@Server:/media/razor$ sudo chmod 777 HardDisk
+[06:43:38] <RazorSharpFang> razor@Server:/media/razor$ ls -l
+[06:43:39] <RazorSharpFang> total 44
+[06:43:41] <RazorSharpFang> drwx------ 1 razor razor  4096 Sep 18 18:14 Booter
+[06:43:42] <RazorSharpFang> drwx------ 1 razor razor 40960 Sep 24 11:10 HardDisk
+[06:44:12] <RazorSharpFang> I'm not getting this.
+[06:44:25] <ShivalWolf> is razor a mountpoint?
+[06:44:42] <RazorSharpFang> I'm unfamiliar with mountpoints.
+[06:44:52] <ShivalWolf> is it like a usb device or external drive
+[06:45:10] <RazorSharpFang> Yeah
+[06:45:41] <ShivalWolf> type mount
+[06:45:46] <ShivalWolf> grab the line relevent
+[06:47:22] <Starthunder> Ohhh, yeah. What filesystem?
+[06:47:33] <Starthunder> Some filesystems do weird things with permissions
+[06:47:41] <Starthunder> like ignore changes, returning success but changing nothing
+[06:47:48] <RazorSharpFang> fuseblk
+[06:47:54] <Starthunder> often because the filesystem doesn't support POSIX permissions
+[06:48:04] <Starthunder> and so permissions for every item in the filesystem are specified in the mount options
+[06:48:14] <Starthunder> speaking of—show us those mount options
+[06:48:20] <Starthunder> preferably just the entire line from `mount`
+[06:48:32] <RazorSharpFang>  /dev/sdb2 on /media/razor/HardDisk type fuseblk (rw,nosuid,nodev,allow_other,default_permissions,blksize=4096)
+[06:49:53] <ShivalWolf> its a fuseblk guessing NTFS formatted drive. ntfs does not support linux file permisions so thats why you cant chmod it
+[06:50:17] <RazorSharpFang> Dang.
+[06:50:31] <RazorSharpFang> Can I just have Apache running under root?
+[06:50:57] <RazorSharpFang> Bad Habits™
+[06:51:19] <ShivalWolf> you probably want to manually mount the drive into another location and alter the permisions setting so it mounts as global read/write/execute
+[06:51:35] <RazorSharpFang> That sounds like a better solution.
+[06:52:23] <Starthunder> Even better solution, make it so that you don't need to serve from an NTFS volume
+[06:52:28] <Starthunder> What are you doing that for, anyway?
+[06:52:49] <ShivalWolf> you probably need to look at putting it in your fstab and look at the ntfs-3g mount options for permisions
+[06:53:06] <ShivalWolf> or copy everything off
+[06:53:13] <ShivalWolf> blow NTFS away and format it to native linux FS
+[06:53:20] <ShivalWolf> but then you dont get windows access to the drive anymore
+[06:53:22] <Starthunder> I second the latter option.
+[06:53:32] <Starthunder> Do explain your current setup, though
+[06:54:37] <RazorSharpFang> System is designed to be a lightweight mediaserver, allowing network users to access files on the ExHD through their browser.
+[06:55:29] <RazorSharpFang> The machine itself is VERY old, and has few uses itself. (70GB HDD, Pentium 4 CPU, NVidia GeForce 8500 GT, 1.5GB DDR1 RAM)
+[06:55:32] <Starthunder> Will this external disk need to be regularly disconnected from the server and connected to a Windows machine?
+[06:56:04] <RazorSharpFang> Starthunder: It will not be. But it's contents exceed ALL current storage that I have excluding the ExHD.
+[06:56:18] <RazorSharpFang> I can't put it anywhere temporarily.
+[06:56:21] <Starthunder> Mmmmm.
+[06:56:52] <Starthunder> What's its capacity and current usage?
+[06:57:13] <RazorSharpFang> 1 TB, 75% usage
+[06:58:45] <HoneyDrops> I would pull the graphics card, that P4 is going to suck enough watts on its own.
+[06:58:46] <Starthunder> Can you give us a ballpark breakdown of what all that stuff is?
+[06:59:01] * Starthunder is now known as Watt.
+[07:00:20] <RazorSharpFang> Starthunder: About 50% Video, 40% executables (games, software) and 10% archives
+[07:00:59] <Starthunder> Archives as in the compressed kind?
+[07:01:14] <RazorSharpFang> Yeah
+[07:01:23] <Starthunder> Mmmmm.
+[07:01:51] <RazorSharpFang> It used to b e 95% capacity, but i'm converting a bunch of DivX to H.264.
+[07:02:00] <RazorSharpFang> Using the pentium 4.
+[07:02:06] <Starthunder> Okay, I'd say find a way to borrow|rent a one-tera disk in the near future so you can switch filesystems
+[07:02:07] <RazorSharpFang> This is a slow process.
+[07:02:15] <Starthunder> 6_9
+[07:02:25] <Starthunder> In the meantime…yeah, go with setting the permissions to be more open
+[07:02:31] <Starthunder> …although…grrrrr…
+[07:02:36] <RazorSharpFang> ?
+[07:03:08] <Starthunder> Linux has ACLs, and there's supposed to be a richacls thing coming soon|now
+[07:03:17] <Starthunder> richacls map pretty well to NTFS ACLs
+[07:03:47] <Starthunder> …nah, even if everything else supported richacls right now, there's no way fuse+ntfs-3g would add support that quickly
+[07:03:49] <Starthunder> damn.
+[07:04:21] <Starthunder> RazorSharpFang: do clients to this web thing need to be able to modify any of the files on this disk?
+[07:04:36] <RazorSharpFang> No, they do not.
+[07:04:48] <RazorSharpFang> Just read.
+[07:05:17] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[07:05:36] <Starthunder> Okay, so don't make it world-writable. :p
+[07:05:49] <Starthunder> Can I explain to you POSIX permissions? >3>
+[07:05:58] <RazorSharpFang> 660, eh?
+[07:06:08] <Starthunder> ^2
+[07:06:17] * Soarin makes Starthunder editable by everyone
+[07:06:55] <RazorSharpFang> drw-rw----+ ? +?
+[07:07:26] * Starthunder throws an EPERM at Soarin.
+[07:07:39] <Starthunder> RazorSharpFang: can I explaiiiin :(
+[07:07:52] * Soarin dodges cause ain't nopony got time for that ;p
+[07:07:55] <RazorSharpFang> What the + means? Yes.
+[07:08:02] * Starthunder blinks.
+[07:08:46] <Starthunder> Well, okay. The + flag means that there is an ACL on this item. Mind you, it's almost certainly a Linux-style ACL, not an NTFS-style one (those aren't supported anyway).
+[07:09:27] <Starthunder> ACLs are basically just an extension of the same three read|write|execute permissions to more users and groups than just the owning user and owning group.
+[07:09:43] <Starthunder> I was asking if I could explain POSIX permissions to you, though. I really think it's important you understand :<
+[07:09:44] <RazorSharpFang> Now it says "permission denied" when I try to cd into razor.
+[07:09:57] <Starthunder> Though you don't have to listen to me. :p You could find an article to explain
+[07:10:02] <RazorSharpFang> drwxrw-r--+
+[07:10:10] * Starthunder sighs. :p
+[07:10:16] <Starthunder> Okay, POSIX permissions 101.
+[07:10:34] <RazorSharpFang> So, given that /I/ can read/write/exec, and given that anyone in my GROUP can read/write, and ANYONE can READ, Why can /I/ not?!
+[07:10:43] <Starthunder> I'll get to that in a minute.
+[07:11:19] <Starthunder> You have three permissions. Read, write, execute. And you have three…uh…things. Owning user, owning group, and others.
+[07:11:33] <Starthunder> The permissions are pretty straightforward when applied to files.
+[07:12:13] <RazorSharpFang> But it's my directory. I own it.
+[07:12:17] <Starthunder> The trick is that, for /directories/, execute permission means traverse permission—i.e. you need execute permission in order to do anything with the directory's /contents/
+[07:12:38] <Starthunder> Regardless of the permissions on the contents.
+[07:13:20] <Starthunder> Read permission means list permission—you need it to `ls` the directory, in short
+[07:13:43] <Starthunder> Those two aren't entangled—you can have one without the other, and it'll work as you'd probably expect.
+[07:14:07] <Starthunder> Write permission means permission to change the contents (sort of)
+[07:14:13] <Starthunder> and here it really helps to think of a directory as a file.
+[07:14:19] <Starthunder> (which is pretty much is.)
+[07:14:35] <RazorSharpFang> So, if /I/ am the owner of the directory, and that the directory has read/write/execute permissions for the owner, why can't I access it?
+[07:15:09] <Starthunder> …you should be able to. O.o
+[07:15:21] <Starthunder> Check the ACL on it, maybe?
+[07:15:33] <Soarin> Um. Silly question here but are you logged in as your account who has ownership of said file?
+[07:15:34] <Starthunder> getfacl $directory
+[07:15:48] <Starthunder> (A directory is nothing more than a list mapping filenames to inodes.)
+[07:16:07] <RazorSharpFang> Soarin: Yes.
+[07:16:09] <Starthunder> (If you have write permission on a directory, you can change that list. You can add a mapping, delete a mapping, and change the name on a mapping.)
+[07:16:28] <Soarin> I should have asked.. Are you accessing the file as an account or member of s group that you gave access to it?
+[07:16:41] <Soarin> Okay, never mind me. Was hoping to maybe help
+[07:16:46] <Starthunder> (In practice, this means that you need write permission on a directory to create, delete, move and rename items inside of it.)
+[07:16:49] <RazorSharpFang> I'm accessing it as razor@Server.
+[07:16:57] <RazorSharpFang> file owner is razor
+[07:17:15] <Starthunder> …what exactly are you trying to do with it?
+[07:17:20] <RazorSharpFang> permission of folder are 764
+[07:17:28] <RazorSharpFang> Starthunder: cd into it
+[07:17:34] <Starthunder> RazorSharpFang: and what's the ACL on it?
+[07:18:34] <RazorSharpFang> getfacl razor
+[07:18:37] <RazorSharpFang> #file: razor
+[07:18:45] <RazorSharpFang> #owner: razor
+[07:18:49] <RazorSharpFang> #group: razor
+[07:18:55] <RazorSharpFang> user::rwx
+[07:19:06] <RazorSharpFang> user:razor:r-w
+[07:19:17] <RazorSharpFang> group::---
+[07:19:22] <RazorSharpFang> mask:rw-
+[07:19:25] <RazorSharpFang> other::r--
+[07:19:29] <RazorSharpFang> That's it.
+[07:19:35] <Starthunder> There's your problem.
+[07:19:49] <Starthunder> With ACLs, the standard group-permission field is reappropriated…
+[07:20:12] <Soarin> Group isn't it? Damn you Starthunder I was trying to ask that first :<
+[07:20:15] <Starthunder> It's used as a /mask/ field. Only permissions set in the mask field can be granted by an ACE.
+[07:20:34] <Starthunder> Soarin: If I answer your question before you ask it, that means I'm doing it right. :3
+[07:20:51] <RazorSharpFang> I'm not really getting it. : /
+[07:21:37] <Starthunder> ACL entries override the standard permissions (I think).
+[07:22:09] <Starthunder> So even though you own it, and the owning user has rwx, your specific ACL entry only has rw-
+[07:22:40] <Starthunder> Therefore, you only have rw-.
+[07:23:06] <RazorSharpFang> So, how would I rectify this?
+[07:23:36] *** Eventide is now known as Eventide|Sleepies
+[07:23:40] <Starthunder> Do you need ACLs? It may be simpler to go without them.
+[07:24:13] <RazorSharpFang> No. I just want to use the HDD as a media server.
+[07:24:29] <RazorSharpFang> This was much simpler on windows. ;-;
+[07:25:30] * Starthunder takes an ext4 filesystem, attaches it to a Windows machine, and tries for several hours to get the permissions to play nice without knowledge of the Windows permissions system without converting it to a filesystem Windows does natively.
+[07:25:37] <Starthunder> This was much simpler on Gentoo. >:(
+[07:26:14] <RazorSharpFang> That wasn't the emote I used.
+[07:26:16] <HoneyDrops> Standard posix permissions are easy, what distro is using ACL by default?
+[07:26:29] <RazorSharpFang> I'm on Ubuntu 14.004
+[07:26:34] <RazorSharpFang> **14.04
+[07:26:54] <Starthunder> RazorSharpFang: …wait a sec. How do you have an ACL? I thought this was on an NTFS filesystem O.o
+[07:27:12] <RazorSharpFang> It is.
+[07:27:24] <HoneyDrops> what command are you using to mount it?
+[07:27:40] <Starthunder> …wait…I thought the filesystem was discarding all your permissions changes
+[07:27:41] <RazorSharpFang> It automounted.
+[07:27:50] <RazorSharpFang> It still is.
+[07:28:11] <HoneyDrops> First, disable automount.
+[07:28:14] <HoneyDrops> Never automount.
+[07:28:17] <Starthunder> /dev/sdb2 on /media/razor/HardDisk type fuseblk (rw,nosuid,nodev,allow_other,default_permissions,blksize=4096)
+[07:29:04] <Starthunder> (HoneyDrops: automounting as in the DE doing it, or `mount -a`?)
+[07:29:25] <HoneyDrops> ( Starthunder: DE/daemon, mount -a is fine )
+[07:31:09] <RazorSharpFang> Okay, so how'd I mount it properly? I assume I'd have to unmount it first.
+[07:31:16] <HoneyDrops> yes
+[07:31:44] * Starthunder (likes not automounting. It means that they can plug stuff in, maybe do some checks on the device, then unplug without waiting.)
+[07:33:23] <Starthunder> Turn off automounting first.
+[07:33:31] <HoneyDrops> then `mkdir /mnt/<whatever you want to mount to>` (you can make a directory wherever, but /mnt is the standard place) then, `fusermount -o <options, we'll cover those shortly> /dev/sdb2 /mnt/<the mountpoint you made>`
+[07:35:04] <Starthunder> They're not running as root, HoneyDrops
+[07:35:45] <RazorSharpFang> Yeah, this needs to be a directory that apache can access.
+[07:36:03] <Starthunder> Not because of that, but because you don't have write for /mnt (probably)
+[07:36:19] <Starthunder> (Relatedly…shouldn't /mnt be a=rwxt, so you don't have to be root to make a mountpoint and mount something there with e.g. fuse?)
+[07:37:15] <Starthunder> Also, can we work on turning off automount first? Don't want Unity autoremounting it suddenly
+[07:39:46] <RazorSharpFang> So, how do you turn off automount?
+[07:40:00] <HoneyDrops> You can make the mountpoint wherever, and you can just sudo mkdir to create the mountpoint.
+[07:40:17] <Starthunder> RazorSharpFang: https://help.ubuntu.com/community/Mount/USB#Configuring_Automounting
+[07:40:19] <PinkiePieBot> [ Mount/USB - Community Help Wiki ]
+[07:40:38] <RazorSharpFang> Huh? Nameserver lookup failed.
+[07:40:55] * Starthunder blinks.
+[07:42:05] <RazorSharpFang> I can't seem to get that to work. >.> 
+[07:42:19] <Starthunder> Nameserver lookup failed…
+[07:42:33] <Starthunder> …never mind. I'll just paste the relevant bit.
+[07:42:36] * RazorSharpFang notes self: Check router
+[07:42:41] <HoneyDrops> Anyway, once we get the mount command working, what we'll do is set it up in fstab, so it will mount on boot (I assume this drive is effectively a permanent fixture?)
+[07:43:22] <RazorSharpFang> Sorta. The machine itself fails to boot if it's plugged in.
+[07:43:38] <Starthunder> Actually, HoneyDrops, can you walk them through this? I need to go make me some tea already
+[07:43:38] <RazorSharpFang> I've got "unplug ExHD before booting" written on the machine.
+[07:43:53] <Starthunder> Mmm. Should fix that.
+[07:44:10] <HoneyDrops> ( I need to sleeps soon, but I can try. )
+[07:44:11] <RazorSharpFang> It doesn't get past the bios.
+[07:44:31] <HoneyDrops> Can you not install the drive internally?
+[07:44:51] <RazorSharpFang> No, it's a USB ExHD.
+[07:45:04] <HoneyDrops> It's still a regular drive inside the housing ;)
+[07:45:25] <RazorSharpFang> I'd rather not, the machine isn't expected to live for more than ~3 years.
+[07:45:54] <HoneyDrops> The only catch is IDE/PATA or SATA and if the motherboard supports it.
+[07:45:58] <RazorSharpFang> After which, it will probably fail catastrophically.
+[07:46:26] <HoneyDrops> Unless it catches fire, the drive should be fine. >_>
+[07:46:39] <RazorSharpFang> My previous one did.
+[07:47:02] <RazorSharpFang> Thank goodness for fire extinguishers.
+[07:48:14] <HoneyDrops> My last system that died caught fire too.  Only the PSU was toast, though for a while the CPU was going, hard locking, so I gave up on it.
+[07:48:42] <HoneyDrops> Anyway, we can just set up a shell script then to mount it.
+[07:49:07] <HoneyDrops> or still put it in fstab, and you can just do mount <whwatever mountpoint>
+[07:49:38] <RazorSharpFang> Can this be /any/ directory?
+[07:51:41] <HoneyDrops> Yes, though for obvious reasons you will not want to use one that is important for other things (mounting random things on /usr will not end well)
+[07:55:09] <RazorSharpFang> Okay, that's odd.
+[07:55:27] <RazorSharpFang> I've mounted it to ~/http and now it's green.
+[07:57:26] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[07:58:56] <RazorSharpFang> \o/ it works!
+[07:59:18] <HoneyDrops> I assume you just did default options?
+[07:59:24] <HoneyDrops> (for mounting)
+[07:59:30] <RazorSharpFang> Yes.
+[07:59:51] <HoneyDrops> Ok, if you don't need write permissions, I would mount it as ro
+[07:59:58] <HoneyDrops> but you don't have to.
+[08:00:17] <RazorSharpFang> Well, in order to write into it, they'd have to be in my home directory.
+[08:03:41] <HoneyDrops> HDMI needs to go away.
+[08:04:06] <HoneyDrops> Ports/bus standards should not have licensing fees or NDAs.
+[08:04:40] <Soarin> Doesn't DP also have fees?
+[08:06:56] <Starthunder> RazorSharpFang: no?
+[08:07:07] <RazorSharpFang> No?
+[08:07:23] <Starthunder> They'd just need +x on your homedir, and then write permission on whatever item on the disk they wanted to change
+[08:07:42] <HoneyDrops> Soarin: yes, they now charge.
+[08:07:42] <RazorSharpFang> But somehow they'd have to be in my machine.
+[08:08:12] <Starthunder> Or on the local net, using your web service
+[08:08:38] <HoneyDrops> Soarin: citation, http://www.businesswire.com/news/home/20150305006071/en/MPEG-LA-Introduces-License-DisplayPort
+[08:08:39] <PinkiePieBot> [ MPEG LA Introduces License for DisplayPort | Business Wire ]
+[08:09:05] <HoneyDrops> If MPEG LA suddenly caught fire tomorrow, nothing of value would be lost.
+[08:09:08] <Starthunder> HoneyDrops: groan
+[08:09:31] <Soarin> That could be arranged.
+[08:09:55] <Soarin> I know people who know people who re former brothers cousins aunts mother uncles former roomates
+[08:10:03] <Starthunder> xD
+[08:10:48] <Phase> �Once again, MPEG LA is proud to be part of the solution�
+[08:11:08] <Starthunder> s/solution/problem/
+[08:11:17] <HoneyDrops> "MPEG LA is the world leader in alternative technology licenses. By assisting users with convenient access to patent rights for their technology choices, MPEG LA offers licensing solutions that create opportunities for wide adoption and fuel innovation. MPEG LA’s pioneering MPEG-2 licensing program helped produce the most widely employed standard in consumer electronics history and has
+[08:11:19] <HoneyDrops> become the template for addressing numerous other technologies. Today MPEG LA manages licensing programs consisting of more than 9800 patents in 78 countries with 197 licensors and more than 5900 licensees. "  How about this for a licensing solution: don't fucking patent it and let everyone use it?
+[08:11:20] <Starthunder> I hope they're technically incompetent and their website gets hacked and changed to that
+[08:11:44] <Starthunder> > assisting users
+[08:11:47] <Starthunder> No you're not.
+[08:12:22] <HoneyDrops> I mean, the /whole point/ of a port is to connect device A to device B, there is no reason to limit who can make device A or B.
+[08:12:51] <HoneyDrops> If you make device A, you should be happy people are making more options for B :I
+[08:13:58] * Soarin steals device A
+[08:15:09] <Phase> HoneyDrops, the people who own the patents aren't making device a or device b
+[08:15:37] <HoneyDrops> I'll leave aside the rant of codec patents, which sould all be universally invalidated as they are just math.  Perhaps a niche way of applying math, but still math.
+[08:15:44] <RazorSharpFang> Starthunder: the web service is literally just directory listing.
+[08:15:56] <RazorSharpFang> no serverside scrips
+[08:16:01] <Starthunder> RazorSharpFang: …really? Why are you doing that?
+[08:16:35] <RazorSharpFang> So i can watch/read/get the stuff easily.
+[08:17:41] <HoneyDrops> Phase: then they should really not worry about who's using the spec :p
+[08:17:59] <Phase> they don't, long as they get money
+[08:18:45] <HoneyDrops> I would argue if you're making a port standard to just rent seek, the world is better off without the port standard, and without you.
+[08:18:52] <Starthunder> RazorSharpFang: get? Thought you were only serving directories.
+[08:19:45] <RazorSharpFang> directories, plus the stuff in there.
+[08:21:04] *** zz_CyberJacob is now known as CyberJacob
+[08:25:03] <tiwake> Colgate: poke
+[08:33:22] *** eyeburn is now known as Starburn
+[08:45:25] <RazorSharpFang> Is *.tgz a new compression format?
+[08:45:47] <Starthunder> Nah
+[08:45:51] <Starthunder> It's just .tar.gz
+[08:46:47] <Starthunder> …I used to think (mistakenly) that passing -z to tar was somehow fundamentally different than piping tar to gzip
+[08:47:08] <Starthunder> and I would use .tgz extensions when doing the former, and .tar.gz when doing the latter
+[08:47:19] <Starthunder> (And I would always do the former :p )
+[08:47:37] * HoneyDrops always does .tar.<compression extension>
+[08:47:42] <Starthunder> I think I'll start always using .tar.gz now
+[08:47:43] <Starthunder> Yeah
+[08:48:00] <RazorSharpFang> I just use *.zip or *.7z, so...
+[08:51:02] <Starthunder> 7zip, ew. Proprietery.
+[08:51:04] <HoneyDrops> I have the tools for decompressing rar, zip, 7z, but I never use them (ok, I do use zip to repackage jar files)
+[08:51:33] <HoneyDrops> 7z is fine... https://en.wikipedia.org/wiki/7z
+[08:51:34] <PinkiePieBot> [ 7z - Wikipedia, the free encyclopedia ]
+[08:52:32] <RazorSharpFang> Damn it. I just get brought to the UEFI shell.
+[08:52:41] <RazorSharpFang> Does that mean there's something wrong with the bootloader?
+[08:52:54] <Starthunder> Oh, 7zip is open?! o.o
+[08:52:57] <Starthunder> what am I thinking of?
+[08:53:00] <HoneyDrops> rar
+[08:53:15] <RazorSharpFang> Yeah, rar
+[08:53:17] <RazorSharpFang> I hate rars
+[08:53:19] <Starthunder> …ahhh.
+[08:53:39] <RazorSharpFang> Creating rars is patented, or something.
+[08:53:50] <HoneyDrops> "No (decompression source code is available, but it's not free software due to the restriction that it must not be used to reverse engineer the RAR compression algorithm)"
+[08:54:03] <HoneyDrops> The format is closed/undocumented.
+[08:54:27] <RazorSharpFang> Free as in Freedom.
+[08:54:32] <RazorSharpFang> To militarize.
+[08:55:18] <Starthunder> rar hasn't caught on, has it.
+[08:55:43] <HoneyDrops> it was popular for a while, but seems to have fallen into disuse.
+[08:55:44] <Starthunder> (Good…now I don't have to reconcile xz haveing 7z headers)
+[08:55:52] <Starthunder> good :V
+[08:56:27] <HoneyDrops> I mostly recall seeing a whole lot of them on Kazaa
+[08:56:46] <HoneyDrops> If you go looking for old console ROMs, you'll also bump into rars
+[08:56:50] <Starthunder> wonder if they were getting paid to use rar
+[08:57:24] <HoneyDrops> No, it was better compression (as compared to zip) and dialup was still the norm.
+[08:57:57] <Starthunder> how's rar compare to the xz|lzma|bz2|gz lineup?
+[08:58:36] <RazorSharpFang> I've found that rar performs worse than ultra lzma, but less so on binary executable-like files.
+[08:58:59] <RazorSharpFang> A trend that reverses for complexity of binary file.
+[08:59:07] <HoneyDrops> xz is lzma
+[08:59:17] <Starthunder> I thought xz was lzma2 or something
+[08:59:20] <HoneyDrops> but I xz is better compression ratios, iirc.
+[08:59:27] <Starthunder> …binaries? don't you generally…not try to compress binaries?
+[08:59:35] <Starthunder> y'know, like media stuff. It's already compressed.
+[09:00:03] <Starthunder> …well…maybe. But if you want a smaller binary, you should recompiled with -Os or something, yeah?
+[09:00:26] <HoneyDrops> There is no reason to create new rar's, just keep some tool to decompress the odd legacy one you encounter.
+[09:00:42] <Starthunder> yeahno
+[09:00:44] <HoneyDrops> It's like the floppy drives and ZIP disk drives.
+[09:01:21] <RazorSharpFang> Starthunder: I'm referring to binaries instead of source-code.
+[09:01:22] <HoneyDrops> I think there are FOSS rar decompressors.
+[09:01:25] <RazorSharpFang> Machine instructions.
+[09:01:43] <RazorSharpFang> For some reason, rar compresses machine instructions better than any other kind of information.
+[09:02:34] <RazorSharpFang> One time, this friend of mine had a paid copy of winrar, so I used it to compare the compression of different file-types and compression schemes.
+[09:02:41] <Starthunder> Hmmmmm…
+[09:02:48] <Starthunder> RazorSharpFang: I know that
+[09:02:51] <RazorSharpFang> But I found that the benefit of rar wasn't worth the TIME IT TOOK TO COMPRESS!!
+[09:02:54] <Starthunder> that's normally what you mean by /binary/
+[09:02:57] <Starthunder> How /do/ you compress binaries?
+[09:03:06] <RazorSharpFang> Using the algorithm.
+[09:03:06] <Starthunder> …I guess you could o.o
+[09:03:15] <Starthunder> I've been assuming they'd have embedded resources
+[09:03:18] <RazorSharpFang> A lot of instructions are going to be similiar.
+[09:03:21] <Starthunder> but…beyond text, no; that's silly
+[09:04:13] <RazorSharpFang> A lot of software is looping.
+[09:04:44] <Starthunder> And there's loop unrolling. That'd compress fairly well, I would think
+[09:05:09] <RazorSharpFang> Using algorithms to compress algorithms. 
+[09:05:39] <Starthunder> BWOMMMMMMMMM
+[09:07:37] <Googie> Starthunder: UPX
+[09:07:43] <Starthunder> Googie: hmm?
+[09:08:15] <Googie> Compressing executable binaries is quite doable
+[09:08:34] <Starthunder> They actually do compress fairly well, don't they?
+[09:08:45] <Googie> Yeah
+[09:08:46] <Starthunder> Not as well as text, of course, but they're not already compressed.
+[09:09:06] <Starthunder> And they generally don't have already-compressed things embedded
+[09:12:32] <RazorSharpFang> Machine instructions aren't compressed.
+[09:13:04] <RazorSharpFang> They correspond to the instruction on the hardware.
+[09:13:12] <RazorSharpFang> (or system call, but whatevs)
+[09:16:12] <HoneyDrops> Unstripped binaries are full of a ton of stuff too that compresses well.
+[09:16:53] <RazorSharpFang> Isn't the start of every windows executable like WIN32 something something?
+[09:16:56] <HoneyDrops> Anyway, it's worth keeping some way to decompress rars around, but there is no reason to every chose it.
+[09:17:09] <HoneyDrops> s/every/ever/
+[09:17:14] <HoneyDrops> choose*
+[09:17:16] * HoneyDrops yawns.
+[09:17:37] <RazorSharpFang> I've found that 7zip decompresses rars fine, and it's free software. (Free as in freedom, but also free as in free beer)
+[09:18:21] <RazorSharpFang> Also, the windows version integrates beautifully with Explorer.
+[09:18:42] <Starthunder> Ugh. I hated that.
+[09:18:53] <Starthunder> It always felt so…ugly. Out of place.
+[09:18:59] <Starthunder> Not consisten with the rest of the Explorer UI.
+[09:19:08] <HoneyDrops> I just want a simple CLI tool.
+[09:19:14] <RazorSharpFang> Right click -> 7-zip -> extract here ?
+[09:19:53] <RazorSharpFang> HoneyDrops: You'd like tar, then, right?
+[09:19:55] <HoneyDrops> Archivers don't need a GUI, you're just doing file manipulation.
+[09:20:39] <RazorSharpFang> but what if you want to selectively extract files?
+[09:20:41] <HoneyDrops> I use tar.{b,g,x}z depending on the case.
+[09:21:02] <HoneyDrops> You can extract specific files
+[09:21:19] <HoneyDrops> It's not as efficient as with zip, but it can be done.
+[09:22:06] <Starthunder> So what's the difference between 7z and xz?
+[09:22:21] <RazorSharpFang> 7z is a container format. It can contain poo.
+[09:22:39] <RazorSharpFang> Isn't xz LZMA2-specific?
+[09:23:46] <RazorSharpFang> My internet appears to be struggling a lot.
+[09:23:54] <Starthunder> Your uplink *
+[09:24:10] <Starthunder> unless you own an entire Internet, in which case /holy shit can I get in on that?/
+[09:24:12] <HoneyDrops> Yeah, 7z can contain several different things.
+[09:24:14] <RazorSharpFang> Oh, a negative signal to noise ratio.
+[09:24:19] <RazorSharpFang> That's not awful.
+[09:24:22] <Starthunder> wut
+[09:24:26] <Starthunder> how are you even communicating with us?
+[09:24:31] <Starthunder> …what does that even /mean?/
+[09:24:49] <RazorSharpFang> That's an average, not current.
+[09:25:12] <HoneyDrops> a .7z can use lzma, lzma2, bzip, or DEFLATE, iirc
+[09:25:13] <Starthunder> Still, it means that you must have had a lot of negative s:r in the last averaging period
+[09:26:13] <RazorSharpFang> Oh yeah
+[09:26:19] <RazorSharpFang> It goes awful in the rain.
+[09:26:46] <Starthunder> wouldn't the lower bound be 0 signal/lots of noise?
+[09:26:57] <Starthunder> I mean…how do you have /negative/ signal?
+[09:26:59] <RazorSharpFang> No, because noise can be higher than signal.
+[09:27:12] <Starthunder> 0/large_number is still 0
+[09:27:17] <RazorSharpFang> Logs
+[09:27:22] <RazorSharpFang> Logarithms
+[09:27:26] <Starthunder> Aha.
+[09:27:29] <RazorSharpFang> We log the ratio.
+[09:27:46] <RazorSharpFang> (That's a pun)
+[09:27:49] * Starthunder throws a hogarithm at RazorSharpFang! “Thinkfast!”
+[09:28:26] * RazorSharpFang ducks
+[09:28:30] <HoneyDrops> I wonder if anyone in a country with sane-RE laws has bothered to make a FLOSS unrar...
+[09:29:00] <Phase> ?
+[09:29:08] <Phase> HoneyDrops, 7zip can open rars
+[09:29:31] <HoneyDrops> Phase: it can? w/o any unrar lib?
+[09:29:34] * Starthunder taps Phase. “Distinguish the program from the format|algorithm, please.”
+[09:30:14] <Phase> andrew@andrews-laptop ~ $ ldd `which 7z`
+[09:30:15] <Phase> 	not a dynamic executable
+[09:30:17] <Phase> wat
+[09:30:34] <Starthunder> file $(which 7z)
+[09:30:57] <Phase> ah, shell script
+[09:31:03] <Starthunder> What's it do?
+[09:31:12] <Phase> exec's /usr/libexec/p7zip/7z
+[09:32:09] <Googie> unrarlib works on version 2 rar files and is GPL
+[09:33:01] *** CyberJacob is now known as zz_CyberJacob
+[09:33:23] <Googie> Apparently unar has support too, but I'm not entirely sure.
+[09:34:08] * HoneyDrops hugs Googie.  I knew there was a GPL for older versions, which I guess would cover most cases.
+[09:34:41] <HoneyDrops> emerge -C unrar
+[09:34:44] <HoneyDrops> yay~
+[09:35:15] <Starthunder> :D
+[09:38:28] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:38:43] <Googie> Incidentally reverse engineering the RAR format/WinRAR would (in theory) be legal in Australia at present AFAIK.
+[09:39:31] <Googie> There's an exception for reverse engineering for interoperability
+[09:40:20] <RazorSharpFang> But if you reverse engineered in Aus, could you take that knowledge into Amer and make your own software for it?
+[09:40:41] <HoneyDrops> I don't see why not.
+[09:41:26] <HoneyDrops> The violation of the license would only preclude possession of the source, afaik there is no patent protections.
+[09:41:51] <HoneyDrops> So anyone could RE it, public publish those findings, and anyone, anywhere could use that info to write their own implementation.
+[09:42:41] <HoneyDrops> The only one who, potentially, violated a license would be the RE-er, and only if they are in a location where anti-RE clauses are considered valid.
+[09:44:43] <HoneyDrops> Googie, that's good to hear, at least your ex-PM didn't mess that up for you :)
+[09:47:10] <Googie> TPP still might though
+[09:47:47] <RazorSharpFang> 92% done.
+[09:48:41] <Starthunder> gaise
+[09:48:42] <Starthunder> gaise
+[09:48:53] <Starthunder> I'm writing a thing to spawn subprocesses and redirect their stdio streams arbitrarily
+[09:50:03] <Starthunder> Oh, what do I call it, by the way?
+[09:50:09] <Starthunder> I'm using `pipemaster` as a working title
+[09:51:21] <HoneyDrops> The TPP can jump into a volcano.
+[09:51:35] <Starthunder> bit long, don't you think, HoneyDrops?
+[09:52:15] <HoneyDrops> `pm`
+[09:52:21] <Starthunder> also, I really don't think it can. It /is/ only an agreement, an abstract thing…
+[09:52:25] <RazorSharpFang> I also hate the TPP
+[09:52:28] <Starthunder> ^
+[09:52:50] <HoneyDrops> No one likes the TPP, except those writing it.
+[09:52:54] <Starthunder> `pm` is surely taken, isn't it?
+[09:53:07] <HoneyDrops> pipm?
+[09:53:08] <Phase> Install package 'powerman' to provide command 'pm'? [N/y] 
+[09:53:41] <HoneyDrops> Phase: what monstrosity is to blame for that?
+[09:53:53] <Phase> for which?
+[09:54:31] <Compu> ...well the angry birds movie is a thing
+[09:54:41] <HoneyDrops> not returning the proper error? : command not found
+[09:54:51] <HoneyDrops> Phase ^
+[09:55:05] <Phase> oh, fedora does that
+[09:55:20] <Phase> i would complain but it's actually absurdly fast, unlike ubuntus
+[09:55:42] <Phase> and only happens in interactive shells, thankfully
+[09:55:57] * HoneyDrops hisses at such fluff.
+[09:56:34] <HoneyDrops> does it at least keep the 127 exit code?
+[09:56:52] <Phase> yeah
+[09:57:19] <Phase> only problem is it actually says command not found twice, one from zsh and the other from the script itself
+[09:57:32] <Phase> also zsh is love
+[09:57:44] <Phase> righthand prompt ftw
+[09:58:30] <Starthunder> Or…ooh, what about `piper`?
+[09:58:42] <HoneyDrops> bash for interactive, and sh for scripting
+[09:58:44] <Starthunder> Probably not very googlable
+[09:59:15] <HoneyDrops> Starthunder: only if you also write paige, pheobe, and prue
+[09:59:28] <Starthunder> o.o ?
+[10:00:55] * HoneyDrops just dated herself, didn't she.
+[10:01:29] * Starthunder doesn't know what those are.
+[10:01:48] <Starthunder> …oh, maybe y'all wanna give me some feedback on my commandline arg syntax
+[10:02:48] <HoneyDrops> https://en.wikipedia.org/wiki/Charmed
+[10:02:49] <PinkiePieBot> [ Charmed - Wikipedia, the free encyclopedia ]
+[10:03:06] <HoneyDrops> It was only 98-06 :I
+[10:03:13] <Starthunder> Ahh, not a tech thing.
+[10:03:25] <HoneyDrops> No :p
+[10:04:24] <Starthunder> pipemaster -s 'gnutls-cli = gnutls-cli --priority=... irc.canternet.org -p 6663' -s 'sed = sed -nl "s/^PING /PONG /p"' -- 'in > gnutls-cli' 'gnutls-cli > sed out' 'sed > gnutls-cli out'
+[10:04:44] <Starthunder> This is much better than that hack with a fifo and two `tee /dev/tty`s ^
+[10:05:35] <roflin> is that a minimalist irc chat client?
+[10:05:50] <Starthunder> roflin: no; it's an arbitrary redirecting thing
+[10:06:05] <roflin> ah, my shell foo isn't that good.
+[10:06:06] <Starthunder> Can y'all figure out what that does?
+[10:06:18] <Starthunder> roflin: it's a syntax I mostly made up, so it might not be intuitive :p
+[10:06:19] <HoneyDrops> minimalist irc is call netcat ;)
+[10:06:27] <Starthunder> This one plays pingpong for you though :D
+[10:06:34] <Starthunder> So slightly more than minimal.
+[10:06:45] <aji> i consider an irc client to be anything that handles PING automatically
+[10:06:50] <Starthunder> Does the syntax make sense?
+[10:06:58] <aji> if it handles PING automatically, that's all it needs to do as far as i care
+[10:07:03] <aji> to be considered an irc client
+[10:07:04] <Starthunder> And…just everything in general? Does it make sense?
+[10:07:07] <Starthunder> Or should I cahnge it?
+[10:07:10] <aji> in short, netcat doesn't count!!!!!!!!!!!
+[10:07:22] <HoneyDrops> Fine, ii?
+[10:07:31] <aji> lol ii works
+[10:07:48] <Phase> HoneyDrops, http://i.imgur.com/zk0el3Y.png
+[10:07:51] <aji> i would also have accepted: bitchx, ii, ircii
+[10:08:22] <Phase> HoneyDrops, having the exit code show if != 0 is on its own reason enough to use zsh imo
+[10:08:51] <HoneyDrops> I have that in bash
+[10:09:13] <Phase> oh? part of PS1 or?
+[10:09:22] <HoneyDrops> I even have it translate to sig* for a few cases
+[10:09:32] <HoneyDrops> yeah, in PS1
+[10:09:33] <Phase> nice
+[10:09:44] * Phase prefers it on the right
+[10:10:04] <Phase> you can see as i typed those commands, it removed the right hand prompt
+[10:11:37] <Starthunder> https://www.blackl.net/zsh.png
+[10:11:50] <Starthunder> (sha256 fingerprint is a1:9e:64:b8:27:23:f7:53:ac:5b:50:ff:86:ae:2f:a0:2c:08:eb:ca:7c:fe:90:68:8a:42:7e:90:10:de:2c:aa)
+[10:12:14] <Phase> Starthunder, why not a proper cert? they're free these days
+[10:12:23] <Starthunder> Phase: really?
+[10:12:44] <Phase> yeah, startssl has had free certs for some time, even free smime certs
+[10:12:48] <Starthunder> I thought Let's Encrypt would be the only thing now that CACert got kicked out of the Browser Elite
+[10:12:51] <Phase> i'm sure others do as well
+[10:12:59] <RazorSharpFang> telnet is an IRC client. <3
+[10:13:01] <Phase> let's encrypt will be nice when it happens
+[10:13:10] <Starthunder> Well.
+[10:13:21] <Googie>  startssl lost a lot of good will when they refused to do anything about Heartbleed.
+[10:13:27] <Phase> they've issued a cert, not sure if they're in browsers yet
+[10:13:29] <Starthunder> …aw hell naw
+[10:13:35] <Starthunder> TLS server stuff is currently under pipemaster in my project stack anyway.
+[10:14:02] <Starthunder> speaking of, I really would like it if three or four of you gave me feedback on its usage… >.>
+[10:14:10] <Googie> (Refusal to revoke potentially certificates for potentially leaked private keys without payment)
+[10:14:16] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[10:14:25] <Googie> (Admittedly that's always their policy, but for Heartbleed, that's a hell of a lot of people affected)
+[10:16:09] * Googie is really really glad to see LetsEncrypt on track
+[10:16:21] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:16:41] <Compu> everyone prepare for the candy crush movie
+[10:16:48] <Starthunder> aw hell naw
+[10:16:56] <Starthunder> wasn't /Battleship/ enough?
+[10:16:56] <RazorSharpFang> wat
+[10:17:14] <HoneyDrops> Phase: some really crappy code for my prompt: http://pastie.org/10441106
+[10:17:15] <PinkiePieBot> [ #10441106 - Pastie ]
+[10:17:17] <RazorSharpFang> network reset in progress
+[10:17:36] <Phase> Compu, seriously or?
+[10:17:51] <Compu> Phase: i bet thats what comes next
+[10:18:14] * HoneyDrops has never played candy crush.
+[10:18:20] <Compu> and the fact that u even need to ask that question says a lot about the movie industry now
+[10:18:28] <HoneyDrops> I have played angry birds... I guess it's "fun"
+[10:18:44] <Phase> HoneyDrops, it's like bejeweled, but you have a limited number of moves, and you can pay real life money to get more moves
+[10:19:15] * Starthunder hasn't ever played Candy Crush, either.
+[10:19:16] <Phase> https://youtu.be/Sz4WXVNq7v8 good watch
+[10:19:16] <PinkiePieBot> [ Extra Credits - Candy Crush's Success - Why People Can't Get Enough Candy Crush - 227025 views - 5m 47s long - 5818 likes - 98.43% ]
+[10:19:18] <Compu> Phase: my mom plays it
+[10:19:28] <Starthunder> It's just a Bejeweled clone that managed to get popular.
+[10:19:37] <Phase> Starthunder, sorta
+[10:19:41] <HoneyDrops> I just assume write and play a bejeweled clone >_>
+[10:19:55] *** Joins: RazorSharpFang_ (chatzilla@Pony-n7tf01.iinet.net.au)
+[10:20:16] <Phase> Starthunder, the extra credits video gives you a bit more context
+[10:20:32] * Starthunder narrows his eyes at all the active ponies in the channel.
+[10:20:57] <Starthunder> Not sure if syntax is okay, syntax is too horrible to begin to describe its problems, or just not wanting to look at it.
+[10:21:19] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Ping timeout: 121 seconds)
+[10:21:21] *** RazorSharpFang_ is now known as RazorSharpFang
+[10:23:55] * HoneyDrops is too sleepy.
+[10:24:21] *** RazorSharpFang is now known as Pony_14250
+[10:30:54] <Starthunder> Thanks, HoneyDrops :P
+[10:50:40] *** Init3-away is now known as init3
+[11:08:57] <Starthunder> I documented it, kinda
+[11:13:17] <Starthunder> https://www.blackl.net/pipemaster-usage.txt
+[11:13:28] <Starthunder> …yeah, that's /way/ too long for --help text
+[11:13:47] <Starthunder> Most of it should be moved into the ponypage, I guess, but…now I have to maintain this usage summary /and/ a ponypage?
+[11:17:21] <Starthunder> …I guess I should learn how to ponypage anyway.
+[11:18:39] *** Joins: Hadjii (jircii@Pony-elc.omk.17.144.IP)
+[11:35:35] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[11:35:43] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[11:40:05] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[11:43:42] *** Pony_14250 is now known as RazorSharpFang
+[11:44:18] <RazorSharpFang> So, I've got this USB on /dev/sdc2, that I want to format for use in both linux and windows machines. What filesystem is best for this?
+[11:45:20] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[11:46:15] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[11:48:21] <DJ-C0L7[EIT]> Fat32
+[11:48:48] <DJ-C0L7[EIT]> or NTFS
+[11:49:26] <Compu> ^
+[11:49:45] <RazorSharpFang> Huh, it's currently a HFS something.
+[11:49:55] <Compu> exFAT is decent but can be a bit buggy on linux and requires an install of a package
+[11:50:01] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[11:50:02] * DJ-C0L7[EIT] nods
+[11:50:03] <Compu> RazorSharpFang: its been formatted by a mac then
+[11:50:09] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[11:50:14] <RazorSharpFang> No wonder my windows machine barfed at it.
+[11:50:18] <DJ-C0L7[EIT]> older exFAT implementations for linux have been "Read Only"
+[11:50:35] <Compu> DJ-C0L7[EIT]: the new ones arent but can be pretty buggy
+[11:50:47] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[11:51:03] * DJ-C0L7[EIT] nods
+[11:51:32] <RazorSharpFang> Is there a way to reformat it while preserving the data inside?
+[11:51:53] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[11:52:19] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[11:52:27] <DJ-C0L7[EIT]> windows used to have a "convert" option, but with *nix, i think you have to dump the contents of the drive to a folder, then format the drive completely for the switch over
+[11:52:39] <RazorSharpFang> Dump it is.
+[11:55:59] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[11:57:41] *** Awaykitty is now known as Unixkitty
+[11:58:59] <RazorSharpFang> Wow it's taking a while.
+[11:59:52] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[12:00:18] <Selina> I would not use ntfs
+[12:00:22] <Selina> >.>
+[12:00:47] <Selina> /late
+[12:01:33] <Compu> yeah if none of the files r bigger than 2 GB FAT32 is gonna be the best for compatibility
+[12:01:51] <Selina> Indeed
+[12:02:03] <Selina> I thought the limit was 4 for 1 file
+[12:02:13] <Selina> but it's been a while so /shrug
+[12:02:47] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[12:02:55] * DJ-C0L7[EIT] nods
+[12:02:56] <Selina> Yea it's 4gb
+[12:02:58] <Starthunder> RazorSharpFang: quick, double-check your command line!
+[12:03:10] <RazorSharpFang> Starthunder: It's finished.
+[12:03:14] <Selina> Compu: regular fat (fat16) is 2gb
+[12:03:23] <Compu> ah right
+[12:03:23] <Starthunder> RazorSharpFang: /Wow, this is taking longer than I expected/ is a BIG RED FLAG when doing block- or filesystem-level stuff
+[12:03:24] <Selina> fat32 is 4gb
+[12:03:30] <Compu> sorry
+[12:03:36] <Selina> it's ok
+[12:03:47] <Selina> Just clarifying is all :)
+[12:03:52] <RazorSharpFang> Starthunder: It was coping 7GB of 4000+ files.
+[12:03:54] <DJ-C0L7[EIT]> ntfs is something like 1tb isnt it?
+[12:03:55] <Compu> havent dealt much with removeable filesystems lately
+[12:04:14] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[12:04:18] <Compu> DJ-C0L7[EIT]: no cuz im pretty sure it can handle even 4 TB drives
+[12:04:50] <Selina> ntfs is limited to 2tb
+[12:04:53] <Selina> without extentions
+[12:04:57] <Starthunder> RazorSharpFang: yes, but if it was taking longer than you expected, it may have /actually/ been writing 1TiB of useless data over 24000+ files(!)
+[12:05:22] <DJ-C0L7[EIT]> the 3tb drive i have now i had to do something like gpt to use the full drive
+[12:05:35] <DJ-C0L7[EIT]> otherwise NTFS was stopping dead in its tracks at 2.5tb
+[12:05:38] <Selina> Compu: it can't handle a 4tb drive with regular formatting.
+[12:05:56] <DJ-C0L7[EIT]> its NTFS-GPT or something like that
+[12:06:02] <Compu> Selina: then how do windows installers usually handle 4 TB drives?
+[12:06:07] <RazorSharpFang> How would I format the drive with the fat32 filesystem?
+[12:06:15] <Selina> Newer partitioning systems for initializing disks
+[12:06:29] <Selina> The original ntfs standard was limited to 2tb however
+[12:06:31] <DJ-C0L7[EIT]> as well as EFI instead of bios
+[12:06:35] <DJ-C0L7[EIT]> uEFI*
+[12:06:37] <RazorSharpFang> It's /dev/sdc
+[12:06:40] <Starthunder> Selina, DJ-C0L7[EIT]: I already asked you about #SharingIsCaring, right?
+[12:06:48] <DJ-C0L7[EIT]> i dont think so
+[12:07:00] <Selina> You did yea, I don't have a spare drive as my 3tb drive is now dead
+[12:07:41] <Selina> Anyway Compu the single file size limit of ntfs is 2tb anyway
+[12:07:54] <Selina> whether or not the partitioning system can handle making a disk /larger/ or not
+[12:08:13] <RazorSharpFang> WARNING: GPT (GUID Partition Table) detected on '/dev/sdc'! The util fdisk doesn't support GPT. Use GNU Parted.
+[12:08:20] <DJ-C0L7[EIT]> i had a 1tb drive derp out on me, which the new 3tb drive i purchased for a nas project ended up replacing the 1tb drive @_@ thank luna for clonezilla & dd
+[12:08:26] <Starthunder> DJ-C0L7[EIT]: in short, it's a backup-sharing group. We store backups in exchange for reciprocation, not money.
+[12:08:37] <DJ-C0L7[EIT]> ah, nice
+[12:08:41] *** init3 is now known as Init3-away
+[12:08:44] <Starthunder> Interested? x3
+[12:08:47] <Selina> Starthunder: If/when I get more drives in my system I'll gladly help out
+[12:08:59] * Starthunder nods.
+[12:09:00] <Selina> I'm looking into ways to get my hands on a couple of 3tb drives
+[12:09:08] <Starthunder> I'm scared an earthquake is going to happen between now and then though @.@
+[12:09:15] <Selina> I'm sad because I literally /just/ lost my drive :(
+[12:09:42] <Starthunder> doesn't matter how many ponies offer me space in November if an earthquake kills all my storage in October
+[12:09:46] <DJ-C0L7[EIT]> the backup box i have running on my network atm only has 4x 80gig Uata drives in raid 10, and 1x 60 and 1x 120 for system drives
+[12:10:11] <Compu> Starthunder: buy data center grade drives
+[12:10:19] <Selina> $$$
+[12:10:21] <Selina> >.>
+[12:10:22] <Starthunder> DJ-C0L7[EIT]: oooh…yeah, I'm expecting things to be on the tebibyte level here
+[12:10:30] * DJ-C0L7[EIT] nods
+[12:10:37] <Starthunder> for instance, I have ~0.5 TiB of backups and ~2.2 TiB of free space
+[12:10:59] <DJ-C0L7[EIT]> most of what that box sees though are normal drive backups (incremental) or migrations (OS upgrades and migwiz on windows boxes)
+[12:11:21] <Starthunder> https://www.blackl.net/sharing-is-caring.html#participants
+[12:11:22] <PinkiePieBot> [ Sharing is Caring ]
+[12:11:28] <Starthunder> (sha256 fingerprint is a1:9e:64:b8:27:23:f7:53:ac:5b:50:ff:86:ae:2f:a0:2c:08:eb:ca:7c:fe:90:68:8a:42:7e:90:10:de:2c:aa)
+[12:11:57] *** Joins: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[12:13:00] <DJ-C0L7[EIT]> i'm about to add a 2nd PSU, and a scsi raid of 3x 9gig U320 Cheetah (15,000 RPM) drives, and eventually a pair of either 1 or 2tb hard drives to add to the storage cache
+[12:13:59] <Compu> DJ-C0L7[EIT]: now get a 1,000,000,000 RPM drive :D
+[12:14:53] *** Quits: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[12:15:02] *** Quits: Hadjii (jircii@Pony-elc.omk.17.144.IP) (Connection closed)
+[12:15:03] <DJ-C0L7[EIT]> what, like a high-end server grade SAS
+[12:15:18] <DJ-C0L7[EIT]> 20K rpm lol
+[12:15:21] <RazorSharpFang> Does FAT32 support symbolic links?
+[12:15:41] <Compu> RazorSharpFang: no?? i dunno?
+[12:15:47] <DJ-C0L7[EIT]> you know, its been so long since i've done anything with FAT32, i dont remember
+[12:16:09] <DJ-C0L7[EIT]> >.< well, done anything with the exception of doing a forensic file recovery
+[12:18:28] *** Quits: Starthunder (blackl@property.of.lightningcrash) (Connection closed)
+[12:18:46] <DJ-C0L7[EIT]> brb
+[12:19:02] *** Joins: 142AFMPXC (blackl@property.of.lightningcrash)
+[12:21:28] *** 142AFMPXC is now known as Moonlightning
+[12:29:04] <DJ-C0L7[EIT]> bak
+[12:35:02] <Moonlightning> DJ-C0L7[EIT]: sorry, this got lost amid my random uplink failure and scramble to diagnose it and do other things too
+[12:36:47] <DJ-C0L7[EIT]> ah
+[12:37:49] <RazorSharpFang> cp: Cannot create symbolic link: Operation not permitted
+[12:38:04] <Moonlightning> On NTFS?
+[12:38:11] <RazorSharpFang> Nah, FAT32
+[12:38:26] <Moonlightning> FAT doesn't do symlinks, I guess
+[12:39:02] <Moonlightning> should be ENOTSUP instead of EPERM, though. WTF :/
+[12:40:38] <RazorSharpFang> This kernel requires the following features not present on your CPU: pae
+[12:40:45] <Moonlightning> :?
+[12:41:20] <RazorSharpFang> Why does i686 ubuntu require pae?
+[12:42:38] <Googie> I'm actually really surprised that your CPU doesn't support PAE.
+[12:44:07] <Googie> Anyway, the i686/Pentium pro has PAE.
+[12:58:00] *** Joins: Phase (Phase4@Pony-d9rtg7.internode.on.net)
+[13:01:26] <Moonlightning> Googie, Phase: what about you two?
+[13:01:56] <Phase> ?
+[13:02:02] * Googie blinks
+[13:02:12] <Moonlightning> Have I bugged you about #SharingIsCaring ?
+[13:03:23] <RazorSharpFang> Ugh, feels so dangerous using rm -rf <FOLDER>
+[13:04:22] <Moonlightning> It is. Drop the -f and add -I
+[13:04:35] <RazorSharpFang> What does that option do?
+[13:04:44] <Moonlightning> Try it. You'll like it.
+[13:04:59] <Moonlightning> Also get in the habit of staring at the prompt for a few seconds before you say yes
+[13:05:29] <RazorSharpFang> I did wait a tad, making sure it wasn't / or something equally disasterous.
+[13:11:53] *** Quits: nscoots (FreyGrimrod@Pony-cunnak.sub-70-192-33.myvzw.com) (Ping timeout: 121 seconds)
+[13:12:04] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[13:24:41] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[13:24:57] *** Selina is now known as Dusk
+[13:30:34] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[13:30:42] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[13:46:28] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[13:46:36] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[13:55:59] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "be back in a bit")
+[13:58:24] *** Joins: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[14:00:28] *** Joins: Ruthalas__ (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[14:01:35] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Ping timeout: 121 seconds)
+[14:03:35] *** Quits: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Ping timeout: 121 seconds)
+[14:36:28] *** Eventide|Sleepies is now known as Eventide
+[14:43:07] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Quit: Zzzzz)
+[14:54:56] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.never.fixed) (Quit: Going down for repairs, be back at some point.)
+[15:08:14] *** Joins: Gumball_Crash (GumballCras@Pony-svbp6u.nh.comcast.net)
+[15:11:14] *** Quits: GumballCrash (GumballCras@0.to.pony.10secondsflat) (Ping timeout: 121 seconds)
+[15:41:07] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[15:47:37] <Moonlightning> Can I maybe get the moarning American [continent] crowd to audit the invocation syntax for this program I'm writing?
+[15:48:01] <Moonlightning> https://www.blackl.net/pipemaster-usage.txt
+[15:48:08] <Moonlightning> (sha256 fingerprint is a1:9e:64:b8:27:23:f7:53:ac:5b:50:ff:86:ae:2f:a0:2c:08:eb:ca:7c:fe:90:68:8a:42:7e:90:10:de:2c:aa)
+[16:40:22] *** LightningCrash is now known as Double_Diamond
+[16:40:38] *** Double_Diamond is now known as Cloud_Kicker
+[16:43:49] *** Joins: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net)
+[17:27:32] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[17:29:34] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:43:41] *** Quits: Datalink (Datalink@Datalink) (Connection closed)
+[18:05:09] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Ping timeout: 121 seconds)
+[18:06:41] *** Joins: thatdguy (thatdguy@Pony-kd2.k8s.163.37.IP)
+[18:15:09] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:25:22] *** Quits: Fusl (Fusl@1.0.0.127.in-addr.arpa.li) (Ping timeout: 121 seconds)
+[18:25:40] *** Quits: thatdguy (thatdguy@Pony-kd2.k8s.163.37.IP) (Quit: Bye)
+[18:27:03] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[18:27:32] *** Fusl is now known as Pony_27906
+[18:45:20] *** Init3-away is now known as init3
+[18:48:27] *** Unixkitty is now known as Awaykitty
+[18:56:00] *** Soarin is now known as Gigabit
+[19:06:50] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Connection closed)
+[19:12:40] *** Joins: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se)
+[20:06:20] *** Gigabit is now known as Gigaway
+[20:11:42] *** zz_CyberJacob is now known as CyberJacob
+[21:06:53] *** CyberJacob is now known as zz_CyberJacob
+[21:16:14] *** Quits: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se) (Quit: Leaving.)
+[21:17:44] <Lapsus> Stealing Shutter's joke here, Techponies beach day! http://i.imgur.com/IfLGL3L.jpg
+[23:02:38] *** Gigaway is now known as Gigabit
+[23:05:14] <tiwake> 7 horsies
+[23:06:27] <DataByteBrony> that beach needs to be on my itinerary if i go to bronycon next year xD
+[23:06:52] <DataByteBrony> http://www.nps.gov/asis/learn/nature/horses.htm
+[23:06:53] <PinkiePieBot> [ Assateague's Wild Horses - Assateague Island National Seashore (U.S. National Park Service) ]
+[23:10:19] <Moonlightning> XD
+[23:12:34] *** Gigabit is now known as GigaWork
+[23:22:46] *** Quits: DataByteBrony (DataByte@Pony-2gvagd.g424.9euc.0247.2601.IP) (Ping timeout: 121 seconds)
+[23:34:31] <Moonlightning> So…I use light-on-dark terminals
+[23:35:00] <Moonlightning> Every time I get one of those gray graphical commandline dialogs, they tend to be very hard to read
+[23:40:52] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[23:52:59] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[23:59:14] *** Quits: Phase (Phase4@Pony-d9rtg7.internode.on.net) (Ping timeout: 121 seconds)

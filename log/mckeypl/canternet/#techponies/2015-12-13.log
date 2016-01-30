@@ -1,0 +1,297 @@
+[00:01:17] *** Quits: WuBzY (WuBzY@Pony-96m1hq.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[00:16:03] *** Quits: Melanosuchus (quassel@Pony-v0kagn.as13285.net) (Connection closed)
+[00:17:57] *** GigaWork is now known as Gigabit
+[00:31:29] <Sour_Sweet> This is test a message. Don't pay attention to me. http://example.com/path/file.html?param=value&param2=value2#HeyThisIsTheImportantPart
+[00:31:41] <Sour_Sweet> Weird
+[00:32:58] <Sour_Sweet> This is another test message. Don't pay attention to me. http://example.com/path/fileNoParamsNoExtension#HeyThisIsTheImportantPart
+[00:33:08] <Sour_Sweet> Yay a bug ...
+[00:35:53] <Ola> http://pastebin.com/77eNfmzK
+[00:35:53] <PinkiePieBot> [ cd1 = Solaris 2.5 SPARC Edition [704-4783-10 Revision A November 1995] cd2 = Up - Pastebin.com ]
+[00:35:55] * Ola made images ;3
+[00:44:35] *** zz_CyberJacob is now known as CyberJacob
+[00:44:44] <mniip> wii aji
+[00:44:46] <mniip> er
+[00:44:52] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[00:45:16] <mniip> well pinged anyway
+[00:47:35] <aji> =]
+[00:47:59] <mniip> aji, do you know anything about atheme
+[00:50:55] *** Joins: nscoots (FreyGrimrod@Pony-vgth6l.sub-70-192-5.myvzw.com)
+[00:52:02] *** Joins: Sin (Sin@is.hustlin.everyday)
+[00:52:20] *** Quits: nscoots (FreyGrimrod@Pony-vgth6l.sub-70-192-5.myvzw.com) (Quit: Leaving.)
+[00:54:23] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[00:54:24] <aji> mniip: i know a tihng or two
+[00:54:35] <mniip> aji, why can't I unload some modules :(
+[00:54:57] <mniip> what's especially frustrating is that I didn't request those modules via the config
+[00:54:59] <aji> you can mark a module as un-unloadable, the module author must have thought that was important
+[00:55:10] <PinkiePieBot> ...
+[00:55:29] <aji> mniip: which modules?
+[00:55:39] <mniip> well 'groupserv/main' for one
+[00:57:40] <AppleDash> aji: Do you know anything about IRC?
+[00:58:27] <aji> AppleDash: no
+[00:58:31] <AppleDash> oh
+[00:58:36] <PinkiePieBot> ...
+[00:58:37] <aji> mniip: yeah, most of the main are un-unloadable
+[00:58:47] <mniip> but why is it loaded in first place
+[00:58:58] <aji> another module is probably bringing it in as a dependency
+[00:59:00] <PinkiePieBot> ...
+[00:59:00] <aji> maybe
+[00:59:03] <aji> PinkiePieBot pls
+[00:59:08] <AppleDash> aji: Can you quiet PinkiePieBot it's fucking up
+[00:59:08] <mniip> which one
+[00:59:11] <AppleDash> see my channel
+[01:01:16] <aji> mniip: hm, quick greps it looks like memoserv/sendgroup hostserv/offer nickserv/listgroups will load groupserv/main
+[01:01:21] *** Joins: wolfyshy (woof@Pony-hi4k0u.votuvo.com)
+[01:01:22] <aji> maybe
+[01:01:28] <mniip> how do you grep that
+[01:01:52] <aji> oh, actually, just nickserv/listgroups
+[01:02:00] <aji> i grepped through the source for 'groupserv/main',
+[01:02:12] <aji> found a function use_groupserv_main_symbols defined in groupserv/groupserv.h that imports a bunch of things
+[01:02:22] <aji> grepped use_groupserv_main_symbols
+[01:02:31] <aji> see that nickserv/listgroups is calling it
+[01:03:27] <mniip> okay
+[01:03:28] <mniip> thank
+[01:09:20] * aji doots
+[01:13:11] *** Joins: Fallfeathers (Fallfeather@Pony-8980p6.bigpond.net.au)
+[01:14:21] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[01:15:33] *** Joins: Sin (Sin@is.hustlin.everyday)
+[01:20:15] <Starthunder> …why is PinkiePieBot doing that?
+[01:21:02] <AppleDash> Starthunder: If it says the same thing more than a certain number of times in a row it starts saying ...
+[01:21:09] <AppleDash> It was repeatedly spewing out error messages elsewhere
+[01:21:36] <Starthunder> Saying /.../ /everywhere?/
+[01:23:32] <Sour_Sweet> Is it that SQLite lock thing again? :D
+[01:23:49] <Kinsley> Sour_Sweet: yes.
+[01:23:53] <Kinsley> Sorta.
+[01:24:48] <Kinsley> I'm trying to catch an OperationalError, but with the way I imported sqlite3, it wasn't defined as just something I can call.
+[01:34:01] *** Pony_51348 is now known as Sakura
+[01:40:57] *** CyberJacob is now known as zz_CyberJacob
+[01:44:30] <Sombra> So I know that you can't SLI two different graphics cards.  However, can you plug both of them in, and dedicate one to physX?
+[01:45:23] <Sour_Sweet> I believe you can
+[01:45:38] <Sour_Sweet> same goes for CUDA iirc
+[01:46:29] <Sour_Sweet> Also the fact that you cannot use two different cards in SLI is an artificial restriction by nVidia
+[01:48:22] <Sour_Sweet> Keep in mind though that gains - especially for PhysX - are minimal
+[01:51:30] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[01:53:03] *** Gigabit is now known as Soarin
+[01:53:49] <Kinsley> Sombra: yes, but be careful what card you select to be dedicated to PhysX. A drastically weaker card can actually COST performance relative to having one card do both.
+[02:29:07] <Starthunder> https://imgur.com/JyQLpv8
+[02:29:07] <PinkiePieBot> [ Can't argue with that - GIF on Imgur ]
+[02:34:15] *** Joins: Asoka_White (Asoka@Pony-nkhtu6.net-htp.de)
+[02:35:22] *** Soarin is now known as Terrabyte
+[02:37:28] *** Quits: Asoka (Asoka@Pony-lpifhv.net-htp.de) (Ping timeout: 121 seconds)
+[02:39:33] *** Eventide is now known as Dustrunner
+[02:39:56] *** AppleDash is now known as Eventide
+[02:40:54] *** Dustrunner is now known as AppleDash
+[02:46:56] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[02:54:13] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[03:01:31] *** Terrabyte is now known as Gigabit
+[03:06:23] *** Joins: Sin (Sin@is.hustlin.everyday)
+[03:18:32] *** Sour_Sweet is now known as Seoson|BNC
+[03:19:07] <Starthunder> >> https://unix.stackexchange.com/questions/123717
+[03:19:08] <PinkiePieBot> [ shell - Why do I have to cd out of a deleted directory? - Unix & Linux Stack Exchange ]
+[03:19:16] <Starthunder> So I knew the answer to this question already
+[03:19:22] <Starthunder> But it kinda raises a couple more.
+[03:20:51] <Starthunder> If I make a directory, change to it, then unlink it, it becomes truly empty pending deletion (i.e. even the . and .. entries are removed)
+[03:21:02] <Starthunder> But I can still use .. to go up one directory
+[03:21:04] <Starthunder> Wat.
+[03:31:07] <tiwake> Colgate: poke
+[03:32:10] <tiwake> hmm
+[03:32:31] <tiwake> anyone know what the overhead is for wireless G connection?
+[03:32:51] <tiwake> or have a guess at
+[03:35:25] <ShivalWolf> isnt the stadnard wireless overhead like 22%
+[03:36:08] <ShivalWolf> also wireless doesnt just have an overhead that causes problem
+[03:36:18] <ShivalWolf> other access points or wireless on the same channls also block
+[03:36:53] <ShivalWolf> as wireless CTS packets to stop/start transnmission
+[03:38:31] <ShivalWolf> also bluetooth and other 2.4ghz stuff shitting all over the specturm
+[03:39:10] <ShivalWolf> 802.11 has to respect bluetooth but not the other way round
+[03:39:23] <ShivalWolf> so bluetooth really can mess with wireless if theres alot of it doing alot of bandwith in the area
+[03:48:43] <Starthunder> On a completely unrelated note, anypony know that tall comic with a ton of nested hypotheticals?
+[03:49:22] <Starthunder> It's like a guy on a train or something, striking up a conversation with a girl who sat next to him, but that ends up being a hypothetical
+[03:49:36] <Starthunder> And the guy strikes up a conversation, but it doesn't go as well, but /that/ ends up being a hypothetical
+[03:49:46] <Starthunder> And it goes on like that for several iterations
+[03:49:53] <Starthunder> I /think/ it was xkcd, but I'm not sure anymore
+[05:07:25] <HoneyDrops> http://arstechnica.com/tech-policy/2015/12/you-may-soon-need-a-licence-to-take-photos-of-that-classic-designer-chair-you-bought/ 
+[05:07:25] <PinkiePieBot> [ UK citizens may soon need licenses to photograph some stuff they already own | Ars Technica ]
+[05:07:42] <HoneyDrops> I don't even think one need enumerate the number of ways that makes no sense.
+[05:11:58] *** Parts: Phase (Phase4@Pony-q2igmo.internode.on.net) ("Leaving")
+[05:12:03] *** Joins: Phase (Phase4@Pony-q2igmo.internode.on.net)
+[05:17:04] *** zz_CyberJacob is now known as CyberJacob
+[05:26:32] *** CyberJacob is now known as zz_CyberJacob
+[05:31:07] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[05:33:04] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[06:35:33] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[06:48:59] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[06:59:00] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[06:59:03] <Starthunder> How you gonna put stuff on Craigslist?
+[07:08:35] *** Quits: Dusk (Dusk@dusky.horse) (Quit: Sorry, but sometimes people need a break. I'm gonna focus on life for a day or so, cya on the other side!)
+[07:11:32] <Kinsley> I can see where they're coming from: if an object is (considered) art, then the copyrights for that art should belong to original creator and license must be granted by that creator for further, derivative use. HOWEVER.
+[07:12:24] <Kinsley> If an object has utility beyond art, like a chair, or desk, or lamp, or phone or computer or whatever, then it's not really art, it's a thing you use.
+[07:12:47] <Kinsley> The design may be important, yes, perhaps even the primary purpose for being, but a chair is not a painting.
+[07:12:47] <HoneyDrops> But a photo of a object doesn't compete with an object.
+[07:12:55] <Kinsley> Exactly.
+[07:13:22] <Kinsley> Plus, I would argue for fair use: photographing a model who happens to sit in a chair, for instance.
+[07:13:23] <HoneyDrops> I could maybe see an argument for a photo of a purely visual work, eg: a painting.  
+[07:13:55] <HoneyDrops> Still, the basic policy should be: you can do whatever you damn well please with your things.
+[07:14:00] <Kinsley> Or a photo that just contains a chair, or a video that contains a chair, but the focus is on something else.
+[07:14:07] <Kinsley> ^^
+[07:14:21] <tiwake> meh
+[07:14:41] <HoneyDrops> Which is where European stuff like "moral rights" are silly to me.
+[07:14:42] <tiwake> I need to figure out why the wireless randomly drops on one of the two bands
+[07:15:34] <Kinsley> Copyright law is dumb and broken and helps no one.
+[07:15:41] <HoneyDrops> You buy a copyrighted work, it's yours to modify as you please.  You can't make and distribute copies, but you should be utterly free to change your copy however you like.
+[07:16:21] <Kinsley> I'd even make an argument for being able to distribute the modifications.
+[07:16:48] <HoneyDrops> You should at least be free to distribute the information to allow others to replicate your modification.
+[07:16:53] <Kinsley> Like an alternate dust cover for a book.
+[07:17:11] <HoneyDrops> I was thinking things like patches to software.
+[07:17:11] <tiwake> Kinsley: but if its a book and you change one letter...
+[07:17:23] <Kinsley> Or a script that takes an ebook and modifies certain pages or words to make it interesting or highlight certain things.
+[07:18:10] <Kinsley> tiwake: but if I gave you a set of instructions or pages to a book to change that book in any way, I'm not violating the copyrights of the author. The modification is separate.
+[07:18:36] <tiwake> oh
+[07:18:38] <tiwake> yeah
+[07:18:48] <Kinsley> But if I gave those modifications to you and you applied to some other book or edition of the same book, then it might not make any sense.
+[07:19:30] <tiwake> any ideas what to look for in this wireless router?
+[07:21:24] <Starthunder> That creates more problems, though.
+[07:21:29] <tiwake> http://www.dd-wrt.com/wiki/index.php/Image:Acces_point.jpg
+[07:21:40] <Starthunder> If you diff source code, the resulting patch includes bits of the original.
+[07:22:46] <tiwake> AccessPoint is what I'm configuring, or trying to anyway
+[07:23:09] <tiwake> maybe I need a different dd-wrt build
+[07:26:09] <HoneyDrops> Starthunder: you can do diffs that don't include the original work.  They are a bit trickier, but it's possible.
+[07:28:06] <HoneyDrops> eg: Replace char# w/ X, repeat.  Just offset/change.  It only works against a very specific original, and more advanced techniques can be more robust, but the idea that you can communicate the modifications w/o the parts original work is sound.
+[07:29:37] <HoneyDrops> But that aside, the very idea that someone feels they can sell me something and still have a say in how I use or modify it rubs me the wrong way.
+[07:32:16] <HoneyDrops> Which is why I completely oppose DRM and any devices or software that are locked from the user (the idea that uses must exploit flaws to root phones, consoles, etc is wrong).  The user should be the /only/ arbiter of what their possessions do (or do not do, as the case may be).
+[07:36:09] <Starthunder> Agreed.
+[07:36:13] <Starthunder> any ideas how to make that happen?
+[07:39:51] <HoneyDrops> For the foreseeable future I am not optimistic that things will change, however nor will the fact that securing devices against the user be a doomed endeavor.
+[07:40:46] <HoneyDrops> There are at least still enough people who can and will break the locks, if for no other reason than the challenge of breaking them.
+[07:43:22] <HoneyDrops> The lovely thing about computers is, they don't care, and there isn't any way to make them care.  They are general purpose, and any attempt to make them otherwise always amounts to an artificial lock.  And every lock will eventually be broken...
+[07:50:26] *** Gigabit is now known as Snoarin
+[07:55:27] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[08:07:22] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[08:23:58] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[08:31:23] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[08:37:57] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[09:06:59] *** Joins: Melanosuchus (quassel@Pony-e25fvq.as13285.net)
+[09:09:43] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[09:33:43] *** zz_CyberJacob is now known as CyberJacob
+[10:01:45] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[10:02:22] *** Quits: Webster (Webster@Pony-4eid99.fios.verizon.net) (Quit: Leaving)
+[10:22:58] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: sleepybat)
+[10:28:47] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[10:39:38] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[10:46:47] *** Joins: CrassyPaddles (test@Pony-ul7.enl.137.198.IP)
+[11:07:03] <Starthunder> HSTS headers apply to anything served over HTTP, even if it's not the mane resource, right?
+[11:07:50] <Starthunder> Like, if a webserver serves an HSTS header in response to a request for, say, an image embedded in a webpage, or a stylesheet, the client's supposed to honor the header the same it would any other, yeah?
+[11:18:01] *** CyberJacob is now known as zz_CyberJacob
+[11:24:58] *** Quits: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com) (Connection closed)
+[11:26:48] *** Joins: WuBzY (WuBzY@Pony-96m1hq.dhcp.inet.fi)
+[11:27:34] *** Quits: Apple_Bloom (sid52418@the.canon.pony) (Ping timeout: 121 seconds)
+[11:48:54] *** Joins: Apple_Bloom (sid52418@the.canon.pony)
+[11:50:35] *** Joins: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com)
+[11:52:59] <Starthunder> Ugh
+[11:53:28] <Starthunder> I want to pipe in data and get base16 out, no whitespace, no offset markings
+[11:53:40] <Starthunder> basically like base64, but 16 instead of 64
+[11:53:45] <Starthunder> Is that really too much to ask?
+[11:54:10] <Starthunder> od doesn't seem to be able to do this
+[11:54:17] <Starthunder> and I still can't figure out how to `hexdump -e`
+[12:01:49] <Starthunder> fuck it, I'm using Python
+[12:37:44] <ShivalWolf> Starthunder: xdd -p
+[12:37:54] <ShivalWolf> xxd sorry
+[12:38:18] *** Quits: Fallfeathers (Fallfeather@Pony-8980p6.bigpond.net.au) (Connection closed)
+[12:38:29] <ShivalWolf> echo "hello"|xxd -p
+[12:38:29] <ShivalWolf> 68656c6c6f0a
+[12:39:11] <Starthunder> GODS
+[12:39:12] <Starthunder> Thank you.
+[12:40:36] <ShivalWolf> last time i used that it was tacking binary onto the end of a PDF for an exploit
+[12:41:21] <Starthunder> dnssec-signzone
+[12:48:47] *** Joins: Dusk (Dusk@dusky.horse)
+[12:49:45] *** Dusk is now known as Pixel
+[12:59:41] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[13:26:11] *** Seoson|BNC is now known as Sour_Sweet|Mobile
+[13:35:05] *** Quits: WuBzY (WuBzY@Pony-96m1hq.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[14:14:12] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[14:52:22] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[15:03:14] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[15:03:47] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:18:07] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[15:34:22] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Quit: )
+[16:36:45] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[16:50:25] *** Sour_Sweet|Mobile is now known as Sour_Sweet
+[17:11:26] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[17:26:54] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-509.2jt.56.172.IP)))
+[17:27:32] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[17:46:54] *** Divide is now known as Divide|Support
+[17:53:24] *** Snoarin is now known as Gigabit
+[18:08:13] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[18:08:51] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Connection closed)
+[18:09:08] *** Joins: Xefir (xefir@Pony-uo38nj.1fe2.7gl6.e080.2a00.IP)
+[18:09:34] *** Unixkitty is now known as Unikitty
+[18:09:38] *** Unikitty is now known as Unixkitty
+[18:25:47] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[18:51:28] *** eyeburn is now known as Starburn
+[18:59:18] *** Divide|Support is now known as Divide
+[19:03:52] <mniip> aji, guess what
+[19:05:39] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[19:06:07] <mniip> I broke charybdis
+[19:08:49] <Gigabit> So, what would be the best free drive cloning software? Friend got me  a Samsung evo 250gb, and when it arrives I want to clone my drive on over and expand the volume out to the whole 225gb or what ever will be free :p
+[19:09:11] <Gigabit> And if it can boot via usb that would be great
+[19:09:26] <mniip> fdisk/parted?
+[19:09:45] <Gigabit> So UBCD then?
+[19:10:12] <Gigabit> Should have mentioned, winders not Linux
+[19:10:37] <Gigabit> Although I may use my smaller SSD for kubuntu or something.
+[19:13:11] <JustAberrant> Gigabit: a live cd with DD and your standard collection of tools, or acronis if you want to buy something
+[19:13:29] <Gigabit> DD?
+[19:13:33] <JustAberrant> * dd
+[19:13:47] <Gigabit> DD? XD
+[19:14:01] <Gigabit> ...and it capitalized it again
+[19:14:32] <JustAberrant> linux tool, does a byte level copy
+[19:15:13] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[19:15:49] <Gigabit> Oh
+[19:17:37] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[19:20:46] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[19:26:18] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Quit: Leaving.)
+[19:56:57] *** Quits: Xefir (xefir@Pony-uo38nj.1fe2.7gl6.e080.2a00.IP) (Connection closed)
+[19:58:43] *** Joins: Webster (Webster@Pony-4eid99.fios.verizon.net)
+[20:21:51] *** Gigabit is now known as Gigaway
+[20:28:35] *** Joins: WuBzY (WuBzY@Pony-194gjc.dhcp.inet.fi)
+[20:37:02] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[20:37:11] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[20:45:46] <Colgate> is PXE booting over wlan a thing yet? :P
+[20:46:31] *** Joins: Xefir (xefir@Pony-keknh8.1fe2.7gl6.e080.2a00.IP)
+[20:49:05] *** Joins: Kyle (f@ntasy)
+[20:50:26] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[20:58:22] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[20:59:33] <DJ-C0L7[EIT]> freaking weather screwing with my connection
+[21:41:34] *** Joins: SweetSkies (ciy@Circumstantial.Pegasus.SweetSkies)
+[21:46:31] *** Quits: WuBzY (WuBzY@Pony-194gjc.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[21:53:23] *** Quits: SweetSkies (ciy@Circumstantial.Pegasus.SweetSkies) (Ping timeout: 121 seconds)
+[21:54:19] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "bbl")
+[22:09:48] <Starthunder> Is there a way to tell gpg to deprecate a key? >.>
+[22:14:08] *** Joins: SweetSkies (ciy@Pony-e6f52n.ga.comcast.net)
+[22:14:38] *** SweetSkies is now known as Pony_55843
+[22:14:51] *** Quits: Pony_55843 (ciy@Pony-e6f52n.ga.comcast.net) (Quit: Lost terminal)
+[22:18:10] *** Joins: Tomsuth (Tomsuth@Pony-gichue.dyn.plus.net)
+[22:21:29] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:21:34] *** Parts: Tomsuth (Tomsuth@Pony-gichue.dyn.plus.net) ()
+[22:23:32] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[22:28:21] *** AppleDash is now known as Dustrunner
+[22:28:32] *** Eventide is now known as AppleDash
+[22:28:35] *** Dustrunner is now known as Eventide
+[22:31:38] <Phase> Starthunder, you mean revoke?
+[22:32:02] <Phase> gpg --gen-revoke
+[22:32:13] <Starthunder> …actually, I guess I should revoke it, too
+[22:34:27] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[22:48:58] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[22:50:25] *** Quits: Xefir (xefir@Pony-keknh8.1fe2.7gl6.e080.2a00.IP) (Connection closed)
+[22:54:40] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[22:55:10] *** Joins: SweetSkies (ciy@Circumstantial.Pegasus.SweetSkies)
+[23:06:19] *** Joins: Fallfeathers (Fallfeather@Pony-8980p6.bigpond.net.au)
+[23:10:38] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[23:15:48] *** Joins: WuBzY (androirc@Pony-j99i3c.rev.dnainternet.fi)
+[23:16:11] *** WuBzY is now known as WuBzY_MoBiLe
+[23:21:32] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[23:27:33] <Starthunder> TIL of the word /circumfix/
+[23:30:00] *** Quits: Phase (Phase4@Pony-q2igmo.internode.on.net) (Ping timeout: 121 seconds)
+[23:38:01] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:41:25] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[23:41:53] *** Joins: WuBzY_AwAy (androirc@Pony-5o2cna.bb.dnainternet.fi)
+[23:43:17] *** Quits: SweetSkies (ciy@Circumstantial.Pegasus.SweetSkies) (Ping timeout: 121 seconds)
+[23:45:35] *** Quits: WuBzY_MoBiLe (androirc@Pony-j99i3c.rev.dnainternet.fi) (Ping timeout: 121 seconds)
+[23:52:26] *** Quits: WuBzY_AwAy (androirc@Pony-5o2cna.bb.dnainternet.fi) (Ping timeout: 121 seconds)

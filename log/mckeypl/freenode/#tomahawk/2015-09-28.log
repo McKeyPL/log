@@ -1,0 +1,181 @@
+[00:15:52] *** Quits: ysiak (ysiak@gateway/web/scrollback.io/x-iidzapedrswnuvyn) (Ping timeout: 246 seconds)
+[00:20:20] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[00:43:37] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Read error: Connection reset by peer)
+[01:06:06] <kurros> Anyone know how I can force Tomahawk to use the Spotify binary in Linux? Or what needs to be changed? https://paste.kde.org/pl4rqr4do
+[01:06:08] <tomabee> [ KDE Paste | paste.kde.org |  ]
+[01:06:48] <muesli> might be a missing qca plugin
+[01:07:39] <muesli> kurros: which package / distro?
+[01:08:13] <kurros> hmm, that is possible, qca got an ABI bump in Ubuntu Wily 15.10.
+[01:08:18] <kurros> built tomahawk from git
+[01:08:24] <muesli> with qt5 or 4?
+[01:08:57] <kurros> 4
+[01:10:17] <muesli> hm, check your installed qca* packages
+[01:14:59] <kurros> that was it, needed the ossl plugin package
+[01:15:03] <kurros> you rock
+[01:16:40] <kurros> apt-get build-dep didn't catch that one
+[01:17:52] <kurros> though it was probably stopped by depending on libqca2 and not libqca2v5
+[01:18:01] <kurros> thanks
+[01:36:37] <muesli> no problem. the official ubuntu package is sadly terribly outdated. not sure about its build deps
+[01:36:49] <muesli> the ppa stuff should contain it though
+[01:38:34] <kurros> ppa isn't building for wily yet, dunno how much work that is.
+[01:41:14] <kurros> the libqca abi bump is the only reason thats important, really. can't have both simultaneously
+[01:42:26] <kurros> also, if anyone else had anxiety that Tomahawk plays don't count towards Spotify's Discover Weekly playlist, all API plays do https://community.spotify.com/spotify/board/message?board.id=content&message.id=1681#M1681
+[01:42:29] <tomabee> [ The Spotify Community | community.spotify.com | https://spotify.i.lithium.com/t5/image/serverpage/avatar-name/Walk/avatar-theme/candy/avatar-collection/Spotify_New/avatar-display-size/message ]
+[03:33:37] *** Joins: ovedes51 (~ovedes5@gateway/web/scrollback.io/x-qgtwxxqpltncobnb)
+[03:33:41] *** Joins: mueslix (~muesli@server1.muehlhaeuser.de)
+[03:33:58] *** Joins: thomasbonte_ (sid4377@gateway/web/irccloud.com/x-mzkdnwcsgvstwsrt)
+[03:35:47] *** Joins: modul (~mo@limu.coffee.liberejo.de)
+[03:36:30] *** Joins: xdarklight_ (~freenode@unaffiliated/xdarklight)
+[03:36:52] *** Quits: blueyed (~daniel@hahler.de) (Disconnected by services)
+[03:37:08] *** Joins: j_ohny_b (~jb@limu.coffee.liberejo.de)
+[03:37:14] *** Joins: blueyed_ (~daniel@hahler.de)
+[03:38:43] *** Quits: ovedes5 (guest-oved@gateway/web/scrollback.io/x-pjkcbcclpjagczxl) (Ping timeout: 250 seconds)
+[03:38:43] *** Quits: thomasbonte (sid4377@gateway/web/irccloud.com/x-jxqocizmclfmalfq) (Ping timeout: 250 seconds)
+[03:38:43] *** Quits: muesli (~muesli@server1.muehlhaeuser.de) (Ping timeout: 250 seconds)
+[03:38:44] *** Quits: pinak (pinakahuja@gateway/shell/kde/x-kkyigpqsajwqyxsd) (Ping timeout: 250 seconds)
+[03:38:45] *** mueslix is now known as muesli
+[03:38:47] *** Quits: dukedave (sid666@gateway/web/irccloud.com/x-uawrlpjncjknykwn) (Ping timeout: 250 seconds)
+[03:38:47] *** Quits: xdarklight (~freenode@unaffiliated/xdarklight) (Ping timeout: 250 seconds)
+[03:38:47] *** Quits: lorenzh (~lorenz@4z2.de) (Ping timeout: 250 seconds)
+[03:38:50] *** Quits: mohn (~mo@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[03:38:50] *** Quits: michiwend (~quassel@michiwend.com) (Ping timeout: 250 seconds)
+[03:38:50] *** Quits: tilal6991 (~tilal6991@unaffiliated/tilal6991) (Ping timeout: 250 seconds)
+[03:38:50] *** Quits: danimo (~daniel@kde/danimo) (Ping timeout: 250 seconds)
+[03:38:50] *** Quits: Mamarok (myriam@amarok/team/mamarok) (Ping timeout: 250 seconds)
+[03:38:51] *** Quits: MrMaffen (~MrMaffen@server1.muehlhaeuser.de) (Ping timeout: 250 seconds)
+[03:38:51] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Ping timeout: 250 seconds)
+[03:38:52] *** Quits: johnyb (~jb@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[03:38:52] *** Joins: danimo (~daniel@2a01:4f8:130:24a6:1::104)
+[03:38:52] *** Joins: pinak (pinakahuja@gateway/shell/kde/session)
+[03:38:52] *** Joins: yofel (~quassel@2a01:4f8:150:40cb::2)
+[03:38:52] *** Quits: yofel (~quassel@2a01:4f8:150:40cb::2) (Changing host)
+[03:38:52] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[03:38:52] *** Quits: danimo (~daniel@2a01:4f8:130:24a6:1::104) (Changing host)
+[03:38:52] *** Joins: danimo (~daniel@kde/danimo)
+[03:38:53] *** Quits: pinak (pinakahuja@gateway/shell/kde/session) (Changing host)
+[03:38:53] *** Joins: pinak (pinakahuja@gateway/shell/kde/x-pyqispvqzssaisso)
+[03:38:53] *** Joins: tilal6991_ (~tilal6991@2001:41d0:8:bd7b::1)
+[03:39:15] *** Joins: lorenzh (~lorenz@4z2.de)
+[03:39:16] *** thomasbonte_ is now known as thomasbonte
+[03:39:17] *** tilal6991_ is now known as tilal6991
+[03:39:17] *** Quits: tilal6991 (~tilal6991@2001:41d0:8:bd7b::1) (Changing host)
+[03:39:17] *** Joins: tilal6991 (~tilal6991@unaffiliated/tilal6991)
+[03:42:24] *** Joins: MrMaffen (~MrMaffen@server1.muehlhaeuser.de)
+[03:42:57] *** Joins: michiwend (~quassel@michiwend.com)
+[03:45:18] *** Joins: dukedave (sid666@gateway/web/irccloud.com/x-vycprsthexawvrzu)
+[03:45:40] *** Joins: Mamarok (myriam@amarok/team/mamarok)
+[04:10:40] <toma-cat> Added new crash-report for version 1.0.1 (Android)
+[05:48:45] *** Joins: mgue1 (~mgue@x590fb685.dyn.telefonica.de)
+[05:51:31] *** Quits: mgue (~mgue@f049189165.adsl.alicedsl.de) (Ping timeout: 246 seconds)
+[08:49:48] *** Guest36842 is now known as wmp
+[08:49:59] *** Quits: wmp (~wmp@auburn.sored.pl) (Changing host)
+[08:49:59] *** Joins: wmp (~wmp@sored/admin/wmp)
+[09:51:57] *** Quits: pprkut (hwiesinger@slackbuilds.org) (Quit: Changing server)
+[10:01:46] *** Joins: pprkut (hwiesinger@slackbuilds.org)
+[10:19:52] *** j_ohny_b is now known as johnyb
+[11:00:52] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[11:27:56] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[12:01:34] *** Quits: blueyed_ (~daniel@hahler.de) (Quit: WeeChat 1.3-dev)
+[12:01:59] *** Joins: blueyed (~daniel@hahler.de)
+[12:05:06] *** Joins: alsuren (~alsuren@host86-145-53-47.range86-145.btcentralplus.com)
+[12:08:54] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[12:09:55] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[12:13:35] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[12:14:48] *** Quits: alsuren (~alsuren@host86-145-53-47.range86-145.btcentralplus.com) (Quit: alsuren)
+[12:16:06] *** Joins: alsuren (~alsuren@host86-145-53-47.range86-145.btcentralplus.com)
+[12:54:16] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[13:16:37] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[14:14:51] *** Quits: alsuren (~alsuren@host86-145-53-47.range86-145.btcentralplus.com) (Quit: alsuren)
+[14:56:59] *** Joins: morsik (morsik@darkserver.it)
+[14:57:22] <morsik> hello there. I'm trying out Tomahawk, but it can't scrobble trakcs to Last.FM.
+[14:57:32] <morsik> I logged in, synced loved tracks, synced playback history…
+[14:57:44] <morsik> but I just can't scrobble even it says that login is correct :<
+[14:57:55] <morsik> what should I looking for?
+[14:58:50] <muesli> morsik: it sounds like an issue on last.fm's side right now
+[14:59:15] <muesli> morsik: you could check your logfile
+[14:59:22] <morsik> denied Tomahawk, or what? Spotify scrobbles (but i'm trying Google Music right now)
+[15:00:13] <muesli> morsik: it only fails for some users. they didn't ban tomahawk
+[15:00:18] <morsik> void Tomahawk::InfoSystem::LastFmInfoPlugin::onAuthenticated() "Got error in Last.fm authentication job: Authentication Failed - You do not have permissions to access the service" 
+[15:00:35] <muesli> aha!
+[15:01:00] <morsik> muesli: but trying "Check Login" says "Success"
+[15:01:06] <morsik> (just tried wrong pass, and it tells "Failed")
+[15:01:41] <morsik> it's 0.8.4 on Fedora 21 (from Fedora's repo). The same problem on Fedora 22 (afaik 0.8.4 too)
+[15:02:05] <muesli> morsik: i'd mail them. it usually recovers after a while for most users
+[15:12:35] <morsik> actually I hate Tomahawk's UI… but i'll give it a change. And there's nothing else that can use Google Music :D
+[15:12:53] <morsik> Clementine can't talk with Google Music, and Nuvola… ugh… I just don't like web players.
+[15:18:36] <morsik> muesli: now I see:
+[15:18:39] <morsik> pon. wrz 28 2015 - 15:18:15 [0]: void Tomahawk::InfoSystem::LastFmInfoPlugin::nowPlaying(const QVariant&) LastFmInfoPlugin::nowPlaying no m_scrobbler, or cannot convert input! 
+[15:18:42] <morsik> pon. wrz 28 2015 - 15:18:15 [0]: void Tomahawk::InfoSystem::LastFmInfoPlugin::nowPlaying(const QVariant&) No scrobbler! 
+[15:18:49] <morsik> doesn't looks like previous error…
+[15:23:02] <muesli> yeah, means those entries probably get cached right now since it couldn't auth
+[15:32:59] *** Joins: WillisMan (~Thunderbi@88.96.238.246)
+[15:52:17] <morsik> muesli: btw, how Tomahawk uses Google Music? It this implementation is copied from gmusicapi or what?
+[15:55:54] <muesli> morsik: yeah, it's the reverse engineered api
+[15:57:33] <morsik> muesli: oh, most important question for me… don't laugh… it's possible to sort albums by year? :D
+[16:22:06] <muesli> morsik: i wouldn't laugh, it's often requested and will come in one of the next releases
+[16:22:47] <morsik> put year before album name ;)
+[16:23:22] <morsik> muesli: Tomahawk looks quite advanced if we say about technologies, but it's quite naked if we talk about configuration options…
+[16:23:47] <morsik> i looked thorugh menus multiple times to find some Preferences cause I couldn't believe it's just that simple window with plugins…
+[16:24:11] <muesli> morsik: what kind of preferences do you look for?
+[16:24:36] <morsik> not sure yet hah :D but looking into prefs is first thing i'm doing in almost every app
+[16:25:06] <morsik> also gui (for me) is not really intuitive so I was just looking for some UI settings
+[16:26:09] <morsik> also strange is that Google Music doesn't works in "flat" view… shouldn't it be 1 model behind that displays flat model/tree views/album view/artist view/etc?
+[16:26:38] <morsik> for now it's impossible to play eveyrthing and shuffle (or I just don't see such option?)
+[16:26:58] <muesli> morsik: no, because not all services would support the flat model
+[16:27:18] <muesli> flat collection will be supported with 0.9 tho
+[16:27:44] <muesli> e.g. for some you can only first list artists, then drill down to albums, then tracks from there
+[16:28:22] <morsik> yeah I know, but shouldn't be store in some backend model anyway that could be used by all those views?
+[16:28:43] <morsik> (yeah, in such cases that model could be not filled with all data…)
+[16:29:06] <morsik> (or could be pre-loaded after logging to service) ;)
+[16:29:26] <muesli> sounds rather hacky ;-)
+[16:37:30] <morsik> not for me… but well :D
+[16:37:40] <morsik> muesli: also… cloud services need some update button.
+[16:37:58] <morsik> as i see I need to restart Tomahawk to update Google Music libary… :<
+[17:02:37] *** Quits: WillisMan (~Thunderbi@88.96.238.246) (Quit: WillisMan)
+[17:27:15] <lfranchi> morning
+[17:34:53] <HorusHorrendus> morning lfranchi
+[17:38:14] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[18:48:53] *** Joins: alsuren (~alsuren@host86-145-53-47.range86-145.btcentralplus.com)
+[18:59:40] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[19:01:41] *** Joins: workingenv (c1882185@gateway/web/freenode/ip.193.136.33.133)
+[19:02:06] <muesli> morsik: a refresh button is coming with 0.9, too :)
+[19:02:38] <workingenv> do you use any ide to work on your branches? or just plain text editor?
+[19:02:52] <muesli> qt creator / kdevelop / visual studio
+[19:02:56] <muesli> pretty much anything works
+[19:03:28] <workingenv> thanks
+[19:24:23] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[19:34:33] <lfranchi> <3 kdevelop
+[19:55:00] <workingenv> do you use any of them specifically for gui development, for example?
+[19:56:22] *** Quits: alsuren (~alsuren@host86-145-53-47.range86-145.btcentralplus.com) (Quit: alsuren)
+[19:56:36] <muesli> workingenv: kdevelop & qt creator have integration for qt designer, yes
+[19:56:55] <muesli> the way tomahaw is currently styled tho, a bunch of work is also done in code
+[20:03:36] *** Quits: workingenv (c1882185@gateway/web/freenode/ip.193.136.33.133) (Ping timeout: 246 seconds)
+[20:12:15] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[20:18:39] *** Quits: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com) (Remote host closed the connection)
+[20:32:27] *** Joins: workingenv (5e3cd43b@gateway/web/freenode/ip.94.60.212.59)
+[20:33:23] *** Quits: workingenv (5e3cd43b@gateway/web/freenode/ip.94.60.212.59) (Client Quit)
+[20:39:26] *** Quits: h4ndy (H4ndy@ipv6.gemini.panicbnc.net) (*.net *.split)
+[20:39:42] *** Joins: h4ndy (H4ndy@ipv6.gemini.panicbnc.net)
+[20:43:38] *** Joins: alsuren (~alsuren@host86-145-53-47.range86-145.btcentralplus.com)
+[21:05:01] *** Quits: hrtcrw (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370) (Ping timeout: 252 seconds)
+[21:08:21] *** Joins: svetter_ (~svetter@2001:8e0:2003:fe00:6495:98f9:b29d:de4e)
+[21:12:52] *** Quits: allsor1 (guest-alls@gateway/web/scrollback.io/x-qphlgrqaxpxarpld) (Ping timeout: 246 seconds)
+[21:32:05] *** Quits: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr) (Ping timeout: 240 seconds)
+[21:37:10] *** Joins: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com)
+[21:39:43] *** Joins: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr)
+[21:42:36] <tomabee> @HikariSx mentioned: @tomahawk thanks for answer.I hope you can manage making plugin sooner so we can use Hatchet with Winamp :) site went out &amp; looks promissing [<no value>]
+[21:44:34] <theli_ua> who uses winamp in 2015 anyway
+[21:44:49] <theli_ua> I mean, I loved it 15 years ago
+[21:47:38] <tomabee> @HikariSx mentioned: @tomahawk hope Hatchet will be for users and not for commercial purposes like they did with old Last.fm &gt;_&lt; thanks for opening this site :) [<no value>]
+[22:40:40] *** Joins: svetter__ (~svetter@2001:8e0:2003:fe00:455d:d98a:85cc:c7c0)
+[22:42:18] *** Quits: svetter_ (~svetter@2001:8e0:2003:fe00:6495:98f9:b29d:de4e) (Ping timeout: 240 seconds)
+[22:44:17] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[23:07:15] *** Quits: alsuren (~alsuren@host86-145-53-47.range86-145.btcentralplus.com) (Quit: alsuren)
+[23:18:05] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[23:34:07] <theli_ua> MrMaffen: ping
+[23:34:24] <MrMaffen> theli_ua: pong
+[23:34:45] <theli_ua> MrMaffen: so, is having both TomahawkUrlType and Tomahawk.UrlType intended?
+[23:34:55] <MrMaffen> theli_ua: only the latter
+[23:35:06] <theli_ua> MrMaffen: because you use both in tidal
+[23:35:34] <MrMaffen> oh that's definitely not intended
+[23:44:11] *** Quits: svetter__ (~svetter@2001:8e0:2003:fe00:455d:d98a:85cc:c7c0) (Quit: Leaving...)

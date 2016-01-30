@@ -1,0 +1,70 @@
+[01:57:13] *** Quits: shhx (~shhx@80.64.134.37.dynamic.jazztel.es) (Read error: Connection reset by peer)
+[05:25:36] *** Quits: Stannum (~Robotroni@82-197-195-74.dsl.cambrium.nl) ()
+[06:11:45] *** Quits: StalKermit (~StalKermi@unaffiliated/stalkermit) (Read error: Connection reset by peer)
+[08:32:54] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[08:38:09] *** Joins: jackforward (~jack@p200300700D4BDF298C6D205EA42BC82B.dip0.t-ipconnect.de)
+[09:06:29] *** Joins: ZdrytchX (~zdrytchx@27-33-98-203.static.tpgi.com.au)
+[09:25:06] *** Quits: jotik (~7f000001@unaffiliated/jotik) (Ping timeout: 240 seconds)
+[09:41:10] *** Joins: jotik (~7f000001@unaffiliated/jotik)
+[13:36:11] *** Quits: Forty-3 (~kvirc@pool-71-191-219-16.washdc.fios.verizon.net) (Ping timeout: 264 seconds)
+[13:46:05] *** Quits: Undeference (~msk@2001:470:1f07:1427:a478:9577:58b4:1309) (Quit: Leaving.)
+[14:13:31] *** Joins: StalKermit (~StalKermi@unaffiliated/stalkermit)
+[14:18:18] *** Quits: StalKermit (~StalKermi@unaffiliated/stalkermit) (Ping timeout: 265 seconds)
+[14:42:51] *** Joins: StalKermit (~StalKermi@unaffiliated/stalkermit)
+[15:06:50] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Read error: Connection reset by peer)
+[15:11:46] *** Joins: shhx (~shhx@80.64.134.37.dynamic.jazztel.es)
+[15:14:22] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[15:23:10] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Read error: Connection reset by peer)
+[15:23:58] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[15:25:26] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Read error: Connection reset by peer)
+[15:42:24] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[15:42:43] *** Quits: jotik (~7f000001@unaffiliated/jotik) (Quit: No Ping reply in 180 seconds.)
+[15:43:48] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Read error: Connection reset by peer)
+[15:45:02] *** Joins: jotik (~7f000001@unaffiliated/jotik)
+[15:46:14] *** Joins: Timbo_ (~tma@cpc5-sgyl28-2-0-cust125.sgyl.cable.virginm.net)
+[15:50:23] *** Quits: Timbo (~tma@tremulous/developer/timbo) (Ping timeout: 250 seconds)
+[16:46:49] *** Quits: ZdrytchX (~zdrytchx@27-33-98-203.static.tpgi.com.au) (Read error: Connection reset by peer)
+[16:49:21] *** Joins: Stannum (~Robotroni@82-197-195-74.dsl.cambrium.nl)
+[17:21:24] *** Joins: quuxman (~ac@ec2-184-73-183-206.compute-1.amazonaws.com)
+[17:22:22] <quuxman> when I run Tremulous it just opens the console with a lot of errors like "1Error: file ui/joinserver.menu, line 1: file ui/menddef.h not found"
+[17:25:06] <scv> you need an updated version of tremulous
+[17:25:18] <scv> recent glibc changes caused an assumption in older versions of trem to no longer work and cause that error
+[17:25:30] <quuxman> Just found the thread on the forum that says this
+[17:26:02] <quuxman> where's the source?
+[17:26:35] <scv> what version are you trying to play
+[17:26:36] <scv> 1.1 or gpp
+[17:26:40] *** Joins: ImQ009 (~ImQ009@unaffiliated/imq009)
+[17:26:52] <quuxman> gpp? Whatever's most recent
+[17:27:20] <scv> you should be able to use the version on github but i'm not 100% sure
+[17:27:26] <scv> https://github.com/darklegion/tremulous
+[17:34:53] <dGr8LookinSparky> the current gpp branch on that repo doesn't use the gpp protocol (protocol 70) anymore, it uses protocol 71, but that would still work on the GrangerPub, GrangerClub, and test7341 servers, but not on any pure gpp servers.
+[17:43:15] <quuxman> haven't figured out how to work around "Couldn't load default.cfg"
+[17:53:17] *** Quits: illwieckz (~illwieckz@unvanquished/developer/illwieckz) (Ping timeout: 268 seconds)
+[17:56:14] *** Quits: Neo (~neo@opennic/Neo) (Ping timeout: 268 seconds)
+[17:58:21] *** Joins: McKeyPL (~McK@irc.antyklay.pl)
+[17:58:21] *** Server sets mode: +Ccnt 
+[18:04:52] *** Quits: illwieckz (~illwieckz@unvanquished/developer/illwieckz) (*.net *.split)
+[18:04:52] *** Quits: McKey (~McK@irc.antyklay.pl) (*.net *.split)
+[18:04:52] *** Quits: Neo (~neo@opennic/Neo) (*.net *.split)
+[18:04:53] *** McKeyPL is now known as McKey
+[18:05:27] *** Joins: illwieckz (~illwieckz@unvanquished/developer/illwieckz)
+[18:08:39] *** Joins: Pevel (pevel@unvanquished/developer/pevel)
+[18:42:02] *** Quits: Stannum (~Robotroni@82-197-195-74.dsl.cambrium.nl) ()
+[19:47:59] *** Quits: taiyo (~taiyo@i-83-67-10-10.freedom2surf.net) (Remote host closed the connection)
+[20:18:57] *** Joins: taiyo (~taiyo@i-83-67-10-10.freedom2surf.net)
+[20:22:00] *** Quits: StalKermit (~StalKermi@unaffiliated/stalkermit) (Ping timeout: 255 seconds)
+[20:47:59] *** Quits: jackforward (~jack@p200300700D4BDF298C6D205EA42BC82B.dip0.t-ipconnect.de) (Ping timeout: 240 seconds)
+[20:55:17] *** Quits: ImQ009 (~ImQ009@unaffiliated/imq009) (Quit: Leaving)
+[21:00:35] *** Joins: jackforward (~jack@p200300700D4BDFF48C6D205EA42BC82B.dip0.t-ipconnect.de)
+[21:56:37] *** Joins: Stannum (~Robotroni@82-197-195-74.dsl.cambrium.nl)
+[22:09:12] *** Quits: shhx (~shhx@80.64.134.37.dynamic.jazztel.es) (Ping timeout: 264 seconds)
+[22:46:18] *** Quits: jackforward (~jack@p200300700D4BDFF48C6D205EA42BC82B.dip0.t-ipconnect.de) (Quit: Ex-Chat)
+[22:46:31] *** Joins: shhx (~shhx@80.64.134.37.dynamic.jazztel.es)
+[22:48:20] <quuxman> looks like there are missing files. I have no pk3 files anywhere
+[22:49:08] <quuxman> "0 files in pk3 files"
+[23:07:19] *** Quits: Who-[Soup] (~soup@p57A5070C.dip0.t-ipconnect.de) (Ping timeout: 240 seconds)
+[23:08:00] *** Joins: Undeference (~msk@2001:470:1f07:1427:4418:608f:80d4:42c2)
+[23:13:25] *** Joins: Who-[Soup] (~soup@p57A51643.dip0.t-ipconnect.de)
+[23:21:04] *** Joins: Norfenstein (~Norfenste@tremulous/developer/Norfenstein)
+[23:21:04] *** ChanServ sets mode: +o Norfenstein
+[23:51:32] *** Quits: Pevel (pevel@unvanquished/developer/pevel) (Ping timeout: 265 seconds)

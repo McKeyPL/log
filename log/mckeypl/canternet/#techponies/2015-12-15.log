@@ -1,0 +1,487 @@
+[00:01:11] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[00:11:05] *** Quits: Melanosuchus (quassel@Pony-pet3h3.as13285.net) (Connection closed)
+[00:17:57] *** Quits: Quindo (Quindo@Pony-8qt.17k.198.99.IP) (Ping timeout: 121 seconds)
+[00:18:20] *** Joins: Quindo (Quindo@Pony-8qt.17k.198.99.IP)
+[00:29:06] <init3> Who was I talking to in here about my boss saying he wanted to move our 70/30 linux/windows shop to 100% Windows?
+[00:31:22] <DJ-C0L7[EIT]> prepair for chaos
+[00:31:31] <JustAberrant> hehe
+[00:31:37] <init3> Well long story short I inadvertently got him to admit that makes no sense and to start playing with Linux at home. 
+[00:31:47] <JustAberrant> even as someone who generally hates windows, may not be all bad ;p
+[00:31:58] <JustAberrant> depends on what your business does
+[00:32:21] <init3> Online software development and data aggregation. 
+[00:32:49] <JustAberrant> so not a lot of office drones using word and outlook then?
+[00:33:33] <JustAberrant> in which case it probably makes the most sense to stick with whatever platform works best with your toolstack ;p
+[00:33:58] <init3> No, there are. Our workstations are all Windows. We have Windows domain controllers are whatnot. 
+[00:34:03] <JustAberrant> if the bulk of your software is c++ and has been running on linux targets forever, then switching to windows is gonna be absolutely pain
+[00:34:11] <init3> But our applications are Tomcat 
+[00:34:13] <init3> java
+[00:34:18] <JustAberrant> if it's java, it matters a lot less
+[00:34:22] <init3> Right
+[00:34:24] <Stik> tomcat runs very well under windows
+[00:34:35] <JustAberrant> especially if it's an app server and you don't have a tonne of shell scripts/environment crap ;p
+[00:35:12] <JustAberrant> hehe yeah, sorry, but going all windows might not be a terrible plan ;p
+[00:35:28] <init3> I don't mind utilizing windows a bit more, but I think that it makes no sense to spend the time (and license) on a windows file server when samba can integrate into AD for example.  
+[00:35:41] <init3> and already is
+[00:35:51] <JustAberrant> well the question to ask is "why"
+[00:36:05] <JustAberrant> and then fight it with metrics
+[00:36:11] <JustAberrant> (or prove his point with them)
+[00:36:27] <JustAberrant> I suspect he didn't wake up one day and go "lets spend money for the hell of it"
+[00:36:35] <JustAberrant> there's probably something driving the initial desire
+[00:36:47] <JustAberrant> some perceived savings or capability
+[00:37:06] <init3> Well he just started a month ago. Let me put it this way: My boss is a MS partner himself, has a surfacebook and a fucking windows phone. 
+[00:37:38] <init3> Fully admits to being a windows fanboy (I've never met one in the wild before)
+[00:37:43] <JustAberrant> hehe, well that's good then, but at the same time "cause it's what the higher up is comfortable with" is often reason enough ;p
+[00:38:17] <init3> Well I don't think he'd be able to convince /his/ bosses to spend the money on winderps. 
+[00:38:50] <init3> Not without one of the systems engineers bringing a lot of hard data that I simply don't think exists. 
+[00:38:59] <init3> I unno
+[00:39:21] *** Joins: Webster (Webster@Pony-4eid99.fios.verizon.net)
+[00:39:28] <JustAberrant> hehe, well, spending money to gain nothing is a hard sell, but it can be done
+[00:39:37] <JustAberrant> see: anyone that's paid for IBM products
+[00:39:52] <init3> Though they are probably making all our java devs move to .NET so obviously we'll be using Windows a lot more than currently. 
+[00:40:14] <init3> But some things just /should/ be Linux. 
+[00:41:18] <JustAberrant> it's becoming a harder sell, because much as I hate to admit it, windows does do enterprise better in a lot of ways
+[00:41:21] <DJ-C0L7[EIT]> you can run .net in linux, there is a toolkit for that from M$
+[00:41:28] <JustAberrant> in particular mass deployment
+[00:41:54] <JustAberrant> to get to the same place with Linux takes a lot more effort, especially if your talking workstations and not servers
+[00:42:02] <JustAberrant> * you're
+[00:42:04] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[00:42:10] <init3> Like we are pulling all our web/app servers from being directly accessable from the internet. We came up with the idea of having redundant nginx reverse proxy servers instead of running tomcat/apache on every container. 
+[00:42:47] <JustAberrant> also I have to go make supper ;p
+[00:43:00] <init3> We use MS AD for workstations
+[00:43:04] <init3> Ok later. 
+[00:43:07] <DJ-C0L7[EIT]> afk looks like i'll be calling 2 tow trucks
+[00:43:13] <init3> wat
+[00:43:26] <init3> Did the first tow truck die?
+[00:43:40] <DJ-C0L7[EIT]> we have two people parked blocking a 3rd in
+[00:43:46] <DJ-C0L7[EIT]> in an unauthorised location
+[00:44:28] <init3> Oh
+[00:44:36] <init3> Tow the douchebags
+[00:45:07] <DJ-C0L7[EIT]> as i said, looks like i'll be calling two tow trucks here in a minute if they dont move their vehicles, i've already notified the foreman
+[00:45:20] <DJ-C0L7[EIT]> i'm giving them 5 minutes
+[00:57:31] <DJ-C0L7[EIT]> one of them moved the other looks like hes talking to the foreman
+[01:03:18] *** Joins: Fallfeathers (Fallfeather@Pony-8980p6.bigpond.net.au)
+[01:04:06] *** Joins: Sombra (Iceman@Darkhorse21)
+[01:11:28] <init3> x=0;y=0;while [[ $y -lt 500 ]] ; do xdotool mousemove --polar $x $y ; x=$(($x+4));y=$(($y+1)); sleep 0.01; done
+[01:11:32] <init3> do it
+[01:31:46] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:50:35] *** \m is now known as mniip
+[02:07:29] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[02:08:13] *** Joins: Sin (Sin@is.hustlin.everyday)
+[02:13:56] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: I WILL RETURN.)
+[02:27:56] *** Joins: TSparkle3395 (TSparkle339@Owner.ARBronyRadio.com)
+[02:29:48] *** Joins: Asoka (Asoka@Pony-hnep0g.net-htp.de)
+[02:32:57] *** Quits: Asoka_White (Asoka@Pony-jgj43i.net-htp.de) (Ping timeout: 121 seconds)
+[02:39:08] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:41:26] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[03:06:18] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[03:14:50] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[03:15:12] *** Sour_Sweet is now known as Sour_Sweet|BNC
+[03:29:34] *** Joins: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net)
+[03:29:58] *** Quits: Quindo (Quindo@Pony-8qt.17k.198.99.IP) (Connection closed)
+[03:31:02] *** Quits: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net) (Quit: Leaving)
+[03:31:57] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[03:34:52] *** Joins: TuxRug (TuxRug@TuxRug)
+[03:47:39] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[03:48:05] *** Joins: Phase (Phase4@Pony-q2igmo.internode.on.net)
+[04:06:23] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[04:17:05] <Starthunder> init3: your whitespace is horribly inconsistent
+[04:17:16] <Starthunder> also, what
+[04:20:22] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[04:24:38] <init3> i didn't write it but do it
+[04:24:55] <init3> trust
+[04:40:00] <DJ-C0L7[EIT]> quick question to anypony who messes with python, wtf is "quitter.py" and why do i need it?
+[04:40:16] <Starthunder> Never heard of it.
+[04:40:17] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[04:40:17] * JustAberrant doesn't have xdotool, but guessing that just movies the mouse around wildly
+[04:40:38] <Starthunder> JustAberrant: in a specific pattern, no doubt. I'm wondering what that pattern is.
+[04:40:42] <mniip> DJ-C0L7[EIT], it could be anything
+[04:40:52] <mniip> JustAberrant, a linear spiral it looks like
+[04:40:59] <DJ-C0L7[EIT]> >.< i have a python script i downloaded that wont work, i've tried modifying it and i managed to get elements to work, but the whole script doesnt work because it tells me that "quitter" contains invalid arguments
+[04:41:09] <JustAberrant> Starthunder: should be easy to figure out by plugging it into a plotting program/etc ;p
+[04:41:20] <JustAberrant> or just doing the mental arithmetic
+[04:41:24] <mniip> [06:38:37] <Starthunder> JustAberrant: in a specific pattern, no doubt. I'm wondering what that pattern is.
+[04:41:32] <JustAberrant> .. or waiting till mniip does the mental arithmetic ;p
+[04:41:42] <mniip> tsin(4t), tcos(4t)
+[04:41:46] <DJ-C0L7[EIT]> and if i remove #quitter it freaks out and tells me that there are elements missing @_@ i think i'm gonna have to take this script, tear it apart, and built it again from scratch
+[04:42:12] <Starthunder> O.o;
+[04:42:20] <Starthunder> You remove a comment and the meaning of the code changes?
+[04:42:23] <Starthunder> that's some sketchy shit
+[04:43:03] <mniip> JustAberrant, Starthunder http://www.wolframalpha.com/input/?i=x%3Dtsin%284t%29%2C+y%3Dtcos%284t%29+where+t%3D0+to+100
+[04:43:10] <PinkiePieBot> [ x=tsin(4t), y=tcos(4t) where t=0 to 100 - Wolfram|Alpha ]
+[04:43:14] <mniip> er
+[04:43:16] <mniip> to 10
+[04:43:19] <mniip> but anyway
+[04:44:14] * JustAberrant nods
+[04:44:29] <Starthunder> Ahh, figures.
+[04:44:31] <JustAberrant> way more mental effort than I was willing to invest in that, I was happy with "moves the mouse around" ;p
+[04:44:32] <Starthunder> That's actually exactly what I was imagining.
+[04:44:37] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[04:46:06] * JustAberrant removes much of mniip 's whimsy
+[04:46:55] <mniip> dude
+[04:47:07] <mniip> the optimizer is working
+[04:47:14] <mniip> https://bpaste.net/show/37ea377c61e6
+[04:47:16] <PinkiePieBot> [ show at bpaste ]
+[04:50:34] <Phase> nice
+[05:04:04] *** mniip is now known as \m
+[05:27:54] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[05:29:11] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[05:36:26] *** Quits: TuxRug (TuxRug@TuxRug) (Connection closed)
+[05:37:07] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[06:03:08] <init3> y'all plotted my evil plot?
+[06:03:14] <init3> crai
+[06:04:18] <init3> But I got to make that pun, so it is a consolation. 
+[06:12:23] *** Joins: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net)
+[06:14:24] *** Joins: Princess_QRS (Corey@Pony-ipvgi3.ed.shawcable.net)
+[06:14:48] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[06:15:50] *** Joins: Sombra (Iceman@Darkhorse21)
+[06:17:14] *** Quits: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net) (Ping timeout: 121 seconds)
+[06:28:13] *** Gigabit is now known as Snoarin
+[06:44:24] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[07:10:31] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[07:26:05] *** Quits: Sombra (Iceman@Darkhorse21) (Connection closed)
+[07:26:35] *** Quits: Webster (Webster@Pony-4eid99.fios.verizon.net) (Quit: Leaving)
+[07:27:35] *** Quits: AutoLapsus (Lapsus@Totally.Is.A.Network.Service) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: Sin (Sin@is.hustlin.everyday) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: MangoBloom (djazz@djazz.se) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: Princess_QRS (Corey@Pony-ipvgi3.ed.shawcable.net) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: Dusk (Dusk@dusky.horse) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: wolfyshy (woof@fluttering.shyly.through.the.forest) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: Snoarin (Gigabit@Bazinga) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: Divide (NA@Pony-vf5hfh.cable.rogers.com) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: Finnfinn (Finnfinn@finn.isher) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: Colgate (rabbit@brushie.horse) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: nightbot (vinylderpy@Pony-mgr.5s9.50.70.IP) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: Starthunder (blackl@property.of.lightningcrash) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: sleumas2000 (sleumas2000@my.little.karaoke) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:35] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (cadance.canternet.org cloudchaser.canternet.org)
+[07:27:40] *** Quits: Shutter (tips@sudoku.prevention.hotline) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: misiek200m (miskof@mysterious.chocolate.muffin) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Lorix_ (Lorix_@flutter.shy.yay) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: klaxa (klaxa@Pony-ail.8pm.0.134.IP) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Ola (ola@Pony-k5v.64a.226.188.IP) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: eyeburn (eyeburn@secret.den.of.flaming.evil) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: GeekBrony (GB@bronydom.net) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Sellyme (quassel@Pony-bphb4u.of.saltspork.com) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: HoneyDrops (Honey@sweeter.than.honey) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: zz_CyberJacob (CyberJacob@Pony-dom.9o9.247.54.IP) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Obaskyr (Tachy@Pony-1uupgo.range109-151.btcentralplus.com) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: JustAberrant (JustAberran@Pony-lq4qe0.com) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: derpy (derp@muffins) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: LightningCrash (lightning@property.of.moonlightning) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: tiwake (Octavia@Pony-16dov0.wa.charter.com) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Eventide (uid61788@Tips.Fedora) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: floogulinc (floogulinc@Pony-3j8.717.99.192.IP) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Gumball (GumballCras@0.to.pony.10secondsflat) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: catnickfl (catnickfl@catnickfl.bronytv.net) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Kinsley (JKinsley@Bow.To.Your.Princess) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Datalink (Datalink@Datalink) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: miggyb (miggyb@horsetornado.co.uk) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: aji (alex@ajitek.net) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Lapsus (Lapsus@i-forget.ca) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Moka (rylai@libgryphon.so) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: enginemaniac (flail@flail.flail.flail) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: SilverEagle (SilverEagle@SilverEagle.is.best.pony) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: jaderain (jaderain@jaderain.is.best.pony) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Darki (DK@Pony-44f.v38.82.80.IP) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Garophel (garophel@Pony-jt2b62.net) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: saneki (saneki@Pony-tni.g4k.31.96.IP) (discord.canternet.org cadance.canternet.org)
+[07:27:40] *** Quits: Sakura (Sakura@is.a.very.derpy.pony) (discord.canternet.org cadance.canternet.org)
+[07:28:48] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[07:29:38] *** Joins: sleumas2000 (sleumas2000@my.little.karaoke)
+[07:29:38] *** Joins: Datalink (Datalink@Datalink)
+[07:29:38] *** Joins: Obaskyr (Tachy@Pony-1uupgo.range109-151.btcentralplus.com)
+[07:29:38] *** Joins: klaxa (klaxa@Pony-ail.8pm.0.134.IP)
+[07:29:38] *** Joins: Garophel (garophel@Pony-jt2b62.net)
+[07:29:38] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[07:29:38] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[07:29:38] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[07:29:38] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[07:29:38] *** Joins: miggyb (miggyb@horsetornado.co.uk)
+[07:29:38] *** Joins: HoneyDrops (Honey@sweeter.than.honey)
+[07:29:38] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[07:29:38] *** Joins: misiek200m (miskof@mysterious.chocolate.muffin)
+[07:29:38] *** Joins: SilverEagle (SilverEagle@SilverEagle.is.best.pony)
+[07:29:38] *** Joins: catnickfl (catnickfl@catnickfl.bronytv.net)
+[07:29:38] *** Joins: Colgate (rabbit@brushie.horse)
+[07:29:38] *** Joins: Sakura (Sakura@is.a.very.derpy.pony)
+[07:29:38] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[07:29:38] *** Joins: aji (alex@ajitek.net)
+[07:29:38] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[07:29:38] *** Joins: jaderain (jaderain@jaderain.is.best.pony)
+[07:29:38] *** Joins: Eventide (uid61788@Tips.Fedora)
+[07:29:38] *** Joins: AutoLapsus (Lapsus@Totally.Is.A.Network.Service)
+[07:29:38] *** Joins: floogulinc (floogulinc@Pony-3j8.717.99.192.IP)
+[07:29:38] *** Joins: Sellyme (quassel@Pony-bphb4u.of.saltspork.com)
+[07:29:38] *** Joins: wolfyshy (woof@fluttering.shyly.through.the.forest)
+[07:29:38] *** Joins: Darki (DK@Pony-44f.v38.82.80.IP)
+[07:29:38] *** Joins: Ola (ola@Pony-k5v.64a.226.188.IP)
+[07:29:38] *** Joins: Kinsley (JKinsley@Bow.To.Your.Princess)
+[07:29:38] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[07:29:38] *** Joins: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[07:29:38] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[07:29:38] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[07:29:38] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[07:29:38] *** Joins: Shutter (tips@sudoku.prevention.hotline)
+[07:29:38] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[07:29:38] *** Joins: Moka (rylai@libgryphon.so)
+[07:29:38] *** Joins: Gumball (GumballCras@0.to.pony.10secondsflat)
+[07:29:38] *** chrysalis.canternet.org sets mode: +oooqov aji AutoLapsus Kinsley Lapsus Lapsus AppleDash
+[07:29:38] *** Joins: tiwake (Octavia@Pony-16dov0.wa.charter.com)
+[07:29:38] *** Joins: nightbot (vinylderpy@Pony-mgr.5s9.50.70.IP)
+[07:29:38] *** Joins: Divide (NA@Pony-vf5hfh.cable.rogers.com)
+[07:29:38] *** Joins: MangoBloom (djazz@djazz.se)
+[07:29:38] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[07:29:38] *** Joins: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net)
+[07:29:38] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[07:29:38] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[07:29:38] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[07:29:38] *** Joins: Lorix_ (Lorix_@flutter.shy.yay)
+[07:29:38] *** Joins: Dusk (Dusk@dusky.horse)
+[07:29:38] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[07:29:38] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[07:29:38] *** Joins: saneki (saneki@Pony-tni.g4k.31.96.IP)
+[07:29:38] *** Joins: Finnfinn (Finnfinn@finn.isher)
+[07:29:38] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[07:29:38] *** Joins: zz_CyberJacob (CyberJacob@Pony-dom.9o9.247.54.IP)
+[07:29:38] *** Joins: derpy (derp@muffins)
+[07:29:38] *** Joins: Sin (Sin@is.hustlin.everyday)
+[07:29:38] *** Joins: Snoarin (Gigabit@Bazinga)
+[07:29:38] *** Joins: Jouva (jouva@Pony-535ork.fios.verizon.net)
+[07:29:38] *** Joins: GeekBrony (GB@bronydom.net)
+[07:29:38] *** Joins: enginemaniac (flail@flail.flail.flail)
+[07:29:38] *** Joins: Starthunder (blackl@property.of.lightningcrash)
+[07:42:21] *** Quits: WuBzY (androirc@Pony-n7m1ee.rev.dnainternet.fi) (Quit: WuBzYs 0ut)
+[07:42:31] *** Joins: WuBzY (androirc@Pony-n7m1ee.rev.dnainternet.fi)
+[07:47:53] *** Joins: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[07:50:45] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Ping timeout: 121 seconds)
+[07:57:51] *** Eventide is now known as Eventide|Sleepies
+[08:01:19] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Connection closed)
+[08:03:16] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[08:04:09] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[08:07:25] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:17:12] *** Joins: Melanosuchus (quassel@Pony-pet3h3.as13285.net)
+[08:40:00] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:51:34] *** Quits: Datalink (Datalink@Datalink) (Connection closed)
+[08:54:39] *** zz_CyberJacob is now known as CyberJacob
+[09:07:35] *** Quits: Shutter (tips@sudoku.prevention.hotline) (cadance.canternet.org daring.canternet.org)
+[09:07:35] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (cadance.canternet.org daring.canternet.org)
+[09:07:35] *** Quits: misiek200m (miskof@mysterious.chocolate.muffin) (cadance.canternet.org daring.canternet.org)
+[09:07:35] *** Quits: Lorix_ (Lorix_@flutter.shy.yay) (cadance.canternet.org daring.canternet.org)
+[09:07:35] *** Quits: klaxa (klaxa@Pony-ail.8pm.0.134.IP) (cadance.canternet.org daring.canternet.org)
+[09:07:35] *** Quits: Ola (ola@Pony-k5v.64a.226.188.IP) (cadance.canternet.org daring.canternet.org)
+[09:07:57] *** Quits: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net) (Ping timeout: 121 seconds)
+[09:08:20] *** Joins: Shutter (tips@sudoku.prevention.hotline)
+[09:08:20] *** Joins: klaxa (klaxa@Pony-ail.8pm.0.134.IP)
+[09:08:20] *** Joins: misiek200m (miskof@mysterious.chocolate.muffin)
+[09:08:20] *** Joins: Lorix_ (Lorix_@flutter.shy.yay)
+[09:08:20] *** Joins: Ola (ola@Pony-k5v.64a.226.188.IP)
+[09:08:20] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[09:24:13] *** Joins: Datalink (Datalink@Datalink)
+[09:28:37] *** CyberJacob is now known as zz_CyberJacob
+[09:30:47] *** Quits: Melanosuchus (quassel@Pony-pet3h3.as13285.net) (Connection closed)
+[09:46:43] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[10:03:42] *** Joins: Xefir (xefir@Pony-ci7.430.142.83.IP)
+[11:01:55] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[11:04:17] <MangoBloom> quiet here :3
+[11:08:29] <Lapsus> Well, it is 5am
+[11:08:48] <MangoBloom> america only chat? :P
+[11:09:03] <Lapsus> Nope :p
+[11:09:10] <MangoBloom> 11 am here
+[11:09:41] <Lapsus> It's usually pretty quiet regardless, but some of the most active users are on the american continents
+[11:12:04] <locodash11[server]> I'm only awake in reverse hours, but no one else is on to talk to
+[11:28:45] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[11:30:42] *** Quits: WuBzY (androirc@Pony-n7m1ee.rev.dnainternet.fi) (Connection closed)
+[11:49:25] <miggyb> You would think more night owls would be awake here
+[12:06:26] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[12:21:55] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[12:22:42] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Quit: )
+[12:34:51] *** Joins: WuBzY (androirc@Pony-n7m1ee.rev.dnainternet.fi)
+[13:00:12] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[13:00:53] *** Eventide|Sleepies is now known as Eventide
+[13:32:41] *** Quits: Fallfeathers (Fallfeather@Pony-8980p6.bigpond.net.au) (Connection closed)
+[13:38:22] *** Quits: WuBzY (androirc@Pony-n7m1ee.rev.dnainternet.fi) (Quit: WuBzYs 0ut)
+[13:44:09] *** Joins: WuBzY (WuBzY@Pony-uies7q.dhcp.inet.fi)
+[13:44:15] *** Quits: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Connection closed)
+[13:44:28] *** Joins: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[14:29:58] <roflin> 14:30 here *yawn*
+[14:30:20] <roflin> my brain is just about active enough to do some jekyll hacking.
+[14:59:26] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[15:03:06] *** Quits: TSparkle3395 (TSparkle339@Owner.ARBronyRadio.com) (Ping timeout: 121 seconds)
+[15:26:33] *** Joins: Quindo (Quindo@Pony-8qt.17k.198.99.IP)
+[16:08:52] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (The TLS connection was non-properly terminated.)
+[16:12:14] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[16:19:42] *** Quits: Eventide (uid61788@Tips.Fedora) (Ping timeout: 121 seconds)
+[16:20:41] *** Joins: Eventide (uid61788@Tips.Fedora)
+[16:39:50] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:40:33] *** Joins: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net)
+[16:49:10] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[17:01:29] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[17:13:29] *** Snoarin is now known as Gigabit
+[17:30:58] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[17:33:32] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[17:59:45] *** Quits: Xefir (xefir@Pony-ci7.430.142.83.IP) (Ping timeout: 121 seconds)
+[18:07:19] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[18:09:18] *** Quits: Phase (Phase4@Pony-q2igmo.internode.on.net) (Ping timeout: 121 seconds)
+[18:35:14] *** eyeburn is now known as Starburn
+[18:40:27] *** \m is now known as mniip
+[18:48:10] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[18:58:32] *** mniip is now known as \m
+[19:09:39] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[19:11:38] *** Joins: Melanosuchus (quassel@Pony-dm40vd.as13285.net)
+[19:17:51] *** Quits: Starthunder (blackl@property.of.lightningcrash) (Ping timeout: 121 seconds)
+[19:18:05] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[19:41:10] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[20:14:59] <Quindo> So, Data Center Ponies... Do you ever get a server that is just a lemon?
+[20:16:30] <roflin> combustable lemons?
+[20:17:00] <Quindo> continually freezing in the command line, ect.
+[20:17:36] <Colgate> is it a dedi or vps?
+[20:17:52] <Quindo> It keeps on going into a ISE500 when we have not even deployed production code to it.  Dedi
+[20:18:00] <Quindo> We pay another company for our servers.
+[20:18:10] <Colgate> ISE500?
+[20:18:26] <Quindo> Internal Server Error 500
+[20:21:24] <johnsey> dedicated? load average?
+[20:22:35] <Quindo> welp, can not check cause it is down again.  XP
+[20:22:52] <Quindo> though it might be cause the tech took it down to do tests or something.
+[20:29:31] <Quindo> evidently it is an issue with the raid controller, so they are replacing it.
+[20:45:14] <Moonlightning> Mmm, that'll do it
+[20:45:43] <Moonlightning> Pretty hard to function when you can't even the root filesystem
+[20:52:39] *** Joins: Asoka_White (Asoka@Pony-hkdapu.net-htp.de)
+[20:55:24] *** Quits: Asoka (Asoka@Pony-hnep0g.net-htp.de) (Ping timeout: 121 seconds)
+[21:20:41] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[21:25:45] *** Joins: WuBzY_AwAy (androirc@Pony-n7m1ee.rev.dnainternet.fi)
+[21:29:58] *** Quits: WuBzY (WuBzY@Pony-uies7q.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[21:30:58] *** Quits: WuBzY_AwAy (androirc@Pony-n7m1ee.rev.dnainternet.fi) (Quit: WuBzYs 0ut)
+[21:31:10] *** Joins: WuBzY (androirc@Pony-n7m1ee.rev.dnainternet.fi)
+[21:35:56] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[21:40:45] *** Quits: WuBzY (androirc@Pony-n7m1ee.rev.dnainternet.fi) (Connection closed)
+[21:43:21] *** Joins: WuBzY (androirc@Pony-n7m1ee.rev.dnainternet.fi)
+[21:46:17] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[22:03:43] <Gigabit> so techponies, cousin just got a new smart tv, it has only hdmi, component, hd component, dsub, and optical. He also got a samsung giga 3400 hifi, the place told him it can work surround for the tv, how? XD
+[22:04:08] <Gigabit> I tried audio out component to the samsung audio in
+[22:04:10] <Gigabit> and nothing
+[22:04:43] <Moonlightning> throw it out; get a Linux box and a TV-sized monitor
+[22:04:48] <Moonlightning> profit
+[22:10:28] <Gigabit> nevermind I got it
+[22:15:14] *** Joins: Xefir (xefir@Pony-fs8jcl.1fe2.7gl6.e080.2a00.IP)
+[22:22:20] *** Parts: WeAreBorg (WeAreBorg@Resistance.Is.Futile) ("Leaving")
+[22:36:08] <Sour_Sweet|BNC> The moment you realize you cannot clone your SD card because android fucking secure storage.
+[22:36:20] *** Sour_Sweet|BNC is now known as Sour_Sweet
+[22:36:28] *** Joins: Sombra (Iceman@Darkhorse21)
+[22:39:01] <Gigabit> how good is the Intel® HD Graphics 520
+[22:39:40] <Quindo> Mobile?
+[22:41:50] <Gigabit> yep, and I found the spec sheet for that too.
+[22:56:59] *** Parts: WuBzY (androirc@Pony-n7m1ee.rev.dnainternet.fi) ("WuBzYs 0ut")
+[23:02:07] <Sour_Sweet> And the Steam 2FA apps displays the code in the lock screen even though I've enabled privacy settings for notifications -.- How hard is it to get that right?
+[23:02:39] <Colgate> you know what would be really nice of steam?
+[23:02:47] <Colgate> an easy way to backup your pivate key for 2fa
+[23:03:09] <Colgate> how hard is *that* to get right?
+[23:03:34] <Colgate> surprise valve! hardware dies! I want to back it up!
+[23:03:43] <Colgate> or have multiple devices with the same auth key
+[23:03:56] <Sour_Sweet> You get a recovery key
+[23:04:17] <Colgate> still doesn't solve my last line
+[23:04:18] <Sour_Sweet> I think even the Google Auth app doesn't support backups
+[23:04:37] <Colgate> I have a tablet and a phone, I want both to be able to unlock it
+[23:04:42] <Colgate> is that too much to ask?
+[23:05:03] <Sour_Sweet> Can't you just login on both devices?
+[23:05:20] <Sour_Sweet> (in the Steam Mobile App)
+[23:05:47] <Sour_Sweet> Never checked that, but I expected it would display the 2FA on all devices for that account
+[23:05:58] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[23:06:01] * Googie just wishes it was using an open standard like TOTP
+[23:06:36] <Sour_Sweet> I have to use Authy for CloudFlare, that annoys me even more
+[23:06:37] <Colgate> Sour_Sweet: no, it won't allow you, says another device is already linked
+[23:07:02] <Sour_Sweet> That's dumb
+[23:07:09] <Colgate> yup
+[23:07:24] <Sour_Sweet> You could use e-mail auth I guess though
+[23:07:36] <Colgate> that's not really 2fa
+[23:09:07] <Colgate> google authenticator doesn't let you export either
+[23:09:10] *** Kyoro is now known as Pocky
+[23:09:11] <Colgate> wth, why the hell not?
+[23:09:50] <Sour_Sweet> I'm pretty sure they let you remove the 2fa if you prove access to the e-mail that's connected with steam. Will take a day or two
+[23:10:13] <Sour_Sweet> So 2FA as far as Steam goes only is another barrier
+[23:12:21] <Colgate> I don't want to remove it?
+[23:12:34] <Colgate> I just want multiple devices able to have the same unlock code
+[23:13:26] <Colgate> I mean, I can do that anyways since I own my devices and have root(and I do do this), it is just stupid that it isn't easier
+[23:13:30] <Sour_Sweet> No I meant in case somebody gets access to your password
+[23:13:51] <Sour_Sweet> (which hopefully is not the same as the one on your mail account :P)
+[23:13:58] <Colgate> honestly, I don't care about my steam account at all
+[23:14:09] <Colgate> there is literally nothing someone can do to that that would hurt me
+[23:14:26] <Sour_Sweet> VAC bans suck
+[23:14:34] <Colgate> only if you play on public servers
+[23:14:48] <Colgate> I only ever play on private servers with people I know
+[23:15:55] <Sour_Sweet> Having your account VAC flagged would suck non the less. It removes trading for some games, it will hurt your reputation ...
+[23:16:18] <Colgate> my reputation? with who? :P
+[23:16:22] <Sour_Sweet> Some games will lock you out of multiplayer completely (e.g. CoD)
+[23:16:48] <Colgate> CoD doesn't even allow you to host your own servers iirc
+[23:17:17] <Sour_Sweet> It doesn't have servers, but still uses VAC
+[23:17:33] <Sour_Sweet> Well the first part depends on the version though
+[23:18:11] <Sour_Sweet> The later is true for any modern CoD (>4 or WaW)
+[23:18:23] <Colgate> sounds like a game I don't want to support then
+[23:18:37] <Sour_Sweet> Yeah it's pretty bad
+[23:18:39] <Colgate> in fact, unless that was in the EULA, I would sue
+[23:19:25] <Colgate> class action that shit, they broke their agreement
+[23:19:52] <Sour_Sweet> Good luck
+[23:20:36] <Colgate> pssh, they would probably ssettle
+[23:20:56] <Colgate> they wouldn't want to go to court, would cost too much
+[23:21:14] <Sour_Sweet> I don't know of any success attempt in the EU and it's not like they didn't try
+[23:21:29] <Sour_Sweet> successful*
+[23:22:12] <Sour_Sweet> The only thing they did achieve is steam refunds
+[23:22:38] <Unixkitty> Who are you guys suing? I'm trying to read the conversation, but still not following
+[23:23:08] <Sour_Sweet> Which was established by VALVe because local law would have forced them anyway and pro consumer ngos were preparing to sue them
+[23:23:20] <Sour_Sweet> Unixkitty: VALVe / Steam
+[23:23:43] <Unixkitty> What did they do?
+[23:24:03] <Sour_Sweet> It's a theoretical discussion
+[23:24:11] <Colgate> blocked access to a prgram's advertised features for reasons not mentioned in the EULA
+[23:24:19] <Colgate> that you purchased the rights to use
+[23:25:57] <Unixkitty> Aren't purchases in Steam "subscriptions"?
+[23:26:12] <Colgate> still bound by the EULA
+[23:27:05] <HoneyDrops> I still don't see how VAC flies, it's spyware as far as I'm concerned.
+[23:27:21] <Unixkitty> Makes me wonder why I never read it properly
+[23:28:04] <Colgate> when valve goes under, there's gonna be a lot of angry people XD
+[23:28:05] <Sour_Sweet> More interesting imho is if they are legally allowed to VAC ban you in case of an obviously hijacked account
+[23:28:41] <Sour_Sweet> I have doubts
+[23:29:20] <HoneyDrops> I'm pretty sure they have a blanket "we can terminate this at any time for any reason" clause to cover that.
+[23:29:50] <Sour_Sweet> Which is probably invalid under German/EU law
+[23:31:34] <Sour_Sweet> I never had any of my accounts flagged. I actually support the zero tolerance policy, but that doesn't mean there are no edge cases
+[23:32:17] <HoneyDrops> I don't see it as being Valve's place to police.
+[23:32:50] <Colgate> each game company should do it themselves
+[23:33:04] <Colgate> it is their game, valve is just a distributor
+[23:33:18] <Sour_Sweet> Well they don't. It's a game devs choice to use VAC and how to handle bans after all
+[23:34:06] <Unixkitty> I have my account flagged, but beyond some kids in multiplayer fps games pointing it out for their reasons, it doesn't really affect anything in any way
+[23:34:17] <HoneyDrops> I wouldn't even say it's the game companies' place to police cheating -- it's the server admin.  Game companies should, however, design and code the game to mitigate potential cheats.
+[23:34:40] <Unixkitty> Besides the game in question being locked that is of course
+[23:35:10] <Gigabit> aparently I have a microsoft cert and did not know it
+[23:35:23] <Colgate> HoneyDrops: each game could have a digitally signed key by the game company
+[23:35:33] <Colgate> then just check the public key, bam
+[23:35:34] <Unixkitty> And what if there are no "server admins" and multiplayer is p2p with dynamic hosts?
+[23:35:36] <johnsey> Gigabit: quick, burn it before anybody notices!
+[23:36:01] <Gigabit> x.x
+[23:36:22] <HoneyDrops> Unixkitty: example?  In that case don't lets peers join you don't already trust.
+[23:36:37] <Sour_Sweet> CoD
+[23:36:45] <Unixkitty> ^
+[23:37:08] <Sour_Sweet> GTA:O, but that doesn't use VAC
+[23:37:28] <Sour_Sweet> p2p bullshit is more common than dedicated servers these days
+[23:37:33] <HoneyDrops> The only way to be 100% sure you're not playing with cheaters is play singleplayer.  Barring that, play only with people you trust.  If you play with random peons, assume and accept cheating as a given.
+[23:37:58] <Unixkitty> Or "trust in the system"
+[23:41:22] <HoneyDrops> The problem with VAC is that Valve, nor game companies should be monitoring a system they do not own.
+[23:43:44] <Unixkitty> You do realize that companies willingly sign agreements for Valve to do that, right?
+[23:44:44] *** Quits: Melanosuchus (quassel@Pony-dm40vd.as13285.net) (Connection closed)
+[23:47:55] <Colgate> ban by peer ID or something
+[23:48:17] <Unixkitty> "peer ID"?
+[23:48:38] <Colgate> an ID unique to each license of the game

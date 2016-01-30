@@ -1,0 +1,860 @@
+[00:07:56] <Ola> https://dl.dropboxusercontent.com/u/14556313/SAM_5098.JPG
+[00:08:41] <roflin> oh my windows mobile
+[00:08:57] <JustAberrant> hehe
+[00:15:32] <Ola> Windows CE 3.0
+[00:25:13] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[00:25:14] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Connection closed)
+[00:25:51] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[00:53:42] *** Joins: Hickory (Iceman@Darkhorse21)
+[01:09:55] *** Joins: Skids (ejd@Pony-fej07d.res.rr.com)
+[01:38:23] <JustAberrant> I'll raise you http://justaberrant.com/images/old_junk/e2.jpg  ;p
+[01:38:30] <JustAberrant> (probably posted that here before) 
+[01:38:39] <Vigil_Heart> haha
+[01:47:23] *** Quits: Hickory (Iceman@Darkhorse21) (Quit: quit)
+[01:54:20] *** Quits: Vigil_Heart (doomfur@Pony-iukk4g.wa.comcast.net) (Connection closed)
+[01:58:03] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[02:06:57] *** RedHelper is now known as Creeps|AFK
+[02:24:48] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[02:25:09] *** Joins: locodashie11 (locodash11@Pony-68flal.dsl-w.verizon.net)
+[02:25:38] *** locodashie11 is now known as Pony_52992
+[02:25:55] <floogulinc> oh man, are we doing ponies on old tech now?
+[02:27:25] *** Joins: Asoka (Asoka@Pony-a3iapf.net-htp.de)
+[02:30:34] *** Quits: Asoka_White (Asoka@Pony-124ie3.net-htp.de) (Ping timeout: 121 seconds)
+[02:36:09] <Gladiolus> I tried getting pones to work on a pentium 3, but the modern codec- h264 or whatever- simply requires too much omph even if i force it to scale to 320x240
+[02:36:10] *** Init3-away is now known as init3
+[02:36:14] <Gladiolus> i could, like, convert it
+[02:36:16] <Gladiolus> but eh effort
+[02:36:30] <JustAberrant> hehe, well yes
+[02:36:52] * JustAberrant doesn't remember what he converted it to to get it running an an e2.. but yeah.. something low res and small :>
+[02:36:52] <Gladiolus> It
+[02:36:59] <init3> I dunno why but on my P4 3.0 boxen 1080p video is laggy as fuck. 
+[02:37:13] <Gladiolus> it's /almost/ usable, but the cache or whatever isn't big enough and every second or so it frameskips
+[02:37:17] <Gladiolus> >p4
+[02:37:20] <Gladiolus> I FOUND THE PROBLEM
+[02:37:33] <init3> I dunno if it is how I have the radeon driver configured. 
+[02:37:43] <init3> A p4 /should/ be able to handle 1080 I'd think.
+[02:38:10] <Gladiolus> Probably but really new codecs rely on some new cpu instructions post-p4
+[02:38:19] <Gladiolus> like man all that has is, like, mmx, sse, and sse2
+[02:46:23] <init3> Ahh
+[02:46:41] <init3> That makes sense
+[02:47:22] <init3> Really it was only a stop gap measure until I could borrow my brother's laptop when mine died so it 'soaky
+[02:51:59] <Gladiolus> That's fynny because SSE1 was just a stopgap measure until die sizes shrunk o3o.
+[02:52:26] <Gladiolus> The problem at intel was "We release it early and get a boost against AMD- but it's only half of what it can be- or we release it later in full form."
+[02:52:46] <JustAberrant> or so mainstream tech press of the time would have you believe :(
+[02:52:58] <Gladiolus> What would the alternative be?
+[02:53:06] <JustAberrant> :(
+[02:53:08] <Gladiolus> ?
+[02:53:11] * Gladiolus wat
+[02:53:12] <JustAberrant> :)
+[02:53:26] <Gladiolus> If you've got some sort of inside scoop i'm eager to heeeear it!
+[02:53:34] <JustAberrant> I do not :(
+[02:53:40] <Gladiolus> okaaaay
+[02:54:11] * Gladiolus burns JustAberrant to a poor-quality CDR and lets him die to CD rot.
+[02:54:51] <JustAberrant> I know nothing about SSE nor WNI :(
+[02:54:57] <JustAberrant> meep
+[02:55:34] <Phase> <init3> A p4 /should/ be able to handle 1080 I'd think. < 1080 h254? no
+[02:57:00] <init3> Well that honestly makes me feel better. I thought I was failing at some sort of configuration to make it shit. 
+[02:57:04] <Gladiolus> 64
+[02:57:13] <Phase> h264' yeah
+[02:57:21] <init3> 720 264 was fine though. 
+[02:57:22] <Phase> if it couldn't handle h263 then you've got issues
+[02:57:46] * init3 blink blinks
+[02:57:54] <init3> I really don't know codecs
+[02:58:15] <Gladiolus> I barely know them.
+[02:58:15] <Phase> h263 == that codec used in 3gp
+[02:58:29] <Gladiolus> All I know is that 264 is the new fancy thing
+[02:59:01] * Gladiolus creates a codec that's bitmaps and ogg files.
+[02:59:07] <init3> Oh. Yeah it could handle 720 fine. 
+[02:59:36] <init3> Actually iirc the 1080 was fine but just a little choppy when you had a complete scene change. 
+[03:00:02] <init3> I know I watched Pinkie Pride and I'm pretty sure I have all of S4 in 1080
+[03:00:13] <init3> But I woundn't call it great. 
+[03:00:52] * JustAberrant needs to get proper copies of all the episodes
+[03:00:57] <JustAberrant> mine are kind of a mix n` match
+[03:01:20] <JustAberrant> also mniip seems to have stopped updating his mirror :(
+[03:01:52] <init3> I think my S3 is 720 but otherwise it's all 1080
+[03:02:43] <init3> Oh, it was 720 that worked
+[03:03:15] <init3> So s4 is the odd one out at 720. 
+[03:03:52] <init3> I shall have to remedy this once COMCAST FUCKING HOOKS UP MY CABLE
+[03:04:18] <init3> Asshats didn't show today then claimed that the appointment was acrtually for tomorrow. 
+[03:04:43] <init3> Can't say I didn't expect shit customer service going into this though. 
+[03:06:15] <init3> Now here's a question for y'all. There's no way a board with a p4 and firewire would only have USB 1.1 is there?
+[03:07:42] *** Pony_52992 is now known as locodashie11
+[03:09:07] <init3> okay I looked up the motherboard. It does have USB 2.0.So why the fuck would linux pick it up as 1.1. I've never heard of a *nix install needing chipset drivers but I dunno.
+[03:16:35] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[03:26:52] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[03:40:30] <JustAberrant> :)
+[03:45:31] *** Joins: Hickory (Iceman@Darkhorse21)
+[03:46:39] * Moonlightning is still on ADSL. :I
+[03:47:07] <Moonlightning> can't wait for Google to bring Fiber to its own headquarters
+[03:54:53] <JustAberrant> Moonlightning: this is a picture I found on the internet of fluttershy singing the batman intro while splashing in a bathtub: https://derpicdn.net/img/view/2012/7/25/56456__safe_solo_fluttershy_upvotes+galore_absurd+res_batman_singing_bath_artist-colon-joey+darkmeat_bathtub.png :)
+[04:15:11] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[04:18:23] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[04:40:35] <Moonlightning> okay, scrollback officially teal deer
+[04:50:25] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[04:50:39] *** Joins: locodashie11 (locodash11@Pony-68flal.dsl-w.verizon.net)
+[04:54:27] <init3> If you are refering to our political discussion, yeah. 
+[04:55:19] <init3> Wait, nevermind. That was a long time ago.
+[04:56:43] <Moonlightning> No, that's what I was reading
+[04:58:17] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[04:58:17] <init3> Hehe
+[04:58:35] <init3> Yeah the tl;dr is politics sucks. 
+[04:59:15] <Googie> Moonlightning: ADSL brothers :(
+[04:59:44] <Googie> 2.5mbit internet represent.
+[05:00:28] <Moonlightning> Well, 1.5MiB/s here
+[05:01:29] <init3> I had ADSL Wasn't so bad...  It  was way faster than that though,
+[05:01:34] <Moonlightning> ~12.5 SI Mb/s
+[05:01:47] <Googie> It's really variable depending on line quality.
+[05:02:04] <Googie> I'm about 4km away from the telephone exchange, 60db line attenuation.
+[05:02:18] <init3> Dayum
+[05:02:38] * Googie has seriously considered getting a second line and load balancing for a blazing 5mbit/s
+[05:03:01] <Googie> Though FTTN should hopefully roll out in my area within a few years
+[05:03:22] * JustAberrant used to have 7.5 SNR / 55db attenuation
+[05:03:47] <JustAberrant> (and subsequently like 3mbps down .5 up)
+[05:03:59] <JustAberrant> and now I have fibre *evil laughter*
+[05:04:14] <Googie> Amazingly enough though, my connection is actually really really stable though, so that's something
+[05:04:47] <JustAberrant> yeah, in my case wasn't :(
+[05:04:58] <JustAberrant> honestly the speed didn't bother me so much as that it would frequently just conky out
+[05:05:02] <JustAberrant> * conk
+[05:05:08] <Googie> Yeah, that's the worst.
+[05:05:11] <init3>           Yeah
+[05:05:23] <Googie> At one point I had a modem that synced at 4mbit, but the dropouts were a killer.
+[05:05:41] <JustAberrant> my internet would get really shitty.. I'd check my modem stats and sure enough SNR would be 0
+[05:05:53] <JustAberrant> (despite that it was still getting data there.. eventually)
+[05:06:18] <Googie> Right now though... with a static IP + A separate router from the modem (home units tend to drop the NAT tables when they disconnect), I can actually get fairly good uptime
+[05:06:41] <init3> I ended up tracing it to mostly the  wiring in my house, do i disconnected all of the phone jacks and ran a line from my phone box to my modem. That made a huge difference for me.
+[05:07:09] * Googie checks his connection time to Canternet. It's sitting at almost a month, and that was only because he upgraded Weechat.
+[05:07:22] <JustAberrant> init3: I ended up doing something like that
+[05:07:43] <JustAberrant> init3: I basically split the line where the service came in
+[05:07:51] <JustAberrant> ran one line to modem
+[05:07:58] <JustAberrant> other line through ADSL filter and then to all other phones
+[05:08:02] <JustAberrant> helped a bit but not much
+[05:08:21] * JustAberrant shruggles
+[05:08:30] * JustAberrant likes having fibre now :>
+[05:08:37] * Moonlightning disreconnected to Canternet on Friday. :(
+[05:08:44] <JustAberrant> I'm still not used to stuff just downloading so fast and actually being able to use netflix
+[05:08:50] <init3> Yeah. A big part of it was my ISP, but they eventually upped the power or something. 
+[05:08:53] <Moonlightning> …Friday before last Friday.
+[05:09:55] <init3> Was kinda funny, I was on a first name basis with the local phone company's tech. Even saw him in town and he jokingly asked how my DSL was doing. 
+[05:10:08] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[05:11:13] <init3> There was some mutual respect going on there because we both knew what we were doing and we both knew it. I know one time he came out and was like, my instruments are telling me it is your wiring, but I know that's not right and he checked it again and figured it out. 
+[05:12:04] <init3> Was intermittent so the signal was all over the place. He was kind of impressed with my patch panel I stole from a DC that was being decomissioned. 
+[05:12:26] * Moonlightning raises a hoof obliviously. “What's a patch panel?∏
+[05:12:27] <init3> And of course I wired it up the way it should be. 
+[05:12:30] * Moonlightning ” *
+[05:12:37] <init3> Second
+[05:13:26] <init3> https://files.cablewholesale.com/hires/68pp-03012-10.jpg
+[05:13:54] <init3> If you have a proper punch tool with a blade you can make those look super nice in back. 
+[05:14:47] <init3> Yeah, mine looked like this except only 8 connections: http://regularguy.net/images/SmallProjectPhoto1a.jpg
+[05:17:21] <init3> Maybe a bit overkill for a house, but it really irritates me when people don't use them in a buisness with a rack. Since those patch panels let you label shit too it can save a shit ton of time. 
+[05:17:37] * JustAberrant thinks they are overused ;p
+[05:17:42] <init3> Wut
+[05:17:50] <JustAberrant> like, they are good for when the cable goes off somewhere in the distance
+[05:17:54] <init3> Thems fighting words
+[05:17:59] <init3> Right
+[05:18:01] <JustAberrant> but when it's a server going to a switch in the same rack
+[05:18:07] <init3> Oh god lol
+[05:18:11] <init3> Agree with you there
+[05:18:12] <JustAberrant> going server -> patch panel -> switch is just silly imo ;p
+[05:18:32] <JustAberrant> http://www.justaberrant.com/images/computer/rackg.jpg  <-- also, patch panel ;p
+[05:18:36] <Moonlightning> Heehee, Ethernet wiring diagrams
+[05:18:38] <JustAberrant> (my old setup)
+[05:18:56] * init3 twitches at the hanging wires.
+[05:19:09] <init3> I am a cable management Nazi. 
+[05:19:23] <init3> Like it is one of my biggest pet peeves. 
+[05:19:27] <JustAberrant> well then have some gore: http://www.justaberrant.com/images/rewire_2014/  ;p
+[05:19:27] <PinkiePieBot> [ Index of /images/rewire_2014 ]
+[05:19:41] <Moonlightning> Meh. When it comes to cable management, I think the world could use some of that good ol' German discipline :p
+[05:20:18] <JustAberrant> but yeah, my old setup the cable management was terrible because I didn't have room to get behind and do things properly
+[05:20:28] <JustAberrant> and it changed so much with me just running new cables where I could
+[05:20:38] <JustAberrant> one more gore shot: http://www.justaberrant.com/images/computer/setup.png  ;p
+[05:21:04] <JustAberrant> I actually cleaned it up a _bit_ after that was taken
+[05:21:16] <init3> My stolen internet is super slow, give me some time. 
+[05:21:19] <JustAberrant> but then when I was sure I was moving I said "fuck it" and let it go to shit :>
+[05:22:08] <JustAberrant> http://www.justaberrant.com/images/hoose/july_12_2015__tmp_eth_run/combined.png  <-- new setup ;p
+[05:22:23] <JustAberrant> (temporary, both until I get a proper rack, and run some conduit/drops)
+[05:23:04] * init3 eats a bottle of xanax looking at these pictures
+[05:23:36] <init3> In all seriousness it isn't too horrid
+[05:23:51] <init3> I have seen much worse and I am really sad I can't find the pictures. 
+[05:24:00] <JustAberrant> hehe
+[05:24:15] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[05:24:16] <init3> Also there were switches that had all their fans fail
+[05:24:24] <JustAberrant> I also literally cut that desk up with a reciprocating saw then put it back together with brackets :>
+[05:25:02] <init3> So the person who I took over IT for had literally tied an oscillating desk fan to the switch with a cat 5 cable. 
+[05:25:13] <init3> In three different buildings. 
+[05:25:22] <init3> This was his offical POLICY
+[05:25:30] <JustAberrant> hahaha
+[05:25:40] <init3> And he even had printed signs "Do not turn off fan" 
+[05:25:48] <JustAberrant> not as bad, but I did this: http://www.justaberrant.com/images/switch_hack/ :D
+[05:25:48] <PinkiePieBot> [ Index of /images/switch_hack ]
+[05:25:57] <init3> So you know it was considered a long term solution
+[05:26:16] <Phase> <JustAberrant> one more gore shot: http://www.justaberrant.com/images/computer/setup.png  ;p < where are those cables even going
+[05:26:28] <init3> That switch fan is cool though. 
+[05:26:35] <JustAberrant> Phase: which ones? :>
+[05:26:41] <Phase> what i mean is
+[05:26:43] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[05:26:52] <Phase> you have lie 3 boxes
+[05:27:00] <JustAberrant> oh
+[05:27:05] <Phase> how do you get that many cables in and out of 3 boxes
+[05:27:16] <JustAberrant> well, there's actually like 6 there ;p
+[05:27:21] <init3> But the 6 monitor setup with mounted surround speakers is really cool I gotta say. 
+[05:27:29] <init3> Mad jelly
+[05:27:37] <JustAberrant> but it's mainly because I have 2 networks
+[05:27:42] <JustAberrant> (an internal and external)
+[05:27:53] <JustAberrant> plus my file server has 4 connections
+[05:28:06] <JustAberrant> internal, external, the raid card has it's own, and it has a dedicated ipmi connection
+[05:28:22] <JustAberrant> backup file server has 3
+[05:28:31] <JustAberrant> (it doesn't have the dedicated ipmi)
+[05:29:13] <init3> Oh, the rest of your new setup picture loaded. I only saw the very first. 
+[05:29:23] <JustAberrant> hehe
+[05:29:28] <JustAberrant> yeah, the first part isn't bad ;p
+[05:29:30] <init3> I like it.
+[05:29:40] <init3> The desk I mean
+[05:29:57] <JustAberrant> hehe, well, very temporary
+[05:30:04] <init3> For running cables down stairs it looks decent. I assume it is temporary
+[05:30:06] <JustAberrant> annoyingly I didn't keep the stands that came with any of the monitors
+[05:30:16] <JustAberrant> and yes, definitely temporary
+[05:30:33] <JustAberrant> but anyway, if you look closely, you'll notice I bodged that monitor onto a 2x4 ;p
+[05:31:10] <JustAberrant> and a steel plate with holes drilled (hacked together vesa mount) :>
+[05:31:27] <init3> I did but I love custom built desks honestly. 
+[05:31:55] <init3> I used to have one. Built it specifically to have my giant CRT and laptop be exactly level. 
+[05:31:57] <JustAberrant> I plan on building a "proper" desk at some point
+[05:32:08] <JustAberrant> nice :)
+[05:32:29] <JustAberrant> and yeah, custom built, even if it looks like shit, is always best imo :>
+[05:32:37] <JustAberrant> get everything exactly where you want it
+[05:32:52] <init3> But honestly if you just sanded and stained what you got it'd look fine really. 
+[05:33:08] <init3> Take a router to the edges maybe. 
+[05:33:09] <JustAberrant> big thing for me is the keyboard tray.. I like a nice wide and sturdy tray.. which is really hard to find
+[05:33:19] <init3> Yeah
+[05:33:23] <JustAberrant> I'd also need to put some re-enforcement to keep it from wow-ing.. but yeah
+[05:33:32] <JustAberrant> it could be salvaged.. but it's not the right size for the room
+[05:33:38] <init3> Ahh
+[05:33:42] <JustAberrant> I basically plan on having one that goes wall to wall
+[05:33:55] <init3> oooohhhh
+[05:34:03] <init3> That'd be super cool.
+[05:34:18] <JustAberrant> I just carted this one over to tide me over till I can afford the materials / have the time / get my workshop set up / etc
+[05:34:28] <init3> Right
+[05:34:30] <JustAberrant> (which means I'll be using it for like.. 7 or 8 years probably) :D
+[05:34:37] <init3> I just finished moving myself
+[05:34:40] <init3> Heh
+[05:34:45] <init3> I know how that goes. 
+[05:35:13] <JustAberrant> yeah :(
+[05:35:16] <init3> Then once at like 2 am something is going to snap and you'll start building what you wanted. 
+[05:35:31] <init3> Or draw blueprints. 
+[05:35:40] <init3> THat shit is how most projects came about for me. 
+[05:35:57] <init3> 2am, get annoyed and just do /something/ to start. 
+[05:36:08] <init3> No matter how small if I start it I /have/ to finish it. 
+[05:36:11] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[05:36:55] <init3> But that's just me. I know a lot of people aren't that way. 
+[05:38:20] <init3> Right now I don't even have a desk :( Just a bed , nightstand and a subwoofer I'm not using to get my second monitor for a usable height for my laptop. 
+[05:38:51] <init3> Not easy to just have one monitor when you are used to two (or more)
+[05:50:43] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[06:14:55] *** Quits: Hickory (Iceman@Darkhorse21) (Quit: quit)
+[06:28:41] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[06:33:04] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[06:46:02] <Googie> I really need to learn proper cable management. My computer room is such a mess of bits and pieces and random ethernet cables.
+[06:47:54] *** Joins: HoneyDrops|Half (Honey@sweeter.than.honey)
+[06:48:34] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[06:51:32] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[07:11:37] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[07:12:53] <Lapsus> I want to cable manage everything by making custom length cables for everything, but I'll need to get my hands for a molex crimper to use with the 3d printer and computer :v
+[07:17:46] <JustAberrant> :)
+[07:17:57] * JustAberrant likes to make his own power cables
+[07:19:49] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[07:20:01] <Phase> Lapsus, i has a crimper :3
+[07:21:21] <Lapsus> Phase: How much did it cost you and how do you use it? :v
+[07:21:41] <Phase> $90 and surprisingly frequently
+[07:21:51] <Phase> think it was $90 (AUD, not USD)
+[07:21:53] <Lapsus> I reeeeeally want to make my own power supply cables and connectors for all the mess of wires and bullshit that is my 3d printer
+[07:22:14] <Phase> if the us connectors are anything like australias, just need some sidecutters, no crimpers
+[07:22:38] <Moonlightning> The REAL problem here is that we're still USING wires
+[07:23:29] <Phase> Lapsus, http://goo.gl/ohkYuJ el-cheapo route
+[07:23:30] <PinkiePieBot> [ G104Free Shipping RJ45 RJ11 RJ12 CAT5 Network Cable Crimper Pliers Tools-in Pliers from Home Improvement on Aliexpress.com | Alibaba Group ]
+[07:23:57] <Lapsus> oh I have one of those already
+[07:24:09] <Phase> what sort of crimper you looking for then?
+[07:24:41] <Phase> got one of the wall socket crimper things too but no idea what they're called
+[07:24:49] <Lapsus> Specifically a molex crimper so I can make my own power and data cables of whatever length
+[07:24:59] <Phase> oh, molex, the power supply
+[07:25:06] * Phase [derps internally]
+[07:25:20] <Phase> i do not have one of those
+[07:25:22] <Lapsus> because I probably can't get 30A+ through a sane number of rj45 connectors
+[07:25:54] <Lapsus> almost all of my network cables are custom length at this point :v
+[07:26:23] <Lapsus> including the 0cm one for the raspi and the 5cm one for modem<->router
+[07:26:27] <Phase> well "molex crimper" starts at $15 on aliexpress, these seem to be for internal cables
+[07:28:07] <Lapsus> as an aside, http://i.imgur.com/thOfoJg.jpg is still my favourite bit of my network
+[07:28:10] <Lapsus> :v
+[07:28:29] <Phase> your neural interface?
+[07:28:37] <Lapsus> yes! :v
+[07:28:48] * Phase has no idea what it actually is
+[07:29:11] <Lapsus> one of my pair of http://routerboard.com/RBSXTG-5HPacD
+[07:29:12] <PinkiePieBot> [ RouterBoard.com : SXT 5 ac ]
+[07:29:27] *** Quits: Skids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:29:39] <Phase> oh nice, how much are those?
+[07:30:06] <Lapsus> $110 plus shipping and taxes
+[07:30:41] <Lapsus> I have one on my house and one on my friend's house because he's across the street and running a cable along the telephone poles or underground wasn't really possible :p
+[07:30:54] <Phase> open firmwareor?
+[07:31:37] <Lapsus> my internet fails over to his and vice versa, though he uses mine and lets his parents use his because mine is like 30 times faster
+[07:32:04] <Lapsus> plus lan gaming and vm hosts and nas and all that across houses is awesome
+[07:32:15] <Phase> that would be really cool
+[07:32:24] <Lapsus> it runs routerOS, so it's not open, but it is awesome
+[07:32:38] <Lapsus> the licences for them are tied to the hardware because it's sold with it etc
+[07:33:02] <Lapsus> our respective main routers and his wireless access point are also mikrotik
+[07:33:25] <Lapsus> I've got a VM host on my side, and he's working on a nas on his side
+[07:33:41] <Lapsus> though we might move that to my place if vm performance with disks over the link are slow
+[07:35:19] <Lapsus> bah, gotta run!
+[07:37:48] *** Joins: Cepheid (Cepheid@the.crazy.cat.pony)
+[07:52:00] <HoneyDrops|Half> Moonlightning: wires will always trump the alternatives in most ways.  No way around that.  However there are many cases wireless is good enough.
+[07:53:44] <init3> So I dunno who was around when we had the fstab pronounciation discussion but I had remarked that it seems to be 50/50 among people I know and ended up being 50/50 here too I think. So I decided to poll a larger group.
+[07:54:12] <init3> 50% saying F-Stab and 50% saying F-S-Tab
+[07:54:30] <init3> Aaaand it ended up being 10/10 split. 
+[07:54:58] <init3> And 4 votes for "Suck on it, Trebeck" because I felt there needed to be a third option. 
+[07:58:36] <HoneyDrops|Half> I say (mostly internally) something like fiss-tab.
+[08:01:36] <init3> That's different
+[08:01:48] <init3> But I can see it
+[08:03:59] <init3> Aw geez. I asked about the fstab thing in #archlinux. This may have been an error. 
+[08:04:31] <init3> I can hear the gears of internet argument possibly starting. 
+[08:04:36] *** Joins: Hickory (Iceman@Darkhorse21)
+[08:23:37] <tiwake> I'm still kinda looking around for somebody to pay to impliment the whiteboard feature for inkscape
+[08:25:08] *** Ruthalas is now known as Ruthalasleepy
+[08:44:19] *** Joins: RazorSharpFang (chatzilla@sharpest.of.all.fangs)
+[08:44:41] <RazorSharpFang> Why the flip doesn't java have operator overloading?!
+[08:46:43] <Cepheid> No idea.  Alas, all I can do is offer a comforting "Deal with it" and suggest you implement methods like "add" "subtract" "multiply" "divide" and so on.
+[08:47:03] <RazorSharpFang> I just want a == operator
+[08:47:08] <Cepheid> You can use shortform if you wish, I consider it acceptable.  Thus:  add, sub, mul, div.
+[08:47:33] <Cepheid> eq(), neq(), gt(), gteq(), lt(), lteq() and so on.
+[08:48:18] <Cepheid> In this case, just add public boolean eq(ClassName rhs) { ... }
+[08:48:24] <JustAberrant> probably because for every time operator overloading makes something more intuitive, there's like 10 times where it doesn't ;p
+[08:48:25] <Cepheid> Return true or false if the object matches.
+[08:48:33] <Cepheid> There's also that, yeah.
+[08:48:34] *** Quits: Hickory (Iceman@Darkhorse21) (Quit: quit)
+[08:48:38] <JustAberrant> see: all the various () and [] hackery done in c++
+[08:48:51] <RazorSharpFang> I'm not familiar with C++.
+[08:48:55] <JustAberrant> the way postgres abuses that stuff should be grounds for losing a finger
+[08:49:10] <Cepheid> Especially since in the case of C++, you *NEED* to overload a few basic methods by default if you're inheriting.
+[08:49:15] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[08:49:34] <JustAberrant> in c++ it just creates a bunch of extra work imo
+[08:50:00] <Cepheid> Constructor, copy constructor, move constructor(C++11 only), assignment operator overload, virtual destructor.
+[08:50:31] <Cepheid> I usually implement these, or make them private, at a minimum, to ensure they won't be misused or cause problems.
+[08:52:29] <RazorSharpFang> I don't think that the possibility of something being misused is justification of disabling it.
+[08:52:53] <Cepheid> It's also meant to be a compiler guard.
+[08:52:55] <JustAberrant> well, java didn't so much "disable" it as not implement it because they decided it was a bad thing ;p
+[08:53:00] <Cepheid> It'll spit out an error if you use it incorrectly.
+[08:53:13] <Cepheid> And incorrectly can mean "by accident."
+[08:53:16] <JustAberrant> same for multiple inheritance
+[08:53:22] <Cepheid> Programmers are not infallible.  We make mistakes.
+[08:53:56] <RazorSharpFang> I can get multiple inheritance, but operator overloads are so cool...
+[08:54:13] <RazorSharpFang> If I can add two strings to concat, why can't I use the == ?
+[08:54:17] <Cepheid> They can be useful in some places.
+[08:54:21] <Cepheid> But you have to be careful.
+[08:54:39] <JustAberrant> see, == is a really good example of where operator overloading becomes intuitive
+[08:54:44] <Cepheid> Not saying you shouldn't use them.  But you should try to be careful with them.  Overusing them will bite you in the butt.
+[08:55:03] <JustAberrant> in java it's consistent .. == means literally the same objecty
+[08:55:06] <JustAberrant> * object
+[08:55:10] <Cepheid> == can also be tricky though.
+[08:55:21] <Cepheid> In C++, it can mean one of two things with objects.
+[08:55:23] <JustAberrant> if you want to compare theat they represent the same thing.. you have to use some method defined by that object for comparison
+[08:55:27] <JustAberrant> exactly
+[08:55:36] <Cepheid> If it's a pointer to an object, == is a comparison between pointers.
+[08:55:37] <JustAberrant> in c++ it's up to whoever implemented it what == means
+[08:55:45] <Cepheid> If it's an object, it's a comparison between objects.
+[08:55:58] <Cepheid> And then you can do comparison between multiple types, and such.
+[08:56:45] <Cepheid> I've managed to fall prey to objectA == objectB, where objectA and objectB are pointers rather than local instances.
+[08:57:33] <RazorSharpFang> So, I'd use ObjectA.IsEql(ObjectB) instead?
+[08:58:15] <JustAberrant> little extra verbosity, but at least you know what's happening
+[08:58:20] <Cepheid> In my example, that would have been the intent, yeah.  I'd have done either objectA.isEqualTo(objectB) == true, or since I'm doing C++ in my example:  *objectA == *objectB
+[08:58:34] <Googie> You'd want to override equals
+[08:58:46] <RazorSharpFang> Googie: Java. : /
+[08:59:18] <Googie> Yeah, there's a function called "equals" on the base object
+[08:59:20] * HoneyDrops|Half clings to her nice, consistent C.
+[08:59:21] <Cepheid> Yeah.  equals is a method in Object.  All classes in Java derive from Object, usually.  I think you can escape that, though I've never bothered trying nor found a reason to do so, so I never tested.
+[08:59:42] <Cepheid> But the point is, you can override equals in the base class Object.
+[09:00:05] <RazorSharpFang> Is that the same function called when I do ObjA == ObjB?
+[09:00:10] <Googie> No
+[09:00:35] <Cepheid> It's akin to what we're discussing.  ObjectA.equals(ObjectB)
+[09:00:52] <RazorSharpFang> Oh, I see.
+[09:01:14] <Cepheid> It's just the official name for the method in the base class.  It's provided for convenience among other things.
+[09:01:24] <Cepheid> You kind of need to override it though in order to do proper tests.
+[09:01:39] <Googie> Containers and the like use it
+[09:01:49] <RazorSharpFang> So I should use that name, then.
+[09:02:17] <Cepheid> It'd be a good idea, yeah.
+[09:02:38] <Cepheid> Sorry, I shouldn't have advised eq() earlier.  I forgot about equals(), thanks for bringing it up Googie.
+[09:02:43] <Googie> Also if you override equals, you must override hashcode as well
+[09:02:54] <Googie> hashCode()
+[09:03:21] <RazorSharpFang> I have no idea what that is.
+[09:04:17] <Cepheid> Another method in the base class.  Generates a hash code based on the data of the object.  Uhm, I'm not an expert at that one, so I'll leave it up to someone else to describe.
+[09:04:25] * Cepheid is terrible with hash functions.
+[09:04:28] <RazorSharpFang> What's a hash?
+[09:05:51] <Cepheid> It's a value that's supposed to be unique to the object, based on it's attributes.
+[09:06:02] <Cepheid> In the case of hashCode, anyways.
+[09:06:25] <Cepheid> It's more of a number, piece of data, or something that's based on a set of input data that's unique to the input data.
+[09:06:28] <RazorSharpFang> Could I just md5 the toString() of the object?
+[09:06:31] <Cepheid> Ideally, it'd be 100% completely unique.
+[09:07:13] <Cepheid> Unfortunately, hashCode() outputs an int, toString() won't work.
+[09:08:01] <Googie> toString() actually calls hashCode :V
+[09:08:11] <RazorSharpFang> Wat.
+[09:08:22] <Googie> At least the default implementation
+[09:08:43] <Cepheid> Apparently, Object has a static method called hash() that accepts multiple parameters and outputs a hash value.  From 1.7 onwards, I think?
+[09:09:46] <RazorSharpFang> Is JavaSE8 available on linux yet?
+[09:10:16] <Googie> Basically, just take the hashCode of all the members of an object that could cause it to be "unequal" and add them together :V
+[09:10:21] * Cepheid hands RazorSharpFang a FFT of his cat, Spitfire.
+[09:10:28] <Googie> Maybe do some multiplication
+[09:10:37] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:10:56] <RazorSharpFang> Googie: What if it overflows?
+[09:10:59] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[09:11:00] <Googie> There's fancier ways, but that's good enough without knowing very specific things about usage
+[09:11:03] <Cepheid> Let it.
+[09:11:07] <Googie> That's fine
+[09:11:24] <Cepheid> Hash values are just numbers that are compared against one another.
+[09:11:44] <Cepheid> Math isn't performed on them or anything after they've been calculated.  Just a comparison.
+[09:11:58] <Cepheid> Well, numbers, values, etc.
+[09:12:28] <RazorSharpFang> Is the hash value actually important for anything?
+[09:13:56] <Cepheid> Usually improving the performance of comparing large sets of objects.
+[09:14:15] <Googie> Dictionaries/Associative Arrays
+[09:14:32] <Cepheid> That too.
+[09:15:00] <Cepheid> That's usually where they're most useful.  They're used as keys in dictionaries/associative arrays/hash tables.
+[09:16:06] <RazorSharpFang> I assume all built-in classes have a working hashCode function.
+[09:16:30] <Cepheid> I would hope so.
+[09:16:48] <Googie> Your classes also have a default implementation
+[09:17:18] <Googie> The issue is that the implementation only works for the default implementation of equals()
+[09:18:06] <Cepheid> What's it work on anyways? I never researched it.  I would assume it just takes the byte data of the object, and runs it through a hashing function.  It'd be the simplest solution.
+[09:18:30] <RazorSharpFang> I don't actually know how to hash.
+[09:18:36] <Cepheid> Oh.  Says right here.
+[09:19:26] <Cepheid> "This is typically implemented by converting the internal address of the object into an integer, but this implementation technique is not required by the Java Programming Language."
+[09:19:57] <Googie> RazorSharpFang: It doesn't really matter. A simple example: If you have a person class, which takes a name and an age
+[09:19:59] <Cepheid> So yeah, pretty terrible implementation.
+[09:20:18] <Googie> If you make it so that two people with the same name and age are considered "equal"
+[09:20:41] <Googie> Then you can do name.hashCode()+13*age
+[09:20:51] <Googie> (13 is arbitrary)
+[09:21:10] <Googie> (Use any number you want, ideally a prime)
+[09:21:21] <RazorSharpFang> I do love me some prime numbers.
+[09:22:00] <Googie> If you add in a person's address, just + address.hashCode()*7 or whatever
+[09:23:06] <Googie> But two person objects can be considered equal, even if they sepearate nicknames, do /not/ add in the nickname hashCode
+[09:23:23] <Googie> *even if they have separate nicknames
+[09:25:01] <RazorSharpFang> Makes sense.
+[09:25:35] <Googie> That's basically all you need to do in practice
+[09:26:18] *** Quits: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net) (Quit: I am gone now)
+[09:26:26] * Googie gives HoneyDrops a cup of nice, warm, Object Oriented Java
+[09:27:23] * HoneyDrops|Half hisses at the proffered beverage.
+[09:28:09] <RazorSharpFang> Oh, that's right. Java's a drink.
+[09:28:25] <RazorSharpFang> Soon, there'll be a language called Tea.
+[09:28:48] <HoneyDrops|Half> If I'm not doing C, I'm going to go all the way and go with Lisp, Perl, sh.
+[09:29:07] <RazorSharpFang> HoneyDrops|Half: What about C#?
+[09:30:36] <HoneyDrops|Half> At a technical level I've not adequately evaluates it.  That said, I'm not inclined to as a result of its progenitor.
+[09:30:49] <HoneyDrops|Half> s/tes/ted/
+[09:31:43] <Googie> C# is a better Java, with less mature support for the runtime outside of Windows. That's basically my view on it 
+[09:31:46] * HoneyDrops|Half doesn't touch anything MS with a 3m pole.  (Excepting MC, and only because it is grandfathered in).
+[09:32:01] <Cepheid> I find C# is better than Java, yeah.
+[09:32:08] <Cepheid> Though, with Microsoft opening up on the runtime and such..
+[09:32:18] <Cepheid> Perhaps it'll gain better support outside of Windows.
+[09:32:35] <Cepheid> It's got MonoGame going for it, and Microsoft even supports that project at this point.
+[09:33:15] <HoneyDrops|Half> I still recall "Embrace, extend, and extinguish" too well.
+[09:37:43] <Googie> I'm not sure how that would really work with a programming language. It's not really a software product. Proprietary extensions cannot be adopted if the person is targeting multiple platforms.
+[09:38:19] * Cepheid shrugs.
+[09:38:58] <RazorSharpFang> If Java and C# are similar, how difficult would it be to make a java -> c# converter?
+[09:39:08] <Cepheid> Way I see it, any way I go I'm screwed any ways.
+[09:39:19] <Googie> I mean, C++11 is amazing, but I know that InspIRCd can't jump on it because of support for LTS distros
+[09:39:52] <RazorSharpFang> LongTermSupport? Why does that stop them?
+[09:40:05] <Cepheid> Mac OS X and Microsoft have similar ideals about their platforms, and while can see the merit of open source, I don't like how it's pushed by the BSD/UNIX/Linux userbase.
+[09:41:15] <Cepheid> RazorSharpFang:  Most LTS distros are still using non-C++11 compliant compilers.
+[09:41:49] <RazorSharpFang> What's changed in C++11?
+[09:42:28] <Cepheid> More like "what's added."
+[09:43:05] <Cepheid> A lot of considerably useful features have been added to C++11, features that quite frankly, should have been there years ago.
+[09:43:30] <Googie> I think the major release of GCC the oldest supported version of CentOS is using dates back to 2005 or something
+[09:43:34] <JustAberrant> :)
+[09:43:44] <JustAberrant> unrelated subject: http://justaberrant.com/images/hoose/bedroom_pc.jpg  <-- good enough for now[tm] :>
+[09:43:59] <Cepheid> Heh.
+[09:44:16] <Cepheid> Contain yourself, Spitfire.  It's just a piece of velcro on a cable.
+[09:44:38] <RazorSharpFang> Ah, I really want a third monitor, but I'd need a HDMI -> VGA adaptor for that, since I have no HDMI capable monitors
+[09:44:46] <Googie> I don't really see how any language could push proprietary updates when people are typically so hesitant to upgrade for compatibility reasons
+[09:45:05] <Cepheid> Myself, I need a DisplayPort -> HDMI.
+[09:45:07] <JustAberrant> python ;p
+[09:45:12] <Cepheid> Mini Display Port, at that.
+[09:46:00] <Googie> Though if Microsoft /really/ wanted, in theory they could develop something "open" and pull out submarine patents or the like
+[09:46:15] <JustAberrant> but yeah, I got tired of not having a pc to watch stuff in bed, so I cobbled that up with an old 12U rack, my shitty server, and a 2x4 :>
+[09:46:29] <JustAberrant> and one of the 2 monitors I didn't bother hooking up to my desktop
+[09:46:50] <Googie> RazorSharpFang: How are your two monitors hooked up now ?
+[09:46:59] <HoneyDrops|Half> Cepheid: If you don't mind me asking, in what way do you not care for how they push it?  We're not all RMS ;)
+[09:47:05] <RazorSharpFang> Googie: VGA -> VGA.
+[09:47:17] <RazorSharpFang> Googie: My monitor is a ViewSonic 1280x1024
+[09:47:51] <Googie> Your GPU has a VGA output ?
+[09:47:59] <HoneyDrops|Half> Also the fact that MS seems to be taking pages from Google and Apple scares the hell out of me >_>
+[09:48:12] <RazorSharpFang> Googie: Yes.
+[09:48:22] <Cepheid> HoneyDrops|Half:  The general mentality that I've seen from a few news sources that I patrol around seems to be "Open Source or GTFO." about projects.
+[09:48:42] <Googie> Are you using integrated graphics ?
+[09:48:52] <Cepheid> Which kind of creates a problem.
+[09:48:58] <RazorSharpFang> Googie: Yes.
+[09:50:04] <HoneyDrops|Half> Well once you are accustomed to open systems and software... you tend to find closed ones undesirable.
+[09:50:11] <Cepheid> That's true.
+[09:50:45] <Googie> Especially considering how crappy software is in general :V
+[09:50:48] <Cepheid> But for some people, it creates a problem.  Particularly those who want to make a living off of their own personal projects that are cross-platform.
+[09:51:06] <Googie> You always hear horror stories about vendors and bugs
+[09:51:13] <Googie> Security issues...
+[09:51:14] <Cepheid> Monetization becomes a problem with open source.
+[09:51:15] <HoneyDrops|Half> You make money off support.
+[09:51:24] <Cepheid> What if it's a game?
+[09:51:40] <Cepheid> There's no tech support to provide, then.
+[09:51:44] <JustAberrant> meh, I think the whole "make money off support" thing isn't the answer people think it is
+[09:51:53] <Cepheid> And if it's open source, who does the money go to?
+[09:51:55] <JustAberrant> sure in certain types of software you can do that
+[09:51:56] <RazorSharpFang> Open source games have that issue. I haven't seen any flourish.
+[09:52:05] <Cepheid> Does it go to the lead developer?  Is it split amongst all the contributors of the open source project?
+[09:52:14] <Cepheid> Does it go to the person who's contributed the most?
+[09:52:22] <Googie> I like the idea of FOSS games with restricted licensing on assets
+[09:52:50] <Googie> Maybe clamp down the licensing on the source more if you wish/assets are easily replicated
+[09:53:03] <JustAberrant> but there's only so much demand for support, and its only really a thing if you've got businesses using your thing
+[09:53:03] <Cepheid> Another problem there though.  Assets could be created by someone else that's not the coder.
+[09:53:19] <Cepheid> A team, for example.
+[09:53:20] <JustAberrant> and then they have to _need_ support, which most won't
+[09:53:31] <Cepheid> In which case, it's obvious that a portion of the funds goes to a part of the team.
+[09:53:34] <HoneyDrops|Half> I would argue a patron system of old would be the correct model there, or well kickstarer.
+[09:53:36] <Cepheid> But the problem remains for the programmers.
+[09:53:54] <Cepheid> Because the code is open, viewable by anyone, and can be contributed to by anyone.
+[09:54:11] <Cepheid> In a sense, the code is not owned by the original coder.
+[09:54:19] <Googie> Well, licensing can prevent problems with forks if you really wish
+[09:54:22] <Cepheid> Even if their name is on it, and they are the one who originally wrote the base.
+[09:54:45] <Googie> I mean, people can fork anyway, but then, people already crack games fairly easily
+[09:55:15] <JustAberrant> there's stuff like bountysource, and games like openra use it
+[09:55:17] <Cepheid> Hmm.  I'd have to look around and see if there are licenses like that out there.
+[09:55:18] <JustAberrant> but no one is living off that
+[09:55:23] <JustAberrant> it's more like a few bucks here and there
+[09:55:46] <Googie> Yeah, that's the issue, even the biggest kickstarters never actually cover the costs
+[09:56:00] <Googie> They're more of a signal for "real" investors :/
+[09:56:11] <Googie> (In a lot of cases)
+[09:56:34] <Cepheid> Aye.  But I'm more just discussing in general, should a project ever get off the ground, get finished and start being sold.
+[09:56:58] <Cepheid> Because I've heard reports that Steam usage by Linux users isn't very high still, and with Richard Stallman's views on it...  >_>;
+[09:57:28] <JustAberrant> meh, RMS is an extemist and everyone views him through that lens
+[09:57:32] <RazorSharpFang> Who's Stallman?
+[09:57:32] <JustAberrant> well, almost everyone
+[09:57:34] <Cepheid> I mean, I'm all for open source, I understand it's merits and benefits.
+[09:57:45] <Cepheid> It's just there's problems associated with it as well.
+[09:57:47] <JustAberrant> I think the vast majority of people are more pragmatic
+[09:57:53] <HoneyDrops|Half> I strongly oppose DRM in any form, Steam is no exception.
+[09:58:11] <Cepheid> Except based on what I've seen, not everything requires Steam to run.
+[09:58:17] <Cepheid> Even if you can obtain it through Steam.
+[09:58:26] <RazorSharpFang> To me, Steam has proved its reliability, and has earned my trust.
+[09:58:38] * JustAberrant likes open source, but I'm willing to accept and even support things that result in stuff being open which otherwise wouldn't, or functionality being added to an otherwise open system which will increase adoption of the open components
+[09:58:54] <Googie> It sadly hasn't really for me... it's kinda getting worse
+[09:59:07] <Cepheid> I'm indifferent with Steam.
+[09:59:10] <JustAberrant> I suspect most people are the same
+[09:59:38] <Cepheid> I'd rather go without it, honestly, but at the same time, of the available choices out there, it's clear it could be a lot worse.
+[09:59:43] <HoneyDrops|Half> RazorSharpFang: can you assure me steam will exist in 10 years?  20?  40?
+[09:59:44] <Googie> See: The people losing their accounts over being unable to produce a copy of their Half Life /1/ CD box+key
+[09:59:52] <RazorSharpFang> HoneyDrops|Half: I may not be.
+[10:00:26] <HoneyDrops|Half> If I pay for a game, I want that absolute assurance I can play it forever.
+[10:00:54] <HoneyDrops|Half> Yes, DRM can always be broken, but that isn't a measure I should have to take.
+[10:01:10] <Cepheid> I'll be honest.
+[10:01:11] <JustAberrant> thing about that is, playing old games usually takes a lot of hoop jumping regardless
+[10:01:16] <Cepheid> In 10, 20, 40 years from now?
+[10:01:19] <RazorSharpFang> HoneyDrops|Half: I've bought physical copies of games that can't be played because of operating systems' not having backwards compatibility.
+[10:01:22] <Cepheid> I don't expect the games I own now to even run.
+[10:01:33] <JustAberrant> I have my tiberian sun disk, it's drm free (Well, besides the usual installation key
+[10:01:34] <Cepheid> And not because of issues with Steam.
+[10:01:46] <JustAberrant> but I can't just pop it in and start playing
+[10:01:55] <HoneyDrops|Half> I still play games that are pushing 10, 15, even 25+ years old.
+[10:02:07] <JustAberrant> I can play commander keen in dosbox, etc ;p
+[10:02:17] <Cepheid> Through DOSBOX?  Through source ports?
+[10:02:22] <Cepheid> Those don't necessarily count.
+[10:02:53] <HoneyDrops|Half> I accept that there may be technical barriers, but that doesn't excuse the addition of needless contrived ones.
+[10:03:18] <Cepheid> I would imagine that Valve has a plan in place should Steam ever come to an end, to be honest.
+[10:03:29] <Finwe> Pedantic players have a DOS partition with some DOS installed.
+[10:03:52] <Cepheid> It's too risky of a setup to not have some sort of plan in place.
+[10:03:53] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[10:04:09] <HoneyDrops|Half> I have a FreeDOS VM, also a 386 handy.
+[10:04:22] <RazorSharpFang> I have a WinXP VM that runs some old games.
+[10:04:29] <RazorSharpFang> It runs Maths Invaders.
+[10:04:30] <Cepheid> But, then again, I'm not Valve.  But also, again, as I said..
+[10:04:56] <Cepheid> We could have it far, far worse.  *COUGH*  Origin  *COUGH*  uplay  *COUGH*
+[10:05:49] <HoneyDrops|Half> Oh, for games there is another model: realms and verified ID authentication.  Similar to MC.
+[10:06:02] <RazorSharpFang> Also, (very rarely) some old games run fine.
+[10:06:08] <RazorSharpFang> Like Fury3.
+[10:06:11] <Cepheid> I don't mind that approach for Minecraft.
+[10:06:24] <Cepheid> Especially since the game does run in Singleplayer mode without logging in.
+[10:06:31] <HoneyDrops|Half> exactly
+[10:06:38] <Cepheid> Hell, you want my thoughts?
+[10:06:47] <HoneyDrops|Half> You could FOSS MC, and it would still be profitable.
+[10:06:55] <Cepheid> Let's go back to the days when you could configure the central server that authentication connected to.
+[10:07:17] <Cepheid> So that if the central server ever does shut down permanently, someone can just FOSS their own and set up a new one for everyone to connect to.
+[10:08:16] <HoneyDrops|Half> Yep, as that's one of the great things about FOSS: you are not stuck relying on the vendor.
+[10:09:29] <RazorSharpFang> HoneyDrops|Half: You're a GoG fan?
+[10:10:04] <HoneyDrops|Half> Anyway, even the benefits of FOSS aside, the trajectory of major proprietary software companies has me going with "no thanks"
+[10:10:20] <HoneyDrops|Half> GoG is fine.
+[10:11:30] <HoneyDrops|Half> I don't mind the sale of software, but it must be under reasonable terms.  The least of which is the assurance there is no contrived limitation to my ability to use or modify it.
+[10:11:32] <Cepheid> Much as I'd love to continue discussing this, I have started to look around with one eye closed.
+[10:11:37] <Cepheid> I think I should go lay down.
+[10:12:22] *** Cepheid is now known as Cephy-ZZZzzz
+[10:12:23] <HoneyDrops|Half> nini, I should sleep too x_X
+[10:28:29] *** Awaykitty is now known as Unixkitty
+[10:35:58] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[10:40:46] *** Joins: Phase (Phase4@Pony-08fjca.optusnet.com.au)
+[10:59:13] <Lapsus> I wasn't sure that my printer was pissing me off enough lately
+[10:59:18] <Lapsus> so I did this http://i.imgur.com/bGuM1QQ.jpg
+[10:59:59] <Lapsus> Will I regret it? Time will tell.
+[11:02:24] *** Quits: Gigabit (Gigabit@the.girly.colt) (Ping timeout: 121 seconds)
+[11:03:27] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[11:03:58] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[11:04:03] *** Quits: Creeps|AFK (RedHelper@The.Pony.That.Makes.You.Smile) (Ping timeout: 121 seconds)
+[11:05:03] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[11:05:05] *** Quits: Pony_9200 (MidnightTri@Pony-5qttkj.dc.cox.net) (Connection closed)
+[11:08:05] * Googie pat pats Lapsus
+[11:08:33] * Lapsus offers a closeup of the extruder http://i.imgur.com/9KZOS1Y.jpg
+[11:09:00] <Lapsus> and another of the now much MUCH lighter x carriage http://i.imgur.com/5uEDkLI.jpg
+[11:13:03] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[11:13:24] *** Joins: ThunderBolt (VettleBolt@Sliverpony)
+[11:13:32] *** Joins: GigabitPony (Gigabit@the.girly.colt)
+[11:13:32] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[11:14:02] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[11:22:01] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Quit: Zzzzz)
+[11:24:40] *** Quits: Phase (Phase4@Pony-08fjca.optusnet.com.au) (Ping timeout: 121 seconds)
+[11:48:52] *** Unixkitty is now known as Awaykitty
+[11:53:59] *** Awaykitty is now known as Unixkitty
+[12:02:46] *** Joins: Phase (Phase4@Pony-i0uf2o.internode.on.net)
+[12:25:30] *** Joins: Skids (ejd@Pony-fej07d.res.rr.com)
+[12:32:37] *** Quits: Skids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[12:43:50] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[12:46:10] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[12:54:41] *** Quits: ThunderBolt (VettleBolt@Sliverpony) (Ping timeout: 121 seconds)
+[13:39:13] *** Quits: Phase (Phase4@Pony-i0uf2o.internode.on.net) (Ping timeout: 121 seconds)
+[13:41:46] *** Joins: Phase (Phase4@Pony-i0uf2o.internode.on.net)
+[13:53:46] *** Quits: Phase (Phase4@Pony-i0uf2o.internode.on.net) (Ping timeout: 121 seconds)
+[14:04:09] *** Joins: Phase (Phase4@Pony-i0uf2o.internode.on.net)
+[14:07:47] <RainbowHacks> o.o
+[14:07:49] <RainbowHacks> Morning, all
+[14:12:05] *** Quits: quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[14:12:06] *** Joins: quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[14:16:34] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[14:17:50] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[14:38:28] *** Joins: Skids (ejd@Pony-fej07d.res.rr.com)
+[14:48:40] *** Joins: DataByteBrony (DataByte@Pony-al8dhc.g424.9euc.0247.2601.IP)
+[14:53:23] *** DataByteBrony is now known as DataByte
+[14:53:40] *** DataByte is now known as MobileData
+[14:53:48] *** MobileData is now known as WorkingData
+[14:53:58] *** WorkingData is now known as Data
+[15:16:45] *** Quits: Phase (Phase4@Pony-i0uf2o.internode.on.net) (Quit: Leaving)
+[15:27:24] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[16:05:56] *** Quits: Finwe (vhalkola@Pony-25l.vcn.233.130.IP) (Ping timeout: 121 seconds)
+[16:25:43] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[16:39:40] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[16:41:52] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (Ping timeout: 121 seconds)
+[17:15:01] *** Joins: locodashie11 (locodash11@Pony-rb3hrm.dsl-w.verizon.net)
+[17:21:56] *** Quits: Skids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[17:21:59] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[17:36:02] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:47:26] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[18:24:07] *** CyberJacob is now known as zz_CyberJacob
+[18:41:29] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[18:45:55] *** Joins: Crimson_Tail (Bluepon@Pony-6rm00p.s0tm.sdub.0151.2601.IP)
+[18:46:17] *** Quits: Crimson_Tail (Bluepon@Pony-6rm00p.s0tm.sdub.0151.2601.IP) (Connection closed)
+[18:46:26] *** Joins: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net)
+[18:50:59] *** GigabitPony is now known as GigaCity
+[18:52:24] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[18:54:25] <init3> Actual excerpt from a comcast chat: "please tell me if you need voltage for cable devices to work, because I may have only been in IT for 10 years, but I'm pretty sure it does."
+[18:55:10] <Colgate> well, it does :P
+[18:55:12] <init3> Trying to tell me the modem they sent me won't work on their network. The fact the TV does not work either is just not their department...
+[18:55:51] <init3> Yeah, it's AC, fairly low amperage right?
+[18:56:11] <Colgate> all electronic signals need voltage of some sort
+[18:56:17] <init3> Right lol
+[18:56:35] <init3> I was being facetious if you couldn't tell. 
+[18:56:51] <Colgate> wasn't sure which side was which!
+[18:58:05] *** Unixkitty is now known as Awaykitty
+[18:58:39] <init3> Oh
+[18:58:39] <HoneyDrops|Half> A cable signal is more akin to AC... but you don't generally think of EMF signals in those terms.
+[18:59:05] <init3> Their response (after 10 minutes):  in this case i request you to please wait for the voltage.
+[18:59:22] <init3> ffs
+[18:59:22] <init3> lol
+[19:00:09] <init3> I know, but it should make my multimeter do something. 
+[19:00:56] <init3> If the needle so much as twitches I'd be satisfied there's a connection. 
+[19:01:20] <Colgate> there definitely should be something
+[19:01:33] <Colgate> no idea what that number should be though, pretty low though
+[19:03:11] <init3> Yeah
+[19:03:13] <wolfyshy> I have 42 dBmV here but I'm not sure what the reference value is
+[19:03:45] <init3> Well 0 isn't right. I'll tell you that. 
+[19:03:46] <HoneyDrops|Half> init3 digital or analogue meter?
+[19:03:55] <init3> Analog.
+[19:04:08] <HoneyDrops|Half> ok, yeah, the needle should twitch
+[19:04:32] <HoneyDrops|Half> digital it likely would be below the sample rate, unless you had a high end meter.
+[19:04:41] <HoneyDrops|Half> s/below/above/
+[19:06:06] <init3> Yeah
+[19:06:32] <init3> I am not basing this soley on my meter. 
+[19:07:11] <wolfyshy> the word is solely btw, it just sounds like soley when you say it out loud :P
+[19:07:47] <init3> Yeah, oops
+[19:09:07] <wolfyshy> I assume you're seeing t2 or t3 timeouts on the modem?
+[19:09:25] <init3> I am saving this chat log. This is fucking amazing. I couldn't come up with worse customer service if I literally tried to.
+[19:09:41] <init3> Tbh, I'm not familiar at all with cable. 
+[19:10:04] <init3> But my experience with ADSL makes me say it's not synching? 
+[19:10:04] <wolfyshy> ahh.  I used to be involved with adelphia before they exploded.
+[19:10:16] <frackster> o m g
+[19:10:20] <frackster> Lapsus looks old :O
+[19:10:21] <init3> Also the TV doesn't work either.
+[19:10:31] <wolfyshy> init3: oh then yeah comcast are just being butts
+[19:10:37] <init3> Yep
+[19:11:01] <frackster> but Lapsus also does some pretty neat stuff so x3
+[19:12:00] <init3> Wait, is google killing Google+?
+[19:12:31] <HoneyDrops|Half> At least they are killing a useless project this time?
+[19:13:22] <init3> Right? Damn thing needs to be put out of its misery. 
+[19:13:46] <init3> Oh, I guess they are just decoupling it from Youtube and similar. 
+[19:17:28] <RainbowHacks> hey init3 :3
+[19:18:11] <init3> Hey. 
+[19:18:19] <RainbowHacks> sup
+[19:18:45] <init3> I am pretty sure Comcast is the company I would make if I hated humanity. 
+[19:19:45] <HoneyDrops|Half> I think Time Warner manages to be more despised by its customers.
+[19:20:01] <init3> I think it's just a cable company thing. 
+[19:20:04] <wolfyshy> comcast really is two different companies
+[19:20:24] <wolfyshy> they are fucking ace on their business division, we have them at work, they are timely, prompt, courteous, I would rate them 10/10
+[19:20:29] <wolfyshy> then I go home and they suck ass :D
+[19:20:49] <HoneyDrops|Half> That's pretty common in tech.
+[19:21:00] <init3> Yeah
+[19:21:04] <init3> http://www.thewire.com/technology/2014/05/comcast-and-time-warner-are-the-most-hated-companies-in-america/371295/
+[19:21:05] <PinkiePieBot> [ Comcast and Time Warner Are the Most Hated Companies in America - The Wire ]
+[19:21:11] <init3> So I guess it's a tie?
+[19:21:12] <wolfyshy> so what I did was "upgraded" my comcast account to a comcast business account, at home
+[19:21:25] <HoneyDrops|Half> Dell Business?  Great to work with.  Dell consumer?  **** that.
+[19:21:25] <init3> HOw much more did that cost you?
+[19:21:34] <wolfyshy> now I pay 5$/mo more than I did on their residential service for 10000% better service
+[19:22:05] <wolfyshy> it varies by region though
+[19:22:10] *** Quits: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net) (Quit: I am gone now)
+[19:22:18] *** Joins: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net)
+[19:22:23] *** zz_CyberJacob is now known as CyberJacob
+[19:23:15] <wolfyshy> HoneyDrops|Half: yeah, I ended up just making up an LLC.  paying the ~130$ per year to keep it going is worth it, to me, because EVERYONE treats me like royalty
+[19:23:33] <wolfyshy> "meh you're just another chick -- oh she runs a business?  we love you we love you we love you"
+[19:26:39] <HoneyDrops|Half> Well they did the numbers, and determined that it is less profitable to spend money on supporting general consumers.  You can treat them like shit and keep making a higher profit.  Capitalism works!~
+[19:28:42] <RainbowHacks> wolfyshy, that's actually really smart. I didn't even think to get my home internet put under my business name
+[19:41:35] *** init3 is now known as Init3-away
+[19:42:58] *** Init3-away is now known as init3
+[19:59:08] *** Joins: JockeTF (jocke@Pony-fkq3u5.bredband.comhem.se)
+[19:59:14] *** Joins: LUNA_HG (sxochjlyefh@Pony-aejt9u.pppoe.omsknet.ru)
+[19:59:23] <LUNA_HG> hello
+[19:59:31] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[20:05:37] *** Quits: LUNA_HG (sxochjlyefh@Pony-aejt9u.pppoe.omsknet.ru) (Ping timeout: 121 seconds)
+[20:20:51] <init3> So I'm not too big into web development anymore. Is there any way to mirrior this page: http://tours.realvisionstudio.com/idx/58241 ?
+[20:20:52] <PinkiePieBot> [ Tour #58241 ]
+[20:21:16] <init3> It is the house my dad just sold and he'd like to keep these for nostalgia reasons. 
+[20:21:33] <init3> I don't see a single swf file I can download I think it's AJAX
+[20:23:43] <JustAberrant> yeah
+[20:23:47] <JustAberrant> it's grabbing a tonne of images as it goes
+[20:24:12] <JustAberrant> like.. http://fusion.realtourvision.com/tours/58241/images/resized/0_66611600_1404011440_2_2.jpg?timestamp=1404047898
+[20:24:19] <init3> Right. I guess he has copies of the images but would like to be able to do the panorama type shit
+[20:24:42] *** Quits: JockeTF (jocke@Pony-fkq3u5.bredband.comhem.se) (Quit: Leaving.)
+[20:24:50] <JustAberrant> yeah, that is likely a function of the player, and probably unlikely you can grab it
+[20:24:53] <init3> Oh shit, so the panorama isn't a single warped image then either.
+[20:25:08] <init3> I thought that'd be the case
+[20:25:11] <JustAberrant> you could make a video recording of the playback
+[20:25:23] <JustAberrant> but you won't be able to get the interactive stuff easily imo
+[20:25:25] <init3> That's something. 
+[20:25:31] <init3> Yeah
+[20:25:40] * HoneyDrops|Half misses the day of nice static pages.
+[20:25:50] <init3> Hehe
+[20:26:08] <JustAberrant> also, nice place :)
+[20:26:22] <JustAberrant> like holy shit, makes my place look like a hole
+[20:26:42] <init3> Hehe you should have seen it when he bought it though. 
+[20:27:29] <init3> It only sold for 380 i think too. Fucking real estate market up here is still crap. 
+[20:27:37] <JustAberrant> jesus
+[20:27:51] <JustAberrant> I paid $250k for mine.. and it's approximately 1/10th as nice as that
+[20:28:31] <init3> Right? I mean, it was my dad's place but I was pretty disappointed at the price he got. 
+[20:28:54] <JustAberrant> yeah, I would have guessed that would be in the 500k range
+[20:29:05] <JustAberrant> like.. around here that would be the minimum for something like that
+[20:29:09] <init3> It did appraise for 500k in 2006
+[20:29:16] <JustAberrant> plus being on the water.. yeah
+[20:30:16] <init3> Even at that price point it took like 2 years to sell. 
+[20:30:39] <init3> But he did have a lot of equity in it and it was only him and I living there. 
+[20:30:42] <JustAberrant> it's a buyers market here too.. but still
+[20:31:03] <init3> That is a ridiculous house for 2 people.
+[20:32:46] <init3> Place was a shithole when we bought it though. 
+[20:33:16] <init3> Rotting wooden siding, destroyed carpets, electrical "oddities" 
+[20:33:17] <Midnight_Tinker> man I wish houses around here ran that cheap
+[20:33:46] <JustAberrant> init3: that's even worse if that's all he got for it
+[20:33:52] <JustAberrant> though, I guess he still got to live in a nice place
+[20:34:16] <init3> Naw, I think he only paid like 150-200 iirc
+[20:34:36] <init3> In like 1994 I think
+[20:35:26] <init3> But part of that is an addition too. 
+[20:35:45] <init3> About 1/4 of the house wasn't there. 
+[20:36:34] <init3> But yeah, I don't know if he got out everything he put in but I think probably. 
+[20:36:59] <Midnight_Tinker> absolute dirt cheapest SFH in my area I can find non foreclosure is a 1000 square foot 1 bedroom for 300k
+[20:37:03] <init3> And yeah, it was a great place to grow up for me at least. 
+[20:37:23] <init3> Heh.
+[20:37:30] <init3> Location, location, location
+[20:40:28] <AppleDash> JustAberrant: Hi
+[20:40:37] <AppleDash> JustAberrant: Could you do us a favor and zip up the FTB map for download?
+[20:41:26] <JustAberrant> interesting request ;p
+[20:41:30] <JustAberrant> but yes, I can
+[20:41:39] <JustAberrant> I was actually going to ask, are you guys still playing on that server
+[20:41:49] <JustAberrant> every once in awhile I go restart it when the cpu goes crazy
+[20:42:20] <JustAberrant> if no one is actually playing on the server though, I'd kill it
+[20:42:39] <JustAberrant> (or if you just want to play it locally/move it to your own server)
+[20:42:44] <JustAberrant> also what ever happened with your server?
+[20:44:23] <JustAberrant> AppleDash: also, do you just want the world dir, or other stuff?
+[20:45:42] <AppleDash> JustAberrant: Jordin is playing it
+[20:45:45] <AppleDash> Not me though
+[20:45:50] <AppleDash> Just give us the whole server I guess :P
+[20:46:17] <JustAberrant> is he planning on switching to playing locally? :>
+[20:46:44] * JustAberrant should unbreak his FTB client and poke around the world :(
+[20:46:44] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[20:46:59] <JustAberrant> or just experimenting with stuff :(
+[20:47:00] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[20:47:20] <AppleDash> I dunno yet
+[20:47:28] <AppleDash> I think hye just wants a backup in case it dies
+[20:49:22] <JustAberrant> awe
+[20:51:00] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[20:51:27] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[20:52:22] <JustAberrant> also whatever happened to your server?
+[20:53:56] <JustAberrant> anyway: snapshot__main_ftb__aug_03_2015.tar.gz
+[20:53:58] <JustAberrant> err...
+[20:54:37] <Midnight_Tinker> so I just type that into google and download the first link right
+[20:54:49] <JustAberrant> justaberrant.com/secret_ponies/snapshot__main_ftb__aug_03_2015.tar.gz
+[20:55:18] *** init3 is now known as Init3-away
+[20:57:15] *** Quits: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net) (Quit: I am gone now)
+[20:58:09] *** Init3-away is now known as init3
+[21:01:11] *** Joins: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net)
+[21:13:13] *** Joins: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net)
+[21:26:54] <DJ-C0L7[CSS]> i dont like the changes made to the youtube player again
+[21:28:37] <HoneyDrops|Half> youtube-dl ftw
+[21:28:54] <DJ-C0L7[CSS]> they did something to the code that attenuates the volume
+[21:29:14] <DJ-C0L7[CSS]> so it starts out with good volume, and suddenly you are using amplified speakers and plugging several sets together to get usable audio
+[21:30:05] <DJ-C0L7[CSS]> nvm >.< i see whats wrong
+[21:33:59] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Quit: bbl)
+[21:34:20] <DJ-C0L7[CSS]> http://ccm.net/forum/affich-722068-no-sound-on-youtube-videos-in-any-browser
+[21:34:21] <PinkiePieBot> [ No sound on Youtube Videos in any browser [Solved] ]
+[21:35:49] <HoneyDrops|Half> eww flash
+[21:35:50] <DJ-C0L7[CSS]> thats not the problem i'm having though, it starts out loud and full volume, then suddenly, nothing
+[21:35:57] <DJ-C0L7[CSS]> and i checked that its using HTML5
+[21:39:05] <DJ-C0L7[CSS]> oh, apparently google is catching flak over the change in audio settings, apparently they have implemented "smart audio"
+[21:39:13] <DJ-C0L7[CSS]> but its broken
+[21:40:30] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[21:40:45] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[21:42:50] *** init3 is now known as Init3-away
+[21:45:42] *** Init3-away is now known as init3
+[21:49:21] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[22:03:46] *** Awaykitty is now known as Unixkitty
+[22:08:21] *** GigaCity is now known as Gigabit
+[22:08:59] *** Joins: RazorSharpFang (chatzilla@sharpest.of.all.fangs)
+[22:10:44] <RazorSharpFang> PowerShell is amazing. <3
+[22:24:36] *** Quits: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net) (Quit: Leaving.)
+[22:29:55] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:34:42] *** Cephy-ZZZzzz is now known as Cepheid
+[22:35:07] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[22:35:33] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[22:50:05] <Lapsus> frackster: ew you're old.
+[22:50:06] <Lapsus> :p
+[22:50:22] <Lapsus> also when did I ever link a picture of me in here :v
+[22:57:54] <Colgate> RazorSharpFang: it is amazing.. if you can understand how it works with its crazy OO shell thing instead of text based
+[22:58:32] <RazorSharpFang> Colgate: Well, imo, it's better than CMD.
+[22:58:40] <Colgate> that's not saying much
+[22:58:46] <RazorSharpFang> Yeah.
+[22:58:49] <Colgate> literally any shell is better than CMD
+[22:59:20] <Gladiolus> mmm ms-dos
+[22:59:27] <Gladiolus> SET BLASTER= A220 D1 I5 P220
+[22:59:40] <Gladiolus> wait d1 comes second
+[22:59:43] <Gladiolus> i don't think it would matter
+[23:01:24] <Cepheid> I don't think it matters.
+[23:01:38] <Cepheid> If it does, then I'd argue it's bad software design.
+[23:03:19] <RazorSharpFang> I'm probably very good at bad software design.
+[23:03:54] <Gladiolus> I assume the reason those numbers have letters too is so it doesn't have to be in order
+[23:10:02] *** Joins: Skids (ejd@Pony-fej07d.res.rr.com)
+[23:10:44] *** Joins: Hickory (Iceman@Darkhorse21)
+[23:11:21] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[23:11:38] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[23:19:16] *** Unixkitty is now known as Awaykitty
+[23:19:45] *** Joins: MistVeil (aqua@Pony-hahd0r.static.axtel.net)
+[23:22:58] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[23:23:26] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[23:26:40] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[23:35:05] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[23:35:21] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)

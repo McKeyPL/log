@@ -1,0 +1,598 @@
+[00:01:17] * MistVeil is not good
+[00:02:26] <MistVeil> But compared to what it was before...
+[00:02:33] <MistVeil> That looks crystal clear tidy
+[00:03:08] <Moonlightning> Aww, no before pic for us?
+[00:03:20] <MistVeil> Nope, I lost it :X
+[00:07:22] <MistVeil> This seems close enough in terms of messyness and placing of cords: http://imgur.com/a/Mos6y
+[00:07:22] <PinkiePieBot> [ "Datacenter" - Album on Imgur ]
+[00:10:49] <Moonlightning> oh wow
+[00:11:38] <Webster> Well, it's not /horrible/. xD
+[00:13:30] <Colgate> MistVeil: I had worse at work :(
+[00:14:01] <MistVeil> Webster: I agree. I know it's not pretty, but... it's possible to manage without trouble now
+[00:14:15] <MistVeil> And it's also pretty stable as well
+[00:14:51] <MistVeil> Of course, I'm looking to do a much better job, I usually give it an update daily, trying to get things in proper place, cables properly combed, and so on
+[00:15:15] <Webster> I had to manage a rack at my last job. I did okay enough, considering it was 6 servers with network connections and 20 USB cables coming out from the rack. >_>
+[00:18:00] <MistVeil> USB ports: You never have enough
+[00:19:11] <Webster> Heh, each server had 2-4 USB cards added.
+[00:19:15] <Webster> At home I have plenty.
+[00:19:31] <MistVeil> Oh, also, as you probably can tell from my pics, the place is TINY
+[00:19:56] <Webster> My server's got 10 and I don't need any, unless maybe I plug in my UPS.
+[00:20:12] <MistVeil> ^ same here, except it's just 4
+[00:20:38] <Webster> My server's motherboard used to be a desktop, so it's got a lot.
+[00:20:48] <Webster> Really just using it to set it up.
+[00:20:59] <Webster> After that I'll unplug the keyboard and flash drive.
+[00:21:08] <Webster> Then I'll stick it in my rack.
+[00:21:23] <Colgate> disclaimer: this is horrible: https://sparkler.minuette.net/owncloud/index.php/s/d9Eys3qfzzS1H7R https://sparkler.minuette.net/owncloud/index.php/s/DKXmYq9eXRIr2hP
+[00:21:24] <PinkiePieBot> [ ownCloud ]
+[00:21:50] <Colgate> also, I didn't do the wiring here, it has been like that since I started -.-
+[00:21:54] <Webster> Mrm.
+[00:22:21] <Webster> All I have at home is a router. No rackmount patch panels or anything. Maybe if I get a house at some point.
+[00:22:24] <MistVeil> Colgate: Your place? It's still loading
+[00:22:31] <Colgate> my work
+[00:22:35] <Webster> Thankfully at my new job I'm not admining a rack. xD
+[00:23:10] <MistVeil> Yup, looks awful
+[00:23:18] <MistVeil> I'd hate to be the one to fix that
+[00:23:30] <Colgate> that's why it hasn't been fixed in over 3 years!
+[00:23:56] <MistVeil> You know what's the worse thing when you get all "alright, let's start fixing this, baby steps first" and try to do so?
+[00:24:01] <Moonlightning> Colgate, why the heck does your web service want me to enable JavaScript before it will serve me a rendered page whose mane purpose is to display an image
+[00:24:13] <MistVeil> "Hey why is the network down do your fucking job asshole get it up asdasdasdasdasd!" <--This
+[00:24:23] <Colgate> Moonlightning: because that's how owncloud works
+[00:24:39] <Colgate> do I look like a webdesigner? :P
+[00:25:25] <Colgate> MistVeil: well, that site is ~45 minutes away from the main office, so going out there to work on it, is annoying
+[00:25:41] *** CyberJacob is now known as zz_CyberJacob
+[00:25:53] <MistVeil> Eww
+[00:25:54] <Seoson> Having websites that work with a plain html fallback is soo oldschool </sarcasm>
+[00:26:34] <MistVeil> Well, at least our server room still has enough space to nap
+[00:27:00] <Moonlightning> Colgate: doesn't that bother you at all?
+[00:27:26] <Moonlightning> Seoson: some things just don't /need/ JavaScript.
+[00:27:31] <Colgate> it does, but eh? better than the alternatives
+[00:27:31] <Moonlightning> like…ahem…an image page.
+[00:27:39] <MistVeil> Too bad the floor's covered in dust, because the roof is below the stairs to the employees' dining room
+[00:27:58] <Colgate> oh, that's what it uses JS for
+[00:28:03] <Colgate> for resizing the picture
+[00:28:38] <Seoson> Well one could use PHP for that ^^
+[00:29:04] <Webster> Woo, got FreeNAS working! Now to figure out how to do backups to it, or if I want to just install ownCloud on top and use their client. >_>
+[00:29:13] <Colgate> bit annoying that the direct link is covered up by the enable JS bullshit though
+[00:29:14] <Seoson> Would save some traffic as well. Nevertheless OwnCloud works very well - using it myself
+[00:29:36] <Moonlightning> Colgate: just append '/download'
+[00:29:50] <Colgate> sure, but the link still shouldn't be covered up
+[00:29:53] <Moonlightning> and ignore the download intent or whatever
+[00:29:56] <Moonlightning> Yeah.
+[00:33:55] <Seoson> I wanted to use FX explorer to access my webdav shares from android. Turns out it doesn't support SNI. How is that even possible these days? Now I need to use a seperate app -.-
+[00:34:51] <Colgate> FX explorer?
+[00:36:17] <Seoson> It's a filemanager for android. The default one cyanogenmod comes with is missing some features.
+[00:36:39] <Colgate> is it? I never noticed anything missing from it
+[00:37:13] <Colgate> well, hmm, I guess there was one thing, an open with command that let you slect anything you want
+[00:38:04] <Seoson> Root access would be a good example (Unless it was patched in and I didn't notice)
+[00:38:13] <Colgate> mine has root access
+[00:38:29] <Seoson> Also FX explorer comes with an achieve manager
+[00:38:51] <Colgate> achieve manager? for what? achievements? XD
+[00:39:38] <Seoson> Ups. I meant tar balls etc. And you're right. The current does indeed have root support
+[00:41:25] <Seoson> Also FX can access smb shares, ftp and sftp hosts.
+[00:41:53] <Seoson> Only WebDav (which is included) seems to be missing SNI
+[00:42:10] <Moonlightning> Android is missing some features
+[00:43:18] <Moonlightning> Use of the root account isn't supported for some odd reason, even /years/ after the initial release. To this day, you need a third-party patch to fix that.
+[00:43:45] <Moonlightning> oddly enough, (AFAIK) most of said patches use security flaws to temporarily fix the issue.
+[00:44:12] <Seoson> People would do stupid things with root access - I can understand the decision.
+[00:44:27] <Seoson> Only thing that annoys me are locked bootloaders
+[00:45:08] <Seoson> Even unlocking them doesn't fix all problems. You need to re-lock for example to apply RUUs.
+[00:45:11] <Moonlightning> That's…not a very good reason…
+[00:45:29] <Moonlightning> Nor did it stop all of the sane operating systems from allowing it.
+[00:45:57] <Moonlightning> sane operating systems being everything manestream except Windows—OS X, Linux distros, and BSDs
+[00:46:21] <Moonlightning> also, it's not a usable system
+[00:46:30] <Moonlightning> it doesn't have grep
+[00:46:34] <Moonlightning> GREP, for Luna's sake
+[00:46:40] <Moonlightning> or head or tail
+[00:46:49] <Moonlightning> or a pager
+[00:46:58] <Moonlightning> no more, no less, not even pr or whatever the original was called
+[00:47:05] <Moonlightning> how the fuck are you supposed to do anything without those filters?
+[00:47:23] <Moonlightning> No editor either. No vi, vim, nano, ed, /nothing/
+[00:47:32] <Moonlightning> How the fuck are you supposed to edit files?
+[00:47:39] <Seoson> Well one of the pros of using Linux is that you're not useally logged in with root and therefor avoid demage to the system. Busybox?
+[00:47:50] <Colgate> indeed, busybox
+[00:47:55] <Colgate> I installed that on my phone
+[00:47:59] <Moonlightning> Yes, sure, let me just install this THIRD PARTY APP IN ORDER TO GET A SANE SYSTEM
+[00:48:05] <Moonlightning> It's ridiculous. :V
+[00:48:08] <Colgate> I need to compile openssl-cli though and put it on my phone too
+[00:48:16] <Colgate> haven't gotten around to that yet
+[00:48:24] <Moonlightning> I've given up on Android.
+[00:48:29] <Seoson> Also you're not supposed to access the terminal and therefor key features are missing
+[00:48:29] <Moonlightning> I'm jumping ship to iOS next iteration.
+[00:48:39] <Moonlightning> I'm sorry.
+[00:48:43] <Colgate> cause iOS is any better?
+[00:48:48] <Moonlightning> I'm not SUPPOSED to do WHAT NOW with MY phone?
+[00:49:19] <Moonlightning> iOS doesn't PRETEND to give you more control and flexibility.
+[00:49:49] <Seoson> At least on Android I have the choice to patch those things in myself.
+[00:50:01] <Moonlightning> Seoson, if I'd wanted arbitrary restrictions on what I could do, I would have rented|leased a phone, not bought one.
+[00:50:09] <Colgate> hmm, wonder if sailfishos has that stuff
+[00:51:50] <Seoson> I'm happy with Android. I have to use some third party apps to get a few features I need (CalDav-Sync, CardDav-Sync), but as I said at least the system allows me to do that.
+[00:52:45] <Colgate> yeah, I'm using some thing from f-droid for that
+[00:53:18] <Colgate> DAVdroid
+[00:54:00] <Seoson> I had an iPod touch (before I owned a smartphone) and without a jailbreak the device didn't have much use to me. I loved the gameboy emulator for example that apple wouldn't allow.
+[00:54:52] <Seoson> And to wait for an exploit after every update is far away from being convenient
+[00:55:05] <Moonlightning> Right? :P
+[00:57:23] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "be back later")
+[01:01:37] <Seoson> Call Recording is a feature that still seems to cause problems. technically it is illegal in my country I guess, but for telcos that would be very helpful. I once got it working with a custom kernel but upgrades made that obsolete.
+[01:02:09] <Colgate> I used to use a call recorder, requires both sides knowing the call is being recorded where I am
+[01:02:43] <Moonlightning> totally stupid IMO
+[01:02:50] *** Quits: hawthornbunny (hawthorn@Pony-tk6.bga.28.2.IP) (Ping timeout: 121 seconds)
+[01:03:04] <Colgate> would be nice if it was built into the phone thing itself, like an answer w/o recording button and an answer w/recording button
+[01:03:14] <Colgate> since I only wanted to record certain calls
+[01:03:15] <Moonlightning> if you don't want someone to know, record, or remember something, why the hell are you telling them
+[01:03:27] *** init3 is now known as Init3-away
+[01:03:44] <Moonlightning> basically it just prevents it from being admitted as court evidence
+[01:04:21] <Moonlightning> and causes bullshit like http://www.inquisitr.com/1209361/disabled-boy-records-bullies-tormenting-him-police-charge-him-with-illegal-wiretapping/
+[01:04:22] <PinkiePieBot> [ Disabled Boy Records Bullies Tormenting Him, Police Charge Him With Illegal Wiretapping ]
+[01:04:59] <Colgate> the question is now, what is defined as a call?
+[01:05:05] <Seoson> I'd never use it as court evidence, just to avoid taking notes.
+[01:05:06] <Colgate> is talking over skype considered a call?
+[01:05:14] <Colgate> a voip phone? a teamspeak server?
+[01:05:41] <Colgate> a fax line? :P
+[01:06:30] <Moonlightning> video calls?
+[01:06:35] <Moonlightning> do voice calls over Wi-Fi count?
+[01:06:47] <Moonlightning> er, not Wi-Fi…
+[01:06:55] <Moonlightning> over the general Internet *
+[01:07:21] <Colgate> indeed, where is the line drawn, and why was it drawn there? is it all audio communication or what?
+[01:07:52] <Moonlightning> More than that…
+[01:07:57] <Moonlightning> What is the purpose of this law?
+[01:07:59] <Moonlightning> :p
+[01:08:13] <Colgate> is it illegal to record audio sent over FM radio? what about audio sent over unencrypted wifi?
+[01:08:23] <Colgate> what makes that any different?
+[01:08:40] <Moonlightning> And why is that WIRETAPPING?
+[01:08:45] <Colgate> lol
+[01:08:53] <Moonlightning> When I tune into my local radio station…is that ALSO wiretapping?
+[01:08:56] <Moonlightning> It's the same thing…?
+[01:09:03] <Colgate> the purpose was to prevent people from having their stuff recorded without their consent
+[01:09:26] <Colgate> to keep phone conversations "confidential"
+[01:09:41] <Moonlightning> That's not a purpose; that's a restatement of the law I'm trying to question.
+[01:09:44] <Moonlightning> ^2 THAT is a purpose.
+[01:10:00] <ShivalWolf> wiretapping is only legal when your a goverment organisation intent on spying on everyone
+[01:10:00] <Colgate> of course, this just gives a false sense of security, especially when it was introduced when everyone used pots everywhere
+[01:10:09] <Moonlightning> Okay, so that's understandable in government contexts.
+[01:10:19] <Moonlightning> But not elsewhere.
+[01:10:23] <ShivalWolf> but that article wtf?!?!
+[01:10:26] <Colgate> it is incredibly easy to tap into a pots line, just hook a wire onto the phone line, lol
+[01:10:31] <Moonlightning> ShivalWolf, I know right?
+[01:10:42] <ShivalWolf> is having an answering machien wiretapping?
+[01:10:50] <Moonlightning> Oh snap! It must be!
+[01:10:57] <Colgate> no, because the answering machine says it is recording
+[01:10:58] <ShivalWolf> what about teletype machines
+[01:11:04] <Moonlightning> No it doesn't :p
+[01:11:07] <Colgate> so both parties know
+[01:11:15] <Moonlightning> And even then, it doesn't ask for consent
+[01:11:20] <Colgate> you don't have to
+[01:11:26] <Seoson> well at least in Germany what you could do is record the call, write down a transcript and use it in court. It'd be almost as good as a recording.
+[01:11:31] <ShivalWolf> hmm what about transcoding if your pots line is converted to a sip line
+[01:11:33] <Colgate> both parties just have to know it is being recorded(in the US in my state)
+[01:11:41] *** Init3-away is now known as init3
+[01:11:48] <Moonlightning> Seoson: that's hesaid-shesaid though
+[01:12:03] <ShivalWolf> got to love the bullshit laws everywhere that dont make sence and dont work
+[01:12:07] <Moonlightning> I know /some/ always have a recording that says /at the tone, please leave a message/, but my home phone doesn't do that
+[01:12:09] <ShivalWolf> unless someone with money wants to abuse them'
+[01:12:13] <ShivalWolf> or the law itself wants to abuse them
+[01:12:37] <ShivalWolf> like the new DNS metadata collection shit thats comming up in AU
+[01:12:50] <ShivalWolf> only local providers have to do it
+[01:12:53] <Moonlightning> what the hell is DNS metadata collection
+[01:12:55] <Moonlightning> What the hell
+[01:13:03] <Colgate> I'm curious too
+[01:13:03] <ShivalWolf> the peopel putting int he law have no idea people can change their dns servers
+[01:13:05] <johnsey> regardless, your provider is recording it all anyway, the NSA demands it
+[01:13:10] <Moonlightning> Would it just be /this IP address queried this server at this date and time/?
+[01:13:26] <Moonlightning> Because if it includes hostnames or record types from the query…that's not metadata anymore.
+[01:13:30] <Colgate> I'm assuming it would be that
+[01:13:38] <Moonlightning> And this is useful to who, how?
+[01:13:54] <Colgate> I'm assuming the metadata is everything layer <7
+[01:14:08] <ShivalWolf> trying to find the info
+[01:14:12] <Moonlightning> That's not metadata anymore though. :P
+[01:14:21] <ShivalWolf> Colgate: they claim its metadata but its stupid
+[01:14:23] <ShivalWolf> they want to log all DNS
+[01:14:27] <Moonlightning> The domain queried for is /part of the query/
+[01:14:29] <Moonlightning> it's DATA.
+[01:14:35] <Colgate> that's layer 7
+[01:14:40] <ShivalWolf> the au govermnt is goign though a stupid phase right now
+[01:14:45] <Moonlightning> …oh, derp
+[01:14:52] <Moonlightning> I misinterpreted that as layer >1
+[01:15:05] <Phase> ShivalWolf, as opposed to all the other times when they were totally sane
+[01:15:09] *** Joins: hawthornbunny (hawthorn@Pony-lfd.716.25.2.IP)
+[01:15:34] <ShivalWolf> Phase: they are getting a little crazier right nwo with the nutballs in charge
+[01:16:04] <Colgate> :(
+[01:16:28] <Moonlightning> hawthornbunny, how the heck do you have an IP in 0/6?
+[01:16:42] <ShivalWolf> cant find what i was reading
+[01:16:48] * Phase is particularly pissed at the victorian government
+[01:17:30] <Colgate> Moonlightning: what?
+[01:19:15] *** Joins: Sombra (Iceman@Darkhorse21)
+[01:20:08] <Moonlightning> Colgate: I thought you said everything excluding physical, not everything excluding application
+[01:20:32] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[01:20:40] <ShivalWolf> hmmm maybe i was wrong
+[01:20:42] <Colgate> no no, I meant the hawthornbunny thing
+[01:20:51] <ShivalWolf> maybe its just part of the crazy anti priacy stuff that started
+[01:21:51] <ShivalWolf> wish i could find what i was reading like a week ago
+[01:22:31] <Colgate> me too!
+[01:22:52] <ShivalWolf> im sure it was part of the new data retention stuff
+[01:23:35] <ShivalWolf> i was looking at it and 1st thing i did was move my DNS to my own servers again
+[01:24:23] <ShivalWolf> i remember it mentioned transit providers and ISPs had to include DNS in data retention stuff
+[01:24:32] <Moonlightning> Oh. Their address is in 2/8
+[01:24:34] <ShivalWolf> but i cant rememebr if it was somethign that was oked and approved or denied
+[01:24:41] <Moonlightning> I dunno. Those seemed rare. :p
+[01:24:49] <ShivalWolf> or if it was the piracy bill not the data retention bill
+[01:25:05] <hawthornbunny> I don't know what you mean :)
+[01:25:16] <ShivalWolf> i was talking to people at work abot it and they speificly say providers
+[01:25:25] <ShivalWolf> so anyone who does their own dns is fine
+[01:25:25] <Moonlightning> [16:15:09] -!- hawthornbunny (hawthorn@Pony-lfd.716.25.2.IP) has joined #techponies
+[01:25:43] <Moonlightning> Does that include root servers?
+[01:25:52] <ShivalWolf> Moonlightning: it was only servers hosted in AU
+[01:26:15] <Moonlightning> Oh, okay. So all you have to do is use a server outside Australia.
+[01:26:23] <ShivalWolf> Moonlightning: not even that
+[01:26:27] <ShivalWolf> its only if your a provider
+[01:26:40] <ShivalWolf> there were only like 60 companies or so who had to do it
+[01:26:41] <Moonlightning> And then you can have your queries just recorded by the government, instead of also being kept by the provider
+[01:26:52] <Seoson> Since my mobile carrier decided to use a proxy that cannot be disabled to compress images I'm on google's DNS servers on all devices. Yeah I'm throwing even more data at them, but at this stage it probably doesn't matter anymore.
+[01:27:51] <Moonlightning> My VPN server asks clients to use it (over the VPN) for DNS, so there's that
+[01:28:17] <hawthornbunny> 716? That's not a number :)
+[01:28:17] <ShivalWolf> the govermnts idea that their grand priacy stopping filter plan is based around DNS
+[01:28:42] <Moonlightning> hawthornbunny: the last two octets are lossfully hashed
+[01:29:44] <Moonlightning> for v6, the /32 is visible and the next 16 bits are masked but in a separate component from the rest
+[01:30:04] <Moonlightning> Like @Pony-gvpdcc.0880.gi54.19f0.2001.IP
+[01:30:28] <Moonlightning> …oh, the 16 bits after that are also in a separate component; I didn't know that
+[01:30:37] <Seoson> in AT they want IP blocks for piracy things now as well.
+[01:30:53] <ShivalWolf> lol
+[01:30:58] <ShivalWolf> thats goign to be sooo affective
+[01:31:18] <Seoson> If that ever comes to Germany I will route my entire traffic through another country.
+[01:31:22] <ShivalWolf> lets block 1 ipv6 address at a time
+[01:31:47] <Seoson> I'd imagine they will block the /64 subnet
+[01:31:49] <Moonlightning> what, by /128s instead of /48s or something?
+[01:31:58] <Moonlightning> blocking a /128 is just idiotic
+[01:32:04] <ShivalWolf> Seoson: they woudlnt eb able to legally
+[01:32:07] <Moonlightning> you block /64s
+[01:32:21] <ShivalWolf> Moonlightning: every law that has ever come around to block ips for things
+[01:32:29] <ShivalWolf> has only ever been able to block the specific target
+[01:32:38] <ShivalWolf> becuase its possible other ips are differnt people
+[01:32:43] <ShivalWolf> and differnt sites
+[01:32:58] <Moonlightning> ShivalWolf, it's possible that the SAME IP is used by different people.
+[01:32:58] <ShivalWolf> yeah they coudl cahnge that
+[01:33:02] <Moonlightning> It's called NAT; maybe you've heard of it
+[01:33:14] <ShivalWolf> but alot of backlash will occur if they block soemthing legal
+[01:33:25] <ShivalWolf> Moonlightning: this is hosting
+[01:33:26] * Moonlightning groans.
+[01:33:35] <Moonlightning> okay, I'm done with politics for today
+[01:33:41] <Moonlightning> or the next fortnight or something
+[01:33:42] <Seoson> Thing is a lot of piracy sites use cloudflares CDN. Imagine they block that lol
+[01:33:49] <ShivalWolf> Seoson: exactly
+[01:33:57] <ShivalWolf> its why their 'ip filtering' never works
+[01:35:46] <Seoson> Secretly I hope they do exactly that. The backfire would be amazing. I would just stand there and watch the world burn ;-)
+[01:36:05] <ShivalWolf> it woudl be amusing
+[01:37:04] <ShivalWolf> there is no real way to do full blocking
+[01:37:12] <ShivalWolf> and the pactch hackjob they try and do is pointless
+[01:37:36] <ShivalWolf> and then theres the brittish nut who wants to ban encryption
+[01:37:51] <Seoson> AND PORN
+[01:37:56] <Seoson> bloody PORN
+[01:38:18] <Colgate> protect the children yo
+[01:39:22] <ShivalWolf> keep children off the net until they are mature and then let them grow a fuckign skin
+[01:39:35] <ShivalWolf> becuase this current generation is a bunch of weak little whining shits who are offended by everythign
+[01:39:42] <Seoson> If even americans agree that this is stupid than I have no idea how they could ever think that this is a good idea.
+[01:40:26] <Seoson> (Referencing to cultural differences when it comes to nudity)
+[01:41:19] <Colgate> you can never block the porn
+[01:41:23] <Colgate> it will never work
+[01:41:50] <Moonlightning> ShivalWolf: we call those people SJWs.
+[01:42:43] <Adalade> Porn is fun when you know everything about it lol
+[01:43:03] <ShivalWolf> hopefully one day religion will be erradicated
+[01:43:21] <ShivalWolf> it just causes too many problems
+[01:44:09] <Moonlightning> You don't think people will find other stupid excuses to be stupid?
+[01:45:08] <Seoson> tolerance ShivalWolf. I don't mind people being religious as much as I don't mind people being stupid. Everything is fine as long as they don't annoy me. Some of my best friends are very religious
+[01:46:15] <Moonlightning> and as long as you don't interfere with people's rights or anything :V
+[01:47:56] <Seoson> Good thing with stupid people is that they generate my income (more or less), so I'm glad they exist
+[01:48:31] * ShivalWolf ponders breakfast
+[01:48:44] <Princess_AppleDash> ShivalWolf: What happened to your Pony
+[01:48:46] <Princess_AppleDash> ?
+[01:49:13] <ShivalWolf> Princess_AppleDash: i changed it to my regular normal nick ages ago but forgot to adjust my autojoin finaly fixed that the other day
+[01:49:20] <ShivalWolf> if oudn the nic too long and anoying
+[01:49:22] <Princess_AppleDash> Ah :P
+[01:49:24] <ShivalWolf> nick
+[01:49:38] <Princess_AppleDash> Your nick color is just different and also the same as Moonlightning and Colgate's so it's confusing :(
+[01:49:44] <ShivalWolf> lol
+[01:49:58] <ShivalWolf> wow clients colour nicks now?
+[01:50:01] * ShivalWolf fitshakes
+[01:50:02] <Princess_AppleDash> yes
+[01:50:08] <ShivalWolf> back in my day it was black and green termianls damn it
+[01:50:18] * ShivalWolf waggles his cane
+[01:50:26] * Moonlightning hacks the `tty`s to be 256color
+[01:50:26] * Colgate looks at terminal
+[01:50:32] <Colgate> it still is black and green :V
+[01:50:37] <ShivalWolf> Colgate: mine to
+[01:50:45] <Moonlightning> black and -white- light gray
+[01:50:46] <Princess_AppleDash> My terminal supports colors :(
+[01:50:48] <Moonlightning> easier on the eyes
+[01:50:56] <Moonlightning> color in the prompts
+[01:51:11] <Moonlightning> hostnames colored like the pony's hair
+[01:51:20] <Moonlightning> coat for the first half, mane for the second
+[01:51:23] <Princess_AppleDash> that's just pointless
+[01:51:47] <Moonlightning> Like nick colring, it makes them easier to recognize.
+[01:51:48] <ShivalWolf> one of my early comptuers was black and orange
+[01:51:53] <ShivalWolf> it was horrid to look at
+[01:52:06] <Moonlightning> Orange is the new green? What?
+[01:52:22] <ShivalWolf> i used to play the orgional sim city on it
+[01:52:31] <Moonlightning> seriously, though, orange on black sounds kinda cool
+[01:52:38] <Moonlightning> as long as it's not a super intense orange
+[01:52:43] <ShivalWolf> it was orange and shades of orange
+[01:52:52] <Moonlightning> …orange on orange?
+[01:53:06] <ShivalWolf> oranage and 8 or 16 shades on black
+[01:53:21] <Moonlightning> …what color were the background and foreground? :p
+[01:53:52] <ShivalWolf> it was the same as your regular black/green screen
+[01:53:57] <ShivalWolf> but it was orange instead of green
+[01:54:09] <ShivalWolf> it was probbaly a cheap knockoff screen
+[01:54:23] <ShivalWolf> this was like 25 years ago
+[01:54:56] <Moonlightning> so orange on black. XD
+[01:55:05] <ShivalWolf> teh computer came from a hard rubish collection
+[01:55:25] <ShivalWolf> but it was one of my 1st computers i got to play around with
+[01:55:29] <ShivalWolf> and pull appart
+[01:56:26] <Seoson>  This is what I have to work with everyday(On XP and with a different server software, but you get the idea): https://goo.gl/Kd7cMj
+[01:56:26] <PinkiePieBot> [ Google URL Shortener ]
+[01:56:45] <Seoson> lol
+[01:57:02] <Moonlightning> > https://goo.gl/Kd7cMj – this goo.gl shortlink has been disabled. It was found to be violating our Terms of Service. Click here and here for more information about our terms and policies respectively.
+[01:57:02] <PinkiePieBot> [ Google URL Shortener ]
+[01:57:12] <ShivalWolf> Moonlightning: lol i was jsut about to post that
+[01:57:18] <Seoson> Why do those services kill my links?
+[01:57:25] <ShivalWolf> becuase your dodgy
+[01:57:28] <ShivalWolf> and they hate you
+[01:57:30] <Seoson> sec
+[01:57:32] <Moonlightning> that's why you make your own URL shortener, for your use
+[01:57:43] <Moonlightning> and you make a hierarchy of namespaces
+[01:57:48] <ShivalWolf> use shadyurl
+[01:57:56] <Moonlightning> with acronyms and memorable abbreviations
+[01:58:17] <Moonlightning> and single-letter components for the categories most important to you
+[01:58:41] <ShivalWolf> shadyurl causes some amusing results in the IDS logs at work
+[01:58:53] <Seoson> https://cloud.kab-s.de/index.php/s/qdZKkjMA5pQ7DUF
+[01:58:56] <PinkiePieBot> [ ownCloud ]
+[01:59:01] <Moonlightning> wait, that's actually a thing?
+[01:59:20] <ShivalWolf> Moonlightning: yes
+[01:59:23] <ShivalWolf> its been a thing for years
+[01:59:49] <ShivalWolf> Seoson: that looks like the system my bank uses
+[02:00:03] * Seoson works for a bank
+[02:00:07] <ShivalWolf> LOL
+[02:00:10] <ShivalWolf> well that explains that then
+[02:00:35] <ShivalWolf> shame its not my bank
+[02:00:36] <Seoson> Commerzbank AG - But I will probably quit in a couple of months
+[02:00:37] <Moonlightning> hooray for banks
+[02:00:39] <ShivalWolf> i coudl use my oloan wiped out
+[02:00:50] <Moonlightning> using all the greatest fucking industry standards since always
+[02:01:06] * Colgate opens
+[02:01:08] <ShivalWolf> banks really need to invest in a full update on their managmnet systems
+[02:02:00] <ShivalWolf> hmm thats right i was going to look for breakfast
+[02:03:02] <Seoson> I informed our IT department about a crtical SQL injection vulnerability in a payment processing system allowing my from the outside (with insider knowledge) to authorize payments and SWIFT messages. They said it would be to expensive to fix
+[02:03:16] <Seoson> my = me*
+[02:03:45] <Moonlightning> do the responsible-disclosure thing
+[02:04:05] <ShivalWolf> actually thats something you should be able to report to a regulatory agency
+[02:04:09] <ShivalWolf> given it affects a bank
+[02:04:30] <ShivalWolf> yay for PCIDSS
+[02:04:31] <Seoson> Our IT is a mess. There are hundreds of unfixed XSS vulnerabilities.
+[02:04:43] <Moonlightning> do the regulatory-agency thing
+[02:05:01] <Seoson> And we're just now rolling out windows 7 until the end of the year.
+[02:05:10] <ShivalWolf> got to lvoe how places think insider knowlage is a safe protection now
+[02:05:35] <Seoson> "knowlage"? Ups ... ^^
+[02:05:40] <Moonlightning> obsec
+[02:05:43] <Moonlightning> never good
+[02:06:29] <ShivalWolf> its why a number of bugs i discovered in a platform recently almost halted its launch
+[02:06:35] <ShivalWolf> becuase they had to fix them
+[02:06:58] <Seoson> I should really spellcheck before sending.  I guess these companies will never learn their lesson.
+[02:07:00] <ShivalWolf> its nice beign able to pull the plug in projects that have big media attention
+[02:09:24] <Moonlightning> hoofin' out reality checks like you're the princess of physics
+[02:09:40] <Seoson> I reported an XSS exploit to Bashscript from CLH and he fixed it in less than a day.  This is how they should react.
+[02:12:50] <ShivalWolf> lol my esx backups havent been running for 4 months beucase i updated the server the the version of ghettobackup wasent compatable
+[02:13:01] <ShivalWolf> i really should check this more often
+[02:16:17] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[02:16:30] *** Quits: hawthornbunny (hawthorn@Pony-lfd.716.25.2.IP) (Ping timeout: 121 seconds)
+[02:17:42] *** Joins: cyborg_ar (cyborgar@Pony-ri7.p2q.25.181.IP)
+[02:19:06] *** Quits: JockeTF (jocke@Pony-vvuota.bredband.comhem.se) (Quit: Leaving.)
+[02:24:07] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[02:34:19] <Princess_AppleDash> Seoson: If you want a reasonable URL shortener, use derpy.me
+[02:35:54] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Quit: Saliendo)
+[02:36:48] <Princess_AppleDash> woo, my thing is in the latest daily WTF: http://thedailywtf.com/articles/a-defined-sense-of-taste
+[02:36:49] <PinkiePieBot> [ A Defined Sense of Taste - The Daily WTF ]
+[02:36:51] <Seoson> Not going to happen. I will probably host my own at some point. I just have bad luck with everything. Pastebin deleted a paste of mine recently as well, idk why
+[02:36:52] <Princess_AppleDash> I'm the acunetix one
+[02:37:08] <Princess_AppleDash> Seoson: I run derpy.me and I can tell you I've deleted exactly zero (0) links
+[02:37:23] <Seoson> That's not the point ;-)
+[02:37:29] <Princess_AppleDash> What is then?
+[02:38:00] <Seoson> I use the url shortner in a macro and use them for nonpony folks as well
+[02:38:14] * Princess_AppleDash shrugs
+[02:40:20] <johnsey> Seoson: why is it still '90 in that screenshot?
+[02:40:35] <Seoson> Not my screenshot
+[02:40:53] <Seoson> I'd go back a little further
+[02:40:56] *** Joins: Asoka_White (Asoka@Pony-ah3aat.net-htp.de)
+[02:41:02] <johnsey> ah
+[02:41:30] <Seoson> We have system running almost untouched since the 80s
+[02:42:10] <Seoson> In some cases at least they now use virtualization
+[02:42:49] <Seoson> 2 years ago almost all mainframe connections were unencrpyted as well. At least they changed that now.
+[02:44:07] *** Quits: Asoka (Asoka@Pony-kkbnlt.net-htp.de) (Ping timeout: 121 seconds)
+[02:44:07] <Princess_AppleDash> lol
+[02:44:09] <Seoson> Princess_AppleDash don't get me wrong, I like derpy.me, but not all folks are as tolerant when it comes to ponies as they should be.
+[02:44:22] <Princess_AppleDash> Oh, I understand
+[02:44:31] <Princess_AppleDash> I just wasn't aware you were wanting stuf for elsewhere :P
+[02:44:38] <Princess_AppleDash> stuff*
+[02:45:04] <Seoson> I like when my computer does things automagically ;-)
+[02:52:15] <Seoson> The twitter box promised me a lengthen faeture. is not there. I'm now officially disappointed. A derpy service that is not silly - what a fake *g*
+[02:58:00] <cyborg_ar> https://www.youtube.com/watch?annotation_id=annotation_991875175&feature=iv&src_vid=41kQGoJX_8Q&v=G9DKoMSiDc4
+[02:58:00] <PinkiePieBot> [ Titenic: The JonSong (Ft. Schmoyoho) - YouTube ]
+[02:58:04] <cyborg_ar> TITENIC
+[02:58:12] <cyborg_ar> aka bird vs camel
+[03:00:20] <Seoson> Princess_AppleDash: You've got a secruity problem -.-
+[03:00:41] <Seoson> Details via PM?
+[03:00:42] <Princess_AppleDash> Seoson: 
+[03:00:44] <Princess_AppleDash> Go on
+[03:00:46] <Princess_AppleDash> Sure
+[03:00:48] <Princess_AppleDash> PM me
+[03:08:00] *** Quits: Phase (Phase4@Pony-llq41f.optusnet.com.au) (Ping timeout: 121 seconds)
+[03:08:56] <Princess_AppleDash> Fixed!
+[03:12:58] <Seoson> X-NSA-prism-xkeyscore:"I do not want to be surveilled" lol
+[03:13:44] <Princess_AppleDash> :)
+[03:17:26] *** Joins: Sombra (Iceman@Darkhorse21)
+[03:36:45] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[03:43:26] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[03:52:38] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[04:03:51] <cyborg_ar> :( naming software is the hardest part
+[04:05:46] <bronygeek> what's it gonna do?
+[04:05:55] <johnsey> call it something with 2000
+[04:07:45] <cyborg_ar> that's too 80's
+[04:08:43] <cyborg_ar> i'm writing a library/toolbox for metrology and calibration procedures
+[04:09:23] <Seoson> Sneak in a pony name
+[04:10:05] <cyborg_ar> i though about CaMeL (calibration & metrology library, also in CamelCase) but there are about 10^66218 things called camel, plus or minus some trillion
+[04:10:53] <Seoson> Like cigs ^^
+[04:11:06] <cyborg_ar> which are totally good for you
+[04:11:20] <cyborg_ar> they have a filter
+[04:11:32] <cyborg_ar> = all the bad stuff is filtered out
+[04:11:58] <johnsey> Metro 2000
+[04:12:15] <bronygeek> yeah, that's original.
+[04:14:12] <cyborg_ar> and i guess the logo could be a couple of partially overlapping normal distributions
+[04:14:13] <Seoson> Starswirl
+[04:14:16] <cyborg_ar> like humps
+[04:15:28] <Seoson> That totally works pinky promise
+[04:17:58] <cyborg_ar> http://www.winspc.com/datanet-enews/2013-4/index_customers_clip_image002.jpg
+[04:38:03] *** Joins: Phase (Phase4@Pony-llq41f.optusnet.com.au)
+[04:55:38] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[05:19:30] *** Quits: Phase (Phase4@Pony-llq41f.optusnet.com.au) (Ping timeout: 121 seconds)
+[05:20:20] *** Joins: Phase (Phase4@Pony-llq41f.optusnet.com.au)
+[05:37:11] *** Adalade is now known as Chrome_Pony
+[05:38:58] *** Quits: CompuDesktop (quassel@snuggly.filly) (Quit: http://quassel-irc.org - Chat comfortably. Anywhere.)
+[05:41:41] *** Quits: Compu (compu@snuggly.filly) (Quit: We'll be back soon for more snuggles!)
+[05:48:31] *** Joins: CompuDesktop (quassel@snuggly.filly)
+[05:49:47] *** Joins: Compu (compu@snuggly.filly)
+[06:00:29] *** Chrome_Pony is now known as Adalade
+[06:05:31] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[06:13:28] *** Quits: CompuDesktop (quassel@snuggly.filly) (Quit: http://quassel-irc.org - Chat comfortably. Anywhere.)
+[06:14:19] *** Quits: Compu (compu@snuggly.filly) (Quit: We'll be back soon for more snuggles!)
+[06:18:37] *** Joins: CompuDesktop (quassel@snuggly.filly)
+[06:25:07] *** Quits: CompuDesktop (quassel@snuggly.filly) (Quit: http://quassel-irc.org - Chat comfortably. Anywhere.)
+[06:57:32] *** Joins: CompuDesktop (quassel@snuggly.filly)
+[07:06:00] *** Joins: Compu (compu@snuggly.filly)
+[07:07:17] *** Quits: Phase (Phase4@Pony-llq41f.optusnet.com.au) (Ping timeout: 121 seconds)
+[07:09:59] *** Creeps|AFK is now known as RedHelper
+[07:11:57] *** Joins: Sombra (Iceman@Darkhorse21)
+[07:13:12] *** Joins: Phase (Phase4@Pony-e5f6up.optusnet.com.au)
+[07:19:55] *** Quits: Compu (compu@snuggly.filly) (Quit: No Ping reply in 120 seconds.)
+[07:22:08] *** Joins: Compu (compu@snuggly.filly)
+[07:32:35] *** Quits: Sol (Sol@Pony-nc8b4c.res.rr.com) (Quit: Leaving)
+[07:35:53] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[07:41:56] *** Adalade is now known as Ada|BRB
+[08:15:38] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[08:34:42] *** Ada|BRB is now known as Adelaide
+[08:49:34] *** Quits: zeta_ (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[09:03:58] *** Quits: Phase (Phase4@Pony-e5f6up.optusnet.com.au) (Ping timeout: 121 seconds)
+[09:06:50] *** Joins: Phase (Phase4@Pony-e5f6up.optusnet.com.au)
+[09:14:04] *** RedHelper is now known as Creeps|AFK
+[09:29:14] *** Joins: hawthornbunny (hawthorn@Pony-lfd.716.25.2.IP)
+[09:44:07] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[09:44:39] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[09:46:44] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Quit: Leaving)
+[09:47:10] *** Joins: Nick (nobody@Pony-rgmjhl.res.rr.com)
+[09:53:47] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[10:39:59] *** Quits: Phase (Phase4@Pony-e5f6up.optusnet.com.au) (Ping timeout: 121 seconds)
+[10:54:12] *** Joins: Phase (Phase4@Pony-8ppmq4.optusnet.com.au)
+[11:25:46] *** zz_CyberJacob is now known as CyberJacob
+[11:27:35] *** Quits: Phase (Phase4@Pony-8ppmq4.optusnet.com.au) (Ping timeout: 121 seconds)
+[11:37:15] *** Joins: Phase (Phase4@Pony-8ppmq4.optusnet.com.au)
+[12:06:26] *** CyberJacob is now known as zz_CyberJacob
+[12:16:15] *** zz_CyberJacob is now known as CyberJacob
+[12:30:53] *** init3 is now known as Init3-away
+[12:31:00] *** Init3-away is now known as init3
+[12:38:19] *** Joins: JockeTF (jocke@Pony-vvuota.bredband.comhem.se)
+[12:59:50] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[13:01:47] *** init3 is now known as Init3-away
+[13:06:48] *** Adelaide is now known as Cloudrunner
+[13:18:53] *** Quits: JockeTF (jocke@Pony-vvuota.bredband.comhem.se) (A TLS packet with unexpected length was received.)
+[13:22:06] *** Joins: JockeTF (jocke@Pony-vvuota.bredband.comhem.se)
+[13:42:52] <Cloudrunner> Can anyone really answer this
+[13:44:50] <Moonlightning> Has anyone ever been so far as decided to use even go want to do look more like
+[13:46:47] <Cloudrunner> My gimp program got busted as when you click a tool it won't work when you try to draw. Also the brush is stuck at the canvas.
+[13:47:51] <Moonlightning> Can you save stuff and relaunch?
+[14:22:58] *** Quits: Phase (Phase4@Pony-8ppmq4.optusnet.com.au) (Connection closed)
+[14:24:35] *** Joins: Phase (Phase4@Pony-8ppmq4.optusnet.com.au)
+[14:43:44] *** Quits: Fallfeathers (Fallfeather@Pony-a49cc7.bigpond.net.au) (Connection closed)
+[14:57:27] *** Quits: JockeTF (jocke@Pony-vvuota.bredband.comhem.se) (Quit: Leaving.)
+[15:03:50] *** Cloudrunner is now known as Cloud|Sad
+[15:04:37] *** Quits: Phase (Phase4@Pony-8ppmq4.optusnet.com.au) (Ping timeout: 121 seconds)
+[15:16:27] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[15:29:16] *** Quits: Asoka_White (Asoka@Pony-ah3aat.net-htp.de) (Connection closed)
+[15:32:27] *** Cloud|Sad is now known as Ghost_Cydie
+[15:56:20] *** Ghost_Cydie is now known as Adelaide
+[17:25:17] *** Init3-away is now known as init3
+[17:34:41] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[17:40:01] *** Joins: Tahlorz (rattle@Pony-5pqfvb.ph.cox.net)
+[17:49:27] <Googie> Hahahaha
+[17:49:29] <Googie> https://mojang.com/2015/07/announcing-minecraft-windows-10-edition-beta/
+[17:49:33] <PinkiePieBot> [ Announcing: Minecraft: Windows 10 Edition Beta ]
+[17:51:38] <frackster> inb4 Googie is naked
+[17:52:02] <Googie> Er, what ?
+[17:59:51] <frackster> idk xD
+[18:08:46] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[18:09:58] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[18:18:30] *** Joins: djazz (djazz@Pony-db5lbv.tbcn.telia.com)
+[18:32:35] *** init3 is now known as Init3-away
+[18:32:48] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (A TLS packet with unexpected length was received.)
+[18:51:59] *** Quits: Tahlorz (rattle@Pony-5pqfvb.ph.cox.net) (Quit: )
+[18:58:46] *** Quits: Eivel (Eivel@Keep.Calm.and.Pony.On) (Ping timeout: 121 seconds)
+[19:01:10] *** Joins: Eivel (Eivel@Keep.Calm.and.Pony.On)
+[19:32:32] *** Init3-away is now known as init3
+[19:34:08] *** Joins: Crimson_Tail (Bluepon@Pony-fprgct.s0tm.sdub.0151.2601.IP)
+[19:40:19] *** Creeps|AFK is now known as RedHelper
+[20:08:36] *** CyberJacob is now known as zz_CyberJacob
+[20:10:27] *** Gigabit is now known as GigaTown
+[20:30:44] *** Joins: Asoka (Asoka@Pony-ah3aat.net-htp.de)
+[20:51:24] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[21:10:01] <Twilightlicious> I need tech advice
+[21:10:13] <Twilightlicious> is it a bad idea to place an External HDD ontop of a Power Supply?
+[21:10:30] <Twilightlicious> (For Xbox One, but a Power Supply is a Power Supply)
+[21:13:38] <Twilightlicious> Set the power supply ontop of the disk drive area >3<
+[21:13:44] * Twilightlicious has no space to put things
+[21:14:26] <DJ-C0L7[EIT]> depends
+[21:14:51] <DJ-C0L7[EIT]> is the xbox one drive similar in setup to the xbox360 where its a metal caddy inside of a plastic enclosure? or is it a solid state drive in a plastic enclosure?
+[21:21:59] <Twilightlicious> I have no idea ._.
+[21:22:05] <Twilightlicious> never taken it apart, too expensive lol
+[21:23:27] <DJ-C0L7[EIT]> nod
+[21:23:31] <DJ-C0L7[EIT]> is it a mechanical drive?
+[21:23:43] <DJ-C0L7[EIT]> like when its running can you feel things moving inside?
+[21:24:02] <DJ-C0L7[EIT]> or hear a slight whirring sound
+[21:24:11] <Twilightlicious> yeah i know it isnt solid State
+[21:24:13] <Twilightlicious> it's Mechanical
+[21:25:08] <DJ-C0L7[EIT]> okay, only concern i would think would be an issue would be the heat created by the power supply
+[21:25:20] <Twilightlicious> ah, it'll be fine then :P
+[21:25:21] <DJ-C0L7[EIT]> because ms actually shielded the psu and hard drives pretty decently
+[21:25:31] <Twilightlicious> i have it sitting directly over the slot where disks are inserted
+[21:25:34] <DJ-C0L7[EIT]> i've taken a few xb360 drives apart
+[21:25:50] <DJ-C0L7[EIT]> long as its not blocking airflow, you're probibly alright
+[21:26:14] <Twilightlicious> i lay game cases and stuff over the X1 airflow all the time, lol.
+[21:26:26] <Twilightlicious> probably a terrible idea but, it's a habit from 360
+[21:26:31] <Twilightlicious> 360 didn't have vents ontop
+[21:26:36] <Twilightlicious> X1, half the top is a vent
+[21:27:06] * DJ-C0L7[EIT] nods
+[21:27:10] <DJ-C0L7[EIT]> then you are probibly ok
+[21:27:26] <Twilightlicious> how do i play ODST on Xbox One ._. i downloaded it but i don't see i...
+[21:27:46] <Twilightlicious> why you gotta be so difficult, Master Chief Collection t(o3o)t
+[21:28:15] <DJ-C0L7[EIT]> i'd look at thrift stores or something around for a set of "printer feet" which were used with the old tractor feed dot-matrix printers, that would give you room to place your psu and whatever under the xb1 and give it a little more airflow at the same time
+[21:28:38] <DJ-C0L7[EIT]> i dont have an xb1, but if its anything like a friend of mines 360 i think it would be on the hard drive under downloads
+[21:28:56] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:29:22] <Twilightlicious> i see it stored i mean, but it's DLC for Master Chief Collection, and i don't see it in-game =/
+[21:29:48] <Twilightlicious> in settings i see ODST lol
+[21:30:15] <Twilightlicious> Oh, it's hidden under Halo 3
+[21:32:48] <DJ-C0L7[EIT]> ah
+[21:32:52] <DJ-C0L7[EIT]> lol that'd do it
+[21:36:50] <Twilightlicious> Moving the games i don't play to my new external drive
+[21:37:09] <Twilightlicious> though my external might actually be faster, i have no way of finding out lol
+[21:37:42] <Twilightlicious> other than maybe moving a game to it and seeing how it goes
+[21:37:43] <DJ-C0L7[EIT]> lol that does happen from time to time
+[21:44:53] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[21:58:17] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "back in a while, ttyl")
+[21:59:12] *** Quits: cyborg_ar (cyborgar@Pony-ri7.p2q.25.181.IP) (Ping timeout: 121 seconds)
+[22:31:31] *** Joins: cyborg_ar (cyborgar@Pony-jll.fvd.49.190.IP)
+[22:37:11] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:44:13] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[22:49:45] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[23:20:26] <Twilightlicious> this HDD is performing swimmingly on Xbox One.
+[23:24:14] <DJ-C0L7[CSS]> nice
+[23:27:33] <Twilightlicious> it might be like 5% slower or something than the internal
+[23:27:40] <Twilightlicious> if even that
+[23:28:16] <DJ-C0L7[CSS]> there tends to be a little latency over usb since its a smaller bus
+[23:44:20] *** Colgate is now known as Minuette
+[23:44:47] *** Princess_AppleDash is now known as Colgate
+[23:44:48] *** Colgate is now known as Pony_27115
+[23:45:06] *** Pony_27115 is now known as Princess_AppleDash
+[23:46:26] *** djazz is now known as MangoBloom

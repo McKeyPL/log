@@ -1,0 +1,546 @@
+[00:08:51] <Sakura> So then Play Credit can't be used with Wallet?
+[00:16:19] *** Quits: Melanosuchus (quassel@Pony-d818tn.as13285.net) (Connection closed)
+[00:49:46] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:50:28] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[01:02:26] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[01:02:36] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:05:02] <Sour_Sweet> Anypony got experience with powerline adapters compared to W-LAN, especially considering delay and packet loss?
+[01:05:27] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[01:08:43] <DJ-C0L7[EIT]> does hacking them count?
+[01:09:02] <DJ-C0L7[EIT]> you talking about Ethernet Over Powerline adapters?
+[01:09:15] <Sour_Sweet> Yes
+[01:09:40] <DJ-C0L7[EIT]> they are okay, but you cannot connect them on a switched circuit, or a circuit that is independantly grounded from the rest of the house
+[01:10:06] <DJ-C0L7[EIT]> but they are okay for 10m full dup, or 100m half dup
+[01:10:55] <DJ-C0L7[EIT]> Wlan would be better, but in a pinch or in a situation where wifi isnt working right, these do okay
+[01:11:40] <Webster> They've gotten up to at least couple hundred Mb these days, but it depends on the wiring.
+[01:12:01] <Sour_Sweet> WiFi is horrible, the latency is a nightmare. That's why I try to avoid it
+[01:13:21] <Sour_Sweet> The adapters I'm looking into offer full gigbit (or at least they claim). I'm not such much concerned about the bandwidth than I'm about latency and packet loss
+[01:13:40] <Sour_Sweet> so*
+[01:15:50] <Sour_Sweet> Also some are insecure using either no or weak encryption, but to be honest any valueable traffic on my network is using some sort of TLS anyway
+[01:19:57] *** zeta__ is now known as Crimson_Tail
+[01:28:09] <Googie> There's a standard that most adapters adhear to
+[01:36:46] <Colgate> supposedly mine are aes-128 encrypted, but I have no way of actually verifying that
+[01:37:35] *** WuBzY is now known as WuBzY_AsLeEp
+[01:52:04] <DJ-C0L7[EIT]> sorry i was dealing with someone who thinks they can break policy whenever it suits them
+[01:52:08] <DJ-C0L7[EIT]> the tow truck is on the way
+[01:54:18] <Colgate> lol
+[02:01:10] <Sour_Sweet> Amazon offers multi-monitor arms under their own brand. Awesome. I didn't knew that up until now.
+[02:05:05] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[02:09:06] *** Joins: nscoots (FreyGrimrod@Pony-fpljh0.sub-70-192-4.myvzw.com)
+[02:10:09] *** Joins: Cyan_Spark (Cyan_Spark@incidental.unicorn.Cyan_Spark)
+[02:11:41] <Cyan_Spark> Can strings be stuffed into an array?
+[02:12:53] <Divide|Supporting> Well, yes, I can't imagine why.
+[02:13:42] <Divide|Supporting> Also, fnargergahsdfbih.  Customer uses a fingerprint biometric to sign into her computer, and forgot her password.  GEE.  That's not seeing things up for failure...
+[02:15:03] <Sour_Sweet> On windows? That's not really a problem
+[02:15:33] <Sour_Sweet> Cyan_Spark: That depends on your programming language.
+[02:16:12] <Cyan_Spark> C++
+[02:16:13] <Sour_Sweet> Some languages think of strings just as an array of chars, so as long as they allow multi demensional arrays you're fine
+[02:17:32] <Sour_Sweet> I'm not an expert in C++, but Stackoverflow covers your butt: https://stackoverflow.com/questions/34987/how-to-declare-an-array-of-strings-in-c
+[02:20:02] <Cyan_Spark> Thankies ^^
+[02:26:02] *** Quits: Cyan_Spark (Cyan_Spark@incidental.unicorn.Cyan_Spark) (Quit: Sparks only last so long)
+[02:28:23] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[02:32:15] <Googie> Glad I finally got my network switched over to using VLANs last night.
+[02:34:45] * HoneyDrops curses FAT for not supporting links.
+[02:36:53] *** Joins: Asoka (Asoka@Pony-2s8eac.net-htp.de)
+[02:38:41] *** Joins: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner)
+[02:38:41] *** AutoLapsus sets mode: +v PinkiePieBot
+[02:40:02] *** Quits: Asoka_White (Asoka@Pony-0p6k9n.net-htp.de) (Ping timeout: 121 seconds)
+[02:47:12] *** Joins: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net)
+[02:47:59] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Killed (NickServ (GHOST command used by Valiant)))
+[03:12:42] <DJ-C0L7[EIT]> anypony have any experience with LED lighting for map/dome lights/
+[03:15:49] *** Joins: Princess_QRS (Corey@Pony-ipvgi3.ed.shawcable.net)
+[03:17:17] *** Quits: Princess_QRS (Corey@Pony-ipvgi3.ed.shawcable.net) (Quit: Leaving)
+[03:17:26] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[03:18:41] *** Quits: Valiant (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[03:55:21] <One-Trick> DJ-C0L7[EIT]: like, auto bulb replacements?
+[03:56:50] <One-Trick> ive replaced pretty much every bulb, aside from the main gauge cluster, with led replacements in my truck
+[04:05:23] * JustAberrant rubs a tiny bit of shaving cream around where the LEDs protrude through
+[04:36:40] <DJ-C0L7[EIT]> i'm talking about building an entire assy with LED lights
+[04:37:44] <DJ-C0L7[EIT]> i think if i do an LED array of Red LEDs and use an LM7805 on the power and tie it to the power for the passenger side vanity lamp power i should be able to do a switch to power on some red LEDs for paperwork at night, and then have a 2nd switch for some 9w white LEDs for "map" lights
+[04:43:46] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[05:39:50] <DJ-C0L7[EIT]> o_o since my xj is a police edition w/tow package, i can do the optional extended idle, but i need to find a friggin' fsm to find out where to tie in for it
+[05:42:15] *** Joins: Fallfeathers (Fallfeather@Pony-msj.e3e.165.58.IP)
+[05:45:10] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[05:51:08] *** Dusk is now known as Pixel
+[05:51:46] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[05:54:08] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[05:54:53] <One-Trick> okular still the defacto pdf viewer?
+[05:57:40] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[06:17:18] *** WuBzY_AsLeEp is now known as WuBzY
+[06:30:08] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[06:40:24] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[06:46:11] *** Gigaway is now known as Gigabit
+[06:50:25] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[06:51:28] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[06:56:29] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[07:02:46] *** Joins: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net)
+[07:02:52] *** Quits: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net) (Connection closed)
+[07:03:01] *** Joins: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net)
+[07:05:14] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[07:27:25] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[07:36:20] *** Quits: WuBzY (androirc@Pony-aou28h.rev.dnainternet.fi) (Quit: Go any more of dem WuBz?)
+[07:56:42] * HoneyDrops cries.
+[07:57:41] <HoneyDrops> Sorting SNES roms, putting the .7z I want in .. and the ones I don't in _REJ.  Finished, then moving _REJ to ., but hit ..  And undo about 90 minutes or sorting ;_;
+[07:59:00] <Moonlightning> no terminal scrollback? D:
+[07:59:41] <HoneyDrops> I do... but this is like 1.8k files I was sorting though
+[08:00:03] <HoneyDrops> I think I have an ls of most of what I want.
+[08:00:25] <Moonlightning> oh, damn D:
+[08:01:41] <HoneyDrops> This isn't even uncompressing them to find the actual roms, these are the 7z archives of every variant of each SNES game
+[08:03:04] <HoneyDrops> And no, scrollback doesn't go back that far.
+[08:03:21] <HoneyDrops> Oh well, at least I finished NES.
+[08:04:13] <HoneyDrops> 115 out of 16384 :D
+[08:04:45] <Moonlightning> ._.
+[08:04:48] <Moonlightning> welp
+[08:06:14] <HoneyDrops> Second round will go faster, as I mostly recall what I wanted, and what I had to look up (mostly Japanese-only RPGs)
+[08:07:59] * Moonlightning nodnods.
+[08:08:11] <HoneyDrops> The need to move onto Gameboy/GBC...
+[08:09:03] * HoneyDrops will have every JRPG (and other noteworthy game) for NES, SNES, N64, GB, GBC, GBA, PS1, and PSP on her PSP!
+[08:09:12] * HoneyDrops giggle-squeaks maniacally.
+[08:09:27] <Moonlightning> …okay, #techponies . This is just me. It can't be that /every/ site has margin issues…
+[08:10:30] <Moonlightning> https://www.blackl.net/github-margin.png
+[08:11:35] <Moonlightning> What is going on with this?
+[08:15:10] <Moonlightning> …actually, it's not every site. Equestria Daily and Stack Exchange are fine.
+[08:15:28] <Moonlightning> as is Imgur
+[08:15:45] <Moonlightning> But GitHub is baaaad, and I feel like the overwhelming majority of sites are, too
+[08:17:59] <Phase> o_O
+[08:18:13] <Moonlightning> You do web design, right, Phase?
+[08:18:16] <Moonlightning> Halp ;-;
+[08:18:37] <Moonlightning> and by web design I mean web UI stuff
+[08:18:39] <Phase> i hit css with a hammer until it looks passable
+[08:19:04] * HoneyDrops grins, bash history to the rescue!
+[08:19:19] <Phase> Moonlightning, whats more concerning is the lack of scrollbars
+[08:19:39] <Phase> or is that an osx thing
+[08:19:57] <Moonlightning> Phase: who the hell uses scrollbars
+[08:20:03] <Moonlightning> you mean you don't have a scroll wheel?
+[08:20:11] <Moonlightning> why the hell don't you have a scroll wheel
+[08:20:25] <Moonlightning> fuck, whatever, just use space|shift-space or pagedown|pageup
+[08:20:51] <Moonlightning> Phase: in seriousness, I have a trackpad, and the scrollbars appear only when I'm scrolling
+[08:21:00] <Moonlightning> if I need to scroll a lot, I scroll a little first, then drag the bar
+[08:21:05] <Moonlightning> but that doesn't happen very often
+[08:21:15] <Phase> it's not that i USE them, i just have them
+[08:21:32] <Phase> just want to make sure the issue isn't overflow: hidden
+[08:21:50] <Phase> and i have a touchpad with two finger scroll, including horizontal :D
+[08:22:55] <Moonlightning> what
+[08:23:03] <Moonlightning> what the hell kind of trackpad doesn't have omnidirectional scrolling
+[08:23:14] <Phase> the crappy kind
+[08:23:17] <Moonlightning> exactly
+[08:23:18] <Valiant> I love the touchpad on my macbook. Like, unf.
+[08:23:22] <Phase> rather, the crappy driver kind
+[08:23:27] <Moonlightning> Apple trackpads are the shit
+[08:23:31] <Phase> *ANTI-SYNAPTICS NOISES*
+[08:23:37] <Moonlightning> Most trackpads I've tried are shitty
+[08:23:38] <Valiant> OSX hides scrollbars unless you have a mouse, just mentioining that.
+[08:23:40] <Phase> stupid oem centric drivers
+[08:23:46] <Valiant> If you have a mouse detected the scrollbars show up.
+[08:23:50] <Moonlightning> like, you go to the store, and you mess around with the display laptops
+[08:23:53] <Moonlightning> they're all shite
+[08:24:14] <Valiant> I seriously like my macbook. Apple is an evil megacorp, and the prices are high- but man do I like their toys.
+[08:24:26] <Moonlightning> They do make pretty stuff
+[08:24:34] <Moonlightning> And like I said, I love their trackpads.
+[08:24:45] <Valiant> I wouldn't buy one now though, they took the GPUs out of the 'low' end model and the canadian dollar being shit made prices higher.
+[08:24:57] <Valiant> The direct upgrade to my 2013 15'' costs 3 grand, it cost 2 when new
+[08:25:01] <Phase> Moonlightning, most of them feel crap, the other problem is usually oem's chosing settings for you
+[08:25:03] <Moonlightning> Anyway…is it just me, or is GitHub serving `width: 980px;`
+[08:25:04] <Valiant> the 2 grand one now has no gpu
+[08:25:09] <Phase> because synaptics is big on that
+[08:25:21] <Moonlightning> Phase: my beef is with the rough-textured ones.
+[08:25:22] <Moonlightning> I can't stand those.
+[08:25:26] <Moonlightning> I need my trackpad to be glassy.
+[08:25:27] <Valiant> Which like, I don't need a GPU in my laptop- but I had used that laptop as a desktop for a year and a half, worked quite well.
+[08:25:32] <Phase> i hate the ones that feel like rubber
+[08:25:34] <Valiant> oh fuck rough trackpads
+[08:25:34] <Moonlightning> YES
+[08:25:36] <Moonlightning> THOSE, TOO
+[08:25:40] <Valiant> give me thinkpad clitmice
+[08:25:46] <Phase> and your fingers stick to them
+[08:25:46] <Valiant> clitmice on an PC and macbook trackpads
+[08:25:52] <Phase> Valiant, could never use those
+[08:25:52] <Valiant> best
+[08:25:58] <Valiant> Gotta get used to them!
+[08:25:58] <Phase> had two thinkpads, never touched them
+[08:26:06] <Moonlightning> I actually had a laptop with a clitmouse for the longest time
+[08:26:08] <Valiant> I could even play Quake with one :)
+[08:26:27] <Moonlightning> that was years ago, but my memory of it is actually pretty neutral
+[08:27:02] <Valiant> I also had a thousand dollar asus once that /literally/ fell apart after a year of moderate use. 
+[08:27:09] <Moonlightning> :/
+[08:27:13] <Valiant> Serial sticker fell off so no service, went from 1000 dollars to utterly worthless.
+[08:27:20] <Valiant> Macbook meanwhile is nearly 3 years old and looks like day 1.
+[08:27:27] <Phase> my asus's tended to hold well
+[08:27:31] <Moonlightning> heheh
+[08:27:34] <Moonlightning> six-year-old macbook here
+[08:27:39] <Phase> one had a gpu failure, the other still works
+[08:27:42] <Valiant> I have a 2005 powerbook I got used that's like.
+[08:27:48] <Valiant> It's nearly useless but it's so PRETTY.
+[08:27:53] <Moonlightning> replaced battery once, disk once, disk bracket twice
+[08:27:55] <Valiant> perfect quality and everything
+[08:27:56] <Moonlightning> runs fine
+[08:28:04] <Moonlightning> though I should get another battery
+[08:28:09] <Moonlightning> but no monehs :(
+[08:28:18] <Moonlightning> prolly just gonna leave it like this and use my other laptop for actually going places
+[08:28:24] <Phase> bad memorys of the HP though
+[08:28:44] <Phase> i don't know what plastic they used but i've eaten biscuits with more structure than that crap
+[08:28:51] <Phase> first day something snapped
+[08:28:55] <Moonlightning> damn
+[08:29:12] <Valiant> I do wish that there were more user servicable parts on my macbook, but eh 8 gigs of ram is enough so v0v
+[08:29:18] <Valiant> Give and take, nothing is perfect.
+[08:29:26] <Phase> 24GB ram laptop
+[08:29:31] <Phase> get on ma level
+[08:29:50] <Moonlightning> Still waiting on those free-as-in-speech laptops
+[08:30:11] <Moonlightning> FOSS drivers for //everything//, fully user-servicable
+[08:30:42] <Moonlightning> actually…guess I should be looking at just building my own, huh
+[08:30:48] <Phase> 24G is sorta exessive but it means i can run a handful of vm's and still never touch swap
+[08:30:52] <Moonlightning> I'd like it to not be that bulky though ;-;
+[08:30:56] <Moonlightning> Iunno
+[08:30:58] <Phase> i never need to give a shit about memory
+[08:30:59] <Phase> is nice
+[08:31:02] <Moonlightning> how bout dem MARGINS
+[08:31:21] <Phase> so every site has lost their margins?
+[08:31:57] <Moonlightning> no, just GitHub
+[08:32:03] <Moonlightning> I'm poking at the CSS in Firefox' inspector thing
+[08:32:13] <Phase> oh, i seem to have no margins also
+[08:32:25] <Phase> yeah, margins gone
+[08:32:32] <Moonlightning> > .container { width: 980px; margin-left: auto; margin-right: auto; }
+[08:32:33] * HoneyDrops flops now to sort though these... http://pastie.org/10594389 x_X
+[08:32:33] <PinkiePieBot> [ #10594389 - Pastie ]
+[08:32:50] <Moonlightning> your UI for GitHub looks like mine, Phase?
+[08:32:57] <Phase> the new one? yeah
+[08:33:02] <Moonlightning> well, not just the new one
+[08:33:05] <Moonlightning> it's been like this for quite a while
+[08:33:25] <Phase> "margin: 0px"
+[08:33:27] <Valiant> I find it odd that macbooks top out at 16 gigs now- the 15 inch model has no upgrade, it's all 16
+[08:33:31] <Valiant> Why no 20? Feeels weird.
+[08:33:42] <Valiant> Is it some intel chipset dickery?
+[08:33:42] <Phase> ah, because the banner
+[08:33:46] <HoneyDrops> Well 20 would be weird
+[08:33:48] *** zz_CyberJacob is now known as CyberJacob
+[08:33:48] <Moonlightning> ^
+[08:33:51] <Moonlightning> ^:HoneyDrops *
+[08:34:00] <Moonlightning> You're looking at 32
+[08:34:04] <Moonlightning> which is…kind of a lot
+[08:34:18] <Valiant> IT would be weird but no upgrade at all? not 24 or 32?
+[08:34:33] <Valiant> Apple loves gouging with ram prices, why not now?
+[08:34:40] <Moonlightning> How much does two sticks of 16-gig RAM cost?
+[08:34:44] <Valiant> like srsly lol the prices for ram are hilarious.
+[08:34:54] <Valiant> 100ish in my experience, desktop DDR3 1600
+[08:35:00] <Moonlightning> you'll be happy to hear that this RAM is third-party, then :P
+[08:35:01] <Valiant> Could be down to 80 now.
+[08:35:02] <Moonlightning> Corsair, I think
+[08:35:06] * Moonlightning checks
+[08:35:09] <Valiant> Yeah ofc it is, which is why I find it funny.
+[08:35:35] <Valiant> apple gouges if you build to order, but anyone who knows does it themself. Apple knows what's up - they don't care, it's just a bit of extra dosh.
+[08:35:44] <Phase> Moonlightning, .repository-content { margin: 10px }; in stylish or something
+[08:35:53] <Valiant> For those "gotta be the BEST IMAC MOM" peopel
+[08:36:04] <Valiant> shit i'm gonna go price out a max spec imac 5k
+[08:36:18] <Moonlightning> Phase: what
+[08:36:34] <Phase> Moonlightning, that'll add padding, ever used stylish?
+[08:36:43] <Moonlightning> is that third-party software
+[08:36:48] <Phase> firefix addon
+[08:36:53] <Moonlightning> I really don't like installing extra software from not a package manager
+[08:36:53] <Phase> like greasemonkey for css
+[08:37:07] <Valiant> 5,159 CAD lol
+[08:37:20] <Valiant> got a terabyte of flash and 32gigs of ram in it
+[08:37:25] <Phase> Moonlightning, https://addons.mozilla.org/en-US/firefox/addon/stylish/
+[08:37:26] <PinkiePieBot> [ Stylish :: Add-ons for Firefox ]
+[08:38:03] <Valiant> holy shit the mac pros are impressive
+[08:38:09] <Valiant> can shove a 12 core xeon in there
+[08:38:20] <Moonlightning> Xeon? :o
+[08:38:22] <Phase> mac pro's are for people who render movies and shit
+[08:38:33] <Phase> and run adobe software
+[08:39:24] * Moonlightning fantasizes about building a tower.
+[08:42:09] <Valiant> Yeah I know but they're so small!
+[08:42:17] <Valiant> They legit impress me.
+[08:42:42] <Valiant> fully specced they go to 12 grand lol
+[08:43:45] <Moonlightning> the other day I learned you could run a system literally submerged in liquid
+[08:44:06] <Moonlightning> which is apparently kind of a pain to maintain, but /damn/ that shit's cool
+[08:44:46] <Moonlightning> https://www.youtube.com/watch?v=0ZrXwq5MHB0
+[08:44:47] <PinkiePieBot> Aquarium Mineral Oil PC Maintenance Vlog - 378357 views - 9m 23s long - 14425 likes - 96.59%
+[08:45:09] <Moonlightning> No more brackets, Kinsley?
+[08:45:28] *** Quits: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net) (Quit: Leaving)
+[08:54:55] *** Eventide is now known as Evenide|Sleepies
+[08:59:38] <Evenide|Sleepies> I've always wanted an oil cooled pc
+[08:59:46] <Evenide|Sleepies> But maintenance meh
+[08:59:59] * Evenide|Sleepies will stick to good old air cooling!
+[09:00:27] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[09:00:51] *** Evenide|Sleepies is now known as Eventide|Sleepies
+[09:09:52] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[09:12:25] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[09:12:32] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Connection closed)
+[09:19:26] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[09:27:14] *** CyberJacob is now known as zz_CyberJacob
+[09:34:21] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:43:05] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[09:45:23] *** Joins: Phase (Phase4@Pony-jeaii1.internode.on.net)
+[10:13:48] *** Quits: Fallfeathers (Fallfeather@Pony-msj.e3e.165.58.IP) (Quit: My people need me!)
+[10:38:52] *** Joins: Melanosuchus (quassel@Pony-29vnem.as13285.net)
+[11:20:32] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[11:35:00] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[12:08:03] *** Quits: Melanosuchus (quassel@Pony-29vnem.as13285.net) (Ping timeout: 121 seconds)
+[12:08:44] *** Joins: Melanosuchus (quassel@Pony-29vnem.as13285.net)
+[12:20:27] *** Quits: Datalink (Datalink@Datalink) (Connection closed)
+[12:21:14] *** Joins: Datalink (Datalink@Datalink)
+[12:35:30] *** Joins: WuBzY (androirc@Pony-3j3jv2.rev.dnainternet.fi)
+[12:36:50] *** Quits: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner) (Ping timeout: 121 seconds)
+[12:37:04] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Connection closed)
+[12:37:13] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[13:03:06] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[13:09:50] *** Quits: Melanosuchus (quassel@Pony-29vnem.as13285.net) (Ping timeout: 121 seconds)
+[13:09:55] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[13:10:24] *** Joins: Melanosuchus (quassel@Pony-29vnem.as13285.net)
+[13:18:18] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[14:04:38] *** Quits: nscoots (FreyGrimrod@Pony-fpljh0.sub-70-192-4.myvzw.com) (Ping timeout: 121 seconds)
+[14:33:53] *** Joins: Cyan_Spark (Cyan_Spark@incidental.unicorn.Cyan_Spark)
+[14:48:01] <Cyan_Spark> blargle
+[14:48:24] <Cyan_Spark> Newbie here, what is "EXC_BAD_ACCESS"? 
+[14:49:03] <Cyan_Spark> Do compilers start puking if you ask them to do thatArray[i] = thisArray[i]?
+[14:56:34] <Stik> what language?
+[14:56:50] <Stik> generally the answer is "no"
+[14:56:53] <Cyan_Spark> C++
+[14:57:10] <Stik> not my forte but i wouldn't have thought it'd have a problem with that
+[14:57:42] <Cyan_Spark> It's really strange, I put in some other variable name and the string copies over just fine
+[14:58:01] <Cyan_Spark> uh, I meant variable value 
+[14:58:03] <Stik> do you have some code you can show?
+[14:58:11] <Stik> suspect you have a problem on another line
+[14:58:11] <Cyan_Spark> Yus, hold on...
+[15:00:31] <Cyan_Spark> External function + Outputs: http://i.imgur.com/BW10Iad.png
+[15:00:51] <Cyan_Spark> The problematic function: http://i.imgur.com/E9iuoJv.png 
+[15:06:23] <Stik> unsure i'm afraid
+[15:06:30] <Stik> there's definitely some c++ ponies in here tho
+[15:06:38] <Stik> hopefully they'll help you :)
+[15:06:41] <Cyan_Spark> Aw, thanks for your help though ^^
+[15:07:27] <Stik> only thing that jumps out at me is that you limit it to 6 inputs, but your arrays can only hold a max of 5 
+[15:07:52] <Stik> would expect you to get errors when typing the names in though, rather than in copyNames
+[15:08:07] <Stik> but perhaps it's just overwriting memory the first time and nothing immediately bad is happening
+[15:09:39] *** Joins: Pony_87224 (Quindo@Pony-8qt.17k.198.99.IP)
+[15:10:59] *** Pony_87224 is now known as Quindo
+[15:11:25] *** Joins: RazorSharpFang (mnsbrekkdup@Pony-008oik.iinet.net.au)
+[15:12:16] <Cyan_Spark> Don't arrays start counting from zero? 
+[15:12:38] <mniip> depends on the language
+[15:12:42] <RazorSharpFang> In C/C++ they do
+[15:12:46] <mniip> ^
+[15:12:47] <Stik> they do
+[15:12:53] <mniip> lua has 1-based arrays
+[15:12:57] <Stik> but the name[5] is a *count*
+[15:13:00] <mniip> pascal has arbitrary-based arrays
+[15:13:04] <Stik> so it means the indices go from 0..4
+[15:13:05] <RazorSharpFang> Matlab uses starting index of 1.
+[15:13:10] <mniip> and I've written a language where arrays start from -1
+[15:13:17] <Stik> why would you do that
+[15:13:18] <RazorSharpFang> mniip: Why... ?
+[15:13:25] <mniip> for the glory of satan of course
+[15:13:32] <Cyan_Spark> OH
+[15:13:33] <RazorSharpFang> Best reason.
+[15:13:36] <Cyan_Spark> Maybe that's the problem 
+[15:13:49] <mniip> haskell doesn't have a fixed concept of array, but
+[15:13:58] * Cyan_Spark knocks his head with a hoof
+[15:13:58] <mniip> Data.Array can start from an arbitrary position too
+[15:14:28] <Cyan_Spark> I've had this phobia of arrays for a while now, guess that's what happens when you try to ignore it too long x3
+[15:14:28] <Stik> pascal's 1-based arrays are to mirror strings, which were historically 1-based because the 0-th element was the length of the string
+[15:14:38] <RazorSharpFang> Anyone play games that have hexagonal grids?
+[15:14:48] <Stik> settlers :)
+[15:15:02] <RazorSharpFang> I... meant computer games. Sorry.
+[15:15:05] <Stik> oh
+[15:15:11] <mniip> pascal doesn't have 1-based arrays
+[15:15:14] <Stik> well, there was a computer game inspired by settles of catan
+[15:15:24] <Stik> called settlers in fact
+[15:15:28] <Stik> that was hexagonal
+[15:15:32] <mniip> you can say
+[15:15:34] <Stik> hmm i thought it did mniip ?
+[15:15:42] <mniip> array : array [4 .. 13] of integer;
+[15:15:43] <Stik> maybe i misremember, it's been a long time ;)
+[15:15:50] <mniip> and then array[4] would be the first element
+[15:15:50] <RazorSharpFang> I
+[15:15:57] <Stik> hmm maybe that's what i'm thinking of
+[15:16:04] <mniip> and array[13] the last
+[15:16:09] <RazorSharpFang> I'm just wondering how to make a game that uses a hexagonal grid.
+[15:16:30] <Stik> represent it as a normal square grid, but offset each row by half the y-coord
+[15:16:54] <mniip> no
+[15:16:57] <RazorSharpFang> What does that even mean?
+[15:17:25] <mniip> this http://blog.spoongraphics.co.uk/wp-content/uploads/2012/retro-pattern/06.jpg
+[15:18:00] <Cyan_Spark> :D it works!
+[15:18:10] * Cyan_Spark glomps Stik. "Thank you!"
+[15:18:14] <Stik> heh you're welcome
+[15:18:26] <RazorSharpFang> I'm not sure how to follow that.
+[15:18:32] <Stik> yeah mniip, that's what i mean, but when rendering you have to transform it
+[15:18:39] * Cyan_Spark is really newbish at programming ^^;
+[15:18:40] <Stik> skew
+[15:18:43] <Stik> that's the word
+[15:21:03] <RazorSharpFang> Can a hex grid be represented by an array of arrays or equivalent? 
+[15:21:36] <Stik> probably better off with a single array of n*m, but yeah, conceptually it's an array of arrays, a 2D array
+[15:22:23] <Stik> if you want the board to be hexagonal as well then you'll need to ignore the corners, since what you'll have this way is a paralellogram shaped board
+[15:23:02] <RazorSharpFang> Uh, no. I kinda wanted the board to be roughly square.
+[15:23:12] <mniip> yeah no
+[15:23:16] <mniip> you could center the center
+[15:23:18] <Stik> similar thing i guess, you'll ahve to work out which bits to ignore
+[15:23:26] <mniip> I wonder what the metric is on that hexagonal grid
+[15:23:52] <Stik> metric?
+[15:25:06] <mniip> well in a euclidian space, distance is measured by sqrt(Δx^2+Δy^2+Δz^2)
+[15:25:20] <mniip> in taxicab world it's |Δx|+|Δy|
+[15:25:28] <RazorSharpFang> euclidian space is the best space
+[15:25:36] <mniip> in minkowski space it's sqrt(Δx^2+Δy^2+Δz^2-Δt^2)
+[15:25:39] <mniip> notice the minus sign
+[15:25:42] <Stik> what's taxicab world?
+[15:25:54] <mniip> https://en.wikipedia.org/wiki/Taxicab_geometry
+[15:26:06] <Stik> i see
+[15:26:53] <mniip> pi equals 2*sqrt(2)
+[15:26:54] <mniip> :P
+[15:26:56] * RazorSharpFang yawns
+[15:27:32] <RazorSharpFang> 2.82 != 3.14
+[15:27:40] <mniip> yeah, in the hexagonal world you have a metric of max(|Δx|,|Δy|,|Δx+Δy|)
+[15:27:46] <mniip> so
+[15:27:55] <mniip> if your board is centered at 0, 0
+[15:28:09] <mniip> a hexagon would be delimited by max(|x|,|y|,|x+y|) < r
+[15:28:56] <RazorSharpFang> I was kinda after a square shaped board broken into hexagonal pieces. 
+[15:30:16] <mniip> then
+[15:30:20] <mniip> |y| < height
+[15:30:26] <mniip> |x+y/2| < width
+[15:30:36] <Stik> you need to transform y too
+[15:30:49] <RazorSharpFang> I'm not sure how movement would work. Like, if you were at {2,3} and want to move northwest, would that put you at {1,2} or {1,3} ?
+[15:31:37] <mniip> Stik, no
+[15:31:50] <Stik> i think yes
+[15:32:01] <mniip> RazorSharpFang, you have 6 movement opportunities
+[15:32:04] <Stik> draw it out, you don't get equilateral triangles 
+[15:32:24] <RazorSharpFang> Doesn't that depend on your hexagon?
+[15:32:39] <mniip> (+1, 0) (-1, 0) (0, +1) (0, -1) (+1, +1) (-1, -1)
+[15:33:12] <mniip> Stik, http://www.wolframalpha.com/input/?i=|x%2By%2F2|+%3C+1+%26%26+|y|+%3C+1
+[15:33:27] <RazorSharpFang> mniip: How can you move just west? That's not possible on a hex-grid.
+[15:33:52] <Stik> that's not going to form a regular hexgon mniip 
+[15:34:06] <mniip> E W NW SE NE SW
+[15:34:15] <mniip> Stik, x and y are array coordinates here
+[15:34:40] <Stik> you don't transform them
+[15:34:48] <Stik> the transform only applies to the rendering
+[15:35:00] <mniip> right
+[15:35:10] <mniip> but to figure what subset of coordinates forms a rectangle
+[15:35:11] <RazorSharpFang> Maybe I should try making a prototype of this.
+[15:35:13] <Stik> and if you don't transform y as well it'll be distorted
+[15:35:19] <mniip> you have to use a linear map
+[15:35:24] <mniip> yes it /will/ be distorted
+[15:35:27] <Stik> so your rectangle will be slightly smaller in one dimension
+[15:35:35] <mniip> that is correct
+[15:35:49] <RazorSharpFang> Your talk of skew and distort is confusing,
+[15:36:20] <Stik> hmm it's kind of necessary for a hex grid though razor
+[15:36:51] <mniip> http://i.stack.imgur.com/FloqG.png
+[15:36:56] <mniip> this one is 5 wide and 5 tall
+[15:37:02] <Stik> i suppose think about a real-world hex game board (like catan) and ask yourself how you'd index each tile
+[15:37:11] <RazorSharpFang> Yeah, exactly like that.
+[15:38:18] <RazorSharpFang> Hang on, that's slightly different to the one I drew.
+[15:38:34] <RazorSharpFang> Mine's got up/down going straight
+[15:38:53] <mniip> so swap x and y then
+[15:39:53] <RazorSharpFang> Would it make any difference to the gameplay?
+[15:41:34] <mniip> depends
+[15:44:53] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:49:29] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[15:51:03] <DataByte> "No unauthorized updates or access to the Company Network is allowed without prior authorization"
+[15:51:07] <DataByte> heh
+[16:13:35] * RazorSharpFang yawns
+[16:22:25] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:51:58] *** mniip is now known as \m
+[16:53:04] <DataByte> THE INTERNET IS REALLY SLOW!!!!
+[16:53:13] * DataByte checks the connection speed
+[16:53:14] <DataByte> http://www.speedtest.net/my-result/4878345997
+[16:53:19] <DataByte> slow... right...
+[16:53:28] * DataByte sighs
+[16:54:22] <DataByte> users.
+[16:55:57] *** \m is now known as mniip
+[16:58:35] <JockeTF> DataByte: http://www.speedtest.net/my-result/4878364435
+[16:58:38] * JockeTF wins!
+[16:59:12] <DataByte> lol
+[16:59:33] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[17:01:22] *** Quits: Cyan_Spark (Cyan_Spark@incidental.unicorn.Cyan_Spark) (Quit: Spork)
+[17:02:09] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[17:09:04] *** Joins: SilverString (kiwjnomkptb@Pony-cg9.bgr.56.216.IP)
+[17:11:18] <SilverString> hello?
+[17:15:17] <mniip> hi
+[17:15:29] <SilverString> how are you
+[17:15:46] *** Parts: SilverString (kiwjnomkptb@Pony-cg9.bgr.56.216.IP) ()
+[17:22:21] <mniip> I think a more important question is why am I
+[17:23:11] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:26:03] *** Quits: RazorSharpFang (mnsbrekkdup@sharpest.of.all.fangs) (Connection closed)
+[17:53:08] *** Joins: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile)
+[17:56:43] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[18:10:03] *** Eventide|Sleepies is now known as Eventide
+[18:16:32] *** Joins: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com)
+[18:38:16] *** Joins: Crimson_Tail (Bluepon@Pony-u8ehhj.cg80.k4gu.0151.2601.IP)
+[18:54:35] <Divide|Supporting> Databyte: Oftentimes, when the internet is really slow like that, it's due to issues with an antivirus or the like.
+[18:56:47] <Crimson_Tail> It also could be your ISP playing tricks with you
+[18:57:16] <mniip> moo
+[19:01:05] *** Quits: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com) (Quit: Leaving)
+[19:24:54] <Moonlightning> …hay, it's 10:24!
+[19:25:48] <Moonlightning> Divide|Supporting: yes, the ENTIRE INTERNET experiences latency issues because of one dude's antivirus
+[19:26:27] <Sour_Sweet> That's totally reasonable if he works for the NSA
+[19:27:13] <Moonlightning> I know you're not serious, but I still feel like I have to point out that that's not true, either.
+[19:38:18] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[19:39:08] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[19:58:37] *** Quits: WuBzY (androirc@Pony-3j3jv2.rev.dnainternet.fi) (Quit: Go any more of dem WuBz?)
+[20:01:03] *** Joins: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com)
+[20:04:17] *** Joins: WuBzY (WuBzY@Pony-skif2f.dhcp.inet.fi)
+[20:22:03] *** Quits: LordShadowWing (LordShadowW@Pony-meil2p.machlink.com) (Quit: Leaving)
+[20:22:04] <DataByte> Divide|Supporting: NAT table overflow, it seems - random packet loss, reboot router, magic
+[20:29:50] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[20:30:39] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[20:32:46] *** Quits: WuBzY (WuBzY@Pony-skif2f.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[20:34:43] <Gigabit> woah woah wait a second. Windows is letting me use handbrake on a file I am watching
+[20:35:19] <Gigabit> All I imagine is Bender "You want me to do twoooo things?"
+[20:36:12] *** Quits: Phase (Phase4@Pony-jeaii1.internode.on.net) (Ping timeout: 121 seconds)
+[20:37:33] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[20:40:16] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[20:46:48] *** Sour_Sweet is now known as Sour_Sweet|Away
+[20:50:12] <Divide|Supporting> I /did/ say 'oftentimes'.
+[20:50:28] <Divide|Supporting> No offense taken, I just figured you missed that initial word.
+[20:50:40] <Divide|Supporting> And hah, um.
+[20:50:58] <Divide|Supporting> DataByte: I hate when that happens.
+[20:51:52] <DataByte> irritating, yes xD
+[20:54:45] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:19:14] *** Joins: WuBzY (androirc@Pony-3j3jv2.rev.dnainternet.fi)
+[21:21:43] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[21:23:51] *** Joins: nscoots (FreyGrimrod@Pony-2ids9s.sub-70-192-17.myvzw.com)
+[21:25:25] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[21:36:32] *** Quits: nscoots (FreyGrimrod@Pony-2ids9s.sub-70-192-17.myvzw.com) (Connection closed)
+[21:36:34] *** Joins: nscoots (FreyGrimrod@Pony-2ids9s.sub-70-192-17.myvzw.com)
+[22:02:51] *** Joins: Fallfeathers (Fallfeather@Pony-msj.e3e.165.58.IP)
+[22:04:35] *** Joins: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net)
+[22:05:12] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:06:31] *** Joins: Princess_QRS (Corey@Pony-ipvgi3.ed.shawcable.net)
+[22:07:27] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[22:09:14] *** Quits: Valiant (Corey@Pony-ipvgi3.ed.shawcable.net) (Ping timeout: 121 seconds)
+[22:37:41] *** Quits: Princess_QRS (Corey@Pony-ipvgi3.ed.shawcable.net) (Quit: Leaving)
+[22:37:50] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[22:41:35] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[22:45:33] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:55:21] *** Quits: WuBzY (androirc@Pony-3j3jv2.rev.dnainternet.fi) (Ping timeout: 121 seconds)
+[23:06:31] *** Joins: SilverString (jvqpxkjivcg@Pony-cg9.bgr.56.216.IP)
+[23:06:37] *** Parts: SilverString (jvqpxkjivcg@Pony-cg9.bgr.56.216.IP) ()
+[23:11:52] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[23:33:56] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[23:35:28] <mniip> 🌆✨, 🍎🎃, 🍃😳, 💎, 💕🍰, and 🌈💨!
+[23:36:29] <Moonlightning> Ha/hah!/ You think you can confund me with your fancy emoji?
+[23:36:36] * Moonlightning wields a danger noodle at mniip!
+[23:38:44] <Moonlightning> …oh, hah, I get it :P
+[23:42:27] <Divide|Supporting> Well.
+[23:42:47] <Divide|Supporting> Microsoft are evidently fed up with people not installing Windows 10, and are now going the extra step by pushing it with the REST of the Windows Update package.
+[23:43:32] <Moonlightning> Wow.
+[23:43:42] <Divide|Supporting> At least, that's what I'm seeing on my customers' computers.
+[23:43:56] <Moonlightning> …wait, seriously, or are they just telling you that?
+[23:44:08] <Divide|Supporting> I'm being sardonic.  They say, 'I never clicked that.'
+[23:44:16] <Moonlightning> … :P
+[23:44:20] <Divide|Supporting> PEBCAK is of course that thing.
+[23:44:34] <Moonlightning> Classic ID10T error.
+[23:46:14] <mniip> >10
+[23:47:30] <Phase> Divide|Supporting, as a normal recommended update?
+[23:48:30] <Phase> if so then i guess there's no point in chosing whether or not to upgrade work, it'll happen on its own regardless
+[23:50:11] * Moonlightning boops Phase.
+[23:50:13] <mniip> goodbye /dev/sda[43] then I guess
+[23:50:13] <Moonlightning> You know Python?
+[23:50:21] <Phase> a little
+[23:50:30] <mniip> python is a snek
+[23:50:42] <Moonlightning> snek!
+[23:50:42] <DJ-C0L7[EIT]> you've noticed that as well Divide|Supporting?
+[23:50:44] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[23:50:44] <Moonlightning> snek?!
+[23:50:52] <Phase> snerrrrrrrrrrrrrrrk
+[23:50:58] <Moonlightning> SNEEEEEEEEEEEEEEEEEEEEEK!
+[23:51:24] <DJ-C0L7[EIT]> me thinkest thou art missing a letter lol
+[23:51:59] <mniip> sneka
+[23:52:00] <Moonlightning> methinks thy Olde Englishe doth need some work
+[23:52:09] <DJ-C0L7[EIT]> indeed
+[23:52:28] <mniip> lul wat r u guiz takn bout
+[23:57:21] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)

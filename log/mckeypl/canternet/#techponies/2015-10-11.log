@@ -1,0 +1,259 @@
+[00:02:09] <Moonlightning> I want OS multi clipboard :<
+[00:04:16] <Sour_Sweet> Are they any really uncool commands I could put into an SQLite file? Like MySQL's INTO OUTFILE?
+[00:04:37] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:09:01] *** Quits: Tahlorz (rattle@Pony-04f8is.ph.cox.net) (Quit: )
+[00:10:59] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:15:33] *** Joins: Hadjii (jircii@Pony-elc.omk.17.144.IP)
+[00:21:37] <DJ-C0L7[EIT]> droptables=all
+[00:27:04] <Sour_Sweet> Ahh no that wouldn't help ;-)
+[00:27:50] <Sour_Sweet> The file is executed under a privileged user and I'm looking for attack vectors.
+[00:28:17] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[00:51:24] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:59:47] *** Joins: RadicalHorseGiant135 (uid13850@the.incredible.pony)
+[01:03:56] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[01:06:26] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[01:08:42] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:14:56] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:21:13] <Obaskyr> Anyone here have any experience repairing motherboard socket pins?
+[01:21:49] <Obaskyr> And no, *I* didnt bend the pins this time :D
+[01:24:53] <Hadjii> I accidentally the heatsink and had to scramble off to Radioshack because I didn't have any extra thermal grease on hand before.
+[01:24:54] *** zz_CyberJacob is now known as CyberJacob
+[01:27:48] <Obaskyr> wot
+[01:29:22] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[01:29:52] *** Quits: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se) (Quit: Leaving.)
+[01:30:04] <Hadjii> i was disassembling my laptop to try and clean the fans out becuz dust
+[01:30:05] *** Joins: Sin (Sin@is.hustlin.everyday)
+[01:30:19] <Hadjii> and i accidentally the heatsink, so i had to redo the thermal grease.
+[01:30:36] <Hadjii> i also found out that one of the screws had been inserted incorrectly so if I'm going to ever do anything like replace the scren
+[01:30:45] <Hadjii> or anything that requires removing the motherboard
+[01:30:57] <Hadjii> I'm going to have to borrow a dremel to physically remove that screwed-up screw.
+[01:31:11] <Obaskyr> :o
+[01:32:05] <Hadjii> but hey, it plays the Battlefront beta in 1080p with 50% scale, at full 60 fps, on minimal settings. so I'm happy.
+[01:32:47] <Sour_Sweet> Had to fix bend pins once - a nightmare. Get it wrong and the CPU or motherboard is fried. If you're lucky it just doesn't post.
+[01:33:55] <Obaskyr> I RMAd my last board because pins were bent
+[01:33:58] <Obaskyr> Buuuut
+[01:34:15] *** Parts: RadicalHorseGiant135 (uid13850@the.incredible.pony) ("")
+[01:34:23] <Obaskyr> I could be getting a very good deal on a repairable board that I need for a mATX build
+[01:34:42] <Obaskyr> And my i5 OCs like shit so I dont care about frying it :D
+[01:34:56] <Obaskyr> Just an excuse to RMA it :D
+[01:36:53] <Moonlightning> I just had an idea :o
+[01:37:02] * Hadjii sits and waits for this idea
+[01:37:18] <Moonlightning> what if there was a syscall to atomically rewrite a file from a buffer
+[01:37:37] <Moonlightning> This would be awesome for things like `weechat`s /save
+[01:38:13] <Moonlightning> Just abstract the whole create-write-write-write-rename thing into the filesystem driver
+[01:38:24] <Moonlightning> traditional filesystems can do that; CoW filesystems can do CoW magic
+[01:38:25] <Hadjii> Moonlighting, you da real mvp
+[01:39:35] <Obaskyr> If all goes well with this board I'm totally voiding some more warrantees, gonna delid, lap and liquid ultra this sucker.
+[01:39:58] <Obaskyr> I've always wanted to lap an IHS :D
+[01:49:40] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:53:10] *** init3 is now known as Init3-away
+[01:54:31] *** Init3-away is now known as init3
+[01:56:07] <Moonlightning> wat
+[01:56:17] <Moonlightning> localhost got resolved to fe80::1%lo0
+[01:56:54] <Phase> Moonlightning, what would a CoW filesystem do differently?
+[01:57:23] <Moonlightning> Phase: …uhhhh…
+[01:57:48] <Moonlightning> I dunno, but it'd be easier?
+[01:58:12] <Moonlightning> atomically rewriting a file is easier on a CoW filesystem
+[01:58:14] <Phase> XD
+[01:58:21] <Moonlightning> I mean, from the filesystem's point of view
+[01:58:42] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[01:58:59] <Phase> the think you might do differently is refcopy the original, edit, then move it back, but that's a different operation
+[02:00:07] <JustAberrant> :)
+[02:02:20] <Moonlightning> Phase: It's easier 'cos file writes are already kind of atomic.
+[02:02:30] <Moonlightning> Because CoW.
+[02:02:46] <Moonlightning> You just need to bundle as many writes as it takes into one atomic operation.
+[02:03:03] <Phase> data journaling should give you the same guarantees
+[02:03:50] <Moonlightning> Doesn't journaling only cover individual write()s though?
+[02:04:03] <Moonlightning> Don't both journaling /and/ CoW writing work that way?
+[02:04:34] <Phase> i don't think there's any garuentee that multiple write()s happen in order
+[02:04:59] <Moonlightning> by the same process? O.o
+[02:05:07] <Phase> yeah
+[02:05:21] <Moonlightning> But then bits of the file could get reordered O.o
+[02:06:07] <Phase> i mean the order they're written to disk
+[02:06:14] <Moonlightning> Oh.
+[02:06:19] <Moonlightning> That's fine.
+[02:06:33] <Moonlightning> They just either all need to happen (including the truncate, if applicable), or none of them.
+[02:08:09] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "be back later everypony")
+[02:13:08] *** Joins: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au)
+[02:15:57] *** Sour_Sweet is now known as Seoson|BNC
+[02:22:35] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[02:25:31] *** Joins: init3 (Jason@init3.Is.Not.A.Clever.Poni)
+[02:28:26] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:43:01] *** Joins: Asoka (Asoka@Pony-ukinar.net-htp.de)
+[02:46:11] *** Quits: Asoka_White (Asoka@Pony-hbq8bj.net-htp.de) (Ping timeout: 121 seconds)
+[02:52:06] <init3> http://tech.slashdot.org/story/15/10/10/2212233/there-is-no-bro-in-brotli-googlemozilla-engineers-nix-file-type-as-offensive
+[02:56:26] <Compu> init3: -.- wat
+[02:57:10] <init3> Yeah
+[02:57:35] <Compu> wonder why PinkiePieBot didnt respond to the url
+[02:58:35] <init3> Simply too stupid to parse?
+[02:59:42] <Compu> init3: my bot handled it just fine
+[03:00:04] <JustAberrant> Moonlightning: do you know what the stewarts and tudors did for the history of Great Britain and really the world in general? :(
+[03:02:05] <Moonlightning> the comments on the commit
+[03:02:18] <Moonlightning> why not just use `brotli`? :P
+[03:02:26] <Moonlightning> 8.3 died a loooong tim ego
+[03:02:29] <Moonlightning> time ago *
+[03:03:17] <Moonlightning> > So after the change from a connotation of male sibling we get one now named after a country code the full name of which is also a form of pubic hairstyle of minimal proportions. OK, seems appropriate and not at all offensive (SRK).
+[03:03:25] <Moonlightning> > Brotli will hence forth be forever known as "Giving your files a Brazillian wax".
+[03:05:39] <init3> Haha
+[03:08:09] <Moonlightning> But, yeah, that's stupid
+[03:08:16] <Moonlightning> It's the first three letters
+[03:08:25] *** CyberJacob is now known as zz_CyberJacob
+[03:16:46] <Moonlightning> uh
+[03:16:57] <Moonlightning> besides dronebl, what are popular services?
+[03:17:25] <Moonlightning> I'm suddenly banned from a channel on AnthroChat (proxying through my server), and FurAffinity is returning 503s (ditto)
+[03:17:57] <Moonlightning> dronebl says anothing about that IP
+[03:35:06] <Moonlightning> Never mind.
+[03:42:38] *** Quits: MistVeil (aqua@Pony-hahd0r.static.axtel.net) (Quit: Saliendo)
+[03:46:54] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[03:51:47] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[04:05:50] <Snoarin> Hey hey! A very important event will be happening soon!
+[04:10:27] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[04:16:43] <Moonlightning> Snoarin :?
+[04:17:24] <Snoarin> Marty McFly, Doc Brown and Jennifer will be arriving in the future on October 21st 2015 at 04:29
+[04:17:40] <Moonlightning> Oh, heh
+[04:33:12] *** Quits: frackster (sid20128@Pony-rk5kfp.tooting.irccloud.com) (Ping timeout: 121 seconds)
+[04:36:02] <ButterPup> hey is there a webmaster here for hire
+[04:37:49] *** Quits: Skids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[04:38:46] * Moonlightning trots in, folding chair balanced on his wings. He tosses it off, opens it, slams it down, and snaps his wings closed in one fluid motion.
+[04:38:47] *** Quits: Aww (aww@Pony-ic0abh.online) (Connection closed)
+[04:38:50] <Moonlightning> Dis gon b gud.
+[04:46:08] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[04:47:01] *** Joins: Aww (aww@Pony-ic0abh.online)
+[04:55:29] *** ButterPup is now known as ButterBean
+[04:58:00] <Moonlightning> Augh, what is this /lag/
+[04:59:51] * HoneyDrops lifts her hoof off the internet hose to Moonlightning's house.
+[05:00:04] <Moonlightning> :P
+[05:00:37] <Moonlightning> Okay. My netbox runs Ubuntu.
+[05:00:47] <Moonlightning> There's /got/ to be an easy way to figure out what's using bandwidth. >.>
+[05:00:59] <Moonlightning> …if there even is anything using much bandwidth, which there shouldn't be
+[05:01:13] <Moonlightning> Netbox's running mtr and it don't look very good
+[05:05:02] <Moonlightning> relatedly, but less importantly, how do you replay `mtr --raw` output? >.>
+[05:13:49] *** Snoarin is now known as Gigabit
+[05:25:51] <JustAberrant> probably just something sending a large amount of personal data off to some cloud service, nothing to worry about ;p
+[05:30:10] *** Quits: Phase (Phase4@Pony-pocs54.internode.on.net) (Ping timeout: 121 seconds)
+[05:36:08] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[06:02:12] *** Joins: frackster (sid20128@Pony-rk5kfp.tooting.irccloud.com)
+[06:14:49] *** Quits: Compu (compu@snuggly.filly) (Ping timeout: 121 seconds)
+[06:15:42] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[06:16:43] *** Joins: Compu (compu@snuggly.filly)
+[06:22:33] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[06:36:26] <Gigabit> Someone tech talk or something, bored
+[06:37:34] <JustAberrant> :)
+[06:37:51] <Moonlightning> Gigabit: go contribute to Miau! :3
+[06:38:02] <Gigabit> Eh?
+[06:38:38] <Moonlightning> #miau-dev
+[06:42:27] <Gigabit> I am not a dev though and have nothing useful for the channel
+[06:43:03] <Moonlightning> You could contribute ideas? Maybe learn something, too~ x3
+[06:43:13] <Moonlightning> ' could become a dev :3
+[06:47:33] *** Gigabit is now known as Snoarin
+[06:48:56] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[06:57:40] *** Joins: Phase (Phase4@Pony-pocs54.internode.on.net)
+[07:02:40] *** Quits: init3 (Jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[07:06:14] *** Quits: Hadjii (jircii@Pony-elc.omk.17.144.IP) (Quit: jIRCii - http://www.oldschoolirc.com)
+[07:22:41] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:25:51] *** Eventide is now known as Eventide|Sleepies
+[07:54:16] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[08:19:02] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[08:25:03] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[08:25:31] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[08:38:43] *** init3 is now known as Init3-away
+[10:03:44] *** Quits: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Ping timeout: 121 seconds)
+[10:05:34] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[10:05:56] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Quit: )
+[10:07:57] * Googie is now shared
+[10:07:59] <Googie> http://hackaday.com/2015/10/10/the-usb-killer-version-2-0/
+[10:08:02] <Googie> *scared
+[10:10:12] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[10:28:26] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[10:29:14] <Sukasa> googie: that's nasty
+[10:29:17] <Sukasa> I want one
+[10:29:32] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:31:10] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[10:36:05] *** Quits: frackster (sid20128@Pony-rk5kfp.tooting.irccloud.com) (Connection closed)
+[10:45:18] *** Joins: frackster (sid20128@Pony-rk5kfp.tooting.irccloud.com)
+[10:47:03] *** zz_CyberJacob is now known as CyberJacob
+[11:21:16] *** locodash11[lagout] is now known as locodashie11
+[11:38:24] *** Quits: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Quit:  HydraIRC -> http://www.hydrairc.com <- Go on, try it!)
+[11:44:34] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[11:50:24] *** Init3-away is now known as init3
+[12:18:34] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[12:21:12] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[12:23:00] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[12:26:32] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[12:51:31] *** CyberJacob is now known as zz_CyberJacob
+[13:00:38] *** init3 is now known as Init3-away
+[13:06:41] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[13:07:19] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[13:09:57] *** Joins: thatdguy (WebChat@Pony-vu6.g41.160.37.IP)
+[13:12:57] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[13:18:57] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[13:20:04] *** Quits: Init3-away (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[13:23:18] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[14:05:24] *** Joins: Asoka_White (Asoka@Pony-84530s.net-htp.de)
+[14:07:43] *** Quits: Asoka (Asoka@Pony-ukinar.net-htp.de) (Ping timeout: 121 seconds)
+[14:41:02] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[14:50:23] *** Init3-away is now known as init3
+[15:02:34] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[15:15:34] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[15:40:56] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[15:51:17] *** Quits: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au) (Connection closed)
+[16:25:35] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:27:38] *** Joins: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net)
+[16:28:47] *** init3 is now known as Init3-away
+[16:39:44] *** Joins: MistVeil (aqua@Pony-prm9c8.static.axtel.net)
+[17:01:54] *** Quits: thatdguy (WebChat@Pony-vu6.g41.160.37.IP) (Ping timeout: 121 seconds)
+[17:03:43] <johnsey> still using snakeoil? https://code.google.com/p/google-security-research/issues/detail?id=564
+[17:03:44] <PinkiePieBot> [ Issue 564 - google-security-research - Kaspersky Internet Security: Network Attack Blocker Design Flaw - Google Security Research - Google Project Hosting ]
+[17:12:44] *** Joins: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se)
+[17:31:59] *** Seoson|BNC is now known as Sour_Sweet
+[17:33:11] *** Joins: thatdguy (WebChat@Pony-v2d.dnc.162.37.IP)
+[17:35:43] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:39:00] *** Eventide|Sleepies is now known as Eventide
+[17:40:53] *** Quits: MistVeil (aqua@Pony-prm9c8.static.axtel.net) (Quit: Saliendo)
+[18:05:04] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:13:16] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[18:37:50] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:45:41] *** Quits: Midnight_Tinker_ (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[18:46:29] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[19:12:07] *** Quits: thatdguy (WebChat@Pony-v2d.dnc.162.37.IP) (Ping timeout: 121 seconds)
+[19:23:30] <Snoarin> http://www.parts-express.com/belkin-cat-5e-50-ft-red-patch-cable-snagless--109-556
+[19:23:32] <PinkiePieBot> [ Belkin Cat 5e 50 ft. Red Patch Cable Snagless ]
+[19:23:38] <Snoarin> 1.98 ea
+[19:25:59] <Rylee> cables are mad hella cheap
+[19:28:06] *** Snoarin is now known as Gigabit
+[19:39:23] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[19:47:47] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[20:03:45] *** Joins: thatdguy (~WebChat@Pony-nks.pea.165.37.IP)
+[20:19:57] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[20:39:48] *** Init3-away is now known as init3
+[21:00:43] *** Quits: frackster (sid20128@Pony-rk5kfp.tooting.irccloud.com) (Quit: )
+[21:02:07] <DJ-C0L7[EIT]> i'm thinking about doing a rebuild of a comp i built a while back, and setting it up so when i make the trip to pac-south in late jan/early feb in dallas, we can deploy it as a small file server on its own mesh networked router
+[21:02:21] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[21:02:46] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Killed (NickServ (GHOST command used by init3_1)))
+[21:02:50] *** init3_1 is now known as init3
+[21:03:20] <DJ-C0L7[EIT]> its a 2.2 or 2.3ghz AMD Athlon XP with 2.5 gigs of ram, 4x 80 gig storage drives, and a single 60 gig system drive, and a ton of usb ports, i was thinking about adding a 2nd power supply and maybe even a scsi array for buffer/overhead
+[21:03:49] <DJ-C0L7[EIT]> or have one of the wireless adapters monitoring the network traffic and keeping logs for activity and bandwidth utilization
+[21:09:31] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[21:09:38] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[21:11:37] <DJ-C0L7[EIT]> i guess i could also deploy the box with a pfsence vm and use the vm linked to one of the wireless adapters as the wifi link and the file access then would be via wifi
+[21:15:59] *** Ruthalasleep is now known as Ruthalas
+[21:31:20] <DJ-C0L7[EIT]> atm the box has xp pro sp3, but i was planning to change that to ubuntu or deb anyways
+[21:34:15] *** Joins: nscoots (FreyGrimrod@Pony-dpg.afa.222.209.IP)
+[21:38:45] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[21:38:47] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[21:55:01] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "be back later everypony")
+[21:59:58] *** init3_1 is now known as init3
+[22:01:11] *** Joins: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au)
+[22:16:40] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[22:17:04] *** Quits: thatdguy (~WebChat@Pony-nks.pea.165.37.IP) (Ping timeout: 121 seconds)
+[22:17:57] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:26:25] *** Gigabit is now known as GigaWork
+[22:41:42] *** Quits: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se) (A TLS packet with unexpected length was received.)
+[22:45:10] *** Quits: Phase (Phase4@Pony-pocs54.internode.on.net) (Quit: Leaving)
+[22:45:15] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[22:45:51] *** Joins: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se)
+[22:55:20] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[22:59:47] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:38:15] *** Quits: floogulinc (floogulinc@Pony-opvprb.floogul.net) (A TLS packet with unexpected length was received.)
+[23:38:24] *** Joins: floogulinc (floogulinc@Pony-opvprb.floogul.net)
+[23:40:33] *** Dusk is now known as Dusk|VtM

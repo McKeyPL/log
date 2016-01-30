@@ -1,0 +1,144 @@
+[00:04:51] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Quit: alsuren)
+[01:07:47] <EvilAaron_> With the Chromecast Audio announce it renews the question in my mind if thoughts or plans for Chromecast support in Tomahawk App and desktop at some point?
+[01:10:23] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[01:17:10] *** Quits: soee_ (~soee@aguw80.neoplus.adsl.tpnet.pl) (Ping timeout: 240 seconds)
+[01:18:02] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[01:23:57] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Read error: Connection reset by peer)
+[01:47:56] <muesli> EvilAaron_: yeah, xhochy & vlc have started work on that, so we should be able to use that as a sound output as well
+[01:49:08] <theli_ua> chromecast .... we should target something more generic/widespread
+[01:52:31] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) ()
+[02:10:27] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[02:53:25] *** Quits: modul (~mo@limu.coffee.liberejo.de) (Ping timeout: 240 seconds)
+[02:53:47] *** Quits: johnyb (~jb@limu.coffee.liberejo.de) (Ping timeout: 256 seconds)
+[03:04:11] *** Joins: johnyb (~jb@limu.coffee.liberejo.de)
+[03:04:12] *** Joins: mohn (~mo@limu.coffee.liberejo.de)
+[04:21:51] *** Joins: apb1963 (~apb@174-135-20-37.res.bhn.net)
+[05:09:04] <toma-cat> Added new crash-report for version 0.30-38-g9f4685a (Android)
+[05:42:35] *** Joins: mgue1 (~mgue@x590f622b.dyn.telefonica.de)
+[05:45:34] *** Quits: mgue (~mgue@f049030051.adsl.alicedsl.de) (Ping timeout: 260 seconds)
+[06:44:03] *** Quits: apb1963 (~apb@174-135-20-37.res.bhn.net) (Quit: Konversation terminated!)
+[06:51:35] *** Joins: apb1963 (~apb@174-135-20-37.res.bhn.net)
+[08:41:10] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[08:45:50] <lorenzh> More widespread? Google sold 20 million of those things!
+[08:46:39] <lorenzh> It's an amazing device which could only be made better by my TV being less shit
+[08:47:53] <lorenzh> Seriously, chromecast is amazing, please don't spend a year building the super generic dlna player solution when you could have chromecast in a week
+[08:48:30] <lorenzh> (there is an interesting pulse audio plugin that you could look at, I'll have to dig it up later)
+[08:49:10] <theli_ua> pulseaudio-dlna works fine, yes
+[08:50:13] <theli_ua> but chromecast is much less widespread than dlna capable devices are
+[08:50:18] <lorenzh> That would be the "I want it now" solution
+[08:50:36] <theli_ua> heck, even airplay capable ones are probably more spread
+[08:51:06] <theli_ua> and again, why would you want your tv on for listening to music
+[08:51:28] <lorenzh> Chromecast Audio was announced last week
+[08:51:33] * theli_ua is not sure how easily chromecast is controllable without visual feedback
+[08:52:09] <theli_ua> yeah, chromecast audio sounds better in that regards (streaming music to it)
+[08:52:12] <lorenzh> the controls are in the client, the client should show you the state anyway
+[08:52:36] <theli_ua> then again, why not just stream from the phone
+[08:52:47] <theli_ua> its easier and you have it in your pocket
+[08:53:40] <theli_ua> dont get me wrong, chromecast is probably a nice device
+[08:53:48] <theli_ua> and I'm not arguing against direct support for it
+[08:54:15] <theli_ua> in the end each developer is free to work on w/e he is up to
+[08:54:18] <lorenzh> EvilAaron_: are you on linux with pulseaudio? Then you can try https://github.com/masmu/pulseaudio-dlna for instant Chromecast
+[08:54:20] <tomabee> [ masmu/pulseaudio-dlna · GitHub | github.com | https://avatars1.githubusercontent.com/u/7857307?v=3&s=400 ]
+[08:54:40] <lorenzh> well, xhochy and the VLC people did 90% of the work already
+[08:55:16] *** Joins: github-tomahawk (~github-to@192.30.252.45)
+[08:55:16] <github-tomahawk> [13tomahawk] 15muesli pushed 1 new commit to 06master: 02http://git.io/vcrdr
+[08:55:16] <github-tomahawk> 13tomahawk/06master 14282b876 15Tomahawk CI: Automatic merge of Transifex translations
+[08:55:16] *** Parts: github-tomahawk (~github-to@192.30.252.45) ()
+[08:55:22] <lorenzh> it would probably be fairly easy to support it
+[08:56:14] <theli_ua> depends on your definition of "fairly easy" 
+[08:56:24] <theli_ua> say, I, personally, hate working on UI stuff
+[08:56:56] <theli_ua> hacking in hardcoded support is easy, yeah, in fact its already there
+[08:57:18] <theli_ua> but making it stable and user-friendly still requires work
+[08:58:43] <theli_ua> lorenzh: how your  tv can be shit for chromecast?
+[09:02:29] * theli_ua off to sleep
+[09:02:32] <lorenzh> theli_ua: 720p, uses tons of power, bad audio output, and no volume control over the headphone jack without navigating menus (normal volume controls just control the builtin speaker)
+[09:02:42] <lorenzh> good night
+[09:02:53] <theli_ua> just get a receiver for sound
+[09:02:56] <theli_ua> and speakers of course
+[09:03:02] <lorenzh> I have speakers
+[09:03:08] <lorenzh> And I have a bluetooth dongle
+[09:03:49] <theli_ua> eh, bluetooth compresses sound
+[09:03:55] <theli_ua> lossy
+[09:04:22] <lorenzh> yeah, but I don't really hear a difference
+[09:04:38] <lorenzh> maybe because I've never really done a side by side comparison
+[09:04:56] <lorenzh> but it sounds good enough and the usability is very good
+[09:23:22] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[09:44:03] *** Joins: svetter_ (~svetter@2001:8e0:2003:fe00:698a:8243:a7ec:e192)
+[11:15:30] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[11:27:46] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[11:31:04] *** Quits: svetter_ (~svetter@2001:8e0:2003:fe00:698a:8243:a7ec:e192) (Remote host closed the connection)
+[11:39:25] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Read error: Connection reset by peer)
+[11:40:04] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[11:47:27] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Read error: Connection reset by peer)
+[11:47:46] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[11:51:08] *** Joins: svetter_ (~svetter@2001:8e0:2003:fe00:cdc7:2aaa:3e89:2fc0)
+[11:54:03] *** Quits: svetter_ (~svetter@2001:8e0:2003:fe00:cdc7:2aaa:3e89:2fc0) (Remote host closed the connection)
+[12:02:31] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[12:26:35] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[12:34:02] *** Joins: soee_ (~soee@aftu78.neoplus.adsl.tpnet.pl)
+[12:37:58] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Read error: Connection reset by peer)
+[12:40:19] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[12:45:48] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Read error: Connection reset by peer)
+[12:50:04] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[12:55:01] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Read error: Connection reset by peer)
+[13:01:59] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[13:09:40] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Read error: Connection reset by peer)
+[13:15:15] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[13:18:17] *** Parts: Rasi (~carnager@archlinux/support/rasi) ("WeeChat 1.3")
+[13:24:55] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Read error: Connection reset by peer)
+[13:26:14] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[13:31:00] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Client Quit)
+[13:31:54] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[13:49:29] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[14:27:03] *** Quits: CaptainKnots (~redhat@fedora/CaptainKnots) (Read error: Connection reset by peer)
+[14:30:57] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[14:42:33] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Disconnected by services)
+[14:42:33] *** Joins: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[14:43:05] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Quit: Textual IRC Client: www.textualapp.com)
+[14:47:19] *** Quits: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Ping timeout: 268 seconds)
+[14:49:46] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[15:22:07] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Disconnected by services)
+[15:22:07] *** Joins: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[15:24:02] *** Joins: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de)
+[15:44:58] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Quit: alsuren)
+[16:01:49] *** h4ndy is now known as H4ndy
+[16:08:59] *** Quits: HorusHorrendus (~horrendus@ip5b405730.dynamic.kabel-deutschland.de) (Quit: Leaving.)
+[16:20:30] *** Joins: soee (~soee@bit21.neoplus.adsl.tpnet.pl)
+[16:22:36] *** Quits: soee_ (~soee@aftu78.neoplus.adsl.tpnet.pl) (Ping timeout: 264 seconds)
+[16:49:11] *** Joins: modeno1 (guest-mode@gateway/web/scrollback.io/x-ktjejayhtjybjgeh)
+[16:49:12] <modeno1> have you guys been doing changes to tomahawk's core, or is the core stable and done, and recent work has been bug-fixing and implementing new features?
+[17:05:08] <jherskowitz> modeno1: more the latter
+[17:05:37] <jherskowitz> core is pretty solid IMO
+[17:08:58] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[17:27:00] <EvilAaron_> Bluetooth stream sound like crap wish was more Aptx support, as much as I hate propietory crap chromecast audio dongle will fill a cool void around my house and get rid of all this flat sounding BT stream I fall into the trap of using :D BT pairing is a pain and usage is a battery drain on mobile for long term listening. Also synced audio accross dongle ala Sonos be a killer feature when it gets added if its good implementation that 
+[17:27:00] <EvilAaron_> is.
+[17:28:45] <EvilAaron_> BT stream quality isnt all in the recieving device or dongle but also in the sending hardware. Many older phones and tablets will re code audio as low as 128 kbps I have seen :/
+[17:45:18] <toma-cat> Added new crash-report for version 0.6.1 (Linux)
+[17:49:08] * theli_ua just uses WAV streaming to his speaker system (via DLNA)
+[17:53:51] *** Quits: mgue1 (~mgue@x590f622b.dyn.telefonica.de) (Ping timeout: 252 seconds)
+[18:04:31] <lorenzh> Works quite well with my iPad and a Logitech Bluetooth adapter
+[18:05:28] <lorenzh> pairing is a non-issue, both iPad and Android devices connect automatically
+[18:05:34] <lorenzh> (after initial pairing)
+[18:06:17] <lorenzh> uses normal A2DP profile
+[18:24:43] *** Joins: mgue (~mgue@x590f622b.dyn.telefonica.de)
+[18:53:25] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Quit: alsuren)
+[20:29:49] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[20:30:52] *** Quits: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Ping timeout: 272 seconds)
+[21:01:55] <jherskowitz> theli_ua: lorenzh I’d love to have Sonos integration - where Tomahawk replaces their desktop software completely. :)
+[21:02:53] <theli_ua> I dont have/use sonos devices,
+[21:04:06] <jherskowitz> theli_ua: they are actually also dlna renderers I think
+[21:09:24] <theli_ua> I have onkyo receiver :-/ , some martin logan front speakers, vienna acoustics center speaker and I dont remember brands of sub and surround ones
+[21:16:46] <jherskowitz> theli_ua: I actually got rid of all my surround/floor speakers and receiver last year
+[21:17:07] <theli_ua> well, that setup is used to watch movies, not music
+[21:17:38] <jherskowitz> yeah,  I now just have a Sonos soundbar in front of my tv
+[21:18:20] <theli_ua> I honestly love my front speakers :)
+[21:19:54] <theli_ua> jherskowitz: https://instagram.com/p/7T5GSONYER/ looks like this :D
+[21:19:56] <tomabee> [ Instagram | instagram.com |  ]
+[21:21:14] <jherskowitz> those things are crazy looking
+[21:23:29] <jherskowitz> when I was a kid my dad had a pair of these http://webpages.charter.net/audionet/sys2.jpg
+[21:23:32] <theli_ua> that was me and my son playing super mario 3d world
+[21:24:40] <jherskowitz> figured :)
+[21:52:27] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[22:04:22] *** H4ndy is now known as h4ndy
+[22:54:06] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) ()
+[23:16:22] <tomabee> @invisiblecomma mentioned: @edsu Importing from https://t.co/IacfbVEnpJ seems like something @tomahawk would be suited to? [<no value>]

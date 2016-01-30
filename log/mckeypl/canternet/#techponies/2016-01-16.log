@@ -1,0 +1,387 @@
+[00:01:33] <HoneyDrops> I should pick it up, but little motivation to.
+[00:02:05] *** Joins: Phase (Phase4@Pony-3ogia4.internode.on.net)
+[00:02:27] <JustAberrant> the one thing I have to give it, is it's a good "get shit done quick" language
+[00:02:37] <JustAberrant> it's like a middle ground between perl and a serious language
+[00:03:09] <JustAberrant> the result isn't gonna be robust or reliable or as maintainable as if you'd done it in a serious language, but you can hammer it out really fast
+[00:03:35] <JustAberrant> but because of all the first stuff I find it painful to see it used for any serious purpose
+[00:03:47] *** Joins: Webster (Webster@Pony-benl74.fios.verizon.net)
+[00:04:12] <JustAberrant> fine for utility scripts, internal tools, build systems, etc.. but fuck putting it into anything approaching an active system
+[00:12:30] <Quindo> may have found the issue to my issue,  a single checkbox named ambiguously may or may not have needed to be checked.
+[00:15:24] <Quindo> *cheers for error messages that tell you absolutly nothing!*
+[00:16:09] *** Joins: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl)
+[00:16:13] *** Double is now known as Pony_31899
+[00:51:45] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[00:52:14] *** MisterSkids is now known as Pony_14418
+[00:55:38] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Connection closed)
+[01:18:53] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[01:21:40] <CompuDesktop> JustAberrant: i figured it all out, i made the plugin https://gist.github.com/ask-compu/6359e22b9c9be7683161
+[01:21:41] <PinkiePieBot> [ hexchatlightify.py · GitHub ]
+[01:27:33] *** Joins: corkfuse (corkfuse@corkfuse)
+[01:30:25] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[01:46:07] *** Joins: Sombra (Iceman@Darkhorse21)
+[02:01:43] *** Quits: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se) (Quit: Leaving.)
+[02:03:31] *** GigaWork is now known as Gigabit
+[02:13:00] <Kinsley> JustAberrant: I think you're talking out of your ass when it comes to Python not being good for an active system.
+[02:13:23] <Kinsley> I'll grant that it's way easier to just use Python as a scripting language, but it's got strong library support to let it do whatever.
+[02:13:27] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[02:13:33] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[02:14:10] <Kinsley> Tools are only as good as the people using them, or as good as people are willing to use them.
+[02:14:36] <Kinsley> Python does let you be pretty lazy to get something done, but that's doesn't prevent it from being used seriously.
+[02:22:28] *** Joins: Valiant (Corey@the.truth.is.out.there)
+[02:24:43] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[02:25:04] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[02:30:42] *** Quits: Pony_14418 (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[02:31:13] *** Quits: Valiant (Corey@the.truth.is.out.there) (Quit: Leaving)
+[02:40:14] <JustAberrant> Kinsley: it just feels like such a sloppy language, and has all the downsides of a language that will both let you "get away" with typos due to not requiring explicit declaration and catch other errors at runtime vs compile time due to duck typing
+[02:41:07] <JustAberrant> the fact that (at least as far as I've seen) a huge chunk of python code out there is designed with minimal error handling (including popular libraries)
+[02:41:35] <JustAberrant> it just feels like a language that's best for stuff where you run it, see you got the results you wanted, and go about your day
+[02:41:43] <JustAberrant> I wouldn't trust it to run something on it's own over the long term
+[02:43:17] <JustAberrant> all it takes is some check like...  if (is_presrved) instead of  if (is_preserved)  which python will happily run with to break something in the background that you may not notice (especially if it's not in the main code path)
+[02:43:41] <wolfyshy> hope you don't have a reason to trust dropbox, washington post, d-link routers, or philips semiconductors
+[02:43:52] <JustAberrant> and yes, in a perfect world you'd have full branch coverage testing to catch that kinda thing.. same argument PHP developers put forward (it doesn't matter, just don't make mistakes!)
+[02:44:14] <wolfyshy> philips' entire semiconductor fab line runs on python industrial automation systems
+[02:44:42] <JustAberrant> there are POS systems out there written in qbasic, doesn't mean it's a good idea
+[02:44:46] <wolfyshy> JustAberrant: there are plenty of static analysis tools that will catch typos like that
+[02:44:51] <wolfyshy> pylint is a big major one
+[02:45:32] <JustAberrant> but even assuming that's true.. even assuming you run your code through a battery of unit tests and static analyzers and such... it's still gonna be cheaper to catch that stuff at compile time
+[02:45:34] * HoneyDrops prefers explicit variable declarations.
+[02:45:51] *** Quits: Melanosuchus (quassel@Pony-1odv20.as13285.net) (Connection closed)
+[02:45:53] <JustAberrant> for like the extra 3 seconds it takes to explicitly declare a variable the first time you use it
+[02:46:08] <JustAberrant> vs requiring you to extensively test code to pick up something that would be trivial to catch early
+[02:47:01] <JustAberrant> anyway, ignoring my beliefs on it's robustness, I just find it an irritating language
+[02:47:54] <JustAberrant> I don't like the tab/indent thing, the way it does exceptions is icky, the _ONE_ case where pretty much every language says "ok fine, we'll automagic that for you"... concatting a number (or any primitive) to a string.. THAT's where python decides to be pissy
+[02:48:00] <JustAberrant> like seriously, how did that one come about
+[02:48:29] <JustAberrant> having to pass "self" around, I get why, but that's just painfully ugly
+[02:49:04] * JustAberrant flips over a table
+[02:49:34] <Sour_Sweet> *Facehoof* http://arstechnica.com/tech-policy/2016/01/cock-li-server-seized-again-by-german-prosecutor-service-moves-to-iceland/
+[02:49:34] <PinkiePieBot> [ Cock.li server seized again by German prosecutor, service moves to Romania | Ars Technica ]
+[02:49:54] <Sour_Sweet> God fellow countrymen, what are you doing?
+[02:55:20] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[02:59:58] *** Joins: Asoka (Asoka@Pony-mbme15.net-htp.de)
+[03:02:04] <JustAberrant> adding on to my list.. having to explicitly access the higher level (i.e. self.something_from_this_class_my_god_this_IS_php) which again, thanks to non-explicit makes a lovely place to introduce silent errors)
+[03:02:11] <JustAberrant> the silly __something__ stuff
+[03:02:58] <JustAberrant> I get the feeling it's like java in that it's got all these problems and practitioners of the language just kinda get used to them.. but python just seems to be a case of death by billion papercuts with me
+[03:03:08] *** Quits: Asoka_White (Asoka@Pony-k9g7c1.net-htp.de) (Ping timeout: 121 seconds)
+[03:03:23] <JustAberrant> aside from the robustness thing the language isn't egregiously bad.. but it has so many things that try at my nerves
+[03:06:32] *** Gladiolus is now known as Bathiolus
+[03:13:07] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (Connection closed)
+[03:13:25] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[03:18:34] <wolfyshy> I find Python beautiful because of how explicit everything is, it's better than C++ where instead of a reasonable error you get either a 10,000 line compiler error, or a simple "Segmentation fault " / "Runtime detected error!" that takes 10,000 hours to debug
+[03:18:38] <wolfyshy> but that's just my opinion
+[03:18:46] <wolfyshy> I respect yours and will agree Python isn't a panacea
+[03:19:07] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[03:20:33] <JustAberrant> well, having to explicitly access stuff out of scope would make a lot more sense if you had to explicitly declare the variables
+[03:20:36] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[03:20:52] <JustAberrant> it seems whimsical when  self.ponyfeet = 1 and ponyfeet = 1 will both work
+[03:21:03] <JustAberrant> but obviously give you two different results..
+[03:33:02] *** Quits: Pony_31899 (double@Pony-40o5q9.adsl-surfen.hetnet.nl) (Quit: Nettalk6 - www.ntalk.de)
+[03:34:12] <mniip> wolfyshy, eh
+[03:34:18] <mniip> I like C++ more in that aspect
+[03:34:36] <mniip> "10000 line compiler error" suggests that you just don't know how to read them
+[03:34:41] <HoneyDrops> ^
+[03:34:47] <mniip> and a segmentation fault is a great breakpoint for a debugger
+[03:35:08] * HoneyDrops curls up with her C.
+[03:35:25] *** Sour_Sweet is now known as Sour_Sweet|BNC
+[03:35:26] <HoneyDrops> http://arstechnica.com/information-technology/2016/01/skylake-users-given-18-months-to-upgrade-to-windows-10/  They really, really want people to upgrade.
+[03:35:27] <PinkiePieBot> [ Skylake users given 18 months to upgrade to Windows 10 | Ars Technica ]
+[03:36:57] <wolfyshy> mniip: a segmentation fault makes for a great breakpoint, but the failure can be hundreds of lines away, or even in a separate library
+[03:37:09] <mniip> I know right
+[03:37:12] <wolfyshy> mniip: I have seen my fair share of segfault-causing /glibc/ bugs, tell me you're going to step through all /that/ code
+[03:37:21] <mniip> but isn't it fun
+[03:37:24] <wolfyshy> no
+[03:37:31] <wolfyshy> fun is solving problems, getting things done
+[03:38:05] <wolfyshy> I personally spent three months at a startup stepping through iffy open-source code (so that we didn't "reinvent the wheel") and it turns out to be not thread safe, even though the authors claimed it was thread safe
+[03:38:27] <wolfyshy> and we weren't even USING threads, but ANOTHER library we used did
+[03:38:34] <wolfyshy> isn't that just fantastic
+[03:38:43] <mniip> shrug
+[03:43:24] *** Quits: Bathiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[03:44:14] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[03:46:23] <Gigabit> Anyone know if freenode has a car audio section? Or is anyone good with it here? Specifically brands
+[03:46:57] * Gladiolus installs huge subwoofers on Gigabit 
+[03:47:15] <wolfyshy> Gladiolus: http://www.crutchfield.com they will tell you what you need based on what you want
+[03:47:17] <PinkiePieBot> [ Crutchfield: Car Stereo, Speakers, Home Theater, Pro Audio, 4k TV ]
+[03:47:20] <wolfyshy> er
+[03:47:22] <wolfyshy> Gigabit: *
+[03:47:26] <wolfyshy> ugh, weechat
+[03:47:32] <Gladiolus> o3o
+[03:47:38] <Gigabit> Don't care to have a sub yet. I want a better head unit.
+[03:48:35] <wolfyshy> you can never go wrong with kenwood, but they're one of the priciest
+[03:50:13] <JustAberrant> java is wuvily in that regard @ errors
+[03:50:46] <JustAberrant> not only do you get good stack traces, but java is architected to make analysis at runtime really easy.. things like yourkit are a godsend
+[03:51:43] <JustAberrant> I mean gdb is great and all but I find it relatively limited... no idea what's out there for python
+[03:54:34] <wolfyshy> ipython is the biggest one, it's extremely powerful but has a steep learning curve I will admit
+[03:54:53] <wolfyshy> you can rewind time in the program to see what happened well before the raise
+[03:55:03] <wolfyshy> but it's about as pleasant as pulling teeth to make it actually do that
+[03:55:07] <JustAberrant> being able to hook into a running program and poke around is nifty too
+[03:55:17] <JustAberrant> hehe
+[04:01:54] <Phase> JustAberrant, runtime code patching is nice too
+[04:05:30] * HoneyDrops shudders, reminded of the dark magics involved in MC modding.
+[04:10:46] <JustAberrant> :>
+[04:11:48] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[04:12:11] <HoneyDrops> You patch at /compile time/.
+[04:15:59] <HoneyDrops> Runtime should be as static as possible.
+[04:24:10] <Gigabit> So is dual any good? 
+[04:24:43] <Gigabit> They been around since 1907
+[04:29:30] * HoneyDrops also happens to be in the market for a receiver and speakers.  The current ones are pretty much shot (at least the speakers, though I swear FM reception is getting worse too).
+[04:35:26] <Gigabit> My car has 8 speakers X.x
+[04:35:53] <Gigabit> 4 6X9 and 4 tweaters
+[04:36:34] * JustAberrant doesn't get the car audio thing.. I mean with road noise, aside from being loud what's the point?
+[04:36:39] * HoneyDrops just has 4.  Probably have speakers picked, mostly need  <100$ receiver.   Honestly, it's just for NPR and listening to CDs... though I would rather it play music off a SD card or USB drive so we don't have to remember to bring/remove CDs.
+[04:37:01] * JustAberrant tends to plug his mp3 player into the aux jack :>
+[04:37:33] <Gigabit> I just want USB/BT capabilities, stock doesn't.
+[04:37:36] <HoneyDrops> Can do that too, if I had a PMP.  Ok, a working PMP, last one I bought died about 2007?
+[04:38:05] <HoneyDrops> Never saw the point in getting a new one, don't listen to enough music.
+[04:38:18] <JustAberrant> hehe, I actually get an insane amount of use out of mine
+[04:38:31] <JustAberrant> problem is it's hard to find non-shitty media players these days of that style
+[04:39:04] <JustAberrant> I specifically like how dumb this one is.. no clip art or any of that bs.. basic 4 line display and ability to select songs / do basic shuffle/repeat/etc
+[04:39:14] <JustAberrant> and physical buttons you can hit in your pocket/while driving
+[04:39:17] <Gigabit> I listen to music every ride. >.>
+[04:39:17] * Phase would use a phone these days
+[04:39:19] <JustAberrant> plus it has mini sd card
+[04:39:34] <JustAberrant> Phase: doesn't work for a number of reasons for me :(
+[04:39:43] <HoneyDrops> physical keys are a must
+[04:39:55] <Phase> JustAberrant, ?
+[04:40:11] <Phase> cheap android phone works fine as a media player
+[04:40:14] <JustAberrant> lack of physical keys, plus I can't have a phone on me at work 
+[04:40:28] <Phase> not even if it lacks a sim?
+[04:40:42] <JustAberrant> nope
+[04:40:46] <Phase> dang
+[04:40:53] <JustAberrant> anything that can transmit, record, etc..
+[04:41:14] <JustAberrant> the recent trend of putting mic's in mp3 players is also really annoying
+[04:41:19] <JustAberrant> does anyone actually use that
+[04:41:27] <Phase> man that does narrow your option
+[04:41:29] <Phase> options'
+[04:41:37] <JustAberrant> yeah, when this one dies I'm screwed :>
+[04:42:21] <Gigabit> Found a nice Rockford Foagate receiver for 79
+[04:42:35] <JustAberrant> also it's one of the few cheap ones that can be plugged in and play at the same time
+[04:43:17] <Gigabit> I had a jvc in my truck, which is basically a cheaper kenwood
+[04:46:41] <HoneyDrops> I'm pretty sure our 98 honda civic still has stock speakers :x
+[04:47:20] * JustAberrant replaced one speaker in his 07 civic (which btw was a huge pain in the ass.. ) :>
+[04:47:45] <JustAberrant> had to take half the damn door apart to get at it
+[04:47:46] <HoneyDrops> Rear ones will be easy, front (door) ones.. blah.
+[04:47:55] <JustAberrant> rather than like every other car where you just pop the cover off
+[04:48:28] <JustAberrant> and then I managed to mess the window up somehow and had to take the damn door apart _again_ to fix it
+[04:48:44] <JustAberrant> things lucky not to have an axe mark in it ;p
+[04:49:37] <HoneyDrops> I just don't want to use my phone for music playback.  n900 already can just make it a day w/o having to add music playback to it.
+[04:49:56] <HoneyDrops> I could get a new battery... but meh.
+[04:50:26] <JustAberrant> that's the other pro of an old school mp3 player.. thing will last about a week ad re-charge in like half an hour
+[04:50:37] <JustAberrant> not having a big fancy display helps 
+[04:50:53] <JustAberrant> plus when I use it in the car I leave it plugged in so it charges on my way in
+[04:51:04] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[04:54:09] <mniip> moo
+[04:54:31] * HoneyDrops mews.
+[04:56:38] *** Quits: corkfuse (corkfuse@corkfuse) (Ping timeout: 121 seconds)
+[05:15:15] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[05:24:56] *** Joins: Valiant (Corey@the.truth.is.out.there)
+[05:27:18] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[05:28:18] *** Joins: Pony_14418 (ejd@Pony-fej07d.res.rr.com)
+[05:41:28] * HoneyDrops flips a table.
+[05:42:41] <HoneyDrops> Blah, dumb ff.
+[05:52:42] <AppleDash> ?
+[06:06:07] <HoneyDrops> FF update, had to disable the check for signed addons.
+[06:07:13] <HoneyDrops> It's annoying, but I've come to accept that every time I update FF it will break Pentadactyl :/
+[06:10:30] <cyzon> ah shit, that update came out?
+[06:10:45] <HoneyDrops> It can be disabled, which I did.
+[06:12:34] <Valiant> remember when all the browsers didn't suck in some way?
+[06:12:45] <Valiant> I.E suckign was universal, but remember when Opera and FF were legit good?
+[06:13:41] <HoneyDrops> I just wish FF would focus on a solid base and letting addons handle the optional features.
+[06:15:00] <HoneyDrops> There is no good web browser.  It isn't possible to make a good one -- the very task they are meant to fill is wrong.
+[06:15:47] <Valiant> I remember with Win98 I used explorer as my browser. Like, I almost always had an explorer window up and would just type google in the file field.
+[06:15:54] <Valiant> and then it was ie
+[06:16:05] <Valiant> worked well until IE became utterly unusable.
+[06:18:26] *** Joins: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[06:19:39] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Ping timeout: 121 seconds)
+[06:21:52] *** Quits: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Quit: Leaving.)
+[06:28:31] <HoneyDrops> http://zowb.net/~knoeki/pic/screenshots/02.png  mmm m68k
+[06:36:48] <Valiant> amiga
+[06:39:59] <HoneyDrops> :3
+[06:40:06] <HoneyDrops> (not mine, wish I had one)
+[06:42:21] *** Gigabit is now known as Snoarin
+[06:58:00] <Valiant> Amigas are neat but my obsession is PC hardware from that period.
+[07:05:31] *** Joins: Princess_QRS (Corey@Pony-ipvgi3.ed.shawcable.net)
+[07:07:57] *** Quits: Valiant (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[07:09:17] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[07:11:29] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[07:24:23] *** Quits: Webster (Webster@Pony-benl74.fios.verizon.net) (Quit: Leaving)
+[07:26:47] *** Quits: Pony_14418 (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:29:43] *** Quits: Princess_QRS (Corey@Pony-ipvgi3.ed.shawcable.net) (Quit: Leaving)
+[07:36:29] *** Quits: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP) (Ping timeout: 121 seconds)
+[07:37:27] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[07:38:28] *** Joins: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP)
+[07:41:58] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[08:01:56] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[08:45:41] *** RedHelper is now known as Creeps|AFK
+[08:47:35] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[09:46:19] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[09:48:09] <Compu> HoneyDrops: who is pic?
+[09:55:48] <mniip> [10:49:25] * meep (meep@freenode.support) has joined #freenode
+[09:55:49] <mniip> [10:51:51] * ChanServ sets modes [#freenode +o meep]
+[09:55:50] <mniip> hahahaha
+[10:06:41] <HoneyDrops> Compu: the root image?  No idea.
+[10:40:06] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:46:34] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[11:00:06] *** Joins: Pony_31899 (double@Pony-40o5q9.adsl-surfen.hetnet.nl)
+[11:01:32] *** Joins: Phase4 (Phase4@Pony-4ihpe2.internode.on.net)
+[11:01:56] *** Quits: Phase (Phase4@Pony-3ogia4.internode.on.net) (Ping timeout: 121 seconds)
+[11:13:56] *** Joins: Melanosuchus (quassel@Pony-1odv20.as13285.net)
+[11:24:39] *** Joins: Pony_14418 (ejd@Pony-fej07d.res.rr.com)
+[11:26:54] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[11:28:53] *** Pony_31899 is now known as Double
+[11:30:38] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[11:31:04] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[11:31:29] *** Quits: Pony_14418 (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[12:16:39] *** Quits: Cae (caepone@always.broken.sometimes.patched.finally.fixed) (Ping timeout: 121 seconds)
+[12:33:11] *** Quits: init3 (quassel@Democratic.Ponies.Republic.of.Glimmer) (Ping timeout: 121 seconds)
+[12:39:45] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[12:42:26] *** Joins: corkfuse (corkfuse@corkfuse)
+[12:47:46] *** Quits: corkfuse (corkfuse@corkfuse) (Quit: Bye)
+[13:03:59] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[13:24:55] *** Quits: Asoka (Asoka@Pony-mbme15.net-htp.de) (Connection closed)
+[13:54:45] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[14:02:57] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[14:12:35] *** Quits: Fallfeathers (Fallfeather@Pony-thli0t.bigpond.net.au) (Quit: 2015 was like the middle movie in a trilogy that ends on a cliffhanger.)
+[14:16:54] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[14:23:44] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[14:34:30] *** Snoarin is now known as GigaWork
+[14:41:00] <Divide> Pffff.
+[14:44:06] <AppleDash> .ffffP
+[14:44:12] *** Joins: init3 (quassel@Democratic.Ponies.Republic.of.Glimmer)
+[14:46:49] <mniip> so, this is how it ends http://i.imgur.com/YVY2uKy.png
+[14:48:53] <AppleDash> nobodycares.jpg
+[14:51:07] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[14:56:04] <Divide> A memorandum distributed in regards to New York's recently-proposed bill to add a backdoor to any smartphones and tablets sold within the state said, and I quote, 'Peoples' privacy is protected by the warrant requirement, as it always has been.'
+[14:56:40] <Divide> The innocent have NOTHING TO FEAR.
+[14:56:42] <Divide> http://assembly.state.ny.us/leg/?default_fld=&bn=A08093&term=2015&Summary=Y&Actions=Y&Votes=Y&Memo=Y&Text=Y
+[14:56:43] <PinkiePieBot> [ Bills ]
+[14:58:43] *** Divide is now known as Divide|Tech
+[15:04:01] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Ping timeout: 121 seconds)
+[15:04:19] *** Joins: Crimson_Tail (Zeta@Pony-fe24ov.cg80.k4gu.0151.2601.IP)
+[15:15:36] *** Joins: Asoka (Asoka@Pony-mbme15.net-htp.de)
+[15:20:54] *** Joins: JockeTF (jocke@Pony-9leqdm.priv.bahnhof.se)
+[15:25:40] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[15:26:34] *** Obaskyr_cakedayburd is now known as Obaskyr
+[15:33:32] * mniip pokes wolfyshy
+[15:45:34] *** Joins: Pony_14418 (ejd@Pony-fej07d.res.rr.com)
+[15:54:09] *** Joins: DataByte (DataByte@Pony-rsc.v5k.122.108.IP)
+[16:02:16] *** Pony_14418 is now known as MisterSkids
+[16:07:46] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[16:12:21] *** Quits: DataByte (DataByte@Pony-rsc.v5k.122.108.IP) (Ping timeout: 121 seconds)
+[16:18:04] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[16:24:19] <johnsey> backdoors in crypto products? fine, then they'll just build their own: http://www.defenseone.com/technology/2016/01/isis-now-has-new-secure-messaging-app/125062/
+[16:24:19] <PinkiePieBot> [ ISIS Has Built A Secure Messaging App - Defense One ]
+[16:43:40] *** Quits: Asoka (Asoka@Pony-mbme15.net-htp.de) (Ping timeout: 121 seconds)
+[16:46:57] *** Joins: Asoka (Asoka@Pony-mbme15.net-htp.de)
+[17:03:02] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[17:10:07] <Divide|Tech> johnsey: Nobody could ever have predicted that.  Nobody.
+[17:10:33] <Divide|Tech> Meanwhile, Apple continues to say 'ahahahahaha NO' in regards to requests to add backdoors.
+[17:23:19] <mniip> yeah they have plenty of their own
+[17:23:25] <mniip> :)
+[17:30:27] *** Joins: WuBzY (wubzy@Pony-p9216l.dhcp.inet.fi)
+[17:44:19] <wolfyshy> mniip, woof
+[17:44:29] <mniip> wolfyshy, above
+[17:53:29] *** Quits: WorkingData (DataByteBro@Pony-d3c.bgn.198.64.IP) (Connection closed)
+[17:53:46] *** Joins: WorkingData (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[17:56:06] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[17:58:35] *** Joins: corkfuse (corkfuse@corkfuse)
+[18:04:47] <HoneyDrops> https://github.com/TheMozg/awk-raycaster :D
+[18:04:48] <PinkiePieBot> [ TheMozg/awk-raycaster · GitHub ]
+[18:09:19] *** Joins: DataByte (DataByte@Pony-69v.28u.152.174.IP)
+[18:44:47] *** Quits: Obaskyr (Tachy@Pony-fh3bep.range31-48.btcentralplus.com) (Ping timeout: 121 seconds)
+[18:45:05] *** Creeps|AFK is now known as RedHelper
+[18:55:22] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[19:18:10] *** Quits: corkfuse (corkfuse@corkfuse) (Quit: Sleeping)
+[19:18:22] *** Quits: Melanosuchus (quassel@Pony-1odv20.as13285.net) (Quit: No Ping reply in 180 seconds.)
+[19:20:38] *** Joins: Melanosuchus (quassel@Pony-1odv20.as13285.net)
+[19:21:14] *** Joins: Sombra (Iceman@Darkhorse21)
+[19:40:10] *** Quits: DataByte (DataByte@Pony-69v.28u.152.174.IP) (Connection closed)
+[19:43:41] *** Quits: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP) (Ping timeout: 121 seconds)
+[19:45:41] *** Joins: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP)
+[19:50:21] <HoneyDrops> "The new policy will help Microsoft create "deep integration" between Windows and the latest hardware."  *shivers*
+[19:52:52] <DJ-C0L7[EIT]> why am i reading that as "embedded"
+[19:53:36] * DJ-C0L7[EIT] imagines Windows10CE being a thing soon
+[20:03:53] <wolfyshy> DJ-C0L7[EIT]: it already is. http://blogs.msdn.com/b/uk_faculty_connection/archive/2015/05/02/windows-10-on-embedded-devices-now-available-via-windows-iot-insider.aspx
+[20:03:54] <PinkiePieBot> [ MSDN Blogs ]
+[20:04:22] <wolfyshy> mniip: congrats / consolations
+[20:04:40] <mniip> haha
+[20:16:05] <HoneyDrops> I also recall it's almost worthless.
+[20:17:42] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[20:31:13] *** Joins: Webster (Webster@Pony-benl74.fios.verizon.net)
+[20:36:20] *** Quits: Asoka (Asoka@Pony-mbme15.net-htp.de) (Connection closed)
+[20:38:18] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[20:42:54] *** Joins: Asoka (Asoka@Pony-mbme15.net-htp.de)
+[20:44:04] *** Quits: WuBzY (wubzy@Pony-p9216l.dhcp.inet.fi) (Quit: Leaving)
+[20:55:34] <HoneyDrops> :D https://github.com/AFITWiSec/EZ-Wave
+[20:55:35] <PinkiePieBot> [ AFITWiSec/EZ-Wave: Tools for Evaluating and Exploiting Z-Wave Networks using Software-Defined Radios. ]
+[20:56:22] *** Quits: Webster (Webster@Pony-benl74.fios.verizon.net) (Quit: Leaving)
+[21:18:30] <GigaWork> Okay WTF and chat. It's leaving the last word of the sentence after I hit send. 
+[21:24:49] *** Joins: Webster (Webster@Pony-benl74.fios.verizon.net)
+[21:46:44] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "be back later")
+[21:50:02] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[22:04:04] *** Sour_Sweet|BNC is now known as Sour_Sweet
+[22:14:30] *** Joins: WuBzY (wubzy@Pony-p9216l.dhcp.inet.fi)
+[22:34:25] *** Quits: WuBzY (wubzy@Pony-p9216l.dhcp.inet.fi) (Quit: Leaving)
+[22:34:35] *** Joins: WuBzY (androirc@Pony-72v8l2.rev.dnainternet.fi)
+[22:39:55] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[22:49:01] *** Joins: Valiant (Corey@the.truth.is.out.there)
+[22:50:48] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[22:51:49] <Quindo> anyone know of a macro program that works on windows 10?
+[22:52:30] <HoneyDrops> µC connected to the PS/2 port, it's platform independent!
+[22:57:20] <Quindo> No PS/2 port on this machine.
+[22:58:03] <Sakura> I found the PERFECT way to get the domain name I want for free. Have anyone ever used my.ga for a free domain name & if I can renew my domain name after 12 months without any additional cost?
+[22:58:38] *** WuBzY is now known as WuBzYIsSleeping
+[22:59:38] * Sour_Sweet just pays less than 0.50€ per month for a domain and is done.
+[23:00:08] <HoneyDrops> USB is harder, but can also hook up a µC to it (but you need one with some sort of USB support)
+[23:01:04] <Sour_Sweet> There are a number of free domain providers (e.g. dotTK). Compu uses another one I can't remember right now.
+[23:01:12] <HoneyDrops> Also could run it in a VM and use xdotool.
+[23:01:16] <Compu> freenom
+[23:01:25] <Compu> u can get .ml domains free for a year
+[23:01:36] <wolfyshy> nomorex.ml
+[23:01:44] <Sour_Sweet> But for anything halfway serious just pay :P
+[23:02:00] *** Valiant is now known as Gladiolus
+[23:02:22] <Sour_Sweet> There are very cheap domains out there. I do have a couple of more expensive ones though
+[23:02:34] <Sour_Sweet> (e.g. dotCC for my mails)
+[23:02:34] <Sakura> Can I renew it without charge on Freenom past the first year?
+[23:07:38] <Sakura> And is Freenom any good?
+[23:24:15] <AppleDash> All of those free domain providers are controlled by the same entity, that is, those for .tk, .ml, and .cf
+[23:24:39] <AppleDash> If you are running a site and it gets much traffic, they will park your domain and point it at an ad page with no notice
+[23:25:16] <Sour_Sweet> Sounds like a good business model to me xD
+[23:26:46] <Sakura> So, they would screw me over if it gets popular is what you're saying?
+[23:27:38] <AppleDash> Possibly. It happened to me, it happened to many other people, but that was back in 2012
+[23:27:55] <AppleDash> Also, sites with free domains are generally seen as less legitimate than those with non-free domains
+[23:29:29] *** Quits: Dude (DudeWiD@ttitude) (Connection closed)
+[23:30:39] <Sakura> Damn. Sorry that happened to you. Personally I wouldn't give a damn if it were a personal page but if I was to make a community-based social network site, then that's crap I don't want to happen to my registered users.
+[23:32:09] <Quindo> ^
+[23:33:24] <Sakura> My users would be screwed over and I'd get blamed for it most likely even though I'd be just as screwed as everyone else.
+[23:36:06] <Sour_Sweet> Domains are not that expensive anymore anyway. Even a student should be able to afford one these days.
+[23:36:59] <Sour_Sweet> My first domain had a very generic name, so I could use it's subdomains for all my stuff.
+[23:37:41] <Sakura> That's true. I mean, you pay 0.50 Euro for your domain name.
+[23:38:00] <Sour_Sweet> Less than that for .de domains actually
+[23:38:07] <JustAberrant> also free domains tend to end up in a lot of blacklists / spam filters
+[23:38:13] <JustAberrant> if you plan on doing email it's definitely a bad idea ;p
+[23:38:22] * AppleDash whitelists JustAberrant :>
+[23:38:32] <JustAberrant> :>
+[23:39:27] <Sakura> How cheap are .ie domain names?
+[23:39:38] <One-Trick> email is ridiculous, especially if the ip youre originating from has ever ever-ever-ever-ever been blasklisted in, like, ever
+[23:41:31] <Sour_Sweet> My mail server works just fine. Only had a problem with Hotmail and got it resolved. I guess they banned the whole subnet
+[23:41:49] <Sour_Sweet> They suck anyway >.>
+[23:42:07] * HoneyDrops wishes self-hosting e-mail was the norm.
+[23:42:22] <Sour_Sweet> (A bigger problem would be Outlook.com, but I dunno if there was a problem)
+[23:42:38] <HoneyDrops> Same with personal pages.  All connections should be symmetrical.
+[23:44:22] <Sour_Sweet> I don't know about self hosted e-mail for everyone. That would massively increase spam. Dial-up blacklists work very well.
+[23:45:36] <Sour_Sweet> I guess that could be solved with smart relays, but that defeats the purpose of self hosted e-mail services
+[23:46:28] <JustAberrant> yeah, it's really easy to fuck up a mail server, and there's a _reason_ home ISP blocks and temp domains get blacklisted
+[23:46:56] *** Joins: Valiant (Corey@the.truth.is.out.there)
+[23:48:37] <JustAberrant> and various philosophical issues aside, it really does make more sense to have a few big guys who mostly do it right, are usually reliable, and can handle DoS attacks and such than have everyone try to half ass it on their home computers and shitty internet connections
+[23:49:17] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[23:49:42] <Sour_Sweet> Also spam senders are so freaking dumb. Some spam mails I get have a valid DKIM signature, but fail for the older DomainKeys which renders a big red banner on my mail interface. Also they'll probably never get headers right. It's really not that hard.
+[23:51:22] *** Joins: Fallfeathers (Fallfeather@Pony-thli0t.bigpond.net.au)
+[23:53:18] <HoneyDrops> Just centralizing makes it too easy to track and too many don't encrypt :(
+[23:53:45] <HoneyDrops> (though you should still encrypt even self-hosted email)
+[23:54:05] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[23:55:47] <Sakura> So, what domain name provider & hosting service do you use, Sour_Sweet?
+[23:57:09] <Sour_Sweet> Sakura: I have 3 domains on Namecheap which was also recommended by ponies around here
+[23:58:28] <Sakura> And I see they provide VPS's.
+[23:59:35] <Sour_Sweet> I don't know if they're any good. I have a physically dedicated server from a German provider ;-)
+[23:59:48] <AppleDash> Web hosting sucks
+[23:59:51] <AppleDash> Namecheap VPSes suck
+[23:59:54] * JustAberrant is an idiot.. I _still_ have mine with dreamhost :D

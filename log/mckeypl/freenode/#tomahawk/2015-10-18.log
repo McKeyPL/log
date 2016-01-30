@@ -1,0 +1,226 @@
+[00:00:18] <luxifer> any tips/heads up?
+[00:17:16] <luxifer> I found where the shortcuts are set up. Now I'm looking for something along the lines of create playlist.
+[00:23:14] <muesli> hey luxifer 
+[00:23:31] <luxifer> hello
+[00:23:34] <muesli> luxifer: what exactly do you wanna fix?
+[00:24:03] <luxifer> reading the todos, I want to add ctrl+n as a shortcut to make a new playlist.
+[00:24:22] <muesli> i'd probably hook that up to a menu entry
+[00:24:34] <muesli> which also takes care of assigning the shortcut for oyu
+[00:25:39] <luxifer> okay. this is my first time contributing to the project and working specifically with qt. 
+[00:26:08] <luxifer> I'm getting a feel for the layout of the application.
+[00:45:45] <luxifer> found where the togleMenuBar shortcut is set. Figure I can take a similar approach, but I would have to make a createPlaylist menu entry, right?
+[00:47:09] <muesli> luxifer: almost
+[00:47:17] <muesli> luxifer: just make a new menu entry "Create Playlist"
+[00:47:29] <muesli> and you can directly assign a shortcut to that menuentry
+[00:47:41] <muesli> which will take care of everything for you
+[00:49:06] <muesli> luxifer: sorry, overread what you wrote... yeah, similar to the toggle menubar then
+[00:53:28] *** Quits: muesli (~muesli@server1.muehlhaeuser.de) (Changing host)
+[00:53:28] *** Joins: muesli (~muesli@amarok/developer/muesli)
+[00:53:28] *** ChanServ sets mode: +o muesli
+[00:56:14] <luxifer> I think I might have got it. have to recompile
+[00:57:11] <luxifer> how might I do that?
+[00:57:19] <luxifer> recompile, I mean.
+[00:57:34] <muesli> just run make in your tomahawk build dir again
+[00:58:26] *** Quits: soee (~soee@afol69.neoplus.adsl.tpnet.pl) (Ping timeout: 246 seconds)
+[01:03:04] <luxifer> it threw an error compiling
+[01:04:37] <luxifer> By not providing "FindQt5Svg.cmake" in CMAKE_MODULE_PATH this project has asked CMake to find a package configuration file provided by "Qt5Svg", but CMake did not find one.
+[01:17:01] <luxifer> I can't build the master branch, even without any modifications.
+[01:24:55] <luxifer> trying a vm. apparently an issue with arch / cmake.
+[01:39:57] <muesli> you're compiling on arch linux?
+[01:40:09] <muesli> sounds like you're missing th qt5-svg library
+[01:40:09] <luxifer> it's my host, so yes.
+[01:42:31] <luxifer> hmm, I picked up the package and it gave me 7 more required packages.
+[01:45:37] <luxifer> do I need the qt5 version of all the packages?
+[01:46:03] <luxifer> I have the qt4 version of most, but cmake still throws the packages as missing
+[01:53:08] <theli_ua> depends on whether you want to build tomahawk using qt5 or 4
+[02:03:47] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[02:03:51] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[02:16:35] <muesli> luxifer: yeah, you'll probably want the qt5 stuff by now
+[02:23:21] <luxifer> got it building. will an existing install of the application conflict with it?
+[02:24:29] <muesli> shouldn't
+[02:24:32] <muesli> hint
+[02:24:34] <muesli> don't run make install
+[02:24:41] <muesli> just start tomahawk from within the build dir
+[02:24:47] <muesli> cd build
+[02:24:50] <muesli> $ ./tomahawk
+[02:25:44] <luxifer> got it.
+[02:26:42] <muesli> nice
+[02:48:20] <luxifer> got it to compile, I mean. Couldn't link the create playlist functionality to the keybinding.
+[02:50:57] <luxifer> I added the option to the control menu and gave it a keybinding. Looking at it, I think I have to add the action in the tomahawk window, too.
+[02:51:05] <muesli> correct
+[02:59:52] <luxifer> okay now I did it.
+[03:00:03] <luxifer> I want to add the other shortcuts, though.
+[03:01:07] <luxifer> I was wondering though. I saw bits commented out that seemed to link previous to left and next to right. What happened with that?
+[03:02:11] <luxifer> What about the implementation of those shortcuts was undesireable?
+[03:03:38] <muesli> luxifer: you'd react to it when using left/right in a line-edit, e.g.
+[03:03:44] <muesli> so that'd have to be filtered depending on the focus
+[03:03:57] <muesli> essentially using key-events
+[03:04:09] <theli_ua> muesli: qt4 is fine :D , why would someone want to update
+[03:04:57] <luxifer> 5 > 4
+[03:05:05] <luxifer> :p
+[03:05:37] <theli_ua> I dont understand what is your point luxifer :P
+[03:05:52] <theli_ua> though I would probably update to qt5 if I could get rid of qt4
+[03:06:13] <theli_ua> but skype wont let me do it
+[03:07:06] <luxifer> @muesli so if I understand correctly, the link between those keys and their respective functions were based on the focus of the window?
+[03:07:41] <muesli> yeah, if we'd apply them there, they'd overwrite the behaviour of line-edits and other elements that use left/right keys for navigation
+[03:08:19] <luxifer> theli_ua: well the clear solution is to get rid of skype.
+[03:08:54] <muesli> theli_ua: you could install it parallely tho?
+[03:09:12] <luxifer> why not make the shortcuts work only when the main window is in focus?
+[03:09:28] <luxifer> what are the challenges with that approach?
+[03:09:49] <theli_ua> Well qt5 will give me nothing while Skype gives some functionality
+[03:10:29] <luxifer> fair enough.
+[03:11:25] <muesli> luxifer: yeah, that's what i meant: we need to catch them in the keyboard events
+[03:12:14] <luxifer> muesli: i'll try to figure it out. 
+[03:27:15] <muesli> luxifer: let me know if you need any clues
+[03:28:16] <luxifer> using the same approach I used on createPlaylist isn't working for createStation. what might be causing this? what differences are there in the methods?
+[03:29:33] <muesli> not sure. can you pastebin the diff?
+[03:29:41] <muesli> or just push to a branch in your github fork of tomahawk
+[03:33:07] <luxifer> pushed
+[03:33:50] <luxifer> 2 seconds.
+[03:34:02] <muesli> luxifer on github?
+[03:34:21] <luxifer> https://github.com/samuelrey/tomahawk
+[03:34:24] <tomabee_> [ samuelrey/tomahawk Â· GitHub | github.com | https://avatars0.githubusercontent.com/u/9016717?v=3&s=400 ]
+[03:35:20] <muesli> luxifer: careful... you seem to have a lot of whitespace changes in your commit
+[03:35:55] <muesli> luxifer: this isn't necessarily bad (even tho in this case it seems to be, heh)... but if you plan to get those changes merged, you'd have to put them in a separate "Whitespace fix" commit
+[03:35:56] <luxifer> I hadn't noticed.
+[03:36:10] <muesli> luxifer: no worries, that's why i'm mentioning it
+[03:36:13] <muesli> https://github.com/samuelrey/tomahawk/commit/339cca44da27126c7f63b97a0ca37068ea03c1a3
+[03:36:15] <tomabee_> [ Added Ctrl+N shortcut to create new playlist. Â· samuelrey/tomahawk@339cca4 Â· GitHub | github.com | https://avatars2.githubusercontent.com/u/9016717?v=3&s=200 ]
+[03:36:19] <muesli> see the diff here ^
+[03:37:21] <muesli> luxifer: you seem to have forgotten to add the "createStation" action to controlsMenu in ::createMenuBar
+[03:37:26] <muesli> hence the shortcut won't work
+[03:37:32] <muesli> and the menu item wouldn't show
+[03:38:10] <luxifer> ahh. my mistake. I'll throw that in there, fix the white space and push again.
+[03:43:33] <muesli> you could just undo your whitespace changes and push a fresh commit
+[03:43:54] <muesli> so we don't have those lines changing at all, causing potential merge conflicts for others
+[03:57:26] <luxifer> fixed everything.
+[03:57:40] <muesli> awesome
+[03:58:23] <luxifer> submit pull request?
+[03:58:25] <muesli> let me know when you pushed
+[03:58:43] <luxifer> its all pushed
+[03:59:13] <muesli> ah see, but now we've got traces of all those changes in your commits: https://github.com/samuelrey/tomahawk/commit/abd91abfba9d01dabaaf88ae6e1364791164dd8e
+[03:59:14] <tomabee_> [ Added Ctrl+S shortcut to create new station. Â· samuelrey/tomahawk@abd91ab Â· GitHub | github.com | https://avatars2.githubusercontent.com/u/9016717?v=3&s=200 ]
+[03:59:27] <muesli> that can potentially break others' work by inducing merge conflicts
+[03:59:41] <muesli> ideally, you'd extract the "real" changes into a diff
+[03:59:49] <muesli> delete your fork, re-fork and apply your changes again
+[04:00:08] <luxifer> okay
+[04:03:23] <muesli> luxifer: thanks, really appreciated
+[04:06:02] <muesli> brb
+[04:16:22] <muesli> re
+[04:21:11] <luxifer> did it.
+[04:21:54] <muesli> looking good!
+[04:21:57] <muesli> send a pull request!
+[04:33:12] <luxifer> sent
+[04:35:20] <muesli> merged!
+[04:35:27] <muesli> thanks and congrats to your first commit!
+[04:35:31] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[04:35:31] <github-tomahawk> [13tomahawk] 15muesli pushed 2 new commits to 06master: 02http://git.io/vCbbK
+[04:35:31] <github-tomahawk> 13tomahawk/06master 14566c655 15Samuel Rey: Added Ctrl-N and Ctrl-S shortcuts for new playlist and station, respectively.
+[04:35:31] <github-tomahawk> 13tomahawk/06master 148a98968 15Christian Muehlhaeuser: Merge pull request #335 from samuelrey/master...
+[04:35:31] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[04:36:14] <luxifer> thank you! I look forward to adding more. 
+[04:36:39] <luxifer> I am also interested in learning about testing.
+[04:41:13] <muesli> happy to help, of course
+[04:41:19] <muesli> also looking forward to more of you :)
+[04:46:55] <luxifer> alright, I'm gonna get outta here for now. take care!
+[04:46:57] *** Quits: luxifer (~Stalin@jachin.hartnell.edu) (Quit: leaving)
+[05:07:39] *** Joins: tweete (guest-twee@gateway/web/scrollback.io/x-eflfjfhxtsbkvnbi)
+[05:07:40] <tweete> ?
+[05:08:28] *** Parts: tweete (guest-twee@gateway/web/scrollback.io/x-eflfjfhxtsbkvnbi) ()
+[05:25:31] *** Joins: mgue2 (~mgue@x590f6770.dyn.telefonica.de)
+[05:28:56] *** Quits: mgue1 (~mgue@x590f7a27.dyn.telefonica.de) (Ping timeout: 268 seconds)
+[06:57:43] *** Joins: pprkut_ (hwiesinger@slackbuilds.org)
+[06:57:49] *** Joins: leonhandreke_ (~quassel@roubaix.ndreke.de)
+[06:58:02] *** Joins: sonnenstrahl (~domme@server2.muehlhaeuser.de)
+[07:02:51] *** Quits: leonhandreke (~quassel@roubaix.ndreke.de) (*.net *.split)
+[07:02:51] *** Quits: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com) (*.net *.split)
+[07:02:51] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-phtnjefjurymgnxk) (*.net *.split)
+[07:02:51] *** Quits: domme (~domme@server2.muehlhaeuser.de) (*.net *.split)
+[07:02:51] *** Quits: Fohlen (~Fohlen@v22015072923726622.yourvserver.net) (*.net *.split)
+[07:02:51] *** Quits: pprkut (hwiesinger@slackbuilds.org) (*.net *.split)
+[07:02:51] *** Quits: muesli (~muesli@amarok/developer/muesli) (*.net *.split)
+[07:02:51] *** Quits: solues1 (~solues1@gateway/web/scrollback.io/x-hzmaugxedncnggux) (*.net *.split)
+[07:02:51] *** Quits: thomasbonte (sid4377@gateway/web/irccloud.com/x-mzkdnwcsgvstwsrt) (*.net *.split)
+[07:02:51] *** Quits: alastairp (sid1249@gateway/web/irccloud.com/x-rapjgbculpvaxvkg) (*.net *.split)
+[07:02:55] *** pprkut_ is now known as pprkut
+[07:03:50] *** Joins: muesli (~muesli@server1.muehlhaeuser.de)
+[07:04:07] *** Joins: Fohlen (~Fohlen@v22015072923726622.yourvserver.net)
+[07:04:52] *** Joins: solues1 (~solues1@gateway/web/scrollback.io/x-wiblxtouzxilpmzv)
+[07:08:19] *** Joins: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com)
+[07:11:41] *** Joins: alastairp (sid1249@gateway/web/irccloud.com/x-pyordtvvbmrgnizw)
+[07:12:13] *** Joins: thomasbonte (sid4377@gateway/web/irccloud.com/x-wslqqjyxujdcetoh)
+[07:13:03] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-kvrvycgidpegcbhn)
+[08:55:00] *** Joins: github-tomahawk (~github-to@192.30.252.40)
+[08:55:00] <github-tomahawk> [13tomahawk] 15muesli pushed 1 new commit to 06master: 02http://git.io/vCN3N
+[08:55:00] <github-tomahawk> 13tomahawk/06master 1444e6075 15Tomahawk CI: Automatic merge of Transifex translations
+[08:55:00] *** Parts: github-tomahawk (~github-to@192.30.252.40) ()
+[10:42:12] *** Joins: rotzbouw (~thierry@HSI-KBW-078-042-081-237.hsi3.kabel-badenwuerttemberg.de)
+[10:42:22] <rotzbouw> moinsen
+[10:54:03] *** Joins: soee (~soee@bmx83.neoplus.adsl.tpnet.pl)
+[11:42:24] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[13:06:13] *** inversechi_ is now known as inversechi
+[13:06:30] <sonnenstrahl> moin rotzbouw 
+[13:06:34] *** sonnenstrahl is now known as domme
+[13:06:41] *** Parts: inversechi (~inversech@178.62.62.155) ()
+[13:23:11] *** Joins: arkhi (~fabien@116.233.136.170)
+[14:07:40] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[14:10:01] *** Joins: knicklux (~knicklux@2a03:2260:a:a:1723:d8c:4528:fb8b)
+[14:23:30] <jherskowitz> mon
+[14:23:33] <jherskowitz> moin
+[14:30:53] <jherskowitz> domme: do I still need to compile with tools off?
+[14:47:14] <jherskowitz> domme: muesli: ah, the answer is yes. No taglib error when -DBUILD_TOOLS=OFF
+[14:53:12] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Disconnected by services)
+[14:53:12] *** Joins: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[15:03:15] <rotzbouw> jherskowitz: have you managed to build vlc on el capitan yet? :)
+[15:03:34] <rotzbouw> mine's failing with the good ol' no lzma/xz error
+[15:17:05] <domme> jherskowitz: can you try with tools branch?
+[15:50:38] <jherskowitz> rotzbouw: I havenâ€™t got VlC to build since Snow Leopard
+[15:50:42] <jherskowitz> :/
+[15:51:02] <jherskowitz> domme: ok
+[16:11:38] <jherskowitz> domme: nope, taglib error there too
+[16:11:41] <jherskowitz> https://www.irccloud.com/pastebin/ky5yjO63/
+[16:11:42] <tomabee_> [ Pastebin | www.irccloud.com |  ]
+[16:12:44] <domme> jherskowitz: ok
+[16:12:54] <domme> jherskowitz: will look
+[17:01:47] *** Joins: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com)
+[17:02:23] *** Quits: jturney1 (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Ping timeout: 260 seconds)
+[17:02:51] *** Quits: knicklux (~knicklux@2a03:2260:a:a:1723:d8c:4528:fb8b) (Remote host closed the connection)
+[17:16:25] *** Quits: arkhi (~fabien@116.233.136.170) (Quit: Leaving.)
+[19:00:56] *** Joins: justin_time (~stefan@2a02:908:f35d:4b00:3ddb:4307:641b:8744)
+[19:06:19] <justin_time> Hey guys! I've a problem with my Qt5 builds. On Ubuntu 15.04, I'm unable to use them on a productive system. It looks like tomahawk tries to load the wrong libQtGui.so file. On Debian libQtGui.so is for Qt4 and libQt5Gui.so for Qt5. On a fresh Ubuntu 15.04 without Qt4 apps, tomahawk Qt5 runs well… 
+[19:07:06] <justin_time> Debug log: https://gist.github.com/justin-time/7ade2ee818414d8c20ea
+[19:07:07] <tomabee_> [ Qt5 Tomahawk and Ubuntu 15.04 Â· GitHub | gist.github.com | https://avatars3.githubusercontent.com/u/9631683?v=3&s=400 ]
+[19:35:00] <HorusHorrendus> justin_time: maybe related to vlc?
+[19:35:20] <HorusHorrendus> there was this one setting that had to be set or something that had to be deleted
+[19:35:31] <HorusHorrendus> because else vlc always wants to use qt4
+[19:39:13] <HorusHorrendus> justin_time: try    Konsole output     /usr/lib/vlc/vlc-cache-gen
+[19:39:13] <HorusHorrendus>  
+[19:43:39] *** Quits: Fohlen (~Fohlen@v22015072923726622.yourvserver.net) (Ping timeout: 268 seconds)
+[20:10:25] <justin_time> HorusHorrendus: Thanks for your help! "/usr/lib/vlc/vlc-cache-gen" does not produce any konsole output…
+[20:11:19] <HorusHorrendus> justin_time: probably
+[20:11:22] <HorusHorrendus> but does it work?
+[20:11:54] <justin_time> sadly not…
+[20:12:46] <HorusHorrendus> sudo /usr/lib/vlc/vlc-cache-gen -f /usr/lib/vlc/plugins
+[20:13:26] *** Joins: luxifer (~Stalin@c-73-222-222-193.hsd1.ca.comcast.net)
+[20:13:31] <justin_time> Oha! It works!!
+[20:13:47] <HorusHorrendus> justin_time: yeah ... I did only search for vlc at first and not for the full command
+[20:14:06] <HorusHorrendus> but I knew that it looked like this problem ;)
+[20:14:17] <HorusHorrendus> good that it helped, good deed of today done ;)
+[20:14:49] <justin_time> thank you, but what have you done? Update the VLC cache?
+[20:16:21] <justin_time> ah ok… rebuild the module cache, because of the outdated Qt4 binaries! Thanks a lot!
+[20:16:22] <HorusHorrendus> justin_time: no idea what that command does ;)
+[20:17:45] <luxifer> morning!
+[20:18:46] <luxifer> is anybody working on the tempo slider?
+[20:19:01] <luxifer> "Use range sliders for dynamic playlist settings (e.g min/max tempo on a single slider)"
+[20:27:51] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[20:29:36] *** Joins: hrtcrw (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370)
+[20:40:47] *** Quits: luxifer (~Stalin@c-73-222-222-193.hsd1.ca.comcast.net) (Quit: leaving)
+[21:20:20] *** Joins: Fohlen (~Fohlen@v22015072923726622.yourvserver.net)
+[22:08:51] *** Quits: hrtcrw (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370) (Ping timeout: 256 seconds)
+[22:09:07] <jherskowitz> luxifer: nope, nobody working on them
+[22:15:27] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[22:17:03] *** Quits: soee (~soee@bmx83.neoplus.adsl.tpnet.pl) (Remote host closed the connection)
+[22:17:22] *** Joins: soee (~soee@bmx83.neoplus.adsl.tpnet.pl)
+[22:22:26] *** Quits: justin_time (~stefan@2a02:908:f35d:4b00:3ddb:4307:641b:8744) (Quit: Verlassend)
+[22:58:44] *** Quits: rotzbouw (~thierry@HSI-KBW-078-042-081-237.hsi3.kabel-badenwuerttemberg.de) (Quit: leaving)
+[23:27:41] *** Quits: jturney (~jon@host86-141-129-249.range86-141.btcentralplus.com) (Read error: Connection reset by peer)

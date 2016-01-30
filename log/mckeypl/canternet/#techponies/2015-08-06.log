@@ -1,0 +1,775 @@
+[00:01:37] *** Joins: BubblyData (DataByte@Pony-6h89qu.g424.9euc.0247.2601.IP)
+[00:11:07] * HoneyDrops|Half giggles.  These will be fun to peruse https://github.com/hackedteam
+[00:11:08] <PinkiePieBot> [ hackedteam (Hacked Team) · GitHub ]
+[00:12:49] *** Joins: Phase (Phase4@Pony-67dbl9.optusnet.com.au)
+[00:16:07] <Midnight_Tinker> Windows 10 is free. Microsoft is still a business, and they still need to make money. If they're not selling you a product, they're selling you as a product
+[00:23:07] *** Joins: Init3-away (jason@init3.Is.Not.A.Clever.Poni)
+[00:23:10] *** Init3-away is now known as init3
+[00:27:55] *** Quits: Phase (Phase4@Pony-67dbl9.optusnet.com.au) (Ping timeout: 121 seconds)
+[00:35:11] *** Joins: Phase (Phase4@Pony-077jh8.optusnet.com.au)
+[00:42:22] *** Quits: Phase (Phase4@Pony-077jh8.optusnet.com.au) (Ping timeout: 121 seconds)
+[00:50:03] <GigaWork> odd.. dropbox is not starting/displaying like it used to
+[00:51:15] <GigaWork> I guess its running but I cannot see the gui of it
+[00:51:59] *** Joins: Phase (Phase4@Pony-lf47o5.optusnet.com.au)
+[00:55:21] *** Quits: Hickory (Iceman@Darkhorse21) (Quit: quit)
+[00:58:15] <GigaWork> Odd.. X is using 3gb of ram, is that normal?
+[01:00:33] <Midnight_Tinker> the only X I know of that's that resource intensive is OSX
+[01:02:18] <GigaWork> I am talking /usr/bin/X -core
+[01:02:24] <HoneyDrops|Half> No, something is leaking.
+[01:02:49] <GigaWork> Honey is there a way for me to boot into a mode that will show logs on screen during bootup?
+[01:03:31] <HoneyDrops|Half> Disable the splash screen?   I know there is, I'd have to look it up...
+[01:04:58] <GigaWork> https://bugs.launchpad.net/ubuntu/+source/fglrx-installer/+bug/1354350
+[01:05:05] <AppleDash> If anyone's curious from before
+[01:05:09] <AppleDash> I went with Samsung SSDs
+[01:05:14] <AppleDash> 4 250GB ones
+[01:05:35] <AppleDash> They were only like 20$ more each and they are rated for more writes
+[01:06:31] <GigaWork> Okay I installed xrestop
+[01:06:52] <GigaWork> pid 7688, kwin, is using 29497K
+[01:07:23] <PinkiePieBot> [ Bug #1354350 " Xorg memory leak on 14.04” : Bugs : fglrx-installer package : Ubuntu ]
+[01:07:40] <GigaWork> which the the window manager for KDE Plasma?
+[01:08:07] *** Joins: derpy (derp@muffins)
+[01:09:05] <HoneyDrops|Half> fglrx is the proprietary driver for AMD gpus
+[01:11:15] <GigaWork> So should I post in the ubuntu forums on this or KDE?
+[01:13:06] *** Quits: Phase (Phase4@Pony-lf47o5.optusnet.com.au) (Quit: Leaving)
+[01:15:12] <HoneyDrops|Half> GigaWork: KDE has nothing to do with it, and you linked to a bug report.  
+[01:15:32] <GigaWork> Oh, so what should be a next step then?
+[01:15:33] *** Joins: Phase (Phase4@Pony-lf47o5.optusnet.com.au)
+[01:15:42] <HoneyDrops|Half> "Reverting from the fglrx (proprietary) driver to the xserver-xorg-video-ati (open source, tested) driver solved the problem for me." - That is the 'fix' for now.
+[01:15:51] <HoneyDrops|Half> Comment #10
+[01:16:05] <GigaWork> I don't have that driver installed I do not think? 
+[01:19:41] <HoneyDrops|Half> https://help.ubuntu.com/community/RadeonDriver I think that covers what you need to do.
+[01:19:42] <PinkiePieBot> [ RadeonDriver - Community Help Wiki ]
+[01:20:44] <HoneyDrops|Half> Now, I'll be upfront, there is going to be a performance hit with games.  But there really isn't anything you can do until AMD fixes the problem.
+[01:21:23] <GigaWork> I do know that the system kept poping up for me to install a driver, but init3 told me not to
+[01:22:37] <init3> Oh
+[01:22:49] <init3> fglrx is the cause of your memory issues?
+[01:22:56] <GigaWork> Ooh well shit I am using the fglrx driver according to driver management software
+[01:23:01] <GigaWork> it seems like it init3 
+[01:23:08] <GigaWork> its leaking again
+[01:23:13] <init3> That sucks. 
+[01:23:40] <GigaWork> So basically until the fglrx driver is updated.. people are fucked?
+[01:24:13] *** Quits: sleumas2k (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[01:24:23] <init3> Well just going by what HoneyDrops|Half said. Seems so. You might be ablle to get by by installing an older fglrx driver or something. 
+[01:24:30] <HoneyDrops|Half> Either you use the community, open source driver, or you can try rolling back to an old version of AMD's... but that surely has its own bugs and might not play well with X and stuff.
+[01:24:42] <init3> Also true. 
+[01:24:49] <HoneyDrops|Half> with the version of X you have installed*
+[01:24:50] <GigaWork> I swapped to the recommended driver
+[01:25:03] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[01:25:14] <GigaWork> no clue
+[01:26:26] <HoneyDrops|Half> I've not have to fuss with gput drivers in ages.  My laptop just uses integrated intel one, and basically everything else is headless.
+[01:26:35] <HoneyDrops|Half> s/gput/gpu/
+[01:26:43] <init3> That is a super old bug report though. 
+[01:27:18] <init3> Yeah, unlike with intel, folks with AMD cards see a real performance hit using the OSS driver. 
+[01:27:58] <init3> But that bug report is almost exactly a year old. 
+[01:30:04] <GigaWork> Yep and I just updated it to be active XD
+[01:31:17] <GigaWork> bbl, need to clean up yard from the tornado
+[01:32:31] <HoneyDrops|Half> The newest game I play is MC, otherwise it's all Diablo2, WC3 and earlier.  At least for PC games.
+[01:35:09] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[01:35:20] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[01:43:28] *** Cephy-ZZZzzz is now known as Cepheid
+[01:54:43] *** Joins: RazorSharpFang (chatzilla@Pony-roer0i.iinet.net.au)
+[01:54:58] <RazorSharpFang> Heyas
+[01:55:17] <RazorSharpFang> Is anypony here familiar with maths, specifically statistical data analysis?
+[01:56:15] <RazorSharpFang> See, I've got two separate samples of similar data (A and B), and there's a claim that B is significantly lower on average than A.
+[01:57:34] *** RazorSharpFang is now known as Pony_84441
+[01:57:39] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[01:57:40] <Pony_84441> oops.
+[01:57:45] <Pony_84441> I knew I was forgetting something.
+[01:58:36] *** Pony_84441 is now known as RazorSharpFang
+[02:00:32] <RazorSharpFang> I don't know how to go about determining whether a certain sample is significantly higher or lower than another sample.
+[02:00:44] <RazorSharpFang> Err, sets of samples?
+[02:02:02] <Midnight_Tinker> you go with whatever other tumblr users tell you
+[02:02:09] <Midnight_Tinker> oh wait, that's just stats on SJW stuff
+[02:02:11] <HoneyDrops|Half> https://en.wikipedia.org/wiki/Standard_deviation
+[02:02:12] <PinkiePieBot> [ Standard deviation - Wikipedia, the free encyclopedia ]
+[02:02:24] <init3> I wish I could remember who but I am pretty sure there is a regular in #EQD who was in post-grad math for a while. 
+[02:02:40] <RazorSharpFang> Midnight_Tinker: I'm familiar with SD, this is a bit more complex than just deviations.
+[02:03:00] <RazorSharpFang> Just because a certain sample has a lower SD doesn't mean it's significantly lower on average.
+[02:03:12] <Midnight_Tinker> RazorSharpFang: you mean  HoneyDrops|Half
+[02:03:18] <RazorSharpFang> my bad.
+[02:03:21] <RazorSharpFang> You're right.
+[02:03:30] * RazorSharpFang pokes HoneyDrops|Half instead
+[02:04:18] <Midnight_Tinker> I was like wait what I just made a snarky comment against tumblrinas, I didnt think I'd be taken seriously
+[02:04:34] <RazorSharpFang> XD
+[02:07:02] * RazorSharpFang continues to poke HoneyDrops|Half
+[02:07:21] * HoneyDrops|Half squeaks.  Anyway, from what I recall the idea is you determine the distribution of each sample, and determine if they are a standard deviation above/below one another.
+[02:08:41] <RazorSharpFang> HoneyDrops|Half: Would you consider the two significantly different if their means are 0.5 standard deviations apart?
+[02:09:10] *** Joins: Eclipse^ (EclipseTheF@Pony-tlq2fk.mycingular.net)
+[02:10:18] <RazorSharpFang> HoneyDrops|Half: Also, it's quite likely that these two sets of data have different standard deviations. Which do you use?
+[02:15:19] <RazorSharpFang> Ah. hang on, I gotta change network adaptor.
+[02:15:21] <RazorSharpFang> Connection resetting...
+[02:16:00] *** Joins: RazorSharpFang_ (chatzilla@Pony-roer0i.iinet.net.au)
+[02:16:10] <RazorSharpFang_> Thar we go
+[02:17:37] <RazorSharpFang_> I'll time out shortly, I assume.
+[02:18:30] <HoneyDrops|Half> I forget, been 8 years since I was doing data analysis.
+[02:18:33] * HoneyDrops|Half hmms.
+[02:19:06] <RazorSharpFang_> I've only done high-school statistics, which is hardly adequate for this.
+[02:19:15] <RazorSharpFang_> The data is NOT normally distributed, which makes it worse.
+[02:19:31] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Ping timeout: 121 seconds)
+[02:19:33] <RazorSharpFang_> It is surprisingly skewed to the right.
+[02:19:40] *** RazorSharpFang_ is now known as RazorSharpFang
+[02:19:42] <RazorSharpFang> While it is capped to the left.
+[02:30:42] <HoneyDrops|Half> RazorSharpFang: https://en.wikipedia.org/wiki/Student%27s_t-test#Independent_two-sample_t-test
+[02:30:43] <PinkiePieBot> [ Student's t-test - Wikipedia, the free encyclopedia ]
+[02:31:26] *** Quits: Eclipse^ (EclipseTheF@Pony-tlq2fk.mycingular.net) (Connection closed)
+[02:36:53] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[02:41:05] <RazorSharpFang> HoneyDrops|Half: One of the assumptions is false.
+[02:41:23] <RazorSharpFang> HoneyDrops|Half: I know that the variances of the sets of data is not equal.
+[02:44:08] <GigaWork> Okay I keep tellin driver managment software to use the recoomended driver, and all it does is refresh the screen on me for it
+[02:45:16] <Midnight_Tinker> its all like "I recommend you figure it out yourself"
+[02:47:43] <RazorSharpFang> HoneyDrops|Half: Oh wait, there's another section for that. Processing, please wait...
+[02:51:41] <GigaWork> Okay so I do see that it errors but it goes to fast for me to see the exact error when trying to install it.
+[02:52:04] <RazorSharpFang> GigaWork: Capture the window using OBS, and then replay it.
+[02:55:34] <tiwake> ponies
+[03:10:40] <Midnight_Tinker> poni
+[03:11:08] <RazorSharpFang> I hate the t-test already
+[03:14:58] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[03:16:53] <Midnight_Tinker> that sounded like youre just really nervously hating on a test you're not sure of
+[03:17:29] <RazorSharpFang> Midnight_Tinker: No, I'm referring to the mathematical "Student's t-test" as described by the wikipedia article.
+[03:17:49] <RazorSharpFang> I can see where you're coming from though.
+[03:19:40] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[03:24:17] *** Joins: Hickory (Iceman@Darkhorse21)
+[03:29:05] <RazorSharpFang> Oh shoot. Turns out these values I have aren't all equally weighted either.
+[03:29:12] <RazorSharpFang> That makes it worse.
+[03:31:13] <GigaWork> RazorSharpFang,  this is what it is doing now.. it decided to not error now..   https://www.dropbox.com/s/ezaok8jmqsviadh/out.ogv?dl=0
+[03:31:16] <PinkiePieBot> [ Dropbox - out.ogv ]
+[03:32:25] <RazorSharpFang> GigaWork: Huh, that's weird. 
+[03:32:39] <GigaWork> see how it just keeps looping now?
+[03:33:17] <GigaWork> almost wondering if I should just swap distros..
+[03:33:57] <RazorSharpFang> This isn't windows.
+[03:34:34] <GigaWork> Yeah I know
+[03:38:05] <HoneyDrops|Half> Did you quit out of X and log back in?
+[03:38:11] <GigaWork> yes
+[03:38:19] <HoneyDrops|Half> hrm..
+[03:38:35] <GigaWork> Not sure why I am having so many issues.. I haven't done anything x.x
+[03:40:11] <GigaWork> when I got to software and update>additional drivers, it shows that my GPU is using the recommended driver, and at the bottom it says no proprietary driver in use
+[03:42:08] <GigaWork> but lshw shows it as the fglrx still
+[03:43:12] <RazorSharpFang> Do you have 3d acceleration available?
+[03:43:27] <GigaWork> I think so
+[03:43:41] <RazorSharpFang> What happens when you create openGL surfaces? Works as expected?
+[03:43:53] <GigaWork> No clue what you are asking about
+[03:44:02] <RazorSharpFang> Play a game. Does it crash?
+[03:44:18] <GigaWork> Terraria works fine
+[03:45:00] <RazorSharpFang> Maybe you could just leave it at that? If there's no real issues left...
+[03:45:25] <RazorSharpFang> Notepad: "This file is too big for notepad. Use another editor to edit the file."
+[03:45:42] <RazorSharpFang> Apparently, 2GB is too much.
+[03:46:20] <locodash11[server]> 1gb is generally too much for notepad
+[03:47:40] <RazorSharpFang> Well, maybe I could trim down the data in the file a bit.
+[03:48:20] <LegionRed> Maybe notepad isn't very good, and you should try something else? 
+[03:48:33] <RazorSharpFang> LegionRed: To be fair, notepad++ also says no.
+[03:48:40] <LegionRed> Hmm...
+[03:48:59] <LegionRed> Not surprizing, I suppose... but I'm sure /something/ can open it.
+[03:49:06] <RazorSharpFang> Okay, I trimmed out a bit of information, the file is now 639 KB.
+[03:49:15] <HoneyDrops|Half> vim should be able to
+[03:49:57] <HoneyDrops|Half> Though I think I've only done up to just over 1GB
+[03:49:58] <RazorSharpFang> Maybe having really verbose logs is a bad idea?
+[03:50:16] <HoneyDrops|Half> Why are you editing a log?
+[03:50:39] <RazorSharpFang> HoneyDrops|Half: I'm not, I just wanted to view it.
+[03:50:46] <HoneyDrops|Half> that's what less is for
+[03:51:02] <HoneyDrops|Half> and grep/tail/awk/sed
+[03:51:16] <RazorSharpFang> This is not a linux environment, nor a linux-like.
+[03:53:55] * HoneyDrops|Half shrugs.  Can't help that some OSes are useless.
+[03:54:27] <JustAberrant> just split the file up?
+[03:54:44] <RazorSharpFang> I've made the logs a tad less verbose, and the file's now 11MB instead.
+[03:55:44] <RazorSharpFang> HoneyDrops|Half: Also, on the T-test method, it doesn't work, because the data isn't normally distributed.
+[03:56:03] <RazorSharpFang> It is VERY much not a normal distribution.
+[03:56:47] <HoneyDrops|Half> Hmm
+[03:58:58] * RainbowHacks derps
+[04:02:15] * HoneyDrops|Half hisses. http://keionline.org/node/2309
+[04:02:21] <PinkiePieBot> [ KEI's second installment of TPP IP Chapter leak, includes copyright, all other provisions | Knowledge Ecology International ]
+[04:04:52] <RazorSharpFang> HoneyDrops|Half: Here's a histogram of the data: http://i.imgur.com/NdwNBNU.png
+[04:05:47] <RazorSharpFang> That is NOT a normal distribution.
+[04:06:12] <HoneyDrops|Half> No, lemme think, it's another type
+[04:07:24] <HoneyDrops|Half> https://en.wikipedia.org/wiki/Gamma_distribution of some sort
+[04:07:25] <PinkiePieBot> [ Gamma distribution - Wikipedia, the free encyclopedia ]
+[04:07:50] <RazorSharpFang> Ooh, that does look the part.
+[04:10:37] <RazorSharpFang> HoneyDrops|Half: Also, here's another histogramm with a larger sample size: http://i.imgur.com/SlL4aCC.png
+[04:11:01] <RazorSharpFang> The data was too big, and the frequency label got cut off.
+[04:12:05] * HoneyDrops|Half nods.
+[04:13:02] <RazorSharpFang> I still can't believe there's a ping of 2508.34 in there. What even.
+[04:15:13] <RazorSharpFang> HoneyDrops|Half: Is the shape of the larger histogram consistent with the gamma distribution?
+[04:16:02] <HoneyDrops|Half> I would say yes
+[04:18:44] <RazorSharpFang> I have even less idea how to test for significance of deviation now.
+[04:21:03] *** Joins: Fallfeathers (Fallfeather@Pony-2fjh1h.md.comcast.net)
+[04:22:08] <HoneyDrops|Half> What is this for?  Are you looking for specifically statistically significant difference?
+[04:22:59] <RazorSharpFang> You see, there's this software that claims to "significantly reduce your ping". I want to test that claim.
+[04:23:48] <HoneyDrops|Half> Where is it running?
+[04:24:12] <RazorSharpFang> HoneyDrops|Half: It's got a client that runs on windows, and there's a server out there somewhere.
+[04:24:22] <RazorSharpFang> So it's a mixed-breed.
+[04:24:28] <Colgate> I can tell you right now, it is a lie
+[04:24:31] <Colgate> :P
+[04:24:36] <RazorSharpFang> But can you prove it?
+[04:24:37] <HoneyDrops|Half> So this software is running locally and on the server?
+[04:24:57] <Colgate> because that's not how networking works, that's how I can prove it :P
+[04:25:04] <HoneyDrops|Half> ^ mostly that
+[04:25:15] <RazorSharpFang> Here, let me link you its commercial, if that's okay.
+[04:25:23] <Colgate> I could use a good laugh
+[04:25:35] <Rylee> RainbowHacks: ur a derp
+[04:25:40] <Rylee> Colgate: you're a bigger derp
+[04:25:46] <Colgate> :(
+[04:25:46] * PinkiePieBot hugs Colgate
+[04:25:56] <Rylee> sorry Colgate that's just how life works
+[04:25:58] <Googie> It's possible, but only in limited circumstances (poor routing over the public internet compared to a leased private network)
+[04:26:16] <Rylee> it's incredibly unikely
+[04:26:36] <RazorSharpFang> Colgate: https://youtu.be/6Er7-sdOTWE - Thar we go.
+[04:26:36] <PinkiePieBot> [ How WTFast Works Video - 2855957 views - 1m 32s long - 685 likes - 51.78% ]
+[04:26:37] <Rylee> far more likely: some guy trying to scam stupid gamers
+[04:26:42] <Colgate> oh that thing
+[04:26:43] <Googie> There's been some neat stuff there really, but yeah, that
+[04:26:52] <Colgate> yeah, that's full of nothing
+[04:27:10] <RazorSharpFang> Well, I want to prove/disprove their claim using statistics.
+[04:27:38] <RazorSharpFang> But I'm not a statistician.
+[04:27:47] <Colgate> run 2 pings constantly from within the same network to the same target, one with and one without, then do a chi-square test
+[04:27:47] * Googie basically was just saying "it's technically possible" rather than "It's  likely"
+[04:28:21] <RazorSharpFang> Colgate: I've got network logs directly from a program that it's designed to work with.
+[04:28:26] <Colgate> least... if my knowledge of stats is correct, I think that will work
+[04:28:45] <Colgate> been a while since I used my college stats stuff >.>
+[04:29:03] <tiwake> yay statistics
+[04:29:23] <RazorSharpFang> Colgate: It's not normally distributed.
+[04:29:26] <HoneyDrops|Half> I can tell you just looking at those two histograms, the specific claim "Reduces avg game ping time 30-60%" is false.  That you can do just a simple mean to mean comparison.
+[04:29:54] <RazorSharpFang> HoneyDrops|Half: Those aren't the two samples; I've yet to collect from the software-enabled system.
+[04:30:04] <HoneyDrops|Half> Ah
+[04:30:16] <RazorSharpFang> One is just a bigger sample size.
+[04:30:24] <Colgate> that histograph is garbage
+[04:30:30] <RazorSharpFang> Yeah.
+[04:30:48] <Colgate> scope is too large, the few outliers mess with the shape too much
+[04:30:55] <Colgate> should do one of those uh
+[04:31:11] <Colgate> forgot what they are called, but it is like a number line graph
+[04:31:19] <Colgate> with boxed areas for 2 std deviations
+[04:31:47] <HoneyDrops|Half> https://en.wikipedia.org/wiki/Box_plot
+[04:31:47] <Colgate> that way the outliers are less devastating to the shape of the graph
+[04:31:48] <PinkiePieBot> [ Box plot - Wikipedia, the free encyclopedia ]
+[04:32:01] <Colgate> yeah, box plot
+[04:34:03] <RazorSharpFang> Colgate: Given a mean of 83.86, a median of 70 and a stddev of 48, what would you consider an outlier?
+[04:34:22] <Colgate> usually 2+ standard deviations
+[04:34:36] <HoneyDrops|Half> ^
+[04:34:40] <Colgate> or might be more... there's a formal definition for it iirc
+[04:34:59] <RazorSharpFang> mean (+/-) 3 * stddev would do it?
+[04:35:02] <HoneyDrops|Half> https://en.wikipedia.org/wiki/Outlier
+[04:35:02] <PinkiePieBot> [ Outlier - Wikipedia, the free encyclopedia ]
+[04:35:59] <RazorSharpFang> Hang on, wouldn't removing the outliers change the stddev and the mean?
+[04:36:05] <Colgate> yes
+[04:36:14] <RazorSharpFang> Is that a good thing?
+[04:36:15] <HoneyDrops|Half> yes, and you have to recalc it
+[04:36:19] <Colgate> removing any sample point will change the mean
+[04:36:30] <Colgate> and the std dev
+[04:36:39] <Colgate> (ok, not the mean, if the point you remove is exactly the mean)
+[04:36:57] <Colgate> you shouldn't remove the outliers though
+[04:37:15] *** Quits: Hickory (Iceman@Darkhorse21) (Ping timeout: 121 seconds)
+[04:38:43] <Midnight_Tinker> heh.
+[04:38:44] <Midnight_Tinker> std dev
+[04:39:55] <RazorSharpFang> Colgate: So, I don't remove them, but I don't use for calculation?
+[04:46:12] <Colgate> why wouldn't you include them in the calculation?
+[04:46:35] <RazorSharpFang> I thought that was why the histogram looked awful.
+[04:46:50] <Colgate> it is
+[04:47:05] <Colgate> that's your displaying of the results being awful, not the calculation
+[04:47:26] <RazorSharpFang> Oh, so I should use a lower max of the X-axis?
+[04:48:14] <Colgate> or include some jumps or something
+[04:49:19] <RazorSharpFang> I'd have to use actual software to make it instead of this online-histogram then.
+[04:51:02] <JustAberrant> :)
+[04:51:06] <JustAberrant> Colgate: hi :)
+[04:51:59] <JustAberrant> Colgate: if you had to practice some form of voodoo, would you prefer Louisiana (either the sensationalized variety or "traditional") or Haitian style voodoo?
+[04:52:26] <Colgate> I can't find my earpiece for my radio, this is annoying :(
+[04:57:05] <RazorSharpFang> Colgate: Also weird, is that I can't seem to find the data point that's near 2500.
+[04:57:21] <RazorSharpFang> Excel reports a max of 874
+[05:02:26] *** Joins: Hickory (Iceman@Darkhorse21)
+[05:03:21] *** GigaWork is now known as Gigabit
+[05:06:07] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[05:09:50] * RazorSharpFang facedesks
+[05:09:53] <RazorSharpFang> This is hard.
+[05:24:19] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[05:35:17] *** Joins: Init_-1 (WebChat@Pony-3dq8ir.sub-70-210-69.myvzw.com)
+[05:35:44] <Init_-1> Hey gigabit guess what
+[05:36:46] <Init_-1> It would appear the /use partition on my server imploded. Pretty sure the entire OS drive is toast lol.
+[05:36:59] <Init_-1>  /usr
+[05:40:44] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[05:41:01] *** Quits: Init_-1 (WebChat@Pony-3dq8ir.sub-70-210-69.myvzw.com) (Ping timeout: 121 seconds)
+[05:41:35] <init3> ok I connected my laptop to the cable modem. Not sure if I should try to recover from this nonsense or just say fuck it and reinstall. 
+[05:42:14] <init3> I have backups of /etc but not /usr. it seems. 
+[05:43:09] <init3> Well I guess I do but it is a year old. 
+[05:43:25] <DJ-C0L7[CSS]> i'll log in from the laptop, g2g talk to everypony later
+[05:43:30] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "back in a few")
+[05:43:55] <HoneyDrops|Half> Shouldn't /usr be mostly recoverable with just the package manger? Aside from /usr/local
+[05:45:40] *** Quits: ShivalWolf (ShivalWolf@2400:d400:9:7375:abcd::2) (A TLS packet with unexpected length was received.)
+[05:45:53] <init3> Perhaps. 
+[05:45:55] *** Joins: ShivalWolf (ShivalWolf@2400:d400:9:7375:abcd::2)
+[05:46:19] <init3> THe thing is I am pretty sure this 20 year old 40G drive the OS is on probably needs to be put out of its misery
+[05:46:59] <init3> But actually it seems that the biggest probelm why everything is so odd may be that /var/log got turned into a file. 
+[05:47:13] <init3> by fsck on recovery. 
+[05:49:23] <HoneyDrops|Half> ddrescue time
+[05:49:53] <init3> Well the thing is I was considering doing a reinstall anyhow and I have all the configs backed up. 
+[05:50:18] <init3> So I'm going to try a half-assed recovery and if it doesn't work just do an unscheduled reinstall is all.
+[05:51:45] <init3> I just moved so I wouldn't doubt if that was enough to jostle the old ass HDD enough to kill it off. Also it is super loud
+[05:52:02] <init3> One of those old hard drives that is super high pitched. 
+[05:54:26] <HoneyDrops|Half> I retired my old drives... granted old drives for me were <1GB
+[05:55:09] <init3> Well this thing is truly a trooper. Running 24/7 for at least 8 years. Probably longer. 
+[05:55:25] <init3> Maybe as long as 15
+[05:56:04] <init3> Well let's see if derpy can pass traffic. Seems to have booted OK and services started now that /var/log is a thing again. 
+[05:56:11] <init3> brb
+[05:59:28] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[05:59:53] <init3_1> Well derpy is in the ICU still, but she's alive. 
+[06:00:13] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[06:00:45] <Gigabit> Sorry I was away
+[06:01:44] <init3_1> np. seems my server has had a bit of an oopsie. 
+[06:02:01] *** init3_1 is now known as init3
+[06:05:26] <init3> So I am considering throwing something other than debian on here. It's a file server/seed box/gateway and all that. Suggestions? Definielty not wanting to do something like pfsense where it is easy mode. That's no fun ;)
+[06:05:56] * Colgate shrugs, uses debian/centos for all their server stuff
+[06:07:02] <HoneyDrops|Half> Debian is a decent choice, though I'm going to have to find something else for quick deployment.
+[06:07:44] <JustAberrant> consider freebsd?
+[06:07:47] <Googie> Debian on all my server stuff personally.
+[06:07:55] *** Joins: SatisfySez (SatisfySez@Pony-f4d33j.aj98.eo84.6000.2606.IP)
+[06:08:20] * JustAberrant honestly prefers freebsd now days for servers, if for no other reason than it's not trying to re-invent itself every 6 months
+[06:08:27] <RazorSharpFang> I'm a novice, so I use Ubuntu server for server-stuffs.
+[06:08:50] <JustAberrant> freebsd is really nice and simple and low maintenance if you don't need to do anything linux-y
+[06:09:06] <Googie> I do need to look into the BSDs more. I've setup an OpenBSD firewall, but haven't really done much else.
+[06:09:09] <JustAberrant> and it has zfs as it was intended, plus pf
+[06:09:39] <init3> I have used freebsd in the past 
+[06:09:54] *** Parts: SatisfySez (SatisfySez@Pony-f4d33j.aj98.eo84.6000.2606.IP) ("Leaving")
+[06:10:01] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[06:10:26] <JustAberrant> main reason I run linux (gentoo) on my server is miencraft/FTB :(
+[06:10:28] <init3> But I found it tough to do some of the things I like to do with it. Particularly the Deluge seed box part but I dunno.
+[06:10:40] <init3> There is probably a port now that it is a lot more popular. 
+[06:11:00] <JustAberrant> yeah, freebsd is great until you run into something that hasn't been ported/won't run :(
+[06:11:51] <JustAberrant> oh well, I should bed
+[06:11:54] <init3> I mean file system wise I use xfs too and that's not going to change. This is just my OS drive here which contains absolutley nothing other than the OS. 
+[06:12:15] <init3> Nighty night
+[06:12:30] * JustAberrant uses xfs on his file server at the moment, when I rebuild my fs will almost certainly be zfs
+[06:12:39] <init3> Yeah
+[06:12:53] <init3> FreeBSD likes LVM fine right?
+[06:13:02] <JustAberrant> probably not ;p
+[06:13:07] <JustAberrant> _linux_ volume manager ;p
+[06:13:27] <JustAberrant> I'm not a fan of the hassles with adding storage to zfs, but everything else about it is pretty damn awesome
+[06:13:28] <frackster> LOL
+[06:13:48] <init3> Ok debian it is lol
+[06:14:26] <init3> Plus that way I suppose I can just restore /etc and my packages and be good. 
+[06:15:27] * JustAberrant vanishes
+[06:15:30] <JustAberrant> ponies evening all :)
+[06:15:38] <init3> Night
+[06:15:40] <init3> Ty for the advice
+[06:16:07] <Googie> When btrfs finally gets around to actually being nice, stable, and tested, it'll blow ZFS out of the water for adding storage. The problem is when :(
+[06:19:55] <init3> I tell ya it is so nice to have a decent internet connection finally. 
+[06:21:44] <init3> 300M in 40 sec too stronk. Comcast may suck ass as a company but their connections are legit. 
+[06:22:26] <init3> There's like one netadmin at comcast that is like the only competent one there. 
+[06:24:01] <frackster> init3: http://lists.freebsd.org/pipermail/freebsd-questions/2008-September/182121.html
+[06:24:02] <PinkiePieBot> [ LVM2 under FreeBSD ? ]
+[06:24:46] <Googie> Every time I see someone complain about Comcast, I always wonder if they've actually ever had to have a really terrible internet connection for an extended period of time...
+[06:24:57] <Gigabit> Nope :p
+[06:25:16] <init3> Haha I was loking at that frackster but the ISO has been burned. 
+[06:25:20] <Googie> Do any of those people complaining switch to ADSL ? Nope.
+[06:25:26] <Gigabit> Fuck.. I would be happy with anything better then "up to" 5mb
+[06:25:27] <init3> Hue
+[06:25:33] *** LightningCrash is now known as Cloud_Kicker
+[06:25:51] *** Cloud_Kicker is now known as Double_Diamond
+[06:26:03] <init3> Hey, I paid my 36.6, 56k and 1.544 dues. 
+[06:26:35] <init3> Then I had 10 for a while and now I've got 100 but can't see the stars. 
+[06:27:39] *** Joins: LightningCrash (lightning@Pony-t1l.5qg.129.65.IP)
+[06:31:10] <Googie> I think I've said it too many times recently, but I'm on 2.5mbit :/
+[06:32:22] <frackster> u should upgrade to fios Googie 
+[06:32:41] <Colgate> I tried running bsd once
+[06:32:46] * Googie stares at frackster
+[06:32:53] <Googie> I. would. if. I. Could.
+[06:32:54] <Colgate> I got frustrated since I kept trying to use linux tools on it
+[06:33:14] <Googie> That's basically all I've been freaking saying for years now. My only damn option is load balancing between multiple 2.5mbit lines.
+[06:34:07] <Googie> Which would be $160ish per month for a whopping 5mbit connection, but with all the fun downsides of load balancing.
+[06:35:04] * HoneyDrops|Half hugs Googie.  She know its pain, all the marsupials but no non-crap internet.
+[06:38:29] <Googie> Or I could buy 5GB of 3G data per month. "Woo"
+[06:38:43] <Googie> (Well, probably more around 10-15)
+[06:41:03] <frackster> rofl
+[06:41:10] <frackster> that must be a pretty rural area
+[06:42:27] <Googie> No. It's a standard Australian suburb, with houses surrounding me in every direction, and a local major shopping center.
+[06:43:49] *** Colgate is now known as Colgate|Bronycon
+[06:56:18] <frackster> o.o
+[06:57:53] *** Quits: floogulinc (floogulinc@Pony-opvprb.floogul.net) (A TLS packet with unexpected length was received.)
+[07:01:44] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[07:02:11] *** Joins: floogulinc (floogulinc@Pony-opvprb.floogul.net)
+[07:07:41] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[07:12:06] *** Quits: Fallfeathers (Fallfeather@Pony-2fjh1h.md.comcast.net) (Ping timeout: 121 seconds)
+[07:12:27] *** RedHelper is now known as Creeps|AFK
+[07:15:20] *** Quits: Cepheid (Cepheid@the.crazy.cat.pony) (Ping timeout: 121 seconds)
+[07:15:31] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:20:54] *** Joins: TuxRug (TuxRug@Pony-4821m0.co.comcast.net)
+[07:21:44] *** Quits: Pony_78196 (Fusl@1.0.0.127.in-addr.arpa.li) (Ping timeout: 121 seconds)
+[07:23:52] *** Joins: Fallfeathers (Fallfeather@Pony-2fjh1h.md.comcast.net)
+[07:25:46] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Ping timeout: 121 seconds)
+[07:27:15] *** Joins: Fusl (Fusl@1.0.0.127.in-addr.arpa.li)
+[07:28:33] *** Jouva_ is now known as Jouva
+[07:29:29] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[07:35:37] *** Quits: Fallfeathers (Fallfeather@Pony-2fjh1h.md.comcast.net) (Ping timeout: 121 seconds)
+[07:37:14] *** Joins: Fallfeathers (Fallfeather@Pony-2fjh1h.md.comcast.net)
+[07:37:58] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-69t.2jt.56.172.IP)))
+[07:38:07] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[07:38:14] *** Joins: DJ-C0L7[EIT]_ (IceChat77@DJ-C0L7.EIT.LLC)
+[07:38:26] *** DJ-C0L7[EIT]_ is now known as DJ-C0L7[EIT]
+[07:43:20] *** Quits: Phase (Phase4@Pony-lf47o5.optusnet.com.au) (Quit: Leaving)
+[08:02:52] *** Joins: Phase (Phase4@Pony-lf47o5.optusnet.com.au)
+[08:04:23] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[08:05:30] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[08:06:16] *** Gigabit is now known as GigaZzz
+[08:13:07] *** Joins: Cepheid_ (Cepheid@Pony-sgf3fu.cable.rogers.com)
+[08:13:35] *** Cepheid_ is now known as Cepheid
+[08:14:51] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[08:18:35] *** Joins: MistVeil (AndChat3408@Pony-prm9c8.static.axtel.net)
+[08:22:22] *** Quits: Hickory (Iceman@Darkhorse21) (Quit: quit)
+[08:27:20] *** Quits: Fallfeathers (Fallfeather@Pony-2fjh1h.md.comcast.net) (Ping timeout: 121 seconds)
+[08:29:33] *** Joins: Fallfeathers (Fallfeather@Pony-2fjh1h.md.comcast.net)
+[08:29:58] *** Quits: Fallfeathers (Fallfeather@Pony-2fjh1h.md.comcast.net) (Connection closed)
+[08:34:44] *** Quits: MistVeil (AndChat3408@Pony-prm9c8.static.axtel.net) (Quit: Bye)
+[09:04:09] *** Quits: Phase (Phase4@Pony-lf47o5.optusnet.com.au) (Quit: Leaving)
+[09:04:39] *** Joins: Phase (Phase4@Pony-lf47o5.optusnet.com.au)
+[09:13:04] *** Quits: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net) (Quit: I am gone now)
+[09:33:57] *** Quits: Phase (Phase4@Pony-lf47o5.optusnet.com.au) (Ping timeout: 121 seconds)
+[09:38:07] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (Ping timeout: 121 seconds)
+[09:39:28] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[09:46:50] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:48:30] *** Joins: Phase (Phase4@Pony-oqm1tq.optusnet.com.au)
+[09:49:05] *** init3 is now known as Init3-away
+[09:52:45] *** Joins: ThunderBolt (VettleBolt@Sliverpony)
+[09:54:52] *** Quits: TuxRug (TuxRug@TuxRug) (Quit: WeeChat 1.1.1)
+[10:03:29] *** Quits: Phase (Phase4@Pony-oqm1tq.optusnet.com.au) (Ping timeout: 121 seconds)
+[10:05:06] *** Init3-away is now known as init3
+[10:16:53] *** Quits: ThunderBolt (VettleBolt@Sliverpony) (Ping timeout: 121 seconds)
+[10:18:20] *** Joins: ThunderBolt (VettleBolt@Sliverpony)
+[10:23:32] *** Joins: Hickory (Iceman@Darkhorse21)
+[10:24:15] *** Quits: ThunderBolt (VettleBolt@Sliverpony) (Ping timeout: 121 seconds)
+[10:31:56] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:32:06] *** Awaykitty is now known as Unixkitty
+[10:35:17] *** init3 is now known as Init3-away
+[11:39:35] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[11:50:34] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[12:04:30] *** Joins: Phase (Phase4@Pony-5ah3ft.internode.on.net)
+[12:11:32] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[13:07:26] <DJ-C0L7[EIT]> howdy
+[13:14:00] *** Joins: RazorSharpFang_ (chatzilla@Pony-roer0i.iinet.net.au)
+[13:14:06] <RazorSharpFang_> Oh
+[13:14:22] * RazorSharpFang_ gives Googie sympathy. "How long until NBN hits your district/region?"
+[13:14:53] <Googie> Supposedly 18 months. It's been like that basically since 2011 though.
+[13:15:23] <RazorSharpFang_> Same here, construction hasn't begun yet. >.>
+[13:15:32] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Ping timeout: 121 seconds)
+[13:15:40] *** RazorSharpFang_ is now known as RazorSharpFang
+[13:16:01] <Googie> The liberal government basically screwed over NBNco and forced them to replan everything
+[13:16:47] <Googie> Because they really really really wanted FTTN for the same price as FTTH :/
+[13:17:18] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[13:17:44] <RazorSharpFang> For me, the copper line between the ISP and me is gosh-darn awful. I REALLY REALLY hope it gets replaced.
+[13:17:54] <Googie> 60db line attenuation here.
+[13:17:55] <RazorSharpFang> If it rains, we get packet loss. Always.
+[13:18:26] <DJ-C0L7[EIT]> for me here, every time my isp does "upgrades" my internet goes down
+[13:19:22] <Phase> why are the majority of city deployments to the west of me
+[13:20:48] * Phase was up at mooroopna helping grandparents set up their nbn connection
+[13:21:03] <Phase> but telstra screwed up so instead i fixed their security system
+[13:26:32] <Phase> also mooroopna has nbn
+[13:32:51] <DJ-C0L7[EIT]> o_o i just found out i had a LOT more air in my brake lines than i had anticipated
+[13:39:30] *** Unixkitty is now known as Awaykitty
+[13:48:35] <DJ-C0L7[EIT]> g2g i'll log in from home
+[13:48:38] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "back in a bit")
+[13:50:47] <RainbowHacks> o/
+[14:22:13] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[14:28:51] *** Awaykitty is now known as Unixkitty
+[14:35:28] *** Init3-away is now known as init3
+[14:57:19] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:59:25] *** Quits: BubblyData (DataByte@Pony-6h89qu.g424.9euc.0247.2601.IP) (Quit: Leaving)
+[15:02:28] <Rylee> yes
+[15:02:29] <Rylee> hi
+[15:08:26] *** init3 is now known as Init3-away
+[15:09:32] <RainbowHacks> hi Rylee!
+[15:09:46] <Rylee> hi hello
+[15:10:07] <RainbowHacks> morning :3
+[15:10:12] <Rylee> how is a RainbowHacks 
+[15:11:34] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:14:38] *** Double_Diamond is now known as LightningCrash
+[15:20:07] <Rylee> (nsfw text) what the fuck google sidebar http://i.imgur.com/KxP7fWC.png
+[15:21:24] <RainbowHacks> Rylee, in pain!
+[15:21:25] <RazorSharpFang> wot
+[15:21:34] <Rylee> RainbowHacks: you should consider not being in pain
+[15:21:40] <Rylee> it's strictly more enjoyabler
+[15:21:49] <RainbowHacks> Rylee, really?
+[15:21:52] <RainbowHacks> I quite like it
+[15:21:57] <RainbowHacks> well, certain kinds!
+[15:22:02] <RainbowHacks> they're just.... <3
+[15:22:08] <RainbowHacks> but this is not <3 pain
+[15:22:15] <RainbowHacks> this is mosh-pit aftereffect pain
+[15:22:21] * RainbowHacks might have given herself a concussion
+[15:33:01] <Rylee> lol
+[15:33:16] <Rylee> the fun kinds of pain aren't really "in" pain ;p
+[15:34:09] <RainbowHacks> Says you >.>
+[15:34:13] * RainbowHacks likes knives.
+[15:35:40] <RainbowHacks> also tattoos are especially yummy :3 *grins*
+[15:35:50] <Rylee> lol
+[15:35:53] * Rylee hugs RainbowHacks better
+[15:36:22] * RainbowHacks snugs Rylee 
+[15:36:28] <RainbowHacks> sup featherhead? :3
+[15:36:50] <Rylee> just preparing for work, mentally and physically
+[15:36:58] <Rylee> on-site interview with IMVU either next week or the week after
+[15:37:04] <Rylee> can't wait to see my bosses face when I resign
+[15:37:08] * RainbowHacks nod
+[15:37:10] <RainbowHacks> o.o
+[15:37:14] <RainbowHacks> heh
+[15:37:48] *** Joins: Beatzebub (beatzebub@Pony-64rlqg.bchsia.telus.net)
+[15:38:10] <Rylee> yes, indeed
+[15:38:35] <Rylee> anyways, I'm running off to the train for a while
+[15:39:28] <RainbowHacks> o/
+[15:52:45] *** Joins: DataByteBrony (DataByte@Pony-6gap8b.g424.9euc.0247.2601.IP)
+[16:41:55] *** Creeps|AFK is now known as RedHelper
+[16:49:02] *** Init3-away is now known as init3
+[16:52:01] *** Quits: Beatzebub (beatzebub@Pony-64rlqg.bchsia.telus.net) (Ping timeout: 121 seconds)
+[16:57:02] <Caerdwyn> anybody in here have enough experience with windows 10 yet that can tell me how to not lose focus on a window when switching virtual desktops using its keyboard shortcuts?
+[16:57:05] <Caerdwyn> /b 23
+[16:57:07] <Caerdwyn> oops
+[17:04:36] <init3> You around RainbowHacks?
+[17:05:12] <RainbowHacks> not exactly
+[17:05:16] <RainbowHacks> you need something specific
+[17:06:11] <init3> Uhh, not reallly. THe OS HDD on my gateway/fileserver died last night and I'm trying to decide between reinstalling debian or going FreeBSD. 
+[17:06:31] <Caerdwyn> basically, what happens is, I hit Ctrl+Win+left/right arrow, and it switched back and forth between desktops. but when I do that, the focus on the window drops and I have to repeatedly alt-tab or click in the window to allow me to type again
+[17:06:34] <Caerdwyn> its kinda annoying >_<
+[17:06:54] <init3> That's stupid
+[17:07:03] <init3> Seems like that'd be a bug
+[17:07:08] <Caerdwyn> that's what I'm thinking
+[17:07:20] <init3> Perhaps one that MS has no plans to fix though
+[17:07:35] <Caerdwyn> If I Win+D to bring up the task view/desktop switcher and manually click on what desktop I want, it doesnt do it
+[17:07:46] <Caerdwyn> the windows in each desktop stay focused
+[17:07:55] <Caerdwyn> its only if I use the keyboard shortcut to switch through them
+[17:13:01] <Sukasa> so is anyone taking part in the ICFP coding challenge this weekend?
+[17:18:14] <tiwake> what is that?
+[17:21:19] <Sukasa> http://icfpcontest.org/ tl;dr they post the contest details tomorrow and teams have 2-3 days to get a solution together
+[17:21:20] <PinkiePieBot> [ ICFP Programming Contest 2015 ]
+[17:22:41] <tiwake> meh
+[17:22:44] <Sukasa> The only hints we have to the nature of this years' contest are the name "Aleister" (Crowley?), and a few silly references to GCHQ and how everything's "top secret"
+[17:22:58] <Sukasa> so me and a coupl friends from the makersapec figure we'll take part this year
+[17:23:00] <tiwake> what was last years?
+[17:27:11] <Sukasa> ah..  I think it was lambda man.  pac-man clone, but pac-man was controlled from a hardware lisp machine and the ghosts had custom 8-bit CPUs or such
+[17:27:31] <Sukasa> you scored by having your pac-man survive as long as possible against 4 ghosts programmed by other teams
+[17:29:04] <tiwake> sounds kinda boring
+[17:29:29] <tiwake> (not that the programming I do is any less boring)
+[17:29:34] <Sukasa> another earlier one was the universal machine
+[17:29:45] <Sukasa> you're given "plates" that have basically opcode definitions on them
+[17:29:55] <Sukasa> and have to write a virtual machine in order to boot this "recovered" binary blob
+[17:30:28] <Sukasa> and then using that run the os inside it and complete various other challenges, and for each one you had to write a separate program to interact with your VM and the old binary
+[17:30:30] <Sukasa> to solve puzzles
+[17:30:36] <Sukasa> that one would've been fun to try
+[17:33:56] <tiwake> I'd rather work on something useful
+[17:37:53] <Sukasa> :/
+[17:43:15] *** Quits: Asoka (Asoka@Pony-6krrf9.net-htp.de) (Ping timeout: 121 seconds)
+[17:53:12] *** Joins: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile)
+[17:53:53] <DJ-C0L7[CSS]> bak
+[17:55:01] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[17:58:16] *** Joins: locodashie11 (locodash11@Pony-dp55p3.dsl-w.verizon.net)
+[18:00:25] <Rylee> Sukasa
+[18:00:26] <Rylee> ur a qt
+[18:02:26] <Sukasa> ?
+[18:02:55] <Sukasa> what makes you say that?
+[18:12:30] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[18:18:01] <Caerdwyn> Rylee: qt3.14
+[18:19:00] <Stik> does anyone manage their own subversion server under windwos?
+[18:19:10] <Stik> i am having problems :(
+[18:20:51] *** Unixkitty is now known as Awaykitty
+[18:21:49] *** Joins: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net)
+[18:22:22] *** init3 is now known as Init3-away
+[18:27:29] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[18:28:19] *** Joins: quindo2 (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[18:28:27] *** Quits: quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[18:30:06] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[18:36:06] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[18:36:32] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[18:42:16] <Stik> nevermind
+[18:46:25] *** quindo2 is now known as Quindo
+[18:50:00] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[18:50:18] <Stik> who knows perl :)
+[18:53:04] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[18:53:28] <Rylee> no one
+[18:53:33] <Rylee> one does not simply know perl
+[18:54:38] <Stik> bother
+[18:56:08] <Stik> can you type things directly into the perl program?
+[18:56:12] <Stik> or can it only run files?
+[18:56:21] <Stik> "print 123;" does nothing
+[18:58:08] <wolfyshy> http://judaism.stackexchange.com/questions/55823/perl-programming-in-the-torah
+[18:58:08] <PinkiePieBot> [ Perl Programming in the Torah - Mi Yodeya ]
+[18:58:18] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.never.fixed) (Quit: Cya~)
+[19:10:13] *** Quits: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net) (Quit: I am gone now)
+[19:12:03] *** Joins: Caerdwyn (edward@always.broken.sometimes.patched.never.fixed)
+[19:12:10] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[19:12:59] *** Joins: sleumas2000 (sleumie@my.little.karaoke)
+[19:13:23] *** Joins: Asoka (Asoka@Pony-6krrf9.net-htp.de)
+[19:17:01] *** Quits: sleumas2000 (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[19:20:09] *** Joins: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net)
+[19:22:22] *** Joins: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net)
+[19:26:04] *** Quits: Caerdwyn (edward@always.broken.sometimes.patched.never.fixed) (Quit: WeeChat 1.2)
+[19:27:23] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[19:29:43] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:40:40] <Midnight_Tinker> http://www.ibtimes.co.uk/spy-agency-whistle-blower-posted-top-secret-report-4chan-users-called-it-fake-gay-1514330 DESTROYED
+[19:40:40] <PinkiePieBot> [ Spy agency whistle-blower posts top secret report to 4chan but users dismiss it as 'fake and gay' ]
+[19:47:24] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:49:53] *** RedHelper is now known as Creeps|AFK
+[19:50:21] <DataByteBrony> oh, 4chan, hahaha
+[20:12:22] <HoneyDrops|Half> Of all the places to do that, 4chan is probably on the bottom of the list.
+[20:13:56] <AppleDash> http://puu.sh/jrMe9/aa6d4e0493.png
+[20:13:58] <AppleDash> It woooorks
+[20:14:19] <johnsey> platforms not to use for whistleblowing: 4chan, ebay, facebook, fetlife, allrecipes.com
+[20:14:39] <AppleDash> And no I don't actually use Windows, it's just the only thing that boots right now :(
+[20:14:41] <AppleDash> johnsey: lol
+[20:14:55] <Rylee> Stik: what you want is called a repl
+[20:15:01] <Rylee> read eval print loop
+[20:15:11] <Rylee> google for "perl repl"; some solutions exist
+[20:15:27] <Rylee> `perl` itself will simply read the input until EOF and then evaluate it
+[20:15:29] <johnsey> perl -e
+[20:15:46] <Rylee> yes, you *can* use perl -e to evaluate a single line of code
+[20:16:09] <johnsey> perl needs more than 1 line of code>
+[20:16:10] <johnsey> ?
+[20:16:14] <johnsey> heresy
+[20:16:40] <johnsey> i think you should return your perl programmer credentials 
+[20:19:21] <Moonlightning> well, Perl is one of those whitespace-agnostic language
+[20:19:21] <Moonlightning> languages *
+[20:19:21] <Moonlightning> So you /never/ need any newlines
+[20:19:21] <Midnight_Tinker> johnsey: I might leak on fetlife, but not any documents
+[20:21:54] <Moonlightning> badum tish
+[20:44:09] *** Creeps|AFK is now known as RedHelper
+[20:44:37] *** wolfyshy is now known as Flutterwoof
+[20:47:08] *** Init3-away is now known as init3
+[20:48:26] *** Flutterwoof is now known as Flutterby
+[21:03:35] *** Joins: ColtonDRG (coltondrg@Pony-1jl9ns.2amh.bmqj.0061.2602.IP)
+[21:10:36] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Ping timeout: 121 seconds)
+[21:12:08] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[21:14:45] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[21:23:10] * RainbowHacks boops Flutterby 
+[21:23:25] <Flutterby> hi RainbowHacks :3
+[21:23:29] <RainbowHacks> hey :3
+[21:23:37] <Flutterby> how goes?
+[21:23:47] <RainbowHacks> sleepy
+[21:23:51] <RainbowHacks> also in lots of pain
+[21:24:11] <RainbowHacks> entirely my fault though
+[21:36:05] <AppleDash> Arch won't boot on my new machine :(
+[21:36:44] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.never.fixed)
+[21:38:21] *** Parts: RainbowHacks (rainbow@Pony-m1cetk.ponix.space) ("Leaving")
+[21:38:28] *** Joins: RainbowHacks (rainbow@Pony-m1cetk.ponix.space)
+[21:38:37] * RainbowHacks derp
+[21:40:22] <RainbowHacks> AppleDash, what did you do D:
+[21:42:14] <Midnight_Tinker> AppleDash: did you try reading the manual?
+[21:45:05] <AppleDash> RainbowHacks: I don't know :(
+[21:45:10] <AppleDash> Midnight_Tinker: Yes
+[21:45:16] <RainbowHacks> D:
+[21:45:21] <AppleDash> An arch bootable USB kernel panics
+[21:45:24] <AppleDash> that's... exciting
+[21:45:52] <HoneyDrops|Half> Best thing I've heard about Windows 10: "Also it's free from Systemd"
+[21:46:27] * RainbowHacks giggles
+[21:46:35] <RainbowHacks> Well, that's a definite bonus in my book
+[21:46:43] <AppleDash> :(
+[21:46:43] <PinkiePieBot> Aww, don't be sad, AppleDash, I'm here!
+[21:46:47] <AppleDash> There's nothing wrong with systemd
+[21:46:57] <AppleDash> Everybody hates it for no reason
+[21:47:55] <RainbowHacks> AppleDash, there are many things wrong with systemd, though my primary opposition to it is philosophical in nature
+[21:48:17] <AppleDash> I've been using it since Arch switched and I've had no issues
+[21:48:33] * RainbowHacks moved to FreeBSD because of it (and other reasons....and has been VERY happy)
+[21:48:46] <RainbowHacks> Though I'm aware the BSDs arent for everyone :p
+[21:48:48] <AppleDash> FreeBSD is too unlike what I am used to for me to consider it at this time
+[21:48:53] <HoneyDrops|Half> systemd would be fine if it was just an init.  and all the other stuff it did was 30 different independent projects.
+[21:49:00] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[21:49:04] <RainbowHacks> AppleDash, as an Arch user, you actually would probably be VERY comfortable on FreeBSD.
+[21:49:10] <RainbowHacks> HoneyDrops|Half, AMEN
+[21:49:15] <AppleDash> I tried FreeBSD
+[21:49:22] <RainbowHacks> AppleDash, try harder.
+[21:49:24] <RainbowHacks> x3
+[21:49:26] <AppleDash> No
+[21:49:26] * RainbowHacks teases
+[21:49:36] <AppleDash> A friend of mine helped me with it and I think we agreed it was not right for me
+[21:49:36] * RainbowHacks doesn't actually care what you use.
+[21:50:03] <RainbowHacks> Everyone's workflow works with something different :3
+[21:50:28] <RainbowHacks> and as long as you don't bitch when I ask you to use PGP, I don't care what you actually use~
+[21:50:32] * RainbowHacks grins
+[21:51:09] * Gladiolus licks RainbowHacks face
+[21:51:14] * RainbowHacks flails OH GOD WAT
+[21:51:21] <AppleDash> lol
+[21:51:22] <HoneyDrops|Half> I've not dabbled much with systemd, but everything I hear and my limited experience with it tells me: systemd is great if you want to do things the way systemd expects you to.. But as soon as you want to do something non-standard, it's going to fight you.
+[21:51:22] <RainbowHacks> ohai Gladiolus :3
+[21:51:25] <Gladiolus> hai
+[21:51:38] <RainbowHacks> HoneyDrops|Half, that's it in a nutshell. 
+[21:51:52] <RainbowHacks> it's bloated, and takes on way too much.
+[21:52:30] <HoneyDrops|Half> Much like how Apple works.  You stay in their narrow scope of what they consider "right" it's painless and easy, but deviate from that and it's nothing but pain.
+[21:52:55] <Gladiolus> agreed
+[21:53:04] <Gladiolus> I just happen to stay in that narrow scope and thus enjoy my appletech.
+[21:53:16] <HoneyDrops|Half> And that's just not the direction I feel is good for computing.
+[21:53:17] * RainbowHacks uses a mac for work. ugh.
+[21:53:17] <Gladiolus> My 4S does... music and imessage, and that's about it.
+[21:53:25] <Gladiolus> Probably not no.
+[21:53:35] * RainbowHacks has a thinkpad with FreeBSD set up right next to it
+[21:53:40] <RainbowHacks> thats what im on right now
+[21:53:47] <Gladiolus> I do wish Apple was more open, and I wish Google would stop tracking me and MSFT would stop trying to push ads.
+[21:53:50] <Gladiolus> so much terrible
+[21:54:57] <johnsey> best badge ever: https://rad1o.badge.events.ccc.de/
+[21:55:03] <PinkiePieBot> [ start [rad1o] ]
+[21:56:14] <Caerdwyn> Does anybody know how to make all the channels you're in currently in weechat set to autojoin?
+[21:56:29] <Caerdwyn> ..without individually having to list them out in the config?
+[21:56:37] * HoneyDrops|Half wants and makes grabby hooves at johnsey.
+[21:56:54] <johnsey> you should come to the camp next week!
+[21:56:58] <johnsey> gonna be fun :)
+[21:57:13] * HoneyDrops|Half can't swim the Atlantic...
+[21:58:09] <johnsey> :(
+[21:58:15] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[21:58:22] <Caerdwyn> nvm
+[21:59:39] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[22:00:23] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.never.fixed) (Quit: WeeChat 1.2)
+[22:00:30] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[22:00:46] * RainbowHacks is out, time to get hair done. (don't tell rarity)
+[22:03:06] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[22:03:51] * Flutterby tells Rarity
+[22:04:03] *** djazz is now known as MangoBloom
+[22:05:09] <AppleDash> :(
+[22:06:50] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[22:06:52] *** init3 is now known as Init3-away
+[22:07:49] *** Quits: JockeTF (jocke@Pony-14s8b6.siw.siwnet.net) (Quit: Leaving.)
+[22:08:15] *** Init3-away is now known as init3
+[22:13:45] <Gladiolus> http://www.engadget.com/2015/08/06/japanese-court-bitcoin-ownership-ruling/
+[22:13:46] <PinkiePieBot> [ Japanese court rules that bitcoin can't be 'owned' ]
+[22:13:46] <Gladiolus> laff
+[22:13:49] <Gladiolus> all my laffs
+[22:17:02] <HoneyDrops|Half> Actually that's kinda a neat ruling, I wonder if you could use it as a basis for invalidating some abuses of IP law.
+[22:20:11] <Gladiolus> Probably, and it does make sense.
+[22:20:13] <DataByteBrony> what cannot be owned cannot be stolen
+[22:20:17] <DataByteBrony> IP is weird
+[22:20:31] <Gladiolus> Do you posess a bitcoin wallet? Yeah. Bitcoins themselves? Not so much.
+[22:20:40] <Gladiolus> buttcoin
+[22:21:16] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[22:22:15] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Quit: Leaving)
+[22:25:56] *** LightningCrash is now known as ThunderStorm
+[22:26:41] *** Joins: LightningCrash (lightning@Pony-t1l.5qg.129.65.IP)
+[22:27:09] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[22:28:03] <HoneyDrops|Half> Of all the thinks to give MS flak for, charging for DVD playback is one of the few things I even halfway sympathize with MS on.  Sure, 18.something USD is (hopefully?) more than the licensing fees cost them, but MS would otherwise have to pay them for every copy on Win10 installed.  This is one of the few cases blame should be placed elsewhere: software patents.
+[22:28:06] <Googie> The opposition to systemd annoys me. Not because I disagree with a lot of people, but damnit so many people can't seem to make sane arguments about it, or use technical arguments that aren't actually true.
+[22:28:19] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[22:28:38] <Googie> Though it's like that in a lot of things :V Damnit guys, you've got good reasons to oppose this, use them!
+[22:29:06] <Googie> (Though I know that it's really just a small minority of idiots doing that)
+[22:29:46] <Flutterby> https://bugs.freedesktop.org/show_bug.cgi?id=89509 this is enough of a technical argument for me :)
+[22:29:48] <PinkiePieBot> [ Bug 89509 – systemd-networkd: net.ipv4.conf.default.forwarding is ignored in 219 ]
+[22:30:10] <Flutterby> "we will have backwards compatibility, but not by default"
+[22:30:13] <Flutterby> who comes up with this?
+[22:30:50] <HoneyDrops|Half> My issues with systemd are simple and largely non-technical.   I feel it was adopted too fast, it's failure modes are still too unknown, it breaks compatibility with existing tools and standards, and it too tightly integrates what should always be a loosely integrated system.
+[22:31:01] <DataByteBrony> its
+[22:31:15] <DataByteBrony> ;P
+[22:31:41] <HoneyDrops|Half> yes, I have a tendency to do that >_>
+[22:31:52] <Googie> Basically that. Also the behavior of the developers does not inspire confidence, especially in bug reports like that
+[22:32:34] <HoneyDrops|Half> systemd is great is you ignore basically everything that makes the unix model great.
+[22:32:44] * Googie nods
+[22:33:41] <Googie> I guess what I'm saying is I'm more annoyed with the state of coherent debate in general :V
+[22:34:00] <Googie> Particularly among people who should know better
+[22:34:20] <Googie> (Not just with systemd, but a lot of things)
+[22:35:06] <HoneyDrops|Half> Combined with what feels like a rapid spread of its influence really rubs people the wrong way.  Change can be good, systemd does add some good changes (no one claims sysv is perfect), but it feels like we've been rushing headlong and not taking our time to find the good bits and winnow out the bad bits. 
+[22:39:47] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[22:44:08] *** Quits: djazz (djazz@djazz.se) (Ping timeout: 121 seconds)
+[22:45:09] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[22:48:34] *** djazz is now known as MangoBloom
+[22:49:59] <JustAberrant> pff, when has technical debate, especially in the open source community, ever been level headed or rational
+[22:51:15] <HoneyDrops|Half> It can be, rather that generally is what eventually prevails.
+[22:52:49] <JustAberrant> either way, most systemd debate isn't technical
+[22:52:59] <JustAberrant> there are technical issues, but it's mostly philosophical
+[22:54:43] *** GigaZzz is now known as Gigabit
+[22:55:00] <HoneyDrops|Half> Yeah
+[22:57:39] <JustAberrant> and it's almost impossible to have a philosophical debate go anywhere beyond name calling
+[22:57:52] <JustAberrant> because it comes down to personal views that arn't really quantifiable
+[22:58:12] <JustAberrant> same can be argued about privacy things
+[23:06:53] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[23:10:17] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.never.fixed)
+[23:27:16] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[23:31:12] *** Gigabit is now known as GigaWork
+[23:32:46] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[23:41:55] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Ping timeout: 121 seconds)
+[23:43:22] <AppleDash> JustAberrant: Don't you use some obscure hipster filesystem?
+[23:45:48] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Ping timeout: 121 seconds)
+[23:51:38] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[23:52:28] *** Quits: Hickory (Iceman@Darkhorse21) (Quit: quit)

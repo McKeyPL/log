@@ -1,0 +1,623 @@
+[00:04:41] *** Quits: MistVeil (AndChat3408@Pony-lelp7v.static.axtel.net) (Quit: Bye)
+[00:12:14] *** Creeps|AFK is now known as RedHelper
+[00:15:28] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[00:19:11] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[00:22:08] <Gladiolus> someone help me get networking under ms dos to work
+[00:22:12] <Gladiolus> ‘cause i’m a nerd
+[00:23:24] <Webster> Use FreeDOS and their network drivers.
+[00:24:57] <Gladiolus> wouldn’t i be using exactly what i am now under msdos
+[00:32:18] <Webster> DOS doesn't have a network stack so a program has to implement it all.
+[00:32:35] <Gladiolus> Yeah I get that, I’m just having trouble actually /doing/ it.
+[00:32:49] <Gladiolus> I found what seems to be working drivers, and ODIPKT, but ODIPKT gives me a weird error.
+[00:36:14] <Gladiolus> “Cannot get MLID control entry” weird
+[00:38:48] <Moonlightning> what the hell kind of operating system doesn't have a network stack??
+[00:39:16] <JustAberrant> one used primarily before networking was a thing for that platform?
+[00:39:43] <JustAberrant> the standard ROM for my dragon32 also lacks networking stack for similar reasons ;p
+[00:42:05] <JustAberrant> <Moonlightning> In Perl, is there not just a way to check if a string starts with another string?
+[00:42:19] <JustAberrant> you could use the index function or something similar, but the regex for that is so trivial why not just use it?
+[00:42:55] <Moonlightning> I feel like a regex is overkill for this.
+[00:43:02] <Moonlightning> Also, I'd have to escape a lot.
+[00:43:37] <JustAberrant> perl is largely built around regex, it's kinda the default how to get stuff done 
+[00:43:44] <Gladiolus> i don’t even know why i want to network in dos
+[00:43:45] <Gladiolus> i just do
+[00:43:50] <JustAberrant> which is probably why perl code is usually a pile of snakes
+[00:43:59] <Moonlightning> Gladiolus: the power of satan compells you?
+[00:45:18] <Seoson> The looks when someone discovers an MSDOS device on their network xD
+[00:45:30] <JustAberrant> Gladiolus: you probably need some kind of TSR type hack or a program that includes it's own networking stack like some games did
+[00:46:07] <Gladiolus> Kinda, what I’m finding out is a need to get the oldass driver to work in netware mode, and then a TSR to translate
+[00:46:13] <Gladiolus> The problem is coming up with the TSR
+[00:46:22] <JustAberrant> trumpet used to be the shit?
+[00:46:34] <JustAberrant> you still then need something that will use the TSR to do something useful
+[00:46:47] <Gladiolus> Arachne is what I’m trying to use
+[00:47:13] <JustAberrant> never heard of it
+[00:47:20] <Gladiolus> dos browser o3o
+[00:48:11] <JustAberrant> something like that you'd expect would have it's own stack or at least a recommended setup
+[00:48:26] <Gladiolus> it does but said setup won’t recognize my shiz
+[00:48:38] <JustAberrant> well then you're screwed ;p
+[00:48:40] <Gladiolus> it’s odd like this all seems to work but when I try and get the driver to load into the spot arachne wants, it implodes
+[00:48:46] * Gladiolus cry
+[00:49:07] * Moonlightning implodes Gladiolus
+[00:49:08] *** Pony_34966 is now known as Deathpony
+[00:49:38] *** Deathpony is now known as Pony_75860
+[00:49:50] *** Pony_75860 is now known as Deathpony_
+[00:50:43] <Gladiolus> o3o
+[00:51:51] * JustAberrant sends Gladiolus off for height measurement
+[00:52:09] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:55:08] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[01:17:44] <Gladiolus> IT WORKS o3o
+[01:17:49] <Gladiolus> I just had to switch which card i was using.
+[01:18:09] <Gladiolus> Canternet does not, unfortunatly, work.
+[01:19:08] <Moonlightning> wat
+[01:19:29] <Gladiolus> Port 80 connections to canternet under arachne get stuck in a cycle
+[01:19:35] <Gladiolus> probably because 20 years old code
+[01:19:59] <Moonlightning> arachwhatnow?
+[01:20:11] <Gladiolus> dos web browser
+[01:24:29] <Seoson> Canternet uses HSTS and probably does a 301 for http
+[01:24:29] *** Quits: siege (s1ege@Pony-0qa.2dv.248.50.IP) (Ping timeout: 121 seconds)
+[01:24:29] <Gladiolus> I bet this browser just can’t connect, period, due to HTTPS or whatever
+[01:24:29] *** WorkingData is now known as CiderData
+[01:24:29] <Seoson> Yep ;-)
+[01:24:29] <Gladiolus> now i need a dos mode irc client, o3o.
+[01:24:29] <Seoson> Also that made me look at the HTTP headers of the Canternet site. I love nerdy things ;-)
+[01:24:29] <Seoson> Haha connect manually via telnet :D
+[01:24:29] <Seoson> Telnet best IRC client
+[01:24:29] <Gladiolus> I did that once
+[01:24:29] <Gladiolus> getting the ping/pong is hard
+[01:24:29] * Moonlightning has an unfinished program on his project stack that was inspired by the pingpong thing
+[01:24:29] <Colgate> Seoson: probably Shutter
+[01:25:03] <Moonlightning> actually, it's gotten pushed out of the stack
+[01:25:03] <Moonlightning> but still
+[01:26:54] <Moonlightning> If it were finished, you could have it spawn an instance of `gnutls-cli` and `sed`, and connect them such that it would pingpong automatically while still letting you type to the `gnutls-cli` and showing you everything that happened
+[01:26:54] <Seoson> Oh and yeah I just checked. It does indeed a 301
+[01:36:36] *** Joins: DOS_Gladi (SRQ@Pony-ipvgi3.ed.shawcable.net)
+[01:36:40] <DOS_Gladi> POSTING FROM MS-DOS :)
+[01:39:10] * DOS_Gladi pokes at ponies.
+[01:39:20] <DOS_Gladi> Guuuuys be all impressed by my old computer wizardry.
+[01:41:31] <JustAberrant> meh ;p
+[01:43:10] <JustAberrant> if you're actually on an old 386 or something ok, but if you're just running this in a vm or something.. meh ;p
+[01:44:53] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:45:04] <Gigabit> So.. My Buddy's xbone is an Apple device in disguise.
+[01:45:44] <Gigabit> The Netflix app keeps tossing error ui-122 which is an apple specific error for netflix
+[01:46:06] <Gigabit> The support tech laughed and forwarded it on to the high ups
+[01:46:31] <DOS_Gladi> Pentium 3, JustAberrant- my retro machine.
+[01:46:38] <DOS_Gladi> Bigass CRT and everything. o3o
+[01:47:08] <JustAberrant> meh, Pentium 3 isn't that old ;p
+[01:47:30] <DOS_Gladi> Pff, it's a 1400Mhz Tualatin model P3, those are kinda rare! Took me forever to find one.
+[01:47:34] <JustAberrant> you can still go down and buy parts that'll work in one at a bestbuy, it's not retro ;p
+[01:47:36] <DOS_Gladi> This machine is peak 1990s and I love it.
+[01:47:51] <Seoson> It's amazing that it's still possible to get an OS as old as DOS running on a network.
+[01:48:08] <DOS_Gladi> I had an 8086 computer a while back.
+[01:48:17] <DOS_Gladi> Couldn't do much with it, fucked around and sold it for 50% profit lel.
+[01:48:22] <Seoson> I remember the trouble I had with Win95 >.>
+[01:48:34] <Seoson> Or even worse ME
+[01:48:42] <DOS_Gladi> It's much easier to do it historically since all the problems are already solved lol
+[01:48:44] * JustAberrant wants to get his dragon32 talking on a network, but the 32 lacks a serial port, so I'd have to do something with either the parallel port or the cartridge thing
+[01:49:01] <Moonlightning> …
+[01:49:07] <Moonlightning> I forgot the parentheses around an if condition
+[01:49:11] <DOS_Gladi> o3o
+[01:49:38] <Moonlightning> and spent about an hour trying to figure out what the hell was up with all these /"my" variable $foo masks earlier declaration in same scope at/ errors
+[01:49:47] <Moonlightning> what the hell that wasn't what it was at all Perl >:(
+[01:49:59] <JustAberrant> http://justaberrant.com/images/dell_thinkpad/IMG_20140927_143223.jpg  <-- even this is more retro ;)
+[01:50:24] <DOS_Gladi> "Dell Thinkpad"
+[01:50:26] <DOS_Gladi> wat
+[01:50:36] <DOS_Gladi> oh
+[01:50:41] <DOS_Gladi> I want it o3o
+[01:50:45] <JustAberrant> I used a power supply from an old dell laptop to get it running
+[01:50:49] <DOS_Gladi> I remember clitmice.
+[01:50:54] <DOS_Gladi> I could even FPS on them.
+[01:51:10] <Seoson> I love how worn out the arrow keys are :P
+[01:51:32] <Moonlightning> I'm so mad right now
+[01:51:38] <JustAberrant> hehe ;p
+[01:51:39] * Moonlightning prods Googie >:(
+[01:51:48] <JustAberrant> http://justaberrant.com/images/dragon32/dragon32_1.jpg  <-- also this ;p
+[01:52:07] <JustAberrant> I turned a USB sound "card" into a fake tape drive :D
+[01:52:07] <DOS_Gladi> eh non-pc hardware bores me
+[01:52:14] <DOS_Gladi> I had a C64 and a tandy but like
+[01:52:18] <DOS_Gladi> Before my time, no nostalgia there.
+[01:52:36] <JustAberrant> didn't have the old din-plug so soldered the wiered onto some finishing nails and jammed them in there. think I had a pic of that..
+[01:52:47] <JustAberrant> http://justaberrant.com/images/dragon32/tape_3.jpg  :D
+[01:53:04] <DOS_Gladi> exit
+[01:53:13] <DOS_Gladi> oh i guess that doesn't work here HAH HAH I'M DUMB
+[01:53:16] <DOS_Gladi> `/exit
+[01:53:36] <JustAberrant> I guess I have the opposite view
+[01:53:46] <DOS_Gladi> i have a 90s obsession
+[01:53:49] *** Quits: DOS_Gladi (SRQ@Pony-ipvgi3.ed.shawcable.net) (Client exited)
+[01:53:54] <JustAberrant> older PC hardware mostly bored me because it's too close to a modern computer
+[01:54:17] <Gladiolus> That’s what I think of pentium 4s
+[01:54:24] <Gladiolus> too new to be old, too slow to care
+[01:54:32] <JustAberrant> I mean, if you can plug a CD into it and an ethernet cable, it's basically a slower version of my desktop
+[01:54:36] <Moonlightning> why are you prefixing your attempts to close the connection at the IRC layer with `PRIVMSG #techponies :` :p
+[01:55:06] <JustAberrant> the dragon32 has nostalgia appeal because it's what I learned to code on
+[01:55:08] <Seoson> It was an actual IRC client, no telnet session
+[01:55:16] <Moonlightning> wat
+[01:55:23] <Moonlightning> on DOS?
+[01:55:27] <JustAberrant> but yeah, it's pretty useless .. I just like mucking around with it occasionally for kicks
+[01:55:27] <Moonlightning> With no network stack?
+[01:55:28] <Seoson> I checked to see if he would return me random nonsense
+[01:55:42] <Seoson> CTCP reply from DOS_Gladi: VERSION mTCP IRCjr for DOS version Jul  5 2015 running under DOS 7.10
+[01:57:03] <Seoson> I once got a boop via CTCP ;-)
+[01:58:23] <JustAberrant> :)
+[01:58:34] <Moonlightning> > DOS
+[01:58:36] <Moonlightning> > July 2015
+[01:58:38] <Moonlightning> sounds legit
+[01:58:53] <Seoson> Compile date?
+[01:59:07] <JustAberrant> hehe, people writing new stuff for old stuff isn't exactly a new thing ;p
+[02:00:35] <Moonlightning> …what…
+[02:00:42] <Moonlightning> why is filter() called grep() in Perl
+[02:00:43] <Moonlightning> what the hell
+[02:01:04] <JustAberrant> ?
+[02:01:26] <JustAberrant> wherever filter came from, perl and grep probably came first ;p
+[02:01:49] <Moonlightning> but `filter` makes more /sense/
+[02:02:02] <Moonlightning> it's not necessarily applying a regular expression, and it's certainly not printing anything
+[02:02:14] <Moonlightning> i.e. it's not doing the rep in grep
+[02:02:16] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[02:02:25] <Moonlightning> so if anything, it should be called g() -.-
+[02:02:30] <JustAberrant> meh
+[02:02:53] <JustAberrant> perl is a jumble of stuff from different places, people know what grep means because grep the utility has been around forever
+[02:03:11] <Moonlightning> but `filter` is /intuitive/
+[02:03:29] <JustAberrant> not as intuitive as grep in that regard
+[02:03:53] <JustAberrant> and perl never sought to be intuitive
+[02:04:01] <Moonlightning> :/
+[02:04:13] <JustAberrant> infact perl is practically famous for not being intuitive
+[02:04:27] <JustAberrant> it has a wide and varied set of specific syntax that you just have to know
+[02:04:29] <Moonlightning> you know what I need
+[02:04:40] <Moonlightning> I need an easy way to invoke external programs in Python
+[02:04:44] <JustAberrant> and the mechanics themselves are not exactly obvious with regards to scope
+[02:05:03] <Moonlightning> then I could just drop sh /and/ perl, and just use glorious snakelang
+[02:05:15] <JustAberrant> .. python can't do that?
+[02:05:24] <Moonlightning> not /easily/
+[02:05:29] <JustAberrant> :S
+[02:05:31] <Moonlightning> you have to fuck around with subprocess.Popen() or some shit
+[02:05:47] <JustAberrant> call("something"); ?
+[02:05:54] <Moonlightning> Luna forbid you should want to invoke two programs at once and pipe one into the other
+[02:06:00] <Moonlightning> foo | bar  # sh
+[02:06:06] <Moonlightning> # Python: …???
+[02:06:16] <JustAberrant> https://docs.python.org/2/library/subprocess.html
+[02:06:17] <PinkiePieBot> [ 17.1. subprocess — Subprocess management — Python 2.7.10 documentation ]
+[02:06:24] <Moonlightning> keyword: /easily/
+[02:06:29] <JustAberrant> ...
+[02:06:39] * JustAberrant just quickly looked at a script that calls something
+[02:06:45] <Moonlightning> Python is an excellent language, but it stinks at shell scripting
+[02:06:57] <JustAberrant> what's hard about..  
+[02:07:01] <JustAberrant> from subprocess import call
+[02:07:16] <JustAberrant> call(["pony", "pony arg"])
+[02:07:36] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:08:32] <JustAberrant> also apparently  os.system  which looks like it passes the command directly to the shell (so all your pipes and shit should work)
+[02:08:44] <Moonlightning> ewwwwwwwwwww, system()
+[02:08:48] * JustAberrant doesn't even like python but that seems reasonable enough...
+[02:08:56] <JustAberrant> Moonlightning: ...
+[02:09:16] <Moonlightning> JustAberrant: >>>
+[02:09:16] <JustAberrant> calling external shell commands is already ugly, what's wrong with system?
+[02:09:24] <Moonlightning> no, see, that's the point
+[02:09:26] <Moonlightning> it's ugly
+[02:09:38] <Moonlightning> so wrong language to use if that's mostly what you're trying to do.
+[02:09:41] <JustAberrant> so instead you're using perl?
+[02:10:08] <Moonlightning> yes
+[02:10:08] <JustAberrant> perl uses system for that too
+[02:10:18] <JustAberrant> it just has syntactic sugar to let you use backticks..
+[02:10:34] <Moonlightning> Or you could open() it as a handle or whatever
+[02:10:34] *** Joins: Asoka (Asoka@Pony-ti2eh5.net-htp.de)
+[02:10:57] <JustAberrant> .. isn't that what you were complaining about in python
+[02:11:05] <JustAberrant> the mechanics are basically identical as far as I can tell
+[02:11:20] <Moonlightning> No; I was complaining about system() :P
+[02:11:51] <JustAberrant> you're very strange sometimes..
+[02:13:45] *** Quits: Asoka_White (Asoka@Pony-35to8b.net-htp.de) (Ping timeout: 121 seconds)
+[02:14:18] <AppleDash> JustAberrant: Not just sometimes.
+[02:19:27] <JustAberrant> regardless, bed time
+[02:19:28] <JustAberrant> `nite
+[02:21:21] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:49:35] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:03:07] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[03:04:43] *** Gigabit is now known as Gigaway
+[03:20:48] *** Deathpony_ is now known as Deathpony
+[03:30:56] <Deathpony> my new desktop runs FO4 with all the settings on ultra
+[03:35:04] <Lapsus> :D
+[03:35:10] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[03:35:23] <Gladiolus> same o3o
+[03:35:31] <Gladiolus> It's a good looking game I dunno what all the whining is about.
+[03:35:40] <Gladiolus> Runs super smooth too.
+[03:44:20] *** Seoson is now known as Seoson|BNC
+[03:50:04] <Kinsley> Do we need a lesson in basic "Your experience doesn't invalidate anyone else's"?
+[03:51:33] *** One-Trick is now known as Octavia
+[03:58:21] <Gladiolus> wat
+[03:58:49] <Gladiolus> Graphics quality is a subjective thing sure, I'm just legit not sure how someone can look at that and say it's bad.
+[03:59:32] <Colgate> it isn't top of the line, is most people's complaints about it
+[03:59:38] <Colgate> which is true
+[03:59:56] <Colgate> really, the question is, are they good enough? and that's a personal question
+[04:00:43] <Gladiolus> Good enough for me. I can get a "not 2015" complaint, but not a 'bad' complaint.
+[04:01:18] <Gladiolus> also the radio stations feel like they went back a step tbh, I rarely use them.
+[04:01:43] <Gladiolus> Woulda been neat to maybe extend the catalogue out to the 1960s or include stuff back to the 40s. Same 1950s music again ugh.
+[04:12:23] <AppleDash> Gladiolus: I look at it and say it's bad
+[04:12:33] <AppleDash> The complaint I get is that it looks like Fallout: NEw Vegas
+[04:12:40] <AppleDash> Which was released... a long time ago
+[04:12:47] <AppleDash> s/I get/I have/
+[04:12:50] <Gladiolus> Have you played it? 
+[04:12:52] <AppleDash> Yes
+[04:12:54] <Gladiolus> I dunno doesn't look like it to me.
+[04:12:56] <AppleDash> Both games
+[04:13:16] <Gladiolus> NV had hella bad LOD problems and horrible textures, as well as a lack of good lighting. Nothing of which I see in 4.
+[04:13:33] * AppleDash shrugs
+[04:14:17] <AppleDash> Maybe Fallout 5 will look like a 2015-gen game
+[04:14:21] <AppleDash> In like 2020
+[04:14:26] <AppleDash> Then I'll be happier
+[04:14:32] <Gladiolus> o3o
+[04:15:27] <AppleDash> It'll also need like 32 CPU cores and 64GB of VRAM on a GTX 9080 Ti to run at medium settings
+[04:16:31] <Gladiolus> Well it's 2020.
+[04:16:41] <Gladiolus> We'll all have Quantum Qubes(TM)
+[04:20:22] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[04:24:39] <Googie> Which idly reminds me that I need to mess around with a quantum computer simulator
+[04:26:23] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Connection closed)
+[04:26:28] <Googie> Google has one at http://www.quantumplayground.net/#/home
+[04:26:29] <PinkiePieBot> [ Quantum Computing Playground ]
+[05:08:36] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[05:11:15] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[05:27:33] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[05:46:55] *** RedHelper is now known as Creeps|AFK
+[05:49:05] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[06:05:49] *** Joins: Asoka_White (Asoka@Pony-n2cadu.net-htp.de)
+[06:07:40] *** Quits: Asoka (Asoka@Pony-ti2eh5.net-htp.de) (Ping timeout: 121 seconds)
+[06:08:32] <Deathpony> I find it hilarious I only spent $100 more on this pc than a console
+[06:08:33] <Deathpony> and it still runs FO4 better
+[06:09:52] <Dashie> Deathpony, some people just won't ever learn.
+[06:10:09] <Deathpony> console plebs?
+[06:10:14] <Dashie> heh
+[06:10:33] <Deathpony> The only thing making me want an Xbox One is Halo 5
+[06:10:42] * Dashie shudders
+[06:10:47] <Deathpony> but it looks more like a CoD look alike now
+[06:10:56] <Dashie> You mean the 5th entry in the series that heralded the end of the Gamer, and the rise of the GameBro?
+[06:10:59] <Dashie> ;-;
+[06:11:48] <Dashie> Only thing that excited me about the PS4 was that they were using a fork of FreeBSD as the OS
+[06:11:53] <Dashie> THAT made me very happy
+[06:12:55] <Deathpony> FO4 runs horridly on the PS4
+[06:13:09] <Deathpony> as low as 8 FPS in parts
+[06:14:38] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[06:15:07] <Moonlightning> Why, Dashie? It hardly means anything.
+[06:15:18] <Gladiolus> Didn't the PS3 use a BSD-like?
+[06:15:24] <Gladiolus> or am i a confused wrongpony o3o
+[06:15:24] <Moonlightning> You're not going to be able to play with the system any more than you would if they'd rolled their own OS
+[06:16:04] * Phase wouldn't use FO4 as indicative of a machines power
+[06:16:42] <Deathpony> all the settings are maxed
+[06:18:26] <Dashie> Moonlightning, it has some implications
+[06:18:49] <Dashie> things that make me happy
+[06:21:00] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[06:21:43] <Deathpony> don't consoles have an OS now?
+[06:30:12] <Moonlightning> well, how you gonna run a computer without an OS? :p
+[06:31:29] <Moonlightning> Unrelatedly, what do y'all recommend in the way of UPSes >.>
+[06:31:31] <Deathpony> could probably run Windows on an Xbox One
+[06:31:34] * Moonlightning pings Googie.
+[06:32:29] <Googie> Well, older consoles certainly didn't use a proper "operating system". More just a boot loader
+[06:33:10] <Googie> The PS3's kernel was also a FreeBSD fork IIRC
+[06:33:10] <Phase> if that
+[06:33:21] <Phase> depending on how old we're talking
+[06:38:02] <Googie> Moonlightning: The biggest thing is just to make sure you're getting a "True Sine Wave" UPS.
+[06:38:47] <Moonlightning> As opposed to what? O.o
+[06:39:38] <Googie> As opposed to a modified sine wave.
+[06:40:04] <Lapsus> Phase: While fo4 might not be a good indicator of a machine's power, someone being happy that their machine will play the games that they want to play is a good indicator that it's a good match for them :3
+[06:40:12] <Moonlightning> modified sine wave? o.O
+[06:40:23] <Lapsus> if I'm not making sense, I blame pills and tiredness :D
+[06:41:08] <Lapsus> Moonlightning: Some UPSes don't generate very "clean" power, and some electronics don't like, or sometimes won't survive a shitty one
+[06:41:14] <Googie> Moonlightning: http://www.elinz.com.au/assets/images/pure%20sine%20wave%20inverters.jpg
+[06:41:16] <Phase> i meant more that FO4 is a bethesda game and naturally lacking in performance
+[06:42:04] <Lapsus> Phase: I don't know about lacking in performance, aside from the 60fps cap, unless you mean that it's just generally unoptimized :v
+[06:42:31] <Lapsus> then again it will also run surprisingly nicely on a bunch of older systems, so it's all a tradeoff
+[06:42:32] * Phase doesn't actually own FO4
+[06:42:59] <Googie> I've seen some pretty bad performance hiccups in Fo4, but I've heard that a lot of that might just be me running it in Windowed mode.
+[06:43:02] <Phase> what i've been seeing is stuff like lower detailed terrain still being rendered even though it's obscured by the higher detail
+[06:43:06] <Moonlightning> Googie: I dunno much about electric stuff, but that don't look good :P
+[06:43:18] <Phase> and... that's actually the worst i've heard
+[06:43:36] *** Quits: Deathpony (IceChat9@Pony-dbs.stj.54.50.IP) (Ping timeout: 121 seconds)
+[06:43:37] <Phase> though i've never heard someone say "runs great!" about a modern AAA game
+[06:44:08] <Phase> better than oblivions 2k polygon rocks i guess
+[06:44:22] <Lapsus> I stopped having LOD issues once I dropped the game onto my ssd, but it might be related to the windowed mode issues also
+[06:44:26] <Googie> Basically, a lot of devices are fine with Modified sine wave, but certain ones really don't like it. I know a friend had an issue since his Computer's PSU really didn't like the modified sine wave.
+[06:45:03] <Googie> Yeah, the game has issues with caching everything... reminds me a little bit like RAGE at launch.
+[06:45:15] <Lapsus> the square-like approximations of modified sine inverters cause all kinds of harmonic noise etc
+[06:45:28] <Googie> But nowhere near as bad, especially once moved to an SSD.
+[06:46:03] <Lapsus> It'd probably be really annoying to try running radio stuff from modified sine power, but that's almost all 12v anyways so it'd be silly as heck too
+[06:50:07] <Moonlightning> So, true sine wave. Anything else to keep in mind?
+[06:55:13] <Googie> Not really as far as I remember.
+[06:57:30] <Googie> https://superuser.com/questions/912679/when-do-i-need-a-pure-sine-wave-ups
+[06:57:32] <PinkiePieBot> [ power - When do I need a pure sine wave UPS? - Super User ]
+[07:00:29] *** Eventide is now known as Eventide|Sleepies
+[07:03:41] * HoneyDrops sets Googie to a 150Hz sawtooth waveform.
+[07:06:33] * Googie is using (the Australian model of) one of these IIRC: http://www.cyberpowersystems.com/products/ups-systems/pfc-sinewave-series/CP1500PFCLCD.html
+[07:06:36] <PinkiePieBot> [ PFC Sinewave Series - CP1500PFCLCD ]
+[07:22:27] *** Gigaway is now known as Vega
+[07:37:30] <Gladiolus> lol cleaning my data hard drive after 3 years
+[07:37:33] *** Vega is now known as Snoarin
+[07:37:36] <Gladiolus> got like, a terabyte free just deleting dumb shit
+[07:37:38] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[07:37:47] <Gladiolus> turns out steam doesn't properly uninstall things!
+[07:40:31] *** Joins: tiwake (Octavia@Pony-8vii98.or.charter.com)
+[07:47:27] *** Joins: firestream (vinylderpy@Pony-boh2us.dsl.bell.ca)
+[07:53:22] *** Joins: rickyis911 (vinylderpy@Pony-boh2us.dsl.bell.ca)
+[07:53:22] *** Quits: rickyis911 (vinylderpy@Pony-boh2us.dsl.bell.ca) (Connection closed)
+[07:53:33] *** Joins: Sombra (Iceman@Darkhorse21)
+[07:53:57] *** Quits: firestream (vinylderpy@Pony-boh2us.dsl.bell.ca) (Quit: )
+[07:54:32] *** Joins: firestream (vinylderpy@Pony-boh2us.dsl.bell.ca)
+[08:00:14] <Moonlightning> In the now six years I've had this laptop, I have never wiped the filesystem
+[08:00:19] <Moonlightning> I should probably do so at some point.
+[08:00:40] <Moonlightning> I'm actually thinking of just nuking all the system directories and then reinstalling the OS on top
+[08:01:14] <Gladiolus> but all dem hidden files!
+[08:01:18] <Gladiolus> if you're gonna do that just format
+[08:01:22] <Gladiolus> feels fresher
+[08:01:30] <Moonlightning> but, my timestamps!
+[08:04:01] * HoneyDrops touches Moonlightning to update her timestamp.
+[08:04:38] * Moonlightning moans as HoneyDrops rewrites her inode.
+[08:05:05] *** zz_CyberJacob is now known as CyberJacob
+[08:09:52] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[08:12:07] <Moonlightning> https://codegolf.stackexchange.com/questions/47582
+[08:12:08] <PinkiePieBot> [ code golf - Gotta Match Them All! Write a regex to match the original 151 Pokemon but no subsequent Pokemon - Programming Puzzles & Code Golf Stack Exchange ]
+[08:15:52] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[08:16:54] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[08:26:15] <Phase> dang
+[08:27:44] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:29:49] <Moonlightning> Ha/ha!/
+[08:29:51] <Moonlightning> https://www.eff.org/press/releases/onlinecensorshiporg-tracks-content-takedowns-facebook-twitter-and-other-social-media
+[08:29:51] <PinkiePieBot> [ Onlinecensorship.org Tracks Content Takedowns by Facebook, Twitter, and Other Social Media Sites | Electronic Frontier Foundation ]
+[08:29:59] * Moonlightning begins crossposting.
+[08:34:06] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[08:40:03] *** Quits: Crimson_Tail (Bluepon@Pony-968qno.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[08:41:05] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[08:50:24] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[08:57:07] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[09:36:21] *** CyberJacob is now known as zz_CyberJacob
+[09:37:50] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:49:15] <Compu> oooh more redstone stuff just got added to minecraft PE
+[09:50:25] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[09:56:10] *** Joins: Phase (Phase4@Pony-f34100.internode.on.net)
+[10:11:44] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:15:10] <Moonlightning> http://www.npr.org/sections/alltechconsidered/2015/11/10/455386738
+[10:15:11] <PinkiePieBot> [ Researchers Find FM Radio Can Help Improve Wi-Fi Speeds : All Tech Considered : NPR ]
+[10:15:30] <Moonlightning> This sounds like an interesting idea. I wonder why it hasn't already been implemented?
+[10:19:13] * Moonlightning frowns.
+[10:19:14] * PinkiePieBot hugs Moonlightning
+[10:19:26] <Moonlightning> This download is running at only 1.1 MiB/s
+[10:19:30] <Moonlightning> what happened to my 1.5 :c
+[10:20:01] <Moonlightning> I mean, the bulk upload I have going and the egress qdiscs et al shouldn't affect downloads noticably, right?
+[10:36:14] * Moonlightning pesters Gladiolus.
+[10:36:32] * Gladiolus wat
+[10:36:35] * Gladiolus goes o3o
+[10:37:06] <Moonlightning> Any interest in hosting other ponies' backups in exchange for having yours hosted?
+[10:38:43] * Moonlightning also prods Googie. “Wha'd you say when I asked you? You're missing from my list.”
+[10:39:19] <Googie> I have virtually no bandwidth :P
+[10:39:36] <Moonlightning> …Australia?
+[10:40:11] <Googie> Yeah. Currently at 1.3mbit down/0.25mbit upload
+[10:40:27] <Moonlightning> Hay, /I'm/ doing it with roughly those numbers!
+[10:40:33] <Moonlightning> …oh, /mbit./
+[10:40:34] <Moonlightning> Uh…
+[10:40:39] <Googie> Yeah...
+[10:40:48] <Moonlightning> Damn.
+[10:40:58] <Moonlightning> Why is the state of the Internet amazing, and yet so horrible. :(
+[10:45:56] * Moonlightning pesters Gladiolus s'more
+[10:46:20] <Googie> I have months where total utilization is > 50%
+[10:46:42] <Stik> i remember tlaking to you about this a while ago, but i've forgotten, what software are you going to use for this backup thing?
+[10:47:17] <Moonlightning> Stik: common interactive shells and the standard libraries of common scripting languages? :p
+[10:47:37] <Moonlightning> I've just been using rsync. Dunno about Dusk.
+[10:51:59] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[10:56:30] * Moonlightning begins bothering afkji
+[10:57:13] <Stik> oh right so you propose just giving people a shell on one another's servers
+[10:57:22] <Stik> that's simpler than i was anticipating
+[10:57:35] <Moonlightning> Mmm.
+[10:58:05] <Stik> my home server only has a tiny hdd tho so i don't think this'd work very well for me :)
+[10:58:32] <Moonlightning> How tiny is tiny?
+[10:58:41] <Moonlightning> Because, if you look at the table…
+[10:58:48] <Moonlightning> https://www.blackl.net/sharing-is-caring.html
+[10:58:49] <PinkiePieBot> [ Sharing is Caring ]
+[11:26:01] <Stik> i think it has a 20gb drive 
+[11:26:49] <Moonlightning> Oh, yeah, okay. XD
+[11:27:11] <Stik> :)
+[11:27:30] <Stik> i have about 6tb of storage attached to my desktop pc but that's not really accessible from the internet
+[11:27:37] <Stik> so would need some funny software to deal with it i think
+[11:27:43] <Moonlightning> Dude, that's awesome!
+[11:27:49] <Moonlightning> You should /make/ it accessible from the Internet. :P
+[11:28:04] <Moonlightning> You don't need special software, just full-featured networking stuff.
+[11:28:08] <Moonlightning> What's your router?
+[11:28:27] <Stik> a debian server
+[11:28:33] <Moonlightning> Perfect.
+[11:29:15] <Stik> are you thinking just run an sftp server on it or something
+[11:29:37] <Moonlightning> …actually, I dunno what I'm thinking. In my case, the router /is/ the storage box, so XD
+[11:29:47] <Moonlightning> don't suppose you have IPv6? :p
+[11:30:40] <Stik> not sure tbh, i'm with a big isp so its possible
+[11:30:52] <Stik> don't really know the first thing about v6 though
+[11:31:01] <Stik> also the problem with using my desktop is that it's not always turned on :)
+[11:31:17] <Moonlightning> The first thing about v6 is that the address space is big enough that each machine can have its own global address.
+[11:31:24] <Moonlightning> …mmmm…yeah, that'll be a problem
+[11:31:34] <Moonlightning> I take it the disk is internal?
+[11:31:49] <Moonlightning> I mean, I guess you could always buy an enclosure and attach it to your router
+[11:31:57] <Stik> nah they're a mixture, i think there's 2tb internal and a couple of external ones
+[11:32:10] <Stik> mm but that's then a faff since i have to work out how to do network storage
+[11:32:30] <Moonlightning> …okay, list your disks and the sizes|free space?
+[11:32:32] <Stik> if i find a spare drive somewhere i'll see if i can attach it to the server
+[11:32:45] <Moonlightning> Because, again, look at the table
+[11:32:58] <Moonlightning> You only need 256 gigs on one disk and you can host everypony
+[11:33:01] <Moonlightning> all two of us \o/
+[11:33:03] <Stik> haha
+[11:34:42] <Stik> i'll have a dig around in the attic this evening and see what's up there
+[11:34:53] <Stik> there's bound to be some old drives somewhere
+[11:35:18] <Moonlightning> :P
+[11:35:31] <Moonlightning> Are all of your disks currently tied up in other stuff?
+[11:36:21] <Stik> they're local backups
+[11:36:36] <Stik> well, the internal one is just my main storage, then the two external ones are backups
+[11:36:43] <Moonlightning> …ahhhh.
+[11:36:54] <Moonlightning> Well, yeah, you could do network storage!
+[11:36:55] <Stik> but local backups are all well and good until your house burns down :(
+[11:37:03] <Moonlightning> right? >.<
+[11:37:15] <Moonlightning> I live on a fault line, too :P
+[11:37:22] <Moonlightning> well…pretty darn close to one
+[11:37:37] <Stik> eek, do you get a lot of quakes?
+[11:37:43] <Moonlightning> Nah.
+[11:37:47] <Moonlightning> But this project was partially inspired by a tremor. :p
+[11:56:28] <Stik> friend has just bought a new laptop with a 4k screen
+[11:56:30] <Stik> it is pretty nice
+[11:56:36] <Stik> am a bit tempted
+[12:03:55] <Moonlightning> Do it!
+[12:03:57] <Moonlightning> Steal that sucker
+[12:11:44] <Stik> haha
+[12:20:46] *** Joins: pereba (pereba@Pony-l4f.9jr.40.177.IP)
+[12:21:19] <Lapsus> oh man
+[12:21:30] <Lapsus> I bet that looks awesome and is also impossible to read text on
+[12:23:03] * Moonlightning blinks.
+[12:23:04] <Moonlightning> Why?
+[12:24:15] <Lapsus> tiny text on smallish hires screen
+[12:27:37] <Stik> he's got it at 150% text size 
+[12:27:47] <Stik> it's a 15" screen, looks okay really
+[12:28:02] <Stik> just so crisp, like a smartphone screen but big :)
+[12:31:18] <Moonlightning> well, why are you making the text tiny? :P
+[12:32:14] <Stik> i bet a 30" 4k screen is amazing
+[12:32:25] <Stik> think how much space you'd have
+[12:37:58] <Googie> Moonlightning: A lot of applications don't deal with scaling DPI correctly.
+[12:38:09] <Moonlightning> Ahh.
+[12:38:56] <Googie> Text is set to a fixed size in pixels, so when the individual pixels get smaller...
+[12:49:23] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[12:53:38] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[13:04:30] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[13:12:20] *** Seoson|BNC is now known as Sour_Sweet
+[13:13:29] <Sour_Sweet> Messed up DPI scaling and horrible performance is the reason I won't switch to a 4k display anytime soon. I prefer the benefits of my 144 Hz display.
+[13:13:52] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[13:14:54] <Stik> only old software suffers from that really
+[13:15:14] <Stik> modern versions of windows have been doing higher dpi settings for a long time now and there's rarely any problems
+[13:16:47] <Sour_Sweet> Except for tiny fonts under certain circumstances, which immediately disqualifies them for me due to low vision.
+[13:17:00] <Stik> hmm i havne't encountered that
+[13:17:18] <Stik> but i don't use a lot of legacy stuff so maybe that's why
+[13:17:34] <Sour_Sweet> Even if just one application I need on a daily decides to render much smaller than before I'm screwed
+[13:17:44] <Stik> yeah i guess
+[13:18:11] <Stik> clearly what you need is a 4k, 144hz screen that's got the same physical pixel size that you're used to :)
+[13:18:12] <Sour_Sweet> daily basis* Also 3d performance is a concern
+[13:18:16] <Stik> a 60inch thing
+[13:18:33] <Stik> yeah this laptop has a 980 i think, to be able to drive it sensibly
+[13:19:16] <Sour_Sweet> I'll probably switch straight to ultra widescreen, as that makes more sense for me.
+[13:20:08] <Sour_Sweet> Everything awesome about a multi monitor setup without the hassle of having to physical monitors ;-)
+[13:20:18] <Sour_Sweet> two*
+[13:30:56] <roflin> hnnnngggg a 60inch 4k screen... 
+[13:31:21] <roflin> a programmers wet dream.
+[13:31:34] <roflin> docs, code, and 2 other things on one monitor
+[13:36:28] *** Quits: pereba (pereba@Pony-l4f.9jr.40.177.IP) (Quit: AdiIRC, bumping your irc experience. www.adiirc.com)
+[13:40:04] <JustAberrant> personally i prefer many smaller monitors.. not sure why, but I guess i like the physical separation (which could probably be easily recreated in software)
+[13:40:45] <Stik> i think if i could i'd have one giant monitor
+[13:40:51] <Stik> it would rule for games and video
+[13:41:03] <JustAberrant> I guess the other problem is viewing angle
+[13:41:17] <JustAberrant> with multiple monitors you angle the outer ones towards you and tilt the ones above you down a bit
+[13:41:26] <JustAberrant> with a big flat one you can't do that
+[13:41:37] <Stik> hmm true
+[13:41:43] <Stik> so we need a big curved
+[13:41:53] <Stik> like a section of the surface of a large sphere
+[13:41:55] <JustAberrant> yeah, and I think that would be.. strange
+[13:41:59] <Stik> (is there a name for that?)
+[13:42:05] <Stik> like a 2d chord
+[13:43:41] <JustAberrant> I think curved would be weird.. but I've ever tried (or even seen) a curved monitor, so who knows
+[13:43:45] <JustAberrant> http://justaberrant.com/images/hoose/july_12_2015__tmp_eth_run/08.png  <-- also, gaze upon the glory ;p
+[13:44:13] <Stik> i've watched curved tvs, and they're quite cool
+[13:44:18] <Stik> i imagine a big curved monitor would work too
+[13:44:47] <Stik> heh that's quite cool, very home-made
+[13:45:23] <Stik> i've got 4 in a line that wrap around me
+[13:45:59] <JustAberrant> personally I don't really like the whole tiling vm thing either, so that would make a large screen harder to use 
+[13:46:10] <JustAberrant> but probably solvable
+[13:46:35] <JustAberrant> and yeah, that's actually a desk I threw together years ago, brought it to my new house "temporarily" and have been using it ever since ;p
+[13:46:35] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[13:47:01] <JustAberrant> some day I'm going to build a proper desk that fits this room :D
+[13:47:46] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[13:48:35] <Stik> if it works :)
+[13:48:48] <JustAberrant> also.. work time :(
+[13:58:22] <johnsey> why bother with monitors when you can have a whole virtual office around you? :D
+[13:58:41] <johnsey> ok, wearing VR glasses may be tiring after a while
+[14:00:28] <Sour_Sweet> Actually microsoft's hololens was more interesting in that regard than any other full VR setup.
+[14:00:30] <johnsey> doesn't change that placing technical refs and such all around you would be pretty awesome
+[14:01:16] <Sour_Sweet> Just turn any surface into a monitor and physically interact with it. That'd be amazing.
+[14:01:24] <johnsey> the hololens would be a good compromise, though nothing beats virtually placing yourself in $your_favorite_location
+[14:03:40] <Sour_Sweet> Sadly the immersion ends when you run into a wall or trip over something. Hololens solves that by using your actual environment, which seems like a reasonable way to me, even though the potential use cases are way more limited
+[14:04:39] <johnsey> i usually don't move around much when i'm working
+[14:05:03] <Sour_Sweet> (I'll probably get my hands on a complete VR device non the less, because I have no intention to use it for productive things. VR Gaming is more attractive)
+[14:06:04] <Stik> vr works really well for racing games
+[14:06:20] <Stik> they're so much better when you can look round corners
+[14:07:53] <johnsey> https://youtu.be/DDNxbAYlBhI
+[14:07:54] <PinkiePieBot> MS FSX - Oculus Rift DK1 - DIY 6DOF Platform - Hawaii Bad Weather - 20806 views - 6m 40s long - 48 likes - 100.0%
+[14:09:24] <Stik> that's awesome
+[14:24:59] *** Eventide|Sleepies is now known as Eventide
+[14:38:32] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[14:46:26] *** Joins: Asoka (Asoka@Pony-li0m8m.net-htp.de)
+[14:48:08] *** Quits: Asoka_White (Asoka@Pony-n2cadu.net-htp.de) (Ping timeout: 121 seconds)
+[14:52:29] *** Joins: Asoka_White (Asoka@Pony-7urecq.net-htp.de)
+[14:55:09] *** Quits: Asoka (Asoka@Pony-li0m8m.net-htp.de) (Ping timeout: 121 seconds)
+[15:00:06] *** Joins: Asoka (Asoka@Pony-decn96.net-htp.de)
+[15:02:41] *** Quits: Asoka_White (Asoka@Pony-7urecq.net-htp.de) (Ping timeout: 121 seconds)
+[15:10:39] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[15:11:24] *** Joins: Asoka_White (Asoka@Pony-65oufj.net-htp.de)
+[15:14:15] *** Quits: Asoka (Asoka@Pony-decn96.net-htp.de) (Ping timeout: 121 seconds)
+[15:17:38] *** Joins: Asoka (Asoka@Pony-0r7hi5.net-htp.de)
+[15:19:50] *** Quits: Asoka_White (Asoka@Pony-65oufj.net-htp.de) (Ping timeout: 121 seconds)
+[15:22:11] *** Joins: Asoka_White (Asoka@Pony-l3oenm.net-htp.de)
+[15:24:53] *** Quits: Asoka (Asoka@Pony-0r7hi5.net-htp.de) (Ping timeout: 121 seconds)
+[15:32:39] *** Joins: Asoka (Asoka@Pony-7ae6b4.net-htp.de)
+[15:34:25] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[15:35:24] *** Quits: Asoka_White (Asoka@Pony-l3oenm.net-htp.de) (Ping timeout: 121 seconds)
+[15:44:19] *** Joins: Asoka_White (Asoka@Pony-7jbcv7.net-htp.de)
+[15:46:56] *** Quits: Asoka (Asoka@Pony-7ae6b4.net-htp.de) (Ping timeout: 121 seconds)
+[15:49:52] *** Joins: Asoka (Asoka@Pony-3flbqm.net-htp.de)
+[15:51:19] *** Quits: Asoka_White (Asoka@Pony-7jbcv7.net-htp.de) (Ping timeout: 121 seconds)
+[16:02:05] *** Joins: Asoka_White (Asoka@Pony-04vavo.net-htp.de)
+[16:03:59] *** Quits: Asoka (Asoka@Pony-3flbqm.net-htp.de) (Ping timeout: 121 seconds)
+[16:07:17] *** Joins: Asoka (Asoka@Pony-6f2q2r.net-htp.de)
+[16:10:00] *** Quits: Asoka_White (Asoka@Pony-04vavo.net-htp.de) (Ping timeout: 121 seconds)
+[16:29:39] *** Quits: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au) (Connection closed)
+[16:31:30] *** Joins: Asoka_White (Asoka@Pony-r9euvu.net-htp.de)
+[16:33:32] *** Quits: Asoka (Asoka@Pony-6f2q2r.net-htp.de) (Ping timeout: 121 seconds)
+[16:37:35] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (Ping timeout: 121 seconds)
+[16:44:59] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[16:52:32] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (Ping timeout: 121 seconds)
+[16:52:53] <Sour_Sweet> "Firefox has stopped this website from asking you for permission to install software on your computer. Allow?" [My free translation] WTF? How is this going to protect me if you ask me anyway?
+[16:54:12] <johnsey> because maybe you want to install that software?
+[16:54:40] <Sour_Sweet> But that it could just show me the install addon dialog directly
+[16:54:46] <Sour_Sweet> than*
+[16:55:23] <Sour_Sweet> I don't see the point in an additional dialog
+[16:56:55] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[16:57:55] *** Joins: thatdguy (WebChat@Pony-ff6ltf.abo.wanadoo.fr)
+[17:03:57] *** Quits: quindo (Quindo@Pony-8qt.17k.198.99.IP) (Ping timeout: 121 seconds)
+[17:06:17] *** Joins: quindo (Quindo@Pony-8qt.17k.198.99.IP)
+[17:12:31] *** Joins: Asoka (Asoka@Pony-dfp7g2.net-htp.de)
+[17:14:53] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[17:15:06] *** Quits: Asoka_White (Asoka@Pony-r9euvu.net-htp.de) (Ping timeout: 121 seconds)
+[17:42:31] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:59:03] *** Joins: Asoka_White (Asoka@Pony-skkgcu.net-htp.de)
+[18:01:11] *** Quits: Asoka (Asoka@Pony-dfp7g2.net-htp.de) (Ping timeout: 121 seconds)
+[18:10:48] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[18:12:11] *** Joins: Crimson_Tail (Bluepon@Pony-qm2bl9.cg80.k4gu.0151.2601.IP)
+[18:22:23] *** Joins: Asoka (Asoka@Pony-24hj69.net-htp.de)
+[18:25:13] *** Quits: Asoka_White (Asoka@Pony-skkgcu.net-htp.de) (Ping timeout: 121 seconds)
+[18:25:34] *** Joins: Asoka_White (Asoka@Pony-6qbl27.net-htp.de)
+[18:27:13] *** Quits: Asoka (Asoka@Pony-24hj69.net-htp.de) (Ping timeout: 121 seconds)
+[18:34:47] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[18:40:12] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:43:18] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[19:10:44] *** quindo is now known as Flowey
+[19:10:56] *** Flowey is now known as Quindo
+[19:33:02] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:40:37] <Snoarin> Holy fuck.. My phone is so messed up..
+[19:41:54] <Snoarin> Running so slow, startup takes forever. Apps constantly freezing
+[19:44:09] <Snoarin> Would deleting the cache from recovery mode help?
+[19:46:54] *** Joins: Asoka (Asoka@Pony-o7v0iq.net-htp.de)
+[19:49:20] *** Quits: Asoka_White (Asoka@Pony-6qbl27.net-htp.de) (Ping timeout: 121 seconds)
+[19:52:17] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:07:01] *** Joins: Asoka_White (Asoka@Pony-4a9h91.net-htp.de)
+[20:09:22] *** Quits: Asoka (Asoka@Pony-o7v0iq.net-htp.de) (Ping timeout: 121 seconds)
+[20:29:57] <Moonlightning> Snoarin: It doesn't sound like it would, but dropping a cache sounds like it couldn't hurt, either.
+[20:35:39] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[21:07:36] *** zz_CyberJacob is now known as CyberJacob
+[21:19:47] *** Joins: Asoka (Asoka@Pony-j97b4q.net-htp.de)
+[21:22:28] *** Quits: Asoka_White (Asoka@Pony-4a9h91.net-htp.de) (Ping timeout: 121 seconds)
+[21:41:06] *** Joins: Asoka_White (Asoka@Pony-qruvcb.net-htp.de)
+[21:44:00] *** Quits: Asoka (Asoka@Pony-j97b4q.net-htp.de) (Ping timeout: 121 seconds)
+[22:18:17] *** Divide is now known as Divide|TechSupport
+[22:39:07] *** Joins: Fallfeathers (Fallfeather@Pony-ftcr66.bigpond.net.au)
+[22:40:38] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[22:41:33] *** Joins: Rainb (rainb@Pony-dqp.p0a.50.181.IP)
+[22:45:51] *** Quits: Rainb (rainb@Pony-dqp.p0a.50.181.IP) (Ping timeout: 121 seconds)
+[23:00:09] *** Quits: Crimson_Tail (Bluepon@Pony-qm2bl9.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[23:01:12] *** CyberJacob is now known as zz_CyberJacob
+[23:11:32] *** Joins: Crimson_Tail (Bluepon@Pony-r1nnri.cg80.k4gu.0151.2601.IP)
+[23:12:46] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[23:13:25] *** Quits: init3 (quassel@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[23:14:55] *** Joins: init3 (quassel@init3.Is.Not.A.Clever.Poni)
+[23:46:34] *** Joins: Asoka (Asoka@Pony-bptvvq.net-htp.de)
+[23:49:10] *** Quits: Asoka_White (Asoka@Pony-qruvcb.net-htp.de) (Ping timeout: 121 seconds)
+[23:52:56] *** Joins: Obaskyr (Tachy@Pony-85h8ga.range109-146.btcentralplus.com)

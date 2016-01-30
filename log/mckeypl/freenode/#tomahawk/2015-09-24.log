@@ -1,0 +1,375 @@
+[00:00:49] <alastairp> oh. got it I think
+[00:03:00] <alastairp> ok, try again?
+[00:03:16] <theli_ua> muesli: how can get to album view page of a certain artist if musicbrainz have multiple artists under the same name?
+[00:03:21] <alastairp> there might be an off-by-one at the end now, and it’ll explode trying to add page 3336
+[00:03:39] *** Quits: Fohlen (~Fohlen@v22015072923726622.yourvserver.net) (Ping timeout: 240 seconds)
+[00:06:03] *** Joins: Fohlen (~Fohlen@v22015072923726622.yourvserver.net)
+[00:09:16] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[00:10:54] <theli_ua> jherskowitz: do rtmp streams work correctly for you? with rhapsody's streams tomahawk just sits there -00:03 always for me
+[00:10:59] <theli_ua> never switches to the next song
+[00:12:43] <jherskowitz> theli_ua: works for me
+[00:12:55] <theli_ua> jherskowitz: my old ffmpeg/libvlc then
+[00:12:57] <jherskowitz> I was listening to a bunch of rhapsody tracks ealery
+[00:13:00] <jherskowitz> earlier
+[00:13:10] <theli_ua> ealery, sounds like a celery
+[00:13:16] <theli_ua> I dont like celery
+[00:14:34] *** Quits: soee (~soee@aatu15.neoplus.adsl.tpnet.pl) (Ping timeout: 250 seconds)
+[00:14:56] * jherskowitz off to by ealery.com
+[00:17:21] <theli_ua> I like the mp3 price for this album http://amzn.com/B00KLPHT9O
+[00:17:24] <tomabee> [ MP3 Downloads | www.amazon.com | http://g-ecx.images-amazon.com/images/G/01/digital/music/crm/hqp/0042767198_1421430879_mp3_prime-music_hqp_1v2smaller._V332398157_.jpg ]
+[00:20:02] <jherskowitz> theli_ua: better than the vinyl price
+[00:20:13] <theli_ua> :)
+[00:43:54] *** grindhold_ is now known as grindhold
+[00:51:25] <lfranchi> alastairp: i think it finished?
+[00:51:29] <lfranchi> at least off by one 
+[00:53:53] *** Quits: johu_ (~johu@gentoo/developer/johu) (Ping timeout: 246 seconds)
+[00:54:00] *** Joins: saidinesh (~quassel@minad.de)
+[00:54:14] *** Quits: saidinesh5 (~quassel@148.251.20.49) (Ping timeout: 272 seconds)
+[00:55:20] *** Joins: johu (~johu@gentoo/developer/johu)
+[01:07:14] <domme> theli_ua: soo.. i guess your resolver looks good ... you feel good about merging it?
+[01:08:35] <theli_ua> domme: well, as far as resolver itself it looks good, but I didn't give it too much testing as those rtmp streams do not work too good for me... but jherskowitz says it works for him just fine
+[01:09:00] <theli_ua> all config options do work, search works, resolve as well
+[01:09:03] <domme> theli_ua: that _defer function is a bit odd
+[01:09:08] <theli_ua> I didn't bother adding any locker support
+[01:09:10] *** Joins: github-tomahawk (~github-to@192.30.252.40)
+[01:09:10] <github-tomahawk> [13tomahawk-resolvers] 15mrmaffen pushed 5 new commits to 06master: 02http://git.io/vnXSf
+[01:09:10] <github-tomahawk> 13tomahawk-resolvers/06master 1458ada42 15Enno Gottschalk: [rdio] Also enable functionality in lookupUrl when not logged in. Bump to 0.3.1
+[01:09:10] <github-tomahawk> 13tomahawk-resolvers/06master 146b3306c 15Enno Gottschalk: [example] Fix docs for getConfigUi-method.
+[01:09:10] <github-tomahawk> 13tomahawk-resolvers/06master 1468a3404 15Enno Gottschalk: [example] Fix lookupUrl
+[01:09:10] *** Parts: github-tomahawk (~github-to@192.30.252.40) ()
+[01:09:40] <theli_ua> domme: that is actually a copy from tidal which is a ... I have no memory of where it came from
+[01:10:30] <theli_ua> its a way not to lose search until login process is done
+[01:11:17] <domme> theli_ua: but then it should be done through login().then() and maybe have login() internally handling the _loginPromise thing
+[01:12:09] <theli_ua> login is called from init which sets resolver.loginPromise
+[01:12:41] <domme> theli_ua: yes
+[01:12:53] <theli_ua> getLoginPromise is split into a function as it is also used to testConfig
+[01:13:01] <domme> theli_ua: i'm just saying ... if you call it again, it could simply return the loginPromise if set ... then you don't need that defer
+[01:13:15] <theli_ua> probably
+[01:13:20] <theli_ua> I don't understand javascript
+[01:13:52] <theli_ua> but yeah, I see what you mean
+[01:13:59] <theli_ua> actually, let me try this
+[01:14:19] <domme> theli_ua: could be much more readable
+[01:14:25] <theli_ua> domme: though I think this should be handled outside of resolvers
+[01:14:33] <domme> theli_ua: what exactly?
+[01:14:44] <theli_ua> waiting till resolver becomes "ready"
+[01:15:06] <domme> yes
+[01:15:32] <domme> in fact ... i was preparing that with my scriptobject refactor early this year, i just never got around to finishing it
+[01:15:58] <domme> ultimately the idea was ... have a script account that handles the state and registers a resolver as scriptPlugin when it's ready
+[01:16:15] <domme> and removes it again when it knows it's not logged in anymore or something
+[01:16:24] <theli_ua> makes sense
+[01:16:49] <domme> yup, it's just a bunch of work still.. basically it's more or less blocked by an accountmanager refactor
+[01:17:05] <domme> (maybe)
+[01:17:47] <domme> the initialisation of accounts and resolvers right now is completely flawed, it makes my head hurt whenever i open those classes. i'm surprised it works kinda well atm :-\
+[01:19:51] <domme> i wish i could spend more time on that, i'll try to get source maps working with my tomahawk-compiler tomorrow to see if they actually work with qtwebkit... then we know a bit more about the way forward
+[01:19:56] <theli_ua> domme: so .. if loginPromise is already resolved i can still .then it?
+[01:20:01] <domme> yep
+[01:20:07] <theli_ua> what if promise was errored?
+[01:20:13] <domme> then it will fail again
+[01:20:17] <theli_ua> nice
+[01:20:24] <domme> yep, it's one of the niceties of promises
+[01:20:56] <domme> theli_ua: https://promisesaplus.com/ <-- if you're really interested in the semantics
+[01:20:57] <tomabee> [ Promises/A+ | promisesaplus.com | https://i.creativecommons.org/p/zero/1.0/88x31.png ]
+[01:22:07] <domme> theli_ua: also you can always trust the callback to be only executed in the next runloop iteration, i.e. as if it was invoked with setTimeout(0)
+[01:22:21] <domme> it will never execute immediately
+[01:22:37] <domme> even if the promise is already in resolved state
+[01:23:07] <theli_ua> btw, whats the plan on making android and desktop api-compatible ? :)
+[01:24:48] <domme> theli_ua: talking about the collection foo?
+[01:24:59] <theli_ua> eh, everything
+[01:25:08] <theli_ua> every single method is incompatible atm
+[01:25:55] <domme> theli_ua: i want to spend a bit of time on all that during the next weeks.. i.e. not working full time on it, but a few hours every day
+[01:26:00] <theli_ua> well, from what I understood my pr for that "make it at least compatible" would be discarded in favor of "make a new clean tomahawk.js for both desktop and android"
+[01:26:12] <domme> theli_ua: first i want to sort out my compiler work to have a clearer way forward
+[01:26:13] <theli_ua> So I am wondering what is a way forward
+[01:26:17] <theli_ua> I see
+[01:26:18] <domme> ah no
+[01:26:21] <domme> we can merge it now
+[01:26:28] <domme> sorry
+[01:27:49] <theli_ua> its just I kinda don't like the way I'm making new resolvers - that hacky way to detect if I'm running under "new 0.9" pr "old 0.9"
+[01:27:57] <theli_ua> *or
+[01:28:33] <domme> theli_ua: of course
+[01:28:38] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[01:28:38] <github-tomahawk> [13tomahawk] 15dschmidt pushed 14 new commits to 06master: 02http://git.io/vnXbq
+[01:28:38] <github-tomahawk> 13tomahawk/06master 141d750b2 15Anton Romanov: First attempt at 0.9 js resolver API
+[01:28:38] <github-tomahawk> 13tomahawk/06master 1482dcb95 15Anton Romanov: Use prettyname if description is missing in collection's settings, save trackcount when updating index
+[01:28:38] <github-tomahawk> 13tomahawk/06master 144a3c5a5 15Anton Romanov: [0.9 api]always register custom url handler for resolver
+[01:28:38] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[01:28:47] <domme> theli_ua: thanks for all your efforts
+[01:29:28] <domme> theli_ua: it's really appreciated A LOT
+[01:29:41] <theli_ua> eh, no problem, I'd say I'm doing this for myself, so its selfish 
+[01:29:45] <domme> it's just hard sometimes to do the context switch and wrap my head around this stuff
+[01:29:56] <domme> theli_ua: that's how open source works, everyone scratches his own itch
+[01:30:05] <theli_ua> anyway, see if rhapsody looks cleaner now
+[01:30:10] <theli_ua> it works for me
+[01:30:27] <tomabee> @yxmxlt mentioned: I'll be trying @tomahawk ... High expectatives. [<no value>]
+[01:32:07] <domme> theli_ua: getting rid of odd code, nice
+[01:32:28] <domme> theli_ua: do you still need the api_to_extend thing now?
+[01:32:35] <theli_ua> domme: not anymore
+[01:32:45] <domme> theli_ua: mind cleaning that up as well? and the other newApi hacks?
+[01:33:02] <theli_ua> domme MrMaffen speaking of that ... you need to update gmusic, tidal etc in syncrotron now as well
+[01:33:14] <domme> hehe
+[01:33:21] <theli_ua> otherwise people who use nightlies will get broken resolvers
+[01:33:25] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Read error: Connection reset by peer)
+[01:33:34] <theli_ua> but it least they now will be the same code on android and desktop
+[01:33:49] <domme> theli_ua: just that android doesn't use synchrotron yet :)
+[01:34:21] <theli_ua> sure, i'm just saying that versoins currently in synchrotron are incompatible with master 
+[01:34:26] <theli_ua> as of 5 minutes ago
+[01:34:28] <theli_ua> :D
+[01:34:57] <domme> mhh.. but the new versions arent compatible with old tomahawks no?
+[01:35:26] <domme> sooo ... i really need to get up a second synchrotron instance
+[01:35:54] <theli_ua> define "old tomahawks"
+[01:36:03] <theli_ua> not compatible with 0.8 yes
+[01:36:04] <domme> annything released e.g.
+[01:36:07] <domme> yup
+[01:36:12] <theli_ua> well, tidal never was
+[01:36:35] <domme> so we would break everyone on a release tomahawk .. for the sake of keeping nightly builds in tact.. nope, not going to happen :)
+[01:36:36] <theli_ua> and now, tidal in synchrotron is not compatible with nightlies either
+[01:36:54] <domme> oh well, can update then yes
+[01:37:00] <theli_ua> because the one in synchrotron uses "old style 0.9"
+[01:37:04] <domme> just not the ones that used to work with 0.8
+[01:37:21] <theli_ua> sure
+[01:40:26] <domme> theli_ua: i dont see tidal in synchrotron
+[01:40:40] <theli_ua> oh, hm, I thought its there
+[01:40:46] <domme> :)
+[01:41:02] <theli_ua> so ... there are no 0.9 resolvers in synchrotron?
+[01:41:12] <domme> theli_ua: shouldnt be no
+[01:41:18] <theli_ua> ah, ok then
+[01:41:39] <domme> theli_ua: btw ... talking about tidal .. which used to be one resolver for two services, right? 
+[01:42:01] <theli_ua> domme: the wimp branch of tidal was merged
+[01:42:14] <domme> theli_ua: with the system i have in mind we can actually handle that a bit nicer soon. i.e. having two resolvers which share code ... not via copy and paste
+[01:42:22] <theli_ua> ie when tidal was acquired by jay z everything got merged under the same brand/endpoint
+[01:42:35] <domme> yup, just saying..
+[01:42:54] <domme> e.g. there's also hmv that uses the 7digital api
+[01:45:59] <domme> theli_ua: i'll start with that stuff tomorrow morning, i'll let you know how it goes. if it works out well, i could use your help modularizing tomahawk.js :)
+[01:46:45] <theli_ua> domme: just pushed more cleanup for rhapsody
+[01:46:48] <theli_ua> sure
+[01:46:52] <domme> nice
+[01:46:55] * domme is looking
+[01:47:20] <theli_ua> I'll probably do some cleanup on recent things like netease in the meanwhile
+[01:47:36] <domme> theli_ua: nice nice
+[01:48:11] <domme> theli_ua: yay, looks much better now. 
+[01:48:43] *** Joins: github-tomahawk (~github-to@192.30.252.46)
+[01:48:43] <github-tomahawk> [13tomahawk-resolvers] 15dschmidt pushed 6 new commits to 06master: 02http://git.io/vnXhT
+[01:48:43] <github-tomahawk> 13tomahawk-resolvers/06master 1461ee9f3 15Anton Romanov: Add rhapsody resolver
+[01:48:43] <github-tomahawk> 13tomahawk-resolvers/06master 14a41c6e1 15Anton Romanov: [rhapsody]process rtmp urls
+[01:48:43] <github-tomahawk> 13tomahawk-resolvers/06master 14685bc93 15Anton Romanov: [rhapsody]Support stream quality selection
+[01:48:43] *** Parts: github-tomahawk (~github-to@192.30.252.46) ()
+[01:49:05] <domme> theli_ua: will that supersed https://github.com/tomahawk-player/tomahawk-resolvers/pull/89 ?
+[01:49:06] <theli_ua> domme: btw, did you take a look at that bandcamp resolver I posted?
+[01:49:06] <tomabee> [ [netease]Return empty result when nothing found.Set 320kb quality if … by theli-ua · Pull Request #89 · tomahawk-player/tomahawk-resolvers · GitHub | github.com | https://avatars2.githubusercontent.com/u/1242604?v=3&s=400 ]
+[01:49:27] <domme> theli_ua: must have missed it when i was in paris
+[01:49:41] <theli_ua> domme: eh, I'll probably just push more changes into that PR
+[01:49:49] <domme> theli_ua: or that :)
+[01:50:08] <domme> theli_ua: really short one, can't be too bad then :D
+[01:50:23] <domme> theli_ua: just get rid of the old 0.9 stuff... and i'll merge probably
+[01:50:24] <domme> ;-)
+[01:51:15] <theli_ua> yeah, I'll go through my 8 current prs and push updates to the new APIs on them
+[01:51:17] <domme> anyway.. i'm ill, i should sleep.. it's already almost 2am again
+[01:51:23] <theli_ua> night
+[01:51:38] <domme> if i don't go now and start anything instead .. i'll pull an all nighter *cough*
+[01:51:44] <domme> theli_ua: hehe nice
+[01:53:09] <theli_ua> domme: also that bandcamp resolver, it does not replace the current one ... its totally different, uses different API ... and as you guys said supposedly current one should work if fed with correct api key ... 
+[01:53:35] <domme> :-\
+[01:53:40] <domme> yeah .. shitty situation really 
+[01:53:47] <domme> jherskowitz: did you try to get a new one again?
+[01:53:58] <domme> anyway.. => bed
+[02:32:56] *** Quits: domme (~domme@server2.muehlhaeuser.de) (Ping timeout: 246 seconds)
+[02:32:56] *** Quits: liori (~liori@unaffiliated/liori) (Ping timeout: 246 seconds)
+[02:33:02] *** Joins: domme (~domme@server2.muehlhaeuser.de)
+[02:33:33] *** Quits: saidinesh (~quassel@minad.de) (Read error: Connection reset by peer)
+[02:33:39] *** Quits: tomabee (~beehive@conflagration.hatchet.is) (Ping timeout: 240 seconds)
+[02:34:15] *** Joins: liori (~liori@unaffiliated/liori)
+[02:34:17] *** Joins: tomabee (~beehive@conflagration.hatchet.is)
+[02:34:39] *** Joins: saidinesh5 (~quassel@minad.de)
+[02:40:20] <jherskowitz> domme: didn't get a response from my email last week
+[02:42:06] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) ()
+[02:42:23] *** Joins: gordie (510bf8bb@gateway/web/freenode/ip.81.11.248.187)
+[02:43:13] <gordie> hi, someone here ?
+[02:46:17] <theli_ua> gordie: I think they are all sleeping by now
+[02:46:37] <gordie> :) I just found out something which should really be implemented in THK
+[02:46:56] <gordie> http://musicovery.com/api/V2/doc/documentation.php#playlist_methods
+[02:46:57] <tomabee> [ Musicovery API Documentation | musicovery.com |  ]
+[02:54:01] <theli_ua> gordie: thats pretty similar to echonest which tomahawk uses
+[02:54:25] <theli_ua> gordie: also, tomahawk would need a commercial key to use that
+[02:54:31] <gordie> yeah but i'm currently testing it and it seems really nice
+[03:17:19] *** Joins: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com)
+[03:50:14] <toma-cat> Added new crash-report for version 1.0.1 (Android)
+[04:20:18] *** Joins: oppech2 (guest-oppe@gateway/web/scrollback.io/x-gqcextaxmjecyqlb)
+[04:20:19] <oppech2> does the android version lets you keep songs you made offline with spotify/deezer as offline?
+[04:38:06] *** Quits: ugly_cat (~quassel@c-76-104-204-149.hsd1.wa.comcast.net) (Ping timeout: 260 seconds)
+[04:38:34] *** Joins: ugly_cat (~quassel@c-76-104-204-149.hsd1.wa.comcast.net)
+[04:43:10] *** Quits: gordie (510bf8bb@gateway/web/freenode/ip.81.11.248.187) (Quit: Page closed)
+[04:49:24] <toma-cat> JIRA issue https://bugs.tomahawk-player.org/browse/TWK-1508 issue commented by gordie.lachance "This might be good inspiration : http://musicovery.com/"
+[04:49:25] <tomabee> [ [TWK-1508] Echo Nest : suggestions based on a playlist | bugs.tomahawk-player.org |  ]
+[05:52:55] *** Joins: mgue2 (~mgue@x590f7c2b.dyn.telefonica.de)
+[05:55:45] *** Quits: mgue1 (~mgue@f052178224.adsl.alicedsl.de) (Ping timeout: 240 seconds)
+[06:34:16] <theli_ua> oppech2: no
+[07:05:53] <theli_ua> domme: all my resolver PRs are up-to-date with the API
+[07:44:01] *** Joins: hrtcrw (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370)
+[07:46:37] *** Joins: soee (~soee@aatu15.neoplus.adsl.tpnet.pl)
+[08:22:45] *** Quits: hrtcrw (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370) (Ping timeout: 252 seconds)
+[08:55:38] *** Joins: github-tomahawk (~github-to@192.30.252.46)
+[08:55:38] <github-tomahawk> [13tomahawk] 15muesli pushed 1 new commit to 06master: 02http://git.io/vnM6r
+[08:55:38] <github-tomahawk> 13tomahawk/06master 14f146971 15Tomahawk CI: Automatic merge of Transifex translations
+[08:55:38] *** Parts: github-tomahawk (~github-to@192.30.252.46) ()
+[09:21:11] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[09:46:31] <alastairp> lfranchi: off by one before, or after? did you get the debug output?
+[10:54:19] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:05:53] <domme> theli_ua: great
+[11:42:44] *** Joins: soee_ (~soee@aftv236.neoplus.adsl.tpnet.pl)
+[11:46:28] *** Quits: soee (~soee@aatu15.neoplus.adsl.tpnet.pl) (Ping timeout: 246 seconds)
+[12:28:32] *** Quits: soee_ (~soee@aftv236.neoplus.adsl.tpnet.pl) (Read error: Connection reset by peer)
+[12:28:37] *** Joins: soee (~soee@aftv236.neoplus.adsl.tpnet.pl)
+[12:51:16] *** Joins: hrtcrw (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370)
+[12:56:44] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[13:29:29] *** Quits: soee (~soee@aftv236.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[13:32:25] *** Joins: soee (~soee@aftv236.neoplus.adsl.tpnet.pl)
+[13:36:26] *** Joins: soee_ (~soee@aftv236.neoplus.adsl.tpnet.pl)
+[13:36:57] *** Quits: soee_ (~soee@aftv236.neoplus.adsl.tpnet.pl) (Read error: Connection reset by peer)
+[13:37:02] *** Quits: soee (~soee@aftv236.neoplus.adsl.tpnet.pl) (Read error: Connection reset by peer)
+[13:37:53] *** Joins: soee (~soee@aftv236.neoplus.adsl.tpnet.pl)
+[14:07:13] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Disconnected by services)
+[14:07:13] *** Joins: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[14:07:41] *** Joins: jstrcrws (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370)
+[14:09:37] *** Quits: hrtcrw (~hrtcrw@2a02:8071:2688:b400:2d9c:1abf:c2d4:8370) (Ping timeout: 252 seconds)
+[14:12:06] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[14:14:01] *** Quits: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Ping timeout: 252 seconds)
+[14:32:36] *** Joins: gordie (510bf8bb@gateway/web/freenode/ip.81.11.248.187)
+[14:36:20] <gordie> hi guys
+[14:38:56] <HorusHorrendus> hi gordie
+[14:40:42] <gordie> do you know that music service ? http://musicovery.com/ i'm testing it since yesterday, quite good recommandations; I think better than EchoNest
+[14:43:31] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[14:43:31] <github-tomahawk> [13tomahawk-resolvers] 15mrmaffen pushed 1 new commit to 06master: 02http://git.io/vnyZC
+[14:43:31] <github-tomahawk> 13tomahawk-resolvers/06master 142849e24 15Enno Gottschalk: [tomahk-metadata] Correctly parse track links for all possible urls. Bump to version 0.2.1.
+[14:43:31] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[14:46:57] <domme> hey gordie 
+[14:47:21] <gordie> hi domme !
+[15:20:24] <jherskowitz> moin
+[15:21:25] *** Joins: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[15:21:25] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Disconnected by services)
+[15:31:28] *** Joins: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com)
+[15:59:17] <domme> theli_ua: i'm actually making progress with my compiler
+[16:11:39] <tomabee> @axelsimon mentioned: @tomahawk FYI, the ampache axe v 0.3.2's md5 sum mismatches the one given in the .md5 file [<no value>]
+[16:13:45] *** Quits: afics (~afics@unaffiliated/-x-/x-5730914) (Ping timeout: 255 seconds)
+[16:17:41] <tomabee> @axelsimon mentioned: @tomahawk FYI, axe file ampache-0.3.2.axe's md5 sum mismatches the one given in the .md5 file (at http://t.co/QDjq7D0byX ) [<no value>]
+[16:19:29] <jherskowitz> domme: teo- ^
+[16:19:46] <domme> that one's certainly for teo
+[16:20:30] <domme> YES YES YES
+[16:20:53] <domme> i have a compiled soundcloud resolver with working sourcemaps :D 
+[16:21:10] <domme> now i just need to make sure ... tomahawk/qtwebkit can actually handle those
+[16:24:34] <domme> eeks, the line numbers are a bit off ... :-\
+[16:40:43] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[16:40:59] *** Quits: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Ping timeout: 240 seconds)
+[16:52:19] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[17:07:15] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Disconnected by services)
+[17:07:16] *** Joins: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[17:33:31] <domme> okaaaaaaay ... here's news regarding source maps:
+[17:33:40] <domme> apparently qtwebkit can't handle them at all :-(
+[17:33:43] <domme> BUT
+[17:33:47] <domme> qtwebengine can just fine
+[17:36:26] *** Quits: gordie (510bf8bb@gateway/web/freenode/ip.81.11.248.187) (Quit: Page closed)
+[17:37:18] <jherskowitz> domme: webengine is replacing webkit, no?
+[17:38:34] <domme> jherskowitz: yep, the only issue with that is ... we can't cross-compile it for windows. not yet at least, we'll see
+[17:45:31] *** h4ndy is now known as H4ndy
+[17:48:58] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[17:50:59] *** Quits: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Ping timeout: 240 seconds)
+[18:07:50] <theli_ua> domme: source maps?
+[18:10:49] <domme> theli_ua: yeah, when we want to use es6, we must transpile it to es5 first so webkit understands it. but then if an error occurs, you get pointed to a huge 1000 lines file, with weird code.. that's when sourcemaps come into play:
+[18:11:01] <domme> theli_ua: they map the new generated source file back to the original source file
+[18:12:06] <theli_ua> I see
+[18:12:47] *** Joins: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[18:12:47] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Disconnected by services)
+[18:24:25] <domme> okay, relative imports are working :D
+[18:36:47] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[18:38:04] *** Quits: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Ping timeout: 246 seconds)
+[18:40:39] <theli_ua> cool
+[18:43:33] *** Quits: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com) (Quit: alsuren)
+[18:46:41] *** Joins: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com)
+[18:54:11] *** Quits: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com) (Remote host closed the connection)
+[18:56:46] *** Joins: bodam2005 (~bodam2005@cpe-172-249-11-201.socal.res.rr.com)
+[19:00:34] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[19:02:50] <domme> theli_ua: https://github.com/dschmidt/tomahawkcc ;D
+[19:02:51] <tomabee> [ dschmidt/tomahawkcc · GitHub | github.com | https://avatars3.githubusercontent.com/u/448487?v=3&s=400 ]
+[19:04:05] <domme> so much for the compiler ... now ... i should probably start porting a first resolver
+[19:04:17] <theli_ua> amdStrict 
+[19:04:19] <theli_ua> Wat
+[19:04:27] <domme> theli_ua: your latest additions were very simple, right? i'd start with one of those
+[19:04:28] <theli_ua> Should be nvidiaStrict
+[19:04:33] <domme> theli_ua: LOL
+[19:04:57] <domme> theli_ua: amd is async module definition :)
+[19:05:04] <theli_ua> Domme bandcamp is tiny
+[19:05:26] <domme> theli_ua: okies, will take care of that later
+[19:05:38] <domme> before i should get some actual work done tho :)
+[19:05:46] <theli_ua> But you can accept all pending prs while you're at it 😁
+[19:06:03] <domme> theli_ua: haha, nope, sorry. need to do some hatchet work now
+[19:13:44] <tomabee> @axelsimon mentioned: @tomahawk The youtube axe has the same problem, I haven't checked any others. Thanks! :) [<no value>]
+[19:18:42] <domme> theli_ua: couldn't resist, had to port bandcamp .... https://gist.github.com/dschmidt/76894e9e246caadb9e15
+[19:18:44] <tomabee> [ bandcampm-resolver.js · GitHub | gist.github.com | https://avatars3.githubusercontent.com/u/448487?v=3&s=400 ]
+[19:19:15] <domme> that's how i imagine resolvers should look from now on
+[19:19:28] <domme> maybe without the apiVersion and the settings 
+[19:19:35] <domme> in a perfect world
+[19:19:43] <domme> MrMaffen: ^
+[19:41:17] *** Quits: wiuempe (~wmp@sored/admin/wmp) (Read error: Connection reset by peer)
+[19:42:55] <teo-> jherskowitz: I can reproduce your issue
+[19:43:02] <teo-> jherskowitz: all md5 hashes are wrong!
+[19:43:06] <teo-> but I don't know why :/
+[19:43:29] <teo-> but I don't think they were always wrong, I would have noticed
+[19:47:28] *** Joins: svetter_ (~svetter@2001:8e0:2003:fe00:991a:fda8:682f:3681)
+[19:48:17] <jherskowitz> teo-: odd
+[19:53:53] <teo-> jherskowitz: I may have an idea
+[19:53:57] <teo-> jherskowitz: working on it
+[19:54:05] <jherskowitz> k
+[19:54:08] <jherskowitz> thx
+[19:54:38] <theli_ua> domme: can you also do return {url}; ?
+[19:54:58] <domme> theli_ua: that's the same as {url:url} in es6
+[19:55:03] <domme> it does not work in es5
+[19:55:12] <theli_ua> domme: so I'm asking why not do this then :)
+[19:55:37] <theli_ua> domme: line 42
+[19:55:49] <theli_ua> oh, I see you did this on another line, probably just didn't notice that one
+[19:56:08] <domme> theli_ua: press f5? :)
+[19:56:48] <theli_ua> domme: I believe you, and I dont want to f5 as I was looking at it in the same window this channel is in (irccloud inlines frames with gists)
+[19:57:12] <domme> theli_ua: ah, i did a bunch of updates after i first sent you the link
+[19:57:41] <domme> e.g. the match result destructuring: var [, , band_id, id] = track.hint.match(/^bandcampm:\/\/([a-z]+)\/(\d+)\/(\d+)$/)
+[19:57:43] <theli_ua> domme: btw, this resolver needs one more thing .. while you at it :)
+[19:57:52] <theli_ua> domme: yeah, I just took a look at updated version
+[19:58:14] <domme> in fact i'm not saying everyone has to use all these shiny new syntactic sugar features.. just wanted to show off, what's possible now
+[19:58:50] <theli_ua> domme: you can notice that we're only searching for track name ... while taking only first 3 results .... we should try and look at results ourselves to see if theres a matching artist not in first 3 results
+[19:59:11] <domme> theli_ua: i just wanted to have a syntax showcase
+[19:59:12] <domme> ;-)
+[19:59:16] <theli_ua> :P
+[19:59:39] <domme> while i can compile this ... it doesnt actually work in tomahawk yet, because that needs of course adjustment too
+[19:59:53] <domme> but right now i'm looking into a hatchet issue for realz
+[20:01:47] <theli_ua> domme: just buy something like this http://amzn.com/B00PL48UZ2  to test amazon resolver
+[20:01:49] <tomabee> [ Partisan Records Fall 2014 Sampler [Explicit] | www.amazon.com | http://ecx.images-amazon.com/images/I/510rAosCLJL._AC_UL70_SR70,70_.jpg ]
+[20:01:51] <theli_ua> its free to buy
+[20:02:06] <domme> will do later/tomorrow
+[20:02:11] <theli_ua> there are actually a tonn of different labels' samplers on amazon to "buy" for $0
+[20:02:55] <domme> kk
+[20:03:42] <theli_ua> yeah, just search for 'sampler' in amazon's digital music store
+[20:04:23] <domme> kkk
+[20:32:53] <MrMaffen> domme: looks nice :)
+[20:33:04] <domme> MrMaffen: relives me :D
+[20:33:13] <domme> i was afraid you'd hate it (for whatever reason)
+[20:33:22] <domme> *relieves
+[20:33:24] <MrMaffen> domme: haha lol :D
+[20:42:47] <theli_ua> domme: in fact, here are all free albums http://is.gd/71tpDr on amazon
+[20:42:50] <tomabee> [ Albums: Digital Music | www.amazon.com | http://ecx.images-amazon.com/images/I/51sJVSTk8NL._AA190_.jpg ]
+[20:45:51] <domme> lol ok
+[20:48:04] <theli_ua> domme: btw, purchase will trigger library resync on resolver
+[20:49:52] <domme> really nice
+[20:50:01] <domme> i just now realized that my uncle buys all his music on amazon
+[20:50:11] <domme> so he might be very well interested in this :)
+[20:51:05] <theli_ua> domme: I'd also like you to test it since you're in .de while I'm in .com region as well as jherskowitz 
+[20:51:16] <domme> yep
+[20:51:17] <domme> will do
+[21:13:48] *** Joins: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be)
+[21:35:30] *** Joins: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[21:35:30] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Disconnected by services)
+[21:45:36] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[21:46:10] *** Quits: jturney1 (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Ping timeout: 240 seconds)
+[22:04:38] *** Quits: meaning (~meaning@218.203-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[22:26:41] *** Joins: afics (~afics@unaffiliated/-x-/x-5730914)
+[22:36:51] *** Quits: alsuren (~alsuren@host109-145-44-47.range109-145.btcentralplus.com) (Quit: alsuren)
+[22:56:23] *** H4ndy is now known as h4ndy
+[23:20:38] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Ping timeout: 240 seconds)
+[23:20:48] *** Quits: soee (~soee@aftv236.neoplus.adsl.tpnet.pl) (Ping timeout: 264 seconds)
+[23:22:55] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)

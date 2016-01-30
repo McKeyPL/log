@@ -1,0 +1,438 @@
+[00:06:16] <HoneyDrops> I'm able to run basically everything I use on ARM, so I have no attachment to x86.
+[00:08:40] <Gladiolus> I play video james on my PC and use quite a few x86-only apps. My iPad is totally cool without them, but on a full notebook I would want them. I'm probably behind the times though.
+[00:09:02] <Gladiolus> 23 years old and I'm a technological greybeard who demands 32 bit x86 support.
+[00:12:27] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:16:40] <Starthunder> Firefox
+[00:16:51] <Starthunder> what is this suggested-site thing that I didn't ask for and why is it here
+[00:17:00] <Starthunder> and why does it not go away when I click on the X button :|
+[00:17:08] <Starthunder> fucking hell, why are there no good browsers
+[00:17:20] <Gladiolus> Edge is okay, I use it.
+[00:17:32] <Gladiolus> But yeah what happened we're in a browser dystopia now.
+[00:17:39] <Gladiolus> Nothing is good, the best you can get is "usable"
+[00:18:30] <HoneyDrops> Starthunder: you can disable it.  FF is still the least awful option.
+[00:20:59] <Gladiolus> Least Awful option, browsers are at the same spot OSes were in the late 90s.
+[00:33:41] *** Gigabit is now known as GigaWork
+[00:33:46] *** CyberJacob is now known as zz_CyberJacob
+[00:47:09] <Starthunder> caramel:~ blackl% youtube-dl --version
+[00:47:09] <Starthunder> 2015.04.03-gentoo_no_offensive_sites
+[00:47:11] <Starthunder> Wat
+[00:47:22] <Starthunder> Why is this necessary
+[00:47:29] <Gladiolus> what are the offensive sites
+[00:47:34] <Gladiolus> is it like, the North Korean version
+[00:47:41] <Gladiolus> NO QUESTIONING OF DEAR READER
+[00:47:48] <Starthunder> probably PornHub et al
+[00:47:57] <Starthunder> Oh, there's an `offensive` useflag
+[00:48:02] <Starthunder> I'll just go ahead and enable that
+[00:51:14] <HoneyDrops> yeah, the offensive useflag on that is basically support for adult content sites
+[00:54:09] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[01:10:50] <JustAberrant> youtube-dl is one of the few things I just grab myself, because youtube breaks it all the time and portage tends to lag a few days
+[01:11:43] <HoneyDrops> Roll a -9999 repo-tip ebuild?
+[01:12:14] <JustAberrant> too much bother.. it's just a python script and it already has it's own built in updater
+[01:12:29] <HoneyDrops> True
+[01:15:24] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.never.fixed)
+[01:19:00] <Starthunder> I don't trust that built-in updater, though
+[01:19:16] <Starthunder> I like my package managers, with their hashes and their signatures
+[01:20:45] <JustAberrant> meh
+[01:21:00] <JustAberrant> end of the day you are depending on wherever you pull the files from being trusted
+[01:21:17] <Starthunder> Which I'm okay with
+[01:21:19] <JustAberrant> if they want to serve you bad files, they can serve you bad checksums to go with them
+[01:21:38] <Starthunder> How do you revert configuration files to their defaults in Gentoo?
+[01:23:12] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Ping timeout: 121 seconds)
+[01:24:12] <JustAberrant> I.. actually don't know
+[01:24:26] <JustAberrant> I mean I guess you could delete them and do a remerge
+[01:24:29] <JustAberrant> or just emerge files
+[01:24:39] <JustAberrant> I'm sure there's a way, I've just honestly never had to do that :>
+[01:25:14] <Starthunder> apparently using RCS on configuration files in encouraged for Gentoo
+[01:25:23] <Starthunder> sounds like a good idea
+[01:25:34] <JustAberrant> for dispatch-config.. yeah.. probably
+[01:25:55] * JustAberrant likes to live on the edge though
+[01:26:02] <JustAberrant> no backups, you only live once
+[01:26:14] <JustAberrant> no use looking back and all
+[01:28:45] *** Init3-away is now known as init3
+[01:30:14] <wolfyshy> Starthunder: CONFIG_PROTECT_MASK="/path/to/config/you/want/to/replace /optionally/more/delimited/by/spaces" emerge -av1 category/package
+[01:30:50] <wolfyshy> Starthunder: this will completely oblierate ANY changes in the files or directories you specify (it takes either, or both)
+[01:30:54] <wolfyshy> Starthunder: so BE CAREFUL
+[01:31:25] <wolfyshy> (also, -1 forces a reinstall if it's already installed.  it ALSO won't add anything to @world, in case it's just a dep, so it can be removed later on if you don't need it)
+[01:31:48] <HoneyDrops> --oneshot
+[01:32:35] <wolfyshy> well if you wanna be longwinded, emerge --ask --verbose --oneshot category/package
+[01:32:40] <Starthunder> @world makes the manually-installed|automatically-installed distinction, yeah?
+[01:32:54] <wolfyshy> yes, basically
+[01:32:58] <Starthunder> Basically?
+[01:33:00] <wolfyshy> @world is any package you installed yourself, from the command line
+[01:33:11] <wolfyshy> if you do emerge kde-meta, only kde-meta is in @world
+[01:33:14] *** Joins: LightningCrash (lightning@Pony-blfskf.tcso.qwest.net)
+[01:33:46] <wolfyshy> so as packages are deleted from kde-meta, --depclean will realise that and remove them since they aren't in @world and therefore have no reason to exist
+[01:34:16] <wolfyshy> HOWEVER, as I said, with --oneshot (or -1), you can manually install a package and have it not added to @world
+[01:34:46] <wolfyshy> so you could do emerge -1 joe to play with the joe editor, then when you realise it's not that great --depclean will remove it
+[01:34:48] <wolfyshy> :P
+[01:35:27] <Starthunder> …I've been removing packages with --depclean
+[01:35:33] <wolfyshy> yes
+[01:35:36] <Starthunder> emerge --depclean --ask $thing_i_dont_want_anymore
+[01:35:44] <Starthunder> even after it was `@world`ed
+[01:36:03] <wolfyshy> Starthunder: emerge --depclean --ask @world is "special", and looks for any packages that are no longer required on your system.
+[01:36:43] <wolfyshy> er wait
+[01:36:45] <wolfyshy> not @world
+[01:36:48] <wolfyshy> just emerge --depclean with no args
+[01:36:50] <wolfyshy> sorry
+[01:36:53] <wolfyshy> I woke up at 2am today
+[01:37:49] <Starthunder> Does --depclean /with/ a package arg remove no-longer-needed packages? It doesn't seem to have done so so far, but that could just be coincidence…
+[01:38:05] <wolfyshy> no
+[01:38:08] <wolfyshy> it doesn't
+[01:38:16] <wolfyshy> emerge --depclean package means "I don't want package anymore"
+[01:38:28] <wolfyshy> emerge --depclean means "I don't want any unnecessary package anymore"
+[01:38:50] <wolfyshy> watch out though, meta packages can be funny sometimes
+[01:39:10] <wolfyshy> for instance, I just ran that right now, and since kde-meta is switching between kde4 and kde5 right now in testing... lol... it wants to remove pretty much the entire kde suite
+[01:47:14] <HoneyDrops> <3 portage
+[01:48:28] <wolfyshy> portage is the best, it could be a lot better but it is the best
+[01:48:41] <HoneyDrops> there are some other special groups too, @system and @module-rebuild which are handy too
+[01:49:19] <HoneyDrops> Yeah, implementation has some issues, but the core concept/design is pretty much ideal.
+[01:55:27] * JustAberrant <3 portage
+[01:55:39] <JustAberrant> also it's really improved over the years, it's pretty damn solid now
+[01:58:45] *** init3 is now known as Init3-away
+[01:59:43] <HoneyDrops> Heh, maybe I should give Gentoo/FreeBSD a whirl.
+[02:05:11] *** Init3-away is now known as init3
+[02:05:34] <Starthunder> HoneyDrops: I thought you were already a Gentoo+BSD pone?
+[02:07:56] <HoneyDrops> I run gentoo, and I run FreeBSD, but not together.
+[02:08:10] <Starthunder> s/\+/|/
+[02:10:52] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[02:16:38] *** GigaWork is now known as Gigabit
+[02:16:58] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[02:35:26] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[02:36:10] *** Cloud_Kicker is now known as LightningCrash
+[03:05:33] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:06:24] *** init3 is now known as Init3-away
+[03:14:00] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[03:22:08] <Starthunder> Anypony using a v6 tunnel broker besides for v6 connectivity?
+[03:22:28] <Starthunder> Thinking I should probably register to one for my server 'cos native v6 is nowhere in sight
+[03:23:56] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[03:33:53] <Starthunder> hmm
+[03:34:02] <Starthunder> I should make dhcp stuff go to its own logfile
+[03:34:07] <Starthunder> it's really cluttering up the syslog
+[04:20:18] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[04:39:40] *** Init3-away is now known as init3
+[05:01:41] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[05:05:25] <Starthunder> Does /Excess flood/ ircd-seven go both ways?
+[05:05:36] <Starthunder> Freenode keeps disconnecting me for it, and I haven't said anything on there in hours
+[05:07:00] <JustAberrant> what client are you using, it might be doing stupid stuff[tm] to get user info and such
+[05:07:10] <Starthunder> weechat. >.>
+[05:07:18] <JustAberrant> ah, that should be fine :(
+[05:07:22] <Starthunder> And it's been fine connected there all day, and probably longer
+[05:07:25] <Starthunder> yeah.
+[05:07:40] <Starthunder> I'm thinking someone started spamming a channel and it disconnected me because its sendqueue overflowed.
+[05:07:51] <Starthunder> hence my asking about /Excess flood/
+[05:09:42] *** init3 is now known as Init3-away
+[05:15:23] *** Init3-away is now known as init3
+[05:15:55] <Starthunder> So…#techponies . Should I switch my two servers from Ubuntu to Gentoo?
+[05:16:42] <Starthunder> …hmm…my host doesn't have a Gentoo image. I wonder how hard it would be…
+[05:17:01] <JustAberrant> depends on what you use your server for I guess ;p
+[05:17:12] <JustAberrant> I've got gentoo on my VPS, but I don't do anything important on there
+[05:17:22] <Starthunder> It's primarily an IRC and VPN server
+[05:17:33] <Starthunder> I also use it as an imagebin sometimes
+[05:17:37] <JustAberrant> your call then ;p
+[05:19:04] <Starthunder> Relatedly…somepony needs to draw the systemd pone gobbling up all the critical daemon pones
+[05:25:54] <HoneyDrops> systemd is the Smooze
+[05:27:48] <HoneyDrops> It wouldn't be too hard to bootstrap gentoo on any live system and reboot into it.
+[05:28:10] <Googie> Well... that depends on a few things.
+[05:28:23] <Googie> A lot of VPSs will really really hate you for the compiling stage.
+[05:28:36] <Googie> Also probably some issues if it's OpenVZ
+[05:28:57] <Starthunder> Oh, I could do it without reimaging at all. o.o
+[05:29:08] <Starthunder> Compiling stage? I don't remember a compiling stage…
+[05:29:12] <Googie> That's the only way to do it.
+[05:29:14] <Starthunder> well, except for the kernel
+[05:29:18] <JustAberrant> if you have an appropriate kernel, you should be able to get it working.. but still
+[05:29:19] <HoneyDrops> There are a few tricky bits, mostly at the boot loader and I think swapping over /bin & /sbin 
+[05:30:51] <Googie> Starthunder: What VM platform is your VPS on ?
+[05:32:21] <Googie> HoneyDrops: Depending on the type of VM, there isn't a bootloader.
+[05:32:30] <Starthunder> Good question!
+[05:33:15] <HoneyDrops> Still, there is a kernel image and I assume an initfs.  No reason those can't be swapped out on a live system.
+[05:37:20] *** Quits: Darki (DK@Pony-92fd75.vs.webtropia.com) (Ping timeout: 121 seconds)
+[05:37:21] * JustAberrant imprisons Googie within an openVZ template :(
+[05:39:08] <Googie> HoneyDrops: On OpenVZ the existing kernel just calls /bin/init or whatever directly.
+[05:39:24] *** Joins: Darki (DK@Pony-92fd75.vs.webtropia.com)
+[05:39:30] <Googie> You can't change the kernel or create an initfs.
+[05:39:35] <HoneyDrops> :(
+[05:40:21] <Googie> Your root file system is also just a directory on some actual file system. (OpenVZ is basically chroot on steroids that's used in cheaper VPSs)
+[05:41:13] <HoneyDrops> eww
+[05:41:39] <Googie> I've got a few OpenVZ VPSs. They're "okay", but they need to be decently managed, and there's a huge potential for horrible overselling.
+[05:42:21] <HoneyDrops> Still, you can certainly run portage in it, running a mostly-proper gentoo system should also be possible
+[05:43:26] <Googie> I think you'd have to install Gentoo on your root file system while the existing OS is running.
+[05:44:08] <Googie> I'm sure that's doable, but... probably not easy.
+[05:46:07] <HoneyDrops> I can think of a few ways.
+[05:50:17] <Googie> Starthunder: Who's the VPS with ?
+[05:51:57] <Starthunder> ChunkHost.
+[05:52:37] <Starthunder> I'm pretty sure it's not OpenVZ. :P
+[05:52:43] <Googie> They're using Xen, so yeah.
+[05:54:02] <Starthunder> Yeah.
+[06:12:05] <HoneyDrops> http://petapixel.com/2015/09/11/this-is-how-much-ink-the-epson-9900-printer-wastes/  And you can't fix the problem yourself because of DRM :I
+[06:17:19] <Starthunder> The solution is clearly to restrict how many pages each person can print per period of time
+[06:19:19] <Lapsus> lol, not only do inkjets leave a shitload of ink in the supposedly empty cartridges, from the random old ones that I've taken apart, they also have a relatively large reservoir in them with a big absorbent pad in the bottom that they just outright dump ink into while "cleaning" the heads
+[06:20:00] <Lapsus> to the point where some of the ones that I've taken apart failed because the ink had congealed into a goopy tower that got tall enough to hit the heads and cause other problems
+[06:41:58] *** init3 is now known as Init3-away
+[06:59:04] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[06:59:50] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[07:01:13] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[07:15:51] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[07:51:07] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:00:40] *** Ruthalas is now known as Ruthalasleep
+[08:42:08] *** Joins: RazorSharpFang (rjqycmssgjx@Pony-f2c1ub.iinet.net.au)
+[09:01:18] *** Init3-away is now known as init3
+[09:12:06] *** Eventide is now known as Eventide|Sleepies
+[09:21:51] *** Joins: init3_1 (jason@init3.Is.Not.A.Clever.Poni)
+[09:22:07] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[09:33:23] *** init3_1 is now known as init3
+[09:37:29] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[09:47:35] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[09:53:47] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[10:01:18] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[10:18:51] *** zz_CyberJacob is now known as CyberJacob
+[11:43:44] *** Pony_8181 is now known as Stik
+[12:20:18] *** CyberJacob is now known as zz_CyberJacob
+[12:34:05] *** init3 is now known as Init3-away
+[12:57:46] *** Dusk is now known as Dusk|Sleep
+[12:59:37] *** Quits: TachyonicBow (Tachy@Pony-ghpoh0.range86-157.btcentralplus.com) (Ping timeout: 121 seconds)
+[13:43:25] *** Quits: Phase (Phase4@Pony-b9grq3.internode.on.net) (Quit: Leaving)
+[13:44:22] *** Joins: Phase (Phase4@Pony-b9grq3.internode.on.net)
+[13:48:29] *** Quits: roflin (dennis@Pony-aend1d.es) (Ping timeout: 121 seconds)
+[13:50:14] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[14:07:09] *** Joins: TachyonicBow (Tachy@Pony-7gk5bd.range86-191.btcentralplus.com)
+[14:15:19] *** Joins: roflin (dennis@Pony-aend1d.es)
+[14:18:12] *** Gigabit is now known as Gigazzz
+[14:22:56] <AppleDash> ....
+[14:23:02] * RainbowHacks derps around
+[14:23:05] <AppleDash> Endianness really only applies to integers, doesn't it?
+[14:23:14] <AppleDash> like, there is no concept of the endianness of a string
+[14:26:33] * RainbowHacks does not know. She feels stupid, and goes to read up on these things.
+[14:26:50] <AppleDash> Have fun :P
+[14:27:15] * RainbowHacks is not having very much fun this morning
+[14:27:33] <RainbowHacks> On top of learning why eating 5 hot pockets in one day is a terrible idea, my new Nexus 6 doesn't work right
+[14:27:36] <RainbowHacks> :<
+[14:27:40] <AppleDash> :(
+[14:27:43] * AppleDash hugs RainbowHacks
+[14:30:19] * RainbowHacks hugs
+[14:30:22] <RainbowHacks> also im at work
+[14:30:31] <RainbowHacks> i wont have a day off until next sunday
+[14:40:58] *** TachyonicBow is now known as Obaskyr
+[14:57:15] *** Quits: Fallfeathers (Fallfeather@Pony-cg3.e4s.162.101.IP) (Connection closed)
+[14:57:24] *** Joins: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net)
+[15:09:58] <wolfyshy> ouch, I know that feel :(
+[15:10:10] * wolfyshy hugs RainbowHacks and brushes her rainbow mane
+[15:10:24] <wolfyshy> AppleDash: 8-bit strings have no endianness (i.e. UTF-8, ASCII, ANSI)
+[15:10:44] <wolfyshy> AppleDash: however, 16-bit and 32-bit strings (UTF-16, UTF-32, UCS-2, Java strings, Python strings) DO have endianness
+[15:10:52] <wolfyshy> UTF-16BE vs UTF-16LE
+[15:11:46] <RainbowHacks> o.o
+[15:12:01] * RainbowHacks sits really still while she gets brushins
+[15:13:30] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[15:13:42] <wolfyshy> :3
+[15:14:13] <wolfyshy> with great power comes great responsibility, and with great responsibility comes great knowledge
+[15:14:26] *** Init3-away is now known as init3
+[15:14:42] <wolfyshy> one of my gentoo VPSes derped up hard and somehow added AMD FMA2 instructions to its default CFLAGS (as in I did not set them)
+[15:14:51] <wolfyshy> things like "python" and "portage" were in the @world update I did
+[15:14:57] <wolfyshy> it is an Intel CPU
+[15:15:26] <wolfyshy> so I went to another VPS with a matching CPU model, quickpkg'd python, portage, and binutils, and extracted them manually on the half-dead box
+[15:15:45] <wolfyshy> and now it's re-merging the other packages itself without those stupid instructions
+[15:15:47] <wolfyshy> \o/
+[15:16:09] <DJ-C0L7[EIT]> anypony have any experience with reflashing phones to use 'straight talk' from walmart?
+[15:16:42] <AppleDash> nice, wolfyshy
+[15:18:09] <RazorSharpFang> What's walmart?
+[15:23:21] <RainbowHacks> \o/
+[15:25:15] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[15:38:18] <DJ-C0L7[EIT]> i think i found the info i need
+[15:38:39] <DJ-C0L7[EIT]> apparently to get mms and internet working i'll have to jailbreak her phone
+[15:44:26] *** init3 is now known as Init3-away
+[16:05:14] *** Joins: ThunderStorm (lightning@Pony-blfskf.tcso.qwest.net)
+[16:18:14] <RazorSharpFang> iOS? That's a problem right there
+[16:18:58] <_desu_> DJ-C0L7[EIT]: get the $30 t mobile plan instead 
+[16:19:19] <_desu_> Its the same thing as the $45 straight talk plan 
+[16:27:21] <RainbowHacks> DJ-C0L7[EIT], I just moved to tmobile
+[16:27:43] <RainbowHacks> so far, aside from the porting of my number going awry which cut me off from service until tomorrow, they've been great
+[16:36:39] <DJ-C0L7[EIT]> i have t-mobile
+[16:36:55] <DJ-C0L7[EIT]> my sisters phone got smashed by my moron nieces duchebag boyfriend
+[16:38:52] <Crimson_Tail> inb4 she pays attention to nothing but her phone.
+[16:39:12] <Crimson_Tail> That's a majority of the students at my school.
+[16:39:32] <Crimson_Tail> Yet I'm the minority here.
+[16:41:53] <DJ-C0L7[EIT]> my sister is in her 40s
+[16:42:16] <DJ-C0L7[EIT]> my niece however, is engrossed in her phone, and pays attention to nothing else
+[16:46:01] <Crimson_Tail> hm.
+[16:46:50] <Crimson_Tail> my little sis said to me that most of the students at her school have cell phones.
+[16:46:58] <Crimson_Tail> And it's middle school.
+[16:48:13] <Crimson_Tail> Makes me wonder if they ignore the cell phone rule..
+[16:48:21] <Crimson_Tail> Some probably do.
+[16:50:35] <DJ-C0L7[EIT]> likely
+[16:53:32] *** Init3-away is now known as init3
+[16:55:41] * RainbowHacks sighs
+[16:55:56] <_desu_> Crimson_Tail: tons of kids have phones in middle school. 
+[16:56:13] <Crimson_Tail> I know
+[16:56:39] <Crimson_Tail> For emergencies, that's fine
+[16:56:48] <Crimson_Tail> But doing nothing but texting on it? sheesh
+[16:57:05] <_desu_> I think the average time to get a smartphone is like 5th/6th grade here
+[16:57:34] <_desu_> Hell, kids younger than that have tablets and use imessage / Google hangouts with their friends
+[17:00:49] <_desu_> My niece has more youtube subscribers than I do and she's in the 4th grade
+[17:06:34] * RainbowHacks didnt have her first phone until 14, didn't have her OWN phone bought and paid for until 16, didn't get her first computer until 18 o.o
+[17:12:08] * Crimson_Tail is 19
+[17:12:14] * Crimson_Tail dosen't have a phone
+[17:12:16] * DJ-C0L7[EIT] feels old
+[17:12:29] * Crimson_Tail got first computer at 8
+[17:14:01] * DJ-C0L7[EIT] built his first comp at 14
+[17:14:40] * Crimson_Tail hasn't built a computer, yet
+[17:14:42] * DJ-C0L7[EIT] is 29 >.<
+[17:23:21] *** Eventide|Sleepies is now known as Eventide
+[17:36:07] <Crimson_Tail> Meanwhile, Apple could face fines for refusing to let the gov't gain backdoor access to their data.
+[17:36:08] *** init3 is now known as Init3-away
+[17:36:15] <Crimson_Tail> Welcome to america.
+[17:38:43] <Crimson_Tail> While the gov't goes batshit if you even breach their data, what hypocrisy
+[17:39:30] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:40:30] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:48:29] *** Init3-away is now known as init3
+[17:48:56] <DJ-C0L7[EIT]> sounds about right
+[17:49:03] <tiwake> RainbowHacks: I was a lot younger to get my first computer, although it (they) were old... one of them had an 8088 processor for example :3
+[17:49:17] <DJ-C0L7[EIT]> did you see where the NSA wants to ban any kind of encryption
+[17:49:34] <tiwake> DJ-C0L7[EIT]: no, where?
+[17:49:43] <DJ-C0L7[EIT]> i read it someware but i dont remember the article
+[17:50:05] <DJ-C0L7[EIT]> it was something like they were trying to make it sound like if you use encrypted communications that you are in league with terrorists or some shit like that
+[17:50:09] <DJ-C0L7[EIT]> i'll see if i can find it again
+[17:53:37] <JustAberrant> heh, that's been a thing since forever :>
+[17:55:41] <DJ-C0L7[EIT]> not surprised
+[17:57:32] <DJ-C0L7[EIT]> i think this is what i was thinking of
+[17:57:34] <DJ-C0L7[EIT]> http://rebrn.com/re/fbi-director-civilians-should-not-be-allowed-to-encrypt-personal-475892/
+[17:57:34] <PinkiePieBot> [ FBI Director: Civilians should not be allowed to encrypt personal data | Rebrn.com ]
+[17:57:53] <JustAberrant> the NSA has been trying to get people to knock out that encryption shit since the early 90s
+[17:58:02] * DJ-C0L7[EIT] nods
+[17:58:35] <JustAberrant> they hassled the PGP guy pretty early on.. not to mention the whole clipper chip thing
+[17:58:59] <DJ-C0L7[EIT]> my ubuntu install and debian install as well, both have encrypted home folders, and my nas (after i upgrade it) will be using encrypted mass storage
+[18:00:58] <JustAberrant> most of my installs have used full disk encryption (usually dm-crypt with luks) .. but I generally just use the standard settings and am pretty lax otherwise, so it probably wouldn't stand up to a serious attempt
+[18:01:56] <JustAberrant> hell, my nfs is basically wide open.. assuming my file server is still running, they can easily plug a laptop into my network, figure out which user I am (or just correctly assume uid 1000), and access most of my stuff anyway
+[18:02:48] <JustAberrant> well, they'd have to use the ip of my desktop to get everything, but that's easy enough
+[18:03:20] * JustAberrant shruggles
+[18:03:34] * DJ-C0L7[EIT] nods
+[18:05:22] <JustAberrant> I've always felt like encryption is never going to protect you from law enforcement
+[18:05:51] <JustAberrant> it might protect others in some hypothetical organization, but if they're busting down your door, chances are they don't need whatever's on your computer to send you to jail
+[18:06:28] <DJ-C0L7[EIT]> brb patrol
+[18:13:06] <tiwake> a friend was asking me if, with his new computer build, he could dual boot windows 7 and windows 98
+[18:13:21] * tiwake facehooves
+[18:13:26] <wolfyshy> depends on the chipset
+[18:13:32] <wolfyshy> if it has an LPC or LPC emulation, yes
+[18:13:50] <wolfyshy> there are universal video drivers to get native res on modern geforces and radeons too
+[18:13:54] <wolfyshy> win98 is the windows that won't die
+[18:14:17] <tiwake> cause he wants to play old games with it
+[18:15:40] <tiwake> I suppose thats fine if it never touches the internet
+[18:16:20] <JustAberrant> could probably also just run 98 in a VM
+[18:16:37] <JustAberrant> could probably run anything from the 98 era decently at this point
+[18:16:58] <tiwake> or linux with crossover/wine
+[18:16:59] <JustAberrant> I actually don't even know if 98 could be installed on a newer PC
+[18:18:12] <JustAberrant> certainly you'd have a lot of trouble if you wanted network drivers (which is probably a good thing), sound (not so good), and the only workign video driver is probably going to be vesa ;p
+[18:18:56] <JustAberrant> also I don't even know if windows update will server the various updates for 98 still
+[18:19:02] * JustAberrant suddenly really curious about this whole thing
+[18:19:16] * JustAberrant has a 98se CD kicking around somewhere.. but I'm not that keen
+[18:19:27] <wolfyshy> the win98 windows update server has been turned off for a decade
+[18:19:29] <tiwake> agreed
+[18:19:38] <wolfyshy> there is a universal vesa driver that has general opengl acceleration
+[18:19:39] <tiwake> screw it, too much effort just thinking about it
+[18:19:52] <wolfyshy> there is a generic intel HDA driver for win98
+[18:19:54] <wolfyshy> for sonud
+[18:19:56] <wolfyshy> sound*
+[18:20:24] <tiwake> use an old computer for the old games, or linux with wine
+[18:20:30] <wolfyshy> and a surprising number of modern network cards have win98 drivers
+[18:20:38] <wolfyshy> I brought up a core 2 quad with win98.
+[18:21:34] <JustAberrant> 98se was the last version of windows I used before pretty much switching exclusively to linux.. I used it into when 2000 was popular.. I have vague memories of 98se getting harder and harder to install due to them making major changes to windows update
+[18:22:03] <tiwake> package managers++
+[18:22:05] <JustAberrant> like you'd have to do several updates to get windows update to a functioning state, then do several more..
+[18:22:28] <JustAberrant> a lot of it was manual downloads because the version that came on the CD no longer worked properly, etc
+[18:23:14] <JustAberrant> and I seem to remember something like the dlink driver installer wouldn't work out of the box because the default vid drivers were too shitty and it couldn't display the splash screen properly
+[18:23:18] <JustAberrant> oh man...
+[18:23:20] <JustAberrant> >windows problems
+[18:23:20] <JustAberrant> :D
+[18:23:45] * JustAberrant stumbles off on a nostalgia trip .. back in a bit guys.. I'll bring back some DLLs ;p
+[18:24:14] <tiwake> anyway, he wants a $1000 computer build, give or take $200
+[18:24:54] <Starthunder> wolfyshy: …how did that work? You set some CFLAGS, and it compiled AMD instructions into binaries targeted for x86?
+[18:25:11] <wolfyshy> Starthunder: -march=native "misdetected" the intel cpu as an amd
+[18:25:17] <wolfyshy> Starthunder: 4.7 erratum
+[18:26:50] <Starthunder> ahh. Fixed in a later update?
+[18:26:56] <Starthunder> DJ-C0L7[EIT]: teach me your secrets
+[18:27:09] * Starthunder 's NAS is not encrypted, beacuse how do you even FDE on a server?
+[18:27:34] <JustAberrant> same way you do on any other machine..
+[18:28:18] <JustAberrant> un-encrypted boot partition with an initrd to prompt for password, mount the encrypted volume/setup lvm/etc, and continue on
+[18:28:44] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[18:30:48] * JustAberrant raid6 with /boot partition and / partition, / partition is dmcrypt/luks with lvm on top of that then xfs
+[18:31:11] <wolfyshy> Starthunder: yes
+[18:31:36] <JustAberrant> also nice @ auto detect fail
+[18:31:47] <Starthunder> JustAberrant: yes, but then it can't be rebooted unless you're there.
+[18:31:48] * JustAberrant didn't trust -march=native for awhile.. but does now :(
+[18:32:30] <JustAberrant> Starthunder: well, in my case I'm there (it's a home server), but you can throw something like dropbear in your initrd to allow remote unlocking
+[18:33:00] <wolfyshy> JustAberrant: it's been fine for me on dozens of desktops, laptops, embedded systems, servers... this was a fluke
+[18:33:11] <wolfyshy> JustAberrant: because I held back gcc updates on it because it always oom'd
+[18:33:43] <wolfyshy> it also had to do with esxi
+[18:34:04] <wolfyshy> so if you aren't running gentoo on esxi, even this buggy gcc is safe to use -march=native
+[18:34:36] <JustAberrant> fair enough I suppose :)
+[18:34:53] <JustAberrant> Starthunder: so basically you end up with a kind of minimal ssh server on initial boot that you can connect to, enter your key/password/whatever, and it'll continue to boot
+[18:36:13] <JustAberrant> at least on gentoo that means rolling your own initramfs though.. as I don't think genkernel's will do any of that for you
+[18:36:15] <JustAberrant> could be wrong though
+[18:37:13] * JustAberrant also uses genkernel's initramfs now.. :(
+[18:37:31] * JustAberrant has gotten lazy
+[18:41:35] *** Gigazzz is now known as Gigabit
+[18:44:54] <JustAberrant> tiwake: also, if he's looking for value, I honestly think your friend is better off buying something from dell :(
+[18:45:34] <JustAberrant> the day where you got a more economical PC by building your own are done imo, now it's more about getting the quality/parts you want
+[18:46:34] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:10:31] *** init3 is now known as Init3-away
+[19:10:55] *** Init3-away is now known as init3
+[19:15:53] *** init3 is now known as Init3-away
+[19:16:24] *** Init3-away is now known as init3
+[19:35:18] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Quit: init 0)
+[19:39:30] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[19:46:56] *** Joins: GumballCrash (GumballCras@0.to.pony.10secondsflat)
+[19:56:46] *** Quits: ThunderStorm (lightning@property.of.moonlightning) (Quit: The Nightmares will collide. And become a dream. <3)
+[19:56:56] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-9qm.2jt.56.172.IP)))
+[19:57:30] *** Joins: DJ-C0L7[EIT] (IceChat77@Pony-9qm.2jt.56.172.IP)
+[19:57:43] *** DJ-C0L7[EIT] is now known as Pony_82426
+[19:59:21] *** Pony_82426 is now known as DJ-C0L7[CSS]
+[19:59:47] *** DJ-C0L7[CSS] is now known as DJ-C0L7[EIT]
+[20:03:39] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[20:15:03] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[20:15:03] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[20:32:42] <AppleDash> JustAberrant: Not true
+[20:36:14] <JustAberrant> oh? :(
+[20:36:38] <tiwake> JustAberrant: yeah, not really true... you can be cheaper still, or about the same price and get decent/good quality parts
+[20:37:00] <tiwake> as in, have a power supply that wont blow up
+[20:38:05] <JustAberrant> I still prefer to build my own anyway, just saying I don't think the price incentive is there any more.. but I could be wrong.. it's been awhile
+[20:39:11] <JustAberrant> certainly not like it was though in the 90s.. where you'd literally save like half the price by ordering whitebox parts from really hard to find places
+[20:39:47] <AppleDash> If I got something close to my PC prebuilt (which you can't get prebuild, definitely not), I would've spent like 500$ more
+[20:40:08] *** Gigabit is now known as Soarin
+[20:56:46] <HoneyDrops> I would build my own, if only to know that I can avoid things like Dell's weird pinouts.
+[21:05:03] <JustAberrant> AppleDash: also you never answered my question, what ever happened to your FTB server ;p
+[21:11:01] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[21:17:20] <AppleDash> JustAberrant: nothing
+[21:17:21] <AppleDash> it's online
+[21:17:26] <AppleDash> I plan to update it like tomorrow
+[21:17:38] <JustAberrant> I see
+[21:22:16] <AppleDash> If you wanna play you're still on the list :P
+[21:24:28] <JustAberrant> I only ask because you said the other day you were thinking of making a v3 ;p
+[21:26:00] <wolfyshy> I wanted to play on it also, but the only computer I have that can run FTB is my Windows PC and it won't boot :(
+[21:26:02] <wolfyshy> stupid windows 10
+[21:26:26] <wolfyshy> my laptop.. quad core i5 + intel hd 4000 + 16gb RAM... can't even /start/ FTB
+[21:26:29] <wolfyshy> OOM's
+[21:26:49] <JustAberrant> 32bit?
+[21:27:07] <JustAberrant> cause I only have 12G of ram and manage fine :(
+[21:28:29] <wolfyshy> no
+[21:28:52] <AppleDash> JustAberrant: :P
+[21:28:58] <AppleDash> Well I guess I'll just be updating v2
+[21:29:05] <AppleDash> Maybe I can help wolfyshy out with starting
+[21:29:11] <JustAberrant> destructively? :(
+[21:29:24] <wolfyshy> Linux 4.1.0-rc8 #8 SMP Tue Jun 16 17:40:11 CDT 2015 x86_64 Intel(R) Core(TM) i5-2435M CPU @ 2.40GHz GenuineIntel
+[21:29:30] <wolfyshy> I need to update
+[21:29:34] <wolfyshy> so old
+[21:30:05] <wolfyshy> I was mainly running -rc8 because it's got my custom patch applied, and it wasn't mainlined until 4.2
+[21:34:14] <AppleDash> JustAberrant: no :(
+[21:40:59] <Seoson> Vodafone Australia employee spys on journalist (using an existing contract with said person) after critical report on the company. #TrustYourCarrier
+[21:42:49] <Seoson> My original source is a German site. The original statement by the journalist is linked: http://www.smh.com.au/comment/fairfax-media-journalist-natalie-obrien-vodafone-employee-accessed-my-text-messages-20150912-gjl2vg.html
+[21:42:50] <PinkiePieBot> [ Fairfax Media journalist Natalie O'Brien: Vodafone employee accessed my text messages ]
+[21:52:00] *** Quits: RazorSharpFang (rjqycmssgjx@sharpest.of.all.fangs) (Connection closed)
+[21:55:26] *** Quits: Phase (Phase4@Pony-b9grq3.internode.on.net) (Ping timeout: 121 seconds)
+[21:58:24] *** Dusk|Sleep is now known as Dusk|DnD
+[22:14:59] *** init3 is now known as Init3-away
+[22:24:14] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[22:25:01] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[22:25:04] *** Init3-away is now known as init3
+[22:37:06] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:48:22] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[22:55:05] *** init3 is now known as Init3-away
+[23:26:10] *** Soarin is now known as Gigabit
+[23:59:10] *** Quits: reiuiji (reiuiji@nuclear.raven) (Ping timeout: 121 seconds)

@@ -1,0 +1,946 @@
+[00:00:43] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[00:08:19] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[00:08:50] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[00:17:25] <tiwake> Colgate: poke
+[00:17:29] <tiwake> or somebody else
+[00:17:39] <tiwake> (but Colgate is my favorite!)
+[00:18:25] <Moonlightning> tiwake: counterpoke
+[00:19:33] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[00:19:56] <tiwake> Moonlightning: how do I connect with my wlan0 using the ip command?
+[00:20:45] <Webster> You have to use the right controls (iw/iwconfig) to set up the WiFi stuff first.
+[00:21:05] <tiwake> well it was working before, for some reason
+[00:21:23] <Moonlightning> tiwake: client box?
+[00:21:30] <Webster> Toggle the interface? (ifdown/ifup)
+[00:21:32] <tiwake> tried booting in a different kernel and it decided to not connect automagically
+[00:21:44] <Moonlightning> Hmm.
+[00:22:00] <Moonlightning> Are you using something like networkmanager, or…?
+[00:22:12] <tiwake> oh hmm
+[00:22:18] <tiwake> its connected now :-x
+[00:22:30] <tiwake> how do you ifdown/ifup with ip?
+[00:24:54] <Moonlightning> It's under `ip link`, I think
+[00:26:12] <Moonlightning> …oh…that's why. TLS session caching|ticketing is a risk to forward secrecy. ._.
+[00:30:22] <tiwake> for some reason X is not loading in my debian testing laptop
+[00:30:52] <tiwake> I am suspect of debian switching X to run in userspace instead of root
+[00:31:02] <tiwake> and a configuration somewhere... or something
+[00:38:45] <tiwake> oh gosh
+[00:38:49] <tiwake> Moonlightning: https://www.youtube.com/watch?v=2ZNtJHX2axA
+[00:38:50] <PinkiePieBot> [ MTC [PonyDub] (WIP) - 22018 views - 1m 53s long - 1250 likes - 99.36% ]
+[00:43:32] <Moonlightning> tiwake :?
+[00:43:41] <Moonlightning> What did I just listen to x3
+[00:48:29] <Moonlightning> …
+[00:48:38] <tiwake> Moonlightning: its horrifying, I love i
+[00:48:39] <Moonlightning> tiwake: tag your NSFW, please. I didn't proxy that at all. :/
+[00:48:46] <tiwake> it
+[00:49:22] <tiwake> is it NSFW?
+[00:49:23] <Moonlightning> I love the music, though… :|
+[00:49:38] <Moonlightning> Explicit lyrics? Yeah, NSFW.
+[00:49:50] <Moonlightning> That counts as NSFW even without my strict standards.
+[00:51:16] <Moonlightning> What does /MTC/ mean :|
+[00:51:29] <tiwake> no idea
+[00:51:34] <Moonlightning> …oh.
+[00:51:48] <Moonlightning> acronymed so that title alone is innocuous.
+[00:53:32] <Moonlightning> I didn't get the lyrics at /all/ from the ponydub. So I went and pulled the description and then the linked original…
+[00:55:37] <Moonlightning> Fuck it. There are tons of other good tracks with good music.
+[00:55:44] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[00:55:55] * Moonlightning files under strictly do not want. Unlinks files from /tmp.
+[00:56:03] <tiwake> lol
+[00:56:32] <tiwake> Moonlightning: here, have a better one that the same guy made https://www.youtube.com/watch?v=ugfCkqXdBok
+[00:56:32] <PinkiePieBot> [ Pony Sauce - NRG [PonyDub] - 679542 views - 4m 21s long - 13415 likes - 98.44% ]
+[00:56:52] <tiwake> nothing bad or questionable about it
+[00:57:10] * Moonlightning proxies anyway. :/
+[00:59:09] <tiwake> its based on a 1980's song, that I cant find, perhaps 70's
+[00:59:11] <Moonlightning> tiwake: if it's completely safe, why its its title an acronym? >.>
+[00:59:24] <Moonlightning> s/its its/is its/
+[01:01:15] * Moonlightning gives it about a minute, decides it's too repetetive, closes.
+[01:04:59] <tiwake> bleh, cant find it
+[01:05:09] <tiwake> its based on a 1980's song
+[01:08:03] <tiwake> w/e
+[01:09:26] <tiwake> http://www.phoronix.com/scan.php?page=news_item&px=Debian-Non-Root-X
+[01:09:27] <PinkiePieBot> [ Debian Moves To Non-Root X.Org Server By Default - Phoronix ]
+[01:13:55] * Phase is actually starting to think we shouldn't run x or wayland as the user using it
+[01:28:26] <wolfyshy> tiwake: the original is Melissa Manchester's Energy, but the version in the video is from Duck Sauce's NRG
+[01:28:44] <wolfyshy> specifically, the skrillex and milo remix
+[01:28:51] <wolfyshy> I know *way* too much about dance music :P
+[01:30:22] *** Joins: nscoots (FreyGrimrod@Pony-g6c9l3.sub-70-192-22.myvzw.com)
+[01:30:55] * nscoots peers @ wolfyshy's dance music knowledge attempting to absorb some
+[01:31:18] * nscoots also does the new phone dance
+[01:36:20] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[01:36:47] <nscoots> still done very little futzing with it but thus far quite pleased with her new lg v10
+[01:44:31] <tiwake> wolfyshy: 1985
+[01:44:41] <tiwake> yeah, that sounds right
+[01:48:42] * nscoots pesters tiwake for context
+[01:49:08] <nscoots> as my first intro to the conversation was 7:30:22 PM) wolfyshy: tiwake: the original is Melissa Manchester's Energy, but the version in the video is from Duck Sauce's NRG
+[01:49:42] <Duck> Ok
+[01:49:52] <tiwake> nscoots: https://www.youtube.com/watch?v=ugfCkqXdBok
+[01:49:52] <PinkiePieBot> [ Pony Sauce - NRG [PonyDub] - 679693 views - 4m 21s long - 13415 likes - 98.44% ]
+[01:50:15] <nscoots> woooo....
+[01:50:28] * nscoots still laments never having pulled off throwing a proper pony rave
+[01:50:44] <tiwake> that would be amazing
+[01:50:53] <tiwake> nscoots: where would it be?
+[01:51:03] <nscoots> been some decent bronycon sets that I'm aware of
+[01:51:16] <tiwake> nop, way too far, lol
+[01:51:16] <nscoots> my contacts were all CT/NYC/Boston
+[01:51:25] <tiwake> I'm on the west coast
+[01:51:57] <nscoots> well perhaps something could be worked out
+[01:52:06] <nscoots> flights are cheap for those of us rich in skymiles
+[01:52:43] <nscoots> as long as not a delta  black out date 
+[01:52:50] <tiwake> driving is always 1/2 price from flying, if not cheaper
+[01:53:04] <tiwake> but dang, 3,000 miles is a long way to drive
+[01:53:18] <nscoots> have enough skymiles to book an around the world ticket
+[01:53:26] <tiwake> I'd do 850 miles by myself in a day, plenty of times
+[01:53:39] <nscoots> been kinda tempting to take 6 months or something and do it
+[01:53:49] <nscoots> but the cost of keeping insurance through all that
+[01:54:00] <tiwake> then come to the west coast instead
+[01:54:02] <nscoots> ooft 850 miles in a day is a long way
+[01:54:28] <tiwake> 850 is about 13 hours non-stop
+[01:54:30] <nscoots> think I max out around 640
+[01:54:40] <nscoots> used to like to stop every 200 but gotten over that
+[01:54:55] <tiwake> yeah, I wouldent stop except for gas... heh
+[01:55:15] <nscoots> "quick our average MPH is dropping below 80!!!"
+[01:55:17] <tiwake> gotta take a leak? too bad. wait till the next gas station
+[01:55:23] <nscoots> I mean uh... *admits to nothing*
+[01:55:25] <wolfyshy> when I go on trips I always stop every few hours, but that's because there's so much to seeeeeee
+[01:55:28] <wolfyshy> I'm a wolfy
+[01:55:33] <tiwake> 85 is cruising speed
+[01:55:35] <wolfyshy> love to see new sights, smell new smells, all that
+[01:55:48] <tiwake> in montana
+[01:56:17] <tiwake> I want a delfin L29 plane :3
+[01:56:28] <tiwake> 2 hours to go 850 miles :3
+[01:56:34] <nscoots> would be loverly
+[01:56:43] <nscoots> and can go as the crow flies shorter routes
+[01:56:53] <tiwake> https://en.wikipedia.org/wiki/Aero_L-29_Delf%C3%ADn
+[01:56:54] <PinkiePieBot> [ Aero L-29 Delfín - Wikipedia, the free encyclopedia ]
+[01:57:06] <tiwake> one of those can be obtained for ~$85k
+[01:57:45] <nscoots> I always wanted an auto gyro until a fellow who is a pilot and has lost a leg from crazy motorcycle nonsense and still rides a motorcycle
+[01:57:52] <nscoots> thought I was suicidal for wanting one
+[01:58:00] <nscoots> so I thought better of such craft
+[01:58:03] <tiwake> lol
+[01:58:17] <tiwake> I want an airplane strictly for functionality
+[01:58:22] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:58:56] <nscoots> he was the best for collecting debts though...
+[01:59:09] <nscoots> vicious dog hanging off his fake leg...
+[01:59:13] <nscoots> attacking him
+[01:59:21] <nscoots> doesn't give a shit
+[01:59:34] <nscoots> states calmly if the dog isn't off him by the time he gets to his pistol...
+[01:59:45] * nscoots has said too much
+[02:00:12] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[02:01:36] <nscoots> they seem like a luxury but cheaper than kids?
+[02:02:03] <nscoots> know another fellow who regularly flys to dine with his wife at restaurants that would be  3-4 hours by car
+[02:02:08] <nscoots> 1 hour by plane
+[02:03:55] *** Joins: Asoka (Asoka@Pony-a5dj6m.net-htp.de)
+[02:05:34] <tiwake> too expensive for me
+[02:06:43] <nscoots> more expensive than my house
+[02:06:51] <nscoots> by multiples
+[02:07:02] <nscoots> but some seem to have more than others
+[02:07:06] <tiwake> last year I made something like $15k for the whole year, before taxes
+[02:07:06] *** Quits: Asoka_White (Asoka@Pony-sv744r.net-htp.de) (Ping timeout: 121 seconds)
+[02:20:37] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[02:27:02] *** Gigabit is now known as Soarin
+[02:58:23] *** Quits: CrassyPaddles (test@Pony-ph1.enl.137.198.IP) (Ping timeout: 121 seconds)
+[03:06:53] *** Creeps|AFK is now known as RedHelper
+[03:14:33] <Moonlightning> gods why is this complicated
+[03:14:55] <AppleDash> ?
+[03:14:55] <Moonlightning> All I want is bulk uploads to not increase latency. Is that too much to ask? ;-;
+[03:15:00] <AppleDash> no
+[03:15:08] * Moonlightning flails.
+[03:20:18] <tiwake> what do I need to look for when X does not start?
+[03:20:45] <tiwake> KDM is running, can stop it and start it, but I still don't get a GUI
+[03:20:55] <tiwake> no errors from it as far as I can tell
+[03:24:57] <Moonlightning> Do any of you pones do traffic shaping on your home networks?
+[03:25:53] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[03:29:10] <tiwake> oh hmm
+[03:29:28] <tiwake> evidently its a problem with KDM, lightDM launched X fine
+[03:29:32] <Moonlightning> I would think /somepony/ would…
+[03:30:07] <tiwake> I don't... could, and probably should
+[03:31:05] <Moonlightning> Can you point me to like a guide or something
+[03:31:12] <Moonlightning> I don't know what I'm doing :P
+[03:31:46] <tiwake> uh, donno... I'd delve into the dd-wrt forums if I were
+[03:32:05] <Moonlightning> …does dd-wrt use normal Linux tools?
+[03:32:39] <tiwake> http://www.dd-wrt.com/wiki/index.php/Quality_of_Service
+[03:32:41] <PinkiePieBot> [ Quality of Service - DD-WRT Wiki ]
+[03:33:18] <tiwake> you building your own router or something?
+[03:33:56] <tiwake> cause I wouldent even know for something like that either
+[03:33:57] <tiwake> heh
+[03:35:07] * Googie does using pfSense.
+[03:35:30] <Googie> Which isn't really applicable to dd-wrt/Linux
+[03:35:44] <Moonlightning> yeah
+[03:36:32] <tiwake> Moonlightning: you might check out the links at the bottom of the page though
+[03:36:48] <tiwake> HTB and iptables man pages
+[03:37:02] <Moonlightning> iptables doesn't do shapingg, though, does it?
+[03:37:18] <tiwake> http://luxik.cdi.cz/~devik/qos/htb/manual/userg.htm
+[03:37:20] <PinkiePieBot> [ HTB manual - user guide ]
+[03:37:58] <tiwake> ...that actually looks pretty useful
+[03:38:38] <tiwake> at a glance anyway
+[03:44:03] <Googie> IIRC... yeah, tc is the QoS tool on Linux
+[03:44:20] <Googie> I've heard that that whole area is pretty poorly documented.
+[03:44:39] <Moonlightning> ;-;
+[03:44:50] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Connection closed)
+[03:44:55] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[03:45:22] <Moonlightning> bleh…I can't match TCP packets with /any/ of a set of flags set in one iptables rule?
+[03:45:46] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "exhausted pony needs sleep.... and cuddles")
+[03:46:09] <tiwake> Moonlightning: I would hop on the IRC channel for fimfiction and ask Xaquseg
+[03:46:17] * Moonlightning blinks
+[03:46:37] <tiwake> he runs the fimfiction IRC channel, and would probably know pretty well about that stuff
+[03:46:40] <tiwake> erm
+[03:46:52] <tiwake> he runs the website, and is the main developer for it
+[03:47:26] <Googie> QoS isn't really utilized for websites.
+[03:47:31] <tiwake> he tends to be around late at night, and seems to enjoy talking about such things
+[03:48:57] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Ping timeout: 121 seconds)
+[03:54:58] <Moonlightning> How about this
+[03:55:18] <Moonlightning> Should I be considering my maximum upload speed as 128 KiB/s or 256 KiB/s?
+[03:55:36] <Googie> Well, what's your upload speed ?
+[03:55:48] <Moonlightning> 'cos I was scping something up and the upload speed jumped between 0 and 128, occassionally jumping to 256
+[03:57:31] <Googie> You probably want to use something like iperf to measure performance.
+[03:59:38] <Moonlightning> Thanks.
+[04:00:58] <Googie> What sort of internet connection are you on. ADSL ?
+[04:01:05] <Moonlightning> Yeah.
+[04:01:15] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[04:01:20] <Googie> It's actually probably easier then to check your modem's reported sync rate.
+[04:04:24] <Moonlightning> Wellll, it's kind of in bridge mode…
+[04:10:46] <Googie> If you have a second ethernet port on it, you can probably still access it.
+[04:14:22] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Ping timeout: 121 seconds)
+[04:29:43] <Compu> i have an emerson record player, it sounds kinda bad, i think its a bad needle but i dunno, anyone have any ideas?
+[04:31:30] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[04:34:10] <Webster> Describe "bad"
+[04:35:24] <Moonlightning> That timing :/
+[04:35:41] <Moonlightning> Anyway, yeah, I'm pretty sure I can't access it over IP
+[04:35:50] <Moonlightning> Got any ideas? :P
+[04:39:39] <wolfyshy> Moonlightning: it should say on your bill
+[04:39:55] <wolfyshy> istr you told me your ISP once, and having had them for years, it says the up and down speed on the bill
+[04:41:13] <Moonlightning> Yes, but that's /advertised./ I'm looking for /actual./ :P
+[04:41:30] <Moonlightning> Though, actually, my current ISP is actually cool.
+[04:41:33] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Ping timeout: 121 seconds)
+[04:41:54] <Moonlightning> Was it AT&T? 'cos I dropped AT&T
+[04:42:21] <Compu> Webster: worse than the examples of bad saphire styluses i can find on youtube
+[04:43:11] <Webster> Compu: Could be the pick-up itself is going, or the volume control (if there is one) or pre-amp is bad.
+[04:43:16] <Compu> Webster: gimme a sec and i'll try recording an example with my phone
+[04:43:32] <Compu> Webster: its not the volume or the preamp, the radio sounds fine on the system
+[04:43:47] <Webster> The radio probably doesn't use the pre-amp.
+[04:44:06] <Compu> k
+[04:44:09] <Compu> well 1 sec
+[04:44:11] <Compu> oh wait
+[04:44:24] <Compu> Webster: the line out doesnt use the preamp and it sounds bad too
+[04:44:46] <Webster> Line-out should still use the pre-amp. You need it to get to line level.
+[04:44:50] <Compu> the line out is standard red and white plugs
+[04:45:27] * Moonlightning puts Webster in the line-out corner.
+[04:46:01] <Webster> Yeah, you need a preamp to get to line level. If it has a separate phono-out, then that's not using the pre-amp.
+[04:46:12] <Webster> But yeah, more likely it's the needle or pick-up.
+[04:46:25] <Webster> Might just be dust on/in it.
+[04:47:17] * Moonlightning boops Googie with a c—hoof. With a hoof.
+[04:48:21] <One-Trick> needles go bad quick /dj
+[04:49:03] * Moonlightning grabs a pair of ridiculously-oversized quills. Begins scratching up all the records.
+[04:50:16] <Googie> You can do perf then.
+[04:52:49] <Moonlightning> Mmm. Any way to get it to compensate for the initial-burst thing?
+[04:52:56] *** Joins: Sombra (Iceman@Darkhorse21)
+[04:52:59] <Compu> Webster: it has a 3.5mm out jack and a red and white line out jack
+[04:53:13] <Webster> Compu: Doesn't mean much.
+[04:53:36] <wolfyshy> Moonlightning: yes, it was AT&T
+[04:53:49] <Compu> Webster: i recorded a song from it with my phone, i listened to it and the recording is pretty accurate
+[04:53:55] <Compu> Webster: lemme upload it
+[04:58:22] <Compu> Webster: https://www.dropbox.com/s/2zcv2o97m0bs2g7/rubber%20ball%20vinyl.m4a?dl=0
+[04:58:25] <PinkiePieBot> [ Dropbox - rubber ball vinyl.m4a ]
+[05:01:36] <Webster> Kind of sounds like an old record. :P
+[05:02:49] <Compu> Webster: all records sound like that, including the new one i get from amazon of weird al's mandatory fun album
+[05:03:05] <Compu> got*
+[05:03:14] <Webster> Probably the needle.
+[05:04:14] <Compu> Webster: how much does a new needle cost?
+[05:04:39] <Compu> also i have no idea how to change the needle
+[05:04:46] <Webster> Depends on the quality and what the record player takes.
+[05:05:24] <Compu> how do i find out what the record player takes
+[05:06:14] <ButterBean> whelp for the last week i have been trying to set up mysql
+[05:06:16] <ButterBean> i give up
+[05:06:33] * Dashie mutters something about 12ax7 tube distortion, and then goes back to smacking her laptop with a stick
+[05:07:01] * Dashie felt the need to vaguely contribute to the conversation, without actually contributing.
+[05:07:22] <Compu> Webster: the player is an emerson NR101TT
+[05:08:52] <Webster> Oh geeze it's one of those things.
+[05:09:09] <Compu> ?
+[05:09:48] <Webster> Cheap-ass record player put in a gussied up case and sold for twice the cost.
+[05:09:57] <Webster> Stuff like http://www.lptunes.com/Stylus-for-Emerson-NR101TT-turntable-home-system-p/emersnr101tt.htm
+[05:09:58] <PinkiePieBot> [ Emerson NR-101TT turntable stylus,Emerson NR 101TT turntable stylus,Emerson NR101TT turntable stylus,Emerson NR-101TT turntable needle stylus,Emerson NR 101TT turntable needle stylus,Emerson NR101TT t[...] ]
+[05:10:18] <Webster> Can use that to find other replacements that would work.
+[05:10:25] <Compu> Webster: so its supposed to sound that bad or no?
+[05:10:39] <Webster> Maybe? Depends on how cheap they made it.
+[05:10:47] <Webster> Probably anything for Emerson would work, too, but you never know.
+[05:11:43] <Webster> It basically sounds like it's got a really limited frequency response, like it's being put through the AM bandpass filter.
+[05:11:44] <Compu> Webster: i would like a diamond eliptical needle but cone should be ok if eliptical is too expensive
+[05:12:07] <Compu> Webster: i know one thing, the radio gets horrible reception
+[05:12:12] <ButterBean> _-_
+[05:12:28] <Webster> Let me guess, single dangling black wire?
+[05:12:35] <Compu> nope
+[05:12:41] <Webster> Not even?
+[05:12:55] <Compu> i think the antenna is built into the power cord
+[05:13:03] <Webster> That'd be weird and stupid.
+[05:13:40] <Compu> on am i get nothing and on fm i only get a few very high power stations, lower power local stations dont get anything but a faint trace of their audio
+[05:13:56] <Compu> that may be this house tho
+[05:13:59] <Webster> You got sites like http://www.needledoctor.com/Replacement-Stylus too. Might be best to just visually match it.
+[05:14:00] <PinkiePieBot> [ Replacement Stylus ]
+[05:14:12] <Webster> Did you get this used?
+[05:14:23] <Compu> i think this house has lead in it or something, even my cell phone signal drops to 2 bars when im inside
+[05:14:54] <Webster> Might be the antenna was ripped off.
+[05:14:56] <Compu> oh yeah i did, for free, it belonged to some guy's grandma and he didnt want it cuz he didnt use records so we got it for free
+[05:14:59] <Compu> no
+[05:15:04] <Compu> theres no antenna hole
+[05:15:09] <Webster> It'd be a tiny hole.
+[05:15:12] <Webster> Probably on the bottom.
+[05:15:20] <Compu> and when i move the power cord the reception changes on fm
+[05:15:25] <Webster> I have a similar unit. Same radio dial. Same three knobs. Motor burned out.
+[05:15:31] <wolfyshy> Compu: concrete can do that too.
+[05:15:37] <Compu> motor is fine
+[05:15:53] <Webster> Might be the power cord is coupling noise or FM frequencies coincidentally.
+[05:16:08] <Webster> So moving it reduces noise/increases FM signal.
+[05:16:19] <Compu> Webster: not even a tiny hole
+[05:16:33] <Webster> Usually they put it through a transformer so you'd lose any FM signal anyway. Unless there's some weird extra wire thing going on.
+[05:16:52] <Webster> For safety certs they can't have high voltage and low voltage together.
+[05:16:58] *** Parts: ButterBean (Dragony@Pony-458.d8k.20.198.IP) ()
+[05:17:03] <Compu> i just looked, theres only a bunch of circular holes on the back for cooling it looks like
+[05:17:34] <Compu> i can take a picture if that helps
+[05:17:47] <Webster> Anyway, just saying, those are pretty shit units. Not sure about yours specifically, just they tend to be pretty miserable.
+[05:17:55] <Webster> If you want.
+[05:18:01] <Webster> I can go look at mine to see where the antenna comes out.
+[05:18:09] <Compu> u have one?
+[05:18:14] <Webster> It's literally just a 26AWG or smaller wire.
+[05:18:18] <Webster> A similar one.
+[05:18:22] <Compu> lemme get a pic and u can compare the backs
+[05:22:15] <Webster> Nah, mine's coming out of a tiny hole in the back next to the cooling holes.
+[05:22:51] <Compu> Webster: i dont have that tiny hole, 1 sec i took the pic
+[05:27:43] <Compu> Webster: http://imgur.com/gallery/GKlfDsv
+[05:27:44] <PinkiePieBot> [ Emerson NR101TT Record Player - Imgur ]
+[05:28:17] <Webster> Similar looking back.
+[05:29:02] <Webster> I've seen head phones used as an antenna replacement on phones and MP3 players that have FM playback.
+[05:29:14] <Webster> AM is probably just the iron stick antenna inside.
+[05:29:31] <Webster> Probably has an internal FM antenna too which is a bit shit.
+[05:30:23] <Compu> :P
+[05:30:29] <Compu> i dont wanna open it up
+[05:30:48] * Webster shrugs.
+[05:31:02] <Webster> Don't need to if you don't want.
+[05:31:31] <Compu> i wish i knew an audiophile irl
+[05:32:09] <Webster> From what I've seen okay record players start around $100.
+[05:32:20] <Compu> yep
+[05:32:23] <Compu> too expensive
+[05:32:28] <Compu> waaaaay too expensive
+[05:33:28] *** Quits: TachyonicBow (Tachy@Pony-0nd708.range86-175.btcentralplus.com) (Ping timeout: 121 seconds)
+[05:33:58] <Webster> Well, can try replacing the needle, but if they never used it and it sounds bad... 
+[05:34:46] <Compu> Webster: im sure the grandmother used it
+[05:35:11] <Compu> i dont even know what kind of needle it has right now, for all i know it could be a saphire
+[05:35:17] <Webster> Well, if you want to risk a record, you can try putting a little weight on the head of it. 4-8 quarters.
+[05:36:09] <Compu> Webster: my grandpa has a record specifically for testing needles, the grooves change color when u have a bad needle
+[05:39:19] <One-Trick> ffffff why is webkit-gtk so cumbersome
+[05:41:39] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[05:44:37] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[06:04:59] *** Eventide is now known as Eventide|Sleepies
+[06:32:04] <Shival|Away> LOL https://github.com/Dirktheman/rsa-codeigniter-library/blob/master/application/libaries/Rsa.php#L33-L87
+[06:32:05] <PinkiePieBot> [ rsa-codeigniter-library/Rsa.php at master · Dirktheman/rsa-codeigniter-library · GitHub ]
+[06:38:26] *** Quits: Crimson_Tail (Bluepon@Pony-rhlu4n.cg80.k4gu.0151.2601.IP) (Connection closed)
+[06:38:49] *** Joins: Crimson_Tail (Bluepon@Pony-rhlu4n.cg80.k4gu.0151.2601.IP)
+[06:40:48] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[06:42:19] <Moonlightning> the hell
+[06:42:24] <Moonlightning> what is RSA gonna do with primes that tiny
+[06:49:20] *** Quits: Crimson_Tail (Bluepon@Pony-rhlu4n.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[07:07:44] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[07:20:13] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[07:22:38] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[07:22:59] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[07:24:10] *** Soarin is now known as Snoarin
+[07:37:33] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Quit: )
+[07:49:33] *** Quits: Snoarin (Gigabit@Bazinga) (Quit: Canternet Public Bouncer!)
+[07:51:21] *** Joins: nscoots1 (FreyGrimrod@Pony-g6c9l3.sub-70-192-22.myvzw.com)
+[07:53:14] *** Quits: nscoots (FreyGrimrod@Pony-g6c9l3.sub-70-192-22.myvzw.com) (Ping timeout: 121 seconds)
+[07:58:31] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:02:15] *** RedHelper is now known as Creeps|AFK
+[08:11:16] *** Joins: Deathpony (IceChat9@Pony-q2h.j1d.51.50.IP)
+[08:12:11] <Deathpony> tfw PSU has 4 pin P4 connector but motherboard has 8 pin connector
+[08:27:30] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:32:34] <Moonlightning> …HAY!
+[08:32:43] <Moonlightning> This isn't serving a Content-Length: header!
+[08:58:54] *** zz_CyberJacob is now known as CyberJacob
+[09:03:05] *** Joins: nscoots (FreyGrimrod@Pony-g6c9l3.sub-70-192-22.myvzw.com)
+[09:03:54] *** Quits: nscoots1 (FreyGrimrod@Pony-g6c9l3.sub-70-192-22.myvzw.com) (Ping timeout: 121 seconds)
+[09:04:10] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[09:15:17] <Moonlightning> Okay. `iperf` says 120.125 KiB/s.
+[09:19:21] *** CyberJacob is now known as zz_CyberJacob
+[09:22:52] <Moonlightning> And 1.4375 MiB/s down.
+[09:23:46] <nscoots> how is your latency?
+[09:24:57] *** zz_CyberJacob is now known as CyberJacob
+[09:29:44] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:32:47] * Moonlightning stares at ping.
+[09:32:48] <Moonlightning> Come on…
+[09:33:18] <Moonlightning> …wait, there's a better way of trying to saturate the link.
+[09:34:02] <Moonlightning> … o.o …
+[09:34:07] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[09:34:12] <Moonlightning> scp isn't being /nice/, is it?
+[09:35:03] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[09:35:20] <Moonlightning> Oh, there we go, there's the lag.
+[09:35:57] <Moonlightning> One thing that's weird is that it takes like five seconds for the lag to go away now.
+[09:36:30] <Moonlightning> Like if I have an upwards rsync going, the lag'll be ~800..1100ms, and it'll take like five seconds to drop back down to normal.
+[09:36:57] <Moonlightning> What's weird, though, is—
+[09:37:01] <Moonlightning> …wait a sec.
+[09:37:15] <Moonlightning> `tc` stuff affects traffic generated on the machine itself, right?
+[09:37:20] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[09:38:03] <Moonlightning> Because this rsync of lots of small files from the netbox up is causing the usual LAAAAAAAAG, but this scp up from a client box isn't.
+[09:39:30] <nscoots> well to be expected
+[09:39:51] <Moonlightning> 77/78 packets received (98.7%) 21.469 min / 31.545 avg / 53.249 max
+[09:40:07] <Moonlightning> I will take this slightly-increased latency over the alternative, if that's what I'm getting!
+[09:40:11] *** CyberJacob is now known as zz_CyberJacob
+[09:40:16] <Moonlightning> nscoots: hmm?
+[09:40:33] <nscoots> tons of small files 
+[09:40:54] <nscoots> one can accept an increased latency for the duration?
+[09:41:16] <Moonlightning> I can't. :P
+[09:41:36] *** Joins: Sin (Sin@is.hustlin.everyday)
+[09:41:45] <Moonlightning> This is a huuuuuge transfer. I'm gonna wanna, y'know, continue to use my Internet connection while it happens.
+[09:42:24] <nscoots> oh dear
+[09:43:43] <Moonlightning> So does tc not apply to locally-generated traffic, or what D:
+[09:50:16] <Moonlightning> This rsync from a client box isn't increasing the latency too much, either.
+[09:50:26] <Moonlightning> It really feels like it.
+[09:56:00] *** Joins: Sombra (Iceman@Darkhorse21)
+[10:33:34] <Moonlightning> Hmmmm.
+[10:33:47] <Moonlightning> Okay, this latency is higher than I'd like.
+[10:33:54] <Moonlightning> But it's certainly a lot better than before!
+[10:35:45] <Moonlightning> 101/103 packets received (98.1%) 49.585 min / 88.457 avg / 123.522 max
+[10:35:50] <Moonlightning> You know what, I'll take it
+[10:39:12] *** Joins: Fallfeathers (Fallfeather@Pony-9c7.4em.162.101.IP)
+[10:42:54] <Moonlightning> next step: making this persist
+[10:46:26] <johnsey> https://github.com/5digits/dactyl/issues/79
+[10:46:27] <PinkiePieBot> [ Firefox 42 will require extension signing · Issue #79 · 5digits/dactyl · GitHub ]
+[10:46:32] * johnsey doesn't like where this is going
+[10:47:16] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Connection closed)
+[10:58:20] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[10:58:41] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[10:58:51] <Moonlightning> Augh!
+[11:03:43] <Moonlightning> 94/94 packets received (100.0%) 31.212 min / 76.870 avg / 111.863 max
+[11:05:46] <Moonlightning> …wait a sec. This is throttling…! >.>
+[11:14:54] <HoneyDrops> johnsey: :(
+[11:17:27] <johnsey> mozilla needs to stop coming up with dumb ideas
+[11:17:40] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[11:18:25] <johnsey> I don't really see any viable alternative to firefox, so they better stop breaking it
+[11:19:21] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[11:21:08] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[11:26:04] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[11:26:54] <Moonlightning> …okay, I feel like I'm doing this wrong.
+[11:27:24] <Moonlightning> Isn't it possible to have bulk transfers not increase latency at /all?/
+[11:27:48] <Moonlightning> Without throttling them to static speeds?
+[11:50:35] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[12:12:28] <Deathpony> will a 4 pin P4 work on an 8 pin?
+[12:12:43] <Deathpony> motherboard is 8 pin, PSU 4 pin P4
+[12:19:42] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[12:19:44] *** Quits: WeAreBorgPony (WeAreBorg@Resistance.Is.Futile) (Ping timeout: 121 seconds)
+[13:30:33] <AppleDash> Deathpony: sometimes
+[13:30:48] <AppleDash> an 8 pin is just 2 4 pins, but a motherboard might refuse to boot if it's not receiving enough power 
+[13:34:15] <Deathpony> it's a 4 year old CPU that I'm using
+[13:34:22] <Deathpony> 500 watt PSU
+[13:34:45] <Deathpony> AMD Phenom 2 x6 1090t
+[13:36:35] <AppleDash> It should be fine as long as you don't overclock
+[13:37:02] <AppleDash> Don't force the cable though - the 4 pin only fits into one half of the 8 pin, not either or
+[13:37:36] <Deathpony> I'm only playing Fallout 4
+[13:37:50] <AppleDash> What GPU are you using?
+[13:37:55] <Deathpony> AMD Phenom 2 x6 1090t
+[13:38:00] <Deathpony> 3.2 GHZ
+[13:38:07] <AppleDash> GPU, not CPU
+[13:38:09] <Moonlightning> sure, half power to the motherboard should be //plenty// to run a modern action-adventure game
+[13:38:10] <Deathpony> oh
+[13:38:17] <Deathpony> idk what GPU yet
+[13:38:21] <AppleDash> Moonlightning: Half the power to the /CPU/
+[13:38:38] <AppleDash> A 4 pin 12v connector can handle 192 watts
+[13:38:41] <AppleDash> That CPU is 125 watts.
+[13:38:52] <Deathpony> I have an adapter also
+[13:38:58] <Deathpony> 4 pin to 8 pin
+[13:39:02] <Moonlightning> thought we were talking about powering the motherborad
+[13:39:07] <Deathpony> no
+[13:39:14] <Deathpony> PSU and mobo are 24
+[13:39:18] <Deathpony> pin
+[13:40:29] <AppleDash> 8 pin connectors were originally designed for dual CPU configurations, but they're often put on motherboards intended for overclocking just to be safe
+[13:40:54] <Deathpony> it's not like I will run it on the highest settings possible either
+[13:41:20] <Deathpony> the only time this CPU will overclock is if it's using only 3 cores
+[13:41:29] <Deathpony> otherwise it doesn't
+[13:41:48] <Deathpony> 3.2 to 3.8 GHZ I think
+[13:42:22] <AppleDash> Should be fine because it's designed to do that and because you have a lot of overhead
+[13:43:00] *** Quits: Fallfeathers (Fallfeather@Pony-9c7.4em.162.101.IP) (Connection closed)
+[13:45:02] <Deathpony> yup
+[13:45:21] <Deathpony> and it's plenty enough to play FO4 with overclocking
+[13:46:04] *** Joins: Cyan_Spark (Cyan_Spark@incidental.unicorn.Cyan_Spark)
+[13:46:19] <AppleDash> I think I should be set to play FO4 at max settings
+[13:47:41] <Moonlightning> …hahahahahahaha
+[13:47:56] <Moonlightning> I just realized that -f exists and does the same thing in both BSD and GNU `ps`
+[13:48:13] <Deathpony> The PSU also has a connector for a GPU to hook into
+[13:48:32] <Moonlightning> And it displays the information I generally want when listing processes
+[13:48:59] <Moonlightning> …oh, it's missing processor and memory usage, that's why.
+[13:49:26] <Deathpony> PNY is a good RAM brand isn't it?
+[13:50:22] <Pocky> I blew up my PSU a few months ago lol 
+[13:54:35] <Deathpony> ow
+[13:54:43] <Deathpony> overloaded it?
+[13:55:32] <AppleDash> Most of my RAM is Corsair
+[13:55:39] <AppleDash> I wouldn't know
+[14:23:33] <Moonlightning> So…`nginx`s `ssl_session_cache` creates an mlocked cache of TLS session keys|other data, right? Are old sessions wiped from it periodically?
+[14:27:37] <Pocky> lol yeah
+[14:28:14] <Pocky> I got a 660 from my friend and the crappy 500w couldnt handle it xD needed a new one though
+[14:40:09] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[14:50:20] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[15:00:07] *** Quits: nscoots (FreyGrimrod@Pony-g6c9l3.sub-70-192-22.myvzw.com) (Ping timeout: 121 seconds)
+[15:04:27] *** Eventide|Sleepies is now known as Eventide
+[15:27:14] *** Quits: Cyan_Spark (Cyan_Spark@incidental.unicorn.Cyan_Spark) (Quit: nini)
+[15:29:25] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[15:39:01] <Seoson> This could become one of my new favorite websites: http://homoglyphen.de/?text=&unicodepos=1&lang=de&exc2=1&exc3=1&exc7=1&exc8=1&exc13=1&exc14=1 Anyone got a better list?
+[15:39:03] <PinkiePieBot> [ Einen Text mit Homoglyphen wiedergeben ]
+[15:48:50] *** Seoson is now known as Seoson|Away
+[15:51:17] *** Quits: Deathpony (IceChat9@Pony-q2h.j1d.51.50.IP) (Ping timeout: 121 seconds)
+[15:53:18] *** Joins: Deathpony (IceChat9@Pony-q2h.j1d.51.50.IP)
+[15:53:48] *** Deathpony is now known as Pony_16690
+[16:01:36] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:00:35] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[17:01:29] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[17:02:39] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[17:30:52] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[17:35:46] *** Joins: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se)
+[17:49:27] *** Joins: Crimson_Tail (Bluepon@Pony-8ddqcj.cg80.k4gu.0151.2601.IP)
+[17:52:54] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Connection closed)
+[17:56:27] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "graphics driver update, bbiab")
+[17:57:19] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[18:13:11] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[18:53:52] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[19:13:42] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[19:31:17] *** Joins: DataByte (DataByte@Pony-3pfj33.g424.9euc.0247.2601.IP)
+[19:31:28] <DataByte> sudo apt-get install brain
+[19:31:50] <GeekBrony> install failed: brain is not in any repository
+[19:34:02] <GeekBrony> did you mean: sleep
+[19:34:10] <DataByte> heh
+[19:34:57] <DataByte> let's encrypt is confusing me.. their page says that they are able to issue trusted certificates, and even a demo to prove it.. 
+[19:35:16] <AppleDash> OK?
+[19:35:33] <DataByte> but in the executable, it says "The Let's Encrypt certificate authority is NOT YET ISSUING │ CERTIFICATES TO THE PUBLIC."
+[19:35:45] <AppleDash> Because it's not
+[19:35:50] <AppleDash> The beta is a private beta
+[19:36:09] <DataByte> only select few can use it right now?
+[19:36:15] <AppleDash> Yes
+[19:36:19] <DataByte> :/
+[19:40:23] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[19:40:49] <DataByte> sudo apt-get install patience
+[19:43:46] <GeekBrony> all repositories offline: please wait
+[19:43:51] <GeekBrony> ;)
+[19:43:55] <DataByte> hahahaha
+[19:44:46] *** Joins: Sin (Sin@is.hustlin.everyday)
+[20:01:24] <roflin> apt-get moo
+[20:10:43] *** Quits: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se) (Quit: Leaving.)
+[20:17:33] *** Unixkitty is now known as Unikitty
+[20:17:43] *** Unikitty is now known as Unixkitty
+[20:21:26] *** Quits: Sellyme (quassel@Pony-lq694o.of.saltspork.com) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: DataByte (DataByte@Pony-3pfj33.g424.9euc.0247.2601.IP) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Duck (sid3009@Pony-4r56u0.ealing.irccloud.com) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Crimson_Tail (Bluepon@Pony-8ddqcj.cg80.k4gu.0151.2601.IP) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Q0 (Q0@literallyshit.net) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: cyzon (cyzon@moms.spaghetti) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: init3 (quassel@init3.Is.Not.A.Clever.Poni) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Apple_Bloom (sid52418@the.canon.pony) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Datguy (Datguy@lord.of.nreboot.c0m) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Shival|Away (ShivalWolf@2400:d400:9:7375:abcd::2) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: roflin (dennis@Pony-aend1d.es) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: johnsey (johnsey@into.the.nethers) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: One-Trick (Octavia@hyenaspots.com) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Seoson|Away (Seoson@pony.kab-s.de) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: floogulinc (floogulinc@Pony-opvprb.floogul.net) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Stik (drakon@Pony-ql55m5.cable.virginm.net) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: endoriazel (coprah@endoriazel) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: reiuiji (reiuiji@nuclear.raven) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Dashie (rainbow@Pony-m1cetk.ponix.space) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:26] *** Quits: Compu (compu@snuggly.filly) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Cameron_D (cameron@192.241.210.101) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Lorix_ (Lorix_@flutter.shy.yay) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Unixkitty (uni@the.unicorn.cat) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Red_M (potato@Pony-4pa04c.red-m.net) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: saneki (saneki@Pony-torblo.zylongaming.com) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: klaxa (klaxa@Pony-ail.8pm.0.134.IP) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Ola (ola@Pony-k5v.64a.226.188.IP) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Sin (Sin@is.hustlin.everyday) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Pony_16690 (IceChat9@Pony-q2h.j1d.51.50.IP) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: JustAberrant (JustAberran@Pony-lq4qe0.com) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: LightningCrash (lightning@property.of.moonlightning) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: tiwake (Octavia@Pony-njonl3.wa.charter.com) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Eventide (uid61788@Tips.Fedora) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Gumball (GumballCras@0.to.pony.10secondsflat) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Fusl (Fusl@1.0.0.127.in-addr.arpa.li) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Eclipse (rylai@libgryphon.so) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Finnfinn (Finnfinn@finn.isher) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Colgate (rabbit@brushie.horse) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Lapsus (Lapsus@i-forget.ca) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: enginemaniac (flail@flail.flail.flail) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Divide|Support (NA@Pony-vf5hfh.cable.rogers.com) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Creeps|AFK (RedHelper@The.Pony.That.Makes.You.Smile) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:27] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (cadance.canternet.org chrysalis.canternet.org)
+[20:21:28] *** Quits: AutoLapsus (Lapsus@Totally.Is.A.Network.Service) (cadance.canternet.org cloudchaser.canternet.org)
+[20:21:28] *** Quits: Shutter (tips@sudoku.prevention.hotline) (cadance.canternet.org cloudchaser.canternet.org)
+[20:21:28] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (cadance.canternet.org cloudchaser.canternet.org)
+[20:21:28] *** Quits: GeekBrony (GB@bronydom.net) (Connection closed)
+[20:21:28] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Ping timeout: 161 seconds)
+[20:21:28] *** Quits: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se) (Ping timeout: 145 seconds)
+[20:21:28] *** Quits: Aww (aww@Pony-ic0abh.online) (Ping timeout: 130 seconds)
+[20:21:28] *** Quits: Cosmic (Neptune@Planet.Neptune) (Ping timeout: 142 seconds)
+[20:21:28] *** Quits: sleumas2000 (sleumas2000@my.little.karaoke) (Error in the push function.)
+[20:21:30] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Connection closed)
+[20:21:36] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Connection closed)
+[20:21:40] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[20:21:40] *** Quits: Kinsley (JKinsley@Bow.To.Your.Princess) (Ping timeout: 121 seconds)
+[20:21:41] *** Quits: miggyb (miggyb@horsetornado.co.uk) (Ping timeout: 121 seconds)
+[20:21:42] *** Quits: HoneyDrops (Honey@sweeter.than.honey) (Ping timeout: 121 seconds)
+[20:21:43] *** Quits: Dawn (Dusk@dusky.horse) (Ping timeout: 121 seconds)
+[20:21:45] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (Ping timeout: 121 seconds)
+[20:21:45] *** Joins: sniperfox1 (sniperfox@Pony-qih.5g9.114.167.IP)
+[20:21:59] *** Joins: quindo (Quindo@Pony-mq3.m3q.194.162.IP)
+[20:22:05] *** Joins: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[20:22:05] *** Joins: locodash11[server] (locodash11@Pony-osmcfg.co.comcast.net)
+[20:22:05] *** Joins: Shutter (tips@sudoku.prevention.hotline)
+[20:22:05] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[20:22:05] *** Joins: AutoLapsus (Lapsus@Totally.Is.A.Network.Service)
+[20:22:05] *** cloudchaser.canternet.org sets mode: +o AutoLapsus
+[20:22:12] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (Connection closed)
+[20:22:13] *** Joins: MisterSkids (ejd@Pony-aaa.lna.79.74.IP)
+[20:22:21] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[20:22:29] *** Joins: Jouva (jouva@Pony-odi.08q.11.100.IP)
+[20:22:35] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[20:22:46] *** DataByte is now known as Pony_67161
+[20:22:48] *** quindo is now known as Pony_32588
+[20:22:48] *** locodash11[server] is now known as Pony_80605
+[20:22:56] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[20:23:00] *** Joins: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net)
+[20:23:09] *** Joins: Dusk (Dusk@Pony-fkc.i75.99.192.IP)
+[20:23:30] *** Quits: jaderain (jaderain@jaderain.is.best.pony) (Ping timeout: 121 seconds)
+[20:23:30] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (Ping timeout: 121 seconds)
+[20:23:30] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (Ping timeout: 121 seconds)
+[20:23:30] *** Quits: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net) (Ping timeout: 121 seconds)
+[20:23:30] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[20:23:30] *** Joins: Colgate (rabbit@brushie.horse)
+[20:23:47] *** Quits: MisterSkids (ejd@Pony-aaa.lna.79.74.IP) (Connection closed)
+[20:24:12] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[20:24:12] *** Joins: Pony_48498 (Lapsus@Pony-5m46mf.cable.rogers.com)
+[20:24:12] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[20:24:12] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[20:24:38] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[20:24:44] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[20:25:28] <misiek200m> Waaat
+[20:25:28] *** zz_CyberJacob is now known as CyberJacob
+[20:25:28] *** Joins: Deathpony (IceChat9@Pony-q2h.j1d.51.50.IP)
+[20:25:34] *** Joins: HoneyDrops (Honey@sweeter.than.honey)
+[20:25:52] *** Deathpony is now known as Pony_65959
+[20:26:11] *** Joins: Fusl (Fusl@148.163.189.28)
+[20:26:25] *** Fusl is now known as Pony_1922
+[20:26:53] *** Joins: GeekBrony (GB@bronydom.net)
+[20:28:33] *** Joins: Lorix_- (Lorix_@Pony-ahk.n7v.237.192.IP)
+[20:28:58] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[20:29:03] *** Joins: WorkingData (DataByteBro@Pony-tk3.hp8.15.173.IP)
+[20:29:16] *** Joins: miggyb (miggyb@Pony-rch.5rt.72.54.IP)
+[20:29:16] *** miggyb is now known as Pony_28970
+[20:29:40] *** Joins: endoriazel (coprah@Pony-81pjdu.de)
+[20:30:07] *** Joins: Kinsley (JKinsley@Bow.To.Your.Princess)
+[20:30:09] *** AutoLapsus sets mode: +o Kinsley
+[20:30:12] *** Joins: Red_M (potato@Pony-4pa04c.red-m.net)
+[20:30:20] *** Joins: saneki (saneki@Pony-tni.g4k.31.96.IP)
+[20:31:07] *** Joins: JustAberrant (JustAberran@Pony-ffr.0tv.116.50.IP)
+[20:31:12] *** Quits: Pony_67161 (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[20:31:12] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[20:31:36] *** Pony_48498 is now known as Lapsus
+[20:31:37] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[20:31:39] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[20:31:43] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[20:31:47] *** Quits: CyberJacob (CyberJacob@Pony-8adl2m.bluesapphiremedia.co.uk) (Ping timeout: 121 seconds)
+[20:32:18] *** Joins: tiwake (Octavia@Pony-f1m.gsf.84.71.IP)
+[20:32:27] *** Joins: DataByte (DataByteBro@Pony-tk3.hp8.15.173.IP)
+[20:32:35] *** Joins: jaderain (jaderain@jaderain.is.best.pony)
+[20:32:40] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Connection closed)
+[20:32:50] *** Quits: Lorix_- (Lorix_@Pony-ahk.n7v.237.192.IP) (Ping timeout: 121 seconds)
+[20:32:53] *** Joins: Finnfinn (Finnfinn@finn.isher)
+[20:33:18] *** Joins: klaxa (klaxa@Pony-ail.8pm.0.134.IP)
+[20:33:38] *** Joins: Unixkitty (uni@the.unicorn.cat)
+[20:33:40] *** Joins: CyberJacob (CyberJacob@Pony-dom.9o9.247.54.IP)
+[20:34:09] *** Joins: Lorix_- (Lorix_@Pony-ahk.n7v.237.192.IP)
+[20:34:12] *** Quits: WorkingData (DataByteBro@Pony-tk3.hp8.15.173.IP) (Ping timeout: 121 seconds)
+[20:34:28] *** Joins: WildSoft (WildSoft@Pony-9tei06.bredband.comhem.se)
+[20:34:31] *** Joins: Stik (drakon@Pony-ql55m5.cable.virginm.net)
+[20:34:42] *** Joins: Compu (compu@snuggly.filly)
+[20:34:46] *** Joins: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net)
+[20:34:55] *** Joins: Cameron_D (cameron@Pony-v0m.4h7.241.192.IP)
+[20:34:58] *** Joins: enginemaniac (flail@flail.flail.flail)
+[20:35:00] *** Joins: Aww (aww@Pony-s66.2lf.34.64.IP)
+[20:35:37] *** Joins: sleumas2000 (sleumas2000@my.little.karaoke)
+[20:37:28] *** Joins: Gumball (GumballCras@0.to.pony.10secondsflat)
+[20:37:28] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[20:37:33] *** Stik is now known as Pony_74343
+[20:38:32] *** Quits: CyberJacob (CyberJacob@Pony-dom.9o9.247.54.IP) (Ping timeout: 121 seconds)
+[20:38:57] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[20:38:57] *** Joins: Datalink (Datalink@Datalink)
+[20:39:16] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[20:39:27] *** Joins: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner)
+[20:39:27] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[20:39:27] *** chrysalis.canternet.org sets mode: +v PinkiePieBot
+[20:39:33] *** Joins: Eclipse (rylai@libgryphon.so)
+[20:39:37] *** Joins: Eventide (uid61788@Tips.Fedora)
+[20:39:42] *** Joins: CyberJacob (CyberJacob@Pony-8adl2m.bluesapphiremedia.co.uk)
+[20:40:00] *** Quits: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner) (Ping timeout: 121 seconds)
+[20:40:04] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[20:40:12] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[20:40:38] *** DataByte is now known as WorkingData
+[20:40:46] *** Joins: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner)
+[20:40:46] *** AutoLapsus sets mode: +v PinkiePieBot
+[20:42:29] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (cloudchaser.canternet.org chrysalis.canternet.org)
+[20:42:29] *** Quits: Colgate (rabbit@brushie.horse) (Connection closed)
+[20:43:03] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[20:43:03] *** Quits: Unixkitty (uni@the.unicorn.cat) (Ping timeout: 121 seconds)
+[20:43:29] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Connection closed)
+[20:43:29] *** Quits: tiwake (Octavia@Pony-f1m.gsf.84.71.IP) (Ping timeout: 121 seconds)
+[20:44:31] *** Quits: klaxa (klaxa@Pony-ail.8pm.0.134.IP) (Ping timeout: 121 seconds)
+[20:44:31] *** Joins: tiwake (Octavia@Pony-njonl3.wa.charter.com)
+[20:44:31] *** Quits: Asoka (Asoka@Pony-a5dj6m.net-htp.de) (Ping timeout: 121 seconds)
+[20:44:31] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[20:46:58] *** Joins: Asoka (Asoka@Pony-a5dj6m.net-htp.de)
+[20:46:58] *** Joins: Unixkitty (uni@the.unicorn.cat)
+[20:46:58] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Ping timeout: 121 seconds)
+[20:46:58] *** Quits: Eventide (uid61788@Tips.Fedora) (Ping timeout: 121 seconds)
+[20:46:58] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 122 seconds)
+[20:46:58] *** Joins: Midnight_Tinker (MidnightTin@Pony-a8d.8u4.185.184.IP)
+[20:46:58] *** Quits: JustAberrant (JustAberran@Pony-ffr.0tv.116.50.IP) (Ping timeout: 122 seconds)
+[20:46:58] *** Joins: klaxa (klaxa@Pony-ail.8pm.0.134.IP)
+[20:46:58] *** Quits: Pony_65959 (IceChat9@Pony-q2h.j1d.51.50.IP) (Ping timeout: 121 seconds)
+[20:46:58] *** Joins: JustAberrant (JustAberran@Pony-ffr.0tv.116.50.IP)
+[20:46:58] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Ping timeout: 121 seconds)
+[20:46:58] *** Quits: misiek200m (miskof@mysterious.chocolate.muffin) (Ping timeout: 121 seconds)
+[20:46:58] *** Quits: jaderain (jaderain@jaderain.is.best.pony) (Ping timeout: 121 seconds)
+[20:47:08] *** Quits: Pony_28970 (miggyb@Pony-rch.5rt.72.54.IP) (Ping timeout: 121 seconds)
+[20:47:10] *** Quits: Compu (compu@snuggly.filly) (Ping timeout: 121 seconds)
+[20:47:10] *** Quits: Darki (DK@Pony-92fd75.vs.webtropia.com) (Ping timeout: 121 seconds)
+[20:47:21] *** Quits: WorkingData (DataByteBro@Pony-tk3.hp8.15.173.IP) (Ping timeout: 121 seconds)
+[20:47:41] *** Joins: jaderain (jaderain@Pony-msb.7oq.1.52.IP)
+[20:47:41] *** Quits: CyberJacob (CyberJacob@Pony-8adl2m.bluesapphiremedia.co.uk) (Ping timeout: 121 seconds)
+[20:48:10] *** Quits: Lapsus (Lapsus@i-forget.ca) (Ping timeout: 121 seconds)
+[20:48:10] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Ping timeout: 121 seconds)
+[20:48:10] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Connection closed)
+[20:48:10] *** Quits: AutoLapsus (Lapsus@Totally.Is.A.Network.Service) (cadance.canternet.org cloudchaser.canternet.org)
+[20:48:10] *** Quits: Asoka (Asoka@Pony-a5dj6m.net-htp.de) (cadance.canternet.org cloudchaser.canternet.org)
+[20:48:11] *** Quits: Shutter (tips@sudoku.prevention.hotline) (cadance.canternet.org cloudchaser.canternet.org)
+[20:48:11] *** Quits: Unixkitty (uni@the.unicorn.cat) (cadance.canternet.org cloudchaser.canternet.org)
+[20:48:11] *** Quits: klaxa (klaxa@Pony-ail.8pm.0.134.IP) (cadance.canternet.org cloudchaser.canternet.org)
+[20:48:11] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (cadance.canternet.org cloudchaser.canternet.org)
+[20:48:29] *** Joins: CyberJacob (CyberJacob@Pony-dom.9o9.247.54.IP)
+[20:48:29] *** Quits: Sakura (Sakura@is.a.very.derpy.pony) (Ping timeout: 122 seconds)
+[20:48:29] *** Joins: Deathpony (IceChat9@Pony-q2h.j1d.51.50.IP)
+[20:48:35] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (Ping timeout: 121 seconds)
+[20:48:42] *** Quits: HoneyDrops (Honey@sweeter.than.honey) (Ping timeout: 121 seconds)
+[20:49:00] *** Quits: Pony_80605 (locodash11@Pony-osmcfg.co.comcast.net) (Ping timeout: 122 seconds)
+[20:49:11] *** Joins: PeakVolu1e (k9ldt@Pony-mtb.f13.6.100.IP)
+[20:50:16] *** Quits: Kinsley (JKinsley@Bow.To.Your.Princess) (Ping timeout: 122 seconds)
+[20:50:16] *** Quits: Eclipse (rylai@libgryphon.so) (Ping timeout: 122 seconds)
+[20:50:16] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (Ping timeout: 121 seconds)
+[20:50:16] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Ping timeout: 122 seconds)
+[20:50:17] *** Quits: PeakVolume (k9ldt@Pony-tqvh62.fios.verizon.net) (Ping timeout: 121 seconds)
+[20:50:20] *** Quits: GeekBrony (GB@bronydom.net) (Ping timeout: 121 seconds)
+[20:50:23] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[20:50:23] *** Joins: Shutter (tips@sudoku.prevention.hotline)
+[20:50:23] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[20:50:23] *** Joins: Asoka (Asoka@Pony-a5dj6m.net-htp.de)
+[20:50:23] *** Joins: Pony_80605 (locodash11@Pony-osmcfg.co.comcast.net)
+[20:50:23] *** Joins: Unixkitty (uni@the.unicorn.cat)
+[20:50:23] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[20:50:23] *** Joins: Compu (compu@snuggly.filly)
+[20:50:23] *** Joins: misiek200m (miskof@mysterious.chocolate.muffin)
+[20:50:23] *** Joins: klaxa (klaxa@Pony-ail.8pm.0.134.IP)
+[20:50:23] *** Joins: AutoLapsus (Lapsus@Totally.Is.A.Network.Service)
+[20:50:23] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[20:50:23] *** cloudchaser.canternet.org sets mode: +o AutoLapsus
+[20:50:24] *** Joins: Darki (DK@Pony-44f.v38.82.80.IP)
+[20:50:25] *** Quits: PinkiePieBot (PinkiePieBo@Sugar.Cube.Corner) (Ping timeout: 121 seconds)
+[20:50:45] *** Joins: Eventide (uid61788@Pony-7k7osr.irccloud.com)
+[20:50:45] *** Joins: Lapsus (Lapsus@Pony-5m46mf.cable.rogers.com)
+[20:50:45] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[20:50:45] *** Joins: Pocketguns2 (Pocketguns2@Digging.a.Hole)
+[20:50:46] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[20:50:46] *** Joins: Sakura (Sakura@Pony-fkc.i75.99.192.IP)
+[20:50:48] *** Joins: reiuiji (reiuiji@Pony-p4v.eq7.30.66.IP)
+[20:50:49] *** Joins: Finwe (vhalkola@Pony-25l.vcn.233.130.IP)
+[20:50:59] *** Joins: HoneyDrops (Honey@sweeter.than.honey)
+[20:51:05] *** Joins: Ola (ola@Pony-k5v.64a.226.188.IP)
+[20:51:15] *** Quits: sniperfox1 (sniperfox@Pony-qih.5g9.114.167.IP) (Ping timeout: 121 seconds)
+[20:51:19] *** Joins: GeekBrony (GB@bronydom.net)
+[20:51:29] *** Deathpony is now known as Pony_51662
+[20:51:29] *** CyberJacob is now known as Pony_83098
+[20:51:29] *** jaderain is now known as Pony_44086
+[20:51:29] *** Sakura is now known as Pony_36606
+[20:51:29] *** Parts: Compu (compu@snuggly.filly) ("This channel just got a whole lot less adorable!")
+[20:51:29] *** Joins: Compu (compu@snuggly.filly)
+[20:51:30] *** Quits: Cameron_D (cameron@192.241.210.101) (Ping timeout: 121 seconds)
+[20:51:35] *** Joins: miggyb (miggyb@Pony-ko7510.compute.amazonaws.com)
+[20:51:55] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (cloudchaser.canternet.org chrysalis.canternet.org)
+[20:52:11] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[20:52:14] *** Quits: Pony_1922 (Fusl@148.163.189.28) (Ping timeout: 121 seconds)
+[20:52:17] *** Joins: Colgate (rabbit@brushie.horse)
+[20:52:52] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[20:53:06] *** Pony_36606 is now known as Sakura
+[20:53:09] *** Joins: Fusl (Fusl@148.163.189.28)
+[20:53:10] *** Joins: Cameron_D (cameron@Pony-v0m.4h7.241.192.IP)
+[20:53:29] *** Quits: wolfyshy (woof@fluttering.shyly.through.the.forest) (Ping timeout: 121 seconds)
+[20:53:35] *** Sakura is now known as Pony_30073
+[20:53:36] *** Joins: Sin (Sin@is.hustlin.everyday)
+[20:53:45] *** Pony_30073 is now known as Saku
+[20:54:52] *** Quits: tiwake (Octavia@Pony-njonl3.wa.charter.com) (Ping timeout: 121 seconds)
+[20:54:56] *** Quits: Fusl (Fusl@148.163.189.28) (cloudchaser.canternet.org chrysalis.canternet.org)
+[20:54:56] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (cloudchaser.canternet.org chrysalis.canternet.org)
+[20:55:01] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[20:55:05] *** Joins: WorkingData (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[20:55:21] *** Joins: tiwake (Octavia@Pony-njonl3.wa.charter.com)
+[20:55:24] *** djazz is now known as MangoBloom
+[20:55:59] *** Joins: Fusl (Fusl@148.163.189.28)
+[20:55:59] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[20:57:45] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[20:57:55] *** Quits: Fusl (Fusl@148.163.189.28) (cloudchaser.canternet.org chrysalis.canternet.org)
+[20:57:55] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (cloudchaser.canternet.org chrysalis.canternet.org)
+[20:57:56] *** Quits: Pony_51662 (IceChat9@Pony-q2h.j1d.51.50.IP) (Ping timeout: 121 seconds)
+[20:58:57] *** Joins: Deathpony (IceChat9@Pony-q2h.j1d.51.50.IP)
+[20:59:26] *** Deathpony is now known as Pony_696
+[21:02:39] *** Joins: johnsey (johnsey@into.the.nethers)
+[21:02:39] *** Joins: One-Trick (Octavia@hyenaspots.com)
+[21:02:39] *** Joins: cyzon (cyzon@moms.spaghetti)
+[21:02:39] *** Joins: roflin (dennis@Pony-aend1d.es)
+[21:02:39] *** Joins: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com)
+[21:02:39] *** Joins: DataByte (DataByte@Pony-3pfj33.g424.9euc.0247.2601.IP)
+[21:02:39] *** Joins: Dashie (rainbow@Pony-5bk85g.hacker.horse)
+[21:02:39] *** Joins: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP)
+[21:02:39] *** Joins: Duck (sid3009@Pony-4r56u0.ealing.irccloud.com)
+[21:02:39] *** Joins: Apple_Bloom (sid52418@the.canon.pony)
+[21:02:39] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[21:02:39] *** Joins: init3 (quassel@init3.Is.Not.A.Clever.Poni)
+[21:02:39] *** Joins: Q0 (Q0@literallyshit.net)
+[21:02:39] *** Joins: Neptune (Neptune@Pony-q31u28.k23g.gt9a.fcd0.2607.IP)
+[21:02:39] *** Joins: Shival|Away (ShivalWolf@2400:d400:9:7375:abcd::2)
+[21:02:39] *** Joins: Datguy (Datguy@lord.of.nreboot.c0m)
+[21:02:39] *** Joins: Seoson|Away (Seoson@pony.kab-s.de)
+[21:02:39] *** Joins: Sellyme (quassel@Pony-lq694o.of.saltspork.com)
+[21:02:39] *** Joins: Crimson_Tail (Bluepon@Pony-8ddqcj.cg80.k4gu.0151.2601.IP)
+[21:03:42] *** Quits: JustAberrant (JustAberran@Pony-ffr.0tv.116.50.IP) (Ping timeout: 121 seconds)
+[21:04:38] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[21:04:40] *** Quits: Sellyme (quassel@Pony-lq694o.of.saltspork.com) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: Neptune (Neptune@Pony-q31u28.k23g.gt9a.fcd0.2607.IP) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: DataByte (DataByte@Pony-3pfj33.g424.9euc.0247.2601.IP) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: Duck (sid3009@Pony-4r56u0.ealing.irccloud.com) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: Crimson_Tail (Bluepon@Pony-8ddqcj.cg80.k4gu.0151.2601.IP) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: Q0 (Q0@literallyshit.net) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: cyzon (cyzon@moms.spaghetti) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: Dashie (rainbow@Pony-5bk85g.hacker.horse) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: init3 (quassel@init3.Is.Not.A.Clever.Poni) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: Apple_Bloom (sid52418@the.canon.pony) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: Datguy (Datguy@lord.of.nreboot.c0m) (cadance.canternet.org derpy.canternet.org)
+[21:04:40] *** Quits: Shival|Away (ShivalWolf@2400:d400:9:7375:abcd::2) (cadance.canternet.org derpy.canternet.org)
+[21:04:51] *** Quits: roflin (dennis@Pony-aend1d.es) (cadance.canternet.org derpy.canternet.org)
+[21:04:51] *** Quits: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com) (cadance.canternet.org derpy.canternet.org)
+[21:04:51] *** Quits: johnsey (johnsey@into.the.nethers) (cadance.canternet.org derpy.canternet.org)
+[21:04:51] *** Quits: One-Trick (Octavia@hyenaspots.com) (cadance.canternet.org derpy.canternet.org)
+[21:04:51] *** Quits: Seoson|Away (Seoson@pony.kab-s.de) (cadance.canternet.org derpy.canternet.org)
+[21:05:35] *** Quits: Colgate (rabbit@brushie.horse) (Connection closed)
+[21:05:41] *** Quits: Aww (aww@Pony-s66.2lf.34.64.IP) (Ping timeout: 121 seconds)
+[21:07:19] *** Joins: Colgate (rabbit@brushie.horse)
+[21:08:31] *** Joins: Midnight_Tinker_ (MidnightTin@Pony-5qttkj.dc.cox.net)
+[21:08:31] *** Quits: Lorix_- (Lorix_@Pony-ahk.n7v.237.192.IP) (Ping timeout: 121 seconds)
+[21:08:31] *** Quits: Midnight_Tinker (MidnightTin@Pony-a8d.8u4.185.184.IP) (Ping timeout: 121 seconds)
+[21:09:03] *** Joins: Eclipse (rylai@Pony-71u6pe.so)
+[21:09:21] *** Joins: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[21:10:33] *** Joins: Aww (aww@Pony-ic0abh.online)
+[21:10:33] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (Ping timeout: 121 seconds)
+[21:10:33] *** Quits: Ola (ola@Pony-k5v.64a.226.188.IP) (Ping timeout: 121 seconds)
+[21:13:19] *** Joins: Ola (ola@Pony-k5v.64a.226.188.IP)
+[21:13:19] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Ping timeout: 121 seconds)
+[21:13:19] *** Joins: Lorix_- (Lorix_@Pony-ahk.n7v.237.192.IP)
+[21:13:19] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[21:13:42] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[21:13:58] *** Joins: Datalink_ (Datalink@Datalink)
+[21:14:29] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[21:14:32] *** djazz is now known as MangoBloom
+[21:15:48] *** Quits: Jouva (jouva@Pony-odi.08q.11.100.IP) (Connection closed)
+[21:15:48] *** Joins: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[21:15:48] *** Quits: WorkingData (DataByteBro@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[21:15:48] *** Quits: Finwe (vhalkola@Pony-25l.vcn.233.130.IP) (Ping timeout: 121 seconds)
+[21:16:29] *** Quits: Datalink (Datalink@Datalink) (Ping timeout: 121 seconds)
+[21:17:29] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[21:17:29] *** Joins: Kinsley (JKinsley@Bow.To.Your.Princess)
+[21:17:29] *** AutoLapsus sets mode: +o Kinsley
+[21:18:29] *** Quits: Colgate (rabbit@brushie.horse) (Ping timeout: 121 seconds)
+[21:18:29] *** Joins: sniperfox1 (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[21:18:32] *** Joins: Colgate (rabbit@brushie.horse)
+[21:19:36] *** DataByte is now known as 436AAETX8
+[21:19:37] *** Joins: Seoson (Seoson@pony.kab-s.de)
+[21:19:37] *** Joins: DataByte (DataByte@Pony-3pfj33.g424.9euc.0247.2601.IP)
+[21:19:37] *** Joins: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com)
+[21:19:37] *** Joins: Shival|Away (ShivalWolf@2400:d400:9:7375:abcd::2)
+[21:19:37] *** Joins: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP)
+[21:19:37] *** Joins: johnsey (johnsey@into.the.nethers)
+[21:19:37] *** Joins: roflin (dennis@Pony-aend1d.es)
+[21:19:37] *** Joins: Duck (sid3009@Pony-4r56u0.ealing.irccloud.com)
+[21:19:37] *** Joins: Apple_Bloom (sid52418@the.canon.pony)
+[21:19:37] *** Joins: Sellyme (quassel@Pony-lq694o.of.saltspork.com)
+[21:19:37] *** Joins: One-Trick (Octavia@hyenaspots.com)
+[21:19:37] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[21:19:37] *** Joins: cyzon (cyzon@moms.spaghetti)
+[21:19:37] *** Joins: Crimson_Tail (Bluepon@Pony-8ddqcj.cg80.k4gu.0151.2601.IP)
+[21:19:37] *** Joins: Dashie (rainbow@Pony-5bk85g.hacker.horse)
+[21:19:37] *** Joins: Datguy (Datguy@lord.of.nreboot.c0m)
+[21:19:37] *** Joins: init3 (quassel@init3.Is.Not.A.Clever.Poni)
+[21:19:37] *** Joins: Neptune (Neptune@Pony-q31u28.k23g.gt9a.fcd0.2607.IP)
+[21:19:37] *** Joins: Q0 (Q0@literallyshit.net)
+[21:19:54] *** Quits: Pocketguns2 (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[21:20:03] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[21:21:35] *** Quits: AutoLapsus (Lapsus@Totally.Is.A.Network.Service) (cloudchaser.canternet.org services.canternet.org)
+[21:21:47] *** Joins: AutoLapsus (Lapsus@Totally.Is.A.Network.Service)
+[21:21:47] *** services.canternet.org sets mode: +o AutoLapsus
+[21:22:46] *** Joins: Fusl (Fusl@148.163.189.28)
+[21:22:46] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[21:22:46] *** Joins: Monochrome (Sentoki@Pony-8e2sl3.publicBNC.canternet.org)
+[21:22:46] *** Joins: Twilightlicious (Twilightlic@Pony-o78rrv.publicBNC.canternet.org)
+[21:22:46] *** Joins: RedHelper (RedHelper@Pony-i2iccc.publicBNC.canternet.org)
+[21:25:37] *** 436AAETX8 is now known as WorkingData
+[21:25:49] *** Joins: Jouva (jouva@Pony-535ork.fios.verizon.net)
+[21:34:01] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[21:46:39] *** sleumas2000 is now known as Pony_24601
+[21:46:56] *** Joins: Divide|Support (NA@Pony-vf5hfh.cable.rogers.com)
+[21:48:57] *** Pony_24601 is now known as sleumas200
+[21:48:59] *** sleumas200 is now known as sleumas2000
+[21:50:48] *** sleumas2000 is now known as sleumas8472
+[21:54:01] *** Joins: Sombra (Iceman@Darkhorse21)
+[21:55:22] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "switchin' boxes, back in a few")
+[21:55:23] *** Saku is now known as Nyu
+[21:55:28] *** Nyu is now known as Sakura
+[22:12:46] *** Joins: Fallfeathers (Fallfeather@Pony-jij466.bigpond.net.au)
+[22:20:15] *** Quits: WorkingData (DataByteBro@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[22:30:05] *** Pony_74343 is now known as Stik
+[22:30:47] *** Midnight_Tinker_ is now known as Midnight_Tinker
+[22:32:03] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[22:36:28] <Pony_32588> Man... setting up python frameworks on a pi2 is proving to be no fun at all >.>
+[22:39:03] *** Pony_32588 is now known as quindo
+[22:39:05] *** Quits: quindo (Quindo@Pony-mq3.m3q.194.162.IP) (Quit: )
+[22:39:07] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[22:47:47] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[23:00:20] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[23:00:41] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[23:03:12] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-8oltl0.tmodns.net)))
+[23:03:48] *** Joins: DJ-C0L7[EIT]_ (IceChat77@DJ-C0L7.EIT.LLC)
+[23:03:49] *** Pony_80605 is now known as Tan-Sama
+[23:04:03] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[23:04:03] *** Tan-Sama is now known as locodash11[server]
+[23:05:41] *** DJ-C0L7[EIT]_ is now known as DJ-C0L7[EIT]
+[23:07:17] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[23:21:05] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[23:35:00] <Seoson> So Dell started to suspend Win7 product keys used with counterfeit recovery CDs
+[23:36:08] <Seoson> I hope you're not one of the silly people that bought a Win7 license for 19.99 from more or less shady sources.
+[23:46:24] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[23:56:29] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:59:36] *** Quits: DataByte (DataByte@Pony-3pfj33.g424.9euc.0247.2601.IP) (Quit: Leaving)

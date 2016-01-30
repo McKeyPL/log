@@ -1,0 +1,116 @@
+[00:56:45] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[01:34:14] *** Quits: domme_ (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de) (Ping timeout: 250 seconds)
+[03:38:58] *** Quits: jturney1 (~jon@host86-141-129-50.range86-141.btcentralplus.com) (Read error: Connection reset by peer)
+[05:35:08] *** Joins: mgue2 (~mgue@x590f8ace.dyn.telefonica.de)
+[05:37:53] *** Quits: mgue1 (~mgue@x5ce2e2e3.dyn.telefonica.de) (Ping timeout: 250 seconds)
+[06:06:10] *** Quits: zopieux (zopieux@jerrycraft.tk) (Ping timeout: 272 seconds)
+[06:14:18] *** Joins: zopieux (zopieux@jerrycraft.tk)
+[07:10:46] *** Quits: jamesaxl (~jamesaxl@41.249.117.162) (Ping timeout: 240 seconds)
+[07:38:04] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[07:50:26] *** Quits: soee (~soee@u28n61.nowanet.pl) (Ping timeout: 244 seconds)
+[08:12:49] *** Joins: domme_ (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de)
+[09:45:44] *** Joins: alusso (guest-alus@gateway/web/scrollback.io/x-bowadborhbsiuxid)
+[09:45:45] <alusso> is there a roadmap for the project?
+[09:45:46] <alusso> hi
+[09:45:54] <alusso> with features, etc.?
+[10:08:58] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[10:34:07] *** Parts: alusso (guest-alus@gateway/web/scrollback.io/x-bowadborhbsiuxid) ()
+[11:11:05] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[12:04:15] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[13:17:14] *** Quits: domme_ (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de) (Ping timeout: 246 seconds)
+[13:17:18] *** Joins: domme (~domme@ip-178-200-154-13.hsi07.unitymediagroup.de)
+[13:33:44] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[13:54:47] *** Joins: jamesaxl_ (~jamesaxl@41.140.204.124)
+[14:01:58] *** Joins: jturney (~jon@host86-141-129-50.range86-141.btcentralplus.com)
+[14:25:31] *** Joins: ishets1 (guest-ishe@gateway/web/scrollback.io/x-hkpsluzkbcshsepo)
+[14:25:31] <ishets1> Opening Charts seg faults 0.8.4 (Arch) for me
+[14:38:31] <domme> ishets1: ouch :(
+[14:38:36] <domme> can you file a bug on github?
+[14:54:51] <domme> ishets1: what exactly did you do to crash?
+[15:08:43] <ishets1> just attempting to open Charts causes it (after a few moments for the response)
+[15:10:10] <ishets1> going off output, it seems it's a side effect of https://tomahawk-player.org/toplist/charts 404'ing
+[15:10:11] <tomabee> [ 404 Not Found | tomahawk-player.org |  ]
+[15:10:41] <ishets1> 01:08:51 [1]: virtual void Tomahawk::InfoSystem::SpotifyPlugin::notInCacheSlot(Tomahawk::InfoSystem::InfoStringHash, Tomahawk::InfoSystem::InfoRequestData) fetching:  QUrl( "http://spotikea.tomahawk-player.org/toplist/charts" )  
+[15:10:41] <tomabee> [ 404 Not Found | spotikea.tomahawk-player.org |  ]
+[15:10:42] <ishets1> 01:08:52 [0]: JSonScanner::yylex - unknown char, returning -1 
+[15:10:43] <ishets1> 01:0... [ full message at http://scrollback.io/tomahawk?time=2015-11-24T14:10:40.701Z&tab=people ]
+[15:10:44] <tomabee> [ tomahawk on Scrollback | scrollback.io |  ]
+[15:41:46] <domme> ishets1: if you want me to answer in a reasonable amount of time, just highlight me (write my name in front of your message)
+[15:42:03] <domme> yeah, weird
+[15:42:08] <domme> master does not crash for me 
+[16:08:16] <ishets1> domme2: compiling with qt5 instead of qt4 stops the segfault
+[16:10:11] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[16:11:43] *** Joins: github-tomahawk (~github-to@192.30.252.46)
+[16:11:43] <github-tomahawk> [13tomahawk-resolvers] 15mrmaffen pushed 1 new commit to 06master: 02http://git.io/vBsGM
+[16:11:43] <github-tomahawk> 13tomahawk-resolvers/06master 14c5e55de 15Enno Gottschalk: [jamendo] Only resolve a maximum of 5 results per track
+[16:11:43] *** Parts: github-tomahawk (~github-to@192.30.252.46) ()
+[16:14:20] <domme> ishets1: cool. qt4 is kinda deprecated anyway
+[16:23:29] <theli_ua> domme: I tried to open charts the other day and master segfaulted on me as well
+[16:26:55] <domme> with qt4 or qt5? :P
+[16:30:08] *** Quits: soee (~soee@u28n61.nowanet.pl) (Ping timeout: 276 seconds)
+[16:54:57] *** Parts: ishets1 (guest-ishe@gateway/web/scrollback.io/x-hkpsluzkbcshsepo) ()
+[17:24:28] <muesli> sounds like an assert at first glance
+[17:26:36] *** Joins: bronin (~bronin@gateway/web/scrollback.io/x-hvvidhbwfdmrpoju)
+[17:26:37] <bronin> what is this chat from the website you guys have ? 
+[17:27:35] <domme> bronin: scrollback.io
+[17:28:35] <bronin> is it kind of linked to IRC or such ?
+[17:28:44] <bronin> or just its own platform ?
+[17:36:14] <domme> it's irc
+[17:36:24] <domme> bronin: you're writing on #
+[17:36:28] <domme> #tomahawk on freenode
+[17:37:32] <bronin> oki, cool to know :) thx
+[17:37:47] <domme> :)
+[17:38:06] <bronin> what the status of tomahawk next release ? I understood you guys are working on a website (hatchet ? )
+[17:39:23] <domme> bronin: yes, we are working on hatchet.is a lot
+[17:39:40] <domme> but we are also fighting a few last issues with qt5 on osx.
+[17:40:09] <domme> i personally have been working on making the resolvers completely compatible on all platforms again. i.e. in the last year all platforms slightly diverged (desktop, android, hatchet)
+[17:42:30] <bronin> ok, and how is hatchet fitting with desktop app tomahawk ? as the social server ?
+[17:44:03] <domme> yes
+[17:45:00] <bronin> would I want to get to this website or it will be better experiences through desktop app ?
+[17:45:25] <domme> both has benefits, it's certainly not one or the other :)
+[17:45:40] <bronin> k, it seems pretty neat when surfing on it sofar
+[17:45:46] <bronin> you guys really outdone yourself
+[17:46:31] <domme> thanks mate :)
+[17:47:41] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[18:05:02] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Read error: Connection reset by peer)
+[18:05:52] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[18:13:22] <theli_ua> domme qt4 ofc
+[18:13:38] <domme> "sorry not supported" ;D
+[18:15:06] <theli_ua> well, I wasn't reporting it anyway, just FYI that that is not on 0.8.4 only
+[18:15:43] <domme> hehe, yeah, i'm obviously kidding
+[18:15:56] <domme> and it's bad that release versions crash :\
+[19:01:59] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[19:06:05] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[19:16:19] *** Quits: jamesaxl_ (~jamesaxl@41.140.204.124) (Quit: Leaving)
+[19:44:55] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[20:24:08] *** Joins: jamesaxl (~jamesaxl@41.140.204.124)
+[20:27:11] *** Joins: howudodat (~peter@ip68-224-51-114.lv.lv.cox.net)
+[20:27:43] <howudodat> hey guys am looking for advice on how to do something that /seems/ stupidly simple. I have all my music organized into categories on the filesystem.  Each artist has it's own playlist of my favorite songs.  In windows, I was able to search for .m3u and grab all the playlists drag and drop them into media player and then sync to my phone / sd card.
+[20:27:56] <howudodat> I can drag and drop a single playlist onto tomahawk, but not multiple
+[20:34:27] <domme> howudodat: oh
+[20:34:37] <domme> howudodat: interesting, can you file a bug report for that?
+[20:34:54] <domme> can certainly be solved, but sounds like someone needs to do the work of actually implementing it
+[20:35:07] <howudodat> ok
+[20:36:19] *** Quits: howudodat (~peter@ip68-224-51-114.lv.lv.cox.net) (Quit: Ex-Chat)
+[20:56:20] *** Joins: howudodat (~peter@ip68-224-51-114.lv.lv.cox.net)
+[20:58:09] <howudodat> is tomahawk open source?, if I wanted to hep contribute are there published instructions?
+[21:10:42] <HorusHorrendus> howudodat: yes Tomahawk is OpenSource
+[21:10:54] <HorusHorrendus> https://github.com/tomahawk-player/tomahawk
+[21:10:58] <HorusHorrendus> is the GIT repository
+[21:10:58] <tomabee> [ tomahawk-player/tomahawk · GitHub | github.com | https://avatars2.githubusercontent.com/u/440844?v=3&s=400 ]
+[21:19:48] <howudodat> hmm..ok, I'll play with this a bit.  of the build instructions pages lead to 404 errors.  and cmake isnt' happy with one of the config files...I'll poke on it after lunch
+[21:22:52] *** Quits: apb1963 (~apb@174-134-224-109.res.bhn.net) (Ping timeout: 250 seconds)
+[21:55:22] <domme> howudodat: our server died the other week
+[21:55:35] <domme> that's why build instructions point into void
+[22:01:52] <howudodat> oh, sorry to hear that.  can you give me a quick start for ubuntu?
+[22:11:45] <domme> howudodat: well, basically exactly like you build any other program with cmake
+[22:12:05] <domme> e.g. in the source folder: mkdir build && cd build && cmake ..
+[22:12:11] <domme> then it will tell you what deps it's missing
+[22:12:14] <howudodat> that;s what I figured too...I'm probably just missing a dependency
+[22:13:08] <howudodat> do I need extra cmake modules?
+[22:13:42] <howudodat> Could not find a package configuration file provided by "ECM" (requested version 1.7.0) with any of the following names:  ECMConfig.cmake    ecm-config.cmake
+[22:31:13] <domme> howudodat: extra-cmake-modules
+[22:58:45] <howudodat> oops, I installed cmake-extra
+[22:59:05] <domme> it wont do harm :)
+[23:19:27] *** Quits: howudodat (~peter@ip68-224-51-114.lv.lv.cox.net) (Remote host closed the connection)
+[23:47:24] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)

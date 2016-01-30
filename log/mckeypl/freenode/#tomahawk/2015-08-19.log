@@ -1,0 +1,155 @@
+[00:05:55] *** Quits: rumpel^ (~da@unaffiliated/rumpell) (Remote host closed the connection)
+[00:54:43] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[01:08:48] *** Quits: soee_ (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[01:56:37] *** Joins: theli_ua (uid54353@gateway/web/irccloud.com/x-hnccixkgyqihnwvu)
+[01:56:57] <theli_ua> uh, resolver collection browsing is confusing
+[02:06:17] <theli_ua> domme: you are here?
+[02:08:57] *** Quits: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com) (Ping timeout: 246 seconds)
+[02:18:02] *** Quits: jturney1 (~jon@host86-179-113-234.range86-179.btcentralplus.com) (Read error: Connection reset by peer)
+[02:28:37] <muesli> theli_ua: confusing as in?
+[02:28:52] <theli_ua> no clear examples on usage
+[02:29:06] <theli_ua> not clear if its still uses qid or I shoudl return promises
+[02:33:26] <theli_ua> and like, I don't get any arguments passed into function in call to 'albums'
+[02:33:53] <theli_ua> am I supposed to respond with all albums in collection regardless of artist?
+[02:34:12] <theli_ua> ... why is there a call to get artist names then ..
+[02:38:06] *** Joins: endiat (guest-endi@gateway/web/scrollback.io/x-kxbmobexbjxdqkpt)
+[02:38:06] <endiat> just downloaded tomhawk for mac, can't connect to soundcloud or youtube at all..
+[02:41:26] <endiat> shame, doesn't seem to work as it should be doing at all
+[02:44:37] <endiat> a search brings up nothing basically :/
+[02:47:33] <endiat> uh this is a terrible player, uninstalling, 
+[02:48:59] <theli_ua> domme: I get no parameters passed into 'albums' or 'artistAlbums' methods of my resolver with API > 0.9 ... I don't think its supposed to be like that
+[03:48:04] <muesli> endiat: constructive feedback ftw ;-)
+[04:39:02] *** Parts: endiat (guest-endi@gateway/web/scrollback.io/x-kxbmobexbjxdqkpt) ()
+[04:39:18] *** Quits: total1ty_ (~quassel@ipbcc184bc.dynamic.kabel-deutschland.de) (Quit: No Ping reply in 180 seconds.)
+[04:40:33] *** Joins: total1ty_ (~quassel@ipbcc184bc.dynamic.kabel-deutschland.de)
+[05:15:59] *** Quits: akaseki (~hakase@unaffiliated/akaseki) (Ping timeout: 256 seconds)
+[05:18:51] *** Joins: akaseki (~hakase@unaffiliated/akaseki)
+[05:47:18] *** Joins: mgue2 (~mgue@x5ce392c0.dyn.telefonica.de)
+[05:50:09] *** Quits: mgue1 (~mgue@f050137172.adsl.alicedsl.de) (Ping timeout: 252 seconds)
+[06:36:58] *** Quits: kurros (wade@2604:180::f84a:f836) (Quit: WeeChat 1.1.1)
+[07:04:02] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[07:50:26] *** Quits: soee (~soee@u28n61.nowanet.pl) (Ping timeout: 244 seconds)
+[08:58:34] *** Quits: lfranchi (~quassel@kde/lfranchi) (Quit: No Ping reply in 180 seconds.)
+[08:58:48] *** Joins: kurros (wade@2604:180::f84a:f836)
+[08:59:42] *** Joins: lfranchi (~quassel@kde/lfranchi)
+[08:59:42] *** ChanServ sets mode: +o lfranchi
+[09:00:40] *** Quits: klaas (klaas@simply.kla.as) (Remote host closed the connection)
+[09:09:49] *** Joins: meaning (~meaning@90.55-243-81.adsl-dyn.isp.belgacom.be)
+[09:14:30] *** Quits: meaning (~meaning@90.55-243-81.adsl-dyn.isp.belgacom.be) (Read error: Connection reset by peer)
+[09:14:56] *** Joins: meaning (~meaning@90.55-243-81.adsl-dyn.isp.belgacom.be)
+[09:46:57] *** Joins: WillisMan (~Thunderbi@88.96.238.246)
+[10:24:43] *** Quits: mohn (~mo@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[10:24:43] *** Quits: johnyb (~jb@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[10:30:25] *** Joins: mohn (~mo@limu.coffee.liberejo.de)
+[10:30:26] *** Joins: johnyb (~jb@limu.coffee.liberejo.de)
+[10:43:13] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:15:02] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[11:46:36] *** Joins: effigh (guest-effi@gateway/web/scrollback.io/x-ahnabnzyeknrvawz)
+[11:46:37] <effigh> fads
+[12:09:32] *** Quits: kurros (wade@2604:180::f84a:f836) (Ping timeout: 246 seconds)
+[12:12:57] *** Joins: kurros (wade@2604:180::f84a:f836)
+[12:23:12] *** Joins: thisfred (~thisfred@67-5-250-36.ptld.qwest.net)
+[12:24:40] *** Joins: thisfred1 (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com)
+[12:25:24] *** Quits: thisfred (~thisfred@67-5-250-36.ptld.qwest.net) (Read error: Connection reset by peer)
+[12:29:39] *** Quits: thisfred1 (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com) (Ping timeout: 255 seconds)
+[12:58:54] *** Joins: jturney (~jon@host86-179-113-234.range86-179.btcentralplus.com)
+[13:09:47] *** Quits: meaning (~meaning@90.55-243-81.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[13:14:14] *** Joins: wilder_ (~quassel@160.80.10.178)
+[13:14:14] *** Quits: wilder_ (~quassel@160.80.10.178) (Changing host)
+[13:14:14] *** Joins: wilder_ (~quassel@kde/developer/wilder)
+[13:44:35] *** Quits: wilder_ (~quassel@kde/developer/wilder) (Remote host closed the connection)
+[14:03:54] *** Joins: meaning (~meaning@90.55-243-81.adsl-dyn.isp.belgacom.be)
+[14:21:21] *** Joins: rumpel^ (~da@unaffiliated/rumpell)
+[14:37:39] *** Quits: meaning (~meaning@90.55-243-81.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[15:08:33] *** Quits: rumpel^ (~da@unaffiliated/rumpell) (Quit: Leaving)
+[16:59:07] *** Parts: effigh (guest-effi@gateway/web/scrollback.io/x-ahnabnzyeknrvawz) ()
+[17:22:01] *** Quits: mohn (~mo@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[17:22:27] *** Quits: johnyb (~jb@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[17:31:17] *** Joins: ssam2_ (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[17:31:17] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Read error: Connection reset by peer)
+[18:12:25] *** Joins: thisfred1 (~thisfred@66-193-100-238.static.twtelecom.net)
+[18:15:23] *** Joins: thisfred (~thisfred@ec2-54-193-16-72.us-west-1.compute.amazonaws.com)
+[18:17:41] *** Quits: thisfred1 (~thisfred@66-193-100-238.static.twtelecom.net) (Ping timeout: 244 seconds)
+[18:25:51] *** Joins: mohn (~mo@limu.coffee.liberejo.de)
+[18:25:52] *** Joins: johnyb (~jb@limu.coffee.liberejo.de)
+[18:28:17] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[18:36:43] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[18:52:02] *** Quits: WillisMan (~Thunderbi@88.96.238.246) (Quit: WillisMan)
+[18:52:55] *** Joins: rumpel^ (~da@5.79.74.157)
+[18:52:55] *** Quits: rumpel^ (~da@5.79.74.157) (Changing host)
+[18:52:55] *** Joins: rumpel^ (~da@unaffiliated/rumpell)
+[18:53:32] *** Quits: 77CAAJ7PZ (scrollback@gateway/web/scrollback.io/x-gixmkfcjaiwhkjxb) (Remote host closed the connection)
+[18:55:15] *** Joins: 5EXABYDWE (scrollback@gateway/web/scrollback.io/x-gbssqcfiojvfjuwz)
+[18:57:23] <theli_ua> domme: ping
+[19:02:02] <muesli> theli_ua: his responses might be delayed, he's currently in ireland
+[19:02:15] <theli_ua> oh, right, he is still on vacation
+[19:02:29] <theli_ua> drinking beer with leprecauns
+[19:02:35] <muesli> heh
+[19:03:10] <theli_ua> muesli: so, all PRs will be reviewed in september I suppose?
+[19:05:53] <muesli> i think he's back a bit earlier than that actually
+[19:06:09] <muesli> but yeah, at least in the js/resolver area i'd like to wait for his feedback
+[19:06:15] <muesli> the memleak one we can just merge i think
+[19:25:19] *** Quits: ssam2_ (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Remote host closed the connection)
+[19:28:45] *** Quits: jturney (~jon@host86-179-113-234.range86-179.btcentralplus.com) (Ping timeout: 245 seconds)
+[19:29:00] *** Joins: jturney (~jon@host86-179-113-234.range86-179.btcentralplus.com)
+[19:32:35] *** Joins: sp1derjohn (~dewey@71-88-219-116.dhcp.kgpt.tn.charter.com)
+[19:37:38] *** Joins: meaning (~meaning@192.177-201-80.adsl-dyn.isp.belgacom.be)
+[19:38:22] *** Parts: sp1derjohn (~dewey@71-88-219-116.dhcp.kgpt.tn.charter.com) ()
+[19:43:55] *** Joins: soee (~soee@u28n61.nowanet.pl)
+[19:45:15] *** h4ndy is now known as H4ndy
+[19:48:26] <theli_ua> muesli: well, apart from memleak one theres also that 'loved radio' at least
+[19:59:42] <theli_ua> tho I"d call memleak one the most important
+[20:24:16] *** Quits: rumpel^ (~da@unaffiliated/rumpell) (Quit: Leaving)
+[20:36:34] <theli_ua> jherskowitz: http://imgur.com/i7NLOlw check this out
+[20:36:35] <tomabee> [ Imgur | imgur.com | http://i.imgur.com/i7NLOlw.png ]
+[20:37:05] *** Quits: meaning (~meaning@192.177-201-80.adsl-dyn.isp.belgacom.be) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[20:39:12] <jherskowitz> theli_ua: nice!
+[20:39:26] <jherskowitz> does it support flat tracklist view too?
+[20:39:52] <theli_ua> It is possible to implement that
+[20:40:07] <theli_ua> basically w/e web player supports is possible to do
+[20:40:16] <theli_ua> and web player supports flat album and flat tracks view
+[20:40:18] <jherskowitz> theli_ua: awesome
+[20:40:25] <jherskowitz> I’m looking forward to that
+[20:40:47] <theli_ua> I think I'll switch now to making it work for everyone before completing collection support
+[20:41:05] <jherskowitz> I don’t suppose you want to do a dropbox and box.net resolvers next? :)
+[20:41:27] <theli_ua> nope
+[20:41:34] <jherskowitz> heh, worth a shot
+[20:41:42] <jherskowitz> really lfranchi should do a dropbox resolver
+[20:41:47] <jherskowitz> :P
+[20:41:53] <theli_ua> well, the problem there is getting the metadata
+[20:42:27] <theli_ua> unless you want to rely on filenames only :D
+[20:42:48] <jherskowitz> heh.. there has to be a way to get it, no?
+[20:43:38] <domme> theli_ua: i hope i can ewview in september
+[20:44:16] <theli_ua> I'm not gonna post a pr for that domme
+[20:44:17] <domme> maybe cows will kill us tonifht because were camping on their land :p
+[20:44:33] <theli_ua> I'll just send it to you in PM and let you do all the fun stuff
+[20:44:38] <theli_ua> :D
+[20:44:46] <domme> lol
+[20:45:37] <jherskowitz> theli_ua: fwiw, https://github.com/dropbox/dropbox-js/issues/25
+[20:45:38] <tomabee> [ Access-Control-Allow-Headers · Issue #25 · dropbox/dropbox-js · GitHub | github.com | https://avatars3.githubusercontent.com/u/7318?v=3&s=400 ]
+[20:47:43] <lfranchi> :)
+[20:47:54] <lfranchi> i don't think a dropbox resolver makes much sense really
+[20:48:24] <jherskowitz> lfranchi: why?
+[20:48:42] <lfranchi> b/c why store media files in dropbox?
+[20:49:09] <theli_ua> yeah, just upload them to gmusic
+[20:49:12] <theli_ua> and amazon
+[20:49:17] <theli_ua> and combine them in tomahawk
+[20:49:20] <jherskowitz> lfranchi: b/c they are already there
+[20:49:40] <lfranchi> i guess i don't really see the big use case of storing your media files in dropbox
+[20:49:46] <lfranchi> is that meant to be as a backup?
+[20:50:07] <jherskowitz> lfranchi: well, I used to do it for sync across multiple machines
+[20:50:21] <jherskowitz> I’d download stuff at work and it would show up in my iTunes at home
+[20:50:26] <jherskowitz> (in the olden days)
+[20:50:28] <lfranchi> i see
+[20:50:30] <lfranchi> :)
+[21:47:15] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[22:03:41] *** Quits: johnyb (~jb@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[22:04:18] *** H4ndy is now known as h4ndy
+[22:04:33] *** Quits: mohn (~mo@limu.coffee.liberejo.de) (Ping timeout: 250 seconds)
+[22:24:37] *** Quits: afics (~afics@unaffiliated/-x-/x-5730914) (Remote host closed the connection)
+[22:28:08] *** Joins: afics (~afics@unaffiliated/-x-/x-5730914)
+[22:55:13] *** Joins: mohn (~mo@limu.coffee.liberejo.de)
+[22:55:14] *** Joins: johnyb (~jb@limu.coffee.liberejo.de)
+[23:24:09] <theli_ua> muesli: still here?
+[23:35:21] <muesli> yep
+[23:53:16] *** Quits: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de) ()

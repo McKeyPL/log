@@ -1,0 +1,645 @@
+[00:00:01] <Colgate> besides ones they could intercept
+[00:00:07] <Moonlightning> ^4 because it can't determine that it's HTTP until the layer-seven data starts going
+[00:00:20] <Seoson> Our firewall was setup to whitelist certain ports and block everything else while scanning HTTP and HTTPS
+[00:00:28] <Colgate> sure, but if it spots a protocol it doesn't understand, it can just send a RST packet
+[00:00:36] <Colgate> and breaking it
+[00:00:38] <Seoson> I used an uncommon POP3 port for my SSH tunnel
+[00:01:17] <Seoson> There are also tools that tunnel an encrpyted proxy connection over plain HTTP
+[00:01:28] <Colgate> this isn't really out of line of them, if you compare it to a corporate network
+[00:01:30] <Colgate> same thing really
+[00:01:33] <johnsey> nothing like ye good ole ip over dns tunnel
+[00:01:34] <Moonlightning> (AppleDash: I'm trying to quit Firefox to reclaim processor scheduling time and memory. Guess how much of both it's taking up /now./)
+[00:01:42] <Colgate> ip over dns would do it too
+[00:02:28] <Seoson> IP over DNS still works for some crappy paid hotspots ^^
+[00:02:41] <Colgate> it works on airplanes!
+[00:02:53] <Colgate> if you don't mind like 20 second latency :P
+[00:05:10] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[00:08:01] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:08:17] <Moonlightning> What? O.o
+[00:08:22] *** Joins: Fallfeathers (Fallfeather@Pony-vandmf.bigpond.net.au)
+[00:08:51] <Colgate> Moonlightning: look up iodine
+[00:14:12] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Connection closed)
+[00:19:53] <Seoson> I want one of those killerUSB sticks, place it on my desk looking innocently and if anyone plugs it in, it grills their hardware.
+[00:21:52] <Colgate> and then someone plugs it into your computer
+[00:24:05] <Seoson> I'd probably switch the front USB ports off if I'd place it on my desk :P
+[00:27:00] <Kinsley> I remember my university having two open Wifi networks. One was public, i.e. anyone can connect and there's no captive portal, but it blocked any traffic not on ports 80 or 443 going out to the wider internet, so I could SSH to the college labs, but not my home box. The other was limited to students and staff and you needed to log in to a captive portal, but it unblocked all the ports to
+[00:27:02] <Kinsley> the wider internet.
+[00:27:30] *** Joins: Sombra (Iceman@Darkhorse21)
+[00:28:12] * Moonlightning grills Seoson's hardware. o3o
+[00:28:43] * JustAberrant uses to run ssh on port 443 for that reason.. but yeah, I imagine newer firewalls will probably pick up on that
+[00:28:51] <Moonlightning> Kinsley: this reminds me, I need to make my VPNd listen on udp:443
+[00:28:53] <JustAberrant> not sure how, but I assume they can tell the difference somehow
+[00:29:17] <Moonlightning> JustAberrant: well, SSH starts with the string 'SSH'… :P
+[00:29:42] <JustAberrant> hehe, I suppose that would be a give away wouldn't it ;p
+[00:30:18] <Kinsley> I should look into running a proxy on my VPS to do adblocking for my phone.
+[00:33:41] * Seoson uses a host list on his phone redirecting adservers to 127.0.0.1 which serves a 404
+[00:33:56] * johnsey uses ABP on his phone
+[00:34:35] <Dawn> I just use the adblocker package on the iPhone
+[00:34:38] <Dawn> \o/
+[00:35:31] <Seoson> Does ABP work on the host file or via firewall (meaning it works inside apps) or is it a browser plugin, like on the desktop?
+[00:35:59] <Seoson> iirc it didn't work on my device, so assume host/firewall
+[00:36:04] <johnsey> browser addon
+[00:36:14] <Dawn> Mine works in all of the apps and stuff
+[00:36:16] <Seoson> Oh nice. I was not aware
+[00:36:27] <Dawn> since it's a system plugin
+[00:36:46] <Kinsley> I have a Note 4 on Verizon. I can't root it.
+[00:37:09] <Kinsley> Therefore the tricks I used to use on my rooted S4 are no longer available. :'(
+[00:37:11] <Seoson> No root exploit? That's sad
+[00:37:27] <Moonlightning> What's sad is that you need an /exploit/ to get root access on YOUR OWN DEVICE. :V
+[00:37:32] <Kinsley> Oh, there is a root exploit for the developer edition of the VN4
+[00:37:39] <Kinsley> ^
+[00:37:43] <Moonlightning> which, of course, be exploited by a malicious attacker
+[00:37:52] <Moonlightning> haven't you ever read about backdoors, Google?
+[00:37:59] <Moonlightning> which could *
+[00:38:09] <Seoson> Moonlightning: But once you get s-off using exploits fuck em and install your own android
+[00:38:32] <Moonlightning> I want a free OS. :V
+[00:38:56] <Seoson> Free as in open source, free as in free?
+[00:39:12] <Dawn> Free as in it's yours to control
+[00:39:18] <Dawn> You have root out of the box
+[00:39:23] <Dawn> just like on your own linux install
+[00:39:26] <Seoson> UbuntuPhone, Android (which is opensource) and Firefox OS are a thing
+[00:39:48] <Dawn> How would you feel if like on all of the OSes you just listed your PC did not let you have root access?
+[00:40:07] <Dawn> You picked up a ubuntu CD and shoved it into your PC and it didn't give you root access out of the box
+[00:40:07] <Seoson> Dawn: My phone let's me use root.
+[00:40:19] <Dawn> Plenty of them don't out of the box
+[00:40:28] <Dawn> Just because one or two do doesn't define the market
+[00:40:30] <Seoson> Dawn: I needed to unlock it, yes, but once that's done nothings stops me
+[00:40:36] <Dawn> Sure
+[00:41:01] <Eclipse> Seoson: most carrier phones you have to sploit to root
+[00:41:18] <Dawn> But it shouldn't be necessary to unlock it to get root on the device @.@
+[00:41:19] <Seoson> Unlocking is pain free. You'll loose any data present on the phone once.
+[00:41:29] <Dawn> That shouldn't be necessary
+[00:41:35] <Seoson> Eclipse: In the U.S., but not here
+[00:41:37] <Dawn> I have the same complaint about the iPhone
+[00:41:41] <Eclipse> good to hear or something
+[00:41:41] <Kinsley> I'm seriously torn about the Nexus 6P.
+[00:42:19] <Seoson> I don't even have a simlock or anything even though it's a carrier sponsored device.
+[00:42:26] <Eclipse> good for you
+[00:42:28] <Dawn> ^
+[00:42:29] <Eclipse> that is not the case in america
+[00:42:38] <Dawn> That's not the norm in america
+[00:42:55] <Eclipse> Kinsley: it looks hella neat
+[00:42:55] <Seoson> Some carriers still lock it here (Telekom I believe), but luckily you don't have to go with them
+[00:42:57] <Moonlightning> Seoson: I updated once, and lost everything on my device.
+[00:43:01] <Kinsley> I know!
+[00:43:04] <Eclipse> i got a Nexus 6 like 2 months before :|
+[00:43:04] <Moonlightning> After rooting again.
+[00:43:08] <Eclipse> thanks a lot Google Fi :|
+[00:43:10] <Eclipse> :|||||||
+[00:43:11] <Kinsley> But I got burned badly last time I switched phones.
+[00:43:31] <Kinsley> And I worry about the "hardware fuse" that trips if you unlock it.
+[00:43:47] <Seoson> I like how my phones fetches the IRC buffer faster than my desktop -.-
+[00:44:45] <Kinsley> And Marshmallow is making it harder for users to achieve and use root.
+[00:45:17] <Moonlightning> Seoson: I just added escape() filters to everything
+[00:45:38] <Seoson> I select my phone on the basis wherever or not it will likely be supported by CM
+[00:45:51] <Kinsley> There should be a test, like a quiz when you get your phone and if you pass, you can root with no consequences in terms of warranty and service.
+[00:46:00] <Dawn> lol
+[00:46:31] <Moonlightning> Seoson: apparently I missed a spot
+[00:46:46] <Seoson> I'm using CM since my first Android smartphone was no longer supported by it's manufactur
+[00:46:48] <Moonlightning> Passing '''" onchange=alert('XSS') foo="''' still injects code
+[00:47:31] <Seoson> Make sure to use the right escape function as well. I don't know about python
+[00:48:12] <Moonlightning> Jinja has an escape(), which I'm using as a filter
+[00:48:18] <Seoson> You want to escape " ' ; \ < > & at least (list incomplete)
+[00:50:48] <wolfyshy> http://www.ebay.com/itm/381259805204
+[00:50:49] <PinkiePieBot> [ HP C8000 XLR DC PA8800 Dual 1GHz 4GB 73GB Workstation | eBay ]
+[00:50:52] <wolfyshy> the cadillac PC
+[00:51:46] <Seoson> I used a neat lib that will escape anything except for a-z A-Z 0-9 ! . ? - _ in everyone's favorite language PHP
+[00:53:03] <Moonlightning> Hay
+[00:53:05] <Moonlightning> Hay wolfyshy :3c
+[00:54:22] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[00:59:00] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:04:28] <AppleDash> What is :3c supposed to be?
+[01:09:53] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[01:10:06] <AppleDash> Moonlightning: 
+[01:11:29] <LegionRed> That is meant to be a cat face with a paw, AppleDash.
+[01:11:53] <AppleDash> Why?
+[01:11:59] <AppleDash> Why would you ever do that motion
+[01:12:17] <LegionRed> I haven't. 
+[01:12:47] <AppleDash> you being anyone :P
+[01:13:10] <Kinsley> Because it's cute! :3c
+[01:13:12] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:13:15] <LegionRed> I'm not an anyone. 
+[01:13:38] <AppleDash> Kinsley: Not really
+[01:13:42] <AppleDash> It's just strange to me
+[01:13:51] <AppleDash> It seems really awkward
+[01:14:28] <Moonlightning> Kinsley :3c
+[01:14:44] * AppleDash writes a script to filter it out
+[01:14:45] <Kinsley> Whatever. Me and Moonlightning will go be cute in our own little corner. :P
+[01:15:00] * Ola hugs Kinsley
+[01:15:02] * Moonlightning corners with Kinsley? >3>
+[01:15:20] <johnsey> you could also interprete it as a penis poking labia
+[01:15:22] * johnsey shrugs
+[01:15:39] <johnsey> imagination
+[01:15:41] <Ola> wolfyshy: cute
+[01:15:43] <Kinsley> johnsey: pervert
+[01:16:11] <johnsey> Kinsley: :3
+[01:16:13] <AppleDash> johnsey: thanks
+[01:16:17] <AppleDash> That's how I'm seeing it now
+[01:16:17] <Ola> Kinsley: show us your scale.
+[01:16:21] <AppleDash> I am way happier
+[01:16:30] <Kinsley> Which scale?
+[01:16:36] <Ola> Kinsley's Scale.
+[01:16:42] <Ola> You don't get the joke do you ;x
+[01:16:54] * Ola checks AppleDash.dmg
+[01:17:02] <AppleDash> o.o
+[01:17:10] <Kinsley> You mean the one about various degrees of sexual perversion?
+[01:17:11] <Ola> Disk image is correct.
+[01:17:20] <Kinsley> Fuck if I can remember.
+[01:17:28] <Ola> Sort of. Orientation =/= perversion.'\
+[01:17:55] <Moonlightning> s/perversion/non-vanilla-ness/g  # ftfy
+[01:17:58] <Kinsley> No, the Kinsey (no L) scale is about orientation, i.e. straight to gay
+[01:18:17] <Kinsley> The Kinsley Scale is about actual acts of sex.
+[01:18:26] <Moonlightning> I have this.
+[01:18:26] <Kinsley> Regardless of partner.
+[01:18:50] * Ola no sex
+[01:18:58] * Ola doesn't count masturbation as sex through.
+[01:19:11] <Moonlightning> https://gist.github.com/BlacklightShining/3f1175d38da04d2a4486/raw
+[01:21:22] <init3> So I hear a password manager is a more secure way to go over recycling passwords. Fairly obvious I guess. Do any of you have suggestions on how to best do this? I'm open to using a cloud based service or setting up something on my home server I can access but I don't want to be locked out of my accounts if I am away from home.  Suggestions?
+[01:21:49] <Seoson> KeePass 2
+[01:22:15] <Seoson> Sync with a WebDAV drive and backup the WebDAV on a regular basis
+[01:22:43] <wolfyshy> Kinsley: my fiancee has a 6P unlocked, fuse is not blown
+[01:22:45] <Seoson> (automated) I recommend Owncloud for that since it supports versioning
+[01:22:47] <wolfyshy> Kinsley: it's not that kind of fuse.
+[01:23:04] <wolfyshy> looking in to it, it's just a qfuse, it's for internal (i.e. break the phone open) tampering
+[01:23:20] <Moonlightning> I use `pass`
+[01:23:45] <Moonlightning> on the rare occassions when I need to log into something non-personal away from home and I can't remember the password, I SSH over my VPN and fetch it
+[01:23:53] <Seoson> KeePass also has mobile clients and webclients (I don't tested them due to the poor concept)
+[01:25:04] *** CyberJacob is now known as zz_CyberJacob
+[01:25:33] <Kinsley> I swear I read an article on one of the Android news sites that said something about the Qualcomm SoC having a fuse that would trip if the device was bootloader unlocked.
+[01:26:10] <Seoson> It's a thing for some devices, yes. I don't know any particular model though
+[01:26:18] <wolfyshy> Kinsley: the 6P is not one of them
+[01:27:42] <init3> I'll check it out
+[01:27:50] <init3> also: https://youtu.be/SYRlTISvjww
+[01:27:50] <PinkiePieBot> [ Uptime Funk - (Uptown Funk parody) - 1644 views - 4m 29s long - 493 likes - 99.2% ]
+[01:29:17] <Kinsley> I fucking hate that song.
+[01:31:28] <Moonlightning> …wait a sec. Isn't flask.render_template() supposed to escape everything?
+[01:31:43] <Moonlightning> There's supposed to be an automatic escaping mechanism in the underlying jinja2 template system
+[01:37:18] <johnsey> maybe it just _escaped_ your notice so far 
+[01:37:32] <Moonlightning> :I
+[01:37:54] <Moonlightning> no, but it's /not/ being escaped, because you can XSS by…
+[01:38:59] <wolfyshy> Moonlightning: idk what you mean
+[01:39:10] <wolfyshy> anything in {{ foo }} will be escaped
+[01:39:16] <wolfyshy> anything else won't
+[01:39:34] <Moonlightning> wolfyshy: I think I'm just doing this wrong.
+[01:39:48] <wolfyshy> Moonlightning: try {{ foo|e }}
+[01:39:57] <wolfyshy> if that works, you don't have escaping on by default
+[01:40:06] <Moonlightning> wolfyshy: https://gist.github.com/BlacklightShining/4cccd988eff222ad88bf#file-authentication-html-L76
+[01:40:07] <PinkiePieBot> [ authentication.html · GitHub ]
+[01:40:44] <wolfyshy> Moonlightning: {% if username %} value="{{ username }}"{% endif %}
+[01:40:53] <Moonlightning> yeah.
+[01:41:10] <wolfyshy> try that
+[01:41:42] <wolfyshy> or {{ username|escape }}
+[01:42:19] <Moonlightning> It works without `| escape`
+[01:42:20] <Moonlightning> as it should
+[01:44:59] <Moonlightning> https://www.blackl.net/file/%3C/html%3E
+[01:45:00] <PinkiePieBot> [ MHFD — </html> ]
+[01:45:07] <Moonlightning> Am I doing it right?
+[01:45:39] <Moonlightning> If there were a vulnerability in the substitution in the <title> or in the <h1>, the document would have been cut short, right?
+[01:48:11] <Soarin> got a laptop that wont boot, driver failure. take the hdd out, it wont read at all. pc's see it as not connected, but my backup drive is being read by my external reader
+[01:48:18] <AppleDash> Pretty sure you can close <html> and just keep on putting more stuff in
+[01:48:21] <AppleDash> and it will display
+[01:48:33] <AppleDash> keep in mind, Moonlightning, HTML and CSS were both designed to deal with invalid input
+[01:48:40] <AppleDash> without raising errors
+[01:48:47] <Moonlightning> x.x
+[01:48:56] <Moonlightning> that sounds like a terrible philosphy
+[01:49:05] <Moonlightning> if they hadn't done that, things would have to actually be valid
+[01:49:09] <Moonlightning> fail fast >.>
+[01:49:44] <wolfyshy> Soarin: I can top that!
+[01:50:09] <Moonlightning> wolfyshy can top? O///O
+[01:50:10] <wolfyshy> Soarin: I have a Baracuda desktop drive that works in a USB enclosure, but if you put it in a computer on the SATA bus, it won't boot up at all
+[01:50:15] <wolfyshy> as in
+[01:50:17] <wolfyshy> the BIOS locks up hard
+[01:50:21] <wolfyshy> on every BIOS I've tried
+[01:50:23] <Soarin> not sure if this drive is dead
+[01:50:27] <wolfyshy> apple, intel, gigabyte, via..
+[01:50:30] <Moonlightning> I checked the rendered document; it looks escaped to me
+[01:50:54] <wolfyshy> it's certainly a fun thing to show at parties
+[01:54:22] <Soarin> The laptop boot loops, keeps going to a bsod, driver fault, takes about 30 minutes to even get to that screen as well, and she complained of it running slowly
+[01:54:29] <Soarin> Pretty sure this drive is toast
+[01:55:25] <Soarin> Could someone recommend me a nice external connection for sata drives? Prefer usb 2/3.0 and esata
+[01:56:03] <wolfyshy> I took apart an old maxtor onetouch and rigged up a new enclosure based on its internals + modelling clay
+[01:56:06] <wolfyshy> :>
+[01:56:33] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Connection closed)
+[01:57:10] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Connection closed)
+[02:00:54] <Soarin> hard drive short dst test failed.. welp that explains it
+[02:03:24] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[02:04:08] <Seoson> Oh that on #help reminds me: Was there any particular reason the public BNC does no longer accept applications? (Out of curiosity)
+[02:06:50] <Moonlightning> wolfyshy: hmm?
+[02:09:06] <Moonlightning> MY STATE
+[02:09:07] <Moonlightning> UGH
+[02:09:21] <Moonlightning> I really need that tmux+ssh integration
+[02:09:24] <Moonlightning> really really
+[02:11:36] <Seoson> YES the isp's ability to force you to use certain (restricted) hardware is finally gone/unlawful in Germany!
+[02:12:36] <Soarin> I tell and tell people.. back up your shit. And now I am the liar bad guy
+[02:12:50] *** Joins: Asoka (Asoka@Pony-38pu49.net-htp.de)
+[02:13:22] <wolfyshy> hm what?
+[02:13:25] <wolfyshy> what did I say?
+[02:13:45] <Soarin> Not you, my cousins girlfriend
+[02:13:53] <wolfyshy> no Moonlightning asked me hmm
+[02:14:13] <Soarin> she is all pissed at me now because I don't have tens of thousands of dollars worth of equipment to recover her data
+[02:14:32] <Moonlightning> wolfyshy: what's a fun thing at parties?
+[02:15:02] <wolfyshy> Soarin: http://www.krollontrack.com/data-recovery/data-recovery-services/
+[02:15:03] <PinkiePieBot> [ Data Recovery Services | Recover Lost Data and Files | Kroll Ontrack ]
+[02:15:06] <wolfyshy> Soarin: link her that.
+[02:15:45] <wolfyshy> Moonlightning: 
+[02:15:47] <wolfyshy> 18:50 <wolfyshy> I have a Baracuda desktop drive that works in a USB enclosure, but if you put it in a computer on the SATA bus, it won't boot up at all
+[02:15:49] <wolfyshy> 18:50 <wolfyshy> as in the BIOS locks up hard on every BIOS I've tried: apple, intel, gigabyte, via..
+[02:15:54] <Moonlightning> Does uwsgi listen for SIGHUPs and reload the script or anything
+[02:16:00] *** Quits: Asoka_White (Asoka@Pony-df0cmv.net-htp.de) (Ping timeout: 121 seconds)
+[02:24:37] <Moonlightning> hmm, that https://www.blackl.net/file/%3C/html%3E is returning the fallback auth error
+[02:24:38] <PinkiePieBot> [ MHFD — </html> ]
+[02:24:45] <Moonlightning> worth looking into, I guess
+[02:37:50] *** Joins: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[02:40:06] *** Quits: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[02:53:11] *** \m is now known as mniip
+[02:53:40] *** Joins: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[02:54:05] *** Quits: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Connection closed)
+[02:54:21] *** Joins: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[02:55:24] *** Quits: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Connection closed)
+[02:55:40] *** Joins: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[02:56:36] *** Quits: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[02:58:21] *** Joins: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[03:00:37] *** Quits: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[03:01:17] *** Joins: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[03:02:23] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[03:02:38] *** Quits: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[03:05:17] <ButterBean> i hate mysql
+[03:05:38] <mniip> why do you use it
+[03:06:05] <ButterBean> RadioDJ needs MySql to run
+[03:06:09] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[03:07:00] <Seoson> MySQL is O.K., what's problem?
+[03:07:41] <ButterBean> well right now it is hosted localy on the same machine
+[03:07:55] <ButterBean> basicly what i did is i broke up a dedi into smaller servers
+[03:08:10] <ButterBean> the radiodj and mysql is running on the same vm
+[03:08:38] <ButterBean> what i am trying ot do is get another server up turn off mysql on the radiodj server and make it talk to the database server 
+[03:08:56] <ButterBean> then i have a script that needs to talk to the server once it is up so i can have a music request system
+[03:09:38] <Seoson> Make sure to allow the user to connect from 3rd party hosts and change mysqld to bind to an external interface
+[03:09:47] <Seoson> Should work without any problem
+[03:09:50] <ButterBean> ehhh
+[03:10:22] *** Joins: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[03:10:58] <ButterBean> so i can have it talk to the server even tho it is hosted localy
+[03:12:21] <mniip> come on everypony, sell sell sell, fill my balance up with money, money
+[03:12:37] *** Quits: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[03:14:16] <mniip> welp
+[03:14:23] <mniip> someone plopped 190 BTC on the sell wall
+[03:14:56] <mniip> this is some well-coordinated manipulation
+[03:23:34] <mniip> wooooooo
+[03:23:35] <mniip> w
+[03:23:59] <mniip> massive pump
+[03:50:48] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "exhausted pony needs rest")
+[04:14:39] <Compu> https://open.spotify.com/album/2UtweRAj4D5VEB2OQs4gTp
+[04:14:39] <PinkiePieBot> [ The Back To The Future Trilogy by Alan Silvestri on Spotify ]
+[04:17:15] <ButterBean> the day i am going to kill MySql -_-
+[04:31:13] <Googie> Bah, losing power
+[04:31:19] <Googie> UPS is beeping away
+[04:31:24] <mniip> noooooo
+[04:35:40] <Compu> Googie: have 20 UPSes plugged in in sequence
+[04:44:32] <LegionRed> Not everyone has $1200 to spend on batteries. 
+[04:45:59] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (Ping timeout: 241 seconds)
+[04:46:37] <Compu> LegionRed: not everyone has $1200 to spend on anything ever
+[04:47:16] <LegionRed> I have around $1200 for emergency expences. 
+[04:47:22] <Compu> i dont
+[04:47:41] <Compu> we struggle to hold on to more than $20 each month after bills
+[04:47:52] <LegionRed> But only for like... my vehicle is completely out of commission, or I'm dying...
+[04:48:35] <Compu> we dont have a vehicle
+[04:50:45] *** Joins: Googie|M (Googie@Pony-9mp5be.unsw.EDU.AU)
+[04:52:26] *** Quits: Googie|M (Googie@Pony-9mp5be.unsw.EDU.AU) (Quit: leaving)
+[04:52:30] *** Parts: Webster (Webster@Pony-jrej46.fios.verizon.net) ("Leaving")
+[04:54:52] *** Joins: Googie|M (Googie@Pony-9cf.mve.19.120.IP)
+[05:02:00] <mniip> I have have $1k for emergencies and I'm not even old enough to pay my own bills yet :o
+[05:02:54] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[05:24:19] *** Quits: Crimson_Tail (Bluepon@Pony-gsl900.cg80.k4gu.0151.2601.IP) (Connection closed)
+[05:24:30] *** Joins: Crimson_Tail (Bluepon@Pony-gsl900.cg80.k4gu.0151.2601.IP)
+[05:28:05] <Moonlightning> mniip: All I really need's a sale-sale-sale, from these happy peers of mine!~
+[05:31:28] <mniip> Moonlightning, it's true some shares are high and lovely, and maybe you feel sad, but financial crisis will be there to show you that it isn't that bad
+[05:32:33] <Moonlightning> /crises/ by itself fits the cadence
+[05:33:15] <Moonlightning> “There's one thing that makes me happy / And makes my whole life worthwhile~ / And that's when I talk to my peers and get them to sell~”? :P
+[05:35:07] <mniip> nah it's not peers exactly
+[05:35:15] <mniip> I'm not /controlling/ a pnd
+[05:35:22] <mniip> just surfing within the waves
+[05:38:00] <ButterBean> *flips table* im done i am sooo done
+[05:38:05] <ButterBean> *exits in a fury*
+[05:42:39] <mniip> well crap
+[05:42:59] <mniip> had a papercut yesterday, and it wasn't bloody enough so that the wound didn't get sealed :/
+[05:43:10] <mniip> fml
+[05:44:17] * Moonlightning grabs a knife and advances on mniip. “Hold still…”
+[05:48:38] <RainbowHacks> mniip, re: "ive got cash and no bills", that's kind of a shitty thing to say right after someone expresses that they're basically fucked financially.
+[05:49:11] <RainbowHacks> just my 2 cents
+[05:49:14] <mniip> probably
+[05:49:20] * RainbowHacks boops Moonlightning on the nose!
+[05:49:23] <RainbowHacks> HEY MOONY
+[05:50:02] <Moonlightning> o.o;
+[05:50:11] <Moonlightning> You forgot the Z sound
+[05:50:19] *** Joins: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[05:50:31] <RainbowHacks> o.o?
+[05:50:37] * RainbowHacks shakes her head
+[05:50:39] <RainbowHacks> AGH
+[05:50:42] <RainbowHacks> BRAIN Y U DO DIS
+[05:50:51] <Moonlightning> >3> ?
+[05:50:54] * RainbowHacks is tired, and she JUST woke up a few hours ago after sleeping for 8 hours
+[05:51:08] <RainbowHacks> but because it's past 2100, brain is like LOL SLEEP NAO 
+[05:51:14] <Moonlightning> >.<
+[05:51:24] <RainbowHacks> bitch, i've got WORK to do D:
+[05:52:52] <Soarin> X3
+[05:53:03] <RainbowHacks> Twi's also busy right now, meaning I don't have anyone to help keep me awake >.<
+[05:53:15] *** Quits: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[05:53:48] * Soarin can help ;p
+[05:54:26] *** Joins: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[05:56:21] <ButterBean> -_-
+[05:56:31] <ButterBean> but know knows MySQL
+[05:56:45] *** Quits: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[06:01:40] *** Joins: nscoots1 (FreyGrimrod@Pony-qkm1o9.adsl.inet-telecom.org)
+[06:02:21] *** Joins: 677AACVOO (Googie@Pony-8l2ent.tpgi.com.au)
+[06:02:23] *** Quits: Googie|M (Googie@Pony-9cf.mve.19.120.IP) (Connection closed)
+[06:02:33] *** Quits: 677AACVOO (Googie@Pony-8l2ent.tpgi.com.au) (Quit: AndroIRC - Android IRC Client ( http://www.androirc.com ))
+[06:02:52] <RainbowHacks> yay, Twi's awake~!
+[06:03:00] * RainbowHacks is a happy horse. BRB~
+[06:03:18] *** Quits: nscoots (FreyGrimrod@Pony-qkm1o9.adsl.inet-telecom.org) (Ping timeout: 121 seconds)
+[06:06:37] *** mniip is now known as \m
+[06:07:41] * Moonlightning wonders who this Twi is.
+[06:10:22] *** Joins: Googolplexed (Googol@gnaws.on.keratin.and.ears)
+[06:12:01] *** Googolplexed is now known as Googie
+[06:12:09] <Soarin> Likewise
+[06:12:23] * Moonlightning multiplexes Googie
+[06:18:00] *** Joins: dashie (Mibbit@Pony-gr9d52.google.com)
+[06:18:59] <RainbowHacks> Moonlightning, Twi is my egghead friend c:
+[06:20:07] <RainbowHacks> She's adorkable.
+[06:20:13] <Moonlightning> Is she actually named Twi or something, or…? :o
+[06:20:43] <RainbowHacks> Am I actually named Rainbow?
+[06:20:45] <RainbowHacks> :p
+[06:21:03] <Moonlightning> …yes?
+[06:21:07] <Moonlightning> [21:20:43] < RainbowHacks> Am I actually named Rainbow?
+[06:21:24] <RainbowHacks> o.0
+[06:21:35] <RainbowHacks> Well, no. I'm not.
+[06:21:45] <RainbowHacks> I just go by that and that's what everyone calls me.
+[06:21:50] <Moonlightning> I mean, you've chosen that name. You use it.
+[06:21:55] <RainbowHacks> My passport doesn't say Rainbow tho :p
+[06:22:23] <Moonlightning> It doesn't have to be legally-recognized to be /your name/
+[06:22:27] <Moonlightning> s/-/ /
+[06:22:34] * RainbowHacks shrugs
+[06:23:02] <Moonlightning> Ihe US has gotten all paranoid about people changing their legal name, too
+[06:23:02] <RainbowHacks> I'm pretty sure I'm actually the only one who calls her Twi >.>
+[06:23:20] <Moonlightning> So I guess not
+[06:23:26] <Moonlightning> She a coworker? x3
+[06:23:49] <RainbowHacks> newp
+[06:23:51] <RainbowHacks> Just a friend
+[06:24:13] <RainbowHacks> i wish she was a coworker
+[06:24:18] <RainbowHacks> tried to get her to apply here
+[06:27:02] <RainbowHacks> She wants to sgtay in Cali though :<
+[06:27:22] <Moonlightning> :< ?
+[06:27:39] <RainbowHacks> to be fair
+[06:27:45] <RainbowHacks> who the fuck wants to move to Jersey?
+[06:27:50] <dashie> lol
+[06:27:59] <dashie> hi i'm new here. wandered onto irc while reading eqd
+[06:28:02] <RainbowHacks> it took moving back here to realize that jersey actually really sucks
+[06:28:08] <RainbowHacks> sup dashie
+[06:28:09] <HoneyDrops> There are nice places in NJ, just avoid the cities.
+[06:28:10] <dashie> any recommended channels or anything or am i asking in the wrong place :v
+[06:28:30] * RainbowHacks chucks a zebra at dashie 
+[06:28:34] <RainbowHacks> THERE CAN BE ONLY ONE
+[06:28:52] <RainbowHacks> HoneyDrops, I've lived here my entire life (except for a few years out of state for work)
+[06:28:55] <RainbowHacks> jersey sucks,
+[06:28:59] <RainbowHacks> i hate admitting it
+[06:29:01] <Moonlightning> Oh, get off your high land, Hacksie :P
+[06:29:06] *** dashie is now known as iliketoread
+[06:29:10] <RainbowHacks> Don't call me "hacksie"
+[06:29:10] <iliketoread> ok 
+[06:29:13] <RainbowHacks> :<
+[06:29:20] <iliketoread> i've spent more or less my whole life in cali
+[06:29:35] <iliketoread> i don't think i've ever lived anywhere not extremely urban
+[06:29:38] <Moonlightning> Well, if I'd said /Dashie/ there… >.>
+[06:29:51] <RainbowHacks> well now that's not a concern c:
+[06:29:54] <iliketoread> c;
+[06:30:05] <RainbowHacks> because iliketoread is awesome
+[06:30:24] * RainbowHacks is surprised that nick wasn't actually taken. she just assumed it was
+[06:30:27] <Moonlightning> *gasp* “I'm an /egghead!/” — iliketoread, probably
+[06:30:45] <iliketoread> pfft
+[06:30:55] <iliketoread> it's like 9pm and i'm kind of lounging around at work doing nothing 
+[06:31:19] <RainbowHacks> iliketoread, what do you do? o.o
+[06:31:20] <Moonlightning> What kinda timezone are /you/ in O.o
+[06:31:36] <iliketoread> RainbowHacks: intern i guess
+[06:31:37] <Moonlightning> It's like 21:/30/ here, and /I'm/ kinda lounging around home doing nothing
+[06:31:55] <RainbowHacks> It's 0031 here
+[06:31:57] <RainbowHacks> and im at work
+[06:31:58] <RainbowHacks> and sleepy
+[06:31:59] <RainbowHacks> :<
+[06:32:11] <One-Trick> i hate failed unattended upgrades
+[06:32:15] <iliketoread> software intern. i'm pretty sure everything i write will break things
+[06:32:28] <iliketoread> other than that, eecs '18
+[06:32:52] <Moonlightning> Maybe you should start being iliketotest ;p
+[06:33:04] * RainbowHacks snickers
+[06:33:10] *** Soarin is now known as Vega
+[06:33:11] <iliketoread> testing is for scrubs
+[06:33:13] <iliketoread> edit in prod
+[06:33:38] * RainbowHacks gets out her stabbing knife.
+[06:33:47] <Moonlightning> there's a reason it's called developmestruction
+[06:34:17] * RainbowHacks glares at Moonlightning >:I
+[06:34:35] <Moonlightning> it tends to end in the deSTRUCTION of important things
+[06:34:43] <iliketoread> i don't think it's actually possible to deploy anything without going through code review here lol
+[06:34:57] <RainbowHacks> One of these days
+[06:35:02] <RainbowHacks> I'll learn a programming language
+[06:35:05] <Moonlightning> maybe you could slip in some of my things
+[06:35:20] <RainbowHacks> and I'll be more than just the coolest sysadmin EVER
+[06:35:20] <iliketoread> my intro to cs class was python 3, some of my friends found this really weird
+[06:35:24] <Moonlightning> I keep asking the channel for code reviews, and I don't think I've ever gotten one :<
+[06:35:44] <iliketoread> i can code review if you want but i'm a literal child that doesn't know best practice
+[06:35:58] <RainbowHacks> Moonlightning, I can ask esr to glare at your code and grumble occasionally!
+[06:36:10] <Moonlightning> esr?
+[06:36:12] <HoneyDrops> https://i.imgur.com/t342jli.jpg
+[06:36:14] <RainbowHacks> He probably won't, but that would be amusing
+[06:36:22] <RainbowHacks> Moonlightning, uh... Eric S. Raymond? o.o
+[06:36:33] <iliketoread> has esr actually contributed anything of value
+[06:36:33] <RainbowHacks> well known programmer and OSS advocate?
+[06:36:39] <iliketoread> i'm trying to think of what he's known for
+[06:36:41] <iliketoread> and i legitimately can't 
+[06:36:43] * Moonlightning hasn't ever heard of him.
+[06:36:51] <iliketoread> like all i know is 'esr exists', i can't think of anything else
+[06:37:12] <RainbowHacks> he WROTE the cathedral and the bazaar
+[06:37:12] <HoneyDrops> Programming is worth picking up, not so much for actually being able to code, but to help reinforce that system of thinking.
+[06:37:12] <RainbowHacks> my god
+[06:37:17] <RainbowHacks> what do they teach you kids?
+[06:37:21] <Moonlightning> The what?
+[06:37:35] <RainbowHacks> https://en.wikipedia.org/wiki/Eric_S._Raymond
+[06:37:36] <PinkiePieBot> [ Eric S. Raymond - Wikipedia, the free encyclopedia ]
+[06:37:53] <RainbowHacks> :I
+[06:37:55] <iliketoread> RainbowHacks: hey, i know he exists, that's better than nothing
+[06:38:10] <Moonlightning> ohhhhh, /The Cathetral and the Bazaar/
+[06:38:13] <RainbowHacks> The joke isn't funny if i have to exlain it >.<
+[06:38:16] <HoneyDrops> I own a copy, somewhere, didn't get to read it.
+[06:38:22] <Moonlightning> I thought that was an idiom
+[06:38:32] * RainbowHacks sighs
+[06:38:36] <iliketoread> i thought bazaar was referring to the version control system no one uses
+[06:38:40] <Moonlightning> You didn't capitalize your title! XP
+[06:38:46] <Moonlightning> Or italicize it!
+[06:38:49] * RainbowHacks bops Moonlightning on the head
+[06:38:51] <RainbowHacks> shuddap you
+[06:38:53] <RainbowHacks> <3
+[06:38:55] <Moonlightning> And I'd never heard of the book before. What was I supposed to think. ;p
+[06:39:02] * Moonlightning bops RainbowHacks on the rump
+[06:39:15] <Moonlightning> inb4 o.o;;
+[06:39:18] * RainbowHacks squeaks!
+[06:39:26] <RainbowHacks> I'm debating changing my nick
+[06:39:29] <Moonlightning> >:O
+[06:39:32] <RainbowHacks> Moonlightning, what do
+[06:39:36] <Moonlightning> What to?
+[06:39:47] <iliketoread> RainbowWhacks
+[06:39:49] <iliketoread> [on the head]
+[06:39:54] <RainbowHacks> Should I go with "tl;dr RD IRL" or batpone hackerhorse OC?
+[06:39:56] <Moonlightning> +1 to RainbowWhacks
+[06:40:07] * RainbowHacks is torn D:
+[06:40:16] <iliketoread> what is a batpone hackerhorse, or do i not want to know
+[06:40:21] * RainbowHacks could just take the dashie nick, but she isn't sure if someone USED to have it
+[06:40:28] <RainbowHacks> and might want it back eventually
+[06:40:33] <Moonlightning> what, like, TLDR_RD_IRL, or TLDRRDIRL?
+[06:40:34] * RainbowHacks likes to respect that stuff yo
+[06:40:47] <Moonlightning> Snap it up, hang onto it for a week or two
+[06:40:53] <Moonlightning> see if anypony comes knocking
+[06:41:10] <RainbowHacks> iliketoread, so, the joke is that I turned myself into Rainbow Dash IRL (hair, cutie mark, and all) but my OC is a batpone locksmith, who likes to pretend she's like rainbow dash 
+[06:41:15] *** RainbowHacks is now known as Dashie
+[06:41:28] <Dashie> \o/
+[06:41:31] <iliketoread> permanent or temporary  tattoo
+[06:41:35] <Dashie> permanent
+[06:41:38] <iliketoread> nice
+[06:41:40] <Dashie> o.o
+[06:41:44] * Dashie has lots of tattoos
+[06:42:03] <Moonlightning> I think BatPoneHackerHorse is a cool nick x3
+[06:42:16] <Dashie> iliketoread, http://cloudsdale.ponix.space/~rainbow/horses/badge.jpg
+[06:42:41] *** Quits: iliketoread (Mibbit@Pony-gr9d52.google.com) (Quit: http://www.mibbit.com ajax IRC Client)
+[06:42:48] * Moonlightning synfloods cloudsdale on port 443
+[06:43:05] <Dashie> Moonlightning, i still havent enabled TLS
+[06:43:12] * Dashie bops Moonlightning 
+[06:43:13] <Dashie> inb4
+[06:43:18] <Moonlightning> I would hope that when you did, you wuld start linking it :P
+[06:43:35] <Moonlightning> I take your continued use of insecure links as an indication that you haven't.
+[06:43:40] <Moonlightning> …which reminds me
+[06:43:55] <Dashie> basically
+[06:44:09] <Dashie> Moonlightning, once I do have it enabled, I'm disabling plain text
+[06:44:10] <Dashie> :p
+[06:44:16] <Dashie> nothing's gonna listen on 80
+[06:44:18] <Moonlightning> :P
+[06:44:24] <Moonlightning> I'm already there.
+[06:44:27] * Moonlightning just double-checked.
+[06:44:30] <Dashie> but yeah. Batpone with lockpick cutiemark
+[06:44:35] <Dashie> :3
+[06:45:11] <Dashie> i actually hoofed over a tension rod and my feeler pick to the artist at BronyCAN so she could draw them x3
+[06:47:59] <Moonlightning> made from real lockpicks! x3
+[06:48:48] <Dashie> :3
+[06:49:01] * Moonlightning …stuffs his tension rod in Dashie and probes around with his feeler pick >.>
+[06:50:09] <Dashie> .__________________________.
+[06:50:51] <HoneyDrops> :I
+[06:51:44] <HoneyDrops> blah, 21 seams… dumb tiny labcoat
+[06:54:27] <Dashie> o.o
+[06:57:58] <Moonlightning> Dashie: you're missing quite a few newlines
+[06:57:59] * Googie boops Moonlightning. Not the right channel :P
+[06:58:06] <Moonlightning> that's not how you whale
+[06:59:32] <Moonlightning> …or is it?
+[06:59:35] * Moonlightning stares into Googie's eyes.
+[07:01:54] *** Joins: nscoots (FreyGrimrod@Pony-qkm1o9.adsl.inet-telecom.org)
+[07:04:42] *** Quits: nscoots1 (FreyGrimrod@Pony-qkm1o9.adsl.inet-telecom.org) (Ping timeout: 121 seconds)
+[07:08:42] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[07:13:30] *** Quits: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Quit:  Want to be different? Try HydraIRC -> http://www.hydrairc.com <-)
+[07:14:56] *** RedHelper is now known as Creeps|AFK
+[07:15:30] <Dashie> Moonlightning, whu?
+[07:15:46] <Dashie> also when did my client bail? o.0
+[07:16:44] <Vega> About that timd
+[07:17:21] *** eyeburn is now known as Starburn
+[07:17:34] * Kinsley slaps Moonlightning for cheating on her.
+[07:17:36] * Dashie is confused
+[07:17:48] * Moonlightning meeps! D:
+[07:17:59] * Moonlightning is confused, too…
+[07:18:25] <Kinsley> Sticking your tension rod in other ponies. How could you?
+[07:18:31] <Vega> Lol
+[07:18:39] * Dashie giggles
+[07:19:03] <Vega> Hope you lubed up first
+[07:19:19] <Dashie> >.>
+[07:19:42] <Moonlightning> Hay, I thought we were killing this thread.
+[07:19:50] <Dashie> i am so confused
+[07:20:32] <Vega> My muffler bearing went out so my fuel tank tensioner puller needs replaced.
+[07:24:31] *** Eventide is now known as Eventide|Sleepies
+[07:38:00] <Lapsus> The muffler bearing going out tends to be a symptom of low blinker fluid, from what I've heard, have you checked it recently?
+[07:38:02] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:38:30] <Vega> Ya, the window sensor was low on oil
+[07:43:49] <Moonlightning> offlineimap v6.6.0 has a third release candidate! :D
+[07:54:09] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[08:07:51] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[08:28:07] *** Quits: Crimson_Tail (Bluepon@Pony-gsl900.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[08:32:02] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[08:32:14] *** zz_CyberJacob is now known as CyberJacob
+[08:40:45] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[08:41:14] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[08:45:12] <Googie> Moonlightning: I actually took a look at Weechat issue #132 for you. It's a little harder than you might think to modify.
+[08:45:49] <Moonlightning> Go figure.
+[08:46:24] <Googie> The function to add a nick to the nicklist is a public API... and takes the prefix directly as a parameter.
+[08:46:57] <Moonlightning> Mmmmm.
+[08:47:01] <Googie> It takes a C String, not a char, but then +ov != +o
+[08:47:48] <Googie> And it's the wrong part of the code to work on determining which prefix is most important.
+[08:47:54] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[08:49:34] <Googie> Weechat's source isn't too bad if you want to take a look at it.
+[08:50:56] *** \m is now known as mniip
+[08:52:05] *** CyberJacob is now known as zz_CyberJacob
+[08:53:28] *** Joins: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[08:56:24] *** Quits: DataByte (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net) (Ping timeout: 121 seconds)
+[09:23:36] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[09:36:17] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:38:28] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (A TLS packet with unexpected length was received.)
+[09:39:50] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[10:16:21] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[11:02:36] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[11:07:59] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[11:18:25] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[11:34:05] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[11:44:56] *** Quits: nscoots (FreyGrimrod@Pony-qkm1o9.adsl.inet-telecom.org) (Ping timeout: 121 seconds)
+[11:50:44] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[11:58:09] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[12:02:08] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[12:08:50] *** mniip is now known as \m
+[13:46:47] <Kyoro> Falllllllout 4
+[14:08:16] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (The TLS connection was non-properly terminated.)
+[14:51:27] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:06:38] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed) (Quit: ZNC 1.6.1 - http://znc.in)
+[15:10:20] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[15:11:17] *** Quits: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Ping timeout: 121 seconds)
+[15:12:58] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[15:20:52] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[15:22:09] *** Divide is now known as Divide|TechSupport
+[15:28:02] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[15:38:39] <locodash11[server]> I've just completed a new machine build for that
+[15:39:10] <locodash11[server]> well, new to me mostly at least
+[15:53:11] *** Quits: thatdguy (~WebChat@Pony-pkbcdj.fbx.proxad.net) (Quit: Page closed)
+[16:13:28] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[16:52:04] *** Joins: Crimson_Tail (Bluepon@Pony-o3v4o4.cg80.k4gu.0151.2601.IP)
+[16:56:10] *** Eventide|Sleepies is now known as Eventide
+[17:13:27] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[18:21:44] *** Joins: Asoka_White (Asoka@Pony-4vs0qh.net-htp.de)
+[18:24:22] *** Quits: Asoka (Asoka@Pony-38pu49.net-htp.de) (Ping timeout: 121 seconds)
+[18:25:09] <Divide|TechSupport> I hate you, Apple.  I hate you and your hipster fuckery and the fact that Yosemite WON'T LOAD THE APP WE NEED TO SUPPORT THIS CUSTOMER and gaaah.
+[18:28:19] *** Quits: Fallfeathers (Fallfeather@Pony-vandmf.bigpond.net.au) (Connection closed)
+[18:35:54] *** Quits: Asoka_White (Asoka@Pony-4vs0qh.net-htp.de) (Ping timeout: 121 seconds)
+[18:55:29] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[19:00:39] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[20:01:17] *** Joins: nscoots (FreyGrimrod@Pony-mn1usv.adsl.inet-telecom.org)
+[20:32:11] *** Joins: Asoka_White (Asoka@Pony-d2m1r8.net-htp.de)
+[20:41:40] *** Joins: Asoka (Asoka@Pony-k9lgmh.net-htp.de)
+[20:44:08] *** Quits: Asoka_White (Asoka@Pony-d2m1r8.net-htp.de) (Ping timeout: 121 seconds)
+[21:21:01] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[21:34:46] *** zz_CyberJacob is now known as CyberJacob
+[21:39:18] *** Creeps|AFK is now known as RedHelper
+[22:01:24] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Quit: Leaving)
+[22:01:41] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[22:08:59] * WorkingData is busily creatively abusing his administrative abilities and access.. to assign one certain individual's desktop image to be updated from the standard one everyone has to a calvin and hobbs wallpaper :3
+[22:09:00] <WorkingData> hehehe
+[22:09:24] <WorkingData> this will be an interesting phone call on monday xD
+[22:16:47] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[22:25:02] <Moonlightning> WorkingData: which one?
+[22:25:28] <Moonlightning> Which strip, I mean?
+[22:28:15] *** Kyoro is now known as Pocky
+[22:29:28] <WorkingData> http://i.imgur.com/DFMnOYL.jpg
+[22:29:50] <WorkingData> i'll put this one up some other day - http://i.imgur.com/sQbD8VL.jpg
+[22:30:04] <WorkingData> and http://i.imgur.com/O7goad8.jpg
+[22:30:04] <WorkingData> :)
+[22:34:24] <Moonlightning> XD
+[22:37:58] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:46:40] *** Joins: Sombra (Iceman@Darkhorse21)
+[22:52:57] *** Joins: Fallfeathers (Fallfeather@Pony-vandmf.bigpond.net.au)
+[23:16:04] *** Quits: sylurp (sylurp@Pony-0qa.2dv.248.50.IP) (Quit: Leaving)
+[23:42:53] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)

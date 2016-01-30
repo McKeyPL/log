@@ -1,0 +1,493 @@
+[00:35:06] <Colgate> wolfyshy: yeah, I run one at https://bin.minuette.net/ I like it
+[00:35:07] <PinkiePieBot> [ ZeroBin ]
+[00:35:31] <Colgate> course you have to trust the server to send you the correct javascript that isn't compromised
+[00:35:40] <Colgate> unless you somehow verify that as well
+[00:40:53] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[00:41:12] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[00:46:43] *** Joins: Static_Breeze (Static_Bree@Nocturnal)
+[00:48:54] <Static_Breeze> All right, got a question here. I've been going through thread stuck in device driver blue screens since I upgraded to windows 10 and it usually happens when I'm watching long videos or watching videos for an extended duration. Usually when a headset is plugged in. I've updated all my drivers since this issue started occurring, how can I figure out what the source of the problem is?
+[00:49:52] <Colgate> not really, probably a driver incompatability with windows 10
+[00:50:01] <Colgate> all you can do is eitehr update or revert drivers
+[00:50:58] <roflincopter> maybe the bluescreen contains a reference to the .sys causing the problem hence the driver causing the problem?
+[00:51:04] <roflincopter> if you have mini dumps enabled you should be able to read them using a program.
+[00:51:12] <roflincopter> but I gotta get some sleep now.
+[00:51:15] <Colgate> sure, you can figure out what driver is causing the problem
+[00:51:23] <Static_Breeze> Would it be easier for me to just reformat back to 8.1? Or would that possibly screw me over further? How would I activate the mini dumps?
+[00:52:01] <wolfyshy> Static_Breeze: do you have a file named C:\WINDOWS\MEMORY.DMP
+[00:52:21] <Colgate> computer > properties > system properties > advanced > startup and recovery > write debugging information
+[00:52:30] <Colgate> damn I hate guis
+[00:52:35] <Colgate> so many steps -.-
+[00:52:39] <wolfyshy> that feel
+[00:52:53] <wolfyshy> anyway, if you can get a .dmp file out of your computer, when I finish work I will help
+[00:52:59] <wolfyshy> it is straightfoward but long.
+[00:53:01] <Colgate> that's where it is on win7, can't say for sure on any other OS :P
+[00:53:29] <wolfyshy> Colgate: it's okay, I'm sure there is some equally cryptic powershell command for it
+[00:53:31] <Static_Breeze> I found the file but have nothing to open it with.
+[00:53:35] <roflincopter> can confirm its still the default in win 10
+[00:53:43] <wolfyshy> Set-DumpState -Computer local -DumpType 1 -Enabled True
+[00:53:45] <wolfyshy> or something
+[00:53:47] <roflincopter> %SystemRoot%\MEMORY.DMP
+[00:53:51] <wolfyshy> note I pulled that out of my butt
+[00:54:09] <wolfyshy> any similarity to real powershell, living or dead, or purely coincidental
+[00:55:19] <Colgate> you might be able to find something in event viewer as well
+[00:55:23] <Static_Breeze> Okay my computer already has the dump auto enabled.
+[00:55:33] <Colgate> just filter for critical events, that would show it if it exists
+[00:55:47] <wolfyshy> I thought STOPs were Errors, not Criticals
+[00:55:59] <wolfyshy> Criticals are usually logged by like, nmi and pcie_serr
+[00:56:16] <wolfyshy> both of which I have seen on server-grade hardware running 2008r2...
+[00:56:29] <Colgate> well, I mean
+[00:56:40] <Colgate> if the computer halts because of it
+[00:56:47] <Colgate> I would *hope* that would be classified as critical
+[00:58:58] <wolfyshy> http://techfiles.de/dmelanchthon/images/HyperVR2Bugcheck0x00000101_C4C4/Bugcheck.png
+[00:59:00] <wolfyshy> Error.
+[00:59:26] <wolfyshy> the only Critical would be "The system has been booted after shutting down improperly" from Kernel-Power
+[00:59:31] <wolfyshy> I was a windows admin for 10 years
+[00:59:42] <wolfyshy> and I hated every minute of it, for reasons like that :P
+[01:02:39] <Colgate> that's dumb
+[01:02:43] <Colgate> -.-
+[01:14:16] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[01:31:38] *** Quits: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se) (Quit: Leaving.)
+[01:36:28] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[01:36:46] *** Joins: WorkingData (DataByteBro@Pony-n3en0j.hfc.comcastbusiness.net)
+[01:37:36] *** CyberJacob is now known as zz_CyberJacob
+[01:39:42] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (Ping timeout: 121 seconds)
+[01:49:40] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[01:49:52] *** GigaTown is now known as Gigabit
+[01:53:56] *** Jouva_ is now known as Jouva
+[01:56:22] <SilverEagle> techpones :3
+[01:56:28] <Moonlightning> So what do y'all think of my file-serving thing?
+[02:00:28] <Moonlightning> Might just use /etc/shadow-style dotfiles next to the files to be served
+[02:04:02] <Moonlightning> /var/www/foo, /var/www/.foo.shadow?
+[02:04:11] <Moonlightning> I guess? Maybe?
+[02:08:32] <Moonlightning> And then you'd send an HTTP request for /filedist/foo or something.
+[02:08:32] <Moonlightning> get an HTML document with a form, submit that, be served the file
+[02:08:32] *** Static_Breeze is now known as Diamond_Tiara
+[02:08:32] <Moonlightning> Hmmmmm…
+[02:08:32] *** Diamond_Tiara is now known as Diamond-Tiara
+[02:08:34] <Moonlightning> How hard is it to submit a form with curl and wget?
+[02:08:47] <Moonlightning> 'd be nice if this was still easily wgettable
+[02:08:51] <Moonlightning> and curlable
+[02:10:53] *** Joins: Asoka_White (Asoka@Pony-fqgro4.net-htp.de)
+[02:14:05] *** Quits: Asoka (Asoka@Pony-ptv126.net-htp.de) (Ping timeout: 121 seconds)
+[02:18:27] <Moonlightning> I need a better httpd. One that'll give me more configurability for the TLS stuff
+[02:33:29] <Compu> its the future!!!
+[02:35:40] <Moonlightning> Hmmmm. Is it okay for a server to return content in response to a POST?
+[02:36:58] <Moonlightning> is it okay to upload a file, in particular
+[02:39:56] *** Pony_84408 is now known as Tan-Sama
+[02:39:58] *** Tan-Sama is now known as locodash11[server]
+[02:41:35] <Moonlightning> I don't want to require cookies, so no issuing a 303 with a Set-Cookie in response to the form and checking for said cookie in the resulting GET
+[02:41:41] <Moonlightning> that's rather messy, anyway
+[02:42:22] <Compu> today is the day doc brown and marty traveled to when they went to the future
+[02:45:34] <Moonlightning> No hoverboards :I
+[03:08:23] <Googie> That was yesterday! /Straya
+[03:09:50] <Moonlightning> Okay, if you wanna do that…what timezone was BttF set in? :P
+[03:11:19] <Compu> .search time zone of back to the future
+[03:11:19] <PinkiePieBot> Compu: http://www.timeanddate.com/countdown/bttf2 (g), - (b), http://backtothefuturetrading.com/flux-store/flux-time-zones/ (d)
+[03:11:39] <Crimson_Tail> Pacific time.
+[03:12:14] <Compu> .t PST
+[03:12:14] <PinkiePieBot> Wed, 21 Oct 2015 17:18:39 PST
+[03:12:21] <Compu> .t PDT
+[03:12:21] <PinkiePieBot> Wed, 21 Oct 2015 18:18:46 PDT
+[03:12:33] <Compu> still october 21
+[03:12:36] <Colgate> it was ~2 hours ago
+[03:13:27] <Crimson_Tail> It's only less than 3 hours until this one day is over.
+[03:13:29] <Crimson_Tail> For here.
+[03:23:09] <wolfyshy> Moonlightning: apache2.4 and lighttpd both have supreme control of TLS
+[03:23:09] <wolfyshy> Moonlightning: you submit a form using curl every time you follow http://sprunge.us/ docs
+[03:23:09] <Moonlightning> wolfyshy: lighttpd, really?
+[03:23:09] <Moonlightning> wolfyshy: what about wget?
+[03:23:33] <tiwake> did you guys see this yet? https://www.kickstarter.com/projects/309114309/infinity-battlescape
+[03:23:35] <PinkiePieBot> [ Infinity: Battlescape by I-Novae Studios — Kickstarter ]
+[03:32:05] <wolfyshy> Moonlightning: I don't know about wget nor do I care, it is unmaintained and useless to me
+[03:32:07] <wolfyshy> I use curl everywhere
+[03:34:18] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[03:39:14] *** Joins: firestream (vinylderpy@Pony-8t4kl3.dsl.bell.ca)
+[03:43:15] <Rylee> 20:21:50        wolfyshy │ Moonlightning: apache2.4 and lighttpd both have supreme control of TLS
+[03:45:30] <Rylee> what does nginx lack
+[03:45:30] <Rylee> i configure my ciphers, server cipher preference, ssl protos, ecdh curve, dhparams, session cache, sesssion timeout, HSTS header, and could do even more if i actually cared
+[04:14:03] *** Eventide is now known as Eventide|Sleepies
+[04:14:21] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[04:27:00] *** Joins: vi[NLR]1 (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[04:27:07] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Ping timeout: 121 seconds)
+[05:00:55] *** Quits: Sellyme (quassel@Pony-lq694o.of.saltspork.com) (discord.canternet.org derpy.canternet.org)
+[05:00:55] *** Quits: Sour_Sweet (Seoson@pony.kab-s.de) (discord.canternet.org derpy.canternet.org)
+[05:00:55] *** Quits: ShivalWolf (ShivalWolf@BigMac.is.a.Coltcuddler.org) (discord.canternet.org derpy.canternet.org)
+[05:00:55] *** Quits: DataByteBrony (DataByte@Pony-85fkif.g424.9euc.0247.2601.IP) (discord.canternet.org derpy.canternet.org)
+[05:00:55] *** Quits: Duck (sid3009@Pony-4r56u0.ealing.irccloud.com) (discord.canternet.org derpy.canternet.org)
+[05:00:55] *** Quits: Crimson_Tail (Bluepon@Pony-p9i9jd.cg80.k4gu.0151.2601.IP) (discord.canternet.org derpy.canternet.org)
+[05:00:55] *** Quits: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP) (discord.canternet.org derpy.canternet.org)
+[05:00:55] *** Quits: roflincopter (dennis@Pony-aend1d.es) (discord.canternet.org derpy.canternet.org)
+[05:00:55] *** Quits: Q0 (Q0@literallyshit.net) (discord.canternet.org derpy.canternet.org)
+[05:00:55] *** Quits: cyzon (cyzon@moms.spaghetti) (discord.canternet.org derpy.canternet.org)
+[05:00:55] *** Quits: init3 (quassel@init3.Is.Not.A.Clever.Poni) (discord.canternet.org derpy.canternet.org)
+[05:00:55] *** Quits: Compu (compu@snuggly.filly) (discord.canternet.org derpy.canternet.org)
+[05:00:55] *** Quits: ColtonDRG (coltondrg@Pony-brenjv.vmmm.u7jq.9880.2605.IP) (discord.canternet.org derpy.canternet.org)
+[05:00:55] *** Quits: Apple_Bloom (sid52418@the.canon.pony) (discord.canternet.org derpy.canternet.org)
+[05:00:55] *** Quits: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com) (discord.canternet.org derpy.canternet.org)
+[05:00:55] *** Quits: johnsey (johnsey@into.the.nethers) (discord.canternet.org derpy.canternet.org)
+[05:00:55] *** Quits: One-Trick (Octavia@hyenaspots.com) (discord.canternet.org derpy.canternet.org)
+[05:01:31] *** Quits: endoriazel (coprah@endoriazel) (Ping timeout: 121 seconds)
+[05:01:41] *** Joins: johnsey (johnsey@into.the.nethers)
+[05:01:41] *** Joins: One-Trick (Octavia@hyenaspots.com)
+[05:01:41] *** Joins: cyzon (cyzon@moms.spaghetti)
+[05:01:41] *** Joins: ColtonDRG (coltondrg@Pony-brenjv.vmmm.u7jq.9880.2605.IP)
+[05:01:41] *** Joins: Duck (sid3009@Pony-4r56u0.ealing.irccloud.com)
+[05:01:41] *** Joins: Apple_Bloom (sid52418@the.canon.pony)
+[05:01:41] *** Joins: ShivalWolf (ShivalWolf@BigMac.is.a.Coltcuddler.org)
+[05:01:41] *** Joins: init3 (quassel@init3.Is.Not.A.Clever.Poni)
+[05:01:41] *** Joins: roflincopter (dennis@Pony-aend1d.es)
+[05:01:41] *** Joins: Sour_Sweet (Seoson@pony.kab-s.de)
+[05:01:41] *** Joins: _desu_ (sid73031@Pony-k308e2.charlton.irccloud.com)
+[05:01:41] *** Joins: Compu (compu@snuggly.filly)
+[05:01:41] *** Joins: Crimson_Tail (Bluepon@Pony-p9i9jd.cg80.k4gu.0151.2601.IP)
+[05:01:41] *** Joins: Bigcheese (bigcheese@Pony-m258b3.pr32.u9r5.f0d0.2607.IP)
+[05:01:41] *** Joins: Q0 (Q0@literallyshit.net)
+[05:01:41] *** Joins: DataByteBrony (DataByte@Pony-85fkif.g424.9euc.0247.2601.IP)
+[05:01:41] *** Joins: Sellyme (quassel@Pony-lq694o.of.saltspork.com)
+[05:03:42] *** Joins: endoriazel (coprah@Pony-81pjdu.de)
+[05:13:25] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[05:33:27] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[05:39:01] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[05:45:39] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[05:45:43] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[05:47:33] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[05:55:27] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[05:56:35] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[05:57:13] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[05:58:29] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (A TLS packet with unexpected length was received.)
+[05:59:01] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[06:07:45] <HoneyDrops> Blah, nothing in dmesg or logs.  Had htop running until it froze completely, but just 46 proc, <2% CPU load, <15% MEM use, no disk IO, no network IO.
+[06:10:34] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[06:13:04] <wolfyshy> are you debugging the canternet server that split?
+[06:13:07] <wolfyshy> or your own system?
+[06:16:35] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[06:18:22] <HoneyDrops> my laptop
+[06:22:14] *** Parts: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) ("Leaving")
+[06:22:18] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[06:31:45] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:35:45] *** RedHelper is now known as Creeps|AFK
+[06:40:36] <HoneyDrops> I think it's some kernel issue.
+[06:43:42] <Moonlightning> HoneyDrops isn't an oper…is she? o.o
+[06:43:52] * HoneyDrops is a nothing.
+[06:45:02] <Moonlightning> … ._.
+[06:45:06] <Moonlightning> well, I wouldn't say /that/
+[06:48:00] *** Kinsley sets mode: +v HoneyDrops
+[06:48:13] <Kinsley> See, you aren't nothing!
+[06:48:27] <Moonlightning> You have a voice! \o/
+[06:51:30] * HoneyDrops squeaks as a hat appears on her head!
+[06:52:22] <Moonlightning> And you were my best friend
+[06:52:22] <Moonlightning> You were my…Hattington
+[06:52:22] <Kinsley> Also, wow. http://igg.me/at/ThemsFightinHerds/x/3247189 All the funding goals met. GOATS
+[06:52:22] <PinkiePieBot> [ Thems Fightin Herds | Indiegogo ]
+[06:53:18] <Moonlightning> yep :D
+[06:53:56] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[06:54:07] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[06:54:21] <Kinsley> HYPE
+[06:55:24] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[06:57:22] <Moonlightning> GET HYPE GET HYPE GOAT HYPE GET HYPE
+[06:57:24] *** Joins: Gladiolus (uid110916@Pony-qjfks9.brockwell.irccloud.com)
+[07:06:01] *** Quits: Crimson_Tail (Bluepon@Pony-p9i9jd.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[07:10:15] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[07:15:49] *** Diamond-Tiara is now known as Static_Breeze
+[07:16:46] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[07:19:35] *** Quits: Gigabit (Gigabit@Bazinga) (Quit: Canternet Public Bouncer!)
+[07:22:10] <Moonlightning> ewwwwww
+[07:22:18] <Moonlightning> systemd stuff is showing up in the mounts now
+[07:22:30] <Moonlightning> systemd on /sys/fs/cgroup/systemd type cgroup (rw,noexec,nosuid,nodev,none,name=systemd)
+[07:22:32] <Moonlightning> what the hell
+[07:26:32] *** Parts: Static_Breeze (Static_Bree@Nocturnal) ("")
+[07:35:19] <Colgate> systemd is love, systemd is life
+[08:15:53] <Googie> Moonlightning: systemd's big thing is managing everything through cgrups
+[08:15:57] <Googie> *cgroups
+[08:16:10] <Googie> Thus, there's a cgroup called "systemd"
+[08:16:42] <Moonlightning> All this tells me is that I need to push /switch remaining Ubuntu boxes to Gentoo/ up in my project stack.
+[08:17:26] <Googie> I'm not really sure why that would be more of a push. cgroups aren't inherently bad, and that directory is basically the cgroup equivalent to /proc
+[08:19:51] <Googie> If you explore it, you can see all the processes's groups running under their user's cgroups running under the systemd cgroup.
+[08:20:31] <Googie> IIRC openrc does something similar.
+[08:22:13] <Googie> It's basically a standard thing for any init daemon that utilizes cgroups.
+[08:24:32] *** zz_CyberJacob is now known as CyberJacob
+[08:33:25] <JustAberrant> w..what do we do when gentoo falls :(
+[08:33:45] *** Quits: Darki (DK@Pony-92fd75.vs.webtropia.com) (Ping timeout: 121 seconds)
+[08:34:06] *** Quits: Finnfinn (Finnfinn@finn.isher) (Ping timeout: 121 seconds)
+[08:34:11] <Googie> They're optional in openrc, and default to off.
+[08:34:15] *** Joins: Darki (DK@Pony-92fd75.vs.webtropia.com)
+[08:36:00] *** Joins: Finnfinn (Finnfinn@finn.isher)
+[09:29:47] *** CyberJacob is now known as zz_CyberJacob
+[09:37:19] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[09:39:26] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[09:43:41] <Moonlightning> Googie: “There's a $thing called systemd” is definitely a push for me :P
+[10:07:17] *** Joins: McKey (Kordus@Pony-1k27j6.antyklay.pl)
+[10:07:17] -derpy.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[10:07:29] *** Server sets mode: +AHJPTnt 10:300 30
+[10:08:46] *** Awaykitty is now known as Unixkitty
+[10:19:48] *** aji is now known as aji-
+[10:20:10] *** aji- is now known as aji^
+[10:20:19] *** aji^ is now known as aji`
+[10:20:35] *** aji` is now known as aji
+[10:38:16] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[10:42:17] *** Joins: Phase (Phase4@Pony-fcsfco.internode.on.net)
+[10:48:01] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[10:53:23] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[11:02:01] *** Eventide|Sleepies is now known as Eventide
+[11:06:57] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: Connection closed for inactivity)
+[11:07:14] *** Joins: McKey (Kordus@bronies.info)
+[11:07:14] -cadance.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[11:07:27] *** Server sets mode: +AHJPTnt 10:300 30
+[11:42:19] <DJ-C0L7[EIT]> howdy
+[11:58:06] <Stik> sup
+[12:06:56] <DJ-C0L7[EIT]> hows it going
+[12:11:11] <Stik> feeling grumpy at work
+[12:11:15] <Stik> boss is being irritating again
+[12:12:09] <DJ-C0L7[EIT]> sounds like most supervisor/managment positions
+[12:12:30] <Stik> yup :(
+[12:12:43] * DJ-C0L7[EIT] offers Stik a hug
+[12:14:08] * Stik returns hug
+[12:14:21] <Stik> i will sit here and grumble silently at her
+[12:14:52] <Stik> i just always feel like manager jobs could be done by someone on about a quarter of the pay
+[12:15:05] <Stik> and perhaps then they wouldn't think they were so great and would just manage things quietly
+[12:15:20] <Stik> their job is to organise, not design or dictate or plan technical work
+[12:15:36] <Stik> her role is to make sure i have the things i need to get on with my work
+[12:16:04] <DJ-C0L7[EIT]> sounds like here
+[12:16:47] <DJ-C0L7[EIT]> the seargant at this post is good, its the major that you have to watch out for, he tends to look for /any/ excuse to complain and refuse to give us a raise in pay
+[12:17:21] <Stik> sucks :(
+[12:17:39] <DJ-C0L7[EIT]> this time its because we neglected to inform him that we had recieved a new building, and that one of our officers is complacent in his work
+[12:18:33] <DJ-C0L7[EIT]> i.e., he neglected to secure two external doors, that would have allowed an unauthorized individual complete access to the front offices and engineering areas
+[12:19:54] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[12:21:58] <Stik> d'oh
+[12:23:24] * DJ-C0L7[EIT] nods
+[12:29:46] <Moonlightning> You work for a military organization? O.o
+[12:30:35] <DJ-C0L7[EIT]> Para-Military
+[12:30:36] <DJ-C0L7[EIT]> >.<
+[12:30:43] <DJ-C0L7[EIT]> aka, Physical Security (Contractor)
+[12:31:34] <Moonlightning> did you not have a say in ending up with the military? x.x
+[12:32:08] <DJ-C0L7[EIT]> where i'm stationed is a manufacturing facility that makes winches and geardrives for oilfield and military
+[12:32:40] <Moonlightning> …???
+[12:33:24] <Moonlightning> why the hell do you have sergeants and majors around
+[12:34:23] <DJ-C0L7[EIT]> its an internal ranking system used by the contractor *rolls eyes*
+[12:36:46] <DJ-C0L7[EIT]> when the tornado hit joplin MO in '11 i got promoted to CPO from TSO, TSO being Traditional Security Officer, CPO being Custom Protection Officer or "Close" protection officer depending on situation/location
+[12:38:56] <Moonlightning> oh.
+[12:39:04] <DJ-C0L7[EIT]> eeyup
+[13:00:30] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[13:01:18] *** Quits: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Quit:  Try HydraIRC -> http://www.hydrairc.com <-)
+[13:12:26] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[13:15:44] <DJ-C0L7[EIT]> when i get home after getting off duty, i'm gonna shower, then crash for a couple of hours before getting up to change the valve cover gasket, and check the rockers on the '92 xj i'm building up
+[13:18:01] *** Unixkitty is now known as Awaykitty
+[13:18:39] <RainbowHacks> o.o
+[13:18:46] * RainbowHacks bops DJ-C0L7[EIT] 
+[13:18:55] * DJ-C0L7[EIT] blinks and noses RainbowHacks
+[13:19:32] <DJ-C0L7[EIT]> i'm also going to build a test harness, and setup a means of testing fuel injectors 4x at a time
+[13:19:33] <RainbowHacks> DJ-C0L7[EIT], sounds like your bosses are fucking idiots
+[13:19:59] <RainbowHacks> Stik, yours as well
+[13:20:03] <RainbowHacks> but especially DJ-C0L7[EIT] 's
+[13:20:14] <DJ-C0L7[EIT]> on post our supervisory officer knows whats going on, but the major being at the main office, is a complete dipstick about what goes on here in the day-to-day operations
+[13:20:54] <RainbowHacks> what you need
+[13:21:03] <RainbowHacks> *they need
+[13:21:12] <RainbowHacks> is a good old Security buttfucking
+[13:21:12] <RainbowHacks> but
+[13:21:18] <RainbowHacks> everyone needs that occasionally
+[13:22:42] <DJ-C0L7[EIT]> lol
+[13:22:56] * RainbowHacks has been wanting to Penetrate some buildings lately o.o
+[13:23:03] <DJ-C0L7[EIT]> lol
+[13:23:04] <RainbowHacks> need to practice my soceng and lockpicking
+[13:23:14] <Moonlightning> ohai RainbowHacks
+[13:23:20] * DJ-C0L7[EIT] carries picks on duty belt
+[13:23:25] <DJ-C0L7[EIT]> <.<
+[13:23:26] <DJ-C0L7[EIT]> >.>
+[13:23:41] <Moonlightning> RainbowHacks you should learn Rust and come help us :D
+[13:23:44] <DJ-C0L7[EIT]> too many jackwaggons breaking keys off in locks, so i invested in a set of broken key extractors
+[13:23:48] <RainbowHacks> Moonlightning, planning to
+[13:24:14] <Moonlightning> :D
+[13:24:14] <RainbowHacks> DJ-C0L7[EIT], i have a BKE in my kit
+[13:24:14] <RainbowHacks> i picked up a small southord kid
+[13:24:14] <RainbowHacks> *kit
+[13:24:14] <DJ-C0L7[EIT]> xP likewise
+[13:24:17] <RainbowHacks> mpxs08
+[13:26:37] <DJ-C0L7[EIT]> nice
+[13:26:38] <RainbowHacks> couple decent rakes, a good hook, BKE, and 2 tension bars
+[13:26:39] <RainbowHacks> been having trouble with serrated pins, but I've only been picking for a short time 
+[13:26:39] <DJ-C0L7[EIT]> i recently picked up a goso kit
+[13:26:39] <DJ-C0L7[EIT]> and i got the "ox" branded bke set from amazon last year
+[13:26:53] <DJ-C0L7[EIT]> the first set i picked up and carried in my shirt pocket for the longest time is a southord mpxs-11
+[13:28:06] <DJ-C0L7[EIT]> nvm it wasnt an ox bke, it was a "HUK"
+[13:28:32] * RainbowHacks carries her kit in a back pocket
+[13:28:37] <RainbowHacks> never leave home without it
+[13:28:44] <RainbowHacks> wallet, keys, glaSSes, lockpicks.
+[13:28:45] <RainbowHacks> x3
+[13:28:56] <DJ-C0L7[EIT]> xP i carry mine when i'm off-duty attached to my edc
+[13:31:32] <RainbowHacks> EDC?
+[13:31:57] <DJ-C0L7[EIT]> EveryDay Carry
+[13:32:19] <RainbowHacks> also: the office knows i carry them, which is great. cuz one time the director of HR locked himself out of his office and long since lost the key, and asked me for help
+[13:32:25] <RainbowHacks> 10. Seconds. Flat
+[13:32:34] <RainbowHacks> (actually significantly less but yis c: )
+[13:32:47] <DJ-C0L7[EIT]> nice
+[13:32:56] <RainbowHacks> DJ-C0L7[EIT], ah. I'm stuck in jersey. no personal carry here :/
+[13:33:33] <Moonlightning> o.o ?
+[13:34:25] <RainbowHacks> Moonlightning, GUNS
+[13:34:26] <RainbowHacks> owo
+[13:34:30] <DJ-C0L7[EIT]> my edc consists mostly of multi-tool, flash light, pocket knife, backup knife, sidearm, ammo, phone, keys, etc
+[13:36:23] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[13:37:49] * RainbowHacks nods
+[13:37:55] <RainbowHacks> i need to figure out what i did with my knife.
+[13:38:35] <RainbowHacks> i had a vaguely decent wesson blade. okay for every day use, would have gotten some decent usage in a fight if needbe too.
+[13:39:30] *** Quits: Phase (Phase4@Pony-fcsfco.internode.on.net) (Quit: Leaving)
+[13:39:50] * DJ-C0L7[EIT] nods
+[13:40:04] * RainbowHacks flops
+[13:40:18] <DJ-C0L7[EIT]> i have a gerber "gatorback" that i carry as my backup defence knife if the need ever arose
+[13:47:58] <RainbowHacks> o.o
+[13:52:17] <DJ-C0L7[EIT]> i'll be back in a bit, switchin' boxes
+[13:52:22] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "g2g bbiab")
+[14:11:57] *** Awaykitty is now known as Unixkitty
+[14:38:26] *** Finwe is now known as FINWE
+[15:03:33] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[15:19:38] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[15:20:00] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[15:20:30] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[15:21:11] *** FINWE is now known as Finwe
+[15:45:25] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[15:47:34] *** Quits: Creeps|AFK (RedHelper@The.Pony.That.Makes.You.Smile) (Ping timeout: 121 seconds)
+[15:48:00] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[15:53:49] <Sour_Sweet> WTF ... You know how mobile carriers drop your speed to 64 kb/s when you exceed your traffic limit? A German carrier just decided to drop their customers to 32kb/s for most of their contracts.
+[15:54:04] <GeekBrony> damn
+[15:57:08] *** Quits: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au) (Connection closed)
+[16:11:49] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:22:21] *** Quits: locodash11[lagout] (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[16:43:03] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[16:43:03] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[16:43:26] *** Joins: GigabitPony (Gigabit@Bazinga)
+[16:44:03] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[16:50:02] <tiwake> datacaps are evil.
+[16:50:39] <RainbowHacks> damn
+[16:51:02] <RainbowHacks> i get 23 gigs of full lte and then unlimited deprioritized (not throttled) LTE o.o
+[16:52:53] <Sour_Sweet> I get 2GiB and pay an awful lot for that :P
+[16:53:16] <johnsey> 23 GB? that sounds suspiciously like sprint
+[16:54:29] <johnsey> at least you got the FCC in the US
+[16:54:52] <RainbowHacks> johnsey, T-Mobile, actually.
+[16:55:14] <Sour_Sweet> O_o
+[16:55:36] <Sour_Sweet> Why don't they offer such service in their home country? -.-
+[16:55:39] <johnsey> ah, missed the part in the news where it said that it's the same limit t-mobile has
+[16:56:13] <johnsey> Sour_Sweet: because nobody here complains loudly enough.
+[16:56:35] <johnsey> and if you switch to a different carrier, you end up with the same caps
+[17:00:44] <Sour_Sweet> data caps here are even getting lower. When mobile internet started to become a thing you'd be able to get 10 GiB. Those times are over ....
+[17:02:59] <johnsey> because data usage is going up and it's easier than ever to make money by making people pay for temporary upgrades
+[17:04:32] <RainbowHacks> Sour_Sweet, because T-Mobile USA is technically an independant company, though Deutsche Telekom is the majority shareholder o.o
+[17:04:58] <RainbowHacks> caps came back in the states for a bit but they're going away again
+[17:05:18] <RainbowHacks> tmobile doesnt even throttle you down anymore. they just deprioritize the traffic, if you have the unlimited plan.
+[17:05:28] <RainbowHacks> (if you have a capped plan, yeah, you get bumpd down to 3G)
+[17:08:01] <Sour_Sweet> ISPs need to die a horrible death. Mobile data plans are a joke here ...
+[17:25:25] *** Unixkitty is now known as Awaykitty
+[17:30:14] <GigabitPony> without plugging a fan in., what is the easiest way to tell the direction of airflow?
+[17:32:42] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[17:33:35] <GigabitPony> bbs
+[17:36:15] <quindo> Anyone have experience with composer?
+[17:36:39] *** Awaykitty is now known as Unixkitty
+[17:36:43] <quindo> *composer php package management thing
+[17:38:03] *** Joins: Crimson_Tail (Bluepon@Pony-pj47un.cg80.k4gu.0151.2601.IP)
+[17:39:51] <Sour_Sweet> GigabitPony: Fans are labeled and have arrows
+[17:40:03] <Sour_Sweet> You can also determine it by the wings
+[17:46:32] *** Unixkitty is now known as Awaykitty
+[17:50:02] <quindo> It is really annoying when a package tells you to edit a setting file...  But then the correct way of installing the package makes it so that you can not edit the setting file >.>
+[18:20:47] <GigabitPony> I have had fans before without the arrows x.x
+[18:35:13] *** GigabitPony is now known as GigaTown
+[18:36:12] <quindo> I do not get the reference GigaTown
+[18:42:51] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Connection closed)
+[18:42:55] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[18:43:09] *** quindo is now known as Quindo
+[19:01:45] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[19:06:49] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[19:20:57] <GigaTown> what reference?
+[19:24:04] <GigaTown> if youa re talking my nick, there is no reference. I am in town, and on wifi atm
+[20:02:22] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:12:56] *** Joins: djazz (djazz@Pony-2aq.pps.72.78.IP)
+[20:12:57] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[20:13:23] *** djazz is now known as MangoBloom
+[20:16:52] *** Quits: Asoka_White (Asoka@Pony-fqgro4.net-htp.de) (Connection closed)
+[20:17:55] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (Ping timeout: 241 seconds)
+[20:19:24] *** Joins: Asoka (Asoka@Pony-fqgro4.net-htp.de)
+[20:22:17] *** Joins: Caerdwyn (caepone@Pony-dnfsri.pa.comcast.net)
+[20:34:28] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[20:38:59] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:39:14] *** Quits: Asoka (Asoka@Pony-fqgro4.net-htp.de) (Connection closed)
+[20:41:21] *** Joins: Asoka (Asoka@Pony-fqgro4.net-htp.de)
+[20:50:45] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[20:52:45] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[21:33:34] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:49:24] *** zz_CyberJacob is now known as CyberJacob
+[21:51:44] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[21:58:00] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[21:59:55] *** Quits: MangoBloom (djazz@djazz.se) (Killed (NickServ (GHOST command used by djazz)))
+[22:00:06] *** djazz is now known as MangoBloom
+[22:00:32] <johnsey> all the security updates: https://support.apple.com/en-us/HT205370
+[22:00:32] <PinkiePieBot> [ About the security content of iOS 9.1 - Apple Support ]
+[22:01:21] <johnsey> i like how most of it is arbitrary code execution and privileg escalation
+[22:02:47] <HoneyDrops> XD
+[22:10:13] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (A TLS packet with unexpected length was received.)
+[22:12:33] <HoneyDrops> So, anypony up on unlocking 3DS region locks?  I'm looking to get a 3DS since it seems I can now get a regular sized new-3ds, just wondering how much of a fuss it is to play other region's games.
+[22:13:10] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:13:28] <wolfyshy> if I may rant for a moment
+[22:13:30] <wolfyshy> AAAAAAAAAAAAAAAAAAAAAAAAAA
+[22:13:45] <wolfyshy> so I was working on stuff for work when my text editor segfaulted on my laptop, losing all my work
+[22:13:54] <wolfyshy> now it's segfaulting in weird places just /using/ it
+[22:13:58] <wolfyshy> ok, I went to my desktop
+[22:14:24] <wolfyshy>  A component of the operating system cannot be loaded.  File: \windows\system32\winload.exe
+[22:14:29] <wolfyshy> You'll need to use recovery tools.  If you don't have any installation media (like a disc or USB device), contact your PC administrator or your PC/Device manufacturer.
+[22:14:36] <wolfyshy> ok, I'll try to boot windows 7
+[22:14:49] <wolfyshy> Checking file system on \\?\Volume\{guid-9810293810293810298310928321}
+[22:14:52] <wolfyshy> Volume label is System Reserved.
+[22:14:58] <wolfyshy> One of your disks needs to be checked for consistency.
+[22:15:00] <wolfyshy> [reboot]
+[22:15:02] <wolfyshy> Checking file system on \\?\Volume\{guid-9810293810293810298310928321}
+[22:15:04] <wolfyshy> [reboot]
+[22:15:07] <wolfyshy> [etc]
+[22:15:13] <wolfyshy> and now, my VPS just fucking died in the ass
+[22:15:27] <wolfyshy> in two hours, I've lost three computers, all appear to be hardware failures
+[22:16:18] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[22:18:00] <johnsey> have you tried contacting your PC administrator or your PC/Device manufacturer? :D
+[22:18:02] <Moonlightning> D:
+[22:18:41] <HoneyDrops> o_O
+[22:20:54] * Moonlightning huggles wolfyshy. ;-;
+[22:23:13] * wolfyshy hugs Moonlightning
+[22:29:44] <RainbowHacks> wolfyshy, shoulda used freebsd
+[22:29:49] <RainbowHacks> but srsly, ouch :c
+[22:30:00] <wolfyshy> RainbowHacks: I was trying to put linux on it
+[22:30:11] <wolfyshy> it is nominally my windows / gaming pc but I need to work
+[22:30:19] * RainbowHacks boops wolfyshy on the nose
+[22:30:36] * wolfyshy folds
+[22:31:06] * Moonlightning gently boops RainbowHacks' flank with the pointy end of a golden pitchfork.
+[22:35:16] <RainbowHacks> OHGODWAT
+[22:35:18] * RainbowHacks flails
+[22:35:39] * RainbowHacks is listening to what is possibly the heaviest intro to a song ever
+[22:35:46] <RainbowHacks> and it's 9 minutes and 43 seconds long o.o
+[22:35:50] <RainbowHacks> the intro, not the song.
+[22:40:23] <Moonlightning> wat
+[22:40:32] <Moonlightning> how long is the song
+[22:43:26] <RainbowHacks> its not done yet o.o
+[22:43:33] <RainbowHacks> but it'll probably end up being like 30 minutes long
+[22:43:43] <Moonlightning> wtf
+[22:43:43] <RainbowHacks> depends on how high i get when i finish it
+[22:43:52] <Moonlightning> …what?
+[22:43:55] <RainbowHacks> Moonlightning, hmm?
+[22:44:04] <Moonlightning> wat.
+[22:44:05] <RainbowHacks> im confused. why are you confused?
+[22:44:34] <RainbowHacks> Moonlightning, why are you confused o.0
+[22:44:55] <Moonlightning> I thought you were listening to the song, not making it? 6_9
+[22:45:15] <RainbowHacks> oh
+[22:45:15] <RainbowHacks> no
+[22:45:18] <RainbowHacks> is my band
+[22:45:19] <RainbowHacks> x3
+[22:45:32] <RainbowHacks> i wrote it like 8 months ago but its so heavy i havent been able to finish it
+[22:45:42] <Moonlightning> Oh. o.o
+[22:45:42] <RainbowHacks> i've been kinda stuck on most of this record for over a year though
+[22:45:50] <RainbowHacks> it's taken a LOT out of me
+[22:46:37] <Moonlightning> D: ?
+[22:53:13] <RainbowHacks> writing music like hat is exhausting o.o
+[22:53:16] <RainbowHacks> in the best way
+[22:53:21] <RainbowHacks> but its still exhausting o.o
+[22:53:42] <Moonlightning> 6_9
+[22:54:31] * RainbowHacks never mentioned her music? o.o
+[22:54:50] <Moonlightning> That, or I completely forgot @.@
+[22:55:52] <RainbowHacks> heh
+[22:55:55] <RainbowHacks> PM'd :3
+[23:55:44] <wolfyshy> pones
+[23:55:49] <wolfyshy> the wolfy needs help
+[23:56:21] <Lapsus> aaaaa
+[23:59:27] <Lapsus> How can pones help wolfyshy :v

@@ -1,0 +1,510 @@
+[00:02:49] *** Quits: sleumas2k (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[00:23:53] *** GigaTown is now known as Gigabit
+[00:31:15] *** Quits: Phase4 (Phase4@Pony-ada193.internode.on.net) (Ping timeout: 121 seconds)
+[00:34:58] *** CyberJacob is now known as zz_CyberJacob
+[00:37:33] *** Jouva_ is now known as Jouva
+[00:56:26] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[00:58:00] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[01:05:04] *** Quits: quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[01:05:41] *** Joins: quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[01:12:51] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[01:20:43] *** Joins: Fillyfeathers (Fallfeather@Pony-8cihja.bigpond.net.au)
+[01:41:26] <Gigabit> What's the tumblr, large image size? 1256 or something?
+[01:42:15] <nurd> internets say tall is 540x1458
+[01:42:58] <nurd> http://unwrapping.tumblr.com/post/75873529443/dashboard-image-sizes
+[01:42:59] <PinkiePieBot> [ Tumblr Dashboard Image Sizes (Updated July 13,...: Unwrapping Tumblr ]
+[01:43:04] <nurd> not sure if its what youre looking for though
+[01:44:22] <DJ-C0L7[EIT]> apparently in windows 7, the wmc is nolonger going to recieve updates for ota signals for the guide O_o
+[01:44:39] <DJ-C0L7[EIT]> but microsoft is working on extending support for wmc that requires a patch to be installed >.<
+[01:45:05] <nurd> Microsoft lost my business when windows 8.1 came out
+[01:46:33] <Gigabit> The 1280 worked, fhanks
+[01:46:34] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[01:51:16] <DJ-C0L7[EIT]> brb gotta restart my box O_o apparently unregistering wmc causes the dll that controls the tuner to crash uncrecoverably without a system restart
+[01:51:38] <DJ-C0L7[EIT]> or, just a sec changing usb ports
+[01:52:58] <DJ-C0L7[EIT]> damn >.< that didnt work, brb restarting
+[01:53:04] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "restarting system due to windows screwups")
+[01:53:11] *** Joins: Sombra (Iceman@Darkhorse21)
+[02:00:20] <Gigabit> Um.. I was looking at router logs and my raspberry pi is flooding the second router with dhcp ack requests?
+[02:01:21] <JustAberrant> is it getting a dhcp offer back?
+[02:01:38] <JustAberrant> i.e. do you see something like no dhcp offers received in the logs
+[02:01:53] <Gigabit> Wonder.. Could my device be infected somehow or could some sort of setting got off because that's all I see in the router logs, constant dhcpack
+[02:02:35] <Gigabit> I don't see that no
+[02:02:46] <JustAberrant> would be quite a strange bit of malware ;p
+[02:03:08] <JustAberrant> I'm guessing the second one
+[02:03:33] <JustAberrant> something has bee *narrows eyes* improperly configured
+[02:03:38] <Gigabit> Let me get the log into a file so you can see
+[02:04:23] <Gigabit> Actually.. I'll post a few lines here.. The log is this since July 26
+[02:04:26] <Gigabit> Jul 27 00:18:01 dnsmasq[651]: DHCPREQUEST(br0) 192.168.1.10 b8:27:eb:aa:6e:3b Jul 27 00:18:01 dnsmasq[651]: DHCPACK(br0) 192.168.1.10 b8:27:eb:aa:6e:3b CloudsDale Jul 27 00:18:47 dnsmasq[651]: DHCPREQUEST(br0) 192.168.1.2 e0:46:9a:71:ba:b7 Jul 27 00:18:47 dnsmasq[651]: DHCPACK(br0) 192.168.1.2 e0:46:9a:71:ba:b7 WNR1000v3 Jul 27 00:22:27 dnsmasq[651]: DHCPREQUEST(br0) 192.168.1.10 b8:27:eb:aa:6e:3b Jul 27 00:22:27 dnsmasq[651]: DHCPACK(br0) 192.168.1.10 b8
+[02:04:45] <Gigabit> Oops.. Double pasted.. Sorry
+[02:05:07] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[02:05:12] <Gigabit> I have never seen this before like this
+[02:05:38] <Gigabit> But it worries me because I doubt this is normal. Could be wrong.
+[02:06:31] <DJ-C0L7[EIT]> freaking windows updates >.<
+[02:07:30] <Gigabit> I didn't do any setting changes on my Pi..so I'm not sure what would be causing this.
+[02:08:02] <JustAberrant> :(
+[02:09:59] <JustAberrant> maybe you have your lease time set to like 30 seconds? ;p
+[02:11:32] <Gigabit> 600
+[02:11:49] <JustAberrant> 600 seconds?
+[02:12:52] <JustAberrant> seems low.. but either way no idea
+[02:17:59] <One-Trick> dont use dhcp. solved.
+[02:18:47] <Gigabit> I don't want to but so many people use the network here x.x
+[02:19:00] <One-Trick> 600 seconds is just 10 minutes, why do you need a new lease every 10 minutes?
+[02:19:23] <Gigabit> I songs it was set that way when I got the device x3
+[02:19:33] <Gigabit> Don't*
+[02:20:15] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:20:19] <frackster> Gigabit: digital ocean hires tech support for remote work
+[02:20:29] <One-Trick> do you have control over the dhcp server (router)?
+[02:20:57] <Gigabit> Yep I do, and thanks frackster I will look into it. 
+[02:21:02] <One-Trick> cuz someone has it set up wrong xD
+[02:21:05] <frackster> np
+[02:21:14] <frackster> tech support's a pretty good starting point
+[02:21:37] <frackster> the support manager position is apparently remote as well so there's growth opportunities even though you aren't at their nyc headquarters
+[02:21:41] <Gigabit> Like I said, never had an issue with the logs till yesterday.. Buuuut I did update the firmware yesterday 
+[02:21:43] <One-Trick> either set it to static outside of the dhcp pool or just increase the dhcp ;ease rate on the router
+[02:22:27] <frackster> I think the only thing you'd have to keep in mind is that it's 24x7 support. so you'd inevitably be assigned a night shift.
+[02:23:14] <nurd> night shifts are the best for support, its 90% not doing shit and 10% actually challenging work (if you're dealing with local clientele only at least)
+[02:25:30] <frackster> ya
+[02:25:35] <frackster> I like night shifts x3
+[02:26:09] <frackster> I have 4pm-1am next month and am looking forward to it
+[02:26:43] <frackster> I don't work for DO tho, and my company doesn't do remote work :(
+[02:26:51] *** Quits: Fillyfeathers (Fallfeather@Pony-8cihja.bigpond.net.au) (Connection closed)
+[02:28:00] * JustAberrant hates that kinda thing honestly.. I'd rather be busy then bored :(
+[02:28:18] <JustAberrant> I guess if you work from home you can do other shit, but whatever
+[02:31:49] <Gigabit> WEll I applied, here is to hoping
+[02:35:20] <Gigabit> Oh ya, forgot, on the plus side, local video store called me today, so I think tomorrow I have to go in for an interview.
+[02:39:49] <JustAberrant> think? they wern't clear? ;p
+[02:40:14] <Gigabit> I was half asleep when I took the phone call. I know they asked me in today but I couldn't make it
+[02:40:58] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:41:06] <JustAberrant> I see
+[02:41:22] <nurd> I work for a home security company and I work 2-11 PM, its a nice blend
+[02:44:00] <Gigabit> I'm hoping for something part time at least right now, and this video store will be great if I can get in because they are 7 miles away and the shifts are awesome.
+[02:45:09] <JustAberrant> hate to say it, but missing the first interview and not knowing when the second one is, is kinda not gonna work in your favour ;p
+[02:45:58] <Gigabit> Well, I am going to stop in tomorrow after my dentist appointment. If I remember correctly, the gal on the phone, wanted to "talk" more about my application
+[02:53:15] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[03:03:13] <Gigabit> Is there no way to test a windows key to make sure it is unsued, without installing windows? I have a win 8.1 key that someone is interested in and hoping to make like 15 bucks XD
+[03:04:20] <Gigabit> Guy wants a valid key for win10 free upgrade
+[03:08:42] <nurd> >not installing cracked win7 for free 10 upgrade
+[03:10:40] <JustAberrant> yeah, pretty sure at this point Microsoft is trying to encourage piracy so they get some adoption
+[03:12:34] <DJ-C0L7[EIT]> lol
+[03:15:25] <nurd> pretty sure the newest OSX has a better adoption rate than win8.1 and its still in beta
+[03:16:35] <DJ-C0L7[EIT]> 8 was a trainwreck, 8.1 a train wreck upon another train wreck, 10 looks promising, but i think Micro$oft is grasping at straws now in desporation because linux has started to take more of the "market" away from them
+[03:17:17] <Gigabit> If and when, linux becomes dominant for gaming, I will make a full blown switch, till thne.. *dies inside*
+[03:26:12] <Googie> 8.1 was a partial bandaid to the train wreck that was metro
+[03:26:36] <Googie> 8 wasn't /that/ bad outside of Metro
+[03:26:55] <Googie> But they really tried to force it :/
+[03:28:56] <JustAberrant> 8 was basically.. "lets alienate our two biggest user groups (business and gamers) in the hopes of cutting into apple and android's game!
+[03:30:19] <JustAberrant> least that's how I figure it :(
+[03:30:42] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[03:30:49] <Lapsus> goddamnit windows 10 keeps forcing bullshit updates
+[03:31:09] <Lapsus> this shit isn't ready for mainstream use yet I swear to fucking god
+[03:31:41] <JustAberrant> :(
+[03:31:41] <PinkiePieBot> Well, suck it up, buttercup!
+[03:31:46] <JustAberrant> :>
+[03:31:56] <Lapsus> every couple days there's a new graphics driver update, so it UNINSTALLS THE FUCKING DRIVERS and forces me to reboot if I want to use my other monitor again
+[03:31:56] <Googie> Pretty much JustAberrant.
+[03:32:23] <Googie> The technical aspects were better than Windows 7, but the UI and their whole design just... yeah
+[03:32:25] <Lapsus> fucking pile of shit they'd better offer the ability to defer updates if this shit keeps up
+[03:32:38] <JustAberrant> like.. RIM may have stood still, but at least they didn't try to make their core users hate them :>
+[03:32:39] <Lapsus> because this shit is the worst
+[03:32:53] *** Quits: Lapsus (Lapsus@i-forget.ca) (Connection closed)
+[03:35:01] <One-Trick> glad i dont have to rely on windows
+[03:35:17] <One-Trick> i have three monitors, last thing i need is a fight over drivers
+[03:35:26] <Googie> I keep getting drawn back through games :/
+[03:35:30] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[03:35:30] *** AutoLapsus sets mode: +qo Lapsus Lapsus
+[03:35:47] <One-Trick> i use windows, i just dont require it
+[03:35:50] <Googie> Graphics drivers are usually better on Windows than Linux, at least for 3D acceleration
+[03:36:00] <JustAberrant> :>
+[03:36:10] * JustAberrant non-gamer, so I can live a windows free life :>
+[03:36:16] <Googie> Yeah, all of my "work" is done on Linux
+[03:36:16] <JustAberrant> (and mostly do)
+[03:36:34] <One-Trick> bl2 works. thats about all i play aside from tis100
+[03:37:08] <Gigabit> blah, google hangouts is being dumb
+[03:37:36] <Googie> I've been following GPU passthrough, waiting for that to mature a bit more so that I can finally move to Linux full time
+[03:38:05] <JustAberrant> myeah :)
+[03:38:08] <Googie> It's getting close, but I might need to invest in a bit of hardware first
+[03:39:24] <nurd> I only use win10 for skyrim on my old laptop, everything else runs fine on my *nix boxes
+[03:39:27] <Googie> (Since there's no easy way to capture the video output at decent framerate/latency, you have to have a separate monitor, or input to the monitor
+[03:39:52] <Googie> Also Nvidia is being dickish about it
+[03:40:03] <JustAberrant> how so?
+[03:40:18] <Googie> Their drivers purposely crash if they discover you are in a VM
+[03:40:19] * JustAberrant hasn't been following it closely, but it's one of those things that I'd jump on if available
+[03:40:26] <JustAberrant> yikes
+[03:40:38] <Lapsus> I changed the setting in the group policy editor to download and notify for install instead of force installing
+[03:40:42] <Lapsus> we'll see if that helps
+[03:40:44] <JustAberrant> what possible shit could they give :S
+[03:41:05] <Googie> They sell special cards for GPU virtualization :/
+[03:41:46] <JustAberrant> ah
+[03:41:58] <Googie> http://www.nvidia.com/object/grid-technology.html
+[03:41:59] <PinkiePieBot> [ GRID GPU Software and Hardware Technologies | NVIDIA GRID | NVIDIA ]
+[03:41:59] <JustAberrant> and I imagine they are reasonably priced for the average consumer? ;p
+[03:42:19] <Googie> Of course! :V
+[03:42:57] <Googie> http://www.amazon.com/NVIDIA-900-52055-0020-000-GRID-Graphics-Card/dp/B00CA5MLCS
+[03:43:02] <JustAberrant> hey, well, looks like the grid k1 can be found for like $1800 :>
+[03:43:04] *** nurd is now known as Trinket_Tinker
+[03:43:55] <JustAberrant> yeah at that point may as well just have a second dedicated machine :>
+[03:44:11] <Googie> Intel has been doing really cool things with GPU virtualization, but obviously they aren't really an option for gaming
+[03:45:28] <Googie> At the moment bypassing the VM detection is pretty easy, it's just a CPUID check, and a couple of checks for para-virtualization drivers. AMD also don't purposely crash their drivers, but right now Nvidia seems to have better compatibility
+[03:45:31] *** Trinket_Tinker is now known as nurd
+[03:46:11] *** nurd is now known as Midnight_Tinkerer
+[03:46:34] *** Midnight_Tinkerer is now known as Midnight_trinket
+[03:46:45] *** Midnight_trinket is now known as Midnight_Trinket
+[03:47:26] <Googie> I'm going to have another go at setting up another GPU passthrough setup when I get a new GPU. My current one doesn't have UEFI firmware, and the BIOS has a bunch of legacy stuff which impacts GPU passthrough under Linux
+[03:47:57] <Colgate> AMD is looking to be a lot more linux friendly in the future
+[03:48:31] <JustAberrant> seems like I hear that every few years though (really)
+[03:48:46] <JustAberrant> my experiences with AMD on linux though have been consistently horrible
+[03:48:49] <One-Trick> was just gonna say- been hearing that for over a decade
+[03:48:52] <Googie> Well, they just got a huge chunk of new GPU driver code into the kernel
+[03:49:18] <Googie> So, we've got proof that they're doing /something/ :P
+[03:49:24] <JustAberrant> hehe
+[03:50:27] <Colgate> indeed, their graphics driver is going to be in userspace
+[03:50:33] <Colgate> with an open source stub
+[03:50:37] <Colgate> in the kernel
+[03:51:10] <Colgate> and at least they aren't doing what nvidia is doing and purposefully gimping their chips
+[03:51:18] <JustAberrant> well, I'll just be over here watering the plants while we wait ;p
+[03:51:46] <Colgate> I won't be buying a new GPU for 2-3 years, so I've got time
+[03:51:53] <Colgate> my 670 is still rockin >.
+[03:51:54] <Colgate> >.>
+[03:52:09] <Googie> I've got a 670 too, but VR :(
+[03:52:18] <JustAberrant> pff, fancy ;p
+[03:52:46] * JustAberrant rocking a GT 640 and a GTX 650 :>
+[03:53:05] <Googie> Yeah, but you don't play games :P
+[03:53:19] <JustAberrant> but I do drive 6 monitors, I feel that should count for something
+[03:53:24] <JustAberrant> also I do minecraft
+[03:53:36] <Colgate> minecraft is a pretty graphics intensive game!
+[03:53:42] <Colgate> sadly
+[03:53:49] <JustAberrant> hey, it's written in java.. those pixels are expensive ;p
+[03:54:42] <JustAberrant> probably doesn't make much difference to the video card, but still
+[03:54:45] <Googie> JustAberrant: Well, they're remaking it in C++! Oh boy!
+[03:54:56] <JustAberrant> seriously?
+[03:55:17] <Colgate> minecraft 2
+[03:55:40] <JustAberrant> aka, microsoft's buyer's remorse? :D
+[03:55:42] <Googie> https://mojang.com/2015/07/announcing-minecraft-windows-10-edition-beta/
+[03:55:46] <PinkiePieBot> [ Announcing: Minecraft: Windows 10 Edition Beta ]
+[03:56:03] <JustAberrant> what do you think the odds of us getting a modding api this time are? ;p
+[03:56:29] <Colgate> huh, wonder why they are remaking it
+[03:56:33] <Colgate> seems a bit... silly
+[03:57:11] <Googie> It technically already exists, they're just porting the console versions back to PC
+[03:57:11] <JustAberrant> probably because they realised it takes a long damn time to make back 2 billion dollars selling $20 novelty minecraft torches :>
+[03:57:26] <Colgate> lol
+[03:57:47] <Colgate> hey, I don't even play minecraft, and I was tempted to buy one of those little block chests
+[03:58:22] <Googie> Minecraft with technical mods is great
+[03:58:32] * JustAberrant nods
+[03:59:08] * JustAberrant misses minecraft
+[03:59:16] <JustAberrant> AppleDash: btw, is your server died? :(
+[04:01:12] <JustAberrant> every time I play minecraft with mods, I just get enough tech to build pony pixel art efficiently, then kinda hit a "now what" phase :>
+[04:01:51] <Midnight_Trinket> I went through the entire MC community and now I feel like a retired pro sports player whenever I play, I play alone on hardcore, get sad at what I used to do in the game, and uninstall
+[04:03:12] * JustAberrant would love a more stable modding community
+[04:04:15] <Midnight_Trinket> ha, its funny because stable in a pony chat
+[04:04:18] * One-Trick likes Trove
+[04:04:45] <Midnight_Trinket> but also I'd just love a factions server that was fairly run and not full of idiots testing their copy/pasted killaura
+[04:05:55] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[04:16:27] <frackster> oh Gigabit I just saw https://workathome-sutherland.icims.com/jobs/16061/work-at-home-gaming-support-%26-service-representative/job?mobile=true&width=360&height=559&bga=true&needsRedirect=false&jan1offset=-300&jun1offset=-240 too
+[04:16:29] <PinkiePieBot> [ Sutherland Global Services | Careers |Recruitment | Work at Home Gaming Support & Service Representative ]
+[04:17:34] <Lapsus> aside from the driver update issues, I'm fucking loving win10
+[04:17:35] <Lapsus> lol
+[04:17:54] <Lapsus> the improved tiling and virtual desktops are awesome
+[04:18:22] <Colgate> wait, windows has a tiling WM now?
+[04:19:02] <Lapsus> no, but you can drag windows to the left/right to take half the screen, and to the corners to take 1/4
+[04:19:26] <Gigabit> I can't type 30+ wpm x.x
+[04:19:46] <Gigabit> and my internet is to slow for this jon
+[04:19:48] <Gigabit> job
+[04:19:56] <frackster> o
+[04:20:26] <Lapsus> http://i.imgur.com/9qF22hz.png for example
+[04:20:53] <Midnight_Trinket> I'm definitely more a fan of that than Win7
+[04:21:28] <Lapsus> it also has an option for one start-bar per monitor
+[04:21:46] <Lapsus> either with every icon on both or just the icons for windows on the same monitor
+[04:23:00] <frackster> what's reprap Lapsus? o.o
+[04:23:21] <Lapsus> http://reprap.org/
+[04:23:45] <frackster> ohh neat
+[04:23:50] <Midnight_Trinket> oh good, a dock on both monitors will be a lifesaver at work, hopefully we update
+[04:24:37] <Lapsus> IIRC Shutter has his set up so the other virtual desktop is a fullscreen linux vm, lol
+[04:25:40] <DJ-C0L7[EIT]> <.<
+[04:25:41] <DJ-C0L7[EIT]> >.>
+[04:25:59] <frackster> I thought his other one was porn Lapsus 
+[04:29:04] <DJ-C0L7[EIT]> now the updates finish, brb, restarting
+[04:29:16] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: TRAINED by specialists, LEARNED through experiance, EARNED my place at the table, all because of HARD WORK, God made mechanics because engines need heroes too")
+[04:29:39] <JustAberrant> <~Lapsus> it also has an option for one start-bar per monitor
+[04:29:39] <Gigabit> so much better now that I raised my monitor up
+[04:29:44] <JustAberrant> like win98se had? :>
+[04:29:51] <Lapsus> lol
+[04:30:07] <frackster> omg inb4 Lapsus upgrades to windows 98
+[04:30:37] <JustAberrant> seriously, way back in the bad ol` slackware days.. win98 kicked linux's ass in the multi-monitor department
+[04:30:47] <JustAberrant> this was back when xinerama was still kinda a new thing
+[04:30:59] <JustAberrant> nvidia had their own weird thing that kinda sort worked until you added a third monitor
+[04:31:16] <JustAberrant> xinerama kinda sorta worked but had a boatload of quirks (kinda like.. well.. now..)
+[04:31:37] <JustAberrant> win98 actually handled it well.. then it seems like on subsequent windows versions that support went down hill
+[04:32:46] <JustAberrant> meanwhile linux improved greatly.. and now multi-monitor is pretty decent :>
+[04:33:03] <JustAberrant> although nvidia and xrandr :S
+[04:35:28] <Gigabit> https://www.dropbox.com/s/mdrd2y7lnqjz8b5/IMG_20150727_223408.jpg?dl=0
+[04:35:33] <Gigabit> Monitor stand lol
+[04:36:05] <JustAberrant> hehe
+[04:36:14] <JustAberrant> <3 @ dash in the background
+[04:37:46] <Gigabit> lovely, google drive wont open for me and I have not backed up the files in a while
+[04:38:41] <Gigabit> Okay it opens but is closed fairly fast by the system, just watched it in task manager
+[04:41:17] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[04:45:20] <Midnight_Trinket> http://i.imgur.com/IxJQFBv.png best part about working at an accepting company is I get to have my desk like this
+[04:46:09] <DJ-C0L7[EIT]> oh FFS >.< WMC is broken
+[04:53:41] <DJ-C0L7[EIT]> nice desk Midnight_Trinket
+[04:53:48] <Midnight_Trinket> thanks
+[04:56:38] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[05:21:31] <JustAberrant> nice :>
+[05:25:34] <DJ-C0L7[EIT]> i'm going to do a system restore to see if i cant make wmc work again o_o
+[05:25:41] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "bbiab restarting windows...... again....")
+[05:28:58] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[05:29:10] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[05:35:58] * JustAberrant needs to spec out a media pc at some point for his bedroom
+[05:36:11] <JustAberrant> I really _really_ miss being able to watch stuff in bed
+[05:36:19] <Lapsus> Update on the win10 situation: Changing the update settings in the group policy editor worked perfectly, I get a popup for updates in the notification area!
+[05:36:31] <Lapsus> No more coming back to the pc to see only one monitor on
+[05:36:32] <Lapsus> :D
+[05:36:40] <JustAberrant> hehehe
+[05:36:48] *** Joins: TuxRug (TuxRug@Pony-4821m0.co.comcast.net)
+[05:38:11] * JustAberrant wishes rasp pi
+[05:38:21] <JustAberrant> .. 's didn't actually suck at playing media
+[05:38:34] <Lapsus> The pi2 might work?
+[05:38:40] <JustAberrant> like, for as much as they got praise as cheap xmbc boxes, they kinda suck
+[05:38:51] <Lapsus> also, don't pis work better if you buy the hardware decoder licence?
+[05:38:57] <JustAberrant> a bit
+[05:38:58] <Gigabit> anyone have a windows 8.1 pro iso link?
+[05:39:04] <JustAberrant> but it's still very chrome-casy-y
+[05:39:09] <JustAberrant> * cast-y
+[05:39:12] <Gigabit> Have a valid key but microsoft's site is being screwy
+[05:39:24] <JustAberrant> in that the playback is fine, but everything else (skipping/browsing/etc) is ultra shitty
+[05:39:52] <JustAberrant> I'll probably end up building a cheap i3 box
+[05:40:19] <JustAberrant> mini itx board in a small formfactor case (or maybe not actually.. I don't care about space really..)
+[05:40:48] <JustAberrant> might make it diskless
+[05:41:40] <JustAberrant> just use the onboard video.. should be fine for playing video.. onboard sound too (bedroom, so not like I care about high quality sound)
+[05:42:04] <JustAberrant> etc
+[05:42:53] <JustAberrant> meantime, bed
+[05:44:26] *** Quits: Midnight_Trinket (nurd@Pony-5qttkj.dc.cox.net) (Killed (NickServ (GHOST command used by Midnight_Trinket_!circuser-R8@Pony-ba9rq1.dc.cox.net)))
+[05:44:29] *** Joins: Midnight_Trinket (MidnightTri@Pony-5qttkj.dc.cox.net)
+[05:44:59] *** Midnight_Trinket is now known as Pony_10478
+[05:45:40] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[05:46:07] *** Joins: star_moon (starry@the.little.cloud.colt)
+[05:46:27] <star_moon> Anyone here used gimp? I have an urgent question
+[05:46:34] <init3> That feel when you pick a random MLP episode to test your direct rendering and then forget what you were doing and watch the whole thing. 
+[05:46:42] <star_moon> Please
+[05:46:44] <JustAberrant> star_moon: maybe
+[05:46:45] <init3> I have f
+[05:46:56] <init3> What's up star_moon?
+[05:47:06] <JustAberrant> init3: hehe, I've entirely done that
+[05:47:17] <star_moon> my gimp suddenly doesn't work when working with toold
+[05:47:32] <star_moon> Tools i mean
+[05:47:43] <init3> You mean it crashes?
+[05:48:33] <star_moon> No
+[05:48:42] <star_moon> When i click a tool
+[05:48:54] <Gigabit> Woot! Made 40 bucks!
+[05:49:05] <star_moon> The circle thingy stops moving at the canvas
+[05:49:21] <Gigabit> Sold that win 8.1 key and the guy paid me 40
+[05:49:59] <init3> So basically the cursor disappears?
+[05:52:32] <init3> If so, have you tried moving ~/.gimp out of the way star_moon?
+[05:52:34] <init3> (assuming you are on linux. I have no idea where it's stored on windows)
+[05:52:56] <star_moon> I'm using windows
+[05:53:01] <init3> THat'll clear all your preferences. There could be a setting messed up.
+[05:53:33] <star_moon> init3 well when you try to move your mouse, the cursor won't move
+[05:53:35] <init3> It might be in C:\Users\yourUserName\Application Data but that's just a guess. 
+[05:54:20] <init3> My windows install is basically a League of Legends install. 
+[05:54:26] <init3> So I'm not sure. 
+[05:55:04] <init3> Couldn't hurt to try reinstalling if that fails to help. 
+[05:59:04] <JustAberrant> star_moon: are you working on a large image?
+[05:59:14] <JustAberrant> star_moon: you might straight up be running out of ram
+[05:59:15] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[06:00:14] <init3> True
+[06:00:17] <JustAberrant> also, nite ;p
+[06:01:46] <init3> Relevant: https://derpibooru.org/144577
+[06:01:48] <PinkiePieBot> [ Safe applejack image_size too_big ]
+[06:01:55] <init3> Night JustAberrant 
+[06:02:43] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[06:02:46] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[06:03:01] *** locodash11[lagout] is now known as locodashie11
+[06:03:52] <init3> God there's one of Bon Bon with 1.5PB. I really wonder what the dimensions on these are they are feeding into GIMP.
+[06:19:24] <star_moon> init3 i wish i can show you a video
+[06:20:22] <init3> Well i mean, did renaming/moving the preferences folder or reinstalling help?
+[06:20:52] <init3> GIMP has so many hidden little settings and hotkeys it's not hard to accidentally muck something up. 
+[06:21:13] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[06:35:03] *** Joins: Nintendo4DS (Nintendo3DS@Pony-eeqc0u.res.rr.com)
+[06:35:03] *** Quits: jimmt (Nintendo3DS@Pony-eeqc0u.res.rr.com) (Connection closed)
+[06:42:28] *** Quits: star_moon (starry@the.little.cloud.colt) (Ping timeout: 121 seconds)
+[07:06:51] *** Quits: Kiyiko (Kiyiko@Pony-c9ma3u.dsl.netins.net) (Ping timeout: 121 seconds)
+[07:08:01] *** Joins: Kiyiko (Kiyiko@Pony-c9ma3u.dsl.netins.net)
+[07:09:26] *** Joins: Sombra (Iceman@Darkhorse21)
+[07:28:51] *** init3 is now known as Ted_Stevens
+[07:29:04] *** Ted_Stevens is now known as init3
+[07:38:40] *** Joins: Beatzebub (beatzebub@Pony-64rlqg.bchsia.telus.net)
+[07:46:48] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[08:00:19] *** Gigabit is now known as GigaZzz
+[08:22:49] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:49:43] *** Quits: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net) (Quit: I am gone now)
+[09:08:49] *** Joins: Fallfeathers (Fallfeather@Pony-8cihja.bigpond.net.au)
+[09:17:11] *** Quits: TuxRug (TuxRug@TuxRug) (Quit: WeeChat 1.1.1)
+[09:27:13] *** Joins: Compu_ (quassel@snuggly.filly)
+[09:27:47] *** Quits: CompuDesktop (quassel@snuggly.filly) (Ping timeout: 121 seconds)
+[09:32:58] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[09:34:29] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[09:44:19] *** Starburn is now known as Flowheart
+[09:56:53] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:59:58] *** Joins: Gladiolus (SRQ@the.truth.is.out.there)
+[09:59:59] <Gladiolus> o 3 o
+[10:00:14] <Gladiolus> OSX IS THE BEST UNIX >:)
+[10:10:05] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[10:18:08] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[10:24:28] *** Joins: Sombra (Iceman@Darkhorse21)
+[10:28:13] *** Joins: Phase (Phase4@Pony-ada193.internode.on.net)
+[10:35:38] *** zz_CyberJacob is now known as CyberJacob
+[10:54:42] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[11:09:26] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[11:14:32] <init3> Your attempted trolling was met only with the wall that is 4am. 
+[11:14:35] <init3> Gladiolus, 
+[11:14:40] <init3> That. And me. 
+[11:15:06] <init3> Always watching. 
+[11:15:06] <Gladiolus> o3o
+[11:15:14] <Gladiolus> i'll try again when i remember it
+[11:15:23] <Gladiolus> OS/2 > NT4
+[11:15:58] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[11:17:25] <init3> I can't claim to have an opinion on that matter. 
+[11:18:13] <init3> I think I've only very breifly used NT4 and os/2... wait. Might I have played Oregon Trail on OS/2?
+[11:18:24] <init3> Because if so, then yes. 
+[11:20:06] <Gladiolus> I used OS/2, worst OS I have ever used.
+[11:20:12] <Gladiolus> I used fuckin' System 6.
+[11:20:14] <Gladiolus> OS/2 is worse.
+[11:20:46] <Gladiolus> OS/2 is the greatest example of a UI designed by an engineer you'll find outside of a fighter jet. It's just... christ almighty SO MUCH SHIT THROWN AT YOUR FACE.
+[11:21:44] <init3> heh
+[11:23:31] * init3 looks up screenshots
+[11:23:39] <init3> GOOD LORD
+[11:24:22] <Gladiolus> http://toastytech.com/guis/os24_1stscreen.png
+[11:24:24] <Gladiolus> ye i mean like
+[11:24:29] <Gladiolus> lookit all that shit on the taskbar
+[11:24:41] <Gladiolus> what the fuck does any of it do, why are there so many things
+[11:25:01] <Gladiolus> now imagine the /entire/ os is like this. If you try and do anything you're met with gigantic menus and 8 billion options
+[11:25:13] <Gladiolus> the C:\ drive is a jumble of dozens of folders and hundreds of files
+[11:26:34] <Gladiolus> It's pretty funny to compare it to windows 95 and laugh at the hubris of IBM to think this was better
+[11:27:42] <init3> Haha it reminds me of those clowns who put like 4000 things on their windows desktop with rainmeter. 
+[11:27:58] <Gladiolus> yeah so imagine if those dudes designed the whole OS
+[11:28:20] <Gladiolus> "Yes, I need every single system file on the root drive- HOW ELSE WILL I KNOW IF THEY'RE ALL THERE"
+[11:29:03] <init3> So you mean not in any folder? Just in the root of it?
+[11:29:21] <Gladiolus> yeeeah
+[11:29:27] <Gladiolus> imagine if the windows folder was just dumped into C:\
+[11:30:49] <init3> Haha. I must download this abomination at some point. 
+[11:33:55] <Gladiolus> oh it also relies on /gigantic/ config.sys and autoexec.bat files to startup and there can be problems with those. Fire up a test-editor because /all drivers are loaded this way/
+[11:34:10] <Gladiolus> text*
+[11:34:41] <Gladiolus> thank christ that os died because there's an alt universe where that succeeded instead of windows and we're still assigning irqs manually in 2015
+[11:36:00] *** Quits: Gladiolus (SRQ@the.truth.is.out.there) (Quit: OS/2 is bad)
+[12:23:44] *** Joins: seatsea (seatsea@Pony-h2k8ms.oak0.80rs.04f8.2a01.IP)
+[12:42:24] *** CyberJacob is now known as zz_CyberJacob
+[12:42:28] *** zz_CyberJacob is now known as CyberJacob
+[12:57:06] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[13:13:45] <Seoson> Researchers have successfully executed a rowhammer bitflip attack via javascript. Interesting times ahead people ;-)
+[13:18:58] <Phase> Seoson, link?
+[13:19:49] <Seoson> Sorry only a german source atm: http://www.golem.de/news/rowhammer-speicher-bitflips-mittels-javascript-1507-115452.html
+[13:19:51] <PinkiePieBot> [ Rowhammer: Speicher-Bitflips mittels Javascript - Golem.de ]
+[13:20:49] <Seoson> There is a github link in the article: https://github.com/IAIK/rowhammerjs
+[13:20:50] <PinkiePieBot> [ IAIK/rowhammerjs · GitHub ]
+[13:21:26] <Seoson> There we go and the research paper: http://arxiv.org/pdf/1507.06955v1.pdf
+[14:01:41] *** Joins: ThunderBolt_ (VettleBolt@Pony-5uosg3.bigpond.net.au)
+[14:14:47] *** Flowheart is now known as Starburn
+[14:18:49] *** Joins: Fillyfeathers (Fallfeather@Pony-8cihja.bigpond.net.au)
+[14:45:55] *** CyberJacob is now known as zz_CyberJacob
+[15:05:07] *** zz_CyberJacob is now known as CyberJacob
+[15:12:52] *** Quits: ThunderBolt_ (VettleBolt@Sliverpony) (Ping timeout: 121 seconds)
+[15:17:01] *** Joins: ThunderBolt (VettleBolt@Sliverpony)
+[15:25:02] *** Quits: Fillyfeathers (Fallfeather@Pony-8cihja.bigpond.net.au) (Connection closed)
+[15:50:11] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[15:51:26] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[15:53:49] *** djazz is now known as MangoBloom
+[15:56:37] <Moonlightning> I'm looking for a service that would let play music on a machine and let people edit the queue if they're on the same network or something
+[15:57:06] <wolfyshy> iTunes used to have that but I don't know if they still do
+[15:57:07] <Moonlightning> Anypony know a service that does that?
+[15:57:17] <Moonlightning> Yeah, that's what I thought of
+[15:57:29] <Moonlightning> Spotify, maybe?
+[15:57:39] <wolfyshy> I had started writing a thing that would let you do it with spotify but then I stopped having spotify
+[15:57:54] <wolfyshy> so I never finished it
+[15:59:31] <Moonlightning> If iTunes still does it, that'd be cool o.o
+[16:00:07] <Moonlightning> Because you associate devices using a one-time passcode, not by logging into the account
+[16:02:42] <Moonlightning> http://arstechnica.com/apple/2013/04/an-ode-to-the-itunes-dj-a-beloved-feature-that-died-before-its-time/
+[16:02:43] <PinkiePieBot> [ An ode to iTunes DJ, a beloved feature that died before its time | Ars Technica ]
+[16:02:46] <Moonlightning> :(
+[16:06:18] <Moonlightning> Hmmmmmm.
+[16:08:18] <Seoson> VLC web interface?
+[16:08:59] <Seoson> It's not a "service" but it could work
+[16:09:25] <Moonlightning> There's an idea. Could just bind it to the LAN address.
+[16:10:06] <Moonlightning> Does VLC have a Spotify-y thing?
+[16:10:29] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:10:41] * Seoson uses google music in a browser and has therefor no idea.
+[16:11:38] <Moonlightning> Ooh, another idea.
+[16:13:34] <Moonlightning> Does /that/ have a remote thing?
+[16:13:46] <Moonlightning> …it sounds like it wouldn't, because browser
+[16:14:13] <Seoson> I don't think so.
+[16:16:31] <wolfyshy> it doesn't
+[16:17:15] <Moonlightning> Grrrr.
+[16:17:27] <Moonlightning> Anypony have Spotify?
+[16:17:55] <wolfyshy> I mean I still have it but it's in free mode
+[16:18:11] <wolfyshy> I use it for the songs google doesn't have
+[16:21:49] <roflin> Moonlightning: there is Music Player Daemon that might do what you want.
+[16:22:13] <Moonlightning> roflin: as in mplayer?
+[16:22:22] <roflin> nah MPD
+[16:22:26] <roflin> http://www.musicpd.org/
+[16:22:27] <PinkiePieBot> [ Music Player Daemon ]
+[16:22:49] *** Quits: reiuiji (reiuiji@nuclear.raven) (Ping timeout: 121 seconds)
+[16:24:15] <Moonlightning> What would be ideal is if iTunes 11 let people vote on Up Next things :c
+[16:25:57] <Seoson> Overkill would be to use a shoutcast server + auto dj ^^
+[16:29:20] <Moonlightning> Shoutcast?
+[16:30:38] <Seoson> You don't know shoutcast? Where have you been hiding? It's used to host web radio channels - as I said complete overkill
+[16:31:21] <Moonlightning> I've been living under the Apple rock :p
+[16:35:46] <Moonlightning> The ability to play songs without having bought them individually (like Spotify|Google Play All Access|Apple Music) is a must-have, BTW. Did I mention that?
+[16:37:42] <AppleDash> Moonlightning: Make your own service :P
+[16:37:49] <AppleDash> Run MPD and Icecast
+[16:37:55] <AppleDash> Give people access to MPD
+[16:37:55] <AppleDash> done
+[16:39:18] <Moonlightning> Are there iOS and Android apps for that?
+[16:39:42] <AppleDash> https://play.google.com/store/apps/details?id=com.namelessdev.mpdroid&hl=en
+[16:39:42] <PinkiePieBot> [ MPDroid - Android Apps on Google Play ]
+[16:39:47] <AppleDash> Dunno about iOS
+[16:40:18] <AppleDash> https://itunes.apple.com/us/app/mpod/id285063020?mt=8
+[16:40:19] <PinkiePieBot> [ MPoD on the App Store on iTunes ]
+[16:46:20] <Moonlightning> No voting, though, huh
+[16:55:33] <Moonlightning> There's a third-party app that effectively returns the feature to iTunes, but it's only for iOS. /Damn./
+[16:58:17] *** Quits: ThunderBolt (VettleBolt@Sliverpony) (Ping timeout: 121 seconds)
+[17:18:26] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:41:41] *** CyberJacob is now known as zz_CyberJacob
+[18:09:18] *** Joins: Crimson_Tail (ZRift@Pony-mfh7oq.md.comcast.net)
+[18:11:28] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[18:15:19] *** Quits: Beatzebub (beatzebub@Pony-64rlqg.bchsia.telus.net) (Client exited)
+[18:21:43] *** Joins: sleumas2k (sleumie@my.little.karaoke)
+[18:44:29] *** Compu_ is now known as CompuDesktop
+[18:45:01] *** Quits: quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[18:45:03] *** Joins: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[18:45:12] *** Pony_10478 is now known as Midnight_Trinket
+[18:50:37] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[18:52:50] *** Nintendo4DS is now known as ldyeax
+[19:31:01] *** Quits: Fallfeathers (Fallfeather@Pony-8cihja.bigpond.net.au) (Connection closed)
+[19:52:42] <DJ-C0L7[CSS]> okay, windows 7's media center has gotten even more broken
+[20:12:17] <DJ-C0L7[CSS]> >.< okay, wmc just NOW switched to Rovi from zap2it
+[20:32:45] *** Joins: thatdguy (~WebChat@Pony-pkbcdj.fbx.proxad.net)
+[20:39:38] *** Joins: Sombra (Iceman@Darkhorse21)
+[20:45:23] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:12:10] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:30:59] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[21:33:21] *** Quits: Quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[21:46:51] *** Quits: Phase (Phase4@Pony-ada193.internode.on.net) (Ping timeout: 121 seconds)
+[21:50:07] *** Awaykitty is now known as Unixkitty
+[21:50:26] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[21:58:55] *** Joins: quindo (Quindo@Pony-tkfa60.mssnks.sbcglobal.net)
+[22:03:17] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[22:07:33] *** Quits: thatdguy (~WebChat@Pony-pkbcdj.fbx.proxad.net) (Ping timeout: 121 seconds)
+[22:10:22] *** zz_CyberJacob is now known as CyberJacob
+[22:20:03] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:25:39] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:28:32] *** Quits: ldyeax (Nintendo3DS@Pony-eeqc0u.res.rr.com) (Ping timeout: 121 seconds)
+[22:32:56] *** CyberJacob is now known as zz_CyberJacob
+[22:54:00] *** Joins: ThunderBolt (VettleBolt@Sliverpony)
+[22:56:28] *** Unixkitty is now known as Awaykitty
+[22:58:36] *** Joins: jimm (Nintendo3DS@Pony-eeqc0u.res.rr.com)
+[23:13:17] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[23:27:03] *** Quits: ThunderBolt (VettleBolt@Sliverpony) (Ping timeout: 121 seconds)
+[23:34:23] *** Quits: sleumas2k (sleumie@my.little.karaoke) (Ping timeout: 121 seconds)
+[23:52:38] *** Joins: Midnight_Trinket_ (MidnightTri@Pony-5qttkj.dc.cox.net)
+[23:53:13] *** Midnight_Trinket is now known as Pony_34579
+[23:53:13] *** Midnight_Trinket_ is now known as 677AE4JZ5
+[23:54:34] *** 677AE4JZ5 is now known as Midnight_Trinket
+[23:55:05] *** Parts: Midnight_Trinket (MidnightTri@Pony-5qttkj.dc.cox.net) ()

@@ -1,0 +1,328 @@
+[00:01:24] *** Joins: Webster (Webster@Pony-910rl8.fios.verizon.net)
+[00:02:02] *** Creeps|AFK is now known as RedHelper
+[00:06:17] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[00:10:46] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (Ping timeout: 121 seconds)
+[00:13:04] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[00:21:13] *** Quits: Phase (Phase4@Pony-c0ueqn.internode.on.net) (Ping timeout: 121 seconds)
+[00:38:44] *** Joins: Official_Gladi (uid110916@Pony-qjfks9.brockwell.irccloud.com)
+[00:55:17] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[00:56:38] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (A TLS packet with unexpected length was received.)
+[00:57:24] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[00:57:49] *** Joins: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au)
+[01:02:00] *** Quits: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se) (Quit: Leaving.)
+[01:04:36] *** Quits: Official_Gladi (uid110916@Pony-qjfks9.brockwell.irccloud.com) (Quit: )
+[02:06:00] *** Joins: Asoka_White (Asoka@Pony-26mtuj.net-htp.de)
+[02:09:11] *** Quits: Asoka (Asoka@Pony-fcnice.net-htp.de) (Ping timeout: 121 seconds)
+[02:10:00] <Moonlightning> Is there a utility that compares blocks of two files?
+[02:11:16] <Compu> wacky waving inflatable arm flailing tube man! wacky waving inflatable arm flailing tube man!!!
+[02:11:47] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:11:48] <wolfyshy> Moonlightning: in what way
+[02:13:06] <Moonlightning> Uhh…just output some kinda list of the X-byte blocks that are the same between the two files
+[02:15:30] *** Joins: nscoots (FreyGrimrod@Pony-da3eqa.sub-70-192-0.myvzw.com)
+[02:15:45] <nscoots> https://github.com/reinderien/mimic
+[02:15:46] <PinkiePieBot> [ reinderien/mimic · GitHub ]
+[02:25:28] *** Quits: nscoots (FreyGrimrod@Pony-da3eqa.sub-70-192-0.myvzw.com) (Quit: Leaving.)
+[02:32:50] <Moonlightning> …actually, I think this might just be…
+[02:32:57] *** CyberJacob is now known as zz_CyberJacob
+[02:41:10] <Moonlightning> Yeah, never mind.
+[02:42:05] <Sour_Sweet> nscoots: This is gold. I know how to serve my JS files via API if they are not called through the correct User-Agent now.
+[02:42:39] <Moonlightning> wat ^
+[02:46:24] *** Sour_Sweet is now known as Seoson|BNC
+[03:23:56] <Moonlightning> Is reencrypting swap when it's not being used much a /thing?/
+[03:24:09] <Moonlightning> I feel like it should be a thing, especially on -servers- long-running systems
+[03:24:46] <Moonlightning> Just, when the system's mostly idle and swap isn't being used much, move everything back into RAM and reinitialize swap
+[03:26:51] <Colgate> ...why?
+[03:27:09] <Moonlightning> The same reason you renegotiate session keys after a while?
+[03:27:23] <Moonlightning> Also, to a degree, the same reason you encrypt swap at all?
+[03:28:06] <Moonlightning> The old swap key no longer exists anywhere; an attacker couldn't /possibly/ get it and decrypt whatever's still in swap.
+[03:28:55] <Moonlightning> Granted, the attack vector is unlikely, but crypto is //all about// taking precautions that turn out to be unnecessary most of the time.
+[03:29:24] <Moonlightning> For example, I just netcatted an installer image clear across the world (Los Angeles to London) and then checked its hash.
+[03:29:37] <Moonlightning> Guess what? The hash matched. The image was perfectly intact.
+[03:29:51] <Moonlightning> I'm sure it would've turned out the same way if I /hadn't/ checked…
+[03:30:02] <Moonlightning> MitMs are generally rare.
+[03:30:09] <Moonlightning> But we guard against them anyway,
+[03:30:29] <Webster> Keep two swap partitions. Turn off one, reinitialize it, turn it on, then do it to the other one next time. Put it in a cronjob?
+[03:31:25] <Moonlightning> yeah, that's how you
+[03:31:33] <Moonlightning> that's how you'd do it if you had multiple swap devices *
+[03:31:41] <Moonlightning> But this could work in any configuration.
+[03:31:46] *** RedHelper is now known as Princess_Cadance
+[03:34:20] <Colgate> you can make a swap device on a file
+[03:34:35] <Webster> Oh yeah, you can do that nowadays.
+[03:35:11] <Phase> sortof, there was an api being merged to simplify that
+[03:35:38] <One-Trick> rsync or snapshots. hmm.
+[03:36:33] * Phase doesn't use swap
+[03:37:44] <Moonlightning> One-Trick: CoWFs snapshots
+[03:39:39] <One-Trick> well, i already have lvm2
+[03:45:06] <One-Trick> i may just use compressed rsyncs with a week and minor daily updates. this is just my desktop, afterall.
+[03:49:13] <One-Trick> 4tb of space to play with. yay for amazon sales.
+[04:06:53] * wolfyshy has swapped disabled in-kernel
+[04:07:01] * wolfyshy couldn't use swap even if she wanted to, but she doesn't, so it's good
+[04:07:36] <One-Trick> i still have it, it barely is ever used, but its there  just in case .. and for hibernate
+[04:10:29] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[04:11:02] <wolfyshy> I feel dumb
+[04:11:10] <wolfyshy> I just got the pun in your nick One-Trick and I've been here a year
+[04:11:21] * wolfyshy dumb woof
+[04:11:29] * Moonlightning patpats wolfyshy. Smart woof!
+[04:11:41] <Moonlightning> Some puns are subt—wait, what's the pun? o.o
+[04:11:56] <One-Trick> i needed a stagename for this fandom, first thing i came up with
+[04:12:28] <wolfyshy> a one trick pony
+[04:14:44] <Moonlightning> Oh, yeah.
+[04:58:53] *** Quits: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au) (Ping timeout: 121 seconds)
+[05:01:47] <Phase> wolfyshy, why disable swap in the kernel?
+[05:02:03] <Phase> oh, turns out i do have a swap partition
+[05:02:07] <Moonlightning> well, if you're never ever going to use it…
+[05:02:12] <Phase> it's empty, but there
+[05:02:24] <Phase> 24GB ram ftw
+[05:02:56] * Phase likes running windows vms without pagefiles
+[05:05:00] <One-Trick> i use hibernate too much on my laptop
+[05:05:10] <One-Trick> i cant trust the battery very often
+[05:06:47] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[05:11:38] <Phase> hibernate, not hybrid sleep?
+[05:15:14] <One-Trick> because i lose all power
+[05:15:44] <Phase> yeah, hybrid sleep is fast wakeup if you dont lose power
+[05:16:19] <One-Trick> i just use pm-suspend typically
+[05:17:02] <One-Trick> but while at school, i have to hibernate cuz at any time the battery will just die. i keep trying to remember to replace it when i have money, i just forget
+[05:17:59] <One-Trick> laptops kinda old, been in my backpack for almost all of that time, and has traveled to several places and overseas. im just happy it still works :)
+[05:33:17] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Quit: )
+[05:34:15] <Moonlightning> /Them's Fightin' Herds/ just hit its OS X+Linux support stretchgoal :D
+[05:35:22] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[05:36:42] <Moonlightning> ooh…vi doesn't have ci and ca?
+[05:36:58] <GigaWork> nah it has AU
+[05:42:31] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[05:47:32] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (Connection closed)
+[05:49:50] *** Quits: Finnfinn (Finnfinn@finn.isher) (Ping timeout: 121 seconds)
+[05:50:36] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[05:50:40] *** Quits: Ruthalas__ (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Connection closed)
+[05:50:49] *** Quits: klaxa (klaxa@Pony-1kuq6f.eu) (Ping timeout: 121 seconds)
+[05:50:53] *** Joins: Ruthalas__ (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[05:51:12] *** Quits: Ruthalas__ (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Connection closed)
+[05:51:14] *** Quits: wolfyshy (woof@fluttering.shyly.through.the.forest) (Ping timeout: 121 seconds)
+[05:55:27] *** Joins: klaxa (klaxa@Pony-ail.8pm.0.134.IP)
+[05:56:00] *** Joins: Finnfinn (Finnfinn@finn.isher)
+[06:05:21] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[06:08:52] * Googie frowns
+[06:09:26] <Googie> Apparently the only way to get flights from Jetstar without paying $17 in payment handling costs, is literally to give a third party your bank login and password.
+[06:09:30] <Googie> This... this is not okay.
+[06:10:17] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[06:12:28] <Moonlightning> what the actual fuck
+[06:12:32] <Moonlightning> what the ACTUAL FUCK
+[06:12:36] <Moonlightning> what is WRONG with them
+[06:12:40] <Moonlightning> that's not how you transactions!!
+[06:12:52] <Moonlightning> EVERYTHING ELSE just uses the account+ruting number GEEZ
+[06:13:23] <Googie> https://en.wikipedia.org/wiki/POLi_Payments#cite_note-16
+[06:13:24] <PinkiePieBot> [ POLi Payments - Wikipedia, the free encyclopedia ]
+[06:15:38] <Googie> http://www.zdnet.com/article/nz-bank-claims-payment-processor-is-capturing-user-details/
+[06:15:39] <PinkiePieBot> [ NZ bank claims payment processor is capturing user details | ZDNet ]
+[06:22:42] <HoneyDrops> How would banks be ok with this?
+[06:23:12] <Googie> Money apparently.
+[06:24:51] <HoneyDrops> I hear they like money.
+[06:46:14] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[06:56:37] *** Eventide is now known as Eventide|Sleepies
+[06:57:19] *** Quits: Webster (Webster@Pony-910rl8.fios.verizon.net) (Quit: Leaving)
+[07:01:35] *** GigaWork is now known as Gigabit
+[07:08:27] *** Quits: JustAberrant (JustAberran@Pony-lq4qe0.com) (Ping timeout: 121 seconds)
+[07:13:40] <Moonlightning> zsh installed. Ahhh, much better~
+[07:16:00] <Moonlightning> ports made me learn a new thing :P
+[07:16:26] <Moonlightning> /usr/ports/$package && { sudo make install clean; } always { popd; }
+[07:21:32] <Moonlightning> This don't feel like a package manager :p
+[07:21:44] * Moonlightning wants a --quiet-build
+[07:29:55] <Moonlightning> Mmmm…make that `/usr/ports/$package && { sudo sh -c 'make config-recursive && make install clean'; } always { popd; }`
+[07:31:27] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[07:32:19] <Moonlightning> configuring win32
+[07:32:20] <Moonlightning> Failed to configure win32. It will not be installed.
+[07:32:23] <Moonlightning> you're goddamn right
+[07:34:00] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[07:35:56] <Moonlightning> this better compile all the security reports and give them to me at the end, too
+[07:35:59] <Moonlightning> else I'm not going to /see/ them
+[07:36:24] <Moonlightning> I mean, this is /`make`/, for Luna's sake. It's the verbosest thing ever :P
+[07:38:27] <Moonlightning> ===>  License TclTk accepted by the user
+[07:38:40] <Moonlightning> uhhhh…no? I selected some configuration options. Didn't see /anything/ about a license.
+[07:40:11] <Moonlightning> ^3 You can't put anything in the middle of `make` output and expect anypony to see it
+[07:48:44] <Moonlightning> Augh!
+[07:48:52] <Moonlightning> `man` doesn't account for wide terminals!
+[07:48:57] <Moonlightning> WHAT IS THIS ;-;
+[07:51:15] <Moonlightning> Okay, let's see…accounts, shells, editors…
+[07:51:26] <Moonlightning> besides the colored hostname…what'm I missing?
+[08:01:54] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:11:54] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[08:25:58] <Moonlightning> colored hostname done, yay~!
+[08:27:26] *** Alphagamer774 is now known as Alpha774[PH63}
+[08:27:30] *** Alpha774[PH63} is now known as Alpha774[PH63]
+[08:28:20] <Moonlightning> I take it these {TX,RX}CSUM{,IPV6} flags mean Dark Moon's gonna calculate checksums for outbound and inbound IPv4 and IPv6 packets
+[08:28:26] <Moonlightning> which…no…
+[08:28:42] <Moonlightning> that's already done at layer two and layer four
+[08:28:58] <Moonlightning> and probably layer five or seven
+[08:29:05] <Moonlightning> we don't need a fourth one
+[08:30:50] <AppleDash> Moonlightning: What are you doing?
+[08:31:00] <Moonlightning> Setting up a box.
+[08:31:10] <AppleDash> why
+[08:31:19] <Moonlightning> Because RainbowHacks insisted I try BSD
+[08:31:24] <AppleDash> oh
+[08:31:27] <AppleDash> lol
+[08:31:34] <AppleDash> Have fun :P
+[08:31:43] <Moonlightning> I'm mostly done *shrug*
+[08:31:50] <AppleDash> You need to try it now
+[08:32:04] <Googie> You've already tried BSD!
+[08:32:07] <Googie> 4.3BSD!
+[08:32:13] <Googie> :P
+[08:32:14] <AppleDash> :D
+[08:32:43] <Moonlightning> yeah I don't think that counts
+[08:33:19] <AppleDash> It does
+[08:33:30] <Moonlightning> Not for deciding whether I like it
+[08:33:33] <Moonlightning> Things Have Changed™
+[08:33:44] * Moonlightning yawns.
+[08:33:52] <Moonlightning> I should fiddle with the zfs things and set up snapshots
+[08:35:22] <Moonlightning> …I thought IPv6 got rid of checksumming altogether! WTF
+[08:37:06] *** zz_CyberJacob is now known as CyberJacob
+[08:39:12] <Moonlightning> …I should set up bind! o3o
+[08:39:27] <Moonlightning> …nah…I don't wanna do that 'cos I'm probably not gonna keep him
+[08:40:28] <Moonlightning> daaaaaayum that is a long synopsis
+[08:46:35] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[08:47:54] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:58:59] *** Joins: Phase (Phase4@Pony-c0ueqn.internode.on.net)
+[09:06:38] * Moonlightning complains bitterly to RainbowHacks that $MANWIDTH defaults to `80` and not `tty`
+[09:06:49] <Moonlightning> s/that/about how/
+[09:16:47] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[09:17:53] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[09:20:10] *** Quits: locodash11[lagout] (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[09:21:15] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Ping timeout: 121 seconds)
+[09:21:48] *** CyberJacob is now known as zz_CyberJacob
+[09:24:35] <johnsey> Moonlightning: I'm sure there's somebody out there who'd gladly sell you an extension to your $MANWIDTH, just check your junk folder.
+[09:25:44] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[09:27:23] <Moonlightning> johnsey, that was horrible. :V
+[09:32:57] <johnsey> thank you, thank you, I'll be here all day
+[09:39:12] <Moonlightning> > 1 day uptime
+[09:39:16] <Moonlightning> YOU LIE
+[09:39:21] <Moonlightning> it's only been a minute or so!
+[09:39:24] <Moonlightning> </late>
+[09:41:01] <johnsey> Googie: about the providing your bank account details to a payment service, they just ruled it illegal to have that service as the only payment option without transaction surcharges in germany. maybe australia will follow the example some day
+[09:47:52] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[09:53:19] <Moonlightning> Hmmmmmm.
+[09:53:32] <Moonlightning> Couldn't the banks sue, for encouraging ToS violations or something?
+[10:05:06] <johnsey> I don't know how but I'm sure they somehow, in some way make money out of this
+[10:13:43] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Ping timeout: 121 seconds)
+[10:22:33] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[10:24:03] *** Quits: Gigabit (Gigabit@Bazinga) (Ping timeout: 121 seconds)
+[10:24:34] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[10:25:04] *** Joins: GigabitPony (Gigabit@Bazinga)
+[10:29:30] *** Joins: McKey (Kordus@Pony-3agfts.antyklay.pl)
+[10:29:30] -discord.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[10:29:40] *** Joins: Colgate (rabbit@brushie.horse)
+[10:29:43] *** Server sets mode: +AHJPTnt 10:300 30
+[10:30:27] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[10:39:04] *** Quits: Colgate (rabbit@brushie.horse) (Ping timeout: 121 seconds)
+[10:41:37] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Connection closed)
+[10:42:12] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (Ping timeout: 121 seconds)
+[10:43:35] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[10:48:36] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[10:51:40] <AppleDash> johnsey: That was the best
+[11:17:58] *** Joins: Colgate (rabbit@brushie.horse)
+[11:23:29] *** Quits: Alpha774[PH63] (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Quit:  I love my HydraIRC -> http://www.hydrairc.com <-)
+[11:50:55] <Compu> http://imgur.com/gallery/dKVXNk3
+[11:50:55] <PinkiePieBot> [ #NTFS - Imgur ]
+[12:53:01] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[12:59:48] <johnsey> I call this artwork "missing the tree for the branches": http://i.imgur.com/Z4FSzVT.png
+[13:02:45] *** Joins: Finwe^ (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[13:08:17] <Compu> NOT THE BEES!!!
+[13:17:38] *** Seoson|BNC is now known as Sour_Sweet
+[13:53:16] *** Quits: Phase (Phase4@Pony-c0ueqn.internode.on.net) (Ping timeout: 121 seconds)
+[15:01:36] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[15:01:36] *** Quits: Finwe (vhalkola@Pony-oi2dre.org.aalto.fi) (Connection closed)
+[15:19:03] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:23:10] *** Pony_80871 is now known as Lorix
+[15:23:16] *** Lorix is now known as Lorix_
+[15:23:26] *** Parts: Lorix_ (Lorix_@flutter.shy.yay) ("Leaving")
+[15:34:21] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[16:09:50] *** Quits: derpy (derp@muffins) (Ping timeout: 121 seconds)
+[16:34:07] *** Joins: Crimson_Tail (Bluepon@Pony-q6fv68.cg80.k4gu.0151.2601.IP)
+[16:34:14] *** Quits: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:06:20] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[17:20:18] *** Eventide|Sleepies is now known as Eventide
+[17:30:03] <GigabitPony> people here bitching how the internet isnt working on some devices, IE slow as fuck, yet they are using netflix all day every day even after the ISP explained we have poor signal quality
+[17:30:10] <GigabitPony> sense makes none
+[17:30:47] <JustAberrant> set up QoS?
+[17:31:32] <GigabitPony> doesnt work on this cheap ass router
+[17:31:45] <JustAberrant> get a better router ;p
+[17:31:58] <GigabitPony> tell my cousins that. I have been trying for over a year
+[17:32:32] <JustAberrant> hell, get a piece of shit desktop for free and turn it into one ;p
+[17:40:03] <tiwake> put dd-wrt on the cheap router?
+[17:40:29] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[18:16:45] <GigabitPony> dsoesnt support it
+[18:17:17] *** Joins: McKey (Kordus@Pony-1k27j6.antyklay.pl)
+[18:17:17] -derpy.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[18:17:17] <GigabitPony> dsoesnt support it
+[18:17:29] *** Server sets mode: +AHJPTnt 10:300 30
+[18:26:09] *** Joins: McKey (Kordus@bronies.info)
+[18:26:09] -discord.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[18:26:21] *** Server sets mode: +AHJPTnt 10:300 30
+[18:33:58] *** Joins: McKey (Kordus@Pony-1k27j6.antyklay.pl)
+[18:33:58] -derpy.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[18:34:14] *** Server sets mode: +AHJPTnt 10:300 30
+[18:41:42] <GigabitPony> anyone know hexchats default log location?
+[18:42:21] <DataByteBrony> windows or linux?
+[18:42:27] <GigabitPony> winders
+[18:43:21] <DataByteBrony> using application data or save to program folder?
+[18:43:41] <GigabitPony> Um, not sure qwhat you mean
+[18:44:02] <DataByteBrony> for me, on my work machine, i have it saved to program folder, so it's from there under ~\HexChat\config\logs
+[18:44:17] <DataByteBrony> otherwise, check %appdata%
+[18:44:27] <GigabitPony> I am not sure how to change the location is the problem x.x
+[18:44:42] <DataByteBrony> linux is ~/.config/hexchat/logs (took me a while to find it, lol)
+[18:47:11] <DataByteBrony> the location is set when you install - i'm not sure how to change, either
+[18:47:11] <GigabitPony> only thing in %appdata%hexchat is 3 folders, one listed as scrollback which has the networks I am on in it, and text files of scroll back text
+[18:47:11] <DataByteBrony> do you have logging enabled?
+[18:47:11] <GigabitPony> yep
+[18:47:11] <DataByteBrony> in the same folder as the scrollback folder there should be a 'logs' folder
+[18:47:11] <DataByteBrony> if not a 'config'
+[18:51:25] <GigabitPony> ah, found out how to change it
+[18:51:58] *** Joins: McKey (Kordus@bronies.info)
+[18:51:58] -chrysalis.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[18:51:58] <DataByteBrony> if not a 'config'
+[18:51:58] <GigabitPony> ah, found out how to change it
+[18:51:58] <GigabitPony> and found a folder in the location I specified, which has old hexchat log data and I cannot open the folders inside of it and cannot delete them
+[18:52:10] *** Server sets mode: +AHJPTnt 10:300 30
+[18:54:59] *** GigabitPony is now known as GigaTown
+[19:13:35] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[19:22:21] <quindo> https://i.imgur.com/btRTnmY.jpg
+[19:25:02] <DataByteBrony> hahahaa
+[19:25:36] <DataByteBrony> although i'd say mine is explaining what i can do with a program, and what i can't do - but that's the user i'm explaining it to, i thikn
+[19:26:13] <quindo> I think that falls into the 8%
+[19:26:16] <quindo> dealing with other people
+[19:52:33] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[20:08:25] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[20:08:42] *** Joins: McKey (Kordus@Pony-3agfts.antyklay.pl)
+[20:08:42] -discord.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[20:08:55] *** Server sets mode: +AHJPTnt 10:300 30
+[20:14:12] *** Joins: Phase (Phase4@Pony-c0ueqn.internode.on.net)
+[20:16:14] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[20:58:14] *** zz_CyberJacob is now known as CyberJacob
+[21:02:05] *** Quits: Phase (Phase4@Pony-c0ueqn.internode.on.net) (Ping timeout: 121 seconds)
+[21:06:48] *** Joins: Midnight_Tinker_ (MidnightTin@Pony-5qttkj.dc.cox.net)
+[21:09:19] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Ping timeout: 121 seconds)
+[21:10:34] *** Midnight_Tinker_ is now known as Midnight_Tinker
+[21:21:41] *** Joins: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se)
+[21:23:23] <Moonlightning> I wonder if I could add Dark Moon to my VPN as a slave server o3o
+[21:23:33] <Moonlightning> slash failover
+[21:23:53] <Moonlightning> IRC style
+[21:54:26] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[21:59:03] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:14:26] *** GigaTown is now known as Gigabit
+[22:18:26] *** Joins: Asoka (Asoka@Pony-ptv126.net-htp.de)
+[22:20:05] *** Joins: wolfyshy (woof@Pony-hi4k0u.votuvo.com)
+[22:20:43] *** Quits: Asoka_White (Asoka@Pony-26mtuj.net-htp.de) (Ping timeout: 121 seconds)
+[22:28:31] *** Joins: McKey (Kordus@Pony-1k27j6.antyklay.pl)
+[22:28:31] -derpy.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[22:28:44] *** Server sets mode: +AHJPTnt 10:300 30
+[22:33:26] *** Joins: McKey (Kordus@bronies.info)
+[22:33:28] -derpy.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[22:33:35] *** Server sets mode: +AHJPTnt 10:300 30
+[23:08:54] *** Joins: McKey (Kordus@Pony-3agfts.antyklay.pl)
+[23:08:54] -discord.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[23:09:07] *** Server sets mode: +AHJPTnt 10:300 30
+[23:14:11] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[23:15:17] *** Joins: derpy (derp@muffins)
+[23:24:24] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[23:26:57] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[23:45:39] *** Quits: Datalink (Datalink@Datalink) (Connection closed)
+[23:55:17] *** Joins: McKey (Kordus@bronies.info)
+[23:55:17] -derpy.canternet.org- Replaying up to 10 lines of pre-join history spanning up to 300 seconds
+[23:55:29] *** Server sets mode: +AHJPTnt 10:300 30

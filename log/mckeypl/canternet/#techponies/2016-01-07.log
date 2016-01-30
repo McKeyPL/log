@@ -1,0 +1,526 @@
+[00:00:03] <Phase> actually, i could see that working
+[00:00:04] <Quindo> yeah, he was copying a pro player
+[00:00:11] <Quindo> from france.
+[00:00:39] <Phase> you don't have to share a finger between forward and back
+[00:00:42] <Phase> clever
+[00:00:50] <Quindo> .....
+[00:00:59] <Quindo> I think the joke went over Phase's head
+[00:01:17] <Phase> Quindo, i honestly could see it being useful
+[00:02:06] <Phase> but yes the joke went a bit over my head
+[00:02:35] <HoneyDrops> Phase: I use menu to call demnu to launch programs
+[00:02:49] <Phase> demnu?
+[00:02:55] <HoneyDrops> dmenu*
+[00:03:01] <Phase> dmenu?
+[00:03:21] <mniip> d-menu
+[00:03:23] <Quindo> D  M  U
+[00:03:32] <mniip> the one that pops when you press Mod4-D
+[00:04:04] <HoneyDrops> one sec, on mobile will get link.  But it's a basic menu program that makes a great launcher when combined with a simple bash script
+[00:04:45] *** Parts: mniip (mniip@Pony-o9q.v2g.219.178.IP) ("Leaving")
+[00:06:03] <HoneyDrops> keycode 94 = Caps_Lock
+[00:06:09] <HoneyDrops> blah
+[00:06:15] * Phase will google
+[00:06:16] <HoneyDrops> http://tools.suckless.org/dmenu/
+[00:06:17] <PinkiePieBot> [ dmenu | suckless.org tools ]
+[00:06:29] <HoneyDrops> Goes well with dwm
+[00:23:35] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[00:35:43] *** Joins: Sombra (Iceman@Darkhorse21)
+[00:35:55] *** Joins: non (Iceman@Pony-iehpab.mn.charter.com)
+[00:39:03] *** Quits: non (Iceman@Pony-iehpab.mn.charter.com) (Quit: quit)
+[00:42:02] *** Divide|TechSupport is now known as Divide|FFXIV
+[00:53:08] *** Snoarin is now known as Gigabit
+[01:05:56] *** Joins: FlameSniper (FlameSniper@Pony-evv8mj.fios.verizon.net)
+[01:06:10] *** Parts: FlameSniper (FlameSniper@Pony-evv8mj.fios.verizon.net) ("Konversation terminated!")
+[01:16:58] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[01:17:04] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[01:24:33] *** Joins: Webster (Webster@Pony-benl74.fios.verizon.net)
+[01:31:45] *** Quits: Webster (Webster@Pony-benl74.fios.verizon.net) (Quit: Leaving)
+[01:34:05] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[01:34:21] *** Joins: Webster (Webster@Pony-benl74.fios.verizon.net)
+[01:40:41] *** Joins: corkfuse (corkfuse@corkfuse)
+[01:48:25] *** Quits: corkfuse (corkfuse@corkfuse) (Quit: Sleeping)
+[01:57:51] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[01:57:56] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[02:02:25] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[02:02:28] *** Quits: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net) (Connection closed)
+[02:18:54] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[02:25:11] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:35:48] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[02:43:24] *** Quits: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de) (Ping timeout: 121 seconds)
+[02:44:56] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[02:50:30] * HoneyDrops sounds the Klaxons for Moonlightning: http://news.softpedia.com/news/new-https-bicycle-attack-reveals-details-about-passwords-gps-coordinates-498488.shtml
+[02:53:04] *** Joins: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de)
+[02:55:02] *** Quits: Datalink (Datalink@Datalink) (Connection closed)
+[02:59:52] *** Quits: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de) (Quit: Ex-Chat)
+[03:00:12] *** Joins: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de)
+[03:00:30] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[03:09:38] <Sour_Sweet> Haha I talked about information you could get from HTTPS traffic size just yesterday :D
+[03:10:33] <ShivalWolf> so who else has the lovely little poem in their web logs
+[03:11:45] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[03:12:34] <Colgate> HoneyDrops: seems like it would be easy to mitigate this, by just adding a random small amount of bytes onto the end
+[03:12:48] <HoneyDrops> Yeah
+[03:12:57] <Sour_Sweet> Depends on what you try to hide
+[03:13:04] <HoneyDrops> Sadly it can be done retroactively on logged data :(
+[03:13:55] <Colgate> this also sounds like it is old
+[03:14:00] <Sour_Sweet> You could probably not hide for example what Wikipedia article you're reading (based on article size, image amount and sizes)
+[03:14:01] <Colgate> I swear people knew about this years ago
+[03:14:21] <ShivalWolf> yeah i rememebr reading something similar ages ago
+[03:14:21] <Sour_Sweet> HTTP/2 will solve great parts of those issues
+[03:14:35] <Colgate> Sour_Sweet: eh, with http keep alive, all those requests come in one encrypted connection don't they?
+[03:14:44] <Colgate> as long as they are part of the same domain I mean
+[03:14:45] *** MisterSkids is now known as QuillSwirl
+[03:15:53] <Sour_Sweet> Browser will often do multiple connections anyway to speed up the process iirc
+[03:16:00] <Sour_Sweet> Browsers*
+[03:22:56] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[03:30:32] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[03:40:48] *** Joins: DataByte (DataByte@Pony-jlv.gm5.152.174.IP)
+[03:49:32] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[04:00:03] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[04:00:31] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[04:06:32] *** Eventide is now known as Eventide|Sleepies
+[04:07:00] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[04:31:03] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[04:39:59] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Ping timeout: 121 seconds)
+[04:40:25] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[04:43:44] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[04:55:23] *** Quits: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de) (Ping timeout: 121 seconds)
+[05:06:40] *** Joins: Sombra (Iceman@Darkhorse21)
+[05:09:24] *** Joins: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de)
+[05:20:16] *** Quits: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de) (Ping timeout: 121 seconds)
+[05:20:38] *** Sour_Sweet is now known as Sour_Sweet|BNC
+[05:21:00] *** Joins: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de)
+[05:23:56] *** Quits: Webster (Webster@Pony-benl74.fios.verizon.net) (Quit: Leaving)
+[05:27:31] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[05:40:48] *** Quits: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de) (Ping timeout: 121 seconds)
+[05:41:05] *** Joins: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de)
+[05:51:48] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[05:55:15] *** Quits: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de) (Ping timeout: 121 seconds)
+[05:56:04] *** Joins: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de)
+[05:56:09] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[05:58:57] * Moonlightning boops Lapsus
+[05:59:18] * Lapsus reboots
+[05:59:27] * Moonlightning reboops Lapsus
+[06:01:45] *** Gigabit is now known as Snoarin
+[06:25:27] * Moonlightning boops Lapsus with a manual.
+[06:25:40] <Lapsus> what'
+[06:27:19] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:28:13] *** Quits: Quindo (Quindo@Pony-8qt.17k.198.99.IP) (Ping timeout: 121 seconds)
+[06:39:14] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[06:56:03] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[07:20:07] *** WuBzYIsSleepin is now known as WuBzY
+[07:25:17] *** Joins: Phase (Phase4@Pony-slr419.internode.on.net)
+[07:29:03] *** Joins: Sombra (Iceman@Darkhorse21)
+[07:41:43] *** Quits: djazz (djazz@djazz.se) (Ping timeout: 121 seconds)
+[07:45:04] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[07:49:17] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[07:57:33] *** Joins: Kaz (Android@Pony-9fnu7s.ip.windstream.net)
+[08:03:46] *** Quits: djazz (djazz@djazz.se) (Ping timeout: 121 seconds)
+[08:11:35] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[08:15:17] *** Quits: QuillSwirl (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:16:50] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[08:25:53] *** Joins: Melanosuchus (quassel@Pony-i2n7br.as13285.net)
+[08:27:00] *** Quits: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP) (Ping timeout: 121 seconds)
+[08:28:59] *** Joins: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP)
+[08:31:41] *** Quits: Phase (Phase4@Pony-slr419.internode.on.net) (Ping timeout: 121 seconds)
+[08:34:33] *** Joins: mniip (mniip@Pony-o9q.v2g.219.178.IP)
+[08:34:43] <mniip> dammit
+[08:37:03] <Kaz> consarnit
+[08:44:22] *** Joins: Phase (Phase4@Pony-slr419.internode.on.net)
+[09:11:37] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:14:45] <Moonlightning> Lapsus: You wanna have another one of those dialogues sometime?
+[09:17:57] *** Quits: Melanosuchus (quassel@Pony-i2n7br.as13285.net) (Connection closed)
+[09:18:56] <mniip> moo
+[09:23:35] *** Quits: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de) (Ping timeout: 121 seconds)
+[09:27:38] *** Quits: WuBzY (androirc@Pony-s4orkj.rev.dnainternet.fi) (Quit: AndroIRC - Android IRC Client ( http://www.androirc.com ))
+[09:29:42] *** Joins: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de)
+[09:33:23] *** Quits: DataByte (DataByte@Pony-jlv.gm5.152.174.IP) (Ping timeout: 121 seconds)
+[09:34:19] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[09:35:50] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[09:44:52] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:45:10] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:57:13] *** Quits: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de) (Ping timeout: 121 seconds)
+[10:03:39] *** Quits: Kaz (Android@Pony-9fnu7s.ip.windstream.net) (Ping timeout: 121 seconds)
+[10:12:26] *** Joins: Asoka (Asoka@Pony-urjbkq.net-htp.de)
+[10:17:21] *** Quits: Asoka (Asoka@Pony-urjbkq.net-htp.de) (Ping timeout: 121 seconds)
+[10:17:47] *** Joins: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de)
+[10:25:42] *** Joins: Sombra (Iceman@Darkhorse21)
+[10:37:52] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:47:36] <CompuDesktop> .calc 2+5
+[10:47:41] <CompuDesktop> nya
+[10:54:50] *** Quits: Asoka (Asoka@Pony-pni4fu.dynamic.kabel-deutschland.de) (Ping timeout: 121 seconds)
+[11:02:37] *** Joins: Asoka (Asoka@Pony-h1mf31.net-htp.de)
+[11:23:23] <Phase> Googie, iirc you have a dedi in australia, who's it with?
+[11:23:34] * Phase is looking to get one somewhere
+[11:23:39] *** Joins: sleumas2000_ (uid91753@my.little.karaoke)
+[11:23:57] <Googie> My dedi is in Seattle or Vegas (can't remember which)
+[11:24:07] <Phase> awww
+[11:24:25] <Googie> ShivalWolf has a couple here IIRC.
+[11:24:43] * Phase wants one that doesn't have a ping primarily governed by the speed of light
+[11:25:07] <Googie> I know that feeling.
+[11:25:19] <Googie> Do you need a dedi, or are VPSs fine ?
+[11:26:08] <Googie> (Also, bandwidth costs an arm and a leg)
+[11:26:16] <Phase> i'd prefer a dedi for kvm
+[11:26:27] <Phase> it's going to be my personal machine what has an internet connection
+[11:27:01] <Googie> What kind of budget ?
+[11:27:23] <Phase> no more than $150/month
+[11:27:42] <Phase> the plans i've found start at $250
+[11:27:45] <Googie> That should be reasonable then.
+[11:27:56] <Googie> I've seen a few lower end ones cheaper. Let me check.
+[11:28:47] <Phase> and even at 150 there's a place in the states offering 6 amd cores, 32GB ram, 2x3TB for $70
+[11:29:18] <Phase> i could by two and a half of those for what it'd cost me to run something less capable than my laptop here :(
+[11:29:19] <Googie> You sadly won't get anything close here :(
+[11:30:18] <ShivalWolf> im hosted with servers australia
+[11:30:18] <Googie> RansomIT seems to have some okayish ones, no comment on the company though, don't really know enough about them
+[11:30:27] <Phase> Googie, what's the vps host?
+[11:30:28] <ShivalWolf> and it costs me a little under 400$ a month
+[11:30:31] <Phase> ouch
+[11:30:54] <ShivalWolf> hosting in AU is fucked up for prices
+[11:30:58] <ShivalWolf> so unless you NEED low latency
+[11:31:00] <ShivalWolf> dont bother here
+[11:31:05] <Googie> VPS hosts ? There's actually a few. AWS has a local DC here now.
+[11:32:05] <Googie> Just tossing names for others. BinaryLane and Vultr
+[11:32:20] <Googie> Again, no recommendations. I don't actually have any local VPSs, because yeah, price.
+[11:33:36] <Phase> while i can understand bandwidth, what i really don't understand is why you get so much less hardware for the same price
+[11:33:43] <Phase> is there some huge import tax i'm unaware of?
+[11:33:55] <Googie> Colo is way more expensive here.
+[11:34:02] <ShivalWolf> we dont have as many datacenters as the US has
+[11:34:05] <ShivalWolf> they are a fraction of the size
+[11:34:08] <Phase> or is everyone just buying dell's, a lot of them seem really fond of those hyperexpensive dell blades
+[11:34:09] <Googie> ^
+[11:34:09] <ShivalWolf> so they try and save sapce
+[11:34:17] <ShivalWolf> also operating costs are far higher here due to power and airconditoning costs
+[11:34:33] <Phase> hmm
+[11:35:41] <Phase> guess i'll just have to deal with the latency :(
+[11:36:01] <Googie> VPSes aren't too bad, depending on what you're using them for.
+[11:36:42] <Phase> only thing that annoys me about vps's is the tend to have very small disks
+[11:37:11] <Phase> plus the lack of kvm
+[11:37:33] <Phase> unless they're enabling nested vmx these days
+[11:37:58] <Googie> kvm isn't really an issue in the vast majority of cases. You can basically just spin up another VM.
+[11:38:09] <Googie> Cost, but it'd be cheaper than a dedi here.
+[11:38:17] <Phase> yeah
+[11:39:15] <ShivalWolf> not much really needs the low latency to be hosted in AU with you
+[11:39:24] <ShivalWolf> game servers dpeending what game can be picky
+[11:39:29] <ShivalWolf> but i run a SIP gateway
+[11:39:33] <ShivalWolf> and my box is also a proxy
+[11:39:40] <ShivalWolf> so i kinda need the low latency
+[11:39:53] <ShivalWolf> also its here becuase of geographical seperation of IRC servers
+[11:39:55] <wolfyshy> KVM definitely matters when your machine crashes and it won't reboot and you need to recover it
+[11:40:08] <wolfyshy> but there ARE providers that will let you in
+[11:40:12] <ShivalWolf> network has soem in AU, DE, US
+[11:40:18] <Phase> wolfyshy, as in the virtualization api, not remote access
+[11:40:26] <wolfyshy> some using qemu-vnc (which also works in xen and kvm) and some using serial lines
+[11:40:50] <Googie> I host game servers, but most of my friends are located elsewhere in the world, so I'm on the west coast of the states for hosting so that latency is basically passable for everyone.
+[11:40:55] <wolfyshy> Phase: oh, don't use it, it has a lot of networking inefficencies even on virtio networking
+[11:41:24] <wolfyshy> the throughput was 1/8th of what I got on xen on the same hardware running the same workload
+[11:41:28] <Phase> i don't think that'll ever be a limit in australia
+[11:41:32] <Googie> I've actually not met any VPS providers in a long time that don't have "out of band" access to Xen and KVM VMs.
+[11:41:33] <wolfyshy> (postgres 9.1)
+[11:42:06] <Googie> It's standard in SolusVM, which all the cheaper VPS providers use.
+[11:42:16] <Phase> wolfyshy, bridged?
+[11:42:36] <Googie> But yeah, even at 1/8th performance, doesn't matter in Aus :V
+[11:42:47] *** Joins: Fallfeathers (Fallfeather@Pony-859c69.bigpond.net.au)
+[11:43:02] <Googie> 100GB bandwidth for a dedi FTW! :V
+[11:43:13] <ShivalWolf> i have 4TB in AU
+[11:43:16] <ShivalWolf> and im lucky on that
+[11:43:20] <ShivalWolf> hell im lucky on the price i pay
+[11:43:36] <wolfyshy> Phase, yes in both cases
+[11:43:39] <Phase> that same price would get a 10mbit symetrical connection at work
+[11:44:01] <Phase> wolfyshy, xen must be doing something cool then
+[11:44:15] <Phase> afaik networking in kvm still jumps through qemu
+[11:44:22] <ShivalWolf> i wish i was allowed to host out of my teams lab and production DC's
+[11:44:36] <ShivalWolf> but they dont want to risk the target being DDOSed being an IRC and game server
+[11:47:36] *** Eventide|Sleepies is now known as Eventide
+[11:49:07] <Googie> Can't really blame them sadly :/
+[11:49:14] <ShivalWolf> yeah
+[11:49:27] <ShivalWolf> but we have full DDoS protection with external filtering centers
+[11:49:33] <ShivalWolf> but becuase i woudlnt be a paying customer
+[11:49:38] <ShivalWolf> they say no
+[11:49:45] <ShivalWolf> if i wasent IRC it would probably be ok
+[11:49:48] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[11:50:00] <ShivalWolf> they also dont want to risk compromise of a gigabit link
+[11:50:49] <Googie> At least the cost of hosting here slowly seems to be going down.
+[11:51:17] <Googie> The fact that budget providers are managing to provide decent hardware at < $100p/m and also now that AWS has moved in.
+[11:52:32] <Googie> (Decent being a relative term :V)
+[11:57:51] <Phase> i wouldn't be surprised if the cost was the cause of the cost
+[11:58:34] <Phase> i mean why wouldn't you go buy the one in the states, it's oreders of magnitude less expensive
+[11:58:56] <Phase> and it's not like you can tax imported data
+[12:29:10] *** Divide|FFXIV is now known as Divide|TechSupport
+[12:32:43] <wolfyshy> Phase don't give them any ideas.
+[12:47:56] *** Joins: DataByte (DataByte@Pony-u8l.pav.50.107.IP)
+[13:29:32] *** Quits: sleumas2000_ (uid91753@my.little.karaoke) (Quit: Connection closed for inactivity)
+[13:48:39] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[14:29:33] *** Quits: DataByte (DataByte@Pony-u8l.pav.50.107.IP) (Ping timeout: 121 seconds)
+[14:42:42] *** Joins: Asoka_White (Asoka@Pony-6kij2j.net-htp.de)
+[14:44:54] *** Quits: Asoka (Asoka@Pony-h1mf31.net-htp.de) (Ping timeout: 121 seconds)
+[14:45:07] *** Joins: WuBzY (wubzy@Pony-bge6vq.dhcp.inet.fi)
+[14:54:00] <Compu> so i wonder, what language was the python interpreter written in
+[15:03:14] *** Quits: Fallfeathers (Fallfeather@Pony-859c69.bigpond.net.au) (Connection closed)
+[15:03:53] <mniip> which one
+[15:07:49] *** Snoarin is now known as GigaWork
+[15:14:46] *** Quits: WuBzY (wubzy@Pony-bge6vq.dhcp.inet.fi) (A TLS packet with unexpected length was received.)
+[15:18:53] *** Joins: WuBzY (wubzy@Pony-bge6vq.dhcp.inet.fi)
+[15:40:27] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[15:45:55] <johnsey> http://www.bbc.com/news/technology-35251478
+[15:45:55] <PinkiePieBot> [ Google translated Russia to 'Mordor' in 'automated' error - BBC News ]
+[15:50:31] *** Joins: QuillSwirl (ejd@Pony-fej07d.res.rr.com)
+[15:53:55] <locodash11[server]> "sad little horse"
+[16:05:39] *** Joins: Quindo (Quindo@Pony-8qt.17k.198.99.IP)
+[16:10:00] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[16:15:23] *** Joins: corkfuse (corkfuse@corkfuse)
+[16:27:25] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (Ping timeout: 121 seconds)
+[16:30:50] *** Quits: corkfuse (corkfuse@corkfuse) (Quit: Sleeping)
+[16:34:57] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[16:37:09] *** Joins: DataByte (DataByte@Pony-mic4kt.g424.9euc.0247.2601.IP)
+[16:38:06] *** Joins: Asoka (Asoka@Pony-62srk1.net-htp.de)
+[16:41:08] *** Quits: Asoka_White (Asoka@Pony-6kij2j.net-htp.de) (Ping timeout: 121 seconds)
+[16:41:41] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[17:03:30] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Ping timeout: 121 seconds)
+[17:24:01] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[17:28:25] *** Joins: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl)
+[17:28:29] *** Double is now known as Pony_27471
+[17:35:18] *** Pony_27471 is now known as Double
+[17:39:24] *** Joins: eyeburn (eyeburn@secret.den.of.flaming.evil)
+[17:40:38] *** Gladiolus is now known as Princess-QRS
+[17:46:03] <Moonlightning> Compu: the reference implementation is CPython, which is written in C.
+[17:46:38] <Moonlightning> The other one is PyPy, which is written in Python
+[17:46:44] <Moonlightning> other big one *
+[17:47:04] <Moonlightning> PyPy doesn't have 3.0, though. :C
+[17:49:28] *** Quits: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl) (Ping timeout: 121 seconds)
+[17:50:39] *** Joins: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl)
+[17:50:44] *** Double is now known as Pony_42055
+[17:53:57] *** Pony_42055 is now known as Double
+[18:00:00] *** Quits: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl) (Ping timeout: 121 seconds)
+[18:00:01] *** Joins: Double2 (double@Pony-40o5q9.adsl-surfen.hetnet.nl)
+[18:04:58] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[18:47:01] *** Princess-QRS is now known as Gladiolus
+[18:47:21] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[18:52:54] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[19:03:43] *** Joins: Melanosuchus (quassel@Pony-s4aj7l.as13285.net)
+[19:06:27] <Lapsus> lapsus
+[19:06:31] <Lapsus> er
+[19:06:35] <AppleDash> lol
+[19:06:39] <AppleDash> appledash
+[19:28:10] *** Double2 is now known as Double
+[19:36:00] *** Quits: Compu (compu@snuggly.filly) (Connection closed)
+[19:38:18] <Quindo> Boss just got mad at me cause I told him "You can not hyperlink an image in a text message".
+[19:40:44] <Divide|TechSupport> "I'm afraid the framework just doesn't support that yet.  It's because of UAFI, you'll have to wait until they develop a fix."
+[19:44:35] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[19:48:09] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[19:48:14] *** Divide|TechSupport is now known as Divide
+[19:52:47] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[19:54:57] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[20:11:38] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[20:12:02] <Quindo> huh, evidently Maker and Polaris are screwing their tubers atm...
+[20:15:47] <Double> oh?
+[20:16:11] <Quindo> yeah, https://twitter.com/JesseCox is ranting about it
+[20:16:12] <PinkiePieBot> [ Jesse Cox (@JesseCox) | Twitter ]
+[20:21:33] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:32:04] <Sour_Sweet|BNC> Quindo: Than it must be serious
+[20:32:16] * Quindo shrugs
+[20:32:27] <Sour_Sweet|BNC>  Cox is very close to Polaris useally
+[20:32:40] <Quindo> Its them unlisting really old videos that youtube has not flagged because 'they might get flagged'
+[20:33:09] <Quindo> and evidently if the tubers continue to relist the videos they will start deleting them.
+[20:36:33] <Quindo> I feel like if a lawyer got that job, they should be looking at the videos that are fresh uploads and marking down what might be problematic videos...  but IDK.
+[20:37:39] *** Quits: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP) (Ping timeout: 121 seconds)
+[20:39:39] *** Joins: Deathpony (IceChat9@Pony-hhl.kov.54.50.IP)
+[20:42:46] *** Quits: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl) (Ping timeout: 121 seconds)
+[20:43:36] *** Joins: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl)
+[20:43:41] *** Double is now known as Pony_59078
+[20:45:31] *** Pony_59078 is now known as Double
+[20:48:14] <HoneyDrops> What the hell are Maker and Polaris?  Why are they fornicating with root vegetables, and why should I care that they are?
+[20:48:52] <Quindo> Only if you are at all interested in content providers on youtube.  If you are not, who cares?
+[20:50:07] <HoneyDrops> Ah, so tubers = those who use youtube.
+[20:51:34] *** Joins: Compu (compu@snuggly.filly)
+[20:53:32] <Quindo> There needs to be a big campaign to stop using licensed music in vidya games...
+[20:56:29] <HoneyDrops> Or just have "incidental music from a game that is being shown" fall under fair use.
+[20:57:41] <Quindo> no...
+[20:57:44] <Quindo> Not fair use.
+[21:00:38] <Quindo> I think there needs to be a 'in context license' where if the music is being played in context then passes all rights to the owner of the host media owner (The video game company)
+[21:01:08] <Quindo> That way if a company really wants to hide the ending to their game from youtube they can do that.
+[21:01:27] <Quindo> but videos will not be juked just because of audio trolling
+[21:03:37] <HoneyDrops> I would rather they use CC'd music, or the game company can write their own (though most games I play /do/).  I think a general blanket policy fixes the core problem, and does not rely in parties to not forget to implement the fix.
+[21:05:15] <HoneyDrops> I don't feel a game company has any right to "hide" the ending of their game.  In any case, they have more than enough copyright claim to plenty of other assets should they feel some compelling need to abuse copyright.
+[21:05:58] <Quindo> That is currently up in the air.
+[21:06:22] <Quindo> But I do think that music and brands contained in the game need to be under some sort of 'Context License'
+[21:07:19] <HoneyDrops> Pretty sure they own the graphics, some artist some where drew them and as part of their contract likely assigned them to the publisher, as that is sadly how it is general done.
+[21:07:34] <HoneyDrops> generally*
+[21:07:48] <Quindo> its more an issue with music then graphics.
+[21:09:14] *** Quits: Moka (rylai@Pony-71u6pe.so) (Quit: WeeChat 1.4-dev)
+[21:09:17] *** Joins: Eclipse (rylai@Pony-71u6pe.so)
+[21:10:58] *** Quits: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl) (Ping timeout: 121 seconds)
+[21:11:42] *** Eclipse is now known as Moka
+[21:11:58] *** Joins: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl)
+[21:12:03] *** Double is now known as Pony_61610
+[21:12:53] *** Pony_61610 is now known as Double
+[21:13:16] <HoneyDrops> I fear that most of the music producers/holders will probably not go for such a license.  What's in it for them?
+[21:18:48] *** Quits: WuBzY (wubzy@Pony-bge6vq.dhcp.inet.fi) (A TLS packet with unexpected length was received.)
+[21:18:53] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:21:18] <Quindo> HoneyDrops Getting their music used by game + money?  If all the big game studios require that sort of license...
+[21:21:44] <Quindo> They also would still be able to takedown videos of people just posting the song.
+[21:22:40] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[21:23:05] <HoneyDrops> They could still do that with my "fair use" solution.
+[21:24:02] <HoneyDrops> Why would the game studio demand it?
+[21:25:58] <HoneyDrops> You can't rely on a for-profit entity to do the right thing, so you either have to force them (via regulation or court orders) or remove them from the equation (eg: BG music in a video of gameplay is fair use and the rights holder to the soundtrack can't issue a takedown). 
+[21:29:55] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[21:43:50] <Gladiolus> who has headphone experience/caring
+[21:44:22] <Obaskyr> Hmm?
+[21:44:31] <Obaskyr> What do you mean?
+[21:44:42] <Gladiolus> I'm looking to buy a thing and want to get advice, o3o.
+[21:45:03] <Obaskyr> What thing exactly?
+[21:45:21] <Obaskyr> I know a thing or two about headphones...
+[21:46:02] <Gladiolus> Well, looking for a good gaming headphones for 200ish
+[21:46:58] <Obaskyr> $200?
+[21:47:09] <Obaskyr> You can get a hell of a lot for that money.
+[21:47:25] <Obaskyr> First up - do you have a good mic?
+[21:53:05] <Obaskyr> If not, you want to buy an Antlion Modmic, or a cheapish studio condenser mic. For your cans you have a lot of options for around 100 bucks, but the most important consideration for gaming usage is that they're open backed.
+[21:53:46] *** Joins: Sombra (Iceman@Darkhorse21)
+[21:58:37] <Quindo> Buy em seperate
+[21:58:42] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:01:14] <Kinsley> Gladiolus: for $200, yeah, look hard at something like the Sennheiser G4ME ONEs. Open backed, velour ear pads so they don't get super hot, and they're comfortable enough to wear all day.
+[22:02:52] <Kinsley> Or consider the HD 558 or 598 + Modmic
+[22:03:20] <Obaskyr> Those are good choices.
+[22:03:36] <Gladiolus> Sorry uh. Yes I do have a good mic.
+[22:03:49] <Obaskyr> If you bring down the headphone budget a smidge you can throw in a DAC/amp too.
+[22:04:03] <Kinsley> DAC/amp is a good idea.
+[22:04:10] <Gladiolus> I have a soundcard with an amp.
+[22:04:12] <Obaskyr> the FiiO E10K is stellar for the price
+[22:04:19] <Kinsley> I have a Creative E3 I'm looking to sell since I upgraded. Also a good choice.
+[22:04:24] <Gladiolus> I think so anyway- it's hella loud.
+[22:04:40] <Gladiolus> I was suggested these by a friend, but I'm always open to more suggestions: http://www.bestbuy.ca/Search/SearchResults.aspx?type=product&query=G633&page=1&sortBy=relevance&sortDir=desc
+[22:04:42] <PinkiePieBot> [ Results for - Best Buy Canada ]
+[22:04:44] <Gladiolus> also goddamn canadian dollar
+[22:04:55] <HoneyDrops> At some point I should probably invest in something other than my 7$ ear buds, just seems hard to justify something that would get so little use.
+[22:05:09] <Kinsley> Gladiolus: soundcards internal to the PC suffer from EM interference.
+[22:05:20] <Gladiolus> I've never noticed any.
+[22:05:35] <Gladiolus> I've tested for it as much as I'm able- cranking shit up to max.
+[22:05:36] <Kinsley> I have, but if you're not experiencing it, good.
+[22:06:07] <Quindo> Honestly, just buy cheap over ear headphones from a localstore that have no mic attached.
+[22:06:12] <Kinsley> My recommendation, then, if you already have a good mic and DAC/amp from the soundcard, go with the HD 558/598
+[22:06:12] <Gladiolus> Like after experiencing it in an old dos setup I got spergy and looked for it here, was never able to get it except in very extreme scenarios.
+[22:06:17] <Obaskyr> HoneyDrops: grab a pair of HD668B headphones. they're like 30 quid in sales now, and they're literally the best cans you can get for under $100
+[22:06:20] <Lapsus> Gladiolus: as someone with a logitech gaming headset, don't.
+[22:06:21] <Lapsus> :p
+[22:06:32] <Gladiolus> o3o
+[22:06:41] <Lapsus> yes, gaming headset ooh
+[22:06:53] <Lapsus> bassy, closed off, etc
+[22:06:56] <Kinsley> And yeah, that Logitech is prone to falling off.
+[22:07:00] <Lapsus> hot and sweaty as FUCK
+[22:07:08] <Gladiolus> Now I just need to find a good local place to buy them. I /really/ don't want to buy internet because Canadian Dollar Problems.
+[22:07:09] <Obaskyr> gaming headsets are just blegh in general...
+[22:07:27] <Lapsus> the insides get all gross as hell because your ears are always sweating inside the headset
+[22:07:47] <Lapsus> all the buttons on the headset are also totally useless
+[22:07:50] <Obaskyr> Gladiolus: is your soundcard part of your motherboard or an add-in card?
+[22:07:58] <Gladiolus> Add on, Sound Blaster Z.
+[22:08:06] <Gladiolus> I'm spergy about always having an SB even if it's less needed now lol
+[22:08:14] <Gladiolus> GOTTA HAVE THAT EAX IN GAMES I DON'T EVEN PLA
+[22:08:46] <Obaskyr> okay. I'd still recomend ditching it and getting an external DAC/amp, but I can understand wantng to hold on to it.
+[22:08:48] <HoneyDrops> Obaskyr: once I unmute my system when playing games more than maybe 2% of the time I might consider it.
+[22:09:02] <Lapsus> Gladiolus: Having compared headsets with my friend that has a reasonable music pair with a modmic on it
+[22:09:06] <Gladiolus> oh hey best buy does appear to have them they just are shitty with model numbers
+[22:09:14] <Lapsus> don't bother with the logitech ones
+[22:09:15] <Gladiolus> http://www.bestbuy.com/site/sennheiser-audiophile-over-the-ear-headphones-titan/1700513.p?id=1218285361000
+[22:09:16] <PinkiePieBot> [ Sennheiser Audiophile Over-the-Ear Headphones Black HD558 - Best Buy ]
+[22:09:20] <Gladiolus> This is a "HD 558"?
+[22:09:21] <Obaskyr> HoneyDrops why do you hav it muted
+[22:09:28] <Lapsus> not to mention that the drivers for this usb headset SUCK
+[22:09:30] <Lapsus> lol
+[22:09:46] <HoneyDrops> I don't need the sound?
+[22:10:02] <Obaskyr> AKG K702's are a good buy too.
+[22:10:19] <Gladiolus> Save $79.99 (Reg. $179.98)
+[22:10:21] <Gladiolus> on the 558s
+[22:10:37] <Gladiolus> And here's the 598
+[22:10:49] <Quindo> I have Bose  OE2 I use at work from a sale.  they are pretty good
+[22:10:54] <Gladiolus> $153.99 
+[22:10:54] <Gladiolus> On Sale
+[22:10:54] <Gladiolus> Save $96 (Reg. $249.99) 
+[22:10:55] <Quindo> had em for a long time
+[22:10:56] <Gladiolus> lol geez
+[22:11:07] <Lapsus> Gladiolus: also, canada, eh?
+[22:11:18] <Gladiolus> Yeeeaaah.
+[22:11:19] * HoneyDrops plays MC w/o sound.  Yes, creepers love me (though I have a mod that adds captioning).
+[22:11:21] <Obaskyr> Also Audio-Technica ATH-AD500X's are GODLY for the price
+[22:11:23] <Gladiolus> fuckin' 70 cent dollar.
+[22:11:48] <Gladiolus> wait what this is the american site? I had no idea they /had/ an american site.
+[22:12:05] <Obaskyr> They have the greatest steareo seperation i've heard in a long time
+[22:12:27] <Obaskyr> There's open-backed, and then there's these puppies.
+[22:12:36] <Quindo> warning, the bose OE2 do have a funky sized plug.
+[22:12:48] <Gladiolus> lol nevermind none of these are in stock in canada
+[22:13:22] <Kinsley> But yes, those are the 558s I was talking about.
+[22:13:50] <Gladiolus> Yeah and that page is america only I derped.
+[22:14:00] *** Quits: Phase (Phase4@Pony-slr419.internode.on.net) (Ping timeout: 121 seconds)
+[22:14:19] <Kinsley> Shame, but I like Sennheiser.
+[22:14:28] <Kinsley> Their build quality is stellar.
+[22:14:35] <Kinsley> Sound quality, too.
+[22:14:44] <Kinsley> I have a pair of HD 280 Pros.
+[22:14:45] <Gladiolus> lol a local story has the 598s
+[22:14:46] <Gladiolus> FOR 300 DOLLARS
+[22:14:50] * Gladiolus explodes
+[22:15:17] <Kinsley> Quite often see them used by musicians and whatnot.
+[22:15:32] <Kinsley> (When Apple didn't pay the record label gobs of money to have them wear Beats)
+[22:16:10] <Gladiolus> Those are in stock, 150.
+[22:17:06] <Gladiolus> I do already have a pair of headphones I bought years ago, some model of Sennheiser. Seems to lack bass in games tho.
+[22:17:21] <Gladiolus> Gunshots don't sound as loud as I imagine they should 'n stuff.
+[22:17:22] <Quindo> Kinsley I remember seeing people wearing beats, and then having a different set over their ears...
+[22:17:27] <Gladiolus> lol
+[22:17:47] <Quindo> Kinsley then one pro gamer got sponsered by 3 different headphones... so he had 3 sets on.
+[22:18:11] <Obaskyr> You see that with competitive gaming, theyll be wearing like three different headsets lmao
+[22:18:29] <Obaskyr> ninja'd
+[22:18:31] <Obaskyr> :c
+[22:18:43] <roflin> well it actually makes sense in some situation.
+[22:19:33] * HoneyDrops hides under her pillows, she likes quiet.
+[22:19:45] <roflin> typical setup is inner ears for actual game audio. overear headsets for communication, and noise canceling headphones over that to shut out the croud/enemy team.
+[22:20:09] <roflin> but now with soundtight booths this is not very relevant anymore.
+[22:20:25] <Quindo> the booths are not sound tight.
+[22:20:32] <Quindo> Rather they have white noise generators in em
+[22:20:38] <Quindo> + the noise canceling
+[22:22:33] <Quindo> cause it is easier to mask load noises then completely cancel them
+[22:22:56] <GigaWork> Loud noises! *runs around panicking.*
+[22:23:20] <Obaskyr> roflin: what are you chatting
+[22:23:41] <Obaskyr> you cant wear three headsets on top of each other at the same time
+[22:23:45] <Quindo> hastly depress thy capslock!
+[22:23:45] <Obaskyr> noone does that
+[22:23:51] <Obaskyr> that would hurt.
+[22:23:53] <Obaskyr> a lot.
+[22:24:25] <Quindo> http://i.imgur.com/JL0Up3g.png
+[22:24:28] <roflin> innerears + headset is very doable. and those anti noise things have huge shells
+[22:25:07] <roflin> but the latter one, like I said never happens anymore with the soundproof booths.
+[22:25:10] <Obaskyr> You try it out and tell me how it goes. No pro gamer uses IEMs because they have terrible positional audio.
+[22:25:25] <Obaskyr> Everything sounds like it's happening in your ears.
+[22:25:32] <Quindo> It depends on the type of game
+[22:25:43] <Obaskyr> No. 
+[22:25:49] <Obaskyr> No it doesnt.
+[22:25:57] <Quindo> if a game has no positional audio then...
+[22:26:12] <Obaskyr> then you dont need three fucking headsets do you?
+[22:26:12] *** eyeburn is now known as Starburn
+[22:26:29] <Quindo> The 3 headsets are for specific things.
+[22:26:38] <Kinsley> If you want to go in-ear monitors, Havi B3 Pro I or II
+[22:26:40] * Gladiolus tackles GigaWork with a hug.
+[22:26:45] <Quindo> did you see that image I sent?
+[22:26:58] <Obaskyr> two of them are utterly irrelevant, and spoil the others.
+[22:27:01] * GigaWork squeaky flails
+[22:27:10] * Quindo flails
+[22:29:17] <Obaskyr> those peltors have audio from the game yknow. And two like that isnt that impractical, I was ranting about your suggestion of THREEEE stackked up on your ears.
+[22:30:31] <Obaskyr> Moreover, they dont do that because it's practical or comfortable, they do it becasue their sponsors MANDATE that they use their crud.
+[22:31:41] <HoneyDrops> Sounds like a broken system.
+[22:31:46] <Obaskyr> It is
+[22:32:42] <Obaskyr> the game rules stipulate that they have to have the peltors so they cant hear the commentator, their sponsors say they HAVE to use their kit, so the poor sods in this case had to use earbuds under the peltors.
+[22:32:59] <Obaskyr> which is really stupid.
+[22:33:58] <Obaskyr> But to be fair I dont really give a toss because most competitive gamers and the esports scene in general are all wankers.
+[22:33:58] <Quindo> it is dumb, but that is marketing for ya
+[22:34:19] <Quindo> and if you are taking money to market a thing, you sometimes have to do dumb stuff.
+[22:44:49] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:44:59] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Connection closed)
+[22:49:07] <Colgate> ahem
+[22:49:10] <Colgate> it isn't marketing
+[22:49:15] <Colgate> it is "product placement"
+[22:49:19] <Colgate> :P
+[22:49:57] * GigaWork places Colgate next to Colgate toothpaste, next to the miniature of Colgate on the shelf. X3
+[22:50:09] <Quindo> Product Placement did not work out the way they thought it would during junk yard wars...
+[22:50:18] *** Joins: WuBzY (androirc@Pony-s4orkj.rev.dnainternet.fi)
+[22:51:58] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:06:01] *** WuBzY is now known as WuBzYIsNotGonnaGetEnoughSleep
+[23:09:06] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[23:09:34] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Ping timeout: 121 seconds)
+[23:09:57] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[23:14:43] *** Quits: Double (double@Pony-40o5q9.adsl-surfen.hetnet.nl) (Connection closed)
+[23:28:03] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Connection closed)
+[23:28:03] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)

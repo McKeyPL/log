@@ -1,0 +1,588 @@
+[00:07:54] *** Quits: Melanosuchus (quassel@Pony-e25fvq.as13285.net) (Connection closed)
+[00:10:32] <Starthunder> holy shit this is long
+[00:11:28] <mniip> something something dirty jokes
+[00:12:27] <Starthunder> rndc freeze blackl.net. && dnssec-signzone -SD -3 $(head -c 64 /dev/urandom | xxd -p | tr -dc '[:xdigit:]') -H 256 -o blackl.net. -K /etc/bind/keys.blacklnet /var/lib/bind/db.blacklnet && sed -ri "s/([[:digit:]]+)(\s*;\s*serial)/$(dns-next-serial blackl.net. | tr -dc '[:digit:]')\2/" /var/lib/bind/db.blacklnet && rndc thaw blackl.net.
+[00:12:38] <Starthunder> all that, for proper serial bumping
+[00:13:06] <Starthunder> I feel like I should break that out into a script, but I'm feeling incredibly lazy right now
+[00:13:08] <Starthunder> so…fuck it
+[00:13:09] <Colgate> error on line 1
+[00:13:44] <Starthunder> …I'll at least break those strings out into $ZONE and $ZONEFILE
+[00:14:00] <mniip> pfft
+[00:14:42] <Starthunder> …I really want vim lineediting right now
+[00:15:31] <mniip> xargs -0 -a <(cat "/proc/$1/environ";echo -n $SHELL;echo -ne "\0-i") env
+[00:16:12] <mniip> hurr durr
+[00:16:13] <mniip> xargs -060 -a 04<(cat 04"/proc/$1/environ"04;echo -n 03$SHELL04;echo -ne 04"13\004-i"04) env
+[00:17:27] <Starthunder> /bin/zsh: can't open input file: i
+[00:19:06] <mniip> does zsh nor support -i or something
+[00:19:16] <mniip> sure it does
+[00:20:57] *** Quits: Eventide (uid61788@Tips.Fedora) (Ping timeout: 121 seconds)
+[00:21:25] <mniip> wtf
+[00:21:44] <mniip> why does "\0-" not work in zsh but "\00-" does
+[00:22:10] <Starthunder> Iunno, works for me
+[00:22:33] <Starthunder> sugar-belle:~ blackl% echo -e "\0" | hexdump -C
+[00:22:34] <Starthunder> 00000000  00 0a                                             |..|
+[00:22:50] <mniip> try \0-
+[00:23:10] <Starthunder> …oh, now that's weird.
+[00:23:19] <Starthunder> sugar-belle:~ blackl% echo -en "\0-" | hexdump -C
+[00:23:19] <Starthunder> 00000000  00                                                |.|
+[00:23:19] <Starthunder> sugar-belle:~ blackl% echo -en "\00-" | hexdump -C
+[00:23:19] <Starthunder> 00000000  00 2d                                             |.-|
+[00:24:28] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[00:30:41] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[00:32:15] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[00:36:15] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:39:52] <Starthunder> > Backing Up: 173.0 MB of 7.37 GB
+[00:39:55] <Starthunder> …wait, /what?/
+[00:50:20] *** Quits: Quindo (Quindo@Pony-8qt.17k.198.99.IP) (Ping timeout: 121 seconds)
+[00:51:13] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[00:56:35] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Ping timeout: 121 seconds)
+[00:58:26] *** Joins: Sombra (Iceman@Darkhorse21)
+[00:58:46] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[01:07:57] *** Joins: SweetSkies (ciy@Pony-e6f52n.ga.comcast.net)
+[01:08:26] *** SweetSkies is now known as Pony_68328
+[01:09:35] *** Quits: Pony_68328 (ciy@Pony-e6f52n.ga.comcast.net) (Quit: leaving)
+[01:14:58] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[01:20:46] <Starthunder> Excluding /Applications/Xcode.app seems to have cut it down to 534.2 MB >.>
+[01:20:49] <Starthunder> I'll take it
+[01:21:32] <Starthunder> On a completely unrelated note, yay, now I get to wait 40 minutes to see if my cronjob works
+[01:30:30] <AppleDash> Starthunder: So
+[01:30:38] <AppleDash> I discovered something, they finally gave me a date
+[01:30:51] <AppleDash> ChunkHost lets you completely ignore paying them for //3 months// before anything bad happens
+[01:31:12] <Starthunder> effectively, yes, if you count the billing cycle
+[01:31:18] <Starthunder> It's two months after first payment failure
+[01:31:28] <Starthunder> and they email you like half a dozen times during those two months
+[01:31:35] <Starthunder> and THEN they delete all your stuff
+[01:31:42] <Starthunder> it's pretty awesome
+[01:31:57] <AppleDash> Yeah
+[01:32:15] <AppleDash> But somehow you managed to ignore all those emails >.>
+[01:32:27] *** Quits: CrassyPaddles (test@Pony-ul7.enl.137.198.IP) (Ping timeout: 121 seconds)
+[01:32:28] <Moka> lol
+[01:32:44] <Starthunder> I didn't have a mail client until like September
+[01:34:36] <Starthunder> …wait, I don't have to wait an hour
+[01:34:50] * Starthunder changes the timing to `35  *  *  *  *` XP
+[01:35:22] <AppleDash> lol
+[01:41:12] *** Joins: SweetSkies (ciy@Circumstantial.Pegasus.SweetSkies)
+[01:53:10] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[01:57:13] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Ping timeout: 121 seconds)
+[01:59:17] *** Joins: CrassyPaddles (test@Pony-ul7.enl.137.198.IP)
+[02:00:12] <Starthunder> Am I done?
+[02:00:16] <Starthunder> Is that gonna work now?
+[02:00:36] <Starthunder> Looks like it! ^.^
+[02:00:53] <Starthunder> lol, if this weren't all automated, I bet people'd be mad at me XP
+[02:01:08] <Starthunder> “You changed the salt AGAIN? This is the fifth time in an hour!”
+[02:01:55] <Starthunder> “You just changed the /entire NSEC3/ chain! That's like two dozen records that need to be rewritten now!”
+[02:03:28] *** Quits: CrassyPaddles (test@Pony-ul7.enl.137.198.IP) (Ping timeout: 121 seconds)
+[02:10:39] *** Joins: Crimson_Tail (Zeta@Pony-lo2ca7.cg80.k4gu.0151.2601.IP)
+[02:11:08] *** Crimson_Tail is now known as Pony_82819
+[02:11:58] *** Quits: SweetSkies (ciy@Circumstantial.Pegasus.SweetSkies) (Ping timeout: 121 seconds)
+[02:12:12] *** Joins: SweetSkies (ciy@Pony-e6f52n.ga.comcast.net)
+[02:12:42] *** SweetSkies is now known as Pony_50269
+[02:14:33] *** Quits: Pony_82819 (Zeta@Pony-lo2ca7.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[02:15:52] *** Quits: Pony_50269 (ciy@Pony-e6f52n.ga.comcast.net) (Quit: leaving)
+[02:16:32] *** Joins: Crimson_Tail (Zeta@Pony-lo2ca7.cg80.k4gu.0151.2601.IP)
+[02:25:09] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[02:30:38] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[02:33:28] *** Joins: Asoka (Asoka@Pony-linnbt.net-htp.de)
+[02:36:38] *** Quits: Asoka_White (Asoka@Pony-nkhtu6.net-htp.de) (Ping timeout: 121 seconds)
+[02:43:51] <AppleDash> Starthunder: what are you even doing
+[02:44:04] <Starthunder> Fucking around with DNSSEC
+[02:44:22] <Starthunder> I think I broke it, too. This one validation website is complaining about a “bogus SOA”
+[02:44:44] <Starthunder> …oh, wait, duh *facehoof*
+[02:44:55] <Starthunder> I'm bumping the serial AFTER I sign the thing…
+[02:46:26] <Starthunder> There. I'll just do other stuff for now and check back in 15 minutes, once the cronjob's been run again
+[02:46:58] <Sour_Sweet> Heh one could run that cronjob by hoof ^^
+[02:49:26] <Starthunder> I know, but meh
+[02:52:06] <Sour_Sweet> I'd be shocked if you didn't :D
+[02:52:22] <Sour_Sweet> (know of)
+[03:04:24] * JustAberrant has AppleDash fed 9 stalks of celery :(
+[03:08:33] <AppleDash> :>
+[03:16:57] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[03:18:30] <Phase> colorful flowers too~
+[03:18:43] <mniip> in other news
+[03:18:51] <mniip> I'm writing an optimizing brainfuck interpreter
+[03:19:46] <Starthunder> optimizing?
+[03:20:06] <Phase> optimizing
+[03:20:15] <JustAberrant> .. optimizing :)
+[03:20:23] <AppleDash> optimizing :(
+[03:20:25] <Phase> lazy way is to translate to c and let it do the work
+[03:20:35] <Starthunder> best way to optimize
+[03:20:46] <Starthunder> …how do you translate Brainfuck into C, though?
+[03:20:58] <Starthunder> what with the infinite array of registers
+[03:20:59] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Ping timeout: 121 seconds)
+[03:21:22] <JustAberrant> Starthunder: easy mode, just start with an absurdly large primitive array
+[03:21:36] <JustAberrant> Starthunder: slightly less easy: linked list/vector/etc
+[03:21:37] <Phase> + = *cell++ - = *cell-- [ = while(*cell) {, ] = }, . = *cell = getchar()
+[03:21:57] <Phase> > = cell++, < = cell--
+[03:21:58] <Phase> so on
+[03:22:19] <JustAberrant> but yeah, bf can be pretty easily translated into c (or any other language)
+[03:22:21] <Phase> Starthunder, litterally one for one
+[03:22:26] <JustAberrant> the operators pretty much map one to one
+[03:22:31] <JustAberrant> Phase: bleh ;p
+[03:22:40] <Phase> and if you're real fancy you can even map source lines
+[03:23:22] <Phase> though the only syntax error in brainfuck is an unmatched []
+[03:23:27] <Starthunder> But how do you know how big to make `cell`? >.>
+[03:23:40] <Phase> Starthunder, its size is undefined
+[03:23:53] <Starthunder> Exactly.
+[03:23:59] <Starthunder> But you can't have an array in C with undefined size.
+[03:24:05] <Phase> however large you chose
+[03:24:37] <Phase> 64bit machine, go ahead and mmap a few TB of memory
+[03:24:37] <JustAberrant> you could easily implement an expanding one with a list/vector
+[03:24:59] <Phase> JustAberrant, memory over committing means you can just let the OS do that :D
+[03:25:49] <JustAberrant> but I imagine the "official" bf compiler just defines a size
+[03:26:27] <JustAberrant> according to google, it was 30,000
+[03:26:55] <Starthunder> Not 32768? :/
+[03:27:02] <JustAberrant> evidently not :>
+[03:27:06] <AppleDash> Can't you just malloc(getsystemraminbytes())
+[03:27:24] <AppleDash> And then you're only limited by the system RAM
+[03:27:24] <JustAberrant> hehe
+[03:27:33] <JustAberrant> actually not really, because it would need to be contiguous
+[03:27:46] <AppleDash> By the time you get to the end you'll have problems :P
+[03:27:55] <Phase> malloc returns a contigious mapping
+[03:28:18] <Starthunder> Evidently, you need to create an abstraction layer
+[03:28:37] <Phase> virtual memory already handles all that
+[03:28:41] <Starthunder> To keep the operators from triggering undefined behavior in C, though.
+[03:28:50] <JustAberrant> pff, fancy new computers and there memory management ;p
+[03:29:07] * Starthunder steals JustAberrant's adverbs.
+[03:29:09] *** Joins: Eventide (uid61788@Tips.Fedora)
+[03:29:15] <JustAberrant> * they're
+[03:29:37] * Starthunder steals JustAberrant's contractions, too. Swipes Eventide's fedora while he's at it.
+[03:29:43] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[03:30:04] <Phase> JustAberrant, their'
+[03:30:07] * HoneyDrops flops over.  There are so many SNES roms... and GB/GBC is almost as bad ;_;
+[03:30:17] <Ola> http://i.imgur.com/tmPEYNC.jpg
+[03:30:37] <Eventide> nuh!
+[03:30:37] * JustAberrant still has a 16mb SD card somewhere :>
+[03:30:38] <Eventide> my tips!
+[03:30:39] <Phase> HoneyDrops, ever seen the gbc mega torrent?
+[03:30:39] <Eventide> D:
+[03:30:44] <Lapsus> HoneyDrops: at least they're small!
+[03:30:51] <JustAberrant> came with my Tungsten E2 :D
+[03:30:55] <Phase> ~700MB, claims to be all the gameboy roms ever
+[03:31:03] <Phase> compressed even
+[03:31:06] <Starthunder> wat
+[03:31:08] <JustAberrant> also that's kinda the wild thing with NES
+[03:31:09] <Ola> + ofkoz 2GB  SD in a camera i tookm  photo with
+[03:31:25] <HoneyDrops> Phase: I have "568M Nov 29 11:27 GoodGBx3.14.rar" that is a rar of over 2k 7z archives
+[03:31:25] <Ola> but i'll place that 2GB microsd + adapter when i'll be giving this to my mom
+[03:31:28] <JustAberrant> cause yeah, the collection of like, probably all the ROMS out there, is under a GB or so
+[03:31:29] * Lapsus points at http://edgeemu.net/ for roms
+[03:31:30] <PinkiePieBot> [ edge|emulation | your source for roms ]
+[03:31:30] <Ola> because li voe this card ;;;;;
+[03:31:31] <Starthunder> When did you get this 16-meg card
+[03:31:36] <Phase> HoneyDrops, that's the one i'm thinking of
+[03:31:39] <Ola> 2G  SanDisk, MRRRRRRR
+[03:31:42] * Ola <3 SanDisk
+[03:31:51] <Ola> Phase: i got it from my friend, but if he got it from me then
+[03:31:53] * Phase isn't sure why it's an archive of archives
+[03:32:05] <Ola> Phase: then i got it with my first digital camera as standard
+[03:32:16] <Ola> Phase: Canon PowerShot A460, 2007
+[03:32:17] <HoneyDrops> Phase: I have that, the NES and SNES ones.  I manually downloaded the ones I wanted for PS1 and GBA to load on my PSP.
+[03:32:32] <Ola> Phase: but aunt, who was giving it to me, also purchased me a 1GB memory card. Thankfully.
+[03:32:41] <Ola> EMTEC thropugh.
+[03:32:52] <Ola> That's why i don't have it anymore xd
+[03:32:53] * HoneyDrops has her entire game library for everything PS1 and earlier in her pocket.  She feels like a wizard!
+[03:33:00] * Ola hates emtec
+[03:33:38] <mniip> Phase, my main idea is to get rid of *cell
+[03:34:02] <Phase> mniip, oh?
+[03:34:16] <Starthunder> Use Rust instead!
+[03:34:20] <JustAberrant> well that would sure speed things up ;p
+[03:34:25] <HoneyDrops> I am just trying to sort out the games I want, and the cannonical ROMs for those games... a bit tedious.
+[03:34:36] <Starthunder> make a HashMap<usize, usize> and delete entries when their values become zero
+[03:34:47] <Starthunder> and create them when their values become nonzero
+[03:36:45] *** Quits: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at) (Connection closed)
+[03:36:56] <mniip> what no
+[03:37:00] <mniip> Starthunder, nonono
+[03:37:04] <Starthunder> Why not? :P
+[03:37:05] <mniip> you should use a flat array
+[03:37:19] <Starthunder> Iunno, Rust doesn't have an mmap
+[03:37:30] <mniip> rust does have arrays
+[03:37:51] <Starthunder> I don't think the allocations are guaranteed to not //really// happen until you change something, though
+[03:37:55] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Quit: Stick with the Slack and you won't get whacked!)
+[03:38:16] <mniip> what are you even talking about
+[03:38:38] <Starthunder> :I …
+[03:39:41] <HoneyDrops> Just malloc 1k chunks, you know your index, as it goes up, you allocate more.  You could even do some GC system that checks the last section and frees it if it's all zeroes.  You'd just have a chunk table with a pointer to each section.
+[03:40:30] <mniip> what ram size are we talking about
+[03:40:36] <Starthunder> 8 GiB here
+[03:40:41] <mniip> ah yes
+[03:40:44] <mniip> you need a pager
+[03:40:45] <Starthunder> But always very used
+[03:40:47] <mniip> what architecture?
+[03:40:53] <Starthunder> x86_64
+[03:40:55] <mniip> ah
+[03:40:57] <Phase> you now what also is good at allocating ~1 to 4k chunks?
+[03:40:57] <mniip> right
+[03:41:00] <Phase> virtual memory :3
+[03:41:14] <mniip> 4k pages is what you're after
+[03:41:15] <Phase> rust should have an mmap
+[03:41:33] <Starthunder> It's not in the stdlib
+[03:41:38] <Phase> worst case wrap it in an unsafe {}
+[03:41:41] <Starthunder> EW NO
+[03:41:51] <Phase> YOU CAN'T ESCAPE THE UNSAFETY
+[03:41:53] <HoneyDrops> In any event, there is no reason to allocate a massive chunk off the bat for a bf interpreter.
+[03:42:05] <Phase> Starthunder, though seriously that's litterally the use case of unsafe {}
+[03:43:19] <Phase> you can mmap as much memory as you want and madvise-out pages as they're zero'd
+[03:43:50] <Phase> which means scanning pages to check they're zero'd and so on
+[03:45:03] <Phase> i need to start using rust
+[03:45:11] <Phase> compile-time thread safety? yes please
+[03:47:47] <mniip> oh yes
+[03:47:51] <mniip> I forgot to tell the joke
+[03:48:03] <mniip> the brainfuck interpreter is written in python
+[03:48:38] <Phase> and?
+[03:48:49] <mniip> aaand it's an optimizing brainfuck interpreter...
+[03:48:50] <mniip> ...in python
+[03:49:06] <Phase> pypy is an optimizing python interpreter inj python
+[03:51:20] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[04:04:06] <mniip> hmm
+[04:04:28] <mniip> oh look
+[04:04:33] <mniip> I got rid of SHIFTs at all
+[04:05:31] <Starthunder> Hmm?
+[04:08:50] <Starthunder> …oh snap
+[04:08:53] <Starthunder> Brainfuck is /old/
+[04:09:00] <Starthunder> I thought it was invented in like 2010 or something!
+[04:16:53] <Sour_Sweet> So I was assisting a buddy with a problem related to VMs. It would take SWAP even though there should be enough free memory. He said he's going to restart the server and I assumed he meant the VM. He took the host down with the TS³ server on it. That catched me quite off guard.
+[04:24:18] *** Quits: Webster (Webster@Pony-4eid99.fios.verizon.net) (Quit: Leaving)
+[04:33:35] <Starthunder> 6_9
+[05:10:17] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[05:12:51] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Ping timeout: 121 seconds)
+[05:17:41] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[05:21:43] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Ping timeout: 121 seconds)
+[05:27:11] <Starthunder> [Mozilla/#rust 20:26:42] < aatch> Hell, for a brainfuck interpreter, I'd just use a HashMap.
+[05:27:28] <Starthunder> /ping mniip
+[05:28:12] <mniip> moo
+[05:30:17] *** Quits: Q0 (Q0@literallyshit.net) (Quit: This fantasy has been a profound disappointment.)
+[05:40:30] <Starthunder> [unrelated] why is `pass` trying to `xcodebuild`? O.o
+[05:47:30] *** Gigaway is now known as Soarin
+[05:48:25] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[06:18:26] *** Joins: Xefir (xefir@Pony-v55nf6.rev.sfr.net)
+[06:19:00] *** mniip is now known as \m
+[06:20:41] *** Joins: WuBzY_AwAy (androirc@Pony-2ic7eg.bb.dnainternet.fi)
+[06:22:28] *** Quits: Xefir (xefir@Pony-v55nf6.rev.sfr.net) (Ping timeout: 121 seconds)
+[06:27:46] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[06:36:33] *** Quits: MangoBloom (djazz@djazz.se) (Ping timeout: 121 seconds)
+[06:37:56] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[06:43:05] *** djazz is now known as MangoBloom
+[06:49:46] *** GeekBrony is now known as NerdBrony
+[06:57:04] *** Joins: Sombra (Iceman@Darkhorse21)
+[06:57:12] *** NerdBrony is now known as Geeky
+[06:57:19] *** Joins: Q0 (Q0@Pony-0m7faa.vtfe.qoe9.0601.2601.IP)
+[06:59:20] *** Eventide is now known as Eventide|Sleepies
+[07:07:35] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[07:14:27] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[07:15:46] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[07:19:11] *** Joins: Xefir (xefir@Pony-vlqc9v.1fe2.7gl6.e080.2a00.IP)
+[07:21:57] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[07:23:14] *** Quits: Xefir (xefir@Pony-vlqc9v.1fe2.7gl6.e080.2a00.IP) (Ping timeout: 121 seconds)
+[07:30:41] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[07:31:54] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[07:53:24] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[08:00:24] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:13:53] *** Soarin is now known as Snoarin
+[08:28:15] *** Geeky is now known as GeekBrony
+[08:31:33] <Sakura> Planning to do something very interesting & time consuming as long as it's protected somewhere under Twitch's rules. Did Twitch Installs Arch Linux fall anywhere under Creative or anything like that?
+[08:36:31] <roflin> Sakura: i believe it was under programming
+[08:36:58] <Sakura> Programming? Alright. Fair enough then.
+[08:37:22] <roflin> http://www.twitch.tv/directory/game/Programming
+[08:37:23] <PinkiePieBot> [ Twitch ]
+[08:39:29] <Sakura> Someone gave me the idea for a Windows Installathon & time how long it takes to go from Windows 1.0 to Windows 10.
+[08:42:51] *** Joins: Phase (Phase4@Pony-q2igmo.internode.on.net)
+[08:54:23] *** Joins: Melanosuchus (quassel@Pony-avk0g5.as13285.net)
+[08:56:17] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[08:57:16] <AppleDash> Sakura: lol
+[08:57:19] <AppleDash> never gonna happen
+[08:57:28] <AppleDash> They're just gonna delete system32
+[08:59:11] <Sakura> I could just keep it where I am the only one doing the installation. It would take days to finish if I let kids do it on the chat.
+[08:59:48] <AppleDash> TIAL took days
+[09:00:35] <Sakura> Yes, that's what happens when you let kids on the chat help you install it.
+[09:00:36] *** Quits: JustAberrant (JustAberran@Pony-lq4qe0.com) (Quit: Meep)
+[09:02:20] <Sakura> Maybe after finishing the installations, I can just run MS-DOS & have Twitch Runs DOS or something.
+[09:03:12] <Sour_Sweet> I have serious doubts Windows even let's you delete system32 - no matter what access level :P
+[09:07:51] *** Joins: Xefir (xefir@Pony-ci7.430.142.83.IP)
+[09:17:23] *** zz_CyberJacob is now known as CyberJacob
+[09:23:25] *** Quits: Melanosuchus (quassel@Pony-avk0g5.as13285.net) (Connection closed)
+[09:24:55] <Kyle> you won't delete it all
+[09:25:00] <Kyle> but you'll delete enough to cause serious issues
+[09:28:40] *** Joins: Xefir_ (xefir@Pony-ci7.430.142.83.IP)
+[09:28:44] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[09:29:40] *** CyberJacob is now known as zz_CyberJacob
+[09:31:23] <tiwake> https://derpibooru.org/1042210
+[09:31:24] <PinkiePieBot> [ Safe artist:datbrass artist:lightningdasher magical_unicorn_access_point :p print printable pun safe twi-fi twilight_sparkle wi-fi ]
+[09:31:57] *** Quits: Xefir (xefir@Pony-ci7.430.142.83.IP) (Ping timeout: 121 seconds)
+[09:32:00] <tiwake> lol what that tag
+[09:32:11] <tiwake> "magical unicorn access point"
+[09:43:54] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:45:19] *** Pixel is now known as Dazuk
+[10:14:13] *** Quits: Unixkitty (uni@the.unicorn.cat) (Quit: The rains weep over his hall, with no one there to hear.)
+[10:14:20] *** Joins: Unixkitty (uni@Pony-bbkp1e.com)
+[10:14:59] <Phase> Sour_Sweet, from an admin context you can break the os
+[10:15:28] <Phase> by trying to delete system32 i mean
+[10:15:56] <Phase> at the very least, explorer and the backup in winsxs can be deleted
+[10:16:24] <AppleDash> https://derpicdn.net/img/view/2013/5/20/329444.png
+[10:16:25] <AppleDash> this
+[10:16:33] <AppleDash> I have been linking this in tech-related pony chats for years
+[10:19:26] <Lapsus> :v
+[10:24:30] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (Connection closed)
+[10:24:48] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[11:05:25] <miggyb> Is Office 365 being slow for anyone else?
+[11:06:36] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[11:15:48] *** Quits: Kyle (f@ntasy) (Connection closed)
+[11:23:04] *** Quits: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Quit:  Want to be different? Try HydraIRC -> http://www.hydrairc.com <-)
+[11:32:08] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[11:43:45] *** Quits: Shutter (tips@sudoku.prevention.hotline) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: misiek200m (miskof@mysterious.chocolate.muffin) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Lorix_ (Lorix_@flutter.shy.yay) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: klaxa (klaxa@Pony-ail.8pm.0.134.IP) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Ola (ola@Pony-k5v.64a.226.188.IP) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: AutoLapsus (Lapsus@Totally.Is.A.Network.Service) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Dazuk (Dusk@dusky.horse) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: MangoBloom (djazz@djazz.se) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Twilightlicious (Twilightlic@Pretty.Princess) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Fallfeathers (Fallfeather@Pony-8980p6.bigpond.net.au) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: wolfyshy (woof@fluttering.shyly.through.the.forest) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Snoarin (Gigabit@Bazinga) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: WeAreBorg (WeAreBorg@Resistance.Is.Futile) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Divide (NA@Pony-vf5hfh.cable.rogers.com) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Googie (Googol@gnaws.on.keratin.and.ears) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Finnfinn (Finnfinn@finn.isher) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: nightbot (vinylderpy@Pony-mgr.5s9.50.70.IP) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Starthunder (blackl@property.of.lightningcrash) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Xefir_ (xefir@Pony-ci7.430.142.83.IP) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Monochrome (Sentoki@the.little.cloud.colt) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: GeekBrony (GB@bronydom.net) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Sellyme (quassel@Pony-bphb4u.of.saltspork.com) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Jouva (jouva@Pony-535ork.fios.verizon.net) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: HoneyDrops (Honey@sweeter.than.honey) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: zz_CyberJacob (CyberJacob@Pony-dom.9o9.247.54.IP) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Obaskyr (Tachy@Pony-1uupgo.range109-151.btcentralplus.com) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: derpy (derp@muffins) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: LightningCrash (lightning@property.of.moonlightning) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: tiwake (Octavia@Pony-16dov0.wa.charter.com) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: floogulinc (floogulinc@Pony-3j8.717.99.192.IP) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Gumball (GumballCras@0.to.pony.10secondsflat) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Eventide|Sleepies (uid61788@Tips.Fedora) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Pony_26639 (garophel@Pony-l364qj.ip-149-202-42.eu) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: catnickfl (catnickfl@catnickfl.bronytv.net) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: \m (mniip@Pony-o9q.v2g.219.178.IP) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Kinsley (JKinsley@Bow.To.Your.Princess) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Phase (Phase4@Pony-q2igmo.internode.on.net) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Cameron_D (cameron@192.241.210.101) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Datalink (Datalink@Datalink) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: miggyb (miggyb@horsetornado.co.uk) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Colgate (rabbit@brushie.horse) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: aji (alex@ajitek.net) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Lapsus (Lapsus@i-forget.ca) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Moka (rylai@libgryphon.so) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: enginemaniac (flail@flail.flail.flail) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: SilverEagle (SilverEagle@SilverEagle.is.best.pony) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: AppleDash (appled@dusks.adorable.pet.pegasus) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: sleumas2000 (sleumas2000@my.little.karaoke) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: jaderain (jaderain@jaderain.is.best.pony) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Darki (DK@Pony-44f.v38.82.80.IP) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Garophel (garophel@Pony-l364qj.ip-149-202-42.eu) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: saneki (saneki@Pony-tni.g4k.31.96.IP) (discord.canternet.org cadance.canternet.org)
+[11:43:45] *** Quits: Sakura (Sakura@is.a.very.derpy.pony) (discord.canternet.org cadance.canternet.org)
+[11:45:37] *** Joins: Jouva (jouva@Pony-535ork.fios.verizon.net)
+[11:45:37] *** Joins: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[11:45:37] *** Joins: zz_CyberJacob (CyberJacob@Pony-dom.9o9.247.54.IP)
+[11:45:37] *** Joins: Colgate (rabbit@brushie.horse)
+[11:45:37] *** Joins: Eventide|Sleepies (uid61788@Tips.Fedora)
+[11:45:37] *** Joins: AppleDash (appled@dusks.adorable.pet.pegasus)
+[11:45:37] *** Joins: Twilightlicious (Twilightlic@Pretty.Princess)
+[11:45:37] *** Joins: derpy (derp@muffins)
+[11:45:37] *** Joins: MangoBloom (djazz@djazz.se)
+[11:45:37] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[11:45:37] *** Joins: Fallfeathers (Fallfeather@Pony-8980p6.bigpond.net.au)
+[11:45:37] *** Joins: Starthunder (blackl@property.of.lightningcrash)
+[11:45:37] *** Joins: nightbot (vinylderpy@Pony-mgr.5s9.50.70.IP)
+[11:45:37] *** Joins: Sakura (Sakura@is.a.very.derpy.pony)
+[11:45:37] *** Joins: Garophel (garophel@Pony-l364qj.ip-149-202-42.eu)
+[11:45:37] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[11:45:37] *** Joins: Finwe (vhalkola@Pony-bs4ovt.org.aalto.fi)
+[11:45:37] *** Joins: Lapsus (Lapsus@i-forget.ca)
+[11:45:37] *** Joins: Caerdwyn (caepone@always.broken.sometimes.patched.finally.fixed)
+[11:45:37] *** Joins: Ola (ola@Pony-k5v.64a.226.188.IP)
+[11:45:37] *** Joins: Kinsley (JKinsley@Bow.To.Your.Princess)
+[11:45:37] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[11:45:37] *** Joins: Lorix_ (Lorix_@flutter.shy.yay)
+[11:45:37] *** Joins: Gumball (GumballCras@0.to.pony.10secondsflat)
+[11:45:37] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[11:45:37] *** Joins: RedHelper (RedHelper@The.Pony.That.Makes.You.Smile)
+[11:45:37] *** Joins: SilverEagle (SilverEagle@SilverEagle.is.best.pony)
+[11:45:37] *** Joins: misiek200m (miskof@mysterious.chocolate.muffin)
+[11:45:37] *** Joins: Darki (DK@Pony-44f.v38.82.80.IP)
+[11:45:37] *** Joins: Finnfinn (Finnfinn@finn.isher)
+[11:45:37] *** Joins: AutoLapsus (Lapsus@Totally.Is.A.Network.Service)
+[11:45:37] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[11:45:37] *** Joins: HoneyDrops (Honey@sweeter.than.honey)
+[11:45:37] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[11:45:37] *** Joins: Snoarin (Gigabit@Bazinga)
+[11:45:37] *** Joins: Dazuk (Dusk@dusky.horse)
+[11:45:37] *** Joins: GeekBrony (GB@bronydom.net)
+[11:45:37] *** Joins: Sukasa (IDontCare@Pony-8juhcf.no.shawcable.net)
+[11:45:37] *** cadance.canternet.org sets mode: +vqooo AppleDash Lapsus Lapsus Kinsley AutoLapsus
+[11:45:37] *** Joins: Datalink (Datalink@Datalink)
+[11:45:37] *** Joins: enginemaniac (flail@flail.flail.flail)
+[11:45:37] *** Joins: catnickfl (catnickfl@catnickfl.bronytv.net)
+[11:45:37] *** Joins: Xefir_ (xefir@Pony-ci7.430.142.83.IP)
+[11:45:37] *** Joins: Pony_26639 (garophel@Pony-l364qj.ip-149-202-42.eu)
+[11:45:37] *** Joins: Googie (Googol@gnaws.on.keratin.and.ears)
+[11:45:37] *** Joins: Monochrome (Sentoki@the.little.cloud.colt)
+[11:45:37] *** Joins: WeAreBorg (WeAreBorg@Resistance.Is.Futile)
+[11:45:37] *** Joins: Sellyme (quassel@Pony-bphb4u.of.saltspork.com)
+[11:45:37] *** Joins: floogulinc (floogulinc@Pony-3j8.717.99.192.IP)
+[11:45:37] *** Joins: Shutter (tips@sudoku.prevention.hotline)
+[11:45:37] *** Joins: tiwake (Octavia@Pony-16dov0.wa.charter.com)
+[11:45:37] *** Joins: miggyb (miggyb@horsetornado.co.uk)
+[11:45:37] *** Joins: Cameron_D (cameron@192.241.210.101)
+[11:45:37] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[11:45:37] *** Joins: jaderain (jaderain@jaderain.is.best.pony)
+[11:45:37] *** Joins: Divide (NA@Pony-vf5hfh.cable.rogers.com)
+[11:45:37] *** Joins: Phase (Phase4@Pony-q2igmo.internode.on.net)
+[11:45:37] *** Joins: wolfyshy (woof@fluttering.shyly.through.the.forest)
+[11:45:37] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[11:45:37] *** Joins: aji (alex@ajitek.net)
+[11:45:37] *** Joins: saneki (saneki@Pony-tni.g4k.31.96.IP)
+[11:45:37] *** Joins: Moka (rylai@libgryphon.so)
+[11:45:37] *** Joins: sleumas2000 (sleumas2000@my.little.karaoke)
+[11:45:37] *** Joins: locodash11[server] (locodash11@Taco.eating.Anthro.Batpony)
+[11:45:37] *** Joins: Obaskyr (Tachy@Pony-1uupgo.range109-151.btcentralplus.com)
+[11:45:37] *** Joins: klaxa (klaxa@Pony-ail.8pm.0.134.IP)
+[11:45:37] *** cadance.canternet.org sets mode: +o aji
+[12:03:34] *** Joins: vi[NLR] (vi[NLR]@Pony-rdj90s.vie.surfer.at)
+[12:06:42] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[12:15:18] *** Quits: WuBzY_AwAy (androirc@Pony-2ic7eg.bb.dnainternet.fi) (Connection closed)
+[12:49:59] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[12:51:45] *** Quits: Cameron_D (cameron@192.241.210.101) (Ping timeout: 121 seconds)
+[12:52:08] *** Joins: Cameron_D (cameron@Pony-v0m.4h7.241.192.IP)
+[12:58:18] *** Quits: Fallfeathers (Fallfeather@Pony-8980p6.bigpond.net.au) (Connection closed)
+[13:00:10] *** Eventide|Sleepies is now known as Eventide
+[13:43:06] *** Joins: Colgate_ (rabbit@brushie.horse)
+[13:43:26] *** Quits: Colgate (rabbit@brushie.horse) (Ping timeout: 121 seconds)
+[13:59:09] *** Joins: JustAberrant (JustAberran@Pony-lq4qe0.com)
+[14:01:05] *** \m is now known as mniip
+[14:16:23] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[14:27:03] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[15:16:36] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[15:27:46] *** Joins: Quindo (Quindo@Pony-8qt.17k.198.99.IP)
+[15:30:33] *** mniip is now known as \m
+[15:44:21] *** Joins: Asoka_White (Asoka@Pony-lo2oe3.net-htp.de)
+[15:46:48] *** Quits: Asoka (Asoka@Pony-linnbt.net-htp.de) (Ping timeout: 121 seconds)
+[15:49:47] *** Joins: Asoka (Asoka@Pony-819bv5.net-htp.de)
+[15:51:52] *** Quits: Asoka_White (Asoka@Pony-lo2oe3.net-htp.de) (Ping timeout: 121 seconds)
+[15:58:23] *** Joins: WuBzY (WuBzY@Pony-0o20u8.dhcp.inet.fi)
+[16:12:30] *** Joins: Asoka_White (Asoka@Pony-g76kpm.net-htp.de)
+[16:13:46] *** Quits: GeekBrony (GB@bronydom.net) (Ping timeout: 121 seconds)
+[16:14:26] *** Quits: sleumas2000 (sleumas2000@my.little.karaoke) (Ping timeout: 121 seconds)
+[16:14:36] *** Quits: Dazuk (Dusk@dusky.horse) (Ping timeout: 121 seconds)
+[16:14:38] *** Quits: catnickfl (catnickfl@catnickfl.bronytv.net) (Ping timeout: 121 seconds)
+[16:14:49] *** Quits: Sakura (Sakura@is.a.very.derpy.pony) (Ping timeout: 121 seconds)
+[16:14:55] *** Quits: Asoka (Asoka@Pony-819bv5.net-htp.de) (Ping timeout: 121 seconds)
+[16:24:36] *** Joins: Asoka (Asoka@Pony-khbl6i.net-htp.de)
+[16:26:56] *** Quits: Asoka_White (Asoka@Pony-g76kpm.net-htp.de) (Ping timeout: 121 seconds)
+[16:27:01] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[16:29:52] *** Quits: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Connection closed)
+[16:37:02] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[17:15:56] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[17:30:05] *** Quits: WuBzY (WuBzY@Pony-0o20u8.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[18:25:40] *** Quits: Asoka (Asoka@Pony-khbl6i.net-htp.de) (Quit: Ex-Chat)
+[18:25:55] *** Joins: Asoka (Asoka@Pony-khbl6i.net-htp.de)
+[18:26:14] *** Quits: Asoka (Asoka@Pony-khbl6i.net-htp.de) (Quit: Ex-Chat)
+[18:26:24] *** Joins: Asoka (Asoka@Pony-khbl6i.net-htp.de)
+[18:30:14] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[18:46:05] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Ping timeout: 121 seconds)
+[18:46:10] *** Colgate_ is now known as Colgate
+[18:47:28] *** Eventide is now known as Eventide_
+[18:48:56] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[18:51:24] *** Joins: Dusk (Dusk@dusky.horse)
+[18:52:00] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Ping timeout: 121 seconds)
+[18:56:51] *** Eventide_ is now known as Eventide
+[19:00:16] *** Joins: sleumas2000 (sleumas2000@my.little.karaoke)
+[19:04:17] *** Joins: WuBzY (WuBzY@Pony-0o20u8.dhcp.inet.fi)
+[19:07:37] *** Joins: Melanosuchus (quassel@Pony-5gink6.as13285.net)
+[19:12:19] *** Quits: MangoBloom (djazz@djazz.se) (Connection closed)
+[19:12:42] *** Quits: Xefir_ (xefir@Pony-ci7.430.142.83.IP) (Ping timeout: 121 seconds)
+[19:13:58] *** Joins: djazz (djazz@Pony-s73dok.tbcn.telia.com)
+[19:14:26] *** djazz is now known as MangoBloom
+[19:34:59] *** Joins: Sakura (Sakura@Pony-fkc.i75.99.192.IP)
+[19:35:17] *** Snoarin is now known as Gigabit
+[19:42:32] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[19:54:29] *** Quits: Melanosuchus (quassel@Pony-5gink6.as13285.net) (Ping timeout: 121 seconds)
+[19:55:11] *** Joins: Melanosuchus (quassel@Pony-h31.fqb.205.213.IP)
+[19:59:54] *** Joins: GeekBrony (GB@bronydom.net)
+[20:00:25] *** Joins: catnickfl (catnickfl@catnickfl.bronytv.net)
+[20:02:18] *** Quits: Phase (Phase4@Pony-q2igmo.internode.on.net) (Ping timeout: 121 seconds)
+[20:02:33] *** Quits: Gladiolus (uid110916@the.truth.is.out.there) (Quit: )
+[20:04:19] *** Joins: Gladiolus (Corey@the.truth.is.out.there)
+[20:06:20] *** Quits: WuBzY (WuBzY@Pony-0o20u8.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[20:21:16] <tiwake> AppleDash: lol, I just havent seen it before
+[20:21:40] <tiwake> before the "magical unicorn access point" tag
+[20:36:10] *** Joins: Asoka_White (Asoka@Pony-jgj43i.net-htp.de)
+[20:37:55] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[20:39:00] *** Quits: Asoka (Asoka@Pony-khbl6i.net-htp.de) (Ping timeout: 121 seconds)
+[20:39:10] *** Quits: Melanosuchus (quassel@Pony-h31.fqb.205.213.IP) (Ping timeout: 121 seconds)
+[20:39:52] *** Joins: Melanosuchus (quassel@Pony-pet3h3.as13285.net)
+[20:52:54] *** Quits: Gladiolus (Corey@the.truth.is.out.there) (Quit: Leaving)
+[21:07:13] *** Joins: WuBzY (WuBzY@Pony-0o20u8.dhcp.inet.fi)
+[21:25:32] *** Quits: WuBzY (WuBzY@Pony-0o20u8.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[21:41:12] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[21:42:07] *** Quits: Garophel (garophel@Pony-l364qj.ip-149-202-42.eu) (Quit: leaving)
+[21:43:10] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[21:44:09] *** Quits: Pony_26639 (garophel@Pony-l364qj.ip-149-202-42.eu) (Quit: ZNC derp)
+[21:44:41] *** Joins: Garophel (garophel@Pony-jt2b62.net)
+[21:45:36] *** Quits: Crimson_Tail (Zeta@batpones.are.for.snuggles) (Quit: Ping timeout: -1 second)
+[21:48:55] *** Joins: Crimson_Tail (Zeta@batpones.are.for.snuggles)
+[21:58:23] *** Joins: WuBzY (androirc@Pony-j1ssg5.rev.dnainternet.fi)
+[22:00:45] *** Joins: WuBzY_AwAy (androirc@Pony-0o20u8.dhcp.inet.fi)
+[22:04:30] *** Quits: WuBzY (androirc@Pony-j1ssg5.rev.dnainternet.fi) (Ping timeout: 121 seconds)
+[22:05:22] *** WuBzY_AwAy is now known as WuBzY
+[22:11:45] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Connection closed)
+[22:18:48] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[22:35:48] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[22:53:36] *** Joins: WuBzY_AwAy (androirc@Pony-n7m1ee.rev.dnainternet.fi)
+[22:53:40] *** Quits: WuBzY (androirc@Pony-0o20u8.dhcp.inet.fi) (Connection closed)
+[23:00:31] *** Quits: WuBzY_AwAy (androirc@Pony-n7m1ee.rev.dnainternet.fi) (Quit: WuBzYs 0ut)
+[23:00:42] *** Joins: WuBzY (androirc@Pony-n7m1ee.rev.dnainternet.fi)
+[23:01:45] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Connection closed)
+[23:05:26] <johnsey> https://productforums.google.com/forum/m/#!msg/calendar/UhfpcwO0X0c/paA4iQNen9IJ
+[23:05:27] <PinkiePieBot> [ Re: Can't sign in to Google calendar on my Samsung refrigerator - Google Product Forums ]
+[23:09:23] <HoneyDrops> https://github.com/CTurt/PS4-SDK
+[23:09:24] <PinkiePieBot> [ CTurt/PS4-SDK · GitHub ]
+[23:10:12] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[23:10:37] <Phase> isn't um
+[23:10:44] <Phase> isn't it a freebsd kernel?
+[23:10:58] <HoneyDrops> Yes
+[23:11:55] <HoneyDrops> Apparently CTurt has also announced a kernel-based exploit to jailbreak PS4s.  Don't yet have a link to that.
+[23:13:22] <Sour_Sweet> The IoT is a horrible idea. I already see websites being taken down by literal toasters.
+[23:14:21] <Phase> HoneyDrops, i mean more along the lines of surely it's using the freebsd kernel abi?
+[23:14:42] <HoneyDrops> The IoT is a bad idea because most people can barely operate a regular toaster, tv, refrigerator, lightbulb.
+[23:14:56] <Sour_Sweet> God you can cause so much damage with a toasters. Some basic consumer models will start catching fire when you use them often enough directly in a row
+[23:16:08] <Phase> oic, they've added syscalls
+[23:17:04] <Phase> or not?
+[23:17:48] <DJ-C0L7[EIT]> for some reason i had a mental image of the toaster from fallout:NV Old World Blues DLC having this conversation
+[23:18:16] <Phase> Sour_Sweet, https://twitter.com/internetofshit
+[23:18:17] <PinkiePieBot> [ Internet of Shit (@internetofshit) | Twitter ]
+[23:18:25] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[23:18:25] <Phase> it's a problem that's rapidly getting worse
+[23:19:18] <Phase> "I made changes to my network, how do I reconnect my scale, lightbulbs, microwave, fridge and thermostat"
+[23:19:41] <DJ-C0L7[EIT]> LMAO sad but true
+[23:23:14] <Sour_Sweet> "Excuse me sir, do you mind restarting your refrigerator for me?" lol
+[23:25:40] <Sour_Sweet> So when I really want to annoy someone: Don't DDoS their favorite IRC channel, DDoS their refrigerator instead. I'd be really pissed off when my beer is warm because the refrigerator decided to hang up.
+[23:29:17] <DataByte> hahahahaha
+[23:30:42] <DataByte> tech support call: fridge stopped working. i unplug it and plug it back in, it starts up, and then it stops working after 2 to 15 minutes
+[23:31:58] <DataByte> solution: the toaster had a firmware glitch and was causing a broadcast storm, taking the fridge off of the network. once the fridge was offline, the thermostat couldn't tell the fridge it was no longer in vacation mode
+[23:32:19] <DataByte> xD
+[23:32:31] <DataByte> it'll happen, somehow xD
+[23:52:09] <Sour_Sweet> Amazing: https://pbs.twimg.com/media/CQz9_8CUcAAG5pr.png
+[23:53:53] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[23:59:36] *** Quits: Starburn (eyeburn@secret.den.of.flaming.evil) (Ping timeout: 121 seconds)

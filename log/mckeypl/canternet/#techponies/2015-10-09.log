@@ -1,0 +1,811 @@
+[00:11:21] *** Joins: sleumas2000_ (uid91753@Pony-5dnslh.ealing.irccloud.com)
+[00:17:41] *** init3 is now known as Init3-away
+[00:19:44] *** Init3-away is now known as init3
+[00:20:14] <Moonlightning> Okay, enough.
+[00:22:18] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[00:27:42] <Moonlightning> My connection keeps derping out, every couple weeks or so, and it seems to be always when I'm asleep or otherwise nor present :V
+[00:28:36] <Moonlightning> …halp?
+[00:28:54] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:32:13] <Webster> Maintenance?
+[00:34:59] <Moonlightning> Naw, no way… :<
+[00:35:26] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[00:35:45] <Moonlightning> It's killing my IRC connections, and I want it to stop. >.>
+[00:35:54] <Webster> Sounds like maintenance. :P
+[00:36:01] <Moonlightning> In the middle of the afternoon?
+[00:36:25] <Webster> You said asleep, so I assumed late.
+[00:36:28] <Moonlightning> ISPs don't do periodic disruptive maintenance, do they?
+[00:36:38] <Webster> They do if it's something major.
+[00:36:40] * Moonlightning napped recently. See the disconnect on the scrollback?
+[00:36:45] <Moonlightning> Something major, every few weeks?
+[00:36:48] <Webster> Nope, I joined too late.
+[00:36:58] <Webster> Or they just might be killing long running connections.
+[00:37:26] <Moonlightning> You think?
+[00:37:44] <Moonlightning> actually, I called them and mentioned I had long-running connections, and they didn't mention anything about that
+[00:37:51] <Moonlightning> And they have good support :B
+[00:38:07] <Moonlightning> And, actually…my SSH connections tend to survive.
+[00:38:16] <Moonlightning> It's just IRC, but it's /all/ IRC, all five networks
+[00:38:25] <Sour_Sweet> Good as in friendly, or as in they actually know what they're doing? :P
+[00:38:48] <Moonlightning> Well, I meant the latter, but the former applies too, to a significantly higher degree than you'd expect from an ISP :3
+[00:39:59] <Webster> Not enough keep-alives on it?
+[00:40:04] <Sour_Sweet> Oh my ISP support agents are very friendly, but they or only "trained" and know the standard cases. Asking them anything more technical is going to result in very funny answers
+[00:40:13] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[00:40:36] <Moonlightning> Yeah, these pones know what they're doing.
+[00:41:02] <Moonlightning> Webster: normal packets count as keepalives, too, right?
+[00:41:13] <Moonlightning> 'cos I have my client set to ping every five seconds, because lagmeter
+[00:41:15] <Webster> Yeah.
+[00:41:21] <Moonlightning> So it's not that.
+[00:41:38] <Sour_Sweet> A bouncer is no option?
+[00:42:08] <Moonlightning> I'd really rather not.
+[00:44:22] <Moonlightning> So uh
+[00:44:29] <Moonlightning> How do I troubleshoot this? @.@
+[00:44:40] <Webster> Wireshark, I guess.
+[00:44:46] <Moonlightning> :?
+[00:45:04] <HoneyDrops> If one goes to the trouble of a bouncer, it makes just as much sense to just put the client on the server and skip the bouncer.
+[00:45:34] <Moonlightning> 'cept you can't really do that for most networks
+[00:45:46] <Sour_Sweet> HoneyDrops: I'd still call it a bouncer than :O Using a WeeChat relay myself
+[00:46:33] <JustAberrant> meh, bouncers have their advantages
+[00:46:46] <JustAberrant> namely using irssi from a phone kinda sucks imo ;p
+[00:47:03] <HoneyDrops> I just ssh in and use weechat from everything.
+[00:47:49] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:47:53] <Sour_Sweet> WeeChat over SSH from a phone would be a pain :D Apart from that I consider it a secruity risk.
+[00:48:10] <Sour_Sweet> SecurityÜ
+[00:48:25] <Moonlightning> Oh, cool, wireshark actually has a CLI v—ohp, nope, wait. This is an X thing.
+[00:48:28] <HoneyDrops> well I should probably set up mosh, but generally I am using wifi anyway.
+[00:49:19] <JustAberrant> also the phone screen is a different size
+[00:49:42] <JustAberrant> which means you're either detaching other sessions to get it to resize all the time.. which in the case of irssi is annoying
+[00:49:44] <HoneyDrops> I have weechat set to clean up the UI based on terminal size
+[00:50:00] <Colgate> Sour_Sweet: why do you consider it a security risk?
+[00:50:10] *** init3 is now known as Init3-away
+[00:50:31] <HoneyDrops> I'll just att -d if for some reason my mobile connection isn't closed out.
+[00:50:37] <Sour_Sweet> Leave my notebook unlocked, Somebody exits weechat and has a terminal on my server :P
+[00:51:00] <Moonlightning> You leave your laptop unlocked and unattended?!
+[00:51:02] <JustAberrant> HoneyDrops: fine if you don't mind always having to re-attach I guess... my issue with doing that would be I have 3 machines I usually have irssi running on
+[00:51:03] <HoneyDrops> :p don't leave a device unattended
+[00:51:19] <Sour_Sweet> At work: Sometimes
+[00:52:06] <JustAberrant> I use znc mainly as a multiplexer ;p
+[00:52:06] <Colgate> if you remove the exec and script plugins, you can use a weechat-relay client of some sort
+[00:52:13] <Sour_Sweet> Because of the BS software my employer used it's a pain to login again (delay, re-enter a couple of passwords)
+[00:52:31] <HoneyDrops> tmux has a locking system, iirc.
+[00:52:33] <Moonlightning> You let your employer install crap on your laptop?!
+[00:52:33] <Sour_Sweet> Colgate: That is exaclty what I do ^^
+[00:52:51] <Sour_Sweet> Moonlightning: It's my employers notebook
+[00:52:51] <Colgate> make sure you remove them from the filesystem as well
+[00:53:03] <Colgate> otherwise someone could /plugin load them
+[00:53:04] <Moonlightning> You do personal stuff on your employer's machines?!
+[00:53:15] <Sour_Sweet> Yes
+[00:53:22] <Moonlightning> Dude. :(
+[00:53:23] <Sour_Sweet> Because: why not?
+[00:53:33] <Moonlightning> Because shit like this.
+[00:53:38] <Moonlightning> I would never trust anything issued by any employer.
+[00:53:45] <HoneyDrops> ^
+[00:53:45] <JustAberrant> gotta admit, that's kinda silly.. computers are cheap enough that there's no need for that any more ;p
+[00:53:47] <Moonlightning> It might have spyware on it, and maybe even legally!
+[00:53:49] <Colgate> I ssh into home from my work too :P
+[00:54:29] * Moonlightning goes a bit farther…only ever enters any password to a personal thing on machines he owns and trusts
+[00:54:51] <Sour_Sweet> I'm on of the few people having full admin right on my machine I'd probably know if something is trying fuck me over. Apart from that I only handle non sensitive private things on this machine
+[00:55:04] * JustAberrant secretly hopes Moonlightning gets pwned some day just for the irony ;p
+[00:55:11] <Moonlightning> IRC is very sensitive to me :P
+[00:55:15] <Sour_Sweet> one* rights*
+[00:55:38] <Moonlightning> Seriously, though. Just go buy yourself a cheap laptop that you can just call your own. You can get a pretty decent (I guess?) one for like $250
+[00:55:53] <Moonlightning> it's not gonna run all your fancy games and shit, but it'll be fine for IRC and basic browsing
+[00:56:02] <Sour_Sweet> I do have 2 laptops around I could use
+[00:56:12] <Moonlightning> well then pffffff why are we having this conversation?
+[00:56:22] <HoneyDrops> Used netbook is enough for an ssh terminal/basic browsing.  Battery life will suck, but unless you can't find an outlet... that isn't an issue.
+[00:56:30] <Sour_Sweet> One of them even having a quite recent dedicated graphics card
+[00:56:52] <Sour_Sweet> But there is no reason to bring it to work except for when I really need it
+[00:58:01] <Sour_Sweet> I have a full gigbit connection at work, my boss doesn't care and it doesn't show other people THAT obviously when I do private things
+[00:59:41] *** Init3-away is now known as init3
+[01:00:51] <Moonlightning> Sigh. Okay. Whatever.
+[01:00:55] <Sour_Sweet> Apart from that my employed did profit from it quite a lot. I did 3d renders at home using a remote access, I use database management things on my server server for company data quite often because it saves a lot of time
+[01:00:57] <Moonlightning> Connection drops. How do I troubleshoot them. :(
+[01:01:59] <Sour_Sweet> What confuses me is that it doesn't disconnect your SSH sessions. Those are the first that timeout for me
+[01:02:29] <Moonlightning> I've found that SSH is more resilient to connection drops.
+[01:02:43] <Moonlightning> It tends to be able to continue through them and just pick up afterwards.
+[01:03:01] <Sour_Sweet> On very silly solution for your problem (if you cannot find the cause) would be to run your IRC sessions over an SSH tunnel.
+[01:03:05] <Moonlightning> Which makes a lot of sense; seems to me any TCP-streaming thing, like IRC(!) should be able to do that
+[01:03:27] <Moonlightning> But IRC just won't. The network disconnects after two minutes. Ping timeout.
+[01:03:58] <Moonlightning> SSH tunnel wouldn't help…it'd still be my client that would have to respond, which it can't, 'cos the uplink dropped for more than 2 minutes
+[01:04:28] <Sour_Sweet> Have you noticed any specific times? Maybe you ISP timeouts the connection for silly anti bot stuff.
+[01:04:43] <Moonlightning> No; it feels random.
+[01:05:59] <Sour_Sweet> I'd setup some kind of monitoring first to see if the whole connection is gone or if it's just IRC. However 2 minutes without uplink is a more than reasonable time for timeouts :P
+[01:06:58] <Moonlightning> Then my ISP shouldn't be killing the uplink (if it is intentional; maintenance or something) for over two minutes without a /very/ good reason.
+[01:07:39] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[01:07:50] <Moonlightning> Okay, monitoring. Like, what, `ping`?
+[01:07:50] <Sour_Sweet> Also you can check your router's logs to see if the problem is between it and the node, in your network or in the ISP's network
+[01:07:53] <Moonlightning> But with timestamps?
+[01:07:57] <Moonlightning> Oh, really? o.o
+[01:08:16] <Sour_Sweet> Yeah or HTTP requests - they work quite good as well
+[01:08:23] <Moonlightning> All I see here is downstream DHCP stuff. XD
+[01:08:37] <Sour_Sweet> I useally use google because almost zero downtime :P
+[01:09:37] <Sour_Sweet> If you write a script and decide to use HTTP make sure to only request the header ^^
+[01:10:48] <Moonlightning> So, what, syslog, or something else?
+[01:11:01] <Moonlightning> 'cos syslog just has normal-looking DHCP stuff (downstream /and/ upstream, actually)
+[01:12:35] <Sour_Sweet> My router has dedicated logs for that. I haven't checked any standard unix/linux logs. I'd watch out for PPoE timeouts (they must be logged somewhere)
+[01:13:06] <Moonlightning> Pretty sure this doesn't use PPPoE
+[01:13:47] <Sour_Sweet> Mine does :P
+[01:14:02] <Moonlightning> Anyway, nothing out of the ordinary in the few minutes leading up to weechat disconnecting
+[01:14:12] <Sour_Sweet> Maybe I'm mesing up names here
+[01:14:15] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[01:14:25] <Sour_Sweet> I'd need to check, but I'm not at my place
+[01:14:55] <Sour_Sweet> Nope just checked: PPPoE
+[01:15:07] <Moonlightning> Well, it's all just the usual DHCP stuff, like I said
+[01:15:13] <Moonlightning> oh, and Wi-Fi stuff
+[01:15:22] <Compu> HDCP - HDCP stands for 'High-bandwidth Digital Content Protection' HDCP is pronounced as handicap.
+[01:15:41] <Compu> urban dictionary why r u so beautiful
+[01:15:56] * Moonlightning balances a bowl full of vowels and Ys on Compu's head.
+[01:16:04] <Compu> HDCP is pronounced as handicap
+[01:17:03] <Sour_Sweet> Luckily there are HDCP strippers ...
+[01:18:07] <Moonlightning> Why are you stripping protection? O.o;
+[01:18:20] <wolfyshy> Moonlightning: it's DRM
+[01:18:52] <Sour_Sweet> To record protected content? To use any hardware I freaking want?
+[01:19:09] <Moonlightning> Okay, bad joke.
+[01:19:10] <wolfyshy> ^
+[01:19:27] <Sour_Sweet> DRM will always fail if it doesn't provide the user any advantage. The industry will eventually get it
+[01:19:42] <Sour_Sweet> Steam works with me for example ;-)
+[01:19:53] <Moonlightning> Well, it won't if it doesn't ever /hinder/ the user.
+[01:19:57] <Moonlightning> Like…yeah, Steam :P
+[01:20:05] <Moonlightning> I haven't even /noticed/ Steam does DRM
+[01:20:10] <Moonlightning> that's how good it is.
+[01:20:18] <Compu> how does steam fo DRM?
+[01:20:19] <Moonlightning> It Just Works. I'm okay with that.
+[01:20:24] *** init3 is now known as Init3-away
+[01:20:40] <Sour_Sweet> Compu: How does it not? Your key is paired with your account for lifetime
+[01:20:50] <Compu> what key
+[01:21:04] <Sour_Sweet> Content is downloaded encrypted before release. There is online auth.
+[01:21:12] <Compu> oh
+[01:21:15] <Compu> meh
+[01:21:21] <Sour_Sweet> license key?
+[01:21:22] <Compu> i cant use steam cuz no gaming pc
+[01:21:23] <Phase> Moonlightning, there's surprisingly little to it as well
+[01:21:33] <Compu> Sour_Sweet: i only have a ps3
+[01:22:05] <Phase> there's a function to request an auth ticket from steam, and the developer builds their drm around that check
+[01:22:20] <Phase> alternatively, the developer doesn't do that, and theres no drm
+[01:22:29] <Sour_Sweet> Steam runs on pretty much any toaster
+[01:22:36] <Sour_Sweet> Some games do as well
+[01:22:50] <Sour_Sweet> Half-Life 1 is still pretty amazing
+[01:23:08] <Compu> Sour_Sweet: so it will run on this? http://compu.ml/desktop.html
+[01:23:10] <PinkiePieBot> [ CPU-Z HTML report file ]
+[01:24:45] <Sour_Sweet> It does
+[01:24:53] <Compu> steam itself does
+[01:24:54] <Compu> barely
+[01:25:00] <Moonlightning> Whether Steam will run is a very different question from whether a given game will run… :P
+[01:25:37] <Compu> but team fortress 2 runs at 5 fps at 800x600 with the lowest graphics settings possible
+[01:26:06] <Compu> minecraft wont get past the main menus which run at around 5 fps
+[01:26:35] <Moonlightning> Okay…is there a way I can check for latency from a shell, and then do something like `ping`, but with timestamps? >.>
+[01:26:49] <Sour_Sweet> Half-Life 1 would probably run as well
+[01:27:04] <Colgate> Moonlightning: ping -D
+[01:27:17] <Sour_Sweet> That game is from 1998 I believe
+[01:27:29] <Sour_Sweet> ... and still amazing
+[01:27:33] <Moonlightning> :D
+[01:27:44] <Moonlightning> How did I never learn of -D? Thanks, Colgate.
+[01:27:51] <Colgate> thanks `man`!
+[01:28:04] <Compu> Sour_Sweet: yes well i cant afford half life 1 as we r currently struggling to save up for a $170 chromebook
+[01:29:55] <Compu> besides i prefer open world or driving games
+[01:30:13] <Compu> i get bored of tf2 quickly
+[01:31:04] <Sour_Sweet> I'm not suggesting to go out and play games on that machine, but wanted to point out how wide the range actually is
+[01:32:46] <Sour_Sweet> Also you're running windows Vista which is a crime in and of itself xD
+[01:34:39] *** Princess_Cadance|AFK is now known as Princess_Cadance
+[01:34:50] *** Joins: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au)
+[01:35:42] <Sour_Sweet> To be very honest on a machine that old with no intention to run games I'd have installed some kind of Linux already :D
+[01:40:04] <Moonlightning> ^
+[01:40:54] <wolfyshy> am I the -only- woof in the world that thinks vista was the better of the windowses?
+[01:41:21] <Moonlightning> wuuuuuuut
+[01:41:27] <Phase> yes
+[01:41:33] <wolfyshy> xp was too plasticky, and 7's glass reflections looked wrong, but vista's glass was shiny and nice
+[01:41:44] * Phase hates the way vista looks
+[01:41:46] <Moonlightning> Oh, you mean just as far as look and feel?
+[01:41:51] <Sour_Sweet> wolfyshy: It had some good ideas, and the style was nice - that's it
+[01:41:54] <wolfyshy> also I never had any driver problems, but I was running it on brand new hardware so it had 64-bit drivers >.>
+[01:42:17] <Phase> the green and black colour scheme hurts to look at
+[01:42:40] <wolfyshy> Moonlightning: yeah mainly look and feel
+[01:43:20] <Moonlightning> Yeah. I played with a Vista box a little once when Vista first came out
+[01:43:21] <Sour_Sweet> That being said I hate the new everything need to be pseudo "modern" and flat
+[01:43:29] <Sour_Sweet> s*
+[01:43:34] <Moonlightning> I like the glassy stuff of Vista and 7 as opposed to the XP stuff, but they seem the same to me
+[01:43:47] <Compu> Sour_Sweet: kept vista on cuz i watched netflix on there, by the time netflix started html5 i had so much other stuff on there it would be a hassle to go to linux
+[01:44:53] <Compu> Phase: green and black?
+[01:44:58] <Sour_Sweet> Windows 7's aero glass is amazing imo. I don't care that it costs computing color, since I'm running on highend hardware anyway. Tinted it to a darker color and loved it ^^
+[01:45:09] <Compu> Phase: u must despise xbox then ^_^
+[01:45:14] <Sour_Sweet> derp computing power*
+[01:45:34] <Phase> Compu, http://goo.gl/iUSGhA this
+[01:45:39] <Phase> its just
+[01:45:40] <Phase> ew
+[01:45:45] <Phase> why
+[01:46:00] <Compu> Phase: u can change the wallpaper and the colors
+[01:46:25] <Phase> yes but what i'm saying is that looks like crap :P
+[01:46:56] <Phase> plus theres some colours they removed the ability to change, at least i assume they did, gone in 7
+[01:47:21] <Sour_Sweet> It's getting even worse in 10
+[01:47:57] <Compu> i love how ubuntu looks
+[01:48:01] <Sour_Sweet> Idk if one particular options menu I'm searching for is just gone or hidden "somewhere"
+[01:48:32] <Phase> i think they removed the border padding option in 8
+[01:48:35] <Phase> which is really annoying
+[01:48:38] <Phase> those borders are massive
+[01:48:41] <wolfyshy> one of the very very rare times I will share a screenshot here: http://i.imgur.com/d8sCSi5.png
+[01:49:11] *** Init3-away is now known as init3
+[01:49:29] <wolfyshy> it's just sooooo purrrrrdy
+[01:49:36] * Phase thinks otherwise
+[01:49:40] <Phase> to each their own
+[01:49:55] <wolfyshy> indeed :3
+[01:50:03] <wolfyshy> I like how plasma 5 looks too
+[01:50:29] <wolfyshy> http://distrowatch.com/images/screenshots/kubuntu-14.10-dark-theme.png
+[01:50:33] <Compu> wolfyshy: heres mine http://screencloud.net/v/r9t9
+[01:50:36] <PinkiePieBot> [ Screenshot at 19:50:10 | ScreenCloud ]
+[01:50:58] <wolfyshy> two bluetooths :o
+[01:51:05] <wolfyshy> really nice background there
+[01:52:02] <Compu> wolfyshy: one of them is ubuntu's default bluetooth manager and the other is blueman
+[01:53:48] <Compu> wolfyshy: https://dl.dropboxusercontent.com/u/107007723/linux-ubuntu-computer.jpg
+[01:54:22] <Sour_Sweet> Because why not: https://cloud.kab-s.de/index.php/s/nDRCdxgvAEuCnfA
+[01:54:25] <PinkiePieBot> [ ownCloud ]
+[01:56:44] <wolfyshy> gobby :D
+[01:56:52] <wolfyshy> I used to use that all the time back in school
+[01:56:53] <Compu> wolfyshy: heres another wallpaper http://compu.ml/fluttershy.jpg
+[01:57:07] <wolfyshy> we'd do all our group coding projects in gobby, it was so epic
+[01:57:23] <wolfyshy> Compu: ehehehehehehehehe <3
+[01:57:27] <Compu> wolfyshy: and i forgot i had my other wallpaper on my server http://compu.ml/ubuntu.jpg
+[01:58:59] <Sour_Sweet> wolfyshy: I'm using it to write on scripts with two other people since I'm not aware of any better solution :D
+[01:59:28] <Compu> wolfyshy: i use github
+[01:59:40] <wolfyshy> Sour_Sweet: yeah it's good for that too
+[01:59:44] <wolfyshy> Compu: yeah but this is live
+[02:00:03] <wolfyshy> Compu: gobby is literally multiplayer notepad - multiple people can watch as you edit the file, and you can edit files together
+[02:00:09] <wolfyshy> it has a chat and highlighting too I think
+[02:00:24] <wolfyshy> so you can go "hey charlie, does this SDL call look right to you?" and highlight it
+[02:00:28] <wolfyshy> and he can just change it if he thinks no
+[02:00:47] <Sour_Sweet> GitHub doesn't work that well when work is done simultaneously while talking over Teamspeak ^^
+[02:01:43] <Sour_Sweet> I do have a git server (well shell) running for those kind of things
+[02:02:37] <Sour_Sweet> Because GitHub doesn't allow private repos free and honestly I don't know if I want to give away private code to a third party
+[02:02:45] <Sour_Sweet> (e.g. GitLab)
+[02:04:00] <wolfyshy> that feel when 100 firefox tabs http://i.imgur.com/3KSv9wI.webm
+[02:04:21] <Compu> wolfyshy: ah like google drive but for coding
+[02:04:22] <wolfyshy> Sour_Sweet: I run my own private gitlab instance for me and my friends :3
+[02:04:28] <wolfyshy> Compu: yup exactly
+[02:04:30] <Rylee> because wolfyshy is a nerd
+[02:04:37] <wolfyshy> I am a huge nerd
+[02:05:45] <Compu> eh
+[02:06:22] <Compu> i dont really do much collaborative coding since no one wants to code with me usually unless i want to pay them huge sums of money
+[02:06:49] <Compu> i get some help but for the most part i write things myself
+[02:07:49] <Compu> http://compubot.compu.ml/
+[02:07:50] <PinkiePieBot> [ CompuBot by ask-compu ]
+[02:08:23] *** Sour_Sweet is now known as Seoson|BNC
+[02:20:24] *** Quits: sleumas2000_ (uid91753@Pony-5dnslh.ealing.irccloud.com) (Quit: Connection closed for inactivity)
+[02:23:45] *** Joins: Alphagamer774 (Alphagamer7@Pony-2h7vef.cc.shawcable.net)
+[02:24:27] *** Alphagamer774 is now known as Alpha774[gw2]
+[02:40:04] *** Quits: JockeTF (jocke@Pony-vk4968.priv.bahnhof.se) (Quit: Leaving.)
+[02:45:21] *** Joins: Asoka (Asoka@Pony-re03qi.net-htp.de)
+[02:48:30] *** Quits: Asoka_White (Asoka@Pony-gpnlii.net-htp.de) (Ping timeout: 121 seconds)
+[03:00:40] *** Quits: roflin (dennis@Pony-q5puo5.kassala.de) (Connection closed)
+[03:01:26] *** Joins: roflincopter (dennis@Pony-aend1d.es)
+[03:09:34] <HoneyDrops> http://betanews.com/2015/10/08/mozilla-sets-out-its-proposed-principles-for-content-blocking/  Easy: user decides what is or is not shown in a web browser on their system, it sends only information they chose to send (and they are completely free to chose the exact data sent), makes only makes network requests they decide to allow, and whatever browser system(s) follow the users will
+[03:09:34] <PinkiePieBot> [ Mozilla sets out its proposed principles for content blocking ]
+[03:09:36] <HoneyDrops> absolutely.
+[03:13:11] *** Quits: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au) (Quit: My people need me!)
+[03:14:20] <Colgate> I will block what I want to block, /shrug
+[03:15:19] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[03:15:38] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[03:18:09] <Moonlightning> :V
+[03:39:31] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[03:41:15] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "be back after a while, doing a clean install of new graphics drivers")
+[04:07:58] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[04:20:02] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[04:49:34] *** Eventide is now known as Eventide|Sleepie
+[04:50:16] *** Eventide|Sleepie is now known as Eventide|Sleepies
+[05:25:39] <Compu> i live in central southern new york state http://nyti.ms/1QcDHzA
+[05:27:08] *** Joins: init3 (Jason@init3.Is.Not.A.Clever.Poni)
+[05:27:48] <Soarin> https://dl.dropboxusercontent.com/u/19014693/500.png
+[05:30:48] <wolfyshy> lol Soarin
+[05:31:44] *** Princess_Cadance is now known as RedHelper
+[05:40:09] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[05:58:40] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[06:00:20] <Compu> hey whats the best way to help someone get a youtube api key?
+[06:01:50] <Dusk> Tell them to get a google account
+[06:02:48] <Dusk> https://developers.google.com/youtube/v3/getting-started
+[06:02:49] <PinkiePieBot> [ YouTube Data API Overview  |  YouTube Data API  |  Google Developers ]
+[06:20:25] <wolfyshy> .-. so much IRC spam tonight
+[06:20:50] <Dusk> Spam :o
+[06:21:16] <wolfyshy> yeah, already seen three nets clonesx'd, and heard reports of two others
+[06:21:23] <wolfyshy> all mah IRCs
+[06:21:44] <Colgate> I got hit by some spammer on chatspike
+[06:21:56] <Colgate> it made my weechat hit 20% cpu, lol
+[06:21:59] <wolfyshy> yeah he moved on to mozilla irc
+[06:22:06] <wolfyshy> which I am also on
+[06:22:10] <Colgate> ah, not there
+[06:22:48] <wolfyshy> o_o
+[06:22:55] <wolfyshy> wait
+[06:23:16] <wolfyshy> the Colgate on chatspike = you?
+[06:23:21] <Colgate> yes
+[06:23:44] <Dusk> I'm curious if he'll come around to my networks too
+[06:24:26] <wolfyshy> wow I see like 5 people from this channel on #inspircd looking at /names
+[06:24:38] <wolfyshy> never realised/noticed before
+[06:24:45] <Dusk> lol
+[06:25:14] <Colgate> /shrug, always good to be in the main channel of the ircd you run for any important issues
+[06:25:38] <wolfyshy> I agree, I just never noticed before, that's cool
+[06:28:35] <Googie> Dusk: He's on the DroneBL list now :V
+[06:28:45] <wolfyshy> oh good
+[06:28:48] <Dusk> Googie: Oh
+[06:28:55] <wolfyshy> I already k:lined his dns on my network
+[06:29:03] <wolfyshy> but always good to be doubly sure
+[06:29:05] <Dusk> Well then I'll get to see the wonderful blacklist hits in my snomasks
+[06:29:09] <Dusk> \o/
+[06:29:12] <Colgate> I should get a dronebl key
+[06:29:20] <Dusk> er network notices
+[06:29:21] <Dusk> but w/e
+[06:29:26] <Dusk> words and tired
+[06:29:48] <Colgate> we find enough open proxies on here as it is :P
+[06:29:50] * Googie is also on Chatspike/#inspircd Woo.
+[06:29:59] <Googie> Yeah, we probably should.
+[06:30:07] <Colgate> 10-20/day
+[06:36:24] <Moonlightning> Really? :o
+[06:36:52] <Colgate> yes
+[06:37:11] <Colgate> let me see how many we had yesterday, I have daily reports written to file :P
+[06:37:31] <Colgate> 18
+[06:38:07] <Colgate> 17 the day before
+[06:38:24] <Colgate> and 12 before that
+[06:38:30] <Colgate> we get a lot of proxies :P
+[06:38:59] <Colgate> and those are just the ones we scan and find, ofc
+[06:46:08] *** RedHelper is now known as Creeps|AFK
+[06:51:25] *** Soarin is now known as Gigabit
+[07:35:35] *** Gigabit is now known as Snoarin
+[07:56:30] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[08:08:09] *** Joins: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au)
+[08:20:34] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Quit: )
+[08:23:48] *** Joins: locodashie11 (locodash11@Taco.eating.Anthro.Batpony)
+[08:33:16] *** zz_CyberJacob is now known as CyberJacob
+[08:38:23] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[08:50:05] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[08:57:43] *** Joins: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net)
+[08:58:18] <Moonlightning> I need a linewise truncate
+[08:58:40] <Moonlightning> An option to make `truncate` go by lines instead of bytes
+[08:59:18] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[08:59:31] <Colgate> you mean `head`?
+[09:00:00] <Moonlightning> `head` doesn't truncate, though.
+[09:00:41] <Colgate> head -n5 file > file?
+[09:01:41] <Moonlightning> Well, sure, but the point is to avoid rewriting the file.
+[09:02:15] <Moonlightning> Just calling truncate() is more efficient on CoW filesystems, SSDs, and…just in general, actually
+[09:13:38] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[09:14:18] *** Quits: Alpha774[gw2] (Alphagamer7@Pony-2h7vef.cc.shawcable.net) (Quit:  HydraIRC -> http://www.hydrairc.com <- The alternative IRC client)
+[09:22:34] *** Quits: init3 (Jason@init3.Is.Not.A.Clever.Poni) (Connection closed)
+[09:22:48] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[09:27:31] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[09:34:20] *** CyberJacob is now known as zz_CyberJacob
+[09:34:21] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[09:38:30] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (Ping timeout: 121 seconds)
+[09:46:06] *** Joins: RazorSharpFang (chatzilla@sharpest.of.all.fangs)
+[10:12:38] *** Quits: Compu (compu@snuggly.filly) (Quit: No Ping reply in 120 seconds.)
+[10:14:49] *** Joins: Compu (compu@snuggly.filly)
+[10:28:45] *** Joins: \m (mniip@Pony-o9q.v2g.219.178.IP)
+[10:54:17] *** Joins: Phase (Phase4@Pony-pm0kpp.internode.on.net)
+[11:31:36] *** Awaykitty is now known as Unixkitty
+[11:34:01] *** Quits: frackster (sid20128@Pony-rk5kfp.tooting.irccloud.com) (Ping timeout: 121 seconds)
+[12:07:48] *** Joins: frackster (sid20128@Pony-rk5kfp.tooting.irccloud.com)
+[13:10:08] *** Eventide|Sleepies is now known as Eventide
+[13:12:07] *** Unixkitty is now known as Awaykitty
+[13:21:00] * RainbowHacks sighs
+[13:21:05] * RainbowHacks noses Colgate 
+[13:22:44] *** Seoson|BNC is now known as Sour_Sweet
+[13:57:51] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[14:11:42] *** Awaykitty is now known as Unixkitty
+[14:31:18] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[14:38:42] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[14:53:13] *** Unixkitty is now known as Awaykitty
+[15:05:05] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[15:25:42] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[15:47:14] *** Joins: CrassyPaddles (test@Pony-rl6.enl.137.198.IP)
+[15:53:36] *** Joins: Crimson_Tail (Bluepon@Pony-n68c6s.cg80.k4gu.0151.2601.IP)
+[15:54:46] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[15:57:32] *** Quits: locodash11[lagout] (locodash11@Pony-osmcfg.co.comcast.net) (Ping timeout: 121 seconds)
+[15:58:19] *** Quits: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au) (Connection closed)
+[16:16:02] *** Joins: zeta_ (Bluepon@Pony-mfh7oq.md.comcast.net)
+[16:17:48] *** Quits: Crimson_Tail (Bluepon@Pony-n68c6s.cg80.k4gu.0151.2601.IP) (Killed (NickServ (GHOST command used by zeta_!Bluepon@Pony-mfh7oq.md.comcast.net)))
+[16:17:48] *** zeta_ is now known as Crimson_Tail
+[16:27:48] *** Quits: init3 (jason@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[16:47:38] *** Quits: nnnn20430 (nnnn20430@mindcraft.si.eu.org) (Quit: ZNC 1.7.x-git-219-0d8083e - http://znc.in)
+[16:53:00] *** Joins: nnnn20430 (nnnn20430@mindcraft.si.eu.org)
+[17:58:31] <Moonlightning> … :O
+[17:58:52] <Moonlightning> I wonder if I could rig up a `vim` instance to be a pasteboard
+[18:03:42] * Googie blinks
+[18:08:01] <Moonlightning> I've always wanted a more complex pasteboard
+[18:08:35] <Moonlightning> Something that would just kinda sit there and remember more than the last one thing that was copied.
+[18:11:24] <Googie> Also: https://blog.lastpass.com/2015/10/lastpass-joins-logmein.html/
+[18:11:25] <PinkiePieBot> [ LastPass Joins the LogMeIn Family | The LastPass Blog ]
+[18:11:40] <Googie> They're going to be losing a lot of customers :V
+[18:13:49] <Moonlightning> o.e
+[18:28:12] <Sour_Sweet> No websites, no. Just give me the whole site an English not some things in German and other parts directly below it in English. That confuses my brain -.-
+[18:28:41] <Moonlightning> hmmm…
+[18:29:05] <Moonlightning> Does HTML have a mechanism for specifying translations within the same document, with `lang` or something?
+[18:29:11] <AppleDash> Googie: Why would they lose any customers?
+[18:29:37] <Rylee> AppleDash: because logmein is fucking horrifying
+[18:29:42] <AppleDash> Is it?
+[18:29:43] <Rylee> it has an awful, awful reputation
+[18:29:53] <Rylee> because they are great at ruining good products
+[18:30:05] <Rylee> LOGMEIN PREMIUM $995/YR
+[18:30:08] <Rylee> like seriously
+[18:30:22] <Sour_Sweet> lang="de"  or whatever is a universal attribute
+[18:30:25] <Compu> wat
+[18:30:28] <AppleDash> That stuff is meant for businesses.
+[18:30:44] <Compu> does anyone even use logmein when teamviewer exists?
+[18:31:09] <Rylee> they used to have a free tier
+[18:31:09] <Moonlightning> Does anyone even use TeamViewer et al when SSH and screen|tmux exist? :V
+[18:31:12] <Rylee> and then zapped it
+[18:31:31] <Sour_Sweet> Compu: They own Hamachi. I know a lot of people using it
+[18:31:33] <Rylee> Moonlightning: you may not be aware of it but there is a subset of computer users who use a software called "Windows"
+[18:31:57] <Sour_Sweet> ^ +1
+[18:32:06] <Moonlightning> Rylee: cygwin?
+[18:32:13] <Moonlightning> Or this POSIX subsystem I keep hearing about :P
+[18:32:15] <Rylee> are you being pointedly obtuse
+[18:32:39] <Rylee> or do you just actually not know anything about windows
+[18:32:42] <Compu> Sour_Sweet: whyyyyyy
+[18:33:05] <Moonlightning> There are terminal emulators for Windows that just do SSH, too
+[18:33:08] <Moonlightning> PuTTY comes to mind
+[18:33:21] <Compu> Moonlightning: those r clients, not hosts
+[18:34:04] <Sour_Sweet> Apart from that you need an easy to use client and server for dummys
+[18:34:14] <Rylee> sure i'll just use PuTTY next time I need to connect to a Windows desktop
+[18:34:23] <Rylee> (????????)
+[18:34:26] <Sour_Sweet> Which is what Teamviewer aims for.
+[18:34:42] <Moonlightning> Oh, Windows /server/
+[18:35:11] <Compu> http://www.fimfiction.net/story/106142/friendship-and-mysteries
+[18:35:11] <PinkiePieBot> [ Friendship and Mysteries by The Cake Devil - 21 chapters - 4648 views - [Comedy][Random][Crossover][Adventure][Human] - 61477 words - Likes: 218 - Dislikes: 11 - 95.2% ]
+[18:35:14] <Rylee> of course you don't use these products for a windows server. you'd use RDP, which is pretty industry standard.
+[18:35:20] <Rylee> or you'd use powershell.
+[18:35:28] <RazorSharpFang> Yay powershell?
+[18:35:39] <Sour_Sweet> Also TeamViewer does NAT traversal for you
+[18:35:39] <Moonlightning> Not server server, server as in the thing that runs a server that you're connecting to :P
+[18:35:49] <Rylee> .... yes.
+[18:36:37] <Sour_Sweet> I've used the windows power shell exactly 2 times in my entire life :P
+[18:38:41] <RazorSharpFang> I've mainly used it on Win7 machines that have CMD disabled.
+[18:38:57] <Sour_Sweet> WHAT and they leave the power shell on?
+[18:39:07] <Sour_Sweet> *facehoof*
+[18:39:08] <RazorSharpFang> They just want to stop scriptkiddies
+[18:45:06] <Sour_Sweet> Oh oh new German law on the way to make publishing stolen(leaked) data illegal.
+[18:45:16] <Moonlightning> o.e !!!!
+[18:45:35] <Sour_Sweet> I really hope they stop it in time.
+[18:45:39] <Moonlightning> Dammit why is the entire world going to absolute shite
+[18:45:46] * Moonlightning unrelatedly boops HoneyDrops with a link to #SRQsRoom
+[18:46:01] <Moonlightning> We're talking about right-to-be-forgotten and stuffs
+[18:47:19] <Sour_Sweet> ^Like it ever was a problem for average users. I had numeros websites delete post about or from me in the past with no problems at all.
+[18:47:56] <Moonlightning> That covers literally everything, though, doesn't it?
+[18:47:59] <Moonlightning> Archives and shit, too
+[18:48:27] <Moonlightning> If you start getting into archives, then you're basically retconning
+[18:48:36] <Moonlightning> Which is a redflag
+[18:48:56] <RazorSharpFang> I didn't murder those people. *retconned*
+[18:48:57] <Sour_Sweet> There is an exception for press, but it's insufficient, so they can even hit the press
+[18:49:13] <Moonlightning> what, seriously?
+[18:49:20] <Moonlightning> How long ago does the thing have to have happened? o.e
+[18:49:25] <Moonlightning> you could potentially use that as a realtime censor
+[18:49:39] <Moonlightning> “no, you can't print that I wANT IT TO BE FORGOTTEN”
+[18:51:23] <Sour_Sweet> It gets even worse: Know those nice people collecting credit card numbers from hacked websites or database dumps and sending them to the banks? Nope illegal. Hosting content from TheHackingTeam about exploits they've actively used? Nope illegal
+[18:53:42] <Moonlightning> People /do/ that?
+[18:53:55] <Moonlightning> I wouldn't do that. Ungrateful idiot illiterate banks would probably go after me for hacking -.-
+[18:55:34] <RazorSharpFang> Law makers so out of sync, they may as well be using DOS.
+[18:59:26] <Sour_Sweet> The law is btw. bundled with the "Vorratsdatenspeicherung" means the long term archival of telecommunication metadata for law enforcement
+[18:59:58] <Sour_Sweet> (which is in itself a failure)
+[19:00:03] *** Pony_41062 is now known as Fusl
+[19:00:39] <RazorSharpFang> I don't understand why they don't ask people working in the tech industry what laws are required.
+[19:00:59] <RazorSharpFang> And not just the people at the top.
+[19:01:16] <Moonlightning> It's called a technocracy, RazorSharpFang
+[19:01:28] <Moonlightning> Teachers determine how the education system works, etc
+[19:01:30] <Sour_Sweet> I can only hope that if it passes out high court is voiding it again.
+[19:01:48] <Sour_Sweet> our*
+[19:05:44] <RazorSharpFang> Moonlightning: I haven't heard anything of the sort. Care to expand on that?
+[19:07:55] <Moonlightning> > The technocracy movement is a social movement which arose in the early 20th century. Technocracy was popular in the United States and Canada for a brief period in the early 1930s, before it was overshadowed by other proposals for dealing with the crisis of the Great Depression.[1][2]
+[19:07:57] <Moonlightning> > The technocrats proposed replacing politicians and businesspeople with scientists and engineers who had the technical expertise to manage the economy.[1]
+[19:08:53] <RazorSharpFang> And that's not the current system, then?
+[19:09:16] <Moonlightning> The current system is democracy.
+[19:09:23] <Moonlightning> i.e. rule by charismatic politicians.
+[19:09:35] <Moonlightning> Read the second bit again/
+[19:09:38] <Moonlightning> s:/:.:
+[19:10:31] <RazorSharpFang> (replace '/' with '.' ) ?
+[19:10:51] <Moonlightning> (Yeah.)
+[19:11:09] <RazorSharpFang> I've seen that one used here, where else is it found?
+[19:12:54] <Moonlightning> What, the s/// syntax?
+[19:12:59] <RazorSharpFang> Yeah
+[19:13:15] <Moonlightning> It's found in `sed` and `vi`. Probably other editors, too.
+[19:13:47] <Sour_Sweet> Is it non geeky to use nano? :P
+[19:14:10] <Moonlightning> vim has soured me to nano
+[19:14:18] <Moonlightning> I can't /navigate/
+[19:14:41] <Moonlightning> I'm always trying to navigate, and ending up with junk being added to the file instead
+[19:15:05] <Moonlightning> I'm so used to `vim`s movements that I hate using `nano`.
+[19:15:19] <Sour_Sweet> I cannot handle vim ... I just can't
+[19:15:20] <AppleDash> I don't know what's different about navigating
+[19:16:13] <Moonlightning> AppleDash: between vim and nano, really?
+[19:16:21] <AppleDash> Really
+[19:16:47] <Moonlightning> `nano`s movement commands consist of basically arrow keys, home, end, pageup, pagedown, as far as I can tell
+[19:16:55] <Moonlightning> There's things like control-w or something to search
+[19:17:11] <Moonlightning> That's…about it.
+[19:17:12] <AppleDash> I don't call that navigation
+[19:17:21] <Moonlightning> It's what I meant by navigation.
+[19:17:24] <AppleDash> I use cursor keys, home, end pageup, and pagedown in vim too
+[19:17:32] <Moonlightning> I use normal mode in `vim`.
+[19:17:38] <AppleDash> no idea what that is
+[19:17:49] <Moonlightning> It's when you press escape and you do things that aren't inserting text.
+[19:18:13] <Moonlightning> I use ^$|HML extensively
+[19:18:31] <Moonlightning> besides things like delete|yank|put, which as far as I can tell, you just can't do in nano
+[19:18:56] <Moonlightning> I'm always jumping around in so many ways in `vim`, and, as far as I can tell, you /just can't do/ most of that stuff in `nano`.
+[19:19:08] <Moonlightning> It feels so much more slow and limiting.
+[19:20:50] * RazorSharpFang just uses pageup and pagedown
+[19:21:11] <Moonlightning> I use those, too, sure
+[19:21:29] <Moonlightning> But I also use j and k with leading counts
+[19:21:35] <Moonlightning> I don't think you can do that in nano
+[19:21:40] <RazorSharpFang> jump and.... kill?
+[19:22:03] <Moonlightning> move down n lines, move up n lines
+[19:22:24] <Moonlightning> part of the hjkl alternative to the arrow keys
+[19:22:31] <Moonlightning> They're all on the home row. :P
+[19:22:44] <Moonlightning> h is left, l is right; those are straightforward
+[19:22:48] <AppleDash> Fun fact, did you know that nano doesn't work on a tty on a 3k or 4k screen?
+[19:22:53] <AppleDash> It just claims "Screen too large"
+[19:22:59] <Moonlightning> screen too LARGE?
+[19:23:02] <Moonlightning> wtf!
+[19:23:05] <AppleDash> Yes
+[19:23:16] <AppleDash> I'd guess there's a limit to the size of the buffer it allocates for the... buffer
+[19:23:22] <Moonlightning> RazorSharpFang: j and k I could never keep straight until I read someone pointing out on Stack Overflow that j has a descender and k has an ascender
+[19:23:49] <RazorSharpFang> You mean the literal glyphs?
+[19:23:58] <Moonlightning> Yeah.
+[19:24:11] <Moonlightning> I've found it an incredibly helpful mnemonic.
+[19:25:24] <RazorSharpFang> So, j would be  down, and k would be up?
+[19:25:53] <Moonlightning> Right.
+[19:26:18] <Moonlightning> It's faster than arrow keys if your fingers stay on or near the home row.
+[19:26:27] <AppleDash> Mine go anywhere they please
+[19:27:28] *** Creeps|AFK is now known as RedHelper
+[19:27:28] * HoneyDrops tends to abuse incrmental search.  Also EasyMotion is great, but I haven't really trained myself to use it -- vi(m)'s default movement is basically always more than sufficient.
+[19:27:42] <RazorSharpFang> AppleDash: I guess it cannot handle something of that girth.
+[19:28:06] <AppleDash> o.o
+[19:28:29] <Moonlightning> EasyMotion?
+[19:28:46] * Moonlightning shrugs. `vim`s built-in movements really are pretty comprehensive, yeah.
+[19:29:01] <HoneyDrops> Moonlightning: https://github.com/easymotion/vim-easymotion
+[19:29:02] <PinkiePieBot> [ easymotion/vim-easymotion · GitHub ]
+[19:30:00] <HoneyDrops> Watch the example.  It basically extends the vim movement system and combines it with dynamic labels.
+[19:31:46] <HoneyDrops> It's just for interactive.  <count><action> is still the only way for scripting/macros.
+[19:31:59] <Moonlightning> Oh, cool. :D
+[19:36:36] <Compu> so unix time will run out on saturday, november 20, 2286 at 5:46:39 PM UTC
+[19:37:29] <RazorSharpFang> Good heavens, what will we do?
+[19:37:44] <RazorSharpFang> Maybe then we'll migrate to ipv6
+[19:37:54] <AppleDash> Compu: No it won't
+[19:38:02] <Moonlightning> Where did you get that, Compu?
+[19:38:02] <AppleDash> I don't know where you got that
+[19:38:07] <AppleDash> But you're looking for 2038.
+[19:38:19] <Moonlightning> 31-bit times will overflow in 2038, yeah
+[19:38:21] <Compu> i got it from wolframalpha
+[19:38:29] <Moonlightning> What was your query?
+[19:38:48] <RazorSharpFang> A wolf in sheep's clothing?
+[19:38:51] <Compu> unix time 9999999999 to gregorian date
+[19:38:58] <Compu> did i put too many 9s?
+[19:39:00] <Moonlightning> That's not how it works, Compu
+[19:39:06] <Compu> ??
+[19:39:18] <Moonlightning> You want binary-all-ones, not decimal-all-nines
+[19:39:26] <AppleDash> Moonlightning: You're missing a bit
+[19:39:36] <Compu> uh
+[19:39:37] <Compu> ok
+[19:39:40] <Moonlightning> AppleDash: they're signed integers, right?
+[19:39:49] <AppleDash> Shouldn't be
+[19:39:54] <Compu> well if it will run out why not add more bits?
+[19:40:01] <Moonlightning> Compu: backwards compatability.
+[19:40:06] <Compu> after all we're on 64 bit now
+[19:40:13] <Moonlightning> But, yes, we are extending to 63-bit times
+[19:40:15] * RazorSharpFang is on a 32-bit machine
+[19:40:20] <Compu> Moonlightning: theres a point where that becomes impractical
+[19:40:21] <Moonlightning> AppleDash: 2038 is the 31-bit overflow, anyway :P
+[19:40:25] <RazorSharpFang> 32-bit win10 is a thing.
+[19:40:35] <Moonlightning> Compu: 63-bit times will last for billions of years, so
+[19:40:51] <Compu> Moonlightning: what the last number for the 63 bit times?
+[19:41:06] <Moonlightning> Somepony help me out here; it's overflowing my shell and my `date` :(
+[19:41:06] <Compu> i wanna see if wolfram alpha can give me a time and date for it
+[19:41:22] <Moonlightning> 1 << 63 - 1 == 9223372036854775807
+[19:41:29] <Moonlightning> Plug that in. That many seconds after the Epoch.
+[19:41:38] <AppleDash> 15:30:08 on Sunday, 4 December 292,277,026,596
+[19:41:48] <Moonlightning> Yeah, see, there you go
+[19:41:53] <Moonlightning> What about 127-bit?
+[19:42:00] <Compu> woo
+[19:42:04] <AppleDash> I don't know, but we're never going that fart
+[19:42:10] <AppleDash> far*
+[19:42:12] <RazorSharpFang> Don't you mean 128-bit?
+[19:42:29] <AppleDash> RazorSharpFang: He's being dumb, just smile and nod
+[19:42:29] <Moonlightning> RazorSharpFang: times are signed for some odd reason
+[19:42:40] <Moonlightning> AppleDash: okay, you said 2038. 2038 comes from 31-bit.
+[19:42:48] <RazorSharpFang> wat
+[19:42:51] <Moonlightning> The overflow for 32 bits is in 2106.
+[19:42:53] <Moonlightning> Check it.
+[19:43:00] <RazorSharpFang> What point is there of having negative times?
+[19:43:10] <Moonlightning> RazorSharpFang: …so you can represent times before 1970 :o
+[19:43:21] * Sour_Sweet lolz
+[19:43:35] <Moonlightning> I think that's actually what it's for.
+[19:43:47] <Compu> AppleDash: how bout this far? http://screencloud.net/v/sclk
+[19:43:49] <Sour_Sweet> Unixtime is defines as seconds since 01.01.1970
+[19:43:51] <PinkiePieBot> [ Screenshot at 13:43:35 | ScreenCloud ]
+[19:43:56] <Sour_Sweet> So you need negative values
+[19:44:06] <Sour_Sweet> ed*
+[19:44:19] <Moonlightning> rainbow-dash:~ blackl% gdate -d @$(((1<<31) - 1))
+[19:44:19] <Moonlightning> Mon Jan 18 19:14:07 PST 2038
+[19:44:21] <RazorSharpFang> I thought it was used for the current time...
+[19:44:27] <Compu> gtg
+[19:44:27] <Moonlightning> rainbow-dash:~ blackl% gdate -d @$(((1<<32) - 1))
+[19:44:27] <Moonlightning> Sat Feb  6 22:28:15 PST 2106
+[19:44:34] <RazorSharpFang> I mean, we're not going into the past anytime soon.
+[19:44:48] <Moonlightning> RazorSharpFang: yes, but if it were unsigned, you couldn't represent times before 1970.
+[19:44:56] <Moonlightning> You couldn't store or handle them.
+[19:45:29] <Sour_Sweet> We can just start to store dates as DD.MM.YY again, that will cause no problems at all ........ until the year 2100 :P
+[19:45:54] <Moonlightning> With a signed 32-bit time field, you can go all the way back to December 1901
+[19:46:24] <Moonlightning> Sour_Sweet: and signed 64-bit timestamps will work until 292,277,026,596
+[19:46:44] <Sour_Sweet> Moonlightning: I know. That post was just me trolling
+[19:47:51] <Sour_Sweet> As I've mentioned earlier in this channel I just use (unix) timestamps for anything.
+[19:48:05] <Moonlightning> Well, they're not very readable
+[19:48:19] <AppleDash> you're not very readable
+[19:48:40] <Sour_Sweet> For a machine they are. Better than any freaking string based date
+[19:48:52] <Moonlightning> That's not what I meant by readable, silly
+[19:52:54] *** Quits: firestream (vinylderpy@Pony-i78.l4s.158.69.IP) (Connection closed)
+[19:53:36] *** Snoarin is now known as GigaWork
+[20:09:43] <Moonlightning> Hmm…is it possible to unlink something with a file descriptor, with unlinkat() or something?
+[20:10:00] <Moonlightning> Could be useful for atomically deleting a symbolic link, so you don't accidentally remove an actual file
+[20:10:26] <Moonlightning> Open the symlink as a symlink, check that it's actually a symlink, unlink it with its fd
+[20:10:48] <AppleDash> Moonlightning: unlinkat() exists
+[20:12:41] <Moonlightning> Does it take AT_EMPTY_PATH?
+[20:12:57] <AppleDash> No idea
+[20:13:50] <Moonlightning> No mention of it in the unlinkat() ponypage
+[20:15:46] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Connection closed)
+[20:19:28] <Sour_Sweet> Wait Yahoo search is powered by Bing?!
+[20:20:10] <Moonlightning> What?!
+[20:20:36] * Moonlightning visits Yahoo homepage…
+[20:20:40] <Moonlightning> holy SHIT this is cluttered
+[20:20:42] <Moonlightning> daaaaaamn
+[20:21:40] <Moonlightning> …damn…yeah. o.o
+[20:21:56] <Moonlightning> bottom of the search results page, 'Powered by Bing™'
+[20:22:43] <Sour_Sweet> When did that happen o_0? I haven't visited yahoo in ages
+[20:22:52] <Moonlightning> well shit
+[20:22:58] <Moonlightning> now there's only one major good search engine
+[20:23:09] <Moonlightning> Microsoft's stinks, obviously; Yahoo's is powered by Microsoft
+[20:23:11] <Moonlightning> that leaves Google
+[20:26:16] <johnsey> duckduckgo?
+[20:26:34] <Moonlightning> I said major.
+[20:26:37] <johnsey> also, startpage
+[20:26:40] * Moonlightning does use DDG though
+[20:26:50] <Moonlightning> Google is just so much better at figuring out what I mean :(
+[20:27:41] <johnsey> i have to say, DDG has improved a lot on that in the last years
+[20:28:54] <johnsey> the image search is still a bit lacking, but I tend to find all I'm looking for with the text search engine. exceptions exist but are getting less frequent
+[20:32:08] *** Joins: Skids (ejd@Pony-aaa.lna.79.74.IP)
+[20:34:34] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[20:43:51] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[20:46:19] *** Joins: thatdguy (WebChat@Pony-5dm.thk.160.37.IP)
+[20:48:48] <JustAberrant> Moonlightning: words :)
+[20:57:09] <Sour_Sweet> why do good projects chose awful names? ^^
+[20:57:56] <JustAberrant> cause choosing a good name is hard, and clever marketting types who are good at it tend not to code ;p
+[20:58:19] <JustAberrant> that's my theory anyway
+[21:14:17] <AppleDash> Sour_Sweet: Example?
+[21:14:40] * JustAberrant offers   *Libre*
+[21:14:41] <JustAberrant> ;p
+[21:15:03] <JustAberrant> Libre is a terrible unpleasant word, and any name with it as a base is equally unpleasant imo ;p
+[21:15:08] <AppleDash> lol
+[21:15:25] <JustAberrant> plus it conjures up images of church of RMS followers
+[21:16:36] <AppleDash> Agreed :(
+[21:16:43] * AppleDash sets one such group of followers upon JustAberrant
+[21:17:05] <JustAberrant> :(
+[21:17:48] * JustAberrant throws a bunch of proprietary video drivers on the ground to distract them, then runs for it
+[21:18:54] <AppleDash> :D
+[21:19:42] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[21:20:10] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[21:41:00] * johnsey pours JustAberrant a Cuba Libre
+[21:49:08] <JustAberrant> keep your fancy drinks, I'll have a rum and coke ;p
+[22:08:34] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: Well, that was unexpected...)
+[22:15:51] <HoneyDrops> I just wish the GPL wasn't needed, and we fixed things such that it was a universal right to modify software we own.
+[22:18:10] *** Joins: init3 (jason@init3.Is.Not.A.Clever.Poni)
+[22:22:42] *** Quits: Skids (ejd@Pony-aaa.lna.79.74.IP) (Ping timeout: 121 seconds)
+[22:30:19] <init3> I dunno HoneyDrops. You mean like saying closed source shouldn't be an option at all?
+[22:32:32] *** Quits: Datalink (Datalink@Datalink) (Connection closed)
+[22:35:01] <HoneyDrops> Well that is unrelated, but yes, ideally all software would have publicly viewable source.  If you want a proper free market, it requires goods to be inspectable.
+[22:35:43] <HoneyDrops> I am talking about a right to modify, source availibility makes that a whole lot easier, but decompile/recompile or just pulling up the binary in a hex editor works too.
+[22:38:41] <init3> I got ya. I don't think companies should be required to make the source publicly available. I don't think that's fair to companies that need to make money off the product itself. 
+[22:39:25] <init3> It is kind of shit you can't modify the binary without violating the EULA but if it is for personal use nothing is really stopping you. 
+[22:39:51] <HoneyDrops> Source availability doesn't preclude them selling software.
+[22:41:14] <AppleDash> Atlassian software is Java and not obfuscated
+[22:41:22] <AppleDash> Bypassing license checks is a one-lien change with a decompiler
+[22:41:24] <HoneyDrops> You can still have non-permissively licensed software that is open source.  You can still restrict the terms that you can share the source with others, and it's no different than the existing limits on binaries.
+[22:41:26] <AppleDash> But they still make lots of money
+[22:41:32] <AppleDash> line*
+[22:42:28] <init3> Yeah but it makes piracy so much simplier. I guess that might be considered a moot point but there is the IP aspect too. If you are a competitor you can inspect the source to understand how something nifty is done. 
+[22:42:38] <HoneyDrops> Piracy is already trivial.
+[22:43:07] <init3> Don't just straight rip off the code but you can eaisly use what they are doing as a basis to make your own. 
+[22:43:10] <HoneyDrops> DRM is, by the very nature of what it attempts to do, is inherently broken.
+[22:43:19] <init3> True
+[22:43:29] <init3> I'll give you that. 
+[22:43:36] <HoneyDrops> As far as protecting functionality, none exists now anyway.
+[22:43:37] <init3> I dunno about the IP aspect though. 
+[22:44:17] <HoneyDrops> Nothing stops me from creating a functional equivilent of a program (well aside from patents, but that is another matter that needs fixing).
+[22:44:28] <init3> Well if it is something unique and you have a novel approach someone can well rip off the way it is done though. 
+[22:44:42] <HoneyDrops> If it's novel, then you can patent it.
+[22:44:49] <HoneyDrops> Otherwise, tough cookies.
+[22:44:58] <init3> Yeah, i'd fear an open source world would make software patents even more pervasive
+[22:46:05] <HoneyDrops> And lets not pretend that a competitor won't just decompile or run it though a debugger.  Source code makes things easier, but doesn't make anything more or less possible.
+[22:51:21] <init3> I suppose. I'm not a developer so maybe I'm not well versed enough to say. 
+[23:11:30] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[23:15:50] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[23:16:24] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[23:17:51] *** Joins: Topkick (none@Pony-sg4hgj.tukw.qwest.net)
+[23:20:10] <Colgate> DRM works if you control the hardware
+[23:20:51] <Moonlightning> That would be a nightmare
+[23:21:06] <Moonlightning> Imagine every content distributor with their own devices
+[23:21:17] <Phase> Colgate, ?
+[23:21:35] <Colgate> Phase: digitally verify everything through TPM
+[23:21:37] <HoneyDrops> Colgate: and that's why you take that hardware it shove it up their plot.  (or better, don't buy it, tell everyone not to buy it, and picket loudly to prevent sales)
+[23:22:02] <Phase> Colgate, yes but that assumes every single implementation is secure, and that virtual machines dont undermine the entire process
+[23:22:03] * johnsey idly wonders what kind of phone HoneyDrops is using
+[23:22:31] <HoneyDrops> johnsey: n900.  I know about the GSM module :(
+[23:22:46] <johnsey> mine died sadly :/
+[23:22:56] <HoneyDrops> :(
+[23:23:00] <HoneyDrops> I heard :(
+[23:23:12] <Colgate> Phase: hardware decryption module of some sort
+[23:23:23] *** Joins: Fallfeathers (Fallfeather@Pony-akcg3o.bigpond.net.au)
+[23:23:31] <Colgate> once the key gets leaked, sure
+[23:23:39] <Colgate> but until then, it will be damn hard to do much
+[23:24:14] <Phase> satellite and cable do that, smartcard carrying some obscurity based crypto
+[23:24:24] <Moonlightning> obscurity-based cryptography isn't.
+[23:24:53] <Phase> but you only need to decrypt it once, and the result can be shared
+[23:25:12] <Moonlightning> There's always good ol' point a camera at the screen
+[23:25:15] <Moonlightning> They can't do shit about that
+[23:25:24] <Colgate> have it decrypted in the cpu itself
+[23:25:33] <AppleDash> Moonlightning: Except they can
+[23:25:37] <Moonlightning> I bet with some good editing, you could get all those camera-at-screen artifacts out
+[23:25:42] <Phase> plus in the case of satellite, the smartcards are key generators, the underlying cipher has been proven quite weak
+[23:25:56] <Phase> one modern gpu can in theory brute force it in real time
+[23:26:02] <HoneyDrops> We'll always win against DRM, the only question is how long it takes DRM to lose.  Their best "win" is that the effort to break it isn't worth what it's protecting.  Even then there are those like me who are inclined to break it purely on principle.
+[23:27:12] <Moonlightning> AppleDash: I don't believe you. :P
+[23:27:27] <Colgate> drm can't work if people control their hardware, which is why they are trying to remove that :P
+[23:28:01] <AppleDash> Moonlightning: Have the display flash some kind of pattern or something that humans can't see
+[23:28:06] <AppleDash> have the camera pick that up and refuse to record
+[23:28:25] <Moonlightning> And they'd get /all/ cameras to do that…how?
+[23:28:31] <Colgate> that assumes you don't control the camera
+[23:28:35] <HoneyDrops> ^
+[23:28:37] <AppleDash> New cameras
+[23:28:38] <Phase> including, say, security cameras?
+[23:28:42] <HoneyDrops> Or can't gain control of the camera
+[23:28:44] <Moonlightning> o3o !
+[23:28:50] <HoneyDrops> Phase: :3
+[23:28:50] <AppleDash> Give ie 10 years
+[23:28:54] *** Quits: thatdguy (WebChat@Pony-5dm.thk.160.37.IP) (Ping timeout: 121 seconds)
+[23:28:58] <AppleDash> Phase: Those are far too low qualityu
+[23:29:00] <AppleDash> quality*
+[23:29:07] <Phase> they really aren't
+[23:29:11] <AppleDash> They are
+[23:29:15] <Moonlightning> AppleDash: you mean all I have to do is play an episode of My Little Pony if I don't want to be recorded by anyone?
+[23:29:30] <HoneyDrops> But really, just rip from the display itself.  Surely it's eventually got to be converted to something in the clear to drive the actual panel.  Grab that.
+[23:29:31] <AppleDash> Moonlightning: ...what
+[23:29:52] <Moonlightning> All the cameras will pick up the flashing and refuse to record, yes? :p
+[23:30:00] <Phase> AppleDash, modern ip cameras, full colour 5MP and all the fancy
+[23:30:02] <AppleDash> You're an idiot, I hope you realize
+[23:30:10] <AppleDash> If you want to run around with a massive flat panel strapped to your forehead
+[23:30:11] <AppleDash> be my guest
+[23:30:15] <johnsey> HoneyDrops: the problem is that 99% of the population don't care, as long as they get either fancy devices that support the latest and greatest feature X, or a device for less than Y $currency that does all they need.
+[23:30:20] <HoneyDrops> Just program that into a hat with an IR LED.
+[23:30:24] <Colgate> HoneyDrops: maybe, at the very least it can hard with the integrated circuit after a decryption module for the cable data
+[23:30:27] <Moonlightning> ^2
+[23:30:31] <AppleDash> Or, you know, just put IR LEDs on a hat
+[23:30:35] <johnsey> DRM doesn't matter to them
+[23:30:37] <AppleDash> You can already do that!
+[23:30:48] <Phase> AppleDash, well if security cameras turn off to prevent potential piracy, carrying a flatpannel isn't too bad an idea
+[23:31:02] <HoneyDrops> johnsey: I know, sadly :(
+[23:31:05] <AppleDash> Phase: Not security cameras
+[23:31:09] <AppleDash> They are low quality
+[23:31:13] <Phase> then its not all cameras :P
+[23:31:28] <Phase> you can get higher quality cameras
+[23:31:36] <johnsey> and chip vendors are adding DRM features because the content industry demands it
+[23:31:40] <AppleDash> I've never seen one
+[23:31:43] <Phase> they're not all crap resolution analog crap
+[23:32:27] <Phase> AppleDash, search for 'onvif' or 'psia' ip cameras
+[23:32:49] <Phase> and these guys http://en.tpsee.com/ make modules for most of those
+[23:32:53] <PinkiePieBot> [ TOPSEE|IP Camera Module|HD IP Camera Module|NVR|DVR|HDCCTV|IPC|Network Camera Module|Network Video Server|Video Decoder ]
+[23:32:55] <Phase> mind the crappy site
+[23:33:37] <HoneyDrops> We can hope FPGAs can fill in the gap on the hardware end.  The good thing about math being on your side is you'll always eventually win.
+[23:33:41] <Phase> DRM relies on a level of control that i don't think they can achieve
+[23:34:22] <Phase> AppleDash, and low quality copies are still a copy
+[23:34:27] <AppleDash> Truth
+[23:34:31] <AppleDash> But nobody would want to see them
+[23:35:19] <HoneyDrops> I don't want to even see a high-quality copy most of the time :p
+[23:36:19] <HoneyDrops> I am content to kill of the media industry by abstention.  I actually have little to no interest in "piracy"  I just want to kill of DRM on principle.
+[23:37:11] <Moonlightning> How's the free-baseband project going, btw/
+[23:37:12] <Moonlightning> ? *
+[23:38:25] <AppleDash> I just don't want to pay for movies/music/games because I have better things to pay for
+[23:38:46] <AppleDash> I'll pay for a game if I want it the day it comes out, or if I want something like Steam achievements that I can't get on a pirated game, just for fun
+[23:38:59] <HoneyDrops> I don't mind paying, but if I pay for it I want to be able to do as I damn well please with it.
+[23:39:37] <Moonlightning> Right? :V
+[23:50:37] *** Quits: Phase (Phase4@Pony-pm0kpp.internode.on.net) (Connection closed)
+[23:50:42] *** Joins: Phase4 (Phase4@Pony-pm0kpp.internode.on.net)
+[23:56:44] *** Topkick is now known as CahBot
+[23:56:54] *** CahBot is now known as Windoge
+[23:58:34] *** Windoge is now known as CahBot
+[23:58:38] *** CahBot is now known as Windoge
+[23:59:50] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)

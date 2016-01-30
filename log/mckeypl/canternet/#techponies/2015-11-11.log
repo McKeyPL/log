@@ -1,0 +1,727 @@
+[00:06:05] *** Quits: nscoots (FreyGrimrod@Pony-3rit87.sub-70-192-8.myvzw.com) (Connection closed)
+[00:06:06] *** Joins: nscoots (FreyGrimrod@Pony-3rit87.sub-70-192-8.myvzw.com)
+[00:11:36] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[00:23:34] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[00:26:48] <Moonlightning> Googie: …why would non-HTTP stuff at the application layer slow it down this much?
+[00:28:44] <Googie> You mean for the HTTPS tester thing ?
+[00:28:49] <Moonlightning> Yeah.
+[00:29:01] <Googie> Well, I mean, if it's waiting for a response to a GET request that will never return...
+[00:29:03] <Moonlightning> …ohhhh.
+[00:29:04] <Moonlightning> I need a module that `/kill`s on GET
+[00:29:08] <Moonlightning> …wait a sec…what if I G-Lined it? :o
+[00:30:47] <Moonlightning> …right…I can't G-Line, because no rDNS
+[00:31:05] <Moonlightning> …I have 2.0.20…can't I reenable rDNS at this point?
+[00:33:59] *** Quits: Dusk (Dusk@dusky.horse) (A TLS packet with unexpected length was received.)
+[00:34:01] *** Quits: GeekBrony (GB@bronydom.net) (A TLS packet with unexpected length was received.)
+[00:34:01] *** Quits: Sakura (Sakura@is.a.very.derpy.pony) (A TLS packet with unexpected length was received.)
+[00:34:01] *** Quits: sleumas8472 (sleumas2000@my.little.karaoke) (A TLS packet with unexpected length was received.)
+[00:34:01] *** Quits: catnickfl (catnickfl@catnickfl.bronytv.net) (A TLS packet with unexpected length was received.)
+[00:35:51] <Moonlightning> Whoa.
+[00:35:58] <Moonlightning> /Everypony's/ having TLS issues today. XD
+[00:36:13] <Moonlightning> Dunno why G-Lining it didn't work. Z-Lining it seems to have done the trick, though.
+[00:36:25] <Moonlightning> I…guess Insp still does the TLS handshake?
+[00:36:31] <Moonlightning> I was worried that it wouldn't
+[00:37:23] <Shival|Away> Googie: Colgate: i wonder if they operate like one of those short term lenders that the US seems to be full of
+[00:37:43] <Googie> Moonlightning: Yeah, you can enable rDNS on .20
+[00:39:03] <Colgate> Shival|Away: payday loans? :P
+[00:39:46] <Shival|Away> Colgate: lol yeah those things
+[00:39:54] <Colgate> yeah, those places are awful
+[00:40:07] <Phase> they're showing up in aus too
+[00:40:37] <Shival|Away> Phase: yeah but atleast we regulate them abit better
+[00:40:53] *** CyberJacob is now known as zz_CyberJacob
+[00:40:54] * Phase is highly skeptical of any company willing to give loans those least capable of paying them off
+[00:42:03] <Shival|Away> though im still curious on paypals interest rates
+[00:42:07] <Shival|Away> or if they operate like GE money
+[00:42:13] <Shival|Away> and their interest rate is of the entire emount
+[00:42:15] <Moonlightning> Don't use paypal. -.-
+[00:42:16] <Shival|Away> nomatter how much you have paid off
+[00:42:26] <Moonlightning> PayPal has been known to fuck people over just because they're Bitcoin users.
+[00:42:28] <Shival|Away> when you do like the furnature financing
+[00:42:39] <Moonlightning> So fuck PayPal.
+[00:42:51] * Phase doesn't keep money in paypal
+[00:43:02] * Shival|Away doesnt use paypal anymore at all
+[00:55:17] <DJ-C0L7[EIT]> any ees on tonight?
+[00:59:17] <Moonlightning> Any what?
+[01:00:29] <DJ-C0L7[EIT]> Electrical Engineers
+[01:19:34] *** Quits: Pocky (Pocketguns2@Digging.a.Hole) (Connection closed)
+[01:25:37] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[01:31:42] <Phase> DJ-C0L7[EIT], pin
+[01:31:43] <Phase> ping'
+[01:53:07] *** Joins: wolfyshy (woof@fluttering.shyly.through.the.forest)
+[01:54:50] <Moonlightning> Somepony remind me in two hours to tell nginx to stop listening on 444.
+[01:55:20] <Colgate> .in
+[01:55:20] <PinkiePieBot> Colgate: Sorry, didn't understand the input.
+[01:55:33] <Colgate> .in 2h tell Moonlightning stop listening on port 444
+[01:55:33] <PinkiePieBot> Colgate: Okay, will remind at 02:56Z
+[01:55:46] <Colgate> \o/
+[01:55:48] <wolfyshy> haha, I was gonna try and remember weechat timer syntax
+[01:55:49] <Moonlightning> \o/
+[01:56:06] <Colgate> wolfyshy: I have an /at script for that too
+[01:56:18] <Colgate> cron.py, whee!
+[01:56:20] <Moonlightning> Now I just have to remember to not accidentally knock Kinsley into PinkiePieBot
+[01:56:24] <Moonlightning> again
+[01:59:39] <Moonlightning> > Error: rateLimited :: There were too many requests of a given type :: Error creating new cert :: Certificate issuance limit reached
+[01:59:48] <Moonlightning> Ohhh, what! They said it would be like ten a day or something!
+[02:08:47] *** Joins: Asoka_White (Asoka@Pony-e2g8t0.net-htp.de)
+[02:10:45] *** Quits: Asoka (Asoka@Pony-4o4663.net-htp.de) (Ping timeout: 121 seconds)
+[02:14:16] <Seoson> Moonlightning: More like ten in 60 days or something like that
+[02:14:53] <Seoson> Also Paypal once froze my account with 1.600,-€ on it. Fun!
+[02:17:01] <Seoson> "Rate limit on certificates per Name is now 10 per 59 days up from 6 per 59 days." - LE Community. It was even worse before :D
+[02:19:23] <Moonlightning> certificates per name?
+[02:19:28] <Moonlightning> …I dunno.
+[02:19:52] <Moonlightning> Let's see. A few days ago (maybe a week or two? Iunno), I requested a cert for www.blackl.net.
+[02:19:56] <Seoson> That means per one top-level domain
+[02:20:19] <Moonlightning> Today, I requested a cert for irc.blackl.net.+sugar-belle.blackl.net., and then later tried to get one for www.blackl.net.+sugar-belle.blackl.net., which failed
+[02:20:25] <Moonlightning> So…does that count as three or two?
+[02:20:45] <Seoson> so requesting a cert for "example.com, www.example.com" and one for "mail.example.com" counts a 2 certs for example.com
+[02:20:45] <Moonlightning> …either way, I should be well under the limit, yeah?
+[02:20:54] <Moonlightning> Does it count failed attempts?
+[02:21:02] <Seoson> idk
+[02:21:06] <Seoson> Probably not
+[02:21:52] <Moonlightning> So…how am I over the limit? 6_9
+[02:22:07] <Seoson> I have no idea ;-)
+[02:22:44] <Seoson> You're not the only one. There are a few people complaining
+[02:23:05] <Moonlightning> …oh!
+[02:23:10] <Moonlightning> It's not /my/ ratelimit. It's /theirs./ o.o
+[02:23:24] <Moonlightning> https://letsencrypt.status.io/pages/incident/55957a99e800baa4470002da/564295edbf5aa82d3b000062
+[02:23:25] <PinkiePieBot> [ Let's Encrypt Status ]
+[02:24:33] <Seoson> It would be totally awesome to have decent error messages :D
+[02:24:52] <Moonlightning> Still waiting for you to write that better ACME client :3
+[02:30:17] <Seoson> I guess I'll just work around the webroot methode. I wonder if auto-renew is enabled atm
+[02:30:28] <Moonlightning> hmm?
+[02:37:46] <Seoson> There are different methodes you can use to complete the cert challenge. One is by placing a file. This is reasonable compared to the other bullshit
+[02:37:59] <Seoson> (e.g. running on port 80 or 443)
+[02:38:42] <Compu> https://www.reddit.com/comments/3s956g
+[02:38:43] <PinkiePieBot> [ Pantless French man attacks protesters with a shovel, becomes internet sensation : reddit.com ]
+[02:41:23] <Seoson> LE has exaclty one cert issued for a .horse domain xD
+[02:42:33] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[02:44:10] *** Joins: Sakura (Sakura@Pony-fkc.i75.99.192.IP)
+[02:44:37] *** Sakura is now known as Pony_32536
+[02:44:43] *** Joins: sleumas2000 (sleumas2000@my.little.karaoke)
+[02:45:04] *** Joins: GeekBrony (GB@bronydom.net)
+[02:45:33] *** Joins: Dusk (Dusk@dusky.horse)
+[02:50:32] *** Joins: catnickfl (catnickfl@catnickfl.bronytv.net)
+[02:51:08] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[02:51:34] <Colgate> Seoson: do they have a list of methods somewhere?
+[02:56:27] <Moonlightning> Seoson: someone gobbled up, like, /all/ of the `${common_word}.horse.`s >:(
+[02:56:58] * JustAberrant nods
+[02:59:04] <Moonlightning> I looked up a bunch of horse. ones that would fit me, and they were /all…/ /taken./
+[02:59:24] <Seoson> Useally one would think "-help" would give you the list of options, but fuck logic.
+[02:59:31] <Moonlightning> --help
+[03:00:02] <Seoson> I actually didn't try -help or --help
+[03:00:44] <JustAberrant> moon.horse is available ;p
+[03:00:49] <Moonlightning> Really?
+[03:00:52] <Moonlightning> But it has an SOA.
+[03:00:52] <JustAberrant> for the low low price of like $625 ;p
+[03:01:01] <Moonlightning> … -.-
+[03:01:14] <JustAberrant> but yeah, freaking domain scalpers
+[03:01:36] <Moonlightning> should be illegal :V
+[03:02:05] <Moonlightning> I mean, you can't buy phone numbers just to turn around and sell them, can you? >.>
+[03:02:16] *** Pony_32536 is now known as Sakura
+[03:02:30] <Webster> You kind of can.
+[03:02:45] <Moonlightning> …well, that should be illegal, too! :V
+[03:04:45] <Seoson> Colgate: ./letsencrypt-auto --help all . It lists manual, standalone and webroot. The nginx thing is not mentioned but exists in alpha
+[03:05:16] <Moonlightning> …wait…okay. /Can/ you determine the availability of domain by the presence|absence of an SOA record for it?
+[03:05:26] <Colgate> Seoson: erm, well, I'm not in their beta thing, so yeah
+[03:05:28] <Seoson> Well and apache *derp*
+[03:05:47] <Colgate> Moonlightning: no, since it might not have SOA records
+[03:05:56] <Colgate> it might not have any rrs at all
+[03:06:02] <Colgate> but still be registered :P
+[03:06:02] <Moonlightning> …right. x.x
+[03:06:20] <Moonlightning> So how do you do that, reliably, without mucking about with JavaScript-requiring websites. :P
+[03:06:30] <Colgate> `whois`
+[03:06:33] <Seoson> You don't need to have the beta in theory to use the client. The online docs are very poor. I'll take a look ...
+[03:06:56] <Moonlightning> sugar-belle:~ blackl% whois moon.horse.
+[03:06:56] <Moonlightning> No whois server is known for this kind of object.
+[03:07:15] <Seoson> Colgate: https://letsencrypt.readthedocs.org/en/latest/using.html#comparison-of-different-methods
+[03:07:16] <PinkiePieBot> [ User Guide — Let's Encrypt 0.1.0.dev0 documentation ]
+[03:08:14] *** Joins: ColtonDRG (coltondrg@ColtonDRG.is.best.pony)
+[03:09:01] <Colgate> Moonlightning: one sec
+[03:09:32] <Colgate> Moonlightning: add "\.horse$        whois-dub.mm-registry.com
+[03:09:38] <Colgate> to /etc/whois.conf
+[03:10:09] <Colgate> tells `whois` to use whois-dub.mm-registry.com for all domains that match the regex
+[03:10:39] <Colgate> and according to the .horse filing to icann, whois-dub.mm-registry.com is their official whois server
+[03:11:28] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[03:19:44] <Seoson> Premium domains, domain parking ... Arghh
+[03:29:36] *** Seoson is now known as Seoson|BNC
+[03:33:47] *** Joins: Fallfeathers (Fallfeather@Pony-jij466.bigpond.net.au)
+[03:55:33] <PinkiePieBot> Colgate: tell Moonlightning stop listening on port 444
+[04:00:33] <wolfyshy> Moonlightning: woof!
+[04:26:51] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[04:35:17] *** Joins: TuxRug (TuxRug@TuxRug)
+[04:41:37] *** eyeburn is now known as Starburn
+[04:42:32] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[04:50:01] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-ift.auh.56.172.IP)))
+[04:50:39] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[04:57:53] *** Quits: Webster (Webster@Pony-jrej46.fios.verizon.net) (Quit: Leaving)
+[05:04:26] *** Quits: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net) (Connection closed)
+[05:04:32] *** GigaWork is now known as Gigabit
+[05:18:28] *** Quits: TuxRug (TuxRug@TuxRug) (Connection closed)
+[05:19:44] <Moonlightning> wolfyshy: -woof!- neigh?
+[05:24:57] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Killed (NickServ (GHOST command used by DJ-C0L7[EIT]_!IceChat77@Pony-9bk.n3s.56.172.IP)))
+[05:25:15] <wolfyshy> Moonlightning: I was being an extra reminder ^.^
+[05:25:35] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[05:27:18] <Compu> ish mah typewriter http://imgur.com/gallery/1Mrwvbl
+[05:27:18] <PinkiePieBot> [ Olympia Splendid Electric Typewriter - Imgur ]
+[05:27:54] <DJ-C0L7[EIT]> gotta get ready to head home, my relief should be here soon
+[05:28:37] <Moonlightning> thanks, wolfyshy x3
+[05:29:43] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[05:36:23] <Moonlightning> …why are symlinks always 777 on Linux instead of 555?
+[05:43:55] *** Joins: Sombra (Iceman@Darkhorse21)
+[06:10:35] <Phase> they may target an executable?
+[06:10:49] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:14:45] <JustAberrant> far as I know, the permissions on the symlink itself arn't actually used on linux
+[06:17:11] <Gigabit> Anyone know how to anonymously contact OSHA about violations at a work space
+[06:17:29] <JustAberrant> well now that's a question 
+[06:19:03] * JustAberrant doesn't know but I assume they'd have all that info on their website
+[06:20:38] <JustAberrant> brief google it looks like you can't file anonymously, but you can request your name not be revealed
+[06:25:35] <Gigabit> Ya I just found the form. Where I work has a lot of unsafe conditions going on. Exposed electric wires. Fuse panels being covered. Fuse panels not properly installed. Water leakage from floor above, it fills a 5 gallon bucket daily.
+[06:26:03] <Gigabit> Being covered as in, cannot access them like you should be able to
+[06:27:23] <Gigabit> I'm sure there is a myriad of other issues as well. The company is to cheap to fix them
+[06:46:20] <JustAberrant> I thought you worked with family or something
+[06:47:10] <Gigabit> I help out at my cousins AFC home but I also got a job recently at a resort doing linen porting
+[06:57:04] *** Quits: Crimson_Tail (Bluepon@Pony-cpmbat.cg80.k4gu.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[06:57:33] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Ping timeout: 121 seconds)
+[07:03:14] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Ping timeout: 121 seconds)
+[07:04:02] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[07:09:17] <Moonlightning> Gigabit: ooooh…you might not wanna report it just yet, then. Wait a bit.
+[07:09:33] <Moonlightning> I mean…new hire shows up, and suddenly: OSHA investigation?
+[07:10:35] <Gigabit> Have another employer that desperately needs people, so if I get in there. Then I may call. 
+[07:11:14] <Moonlightning> Generally…be careful.
+[07:11:15] * Moonlightning hugs Gigabit.
+[07:12:03] <Gigabit> I dunno what it is, when ever I see shit that I know is a violation, it makes me want to fix it..
+[07:14:18] <Gigabit> I'm terrible I know :s
+[07:16:12] <JustAberrant> meh, if it's not _actually_ dangerous I wouldn't bother
+[07:16:39] <JustAberrant> I mean it's one thing if your working around exposed wires or on slippery floors or safety equipment isn't in good order
+[07:17:20] <JustAberrant> but if it's just "stuff that shouldn't be" but not really causing problems, filing complaints seems a bit extreme
+[07:17:42] <JustAberrant> and what Moonlightning said, right after you got hired is probably not the best time anyway
+[07:18:56] <Moonlightning> Gigabit: compile a list, at home. Keep it to yourself. Report after at least a month, preferably when there are newer hires than you (but not too close to /their/ hire dates, either, if possible), or once you've gotten a new job.
+[07:19:23] <Moonlightning> JustAberrant: she /said/ exposed wires…
+[07:19:51] <JustAberrant> sure, but is anyone working anywhere near them, are they even live, etc
+[07:20:12] <Gigabit> I know where I stocked the blankets is a fire hazard. They are covering and being forced into the fuse panels, one panel the cover is falling off. But I /have" to stock there.
+[07:20:42] <Gigabit> We walk under the wires daily, and there is a rain gutter right over it, catching leaking water
+[07:22:40] <JustAberrant> sounds wuvily
+[07:23:31] <JustAberrant> just be careful if you do go the OSHA route
+[07:31:09] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[07:39:11] *** Joins: RazorSharpFang (chatzilla@sharpest.of.all.fangs)
+[07:45:52] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[07:50:55] *** Joins: Wubz (androirc@Pony-3uluup.rev.dnainternet.fi)
+[07:53:12] *** Eventide is now known as Eventide|Sleepies
+[07:53:48] *** Wubz is now known as WuBzY
+[07:54:03] *** Quits: nscoots (FreyGrimrod@Pony-3rit87.sub-70-192-8.myvzw.com) (Connection closed)
+[07:54:20] *** Joins: nscoots (FreyGrimrod@Pony-3rit87.sub-70-192-8.myvzw.com)
+[07:54:29] *** Quits: Datalink_ (Datalink@Datalink) (Connection closed)
+[07:54:55] *** Joins: Datalink_ (Datalink@Datalink)
+[07:57:56] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[07:57:56] <Moonlightning> oh, wow…webservers attract even more traffic
+[07:58:00] <Moonlightning> s/traffic/spam/
+[07:58:35] <RazorSharpFang> Unsuprisingly
+[07:59:05] <Moonlightning> 203.67.9.74 - - [11/Nov/2015:06:09:14 +0000] "\x01" * 256 400 181 "-" "-"
+[07:59:30] <Moonlightning> where `"\x01" * 256` is not literal
+[08:03:33] *** Gigabit is now known as snoarin
+[08:07:42] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Connection closed)
+[08:08:26] <Moonlightning> asdlghkjadf
+[08:08:31] <Moonlightning> why doesn't `at` use getdate()
+[08:19:34] *** Quits: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net) (Ping timeout: 121 seconds)
+[08:24:10] <Moonlightning> Unrelated. Will NS records in a zone that don't exist in the parent zone have any effect, or will they just be ignored entirely?
+[08:36:41] *** zz_CyberJacob is now known as CyberJacob
+[08:37:51] <Moonlightning> Unrelated again. Noooooo, FreeBSD doesn't have dig?!
+[08:37:56] * Moonlightning flails at Dashie.
+[08:50:28] <Moonlightning> …oh, it's part of bind
+[08:54:36] *** Joins: Kyoro (Pocketguns2@Digging.a.Hole)
+[09:00:00] <Moonlightning> …welp, that didn't work
+[09:02:09] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "night everypony")
+[09:04:28] *** Quits: Sin (Sin@is.hustlin.everyday) (Ping timeout: 121 seconds)
+[09:06:41] *** Joins: Sin (Sin@is.hustlin.everyday)
+[09:11:37] *** Joins: Phase (Phase4@Pony-u4lofk.internode.on.net)
+[09:17:06] *** Quits: Deathpony (IceChat9@Pony-q2h.j1d.51.50.IP) (Ping timeout: 121 seconds)
+[09:19:06] *** Joins: Deathpony (IceChat9@Pony-q2h.j1d.51.50.IP)
+[09:19:36] *** Deathpony is now known as Pony_39820
+[09:26:56] <Compu> what should i type on my typewriter?
+[09:28:35] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[09:30:32] <Moonlightning> Why do you have a typewriter?
+[09:45:08] *** CyberJacob is now known as zz_CyberJacob
+[09:47:39] <Compu> Moonlightning: because i have one, had it since i was like 14
+[09:59:28] *** Quits: Ruthalas_ (Ruthalas@Pony-bi2qh3.wa.comcast.net) (Ping timeout: 121 seconds)
+[10:12:03] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[10:14:07] *** Joins: Ruthalas (Ruthalas@Pony-bi2qh3.wa.comcast.net)
+[10:36:19] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[10:55:08] *** Joins: Asoka (Asoka@Pony-cinmmk.net-htp.de)
+[10:57:34] *** Quits: Asoka_White (Asoka@Pony-e2g8t0.net-htp.de) (Ping timeout: 121 seconds)
+[11:06:09] *** Quits: Kyoro (Pocketguns2@Digging.a.Hole) (Quit: Leaving)
+[11:28:43] <Moonlightning> …mmmmmmmmm…
+[11:35:10] <Moonlightning> This is kinda backwards.
+[11:35:54] <Moonlightning> …oh, okay. No big deal.
+[11:36:34] <Moonlightning> I'll just symlink /etc/letsencrypt/{live,archive}/sugar-belle.blackl.net to /etc/letsencrypt/{live,archive}/www.blackl.net, and then request a new cert.
+[11:56:14] <Moonlightning> TLS handshakes are done such that MitM downgrade attacks to weak ciphers are impossible if the server doesn't support weak ciphers, right?
+[12:15:09] <Moonlightning> …nginx isn't serving the HSTS header in 403 and 404 replies
+[12:16:12] <Moonlightning> bingo. missing `always`
+[12:18:39] <Moonlightning> …augh, `always` wasn't added until 1.7.5
+[12:37:33] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[12:40:47] <Moonlightning> well shit
+[12:41:08] <Moonlightning> the letsencrypt-auto script is stuck on /updating letsencrypt and virtual environment dependencies.../ now
+[12:51:13] *** Joins: Pocky (Pocketguns2@Digging.a.Hole)
+[13:08:03] <locodash11[server]> Compu, type a copy of a doctionary, with the same formatting
+[13:09:16] <Moonlightning> doctionary
+[13:09:54] <locodash11[server]> yes
+[13:10:03] <locodash11[server]> I need typing pratcice too
+[13:10:19] <locodash11[server]> also, phone keyboards are bad
+[13:18:26] *** Joins: Asoka_White (Asoka@Pony-b4o3g9.net-htp.de)
+[13:18:50] *** Quits: Asoka (Asoka@Pony-cinmmk.net-htp.de) (Ping timeout: 121 seconds)
+[13:29:51] *** Seoson|BNC is now known as Seoson
+[13:56:00] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Ping timeout: 121 seconds)
+[13:57:38] *** Joins: RazorSharpFang (chatzilla@sharpest.of.all.fangs)
+[14:14:18] *** Joins: Phase4 (Phase4@Pony-jmm5qg.internode.on.net)
+[14:14:46] *** Quits: Phase (Phase4@Pony-u4lofk.internode.on.net) (Ping timeout: 121 seconds)
+[14:26:19] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Ping timeout: 121 seconds)
+[14:44:36] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[14:49:55] *** Quits: WuBzY (androirc@Pony-3uluup.rev.dnainternet.fi) (Quit: AndroIRC - Android IRC Client ( http://www.androirc.com ))
+[14:53:11] *** Joins: Wubz (Wubz@Pony-c3amlg.dhcp.inet.fi)
+[14:54:27] *** Joins: Crimson_Tail (Bluepon@Pony-8p0mq0.cg80.k4gu.0151.2601.IP)
+[14:55:52] *** Quits: Fallfeathers (Fallfeather@Pony-jij466.bigpond.net.au) (Connection closed)
+[14:56:50] *** Quits: Phase4 (Phase4@Pony-jmm5qg.internode.on.net) (Ping timeout: 121 seconds)
+[14:58:06] *** Joins: RazorSharpFang (chatzilla@sharpest.of.all.fangs)
+[15:01:28] *** Joins: Phase (Phase4@Pony-k80aip.internode.on.net)
+[15:35:11] *** Joins: quindo (Quindo@Pony-ushc41.mssnks.sbcglobal.net)
+[16:00:40] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[16:26:46] *** Quits: DataByte (DataByte@Pony-3pfj33.g424.9euc.0247.2601.IP) (Connection closed)
+[16:27:36] *** Joins: DataByte (DataByteBro@Pony-d3c.bgn.198.64.IP)
+[16:32:56] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[16:39:23] *** Quits: nscoots (FreyGrimrod@Pony-3rit87.sub-70-192-8.myvzw.com) (Ping timeout: 121 seconds)
+[16:55:28] *** Eventide|Sleepies is now known as Eventide
+[17:09:04] *** Quits: Asoka_White (Asoka@Pony-b4o3g9.net-htp.de) (Connection closed)
+[17:11:13] *** Joins: Asoka (Asoka@Pony-b4o3g9.net-htp.de)
+[17:17:05] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:20:17] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[17:28:14] <RazorSharpFang> I need to learn C++. are there any books or resources you recommend for getting a solid grasp on the language from an academic perspective?
+[17:28:40] <snoarin> I got spray on rubberized undercoating to spray my gas tank, says no less then 70f to spray it on, its only going to get 54 today, do I spray it on or no?
+[17:28:47] <snoarin> The tank isnt installed yet
+[17:29:09] <RazorSharpFang> The difference between those two posts is amazing.
+[17:30:11] <JustAberrant> RazorSharpFang: Bjarne is kinda the gold standard
+[17:30:27] <RazorSharpFang> Bjarne? Never came across that before.
+[17:30:31] <JustAberrant> if you really want to learn and understand the language
+[17:30:49] <RazorSharpFang> Oh, maker of C++
+[17:30:52] <JustAberrant> http://www.amazon.com/dp/0321992784/
+[17:30:53] <PinkiePieBot> [ Robot Check ]
+[17:31:03] <JustAberrant> lol @ PinkiePieBot :D
+[17:31:43] <JustAberrant> but yeah, it's good and comprehensive.. if your looking to just learn enough to get by there's probably better choices
+[17:32:18] <RazorSharpFang> Well, I have a unit in C++ next semester, and I've heard that C++ is an awfully complex language.
+[17:32:29] <HoneyDrops> snoarin: I would not, the issue has to do with cure times.  Below 70F it might fail to cure, or take so long to cure it would fail to adhere properly to the tank.  Normally I would fudge it, but fuel tank falls on the "better safe than sorry" category.
+[17:32:44] <JustAberrant> http://www.amazon.com/The-Programming-Language-4th-Edition/dp/0321563840/ref=pd_bxgy_14_img_2?ie=UTF8&refRID=1F8VWAT59NPSD1665V9F  <-- actually meant to link to this one
+[17:33:13] <snoarin> Well I was going to spray it outside and bring it into the house to cure
+[17:33:29] <JustAberrant> RazorSharpFang: it can be.. it's old and lacks a lot of convenience of newer languages
+[17:33:46] <JustAberrant> RazorSharpFang: and (imo) a lot of the newer stuff they've added just doesn't fit onto the old frame very well
+[17:33:53] <HoneyDrops> snoarin Oh, that would be fine.  ideally keep it inside to pre-warm it.  And give it some extra time in either case.
+[17:34:15] * HoneyDrops prefers C.
+[17:34:49] <snoarin> I only got the spray on kit because I rather protect it more
+[17:34:56] <JustAberrant> c is way too tedious to do anything that's not very purpose specific imo, but to be honest I'm not overly fond of either of them any more
+[17:35:04] * JustAberrant used to be a fairly big c++ fanboy.. but.. meh
+[17:36:23] <RazorSharpFang> JustAberrant: Is there a language you feel that's more modern than C++ and doesn't suffer from the shortfalls of languages such as Python, or Java, etc... ?
+[17:36:42] * JustAberrant a java fanboy.. it gets a lot of hate but it's insanely popular for a reason
+[17:36:58] <RazorSharpFang> Why can I use operator overloading? ;-;
+[17:37:02] <JustAberrant> c#, which I don't know or use, but gets a lot of praise for the same reason
+[17:37:18] <RazorSharpFang> What is that reason, incidentally?
+[17:38:02] <JustAberrant> it's got a generally standardized code style, and a very well established tool stack
+[17:38:48] <JustAberrant> plus garbage collection vs managing your own memory (which for every c++ fanboy who can actually do that properly there are 10 that can't) 
+[17:39:04] <RazorSharpFang> I do really appreciate how big the java library is.
+[17:39:15] <RazorSharpFang> java.awt.Robot is a lovely class.
+[17:39:31] <JustAberrant> it's not even the standard library , it's stuff like ivy, maven, hudson, spring, hibernate..
+[17:39:40] <RazorSharpFang> javax?
+[17:39:41] <JustAberrant> jboss..
+[17:39:51] <JustAberrant> ah, talking third party libraries and tools
+[17:39:55] <JustAberrant> * nah
+[17:40:07] * HoneyDrops wishes Java would use makefiles.
+[17:40:11] <JustAberrant> that's _really_ where java excels
+[17:40:21] <RazorSharpFang> Oh, third party tools. I haven't used any of those. The unit's been using only standard java libraries.
+[17:40:22] <JustAberrant> pff, makefiles suck
+[17:40:24] <HoneyDrops> Drives me nuts when trying to patch MC mods.
+[17:40:42] <RazorSharpFang> Can't you just make your own makefile? : /
+[17:40:45] <HoneyDrops> They are simple, easy to read, and easy to write.
+[17:40:49] <JustAberrant> the lack of a non-shitty build system for c/c++ is one of my big complaints
+[17:41:23] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[17:41:40] <JustAberrant> makefiles work fine on small stuff, but without dependency resolution or sane conditional building you end up with these huge build systems that are a mixture of shell scripts
+[17:41:42] <RazorSharpFang> JustAberrant: Also, what IDE do you recommend for C++? I've been trying to use Code::Blocks, but I'm also used to NetBeans.
+[17:42:11] <JustAberrant> I've become partial to Qt creator
+[17:42:22] <JustAberrant> generally when I do c++ these days it's with Qt
+[17:42:24] <RazorSharpFang> First I've heard of that one.
+[17:42:30] <JustAberrant> I used to use sun studio at work.. but wouldn't recommend that ;p
+[17:44:53] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[17:46:38] <RazorSharpFang> JustAberrant: Programming Principals and Practice using C++, BJARNE STROUPSTRUP, 2009 edition ? Would that be a good book to use?
+[17:47:15] <RazorSharpFang> My library's got a digital copy I can get for free.
+[17:47:32] * JustAberrant thinks so ;p
+[17:48:14] <JustAberrant> HoneyDrops: also, I pose this simple challenge to those who tell me makefiles don't suck
+[17:48:18] <RazorSharpFang> JustAberrant: Also, for compilers, g++? Or something else?
+[17:48:41] <JustAberrant> RazorSharpFang: honestly early on, it doesn't really matter, truthfully later on it doesn't really matter ;p
+[17:48:59] <JustAberrant> I use g++
+[17:48:59] * RazorSharpFang uses the Borland C++ compiler
+[17:49:03] <JustAberrant> hehe
+[17:49:07] <JustAberrant> I learned on borland actually
+[17:49:12] <JustAberrant> turbo c :D
+[17:49:20] <RazorSharpFang> bcc32.exe 
+[17:49:44] <RazorSharpFang> I hate how it uses an old version of C.
+[17:49:52] <RazorSharpFang> Where you can't declare things not at the start of a scope.
+[17:49:54] <JustAberrant> yeah, upgrade to something modern ;p
+[17:50:13] <JustAberrant> HoneyDrops: so lets say I've got a pretty dan standard structure:
+[17:50:13] <JustAberrant> ponies/src/pony_behaviours/some_behaviour.cpp
+[17:50:13] <JustAberrant> ponies/src/main.cpp
+[17:50:13] <RazorSharpFang> Sometimes I forget that I need a temporary variables.
+[17:50:31] <JustAberrant> HoneyDrops: And I want:
+[17:50:31] <JustAberrant> ponies/obj/pony_behaviours/some_behaviour.o
+[17:50:31] <JustAberrant> ponies/obj/main.o
+[17:50:31] <JustAberrant> ponies/bin/ponies
+[17:50:41] <JustAberrant> without having to explicitly list every source directory and file
+[17:51:21] <JustAberrant> the problem becomes reproducing the structure of src in obj
+[17:51:23] <JustAberrant> make can't do it
+[17:51:28] <HoneyDrops> Sounds like a job for find.
+[17:51:36] <JustAberrant> the prescribed solution seems to either by redundant make files in every directory, or some scary pseudo-shell code in make itself to try and recreate the directory structure in obj/
+[17:51:45] <JustAberrant> exactly.. which is shitty and stupid
+[17:52:02] <AppleDash> JustAberrant: I build my Java programs with collections of shell scripts
+[17:52:16] <HoneyDrops> No, it's knowing the scope of the tool, and knowing it's intended to be used with other tools.
+[17:52:21] <RazorSharpFang> I build my java programs by pressing the build button.
+[17:52:21] <JustAberrant> this is an insanely common use case, and make can't handle it without devolving into shitty non-portable hacks
+[17:52:22] <AppleDash> JustAberrant: Also, make can do exactly what you're talking about
+[17:52:27] <snoarin> sprayed the upper half, need to let it dry.
+[17:52:30] * HoneyDrops points to the whole concept of *nix.
+[17:52:41] *** Joins: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se)
+[17:52:41] <AppleDash> JustAberrant: https://github.com/omnicons/Static/blob/master/Makefile
+[17:52:42] <PinkiePieBot> [ Static/Makefile at master · omnicons/Static · GitHub ]
+[17:52:45] <AppleDash> I wrote the Makefile
+[17:52:50] <AppleDash> It does exactly what you're saying
+[17:53:14] <JustAberrant> OBJECTS=$(patsubst $(SDIR)/%.cpp,$(ODIR)/%.o,$(wildcard $(SDIR)/*.cpp)) $(patsubst $(MDIR)/%.cpp,$(MOBJDIR)/%.o,$(wildcard $(MDIR)/*.cpp))   <-- readable as fuck ;p
+[17:53:24] <AppleDash> lol
+[17:53:27] <AppleDash> Hey, it does the job
+[17:53:38] <AppleDash> I should never have to touch that makefile ever again
+[17:53:59] <RazorSharpFang> >.>
+[17:54:07] <RazorSharpFang> My tutor would put red marks all over that.
+[17:54:13] <RazorSharpFang> And then rub it off the screen.
+[17:54:25] * HoneyDrops finds it beautiful XD
+[17:54:44] <JustAberrant> either way, java has tools that do what I said out of the box ;p
+[17:54:44] <RazorSharpFang> "Readibility and comprehensibility are almost as important as the code working"
+[17:55:05] <HoneyDrops> That isn't readable?
+[17:55:09] <AppleDash> RazorSharpFang: https://github.com/AppleDash/cmvc/blob/master/viewhandler.c#L34 I always cite this as an example of the worst code I've ever written
+[17:55:10] <PinkiePieBot> [ cmvc/viewhandler.c at master · AppleDash/cmvc · GitHub ]
+[17:55:13] <AppleDash> have fun trying to parse that
+[17:55:13] <RazorSharpFang> "If your code is broken but very readible and comprehensive, it can be fixed with ease"
+[17:55:45] <RazorSharpFang> memcopy? What's that?
+[17:55:53] <JustAberrant> HoneyDrops: at best it's parsable..
+[17:56:23] <RazorSharpFang> This is outside of my scope. : /
+[17:56:30] <AppleDash> lol
+[17:56:54] <JustAberrant> the real stength of stuff like ivy+ant and maven and other java build systems is dependency resolution though, which I've never seen a c++ equivalent
+[17:57:32] <HoneyDrops> RazorSharpFang: that's what manpages are for.
+[17:58:12] <RazorSharpFang> Oh yes. Let me man that on my phone.
+[17:58:15] <AppleDash> lol
+[17:58:40] <RazorSharpFang> My C unit was very basic, and mostly focused on principals rather than the language.
+[17:58:59] <RazorSharpFang> Never did any memory management.
+[17:59:19] <HoneyDrops> Hey, I'm 3 keys away from a shell on my phone when using irc on it.
+[17:59:26] <JustAberrant> AppleDash: also lets make the challenge just a tad less trivial..
+[17:59:43] <AppleDash> JustAberrant: ?
+[18:00:06] <JustAberrant> ponies/obj/pony_behaviours/data/pony_store.cpp
+[18:00:06] <JustAberrant> ;p
+[18:00:14] <AppleDash> Just add more patsubstr
+[18:00:16] <AppleDash> :P
+[18:00:27] <JustAberrant> your script as far as I can tell will only handle one level
+[18:00:35] <AppleDash> It will indeed :(
+[18:00:45] <AppleDash> Also did you ever see that gif I linked you?
+[18:00:47] *** Wubz is now known as WuBzY
+[18:01:45] <JustAberrant> I see no gif!
+[18:01:54] <AppleDash> this was like a week ago
+[18:02:01] <JustAberrant> oh, then probably not ;p
+[18:02:06] <JustAberrant> I've been working insane hours
+[18:02:13] <AppleDash> JustAberrant: http://i.imgur.com/eBHq0qn.gifv
+[18:02:32] <JustAberrant> oh, yes, I did see that one
+[18:02:34] <JustAberrant> liked it ;p
+[18:02:45] <AppleDash> :D
+[18:04:27] <JustAberrant> HoneyDrops: also that's a terrible excuse.. I'm all for purpose built tools, but that kind of thing would definitely seem within the purpose of make.. plus you may some day want to compile on windows 
+[18:05:27] <RazorSharpFang> Better make your build tool in java.
+[18:05:29] <JustAberrant> either way, that's just example one of about a billion of why make is terrible and why just about every project I've ever been involved with has a horrifying maze of shell scripts to build anything relating to c++
+[18:05:44] <JustAberrant> make is fine for smaller stuff
+[18:05:56] <RazorSharpFang> Why not "make" your own make system?
+[18:05:59] <JustAberrant> but on a sizable project with external dependencies it becomes an absolute nightmare
+[18:06:27] <JustAberrant> RazorSharpFang: because by using established tools, you are benefiting from the collective time spent working on them
+[18:06:51] <JustAberrant> RazorSharpFang: developing something as powerful as maven would be insane for one company to do if that wasn't their main product
+[18:06:57] <RazorSharpFang> Which makes make great, right?
+[18:07:06] <JustAberrant> RazorSharpFang: I generally think so
+[18:07:06] <RazorSharpFang> XD 
+[18:07:27] <HoneyDrops> JustAberrant: No, no I wouldn't.
+[18:07:32] <RazorSharpFang> Or, to put it another way, if make wasn't used extensively, it wouldn't be half of the program it is.
+[18:08:19] <JustAberrant> HoneyDrops: yeah yeah, idealism aside it's still stupid to have to make hacky calls to external programs for really basic stuff like that
+[18:08:38] * RazorSharpFang looks up maven
+[18:08:59] <JustAberrant> maven also benefits from it's vast repository
+[18:09:00] * HoneyDrops shrugs.  I don't see the point in duplicating functionality when a general purpose tool is there.
+[18:09:12] <RazorSharpFang> Apache Maven?
+[18:09:15] <JustAberrant> RazorSharpFang: aye
+[18:09:15] <HoneyDrops> Just different viewpoints, which is fine.
+[18:09:28] <JustAberrant> HoneyDrops: why even use make then, why not just use a shell script..
+[18:09:39] <RazorSharpFang> Wikipedia: "This article may be too technical for most readers to understand." Me: "Yaaas"
+[18:10:00] <JustAberrant> the whole benefit of declarative structure is lost when you have to do silly hacks like that
+[18:10:06] <JustAberrant> may as well just have compile.sh
+[18:10:39] <RazorSharpFang> what does sh stand for again? Shell... hack?
+[18:10:54] <JustAberrant> I always assumed SHell.. but who knows ;p
+[18:10:57] <HoneyDrops> shell
+[18:11:04] <JustAberrant> maven's big trick is that it'll pull down dependencies for you
+[18:11:06] <RazorSharpFang> That's not how acronyms work. >.>
+[18:11:36] <HoneyDrops> sh is not an acronym?  It's an abbreviation.
+[18:11:40] <JustAberrant> so if you want to use say, junit, or log4j, you add an entry in your buildfile and it'll automatically pull down the dependency at compile time (if it doesn't have ti cached locally) and built it into the project
+[18:11:45] <HoneyDrops> Also /bin/sh
+[18:12:05] <JustAberrant> you can also publish your own dependencies to your own repository and have dependencies against them
+[18:12:09] <RazorSharpFang> Ooh, I've got 269 viewers.
+[18:12:11] <JustAberrant> so if you have  SomeCOmpanyWideLibrary
+[18:12:22] <JustAberrant> all your other projects can depend on SomeCompanyWideLibrary
+[18:12:46] <JustAberrant> and when you compile them, depending on how you have rules set up, it can pull the latest version, latest from a specific stream, etc..
+[18:12:47] <HoneyDrops> I view dep fetching beyond the scope of the build system, you have a package manager to handle fetching and installing things.
+[18:13:21] <RazorSharpFang> Well, building is all about automation
+[18:13:37] <JustAberrant> HoneyDrops: ...
+[18:14:00] <JustAberrant> it's not _just_ about pulling down the libraries..
+[18:14:07] <JustAberrant> it's about being able to conditionally use different sets of them
+[18:14:08] *** snoarin is now known as Vega
+[18:14:24] <JustAberrant> so you can build your release stream using the latest release stream versions
+[18:14:47] <JustAberrant> and your debug stream using the debug stream.. and you can build for different target environments using a different set entirely
+[18:15:00] <RazorSharpFang> Maven was written in java. Interesting.
+[18:15:04] <JustAberrant> it will also pull in different configurations for you, etc..
+[18:15:22] <HoneyDrops> I'm not saying maven and the like isn't handy, though why XML I will never grasp.
+[18:15:34] <RazorSharpFang> JSON > XML
+[18:15:44] <JustAberrant> gradle doesn't use xml.. but I prefer maven
+[18:15:50] <HoneyDrops> Given the choice, yes, I would use JSON.
+[18:15:51] *** Joins: Asoka_White (Asoka@Pony-ff485o.net-htp.de)
+[18:16:00] <HoneyDrops> but XML is painful to write
+[18:16:12] <JustAberrant> sure, but there's frontends that write it for you
+[18:16:19] <RazorSharpFang> I agree. All those angle brackets, bleh
+[18:16:41] * HoneyDrops uses vim and shell.
+[18:16:47] <JustAberrant> either way, it's the existence of tools like maven and gradle and the lack of such tools for c++ is a big reason java is popular in business
+[18:16:55] <RazorSharpFang> <xml> <level> <object x=5 y=3 class="player" /> </level> </xml>
+[18:17:22] <RazorSharpFang> And I suppose that is good for Oracle.
+[18:17:36] <JustAberrant> meh, I gave up on vim a long time ago.. it's nice, but takes too much effort to get it to do what a modern ide will do out of the box
+[18:17:48] <JustAberrant> it's way easier to add vi like commands to eclipse than make vi do what eclipse does
+[18:17:51] <RazorSharpFang> Well, Vim is in the console.
+[18:18:18] *** Quits: Asoka (Asoka@Pony-b4o3g9.net-htp.de) (Ping timeout: 121 seconds)
+[18:18:28] <JustAberrant> vi is still my go to for config files or if I just need to quickly change something for a test.. but if I actually sit down to do real dev I usually use eclipse (java) or qt creator (c++)
+[18:18:59] <HoneyDrops> I don't really have vim do much fancy for me.  I have a few scripts, but I basically just want an editor.
+[18:19:16] <RazorSharpFang> I've gotten really used to netbeans. : /
+[18:19:35] * JustAberrant never warmed up to netbeans, but it's kinda one of the big 3 for java
+[18:19:45] <Eclipse> eclipse is terrible
+[18:19:48] <Eclipse> just use intellij
+[18:19:50] <RazorSharpFang> Do you know if it's C++ support is good?
+[18:19:54] <Eclipse> since that actually has ideavim
+[18:20:07] <RazorSharpFang> Eclipse: I never got the hang on intellij. I think I had configuration issues.
+[18:20:21] * JustAberrant mostly uses eclipse because the company he currently works for uses it 
+[18:20:34] <RazorSharpFang> JustAberrant: Just doing as you're told? XD
+[18:20:42] <Eclipse> a side effect of this nick is that i know every single time that people talk about awful Java IDEs
+[18:20:44] <JustAberrant> we have a lot of 3rd party tools that are integrated into it and some custom ones ;p
+[18:21:09] <JustAberrant> RazorSharpFang: hehe, I've never been a boat rocker.. they're paying me, I'll use what they want me to use ;p
+[18:21:34] <JustAberrant> RazorSharpFang: I push my preferences and sometimes win, but end of the day everyone can't do what they feel like, you have to pick a direction and go in it
+[18:21:39] <RazorSharpFang> You know your workplace sucks when they see you smiling as "rocking the boat"
+[18:21:53] <RazorSharpFang> "Take that smile off your face"
+[18:21:56] <RazorSharpFang> PAH
+[18:22:13] <JustAberrant> there was a guy once who absolutely refused to follow our coding convention
+[18:22:23] <RazorSharpFang> Now that's just being silly.
+[18:22:28] <JustAberrant> like.. I'm not a fan of parts of it, but I get the importance of everyone using the same thing
+[18:22:34] <RazorSharpFang> Totally
+[18:22:37] <JustAberrant> yeah, he eventually got fired for other reasons
+[18:22:52] <RazorSharpFang> I prefer the one with the indentation, and the line breaks.
+[18:22:54] <Eclipse> gofmt is a good idea and every language should have one 
+[18:22:57] <Eclipse> just saying
+[18:23:17] <JustAberrant> hehe
+[18:23:25] <JustAberrant> we use checkstyle and sonar
+[18:23:28] <JustAberrant> which arn't bad
+[18:23:43] <RazorSharpFang> I don't like coding styles that don't permit tabs, white space and newlines.
+[18:23:53] <RazorSharpFang> Those are awful.
+[18:24:51] <JustAberrant> either way, lot of people come out of university and culture clash hard where I work
+[18:24:56] <JustAberrant> it's interesting
+[18:25:19] <RazorSharpFang> Myself, I use "The one true coding style", heard of that one?
+[18:26:10] <JustAberrant> possibly
+[18:26:25] <RazorSharpFang> It's like function foo { \n \*CODEGOESHERE*\ } instead of function foo\n {\*CODEGOESHERE*\}
+[18:26:45] <RazorSharpFang> Or something.
+[18:27:00] * JustAberrant is fine with either, though I tend to prefer the first one
+[18:27:05] <JustAberrant> err, second one
+[18:27:10] <JustAberrant> the important thing is consistency though
+[18:27:11] <RazorSharpFang> JustAberrant: Example here: http://razorsharpfang.com/test.java
+[18:27:37] <JustAberrant> doesn't really matter what you do as long as everyone working on the same code does the same
+[18:28:00] <RazorSharpFang> Oh defs, but if it's not one I'm used to, it'll take me a while to get used to it.
+[18:28:52] <RazorSharpFang> Lulz, the intendation is a tad messed up.
+[18:29:16] <RazorSharpFang> Wonder why that happened.
+[18:56:59] <Vega> Bah.. My phone won't use the flash on the camera.. I even rebooted
+[18:59:08] *** Quits: Aww (aww@Pony-ic0abh.online) (Ping timeout: 121 seconds)
+[19:10:56] *** Quits: RazorSharpFang (chatzilla@sharpest.of.all.fangs) (Quit: Zzzzz)
+[19:11:53] *** Quits: WuBzY (Wubz@Pony-c3amlg.dhcp.inet.fi) (Quit: http://www.kiwiirc.com/ - A hand crafted IRC client)
+[19:18:33] *** Quits: LightningCrash (lightning@property.of.moonlightning) (Connection closed)
+[19:39:51] *** Joins: Asoka (Asoka@Pony-v5r2fv.net-htp.de)
+[19:42:27] *** Quits: Asoka_White (Asoka@Pony-ff485o.net-htp.de) (Ping timeout: 121 seconds)
+[19:50:29] *** Joins: miss (gmgeibpvvpk@Pony-ibpuhc.access.telenet.be)
+[19:51:19] *** Parts: miss (gmgeibpvvpk@Pony-ibpuhc.access.telenet.be) ()
+[20:02:40] *** Quits: Phase (Phase4@Pony-k80aip.internode.on.net) (Ping timeout: 121 seconds)
+[20:29:04] <Vega> ugh.. had to use both cans of the spray, someone fucked with it after I did the top half, and I had to redo some of it
+[20:32:21] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[20:40:51] *** Quits: init3 (quassel@init3.Is.Not.A.Clever.Poni) (A TLS packet with unexpected length was received.)
+[20:45:32] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[20:55:42] <Seoson> So I got a spam mail at certmaster@domain.tld. Which CA screwed up and leaked my e-mail address? O_o
+[20:57:48] *** Joins: Asoka_White (Asoka@Pony-rajdrs.net-htp.de)
+[20:58:33] <johnsey> if you had used an individual one for each, you'd know now :)
+[20:59:00] *** Joins: LightningCrash (lightning@property.of.moonlightning)
+[20:59:19] * Colgate signs up all of Seoson's domains to all the porn sites
+[20:59:33] <Seoson> Since only 2 partys know of that address it's either StartSSL or Let's Encrypt
+[20:59:49] <Seoson> I use unique e-mail adresses for many services, but not for CAs
+[21:00:04] *** Quits: Asoka (Asoka@Pony-v5r2fv.net-htp.de) (Ping timeout: 121 seconds)
+[21:00:29] <Colgate> I should really start doing that
+[21:01:14] *** Joins: Midnight_Tinker (MidnightTin@Pony-5qttkj.dc.cox.net)
+[21:02:51] <Seoson> I even screw with expectations by violating the corresponding RFC. Useally it's user+sub@domain.tld, but for my accounts it's the other way around
+[21:03:54] <Colgate> wonder how many people sed out the + stuff before sending spam
+[21:04:02] <Seoson> So in case they filter the sub part to prevent their source being leaked their e-mails will hit a blackhole
+[21:07:15] *** Joins: Asoka (Asoka@Pony-ih5kce.net-htp.de)
+[21:09:05] *** Quits: Asoka_White (Asoka@Pony-rajdrs.net-htp.de) (Ping timeout: 121 seconds)
+[21:11:05] *** Joins: Asoka_White (Asoka@Pony-rf96gq.net-htp.de)
+[21:12:36] *** Quits: Asoka (Asoka@Pony-ih5kce.net-htp.de) (Ping timeout: 121 seconds)
+[21:14:43] *** Joins: Asoka (Asoka@Pony-8t1lvd.net-htp.de)
+[21:16:07] *** Quits: Asoka_White (Asoka@Pony-rf96gq.net-htp.de) (Ping timeout: 121 seconds)
+[21:16:23] *** Joins: Asoka_White (Asoka@Pony-m18vrs.net-htp.de)
+[21:19:01] *** Quits: Asoka (Asoka@Pony-8t1lvd.net-htp.de) (Ping timeout: 121 seconds)
+[21:23:06] *** Quits: Pony_39820 (IceChat9@Pony-q2h.j1d.51.50.IP) (Ping timeout: 121 seconds)
+[21:25:06] *** Joins: Deathpony (IceChat9@Pony-q2h.j1d.51.50.IP)
+[21:25:37] *** Deathpony is now known as Pony_13488
+[21:30:45] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[21:48:06] *** Joins: init3 (quassel@init3.Is.Not.A.Clever.Poni)
+[21:53:59] *** Joins: Webster (Webster@Pony-jrej46.fios.verizon.net)
+[21:54:19] *** Quits: Asoka_White (Asoka@Pony-m18vrs.net-htp.de) (Ping timeout: 121 seconds)
+[21:54:43] *** Joins: Asoka_White (Asoka@Pony-ctmc7e.net-htp.de)
+[21:57:26] *** Quits: Moonlightning (blackl@property.of.lightningcrash) (Connection closed)
+[21:58:10] *** Joins: Starthunder (blackl@property.of.lightningcrash)
+[22:03:06] *** Quits: Starthunder (blackl@property.of.lightningcrash) (Ping timeout: 121 seconds)
+[22:10:42] *** Pony_13488 is now known as Deathpony
+[22:10:52] *** Quits: Asoka_White (Asoka@Pony-ctmc7e.net-htp.de) (Ping timeout: 121 seconds)
+[22:10:52] *** Joins: Asoka (Asoka@Pony-2sj0c1.net-htp.de)
+[22:11:06] <Deathpony> I got my heatsink today
+[22:11:07] <Deathpony> Cooler Master Vortex PLUS
+[22:13:42] *** Joins: Asoka_White (Asoka@Pony-j8h4kr.net-htp.de)
+[22:15:04] *** Quits: Asoka (Asoka@Pony-2sj0c1.net-htp.de) (Ping timeout: 121 seconds)
+[22:15:30] *** Joins: Asoka (Asoka@Pony-b4j9me.net-htp.de)
+[22:18:01] *** Quits: Asoka_White (Asoka@Pony-j8h4kr.net-htp.de) (Ping timeout: 121 seconds)
+[22:18:13] *** Joins: Gladiolus (uid110916@the.truth.is.out.there)
+[22:23:23] *** Quits: Asoka (Asoka@Pony-b4j9me.net-htp.de) (Ping timeout: 121 seconds)
+[22:25:27] *** Joins: Asoka_White (Asoka@Pony-4dqn53.net-htp.de)
+[22:26:24] <Vega> Silly question.. I am pretty sure the answer but.. for the transfer paper (to iron stuff on clothing) just plain old ink works right?
+[22:30:05] <Lapsus> yes
+[22:30:20] <Seoson> And one of my keycaps broke ....
+[22:32:07] * Lapsus prints one for Seoson
+[22:33:44] <Seoson> That's be awesome.^^ You have a 3d printer? At it's current price tag for a reasonable model they are too expensive for my personal taste
+[22:34:23] *** Lapsus sets mode: -qo Lapsus Lapsus
+[22:34:37] *** Quits: sniperfox1 (sniperfox@Pony-0dgjo0.dont.denialofservice.org) (Quit: reboot)
+[22:34:42] <Lapsus> you can get them surprisingly  cheaply, to be honest
+[22:35:35] <Seoson> My keycap: https://cloud.kab-s.de/index.php/s/UliNxRsU4hsjii5
+[22:35:38] <PinkiePieBot> [ ownCloud ]
+[22:36:01] <Lapsus> Seoson: So, cherry mx style switch then
+[22:36:31] <Seoson> Yes. I'm still under warranty, so I hope it's not too big of a deal
+[22:36:48] <Lapsus> new keycaps aren't that expensive, really
+[22:37:01] <Lapsus> I want to get a front-printed set for my keyboard eventually
+[22:38:18] <Seoson> Yeah, I've looked into the replacement parts and the original keys would cost 25 bucks for a complete set, but I'll go for warranty anyway, because why not?
+[22:38:26] <Lapsus> I guess
+[22:38:36] *** Quits: JockeTF (jocke@Pony-spiqt2.priv.bahnhof.se) (Quit: Leaving.)
+[22:38:44] <Seoson> 3rd party replacement sets are quite cheap
+[22:38:59] <Lapsus> won't they want you to ship the whole thing back with you paying shipping for a warranty repair though?
+[22:39:16] <Lapsus> related, http://www.thingiverse.com/thing:738769
+[22:40:30] <Seoson> I wrote an e-mail to customer support. I don't see any reason why they'd need the keyboard. For a part that costs a few cents that doesn't make sense
+[22:40:31] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:44:47] *** Joins: Asoka (Asoka@Pony-4qaead.net-htp.de)
+[22:45:56] *** Quits: Asoka_White (Asoka@Pony-4dqn53.net-htp.de) (Ping timeout: 121 seconds)
+[22:47:13] *** Joins: Asoka_White (Asoka@Pony-q8lr5q.net-htp.de)
+[22:49:26] *** Quits: Asoka (Asoka@Pony-4qaead.net-htp.de) (Ping timeout: 121 seconds)
+[22:54:11] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Quit: Leaving)
+[22:56:37] *** Quits: MisterSkids (ejd@Pony-fej07d.res.rr.com) (Connection closed)
+[22:56:56] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[22:58:13] *** Joins: Moonlightning (blackl@property.of.lightningcrash)
+[23:08:01] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[23:10:15] <Vega> What GPU is in the Xbox one? Because I am watching my buddy play the latest need for speed, and I am about to jiz my pants
+[23:12:00] <Pocky> its amd as far as i know
+[23:12:10] <Vega> All Wikipedia is saying, is it is gcn, and can do 4k
+[23:12:18] <Vega> Ya I know that much :p
+[23:12:21] <Lapsus> it's one designed by amd for the xbox :p
+[23:12:37] <Vega> Not sure if my 270 oc can run need for speed as good as it looks right now
+[23:12:43] <Lapsus> I'd be incredibly surprised if it could handle 4k ever
+[23:12:55] <HoneyDrops> ^ You can't really compare general PC parts with specialty hardware.
+[23:12:56] <Lapsus> it probably does it at like 30fps
+[23:13:00] <Lapsus> if at all
+[23:13:13] <Vega> I seen a cut scene. And I was almost fooled that the people were real. Never been that close before.
+[23:13:27] <Vega> For me*
+[23:13:31] <Lapsus> "In PC terms, the Xbox One has a GPU that’s similar to the entry-level Bonaire GPU in the older Radeon HD 7790"
+[23:13:45] <Lapsus> also, cutscenes don't count
+[23:13:51] <Lapsus> that's just playing a video :p
+[23:13:59] <Vega> And the 7790 now is basically a 270x isn't it?
+[23:13:59] <Pocky> I have a 970 myself :>
+[23:14:21] <Vega> Wish I had one Pocky >.<
+[23:14:34] <Lapsus> Pocky: 970 bros :v
+[23:14:53] <Lapsus> it runs things perfectly well at 1080p, I can't afford a nicer monitor :v
+[23:14:58] <Vega> If I had 250 bucks I would drop for one but I don't 
+[23:15:05] <johnsey> xbox (and ps4, for that matter) games aren't even always full hd 
+[23:15:08] <HoneyDrops> Intel HD4000~
+[23:15:14] <Moonlightning> HOLY. FUCKING. SHIT.
+[23:15:15] <Lapsus> fallout 4 is pushing it a little bit, I'll have to lower the aa
+[23:15:20] <Moonlightning> CAN I GET SOME SANITY AROUND HERE
+[23:15:22] <Pocky> Got Fallout 4 last night
+[23:15:33] <Pocky> 12 hours played oops
+[23:15:34] <johnsey> Moonlightning: sanity is all out tonight
+[23:15:37] <Vega> I'm like the only one I know that doesn't want Fo4
+[23:15:38] <Moonlightning> IS THE UNIVERSE PHYSICALLY IMPOSSIBLE OF LEAVING MY SHIT ALONE FOR AN ENTIRE WEEK
+[23:15:38] * HoneyDrops hooves Moonlightning a can of sanity.
+[23:15:55] <Moonlightning> My server went down, AGAIN, like PROPERLY DOWN, like REBOOTED
+[23:15:56] <HoneyDrops> Decaf sanity is fine, right?
+[23:16:03] <Lapsus> Vega: what johnsey mentioned is also true, most console games target 60fps at 720p
+[23:16:21] <Moonlightning> So YAY I get to reset the modes on my network AGAIN, and restart the services that I can't figure out how to make start automatically
+[23:16:25] *** zz_CyberJacob is now known as CyberJacob
+[23:16:28] <Moonlightning> HOORAY FOR UPSTART! BEST INIT SYSTEM!
+[23:16:54] <Moonlightning> And then, AND THEN, the power went out FOR LIKE THE SIXTH TIME THIS WEEK
+[23:17:12] <Moonlightning> SO I GET TO RESET MY NETBOX, TOO, YAAAAAYYYYYYYYY
+[23:17:19] <Pocky> x3
+[23:17:26] <Pocky> the salt is real
+[23:17:39] <Moonlightning> YES, ALL THE SALT
+[23:17:45] <Moonlightning> I GOT ALL THE SALT YOU COULD EVER WANT, RIGHT OVER HERE
+[23:17:49] <Moonlightning> STEP RIGHT UP, STEP RIGHT UP
+[23:17:59] <Moonlightning> take your pick from my AMAZING, ASTOUNDING collection of salts
+[23:18:39] <Moonlightning> I've got a veritable RAINBOW of salts
+[23:18:55] <Moonlightning> Look at this shit
+[23:19:01] <Pocky> xD
+[23:19:36] <Lapsus> Moonlightning: http://i.imgur.com/pdZFiYm.gif :3
+[23:19:41] * HoneyDrops takes 1000mg of  sodium γ-hydroxybutyrate from Moonlightning.
+[23:20:08] <Moonlightning> caviar, lopezite, rachromate, nickel(ii) chloride, blue vitriol, hypermangan, and, of course, table salt!
+[23:20:20] <Pocky> Hahah
+[23:20:25] <Moonlightning> On a related note, is anypony good with ethernet bridges and Linux distros? I can't figure out why wlan0 isn't getting added to my bridge at boot.
+[23:20:26] <Pocky> Lapsus, brilliant
+[23:20:43] <Dusk> Titan x with fallout 4 at 4K is buttery smooth
+[23:20:43] <Dusk> /late
+[23:21:11] <Pocky> I get frame dips :<
+[23:21:21] <Moonlightning> Making that automatic would REALLY help
+[23:21:38] <Moonlightning> that's the missing fucking link for unattended startups here
+[23:22:38] <Lapsus> Pocky: I get drops to 45 or so but I can just turn down aa or something
+[23:23:04] <Pocky> I'm running a 4690k too
+[23:23:18] <Pocky> I get dips to about that too
+[23:24:35] <Vega> Skylake is what socket type?
+[23:26:06] <Deathpony> will a PCIE 3.0 card work on a PCIE 2.0 motherboard?
+[23:26:27] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Ping timeout: 121 seconds)
+[23:26:29] *** Joins: MisterSkids (ejd@Pony-fej07d.res.rr.com)
+[23:28:46] <Webster> Deathpony: Yes.
+[23:29:01] <Webster> (Barring any bugs in the card/motherboard)
+[23:29:29] *** Joins: Fallfeathers (Fallfeather@Pony-tbb.jmd.162.101.IP)
+[23:30:54] <Vega> I5 6500 or 6600?
+[23:35:33] <Pocky> Its LGA 1151 iirc
+[23:35:34] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[23:36:46] <Pocky> i5 6600k and i7 6700k
+[23:37:28] <Vega> Ya, just seen that and I think I'll save the 30 bucks and go for the 6500
+[23:37:53] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[23:40:08] *** \m is now known as mniip
+[23:40:13] <Gladiolus> but but but overclocking epeen
+[23:42:02] <Lapsus> he doesn't have a heatsink for overclocking too much anyways
+[23:44:46] *** Joins: Asoka (Asoka@Pony-vros57.net-htp.de)
+[23:47:01] *** Quits: Asoka_White (Asoka@Pony-q8lr5q.net-htp.de) (Ping timeout: 121 seconds)
+[23:47:06] <Vega> I don't care to over clock anyways
+[23:47:31] <Vega> Now debating from AMD or nvidia 
+[23:47:44] <Lapsus> nvidia runs cooler, in general
+[23:47:59] <Lapsus> not 100% sure on what's netter at the moment
+[23:49:03] <Vega> 290x is the same price at the 970 hmm..
+[23:51:32] *** Quits: Asoka (Asoka@Pony-vros57.net-htp.de) (Ping timeout: 121 seconds)
+[23:54:15] *** Joins: Asoka (Asoka@Pony-lr6r53.net-htp.de)
+[23:54:57] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[23:55:37] *** Joins: sniperfox (sniperfox@Pony-0dgjo0.dont.denialofservice.org)
+[23:57:07] <Deathpony> should I get the stock 970?
+[23:58:38] *** Joins: lightIRC_4060 (zvngxybxhqu@Pony-4jb.pmv.252.187.IP)
+[23:58:40] <JustAberrant> unrelated: http://i.imgur.com/qDj7ooI.jpg  
+[23:59:04] *** Quits: Asoka (Asoka@Pony-lr6r53.net-htp.de) (Ping timeout: 121 seconds)
+[23:59:08] *** Joins: Anon|53289 (Anon53289@Pony-4jb.pmv.252.187.IP)
+[23:59:12] *** Joins: Asoka (Asoka@Pony-43ls7u.net-htp.de)
+[23:59:17] *** Joins: NewFoal65498 (NewFoal6549@Pony-4jb.pmv.252.187.IP)

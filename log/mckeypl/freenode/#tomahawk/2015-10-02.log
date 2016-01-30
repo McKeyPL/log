@@ -1,0 +1,329 @@
+[00:01:06] *** Joins: svetter_ (~svetter@2001:8e0:2003:fe00:c442:bb10:9431:886)
+[00:16:26] *** Quits: svetter_ (~svetter@2001:8e0:2003:fe00:c442:bb10:9431:886) (Remote host closed the connection)
+[00:31:29] *** Joins: soee_ (~soee@agvi113.neoplus.adsl.tpnet.pl)
+[00:32:37] *** Quits: soee (~soee@bmu23.neoplus.adsl.tpnet.pl) (Ping timeout: 252 seconds)
+[00:38:24] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Quit: alsuren)
+[00:43:30] *** Quits: soee_ (~soee@agvi113.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[00:44:52] <jherskowitz> lfranchi: reinstalled
+[00:44:54] <jherskowitz> https://www.irccloud.com/pastebin/TtxJaN27/
+[00:44:56] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[00:45:04] *** Joins: soee (~soee@agvi113.neoplus.adsl.tpnet.pl)
+[00:45:23] <jherskowitz> can you dumb that down for me
+[00:45:24] <jherskowitz> ?
+[00:51:30] *** Quits: soee (~soee@agvi113.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[00:52:18] <jherskowitz> I found this...
+[00:52:21] <jherskowitz> "f you're using Homebrew /usr/local/bin should already be at the front of $PATH or at least come before /usr/bin. If you now run brew link --force openssl in your terminal window, open a new one and run which openssl in it. It should now show openssl under /usr/local/bin."
+[00:54:12] <jherskowitz> that did it
+[00:54:25] *** Joins: soee (~soee@agvi113.neoplus.adsl.tpnet.pl)
+[00:58:21] *** Joins: soee_ (~soee@agvi113.neoplus.adsl.tpnet.pl)
+[00:58:37] * jherskowitz is a supergenius
+[00:58:57] *** Quits: soee (~soee@agvi113.neoplus.adsl.tpnet.pl) (Read error: Connection reset by peer)
+[00:58:57] *** Quits: soee_ (~soee@agvi113.neoplus.adsl.tpnet.pl) (Read error: Connection reset by peer)
+[00:59:37] *** Joins: soee (~soee@agvi113.neoplus.adsl.tpnet.pl)
+[01:00:16] *** Quits: soee (~soee@agvi113.neoplus.adsl.tpnet.pl) (Client Quit)
+[01:00:42] *** Joins: soee (~soee@agvi113.neoplus.adsl.tpnet.pl)
+[01:03:19] <jherskowitz> lfranchi: did you have this?
+[01:03:20] <jherskowitz> make[1]: *** [src/libtomahawk-playdarapi/CMakeFiles/tomahawk-playdarapi.dir/all] Error 2
+[01:04:02] *** Quits: soee (~soee@agvi113.neoplus.adsl.tpnet.pl) (Client Quit)
+[01:04:23] *** Joins: soee (~soee@agvi113.neoplus.adsl.tpnet.pl)
+[01:04:53] <jherskowitz> https://www.irccloud.com/pastebin/UThRThrG/
+[01:04:54] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[01:05:19] <theli_ua> that doesn't seem to include an actuall error
+[01:05:37] <jherskowitz> theli_ua: no?
+[01:05:59] <theli_ua> could you post the whole build log?
+[01:08:03] <jherskowitz> theli_ua: https://paste.kde.org/pud9pwntr
+[01:08:04] <tomabee> [ KDE Paste | paste.kde.org |  ]
+[01:09:11] <theli_ua> jherskowitz: looks like thats not a full one
+[01:09:28] <theli_ua> it ends abruptly
+[01:12:02] <jherskowitz> theli_ua: sorry 
+[01:12:03] <jherskowitz> https://paste.kde.org/p5mc8u5vq
+[01:12:04] <tomabee> [ KDE Paste | paste.kde.org |  ]
+[01:13:18] <jherskowitz> theli_ua: line 3827 I think
+[01:14:35] <jherskowitz> also SSL related I guess?
+[01:17:08] <theli_ua> not sure, but yeah, that line is an actuall error
+[01:17:27] <theli_ua> that "make Error 2" just said "hey, there was some compilation error somewhere"
+[01:17:35] <jherskowitz> ah, thx
+[01:17:37] <theli_ua> thus I asked if you have better log
+[01:17:43] <jherskowitz> yeah, makes sense
+[01:18:04] <jherskowitz> I thought I saw someone (lfranchi?) mention something similar earlier this week
+[01:20:01] <jherskowitz> "QxtHttpsServerConnector is only available if Qt was compiled with OpenSSL support."
+[01:20:03] <jherskowitz> hmm
+[01:23:42] <muesli> that's the same error i got, too
+[01:24:24] <muesli> could mean the qt5 package in brew is currently a bit fucked
+[01:26:22] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[01:28:37] *** Quits: soee (~soee@agvi113.neoplus.adsl.tpnet.pl) (Quit: Konversation terminated!)
+[01:30:49] *** Joins: soee (~soee@agvi113.neoplus.adsl.tpnet.pl)
+[01:33:53] <jherskowitz> muesli: ah, it was you
+[01:36:00] <jherskowitz> muesli: you think I should try to rebuilt Qt5?
+[01:36:26] <muesli> not sure. did you build it yourself or get a bottle?
+[01:36:31] <muesli> (binary form of brew distribution)
+[01:37:08] <jherskowitz> muesli: I’ve built it in the past, but guess I got the bottle this time
+[01:37:12] <jherskowitz> I followed the wiki
+[01:37:28] <jherskowitz> btw, I added a note about force linking openSSL
+[01:37:30] <muesli> did it install in 5 minutes or 5 hours? :D
+[01:37:43] <jherskowitz> heh, 5 minutes this time
+[01:37:49] <muesli> ok, certainly a binary then
+[01:37:51] <jherskowitz> but I’ve done the 5 hour thing in the past
+[01:38:03] <jherskowitz> but I think the 5 hour thing was still Qt4
+[01:38:08] <jherskowitz> the 5 min thing was Qt5
+[01:39:15] <muesli> checking brew git right now
+[01:39:32] <muesli> wtf
+[01:39:37] <muesli> they indeed compile with -no-openssl
+[01:39:50] <muesli> https://github.com/Homebrew/homebrew/blob/master/Library/Formula/qt5.rb
+[01:39:51] <tomabee> [ homebrew/qt5.rb at master · Homebrew/homebrew · GitHub | github.com | https://avatars0.githubusercontent.com/u/1503512?v=3&s=400 ]
+[01:39:52] <muesli> line 105
+[01:42:42] <jherskowitz> muesli: interesting
+[01:43:17] <muesli> cd /usr/local/Library/Formula
+[01:43:21] <muesli> git blame qt5.rb
+[01:43:26] <muesli> what does it say for line 105?
+[01:44:24] <jherskowitz> muesli: can I make git blame open in a text editor?
+[01:44:35] <muesli> git blame qt5.rb > /tmp/foobar
+[01:44:39] <muesli> open /tmp/foobar then :)
+[01:47:20] <jherskowitz> muesli: 00000000 (Not Committed Yet      2015-10-01 19:45:50 -0400 105)             "-no-rpath", "-no-openssl",
+[01:48:04] <muesli> huh
+[01:48:22] <jherskowitz> what’s that mean?
+[01:48:38] <muesli> would mean it's a local change, which makes no sense
+[01:48:57] <jherskowitz> should I brew remove qt and reinstall?
+[01:49:03] <muesli> nah, wouldn't change anything
+[01:49:08] <jherskowitz> k
+[02:00:18] <jherskowitz> muesli: so that says it was installed without SSL?
+[02:00:40] <muesli> yeah
+[02:01:02] <muesli> that's what they also use to create their own bottles
+[02:01:06] <jherskowitz> so, in theory, if we built it with SSL ourselves it would work?
+[02:05:27] <muesli> yeah
+[02:05:52] <muesli> i just don't get why they would want to disable it
+[02:06:28] <jherskowitz> http://doc.qt.io/qt-5/ssl.html#enabling-and-disabling-ssl-support
+[02:06:29] <tomabee> [ Secure Sockets Layer (SSL) Classes | doc.qt.io |  ]
+[02:07:07] <jherskowitz> muesli: but it worked on Mavericks
+[02:07:20] <muesli> hm, not for me
+[02:07:24] <jherskowitz> oh?
+[02:07:26] <muesli> you might just not have had the latest qt5 bottle
+[02:07:41] <jherskowitz> that could be
+[02:08:10] <muesli> i'm still on mavericks and got this after a recent brew upgrade
+[02:08:16] <jherskowitz> interesting
+[02:08:23] <jherskowitz> yeah, I hadn’t upgraded brew in a while
+[02:08:27] <jherskowitz> can we get an old bottle?
+[02:10:39] <jherskowitz> muesli: https://github.com/Homebrew/homebrew/issues/44375
+[02:10:40] <tomabee> [ qt lacks openssl support on el capitan · Issue #44375 · Homebrew/homebrew · GitHub | github.com | https://avatars2.githubusercontent.com/u/521953?v=3&s=400 ]
+[02:10:43] <jherskowitz> there is a patch
+[02:11:58] <muesli> yeah, that would also fix it for mavericks, by the looks
+[02:13:12] <jherskowitz> muesli: so just edit that file and then brew install qt?
+[02:13:52] <muesli> brew install --source -v
+[02:14:25] <jherskowitz> brew install qt --source -v?
+[02:14:31] <jherskowitz> or is that something else?
+[02:15:28] <muesli> qt5 it is iirc
+[02:15:48] <muesli> should be fine, but usually set the options (like --source) before the params
+[02:15:49] <jherskowitz> ok, so I have to edit qt5.rb - yeah?
+[02:15:50] <muesli> (like qt5)
+[02:16:24] <muesli> ah
+[02:16:27] <muesli> meh, i see
+[02:16:29] <muesli> this patch is for qt4
+[02:17:18] <muesli> just try removing the ',"-no-openssl" from line 105 in qt5.rb
+[02:17:24] <muesli> then try brew install --source -v qt5
+[02:19:06] <jherskowitz> muesli: I need to remove first?
+[02:19:14] <jherskowitz> remove qt5 first?
+[02:19:30] <muesli> yeah
+[02:19:46] <jherskowitz> hmm.. I have 2 versions of qt5
+[02:19:53] <jherskowitz> guess I’ll get rid of all
+[02:21:32] <muesli> weeeelll
+[02:21:38] <muesli> there's your old qt5 bottle then ;-)
+[02:21:50] <jherskowitz> oh, it’s gone now :/
+[02:21:54] <muesli> you could just remove the newest one
+[02:21:55] <muesli> ...
+[02:21:57] <muesli> heh
+[02:25:38] * jherskowitz building
+[02:32:42] <jherskowitz> muesli: meh, same error (I think)
+[02:32:45] <jherskowitz> https://www.irccloud.com/pastebin/8HDDTPfa/
+[02:32:46] <tomabee> [ Pastebin | www.irccloud.com |  ]
+[02:34:04] <muesli> jherskowitz: huh? this brew install command should take hours
+[02:34:20] <muesli> ah meh
+[02:34:26] <muesli> it's probably --build-from-source
+[02:36:00] <jherskowitz> muesli: ok, I’ll try that
+[02:36:10] <jherskowitz> I’ll let you know how it went tomorrow :)
+[02:38:01] <muesli> :)
+[02:51:21] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Read error: Connection reset by peer)
+[03:04:54] *** Quits: soee (~soee@agvi113.neoplus.adsl.tpnet.pl) (Ping timeout: 260 seconds)
+[04:50:03] *** Quits: zopieux (zopieux@jerrycraft.tk) (Ping timeout: 256 seconds)
+[04:50:50] *** Quits: sythe (uid20450@facade/leader) ()
+[05:07:59] *** Joins: zopieux (zopieux@jerrycraft.tk)
+[05:44:07] *** Joins: mgue (~mgue@f049030051.adsl.alicedsl.de)
+[05:47:16] *** Quits: mgue2 (~mgue@x5ce44119.dyn.telefonica.de) (Ping timeout: 265 seconds)
+[06:12:06] *** Joins: apb1963 (~apb@174-135-20-37.res.bhn.net)
+[06:23:21] <toma-cat> Added new crash-report for version 0.41-27-gfbcabc3 (Android)
+[06:26:50] <theli_ua> gm, can't make gmusic work on android tomahawk with app specific password >_<
+[06:27:24] <theli_ua> works perfectly fine on multiple desktop tomahawk installations >_<  (for gmusic and gtalk accounts)
+[06:29:18] <theli_ua> it just doesn't work >_<
+[07:55:44] *** Joins: soee (~soee@agvi113.neoplus.adsl.tpnet.pl)
+[08:02:53] *** Quits: apb1963 (~apb@174-135-20-37.res.bhn.net) (Ping timeout: 252 seconds)
+[08:52:24] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[09:04:19] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[09:30:37] *** Joins: soee_ (~soee@aguw80.neoplus.adsl.tpnet.pl)
+[09:32:26] *** Quits: soee (~soee@agvi113.neoplus.adsl.tpnet.pl) (Ping timeout: 250 seconds)
+[09:32:47] *** Quits: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com) (Quit: alsuren)
+[09:49:12] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[09:52:58] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[10:43:20] *** Quits: znf (~ibm86@unu.card-sharing.eu) (Remote host closed the connection)
+[10:45:31] *** Joins: znf (~ibm86@unu.card-sharing.eu)
+[11:12:13] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[11:17:48] *** Quits: joepie91_ (~joepie91@199.241.31.225) (Ping timeout: 250 seconds)
+[11:17:49] *** Quits: ugly_cat (~quassel@c-76-104-204-149.hsd1.wa.comcast.net) (Ping timeout: 250 seconds)
+[11:18:47] *** Joins: ugly_cat (~quassel@c-76-104-204-149.hsd1.wa.comcast.net)
+[11:24:18] *** Joins: joepie91_ (~joepie91@199.241.31.225)
+[12:28:33] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[12:33:43] <jherskowitz> muesli: damn, been 10 hours and Qt is still compiling
+[13:05:16] <domme> jherskowitz: hahaha, holy crap
+[13:15:34] <jherskowitz> domme: I guess it’s possible that my machine fell asleep and suspended operation for  while
+[13:29:29] <domme> jherskowitz: hehehe
+[13:31:35] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[13:48:46] *** Quits: liori (~liori@unaffiliated/liori) (Remote host closed the connection)
+[14:31:53] *** Joins: liori (~liori@unaffiliated/liori)
+[15:00:39] <muesli> jherskowitz: probably. 10h is too much :)
+[15:23:11] *** Joins: ssam2 (~ssam2@cpc7-asht7-2-0-cust170.10-1.cable.virginm.net)
+[15:29:44] <jherskowitz> muesli: 12 hours later, same error
+[15:30:51] <jherskowitz> :/
+[15:35:56] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[15:41:53] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[15:56:35] *** Joins: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222)
+[16:08:13] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[16:11:42] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[16:16:48] <gordie> guys, has the developement of THK declined ?
+[16:17:00] <gordie> not much activity on github those weeks... ?
+[16:33:43] <jherskowitz> gordie: tons of Hatchet and Android work lately
+[16:33:46] <jherskowitz> more desktop soon
+[16:34:10] <jherskowitz> theli_ua: has been doing some great work in meantime
+[16:34:25] <jherskowitz> so nice resolver improvements and more resolvers with 0.9
+[16:34:53] <gordie> okay :)
+[16:39:42] <gordie> have you had good feedback on hatchet ?
+[16:42:32] <jherskowitz> gordie: yeah, not bad so far
+[16:42:46] <jherskowitz> we haven’t yet told our mailing list about it yet
+[16:42:51] <jherskowitz> that will be a big next step
+[16:43:42] <gordie> ok
+[16:44:01] <gordie> do you know about musicovery ? recommandations are quite nice, I'm currently playing with their API
+[16:44:06] <gordie> musicovery.com
+[16:50:00] *** Joins: EvilAaron (~User@d206-116-119-133.bchsia.telus.net)
+[16:50:06] *** Joins: User_ (~User@d206-116-119-133.bchsia.telus.net)
+[16:51:07] *** Parts: User_ (~User@d206-116-119-133.bchsia.telus.net) ()
+[17:22:12] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[17:22:14] <EvilAaron> My recently played scrobbles aren't showing up on Hatchet.is from desktop or mobile. Last play activity is a month ago. All apps say hatchet account is online or connected
+[17:22:56] <EvilAaron> also see that last.fm isnt getting my plays from desktop version :(
+[17:37:01] <gordie> EvilAaron : I got the scrobble for the desktop version, here
+[17:40:30] <gordie> * last.fm scrobble, I did not try with hatchet
+[17:41:02] <EvilAaron> So desktop is scrobbling for you to hatchet.is and last.fm? I am working though nightlies atm. Latest ones crash so just worked from Aug 21 - 25th so far
+[17:41:13] <EvilAaron> *oops missed update lol
+[17:46:23] <EvilAaron> yeah its strange last.fm has always been working from desktop here. Not even working with version installed that was working before. Just tried logging off and back on. Other scobblers on same box working
+[17:58:24] <EvilAaron> Odd cause I can sync loved tracks from last.fm and import history, test login works just no scrobble submisions happen. Well I give up for now lol 3 year old says i'm done :P
+[18:01:12] *** Quits: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com) (Read error: Connection reset by peer)
+[18:03:51] *** Joins: jturney (~jon@host31-51-205-230.range31-51.btcentralplus.com)
+[18:10:18] <muesli> EvilAaron: no worries, they're not lost
+[18:10:42] <muesli> EvilAaron: the last.fm scrobbling is a last.fm issue tho
+[18:11:07] <muesli> EvilAaron: your hatchet scrobbles from both mobile and desktop will start appearing again tonight
+[18:11:12] <theli_ua> last.fm scrobbling seem to work fine for me
+[18:11:20] <muesli> theli_ua: for me too, it only affects some users
+[18:11:28] <muesli> and it's pretty obviously a last.fm server side issue
+[18:11:43] <theli_ua> jherskowitz: MrMaffen does any of you guys use 2-factor auth with google and gmusic plugin on android?
+[18:12:46] <jherskowitz> theli_ua: not me
+[18:13:26] <theli_ua> i've seen people report they can't get it to work on android in g+ community, well, I can't get it to work either, didn't debug though
+[18:15:53] <jherskowitz> theli_ua: I thought the FAQ generally solved their problem wrt to app-specific passwords
+[18:16:11] <theli_ua> it works perfectly fine on desktop , on multiple installations
+[18:16:56] <theli_ua> well, latest post on g+ commuinty is from a person not being able to log into gmusic for example
+[18:20:28] *** Quits: ssam2 (~ssam2@cpc7-asht7-2-0-cust170.10-1.cable.virginm.net) (Quit: Leaving)
+[18:20:30] <theli_ua> also, why I don't always enjoy taking a bus http://www.seattlepi.com/local/crime/article/Nunchuk-wielding-shampoo-thief-charged-in-6543357.php
+[18:20:32] <tomabee> [ Nunchuk-wielding shampoo thief charged in bus-based sword attack | www.seattlepi.com | http://ww3.hdnux.com/photos/02/60/50/723490/3/rawImage.jpg ]
+[18:28:25] <MrMaffen> theli_ua: are you using the latest nightly or the beta version?
+[18:28:33] <theli_ua> beta
+[18:28:40] <theli_ua> you know, its beta than nothing
+[18:28:41] <MrMaffen> yea can't work then
+[18:28:58] <theli_ua> kk
+[18:29:02] <MrMaffen> the gmusic resolver in the beta version is too old
+[18:29:12] <MrMaffen> theli_ua: should work in the nightly version
+[18:29:14] <theli_ua> thanks
+[18:29:19] <MrMaffen> np
+[18:29:36] <theli_ua> does the nightly support resolvers from outside of apk?
+[18:29:44] <MrMaffen> theli_ua: yep
+[18:29:52] <theli_ua> nice
+[18:30:05] <MrMaffen> theli_ua: didn't I ping you when I implemented that ? :D
+[18:30:12] <theli_ua> I was going to compile my own version though, and see if I can make cookies work (and amazon resolver)
+[18:30:35] <theli_ua> MrMaffen: you did iirc , just wanted to confirm it is not disabled or anything in the build
+[18:30:52] <MrMaffen> cool, feel free to ping me when you run into problems regarding the build setup
+[18:31:17] <theli_ua> oh, I have it set up, in fact I think I am running my own build with couple of own resolvers built in
+[18:31:24] <theli_ua> albeit pretty old version I think
+[18:31:28] <MrMaffen> ah ok
+[18:31:59] <theli_ua> its just I mostly listen to 'radio' thus I mostly use pandora on my phone
+[18:33:22] <theli_ua> oh, wow, jherskowitz tmo even has bandcamp and soundcloud in freedom music
+[18:34:22] <MrMaffen> theli_ua: yea same for me. I really want to have stations in the android app. I'll add that right after the release
+[18:34:37] <theli_ua> using what, echonest?
+[18:34:42] <MrMaffen> yep
+[18:35:08] <theli_ua> nice, theres another similar service musicdiscovery, gordie was talking about it here recently
+[18:35:27] <MrMaffen> yep read that. I'll look into it
+[18:35:39] <theli_ua> we just might want to abstract that and introduce "radio plugins" or something
+[18:36:13] <MrMaffen> theli_ua: that's the plan. that'd just be a js infoplugin
+[18:36:24] <gordie> yeah, i'm still testing musicovery but for now, I have the feeling the recommandations are better than Echo Nest, but maybe i'm wrong
+[18:36:29] <MrMaffen> the tomahawk api is almost ready for js infoplugins
+[18:36:39] <MrMaffen> cross-compatible magic all the way
+[18:36:41] <theli_ua> oh and btw, are you planning to fix Tomahawk.UrlType vs TomahawkUrlType in tidal MrMaffen ?
+[18:37:40] <MrMaffen> yup
+[18:40:17] <MrMaffen> theli_ua: domme: btw, do we really need that canParseUrl-function?
+[18:40:32] <MrMaffen> I currently ignore that in the android app and just push every url into lookupUrl directly
+[18:40:42] <theli_ua> I dunno
+[18:40:50] <MrMaffen> either it successfully parses the url or it doesn't
+[18:41:07] <MrMaffen> the check in canParseUrl seems redundant to me
+[18:41:23] <theli_ua> I think it is used to check if it even allows dropping a particular url on desktop
+[18:41:29] <theli_ua> muesli might know
+[18:43:25] <MrMaffen> hm yea could be. still seems redundant even if that were the case
+[18:43:49] <MrMaffen> drag&drop needs a refactor in tomahawk-desktop anyways
+[18:44:55] <theli_ua> isn't there a similar mechanism on android to check whether an app can open a particular url?
+[18:45:32] <theli_ua> ie it makes sense to provide tomahawk-android in the list of apps to open spotify/playlist/x and not for spotify.com 
+[18:47:02] <MrMaffen> theli_ua: unfortunately I can't dynamically register tomahawk-android as an app that can handle certain urls
+[18:47:12] <theli_ua> I see
+[18:47:19] <MrMaffen> I need to do that in the androidManifest when building the app
+[18:48:10] <theli_ua> yeah, I just googled that, its intent filter in the manifest, not dynamic thing :(
+[18:48:33] <MrMaffen> I think it would even make sense to put the lookupUrl code in separate plugins that will always get shipped with the app
+[18:50:20] <MrMaffen> that's something I need to think about when we switch over to a proper resolver sync manager 
+[18:50:30] <MrMaffen> gnarf ... so much to do ... so little time ^^
+[18:53:50] *** Quits: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222) (Quit: Page closed)
+[19:08:28] *** Joins: alsuren (~alsuren@host86-162-74-153.range86-162.btcentralplus.com)
+[19:10:51] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[19:20:46] <domme> MrMaffen: canParse is sync and can be used where lowlatency is needed
+[19:21:01] <domme> i think in tomahaek desktop its used for dropjobs
+[19:53:34] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Read error: Connection reset by peer)
+[19:54:11] *** Joins: meaning (~meaning@095-097-075-204.static.chello.nl)
+[20:07:25] *** Quits: meaning (~meaning@095-097-075-204.static.chello.nl) (Quit: My Mac has gone to sleep. ZZZzzz…)
+[20:23:39] <MrMaffen> domme: well then we should get rid of it with 0.9
+[20:24:25] <MrMaffen> sync functions should no longer be a thing. and we can simply throw an Error when lookupUrl can't parse the given url, thus making it also low latency
+[20:38:16] *** McKey is now known as McKeyPL
+[20:38:27] *** McKeyPL is now known as McKey
+[20:39:10] *** McKey is now known as Discord
+[21:23:44] <EvilAaron> Still wrestling with last.fm here as its the only 3rd person last.fm scrobbler I can't get working atm. Looking for info to submit to them to help issue. Odd that in desktop app when I test last.fm connection I get a success and I can sync loved tracks and history but in tomahawk log I am getting this,
+[21:23:45] <EvilAaron> Fri Oct 2 2015 - 12:06:57 [9]: "<lfm status="failed">
+[21:23:46] <EvilAaron>   <error code="4">Authentication Failed - You do not have permissions to access the service</error>
+[21:23:46] <EvilAaron> </lfm>
+[21:23:46] <EvilAaron> "
+[21:23:49] <EvilAaron> Fri Oct 2 2015 - 12:06:57 [0]: void Tomahawk::InfoSystem::LastFmInfoPlugin::onAuthenticated() "Got error in Last.fm authentication job: Authentication Failed - You do not have permissions to access the service" 
+[21:36:47] <EvilAaron> but says success here puzzled - http://imgur.com/kpWqjjW
+[21:36:48] <tomabee> [ The most awesome images on the Internet | imgur.com | http://i.imgur.com/kpWqjjW.jpg ]
+[22:09:25] *** Joins: User_ (~User@d206-116-119-133.bchsia.telus.net)
+[22:12:42] *** Joins: EvilAaron_ (~User@d206-116-119-133.bchsia.telus.net)
+[22:13:16] *** Quits: EvilAaron (~User@d206-116-119-133.bchsia.telus.net) (Ping timeout: 265 seconds)
+[22:13:43] *** Quits: User_ (~User@d206-116-119-133.bchsia.telus.net) (Ping timeout: 246 seconds)
+[22:14:34] *** Joins: apb1963 (~apb@174-135-20-37.res.bhn.net)
+[22:33:59] *** Joins: glaxx_ (~quassel@v2.glaxx.net)
+[22:34:23] *** glaxx_ is now known as glaxx
+[22:43:20] *** Quits: TheOneRing (~quassel@HSI-KBW-134-3-252-64.hsi14.kabel-badenwuerttemberg.de) (Quit: No Ping reply in 180 seconds.)
+[22:45:09] *** Joins: TheOneRing (~quassel@HSI-KBW-134-3-252-64.hsi14.kabel-badenwuerttemberg.de)
+[22:57:38] *** Quits: apb1963 (~apb@174-135-20-37.res.bhn.net) (Ping timeout: 268 seconds)
+[22:59:00] <jherskowitz> EvilAaron_: I think they are having issues with their scrobbling endpoint
+[22:59:15] <jherskowitz> but history/loved tracks endpoints are ok
+[23:00:28] <jherskowitz> muesli: any way for me to see if Qt5 *actually* installed with openSSL support?
+[23:02:49] <EvilAaron_> well just fired up the mint virtual box I run tomahawk on back when spotify win 64 was killing me. Last.fm scrobbles fine from the mint install. Guess its back to Tomahawk from a VR box again for a while :)
+[23:03:39] <theli_ua> jherskowitz: grep -Hr "define QT_NO_OPENSSL" /location/to/qt/headers ?
+[23:04:52] <jherskowitz> EvilAaron_: are you normally on Windows 10?
+[23:05:52] <jherskowitz> if so, I have a theory
+[23:06:45] <jherskowitz> we found an SSL issue with Qt4 on Win10 - maybe scrobble endpoint is https?
+[23:06:48] <jherskowitz> muesli: ^?
+[23:10:52] <muesli> hmm... that wouldn't match the error tho, i think
+[23:13:23] <EvilAaron_> Win 7 64 bit
+[23:23:01] *** Joins: CaptainKnots (~redhat@fedora/CaptainKnots)
+[23:23:54] <CaptainKnots> hi. I was wondering if tomahawk supports playback of 24/96 flac files
+[23:24:16] <muesli> CaptainKnots: it should yeah
+[23:24:58] <muesli> generally speaking, we use the vlc backend. so anything vlc can play, tomahawk can too
+[23:25:08] <CaptainKnots> ok cool

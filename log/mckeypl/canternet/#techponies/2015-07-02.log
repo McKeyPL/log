@@ -1,0 +1,518 @@
+[00:06:45] *** Joins: zeta_ (Bluepon@Pony-mfh7oq.md.comcast.net)
+[00:08:11] *** Quits: Crimson_Tail (Bluepon@Pony-js1jfn.s0tm.sdub.0151.2601.IP) (Ping timeout: 121 seconds)
+[00:29:10] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[00:35:28] *** CyberJacob is now known as zz_CyberJacob
+[00:41:17] *** Quits: VexPon (VexPon@Vex.Pon) (Connection closed)
+[00:48:17] *** Quits: Gumball_Crash (GumballCras@Pony-474.ar1.17.73.IP) (Ping timeout: 121 seconds)
+[01:34:35] *** Joins: cyborg_ar (cyborgar@Pony-q58.f8j.13.186.IP)
+[01:37:38] *** Joins: Sombra (Iceman@Darkhorse21)
+[01:38:39] *** Quits: cyborg_ar (cyborgar@Pony-q58.f8j.13.186.IP) (Ping timeout: 121 seconds)
+[01:53:54] *** Quits: Asoka (Asoka@Pony-ll4.m9g.182.89.IP) (Ping timeout: 121 seconds)
+[01:57:05] *** Quits: hawthornbunny (hawthorn@Pony-tk6.bga.28.2.IP) (Ping timeout: 121 seconds)
+[02:02:52] *** Quits: bronygeek (bronygeek@Pony-9t79ei.zoominternet.net) (Connection closed)
+[02:04:30] *** Joins: Asoka (Asoka@Pony-lm2b1f.net-htp.de)
+[02:05:29] <Sombra> Speed fan SMART says I need to replace my SATA cables.
+[02:11:42] <Webster> O_o
+[02:12:05] <Webster> Never seen SATA cables go bad before.
+[02:13:41] <Sombra> Really?
+[02:14:39] <MistVeil> Indeed, they'd have to be faulty from the start, or very old
+[02:15:06] <MistVeil> I have seen one go bad, though. It's impossible to notice it from outside
+[02:19:26] <AppleDash> o.o
+[02:19:51] *** Joins: Asoka_White (Asoka@Pony-3vf.j7h.182.89.IP)
+[02:23:04] *** Quits: Asoka (Asoka@Pony-lm2b1f.net-htp.de) (Ping timeout: 121 seconds)
+[02:26:43] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[02:30:52] *** Quits: MistVeil (AndChat3408@Pony-3cm.23f.144.201.IP) (Quit: Bye)
+[02:40:51] *** Joins: ColtonDRG-Core (coltondrg@ColtonDRG.is.best.pony)
+[02:43:23] *** Quits: ColtonDRG (coltondrg@ColtonDRG.is.best.pony) (Ping timeout: 121 seconds)
+[02:43:29] *** Joins: Fallfeathers (Fallfeather@Pony-vg6lgl.bigpond.net.au)
+[03:17:15] *** Joins: FireBolt (FireBolt@Pony-ous.99m.96.191.IP)
+[03:17:36] *** Quits: FireBolt (FireBolt@Pony-ous.99m.96.191.IP) (Connection closed)
+[03:17:41] *** Joins: FireBolt (FireBolt@Pony-ous.99m.96.191.IP)
+[03:18:10] *** Joins: Gilda (Fall@silently)
+[03:21:04] *** Quits: FireBolt (FireBolt@Pony-ous.99m.96.191.IP) (Killed (One-Trick (spambpot)))
+[03:21:05] <vi[NLR]> query-spam from FireBolt T.T
+[03:23:34] <AppleDash> Moonlightning: Here's something I think you'll like
+[03:23:43] <AppleDash> One of my GitHub accounts was compromised
+[03:23:48] <AppleDash> They had me verify I own it using my SSH key
+[03:23:53] <Moonlightning> O.o
+[03:24:00] <AppleDash> Yeah
+[03:24:05] <Moonlightning> How the fuck
+[03:25:03] <AppleDash> They made me run ssh -T git@github.com verify which spit out a token for me to paste to them
+[03:26:37] <Moonlightning> that raises more questions than it answers
+[03:27:08] <AppleDash> Oh?
+[03:27:10] <Moonlightning> Clearly it's not different every time…is it static? Wouldn't that make it a password equivalent and kinda defeat the purpose? How often does it change?
+[03:27:29] <Moonlightning> Why does it exit with a status of 1? XP
+[03:27:31] <AppleDash> It can only be obtained by SSHing to them using my key
+[03:27:47] *** Joins: WritingPony (TwoTailedF@Pony-ah6lvr.in-addr.btopenworld.com)
+[03:27:52] <Moonlightning> should just be a normal crypto challenge-response
+[03:28:08] <Moonlightning> “Here, sign this timestamp + random string with one of the SSH keys on your account”
+[03:28:17] *** WritingPony is now known as Pony_72791
+[03:28:24] <Moonlightning> How'd your account get compromised thouguh?
+[03:28:27] <Moonlightning> and how'd you find out?
+[03:30:29] <AppleDash> It got compromised because it's a secondary account I don't really care about so the password is reused, whoever did it got the password from a database dump of another site
+[03:30:42] <AppleDash> I found out because I got a password and email change email in quick succession
+[03:32:48] <Moonlightning> Ahh.
+[03:33:04] * Moonlightning doesn't understand this :P
+[03:33:24] <Moonlightning> I don't reuse passwords or anything anymore, unless it's /ephemeral/
+[03:33:53] <Seoson> Moonlightning: Password manager?
+[03:33:58] <Moonlightning> Yeo.
+[03:34:00] <Moonlightning> Yep. *
+[03:34:23] <Moonlightning> just ditched Apple's Keychain Access thing for `pass`, for passwords
+[03:34:33] <Moonlightning> haven't been able to pry my email certs from it though :/
+[03:34:47] <AppleDash> I don't if I can help it
+[03:34:58] <AppleDash> but I've had this account for like 4 years and I use it like once per year
+[03:34:59] <Seoson> I'm very happy with KeePass 2. I still haven't changed the majority of passwords however
+[03:35:49] <Moonlightning> I'm in a weird place.
+[03:36:58] <Moonlightning> My passwords used to be terrible, but at this point they're nearly all a combination of six common words, and two related to the specific service
+[03:37:20] <Moonlightning> common as in shared, not as in used frequently in English
+[03:37:52] <Seoson> I began to use custom e-mail adresses for websites now. Format: websitename+username@mydomain.tld . I hope that will avoid spam in the future.
+[03:38:13] <Moonlightning> I changed the six words recently, but I've only updated the passwords on my devices, not websites or anything. Kinda wary of doing so because password policies
+[03:44:12] *** Joins: bronygeek (bronygeek@Pony-t41.06l.101.24.IP)
+[03:44:43] <frackster> I know what Moonlightning's password is
+[03:53:44] *** Joins: nscoots (FreyGrimrod@Pony-63u.0qr.192.70.IP)
+[03:57:50] *** Parts: Gilda (Fall@silently) ()
+[03:57:51] *** Joins: cyborg_ar (cyborgar@Pony-ri7.p2q.25.181.IP)
+[04:00:00] *** Quits: Pony_72791 (TwoTailedF@Pony-ah6lvr.in-addr.btopenworld.com) (Ping timeout: 121 seconds)
+[04:00:57] *** Quits: Phase (Phase4@Pony-croh24.internode.on.net) (Ping timeout: 121 seconds)
+[04:21:04] *** Gigabit is now known as gigaway
+[04:25:28] *** Joins: Sombra (Iceman@Darkhorse21)
+[04:49:16] *** Joins: Phase (Phase4@Pony-lu48ce.lnk.telstra.net)
+[04:59:12] <ShivalWolf> http://www.abc.net.au/news/2015-07-02/google-auto-tag-names-black-americans-gorillas/6589418
+[04:59:12] <PinkiePieBot> [ Google apologises after new photo app tags black Americans 'gorillas' - ABC News (Australian Broadcasting Corporation) ]
+[05:03:22] <cyborg_ar> lol
+[05:03:39] <cyborg_ar> google AI is racist
+[05:04:52] <cyborg_ar> goes to show that it's hard to tell a rudimentary form of intelligence and a bigot apart
+[05:05:40] <Moonlightning> uh
+[05:05:47] <Moonlightning> I don't understand why anyone is offended by that.
+[05:06:02] <cyborg_ar> me neither
+[05:06:18] <cyborg_ar> putting her lips like that confuses the computer
+[05:06:21] <ShivalWolf> most people would find it funny
+[05:06:29] <ShivalWolf> some people are just idiots
+[05:06:34] <ShivalWolf> who thinks its targeting them
+[05:07:26] <cyborg_ar> https://c402277.ssl.cf1.rackcdn.com/photos/1028/images/story_full_width/western-lowland-gorilla-heroHI_279168.jpg?1345535856
+[05:07:38] <cyborg_ar> dark skin, wide nose, humanlike face
+[05:07:47] <cyborg_ar> easy for a computer to confuse
+[05:08:12] <ShivalWolf> i love the what was it HP racisit webcam?
+[05:08:24] *** Quits: Webster (Webster@Pony-io0ebs.md.comcast.net) (Quit: Leaving)
+[05:08:27] <ShivalWolf> that couldnt facetrack dark skin
+[05:08:36] <cyborg_ar> it could be the next turing test, a machine that can distinguish between pictures of black people and gorillas
+[05:08:40] <Phase> oh man that was fun
+[05:08:50] <ShivalWolf> cyborg_ar: LOL
+[05:09:03] <cyborg_ar> i'm sure if they trained with gorillas with white faces they would recognize white people as gorillas
+[05:09:12] <cyborg_ar> it's just the fact that gorillas look like people
+[05:11:10] <cyborg_ar> i wonder what the system would say of this http://s1278.photobucket.com/user/Pi-R-Squared/media/LPF/nicolas-cage-gorilla_zpsee1bf157.jpg.html
+[05:11:12] <cyborg_ar> hahaha
+[05:57:06] *** Quits: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: People may sleep soundly in their beds tonight, only because rough men stand ready to visit violence upon those who would do them harm)
+[06:04:14] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[06:04:56] <AppleDash> Moonlightning, http://i.dashie.in/xlzlRt
+[06:04:59] <AppleDash> I am upset by this
+[06:05:14] <Phase> try python 3
+[06:05:27] <AppleDash> Nope :(
+[06:05:33] <Moonlightning> I know, right?
+[06:05:53] <Phase> AppleDash, javascript?
+[06:06:00] <AppleDash> (On another note, I didn't know my terminal supported emoji)
+[06:06:06] <AppleDash> Phase: But this isn't a JS application!
+[06:06:30] <Phase> well maybe it should be :/
+[06:06:36] <AppleDash> lol
+[06:06:59] <Phase> awww, 😊 isn't valid as a name in js
+[06:07:23] <AppleDash> :(
+[06:07:30] <Phase> oh man, http://emojipedia.org/smiling-face-with-smiling-eyes/ the microsoft one
+[06:07:30] <PinkiePieBot> [ 😊 Smiling Face With Smiling Eyes Emoji ]
+[06:07:51] <AppleDash> haha
+[06:07:53] <Phase> the grinning face is even better XD
+[06:07:57] <Phase> http://emojipedia.org/grinning-face/
+[06:07:57] <PinkiePieBot> [ 😀 Grinning Face Emoji ]
+[06:08:13] <AppleDash> xD
+[06:08:30] <AppleDash> Unrelated
+[06:08:36] <AppleDash> http://i.dashie.in/vUvuzQ tonight is the night I deal with this
+[06:08:37] <AppleDash> halp
+[06:08:53] <Phase> deal with how?
+[06:08:58] <AppleDash> Reduce :(
+[06:09:02] <AppleDash> And organize
+[06:09:45] <AppleDash> Probably not the best idea with a preexisting headache
+[06:09:53] * Moonlightning recently cleared out his ~/Downloads
+[06:10:00] <Moonlightning> well, I say “cleared out”
+[06:10:03] <AppleDash> Oh, let me size that one up right quick
+[06:10:14] <Moonlightning> about a quarter to a third of it was temporary stuff
+[06:10:18] <Moonlightning> Most of that is gone
+[06:10:31] <Moonlightning> Most of the rest is music I've downloaded from YouTube, which will stay there for a while.
+[06:10:46] <AppleDash> Cinnamon doesn't even want to try to size that
+[06:10:49] <AppleDash> oh no
+[06:10:51] <AppleDash> here we go
+[06:10:51] <Moonlightning> ncdu
+[06:11:00] <AppleDash> 41,588 items (and 170 hidden), totalling 113.2 GB
+[06:11:00] <AppleDash> (some contents unreadable)
+[06:11:02] <AppleDash> brilliant
+[06:13:31] <AppleDash> this is what we call a representative sample of my organization
+[06:13:32] <AppleDash> http://i.dashie.in/wjHu9C
+[06:13:39] <AppleDash> note that that's a folder containing 4.3bsd
+[06:14:21] <Moonlightning> > Total disk usage:  98.7 GiB  Apparent size:  99.8 GiB  Items: 348898
+[06:15:10] <AppleDash> Why do you have a 100GB drive
+[06:15:28] <Moonlightning> It's not; it's ~256 SI GB
+[06:15:33] <Moonlightning> that says total disk /usage/
+[06:16:08] <AppleDash> I thought "Apparent Size" was the entire dusk
+[06:16:10] <AppleDash> disk*
+[06:16:17] <Moonlightning> Nah
+[06:16:39] <Moonlightning> That one is what you'd get if you did it naïvely
+[06:16:50] <Moonlightning> i.e. counting files with multiple hardlinks multiple times
+[06:17:02] <AppleDash> /dev/mapper/root  1.8T  1.5T  223G  88% /
+[06:17:06] <AppleDash> That's size, used, free
+[06:17:21] <Moonlightning> /dev/disk1  233Gi  178Gi   54Gi    77% 46819397 14168122   77%   /
+[06:17:23] <Moonlightning> Same
+[06:17:25] <AppleDash> I also have an almost full 3TB HDD
+[06:17:32] <AppleDash> but that's not plugged in for SOME REASON
+[06:17:41] <Moonlightning> plug it in you lazy bitch
+[06:17:52] <AppleDash> I can't, it's internal :(
+[06:18:15] <Moonlightning> plug it in you lazy bitch :P
+[06:18:21] <AppleDash> But but
+[06:18:23] <AppleDash> reboot 
+[06:18:26] <Moonlightning> oh
+[06:18:29] <Moonlightning> right.
+[06:19:16] <AppleDash> Time to do my monthly moving of all images from Stuff to ~/img
+[06:21:16] <Moonlightning> https://gist.github.com/BlacklightShining/9bf0bc23f24823438fe6
+[06:21:17] <PinkiePieBot> [ ncdu ]
+[06:23:47] <AppleDash> amazing
+[06:23:56] <Moonlightning> feel free to one-up me
+[06:24:03] <ShivalWolf> i really should learn how to use github for things
+[06:24:04] <ShivalWolf> lol
+[06:24:48] <AppleDash> Moonlightning: Isn't du on millions of files slow?
+[06:24:56] <Moonlightning> Is it?
+[06:25:13] <Moonlightning> This only took one or two minutes.
+[06:25:26] <AppleDash> Well, I have a terabyte and a half in ~
+[06:25:29] <AppleDash> my system is like 10G
+[06:27:14] <AppleDash> yeah, this is not happening :P
+[06:28:03] <Moonlightning> ten billion, or ten million? O.o
+[06:28:43] *** Joins: Mike_Coltfield (Larscis@colt.in.the.rain)
+[06:28:43] <AppleDash> ?
+[06:29:03] <AppleDash> My system, excluding /home and /var, is about 10 gigabytes
+[06:29:12] <Moonlightning> Oh.
+[06:31:28] <AppleDash> ncdu just froze trying to handle ~/Downloads
+[06:32:10] <Colgate> what is ncdu?
+[06:32:19] <Moonlightning> NCurses Disk Usage
+[06:32:43] <Colgate> oh, didn't realize du needed an interactive interface :P
+[06:32:53] <Moonlightning> It's useful
+[06:32:53] <AppleDash> fuck you Colgate
+[06:33:02] <Colgate> what?!
+[06:33:03] <AppleDash> 86GB of Stuff is your ponibooru archive
+[06:33:12] <Colgate> not my fault you mirrored it
+[06:33:14] <AppleDash> :P
+[06:33:16] <AppleDash> Indeed
+[06:33:27] <Moonlightning> seriously, it's useful!
+[06:33:33] <Colgate> that thing still gets a ton of hits
+[06:33:34] <Moonlightning> with straight `du`, you have to pick a depth
+[06:33:37] <AppleDash> `wa 86GB at 10Mbps
+[06:33:39] <derpy> 68800 seconds
+[06:33:44] <AppleDash> `wa 86GB at 10Mbps in hours
+[06:33:47] <derpy> convert (86 GB  (gigabytes))/(10 Mb/s  (megabits per second)) to hours | 19.11 hours | 68800 seconds
+[06:33:56] <Moonlightning> and then if you want a different depth, you have to let it scan all over again
+[06:34:00] <AppleDash> OK, I'll upload it to object storage
+[06:34:02] <AppleDash> so I can delete it
+[06:34:03] <AppleDash> lol
+[06:34:04] <Moonlightning> `ncdu` scans once, lets you drill down through the hierarchy
+[06:37:01] <tiwake> `help
+[06:37:09] <tiwake> erm
+[06:37:13] <Colgate> `wa size of a tiwake
+[06:37:17] <derpy> i've got nothing
+[06:37:37] <Moonlightning> `wa sizeof tiwake
+[06:37:39] <derpy> i've got nothing
+[06:37:42] <Moonlightning> :(
+[06:37:47] <Colgate> blast from the past: https://sparkler.minuette.net/owncloud/public.php?service=files&t=JZEEPv9CqKbvLS4
+[06:37:49] <PinkiePieBot> [ ownCloud ]
+[06:37:53] <tiwake> `wa 86GB at 10000Mbps
+[06:37:56] <derpy> 68.8 seconds
+[06:38:25] <tiwake> ...assuming the hardware at the other end can go that fast
+[06:38:28] <AppleDash> lol
+[06:38:31] <Colgate> $ sudo apt-get install ncdu
+[06:38:31] <Colgate> [sudo] password for rabbit: 
+[06:38:32] <Colgate> rabbit is not in the sudoers file.  This incident will be reported.
+[06:38:33] <Colgate> >:(
+[06:39:44] <Moonlightning> relevant: https://xkcd.com/838/
+[06:39:44] <PinkiePieBot> [ xkcd: Incident ]
+[06:40:11] <Colgate> how did I know it was going to be that one
+[06:41:54] <Moonlightning> Because everypony knows xkcd, and xkcd is always relevant. \o/
+[06:42:12] <AppleDash> lol
+[06:42:24] <Moonlightning> On a related note, I didn't notice the potential for amusement in /Gut Fauna/
+[06:42:35] <AppleDash> this is going to be amazing fun, Colgate
+[06:42:42] <AppleDash> I'm uploading your thingy to OVHY
+[06:42:44] <AppleDash> OVH*
+[06:44:05] <Colgate> you know, you could just wget it off my mirror again
+[06:44:11] <Colgate> it would be faster than 10 MBps :P
+[06:44:22] <AppleDash> But I'm uploading it to object storage
+[06:44:31] <Colgate> oh
+[06:44:36] <AppleDash> Give me SSH to your server
+[06:44:38] <AppleDash> and I'll do it
+[06:44:38] <ShivalWolf> i just broke one of my workmates by saying 'we should do database syncs using qr codes'
+[06:44:39] <AppleDash> lol
+[06:44:41] <Colgate> lolno
+[06:44:46] <AppleDash> rude
+[06:44:56] <Colgate> you already have ssh to like, 2 of my servers
+[06:45:09] <AppleDash> I know
+[06:45:10] <AppleDash> lol
+[06:45:13] <Colgate> actually, 3
+[06:45:23] <Colgate> because I added you to that one weloveservers thing
+[06:45:28] <Colgate> but I never told you the IP
+[06:45:31] <Colgate> so glhf
+[06:45:31] <AppleDash> tell me the IP
+[06:45:33] <AppleDash> lol
+[06:45:45] <AppleDash> One of them doesn't count though because my login shell is passwd
+[06:45:52] <Moonlightning> AppleDash: he knows how much you like searching the IPv4 address space. :P
+[06:45:57] <Colgate> that's the best login shell!
+[06:45:59] <AppleDash> Moonlightning: >.>
+[06:46:12] <Colgate> totally ghetto, but it worked
+[06:46:30] <AppleDash> Mhm
+[06:46:32] <Colgate> actually, I don't know the IP of that one either
+[06:46:39] <AppleDash> lol
+[06:46:39] <Colgate> and I didn't set a dns record for it
+[06:46:44] <AppleDash> you should find out and tell me
+[06:46:55] <Colgate> let me log into the panel thingy
+[06:47:16] <Colgate> they keep spamming me with email ads for selling domains that have been "Search optimized" and stuff
+[06:47:27] <AppleDash> xD
+[06:48:15] *** Joins: Sombra (Iceman@Darkhorse21)
+[06:48:26] <Moonlightning> 9.9
+[06:51:24] <Moonlightning> …anypony? No?
+[06:51:30] *** Joins: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC)
+[06:51:33] <Moonlightning> > Here, swallow this.
+[06:51:35] <Moonlightning> < That's a wolf.
+[06:51:42] <AppleDash> lol
+[06:58:03] <Phase> > Do you need some water?
+[07:24:46] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[07:31:01] *** Quits: Nick (nobody@Pony-rgmjhl.res.rr.com) (Ping timeout: 121 seconds)
+[07:31:45] *** Joins: Nick (nobody@Pony-o1k.cjc.74.71.IP)
+[07:44:41] <AppleDash> Moonlightning: https://twitter.com/thedirtycoder/status/535314385024348162
+[07:44:41] <PinkiePieBot> [ Uncle Bob's Nephew on Twitter: "We have to ship our @Rustlang project RIGHT NOW. Figured it out:unsafe { fn main() { ... }}We'll fix it "later[...] ]
+[07:46:31] * Moonlightning shudders.
+[07:46:45] <Moonlightning> well…at least they'll still have to comply with borrowck…
+[07:46:58] <AppleDash> lol
+[07:48:38] <Moonlightning> still, fuck people who do that
+[07:50:39] <Colgate> I love comments like that in code
+[07:50:50] <Colgate> FIX LATER:, committed 7 years ago
+[07:51:29] <Colgate> oh, that was a thing that bugged me about C#, the unsafe {}s
+[07:51:36] <JustAberrant> yeah...
+[07:51:56] <Colgate> it isn't like code outside of unsafe{} blocks was safe either :P
+[07:51:57] <JustAberrant> / TODO: fix this   is really just a marker for future devs when trying to figure out why the hell something isn't working :D
+[07:54:38] *** init3 is now known as Init3-away
+[07:57:27] <Moonlightning> Colgate: but in Rust, non-`unsafe` code really is safe :(
+[08:04:27] *** zz_CyberJacob is now known as CyberJacob
+[08:09:19] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[08:26:28] *** Quits: zeta_ (Bluepon@Pony-mfh7oq.md.comcast.net) (Quit: Ping timeout: -1 second)
+[08:31:52] *** Quits: cyborg_ar (cyborgar@Pony-ri7.p2q.25.181.IP) (Ping timeout: 121 seconds)
+[08:49:06] *** Joins: Scythe_the_batpony (AndChat2288@X.the.Y.Scythe)
+[08:49:38] <Scythe_the_batpony> Ello
+[08:50:13] <Moonlightning> Hiya
+[08:52:00] <Scythe_the_batpony> Acer has angered me today
+[08:53:36] *** eyeburn is now known as Starburn
+[08:58:58] *** Quits: Phase (Phase4@Pony-lu48ce.lnk.telstra.net) (Ping timeout: 121 seconds)
+[09:01:39] *** Joins: hawthornbunny (hawthorn@Pony-tk6.bga.28.2.IP)
+[09:11:15] *** RedHelper is now known as Creeps|AFK
+[09:15:00] *** CyberJacob is now known as zz_CyberJacob
+[09:17:17] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[09:22:18] *** zz_CyberJacob is now known as CyberJacob
+[09:36:42] *** CyberJacob is now known as zz_CyberJacob
+[09:55:48] <Twilightlicious> The unplayable preorder file for Fallout 4 on Xbox One is 104MB
+[09:55:52] <Twilightlicious> i wonder what it really is
+[09:59:04] <ShivalWolf> a waste of space?
+[10:11:24] *** Joins: JockeTF (jocke@Pony-mjg.sl1.132.194.IP)
+[10:20:12] *** Joins: Phase (Phase4@Pony-snt.o6h.209.118.IP)
+[11:24:53] *** Awaykitty is now known as Unixkitty
+[11:45:07] *** Quits: ButterBean (Dragony@Pony-458.d8k.20.198.IP) (Ping timeout: 121 seconds)
+[11:51:56] *** Joins: Dragony (Dragony@Pony-458.d8k.20.198.IP)
+[11:52:24] *** Dragony is now known as Pony_99019
+[11:55:48] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[12:04:07] *** Quits: Pony_99019 (Dragony@Pony-458.d8k.20.198.IP) (Ping timeout: 121 seconds)
+[12:06:30] *** Joins: LegionRed (LegionRed@The.DragonHorse.DraconisEquus)
+[12:09:17] *** Quits: nscoots (FreyGrimrod@Pony-63u.0qr.192.70.IP) (Ping timeout: 121 seconds)
+[12:10:05] *** Joins: Dragony (Dragony@Pony-458.d8k.20.198.IP)
+[12:10:32] *** Dragony is now known as Pony_7941
+[12:35:36] *** Joins: nscoots (FreyGrimrod@Pony-c57tdf.sub-70-192-9.myvzw.com)
+[12:59:24] <DJ-C0L7[EIT]> howdy
+[13:06:29] * nscoots hides behind a tumbleweed
+[13:10:31] *** Quits: nscoots (FreyGrimrod@Pony-c57tdf.sub-70-192-9.myvzw.com) (Ping timeout: 121 seconds)
+[13:10:48] *** Unixkitty is now known as Awaykitty
+[13:13:43] <Lapsus> Hi :v
+[13:31:06] <DJ-C0L7[EIT]> hows it going Lapsus
+[13:33:17] <Lapsus> There is really nothing going on
+[13:33:33] <Lapsus> so good I guess?
+[13:37:16] * DJ-C0L7[EIT] nods
+[13:37:18] <DJ-C0L7[EIT]> always fun
+[13:42:45] * DJ-C0L7[EIT] contemplates building an ignition interlock that requires sompony to step on the brake pedal before the engine will crank
+[13:53:52] *** Quits: DJ-C0L7[EIT] (IceChat77@DJ-C0L7.EIT.LLC) (Quit: "back in a bit, ttyl")
+[14:01:17] *** gigaway is now known as Gigabit
+[14:01:52] <Stik> a lot of automatic cars do that already
+[14:01:57] <Stik> the auto version of mine definitely does
+[14:11:08] *** Quits: sniperfox (sniperfox@Pony-htd84a.distributed.denialofservice.org) (Quit: reboot)
+[14:19:01] *** Awaykitty is now known as Unixkitty
+[14:35:57] *** Joins: sniperfox (sniperfox@Pony-htd84a.distributed.denialofservice.org)
+[14:37:06] *** Golden_Gleam is now known as Dusk
+[14:46:52] *** Joins: DJ-C0L7[CSS] (IceChat77@DJ-C0L7.EIT.LLC)
+[15:01:04] *** Neptune|sleep is now known as Neptune
+[15:06:33] <DataByte> my manual won't allow cranking unless the clutch is in, even if it's in neutral
+[15:07:20] <DataByte> not sure why you'd want the brake pedal depressed, but not always a bad thing
+[15:11:01] <DJ-C0L7[CSS]> 1) its an automatic, and 2) i'm bypassing the neutral start safety and putting it on a latched relay
+[15:11:28] <DJ-C0L7[CSS]> i'd prefer if anyone else were to start the rig to move it, they not accidently start it in gear and run someone else over. or run through a wall
+[15:12:23] <Stik> yeah mine too DataByte 
+[15:12:30] <bronygeek> I think pretty much any car, auto or manual, won't start unless it's in neutral, park in the case of automatic, or clutch down in the case of manual
+[15:12:41] <DJ-C0L7[CSS]> i had an '84 i built the same way this one is coming along, but i had a 4.3L Chevrolet V6 with a set of 229 (3.8L) heads, 4bbl carb, dual plane intak manifold, big cam, and no neutral switch
+[15:12:48] <Stik> my older cars don't care
+[15:12:58] <Stik> think it's a modern thing to assume people are stupid :)
+[15:13:06] <DJ-C0L7[CSS]> ^
+[15:13:33] <bronygeek> ehh, that's true
+[15:13:36] <DJ-C0L7[CSS]> i've workedo n toyotas with a button on the dash to override the neutral/clutch safety switch so you could start it in gear (4wd models are the only ones i've seen this option in)
+[15:13:46] <DataByte> i'm not sure you /can/ start an engine in gear.. unless it's a really low gear that the starter can move the vehicle with
+[15:13:56] <DJ-C0L7[CSS]> <.<
+[15:13:57] <DJ-C0L7[CSS]> >.>
+[15:14:01] <Stik> you can lump them forwards on the starter
+[15:14:06] <DJ-C0L7[CSS]> I could start that 4.3 in gear, and it would drive away
+[15:14:12] <DataByte> cool xD
+[15:14:22] <DJ-C0L7[CSS]> though i had a 3500rpm stall speed torque converter <.<
+[15:14:23] <DJ-C0L7[CSS]> >.>
+[15:14:31] <bronygeek> used to do that with tractors all the time when I was younger DataByte, after about two years I had to replace the starter. ;)
+[15:14:32] <DJ-C0L7[CSS]> and 4.10 gears
+[15:14:35] <DataByte> then again, i have a low-hp economy car.. 
+[15:15:43] <DJ-C0L7[CSS]> i need to figure out how to get an additional 60ish horses out of my old 4.0 >.<
+[15:15:56] <DataByte> question, though... why would you /want/ to start a vehicle while it's in gear?
+[15:16:05] <Stik> i guess you woulnd't really
+[15:16:08] <DJ-C0L7[CSS]> stall in traffic, or off road
+[15:16:16] <Stik> but older cars just didn't bother with the complexity of trying to stop you
+[15:16:38] <Stik> or you don't have a clutch i guess
+[15:16:50] <DJ-C0L7[CSS]> i had a problem where a woman cut out infront of me, texting, not paying a bit of attention, stopped in my lane, i hit the brakes hard enough to trigger the ECU to go into emergency mode and kill the fuel pump to prevent a fire in the event of a collision
+[15:16:52] <Stik> my friend tells me his dad drove a car for weeks without a working clutch
+[15:17:07] <DataByte> i'd just rather be in control of the forward motion of the vehicle, even if it does take the extra few seconds to get rolling
+[15:17:09] <Stik> dunno how much truth is in that tho :P
+[15:17:24] <DJ-C0L7[CSS]> i was unable to restart the engine untill i got the vehicle into a parking lot, put it into park, turned the key off and back on twice, then to neutral
+[15:17:29] <DJ-C0L7[CSS]> >.< i seriously hate EFI at times
+[15:17:52] <Stik> that does sound like a nuisance
+[15:18:17] <DataByte> bigger nuisance: the person you nearly killed
+[15:18:18] <Stik> i think it might dislike my "spirited" nature :D
+[15:18:37] <DJ-C0L7[CSS]> true DataByte
+[15:19:18] <DJ-C0L7[CSS]> if i had been on a call with someone (i use the aux port on my phone so i can use my sterio as a speaker phone) all they would have heard would have been a very LOUD string of profanity the entire time i was trying to come to a stop without brakes after the engine died
+[15:19:26] <DJ-C0L7[CSS]> (lost vacuum, power steering and hydroboost)
+[15:19:37] <DataByte> ugh
+[15:20:17] <DJ-C0L7[CSS]> yeah, and the local govt decided that "drivers education is a luxury, not necessary for the safe operation of a motor vehicle"
+[15:21:10] <DJ-C0L7[CSS]> o_o...... the only thing they did CORRECTLY lately, they made it a class A misdemenor to be texting while driving in this state, a primary offence, if you are cought texting while driving, or are involved in an accident where texting is suspect, you are required to pay a 650dollar fine, AND show up for court
+[15:21:59] *** Quits: Fallfeathers (Fallfeather@Pony-vg6lgl.bigpond.net.au) (Connection closed)
+[15:22:22] <DJ-C0L7[CSS]> if you are pulled over for another issue and are cought texting while driving, the officer then can charge a fine in excess of 650 dollars (maximum seatbelt fine in this state currently) and require drivers education
+[15:22:33] <DJ-C0L7[CSS]> basicly the same thing for a DUI
+[15:23:26] <DataByte> here, they're working on including marijuana useage into the DUI definition, and setting the threshold pretty high
+[15:23:32] <DJ-C0L7[CSS]> i just wish there were a law against stupidity tbh
+[15:23:40] <DJ-C0L7[CSS]> that sounds like a good idea DataByte
+[15:23:43] <DataByte> even though recreational use of the drug is still illegal
+[15:24:35] <Lapsus> Over here it's $1000 and 3 demerit points on your licence for using a cellphone when driving, lol
+[15:25:03] <DJ-C0L7[CSS]> nice
+[15:25:13] <Lapsus> it still doesn't stop anyone
+[15:25:25] <Lapsus> but it's nice to see people get hit with that now and then
+[15:25:35] * DJ-C0L7[CSS] nods
+[15:25:44] <DJ-C0L7[CSS]> and people wonder why i have a dashcam in my 4x4
+[15:25:59] <Lapsus> I want to get one for sure, I've had enough goddamn close calls
+[15:26:05] * DJ-C0L7[CSS] nods
+[15:26:22] <Lapsus> ideally one forwards and one backwards but I'm broke as hell, so whatever
+[15:26:30] <DJ-C0L7[CSS]> thats the biggest reason i used my cell phone as a camera for the last few months, i'm working on a centeral DVR setup that uses CCD cameras and i'm thinking of using my ras-pi
+[15:35:55] *** Parts: Pony_11148 (Lorix_@flutter.shy.yay) ("Leaving")
+[15:55:01] *** Joins: Crimson_Tail (Bluepon@Pony-78ck6m.s0tm.sdub.0151.2601.IP)
+[16:07:09] *** Joins: cyborg_ar (cyborgar@Pony-r1v964.neunet.com.ar)
+[16:08:44] *** Quits: cyborg_ar (cyborgar@Pony-r1v964.neunet.com.ar) (Client exited)
+[16:32:28] *** Quits: LegionRed (LegionRed@The.DragonHorse.DraconisEquus) (Quit: Worst quit message, ever.)
+[16:43:46] *** Parts: Topsie (Topsie@Topsie.Loves.His.Princess) ("Leaving")
+[17:15:15] *** Quits: JockeTF (jocke@Pony-mjg.sl1.132.194.IP) (Quit: Leaving.)
+[17:26:19] *** Joins: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[17:34:10] *** Joins: Topsie (Topsie@Topsie.Loves.His.Princess)
+[17:35:53] *** Parts: Topsie (Topsie@Topsie.Loves.His.Princess) ("Leaving")
+[17:38:04] *** Quits: Alcoholicorn (Alcoholicor@Pony-55oq0s.pool.hargray.net) (Ping timeout: 121 seconds)
+[18:03:03] *** Joins: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP)
+[18:08:28] *** Joins: Sombra (Iceman@Darkhorse21)
+[18:14:08] *** Joins: JockeTF (jocke@Pony-vvuota.bredband.comhem.se)
+[18:21:05] *** Init3-away is now known as init3
+[18:27:41] <Googie> ARIN just announced that they now have more requests for IPv4 address space than they are able to fill.
+[18:28:18] <bronygeek> We knew it was coming...
+[18:28:48] <bronygeek> supposedly Comcast is now giving clients public IPv6 addresses.
+[18:31:09] <Googie> http://www.potaroo.net/tools/ipv4/plotend.png
+[18:31:26] <Colgate> bronygeek: they do, however, they are giving me a /64
+[18:31:36] <Colgate> which is... inconvenient for actual use
+[18:31:40] <Googie> America does have one of the largest IPv6 deployments.
+[18:32:59] <Googie> According to Google. The largest
+[18:33:13] <bronygeek> Colgate: People are gonna start using Dynamic DNS like crazy.
+[18:33:14] <Googie> Still virtually no ISPs offering IPv6 here in Aus.
+[18:33:36] *** Joins: locodashie11 (locodash11@Pony-osmcfg.co.comcast.net)
+[18:33:41] <Colgate> bronygeek: I don't see why that would change any
+[18:34:55] <bronygeek> sorry, misread it. I don't know a ton about networking, how is getting /64 inconvenient?
+[18:36:15] <Googie> IPv6 has a bunch of stuff which defines /64 as the smallest subnet size. It's not technically required, but if you only have a /64, it makes it more annoying to have a complex, publicly routable network.
+[18:36:48] <Colgate> most importantly, it makes running ipv6's stateless autoconfig a pain
+[18:37:10] <Colgate> since that assumes each computer has a /64 to work with, which is not the case
+[18:37:20] <bronygeek> aaaahhh, I get it.
+[18:37:42] <Colgate> I can work around it, but I don't really feel like doing so
+[18:40:14] <bronygeek> Forgive me if I'm stuck in ip4v thinking, but couldn't the modem/router assign each device an address within that subnet?
+[18:41:01] <Colgate> yes, but then you're running dhcpv6, which stateless autoconfig was designed to get rid of in this scenario
+[18:41:19] <Colgate> this is about progression >.>
+[18:41:21] <bronygeek> ah, ok.
+[18:41:47] <bronygeek> I see the appeal in an ad-hoc configuration, but it does complicate some things.
+[18:44:26] <Shutter> Colgate: Weird. My ISP gives me a /48
+[18:44:33] <Shutter> No (good) reasons for them not to.
+[18:45:01] <Colgate> eh, I can see a good reason for not giving a /48, but not a /56
+[18:45:12] <Colgate> /48 is a ton of addresses for a home user
+[18:45:57] <Colgate> kind of wasteful really
+[18:46:14] <bronygeek> cause /64 is totally not enough
+[18:46:15] <Colgate> that's why whatever RFC that was that said to do /48s to endpoint networks was changed to be /56
+[18:46:30] *** Quits: Sombra (Iceman@Darkhorse21) (Quit: quit)
+[18:46:45] <Colgate> bronygeek: if you want all the features of ipv6, it really isn't
+[18:47:22] <Colgate> the last /64 of ipv6 isn't really "usable"
+[18:47:29] *** Unixkitty is now known as Awaykitty
+[18:48:46] <bronygeek> How so Colgate? because of the autoconfig?
+[18:48:47] <Googie> There's a lot more to IPv6 than just adding a bunch more bits to the address size.
+[18:59:53] <Quindo> So far I have really enjoyed MR robot
+[19:01:06] <Colgate> MR robot?
+[19:06:11] <Quindo> a new show
+[19:06:16] <Quindo> first episode is free on amazon
+[19:06:33] <Quindo> It is about Cyuber sec and hackzors
+[19:07:44] <Colgate> how bad is it?
+[19:09:17] <Googie> Colgate: https://youtu.be/FQM5fU7V-MM
+[19:09:17] <PinkiePieBot> [ So I see you're running Gnome - 29788 views - 22s long - 198 likes - 98.02% ]
+[19:09:38] * Colgate will watch that in 7 hours after work :P
+[19:14:56] <Googie> That's really the only thing I know about the show. The dialog seemed almost like it hit the uncanny valley cringiness :P
+[19:15:14] <Googie> Just close enough to being real that it's awkwark.
+[19:15:18] <Googie> *awkward
+[19:15:55] *** Joins: Pony_72791 (TwoTailedF@Pony-ah6lvr.in-addr.btopenworld.com)
+[19:17:42] *** Pony_72791 is now known as WritingPony
+[19:35:32] *** Joins: MistVeil (AndChat3408@Pony-p3k.081.211.189.IP)
+[19:44:36] *** Joins: AquaBrandish (AndChat3408@Pony-0kk.94l.144.201.IP)
+[19:44:40] *** Quits: AquaBrandish (AndChat3408@Pony-0kk.94l.144.201.IP) (Connection closed)
+[19:45:14] *** Joins: AquaBrandish (AndChat3408@Pony-hahd0r.static.axtel.net)
+[19:45:46] *** Quits: MistVeil (AndChat3408@Pony-p3k.081.211.189.IP) (Killed (NickServ (GHOST command used by AquaBrandish!AndChat3408@Pony-hahd0r.static.axtel.net)))
+[19:45:50] *** AquaBrandish is now known as MistVeil
+[19:47:37] <frackster> http://poopy.ga
+[19:47:37] <PinkiePieBot> [ poopy.ga ]
+[19:53:14] <Caerdwyn> frackster: are you fucking stupid or what
+[20:19:01] *** Joins: AquaBrandish (AndChat3408@Pony-l36.bpr.95.200.IP)
+[20:20:04] *** Joins: MistVeil2 (AndChat3408@Pony-qbk.jpi.211.189.IP)
+[20:20:58] *** Quits: MistVeil (AndChat3408@Pony-hahd0r.static.axtel.net) (Killed (NickServ (GHOST command used by MistVeil2!AndChat3408@Pony-qbk.jpi.211.189.IP)))
+[20:21:04] *** MistVeil2 is now known as MistVeil
+[20:23:12] *** Quits: AquaBrandish (AndChat3408@Pony-l36.bpr.95.200.IP) (Ping timeout: 121 seconds)
+[20:38:13] <Twilightlicious> I ran some random command i found online last night
+[20:38:26] <Twilightlicious> "DISM /Online /Cleanup-Image /RestoreHealth"
+[20:38:29] <Twilightlicious> Any idea what it does? Lol
+[20:41:26] *** Quits: Crimson_Tail (Bluepon@Pony-78ck6m.s0tm.sdub.0151.2601.IP) (Ping timeout: 121 seconds)
+[20:41:52] *** Joins: Crimson_Tail (Bluepon@Pony-78ck6m.s0tm.sdub.0151.2601.IP)
+[20:42:35] *** Joins: Sol (Sol@Pony-vvn.i1u.133.74.IP)
+[20:49:13] *** Joins: AquaBrandish (AndChat3408@Pony-0kk.94l.144.201.IP)
+[20:49:38] *** Quits: MistVeil (AndChat3408@Pony-qbk.jpi.211.189.IP) (Killed (NickServ (GHOST command used by AquaBrandish!AndChat3408@Pony-0kk.94l.144.201.IP)))
+[20:49:44] *** AquaBrandish is now known as MistVeil
+[20:52:21] *** Pony_7941 is now known as ButterBean
+[21:01:37] *** Joins: zeta_ (Bluepon@Pony-78ck6m.s0tm.sdub.0151.2601.IP)
+[21:01:39] *** zz_CyberJacob is now known as CyberJacob
+[21:04:57] *** Quits: Crimson_Tail (Bluepon@Pony-78ck6m.s0tm.sdub.0151.2601.IP) (Ping timeout: 121 seconds)
+[21:24:32] <frackster> Twilightlicious: https://technet.microsoft.com/en-us/library/hh825236.aspx
+[21:24:35] <PinkiePieBot> [ What is DISM? ]
+[21:36:49] *** init3 is now known as Init3-away
+[21:46:54] *** Quits: JockeTF (jocke@Pony-vvuota.bredband.comhem.se) (Quit: Leaving.)
+[22:06:24] *** Quits: zeta_ (Bluepon@Pony-78ck6m.s0tm.sdub.0151.2601.IP) (Quit: Ping timeout: -1 second)
+[22:07:07] *** Joins: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net)
+[22:07:56] *** Quits: Crimson_Tail (Bluepon@Pony-mfh7oq.md.comcast.net) (Connection closed)
+[22:10:50] *** Joins: Crimson_Tail (Bluepon@Pony-nm2ooj.s0tm.sdub.0151.2601.IP)
+[22:15:47] *** Joins: Alcoholicorn|2 (Alcoholicor@Pony-55oq0s.pool.hargray.net)
+[22:17:33] *** Quits: Alcoholicorn (Alcoholicor@Pony-bfp.0d7.20.67.IP) (Ping timeout: 121 seconds)
+[22:22:19] *** Quits: Mike_Coltfield (Larscis@colt.in.the.rain) (Quit: "Bug." -- My goldfish on sleep)
+[22:57:18] *** Quits: locodashie11 (locodash11@Taco.eating.Anthro.Batpony) (Ping timeout: 121 seconds)
+[23:25:54] *** CyberJacob is now known as zz_CyberJacob
+[23:28:43] *** Gigabit is now known as Gigaway
+[23:28:57] *** zz_CyberJacob is now known as CyberJacob
+[23:37:23] *** Parts: MistVeil (AndChat3408@Pony-0kk.94l.144.201.IP) ("Leaving")
+[23:50:54] *** Joins: Webster (Webster@Pony-io0ebs.md.comcast.net)
+[23:59:30] *** Joins: Fallfeathers (Fallfeather@Pony-vg6lgl.bigpond.net.au)

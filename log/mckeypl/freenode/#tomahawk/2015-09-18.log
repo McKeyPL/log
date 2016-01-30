@@ -1,0 +1,228 @@
+[00:37:07] <theli_ua> MrMaffen: your collection (at least its implementation in websql, not sure if used) uses track.albumPos ... while gmusic resolver sets track.albumpos  (note capitalisation of P) ... which one is the correct one?
+[00:48:33] *** Quits: soee (~soee@u28n61.nowanet.pl) (Quit: Konversation terminated!)
+[01:04:49] <theli_ua> I assume it's albumpos cause thats what other resolvers use, but not sure if android's collection implementation is using it
+[01:39:32] <theli_ua> hm
+[01:41:07] <theli_ua> muesli: is "track number" actually working or worked for results from js resolvers?
+[01:45:18] *** Quits: jturney (~jon@host86-160-189-124.range86-160.btcentralplus.com) (Read error: Connection reset by peer)
+[02:02:54] <theli_ua> figured that last one out
+[02:03:14] <theli_ua> MrMaffen: is Tomahawk.localStorage not defined on android?
+[02:07:03] <theli_ua> and domme whi is Tomahawk.localStorage made as a stub not actually doing anything? o_O
+[02:13:25] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[02:15:23] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[03:31:44] *** Joins: basken (guest-bask@gateway/web/scrollback.io/x-mwplfyhphcnefwcw)
+[03:31:44] <basken> can I install this on steamos?
+[04:13:59] *** Quits: SolarAquarion (SolarAquar@unaffiliated/solaraquarion) (Ping timeout: 240 seconds)
+[04:17:28] *** Joins: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7)
+[04:17:28] *** Quits: SolarAquarion (SolarAquar@2600:3c01:e001:3970::7) (Changing host)
+[04:17:28] *** Joins: SolarAquarion (SolarAquar@unaffiliated/solaraquarion)
+[05:11:20] *** Joins: mgue2 (~mgue@f049029238.adsl.alicedsl.de)
+[05:14:36] *** Quits: mgue1 (~mgue@x5ce4414b.dyn.telefonica.de) (Ping timeout: 272 seconds)
+[06:15:46] <theli_ua> I would guess so, steamos is just a debian derivative
+[06:58:40] <theli_ua> muesli: did you ever look closely into osx qt5 ssl problems?
+[07:23:01] <theli_ua> "The issuer certificate of a locally looked up certificate could not be found"
+[07:23:15] <theli_ua> The root CA certificate is not trusted for this purpose
+[07:23:17] <theli_ua> bah
+[07:28:09] <theli_ua> looks like everyone is having ssl issues with qt on osx ... owncloud, mumble, etc
+[08:18:35] *** Joins: rotzbouw (~thierry@HSI-KBW-37-49-122-154.hsi14.kabel-badenwuerttemberg.de)
+[09:18:35] <muesli> theli_ua: only with qt4 tho?
+[10:19:57] <alastairp> anyone know https://playmoss.com/en/ ?
+[10:19:59] <tomabee> [ Playlist your online music | playmoss.com | https://playmoss.com/common/project/img/PMShare.jpg ]
+[10:42:29] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[10:56:48] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[10:57:21] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Client Quit)
+[13:17:08] *** Joins: jturney (~jon@host86-160-189-124.range86-160.btcentralplus.com)
+[13:21:24] *** Joins: Kalendium (~davidgasq@76.pool85-61-15.dynamic.orange.es)
+[13:21:24] *** Quits: Kalendium (~davidgasq@76.pool85-61-15.dynamic.orange.es) (Changing host)
+[13:21:24] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[13:34:16] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[13:55:46] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Quit: Leaving)
+[14:57:28] *** Joins: sythe (uid20450@facade/leader)
+[16:17:05] *** Joins: soee (~soee@agwy27.neoplus.adsl.tpnet.pl)
+[16:27:34] *** Joins: Kalendium (~davidgasq@76.pool85-61-15.dynamic.orange.es)
+[16:27:34] *** Quits: Kalendium (~davidgasq@76.pool85-61-15.dynamic.orange.es) (Changing host)
+[16:27:34] *** Joins: Kalendium (~davidgasq@unaffiliated/kalendium)
+[16:27:50] *** Quits: Kalendium (~davidgasq@unaffiliated/kalendium) (Client Quit)
+[16:58:55] *** Joins: mois (~using@p5B0AAE69.dip0.t-ipconnect.de)
+[17:00:30] <mois> hey guys, i am running archlinux with tomahawk 0.8.4-2, i loaded my music but it wont play. I can see the "currently playing" symbol and i get the message about which song currently plays but the "time played" of the song wont increase
+[17:11:01] *** Joins: jingizu_ (uid1094@gateway/web/irccloud.com/x-tcqdaufpcwrjgnbo)
+[17:11:08] <jherskowitz> mois: try this? https://tomahawk.uservoice.com/knowledgebase/articles/421065-why-won-t-tomahawk-play-streaming-songs
+[17:11:10] <tomabee> [ Why won't Tomahawk play streaming songs? – Feedback Loop | tomahawk.uservoice.com |  ]
+[17:14:57] <mois> oh jherskowitz it worked, even if i dont play streaming songs, i only play local songs. But it is working now so thank you very much!
+[17:15:42] <jherskowitz> mois: cool
+[17:17:29] <theli_ua> muesli: yeah, I think with qt5, yes
+[17:24:25] <jherskowitz> pubpariporn: anyone on Debian?
+[17:24:36] <jherskowitz> getting reports that libtag1-dev (and/or libtag-extras1) is a dependency
+[17:24:44] <jherskowitz> that we don’t currently have listed on the wiki
+[17:29:44] <SolarAquarion> hi devs
+[17:29:54] <SolarAquarion> Ever thought of implementing NetEase?
+[17:30:04] <SolarAquarion> or whatever the chinese music service is
+[17:30:35] <SolarAquarion> http://forum.xda-developers.com/android/apps-games/netease-music-unofficial-english-t3116629/post60928327#post60928327
+[17:30:56] *** Quits: mois (~using@p5B0AAE69.dip0.t-ipconnect.de) (Quit: Verlassend)
+[17:39:01] <jherskowitz> alastairp: 75k more scrobbles coming your way
+[17:39:17] <alastairp> jherskowitz: can you hold off 5 minutes?
+[17:39:27] <alastairp> we’re having to restart with more worker processes :-P
+[17:39:27] <jherskowitz> alastairp: already started
+[17:39:35] <alastairp> no problem. it might skip a few
+[17:39:41] <jherskowitz> ok
+[17:39:46] <alastairp> if you restart it won’t duplicate
+[17:40:13] <alastairp> we’re trying to add a smarter importer that’ll start from where it left off
+[17:40:39] <alastairp> anyway. we have almost 4 million datapoints
+[17:40:42] <alastairp> what can we do with them????
+[17:40:44] <jherskowitz> alastairp: so can I see my history?
+[17:40:54] <alastairp> listenbrainz.org/user/you
+[17:43:07] <jherskowitz> alastairp: so are you going to do oAuth and let people pull that data into other services?
+[17:43:47] <jherskowitz> (or something)
+[17:47:34] <lfranchi> oh listenbrainz looks cool!
+[17:47:35] <lfranchi> nice alastairp :)
+[17:47:47] <alastairp> ahhhhh we broke it all
+[17:47:48] <lfranchi> nice 500 on the import page though ;) (psycopg2.OperationalError) FATAL: remaining connection slots are reserved for non-replication superuser connections
+[17:47:49] <alastairp> sorry guys
+[17:47:56] <lfranchi> good ol psycopg2
+[17:47:57] <alastairp> yeahhhh. we’re installing pgbouncer ;)
+[17:48:02] <lfranchi> <3 postgres
+[17:48:22] <alastairp> there was that thing this morning where I added a missing index and we went from load 24 to load 6
+[17:48:33] <alastairp> jherskowitz: not sure about oauth yet
+[17:48:39] <alastairp> LB oauths to musicbrainz for accouts
+[17:49:01] <alastairp> there is a mid-term plan to make this a “metabrainz” account, which will give you api access to all services in the empire
+[17:49:28] <alastairp> there’s an un-authed api endpoint to get your listens anyway
+[17:56:20] <jherskowitz> alastairp: oh?
+[17:56:29] <jherskowitz> where can I find that?
+[17:57:06] <alastairp> http://api.listenbrainz.org/1/user/jherskowitz/listens
+[17:57:09] <jherskowitz> cool
+[17:57:16] <jherskowitz> so did you break my import? :P
+[17:58:10] <alastairp> yes
+[17:58:19] <alastairp> we tried to give the webserver more processes
+[17:58:24] <alastairp> and made postgres sad :(
+[18:10:13] <theli_ua> SolarAquarion: is it .. free on demand? o_O
+[18:10:33] <SolarAquarion> theli_ua i think
+[18:11:08] *** mgue2 is now known as mgue
+[18:11:09] <theli_ua> SolarAquarion: I'll take a look
+[18:11:14] <SolarAquarion> theli_ua: http://music.163.com/
+[18:11:16] <tomabee> [ 网易云音乐 听见好时光 | music.163.com |  ]
+[18:11:35] <SolarAquarion> it's all chinese but with a thing that you do you can probably use it
+[18:11:39] <theli_ua> muesli: we can ignore those 2 errors (ssl) as workaround but I dont think thats the right way forward
+[18:13:15] <theli_ua> SolarAquarion: "because of copyright not available in your region"
+[18:14:04] <rotzbouw> jherskowitz: i'm on debian, I think taglib is a dep, yeah
+[18:14:42] <SolarAquarion> theli_ua: okay...
+[18:15:08] <theli_ua> SolarAquarion: can you play anything from there?
+[18:15:35] <SolarAquarion> theli_ua: i was able to via the app
+[18:15:45] <theli_ua> interesting
+[18:15:49] <theli_ua> I'll try the app
+[18:16:23] <SolarAquarion> theli_ua: the translated app
+[18:17:55] <jherskowitz> alastairp: if I do it again will I get dupes?
+[18:18:41] <alastairp> no dups
+[18:25:07] *** h4ndy is now known as H4ndy
+[18:35:34] <theli_ua> SolarAquarion: the app doesn't really work for me either :-/
+[18:41:37] <SolarAquarion> theli_ua: the translated app worked for me
+[18:41:55] <SolarAquarion> but i guess it doesn't now?  
+[18:42:28] <theli_ua> SolarAquarion: maybe its just my location (us)
+[18:42:54] <theli_ua> also, it doesn't respect my phone's proxy settings so its hard to see how exactly does it talk hom
+[18:43:19] <SolarAquarion> theli_ua: VPN probably needed
+[18:43:47] <theli_ua> now the app shows that its playing ... but no sound
+[18:43:48] <theli_ua> weird
+[18:50:30] <SolarAquarion> theli_ua: http://superdevs.weebly.com/netease-cloud-music.html
+[18:50:32] <tomabee> [ NetEase Cloud Music | superdevs.weebly.com |  ]
+[18:50:40] *** Joins: HorusHorrendus (~horrendus@80.110.135.155)
+[18:52:35] <rotzbouw> alastairp: ready to import 200k scrobbles? :)
+[18:52:40] <alastairp> no
+[18:52:44] <alastairp> we’re really not
+[18:52:45] <alastairp> please!
+[18:53:00] <alastairp> (I’m kinda serious, we’re just putting out some fires, I’ll let you know when you can try again)
+[18:53:52] <rotzbouw> hah
+[18:54:02] <rotzbouw> alastairp: i'll wait :)
+[18:58:52] <alastairp> OK, let us have it!
+[18:59:43] <rotzbouw> yay! :)
+[19:05:01] <kurros> listenbrainz? wut
+[19:06:59] <kurros> metabrainz is taking over the world
+[19:19:49] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Remote host closed the connection)
+[19:29:35] <kurros> I can't enable spotify in a new linux install. I built from source so maybe it's something wrong on my end? https://paste.kde.org/pxdf6chsg/dhfw6t
+[19:29:35] <tomabee> [ KDE Paste | paste.kde.org |  ]
+[19:44:36] <rotzbouw> alastairp: is it behaving? :)
+[19:44:44] <rotzbouw> progress seems ok, almost 10%
+[19:46:13] <alastairp> you mean you didn’t even notice us rebooting the entire server? :)
+[19:46:21] <alastairp> it should be fine
+[19:46:27] <rotzbouw> hah, uh oh
+[19:46:59] <alastairp> the client has retry
+[19:47:15] <alastairp> but we have a few things to fix still
+[19:50:07] <kurros> load must be crazy right now
+[20:11:27] <HorusHorrendus> I only had 34K scrobbles :(
+[20:21:26] <jherskowitz> I seem stuck at Sending page 693 of 1513 to ListenBrainz
+[20:24:31] <rotzbouw> stuck, too ;) what did we do, jherskowitz?? :<
+[20:24:45] <jherskowitz> heh
+[20:29:57] <toma-cat> Added new crash-report for version 0.7.0 (Linux)
+[20:30:53] <theli_ua> SolarAquarion: ok, that netease api seems to be way too obfuscated, doesn't look like worth efforts required to make it work with tomahawk
+[20:33:49] <theli_ua> though I am able to stream from their servers if I sniff out the link to mp3
+[20:39:20] <theli_ua> oooh
+[20:39:22] <theli_ua> https://github.com/rg3/youtube-dl/blob/master/youtube_dl/extractor/neteasemusic.py
+[20:39:23] <tomabee> [ youtube-dl/neteasemusic.py at master · rg3/youtube-dl · GitHub | github.com | https://avatars2.githubusercontent.com/u/53487?v=3&s=400 ]
+[20:39:25] <theli_ua> thats handy
+[20:39:52] <SolarAquarion> theli_ua: you're finding a solution?
+[20:40:04] <theli_ua> looks like it
+[20:40:56] <SolarAquarion> theli_ua: thanks to the work of rg3 you'll be able to reimplmented what he did to work with tomahawk i guess?
+[20:41:11] <theli_ua> SolarAquarion: yeah, I just searched, found and downloaded metallica-nothing else matters via that service
+[20:41:15] <theli_ua> I'll do the resolver
+[20:41:53] <theli_ua> or I'll become mad while trying 
+[20:42:56] <SolarAquarion> theli_ua: it also has a lot more music
+[20:43:05] <SolarAquarion> seemingly
+[20:43:15] <theli_ua> a lot more than what?
+[20:43:47] <SolarAquarion> theli_ua: spotify i guess?  It has a lot of live albums from what i saw of gojira
+[20:44:04] <theli_ua> domme: I'm thinking of making new resolvers temporarily compatible with both "old style and new style" 0.9 api ... what do you think about that?
+[20:45:48] <domme> theli_ua: what does that mean concretely?
+[20:47:01] <theli_ua> domme: say current master uses resolve: function(artist, album, track) ... while new style (android) passes {artist: artist, album: abum, track: track} as parameter
+[20:47:14] <theli_ua> technically I can make resolver detect that
+[20:47:47] <theli_ua> Its just ... if I'm doing a new resolver I'd like to use it on both android and desktop, aand my 'new api' branch of desktop 
+[20:48:06] <theli_ua> and I also want other people to test it as well
+[20:48:23] <theli_ua> and other people are most probably using master ... which doesnt have a new api
+[20:48:39] <theli_ua> so I'm not exactly sure which one should I implement when posting PR for a new resolver
+[20:48:48] <theli_ua> domme: is that concrete enough? :)
+[20:49:12] <domme> yup
+[20:49:13] <domme> makes sense
+[20:49:22] <domme> or ill merge your pr tomorrow
+[20:49:46] <SolarAquarion> theli_ua: what branch?
+[20:49:48] <theli_ua> well, as long as we plan to put more work into that before actuall 0.9 release I'm fine with that
+[20:49:58] <SolarAquarion> I'll implement it in a PKGBUILD
+[20:50:21] <theli_ua> SolarAquarion: currently android and tomahawk have incompatible js resolver APIs , I posted a PR to make them compatible
+[20:50:44] <SolarAquarion> theli_ua: just a patch then?
+[20:51:14] <theli_ua> SolarAquarion: but see domme's message, he might just merge it 
+[20:51:23] <SolarAquarion> Ok
+[21:01:23] <domme> yeah
+[21:01:37] <domme> will do tomorrow
+[21:04:47] <SolarAquarion> Why can't tomahawk android create radio stations
+[21:05:20] <alastairp> kurros: yeah, load has been all over the place
+[21:05:49] <alastairp> high, then we fix a bug, then low, then higher as we get more load, then low as we fix more bugs :)
+[21:06:22] <alastairp> jherskowitz: yeah, that reporting of pages is pretty sketchy. there’s some stuff I Need to fix this weekend
+[21:07:19] <kurros> hehe
+[21:07:38] <kurros> alastairp: oh so it might not actually be stopped?
+[21:07:58] <alastairp> “oh, I guess I should put a database index here”, bam, load goes from 24 to 6
+[21:08:08] <alastairp> kurros: maybe not. check your network tab 
+[21:08:46] <kurros> good idea
+[21:09:35] <alastairp> the biggest problem is that we read pages from last fm as fast as we can, and submit them to lb as fast as we can, but if lb is slow, the list of waiting connections backs up
+[21:10:16] <alastairp> who runs http://www.fine-tuning.fr ?
+[21:10:17] <tomabee> [ Fine Tuning - | www.fine-tuning.fr | http://i1.wp.com/fine-tuning.fr/wp-content/hopscotch.jpg?resize=480%2C257 ]
+[21:21:06] <kurros> got to page 64 that time before it stopped. crickets on the network tab except ads refreshing. oh well. i'll try later this weekend when the load evens out.
+[21:22:53] <alastairp> strange
+[21:23:17] <alastairp> you saw POST requests to listenbrainz.org and GET from last.fm?
+[21:27:50] <jherskowitz> @alastairp I’m blanking on that guys name at Fine Tuning
+[21:27:58] <jherskowitz> I’ve definitely chatted with him before though
+[21:28:53] <jherskowitz> ah, it’s right there on his page
+[21:28:58] <jherskowitz> Nicolas Karlen 
+[21:33:10] <alastairp> it’s just that the last stack of posts were about tomahawk
+[21:33:18] <alastairp> so I thought maybe he was in here
+[21:33:23] <alastairp> our first “press”, I think
+[21:45:10] <kurros> alastairp: sorry, I had the wrong filter up ;_; still a ton of submit-listen POSTs pending. The page says 64/474 but looking at the library?page= requests, it looks like they all got hit, except for a couple 302 Moved responses. maybe its as you say and the page count just didn't increment correctly.
+[21:45:36] <kurros> is there an api.lb request so see lb's count?
+[21:46:52] <alastairp> right, there’s a small bug in our scraper where we update the count when we request from lfm library, and not when we submit to listenbrainz
+[21:46:57] <alastairp> I have to fix that this weekend
+[21:47:15] <alastairp> no, there’s no “count of all your listens” api yet. it’s on the list
+[21:47:33] <kurros> ok. cool
+[21:51:17] <alastairp> thanks for being an alpha tester!
+[21:55:43] <kurros> i've been an musicbrainz editor forever, its nice to see meta tackling all these new projects :)
+[22:06:29] <alastairp> here’s hoping we have the impetus and programmers to keep them going
+[22:27:40] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[23:28:50] *** H4ndy is now known as h4ndy
+[23:28:52] <theli_ua> SolarAquarion: https://github.com/tomahawk-player/tomahawk-resolvers/pull/88
+[23:28:53] <tomabee> [ Add Netease resolver by theli-ua · Pull Request #88 · tomahawk-player/tomahawk-resolvers · GitHub | github.com | https://avatars2.githubusercontent.com/u/1242604?v=3&s=400 ]
+[23:29:25] <theli_ua> I'll add 96/160/320 stream quality later
+[23:29:36] <theli_ua> for now its hardcoded to use 320
+[23:39:38] <kurros> nice
+[23:56:50] <SolarAquarion> theli_ua: nice

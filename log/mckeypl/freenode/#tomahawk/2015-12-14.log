@@ -1,0 +1,161 @@
+[01:31:19] *** Quits: jamesaxl (~jamesaxl@105.159.31.8) (Quit: Leaving)
+[02:05:11] *** Quits: theli_ua (uid54353@gateway/web/irccloud.com/x-rfpcqoemlimkjiyv) (Quit: Connection closed for inactivity)
+[02:22:07] *** Quits: HorusHorrendus (~horrendus@80.110.135.155) (Quit: Leaving.)
+[03:02:35] *** Quits: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com) (Read error: Connection reset by peer)
+[03:29:06] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Ping timeout: 240 seconds)
+[05:20:20] *** Joins: mgue2 (~mgue@f048094178.adsl.alicedsl.de)
+[05:23:36] *** Quits: mgue1 (~mgue@xd527996c.dyn.telefonica.de) (Ping timeout: 256 seconds)
+[05:35:32] *** Quits: hatstand (sid2952@gateway/web/irccloud.com/x-oiovdizfxjxhxomj) (Read error: Connection reset by peer)
+[05:35:34] *** Quits: abuiles (sid1641@gateway/web/irccloud.com/x-qaqhwluevgmhxlza) (Read error: Connection reset by peer)
+[05:36:01] *** Joins: hatstand (sid2952@gateway/web/irccloud.com/x-tikbxhruwbxnbijn)
+[05:36:13] *** Joins: abuiles (sid1641@gateway/web/irccloud.com/x-emoiiiydkhifugsk)
+[05:36:17] *** Quits: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr) (Ping timeout: 250 seconds)
+[05:38:14] *** Joins: mirsal (~mirsal@znc0.irc.he-1.ip6.mirsal.fr)
+[06:30:52] *** Quits: soee_ (~soee@acfu250.neoplus.adsl.tpnet.pl) (Ping timeout: 250 seconds)
+[06:45:36] *** Joins: theli_ua (uid54353@gateway/web/irccloud.com/x-awzphfmdvopuzvur)
+[09:35:11] *** Quits: theli_ua (uid54353@gateway/web/irccloud.com/x-awzphfmdvopuzvur) (Quit: Connection closed for inactivity)
+[09:37:35] *** Joins: rotzbouw (~tgoeckel@port-83-236-164-90.static.qsc.de)
+[10:01:36] *** danimo_ is now known as danimo
+[10:22:28] *** Joins: justin_time (~stefan@2a02:908:f358:6f00:7ded:d875:7ae4:6ef8)
+[10:26:31] <justin_time> Hi, would it be possible to use miniupnpc as external dependency instead of the 1.6 you shipped with your code?
+[10:30:47] <justin_time> Because my debian mentor will dislike using a old third-party library instead the new one which is available in the debian sources.
+[10:55:41] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[10:57:57] <muesli> justin_time: sure
+[10:59:36] <justin_time> muesli: ok, I have to patch the cmake file of libportfwd, or?
+[11:03:20] <muesli> the question is, if we wouldn't want to drop the internal dep ourselves then
+[11:03:26] <muesli> dommex: ^
+[11:04:49] <dommex> wanted to do it for a long long time, can do it now if theres a good reason for it now
+[11:05:19] <dommex> justin_time: just file a bug on github and ill try to get to it soon
+[11:06:40] *** Quits: michiwend (~quassel@michiwend.com) (Read error: Connection reset by peer)
+[11:06:43] <justin_time> dommex: ok, I'll do it!
+[11:07:40] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[11:08:17] <dommex> Cool thx
+[11:11:55] <justin_time> ok bug filled out… another question: by checking the code I got the following message: [src/libtomahawk/DropJob.cpp:266] -> [src/libtomahawk/DropJob.cpp:268]: (error) Iterator 'it' used after element has been erased.
+[11:12:34] <justin_time> Can I ignore this code error?
+[11:13:04] <dommex> justin_time: by checking the code?
+[11:13:15] <justin_time> cppcheck -j8 --quiet -f .
+[11:13:34] <justin_time> I have to do this for packaging the debian package… :-/
+[11:13:58] <justin_time> Also spell checking "codespell --quiet-level=3"
+[11:14:13] <justin_time> This is a part of the debian package quality standards…
+[11:14:48] <dommex> wat
+[11:15:06] <dommex> i cant make any sense of the element has been erased warning
+[11:16:08] <justin_time> Take a look of this bugreport of libjree: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=804169
+[11:18:42] <justin_time> There are so many points to handle for a debian package. And I have to report if this messages are false positive or not…
+[11:20:06] <dommex> i've been through a lot of that with opensuse too
+[11:20:15] <dommex> it's annoying but it's good for something
+[11:25:36] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Remote host closed the connection)
+[11:25:51] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[12:21:06] <rotzbouw> moinsen
+[12:21:31] <rotzbouw> justin_time: u on debian?
+[12:21:42] <rotzbouw> tried the echonest package from the unstable repo yet?
+[12:22:46] <justin_time> rotzbouw: yes, I've pushed echonest2.3 to debain (and backported for ubuntu in the Tomahawk PPA)
+[12:30:26] *** Joins: knicklux (~knicklux@openvpn-cl-200-61.scc.kit.edu)
+[13:04:19] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[13:19:48] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Read error: Connection reset by peer)
+[13:20:17] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[13:23:11] *** Joins: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com)
+[13:31:47] *** Quits: ugly_cat (~quassel@c-76-104-204-149.hsd1.wa.comcast.net) (Ping timeout: 260 seconds)
+[13:32:26] *** Joins: ugly_cat (~quassel@c-76-104-204-149.hsd1.wa.comcast.net)
+[13:41:39] <rotzbouw> justin_time: ah, cool. :) have you tested the package with qt5?
+[13:41:44] <rotzbouw> having issues with it
+[13:42:21] <justin_time> What kind of issues? (I build this package for debian…)
+[13:43:04] <rotzbouw> first of all, I have to hack in an artificial version number, though that problem exists with upstream as well
+[13:43:37] <rotzbouw> second, cmake won't find the header files when trying to build tomahawk
+[13:44:16] <rotzbouw> if I create a symlink to the header files and use that as an argument for a cmake option, cmake won't complain but building won't work, failing to find the header files.
+[13:44:41] <justin_time> Really? For me, it works! https://launchpad.net/~justin-time/+archive/ubuntu/tomahawk-nightly
+[13:44:59] <justin_time> This nightly packages for Ubuntu 15.04 and 15.10 are Qt5 builds.
+[13:45:13] <rotzbouw> ha, cool, then you might be able to help me? :)
+[13:45:43] <rotzbouw> maybe i'll ping you later about it
+[13:45:53] <justin_time> Ok...
+[13:46:21] <justin_time> And you are using libechonest5-dev?
+[13:48:01] <rotzbouw> uh oh..
+[13:48:44] <rotzbouw> I'm not! I just got an e-mail about libechonest2.3 and went ahead and installed that one...
+[13:48:57] <rotzbouw> see, that was an easy fix, hah
+[13:49:01] <rotzbouw> thanks justin_time
+[13:50:04] <justin_time> np ;-)
+[14:01:05] <rotzbouw> so only one more package (jreen) till debian's ready for tomahawk, at least dependency-wise
+[14:08:21] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Remote host closed the connection)
+[14:08:34] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[14:09:59] <justin_time> rotzbouw: yes and libjreen is wating for Accepting into debian (NEW-queue)
+[14:11:25] <justin_time> And so libjreen will be available when the FTP-Masters accept it. (The package is ready…)
+[14:18:32] <rotzbouw> \o/
+[14:28:41] *** Joins: github-tomahawk (~github-to@192.30.252.46)
+[14:28:41] <github-tomahawk> [13tomahawk] 15mrmaffen pushed 1 new commit to 06master: 02http://git.io/v046P
+[14:28:41] <github-tomahawk> 13tomahawk/06master 14efc31e6 15Enno Gottschalk: Fix Tomahawk.Collection.revision() stub function
+[14:28:41] *** Parts: github-tomahawk (~github-to@192.30.252.46) ()
+[14:50:21] *** Joins: r_rios (~Hitleap@177.99.52.33)
+[14:50:46] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Ping timeout: 240 seconds)
+[14:51:15] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Ping timeout: 240 seconds)
+[14:53:11] *** Joins: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk)
+[15:04:53] *** Joins: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at)
+[15:11:04] *** Joins: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222)
+[15:33:16] <gordie> hi guys
+[15:54:26] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Ping timeout: 240 seconds)
+[16:04:58] <muesli> hey gordie 
+[16:11:59] <gordie> how are u muesli ?
+[16:12:17] *** Joins: yofel (~quassel@2a01:4f8:150:40cb::2)
+[16:12:17] *** Quits: yofel (~quassel@2a01:4f8:150:40cb::2) (Changing host)
+[16:12:17] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[16:12:19] <muesli> a bit stressed out due to moving and such
+[16:12:23] <muesli> but otherwise fine, thanks
+[16:12:28] <muesli> how are you, gordie?
+[16:13:37] <gordie> i'm fine too... just started to try Krita (open source drawing / animation software) and it seems really great - but globally nice too :)
+[16:13:59] <gordie> where are u moving ?
+[16:19:59] *** Joins: soee (~soee@89.186.28.61)
+[16:28:40] <gordie> and did you made improvements on hatchet / THK lastly ?  got news ?
+[16:41:24] *** Quits: yofel (~quassel@ubuntu/member/yofel) (Read error: Connection reset by peer)
+[16:41:37] *** Joins: yofel (~quassel@ubuntu/member/yofel)
+[16:54:22] *** Joins: jturney1 (~jon@host217-43-11-195.range217-43.btcentralplus.com)
+[16:54:22] *** Quits: jturney (~jon@host217-43-11-195.range217-43.btcentralplus.com) (Disconnected by services)
+[17:25:46] *** Quits: justin_time (~stefan@2a02:908:f358:6f00:7ded:d875:7ae4:6ef8) (Ping timeout: 240 seconds)
+[17:30:35] *** Quits: knicklux (~knicklux@openvpn-cl-200-61.scc.kit.edu) (Ping timeout: 240 seconds)
+[17:39:08] *** Joins: justin_time (~stefan@2a02:908:f358:6f00:7ded:d875:7ae4:6ef8)
+[17:43:06] *** Quits: justin_time (~stefan@2a02:908:f358:6f00:7ded:d875:7ae4:6ef8) (Ping timeout: 240 seconds)
+[17:52:48] *** Quits: gordie (d940f2de@gateway/web/freenode/ip.217.64.242.222) (Quit: Page closed)
+[18:20:31] *** Joins: theli_ua (uid54353@gateway/web/irccloud.com/x-twcqwpyzngbpjmbk)
+[18:25:16] *** Quits: HorusHorrendus (~horrendus@84-113-125-102.dynamic.surfer.at) (Quit: Leaving.)
+[18:40:46] *** Quits: r_rios (~Hitleap@177.99.52.33) (Ping timeout: 240 seconds)
+[18:49:46] *** Joins: eater (~eater@2001:982:2402:1:2fe0:7e83:7d85:d823)
+[19:16:28] *** Joins: knicklux (~knicklux@openvpn-cl-200-61.scc.kit.edu)
+[19:43:35] *** Quits: knicklux (~knicklux@openvpn-cl-200-61.scc.kit.edu) (Ping timeout: 240 seconds)
+[19:57:38] *** Quits: ssam2 (~ssam2@82-70-136-246.dsl.in-addr.zen.co.uk) (Quit: Leaving)
+[20:14:32] *** Quits: eater (~eater@2001:982:2402:1:2fe0:7e83:7d85:d823) (Read error: Connection reset by peer)
+[20:14:39] *** Joins: eater (~eater@2001:982:2402:1:2fe0:7e83:7d85:d823)
+[20:35:41] *** Joins: justin_time (~stefan@2a02:908:f358:6f00:7ded:d875:7ae4:6ef8)
+[20:38:15] <jherskowitz> pubparisporn: http://koel.phanan.net/
+[20:38:38] <jherskowitz> people have been talking about us wrt it
+[21:02:34] <theli_ua> hm, php
+[21:04:56] <theli_ua> it also doesn't seem to have any documented API
+[21:09:36] <jherskowitz> meh
+[21:23:58] *** Quits: eater (~eater@2001:982:2402:1:2fe0:7e83:7d85:d823) (Ping timeout: 250 seconds)
+[21:48:42] *** Joins: github-tomahawk (~github-to@192.30.252.42)
+[21:48:42] <github-tomahawk> [13tomahawk] 15dschmidt pushed 1 new commit to 06promisify-all-the-things: 02http://git.io/v0EIt
+[21:48:42] <github-tomahawk> 13tomahawk/06promisify-all-the-things 14d0c1d83 15Dominik Schmidt: Remove more comp hacks
+[21:48:42] *** Parts: github-tomahawk (~github-to@192.30.252.42) ()
+[21:50:37] *** Joins: github-tomahawk (~github-to@192.30.252.41)
+[21:50:37] <github-tomahawk> [13tomahawk] 15dschmidt pushed 1 new commit to 06promisify-all-the-things: 02http://git.io/v0EI9
+[21:50:37] <github-tomahawk> 13tomahawk/06promisify-all-the-things 14213bf1c 15Dominik Schmidt: Don't leak script jobs
+[21:50:37] *** Parts: github-tomahawk (~github-to@192.30.252.41) ()
+[21:51:27] *** Joins: github-tomahawk (~github-to@192.30.252.45)
+[21:51:27] <github-tomahawk> [13tomahawk] 15dschmidt pushed 1 new commit to 06master: 02http://git.io/v0EIh
+[21:51:27] <github-tomahawk> 13tomahawk/06master 145395908 15Dominik Schmidt: Merge pull request #339 from tomahawk-player/promisify-all-the-things...
+[21:51:27] *** Parts: github-tomahawk (~github-to@192.30.252.45) ()
+[22:22:38] *** Quits: justin_time (~stefan@2a02:908:f358:6f00:7ded:d875:7ae4:6ef8) (Remote host closed the connection)
+[22:51:25] <theli_ua> dommex: does that mean that you now can merge amazon?
+[22:51:55] <dommex> theli_ua: it means i needed it for client work and i didnt want to merge a fucked up amount of branches in a thirdparty branch
+[22:52:03] <dommex> so i went the easier way of stuffing everything into master :P
+[22:52:33] <theli_ua> doesn't really answer my question :-/
+[22:52:48] <dommex> theli_ua: i will get to it, yes
+[22:53:00] <theli_ua> I recall you thought its fine but you changed it to match your branch
+[22:53:10] <dommex> yeah, i will take care
+[22:53:15] <dommex> ah, basically
+[22:53:22] <dommex> i can send you my changes if you want to keep using it in master
+[22:53:41] <dommex> no point in you doing the same again
+[22:54:36] <theli_ua> well, its not like I build master daily, i can just wait until everything is pushed
+[22:56:28] *** Joins: soee_ (~soee@u28n61.nowanet.pl)
+[22:57:16] *** Quits: soee (~soee@89.186.28.61) (Remote host closed the connection)
+[22:57:40] <dommex> okay
+[23:23:16] *** Joins: gordie (3eeb9429@gateway/web/freenode/ip.62.235.148.41)
+[23:47:58] <dommex> https://news.ycombinator.com/item?id=10732029
+[23:48:24] <dommex> ah, that's what j posted earlier already :)
+[23:56:30] *** Joins: mehdix (~mehdix@77.176.210.16)
